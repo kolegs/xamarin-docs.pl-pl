@@ -1,0 +1,293 @@
+<table width="100%" border="1px">
+<tr>
+    <td><b>Właściwość</b></td>
+    <td><b>Opis</b></td>
+    <td><b>Opcje</b></td>
+</tr>
+<tr>
+    <td><code> ABI.Type </code></td>
+    <td><strong>Typ interfejsu ABI</strong> — Określa typ ABI (binarny interfejsu aplikacji) emulowanej urządzenia. <code>X86</code> jest opcja instrukcji ustawić często nazywany "x86" lub "IA-32." <code>X86_64</code> opcja dotyczy x86 64-bitowy zestaw instrukcji. <code>Armeabi v7a</code> opcja dotyczy zestaw w wersji 7 a rozszerzenia ARM instrukcji ARM. <code>Arm64 v8a</code> opcja dotyczy zestaw instrukcji ARM, która obsługuje AArch64.  </td>
+    <td> x86, x86_64, armeabi v7a, arm64 v8a </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition </code></td>
+    <td><strong>Buforuj partycji</strong> — Określa, czy będą używane przez urządzenia emulowanej <strong>/pamięci podręcznej</strong> partycji na urządzeniu. <strong>/Pamięci podręcznej</strong> partycji (która jest początkowo pusta) to lokalizacja, w której Android przechowuje rzadziej używanych danych i składników aplikacji. Jeśli ustawiono <code>nie</code>, emulator nie będzie używać <strong>/pamięci podręcznej</strong> partycji, a druga <code>disk.cache</code> ustawienia zostaną zignorowane.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.path </code></td>
+    <td><strong>Ścieżka partycji pamięci podręcznej</strong> — Określa plik obrazu partycji w pamięci podręcznej na komputerze deweloperskim. Emulator będzie używać tego pliku dla <strong>/pamięci podręcznej</strong> partycji. Wprowadź ścieżkę bezwzględną lub ścieżką względną emulatora <strong>danych</strong> katalogu. Jeśli nie jest ustawiona, emulator tworzy pusty plik tymczasowy o nazwie <strong>cache.img</strong> na komputerze deweloperskim. Jeśli plik nie istnieje, jest tworzony jako pusty plik. Ta opcja jest ignorowana, jeśli <code>disk.cachePartition</code> ustawiono <code>nie</code>. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.size </code></td>
+    <td><strong>Rozmiar partycji pamięci podręcznej</strong> — rozmiar pamięci podręcznej plików partycji (w megabajtach). Zwykle nie trzeba ustawić tę opcję, chyba że aplikacja będzie pobierania bardzo duże pliki, które są większe niż domyślny rozmiar pamięci podręcznej 66 megabajtów. Ta opcja jest ignorowana, jeśli <code>disk.cachePartition</code> ustawiono <code>nie</code>.</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.initPath </code></td>
+    <td><strong>Ścieżka wstępna do partycji danych</strong> — Określa początkowy zawartość partycji danych. Po wyczyszczeniu danych użytkownika, emulator kopiuje zawartość określonego pliku do danych użytkownika (domyślnie <strong>qemu.img danych użytkownika</strong>) zamiast <strong>userdata.img</strong> jako wersja początkowa. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.path </code></td>
+    <td><strong>Ścieżka do partycji danych</strong> — Określa plik partycji danych użytkownika. Aby skonfigurować plik danych trwałych użytkownika, wprowadź nazwę pliku i ścieżkę na komputerze deweloperskim. Jeśli plik nie istnieje, jest to emulator tworzy obraz z domyślnego pliku <strong>userdata.img</strong>, zapisze go w nazwie pliku określonego przez <code>disk.dataPartition.path</code>, będzie się powtarzał danych użytkownika po Emulator jest zamykany. Jeśli nie określono ścieżki, nosi nazwę domyślny plik <strong>qemu.img danych użytkownika</strong>. Specjalna wartość <code>&lt; temp ></code> powoduje, że emulator do utworzenia i użycia pliku tymczasowego. Jeśli <code>disk.dataPartition.initPath</code> jest ustawiona, jej zawartość zostanie skopiowana do <code>disk.dataPartition.path</code> plik w czasie rozruchu. Należy pamiętać, że ta opcja nie może być puste.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.size </code></td>
+    <td><strong>Rozmiar partycji danych</strong> — Określa rozmiar partycji danych użytkownika w megabajtach.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> Disk.Ramdisk.Path </code></td>
+    <td><strong>Ścieżka Ramdisk</strong> — ścieżka do obrazu rozruchowego partycji (dysku RAM). Obraz dysku RAM jest podzbiorem obrazu systemu, który jest ładowany przez jądro przed zainstalowanego obrazu systemu. Obraz dysku RAM zazwyczaj zawiera pliki binarne rozruchu i skrypty inicjowania. Jeśli ta opcja nie jest określona, wartością domyślną jest <strong>ramdisk.img</strong> w katalogu systemowym emulatora.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.snapStorage.path </code></td>
+    <td><strong>Ścieżki do magazynu migawek</strong> — ścieżka do <i>migawki pliku magazynu</i> przechowywania wszystkie migawki. W tym pliku zostaną zapisane wszystkie migawki podczas wykonywania. Podczas uruchamiania emulatora można przywrócić tylko migawek, które są zapisane w tym pliku. Jeśli ta opcja nie jest określona, wartością domyślną jest <strong>snapshots.img</strong> w katalogu danych emulatora.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.initPath </code></td>
+    <td><strong>Ścieżka init partycji systemu</strong> — ścieżka do pliku obrazu systemu kopii tylko do odczytu; w szczególności partycję zawierający biblioteki systemu i danych dotyczących poziom interfejsu API i wszelkie variant. Jeśli ta ścieżka nie jest określona, wartością domyślną jest <strong>system.img</strong> w katalogu systemowym emulatora.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.path </code></td>
+    <td><strong>Ścieżka partycji systemu</strong> — ścieżka do odczytu/zapisu obrazu partycji systemu. Jeśli ta ścieżka nie jest określona, plik tymczasowy zostanie utworzona i zainicjowany z zawartości pliku określonego przez <code>disk.systemPartition.initPath</code>. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.size </code></td>
+    <td><strong>Rozmiar partycji systemu</strong> — rozmiar idealny partycji systemowej (w megabajtach). Rozmiar jest ignorowana, jeśli obraz partycji systemu jest większy niż ustawienie; w przeciwnym razie Określa plik partycji systemu może zwiększyć się do maksymalnego rozmiaru.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.accelerometer </code></td>
+    <td><strong>Przyspieszeniomierza</strong> — Określa, czy urządzenie emulowanej zawiera czujnik przyspieszeniomierza. Przyspieszeniomierza pomaga urządzenia orientację (używane do automatycznego obrotu). Przyspieszeniomierza raporty przyspieszenie urządzenia wzdłuż trzy osie czujnika.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.audioInput </code></td>
+    <td><strong>Obsługa nagrania audio</strong> — Określa, czy urządzenie emulowanej można rejestrować audio.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.audioOutput </code></td>
+    <td><strong>Obsługa odtwarzania audio</strong> — Określa, czy urządzenie emulowanej można odtwarzać audio.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.Battery </code></td>
+    <td><strong>Obsługa baterii</strong> — Określa, czy urządzenie emulowanej mogą działać z baterii.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.Camera </code></td>
+    <td><strong>Obsługa aparatów</strong> — Określa, czy urządzenie emulowanej ma aparatu.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.Camera.back </code></td>
+    <td><strong>Aparatu skierowany do tyłu</strong> — konfiguruje aparatu skierowany do tyłu (kroje obiektyw od użytkownika). Jeśli używasz kamery internetowej na komputerze deweloperskim do symulowania aparatu skierowany do tyłu na urządzeniu emulowanej, ta wartość musi mieć ustawioną <code>kamery internetowej<i>n</i></code>, gdzie <i>n</i> wybiera Kamera internetowa (Jeśli masz tylko jedną kamery internetowej, wybierz <code>webcam0</code>). Jeśli ustawiono <code>emulowanej</code>, emulator symuluje aparatu w oprogramowaniu. Aby wyłączyć aparatu skierowany do tyłu, ustaw tę wartość <code>Brak</code>. Po włączeniu aparat skierowany do tyłu, należy również włączyć <code>hw.camera</code>.  </td>
+    <td> emulated, none, webcam0 </td>
+</tr>
+<tr>
+    <td><code> HW.Camera.front </code></td>
+    <td><strong>Aparatem skierowanym</strong> — konfiguruje aparatem skierowanym (kroje obiektyw kierunku użytkownika). Jeśli używasz kamery internetowej na komputerze deweloperskim do symulowania aparatem skierowanym emulowanej urządzenia, wartość ta musi mieć ustawioną <code>kamery internetowej<i>n</i></code>, gdzie <i>n</i> wybiera Kamera internetowa (Jeśli masz tylko jedną kamery internetowej, wybierz <code>webcam0</code>). Jeśli ustawiono <code>emulowanej</code>, emulator symuluje aparatu w oprogramowaniu. Aby wyłączyć aparatem skierowanym, ustaw tę wartość <code>Brak</code>. Jeśli włączysz aparatem skierowanym, należy również włączyć <code>hw.camera</code>.  </td>
+    <td> emulated, none, webcam0 </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxHorizontalPixels </code></td>
+    <td><strong>Maksymalna aparatu poziome pikseli</strong> — konfiguruje maksymalną rozdzielczość pozioma z aparatu fotograficznego urządzenia emulowanej (w pikselach).  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxVerticalPixels </code></td>
+    <td><strong>Maksymalna aparatu pionowy pikseli</strong> — konfiguruje maksymalna rozdzielczość w pionie z aparatu fotograficznego urządzenia emulowanej (w pikselach).  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.CPU.arch </code></td>
+    <td><strong>Architektura Procesora</strong> — architektura Procesora jest emulowane przez urządzenie wirtualne. Jeśli korzystasz z Intel HAXM dla przyspieszenia sprzętowego, wybierz <code>x86</code> dla 32-bitowego procesora CPU. Wybierz <code>x86_64</code> urządzenia przyspieszony HAXM 64-bitowych. (Należy zainstalować odpowiedni obraz systemu Intel x86 w Menedżerze SDK: na przykład <strong>Atom Intel x86</strong> lub <strong>Intel x86 Atom_64</strong>.) Aby symulować Procesora ARM, wybierz <code>arm</code> dla 32-bitowej lub wybierz opcję <code>arm64</code> dla Procesora ARM 64-bitowych. Należy pamiętać, uruchamianego urządzenia wirtualne oparte na usłudze ARM znacznie mniejszą niż te, które są oparte na x86, ponieważ przyspieszanie sprzętowe nie jest dostępna dla ARM.  </td>
+    <td> x86, x86_64, arm, arm64 </td>
+</tr>
+<tr>
+    <td><code> HW.CPU.model </code></td>
+    <td><strong>Model Procesora</strong> — zwykle pozostaje nie ustawiono tej wartości (zostanie ustawiona wartość, która jest pochodną <code>hw.cpu.arch</code> , jeśli nie jest jawnie ustawiona). Jednak można ustawić na ciąg emulatora specyficzne dla celów eksperymentalnych.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.dPad </code></td>
+    <td><strong>Klucze DPad</strong> — Określa, czy urządzenie emulowanej obsługuje kluczy kierunkową konsoli (DPad). DPad zwykle ma cztery klucze, aby wskazać kierunkową formantu.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.GPS </code></td>
+    <td><strong>Obsługuje GPS</strong> — Określa, czy urządzenie emulowanej ma odbiornik GPS (Global pozycjonowanie System).  </td>
+    <td> Yes, no </td>
+<tr>
+</tr>
+<tr>
+    <td><code> HW.GPU.Enabled </code></td>
+    <td><strong>Emulacja GPU</strong> — Określa, czy urządzenie emulowanej obsługuje emulacji procesora GPU. Po włączeniu emulacji GPU używa Open GL for Embedded Systems (OpenGL ES) do renderowania grafiki zarówno 2W i 3W na ekranie, a skojarzone ustawienie trybu emulacji GPU określa implementowania emulacji procesora GPU.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.GPU.mode </code></td>
+    <td><strong>Tryb emulacji GPU</strong> — określa sposób emulacji GPU jest implementowany przez emulator. W przypadku wybrania <code>automatycznie</code>, emulator wybierze przyspieszanie sprzętowe i programowe na podstawie konfiguracji komputera programowanie. W przypadku wybrania <code>hosta</code>, emulator będzie używać procesora graficznego komputer deweloperski podczas emulacji procesora GPU do renderowania szybsze. Jeśli procesor GPU nie jest zgodny z emulatora i są w systemie Windows, można spróbować <code>kąt</code> zamiast <code>hosta</code>. <code>Kąt</code> tryb używa programu DirectX w celu zapewnienia wydajności, podobnie jak <code>hosta</code>. W przypadku wybrania <code>mesa</code>, emulator użyje Biblioteka oprogramowania 3D Mesa do renderowania grafiki. Wybierz <code>mesa</code> Jeśli masz problemy renderowania za pośrednictwem procesora graficznego komputerze dewelopera. <code>Swiftshader</code> tryb może być używany do renderowania grafiki w oprogramowaniu z nieco wydajności niż użycie procesora GPU na komputerze. <code>Poza</code> opcja (Wyłącz grafiki sprzętu emulacji) jest przestarzały opcji, która może spowodować niewłaściwe renderowania dla niektórych elementów i dlatego nie jest zalecane. </td>
+    <td> Auto, hosta, mesa, kąt, swiftshader, wyłącz </td>
+</tr>
+<tr>
+    <td><code> hw.gsmModem </code></td>
+    <td><strong>Obsługa modemów GSM</strong> — Określa, czy urządzenie emulowanej obejmuje modemu, który obsługuje system radiowych telefonii GSM (Global System Mobile komunikacji).  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.initialOrientation </code></td>
+    <td><strong>Początkowa orientacji ekranu</strong> — konfiguruje początkowej orientację ekranu na urządzeniu emulowanej (tryb poziomą lub pionową). W trybie portret ekranu jest większa niż szerokość. W trybie krajobraz ekran jest większa niż wysokość. Podczas uruchamiania emulowanej urządzenia, można zmienić orientację, jeśli w profilu urządzenia są obsługiwane zarówno w orientacji pionowej, jak i w orientacji poziomej.  </td>
+    <td> pionowy, orientacji poziomej </td>
+</tr>
+<tr>
+    <td><code> HW.Keyboard </code></td>
+    <td><strong>Obsługa klawiatury</strong> — Określa, czy urządzenie emulowanej obsługuje QWERTY klawiatury.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.keyboard.charmap </code></td>
+    <td><strong>Nazwa charmap klawiatury</strong> — nazwę charmap sprzętu tego urządzenia. Uwaga: To powinna zawsze być domyślnie <code>qwerty2</code> , chyba że odpowiednio zmodyfikowano obrazu systemu. Ta nazwa jest wysyłany do jądra w czasie rozruchu. Przy użyciu nieprawidłową nazwę spowoduje bezużyteczne urządzenia wirtualnego.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.keyboard.lid </code></td>
+    <td><strong>Obsługa pokrywy klawiatury</strong> — Jeśli włączona jest obsługa klawiatury, to ustawienie określa, czy QWERTY klawiatury może być zamknięte/ukryte lub otworzyć widoczne. To ustawienie zostanie zignorowana, jeśli <code>hw.keyboard</code> ustawiono <code>false</code>. Uwaga: wartość domyślna to <code>false</code> Jeśli emulowanej urządzenia celem poziom interfejsu API, 12 lub nowszym.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.backlight </code></td>
+    <td><strong>Podświetlenie LCD</strong> — Określa, czy podświetlenie LCD to symulowane przez emulowanej urządzenia.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.density </code></td>
+    <td><strong>Gęstość LCD</strong> — gęstość emulowanej wyświetlacza LCD, wartość jest podawana w pikselach niezależnych od gęstości, lub <i>dp</i> (punkt dystrybucji jest jednostką pikseli wirtualnego). Jeśli ustawienie jest 160 punktu dystrybucji, każdy punkt dystrybucji odpowiada jeden piksel fizycznych. W czasie wykonywania Android używa tej wartości, aby wybrać i odpowiednie zasoby/zasobów do renderowania prawidłowe wyświetlanie.  </td>
+    <td> 120, 160, 240, 213, 320 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.depth </code></td>
+    <td><strong>Głębi kolorów LCD</strong> — głębokości bitów kolor emulowanej obiektu, przechowujący mapy bitowej dla wspierania wyświetlacza LCD. Ta wartość może być 16 bitów (65 536 kolorów) lub 32-bitowy (16,777,216 kolory i przezroczystość). Ustawienie 32-bitowych można wykonać emulator wykonywania nieco wolniej, ale o większej dokładności kolorów.  </td>
+    <td> 16, 32 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.height </code></td>
+    <td><strong>Wysokość pikseli LCD</strong> — wchodzące w skład płaszczyźnie pionowej emulowanej wyświetlacza LCD w pikselach.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.width </code></td>
+    <td><strong>Szerokość piksela LCD</strong> — wchodzące w skład płaszczyźnie poziomej emulowanej wyświetlacza LCD w pikselach.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.mainKeys </code></td>
+    <td><strong>Klucze domowych wstecz sprzętu</strong> — Określa, czy urządzenie emulowanej obsługuje wstecz sprzętu i głównej przycisków nawigacji. Tę wartość można ustawić, <code>tak</code> Jeśli przycisków są wykonywane tylko w oprogramowaniu. Jeśli <code>hw.mainKeys</code> ustawiono <code>tak</code>, emulator przycisków nawigacji nie będą wyświetlane na ekranie, ale panel po stronie emulatora umożliwia "naciśnij" tych przycisków.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.ramSize </code></td>
+    <td><strong>Rozmiar pamięci RAM urządzenia</strong> — ilość fizycznej pamięci RAM na urządzeniu emulowanej wyrażony w megabajtach. Wartością domyślną będzie obliczana na podstawie rozmiaru ekranu lub wersji skórki. Zwiększenie rozmiaru zapewniają szybsze operacji emulatora, ale kosztem wymagających większej ilości zasobów na komputerze projektowym.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.Screen </code></td>
+    <td><strong>Touch typu ekranu</strong> — definiuje typ ekranu na urządzeniu emulowanej. A <code>wielodotyku</code> ekranu można śledzić palców dwóch lub więcej w interfejsie touch. A <code>touch</code> ekranu może wykryć tylko touch palca pojedynczego zdarzenia. A <code>bezdotykowe</code> ekranu nie wykrywa zdarzenia touch.  </td>
+    <td> Touch wielodotyku, bezdotykowe </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard </code></td>
+    <td><strong>Obsługa SDCard</strong> — Określa, czy urządzenie emulowanej obsługuje wstawiania i usuwania wirtualnych kart SD (Secure Digital). Emulator używa dysku instalację obrazy przechowywane na komputerze deweloperskim do symulowania partycje rzeczywistego urządzenia kart SD (zobacz <code>hw.sdCard.path</code>).  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> SDCard.size </code></td>
+    <td><strong>Rozmiar SDCard</strong> — Określa rozmiar pliku wirtualnego karty SD, w lokalizacji określonej przez <code>hw.sdCard.path</code>. dostępne na urządzeniu (w bajtach). Jeśli rozmiar jest proste całkowitą, określa rozmiar w bajtach. Można również określić rozmiar w kilobajtach, megabajtów i gigabajtów przez dołączenie do rozmiaru K, M lub G. 9M jest minimalny rozmiar i maksymalny rozmiar jest 1023 GB/S.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard.path </code></td>
+    <td><strong>Ścieżka obrazu SDCard</strong> — Określa nazwę pliku i ścieżkę do pliku obrazu partycji karty SD na komputerze deweloperskim. Na przykład można ustawioną tę ścieżkę <strong>C:\sd\sdcard.img</strong> w systemie Windows.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.magnetic_field </code></td>
+    <td><strong>Czujnik pola magnetycznego</strong> — Określa, czy urządzenie emulowanej obsługuje czujnika pola magnetycznego. Czujnik pola magnetycznego (znanej także jako magnetometrów) raporty otoczenia pola geomagnetic mierzony wzdłuż trzy osie czujnika. Włączenie tego ustawienia dla aplikacji, które muszą mieć dostęp do odczytu kompas. Na przykład aplikacja nawigacji może użyć tego czujnika do wykrywania kierunek, w którym kroje użytkownika.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.Orientation </code></td>
+    <td><strong>Czujnik orientacji</strong> — Określa, czy urządzenie emulowanej udostępnia orientacji czujnik wartości. Czujnik orientacji mierzy stopni obrotu urządzenia dzięki wokół wszystkie trzy osie fizycznych (x, y, z). Należy pamiętać, że czujnik orientacja została uznana za przestarzałą w wersji 2.2 systemu Android (interfejs API na poziomie 8).  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.sensors.proximity </code></td>
+    <td><strong>Czujnik zbliżeniowe</strong> — Określa, czy urządzenie emulowanej obsługuje czujnik zbliżeniowe. Ten czujnik mierzy bliskiego zasięgu obiektu względem ekran urządzenia. Czujnik ten jest zwykle używane do określenia, czy słuchawki oczekuje do osoby, wyczyść.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.temperature </code></td>
+    <td><strong>Czujnik temperatury</strong> — Określa, czy urządzenie emulowanej obsługuje czujnik temperatury. Ten czujnik mierzy temperatury urządzenia w stopniach c (c).  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.touchScreen </code></td>
+    <td><strong>Obsługa ekran dotykowy</strong> — Określa, czy urządzenie emulowanej obsługuje ekran dotykowy. Ekran dotykowy służy do bezpośredniej obiektów na ekranie.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.trackBall </code></td>
+    <td><strong>Obsługa urządzenia wskazującego</strong> — Określa, czy urządzenie emulowanej obsługuje urządzenia wskazującego.  </td>
+    <td> Yes, no </td>
+</tr>
+<tr>
+    <td><code> hw.useext4 </code></td>
+    <td><strong>Obsługa systemu plików EXT4</strong> — Określa, czy emulowanej urządzenia z systemem Linux EXT4 plików dla partycji. Typ systemu plików jest teraz wykrywane automatycznie, ta opcja jest przestarzała i zignorowany.  </td>
+    <td> Brak </td>
+</tr>
+<tr>
+    <td><code> kernel.newDeviceNaming </code></td>
+    <td><strong>Jądra nowe urządzenie nazewnictwa</strong> — umożliwia określenie, czy jądra wymaga schemat nazewnictwa nowego urządzenia. Służy to zwykle z jądra systemu Linux 3.10 lub nowszym. Jeśli ustawiono <code>Autowykrywanie</code>, emulator automatycznie wykryje, czy jądra wymaga schemat nazewnictwa nowego urządzenia.  </td>
+    <td> Autowykrywanie, yes, no </td>
+</tr>
+<tr>
+    <td><code> Kernel.parameters </code></td>
+    <td><strong>Parametry jądra</strong> — Określa ciąg parametrów rozruchu jądra systemu Linux. Domyślnie to ustawienie jest puste.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> kernel.path </code></td>
+    <td><strong>Ścieżka jądra</strong> — Określa ścieżkę do jądra systemu Linux. Jeśli ta ścieżka nie jest określona, emulator wygląda w katalogu systemu emulatora <code>ranchu jądra</code>.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> kernel.supportsYaffs2 </code></td>
+    <td><strong>Obsługa partycji YAFFS2</strong> — Określa, czy jądra obsługuje YAFFS2 partycji (jeszcze inny Flash pliku System 2). Zwykle dotyczy to tylko jądra przed 3.10 systemu Linux. Jeśli ustawiono <code>Autowykrywanie</code> emulator automatycznie wykryje, czy jądra można zainstalować YAFFS2 systemów plików.  </td>
+    <td> Autowykrywanie, yes, no </td>
+</tr>
+<tr>
+    <td><code> skin.name </code></td>
+    <td><strong>Nazwa skórki</strong> — Nazwa skórki emulatora systemu Android. Kolekcja plików, który definiuje element wizualny jest karnacji i kontrolować elementy wyświetlania emulatora; Opisuje okna AVD jak będzie wyglądać na komputerze deweloperskim. Opisuje karnacji rozmiaru ekranu, przycisków i ogólnego projektu, ale nie ma wpływu na działanie aplikacji. </td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> skin.path </code></td>
+    <td><strong>Ścieżka skórki</strong> — ścieżka do katalogu zawierającego emulator skórki plików określonych w <code>skin.name</code> ten katalog zawiera <code>hardware.ini</code> pliku układu i pliki obrazów do wyświetlania elementy skórki. </td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> skin.dynamic </code></td>
+    <td><strong>Dynamiczne skórki</strong> — czy karnacji jest dynamiczny. Skórki emulatora jest dynamiczne skórki, jeśli emulator jest skonstruowanie karnacji dany rozmiar na podstawie określona szerokość i wysokość. </td>
+    <td> Brak </td>
+</tr>
+</table>
