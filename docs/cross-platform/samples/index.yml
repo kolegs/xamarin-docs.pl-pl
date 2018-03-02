@@ -1,0 +1,87 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Przykłady międzyplatformowe"
+metadata:
+  description: "Międzyplatformowe przykładowe aplikacje Xamarin dla deweloperów aplikacji mobilnych."
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/26/2018
+  ms.topic: article
+  ms.openlocfilehash: 48a8e18e681f2642c3a777a45ba21a832d72efff
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.translationtype: HT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 02/28/2018
+abstract:
+  description: "Międzyplatformowe przykładowe aplikacje i pokazy kodu środowiska Xamarin pomagające w rozpoczęciu tworzenia aplikacji mobilnych w języku C# i środowisku Xamarin."
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/
+      text: "Wszystkie przykłady środowiska Xamarin"
+sections:
+- title: Rozpocznij
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      html: "W tym przykładzie przedstawiono aplikację listy zadań do wykonania, która zapisuje dane w lokalnej bazie danych SQLite i uzyskuje dostęp do danych w tej bazie, utworzoną za pomocą zestawu narzędzi Xamarin.Forms."
+      image:
+        src: images/todo.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      title: Todo
+    - href: https://github.com/jamesmontemagno/MyShoppe
+      html: "Pokazowa aplikacja, która umożliwia sprzedawcom śledzenie wyników sprzedaży, zarządzanie potencjalnymi klientami, wyświetlanie kontaktów, zarządzanie zamówieniami oraz przeglądanie katalogu produktów."
+      image:
+        src: images/myshoppe.png
+        href: https://github.com/jamesmontemagno/MyShoppe
+      title: My Shoppe
+    - href: https://github.com/xamarin/app-crm
+      html: "Pokazowa aplikacja, która umożliwia sprzedawcom śledzenie wyników sprzedaży, zarządzanie potencjalnymi klientami, wyświetlanie kontaktów, zarządzanie zamówieniami oraz przeglądanie katalogu produktów."
+      image:
+        src: images/crm.png
+        href: https://github.com/xamarin/app-crm
+      title: Xamarin CRM
+- title: "Platforma Azure i przedsiębiorstwo"
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://github.com/xamarinhq/app-acquaint/
+      html: "Aplikacja listy kontaktów z ekranem szczegółów i ekranem edycji. Kod źródłowy jest dostępny zarówno w implementacji zestawu narzędzi Xamarin.Forms, jak i natywnej implementacji środowiska Xamarin."
+      image:
+        src: images/acquaint.jpg
+        href: https://github.com/xamarinhq/app-acquaint
+      title: Acquaint
+    - href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
+      html: "Pokaz tworzenia zestawu aplikacji obejmującego środowisko Xamarin i platformę Azure z wydarzenia Connect 2017."
+      image:
+        src: images/smarthotel360.png
+        href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
+      title: SmartHotel360
+    - href: https://github.com/Microsoft/BikeSharing360_MobileApps
+      html: "Pokaz tworzenia zestawu aplikacji obejmującego środowisko Xamarin i platformę Azure z wydarzenia Connect 2016."
+      image:
+        src: images/bikesharing360.png
+        href: https://github.com/Microsoft/BikeSharing360_MobileApps
+      title: BikeSharing360
+    - href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
+      html: "Wskazówki dotyczące architektury przedsiębiorstwa w zakresie tworzenia aplikacji na platformie Azure przy użyciu kontenerów."
+      image:
+        src: images/eshop.png
+        href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
+      title: eShop
+- title: "Wszystkie przykłady"
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/
+      html: "Kompletny zestaw międzyplatformowych przykładowych aplikacji i pokazów kodu środowiska Xamarin."
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/
+      title: "Wszystkie przykłady środowiska Xamarin"

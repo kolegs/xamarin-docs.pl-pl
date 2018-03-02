@@ -1,0 +1,69 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Przykłady zestawu narzędzi Xamarin.Forms"
+metadata:
+  description: "Przykładowe aplikacje i pokazy kodu zestawu narzędzi Xamarin.Forms dla deweloperów aplikacji mobilnych."
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: 2cd0a8019df09c8da0f19812b5217bcad5f0c2e9
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.translationtype: HT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 02/28/2018
+abstract:
+  description: "Przykładowe aplikacje i pokazy kodu zestawu narzędzi Xamarin.Forms ułatwiające rozpoczęcie pracy i zrozumienie pojęć związanych z zestawem narzędzi Xamarin.Forms."
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      text: "Wszystkie przykłady zestawu narzędzi Xamarin.Forms"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      html: "W tym przykładzie przedstawiono aplikację listy zadań do wykonania, która zapisuje dane w lokalnej bazie danych SQLite i uzyskuje dostęp do danych w tej bazie."
+      image:
+        src: images/todo.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      title: Todo
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      html: "Znana gra z nowym akcentem. Na siatce o rozmiarze 9 na 9 kafelków ukryto dziesięć usterek. Aby wygrać, należy znaleźć i oflagować wszystkie dziesięć usterek."
+      image:
+        src: images/bugsweeper.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      title: BugSweeper
+    - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      html: "Kalkulator odwrotnej notacji polskiej (RPN, Reverse Polish Notation) umożliwia wprowadzanie liczb i operacji bez nawiasów i naciskania klawisza równości."
+      image:
+        src: images/rpncalc.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      title: RPN Calculator
+    - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      html: "Program symuluje obracający się dysk, na którym można malować przez dotykanie i poruszanie palcami. Aplikacja SpinPaint reaguje na dotyk przez malowanie linii pod palcem, ale również duplikuje tę linię w trzech lustrzanych odbiciach na pozostałych trzech ćwiartkach dysku."
+      image:
+        src: images/spinpaint.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      title: SpinPaint
+    - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      html: "Język XAML — Extensible Application Markup Language — umożliwia deweloperom definiowanie interfejsów użytkownika w aplikacjach Xamarin.Forms przy użyciu znaczników zamiast kodu."
+      image:
+        src: images/xaml.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      title: "Przykłady języka XAML"
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      html: "Język XAML — Extensible Application Markup Language — umożliwia deweloperom definiowanie interfejsów użytkownika w aplikacjach Xamarin.Forms przy użyciu znaczników zamiast kodu."
+      image:
+        src: images/xuzzle.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      title: Xuzzle
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      html: "Kompletny zestaw przykładowych aplikacji i pokazów kodu zestawu narzędzi Xamarin.Forms."
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      title: "Wszystkie przykłady zestawu narzędzi Xamarin.Forms"
