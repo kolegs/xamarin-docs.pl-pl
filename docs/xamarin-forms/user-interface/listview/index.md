@@ -69,7 +69,7 @@ Aby dowiedzieć się więcej o funkcjach interakcyjności ListView, zobacz [akcj
 - [Wbudowane w komórkach (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [Niestandardowe komórek (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [Grupowanie (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
+- [Widok niestandardowy moduł renderowania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
 - [Element ListView interakcyjności (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 - [iOS skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView-ios.workbook)
 - [Android skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView-android.workbook)

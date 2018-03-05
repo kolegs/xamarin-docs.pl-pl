@@ -164,7 +164,7 @@ Właściwości udostępnianych przez akcję wyzwalacza można ustawić w deklara
 
 Należy zachować ostrożność podczas udostępniania Wyzwalacze w `ResourceDictionary`, jedno wystąpienie będzie współdzielona przez formanty każdy stan, który skonfigurowano na raz będzie dotyczyć wszystkich.
 
-Należy pamiętać, że wyzwalacze zdarzeń nie obsługują `EnterActions` i `ExitActions` [opisanych poniżej](#enterexit).   
+Należy pamiętać, że wyzwalacze zdarzeń nie obsługują `EnterActions` i `ExitActions` [opisanych poniżej](#enterexit).
 
 <a name="multi" />
 
@@ -333,4 +333,4 @@ Uwaga: `EnterActions` i `ExitActions` są ignorowane w **wyzwalacze zdarzeń**.
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe wyzwalacze](https://developer.xamarin.com/samples/WorkingWithTriggers)
-- [](https://developer.xamarin.com/api/type/Xamarin.Forms.TriggerAction%3CT%3E/)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](https://developer.xamarin.com/api/type/Xamarin.Forms.TriggerAction%3CT%3E/)

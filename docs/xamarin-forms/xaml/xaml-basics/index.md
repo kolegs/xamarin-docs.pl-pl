@@ -29,7 +29,7 @@ Język XAML — Extensible Application Markup Language — umożliwia dewelopero
 
 Oprócz tych artykułach podstawy języka XAML, możesz pobrać rozdziałach książki [tworzenia aplikacji mobilnych za pomocą platformy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 
-[![](images/cover-sml.png "")](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
+[![](images/cover-sml.png "Okładce książki")](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 
 Tematy XAML bardziej szczegółowo w wielu rozdziałach książki, w tym:
 
@@ -38,28 +38,28 @@ Tematy XAML bardziej szczegółowo w wielu rozdziałach książki, w tym:
   <td style="border:0px;">
     <h4>Rozdział 7. XAML vs. Kod</h4>
   </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf"></a> </td>
+  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">Pobierz plik PDF</a> </td>
   <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">Podsumowanie</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>Rozdział 8. Kod i języka XAML w zgodzie</h4>
   </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf"></a> </td>
+  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf">Pobierz plik PDF</a> </td>
   <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md">Podsumowanie</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>Rozdział 10. Rozszerzenia znaczników XAML</h4>
   </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf"></a> </td>
+  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf">Pobierz plik PDF</a> </td>
   <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md">Podsumowanie</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>Rozdział 18. MVVM</h4>
   </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf"></a> </td>
+  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf">Pobierz plik PDF</a> </td>
   <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md">Podsumowanie</a></td></tr>
 </table>
 
@@ -110,6 +110,6 @@ Jeśli znasz platformy Xamarin.Forms i XML, należy rozpocząć odczyt [część
 ## <a name="related-links"></a>Linki pokrewne
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
+- [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+- [Tworzenie książki Mobile Apps](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)

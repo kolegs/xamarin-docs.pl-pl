@@ -30,5 +30,5 @@ Ten przewodnik składa się z następujących artykułów:
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przy użyciu DependencyService (przykład)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
+- [DependencyService (przykład)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)

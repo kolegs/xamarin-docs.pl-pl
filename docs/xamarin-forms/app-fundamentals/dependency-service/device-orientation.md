@@ -223,5 +223,5 @@ Uruchomienie takiej aplikacji systemu iOS, Android lub platformy systemu Windows
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przy użyciu DependencyService (przykład)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
+- [DependencyService (przykład)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)

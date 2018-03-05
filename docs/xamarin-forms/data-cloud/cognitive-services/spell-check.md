@@ -22,8 +22,8 @@ _Sprawdzania pisowni usługi Bing wykonuje kontekstowe pisowni sprawdzanie tekst
 
 Bing pisowni Sprawdź interfejsu API REST ma dwa tryby pracy i tryb należy określić podczas tworzenia żądania interfejsu API:
 
-- `Spell` 
-- `Proof` 
+- `Spell` poprawia krótki tekst (słowa do 9) bez wprowadzania żadnych zmian wielkości liter.
+- `Proof` poprawia długi tekst zawiera poprawki wielkość liter i znaków interpunkcyjnych podstawowe i pomija agresywne poprawki.
 
 Należy uzyskać klucz interfejsu API do używania API sprawdzania pisowni usługi Bing. To znajduje się w [wprowadzenie bezpłatnie](https://www.microsoft.com/cognitive-services/sign-up?ReturnUrl=/cognitive-services/subscriptions?productId=%2fproducts%2fBing.Speech.Preview) w witrynie microsoft.com.
 
@@ -137,10 +137,10 @@ Interfejs API odpowiedzi jest zwracany w formacie JSON. Następujące dane JSON 
 
 `flaggedTokens` Tablica zawiera tablicę wyrazy, które zostały oznaczone jako nie jest poprawna lub są niepoprawne gramatycznie w tekście. Tablica jest pusta, jeśli zostaną znalezione nie pisowni lub błędy gramatyczne. Tagi w tablicy są:
 
-- `offset` 
-- `token` 
-- `type`  Istnieją dwie możliwe wartości — `RepeatedToken` i `UnknownToken`.
-- `suggestions`  Tablica składa się z `suggestion` i `score`, która wskazuje poziom ufności czy sugerowanej poprawki jest poprawna.
+- `offset` — liczony od zera przesunięcie od początku ciągu tekstowego do programu word, który został oznaczony.
+- `token` — słowa w ciągu tekstowym, która nie została wpisana poprawnie lub jest niepoprawne gramatycznie.
+- `type` — Typ błędu, który spowodował oflagowane słowo. Istnieją dwie możliwe wartości — `RepeatedToken` i `UnknownToken`.
+- `suggestions` — tablicę słowa, które będą Popraw błąd pisowni i gramatyki. Tablica składa się z `suggestion` i `score`, która wskazuje poziom ufności czy sugerowanej poprawki jest poprawna.
 
 W przykładowej aplikacji odpowiedź w formacie JSON jest przeprowadzona deserializacja `SpellCheckResult` wystąpienia, w wyniku zwracanych do wywoływania metody do wyświetlenia. Poniższy kod przedstawia przykład sposobu `SpellCheckResult` wystąpienia są przetwarzane dla wyświetlania:
 
@@ -154,9 +154,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 Ten kod iteruje `FlaggedTokens` kolekcji i zastępuje wszelkie błędne lub niepoprawne gramatycznie wyrazów w tekst źródłowy z pierwszego uwag. Poniższe zrzuty ekranu pokazują przed i po sprawdzanie pisowni:
 
-![](spell-check-images/before-spell-check.png "")
+![](spell-check-images/before-spell-check.png "Przed sprawdzanie pisowni")
 
-![](spell-check-images/after-spell-check.png "")
+![](spell-check-images/after-spell-check.png "Po sprawdzanie pisowni")
 
 ## <a name="summary"></a>Podsumowanie
 
@@ -166,7 +166,7 @@ W tym artykule wyjaśniono, jak używać usługi Bing pisowni Sprawdź interfejs
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [](https://www.microsoft.com/cognitive-services/bing-spell-check-api/documentation)
+- [Dokumentacja sprawdzania pisowni usługi Bing](https://www.microsoft.com/cognitive-services/bing-spell-check-api/documentation)
 - [Korzystanie z usługi sieci RESTful Web](~/xamarin-forms/data-cloud/consuming/rest.md)
 - [Usługi kognitywnych ToDo (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358)
+- [Funkcja interfejsu API sprawdzania pisowni usługi Bing](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358)

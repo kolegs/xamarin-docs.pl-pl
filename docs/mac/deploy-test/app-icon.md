@@ -150,7 +150,7 @@ W tym artykule trwało szczegółowy widok w pracy z obrazami wymagane do utworz
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacImages (przykład)](https://developer.xamarin.com/samples/mac/MacImages/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Praca z obrazami](~/mac/app-fundamentals/image.md)
 - [System macOS Human Interface Guidelines - obrazów i ikon](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)

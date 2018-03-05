@@ -624,7 +624,7 @@ W tym artykule trwało szczegółowe przyjrzeć się praca z listami źródła w
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [](https://developer.xamarin.com/samples/mac/MacOutlines/)
+- [MacOutlines (przykład)](https://developer.xamarin.com/samples/mac/MacOutlines/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Widoki tabel](~/mac/user-interface/table-view.md)
 - [Widoki konspektu](~/mac/user-interface/outline-view.md)

@@ -339,7 +339,7 @@ Należy pamiętać, że strong możliwości obniżenia wydajności w przypadku n
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Grupowanie (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Widok niestandardowy moduł renderowania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 - [Dynamiczna zmiana rozmiaru wierszy (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
 - [informacje o wersji 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [informacje o wersji 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

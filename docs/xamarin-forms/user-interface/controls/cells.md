@@ -18,7 +18,7 @@ ms.lasthandoff: 02/28/2018
 
 _Widokach listy i TableViews można dodać komórek platformy Xamarin.Forms._
 
-<style></style>
+<style>.tableimg {max-width: Brak! ważne;}</style>
 
 ## <a name="cells"></a>Komórki
 
@@ -29,7 +29,7 @@ Aby dowiedzieć się, jak i dostosowywanie komórek, zajrzyj do [ListView](~/xam
 <table align="center" border="1" cellpadding="1" cellspacing="1">
 <thead>
     <th>
-      <strong></strong>
+      <strong>Typ</strong>
     </th>
     <th>
       <strong>Opis elementu</strong>
@@ -93,4 +93,4 @@ A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/">tekst
 - [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Galeria platformy Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)

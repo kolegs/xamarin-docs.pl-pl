@@ -30,7 +30,7 @@ WCF jest strukturą ujednoliconego firmy Microsoft do tworzenia aplikacji korzys
 
 Representational State (Transfer REST) jest architektury stylu do tworzenia usług sieci web. Żądania REST są wysyłane za pośrednictwem protokołu HTTP, przy użyciu tego samego polecenia HTTP, korzystających z przeglądarki sieci web do pobierania strony sieci web i wysyłać dane do serwerów. W tym artykule pokazano, jak korzystać z usługą sieci web RESTful aplikacji platformy Xamarin.Forms.
 
-## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[](~/xamarin-forms/data-cloud/consuming/azure.md)
+## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[Korzystanie z aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Aplikacje mobilne platformy Azure umożliwiają opracowywanie aplikacji z zapleczy skalowalne hostowanych w usłudze Azure App Service z obsługą przenośnych uwierzytelniania, synchronizacji w trybie offline i powiadomień wypychanych. W tym artykule, która ma zastosowanie wyłącznie do usługi Azure Mobile Apps, która użycia zaplecza Node.js, wyjaśniono, jak zapytania, wstawiania, aktualizowania i usuwania danych przechowywanych w tabeli w wystąpieniu usługi Azure Mobile Apps.
 

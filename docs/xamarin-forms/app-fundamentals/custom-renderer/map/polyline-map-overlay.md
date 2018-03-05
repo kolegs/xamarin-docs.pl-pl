@@ -302,6 +302,6 @@ W tym artykule opisano sposób dodawania nakładki łamanej do mapy, w celu wyś
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [Ovlerlay mapy łamanej (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Dostosowywanie pinezki mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)

@@ -18,7 +18,7 @@ ms.lasthandoff: 02/28/2018
 
 _Widoki platformy Xamarin.Forms są blokami konstrukcyjnymi interfejsów i platform przenośnych użytkownika._
 
-<style></style>
+<style>.tableimg {max-width: Brak! ważne;}</style>
 
 ## <a name="views"></a>Widoki
 
@@ -33,7 +33,7 @@ Obsługuje platformy Xamarin.Forms:
 <table align="center" border="1" cellpadding="1" cellspacing="1">
 <thead>
     <th>
-      <strong></strong>
+      <strong>Typ</strong>
     </th>
     <th>
       <strong>Opis elementu</strong>
@@ -290,4 +290,4 @@ A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.View/">widoku</a
 - [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Galeria platformy Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/FormsGallery/)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
-- [](https://developer.xamarin.com/api/root/Xamarin.Forms/)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](https://developer.xamarin.com/api/root/Xamarin.Forms/)

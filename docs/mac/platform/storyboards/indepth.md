@@ -356,7 +356,7 @@ Pełni komentarzem kodu SourceWriter i, jeśli jest dostępna, zostały podane l
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [](https://developer.xamarin.com/samples/mac/MacStoryboard/)
+- [MacStoryboard (przykład)](https://developer.xamarin.com/samples/mac/MacStoryboard/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Praca z systemu Windows](~/mac/user-interface/window.md)
 - [OS X człowieka Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

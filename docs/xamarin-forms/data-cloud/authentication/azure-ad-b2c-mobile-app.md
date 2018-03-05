@@ -223,7 +223,7 @@ W tym artykule przedstawiono sposób użycia usługi Azure Active Directory B2C,
 
 - [TodoAzureAuth ServerFlow (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuthADB2CServerFlow/)
 - [TodoAzureAuth ClientFlow (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuthADB2CClientFlow/)
-- [](~/xamarin-forms/data-cloud/consuming/azure.md)
-- [](~/xamarin-forms/data-cloud/authentication/azure.md)
+- [Korzystanie z aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
+- [Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps](~/xamarin-forms/data-cloud/authentication/azure.md)
 - [Uwierzytelnianie użytkowników w usłudze Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md)
 - [Biblioteka uwierzytelniania firmy Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client)

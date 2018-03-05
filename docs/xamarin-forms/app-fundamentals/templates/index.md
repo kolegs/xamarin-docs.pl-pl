@@ -30,4 +30,4 @@ Szablony danych platformy Xamarin.Forms zapewniają możliwość definiowania pr
 - [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Galeria platformy Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/FormsGallery/)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
-- [](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)

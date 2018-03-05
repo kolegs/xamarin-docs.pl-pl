@@ -26,7 +26,7 @@ HTTP obsługuje kilka mechanizmów uwierzytelniania w celu kontroli dostępu do 
 
 Xamarin.Auth jest SDK i platform do uwierzytelniania użytkowników i przechowywania ich kont. Obejmuje on wystawców uwierzytelnienia OAuth, które zapewniają obsługę służący do konsumowania dostawców tożsamości, takich jak Google, Microsoft, Facebook i Twitter. W tym artykule opisano sposób użycia Xamarin.Auth do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms.
 
-## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[](azure.md)
+## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps](azure.md)
 
 Aplikacje mobilne platformy Azure korzystają z różnych dostawców tożsamości zewnętrznych do obsługi uwierzytelniania i autoryzacji użytkowników aplikacji. Uprawnienia można następnie ustawić w tabelach, aby ograniczyć dostęp tylko do uwierzytelnionych użytkowników. W tym artykule opisano sposób korzystania z usługi Azure Mobile Apps do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms.
 
