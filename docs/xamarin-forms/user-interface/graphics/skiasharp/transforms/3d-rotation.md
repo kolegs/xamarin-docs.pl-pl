@@ -9,7 +9,7 @@ ms.author: chape
 ms.date: 04/14/2017
 ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/27/2018
 ---
@@ -27,7 +27,7 @@ Trudno jest opracowanie to `SKMatrix` przekształcenia działają jedynie w rama
 
 Trójwymiarowy układ współrzędnych dodaje trzecią osią o nazwie Z. koncepcyjnie, osi Z prostopadle do ekranu. Współrzędna punktów w przestrzeni 3D są oznaczone trzech cyfr: (x, y, z). W 3D współrzędnych używane w tym artykule, zwiększenie wartości X są po prawej stronie i zwiększa wartości Y przestaną działać, tak jak w przypadku dwóch wymiarów. Zwiększanie pozytywne wartości Z wyjść ze ekranu. Pochodzi lewego górnego rogu, tak jak w przypadku 2D grafiki. Ekran można traktować jako płaszczyzna XY z osi Z prostopadle do tej warstwy.
 
-Jest to po lewej stronie układ współrzędnych. Jeśli punkt wskazującym dla użytkownika po lewej stronie w kierunku X dodatnią współrzędne (z prawej strony) i palca środka w kierunku Y zwiększa współrzędne (wyłączone), następnie punkty przycisku przewijania w kierunek narastania współrzędnych Z & #x 2014; rozszerzanie się na ekranie.
+Jest to po lewej stronie układ współrzędnych. Jeśli punkt wskazującym dla użytkownika po lewej stronie w kierunku X dodatnią współrzędne (z prawej strony) i palca środka w kierunku Y zwiększa współrzędne (wyłączone), następnie punkty przycisku przewijania w kierunek narastania współrzędnych Z &#x2014; rozszerzanie się na ekranie.
 
 W grafiki 3D przekształceń są oparte na macierz 4 przez 4. W tym miejscu jest macierzą 4-na-4:
 
@@ -109,7 +109,7 @@ Obrót wokół osi Z jest taki sam jak grafiki 2D:
 |    0       0     0  1  |
 </pre>
 
-Kierunek obrotu technicznego przez skrętności dla układu współrzędnych. To jest system dla leworęcznych, tak więc jeśli wskażesz stronie przycisku suwaka użytkownika po lewej stronie kierunku zwiększanie wartości osi & #x 2014; w prawo obrót wokół osi X dół dla obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z & #x 2014; następnie krzywej palcami innych wskazuje kierunek dodatnią kąty obrotu.
+Kierunek obrotu technicznego przez skrętności dla układu współrzędnych. To jest system dla leworęcznych, tak więc jeśli wskażesz stronie przycisku suwaka użytkownika po lewej stronie kierunku zwiększanie wartości osi &#x2014; w prawo obrót wokół osi X dół dla obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z &#x2014; następnie krzywej palcami innych wskazuje kierunek dodatnią kąty obrotu.
 
 `SKMatrix44` został uogólniony static [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) i [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metod, które umożliwiają określenie osi, wokół którego obrót występuje:
 
@@ -442,7 +442,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Zastąpienie definiuje trzy platformy Xamarin.Forms `Animation` obiektów do animowania `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Należy zauważyć, że okresy te animacje są ustawione na liczb pierwszych & #x 2014; 5 sekund, 7 sekund i 11 s & #x 2014; Dlatego ogólna kombinacja tylko jest powtarzany co 385 sekund, czyli więcej niż 10 minut:
+`OnAppearing` Zastąpienie definiuje trzy platformy Xamarin.Forms `Animation` obiektów do animowania `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Należy zauważyć, że okresy te animacje są ustawione na liczb pierwszych &#x2014; 5 sekund, 7 sekund i 11 s &#x2014; Dlatego ogólna kombinacja tylko jest powtarzany co 385 sekund, czyli więcej niż 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
