@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Układy platformy Xamarin.Forms są używane do tworzenia kontrolek interfejsu 
 
 ## <a name="layouts"></a>Układy
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Klasy w platformy Xamarin.Forms jest podtypem specjalne widoku, który działa jako kontener dla innych układów lub widoków. Zawiera on zwykle logiki, aby ustawić położenie i rozmiar elementów podrzędnych w aplikacjach platformy Xamarin.Forms.
+[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Klasy w platformy Xamarin.Forms jest podtypem specjalne widoku, który działa jako kontener dla innych układów lub widoków. Zawiera on zwykle logiki, aby ustawić położenie i rozmiar elementów podrzędnych w aplikacjach platformy Xamarin.Forms.
 
  [ ![](layouts-images/layouts-sml.png "Typy układ platformy Xamarin.Forms")](layouts-images/layouts.png "typy układ platformy Xamarin.Forms")
 
