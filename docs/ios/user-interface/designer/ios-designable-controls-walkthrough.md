@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS
 
@@ -33,13 +33,13 @@ W tym przewodniku założono znajomość zawartość objęte [wprowadzenie prowa
 1. Utworzenie nowego rozwiązania z **systemu iOS > aplikacji > Aplikacja pojedynczego widoku > C#** szablonu, nadaj jej nazwę `ScratchTicket`i kontynuuj pracę Kreatora nowego projektu:
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Utwórz nowe rozwiązanie")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Utwórz nowe rozwiązanie")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. Utwórz nowy plik pustą klasę o nazwie `ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Utwórz nową klasę ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Utwórz nową klasę ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. Dodaj następujący kod do `ScratchTicketView` klasy:
@@ -168,63 +168,50 @@ W tym przewodniku założono znajomość zawartość objęte [wprowadzenie prowa
     
 1. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć go w Projektancie:
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "Projektant dla systemu iOS")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "Projektant dla systemu iOS")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. Przeciągnij i upuść **widoku obrazu** z **przybornika** na widok scenorysu.
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "Wyświetl obraz dodany do układu")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "Wyświetl obraz dodany do układu")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. Wybierz **widoku obrazu** i zmień jego **obrazu** właściwości `Monkey.png`.
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "Ustawienie właściwości obrazu widoku obrazu Monkey.png")](ios-designable-controls-walkthrough-images/05new.png)
+    [! [] (z systemem ios-designable — formanty — wskazówki — obrazy/05new.png "obraz widoku obrazu ustawienie właściwości Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Ponieważ używamy klasy wielkości musimy ograniczyć ten widok obrazu. Kliknij go dwukrotnie, aby przełączyć w tryb ograniczenia. Umożliwia ograniczenie go do Centrum, klikając uchwyt przypinanie Centrum i jego wyrównanie w pionie i w poziomie:
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "Centrowanie obrazu")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "Centrowanie obrazu")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. Aby ograniczyć szerokość i wysokość, kliknij uchwytów przypinanie rozmiaru (dojść w kształcie "kości") i wybierz polecenie szerokości i wysokości odpowiednio:
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "Dodanie ograniczeń")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "Dodanie ograniczeń")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. Aktualizacja ramki na podstawie ograniczeń przez kliknięcie przycisku Aktualizuj na pasku narzędzi:
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "Na pasku narzędzi z ograniczeniami")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Na pasku narzędzi z ograniczeniami")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. Następnie Skompiluj projekt, aby **pliki tymczasowe widoku biletu** będą wyświetlane w obszarze **niestandardowe składniki** w przyborniku:
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "Niestandardowe składniki przybornika")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Niestandardowe składniki przybornika")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. Przeciągnij i upuść **pliki tymczasowe widoku biletu** , aby był wyświetlany nad małp obrazu. Dopasuj uchwyty przeciągania, więc widoku biletu pliki tymczasowe obejmuje małp całkowicie, jak pokazano poniżej:
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "Pliki tymczasowe biletu widoku za pośrednictwem widoku obrazu")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "Pliki tymczasowe biletu widoku za pośrednictwem widoku obrazu")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. Ogranicz widoku biletu przechowywania plików tymczasowych do widoku obrazu za pomocą rysowania prostokąt ograniczający, aby wybrać obu widokach. Wybierz opcje, aby ograniczyć do ramki szerokość, wysokość, wyśrodkowanie i bliski i aktualizacji, na podstawie ograniczeń, jak pokazano poniżej:
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "Wyśrodkowanie i dodanie ograniczeń")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "Wyśrodkowanie i dodanie ograniczeń")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. Uruchom aplikację i "pliki tymczasowe wyłączanie" obraz, aby ujawnić małp.
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "Uruchom przykładową aplikację")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Uruchom przykładową aplikację")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Dodawanie właściwości czasu projektowania
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 W tym `ExportAttribute` i `BrowsableAttribute` z wartością argumentu `true` powoduje właściwości wyświetlane w Projektancie **właściwości** panelu. Zmiana wartości właściwości do innego obrazu dostępnych w projekcie, takich jak `FillTexture2.png`, powoduje aktualizowanie formantu w czasie projektowania, jak pokazano poniżej:
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "Edytowanie właściwości czasu projektowania")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Edytowanie właściwości czasu projektowania")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 
