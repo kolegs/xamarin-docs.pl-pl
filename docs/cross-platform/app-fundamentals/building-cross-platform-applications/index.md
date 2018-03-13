@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 8db4a816becca54428b3524f79b6ebc5ff4ec084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7934738a546a266036573b81e15ef9b2fa28d7b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sharing-code-options"></a>Opcje udostępniania kodu
 
@@ -34,7 +34,7 @@ Dostępne są dwie opcje udostępnianie kodu aplikacji dla wielu platform urząd
 
  [Część 5 — praktyczne kodu strategii udostępniania](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-5-practical-code-sharing-strategies.md)
 
- [Część 6 - testowania i zatwierdzeń sklepu z aplikacjami](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
+ [Część 6. Testowanie i zgody sklepu App Store](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
@@ -51,7 +51,7 @@ Zasady opisane w niniejszym dokumencie są umieszczane w praktyce w przykładowe
 Tasky jest aplikacją listy prostych zadań do wykonania dla systemu iOS, Android i Windows Phone.
 On wprowadzającym zostały omówione podstawy tworzenie wieloplatformowych aplikacji za pomocą platformy Xamarin i używa lokalnej bazy danych SQLite.
 
- [ ![Lista tasky](images/iphone-list-sml.png)](images/iphone-list.png) [ ![tasky szczegółów](images/iphone-detail-sml.png)](images/iphone-detail.png)
+ [![Lista tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [ ![tasky listy](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 Odczyt [Tasky analizę przypadku](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 

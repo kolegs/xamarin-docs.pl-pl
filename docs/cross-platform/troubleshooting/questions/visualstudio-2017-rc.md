@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 745e532a9543029f13e5fdffcc15153d780278ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6144a422b9c01279ce345eccf9830bcd335597a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Za pomocą platformy Xamarin można użyć programu Visual Studio 2017 Release Candidate?
 
@@ -30,7 +30,7 @@ Gdy aktualnie poszukuje zespołu w sposób, aby pominąć to oczekiwane zachowan
 
 * Wybierz **Xamarin** składnika w ramach nowej **Instalator programu Visual Studio**
 
-  [ ![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC Installer Screen")](visualstudio-2017-rc-images/install1-orig.png)
+  [![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC Installer Screen")](visualstudio-2017-rc-images/install1-orig.png#lightbox)
 
 Spowoduje to zainstalowanie rozszerzenie programu Visual Studio do tworzenia aplikacji platformy Xamarin.iOS i platformy Xamarin.Android.
 
@@ -40,26 +40,26 @@ Spowoduje to zainstalowanie rozszerzenie programu Visual Studio do tworzenia apl
 
 1. Wyszukiwanie aplikacji Instalator programu Visual Studio
 
-  [ ![](visualstudio-2017-rc-images/reinstall1-sml.png "Wyniki wyszukiwania dla aplikacji Instalatora programu Visual Studio")](visualstudio-2017-rc-images/reinstall1-orig.png)
+  [![](visualstudio-2017-rc-images/reinstall1-sml.png "Wyniki wyszukiwania dla aplikacji Instalatora programu Visual Studio")](visualstudio-2017-rc-images/reinstall1-orig.png#lightbox)
 
 2. Wybierz:. **Tworzenie przenośnych za pomocą platformy .NET (wersja zapoznawcza)** na karcie obciążeń lub
 
-  [ ![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta obciążeń Instalator VS") ](visualstudio-2017-rc-images/reinstall2-orig.png) b. **Xamarin** w **pojedynczych składników** kartę
+  [![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta obciążeń Instalator VS") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** w **pojedynczych składników** kartę
 
-  [ ![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta składników Instalator programu VS")](visualstudio-2017-rc-images/reinstall3-orig.png)
+  [![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta składników Instalator programu VS")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)
 
 #### <a name="using-the-visual-studio-installer-within-visual-studio"></a>Za pomocą Instalatora programu Visual Studio w programie Visual Studio:
 1. Przejdź do strony początkowej 2017 Visual Studio
 2. Polecenie **więcej szablony projektu** w obszarze **nowy projekt** sekcji
 
-    [ ![](visualstudio-2017-rc-images/reinstall4-sml.png "Strona początkowa programu Visual Studio")](visualstudio-2017-rc-images/reinstall4-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall4-sml.png "Strona początkowa programu Visual Studio")](visualstudio-2017-rc-images/reinstall4-orig.png#lightbox)
 3. Polecenie `Open Visual Studio Installer` w okienku po lewej stronie
 
-    [ ![](visualstudio-2017-rc-images/reinstall5-sml.png "Nowy projekt ekranu")](visualstudio-2017-rc-images/reinstall5-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall5-sml.png "Nowy projekt ekranu")](visualstudio-2017-rc-images/reinstall5-orig.png#lightbox)
 4. Wybierz:
     
     a. **Tworzenie przenośnych za pomocą platformy .NET (wersja zapoznawcza)** na karcie obciążeń lub
 
-    [ ![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta obciążeń Instalator VS") ](visualstudio-2017-rc-images/reinstall2-orig.png) b. **Xamarin** w **pojedynczych składników** kartę
+    [![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta obciążeń Instalator VS") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** w **pojedynczych składników** kartę
 
-    [ ![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta składników Instalator programu VS")](visualstudio-2017-rc-images/reinstall3-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta składników Instalator programu VS")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)

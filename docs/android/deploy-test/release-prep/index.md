@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f36a29b00e0393ac0a2d65e7ebe7d290bbdb89a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Przygotowywanie aplikacji dla wersji
 
-<a name="Compile_the_Application_for_Release" />
 
 Po ukończeniu kodowany i przetestować aplikację, jest potrzebne do przygotowania pakietu do dystrybucji. Pierwszym zadaniem w celu przygotowania tego pakietu jest do skompilowania aplikacji dla wersji głównie pociąga za sobą Ustawianie atrybutów niektórych aplikacji.
 
@@ -53,13 +52,13 @@ Zdecydowanie zaleca się, że każda aplikacja platformy Xamarin.Android Określ
 
 W programie Visual Studio 2015 lub nowszego oraz określić ikona aplikacji za pośrednictwem **manifestu systemu Android** sekcji projektu **właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Ustaw ikona aplikacji](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png)
+[![Ustaw ikona aplikacji](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 W programie Visual Studio dla komputerów Mac, jest również możliwe określenie ikony aplikacji za pośrednictwem **aplikacji systemu Android** sekcji **opcje projektu**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Ustaw ikona aplikacji](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png)
+[![Ustaw ikona aplikacji](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
 
@@ -77,13 +76,13 @@ Przechowywanie wersji jest ważne dla aplikacji systemu Android konserwacji i dy
 
 W programie Visual Studio, te wartości można ustawić w **manifestu systemu Android** sekcji projektu **właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Ustaw numer wersji](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png)
+[![Ustaw numer wersji](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Te wartości można ustawić za pomocą **kompilacji > aplikacji systemu Android** sekcji **opcje projektu** jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Ustaw numer wersji](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png)
+[![Ustaw numer wersji](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png#lightbox)
 
 -----
 
@@ -93,7 +92,6 @@ Te wartości można ustawić za pomocą **kompilacji > aplikacji systemu Android
 
 Xamarin.Android APKs można nawiązać mniejszym przy użyciu kombinacji konsolidator Xamarin.Android, co spowoduje usunięcie niepotrzebnych *zarządzane* kodu i *narzędzia ProGuard* narzędzi z zestawu SDK systemu Android, co spowoduje usunięcie nieużywane *kodu bajtowego Java*. Proces kompilacji najpierw używa konsolidator Xamarin.Android w celu optymalizowania aplikacji na poziomie kodu zarządzanego (C#), a następnie go później używa narzędzia ProGuard (jeśli jest włączona) w celu zoptymalizowania APK na poziomie kodu bajtowego Java.
 
-<a name="Configure_the_Linker" />
 
 ### <a name="configure-the-linker"></a>Skonfiguruj konsolidator
 
@@ -107,7 +105,7 @@ Tryb wersji wyłącza udostępnionego środowiska uruchomieniowego i włącza ł
 
 Ustawianie opcji konsolidatora za pośrednictwem **Android opcje** sekcji projektu **właściwości**:
 
-[ ![Opcje konsolidatora](images/vs/03-linking-sml.png)](images/vs/03-linking.png)
+[![Opcje konsolidatora](images/vs/03-linking-sml.png)](images/vs/03-linking.png#lightbox)
 
 **Konsolidację** menu rozwijanego udostępnia następujące opcje umożliwiające sterowanie konsolidator:
 
@@ -122,7 +120,7 @@ Ustawianie opcji konsolidatora za pośrednictwem **Android opcje** sekcji projek
 
 Ustawianie opcji konsolidatora za pośrednictwem **konsolidatora** karcie **Android kompilacji** sekcji **opcje projektu**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Opcje konsolidatora](images/xs/03-linking-sml.png)](images/xs/03-linking.png)
+[![Opcje konsolidatora](images/xs/03-linking-sml.png)](images/xs/03-linking.png#lightbox)
 
 Dostępne są następujące opcje umożliwiające sterowanie konsolidator:
 
@@ -136,7 +134,6 @@ Dostępne są następujące opcje umożliwiające sterowanie konsolidator:
 
 Konsolidacja może spowodować niektórych niezamierzone skutki uboczne, należy pamiętać, że aplikację można ponownie przetestowane w trybie wersji na urządzeniu fizycznym.
 
-<a name="proguard" />
 
 ### <a name="proguard"></a>ProGuard
 
@@ -148,11 +145,11 @@ Gdy **włączyć ProGuard** zaznaczono Xamarin.Android uruchamia narzędzie ProG
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Akcja proguard kompilacji](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png)
+[![Akcja proguard kompilacji](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Akcja proguard kompilacji](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png)
+[![Akcja proguard kompilacji](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
 -----
 
@@ -228,7 +225,6 @@ Należy pamiętać, że **pakietu kodu natywnego** tych opcji *nie* oznacza, że
 
 **Kompilacji drzewa obiektów aplikacji** opcja wymaga licencji Enterprise lub nowszej. **Kompilacja drzewa obiektów aplikacji** jest dostępna, tylko gdy projekt jest skonfigurowany dla trybu wersji i jest domyślnie wyłączona. Aby uzyskać więcej informacji o kompilacji drzewa obiektów aplikacji, zobacz [drzewa obiektów aplikacji](http://www.mono-project.com/docs/advanced/aot/).
 
-<a name="llvm" />
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM optymalizacji kompilatora
 
@@ -246,31 +242,28 @@ _LLVM optymalizacji kompilatora_ utworzyć mniejsze i szybciej skompilowanego ko
 
 Właściwości tworzenia pakietów można ustawiać **Android opcje** sekcji projektu **właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Właściwości pakowania](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png)
+[![Właściwości pakowania](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Właściwości tworzenia pakietów można ustawiać **opcje projektu**, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Właściwości pakowania](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png)
+[![Właściwości pakowania](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png#lightbox)
 
 -----
 
 Wiele z tych właściwości, takie jak **Użyj udostępnionych w czasie wykonywania**, i **Użyj szybkiego wdrożenia** są przeznaczone do trybu debugowania. Gdy aplikacja jest skonfigurowana pod kątem trybu wersji, istnieją inne ustawienia, które określają sposób aplikacji [zoptymalizowane pod kątem rozmiaru i wykonywania szybkość](#shrink_apk), [jak jest chronione przed naruszeniami](#protect_app)i w jaki sposób mogą być pakowane do obsługi różnych architektur i ograniczenia rozmiaru.
 
-<a name="Specify_Supported_Architectures" />
 
 ### <a name="specify-supported-architectures"></a>Określ obsługiwane architektury
 
 Przygotowywanie aplikacji platformy Xamarin.Android dla wersji, należy określić architektury Procesora, które są obsługiwane. Pojedynczy APK może zawierać kod maszynowy do obsługi wielu różnych architektur. Zobacz [architektury Procesora](~/android/app-fundamentals/cpu-architectures.md) szczegółowe informacje dotyczące obsługi wielu architektury Procesora.
 
-<a name="multiabi" />
 
 ### <a name="generate-one-package-apk-per-selected-abi"></a>Generowanie jeden pakiet (. APK) na wybranych ABI
 
 Gdy ta opcja jest włączona, co APK zostaną utworzone dla każdej z obsługiwanych ABI (wybranego na **zaawansowane** karcie, zgodnie z opisem w [architektury Procesora](~/android/app-fundamentals/cpu-architectures.md)) zamiast jednej, duża APK dla wszystkich obsługiwanych ABI firmy. Ta opcja jest dostępna tylko wtedy, gdy projekt jest skonfigurowany dla trybu wersji i jest domyślnie wyłączona.
 
-<a name="multidex" />
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -305,30 +298,30 @@ Po ukończeniu wszystkich powyższych kroków Kompilowanie aplikacji (wybierz **
 
 Aby rozpocząć proces publikowania, kliknij prawym przyciskiem myszy projekt w **Eksploratora rozwiązań** i wybierz **archiwum...**  elementu menu kontekstowego:
 
-[ ![Archiwum aplikacji](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png)
+[![Archiwum aplikacji](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png#lightbox)
 
 **Archiwum...**  uruchamia **Menedżera archiwum** i rozpocznie się proces archiwizacji pakietu aplikacji, jak pokazano w tym zrzut ekranu:
 
-[ ![Menedżer archiwum](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png)
+[![Menedżer archiwum](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Innym sposobem tworzenia archiwum jest kliknij prawym przyciskiem myszy rozwiązanie w **Eksploratora rozwiązań** i wybierz **archiwum wszystkich...** , który tworzy rozwiązania i archiwa wszystkich projektów Xamarin, które mogą generować archiwum:
 
-[ ![Wszystkie archiwum](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png)
+[![Wszystkie archiwum](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
 
 
 Zarówno **archiwum** i **archiwum wszystkich** automatyczne uruchomienie **Menedżera archiwum**. Aby uruchomić **Menedżera archiwum** bezpośrednio, kliknij przycisk **Narzędzia > archiwum Manager...**  element menu:
 
-[ ![Uruchom Menedżera archiwum](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png)
+[![Uruchom Menedżera archiwum](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png#lightbox)
 
 Archiwa rozwiązania w dowolnym momencie, klikając prawym przyciskiem myszy **rozwiązania** węzła i wybierając **archiwa widoku**:
 
-[ ![Archiwa widoku](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png)
+[![Archiwa widoku](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png#lightbox)
 
 ### <a name="the-archive-manager"></a>Menedżer archiwum
 
 **Menedżera archiwum** składa się z **listy rozwiązań** okienku **listy archiwa**, a **Panel szczegółów**:
 
-[ ![Okienka Menedżera archiwum](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png)
+[![Okienka Menedżera archiwum](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png#lightbox)
 
 **Listy rozwiązań** Wyświetla wszystkie rozwiązania, o co najmniej jeden projekt zarchiwizowane. **Listy rozwiązań** zawiera następujące sekcje:
 
@@ -348,11 +341,11 @@ Archiwa rozwiązania w dowolnym momencie, klikając prawym przyciskiem myszy **r
 
 Gdy zarchiwizowaną wersję aplikacji jest gotowa do opublikowania, wybierz archiwum w **Menedżera archiwum** i kliknij przycisk **dystrybucji...**  przycisk:
 
-[ ![Przycisk Dystrybuuj](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png)
+[![Przycisk Dystrybuuj](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
 **Kanału dystrybucji** okna dialogowego pokazuje informacje o aplikacji, ze wskazaniem dystrybucji postępu przepływu pracy i wybór kanałów dystrybucji. Przy pierwszym uruchomieniu dostępne są dwie opcje:
 
-[ ![Wybierz kanał dystrybucji](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png)
+[![Wybierz kanał dystrybucji](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png#lightbox)
 
 Użytkownik może wybrać jedną z następujących kanałów dystrybucji:
 
@@ -364,15 +357,15 @@ Użytkownik może wybrać jedną z następujących kanałów dystrybucji:
 
 Aby rozpocząć proces publikowania, wybierz **kompilacji > archiwum publikowania**:
 
-[ ![Archiwum do publikowania](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png)
+[![Archiwum do publikowania](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png#lightbox)
 
 **Archiwum publikowania** kompilacji projektu i zawiera on również do pliku archiwum. **Archiwum wszystkich** menu wyboru archiwa wszystkich można utworzyć archiwum projektów w rozwiązaniu. Obie te opcje automatycznego otwierania **Menedżera archiwum** po zakończeniu operacji kompilacji i paczki:
 
-[ ![Wyświetl archiwum](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png)
+[![Wyświetl archiwum](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
 W tym przykładzie **Menedżera archiwum** zawiera tylko jedną zarchiwizowane aplikacji, **moja_aplikacja**. Należy zauważyć, że pole Komentarz umożliwia krótki komentarz do zapisania z archiwum. Aby opublikować zarchiwizowaną wersję aplikacji platformy Xamarin.Android, wybierz aplikację w **Menedżera archiwum** i kliknij przycisk **logowania i rozpowszechnij...**  jak pokazano powyżej. Powstałe w ten sposób **logowania i rozpowszechnij** okna dialogowego przedstawiono dwie opcje:
 
-[ ![Zaloguj się i dystrybucji](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png)
+[![Zaloguj się i dystrybucji](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 
 W tym miejscu jest możliwe, wybierz kanał dystrybucji:

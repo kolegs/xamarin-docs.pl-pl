@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 8bfa599ce0a85897ecaf655c1d4da00fe898bc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cf1c4d749eb85a7e0f4c035e10e2e7a40e0c711
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="switch"></a>Przełącznik
 
 `Switch` Widget (pokazana poniżej) pozwala użytkownikowi na przełączanie się między dwoma stanami, jak na przykład lub wyłączone. `Switch` Wartość domyślna to OFF. Poniżej przedstawiono widżetu jego ON i OFF stany:
 
-[ ![Element widget przełącznika i Włącz stany zrzuty ekranu](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png)
+[![Element widget przełącznika i Włącz stany zrzuty ekranu](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
-<a name="Creating_a_Switch" />
 
 ## <a name="creating-a-switch"></a>Tworzenie przełącznika
 
@@ -32,9 +31,8 @@ Aby utworzyć przełącznik, po prostu zadeklarować `Switch` elementu w języku
 
 Tworzy przełącznik podstawowe, jak pokazano poniżej:
 
-[ ![Zrzut ekranu przedstawiający aplikacja demonstracyjna, wyświetlanie przełącznika w stanie wyłączone](switch-images/07-switch.png)](switch-images/07-switch.png)
+[![Zrzut ekranu przedstawiający aplikacja demonstracyjna, wyświetlanie przełącznika w stanie wyłączone](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
-<a name="Changing_Default_Values" />
 
 ## <a name="changing-default-values"></a>Zmiana wartości domyślne
 
@@ -48,7 +46,6 @@ Zarówno tekstu wyświetlanego przez formant dla ON i OFF Stany i wartość domy
         android:textOff="NO" />
 ```
 
- <a name="Providing_a_Title" />
 
 
 ## <a name="providing-a-title"></a>Udostępnia tytuł
@@ -66,7 +63,7 @@ Zarówno tekstu wyświetlanego przez formant dla ON i OFF Stany i wartość domy
 
 Ten kod znaczników tworzy Poniższy zrzut ekranu w czasie wykonywania:
 
-[![Zrzut ekranu przedstawiający aplikacja demonstracyjna, z tekstem w poziomie poprzedzającą widget przełącznika](switch-images/08-switch.png)](switch-images/08-switch.png)
+[![Zrzut ekranu przedstawiający aplikacja demonstracyjna, z tekstem w poziomie poprzedzającą widget przełącznika](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
 Gdy `Switch`jego zmiany wartości zgłasza `CheckedChange` zdarzeń.
 Na przykład w poniższym kodzie możemy przechwytywania tego zdarzenia i stanowi `Toast` na podstawie elementu widget komunikatem `isChecked` wartość `Switch`, która jest przekazywana jako część programu obsługi zdarzeń `CompoundButton.CheckedChangeEventArg` argumentu.

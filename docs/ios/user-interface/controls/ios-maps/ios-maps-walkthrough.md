@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 7eea7231ec4300a368e4612cbed2ba4ebc044a26
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 807ae6554d029120ad28f8fb8cc6c57ba3b58c8c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="annotations-and-overlays--walkthrough"></a>Adnotacje i nakładki — wskazówki
 
 Aplikacja, którą spróbujemy kompilacji w tym przewodniku przedstawiono poniżej:
 
- [![](ios-maps-walkthrough-images/00-map-overlay.png "Przykładową aplikację MapKit")](ios-maps-walkthrough-images/00-map-overlay.png)
+ [![](ios-maps-walkthrough-images/00-map-overlay.png "Przykładową aplikację MapKit")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
  
 Kompletny kod w można znaleźć **MapsWalkthroughComplete** folder w [próbka Demo mapy](https://developer.xamarin.com/samples/monotouch/MapDemo/).
 
@@ -279,7 +279,7 @@ Na tym kończy się kod w `ViewDidLoad`. Teraz musimy zaimplementować naszych `
 
 Uruchom aplikację. Mamy teraz mapy interakcyjnej z adnotacją niestandardową i nakładki! Wybierz adnotację, a obraz Austin jest wyświetlany, jak pokazano poniżej:
 
- [![](ios-maps-walkthrough-images/01-map-image.png "Wybierz adnotację, i nie jest wyświetlany obraz Austin")](ios-maps-walkthrough-images/01-map-image.png)
+ [![](ios-maps-walkthrough-images/01-map-image.png "Wybierz adnotację, i nie jest wyświetlany obraz Austin")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 

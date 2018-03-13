@@ -6,17 +6,13 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 165313fb0150c2d9832566d5bc32842722b0a039
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Jakie opcje pomocy technicznej są dostępne dla platformy Xamarin?
-
-## <a name="overview"></a>Omówienie
-- [Podsumowanie opcji pomocy technicznej](#Summary_of_Support_Options)
-- [Szczegółowe zalecenia](#Detailed_Recommendations)
 
 ## <a name="summary-of-support-options"></a>Podsumowanie opcji pomocy technicznej
 
@@ -46,6 +42,8 @@ Jak pokazano na [strony pomocy technicznej Xamarin](https://www.xamarin.com/supp
 </table>
 
 Zespół pomocy technicznej Xamarin pomaga monitorować każdą z tych opcji.  Firma Microsoft zachęca wszystkich użytkowników do ich współtworzenia przemyślane pytania oraz zalet i zwiększyć wiedzę społeczności deweloperów platformy Xamarin raporty.  Pod względem wad podejrzanych Pamiętaj przesyłać raporty błędów, jeśli to możliwe upewnić się, że problemy są śledzone formalnie przez zespół inżynieryjny Xamarin.
+
+<a name="Visual_Studio_email_support_incidents_for_Xamarin_topics"/>
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio e-mail obsługę zdarzeń tematy Xamarin
 
@@ -95,7 +93,7 @@ Sprawdź [o usterce na platformy Xamarin w Bugzilla](https://bugzilla.xamarin.co
 
 Dla społeczności dyskusji o znane problemy i obejścia tego problemu możesz wysłać zapytanie do odpowiedniego forum podglądu:
 
--   [Xamarin Player na żywo](https://forums.xamarin.com/categories/live-player)
+-   [Xamarin Live Player](https://forums.xamarin.com/categories/live-player)
 -   Podglądy powiązania zestawu SDK dla nowej wersji systemu Android, iOS i macOS zestawów SDK, można znaleźć w odpowiedniej wersji ogłoszeniu o wersji zapoznawczej w [Xamarin.Android](http://forums.xamarin.com/categories/android), [Xamarin.iOS](http://forums.xamarin.com/categories/ios), lub [Xamarin.Mac ](http://forums.xamarin.com/categories/mac) forum.
 -   W przypadku innych funkcji w wersji zapoznawczej Przeglądaj w poszukiwaniu odpowiednich anonsu wersji w [wersja wstępna & wersje beta](http://forums.xamarin.com/categories/xamarin-prerelease) forum.  Lub jeśli nie ma żadnych pasujących anonsu, możesz podnieść pytanie we własnym wątku, w tym forum.
 

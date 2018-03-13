@@ -7,11 +7,11 @@ ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b279f3e643e008e88b8ad086c400d992427c6df4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>Wprowadzenie do MonoTouch.Dialog
 
@@ -20,7 +20,7 @@ _MonoTouch.Dialog (patrz hasło MT. D) zestaw narzędzi jest niezbędne framewor
 
 MonoTouch.Dialog, określany jako patrz hasło MT. D skrócie, jest szybkie toolkit programowanie interfejsu użytkownika, który umożliwia deweloperom tworzenie ekranów w aplikacji i nawigacji przy użyciu informacji zamiast konieczność powtarzania tworzenia widoku kontrolerów, tabelach itp. Tak oferuje znaczne uproszczenie redukcji programowanie i kodu interfejsu użytkownika. Rozważmy na przykład poniższy zrzut ekranu:
 
- [ ![](images/image1.png "Rozważmy na przykład tego zrzutu ekranu")](images/image1.png)
+ [![](images/image1.png "Rozważmy na przykład tego zrzutu ekranu")](images/image1.png#lightbox)
 
 Następujący kod został użyty do definiowania tego cały ekran:
 
@@ -57,7 +57,7 @@ Na przykład za każdym razem, gdy tabeli jest potrzebny, źródła danych jest 
 PATRZ HASŁO MT. D upraszcza który hermetyzując cały ten kod w ogólnym interfejsem API potrzeby tworzenia tabeli. Udostępnia abstrakcję u góry tego interfejsu API, który umożliwia dla obiekt deklaratywne powiązanie składnię, która jeszcze łatwiejsze. W efekcie dostępnych dwóch interfejsów API w patrz hasło MT. D:
 
 -   **Interfejs API niskiego poziomu elementów** — *elementów interfejsu API* opiera się na tworzenie hierarchiczna drzewa elementów reprezentujących ekranów i ich elementy. Elementy interfejsu API zapewnia deweloperom większą elastyczność i kontroli w tworzeniu UI. Ponadto interfejs API elementów ma zaawansowana obsługa deklaratywne definicji za pomocą formatu JSON, co umożliwia obsługę zarówno deklaracji niezwykle szybka, jak również dynamiczne generowanie interfejsu użytkownika z serwera. 
--   **Ogólny API odbicia** — znanej także jako *powiązanie**interfejsu API* , w które klasy są opatrzoną wskazówek interfejsu użytkownika, a następnie patrz hasło MT. D automatycznie tworzy ekrany oparte na obiekty i zapewnia powiązanie między co jest wyświetlane (i opcjonalnie edytować) na ekranie i odpowiadającego obiektu kopii.   W powyższym przykładzie przedstawiono użycie interfejsu API odbicia. Ten interfejs API nie zapewnia precyzyjną kontrolę, który wykonuje elementów interfejsu API, ale zmniejsza złożoność jeszcze bardziej przez automatycznego tworzenia limit hierarchia elementów na podstawie atrybutów klasy. 
+-   **Ogólny API odbicia** — znanej także jako *powiązanie**interfejsu API* , w które klasy są opatrzoną wskazówek interfejsu użytkownika, a następnie patrz hasło MT. D automatycznie tworzy ekrany oparte na obiekty i zapewnia powiązanie między co jest wyświetlane (i opcjonalnie edytować) na ekranie i odpowiadającego obiektu kopii. W powyższym przykładzie przedstawiono użycie interfejsu API odbicia. Ten interfejs API nie zapewnia precyzyjną kontrolę, który wykonuje elementów interfejsu API, ale zmniejsza złożoność jeszcze bardziej przez automatycznego tworzenia limit hierarchia elementów na podstawie atrybutów klasy. 
 
 
 PATRZ HASŁO MT. D pochodzi spakowana z dużego zestawu wbudowane elementy interfejsu użytkownika dla tworzenia ekranu, ale również rozpoznaje potrzebę elementy niestandardowe i układów ekranu Zaawansowane. Tak rozszerzalności jest najwyższej jakości umieszczony wypalanej do interfejsu API. Deweloperzy można rozszerzyć istniejące elementy lub utworzyć nowe i bezproblemowo zintegrować.
@@ -94,13 +94,13 @@ A *elementów RootElement* jest kontenerem najwyższego poziomu dla elementów, 
 
 Sekcja jest grupą komórek w tabeli. Zgodnie z sekcją normalne tabeli, można opcjonalnie stosować nagłówku i stopce strony, która może być tekstem lub nawet niestandardowe widoki, tak jak poniższy zrzut ekranu:
 
- [ ![](images/image2.png "Zgodnie z sekcją normalne tabeli, można opcjonalnie stosować nagłówku i stopce strony, która może być tekstem lub nawet niestandardowe widoki, tak jak tego zrzutu ekranu")](images/image2.png)
+ [![](images/image2.png "Zgodnie z sekcją normalne tabeli, można opcjonalnie stosować nagłówku i stopce strony, która może być tekstem lub nawet niestandardowe widoki, tak jak tego zrzutu ekranu")](images/image2.png#lightbox)
 
 ### <a name="element"></a>Element
 
 Element reprezentuje rzeczywisty komórka w tabeli. PATRZ HASŁO MT. D pochodzi spakowana wiele różnych elementów reprezentujących różne typy danych lub różnych danych wejściowych. Na przykład poniższe zrzuty ekranu przedstawiają kilka dostępnych elementów:
 
- [ ![](images/image3.png "Na przykład tego zrzuty ekranu przedstawiają kilka dostępnych elementów")](images/image3.png)
+ [![](images/image3.png "Na przykład tego zrzuty ekranu przedstawiają kilka dostępnych elementów")](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>Więcej na sekcje i RootElements
 
@@ -112,7 +112,7 @@ Co najmniej jeden elementów RootElement jest wymagany do uruchamiania procesu M
 
 Jeśli elementów RootElement zostanie zainicjowany z wartością/sekcja ta wartość jest używana do lokalizowania element podrzędny elementu, które będzie dostarczać Podsumowanie konfiguracji, który jest renderowany po prawej stronie ekranu. Na przykład poniższy zrzut ekranu przedstawia tabeli po lewej stronie z komórki zawierającej tytuł ekranu szczegółów po prawej stronie "Deserowe", wraz z wartością pustynia wybrane.
 
- [ ![](images/image4.png "Ten zrzut ekranu przedstawia tabeli po lewej stronie z komórki zawierającej tytuł ekranu szczegółów po prawej stronie, deserowe, wraz z wartością wybranego pustynia") ](images/image4.png) [ ![ ] (images/image5.png "to Poniższy zrzut ekranu przedstawia tabeli po lewej stronie z komórki zawierającej tytuł ekranu szczegółów po prawej stronie, deserowe, wraz z wartością wybranego pustynia")](images/image5.png)
+ [![](images/image4.png "Ten zrzut ekranu przedstawia tabeli po lewej stronie z komórki zawierającej tytuł ekranu szczegółów po prawej stronie, deserowe, wraz z wartością wybranego pustynia") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Poniższy zrzut ekranu przedstawia tabeli po lewej stronie z komórki zawierającej tytuł ekranu szczegółów po prawej stronie, deserowe, wraz z wartością wybranego pustynia")](images/image5.png#lightbox)
 
 Elementy główne można również wewnątrz sekcji do wyzwolenia ładowania nowej strony konfiguracji zagnieżdżonych, zgodnie z powyższym. Gdy jest używany w tym trybie podpis podany jest używany podczas renderowania wewnątrz sekcji i jest również używany jako tytuł dla podstrony. Na przykład:
 
@@ -195,7 +195,7 @@ var taskElement = new RootElement (task.Name){
 
 Ten kod tworzy interfejsu użytkownika, jak pokazano poniżej. Aby uzyskać pełny przewodnik, w tym przykładzie, zobacz [elementów interfejsu API wskazówki](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) samouczka.
 
- [ ![](images/image6.png "W połączeniu z właściwością Element.Value, wywołania zwrotnego można pobrać wartość ustawiona w innych elementów")](images/image6.png)
+ [![](images/image6.png "W połączeniu z właściwością Element.Value, wywołania zwrotnego można pobrać wartość ustawiona w innych elementów")](images/image6.png#lightbox)
 
 Gdy użytkownik naciśnie dolnej komórki tabeli, kod w funkcji anonimowej wykonuje, zapisu wartości z `element` wystąpienie do **danych wyjściowych aplikacji** konsoli w programie Visual Studio dla komputerów Mac.
 
@@ -216,7 +216,7 @@ Ta wartość jest stosowana dla wszystkich elementów, które są częścią Mon
 
 A `StringElement` zawiera podpis po lewej stronie komórki tabeli i wartości ciągu, po prawej stronie komórki.
 
- [ ![](images/image7.png "StringElement zawiera podpis po lewej stronie komórki tabeli i wartości ciągu, po prawej stronie komórki")](images/image7.png)
+ [![](images/image7.png "StringElement zawiera podpis po lewej stronie komórki tabeli i wartości ciągu, po prawej stronie komórki")](images/image7.png#lightbox)
 
 Aby użyć `StringElement` jako przycisk, podaj delegata.
 
@@ -227,25 +227,25 @@ new StringElement (
 , null, "ok", null).Show(); })
 ```
 
- [ ![](images/image8.png "Aby użyć StringElement jako przycisk, podaj delegata")](images/image8.png)
+ [![](images/image8.png "Aby użyć StringElement jako przycisk, podaj delegata")](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>Element styl ciągu
 
 A `StyledStringElement` umożliwia ciągi przedstawiane albo style komórki tabeli wbudowanych lub niestandardowych formatowania.
 
- [ ![](images/image9.png "StyledStringElement umożliwia ciągi przedstawiane albo style komórki tabeli wbudowanych lub niestandardowych formatowania")](images/image9.png)
+ [![](images/image9.png "StyledStringElement umożliwia ciągi przedstawiane albo style komórki tabeli wbudowanych lub niestandardowych formatowania")](images/image9.png#lightbox)
 
 `StyledStringElement` Pochodną klasy `StringElement`, ale umożliwia deweloperom dostosowywanie niewielki podzbiór właściwości, takie jak czcionkę, kolor tekstu, kolor tła komórki, tryb podziału wiersza, liczba wierszy do wyświetlenia, i czy element akcesoriów powinien być wyświetlany.
 
 ### <a name="multiline-element"></a>Wielowierszowy Element
 
- [ ![](images/image10.png "Wielowierszowy Element")](images/image10.png)
+ [![](images/image10.png "Wielowierszowy Element")](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Entry Element
 
 `EntryElement`, Jak nazwa oznacza, jest używany do pobierania danych wejściowych użytkownika. Obsługuje ona regularne ciągów lub haseł, w którym znaki są ukryte.
 
- [ ![](images/image11.png "EntryElement jest używany do pobierania danych wejściowych użytkownika")](images/image11.png)
+ [![](images/image11.png "EntryElement jest używany do pobierania danych wejściowych użytkownika")](images/image11.png#lightbox)
 
 Jest on inicjowany z trzech wartości:
 
@@ -268,11 +268,11 @@ Ponadto `KeyboardType` właściwość można ustawić w czasie tworzenia styl ty
 
 ### <a name="boolean-element"></a>Boolean — Element
 
- [ ![](images/image12.png "Boolean — Element")](images/image12.png)
+ [![](images/image12.png "Boolean — Element")](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>Element pola wyboru
 
- [ ![](images/image13.png "Element pola wyboru")](images/image13.png)
+ [![](images/image13.png "Element pola wyboru")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>Element opcji
 
@@ -282,7 +282,7 @@ A `RadioElement` wymaga `RadioGroup` określonych w `RootElement`.
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
 ```
 
- [ ![](images/image14.png "RadioElement wymaga RadioGroup określonych w elementów RootElement")](images/image14.png)
+ [![](images/image14.png "RadioElement wymaga RadioGroup określonych w elementów RootElement")](images/image14.png#lightbox)
 
  `RootElements` są również używane do koordynowania radiowych elementów. `RadioElement` Członkowie mogą znajdować się na wiele sekcji (na przykład do zaimplementowania polecenie podobne do następującego selektora sygnału pierścień i oddzielne pierścień niestandardowych dźwięków z dzwonków systemu). Widok podsumowania wyświetli obecnie wybranego elementu opcji. Aby użyć tej funkcji, należy utworzyć `RootElement` z konstruktorem grupy, jak to:
 
@@ -294,15 +294,15 @@ Nazwa grupy w `RadioGroup` służy do wyświetlenia, wybranej wartości na stron
 
 ### <a name="badge-element"></a>Element wskaźnika
 
- [ ![](images/image15.png "Element wskaźnika")](images/image15.png)
+ [![](images/image15.png "Element wskaźnika")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float — Element
 
- [ ![](images/image16.png "Float — Element")](images/image16.png)
+ [![](images/image16.png "Float — Element")](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>Element działania
 
- [ ![](images/image17.png "Element działania")](images/image17.png)
+ [![](images/image17.png "Element działania")](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>Data — Element
 
@@ -310,35 +310,35 @@ Nazwa grupy w `RadioGroup` służy do wyświetlenia, wybranej wartości na stron
 
 Po wybraniu komórki odpowiadające DateElement wyboru daty są prezentowane w sposób przedstawiony poniżej:
 
- [ ![](images/image19.png "Po wybraniu komórki odpowiadające DateElement wyboru daty są prezentowane, jak pokazano")](images/image19.png)
+ [![](images/image19.png "Po wybraniu komórki odpowiadające DateElement wyboru daty są prezentowane, jak pokazano")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time Element
 
- [ ![](images/image20.png "Time Element")](images/image20.png)
+ [![](images/image20.png "Time Element")](images/image20.png#lightbox)
 
 Po wybraniu komórki odpowiadające TimeElement selektora czasu są prezentowane w sposób przedstawiony poniżej:
 
- [ ![](images/image21.png "Zaznaczenie komórki odpowiadające TimeElement selektora czasu są prezentowane, jak pokazano")](images/image21.png)
+ [![](images/image21.png "Zaznaczenie komórki odpowiadające TimeElement selektora czasu są prezentowane, jak pokazano")](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>DateTime Element
 
- [ ![](images/image22.png "DateTime Element")](images/image22.png)
+ [![](images/image22.png "DateTime Element")](images/image22.png#lightbox)
 
 Po wybraniu komórki odpowiadające DateTimeElement selektora daty i godziny są prezentowane w sposób przedstawiony poniżej:
 
- [ ![](images/image23.png "Po wybraniu komórki odpowiadające DateTimeElement selektora daty i godziny są prezentowane, jak pokazano")](images/image23.png)
+ [![](images/image23.png "Po wybraniu komórki odpowiadające DateTimeElement selektora daty i godziny są prezentowane, jak pokazano")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML Element
 
- [ ![](images/image24.png "HTML Element")](images/image24.png)
+ [![](images/image24.png "HTML Element")](images/image24.png#lightbox)
 
 `HTMLElement` Wyświetla wartość jego `Caption` właściwość w komórce tabeli. Wybrana, gdzie `Url` przypisana do elementu jest ładowany w `UIWebView` kontroli, jak pokazano poniżej:
 
- [ ![](images/image25.png "Gdzie zaznaczone, adres Url przypisane do elementu jest ładowany w formancie UIWebView, jak pokazano poniżej")](images/image25.png)
+ [![](images/image25.png "Gdzie zaznaczone, adres Url przypisane do elementu jest ładowany w formancie UIWebView, jak pokazano poniżej")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>Element wiadomości
 
- [ ![](images/image26.png "Element wiadomości")](images/image26.png)
+ [![](images/image26.png "Element wiadomości")](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>Załaduj Element więcej
 

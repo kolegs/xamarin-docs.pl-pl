@@ -3,16 +3,16 @@ title: "Łączenie aplikacji w systemie Android"
 description: "W tym przewodniku będzie omawiać jak system Android 6.0 obsługuje aplikacji łączenia, metody, która umożliwia aplikacji mobilnych odpowiedzieć na adresy URL w witrynach sieci Web. Przedstawimy jakie łączenie aplikacji jest implementowania łączenie aplikacji w aplikacji systemu Android w wersji 6.0 i konfigurowania witryny sieci Web, aby udzielić uprawnień do aplikacji mobilnej dla domeny."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
+ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 726890e48407dd26f52c5aeaecf4eab51dcc5182
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-linking-in-android"></a>Łączenie aplikacji w systemie Android
 
@@ -84,7 +84,7 @@ Android zweryfikuje co hosta, który jest identyfikowany przez filtry konwersji 
 System android 6.0 łączenie aplikacji wymaga, sprawdź, czy Android skojarzenia między aplikacją a witryny sieci Web przed ustawieniem aplikacji jako domyślny program obsługi dla identyfikatora URI. Weryfikacji wystąpi podczas instalowania aplikacji. *Łącza zasobów cyfrowych* plik jest plikiem JSON hostowanej przez odpowiednie webdomain(s).
 
 > [!NOTE]
-> **Uwaga:** `android:autoVerify` atrybut musi być ustawiony przez filtr konwersji &ndash; w przeciwnym razie Android nie przeprowadza weryfikacji.
+> `android:autoVerify` Atrybut musi być ustawiony przez filtr konwersji &ndash; w przeciwnym razie Android nie przeprowadza weryfikacji.
 
 Umieszcza plik webmastera domeny w lokalizacji **https://domain/.well-known/assetlinks.json**.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 83ba2df0c50d37476ae5c06b4234cdc0ad063332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 174d1cf974c39420b932d494d5b28c62d7fd1eb1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -22,7 +22,7 @@ Podpisywanie kodu i inicjowania obsługi administracyjnej z systemem iOS może b
 
 * Duże zespoły powinien zaniechania przy użyciu przycisku "Napraw problem" w programie Xcode, przedstawiono poniżej:
 
-    [![](troubleshooting-images/fixissue.png "Okno dialogowe rozwiązać problemy")](troubleshooting-images/fixissue.png)
+    [![](troubleshooting-images/fixissue.png "Okno dialogowe rozwiązać problemy")](troubleshooting-images/fixissue.png#lightbox)
 
     Spowoduje to utworzenie nowego profile inicjowania obsługi administracyjnej i certyfikatów. W najlepszym spowoduje to utworzenie profilu inicjowania obsługi administracyjnej za każdym razem, gdy członek zespołu kliknięciu, co powoduje disorganization przy użyciu profilów. W najgorszym przypadku będzie on odwoływanie certyfikatów dla wszystkich pozostałych użytkowników w firmie, powodując swoje aplikacje przestaną działać.
 

@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>Funkcje ziarna galaretki
 
 _Ten dokument zapewni wysokiego poziomu omówienie nowych funkcji dla deweloperów, które zostały wprowadzone w systemie Android 4.1. Te funkcje obejmują: powiadomienia, aktualizacji systemu Android światła udostępnianie duże pliki, aktualizacje do odnajdywania sieci multimedia, peer-to-peer, animacji, nowe uprawnienia rozszerzone._
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>Omówienie
@@ -31,21 +30,18 @@ Dodano obsługę dla odnajdywania usług sieci za pomocą funkcji Bonjour, archi
 
 Na koniec kilka nowe uprawnienia zostały dodane w systemie Android 4.1.
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>Wymagania
 
 Do tworzenia aplikacji platformy Xamarin.Android przy użyciu ziarna galaretki wymaga platformy Xamarin.Android 4.2.6 lub nowszej i Android 4.1 (16 poziom interfejsu API) można zainstalować za pomocą Android SDK Manager, jak pokazano na poniższym zrzucie ekranu:
 
-[![Wybieranie Android 4.1 w Menedżerze zestawu SDK systemu Android](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![Wybieranie Android 4.1 w Menedżerze zestawu SDK systemu Android](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>Nowości
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animacji
@@ -79,7 +75,6 @@ animator.Start();
 
 Jako `TimeAnimator` jest uruchomione wystąpienie, jego wywoła `ITimeAnimator.ITimeListener`, który następnie będzie rejestrować jak długo zresztą została uruchomiona i jak długo go jako zostały od czasu ostatniego metoda została wywołana.
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>Aplikacja stos nawigacji
@@ -98,7 +93,6 @@ Aby uzyskać bardziej złożonymi scenariuszami istnieją nowych metod w klasie 
 -   `OnCreateNavigateUpTaskStack` — Ta metoda zostanie przesłonięta, gdy jest konieczne mają pełną kontrolę nad tworzenia syntetycznych stosu.
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>Aparat fotograficzny
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>Łączność
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android Beam
 
 Android światła to technologia NFC na podstawie, która umożliwia dwa urządzenia z systemem Android do komunikowania się ze sobą. Android 4.1 oferuje lepszą obsługę transferu dużych plików. Korzystając z nowej metody `NfcAdapter.SetBeamPushUris()` Android będzie przełączać się między mechanizmów transportu alternatywne (takie jak połączenia Bluetooth) do uzyskania szybkości szybkiego transferu.
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>Odnajdowanie usługi
@@ -173,14 +164,12 @@ Aby utworzyć usługę, która może być używane przez inne usługi `NsdServic
 
 Do odnajdywania usług sieci i stosowania `Nsd.DiscoveryListener` przekazany do `NsdManager.discoverServices()`.
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>Użycie sieci
 
 Nowa metoda `ConnectivityManager.IsActiveNetworkMetered` umożliwia urządzenia sprawdzić, czy jest dołączone do sieci taryfowej. Ta metoda może służyć pomagające w zarządzaniu wykorzystanie danych przez dokładnie informowania użytkowników czy może być kosztowne opłat za operacje na danych.
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>Odnajdowanie usługi sieci Wi-Fi Direct
@@ -195,14 +184,12 @@ W ziarna galaretki `WifiP2pManager` można wykrywanie pobliskich urządzeń przy
 -   `SetUpnpServiceResponseListener()` — Ta metoda służy do rejestrowania wywołań zwrotnych do wywołania po otrzymaniu odpowiedzi na żądania odnajdywania Upnp.
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>Dostawców zawartości
 
 `ContentResolver` Klasy otrzymała nową metodę `AcquireUnstableContentProvider`. Ta metoda umożliwia aplikacji w celu uzyskania "niestabilny" dostawcy zawartości. Zwykle gdy aplikacja uzyskuje dostawcy zawartości, tego dostawcy zawartości ulegnie awarii, więc zostanie aplikacji. Aplikacja z wywołanie tej metody nie ulegnie awarii, jeśli wystąpiła awaria dostawcy zawartości. Zamiast tego `Android.OS.DeadObjectionException` zostanie zgłoszony z wywołań w dostawcy zawartości do informowania aplikacja dostawcy zawartości przeszedł do optymalizacji. "Niestabilny" dostawcy zawartości jest przydatne, gdy interakcji z dostawców zawartości z innych aplikacji — jest mniej prawdopodobne, że buggy kod z innej aplikacji będzie miało wpływ na inną aplikację.
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>Kopiowanie i wklejanie w lokalizacji docelowych
@@ -214,14 +201,11 @@ W ziarna galaretki `WifiP2pManager` można wykrywanie pobliskich urządzeń przy
 -   **Identyfikator URI** — może to być dowolny identyfikator URI, takich jak HTTP zakładki lub identyfikator URI do dostawcy zawartości.
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>Izolowane usługi
 
 Izolowane usługi to usługa, która zostanie uruchomiona w ramach własnej specjalny proces i nie ma uprawnień własnych. Tylko komunikacja z usługą jest podczas uruchamiania usługi i powiązanie go za pomocą interfejsu API usługi. Można zadeklarować jako izolowane usługi przez ustawienie właściwości `IsolatedProcess="true"` w `ServiceAttribute` który adorns klasy usługi.
-
- <a name="Media" />
 
 
 ### <a name="media"></a>Nośnik
@@ -245,7 +229,6 @@ Następujące nowe klasy zapewniają stosowanie standardowych mechanizmów i int
 -   `MediaRouterActionProvider` i `MediaRouteButton` — te klasy zapewnić spójny interfejs użytkownika wyboru i odtwarzania multimediów.
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>Powiadomienia
@@ -255,26 +238,25 @@ Android 4.1 umożliwia aplikacjom większą elastyczność i formantu o wyświet
 -   `Notification.BigPictureStyle` — To jest klasa pomocy, która spowoduje wygenerowanie powiadomień, które mają obrazu w nich. Na poniższej ilustracji przedstawiono przykład powiadomienia o duży obraz:
 
 
- [ ![Zrzut ekranu BigPictureStyle powiadomienia](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![Zrzut ekranu BigPictureStyle powiadomienia](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` — To jest klasa pomocy, która spowoduje wygenerowanie powiadomień, które mają wiele wierszy tekstu, na przykład wiadomości e-mail. Przykładem tego nowego stylu powiadomienia są widoczne na poniższym zrzucie ekranu:
 
 
- [ ![Zrzut ekranu BigTextStyle powiadomienia](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![Zrzut ekranu BigTextStyle powiadomienia](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` — To jest klasa pomocy, która spowoduje wygenerowanie powiadomienia, które zawierają listę ciągów, takich jak wstawki z wiadomości e-mail, jak pokazano w tym zrzut ekranu:
 
 
- [ ![Zrzut ekranu Notification.InboxStyle powiadomienia](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Zrzut ekranu Notification.InboxStyle powiadomienia](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 Istnieje możliwość dodanie maksymalnie dwóch przycisków akcji w dolnej części komunikatu powiadomienia powiadomienie jest przy użyciu stylu normalnym lub większy.
 Na przykład widać na poniższym zrzucie ekranu, gdy przycisków akcji są widoczne w dolnej części powiadomienia:
 
- [ ![Zrzut ekranu przycisków akcji wyświetlone poniżej komunikatu powiadomienia](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![Zrzut ekranu przycisków akcji wyświetlone poniżej komunikatu powiadomienia](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 `Notification` Klasy otrzymał nowy stałe, które umożliwiają deweloperom Określ jeden z pięciu poziomów priorytet dla powiadomienia. Te opcje można ustawić na powiadomienia za pomocą `Priority` właściwości.
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>Uprawnienia
@@ -290,7 +272,6 @@ Dodano następujące nowe uprawnienia:
 
 Ważne zmiany, należy pamiętać, `READ_EXTERNAL_STORAGE` — obecnie to uprawnienie jest automatycznie przyznawane przez system Android. Przyszłych wersji systemu android wymaga aplikacji, aby zażądać tego uprawnienia przed uprawnienie.
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>Podsumowanie

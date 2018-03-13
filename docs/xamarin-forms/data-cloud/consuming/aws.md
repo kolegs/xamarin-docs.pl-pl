@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 590e39deb7972df9e45064bb1a96e533a1fc9856
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Korzystanie z usługi Amazon SimpleDB
 
@@ -141,7 +141,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync` Metoda przyjmuje `SelectRequest` wystąpienia jako parametr, który określa `Select` zapytania wyrażenie w jego `SelectExpression` właściwości. Format wyrażenia zapytania jest podobny do formatu standardowych SQL `SELECT` instrukcji. Aby uzyskać więcej informacji na temat wyrażenia zapytania, zobacz [przy użyciu umożliwia tworzenie kwerend SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) w witrynie sieci Web firmy Amazon.
 
 > [!NOTE]
-> **Uwaga**: należy zachować ostrożność, postępuj zgodnie z regułami quoting podczas tworzenia wyrażenia zapytania. Aby uzyskać więcej informacji, zobacz [Wybierz reguły zamykający](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) w witrynie sieci Web firmy Amazon.
+> Należy zachować ostrożność, postępuj zgodnie z regułami quoting podczas tworzenia wyrażenia zapytania. Aby uzyskać więcej informacji, zobacz [Wybierz reguły zamykający](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) w witrynie sieci Web firmy Amazon.
 
 `SelectAsync` Metoda zwraca odpowiedź zawierający kolekcję elementów i skojarzonych z nimi atrybutów, które pasują do wyrażenia zapytania. Ta kolekcja jest następnie konwertowana na `List` z `TodoItem` wystąpień do wyświetlenia.
 

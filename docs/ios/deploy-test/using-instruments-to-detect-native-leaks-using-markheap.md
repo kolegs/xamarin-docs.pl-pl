@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fec6fca0bf7930a59a6927557786a3ed7a412da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a5dc7839b1669e51e79efc0f02111eae8987b95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilowanie aplikacji platformy Xamarin.iOS z dokumentów
 
@@ -38,13 +38,13 @@ Wybierz urządzenie i uruchamianie aplikacji dokumentów:
 
 Dokumenty teraz otworzyć i wyświetlić to okno dialogowe:
 
- [ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Wybieranie szablonów profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Wybieranie szablonów profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 Kliknij, aby wybrać **alokacji** szablonu. Inne szablony są prawidłowe, jednak w tym artykule omówiono tylko **alokacji** szablonu profilu.
 
 Następnie wybierz urządzenie i aplikacji przy użyciu menu w górnej części okna:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Wybierz urządzenia i aplikacji")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Wybierz urządzenia i aplikacji")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 Urządzenia z systemem iOS powinna być wybrana w menu u góry okna i należy wybrać aplikację do profilowania obok niej (**MemoryDemo** na zrzucie ekranu powyżej).
 
@@ -52,13 +52,13 @@ Jeśli urządzenie nie jest wymieniony w obszarze w menu, sprawdź **konsoli** w
 
 Kliknij przycisk **wybierz** przycisk i następnym ekranie powinien zostać wyświetlony:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Interfejs profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Interfejs profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 Kliknij przycisk rekordu (czerwone kółko w lewym górnym) do uruchomienia profilowania.
 
 Poniższy zrzut ekranu przedstawia przykład profilowanie przy użyciu **instrumentów**:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Przykład profilowania za pomocą dokumentów")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Przykład profilowania za pomocą dokumentów")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 

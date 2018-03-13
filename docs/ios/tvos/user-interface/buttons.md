@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 05a162dab3b427ec345f22818b6c6d9df82c498b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-buttons"></a>Praca z przycisków
 
@@ -21,7 +21,7 @@ _Ten artykuł obejmuje projektowanie i Praca z przycisków wewnątrz aplikacji X
 
 Użyj wystąpienia `UIButton` klasy w celu utworzenia focusable, wybranie przycisku w oknie systemu tvOS. Gdy użytkownik wybierze przycisk, wysyła komunikat akcji do obiektu docelowego Zezwalaj wejściowych użytkownika Xamarin.tvOS aplikacji odpowiadanie na żądania użytkownika.
 
-[ ![](buttons-images/buttons01.png "Przykład przycisków")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Przykład przycisków")](buttons-images/buttons01.png#lightbox)
 
 Aby uzyskać więcej informacji dotyczących pracy z fokusem ani nawigować za pomocą zdalnego Siri, zobacz nasze [Praca z nawigacji i skoncentrować się](~/ios/tvos/app-fundamentals/navigation-focus.md) i [Siri zdalnego oraz kontrolerów Bluetooth](~/ios/tvos/platform/remote-bluetooth.md) dokumentacji.
 
@@ -31,7 +31,7 @@ Aby uzyskać więcej informacji dotyczących pracy z fokusem ani nawigować za p
 
 W systemu tvOS przyciski są używane przez akcje specyficzny dla aplikacji i może zawierać tytuł, ikony lub obu. Jako użytkownik nawiguje przy użyciu interfejsu użytkownika aplikacji [zdalnego Siri](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote), otrzymuje fokus przycisku danego, dzięki czemu zmienić kolory tła i tekstu. Cień jest również stosowany do przycisk dodawania efekt 3W ją do wzrostu powyżej pozostała część interfejsu użytkownika.
 
-[ ![](buttons-images/buttons01.png "Przykład przycisków")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Przykład przycisków")](buttons-images/buttons01.png#lightbox)
 
 Apple ma poniższe sugestie dotyczące pracy z przycisków:
 
@@ -70,19 +70,19 @@ Najprostszym sposobem, aby pracować z przycisków w aplikacji Xamarin.tvOS jest
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **przycisk** z **biblioteki** i upuść go w widoku: 
 
-    [ ![](buttons-images/storyboard01.png "Przycisk")](buttons-images/storyboard01.png)
+    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
 1. W **Explorer właściwości**, można dostosować kilka właściwości przycisku, takie jak jego **tytuł** i **kolor tekstu**: 
 
-    [ ![](buttons-images/storyboard02.png "Właściwości przycisku")](buttons-images/storyboard02.png)
+    [![](buttons-images/storyboard02.png "Właściwości przycisku")](buttons-images/storyboard02.png#lightbox)
 1. Następnie należy przełączyć się do **kartę zdarzenia** oraz przewodowy **zdarzeń** z **przycisk** i nadaj mu `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03.png "Na karcie zdarzenia")](buttons-images/storyboard03.png)
+    [![](buttons-images/storyboard03.png "Na karcie zdarzenia")](buttons-images/storyboard03.png#lightbox)
 1. Użytkownik zostanie automatycznie przełączona na `ViewController.cs` umieszczane nową akcję w kodzie za pomocą widoku **się** i **dół** klawisze strzałek: 
 
-    [ ![](buttons-images/storyboard04.png "Umieszczenie nową akcję w kodzie")](buttons-images/storyboard04.png)
+    [![](buttons-images/storyboard04.png "Umieszczenie nową akcję w kodzie")](buttons-images/storyboard04.png#lightbox)
 1. Naciśnij klawisz **Enter** aby wybrać lokalizację: 
 
-    [ ![](buttons-images/storyboard05.png "Edytor kodu")](buttons-images/storyboard05.png)
+    [![](buttons-images/storyboard05.png "Edytor kodu")](buttons-images/storyboard05.png#lightbox)
 1. Zapisz zmiany do wszystkich plików.
 
 
@@ -91,13 +91,13 @@ Najprostszym sposobem, aby pracować z przycisków w aplikacji Xamarin.tvOS jest
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **przycisk** z **biblioteki** i upuść go w widoku: 
 
-    [ ![](buttons-images/storyboard01vs.png "Przycisk")](buttons-images/storyboard01vs.png)
+    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
 1. W **Explorer właściwości**, można dostosować kilka właściwości przycisku, takie jak jego **tytuł** i **kolor tekstu**: 
 
-    [ ![](buttons-images/storyboard02vs.png "W Eksploratorze właściwości")](buttons-images/storyboard02vs.png)
+    [![](buttons-images/storyboard02vs.png "W Eksploratorze właściwości")](buttons-images/storyboard02vs.png#lightbox)
 1. Następnie należy przełączyć się do **kartę zdarzenia** oraz przewodowy **zdarzeń** z **przycisk** i nadaj mu `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03vs.png "Na karcie zdarzenia")](buttons-images/storyboard03vs.png)
+    [![](buttons-images/storyboard03vs.png "Na karcie zdarzenia")](buttons-images/storyboard03vs.png#lightbox)
 1. Zapisz zmiany do wszystkich plików.
 
 
@@ -270,7 +270,7 @@ W tym artykule pokrywającego projektowanie i Praca z przycisków wewnątrz apli
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Przykłady dla systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [systemu tvOS człowieka przewodniki — interfejs](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Przewodnik programowania w języku aplikacji dla systemu tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

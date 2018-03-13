@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>Konwertery wartości powiązania
 
@@ -95,7 +95,7 @@ Jeśli konwerter wartości jest używana na wielu stronach w aplikacji, można u
 
 **Włączyć przyciski** strony przedstawiono popularne potrzebne podczas `Button` wykonuje operację na podstawie tekstu, który użytkownik wpisze w `Entry` widoku. Jeśli nic nie zostało wpisane w `Entry`, `Button` powinny być wyłączone. Każdy `Button` zawiera wiązania z danymi na jego `IsEnabled` właściwości. Źródło danych — wiązanie jest `Length` właściwość `Text` właściwości odpowiadającego `Entry`. Jeśli `Length` właściwość nie jest zwraca konwerter wartości 0, `true` i `Button` jest włączona:
 
-[![Włącz przyciski](converters-images/enablebuttons-small.png "Włącz przyciski")](converters-images/enablebuttons-large.png "Włącz przyciski")
+[![Włącz przyciski](converters-images/enablebuttons-small.png "Włącz przyciski")](converters-images/enablebuttons-large.png#lightbox "Włącz przyciski")
 
 Zwróć uwagę, że `Text` właściwości w każdym `Entry` jest inicjowana na pusty ciąg. `Text` Jest właściwość `null` domyślnie i danych powiązania nie będzie działać w takiej sytuacji.
 
@@ -236,7 +236,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 W ciągu ostatnich trzech `Switch` i `Label` pary argumentów ogólnych ustawiono `Style`i całego `Style` obiekty są dostępne dla wartości `TrueObject` i `FalseObject`. Te zastąpienia niejawne styl `Label` ustawiona w słowniku zasobów, więc właściwości w stylu są jawnie przypisane do `Label`. Przełączanie `Switch` powoduje, że odpowiednie `Label` aby odzwierciedlić zmianę:
 
-[![Wskaźniki przełączania](converters-images/switchindicators-small.png "Wskaźniki przełącznika")](converters-images/switchindicators-large.png "Wskaźniki przełączania")
+[![Wskaźniki przełączania](converters-images/switchindicators-small.png "Wskaźniki przełącznika")](converters-images/switchindicators-large.png#lightbox "Wskaźniki przełączania")
 
 
 Istnieje również możliwość użycia [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) implementować podobne zmiany w interfejsie użytkownika oparte na innych widoków.
@@ -461,7 +461,7 @@ Wartości `Red` i `Green` właściwości są wyświetlane z `Binding` — rozsze
 
 W tym miejscu jest wynikiem:
 
-[![Selektor kolorów RGB](converters-images/rgbcolorselector-small.png "Selektor kolorów RGB")](converters-images/rgbcolorselector-large.png "Selektor kolorów RGB")
+[![Selektor kolorów RGB](converters-images/rgbcolorselector-small.png "Selektor kolorów RGB")](converters-images/rgbcolorselector-large.png#lightbox "Selektor kolorów RGB")
 
 
 

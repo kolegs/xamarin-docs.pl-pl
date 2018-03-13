@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e3139eb4c94264c91307f6f8a69b183f3bf7fa6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4917eafff020bb0e2d14a27d3c1a44d1d4087d7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-options"></a>Opcje układu
 
@@ -25,11 +25,11 @@ Istnieją dwa mechanizmy kontroli układ, gdy widok jest obracana:
 
 Gdy użytkownik zmienia rozmiar okna, takie jak kiedy urządzenie jest obracana i zmiany orientacji system będzie automatycznie zmieniać rozmiar widoków wewnątrz tego okna, zgodnie z regułami ich automatyczna zmiana rozmiaru. Te reguły można ustawić w języku C# przy użyciu `AutoresizingMask` właściwość `UIView` lub **konsoli właściwości** systemu IOS w projektancie, jak przedstawiono poniżej:
 
- [ ![](layout-options-images/image41.png "Visual Studio for Mac projektanta")](layout-options-images/image41.png)
+ [![](layout-options-images/image41.png "Visual Studio for Mac projektanta")](layout-options-images/image41.png#lightbox)
 
 Gdy jest wybrana kontrolka dzięki temu można ręcznie określić lokalizację i wymiarów kontrolki, a także wybór **automatyczna zmiana rozmiaru** zachowanie. Jak pokazano na poniższym zrzucie ekranu, możemy użyć w formancie automatyczna zmiana rozmiaru sprężyny i poprzeczne do definiowania relacji wybranego widoku do jego obiektu nadrzędnego:
 
- [ ![](layout-options-images/image42.png "Visual Studio for Mac projektanta")](layout-options-images/image42.png)
+ [![](layout-options-images/image42.png "Visual Studio for Mac projektanta")](layout-options-images/image42.png#lightbox)
 
 Dopasowywanie *spring* spowoduje, że widok, aby zmienić rozmiar na podstawie szerokości lub wysokości widoku nadrzędnym. Dopasowywanie *strut* spowoduje, że obsługa stałą odległość między sobą i widoku nadrzędnym, w szczególności krawędzi widoku.
 
@@ -43,7 +43,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 Aby przetestować ustawienia Automatyczna zmiana rozmiaru, Włącz różnych **orientacji urządzenia obsługiwane** opcje projektu:
 
- [ ![](layout-options-images/image43a.png "Ustawienia automatyczna zmiana rozmiaru")](layout-options-images/image43a.png)
+ [![](layout-options-images/image43a.png "Ustawienia automatyczna zmiana rozmiaru")](layout-options-images/image43a.png#lightbox)
 
 W kodzie możemy użyć poniższego kodu, co powoduje, że dwa formantami zmiany rozmiaru w poziomie:
 
@@ -56,11 +56,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 Możemy również dostosować formantów za pomocą projektanta. Wybieranie poprzeczne jako wystawiane poniżej spowoduje, że obraz, aby pozostać wyrównany bez przycinania u dołu widoku:
 
- [ ![](layout-options-images/autoresize.png "AutoRotation")](layout-options-images/autoresize.png)
+ [![](layout-options-images/autoresize.png "AutoRotation")](layout-options-images/autoresize.png#lightbox)
 
 Te zrzuty ekranu pokazują, jak formanty Zmienianie rozmiaru lub położenia sobie, podczas obracania ekranu:
 
- [ ![](layout-options-images/image44a.png "AutoRotation")](layout-options-images/image44a.png)
+ [![](layout-options-images/image44a.png "AutoRotation")](layout-options-images/image44a.png#lightbox)
 
 Widok tekstu i pola tekstowego zarówno rozciągają się, aby używać tego samego pozostałych natomiast prawy margines, ze względu na `FlexibleWidth` ustawienie. Obraz ma wartość górnego i lewego marginesu elastyczne, co oznacza, że zachowanie dolnej i prawego marginesu — mając na uwadze obrazu podczas obracania ekranu. Układy złożonych zwykle wymagają kombinacji tych ustawień na każdego formantu widoczne, aby zapewnić spójny interfejs użytkownika i zapobiec formantów z nakładającymi się granicami widoku zmiany (z powodu obrotu bądź inne zdarzenie zmiany rozmiaru).
 

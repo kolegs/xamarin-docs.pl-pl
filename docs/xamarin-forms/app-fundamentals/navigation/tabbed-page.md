@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 97ca114f1160168c7fd9439e31dc475bc37b0467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-page"></a>Strona z kartami
 
@@ -97,7 +97,7 @@ public class MainPageCS : TabbedPage
 [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Jest wypełniane przy użyciu dwóch podrzędnych [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) obiektów. Pierwszy element podrzędny jest [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpienia, a druga karta jest [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) zawierający `ContentPage` wystąpienia.
 
 > [!NOTE]
-> **Uwaga**: [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) nie obsługuje interfejsu użytkownika wirtualizacji. W związku z tym może mieć wpływ na wydajność `TabbedPage` zawiera zbyt wiele elementów podrzędnych.
+> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Nie obsługuje interfejsu użytkownika wirtualizacji. W związku z tym może mieć wpływ na wydajność `TabbedPage` zawiera zbyt wiele elementów podrzędnych.
 
 Pokaż poniższe zrzuty ekranu `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpienia, która jest wyświetlana na *dzisiaj* karty:
 

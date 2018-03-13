@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 29b405c61b745c26c74318243f75e5809ecfdd7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-references"></a>Natywny odwołań
 
@@ -78,13 +78,13 @@ Wykonaj krok jest wymagany do osadzenia struktury w projekcie platformy Xamarin.
 1. Utwórz nową ani otworzyć istniejącego projektu platformy Xamarin.iOS, Xamarin.Mac lub powiązanie.
 2. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Dodaj** > **Dodaj odwołanie do natywnego**: 
 
-    [ ![](native-references-images/ref01.png "W Eksploratorze rozwiązań kliknij prawym przyciskiem myszy nazwę projektu i wybierz opcję Dodaj odwołanie do natywnego")](native-references-images/ref01.png)
+    [![](native-references-images/ref01.png "W Eksploratorze rozwiązań kliknij prawym przyciskiem myszy nazwę projektu i wybierz opcję Dodaj odwołanie do natywnego")](native-references-images/ref01.png#lightbox)
 3. Z **Otwórz** oknie dialogowym Wybierz nazwę platformy natywnego Aby osadzić i kliknij przycisk **Otwórz** przycisk: 
 
-    [ ![](native-references-images/ref02.png "Wybierz nazwę natywnego Framework osadzania i kliknij przycisk Otwórz")](native-references-images/ref02.png)
+    [![](native-references-images/ref02.png "Wybierz nazwę natywnego Framework osadzania i kliknij przycisk Otwórz")](native-references-images/ref02.png#lightbox)
 4. Platformę zostaną dodane do drzewa projektu: 
 
-    [ ![](native-references-images/ref03.png "Platformę zostaną dodane do drzewa projektów")](native-references-images/ref03.png)
+    [![](native-references-images/ref03.png "Platformę zostaną dodane do drzewa projektów")](native-references-images/ref03.png#lightbox)
 
 Podczas kompilowania projektu natywnego Framework zostanie osadzony w pakiecie aplikacji.
 

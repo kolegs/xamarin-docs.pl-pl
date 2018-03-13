@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Rozwiązywanie problemów z emulatorem zestawu SDK systemu android
 
@@ -83,7 +83,7 @@ Aby rozwiązać ten problem, zobacz [sposób użycia sprzętu Intel przyspieszon
 
 Jeśli użytkownik nie ma być wyświetlany ostrzeżeń dotyczących wydajności, można je wyłączyć. W programie Visual Studio, kliknij przycisk **Narzędzia > Opcje > Xamarin > Ustawienia systemu Android** i Wyłącz **Ostrzegaj, jeśli przyspieszenie AVD nie jest obsługiwane (HAXM)** opcji:
 
-[![Wyłączanie AVD przyspieszenie ostrzeżenia](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![Wyłączanie AVD przyspieszenie ostrzeżenia](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -110,13 +110,11 @@ To okno dialogowe jest wyświetlane, gdy emulator nie powiedzie się z nieznanej
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>Rozwiązania typowych problemów
 
 Konfigurowanie zmiany do komputera lub zainstalować dodatkowe oprogramowanie, można rozwiązać wiele typowych problemów emulatora Android SDK. W poniższych sekcjach opisano te problemy i dostarczanie rozwiązań.
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>Problemy z wdrażaniem
 
@@ -142,7 +140,6 @@ Jeśli wystąpi błąd o błąd instalacji APK na emulatorze lub niepowodzenie u
 5. Jeśli emulator nie ma na liście, należy uruchomić **Android SDK Manager**, zastosuj wszystkie aktualizacje, a następnie spróbuj ponownie uruchomić emulatora.
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>Problemy z HAXM
 
@@ -162,7 +159,6 @@ HAXM mogą powodować konflikt z innymi technologiami używające funkcji wirtua
 
 - **Oprogramowanie antywirusowe** &ndash; Jeśli używasz oprogramowania antywirusowego, który używa wirtualizacji sprzętowej (na przykład Avast), wyłączyć lub odinstalować tego oprogramowania, ponowne uruchomienie komputera i spróbuj ponownie emulatora Android SDK.
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>Ustawienia systemu BIOS niepoprawne
 

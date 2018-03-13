@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 22a0b0f5df5a44f2409a59b26eb841b97c920d8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 771e1607bc4e6be8f0991e159b5d34f6d4ea9c02
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fonts"></a>Czcionki
 
@@ -181,7 +181,7 @@ Podczas określania krój czcionki niestandardowego, jest zawsze warto użyć `O
 
 Przy użyciu czcionki inne niż wbudowane krojów czcionek wymaga kodowania niektóre specyficzne dla platformy. Ten zrzut ekranu przedstawia niestandardowe czcionki **homara** z [czcionki open source firmy Google](https://www.google.com/fonts) renderowane w systemach iOS, Android i Windows Phone przy użyciu platformy Xamarin.Forms.
 
- [ ![Niestandardowe czcionki w systemach iOS i Android](fonts-images/custom-sml.png "przykład czcionki niestandardowe")](fonts-images/custom.png "przykład czcionki niestandardowe")
+ [![Niestandardowe czcionki w systemach iOS i Android](fonts-images/custom-sml.png "przykład czcionki niestandardowe")](fonts-images/custom.png#lightbox "przykład czcionki niestandardowe")
 
 Kroki wymagane dla poszczególnych platform są przedstawione poniżej. W przypadku dołączania plików niestandardowych czcionek z aplikacją, należy upewnić się, że licencja czcionki zezwala na dystrybucji.
 

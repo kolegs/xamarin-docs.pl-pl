@@ -4,14 +4,15 @@ description: "Tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu tr
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>Affine — przekształcenia
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 Poniżej przedstawiono niektóre przykładowe obrazy:
 
-[![](non-affine-images/testperspective-small.png "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")](non-affine-images/testperspective-large.png "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")
+[![](non-affine-images/testperspective-small.png "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")](non-affine-images/testperspective-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")
 
 Eksperymentując z suwaków przekonasz się, że wartości poza 0.0066 lub poniżej –0.0066 spowodować obrazu nagle i staną się fractured niespójne. Mapa bitowa transformacji jest kwadratowy 300 pikseli. Jest przekształcana względem jego Centrum, współrzędnych mapy bitowej w zakresie od –150 do 150. Odwołaj, która wartość z "jest:
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Oto kilka przykładów:
 
-[![](non-affine-images/tapertransform-small.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")](non-affine-images/tapertransform-large.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")
+[![](non-affine-images/tapertransform-small.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")](non-affine-images/tapertransform-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")
 
 Innym typem uogólniony-affine — przekształcenia jest obrotu 3W, które przedstawiono w kolejnym artykule [obrotów 3D](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
 Affine — przekształcenia można przekształcić prostokąta do dowolnego wypukłych Czworokąt. Wskazuje na **macierzy affine — nie pokazuj** strony. Jest bardzo podobny do **Pokaż podobne macierzy** strony z [macierzy transformacji](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) artykułu z tą różnicą, że ma ona czwarty `TouchPoint` obiekt do manipulowania czwarty rogu mapy bitowej:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")](non-affine-images/shownonaffinematrix-large.png "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")
+[![](non-affine-images/shownonaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")](non-affine-images/shownonaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")
 
 Tak długo, jak nie próbie kąta wewnątrz jednej narożników mapy bitowej większa niż 180 stopni, lub utworzyć dwa boki między sobą pomyślnie jest obliczana przy użyciu tej metody z transformacji [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) klasy:
 

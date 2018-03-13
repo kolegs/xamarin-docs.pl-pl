@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -212,11 +212,11 @@ Xamarin Profiler składa się z pięciu sekcji, jak przedstawiono poniżej:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "Profiler sekcje w programie Visual Studio dla komputerów Mac")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "Profiler sekcje w programie Visual Studio dla komputerów Mac")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "Profiler sekcje w programie Visual Studio")](images/profiler-vs.png)
+[![](images/profiler-vs.png "Profiler sekcje w programie Visual Studio")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ W górnej części profiler jest wykres alokacji, który przedstawia ilość pam
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/allocations1.png "Alokacje dokumentu")](images/allocations1.png) 
+[![](images/allocations1.png "Alokacje dokumentu")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "Alokacje dokumentu")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "Alokacje dokumentu")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Istnieją różne widoki danych w dokumencie alokacji, które umożliwiają dewe
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "Karta alokacji")](images/allocations3.png) 
+  [![](images/allocations3.png "Karta alokacji")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "Karta alokacji")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "Karta alokacji")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Widok inspektora alokacji zawiera opcje filtrowania i grupowania obiektów, zape
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "Karta drzewa wywołań")](images/allocations2.png) 
+  [![](images/allocations2.png "Karta drzewa wywołań")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "Karta drzewa wywołań")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "Karta drzewa wywołań")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Widok inspektora alokacji zawiera opcje filtrowania i grupowania obiektów, zape
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "Karta migawki")](images/allocations4.png) 
+  [![](images/allocations4.png "Karta migawki")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "Karta migawki")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "Karta migawki")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Wykres skrzynkowy jak pokazano na zrzucie ekranu poniżej, wyświetla liczbę pr
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Time Profiler Instrument](images/time1.png)](images/time1.png) 
+[![Time Profiler Instrument](images/time1.png)](images/time1.png#lightbox) 
 
-[![Czas Instrumentacji profilera — lista próbek](images/time3.png)](images/time3.png) 
+[![Czas Instrumentacji profilera — lista próbek](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Time Profiler Instrument](images/time1-vs.png)](images/time1-vs.png) 
+[![Time Profiler Instrument](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Czas Instrumentacji profilera — lista próbek](images/time3-vs.png)](images/time3-vs.png) 
+[![Czas Instrumentacji profilera — lista próbek](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Wykres skrzynkowy jak pokazano na zrzucie ekranu poniżej, wyświetla liczbę pr
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/time2.png "Czas Instrumentacji profilera — drzewo wywołań")](images/time2.png) 
+  [![](images/time2.png "Czas Instrumentacji profilera — drzewo wywołań")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "Czas Instrumentacji profilera — drzewo wywołań")](images/time2-vs.png) 
+  [![](images/time2-vs.png "Czas Instrumentacji profilera — drzewo wywołań")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ Przy użyciu języka C# i F # zarządzanego kodu może być dość często i Nie
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cykle dokumentu](images/cycles-vs.png)](images/time1-vs.png) 
+[![Cykle dokumentu](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ Jeśli profil aplikacji z dowolnej innej konfiguracji, zostanie wyświetlone nas
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Profilowanie okna dialogowego błędu](images/image001.png)](images/image001.png) 
+[![Profilowanie okna dialogowego błędu](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "Profilowanie okna dialogowego błędu")](images/image1vs.png) 
+[![](images/image1vs.png "Profilowanie okna dialogowego błędu")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ Jeśli profil aplikacji z dowolnej innej konfiguracji, zostanie wyświetlone nas
 Wybierz **aktualizacji** aby kontynuować.
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

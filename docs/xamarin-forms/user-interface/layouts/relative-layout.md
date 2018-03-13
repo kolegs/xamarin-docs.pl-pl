@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` Służy do pozycji i rozmiaru widoków względem właściwości układu lub element równorzędny widoków. W odróżnieniu od `AbsoluteLayout`, `RelativeLayout` nie ma koncepcji ruchomej zakotwiczenia i nie ma urządzeń do rozmieszczania elementów do dołu lub prawej krawędzi układu. `RelativeLayout` obsługuje położenia elementów poza granice własny.
 
-[ ![](relative-layout-images/layouts-sml.png "Układy platformy Xamarin.Forms")](relative-layout-images/layouts.png "układów platformy Xamarin.Forms")
+[![](relative-layout-images/layouts-sml.png "Układy platformy Xamarin.Forms")](relative-layout-images/layouts.png#lightbox "układów platformy Xamarin.Forms")
 
 ## <a name="purpose"></a>Cel
 
@@ -76,7 +76,7 @@ Należy uwzględnić następujące aspekty układu powyżej:
 - Pola `y` współrzędnych jest zdefiniowany jako połowie wysokości elementu nadrzędnego, -100.
 
 > [!NOTE]
-> **Uwaga**: ze względu na sposób ograniczeń, jest możliwe bardziej złożonych układów w języku C# nie można określić języka XAML.
+> Ze względu na sposób ograniczeń jest możliwość bardziej złożonych układów w języku C# nie można określić języka XAML.
 
 Obu powyższych przykładach definiowanie ograniczeń jako `RelativeToParent` &ndash; oznacza to, że ich wartości są względem elementu nadrzędnego. Istnieje również możliwość zdefiniowania ograniczenia jako względem innego widoku. To umożliwia układów bardziej intuicyjne (do deweloperów), a można wprowadzić bardziej dostrzegalne celem kodu układu.
 

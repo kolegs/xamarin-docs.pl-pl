@@ -4,14 +4,15 @@ description: "Dowiedz się, jak użyć SkiaSharp, aby zdefiniować Łuki na trzy
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysować łuk
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jak widać, zarówno Kąt początkowy, jak i kąta odchylenia można wykonywać na wartości ujemnych.
 
-[![](arcs-images/anglearc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuk kąt")](arcs-images/anglearc-large.png "Potrójna zrzut ekranu przedstawiający stronę łuk kąta")
+[![](arcs-images/anglearc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuk kąt")](arcs-images/anglearc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuk kąta")
 
 Takie podejście do generowania łuk jest algorithmically najprostszą i ułatwia pochodzi równania parametryczne, które opisują łuk. Znajomość rozmiar i położenie elipsy i kąty rozpoczęcia i odchylenia, punktu początkowego i końcowego łuku oblicza się przy użyciu prostego trygonometryczne:
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Nowy `SKPath` obiekt jest tworzony dla każdego wycinka koła. Ścieżka zawiera wiersza z Centrum, a następnie `ArcTo` do rysowania łuk, a inny powrót do Centrum wyników z `Close` wywołania. Ten program wyświetla wycinków koła "rozsunięty", przenosząc je wszystkie wylogowanie z Centrum 50 pikseli. To zadanie wymaga wektor w kierunku punkt środkowy kąta odchylenia każdy wycinek:
 
-[![](arcs-images/explodedpiechart-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")](arcs-images/explodedpiechart-large.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")
+[![](arcs-images/explodedpiechart-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")](arcs-images/explodedpiechart-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")
 
 Aby wyświetlić jego wyglądu bez "masowego", po prostu komentarz `Translate` wywołania:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez rozłożenie")](arcs-images/explodedpiechartunexploded-large.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez masowego")
+[![](arcs-images/explodedpiechartunexploded-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez rozłożenie")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez masowego")
 
 ## <a name="the-tangent-arc"></a>Arcus tangens
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 Oto **arcus tangens** strony uruchomionej na wszystkich platformach trzy:
 
-[![](arcs-images/tangentarc-small.png "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")](arcs-images/tangentarc-large.png "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")
+[![](arcs-images/tangentarc-small.png "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")](arcs-images/tangentarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")
 
 Na urządzeniu z systemem Windows Mobile trzy punkty są prawie colinear i łuk jest bardzo mała.
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Oto działająca na platformach trzy program:
 
-[![](arcs-images/roundedheptagon-small.png "Potrójna zrzut ekranu przedstawiający stronę zaokrąglona Heptagon")](arcs-images/roundedheptagon-large.png "Potrójna zrzut ekranu strony Heptagon zaokrąglona")
+[![](arcs-images/roundedheptagon-small.png "Potrójna zrzut ekranu przedstawiający stronę zaokrąglona Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "Potrójna zrzut ekranu strony Heptagon zaokrąglona")
 
 ## <a name="the-elliptical-arc"></a>Łuku
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym miejscu jest uruchomiona na trzy platformach:
 
-[![](arcs-images/ellipticalarc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku")](arcs-images/ellipticalarc-large.png "Potrójna zrzut ekranu przedstawiający stronę łuku")
+[![](arcs-images/ellipticalarc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku")](arcs-images/ellipticalarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuku")
 
 **Nieskończoności łuk** strona używa łuku do rysowania znak nieskończoności. Znak nieskończoności opiera się na dwóch koła z promień 100 jednostek oddzielone 100 jednostek:
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W kodzie użyto `Bounds` właściwość `SKPath` do określania wymiarów sinus nieskończoności skalowania go do rozmiaru obszaru roboczego:
 
-[![](arcs-images/arcinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")](arcs-images/arcinfinity-large.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")
+[![](arcs-images/arcinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")](arcs-images/arcinfinity-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")
 
 Wynik wydaje się nieco mały, które sugeruje, że `Bounds` właściwość `SKPath` raportuje o rozmiarze większym niż ścieżki.
 
@@ -661,7 +662,7 @@ Wewnętrznie Skia przybliża łuk przy użyciu wielu kwadratową krzywych Bezier
 
 Aby uzyskać dopasowanie zwiększenie poziomu, użyj `TightBounds` właściwość, która nie obejmuje punktów kontrolnych. Oto program działa w trybie krajobraz i przy użyciu `TightBounds` właściwości można uzyskać ścieżki granic:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")](arcs-images/arcinfinitytightbounds-large.png "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")
+[![](arcs-images/arcinfinitytightbounds-small.png "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")
 
 Mimo że połączenia między łuki i proste są ze sobą matematycznie smooth, zmiana z łuk na prostej mogą wydawać się nieco niespodziewane. Znak nieskończoności lepiej jest podana w następnej strony.
 

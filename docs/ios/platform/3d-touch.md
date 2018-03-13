@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66cc67b38d70992fe815732407317fab3dc52528
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-3d-touch"></a>Wprowadzenie do technologii 3D Touch
 
 _W tym artykule omówiono przy użyciu nowego telefonów iPhone 6s i telefonów iPhone 6s Plus 3D Touch gesty, przy użyciu Twojej aplikacji._
 
-[ ![](3d-touch-images/info01.png "Przykłady 3D Touch włączone aplikacji")](3d-touch-images/info01.png)
+[![](3d-touch-images/info01.png "Przykłady 3D Touch włączone aplikacji")](3d-touch-images/info01.png#lightbox)
 
 W tym artykule będzie udostępniać i wprowadzenie do Dodawanie gestów poufnych wykorzystania do uruchomionych na nowe telefonów iPhone 6s i telefonów iPhone 6s aplikacji platformy Xamarin.iOS przy użyciu nowych 3D Touch interfejsów API oraz urządzeń.
 
@@ -29,7 +29,7 @@ Z technologii 3D Touch aplikację telefonów iPhone jest teraz można nie tylko 
 - [Wykorzystania czułości](#Pressure-Sensitivity) — aplikacje można teraz miar jak twarde lub światła użytkownika zachodzi ekranu i podejmij korzystać z tych informacji.
   Na przykład aplikacja rysowania wprowadzić wierszu grubszy lub cieńsza oparte na jaką użytkownik zachodzi ekranu.
 - [Podgląd i wyświetl](#Peek-and-Pop) -aplikację teraz można pozwolić użytkownikowi na interakcję z jego dane bez konieczności Przejdź poza ich bieżący kontekst. Naciskając twardych na ekranie ekranu, ich wglądu element, który są zainteresowani (takich jak Podgląd wiadomości). Naciskając trudniejsze, ich pop do elementu.
-- [Szybkie akcje](#Quick-Action) — Pomyśl o szybkie akcji, takich jak menu kontekstowe, które mogą zostać zdjęte ze stosu w górę po kliknięciu elementu w aplikacji komputerowej.
+- [Szybkie akcje](#Quick-Actions) — Pomyśl o szybkie akcji, takich jak menu kontekstowe, które mogą zostać zdjęte ze stosu w górę po kliknięciu elementu w aplikacji komputerowej.
   Przy użyciu szybkie akcje, można dodawać skróty do funkcji w aplikacji bezpośrednio z ikonę aplikacji na ekranie głównym.
 - [Testowanie 3D Touch w symulatorze](#Testing-3D-Touch-in-the-Simulator) — z odpowiedni sprzęt Mac można przetestować 3D aplikacji z obsługą dotyku w symulatorze systemu iOS.
 
@@ -39,7 +39,7 @@ Z technologii 3D Touch aplikację telefonów iPhone jest teraz można nie tylko 
 
 Jak wspomniano powyżej, przy użyciu nowych właściwości [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) klasy można pomiaru wykorzystania użytkownika jest stosowana do ekranu urządzenia z systemem iOS i użyć tych informacji w interfejsie użytkownika. Na przykład wprowadzenie pędzla bardziej przezroczyste lub nieprzezroczyste na podstawie ilości wykorzystania.
 
-[ ![](3d-touch-images/pressure01.png "Pędzla, renderowane jako bardziej przezroczyste lub nieprzezroczyste na podstawie ilości wykorzystania")](3d-touch-images/pressure01.png)
+[![](3d-touch-images/pressure01.png "Pędzla, renderowane jako bardziej przezroczyste lub nieprzezroczyste na podstawie ilości wykorzystania")](3d-touch-images/pressure01.png#lightbox)
 
 W wyniku 3D Touch, jeśli aplikacja działa w systemie iOS 9 (lub nowsza), a urządzenia z systemem iOS jest w stanie obsługi technologii 3D Touch w wykorzystania spowoduje `TouchesMoved` się zdarzenia.
 
@@ -80,7 +80,7 @@ Aby uzyskać więcej informacji, zobacz firmy Apple [TouchCanvas: przy użyciu U
 
 Na przykład jeśli aplikacja jest wyświetlana tabeli wiadomości, użytkownik może nacisnąć twardych na element, aby podgląd jego zawartość w widoku nakładki (czyli Apple jako *wgląd*).
 
-[ ![](3d-touch-images/peekandpop01.png "Przykład wgląd w zawartość")](3d-touch-images/peekandpop01.png)
+[![](3d-touch-images/peekandpop01.png "Przykład wgląd w zawartość")](3d-touch-images/peekandpop01.png#lightbox)
 
 Gdy użytkownik naciśnie trudniejsze, będą oni wprowadzać widoku regularne wiadomości (który jest określany jako *Pop*-ping do widoku).
 
@@ -208,9 +208,8 @@ Przy użyciu 3D Touch i szybkie akcje, można dodać wspólne, szybkie i łatwe 
 
 Jak już wspomniano, możesz traktować szybkie akcje jak menu kontekstowe, które mogą zostać zdjęte ze stosu w górę po kliknięciu elementu w aplikacji komputerowej. Zapewnienie skróty do najbardziej typowych funkcji lub właściwości aplikacji należy używać szybkie akcje.
 
-[ ![](3d-touch-images/quickactions01.png "Przykład menu Szybkie akcje")](3d-touch-images/quickactions01.png)
+[![](3d-touch-images/quickactions01.png "Przykład menu Szybkie akcje")](3d-touch-images/quickactions01.png#lightbox)
 
-<a name="Defining-Static-Quick-Actions" />
 
 ### <a name="defining-static-quick-actions"></a>Definiowanie statycznego szybkie akcje
 
@@ -287,7 +286,6 @@ W tym miejscu możemy definiowania dwa statycznego szybkie czynności do wykonan
 
 
 
-<a name="Identifying-Quick-Action-Items" />
 
 ### <a name="identifying-quick-action-items"></a>Identyfikowanie szybkie czynności do wykonania
 
@@ -389,7 +387,6 @@ Następnie możemy zastąpić `OnActivated` — metoda i przebiegu żadnego wybr
 
 Na koniec, jeśli aplikacja jest już uruchomiona, `PerformActionForShortcutItem` będzie wywoływana metoda obsługuje szybkiego czynności do wykonania, dlatego musimy ją zastąpić, a następnie wywołać naszych `HandleShortcutItem` metody tutaj również.
 
-<a name="Creating-Dynamic-Quick-Action-Items" />
 
 ### <a name="creating-dynamic-quick-action-items"></a>Tworzenie elementów szybkie akcje dynamiczne
 
@@ -442,7 +439,7 @@ Przy użyciu najnowszej wersji Xcode i symulatora systemu iOS na komputerze Mac 
 
 Aby włączyć tę funkcję, uruchom dowolną aplikację w symulowane iPhone sprzęt obsługuje 3D Touch (telefonów iPhone 6s lub nowszej). Następnie wybierz pozycję **sprzętu** menu w systemie iOS Simulator i Włącz **Użyj Trackpad życie dla technologii 3D touch** element menu:
 
-[ ![](3d-touch-images/simulator01.png "Wybierz menu sprzętu w narzędziu iOS Simulator i Włącz Trackpad Force używana dla elementu menu 3D touch")](3d-touch-images/simulator01.png)
+[![](3d-touch-images/simulator01.png "Wybierz menu sprzętu w narzędziu iOS Simulator i Włącz Trackpad Force używana dla elementu menu 3D touch")](3d-touch-images/simulator01.png#lightbox)
 
 Ta funkcja jest aktywny można nacisku na trackpad Mac umożliwiające 3D Touch, tak jak na sprzęcie rzeczywistych iPhone.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 6aee83cd07a52d667c24c3e70fced2e291ed99c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Wskazówki — Praca z programem WCF
 
@@ -158,7 +158,7 @@ Musisz znać adres IP stacji roboczej. Na potrzeby tego przykładu przyjmiemy, �
 
 1. Zacznijmy przez skonfigurowanie usług IIS Express do nasłuchiwania żądań zewnętrznych. Firma Microsoft może to zrobić, edytując plik konfiguracji dla usług IIS Express w `[solutiondirectory]\.vs\config\applicationhost.config`, jak pokazano na poniższym zrzucie ekranu:
 
-    [![](walkthrough-working-with-wcf-images/image05.png "Firma Microsoft to zrobić, edytując plik konfiguracji dla usług IIS Express w solutiondirectory.vsconfigapplicationhost.config, jak pokazano w tym zrzut ekranu")](walkthrough-working-with-wcf-images/image05.png)
+    [![](walkthrough-working-with-wcf-images/image05.png "Firma Microsoft to zrobić, edytując plik konfiguracji dla usług IIS Express w solutiondirectory.vsconfigapplicationhost.config, jak pokazano w tym zrzut ekranu")](walkthrough-working-with-wcf-images/image05.png#lightbox)
 
 
     Zlokalizuj `site` elementu o nazwie `HelloWorldWcfHost`. Powinien on wyglądać podobnie jak następujący fragment kodu XML:
@@ -270,7 +270,7 @@ Serwer proxy usługi WCF mogą być używane przez aplikację platformy Xamarin.
 
     Poniższe zrzuty ekranu pokazuje interfejsu użytkownika w Projektancie:
 
-    [![](walkthrough-working-with-wcf-images/image09.png "To, jak wygląda interfejs ten w Projektancie zrzut ekranu")](walkthrough-working-with-wcf-images/image09.png)
+    [![](walkthrough-working-with-wcf-images/image09.png "To, jak wygląda interfejs ten w Projektancie zrzut ekranu")](walkthrough-working-with-wcf-images/image09.png#lightbox)
 
 1. W **Eksploratora rozwiązań**, otwórz `Resources/values/Strings.xml` i Dodaj następujący kod XML:
 
@@ -382,7 +382,7 @@ Serwer proxy usługi WCF mogą być używane przez aplikację platformy Xamarin.
 
 1. Uruchom aplikację, upewnij się, że usługa WCF jest uruchomiona, a następnie kliknij polecenie dwóch przycisków. Aplikacja będzie wywoływać usługi WCF asynchronicznie, pod warunkiem, że `Endpoint` poprawnie skonfigurowano pola:
 
-  [![](walkthrough-working-with-wcf-images/image08.png "W ciągu 30 sekund odpowiedzi powinien być pobrany z każdej metody WCF i naszej aplikacji powinien wyglądać jak tego zrzutu ekranu")](walkthrough-working-with-wcf-images/image08.png)
+  [![](walkthrough-working-with-wcf-images/image08.png "W ciągu 30 sekund odpowiedzi powinien być pobrany z każdej metody WCF i naszej aplikacji powinien wyglądać jak tego zrzutu ekranu")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -428,7 +428,7 @@ Serwer proxy usługi WCF mogą być używane przez aplikację platformy Xamarin.
 
     Po dodaniu formantów, interfejs użytkownika powinien wyglądać Poniższy zrzut ekranu:
 
-    [![](walkthrough-working-with-wcf-images/image12.png "Po dodaniu formantów, interfejs użytkownika powinien przypominać ten zrzut ekranu")](walkthrough-working-with-wcf-images/image12.png)
+    [![](walkthrough-working-with-wcf-images/image12.png "Po dodaniu formantów, interfejs użytkownika powinien przypominać ten zrzut ekranu")](walkthrough-working-with-wcf-images/image12.png#lightbox)
 
 1. W **Eksploratora rozwiązań**, otwórz `ViewController.cs` i Dodaj następujący kod:
 
@@ -515,7 +515,7 @@ Serwer proxy usługi WCF mogą być używane przez aplikację platformy Xamarin.
 
 1. Uruchom aplikację, upewnij się, że usługa WCF jest uruchomiona, a następnie kliknij polecenie dwóch przycisków. Aplikacja będzie wywoływać usługi WCF asynchronicznie, pod warunkiem, że `Endpoint` poprawnie skonfigurowano pola:
 
-    [![](walkthrough-working-with-wcf-images/image10.png "W ciągu 30 sekund odpowiedzi powinien być pobrany z każdej metody WCF i naszej aplikacji powinno wyglądać podobnie do tego zrzutu ekranu")](walkthrough-working-with-wcf-images/image10.png)
+    [![](walkthrough-working-with-wcf-images/image10.png "W ciągu 30 sekund odpowiedzi powinien być pobrany z każdej metody WCF i naszej aplikacji powinno wyglądać podobnie do tego zrzutu ekranu")](walkthrough-working-with-wcf-images/image10.png#lightbox)
 
 <a name="Summary" />
 

@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>Kalendarz
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>Kalendarza interfejsu API
 
 Nowy zestaw kalendarza interfejsów API wprowadzona w systemie Android 4 obsługuje aplikacje, które są przeznaczone do odczytu lub zapisu danych do dostawcy kalendarza. Te interfejsy API obsługuje wiele opcji interakcji z danymi kalendarza, łącznie z możliwością odczytu i zapisu zdarzenia, uczestników i przypomnienia. Przy użyciu dostawcy kalendarza w aplikacji, dane, które można dodać za pomocą interfejsu API będą wyświetlane w aplikacji wbudowanych kalendarza dołączoną do systemu Android 4.
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>Dodawanie uprawnień
 
 Podczas pracy z kalendarzem nowych interfejsów API w aplikacji, w pierwszej kolejności należy wykonać jest dodanie odpowiednich uprawnień do manifestu systemu Android. Należy dodać uprawnienia są `android.permisson.READ_CALENDAR` i `android.permission.WRITE_CALENDAR`, w zależności od tego, czy odczytywania lub zapisywania danych kalendarza.
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>Za pomocą kontraktu kalendarza
 
@@ -35,7 +32,6 @@ Po ustawieniu uprawnień, możesz użyć danych kalendarza przy użyciu `Calenda
 
 Oto przykład, wykorzystujący interfejs API kalendarza. W tym przykładzie zajmiemy się, jak wyliczyć kalendarzy i wydarzeń ich, jak również sposób dodawania nowych zdarzeń do kalendarza.
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>Listę kalendarzy
 
@@ -122,10 +118,9 @@ W powyższym kodzie karta przyjmuje kolumn określonych w `sourceColumns` tablic
 
 Poniżej przedstawiono zrzut ekranu przedstawiający wynik końcowy z użyciem informacji kalendarza, wyświetlane w `ListView`:
 
-[![CalendarDemo uruchomione w emulatorze, wyświetlanie dwóch wpisów kalendarza](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![CalendarDemo uruchomione w emulatorze, wyświetlanie dwóch wpisów kalendarza](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>Lista zdarzenia kalendarza
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 Wyświetla listę zdarzeń, jak pokazano poniżej:
 
-[![Zrzut ekranu przedstawiający przykładową aplikację wyświetlanie trzy zdarzenia kalendarza](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![Zrzut ekranu przedstawiający przykładową aplikację wyświetlanie trzy zdarzenia kalendarza](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>Dodawanie zdarzenia kalendarza
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 Jeśli firma Microsoft Dodawanie przycisku do listy zdarzeń interfejsu użytkownika i uruchamiania powyższej kodu na przycisku kliknij program obsługi zdarzeń, zdarzenie zostanie dodany do kalendarza i aktualizowane w naszej listy, jak pokazano poniżej:
 
-[![Zrzut ekranu przedstawiający przykładową aplikację z zdarzenia kalendarza, a następnie przycisk Dodaj zdarzenie próbkowania](calendar-images/13.png)](calendar-images/13.png)
+[![Zrzut ekranu przedstawiający przykładową aplikację z zdarzenia kalendarza, a następnie przycisk Dodaj zdarzenie próbkowania](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 Jeśli firma Microsoft Otwórz aplikację kalendarza, następnie zostanie wyświetlone że zdarzenie jest zapisywane istnieje również:
 
-[![Zrzut ekranu przedstawiający kalendarza aplikacji wyświetlanie zdarzenia kalendarza](calendar-images/14.png)](calendar-images/14.png)
+[![Zrzut ekranu przedstawiający kalendarza aplikacji wyświetlanie zdarzenia kalendarza](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 Jak widać, Android umożliwia wydajne i łatwy dostęp do pobrania i utrwalenia danych kalendarza, umożliwiając aplikacjom bezproblemowe integrowanie możliwości kalendarza.
 

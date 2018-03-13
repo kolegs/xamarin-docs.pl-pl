@@ -3,14 +3,15 @@ title: "Podsumowanie rozdziale 19. Kolekcja widoków"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Podsumowanie rozdziale 19. Kolekcja widoków
 
@@ -97,7 +98,7 @@ Ponieważ każdy element jest wyświetlany przez `ListView`małych drzewa wizual
 
 W języku XAML jest możliwość ustawienia [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) do `DataTemplate` , a następnie definiuje niestandardowe drzewo wizualne jako [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) właściwość `ViewCell`. (`View` jest właściwość content `ViewCell` więc `ViewCell.View` tagi nie są wymagane.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) przykładzie pokazano tej techniki:
 
-[![Potrójna zrzut ekranu przedstawiający listę o nazwie kolorów niestandardowych](images/ch19fg11-small.png "niestandardowa o nazwie listy kolor")](images/ch19fg11-large.png "listy o nazwie kolorów niestandardowych")
+[![Potrójna zrzut ekranu przedstawiający listę o nazwie kolorów niestandardowych](images/ch19fg11-small.png "niestandardowa o nazwie listy kolor")](images/ch19fg11-large.png#lightbox "listy o nazwie kolorów niestandardowych")
 
 Może być trudnych pobieranie rozmiaru prawa dla wszystkich platform. [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Właściwość jest przydatna, ale w niektórych przypadkach można odwołać się do [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) właściwość, która jest mniej wydajne, ale wymusza `ListView` rozmiar wierszy. Systemy iOS i Android muszą używać jednej z tych dwóch właściwości można pobrać rozmiar prawidłowego wiersza.
 
@@ -127,7 +128,7 @@ Aby zapoznać się z tym [ **SchoolOfFineArts** ](https://github.com/xamarin/xam
 
 [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) program używa `ImageCell` do wyświetlania studentów i obrazów w `ListView`:
 
-[![Potrójna zrzut ekranu przedstawiający listę uczniów](images/ch19fg18-small.png "Lista studentów/uczniów")](images/ch19fg18-large.png "Lista studentów/uczniów")
+[![Potrójna zrzut ekranu przedstawiający listę uczniów](images/ch19fg18-small.png "Lista studentów/uczniów")](images/ch19fg18-large.png#lightbox "Lista studentów/uczniów")
 
 [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) dodaje próbki [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) właściwość, ale tylko zostaną wyświetlone w systemie Android.
 

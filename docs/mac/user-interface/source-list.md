@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1cc74fb30e59ecd5f6be3cf3e1c84f60cd5ca0a6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1fba2219a10a83043097d1b5ca6fb293de4d6c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="source-lists"></a>Źródło listy
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego �
 
 Źródło listy jest specjalny typ widoku konspektu używane do wyświetlania źródła akcji, takich jak paska bocznego w iTunes lub wyszukiwania.
 
-[ ![](source-list-images/source05.png "Przykład listy źródłowej")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Przykład listy źródłowej")](source-list-images/source05.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje o pracy z listami źródła w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -50,7 +50,7 @@ Ponieważ listy źródeł udostępnia znacznie jego zachowania i funkcji z widok
 
 Najpierw utwórz nową `SourceListItem` klasy do przechowywania danych dla naszej listy źródłowej. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListItem` dla **nazwa** i kliknij przycisk **nowy** przycisk:
 
-[ ![](source-list-images/source01.png "Dodawanie klasy pusty")](source-list-images/source01.png)
+[![](source-list-images/source01.png "Dodawanie klasy pusty")](source-list-images/source01.png#lightbox)
 
 Wprowadź `SourceListItem.cs` wygląd pliku podobne do poniższych: 
 
@@ -532,19 +532,19 @@ Spowoduje to utworzenie niestandardowego, wielokrotnego użytku podklasą klasy 
 
 Teraz Przyjrzyjmy projektowania naszej listy źródła w Konstruktorze interfejsu. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu i przeciągnij podzielony widok z **inspektora biblioteki**, dodaj go do kontrolera widoku i ustaw dla niej zmiany rozmiaru w widoku w **Edytor ograniczenia** :
 
-[ ![](source-list-images/source00.png "Edytowanie ograniczenia")](source-list-images/source00.png)
+[![](source-list-images/source00.png "Edytowanie ograniczenia")](source-list-images/source00.png#lightbox)
 
 Następnie przeciągnij listę źródła z **inspektora biblioteki**, dodaj go do lewej strony podzielony widok oraz ustaw go zmiany rozmiaru w widoku w **Edytor ograniczenia**:
 
-[ ![](source-list-images/source02.png "Edytowanie ograniczenia")](source-list-images/source02.png)
+[![](source-list-images/source02.png "Edytowanie ograniczenia")](source-list-images/source02.png#lightbox)
 
 Następnie przełącz się do **widoku tożsamości**, wybierz z listy źródeł i zmień ją na **klasy** do `SourceListView`:
 
-[ ![](source-list-images/source03.png "Ustawienie nazwy klasy")](source-list-images/source03.png)
+[![](source-list-images/source03.png "Ustawienie nazwy klasy")](source-list-images/source03.png#lightbox)
 
 Na koniec Utwórz **gniazda** wywoływanych z naszej listy źródłowej `SourceList` w `ViewController.h` pliku:
 
-[ ![](source-list-images/source04.png "Konfigurowanie gniazda")](source-list-images/source04.png)
+[![](source-list-images/source04.png "Konfigurowanie gniazda")](source-list-images/source04.png#lightbox)
 
 Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Czy możemy uruchomić aplikację, poniżej zostanie wyświetlony:
 
-[ ![](source-list-images/source05.png "Uruchom przykładową aplikację")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Uruchom przykładową aplikację")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 

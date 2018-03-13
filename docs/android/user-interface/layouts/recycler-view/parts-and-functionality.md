@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>Części RecyclerView i funkcji
 
@@ -57,7 +57,7 @@ Jeśli nie zostanie rozszerzony `ItemDecoration` i `ItemAnimator`, `RecyclerView
 
 `RecyclerView` Widok elementu nie przydzielić dla każdego elementu w źródle danych. Zamiast tego przydzielania tylko liczbę elementu widoków, które mieszczą się na ekranie i układy tych elementów, gdy użytkownik przewija ponownie używane. Gdy widok najpierw przewinie niewidocznym, przechodzi ona przez proces odtwarzania pokazano na poniższej ilustracji:
 
-[ ![Diagram pokazujący sześć kroków recyklingu widoku](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![Diagram pokazujący sześć kroków recyklingu widoku](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  Widok Przewija niewidocznym i nie będzie już wyświetlany, staje się *złom widoku*.
 
@@ -75,7 +75,6 @@ Jeśli nie zostanie rozszerzony `ItemDecoration` i `ItemAnimator`, `RecyclerView
 Oprócz ponownemu widok elementu `RecyclerView` również używa innego optymalizacji wydajności: Wyświetl posiadaczy. A *posiadacz widoku* jest klasą prostą, że pamięci podręcznych wyświetlić odwołania. Zawsze karta nadyma pliku układu elementu tworzy również odpowiedniego właściciela widoku. Symbol zastępczy widoku używa `FindViewById` można pobrać odwołań do widoków wewnątrz pliku nadmuchany układu elementu. Te odwołania są używane do ładowanie nowych danych do widoków każdorazowego układ jest przetworzony ponownie, aby wyświetlić nowe dane.
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>Menedżer układu
 
@@ -96,7 +95,6 @@ Aby określić menedżera układu, Utwórz wystąpienie Menedżera wybranego uk�
 
 Aby uzyskać więcej informacji na temat Menedżera układu, zobacz [odwołania do klasy RecyclerView.LayoutManager](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>Symbol zastępczy widoku
 
@@ -109,7 +107,6 @@ Symbol zastępczy widoku jest klasą dla buforowania odwołuje się do widoku. K
 Szczegółowy przykład `ViewHolder` wdrażania jest przedstawiona w [A podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
 Aby uzyskać więcej informacji na temat `RecyclerView.ViewHolder`, zobacz [odwołania do klasy RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>Karta
 
@@ -118,7 +115,7 @@ Ponieważ źródło danych jest specyficzny dla aplikacji, musisz zaimplementowa
 
 Na poniższym rysunku przedstawiono sposób adapter mapowania zawartości ze źródła danych za pośrednictwem widoku posiadaczy poszczególnych widokach w ramach każdego wiersza elementu `RecyclerView`:
 
-[ ![Diagram pokazujący karty nawiązywania połączenia ViewHolders źródła danych](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![Diagram pokazujący karty nawiązywania połączenia ViewHolders źródła danych](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 Karta ładuje każdego `RecyclerView` wiersza z danymi dla elementu określonego wiersza. Dla pozycji wiersza *P*, na przykład karta lokalizuje skojarzone dane na pozycji *P* w źródle danych i kopii tych danych do wiersza elementu na pozycji *P* w `RecyclerView` kolekcji.
 Na rysunku powyżej, na przykład karta używa posiadacz widoku do wyszukiwania odwołań dla `ImageView` i `TextView` na tej pozycji, więc nie wielokrotnie wywoływać `FindViewById` dla tych widoków jako użytkownik przewija kolekcji i Widoki są ponownie używane.
@@ -134,7 +131,6 @@ Podczas implementowania karty, konieczne jest przesłonięcie następujących `R
 Menedżer układu wywołuje tych metod, gdy jest pozycjonowanie elementów w obrębie `RecyclerView`. 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>Powiadamianie RecyclerView zmian danych
 

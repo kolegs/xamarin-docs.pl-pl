@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 423240949daf45d8d179a3ca9f89677f490cc24d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ad-hoc-distribution"></a>Dystrybucji Ad Hoc
 
@@ -51,15 +51,15 @@ Następnej sekcji opisano sposób uzyskać certyfikat dystrybucji i profil inicj
 3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **wewnętrznych i Ad Hoc**, lub **sklepu z aplikacjami i Ad Hoc**w oparciu o członkostwo w programie:
 
-  [ ![](ad-hoc-distribution-images/cert-first-small.png "Wybierz wewnętrznych i Ad Hoc lub sklepu z aplikacjami i Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png)
+  [![](ad-hoc-distribution-images/cert-first-small.png "Wybierz wewnętrznych i Ad Hoc lub sklepu z aplikacjami i Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Kliknij przycisk Kontynuuj i postępuj zgodnie z instrukcjami, aby utworzyć żądanie podpisania certyfikatu za pośrednictwem dostępu łańcucha kluczy:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](ad-hoc-distribution-images/createcertmanually02.png)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Po utworzeniu obsługi zgodnie z instrukcjami, kliknij przycisk Kontynuuj i przekazać obsługi klienta do witryny Member Center:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](ad-hoc-distribution-images/createcertmanually03.png)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Kliknij przycisk Wygeneruj, aby utworzyć certyfikat.
 8. Na koniec Pobierz certyfikat ukończone i kliknij go dwukrotnie, aby go zainstalować.
@@ -67,9 +67,9 @@ Następnej sekcji opisano sposób uzyskać certyfikat dystrybucji i profil inicj
 
 Alternatywnie jest możliwość żądania certyfikatu za pomocą okna dialogowego preferencji w środowisku Xcode. Aby to zrobić, wykonaj następujące czynności:
 
-1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Wybranie zespołu")](ad-hoc-distribution-images/selectteam.png)
+1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Wybranie zespołu")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Następnie kliknij przycisk **plus (+)** i wybrać **iOS App Store**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "wybranie iOS App Store")](ad-hoc-distribution-images/selectcert.png)
+2.   Następnie kliknij przycisk **plus (+)** i wybrać **iOS App Store**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "wybranie iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Jako wszystkie inne inicjowania obsługi profilu możesz utworzyć identyfikator
 
 Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wykonaj poniższe kroki, aby go utworzyć:
 
-1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej > dystrybucji**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "wybierz udostępniania > dystrybucji")](ad-hoc-distribution-images/distribute01.png)
+1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej > dystrybucji**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "wybierz udostępniania > dystrybucji")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **Ad Hoc**:
 
-    [ ![](ad-hoc-distribution-images/distribute02.png "Utwórz typ dystrybucji Ad Hoc")](ad-hoc-distribution-images/distribute02.png)
+    [![](ad-hoc-distribution-images/distribute02.png "Utwórz typ dystrybucji Ad Hoc")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Kliknij przycisk **Kontynuuj** i wybrać z listy rozwijanej, która ma zostać utworzony profil dystrybucji dla Identyfikatora aplikacji:
 
-    [ ![](ad-hoc-distribution-images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](ad-hoc-distribution-images/distribute03.png)
+    [![](ad-hoc-distribution-images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Kliknij przycisk **Kontynuuj** przycisk i wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji:
 
-    [ ![](ad-hoc-distribution-images/distribute04.png "Wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji")](ad-hoc-distribution-images/distribute04.png)
+    [![](ad-hoc-distribution-images/distribute04.png "Wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 6. Kliknij przycisk **Kontynuuj** przycisk, a następnie wprowadź **nazwa** nowego profilu dystrybucji:
 
-    [ ![](ad-hoc-distribution-images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](ad-hoc-distribution-images/distribute06.png)
+    [![](ad-hoc-distribution-images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 7. Kliknij przycisk **Generuj** przycisk, aby utworzyć nowy profil i zakończenia procesu.
 

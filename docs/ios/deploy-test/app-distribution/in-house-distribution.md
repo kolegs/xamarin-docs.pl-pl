@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 6bb712da5becbe9c19dddf3deb393f0d50cd726b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-house-distribution"></a>Dystrybucji wewnętrznych
 
@@ -56,15 +56,15 @@ Należy pamiętać, że nie można odnowić wygasłe certyfikaty, a zamiast tego
 3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **wewnętrznych i Ad Hoc**:
 
-   [ ![](in-house-distribution-images/createcertmanually01.png "Wybierz wewnętrznych i Ad Hoc")](in-house-distribution-images/createcertmanually01.png)
+   [![](in-house-distribution-images/createcertmanually01.png "Wybierz wewnętrznych i Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. Kliknij przycisk Kontynuuj i postępuj zgodnie z instrukcjami, aby utworzyć żądanie podpisania certyfikatu za pośrednictwem dostępu łańcucha kluczy:
 
-   [ ![](in-house-distribution-images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](in-house-distribution-images/createcertmanually02.png)
+   [![](in-house-distribution-images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. Po utworzeniu programu obsługi, zgodnie z instrukcjami, kliknij przycisk Kontynuuj i przekazać programu obsługi do witryny Member Center:
 
-   [ ![](in-house-distribution-images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](in-house-distribution-images/createcertmanually03.png)
+   [![](in-house-distribution-images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. Kliknij przycisk Generuj utworzyć certyfikatu.
 8. Pobierz certyfikat ukończone i kliknij go dwukrotnie, aby go zainstalować.
@@ -74,15 +74,15 @@ Alternatywnie jest możliwość żądania certyfikatu za pomocą okna dialogoweg
 
 1. Wybierz zespół, a następnie kliknij przycisk *Wyświetl szczegóły*:
 
-    [ ![](in-house-distribution-images/selectteam.png "Wybierz zespół")](in-house-distribution-images/selectteam.png)
+    [![](in-house-distribution-images/selectteam.png "Wybierz zespół")](in-house-distribution-images/selectteam.png#lightbox)
 
 2. Następnie kliknij przycisk **Utwórz** znajdujący się obok **dystrybucji certyfikat iOS**:
 
-   [ ![](in-house-distribution-images/selectcert.png "Utwórz certyfikat dystrybucji z systemem iOS")](in-house-distribution-images/selectcert.png)
+   [![](in-house-distribution-images/selectcert.png "Utwórz certyfikat dystrybucji z systemem iOS")](in-house-distribution-images/selectcert.png#lightbox)
 
 2.   Następnie kliknij przycisk **plus (+)** i wybrać **iOS App Store**:
 
-   [ ![](in-house-distribution-images/selectcert.png "Wybierz iOS App Store")](in-house-distribution-images/selectcert.png)
+   [![](in-house-distribution-images/selectcert.png "Wybierz iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -105,23 +105,23 @@ Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wy
 
 1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej** > **dystrybucji**:
 
-   [![](in-house-distribution-images/distribute01.png "Wybierz opcję inicjowania obsługi administracyjnej > dystrybucji")](in-house-distribution-images/distribute01.png)
+   [![](in-house-distribution-images/distribute01.png "Wybierz opcję inicjowania obsługi administracyjnej > dystrybucji")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **wewnętrznych**:
 
-   [![](in-house-distribution-images/distribute02.png "Utwórz profil dystrybucji wewnętrznych")](in-house-distribution-images/distribute02.png)
+   [![](in-house-distribution-images/distribute02.png "Utwórz profil dystrybucji wewnętrznych")](in-house-distribution-images/distribute02.png#lightbox)
 
 3. Kliknij przycisk **Kontynuuj** i wybrać z listy rozwijanej, która ma zostać utworzony profil dystrybucji dla Identyfikatora aplikacji:
 
-   [![](in-house-distribution-images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](in-house-distribution-images/distribute03.png)
+   [![](in-house-distribution-images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](in-house-distribution-images/distribute03.png#lightbox)
 
 4. Kliknij przycisk **Kontynuuj** przycisk i wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji:
 
-   [![](in-house-distribution-images/distribute04.png "Wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji")](in-house-distribution-images/distribute04.png)
+   [![](in-house-distribution-images/distribute04.png "Wybierz opcję dystrybucji certyfikatu wymagane do podpisania aplikacji")](in-house-distribution-images/distribute04.png#lightbox)
 
 6. Kliknij przycisk **Kontynuuj** przycisk, a następnie wprowadź **nazwa** nowego profilu dystrybucji:
 
-   [![](in-house-distribution-images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](in-house-distribution-images/distribute06.png)
+   [![](in-house-distribution-images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](in-house-distribution-images/distribute06.png#lightbox)
 
 7. Kliknij przycisk **Generuj** przycisk, aby utworzyć nowy profil i zakończenia procesu.
 

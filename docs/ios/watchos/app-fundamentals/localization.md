@@ -7,11 +7,11 @@ ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4dde338a7c289f228f877fa4d968d156a941ba16
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-localization"></a>Praca z lokalizacji
 
@@ -67,7 +67,7 @@ Obejrzyj projektu aplikacji wygląda tak po dokonaniu zmian (tylko angielskim i 
 
 Podczas edytowania scenorysu, zaznacz każdy element i zwróć uwagę, **identyfikator lokalizacji** wyświetlonym w **właściwości** konsoli:
 
-  [ ![](localization-images/storyboard-sml.png "Identyfikator lokalizacji, która jest wyświetlana w konsoli do właściwości")](localization-images/storyboard.png)
+  [![](localization-images/storyboard-sml.png "Identyfikator lokalizacji, która jest wyświetlana w konsoli do właściwości")](localization-images/storyboard.png#lightbox)
 
 W **Base.lproj** folderu, utworzyć pary klucz wartość, jak pokazano poniżej, gdy klucz jest tworzony przez **identyfikator lokalizacji** i nazwę właściwości formantu, połączonych pojedynczego znaku kropki (`.`).
 

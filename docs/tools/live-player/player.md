@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6ae0439566387e22d939ede83e6b4cb5c1a5a8fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-live-player-app"></a>Aplikacja odtwarzacza na żywo Xamarin
 
@@ -20,9 +20,15 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="get-the-app"></a>Pobierz aplikację
 
-Xamarin Player na żywo jest dostępnej w sklepie iOS App Store i Google Play:
+### <a name="xamarin-live-player-for-android"></a>Odtwarzacz na żywo Xamarin dla systemu Android
+Xamarin Player na żywo jest dostępna dla systemu Android ze sklepu Google Play:
 
-[ ![Pobieranie ze sklepu z aplikacjami systemu iOS](player-images/app-store-badge.svg)](https://itunes.apple.com/us/app/xamarin-live-player/id1228841832?ls=1&mt=8) [ ![dostępne w witrynie Google Play](player-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[ ![Dostępne w witrynie Google Play](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+
+Dla urządzeń z systemem Android bez Google Play Xamarin odtwarzacz na żywo jest dostępna za pośrednictwem [HockeyApp](https://aka.ms/xlp-hockeyapp) dystrybucji. Ponadto Podgląd wczesne kompilacje dla systemu Android mogą być instalowane bezpośrednio z witryny Google Play przez zgody na korzystanie z [otwarte w wersji beta programu](https://play.google.com/apps/testing/com.xamarin.live)
+
+### <a name="xamarin-live-player-for-ios"></a>Odtwarzacz Live Xamarin dla systemu iOS
+Firma Microsoft zachęca użytkowników do dołączenia do [aplikacji odtwarzacza Live Xamarin _z systemem iOS w wersji zapoznawczej_ ](https://aka.ms/liveplayeralpha) można uzyskiwać dostęp do najnowszych ulepszeń za pośrednictwem TestFlight.
 
 
 

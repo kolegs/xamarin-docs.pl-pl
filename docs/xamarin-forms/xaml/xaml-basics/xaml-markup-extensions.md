@@ -4,14 +4,15 @@ description: "Rozszerzenia znaczników XAML stanowi ważną funkcją w języku X
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Część 3. Rozszerzenia znaczników XAML
 
@@ -298,7 +299,7 @@ Oto końcowego pełny plik XAML z trzy przyciski uzyskiwanie dostępu do udostę
 
 Zrzuty ekranu Sprawdź stylów spójne i style zależny od platformy:
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "Kontrolek")](xaml-markup-extensions-images/sharedresources-large.png "kontrolek")
+[![](xaml-markup-extensions-images/sharedresources.png "Kontrolek")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "kontrolek")
 
 Chociaż przeważnie do definiowania `Resources` kolekcji w górnej części strony, należy pamiętać, że `Resources` właściwość jest zdefiniowana przez `VisualElement`, i może zawierać `Resources` kolekcje na inne elementy na stronie. Na przykład, dodaj je do `StackLayout` w tym przykładzie:
 
@@ -436,7 +437,7 @@ Obie te deklaracje przestrzeni nazw znajdują się w **StaticConstantsPage** pr�
 
 Rozmiar wynikowe `BoxView` względem ekranu jest zależny od platformy:
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "Formanty przy użyciu x: Static — rozszerzenie znaczników")](xaml-markup-extensions-images/staticconstants-large.png "formantów za pomocą x: Static — rozszerzenie znaczników")
+ [![](xaml-markup-extensions-images/staticconstants.png "Formanty przy użyciu x: Static — rozszerzenie znaczników")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "formantów za pomocą x: Static — rozszerzenie znaczników")
 
 ## <a name="other-standard-markup-extensions"></a>Rozszerzenia innych standardowych znaczników
 
@@ -552,7 +553,7 @@ Prawdopodobnie najważniejszych lekcja powinno zająć od tego przykładu jest s
 
 W tym miejscu jest uruchomiony program:
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "Względne układu za pomocą ograniczenia")](xaml-markup-extensions-images/relativelayout-large.png "względną układu za pomocą ograniczenia")
+[![](xaml-markup-extensions-images/relativelayout.png "Względne układu za pomocą ograniczenia")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "względną układu za pomocą ograniczenia")
 
 ## <a name="summary"></a>Podsumowanie
 

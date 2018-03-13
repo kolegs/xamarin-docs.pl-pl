@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>Wydajność i Platform
 
@@ -20,23 +20,6 @@ _Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za p
 
 Niską wydajnością przedstawia na wiele sposobów. Go aplikacja prawdopodobnie nie odpowiada, może spowodować wolne przewijanie i może zmniejszyć czas pracy baterii. Jednak optymalizacji wydajności wymaga więcej niż tylko wdrażania wydajność kodu. Środowisko użytkownika wydajność aplikacji, należy również rozważyć. Na przykład zapewniając wykonanie operacji bez blokowania użytkownika wykonywanie innych działań może pomóc ulepszyć środowisko użytkownika.
 
-Istnieje szereg technik w celu zwiększenia wydajności i obserwowaną wydajność aplikacji skompilowanej za pomocą platformy Xamarin. Obejmują one:
-
-- [Użyj profilera](#profiler)
-- [Zwolnić zasoby interfejs IDisposable](#idisposable)
-- [Anulowanie subskrypcji zdarzeń](#events)
-- [Słabe odwołania Użyj, aby zapobiec Immortal obiektów](#weakreferences)
-- [Opóźnienie koszt Tworzenie obiektów](#lazy)
-- [Implementuje operacji asynchronicznych](#async)
-- [Użyj modułu zbierającego elementy bezużyteczne SGen](#sgen)
-- [Zmniejsz rozmiar aplikacji.](#linker)
-- [Optymalizacja zasoby obrazów](#optimizeimages)
-- [Zmniejsz okres aktywacji aplikacji](#activationperiod)
-- [Reduce Web Service Communication](#webservicecommunication)
-
-Tym wolnego [wideo Xamarin University](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) zawiera także przydatne porady dotyczące projektowania aplikacji platformy Xamarin.
-
-[ ![](memory-perf-best-practices-images/clancey-sml.png "Xamarin University wideo na temat typowych problemów w warstwie bezpłatna")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 
@@ -399,6 +382,6 @@ W tym artykule opisano i opisem techniki zwiększania wydajności aplikacji utwo
 - [Xamarin.Android Performance](~/android/deploy-test/performance.md)
 - [Wprowadzenie do programu Xamarin](~/tools/profiler/index.md)
 - [Xamarin.Forms Performance](~/xamarin-forms/deploy-test/performance.md)
-- [Omówienie obsługi Async](~/cross-platform/platform/async.md)
+- [Asynchroniczna pomoc techniczna — omówienie](~/cross-platform/platform/async.md)
 - [Interfejs IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
 - [Unikanie typowych problemów w aplikacji platformy Xamarin (klip wideo)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

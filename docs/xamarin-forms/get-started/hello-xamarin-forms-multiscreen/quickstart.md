@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 6a24ff05ae2a2c2368650c368cc408f0219ce21e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5457cb3a80208311bac66a0232afd9cb4dc02c87
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Szybki Start Wieloekranowy platformy Xamarin.Forms
 
 Ta opcja szybkiego startu pokazuje, jak rozszerzyć Phoneword przez dodanie drugiego ekranu do śledzenia historii połączeń dla aplikacji. Końcowe aplikacji jest pokazany poniżej:
 
-[![](quickstart-images/intro-app-examples-sml.png "Aplikacja Phoneword")](quickstart-images/intro-app-examples.png "Phoneword aplikacji")
+[![](quickstart-images/intro-app-examples-sml.png "Aplikacja Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikacji")
 
 Rozszerzanie aplikacji Phoneword w następujący sposób:
 
@@ -192,7 +192,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
             </StackLayout>
         </ContentPage>      
 
-  Zapisać zmiany w **CallHistoryPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **CallHistoryPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
@@ -221,7 +221,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **App.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **App.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** go otworzyć:
 
@@ -239,7 +239,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
                   Clicked="OnCallHistory" />
         </StackLayout>
 
-  Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
 
@@ -274,9 +274,9 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-1. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac narzędzi:
+1. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz  **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac narzędzi:
 
   ![](quickstart-images/xs/build-successful.png "Pomyślnie kompilacji")
 

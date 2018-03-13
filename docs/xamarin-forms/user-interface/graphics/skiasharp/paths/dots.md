@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>Kropki i łączniki
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 Na poniższych zrzutach ekranu na ekranie z systemem iOS przy lewej zostanie wyświetlona linia kropkowana:
 
-[![](dots-images/dotsanddashes-small.png "Potrójna zrzut ekranu przedstawiający stronę kropki i kreski")](dots-images/dotsanddashes-large.png "Potrójna zrzut ekranu przedstawiający stronę kropki i łączniki")
+[![](dots-images/dotsanddashes-small.png "Potrójna zrzut ekranu przedstawiający stronę kropki i kreski")](dots-images/dotsanddashes-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kropki i łączniki")
 
 Jednak Android ekranu również powinien pokazać kropkowana, przy użyciu tablicy {10, 10}, ale zamiast tego wiersz jest pełny. Co się stało? Problem jest Android ekranu również ustawienie caps obrysu `Square`. Spowoduje to rozszerzenie wszystkie łączniki o połowę szerokości obrysu, powoduje zapełnić luk.
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 Oczywiście będzie konieczne aktualnie ma uruchomiony program, aby zobaczyć animacji:
 
-[![](dots-images/animatedspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")](dots-images/animatedspiral-large.png "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")
+[![](dots-images/animatedspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")](dots-images/animatedspiral-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")
 
 Teraz przedstawiono sposób Rysowanie linii i zdefiniuj krzywych przy użyciu parametrów równania. Sekcja do opublikowania później będzie obejmować różne rodzaje krzywych który `SKPath` obsługuje.
 

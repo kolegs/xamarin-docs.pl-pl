@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>Podstawowe informacje o ścieżce
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Pierwszy rozkład składa się z wywołania [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) przy użyciu współrzędne X i Y zamiast `SKPoint` wartości, a następnie trzy wywołania [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) do rysowania trzy strony trójkąt. Drugi rozkład ma tylko dwie wywołań `LineTo` , ale zakończeniem rozkład wywołaniem [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), który zamyka rozkładu. Różnica polega na tym znaczące:
 
-[![](paths-images/twotrianglecontours-small.png "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")](paths-images/twotrianglecontours-large.png "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")
+[![](paths-images/twotrianglecontours-small.png "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")](paths-images/twotrianglecontours-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")
 
 Jak widać, pierwszy rozkład to oczywiście szereg trzy połączone linie, ale zakończenia nie łączyć się z początku. Dwa wiersze nakładają się na górze. Drugi rozkład oczywiście jest zamknięty, a została realizowane za pomocą jednego mniej `LineTo` wywołuje się, ponieważ `Close` metody automatycznie dodaje końcowego wiersza, aby zamknąć rozkładu.
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Oto działająca na platformach trzy program:
 
-[![](paths-images/strokejoins-small.png "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")](paths-images/strokejoins-large.png "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")
+[![](paths-images/strokejoins-small.png "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")](paths-images/strokejoins-large.png#lightbox "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")
 
 Sprzężenie skosów, skos może składa się z punktem sharp których wiersze nawiązuje połączenie. Nowi dwa wiersze pod kątem małych sprzężenie skosów, skos może może stać się bardzo długie. Aby zapobiec sprzężenia ostre zbyt długie, długość sprzężenie skosów, skos może jest ograniczone przez wartość [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) właściwość `SKPaint`. Sprzężenie skosów, skos może przekraczającą tej długości została obcięta zostać sprzężenia fazy.
 

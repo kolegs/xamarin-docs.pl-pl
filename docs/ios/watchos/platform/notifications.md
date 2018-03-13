@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>Powiadomienia
 
@@ -99,17 +99,17 @@ Możesz *musi* Podaj ładunek JSON testu podczas testowania trybu powiadomień w
 Visual Studio for Mac zostanie wyświetlony dodatkowe opcje rozszerzenia wyrażenie kontrolne jest ustawiony jako **projekt startowy**.
 Kliknij prawym przyciskiem myszy na projekt rozszerzenia czujki i wybierz polecenie **Uruchom z > Parametry niestandardowe...** :
     
-[![](notifications-images/runwith-customparams-sml.png "Uruchomione z właściwości niestandardowych")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "Uruchomione z właściwości niestandardowych")](notifications-images/runwith-customparams.png#lightbox)
     
 Spowoduje to otwarcie **argumenty wykonywania** okna, który zawiera **WatchKit** kartę. Wybierz **powiadomień** i podaj ładunek JSON, naciśnij klawisz **Execute** można uruchomić aplikacji czujki w symulatorze:
     
-[![](notifications-images/runwith-execargs-sml.png "Wybierz domyślny ładunek powiadomienia")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "Wybierz domyślny ładunek powiadomienia")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Można ustawić ładunek powiadomienia testu w programie Visual Studio kliknij prawym przyciskiem myszy na rozszerzeniu czujki, aby edytować **właściwości projektu**. Przejdź do **debugowania** sekcji, a następnie wybierz plik JSON powiadomienia z listy (automatycznie wyświetlone zostaną wszystkie pliki JSON dołączony do projektu).
     
-[![](notifications-images/runwith-execargs-sml-vs.png "Wybierz plik JSON powiadomienia")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "Wybierz plik JSON powiadomienia")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 Gdy jest rozszerzenie czujki **projekt startowy**, Visual Studio będą wyświetlane dodatkowe opcje, jak pokazano poniżej. Wybierz jedną z **powiadomień** opcji, aby uruchomić aplikację czujki w **powiadomień** trybu (przy użyciu pliku JSON, zaznaczona w oknie właściwości):
     

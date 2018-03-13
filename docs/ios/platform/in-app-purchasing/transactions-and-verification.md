@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 332ce13b08f3d021553be5747b21b05d62aba6ea
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transactions-and-verification"></a>Transakcje i weryfikacji
 
@@ -148,7 +148,7 @@ Ponieważ te produkty zdalnie są dostarczane, również jest można dodać wię
    
    
    
- [ ![](transactions-and-verification-images/image38.png "Pobieranie ceny produktów dostarczonych przez serwer")](transactions-and-verification-images/image38.png)   
+ [![](transactions-and-verification-images/image38.png "Pobieranie ceny produktów dostarczonych przez serwer")](transactions-and-verification-images/image38.png#lightbox)   
    
    
    
@@ -170,7 +170,7 @@ Ponieważ te produkty zdalnie są dostarczane, również jest można dodać wię
 
 Ponieważ serwer zdalny wymaga sposób sprawdzania, czy żądanie zawartości jest prawidłowa (tj. zostały uregulowaniu płatności), informacje o potwierdzeniach jest przekazywane do uwierzytelniania. Serwer zdalny przesyła dane do programu iTunes do weryfikacji i w razie powodzenia jest przechowywana zawartość produktu w odpowiedzi do aplikacji.   
    
- [ ![](transactions-and-verification-images/image39.png "Zakup produktów dostarczonych przez serwer")](transactions-and-verification-images/image39.png)   
+ [![](transactions-and-verification-images/image39.png "Zakup produktów dostarczonych przez serwer")](transactions-and-verification-images/image39.png#lightbox)   
    
  1. Dodaje aplikację `SKPayment` do kolejki. W razie potrzeby użytkownika zostanie wyświetlony monit o ich identyfikator Apple ID, a monit o potwierdzenie płatności.   
    

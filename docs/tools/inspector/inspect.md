@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>Procedury kontroli aplikacji na żywo
 
@@ -27,11 +27,11 @@ Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "Kliknij przycisk Inspekcja, na pasku narzędzi IDE")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "Kliknij przycisk Inspekcja, na pasku narzędzi IDE")](inspect-images/mac-heres-the-button.png#lightbox)
 
 Nowe okno klienta inspektora Xamarin zostanie otwarty z monit świeżych REPL.
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "Zostanie otwarte nowe okno klienta inspektora Xamarin, świeże monitu REPL")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Zostanie otwarte nowe okno klienta inspektora Xamarin, świeże monitu REPL")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 Gdy pojawi się to okno, masz C# monitu interakcyjnego używanej do wykonywania i ocena wyrażeń i C# instrukcje. Co sprawia, że to unikatowy jest, że kod jest obliczane w kontekście procesu docelowego. W takim przypadku możemy są wyświetlane kodu uruchamiania aplikacji dla systemu iOS wyświetlane.
 

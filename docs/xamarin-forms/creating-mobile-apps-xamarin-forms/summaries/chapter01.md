@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
 
@@ -44,7 +45,7 @@ Bieżące szablony rozwiązań platformy Xamarin.Forms nie obejmują szablony pr
 
 Istnieje zbiorczego program platformy Xamarin.Forms PCL lub SAP. Każdej z platform składa się z stub małych aplikacji, który odwołuje się do PCL. Interfejsy API platformy Xamarin.Forms zamapować na kontrolki natywne na każdej platformie, jego charakterystyczny wygląd i działanie obsługuje każdej platformy:
 
-[![Potrójna zrzut ekranu przedstawiający elementy wizualne platformy udostępnianie](images/ch01fg03-small.png "platformy Xamarin.Forms formantów na każdej platformie")](images/ch01fg03-large.png "platformy Xamarin.Forms formantów na każdej platformie")
+[![Potrójna zrzut ekranu przedstawiający elementy wizualne platformy udostępnianie](images/ch01fg03-small.png "platformy Xamarin.Forms formantów na każdej platformie")](images/ch01fg03-large.png#lightbox "platformy Xamarin.Forms formantów na każdej platformie")
 
 Zrzuty ekranu od lewej do prawej Pokaż iPhone, telefonie z systemem Android i na telefon Windows 10 Mobile. Na każdym ekranie strona zawiera platformy Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) do wyświetlania tekstu, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) za inicjowanie akcje, [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) dla Włącz/Wyłącz wartości i [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) służący do określania wartości zakresu ciągłe. Elementy podrzędne są wszystkie cztery tych widoków [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) na [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
 

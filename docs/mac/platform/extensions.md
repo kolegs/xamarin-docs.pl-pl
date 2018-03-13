@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Obsługa rozszerzeń Xamarin.Mac
 
@@ -42,7 +42,7 @@ Poniższe porady mogą być przydatne podczas pracy z rozszerzeń Xamarin.Mac:
 - Nieprzechwyconych wyjątków ulegnie awarii procesu rozszerzenia, zapewniając małej ilości użyteczne informacje w **dziennika systemu**. Zawijanie powodującymi kodu w `try/catch` (wyjątek) zablokować, który `NSLog`użytkownika przed ponownie zgłaszanie mogą być użyteczne.
 - **Dziennika systemu** są dostępne z **konsoli** aplikacji w obszarze **aplikacji** > **narzędzia**:
 
-    [ ![](extensions-images/extension02.png "Dziennika systemu")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "Dziennika systemu")](extensions-images/extension02.png#lightbox)
 - Jak wspomniano powyżej, uruchomienie aplikacji hosta rozszerzenia spowoduje zarejestrowanie go za pomocą systemu. Usuwanie pakietu aplikacji z jej wyrejestrowania. 
 - Jeśli "stray" wersje rozszerzeń aplikacji są zarejestrowane, użyj następującego polecenia, aby zlokalizować nimi (tak, aby je usunąć): `plugin kit -mv`
 
@@ -63,6 +63,6 @@ W tym artykule trwało krótki przegląd pracy z rozszerzeń w aplikacji Xamarin
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
 - [OS X człowieka Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

@@ -3,14 +3,15 @@ title: "Podsumowanie działu 28. Lokalizacja i map"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7361f65fecfed9d61b9df7088f9021ffa0192ad8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Podsumowanie działu 28. Lokalizacja i map
 
@@ -215,7 +216,7 @@ Na koniec `Map` klasa definiuje [ `Pins` ](https://developer.xamarin.com/api/pro
 
 Jest on używany w [LocalMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml) pliku i [LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs) pliku CodeBehind również widzieć odległość muzeum lokalizacji użytkownika:
 
-[![Potrójna zrzut ekranu strony muzea lokalnego](images/ch28fg28-small.png "odległość do lokalizacji")](images/ch28fg28-large.png "odległości w lokalizacji")
+[![Potrójna zrzut ekranu strony muzea lokalnego](images/ch28fg28-small.png "odległość do lokalizacji")](images/ch28fg28-large.png#lightbox "odległości w lokalizacji")
 
 Program również pokazano, jak ograniczyć dynamicznie numer PIN na podstawie lokalizacji mapy.
 

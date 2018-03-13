@@ -4,14 +4,15 @@ description: "Używanie ścieżek do obiektów graficznych do określonych obsza
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Wycinka przy użyciu ścieżek i regiony
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface` Obsługi następnie resetuje przekształcenia wywołaniem `ResetMatrix` i rysuje mapy bitowej rozszerzenie wysokości pełnego ekranu. Ten kod zakłada, że mapy bitowej kwadratowych, czyli tej konkretnej mapy bitowej. Mapy bitowej jest renderowany tylko w obszarze zdefiniowanym przez ścieżki przycinania:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")](clipping-images/monkeythroughkeyhole-large.png "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")
+[![](clipping-images/monkeythroughkeyhole-small.png "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")
 
 Ścieżka wycinka podlega przekształcenia obowiązywać po `ClipPath` metoda jest wywoływana, a nie do przekształcenia w mocy po obiektu graficznego (na przykład mapy bitowej) są wyświetlane. Ścieżka wycinka jest częścią stanie roboczym, który zostanie zapisany z `Save` — metoda i przywrócenie historii z `Restore` metody.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Pozostała jest przecięcie te cztery koła:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Potrójna zrzut ekranu strony klip Intersect koło cztery")](clipping-images/fourcircleintersectclip-large.png "Potrójna zrzut ekranu strony klip cztery Intersect koło")
+[![](clipping-images//fourcircleintersectclip-small.png "Potrójna zrzut ekranu strony klip Intersect koło cztery")](clipping-images/fourcircleintersectclip-large.png#lightbox "Potrójna zrzut ekranu strony klip cztery Intersect koło")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Wyliczenie ma tylko dwa elementy członkowskie:
 
@@ -175,13 +176,13 @@ Pozostała jest przecięcie te cztery koła:
 
 Jeśli musisz zastąpić cztery `SKClipOperation.Intersect` argumentów `FourCircleIntersectClipPage` klasy z `SKClipOperation.Difference`, pojawi się następujące:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")](clipping-images/fourcircledifferenceclip-large.png "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")
+[![](clipping-images//fourcircledifferenceclip-small.png "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")
 
 Cztery nakładające się okręgi zostały usunięte z obszaru przycinania.
 
 **Operacji klip** strony pokazano różnicę między tych dwóch operacji o po prostu pary okręgi. Koło po lewej stronie zostanie dodany do obszaru przycinania z domyślnego działania klip `Intersect`, podczas gdy koła po prawej stronie dodawanej do obszaru przycinania z operacją przycinania oznaczonego etykietą:
 
-[![](clipping-images//clipoperations-small.png "Potrójna zrzut ekranu strony Operacje klip")](clipping-images/clipoperations-large.png "Potrójna zrzut ekranu strony Operacje Clip")
+[![](clipping-images//clipoperations-small.png "Potrójna zrzut ekranu strony Operacje klip")](clipping-images/clipoperations-large.png#lightbox "Potrójna zrzut ekranu strony Operacje Clip")
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasa definiuje dwie `SKPaint` obiekty jako pola, a następnie dzieli ekranu na dwa obszary prostokątne. Te obszary są różne w zależności od tego, czy telefon jest w trybie pionowa lub pozioma. `DisplayClipOp` Klasy następnie wyświetla tekst i wywołania `ClipPath` ze ścieżkami dwóch koło w celu zilustrowania każdej operacji klip:
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 Poniższy zrzut ekranu przedstawia na podstawie operacji region sześć obszarów wycinka. Po lewej stronie okrąg ma wartość region który `Op` wywoływana jest metoda, a prawa okrąg region przekazany do `Op` metody:
 
-[![](clipping-images//regionoperations-small.png "Potrójna zrzut ekranu strony Operacje Region")](clipping-images/regionoperations-large.png "Potrójna zrzut ekranu strony Operacje regionu")
+[![](clipping-images//regionoperations-small.png "Potrójna zrzut ekranu strony Operacje Region")](clipping-images/regionoperations-large.png#lightbox "Potrójna zrzut ekranu strony Operacje regionu")
 
 Czy te wszystkie możliwości łączenia tych dwóch okręgi? Należy wziąć pod uwagę Wynikowy obraz jako kombinację trzech składników, które same są widoczne w `Difference`, `Intersect`, i `ReverseDifference` operacji. Całkowita liczba kombinacji jest trzeci zasilania, co najmniej dwóch osiem. Dwa, które nie są spełnione są regionu oryginalnego (którego wynikiem wywołania nie `Op` w ogóle) i całkowicie pusty region.
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion` Wywołania wypełnia regionu w kolorze pomarańczowym, gdy `DrawPath` wywołania obrysy oryginalnej ścieżki na niebiesko do porównania:
 
-[![](clipping-images//regionpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Region Paint")](clipping-images/regionpaint-large.png "Potrójna zrzut ekranu przedstawiający stronę Paint regionu")
+[![](clipping-images//regionpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Region Paint")](clipping-images/regionpaint-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Paint regionu")
 
 Region jest wyraźnie szereg odrębny współrzędnych.
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Naprawdę nie wygląda jak czterech — liścia koniczyny, ale jest obraz, który może być trudne do renderowania bez wycinka:
 
-[![](clipping-images//fourleafclover-small.png "Potrójna zrzut ekranu strony czterech — liścia koniczyna")](clipping-images/fourleafclover-large.png "Potrójna zrzut ekranu strony czterech — liść koniczyny")
+[![](clipping-images//fourleafclover-small.png "Potrójna zrzut ekranu strony czterech — liścia koniczyna")](clipping-images/fourleafclover-large.png#lightbox "Potrójna zrzut ekranu strony czterech — liść koniczyny")
 
 
 ## <a name="related-links"></a>Linki pokrewne

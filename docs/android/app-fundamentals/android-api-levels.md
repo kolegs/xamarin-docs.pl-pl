@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>Opis poziomów interfejsu API systemu Android
 
 _Xamarin.Android ma kilka ustawienia poziom interfejsu API systemu Android, które określają zgodność aplikacji z wieloma wersjami systemu android. W tym przewodniku wyjaśniono znaczenie tych ustawień, jak skonfigurować je i wpływ, jaki mają w aplikacji w czasie wykonywania._
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>Szybki Start
 
@@ -37,30 +36,30 @@ Zanim będzie można skonfigurować poziom interfejsu API dla projektu, należy 
 Zwykle wszystkie trzy poziomy interfejsu API platformy Xamarin.Android są ustawiane na tę samą wartość. Na **aplikacji** ustaw **skompilować przy użyciu wersji dla systemu Android (platforma docelowa)** do najnowsza stabilna wersja interfejsu API (lub co najmniej do wersji dla systemu Android, która zawiera wszystkie funkcje niezbędne).
 Na poniższym zrzucie ekranu, platforma docelowa ma ustawioną wartość **7.1 systemu Android (interfejs API poziom 25 - nugacie)**:
 
-[![TARGET Framework w wersji, wartością domyślną będzie kompilacji przy użyciu wersji dla systemu Android](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![TARGET Framework w wersji, wartością domyślną będzie kompilacji przy użyciu wersji dla systemu Android](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 Na **manifestu systemu Android** Ustaw Minimum Android wersji **Użyj skompilować przy użyciu zestawu SDK w wersji** i ustaw wersję docelowej dla systemu Android do taką samą wartość jak wersja platformy docelowej (w następujących Zrzut ekranu, docelowej platformy systemu Android ma ustawioną wartość **Android 7.1 (nugacie)**):
 
-[![Wartość minimalna i Android docelowej wersji wersja platformy docelowej](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![Wartość minimalna i Android docelowej wersji wersja platformy docelowej](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 Jeśli chcesz zachować zgodność z poprzednimi wersjami z wcześniejszą wersją systemu android, ustaw **Minimum Android wersja docelowego** do najstarsza wersja systemu android, które mają aplikacji do obsługi. (Należy pamiętać, że 14 poziom interfejsu API minimalny poziom interfejsu API wymagane do [usług Google Play i pomocy technicznej Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Poniższa przykładowa konfiguracja obsługuje systemu Android w wersjach od 14 poziom interfejsu API za pośrednictwem poziom interfejsu API 25:
 
-[![Kompilowanie przy użyciu interfejsu API poziomu 25 nugacie, wersja minimalna Android ustawiony poziom interfejsu API 14](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![Kompilowanie przy użyciu interfejsu API poziomu 25 nugacie, wersja minimalna Android ustawiony poziom interfejsu API 14](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Zwykle wszystkie trzy poziomy interfejsu API platformy Xamarin.Android są ustawiane na tę samą wartość. Ustaw **platformy docelowej** do najnowsza stabilna wersja interfejsu API (lub co najmniej do wersji dla systemu Android, która zawiera wszystkie funkcje niezbędne). Aby ustawić **platformy docelowej**, przejdź do **kompilacji > Ogólne** w **opcje projektu**. Na poniższym zrzucie ekranu, platforma docelowa ma ustawioną wartość **użyj najnowszej zainstalowanej platformy (8.0)**:
 
-[![Platforma docelowa przyjęty Użyj zainstalowana najnowsza wersja platformy](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![Platforma docelowa przyjęty Użyj zainstalowana najnowsza wersja platformy](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 Ustawienia wersji minimalnej i docelowych z systemem Android można znaleźć w **kompilacji > aplikacji systemu Android** w **opcje projektu**. Ustaw wersję Minimum Android do **automatyczny — Użyj docelowej framework w wersji** i ustaw wersję docelowej dla systemu Android do taką samą wartość jak wersja platformy docelowej. Na poniższym zrzucie ekranu docelowej platformy systemu Android ma ustawioną wartość **8.0 dla systemu Android (interfejs API na poziomie 26)** odpowiadające powyższe ustawienia platformy docelowej:
 
-[![Ustawianie framework i docelowe poziomy w opcje projektu](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![Ustawianie framework i docelowe poziomy w opcje projektu](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 Jeśli chcesz zachować zgodność z poprzednimi wersjami z wcześniejszą wersją systemu android, zmień **Minimum Android wersji** do najstarsza wersja systemu android, które mają aplikacji do obsługi. Należy pamiętać, że 14 poziom interfejsu API minimalny poziom interfejsu API wymagane do [usług Google Play i pomocy technicznej Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).
 Na przykład następująca konfiguracja obsługuje wersje systemu Android jak 14 poziom interfejsu API:
 
-[ ![Minimalna i wersji docelowej ustawiono automatyczne - Użyj wersja docelowego frameworka](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![Minimalna i wersji docelowej ustawiono automatyczne - Użyj wersja docelowego frameworka](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Na przykład następująca konfiguracja obsługuje wersje systemu Android jak 14
 Jeśli aplikacja obsługuje wiele wersji dla systemu Android, kod musi zawierać Sprawdzanie czasu wykonania, aby upewnić się, że aplikacja działa z Minimum Android ustawienie wersji (zobacz [Sprawdzanie czasu wykonania dla systemu Android wersji](#runtimechecks) poniżej szczegółowe informacje). Korzystanie z lub tworzenia biblioteki, zobacz [poziomy interfejsu API i biblioteki](#libraries) poniżej najlepsze rozwiązania w konfigurowaniu interfejsu API poziomu ustawień bibliotek.
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Wersje systemu android i poziomy interfejsu API
 
 Platformy systemu Android rozwoju i wydawane są nowe wersje systemu Android, każdej wersji systemu Android jest przypisany identyfikator unikatowy liczbą całkowitą o nazwie *poziom interfejsu API*. W związku z tym każda wersja systemu Android odpowiada jednej poziom interfejsu API systemu Android. Ponieważ użytkownicy będą instalować aplikacje w starszych wersjach również jako ostatni systemu android, praktyczne aplikacje dla systemu Android muszą być zaprojektowane do pracy z różnych poziomach interfejsu API systemu Android.
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Wersje systemu android
 
@@ -145,7 +142,6 @@ Ponadto definiuje Xamarin.Android *kody wersji kompilacji* mapowania znane obecn
 
 Ponieważ ta lista wskazuje, Android wydawane są nowe wersje często &ndash; czasami kilku wersji w roku. W związku z tym całość urządzeń z systemem Android, które mogą być uruchamiane aplikacji obejmuje różne starszych i nowszych wersjach systemu Android. Jak można zagwarantować, że aplikacja zostanie uruchomiona spójnie i niezawodne na tyle różne wersje systemu android? Poziomy interfejsu API systemu android firmy ułatwia zarządzanie ten problem.
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Poziomy interfejsu API systemu android
 
@@ -159,13 +155,11 @@ Podczas tworzenia aplikacji zawiera następujące informacje poziom interfejsu A
 
 Te ustawienia są używane do zapewnienia, że funkcje niezbędne do poprawnego działania aplikacji jest dostępny na urządzeniu z systemem Android w czasie instalacji. Jeśli nie, aplikacja jest blokowany działające na tym urządzeniu. Na przykład jeśli poziom interfejsu API urządzenia z systemem Android jest niższy niż minimalny poziom interfejsu API, określony dla aplikacji, urządzenia Android uniemożliwi użytkownika instalowania aplikacji.
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>Ustawienia projektu poziom interfejsu API
 
 W poniższych sekcjach opisano, jak przygotować poziomy interfejsu API ma być docelowa, a następnie szczegółowe wyjaśnienia dotyczące sposobu konfigurowania środowiska deweloperskiego przy użyciu Menedżera SDK *platformy docelowej*, *minimalna Wersja systemu android*, i *wersji docelowej Android* ustawienia platformy Xamarin.Android.
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Zestaw android SDK platformy
 
@@ -182,7 +176,7 @@ Platforma docelowa identyfikuje których aplikacja jest połączony z wersji bib
 Firma Microsoft zaleca, aby zawsze kompilacja z *najnowsze* dostępna wersja platformy docelowej. W ten sposób zapewnia przydatne komunikaty ostrzegawcze dla przestarzałe interfejsy API, który może być wywoływany przez kod. Jest używana najnowsza wersja platformy docelowej jest szczególnie ważne, gdy używasz najnowszej wersji biblioteki obsługi &ndash; każdej biblioteki oczekuje aplikacji musi być skompilowany w minimalny poziom interfejsu API tej biblioteki pomocy technicznej lub większy. 
 
 > [!NOTE]
-> **Uwaga:** począwszy od sierpnia 2018 konsoli Google Play będzie wymagać czy nowych aplikacji docelowy poziom interfejsu API 26 (8.0 dla systemu Android) lub nowszej.
+> Począwszy od sierpnia 2018 konsoli Google Play będzie wymagać czy nowych aplikacji docelowy poziom interfejsu API 26 (8.0 dla systemu Android) lub nowszej.
 Istniejące aplikacje będą musieli docelowy poziom interfejsu API 26 lub nowszej, począwszy od listopada 2018. Aby uzyskać więcej informacji, zobacz [poprawy zabezpieczeń aplikacji i wydajności w witrynie Google Play lat do](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
@@ -190,7 +184,7 @@ Istniejące aplikacje będą musieli docelowy poziom interfejsu API 26 lub nowsz
 
 Dostępu do platformy docelowej ustawienia w programie Visual Studio, otwórz właściwości projektu w **Eksploratora rozwiązań** i wybierz **aplikacji** strony:
 
-[![Strona aplikacji właściwości projektu](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![Strona aplikacji właściwości projektu](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 Określ platformę docelową, wybierając poziom interfejsu API w menu rozwijane w obszarze **skompilować przy użyciu wersji Android** zgodnie z powyższym.
 
@@ -198,7 +192,7 @@ Określ platformę docelową, wybierając poziom interfejsu API w menu rozwijane
 
 Aby uzyskać dostęp do ustawienia platformy docelowej w programie Visual Studio for Mac, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **opcje**; ten otwiera **opcje projektu** okna dialogowego. W tym oknie dialogowym, przejdź do **kompilacji > Ogólne** w sposób pokazany poniżej:
 
-[![Tworzenie ogólnych sekcji Opcje projektu strony](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![Tworzenie ogólnych sekcji Opcje projektu strony](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 Określ platformę docelową, wybierając poziom interfejsu API w menu rozwijanym z prawej strony **platformy docelowej** zgodnie z powyższym.
 
@@ -219,7 +213,7 @@ Chociaż aplikacji może pomyślnie kompilacji i instaluje ten zakres platform, 
 
 Aby uzyskać dostęp do Minimum Android ustawienie wersji programu Visual Studio, otwórz właściwości projektu w **Eksploratora rozwiązań** i wybierz **manifestu systemu Android** strony. W menu rozwijane w obszarze **Minimum Android wersji** można wybrać wersję Minimum Android aplikacji:
 
-[![Minimalna systemu Android do opcji docelowej skompilować przy użyciu zestawu SDK w wersji](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![Minimalna systemu Android do opcji docelowej skompilować przy użyciu zestawu SDK w wersji](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 W przypadku wybrania **Użyj skompilować przy użyciu zestawu SDK w wersji**, wersja minimalna Android będzie taka sama jak ustawienie platformy docelowej.
 
@@ -228,7 +222,7 @@ W przypadku wybrania **Użyj skompilować przy użyciu zestawu SDK w wersji**, w
 Aby uzyskać dostęp do ustawienia platformy docelowej w programie Visual Studio for Mac, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **opcje**; ten otwiera **opcje projektu** okna dialogowego. Przejdź do **kompilacji > aplikacji systemu Android**.
 Za pomocą listy rozwijanej z prawej strony **Minimum Android wersji**, można ustawić Minimum Android wersji aplikacji:
 
-[ ![Minimalna wersja systemu Android ustawiono automatyczne - Użyj docelowej framework w wersji](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![Minimalna wersja systemu Android ustawiono automatyczne - Użyj docelowej framework w wersji](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 W przypadku wybrania **automatyczne &ndash; Użyj wersja docelowego frameworka**, wersja minimalna Android będzie taka sama jak ustawienie platformy docelowej.
 
@@ -247,7 +241,7 @@ Platforma docelowa i docelowy z systemem Android wersji, a jednocześnie ma bard
 
 Aby uzyskać dostęp do tego ustawienia w programie Visual Studio, otwórz właściwości projektu w **Eksploratora rozwiązań** i wybierz **manifestu systemu Android** strony. W menu rozwijane w obszarze **wersji docelowej Android** wersji docelowej Android można wybrać dla aplikacji:
 
-[![Docelowa wersja systemu Android ustawioną skompilować przy użyciu zestawu SDK w wersji](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![Docelowa wersja systemu Android ustawioną skompilować przy użyciu zestawu SDK w wersji](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 Firma Microsoft zaleca jawnie ustawiona wersja docelowego dla systemu Android do najnowszej wersji systemu android, którego używasz do testowania aplikacji. W idealnym przypadku powinien być ustawiony na najnowszej wersji zestawu SDK systemu Android &ndash; dzięki temu można korzystać z nowych interfejsów API przed pracy nad zmiany zachowania. Dla większości deweloperów firma Microsoft *nie* zaleca się ustawienie wersji docelowej Android **Użyj skompilować przy użyciu zestawu SDK w wersji**.
 
@@ -256,7 +250,7 @@ Firma Microsoft zaleca jawnie ustawiona wersja docelowego dla systemu Android do
 Aby uzyskać dostęp do ustawienia platformy docelowej w programie Visual Studio for Mac, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **opcje**; ten otwiera **opcje projektu** okna dialogowego. Przejdź do **kompilacji > aplikacji systemu Android**.
 Za pomocą listy rozwijanej z prawej strony **wersji docelowej Android**, można ustawić Android docelowej wersji aplikacji:
 
-[![Docelowa wersja systemu Android ustawiono automatyczne - Użyj docelowej framework w wersji](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![Docelowa wersja systemu Android ustawiono automatyczne - Użyj docelowej framework w wersji](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 Firma Microsoft zaleca jawnie ustawiona wersja docelowego dla systemu Android do najnowszej wersji systemu android, którego używasz do testowania aplikacji. W idealnym przypadku powinien być ustawiony na najnowszej dostępnej wersji zestawu SDK systemu Android &ndash; dzięki temu można korzystać z nowych interfejsów API przed pracy nad zmiany zachowania. Dla większości deweloperów, nie zaleca się ustawienie wersji docelowej Android **automatyczny — Użyj docelowej framework w wersji**.
 
@@ -311,14 +305,14 @@ Nie istnieje żadna reguła szybki i prosty, który objaśnia, jak ograniczyć l
 
 Podczas tworzenia projektu platformy Xamarin.Android biblioteki (np. biblioteki klas lub biblioteka powiązań), można skonfigurować tylko ustawienia platformy docelowej &ndash; Minimum Android wersji i docelowy Android ustawienia wersji nie są dostępne. To, ponieważ nie istnieje żadne **manifestu systemu Android** strony:
 
-[![Jest dostępna tylko kompilowania przy użyciu opcji wersji dla systemu Android](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![Jest dostępna tylko kompilowania przy użyciu opcji wersji dla systemu Android](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Podczas tworzenia projektu biblioteki platformy Xamarin.Android jest nie **aplikacji systemu Android** strony, którym można skonfigurować Minimum Android wersja oraz wersja docelowego dla systemu Android &ndash; Minimum Android wersji i obiekt docelowy Ustawienia dla systemu android w wersji nie są dostępne.
 To, ponieważ nie istnieje żadne **kompilacji > aplikacji systemu Android** strony):
 
-[ ![Strona ogólne bez opcji wersja minimalna i docelowa kompilacji](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![Strona ogólne bez opcji wersja minimalna i docelowa kompilacji](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

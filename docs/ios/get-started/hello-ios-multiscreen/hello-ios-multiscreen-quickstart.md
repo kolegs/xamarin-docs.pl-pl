@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6df2e2ad97e42c854b6377268086b80eef145e37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4b7439448d5c25aacf991c89a188086c95a44ac
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="helloios-multiscreen-quickstart"></a>Hello.iOS Wieloekranowy Szybki Start
 
 Ta część przewodnika doda drugi ekranu aplikacji Phoneword, która spowoduje wyświetlenie historii numerów telefonów, które zostały wywołane z aplikacją. Końcowe aplikacji będą mieć drugi ekranu, który wyświetla historię wywołanie, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](hello-ios-multiscreen-quickstart-images/00.png "Końcowe aplikacji będzie mieć drugi ekranu, który wyświetla historię wywołanie, jak pokazano na tym zrzucie ekranu pokazano")](hello-ios-multiscreen-quickstart-images/00.png)
+ [![](hello-ios-multiscreen-quickstart-images/00.png "Końcowe aplikacji będzie mieć drugi ekranu, który wyświetla historię wywołanie, jak pokazano na tym zrzucie ekranu pokazano")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 [Towarzyszące nowości](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md), aplikacji, która jest zbudowany kompilacji i wkrótce omówiono architekturę, nawigacji i innych nowych pojęć iOS napotykane wzdłuż sposób.
 

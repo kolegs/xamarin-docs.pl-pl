@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: cbaa389e4a115be2face2b72db6108c836676dc7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="changes-to-storekit"></a>Zmiany StoreKit
 
@@ -36,7 +36,7 @@ Funkcje zestawu magazynu omówionych w tym dokumencie wymagają iOS 6 lub Xcode 
 Nowa funkcja zakupu w aplikacji w systemie iOS umożliwia użytkownikom wyświetlanie informacji o produkcie i zakupić lub pobrać produkt za pomocą aplikacji.
 Wcześniej aplikacji musi wywołać iTunes App Store i iBookstore, co spowoduje pozostawienie oryginalnej aplikacji użytkownika. Ta nowa funkcja automatycznie zwraca użytkownika do aplikacji, gdy są one wykonywane.
 
- [ ![](changes-to-storekit-images/image1.png "Po zakupie, automatycznego powrotu do aplikacji")](changes-to-storekit-images/image1.png)
+ [![](changes-to-storekit-images/image1.png "Po zakupie, automatycznego powrotu do aplikacji")](changes-to-storekit-images/image1.png#lightbox)
 
 Istnieje wiele scenariuszy, w którym może to być przydatne, w tym (między innymi):
 
@@ -92,7 +92,7 @@ void Buy (int productId)
 
 Aplikacja wygląda, to podczas uruchamiania — pobierania ani zakupu występuje w całości w `SKStoreProductViewController`:
 
- [ ![](changes-to-storekit-images/image2.png "Aplikacja wygląda, to podczas uruchamiania")](changes-to-storekit-images/image2.png)
+ [![](changes-to-storekit-images/image2.png "Aplikacja wygląda, to podczas uruchamiania")](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>Obsługa starszych systemów operacyjnych
 
@@ -130,7 +130,7 @@ Identyfikator Apple ID, wymagane przez `SKStoreProductViewController` jest *nume
 
 Dla aplikacji, które można opublikować, jest łatwe do odnalezienia **identyfikator Apple ID** w iTunes Connect:
 
- [ ![](changes-to-storekit-images/image3.png "Znajdowanie identyfikatora Apple ID w iTunes Connect")](changes-to-storekit-images/image3.png)
+ [![](changes-to-storekit-images/image3.png "Znajdowanie identyfikatora Apple ID w iTunes Connect")](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API" />
 
@@ -194,7 +194,7 @@ Przed iOS 6, zostały dwa sposoby zapewnienia produktu (opisany bardziej szczeg�
 
 W systemie iOS firmy Apple 6 oferuje odmianą produktów dostarczonych przez serwer: one będzie obsługiwać pliki zawartości na serwerach. Dzięki temu można łatwiej można je utworzyć produktów dostarczonych przez serwer, ponieważ nie musi działać oddzielny serwer i pobieranie w tle funkcji, która wcześniej była zapisu samodzielnie zawiera zestaw magazynu. Aby skorzystać z hostingu firmy Apple, Włącz hostingu zawartości dla nowych produktów zakupu w aplikacji i ten kod zestawu magazynu, aby wykorzystać go zmodyfikować. Pliki zawartości produktu są następnie utworzony za pomocą środowiska Xcode i przekazane do serwerów firmy Apple w celu przeglądu i wersji.
 
- [ ![](changes-to-storekit-images/image4.png "Proces kompilacji i dostarczyć")](changes-to-storekit-images/image4.png)
+ [![](changes-to-storekit-images/image4.png "Proces kompilacji i dostarczyć")](changes-to-storekit-images/image4.png#lightbox)
 
 Zapewnienie zakupu w aplikacji przy użyciu sklepu z aplikacjami *z hostowaną zawartość* wymaga następujących instalacji i konfiguracji:
 
@@ -213,7 +213,7 @@ Przykładowy projekt *HostedNonConsumables* (w StoreKitiOS6.zip) demonstruje spo
 
 Aplikacji wygląda tak przed, podczas i po zakupu:
 
- [ ![](changes-to-storekit-images/image5.png "Aplikacja wygląda, to przed, podczas i po zakupu")](changes-to-storekit-images/image5.png)
+ [![](changes-to-storekit-images/image5.png "Aplikacja wygląda, to przed, podczas i po zakupu")](changes-to-storekit-images/image5.png#lightbox)
 
 Plik tekstowy i obrazu są pobierane i kopiowane do katalogu dokumentów aplikacji. Zobacz [Praca z dokumentacją systemu plików](~/ios/app-fundamentals/file-system.md) uzyskać więcej informacji o różnych katalogach dostępne do przechowywania danych aplikacji.
 
@@ -221,19 +221,19 @@ Plik tekstowy i obrazu są pobierane i kopiowane do katalogu dokumentów aplikac
 
 Podczas tworzenia nowych produktów, które będą korzystać z firmy Apple elementu zawartości hosting Pamiętaj o wybraniu **jednoznacznie składnika** typ produktu. Inne typy produktu nie obsługują hosting zawartości. Ponadto nie należy włączać zawartości hosting dla *istniejących* produktów, sprzedaż; Włącz tylko hostingu zawartości dla nowych produktów.
 
- [ ![](changes-to-storekit-images/image6.png "Wybierz typ produktu jednoznacznie składnika")](changes-to-storekit-images/image6.png)
+ [![](changes-to-storekit-images/image6.png "Wybierz typ produktu jednoznacznie składnika")](changes-to-storekit-images/image6.png#lightbox)
 
 Wprowadź **identyfikator produktu**. Są to wymagane później podczas tworzenia zawartości dla tego produktu.
 
- [ ![](changes-to-storekit-images/image7.png "Wprowadź identyfikator produktu")](changes-to-storekit-images/image7.png)
+ [![](changes-to-storekit-images/image7.png "Wprowadź identyfikator produktu")](changes-to-storekit-images/image7.png#lightbox)
 
 Hosting zawartości znajduje się w sekcji szczegółów. Przed zakupu w aplikacji środowiska produkcyjnego po prostu usuń zaznaczenie pola wyboru "Host zawartości z Apple" Jeśli chcesz anulować (nawet, jeśli zostały przekazane zawartość testową). Jednak hosting zawartości nie można usunąć po zakupu w aplikacji stała się na żywo.
 
- [ ![](changes-to-storekit-images/image8.png "Hostowanie zawartości z firmy Apple")](changes-to-storekit-images/image8.png)
+ [![](changes-to-storekit-images/image8.png "Hostowanie zawartości z firmy Apple")](changes-to-storekit-images/image8.png#lightbox)
 
 Po włączeniu hostowanie zawartości, produkt wejdzie **oczekiwanie na przekazanie** stanu i pokazuj tego komunikatu:
 
- [ ![](changes-to-storekit-images/image9.png "Produkt zostanie wprowadź oczekiwania dla stanu przekazywania i pokazuj tego komunikatu")](changes-to-storekit-images/image9.png)
+ [![](changes-to-storekit-images/image9.png "Produkt zostanie wprowadź oczekiwania dla stanu przekazywania i pokazuj tego komunikatu")](changes-to-storekit-images/image9.png#lightbox)
 
 Zawartość musi zostać utworzone z Xcode i przekazać za pomocą narzędzia archiwum. Instrukcje dotyczące tworzenia pakietów zawartości znajduje się w następnej sekcji **tworzenie. Pliki PKG**.
 
@@ -262,17 +262,17 @@ Nasze przykładowej aplikacji ma rozdziałów książek na sprzedaż — każdy 
 
 Najpierw wybrać **Plik > Nowy projekt** z menu i wybierając polecenie **zawartości zakupu w aplikacji**:
 
- [ ![](changes-to-storekit-images/image10.png "Wybierz zawartość zakupu w aplikacji")](changes-to-storekit-images/image10.png)
+ [![](changes-to-storekit-images/image10.png "Wybierz zawartość zakupu w aplikacji")](changes-to-storekit-images/image10.png#lightbox)
 
 Wprowadź **nazwa produktu** i **identyfikator firmy** tak, aby **identyfikator pakietu** odpowiada **identyfikator produktu** wprowadzony w programach iTunes Połącz dla tego produktu.
 
- [ ![](changes-to-storekit-images/image11.png "Wprowadź nazwę i identyfikator")](changes-to-storekit-images/image11.png)
+ [![](changes-to-storekit-images/image11.png "Wprowadź nazwę i identyfikator")](changes-to-storekit-images/image11.png#lightbox)
 
 Teraz trzeba będzie pusty **zawartości zakupu w aplikacji** projektu. Możesz kliknąć prawym przyciskiem myszy i **Dodawanie plików...** lub przeciągnij je do **Nawigatora projektu**. Upewnij się, że **ContentVersion** jest prawidłowa (go powinien rozpocząć od 1.0, ale jeśli chcesz później zaktualizować zawartości, pamiętaj, aby zwiększyć jego).
 
 Ten zrzut ekranu przedstawia Xcode z plikami zawartości dołączony do projektu i wpisy plist widoczne w oknie głównym:
 
- [ ![](changes-to-storekit-images/image12.png "Ten zrzut ekranu przedstawia Xcode z plikami zawartości dołączony do projektu i wpisy plist widoczne w oknie głównym")](changes-to-storekit-images/image12.png)
+ [![](changes-to-storekit-images/image12.png "Ten zrzut ekranu przedstawia Xcode z plikami zawartości dołączony do projektu i wpisy plist widoczne w oknie głównym")](changes-to-storekit-images/image12.png#lightbox)
 
 Po dodaniu wszystkich plików zawartości można zapisać tego projektu i edytować go ponownie później lub rozpocząć procesu przekazywania.
 
@@ -284,15 +284,15 @@ Najprostszym sposobem przekazywania pakietów zawartości jest z **Xcode archiwu
 
 Pakiet zawartości zostanie następnie wyświetlona w archiwum, jak pokazano poniżej. Ikona i typ archiwum Pokaż to powiadomienie **archiwum zawartości zakupu w aplikacji**. Kliknij przycisk **sprawdzania poprawności...** Aby sprawdzić naszej zawartości pakietu błędy bez faktycznie preforming przekazywania.
 
- [ ![](changes-to-storekit-images/image14.png "Sprawdzanie poprawności pakietu")](changes-to-storekit-images/image14.png)
+ [![](changes-to-storekit-images/image14.png "Sprawdzanie poprawności pakietu")](changes-to-storekit-images/image14.png#lightbox)
 
 Zaloguj się za pomocą programu iTunes poświadczenia Connect:
 
- [ ![](changes-to-storekit-images/image15.png "Zaloguj się za pomocą programu iTunes poświadczenia Connect")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "Zaloguj się za pomocą programu iTunes poświadczenia Connect")](changes-to-storekit-images/image15.png#lightbox)
 
 Wybierz właściwą i zakupu w aplikacji, aby skojarzyć tę zawartość z:
 
- [ ![](changes-to-storekit-images/image16.png "Wybieranie właściwej aplikacji i zakupu w aplikacji, aby skojarzyć tę zawartość z")](changes-to-storekit-images/image16.png)
+ [![](changes-to-storekit-images/image16.png "Wybieranie właściwej aplikacji i zakupu w aplikacji, aby skojarzyć tę zawartość z")](changes-to-storekit-images/image16.png#lightbox)
 
 Powinien zostać wyświetlony następujący komunikat:
 
@@ -300,7 +300,7 @@ Powinien zostać wyświetlony następujący komunikat:
 
 Teraz przejdź za pomocą podobnej procedury, ale kliknięcie **dystrybucji...** faktycznie będzie przekazywać zawartość.
 
- [ ![](changes-to-storekit-images/image18.png "Rozpowszechnianie aplikacji")](changes-to-storekit-images/image18.png)
+ [![](changes-to-storekit-images/image18.png "Rozpowszechnianie aplikacji")](changes-to-storekit-images/image18.png#lightbox)
 
 Wybierz opcję pierwszy, aby przekazywać zawartość:
 
@@ -308,23 +308,23 @@ Wybierz opcję pierwszy, aby przekazywać zawartość:
 
 Zaloguj się ponownie:
 
- [ ![](changes-to-storekit-images/image15.png "Logowanie w")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "Logowanie w")](changes-to-storekit-images/image15.png#lightbox)
 
 Wybierz właściwej aplikacji i rekord zakupu w aplikacji, które można przekazać zawartości do:
 
- [ ![](changes-to-storekit-images/image20.png "Wybierz rekord zakupu aplikacji i w aplikacji")](changes-to-storekit-images/image20.png)
+ [![](changes-to-storekit-images/image20.png "Wybierz rekord zakupu aplikacji i w aplikacji")](changes-to-storekit-images/image20.png#lightbox)
 
 Zaczekaj, aż przekazanie plików:
 
- [ ![](changes-to-storekit-images/image21.png "Okno dialogowe przekazywania zawartości")](changes-to-storekit-images/image21.png)
+ [![](changes-to-storekit-images/image21.png "Okno dialogowe przekazywania zawartości")](changes-to-storekit-images/image21.png#lightbox)
 
 Po zakończeniu przekazywania informujące, że zawartość zostało przesłane do sklepu z aplikacjami zostanie wyświetlony komunikat.
 
- [ ![](changes-to-storekit-images/image22.png "Przykład pomyślne ukończenie przekazywania komunikatów")](changes-to-storekit-images/image22.png)
+ [![](changes-to-storekit-images/image22.png "Przykład pomyślne ukończenie przekazywania komunikatów")](changes-to-storekit-images/image22.png#lightbox)
 
 Po którym zostały wykonane, po powrocie do strony produktu na iTunes Connect zostanie Pokaż szczegóły pakietu i znajdować się w **gotowy do przesyłania** stanu. Gdy produkt jest w tym stanie, możesz rozpocząć testowanie w środowisku piaskownicy. NIE należy do przesyłania produktu do testowania w piaskownicy.
 
- [ ![](changes-to-storekit-images/image23.png "iTunes Connect zostanie Pokaż szczegóły pakietu i można w oknie gotowy do przesyłania stanu")](changes-to-storekit-images/image23.png)
+ [![](changes-to-storekit-images/image23.png "iTunes Connect zostanie Pokaż szczegóły pakietu i można w oknie gotowy do przesyłania stanu")](changes-to-storekit-images/image23.png#lightbox)
 
 Może potrwać pewien czas (np.) kilka minut) między przekazywania archiwum i iTunes aktualizacji stanu połączenia. Możesz przesłać produktu do przeglądu oddzielnie, lub przesłać je w połączeniu z danych binarnych aplikacji. Tylko wtedy, gdy Apple ma zatwierdzonych zawartość go będą dostępne w środowisku produkcyjnym sklepu z aplikacjami zakupu w aplikacji.
 
@@ -332,7 +332,7 @@ Może potrwać pewien czas (np.) kilka minut) między przekazywania archiwum i i
 
 Za pomocą narzędzia archiwum i Xcode Utwórz i przekaż pakiet zawartości hostowanej oznacza, że nigdy nie zobaczyć zawartość pakietu. Pliki i katalogi w pakietach utworzone dla przykładowej aplikacji wyglądać tak, z `plist` pliku w folderze głównym, a pliki produktu w `Contents` podkatalogu:
 
- [ ![](changes-to-storekit-images/image24.png "Plik plist w katalogu głównym, a pliki produktu w podkatalogu zawartości")](changes-to-storekit-images/image24.png)
+ [![](changes-to-storekit-images/image24.png "Plik plist w katalogu głównym, a pliki produktu w podkatalogu zawartości")](changes-to-storekit-images/image24.png#lightbox)
 
 Należy pamiętać, struktura katalogów pakietu (szczególnie lokalizację plików w `Contents` podkatalogu) ponieważ będą potrzebne zrozumieć te informacje, aby wyodrębnić pliki z pakietu na urządzeniu.
 
@@ -352,7 +352,7 @@ Przed przeczytaniem tej części, przejrzyj istniejące [dokumentacji zakupu w a
 
 Kolejność zdarzeń, gdy produkt o hostowaną zawartość została zakupiona i przedstawiono pobierania na tym diagramie:
 
- [ ![](changes-to-storekit-images/image25.png "Kolejność zdarzeń, gdy produkt o hostowaną zawartość została zakupiona i Pobierz")](changes-to-storekit-images/image25.png)
+ [![](changes-to-storekit-images/image25.png "Kolejność zdarzeń, gdy produkt o hostowaną zawartość została zakupiona i Pobierz")](changes-to-storekit-images/image25.png#lightbox)
 
 1.  Można tworzyć nowych produktów w iTunes Połącz przy użyciu hostowanej zawartości włączone. Rzeczywistej zawartości jest zbudowane oddzielnie w środowisku Xcode (jako po prostu jako przeciągania plików do folderu) i następnie zarchiwizowane i przekazać do iTunes (kodowanie nie jest wymagane). Każdego produktu jest następnie przesłać do zatwierdzenia, po upływie którego będzie można kupić. W przykładowym kodzie te identyfikatory produktu są zapisane na stałe, ale obsługi zawartości w firmie Apple jest bardziej elastyczne przechowywać listę produktów dostępnych na serwerze zdalnym, dzięki czemu mogą być aktualizowane podczas przesyłania nowych produktów i zawartości do iTunes Connect. 
 1.  Gdy użytkownik zakupi produktu, transakcja jest umieszczone w kolejce płatności do przetwarzania. 
@@ -392,7 +392,7 @@ Szczegóły nowej `SKDownload` klasy:
 
 Interakcje między klasami w przykładowym kodzie przedstawiono na tym diagramie (kod specyficzne dla hostowanej zakupy zawartości znajduje się na zielono):
 
- [ ![](changes-to-storekit-images/image26.png "Zakupy zawartości hostowanej jest wyświetlany na zielono na tym diagramie")](changes-to-storekit-images/image26.png)
+ [![](changes-to-storekit-images/image26.png "Zakupy zawartości hostowanej jest wyświetlany na zielono na tym diagramie")](changes-to-storekit-images/image26.png#lightbox)
 
 Przykładowy kod, w których zastosowano te klasy przedstawiono w dalszej części tej sekcji:
 

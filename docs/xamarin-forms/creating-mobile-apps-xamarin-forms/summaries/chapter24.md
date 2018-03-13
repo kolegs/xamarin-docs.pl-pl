@@ -3,14 +3,15 @@ title: "Podsumowanie rozdziału 24. Nawigacja strony"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Podsumowanie rozdziału 24. Nawigacja strony
 
@@ -99,7 +100,7 @@ Jeśli konkretnej strony modalne może zostać przesłane do wiele razy, powinie
 
 [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType) przykładzie pokazano, za pomocą `TableView` do listy elementów menu. Każdy element jest skojarzony z `Type` obiektu dla określonej strony. Po wybraniu tego elementu, program tworzy stronę i przechodzi do niego.
 
-[![Potrójna zrzut ekranu przedstawiający Widok Galeria typu](images/ch24fg21-small.png "TableView listę elementów Menu")](images/ch24fg21-large.png "TableView listę elementów Menu")
+[![Potrójna zrzut ekranu przedstawiający Widok Galeria typu](images/ch24fg21-small.png "TableView listę elementów Menu")](images/ch24fg21-large.png#lightbox "TableView listę elementów Menu")
 
 [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst) próbki różni się nieco w tym menu zawiera wystąpienia każdej strony zamiast typów. Pozwala to zachować informacje na każdej stronie, ale wszystkie strony musi być tworzone przy uruchamianiu programu.
 
@@ -173,5 +174,5 @@ W przypadku ogólnych wielostronicowe program, który przechodzi w stan uśpieni
 
 - [Pełny tekst rozdziału 24 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf)
 - [Przykłady rozdziału 24](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
-- [Hierarchiczna nawigacji](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
-- [Modalne stron](~/xamarin-forms/app-fundamentals/navigation/modal.md)
+- [Nawigacja hierarchiczna](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
+- [Strony modalne](~/xamarin-forms/app-fundamentals/navigation/modal.md)

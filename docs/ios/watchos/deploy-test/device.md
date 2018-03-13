@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>Testowanie na urządzeniach czujki
 
@@ -32,7 +32,7 @@ Testowanie aplikacji systemu iOS na rzeczywistą iPhone lub iPad zawsze wymaga u
 
 Obserwowanie są takie same — trzeba dodać własne urządzenie Apple Watch przed wdrożeniem aplikacji do niego. Znajdź przy użyciu UDID czujki **Xcode** (**Windows > urządzenia** listy). Po podłączeniu sparowanego phone czujki informacje będą również wyświetlane:
 
-[ ![](device-images/xcode-devices-sml.png "Informacje o sparowanego czujki")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "Informacje o sparowanego czujki")](device-images/xcode-devices.png#lightbox)
 
 Jeśli wiesz, obejrzyj UDID, dodaj go do listy urządzeń w Centrum deweloperów:
 
@@ -99,12 +99,12 @@ Może to nastąpić podczas kompilowania w trybie debugowania, aby wdrożyć urz
 
 Aby *tymczasowo* obejść ten problem, wyłącz **kompilacje przyrostowe** w rozszerzeniu czujki **opcje projektu > kompilacji > watchOS kompilacji** okno:
 
-[ ![](device-images/disable-incremental-sml.png "Pole wyboru kompilacje przyrostowe")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "Pole wyboru kompilacje przyrostowe")](device-images/disable-incremental.png#lightbox)
 
 Ten problem zostanie rozwiązany w przyszłej wersji, po którym kompilacji przyrostowej można włączyć ponownie przeprowadzać szybsze kompilacji.
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>3# czujki aplikacji kończy się niepowodzeniem do uruchomienia podczas debugowania na urządzeniu
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Obejrzyj aplikacji nie powiedzie się podczas debugowania na urządzeniu
 
 Podczas próby debugowania aplikacji czujki, na urządzeniu fizycznym, tylko ikona & pokrętła ładowania znajdują się (i ostatecznie limitu czasu). Ten problem zostanie rozwiązany w przyszłej wersji; obejście tego problemu jest uruchomienie kompilacji wydania (który nie zezwala na debugowanie).
 

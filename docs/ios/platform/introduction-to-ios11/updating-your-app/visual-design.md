@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>Projekt Visual aktualizacji
 
@@ -51,7 +51,7 @@ iOS 11 ma się łatwiejsze dodać kontroler wyszukiwania bezpośrednio na pasku 
 NavigationItem.SearchController = searchController;
 ```
 
-[![Tytuł dużych nawigacji o pasek wyszukiwania](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![Tytuł dużych nawigacji o pasek wyszukiwania](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 W zależności od funkcji aplikacji może lub nie może być na pasku wyszukiwania ukrywanych, gdy użytkownik przewija listy. Można ją dostosować przy użyciu `HidesSearchBarWhenScrolling` właściwości.
 
@@ -75,7 +75,7 @@ System iOS 7 [wprowadzone](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullsc
 
 Bezpieczne obszar jest nowy sposób planowania widoczne miejsca w aplikacji, oraz sposób ograniczenia są dodawane między widoku oraz widoku nadrzędnego. Rozważmy na przykład na poniższej ilustracji:
 
-[![Vs bezpieczny obszar górnej i dolnej układu przewodnik](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![Vs bezpieczny obszar górnej i dolnej układu przewodnik](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 Wcześniej, jeśli został dodany widoku i chce się widoczne w obszarze zielony powyżej, w przypadku czy ograniczenia go do _dolnej_ z `TopLayoutGuide` i _górnej_ z `BottomLayoutGuide`. W systemie iOS 11, w przypadku czy zamiast tego ograniczenia go do _górnej_ i _dolnej_ bezpieczne obszaru. Następujący przykład:
 

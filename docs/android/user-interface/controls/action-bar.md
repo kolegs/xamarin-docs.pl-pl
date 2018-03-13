@@ -7,28 +7,26 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: cdbdf7195daf9add01052df8fc0f0cf4c7a0cb0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64a5ac7e0c448205da66f9790a506ca34a944140
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="actionbar"></a>Elementów nadrzędnych.
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
 Korzystając z `TabActivity`, kod w celu utworzenia ikony kartę nie ma wpływu uruchomienia względem framework 4.0 dla systemu Android. Chociaż funkcjonalnie działa tak jak w wersjach systemu android przed 2.3 `TabActivity` samej klasy jest przestarzała w wersji 4.0. Nowy sposób tworzenia z kartami interfejsu został wprowadzony używającej pasku akcji, które omówiono dalej.
 
-<a name="Action_Bar_Tabs" />
 
 ## <a name="action-bar-tabs"></a>Karty na pasku akcji
 
 Na pasku akcji obsługuje dodawanie interfejsów z kartami w systemie Android 4.0.
 Poniższy zrzut ekranu przedstawia przykład takiego interfejsu.
 
-[![Zrzut ekranu przedstawiający aplikacji uruchomionej w emulatorze; dwie karty są wyświetlane.](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png)
+[![Zrzut ekranu przedstawiający aplikacji uruchomionej w emulatorze; dwie karty są wyświetlane.](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 Aby utworzyć karty na pasku akcji, najpierw musimy ustawić jej `NavigationMode` właściwości do obsługi kart. W systemie Android 4 `ActionBar` właściwość jest dostępna w klasie działania, które firma Microsoft można użyć do skonfigurowania `NavigationMode` podobnie do następującej:
 
@@ -84,26 +82,23 @@ this.ActionBar.AddTab (tab);
 
 Aby uzyskać pełny przykład, zobacz *HelloTabsICS* projektu w przykładowym kodzie dla tego dokumentu.
 
-<a name="ShareActionProvider" />
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider` Klasa umożliwia udostępnianie akcja została wykonana z paska akcji. Odpowiada on za tworzenie widoku akcji listę aplikacji, które może obsłużyć zamiar udostępniania i przechowuje historię poprzednio używanych aplikacji łatwy dostęp do nich później na pasku akcji. Dzięki temu aplikacje mogą udostępniać dane za pomocą środowiska użytkownika, który jest spójny we Android.
 
-<a name="Image_Sharing_Example" />
 
 ### <a name="image-sharing-example"></a>Przykład udostępnianie obrazu
 
 Na przykład poniżej przedstawiono zrzut ekranu na pasku akcji z elementem menu Udostępnianie obrazu (pobierane z [ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/) próbka). Po naciśnięciu element menu na pasku akcji ShareActionProvider ładuje aplikację do obsługi skojarzonego z zamiarem `ShareActionProvider`. W tym przykładzie komunikatów aplikacji został wcześniej użyty, więc znajduje się na pasku akcji.
 
-[![Zrzut ekranu przedstawiający ikonę aplikacji na pasku akcji do obsługi komunikatów](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png)
+[![Zrzut ekranu przedstawiający ikonę aplikacji na pasku akcji do obsługi komunikatów](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 
 Po kliknięciu elementu w pasku akcji, jest uruchamiana aplikacja obsługi wiadomości, która zawiera udostępniany obraz, jak pokazano poniżej:
 
-[![Zrzut ekranu przedstawiający komunikatów aplikacji wyświetlanie małp obrazu](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png)
+[![Zrzut ekranu przedstawiający komunikatów aplikacji wyświetlanie małp obrazu](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
-<a name="Specifying_the_action_Provider_Class" />
 
 ### <a name="specifying-the-action-provider-class"></a>Określenie akcji klasy dostawcy
 
@@ -119,7 +114,6 @@ Aby użyć `ShareActionProvider`ustaw `android:actionProviderClass` atrybutu ele
 </menu>
 ```
 
-<a name="Inflating_the_Menu" />
 
 ### <a name="inflating-the-menu"></a>Pompowania Menu
 
@@ -137,7 +131,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-<a name="Creating_the_Intent" />
 
 ### <a name="creating-the-intent"></a>Tworzenie celem
 

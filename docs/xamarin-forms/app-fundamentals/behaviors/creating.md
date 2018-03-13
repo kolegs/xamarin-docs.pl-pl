@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms Behaviors
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 `NumericValidationBehavior` Pochodną [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, których `T` jest [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metoda rejestruje program obsługi zdarzeń dla [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) zdarzeń, z [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metody do rejestrowania `TextChanged`przecieków zdarzenie, aby zapobiec pamięci. Do podstawowych funkcji zachowanie jest zapewniana przez `OnEntryTextChanged` metodę, która analizuje wartości wprowadzonej przez użytkownika do `Entry`i ustawia [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) właściwości czerwony, jeśli wartość nie jest `double`.
 
 > [!NOTE]
-> **Uwaga**: platformy Xamarin.Forms nie ustawia `BindingContext` zachowania, ponieważ zachowania może być udostępniony i stosowane do wielu formantów za pomocą stylów.
+> Platformy Xamarin.Forms nie ustawia `BindingContext` zachowania, ponieważ zachowania może być udostępniony i stosowane do wielu formantów za pomocą stylów.
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Korzystanie z zachowaniem platformy Xamarin.Forms
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 W czasie wykonywania zachowanie będzie odpowiadać interakcji z formantem, zgodnie z implementacją zachowanie. Poniższe zrzuty ekranu pokazują zachowanie odpowiada na nieprawidłowe dane wejściowe:
 
-[ ![](creating-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")](creating-images/screenshots.png "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")
+[![](creating-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")](creating-images/screenshots.png#lightbox "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")
 
 > [!NOTE]
-> **Uwaga**: zachowania są zapisywane dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie wystąpi wyjątek.
+> Zachowania są przeznaczone dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie wystąpi wyjątek.
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Korzystanie z platformy Xamarin.Forms zachowanie o stylu
 
@@ -181,7 +181,7 @@ Poniższy kod przedstawia przykład *jawne* stylów dla `NumericValidationBehavi
 Aby uzyskać więcej informacji na temat stylów, zobacz [style](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> **Uwaga**: możliwe jest dodawanie właściwości do zachowania, ustawić lub zapytanie w języku XAML, jeśli Tworzenie zachowania mają stan ich nie mogą być udostępniane między formantami w `Style` w `ResourceDictionary`.
+> Możliwe jest dodawanie właściwości do zachowania, ustawić lub zapytanie w języku XAML, jeśli Tworzenie zachowania mają stan ich nie mogą być udostępniane między formantami w `Style` w `ResourceDictionary`.
 
 ### <a name="removing-a-behavior-from-a-control"></a>Usuwanie zachowanie za pomocą formantu
 

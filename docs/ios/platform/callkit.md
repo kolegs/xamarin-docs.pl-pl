@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c78396ce55c776c615f3b3027a97b5a334c0b7f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf519cb964bf852c74249c874b9a934d4a6cf5c3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="callkit"></a>CallKit
 
@@ -52,11 +52,11 @@ Poniższe sekcje omówiono architekturę CallKit, przychodzących i wychodzącyc
 
 W systemie iOS 10 Apple przyjęła CallKit we wszystkich usług System tak, aby wywołania CarPlay, na przykład wiadomo, że interfejs użytkownika systemu za pośrednictwem CallKit. W podanym przykładzie poniżej, ponieważ MonkeyCall przyjmuje CallKit on jest nieznany w systemie w taki sam sposób jak te wbudowane usług systemowych i pobiera wszystkie te same funkcje:
 
-[ ![](callkit-images/callkit01.png "Stos CallKit usługi")](callkit-images/callkit01.png)
+[![](callkit-images/callkit01.png "Stos CallKit usługi")](callkit-images/callkit01.png#lightbox)
 
 Przyjrzyjmy się bliżej aplikacji MonkeyCall z powyższym diagramie. Zawiera wszystkie jego kod do komunikowania się z sieci i zawiera interfejsy użytkownika aplikacji. Łączy w CallKit do komunikacji z systemem:
 
-[ ![](callkit-images/callkit02.png "Architektura aplikacji MonkeyCall")](callkit-images/callkit02.png)
+[![](callkit-images/callkit02.png "Architektura aplikacji MonkeyCall")](callkit-images/callkit02.png#lightbox)
 
 Istnieją dwa główne interfejsy CallKit, który korzysta z aplikacji:
 
@@ -75,7 +75,7 @@ Aplikacja powinna używać `CXProvider` dla następujących:
 
 Gdy aplikacja potrzebuje do komunikowania się do systemu, używa `CXCallUpdate` klasy, a gdy System musi komunikować się z aplikacją, używa `CXAction` klasy:
 
-[ ![](callkit-images/callkit03.png "Podczas komunikacji z systemu za pośrednictwem CXProvider")](callkit-images/callkit03.png)
+[![](callkit-images/callkit03.png "Podczas komunikacji z systemu za pośrednictwem CXProvider")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>CXCallController
 
@@ -89,7 +89,7 @@ Aplikacja powinna używać `CXCallController` dla następujących:
 
 Gdy aplikacja chce komunikacji akcje użytkownika lokalnego do systemu, używa `CXTransaction` klasy:
 
-[ ![](callkit-images/callkit04.png "Raportowanie w systemie przy użyciu CXCallController")](callkit-images/callkit04.png)
+[![](callkit-images/callkit04.png "Raportowanie w systemie przy użyciu CXCallController")](callkit-images/callkit04.png#lightbox)
 
 ## <a name="implementing-callkit"></a>Implementowanie CallKit
 
@@ -748,7 +748,7 @@ Poniższe sekcje będzie szczegółowe Spójrz na aplikację użycia CallKit do 
 
 Użytkownik zdalny został uruchomiony konwersacji VOIP użytkownika lokalnego, są następujące operacje:
 
-[ ![](callkit-images/callkit05.png "Użytkownik zdalny rozpoczęto konwersacji VOIP")](callkit-images/callkit05.png)
+[![](callkit-images/callkit05.png "Użytkownik zdalny rozpoczęto konwersacji VOIP")](callkit-images/callkit05.png#lightbox)
 
 1. Aplikacja pobiera powiadomienie z jego sieć komunikacji przychodzących połączeń VOIP istnieje.
 2. Aplikacja używa `CXProvider` do wysyłania `CXCallUpdate` do informowania o wywołaniu systemu.
@@ -783,7 +783,7 @@ Ten kod tworzy nową `CXCallUpdate` wystąpienia i dołącza dojścia do niego i
 
 Jeśli użytkownik chce odebranie połączenia przychodzącego VOIP, są następujące operacje:
 
-[ ![](callkit-images/callkit06.png "Użytkownik odpowiada na przychodzące wywołanie VOIP")](callkit-images/callkit06.png)
+[![](callkit-images/callkit06.png "Użytkownik odpowiada na przychodzące wywołanie VOIP")](callkit-images/callkit06.png#lightbox)
 
 1. Interfejsu użytkownika systemu informuje System, że użytkownik chce odpowiedzi na wywołanie VOIP.
 2. Wysyła System `CXAnswerCallAction` w aplikacji `CXProvider` informowania o zamiar odpowiedzi.
@@ -824,7 +824,7 @@ Ten kod najpierw szuka danego wywołania swoją listę aktywnych połączeń. Je
 
 Jeśli użytkownik chce przerwanie połączenia od w Interfejsie użytkownika aplikacji, są następujące operacje:
 
-[ ![](callkit-images/callkit07.png "Użytkownik kończy wywołania od w Interfejsie użytkownika aplikacji")](callkit-images/callkit07.png)
+[![](callkit-images/callkit07.png "Użytkownik kończy wywołania od w Interfejsie użytkownika aplikacji")](callkit-images/callkit07.png#lightbox)
 
 1. Tworzy aplikację `CXEndCallAction` który pobiera połączone w `CXTransaction` wysyłana do uzna, że kończy wywołanie do systemu.
 2. System sprawdza, czy próba wywołania zakończenia i wysyła `CXEndCallAction` powrót do aplikacji za pomocą `CXProvider`.
@@ -874,7 +874,7 @@ W powyższym określają sytuacji System będzie wysyłać `CXTransaction` aplik
 
 Jeśli użytkownik naciska wpisu z listy ostatnich (w aplikacji telefonu), na przykład, to po wywołaniu należące do aplikacji, go będą wysyłane _Start próba wywołania_ przez system:
 
-[ ![](callkit-images/callkit08.png "Próba wywołania rozpoczęcia odbierania")](callkit-images/callkit08.png)
+[![](callkit-images/callkit08.png "Próba wywołania rozpoczęcia odbierania")](callkit-images/callkit08.png#lightbox)
 
 1. Aplikacja utworzy _Start wywołanie_ oparte na Start wywołać zamiar otrzymanej z systemu. 
 2. Aplikacja będzie używać `CXCallController` żądania Akcja uruchamiania wywołania z systemu.
@@ -1119,7 +1119,7 @@ Ponadto CallKit ma dostęp do innych audio wskazówek routingu, które mogą zwi
 
 Podczas cyklu typowe VOIP wywołanie przy użyciu CallKit, należy skonfigurować strumień Audio, który dostarczy go CallKit aplikacji. Spójrz na poniższym przykładzie:
 
-[ ![](callkit-images/callkit09.png "Sekwencja uruchamiania wywołanie akcji")](callkit-images/callkit09.png)
+[![](callkit-images/callkit09.png "Sekwencja uruchamiania wywołanie akcji")](callkit-images/callkit09.png#lightbox)
 
 1. Akcja uruchamiania wywołać jest odbierany przez aplikację do odpowiedzi połączenia przychodzącego.
 2. Zanim ta akcja jest spełnione przez aplikację, zapewnia powoduje wymaga konfiguracji, który jest jego `AVAudioSession`.
@@ -1140,13 +1140,13 @@ Aby zaimplementować rozszerzenie katalogu wywołań w aplikacji platformy Xamar
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **wywołania rozszerzenia katalogów** i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](callkit-images/calldir01.png "Tworzenie nowego rozszerzenia katalogu wywołania")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01.png "Tworzenie nowego rozszerzenia katalogu wywołania")](callkit-images/calldir01.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **dalej** przycisk: 
 
-    [ ![](callkit-images/calldir02.png "Wprowadź nazwę rozszerzenia")](callkit-images/calldir02.png)
+    [![](callkit-images/calldir02.png "Wprowadź nazwę rozszerzenia")](callkit-images/calldir02.png#lightbox)
 5. Dostosuj **Nazwa projektu** i/lub **Nazwa rozwiązania** wymagane, a następnie kliknij przycisk **Utwórz** przycisk: 
 
-    [ ![](callkit-images/calldir03.png "Tworzenie projektu")](callkit-images/calldir03.png) 
+    [![](callkit-images/calldir03.png "Tworzenie projektu")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -1154,7 +1154,7 @@ Aby zaimplementować rozszerzenie katalogu wywołań w aplikacji platformy Xamar
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **wywołania rozszerzenia katalogów** i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](callkit-images/calldir01w.png "Tworzenie nowego rozszerzenia katalogu wywołania")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01w.png "Tworzenie nowego rozszerzenia katalogu wywołania")](callkit-images/calldir01.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **OK** przycisku
 
 -----

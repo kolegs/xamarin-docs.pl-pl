@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d84473ee4379cd9a39315635017b81a2714da162
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Powiadomienia w Xamarin.iOS
 
@@ -44,7 +44,7 @@ var settings = UIUserNotificationSettings.GetSettingsForTypes(
 UIApplication.SharedApplication.RegisterUserNotificationSettings (settings);
 ```
 
-  [ ![](local-notifications-in-ios-images/image0-sml.png "Potwierdzenie umożliwia wysyłanie powiadomień lokalnych")](local-notifications-in-ios-images/image0.png)
+  [![](local-notifications-in-ios-images/image0-sml.png "Potwierdzenie umożliwia wysyłanie powiadomień lokalnych")](local-notifications-in-ios-images/image0.png#lightbox)
 
 Można zaplanować lokalnego powiadomienia o utworzeniu `UILocalNotification` obiekt, ustaw `FireDate`i Zaplanuj go za pomocą `ScheduleLocalNotification` metoda `UIApplication.SharedApplication` obiektu. Poniższy fragment kodu będzie pokazują, jak zaplanować powiadomienie, które będą wyzwalać minutę w przyszłości i wyświetl alert z następującym komunikatem:
 
@@ -59,7 +59,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 Poniższy zrzut ekranu pokazują, jak wygląda ten alert:
 
-  [ ![](local-notifications-in-ios-images/image2-sml.png "Przykład alertu")](local-notifications-in-ios-images/image2.png)
+  [![](local-notifications-in-ios-images/image2-sml.png "Przykład alertu")](local-notifications-in-ios-images/image2.png#lightbox)
 
 Należy pamiętać, że jeśli użytkownik wybrał opcję *zezwala* powiadomienia nie będzie wyświetlany.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 593e720e4a6125e2ef4a1c9488186cb2c04dcd66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 
@@ -45,7 +45,7 @@ W tym artykule omówiono podstawowe informacje dotyczące struktury platformy Xa
 
 W programie Visual Studio for Mac i Visual Studio domyślnego szablonu aplikacji platformy Xamarin.Forms tworzy najprostszym platformy Xamarin.Forms rozwiązanie to możliwe, który jest wyświetlany tekst. Po uruchomieniu aplikacji powinien wyglądać podobnie do poniższej zrzuty ekranu:
 
-[ ![](introduction-to-xamarin-forms-images/image05-sml.png "Domyślna aplikacji platformy Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png "domyślnej aplikacji platformy Xamarin.Forms")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "Domyślna aplikacji platformy Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png#lightbox "domyślnej aplikacji platformy Xamarin.Forms")
 
 Każdy ekran na zrzutach ekranu odpowiada *strony* w platformy Xamarin.Forms. A [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) reprezentuje *działania* w systemie Android, *kontrolera widoku* w systemie iOS, czy też *strony* w uniwersalnych systemu Windows Platformy Uniwersalnej. Tworzy wystąpienie przykładowe zrzuty ekranu powyżej [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) obiektu i użyty do wyświetlenia [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/).
 
@@ -249,7 +249,7 @@ public class StackLayoutExample : ContentPage
 
 Domyślnie [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) zakłada orientacji pionowej, jak pokazano na poniższych zrzutach ekranu:
 
-[ ![](introduction-to-xamarin-forms-images/image09-sml.png "Pionowy StackLayout")](introduction-to-xamarin-forms-images/image09.png "StackLayout pionowe")
+[![](introduction-to-xamarin-forms-images/image09-sml.png "Pionowy StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "StackLayout pionowe")
 
 Orientacja [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) można zmienić na orientację poziomą, jak pokazano w poniższym przykładzie kodu XAML:
 
@@ -286,7 +286,7 @@ public class StackLayoutExample: ContentPage
 
 Poniższe zrzuty ekranu pokazują Wynikowy układ:
 
-[ ![](introduction-to-xamarin-forms-images/image10-sml.png "Poziomy StackLayout")](introduction-to-xamarin-forms-images/image10.png "StackLayout pozioma")
+[![](introduction-to-xamarin-forms-images/image10-sml.png "Poziomy StackLayout")](introduction-to-xamarin-forms-images/image10.png#lightbox "StackLayout pozioma")
 
 Rozmiar kontrolki można ustawić za pomocą `HeightRequest` i `WidthRequest` właściwości, jak pokazano w poniższym przykładzie kodu XAML:
 
@@ -329,7 +329,7 @@ Content = new StackLayout
 
 Poniższe zrzuty ekranu pokazują Wynikowy układ:
 
-[ ![](introduction-to-xamarin-forms-images/image11-sml.png "Poziomy StackLayout z LayoutOptions")](introduction-to-xamarin-forms-images/image11.png "poziome StackLayout z LayoutOptions")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "Poziomy StackLayout z LayoutOptions")](introduction-to-xamarin-forms-images/image11.png#lightbox "poziome StackLayout z LayoutOptions")
 
 Aby uzyskać więcej informacji na temat [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) , zobacz [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 

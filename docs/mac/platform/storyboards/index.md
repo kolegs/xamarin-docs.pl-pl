@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 21e35b056293e422b577b0ee8b51e8c43dbbf07d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ccee60b5d953987e858ef592d005cec9803b8b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Wprowadzenie do scenorysu
 
@@ -20,7 +20,7 @@ _Ten artykuł zawiera wprowadzenie do pracy z Scenorys w aplikacji Xamarin.Mac. 
 
 Scenorys umożliwiają tworzenie interfejsu użytkownika dla aplikacji Xamarin.Mac obejmuje nie tylko definicji okna i kontrolek, ale również zawiera łącza między innego systemu windows (za pośrednictwem segues) i wyświetlanie stanów.
 
-[ ![](images/intro01.png "Przykładowy interfejs użytkownika w środowisku Xcode")](images/intro01.png)
+[![](images/intro01.png "Przykładowy interfejs użytkownika w środowisku Xcode")](images/intro01.png#lightbox)
 
 W tym artykule zapewni wprowadzenie do używania Scenorys do definiowania aplikacji Xamarin.Mac użytkownika interfejsu.
 
@@ -36,11 +36,11 @@ Za pomocą Scenorys, wszystkie Interfejsie użytkownika aplikacji Xamarin.Mac mo
 
 Jak już wspomniano, scenorysu definiuje wszystkie interfejsu użytkownika dla danej aplikacji, podzielić na funkcjonalności omówienie jej _kontrolerów widoku_. W Konstruktorze interfejsu w programie Xcode, każdy z tych kontrolerów przebywa w jego własnej _sceny_.
 
-[ ![](images/intro02.png "Przykład kontrolera widoku")](images/intro02.png)
+[![](images/intro02.png "Przykład kontrolera widoku")](images/intro02.png#lightbox)
 
 Każdy sceny reprezentuje dany widok i para kontrolera widoku przy użyciu zestawu wierszy (nazywane Segues) łączących każdego sceny w interfejsie użytkownika, w związku z tym wyświetlanie ich relacji. Niektóre Segues zdefiniować sposób jeden kontroler widoku zawiera co najmniej jeden podrzędny widoki lub widok kontrolerów. Inne Segues zdefiniuj przejścia między kontrolerem widoku (na przykład wyświetlanie popover lub okno dialogowe). 
 
-[ ![](images/intro03.png "Segue próbki")](images/intro03.png)
+[![](images/intro03.png "Segue próbki")](images/intro03.png#lightbox)
 
 Ważne jest, należy pamiętać, jest, że każdy Segue reprezentuje przepływ jakiegoś typu danych między danego elementu interfejsu użytkownika aplikacji.
 
@@ -50,7 +50,7 @@ Ważne jest, należy pamiętać, jest, że każdy Segue reprezentuje przepływ j
 
 Widok kontrolerów zdefiniowania relacji między danego widoku informacji w aplikacji Mac i model danych, który zawiera te informacje. Każdy sceny najwyższego poziomu w scenorysu reprezentuje jeden kontroler widoku w kodzie aplikacji Xamarin.Mac.
 
-[ ![](images/intro04.png "Przykład dokumentów kontrolera widoku")](images/intro04.png)
+[![](images/intro04.png "Przykład dokumentów kontrolera widoku")](images/intro04.png#lightbox)
 
 W ten sposób każdy kontroler widoku jest niezależna, wielokrotnego użytku parowanie informacji wizualnej reprezentacji (Widok), jak i logika stanowią i kontrolowania tych informacji.
 

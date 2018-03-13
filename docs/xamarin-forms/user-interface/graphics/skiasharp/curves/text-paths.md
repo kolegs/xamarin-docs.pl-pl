@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: bf382f380876e85db46226fb3586382f20d630f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b22cebf8ca5804884c559da687fe90236c7af44d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="paths-and-text"></a>Ścieżki i tekst
 
@@ -44,7 +44,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 Jeden z tych zadań jest wycinka. **Tekst wycinka** strony tworzy ścieżkę wycinka zawiera znak Word 'CODE'. Ta ścieżka jest rozciągany tak, aby rozmiar strony do Przytnij mapę bitową, który zawiera obraz **wycinka tekst** kod źródłowy:
 
-[![](text-paths-images/clippingtext-small.png "Potrójna zrzut ekranu przedstawiający stronę wycinka tekst")](text-paths-images/clippingtext-large.png "Potrójna zrzut ekranu przedstawiający stronę wycinka tekstu")
+[![](text-paths-images/clippingtext-small.png "Potrójna zrzut ekranu przedstawiający stronę wycinka tekst")](text-paths-images/clippingtext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wycinka tekstu")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktora klasy ładuje mapę bitową, która jest przechowywana jako osadzony zasób w **nośnika** folderu rozwiązania:
 
@@ -125,7 +125,7 @@ Po ścieżce wycinka jest ustawiona, można wyświetlić mapę bitową i zostani
 
 **Efekt ścieżki tekstu** strony konwertuje pojedynczy znak ścieżki do utworzenia efektu ścieżki 1 D. Obiekt malowania począwszy ta ścieżka jest następnie używany do obrysu konturu większej wersji tego samego znaku:
 
-[![](text-paths-images/textpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")](text-paths-images/textpatheffect-large.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")
+[![](text-paths-images/textpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")](text-paths-images/textpatheffect-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")
 
 Dużo pracy w [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) klasa występuje w polach i konstruktora. Dwa `SKPaint` obiektów zdefiniowana jako pola służą do dwóch różnych celów: pierwszy (o nazwie `textPathPaint`) służy do konwertowania handlowego "i" z `TextSize` 50 do ścieżki dla efektu ścieżki 1 D. Druga (`textPaint`) służy do wyświetlania większej wersji handlowego "i" począwszy tej ścieżki. Z tego powodu `Style` tego paint drugi obiekt został ustawiony na `Stroke`, ale `StrokeWidth` właściwość nie jest ustawiona, ponieważ tej właściwości nie jest konieczne, gdy za pomocą efektu ścieżki 1 D:
 
@@ -270,7 +270,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface` Obsługi utworzy nową ścieżkę o nazwie `outlinePath`. Staje się on w ścieżce docelowej w wywołaniu `GetFillPath`. `StrokeWidth` Właściwości 25 przyczyny `outlinePath` do opisywania konturu ścieżki 25 pikseli na poziomie używana do malowania znaki tekstu. Ta ścieżka zebrane na czerwono szerokość pociągnięć 5:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Potrójna zrzut ekranu strony zawiera konspektu znak")](text-paths-images/characteroutlineoutlines-large.png "Potrójna zrzut ekranu strony opisanych konspektu znaków")
+[![](text-paths-images/characteroutlineoutlines-small.png "Potrójna zrzut ekranu strony zawiera konspektu znak")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Potrójna zrzut ekranu strony opisanych konspektu znaków")
 
 Przeglądanie i pojawi się nakładania się gdzie konturu ścieżki sprawia, że sharp rogu. Są to pozostałości normalne tego procesu.
 
@@ -323,7 +323,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize` Właściwość `textPaint` następnie zostanie zmieniona tak, aby szerokość tekstu zgodne obwód koła:
 
-[![](text-paths-images/circulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekst")](text-paths-images/circulartext-large.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")
+[![](text-paths-images/circulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekst")](text-paths-images/circulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")
 
 Tekst został wybrany do nieco cykliczne można również: wyraz "okrąg" jest zarówno podmiotu zdania i obiekt frazę przyimkowych. 
 

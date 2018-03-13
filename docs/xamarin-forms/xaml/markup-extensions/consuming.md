@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Korzystanie z rozszerzeń znaczników XAML
 
@@ -137,7 +137,7 @@ Wyświetla końcowy przykład `Device.RuntimePlatform` wartość. `Environment.N
 
 Oto przykładowe działająca na wszystkich platformach trzy:
 
-[![x: Static pokaz](consuming-images/staticdemo-small.png "pokaz x: Static")](consuming-images/staticdemo-large.png "pokaz x: Static")
+[![x: Static pokaz](consuming-images/staticdemo-small.png "pokaz x: Static")](consuming-images/staticdemo-large.png#lightbox "pokaz x: Static")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ Oto przykładowe działająca na wszystkich platformach trzy:
 
 Zarówno `x:Reference` wyrażenia użyj skróconej wersji `ReferenceExtension` Nazwa klasy i eliminowania `Name=` część wyrażenia. W pierwszym przykładzie `x:Reference` — rozszerzenie znaczników jest osadzony w `Binding` — rozszerzenie znaczników. Zwróć uwagę, że `Source` i `StringFormat` ustawienia są oddzielone przecinkami. Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![x: Reference pokaz](consuming-images/referencedemo-small.png "pokaz x: Reference")](consuming-images/referencedemo-large.png "pokaz x: Reference")
+[![x: Reference pokaz](consuming-images/referencedemo-small.png "pokaz x: Reference")](consuming-images/referencedemo-large.png#lightbox "pokaz x: Reference")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ Jest to sposób menu nawigacji w `MainPage` w **rozszerzenia znaczników** progr
 
 Oto otwierania strony głównej **rozszerzenia znaczników**:
 
-[![Główne strony](consuming-images/mainpage-small.png "Main strony")](consuming-images/mainpage-large.png "Main strony")
+[![Główne strony](consuming-images/mainpage-small.png "Main strony")](consuming-images/mainpage-large.png#lightbox "Main strony")
 
 Każdy `CommandParameter` właściwość jest ustawiona na `x:Type` rozszerzenie znaczników, który odwołuje się do jednego z innych stron. `Command` Właściwość jest powiązana z właściwości o nazwie `NavigateCommand`. Ta właściwość jest zdefiniowana w `MainPage` pliku CodeBehind:
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąpienie argumentu, ustawia jego `VerticalOptions` właściwości i dodaje go do `StackLayout`. Trzy `Button` elementy następnie udostępnić stronie utworzony dynamicznie widoków:
 
-[![x: Type pokaz](consuming-images/typedemo-small.png "pokaz x: Type")](consuming-images/typedemo-large.png "pokaz x: Type")
+[![x: Type pokaz](consuming-images/typedemo-small.png "pokaz x: Type")](consuming-images/typedemo-large.png#lightbox "pokaz x: Type")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąp
 
 `ViewCell` Tworzy prosty `BoxView` dla każdego wpisu kolorów:
 
-[![x: Array pokaz](consuming-images/arraydemo-small.png "pokaz x: Array")](consuming-images/arraydemo-large.png "pokaz x: Array")
+[![x: Array pokaz](consuming-images/arraydemo-small.png "pokaz x: Array")](consuming-images/arraydemo-large.png#lightbox "pokaz x: Array")
 
 Istnieje kilka sposobów, aby określić poszczególne `Color` elementów w tej macierzy. Można użyć `x:Static` — rozszerzenie znaczników:
 
@@ -449,7 +449,7 @@ Następnie użytkownik stwierdza, że dla jednego z `Label` elementów, ustawien
 
 Oto działająca na platformach trzy program:
 
-[![x:Null Demo](consuming-images/nulldemo-small.png "x:Null Demo")](consuming-images/nulldemo-large.png "x:Null Demo")
+[![x:Null Demo](consuming-images/nulldemo-small.png "x:Null Demo")](consuming-images/nulldemo-large.png#lightbox "x:Null Demo")
 
 O tym, że cztery `Label` elementy mają czcionki serif, ale Centrum `Label` ma sans-serif domyślnej czcionki.
 

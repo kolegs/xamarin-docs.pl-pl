@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cb6917f9cd0dc22cc32a2d32c203328f1d6d963b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d58c30e745e26d1076e75470e527cbe95e85eb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-and-search-fields"></a>Praca z tekstem i pola wyszukiwania
 
@@ -22,11 +22,11 @@ _Ten artykuł obejmuje projektowanie i Praca z pola wyszukiwania i tekst wewnąt
 
 Gdy jest to wymagane, aplikację Xamarin.tvOS mogą żądać małych fragmentów tekstu od użytkownika (na przykład nazwy użytkownika i hasła) przy użyciu pola tekstowego i program Klawiatura ekranowa:
 
-[ ![](text-fields-and-search-images/intro01.png "Przykładowe pole wyszukiwania")](text-fields-and-search-images/intro01.png)
+[![](text-fields-and-search-images/intro01.png "Przykładowe pole wyszukiwania")](text-fields-and-search-images/intro01.png#lightbox)
 
 Opcjonalnie można podać — słowo kluczowe możliwości wyszukiwania zawartości aplikacji przy użyciu pola wyszukiwania:
 
-[ ![](text-fields-and-search-images/intro02.png "Przykładowe wyniki wyszukiwania")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Przykładowe wyniki wyszukiwania")](text-fields-and-search-images/intro02.png#lightbox)
 
 Ten dokument będzie obejmować szczegóły dotyczące pracy z tekstem i pola wyszukiwania w aplikacji Xamarin.tvOS.
 
@@ -44,7 +44,7 @@ Ponadto aplikacji wyświetlane dużej ilości zawartości dla użytkownika (na p
 
 W systemu tvOS, pola tekstowego zostaje przedstawiony jako okno wysokości, zaokrąglona rogu wejścia, które zostaną wyświetlone po kliknięciu przez użytkownika na nim program Klawiatura ekranowa:
 
-[ ![](text-fields-and-search-images/text01.png "Tekst pola w systemu tvOS")](text-fields-and-search-images/text01.png)
+[![](text-fields-and-search-images/text01.png "Tekst pola w systemu tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 Gdy użytkownik przesuwa [fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) do danego pola tekstowego będzie coraz większe i wyświetlić głębokie cienia. Należy pamiętać, to podczas projektowania interfejsu użytkownika, ponieważ pola tekstowe mogą nakładać się na inne elementy interfejsu użytkownika, gdy fokus.
 
@@ -61,7 +61,7 @@ Apple ma poniższe sugestie dotyczące pracy z polami tekstu:
 
 Gdy użytkownik kliknie w polu tekstowym w interfejsie użytkownika, liniowej na ekranie zostanie wyświetlony klawiatury. Użytkownik używa dotykać powierzchni [zdalnego Siri](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) wybierz poszczególne koperty z klawiatury i wprowadź wymagane informacje:
 
-[ ![](text-fields-and-search-images/keyboard01.png "Używanie programu Siri zdalnego klawiatury")](text-fields-and-search-images/keyboard01.png)
+[![](text-fields-and-search-images/keyboard01.png "Używanie programu Siri zdalnego klawiatury")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 Jeśli istnieje więcej niż jedno pole tekstowe w bieżącym widoku **dalej** przycisk będzie automatycznie wyświetlany przenieść użytkownika do następnego pola tekstowego. A **gotowe** przycisk będzie wyświetlany dla ostatniego pola tekstowego będzie kończyć wpisywanie tekstu i powrócić do poprzedniego ekranu użytkownika. 
 
@@ -80,7 +80,7 @@ Aby uzyskać więcej informacji na temat pracy z Klawiatura ekranowa, zobacz fir
 
 Pole wyszukiwania stanowią specjalne ekranu, zapewniając pola tekstowego i Klawiatura ekranowa, który umożliwia użytkownikowi filtrować kolekcję elementów, które są wyświetlane poniżej klawiatury:
 
-[ ![](text-fields-and-search-images/search01.png "Przykładowe wyniki wyszukiwania")](text-fields-and-search-images/search01.png)
+[![](text-fields-and-search-images/search01.png "Przykładowe wyniki wyszukiwania")](text-fields-and-search-images/search01.png#lightbox)
 
 Jako użytkownik wprowadzi litery w polu wyszukiwania, poniższe wyniki zostanie automatycznie uwzględniona wyniki wyszukiwania. W dowolnym momencie użytkownik może przenieść fokus na wyniki i wybierz jeden z elementów przedstawiony.
 
@@ -105,16 +105,16 @@ Wykonaj następujące czynności:
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji.
 1. Przeciągnij co najmniej jeden **pól tekstowych** int powierzchnię na widok: 
 
-    [ ![](text-fields-and-search-images/text02.png "Pole tekstowe")](text-fields-and-search-images/text02.png)
+    [![](text-fields-and-search-images/text02.png "Pole tekstowe")](text-fields-and-search-images/text02.png#lightbox)
 1. Wybierz **pól tekstowych** i nadaj każdej unikatowego **nazwa** w **elementu Widget** karcie **konsoli właściwości**: 
 
-    [ ![](text-fields-and-search-images/text03.png "Karta Widget właściwości konsoli")](text-fields-and-search-images/text03.png)
+    [![](text-fields-and-search-images/text03.png "Karta Widget właściwości konsoli")](text-fields-and-search-images/text03.png#lightbox)
 1. W **pola tekstowego** sekcji, można zdefiniować elementów, takich jak **symbolu zastępczego** wskazówki i domyślne **wartość**: 
 
-    [ ![](text-fields-and-search-images/text04.png "W sekcji pola tekstowego.")](text-fields-and-search-images/text04.png)
+    [![](text-fields-and-search-images/text04.png "W sekcji pola tekstowego.")](text-fields-and-search-images/text04.png#lightbox)
 1. Przewiń w dół do definiowania właściwości, takie jak **sprawdzanie pisowni**, **wielkość liter** i domyślnie **typu klawiatury**: 
 
-    [ ![](text-fields-and-search-images/text05.png "Sprawdzanie pisowni, wielkość liter i domyślnego typu klawiatury")](text-fields-and-search-images/text05.png) 
+    [![](text-fields-and-search-images/text05.png "Sprawdzanie pisowni, wielkość liter i domyślnego typu klawiatury")](text-fields-and-search-images/text05.png#lightbox) 
 1. Zapisać zmiany w Twojej scenorysu.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -122,16 +122,16 @@ Wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji.
 1. Przeciągnij co najmniej jeden **pól tekstowych** int powierzchnię na widok: 
 
-    [ ![](text-fields-and-search-images/text02-vs.png "Pole tekstowe")](text-fields-and-search-images/text02-vs.png)
+    [![](text-fields-and-search-images/text02-vs.png "Pole tekstowe")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. Wybierz **pól tekstowych** i nadaj każdej unikatowego **nazwa** w **elementu Widget** karcie **Explorer właściwości**: 
 
-    [ ![](text-fields-and-search-images/text03-vs.png "Na karcie widżetu")](text-fields-and-search-images/text03-vs.png)
+    [![](text-fields-and-search-images/text03-vs.png "Na karcie widżetu")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. W **pola tekstowego** sekcji, można zdefiniować elementów, takich jak **symbolu zastępczego** wskazówki i domyślne **wartość**: 
 
-    [ ![](text-fields-and-search-images/text04-vs.png "W sekcji pola tekstowego.")](text-fields-and-search-images/text04-vs.png)
+    [![](text-fields-and-search-images/text04-vs.png "W sekcji pola tekstowego.")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. Przewiń w dół do definiowania właściwości, takie jak **sprawdzanie pisowni**, **wielkość liter** i domyślnie **typu klawiatury**: 
 
-    [ ![](text-fields-and-search-images/text05-vs.png "Sprawdzanie pisowni, wielkość liter i domyślnego typu klawiatury")](text-fields-and-search-images/text05-vs.png) 
+    [![](text-fields-and-search-images/text05-vs.png "Sprawdzanie pisowni, wielkość liter i domyślnego typu klawiatury")](text-fields-and-search-images/text05-vs.png#lightbox) 
 1. Zapisać zmiany w Twojej scenorysu.
     
 -----
@@ -157,17 +157,17 @@ Wykonaj następujące czynności:
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji.
 1. Przeciągnij nowego kontrolera widoku kolekcji do scenorysu do prezentowania wyniki wyszukiwania użytkownika: 
 
-    [ ![](text-fields-and-search-images/search02.png "Kontroler widoku kolekcji")](text-fields-and-search-images/search02.png)
+    [![](text-fields-and-search-images/search02.png "Kontroler widoku kolekcji")](text-fields-and-search-images/search02.png#lightbox)
 1. W **elementu Widget** karcie **konsoli właściwości**, użyj `SearchResultsViewController` dla **klasy** i `SearchResults` dla **identyfikator scenorysu**: 
 
-    [ ![](text-fields-and-search-images/search03.png "Na karcie widżetu")](text-fields-and-search-images/search03.png)
+    [![](text-fields-and-search-images/search03.png "Na karcie widżetu")](text-fields-and-search-images/search03.png#lightbox)
 1. Wybierz **prototypu komórki** na powierzchni projektu.
 1. W **elementu Widget** karcie **Explorer właściwości**, użyj `SearchResultCell` dla **klasy** i `ImageCell` dla **identyfikator**: 
 
-    [ ![](text-fields-and-search-images/search04.png "Na karcie widżetu")](text-fields-and-search-images/search04.png)
+    [![](text-fields-and-search-images/search04.png "Na karcie widżetu")](text-fields-and-search-images/search04.png#lightbox)
 1. Układ projektu z **prototypu komórki** i ujawnia każdy element przy użyciu unikatowego **nazwa** w **elementu Widget** karty **Explorer właściwości**: 
 
-    [ ![](text-fields-and-search-images/search05.png "Układ projektu prototypu komórki")](text-fields-and-search-images/search05.png)
+    [![](text-fields-and-search-images/search05.png "Układ projektu prototypu komórki")](text-fields-and-search-images/search05.png#lightbox)
 1. Zapisać zmiany w Twojej scenorysu.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -175,17 +175,17 @@ Wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji.
 1. Przeciągnij nowego kontrolera widoku kolekcji do scenorysu do prezentowania wyniki wyszukiwania użytkownika: 
 
-    [ ![](text-fields-and-search-images/seach02-vs.png "Kontroler widoku kolekcji")](text-fields-and-search-images/seach02-vs.png)
+    [![](text-fields-and-search-images/seach02-vs.png "Kontroler widoku kolekcji")](text-fields-and-search-images/seach02-vs.png#lightbox)
 1. W **elementu Widget** karcie **Explorer właściwości**, użyj `SearchResultsViewController` dla **klasy** i `SearchResults` dla **scenorysu identyfikator**: 
 
-    [ ![](text-fields-and-search-images/search03-vs.png "Na karcie widżetu")](text-fields-and-search-images/search03-vs.png)
+    [![](text-fields-and-search-images/search03-vs.png "Na karcie widżetu")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Wybierz **prototypu komórki** na powierzchni projektu.
 1. W **elementu Widget** karcie **Explorer właściwości**, użyj `SearchResultCell` dla **klasy** i `ImageCell` dla **identyfikator**: 
 
-    [ ![](text-fields-and-search-images/search04-vs.png "Na karcie widżetu")](text-fields-and-search-images/search04-vs.png)
+    [![](text-fields-and-search-images/search04-vs.png "Na karcie widżetu")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. Układ projektu z **prototypu komórki** i ujawnia każdy element przy użyciu unikatowego **nazwa** w **elementu Widget** karty **Explorer właściwości**: 
 
-    [ ![](text-fields-and-search-images/search05-vs.png "Układ projektu prototypu komórki")](text-fields-and-search-images/search05-vs.png)
+    [![](text-fields-and-search-images/search05-vs.png "Układ projektu prototypu komórki")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. Zapisać zmiany w Twojej scenorysu.
     
 -----
@@ -198,13 +198,13 @@ Wykonaj następujące czynności:
 
 Następnie należy podać klasę do działania jako Model danych dla wyników, który użytkownik zostanie wyszukiwanie. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Dodaj** > **nowego pliku...**   >  **Ogólne** > **pustą klasę** i podaj **nazwa**: 
 
-[ ![](text-fields-and-search-images/search06.png "Wybierz pustą klasę i podaj nazwę")](text-fields-and-search-images/search06.png)
+[![](text-fields-and-search-images/search06.png "Wybierz pustą klasę i podaj nazwę")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Następnie należy podać klasę do działania jako Model danych dla wyników, który użytkownik zostanie wyszukiwanie. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Dodaj** > **nowy element...**   >  **Apple** > **różne** > **klasy** i podaj **nazwa**: 
 
-[ ![](text-fields-and-search-images/search06-vs.png "Wybierz klasę i podaj nazwę")](text-fields-and-search-images/search06-vs.png)
+[![](text-fields-and-search-images/search06-vs.png "Wybierz klasę i podaj nazwę")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -772,11 +772,11 @@ public override void ViewDidAppear (bool animated)
 
 Aplikacja jest uruchamiana po karta wyszukiwanie wybrane przez użytkownika, niefiltrowane pełną listę elementów zobaczy dla użytkownika:
 
-[ ![](text-fields-and-search-images/intro02.png "Wyniki wyszukiwania domyślne")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Wyniki wyszukiwania domyślne")](text-fields-and-search-images/intro02.png#lightbox)
 
 Gdy użytkownik rozpoczyna wprowadź wyszukiwany termin, na liście wyników zostaną przefiltrowane przez czas i aktualizowane automatycznie:
 
-[ ![](text-fields-and-search-images/intro03.png "Filtrowane wyniki wyszukiwania")](text-fields-and-search-images/intro03.png)
+[![](text-fields-and-search-images/intro03.png "Filtrowane wyniki wyszukiwania")](text-fields-and-search-images/intro03.png#lightbox)
 
 W dowolnym momencie użytkownik może przełączyć fokus do elementu w wynikach wyszukiwania, a następnie kliknij przycisk powierzchni Touch zdalnego Siri, aby go wybrać.
 

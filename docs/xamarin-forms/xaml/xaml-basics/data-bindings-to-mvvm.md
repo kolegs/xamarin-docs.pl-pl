@@ -3,16 +3,16 @@ title: "Część 5. Z danych powiązania z modelem MVVM"
 description: "Wzorzec architektury Model-View-ViewModel (MVVM) został opracowany z XAML pamiętać. Wzorzec wymusza rozdzielenie trzy warstwy oprogramowania — interfejsu użytkownika XAML, nazywany widoku; danych o nazwie modelu; i pośredniczący między widoku i modelu o nazwie ViewModel. Widok i ViewModel często są połączone za pośrednictwem powiązania danych zdefiniowanych w pliku XAML. BindingContext widoku jest zwykle wystąpienia ViewModel."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: b16aa2456cdae7a08f8f9ee8adbc32c124e78e18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Część 5. Z danych powiązania z modelem MVVM
 
@@ -59,7 +59,7 @@ W **One-Shot DateTime** program, dwa elementy podrzędne zawiera powiązań z w�
 
 Oczywiście duży problem jest, że data i godzina są zestaw po po pierwszym utworzeniu strony i nigdy nie zmiany:
 
-[ ![](data-bindings-to-mvvm-images/oneshotdatetime.png "Widok wyświetlanie daty i godziny")](data-bindings-to-mvvm-images/oneshotdatetime-large.png "widoku wyświetlanie daty i godziny")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "Widok wyświetlanie daty i godziny")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "widoku wyświetlanie daty i godziny")
 
 Plik XAML może wyświetlać zegara, który zawsze wyświetla bieżący czas, ale musi on kodu pomagać. Podczas planowania pod względem MVVM, modelu i ViewModel są klasy napisanych w całości w kodzie. Widok jest często pliku XAML, który odwołuje się do właściwości zdefiniowane w ViewModel za pośrednictwem powiązania danych.
 
@@ -142,7 +142,7 @@ Powiadomienie jak `ClockViewModel` ustawiono `BindingContext` z `Label` przy uż
 
 `Binding` — Rozszerzenie znaczników w `Text` właściwość `Label` formatów `DateTime` właściwości. Oto wyświetlania:
 
-[ ![](data-bindings-to-mvvm-images/clock.png "Widok wyświetlanie daty i godziny za pośrednictwem ViewModel")](data-bindings-to-mvvm-images/clock-large.png "widoku wyświetlanie daty i godziny za pośrednictwem ViewModel")
+[![](data-bindings-to-mvvm-images/clock.png "Widok wyświetlanie daty i godziny za pośrednictwem ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "widoku wyświetlanie daty i godziny za pośrednictwem ViewModel")
 
 Istnieje również możliwość dostęp do poszczególnych właściwości `DateTime` właściwości ViewModel rozdzielając właściwości okresów:
 
@@ -292,7 +292,7 @@ Następujący plik XAML zawiera `BoxView` których `Color` właściwość jest p
 
 Powiązanie w każdym `Label` jest ustawieniem domyślnym `OneWay`. Wymaga tylko do wyświetlania wartości. Ale powiązanie w każdym `Slider` jest `TwoWay`. Dzięki temu `Slider` zostać zainicjowany z ViewModel. Zwróć uwagę, że `Color` właściwość jest ustawiona na `Blue` po ViewModel zostanie uruchomiony. Jednak zmiana `Slider` musi również ustawić nową wartość dla właściwości w ViewModel, który następnie oblicza nowy kolor.
 
-[ ![](data-bindings-to-mvvm-images/hslcolorscroll.png "Przy użyciu powiązań danych dwustronny MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png "przy użyciu powiązań danych dwustronny MVVM")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "Przy użyciu powiązań danych dwustronny MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "przy użyciu powiązań danych dwustronny MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>Steruje z ViewModels
 
@@ -553,7 +553,7 @@ Klawiaturze następujące jest nie jako wizualnie zaawansowane opcje jak jest to
 
 `Command` Właściwości pierwszego `Button` wyświetlany w tym znaczników jest powiązany z `DeleteCharCommand`; pozostałe są powiązane z `AddCharCommand` z `CommandParameter` który jest taki sam, jak znak, który znajduje się w `Button` twarzy na obrazie. Oto program w akcji:
 
-[ ![](data-bindings-to-mvvm-images/keypad.png "Kalkulator za pomocą poleceń i MVVM")](data-bindings-to-mvvm-images/keypad-large.png "Kalkulator za pomocą poleceń i MVVM")
+[![](data-bindings-to-mvvm-images/keypad.png "Kalkulator za pomocą poleceń i MVVM")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Kalkulator za pomocą poleceń i MVVM")
 
 ### <a name="invoking-asynchronous-methods"></a>Wywoływania metod asynchronicznych
 
@@ -678,7 +678,7 @@ W pliku XAML `MainPage` definiuje `ListBox` których `ItemsSource` właściwoś�
 
 Strony są wyświetlane w listę:
 
-[ ![](data-bindings-to-mvvm-images/mainpage.png "Przewijanej listy stron")](data-bindings-to-mvvm-images/mainpage-large.png "przewijanej listy stron")
+[![](data-bindings-to-mvvm-images/mainpage.png "Przewijanej listy stron")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "przewijanej listy stron")
 
 Program obsługi w pliku CodeBehind jest wyzwalane, gdy użytkownik wybiera element. Ustawia program obsługi `SelectedItem` właściwość `ListBox` do `null` tworzy wybranej strony i przechodzi do niej:
 
@@ -695,6 +695,12 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
     }
 }
 ```
+
+## <a name="video"></a>Video
+
+> [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
+
+**Xamarin rozwijać 2016: Uproszczona obsługa platformy Xamarin.Forms i biblioteki Prism modelem MVVM**
 
 ## <a name="summary"></a>Podsumowanie
 

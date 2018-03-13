@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>Style dynamiczne
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Gdy `OnButtonClicked` program obsługi zdarzeń jest wykonywane, `searchBarStyle` nastąpi przełączenie między `blueSearchBarStyle` i `greenSearchBarStyle`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](dynamic-images/dynamic-style-blue.png "Niebieski dynamiczne stylu przykładu")](dynamic-images/dynamic-style-blue-large.png "niebieski dynamiczne stylu przykładu")
-[![](dynamic-images/dynamic-style-green.png "Green dynamiczne stylu przykładu") ] (dynamic-images/dynamic-style-green-large.png "Green dynamiczne stylu przykładu")
+[![](dynamic-images/dynamic-style-blue.png "Niebieski dynamiczne stylu przykładu")](dynamic-images/dynamic-style-blue-large.png#lightbox "niebieski dynamiczne stylu przykładu")
+[![](dynamic-images/dynamic-style-green.png "Green dynamiczne stylu przykładu") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Green dynamiczne stylu przykładu")
 
 Poniższy przykład kodu pokazuje odpowiedniej strony w języku C#:
 
@@ -162,8 +162,8 @@ Poniższy przykład kodu pokazuje *dynamiczne* styl dziedziczenia w strony XAML:
 
 W pliku CodeBehind tworzy konstruktora [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) wpisu z kluczem `searchBarStyle`, jak na poprzednim przykładzie wykazały, dynamiczne style. Gdy `OnButtonClicked` program obsługi zdarzeń jest wykonywane, `searchBarStyle` nastąpi przełączenie między `blueSearchBarStyle` i `greenSearchBarStyle`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Niebieski dynamiczne stylu dziedziczenia przykładu")](dynamic-images/dynamic-style-inheritance-blue-large.png "niebieski dynamiczne stylu dziedziczenia przykładu")
-[![](dynamic-images/dynamic-style-inheritance-green.png "Green styl dynamiczne Przykład dziedziczenia")](dynamic-images/dynamic-style-inheritance-green-large.png "Green przykład dziedziczenia styl dynamiczne")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "Niebieski dynamiczne stylu dziedziczenia przykładu")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "niebieski dynamiczne stylu dziedziczenia przykładu")
+[![](dynamic-images/dynamic-style-inheritance-green.png "Green styl dynamiczne Przykład dziedziczenia")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "Green przykład dziedziczenia styl dynamiczne")
 
 Poniższy przykład kodu pokazuje odpowiedniej strony w języku C#:
 
@@ -215,7 +215,7 @@ Style nie odpowiadają na zmiany właściwości i pozostają niezmienione na cza
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Rozszerzenia znaczników XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [Rozszerzenia struktury znaczników XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Style dynamiczna (na przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Praca z style (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

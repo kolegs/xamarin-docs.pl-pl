@@ -7,11 +7,11 @@ ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7e26c11f71b446baf89ca11effe30bc1e041f951
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin dla deweloperów języka Objective C
 
@@ -21,7 +21,7 @@ Oferty Xamarin ścieżki dla deweloperów korzystających z systemem iOS można 
 
 Ponadto Xamarin umożliwia wykorzystanie istniejącej Objective-C zasobów za pomocą technologii wiedzieć, jak powiązania. Po prostu Utwórz bibliotekę statyczną w języku Objective C i ujawnienia go do języka C# za pomocą powiązania, jak pokazano na poniższym diagramie:
 
- [ ![](images/01-bindings.png "Biblioteka statyczna w języku Objective-C ujawniony dla C# za pomocą powiązania")](images/01-bindings.png)
+ [![](images/01-bindings.png "Biblioteka statyczna w języku Objective-C ujawniony dla C# za pomocą powiązania")](images/01-bindings.png#lightbox)
 
 To nie musi być ograniczone do kodu bez interfejsu użytkownika. Powiązania mogą uwidaczniać opracowane w języku Objective C również kod interfejsu użytkownika.
 

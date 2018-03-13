@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2995d9126617a767013ed1f5cb808f22ce0fd2da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89768d2562814091f0e5894c4af2edd67d68cb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="running-the-android-sdk-emulator"></a>Uruchomiony Emulator zestawu SDK systemu Android
 
@@ -32,13 +32,13 @@ Visual Studio obejmuje wstępnie skonfigurowane urządzeń wirtualnych, które s
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
-[ ![Urządzenia wirtualne](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png)
+[![Urządzenia wirtualne](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
 Zazwyczaj należy wybrać **VisualStudio\_android 23\_x86\_phone** urządzenie wirtualne do testowania i debugowania aplikacji telefonicznej. Jeśli jeden z tych wstępnie skonfigurowanych urządzeń wirtualnych odpowiada wymaganiom, (tj. pasuje do elementu docelowego Twojej aplikacji poziom interfejsu API), przejdź do [uruchamianie w emulatorze](#launching) celu rozpoczęcia uruchamiania aplikacji w emulatorze. (Jeśli nie znasz jeszcze z poziomami interfejsu API systemu Android, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).)
 
 Jeśli projekt platformy Xamarin.Android korzysta z poziomu platformy docelowej, która jest niezgodna z dostępnych urządzeń wirtualnych, menu rozwijane spowoduje wyświetlenie listy bezużyteczne urządzeń wirtualnych w obszarze **nieobsługiwany urządzeń**. Na przykład następujący projekt ma ustawioną platformy docelowej **nugacie 7.1 systemu Android (interfejs API 25)**, który jest niezgodny z **Android 6.0** urządzeń wirtualnych, które znajdują się domyślnie:
 
-[ ![Niezgodne urządzenie wirtualne](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png)
+[![Niezgodne urządzenie wirtualne](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
 Możesz kliknąć **zmienić docelowy z systemem Android co najmniej** Aby zmienić projekt obiektu minimalna wersja systemu Android, aby było poziom interfejsu API dostępnych urządzeń wirtualnych. Alternatywnie można użyć **Android Emulator Manager** do tworzenia nowych urządzeń wirtualnych, które obsługują docelowego interfejsu API poziomu, jak wyjaśniono dalej w [Konfigurowanie urządzenia wirtualnego](#virtualdevice). Aby można było skonfigurować urządzenia wirtualne Nowy poziom interfejsu API, należy najpierw zainstalować odpowiednie obrazów systemu dla tego interfejsu API poziomu &ndash; wyjaśnienie jest zawarte w następnej sekcji.
 
@@ -50,7 +50,7 @@ Visual Studio for Mac obejmuje wstępnie skonfigurowane urządzeń wirtualnych, 
 
 -   **Android\_ARMv7a**
 
-[ ![Urządzenia wirtualne](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png)
+[![Urządzenia wirtualne](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png#lightbox)
 
 Zazwyczaj należy wybrać **Android\_akcelerowanego\_x86** urządzenie wirtualne do testowania i debugowania aplikacji telefonicznej. Jeśli to wstępnie skonfigurowane wirtualne urządzenie spełnia wymagania dotyczące (tj. pasuje do elementu docelowego Twojej aplikacji poziom interfejsu API), przejdź do [uruchamianie w emulatorze](#launching) celu rozpoczęcia uruchamiania aplikacji w emulatorze. (Jeśli nie znasz jeszcze z poziomami interfejsu API systemu Android, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).)
 
@@ -73,11 +73,11 @@ Po wybraniu urządzenia wirtualnego z menu rozwijanego urządzenia, wybierz opcj
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Debug i Release tryby, przycisk Odtwórz](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png)
+[![Debug i Release tryby, przycisk Odtwórz](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Debug i Release tryby, przycisk Odtwórz](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png)
+[![Debug i Release tryby, przycisk Odtwórz](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>Komplikacji
 
@@ -24,7 +24,7 @@ Należy pamiętać, że każda aplikacja watchOS może mieć tylko jeden complic
 
 Rozpocznij od przeczytania [dokumentów firmy Apple](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) do ustalenia, czy aplikacja jest odpowiedni dla complication. Istnieje 5 `CLKComplicationFamily` typami wyświetlania do wyboru:
 
-[ ![](complications-images/all-complications-sml.png "5 dostępnych typów CLKComplicationFamily: cykliczne małej, moduły małych, moduły dużych, użytkowych małych, użytkowych duże")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "5 dostępnych typów CLKComplicationFamily: cykliczne małej, moduły małych, moduły dużych, użytkowych małych, użytkowych duże")](complications-images/all-complications.png#lightbox)
 
 Aplikacje można zaimplementować w stylu tylko jednego lub wszystkich pięciu, w zależności od danych będzie wyświetlany.
 Można również obsługiwać czasu podróży, dostarczając wartości dla ostatnich i/lub przyszłych godzin zgodnie z wyświetlająca cyfrowe wierzchołek.
@@ -83,7 +83,7 @@ Postępuj zgodnie z [zapisywania complication](#writing) instrukcjami, aby doda�
 
 Rozszerzenie czujki **Info.plist** pliku należy określić nazwę `CLKComplicationDataSource` i grupy, które complication chcesz wspierać:
 
-[ ![](complications-images/complications-config-sml.png "Typy rodziny complication")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "Typy rodziny complication")](complications-images/complications-config.png#lightbox)
 
 **Klasy źródła danych** listy wpisów wyświetli nazwy klas tego podklasy `CLKComplicationDataSource` podklasy, który zawiera logikę complication.
 

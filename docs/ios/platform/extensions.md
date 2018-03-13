@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>Rozszerzenia systemu iOS
 
 _Wprowadzone w systemie iOS 8, rozszerzenia są elementy widget, które są przedstawiane przez systemu iOS w kontekstach standardowe, takie jak w Centrum powiadomień, gdy użytkownik zażąda niestandardowych klawiatury lub są one fotografii edycji. Wszystkie rozszerzenia są instalowane w połączeniu z aplikacji kontenera i są aktywowani z określonego punktu rozszerzenia w aplikacji hosta._
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**Tworzenie rozszerzeń w systemie iOS, przez [Xamarin University](https://university.xamarin.com/)**
 
 Rozszerzenia, wprowadzoną w systemie iOS 8, są przystosowane w szczególności `UIViewControllers` które są przedstawiane przez iOS wewnątrz kontekstów standardowe takie jak w **Centrum powiadomień**, jak specjalizowany niestandardowych typów żądanej przez użytkownika do wykonania dane wejściowe lub innych kontekstach, takich jak edytowanie fotografii, w którym rozszerzenia można podać efekt specjalny filtry.
 
@@ -183,7 +188,7 @@ Określone typy rozszerzeń mogą mieć dodatkowe wymagania. Na przykład **dzis
 
 Poniższe wskazówki spowoduje utworzenie przykład **dzisiaj** widżetu oblicza dnia i liczbę dni w roku:
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "Przykład widżetu dzisiaj oblicza dnia i liczbę dni pozostałych w roku.")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "Przykład widżetu dzisiaj oblicza dnia i liczbę dni pozostałych w roku.")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ Aby utworzyć wymagane rozwiązanie, wykonaj następujące czynności:
 
 1. Najpierw utwórz nowy iOS, **jednej aplikacji widoku** projekt i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](extensions-images/today01.png "Najpierw należy utworzyć nowe iOS, jednej aplikacji w widoku projektu i kliknij przycisk Dalej")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "Najpierw należy utworzyć nowe iOS, jednej aplikacji w widoku projektu i kliknij przycisk Dalej")](extensions-images/today01.png#lightbox)
 2. Wywołaj projektu `TodayContainer` i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](extensions-images/today02.png "Wywołaj projektu TodayContainer i kliknij przycisk Dalej")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "Wywołaj projektu TodayContainer i kliknij przycisk Dalej")](extensions-images/today02.png#lightbox)
 3. Sprawdź **Nazwa projektu** i **Nazwa rozwiązania** i kliknij przycisk **Utwórz** przycisk, aby utworzyć rozwiązania: 
 
-    [ ![](extensions-images/today03.png "Sprawdź nazwę projektu i nazwa rozwiązania, a następnie kliknij przycisk Utwórz, aby utworzyć rozwiązanie")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "Sprawdź nazwę projektu i nazwa rozwiązania, a następnie kliknij przycisk Utwórz, aby utworzyć rozwiązanie")](extensions-images/today03.png#lightbox)
 4. Następnie w **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy w ramach rozwiązania i Dodaj nową **iOS rozszerzenia** projekt z **dzisiaj rozszerzenia** szablonu: 
 
-    [ ![](extensions-images/today04.png "Następnie w Eksploratorze rozwiązań kliknij prawym przyciskiem myszy rozwiązanie i dodać nowy projekt rozszerzenia systemu iOS z szablonu dzisiaj rozszerzenia")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "Następnie w Eksploratorze rozwiązań kliknij prawym przyciskiem myszy rozwiązanie i dodać nowy projekt rozszerzenia systemu iOS z szablonu dzisiaj rozszerzenia")](extensions-images/today04.png#lightbox)
 5. Wywołaj projektu `DaysRemaining` i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](extensions-images/today05.png "Wywołaj projektu DaysRemaining i kliknij przycisk Dalej")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "Wywołaj projektu DaysRemaining i kliknij przycisk Dalej")](extensions-images/today05.png#lightbox)
 6. Przejrzyj projekt i kliknij przycisk **Utwórz** przycisk, aby go utworzyć: 
 
-    [ ![](extensions-images/today06.png "Przejrzyj projekt i kliknij przycisk Utwórz, aby go utworzyć")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "Przejrzyj projekt i kliknij przycisk Utwórz, aby go utworzyć")](extensions-images/today06.png#lightbox)
 
 Wynikowa rozwiązania teraz powinny mieć dwa projekty, jak pokazano poniżej:
 
-[ ![](extensions-images/today07.png "Wynikowa rozwiązanie teraz musi mieć dwa projekty, jak pokazano poniżej")](extensions-images/today07.png)
+[![](extensions-images/today07.png "Wynikowa rozwiązanie teraz musi mieć dwa projekty, jak pokazano poniżej")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ Aby utworzyć interfejsu użytkownika z scenorysu, wykonaj następujące czynno�
 
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie projekt rozszerzenia `Main.storyboard` plik, aby otworzyć do edycji: 
 
-    [ ![](extensions-images/today08.png "Kliknij dwukrotnie plik Main.storyboard projektów rozszerzenia, aby otworzyć do edycji")](extensions-images/today08.png)
+    [![](extensions-images/today08.png "Kliknij dwukrotnie plik Main.storyboard projektów rozszerzenia, aby otworzyć do edycji")](extensions-images/today08.png#lightbox)
 2. Wybierz etykietę, która została automatycznie dodana do interfejsu użytkownika za pomocą szablonu i nadaj mu **nazwa** `TodayMessage` w **elementu Widget** karcie **Explorer właściwości**: 
 
-    [ ![](extensions-images/today09.png "Wybierz etykietę, która została automatycznie dodana do interfejsu użytkownika za pomocą szablonu i nadaj mu TodayMessage nazwa na karcie Widget Eksploratora właściwości")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "Wybierz etykietę, która została automatycznie dodana do interfejsu użytkownika za pomocą szablonu i nadaj mu TodayMessage nazwa na karcie Widget Eksploratora właściwości")](extensions-images/today09.png#lightbox)
 3. Zapisz zmiany do scenorysu.
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ Aby utworzyć interfejsu użytkownika w kodzie, wykonaj następujące czynności
 
 1. W **Eksploratora rozwiązań**, wybierz pozycję **DaysRemaining** projekt, Dodaj nową klasę i nadaj mu `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining projekt, Dodaj nową klasę i wywołać go CodeBasedViewController")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining projekt, Dodaj nową klasę i wywołać go CodeBasedViewController")](extensions-images/code01.png#lightbox)
 2. Ponownie, **Eksploratora rozwiązań**, kliknij dwukrotnie rozszerzenia `Info.plist` plik, aby otworzyć do edycji: 
 
-    [ ![](extensions-images/code02.png "Kliknij dwukrotnie plik Info.plist rozszerzenia, aby otworzyć do edycji")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "Kliknij dwukrotnie plik Info.plist rozszerzenia, aby otworzyć do edycji")](extensions-images/code02.png#lightbox)
 3. Wybierz **widoku źródła** (od dołu ekranu), a następnie otwórz `NSExtension` węzła: 
 
-    [ ![](extensions-images/code03.png "Wybierz widok źródła w dolnej części ekranu i otwórz węzeł NSExtension")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "Wybierz widok źródła w dolnej części ekranu i otwórz węzeł NSExtension")](extensions-images/code03.png#lightbox)
 4. Usuń `NSExtensionMainStoryboard` klucza i Dodaj `NSPrincipalClass` z wartością `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "Usuń klucz NSExtensionMainStoryboard i dodać NSPrincipalClass o wartości CodeBasedViewController")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "Usuń klucz NSExtensionMainStoryboard i dodać NSPrincipalClass o wartości CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. Zapisz zmiany.
 
 Następnie Edytuj `CodeBasedViewController.cs` pliku i zapewnić ich wyglądać następująco:
@@ -327,7 +332,7 @@ Należy zwrócić uwagę, jak podobne tego procesu jest normalny proces zapisywa
 
 W ramach tego przewodnika aplikacji kontenera jest używane jako metoda wysyłki i zainstaluj rozszerzenie i nie funkcje własnych. Edytuj TodayContainer `Main.storyboard` i Dodaj tekst definiowania funkcji rozszerzenia i sposobu jego instalacji:
 
-[ ![](extensions-images/today10.png "Edytuj plik TodayContainers Main.storyboard i Dodaj tekst definiujący funkcję rozszerzeń i sposobu jego instalacji")](extensions-images/today10.png)
+[![](extensions-images/today10.png "Edytuj plik TodayContainers Main.storyboard i Dodaj tekst definiujący funkcję rozszerzeń i sposobu jego instalacji")](extensions-images/today10.png#lightbox)
 
 Zapisz zmiany do scenorysu.
 
@@ -337,19 +342,19 @@ Zapisz zmiany do scenorysu.
 
 Aby przetestować rozszerzenia w narzędziu iOS Simulator, uruchom **TodayContainer** aplikacji. Zostanie wyświetlony widok główny kontenera:
 
-[ ![](extensions-images/run01.png "Zostanie wyświetlony widok główny kontenerów")](extensions-images/run01.png)
+[![](extensions-images/run01.png "Zostanie wyświetlony widok główny kontenerów")](extensions-images/run01.png#lightbox)
 
 Następnie kliknij przycisk **Home** przycisk w symulatorze, przejdź w dół od górnej krawędzi ekranu, aby otworzyć **Centrum powiadomień**, wybierz pozycję **dzisiaj** i kliknij polecenie **Edytować** przycisk:
 
-[ ![](extensions-images/run02.png "Kliknij przycisk Strona główna w symulatorze, przejdź w dół od górnej krawędzi ekranu, aby otworzyć Centrum powiadomień, wybierz kartę dzisiaj i kliknij przycisk Edytuj")](extensions-images/run02.png)
+[![](extensions-images/run02.png "Kliknij przycisk Strona główna w symulatorze, przejdź w dół od górnej krawędzi ekranu, aby otworzyć Centrum powiadomień, wybierz kartę dzisiaj i kliknij przycisk Edytuj")](extensions-images/run02.png#lightbox)
 
 Dodaj **DaysRemaining** rozszerzenia **dzisiaj** wyświetlić, a następnie kliknij przycisk **gotowe** przycisk:
 
-[ ![](extensions-images/run03.png "Dodaj rozszerzenie DaysRemaining do widoku dziś, a następnie kliknij przycisk Gotowe")](extensions-images/run03.png)
+[![](extensions-images/run03.png "Dodaj rozszerzenie DaysRemaining do widoku dziś, a następnie kliknij przycisk Gotowe")](extensions-images/run03.png#lightbox)
 
 Nowy element widget zostaną dodane do **dzisiaj** widoku i wyniki będą wyświetlane:
 
-[ ![](extensions-images/run04.png "Nowy element widget zostanie dodany do widoku dziś i wyświetli wyniki")](extensions-images/run04.png)
+[![](extensions-images/run04.png "Nowy element widget zostanie dodany do widoku dziś i wyświetli wyniki")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

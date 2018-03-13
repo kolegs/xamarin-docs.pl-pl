@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1ad3c193261bf22b7ee344aa1ccabb226533b907
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debugowanie zużycie emulatora systemu Android
 
@@ -28,14 +28,14 @@ Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora An
 
 Podczas tworzenia zużycia urządzenia wirtualnego, wybierz profil urządzenia Android nosić (takich jak **Android zużycia kwadratowe**). Zwiększa wydajność, użyj zużycia **x86** procesora CPU/ABI, jak pokazano w poniższym przykładzie:
 
-[![Przykładowa konfiguracja urządzenia wirtualnego zużycie](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png)
+[![Przykładowa konfiguracja urządzenia wirtualnego zużycie](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
 ## <a name="launch-the-wear-virtual-device"></a>Uruchamianie zużycia urządzenia wirtualnego 
 
 Po utworzeniu urządzenia wirtualnego systemu Android nosić, można ją z menu rozwijanego urządzenia w IDE przed rozpoczęciem debugowania. Jeśli urządzenia wirtualnego nie jest dostępna w urządzeniu rozwijanego, sprawdź, czy projekt Android *nosić* projektu aplikacji (nie projekt aplikacji systemu Android) oraz że jego docelowy poziom interfejsu API jest ustawiona na tego samego interfejsu API na poziomie co urządzenie wirtualne. Na przykład:
 
-[ ![Wybranie w menu programu Visual Studio urządzenia AVD nosić](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png)
+[![Wybranie w menu programu Visual Studio urządzenia AVD nosić](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Po uruchomieniu emulatora systemu Android Xamarin.Android nastąpi wdrożenie aplikacji zużycia na emulator. Emulator uruchamia aplikację z obrazem konfigurację urządzenia wirtualnego.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c8f66ac8532d6926fe8280b5687135dc3df53289
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 978d9e569825e20b40e963f590049eaab1d4e752
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="portable-visual-basicnet"></a>Przenośne języku Visual
 
@@ -24,7 +24,8 @@ Obsługa bibliotek klas przenośnych został dodany w Xamarin.Android 4.10.1, Xa
 
 Aby utworzyć i skompilować przenośnej biblioteki klas języka Visual Basic należy użyć programu Visual Studio w systemie Windows (Visual Studio 2012 lub nowsza).
 
-> ℹ️ **Uwaga:** bibliotek języka Visual Basic można tworzyć tylko i skompilowana przy użyciu programu Visual Studio. Xamarin.iOS i Xamarin.Android nie obsługują język Visual Basic.
+> [!NOTE]
+> Biblioteki języka Visual Basic można tworzyć tylko i skompilowana przy użyciu programu Visual Studio. Xamarin.iOS i Xamarin.Android nie obsługują język Visual Basic.
 >
 > Jeśli działa wyłącznie w programie Visual Studio może odwoływać się projekt Visual Basic z projektów platformy Xamarin.iOS i platformy Xamarin.Android.
 >
@@ -44,15 +45,15 @@ Kroki tworzenia PCL i wybranie jego profilu są:
 
 1.  W **nowy projekt** ekranu wybierz **Visual Basic > biblioteki klas (przenośna)** opcji:
 
-  [ ![](images/image1-sml.png "Utwórz nową bibliotekę przenośne Visual Basic")](images/image1.png)
+    [![](images/image1-sml.png "Utwórz nową bibliotekę przenośne Visual Basic")](images/image1.png#lightbox)
 
 1.  Visual Studio natychmiast monit z następującymi **dodać przenośnej biblioteki klas** okna dialogowego, dzięki czemu można skonfigurować profil. Znaczników platformy wymagane do obsługi i naciśnij klawisz **OK**.
 
-  [ ![](images/image2-sml.png "Wybierz profil PCL, wybierając platformy")](images/image2.png)
+    [![](images/image2-sml.png "Wybierz profil PCL, wybierając platformy")](images/image2.png#lightbox)
 
 1.  Projekt Visual Basic PCL pojawi się jak pokazano w **Eksploratora rozwiązań** podobnie do następującej:
 
-  [ ![](images/image3-sml.png "Pusty projekt programu Visual Studio PCL")](images/image3.png)
+    [![](images/image3-sml.png "Pusty projekt programu Visual Studio PCL")](images/image3.png#lightbox)
 
 
 PCL jest teraz gotowy do kodu języka Visual Basic do dodania. Projekty PCL może odwoływać się inne projekty (projekty aplikacji, projekty bibliotek i nawet innych projektów PCL).
@@ -61,7 +62,7 @@ PCL jest teraz gotowy do kodu języka Visual Basic do dodania. Projekty PCL moż
 
 Profil PCL (która kontroluje, które platformy PCL jest zgodny z) można wyświetlać i zmieniony przez kliknięcie prawym przyciskiem myszy projekt i wybierając polecenie **właściwości > Biblioteka > zmian...** . Wynikowa okna dialogowego jest wyświetlany w tym zrzut ekranu:
 
- [ ![](images/image4-sml.png "Edytuj profil PCL we właściwościach projektu")](images/image4.png)
+ [![](images/image4-sml.png "Edytuj profil PCL we właściwościach projektu")](images/image4.png#lightbox)
 
 Zmiana profilu po kodu został już dodany do PCL jest możliwe, czy biblioteki już zostanie skompilowany, jeśli kod odwołuje się do funkcji, które nie są częścią nowo wybranego profilu.
 

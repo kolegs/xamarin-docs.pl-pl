@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="connection-troubleshooting"></a>Rozwiązywanie problemów z połączenia
 
@@ -45,15 +45,15 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
 
 2. Upewnij się, że **logowania zdalnego** jest włączona na komputerach Mac. Ustaw dostęp dla **tylko ci użytkownicy**i upewnij się, że użytkowników komputerów Mac znajduje się na liście lub grupy:
 
-    [ ![](troubleshooting-images/troubleshooting-image1.png "Ustaw dostęp tylko dla tych użytkowników")](troubleshooting-images/troubleshooting-image1.png)
+    [![](troubleshooting-images/troubleshooting-image1.png "Ustaw dostęp tylko dla tych użytkowników")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. Sprawdź, czy zapora zezwala na połączenia przychodzące za pośrednictwem portu 22 — wartość domyślna dla SSH:
 
-    [ ![](troubleshooting-images/troubleshooting-image2.png "Sprawdź, czy zapora zezwala na połączenia przychodzące za pośrednictwem portu 22")](troubleshooting-images/troubleshooting-image2.png)
+    [![](troubleshooting-images/troubleshooting-image2.png "Sprawdź, czy zapora zezwala na połączenia przychodzące za pośrednictwem portu 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     Jeśli zostało wyłączone **automatycznie zezwala podpisanego oprogramowania do odbierania przychodzących połączeń**, OS X wyświetli się okno dialogowe podczas parowania pytaniem umożliwić `mono-sgen` lub `mono-sgen32` do odbierania przychodzących połączeń. Należy kliknąć przycisk **Zezwalaj** w tym oknie dialogowym:
 
-    [ ![](troubleshooting-images/troubleshooting-image4a.png "W tym oknie dialogowym kliknij przycisk Zezwalaj")](troubleshooting-images/troubleshooting-image4a.png)
+    [![](troubleshooting-images/troubleshooting-image4a.png "W tym oknie dialogowym kliknij przycisk Zezwalaj")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. Upewnij się, możesz zalogować się do konta użytkownika na tym Mac i mają aktywną sesję graficznego interfejsu użytkownika.
 
@@ -63,12 +63,12 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
 
     Na przykład w poniższym zrzucie ekranu, nazwa konta będzie **amyb** i nie **oparzenia Amy**:
 
-    [ ![](troubleshooting-images/troubleshooting-image5a.png "Uzyskiwanie nazwy konta z terminala aplikacji")](troubleshooting-images/troubleshooting-image5a.png)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Uzyskiwanie nazwy konta z terminala aplikacji")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
 6. Sprawdź, czy adres IP używany dla komputerów Mac jest poprawna. Można znaleźć adres IP w obszarze **preferencjach systemowych > Udostępnianie > logowania zdalnego** na komputerach Mac.
 
-    [ ![](troubleshooting-images/troubleshooting-image17.png "Adres IP w aplikacji preferencjach systemowych")](troubleshooting-images/troubleshooting-image17.png)
+    [![](troubleshooting-images/troubleshooting-image17.png "Adres IP w aplikacji preferencjach systemowych")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Po potwierdzeniu adres MAC, spróbuj `ping` na ten adres w `cmd.exe` w systemie Windows:
 
@@ -80,7 +80,7 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
 
         ssh amyb@10.1.8.95
 
-<a name="stepnine">
+<a name="stepnine" />
 
 9. Jeśli **powiedzie się w kroku 8**, można spróbować uruchomić prostego polecenia, takich jak `ls` za pośrednictwem połączenia:
 
@@ -129,7 +129,7 @@ Znane Przyczyna:
 
 - **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  — ten problem może wystąpić na program Xamarin 4.1 w przypadku **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w  **Preferencje systemu &gt; użytkowników &amp; grup** ma ustawioną wartość innych niż **/bin/bash**. (Począwszy od platformy Xamarin 4.2, w tym scenariuszu zamiast prowadzi do komunikat o błędzie "Nie może nawiązać połączenia".) **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
 
-<a name="tryagain">
+<a name="tryagain" />
 
 ### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nie może połączyć się z MacBuildHost.local. Spróbuj ponownie."
 
@@ -153,7 +153,7 @@ Zgłoszony przyczyny:
 
     1. Potwierdź lokalizację **sshd\_config** pliku uruchamiając `ls /etc/ssh/sshd_config` i `ls /etc/sshd_config` Terminal wiersza polecenia. Wszystkie pozostałe kroki, należy użyć lokalizacji, która jest _nie_ zwracać "Brak pliku lub katalogu".
 
-        [ ![](troubleshooting-images/troubleshooting-image18.png "Uruchomiony "/etc/ssh/sshd_config ls" i "/etc/sshd_config ls" w terminalu")](troubleshooting-images/troubleshooting-image18.png)
+        [![](troubleshooting-images/troubleshooting-image18.png "Uruchomiony "/etc/ssh/sshd_config ls" i "/etc/sshd_config ls" w terminalu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Uruchom `cp /etc/ssh/sshd_config "$HOME/Desktop/"` w terminalu, aby skopiować plik na pulpicie.
 
@@ -171,7 +171,7 @@ Zgłoszony przyczyny:
 
     9. Wyłączenie i ponowne włączenie **logowania zdalnego** w obszarze **preferencjach systemowych &gt; udostępniania &gt; logowania zdalnego** ponownie serwer SSH.
 
-<a name="clearing">
+<a name="clearing" />
 
 ### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Wyczyszczenie brokera, IDB, kompilacji i projektanta agentów dla komputerów Mac
 
@@ -183,7 +183,7 @@ Jeśli pliki dziennika wskazuje na problem podczas "Instalowanie", "Przekazywani
 
 2. Kliknij Control **XMA** i wybierz polecenie **Przenieś do Kosza**:
 
-    [ ![](troubleshooting-images/troubleshooting-image8.png "Przenieś XMA folder Kosza")](troubleshooting-images/troubleshooting-image8.png)
+    [![](troubleshooting-images/troubleshooting-image8.png "Przenieś XMA folder Kosza")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Brak pamięci podręcznej w systemie Windows oraz które mogą pomóc wyczyścić. Otwórz wiersz polecenia jako Administrator w systemie Windows:
 
@@ -221,7 +221,7 @@ W oknie danych wyjściowych jest najlepszym miejscem, aby rozpocząć. Wyświetl
 2. Kliknij przycisk **Pokaż dane wyjściowe z** menu rozwijanego.
 3. Wybierz **Xamarin**.
 
-[ ![](troubleshooting-images/troubleshooting-image11.png "Wybierz Xamarin na karcie dane wyjściowe")](troubleshooting-images/troubleshooting-image11.png)
+[![](troubleshooting-images/troubleshooting-image11.png "Wybierz Xamarin na karcie dane wyjściowe")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 ### <a name="log-files"></a>Pliki dziennika
 
@@ -236,18 +236,18 @@ Jeśli w oknie danych wyjściowych nie zawiera wystarczających informacji do zd
 
 3. Po Visual Studio trafienia błąd połączenia, zbierz dzienniki z **Pomoc > Xamarin > Zip dzienniki**:
 
-    [ ![](troubleshooting-images/troubleshooting-image12.png "Zbieranie dzienników z pomocy > Xamarin > Zip dzienników")](troubleshooting-images/troubleshooting-image12.png)
+    [![](troubleshooting-images/troubleshooting-image12.png "Zbieranie dzienników z pomocy > Xamarin > Zip dzienników")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. Po otwarciu pliku zip, zostanie wyświetlona lista plików, podobnie jak w poniższym przykładzie. Błędy połączenia są najważniejsze pliki  **\*Ide.log** i  **\*Ide.svclog** plików. Te pliki zawierają tej wiadomości w dwóch nieco różne formaty. **.Svclog** XML i jest przydatne, jeśli chcesz przeglądać wiadomości. **Log** jest zwykły tekst i jest przydatne, jeśli chcesz przefiltrować komunikaty przy użyciu narzędzia wiersza polecenia.
 
 
     Aby przejrzeć wszystkie komunikaty, wybierz i Otwórz **.svclog** pliku:
 
-    [ ![](troubleshooting-images/troubleshooting-image13.png "Wybierz plik svclog")](troubleshooting-images/troubleshooting-image13.png)
+    [![](troubleshooting-images/troubleshooting-image13.png "Wybierz plik svclog")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.Svclog** plik zostanie otwarty w **przeglądarki danych śledzenia usługi Microsoft**. Możesz przeglądać wiadomości przez wątek, aby zobaczyć powiązane grupy wiadomości. Aby przejść przez wątek, najpierw wybierz **wykres** , a następnie kliknij **tryb układu** menu rozwijane i wybierz **wątku**:
 
-    [ ![](troubleshooting-images/troubleshooting-image14.png "Kliknij menu rozwijane w trybie układu i wybierz wątku")](troubleshooting-images/troubleshooting-image14.png)
+    [![](troubleshooting-images/troubleshooting-image14.png "Kliknij menu rozwijane w trybie układu i wybierz wątku")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -307,7 +307,7 @@ usterki pokrewne: [#36195](https://bugzilla.xamarin.com/show_bug.cgi?id=36195)
 
 Uruchom środowisko Xcode dla komputerów Mac i upewnij się, że komputer firmy Apple konta dewelopera jest zalogowany i jest pobrać profilu programowanie dla systemu iOS:
 
-[ ![](troubleshooting-images/troubleshooting-image7.png "Pobierany jest zapewnienie, że konto dewelopera Apple jest zalogowany i profilu programowanie dla systemu iOS")](troubleshooting-images/troubleshooting-image7.png)
+[![](troubleshooting-images/troubleshooting-image7.png "Pobierany jest zapewnienie, że konto dewelopera Apple jest zalogowany i profilu programowanie dla systemu iOS")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>"Operacja gniazda podjęto sieć nieosiągalny"
 
@@ -323,7 +323,7 @@ Ten problem może się tak zdarzyć, gdy program Visual Studio nie można odświ
 
 Spowoduje to wyczyszczenie pamięci podręcznej składników MEF usługi Visual Studio umożliwiają rozwiązywanie problemów z uszkodzenie pamięci podręcznej.
 
-<a name="errors">
+<a name="errors" />
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Błędy z powodu istniejące procesy hosta kompilacji dla komputerów Mac
 
@@ -333,7 +333,7 @@ Procesy z poprzedniej kompilacji obsługi połączeń czasami może zakłócać 
 ps -A | grep mono
 ```
 
-[ ![](troubleshooting-images/troubleshooting-image10.png "Uruchamianie poleceń w terminalu dla komputerów Mac")](troubleshooting-images/troubleshooting-image10.png)
+[![](troubleshooting-images/troubleshooting-image10.png "Uruchamianie poleceń w terminalu dla komputerów Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 Aby skasować istniejące procesy, użyj następującego polecenia:
 
@@ -353,7 +353,7 @@ Jeśli rozwiązać problem kompilacji i chce mieć pewność, że zachowanie nie
 
 2. Kliknij Control **MTB** i wybierz polecenie **Przenieś do Kosza**:
 
-    [ ![](troubleshooting-images/troubleshooting-image9.png "Przenieś folder MTB Kosza")](troubleshooting-images/troubleshooting-image9.png)
+    [![](troubleshooting-images/troubleshooting-image9.png "Przenieś folder MTB Kosza")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 
 ## <a name="related-links"></a>Linki pokrewne

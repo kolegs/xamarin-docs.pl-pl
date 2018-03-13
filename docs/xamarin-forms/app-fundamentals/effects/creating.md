@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 84450527a1301cf95c93a5dc2796a2cf76f4ae2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-an-effect"></a>Tworzenie efektu
 
@@ -29,7 +29,7 @@ Proces tworzenia efektu w każdym projekcie specyficzne dla platformy jest nast�
 Efekt następnie mogą być używane przez dołączenie go do właściwej opcji kontroli.
 
 > [!NOTE]
-> **Uwaga**: Opcjonalnie można podać efektu w każdym projekcie platformy. Podjęto próbę użycia efektu, jeśli jedna nie jest zarejestrowana zwróci wartość inną niż null, która nie działa.
+> Jest to pozycja opcjonalna zapewnienie efektu w każdym projekcie platformy. Podjęto próbę użycia efektu, jeśli jedna nie jest zarejestrowana zwróci wartość inną niż null, która nie działa.
 
 Aplikacja przykładowa prezentuje `FocusEffect` po jego zyskuje fokus który zmienia kolor tła formantu. Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
@@ -195,7 +195,7 @@ Proces służący do konsumowania efekt platformy Xamarin.Forms przenośnej bibl
 1. Dołącz efekt do formantu przez dodanie go do formantu [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekcji.
 
 > [!NOTE]
-> **Uwaga**: wystąpienie efektu może zostać dołączona tyko do jednego formantu. W związku z tym wpływ muszą zostać rozwiązane dwa razy, aby go używać na dwóch formantów.
+> Wystąpienie efektu może zostać dołączona tyko do jednego formantu. W związku z tym wpływ muszą zostać rozwiązane dwa razy, aby go używać na dwóch formantów.
 
 ## <a name="consuming-the-effect-in-xaml"></a>Korzystanie z efektu w języku XAML
 

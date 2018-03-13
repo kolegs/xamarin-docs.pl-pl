@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
+ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 478a285dc326b62bf2fc186599bfb7515988f9ee
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 03be7b624ffa9dd8774f291b96be27499cccab2b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="oreo-features"></a>Funkcje Oreo
 
@@ -20,12 +21,10 @@ _Jak rozpocząć korzystanie z platformy Xamarin.Android do opracowywania aplika
 
 [Android 8.0 Oreo](https://developer.android.com/index.html) jest najnowsza wersja systemu android dostępnej w sklepie Google. Android Oreo oferuje wiele nowych funkcji środowiska zainteresowań dla deweloperów platformy Xamarin.Android. Te funkcje obejmują kanały powiadomień, powiadomienie identyfikatory, niestandardowych czcionek w XML, do pobrania czcionki, automatyczne uzupełnianie i obrazów na obrazie (PIP). Android Oreo zawiera nowe interfejsy API dla tych nowych capabilties, a te interfejsy API są dostępne dla aplikacji platformy Xamarin.Android używania platformy Xamarin.Android 8.0 i nowszym.
 
-[![Android Oreo bohater obrazu](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png)
+[![Android Oreo bohater obrazu](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
 W tym artykule ma struktury, aby pomóc Ci rozpocząć w tworzenie aplikacji platformy Xamarin.Android dla systemu Android Oreo 8.0. Wyjaśniono, jak zainstalować niezbędne aktualizacje, konfigurowania zestawu SDK i utworzyć emulatora (lub urządzenia) do testowania. Omówienie nowych funkcji w systemie Android Oreo 8.0, udostępnia również linki do aplikacji przykładowej, które ilustrują sposób korzystania z funkcji systemu Android Oreo w aplikacji platformy Xamarin.Android.
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Wymagania
 
@@ -38,7 +37,6 @@ Poniżej jest wymagany do korzystania z funkcji systemu Android Oreo w aplikacji
 -   **Zestaw SDK systemu android** &ndash; Android SDK 8.0 (26 interfejsu API) lub nowszym należy zainstalować za pomocą Menedżera zestawu SDK systemu Android.
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Wprowadzenie
 
@@ -55,7 +53,6 @@ Aby rozpocząć korzystanie z platformy Xamarin.Android Oreo systemu Android, mu
 Każdy z tych kroków znajduje się w następujących sekcjach:
 
 
-<a name="updates" />
 
 ### <a name="update-visual-studio-and-xamarinandroid"></a>Aktualizacja programu Visual Studio i platformy Xamarin.Android
 
@@ -81,7 +78,6 @@ Aby dodać obsługę systemu Android Oreo dla programu Visual Studio, wykonaj na
 Aby uzyskać więcej informacji na temat obsługi platformy Xamarin dla systemu Android Oreo, zobacz [wersji Xamarin.Android 8.0](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/).
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>Zainstaluj zestaw SDK systemu Android
 
@@ -93,11 +89,11 @@ Aby utworzyć projekt z platformy Xamarin.Android 8.0, należy najpierw użyj Xa
 
 2. Zainstaluj **8.0 dla systemu Android - Oreo** pakietów. Jeśli używasz emulatora Android SDK, należy uwzględnić **x86** obrazów systemu, które będą potrzebne:
 
-    [![Wybranie pakietów 8.0 dla systemu Android w programie Android SDK Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png)
+    [![Wybranie pakietów 8.0 dla systemu Android w programie Android SDK Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. Zainstaluj **narzędzia zestawu SDK systemu Android 26.0.2** lub nowszym, **Android SDK narzędzi platformy 26.0.0** lub nowszym i **Android SDK — narzędzia kompilacji 26.0.0** (lub nowsza):
 
-    [![Wybieranie narzędzia zestawu SDK systemu Android 26 w Menedżerze zestawu SDK systemu Android](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png)
+    [![Wybieranie narzędzia zestawu SDK systemu Android 26 w Menedżerze zestawu SDK systemu Android](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -105,16 +101,15 @@ Aby utworzyć projekt z platformy Xamarin.Android 8.0, należy najpierw użyj Xa
 
 2. Zainstaluj **8.0 dla systemu Android - Oreo** pakietów SDK. Jeśli używasz emulatora Android SDK, należy uwzględnić **x86** obrazów systemu, które będą potrzebne:
 
-    [![Wybranie pakietów 8.0 dla systemu Android w Menedżerze zestawu SDK](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png)
+    [![Wybranie pakietów 8.0 dla systemu Android w Menedżerze zestawu SDK](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. Zainstaluj **narzędzia zestawu SDK systemu Android 26.0.2** lub nowszym, **Android SDK narzędzi platformy 26.0.0** lub nowszym i **Android SDK — narzędzia kompilacji 26.0.0** (lub nowsza):
 
-    [![Wybieranie narzędzia zestawu SDK systemu Android 26 w Menedżerze zestawu SDK](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png)
+    [![Wybieranie narzędzia zestawu SDK systemu Android 26 w Menedżerze zestawu SDK](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Uruchom projekt platformy Xamarin.Android
 
@@ -122,7 +117,6 @@ Utwórz nowy projekt platformy Xamarin.Android. Jeśli jesteś nowym użytkownik
 
 Podczas tworzenia projektu systemu Android, należy skonfigurować ustawienia wersji docelowej Android 8.0 lub nowszej. Na przykład, aby skierować je do projektu dla systemu Android 8.0, należy skonfigurować docelowy poziom interfejsu API systemu Android projektu do **8.0 dla systemu Android (interfejs API 26)**. Zalecane jest również ustawić poziom docelowy framework do interfejsu API 26 lub nowszej. Aby uzyskać więcej informacji o konfigurowaniu poziomów poziom interfejsu API systemu Android, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Skonfiguruj Emulator lub urządzenie
 
@@ -173,7 +167,7 @@ Aby użyć **avdmanager** Aby utworzyć urządzenie wirtualne, wykonaj następuj
 
 Po **avdmanager** Aby utworzyć urządzenie wirtualne, mają być uwzględnieni w menu rozwijanym urządzenia:
 
-[![Nowe AVD dodany do menu rozwijanego urządzenia](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png)
+[![Nowe AVD dodany do menu rozwijanego urządzenia](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -193,7 +187,7 @@ Po **avdmanager** Aby utworzyć urządzenie wirtualne, mają być uwzględnieni 
 
 Po użyciu **avdmanager** Aby utworzyć urządzenie wirtualne, mają być uwzględnieni w menu rozwijanym urządzenia:
 
-[![Nowe AVD dodany do menu rozwijanego urządzenia](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png)
+[![Nowe AVD dodany do menu rozwijanego urządzenia](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -202,14 +196,12 @@ Aby uzyskać więcej informacji o konfigurowaniu emulatorze systemu Android do t
 Jeśli używasz urządzenia fizycznego, takie jak węzła lub piksel można zaktualizować urządzenie do automatycznego za pośrednictwem aktualizacji lotniczego (Stachnio) lub pobranie obrazu systemu i flash urządzenia bezpośrednio. Aby uzyskać więcej informacji na temat ręcznie zaktualizować urządzenie do Oreo systemu Android, zobacz [obrazy fabryki dla węzła i pikseli urządzenia](https://developers.google.com/android/images).
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Nowe funkcje
 
 Android Oreo wprowadzono wiele nowych funkcji i możliwości, takie jak kanały powiadomień, powiadomienie identyfikatory niestandardowych czcionek w kodzie XML, czcionki do pobrania, automatyczne uzupełnianie i obraz w obrazie. W poniższych sekcjach zaznacz te funkcje i znajdują się linki ułatwiające rozpoczęcie pracy z ich w aplikacji.
 
 
-<a name="notifchan" />
 
 ### <a name="notification-channels"></a>Kanały powiadomień
 
@@ -219,20 +211,18 @@ Można utworzyć kanał powiadomień dla każdego typu musisz wysłać powiadomi
 [Kanały powiadomień](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) wyjaśniono, jak utworzyć kanał powiadomień i użyć go do ogłaszania lokalnego powiadomienia. Na przykład rzeczywistych kod, zobacz [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) przykładowa; tej aplikacji przykładowej zarządza dwa kanały i ustawia opcje dodatkowe powiadomień.
 
 
-<a name="notifbadge" />
 
 ### <a name="notification-badges"></a>Identyfikatory powiadomień
 
 Identyfikatory powiadomienia są kropek, które pojawiają się za pośrednictwem ikony aplikacji, jak pokazano w tym zrzut ekranu:
 
-[![Przykład identyfikatory powiadomień na ikony aplikacji](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png)
+[![Przykład identyfikatory powiadomień na ikony aplikacji](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 Te punkty wskazania nowych powiadomień dla co najmniej jeden kanały powiadomień w aplikacji powiązanych z tą ikoną aplikacji &ndash; są powiadomienia, które użytkownik ma nie została jeszcze odrzucone lub reagować. Użytkownicy mogą long-naciśnij pozycję ikonę, aby przegląd na powiadomienia związane z wskaźnika powiadomień odrzuceniu lub działania dotyczące powiadomień, w menu naciśnij long tego appeaars.
 
 Aby uzyskać więcej informacji na temat identyfikatory powiadomień, zobacz deweloperów systemu Android [identyfikatory powiadomień](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges) tematu.
 
 
-<a name="customfonts" />
 
 ### <a name="custom-fonts-in-xml"></a>Niestandardowe czcionki w kodzie XML
 
@@ -256,7 +246,6 @@ Wprowadza android Oreo *czcionek w kodzie XML*, co umożliwia można zastosować
 
 Można również utworzyć czcionki rodziny plik XML opisujący wiele czcionek, a także szczegóły styl i wagi. Aby uzyskać więcej informacji, zobacz Android Developer [czcionek w kodzie XML](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html) tematu.
 
-<a name="dlfonts" />
 
 ### <a name="downloadable-fonts"></a>Czcionki do pobrania
 
@@ -281,7 +270,6 @@ Podczas wywoływania `RequestFonts` metody, najpierw sprawdza, czy czcionka jest
 Aby uzyskać więcej informacji o pobieraniu czcionek, zobacz deweloperów systemu Android [czcionki do pobrania](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html) tematu.
 
 
-<a name="autofill" />
 
 ### <a name="autofill"></a>Automatyczne uzupełnianie
 
@@ -292,7 +280,6 @@ Nowy _Autowypełnianie_ framework w systemie Android Oreo ułatwia użytkownikom
 Aby uzyskać więcej informacji na temat nowych funkcji automatycznego wypełniania oraz Optymalizowanie aplikacji na automatyczne uzupełnianie Zobacz deweloperów systemu Android [Framework Autowypełnianie](https://developer.android.com/guide/topics/text/autofill.html) tematu.
 
 
-<a name="pip" />
 
 ### <a name="picture-in-picture-pip"></a>Obraz w obrazie (PIP)
 
@@ -313,20 +300,17 @@ Aby określić, jak działanie zachowania przypadku, gdy jest w trybie PIP, nale
 [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) przykładzie przedstawiono podstawowe sposoby użycia trybu obraz w obrazie (PiP) dla urządzeń przenośnych, które wprowadzono w Oreo. Próbki odtwarzania wideo, który nadal nieprzerwaną podczas i z powrotem przełączanie trybów wyświetlania lub innych działań.
 
 
-<a name="other" />
 
 ### <a name="other-features"></a>Inne funkcje
 
 Android Oreo zawiera wiele innych nowe funkcje, takie jak limity tła biblioteki, lokalizacji interfejsu API, obsługa Emoji, całej gamy kolorów dla aplikacji, nowych audio koderów-dekoderów, ulepszenia widoku sieci Web, Obsługa nawigacji klawiatury ulepszone i nowy interfejs API AAudio (pro audio) dla audio małych opóźnieniach wysokiej wydajności, aby uzyskać więcej informacji o tych funkcjach, zobacz deweloperów systemu Android [Android Oreo funkcje i interfejsy API](https://developer.android.com/about/versions/oreo/android-8.0.html) tematu.
 
 
-<a name="behavior" />
 
 ## <a name="behavior-changes"></a>Zmiany sposobu działania
 
 Android Oreo zawiera szereg systemu i zmiany zachowania interfejsu API, które mogą mieć wpływ na funkcjonalność istniejące aplikacje. Te zmiany są opisane w następujący sposób.
 
-<a name="bgsl" />
 
 ### <a name="background-execution-limits"></a>Limity wykonywania tła
 
@@ -338,7 +322,6 @@ Aby ulepszyć środowisko użytkownika, Android Oreo nakłada ograniczenia dotyc
 
 Aby uzyskać więcej informacji o nowych limitów wykonywania tła, zobacz deweloperów systemu Android [limity wykonywania tła](https://developer.android.com/about/versions/oreo/background.html) tematu.
 
-<a name="breaking" />
 
 ### <a name="breaking-changes"></a>Fundamentalne zmiany
 
@@ -348,7 +331,6 @@ Aplikacje, które są stosowane do systemu Android Oreo lub nowszego zmodyfikowa
 
 - Dla aplikacji przeznaczonych dla systemu Android Oreo `PendingIntent.GetService()` nie działa z powodu nowych limitów dotyczącymi usługi uruchomione w tle. Jeśli ma być przeznaczona dla systemu Android Oreo, należy użyć [PendingIntent.GetBroadcast](https://developer.xamarin.com/api/member/Android.App.PendingIntent.GetBroadcast/p/Android.Content.Context/System.Int32/Android.Content.Intent/Android.App.PendingIntentFlags/) zamiast tego.  
 
-<a name="sample_code" />
 
 ## <a name="sample-code"></a>Przykładowy kod
 
@@ -369,8 +351,12 @@ Kilka przykładów Xamarin.Android są dostępne dla pokazano, jak korzystać z 
 -   [Usługa pierwszego planu aktualizacje lokalizacji](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService) pokazano, jak pobrać aktualizacje o lokalizacji do urządzenia za pomocą pierwszego planu powiązane i uruchomiono usługi za pomocą interfejsu API lokalizacji.
 
 
+## <a name="video"></a>Video
 
-<a name="summary" />
+> [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
+
+**Dla opracowywania Oreo 8.0 w języku C#**
+
 
 ## <a name="summary"></a>Podsumowanie
 

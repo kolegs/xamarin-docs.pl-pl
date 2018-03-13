@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4e93696f8eef44030ffacbdbaa8ebcd860a402f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="free-provisioning"></a>Bezpłatne, inicjowania obsługi administracyjnej
 
@@ -43,29 +43,29 @@ Do korzystania z bezpłatnej obsługi administracyjnej do wdrażania aplikacji n
 2. Otwórz środowisko Xcode i przejdź do **Xcode > Preferencje**.
 3. W obszarze **kont**, użyj  **+**  przycisk, aby dodać do istniejącego identyfikatora firmy Apple. Powinien wyglądać podobnie jak na poniższym zrzucie ekranu:
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode preferencji konta")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode preferencji konta")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. Podłącz urządzenie z systemem iOS, które chcesz wdrożyć i Utwórz nowy projekt pusty widok pojedynczego systemu iOS w programie Xcode. Ustaw **zespołu** listy rozwijanej Apple ID, który został dodany. Powinna być w formacie podobnym do `your name (Personal Team - your Apple ID)`:
 
-  [ ![](free-provisioning-images/launchapp2.png "Utwórz tożsamość podpisywania")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "Utwórz tożsamość podpisywania")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. W obszarze **ogólne > tożsamości** sekcji, upewnij się, że identyfikator pakietu jest zgodny _dokładnie_ identyfikator pakietu aplikacji platformy Xamarin.iOS i upewnij się, cel wdrożenia pasuje do lub jest niższy niż urządzenia z systemem iOS połączonych. Ten krok jest niezwykle ważne, ponieważ Xcode tylko utworzy profilu inicjowania obsługi administracyjnej z jawny identyfikator aplikacji:
 
-  [![](free-provisioning-images/launchapp5.png "Tworzenie profilu inicjowania obsługi administracyjnej z jawny identyfikator aplikacji")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "Tworzenie profilu inicjowania obsługi administracyjnej z jawny identyfikator aplikacji")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. W sekcji podpisywanie wybierz **automatycznie zarządzać podpisywania** i wybierz z listy rozwijanej zespół:
 
-  [![](free-provisioning-images/launchapp6.png "Wybierz automatycznie zarządzać podpisywania i wybierz z listy rozwijanej zespół")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "Wybierz automatycznie zarządzać podpisywania i wybierz z listy rozwijanej zespół")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. Poprzedni krok automatycznie wygeneruje profilu inicjowania obsługi administracyjnej i tożsamości podpisywania dla Ciebie. Można wyświetlić tego klikając ikonę informacji obok profilu inicjowania obsługi administracyjnej:
 
-  [![](free-provisioning-images/launchapp7.png "Widok profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "Widok profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. Aby przetestować w środowisku Xcode, należy wdrożyć pusta aplikacja do Twojego urządzenia, klikając przycisk uruchamiania.
 
 9. Zwracane ze środowiskiem IDE z tym samym urządzeniu podłączony i kliknij prawym przyciskiem myszy nazwę projektu platformy Xamarin.iOS otworzyć **opcje projektu** okna dialogowego. Przejdź do sekcji podpisywania pakietu z systemem iOS i jawnie ustaw Twojej tożsamości podpisywania i profil inicjowania obsługi administracyjnej:
 
-  [![](free-provisioning-images/launchapp8.png "Ustaw tożsamość podpisywania i profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "Ustaw tożsamość podpisywania i profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp8.png#lightbox)
 
 Jeśli nie widzisz Twojej tożsamości podpisywania lub poprawnego profilu inicjowania obsługi administracyjnej w środowiskiem IDE, może być konieczne uruchom go ponownie.
 

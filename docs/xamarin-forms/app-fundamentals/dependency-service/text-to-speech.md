@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementowanie tekst na mowę
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 Kodowanie tego interfejsu w kodzie udostępnione umożliwi aplikacji platformy Xamarin.Forms na dostęp do interfejsów API rozpoznawania mowy na każdej z platform.
 
 > [!NOTE]
-> **Uwaga**: implementującej interfejs klasy musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`.
+> Klasy implementującej interfejs musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ namespace DependencyServiceSample.iOS
 
 ## <a name="android-implementation"></a>Implementacja systemu android
 
-Bardziej złożone niż wersja systemu iOS jest kodu dla systemu Android: wymaga klasy implementującej odziedziczone specyficzne dla systemu Android `Java.Lang.Object` i wdrożenie `IOnInitListener` również interfejs.
-
-Udostępnia również platformy Xamarin.Forms `Forms.Context` obiektu, który jest wystąpieniem bieżącego kontekstu systemu Android. Wymaga wiele metod zestawu SDK systemu Android, dobrym przykładem jest możliwość wywołania `StartActivity()`.
+Bardziej złożone niż wersja systemu iOS jest kodu dla systemu Android: wymaga klasy implementującej odziedziczone specyficzne dla systemu Android `Java.Lang.Object` i wdrożenie `IOnInitListener` również interfejs. Wymagany jest również dostęp do bieżącego kontekstu Android jest udostępniana przez `MainActivity.Instance` właściwości.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

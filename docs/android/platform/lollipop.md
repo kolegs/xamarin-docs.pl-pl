@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 24d85d7be580f8db8621d91ebbb27c0b7881b4eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lollipop-features"></a>Interfejs typu lizak funkcji
 
@@ -54,8 +54,6 @@ Poniżej jest wymagany do korzystania z nowych funkcji systemu Android 5.0 w apl
 Można nadal używać [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Jeśli tworzenie specjalnie dla interfejsu API na poziomie 23 lub starszym.
 
 
-<a name="settingup" />
-
 ## <a name="setting-up-an-android-50-project"></a>Konfigurowanie projektu programu Android 5.0
 
 Aby utworzyć projekt Android 5.0, należy zainstalować najnowsze narzędzia i zestaw SDK pakietów. Aby skonfigurować projekt platformy Xamarin.Android którego element docelowy z systemem Android 5.0, wykonaj następujące kroki:
@@ -66,11 +64,11 @@ Aby utworzyć projekt Android 5.0, należy zainstalować najnowsze narzędzia i 
 
 3. Uruchom Menedżera zestawu SDK systemu Android (w programie Visual Studio dla komputerów Mac, należy użyć **narzędzia &gt; Open Android SDK Manager&hellip;**) i zainstalować narzędzia zestawu SDK systemu Android 23.0.5 lub nowszym:
 
-    [![Wybieranie narzędzia zestawu SDK systemu Android w programie Android SDK Manager](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png)
+    [![Wybieranie narzędzia zestawu SDK systemu Android w programie Android SDK Manager](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
    Ponadto zainstalować najnowszych pakietów zestawu SDK systemu Android 5.0 (interfejs API 21 lub nowszej):
 
-    [![Instalowanie zestawu SDK systemu Android 5.0 pakietów w Menedżerze zestawu SDK systemu Android](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png)
+    [![Instalowanie zestawu SDK systemu Android 5.0 pakietów w Menedżerze zestawu SDK systemu Android](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
    Aby uzyskać więcej informacji o używaniu Android SDK Manager, zobacz [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
@@ -87,14 +85,9 @@ Aby utworzyć projekt Android 5.0, należy zainstalować najnowsze narzędzia i 
 
 Uwaga: Aby zaktualizować istniejący projekt Android, który został przeznaczonych dla systemu Android Podgląd L, należy zaktualizować **platformy docelowej** i **wersji Android** wartości opisane powyżej.
 
-
-<a name="changes" />
-
 ## <a name="important-changes"></a>Ważne zmiany
 
 Wcześniej opublikowane aplikacje dla systemu Android może mieć wpływ zmian w systemie Android 5.0. W szczególności Android 5.0 używa nowe środowisko uruchomieniowe i format powiadomienia znacznie zmienione.
-
-<a name="runtime" />
 
 ### <a name="android-runtime"></a>Środowisko uruchomieniowe systemu android
 
@@ -108,7 +101,6 @@ Android 5.0 używa nowego środowiska uruchomieniowego systemu Android (GRAFIKI)
 
 Istniejące aplikacje powinny działać bez zmian w obszarze KOMPOZYCJI &ndash; z wyjątkiem aplikacji, które wykorzystać unikatowe dla wcześniejsze środowisko uruchomieniowe platformy Dalvik techniki, które mogą nie działać prawidłowo w obszarze KOMPOZYCJI. Aby uzyskać więcej informacji na temat tych zmian, zobacz [weryfikowanie zachowanie aplikacji na Android środowiska uruchomieniowego (GRAFIKA)](http://developer.android.com/guide/practices/verifying-apps-art.html).
 
-<a name="notifchanges" />
 
 ### <a name="notification-changes"></a>Powiadomienie ulega zmianie
 
@@ -136,29 +128,26 @@ Jeśli powiadomienia istnieje transportu formantów, media wyświetlania stanu o
 
 Informacje o tworzeniu powiadomienia w systemie Android, zobacz [lokalnego powiadomienia](~/android/app-fundamentals/notifications/local-notifications.md). [Zgodności](~/android/app-fundamentals/notifications/local-notifications.md#compatibility) części w tym artykule opisano sposób tworzenia powiadomień, które są zgodne z pobieranej z wcześniejszymi wersjami systemu android.
 
-<a name="materialtheme" />
 
 ## <a name="material-theme"></a>Materiał motywu
 
 Nowy motyw materiałów Android 5.0 wprowadzono zmian polegających na usuwaniu do wyglądu i działania interfejsu użytkownika dla systemu Android. Elementy wizualne teraz używać dotykiem powierzchnie przybrać bold grafiki, typografii i kolory jasny drukowania na podstawie projektu. Przykłady motywu materiałów są przedstawione na poniższych zrzutach ekranu:
 
-[![Zrzuty ekranu ekran głównej motywu materiałów, ekranu aplikacji oraz ustawienia ekranu](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png)
+[![Zrzuty ekranu ekran głównej motywu materiałów, ekranu aplikacji oraz ustawienia ekranu](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
 Android 5.0 złoży Ci wyświetlane po lewej stronie ekranu głównego. Zrzut ekranu Centrum jest pierwszym ekranie listy aplikacji i zrzut ekranu po prawej stronie jest **ustawienia** ekranu. Firmy Google [projektowania materiałów](https://material.io/guidelines/material-design/introduction.html) specyfikacji wyjaśniono podstawowej reguły projektowania za nowe pojęcie materiałów motywu.
 
 Kompozycja materiału zawiera trzy odmian wbudowanych, których można użyć w aplikacji: `Theme.Material` ciemny motyw (ustawienie domyślne), `Theme.Material.Light` motywu i `Theme.Material.Light.DarkActionBar` motywu: 
 
-[![Zrzuty ekranu ciemny, jasnym i DarkActionBar motywów](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png)
+[![Zrzuty ekranu ciemny, jasnym i DarkActionBar motywów](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
 Aby uzyskać więcej informacji o korzystaniu z funkcji motywu materiału w aplikacji platformy Xamarin.Android zobacz [motyw materiału](~/android/user-interface/material-theme.md).
 
-<a name="animations" />
 
 ## <a name="animations"></a>Animacji
 
 Android 5.0 zawiera animacji opinii touch, działania animacji przejścia i animacji przejścia stanu widoku, aby bardziej intuicyjne używać interfejsów aplikacji. Ponadto można użyć aplikacji systemu Android 5.0 *ujawnić efekt* animacji, aby ukryć lub ujawnić widoków. Można użyć *krzywych ruchu* ustawienia konfiguracji, jak szybko lub wolno animacje są renderowane.
 
-<a name="touchanim" />
 
 ### <a name="touch-feedback-animations"></a>Touch animacje opinii
 
@@ -170,7 +159,6 @@ Touch początkowej skontaktuj się z przyciskiem występuje w pierwszy obraz po 
 
 Aby uzyskać więcej informacji na temat touch animacje opinii w systemie Android 5.0, zobacz [dostosować opinii Touch](http://developer.android.com/training/material/animations.html#Touch).
 
-<a name="activityanim" />
 
 ### <a name="activity-transition-animations"></a>Działania animacji przejścia
 
@@ -184,7 +172,7 @@ Działania animacji przejścia zwracanie użytkowników w pewnym sensie visual c
 
 Na przykład następująca sekwencja zrzuty ekranu przedstawiono przejścia udostępnionego elementu:
 
-[![Ramki przez zrzuty ekranu ramki animacji przejścia udostępnionego elementu](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png)
+[![Ramki przez zrzuty ekranu ramki animacji przejścia udostępnionego elementu](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
 Udostępniony element (zdjęcie gąsienice) jest jednym z kilku widoków w pierwsze działanie; powiększa go jako widok tylko w drugiej działania jako pierwszy przejścia działania do drugiego.
 
@@ -220,7 +208,6 @@ Udostępniony element przejścia obsługuje wiele typów animacji, takich jak:
 
 Aby uzyskać więcej informacji na temat działania animacji przejścia w systemie Android 5.0, zobacz [dostosować przejścia działania](http://developer.android.com/training/material/animations.html#Transitions).
 
-<a name="viewstate" />
 
 ### <a name="view-state-transition-animations"></a>Animacji przejścia w stan widoku
 
@@ -232,23 +219,21 @@ Android 5.0 umożliwia animacje do uruchomienia po zmianie stanu widoku. Przejś
 
 Aby uzyskać więcej informacji o animacji przejścia stanu widoku w systemie Android 5.0, zobacz [animowanie zmian stanu widoku](http://developer.android.com/training/material/animations.html#ViewState).
 
-<a name="reveal" />
 
 ### <a name="reveal-effect"></a>Odsłoń efektu
 
 *Ujawnić efekt* jest wycinka koła tego radius zmiany, aby pokazać lub ukryć widoku. W tym celu można kontrolować przez ustawienie początkowych i końcowych promień okręgu wycinka. Następująca sekwencja zrzuty ekranu przedstawiono animację efekt ujawniania z Centrum ekranu:
 
-[![Ramki przez zrzuty ekranu ramki animacji ujawniania](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png)
+[![Ramki przez zrzuty ekranu ramki animacji ujawniania](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 Sekwencja dalej przedstawiono animacji efekt ujawniania, która ma miejsce, w lewym dolnym rogu ekranu:
 
-[![Ramki przez zrzuty ekranu ramki animacji wycinka](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png)
+[![Ramki przez zrzuty ekranu ramki animacji wycinka](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 Ujawnić, że można wycofać animacji; oznacza to, że wycinka koła można zmniejszyć, aby ukryć widok zamiast Powiększ, aby wyświetlić widok.
 
 Aby uzyskać więcej informacji na efekt ujawniania Android 5.0, zobacz [efekt ujawnić](http://developer.android.com/training/material/animations.html#Reveal).
 
-<a name="curvedmotion" />
 
 ### <a name="curved-motion"></a>Zakrzywioną ruchu
 
@@ -262,7 +247,6 @@ Oprócz tych funkcji animacji Android 5.0 także nowych interfejsów API, które
 
 Można użyć nowej `PathInterpolator` klasę, aby określić, jak odbywa się interpolacji ruchu. `PathInterpolator` jest interpolatora, który przechodzi przez ścieżki animacji zgodnie z punktów kontrolnych określonych i krzywych ruchu. Aby uzyskać więcej informacji na temat określania ustawień zakrzywioną ruchu w systemie Android 5.0, zobacz [ruchu zakrzywioną użyj](http://developer.android.com/training/material/animations.html#CurvedMotion).
 
-<a name="viewshadows" />
 
 ## <a name="view-shadows--elevation"></a>Shadows widoku & podniesienia uprawnień
 
@@ -270,13 +254,12 @@ W systemie Android 5.0, można określić *podniesienia uprawnień* widoku ustaw
 
 Poniższy przykład przedstawia shadows rzutowanie pustą `TextView` kontrolować, jeśli jego atrybut podniesienia uprawnień ma wartość 2dp, 4dp i 6dp, odpowiednio:
 
-[![Zrzuty ekranu progessively większych cieni widoku](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png)
+[![Zrzuty ekranu progessively większych cieni widoku](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
 Widok ustawień w tle może być statyczne (jak pokazano powyżej) lub użyciem w animacji można utworzyć widok wydają się tymczasowo wzrostu powyżej tło widoku. Można użyć `ViewPropertyAnimator` klasy do animowania podniesienie widoku. Podniesienie uprawnień w widoku jest sumą jego układ `elevation` ustawienie plus `translationZ` właściwość, którą można ustawić za pomocą `ViewPropertyAnimator` wywołania metody.
 
 Aby uzyskać więcej informacji o shadows widoku w systemie Android 5.0, zobacz [wycinka widoków i definiowanie Shadows](http://developer.android.com/training/material/shadows-clipping.html).
 
-<a name="colorfeatures" />
 
 ## <a name="color-features"></a>Funkcje kolorów
 
@@ -286,7 +269,6 @@ Zarządzanie kolorami w aplikacjach systemu android 5.0 zawiera dwie nowe funkcj
 
 -   *Kolor poświęcone wyodrębniania* umożliwia dynamiczne Dostosowywanie motywu kolorów aplikacji do zapewnienia koordynacji z palety kolorów wyświetlany obraz.
 
-<a name="tinting" />
 
 ### <a name="drawable-tinting"></a>Cieniowanie obiektów drawable
 
@@ -302,7 +284,6 @@ To logo jest wyświetlany powyżej niebieskie tło cykliczne, jak pokazano w pon
 
 Aby uzyskać więcej informacji na temat obiektów drawable cieniowanie w systemie Android 5.0, zobacz [odcieni obiektów Drawable](http://developer.android.com/training/material/drawables.html#DrawableTint).
 
-<a name="colorextract" />
 
 ### <a name="prominent-color-extraction"></a>Kolor poświęcone wyodrębniania
 
@@ -322,13 +303,12 @@ Nowe Android 5.0 `Palette` klasa pozwala wyodrębnić kolory z obrazu, dzięki c
 
 Na przykład poniższe zrzuty ekranu, zdjęcie wyświetlanie aplikacji wyodrębnia poświęcone kolory z obrazu na ekran i używa kolorów te dostosowania schemat kolorów aplikacji do dopasowania obrazu:
 
-[![Zrzuty ekranu ekstrakcje kolor zielony, różowym i niebieski motyw](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png)
+[![Zrzuty ekranu ekstrakcje kolor zielony, różowym i niebieski motyw](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
 
 W powyższym zrzuty ekranu, na pasku akcji ma ustawioną wartość wyodrębnionego "żywe jasny" kolor i tło ma ustawioną wartość wyodrębnionego "żywe ciemny" kolorów. W każdym powyższego przykładu wiersz kwadratów kolorów jest uwzględniona w celu zilustrowania kolorów palety, które zostały wyodrębnione z obrazu.
 
 Aby uzyskać więcej informacji o wyodrębniania kolorów w systemie Android 5.0, zobacz [wyodrębniania poświęcone kolory z obrazu](http://developer.android.com/training/material/drawables.html#ColorExtract).
 
-<a name="newuiwidgets" />
 
 ## <a name="new-ui-widgets"></a>Nowe elementy widget interfejsu użytkownika
 
@@ -340,11 +320,10 @@ Android 5.0 wprowadzono dwie nowe elementy widget interfejsu użytkownika:
 
 Oba elementy widget obsługują rozszerzania funkcji motywu materiałów; na przykład `RecyclerView` używa animacji do dodawania i usuwania widoków i `CardView` używa wyświetlić shadows dokonanie każdej karty prawdopodobnie przestawiany powyżej w tle. Na poniższych zrzutach ekranu przedstawiono przykładowe te nowe elementy widget:
 
-[![Zrzuty ekranu aplikacji skompilowanej za pomocą RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![Zrzuty ekranu aplikacji skompilowanej za pomocą RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Zrzut ekranu po lewej stronie jest przykładem `RecyclerView` używany w aplikacji poczty e-mail i tworzenia zrzutów ekranu na prawo jest przykładem `CardView` w aplikacji rezerwacji podróży.
 
-<a name="recyclerview" />
 
 ### <a name="recyclerview"></a>RecyclerView
 
@@ -356,27 +335,25 @@ Jeśli używasz `RecyclerView` widget, należy określić `LayoutManager` i kart
 
 Poniższe zrzuty ekranu przedstawiają `RecyclerView` zawiera elementy 100 (każdego elementu składa się z `ImageView` i `TextView`):
 
-[![Zrzuty ekranu aplikacji RecyclerView przewijanie obrazów](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png)
+[![Zrzuty ekranu aplikacji RecyclerView przewijanie obrazów](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
 `RecyclerView` obsługuje ten dużych zestawów danych z łatwością &ndash; przewijania z początku listy, aby zakończyć listy w tym przykładzie aplikacja zajmuje tylko kilka sekund. `RecyclerView` obsługuje także animacje; w rzeczywistości animacji Dodawanie i usuwanie elementów są domyślnie włączone. Gdy element zostanie dodany do `RecyclerView`, zniknie w, jak pokazano w tej sekwencji zrzuty ekranu:
 
-[![Ramki przez ramki zrzut ekranu przedstawiający Znikająca elementu fotografii, w](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png)
+[![Ramki przez ramki zrzut ekranu przedstawiający Znikająca elementu fotografii, w](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
 Aby uzyskać więcej informacji na temat `RecyclerView`, zobacz [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
-<a name="cardview" />
 
 ### <a name="cardview"></a>CardView
 
 `CardView` jest to prosty widok symuluje przestawne karty z zaokrąglonymi narożnikami. Ponieważ `CardView` ma wbudowane widoku cieni, zapewnia prosty sposób można dodać do aplikacji visual głębokość. Poniższe zrzuty ekranu pokazują trzy tekstowych przykładowe `CardView`:
 
-[![Przykład zrzuty ekranu aplikacji korzystających z elementami na podstawie CardView RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![Przykład zrzuty ekranu aplikacji korzystających z elementami na podstawie CardView RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Każda z kart w powyższym przykładzie zawiera `TextView`; kolor tła ustawione za pośrednictwem `cardBackgroundColor` atrybutu.
 
 Aby uzyskać więcej informacji na temat `CardView`, zobacz [CardView](~/android/user-interface/controls/card-view.md).
 
-<a name="enhanced" />
 
 ## <a name="enhanced-notifications"></a>Ulepszone powiadomienia
 
@@ -389,13 +366,13 @@ Po wyświetleniu powiadomienia (jak pokazano w powyższym przykładzie) dużych 
 W systemie Android 5.0 powiadomień może również zostać wyświetlony na ekranu blokady urządzenia.
 Na przykład w tym miejscu jest zrzucie ekranu blokady z jednego powiadomienia:
 
-[![Zrzut ekranu przedstawiający powiadomienia na ekranie blokady](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png)
+[![Zrzut ekranu przedstawiający powiadomienia na ekranie blokady](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
 Użytkownicy mogą dwukrotnego powiadomienie na ekranu blokady do odblokowania urządzenia i przejść do aplikacji, którą zainicjowano powiadomienie, lub przejdź na odrzucenie powiadomienia. Powiadomienia ma nowego *widoczność* ustawienie określa, ile zawartości mogą być wyświetlane na ekranu blokady. Użytkownicy mogą wybrać, czy zezwalać poufnej zawartości ma być wyświetlany w powiadomień ekranu blokady.
 
 Android 5.0 wprowadzono nowy format prezentacji powiadomienia o wysokim priorytecie o nazwie *projekcyjny wskazuje pozycję*. Powiadomienia projekcyjny wskazuje pozycję slajd w dół od górnej krawędzi ekranu przez kilka sekund i następnie retreat do cień powiadomienia w górnej części ekranu. Powiadomienia projekcyjny wskazuje pozycję umożliwiają systemu interfejsu użytkownika, aby umieścić ważne informacje przed użytkownika bez zakłócania działania aktualnie uruchomione. Poniższy przykład przedstawia prostego powiadomienia projekcyjny wskazuje pozycję wyświetlany u góry aplikacji:
 
-[![Przykładowe powiadomienie heads-up](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png)
+[![Przykładowe powiadomienie heads-up](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
 Powiadomienia projekcyjny wskazuje pozycję zwykle są używane następujące zdarzenia:
 
@@ -414,7 +391,6 @@ Kategorie powiadomienia są używane do filtrowania powiadomienia, które mogą 
 
 Aby uzyskać szczegółowe informacje na temat tworzenia i uruchamiania powiadomienia z najnowszych funkcji systemu Android 5.0, zobacz [lokalnego powiadomienia](~/android/app-fundamentals/notifications/local-notifications.md).
 
-<a name="newapis" />
 
 ## <a name="new-apis"></a>Nowe interfejsy API
 

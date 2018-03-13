@@ -6,11 +6,11 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 57dec129a5f16b004e054a7a3fedd296bad92a3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3978b046a8ab4d42cbf86bf524452a033b5dbb4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Wprowadzenie do korzystania ze skoroszytami Xamarin zestawu SDK
 
@@ -28,15 +28,15 @@ Integracja z biblioteki najlepiej są tworzone jako biblioteki dla wielu platfor
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Biblioteka przenośna szablonu programu Visual Studio dla komputerów Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png)
+[![Biblioteka przenośna szablonu programu Visual Studio dla komputerów Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Biblioteka przenośna szablonu programu Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png)
+[![Biblioteka przenośna szablonu programu Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
 
 W programie Visual Studio należy upewnij się, że wybierz następujące platformy docelowej dla przenośnej biblioteki:
 
-[![Biblioteka przenośna platformy Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png)
+[![Biblioteka przenośna platformy Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
@@ -44,11 +44,11 @@ Po utworzeniu projektu biblioteki, Dodaj odwołanie do naszej `Xamarin.Workbooks
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![NuGet Visual Studio for Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png)
+[![NuGet Visual Studio for Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png)
+[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
 
 -----
 
@@ -146,11 +146,11 @@ a następnie opublikować go do [NuGet][nugetorg]. Po jest określony, będzie m
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Skoroszyt z integracją z usługą](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png)
+[![Skoroszyt z integracją z usługą](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Skoroszyt z integracją z usługą](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png)
+[![Skoroszyt z integracją z usługą](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 

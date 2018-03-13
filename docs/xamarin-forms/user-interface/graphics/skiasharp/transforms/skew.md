@@ -4,14 +4,15 @@ description: "Zobacz, jak utworzyć Wychylny obiektów graficznych w SkiaSharp p
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>Przekształcanie pochylenia
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Wartości `xSkew` argumentu przesunięcia w dolnej części tekstu prawa dla wartości dodatnie lub pozostać dla wartości ujemnych. Wartości `ySkew` w dół po prawej stronie tekstu dla wartości dodatnie lub dla wartości ujemnych:
 
-[![](skew-images/skewexperiment-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu")](skew-images/skewexperiment-large.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu")
+[![](skew-images/skewexperiment-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu")](skew-images/skewexperiment-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu")
 
 Jeśli `xSkew` jest ujemna z `ySkew`, wynik jest obracanie, ale również skalować nieco jako wskazuje wyświetlania systemu Windows.
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Jako wartość kąta zbliża się do 90 stopni dodatnie lub ujemne, tangens zbliża się do nieskończoności, ale kąty do około 80 stopni lub dlatego nadają się do:
 
-[![](skew-images/skewangleexperiment-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu kąt")](skew-images/skewangleexperiment-large.png "Potrójna zrzut ekranu strony pochylanie eksperymentu kąta")
+[![](skew-images/skewangleexperiment-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu kąt")](skew-images/skewangleexperiment-large.png#lightbox "Potrójna zrzut ekranu strony pochylanie eksperymentu kąta")
 
 Mała ujemna zegara poziomy można naśladować nachylone lub kursywą tekstu, jako **nachylone tekst** pokazuje strony. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Klasy pokazuje, jak jest wykonywane:
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign` Właściwość `SKPaint` ma ustawioną wartość `Center`. Bez transformacje `DrawText` wywołania z współrzędne (0, 0) czy umieścić tekst w Centrum poziomych linii bazowej w lewym górnym rogu. `SkewDegrees` Pochyla tekst poziomo 20 stopni względem linii bazowej. `Translate` Wywołania przenosi Centrum poziomych linii bazowej tekstu do centrum obszaru roboczego:
 
-[![](skew-images/obliquetext-small.png "Potrójna zrzut ekranu przedstawiający stronę nachylone tekst")](skew-images/obliquetext-large.png "Potrójna zrzut ekranu przedstawiający stronę nachylone tekstu")
+[![](skew-images/obliquetext-small.png "Potrójna zrzut ekranu przedstawiający stronę nachylone tekst")](skew-images/obliquetext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nachylone tekstu")
 
 **Pochylanie cienia tekstu** strony pokazano, jak dokonanie Cień tekstu, który można przechylać przeciwną tekst jest użycie kombinacji skali pochylenia i w pionie 45 stopni. Poniżej przedstawiono istotne część `PaintSurface` obsługi:
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 Kopii w tle jest najpierw wyświetlany, a następnie tekst:
 
-[![](skew-images/skewshadowtext1-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu")](skew-images/skewshadowtext1-large.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu")
+[![](skew-images/skewshadowtext1-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu")](skew-images/skewshadowtext1-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu")
 
 Współrzędna pionowy przekazany do `DrawText` metody wskazuje pozycję tekstu względem linii bazowej. To jest tę samą współrzędną pionowy używany do środka pochylanie. Ta metoda nie będzie działać, jeśli ciąg tekstowy zawiera wydłużeń dolnych. Na przykład subsitute wyraz "quirky", "Cienia" i miejsca jego wynik:
 
-[![](skew-images/skewshadowtext2-small.png "Potrójna zrzut ekranu strony pochylanie cienia tekstu z alternatywnych word z wydłużeń dolnych")](skew-images/skewshadowtext2-large.png "Potrójna zrzut ekranu strony pochylanie cienia tekstu z alternatywnych word z wydłużenia dolne")
+[![](skew-images/skewshadowtext2-small.png "Potrójna zrzut ekranu strony pochylanie cienia tekstu z alternatywnych word z wydłużeń dolnych")](skew-images/skewshadowtext2-large.png#lightbox "Potrójna zrzut ekranu strony pochylanie cienia tekstu z alternatywnych word z wydłużenia dolne")
 
 Cień i tekst jest wyrównywany w linii bazowej, ale wpływ właśnie jest nieprawidłowy. Aby go rozwiązać, należy uzyskać granice tekstu:
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 Teraz cień rozciąga się od dołu tych wydłużeń dolnych:
 
-[![](skew-images/skewshadowtext3-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu korekt dla wydłużeń dolnych")](skew-images/skewshadowtext3-large.png "Potrójna zrzut ekranu strony pochylanie cienia tekstu korekt dla wydłużenia dolne")
+[![](skew-images/skewshadowtext3-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie cienia tekstu korekt dla wydłużeń dolnych")](skew-images/skewshadowtext3-large.png#lightbox "Potrójna zrzut ekranu strony pochylanie cienia tekstu korekt dla wydłużenia dolne")
 
 
 ## <a name="related-links"></a>Linki pokrewne

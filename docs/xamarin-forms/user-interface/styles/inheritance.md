@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>Styl dziedziczenia
 
@@ -62,10 +62,10 @@ Poniższy kod przedstawia *jawne* styl dziedziczenia w strony XAML:
 
 `baseStyle` Celów [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) wystąpień i ustawia [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości. `baseStyle` Nie ustawiono bezpośrednio na żaden formant. Zamiast tego `labelStyle` i `buttonStyle` dziedziczyć po nim, ustawienie wartości dodatkowe właściwości możliwej do wiązania. `labelStyle` i `buttonStyle` zostaną zastosowane do [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień i [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wystąpienia, ustawiając ich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **Uwaga**: niejawna styl mogą pochodzić z jawnym styl, ale styl jawne nie może dziedziczyć po stylu niejawne.
+> Niejawne styl mogą pochodzić z jawnym styl, ale styl jawne nie może dziedziczyć po stylu niejawne.
 
 ### <a name="respecting-the-inheritance-chain"></a>Przestrzeganie łańcuch dziedziczenia
 
@@ -106,7 +106,7 @@ Ten łańcuch dziedziczenia przedstawiono w poniższym przykładzie kodu:
 
 W tym przykładzie `labelStyle` i `buttonStyle` są kontroli poziomu zasobów, podczas gdy `baseStyle` jest zasobów na poziomie strony. Jednakże podczas `labelStyle` i `buttonStyle` dziedziczyć `baseStyle`, nie jest możliwe w dla `baseStyle` odziedziczone `labelStyle` lub `buttonStyle`, z powodu ich odpowiednich lokalizacji w hierarchii widoku.
 
-## <a name="style-inheritance-in-c35"></a>Styl dziedziczenia w & 35;
+## <a name="style-inheritance-in-c35"></a>Styl dziedziczenia w języku C&#35;
 
 Odpowiednik C# strony, gdzie [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) wystąpienia są przypisywane bezpośrednio do [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości wymagane formantów, przedstawiono w poniższym przykładzie kodu:
 

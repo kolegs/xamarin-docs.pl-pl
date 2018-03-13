@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>Jawne style
 
@@ -64,7 +64,7 @@ Poniższy kod przedstawia przykład *jawne* style zadeklarowany w języku XAML n
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definiuje trzy *jawne* style, które są stosowane do strony [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień. Każdy `Style` służy do wyświetlania tekstu w innym kolorze podczas ustawiania również czcionki opcje układu rozmiarze i poziomie i w pionie. Każdy `Style` jest stosowany do innej `Label` przez ustawienie jej [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości za pomocą `StaticResource` — rozszerzenie znaczników. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](explicit-images/explicit-styles.png "Przykład jawne style")](explicit-images/explicit-styles-large.png "przykład jawne style")
+[![](explicit-images/explicit-styles.png "Przykład jawne style")](explicit-images/explicit-styles-large.png#lightbox "przykład jawne style")
 
 Ponadto ostatecznych [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ma [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) zastosować dla niego, ale również zastępuje [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) właściwości do różnych `Color`wartość.
 
@@ -95,7 +95,7 @@ W tym przykładzie *jawne* [ `Style` ](https://developer.xamarin.com/api/type/Xa
 
 Informacje o tworzeniu style w aplikacji [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), zobacz [stylów globalnych](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>Tworzenie stylu jawne w & 35;
+## <a name="creating-an-explicit-style-in-c35"></a>Tworzenie stylu jawne w języku C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) wystąpienia mogą być dodawane do strony sieci [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekcji w języku C#, tworząc nowe [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), a następnie dodając `Style` wystąpień do `ResourceDictionary`, jak pokazano w Poniższy przykład kodu:
 

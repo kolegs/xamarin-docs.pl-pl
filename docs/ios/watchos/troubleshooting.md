@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Rozwiązywanie problemów
 
@@ -61,7 +61,7 @@ Ta strona zawiera dodatkowe informacje i obejścia funkcji nadal w fazie tworzen
 - Nie można dodać dwóch `WKNotificationControllers` do scenorysu.
     Obejście problemu: `notificationCategory` element scenorysu XML jest zawsze wstawiany o tej samej `id`. Aby obejść ten problem, możesz dodać kontrolerów powiadomienia (co najmniej dwa), otwórz plik scenorysu w edytorze tekstów i ręcznie zmienić `id` element ma być unikatowy.
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "Otwieranie scenorysu plik w edytorze tekstów i ręcznie zmienić elementu id być unikatowe")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "Otwieranie scenorysu plik w edytorze tekstów i ręcznie zmienić elementu id być unikatowe")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Może zostać wyświetlony błąd "nie został skompilowany aplikacji" podczas próby uruchomienia aplikacji. Występuje to po **wyczyść** gdy projekt startowy jest ustawiona na projekt rozszerzenia czujki.
     Ta poprawka jest wybranie **kompilacji > Skompiluj ponownie wszystko** , a następnie ponownie uruchom aplikację.

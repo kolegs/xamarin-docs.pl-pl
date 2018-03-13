@@ -3,16 +3,16 @@ title: Windows
 description: "W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: bcf95bf481d58f21e4adce6039c3eb02ce24b938
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -29,7 +29,7 @@ Systemu Windows mogą być używane w stanie niemodalne (takich jak edytor tekst
 
 Panele to specjalny rodzaj okna (podklasy elementu bazowego `NSWindow` klasy), zwykle obsługujących funkcję pomocnicze w aplikacji, takich jak narzędzia systemu windows, takich jak inspektorzy formatu tekstu i selektora kolorów systemu.
 
-[ ![](window-images/intro01.png "Edytowanie okna w środowisku Xcode")](window-images/intro01.png)
+[![](window-images/intro01.png "Edytowanie okna w środowisku Xcode")](window-images/intro01.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z systemem Windows i panele w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -96,7 +96,7 @@ Aby uzyskać więcej informacji, zobacz [systemu Windows w trybie pełnoekranowy
 
 Panel jest pomocnicze okna, zawierający formanty, opcje, które mają wpływ na aktywny dokument lub (np. system próbnika kolorów):
 
-[ ![](window-images/panel01.png "Panel kolorów")](window-images/panel01.png)
+[![](window-images/panel01.png "Panel kolorów")](window-images/panel01.png#lightbox)
 
 Panele mogą być _specyficzny dla aplikacji_ lub _ogólnosystemowe_. Panele specyficzny dla aplikacji float w górnej części okna dokumentów aplikacji i znikają w przypadku aplikacji znajduje się w tle. Panele ogólnosystemowe (takich jak **czcionki** panelu), float na wszystkie otwarte okna, niezależnie od aplikacji. 
 
@@ -112,7 +112,7 @@ Apple sugeruje następujących wytycznych:
 
 Większość nowoczesnych aplikacji macOS przedstawia pomocniczego kontrolki i opcje, które mają wpływ na aktywny dokument lub zaznaczenie jako _inspektorzy_ które są częścią okno główne (takich jak **stron** aplikacji pokazano poniżej), zamiast przy użyciu panelu systemu Windows:
 
-[ ![](window-images/panel02.png "Przykład Inspektora")](window-images/panel02.png)
+[![](window-images/panel02.png "Przykład Inspektora")](window-images/panel02.png#lightbox)
 
 Aby uzyskać więcej informacji, zobacz [panele](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) i naszych [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) Przykładowa aplikacja dla pełnej implementacji **Interfejsu inspektora** w aplikacji Xamarin.Mac.
 
@@ -122,11 +122,11 @@ Aby uzyskać więcej informacji, zobacz [panele](https://developer.apple.com/lib
 
 Podczas tworzenia nowej aplikacji Xamarin.Mac Cocoa, otrzymasz standardowe okno puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie dołączony do projektu. Aby edytować w projekcie systemu windows **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
 
-[ ![](window-images/edit01.png "Wybieranie głównego storyboard")](window-images/edit01.png)
+[![](window-images/edit01.png "Wybieranie głównego storyboard")](window-images/edit01.png#lightbox)
 
 Spowoduje to otwarcie okna projektu w Konstruktorze interfejsu w środowisku Xcode:
 
-[ ![](window-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](window-images/edit02.png)
+[![](window-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](window-images/edit02.png#lightbox)
 
 W **inspektora atrybutu**, istnieje kilka właściwości, które służą do definiowania i kontrolowania okna:
 
@@ -160,7 +160,7 @@ Zobacz firmy Apple [wprowadzenie do systemu Windows](https://developer.apple.com
 
 Aby ustawić początkowe położenie okna, a jego rozmiar, przełącz się do **inspektora rozmiar**:
 
-[ ![](window-images/edit07.png "Domyślny rozmiar i położenie")](window-images/edit07.png)
+[![](window-images/edit07.png "Domyślny rozmiar i położenie")](window-images/edit07.png#lightbox)
 
 W tym miejscu można ustawić początkową wartość rozmiaru okna, nadaj minimalnego i maksymalnego rozmiaru, Ustaw początkową lokalizację na ekranie i kontrolować obramowania okna.
 
@@ -176,15 +176,15 @@ Wykonaj następujące czynności:
 2. Wybierz `NSWindowController` na powierzchni projektu.
 3. Przełącz się do **inspektora tożsamości** Wyświetl i wprowadź `WindowController` jako **Nazwa klasy**: 
 
-    [ ![](window-images/windowcontroller01.png "Ustawienie nazwy klasy")](window-images/windowcontroller01.png)
+    [![](window-images/windowcontroller01.png "Ustawienie nazwy klasy")](window-images/windowcontroller01.png#lightbox)
 4. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji.
 5. A `WindowController.cs` plik zostanie dodany do projektu w **Eksploratora rozwiązań** w programie Visual Studio dla komputerów Mac: 
 
-    [ ![](window-images/windowcontroller02.png "Wybiera kontroler systemu windows")](window-images/windowcontroller02.png)
+    [![](window-images/windowcontroller02.png "Wybiera kontroler systemu windows")](window-images/windowcontroller02.png#lightbox)
 6. Otwórz ponownie scenorysu w Konstruktorze interfejsu w środowisku Xcode.
 7. `WindowController.h` Plik będzie dostępna do użycia: 
 
-    [ ![](window-images/windowcontroller03.png "Edytowanie pliku WindowController.h")](window-images/windowcontroller03.png)
+    [![](window-images/windowcontroller03.png "Edytowanie pliku WindowController.h")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Aby zdefiniować zawartości okna, przeciągnij formanty z **inspektora bibliote
 
 Na przykład załóżmy przeciągnij pasek narzędzi **inspektora biblioteki** na oknie **Edytor interfejsu**:
 
-[ ![](window-images/edit03.png "Wybieranie narzędzi z biblioteki")](window-images/edit03.png)
+[![](window-images/edit03.png "Wybieranie narzędzi z biblioteki")](window-images/edit03.png#lightbox)
 
 Następnie przeciągnij **widoku tekstu** i rozmiar, aby wypełnił obszar w pasku narzędzi:
 
-[ ![](window-images/edit04.png "Dodawanie widoku tekstu")](window-images/edit04.png)
+[![](window-images/edit04.png "Dodawanie widoku tekstu")](window-images/edit04.png#lightbox)
 
 Ponieważ chcemy **widoku tekstu** Aby zmniejszyć rozmiar i powiększania jako zmiany rozmiaru okna, umożliwia przełączanie do **edytora ograniczeń** i dodaj następujące ograniczenia:
 
-[ ![](window-images/edit05.png "Edytowanie ograniczenia")](window-images/edit05.png)
+[![](window-images/edit05.png "Edytowanie ograniczenia")](window-images/edit05.png#lightbox)
 
 Klikając dla **czerwony I świateł** w górnej części edytora i kliknięcie przycisku **dodać ograniczenia 4**, firma Microsoft informuje widoku tekstu, aby trzymać danego X, Y współrzędne i zwiększać i zmniejszać poziomie i w pionie jako Zmieniono rozmiar okna.
 
 Ponadto umożliwia udostępnianie **widoku tekstu** kodu za pomocą **gniazda** (upewnieniu się wybrać `ViewController.h` pliku):
 
-[ ![](window-images/edit06.png "Konfigurowanie gniazda")](window-images/edit06.png)
+[![](window-images/edit06.png "Konfigurowanie gniazda")](window-images/edit06.png#lightbox)
 
 Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -237,17 +237,17 @@ Teraz, gdy mamy podstawowa okna utworzonego przyjrzymy typowe procesy Xamarin.Ma
 
 Domyślnie nowa aplikacja Xamarin.Mac automatycznie wyświetli okno zdefiniowane w `MainWindow.xib` pliku po uruchomieniu:
 
-[ ![](window-images/display01.png "Okno przykład uruchomiony")](window-images/display01.png)
+[![](window-images/display01.png "Okno przykład uruchomiony")](window-images/display01.png#lightbox)
 
 Ponieważ firma Microsoft zmodyfikowane projektu przedział powyżej, teraz zawiera domyślne narzędzi i **widoku tekstu** formantu. Poniższa sekcja w `Info.plist` plik jest odpowiedzialny za wyświetlania tego okna:
 
-[ ![](window-images/display00.png "Edytowanie Info.plist")](window-images/display00.png)
+[![](window-images/display00.png "Edytowanie Info.plist")](window-images/display00.png#lightbox)
 
 **Interfejsu Main** listy rozwijanej jest używany do wybierania scenorysu, który będzie używany jako głównej aplikacji interfejsu użytkownika (w tym przypadku `Main.storyboard`).
 
 Kontroler widoku jest automatycznie dodawany do projektu, aby kontrolować tego Windows Main, która zostanie wyświetlona (wraz z jego widoku głównego). Jest on zdefiniowany w `ViewController.cs` plików i dołączane do **właścicielem pliku** w Konstruktorze interfejsu w obszarze **inspektora tożsamości**:
 
-[ ![](window-images/display02.png "Ustawienie właściciela pliku")](window-images/display02.png)
+[![](window-images/display02.png "Ustawienie właściciela pliku")](window-images/display02.png#lightbox)
 
 W naszym okna, chcielibyśmy ma tytuł `untitled` podczas jego otwierania więc warto zastąpienie `ViewWillAppear` metody w `ViewController.cs` do wyglądać następująco:
 
@@ -313,11 +313,11 @@ Czy zamknąć `MyWindow` `NSWindow` wystąpienia.
 
 W macOS, Apple udostępnił sposób poinformowania użytkownika o który zawartość okna (`NSWindow`) został zmodyfikowany przez użytkownika i należy zapisać. Jeśli zawartość zmodyfikowanego okna małych czarna kropka będą wyświetlane w jego **Zamknij** elementu widget:
 
-[ ![](window-images/close01.png "Okno ze znacznikiem zmodyfikowane")](window-images/close01.png)
+[![](window-images/close01.png "Okno ze znacznikiem zmodyfikowane")](window-images/close01.png#lightbox)
 
 Jeśli użytkownik próbuje zamknąć okna lub aplikacji Mac, gdy istnieją niezapisane zmiany w zawartości okna, powinni przedstawić [okno dialogowe](~/mac/user-interface/dialog.md) lub [modalny arkusz](~/mac/user-interface/dialog.md) i umożliwia użytkownikowi zapisać swoje zmiany pierwszy:
 
-[ ![](window-images/close02.png "Zapisywanie arkusza wyświetlane po zamknięciu okna")](window-images/close02.png)
+[![](window-images/close02.png "Zapisywanie arkusza wyświetlane po zamknięciu okna")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>Okno ze zmianami oznaczanie
 
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 Ten kod tworzy nową wersję kontrolera okna, ładuje nowe okno główne i okno klucza i ustawia go tytuł. Teraz możemy uruchomić aplikację i zaznaczenie **nowy** z **pliku** menu zostaną otwarte i wyświetlone nowe okno edytora:
 
-[ ![](window-images/display04.png "Dodano nowe okno bez tytułu")](window-images/display04.png)
+[![](window-images/display04.png "Dodano nowe okno bez tytułu")](window-images/display04.png#lightbox)
 
 Jeśli możemy otworzyć **Windows** menu widać automatycznie śledzenia i naszych okien obsługi aplikacji:
 
-[ ![](window-images/display05.png "Widows menu")](window-images/display05.png)
+[![](window-images/display05.png "Widows menu")](window-images/display05.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z menu w aplikacji Xamarin.Mac, zobacz nasze [Praca z menu](~/mac/user-interface/menu.md) dokumentacji.
 
@@ -559,7 +559,7 @@ Mogą wystąpić razy gdzie należy monitorować zmiany w rozmiarze okna wewnąt
 
 Aby monitorować zmiany rozmiaru, należy najpierw upewnić się, czy użytkownik przypisał niestandardowej klasy kontrolera okna w Konstruktorze interfejsu w środowisku Xcode. Na przykład `MasterWindowController` poniżej:
 
-[ ![](window-images/resize01.png "Inspektor tożsamości")](window-images/resize01.png)
+[![](window-images/resize01.png "Inspektor tożsamości")](window-images/resize01.png#lightbox)
 
 Następnie edytuj niestandardowe klasy okna kontrolera i monitor `DidResize` zdarzeń w oknie kontrolera, aby otrzymywać powiadomienia o zmianach bieżący rozmiar. Na przykład:
 
@@ -643,11 +643,11 @@ public override void AwakeFromNib ()
 
 Możemy też monitorowanie `WillClose` zdarzenia w oknie i sprawdzanie stanu `DocumentEdited` właściwości. Jeśli jest `true` musimy umożliwiają użytkownikowi zapisać zmiany w pliku. Jeśli firma Microsoft uruchomienia aplikacji, wprowadź tekst, zostanie wyświetlony kropki (.):
 
-[ ![](window-images/file01.png "Zmienione okna")](window-images/file01.png)
+[![](window-images/file01.png "Zmienione okna")](window-images/file01.png#lightbox)
 
 Spróbujemy zamknąć okno, uzyskujemy alertu:
 
-[ ![](window-images/file02.png "Zapisz wyświetlanie okna dialogowego")](window-images/file02.png)
+[![](window-images/file02.png "Zapisz wyświetlanie okna dialogowego")](window-images/file02.png#lightbox)
 
 Firma Microsoft ładowania dokumentu z pliku możemy ustawić tytuł okna w pliku nazwy przy użyciu `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` — metoda (zakładając, że `path` jest ciąg reprezentujący otwierany plik). Ponadto można ustawić adres URL pliku przy użyciu `window.RepresentedUrl = url;` metody.
 
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 Teraz możemy uruchomienia aplikacji, wybierz **Otwórz...**  z **pliku** menu, wybierz plik tekstowy z **Otwórz** okno dialogowe i otwórz go:
 
-[ ![](window-images/file03.png "Otwarte okno dialogowe")](window-images/file03.png)
+[![](window-images/file03.png "Otwarte okno dialogowe")](window-images/file03.png#lightbox)
 
 Plik, który będzie wyświetlany i tytuł zostanie ustawiony z ikoną pliku:
 
-[ ![](window-images/file04.png "Zawartość pliku załadowany")](window-images/file04.png)
+[![](window-images/file04.png "Zawartość pliku załadowany")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -707,22 +707,22 @@ Aby dodać nowe okno, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Przeciągnij nowy **kontrolera okna** z **biblioteki** i upuść ją na **powierzchni projektowej**:
 
-    [ ![](window-images/new01.png "Wybiera nowy kontroler okna w bibliotece")](window-images/new01.png)
+    [![](window-images/new01.png "Wybiera nowy kontroler okna w bibliotece")](window-images/new01.png#lightbox)
 3. W **inspektora tożsamości**, wprowadź `PreferencesWindow` dla **identyfikator scenorysu**: 
 
-    [ ![](window-images/new02.png "Ustawienie Identyfikatora scenorysu")](window-images/new02.png)
+    [![](window-images/new02.png "Ustawienie Identyfikatora scenorysu")](window-images/new02.png#lightbox)
 5. Projekt interfejsu: 
 
-    [ ![](window-images/new03.png "Projektowanie interfejsu użytkownika")](window-images/new03.png)
+    [![](window-images/new03.png "Projektowanie interfejsu użytkownika")](window-images/new03.png#lightbox)
 6. Otwórz Menu aplikacji (`MacWindows`), wybierz pozycję **Preferencje...** , Przytrzymując klawisz CTRL i przeciągnij, aby nowe okno: 
 
-    [ ![](window-images/new05.png "Tworzenie segue")](window-images/new05.png)
+    [![](window-images/new05.png "Tworzenie segue")](window-images/new05.png#lightbox)
 7. Wybierz **Pokaż** w menu podręcznym.
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 Jeśli firma Microsoft wykonywania kodu i wybierz **Preferencje...**  z **Menu aplikacja**, wyświetli się okno:
 
-[ ![](window-images/new04.png "Menu Preferencje próbki")](window-images/new04.png)
+[![](window-images/new04.png "Menu Preferencje próbki")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -742,7 +742,7 @@ Podobnie jak okna Tworzenie i pracować z aplikacji Xamarin.Mac innego typu proc
 
 W **inspektora atrybutu**, masz następujące opcje specyficzne dla paneli:
 
-[ ![](window-images/panel03.png "Inspektor atrybutu")](window-images/panel03.png)
+[![](window-images/panel03.png "Inspektor atrybutu")](window-images/panel03.png#lightbox)
 
 - **Styl** — umożliwiają dostosowanie styl panelu z: regularne panelu (prawdopodobnie standardowe okno), narzędzia panelu (ma mniejszy paska tytułu), HUD Panel (jest przezroczysta i na pasku tytułu jest częścią tła).
 - **Uaktywnianie z systemem innym niż** — Określa, w panelu staje się oknem klucza.
@@ -754,20 +754,20 @@ Aby dodać nowy Panel, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik.** .
 2. W oknie dialogowym Nowy plik, wybierz **Xamarin.Mac** > **Cocoa okna z kontrolera**:
 
-    [ ![](window-images/panels00.png "Dodawanie nowego kontrolera okna")](window-images/panels00.png)
+    [![](window-images/panels00.png "Dodawanie nowego kontrolera okna")](window-images/panels00.png#lightbox)
 3. Wprowadź `DocumentPanel` dla **nazwa** i kliknij przycisk **nowy** przycisku.
 4. Kliknij dwukrotnie `DocumentPanel.xib` plik, aby otworzyć do edycji w Konstruktorze interfejsu: 
 
-    [ ![](window-images/new02.png "Edytowanie pannel")](window-images/new02.png)
+    [![](window-images/new02.png "Edytowanie pannel")](window-images/new02.png#lightbox)
 5. Usuń istniejące okno i przeciągnij Panel z **inspektora biblioteki** w **Edytor interfejsu**: 
 
-    [ ![](window-images/panels01.png "Usuwanie istniejącego okna")](window-images/panels01.png)
+    [![](window-images/panels01.png "Usuwanie istniejącego okna")](window-images/panels01.png#lightbox)
 6. Utworzenie punktu zaczepienia panelu do **właścicielem pliku*-**okna*- **gniazda**: 
 
-    [ ![](window-images/panels02.png "Przeciąganie można przewodowo zapasowej panelu")](window-images/panels02.png)
+    [![](window-images/panels02.png "Przeciąganie można przewodowo zapasowej panelu")](window-images/panels02.png#lightbox)
 7. Przełącz się do **inspektora tożsamości** i ustaw klasy panelu `DocumentPanel`: 
 
-    [ ![](window-images/panels03.png "Ustawienie panelu — klasa")](window-images/panels03.png)
+    [![](window-images/panels03.png "Ustawienie panelu — klasa")](window-images/panels03.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 7. Edytuj `DocumentPanel.cs` plików i zmień definicję klasy do następującego: 
 
@@ -788,7 +788,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Czy możemy uruchomić aplikację, zostanie wyświetlony panelu:
 
-[ ![](window-images/panels04.png "Panel w uruchomionej aplikacji")](window-images/panels04.png)
+[![](window-images/panels04.png "Panel w uruchomionej aplikacji")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Panel systemu Windows została zastąpiona przez firmę Apple i powinna zostać zastąpiona **interfejsy inspektora**. Pełny przykład tworzenia **inspektora** w aplikacji Xamarin.Mac, zobacz nasze [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) przykładowej aplikacji.

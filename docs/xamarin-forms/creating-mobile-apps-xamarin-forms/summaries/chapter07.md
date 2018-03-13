@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 7. XAML i kodem"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1263328a748ac0bacd368da361aeaff57c4cfa20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1104f7576cabfed9988154f3b6a8beb429136fb3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Podsumowanie rozdział 7. XAML i kodem
 
@@ -68,7 +69,7 @@ Właściwość elementu `Label` jest `Text`.
 
  Gdy ma wartość Wielowierszowy ciąg `Text` właściwości, znaki końca wiersza są konwertowane na znaki spacji, ale znaki końca wiersza są zachowywane podczas wielowierszowy ciąg, który jest wyświetlany jako zawartość `Label` lub `Label.Text` tagów:
 
- [![Potrójna zrzut ekranu przedstawiający zmiany tekstu udostępnianie](images/ch07fg03-small.png "odmiany tekst sformatowany")](images/ch07fg03-large.png "odmiany tekst sformatowany")
+ [![Potrójna zrzut ekranu przedstawiający zmiany tekstu udostępnianie](images/ch07fg03-small.png "odmiany tekst sformatowany")](images/ch07fg03-large.png#lightbox "odmiany tekst sformatowany")
 
 
 

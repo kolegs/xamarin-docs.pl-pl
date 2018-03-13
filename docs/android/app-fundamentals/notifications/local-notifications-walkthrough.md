@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Wskazówki — przy użyciu lokalnego powiadomienia o platformie Xamarin.Android
 
 _W tym przewodniku przedstawiono sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.Android. Jednak przedstawia podstawy tworzenia i publikowania lokalnego powiadomienia. Gdy użytkownik kliknie powiadomienie w obszarze powiadomień, uruchamiany drugi działania._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -26,16 +25,14 @@ W tym przewodniku utworzymy aplikację systemu Android, która zgłasza powiadom
 
 Poniższe zrzuty ekranu przedstawiają przykłady tej aplikacji:
 
-[![Zrzuty ekranu przedstawiające Przykładowe powiadomienie](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![Zrzuty ekranu przedstawiające Przykładowe powiadomienie](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>Wskazówki
 
 Aby rozpocząć, Utwórz nowy projekt systemu Android przy użyciu **aplikacji systemu Android** szablonu. Umożliwia wywołanie tego projektu **LocalNotifications**. (Jeśli nie masz doświadczenia w tworzeniu projektów platformy Xamarin.Android, zobacz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>Dodaj składnik Android.Support.V4.App
 
@@ -53,7 +50,6 @@ Ponadto możemy ustawić go Wyczyść, aby kompilator, który jest używany `And
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>Zdefiniuj identyfikator powiadomień
 
@@ -63,7 +59,6 @@ Unikatowy identyfikator są wymagane dla naszych powiadomienia. Umożliwia edyto
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>Dodaj kod, aby wygenerować powiadomienie
 
@@ -117,7 +112,6 @@ W `OnCreate` metody, Przypisz to `ButtonOnClick` metodę `Click` zdarzeń przyci
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>Utworzyć drugi działanie
 
@@ -174,36 +168,33 @@ Układ zasobów należy także utworzyć **SecondActivity**. Dodaj nową **Andro
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>Dodawanie ikony powiadomień
 
 Na koniec Dodajmy mała ikona, która będzie wyświetlana w obszarze powiadomień, po uruchomieniu naszych powiadomień. Możesz skopiować [ta ikona](local-notifications-walkthrough-images/ic-stat-button-click.png) do projektu lub Utwórz własną ikon niestandardowych. Firma Microsoft będzie Nazwij plik ikony **MF\_stat\_przycisk\_click.png** i skopiuj go do **obiektów drawable/zasoby** folderu. Pamiętaj, aby użyć **Dodaj > istniejący element...**  Aby dołączyć ten plik ikony do projektu.
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>Uruchamianie aplikacji
 
 Umożliwia tworzenie i uruchamianie aplikacji. Powinna pojawić gdzie wykonywanie pierwszego działania, podobnie jak poniższy zrzut ekranu:
 
-[ ![Pierwsze działanie zrzut ekranu](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![Pierwsze działanie zrzut ekranu](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 Po kliknięciu przycisku można zauważyć, mała ikona powiadomienia są wyświetlane w obszarze powiadomień:
 
-[ ![Pojawi się ikona powiadomienia](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![Pojawi się ikona powiadomienia](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 Jeśli szybko przesuń w dół i ujawnia menu powiadomień, powinno zostać wyświetlone powiadomienie:
 
-[ ![Komunikat z powiadomieniem](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![Komunikat z powiadomieniem](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 Gdy kliknij powiadomienie, powinien on zniknąć i powinna być uruchamiana w naszych innych działań &ndash; wyszukiwania przypominać poniższy zrzut ekranu:
 
-[ ![Drugi działania zrzut ekranu](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![Drugi działania zrzut ekranu](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 Gratulacje! W tym momencie zostały ukończone wskazówki Android lokalnego powiadomienia i masz próbki pracy, którego może dotyczyć. Jest dużo więcej na temat powiadomień niż firma Microsoft wykazały, więc jeśli chcesz uzyskać więcej informacji, zapoznaj się [dokumentacji firmy Google na powiadomienia](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) i Android [powiadomienia](http://developer.android.com/design/patterns/notifications.html) przewodnik dotyczący projektowania.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

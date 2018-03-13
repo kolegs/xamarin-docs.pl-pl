@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 035956f5c39a77c625a6f4cb92cbfa67a42f2402
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-user-interface-objects"></a>Tworzenie obiektów interfejsu użytkownika
 
@@ -42,17 +42,17 @@ Aby rozpocząć tworzenie interfejsu użytkownika w systemie iOS projektanta, kl
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/image2b.png "Konsola przybornika")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b.png "Konsola przybornika")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
- [ ![](creating-ui-objects-images/image2b-vs.png "Konsola przybornika — Visual Studio")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b-vs.png "Konsola przybornika — Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
 Po wybraniu formantu na powierzchni projektowej **konsoli właściwości** wyświetli atrybutów dla tego formantu. **Elementu Widget > tożsamości > nazwa** pola, które zostanie wypełnione na poniższym zrzucie ekranu, jest używany jako *gniazda* nazwy. Jest to, jak można odwoływać się do formantu w języku C#:
 
- [ ![](creating-ui-objects-images/image3b.png "Właściwości elementu Widget konsoli")](creating-ui-objects-images/image3b.png)
+ [![](creating-ui-objects-images/image3b.png "Właściwości elementu Widget konsoli")](creating-ui-objects-images/image3b.png#lightbox)
 
 Aby uzyskać bardziej zgłębić temat do przy użyciu narzędzia Projektant z systemem iOS, zobacz [wprowadzenie do projektanta dla systemu iOS](~/ios/user-interface/designer/introduction.md) przewodnik.
 
@@ -64,27 +64,27 @@ Aby otworzyć scenorysu w środowisku Xcode, kliknij prawym przyciskiem myszy do
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/imagexcode.png "Menu kontekstowe scenorysu - Xcode")](creating-ui-objects-images/imagexcode.png)
+ [![](creating-ui-objects-images/imagexcode.png "Menu kontekstowe scenorysu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](creating-ui-objects-images/imagexcode-vs.png "Menu kontekstowe scenorysu - Xcode")](creating-ui-objects-images/imagexcode-vs.png)
+[![](creating-ui-objects-images/imagexcode-vs.png "Menu kontekstowe scenorysu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Formanty mogą być przeciągnięte na powierzchnię projektu z **obiekt bibliotece** zostały pokazane poniżej:
 
- [ ![](creating-ui-objects-images/image5a.png "Biblioteka Xcode")](creating-ui-objects-images/image5a.png)
+ [![](creating-ui-objects-images/image5a.png "Biblioteka Xcode")](creating-ui-objects-images/image5a.png#lightbox)
 
 Podczas projektowania interfejsu użytkownika z interfejsu konstruktora, należy utworzyć **gniazda** dla każdego formantu, który ma zostać odwołanie w C#. Jest to realizowane przez włączenie **Edytor Asystenta** przy użyciu Centrum **edytor** przycisk na pasku narzędzi Xcode:
 
- [ ![](creating-ui-objects-images/image6a.png "Przycisk Asystenta edytora")](creating-ui-objects-images/image6a.png)
+ [![](creating-ui-objects-images/image6a.png "Przycisk Asystenta edytora")](creating-ui-objects-images/image6a.png#lightbox)
 
 Kliknij obiekt interfejsu użytkownika; następnie **przeciągnij formant** do pliku .h. Aby ** kontrolki przeciągania **, naciśnij i przytrzymaj klawisz sterowania, a następnie kliknij i przytrzymaj za pośrednictwem obiektu interfejsu użytkownika, które tworzysz dla gniazda (lub akcji). Zachowaj przytrzymując naciśnięty klawisz kontroli podczas przeciągania do pliku nagłówka. Zakończ przeciąganie poniżej `@interface` definicji. Niebieska linia powinna zostać wyświetlona z podpis Wstaw gniazda lub kolekcji gniazda, jak pokazano na poniższym zrzucie ekranu.
 
 Po zwolnieniu kliknięcie pojawi się monit o podanie nazwy dla gniazda, która będzie używana do tworzenia właściwości C#, która może być przywoływany w kodzie:
 
- [ ![](creating-ui-objects-images/image8a.png "Tworzenie gniazda")](creating-ui-objects-images/image8a.png)
+ [![](creating-ui-objects-images/image8a.png "Tworzenie gniazda")](creating-ui-objects-images/image8a.png#lightbox)
 
 Aby uzyskać więcej informacji na jak konstruktora interfejsu w środowisku Xcode integruje się z programem Visual Studio dla komputerów Mac, zapoznaj się [generowania kodu Xib](~/ios/internals/xib-code-generation.md#generated) dokumentu.
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Woluminowi kontrolerów widok na powierzchnię projektu dwóch odpowiednie pliki C# są tworzone w projekcie. W tym przykładzie `ControlsViewController.cs` i `ControlsViewController.designer.cs` tworzone automatycznie:
 
- [ ![](creating-ui-objects-images/image9b.png "Klasy częściowe ViewController")](creating-ui-objects-images/image9b.png)
+ [![](creating-ui-objects-images/image9b.png "Klasy częściowe ViewController")](creating-ui-objects-images/image9b.png#lightbox)
 
 `MainViewController.cs` Plik jest przeznaczony do *kodu*. Jest to, gdy `View` metody cyklu takich jak `ViewDidLoad` i `ViewWillAppear` są implementowane i której można dodać własne właściwości, pól i metod.
 

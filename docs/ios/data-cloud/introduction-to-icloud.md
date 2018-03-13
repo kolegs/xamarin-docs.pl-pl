@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 7e02c92f9c1aafeb97da4905c17898b02362c960
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -48,7 +48,7 @@ Aby poprawnie skonfigurować aplikacji można uzyskać dostępu do usługi iClou
 
 -   **Utwórz nowy identyfikator aplikacji** — Aby utworzyć identyfikator aplikacji, wykonaj czynności opisane w temacie [Inicjowanie obsługi administracyjnej dla technologii magazynu części przewodnika Inicjowanie obsługi administracyjnej urządzeń](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)i sprawdź **iCloud** jako dozwolone usługi:
 
- [ ![](introduction-to-icloud-images/icloud-sml.png "Sprawdź jako dozwolone usługi iCloud")](introduction-to-icloud-images/icloud.png)
+ [![](introduction-to-icloud-images/icloud-sml.png "Sprawdź jako dozwolone usługi iCloud")](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **Utwórz nowy profil inicjowania obsługi administracyjnej** — Aby utworzyć profil inicjowania obsługi, wykonaj czynności opisane w temacie [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) .
 
@@ -83,7 +83,7 @@ Ten zrzut ekranu przedstawia przykład w użyciu. Po otrzymaniu powiadomienia o 
 
 
 
- [ ![](introduction-to-icloud-images/icloud-kv-arrows.png "Przepływ komunikatów między urządzeniami")](introduction-to-icloud-images/icloud-kv-arrows.png)
+ [![](introduction-to-icloud-images/icloud-kv-arrows.png "Przepływ komunikatów między urządzeniami")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>Ustawianie i pobieranie danych
 
@@ -151,13 +151,13 @@ Przechowywanie dokumentów w usłudze iCloud jest przeznaczona do zarządzania d
 
 Ten diagram przedstawia, jak wszystkie mieścił się ze sobą. Każde urządzenie ma dane zapisane w lokalnej pamięci masowej (UbiquityContainer) i usługi iCloud systemu operacyjnego, który demon zajmuje się wysyłania i odbierania danych w chmurze. Dostęp do wszystkich plików do UbiquityContainer musi odbywać się za pośrednictwem FilePresenter/FileCoordinator, aby zapobiec współbieżny dostęp. `UIDocument` Klasa implementuje te dla Ciebie; w tym przykładzie przedstawiono użycie UIDocument.
 
- [ ![](introduction-to-icloud-images/icloud-overview.png "Omówienie magazynu dokumentu")](introduction-to-icloud-images/icloud-overview.png)
+ [![](introduction-to-icloud-images/icloud-overview.png "Omówienie magazynu dokumentu")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
 W przykładzie iCloudUIDoc implementuje prostą `UIDocument` podklasy, który zawiera jedno pole tekstowe. Tekst jest renderowany w `UITextView` i zmiany są propagowane przez iCloud z innymi urządzeniami z zaznaczone na czerwono komunikat z powiadomieniem. Przykładowy kod zajmuje się iCloud bardziej zaawansowane funkcje, takie jak rozwiązywania konfliktów.
 
 Ten zrzut ekranu przedstawia przykładową aplikację — po zmianie tekstu i naciskając klawisz **UpdateChangeCount** dokumentu jest zsynchronizowany przy użyciu usługi iCloud z innymi urządzeniami.
 
- [ ![](introduction-to-icloud-images/iclouduidoc.png "Ten zrzut ekranu przedstawia przykładową aplikację po zmiana tekstu, a następnie naciskając klawisz UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png)
+ [![](introduction-to-icloud-images/iclouduidoc.png "Ten zrzut ekranu przedstawia przykładową aplikację po zmiana tekstu, a następnie naciskając klawisz UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 Istnieją pięciu części próbki iCloudUIDoc:
 
@@ -403,15 +403,15 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 Użytkownicy mogą zarządzać iCloud dokumentów w **dokumenty** katalogu "kontenera powszechności" poza aplikację za pośrednictwem ustawień; mogą przeglądać listę plików i przejdź do usunięcia. Kod aplikacji powinno być możliwe do obsługi sytuacji, w którym zostaną one usunięte przez użytkownika. Nie należy przechowywać danych wewnętrznych aplikacji w **dokumenty** katalogu.
 
- [ ![](introduction-to-icloud-images/icloudstorage.png "Zarządzanie przepływem pracy dokumentów usługi iCloud")](introduction-to-icloud-images/icloudstorage.png)
+ [![](introduction-to-icloud-images/icloudstorage.png "Zarządzanie przepływem pracy dokumentów usługi iCloud")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
 Ostrzeżenia różnych zostanie również wyświetlony po podjęciu próby usunięcia aplikacji z obsługą iCloud ze swojego urządzenia, aby poinformować o stan usługi iCloud dokumentów związanych z tej aplikacji.
 
- [ ![](introduction-to-icloud-images/icloud-delete1.png "Przykładowe okno dialogowe, gdy użytkownik próbuje usunąć aplikację z obsługą iCloud ze swojego urządzenia")](introduction-to-icloud-images/icloud-delete1.png)
+ [![](introduction-to-icloud-images/icloud-delete1.png "Przykładowe okno dialogowe, gdy użytkownik próbuje usunąć aplikację z obsługą iCloud ze swojego urządzenia")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [ ![](introduction-to-icloud-images/icloud-delete2.png "Przykładowe okno dialogowe, gdy użytkownik próbuje usunąć aplikację z obsługą iCloud ze swojego urządzenia")](introduction-to-icloud-images/icloud-delete2.png)
+ [![](introduction-to-icloud-images/icloud-delete2.png "Przykładowe okno dialogowe, gdy użytkownik próbuje usunąć aplikację z obsługą iCloud ze swojego urządzenia")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>Kopia zapasowa usługi iCloud
 

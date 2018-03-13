@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>Strona główny szczegółowy
 
@@ -22,7 +22,7 @@ _MasterDetailPage platformy Xamarin.Forms jest strona, która zarządza dwie str
 
 Strona wzorcowa zwykle wyświetla listę elementów, jak pokazano na poniższych zrzutach ekranu:
 
-[![](master-detail-page-images/masterpage-components.png "Składniki strony wzorca")](master-detail-page-images/masterpage-components-large.png "składniki strony wzorca")
+[![](master-detail-page-images/masterpage-components.png "Składniki strony wzorca")](master-detail-page-images/masterpage-components-large.png#lightbox "składniki strony wzorca")
 
 Lokalizacja listy elementów jest identyczne w każdej z platform i wybranie jednego z elementów spowoduje przejście do odpowiedniej strony szczegółów. Ponadto strony wzorcowej również funkcje paska nawigacyjnego, który zawiera przycisk, który może służyć do przejdź do strony szczegółów active:
 

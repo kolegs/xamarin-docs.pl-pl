@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualizowanie aplikacji w tle
 
@@ -44,7 +44,7 @@ W systemie iOS 6 aplikacji, wprowadzając na pierwszym planie potrzebne czasu po
 
 Aby zaimplementować pobieranie w tle, należy edytować *Info.plist* i sprawdź **Włącz tryby tła** i **pobieranie w tle** pola wyboru:
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "Dokonaj edycji Info.plist i sprawdź pole wyboru Włącz tryby tła i pobieranie w tle")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "Dokonaj edycji Info.plist i sprawdź pole wyboru Włącz tryby tła i pobieranie w tle")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 Następnie w `AppDelegate`, Zastąp `FinishedLaunching` metodę, aby ustawić interwał pobierania minimalnej. W tym przykładzie nie możemy udostępnić systemu operacyjnego określić, jak często pobrać nową zawartość:
 
@@ -106,7 +106,7 @@ W systemie iOS 6 przychodzących powiadomień wypychanych informuje system, aby 
 
 Aby zaimplementować zdalnego powiadomienia, należy edytować *Info.plist* i sprawdź **Włącz tryby tła** i **zdalnego powiadomienia** pola wyboru:
 
- [ ![](updating-an-application-in-the-background-images/remote.png "Włącz tryby tła i zdalnego powiadomienia ustawioną tryb tła")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "Włącz tryby tła i zdalnego powiadomienia ustawioną tryb tła")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 Następnie należy ustawić `content-available` flagi na powiadomienia wypychane do 1. Umożliwia to aplikacji wiedzieć, aby pobrać nową zawartość przed wyświetleniem alertu:
 
@@ -153,7 +153,7 @@ Największych różnica między normalne i dyskretnej powiadomienia z punktu wid
 
 Jednak APN umożliwi dyskretnej powiadomienia "potwierdzeń" obok normalne powiadomienia zdalne lub keep-alive odpowiedzi. Ponieważ regularne powiadomienia nie są ograniczone szybkość, ich mogą zostać wykorzystane do zmuszenia przechowywanych w górę dyskretnej powiadomienia z APNs na urządzeniu, jak pokazano na poniższym diagramie:
 
- [ ![](updating-an-application-in-the-background-images/silent.png "Powiadomienia regularnego może służyć do wypychać przechowywanych dyskretnej powiadomienia za pomocą usługi APNs do urządzenia, jak pokazano na tym diagramie")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "Powiadomienia regularnego może służyć do wypychać przechowywanych dyskretnej powiadomienia za pomocą usługi APNs do urządzenia, jak pokazano na tym diagramie")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **Uwaga**: Apple zachęca deweloperów do wysyłania powiadomień wypychanych w trybie dyskretnym, zawsze, gdy aplikacja wymaga i umożliwiają APN zaplanować ich dostarczania.

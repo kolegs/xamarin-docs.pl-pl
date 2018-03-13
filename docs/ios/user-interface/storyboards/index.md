@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8bc262ff739cc65da80d887a6dea11ecc708e866
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Wprowadzenie do scenorysu
 
@@ -33,7 +33,7 @@ Scenorys można z projektanta w programie Visual Studio for Mac z systemem iOS l
 
 Scenorysu jest wizualną reprezentację wszystkich ekranów w aplikacji. Zawiera sekwencję sceny z każdym reprezentujący sceny *kontrolera widoku* i jego *widoków*. Widoki te mogą zawierać obiekty i [formanty](~/ios/user-interface/controls/index.md) która umożliwi użytkownikowi interakcji z aplikacją. Ta kolekcja widoków i kontrolek (lub *widoków podrzędnych*) jest nazywany *hierarchii widok zawartości*. Sceny są połączone przez segue obiektów, które reprezentują przejścia między kontrolerami widoku. Zazwyczaj jest to osiągane przez utworzenie segue między obiektu na widok początkowy, a następnie Wyświetl nawiązującego połączenie. Na poniższym obrazie przedstawiono relacje na powierzchni projektu:
 
- [ ![](images/storyboardsview.png "Relacje na powierzchni projektu zostały przedstawione w tym obrazie")](images/storyboardsview.png)
+ [![](images/storyboardsview.png "Relacje na powierzchni projektu zostały przedstawione w tym obrazie")](images/storyboardsview.png#lightbox)
 
 Co zostało pokazane, scenorysu będzie Ułóż każdego użytkownika sceny z zawartością już renderowana i przedstawia połączenia między nimi.  Warto zauważyć w tym momencie, że przy omawianiu sceny na telefonie iPhone jest bezpieczne założono, że jeden *sceny* dla scenorysu jest równa jeden *ekranu* zawartości na urządzeniu. Jednak za pomocą iPad, które można mieć wiele scen występować jednocześnie — na przykład przy użyciu kontrolera widoku Popover.
 
@@ -47,22 +47,22 @@ Zawartość scenorysu jest przechowywana jako plik XML. Czas, kompilacji AT żad
 
 A *Segue*, lub *Segue obiektu*, jest używana w opracowywania aplikacji systemu iOS do reprezentowania przejścia między sceny. Aby utworzyć segue, przytrzymaj **Ctrl** klucza i kliknij i przeciągnij od jednej sceny do innego. Przeciągania naszych mysz, pojawi się niebieski łącznika, wskazujące, gdzie segue doprowadzi, jak pokazano na poniższej ilustracji:
 
- [ ![](images/createsegue.png "Pojawi się niebieski łącznika, wskazujące, gdzie segue doprowadzi, jak pokazano w tym obrazie")](images/createsegue.png)
+ [![](images/createsegue.png "Pojawi się niebieski łącznika, wskazujące, gdzie segue doprowadzi, jak pokazano w tym obrazie")](images/createsegue.png#lightbox)
 
 Na myszy w górę zostanie wyświetlone menu, umożliwiając nam wybierz akcję dla naszych segue. Może wyglądać podobnie do poniższej obrazów: 
 
 **Wstępne iOS 8 i rozmiarze klasy**:
 
-[ ![](images/segue1.png "Lista rozwijana Segue akcji bez klasy wielkości")](images/segue1.png)
+[![](images/segue1.png "Lista rozwijana Segue akcji bez klasy wielkości")](images/segue1.png#lightbox)
 
 **Podczas używania klas wielkości i adaptacyjną Segues**:
 
-[ ![](images/16new.png "Lista rozwijana Segue akcji z klasami rozmiar")](images/16new.png)
+[![](images/16new.png "Lista rozwijana Segue akcji z klasami rozmiar")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > **Uwaga:** Jeśli korzystasz z programu VMWare do maszyny wirtualnej systemu Windows, przytrzymując klawisz Ctrl jest mapowany jako _kliknij prawym przyciskiem myszy_ przycisk myszy domyślnie. Aby utworzyć Segue, Edytuj preferencje klawiatury za pośrednictwem **preferencje** > **klawiatura i mysz** > **skróty myszy** i ponownie zamapować użytkownika **Przycisk dodatkowej** jak przedstawiono poniżej:
 > 
-> [ ![](images/image22.png "Klawiatura i mysz ustawień preferencji")](images/image22.png)
+> [![](images/image22.png "Klawiatura i mysz ustawień preferencji")](images/image22.png#lightbox)
 > 
 > Teraz można dodać segue między kontrolerami widoku normalnie.
 
@@ -74,7 +74,7 @@ Istnieją różne typy każdego dające kontrolę nad sposób prezentowania nowe
 -  **Unwind** — moduł unwind segue może służyć do przechodzenia wstecz za pomocą wypychania lub modalne segue — na przykład, odrzucając kontrolera widoku w trybie modalnym przedstawiony. Oprócz tego można unwind za pomocą nie tylko jednego, ale szereg wypychania i modalne segues i wrócić do poprzedniej strony się, że wiele czynności ułożonych w hierarchii nawigacji za pomocą jednej operacji unwind akcji. Aby zrozumieć, jak używać unwind segue w systemie iOS, przeczytaj [tworzenie Unwind Segues](https://developer.xamarin.com/recipes/ios/general/storyboard/unwind_segue/) przepisu.
 -  **Sourceless** — sourceless segue wskazuje sceny zawierającej kontroler widoku początkowej i w związku z tym którego widoku użytkownik zostanie wyświetlony pierwszy. Jest on reprezentowany przez segue pokazano poniżej:  
 
-    [ ![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png)
+    [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Adaptacyjną Segue typów
 
@@ -82,7 +82,7 @@ Istnieją różne typy każdego dające kontrolę nad sposób prezentowania nowe
  
 Aplikacje korzystające z klasy wielkości będą też używać nowego [ *adaptacyjną Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Podczas korzystania z klasy wielkości, pamiętaj, że firma Microsoft nie są bezpośrednio określać wether używamy iPhone lub iPad. Innymi słowy tworzymy jednego interfejsu użytkownika, który zawsze będzie wyglądać takie same, niezależnie od tego, ile nieruchomości musi współpracować. Adaptacyjną pracy Segues oceny środowiska i określania najlepszy sposób prezentowanie zawartości. Adaptacyjną Segues są pokazane poniżej: 
 
-[ ![](images/adaptivesegue.png "Lista rozwijana adaptacyjną Segues")](images/adaptivesegue.png)
+[![](images/adaptivesegue.png "Lista rozwijana adaptacyjną Segues")](images/adaptivesegue.png#lightbox)
 
 <table>
     <thead>
@@ -155,11 +155,11 @@ Czasami może być konieczne dodanie scenorysu w pliku wcześniej z systemem inn
 
 1. Utwórz nowy plik scenorysu, przechodząc do **Plik > Nowy plik > iOS > scenorysu**, jak pokazano poniżej: 
     
-    [ ![](images/new-storyboard-xs.png "Okno dialogowe nowego pliku")](images/new-storyboard-xs.png)
+    [![](images/new-storyboard-xs.png "Okno dialogowe nowego pliku")](images/new-storyboard-xs.png#lightbox)
 
 2. Dodaj nazwę scenorysu do **interfejsu Main** sekcji **Info.plist**, jak pokazano poniżej:
     
-    [ ![](images/infoplist.png "Edytor Info.plist")](images/infoplist.png)
+    [![](images/infoplist.png "Edytor Info.plist")](images/infoplist.png#lightbox)
     
     To jest odpowiednikiem uruchamianiu początkowej kontrolera widoku w `FinishedLaunching` metodę delegata aplikacji. Z tą opcją aplikacja tworzy okno (patrz poniżej), ładuje głównego storyboard i przypisuje wystąpienie kontrolera widoku początkowej scenorysu (znajdujący się obok sourceless Segue) jako `RootViewController` właściwość okna, a następnie sprawia, że okna widocznego na ekranie.
 
@@ -174,11 +174,11 @@ Czasami może być konieczne dodanie scenorysu w pliku wcześniej z systemem inn
 
 1. Utwórz nowy plik scenorysu, klikając prawym przyciskiem myszy projekt w celu **Dodaj > Nowy plik > iOS > pusty scenorysu**, jak pokazano poniżej: 
     
-    [ ![](images/new-storyboard-vs.png "Okno dialogowe nowego elementu")](images/new-storyboard-vs.png)
+    [![](images/new-storyboard-vs.png "Okno dialogowe nowego elementu")](images/new-storyboard-vs.png#lightbox)
 
 2. Dodaj nazwę scenorysu do **interfejsu Main** sekcji iOS aplikacji, jak pokazano poniżej:
     
-    [ ![](images/ios-app.png "Edytor Info.plist")](images/ios-app.png)
+    [![](images/ios-app.png "Edytor Info.plist")](images/ios-app.png#lightbox)
     
     To jest odpowiednikiem uruchamianiu początkowej kontrolera widoku w `FinishedLaunching` metodę delegata aplikacji. Z tą opcją aplikacja tworzy okno (patrz poniżej), ładuje głównego storyboard i przypisuje wystąpienie kontrolera widoku początkowej scenorysu (znajdujący się obok sourceless Segue) jako `RootViewController` właściwość okna, a następnie sprawia, że okna widocznego na ekranie.
 
@@ -205,37 +205,37 @@ Czasami aplikacje mają szczególne wymagania, które nie mogą być obsługiwan
 
 Na poniższym zrzucie ekranu przedstawiono dwa kontrolery widok na naszych powierzchni projektowej bez segue między nimi. Następna sekcja przeprowadzi jak tego przejścia można skonfigurować w kodzie.
 
- [ ![](images/viewcontrollerspink.png "Ten zrzut ekranu pokazuje, że dwa kontrolery widok na powierzchni projektu bez segue między nimi")](images/viewcontrollerspink.png)
+ [![](images/viewcontrollerspink.png "Ten zrzut ekranu pokazuje, że dwa kontrolery widok na powierzchni projektu bez segue między nimi")](images/viewcontrollerspink.png#lightbox)
 
 1. Dodaj _pusta iPhone scenorysu_ do istniejącego projektu projektu:
     
-    [ ![](images/add-storyboard1.png "Dodawanie scenorysu")](images/add-storyboard1.png)
+    [![](images/add-storyboard1.png "Dodawanie scenorysu")](images/add-storyboard1.png#lightbox)
 
 2. Kliknij dwukrotnie nowo utworzony scenorysu, aby go otworzyć i Dodaj nową **kontrolera nawigacji** na powierzchnię projektu. Jak kontroler nawigacji jest interfejs użytkownika bez, domyślnie zostanie ona za pomocą kontrolera widoku głównego, jak przedstawiono poniżej:
 
-    [ ![](images/uinavigationcontroller.png "Widok Segues kontrolerów z")](images/uinavigationcontroller.png)
+    [![](images/uinavigationcontroller.png "Widok Segues kontrolerów z")](images/uinavigationcontroller.png#lightbox)
 
 3. Wybierz _kontrolera widoku_ , klikając na pasku czarny u dołu. W Projektancie **konsoli właściwości**w obszarze **tożsamości** można określić klasy niestandardowej, a także unikatowy identyfikator dla kontrolera widoku. Ustaw **Nazwa klasy** i **identyfikator scenorysu** do `MainViewController`.
 
-    [ ![](images/identitypanelnew.png "Określ klasę niestandardową")](images/identitypanelnew.png)
+    [![](images/identitypanelnew.png "Określ klasę niestandardową")](images/identitypanelnew.png#lightbox)
 
 4. Później, musimy wystąpienia naszych kontrolerów widoku scenorysu i użyje identyfikator scenorysu do odwołania się je w naszego kodu. Ustawienie tego Identyfikatora przywracania jest zgodny z Identyfikatorem scenorysu zapewnia, że kontroler widoku pobiera poprawnie odtworzyć w przypadku należy przywrócić stan.
 
 5. Obecnie tylko mamy jeden kontroler widoku. Przeciągnij innego kontrolera widoku na powierzchnię projektu. W **konsoli właściwości**, w ramach tożsamości, ustaw klasy i Identyfikatora scenorysu `PinkViewController`, jak pokazano poniżej:
 
-    [ ![](images/pinkvcnew.png "Konsola właściwości")](images/pinkvcnew.png)
+    [![](images/pinkvcnew.png "Konsola właściwości")](images/pinkvcnew.png#lightbox)
     
     IDE utworzy tych klas niestandardowych dla kontrolerów widoku. Mogą być wyświetlane w **konsoli rozwiązania**, jak pokazano na poniższym zrzucie ekranu:
     
-    [ ![](images/solution-pad.png "Konsola rozwiązania")](images/solution-pad.png)
+    [![](images/solution-pad.png "Konsola rozwiązania")](images/solution-pad.png#lightbox)
 
 6. W `PinkViewController`, wybierz widok, klikając kierunku Centrum ramki kontrolera. W konsoli właściwości widoku zmienić **tła** amarantowym:
     
-    [ ![](images/pinkcontroller.png "Ustawianie koloru tła")](images/pinkcontroller.png)
+    [![](images/pinkcontroller.png "Ustawianie koloru tła")](images/pinkcontroller.png#lightbox)
 
 7. Na koniec, przeciągnij element button z **przybornika** na `MainViewController`. W konsoli właściwości nadaj mu nazwę `PinkButton` i GoToPink tytuł, jak przedstawiono poniżej:
 
-    [ ![](images/pinkbutton.png "Nazwa przycisku zestawu")](images/pinkbutton.png)
+    [![](images/pinkbutton.png "Nazwa przycisku zestawu")](images/pinkbutton.png#lightbox)
 
 Scenorysu zostało ukończone, ale jeśli mamy teraz wdrożyć projekt, uzyskujemy będzie pusty ekran. Wynika to z nadal trzeba sprawdzić IDE, aby użyć naszych scenorysu i konfigurowania kontrolera widoku głównego celu służyć jako pierwszy widok. Zwykle można to zrobić za pomocą opcji projektu, jak pokazano powyżej. Jednak w tym przykładzie zostaną osiągnięte takiego samego wyniku w kodzie, dodając następujące polecenie, aby **AppDelegate**:
 
@@ -351,13 +351,13 @@ Zanim zaczniemy, wykonaj kroki 1 – 8 powyżej. W tych krokach możemy utworzy�
         - Wiersze: 2
         - Zaznaczono element checkbox "Hidden" 
         
-    [ ![](images/passwordvc.png "Centrum wierszy")](images/passwordvc.png)
+    [![](images/passwordvc.png "Centrum wierszy")](images/passwordvc.png#lightbox)
     
 2. Utwórz Segue między przycisk Przejdź do różowym i kontroler widoku przez przeciągnięcie Ctrl z *PinkButton* do *PinkViewController*i wybierając **Push** na myszy w górę . 
 
 3. Polecenie Segue i nadaj mu *identyfikator* `SegueToPink`:
 
-    [ ![](images/namesegue.png "Kliknij Segue i nadaj mu identyfikator SegueToPink")](images/namesegue.png)  
+    [![](images/namesegue.png "Kliknij Segue i nadaj mu identyfikator SegueToPink")](images/namesegue.png#lightbox)  
     
 
 4. Na koniec Dodaj następującą metodę ShouldPerformSegue do `MainViewController` klasy:
@@ -402,29 +402,29 @@ Aby dodać odwołanie do zewnętrznej scenorysu, wykonaj następujące czynnośc
 
 1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Dodaj** > **nowego pliku...**   >  **iOS** > **scenorysu**. Wprowadź **nazwa** nowego scenorysu i kliknij **nowy** przycisk:
     
-    [ ![](images/ref01.png "Okno dialogowe nowego pliku")](images/ref01.png)
+    [![](images/ref01.png "Okno dialogowe nowego pliku")](images/ref01.png#lightbox)
     
 2. Projektowanie układu sceny nowego scenorysu zazwyczaj będzie i Zapisz zmiany: 
     
-    [ ![](images/ref02.png "Układ nowe sceny")](images/ref02.png)
+    [![](images/ref02.png "Układ nowe sceny")](images/ref02.png#lightbox)
     
 3. Otwórz scenorysu, który ma być Dodawanie odwołania do w systemie iOS projektanta.
 
 4. Przeciągnij **scenorysu odwołanie** z **przybornika** na powierzchnię projektu: 
     
-    [ ![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png)
+    [![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png#lightbox)
     
 5. W **elementu Widget** karcie **Explorer właściwości**, wybierz nazwę **scenorysu** utworzoną wcześniej: 
 
-    [ ![](images/ref04.png "Na karcie widżetu")](images/ref04.png)
+    [![](images/ref04.png "Na karcie widżetu")](images/ref04.png#lightbox)
     
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony: 
 
-    [ ![](images/ref05.png "Tworzenie segue")](images/ref05.png) 
+    [![](images/ref05.png "Tworzenie segue")](images/ref05.png#lightbox) 
     
 7. Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png) 
+    [![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png#lightbox) 
     
 8. Zapisz zmiany do scenorysu.
 
@@ -440,29 +440,29 @@ Aby dodać odwołanie do określonego sceny scenorysu zewnętrznych (i nie pocz�
 
 2. Dodaj nowe sceny i projektowanie układu w zwykły sposób: 
 
-    [ ![](images/ref07.png "Nowy układ sceny")](images/ref07.png)
+    [![](images/ref07.png "Nowy układ sceny")](images/ref07.png#lightbox)
     
 3. W **elementu Widget** karcie **Explorer właściwości**, wprowadź **identyfikator scenorysu** sceny nowego kontrolera widoku: 
 
-    [ ![](images/ref08.png "Podaj nazwę scenorysu na nowy kontroler widoku sceny")](images/ref08.png)
+    [![](images/ref08.png "Podaj nazwę scenorysu na nowy kontroler widoku sceny")](images/ref08.png#lightbox)
     
 3. Otwórz scenorysu, który ma być Dodawanie odwołania do w systemie iOS projektanta.
 
 4. Przeciągnij **scenorysu odwołanie** z **przybornika** na powierzchnię projektu: 
 
-    [ ![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png)
+    [![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png#lightbox)
     
 5. W **elementu Widget** karcie **Explorer właściwości**, wybierz nazwę **scenorysu** i **Identyfikatora odwołania** (identyfikator scenorysu) z Sceny utworzoną wcześniej: 
 
-    [ ![](images/ref09.png "Na karcie widżetu ")](images/ref09.png)
+    [![](images/ref09.png "Na karcie widżetu ")](images/ref09.png#lightbox)
     
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony: 
 
-    [ ![](images/ref10.png "Tworzenie segue")](images/ref10.png) 
+    [![](images/ref10.png "Tworzenie segue")](images/ref10.png#lightbox) 
     
 7. Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png) 
+    [![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png#lightbox) 
     
 8. Zapisz zmiany do scenorysu.
 
@@ -478,27 +478,27 @@ Aby dodać odwołanie do określonego sceny tego samego scenorysu, wykonaj nast�
 
 2. Dodaj nowe sceny i projektowanie układu w zwykły sposób: 
 
-    [ ![](images/ref11.png "Nowy układ sceny")](images/ref11.png)
+    [![](images/ref11.png "Nowy układ sceny")](images/ref11.png#lightbox)
 
 3. W **elementu Widget** karcie **Explorer właściwości**, wprowadź **identyfikator scenorysu** sceny nowego kontrolera widoku: 
 
-    [ ![](images/ref12.png "Na karcie widżetu")](images/ref12.png)
+    [![](images/ref12.png "Na karcie widżetu")](images/ref12.png#lightbox)
     
 3. Przeciągnij **scenorysu odwołanie** z **przybornika** na powierzchnię projektu: 
 
-    [ ![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png)
+    [![](images/ref03.png "Odwołanie do scenorysu")](images/ref03.png#lightbox)
     
 5. W **elementu Widget** karcie **Explorer właściwości**, wybierz pozycję **Identyfikatora odwołania** (identyfikator scenorysu) sceny utworzoną wcześniej: 
 
-    [ ![](images/ref13.png "Na karcie widżetu")](images/ref13.png)
+    [![](images/ref13.png "Na karcie widżetu")](images/ref13.png#lightbox)
     
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony: 
 
-    [ ![](images/ref14.png "Tworzenie segue")](images/ref14.png) 
+    [![](images/ref14.png "Tworzenie segue")](images/ref14.png#lightbox) 
     
 7. Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png) 
+    [![](images/ref06.png "Wybieranie Pokaż przeprowadzenie Segue")](images/ref06.png#lightbox) 
     
 8. Zapisz zmiany do scenorysu.
 

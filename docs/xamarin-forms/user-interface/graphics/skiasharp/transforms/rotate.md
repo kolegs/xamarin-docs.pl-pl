@@ -4,14 +4,15 @@ description: "Poznaj efekty i animacji przy użyciu przekształcenie obracania S
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: c87f9a561ac2f7a8c3da1c1e4ab839431073fcb9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-rotate-transform"></a>Przekształcenie obracania
 
@@ -57,7 +58,7 @@ using (SKPaint textPaint = new SKPaint
 
 Ponieważ obrotu skupia się w lewym górnym rogu obszaru roboczego dla większości kątów ustawiony w tym programie odniosło jest obracany tekst:
 
-[![](rotate-images/basicrotate-small.png "Potrójna zrzut ekranu strony podstawowe Obróć")](rotate-images/basicrotate-large.png "Potrójna zrzut ekranu strony Obróć podstawowe")
+[![](rotate-images/basicrotate-small.png "Potrójna zrzut ekranu strony podstawowe Obróć")](rotate-images/basicrotate-large.png#lightbox "Potrójna zrzut ekranu strony Obróć podstawowe")
 
 Bardzo często można obrócić coś skupia się wokół punktu określonego pivot korzystających z tych wersji z [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) i [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) metod:
 
@@ -85,7 +86,7 @@ using (SKPaint textPaint = new SKPaint
 
 Teraz tekst obraca się wokół punktu używana do pozycjonowania tekst, który jest Centrum poziomych linii bazowej tekst:
 
-[![](rotate-images/centeredrotate-small.png "Potrójna zrzut ekranu strony wyśrodkowany Obróć")](rotate-images/centeredrotate-large.png "Potrójna zrzut ekranu strony wyśrodkowany Obróć")
+[![](rotate-images/centeredrotate-small.png "Potrójna zrzut ekranu strony wyśrodkowany Obróć")](rotate-images/centeredrotate-large.png#lightbox "Potrójna zrzut ekranu strony wyśrodkowany Obróć")
 
 Tak jak w przypadku wersji wyśrodkowany `Scale` metody, wyśrodkowany wersję `RotateDegrees` wywołanie jest skrót:
 
@@ -139,7 +140,7 @@ Koncepcyjnie dwa transformacje są stosowane w kolejności przeciwnej sposobu ic
 
 Zazwyczaj są łączenie obrotu i translacji na kilka sposobów. **Obracany tekst** strony tworzy następujące wyświetlania:
 
-[![](rotate-images/rotatedtext-small.png "Potrójna zrzut ekranu przedstawiający stronę obracany tekst")](rotate-images/rotatedtext-large.png "Potrójna zrzut ekranu przedstawiający stronę obracany tekst")
+[![](rotate-images/rotatedtext-small.png "Potrójna zrzut ekranu przedstawiający stronę obracany tekst")](rotate-images/rotatedtext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę obracany tekst")
 
 Oto `PaintSurface` obsługi [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) klasy:
 
@@ -363,7 +364,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zegar jest oczywiście funkcjonalności, chociaż ręce są raczej surowego:
 
-[![](rotate-images/uglyanalogclock-small.png "Potrójne zrzut ekranu przedstawiający stronę Ugly analogowy zegara tekstu")](rotate-images/uglyanalogclock-large.png "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Potrójne zrzut ekranu przedstawiający stronę Ugly analogowy zegara tekstu")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>Linki pokrewne

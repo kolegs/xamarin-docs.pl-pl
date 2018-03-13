@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Wprowadzenie do Backgrounding w systemie iOS
 
@@ -27,7 +27,7 @@ Zanim firma Microsoft Poznaj kod przetwarzania w systemie iOS w tle, musimy zroz
 
 Cykl życia aplikacji systemu iOS jest kolekcją Stany aplikacji i metody służące do przechodzenia między nimi. Aplikacja przejścia między Stanami na podstawie zachowania użytkownika i backgrounding wymagań aplikacji. W poniższym diagramie przedstawiono przepływu:
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagram Stany aplikacji i metody delegata aplikacji")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagram Stany aplikacji i metody delegata aplikacji")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **Nie działa** — aplikacja nie ma jeszcze uruchomić na urządzeniu.
 -  **Uruchamianie/aktywny** -aplikacji znajduje się na ekranie i wykonuje kod na pierwszym planie.
@@ -52,7 +52,7 @@ Po zmianie stanu aplikacji dla systemu iOS powiadamia aplikację za pomocą meto
 
 Na poniższym diagramie przedstawiono, jak Stany aplikacji i metod cyklu życia dopasowania:
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "Ten diagram przedstawia, jak Stany aplikacji i metod cyklu życia dopasowania")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "Ten diagram przedstawia, jak Stany aplikacji i metod cyklu życia dopasowania")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Formanty użytkownika Backgrounding w systemie iOS
 
@@ -62,7 +62,7 @@ System iOS 7 wprowadzono kilka funkcji, aby umożliwić użytkownikom większą 
 
 Przełącznik aplikacji jest funkcją kontroli ważne wprowadzone w systemie iOS 7. Jest uruchamiane przez dwukrotne **Home** przycisk i przedstawia aplikacji, w której procesy są aktywności:
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Przenoszenie między aplikacjami za pomocą przełącznik aplikacji")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Przenoszenie między aplikacjami za pomocą przełącznik aplikacji")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 Z tym przełącznikiem aplikacji, użytkowników można przewijać migawek wszystkich backgrounded i wstrzymania aplikacji. Naciskając aplikacji uruchamia go na pierwszym planie. Szybko przesuwając w górę spowoduje usunięcie aplikacji z tła zakończenia procesu. Firma Microsoft podejmie bliższe spojrzenie na przełącznik aplikacji w [pokaz cyklem życia aplikacji systemu iOS](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) w następnej sekcji.
 
@@ -77,7 +77,7 @@ System iOS 7 zwiększa kontroli użytkownika nad cyklem życia aplikacji, dzięk
 
 Użytkownicy mogą zmieniać tego ustawienia, przechodząc do <span class="uiitem">Ustawienia > Ogólne > Odśwież aplikację tła</span> i edytowania backgrounding uprawnienia dla wybranej aplikacji. Jeśli odświeżanie aplikacji w tle jest ustawiony na wyłączone, aplikacja zostanie wstrzymane natychmiast po wprowadzeniu tła i uniemożliwił podczas przetwarzania w tle:
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "Ustawienia odświeżania aplikacji w tle")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Ustawienia odświeżania aplikacji w tle")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 Deweloperzy mogą sprawdzić stan aplikacja odświeżania w tle z `BackgroundRefreshStatus` interfejsu API. Na przykład dotyczą [przepisu Sprawdź ustawienie tła Refresh](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/).
 

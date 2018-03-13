@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e5ff4e3732476415ff32e98b8281f3cb6e03e332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manual-camera-controls"></a>Formanty ręczne aparatu
 
@@ -26,7 +26,7 @@ Zastosowanie tych zabezpieczeń również może być przydatne podczas tworzenia
 
 Czy pobieranie wideo lub zdjęć na urządzeniu z systemem iOS przy użyciu aparatu, proces stosowany do przechwycenia tych obrazów jest przede wszystkim takie same. Dotyczy to aplikacji korzystających z formantów aparatu domyślnej zautomatyzowanej lub te, które wykorzystać nowe formanty aparatu ręczny:
 
- [ ![](intro-to-manual-camera-controls-images/image1.png "Przegląd obiektów funkcji przechwytywania AVFoundation")](intro-to-manual-camera-controls-images/image1.png)
+ [![](intro-to-manual-camera-controls-images/image1.png "Przegląd obiektów funkcji przechwytywania AVFoundation")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
 Dane wejściowe są brane z `AVCaptureDeviceInput` do `AVCaptureSession` poprzez `AVCaptureConnection`. Wynik jest albo dane wyjściowe jako obraz nadal lub strumienia wideo. Cały proces jest kontrolowany przez `AVCaptureDevice`.
 
@@ -280,11 +280,11 @@ Zezwolenie użytkownikom końcowym zająć formanty fokus bezpośrednio, aplikac
 
 Na przykład professional fotografa można wygładzanie fokus obrazu do osiągnięcia [efekt Bokeh](http://en.wikipedia.org/wiki/Bokeh):
 
-[ ![](intro-to-manual-camera-controls-images/image2.png "Efekt Bokeh")](intro-to-manual-camera-controls-images/image2.png)
+[![](intro-to-manual-camera-controls-images/image2.png "Efekt Bokeh")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Lub Utwórz [efekt ściągnięcia fokus](http://www.mediacollege.com/video/camera/focus/pull.html), takich jak:
 
-[ ![](intro-to-manual-camera-controls-images/image3.png "Efekt ściągania fokus")](intro-to-manual-camera-controls-images/image3.png)
+[![](intro-to-manual-camera-controls-images/image3.png "Efekt ściągania fokus")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 Służące lub Edytor aplikacje medyczne aplikacja może być programowane poruszanie obiektywu dla eksperymentów. W obu przypadkach nowy interfejs API umożliwia użytkownikowi końcowemu lub aplikacji, aby przejąć kontrolę nad fokusu w czasie obrazu jest zajęta.
 
@@ -292,7 +292,7 @@ Służące lub Edytor aplikacje medyczne aplikacja może być programowane porus
 
 Przed omówieniem szczegóły kontrolowanie fokusu w aplikacji systemu IOS 8. Spójrzmy szybkie na działanie fokusu w urządzeniu z systemem iOS:
 
-[ ![](intro-to-manual-camera-controls-images/image4.png "Jak działa fokusu w urządzeniu z systemem iOS")](intro-to-manual-camera-controls-images/image4.png)
+[![](intro-to-manual-camera-controls-images/image4.png "Jak działa fokusu w urządzeniu z systemem iOS")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 Jasny wprowadza obiektyw na urządzeniu z systemem iOS i koncentruje się na czujnik obrazu. Odległość obiektyw z czujnika Określa, gdzie punkt centralny (obszar, gdy obraz zostanie wyświetlony najlepszą jakość obrazu) jest w relacji z czujnika. Dostępne jest obiektyw z czujnika, obiekty odległość prawdopodobnie najlepszą jakość obrazu i bliżej, obok obiektów prawdopodobnie najlepszą jakość obrazu.
 
@@ -358,7 +358,7 @@ Jak w powyższym kodzie przechwytywania urządzenie musi być zablokowany dla ko
 
 Kod ogólne AV ustawienia przechwytywania w miejscu `UIViewController` mogą być dodawane do scenorysu aplikacji lub skonfigurowane w następujący sposób:
 
-[ ![](intro-to-manual-camera-controls-images/image5.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image5.png)
+[![](intro-to-manual-camera-controls-images/image5.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 Widok zawiera następujące główne elementy:
 
@@ -491,10 +491,10 @@ Wykonaj następujące czynności przesyłania zapasowe kontroler widoku dla ster
   
 1. Aparatem w trybie automatycznym suwak przeniesie automatycznie zgodnie z aparatu fotograficznego dopasowuje fokus:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "Suwak przeniesie automatycznie zgodnie z aparatu dopasowuje fokusu w tej przykładowej aplikacji")](intro-to-manual-camera-controls-images/image6.png)
+    [![](intro-to-manual-camera-controls-images/image6.png "Suwak przeniesie automatycznie zgodnie z aparatu dopasowuje fokusu w tej przykładowej aplikacji")](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. Wybierz segment zablokowany, a następnie przeciągnij suwak pozycji, aby dostosować położenie obiektyw ręcznie:
 
-    [![](intro-to-manual-camera-controls-images/image7.png "Ręcznie dostosowania pozycji obiektyw")](intro-to-manual-camera-controls-images/image7.png)
+    [![](intro-to-manual-camera-controls-images/image7.png "Ręcznie dostosowania pozycji obiektyw")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. Zatrzymaj aplikację.
 
 
@@ -506,7 +506,7 @@ Narażenia odwołuje się do jasność obrazu względem jasności źródła i je
 
 Za pomocą formantów narażenia ręczny, użytkownik może zająć obrazu z nierealistycznie jasny ciemny i moody:
 
-[ ![](intro-to-manual-camera-controls-images/image8.png "Obraz przedstawiający skutkami nierealistycznie jasny ciemny i moody próbki")](intro-to-manual-camera-controls-images/image8.png)
+[![](intro-to-manual-camera-controls-images/image8.png "Obraz przedstawiający skutkami nierealistycznie jasny ciemny i moody próbki")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 Ponownie można to zrobić automatycznie za pomocą sterowanie programowe, w przypadku aplikacji naukowych lub za pomocą formantów ręczne udostępniane przez interfejs użytkownika aplikacji. W obu przypadkach nowego systemu iOS 8 narażenia interfejsów API zapewniają precyzyjną kontrolę nad ekspozycję aparatu.
 
@@ -514,7 +514,7 @@ Ponownie można to zrobić automatycznie za pomocą sterowanie programowe, w prz
 
 Przed omówieniem szczegóły kontrolowanie zagrożeń w aplikacji systemu IOS 8. Spójrzmy szybki w sposób działania zagrożeń:
 
-[ ![](intro-to-manual-camera-controls-images/image9.png "Jak działa zagrożeń")](intro-to-manual-camera-controls-images/image9.png)
+[![](intro-to-manual-camera-controls-images/image9.png "Jak działa zagrożeń")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 Dostępne są następujące trzy podstawowe elementy, które pochodzą ze sobą do kontrolowania narażenia:
 
@@ -527,7 +527,7 @@ Dostępne są następujące trzy podstawowe elementy, które pochodzą ze sobą 
 
 Przed learning sposób działania ręczne zagrożeń, jest bardzo pomysł, aby zrozumieć, jak ciągła narażenia automatycznie działa w urządzeniu z systemem iOS.
 
-[ ![](intro-to-manual-camera-controls-images/image10.png "Jak automatycznie ciągłego narażenia działa w urządzeniu z systemem iOS")](intro-to-manual-camera-controls-images/image10.png)
+[![](intro-to-manual-camera-controls-images/image10.png "Jak automatycznie ciągłego narażenia działa w urządzeniu z systemem iOS")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 Najpierw jest automatycznie bloku zagrożeń, ma zadania obliczania idealne zagrożeń i jest stale podawana Statystyka zliczania. Używa tych informacji do obliczania optymalnej kombinację ISO i migawki, aby uzyskać sceny również włączone. Ten cykl nazywa się AE pętli.
 
@@ -535,7 +535,7 @@ Najpierw jest automatycznie bloku zagrożeń, ma zadania obliczania idealne zagr
 
 Następnie Przeanalizujmy jak zablokowanym działa narażenia na urządzeniach z systemem iOS.
 
-[ ![](intro-to-manual-camera-controls-images/image11.png "Jak zablokowanym narażenia działa na urządzeniach z systemem iOS")](intro-to-manual-camera-controls-images/image11.png)
+[![](intro-to-manual-camera-controls-images/image11.png "Jak zablokowanym narażenia działa na urządzeniach z systemem iOS")](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 Ponownie masz bloku narażenia automatycznie próbuje obliczanie optymalnej iOS i wartości czasu trwania. Jednak w tym trybie bloku AE jest odłączony od aparatu Statystyka zliczania.
 
@@ -589,7 +589,7 @@ Jak w powyższym kodzie urządzenia przechwytywania musi być zablokowany dla ko
 
 Kod ogólne AV ustawienia przechwytywania w miejscu `UIViewController` mogą być dodawane do scenorysu aplikacji lub skonfigurowane w następujący sposób:
 
-[ ![](intro-to-manual-camera-controls-images/image12.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image12.png)
+[![](intro-to-manual-camera-controls-images/image12.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 Widok zawiera następujące główne elementy:
 
@@ -791,13 +791,13 @@ Wykonaj następujące czynności przesyłania zapasowe kontroler widoku dla form
   
 1. Aparatem w trybie automatycznym suwaki przeniesie automatycznie zgodnie z aparatu fotograficznego dopasowuje zagrożeń:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "Suwaki przeniesie automatycznie zgodnie z aparatu fotograficznego dopasowuje zagrożeń")](intro-to-manual-camera-controls-images/image13.png)
+    [![](intro-to-manual-camera-controls-images/image13.png "Suwaki przeniesie automatycznie zgodnie z aparatu fotograficznego dopasowuje zagrożeń")](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. Wybierz segment zablokowane i przeciągnij suwak odchylenia, aby dopasować odchylenia automatyczne narażenia ręcznie:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "Dopasowywanie odchylenia automatyczne narażenia ręcznie")](intro-to-manual-camera-controls-images/image14.png)
+    [![](intro-to-manual-camera-controls-images/image14.png "Dopasowywanie odchylenia automatyczne narażenia ręcznie")](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. Wybierz niestandardowe segmentu i z suwaków czas trwania i ISO ręcznie kontrolować zagrożeń:
 
-    [![](intro-to-manual-camera-controls-images/image15.png "Przeciągnij suwaki czas trwania i ISO, aby ręcznie kontroli zagrożeń")](intro-to-manual-camera-controls-images/image15.png)
+    [![](intro-to-manual-camera-controls-images/image15.png "Przeciągnij suwaki czas trwania i ISO, aby ręcznie kontroli zagrożeń")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. Zatrzymaj aplikację.
 
 
@@ -807,7 +807,7 @@ Powyższy kod pokazuje, jak monitorować ustawienia zagrożeń, gdy aparat jest 
 
 Formanty saldo biały umożliwiają użytkownikom dopasować saldo colosr w obrazie, aby je wyglądało bardziej. Różne źródła światła mieć temperatury kolorów, a ustawienia aparatu używane do przechwycenia obrazu musi zostać dostosowana to kompensacji tych różnic. Ponownie zezwalając kontrola użytkownika nad białe saldo one można dostosować professional będących procedury automatycznego niezdolne do osiągnięcia artystyczny efekty.
 
-[ ![](intro-to-manual-camera-controls-images/image16.png "Obraz przykładowej przedstawiający saldo biały ręcznego dopasowania")](intro-to-manual-camera-controls-images/image16.png)
+[![](intro-to-manual-camera-controls-images/image16.png "Obraz przykładowej przedstawiający saldo biały ręcznego dopasowania")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 Na przykład czasu letniego ma blueish rzutowanie świateł żarówki wolframu mieć odcień powielane, żółty pomarańczowy. (Złudzenia, kolory "zimnych" mają wyższe temperatury kolor niż "ciepłych" kolorów. Kolor temperatury są środek fizyczne nie Percepcyjna jeden).
 
@@ -821,7 +821,7 @@ Przed omówieniem szczegóły kontrolowanie białe saldo w aplikacji systemu IOS
 
 Do badania wrażenie kolor [CIE 1931 RGB kolorów i miejsca kolor XYZ CIE 1931](http://en.wikipedia.org/wiki/CIE_1931_color_space) są pierwszy matematycznie zdefiniowanych przestrzenie. 1931 zostały utworzone przez Międzynarodowej Komisji na oświetlenia ().
 
-[ ![](intro-to-manual-camera-controls-images/image17.png "Przestrzeń kolorów RGB CIE 1931 i CIE 1931 XYZ przestrzeń kolorów")](intro-to-manual-camera-controls-images/image17.png)
+[![](intro-to-manual-camera-controls-images/image17.png "Przestrzeń kolorów RGB CIE 1931 i CIE 1931 XYZ przestrzeń kolorów")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 Powyżej wykres ten przedstawia nam wszystkie kolory widoczny dla człowieka oka bezpośrednich do jasnozielony jasny czerwony niebieski. Dowolnego punktu na diagramie można wykreślić wartości X i Y, jak pokazano na powyższym wykresie.
 
@@ -900,7 +900,7 @@ Urządzenie przechwytywania musi być zablokowany dla konfiguracji przed zmiany 
 
 Kod ogólne AV ustawienia przechwytywania w miejscu `UIViewController` mogą być dodawane do scenorysu aplikacji lub skonfigurowane w następujący sposób:
 
-[ ![](intro-to-manual-camera-controls-images/image18.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image18.png)
+[![](intro-to-manual-camera-controls-images/image18.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 Widok zawiera następujące główne elementy:
 
@@ -1111,13 +1111,13 @@ Wykonaj następujące czynności przesyłania zapasowe kontroler widoku kontrol�
 1. Zapisz zmiany kodu i uruchomić aplikację.
 1. Aparatem w trybie automatycznym suwaki przeniesie automatycznie zgodnie z aparatu dopasowuje saldo białe:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "Suwaki przeniesie automatycznie zgodnie z aparatu dopasowuje saldo białe")](intro-to-manual-camera-controls-images/image19.png)
+    [![](intro-to-manual-camera-controls-images/image19.png "Suwaki przeniesie automatycznie zgodnie z aparatu dopasowuje saldo białe")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Wybierz segment zablokowane i przeciągnij suwaki Temp i odcień, aby dopasować białe saldo ręcznie:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Przeciągnij suwaki Temp i odcień, aby dopasować białe saldo ręcznie")](intro-to-manual-camera-controls-images/image20.png)
+    [![](intro-to-manual-camera-controls-images/image20.png "Przeciągnij suwaki Temp i odcień, aby dopasować białe saldo ręcznie")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Z segmentem zablokowany nadal zaznaczone umieść szarego kart fizycznych na wierzchu z aparatu fotograficznego, a następnie wybierz przycisk karty szary, aby dostosować białe Saldo na świecie szary:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "Naciśnij przycisk karty szary aby dopasować białe saldo World szarości")](intro-to-manual-camera-controls-images/image21.png)
+    [![](intro-to-manual-camera-controls-images/image21.png "Naciśnij przycisk karty szary aby dopasować białe saldo World szarości")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. Zatrzymaj aplikację.
 
 Powyższy kod pokazuje, jak monitorować ustawienia saldo białe, gdy aparat jest w trybie automatycznym lub kontrolować białe saldo jest w trybie zablokowane za pomocą suwaków.
@@ -1128,7 +1128,7 @@ Oddzielona przechwytywania na podstawie ustawień od formantów aparatu ręczneg
 
 Krótko mówiąc, oddzielona przechwytywania jest serii nadal obrazów wykonanych za pomocą różnych ustawień z obrazu do obrazu.
 
-[ ![](intro-to-manual-camera-controls-images/image22.png "Jak działa oddzielona przechwytywania")](intro-to-manual-camera-controls-images/image22.png)
+[![](intro-to-manual-camera-controls-images/image22.png "Jak działa oddzielona przechwytywania")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 Przy użyciu oddzielona przechwytywania w systemie iOS 8, aplikacji można ustawienia wstępnego serii ręczne formantów aparatu, wydać polecenie pojedynczego i mieć bieżącej sceny zwracać serie obrazów dla każdego ustawienia ręcznej.
 
@@ -1187,7 +1187,7 @@ Dzięki tym informacjom pamiętać Spójrzmy na przykład przy użyciu oddzielon
 
 Kod ogólne AV ustawienia przechwytywania w miejscu `UIViewController` mogą być dodawane do scenorysu aplikacji lub skonfigurowane w następujący sposób:
 
-[ ![](intro-to-manual-camera-controls-images/image23.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image23.png)
+[![](intro-to-manual-camera-controls-images/image23.png "UIViewController można dodać do aplikacji scenorysu i skonfigurowane w sposób pokazany poniżej")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 Widok zawiera następujące główne elementy:
 
@@ -1345,10 +1345,10 @@ Wykonaj następujące czynności przesyłania zapasowe kontroler widoku oddzielo
 1. Zapisz zmiany kodu i uruchomić aplikację.
 1. Ramka sceny i naciśnij przycisk nawiasu przechwytywania:
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Ramka sceny i naciśnij przycisk nawiasu przechwytywania")](intro-to-manual-camera-controls-images/image24.png)
+    [![](intro-to-manual-camera-controls-images/image24.png "Ramka sceny i naciśnij przycisk nawiasu przechwytywania")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Przejdź od prawej do lewej, aby wyświetlić trzy obrazy wykonywaną przez oddzielona przechwytywania:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "Przejdź od prawej do lewej, aby wyświetlić trzy obrazy wykonywaną przez oddzielona przechwytywania")](intro-to-manual-camera-controls-images/image25.png)
+    [![](intro-to-manual-camera-controls-images/image25.png "Przejdź od prawej do lewej, aby wyświetlić trzy obrazy wykonywaną przez oddzielona przechwytywania")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. Zatrzymaj aplikację.
 
 

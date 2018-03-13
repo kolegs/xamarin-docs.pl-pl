@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ad9129e06f43eea69518c4d876edc7cfd462f4e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>Lokalizacja
 
@@ -71,7 +71,7 @@ Plik zasobów podstawowej (RESX) będzie zawierać ciągi języka domyślnego (p
 
 Wybierz nazwę opisową, takich jak **AppResources** i naciśnij klawisz **OK**.
 
-[ ![Dodawanie pliku zasobów](localization-images/resx-new-file-sml.png "nowego okna dialogowego pliku")](localization-images/resx-new-file.png "nowego okna dialogowego pliku")
+[![Dodawanie pliku zasobów](localization-images/resx-new-file-sml.png "nowego okna dialogowego pliku")](localization-images/resx-new-file.png#lightbox "nowego okna dialogowego pliku")
 
 Dwa pliki zostaną dodane do projektu:
 
@@ -88,32 +88,32 @@ Domyślnie podczas generowania jednoznacznie odwołania do ciągów, zostaną on
 
 Wybierz **AppResources.resx** plików i Pokaż **właściwości** skonfigurować konsoli, gdzie jest to narzędzie kompilacji. Poniżej przedstawiono zrzut ekranu **narzędzie niestandardowe: ResXFileCodeGenerator**.
 
-[[ide name="xs]]
 
-[ ![](localization-images/xs-resx-internal-sml.png "Właściwości konsoli dla AppResources.Resx")](localization-images/xs-resx-internal.png)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[/ide]]
+[![](localization-images/vs-resx-internal-sml.png "Okno właściwości dla AppResources.Resx")](localization-images/vs-resx-internal.png#lightbox)
 
-[[ide name="vs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](localization-images/vs-resx-internal-sml.png "Okno właściwości dla AppResources.Resx")](localization-images/vs-resx-internal.png)
+[![](localization-images/xs-resx-internal-sml.png "Właściwości konsoli dla AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[[/ide]]
+-----
 
 Aby właściwości ciąg jednoznacznie `public`, należy ręcznie zmienić konfigurację, aby **narzędzie niestandardowe: PublicResXFileCodeGenerator**, jak pokazano na poniższym zrzucie ekranu:
 
 
-[[ide name="xs]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](localization-images/xs-resx-public-sml.png "Właściwości konsoli dla AppResources.Resx")](localization-images/xs-resx-public.png)
+[![](localization-images/vs-resx-public-sml.png "Okno właściwości dla AppResources.Resx")](localization-images/vs-resx-public.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[[ide name="vs]]
+[![](localization-images/xs-resx-internal-sml.png "Właściwości konsoli dla AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[ ![](localization-images/vs-resx-public-sml.png "Okno właściwości dla AppResources.Resx")](localization-images/vs-resx-public.png)
 
-[[/ide]]
+[![](localization-images/xs-resx-public-sml.png "Właściwości konsoli dla AppResources.Resx")](localization-images/xs-resx-public.png#lightbox)
+
+-----
 
 Ta zmiana jest opcjonalna i jest tylko wymagane, jeśli chcesz odwołać zlokalizowanych ciągów w różnych zestawów (na przykład, jeśli pliki RESX należy umieścić w innym zestawie kodu). Przykładowe związane z tym tematem pozostawia ciągi `internal` ponieważ są one zdefiniowane w tym samym zestawie PCL platformy Xamarin.Forms, gdzie są używane.
 
@@ -605,13 +605,13 @@ Jeśli te ustawienia nie zostaną zaktualizowane zlokalizowanych zasobów RESX n
 
 Kliknij prawym przyciskiem myszy projekt Windows Phone, a następnie wybierz **właściwości**. W **aplikacji** karcie znaczników **obsługiwane kultur** obsługującego aplikacji:
 
-[ ![](localization-images/winphone-projectproperties-sml.png "Właściwości — obsługiwanych kultur projektu")](localization-images/winphone-projectproperties.png "właściwości — obsługiwanych kultur projektu")
+[![](localization-images/winphone-projectproperties-sml.png "Właściwości — obsługiwanych kultur projektu")](localization-images/winphone-projectproperties.png#lightbox "właściwości — obsługiwanych kultur projektu")
 
 ##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
 
 Rozwiń węzeł właściwości projektu Windows Phone, a następnie kliknij dwukrotnie **WMAppManifest.xml** pliku. Polecenie **pakowania** karcie i znaczników wszystkie języki obsługiwane przez aplikację.
 
-[ ![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - obsługiwanych języków")](localization-images/winphone-wmappmanifest.png "WMAppManifest.xml - obsługiwane języki")
+[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - obsługiwanych języków")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - obsługiwane języki")
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 

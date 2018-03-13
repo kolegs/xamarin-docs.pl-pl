@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 2acaef5fd42b867e88fb9b81d401ea752480124a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-performance"></a>Wydajność ListView
 
@@ -45,7 +45,7 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> **Uwaga**: ignoruje Windows platformy Uniwersalnej [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) buforowanie strategii, ponieważ zawsze używa buforowanie w celu zwiększenia wydajności. W związku z tym domyślnie działa tak, jakby [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) buforowanie strategii została zastosowana.
+> Ignoruje platformy uniwersalnej systemu Windows (UWP) [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) buforowanie strategii, ponieważ zawsze używa buforowanie w celu zwiększenia wydajności. W związku z tym domyślnie działa tak, jakby [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) buforowanie strategii została zastosowana.
 
 ### <a name="retainelement"></a>RetainElement
 
@@ -101,14 +101,14 @@ W systemach iOS i Android użycie komórek niestandardowe moduły renderowania, 
 Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) używa [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) wybierz [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) buforowanie Strategia nie będzie buforować `DataTemplate`s. Zamiast tego `DataTemplate` wybrano dla każdego elementu danych na liście.
 
 > [!NOTE]
-> **Uwaga**: [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) buforowanie strategii ma warunek wstępny, wprowadzone w 2.4 platformy Xamarin.Forms, że w przypadku [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) jest wyświetlony monit o wybranie [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) każdy `DataTemplate` musi zwracać taki sam [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Na przykład [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) z `DataTemplateSelector` które może zwracać `MyDataTemplateA` (gdzie `MyDataTemplateA` zwraca `ViewCell` typu `MyViewCellA`), lub `MyDataTemplateB` (gdzie `MyDataTemplateB`zwraca `ViewCell` typu `MyViewCellB`), gdy `MyDataTemplateA` jest zwracany, aplikacja musi zwracać `MyViewCellA` lub zostanie wygenerowany wyjątek.
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Buforowanie strategii ma warunek wstępny, wprowadzone w 2.4 platformy Xamarin.Forms, że w przypadku [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) jest wyświetlony monit o wybranie [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)każdy `DataTemplate` musi zwracać taki sam [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Na przykład [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) z `DataTemplateSelector` które może zwracać `MyDataTemplateA` (gdzie `MyDataTemplateA` zwraca `ViewCell` typu `MyViewCellA`), lub `MyDataTemplateB` (gdzie `MyDataTemplateB`zwraca `ViewCell` typu `MyViewCellB`), gdy `MyDataTemplateA` jest zwracany, aplikacja musi zwracać `MyViewCellA` lub zostanie wygenerowany wyjątek.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
 [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Buforowanie strategii opiera się na [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) buforowanie strategii dodatkowo zapewniając, że w przypadku [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) używa [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) wybierz [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`s są buforowane przez typ elementu na liście. W związku z tym `DataTemplate`s wybrano jeden raz dla typu elementu, zamiast raz dla każdego wystąpienia elementu.
 
 > [!NOTE]
-> **Uwaga**: [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) buforowanie strategii ma warunek wstępny który `DataTemplate`s zwrócony przez [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) należy użyć [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) konstruktora przyjmującego `Type`.
+> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Buforowanie strategii ma warunek wstępny który `DataTemplate`s zwrócony przez [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) należy użyć [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) Konstruktor pobierający `Type`.
 
 ### <a name="setting-the-caching-strategy"></a>Ustawienie strategii buforowania
 

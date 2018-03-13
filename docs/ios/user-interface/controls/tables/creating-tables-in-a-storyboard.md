@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Praca z tabelami w Projektancie systemu iOS
 
@@ -40,7 +40,7 @@ A `UITableView` z prototypem zawartości zwykle jest przeznaczony do wyświetlan
 
 Przykład StoryboardTable zawiera prostej aplikacji główny szczegółowy używającej obu typów UITableView w scenorysu. W pozostałej części tej sekcji opisano sposób tworzenia przykład listy zadań do wykonania w małych, w którym będzie wyglądać następująco po zakończeniu:
 
- [ ![Przykład ekranów](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![Przykład ekranów](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 Interfejs użytkownika zostanie skompilowany scenorysu, a oba ekrany użyje UITableView. Korzysta z ekranu głównego *zawartości prototypu* układu wiersza i szczegóły ekran używa *zawartość statyczną* można utworzyć formularza wprowadzania danych przy użyciu układy niestandardowe komórki.
 
@@ -48,7 +48,7 @@ Interfejs użytkownika zostanie skompilowany scenorysu, a oba ekrany użyje UITa
 
 Utwórz nowe rozwiązanie Visual Studio przy użyciu **(Utwórz) o nowy projekt... > pojedynczego widoku App(C#)**i nadaj mu _StoryboardTables_.
 
- [ ![Utwórz okno dialogowe nowego projektu](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![Utwórz okno dialogowe nowego projektu](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 Rozwiązanie zostanie otwarty z niektórych plików języka C# i `Main.storyboard` plik już utworzony. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć go w systemie iOS projektanta.
 
@@ -75,24 +75,24 @@ Pierwsza zmiana do scenorysu jest usunięcie istniejącego widoku szczegółów 
 2.  Przeciągnij **kontrolera nawigacji** i **tabeli kontrolera widoku** na scenorysu z przybornika. 
 3.  Utwórz segue kontroler widoku głównego na drugi kontroler widoku tabeli, który został dodany. Aby utworzyć segue, sterowania i przeciągnij *z komórki szczegółów* do nowo dodanego UITableViewController. Wybierz opcję **Pokaż*** w obszarze **Segue wybór**. 
 4.  Wybierz nowe segue utworzony i nadaj mu identyfikator odwołania to segue w kodzie. Polecenie segue, a następnie wprowadź `TaskSegue` dla **identyfikator** w **konsoli właściwości**, podobnie do następującej:    
-  [ ![Nazewnictwo segue w panelu Właściwość](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![Nazewnictwo segue w panelu Właściwość](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Skonfiguruj dwa widoki tabel zaznaczając je i przy użyciu konsoli do właściwości. Upewnij się wybrać widok i nie kontrolera widoku — konspekt dokumentu ułatwiające wybór.
 
 6.  Kontroler widoku głównego, należy zmienić **zawartości: dynamiczne prototypy** (widok na powierzchni projektu będzie mieć etykietę **prototypu zawartości** ):
 
-    [ ![Ustawienie właściwości zawartości dynamicznej prototypów](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![Ustawienie właściwości zawartości dynamicznej prototypów](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  Zmień nowego **UITableViewController** jako **zawartości: statyczne komórek**. 
 
 
 8. Nowe UITableViewController musi mieć swoją nazwę klasy i Ustaw identyfikator. Wybierz widok kontroler i typ _TaskDetailViewController_ dla **klasy** w **konsoli właściwości** — spowoduje to utworzenie nowego `TaskDetailViewController.cs` pliku w rozwiązaniu Konsola. Wprowadź **StoryboardID** jako _szczegółów_, jak pokazano w poniższym przykładzie. To będzie można później załadować tego widoku w kodzie języka C#:  
 
-    [ ![Ustawienie Identyfikatora scenorysu](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![Ustawienie Identyfikatora scenorysu](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. Scenorysu powierzchni projektu powinna wyglądać następująco (tytuł elementu nawigacji głównego kontrolera widoku został zmieniony na "Kwestii tablicy"):
 
-    [ ![Dzięki powierzchni projektowej](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![Dzięki powierzchni projektowej](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ Teraz, widoków i segues są skonfigurowane, elementy interfejsu użytkownika mu
 
 Najpierw należy zaznaczyć komórkę prototypu w kontroler widoku głównego i ustawić **identyfikator** jako _taskcell_, jak pokazano poniżej. Można pobrać wystąpienia tej UITableViewCell ten będzie używany w dalszej części kodu:
 
- [ ![Ustawianie identyfikatora komórki](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![Ustawianie identyfikatora komórki](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 Następnie musisz utworzyć przycisku, który doda nowe zadania, jak przedstawiono poniżej:
 
-[ ![pasek element przycisku w pasku nawigacyjnym](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![pasek element przycisku w pasku nawigacyjnym](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 Wykonaj następujące czynności: 
 
@@ -123,7 +123,7 @@ Wykonaj następujące czynności:
 
 Widok szczegółów wymaga wiele pracy. Komórki w widoku tabeli muszą być przeciągnięto widoku i następnie wypełniane przy użyciu etykiet, widoki tekstu i przycisków. Poniższy zrzut ekranu przedstawia Zakończono interfejsu użytkownika z dwóch części. Jedną sekcję ma trzy komórki, trzy etykiety, pól tekstowych i jeden przełącznik, podczas gdy druga sekcja ma jedną komórkę z dwóch przycisków:
 
- [ ![Układ widoku szczegółów](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![Układ widoku szczegółów](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Dostępne są następujące kroki, aby utworzyć pełną układ:
 
@@ -137,7 +137,7 @@ Wybierz widok tabeli i Otwórz **konsoli właściwości**. Zaktualizuj następuj
 Wybierz pierwsza sekcja i w obszarze **właściwości > sekcji Widok tabeli** zmienić **wierszy** do _3_, jak pokazano poniżej:
 
 
- [ ![Ustawienie pierwsza sekcja trzy wiersze](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![Ustawienie pierwsza sekcja trzy wiersze](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Dla każdej komórki Otwórz **konsoli właściwości** i ustaw:
 
@@ -152,7 +152,7 @@ W drugiej sekcji, ustaw **wierszy** do _1_ i przechwycić uchwyt zmiany rozmiaru
 -  **Ustawianie tła**: _wyczyść kolor_ .
 -  Przeciągnij dwóch przycisków komórki i odpowiednio ustawione ich tytuły (tj. _zapisać_ i _usunąć_), jak pokazano poniżej:
 
-   [ ![Ustawianie dwóch przycisków w dolnej części](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![Ustawianie dwóch przycisków w dolnej części](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 Na tym etapie może również chcesz ustawić ograniczenia na komórek i kontroli w celu zapewnienia adaptacyjnego układu.
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Na tym kończy się przykład scenorysu — Zakończono aplikacji prawdopodobnie to:
 
-[ ![Zakończono aplikacji](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![Zakończono aplikacji](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 W przykładzie pokazano:
 
@@ -356,4 +356,4 @@ W przykładzie pokazano:
 ## <a name="related-links"></a>Linki pokrewne
 
 - [StoryboardTable (przykład)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [Wprowadzenie do scenorysu](~/ios/user-interface/storyboards/index.md)
+- [Wprowadzenie do scenorysów](~/ios/user-interface/storyboards/index.md)

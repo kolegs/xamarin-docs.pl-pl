@@ -3,14 +3,15 @@ title: "Podsumowanie działu 23. Wyzwalacze i zachowania"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Podsumowanie działu 23. Wyzwalacze i zachowania
 
@@ -99,7 +100,7 @@ Można także wywoływać akcji przy użyciu `Trigger` (distinguished od `EventT
 
 [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) przykład wymaga [ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) biblioteki i ustawia kolory nazwy studentów na niebieski lub na podstawie różowy `Sex` właściwości:
 
-[![Potrójna zrzut ekranu przedstawiający kolory płci](images/ch23fg04-small.png "kolory płci")](images/ch23fg04-large.png "płci kolorów")
+[![Potrójna zrzut ekranu przedstawiający kolory płci](images/ch23fg04-small.png "kolory płci")](images/ch23fg04-large.png#lightbox "płci kolorów")
 
 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) przykładowe zestawy `IsEnabled` właściwość `Entry` do `False` Jeśli `Length` właściwość `Text` właściwości `Entry`jest równe 0. Zwróć uwagę, że `Text` właściwość jest inicjowana na ciąg pusty; domyślnie jest `null`i `DataTrigger` nie działać poprawnie.
 
@@ -170,7 +171,7 @@ Wadą z `EventTrigger` jest, że nie można dołączyć do `TapGestureRecognizer
 
 [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) program używa ciągów tekstowych dla jego przycisku radiowego. [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) przykładowe używa `Style` różnicy pomiędzy zaznaczony i niezaznaczony przycisków. [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) w przykładzie użyto opakowanego obrazy jego przycisków radiowych:
 
-[![Potrójna zrzut ekranu opcji obrazów](images/ch23fg17-small.png "obrazy dla przycisków radiowych")](images/ch23fg17-large.png "obrazy dla przycisków radiowych")
+[![Potrójna zrzut ekranu opcji obrazów](images/ch23fg17-small.png "obrazy dla przycisków radiowych")](images/ch23fg17-large.png#lightbox "obrazy dla przycisków radiowych")
 
 [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) próbki rysuje tradycyjnych umieszczone przyciski radiowe z kropką okręgu.
 
@@ -187,4 +188,4 @@ Program również odpowiada na zmiany w orientacji pomiędzy pionowy i pozioma p
 - [Pełny tekst działu 23 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)
 - [Przykłady działu 23](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 - [Praca z wyzwalaczy](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms Behaviors](~/xamarin-forms/app-fundamentals/behaviors/creating.md)
+- [Zachowania zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md)

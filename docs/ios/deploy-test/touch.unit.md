@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>Testowanie jednostkowe
 
@@ -119,15 +119,15 @@ Aby uruchomić ten projekt w rozwiązaniu kliknij prawym przyciskiem myszy go i 
 
 Uruchamiający pozwala zobaczyć, które testy są rejestrowane i wybierz pojedynczo, które testy, które mogą być wykonywane.
 
-[ ![](touch.unit-images/02.png "Lista zarejestrowanych testów")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "Lista zarejestrowanych testów")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "Poszczególne tekstu")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "Poszczególne tekstu")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "Wyniki uruchomienia")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "Wyniki uruchomienia")](touch.unit-images/04.png#lightbox)
 
 Można uruchomić poszczególnych testów osprzętu, wybierając osprzętu tekstu z zagnieżdżone widoki lub można uruchamiać wszystkie testy z "Uruchom wszystko". Jeśli uruchomienie testu domyślny, który ma zostać obejmują przekazywanie jednego testu, jeden błąd i jeden test została zignorowana. Jest to, jak wygląda raport i można przejść bezpośrednio do testów się niepowodzeniem i dowiedzieć się więcej o awarii:
 
-[ ![](touch.unit-images/05.png "Przykładowy raport") ](touch.unit-images/05.png) [ ![ ] (touch.unit-images/06.png "przykładowy raport") ](touch.unit-images/06.png) [ ![ ] (touch.unit-images/07.png "próbki Raport")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "Przykładowy raport") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "przykładowy raport") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "próbki Raport")](touch.unit-images/05.png#lightbox)
 
 W oknie danych wyjściowych aplikacji można również sprawdzić w środowiskiem IDE, aby zobaczyć, które testy są wykonywane i ich bieżący stan.
 

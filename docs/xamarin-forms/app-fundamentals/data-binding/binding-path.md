@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 39d326714a6fee1abe242a7256888647784cdec3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb385a9c7d1dfd01d95691b77122cdbb84d814e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-path"></a>Ścieżka powiązania
 
@@ -136,7 +136,7 @@ Ten podrzędny jest `Label`, który ma `Text` właściwości typu `String`, któ
 
 Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![Zmiany ścieżki](binding-path-images/pathvariations-small.png "zmiany ścieżki")](binding-path-images/pathvariations-large.png "zmiany ścieżki")
+[![Zmiany ścieżki](binding-path-images/pathvariations-small.png "zmiany ścieżki")](binding-path-images/pathvariations-large.png#lightbox "zmiany ścieżki")
 
 ## <a name="debugging-complex-paths"></a>Debugging Complex Paths
 

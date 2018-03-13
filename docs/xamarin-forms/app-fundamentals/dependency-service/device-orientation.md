@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ee91f0ebdc07f03831ae95a4b8ae6f85c3eb549e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d23f29fbfb51473ff5f89f27c0bfd621cfffbce0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-device-orientation"></a>Sprawdzanie, czy orientacji urządzenia
 
@@ -29,7 +29,7 @@ Aplikacji przy użyciu `DependencyService` będzie mieć następującą struktur
 ![](device-orientation-images/orientation-diagram.png "Struktura aplikacji DependencyService")
 
 > [!NOTE]
-> **Uwaga:** jest możliwe do wykrycia, czy urządzenie jest w orientacji pionowej lub poziomej w kodzie udostępnionego, jak pokazano w [Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation urządzenia) . Metody opisanej w tym artykule używa funkcji macierzystego, aby uzyskać więcej informacji na temat orientacji, w tym, czy urządzenie jest odwrócony.
+> Istnieje możliwość wykrywania, czy urządzenie jest w orientacji pionowej lub poziomej w kodzie udostępnionego, jak pokazano w [Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation urządzenia). Metody opisanej w tym artykule używa funkcji macierzystego, aby uzyskać więcej informacji na temat orientacji, w tym, czy urządzenie jest odwrócony.
 
 <a name="Creating_the_Interface" />
 
@@ -57,7 +57,7 @@ namespace DependencyServiceSample.Abstractions
 Kodowanie tego interfejsu w kodzie udostępnione umożliwi orientacji urządzenia interfejsów API na każdej platformie dostępu do aplikacji platformy Xamarin.Forms.
 
 > [!NOTE]
-> **Uwaga**: implementującej interfejs klasy musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`.
+> Klasy implementującej interfejs musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`.
 
 <a name="iOS_Implementation" />
 

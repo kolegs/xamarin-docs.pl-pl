@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>Wyszukiwania z wyróżnionym Core
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Te informacje będą widoczne w wynikach wyszukiwania w następujący:
 
-[ ![](corespotlight-images/corespotlight01.png "Omówienie wyników wyszukiwanie Spotlight Core")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "Omówienie wyników wyszukiwanie Spotlight Core")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>Przywrócenie elementu
 
@@ -80,7 +80,7 @@ Należy zauważyć, że teraz możemy sprawdzanie występowania działania `Acti
 Może to być razy, gdy element indeksu utworzyliśmy z wyróżnionym Core muszą zostać zmodyfikowane, takie jak zmiana tytuł lub obraz miniatury jest wymagane. Aby wprowadzić tę zmianę, używamy tej samej metody, która była używana można początkowo utworzyć indeks.
 Utwórz nową `CSSearchableItem` używa tego samego Identyfikatora, jak został użyty do utworzenia elementu, a następnie Dołącz nowy `CSSearchableItemAttributeSet` zawierających atrybuty zmodyfikowane:
 
-[ ![](corespotlight-images/corespotlight02.png "Aktualizowanie elementu — omówienie")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "Aktualizowanie elementu — omówienie")](corespotlight-images/corespotlight02.png#lightbox)
 
 Ten element jest zapisane wyszukiwanie indeksu, istniejący element zostaje zaktualizowany przy użyciu nowych informacji.
 

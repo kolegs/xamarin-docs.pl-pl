@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>Siatka
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) obsługuje rozmieszczanie widoków do wierszy i kolumn. Rozmiary proporcjonalne lub bezwzględną rozmiary można ustawić wierszy i kolumn. `Grid` Układu nie należy mylić z tradycyjnego tabel i nie jest przeznaczona do prezentowania danych tabelarycznych. `Grid` nie ma pojęcie wierszy, kolumny lub komórki formatowania. W przeciwieństwie do tabel HTML `Grid` służy wyłącznie do rozmieszczania zawartości.
 
-[ ![](grid-images/layouts-sml.png "Układy platformy Xamarin.Forms")](grid-images/layouts.png "układów platformy Xamarin.Forms")
+[![](grid-images/layouts-sml.png "Układy platformy Xamarin.Forms")](grid-images/layouts.png#lightbox "układów platformy Xamarin.Forms")
 
 W tym artykule opisano:
 
@@ -54,7 +54,7 @@ Wiersz i kolumnę informacje są przechowywane w `Grid`w `RowDefinitions`  &  `C
 - **Bezwzględny** &ndash; rozmiarów kolumn i wierszy z określonych, stałej wartości szerokości i wysokości. Określona jako wartość i `GridUnitType.Absolute` w języku C# i jako `#` w języku XAML, z `#` trwa żądaną wartość.
 
 > [!NOTE]
-> **Uwaga**: wartości szerokości kolumn są ustawione jako "*" Domyślnie w platformy Xamarin.Forms co zapewnia, że kolumna zostanie wypełnienia dostępnego miejsca.
+> Wartości szerokości kolumn są ustawione jako "*" Domyślnie w platformy Xamarin.Forms co zapewnia, że kolumna zostanie wypełnienia dostępnego miejsca.
 
 Należy wziąć pod uwagę aplikację, która potrzebuje trzy wiersze i dwie kolumny. Dolny wiersz musi być dokładnie 200px wysokość i górnym wierszu musi być dwa razy tak wysokie jako środkową wiersz. Kolumna po lewej stronie musi być dostatecznie szerokie, aby dopasować zawartość i prawa kolumna musi wypełnienia pozostałego miejsca.
 

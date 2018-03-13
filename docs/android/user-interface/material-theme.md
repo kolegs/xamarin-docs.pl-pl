@@ -7,18 +7,14 @@ ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: ba73e03d6bdeea64918e0232b2188bf8e3b65084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-theme"></a>Materiał motywu
-
-<a name="overview" />
-
-## <a name="overview"></a>Omówienie
 
 *Motyw materiału* jest styl interfejsu użytkownika, który określa wygląd i działanie widoków i działania, począwszy od systemu Android 5.0 (interfejs typu lizak). Motyw materiału jest wbudowana w Android 5.0, jest on używany przez system interfejsu użytkownika, a także przez aplikacje. Motyw materiału nie jest "kompozycji" w tym sensie opcji wyglądu całego systemu, które użytkownik może dynamicznie wybierz z menu ustawień. Zamiast motywu materiałów można traktować jako zestaw powiązanych wbudowane style podstawowej, które służy do dostosowywania wyglądu i działania aplikacji.
 
@@ -32,7 +28,7 @@ Android udostępnia trzy odmian materiału motywu:
 
 Przykłady te odmian motywu materiałów są wyświetlane tutaj:
 
-[![Zrzuty ekranu przykład motywu ciemny, motywu jasny i pasku akcji ciemny motyw](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png)
+[![Zrzuty ekranu przykład motywu ciemny, motywu jasny i pasku akcji ciemny motyw](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
 Z materiałów motywu, aby utworzyć własną kompozycję mogą pochodzić zastępowanie niektórych lub wszystkich atrybutów koloru. Na przykład można utworzyć motywu, która jest pochodną `Theme.Material.Light`, ale zastępuje kolor paska aplikacji, aby dopasować kolor oznakowanie. Styl możesz również poszczególnych widoków; na przykład można utworzyć stylu dla [CardView](~/android/user-interface/controls/card-view.md) ma więcej zaokrąglone narożniki i używa ciemniejszego kolor tła.
 
@@ -40,7 +36,6 @@ Można użyć jednego motyw dla całej aplikacji, lub można użyć różnych mo
 
 Motyw materiałów jest obsługiwane tylko w systemie Android 5.0 i nowszych, nie umożliwia on (lub niestandardowy motyw pochodną materiału motywu) motywu aplikacji dla we wcześniejszych wersjach systemu android. Jednak należy skonfigurować aplikację, aby użyć motywu materiałów na urządzeniach z systemem Android 5.0 i bezpiecznie wrócił do wcześniejszych motywu po uruchomieniu w starszych wersjach systemu android (zobacz [zgodności](#compatibility) sekcji tego artykułu, aby uzyskać szczegółowe informacje).
 
-<a name="requirements" />
 
 ## <a name="requirements"></a>Wymagania
 
@@ -54,13 +49,11 @@ Poniżej jest wymagany do korzystania z nowych funkcji systemu Android 5.0 mater
 
 Aby dowiedzieć się, jak skonfigurować projekt aplikacji systemu Android 5.0, zobacz [ustawienie się projekt systemu Android 5.0](~/android/platform/lollipop.md).
 
-<a name="builtinthemes" />
 
 ## <a name="using-the-built-in-themes"></a>Za pomocą wbudowanych motywów
 
 Najprostszym sposobem Użyj motywu materiałów jest skonfigurować aplikację do użycia wbudowanych motywu bez dostosowania. Jeśli nie chcesz jawnie skonfigurować motyw, domyślnie zostanie ustawiona do aplikacji `Theme.Material` (motyw ciemny). Jeśli aplikacja ma tylko jedno działanie, można skonfigurować motyw na poziomie aplikacji. Jeśli aplikacja ma wiele działań, można skonfigurować motyw na poziomie aplikacji, aby używa tego samego motywu we wszystkich działań, lub można przypisać różne kompozycje do różnych działań. W poniższych sekcjach opisano sposób konfigurowania kompozycje na poziomie aplikacji i na poziomie działania.
 
-<a name="themeanapp" />
 
 ### <a name="theming-an-application"></a>Tworzenie motywów aplikacji
 
@@ -88,7 +81,6 @@ Alternatywnie można skonfigurować aplikację `Theme` atrybutu w **AssemblyInfo
 
 Jeśli ustawiono motywu aplikacji `@android:style/Theme.Material.Light`, każde działanie w *moja_aplikacja* będzie wyświetlany `Theme.Material.Light`.
 
-<a name="activitytheme" />
 
 ### <a name="theming-an-activity"></a>Tworzenie motywów działania
 
@@ -125,11 +117,10 @@ Motyw materiału uwidacznia następujące atrybuty układu do dostosowania:
 
 Te obszary ekranu są oznaczone na poniższym diagramie:
 
-[ ![Diagram atrybutów i ich obszarów skojarzone ekranu](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png)
+[![Diagram atrybutów i ich obszarów skojarzone ekranu](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 Domyślnie `statusBarColor` ma ustawioną wartość `colorPrimaryDark`. Można ustawić `statusBarColor` do pełnego koloru, lub ustaw ją na `@android:color/transparent` być przezroczysty na pasku stanu. Pasek nawigacyjny może również być przezroczyste przez ustawienie `navigationBarColor` do `@android:color/transparent`.
 
-<a name="customapptheme" />
 
 ### <a name="creating-a-custom-app-theme"></a>Tworzenie niestandardowych aplikacji motywu
 
@@ -151,7 +142,7 @@ Można utworzyć motyw niestandardowych aplikacji przy tworzeniu i modyfikowaniu
 
 -   Utwórz **zasobów/wartości v21** folderu. W tym folderze utwórz **styles.xml** pliku:
 
-    [ ![Lokalizacja styles.xml w folderze zasobów/wartości 21.xml](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png)
+    [![Lokalizacja styles.xml w folderze zasobów/wartości 21.xml](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     Należy pamiętać, że **zasobów/wartości v21** jest specyficzna dla systemu Android 5.0 &ndash; starszych wersji systemu android nie będzie odczytywać pliki w tym folderze.
 
@@ -169,7 +160,7 @@ Można utworzyć motyw niestandardowych aplikacji przy tworzeniu i modyfikowaniu
 
 -   W tym momencie aplikacji, która używa *MyCustomTheme* wyświetli zasobów `Theme.Material.Light` motyw bez dostosowań:
 
-    [ ![Wygląd motyw niestandardowy przed dostosowania](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png)
+    [![Wygląd motyw niestandardowy przed dostosowania](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 -   Dodawanie dostosowań kolorów do **styles.xml** przez zdefiniowanie kolorów układu atrybutów, które chcesz zmienić. Na przykład, aby zmienić kolor paska aplikacji, aby `my_blue` i zmienić kolor kontrolek interfejsu użytkownika do `my_purple`, Dodaj zastąpienie kolor **styles.xml** odwołujące się do zasobów kolor skonfigurowane w **colors.xml**:
 
@@ -188,7 +179,7 @@ Można utworzyć motyw niestandardowych aplikacji przy tworzeniu i modyfikowaniu
 
 Wprowadzone zmiany w miejscu aplikacji, która używa *MyCustomTheme* wyświetli kolor paska aplikacji w `my_blue` i formantów interfejsu użytkownika w `my_purple`, ale użyj `Theme.Material.Light` wszędzie inny schemat kolorów:
 
-[ ![Motyw niestandardowy wygląd po dostosowania](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png)
+[![Motyw niestandardowy wygląd po dostosowania](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 W tym przykładzie *MyCustomTheme* pożycza kolory z `Theme.Material.Light` tła kolor, pasek stanu i kolory tekstu, ale zmienia kolor na pasku aplikacji, aby `my_blue` i ustawia kolor przycisku radiowego `my_purple`.
 
@@ -225,11 +216,10 @@ Do określania stylu poszczególnych widoku, wykonaj następujące kroki:
 
 Poniższy zrzut ekranu zawiera przykład domyślnych `CardView` (wyświetlana po lewej stronie) w porównaniu do `CardView` który ma zostać stylem niestandardowego `CardView.MyBlue` motywu (wyświetlane po prawej stronie):
 
-[ ![Przykłady domyślnej CardView i CardView niestandardowe](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png)
+[![Przykłady domyślnej CardView i CardView niestandardowe](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 W tym przykładzie niestandardowego `CardView` jest wyświetlany kolor tła `my_blue` i promień narożnika 18dp.
 
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Zgodność
 
@@ -287,7 +277,7 @@ W tym artykule wprowadzono nowy motyw materiałów użytkownika interfejsu styl 
 - [ThemeSwitcher (przykład)](https://developer.xamarin.com/samples/monodroid/android5.0/ThemeSwitcher)
 - [Wprowadzenie do interfejs typu lizak](~/android/platform/lollipop.md)
 - [CardView](~/android/user-interface/controls/card-view.md)
-- [Alternatywne zasobów](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
+- [Zasoby alternatywne](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
 - [Android L Developer Preview](http://developer.android.com/preview/index.html)
 - [Materiał projektu](http://developer.android.com/preview/material/index.html)
 - [Zasady materiału projektowania](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

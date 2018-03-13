@@ -4,14 +4,15 @@ description: "Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Sk
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>Dane ścieżki SVG
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 Ścieżka wypełnia obszaru roboczego, który wygląda bardziej przystępne wyświetlony w trybie krajobraz:
 
-[![](path-data-images/pathdatahello-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")](path-data-images/pathdatahello-large.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")
+[![](path-data-images/pathdatahello-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")](path-data-images/pathdatahello-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")
 
 **Ścieżki danych Cat** przypomina strony. Obiekt ścieżki i paint zarówno zdefiniowano jako pola w [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasy:
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![](path-data-images/pathdatacat-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")](path-data-images/pathdatacat-large.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")
+[![](path-data-images/pathdatacat-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")](path-data-images/pathdatacat-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")
 
 Zwykle, gdy `SKPath` obiektu jest zdefiniowana jako pole, konturów ścieżka musi być zdefiniowana w konstruktorze lub innej metody. Podczas korzystania z danych ścieżki SVG, jednak przedstawiono można określić wyłącznie w definicji pola ścieżka.
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 Coś specjalne odbywa się z drugiej strony, jednak. Ponieważ zegar jest aktualizowany co 16 milisekund `Millisecond` właściwość `DateTime` wartość potencjalnie może być używana do animowania odchylenia drugi strony zamiast, który umożliwia przeniesienie w odrębny przechodzi z drugiej na sekundę. Ale ten kod nie zezwala na ruch być smooth. Zamiast tego używa platformy Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) i [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animacji łatwiejszym funkcje dla innego rodzaju ruchu. Używane do przenoszenia w jerkier sposób & #x 2014; spowodować tych funkcji sterowania tempem zmian ściąganie wstecz trochę przed powoduje przeniesienie, a następnie nieco nadmiernie premia miejsca docelowego, efekt to Niestety nie można odtworzyć te statycznych zrzuty ekranu:
 
-[![](path-data-images/prettyanalogclock-small.png "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")](path-data-images/prettyanalogclock-large.png "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")
+[![](path-data-images/prettyanalogclock-small.png "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")](path-data-images/prettyanalogclock-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")
 
 
 ## <a name="related-links"></a>Linki pokrewne

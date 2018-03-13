@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>Pasek narzędzi
 
 _Pasek narzędzi jest składnik paska akcji, który zapewnia większą elastyczność niż na pasku akcji domyślnej: może być umieszczony w dowolnym miejscu aplikacji, można zmienić jego rozmiaru i może używać schemat kolorów, który różni się od aplikacji motywu. Ponadto każdy ekran aplikacji może mieć wiele pasków narzędzi._
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>Omówienie
 
@@ -27,7 +25,7 @@ Element projektu klucza działalności Android jest *pasku akcji*. Na pasku akcj
 
 `Toolbar` Widget (wprowadzona w systemie Android 5.0 interfejs typu lizak) można traktować jako generalizacji interfejsu paska akcji &ndash; ma zastąpić na pasku akcji. `Toolbar` Można używać w dowolnym miejscu układ aplikacji i jest znacznie więcej można dostosowywać niż pasku akcji. Poniższy zrzut ekranu przedstawia dostosowywane `Toolbar` przykład utworzone w tym przewodniku: 
 
-[![Zrzut ekranu paska narzędzi z edycji, Zapisz i przepełnienie elementów menu](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![Zrzut ekranu paska narzędzi z edycji, Zapisz i przepełnienie elementów menu](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 Istnieje kilka istotnych różnic między `Toolbar` i na pasku akcji: 
 
@@ -72,7 +70,6 @@ W tym przewodniku dotyczą najbardziej często używanych `Toolbar` scenariusze:
 -   Przy użyciu **biblioteki obsługi systemu Android w wersji 7 AppCompat** biblioteki (nazywane *AppCompat* w dalszej części tego przewodnika) do wdrożenia `Toolbar` we wcześniejszych wersjach systemu android. 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>Wymagania
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie
 
@@ -24,7 +24,7 @@ Interfejs użytkownika aplikacji systemu iOS przypomina sklepu — aplikacji zwy
 
 Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia: 
 
-[ ![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png#lightbox)
 
 Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio, jednak warto podstawową wiedzę pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i działa z programowanie interfejsu użytkownika tylko do kodu.
 
@@ -32,7 +32,7 @@ Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla 
 
 Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia: 
 
-[ ![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png#lightbox)
 
 
 Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio dla komputerów Mac, jednak warto podstawową wiedzę pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i działa z programowanie interfejsu użytkownika tylko do kodu.
@@ -49,13 +49,13 @@ Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla 
 Najpierw utwórz projekt dla systemu iOS w programie Visual Studio przy użyciu telefonów iPhone **pusty projekt** szablonu, pokazano poniżej, które będziemy rozszerzać można dodać widoków i kontrolerów.
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "Okno dialogowe nowego projektu")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "Okno dialogowe nowego projektu")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 Pusty szablon projektu dodaje 4 plików do projektu:
 
 
-[ ![](ios-code-only-images/empty-project.png "Pliki projektu")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "Pliki projektu")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **AppDelegate.cs** — zawiera `UIApplicationDelegate` podklasy, `AppDelegate` , które jest używane do obsługi zdarzeń aplikacji z systemem iOS. W oknie aplikacji jest tworzony w `AppDelegate`w `FinishedLaunching` metody.
@@ -76,16 +76,16 @@ Poniższe kroki prowadzące przez usunięcie scenorysu z aplikacji:
 
 1. Szablon pojedynczego widoku aplikacji do tworzenia nowego projektu systemu iOS:
     
-    [ ![](ios-code-only-images/single-view-app.png "Użyj szablonu pojedynczego widoku aplikacji")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "Użyj szablonu pojedynczego widoku aplikacji")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. Usuń `Main.Storyboard` i `ViewController.cs` plików. Czy **nie** usunąć `LaunchScreen.Storyboard`. Kontroler widoku powinny być usunąć, ponieważ jest on CodeBehind dla kontrolera widoku, która jest tworzona w scenorysu:
 1. Upewnij się wybrać **usunąć** w wyskakującym oknie dialogowym:
     
-    [ ![](ios-code-only-images/delete.png "Przycisk Usuń w wyskakującym oknie dialogowym")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "Przycisk Usuń w wyskakującym oknie dialogowym")](ios-code-only-images/delete.png#lightbox)
 
 1. W pliku Info.plist, należy usunąć informacje dotyczące wewnątrz **informacji o wdrożeniu > Main interfejsu** opcji:
     
-    [ ![](ios-code-only-images/main-interface.png "Usuń informacje wewnątrz opcja interfejsu Main")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "Usuń informacje wewnątrz opcja interfejsu Main")](ios-code-only-images/main-interface.png#lightbox)
 
 1. Na koniec należy dodać następujący kod, aby Twoje `FinishedLaunching` metody w klasie AppDelegate:
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Każdy kontroler ma skojarzone widoku, który jest dostępny z `View` właściwości. Powyższy kod zmiany widoku `BackgroundColor` właściwości `UIColor.LightGray` , dzięki czemu będzie ona widoczna, jak pokazano poniżej:
 
- [ ![](ios-code-only-images/image1.png "Tło widoku jest widoczny szary lekkich")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "Tło widoku jest widoczny szary lekkich")](ios-code-only-images/image1.png#lightbox)
 
 Firma Microsoft może ustawić dowolną `UIViewController` podklasy jako `RootViewController` w ten sposób również tym kontrolerów z UIKit, a także tych, możemy nad zapisu. Na przykład poniższy kod dodaje `UINavigationController` jako `RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Daje to kontrolera zagnieżdżone w obrębie kontrolera nawigacji, jak pokazano poniżej:
 
- [ ![](ios-code-only-images/image2.png "Kontroler zagnieżdżone w obrębie kontrolera nawigacji")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "Kontroler zagnieżdżone w obrębie kontrolera nawigacji")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>Tworzenie kontrolera widoku
 
@@ -224,11 +224,11 @@ Dodaj nową klasę o nazwie `CustomViewController` w sposób przedstawiony poni�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>Podczas inicjowania widoku
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 Teraz podczas ładowania aplikacji `CustomViewController` jest ładowany w kontrolerze nawigacji:
 
- [ ![](ios-code-only-images/customvc.png "Załadowano CustomViewController wewnątrz kontrolera nawigacji")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "Załadowano CustomViewController wewnątrz kontrolera nawigacji")](ios-code-only-images/customvc.png#lightbox)
  
 Kliknięcie przycisku, będzie _wypychania_ nowego kontrolera widoku na stosie nawigacji:
 
-[ ![](ios-code-only-images/customvca.png "Nowy kontroler widok wypchnięta na stosie nawigacji")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "Nowy kontroler widok wypchnięta na stosie nawigacji")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>Tworzenie widoku hierarchii
 
@@ -352,7 +354,7 @@ Gdy utworzymy `UITextField`, możemy ustawić `Frame` właściwości, aby zdefin
 
 Aplikację z `UITextField` uwzględnione są wyświetlane poniżej:
 
- [ ![](ios-code-only-images/image4.png "Aplikację z UITextField włączone")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "Aplikację z UITextField włączone")](ios-code-only-images/image4.png#lightbox)
 
 Można dodać `UITextField` hasła w podobny sposób, tylko w tej chwili ustawiliśmy `SecureTextEntry` właściwości na wartość true, jak pokazano poniżej:
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 Ustawienie `SecureTextEntry = true` ukrywa tekst wprowadzony w `UITextField` przez użytkownika, jak pokazano poniżej:
 
- [ ![](ios-code-only-images/image4a.png "Ustawienie SecureTextEntry wartość true powoduje ukrycie tekst wprowadzony przez użytkownika")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png "Ustawienie SecureTextEntry wartość true powoduje ukrycie tekst wprowadzony przez użytkownika")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Dodawanie przycisku
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 Dzięki temu w miejscu ekran logowania wygląda jak poniżej:
 
- [ ![](ios-code-only-images/image5.png "Ekran logowania")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "Ekran logowania")](ios-code-only-images/image5.png#lightbox)
 
 W przeciwieństwie do poprzednich wersji systemu IOS, domyślne tło przycisku jest niewidoczny. Zmienianie przycisku `BackgroundColor` zmiany właściwości to:
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 Wprowadzone zmiany widok będzie wyglądać następująco:
 
-[ ![](ios-code-only-images/image6.png "Uruchom przykład widoku")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "Uruchom przykład widoku")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Dodawanie wielu widoków do widoku hierarchii
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 Poniżej przedstawiono nawigacji:
 
-[ ![](ios-code-only-images/navigation.png "Na tym wykresie przedstawiono nawigacji")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "Na tym wykresie przedstawiono nawigacji")](ios-code-only-images/navigation.png#lightbox)
 
 Należy zauważyć, że domyślnie, korzystając z kontrolera nawigacji iOS daje aplikacji paska nawigacyjnego i przycisk Wstecz, aby umożliwić powrót przez stos.
 
@@ -477,7 +479,7 @@ Jednak nie będzie działać w przypadku widoku jest iterowane dla `UIView` jako
 
 Jeśli obracania urządzenia na poziomą formantów rozmiary nie są zmieniane, jak pokazano w poniższym zrzucie ekranu:
 
- [ ![](ios-code-only-images/image7.png "Jeśli użytkownik obraca urządzenia na poziomą, formantów nie zmieniać rozmiar odpowiednio")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "Jeśli użytkownik obraca urządzenia na poziomą, formantów nie zmieniać rozmiar odpowiednio")](ios-code-only-images/image7.png#lightbox)
 
 Jest jednym ze sposobów to naprawić przez ustawienie `AutoresizingMask` właściwości w każdym widoku. W takim przypadku chcemy formanty do rozciągania w poziomie, dlatego ustawimy usługę· każdego `AutoresizingMask`. Poniższy przykład dotyczy programu `usernameField`, ale takie same musi odnosić się do każdego gadżet w hierarchii widoku.
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 Teraz podczas obracania możemy urządzenie lub symulator, wszystko, co zostanie rozciągnięty w celu wypełnienia dodatkowe miejsce w sposób przedstawiony poniżej:
 
- [ ![](ios-code-only-images/image8.png "Wszystkie kontrolki rozciągają się, aby wypełnić dodatkowa miejsce na dysku")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "Wszystkie kontrolki rozciągają się, aby wypełnić dodatkowa miejsce na dysku")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Tworzenie niestandardowych widoków
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 Teraz gdy firma Microsoft może uruchomić aplikację, a następnie naciśnij przycisk Prześlij, zostanie wyświetlony nowy widok z kółkiem:
 
- [ ![](ios-code-only-images/circles.png "Zostanie wyświetlony nowy widok z okręgu")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "Zostanie wyświetlony nowy widok z okręgu")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>Tworzenie ekranu uruchamiania
 

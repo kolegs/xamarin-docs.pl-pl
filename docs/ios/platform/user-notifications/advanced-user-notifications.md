@@ -3,16 +3,16 @@ title: "Powiadomienia użytkowników zaawansowanych"
 description: "Ten artykuł przedstawia bardziej przyjrzeć nowej struktury powiadomienia użytkowników oraz sposób w pełni korzystać z nich w aplikacji platformy Xamarin.iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4e1ff652-28f0-4566-b383-9d12664401a4
+ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6408f3b45f93413fa814e410f07e7b71179b7338
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="advanced-user-notifications"></a>Powiadomienia użytkowników zaawansowanych
 
@@ -81,7 +81,7 @@ Dla zdalnego powiadomienie ma być zmodyfikowana przez rozszerzenie usługi jego
 
 Spójrz na poniższe przebieg procesu:
 
-[ ![](advanced-user-notifications-images/extension02.png "Dodawanie załączników nośnika procesu")](advanced-user-notifications-images/extension02.png)
+[![](advanced-user-notifications-images/extension02.png "Dodawanie załączników nośnika procesu")](advanced-user-notifications-images/extension02.png#lightbox)
 
 Po zdalnego powiadomień jest dostarczane do urządzenia (za pośrednictwem usługi APN), rozszerzenie usługi może pobierać wymagane obrazu za pomocą jakichkolwiek metod żądanego (takie jak `NSURLSession`) i po otrzymaniu obrazu można modyfikować zawartość powiadomień i wyświetlania go użytkownikowi.
 
@@ -157,7 +157,7 @@ Do obsługi interakcji z użytkownikiem z powiadomienie użytkownika, akcje nies
 
 Gdy jest wyświetlone powiadomienie użytkownika o niestandardowego interfejsu użytkownika, będzie mieć następujące elementy:
 
-[ ![](advanced-user-notifications-images/customui01.png "Powiadomienie użytkownika o elementy niestandardowego interfejsu użytkownika")](advanced-user-notifications-images/customui01.png)
+[![](advanced-user-notifications-images/customui01.png "Powiadomienie użytkownika o elementy niestandardowego interfejsu użytkownika")](advanced-user-notifications-images/customui01.png#lightbox)
 
 Jeśli użytkownik wchodzi w interakcję z akcje niestandardowe (przedstawione poniżej powiadomienie), interfejs użytkownika może zostać zaktualizowana, aby przekazać opinię użytkownika jako co się stało po wywołaniu one danej akcji.
 
@@ -171,13 +171,13 @@ Aby zaimplementować interfejs użytkownika powiadomienie użytkownika niestanda
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **konsoli rozwiązania** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **rozszerzenia zawartości powiadomienia** i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](advanced-user-notifications-images/notify01.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01.png)
+    [![](advanced-user-notifications-images/notify01.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **dalej** przycisk: 
 
-    [ ![](advanced-user-notifications-images/notify02.png "Wprowadź nazwę rozszerzenia")](advanced-user-notifications-images/notify02.png)
+    [![](advanced-user-notifications-images/notify02.png "Wprowadź nazwę rozszerzenia")](advanced-user-notifications-images/notify02.png#lightbox)
 5. Dostosuj **Nazwa projektu** i/lub **Nazwa rozwiązania** wymagane, a następnie kliknij przycisk **Utwórz** przycisk: 
 
-    [ ![](advanced-user-notifications-images/notify03.png "Zmień nazwę projektu i/lub nazwa rozwiązania")](advanced-user-notifications-images/notify03.png)
+    [![](advanced-user-notifications-images/notify03.png "Zmień nazwę projektu i/lub nazwa rozwiązania")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -185,7 +185,7 @@ Aby zaimplementować interfejs użytkownika powiadomienie użytkownika niestanda
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **rozszerzenia zawartości powiadomienia**: 
 
-    [ ![](advanced-user-notifications-images/notify01w.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01w.png)
+    [![](advanced-user-notifications-images/notify01w.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01w.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **OK** przycisku.
 
 -----
@@ -254,7 +254,7 @@ System musi o sposobach znajdowania na specyficznych kategorii, który odpowiada
 3. Rozwiń węzeł `NSExtension` klucza.
 4. Dodaj `UNNotificationExtensionCategory` klucza jako typ **ciąg** z wartością rozszerzenia należy do kategorii (w tym przykładzie "zaproszenia zdarzeń): 
 
-    [ ![](advanced-user-notifications-images/customui02.png "Dodaj klucz UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02.png)
+    [![](advanced-user-notifications-images/customui02.png "Dodaj klucz UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02.png#lightbox)
 5. Zapisz zmiany.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -263,7 +263,7 @@ System musi o sposobach znajdowania na specyficznych kategorii, który odpowiada
 3. Rozwiń węzeł `NSExtension` klucza.
 4. Dodaj `UNNotificationExtensionCategory` klucza jako typ **ciąg** z wartością rozszerzenia należy do kategorii (w tym przykładzie "zaproszenia zdarzeń): 
 
-    [ ![](advanced-user-notifications-images/customui02w.png "Dodaj klucz UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png)
+    [![](advanced-user-notifications-images/customui02w.png "Dodaj klucz UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. Zapisz zmiany.
 
 -----
@@ -272,11 +272,11 @@ Kategorie rozszerzenia zawartości powiadomienia (`UNNotificationExtensionCatego
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui03.png "Kategorie zawartości rozszerzenia powiadomień")](advanced-user-notifications-images/customui03.png)
+[![](advanced-user-notifications-images/customui03.png "Kategorie zawartości rozszerzenia powiadomień")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui03w.png "Kategorie zawartości rozszerzenia powiadomień")](advanced-user-notifications-images/customui03w.png)
+[![](advanced-user-notifications-images/customui03w.png "Kategorie zawartości rozszerzenia powiadomień")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ W sytuacji, gdy niestandardowego UI powiadomień będą wyświetlane tę samą z
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui04.png "Znajdowanie informacji domyślnych")](advanced-user-notifications-images/customui04.png)
+[![](advanced-user-notifications-images/customui04.png "Znajdowanie informacji domyślnych")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui04w.png "Znajdowanie informacji domyślnych")](advanced-user-notifications-images/customui04w.png)
+[![](advanced-user-notifications-images/customui04w.png "Znajdowanie informacji domyślnych")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
@@ -367,11 +367,11 @@ Aby wyeliminować ten efekt, należy edytować `Info.plist` pliku dla rozszerzen
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui05.png "Klucz UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png)
+[![](advanced-user-notifications-images/customui05.png "Klucz UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui05w.png "Klucz UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png)
+[![](advanced-user-notifications-images/customui05w.png "Klucz UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 

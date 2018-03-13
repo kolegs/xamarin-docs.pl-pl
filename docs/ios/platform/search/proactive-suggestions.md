@@ -3,16 +3,16 @@ title: Wprowadzenie do aktywnego sugestie
 description: "W tym artykule pokazano, jak użyj sugestii aktywnego w aplikacji platformy Xamarin.iOS zaangażowania dysku przez system aktywnego automatycznie przekazać pomocne informacje do użytkownika."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Wprowadzenie do aktywnego sugestie
 
@@ -63,7 +63,7 @@ Umożliwia aplikacji kontaktów (i powiązane informacje kontaktowe) są wyświe
 
 ## <a name="ride-sharing-based-suggestions"></a>Udostępnianie oparte na sugestie, które wywołują
 
-Jeśli korzysta z aplikacji przez udostępnianie jazdy [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) interfejsu API, iOS 10 przedstawi go jako opcja w przełącznik aplikacji w czasie, gdy użytkownik prawdopodobnie mają jazdy. Aplikacja również musi być zarejestrowana jako aplikację sharing jazdy określając `MKDirectionsModeRideShare` dla [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33) klucza w jego `Info.plist` pliku.
+Jeśli korzysta z aplikacji przez udostępnianie jazdy [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) interfejsu API, iOS 10 przedstawi go jako opcja w przełącznik aplikacji w czasie, gdy użytkownik prawdopodobnie mają jazdy. Aplikacja również musi być zarejestrowana jako aplikację sharing jazdy określając `MKDirectionsModeRideShare` dla [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) klucza w jego `Info.plist` pliku.
 
 Jeśli aplikacja obsługuje tylko innych udostępniania, sugestię systemu może rozpoczynać się od *"Get jazdy do..."*, jeśli są obsługiwane inne rodzaje kierunek routingu (na przykład Walking lub roweru), będą używane przez system *"Get instrukcje..."*
 
@@ -95,7 +95,7 @@ Wszystkie te funkcje mają wspólną rzecz, wszyscy korzystają z `NSUserActivit
 
 Jak wspomniano powyżej, `NSUserActivity` pomaga zrozumieć, jakie informacje na ekranie użytkownika aktualnie jest praca z systemu. `NSUserActivity` jest lekki buforowania informacji o stanie mechanizm przechwytywania aktywności użytkownika w trakcie nawigowania aplikacji. Na przykład przejrzenie aplikacji restauracji:
 
-[ ![](proactive-suggestions-images/activity02.png "Stan lekki NSUserActivity mechanizm buforowania")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Stan lekki NSUserActivity mechanizm buforowania")](proactive-suggestions-images/activity02.png#lightbox)
 
 Następujące zależności między:
 
@@ -105,7 +105,7 @@ Następujące zależności między:
 
 Wykonaj bliższe spojrzenie na ekranie ostatnich:
 
-[ ![](proactive-suggestions-images/activity03.png "Szczegóły NSUserActivity")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "Szczegóły NSUserActivity")](proactive-suggestions-images/activity03.png#lightbox)
 
 W tym miejscu aplikacji jest utworzenie `NSUserActivity` i zostały wprowadzone informacje, aby odtworzyć stan później. Aplikacja była dostępna również niektóre metadane, takie jak nazwa i adres lokalizacji. Z tego działania utworzone aplikacji pozwala dowiedzieć się, że reprezentuje jej bieżący stan użytkownika systemu iOS.
 
@@ -324,7 +324,7 @@ Skontaktuj się z pomocą interakcji są implementowane za pomocą aplikacji `NS
 
 Spójrz na jak przekazać interakcji aplikacji:
 
-[ ![](proactive-suggestions-images/activity04.png "Omówienie rezygnacji interakcji")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "Omówienie rezygnacji interakcji")](proactive-suggestions-images/activity04.png#lightbox)
 
 Tworzy aplikację `INInteraction` obiekt, który zawiera **zamiar** (`INIntent`), **uczestników** i **metadanych**. **Zamiar** reprezentuje akcję użytkownika, takie jak wywołania wideo lub wysyłanie wiadomości SMS. **Uczestników** dołączyć osobom otrzymania powiadomienia. **Metadanych** definiuje dodatkowych informacji, takich jak pomyślnie wysyłania komunikatu itp.
 
@@ -334,7 +334,7 @@ Gdy interakcji jest całkowicie wypełnione, wywołaj `DonateInteraction` metod�
 
 Gdy użytkownik wchodzi w interakcję z aplikacją z karty kontaktu, interakcji pobiera powiązany z `NSUserActivity`, który jest następnie używany do uruchamiania aplikacji:
 
-[ ![](proactive-suggestions-images/activity05.png "Interakcja pobiera powiązany z NSUserActivity, który służy do uruchamiania aplikacji")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "Interakcja pobiera powiązany z NSUserActivity, który służy do uruchamiania aplikacji")](proactive-suggestions-images/activity05.png#lightbox)
 
 Spójrz na poniższym przykładzie zamiar wysłać komunikat:
 
@@ -449,7 +449,7 @@ Niektóre tła Schema.org:
 - Istnieje ponad 500 schematy reprezentujących różne dostępne pojęcia.
 - Wdrażając go w witrynie internetowej, deweloper może uzyskać niektóre korzyści wynikające ze stosowania `NSUserActivity` w natywnej aplikacji.
 
-Schematy ułożone w drzewie, takich jak struktury, w którym określonych typów takich jak *restauracja*, dziedziczyć typy bardziej ogólne, takie jak *firm*. Aby uzyskać więcej informacji, zobacz [Schema.org](#http://schema.org).
+Schematy ułożone w drzewie, takich jak struktury, w którym określonych typów takich jak *restauracja*, dziedziczyć typy bardziej ogólne, takie jak *firm*. Aby uzyskać więcej informacji, zobacz [Schema.org](http://schema.org).
 
 Na przykład, jeśli strona sieci web zawiera następujące dane:
 

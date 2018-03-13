@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>Formanty niestandardowe transportu wideo
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 Ponieważ `AutoPlay` ustawiono `false` w **CustomTransport.xaml** pliku, konieczne będzie naciśnij **odtwarzania** przycisk włączenie staje się rozpocząć wideo. Przyciski są zdefiniowane tak, aby ich odpowiedniki tekstu towarzyszy znaków Unicode opisanych wyżej. Przyciski ma spójny wygląd na każdej platformie, podczas odtwarzania wideo:
 
-[![Odtwarzanie niestandardowych transportu](custom-transport-images/customtransportplaying-small.png "odtwarzanie niestandardowych transportu")](custom-transport-images/customtransportplaying-large.png "odtwarzanie transportu niestandardowych")
+[![Odtwarzanie niestandardowych transportu](custom-transport-images/customtransportplaying-small.png "odtwarzanie niestandardowych transportu")](custom-transport-images/customtransportplaying-large.png#lightbox "odtwarzanie transportu niestandardowych")
 
 Jednak w systemach Android i platformy uniwersalnej systemu Windows **odtwarzanie** przycisk wygląda bardzo różnią się, gdy wideo jest wstrzymane:
 
-[![Niestandardowe transportu wstrzymana](custom-transport-images/customtransportpaused-small.png "wstrzymana niestandardowych transportu")](custom-transport-images/customtransportpaused-large.png "wstrzymana transportu niestandardowych")
+[![Niestandardowe transportu wstrzymana](custom-transport-images/customtransportpaused-small.png "wstrzymana niestandardowych transportu")](custom-transport-images/customtransportpaused-large.png#lightbox "wstrzymana transportu niestandardowych")
 
 W aplikacji produkcyjnej prawdopodobnie należy do wykorzystania własnych obrazów mapy bitowej przycisków do osiągnięcia jednolitość visual.
 

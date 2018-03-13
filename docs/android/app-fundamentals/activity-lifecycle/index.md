@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>Cykl życia działania
 
@@ -44,7 +44,7 @@ Cykl życia działanie systemu Android obejmuje zbiór metod w klasie działania
 
 System operacyjny Android rozstrzyga o kolejności przetwarzania działania na podstawie ich stanu. Dzięki temu można zidentyfikować działań, które nie są już w użyciu, dzięki czemu systemu operacyjnego w celu odzyskania pamięci i zasobów systemu Android. Na poniższym diagramie przedstawiono stany, które działania można przejść przez przez jego okres istnienia:
 
-[ ![Diagram stanów działania](images/image1-sml.png)](images/image1.png)
+[![Diagram stanów działania](images/image1-sml.png)](images/image1.png#lightbox)
 
 Te stany można podzielić na 4 głównej grupy w następujący sposób:
 
@@ -69,7 +69,7 @@ Omówione zostaną następujące czynności to później w [Zarządzanie stanu w
 
 Zestaw SDK systemu Android i przez rozszerzenie, Xamarin.Android framework dostarczają zaawansowanego modelu zarządzaniu stanem działań w ramach aplikacji. Podczas zmiany stanu działania działania jest powiadamiany przez system operacyjny, który wywołuje metody określonej dla danego działania. Na poniższym diagramie przedstawiono te metody w stosunku do cyklu życia działania:
 
-[ ![Schemat blokowy cyklu życia działania](images/image2-sml.png)](images/image2.png)
+[![Schemat blokowy cyklu życia działania](images/image2-sml.png)](images/image2.png#lightbox)
 
 Deweloper może obsługiwać zmiany stanu przez zastąpienie tych metod w ramach działania. Należy jednak pamiętać, że wszystkie metody cyklu życia są wywoływane w wątku interfejsu użytkownika i blokuje systemu operacyjnego z wykonaniem następnego elementu pracy interfejsu użytkownika, takie jak ukrywanie bieżące działanie wyświetlanie nowego działania itd. Tak kod w tych metod powinien być zwięzły możliwe aplikacji możesz również wykonywania. Wszystkie długotrwałe zadania powinna zostać wykonana na wątku w tle.
 
@@ -205,7 +205,7 @@ Next — metoda cyklu życia wywoływana po wykonaniu `OnRestart` będzie `OnSta
 
 Wiele urządzeń z systemem Android ma dwie różne przyciski: przycisk "Wstecz", a przycisk "Home". Na przykład widać na poniższym zrzucie ekranu systemu Android to 4.0.3:
 
-[ ![Strona główna przycisków Wstecz i](images/image4-sml.png)](images/image4.png)
+[![Strona główna przycisków Wstecz i](images/image4-sml.png)](images/image4.png#lightbox)
 
 Istnieje niewielka różnica między przyciskami, mimo że pojawią się one mieć ten sam efekt umieszczania aplikacji w tle. Gdy użytkownik kliknie przycisk Wstecz, ich informuje Android czy są one wykonywane działania. Android zniszczy działania. Z kolei, gdy użytkownik kliknie przycisk Strona główna działania jest jedynie umieszczone w tle &ndash; Android nie zostanie zakończenia działania.
 
@@ -225,7 +225,6 @@ To jest zapisany stan nazywa się stan wystąpienia. Android zawiera trzy opcje 
 
 W tym przewodniku dotyczą dwóch pierwszych opcji.
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>Stan pakietu
@@ -241,7 +240,7 @@ Działanie udostępnia metody do zapisywania i pobierania stanu wystąpienia w p
 
 Na poniższym diagramie przedstawiono, jak są używane następujące metody:
 
-[ ![Schemat blokowy stanów pakietu](images/image3-sml.png)](images/image3.png)
+[![Schemat blokowy stanów pakietu](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 Powyższy kod zwiększa liczbą całkowitą o nazwie `c` podczas przycisk o nazwie `incrementCounter` kliknięciu wyświetlania wyniku w `TextView` o nazwie `output`. W przypadku zmiany konfiguracji — na przykład podczas obracania urządzenia — powyżej kodu spowoduje utratę wartość `c` ponieważ `bundle` będzie `null`, jak pokazano na poniższej ilustracji:
 
-[ ![Ekranie nie są wyświetlane poprzedniej wartości](images/07-sml.png)](images/07.png)
+[![Ekranie nie są wyświetlane poprzedniej wartości](images/07-sml.png)](images/07.png#lightbox)
 
 Aby zachować wartość `c` w tym przykładzie działanie można zastąpić `OnSaveInstanceState`, zapisywanie wartości w pakiecie, jak pokazano poniżej:
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **Uwaga:** jest ważne, aby zawsze wywołania Podstawowa implementacja `OnSaveInstanceState` , dzięki czemu można zapisać stanu hierarchii widoku.
+> Jest ważne, aby zawsze wywołania Podstawowa implementacja `OnSaveInstanceState` , dzięki czemu można zapisać stanu hierarchii widoku.
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>Stan widoku
 
@@ -312,7 +310,7 @@ Zastępowanie `OnSaveInstanceState` jest odpowiedni mechanizm zapisywania danych
 
 Ponieważ `EditText` formant ma `id` przypisany, gdy użytkownik wprowadza pewne dane i obraca się urządzenie, dane są nadal wyświetlane, jak pokazano poniżej:
 
-[ ![Dane zostaną zachowane w trybie krajobraz](images/08-sml.png)](images/08.png)
+[![Dane zostaną zachowane w trybie krajobraz](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ Ta metoda istnieje udzielać elastycznością wokół stan ma zostać przywróco
 Przykład Zapisywanie stanu przy użyciu `Bundle`, zapoznaj się [wskazówki — stan zapisywania działania](saving-state.md).
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>Ograniczenia pakietu
 
 Mimo że `OnSaveInstanceState` umożliwia łatwe do zapisania danych przejściowa ma następujące ograniczenia:
@@ -348,7 +344,6 @@ Mimo że `OnSaveInstanceState` umożliwia łatwe do zapisania danych przejściow
 
 Stan pakietu jest przydatne w przypadku prostego danych, który nie używa dużej ilości pamięci, podczas gdy *dane wystąpienia-konfiguracji* jest przydatne w przypadku bardziej skomplikowanych danych lub danych, która jest kosztowna pobrać, na przykład wywołanie usługi sieci web lub zbyt skomplikowany, zapytanie bazy danych. Dane wystąpienia konfiguracji nie pobiera zapisane w obiekcie, zgodnie z potrzebami. Następna sekcja zawiera wprowadzenie `OnRetainNonConfigurationInstance` sposób zachowania bardziej złożone typy danych za pośrednictwem zmiany konfiguracji.
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>Przechowywanie danych złożonych
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 Ten kod pobiera wyniki z sieci web w formacie JSON, analizuje je, a następnie wyników na liście, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Wyniki wyświetlane na ekranie](images/06-sml.png)](images/06.png)
+[![Wyniki wyświetlane na ekranie](images/06-sml.png)](images/06.png#lightbox)
 
 Po zmianie konfiguracji — na przykład podczas obracania urządzenia - kod powtarza proces. Do ponownego wykorzystania pierwotnie pobrany wyników i nie powodują wywołania zbędne, nadmiarowe sieci, możemy użyć `OnRetainNonconfigurationInstance` zapisać wyniki, jak pokazano poniżej:
 

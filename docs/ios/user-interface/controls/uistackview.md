@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4555906512ecc36e3387f1b2483753e7f50a51ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stack-view"></a>Widok stosu
 
@@ -25,11 +26,15 @@ Formant widoku stosu (`UIStackView`) korzysta z możliwości automatycznego ukł
 
 Układ wszystkich widoków podrzędnych dołączone do widoku stosu są zarządzane przez go na podstawie właściwości developer zdefiniowane takich jak osi, dystrybucji i wyrównanie odstępy:
 
-[ ![](uistackview-images/stacked01.png "Diagram układu widoku stosu")](uistackview-images/stacked01.png)
+[![](uistackview-images/stacked01.png "Diagram układu widoku stosu")](uistackview-images/stacked01.png#lightbox)
 
 Korzystając z `UIStackView` w aplikacji platformy Xamarin.iOS deweloper może zdefiniować widoków podrzędnych albo wewnątrz scenorysu w systemie iOS projektanta lub przez dodawanie i usuwanie widoków podrzędnych w kodzie języka C#.
 
 Ten dokument składa się z dwóch części: Szybki start, aby wyświetlić pierwszy stosu wdrożenie, a następnie niektórych bardziej szczegółowe informacje techniczne dotyczące sposobu działania.
+
+> [!VIDEO https://youtube.com/embed/p3po6507Ip8]
+
+**UIStackView, przez [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView Szybki Start
 
@@ -39,11 +44,11 @@ Jako szybkie wprowadzenie do `UIStackView` kontroli, zamierzamy utworzyć prosty
 
 Utwórz nowy projekt platformy Xamarin.iOS i edytować **Main.storyboard** pliku w Konstruktorze interfejsu w środowisku Xcode. Najpierw przeciągnij jeden **pionowy widoku stosu** na **kontrolera widoku**:
 
-[ ![](uistackview-images/quick01.png "Przeciągnij pojedynczego widoku stosu pionowego na kontroler widoku")](uistackview-images/quick01.png)
+[![](uistackview-images/quick01.png "Przeciągnij pojedynczego widoku stosu pionowego na kontroler widoku")](uistackview-images/quick01.png#lightbox)
 
 W **inspektora atrybutu**, ustaw następujące opcje:
 
-[ ![](uistackview-images/quick02.png "Ustawianie opcji widoku stosu")](uistackview-images/quick02.png)
+[![](uistackview-images/quick02.png "Ustawianie opcji widoku stosu")](uistackview-images/quick02.png#lightbox)
 
 Gdzie:
 
@@ -61,17 +66,17 @@ Podczas pracy z widokiem stosu, możesz traktować **wyrównanie** jako **X** i 
 
 Nadal układ interfejsu aplikacji przez dodanie etykietę, ImageView, przycisków i poziomy widoku stosu, dzięki czemu jest podobny do następującego:
 
-[ ![](uistackview-images/quick03.png "Układ interfejsu użytkownika widoku stosu")](uistackview-images/quick03.png)
+[![](uistackview-images/quick03.png "Układ interfejsu użytkownika widoku stosu")](uistackview-images/quick03.png#lightbox)
 
 Konfigurowanie widoku poziomym stosu z następujących opcji:
 
-[ ![](uistackview-images/quick04.png "Skonfiguruj opcje widoku poziomym stosu")](uistackview-images/quick04.png)
+[![](uistackview-images/quick04.png "Skonfiguruj opcje widoku poziomym stosu")](uistackview-images/quick04.png#lightbox)
 
 Ponieważ nie chcemy, aby w klasyfikacji, aby zostać rozciągnięty ikonę, która reprezentuje każdego "punkt" po zostanie dodany do widoku poziome stosu został skonfigurowany **wyrównanie** do **Center** i  **Dystrybucji** do **wypełnienia jednakowo**.
 
 Na koniec okablować zapasowe następujących **gniazda** i **akcje**:
 
-[ ![](uistackview-images/quick05.png "Gniazda widoku stosu i akcji")](uistackview-images/quick05.png)
+[![](uistackview-images/quick05.png "Gniazda widoku stosu i akcji")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>Wypełnij UIStackView z kodu
 
@@ -168,7 +173,7 @@ Wszystkie wymagane elementy interfejsu użytkownika i kodu w miejscu można uruc
 
 Po naciśnięciu **Zwiększ ocenę** przycisku "gwiazdy" zostanie dodany do ekranu (maksymalnie 5):
 
-[ ![](uistackview-images/intro01.png "Przykładowa aplikacja Uruchom")](uistackview-images/intro01.png)
+[![](uistackview-images/intro01.png "Przykładowa aplikacja Uruchom")](uistackview-images/intro01.png#lightbox)
 
 "Gwiazdek" zostanie automatycznie wyśrodkowywany i równomiernie w widoku poziomym stosu. Po naciśnięciu **Zmniejsz ocenę** przycisku "gwiazdy" jest wycofany (Brak po lewej).
 

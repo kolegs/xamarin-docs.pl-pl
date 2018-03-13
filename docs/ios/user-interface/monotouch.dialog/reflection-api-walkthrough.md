@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Wskazówki: Tworzenie aplikacji przy użyciu interfejsu API odbicia
 
@@ -34,7 +34,7 @@ Przy użyciu interfejsu API odbicia jest niezwykle prosta:
 
 Oto przykład ilustrujący sposób użycia interfejsu API odbicia. W tym przykładzie oprzemy będzie ekranu wprowadzania danych proste jak pokazano poniżej:
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "W tym przykładzie będzie budujemy ekranu wprowadzania danych proste w sposób pokazany poniżej")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "W tym przykładzie będzie budujemy ekranu wprowadzania danych proste w sposób pokazany poniżej")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 Teraz uruchamianych aplikacji, tytuł jest wyświetlany w `UINavigationController’s` pasek nawigacyjny jako poniżej przedstawiono zrzut ekranu:
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "Uruchomienie aplikacji, tytuł pojawi się teraz na pasku nawigacyjnym UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Uruchomienie aplikacji, tytuł pojawi się teraz na pasku nawigacyjnym UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 W tym `UINavigationController`, firma Microsoft można teraz korzystać z innych funkcji patrz hasło MT. D, dla których konieczne jest nawigacji. Na przykład można dodać wyliczenia do `Expense` klasy do definiowania kategorii wydatków i patrz hasło MT. D automatycznie utworzy ekranu wyboru. Aby zademonstrować, zmodyfikuj `Expense` klasy, aby uwzględnić `ExpenseCategory` pola w następujący sposób:
 
@@ -142,11 +142,11 @@ public class Expense
 
 Uruchamianie aplikacji teraz wyniki nowy wiersz w tabeli dla kategorii, jak pokazano:
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "Uruchamianie aplikacji teraz powoduje nowy wiersz w tabeli dla kategorii pokazany")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "Uruchamianie aplikacji teraz powoduje nowy wiersz w tabeli dla kategorii pokazany")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Zaznaczenie wiersza powoduje aplikacji przechodzenia do nowego ekranu z wierszy odpowiadających wyliczenia, jak pokazano poniżej:
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "Zaznaczenie wiersza powoduje aplikacji przejście do nowego ekranu z wierszy odpowiadających wyliczenia")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "Zaznaczenie wiersza powoduje aplikacji przejście do nowego ekranu z wierszy odpowiadających wyliczenia")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

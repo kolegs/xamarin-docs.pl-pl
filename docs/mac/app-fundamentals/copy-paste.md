@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 115f3340c5678c0ead06cf773e193fbdc4ba3d07
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="copy-and-paste"></a>Kopiowanie i wklejanie
 
@@ -27,7 +27,7 @@ W tym artykule firma Microsoft będzie obejmował dwa podstawowe sposoby użycia
 1. **Standardowe typy danych** — ponieważ stołu montażowego operacje są zazwyczaj wykonywane między dwiema aplikacjami niepowiązanymi ze sobą, żadna aplikacja zna typy danych, które obsługuje innych. Aby zmaksymalizować możliwości udostępniania, obszar roboczy może zawierać wiele reprezentacje danego elementu (przy użyciu standardowego zestawu popularnych typów danych), to umożliwić odbierającą aplikację, aby wybrać wersję, która jest najbardziej odpowiednie dla swoich potrzeb.
 2. **Niestandardowe dane** — umożliwia kopiowanie i wklejanie złożonych danych w sieci Xamarin.Mac można określić typu danych niestandardowych, który będzie obsługiwany przez obszar roboczy. Na przykład aplikacji rysowania wektor który umożliwia użytkownikowi kopiowanie i wklejanie kształtów złożonych, które składają się z wielu typów danych i punkty.
 
-[![Przykład uruchomionej aplikacji](copy-paste-images/intro01.png "przykład uruchomionej aplikacji")](copy-paste-images/intro01-large.png)
+[![Przykład uruchomionej aplikacji](copy-paste-images/intro01.png "przykład uruchomionej aplikacji")](copy-paste-images/intro01-large.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z obszar roboczy w Xamarin.Mac aplikacji do obsługi kopiowania i wklejania. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -50,14 +50,14 @@ Wykonaj następujące czynności:
 1. Uruchom program Visual Studio for Mac i kliknij przycisk **nowy projekt...**  łącza.
 2. Wybierz **Mac** > **aplikacji** > **aplikacji Cocoa**, następnie kliknij przycisk **dalej** przycisk: 
 
-    [![Tworzenie nowego projektu aplikacji Cocoa](copy-paste-images/sample01.png "tworzenia nowego projektu aplikacji Cocoa")](copy-paste-images/sample01-large.png)
+    [![Tworzenie nowego projektu aplikacji Cocoa](copy-paste-images/sample01.png "tworzenia nowego projektu aplikacji Cocoa")](copy-paste-images/sample01-large.png#lightbox)
 3. Wprowadź `MacCopyPaste` dla **Nazwa projektu** i zachować wszystkie inne jako domyślny. Kliknij przycisk Dalej: 
 
-    [![Ustawienie nazwy projektu](copy-paste-images/sample01a.png "ustawienie nazwy projektu")](copy-paste-images/sample01a-large.png)
+    [![Ustawienie nazwy projektu](copy-paste-images/sample01a.png "ustawienie nazwy projektu")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. Kliknij przycisk **Utwórz** przycisk: 
 
-    [![Potwierdzenie nowego ustawienia projektu](copy-paste-images/sample02.png "potwierdzenie nowego ustawienia projektu")](copy-paste-images/sample02-large.png)
+    [![Potwierdzenie nowego ustawienia projektu](copy-paste-images/sample02.png "potwierdzenie nowego ustawienia projektu")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>Dodaj NSDocument
 
@@ -265,7 +265,7 @@ Niniejszy dokument w miejscu utworzymy interfejsu użytkownika dla aplikacji Xam
 
 Kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć go w programie Xcode. Następnie dodaj pasek narzędzi i obraz również i skonfigurować w następujący sposób:
 
-[![Pasek narzędzi edycji](copy-paste-images/sample04.png "narzędzi edycji")](copy-paste-images/sample04-large.png)
+[![Pasek narzędzi edycji](copy-paste-images/sample04.png "narzędzi edycji")](copy-paste-images/sample04-large.png#lightbox)
 
 Dodaj kopię i Wklej **element paska narzędzi obrazu** po lewej stronie paska narzędzi. Będziemy używać je jako skróty do kopiowania i wklejania w menu Edycja. Następnie dodaj cztery **elementów paska narzędzi obrazu** z prawej strony paska narzędzi. Te będą używane do wypełnienia obrazu z niektóre domyślne obrazy.
 
@@ -273,7 +273,7 @@ Aby uzyskać więcej informacji na temat pracy z paski narzędzi, zobacz nasze [
 
 Następnie umożliwia również uwidacznia następujące punkty i akcji dla naszych elementów paska narzędzi i obrazu:
 
-[![Tworzenie punktów i akcje](copy-paste-images/sample05.png "Tworzenie gniazda i akcji")](copy-paste-images/sample05-large.png)
+[![Tworzenie punktów i akcje](copy-paste-images/sample05.png "Tworzenie gniazda i akcji")](copy-paste-images/sample05-large.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z gniazda i akcji, zobacz [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcji naszych [Hello, Mac](~/mac/get-started/hello-mac.md) dokumentacji.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>Tworzenie APKs specyficzne dla interfejsu ABI
 
@@ -42,7 +42,6 @@ W tym przewodniku dotyczą skryptu tworzenie wielu APKs dla aplikacji platformy 
 Na końcu tego przewodnika jest wskazówki, które będą pokazują, jak te czynności przy użyciu skryptów do [nachylenia](http://martinfowler.com/articles/rake.html).
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>Tworzenie kod wersji dla plik APK
 
@@ -67,7 +66,7 @@ Rozszerzanie schematu kod tej wersji do ośmiu cyfr, jest możliwy do uwzględni
 
 Na poniższym diagramie przedstawiono pozycja każdego kodu opisane w powyższej listy:
 
-[![Diagram w wersji 8 cyfrowy kod format, kodowane przez kolor](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![Diagram w wersji 8 cyfrowy kod format, kodowane przez kolor](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play zapewni, że poprawne APK jest dostarczany do urządzenia, na podstawie `versionCode` i APK konfiguracji. APK najwyższy kod wersji będą dostarczane do urządzenia. Na przykład aplikacja może mieć trzy APKs o następujących kodach wersji:
@@ -88,7 +87,6 @@ Teraz załóżmy, że x86 wersji odbiera niektórych aktualizacji lub poprawek, 
 Obsługa te kody wersji ręcznie może być znaczne obciążenie dewelopera. Proces obliczania poprawny `android:versionCode` , a następnie tworzenie plik APK powinno zostać zautomatyzowane.
 Przykładem to zrobić zostanie omówiona w przewodniku na końcu tego dokumentu.
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>Tworzenie tymczasowego pliku AndroidManifest.XML
 
@@ -123,7 +121,6 @@ Poniżej opisano każdy parametr wiersza polecenia:
 -   `<CS_PROJ FILE>` &ndash; To jest ścieżka do `.csproj` pliku projektu platformy Xamarin.Android.
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>Zaloguj się i Zipalign plik APK
 
@@ -139,7 +136,6 @@ Wszystkie aplikacje platformy Xamarin.Android musi być zip wyrównany można by
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>Automatyzacja tworzenia APK z nachylenia
 
@@ -174,11 +170,11 @@ $ rake build
 
 Po zakończeniu zadania nachylenia będzie trzy `bin` foldery z plikiem `xamarin.helloworld.apk`. Następny zrzut ekranu przedstawia każdego z tych folderów z ich zawartość:
 
-[![Lokalizacje folderów specyficzne dla platformy zawierających xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![Lokalizacje folderów specyficzne dla platformy zawierających xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **Uwaga:** proces kompilacji opisane w tym przewodniku mogą być wykonywane w jednym z wielu systemów różnych kompilacji. Mimo że nie mamy przykład wcześniej zapisany, należy również możliwe za pomocą [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) lub [sfałszować](http://fsharp.github.io/FAKE/).
+> Proces kompilacji opisane w tym przewodniku mogą być wykonywane w jednym z wielu systemów różnych kompilacji. Mimo że nie mamy przykład wcześniej zapisany, należy również możliwe za pomocą [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) lub [sfałszować](http://fsharp.github.io/FAKE/).
 
 
 ## <a name="summary"></a>Podsumowanie

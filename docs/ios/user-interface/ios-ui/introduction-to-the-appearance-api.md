@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>Wygląd interfejsu API
 
@@ -32,7 +32,7 @@ Istnieją dwa różne sposoby, aby zastosować niestandardowy wygląd:
 
 Wygląd przykładowej aplikacji przedstawiono wszystkie trzy metody, jak pokazano w tych zrzuty ekranu:
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "Aplikacja przykładowa wygląd prezentuje wszystkie trzy metody")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "Aplikacja przykładowa wygląd prezentuje wszystkie trzy metody")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Począwszy od systemu iOS 8 TraitCollections wzbogacono wygląd serwera proxy.
  `AppearanceForTraitCollection` można ustawić domyślnego wyglądu w cechy określonej kolekcji. Możesz przeczytać więcej na temat [wprowadzenie do scenorysu](~/ios/user-interface/storyboards/unified-storyboards.md) przewodnik.
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 Możesz również ustawić wartość w konsoli właściwości projektanta: 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "Tint — Konsola właściwości")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Tint — Konsola właściwości")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 Na poniższym obrazie przedstawiono ustawiający to odcień formantu o nazwie "grupę sg1".
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "Ustawienie tint — formant")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "Ustawienie tint — formant")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 Aby ustawić wiele formantów w ten sposób będą całkowicie nieefektywne, możemy zamiast tego można ustawić statycznego `Appearance` właściwość samej klasy. Przedstawiono to w poniższym kodzie:
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 Na poniższym obrazie teraz przedstawiono oba segmentowanych formanty z ustawioną amarantowy wygląd:
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "Ustawienie odcień wygląd formantu")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "Ustawienie odcień wygląd formantu")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` właściwości jest ustawiana na początku cyklu życia aplikacji, takich jak AppDelegate `FinishedLaunching` zdarzenia lub ViewController przed dotyczy formanty są wyświetlane.
 

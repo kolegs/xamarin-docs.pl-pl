@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0fff4de7420bceda8c15ae33b03886eb6b332aeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-package-size"></a>Rozmiar pakietu aplikacji
 
@@ -28,13 +28,13 @@ Xamarin.Android używa różnych mechanizmów, aby zminimalizować rozmiar pakie
 
 Aby wysłać pełni zawartych w niej aplikacji, pakietu musi zawierać aplikacji, skojarzone biblioteki zawartości, Mono środowiska uruchomieniowego i wymaganych zestawów biblioteki klasy podstawowej (BCL). Na przykład jeśli traktujemy domyślny szablon "Hello World" zawartość kompilacji pełny pakiet będzie wyglądać następująco:
 
-[ ![Rozmiar pakietu przed konsolidatora](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png)
+[![Rozmiar pakietu przed konsolidatora](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 Pobieranie większe niż chcielibyśmy jest 15,8 MB. Problem jest bibliotek BCL jako obejmują one mscorlib, systemu i Mono.Android, które zawierają wiele składników niezbędnych do uruchomienia aplikacji. Jednak również udostępniają funkcje, które być może nie jest używana w aplikacji, dlatego może być wyłączenie tych składników.
 
 Gdy mamy utworzyć aplikację do dystrybucji, możemy wykonać proces, nazywany konsolidację, który sprawdza aplikacji i usunie cały kod, który nie jest używany bezpośrednio. Ten proces jest podobny do funkcji który [wyrzucanie elementów bezużytecznych](~/android/internals/garbage-collection.md) miejsce przydzielone stosu pamięci. Jednak zamiast działają na obiektach, łączenie działa przez kod. Na przykład istnieje cały obszar nazw w System.dll do wysyłania i odbierania wiadomości e-mail, ale jeśli aplikacja nie korzystać z tej funkcji, że kod jest po prostu marnować miejsca. Po uruchomieniu konsolidator w aplikacji Hello World, naszych pakietu teraz wygląda następująco:
 
-[ ![Rozmiar pakietu po konsolidatora](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png)
+[![Rozmiar pakietu po konsolidatora](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 Jak widać, spowoduje to usunięcie znaczną ilość BCL, który nie był używany. Należy pamiętać, że rozmiaru końcowego BCL zależy od tego, jakie faktycznie aplikację. Na przykład jeśli firma Microsoft Przyjrzyjmy się bardziej znaczące przykładowej aplikacji o nazwie ApiDemo, firma Microsoft Zobacz, czy składnik BCL ma zwiększać rozmiar, ponieważ ApiDemo używa więcej BCL niż Hello, World jest:
 
@@ -51,7 +51,7 @@ Android jest stosunkowo powolne skopiować i zainstalować pakiet, dlatego chcem
 
 Firma Microsoft debugowania na urządzeniu po raz pierwszy skopiowane dwóch dużych pakietów o nazwie *udostępnionych środowiska uruchomieniowego* i *udostępnionych platformy*. Udostępnione środowiska uruchomieniowego zawiera Mono środowiska uruchomieniowego i BCL, podczas udostępnionych platformy zawiera zestawy określonego poziomu interfejs API systemu Android:
 
-[ ![Udostępnione rozmiar pakietu środowiska wykonawczego](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png)
+[![Udostępnione rozmiar pakietu środowiska wykonawczego](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 Kopiowanie te podstawowe składniki jest wykonywane tylko raz jako trwa dość nieco czasu, ale umożliwia wszystkie kolejne aplikacje uruchomione w trybie debugowania z nich korzystają. Na koniec skopiowane rzeczywistej aplikacji, która jest mała i szybko:
 

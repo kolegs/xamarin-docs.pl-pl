@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>Obrazy
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Poniższe zrzuty ekranu pokazują wynik wyświetlanie lokalnego obrazu na każdej platformie:
 
-[ ![Lokalne ImageSource](images-images/local-sml.png "Przykładowa aplikacja wyświetlania obrazu lokalnego")](images-images/local.png "Przykładowa aplikacja wyświetlania obrazu lokalnego")
+[![Lokalne ImageSource](images-images/local-sml.png "Przykładowa aplikacja wyświetlania obrazu lokalnego")](images-images/local.png#lightbox "Przykładowa aplikacja wyświetlania obrazu lokalnego")
 
 Aby uzyskać większą elastyczność `Device.RuntimePlatform` właściwości można wybrać inny plik obrazu lub ścieżka dla niektórych lub wszystkich platform, jak pokazano w tym przykładzie kodu:
 
@@ -102,7 +102,7 @@ Przed iOS 9, siatkówki wersje obrazu może być umieszczone w **zasobów** fold
 
 Obrazy systemu android rozwiązania alternatywne powinna zostać umieszczona w [specjalnie o nazwie katalogów](http://developer.android.com/guide/practices/screens_support.html) w projekcie systemu Android, jak pokazano na poniższym zrzucie ekranu:
 
-[![Lokalizacja systemu android wielu rozdzielczość obrazu](images-images/xs-highdpisolution-sml.png "lokalizacji systemu Android wielu rozdzielczość obrazu")](images-images/xs-highdpisolution.png "lokalizacji systemu Android wielu rozdzielczość obrazu")
+[![Lokalizacja systemu android wielu rozdzielczość obrazu](images-images/xs-highdpisolution-sml.png "lokalizacji systemu Android wielu rozdzielczość obrazu")](images-images/xs-highdpisolution.png#lightbox "lokalizacji systemu Android wielu rozdzielczość obrazu")
 
 ### <a name="additional-controls-that-display-images"></a>Dodatkowe funkcje kontroli, które wyświetlanie obrazów
 
@@ -159,7 +159,7 @@ Obecnie nie istnieje niejawna konwersja identyfikatorów zasobów. Zamiast tego 
 
 Poniższe zrzuty ekranu pokazują wynik wyświetlanie osadzony obraz na każdej platformie:
 
-[ ![ResourceImageSource](images-images/resource-sml.png "przykładowej aplikacji wyświetlanie osadzony obraz")](images-images/resource.png "przykładowej aplikacji Wyświetlanie osadzonego obrazu")
+[![ResourceImageSource](images-images/resource-sml.png "przykładowej aplikacji wyświetlanie osadzony obraz")](images-images/resource.png#lightbox "przykładowej aplikacji Wyświetlanie osadzonego obrazu")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Poniższe zrzuty ekranu pokazują wynik wyświetlanie zdalnego obrazu na każdej platformie:
 
-[![Pobrane ImageSource](images-images/download-sml.png "przykładowej aplikacji wyświetlanie pobranych obrazu")](images-images/download.png "przykładowej aplikacji wyświetlanie pobranych obrazu")
+[![Pobrane ImageSource](images-images/download-sml.png "przykładowej aplikacji wyświetlanie pobranych obrazu")](images-images/download.png#lightbox "przykładowej aplikacji wyświetlanie pobranych obrazu")
 
 <a name="Image_Caching" />
 

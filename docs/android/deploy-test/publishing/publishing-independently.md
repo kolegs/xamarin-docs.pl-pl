@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>Publikowanie niezależnie
 
 Istnieje możliwość opublikować aplikację bez przy użyciu dowolnej z istniejących rynków systemu Android. W tej sekcji objaśnia tych innych metod publikowania i licencjonowania poziomów platformy Xamarin.Android.
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Xamarin licencjonowania
 
@@ -31,43 +30,39 @@ Tworzenie, wdrażanie i dystrybucja aplikacji platformy Xamarin.Android dostępn
 
 Odwiedź stronę [visualstudio.com](https://www.visualstudio.com/xamarin/) pobierania Community Edition lub aby dowiedzieć się więcej na temat zakupu wersji Professional i Enterprise.
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>Zezwalaj na instalacja z nieznanych źródeł
 
 Domyślnie Android uniemożliwia pobieranie i instalowanie aplikacji z lokalizacji innych niż Google Play. Aby umożliwić instalowane ze źródeł spoza witryny marketplace, użytkownik musi włączyć *nieznane źródła* ustawienia na urządzeniu przed próbą zainstalowania aplikacji. Ustawienie to można znaleźć w obszarze **Ustawienia > Zabezpieczenia**, jak pokazano na poniższym diagramie:
 
-[ ![Ekran ustawień zabezpieczeń](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![Ekran ustawień zabezpieczeń](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **Uwaga:** niektórych dostawców sieci mogą uniemożliwić instalację aplikacji z nieznanych źródeł, niezależnie od tego ustawienia.
+> Niektórzy dostawcy sieci mogą uniemożliwić instalację aplikacji z nieznanych źródeł, niezależnie od tego ustawienia.
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>Publikowanie za pośrednictwem poczty E-Mail
 
 Dołączanie wersji APK do wiadomości e-mail jest szybki i łatwy sposób dystrybucji aplikacji dla użytkowników. Gdy użytkownik otwiera wiadomość e-mail na urządzeniu z systemem Android zasilania, Android rozpozna załącznika APK i wyświetlić **zainstalować** przycisku, jak pokazano na poniższej ilustracji:
 
-[ ![Przycisk dla załącznika Zainstaluj](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![Przycisk dla załącznika Zainstaluj](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 Mimo że dystrybucji za pośrednictwem poczty e-mail jest proste, udostępnia kilka ochrony przed piractwo lub nieautoryzowanych dystrybucji. Najlepiej jest on zarezerwowany do sytuacji, gdy adresaci aplikacji są kilka i są one zaufane nie Dystrybuuj aplikację.
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>Publikowanie w sieci Web
 
 Istnieje możliwość dystrybucji aplikacji przez serwer sieci web. Jest to osiągane przez przekazywania aplikacji do serwera sieci web, a następnie udostępnienie łącza pobierania dla użytkowników. Gdy urządzenia z systemem Android zasilania przejdzie do łącza, a następnie pobiera aplikacji, tej aplikacji zostaną zainstalowane automatycznie po ukończeniu pobierania.
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>Ręczne instalowanie APK
 
 Instalacja ręczna jest trzecia opcja instalowania aplikacji. W celu ręcznej instalacji aplikacji:
 
 1.   **Dystrybucji APK użytkownikowi** &ndash; na przykład tej kopii mogą być dystrybuowane na dysku CD lub dysk flash USB.
-1.   **(Użytkownik) instaluje aplikację na urządzeniu z systemem Android** &ndash; użyć wiersza polecenia *mostka debugowania Android* (**adb**) narzędzie.   **ADB** jest uniwersalny narzędzie wiersza polecenia, które umożliwia komunikację z wystąpieniem emulatora albo urządzenia z systemem Android zasilania. Zawiera zestaw SDK systemu Android **adb**; znajduje się w katalogu  **<sdk>/platform-tools /**.
+1.   **(Użytkownik) instaluje aplikację na urządzeniu z systemem Android** &ndash; użyć wiersza polecenia *mostka debugowania Android* (**adb**) narzędzie. **ADB** jest uniwersalny narzędzie wiersza polecenia, które umożliwia komunikację z wystąpieniem emulatora albo urządzenia z systemem Android zasilania. Zawiera zestaw SDK systemu Android **adb**; znajduje się w katalogu  **<sdk>/platform-tools /**.
 
 Android urządzenie musi być połączone za pomocą kabla USB do komputera.
 Komputery z systemem Windows może być także wymagane dodatkowe sterowniki USB z dostawcą telefon, aby być rozpoznawane przez **adb**. Instrukcje dotyczące instalacji dla tych dodatkowych sterowników USB wykracza poza zakres tego dokumentu.

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 848db0af436ad43e07e68de4d278f641ab83136d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Wskazówki — Touch korzystanie w systemie iOS
 
@@ -24,9 +24,11 @@ W tym przewodniku pokazano, jak napisać kod, który odpowiada na różnych rodz
 Każda sekcja zawiera instrukcje dotyczące pisania kodu od początku.
 [Uruchamianie przykładowy kod](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) zawiera już ekran ukończenia scenorysu i menu:
 
- [ ![](ios-touch-walkthrough-images/image3.png "Przykład obejmuje ekranu menu")](ios-touch-walkthrough-images/image3.png)
+ [![](ios-touch-walkthrough-images/image3.png "Przykład obejmuje ekranu menu")](ios-touch-walkthrough-images/image3.png#lightbox)
 
 Postępuj zgodnie z instrukcjami poniżej, aby dodać kod do scenorysu, a informacje o różnych typach zdarzeń touch, które są dostępne w systemie iOS. Można również otworzyć [gotowej próbki](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final) Aby wyświetlić wszystkie elementy pracy.
+
+<a name="Touch_Samples"/>
 
 ## <a name="touch-samples"></a>Touch — przykłady
 
@@ -35,7 +37,7 @@ W tym przykładzie przedstawiono niektóre touch interfejsów API. Wykonaj nast�
 
 1. Otwórz projekt **Touch_Start**. Najpierw uruchom projekt upewnij się, że wszystko jest poprawny i touch **przykłady Touch** przycisku. (Mimo że przycisków zostanie nie działają) powinien zostać wyświetlony ekran podobny do następującego:
     
-    [![](ios-touch-walkthrough-images/image4.png "Przykładowa aplikacja Uruchom wolnego przycisków")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Przykładowa aplikacja Uruchom wolnego przycisków")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
 1. Przeprowadź edycję pliku **TouchViewController.cs** i dodaj następujące zmienne dwa wystąpienia klasy `TouchViewController`:
@@ -166,9 +168,9 @@ W tym przykładzie przedstawiono niektóre touch interfejsów API. Wykonaj nast�
 
 1. W tym momencie ekran dotykowy przykłady zostało zakończone. Zwróć uwagę, jak ekranu zmiany interakcję z każdym obrazów, jak pokazano na poniższym zrzucie ekranu:
         
-    [![](ios-touch-walkthrough-images/image4.png "Początkowy ekranu aplikacji")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Początkowy ekranu aplikacji")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "Ekran po użytkownik przeciąga element button")](ios-touch-walkthrough-images/image5.png)
+    [![](ios-touch-walkthrough-images/image5.png "Ekran po użytkownik przeciąga element button")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
@@ -183,7 +185,7 @@ W tej sekcji możemy będzie pozbyć się zdarzenia touch i pokazują, jak używ
 
 Po uruchomieniu [uruchamianie przykładowy kod](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) i wybierz polecenie **przykłady aparat rozpoznawania gestów** przycisku, powinien zostać wyświetlony następujący ekran:
 
- [ ![](ios-touch-walkthrough-images/image6.png "Kliknięcie przycisku przykłady aparat rozpoznawania gestów wyświetla ten ekran")](ios-touch-walkthrough-images/image6.png)
+ [![](ios-touch-walkthrough-images/image6.png "Kliknięcie przycisku przykłady aparat rozpoznawania gestów wyświetla ten ekran")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Wykonaj następujące kroki, aby zaimplementować aparaty rozpoznawania gestów:
 
@@ -305,15 +307,17 @@ Zwróć uwagę, możemy przypisać element docelowy do gestu w formularzu metod�
 1. Uruchom aplikację i interakcję z dwóch obrazów.
 Poniższy zrzut ekranu jest jednym z przykładów tych interakcji:
     
-    [![](ios-touch-walkthrough-images/image7.png "Ten zrzut ekranu przedstawia interakcje przeciągania")](ios-touch-walkthrough-images/image7.png)
+    [![](ios-touch-walkthrough-images/image7.png "Ten zrzut ekranu przedstawia interakcje przeciągania")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
+
+<a name="Custom_Gesture_Recognizer"/>
 
 ## <a name="custom-gesture-recognizer"></a>Aparat rozpoznawania gestów niestandardowych
 
 W tej sekcji zostaną zastosowane pojęć związanych z poprzednich sekcjach, aby utworzyć aparat rozpoznawania gestów niestandardowych. Aparat rozpoznawania gestów niestandardowych będzie podklasy `UIGestureRecognizer`i będą rozpoznawać, gdy użytkownik wprowadzi "V" na ekranie, a następnie przełącz mapy bitowej. Poniższy zrzut ekranu znajduje się przykład tego ekranu:
 
- [ ![](ios-touch-walkthrough-images/image8.png "Aplikacja rozpozna, gdy użytkownik wprowadzi V na ekranie")](ios-touch-walkthrough-images/image8.png)
+ [![](ios-touch-walkthrough-images/image8.png "Aplikacja rozpozna, gdy użytkownik wprowadzi V na ekranie")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Wykonaj następujące kroki, aby utworzyć aparat rozpoznawania gestów niestandardowych:
 
@@ -490,9 +494,9 @@ Klasa można teraz rozpocząć od nowa pracę następnym razem, gdy użytkownik 
 
 1. Uruchom aplikację i spróbuj rysowania "V" na ekranie. Powinien pojawić się wyświetlanego obrazu zmiany, jak pokazano na poniższych zrzutach ekranu:
     
-    [![](ios-touch-walkthrough-images/image9.png "Przycisk zaznaczone")](ios-touch-walkthrough-images/image9.png)
+    [![](ios-touch-walkthrough-images/image9.png "Przycisk zaznaczone")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "Przycisk unchecked")](ios-touch-walkthrough-images/image10.png)
+    [![](ios-touch-walkthrough-images/image10.png "Przycisk unchecked")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

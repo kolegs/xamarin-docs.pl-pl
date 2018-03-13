@@ -3,16 +3,16 @@ title: interfejsy API gier systemu iOS
 description: "W tym artykule omówiono nowe ulepszenia gier dostarczane przez system iOS 9, który może służyć do poprawy Twoja gra Xamarin.iOS grafiki i funkcji audio."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>interfejsy API gier systemu iOS
 
@@ -21,7 +21,7 @@ _W tym artykule omówiono nowe ulepszenia gier dostarczane przez system iOS 9, k
 Apple oferuje ulepszenia wielu technologii do gier interfejsów API w systemie iOS 9 ułatwiające wdrażanie grafikę gier i audio w aplikacji platformy Xamarin.iOS.
 Dotyczy to zarówno łatwość programowania za pośrednictwem struktury wysokiego poziomu i wykorzystanie mocy procesora GPU urządzenie iOS ulepszone szybkości i możliwości graficzne.
 
-[ ![](images/flocking01.png "Przykład systemem flocking aplikacji")](images/flocking01.png)
+[![](images/flocking01.png "Przykład systemem flocking aplikacji")](images/flocking01.png#lightbox)
 
 W tym GameplayKit, ReplayKit, Model we/wy, MetalKit i programów do cieniowania wydajności systemu operacyjnego oraz nowego, ulepszone funkcje systemu operacyjnego, SceneKit i SpriteKit.
 
@@ -56,7 +56,7 @@ Na przykład 2D wroga sposób Labirynt lub znak 3D za pośrednictwem terenu worl
 
 Należy wziąć pod uwagę następujące mapy:
 
-[ ![](images/gkpathfindpath.png "Przykładowa mapa pathfinding")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "Przykładowa mapa pathfinding")](images/gkpathfindpath.png#lightbox)
 
 Przy użyciu pathfinding tego kodu C# można znaleźć sposób za pośrednictwem mapy:
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 Uruchamiania, nieco animowany _"Boids"_ będzie stadzie wokół naszych podsłuchu palca:
 
-[ ![](images/flocking01.png "Nieco animowany Boids będzie stadzie wokół podsłuchu palca")](images/flocking01.png)
+[![](images/flocking01.png "Nieco animowany Boids będzie stadzie wokół podsłuchu palca")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>Inne przykłady firmy Apple
 

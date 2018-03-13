@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>Uzyskiwanie dostępu do danych zdalnych
 
@@ -52,7 +52,7 @@ Używa aplikacji mobilnej eShopOnContainers `HttpClient` klasa do tworzenia żą
 
 Rysunek 10-1 pokazuje interakcje klasy, które będzie odczytywać dane wykazu mikrousługi katalogu do wyświetlania przez `CatalogView`.
 
-[![](accessing-remote-data-images/catalogdata.png "Pobieranie danych z wykazu mikrousługi")](accessing-remote-data-images/catalogdata-large.png "pobieranie danych z mikrousługi katalogu")
+[![](accessing-remote-data-images/catalogdata.png "Pobieranie danych z wykazu mikrousługi")](accessing-remote-data-images/catalogdata-large.png#lightbox "pobieranie danych z mikrousługi katalogu")
 
 **Rysunek 10-1**: pobieranie danych z mikrousługi katalogu
 
@@ -157,7 +157,7 @@ Ta metoda pobiera dane katalogu z bazy danych SQL za pomocą platformy EntityFra
 
 Rysunek 10-2 przedstawia interakcje klasy wysyłających dane koszyka, wyświetlane przez `BasketView`, aby mikrousługi koszyka.
 
-[![](accessing-remote-data-images/basketdata.png "Wysyłanie danych do koszyka mikrousługi")](accessing-remote-data-images/basketdata-large.png "wysyłania danych do mikrousługi koszyka")
+[![](accessing-remote-data-images/basketdata.png "Wysyłanie danych do koszyka mikrousługi")](accessing-remote-data-images/basketdata-large.png#lightbox "wysyłania danych do mikrousługi koszyka")
 
 **Rysunek 10-2**: wysyłanie danych do mikrousługi koszyka
 

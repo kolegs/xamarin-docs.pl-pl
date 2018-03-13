@@ -4,14 +4,15 @@ description: "Odnajdywanie różnego rodzaju zezwalających na ścieżki do zast
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4344559c85ad637ad198b3afc28b17e694a14f82
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 60d60939c0f7bd3961400a3e8d769fdfa17184a2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="path-effects"></a>Efekty ścieżki
 
@@ -48,7 +49,7 @@ Dotyczy zakończenia kresek `StrokeCap` właściwość `SKPaint`. Międzynarodow
 
 **Animowany tekst kropkami** strona jest podobna do **opisane tekst** strony opisaną w artykule [ **integrowanie tekstu i grafiki** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) w Wyświetlanie opisane znaki tekstu przez ustawienie `Style` właściwość `SKPaint` do obiektu `SKPaintStyle.Stroke`. Ponadto **animowany tekst kropkami** używa `SKPathEffect.CreateDash` umożliwiają to konspektu kropkowanej wygląd, a także animuje program `phase` argument `SKPathEffect.CreateDash` metodę, aby dokonać kropki wydaje się przesyłanie wokół tekstu znaki. Oto stronę w trybie krajobraz:
 
-[![](effects-images/animateddottedtext-small.png "Potrójna zrzut ekranu strony animowany tekst kropkami")](effects-images/animateddottedtext-large.png "Potrójna zrzut ekranu strony animowany kropkami tekstu")
+[![](effects-images/animateddottedtext-small.png "Potrójna zrzut ekranu strony animowany tekst kropkami")](effects-images/animateddottedtext-large.png#lightbox "Potrójna zrzut ekranu strony animowany kropkami tekstu")
 
 [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy rozpoczyna się od definicji niektóre stałe, a także zastępuje `OnAppearing` i `OnDisappearing` metody dla animacji:
 
@@ -156,7 +157,7 @@ Można zmienić długość wzorze dopasowywane do długości ścieżki, ale któ
 
 **Kropka / pauzę Morph** program animuje wzorze sama tak, aby łączniki prawdopodobnie podział punktów, które Połącz ponownie w łączniki formularza:
 
-[![](effects-images/dotdashmorph-small.png "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")](effects-images/dotdashmorph-large.png "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")
+[![](effects-images/dotdashmorph-small.png "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")](effects-images/dotdashmorph-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")
 
 [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy zastąpienia `OnAppearing` i `OnDisappearing` metody tak samo jak jak poprzedni program, ale definiuje klasę `SKPaint` obiektu jako pola:
 
@@ -396,7 +397,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `PaintSurface` Krzywej Beziera, pętle się wokół, która uzyskuje dostęp do wyboru, aby określić, które tworzy program obsługi `PathEffect` powinien być używany do obrysu. Trzy opcje — `Translate`, `Rotate`, i `Morph` — są wyświetlane od lewej do prawej:
 
-[![](effects-images/1dpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki 1D")](effects-images/1dpatheffect-large.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki 1 D")
+[![](effects-images/1dpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki 1D")](effects-images/1dpatheffect-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki 1 D")
 
 Ścieżka określona w `SKPathEffect.Create1DPath` metody zawsze jest wypełnione. Ścieżka określona w `DrawPath` metody jest zawsze malowania, jeśli `SKPaint` obiekt ma jego `PathEffect` właściwość efektu ścieżki 1 D. Zwróć uwagę, że `pathPaint` nie ma obiektu `Style` ustawienie, które normalnie domyślnie `Fill`, ale ścieżka jest malowania niezależnie od.
 
@@ -408,7 +409,7 @@ Prostokąt w `Morph` przykładem jest 50 pikseli szerokości z `advance` ustawie
 
 Jeśli `advance` argument jest mniejszy niż rozmiar ścieżki, a następnie replikowane ścieżki mogą nakładać się na. Może to spowodować interesujące efekty. **Połączonego łańcucha** serii nakładających się okręgi, które wydają się tak, aby przypominały łańcuch połączonych zawiesza się w kształcie charakterystyczne sieci jezdnej zostanie wyświetlona strona:
 
-[![](effects-images/linkedchain-small.png "Potrójna zrzut ekranu przedstawiający stronę połączonego łańcucha")](effects-images/linkedchain-large.png "Potrójna zrzut ekranu przedstawiający stronę połączonego łańcucha")
+[![](effects-images/linkedchain-small.png "Potrójna zrzut ekranu przedstawiający stronę połączonego łańcucha")](effects-images/linkedchain-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę połączonego łańcucha")
 
 Znajdź ścisłe i pojawi się te nie są faktycznie okręgi. Każde łącze w łańcuchu jest dwa łuki o rozmiarze i znajduje się więc wydawać się one nawiązać połączenia z sąsiadujących łącza.
 
@@ -547,7 +548,7 @@ Ten program Określa ścieżkę używaną w `Create1DPath` mieć jego (0, 0) pun
 
 **Taśmy taśmy** strony tworzy ścieżki przypominającą taśmy podłużnych taśmy z krzywej górnej i dolnej to jest dopasowywany do wymiary okna. Ta ścieżka jest malowania przy użyciu prostego `SKPaint` 20 pikseli szerokości i kolorowe szary obiektów, a następnie malowania ponownie z inną `SKPaint` obiekt z `SKPathEffect` odwołuje się do ścieżki przypominającą zasobnika małego obiektu:
 
-[![](effects-images/conveyorbelt-small.png "Potrójna zrzut ekranu przedstawiający stronę taśmy taśmy")](effects-images/conveyorbelt-large.png "Potrójna zrzut ekranu przedstawiający stronę taśmy taśmy")
+[![](effects-images/conveyorbelt-small.png "Potrójna zrzut ekranu przedstawiający stronę taśmy taśmy")](effects-images/conveyorbelt-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę taśmy taśmy")
 
 (0, 0) punktu ścieżki zasobnika jest uchwytu, tak po wybraniu `phase` argument jest animowany, zasobników prawdopodobnie obracać wokół taśmy taśmy, prawdopodobnie tworzenie zakresów się wody u dołu i zrzucanie go na początku.
 
@@ -796,7 +797,7 @@ Jeśli przyjrzymy się uważnie wyniki, zobaczysz, czy wiersze kreskowania czerw
 
 `PaintSurface` Obsługi stwierdza, w wyniku wywołania po prostu obrysu zaokrąglony prostokąt, dzięki czemu niezgodności z wierszami kreskowania czerwona i niebieska:
 
-[![](effects-images/hatchfill-small.png "Potrójna zrzut ekranu przedstawiający stronę kreskowania wypełnienia")](effects-images/hatchfill-large.png "Potrójna zrzut ekranu przedstawiający stronę kreskowania wypełnienia")
+[![](effects-images/hatchfill-small.png "Potrójna zrzut ekranu przedstawiający stronę kreskowania wypełnienia")](effects-images/hatchfill-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kreskowania wypełnienia")
 
 Android ekranu naprawdę nie wygląda jak: skalowanie na zrzucie ekranu spowodowała cienkie czerwoną linie i alokowania skonsolidować na pozornie szerszej czerwoną linie oraz szersze przestrzenie.
 
@@ -850,7 +851,7 @@ public class PathTileFillPage : ContentPage
 
 W `PaintSurface` obsługi `SKPathEffect.Create2DPath` wywołania ustawia odstępy w poziomie i w pionie 64 spowodować 80 piksel kwadratowe Kafelki nakładanie się. Na szczęście ścieżka podobny element układanki, meshing dobrze z sąsiadujące Kafelki:
 
-[![](effects-images/pathtilefill-small.png "Potrójna zrzut ekranu strony wypełnienia kafelka ścieżki")](effects-images/pathtilefill-large.png "Potrójna zrzut ekranu strony wypełnienia kafelka ścieżki")
+[![](effects-images/pathtilefill-small.png "Potrójna zrzut ekranu strony wypełnienia kafelka ścieżki")](effects-images/pathtilefill-large.png#lightbox "Potrójna zrzut ekranu strony wypełnienia kafelka ścieżki")
 
 Skalowanie z oryginalnego zrzut ekranu powoduje, że niektóre zakłócenia, szczególnie na ekranie systemu Android.
 
@@ -923,7 +924,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym celu można użyć z używana do malowania lub wypełnianie na podstawie `Style` właściwość `SKPaint` obiektu. Poniżej przedstawiono na wszystkich platformach trzy:
 
-[![](effects-images/anotherroundedheptagon-small.png "Potrójna zrzut ekranu strony innego zaokrąglona Heptagon")](effects-images/anotherroundedheptagon-large.png "Potrójna zrzut ekranu strony innego Heptagon zaokrąglona")
+[![](effects-images/anotherroundedheptagon-small.png "Potrójna zrzut ekranu strony innego zaokrąglona Heptagon")](effects-images/anotherroundedheptagon-large.png#lightbox "Potrójna zrzut ekranu strony innego Heptagon zaokrąglona")
 
 Zobaczysz, że to zaokrąglony heptagon jest identyczny z wcześniej program. Jeśli potrzebujesz bardziej wiarygodne promień narożnika naprawdę to 100 zamiast 50 określone w `SKPathEffect.CreateCorner` wywołanie, użytkownik może usuń znaczniki komentarza końcowej instrukcji w programie i Zobacz koło 100-radius nałożoną na prawym górnym rogu.
 
@@ -942,7 +943,7 @@ Ostatni argument jest inicjator służący do generowania sekwencja pseudolosowe
 
 **Zakłóceń eksperymentu** strony można wypróbować różne wartości w prostokącie używana do malowania:
 
-[![](effects-images/jitterexperiment-small.png "Potrójne zrzut ekranu przedstawiający stronę zakłóceń eksperymentu")](effects-images/jitterexperiment-large.png "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "Potrójne zrzut ekranu przedstawiający stronę zakłóceń eksperymentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
 Program jest straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) pliku tworzy dwa `Slider` elementów i `SKCanvasView`:
 
@@ -1068,7 +1069,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym miejscu działa w trybie krajobraz na wszystkich platformach trzy:
 
-[![](effects-images/jittertext-small.png "Potrójne zrzut ekranu przedstawiający stronę zakłóceń tekstu")](effects-images/jittertext-large.png "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "Potrójne zrzut ekranu przedstawiający stronę zakłóceń tekstu")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
 ## <a name="path-outlining"></a>Ścieżka określająca zakres
 
@@ -1169,11 +1170,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 Okręgu jest wypełniony i malowania zgodnie z regułami:
 
-[![](effects-images/taptooutlinethepathnormal-small.png "Potrójna zrzut ekranu przedstawiający normalne strony wybierz do konturu Path")](effects-images/taptooutlinethepathnormal-large.png "Potrójna zrzut ekranu przedstawiający normalne strony wybierz do konturu ścieżki")
+[![](effects-images/taptooutlinethepathnormal-small.png "Potrójna zrzut ekranu przedstawiający normalne strony wybierz do konturu Path")](effects-images/taptooutlinethepathnormal-large.png#lightbox "Potrójna zrzut ekranu przedstawiający normalne strony wybierz do konturu ścieżki")
 
 Po wybraniu ekranu, `outlineThePath` ma ustawioną wartość `true`i `PaintSurface` obsługi tworzy świeża `SKPath` obiektu i użyty jako ścieżkę docelową w wywołaniu `GetFillPath` na `redThickStroke` paint obiektu. Tej ścieżki docelowej jest wypełniony i malowania z `redThinStroke`, co w następujących czynności:
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "Potrójna zrzut ekranu strony wybierz do konturu Path obramowane")](effects-images/taptooutlinethepathoutlined-large.png "Potrójna zrzut ekranu strony wybierz do konturu Path obramowane")
+[![](effects-images/taptooutlinethepathoutlined-small.png "Potrójna zrzut ekranu strony wybierz do konturu Path obramowane")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "Potrójna zrzut ekranu strony wybierz do konturu Path obramowane")
 
 Dwa czerwone kółka wyraźnie wskazuje, że oryginalna ścieżka cykliczne został przekonwertowany do dwóch konturów cykliczne.
 
@@ -1237,7 +1238,7 @@ Napotkano już jak `GetFillPath` metody `SKPaint` można przekonwertować jednej
 
 Jedno użycie oczywiste `CreateSum` jest określenie `SKPaint` obiekt, który wypełnia ścieżki z mocą jedną ścieżkę i obrysy ścieżki począwszy innej ścieżki. To jest przedstawiona w **kotów w ramce** próbki, które wyświetla tablicę kotów w ramce z Pofałdowany krawędzi:
 
-[![](effects-images/catsinframe-small.png "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")](effects-images/catsinframe-large.png "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")
+[![](effects-images/catsinframe-small.png "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")](effects-images/catsinframe-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")
 
 [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasy rozpoczyna się od definicji kilka pól. Rozpoznają pierwsze pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasę z [ **danych ścieżki SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) artykułu. Drugi ścieżka jest oparta na wiersz i łuk dla wzorca St Jacques ramki:
 
@@ -1405,7 +1406,7 @@ public class DashedHatchLinesPage : ContentPage
 
 Jak już znasz, kreskowania linii nie są dokładnie ograniczone do wewnętrznych obszaru, a w tym przykładzie zawsze podawać po lewej stronie z łącznikiem całego:
 
-[![](effects-images/dashedhatchlines-small.png "Potrójna zrzut ekranu przedstawiający stronę linii kreskowanej kreskowania")](effects-images/dashedhatchlines-large.png "Potrójna zrzut ekranu przedstawiający stronę kreskowane kreskowania linii")
+[![](effects-images/dashedhatchlines-small.png "Potrójna zrzut ekranu przedstawiający stronę linii kreskowanej kreskowania")](effects-images/dashedhatchlines-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kreskowane kreskowania linii")
 
 Teraz, w tym samouczku efekty ścieżki, od prostego kropki i łączniki do kombinacji dziwne, użyj wyobraźni i zobacz, można utworzyć.
 

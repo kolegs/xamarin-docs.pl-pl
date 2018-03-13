@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: afbd2d8f25cdf51c7c7c33f72f10e3b5ce8762ef
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-databases"></a>Lokalnych baz danych
 
@@ -24,7 +24,7 @@ Można użyć aplikacji platformy Xamarin.Forms [SQLite.NET PCL NuGet](https://w
 
 Towarzyszącego [Przykładowa aplikacja](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) jest prostą aplikację lista czynności do wykonania. Poniższe zrzuty ekranu pokazują, jak próbki pojawia się na każdej platformie:
 
-[ ![Zrzuty ekranu przykładowe bazy danych platformy Xamarin.Forms](databases-images/todo-list-sml.png "zrzuty ekranu TodoList pierwszej strony")](databases-images/todo-list.png "zrzuty ekranu TodoList pierwszej strony") [ ![ Zrzuty ekranu przykładowe bazy danych platformy Xamarin.Forms](databases-images/todo-detail-sml.png "zrzuty ekranu TodoList drugiej strony")](databases-images/todo-detail.png "zrzuty ekranu TodoList drugiej strony")
+[![Zrzuty ekranu przykładowe bazy danych platformy Xamarin.Forms](databases-images/todo-list-sml.png "zrzuty ekranu TodoList pierwszej strony")](databases-images/todo-list.png#lightbox "zrzuty ekranu TodoList pierwszej strony") [ ![ Zrzuty ekranu przykładowe bazy danych platformy Xamarin.Forms](databases-images/todo-list-sml.png "zrzuty ekranu TodoList pierwszej strony")](databases-images/todo-list.png#lightbox "zrzuty ekranu TodoList pierwszej strony")
 
 <a name="Using_SQLite_with_PCL" />
 

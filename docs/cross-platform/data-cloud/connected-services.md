@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>Wskazówki podłączonych usług
 
@@ -24,22 +24,22 @@ W tym przewodniku przedstawiono sposób dodawania usługi zaplecza Azure udostę
 1.  Uruchomić przez dwukrotne kliknięcie **usług połączonych** węzła w rozwiązania, które zostaną wyświetlone **galerii usług**.
   To jest lista wszystkich usług dostępnych dla tego typu aplikacji. Wybierz usługę (takich jak **zaplecza aplikacji mobilnych w usłudze aplikacji Azure**), klikając go.
 
-  [ ![](connected-services-images/image001-sml.png "Połączone węzła usług w programie Visual Studio dla komputerów Mac")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "Połączone węzła usług w programie Visual Studio dla komputerów Mac")](connected-services-images/image001.png#lightbox)
 
 2. Na stronie Szczegóły usługi zawiera opis usługi i zależności do zainstalowania.
   Kliknij przycisk **Dodaj** przycisk, aby dodać zależności do aplikacji:
 
-  [ ![](connected-services-images/image002-sml.png "Zaplecze aplikacji mobilnej przy użyciu platformy Azure")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "Zaplecze aplikacji mobilnej przy użyciu platformy Azure")](connected-services-images/image002.png#lightbox)
 
 3. Zależności należy dodać do PCL i projekty specyficzne dla platformy do pracy.
   Zaznacz pola wyboru, aby dodać usługę do każdego projektu odwołującego się on (bezpośrednio lub pośrednio):
 
-  [ ![](connected-services-images/image003-sml.png "Sprawdź wszystkie projekty, które powinien odwoływać się usługi")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "Sprawdź wszystkie projekty, które powinien odwoływać się usługi")](connected-services-images/image003.png#lightbox)
 
 4. Wybierz **Akceptuj** na **akceptacji licencji** okien dialogowych dla pakietów NuGet.
   Mogą być dwa okna dialogowe, aby zaakceptować, jeden dla MobileClient i zależności i drugi dla SQLiteStore, co jest niezbędne do synchronizacji danych w trybie offline:
 
-  [ ![](connected-services-images/image004-sml.png "Zaakceptuj umowy licencyjne")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "Zaakceptuj umowy licencyjne")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "Okno akceptacji licencji")
 
@@ -48,7 +48,7 @@ W tym przewodniku przedstawiono sposób dodawania usługi zaplecza Azure udostę
 
 6. Wybierz usługę aplikacji z listy. To spowoduje wypełnienie kod szablonu `MobileServiceClient` obiektu z odpowiedni adres URL usługi app Service na platformie Azure:
 
-  [ ![](connected-services-images/image006-sml.png "Wybierz usługę aplikacji z listy")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "Wybierz usługę aplikacji z listy")](connected-services-images/image006.png#lightbox)
 
   Jeśli nie ma na liście usług, kliknij przycisk **nowy** przycisk (zobacz krok 9).
 
@@ -59,12 +59,12 @@ W tym przewodniku przedstawiono sposób dodawania usługi zaplecza Azure udostę
 
 8. Postępuj zgodnie z dokumentacją w **następne kroki** dodawania danych, synchronizacja w trybie offline, uwierzytelniania i powiadomienia wypychane do aplikacji:
 
-  [ ![](connected-services-images/image008-sml.png "Przejrzyj następnej instrukcji kroki")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "Przejrzyj następnej instrukcji kroki")](connected-services-images/image008.png#lightbox)
 
 10. Jeśli nie masz żadnych istniejących usług aplikacji, można utworzyć nowych usług z poziomu programu Visual Studio dla komputerów Mac.
   Kliknij przycisk **nowy** przycisk w lewym dolnym rogu listy usług, aby otworzyć **nowej aplikacji usługi** okna dialogowego:
 
-  [ ![](connected-services-images/image009-sml.png "Utwórz nową usługę aplikacji w programie Visual Studio dla komputerów Mac")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Utwórz nową usługę aplikacji w programie Visual Studio dla komputerów Mac")](connected-services-images/image009.png#lightbox)
 
 Nowa usługa wymaga następujących parametrów:
 

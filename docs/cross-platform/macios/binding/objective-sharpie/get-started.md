@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>Wprowadzenie
-
-<style type="text/css"> niebieski .terminal {kolorów: rgb(10,96,254);} .terminal zielony {kolorów: rgb(12,156,26);} amarantowy .terminal {kolorów: rgb(152,12,103);} </style>
-
 
 > [!IMPORTANT]
 > **Ostrzeżenie:** celu Sharpie to narzędzie dla deweloperów programu Xamarin doświadczenie z zaawansowanej wiedzy na temat języka Objective-C (i przez rozszerzenie, C). Przed podjęciem próby powiązania biblioteka języka Objective-C powinien mieć stałe wiedzę na temat sposobu tworzenia natywnej biblioteki w wierszu polecenia (i dobrą znajomością działania natywnej biblioteki).
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>Instalowanie celu Sharpie
+## <a name="installing-objective-sharpie"></a>Instalowanie celu Sharpie
 
 Sharpie celu obecnie jest to samodzielne narzędzie wiersza polecenia dla systemu Mac OS X 10.10 i nowszych i jest _nie pełni obsługiwane produktu Xamarin_. Można stosować tylko przez deweloperów zaawansowane ułatwiających tworzenie projektu powiązanie 3rd stronie Biblioteka języka Objective-C.
 
@@ -34,9 +31,10 @@ Uruchom Instalatora i wykonaj wszystkie wyświetlanymi w Kreatorze instalacji:
   - [Pobieranie najnowszej wersji](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [Forum anonsu](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **Porada:** użyj `sharpie update` polecenia aktualizacji do najnowszej wersji.
+> [!TIP]
+> Użyj `sharpie update` polecenia aktualizacji do najnowszej wersji.
 
-# <a name="basic-walkthrough"></a>Podstawowe wskazówki
+## <a name="basic-walkthrough"></a>Podstawowe wskazówki
 
 Sharpie celu jest narzędzia wiersza polecenia, pod warunkiem Xamarin, które pomaga w tworzeniu definicje wymagane powiązać 3 biblioteka języka Objective-C strona C#.
 Nawet w przypadku używania Sharpie cel, deweloper *będzie* konieczne zmodyfikowanie wygenerowanego po zakończeniu Sharpie cel, aby rozwiązać problemy, które nie można obsłużyć automatycznie przez narzędzie.

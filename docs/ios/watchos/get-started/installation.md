@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: f7e511d7f0a933ab7f29369e5e5f0aa46607c8f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installation"></a>Instalacja
 
@@ -55,19 +55,19 @@ Nie można utworzyć nowe "Obejrzyj rozwiązanie"... zamiast aplikacji czujki mo
 
 1. Jeśli nie masz istniejący projekt, należy najpierw wybrać **Plik > nowe rozwiązanie** i Utwórz aplikację systemu iOS (na przykład **jednej aplikacji widoku**):
 
-    [ ![](installation-images/cycle8-2-sml.png "Wybierz Plik > nowe rozwiązanie i Utwórz aplikację systemu iOS")](installation-images/cycle8-2.png)
+    [![](installation-images/cycle8-2-sml.png "Wybierz Plik > nowe rozwiązanie i Utwórz aplikację systemu iOS")](installation-images/cycle8-2.png#lightbox)
 
 2. Po utworzeniu aplikacji systemu iOS (lub planujesz użyć istniejącej aplikacji systemu iOS), kliknij prawym przyciskiem myszy w ramach rozwiązania i wybierz polecenie **Dodaj > Dodawanie nowego projektu.** . W **nowy projekt** wybierz okno **watchOS > aplikacji > aplikacji WatchKit**:
 
-    [ ![](installation-images/cycle8-6-sml.png "Wybierz watchOS > aplikacji > WatchKit aplikacji")](installation-images/cycle8-6.png)
+    [![](installation-images/cycle8-6-sml.png "Wybierz watchOS > aplikacji > WatchKit aplikacji")](installation-images/cycle8-6.png#lightbox)
 
 3. Następnym ekranie pozwala wybrać, który projekt aplikacji systemu iOS powinna zawierać czujki aplikacji:
 
-    [ ![](installation-images/cycle8-7-sml.png "Wybierz, który projekt aplikacji systemu iOS powinna zawierać aplikacji czujki")](installation-images/cycle8-7.png)
+    [![](installation-images/cycle8-7-sml.png "Wybierz, który projekt aplikacji systemu iOS powinna zawierać aplikacji czujki")](installation-images/cycle8-7.png#lightbox)
 
 4. Na koniec wybierz lokalizację do zapisania projektu (i opcjonalnie włączone kontroli źródła):
 
-    [ ![](installation-images/cycle8-8-sml.png "Wybierz lokalizację do zapisania projektu")](installation-images/cycle8-8.png)
+    [![](installation-images/cycle8-8-sml.png "Wybierz lokalizację do zapisania projektu")](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio for Mac automatycznie konfiguruje [odwołania do projektu i **Info.plist** ustawienia](~/ios/watchos/get-started/project-references.md) dla Ciebie.
 
@@ -81,11 +81,11 @@ Kliknij dwukrotnie aplikacji czujki **Interface.storyboard** można edytować za
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](installation-images/iosdesigner-sml.png "Scenorysu w Projektancie")](installation-images/iosdesigner.png)
+[![](installation-images/iosdesigner-sml.png "Scenorysu w Projektancie")](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](installation-images/iosdesigner-sml-vs.png "Scenorysu w Projektancie")](installation-images/iosdesigner-vs.png)
+[![](installation-images/iosdesigner-sml-vs.png "Scenorysu w Projektancie")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -152,7 +152,7 @@ Istnieją dwa tryby uruchomienie aplikacji WatchKit:
 Po zainstalowaniu Xcode 8 (lub nowszym) firmy Apple Watch są niezależne od iOS symulatorów (w przeciwieństwie do [Xcode 6](#xcode6), gdzie były wyświetlane jako *wyświetlanych*).
 Po wybraniu projektu aplikacji czujki i stał się projekt startowy, zostaną wyświetlone na liście symulatora *iOS symulatorów* do wyboru (jak pokazano poniżej).
 
-[ ![](installation-images/xs-xcode8-watchos3-sml.png "Wybieranie typu symulatora")](installation-images/xs-xcode8-watchos3.png)
+[![](installation-images/xs-xcode8-watchos3-sml.png "Wybieranie typu symulatora")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 Po rozpoczęciu debugowania, *dwóch* symulatorów powinien rozpocząć - symulatora systemu iOS *i* Apple Watch symulatora. Użyj **polecenia + Shift + H** przejdź do powierzchni menu i zegara czujki; i użyj **sprzętu** menu, aby ustawić **wykorzystania Touch życie**. Przewijanie na trackpad lub mysz symulować, przy użyciu wierzchołek cyfrowego.
 
@@ -195,13 +195,13 @@ Visual Studio for Mac można uruchomić aplikacji czujki z powiadomienie _trybó
 Kliknij prawym przyciskiem myszy projekt aplikacji czujki i wybierz polecenie **Uruchom z > Konfiguracja niestandardowa...** :
 
 
-[![](installation-images/runwith-customparams-sml.png "Uruchomiona jest Konfiguracja niestandardowa")](installation-images/runwith-customparams.png)
+[![](installation-images/runwith-customparams-sml.png "Uruchomiona jest Konfiguracja niestandardowa")](installation-images/runwith-customparams.png#lightbox)
 
 
 Spowoduje to otwarcie **niestandardowe parametry** okna, w którym można wybrać **powiadomień** (i zapewniać ładunek JSON), naciśnij klawisz **Uruchom** można uruchomić aplikacji czujki w symulatorze:
 
 
-[![](installation-images/runwith-execargs-sml.png "Ustawianie powiadomień i ładunku")](installation-images/runwith-execargs.png)
+[![](installation-images/runwith-execargs-sml.png "Ustawianie powiadomień i ładunku")](installation-images/runwith-execargs.png#lightbox)
 
 
 

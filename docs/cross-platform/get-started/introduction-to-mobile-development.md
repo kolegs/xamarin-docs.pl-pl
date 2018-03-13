@@ -7,28 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f29851f9de410183c6f35d19486e7da8017566a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-mobile-development"></a>Wprowadzenie do rozwoju przenośnych
 
-
 Tworzenie aplikacji dla urządzeń przenośnych można w prosty jako otwarcia IDE, wyrzucanie coś ze sobą, podczas szybkiego bit testowania i przesyłanie do sklepu z aplikacjami — wszystkie wykonane w popołudnie. Lub może być bardzo zaangażowany procesu, który obejmuje rygorystyczne projektowania początkowych użyteczność, testowania i testują rozwiązania na tysiące urządzeń, beta pełny cykl życia, a następnie wdrożenia na kilka różnych sposobów pytań i odpowiedzi.
-
-Ten przewodnik jest zbadania wprowadzające tworzenia aplikacjami mobilnymi Xamarin, w tym:
-
-1.   [ **Wprowadzenie do platformy Xamarin** ](#Introduction_to_Xamarin) — lista funkcji platformy Xamarin.
-1.   [ **Jak działa program Xamarin?**](#How_Does_Xamarin_Work) — Krótki przegląd działania Xamarin się przełączenie w języku C# dla systemu iOS i Android.
-1.   [ **Rozpoczynanie pracy!**](#Sample_App) — Zajrzyj dostęp i tworzenie aplikacji platformy Xamarin, dla systemu iOS, Android lub wszystkich platform za pomocą platformy Xamarin.Forms.
-
 
 Ten dokument jest przeznaczony do wprowadzenia do platformy Xamarin. Aby dowiedzieć się więcej o *procesu* tworzenia aplikacji dla urządzeń przenośnych z projektu za pomocą do testowania, zobacz [wprowadzenie do cyklu programistycznym oprogramowania Mobile](~/cross-platform/get-started/introduction-to-mobile-sdlc.md) dokumentu.
 
 Zapoznaj się z naszym [wymagania systemowe](~/cross-platform/get-started/requirements.md#mac) do potwierdza, że jest możliwe do zainstalowania programu Xamarin.
-
 
 ## <a name="introduction-to-xamarin"></a>Wprowadzenie do platformy Xamarin
 

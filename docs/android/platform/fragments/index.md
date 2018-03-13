@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 0486b9e4371a1bcab02921da42bcb929f00a782f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fragments"></a>Fragmenty
 
@@ -28,13 +28,13 @@ Obsługa pakietów pierwotnie były nazywane *biblioteki zgodności* i dozwolone
 
 Na przykład na ilustracji poniżej pokazano, jak pojedynczą aplikacją używa fragmentów w różnych formach urządzenia.
 
-[![Diagram przedstawiający sposób fragmenty są używane w tabletów i aparaty telefoniczne](images/00.png)](images/00.png)
+[![Diagram przedstawiający sposób fragmenty są używane w tabletów i aparaty telefoniczne](images/00.png)](images/00.png#lightbox)
 
 *Fragment A* zawiera listę, podczas gdy *B fragmentu* zawiera szczegóły dotyczące elementu zaznaczonego na tej liście. Gdy aplikacja jest uruchamiana na komputerze typu tablet, będzie możliwe wyświetlenie obu fragmentach na tego samego działania. Gdy ta sama aplikacja jest uruchamiana na słuchawki (z jego mniejszego rozmiaru ekranu), fragmentów znajdują się w dwóch oddzielnych działalności. Fragment A i B fragmentu są takie same, w obu formach, ale różnią się działań, które je obsługują.
 
 Aby pomóc działanie koordynuje i zarządzanie nimi te fragmenty, Android wprowadziła nową klasę o nazwie *FragmentManager*. Każde działanie ma własne wystąpienie `FragmentManager` dodawania, usuwania i znajdowania hostowanej fragmenty. Na poniższym diagramie przedstawiono związek między fragmentów i działań:
 
-[![Diagram pokazujący relacje między działania Menedżera fragmentu i fragmenty](images/01.png)](images/01.png)
+[![Diagram pokazujący relacje między działania Menedżera fragmentu i fragmenty](images/01.png)](images/01.png#lightbox)
 
 Niektóre względem fragmenty można traktować jako formanty złożone lub mini działań. One zawierać elementy interfejsu użytkownika w modułach wielokrotnego użytku, które mogą być następnie używane niezależnie przez deweloperów w działaniach. Fragment ma hierarchię widoku — podobnie jak działanie — jednak w przeciwieństwie do działania może być współużytkowana przez ekranów. Widoki różnią się z fragmentów, że fragmenty ma swoje własne cyklu życia; nie widoków.
 
@@ -51,11 +51,11 @@ Ten przewodnik zawiera kompleksowym o sposobie używania fragmentów, w tym:
 
 Fragmenty są dostępne w zestawie SDK systemu Android, począwszy od poziom interfejsu API 11 (3.0 dla systemu Android), jak pokazano na poniższym zrzucie ekranu:
 
-[![Wybieranie poziom interfejsu API w Menedżerze zestawu SDK systemu Android](images/02.png)](images/02.png)
+[![Wybieranie poziom interfejsu API w Menedżerze zestawu SDK systemu Android](images/02.png)](images/02.png#lightbox)
 
 Fragmenty są dostępne w Xamarin.Android 4.0 lub nowszy. Aplikacji platformy Xamarin.Android musi wskazywać na co najmniej poziom interfejsu API 11 (Android 3.0) lub nowszej, aby można było używać fragmenty. Platforma docelowa może być ustawiona w opcji projektu, jak pokazano poniżej:
 
-[![Ustawianie docelowy Framework poziom interfejsu API w opcje projektu](images/03.png)](images/03.png)
+[![Ustawianie docelowy Framework poziom interfejsu API w opcje projektu](images/03.png)](images/03.png#lightbox)
 
 Istnieje możliwość użycia fragmentów w starszych wersjach systemu Android przy użyciu pakietu obsługi systemu Android i platformy Xamarin.Android 4.2 lub nowszej. Jak to zrobić zostało opisane bardziej szczegółowo w dokumentach w tej sekcji.
 

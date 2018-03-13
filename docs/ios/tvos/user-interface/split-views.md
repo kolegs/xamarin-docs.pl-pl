@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>Praca z kontrolerami widoku podziału
 
@@ -21,7 +21,7 @@ _Ten artykuł obejmuje projektowanie i Praca z kontrolerami widoku podziału wew
 
 Kontroler widoku podziału umożliwia wyświetlanie i zarządza Master i kontrolera widoku szczegółów side-by-side, na ekranie, w tym samym czasie. Podziału widoku kontrolery są używane do przedstawienia stałe, focusable zawartości w widoku głównego (mniejsze sekcji po lewej stronie) i powiązanych szczegółów w widoku szczegółów (większe sekcja po prawej stronie).
 
-[ ![](split-views-images/intro01.png "Przykładowy widok podziału")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "Przykładowy widok podziału")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ Jak już wspomniano, kontrolera widoku podziału zarządza Master i kontrolera w
 
 Ponadto może kontrolera widoku głównego zostały ukryte lub pokazane zgodnie z wymaganiami: 
 
-[ ![](split-views-images/intro02.png "Kontroler widoku głównego ukryte")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "Kontroler widoku głównego ukryte")](split-views-images/intro02.png#lightbox)
 
 Podziel widoków kontrolerów są często używane do prezentowania listę można filtrować zawartość z kategorii w widoku głównego i filtrowane wyniki w widoku szczegółów. Zazwyczaj jest to przedstawione jako widok tabeli po lewej stronie, a [widok kolekcji](~/ios/tvos/user-interface/collection-views.md) po prawej stronie.
 
@@ -54,18 +54,18 @@ Najprostszym sposobem pracy z kontrolerami widoku podziału w aplikacji Xamarin.
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **kontrolerów widoku podziału** z **przybornika** i upuść go w widoku: 
 
-    [ ![](split-views-images/activity01.png "Kontroler widoku podziału")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "Kontroler widoku podziału")](split-views-images/activity01.png#lightbox)
 1. Domyślnie iOS projektanta zainstaluje kontrolera nawigacji i kontrolera widoku w widoku głównego. Jeśli to nie spełniają wymagania aplikacji, po prostu usuń je.
 1. Jeśli usuniesz domyślny widok główny, przeciągnij nowego kontrolera widoku na powierzchnię projektu: 
 
-    [ ![](split-views-images/activity02.png "Kontroler widoku")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "Kontroler widoku")](split-views-images/activity02.png#lightbox)
 1. Sterowania kliknij i przeciągnij od kontrolera widoku podziału na nowy kontroler widoku głównego. 
 1. Wybierz **wzorca** z **Menu podręcznego**: 
 
-    [ ![](split-views-images/activity03.png "Wybierz główny z Menu podręcznego")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "Wybierz główny z Menu podręcznego")](split-views-images/activity03.png#lightbox)
 1. Projektowanie zawartość wzorca i widoki szczegółów: 
 
-    [ ![](split-views-images/activity04.png "Przykładowy układ strony")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Przykładowy układ strony")](split-views-images/activity04.png#lightbox)
 1. Przypisz **nazwy** w **kartę Widget** z **konsoli właściwości** do pracy z formantów interfejsu użytkownika w kodzie języka C#.
 1. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac.
 
@@ -74,18 +74,18 @@ Najprostszym sposobem pracy z kontrolerami widoku podziału w aplikacji Xamarin.
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **kontrolerów widoku podziału** z **przybornika** i upuść go w widoku: 
 
-    [ ![](split-views-images/activity01-vs.png "Kontroler widoku podziału")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "Kontroler widoku podziału")](split-views-images/activity01-vs.png#lightbox)
 1. Domyślnie iOS projektanta doda kontrolera nawigacji i kontrolera widoku w widoku głównego. Jeśli to nie spełniają wymagania aplikacji, po prostu usuń je.
 1. Jeśli usuniesz domyślny widok główny, przeciągnij nowego kontrolera widoku na powierzchnię projektu: 
 
-    [ ![](split-views-images/activity02-vs.png "Kontroler widoku")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "Kontroler widoku")](split-views-images/activity02-vs.png#lightbox)
 1. Sterowania kliknij i przeciągnij od kontrolera widoku podziału na nowy kontroler widoku głównego. 
 1. Wybierz **wzorca** z **Menu podręcznego**: 
 
-    [ ![](split-views-images/activity03-vs.png "Wybierz główny z Menu podręcznego")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "Wybierz główny z Menu podręcznego")](split-views-images/activity03-vs.png#lightbox)
 1. Projektowanie zawartość wzorca i widoki szczegółów: 
 
-    [ ![](split-views-images/activity04.png "Układ zawartości")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Układ zawartości")](split-views-images/activity04.png#lightbox)
 1. Przypisz **nazwy** w **kartę Widget** z **Explorer właściwości** do pracy z formantów interfejsu użytkownika w kodzie języka C#.
 1. Zapisz zmiany.
     

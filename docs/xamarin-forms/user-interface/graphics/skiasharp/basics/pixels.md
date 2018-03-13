@@ -4,14 +4,15 @@ description: "Eksploruj różnice między współrzędne SkiaSharp i współrzę
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2643e06474ffe0fd60830db3f315bf525c2f84eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pikseli i jednostki niezależnych od urządzenia
 
@@ -98,7 +99,7 @@ Metoda rozpoczyna się pierwszego wiersza tekstu z współrzędną X 20 (dla ma�
 
 Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![](pixels-images/surfacesize-small.png "Potrójna zrzut ekranu przedstawiający stronę rozmiar powierzchni")](pixels-images/surfacesize-large.png "Potrójna zrzut ekranu przedstawiający powierzchni rozmiaru strony")
+[![](pixels-images/surfacesize-small.png "Potrójna zrzut ekranu przedstawiający stronę rozmiar powierzchni")](pixels-images/surfacesize-large.png#lightbox "Potrójna zrzut ekranu przedstawiający powierzchni rozmiaru strony")
 
 Jak widać, `CanvasSize` właściwość `SKCanvasView` i `Size` właściwość `SKImageInfo` wartości są spójne w raportowaniu wymiarów w pikselach. `Height` i `Width` właściwości `SKCanvasView` właściwości platformy Xamarin.Forms i zgłoś rozmiar widoku w jednostkach niezależnych od urządzenia, zdefiniowane przez platformę.
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym miejscu jest uruchomiona na trzy platformach:
 
-[![](pixels-images/ellipsefill-small.png "Potrójna zrzut ekranu przedstawiający stronę rozmiar powierzchni")](pixels-images/ellipsefill-large.png "Potrójna zrzut ekranu przedstawiający powierzchni rozmiaru strony")
+[![](pixels-images/ellipsefill-small.png "Potrójna zrzut ekranu przedstawiający stronę rozmiar powierzchni")](pixels-images/ellipsefill-large.png#lightbox "Potrójna zrzut ekranu przedstawiający powierzchni rozmiaru strony")
 
 [Innych `DrawOval` metody](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/) ma [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/) argumentu, który jest zdefiniowany w postaci współrzędne X i Y lewego górnego rogu i prawym dolnym rogu prostokąta. Oval wypełnia tego prostokąta, które sugeruje, że może być możliwe do użycia w **wypełnienia elipsy** strony w następujący sposób:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>Typy wypełnienia ścieżki
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zwykle typ wypełnienia ścieżki narusza tylko wypełnienia i nie pociągnięć, ale dwa `Inverse` tryby wpływają na, wypełnienia i pociągnięć. Do wypełnienia, dwa `Inverse` typy wypełnienia oppositely obszarów, dzięki czemu obszar poza gwiazdy zostanie wypełniony. Dla pociągnięć, dwa `Inverse` typy kolor wszystkim poza pociągnięć. Używanie tych typów odwrotny wypełnienia można efektów niektórych nieparzysta, jak pokazano na zrzucie ekranu z systemem iOS:
 
-[![](fill-types-images/fivepointedstar-small.png "Potrójna zrzut ekranu przedstawiający stronę gwiazdkę Five-Pointed")](fill-types-images/fivepointedstar-large.png "Potrójna zrzut ekranu strony Five-Pointed gwiazdy")
+[![](fill-types-images/fivepointedstar-small.png "Potrójna zrzut ekranu przedstawiający stronę gwiazdkę Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Potrójna zrzut ekranu strony Five-Pointed gwiazdy")
 
 Android i Windows przenośnych zrzuty ekranu Pokaż typowe skutki parzyste i zawijania, ale kolejność obrysu i wypełnienia wpływa na wyniki.
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jest obraz interesujące utworzony z co najmniej kodu:
 
-[![](fill-types-images/overlappingcircles-small.png "Potrójna zrzut ekranu przedstawiający stronę nakładających się okręgi")](fill-types-images/overlappingcircles-large.png "Potrójna zrzut ekranu przedstawiający stronę okręgi nakładających się")
+[![](fill-types-images/overlappingcircles-small.png "Potrójna zrzut ekranu przedstawiający stronę nakładających się okręgi")](fill-types-images/overlappingcircles-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę okręgi nakładających się")
 
 
 ## <a name="related-links"></a>Linki pokrewne

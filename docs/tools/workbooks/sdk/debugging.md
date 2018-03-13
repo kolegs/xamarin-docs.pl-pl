@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>Debugowanie integracji
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 a następnie ponownie uruchom program Xamarin skoroszytów. Po wykonaniu powinna zostać wyświetlona **sprawdzić Element** są wyświetlane w menu kontekstowe programu kliknij prawym przyciskiem myszy, a nowy **Developer** okienko będą dostępne w preferencjach skoroszytów. Ta opcja pozwala wybrać otwarty podczas uruchamiania narzędzi deweloperskich:
 
-[![Okienko Developer](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![Okienko Developer](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Ta opcja jest tylko do ponownego uruchomienia również — konieczne będzie ponowne uruchomienie klienta skoroszytów w celu wprowadzone na nowych skoroszytów. Aktywowanie narzędzi deweloperskich za pomocą menu kontekstowego lub preferencje wyświetli znanych Safari interfejsu użytkownika:
 
-[![Narzędzia deweloperów Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Narzędzia deweloperów Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Informacje dotyczące korzystania z narzędzi deweloperskich programu Safari, zobacz [dokumentacji inspektora WebKit][webkit-docs].
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 Uruchom selektor F12 i powinna zostać wyświetlona osadzonych wystąpienie, które obsługuje skoroszyty powierzchni klienta na liście. Wybierz i znanych naciśnięcia klawisza F12, narzędzi debugowania w programie Internet Explorer zostanie wyświetlony, dołączone do klienta:
 
-[![Narzędzia F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![Narzędzia F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

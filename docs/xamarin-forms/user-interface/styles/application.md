@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>Style globalne
 
@@ -60,7 +60,7 @@ Poniższy przykład kodu pokazuje stosowania strony XAML `buttonStyle` do strony
 
 Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](application-images/application-styles-1.png "Przykład style globalne")](application-images/application-styles-1-large.png "przykład style globalne")
+[![](application-images/application-styles-1.png "Przykład style globalne")](application-images/application-styles-1-large.png#lightbox "przykład style globalne")
 
 Informacje o tworzeniu style na stronie [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), zobacz [jawne style](~/xamarin-forms/user-interface/styles/explicit.md) i [niejawne style](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -98,9 +98,9 @@ Style niżej w hierarchii widoku pierwszeństwo określone wyższy się. Na przy
 
 Oryginalna `buttonStyle`, zdefiniowanych na poziomie aplikacji, jest zastępowana `buttonStyle` wystąpienia zdefiniowane na poziomie strony. Ponadto styl poziomie strony jest zastępowana poziom kontroli `buttonStyle`. W związku z tym [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wyświetlane są wystąpienia z niebieskim, jak pokazano na poniższych zrzutach ekranu:
 
-[![](application-images/application-styles-2.png "Zastępowanie przykład style")](application-images/application-styles-2-large.png "zastępowanie przykład style")
+[![](application-images/application-styles-2.png "Zastępowanie przykład style")](application-images/application-styles-2-large.png#lightbox "zastępowanie przykład style")
 
-## <a name="creating-a-global-style-in-c35"></a>Tworzenie stylu globalne w & 35;
+## <a name="creating-a-global-style-in-c35"></a>Tworzenie stylu globalnych w języku C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) wystąpienia można dodać do aplikacji [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekcji w języku C#, tworząc nowe [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), a następnie dodając `Style` wystąpień do `ResourceDictionary`, jako przedstawiono w poniższym przykładzie:
 

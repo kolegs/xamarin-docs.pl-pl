@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 55a9e56585521a0a7b89a7b881dfecd4e1c14b08
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-user-interface-styles"></a>Nowe style interfejsu użytkownika
 
@@ -29,11 +29,11 @@ Jak już wspomniano systemu tvOS 10 teraz obsługuje zarówno ciemny, jak i inte
 
 Użytkownika można przełączyć tego motywu, przechodząc do **ustawienia** > **ogólne** > **wygląd** i przełączanie między **jasny**  i **ciemny**:
 
-[ ![](user-interface-styles-images/theme01.png "Ustawienia aplikacji")](user-interface-styles-images/theme01.png)
+[![](user-interface-styles-images/theme01.png "Ustawienia aplikacji")](user-interface-styles-images/theme01.png#lightbox)
 
 Gdy **ciemny** motywu jest zaznaczona, wszystkie elementy interfejsu użytkownika nastąpi przełączenie do prostych tekst na tle ciemny:
 
-[ ![](user-interface-styles-images/theme02.png "Ciemny motyw")](user-interface-styles-images/theme02.png)
+[![](user-interface-styles-images/theme02.png "Ciemny motyw")](user-interface-styles-images/theme02.png#lightbox)
 
 Opcja przełączania motyw w dowolnym momencie i użytkownik zrobić tak na podstawie bieżącego działania, w którym znajduje się Apple TV lub godzinę.
 
@@ -51,10 +51,10 @@ Aby wyrazić zgodę na jasny i ciemny motyw pomocy technicznej, wykonaj następu
 2. Wybierz **źródła** widoku (od dołu edytora).
 3. Dodaj nowy klucz i nadaj mu `UIUserInterfaceStyle`: 
 
-    [ ![](user-interface-styles-images/theme03.png "Klucz UIUserInterfaceStyle")](user-interface-styles-images/theme03.png)
+    [![](user-interface-styles-images/theme03.png "Klucz UIUserInterfaceStyle")](user-interface-styles-images/theme03.png#lightbox)
 4. Pozostaw ustawioną typ `String` , a następnie wprowadź wartość `Automatic`: 
 
-    [ ![](user-interface-styles-images/theme04.png "Wprowadź automatyczne")](user-interface-styles-images/theme04.png)
+    [![](user-interface-styles-images/theme04.png "Wprowadź automatyczne")](user-interface-styles-images/theme04.png#lightbox)
 5. Zapisz zmiany w pliku.
 
 Istnieją trzy możliwe wartości `UIUserInterfaceStyle` klucza:
@@ -173,13 +173,13 @@ Aby włączyć obsługę cechy kolekcji, wykonaj następujące czynności:
 
 1. Kliknij prawym przyciskiem myszy plik scenorysu w **Eksploratora rozwiązań** i wybierz **Otwórz za pomocą** > **Xcode interfejsu konstruktora**: 
 
-    [ ![](user-interface-styles-images/theme05.png "Otwórz za pomocą konstruktora Xcode — interfejs")](user-interface-styles-images/theme05.png) 
+    [![](user-interface-styles-images/theme05.png "Otwórz za pomocą konstruktora Xcode — interfejs")](user-interface-styles-images/theme05.png#lightbox) 
 2. Aby włączyć obsługę cechy kolekcji, przełącz się do **Inspector plików** i sprawdź **Użyj cechy odmiany** właściwości w **dokument konstruktora interfejsu** sekcji: 
 
-    [ ![](user-interface-styles-images/theme06.png "Włącz obsługę cechy kolekcji")](user-interface-styles-images/theme06.png)
+    [![](user-interface-styles-images/theme06.png "Włącz obsługę cechy kolekcji")](user-interface-styles-images/theme06.png#lightbox)
 3. Potwierdź zmianę w celu używania odmiany cechy: 
 
-    [ ![](user-interface-styles-images/theme07.png "Użyj odmiany cechy alertu")](user-interface-styles-images/theme07.png)
+    [![](user-interface-styles-images/theme07.png "Użyj odmiany cechy alertu")](user-interface-styles-images/theme07.png#lightbox)
 4. Zapisz zmiany w pliku scenorysu.
 
 Podczas edycji systemu tvOS Scenorys konstruktora interfejsu, firmy Apple został dodany następujące możliwości:
@@ -188,20 +188,20 @@ Podczas edycji systemu tvOS Scenorys konstruktora interfejsu, firmy Apple zosta�
     
     * Kilka właściwości już  **+**  obok nich, które można kliknąć, aby dodać określoną wersję motywu interfejsu użytkownika: 
 
-        [ ![](user-interface-styles-images/theme08.png "Dodaj określoną wersję motywu interfejsu użytkownika")](user-interface-styles-images/theme08.png) 
+        [![](user-interface-styles-images/theme08.png "Dodaj określoną wersję motywu interfejsu użytkownika")](user-interface-styles-images/theme08.png#lightbox) 
     
     * Deweloper może określić nową właściwość lub kliknij przycisk **x** przycisk, aby usunąć go: 
 
-        [ ![](user-interface-styles-images/theme09.png "Określ nową właściwość lub kliknij przycisk x w celu usunięcia go")](user-interface-styles-images/theme09.png)
+        [![](user-interface-styles-images/theme09.png "Określ nową właściwość lub kliknij przycisk x w celu usunięcia go")](user-interface-styles-images/theme09.png#lightbox)
 * Deweloper może Podgląd interfejsu użytkownika w jasny i ciemny motyw z wewnątrz konstruktora interfejsu:
     
     * Dolnej części powierzchni projektu umożliwia deweloperowi przełącznika bieżącego motywu interfejsu użytkownika: 
 
-        [ ![](user-interface-styles-images/theme10.png "Dolnej części powierzchni projektowej")](user-interface-styles-images/theme10.png)
+        [![](user-interface-styles-images/theme10.png "Dolnej części powierzchni projektowej")](user-interface-styles-images/theme10.png#lightbox)
         
     * Nowy motyw będą wyświetlane w konstruktora interfejsu i zostanie wyświetlony dopasowania określonej kolekcji cechy: 
 
-        [ ![](user-interface-styles-images/theme11.png "Motyw wyświetlane w interfejsie konstruktora")](user-interface-styles-images/theme11.png)
+        [![](user-interface-styles-images/theme11.png "Motyw wyświetlane w interfejsie konstruktora")](user-interface-styles-images/theme11.png#lightbox)
 
 Ponadto systemu tvOS symulatora ma teraz skrótu klawiaturowego, który umożliwia deweloperom szybkie przełączanie się między jasnym i ciemnym kompozycji podczas debugowania aplikacji systemu tvOS. Użyj **polecenia-Shift-D** klawiatury sekwencji, aby przełączyć między jasnym i ciemnym.
 

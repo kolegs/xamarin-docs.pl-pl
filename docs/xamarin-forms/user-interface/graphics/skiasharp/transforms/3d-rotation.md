@@ -4,14 +4,15 @@ description: "Affine — przekształcenia umożliwia obracanie 2D obiektów w pr
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>Obrotów 3D
 
@@ -27,7 +28,7 @@ Trudno jest opracowanie to `SKMatrix` przekształcenia działają jedynie w rama
 
 Trójwymiarowy układ współrzędnych dodaje trzecią osią o nazwie Z. koncepcyjnie, osi Z prostopadle do ekranu. Współrzędna punktów w przestrzeni 3D są oznaczone trzech cyfr: (x, y, z). W 3D współrzędnych używane w tym artykule, zwiększenie wartości X są po prawej stronie i zwiększa wartości Y przestaną działać, tak jak w przypadku dwóch wymiarów. Zwiększanie pozytywne wartości Z wyjść ze ekranu. Pochodzi lewego górnego rogu, tak jak w przypadku 2D grafiki. Ekran można traktować jako płaszczyzna XY z osi Z prostopadle do tej warstwy.
 
-Jest to po lewej stronie układ współrzędnych. Jeśli punkt wskazującym dla użytkownika po lewej stronie w kierunku X dodatnią współrzędne (z prawej strony) i palca środka w kierunku Y zwiększa współrzędne (wyłączone), następnie punkty przycisku przewijania w kierunek narastania współrzędnych Z &#x2014; rozszerzanie się na ekranie.
+Jest to po lewej stronie układ współrzędnych. Jeśli punkt wskazującym dla użytkownika po lewej stronie w kierunku dodatnią X współrzędne (z prawej strony), a palca środka w kierunku Y zwiększenie współrzędne (wyłączone), następnie z thumb punktów w kierunek narastania współrzędnych Z — rozszerzenie się od ekran.
 
 W grafiki 3D przekształceń są oparte na macierz 4 przez 4. W tym miejscu jest macierzą 4-na-4:
 
@@ -109,7 +110,7 @@ Obrót wokół osi Z jest taki sam jak grafiki 2D:
 |    0       0     0  1  |
 </pre>
 
-Kierunek obrotu technicznego przez skrętności dla układu współrzędnych. To jest system dla leworęcznych, tak więc jeśli wskażesz stronie przycisku suwaka użytkownika po lewej stronie kierunku zwiększanie wartości osi &#x2014; w prawo obrót wokół osi X dół dla obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z &#x2014; następnie krzywej palcami innych wskazuje kierunek dodatnią kąty obrotu.
+Kierunek obrotu technicznego przez skrętności dla układu współrzędnych. To system dla leworęcznych, tak więc jeśli punktu stronie przycisku suwaka użytkownika po lewej stronie kierunku zwiększenie wartości osi określonego — w prawo obrót wokół osi X, dół dla obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z — następnie krzywej yo inne palcami wskazuje kierunek dodatnią kąty obrotu.
 
 `SKMatrix44` został uogólniony static [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) i [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metod, które umożliwiają określenie osi, wokół którego obrót występuje:
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 Gdy wypróbowanie czwarty suwaka można zauważyć ustawień głębokość różnych nie przenoś obiekt dalsze od przeglądarki, ale zamiast tego zmienić zakres efekt perspektywy:
 
-[![](3d-rotation-images/rotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D obrotu")](3d-rotation-images/rotation3d-large.png "Potrójna zrzut ekranu przedstawiający stronę obrotu 3W")
+[![](3d-rotation-images/rotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D obrotu")](3d-rotation-images/rotation3d-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę obrotu 3W")
 
 **Animowany obrotu 3W** używa również `SKMatrix44` do animowania ciągu tekstowego w przestrzeni 3D. `textPaint` Obiekt ustawiony jako pole służy do określenia granicami wartości tekstowej w Konstruktorze:
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Zastąpienie definiuje trzy platformy Xamarin.Forms `Animation` obiektów do animowania `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Należy zauważyć, że okresy te animacje są ustawione na liczb pierwszych &#x2014; 5 sekund, 7 sekund i 11 s &#x2014; Dlatego ogólna kombinacja tylko jest powtarzany co 385 sekund, czyli więcej niż 10 minut:
+`OnAppearing` Zastąpienie definiuje trzy platformy Xamarin.Forms `Animation` obiektów do animowania `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Zwróć uwagę, że okresy te animacje są ustawione na zapisują numery — 5 sekund, 7 sekund i 11 sekund — tak ogólna kombinacja tylko jest powtarzany co 385 sekund, czyli więcej niż 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 Ta obrotu 3W jest ujęty w kilka przekształceń 2W Aby przenieść środek obrotu centrum ekranu i skalowania rozmiar ciągu tekstowego tak, aby szerokość ekranu:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D animowany obrotu")](3d-rotation-images/animatedrotation3d-large.png "Potrójna zrzut ekranu strony animowany obrotu 3W")
+[![](3d-rotation-images/animatedrotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D animowany obrotu")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Potrójna zrzut ekranu strony animowany obrotu 3W")
 
 
 ## <a name="related-links"></a>Linki pokrewne

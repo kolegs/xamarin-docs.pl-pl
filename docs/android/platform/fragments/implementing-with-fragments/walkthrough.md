@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 7441fbe1fc686dc4fa5cb67cbfc5ae6353f32c93
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c058f173f64efe4a5c777872e9ea67120115f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough"></a>Wskazówki
 
@@ -21,7 +21,7 @@ W poniższych krokach Podstawowa aplikacja zostanie utworzona z fragmentów. Pie
 
 Utwórz nowy projekt platformy Xamarin.Android o nazwie **FragmentSample**. **Minimum Android** wersja powinna być ustawiona do systemu Android w wersji 3.1 lub nowszej, jak pokazano na poniższej ilustracji:
 
-[![Ustawienie wersji Minimum Android](walkthrough-images/00.png)](walkthrough-images/00.png)
+[![Ustawienie wersji Minimum Android](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
 
 
 ## <a name="2-create-the-mainactivity"></a>2. Utwórz MainActivity
@@ -47,7 +47,7 @@ public class MainActivity : Activity
 
 Dwóch różnych rozmiarów ekranu wymaga dwóch różnych układu plików. Więc warto utworzyć nowego folderu, **zasobów/układu-Large**i Utwórz nowy układ o nazwie **activity_main.axml**. Firma Microsoft będzie także zmienić nazwę pliku układu domyślne jako **Resources/Layout/activity_main.axml**. Po wprowadzeniu tych zmian foldery układu powinien wyglądać na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu przedstawiający układu folderów w środowisku IDE](walkthrough-images/01.png)](walkthrough-images/01.png)
+[![Zrzut ekranu przedstawiający układu folderów w środowisku IDE](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
 
 
 Wszystkie urządzenia będą obciążenia i użycia do pliku układu **zasobów/układ**.
@@ -92,7 +92,7 @@ Android 3.2 wprowadzono nowy sposób, aby określić układów ekranu głównego
 
 `TitlesFragment` będzie Wyświetla tytuły różnych odtwarza, więc warto dodać nowy fragment do projektu o nazwie `TitlesFragment`:
 
-[![Dodawanie nowego fragmentu do projektu TitlesFragment](walkthrough-images/02.png)](walkthrough-images/02.png)
+[![Dodawanie nowego fragmentu do projektu TitlesFragment](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
 
 Po `TitlesFragment` został dodany, będziemy zmieniać klasy tak, aby dziedziczyła ona z `Android.App.ListFragment`. `ListFragment` jest typem specjalne fragmentu, która obejmuje funkcjonalność listy.
 `TitlesFragment` zostanie również zastąpić `OnActivityCreated` (innej metody cyklu życia fragmentu) i podaj `Adapter` który `ListFragment` będzie używany do wypełnienia listy:
@@ -162,7 +162,6 @@ private void ShowDetails(int playId)
 
 Kod z urządzenia określa sposób formatowania i wyświetlania oferty z wybranych play. W przypadku tabletów `_isDualPane` będzie można ustawić flagi `true`, i co oferty będą wyświetlane obok `TitlesFragment`. Jeśli wybrane play `id` nie jest wyświetlana, następnie nowy `DetailsFragment` jest utworzony, a następnie ładowane do `FrameLayout` w działaniu. W przypadku innych urządzeń, które nie mają dużym &ndash; telefonach, na przykład &ndash; `isDualPane` zostanie ustawiona do `false` tak nowy `DetailsActivity` zostanie uruchomiony.
 
-<a name="5. Create_the_DetailsActivity" />
 
 ## <a name="5-create-the-detailsactivity"></a>5. Utwórz DetailsActivity
 
@@ -187,7 +186,6 @@ public class DetailsActivity : Activity
 
 Należy zauważyć, że plik układu nie jest ładowana dla `DetailsActivity`. Zamiast tego `DetailsFragment` jest ładowany do widoku głównego działania. Ten widok główny mają specjalne identyfikator `Android.Resource.Id.Content`. Nowy `DetailFragment` jest tworzony i następnie dodać do tego widoku głównego wewnątrz `FragmentTransaction` tworzone przez działania `FragmentManager`.
 
-<a name="6. Create_the_DetailsFragment" />
 
 ## <a name="6-create-the-detailsfragment"></a>6. Utwórz DetailsFragment
 

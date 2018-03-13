@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Wskazówki — przy użyciu Touch w systemie Android
 
 Daj nam poznać sposób użyć koncepcji z poprzedniej sekcji, w działającą aplikację. Aplikacja zostanie utworzona z czterech działań. Wykonywanie pierwszego działania będzie menu lub przełączania, która zostanie otwarta innych działań, aby zademonstrować różnych interfejsach API. Poniższy zrzut ekranu przedstawia działanie główne:
 
-[![Zrzut ekranu z Touch mnie przycisku](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![Zrzut ekranu z Touch mnie przycisku](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 Pierwsze działanie Touch próbki wyświetli sposób użycia procedury obsługi zdarzeń dla dotknięcie widoków. Aparat rozpoznawania gestów działania zostaną przedstawione jak podklasy `Android.View.Views` i obsługi zdarzeń także przedstawiają sposób obsługi gestów uszczypnięcia. Działanie trzeci i końcowych **gestów niestandardowych**, Pokaż jak użyje gestów niestandardowych. Aby ułatwić czynności do wykonania i przyjęcia, firma Microsoft będzie podzielić tego przewodnika sekcje z każdej sekcji koncentrujących się na jednym z działania.
 
@@ -25,7 +25,7 @@ Pierwsze działanie Touch próbki wyświetli sposób użycia procedury obsługi 
 
 -   Otwórz projekt **TouchWalkthrough\_Start**. **MainActivity** jest ustawione Przejdź &ndash; do nas do zaimplementowania zachowania touch w działaniu. Jeżeli możesz uruchomić aplikację i kliknąć pozycję **Touch próbki**, należy uruchomić następujące działania:
 
-    [![Zrzut ekranu przedstawiający działania Touch rozpoczyna wyświetlane](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![Zrzut ekranu przedstawiający działania Touch rozpoczyna wyświetlane](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   Teraz, możemy potwierdzić, że działania uruchamiania, otwórz plik **TouchActivity.cs** i Dodaj program obsługi `Touch` zdarzenie `ImageView`:
 
@@ -63,11 +63,11 @@ Zwróć uwagę w powyższym kodzie, że traktujemy `Move` i `Down` akcji jako ta
 
 Po każdej aktualizacji poprawki użytkownika `ImageView`, `Touch` zostanie wygenerowany, zdarzeń i naszych obsługi wyświetli komunikat **Touch rozpoczyna się** na ekranie, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu przedstawiający działania Touch rozpoczyna się](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![Zrzut ekranu przedstawiający działania Touch rozpoczyna się](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 Jak długo użytkownik zachodzi `ImageView`, **Touch rozpoczyna się** będą wyświetlane w `TextView`. Gdy użytkownik jest już dotknięcie `ImageView`, wiadomość **Touch kończy się** będą wyświetlane w `TextView`, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu przedstawiający działania Touch kończy się](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![Zrzut ekranu przedstawiający działania Touch kończy się](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>Działanie aparat rozpoznawania gestów
@@ -234,11 +234,11 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
 -   Teraz uruchom aplikację i uruchomienia działania aparat rozpoznawania gestów.
     Podczas uruchamiania ekranu powinien wyglądać jak na poniższym zrzucie ekranu:
 
-    [![Aparat rozpoznawania gestów ekranie startowym ikoną systemu Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![Aparat rozpoznawania gestów ekranie startowym ikoną systemu Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   Teraz touch ikonę, a następnie przeciągnij ją po ekranie. Spróbuj gestu powiększanie gestem uszczypnięcia. W pewnym momencie ekranu może wyglądać jak na poniższym zrzucie ekranu:
 
-    [![Ikona przenoszenia gestów wokół ekranu](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![Ikona przenoszenia gestów wokół ekranu](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 Na tym etapie należy nadać samodzielnie jest element pat na tylnej: powiększanie gestem uszczypnięcia właśnie zostało zaimplementowane w aplikacji systemu Android! Pobrać podział szybki i pozwala przejść do działania trzeci i końcowe w ramach tego przewodnika &ndash; za pomocą gestów niestandardowych.
 
@@ -341,17 +341,17 @@ Na potrzeby tego przewodnika biblioteki gestów został już utworzony za pomoc�
 
 -   Uruchom aplikację i uruchomienia działania aparat rozpoznawania gestów niestandardowych. Powinien on wyglądać podobnie jak poniższy zrzut ekranu:
 
-    [![Zrzut ekranu z Sprawdź mnie obrazu](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![Zrzut ekranu z Sprawdź mnie obrazu](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     Teraz narysuj wyboru na ekranie i mapy bitowej będzie wyświetlany powinien wyglądać jak wyświetlanego w następnym zrzuty ekranu:
 
-    [![Rysowane znacznikiem wyboru](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![Recognized znacznik wyboru](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![Rysowane znacznikiem wyboru](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Recognized znacznik wyboru](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     Na koniec Rysuj bazgrołów na ekranie. Pole wyboru należy zmieniać wstecz do oryginalnego obrazu, jak pokazano w tych zrzuty ekranu:
 
-    [![Bazgroły na ekranie](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![oryginalnego obrazu jest wyświetlany.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![Bazgroły na ekranie](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![oryginalnego obrazu jest wyświetlany.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 Masz teraz zrozumienia sposobu integracji touch i gestów w aplikacji systemu Android przy użyciu platformy Xamarin.Android.
 

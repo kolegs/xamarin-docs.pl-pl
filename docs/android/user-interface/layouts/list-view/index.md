@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 70a7abb186c102fb803c0ab6fa38c7b2d8222292
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="listview"></a>ListView
 
 _Element ListView jest ważny składnik interfejsu użytkownika aplikacji systemu Android; Służy wszędzie z krótkim list opcji menu długie listy kontaktów lub internet Ulubione. Zapewnia prosty sposób do przedstawienia przewijanej listy wierszy, które mogą być sformatowany przy użyciu wbudowanych stylu lub dostosować często._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -30,10 +29,9 @@ Po pierwsze, krótki samouczek przedstawia `ListView` z przykładowego kodu pods
 
 
 > [!NOTE]
-> **Uwaga**: `RecyclerView` widget jest bardziej zaawansowane i elastyczne wersji `ListView`. Ponieważ `RecyclerView` została zaprojektowana jako zastępuje `ListView` (i `GridView`), zaleca się, że używasz `RecyclerView` zamiast `ListView` do tworzenia nowej aplikacji. Aby uzyskać więcej informacji, zobacz [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
+> `RecyclerView` Widget jest bardziej zaawansowane i elastyczne wersji `ListView`. Ponieważ `RecyclerView` została zaprojektowana jako zastępuje `ListView` (i `GridView`), zaleca się, że używasz `RecyclerView` zamiast `ListView` do tworzenia nowej aplikacji. Aby uzyskać więcej informacji, zobacz [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
 
-<a name="tutorial" />
 
 ## <a name="listview-tutorial"></a>ListView — samouczek
 
@@ -147,7 +145,7 @@ To jest tablica ciągów, które zostaną umieszczone w [ `ListView` ](https://d
 
 Uruchom aplikację. Możesz przewijać listę, lub wpisz, aby filtrować je, a następnie kliknij element, aby wyświetlić komunikat. Powinny pojawić się dane podobne do poniższych:
 
-[ ![Zrzut ekranu elementu ListView z nazwami kraju](images/helloviews6.png)](images/helloviews6.png)
+[![Zrzut ekranu elementu ListView z nazwami kraju](images/helloviews6.png)](images/helloviews6.png#lightbox)
 
 Należy pamiętać, że przy użyciu tablicy ciągów ustalony nie jest najlepszym rozwiązaniem projektu. Co najmniej jedna jest używana w tym samouczku dla uproszczenia, aby zademonstrować [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) elementu widget. Lepsze rozwiązaniem jest odwołanie tablicy ciągów, zdefiniowany przez zasób zewnętrzny, takich jak z `string-array` zasobów w projekcie **Resources/Values/Strings.xml** pliku. Na przykład:
 
@@ -173,7 +171,6 @@ string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
 
-<a name="going_further" />
 
 ## <a name="going-further-with-listview"></a>Kontynuacja z widoku listy.
 
@@ -200,7 +197,6 @@ Omówienie (podzielone na sześć części) rozpoczyna się od omówienie `ListV
 -   [Używanie obiektu ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
 -   [Obiekt ListView i cyklem życia aktywności](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

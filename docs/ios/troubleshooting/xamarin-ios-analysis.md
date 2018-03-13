@@ -6,15 +6,23 @@ ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 7cf627f369b666bb54d0f512dc1361d2a685a057
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Reguły analizy platformy Xamarin.iOS
 
+Analiza platformy Xamarin.iOS to zestaw reguł, które sprawdzić ustawienia projektu, aby pomóc w określeniu, czy lepiej większej zoptymalizowane ustawienia są dostępne.
+
+Uruchom tak często, jak to możliwe na wczesnym etapie znalezienia możliwych ulepszeń oraz skrócić czas tworzenia reguł analizy.
+
+Aby uruchomić reguły, w programie Visual Studio dla komputerów Mac w menu, wybierz **projektu > Uruchom analizę kodu**.
+
+> [!NOTE]
+> Analiza platformy Xamarin.iOS działa tylko w aktualnie wybranej konfiguracji. Zdecydowanie zaleca się uruchomienie narzędzia do debugowania **i** konfiguracje wydania.
 
 ## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
 
@@ -39,5 +47,10 @@ Aby go skonfigurować, przejdź do projektu > kompilacji systemu iOS > zachowani
 
 ## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
 
-- **Problem:** nie przy użyciu opcji float32 (--Opcje drzewa obiektów aplikacji = O = float32) prowadzi do hefty wydajności koszt specjalnie na urządzeń przenośnych, gdzie jest widoczny wolniejsze Podwójna precyzja matematycznych. Zwróć uwagę, że .NET używa podwójnej precyzji wewnętrznie, nawet w przypadku liczb zmiennoprzecinkowych, dlatego włączenie tej opcji ma wpływ na dokładność i prawdopodobnie zgodności.
+- **Problem:** nie przy użyciu opcji float32 (--Opcje drzewa obiektów aplikacji = O = float32) prowadzi do hefty wydajność, szczególnie w przypadku urządzeń przenośnych, gdzie jest widoczny wolniejsze Podwójna precyzja matematycznych. Zwróć uwagę, że .NET używa podwójnej precyzji wewnętrznie, nawet w przypadku liczb zmiennoprzecinkowych, dlatego włączenie tej opcji ma wpływ na dokładność i prawdopodobnie zgodności.
 - **Poprawka:** podwójne kliknięcie projektu systemu iOS, przejdź do kompilacji > iOS kompilacji i usuń zaznaczenie pola wyboru "Wykonywać wszystkie operacje 32-bitowych liczb zmiennoprzecinkowych jako 64-bit float".
+
+## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+
+- **Problem:** zaleca się używanie natywnej obsługi HttpClient zamiast zarządzanego w celu poprawy wydajności mniejszego rozmiaru pliku wykonywalnego i umożliwia łatwą obsługę nowszych standardów.
+- **Poprawka:** podwójne kliknięcie projektu systemu iOS, przejdź do kompilacji > iOS kompilacji i zmień implementację HttpClient NSUrlSession (iOS 7 +) albo CFNetwork obsługi wersji poprzedzającej systemów iOS 7.

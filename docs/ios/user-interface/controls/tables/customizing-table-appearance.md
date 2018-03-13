@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>Dostosowywanie wyglądu tabeli
 
@@ -29,7 +29,7 @@ Istnieją cztery wbudowane style:
 
 Te zrzuty ekranu pokazują, jak każdy styl pojawi się:
 
- [ ![](customizing-table-appearance-images/image7.png "Te zrzuty ekranu Pokaż sposobu wyświetlania każdego stylu")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "Te zrzuty ekranu Pokaż sposobu wyświetlania każdego stylu")](customizing-table-appearance-images/image7.png#lightbox)
 
 Przykład **CellDefaultTable** zawiera kod, aby utworzyć te ekranów. Styl komórki jest ustawiona `UITableViewCell` konstruktora w następujący sposób:
 
@@ -60,7 +60,7 @@ Komórki może mieć następujące Akcesoria, dodawane po prawej stronie w widok
 
 Oto jak wyglądają:
 
- [ ![](customizing-table-appearance-images/image8.png "Akcesoria próbki")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "Akcesoria próbki")](customizing-table-appearance-images/image8.png#lightbox)
 
 Aby wyświetlić jeden z tych Akcesoria można ustawić `Accessory` właściwości w `GetCell` metody:
 
@@ -119,7 +119,7 @@ Aby zmienić stylu wizualnego. należy podać go, aby wyświetlić niestandardow
 
 W przykładzie CellCustomTable implementuje `UITableViewCell` podklasy, który definiuje niestandardowe układ `UILabel`s i `UIImage` z różnych czcionek i kolorów. Wynikowa komórek wyglądać następująco:
 
- [ ![](customizing-table-appearance-images/image9.png "Układy niestandardowe komórki")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "Układy niestandardowe komórki")](customizing-table-appearance-images/image9.png#lightbox)
 
 Klasy niestandardowej komórki obejmuje tylko trzy metody:
 

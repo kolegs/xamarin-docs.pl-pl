@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d81776dcb48d33927ffde4087ceb3f408b38d16f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Wprowadzenie do macOS Sierra
 
@@ -52,7 +52,7 @@ Aby uzyskać więcej informacji, zobacz firmy Apple [ApplePay JS Framework](http
 
 System macOS nowoczesnych aplikacji, takich jak przeglądarki sieci web Safari firmy Apple, tekstów stron i numery rozpowszechniania za pomocą otwartych wiele nowych technologii do prezentowania ujednolicone, kontekstowej interfejsu użytkownika, który wykonuje optymalizacji tradycyjnych elementów interfejsu użytkownika, takich jak ruchome panele i wielu systemu Windows.
 
-[ ![](images/content08.png)](images/content08.png)
+[![Przykład okno Mac z kartami](images/content08.png)](images/content08.png#lightbox)
 
 Nasze [macOS tworzenie nowoczesnych aplikacji](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md) przewodnik obejmuje kilka porad, funkcje i techniki deweloper może użyć do utworzenia aplikacji modern macOS w Xamarin.Mac.
 
@@ -152,5 +152,5 @@ Zobacz firmy Apple [v10.12 OS X Diffs interfejsu API](https://developer.apple.co
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady Mac](https://developer.xamarin.com/samples/mac/)
+- [Przykłady dla komputerów Mac](https://developer.xamarin.com/samples/mac/)
 - [What's new in 10.12 X systemu operacyjnego](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

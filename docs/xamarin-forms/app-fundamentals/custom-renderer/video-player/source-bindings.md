@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d0842a54f725e5a9504668f977ba06648a96ee6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 209b301c44da9bbb52ad8bf7fe867811a9b7617f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-video-sources-to-the-player"></a>Powiązania źródła wideo do odtwarzacza
 
@@ -72,7 +72,7 @@ namespace VideoPlayerDemos
 
 Po załadowaniu najpierw strony, nie wybrano elementów w `ListView`, więc musisz wybrać host rozpocząć odtwarzanie wideo:
 
-[![Wybierz wideo w sieci Web](source-bindings-images/selectwebvideo-small.png "Wybierz wideo w sieci Web")](source-bindings-images/selectwebvideo-large.png "Wybierz wideo w sieci Web")
+[![Wybierz wideo w sieci Web](source-bindings-images/selectwebvideo-small.png "Wybierz wideo w sieci Web")](source-bindings-images/selectwebvideo-large.png#lightbox "Wybierz wideo w sieci Web")
 
 `Source` Właściwość `VideoPlayer` nie jest obsługiwana przez właściwości możliwej do wiązania, co oznacza, że może być elementem docelowym powiązania danych. Wskazuje na **powiązać VideoPlayer** strony. Znaczniki w **BindToVideoPlayer.xaml** plik jest obsługiwany przez następujące klasy, która hermetyzuje tytuł wideo i odpowiadające mu `VideoSource` obiektu:
 

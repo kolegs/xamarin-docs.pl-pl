@@ -2,16 +2,16 @@
 title: "Zarządzanie kontem firmy Apple"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
+ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 0cf7456cec2e934516e15ac6cbc57109e6b57a79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-account-management"></a>Zarządzanie kontem firmy Apple
 
@@ -44,7 +44,7 @@ Musi mieć konto Apple Developer, aby użyć tej funkcji. Więcej informacji na 
 - Upewnij się, masz najnowsze narzędzia fastlane z [https://download.fastlane.tools](https://download.fastlane.tools).
 - Przed rozpoczęciem upewnij się zaakceptować wszystkie umowy licencyjne użytkownika w [portalu dla deweloperów](https://developer.apple.com/account/).
 
-# <a name="adding-an-apple-developer-account"></a>Dodawanie konta deweloperów firmy Apple
+## <a name="adding-an-apple-developer-account"></a>Dodawanie konta deweloperów firmy Apple
 
 1. Aby otworzyć okno dialogowe Zarządzanie konta, przejdź do **programu Visual Studio > Preferencje > konta dewelopera Apple**:
 
@@ -68,8 +68,11 @@ Musi mieć konto Apple Developer, aby użyć tej funkcji. Więcej informacji na 
 
     ![](apple-account-management-images/image6.png)
 
-<a name="managing">
+
+<a name="managing"/>
     
+
+
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Zarządzanie tożsamościami podpisywania i profile aprowizacji
 
 Okno dialogowe szczegółów zespołu zostanie wyświetlona lista tożsamości podpisywania, uporządkowane według typu. **Stan** kolumny informacją o tym, czy certyfikat jest: 
@@ -84,7 +87,7 @@ Okno dialogowe szczegółów zespołu zostanie wyświetlona lista tożsamości p
 
   ![](apple-account-management-images/image7.png)
 
-### <a name="create-a-signing-identities"></a>Tworzenie tożsamości usługi podpisywania
+## <a name="create-a-signing-identities"></a>Tworzenie tożsamości usługi podpisywania
 
 Aby utworzyć nową tożsamość podpisywania, wybierz **Tworzenie nowego świadectwa** przycisku rozwijanego i wybierz typ, która jest wymagana. Jeśli masz odpowiednie uprawnienia podpisywania nowej tożsamości pojawi się po kilku sekundach.
 
@@ -92,7 +95,7 @@ Jeśli opcja w listy rozwijanej jest nieaktywny i niezaznaczoną, jak pokazano p
 
 ![](apple-account-management-images/image8.png)
 
-### <a name="download-provisioning-profiles"></a>Pobierz profile inicjowania obsługi administracyjnej
+## <a name="download-provisioning-profiles"></a>Pobierz profile inicjowania obsługi administracyjnej
 
 Okno dialogowe szczegółów zespołu również zostanie wyświetlona lista wszystkich profilów aprowizacji podłączone do Twojego konta dewelopera. Możesz pobrać wszystkie profile inicjowania obsługi administracyjnej na komputerze lokalnym, naciskając **Pobierz wszystkie profile** przycisku
 
@@ -102,29 +105,28 @@ Okno dialogowe szczegółów zespołu również zostanie wyświetlona lista wszy
 
 Aby uzyskać informacje na temat wdrażania aplikacji na urządzeniu, zapoznaj się [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md) przewodnik.
 
-
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
-#### <a name="view-details-dialog-is-empty"></a>Okno dialogowe szczegółów w widoku jest pusty
+### <a name="view-details-dialog-is-empty"></a>Okno dialogowe szczegółów w widoku jest pusty
 
 Obecnie jest to znany problem związany z usterki [#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906). Upewnij się, że używasz najnowsza stabilna wersja programu Visual Studio dla komputerów Mac
 
-#### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Jeśli występują problemy dotyczące logowania na koncie, należy spróbować wykonać następujące czynności:
+### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Jeśli występują problemy dotyczące logowania na koncie, należy spróbować wykonać następujące czynności:
 
 * Otwórz aplikację łańcucha kluczy i kategorii wybierz *hasła*. Wyszukaj `deliver.`i Usuń wszystkie wpisy.
 
-#### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Błąd podczas dodawania konta. Zaloguj się przy użyciu hasła specyficzny dla aplikacji"
+### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Błąd podczas dodawania konta. Zaloguj się przy użyciu hasła specyficzny dla aplikacji"
 
 Jest to spowodowane 2 uwierzytelnianie dwuskładnikowe jest włączone na Twoim koncie. Upewnij się, że używasz najnowsza stabilna wersja programu Visual Studio dla komputerów Mac
 
-#### <a name="failed-to-create-new-certificate"></a>Nie można utworzyć nowego certyfikatu
+### <a name="failed-to-create-new-certificate"></a>Nie można utworzyć nowego certyfikatu
 "Osiągnięto limit dla certyfikatów tego typu"
 
 ![](apple-account-management-images/image10.png)
 
 Maksymalna liczba certyfikatów, które mogą zostać wygenerowane. Aby rozwiązać ten problem, przejdź do [Centrum deweloperów firmy Apple](https://developer.apple.com/account/ios/certificate/distribution) i Odwołaj certyfikat produkcji.
 
-#### <a name="known-issues"></a>Znane problemy:
+## <a name="known-issues"></a>Znane problemy
 
 * Czasami oknie dialogowym Wyświetlanie szczegółowych informacji może potrwać długi czas potrzebny do pobrania tożsamości podpisywania i profilów.
 * Często fokus nie może zwracać dla programu Visual Studio for Mac po wprowadzeniu szczegółowe informacje, powodując Twoje konto nie ma zostać dodana. Jeśli jest to możliwe, spróbuj ponownie proces.

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99f66fd0d23f14224bcd915ef7d1c6d81367f173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 412e65e074a171666a0ed9b61e347c4a16ec366b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-an-application"></a>Publikowanie aplikacji
 
 Po utworzeniu aplikacji dużą osoby będą z niego korzystać. W tej sekcji opisano kroki związane z publicznej dystrybucji aplikacji utworzonej z platformy Xamarin.Android kanałami, takie jak wiadomości e-mail, serwera sieci web prywatne, Google Play lub Amazon sklepu z aplikacjami dla systemu Android.
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -29,7 +28,7 @@ Ostatni krok w rozwoju aplikacji platformy Xamarin.Android jest, aby opublikowa�
 
 Na poniższym diagramie przedstawiono kroki związane z publikowaniem aplikacji platformy Xamarin.Android:
 
-[ ![Skompiluj i wdróż schemat blokowy](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png)
+[![Skompiluj i wdróż schemat blokowy](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 Jak widać w powyższym diagramie, przygotowania jest taki sam, niezależnie od używanej metody dystrybucji. Istnieje kilka metod można zwolnić aplikacji systemu Android dla użytkowników:
 
@@ -49,7 +48,7 @@ Program dystrybucji aplikacji mobilnej Amazon umożliwia deweloperom aplikacji m
 
 Google Play jest raczej marketplace kompleksowe i najbardziej popularnych dla aplikacji systemu Android. Google Play umożliwia użytkownikom odnajdywania, Pobierz szybkości i zwrócić dla aplikacji, klikając pojedyncza ikona na urządzeniu lub na komputerze. Google Play zawiera także narzędzi ułatwiających analizy sprzedaży i trendów rynku i do kontrolowania, które urządzenia i użytkownicy mogą pobrać aplikację. Zrzut ekranu uruchamiania na urządzeniu z systemem Android w sklepie Google Play pojawia się poniżej:
 
-[ ![Zrzut ekranu Google Play](images/google-play-app.png)](images/google-play-app.png)
+[![Zrzut ekranu Google Play](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 Tej sekcji przedstawiono sposób przekazywania aplikacji do sklepu takich jak Google Play, wraz z odpowiednią materiały promocyjne. Opisano APK rozszerzenia plików, zapewniając omówienie co to są i jak działają. Opisano również usług Google licencjonowania. Na koniec alternatywne metody dystrybucji zostały wprowadzone, łącznie z użyciem protokołu HTTP serwera sieci web, dystrybucji proste poczty e-mail i sklepu z aplikacjami firmy Amazon dla systemu Android.
 

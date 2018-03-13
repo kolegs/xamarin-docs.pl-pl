@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikowanie do sklepu z aplikacjami
 
@@ -133,7 +133,7 @@ Wykonaj następujące czynności:
 4. Łączenie zmniejszyć całkowity rozmiar Twojej aplikacji dystrybucyjnego przez usuwanie limit nieużywane klasy metod, właściwości, itd. i w większości przypadków należy pozostawić wartość domyślna wynosząca **tylko zestawy SDK łącze**. W niektórych sytuacjach, na przykład podczas przy użyciu określonych niektórych 3 bibliotek firm, może można wymusić ta wartość **nie zawierają łącza** aby zapobiec wymagane elementy zostaną usunięte. Aby uzyskać więcej informacji, zapoznaj się [mechanika kompilacji systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodnik.
 5. **Pliki obrazów PNG Optymalizuj dla systemu iOS** powinno być zaznaczone pole wyboru, ponieważ zapewni to dodatkowe zmniejszenie rozmiaru elementu dostarczanego aplikacji.
 6. Debugowanie powinno _nie_ być włączone, ponieważ spowoduje to, że kompilacji niepotrzebnie.
-8. Dla systemu iOS 11, musisz wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64.md) dokumentacji.
+8. Dla systemu iOS 11, musisz wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
 9. Możesz opcjonalnie użyć **LLVM** kompilatora, co powoduje szybsze i mniejsze kod, jednak będzie trwało dłużej do skompilowania.
 10. Oparte na potrzeby aplikacji, możesz również dostosować typ **wyrzucanie elementów bezużytecznych** używane i ustawienia **internacjonalizacji**.
 11. Zapisz zmiany w konfiguracji kompilacji.
@@ -157,7 +157,7 @@ Wykonaj następujące czynności:
 
     ![](publishing-to-the-app-store-images/configurevs02.png "Karta Zaawansowane")
 
-8. Jeśli aplikacja platformy Xamarin.iOS jest przeznaczona dla urządzeń z systemem iOS z systemem iOS 8 i 64 bitowych, należy wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64.md) dokumentacji.
+8. Jeśli aplikacja platformy Xamarin.iOS jest przeznaczona dla urządzeń z systemem iOS z systemem iOS 8 i 64 bitowych, należy wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
 9. Możesz opcjonalnie użyć **LLVM** kompilatora, co powoduje szybsze i mniejsze kod, jednak będzie trwało dłużej do skompilowania.
 10. Oparte na potrzeby aplikacji, możesz również dostosować typ **wyrzucanie elementów bezużytecznych** używane i ustawienia **internacjonalizacji**.
 11. Zapisz zmiany w konfiguracji kompilacji.
@@ -351,16 +351,16 @@ Przesyłanie aplikacji do firmy Apple do przeglądu odbywa się przy użyciu apl
 
 1. Wybierz *dostarczania aplikacji* i kliknij przycisk *wybierz* przycisk:
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "Wybierz pozycję świadczenia aplikacji")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "Wybierz pozycję świadczenia aplikacji")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. Wybierz plik zip lub IPA utworzone powyżej i kliknij przycisk **OK** przycisku.
 
 3. Moduł ładujący aplikacji będzie sprawdzanie poprawności pliku:
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "Na ekranie sprawdzania poprawności")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "Na ekranie sprawdzania poprawności")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. Kliknij przycisk *dalej* przycisk i aplikacja zostanie zweryfikowana względem sklepu z aplikacjami:
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "Sprawdzanie poprawności względem sklepu z aplikacjami")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "Sprawdzanie poprawności względem sklepu z aplikacjami")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. Kliknij przycisk **wysyłania** przycisk, aby wysłać aplikacji do firmy Apple do przeglądu.
 6. Moduł ładujący aplikacji informuje, kiedy plik został pomyślnie przekazany.
 
@@ -368,7 +368,7 @@ Przesyłanie aplikacji do firmy Apple do przeglądu odbywa się przy użyciu apl
 
 Zaloguj się do programu iTunes Connect, wybierz aplikację z listy dostępnych aplikacji stanu iTunes Connect powinna zostać wyświetlona, że jest **oczekiwanie na przegląd** (tymczasowo może odczytać **przekazać Odebrano** podczas przetwarzania):
 
-[ ![](publishing-to-the-app-store-images/image21.png "Stan w programach iTunes Connect powinna zostać wyświetlona oczekuje do przeglądu")](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "Stan w programach iTunes Connect powinna zostać wyświetlona oczekuje do przeglądu")](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 

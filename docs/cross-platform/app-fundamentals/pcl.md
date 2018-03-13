@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e3701960f246a8f627d991edf244656b5fd8958e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Wprowadzenie do bibliotek klas przenośnych
 
@@ -29,10 +29,6 @@ Istnieją trzy główne metody udostępniania kodu rozwiązania tego problemu: *
 
 
 Ta strona wyjaśnia sposób tworzenia **PCL** projektu przeznaczonego dla określonego profilu można odwoływać się do wielu projektów specyficzne dla platformy.
-
-## <a name="requirements"></a>Wymagania
-
-Projektów bibliotek przenośnych są automatycznie włączone w programie Visual Studio dla komputerów Mac na macOS i są wbudowane w Visual Studio 2013 lub nowszego.
 
 
 ## <a name="what-is-a-portable-class-library"></a>Co to jest przenośnej biblioteki klas?
@@ -132,7 +128,7 @@ T </td>
   </tbody>
 </table>
 
-Fakt, że Xamarin.iOS i Xamarin.Android obsługuje wszystkie profile wysłane z programu Visual Studio 2013 lub nowszym i dostępność funkcji w żadnych bibliotek, które możesz utworzyć tylko będzie ograniczony przez platformy, które mają zostać odzwierciedla kolumny Xamarin Obsługa.
+Kolumna Xamarin odzwierciedla fakt, że Xamarin.iOS i Xamarin.Android obsługuje wszystkie profile dostarczanego z programem Visual Studio i dostępność funkcji w bibliotekach, wszystkie utworzone jest ograniczona tylko przez wybranych do obsługi platform.
 
 Obejmuje to profilów, które są kombinacje:
 
@@ -170,7 +166,7 @@ Ten diagram przedstawia architekturę i platform aplikacji korzystanie z przeno�
 
 
 
-[![](pcl-images/image1.png "Ten diagram przedstawia architekturę i platform aplikacji korzystanie z przenośnej biblioteki klas udostępnianie kodu, lecz również przy użyciu iniekcji zależności do przekazania w funkcje zależne od platformy")](pcl-images/image1.png)
+[![](pcl-images/image1.png "Ten diagram przedstawia architekturę i platform aplikacji korzystanie z przenośnej biblioteki klas udostępnianie kodu, lecz również przy użyciu iniekcji zależności do przekazania w funkcje zależne od platformy")](pcl-images/image1.png#lightbox)
 
 
 
@@ -212,7 +208,7 @@ Aby wyświetlić i zmienić ustawienia PCL dla tego projektu, kliknij prawym prz
 
 
 
-[![](pcl-images/image4.png "Aby wyświetlić i zmienić ustawienia PCL dla tego projektu, kliknij prawym przyciskiem myszy projekt i wybierz polecenie Opcje kompilacji ogólne, aby zobaczyć ekran pokazane")](pcl-images/image4.png)
+[![](pcl-images/image4.png "Aby wyświetlić i zmienić ustawienia PCL dla tego projektu, kliknij prawym przyciskiem myszy projekt i wybierz polecenie Opcje kompilacji ogólne, aby zobaczyć ekran pokazane")](pcl-images/image4.png#lightbox)
 
 
 
@@ -224,7 +220,7 @@ Zmiana któregoś z `Target Framework` opcje automatycznie aktualizuje `Current 
 
 
 
-[![](pcl-images/image5.png "Zmiana opcji platformy docelowej automatycznie aktualizuje bieżący profil ekranu będą również wyświetlane ostrzeżenie, jeśli zostanie wybrana opcja niezgodne")](pcl-images/image5.png)
+[![](pcl-images/image5.png "Zmiana opcji platformy docelowej automatycznie aktualizuje bieżący profil ekranu będą również wyświetlane ostrzeżenie, jeśli zostanie wybrana opcja niezgodne")](pcl-images/image5.png#lightbox)
 
 
 
@@ -238,7 +234,7 @@ Jeśli kod jest zapisana w bibliotece PCL, programu Visual Studio for Mac Edytor
 
 
 
-[![](pcl-images/image6.png "We/Wy przy użyciu domyślnego profilu Profile136 używane w programie Visual Studio dla adnotacji Mac pasek przewijania, wskazujący w połowie z dostępnych klas w rzeczywistości są wyświetlane są tylko klasy 14 dostępne")](pcl-images/image6.png)
+[![](pcl-images/image6.png "We/Wy przy użyciu domyślnego profilu Profile136 używane w programie Visual Studio dla adnotacji Mac pasek przewijania, wskazujący w połowie z dostępnych klas w rzeczywistości są wyświetlane są tylko klasy 14 dostępne")](pcl-images/image6.png#lightbox)
 
 
 
@@ -246,7 +242,7 @@ Porównaj z System.IO funkcja automatycznego uzupełniania w projekcie platformy
 
 
 
-[![](pcl-images/image7.png "Brak klasy 40 dostępne w tym powszechnie używane klas takich jak plików i katalogów, które nie są w żadnym profilu PCL")](pcl-images/image7.png)
+[![](pcl-images/image7.png "Brak klasy 40 dostępne w tym powszechnie używane klas takich jak plików i katalogów, które nie są w żadnym profilu PCL")](pcl-images/image7.png#lightbox)
 
 
 
@@ -261,7 +257,7 @@ Po utworzeniu projektu PCL, można dodać odwołania do niego z dowolnego zgodne
 
 
 
-[![](pcl-images/image8.png "W programie Visual Studio for Mac kliknij prawym przyciskiem myszy węzeł odniesienia i wybierz pozycję Edytuj odwołania, a następnie przejść do karty projektów, jak pokazano")](pcl-images/image8.png)
+[![](pcl-images/image8.png "W programie Visual Studio for Mac kliknij prawym przyciskiem myszy węzeł odniesienia i wybierz pozycję Edytuj odwołania, a następnie przejść do karty projektów, jak pokazano")](pcl-images/image8.png#lightbox)
 
 
 
@@ -269,7 +265,7 @@ Poniższy zrzut ekranu przedstawia konsoli rozwiązanie dla aplikacji przykłado
 
 
 
-[![](pcl-images/image9.png "Konsola rozwiązania dla TaskyPortable przykładowej aplikacji")](pcl-images/image9.png)
+[![](pcl-images/image9.png "Konsola rozwiązania dla TaskyPortable przykładowej aplikacji")](pcl-images/image9.png#lightbox)
 
 
 
@@ -325,7 +321,7 @@ Ustawienia PCL można wyświetlać i zmieniony przez kliknięcie prawym przycisk
 
 
 
-[![](pcl-images/image13.png "Ustawienia PCL można wyświetlać i zmienić prawym przyciskiem myszy projekt i wybierając pozycję Właściwości biblioteki, jak pokazano w tym zrzut ekranu")](pcl-images/image13.png)
+[![](pcl-images/image13.png "Ustawienia PCL można wyświetlać i zmienić prawym przyciskiem myszy projekt i wybierając pozycję Właściwości biblioteki, jak pokazano w tym zrzut ekranu")](pcl-images/image13.png#lightbox)
 
 
 
@@ -340,7 +336,7 @@ Jeśli kod jest zapisana w bibliotece PCL, Visual Studio rozpozna ograniczenia w
 
 
 
-[![](pcl-images/image14.png "We/Wy przy użyciu domyślnego profilu Profile136")](pcl-images/image14.png)
+[![](pcl-images/image14.png "We/Wy przy użyciu domyślnego profilu Profile136")](pcl-images/image14.png#lightbox)
 
 
 
@@ -348,7 +344,7 @@ Porównaj z System.IO funkcja automatycznego uzupełniania w projekcie regularny
 
 
 
-[![](pcl-images/image15.png "Funkcja automatycznego uzupełniania w regularnych projektu")](pcl-images/image15.png)
+[![](pcl-images/image15.png "Funkcja automatycznego uzupełniania w regularnych projektu")](pcl-images/image15.png#lightbox)
 
 
 
@@ -363,7 +359,7 @@ Po utworzeniu projektu PCL, można dodać odwołania do niego z dowolnego zgodne
 
 
 
-[![](pcl-images/image16.png "Karta projekty, jak pokazano")](pcl-images/image16.png)
+[![](pcl-images/image16.png "Karta projekty, jak pokazano")](pcl-images/image16.png#lightbox)
 
 
 
@@ -371,7 +367,7 @@ Poniższy zrzut ekranu przedstawia okienku rozwiązanie dla aplikacji przykłado
 
 
 
-[![](pcl-images/image17.png "W okienku rozwiązania TaskyPortable przykładowej aplikacji")](pcl-images/image17.png)
+[![](pcl-images/image17.png "W okienku rozwiązania TaskyPortable przykładowej aplikacji")](pcl-images/image17.png#lightbox)
 
 
 
@@ -393,7 +389,7 @@ Poniżej przedstawiono niektóre zrzuty ekranu wynikowy aplikacje uruchomione w 
 
 
 
-[![](pcl-images/image18.png "Poniżej przedstawiono niektóre zrzuty ekranu wynikowy aplikacje uruchomione w systemach iOS, Android i Windows Phone")](pcl-images/image18.png)
+[![](pcl-images/image18.png "Poniżej przedstawiono niektóre zrzuty ekranu wynikowy aplikacje uruchomione w systemach iOS, Android i Windows Phone")](pcl-images/image18.png#lightbox)
 
 
 
@@ -406,7 +402,7 @@ Poniżej przedstawiono struktury rozwiązania (w programie Visual Studio for Mac
 
 
 
-[![](pcl-images/image19.png "Struktura rozwiązania jest tutaj wyświetlane w Visual Studio for Mac i Visual Studio odpowiednio")](pcl-images/image19.png)
+[![](pcl-images/image19.png "Struktura rozwiązania jest tutaj wyświetlane w Visual Studio for Mac i Visual Studio odpowiednio")](pcl-images/image19.png#lightbox)
 
 
 

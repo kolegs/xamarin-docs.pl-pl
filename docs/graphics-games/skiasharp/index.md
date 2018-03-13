@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>Rysunek 2D
 
 SkiaSharp udostępnia zaawansowane API języka C# do wykonywania grafiki 2D. Jest obsługiwany przez [biblioteki Skia firmy Google](http://skia.org), tę samą bibliotekę obsługującego Google Chrome, Firefox i Android w stosach grafiki.
 
-[ ![](images/ide-sml.png "SkiaSharp udostępnia zaawansowane API języka C# do wykonywania 2D grafiki")](images/ide.png)
+[![](images/ide-sml.png "SkiaSharp udostępnia zaawansowane API języka C# do wykonywania 2D grafiki")](images/ide.png#lightbox)
 
 SkiaSharp jest przenośnej biblioteki i wygodnie dostarczany w formie [pakietu NuGet i platform](https://www.nuget.org/packages/SkiaSharp)i obsługuje następujące platformy fabrycznej: macOS, Xamarin.Android i Xamarin.iOS, pulpitu systemu Windows.
 
@@ -32,7 +32,7 @@ Dowiedz się, jak pracować z cross platform grafiki, renderowanie w platformy X
 
 - [Podstawy rysowania](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)
   * [Rysowanie Proste kółko](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
-  * [Integrowanie z platformy Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
+  * [Integracja z zestawem narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
   * [Pikseli i jednostki niezależnych od urządzenia](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
   * [Podstawowe animacji](~/xamarin-forms/user-interface/graphics/skiasharp/basics/animation.md)
   * [Integrowanie tekstu i grafiki](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)
@@ -43,7 +43,7 @@ Dowiedz się, jak pracować z cross platform grafiki, renderowanie w platformy X
   * [Typy wypełnienia ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
   * [Linię i parametryczne równania](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
   * [Kropki i łączniki](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
-  * [Malowania](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
+  * [Malowanie palcami](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
 - [Przekształca](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/index.md)
   * [Przekształcanie Przetłumacz](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
   * [Przekształcanie skali](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
@@ -54,15 +54,15 @@ Dowiedz się, jak pracować z cross platform grafiki, renderowanie w platformy X
   * [Inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)
   * [Obrotu 3W](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
 - [Krzywe i ścieżek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
-  * [Trzy sposoby narysować łuk](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
-  * [Trzy typy krzywych Beziera](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
+  * [Trzy sposoby narysowania łuku](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
+  * [Trzy typy krzywych Béziera](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
   * [Dane ścieżki SVG](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
-  * [Wycinka przy użyciu ścieżek i regiony](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
-  * [Efekty ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
+  * [Obcinanie przy użyciu ścieżek i regionów](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
+  * [Efekty ścieżek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
   * [Ścieżki i tekst](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [Informacje o ścieżce i wyliczenia](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [Wyliczanie i informacje o ścieżce](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
-## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Uwagi określone platformy](~/graphics-games/skiasharp/platform.md)
+## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Uwagi dotyczące określonej platformy](~/graphics-games/skiasharp/platform.md)
 
 Na tej stronie opisano instrukcje dotyczące SkiaSharp instalacji na różnych platformach z systemami iOS, Android, macOS i systemu Windows.
 

@@ -7,18 +7,17 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 9acb1ad6ab1425edb98b938e8c03edc3704f50ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="splash-screen"></a>Ekran powitalny
 
 _Aplikację systemu Android dopiero po pewnym czasie, aby mogła się uruchomić, szczególnie gdy aplikacja jest uruchamiana pierwszy raz na urządzeniu. Ekran powitalny może być wyświetlany start postępu użytkownika lub wskazywać znakowania w górę._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -32,10 +31,8 @@ W tym przewodniku opisano jeden technikę do zaimplementowania ekranu powitalneg
 
 3.  Dodawanie nowego działania do aplikacji, która będzie służyć jako ekran powitalny zdefiniowane przez motywu utworzony w poprzednim kroku.
 
-[![Przykład Xamarin logo ekranu powitalnego następuje ekranu aplikacji](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png)
+[![Przykład Xamarin logo ekranu powitalnego następuje ekranu aplikacji](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Wymagania
 
@@ -43,7 +40,6 @@ W tym przewodniku założono, że aplikacja jest przeznaczony dla poziom interfe
 
 Wszystkie kodu i XML w tym przewodniku można znaleźć w [ekranu powitalnego](https://developer.xamarin.com/samples/monodroid/SplashScreen) przykładowy projekt dotyczący tego przewodnika.
 
-<a name="implement" />
 
 ## <a name="implementing-a-splash-screen"></a>Implementowanie ekranu powitalnego
 
@@ -51,7 +47,6 @@ Najszybszy sposób renderowania i wyświetlania ekranu powitalnego jest utworzy�
 
 Ekran powitalny jest zaimplementowany jako działanie, które wyświetla marką obiektów drawable, wykonuje żadnych operacji inicjowania i uruchamiania żadnych zadań. Gdy aplikacja ma załadować, ekran powitalny działanie uruchamia działanie główne i usuwa sam stosie przechodzenia wstecz aplikacji.
 
-<a name="drawable" />
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>Tworzenie obiektów Drawable dla ekranu powitalnego
 
@@ -79,7 +74,6 @@ Umieść ten plik w **obiektów drawable/zasoby** folder (na przykład **Resourc
 
 Po utworzeniu obiektów drawable ekran powitalny, następnym krokiem jest utworzyć motyw dla ekranu powitalnego.
 
-<a name="theme" />
 
 ### <a name="implementing-a-theme"></a>Implementowanie motywu
 
@@ -103,7 +97,6 @@ Aby utworzyć niestandardowy motyw dla ekranu powitalnego działania, Edytuj (lu
 
 **MyTheme.Splash** jest bardzo spartan &ndash; go deklaruje tło okna, jawnie usuwa pasek tytułu okna i deklaruje, że jest pełnego ekranu. Jeśli chcesz utworzyć ekran powitalny, która emuluje interfejsu użytkownika aplikacji, zanim działania nadyma pierwszego układu, możesz użyć `windowContentOverlay` zamiast `windowBackground` w definicji stylu. W takim przypadku należy również zmodyfikować **splash_screen.xml** obiektów drawable, tak aby wyświetlone emulacji interfejsu użytkownika.
 
-<a name="activity" />
 
 ### <a name="create-a-splash-activity"></a>Utwórz działanie powitalny
 
@@ -161,7 +154,6 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

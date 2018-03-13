@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>Tworzenie ControlTemplate
 
@@ -100,7 +100,7 @@ Ta metoda zastępuje aktywne [ `ControlTemplate` ](https://developer.xamarin.com
 ![](creating-images/aqua-theme.png "Szablon Akwamaryna formantu")
 
 > [!NOTE]
-> **Uwaga**: na `ContentPage`, `Content` można przypisać właściwości i `ControlTemplate` można również ustawić właściwość. Jeśli ten problem wystąpi, jeśli `ControlTemplate` zawiera `ContentPresenter` wystąpienia, zawartość przypisana do `Content` właściwość zostanie przedstawiony przez `ContentPresenter` w `ControlTemplate`.
+> Na `ContentPage`, `Content` można przypisać właściwości i `ControlTemplate` można również ustawić właściwość. Jeśli ten problem wystąpi, jeśli `ControlTemplate` zawiera `ContentPresenter` wystąpienia, zawartość przypisana do `Content` właściwość zostanie przedstawiony przez `ContentPresenter` w `ControlTemplate`.
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>Ustawienie ControlTemplate przy użyciu stylu
 
@@ -148,7 +148,7 @@ Oprócz tworzenia [ `ControlTemplate` ](https://developer.xamarin.com/api/type/X
 
 Podczas dodawania [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na poziomie strony [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) jest dodawany do [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), a następnie `ControlTemplate` dostępnych wystąpień w `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Tworzenie ControlTemplate w & 35;
+## <a name="creating-a-controltemplate-in-c35"></a>Tworzenie ControlTemplate w języku C&#35;
 
 Aby zdefiniować [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na poziomie aplikacji `class` musi zostać utworzony reprezentująca `ControlTemplate`. Klasa powinien pochodzić od [układu](~/xamarin-forms/user-interface/layouts/index.md) używany dla szablonu, jak pokazano w poniższym przykładzie:
 

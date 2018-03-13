@@ -3,16 +3,16 @@ title: Widoki tabel
 description: "Ten artykuł dotyczy pracy z widoków tabel w aplikacji Xamarin.Mac. Opisuje tworzenie widoków tabel w Xcode i kompilatora interfejsu i interakcji z nimi w kodzie."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dfac551bbb7e6fd9214fe488170455c5916318ae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4764a4babc9f6b06c7a9299feab1320971b0bf75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="table-views"></a>Widoki tabel
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej tab
 
 Widok tabeli wyświetla dane w formacie tabelarycznym zawierający co najmniej jedną kolumnę informacji w wielu wierszach. Na podstawie typu tworzonego widoku tabeli, użytkownik można sortować według kolumny, uporządkować kolumny, dodawanie kolumn, usunąć kolumny lub edytowanie danych zawartych w tabeli.
 
-[ ![](table-view-images/intro01.png "Przykładowa tabela")](table-view-images/intro01.png)
+[![](table-view-images/intro01.png "Przykładowa tabela")](table-view-images/intro01.png#lightbox)
 
 W tym artykule firma Microsoft będzie kroki te obejmują podstawy Praca z widokami tabeli w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -51,23 +51,23 @@ Aby uzyskać więcej informacji, zobacz [zawartości widoków](https://developer
 
 Podczas tworzenia nowej aplikacji Xamarin.Mac Cocoa, otrzymasz standardowe okno puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie dołączony do projektu. Aby edytować w projekcie systemu windows **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
 
-[ ![](table-view-images/edit01.png "Wybieranie głównego storyboard")](table-view-images/edit01.png)
+[![](table-view-images/edit01.png "Wybieranie głównego storyboard")](table-view-images/edit01.png#lightbox)
 
 Spowoduje to otwarcie okna projektu w Konstruktorze interfejsu w środowisku Xcode:
 
-[ ![](table-view-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](table-view-images/edit02.png)
+[![](table-view-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](table-view-images/edit02.png#lightbox)
 
 Typ `table` do **Inspector biblioteki** pole wyszukiwania, aby ułatwić znajdowanie kontrolki widoku tabeli:
 
-[ ![](table-view-images/edit03.png "Wybranie widoku tabeli z biblioteki")](table-view-images/edit03.png)
+[![](table-view-images/edit03.png "Wybranie widoku tabeli z biblioteki")](table-view-images/edit03.png#lightbox)
 
 Przeciągnij widoku tabeli kontrolera widoku w **Edytor interfejsu**, stał się wypełnienia obszaru zawartości kontroler widoku i ustaw ją na którym zmniejsza i płynne okna w **edytora ograniczeń**:
 
-[ ![](table-view-images/edit04.png "Edytowanie ograniczenia")](table-view-images/edit04.png)
+[![](table-view-images/edit04.png "Edytowanie ograniczenia")](table-view-images/edit04.png#lightbox)
 
 Wybierz widok tabeli **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
 
-[ ![](table-view-images/edit05.png "Inspektor atrybutu")](table-view-images/edit05.png)
+[![](table-view-images/edit05.png "Inspektor atrybutu")](table-view-images/edit05.png#lightbox)
 
 - **Zawartości tryb** — umożliwia użycie albo widoków (`NSView`) lub komórki (`NSCell`) do wyświetlania danych w wiersze i kolumny. Począwszy od macOS 10,7, należy użyć widoków.
 - **Pojawia się grupy wierszy** — Jeśli `true`, widok tabeli narysuje grupowanych komórek tak, jakby ich liczby zmiennoprzecinkowe.
@@ -97,7 +97,7 @@ Wybierz widok tabeli **hierarchii interfejsów** oraz następujące właściwoś
 
 Wybierz kolumnę tabeli w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
 
-[ ![](table-view-images/edit06.png "Inspektor atrybutu")](table-view-images/edit06.png)
+[![](table-view-images/edit06.png "Inspektor atrybutu")](table-view-images/edit06.png#lightbox)
 
 - **Tytuł** -Ustawia tytuł kolumny.
 - **Wyrównanie** — Ustawianie wyrównania tekstu w komórkach.
@@ -115,19 +115,19 @@ Teraz wybierz każdej kolumny w widoku naszych tabeli i nadaj pierwszej kolumny 
 
 Wybierz widok komórki tabeli (`NSTableViewCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
 
-[ ![](table-view-images/edit07.png "Inspektor atrybutu")](table-view-images/edit07.png)
+[![](table-view-images/edit07.png "Inspektor atrybutu")](table-view-images/edit07.png#lightbox)
 
 Są to wszystkie właściwości standardowy. Istnieje również możliwość zmiany rozmiaru wierszy dla tej kolumny w tym miejscu.
 
 Zaznacz komórkę widoku tabeli (domyślnie jest to `NSTextField`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
 
-[ ![](table-view-images/edit08.png "Inspektor atrybutu")](table-view-images/edit08.png)
+[![](table-view-images/edit08.png "Inspektor atrybutu")](table-view-images/edit08.png#lightbox)
 
 Będziesz mieć właściwości pola tekstowego standardowych można ustawić tutaj. Domyślnie standardowego pola tekstowego służy do wyświetlania danych dla komórek w kolumnie.
 
 Wybierz widok komórki tabeli (`NSTableFieldCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
 
-[ ![](table-view-images/edit09.png "Inspektor atrybutu")](table-view-images/edit09.png)
+[![](table-view-images/edit09.png "Inspektor atrybutu")](table-view-images/edit09.png#lightbox)
 
 Najważniejsze funkcje są:
 
@@ -141,7 +141,7 @@ Najważniejsze funkcje są:
 
 Wybierz widok komórki tabeli (`NSTableFieldCell`) u dołu w kolumnie tabeli **hierarchii interfejsów**:
 
-[ ![](table-view-images/edit10.png "Wybranie widoku komórki tabeli")](table-view-images/edit10.png)
+[![](table-view-images/edit10.png "Wybranie widoku komórki tabeli")](table-view-images/edit10.png#lightbox)
 
 Dzięki temu można edytować komórki tabeli widoku używany jako bazowy _wzorzec_ we wszystkich komórkach utworzone dla podanej kolumny.
 
@@ -155,14 +155,14 @@ Proces jest taka sama dla każdego elementu widoku tabeli, która ma zostać udo
 
 1. Przełącz się do **Edytor Asystenta** i upewnij się, że `ViewController.h` wybrany plik: 
 
-    [ ![](table-view-images/edit11.png "Edytor Asystenta")](table-view-images/edit11.png)
+    [![](table-view-images/edit11.png "Edytor Asystenta")](table-view-images/edit11.png#lightbox)
 2. Wybierz widok tabeli z **hierarchii interfejsów**, przytrzymując klawisz CTRL i przeciągnij, aby `ViewController.h` pliku.
 3. Utwórz **gniazda** dla widoku tabeli o nazwie `ProductTable`: 
 
-    [ ![](table-view-images/edit13.png "Konfigurowanie gniazda")](table-view-images/edit13.png)
+    [![](table-view-images/edit13.png "Konfigurowanie gniazda")](table-view-images/edit13.png#lightbox)
 4. Utwórz **gniazda** w kolumnach tabel o nazwie `ProductColumn` i `DetailsColumn`: 
 
-    [ ![](table-view-images/edit14.png "Konfigurowanie gniazda")](table-view-images/edit14.png)
+    [![](table-view-images/edit14.png "Konfigurowanie gniazda")](table-view-images/edit14.png#lightbox)
 5. Możesz zapisać i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 Następnie firma Microsoft będzie zapisu wyświetlania kodu niektórych danych z tabeli po uruchomieniu aplikacji.
@@ -175,7 +175,7 @@ Z naszych widoku tabeli zaprojektowane w Konstruktorze interfejsu i udostępnian
 
 Najpierw utwórz nową `Product` klasy do przechowywania informacji w poszczególnych wierszach. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `Product` dla **nazwa** i kliknij przycisk **nowy** przycisk:
 
-[ ![](table-view-images/populate01.png "Tworzenie klasy pusty")](table-view-images/populate01.png)
+[![](table-view-images/populate01.png "Tworzenie klasy pusty")](table-view-images/populate01.png#lightbox)
 
 Wprowadź `Product.cs` wygląd pliku podobne do poniższych:
 
@@ -333,7 +333,7 @@ public override void AwakeFromNib ()
 
 Czy możemy uruchomić aplikację, wyświetlane są następujące:
 
-[ ![](table-view-images/populate02.png "Uruchom przykładową aplikację")](table-view-images/populate02.png)
+[![](table-view-images/populate02.png "Uruchom przykładową aplikację")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -341,11 +341,11 @@ Czy możemy uruchomić aplikację, wyświetlane są następujące:
 
 Teraz można zezwolić użytkownikowi na posortuj dane w tabeli, klikając nagłówek kolumny. Po pierwsze, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz `Product` kolumny, wprowadź `Title` dla **klucza sortowania**, `compare:` dla **selektora** i wybierz `Ascending` dla **kolejności**:
 
-[ ![](table-view-images/sort01.png "Ustawienie klucza sortowania")](table-view-images/sort01.png)
+[![](table-view-images/sort01.png "Ustawienie klucza sortowania")](table-view-images/sort01.png#lightbox)
 
 Wybierz `Details` kolumny, wprowadź `Description` dla **klucza sortowania**, `compare:` dla **selektora** i wybierz `Ascending` dla **kolejności**:
 
-[ ![](table-view-images/sort02.png "Ustawienie klucza sortowania")](table-view-images/sort02.png)
+[![](table-view-images/sort02.png "Ustawienie klucza sortowania")](table-view-images/sort02.png#lightbox)
 
 Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -395,7 +395,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 Jeśli firma Microsoft może uruchomić aplikację, a następnie kliknij nagłówek kolumny, wiersze zostaną posortowane według tej kolumny:
 
-[ ![](table-view-images/sort03.png "Uruchom przykładową aplikację")](table-view-images/sort03.png)
+[![](table-view-images/sort03.png "Uruchom przykładową aplikację")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -403,7 +403,7 @@ Jeśli firma Microsoft może uruchomić aplikację, a następnie kliknij nagłó
 
 Jeśli chcesz zezwolić użytkownikowi wybierz pojedynczy wiersz, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok tabeli **hierarchii interfejsów** i usuń zaznaczenie pola wyboru **wiele** checkbox w **inspektora atrybutu**:
 
-[ ![](table-view-images/select01.png "Inspektor atrybutu")](table-view-images/select01.png)
+[![](table-view-images/select01.png "Inspektor atrybutu")](table-view-images/select01.png#lightbox)
 
 Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -432,7 +432,7 @@ Widok tabeli (`NSTableView`) zawiera następujące metody do pracy z zaznaczenie
 
 Jeśli chcesz zezwolić użytkownikowi zaznaczyć wiele wierszy, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok tabeli **hierarchii interfejsów** i sprawdź **wiele** checkbox w **inspektora atrybutu**:
 
-[ ![](table-view-images/select02.png "Inspektor atrybutu")](table-view-images/select02.png)
+[![](table-view-images/select02.png "Inspektor atrybutu")](table-view-images/select02.png#lightbox)
 
 Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -466,7 +466,7 @@ Widok tabeli (`NSTableView`) zawiera następujące metody do pracy z zaznaczenie
 
 Jeśli chcesz zezwolić użytkownikowi na wpisz znak z widoku tabeli wybrane i wybierz pierwszy wiersz, który ma tego znaku, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok tabeli **hierarchii interfejsów** i sprawdź **wybierz typ** checkbox w **inspektora atrybutu**:
 
-[ ![](table-view-images/type01.png "Ustawienie typu zaznaczenia")](table-view-images/type01.png)
+[![](table-view-images/type01.png "Ustawienie typu zaznaczenia")](table-view-images/type01.png#lightbox)
 
 Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
@@ -492,7 +492,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 Jeśli firma Microsoft może uruchomić aplikację, a następnie wpisz znak, zostanie wybrany wiersz:
 
-[ ![](table-view-images/type02.png "Uruchom przykładową aplikację")](table-view-images/type02.png)
+[![](table-view-images/type02.png "Uruchom przykładową aplikację")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
@@ -500,7 +500,7 @@ Jeśli firma Microsoft może uruchomić aplikację, a następnie wpisz znak, zos
 
 Jeśli chcesz zezwolić użytkownikowi na przeciąganie Zmienianie kolejności kolumn w widoku tabeli, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok tabeli **hierarchii interfejsów** i sprawdź **Reordering** checkbox w **inspektora atrybutu**:
 
-[ ![](table-view-images/reorder01.png "Inspektor atrybutu")](table-view-images/reorder01.png)
+[![](table-view-images/reorder01.png "Inspektor atrybutu")](table-view-images/reorder01.png#lightbox)
 
 Jeśli firma Microsoft daje wartość **Autosave** właściwości i wyboru **informacji o kolumnie** pola, wszystkie zmiany wykonujemy do układu tabeli zostaną automatycznie zapisane firmie Microsoft i przywrócić przy następnym aplikacji jest uruchamiane.
 
@@ -519,7 +519,7 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 
 Jeśli możemy uruchomić aplikację, możemy przeciągnij nagłówki kolumn wokół, aby zmienić kolejność kolumn naszych:
 
-[ ![](table-view-images/reorder02.png "Przykład kolejnos'ci kolumn")](table-view-images/reorder02.png)
+[![](table-view-images/reorder02.png "Przykład kolejnos'ci kolumn")](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -575,7 +575,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 Teraz w możemy uruchomić aplikację, użytkownik może edytować komórki w widoku tabeli:
 
-[ ![](table-view-images/editing01.png "Przykład edytowania komórki")](table-view-images/editing01.png)
+[![](table-view-images/editing01.png "Przykład edytowania komórki")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
@@ -650,7 +650,7 @@ Na podstawie wymagań aplikacji, może być zmieniana gdzie należy podać przyc
 
 Po pierwsze, Edytuj `Main.storyboard` w Konstruktorze interfejsu w programie Xcode, wybierz widok tabeli i zwiększyć liczbę kolumn do trzech (3). Następnie należy zmienić **tytuł** nowej kolumny do `Action`:
 
-[ ![](table-view-images/delete01.png "Edytowanie nazwy kolumny")](table-view-images/delete01.png)
+[![](table-view-images/delete01.png "Edytowanie nazwy kolumny")](table-view-images/delete01.png#lightbox)
 
 Zapisz zmiany do scenorysu i wróć do programu Visual Studio for Mac zsynchronizować zmiany.
 
@@ -897,15 +897,15 @@ Dla **akcji** kolumny, dopóki są skanowane wszystkie widoki Sub `NSButton` zos
 
 Z tych zmian w miejsce, gdy aplikacja jest uruchamiana każdy wiersz będzie mieć **usunąć** przycisk:
 
-[ ![](table-view-images/delete02.png "Widok tabeli usuwanie przycisków")](table-view-images/delete02.png)
+[![](table-view-images/delete02.png "Widok tabeli usuwanie przycisków")](table-view-images/delete02.png#lightbox)
 
 Po kliknięciu przez użytkownika **usunąć** przycisku alertu pojawi się monitem o usunąć podanego wiersza:
 
-[ ![](table-view-images/delete03.png "W przypadku wystąpienia alertu usuwania wiersza")](table-view-images/delete03.png)
+[![](table-view-images/delete03.png "W przypadku wystąpienia alertu usuwania wiersza")](table-view-images/delete03.png#lightbox)
 
 Jeśli użytkownik wybierze delete, wiersz zostaną usunięte i zostanie narysowany ponownie tabeli:
 
-[ ![](table-view-images/delete04.png "Po usunięciu wiersza tabeli")](table-view-images/delete04.png)
+[![](table-view-images/delete04.png "Po usunięciu wiersza tabeli")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 

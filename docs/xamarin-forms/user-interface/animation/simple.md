@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>Proste animacji
 
@@ -130,7 +130,7 @@ Poniższe zrzuty ekranu pokazują tłumaczenia w toku na każdej platformie:
 ![](simple-images/translateto.png "Animacja tłumaczenia")
 
 > [!NOTE]
-> **Uwaga**: Jeśli element jest początkowo zwolniono ekranu, a następnie przełożyć na ekranie, po translacji element wejściowych pozostaje układu ekranie i użytkownik nie może korzystać z niego. W związku z tym zalecane jest, że widoku należy określić w położeniu końcowego i następnie wszystkie wymagane tłumaczeń wykonywane.
+> Jeśli element jest początkowo zwolniono ekranu, a następnie przełożyć na ekranie, po translacji układ wejściowy elementu pozostanie wyłączony ekranu, a użytkownik nie może korzystać z niego. W związku z tym zalecane jest, że widoku należy określić w położeniu końcowego i następnie wszystkie wymagane tłumaczeń wykonywane.
 
 ### <a name="fading"></a>Zanikania
 

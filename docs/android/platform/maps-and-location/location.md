@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: beb690fe495d142bb4b0424ad752101fc46da590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="location-services"></a>Usługi lokalizacji
 
@@ -54,7 +54,7 @@ W przypadku aplikacji, które odnoszą się do interfejsu API w wersji 21 (Andro
 
 Aby ustawić uprawnienia, rozwiń węzeł **właściwości** folderu w **konsoli rozwiązania** i kliknij dwukrotnie **AndroidManifest.xml**. Uprawnienia, które będą wyświetlane w **wymagane uprawnienia**:
 
-[![Zrzut ekranu przedstawiający ustawień systemu Android Manifest wymagane uprawnienia](location-images/location-01-xs.png)](location-images/location-01-xs.png)
+[![Zrzut ekranu przedstawiający ustawień systemu Android Manifest wymagane uprawnienia](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
 Ustawienie dowolnej z tych uprawnień informuje Android czy aplikacja wymaga zgody użytkownika w celu uzyskania dostępu do lokalizacji dostawcy. Urządzenia uruchom interfejs API na poziomie 22 (Android 5.1) lub niższy będzie monitować użytkownika można udzielić uprawnienia zawsze, gdy aplikacja jest zainstalowana. Na urządzeniach z systemem interfejsu API na poziomie 23 (Android 6.0) lub wyższym, aplikacji należy sprawdzić uprawnienia wykonawcze przed wysłaniem żądania lokalizacji dostawcy. 
 
@@ -334,11 +334,11 @@ else
 > [!NOTE]
 >  Jeśli użytkownik wyłączył wszystkich dostawców lokalizacji, `GetBestProvider` zwróci `null`. Aby zobaczyć, jak ten kod działa na urządzeniu prawdziwe, należy włączyć GPS, sieci Wi-Fi i sieci komórkowej w obszarze **Google Ustawienia > lokalizacji > Tryb** opisane w tym zrzut ekranu:
 
-[![Ustawienia trybu lokalizacji ekranu na telefonie z systemem Android](location-images/location-02.png)](location-images/location-02.png)
+[![Ustawienia trybu lokalizacji ekranu na telefonie z systemem Android](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
 Na poniższym zrzucie ekranu przedstawiono lokalizację aplikacji uruchomionej przy użyciu `GetBestProvider`:
 
-[![Wyświetlanie szerokości, długości i dostawcy aplikacji GetBestProvider](location-images/location-03.png)](location-images/location-03.png)
+[![Wyświetlanie szerokości, długości i dostawcy aplikacji GetBestProvider](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
 Należy pamiętać, że `GetBestProvider` nie ulega zmianie dostawcy dynamicznie. Zamiast określa najlepiej dostawcy raz podczas cyklu działania. Jeśli stan dostawcy zmieni się po jego ustawieniu, aplikacja będzie wymagać dodatkowego kodu w `ILocationListener` metody &ndash; `OnProviderEnabled`, `OnProviderDisabled`, i `OnStatusChanged` &ndash; do obsługi co możliwości związane z Przełącznik dostawcy.
 

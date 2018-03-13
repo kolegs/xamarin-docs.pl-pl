@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>Architektura systemu iOS
 
@@ -20,7 +20,7 @@ Aplikacji platformy Xamarin.iOS wykonane w środowisku wykonywania Mono i użyj 
 
 Na poniższym diagramie przedstawiono ogólne omówienie tej architektury:
 
-[ ![](architecture-images/ios-arch-small.png "Ten diagram przedstawia ogólne omówienie architektury kompilacji wyprzedzeniem o czasie (drzewa obiektów aplikacji)")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "Ten diagram przedstawia ogólne omówienie architektury kompilacji wyprzedzeniem o czasie (drzewa obiektów aplikacji)")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Natywnego i kodu zarządzanego: wyjaśnienie
 
@@ -36,7 +36,7 @@ Podczas kompilowania aplikacji platformy Xamarin kompilatora Mono C# (lub F #) z
 Istnieje jednak ograniczenia zabezpieczeń w systemach iOS, ustaw przez firmę Apple, która nie zezwala na wykonywanie kodu dynamicznie generowanym na urządzeniu.
 Aby upewnić się, że firma Microsoft stosować się do tych protokołów bezpieczeństwa, Xamarin.iOS użyje kompilatora wyprzedzeniem o czasie (drzewa obiektów aplikacji) do kompilowania kodu zarządzanego. Tworzy natywnego systemu iOS binarny, opcjonalnie zoptymalizowane z LLVM dla urządzeń, które można wdrożyć na procesor oparty na architekturze ARM firmy Apple. Poniżej przedstawiono diagram nierównej jak to dopasowuje razem:
 
-[ ![](architecture-images/aot.png "Jak to dopasowuje razem nierównej diagram")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "Jak to dopasowuje razem nierównej diagram")](architecture-images/aot-large.png#lightbox)
 
 Przy użyciu drzewa obiektów aplikacji zawiera szereg ograniczeń, które opisano szczegółowo w [ograniczenia](~/ios/internals/limitations.md) przewodnik. Zapewnia także szereg ulepszeń za pośrednictwem JIT poprzez skrócenie czasu uruchomienia i różnych optymalizacji wydajności
 
@@ -101,7 +101,7 @@ Istnieją dwa typy rejestratorów używane w Xamarin.iOS — dynamiczną i staty
 
 - **Statyczne rejestratorów** — statyczne rejestratora generuje kod języka Objective-C podczas kompilacji, które następnie są kompilowane do biblioteki statycznej i połączonych w pliku wykonywalnego. Umożliwia szybsze uruchamianie, ale trwa dłużej, w czasie kompilacji. To jest używany domyślnie dla kompilacji urządzenia. Statyczne rejestratora można również używać razem symulatora systemu iOS przez przekazanie `--registrar:static` jako `mtouch` atrybutu w opcjach kompilacji projektu, jak pokazano poniżej:
 
-    [ ![](architecture-images/image1.png "Ustawienie mtouch dodatkowe argumenty")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "Ustawienie mtouch dodatkowe argumenty")](architecture-images/image1.png#lightbox)
 
 Aby uzyskać więcej informacji na temat systemu IOS, system rejestracji typ używany przez Xamarin.iOS dotyczą [rejestratora typu](~/ios/internals/registrar.md) przewodnik.
 
@@ -179,7 +179,7 @@ W tym przewodniku przeglądał kompilacji drzewa obiektów aplikacji w aplikacji
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Ograniczenia](~/ios/internals/limitations.md)
-- [Powiązanie Objective-C](~/cross-platform/macios/binding/overview.md)
+- [Tworzenie powiązań języka Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Objective-C Selectors](~/ios/internals/objective-c-selectors.md)
 - [Typ rejestratora](~/ios/internals/registrar.md)
-- [Linker](~/ios/deploy-test/linker.md)
+- [Konsolidator](~/ios/deploy-test/linker.md)

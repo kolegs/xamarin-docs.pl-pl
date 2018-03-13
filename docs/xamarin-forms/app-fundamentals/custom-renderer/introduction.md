@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Wprowadzenie do renderowania niestandardowych
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local` Prefiks przestrzeni nazw może być dowolna. Jednak `namespace` i `assembly` wartości muszą być zgodne szczegóły kontrolki niestandardowej. Po zadeklarowaniu obszaru nazw prefiks jest używany do odwołania kontrolki niestandardowej.
 
 > [!NOTE]
-> **Uwaga**: definiowanie `xmlns` jest znacznie prostsza w PCLs niż udostępnionych projektów. PCL jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, współużytkowane zasoby (w tym XAML) są kompilowane do każdego z odwołaniem do projektów, które oznacza, że jeśli dla systemu iOS, Android i Windows Phone projekty mają swoje własne *nazwy zestawu* nie jest możliwe Aby zapisać `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
+> Definiowanie `xmlns` jest znacznie prostsza w PCLs niż udostępnionych projektów. PCL jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, współużytkowane zasoby (w tym XAML) są kompilowane do każdego z odwołaniem do projektów, które oznacza, że jeśli dla systemu iOS, Android i Windows Phone projekty mają swoje własne *nazwy zestawu* nie jest możliwe Aby zapisać `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
 
 `MyEntry` Kontrolki niestandardowej następnie jest renderowany na każdej platformie, na tle szare, jak pokazano na poniższych zrzutach ekranu:
 
@@ -69,7 +69,7 @@ Proces tworzenia klasy niestandardowego modułu renderowania wygląda następuj�
 1. Dodaj `ExportRenderer` atrybutu klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania kontrolki na platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
 
 > [!NOTE]
-> **Uwaga**: w przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) lub [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) elementu.
+> W przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) lub [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) elementu.
 
 Można znaleźć w tematach w tej serii pokazów i wyjaśnienia ten proces dla różnych elementów platformy Xamarin.Forms.
 

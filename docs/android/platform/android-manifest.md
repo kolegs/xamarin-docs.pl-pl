@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Praca z manifestu systemu Android
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml** wygenerowaniu jako część procesu kompilacji, a znaleziono w pliku XML **Properties/AndroidManifest.xml** jest scalany z XML, który jest generowany na podstawie atrybutów niestandardowych. Powstałe w ten sposób scalić **AndroidManifest.xml** znajduje się w **obj** podkatalogu; na przykład znajduje się on w **obj/Debug/android/AndroidManifest.xml** w przypadku kompilacji debugowania . Proces scalania jest prosta: używa atrybutów niestandardowych z kodem, aby wygenerować elementy XML i *wstawia* tych elementów do **AndroidManifest.xml**. 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>Podstawy
 
@@ -60,7 +58,6 @@ W tym przykładzie powoduje, że poniższy fragment xml, który ma zostać dodan
 `[Activity]` Atrybut nie ma wpływu `abstract` typów; `abstract` typy są ignorowane.
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>Nazwa działania
 
@@ -83,7 +80,6 @@ W tym przykładzie powoduje poniższy fragment xml:
 
 *Uwaga*: należy używać `Name` właściwość tylko dla zgodności z poprzednimi wersjami powodów, takich jak zmiana nazwy może to spowolnić wyszukiwania typów w czasie wykonywania. Jeśli masz starszego kodu, który oczekuje, że nazwa domyślnego typu działania opartego na małej przestrzeni nazw i nazwy klasy, zobacz [Android można wywołać nazw otoki](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) porady na temat zachowania zgodności. 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>Działania, pasek tytułu
 
@@ -104,7 +100,6 @@ W tym przykładzie powoduje poniższy fragment xml:
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>Uruchamiana z wybór aplikacji
 
@@ -130,7 +125,6 @@ W tym przykładzie powoduje poniższy fragment xml:
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>Ikona działania
 
@@ -155,7 +149,6 @@ W tym przykładzie powoduje poniższy fragment xml:
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>Uprawnienia
 
@@ -178,11 +171,9 @@ W wersji kompilacji wersji manifestu (w **obj/Debug/android/AndroidManifest.xml*
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>Funkcje zaawansowane
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>Konwersji akcje i funkcje
 
@@ -214,7 +205,6 @@ W tym przykładzie powoduje poniższy fragment xml:
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>Element aplikacji
 
@@ -243,7 +233,6 @@ W tym przykładzie wszystkie działania w aplikacji zostaną domyślnie `Theme.L
 Istnieje wiele atrybutów całej aplikacji, które można skonfigurować w `<application>` element; Aby uzyskać więcej informacji o tych ustawieniach, zobacz [właściwości publiczne](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) sekcji [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>Lista atrybutów niestandardowych
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: c8f6832f618c37b3593f28c8efaeb87e4df5df03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resource-basics"></a>Podstawowe informacje dotyczące zasobów dla systemu android
 
@@ -39,7 +39,6 @@ Pięć plików, wchodzące w skład domyślnych zasobów zostały utworzone w fo
 
 -  **Resource.Designer.cs** &ndash; ten plik jest automatycznie generowany i obsługiwana przez platformy Xamarin.Android i blokad unikatowe identyfikatory przypisane do każdego zasobu. To jest bardzo podobne i takie same jak w celu pliku R.java, które byłyby aplikacji systemu Android napisany w języku Java. Automatycznie jest tworzony za pomocą narzędzi platformy Xamarin.Android, a zostaną ponownie wygenerowane od czasu do czasu.
 
-<a name="Creating_and_Accessing_Resources" />
 
 ## <a name="creating-and-accessing-resources"></a>Tworzenie i uzyskiwanie dostępu do zasobów
 
@@ -62,7 +61,6 @@ Ponadto ważne jest, aby należy pamiętać, że podczas Android obsługuje tylk
 
 Gdy zasoby zostały dodane do projektu, istnieją dwa sposoby używania ich w aplikacji &ndash; programowo (wewnątrz kodu) lub z plików XML.
 
-<a name="Referencing_Resources_Programmatically" />
 
 ## <a name="referencing-resources-programmatically"></a>Programowo odwołujące się do zasobów
 
@@ -108,7 +106,6 @@ Podczas odwoływania się do zasobów (w kodzie), są one dostępne za pośredni
 
 -  **Nazwa zasobu** &ndash; to nazwa pliku zasobu (bez rozszerzenia) lub wartość atrybutu android: name dla zasobów, które znajdują się w elemencie XML.
 
-<a name="Referencing_Resources_from_XML" />
 
 ## <a name="referencing-resources-from-xml"></a>Odwołania do zasobów z pliku XML
 

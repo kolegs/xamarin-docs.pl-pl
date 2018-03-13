@@ -8,15 +8,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/23/2017
-ms.openlocfilehash: f8680cde2e5536495f33d571adea9980020a72fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 02a425c8276524accc088b53c1099e7c2e28d828
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts"></a>Układy z kartami
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -45,7 +44,6 @@ Te niezgodne API istnieje ze względu na istotne zmiany interfejsu użytkownika 
 `TabHost` Interfejsu API jest zgodne przez wszystkie wersje systemu android, ale wymaga więcej wysiłku, aby użyć i nie jest zgodny z bieżącym [wytyczne interfejsu użytkownika dla systemu Android](http://developer.android.com/design/index.html). Deweloperzy są odradzane ze przy użyciu tego interfejsu API i powinno sprzyjać nowszej podrzędnego dla swoich aplikacji platformy Xamarin.Android. 
 
 
-<a name="Introducing_ActionBarSherlock" />
 
 ## <a name="actionbarsherlock"></a>ActionBarSherlock
 
@@ -55,8 +53,8 @@ Przed elementów nadrzędnych interfejsu API zostały backported Android 2,2 dew
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Omówienie TabHost](tab-host.md)
+- [Omówienie obiektu TabHost](tab-host.md)
 - [TabHost Walkthrough](~/android/user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
-- [Elementów nadrzędnych.](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [Pakiet NuGet AppCompat w wersji 7 biblioteki obsługi systemu android](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [Biblioteka appcompat w wersji 7](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

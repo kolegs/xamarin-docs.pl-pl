@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>Pasek nawigacyjny
 
 Android 4 wprowadzono nową systemu użytkowników interface funkcję o nazwie *pasek nawigacyjny*, zapewniające formantów nawigacji na urządzeniach, które nie zawierają przyciski sprzętu **Home**, **Wstecz** , i **Menu**.
 Poniższy zrzut ekranu przedstawia pasek nawigacyjny z głównego węzła urządzenia:
 
- [ ![Przykład paska nawigacji dla systemu Android](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Przykład paska nawigacji dla systemu Android](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 Kilka nowych flagi są dostępne umożliwiające sterowanie widoczność paska nawigacji i jego formantów, a także widoczność pasek System, który został wprowadzony w systemie Android 3. Flagi są zdefiniowane w `Android.View.View` klasy i są wymienione poniżej:
 
@@ -31,7 +31,7 @@ Te flagi można zastosować do dowolnego widoku w hierarchii widoku przez ustawi
 
 W poniższym przykładzie przedstawiono prostą aplikację, której, klikając jeden z przycisków zmienia `SystemUiVisibility`:
 
- [ ![Prezentacja Visible, niski profilu i ukryte SystemUiVisibility zrzuty ekranu](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![Prezentacja Visible, niski profilu i ukryte SystemUiVisibility zrzuty ekranu](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 Kod, aby zmienić `SystemUiVisibility` ustawia właściwość `TextView` z każdego przycisku kliknij program obsługi zdarzeń, jak pokazano poniżej:
 

@@ -3,16 +3,16 @@ title: RecyclerView
 description: "RecyclerView jest grupą widoku do wyświetlania kolekcji; zaprojektowano go jako bardziej elastyczne zastępuje starsze wyświetlanie grup, takie jak ListView i GridView.  W tym przewodniku opisano sposób używania i dostosowywania RecyclerView w aplikacji platformy Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
+ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: ec8b3a4655c8e8d9e492c9f7a1807dd64ecc6ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -23,7 +23,7 @@ _RecyclerView jest grupą widoku do wyświetlania kolekcji; zaprojektowano go ja
 Wiele aplikacji konieczne jest wyświetlenie kolekcji tego samego typu (np. wiadomości, kontakty, obrazów lub utworów muzycznych); często tej kolekcji jest zbyt duży do ekranu, więc kolekcji są prezentowane w małe okno, które można sprawnie przewijać wszystkich elementów w kolekcji.
 `RecyclerView` jest Android elementu widget, wyświetlająca kolekcję elementów listy lub siatkę, włączenie użytkownika przewijać kolekcji. Poniżej przedstawiono zrzut ekranu przedstawiający przykładową aplikację, która używa `RecyclerView` Aby wyświetlić zawartość skrzynki odbiorczej poczty e-mail w lista przewijana pionowo:
 
-[ ![Przykładową aplikację za pomocą RecyclerView lista skrzynki odbiorczej wiadomości](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png)
+[![Przykładową aplikację za pomocą RecyclerView lista skrzynki odbiorczej wiadomości](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png#lightbox)
 
 `RecyclerView` oferuje dwie funkcje atrakcyjnych:
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>Ręcznie podpisywania plik APK
 
-<a name="signing_legacy" />
 
 Po utworzeniu aplikacji w wersji musi być podpisany plik APK przed dystrybucji, dzięki czemu może działać na urządzeniu z systemem Android. Ten proces zwykle odbywa się z IDE, jednak istnieje kilka sytuacji, gdy konieczne jest ręczne, podpisać plik APK w wierszu polecenia. Podpisywania APK obejmuje następujące kroki:
 
@@ -29,7 +28,6 @@ Po utworzeniu aplikacji w wersji musi być podpisany plik APK przed dystrybucji,
 Kolejność kroków jest ważna i jest zależna od które narzędzie używane do podpisywania plik APK. Korzystając z **apksigner**, ważne jest, aby pierwszy **zipalign** aplikacji, a następnie zaloguj się za pomocą **apksigner**.  Jeśli zachodzi konieczność użycia **jarsigner** Aby podpisać plik APK, następnie należy najpierw zapisać plik APK, a następnie uruchom **zipalign**. 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -38,7 +36,6 @@ Ten przewodnik koncentruje się na temat używania **apksigner** narzędzi, komp
 Aplikacje, które są tworzone przy użyciu starszej wersji narzędzia kompilacji zestawu SDK systemu Android muszą używać **jarsigner** zgodnie z opisem w [podpisać plik APK z jarsigner](#Sign_the_APK_with_jarsigner) poniżej.
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>Tworzenie magazynu kluczy prywatnych
 
@@ -53,7 +50,6 @@ Należy chronić tego magazynu kluczy. W przypadku utraty następnie go nie będ
 Tylko rozwiązanie problem spowodowany przez utracone magazynu kluczy jest tworzenie nowego magazynu kluczy, ponownie podpisać plik APK za pomocą nowego klucza, a następnie przekaż nową aplikację. Następnie starej aplikacji musi być usunięte z witryny Google Play. Podobnie jeśli tego nowego magazynu kluczy naruszenia lub publicznie rozproszonych, następnie istnieje możliwość Nieoficjalny lub złośliwymi wersji aplikacji do dystrybucji.
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>Tworzenie nowego magazynu kluczy
 
@@ -99,7 +95,6 @@ Aby wyświetlić listę kluczy, które są przechowywane w magazynie kluczy, nal
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>Zipalign plik APK
 
@@ -111,7 +106,6 @@ Wykonaj polecenie użyje podpisem APK i utworzyć zalogowany, nazywany APK zipal
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>Podpisać plik APK
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e64f1962e35372a6058f4b515efa5a61c1c9e45
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing aplikacji Xamarin.Mac
 
@@ -22,7 +22,7 @@ _W tym artykule omówiono sandboxing aplikacją Xamarin.Mac w wersji ze sklepu A
 
 Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz tego samego możliwość piaskownicy aplikacji, jak w przypadku pracy z języka Objective-C lub Swift.
 
-[![Przykład uruchomionej aplikacji](sandboxing-images/intro01.png "przykładem uruchomionej aplikacji")](sandboxing-images/intro01-large.png)
+[![Przykład uruchomionej aplikacji](sandboxing-images/intro01.png "przykładem uruchomionej aplikacji")](sandboxing-images/intro01-large.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z sandboxing w aplikacji Xamarin.Mac i wszystkie elementy, które wchodzą w sandboxing: kontener katalogów, uprawnień, uprawnienia użytkownika, separacji uprawnień i wymuszania jądra. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -70,19 +70,19 @@ Załóżmy wykonaj następujące polecenie, aby utworzyć naszego przykładowego
 1. Uruchom program Visual Studio for Mac i kliknij przycisk **nowe rozwiązanie...** link.
 2. Z **nowy projekt** okno dialogowe, wybierz opcję **Mac** > **aplikacji** > **Cocoa aplikacji**: 
 
-    [![Tworzenie nowej aplikacji Cocoa](sandboxing-images/sample01.png "Tworzenie nowej aplikacji Cocoa")](sandboxing-images/sample01-large.png)
+    [![Tworzenie nowej aplikacji Cocoa](sandboxing-images/sample01.png "Tworzenie nowej aplikacji Cocoa")](sandboxing-images/sample01-large.png#lightbox)
 3. Kliknij przycisk **dalej** przycisku, wprowadź `MacSandbox` nazwę projektu i kliknij **Utwórz** przycisk: 
 
-    [![Wprowadź nazwę aplikacji](sandboxing-images/sample02.png "wprowadzania nazwy aplikacji")](sandboxing-images/sample02-large.png)
+    [![Wprowadź nazwę aplikacji](sandboxing-images/sample02.png "wprowadzania nazwy aplikacji")](sandboxing-images/sample02-large.png#lightbox)
 4. W **konsoli rozwiązania**, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w środowisku Xcode: 
 
-    [![Edytowanie głównego storyboard](sandboxing-images/sample03.png "edytowania głównego storyboard")](sandboxing-images/sample03-large.png)
+    [![Edytowanie głównego storyboard](sandboxing-images/sample03.png "edytowania głównego storyboard")](sandboxing-images/sample03-large.png#lightbox)
 5. Przeciągnij **widoku sieci Web** na okna, rozmiar, aby wypełnił obszar zawartości i ustaw dla niej zwiększyć lub zmniejszyć w oknie: 
 
-    [![Dodawanie widoku sieci web](sandboxing-images/sample04.png "Dodawanie widoku sieci web")](sandboxing-images/sample04-large.png)
+    [![Dodawanie widoku sieci web](sandboxing-images/sample04.png "Dodawanie widoku sieci web")](sandboxing-images/sample04-large.png#lightbox)
 6. Tworzenie gniazda widoku sieci web o nazwie `webView`: 
 
-    [![Tworzenie nowego gniazda](sandboxing-images/sample05.png "tworzenie nowych gniazda")](sandboxing-images/sample05-large.png)
+    [![Tworzenie nowego gniazda](sandboxing-images/sample05.png "tworzenie nowych gniazda")](sandboxing-images/sample05-large.png#lightbox)
 7. Wróć do programu Visual Studio for Mac i kliknij dwukrotnie **ViewController.cs** w pliku **konsoli rozwiązania** go otworzyć do edycji.
 8. Dodaj następującą instrukcję using: `using WebKit;`
 9. Wprowadź `ViewDidLoad` wygląd metody podobne do poniższych: 
@@ -99,7 +99,7 @@ public override void AwakeFromNib ()
 
 Uruchom możesz aplikacji i upewnij się, że witryna sieci Web firmy Apple jest wyświetlany w oknie w następujący sposób:
 
-[![Przedstawiający przykładową aplikację wykonywania](sandboxing-images/sample06.png "przedstawiający przykładową aplikację wykonywania")](sandboxing-images/sample06-large.png)
+[![Przedstawiający przykładową aplikację wykonywania](sandboxing-images/sample06.png "przedstawiający przykładową aplikację wykonywania")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -111,34 +111,34 @@ Pozwól, wykonaj następujące czynności:
 
 1. Zaloguj się do portalu dla deweloperów firmy Apple: 
 
-    [![Logowanie do portalu dla deweloperów firmy Apple](sandboxing-images/sign01.png "logowania do portalu dla deweloperów firmy Apple")](sandboxing-images/sign01-large.png)
+    [![Logowanie do portalu dla deweloperów firmy Apple](sandboxing-images/sign01.png "logowania do portalu dla deweloperów firmy Apple")](sandboxing-images/sign01-large.png#lightbox)
 2. Wybierz **certyfikaty, identyfikatory & profile**: 
 
-    [![Wybieranie certyfikatów, identyfikatory & profile](sandboxing-images/sign02.png "wybranie certyfikaty, identyfikatory i profile")](sandboxing-images/sign02-large.png)
+    [![Wybieranie certyfikatów, identyfikatory & profile](sandboxing-images/sign02.png "wybranie certyfikaty, identyfikatory i profile")](sandboxing-images/sign02-large.png#lightbox)
 3. W obszarze **aplikacji Mac**, wybierz pozycję **identyfikatory**: 
 
-    [![Wybieranie identyfikatory](sandboxing-images/sign03.png "wybranie identyfikatorów")](sandboxing-images/sign03-large.png)
+    [![Wybieranie identyfikatory](sandboxing-images/sign03.png "wybranie identyfikatorów")](sandboxing-images/sign03-large.png#lightbox)
 4. Utwórz nowy identyfikator dla aplikacji: 
 
-    [![Tworzenie nowego Identyfikatora aplikacji](sandboxing-images/sign04.png "tworzenia nowego Identyfikatora aplikacji")](sandboxing-images/sign04-large.png)
+    [![Tworzenie nowego Identyfikatora aplikacji](sandboxing-images/sign04.png "tworzenia nowego Identyfikatora aplikacji")](sandboxing-images/sign04-large.png#lightbox)
 5. W obszarze **profile inicjowania obsługi**, wybierz pozycję **programowanie**: 
 
-    [![Wybieranie programowanie](sandboxing-images/sign05.png "wybranie programowanie")](sandboxing-images/sign05-large.png)
+    [![Wybieranie programowanie](sandboxing-images/sign05.png "wybranie programowanie")](sandboxing-images/sign05-large.png#lightbox)
 6. Utwórz nowy profil, a następnie wybierz **tworzenie aplikacji dla komputerów Mac**: 
 
-    [![Tworzenie nowego profilu](sandboxing-images/sign06.png "tworzenia nowego profilu")](sandboxing-images/sign06-large.png)
+    [![Tworzenie nowego profilu](sandboxing-images/sign06.png "tworzenia nowego profilu")](sandboxing-images/sign06-large.png#lightbox)
 7. Wybierz identyfikator aplikacji, które zostały utworzone powyżej: 
 
-    [![Wybieranie identyfikator aplikacji](sandboxing-images/sign07.png "wybranie identyfikator aplikacji")](sandboxing-images/sign07-large.png)
+    [![Wybieranie identyfikator aplikacji](sandboxing-images/sign07.png "wybranie identyfikator aplikacji")](sandboxing-images/sign07-large.png#lightbox)
 8. Wybierz deweloperzy dla tego profilu: 
 
-    [![Dodawanie deweloperzy](sandboxing-images/sign08.png "programistom dodawanie")](sandboxing-images/sign08-large.png)
+    [![Dodawanie deweloperzy](sandboxing-images/sign08.png "programistom dodawanie")](sandboxing-images/sign08-large.png#lightbox)
 9. Wybierz komputery dla tego profilu: 
 
-    [![Wybieranie komputerów dozwolonych](sandboxing-images/sign09.png "wybranie dozwolone komputery")](sandboxing-images/sign09-large.png)
+    [![Wybieranie komputerów dozwolonych](sandboxing-images/sign09.png "wybranie dozwolone komputery")](sandboxing-images/sign09-large.png#lightbox)
 10. Nadaj nazwę profilu: 
 
-    [![Nadanie nazwy profilu](sandboxing-images/sign10.png "nadanie nazwy profilu")](sandboxing-images/sign10-large.png)
+    [![Nadanie nazwy profilu](sandboxing-images/sign10.png "nadanie nazwy profilu")](sandboxing-images/sign10-large.png#lightbox)
 11. Kliknij przycisk **gotowe** przycisku.
 
 > [!IMPORTANT]
@@ -160,10 +160,10 @@ Następnie należy wybierz nowy identyfikator aplikacji i profilu inicjowania ob
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **Info.plist** plik, aby otworzyć do edycji.
 2. Upewnij się, że **identyfikator pakietu** odpowiada naszych identyfikator aplikacji, które zostały utworzone powyżej (przykład: `com.appracatappra.MacSandbox`): 
 
-    [![Edytowanie identyfikator pakietu](sandboxing-images/sign13.png "edycji identyfikator pakietu")](sandboxing-images/sign13-large.png)
+    [![Edytowanie identyfikator pakietu](sandboxing-images/sign13.png "edycji identyfikator pakietu")](sandboxing-images/sign13-large.png#lightbox)
 3. Następnie kliknij dwukrotnie **Entitlements.plist** i upewnij się, naszych **iCloud magazyn kluczy i wartości** i **iCloud kontenery** wszystkie zgodne naszych identyfikator aplikacji, które zostały utworzone powyżej (przykład: `com.appracatappra.MacSandbox`): 
 
-    [![Edytowanie pliku Entitlements.plist](sandboxing-images/sign17.png "edytowania pliku Entitlements.plist")](sandboxing-images/sign17-large.png)
+    [![Edytowanie pliku Entitlements.plist](sandboxing-images/sign17.png "edytowania pliku Entitlements.plist")](sandboxing-images/sign17-large.png#lightbox)
 3. Zapisz zmiany.
 4. W **konsoli rozwiązania**, kliknij dwukrotnie plik projektu, aby otworzyć Opcje edycji:  
 
@@ -180,7 +180,7 @@ Następnie należy wybierz nowy identyfikator aplikacji i profilu inicjowania ob
 
 Na tym etapie należy uruchomić aplikację i upewnij się, że wszystko podpisane i poprawnie przygotowana. Jeśli aplikacja nadal działa jak poprzednio, wszystko jest dobra. W przypadku awarii może uzyskać okno dialogowe podobny do następującego:
 
-[![Przykład problem okno dialogowe zastrzegania](sandboxing-images/sign16.png "przykład problem okno dialogowe zastrzegania")](sandboxing-images/sign16-large.png)
+[![Przykład problem okno dialogowe zastrzegania](sandboxing-images/sign16.png "przykład problem okno dialogowe zastrzegania")](sandboxing-images/sign16-large.png#lightbox)
 
 Poniżej przedstawiono najczęstszych przyczyn braku obsługi administracyjnej i podpisywania problemy:
 
@@ -197,12 +197,12 @@ Piaskownicy aplikacji można włączyć, zaznaczając pole wyboru w opcjach proj
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **Entitlements.plist** plik, aby otworzyć do edycji.
 2. Sprawdź zarówno **włączenie uprawnień** i **włączyć Sandboxing aplikacji**: 
 
-    [![Uprawnienia do edycji i włączanie sandboxing](sandboxing-images/sign17.png "uprawnień do edycji i włączanie sandboxing")](sandboxing-images/sign17-large.png)
+    [![Uprawnienia do edycji i włączanie sandboxing](sandboxing-images/sign17.png "uprawnień do edycji i włączanie sandboxing")](sandboxing-images/sign17-large.png#lightbox)
 3. Zapisz zmiany.
 
 W tym momencie piaskownicy aplikacji zostało włączone, ale nie podano dostępu do sieci wymagane dla widoku sieci Web. Jeśli uruchomisz aplikację teraz, należy pobrać puste okno:
 
-[![Wyświetlane jest zablokowany dostęp do sieci web](sandboxing-images/sample08.png "przedstawiający jest zablokowany dostęp do sieci web")](sandboxing-images/sample08-large.png)
+[![Wyświetlane jest zablokowany dostęp do sieci web](sandboxing-images/sample08.png "przedstawiający jest zablokowany dostęp do sieci web")](sandboxing-images/sample08-large.png#lightbox)
 
 ### <a name="verifying-that-the-app-is-sandboxed"></a>Weryfikowanie, czy aplikacja jest w trybie piaskownicy
 
@@ -210,25 +210,25 @@ Jako uzupełnienie zasobów blokuje zachowanie istnieją trzy sposoby stwierdzi�
 
 1. W polu wyszukiwania, sprawdź zawartość `~/Library/Containers/` folderu — Jeśli aplikacja jest w trybie piaskownicy, będą istnieć folder o nazwie, takich jak identyfikator pakietu aplikacji (przykład: `com.appracatappra.MacSandbox`): 
 
-    [![Otwieranie pakietu aplikacji](sandboxing-images/sample09.png "otwierania pakietu aplikacji")](sandboxing-images/sample09-large.png)
+    [![Otwieranie pakietu aplikacji](sandboxing-images/sample09.png "otwierania pakietu aplikacji")](sandboxing-images/sample09-large.png#lightbox)
 2. System zidentyfikuje aplikacji jako piaskownicy w monitorze działania:
     - Uruchamianie Monitora aktywności (w obszarze `/Applications/Utilities`). 
     - Wybierz **widoku** > **kolumn** i upewnij się, że **piaskownicy** zaznaczono element menu.
     - Upewnij się, że kolumna piaskownicy odczytuje `Yes` aplikacji: 
 
-    [![Kontrola aplikacji w monitorze działania](sandboxing-images/sample10.png "sprawdzanie aplikacji w monitorze działania")](sandboxing-images/sample10-large.png)
+    [![Kontrola aplikacji w monitorze działania](sandboxing-images/sample10.png "sprawdzanie aplikacji w monitorze działania")](sandboxing-images/sample10-large.png#lightbox)
 3. Sprawdź, czy binarny aplikacji jest w trybie piaskownicy:
     - Uruchamiają aplikację terminala.
     - Przejdź do aplikacji `bin` katalogu.
     - Wydać polecenie: `codesign -dvvv --entitlements :- executable_path` (gdzie `executable_path` to ścieżka do aplikacji): 
 
-    [![Kontrola aplikacji w wierszu polecenia](sandboxing-images/sample11.png "sprawdzanie aplikacji w wierszu polecenia")](sandboxing-images/sample11-large.png)
+    [![Kontrola aplikacji w wierszu polecenia](sandboxing-images/sample11.png "sprawdzanie aplikacji w wierszu polecenia")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>Debugowanie w trybie piaskownicy aplikacji
 
 Debuger łączy się Xamarin.Mac aplikacji za pośrednictwem protokołu TCP, co oznacza, że po włączeniu sandboxing, jest domyślnie nie można nawiązać połączenia z aplikacji, więc jeśli zostanie podjęta próba uruchomienia aplikacji bez odpowiednich uprawnień, które są włączone, występuje błąd *"nie można nawiązać połączenia z Debuger"*. 
 
-[![Ustawianie opcji wymagane](sandboxing-images/debug01.png "ustawienie wymagane opcje")](sandboxing-images/debug01-large.png)
+[![Ustawianie opcji wymagane](sandboxing-images/debug01.png "ustawienie wymagane opcje")](sandboxing-images/debug01-large.png#lightbox)
 
 **Zezwalaj wychodzących połączeń sieciowych (klient)** uprawnienie jest wymagane dla debugera, włączenie tego umożliwi debugowania normalnie. Ponieważ nie można debugować bez niego, zostały zaktualizowane `CompileEntitlements` docelowe dla `msbuild` automatyczne dodawanie uprawnienie do uprawnień dla dowolnej aplikacji, która jest w trybie piaskownicy dla debugowania tylko kompilacje. Kompilacje wydania należy używać uprawnienia określone w pliku uprawnień, nie mają być modyfikowane.
 
@@ -248,7 +248,7 @@ Wykonaj następujące czynności:
 2. Otwórz **konsoli** aplikacji (z `/Applications/Utilties/`).
 3. Wybierz **wszystkie komunikaty** na pasku bocznym, a następnie wprowadź `sandbox` wyszukiwania: 
 
-    [![Przykład problemem sandboxing w konsoli](sandboxing-images/resolve01.png "przykładem problemem sandboxing w konsoli programu")](sandboxing-images/resolve01-large.png)
+    [![Przykład problemem sandboxing w konsoli](sandboxing-images/resolve01.png "przykładem problemem sandboxing w konsoli programu")](sandboxing-images/resolve01-large.png#lightbox)
 
 Dla aplikacji przykład powyżej, można wyświetlić blokuje jądra `network-outbound` ruchu z powodu piaskownicy aplikacji, ponieważ nie żądano możemy prawo.
 
@@ -261,7 +261,7 @@ Wykonaj następujące czynności:
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **Entitlements.plist** plik, aby otworzyć do edycji.
 2. W obszarze **uprawnień** sekcji wyboru **Zezwalaj wychodzących połączeń sieciowych (klient)** wyboru: 
 
-    [![Edytowanie uprawnień](sandboxing-images/sign17.png "edycji uprawnień")](sandboxing-images/sign17-large.png)
+    [![Edytowanie uprawnień](sandboxing-images/sign17.png "edycji uprawnień")](sandboxing-images/sign17-large.png#lightbox)
 3. Zapisz zmiany w aplikacji.
 
 Jeśli firma Microsoft nie powyższych w naszym przykładzie aplikacji, następnie skompilować i uruchomić go, zawartość sieci web zostaną wyświetlone zgodnie z oczekiwaniami.
@@ -284,7 +284,7 @@ Przez włączenie piaskownicy aplikacji, Usuń wszystkie oprócz minimalny zesta
 
 Zasoby piaskownicy aplikacji aplikacji można zmodyfikować, edytując jej **Entitlements.plist** plików i sprawdzanie lub wybierz wymagane z pola listy rozwijanej edytory prawa:
 
-[![Edytowanie uprawnień](sandboxing-images/sign17.png "edycji uprawnień")](sandboxing-images/sign17-large.png)
+[![Edytowanie uprawnień](sandboxing-images/sign17.png "edycji uprawnień")](sandboxing-images/sign17-large.png#lightbox)
 
 ### <a name="container-directories-and-file-system-access"></a>Kontener katalogów i dostępu do systemu plików
 

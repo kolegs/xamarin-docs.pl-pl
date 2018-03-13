@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>Dodawanie drugiego paska narzędzi
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie 
 
 `Toolbar` Zrobić więcej niż Zastąp na pasku akcji &ndash; go może być używany wielokrotnie w ramach działania, można być dostosowane do umieszczenia w dowolnym miejscu na ekranie i może być skonfigurowana do span z częściowa szerokości ekranu. Poniższe przykłady przedstawiają sposób utworzyć drugi `Toolbar` i umieść go w dolnej części ekranu. To `Toolbar` implementuje **kopiowania**, **Wytnij**, i **Wklej** elementów menu. 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>Zdefiniuj drugi paska narzędzi 
 
@@ -78,10 +76,9 @@ Edytuj **Resources/values/styles.xml** i dodaj następujące kolor akcentu do de
 
 Dzięki temu dolnym pasku narzędzi żółte ciemnym. Tworzenie i uruchamianie aplikacji wyświetla pusty drugi paska narzędzi w dolnej części ekranu: 
 
-[![Zrzut ekranu przedstawiający aplikację z żółtym drugi paska narzędzi w dolnej części ekranu](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![Zrzut ekranu przedstawiający aplikację z żółtym drugi paska narzędzi w dolnej części ekranu](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>Dodawanie elementów Menu Edycja 
 
@@ -100,7 +97,6 @@ Aby dodać elementy menu do dodatkowej `Toolbar`:
 Poniższe sekcje pokazują, ten proces szczegółowo: **Wytnij**, **kopiowania**, i **Wklej** elementy menu są dodawane do dołu `Toolbar`. 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>Zdefiniuj zasób Menu Edycja
 
@@ -130,7 +126,6 @@ W **zasobów/menu** podkatalogu, Utwórz nowy plik XML o nazwie **edit_menus.xml
 Tworzy plik XML **Wytnij**, **kopiowania**, i **Wklej** elementów menu (przy użyciu ikony, które zostały dodane do `mipmap-` folderów w [zastępowanie na pasku akcji ](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>Podniesienie menu
 
@@ -149,18 +144,17 @@ Lokalizuje ten kod `edit_toolbar` zdefiniowany w widoku **Main.axml**, ustawia j
 
 Skompiluj i uruchom aplikację. Po uruchomieniu aplikacji, tekst i ikony dodanych wcześniej będą wyświetlane w sposób pokazany poniżej: 
 
-[![Diagram dolnym pasku narzędzi z ikonami wycinania, kopiowania i wklejania](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![Diagram dolnym pasku narzędzi z ikonami wycinania, kopiowania i wklejania](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 Naciskając **Wytnij** ikonę menu powoduje, że następujące wyskakujące do wyświetlenia: 
 
-[![Zrzut ekranu wyskakujące wskazujący, że dotknięciu ikonę menu wycinania](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![Zrzut ekranu wyskakujące wskazujący, że dotknięciu ikonę menu wycinania](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 Naciskając elementów menu na obu narzędzi wyświetla wynikowy wyskakujące powiadomienia: 
 
-[![Zrzuty ekranu wyskakujące powiadomienia dla zapisać kopię i wkleić elementy menu są dotknięciu](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![Zrzuty ekranu wyskakujące powiadomienia dla zapisać kopię i wkleić elementy menu są dotknięciu](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>Przycisku do góry 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 Gdy użytkownik nawiguje między `MainActivity` do `DetailActivity`, `DetailActivity` Wyświetla **się** przycisk (Strzałka w lewo wskazującego), jak pokazano na zrzucie ekranu:
 
-[![Przykład zrzut ekranu przycisku po lewej stronie Strzałka w górę na pasku narzędzi](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![Przykład zrzut ekranu przycisku po lewej stronie Strzałka w górę na pasku narzędzi](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 Naciskając to **się** przycisku powoduje, że aplikacja powrócić do `MainActivity`. W bardziej złożonych aplikacji z różnych poziomów hierarchii naciskając przycisk ten zwróci użytkownika do następnego najwyższego poziomu w aplikacji, a nie do poprzedniego ekranu. 
 

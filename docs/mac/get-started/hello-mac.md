@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e964f2bdb523720e044c309a2ec0801080be59b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-mac"></a>Witaj, Mac
 
@@ -22,7 +22,7 @@ Ponadto ponieważ Xamarin.Mac aplikacji są napisane w języku C# i .NET, typowe
 
 W tym artykule przedstawiono podstawowe pojęcia, które są potrzebne do utworzenia aplikacji Mac, za pomocą Xamarin.Mac, programu Visual Studio for Mac i w środowisku Xcode konstruktora interfejsu przez krótki proces tworzenia po prostu **Hello, Mac** aplikacji, które zlicza liczbę razy przycisk zostanie kliknięta:
 
-[ ![](hello-mac-images/run02.png "Przykład Witaj, uruchomieniu aplikacji Mac")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Przykład Witaj, uruchomieniu aplikacji Mac")](hello-mac-images/run02.png#lightbox)
 
 Zostały omówione następujące kwestie:
 
@@ -57,29 +57,29 @@ Aby rozpocząć pracę, wykonaj następujące czynności:
 
 1. Uruchom program Visual Studio dla komputerów Mac:
 
-    [ ![](hello-mac-images/setup01.png "Głównym programu Visual Studio for Mac interfejsu")](hello-mac-images/setup01.png)
+    [![](hello-mac-images/setup01.png "Głównym programu Visual Studio for Mac interfejsu")](hello-mac-images/setup01.png#lightbox)
 
 2. Polecenie **nowe rozwiązanie...**  łącze w lewy górny róg ekranu, aby otworzyć **nowy projekt** okno dialogowe:
 
-    [ ![](hello-mac-images/setup03.png "Tworzenie nowego rozwiązania programu Visual Studio dla komputerów Mac")](hello-mac-images/setup02.png)
+    [![](hello-mac-images/setup03.png "Tworzenie nowego rozwiązania programu Visual Studio dla komputerów Mac")](hello-mac-images/setup02.png#lightbox)
 
 3. Wybierz **Mac** > **aplikacji** > **aplikacji Cocoa** i kliknij przycisk **dalej** przycisk:
 
-    [ ![](hello-mac-images/setup03.png "Wybieranie aplikacji Cocoa")](hello-mac-images/setup03.png)
+    [![](hello-mac-images/setup03.png "Wybieranie aplikacji Cocoa")](hello-mac-images/setup03.png#lightbox)
 
 4. Wprowadź `Hello_Mac` dla **Nazwa aplikacji**i zachować wszystkie inne jako domyślny. Kliknij przycisk **dalej**:
 
-    [ ![](hello-mac-images/setup05.png "Ustawienie nazwy aplikacji")](hello-mac-images/setup05.png)
+    [![](hello-mac-images/setup05.png "Ustawienie nazwy aplikacji")](hello-mac-images/setup05.png#lightbox)
 
 4. Podczas tworzenia rozwiązania, który będzie zawierać kilka różnych projektów, deweloper może być ustawienie innej **Nazwa rozwiązania** w tym miejscu, ale dla tego przykładu pozostaw ustawioną wartość domyślną jest taka sama jak  **Nazwa projektu**:
 
-    [ ![](hello-mac-images/setup04.png "Weryfikowanie nowego szczegóły rozwiązania")](hello-mac-images/setup04.png)
+    [![](hello-mac-images/setup04.png "Weryfikowanie nowego szczegóły rozwiązania")](hello-mac-images/setup04.png#lightbox)
 
 5. Kliknij przycisk **Utwórz** przycisku.
 
 Visual Studio for Mac będzie Utwórz nową aplikację Xamarin.Mac i wyświetlić domyślne pliki, które zostaną dodane do rozwiązania aplikacji:
 
- [ ![](hello-mac-images/project01.png "Nowy widok domyślny rozwiązania")](hello-mac-images/project01.png)
+ [![](hello-mac-images/project01.png "Nowy widok domyślny rozwiązania")](hello-mac-images/project01.png#lightbox)
 
 Programu Visual Studio for Mac używa **rozwiązań** i **projektów**, dokładnie tak samo, jak program Visual Studio nie. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów; projekty mogą zawierać aplikacje obsługujące bibliotek, testowanie aplikacji itp. W takim przypadku programu Visual Studio for Mac utworzył zarówno projekt aplikacji, jak i rozwiązanie automatycznie.
 
@@ -246,7 +246,7 @@ Z utworzonego projektu aplikacji Xamarin.Mac i podstawową wiedzę na temat skł
 
 `Info.plist` Plik zawiera informacje o aplikacji Xamarin.Mac jego **nazwa** i **identyfikator pakietu**:
 
-[ ![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist edytora")](hello-mac-images/infoplist01.png)
+[![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist edytora")](hello-mac-images/infoplist01.png#lightbox)
 
 I definiuje _scenorysu_ który będzie używany do wyświetlania interfejsu użytkownika dla aplikacji Xamarin.Mac w obszarze **interfejsu Main** listy rozwijanej. W przypadku powyższym przykładzie `Main` na liście rozwijanej odnosi się do `Main.storyboard` w drzewie źródła projektu w **Eksploratora rozwiązań**. Definiuje również ikon aplikacji, określając *katalogu zasobów* zawierający je (AppIcons w tym przypadku).
 
@@ -254,7 +254,7 @@ I definiuje _scenorysu_ który będzie używany do wyświetlania interfejsu uży
 
 Aplikacji `Entitlements.plist` plik steruje uprawnień, które aplikacja Xamarin.Mac ma takie jak **Sandboxing** i **iCloud**:
 
-[ ![](hello-mac-images/entitlements01.png "Visual Studio for Mac uprawnień do edytora")](hello-mac-images/entitlements01.png)
+[![](hello-mac-images/entitlements01.png "Visual Studio for Mac uprawnień do edytora")](hello-mac-images/entitlements01.png#lightbox)
 
 Na przykład Hello World uprawnień nie będzie wymagane. Następnej sekcji pokazano, jak edytować za pomocą konstruktora interfejsu w środowisku Xcode `Main.storyboard` plików i zdefiniuj aplikacji Xamarin.Mac interfejsu użytkownika.
 
@@ -266,11 +266,11 @@ W ramach Xcode Apple utworzył narzędzie kompilatora interfejsu, który umożli
 
 Aby rozpocząć, kliknij dwukrotnie `Main.storyboard` w pliku **Eksploratora rozwiązań** go otworzyć do edycji w programie Xcode i kompilatora interfejsu:
 
-[ ![](hello-mac-images/xcode01.png "Plik Main.storyboard w Eksploratorze rozwiązań")](hello-mac-images/xcode01.png)
+[![](hello-mac-images/xcode01.png "Plik Main.storyboard w Eksploratorze rozwiązań")](hello-mac-images/xcode01.png#lightbox)
 
 To należy uruchomić Xcode i wyglądać jak poniżej:
 
-[ ![](hello-mac-images/xcode02.png "Widok domyślny konstruktor interfejsu Xcode")](hello-mac-images/xcode02.png)
+[![](hello-mac-images/xcode02.png "Widok domyślny konstruktor interfejsu Xcode")](hello-mac-images/xcode02.png#lightbox)
 
 Przed rozpoczęciem projektowania interfejsu należy podjąć szybki przegląd Xcode, aby z najważniejszych funkcji, które będą używane.
 
@@ -284,7 +284,7 @@ Przed rozpoczęciem projektowania interfejsu należy podjąć szybki przegląd X
 
 Podczas otwierania `.storyboard` plików w środowisku Xcode z programu Visual Studio dla komputerów Mac, zostanie ona otwarta z **Nawigatora projektu** po lewej stronie, **hierarchii interfejsów** i **Edytor interfejsu**w środku, a **właściwości i narzędzia** sekcji po prawej stronie:
 
-[ ![](hello-mac-images/xcode03.png "Różnych sekcji kompilatora interfejsu w środowisku Xcode")](hello-mac-images/xcode03.png)
+[![](hello-mac-images/xcode03.png "Różnych sekcji kompilatora interfejsu w środowisku Xcode")](hello-mac-images/xcode03.png#lightbox)
 
 Poniższe sekcje Przyjrzyjmy się funkcji każdego z tych Xcode funkcji i sposobie ich używać do tworzenia interfejsu aplikacji Xamarin.Mac.
 
@@ -314,13 +314,13 @@ Podczas otwierania `.storyboard` pliku do edycji w programie Xcode, Visual Studi
 
 **Właściwości i narzędzia** sekcja jest podzielona na dwie sekcje główne, **właściwości** (nazywanych również inspektorzy) i **biblioteki**:
 
-[ ![](hello-mac-images/xcode04.png "Inspektora właściwości")](hello-mac-images/xcode04.png)
+[![](hello-mac-images/xcode04.png "Inspektora właściwości")](hello-mac-images/xcode04.png#lightbox)
 
 Początkowo w tej sekcji jest prawie pusta, ale jeśli Deweloper wybiera element **Edytor interfejsu** lub **hierarchii interfejsów**, **właściwości** sekcja będzie wypełnione informacjami o danego elementu i właściwości, które można zmienić.
 
 W ramach **właściwości** sekcji, są różne 8 *karty inspektora*, jak pokazano na poniższej ilustracji:
 
-[ ![](hello-mac-images/xcode05.png "Przegląd wszystkich inspektorzy")](hello-mac-images/xcode05.png)
+[![](hello-mac-images/xcode05.png "Przegląd wszystkich inspektorzy")](hello-mac-images/xcode05.png#lightbox)
 
 <a name="Properties_Utility_Types" />
 
@@ -339,7 +339,7 @@ Od lewej do prawej są następujące karty:
 
 Użyj **biblioteki** sekcji, aby znaleźć kontrolek i obiekty, które można umieścić w projektancie do tworzenia graficznego interfejsu użytkownika:
 
-[ ![](hello-mac-images/xcode06.png "Inspektor biblioteki Xcode")](hello-mac-images/xcode06.png)
+[![](hello-mac-images/xcode06.png "Inspektor biblioteki Xcode")](hello-mac-images/xcode06.png#lightbox)
 
 <a name="Creating_the_Interface" />
 
@@ -351,31 +351,31 @@ Wykonaj następujące czynności:
 
 1. W programie Xcode, przeciągnij **przycisk** z **biblioteki**:
 
-    [ ![](hello-mac-images/xcode07.png "Wybieranie NSButton inspektora biblioteki")](hello-mac-images/xcode07.png)
+    [![](hello-mac-images/xcode07.png "Wybieranie NSButton inspektora biblioteki")](hello-mac-images/xcode07.png#lightbox)
 
 2. Upuść ten przycisk na **widoku** (w obszarze **kontrolera okna**) w **Edytor interfejsu**:
 
-    [ ![](hello-mac-images/xcode08.png "Dodawanie przycisku do projektu interfejsu")](hello-mac-images/xcode08.png)
+    [![](hello-mac-images/xcode08.png "Dodawanie przycisku do projektu interfejsu")](hello-mac-images/xcode08.png#lightbox)
 
 3. Polecenie **tytuł** właściwości w **inspektora atrybutu** i Zmień tytuł przycisku do `Click Me`:
 
-    [ ![](hello-mac-images/xcode09.png "Ustawianie właściwości przycisku")](hello-mac-images/xcode09.png)
+    [![](hello-mac-images/xcode09.png "Ustawianie właściwości przycisku")](hello-mac-images/xcode09.png#lightbox)
 
 4. Przeciągnij **etykiety** z **biblioteki**:
 
-    [ ![](hello-mac-images/xcode10.png "Wybranie etykiety z Inspektora biblioteki")](hello-mac-images/xcode10.png)
+    [![](hello-mac-images/xcode10.png "Wybranie etykiety z Inspektora biblioteki")](hello-mac-images/xcode10.png#lightbox)
 
 5. Upuść etykiety na **okna** obok przycisku w **Edytor interfejsu**:
 
-    [ ![](hello-mac-images/xcode11.png "Dodawanie etykiet do projektu interfejsu")](hello-mac-images/xcode11.png)
+    [![](hello-mac-images/xcode11.png "Dodawanie etykiet do projektu interfejsu")](hello-mac-images/xcode11.png#lightbox)
 
 6. Wystarczy pobrać uchwytu na etykiecie po prawej stronie, a następnie przeciągnij go do czasu jego pobliżu krawędzi okna:
 
-    [ ![](hello-mac-images/xcode12.png "Zmiana rozmiaru etykiety")](hello-mac-images/xcode12.png)
+    [![](hello-mac-images/xcode12.png "Zmiana rozmiaru etykiety")](hello-mac-images/xcode12.png#lightbox)
 
 7. Wybierz przycisk dodane w **Edytor interfejsu**i kliknij przycisk **Edytor ograniczenia** ikonę i u dołu okna:
 
-    [ ![](hello-mac-images/xcode13.png "Dodawanie ograniczeń do przycisku")](hello-mac-images/xcode13.png)
+    [![](hello-mac-images/xcode13.png "Dodawanie ograniczeń do przycisku")](hello-mac-images/xcode13.png#lightbox)
 
 8. W górnej części edytora, kliknij przycisk **czerwony I świateł** w górnej i lewej strony. Ponieważ zmiany rozmiaru okna, pozwoli to zachować przycisku w tej samej lokalizacji, w lewym górnym rogu ekranu.
 
@@ -385,7 +385,7 @@ Wykonaj następujące czynności:
 
 11. Wybierz etykietę, a następnie kliknij przycisk **Edytor ograniczenia** ikonę ponownie:
 
-    [ ![](hello-mac-images/xcode14.png "Dodawanie ograniczeń do etykiety")](hello-mac-images/xcode14.png)
+    [![](hello-mac-images/xcode14.png "Dodawanie ograniczeń do etykiety")](hello-mac-images/xcode14.png#lightbox)
 
 12. Klikając **czerwony I świateł** u góry, prawej i lewej z **Edytor ograniczenia**, określa, że etykieta zostać zablokowana do danego X i Y lokalizacji, a także zwiększyć lub zmniejszyć, ponieważ zmieniono rozmiar okna w działaniu aplikacja.
 
@@ -397,7 +397,7 @@ Podczas zmiany rozmiaru i przenoszenia kontrolek wokół, zwróć uwagę, że in
 
 Szukaj w **hierarchii interfejsów** sekcji jak układ i hierarchię elementów wchodzące w skład interfejsu użytkownika są wyświetlane:
 
-[ ![](hello-mac-images/xcode15.png "Zaznaczenie elementu w hierarchii interfejsów")](hello-mac-images/xcode15.png)
+[![](hello-mac-images/xcode15.png "Zaznaczenie elementu w hierarchii interfejsów")](hello-mac-images/xcode15.png#lightbox)
 
 W tym miejscu deweloper może wybierz elementy do edycji lub przeciągnij, aby zmienić kolejność elementów interfejsu użytkownika, jeśli to konieczne. Na przykład jeśli element interfejsu użytkownika są objęte przez inny element, można go przeciągania w dół na liście, aby stał się najwyżej elementu w oknie.
 
@@ -416,7 +416,7 @@ W środowisku Xcode **gniazda** i **akcje** zostaną dodane bezpośrednio w kodz
 
 Dla deweloperów Xamarin.Mac, oznacza to, że deweloper będzie przeciągnij do pliki szczątkowe Objective-C, które odpowiadają w pliku C# których chce utworzyć **gniazda** lub **akcji**. Visual Studio for Mac utworzony plik o nazwie `ViewController.h` jako część podkładki projektu Xcode wygenerowane za pomocą konstruktora interfejsu:
 
-[ ![](hello-mac-images/xcode16.png "Wyświetlanie źródła w środowisku Xcode")](hello-mac-images/xcode16.png)
+[![](hello-mac-images/xcode16.png "Wyświetlanie źródła w środowisku Xcode")](hello-mac-images/xcode16.png#lightbox)
 
 To skrótowa `.h` pliku wstecznych `ViewController.designer.cs` jest automatycznie dodawany do projektu Xamarin.Mac podczas tworzenia nowego `NSWindow` jest tworzony. Ten plik będzie używane do synchronizowania zmiany wprowadzone przez konstruktora interfejsu i jest where **gniazda** i **akcje** są tworzone, tak aby elementy interfejsu użytkownika są widoczne dla kodu C#.
 
@@ -430,7 +430,7 @@ Wykonaj następujące czynności:
 
 1. W środowisku Xcode w prawej top górny róg ekranu, kliknij przycisk **dwukrotnie okrąg** przycisk, aby otworzyć **Edytor Asystenta**:
 
-    [ ![](hello-mac-images/outlet01.png "Wyświetlanie Edytor Asystenta")](hello-mac-images/outlet01.png)
+    [![](hello-mac-images/outlet01.png "Wyświetlanie Edytor Asystenta")](hello-mac-images/outlet01.png#lightbox)
 
 2. Xcode nastąpi przełączenie do trybu widok podzielony z **Edytor interfejsu** po jednej stronie i **edytora kodu** z drugiej strony.
 
@@ -438,25 +438,25 @@ Wykonaj następujące czynności:
 
 4. W górnej części **edytora kodu** kliknij **łącze automatyczne** i wybierz `ViewController.h` pliku:
 
-    [ ![](hello-mac-images/outlet02.png "Wybranie poprawnego pliku")](hello-mac-images/outlet02.png)
+    [![](hello-mac-images/outlet02.png "Wybranie poprawnego pliku")](hello-mac-images/outlet02.png#lightbox)
 
 5. Xcode teraz powinny mieć poprawny plik wybrane:
 
-    [ ![](hello-mac-images/outlet03.png "Wyświetlanie pliku ViewController.h")](hello-mac-images/outlet03.png)
+    [![](hello-mac-images/outlet03.png "Wyświetlanie pliku ViewController.h")](hello-mac-images/outlet03.png#lightbox)
 
 6. **Ostatnim krokiem było bardzo ważne!** Jeśli projektanta nie ma poprawnego pliku wybrane, nie będzie mógł tworzyć **gniazda** i **akcje** lub mają być widoczne do niewłaściwej klasy w języku C#!
 
 7. W **Edytor interfejsu**, naciśnij i przytrzymaj **kontroli** klucza na klawiaturze i kliknij i przeciągnij etykiety utworzone powyżej do edytora kodu właśnie poniżej `@interface ViewController : NSViewController {}` kodu:
 
-    [ ![](hello-mac-images/outlet04.png "Przeciąganie w celu utworzenia gniazda")](hello-mac-images/outlet04.png)
+    [![](hello-mac-images/outlet04.png "Przeciąganie w celu utworzenia gniazda")](hello-mac-images/outlet04.png#lightbox)
 
 8. Zostanie wyświetlone okno dialogowe. Pozostaw **połączenia** ustawioną **gniazda** , a następnie wprowadź `ClickedLabel` dla **nazwa**:
 
-    [ ![](hello-mac-images/outlet05.png "Definiowanie gniazda")](hello-mac-images/outlet05.png)
+    [![](hello-mac-images/outlet05.png "Definiowanie gniazda")](hello-mac-images/outlet05.png#lightbox)
 
 9. Kliknij przycisk **Connect** przycisk, aby utworzyć **gniazda**:
 
-    [ ![](hello-mac-images/outlet06.png "Wyświetlanie końcowy gniazda")](hello-mac-images/outlet06.png)
+    [![](hello-mac-images/outlet06.png "Wyświetlanie końcowy gniazda")](hello-mac-images/outlet06.png#lightbox)
 
 10. Zapisz zmiany w pliku.
 
@@ -471,19 +471,19 @@ Wykonaj następujące czynności:
 1. Upewnij się, że środowisko Xcode jest nadal w **Edytor Asystenta** i **ViewController.h** plik jest widoczny w **edytora kodu**.
 2. W **Edytor interfejsu**, naciśnij i przytrzymaj **kontroli** klucza na klawiaturze i kliknij i przeciągnij przycisk utworzone powyżej do edytora kodu właśnie poniżej `@property (assign) IBOutlet NSTextField *ClickedLabel;` kodu:
 
-    [ ![](hello-mac-images/action01.png "Przeciąganie w celu utworzenia akcji")](hello-mac-images/action01.png)
+    [![](hello-mac-images/action01.png "Przeciąganie w celu utworzenia akcji")](hello-mac-images/action01.png#lightbox)
 
 3. Zmień **połączenia** typ **akcji**:
 
-    [ ![](hello-mac-images/action02.png "Definiowanie akcji")](hello-mac-images/action02.png)
+    [![](hello-mac-images/action02.png "Definiowanie akcji")](hello-mac-images/action02.png#lightbox)
 
 4. Wprowadź `ClickedButton` jako **nazwa**:
 
-    [ ![](hello-mac-images/action03.png "Nowa akcja nazewnictwa")](hello-mac-images/action03.png)
+    [![](hello-mac-images/action03.png "Nowa akcja nazewnictwa")](hello-mac-images/action03.png#lightbox)
 
 5. Kliknij przycisk **Connect** przycisk, aby utworzyć **akcji**:
 
-    [ ![](hello-mac-images/action04.png "Wyświetlanie ostateczne działania")](hello-mac-images/action04.png)
+    [![](hello-mac-images/action04.png "Wyświetlanie ostateczne działania")](hello-mac-images/action04.png#lightbox)
 
 6. Zapisz zmiany w pliku.
 
@@ -500,7 +500,7 @@ Kiedy dewelopera przełącza do programu Visual Studio dla komputerów Mac w pro
 
 Wybiera **ViewController.designer.cs** w **Eksploratora rozwiązań** aby zobaczyć, jak **gniazda** i **akcji** zostały przewodowej się w języku C Kod #:
 
-[ ![](hello-mac-images/sync01.png "Synchronizowanie zmian z Xcode")](hello-mac-images/sync01.png)
+[![](hello-mac-images/sync01.png "Synchronizowanie zmian z Xcode")](hello-mac-images/sync01.png#lightbox)
 
 Powiadomienie jak dwie definicje w **ViewController.designer.cs** pliku:
 
@@ -534,7 +534,7 @@ Przy użyciu interfejsu użytkownika utworzone i jest elementów interfejsu uży
 
 Dla tej aplikacji przykładowej za każdym razem, gdy po kliknięciu przycisku pierwszej etykiety zostaną zaktualizowane do wyświetlenia, ile razy przycisk został kliknięty. W tym celu otwórz `ViewController.cs` plik do edycji przez dwukrotne kliknięcie w **Eksploratora rozwiązań**:
 
-[ ![](hello-mac-images/code01.png "Wyświetlanie pliku ViewController.cs w programie Visual Studio dla komputerów Mac")](hello-mac-images/code01.png)
+[![](hello-mac-images/code01.png "Wyświetlanie pliku ViewController.cs w programie Visual Studio dla komputerów Mac")](hello-mac-images/code01.png#lightbox)
 
 Najpierw Utwórz zmienną poziomie klasy w `ViewController` klasę, aby śledzić liczbę kliknięć, które miały miejsce. Edytowanie definicji klasy i zapewnić ich wyglądać następująco:
 
@@ -586,7 +586,7 @@ Zawsze, gdy aplikacja jest wbudowana, deweloper można wybrać, jaki rodzaj komp
 
 Deweloper można wybrać typ kompilacji z **selektora konfiguracji** w górnym lewym dolnym rogu programu Visual Studio for Mac ekranu:
 
-[ ![](hello-mac-images/run01.png "Zaznaczanie kompilacji debugowania")](hello-mac-images/run01.png)
+[![](hello-mac-images/run01.png "Zaznaczanie kompilacji debugowania")](hello-mac-images/run01.png#lightbox)
 
 <a name="Building_the_Application" />
 
@@ -608,11 +608,11 @@ Istnieją trzy sposoby, aby uruchomić aplikację:
 
 Aplikacja kompilacji (Jeśli nie został skompilowany już), uruchomi w trybie debugowania i wyświetlić jej okna głównego interfejsu:
 
-[ ![](hello-mac-images/run02.png "Uruchamianie aplikacji")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Uruchamianie aplikacji")](hello-mac-images/run02.png#lightbox)
 
 Jeśli przycisk zostanie kliknięty kilka razy, etykiety powinny zostać zaktualizowane licznika:
 
-[ ![](hello-mac-images/run03.png "Wyświetlanie wyników kliknięcie przycisku")](hello-mac-images/run03.png)
+[![](hello-mac-images/run03.png "Wyświetlanie wyników kliknięcie przycisku")](hello-mac-images/run03.png#lightbox)
 
 <a name="Where_to_Next" />
 

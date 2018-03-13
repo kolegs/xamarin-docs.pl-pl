@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Praca z nawigacji i fokus
 
@@ -21,7 +21,7 @@ _W tym artykule omówiono pojęcia fokus i jak jest używany do przedstawienia i
 
 W tym artykule omówiono pojęcia [fokus](#Focus-and-Selection) i sposobie ich użycia do obsługi [nawigacji](#Navigation) w interfejsie użytkownika aplikacji Xamarin.tvOS. Zajmiemy się, jak wbudowanych systemu tvOS kontrolki używać fokusu, podświetlanie i wybór nawigację interfejsu użytkownika aplikacji Xamarin.tvOS.
 
-[ ![](navigation-focus-images/intro01.png "aplikacje systemu tvOS nawigacji interfejsu użytkownika")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "aplikacje systemu tvOS nawigacji interfejsu użytkownika")](navigation-focus-images/intro01.png#lightbox)
 
 Następnie przeniesiemy przyjrzeć się jak zespół może być używany z [paralaksy](#Focus-and-Parallax) i *warstwie obrazów* zapewnienie wskazówek wizualnego bieżący stan nawigacji dla użytkownika końcowego.
 
@@ -35,7 +35,7 @@ Użytkownicy aplikacji Xamarin.tvOS nie będzie interakcja jego interfejsu bezpo
 
 Aplikacja pomyślnie systemu tvOS implementuje nawigacji w sposób zapewniający sprawnie obsługuje celem aplikacji i struktury danych, który stanowi bez wywoływania uwagi do nawigacji, sam. Projektowanie nawigacyjny tak, aby uważa fizycznych i znanych bez zajmujących większość interfejsu użytkownika lub rysunku fokus zawartości i środowisko użytkownika aplikacji.
 
-[ ![](navigation-focus-images/nav01.png "Ustawienia systemu tvOS aplikacji")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "Ustawienia systemu tvOS aplikacji")](navigation-focus-images/nav01.png#lightbox)
 
 Gdy zwykle przy użyciu firmy Apple TV, użytkownik nawiguje skumulowany zestawu ekranów, każdy przedstawiający danego zestawu zawartości. Z kolei każdy nowy ekran może prowadzić do co najmniej jednego podrzędnego ekrany zawartości przy użyciu standardowych formantów interfejsu użytkownika, takie jak [przyciski](~/ios/tvos/user-interface/buttons.md), [paski kartę](~/ios/tvos/user-interface/tab-bars.md), tabel, [widoki kolekcji](~/ios/tvos/user-interface/collection-views.md) lub [ Dzielenie widoków](~/ios/tvos/user-interface/split-views.md).
 
@@ -58,7 +58,7 @@ Apple sugeruje, pamiętając o następujących podczas projektowania nawigacji d
 
 Na Apple TV, obraz, przycisk lub innego elementu interfejsu użytkownika jest uznawane za _aktywnego_ gdy jest to element docelowy bieżącego nawigacji.
 
-[ ![](navigation-focus-images/focus01.png "Przykład fokus i zaznaczenia")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "Przykład fokus i zaznaczenia")](navigation-focus-images/focus01.png#lightbox)
 
 W odróżnieniu od urządzeń z systemem iOS, gdy użytkownik bezpośrednio prowadzi interakcję z elementami na ekran dotykowy na urządzeniu użytkownicy korzystają z systemu tvOS elementy z między miejsca przy użyciu zdalnego Siri. Aby przedstawić i obsługują interakcję z użytkownikiem, używa Apple TV _fokus_ na podstawie modelu.
 
@@ -138,7 +138,7 @@ Jednak może być razy, z powodu artykuły pierwszej potrzeby projektu interfejs
 
 Wykonaj następujący układ interfejsu użytkownika, na przykład:
 
- [ ![](navigation-focus-images/guide01.png "Praca z przykład przewodniki fokus")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "Praca z przykład przewodniki fokus")](navigation-focus-images/guide01.png#lightbox)
  
 Ponieważ **więcej informacji o** przycisku nie znajduje się na poziomie i w pionie siatkę z **kupić** przycisk jest niedostępny dla użytkownika. Jednak ten problem można łatwo rozwiązać przy użyciu _przewodnik fokus_ zapewnienie wskazówek przepływu w aparacie fokusu. 
 
@@ -170,7 +170,7 @@ Po pierwsze, nowy `UIFocusGuide` jest tworzony i dodawany do widoku prowadnicy u
 
 Następnie dostosować przewodnik fokus Top, po lewej, szerokość i wysokość kotwice względem **więcej informacji o** i **kupić** , aby umieścić go między nimi. Zobacz:
 
-[ ![](navigation-focus-images/guide02.png "Przykład fokus przewodnik")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "Przykład fokus przewodnik")](navigation-focus-images/guide02.png#lightbox)
 
 Jest również należy pamiętać, że nowe ograniczenia są uaktywnione tworzonych przez ustawienie ich `Active` właściwości `true`:
 

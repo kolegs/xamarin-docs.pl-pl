@@ -3,16 +3,16 @@ title: Okna dialogowe
 description: "Ten artykuł dotyczy pracy z okien dialogowych i modalnych okien aplikacji Xamarin.Mac. Opisuje tworzenie okna modalne Xcode i interfejsu konstruktora, Praca z standardowych oknach dialogowych i interakcji z tych kontrolek w kodzie języka C#."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9b65e870fae0074726d0bdd46d9eecbe99240e98
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 661874ae8599fed35ce10213fece383eb81de94d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="dialogs"></a>Okna dialogowe
 
@@ -22,7 +22,7 @@ Okno dialogowe jest wyświetlany w odpowiedzi na akcję użytkownika i zazwyczaj
 
 Systemu Windows mogą być używane w stanie niemodalne (takich jak edytor tekstu, który może mieć wielu dokumentów otwartych jednocześnie) lub modalne (na przykład okno eksportu, który musi być ukryty, zanim będzie można kontynuować aplikacji).
 
-[ ![](dialog-images/dialog03.png "Otwarte okno dialogowe")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otwarte okno dialogowe")](dialog-images/dialog03.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z okien dialogowych i okna modalne w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -44,25 +44,25 @@ Zgodnie z firmy Apple istnieją trzy sposoby wyświetlenia okna dialogowego:
 
 Wszystkie standardowe `NSWindow` mogą być używane jako okno dialogowe dostosowane, wyświetlając trybie modalnym:
 
-[ ![](dialog-images/modal01.png "Przykład modalny")](dialog-images/modal01.png)
+[![](dialog-images/modal01.png "Przykład modalny")](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>Arkusze modalnego okna dialogowego dokumentu
 
 A _arkusza_ jest modalne okno dialogowe jest dołączony do okna danego dokumentu, uniemożliwia użytkownikom interakcji z okna do czasu ich zamknąć okno dialogowe. Arkusz jest dołączony do okna, z którego wynika, i tylko jeden arkusz można otworzyć okna w dowolnym momencie.
 
-[ ![](dialog-images/sheet08.png "Przykład arkusza modalne")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Przykład arkusza modalne")](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>Preferencje systemu Windows
 
 Okno Preferencje jest niemodalne okno dialogowe, które zawiera ustawienia aplikacji, które użytkownik zmieni się rzadko. Preferencje systemu Windows często zawierają paska narzędzi przez użytkownika w celu przełączania się między różnymi grupami ustawień:
 
-[ ![](dialog-images/dialog02.png "Przykładowe okno preferencji")](dialog-images/dialog02.png)
+[![](dialog-images/dialog02.png "Przykładowe okno preferencji")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>Otwórz okno dialogowe
 
 Otwórz okno dialogowe umożliwia użytkownikom spójny sposób, aby znaleźć i otworzyć element w aplikacji:
 
-[ ![](dialog-images/dialog03.png "Otwórz okno dialogowe")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otwórz okno dialogowe")](dialog-images/dialog03.png#lightbox)
 
 
 ### <a name="print-and-page-setup-dialogs"></a>Drukowanie i okna dialogowe Ustawienia strony
@@ -71,37 +71,37 @@ System macOS zawiera standardowe drukowania i okna Ustawienia strony, których a
 
 Okno dialogowe drukowania mogą być wyświetlane jako zarówno bezpłatne przestawne okno dialogowe:
 
-[ ![](dialog-images/print01.png "Okno dialogowe drukowania")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Okno dialogowe drukowania")](dialog-images/print01.png#lightbox)
 
 Lub mogą być wyświetlane jako arkusz:
 
-[ ![](dialog-images/print02.png "Arkusz wydruku")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Arkusz wydruku")](dialog-images/print02.png#lightbox)
 
 Okno dialogowe Ustawienia strony mogą być wyświetlane jako zarówno bezpłatne przestawne okno dialogowe:
 
-[ ![](dialog-images/print03.png "Okno dialogowe Ustawienia strony")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Okno dialogowe Ustawienia strony")](dialog-images/print03.png#lightbox)
 
 Lub mogą być wyświetlane jako arkusz:
 
-[ ![](dialog-images/print04.png "Arkusz Ustawienia strony")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Arkusz Ustawienia strony")](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>Zapisz okien dialogowych
 
 Okno dialogowe Zapisz umożliwia użytkownikom spójny sposób, aby zapisać element w aplikacji. Okno dialogowe Zapisz ma dwa stany: **minimalnego** (znanej także jako zwinięte):
 
-[ ![](dialog-images/save01.png "Zapisywanie okna dialogowego")](dialog-images/save01.png)
+[![](dialog-images/save01.png "Zapisywanie okna dialogowego")](dialog-images/save01.png#lightbox)
 
 I **rozwinięty** stanu:
 
-[ ![](dialog-images/save02.png "Okno dialogowe zapisywania rozszerzonych")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Okno dialogowe zapisywania rozszerzonych")](dialog-images/save02.png#lightbox)
 
 **Minimalnego** dialogowe Zapisz mogą być także wyświetlane jako arkusz:
 
-[ ![](dialog-images/save03.png "Minimalny zapisać arkusza")](dialog-images/save03.png)
+[![](dialog-images/save03.png "Minimalny zapisać arkusza")](dialog-images/save03.png#lightbox)
 
 Jak **rozwinięty** dialogowe Zapisz:
 
-[ ![](dialog-images/save04.png "Rozwinięte zapisać arkusza")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Rozwinięte zapisać arkusza")](dialog-images/save04.png#lightbox)
 
 Aby uzyskać więcej informacji, zobacz [okna](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
@@ -116,20 +116,20 @@ Aby dodać nowe okno, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, otwórz `Main.storyboard` plik do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Przeciągnij nowy **kontrolera widoku** na powierzchnię projektu:
 
-    [ ![](dialog-images/new01.png "")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Wybiera kontroler widoku z biblioteki")](dialog-images/new01.png#lightbox)
 3. W **inspektora tożsamości**, wprowadź `CustomDialogController` dla **Nazwa klasy**: 
 
-    [ ![](dialog-images/new02.png "Ustawienie nazwy klasy")](dialog-images/new02.png)
+    [![](dialog-images/new02.png "Ustawienie nazwy klasy")](dialog-images/new02.png#lightbox)
 4. Wrócić do programu Visual Studio dla komputerów Mac, Zezwalaj na synchronizację w programie Xcode i utworzyć `CustomDialogController.h` pliku.
 5. Wróć do Xcode i projekt interfejsu: 
 
-    [ ![](dialog-images/new03.png "Projektowanie interfejsu użytkownika w środowisku Xcode")](dialog-images/new03.png)
+    [![](dialog-images/new03.png "Projektowanie interfejsu użytkownika w środowisku Xcode")](dialog-images/new03.png#lightbox)
 6. Utwórz **Segue modalne** z okna głównego aplikacji na nowy kontroler widoku, przeciągając kontroli z elementu interfejsu użytkownika, który zostanie otwarte okno dialogowe do okna dialogowego. Przypisz **identyfikator** `ModalSegue`: 
 
-    [ ![](dialog-images/new06.png "Modalne segue")](dialog-images/new06.png)
+    [![](dialog-images/new06.png "Modalne segue")](dialog-images/new06.png#lightbox)
 6. Podczas transmisji w górę żadnego **akcje** i **gniazda**: 
 
-    [ ![](dialog-images/new04.png "Konfigurowanie akcji")](dialog-images/new04.png)
+    [![](dialog-images/new04.png "Konfigurowanie akcji")](dialog-images/new04.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 Wprowadź `CustomDialogController.cs` wygląd pliku podobne do poniższych:
@@ -249,7 +249,7 @@ Ten kod inicjuje segue, który zdefiniowanego w Konstruktorze interfejsu w środ
 
 Możemy uruchomić aplikację i wyświetla okno dialogowe niestandardowych:
 
-[ ![](dialog-images/new05.png "Przykładowe okno dialogowe")](dialog-images/new05.png)
+[![](dialog-images/new05.png "Przykładowe okno dialogowe")](dialog-images/new05.png#lightbox)
 
 Aby uzyskać więcej informacji na temat korzystania z systemu windows w aplikacji Xamarin.Mac, zobacz nasze [pracy z systemem Windows](~/mac/user-interface/window.md) dokumentacji.
 
@@ -264,19 +264,19 @@ Aby utworzyć arkusz niestandardowe w Xamarin.Mac, teraz wykonać następujące 
 1. W **Eksploratora rozwiązań**, otwórz `Main.storyboard` plik do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Przeciągnij nowy **kontrolera widoku** na powierzchnię projektu:
 
-    [ ![](dialog-images/new01.png "")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Wybiera kontroler widoku z biblioteki")](dialog-images/new01.png#lightbox)
 2. Projektowanie interfejsu użytkownika:
 
-    [ ![](dialog-images/sheet01.png "Projektowanie interfejsu użytkownika")](dialog-images/sheet01.png)
+    [![](dialog-images/sheet01.png "Projektowanie interfejsu użytkownika")](dialog-images/sheet01.png#lightbox)
 3. Utwórz **Segue arkusza** z okna głównego na nowy kontroler widoku: 
 
-    [ ![](dialog-images/sheet02.png "Wybieranie typu segue arkusza")](dialog-images/sheet02.png)
+    [![](dialog-images/sheet02.png "Wybieranie typu segue arkusza")](dialog-images/sheet02.png#lightbox)
 4. W **inspektora tożsamości**, nazwy kontrolera widoku **klasy** `SheetViewController`: 
 
-    [ ![](dialog-images/sheet03.png "Ustawienie nazwy klasy")](dialog-images/sheet03.png)
+    [![](dialog-images/sheet03.png "Ustawienie nazwy klasy")](dialog-images/sheet03.png#lightbox)
 5. Zdefiniuj wszelkie potrzebne **gniazda** i **akcje**: 
 
-    [ ![](dialog-images/sheet04.png "Definiowanie wymagane gniazda i akcji")](dialog-images/sheet04.png)
+    [![](dialog-images/sheet04.png "Definiowanie wymagane gniazda i akcji")](dialog-images/sheet04.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji.
 
 Następnie Edytuj `SheetViewController.cs` pliku i zapewnić ich wyglądać następująco:
@@ -407,7 +407,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 Jeśli firma Microsoft może uruchomić aplikację, a następnie otwórz kartę, zostanie dołączona do okna:
 
-[ ![](dialog-images/sheet08.png "Przykład arkusza")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Przykład arkusza")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
@@ -481,36 +481,36 @@ Aby dodać nowe okno, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, otwórz `Main.storyboard` plik do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Przeciągnij nowy **kontrolera okna** na powierzchnię projektu:
 
-    [ ![](dialog-images/pref01.png "Wybierz kontroler okno z biblioteki")](dialog-images/pref01.png)
+    [![](dialog-images/pref01.png "Wybierz kontroler okno z biblioteki")](dialog-images/pref01.png#lightbox)
 3. Rozmieść okna w pobliżu **paska Menu** projektanta:
 
-    [ ![](dialog-images/pref02.png "Dodawanie nowego okna")](dialog-images/pref02.png)
+    [![](dialog-images/pref02.png "Dodawanie nowego okna")](dialog-images/pref02.png#lightbox)
 4. Utwórz kopie dołączonego kontrolera widoku, ponieważ w widoku preferencji będzie karty:
 
-    [ ![](dialog-images/pref03.png "Dodawanie wymaganych kontrolerów widoku")](dialog-images/pref03.png)
+    [![](dialog-images/pref03.png "Dodawanie wymaganych kontrolerów widoku")](dialog-images/pref03.png#lightbox)
 5. Przeciągnij nowy **kontrolera narzędzi** z **biblioteki**:
 
-    [ ![](dialog-images/pref04.png "Wybierz kontroler narzędzi z biblioteki")](dialog-images/pref04.png)
+    [![](dialog-images/pref04.png "Wybierz kontroler narzędzi z biblioteki")](dialog-images/pref04.png#lightbox)
 6. I upuść ją na okna na powierzchnię projektu:
 
-    [ ![](dialog-images/pref05.png "Dodawanie nowego kontrolera paska narzędzi")](dialog-images/pref05.png)
+    [![](dialog-images/pref05.png "Dodawanie nowego kontrolera paska narzędzi")](dialog-images/pref05.png#lightbox)
 7. Układ projektu paska narzędzi:
 
-    [ ![](dialog-images/pref06.png "Układ paska narzędzi")](dialog-images/pref06.png)
+    [![](dialog-images/pref06.png "Układ paska narzędzi")](dialog-images/pref06.png#lightbox)
 8. Formant kliknij i przeciągnij z każdej **przycisku paska narzędzi** do widoków utworzone powyżej. Wybierz **niestandardowy** segue typu:
 
-    [ ![](dialog-images/pref07.png "")](dialog-images/pref07.png)
+    [![](dialog-images/pref07.png "Ustawienie typu segue")](dialog-images/pref07.png#lightbox)
 9. Wybierz nowe Segue i ustaw **klasy** do `ReplaceViewSegue`:
 
-    [ ![](dialog-images/pref08.png "Klasa segue ustawień")](dialog-images/pref08.png)
+    [![](dialog-images/pref08.png "Klasa segue ustawień")](dialog-images/pref08.png#lightbox)
 10. W **projektanta Menubar** na powierzchni projektu aplikacji wybierz z Menu **Preferencje...** , przytrzymując klawisz CTRL i przeciągnij, aby okna Preferencje, aby utworzyć **Pokaż** segue:
 
-    [ ![](dialog-images/pref09.png "")](dialog-images/pref09.png)
+    [![](dialog-images/pref09.png "Ustawienie typu segue")](dialog-images/pref09.png#lightbox)
 11. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji.
 
 Jeśli firma Microsoft wykonywania kodu i wybierz **Preferencje...**  z **Menu aplikacja**, wyświetli się okno:
 
-[ ![](dialog-images/pref10.png "Przykład preferencje okna")](dialog-images/pref10.png)
+[![](dialog-images/pref10.png "Przykład preferencje okna")](dialog-images/pref10.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z systemem Windows i paski narzędzi, zobacz nasze [Windows](~/mac/user-interface/window.md) i [paski narzędzi](~/mac/user-interface/toolbar.md) dokumentacji.
 
@@ -719,7 +719,7 @@ namespace SourceWriter
 
 Następnie podłącz preferencji klasy do elementów interfejsu użytkownika w oknie preferencji i tworzyć widoki powyżej. W Konstruktorze interfejsu, wybierz kontroler widoku preferencji i przejdź do **inspektora tożsamości**, Utwórz niestandardowe klasę dla kontrolera: 
 
-[ ![](dialog-images/prefs12.png "Inspektor tożsamości")](dialog-images/prefs12.png)
+[![](dialog-images/prefs12.png "Inspektor tożsamości")](dialog-images/prefs12.png#lightbox)
 
 Przełącz się do programu Visual Studio for Mac zsynchronizować zmiany, a następnie otwórz nowo utworzonej klasy do edycji. Wprowadź klasy wyglądać następująco:
 
@@ -758,7 +758,7 @@ Należy zauważyć, że ta klasa została wykonana w tym miejscu dwie czynności
 
 Kliknij dwukrotnie następnie plik scenorysu, otwórz go ponownie w konstruktora interfejsu (i zobaczyć zmiany dokonane po prostu powyżej). Przeciągnij wszystkie kontrolki interfejsu użytkownika wymagane do tworzenia interfejsu Preferencje w widoku. Dla każdego formantu, przełącz się do **powiązanie inspektora** i powiąż poszczególnych właściwości **AppPreference** klasy:
 
-[ ![](dialog-images/prefs13.png "Inspektor powiązania")](dialog-images/prefs13.png)
+[![](dialog-images/prefs13.png "Inspektor powiązania")](dialog-images/prefs13.png#lightbox)
 
 Powtórz powyższe kroki dla wszystkich paneli (Widok kontrolery) i wymaganych właściwości preferencji.
 
@@ -903,7 +903,7 @@ namespace SourceWriter
 
 Wszystkie wprowadzone zmiany w miejscu Jeśli użytkownik edytuje Preferencje aplikacji i zamyka okno preferencji zmiany będą dotyczyć wszystkich okien:
 
-[ ![](dialog-images/prefs14.png "Przykład preferencje okna")](dialog-images/prefs14.png)
+[![](dialog-images/prefs14.png "Przykład preferencje okna")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
@@ -954,7 +954,7 @@ Otwórz okno dialogowe Zwraca wybrane pliki lub katalogi użytkownika w postaci 
 
 Jeśli firma Microsoft uruchomić program i wybrać **Otwórz...**  elementu z **pliku** zostanie wyświetlone menu następujące czynności: 
 
-[ ![](dialog-images/dialog03.png "Otwarte okno dialogowe")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otwarte okno dialogowe")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
@@ -991,11 +991,11 @@ void ShowDocument (NSObject sender) {
 
 Jeśli firma Microsoft `ShowPrintAsSheet` właściwości `false`, uruchom aplikację i wyświetla okno dialogowe drukowania, wyświetlane są następujące:
 
-[ ![](dialog-images/print01.png "Okno dialogowe drukowania")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Okno dialogowe drukowania")](dialog-images/print01.png#lightbox)
 
 Jeśli wartość `ShowPrintAsSheet` właściwości `true`, uruchom aplikację i wyświetla okno dialogowe drukowania, wyświetlane są następujące:
 
-[ ![](dialog-images/print02.png "Arkusz wydruku")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Arkusz wydruku")](dialog-images/print02.png#lightbox)
 
 Poniższy kod wyświetli okno dialogowe Układ strony:
 
@@ -1022,11 +1022,11 @@ void ShowLayout (NSObject sender) {
 
 Jeśli firma Microsoft `ShowPrintAsSheet` właściwości `false`, uruchom aplikację i wyświetla okno dialogowe Układ wydruku, wyświetlane są następujące:
 
-[ ![](dialog-images/print03.png "Okno dialogowe Ustawienia strony")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Okno dialogowe Ustawienia strony")](dialog-images/print03.png#lightbox)
 
 Jeśli wartość `ShowPrintAsSheet` właściwości `true`, uruchom aplikację i wyświetla okno dialogowe Układ wydruku, wyświetlane są następujące:
 
-[ ![](dialog-images/print04.png "Arkusz Ustawienia strony")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Arkusz Ustawienia strony")](dialog-images/print04.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z drukowania i okna dialogowe Ustawienia strony, zobacz firmy Apple [NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092), [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080) i [wprowadzenie do drukowania](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1) dokumentacja.
 
@@ -1076,19 +1076,19 @@ void ShowSaveAs (NSObject sender)
 
 Jeśli firma Microsoft `ShowSaveAsSheet` właściwości `false`, uruchom aplikację i wybierz **Zapisz jako...**  z **pliku** menu, wyświetlane są następujące:
 
-[ ![](dialog-images/save01.png "Zapisywanie — okno dialogowe")](dialog-images/save01.png)
+[![](dialog-images/save01.png "Zapisywanie — okno dialogowe")](dialog-images/save01.png#lightbox)
 
 Użytkownika można rozszerzyć okna dialogowego:
 
-[ ![](dialog-images/save02.png "Zapisz rozwinięte — okno dialogowe")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Zapisz rozwinięte — okno dialogowe")](dialog-images/save02.png#lightbox)
 
 Jeśli firma Microsoft `ShowSaveAsSheet` właściwości `true`, uruchom aplikację i wybierz **Zapisz jako...**  z **pliku** menu, wyświetlane są następujące:
 
-[ ![](dialog-images/save03.png "Zapisywanie arkusza")](dialog-images/save03.png)
+[![](dialog-images/save03.png "Zapisywanie arkusza")](dialog-images/save03.png#lightbox)
 
 Użytkownika można rozszerzyć okna dialogowego:
 
-[ ![](dialog-images/save04.png "Rozwinięte zapisać arkusza")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Rozwinięte zapisać arkusza")](dialog-images/save04.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z okna dialogowego Zapisywanie, zobacz firmy Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) dokumentacji.
 
@@ -1101,7 +1101,7 @@ W tym artykule trwało szczegółowy widok okna modalne, arkuszy i standardowym 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [MacWindows (przykład)](https://developer.xamarin.com/samples/mac/MacWindows/)
-- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Menu](~/mac/user-interface/menu.md)
 - [Windows](~/mac/user-interface/window.md)
 - [Paski narzędzi](~/mac/user-interface/toolbar.md)

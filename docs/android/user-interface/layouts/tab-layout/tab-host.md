@@ -3,27 +3,26 @@ title: "Układ karty z TabHost"
 description: "W tym artykule zapewni wysokiego poziomu omówienie TabHost, starsze API używane do tworzenia układów z kartami w aplikacji platformy Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
+ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: ff61ca0a2bca466da3e33c93a17944915328b70c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>Układ karty z TabHost
 
 _W tym artykule zapewni wysokiego poziomu omówienie TabHost, starsze API używane do tworzenia układów z kartami w aplikacji platformy Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
 > [!NOTE]
-> **Uwaga:** `TabHost` jest stary interfejsu API, która została zastąpiona przez firmę Google. Deweloperzy są zachęcani do kompilacji z kartami aplikacji przy użyciu [elementów nadrzędnych](~/android/user-interface/controls/action-bar.md). `ActionBar` Jest dostępna we wszystkich wersji systemu android. Została wprowadzona w 3.0 dla systemu Android (interfejs API na poziomie 11), a była powrotem przenoszone do 2.2 systemu Android (interfejs API na poziomie 8) i Android 2.3 (interfejs API na poziomie 10) w [w wersji 7 AppCompat biblioteki](http://developer.android.com/tools/support-library/features.html#v7-appcompat), które są dostępne dla platformy Xamarin.Android przy użyciu [Xamarin Biblioteka obsługi systemu android - 7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu.
+> `TabHost` to interfejs API stare, która została zastąpiona przez firmę Google. Deweloperzy są zachęcani do kompilacji z kartami aplikacji przy użyciu [elementów nadrzędnych](~/android/user-interface/controls/action-bar.md). `ActionBar` Jest dostępna we wszystkich wersji systemu android. Została wprowadzona w 3.0 dla systemu Android (interfejs API na poziomie 11), a była powrotem przenoszone do 2.2 systemu Android (interfejs API na poziomie 8) i Android 2.3 (interfejs API na poziomie 10) w [w wersji 7 AppCompat biblioteki](http://developer.android.com/tools/support-library/features.html#v7-appcompat), które są dostępne dla platformy Xamarin.Android przy użyciu [Xamarin Biblioteka obsługi systemu android - 7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu.
 
 `TabHost` Jest starsze, oryginalnego interfejsu API tworzenia użytkownika z kartami interfacesIt jest najbardziej odpowiednie dla aplikacji platformy Xamarin.Android, który musi obsługiwać Android 2.2 i Android 2.3 i nie można użyć **ActionBarSherlock**.
 Następujące składniki pięć są wszystkie związane z `TabHost` interfejsu API:
@@ -44,7 +43,6 @@ Na poniższym diagramie przedstawiono, jak wszystkie te składniki są powiązan
 
 Karta zawartość może być działania lub widoki. Widoki są stosunkowo nieskomplikowane i prostego, ale może spowodować powstanie wielu niepowiązanych kodu ko habitating w działaniu. To spowoduje niską rozdzielenie problemy i przeglądarek klasy, która jest trudna do zachowania. Z kolei działania wymagają zasobów systemowych, ale pozwala na bardziej podejściu przy logiki dla każdej karty z własnym różne klasy.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

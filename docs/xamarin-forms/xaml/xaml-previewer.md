@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 4798da42718658096509948bae07e5e5534d5af0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Podgląd XAML dla platformy Xamarin.Forms
 
@@ -30,13 +30,13 @@ Więcej informacji można znaleźć w [informacje o wersji](https://developer.xa
 
 **Podgląd** przycisk mogą być wyświetlane w edytorze prawym przyciskiem myszy plik XAML, a następnie wybierając **Otwórz za pomocą > Podgląd XAML**. Okienko podglądu może następnie być widoczny, czy ukryty przez naciśnięcie przycisku **Podgląd** przycisk w prawym górnym rogu wszystkie okna dokumentu XAML:
 
-[ ![Podgląd formantu ListView w programie Visual Studio dla komputerów Mac](xaml-previewer-images/xamlp-list-sml.png "podgląd formularzy w programie Visual Studio for Mac")](xaml-previewer-images/xamlp-list.png "podgląd formularzy w programie Visual Studio dla komputerów Mac")
+[![Podgląd formantu ListView w programie Visual Studio dla komputerów Mac](xaml-previewer-images/xamlp-list-sml.png "podgląd formularzy w programie Visual Studio for Mac")](xaml-previewer-images/xamlp-list.png#lightbox "podgląd formularzy w programie Visual Studio dla komputerów Mac")
 
 ### <a name="visual-studio-on-windows"></a>Visual Studio w systemie Windows
 
 Użyj **Widok > inne okna > Podgląd platformy Xamarin.Forms** menu programu Visual Studio, aby otworzyć okna podglądu. Użyj **okna > nową grupę kart pionowy** menu w miejsce side-by-side.
 
-[ ![W programie Visual Studio w wersji zapoznawczej formant ListView](xaml-previewer-images/xamlp-list-vs-sml.png "podgląd formularzy w programie Visual Studio")](xaml-previewer-images/xamlp-list-vs.png "podgląd formularzy w programie Visual Studio")
+[![W programie Visual Studio w wersji zapoznawczej formant ListView](xaml-previewer-images/xamlp-list-vs-sml.png "podgląd formularzy w programie Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "podgląd formularzy w programie Visual Studio")
 
 ## <a name="xaml-preview-options"></a>Opcje podglądu XAML
 

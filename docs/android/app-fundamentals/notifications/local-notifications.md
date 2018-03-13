@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7566ebac0f487ef321c512c988c79f34e50777ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-notifications"></a>Lokalnego powiadomienia
 
@@ -28,7 +28,7 @@ Android udostępnia dwa obszary pod kontrolą systemu wyświetlania ikony powiad
 
 Aby uzyskać szczegółowe informacje o powiadomienia, użytkownik może otwierać menu powiadomień (który rozszerza każdego ikonę powiadomienia, aby wyświetlić zawartość powiadomień) i wykonywać żadnych akcji skojarzonych z powiadomień. Następujący ekran zrzut pokazuje *menu powiadomień* odpowiadający obszaru powiadomień wyświetlane powyżej:
 
-[![Przykład menu powiadomień wyświetlania trzy powiadomień](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png)
+[![Przykład menu powiadomień wyświetlania trzy powiadomień](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Powiadomień systemu android użyć dwóch typów układów:
 
@@ -38,7 +38,6 @@ Powiadomień systemu android użyć dwóch typów układów:
 
 Każdy z tych typów układu (i sposób ich tworzenia) znajduje się w poniższych sekcjach.
 
-<a name="base-layout" />
 
 ### <a name="base-layout"></a>Układu podstawowego
 
@@ -54,7 +53,7 @@ Wszystkie powiadomienia Android są wbudowane w formacie układu podstawowego, k
 
 Te elementy są wyświetlane w sposób przedstawiony na poniższym diagramie:
 
-[![Lokalizacja elementów powiadomień](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png)
+[![Lokalizacja elementów powiadomień](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 Układy podstawowej są ograniczone do 64 pikselach niezależnych od gęstości (dp) w wysokości. Android domyślnie tworzy ten styl powiadomień w wersji basic.
 
@@ -64,13 +63,13 @@ Opcjonalnie powiadomienia można wyświetlić duże ikony, która reprezentuje n
 
 Począwszy od systemu Android 5.0 powiadomień może również zostać wyświetlony na ekranu blokady:
 
-[![Przykład powiadomień ekranu blokady](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png)
+[![Przykład powiadomień ekranu blokady](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 Użytkownik może dwukrotnego powiadomienia ekranu blokady, aby odblokować urządzenie i przejść do aplikacji, która pochodzi z tego powiadomienia, lub przejdź na odrzucenie powiadomienia. Aplikacje można ustawić poziom widoczności powiadomienie, aby kontrolować, co przedstawiono na ekranu blokady, a użytkownicy mogą wybrać, czy zezwalać poufnej zawartości ma być wyświetlany w powiadomień ekranu blokady.
 
 Android 5.0 wprowadzono format prezentacji powiadomienia o wysokim priorytecie, nazywany *projekcyjny wskazuje pozycję*. Powiadomienia projekcyjny wskazuje pozycję slajd w dół od górnej krawędzi ekranu przez kilka sekund i następnie retreat tworzenie kopii zapasowych w obszarze powiadomień:
 
-[![Przykład heads-up powiadomień](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png)
+[![Przykład heads-up powiadomień](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 Powiadomienia projekcyjny wskazuje pozycję umożliwiają interfejsu użytkownika mają zostać umieszczone ważne informacje przed użytkownika bez wpływu na stan aktualnie uruchomione działanie systemu.
 
@@ -84,7 +83,6 @@ Android obsługuje powiadomienia metadanych, dzięki czemu powiadomienia można 
 
 **Uwaga:** **widoczność** i **kategorii** zostały wprowadzone w systemie Android 5.0 i są niedostępne w starszych wersjach systemu android. Począwszy od systemu Android 8.0 [kanały powiadomień](#notif-chan) służą do określania, jak są prezentowane powiadomień dla użytkownika.
 
-<a name="expanded-layouts" />
 
 ### <a name="expanded-layouts"></a>Układy rozszerzonej
 
@@ -106,7 +104,6 @@ Android obsługuje trzy stylów rozwinięte układu dla pojedynczego zdarzenia p
 
 [Poza powiadomień w wersji Basic](#beyond-the-basic-notification) (dalszej części tego artykułu) wyjaśnia sposób tworzenia *tekst Big*, *skrzynki odbiorczej*, i *obrazu* powiadomienia.
 
-<a name="notification-creation" />
 
 ## <a name="notification-creation"></a>Tworzenie powiadomień
 
@@ -127,7 +124,6 @@ Aby utworzyć powiadomienie w systemie Android, należy użyć [Notification.Bui
 
 Po skonfigurowaniu tych opcji w Konstruktorze generowania obiektu powiadomienia, który zawiera ustawienia. Do publikowania powiadomienia, przekaż ten obiekt powiadomień do *Menedżera powiadomień*. Udostępnia android [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) klasy, która jest odpowiedzialna za publikowania powiadomienia i wyświetlanie ich do użytkownika. Odwołanie do tej klasy można uzyskać z dowolnego kontekstu, takie jak działania lub usługi.
 
-<a name="how-to-generate" />
 
 ### <a name="how-to-generate-a-notification"></a>Sposób generowania powiadomienia
 
@@ -185,7 +181,6 @@ Sygnatura czasowa jest ustawiany automatycznie, ale można zastąpić to ustawie
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 ```
-<a name="sound-and-vibr" />
 
 ### <a name="enabling-sound-and-vibration"></a>Włączenie dźwięku i wibrację
 
@@ -265,7 +260,6 @@ Powiadomienie o pozostaje widoczna, dopóki jedna z trzech zdarzeń sytuacji:
 
 Aby uzyskać więcej informacji na temat aktualizowania powiadomień systemu Android, zobacz [zmodyfikować powiadomienie](http://developer.android.com/training/notify-user/managing.html#Updating).
 
-<a name="starting-an-activity" />
 
 ### <a name="starting-an-activity-from-a-notification"></a>Uruchamianie działania dla powiadomienia
 
@@ -380,11 +374,11 @@ Począwszy od systemu Android 8.0 (Oreo), można użyć *kanały powiadomień* f
 
 **YouTube** aplikacji, który jest instalowany z systemem Android Oreo zawiera dwie kategorie powiadomień: **Pobierz powiadomienia** i **ogólne powiadomienia**:
 
-[![Ekrany powiadomień dla YouTube w Oreo systemu Android](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png)
+[![Ekrany powiadomień dla YouTube w Oreo systemu Android](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
 Każdy z tych kategorii odpowiada kanału powiadomień. Implementuje aplikacji YouTube **Pobierz powiadomienia** kanału i **ogólne powiadomienia** kanału. Użytkownik może nacisnąć **Pobierz powiadomienia**, które powoduje wyświetlenie ekranu ustawienia dla aplikacji Pobierz kanału powiadomień:
 
-[![Pobierz powiadomienia ekranu aplikacji YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png)
+[![Pobierz powiadomienia ekranu aplikacji YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 Na tym ekranie użytkownik może zmodyfikować zachowanie **Pobierz** kanału powiadomień, wykonując następujące czynności:
 
@@ -400,14 +394,13 @@ Na tym ekranie użytkownik może zmodyfikować zachowanie **Pobierz** kanału po
 
 **Ogólne powiadomienia** kanału ma podobne ustawienia:
 
-[![Ogólne powiadomienia ekranu aplikacji YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png)
+[![Ogólne powiadomienia ekranu aplikacji YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
 Powiadomienie ma Pełna kontrola nad sposób kanałów powiadomień interakcji z użytkownikiem &ndash; użytkownik może zmodyfikować ustawienia dla dowolnego kanału powiadomień na urządzeniu, jak pokazano na zrzutach ekranu powyżej. Można jednak skonfigurować wartości domyślne, (zgodnie z poniższym opisem można będzie). Jak tych przykładach, nowa funkcja kanały powiadomień umożliwia można umożliwić użytkownikom precyzyjną kontrolę nad różnych rodzajów powiadomienia.
 
 Należy dodać obsługę kanały powiadomień do aplikacji? Jeśli aplikacja jest przeznaczona dla 8.0 dla systemu Android, aplikację *musi* zaimplementować kanały powiadomień.
 Aplikacji przeznaczony dla Oreo, który próbuje wysłać lokalne powiadomienie do użytkownika bez korzystania z kanału powiadomień zakończy się niepowodzeniem wyświetlić powiadomienie na urządzeniach Oreo. Nie w przypadku skierowania 8.0 dla systemu Android, aplikacji będą nadal działać na 8.0 dla systemu Android, ale z tej samej zachowanie powiadomienia jako będzie działać, podczas uruchamiania systemu Android 7.1 lub wcześniej.
 
-<a name="notif-chan-create" />
 
 ### <a name="creating-a-notification-channel"></a>Tworzenie kanału powiadomień
 
@@ -448,7 +441,6 @@ Aby utworzyć kanał powiadomień, wykonaj następujące czynności:
     notificationManager.CreateNotificationChannel (chan);
     ```
 
-<a name="notif-chan-post" />
 
 ### <a name="posting-to-a-notifications-channel"></a>Zamieszczając kanał powiadomień
 
@@ -507,7 +499,6 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 Ten przykładowy kod otwiera plik obrazu na **Resources/drawable/monkey_icon.png**, konwertuje ją na mapę bitową i przekazuje wynikowy mapy bitowej do `Notification.Builder`. Zazwyczaj rozdzielczość obrazu źródłowego jest większy niż małych ikon &ndash; , ale nie jest znacznie większa. Obraz, który jest zbyt duży, może spowodować niepotrzebnych operacji zmiany rozmiaru, które można opóźnić publikowanie powiadomienia.
 Aby uzyskać więcej informacji na temat rozmiarów ikony powiadomień w systemie Android, zobacz [ikony powiadomień](http://developer.android.com/design/style/iconography.html#notification).
 
-<a name="big-text-style" />
 
 ### <a name="big-text-style"></a>Styl tekstu duży
 
@@ -544,7 +535,6 @@ builder.SetStyle (textStyle);
 
 W tym przykładzie tekst komunikatu i tekst podsumowania są przechowywane w `BigTextStyle` obiektu (`textStyle`) zanim zostanie przekazany do `Notification.Builder.`
 
-<a name="image-style" />
 
 ### <a name="image-style"></a>Styl obrazu
 
@@ -609,7 +599,6 @@ Jeśli nie znasz z wyprzedzeniem rozmiar pliku obrazu, jest dobrym pomysłem pow
 
 Aby uzyskać więcej informacji o ładowania i dekodowaniu obrazów dużej mapy bitowej, zobacz [obciążenia dużych map bitowych wydajnie](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently).
 
-<a name="inbox-style" />
 
 ### <a name="inbox-style"></a>Styl skrzynki odbiorczej
 
@@ -645,13 +634,11 @@ Aby dodać nowe wiersze tekstu treści powiadomienia, należy wywołać [Addline
 
 Można również użyć *skrzynki odbiorczej* stylu dla dowolnego powiadomienie, które mają być wyświetlone poszczególnych wierszy tekstu w formacie rozwinięte. Na przykład *skrzynki odbiorczej* styl powiadomienie może służyć do łączenia wielu oczekujące powiadomienia do podsumowania powiadomień &ndash; możesz zaktualizować pojedynczy *skrzynki odbiorczej* styl powiadomienia za pomocą instrukcji new Wiersze zawartości powiadomienia (zobacz [aktualizowanie powiadomienie](#updating-a-notification) powyżej), a nie niż generowanie stały strumień nowy, przede wszystkim podobny powiadomień. Aby uzyskać więcej informacji na temat tej metody, zobacz [Podsumuj powiadomienia](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
 
-<a name="configuring-metadata" />
 
 ## <a name="configuring-metadata"></a>Konfigurowanie metadanych
 
 `Notification.Builder` zawiera metody, które można wywołać, aby ustawić metadane dotyczące powiadomienia, takich jak priorytet, widoczność i kategorii. Te informacje są używane dla systemu android &mdash; wraz z ustawień preferencji użytkownika &mdash; ustalenie, jak i kiedy należy wyświetlać powiadomienia.
 
-<a name="priority-settings" />
 
 ### <a name="priority-settings"></a>Ustawienia priorytetu
 
@@ -694,7 +681,6 @@ W następnym przykładzie powiadomień "Traktować dzień" niskiego priorytetu j
 
 Ponieważ powiadomienie "Myśl dzień" jest powiadomienie o niskim priorytecie, nie Android zostanie wyświetlona w formacie Heads-up.
 
-<a name="visibility-settings" />
 
 ### <a name="visibility-settings"></a>Ustawienia widoczności
 
@@ -719,7 +705,6 @@ Gdy `Private` jest przesyłana z powiadomień, tylko nazwy i ikony aplikacji jes
 
 W tym przykładzie **NotificationsLab** to nazwa źródłowego aplikacji. Ta wersja zredagowanym powiadomienia jest wyświetlana tylko wtedy, gdy jest bezpieczne ekranu blokady (tj., zabezpieczone za pomocą numeru PIN, wzorzec lub hasło) &ndash; czy ekranu blokady nie jest bezpieczne, pełnej zawartości powiadomienie jest dostępna w ekranu blokady.
 
-<a name="category-settings" />
 
 ### <a name="category-settings"></a>Kategoria Ustawienia
 
@@ -791,7 +776,6 @@ Jak pokazano w poniższym przykładzie, wywołania metody dla opcji powiadomień
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) przykładzie pokazano sposób użycia `NotificationCompat.Builder` można uruchomić drugi działania dla powiadomienia. Ten przykładowy kod znajduje się w [przy użyciu lokalnego powiadomienia o platformie Xamarin.Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) wskazówki.
 
-<a name="notification-styles" />
 
 ### <a name="notification-styles"></a>Style powiadomień
 
@@ -806,7 +790,6 @@ builder.SetStyle (textStyle);
 
 Analogicznie, można użyć aplikacji `NotificationCompat.InboxStyle` i `NotificationCompat.BigPictureStyle` dla *skrzynki odbiorczej* i *obrazu* style, odpowiednio.
 
-<a name="priority-and-category" />
 
 ### <a name="notification-priority-and-category"></a>Powiadomienie priorytetu i kategorii
 
@@ -823,7 +806,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 W tym przykładzie aplikacja firmy **platformy docelowej** ma ustawioną wartość Android 5.0 i **minimalna wersja systemu Android** ustawiono **Android 4.1 (16 poziom interfejsu API)**. Ponieważ `SetCategory` jest dostępna na poziomie interfejsu API 21 i nowsze, wywoła ten przykładowy kod `SetCategory` tylko gdy jest dostępna &ndash; nie wywoła `SetCategory` gdy poziom interfejsu API jest mniejsza niż
 21.
 
-<a name="lockscreen-visibility" />
 
 ### <a name="lockscreen-visibility"></a>Widoczność ekranu blokady
 
@@ -835,7 +817,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

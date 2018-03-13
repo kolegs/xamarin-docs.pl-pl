@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>Wypełnianie ListView z danymi
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -23,7 +22,6 @@ Wiersze, aby dodać `ListView` należy dodać go do układu i wdrożenie `IListA
 
 Karty wbudowane przyjmować identyfikator zasobu widoku jako parametr, który jest używany dla każdego wiersza. Można użyć wbudowanych zasobów, takich jak zasoby w `Android.Resource.Layout` , nie trzeba napisać własne.
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Przy użyciu ListActivity i ArrayAdapter&lt;ciągu&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>Obsługa wiersza kliknie
 
 Zazwyczaj `ListView` będzie również umożliwiać użytkownikowi touch wierszy do wykonania niektórych akcji (np. odtwarzanie utworu, wywoływania kontaktu lub przedstawiający inny ekran). Aby odpowiedzieć na poprawki użytkownika musi mieć więcej Metoda implementowana w `ListActivity` &ndash; `OnListItemClick` &ndash; podobnie do następującej:
 
-[![Zrzut ekranu przedstawiający SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![Zrzut ekranu przedstawiający SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 Teraz użytkownik może touch wiersza i a `Toast` pojawi się alert:
 
-[![Zrzut ekranu z powiadomienia wyskakującego o jest wyświetlany, gdy wiersz jest dotknięciu](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![Zrzut ekranu z powiadomienia wyskakującego o jest wyświetlany, gdy wiersz jest dotknięciu](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>Implementowanie ListAdapter
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>Za pomocą karty niestandardowe
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 Ponieważ w tym przykładzie użyto ten sam układ wiersza (`SimpleListItem1`) aplikacji wynikowy będzie wyglądać takie same jak w poprzednim przykładzie.
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>Wiersz widoku ponownego użycia.
 
@@ -147,13 +141,12 @@ Adapter niestandardowy implementacje powinny *zawsze* ponownego użycia `convert
 
 Niektóre implementacje karty (takich jak `CursorAdapter`) nie ma `GetView` metody, a nie wymagają one dwie różne metody `NewView` i `BindView` którego wymuszanie ponownego użycia wiersza oddzielając obowiązków `GetView` na dwie metody. Brak `CursorAdapter` przykładzie w dalszej części dokumentu.
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>Włączanie szybkie przewijanie
 
 Szybkie przewijanie pomaga użytkownika, aby przewijać długich list, zapewniając dodatkowe 'dojścia"działającego jako pasek przewijania bezpośredni dostęp do części listy. Ten zrzut ekranu przedstawia uchwytu szybkiego przewijania:
 
-[![Zrzut ekranu przedstawiający szybkie przewijanie z dojściem przewijania](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![Zrzut ekranu przedstawiający szybkie przewijanie z dojściem przewijania](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 Powoduje szybkiego przewijania dojście pojawią się jest tak proste, jak ustawienie `FastScrollEnabled` właściwości `true`:
 
@@ -161,13 +154,12 @@ Powoduje szybkiego przewijania dojście pojawią się jest tak proste, jak ustaw
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>Dodawanie indeksu sekcji
 
 Indeks sekcji zapewnia dodatkowe opinii użytkowników, gdy są one przewijanie długą listę fast &ndash; zawiera które "sekcji" były one przewijane w. Powoduje indeks sekcji się podklasą karty musi implementować `ISectionIndexer` interfejs do dostarczania tekst indeksu w zależności od jest wyświetlanych wierszy:
 
-[![Zrzut ekranu H znajdującego się powyżej sekcji, która rozpoczyna się od H](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![Zrzut ekranu H znajdującego się powyżej sekcji, która rozpoczyna się od H](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 Aby zaimplementować `ISectionIndexer` należy dodać do karty trzech metod:
 

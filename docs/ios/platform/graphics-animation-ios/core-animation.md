@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>Animacja Core
 
@@ -23,12 +23,16 @@ Wszystkie niezwykle smooth animacji w systemie iOS, takie jak przewijanie tabel 
 
 Struktury animacji Core i Core grafiki mogą współdziałać, aby tworzenie doskonałych, animowany 2D grafiki. W rzeczywistości Core animacji można nawet przekształcać grafiki 2D w przestrzeni 3D, tworzenie niesamowitych, kinowe środowiska. Jednak aby utworzyć true grafiki 3D, konieczne będzie używać języków, takich jak OpenGL ES lub Włącz gry do interfejsu API, takich jak MonoGame, mimo że 3D wykracza poza zakres tego artykułu.
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>Animacja Core
 
 iOS używa framework Core animacji w celu utworzenia efekty animacji, takich jak przechodzenie między widokami, przedłużanie menu i przewijanie efekty kilka. Istnieją dwa sposoby pracy z animacji:
 
--  [Za pomocą UIKit](#Using_UIKit_Animation), która obejmuje animacji na podstawie widoku, a także animowane przejścia między kontrolerami.
--   [Za pomocą animacji Core](#Using_Core_Animation), które warstwy bezpośrednio, co zapewnia bardziej precyzyjną system kontroli.
+- [Za pomocą UIKit](#Using_UIKit_Animation), która obejmuje animacji na podstawie widoku, a także animowane przejścia między kontrolerami.
+- [Za pomocą animacji Core](#Using_Core_Animation), które warstwy bezpośrednio, co zapewnia bardziej precyzyjną system kontroli.
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Przy użyciu UIKit animacji
 
@@ -237,6 +241,6 @@ W tym artykule analizujemy dostępnych za pośrednictwem możliwości animacji *
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe animacji Core](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Podstawowe grafiki](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Podstawowe funkcje grafiki](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Grafika i wskazówki animacji](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Animacja Core](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Podstawowe funkcje animacji](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

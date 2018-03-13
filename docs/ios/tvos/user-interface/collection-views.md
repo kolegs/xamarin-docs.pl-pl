@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f0201e114f55e0610aceb68f98fae60a801afc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-collection-views"></a>Praca z widokami Kolekcja
 
@@ -20,7 +20,7 @@ _Ten artykuł obejmuje projektowanie i Praca z widokami kolekcja wewnątrz aplik
 
 Kolekcja widoków umożliwiają grupą zawartości mają być wyświetlane przy użyciu dowolnego układów. Przy użyciu wbudowanych funkcji, pozwalają one na łatwe tworzenie układów siatki lub liniowy obsługuje również układy niestandardowe.
 
-[ ![](collection-views-images/collection01.png "Przykładowy widok kolekcji")](collection-views-images/collection01.png)
+[![](collection-views-images/collection01.png "Przykładowy widok kolekcji")](collection-views-images/collection01.png#lightbox)
 
 Widok kolekcji przechowuje kolekcję elementów, używając delegata i źródła danych do interakcji z użytkownikiem i zawartość elementu kolekcji. Ponieważ widok kolekcji jest oparty na podsystemu układu, która jest niezależna od samego widoku, podając inny układ można łatwo zmienić prezentacji widok kolekcji danych na bieżąco.
 
@@ -103,36 +103,36 @@ Teraz należy wykonać następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go w systemie iOS projektanta.
 1. Dodaj widok obrazu, etykiety i przycisku do istniejącego widoku i skonfigurować je do następującego: 
 
-    [ ![](collection-views-images/collection02.png "Przykładowy układ")](collection-views-images/collection02.png)
+    [![](collection-views-images/collection02.png "Przykładowy układ")](collection-views-images/collection02.png#lightbox)
 1. Przypisz **nazwa** do widoku obrazu i etykiet w **kartę Widget** z **Explorer właściwości**. Na przykład: 
 
-    [ ![](collection-views-images/collection03.png "Nazwa ustawienia")](collection-views-images/collection03.png)
+    [![](collection-views-images/collection03.png "Nazwa ustawienia")](collection-views-images/collection03.png#lightbox)
 1. Następnie można przeciągnięcie kontrolera widoku kolekcji do scenorysu: 
 
-    [ ![](collection-views-images/collection04.png "Kontroler widoku kolekcji")](collection-views-images/collection04.png)
+    [![](collection-views-images/collection04.png "Kontroler widoku kolekcji")](collection-views-images/collection04.png#lightbox)
 1. Kontroli przeciągnij od przycisku do kolekcji kontrolera widoku i wybierz **Push** z menu podręcznego: 
 
-    [ ![](collection-views-images/collection05.png "Wybierz z menu podręcznego wypychania")](collection-views-images/collection05.png)
+    [![](collection-views-images/collection05.png "Wybierz z menu podręcznego wypychania")](collection-views-images/collection05.png#lightbox)
 1. Gdy aplikacja jest uruchamiana, spowoduje to widok kolekcji można Pokaż, gdy użytkownik kliknie przycisk.
 1. Wybierz widok kolekcji, a następnie wprowadź następujące wartości w **kartę Układ** z **Explorer właściwości**: 
 
-    [ ![](collection-views-images/collection06.png "W Eksploratorze właściwości")](collection-views-images/collection06.png)
+    [![](collection-views-images/collection06.png "W Eksploratorze właściwości")](collection-views-images/collection06.png#lightbox)
 1. To steruje rozmiarem pamięci pojedynczych komórek i obramowania między komórkami i zewnętrznej krawędzi widok kolekcji.
 1. Wybierz kontroler widoku kolekcji i ustawić jej klasa `CityCollectionViewController` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection07.png "Ustaw klasy CityCollectionViewController")](collection-views-images/collection07.png)
+    [![](collection-views-images/collection07.png "Ustaw klasy CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
 1. Wybierz widok kolekcji i ustawić jej klasa `CityCollectionView` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection08.png "Ustaw klasy CityCollectionView")](collection-views-images/collection08.png)
+    [![](collection-views-images/collection08.png "Ustaw klasy CityCollectionView")](collection-views-images/collection08.png#lightbox)
 1. Zaznacz komórkę widoku kolekcji i ustawić jej klasa `CityCollectionViewCell` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection09.png "Ustaw klasy CityCollectionViewCell")](collection-views-images/collection09.png)
+    [![](collection-views-images/collection09.png "Ustaw klasy CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
 1. W **kartę Widget** upewnij się, że **układu** jest `Flow` i **kierunek przewijania** jest `Vertical` widoku kolekcji: 
 
-    [ ![](collection-views-images/collection10.png "Na karcie widżetu")](collection-views-images/collection10.png)
+    [![](collection-views-images/collection10.png "Na karcie widżetu")](collection-views-images/collection10.png#lightbox)
 1. Zaznacz komórkę widoku kolekcji i ustawić jej **tożsamości** do `CityCell` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection11.png "Ustaw tożsamość CityCell")](collection-views-images/collection11.png)
+    [![](collection-views-images/collection11.png "Ustaw tożsamość CityCell")](collection-views-images/collection11.png#lightbox)
 1. Zapisz zmiany.
     
 
@@ -143,34 +143,34 @@ Teraz należy wykonać następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go w systemie iOS projektanta.
 1. Dodaj widok obrazu, etykiety i przycisku do istniejącego widoku i skonfigurować je do następującego: 
 
-    [ ![](collection-views-images/collection02vs.png "Skonfiguruj układ")](collection-views-images/collection02vs.png)
+    [![](collection-views-images/collection02vs.png "Skonfiguruj układ")](collection-views-images/collection02vs.png#lightbox)
 1. Przypisz **nazwa** do widoku obrazu i etykiet w **kartę Widget** z **Explorer właściwości**. Na przykład: 
 
-    [ ![](collection-views-images/collection03vs.png "W Eksploratorze właściwości")](collection-views-images/collection03vs.png)
+    [![](collection-views-images/collection03vs.png "W Eksploratorze właściwości")](collection-views-images/collection03vs.png#lightbox)
 1. Następnie można przeciągnięcie kontrolera widoku kolekcji do scenorysu: 
 
-    [ ![](collection-views-images/collection04vs.png "Kontroler widoku kolekcji")](collection-views-images/collection04vs.png)
+    [![](collection-views-images/collection04vs.png "Kontroler widoku kolekcji")](collection-views-images/collection04vs.png#lightbox)
 1. Kontroli przeciągnij od przycisku do kolekcji kontrolera widoku i wybierz **Push** z menu podręcznego: 
 
-    [ ![](collection-views-images/collection05vs.png "Wybierz z menu podręcznego wypychania")](collection-views-images/collection05vs.png)
+    [![](collection-views-images/collection05vs.png "Wybierz z menu podręcznego wypychania")](collection-views-images/collection05vs.png#lightbox)
 1. Gdy aplikacja jest uruchamiana, spowoduje to widok kolekcji można Pokaż, gdy użytkownik kliknie przycisk.
 1. Wybierz widok kolekcji i w **kartę Układ** z **Explorer właściwości** wprowadź **szerokość** jako _361_ i  **Wysokość** jako _256_ 
 1. To steruje rozmiarem pamięci pojedynczych komórek i obramowania między komórkami i zewnętrznej krawędzi widok kolekcji.
 1. Wybierz kontroler widoku kolekcji i ustawić jej klasa `CityCollectionViewController` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection07vs.png "Ustaw klasy CityCollectionViewController")](collection-views-images/collection07vs.png)
+    [![](collection-views-images/collection07vs.png "Ustaw klasy CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
 1. Wybierz widok kolekcji i ustawić jej klasa `CityCollectionView` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection08vs.png "Ustaw klasy CityCollectionView")](collection-views-images/collection08vs.png)
+    [![](collection-views-images/collection08vs.png "Ustaw klasy CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
 1. Zaznacz komórkę widoku kolekcji i ustawić jej klasa `CityCollectionViewCell` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection09vs.png "Ustaw klasy CityCollectionViewCell")](collection-views-images/collection09vs.png)
+    [![](collection-views-images/collection09vs.png "Ustaw klasy CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
 1. W **kartę Widget** upewnij się, że **układu** jest `Flow` i **kierunek przewijania** jest `Vertical` widoku kolekcji: 
 
-    [ ![](collection-views-images/collection10vs.png "Karta tnie widżetu")](collection-views-images/collection10vs.png)
+    [![](collection-views-images/collection10vs.png "Karta tnie widżetu")](collection-views-images/collection10vs.png#lightbox)
 1. Zaznacz komórkę widoku kolekcji i ustawić jej **tożsamości** do `CityCell` w **kartę Widget**: 
 
-    [ ![](collection-views-images/collection11vs.png "Ustaw tożsamość CityCell")](collection-views-images/collection11vs.png)
+    [![](collection-views-images/collection11vs.png "Ustaw tożsamość CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. Zapisz zmiany.
     
 
@@ -806,17 +806,17 @@ public override void ViewWillAppear (bool animated)
 
 Z wszystko w miejscu Jeśli skompilować i uruchomić aplikację, widok główny zostanie wyświetlony z Miasto domyślne:
 
-[ ![](collection-views-images/run01.png "Ekran główny")](collection-views-images/run01.png)
+[![](collection-views-images/run01.png "Ekran główny")](collection-views-images/run01.png#lightbox)
 
 Jeśli użytkownik kliknij **wybierz widok** pojawi się przycisk, widok kolekcji:
 
-[ ![](collection-views-images/run02.png "Widok kolekcji")](collection-views-images/run02.png)
+[![](collection-views-images/run02.png "Widok kolekcji")](collection-views-images/run02.png#lightbox)
 
 Wszelkie Miasto, w którym ma jego `CanSelect` ustawioną właściwość `false` pojawi się nieaktywne i użytkownik nie będzie można ustawić fokusu do niego. Gdy użytkownik wyróżnia elementu (stał się fokusu) jest wyświetlany tytuł i używają efekt paralaksy w celu subtlety pochylenie obrazu w 3D.
 
 Gdy użytkownik kliknie wybierz obraz, widok kolekcji zostanie zamknięte, a widok główny zostanie wyświetlony ponownie z nowego obrazu:
 
-[ ![](collection-views-images/run03.png "Nowy obraz ekranu głównego")](collection-views-images/run03.png)
+[![](collection-views-images/run03.png "Nowy obraz ekranu głównego")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 
@@ -837,7 +837,7 @@ W tym artykule pokrywającego projektowanie i Praca z widokami kolekcja wewnątr
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Przykłady dla systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [systemu tvOS człowieka przewodniki — interfejs](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Przewodnik programowania w języku aplikacji dla systemu tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

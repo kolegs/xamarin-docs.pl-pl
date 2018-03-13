@@ -3,14 +3,15 @@ title: "Podsumowanie działu 27. Niestandardowe moduły renderowania"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Podsumowanie działu 27. Niestandardowe moduły renderowania
 
@@ -66,7 +67,7 @@ Podczas zapisywania mechanizm renderujący, użytkownik będzie wyprowadzanie kl
 
 Wszystkie `ViewRenderer` zawiera pochodne `ExportRenderer` atrybut na poziomie zestawu, który kojarzy `HelloView` klasy z danej `HelloViewRenderer` klasy. Jest to, jak platformy Xamarin.Forms lokalizuje renderowania w projektach poszczególnych platform:
 
-[![Potrójna zrzut ekranu przedstawiający widok Hello](images/ch27fg02-small.png "niestandardowe moduły renderowania")](images/ch27fg02-large.png "niestandardowe moduły renderowania")
+[![Potrójna zrzut ekranu przedstawiający widok Hello](images/ch27fg02-small.png "niestandardowe moduły renderowania")](images/ch27fg02-large.png#lightbox "niestandardowe moduły renderowania")
 
 ## <a name="renderers-and-properties"></a>Moduły renderowania i właściwości
 
@@ -89,7 +90,7 @@ Typy te właściwości są określane przez parametry ogólne do `ViewRenderer`.
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) klasa przedstawia niektóre z tych `EllipseView` obiektów:
 
-[![Potrójna zrzut ekranu przedstawiający pokaz elipsy](images/ch27fg03-small.png "renderowania niestandardowe EllipseView")](images/ch27fg03-large.png "EllipseView renderowania niestandardowe")
+[![Potrójna zrzut ekranu przedstawiający pokaz elipsy](images/ch27fg03-small.png "renderowania niestandardowe EllipseView")](images/ch27fg03-large.png#lightbox "EllipseView renderowania niestandardowe")
 
 [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) odrzuceń `EllipseView` wyłączone krawędzi ekranu.
 
@@ -113,4 +114,4 @@ Programy renderujące wykrywa zmian do macierzystego formantu, a następnie wywo
 
 - [Pełny tekst działu 27 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)
 - [Przykłady działu 27](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
-- [Niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

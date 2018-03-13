@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>Touch w systemie iOS
 
@@ -23,7 +23,7 @@ Formanty w `UIKit` — te będące podklasami z kontrolne — są tak uzależnio
 
 Jednak wiele widoków w `UIKit` nie mają touch domyślnie włączone. Istnieją dwa sposoby Włącz obsługę dotykową w formancie. Pierwszym sposobem jest wyboru włączenie interakcji użytkownika, w konsoli właściwości systemu IOS projektanta, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](touch-in-ios-images/image1.png "Zaznacz pole wyboru włączenia przez użytkownika interakcji w konsoli właściwości projektanta systemu IOS")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "Zaznacz pole wyboru włączenia przez użytkownika interakcji w konsoli właściwości projektanta systemu IOS")](touch-in-ios-images/image1.png#lightbox)
 
 Możemy również użyć kontrolera, aby ustawić `UserInteractionEnabled` właściwości na wartość true na `UIView` klasy. Jest to wymagane, jeśli interfejs użytkownika jest tworzona w kodzie.
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Obsługa wielodotyku nie jest włączone domyślnie na formanty. Obsługa wielodotyku można włączyć w systemie iOS projektanta, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](touch-in-ios-images/image2.png "Obsługa wielodotyku włączona w systemie iOS projektanta")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "Obsługa wielodotyku włączona w systemie iOS projektanta")](touch-in-ios-images/image2.png#lightbox)
 
 Istnieje również możliwość ustawienia wielodotyku programowo, ustawiając `MultipleTouchEnabled` właściwości, jak pokazano w następującym wierszu kodu:
 

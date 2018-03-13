@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fd31413b777e1179e7f4faf6f91f91bc6c41e82b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-segmented-controls"></a>Praca z kontrolkami segmentu
 
@@ -21,7 +21,7 @@ _Ten artykuł obejmuje projektowanie i Praca z kontrolkami Segmentowanych wewną
 
 Segmentu kontrola zapewnia zbiór elementów liniowego, z których każdy może zawierać tekst lub ikonę i służy do zapewnienia zestawu opcji powiązanych z użytkownikiem.
 
-[ ![](segmented-controls-images/segment01.png "Formanty segmentu próbki")](segmented-controls-images/segment01.png)
+[![](segmented-controls-images/segment01.png "Formanty segmentu próbki")](segmented-controls-images/segment01.png#lightbox)
 
 Apple ma poniższe sugestie dotyczące pracy z formantami Segmentowanych:
 
@@ -57,36 +57,36 @@ Ponownie nie można mieszać tekst i ikony na danego segmentu i należy unikać 
 
 Najprostszym sposobem korzystania z segmentu formantów w aplikacji Xamarin.tvOS jest dodanie ich do interfejsu użytkownika aplikacji przy użyciu projektanta dla systemu iOS.
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **kontroli segmentu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](segmented-controls-images/segment02.png "Formant segmentu")](segmented-controls-images/segment02.png)
+    [![](segmented-controls-images/segment02.png "Formant segmentu")](segmented-controls-images/segment02.png#lightbox)
 1. W **kartę Widget** z **konsoli właściwości**, można dostosować kilka właściwości formantu segmentu, takie jak jego **styl** i **stanu**: 
 
-    [ ![](segmented-controls-images/segment03.png "Na karcie widżetu")](segmented-controls-images/segment03.png)
+    [![](segmented-controls-images/segment03.png "Na karcie widżetu")](segmented-controls-images/segment03.png#lightbox)
 1. Użyj **segmentów** pole, aby kontrolować liczbę segmentów w kontrolerze.
 1. Wybierz danego segmentu z **listy rozwijanej segmentu** takich jak modyfikować jego właściwości poszczególnych **tytuł** lub **obrazu** i kontroli w przypadku danego segmentu  **Włączone** lub **wybrane** gdy formant jest wyświetlany.
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](segmented-controls-images/segment04.png "Przypisz nazwę")](segmented-controls-images/segment04.png)
+    [![](segmented-controls-images/segment04.png "Przypisz nazwę")](segmented-controls-images/segment04.png#lightbox)
 1. Zapisz zmiany.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **kontroli segmentu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](segmented-controls-images/segment02-vs.png "Formant segmentu")](segmented-controls-images/segment02-vs.png)
+    [![](segmented-controls-images/segment02-vs.png "Formant segmentu")](segmented-controls-images/segment02-vs.png#lightbox)
 1. W **kartę Widget** z **Explorer właściwości**, można dostosować kilka właściwości formantu segmentu, takie jak jego **styl** i **stanu**: 
 
-    [ ![](segmented-controls-images/segment03-vs.png "Na karcie widżetu")](segmented-controls-images/segment03-vs.png)
+    [![](segmented-controls-images/segment03-vs.png "Na karcie widżetu")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Użyj **segmentów** pole, aby kontrolować liczbę segmentów w kontrolerze.
 1. Wybierz danego segmentu z **listy rozwijanej segmentu** takich jak modyfikować jego właściwości poszczególnych **tytuł** lub **obrazu** i kontroli w przypadku danego segmentu  **Włączone** lub **wybrane** gdy formant jest wyświetlany.
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](segmented-controls-images/segment04-vs.png "Przypisz nazwę")](segmented-controls-images/segment04-vs.png)
+    [![](segmented-controls-images/segment04-vs.png "Przypisz nazwę")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Zapisz zmiany.
     
 -----
@@ -240,7 +240,7 @@ W tym artykule pokrywającego projektowanie i Praca z formantem Segmentowanych w
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Przykłady dla systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [systemu tvOS człowieka przewodniki — interfejs](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Przewodnik programowania w języku aplikacji dla systemu tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

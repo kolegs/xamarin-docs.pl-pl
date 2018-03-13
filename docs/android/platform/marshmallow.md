@@ -7,12 +7,12 @@ ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: b28ca68701394a8b7b0b543a5ae646910e7c8361
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="marshmallow-features"></a>Funkcje marshmallow
 
@@ -20,7 +20,6 @@ _Ten artykuł ułatwia rozpoczęcie pracy przy użyciu w celu opracowywania apli
 
 Ten artykuł zawiera omówienie nowych funkcji systemu Android Marshmallow 6.0, omówiono sposoby przygotowania do tworzenia aplikacji systemu Android Marshmallow platformy Xamarin.Android i zawiera łącza do aplikacji przykładowej, które pokazano, jak korzystać z nowego systemu Android Marshmallow funkcje w aplikacji platformy Xamarin.Android. 
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -29,7 +28,7 @@ Xamarin.Android obsługuje system Android Marshmallow i obejmuje:
 
 -   **Interfejs API 23/Android 6.0 powiązania** &ndash; Android 6.0 dodaje wiele nowych interfejsów API dla nowych funkcji opisanych poniżej; te interfejsy API są dostępne dla aplikacji platformy Xamarin.Android, jeśli zostanie rozpoczęta 23 poziom interfejsu API. Aby uzyskać więcej informacji na temat Android 6.0 interfejsów API, zobacz [Android 6.0 interfejsów API](http://developer.android.com/preview/api-overview.html). 
 
-[![Obrazy bohater tablety i telefony z systemem Marshmallow](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png)
+[![Obrazy bohater tablety i telefony z systemem Marshmallow](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 Mimo że wersji Marshmallow koncentruje się głównie na "Polski i jakości", umożliwia także wiele nowych funkcji środowiska zainteresowań dla deweloperów platformy Xamarin.Android. Te funkcje obejmują: 
 
@@ -57,9 +56,6 @@ Ponadto wiele aktualizacji biblioteki systemu Android core zostały wydane z sys
 
 Ponadto wiele aktualizacji biblioteki systemu Android core zostały wydane z systemem Android Marshmallow, a te aktualizacje zapewniają nowe funkcje dla systemu Android Marshmallow i wcześniejszych wersjach systemu android. W tym artykule wyjaśniono, jak rozpocząć tworzenie aplikacji za pomocą systemu Android Marshmallow i zapewnia wyróżnia omówienie nowych funkcji w systemie Android w wersji 6.0. 
 
-
-<a name="requirements" />
-
 ## <a name="requirements"></a>Wymagania
 
 Poniżej jest wymagany do korzystania z nowych funkcji systemu Android Marshmallow w aplikacjach opartych na platformie Xamarin: 
@@ -74,7 +70,6 @@ Poniżej jest wymagany do korzystania z nowych funkcji systemu Android Marshmall
 
 Można nadal używać [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Jeśli tworzenie specjalnie dla interfejsu API na poziomie 23 lub starszym. 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Wprowadzenie
 
@@ -90,13 +85,11 @@ Aby rozpocząć korzystanie z platformy Xamarin.Android Android Marshmallow, mus
 
 Każdy z tych kroków znajduje się w następujących sekcjach:
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Zainstaluj aktualizacje Xamarin
 
 Aby zaktualizować program Xamarin, co zawierają one obsługę systemu Android Marshmallow 6.0, zmień kanału aktualizacji **stabilna** i zainstaluj wszystkie aktualizacje. Aby uzyskać więcej informacji o instalowaniu aktualizacji z kanału aktualizacji, zobacz [zmienić kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/). 
 
-<a name="sdkpreview" />
 
 ### <a name="install-the-android-60-sdk"></a>Zainstaluj zestaw SDK systemu Android 6.0
 
@@ -104,17 +97,16 @@ Aby utworzyć projekt platformy Xamarin.Android for Android Marshmallow, musi na
 
 -   Uruchom Menedżera zestawu SDK systemu Android (w programie Visual Studio dla komputerów Mac, należy użyć **Narzędzia > SDK Manager**; w programie Visual Studio, użyj **Narzędzia > Android > Android SDK Manager**) i zainstaluj najnowsze narzędzia zestawu SDK dla systemu Android:
 
-    [![Wybieranie narzędzia zestawu SDK systemu Android w programie Android SDK Manager](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png)
+    [![Wybieranie narzędzia zestawu SDK systemu Android w programie Android SDK Manager](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
 
 -   Ponadto zainstalowanie najnowszych **Android 6.0** pakietów SDK:
 
-    [![Wybieranie zestawu SDK systemu Android 6.0 pakietów w Menedżerze zestawu SDK systemu Android](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png)
+    [![Wybieranie zestawu SDK systemu Android 6.0 pakietów w Menedżerze zestawu SDK systemu Android](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 Należy zainstalować poprawkę narzędzia zestawu SDK systemu Android 24.3.4 lub nowszym.
 Aby uzyskać więcej informacji o używaniu Android SDK Manager można zainstalować zestawu SDK systemu Android 6.0, zobacz [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Uruchom projekt platformy Xamarin.Android
 
@@ -123,7 +115,6 @@ Utwórz nowy projekt platformy Xamarin.Android. Jeśli jesteś nowym użytkownik
 Podczas tworzenia projektu systemu Android, należy skonfigurować ustawienia wersji do docelowego dla systemu Android marshmallow w wersji 6.0. Aby skierować je do projektu dla systemu Marshmallow, należy skonfigurować projekt dla **interfejsu API na poziomie 23 (Xamarin.Android 6.0 pomocy technicznej)**. Aby uzyskać więcej informacji o konfigurowaniu poziomów poziom interfejsu API systemu Android, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Skonfiguruj Emulator lub urządzenie
 
@@ -135,19 +126,17 @@ Jeśli używasz emulatora, uruchom Menedżera AVD Android i utworzyć nowe urzą
 
 Na przykład to urządzenie wirtualne jest skonfigurowany do emulowania 5 węzła:
 
-[![Konfigurowanie AVD przy użyciu węzła 5 urządzeń, systemem Android 6.0 docelowych i Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png)
+[![Konfigurowanie AVD przy użyciu węzła 5 urządzeń, systemem Android 6.0 docelowych i Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
 Jeśli używasz urządzenia fizycznego, takie jak 5 węzła 6 lub 9, można zainstalować obraz podglądu dla systemu Android Marshmallow. Aby uzyskać więcej informacji o aktualizowaniu urządzenia do systemu Android Marshmallow, zobacz [obrazów systemu sprzętu](http://developer.android.com/preview/download.html#images).
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Nowe funkcje
 
 Wiele zmiany wprowadzone w systemie Android Marshmallow są koncentruje się na poprawę środowiska użytkownika dla systemu Android, zwiększenie wydajności i naprawiania błędów. Jednak Marshmallow również wprowadzić niektóre rozległych zmian podstaw dotyczących platformy systemu Android. W poniższych sekcjach zaznacz te ulepszenia i zawierają łącza do ułatwiające rozpoczęcie pracy przy użyciu nowych funkcji systemu Android Marshmallow w aplikacji. 
 
 
-<a name="permissions" />
 
 ### <a name="runtime-permissions"></a>Uprawnienia w czasie wykonywania
 
@@ -169,7 +158,6 @@ Aby użyć tej aplikacji przykładowej:
 Aby uzyskać więcej informacji o nowych funkcjach uprawnienia środowiska uruchomieniowego w systemie Android Marshmallow, zobacz [Praca z uprawnieniami systemu](https://developer.android.com/preview/features/runtime-permissions.html).
 
 
-<a name="authentication" />
 
 ### <a name="authentication-enhancements"></a>Ulepszenia uwierzytelniania
 
@@ -181,8 +169,6 @@ Android Marshmallow zawiera dwa rozszerzenia uwierzytelniania, które wyeliminow
 
 Łącza i przykładowe aplikacje opisane w dalszej części może ułatwić stają się znanym te nowe funkcje.
 
-
-<a name="fingerprint" />
 
 #### <a name="fingerprint-authentication"></a>Odcisk palca uwierzytelniania
 
@@ -200,7 +186,6 @@ Należy pamiętać, że to przykładowa aplikacja wymaga podłączenia urządzen
 Ta aplikacja nie przechowuje odcisku palca (lub hasło).
 
 
-<a name="voice" />
 
 #### <a name="voice-interactions"></a>Interakcje głosu
 
@@ -210,7 +195,6 @@ Zobacz [dodać konwersacji do aplikacji systemu Android z interakcje głosu](htt
 Przykładowa aplikacja jest dostępna który ilustruje sposób użycia interfejsu API interakcji głosowe w aplikacji platformy Xamarin.Android: [interakcje głosu](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
-<a name="confirmcred" />
 
 #### <a name="confirm-credential"></a>Potwierdzenie poświadczeń
 
@@ -225,7 +209,6 @@ Aby użyć tej aplikacji przykładowej:
 2.  Wybierz **zakupu** przycisk i Potwierdź poświadczenia bezpiecznej blokady ekranu.
 
 
-<a name="chrometabs" />
 
 ### <a name="chrome-custom-tabs"></a>Niestandardowe karty Chrome
 
@@ -245,7 +228,6 @@ Aby móc korzystać z tej funkcji w aplikacji platformy Xamarin.Android, Pobierz
 Aby uzyskać więcej informacji na temat tej funkcji, zobacz [kart niestandardowych Chrome](https://developer.chrome.com/multidevice/android/customtabs).
 
 
-<a name="designlib" />
 
 ### <a name="material-design-support-library"></a>Biblioteka obsługi materiałów projektu
 
@@ -280,8 +262,6 @@ W tym przykładzie przedstawiono następujące funkcje biblioteki projektu:
 
 Aby uzyskać więcej informacji na temat biblioteki projektu, zobacz [biblioteki obsługi systemu Android projekt](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) w blog deweloperów systemu Android.
 
-
-<a name="libraries" />
 
 ### <a name="additional-library-updates"></a>Biblioteka dodatkowe aktualizacje
 

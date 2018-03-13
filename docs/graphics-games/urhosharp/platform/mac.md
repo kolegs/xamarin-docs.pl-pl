@@ -1,17 +1,17 @@
 ---
 title: "Obsługa UrhoSharp Mac"
-description: "Mac określonych ustawień i funkcji"
+description: "Mac określonych ustawień i funkcji do UrhoSharp."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 95FFBD36-14E9-4C17-B1E8-9A04E81E824D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cdaca45c3132abf3f52d407d4ce59c680248fce7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fff96a19d5f5286f2c9483407fcaaab6d15ff2b5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-mac-support"></a>Obsługa UrhoSharp Mac
 
@@ -21,11 +21,11 @@ Biblioteka klas przenośnych jest Urho i zezwala na tego samego interfejsu API d
 
 Na stronach przyjęto założenie, że `MyGame` jest podklasą `Application` klasy.
 
-# <a name="macos-x"></a>MacOS X
+## <a name="macos"></a>macOS
 
 **Obsługiwane architektury:** x86/x86-64 dla 32-bitowych i 64-bitowej.
 
-# <a name="creating-a-project"></a>Tworzenie projektu
+## <a name="creating-a-project"></a>Tworzenie projektu
 
 Utwórz projekt konsoli, Urho NuGet odwołania, a następnie upewnij się, czy można zlokalizować zasoby (katalogi zawierającym katalog danych).
 

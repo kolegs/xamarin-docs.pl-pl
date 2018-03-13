@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e5bb4747811729adf5363b0a893b0f85108b220
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multitasking-for-ipad"></a>Wielozadaniowości dla urządzeń iPad
 
@@ -35,6 +36,11 @@ Kilka rzeczy, które należy wziąć pod uwagę podczas [Obsługa wielozadaniowo
 Deweloper aplikacji można też [Wypisz wielowątkowości](#Opting-Out-of-Multitasking), takie jak [wyłączenie odtwarzanie wideo PIP](#Disabling-PIP-Video-Playback).
 
 W tym artykule opisano kroki wymagane do zapewnienia, że aplikacja Xamarin.iOS będzie działać poprawnie w środowisku wielozadaniowości jak rezygnacji z wielozadaniowości, jeśli nie jest dobrze nadające się do aplikacji.
+
+> [!VIDEO https://youtube.com/embed/GctYAozoLr8]
+
+**Wielozadaniowości na urządzeniu iPad przez [Xamarin University](https://university.xamarin.com)**
+
 
 <a name="Multitasking-QuickStart" />
 
@@ -59,7 +65,7 @@ System iOS 9 oferuje nowe możliwości wielozadaniowości na iPad wraz z wprowad
 
 Funkcja slajd za pośrednictwem zezwala użytkownikowi na pobranie drugi aplikacji i wyświetl ją w małych panelu przesuwanego, aby zapewnić szybkie interakcji. Slajd za pośrednictwem panelu jest tymczasowy i zostanie zamknięty, gdy użytkownik przechodzi wstecz do pracy z głównej aplikacji ponownie.
 
-[ ![](multitasking-images/about01.png "Slajd za pośrednictwem Panelu")](multitasking-images/about01.png)
+[![](multitasking-images/about01.png "Slajd za pośrednictwem Panelu")](multitasking-images/about01.png#lightbox)
 
 Główny jest, aby pamiętać jest, że użytkownik zdecyduje się dwie aplikacje, które będą uruchomione side-by-side i że deweloper nie ma kontroli nad tego procesu. W związku z tym istnieje kilka rzeczy, które należy wykonać, aby upewnić się, że aplikacji platformy Xamarin.iOS działa poprawnie na slajd za pośrednictwem panelu:
 
@@ -74,7 +80,7 @@ Slajd za pośrednictwem jest dostępna tylko na iPad Pro, iPad lotniczego, iPad 
 
 Na urządzeniu iPad obsługiwane (iPad lotniczego 2, 4 dla urządzeń iPad i Pro tylko iPad) użytkownik może Wybierz drugi aplikacji i uruchom go side-by-side z aktualnie uruchomionej aplikacji w trybie ekranu podziału. Użytkownik może określić procent ekranie głównym zajmowany przez przeciągnięcie każdej aplikacji na ekranie podziału.
 
-[ ![](multitasking-images/about02.png "Widok podzielony")](multitasking-images/about02.png)
+[![](multitasking-images/about02.png "Widok podzielony")](multitasking-images/about02.png#lightbox)
 
 Podobnie jak slajd przez użytkownik zdecyduje się dwie aplikacje, które będą uruchomione side-by-side i ponownie projektanta nie ma kontroli nad tego procesu. W związku z tym podzielony widok umieszcza podobne wymagania w aplikacji platformy Xamarin.iOS:
 
@@ -89,7 +95,7 @@ Aby dowiedzieć się więcej o przygotowywanie aplikacji dla widoku podziału, z
 
 Nowy obraz w funkcji obrazu (znanej także jako _PIP_) umożliwia użytkownikowi obejrzeć film wideo w oknie małe, przestawne, które użytkownik może umieścić w dowolnym miejscu na ekranie powyżej innych uruchomionych aplikacji.
 
-[ ![](multitasking-images/about03.png "Przykład obrazu w obraz przestawne okno")](multitasking-images/about03.png)
+[![](multitasking-images/about03.png "Przykład obrazu w obraz przestawne okno")](multitasking-images/about03.png#lightbox)
 
 Jako slajd za pośrednictwem i widok podzielony użytkownik ma pełną kontrolę nad oglądanie wideo na obrazie w trybie obrazu. Jeśli główną funkcją aplikacji Obejrzyj klip wideo, należy modyfikacji niektórych będzie działać prawidłowo w trybie PIP. W przeciwnym razie wartość do obsługi PIP nie są konieczne nie zmiany.
 
@@ -111,44 +117,27 @@ Do obsługi systemu iOS 9 wielozadaniowości na dowolnym nowej aplikacji platfor
 
 ### <a name="screen-size-and-orientation-considerations"></a>Zagadnienia dotyczące orientacji i rozmiaru ekranu
 
-Przed iOS 9 można zaprojektować rozmiaru ekranu urządzenia określonego agains aplikacji, a orientacji. Ponieważ aplikację można uruchomić w panelu przesuwa się lub w trybie podzielony widok, znajduje się działających w jednej klasy compact lub regularnych rozmiar poziomych na iPad, niezależnie od urządzenia fizycznego orientacji lub rozmiaru ekranu.
+Przed iOS 9 można zaprojektować aplikacji przed rozmiaru ekranu określonego urządzenia i orientacji. Ponieważ aplikację można uruchomić w panelu przesuwa się lub w trybie podzielony widok, znajduje się działających w jednej klasy compact lub regularnych rozmiar poziomych na iPad, niezależnie od urządzenia fizycznego orientacji lub rozmiaru ekranu.
 
-[ ![](multitasking-images/sizeclasses01.png "Zagadnienia dotyczące orientacji i rozmiaru ekranu")](multitasking-images/sizeclasses01.png)
+[![](multitasking-images/sizeclasses01.png "Zagadnienia dotyczące orientacji i rozmiaru ekranu")](multitasking-images/sizeclasses01.png#lightbox)
 
 Na urządzeniu iPad aplikacji pełny ekran ma zwykłych klas rozmiar poziomie i w pionie. Wszystkie urządzenia iPhone, ale telefonów iPhone 6 Plus oraz iPhone 6s Plus, należy mieć rozmiar Compact klas w obu kierunkach w dowolnym orientacji. IPhone 6 Plus oraz iPhone 6s Plus w trybie krajobraz mają zwykłej poziomy klasy rozmiar i Compact klasy rozmiar pionowy (podobne do iPad Mini).
 
 Na Ipad obsługujące slajd za pośrednictwem i widok podzielony może kończyć przy użyciu następujących kombinacji:
 
-<table width=100% border="1px">
-    <tr>
-        <td><b>Orientacja</b></td>
-        <td><b>Głównej aplikacji</b></td>
-        <td><b>Dodatkowej aplikacji</b></td>
-    </tr>
-    <tr>
-        <td><b>Portrait</b></td>
-        <td>75% ekranu<br/>Poziomy Compact<br/>Regularne pionowe</td>
-        <td>25% ekranu<br/>Poziomy Compact<br/>Regularne pionowe</td>
-    </tr>
-    <tr>
-        <td><b>orientacji poziomej</b></td>
-        <td>75% ekranu<br/>Regularne poziomej<br/>Regularne pionowe</td>
-        <td>25% ekranu<br/>Poziomy Compact<br/>Regularne pionowe</td>
-    </tr>
-    <tr>
-        <td><b>orientacji poziomej</b></td>
-        <td>50% ekranu<br/>Poziomy Compact<br/>Regularne pionowe</td>
-        <td>50% ekranu<br/>Poziomy Compact<br/>Regularne pionowe</td>
-    </tr>
-</table>
+| **Orientacja** | **Głównej aplikacji** | **Dodatkowej aplikacji** |
+|--- |--- |--- |
+| **Portrait** |75% ekranu<br />Poziomy Compact<br />Regularne pionowe|25% ekranu<br />Poziomy Compact<br />Regularne pionowe|
+| **orientacji poziomej** |75% ekranu<br />Regularne poziomej<br />Regularne pionowe|25% ekranu<br />Poziomy Compact<br />Regularne pionowe|
+| **orientacji poziomej** |50% ekranu<br />Poziomy Compact<br />Regularne pionowe|50% ekranu<br />Poziomy Compact<br />Regularne pionowe|
 
 W przykładzie [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) aplikacji, jeśli pełny ekran jest uruchamiane na urządzeniu iPad w trybie krajobraz przedstawi zarówno listy jak i widoku szczegółów w tym samym czasie:
 
-[ ![](multitasking-images/sizeclasses03.png "Listy i widok szczegółów przedstawione w tym samym czasie")](multitasking-images/sizeclasses03.png)
+[![](multitasking-images/sizeclasses03.png "Listy i widok szczegółów przedstawione w tym samym czasie")](multitasking-images/sizeclasses03.png#lightbox)
 
 Jeśli ta sama aplikacja jest uruchamiana w slajd za pośrednictwem panelu, jest poukładany jako klasę Compact rozmiar poziome i wyświetla tylko na liście:
 
-[ ![](multitasking-images/sizeclasses04.png "Tylko lista wyświetlana, gdy urządzenie jest pozioma")](multitasking-images/sizeclasses04.png)
+[![](multitasking-images/sizeclasses04.png "Tylko lista wyświetlana, gdy urządzenie jest pozioma")](multitasking-images/sizeclasses04.png#lightbox)
 
 Aby zapewnić poprawne działanie aplikacji w takich sytuacjach, należy przyjąć kolekcje cechy wraz z klasy wielkości i są zgodne z `IUIContentContainer` i `IUITraitEnvironment` interfejsów. Zobacz firmy Apple [odwołania do klasy UITraitCollection](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) i naszych [wprowadzenie do ujednoliconego Scenorys](~/ios/user-interface/storyboards/unified-storyboards.md) przewodnika, aby uzyskać więcej informacji.
 
@@ -166,11 +155,11 @@ Teraz iOS 9, aplikacje umożliwia tworzenie własnych niestandardowych skrótów
 
 **Karta poleceń** pojawi się przełącznik aplikacji, który umożliwia użytkownikowi szybkie przełączanie między aplikacjami z klawiatury, podobnie jak Mac OS:
 
-[ ![](multitasking-images/keyboard01.png "Przełącznik aplikacji")](multitasking-images/keyboard01.png)
+[![](multitasking-images/keyboard01.png "Przełącznik aplikacji")](multitasking-images/keyboard01.png#lightbox)
 
 Jeśli aplikacja systemu iOS 9 zawiera skróty klawiaturowe, użytkownik może przytrzymaj **polecenia**, **opcji** lub **kontroli** kluczy, aby je wyświetlić w okienku podręcznym:
 
-[ ![](multitasking-images/keyboard02.png "Menu podręczne skróty klawiaturowe")](multitasking-images/keyboard02.png)
+[![](multitasking-images/keyboard02.png "Menu podręczne skróty klawiaturowe")](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>Definiowanie niestandardowych skrótów klawiaturowych
 
@@ -206,7 +195,7 @@ Następnie możemy zastąpić `KeyCommands` właściwości i utworzyć nową `UI
 
 Jeśli firma Microsoft Uruchom tę aplikację na urządzeniu iPad z dołączoną klawiaturą sprzętu i typy użytkownika **N polecenia**, nowy wpis zostanie dodany do listy. Jeśli użytkownik jest przechowywana w dół **polecenia** klucza, skrótów zostanie wyświetlona lista:
 
-[ ![](multitasking-images/keyboard03.png "Menu podręczne skróty klawiaturowe")](multitasking-images/keyboard03.png)
+[![](multitasking-images/keyboard03.png "Menu podręczne skróty klawiaturowe")](multitasking-images/keyboard03.png#lightbox)
 
 Zobacz przykład [aplikacji MultiTask](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) dla przykładem implementacji.
 
@@ -240,7 +229,7 @@ Podczas Apple sugeruje, że wszystkie aplikacje systemu iOS 9 obsługują wieloz
 
 Dla aplikacji platformy Xamarin.iOS zrezygnować z uruchomione w trybie podzielony widok lub albo przesuwa się panelu, Edytuj projektu **Info.plist** plik i sprawdź **wymaga pełnego ekranu**:
 
-[ ![](multitasking-images/fullscreen01.png "Rezygnacja ruch wychodzący wielowątkowości")](multitasking-images/fullscreen01.png)
+[![](multitasking-images/fullscreen01.png "Rezygnacja ruch wychodzący wielowątkowości")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > **Uwaga:** podczas Opting poza wielozadaniowości uniemożliwia aplikację uruchamianą w przesuwa się lub podzielony widok, tak **nie** uniemożliwić uruchomione w przesuwa się lub obraz obrazu wideo przy wyświetlaniu wraz z innej aplikacji z aplikacja.

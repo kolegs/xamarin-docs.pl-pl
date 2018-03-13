@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 2. Struktura aplikacji"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 893030170175403c7f7d6885e924e425b4f73c05
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Podsumowanie rozdział 2. Struktura aplikacji
 
@@ -186,7 +187,7 @@ Zwykle te właściwości nie są używane bezpośrednio. Zamiast tego kombinacji
 
 Poniżej przedstawiono wyniki `HorizontalOptions` i `VerticalOptions` właściwości `Label` jednocześnie ustawionych na `LayoutOptions.Center`:
 
-[![Potrójna zrzut ekranu przedstawiający program pozdrowienia](images/ch02fg05-small.png "poziomie i w pionie etykiet wyśrodkowane")](images/ch02fg05-large.png "poziomie i w pionie etykiet wyśrodkowane")
+[![Potrójna zrzut ekranu przedstawiający program pozdrowienia](images/ch02fg05-small.png "poziomie i w pionie etykiet wyśrodkowane")](images/ch02fg05-large.png#lightbox "poziomie i w pionie etykiet wyśrodkowane")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Rozwiązanie 5. Centrum tekstu w etykiecie
 

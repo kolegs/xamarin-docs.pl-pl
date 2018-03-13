@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>Odzyskiwanie pamięci
 
@@ -21,7 +21,7 @@ Xamarin.Android używa w Mono [proste pokoleniowej modułu zbierającego element
 -   Kolekcje głównych (stosów miejsce zbiera Gen1 i dużego obiektu). 
 
 > [!NOTE]
-> **Uwaga:** w przypadku braku jawne kolekcji za pomocą [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekcje są *na żądanie*, oparte na alokacji sterty. *To nie jest zliczanie systemu*; obiekty *nie zostaną zebrane, jak są żadnych oczekujących odwołań*, lub gdy zakres został zakończony. Wykaz Globalny zostanie uruchomiony, gdy pomocnicza sterty zabrakło pamięci dla nowej alokacji. Jeśli nie ma żadnych alokacji, nie będzie działał.
+> W przypadku braku jawne kolekcji za pomocą [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekcje są *na żądanie*, oparte na alokacji sterty. *To nie jest zliczanie systemu*; obiekty *nie zostaną zebrane, jak są żadnych oczekujących odwołań*, lub gdy zakres został zakończony. Wykaz Globalny zostanie uruchomiony, gdy pomocnicza sterty zabrakło pamięci dla nowej alokacji. Jeśli nie ma żadnych alokacji, nie będzie działał.
 
 
 Drobne kolekcje są tanie i częste i służą do łączenia obiektów ostatnio przydzielone i martwy. Drobne kolekcje są wykonywane po co kilka MB przydzielonych obiektów. Kolekcje pomocnicza może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Drobne kolekcje są tanie i częste i służą do łączenia obiektów ostatnio 
 Kolekcje głównych jest kosztowne i mniej częste i służą do odzyskania wszystkie obiekty martwy. Główne kolekcje są wykonywane po wyczerpaniu pamięci dla bieżącego rozmiaru sterty (przed zmianą rozmiaru sterty). Główne kolekcje może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj ()](https://developer.xamarin.com/api/member/System.GC.Collect/) , przez wywołanie [GC. Zbieraj (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) z argumentem [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>Maszyna wirtualna między kolekcje obiektów
 
@@ -67,7 +66,6 @@ Mono kolekcje są, gdzie fun sytuacji. Zbierane są zwykle zarządzanych obiekt�
 
 W rezultacie zaletą jest to, że wystąpienie obiektu równorzędnego będzie funkcjonować tak długo, jak odwołuje się do niego albo kodu zarządzanego (np przechowywane w `static` zmiennej) lub odwołuje się kod języka Java. Ponadto zostanie rozszerzony okres istnienia natywnego elementów równorzędnych poza co jak inaczej na żywo, zgodnie z macierzystego elementu równorzędnego będzie kolekcjonowanych do momentu zarówno natywnego elementów równorzędnych i równorzędnej zarządzane kolekcjonowanych.
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>Cykle obiektu
 
@@ -77,7 +75,6 @@ Wszystkie obiekty, które ma reprezentacji w obie maszyny wirtualne mają okresy
 
 Aby skrócić czas życia obiektów, [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) powinna być wywoływana. To spowoduje ręcznie "Server" połączenia dla obiektu między dwóch maszyn wirtualnych przy zwalnianiu odwołanie do globalnych, dzięki czemu obiekty, które mają być zbierane szybciej. 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>Automatyczne kolekcje
 
@@ -135,7 +132,6 @@ Ustawieniem domyślnym jest **Tarjan**. Jeśli okaże się regresji, może być 
 Istnieje wiele sposobów GC, aby zmniejszyć czasy zbieranie i wykorzystywanie pamięci.
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>Usuwanie wystąpienia elementu równorzędnego
 
@@ -148,7 +144,7 @@ Często należy pomocy GC. Niestety *GC. AddMemoryPressure()* i *GC. RemoveMemor
 
 
 > [!NOTE]
-> **Uwaga:** musi być *bardzo* zachować ostrożność podczas usuwania `Java.Lang.Object` wystąpień podklasy.
+> Musi być *bardzo* zachować ostrożność podczas usuwania `Java.Lang.Object` wystąpień podklasy.
 
 Aby zminimalizować możliwości uszkodzenie pamięci, należy uwzględnić następujące wskazówki podczas wywoływania metody `Dispose()`.
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>Zmniejsz przywoływanego wystąpień
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>Drobne kolekcje
 
@@ -329,7 +323,6 @@ Jeśli aplikacja ma "cykl pracy" w którym to samo odbywa się samodzielnego, mo
 -  Grupa żądań sieciowych do odświeżania/synchronizacji danych aplikacji.
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>Główne kolekcje
 
@@ -344,14 +337,12 @@ Główne kolekcje można wywołać tylko wtedy ręcznie, jeśli kiedykolwiek:
 -   W ramach przesłoniętych [Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/) metody. 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>Diagnostyka
 
 Aby sprawdzić, kiedy globalne odwołania są tworzone i niszczone, można ustawić [debug.mono.log](~/android/troubleshooting/index.md) właściwości systemu, aby zawierała [ *gref* ](~/android/troubleshooting/index.md) i/lub [ *gc*](~/android/troubleshooting/index.md). 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>Konfiguracja
 

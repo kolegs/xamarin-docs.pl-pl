@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3b862f03a81364594f33d82ebf02d75440d7bc4c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Uwierzytelnianie użytkowników w usłudze Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Usługa Azure Active Directory B2C jest chmury rozwiązania do zarządzania to�
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie wersji wstępnej")
 
 > [!NOTE]
-> **Uwaga**: [biblioteki uwierzytelniania](https://www.nuget.org/packages/Microsoft.Identity.Client) jest wciąż w wersji zapoznawczej, ale są odpowiednie do użycia w środowisku produkcyjnym. Jednak mogą być istotne zmiany interfejsu API, format wewnętrznej pamięci podręcznej i innych mechanizmów biblioteki, która może wpływać na działanie aplikacji.
+> [Biblioteki uwierzytelniania](https://www.nuget.org/packages/Microsoft.Identity.Client) jest wciąż w wersji zapoznawczej, ale są odpowiednie do użycia w środowisku produkcyjnym. Jednak mogą być istotne zmiany interfejsu API, format wewnętrznej pamięci podręcznej i innych mechanizmów biblioteki, która może wpływać na działanie aplikacji.
 
 ## <a name="overview"></a>Omówienie
 
@@ -38,12 +38,12 @@ Proces zintegrować usługę Azure Active Directory B2C tożsamość zarządzani
 1. Użyj [biblioteki uwierzytelniania](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) w Twojej aplikacji mobilnej, aby zainicjować przepływ uwierzytelniania z dzierżawą usługi Azure Active Directory B2C.
 
 > [!NOTE]
-> **Uwaga**: oraz Integrowanie usługi Azure Active Directory B2C Zarządzanie tożsamościami do aplikacji dla urządzeń przenośnych, MSAL można również zintegrować Zarządzanie tożsamościami w usłudze Azure Active Directory aplikacji dla urządzeń przenośnych. Można to zrobić przez zarejestrowanie aplikacjami mobilnymi w usłudze Azure Active Directory w [portalu rejestracji aplikacji](https://apps.dev.microsoft.com/). Proces rejestracji przypisuje **identyfikator aplikacji** który unikatowo identyfikuje aplikacji, które powinny być określone przy użyciu MSAL. Aby uzyskać więcej informacji, zobacz [jak zarejestrować aplikację z punktem końcowym v2.0](/azure/active-directory/develop/active-directory-v2-app-registration/), i [uwierzytelniania Your Mobile Apps przy użyciu uwierzytelniania biblioteki Microsoft](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) na blogu Xamarin.
+> A także włączenie zarządzania tożsamościami w usłudze Azure Active Directory B2C do aplikacji dla urządzeń przenośnych, MSAL można również zintegrować Zarządzanie tożsamościami w usłudze Azure Active Directory aplikacji dla urządzeń przenośnych. Można to zrobić przez zarejestrowanie aplikacjami mobilnymi w usłudze Azure Active Directory w [portalu rejestracji aplikacji](https://apps.dev.microsoft.com/). Proces rejestracji przypisuje **identyfikator aplikacji** który unikatowo identyfikuje aplikacji, które powinny być określone przy użyciu MSAL. Aby uzyskać więcej informacji, zobacz [jak zarejestrować aplikację z punktem końcowym v2.0](/azure/active-directory/develop/active-directory-v2-app-registration/), i [uwierzytelniania Your Mobile Apps przy użyciu uwierzytelniania biblioteki Microsoft](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) na blogu Xamarin.
 
 MSAL używa przeglądarki sieci web na urządzeniu w celu przeprowadzenia uwierzytelniania. Poprawia to użyteczność aplikacji, ponieważ użytkownicy potrzebują tylko do logowania po na urządzenie, przepływy poprawy logowania i autoryzacji w aplikacji. Przeglądarki urządzenia także udostępnia lepsze zabezpieczenia. Po zakończeniu procesu uwierzytelniania użytkownika formant powróci do aplikacji na karcie przeglądarki sieci web. Jest to osiągane przez zarejestrowanie schemat niestandardowy adres URL jest zwracana z procesu uwierzytelniania, a następnie wykrywania i obsługi niestandardowy adres URL po przesłaniu jej adresu URL przekierowania. Aby uzyskać więcej informacji o wybieraniu schemat niestandardowy adres URL, zobacz [Wybieranie na identyfikator URI przekierowania aplikacji natywnej](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/).
 
 > [!NOTE]
-> **Uwaga**: mechanizm rejestrowania niestandardowego schemat adresu URL za pomocą systemu operacyjnego i obsługi programu są specyficzne dla każdej platformy.
+> Mechanizm rejestrowania niestandardowego schemat adresu URL za pomocą systemu operacyjnego i obsługi systemu jest specyficzne dla poszczególnych platform.
 
 Określa każdego żądania, które są wysyłane do dzierżawy usługi Azure Active Directory B2C *zasad*. Zasady opisano funkcje tożsamości konsumentów przykład rejestracji lub logowania. Na przykład zasad rejestracji umożliwia zachowanie dzierżawy usługi Azure Active Directory B2C można skonfigurować za pomocą następujących ustawień:
 
@@ -127,7 +127,7 @@ namespace TodoAzure.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             LoadApplication(new App());
-            App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            App.UiParent = new UIParent(this);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

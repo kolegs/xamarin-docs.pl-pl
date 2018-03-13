@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>Tworzenie rozszerzeń znaczników XAML
 
@@ -117,7 +117,7 @@ Ponieważ `IMarkupExtension<T>` pochodzi z `IMarkupExtension`, klasa musi zawier
 
 Zwróć uwagę, że w przypadku `HslColorExtension` jest XML tag, czterech właściwości są ustawione jako atrybuty, ale jeśli wydaje się między nawiasy klamrowe, czterech właściwości są rozdzielane przecinkami bez znaków cudzysłowu. Wartości domyślne `H`, `S`, i `L` 0 i wartość domyślną `A` ma wartość 1, więc te właściwości można pominąć, jeśli mają ustawione wartości domyślne. Ostatnim przykładzie pokazano przykład gdzie jasność jest 0, co zwykle powoduje czarne, ale kanału alfa wynosi 0,5, tak, aby go jest niewidoczny pół szary, biały tle strony:
 
-[![Pokaz kolor HSL](creating-images/hslcolordemo-small.png "pokaz kolor HSL")](creating-images/hslcolordemo-large.png "pokaz kolor HSL")
+[![Pokaz kolor HSL](creating-images/hslcolordemo-small.png "pokaz kolor HSL")](creating-images/hslcolordemo-large.png#lightbox "pokaz kolor HSL")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Rozszerzenie znaczników, aby uzyskać dostęp do map bitowych
 
@@ -180,7 +180,7 @@ Mimo że `ImageResourceExtension` wymaga `Source` można ustawić dla właściwo
 
 Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![Pokaz zasobu obrazu](creating-images/imageresourcedemo-small.png "obrazu pokaz zasobów")](creating-images/imageresourcedemo-large.png "obrazu pokaz zasobów")
+[![Pokaz zasobu obrazu](creating-images/imageresourcedemo-small.png "obrazu pokaz zasobów")](creating-images/imageresourcedemo-large.png#lightbox "obrazu pokaz zasobów")
 
 ## <a name="service-providers"></a>Dostawcy usług
 

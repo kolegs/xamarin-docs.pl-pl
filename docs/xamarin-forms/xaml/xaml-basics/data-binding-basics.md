@@ -4,14 +4,15 @@ description: "Powiązania danych Zezwalaj na właściwości dwa obiekty połącz
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 46e0c1f9b2aff52c1d31774a15e818c78a70056a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-4-data-binding-basics"></a>Część 4. Podstawowe informacje dotyczące powiązania danych
 
@@ -99,7 +100,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 W tym miejscu jest uruchomiony program:
 
-[ ![](data-binding-basics-images/sliderbinding.png "Widok na widok powiązania")](data-binding-basics-images/sliderbinding-large.png "powiązania widoku do widoku ")
+[![](data-binding-basics-images/sliderbinding.png "Widok na widok powiązania")](data-binding-basics-images/sliderbinding-large.png#lightbox "powiązania widoku do widoku ")
 
 ## <a name="the-binding-mode"></a>Tryb wiązania 
 
@@ -197,7 +198,7 @@ Wiązania na trzech `Slider` widoki są `OneWayToSource`, co oznacza że `Slider
 
 Jednak powiązania dla `Scale` jest właściwość `TwoWay`. Jest to spowodowane `Scale` właściwość ma wartość domyślną 1 i przy użyciu `TwoWay` powiązanie przyczyny `Slider` początkowa wartość ustawiono na 1, a nie na 0. Jeśli zostały tego powiązania `OneWayToSource`, `Scale` właściwości początkowo może być równa 0 z `Slider` wartość domyślna. `Label` Nie będzie widoczny i które mogą powodować dezorientację użytkownika.
 
- [ ![](data-binding-basics-images/slidertransforms.png "Wstecz powiązania")](data-binding-basics-images/slidertransforms-large.png "wstecz powiązania")
+ [![](data-binding-basics-images/slidertransforms.png "Wstecz powiązania")](data-binding-basics-images/slidertransforms-large.png#lightbox "wstecz powiązania")
 
 ## <a name="bindings-and-collections"></a>Powiązania i kolekcji
 
@@ -227,7 +228,7 @@ Ustawianie statycznego `NamedColor.All` właściwości `ItemsSource` z `ListView
 
 Wyświetlanie wynikowych ustanawia elementy są naprawdę typu `XamlSamples.NamedColor`:
 
-[ ![](data-binding-basics-images/listview1.png "Tworzenie powiązania z kolekcją")](data-binding-basics-images/listview1-large.png "tworzenia powiązania z kolekcją")
+[![](data-binding-basics-images/listview1.png "Tworzenie powiązania z kolekcją")](data-binding-basics-images/listview1-large.png#lightbox "tworzenia powiązania z kolekcją")
 
 Nie jest wiele informacji, ale `ListView` jest przewijany i zaznaczania.
 
@@ -249,7 +250,7 @@ Aby zdefiniować szablon dla elementów, należy rozbicie `ItemTemplate` właśc
 
 `Label` Element jest ustawiony na wartość `View` właściwość `ViewCell`. ( `ViewCell.View` Tagi nie są wymagane, ponieważ `View` właściwość jest właściwość content `ViewCell`.) Wyświetla tego znacznika `FriendlyName` właściwości każdego `NamedColor` obiektu:
 
-[ ![](data-binding-basics-images/listview2.png "Powiązanie do kolekcji zawierającej obiekt DataTemplate")](data-binding-basics-images/listview2-large.png "powiązanie do kolekcji zawierającej obiekt DataTemplate")
+[![](data-binding-basics-images/listview2.png "Powiązanie do kolekcji zawierającej obiekt DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "powiązanie do kolekcji zawierającej obiekt DataTemplate")
 
 Znacznie lepiej. Teraz wszystkie potrzebne jest świerk się szablon elementu więcej informacji i Kolor rzeczywisty. Aby zapewnić obsługę tego szablonu, niektóre wartości i obiekty zostały określone w słowniku zasobów strony:
 
@@ -385,7 +386,7 @@ Powiązania danych trzy odwołania to pojedyncze wystąpienie. Zwróć uwagę, �
 
 W tym miejscu jest wynikiem:
 
-[ ![](data-binding-basics-images/listview3.png "Powiązanie do kolekcji zawierającej obiekt DataTemplate i konwertery")](data-binding-basics-images/listview3-large.png "tworzenia powiązania z kolekcją DataTemplate i konwertery")
+[![](data-binding-basics-images/listview3.png "Powiązanie do kolekcji zawierającej obiekt DataTemplate i konwertery")](data-binding-basics-images/listview3-large.png#lightbox "tworzenia powiązania z kolekcją DataTemplate i konwertery")
 
 `ListView` Jest bardzo zaawansowane obsługi dynamicznie mogą wystąpić w podstawowych modyfikacjami w danych, ale tylko wtedy, gdy wykonanie pewnych dodatkowych kroków. Jeśli kolekcja elementów przypisanych `ItemsSource` właściwość `ListView` zmiany w czasie wykonywania — które, jeśli elementy mogą być dodawane do lub usunięty z kolekcji — użyj `ObservableCollection` klasy dla tych elementów. `ObservableCollection` implementuje `INotifyCollectionChanged` interfejsu i `ListView` zainstaluje program obsługi `CollectionChanged` zdarzeń.
 

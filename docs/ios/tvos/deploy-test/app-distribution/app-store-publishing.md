@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikowanie do sklepu z aplikacjami firmy Apple TV
 
@@ -154,12 +154,12 @@ Z aplikacją Xamarin.tvOS prawidłowo skonfigurowane możesz teraz przystąpić 
     ![](app-store-publishing-images/buildxs01new.png "Wybierz konfigurację wydania")
 2. Z **kompilacji** menu, wybierz opcję **archiwum publikowania**:
 
-    [ ![](app-store-publishing-images/buildxs02new.png "Wybierz archiwum do publikowania")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "Wybierz archiwum do publikowania")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Po utworzeniu archiwum **archiwa** zostanie wyświetlony widok:
 
-    [ ![](app-store-publishing-images/buildxs03new.png "Wyświetl archiwa")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "Wyświetl archiwa")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3;# podpisywania i dystrybucja aplikacji
+### <a name="sign-and-distribute-your-app"></a>Zaloguj się i dystrybucja aplikacji
 
 Zawsze skompilować aplikację dla archiwum, zostanie on automatycznie otwarty *widoku archiwa*, wyświetlanie wszystkich projektów zarchiwizowane; pogrupowane według rozwiązania. Domyślnie ten widok przedstawia tylko bieżące, otwórz rozwiązanie. Aby wyświetlić wszystkie rozwiązania, których archiwów, kliknij na **Pokaż wszystkie archiwa** opcji.
 
@@ -169,19 +169,19 @@ Aby zarejestrować aplikację i przygotowania go do dystrybucji:
 
 1. Wybierz **utworzyć i dystrybuować...** , ilustrowane poniżej:
 
-    [ ![](app-store-publishing-images/buildxs04new.png ", Wybierz theSign i rozpowszechnij...")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png ", Wybierz theSign i rozpowszechnij...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Spowoduje to otwarcie Kreatora publikacji. Wybierz **sklepu z aplikacjami** kanału dystrybucji, aby utworzyć pakiet i otwórz moduł ładujący aplikacji:
 
-    [ ![](app-store-publishing-images/distribute01.png "Wybierz kanał dystrybucji sklepu z aplikacjami")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "Wybierz kanał dystrybucji sklepu z aplikacjami")](app-store-publishing-images/distribute01.png#lightbox)
 3. Na ekranie profilu inicjowania obsługi administracyjnej Wybierz tożsamość podpisywania i odpowiadający profil inicjowania obsługi administracyjnej lub ponownie podpisać tożsamość:
 
-    [ ![](app-store-publishing-images/distribute02.png "Wybierz tożsamość podpisywania i odpowiadający profil inicjowania obsługi administracyjnej")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "Wybierz tożsamość podpisywania i odpowiadający profil inicjowania obsługi administracyjnej")](app-store-publishing-images/distribute02.png#lightbox)
 4. Sprawdź szczegóły pakietu, a następnie kliknij przycisk **publikowania** zapisać Twoje `.ipa` pakietu:
 
-    [ ![](app-store-publishing-images/distribute03.png "Sprawdź szczegóły pakietu")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "Sprawdź szczegóły pakietu")](app-store-publishing-images/distribute03.png#lightbox)
 5. Raz z `.ipa` zostało zapisane, że aplikacja jest gotowa do przekazania do programu iTunes Połącz przez moduł ładujący aplikacji:
 
-    [ ![](app-store-publishing-images/distribute04.png "Przekazane do programu iTunes Połącz przez moduł ładujący aplikacji")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "Przekazane do programu iTunes Połącz przez moduł ładujący aplikacji")](app-store-publishing-images/distribute04.png#lightbox)
 
 Z dystrybucją kompilacja utworzona i archiwizowane, możesz teraz przystąpić do przesyłania aplikacji do iTunes Connect.
 
@@ -196,15 +196,15 @@ Archiwum przepływu pracy w programie Visual Studio for Mac zostanie automatyczn
 
 2. Wybierz *dostarczania aplikacji* i kliknij przycisk *wybierz* przycisk:
 
-    [ ![](app-store-publishing-images/publishvs01.png "Wybierz pozycję świadczenia aplikacji")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "Wybierz pozycję świadczenia aplikacji")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. Wybierz plik zip lub IPA utworzone powyżej i kliknij przycisk **OK** przycisku.
 4. Moduł ładujący aplikacji będzie sprawdzanie poprawności pliku:
 
-    [ ![](app-store-publishing-images/publishvs02.png "Moduł ładujący aplikacji ekranu sprawdzania poprawności")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "Moduł ładujący aplikacji ekranu sprawdzania poprawności")](app-store-publishing-images/publishvs02.png#lightbox)
 5. Kliknij przycisk *dalej* przycisk i aplikacja zostanie zweryfikowana względem sklepu z aplikacjami:
 
-    [ ![](app-store-publishing-images/publishvs03.png "Aplikacja jest weryfikowana pod kątem Sklepu z aplikacjami")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "Aplikacja jest weryfikowana pod kątem Sklepu z aplikacjami")](app-store-publishing-images/publishvs03.png#lightbox)
 6. Kliknij przycisk **wysyłania** przycisk, aby wysłać aplikacji do firmy Apple do przeglądu.
 7. Moduł ładujący aplikacji informuje, kiedy plik został pomyślnie przekazany.
 
@@ -214,7 +214,7 @@ Archiwum przepływu pracy w programie Visual Studio for Mac zostanie automatyczn
 
 Zaloguj się do programu iTunes Connect, wybierz aplikację z listy dostępnych aplikacji stanu iTunes Connect powinna zostać wyświetlona, że jest **oczekiwanie na przegląd** (tymczasowo może odczytać **przekazać Odebrano** podczas przetwarzania):
 
-[ ![](app-store-publishing-images/image21.png "Stan w programach iTunes połączyć przedstawiający oczekiwania do przeglądu")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "Stan w programach iTunes połączyć przedstawiający oczekiwania do przeglądu")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

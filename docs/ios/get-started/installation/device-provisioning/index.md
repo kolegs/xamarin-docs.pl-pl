@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>Inicjowanie obsługi administracyjnej urządzeń
 
@@ -22,7 +22,7 @@ Podczas tworzenia aplikacji platformy Xamarin.iOS istotne jest przetestowanie pr
 
 W sekcjach wyróżnione na poniższym obrazie Pokaż kroki wymagane do konfigurowania inicjowania obsługi administracyjnej systemu iOS:
 
-[![](images/provisioningdiagram.png "Wyróżnione sekcje w tym obrazie Pokaż kroki wymagane do konfigurowania inicjowania obsługi administracyjnej systemu iOS")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "Wyróżnione sekcje w tym obrazie Pokaż kroki wymagane do konfigurowania inicjowania obsługi administracyjnej systemu iOS")](images/provisioningdiagram.png#lightbox)
 
 Po to następnym krokiem jest Dystrybuuj aplikację. Aby uzyskać więcej informacji dotyczących wdrażania, odwiedź stronę [dystrybucji aplikacji](~/ios/deploy-test/app-distribution/index.md) przewodników.
 
@@ -81,7 +81,7 @@ Apple zapewnia szereg specjalnych usług aplikacji, nazywane również możliwo�
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Bezpłatne, inicjowania obsługi administracyjnej](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Bezpłatna aprowizacja](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Dystrybucja aplikacji](~/ios/deploy-test/app-distribution/index.md)
 - [Rozwiązywanie problemów](~/ios/deploy-test/troubleshooting.md)
 - [Apple — podręczniku dystrybucji aplikacji](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

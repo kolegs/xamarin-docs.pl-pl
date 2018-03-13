@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 89d3b56a15110d0c106c43ce227f11f86bbdf404
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="invoking-events-from-effects"></a>Wywoływanie zdarzeń z efekty
 
@@ -448,7 +448,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Można przenieść wielu `BoxView` elementów jednocześnie za pomocą różnych palców.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Potrójna zrzut ekranu przedstawiający stronę przeciąganie BoxView")](touch-tracking-images/boxviewdragging-large.png "Potrójna zrzut ekranu przedstawiający stronę BoxView przeciągania")
+[![](touch-tracking-images/boxviewdragging-small.png "Potrójna zrzut ekranu przedstawiający stronę przeciąganie BoxView")](touch-tracking-images/boxviewdragging-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę BoxView przeciągania")
 
 ### <a name="subclassing-the-view"></a>Tworzenie podklas widoku
 
@@ -511,7 +511,7 @@ Następne dwa pokazów wymagają grafiki i używają SkiaSharp w tym celu. Warto
 
 **Rysowania elipsy** strony można narysować elipsę przesuwając palca na ekranie. W zależności od tego, jak przenieść palca, można narysowana Elipsa z lewego górnego do prawej dolnej lub innych narożnik przeciwną rogu. Elipsy jest rysowany z losowe koloru i przezroczystość.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Potrójna zrzut ekranu przedstawiający stronę rysowania elipsy")](touch-tracking-images/ellipsedrawing-large.png "Potrójna zrzut ekranu przedstawiający stronę rysowania elipsy")
+[![](touch-tracking-images/ellipsedrawing-small.png "Potrójna zrzut ekranu przedstawiający stronę rysowania elipsy")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę rysowania elipsy")
 
 Jeśli następnie touch jedną wielokropek, przeciągnij go do innej lokalizacji. Wymaga to technika, nazywany "trafień testów," który obejmuje wyszukiwania dla obiektu graficznego w określonym punkcie. Wielokropek SkiaSharp nie są elementami platformy Xamarin.Forms, nie mogą wykonywać własne `TouchEffect` przetwarzania. `TouchEffect` Muszą być stosowane do całej `SKCanvasView` obiektu.
 
@@ -683,7 +683,7 @@ case TouchActionType.Pressed:
 
 W przykładzie SkiaSharp **Paint palca** strony. Można wybrać kolor obrysu i jego szerokość z dwóch `Picker` widoków, a następnie narysuj z co najmniej jeden palcami:
 
-[![](touch-tracking-images/fingerpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Paint palca")](touch-tracking-images/fingerpaint-large.png "Potrójna zrzut ekranu przedstawiający stronę Paint palca")
+[![](touch-tracking-images/fingerpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Paint palca")](touch-tracking-images/fingerpaint-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Paint palca")
 
 W tym przykładzie wymaga również osobnej klasy do reprezentowania każdego wiersza rysowane na ekranie:
 
@@ -791,7 +791,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Różnych `WhiteKey` i `BlackKey` ułożone elementy na stronie [pliku XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), który wygląda najlepiej, gdy telefon jest przechowywany w trybie krajobraz:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Potrójna zrzut ekranu przedstawiający stronę dyskretnej klawiatury")](touch-tracking-images/silentkeyboard-large.png "Potrójna zrzut ekranu przedstawiający stronę dyskretnej klawiatury")
+[![](touch-tracking-images/silentkeyboard-small.png "Potrójna zrzut ekranu przedstawiający stronę dyskretnej klawiatury")](touch-tracking-images/silentkeyboard-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę dyskretnej klawiatury")
 
 Jeśli między kluczy jest odchylenia palca, zostanie wyświetlony niewielkie zmiany w kolorze czy zdarzenia touch są przenoszone z jednego klucza do innego.
 

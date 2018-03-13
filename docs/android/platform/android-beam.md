@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: bea8480c66a2ecf499375636c98511ca55ce7693
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-beam"></a>Android Beam
 
 Android światła jest nową technologią w pobliżu komunikacji Zbliżeniowej (NFC) w systemie Android 4, który umożliwia aplikacjom na udostępnianie informacji przez NFC w pobliżu.
 
-[![Diagram pokazujący dwoma urządzeniami w pobliżu udostępnianie informacji](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png)
+[![Diagram pokazujący dwoma urządzeniami w pobliżu udostępnianie informacji](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android światła działa przez wypychanie wiadomości za pośrednictwem NFC, gdy dwa urządzenia znajdują się w zakresie. Urządzenia około 4cm od siebie mogą udostępniać danych przy użyciu światła systemu Android. Działanie na jednym urządzeniu tworzy komunikat i określa działania (lub działań) które może obsłużyć wypychanie go. Gdy działanie określonego znajduje się na pierwszym planie i urządzenia znajdują się w zakresie, Android światła przeprowadzi wypychanie komunikat do drugiego urządzenia. Na urządzenie odbierające celem jest wywoływany, zawierający dane komunikatów.
 
@@ -30,7 +30,6 @@ Android obsługuje Ustawianie komunikatów z systemem Android światła na dwa s
 
 W obu przypadkach do wysyłania danych z systemem Android światła aplikacji wysyła `NdefMessage`, pakowanie danych w kilku `NdefRecords`. Spójrzmy na klucz wskazuje, które muszą być kierowane przed firma Microsoft może wyzwolić światła systemu Android. Najpierw będzie współpracujemy z wywołania zwrotnego styl tworzenie `NdefMessage`.
 
-<a name="Creating_a_Message" />
 
 ## <a name="creating-a-message"></a>Tworzenie komunikatu
 
@@ -66,7 +65,6 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 }
 ```
 
-<a name="Receiving_a_Message" />
 
 ## <a name="receiving-a-message"></a>Odbieranie wiadomości
 
@@ -79,7 +77,7 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 Pełny przykład kodu używającej światła systemu Android, pokazano uruchomiony na zrzucie ekranu poniżej, aby zapoznać [Android światła pokaz](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) w galerii próbki.
 
-[![Zrzuty ekranu przykład z pokaz światła systemu Android](android-beam-images/24.png)](android-beam-images/24.png)
+[![Zrzuty ekranu przykład z pokaz światła systemu Android](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 

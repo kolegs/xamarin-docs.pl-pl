@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: b529d0090595cc8a3020f37606d5dc3db5f0db74
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9402132b528d705455c183bb70e5bc9a270a8d05
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Uzyskiwanie Google mapuje klucz interfejsu API
 
@@ -23,7 +23,6 @@ Uzyskanie klucza interfejsu API map v2 obejmuje następujące kroki:
 2.  Utwórz projekt w konsoli interfejsów API firmy Google.
 3.  Uzyskiwanie klucz interfejsu API.
 
-<a name="Step_1_-_Obtaining_your_Signing_Key_Fingerprint" />
 
 ## <a name="obtaining-your-signing-key-fingerprint"></a>Uzyskiwanie odcisku palca klucza podpisywania
 
@@ -106,7 +105,6 @@ Certificate fingerprints:
 
 Użyje odcisku palca algorytmu SHA-1 (wymienionych po **SHA1**) dalszej części tego przewodnika.
 
-<a name="Step_2_-Create_an_API_project" />
 
 ## <a name="creating-an-api-project"></a>Tworzenie projektu interfejsu API
 
@@ -114,25 +112,24 @@ Po pobraniu odcisku palca algorytmu SHA-1 z podpisywania magazynu kluczy jest wy
 
 1. W przeglądarce przejdź do [konsoli deweloperów Google](https://console.developers.google.com/): i kliknij przycisk **tworzenia projektu**:
 
-   [![Przycisk tworzenia projektu Google Developer konsoli](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png)
+   [![Przycisk tworzenia projektu Google Developer konsoli](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
 2. W **nowy projekt** okno dialogowe zostanie wyświetlone, wprowadź nazwę projektu.
    Okno dialogowe będzie produkcji Identyfikatora unikatowego projektu, który jest oparta na nazwę projektu, jak pokazano w poniższym przykładzie:
 
-   [![Nowy projekt o nazwie XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png)
+   [![Nowy projekt o nazwie XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
 3. Kliknij przycisk **Utwórz** przycisku. Po minucie lub to, projekt zostanie utworzony i zostają przeniesieni do **Menedżer interfejsu API** strony. W **biblioteki** kliknij **interfejsu API systemu Android map Google**:
 
-   [![Kliknięcie przycisku Google Maps interfejsu API systemu Android w sekcji biblioteki](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png)
+   [![Kliknięcie przycisku Google Maps interfejsu API systemu Android w sekcji biblioteki](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. W górnej części **interfejsu API systemu Android map Google** kliknij przycisk **włączyć** Aby włączyć usługę dla tego projektu:
 
-   [![Klikając przycisk Włącz w sekcji pulpitu nawigacyjnego](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png)
+   [![Klikając przycisk Włącz w sekcji pulpitu nawigacyjnego](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
 
 W tym momencie został utworzony projekt interfejsu API i v2 interfejsu API Google Maps systemu Android został dodany do niego. Jednak nie można używać tego interfejsu API w projekcie, dopóki nie zostaną utworzone dla niego poświadczeń. Następnie przedstawiono, jak utworzyć klucz interfejsu API i białe listy aplikacji platformy Xamarin.Android, dzięki czemu są autoryzowane do używania tego klucza.
 
-<a name="Obtaining_the_API_Key" />
 
 ## <a name="obtaining-the-api-key"></a>Uzyskiwanie klucz interfejsu API
 
@@ -140,38 +137,37 @@ Po **konsoli dla deweloperów Google** projekt interfejsu API został utworzony,
 
 1. W **interfejsu API systemu Android map Google** wyświetlana strona (po kliknięciu przycisku **włączyć** w poprzednim kroku), kliknij przycisk **przejdź do poświadczeń** przycisk:
 
-   [![Ten interfejs API jest włączona wiadomości](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png)
+   [![Ten interfejs API jest włączona wiadomości](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. W **poświadczenia** kliknij przycisk **poświadczeniami, które są potrzebne?** przycisk:
 
-   [![Dodawanie poświadczeń do okna dialogowego z projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png)
+   [![Dodawanie poświadczeń do okna dialogowego z projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
 3. Po kliknięciu tego przycisku, jest generowany klucz interfejsu API. Następnie należy ograniczyć ten klucz, tak aby tylko aplikacji mogą wywoływać interfejsy API przy użyciu tego klucza. Kliknij przycisk **klucza Ogranicz**:
 
-   [![Kliknięcie przycisku ograniczenia klucza na stronie poświadczenia](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png)
+   [![Kliknięcie przycisku ograniczenia klucza na stronie poświadczenia](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
 4. Zmień **nazwa** pola **1 klucz interfejsu API** na nazwę przypominającą klucz służy do (**XamarinMapsDemoKey** jest używany w tym przykładzie). Następnie kliknij przycisk **aplikacji systemu Android** przycisku radiowego:
 
-   [![Wybór aplikacji dla systemu Android na stronie poświadczenia](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png)
+   [![Wybór aplikacji dla systemu Android na stronie poświadczenia](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
 5. Aby dodać odcisku palca algorytmu SHA-1, kliknij przycisk **+ Dodaj nazwę pakietu i odcisk palca**:
 
-   [![Klikając przycisk Dodaj nazwę pakietu i odcisk palca](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png)
+   [![Klikając przycisk Dodaj nazwę pakietu i odcisk palca](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
 6. Wprowadź nazwę pakietu aplikacji, a następnie wprowadź odcisk palca certyfikatu SHA-1 (uzyskanych za pośrednictwem `keytool` jak opisano wcześniej w tym przewodniku). W poniższym przykładzie nazwy pakietu `XamarinMapsDemo` jest wprowadzona, a następnie odcisk palca certyfikatu SHA-1, które zostały uzyskane z **debug.keystore**:
 
-   [![Wprowadzona nazwa pakietu jest com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png)
+   [![Wprowadzona nazwa pakietu jest com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
 7. Należy pamiętać, że aby Twoje APK dostęp do map Google, użytkownik musi obejmować odciski palców SHA-1 i pakietu nazwy dla każdego keystore (debug i release), którego używasz do logowania się użytkownika APK. Na przykład jeśli używasz jednego komputera do debugowania i inny komputer w celu generowania wersji APK powinien być dołączany odcisk palca certyfikatu SHA-1 z magazynu kluczy debugowania pierwszego komputera i odcisk palca certyfikatu SHA-1 z magazynu kluczy wersji programu drugi komputer. Kliknij przycisk **+ Dodaj nazwę pakietu i odcisk palca** Aby dodać inną nazwę odcisk palca i pakietu, jak pokazano w poniższym przykładzie:
 
-   [![Dodawanie innego odcisk palca tworzy innego certyfikatu SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png)
+   [![Dodawanie innego odcisk palca tworzy innego certyfikatu SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. Kliknij przycisk **zapisać** przycisk, aby zapisać zmiany. Następnie nastąpi powrót do listy kluczy interfejsu API. Jeśli masz inne klucze interfejsu API, które zostały utworzone wcześniej, zostaną również wyświetlone tutaj. W tym przykładzie wyświetlane jest tylko jeden klucz interfejsu API (utworzone w poprzednich krokach):
 
-   [![XamarinMapsDemoKey jest wyświetlane na liście kluczy interfejsu API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png)
+   [![XamarinMapsDemoKey jest wyświetlane na liście kluczy interfejsu API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 
-<a name="Adding_the_Key" />
 
 ## <a name="adding-the-key-to-your-project"></a>Dodawanie klucza do projektu
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>Powiązanie danych i kluczy i wartości kodowania
 
@@ -24,7 +24,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej war
 
 Przy użyciu kodowania i powiązanie technik w aplikacji Xamarin.Mac danych klucz wartość, można znacznie zmniejszyć ilość kodu, które trzeba zapisać i zachować do wypełnienia i pracować z nimi elementy interfejsu użytkownika. Masz również zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) od z przodu kończyć interfejsu użytkownika (_Model-View-Controller_), prowadzących do łatwiejsze w obsłudze, bardziej elastyczne aplikacji Projekt.
 
-[![Przykład uruchomionej aplikacji](databinding-images/intro01.png "przykładem uruchomionej aplikacji")](databinding-images/intro01-large.png)
+[![Przykład uruchomionej aplikacji](databinding-images/intro01.png "przykładem uruchomionej aplikacji")](databinding-images/intro01-large.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z kluczy i wartości kodowania i powiązanie danych w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -421,7 +421,7 @@ Z naszych Model danych zdefiniowany Przyjrzyjmy się prosty przykład powiązani
 
 Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `SimpleViewController`: 
 
-[![Dodawanie nowego kontrolera widoku](databinding-images/simple01.png "dodawania nowego kontrolera widoku")](databinding-images/simple01-large.png)
+[![Dodawanie nowego kontrolera widoku](databinding-images/simple01.png "dodawania nowego kontrolera widoku")](databinding-images/simple01-large.png#lightbox)
 
 Następnie wróć do programu Visual Studio dla komputerów Mac, Edytuj **SimpleViewController.cs** plików (do którego została automatycznie dodana do naszej projektu) i ujawnia wystąpienia `PersonModel` będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 Teraz należy utworzyć naszego formularza, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ formularza, aby wyglądać jak poniżej:
 
-[![Edytowanie scenorysu w środowisku Xcode](databinding-images/simple02.png "edycji scenorysu w środowisku Xcode")](databinding-images/simple02-large.png)
+[![Edytowanie scenorysu w środowisku Xcode](databinding-images/simple02.png "edycji scenorysu w środowisku Xcode")](databinding-images/simple02-large.png#lightbox)
 
 Dane powiązać formularza, aby `PersonModel` który mamy udostępniane za pośrednictwem funkcji `Person` klucza, wykonaj następujące czynności:
 
 1. Wybierz **nazwa pracownika** pola tekstowego i przełącznik **inspektora powiązania**.
 2. Sprawdź **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Name` dla **ścieżka klucza**: 
 
-    [![Wprowadzanie ścieżki klucza](databinding-images/simple03.png "wprowadzanie ścieżki klucza")](databinding-images/simple03-large.png)
+    [![Wprowadzanie ścieżki klucza](databinding-images/simple03.png "wprowadzanie ścieżki klucza")](databinding-images/simple03-large.png#lightbox)
 3. Wybierz **zawód** pola tekstowego i wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Occupation` dla **ścieżka klucza**:  
 
-    [![Wprowadzanie ścieżki klucza](databinding-images/simple04.png "wprowadzanie ścieżki klucza")](databinding-images/simple04-large.png)
+    [![Wprowadzanie ścieżki klucza](databinding-images/simple04.png "wprowadzanie ścieżki klucza")](databinding-images/simple04-large.png#lightbox)
 4. Wybierz **pracownik jest kierownikiem** wyboru i sprawdź **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
 
-    [![Wprowadzanie ścieżki klucza](databinding-images/simple05.png "wprowadzanie ścieżki klucza")](databinding-images/simple05-large.png)
+    [![Wprowadzanie ścieżki klucza](databinding-images/simple05.png "wprowadzanie ścieżki klucza")](databinding-images/simple05-large.png#lightbox)
 5. Wybierz **numer zarządzane pracowników** pola tekstowego i wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.NumberOfEmployees` dla **ścieżka klucza**:  
 
-    [![Wprowadzanie ścieżki klucza](databinding-images/simple06.png "wprowadzanie ścieżki klucza")](databinding-images/simple06-large.png)
+    [![Wprowadzanie ścieżki klucza](databinding-images/simple06.png "wprowadzanie ścieżki klucza")](databinding-images/simple06-large.png#lightbox)
 6. Jeśli pracownik nie jest Menedżer, chcemy ukryć numer z pracowników zarządzane etykiety i pola tekstowego.
 7. Wybierz **numer zarządzane pracowników** etykiety, rozwiń węzeł **Hidden** turndown i zaznacz pole wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
 
-    [![Wprowadzanie ścieżki klucza](databinding-images/simple07.png "wprowadzanie ścieżki klucza")](databinding-images/simple07-large.png)
+    [![Wprowadzanie ścieżki klucza](databinding-images/simple07.png "wprowadzanie ścieżki klucza")](databinding-images/simple07-large.png#lightbox)
 8. Wybierz `NSNegateBoolean` z **transformatora wartość** listy rozwijanej:  
 
     ![Wybieranie Przekształcenie klucza NSNegateBoolean](databinding-images/simple08.png "wybranie Przekształcenie klucza NSNegateBoolean")
@@ -491,11 +491,11 @@ Dane powiązać formularza, aby `PersonModel` który mamy udostępniane za pośr
 
 Po uruchomieniu aplikacji wartości z `Person` właściwości zostaną wypełnione automatycznie naszego formularza:
 
-[![Wyświetlanie formularza wypełniana automatycznie](databinding-images/simple09.png "przedstawiający formularza wypełniana automatycznie")](databinding-images/simple09-large.png)
+[![Wyświetlanie formularza wypełniana automatycznie](databinding-images/simple09.png "przedstawiający formularza wypełniana automatycznie")](databinding-images/simple09-large.png#lightbox)
 
 Wszelkie zmiany, które użytkownicy, wysyła do formularza będą zapisywane ponownie `Person` właściwości w widoku kontrolera. Na przykład unselecting **pracownik jest kierownikiem** aktualizacje `Person` wystąpienie naszych `PersonModel` i **numer zarządzane pracowników** etykiety i pola tekstowego są ukryte automatycznie (za pośrednictwem Powiązanie danych):
 
-[![Ukrywanie liczba pracowników z systemem innym niż menedżerów](databinding-images/simple10.png "ukrywanie liczba pracowników z systemem innym niż menedżerów")](databinding-images/simple10-large.png)
+[![Ukrywanie liczba pracowników z systemem innym niż menedżerów](databinding-images/simple10.png "ukrywanie liczba pracowników z systemem innym niż menedżerów")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ Teraz, gdy mamy podstawy sposób powiązania danych, Przyjrzyjmy się bardziej z
 
 Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `TableViewController`:
 
-[![Dodawanie nowego kontrolera widoku](databinding-images/table01.png "dodawania nowego kontrolera widoku")](databinding-images/table01-large.png)
+[![Dodawanie nowego kontrolera widoku](databinding-images/table01.png "dodawania nowego kontrolera widoku")](databinding-images/table01-large.png#lightbox)
 
 Następnie umożliwia edytowanie **TableViewController.cs** plik (została automatycznie dodana do naszej projektu) i Ujawnij tablicy (`NSArray`) z `PersonModel` klasy będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 Teraz należy utworzyć naszych widoku tabeli, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ Tabela, która ma wyglądać jak poniżej:
 
-[![Projektowanie układu nowy widok tabeli](databinding-images/table02.png "układania nowy widok tabeli")](databinding-images/table02-large.png)
+[![Projektowanie układu nowy widok tabeli](databinding-images/table02.png "układania nowy widok tabeli")](databinding-images/table02-large.png#lightbox)
 
 Musimy dodać **kontroler macierzy** zapewnienie powiązana z danymi do naszej tabeli, wykonaj następujące czynności:
 
@@ -581,7 +581,7 @@ Musimy dodać **kontroler macierzy** zapewnienie powiązana z danymi do naszej t
     ![Wybiera kontroler macierzy z biblioteki](databinding-images/table03.png "wybiera kontroler macierzy z biblioteki")
 2. Wybierz **kontroler macierzy** w **hierarchii interfejsów** i przejdź do **inspektora atrybutu**:  
 
-    [![Wybieranie inspektora atrybuty](databinding-images/table04.png "wybranie inspektora atrybutów")](databinding-images/table04-large.png)
+    [![Wybieranie inspektora atrybuty](databinding-images/table04.png "wybranie inspektora atrybutów")](databinding-images/table04-large.png#lightbox)
 3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **Plus** przycisk, a następnie dodaj trzy klucze. Nazwa je `Name`, `Occupation` i `isManager`:  
 
     ![Dodawanie wymaganych ścieżki klucza](databinding-images/table05.png "Dodawanie wymagane ścieżki klucza")
@@ -595,22 +595,22 @@ Teraz należy powiązać naszych widoku tabeli kontroler macierzy, wykonaj nast�
 
 1. Wybierz widok tabeli i **powiązanie inspektora**:  
 
-    [![Wybieranie inspektora powiązania](databinding-images/table07.png "wybranie inspektora powiązania")](databinding-images/table07-large.png)
+    [![Wybieranie inspektora powiązania](databinding-images/table07.png "wybranie inspektora powiązania")](databinding-images/table07-large.png#lightbox)
 2. W obszarze **spisu treści** turndown, wybierz opcję **powiązać** i **kontroler macierzy**. Wprowadź `arrangedObjects` dla **klucza kontrolera** pola:  
 
     ![Definiowanie klucza kontrolera](databinding-images/table08.png "Definiowanie klucza kontrolera")
 3. Wybierz **komórkę widoku tabeli** w obszarze **pracownika** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
 
-    [![Ustawianie ścieżki klucza modelu](databinding-images/table09.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table09-large.png)
+    [![Ustawianie ścieżki klucza modelu](databinding-images/table09.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` jest bieżącą `PersonModel` w tablicy zarządzany przez kontroler macierzy.
 5. Wybierz **komórkę widoku tabeli** w obszarze **zawód** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
 
-    [![Ustawianie ścieżki klucza modelu](databinding-images/table10.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table10-large.png)
+    [![Ustawianie ścieżki klucza modelu](databinding-images/table10.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table10-large.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 Czy możemy uruchomić aplikację, tabeli zostaną wypełnione z naszych tablicę `PersonModels`:
 
-[![Uruchamianie aplikacji](databinding-images/table11.png "uruchamiania aplikacji")](databinding-images/table11-large.png)
+[![Uruchamianie aplikacji](databinding-images/table11.png "uruchamiania aplikacji")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ Powiązanie danych z widoku konspektu jest bardzo podobny do wiązania widoku ta
 
 Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `OutlineViewController`: 
 
-[![Dodawanie nowego kontrolera widoku](databinding-images/outline01.png "dodawania nowego kontrolera widoku")](databinding-images/outline01-large.png)
+[![Dodawanie nowego kontrolera widoku](databinding-images/outline01.png "dodawania nowego kontrolera widoku")](databinding-images/outline01-large.png#lightbox)
 
 Następnie umożliwia edytowanie **OutlineViewController.cs** plik (została automatycznie dodana do naszej projektu) i Ujawnij tablicy (`NSArray`) z `PersonModel` klasy będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 Teraz należy utworzyć naszych widoku konspektu, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ Tabela, która ma wyglądać jak poniżej:
 
-[![Tworzenie widoku konspektu](databinding-images/outline02.png "tworzenia widoku konspektu")](databinding-images/outline02-large.png)
+[![Tworzenie widoku konspektu](databinding-images/outline02.png "tworzenia widoku konspektu")](databinding-images/outline02-large.png#lightbox)
 
 Musimy dodać **kontrolera drzewa** zapewnienie powiązana z danymi do naszej konspektu, wykonaj następujące czynności:
 
@@ -699,7 +699,7 @@ Musimy dodać **kontrolera drzewa** zapewnienie powiązana z danymi do naszej ko
     ![Wybiera kontroler drzewa z biblioteki](databinding-images/outline03.png "wybiera kontroler drzewa z biblioteki")
 2. Wybierz **kontrolera drzewa** w **hierarchii interfejsów** i przejdź do **inspektora atrybutu**:  
 
-    [![Wybranie atrybutu inspektora](databinding-images/outline04.png "wybranie inspektora atrybutu")](databinding-images/outline04-large.png)
+    [![Wybranie atrybutu inspektora](databinding-images/outline04.png "wybranie inspektora atrybutu")](databinding-images/outline04-large.png#lightbox)
 3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **Plus** przycisk, a następnie dodaj trzy klucze. Nazwa je `Name`, `Occupation` i `isManager`:  
 
     ![Dodawanie wymaganych ścieżki klucza](databinding-images/outline05.png "Dodawanie wymagane ścieżki klucza")
@@ -717,22 +717,22 @@ Teraz należy powiązać naszych widoku konspektu kontrolera drzewa, wykonaj nas
 
 1. Wybierz widok konspektu i **powiązanie inspektora** wybierz:  
 
-    [![Wybieranie inspektora powiązania](databinding-images/outline07.png "wybranie inspektora powiązania")](databinding-images/outline07-large.png)
+    [![Wybieranie inspektora powiązania](databinding-images/outline07.png "wybranie inspektora powiązania")](databinding-images/outline07-large.png#lightbox)
 2. W obszarze **konspektu Wyświetl zawartość** turndown, wybierz opcję **powiązać** i **kontrolera drzewa**. Wprowadź `arrangedObjects` dla **klucza kontrolera** pola:  
 
     ![Ustawianie klawisza kontrolera](databinding-images/outline08.png "ustawiania klucza kontrolera")
 3. Wybierz **komórkę widoku tabeli** w obszarze **pracownika** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
 
-    [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline09.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline09-large.png)
+    [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline09.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` jest bieżącą `PersonModel` w tablicy zarządzany przez kontroler drzewa.
 5. Wybierz **komórkę widoku tabeli** w obszarze **zawód** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
 
-    [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline10.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline10-large.png)
+    [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline10.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline10-large.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 Czy możemy uruchomić aplikację, konturu zostaną wypełnione z naszych tablicę `PersonModels`:
 
-[![Uruchamianie aplikacji](databinding-images/outline11.png "uruchamiania aplikacji")](databinding-images/outline11-large.png)
+[![Uruchamianie aplikacji](databinding-images/outline11.png "uruchamiania aplikacji")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Powiązanie danych widoku kolekcji
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 Popełnienia błędu w wiązania danych może spowodować _natywnego awarii_ w niezarządzanych kodu i spowodować, że aplikacja Xamarin.Mac zakończy się niepowodzeniem z `SIGABRT` błąd:
 
-[![Przykład okno dialogowe natywnego awarii](databinding-images/debug01.png "przykład okno dialogowe natywnego awarii")](databinding-images/debug01-large.png)
+[![Przykład okno dialogowe natywnego awarii](databinding-images/debug01.png "przykład okno dialogowe natywnego awarii")](databinding-images/debug01-large.png#lightbox)
 
 Podczas tworzenia powiązań danych zwykle są cztery główne przyczyny awarii native:
 
@@ -873,15 +873,15 @@ Podczas tworzenia powiązań danych zwykle są cztery główne przyczyny awarii 
 
 Załóżmy powoduje natywnego awarii w naszym powiązania danych, dlatego zostanie przedstawiony sposób Znajdź i napraw. W Konstruktorze interfejsu Zmieńmy naszych powiązanie pierwsza etykieta w przykładzie widok kolekcji z `Name` do `Title`:
 
-[![Edytowanie powiązania klucza](databinding-images/debug02.png "edycji klucza powiązania")](databinding-images/debug02-large.png)
+[![Edytowanie powiązania klucza](databinding-images/debug02.png "edycji klucza powiązania")](databinding-images/debug02-large.png#lightbox)
 
 Teraz zapisać zmiany, przełączyć się do programu Visual Studio for Mac w celu synchronizacji z Xcode i uruchomić aplikację. Gdy zostanie wyświetlony widok kolekcji, aplikacja na chwilę ulegnie awarii z `SIGABRT` błędu (jak pokazano w **danych wyjściowych aplikacji** w programie Visual Studio dla komputerów Mac) od czasu `PersonModel` nie ujawnia właściwości z kluczem `Title`:
 
-[![Przykład błąd wiązania](databinding-images/debug03.png "przykład błąd wiązania")](databinding-images/debug03-large.png)
+[![Przykład błąd wiązania](databinding-images/debug03.png "przykład błąd wiązania")](databinding-images/debug03-large.png#lightbox)
 
 Jeśli firma Microsoft przewiń do góry bardzo błędu w **danych wyjściowych aplikacji** widzimy kluczem do rozwiązywania problemu:
 
-[![Znajdowanie problem w dzienniku błędów](databinding-images/debug04.png "znajdowanie problem w dzienniku błędów")](databinding-images/debug04-large.png)
+[![Znajdowanie problem w dzienniku błędów](databinding-images/debug04.png "znajdowanie problem w dzienniku błędów")](databinding-images/debug04-large.png#lightbox)
 
 Ten wiersz informuje NAS, że klucz `Title` nie istnieje dla obiektu, który mamy dokonywane jest wiązanie. Jeżeli zmienimy powiązania z powrotem do `Name` interfejsu konstruktora, Zapisz, synchronizacja, ponownie skompilować i uruchomić, aplikacja będzie działać zgodnie z oczekiwaniami bez problemu.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: da096c8575896bc9f522a92b3fb94b81f9e772df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="social-framework"></a>Framework społecznościowych
 
@@ -30,7 +30,7 @@ Przy użyciu platformy społecznościowych umożliwia aplikacjom komunikowanie s
 
 Aby połączyć się przy użyciu platformy społecznościowych usługi Twitter, konto musi zostać skonfigurowana w ustawieniach urządzenia, jak pokazano poniżej:
 
- [ ![](social-framework-images/twitter01.png "Ustawienia konta w usłudze Twitter")](social-framework-images/twitter01.png)
+ [![](social-framework-images/twitter01.png "Ustawienia konta w usłudze Twitter")](social-framework-images/twitter01.png#lightbox)
 
 Gdy konto zostało wprowadzone i zweryfikować Twitter, aplikacji na urządzenia, które korzysta z klas Framework społecznościowych usługi Twitter dostępu do będzie używała tego konta.
 
@@ -38,7 +38,7 @@ Gdy konto zostało wprowadzone i zweryfikować Twitter, aplikacji na urządzenia
 
 Struktura społecznościowych obejmuje kontrolerze o nazwie `SLComposeViewController` przedstawiający systemu określonego widoku do edycji i wysyłanie tweet. Poniższy zrzut ekranu przedstawia przykład tego widoku:
 
- [ ![](social-framework-images/twitter02.png "Ten zrzut ekranu przedstawia przykład SLComposeViewController")](social-framework-images/twitter02.png)
+ [![](social-framework-images/twitter02.png "Ten zrzut ekranu przedstawia przykład SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
 
 Aby użyć `SLComposeViewController` z serwisem Twitter, należy utworzyć wystąpienie kontrolera przez wywołanie metody `FromService` metody z `SLServiceType.Twitter` w sposób przedstawiony poniżej:
 
@@ -284,7 +284,7 @@ request.PerformRequest ((data, response, error) => {
 
 Jeśli dane zostały pomyślnie załadowane, zostanie wyświetlony nieprzetworzone dane JSON (jak przykład danych wyjściowych poniżej):
 
-[ ![](social-framework-images/twitter03.png "Przykład wyświetlania nieprzetworzone dane JSON")](social-framework-images/twitter03.png)
+[![](social-framework-images/twitter03.png "Przykład wyświetlania nieprzetworzone dane JSON")](social-framework-images/twitter03.png#lightbox)
 
 W rzeczywistym aplikacji wyniki JSON następnie może być analizowana jako normalne i wyświetlane wyniki. Zobacz [usług sieci Web wprowadzenie](~/cross-platform/data-cloud/web-services/index.md) informacji na temat sposobu przeanalizować składni JSON.
 
@@ -294,7 +294,7 @@ W rzeczywistym aplikacji wyniki JSON następnie może być analizowana jako norm
 
 Nawiązywanie połączenia z usługi Facebook społecznościowych Framework jest niemal identyczna z proces wykorzystywany do usługi Twitter przedstawionych powyżej. Konto użytkownika usługi Facebook muszą być skonfigurowane w ustawieniach urządzenia, jak pokazano poniżej:
 
-[ ![](social-framework-images/facebook01.png "Ustawienia konta w usłudze Facebook")](social-framework-images/facebook01.png)
+[![](social-framework-images/facebook01.png "Ustawienia konta w usłudze Facebook")](social-framework-images/facebook01.png#lightbox)
 
 Po skonfigurowaniu aplikacji na urządzenia, których używa społecznościowych Framework użyje tego konta nawiązywania połączenia z serwisem Facebook.
 
@@ -368,7 +368,7 @@ namespace SocialFrameworkDemo
 
 W przypadku użycia z usługą Facebook, `SLComposeViewController` Wyświetla widok, która wygląda podobnie jak w przykładzie Twitter przedstawiający **Facebook** jako tytuł w tym przypadku:
 
-[ ![](social-framework-images/facebook02.png "Wyświetlanie SLComposeViewController")](social-framework-images/facebook02.png)
+[![](social-framework-images/facebook02.png "Wyświetlanie SLComposeViewController")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Wywołanie interfejsu API programu Graph usługi Facebook
 

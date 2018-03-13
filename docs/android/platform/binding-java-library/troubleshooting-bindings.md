@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>Rozwiązywanie problemów z powiązań
 
 _W tym artykule przedstawiono kilka typowych błędów, które mogą wystąpić podczas generowania powiązań, a także możliwe przyczyny i sugerowane sposoby ich rozwiązywania._
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -38,7 +37,6 @@ Po włączeniu diagnostycznych danych wyjściowych, skompiluj ponownie projekt p
 
 Może również być pomocne dekompilować biblioteki systemu Android i sprawdź, czy typy i metody, które próbuje powiązać platformy Xamarin.Android. Jest to opisane bardziej szczegółowo później w tym przewodniku.
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>Decompiling biblioteki systemu Android
 
@@ -59,9 +57,8 @@ Gdy ma decompiled biblioteki systemu Android, zbadanie kodu źródłowego. Ogól
 - **`import` instrukcje dla bibliotek nieużywane** &ndash; zidentyfikować nieużywane biblioteki i Dodaj do projektu platformy Xamarin.Android powiązania z tych zależności **Akcja kompilacji** z **ReferenceJar**  lub **EmbedddedReferenceJar**.
 
 > [!NOTE]
-> **Uwaga:** Decompiling biblioteka języka Java może być zabroniony lub może ulec ograniczenia prawne na podstawie lokalnych przepisów lub licencji, w którym została opublikowana biblioteka języka Java. Jeśli to konieczne, należy zarejestrować usługi prawne professional przed podjęciem próby dekompilować biblioteka języka Java i kontroli kodu źródłowego.
+> Decompiling biblioteka języka Java może być zabroniony lub może ulec ograniczenia prawne na podstawie lokalnych przepisów lub licencji, w którym została opublikowana biblioteka języka Java. Jeśli to konieczne, należy zarejestrować usługi prawne professional przed podjęciem próby dekompilować biblioteka języka Java i kontroli kodu źródłowego.
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>Sprawdź, czy interfejsu API. XML
 
@@ -71,19 +68,16 @@ Podczas tworzenia projektu powiązania Xamarin.Android wygeneruje nazwę pliku X
 
 Ten plik zawiera listę wszystkich interfejsów API języka Java, że Xamarin.Android próbuje powiązania. Zawartość tego pliku może pomóc zidentyfikować wszelkie brakujące typach lub metodach, zduplikowane powiązanie. Mimo że kontroli tego pliku jest niewygodny i czasochłonne, zapewniają dla operacji na jakie mogą być przyczyną problemów powiązania. Na przykład **api.xml** może ujawnić, czy właściwość zwraca typ nieodpowiednie, lub że istnieją dwa typy korzystających z tej samej nazwie zarządzanych.
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>Znane problemy
 
 Ta sekcja Wyświetla niektóre typowe komunikaty o błędach lub symptomów który Moje wystąpić podczas próby utworzenia powiązania biblioteki systemu Android.
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>Problemu: Niezgodność wersji języka Java
 
 Czasami typów nie zostanie wygenerowany lub nieoczekiwane awarie mogą wystąpić, ponieważ używasz albo nowszej lub starsza wersja programu Java w porównaniu do biblioteki skompilowanego z. Skompiluj ponownie biblioteki systemu Android przy użyciu tej samej wersji JDK, który używa projektu platformy Xamarin.Android.
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>Problem: wymagana jest co najmniej jeden biblioteka języka Java
 
@@ -93,7 +87,6 @@ Zostanie wyświetlony błąd "wymagane jest co najmniej jedną bibliotekę Java"
 
 Upewnij się, że akcja kompilowania została ustawiona `EmbeddedJar`. Ponieważ istnieje wiele operacji kompilacji. Pliki JAR (takich jak `InputJar`, `EmbeddedJar`, `ReferenceJar` i `EmbeddedReferenceJar`), generator powiązania nie można odgadnąć automatycznie co ma być używany domyślnie. Aby uzyskać więcej informacji na temat akcji kompilacji, zobacz [akcje kompilacji](~/android/platform/binding-java-library/index.md).
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problem: Powiązanie narzędzia nie można załadować. Biblioteka JAR
 
@@ -104,7 +97,6 @@ Generator bibliotek powiązania nie udało się załadować. Biblioteka JAR.
 Niektóre. Nie można załadować biblioteki JAR, które używają zaciemnienie kodu (za pomocą narzędzi, takich jak narzędzia Proguard) za pomocą narzędzi języka Java. Ponieważ naszego narzędzia sprawia, że użycie odbicia Java i kod bajtowy ASM inżynierii biblioteki, te narzędzia zależnych może odrzucić zaciemnionego biblioteki podczas może przekazywać narzędzi obsługi systemu Android. Obejście tego jest ręcznie — wiązanie te biblioteki zamiast generatora powiązania.
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>Problem: Brak typów C# w wygenerowanych danych wyjściowych.
 
@@ -253,8 +245,6 @@ W tym będzie ręcznie załadować **.so** biblioteki z wywołania `Java.Lang.Ja
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>Podsumowanie
 

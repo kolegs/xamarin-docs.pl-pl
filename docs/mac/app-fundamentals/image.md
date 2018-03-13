@@ -3,16 +3,16 @@ title: Obrazy
 description: "Ten artykuł dotyczy pracy z obrazów i ikon w aplikacji Xamarin.Mac. Opisuje tworzenie i obsługę obrazów potrzebne do utworzenia ikony aplikacji i używanie obrazów w kodzie C# i kompilatora interfejsu w środowisku Xcode."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>Obrazy
 
@@ -34,7 +34,7 @@ Istnieje kilka sposobów tego obrazu, zasoby są używane wewnątrz aplikacji ma
 
 Ponadto system macOS zawiera zestaw wstępnie zdefiniowanych obrazów, które mogą być używane w całej aplikacji.
 
-[![Przykład uruchomić aplikacji](image-images/intro01.png "przykład uruchamianie aplikacji")](image-images/intro01-large.png)
+[![Przykład uruchomić aplikacji](image-images/intro01.png "przykład uruchamianie aplikacji")](image-images/intro01-large.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z obrazów i ikon w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -59,18 +59,18 @@ Jak wspomniano powyżej, **Ustawia obraz katalogi zasobów** zawiera wszystkie w
     ![Wybieranie Assets.xcassets](image-images/imageset01.png "wybranie Assets.xcassets")
 2. Kliknij prawym przyciskiem myszy **listę zasobów** i wybierz **nowy zestaw obrazu**: 
 
-    [![Dodawanie nowego zestawu obrazu](image-images/imageset02.png "Dodawanie nowego zestawu obrazów")](image-images/imageset02-large.png)
+    [![Dodawanie nowego zestawu obrazu](image-images/imageset02.png "Dodawanie nowego zestawu obrazów")](image-images/imageset02-large.png#lightbox)
 3. Wybierz nowy zestaw obrazu i Edytor będą wyświetlane: 
 
-    [![Wybranie nowego zestawu obrazu](image-images/imageset03.png "wybranie nowego zestawu obrazów")](image-images/imageset03-large.png)
+    [![Wybranie nowego zestawu obrazu](image-images/imageset03.png "wybranie nowego zestawu obrazów")](image-images/imageset03-large.png#lightbox)
 4. W tym miejscu możemy przeciągnij w obrazach dla każdego z różnych urządzeń i rozwiązania wymagane. 
 5. Kliknij dwukrotnie plik nowy zestaw obrazu **nazwa** w **listę zasobów** go edytować: 
 
-    [![Edytowanie obrazu Ustaw nazwę](image-images/imageset04.png "edycji obrazu Nazwa zestawu")](image-images/imageset04-large.png)
+    [![Edytowanie obrazu Ustaw nazwę](image-images/imageset04.png "edycji obrazu Nazwa zestawu")](image-images/imageset04-large.png#lightbox)
     
 Specjalny **wektor** klasa został dodany do **Ustawia obraz** która pozwala obejmują _PDF_ wektor obrazu w casset zamiast niej w tym mapy bitowej poszczególnych plików w formacie różne metody rozwiązywania. Za pomocą tej metody, podaj wektor pojedynczego pliku  **@1x**  rozdzielczości (w formacie pliku PDF wektor) i  **@2x**  i  **@3x**  wersje pliku, zostanie wygenerowany w czasie kompilacji i zawartych w pakiecie aplikacji.
 
-[![Obraz ustawić interfejs edytora](image-images/imageset05.png "obrazu ustawić interfejs Edytora")](image-images/imageset05-large.png)
+[![Obraz ustawić interfejs edytora](image-images/imageset05.png "obrazu ustawić interfejs Edytora")](image-images/imageset05-large.png#lightbox)
 
 Na przykład, Jeśli dołączysz `MonkeyIcon.pdf` pliku jako wektor katalogu zasobów z rozdzielczością x 150px 150px, mapy bitowej następujące zasoby będą objęte pakietu ostatecznej aplikacji podczas jego kompilacji:
 
@@ -115,7 +115,7 @@ Przed użyciem pliku obrazu w aplikacji Xamarin.Mac (lub w kodzie języka C# z k
     ![Dodawanie pliku](image-images/add01.png "Dodawanie pliku")
 2. Z **Dodaj pliki** wybierz pozycję obrazy plików do dodania do projektu, zaznacz `BundleResource` dla **Akcja kompilacji zastąpienie** i kliknij przycisk **Otwórz** przycisk:
 
-    [![Wybieranie plików do dodania](image-images/add02.png "Wybieranie plików do dodania")](image-images/add02-large.png)
+    [![Wybieranie plików do dodania](image-images/add02.png "Wybieranie plików do dodania")](image-images/add02-large.png#lightbox)
 3. Jeśli pliki nie znajdują się już w **zasobów** folderu, użytkownik zostanie zapytany, jeśli chcesz **kopiowania**, **Przenieś** lub **łącze** plików. Wybierz, które co mechanizmy potrzeb, najczęściej, które będą **kopiowania**:
 
     ![Wybranie akcji Dodaj](image-images/add04.png "wybierania akcji Dodaj")
@@ -164,13 +164,13 @@ Aby użyć obrazu w Konstruktorze interfejsu, wykonaj następujące czynności:
      ![Zasób obrazu w konsoli rozwiązania](image-images/ib00.png "zasób obrazu w konsoli do rozwiązania")
 2. Kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu: 
 
-     [![Edytowanie głównego storyboard](image-images/ib01.png "edytowania głównego storyboard")](image-images/ib01-large.png)
+     [![Edytowanie głównego storyboard](image-images/ib01.png "edytowania głównego storyboard")](image-images/ib01-large.png#lightbox)
 3. Przeciągnij element interfejsu użytkownika, który pobiera obrazy na powierzchnię projektu (na przykład **element paska narzędzi obrazu**): 
 
      ![Edytowanie elementów paska narzędzi](image-images/ib02.png "edycji elementem paska narzędzi")
 4. Wybierz obraz, który został dodany do **zasobów** folderu w **nazwa obrazu** listy rozwijanej: 
 
-     [![Wybieranie obrazu dla elementu narzędzi](image-images/ib03.png "Wybieranie obrazu elementem paska narzędzi")](image-images/ib03-large.png)
+     [![Wybieranie obrazu dla elementu narzędzi](image-images/ib03.png "Wybieranie obrazu elementem paska narzędzi")](image-images/ib03-large.png#lightbox)
 5. Wybrany obraz zostanie wyświetlony na powierzchni projektu: 
 
      ![Obraz jest wyświetlany w edytorze paska narzędzi](image-images/ib04.png "obraz jest wyświetlany w edytorze paska narzędzi")
@@ -205,7 +205,7 @@ Oparte na projekt aplikacji macOS, może być potrzebne do dostosowywania ikony 
 
 Aby uzyskać ten efekt, Przełącz _tryb renderowania_ środka obrazu, aby **obrazu szablonu**:
 
-[![Ustawienie obrazu szablonu](image-images/templateimage01.png "ustawienie obrazu szablonu")](image-images/templateimage01-large.png)
+[![Ustawienie obrazu szablonu](image-images/templateimage01.png "ustawienie obrazu szablonu")](image-images/templateimage01-large.png#lightbox)
 
 Z konstruktora interfejsu Xcode Przypisz zasób obrazu do formantu interfejsu użytkownika:
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Przykład danych wyjściowych:
 
-[![Przykład wyświetlania obrazu w aplikacji](image-images/tables01.png "przykład wyświetlania obrazu w aplikacji")](image-images/tables01-large.png)
+[![Przykład wyświetlania obrazu w aplikacji](image-images/tables01.png "przykład wyświetlania obrazu w aplikacji")](image-images/tables01-large.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z widokami tabeli, zobacz nasze [widoków tabel](~/mac/user-interface/table-view.md) dokumentacji.
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Przykład danych wyjściowych:
 
-[![Przykład obrazu będzie wyświetlany w widoku konspektu](image-images/outline01.png "przykład obrazu będzie wyświetlany w widoku konspektu")](image-images/outline01-large.png)
+[![Przykład obrazu będzie wyświetlany w widoku konspektu](image-images/outline01.png "przykład obrazu będzie wyświetlany w widoku konspektu")](image-images/outline01-large.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z widokami konspektu, zobacz nasze [widoków konspektu](~/mac/user-interface/outline-view.md) dokumentacji.
 

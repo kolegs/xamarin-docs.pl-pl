@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 28c8ecc77aaeb00eff6f343ad41fed1c653362db
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 78832c396f8968769f3134728cd435555aecbc8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-battery-status"></a>Sprawdzanie stanu baterii
 
@@ -70,7 +70,7 @@ namespace DependencyServiceSample
 Kodowanie tego interfejsu w kodzie udostępnione umożliwi aplikacji platformy Xamarin.Forms na dostęp do zarządzania energią interfejsów API w każdej z platform.
 
 > [!NOTE]
-> **Uwaga**: implementującej interfejs klasy musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`. Nie można definiować konstruktorów interfejsów.
+> Klasy implementującej interfejs musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`. Nie można definiować konstruktorów interfejsów.
 
 <a name="iOS_Implementation" />
 

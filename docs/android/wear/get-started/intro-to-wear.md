@@ -7,18 +7,17 @@ ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c334e78793f90b4f349f87e12e6b0093fe5cacf8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-android-wear"></a>Wprowadzenie do zużycia dla systemu Android
 
 _Wraz z wprowadzeniem nosić systemu Android firmy Google nie jesteś już ograniczona do właśnie telefony i tablety po przejściu do tworzenia niezwykłych aplikacji dla systemu Android. Dla platformy Xamarin.Android obsługę systemu Android nosić umożliwia uruchomienie kodu C# na nadgarstka! To wprowadzenie zawiera ogólne omówienie nosić systemu Android, opisano najważniejsze funkcje i udostępnia przegląd funkcji dostępnych w systemie Android nosić 2.0. Przedstawiono najpopularniejszych urządzeń z systemem Android nosić i linki do podstawowych Google Android nosić dokumentacji, aby uzyskać więcej informacji._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -29,47 +28,40 @@ Android zużycia działa na wielu urządzeniach, włącznie z pierwszej generacj
 Obsługuje platformy Xamarin.Android 5.0 i nowszych obsługuje nosić Android za pośrednictwem naszego 4.4W systemu Android (interfejs API 20) i formanty interfejsu użytkownika dotyczące zużycia pakietu NuGet, który dodaje dodatkowe. Xamarin.Android 5.0 i nowszych także funkcje do pakowania aplikacji zużycia. Pakiety NuGet są również dostępne dla systemu Android 2.0 nosić zgodnie z opisem w dalszej części tego przewodnika.
 
 
-<a name="basics" />
-
 ## <a name="android-wear-basics"></a>Podstawowe informacje dotyczące zużycia dla systemu android
 
 Android zużycia ma modelu interfejsu użytkownika, który różni się od aplikacji urządzenia przenośnego systemu Android. Pierwszy wave zużycia aplikacji są przeznaczone do rozszerzenia pomocnika aplikacji urządzenia przenośnego w niektórych sposób, ale począwszy od systemu Android zużycia 2.0, zużycia aplikacji może być wykorzystywana samodzielnie. Podczas wdrażania aplikacji zużycia jest dostarczana z aplikacją handheld pomocnika. Ponieważ większość nosić aplikacji zależnych od aplikacji urządzenia przenośnego pomocnika, potrzebują niektórych sposób komunikowania się z aplikacji urządzenia przenośnego. W poniższych sekcjach opisano te scenariusze użycia i przedstawiają ważne funkcje nosić systemu Android. 
 
 
-<a name="scenarios" />
 
 ### <a name="usage-scenarios"></a>Scenariusze użycia
 
 Pierwszej wersji Android nosić testowano przede wszystkim na synchronizację danych między aplikacją urządzenia przenośnego i wearable aplikacji i rozszerzanie bieżące aplikacje urządzenia przenośnego z rozszerzoną powiadomienia. Dlatego te scenariusze są stosunkowo prosta do wdrożenia.
 
-<a name="notifications" />
 
 #### <a name="wearable-notifications"></a>Wearable powiadomienia
 
 Najprostszym sposobem obsługi systemu Android nosić jest mógł korzystać z udostępnionego rodzaj powiadomienia między urządzenia przenośnego i wearable urządzenia. Za pomocą powiadomień w wersji 4 obsługi interfejsu API i `WearableExtender` klasy (dostępne w [Xamarin Android obsługuje biblioteki](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), można naciśnij do natywnej funkcji platformy, takie jak karty styl skrzynki odbiorczej lub głosu. [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/) przykład zawiera przykładowy kod, który demonstruje sposób wysłania listy powiadomienia do urządzenia z systemem Android nosić. 
 
 
-<a name="companion" />
 
 #### <a name="companion-applications"></a>Pomocnik aplikacji
 
 Jest kolejną strategią do utworzenia pełnej aplikacji, która działa w sposób macierzysty na urządzeniu wearable i współdziała z aplikacją handheld pomocnika. Dobrym przykładem tego podejścia jest [kwizu](https://developer.xamarin.com/samples/monodroid/wear/Quiz/) przykładowej aplikacji, która przedstawia sposób tworzenia testu, jest uruchamiany na urządzeniach przenośnych i zadaje pytania kwizu wearable urządzenia. 
 
 
-<a name="ui" />
 
 ### <a name="user-interface"></a>Interfejs użytkownika
 
 Wzorzec głównej nawigacji używanych jest szereg kart ułożone pionowo. Każdy z tych kart można skojarzyć akcje, które są warstwie się na tym samym wierszu. `GridViewPager` Przez klasę; zgodne karty synonim `ListView`. Zwykle skojarzenia `GridViewPager` z `FragmentGridPagerAdaptor` (lub `GridPagerAdaptor`), która umożliwia reprezentować każdy wiersz i kolumnę komórki jako `Fragment`: 
 
-[ ![Nosić nawigacji](intro-to-wear-images/2d-picker-sml.png "nosić nawigacji")](intro-to-wear-images/2d-picker.png)
+[![Nosić nawigacji](intro-to-wear-images/2d-picker-sml.png "nosić nawigacji")](intro-to-wear-images/2d-picker.png#lightbox)
 
 Nosić również sprawia, że użycie przycisków akcji, który składa się z dużą pokolorowane koło z małych opis podrzędne (jako ilustrowane powyżej).  [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) przykładzie pokazano sposób użycia `GridViewPager` i `GridPagerAdapter` w aplikacji zużycia.
 
 Android 2.0 nosić dodaje szuflady nawigacji, szuflady akcji i przyciski akcji wbudowanego interfejsu użytkownika zużycia. Aby uzyskać więcej informacji na temat elementów interfejsu użytkownika dla systemu Android nosić 2.0, zobacz Android [Anatomy](https://www.google.com/design/spec-wear/system-overview/anatomy.html) tematu. 
 
 
-<a name="comm" />
 
 ### <a name="communications"></a>Komunikacja
 
@@ -86,7 +78,6 @@ Ta usługa zostanie automatycznie utworzona przez nosić systemu Android.
 [FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/) przykład ilustruje sposób implementowania `WearableListenerService`.
 
 
-<a name="deploy" />
 
 ### <a name="deployment"></a>wdrażania
 
@@ -94,7 +85,6 @@ Każdy wearable aplikacja jest wdrażana z własnego pliku APK osadzone wewnątr
 [Praca z opakowania](~/android/wear/deploy-test/packaging.md) opisano wdrożenie bardziej szczegółowo. 
 
 
-<a name="further" />
 
 ## <a name="going-further"></a>Kontynuowanie 
 
@@ -114,34 +104,30 @@ Po utworzeniu pierwszej aplikacji zużycia może chcesz spróbować budowania kr
 [Tworzenie krój czujki](~/android/wear/platform/creating-a-watchface.md) zawiera szczegółowe instrukcje oraz przykładowy kod umożliwiający projektowanie pozbawionego włókien dół usługi krój czujki cyfrowych, następuje więcej kod, który zwiększa go do powierzchni czujki analogowy stylu z dodatkowych funkcji. 
 
 
-<a name="wear2" />
 
 ## <a name="android-wear-20"></a>Android Wear 2.0
 
 Android 2.0 nosić wprowadzono wiele nowych funkcji i możliwości, takie jak *komplikacji*, krzywych układów szuflady nawigacji i akcji i rozszerzonych powiadomieniach. Ponadto nosić 2.0 umożliwia kompilowanie aplikacji autonomicznej, które działają niezależnie od aplikacji urządzenia przenośnego. Nowy *gestów nadgarstka* pozwala jednoręczny poruszanie się ograniczenia interakcji z aplikacją. W poniższych sekcjach zaznacz te funkcje i znajdują się linki ułatwiające rozpoczęcie pracy z ich użyciem w aplikacji.
 
 
-<a name="install2" />
 
 ### <a name="install-wear-20-packages"></a>Zainstaluj nosić pakietów 2.0
 
 Aby tworzenie aplikacji nosić 2.0 z platformy Xamarin.Android, należy dodać **Xamarin.Android.Wear v2.0** pakietu do projektu (kliknij **kartę Przeglądaj**):
 
-[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "instalowania NuGet w wersji 2.0 Xamarin.Android.Wear")](intro-to-wear-images/wear-nuget-2.0.png)
+[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "instalowania NuGet w wersji 2.0 Xamarin.Android.Wear")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
 Ten pakiet NuGet zawiera powiązań dla bibliotek Wearable Obsługa systemu Android i nosić Compat.
 
 Oprócz **Xamarin.Android.Wear**, zaleca się zainstalowanie **Xamarin.GooglePlayServices.Wearable** NuGet: 
 
-[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "instalowania Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png)
+[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "instalowania Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
-<a name="wear2feat" />
 
 ### <a name="key-features-of-wear-20"></a>Najważniejsze funkcje zużycia 2.0
 
 Android nosić 2.0 jest największych aktualizacji dla systemu Android nosić od momentu jego uruchomienia początkowego w 2014 r. W poniższych sekcjach omówiono najważniejsze funkcje Android nosić 2.0 i podano linki ułatwiające rozpoczęcie pracy z nowych funkcji w aplikacji. 
 
-<a name="compl" />
 
 #### <a name="complications"></a>Komplikacji
 
@@ -152,7 +138,6 @@ Android nosić 2.0 jest największych aktualizacji dla systemu Android nosić od
 Aby uzyskać więcej informacji o komplikacji, zobacz Android [komplikacji krój czujki](https://developer.android.com/wear/preview/features/complications.html) tematu. 
 
 
-<a name="drawers" />
 
 #### <a name="navigation-and-action-drawers"></a>Nawigacji i szuflady akcji 
 
@@ -163,7 +148,6 @@ Dwa nowe szuflady znajdują się w nosić 2.0. *Szuflady nawigacji*, która jest
 Aby uzyskać więcej informacji o tych dwóch nowych szuflady interaktywne, zobacz Android [nosić nawigacji i akcje](https://developer.android.com/wear/preview/features/ui-nav-actions.html) tematu. 
 
 
-<a name="curved" />
 
 #### <a name="curved-layouts"></a>Układy krzywych 
 
@@ -174,14 +158,12 @@ Zużycie 2.0 wprowadza nowe funkcje do wyświetlania zakrzywioną układów roun
 `WearableRecyclerView` Rozszerza `RecyclerView` klasy do obsługi układów krzywych i cykliczne gestów przewijania. Aby uzyskać więcej informacji, zobacz Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) dokumentacji interfejsu API. 
 
 
-<a name="standalone" />
 
 #### <a name="standalone-apps"></a>Aplikacje autonomiczne 
 
 Aplikacje dla systemu android nosić 2.0 można pracować niezależnie od aplikacji urządzenia przenośnego. Oznacza to, że, na przykład czujki inteligentne można nadal oferują pełnej funkcjonalności, nawet wtedy, gdy w urządzeniu przenośnym pomocnika jest wyłączony lub daleko od wearable urządzenia. Aby uzyskać więcej informacji na temat tej funkcji, zobacz Android [aplikacje autonomiczne](https://developer.android.com/wear/preview/features/standalone-apps.html) tematu.
 
 
-<a name="wrist" />
 
 #### <a name="wrist-gestures"></a>Gestów nadgarstka 
 
@@ -196,7 +178,6 @@ Aby uzyskać więcej informacji, zobacz Android [gestów nadgarstka](https://dev
 Istnieje wiele więcej funkcji nosić 2.0, takie jak akcje wbudowane, inteligentne odpowiedzi, zdalne danych wejściowych, rozszerzonych powiadomieniach i nowy tryb mostkowania powiadomień. Aby uzyskać więcej informacji o nowych funkcjach nosić 2.0, zobacz Android [Przegląd interfejsu API](https://developer.android.com/wear/preview/api-overview.html). 
 
 
-<a name="devices" />
 
 ## <a name="devices"></a>Urządzenia
 
@@ -210,7 +191,6 @@ Oto kilka przykładów urządzeń, które można uruchomić nosić Android:
 * [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
-<a name="reading" />
 
 ## <a name="further-reading"></a>Dalsze informacje
 
@@ -222,7 +202,6 @@ Zapoznaj się dokumentacją nosić systemu Android firmy Google:
 * [Android zużycia 2.0](https://developer.android.com/wear/preview/index.html)
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

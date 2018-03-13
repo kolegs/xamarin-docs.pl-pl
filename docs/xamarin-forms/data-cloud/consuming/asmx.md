@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3362744d0d201ef82c846c80b0e1a87426953c85
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Korzystanie z usługi sieci Web platformy ASP.NET (ASMX)
 
@@ -74,7 +74,7 @@ Usługa ASMX udostępnia następujące operacje:
 Aby uzyskać więcej informacji na temat modelu danych używany w aplikacji, zobacz [modelowania danych](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Uwaga**: przykładowa aplikacja zużywa usługa hostowana Xamarin ASMX, która umożliwia dostęp tylko do odczytu do usługi sieci web. W związku z tym operacje, które tworzenie, aktualizowanie i usuwanie danych nie ma wpływu czy dane używane w aplikacji. Jednak jest dostępna w wersji pełnić rolę hosta usługi ASMX **TodoASMXService** folderu w towarzyszący przykładowej aplikacji. Ta wersja pełnić rolę hosta zezwoleń usługi ASMX pełne tworzenia, aktualizacji, do odczytu i usuwania dostęp do danych.
+> Przykładowa aplikacja zużywa usługa hostowana Xamarin ASMX, która umożliwia dostęp tylko do odczytu do usługi sieci web. W związku z tym operacje, które tworzenie, aktualizowanie i usuwanie danych nie ma wpływu czy dane używane w aplikacji. Jednak jest dostępna w wersji pełnić rolę hosta usługi ASMX **TodoASMXService** folderu w towarzyszący przykładowej aplikacji. Ta wersja pełnić rolę hosta zezwoleń usługi ASMX pełne tworzenia, aktualizacji, do odczytu i usuwania dostęp do danych.
 
 A *proxy* musi zostać wygenerowany w celu korzystania z usługi ASMX, dzięki czemu aplikacji połączyć się z usługą. Serwer proxy jest tworzony przez odbierającą metadanych usługi definiujący metody i skojarzona usługa konfiguracji. Te metadane jest widoczna w formularzu sieci Web Services Description Language (WSDL) dokument, który jest generowany przez usługę sieci web. Serwer proxy jest konstruowany przez dodawanie odwołania sieci web dla usługi sieci web do projektów specyficzne dla platformy.
 

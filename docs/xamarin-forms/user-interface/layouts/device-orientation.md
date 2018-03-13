@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>Orientacja urządzenia
 
@@ -31,7 +31,7 @@ Ten artykuł przeprowadzi Cię przez proces tworzenia aplikacji, które korzysta
 Podczas korzystania z platformy Xamarin.Forms, obsługiwanej metody kontrolowania orientacji urządzenia jest użycie ustawienia dla każdego pojedynczego projektu.
 
 > [!NOTE]
-> **Uwaga**: w platformy Xamarin.Forms 1.5.0 występuje błąd, co uniemożliwia niestandardowego modułu renderowania próbami kontrolować orientacji niepowodzenie. Zobacz [rozważania](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)rozważania na forach platformy Xamarin, aby uzyskać więcej informacji.
+> Począwszy od platformy Xamarin.Forms 1.5.0, który występuje błąd, co uniemożliwia niestandardowego modułu renderowania na podstawie próbuje sterować orientacji niepowodzenie. Zobacz [rozważania](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)rozważania na forach platformy Xamarin, aby uzyskać więcej informacji.
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ Windows Phone obsługuje krajobraz poglądów zarówno (jak z pionowej) orientac
 Platformy Xamarin.Forms nie zapewnia natywnego zdarzenia powiadamiania aplikację zmiany orientacji w kodzie udostępnionego. Jednak `SizeChanged` zdarzenie `Page` generowane, gdy szerokość lub wysokość `Page` zmiany. Gdy szerokość `Page` jest większa niż wysokość urządzenie jest w trybie krajobraz. Aby uzyskać więcej informacji, zobacz [wyświetlania obrazu w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> **Uwaga**: Brak istniejącego, wolne pakiet NuGet do odbierania powiadomień zmiany orientacji w kodzie udostępnionego. Zobacz [repozytorium GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Aby uzyskać więcej informacji.
+> Brak istniejących, wolne pakiet NuGet do odbierania powiadomień zmiany orientacji w kodzie udostępnionego. Zobacz [repozytorium GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Aby uzyskać więcej informacji.
 
 Alternatywnie można zastąpić jest [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) metoda `Page`, wstawianie dowolny układ Zmień logikę istnieje. `OnSizeAllocated` Metoda jest wywoływana przy każdym `Page` jest przydzielany nowy rozmiar, które odbywa się whenver obracania urządzenia. Należy pamiętać, że podstawowa implementacja `OnSizeAllocated` wykonuje układu ważne funkcje, dlatego ważne jest, aby wywoływać implementację podstawową w zastąpienia:
 
@@ -176,7 +176,7 @@ Istnieje możliwość interfejsy projektu za pomocą wbudowanych układów, dzi�
 Powyższe zasady mają zastosowanie także do zazwyczaj implementowanie interfejsów dla wielu rozmiarów ekranu i są traktowane jako najlepsze rozwiązania. Szczegółowe przykłady układów reakcji przy użyciu podstawowego układów w platformy Xamarin.Forms objaśnia dalszej części tego przewodnika.
 
 > [!NOTE]
-> **Uwaga**: dla uzyskania przejrzystości, poniższe sekcje przedstawiają sposób wdrożenia układów odpowiadać za pomocą tylko jednego typu `Layout` naraz. W praktyce, często jest łatwiejsze mieszać `Layout`s, aby osiągnąć żądany układ, przy użyciu prostszych lub najbardziej intuicyjnego `Layout` dla każdego składnika.
+> Dla uzyskania przejrzystości, poniższe sekcje przedstawiają sposób wdrożenia układów odpowiadać za pomocą tylko jednego typu `Layout` naraz. W praktyce, często jest łatwiejsze mieszać `Layout`s, aby osiągnąć żądany układ, przy użyciu prostszych lub najbardziej intuicyjnego `Layout` dla każdego składnika.
 
 ### <a name="stacklayout"></a>StackLayout
 

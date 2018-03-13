@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>Witaj, zużycia
 
@@ -30,11 +30,11 @@ Utwórz nową **aplikacji systemu Android nosić**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tworzenie nowej aplikacji nosić systemu Android w oknie dialogowym Nowy projekt](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![Tworzenie nowej aplikacji nosić systemu Android w oknie dialogowym Nowy projekt](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Tworzenie nowej aplikacji nosić systemu Android w oknie dialogowym nowego rozwiązania](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![Tworzenie nowej aplikacji nosić systemu Android w oknie dialogowym nowego rozwiązania](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ Ten szablon automatycznie obejmuje **Xamarin Android Wearable biblioteki** NuGet
 
 Upewnij się, że **Minimum Android do docelowego** ustawiono **Android 5.0 (interfejs typu lizak)** lub nowszy: 
 
-[![Ustawienie platformy docelowej dla systemu Android 5.0 w programie Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![Ustawienie platformy docelowej dla systemu Android 5.0 w programie Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Upewnij się, platforma docelowa ma ustawioną wartość **Android 5.0 (interfejs typu lizak)** lub nowszy:
 
-[ ![Ustawienie platformy docelowej dla systemu Android 5.0 w programie Visual Studio dla komputerów Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![Ustawienie platformy docelowej dla systemu Android 5.0 w programie Visual Studio dla komputerów Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Urządzenia z systemem Android nosić powinna pojawić się w menu rozwijanym ur
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Wybranie w menu programu Visual Studio urządzenia AVD nosić](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![Wybranie w menu programu Visual Studio urządzenia AVD nosić](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Wybieranie AVD nosić w programie Visual Studio dla menu urządzenia Mac](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![Wybieranie AVD nosić w programie Visual Studio dla menu urządzenia Mac](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Jeśli używasz emulatora czujki, może upłynąć trochę czasu, aby uruchomić
 
 Po pomyślnym wdraża aplikację, ekranu urządzenia zużycia powinien być wyświetlany ekran podobne do poniższych:
 
-[![Ekran początkowy aplikacji zużycie](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![Ekran początkowy aplikacji zużycie](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Wybierz **kliknij mnie!** przycisk rachunku zużycia urządzenia i zobacz, zwiększenie liczby z każdego Wybieranie:
 
-[![Zrzut ekranu nosić aplikacji po kliknięć 3](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![Zrzut ekranu nosić aplikacji po kliknięć 3](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>Następne kroki

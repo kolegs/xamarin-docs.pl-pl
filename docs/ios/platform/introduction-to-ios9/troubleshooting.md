@@ -3,16 +3,16 @@ title: "Rozwiązywanie problemów"
 description: "Ten artykuł zawiera kilka porad dotyczących rozwiązywania problemów do pracy z systemem iOS 9 w aplikacji platformy Xamarin.iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
+ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ea274ca198a4ca76a87198b02b6229e0e1c88b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -32,7 +32,7 @@ Jeśli zainstalowano Xcode 7 (lub nowszego) automatycznie zastąpi wszystkie sym
 
 W programie Xcode, wybierz **Xcode** następnie menu **Preferencje...**   >  **Pobiera**:
 
-[ ![](troubleshooting-images/ios8.png "Pobiera symulatorów iOS 8")](troubleshooting-images/ios8.png)
+[![](troubleshooting-images/ios8.png "Pobiera symulatorów iOS 8")](troubleshooting-images/ios8.png#lightbox)
 
 Kliknij przycisk **Sprawdź i zainstaluj teraz** przycisk, aby ponownie zainstalować symulatorów iOS 8.
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 Podczas uruchamiania aplikacji platformy Xamarin.iOS wersję systemu iOS 9 na sprzęcie rzeczywistych iOS, może otrzymać komunikat informujący o tym, że nie został zaakceptowany konta dewelopera na urządzeniu. Na przykład:
 
-[ ![](troubleshooting-images/untrusted01.png "Alert Enterprise Developer niezaufanych")](troubleshooting-images/untrusted01.png)
+[![](troubleshooting-images/untrusted01.png "Alert Enterprise Developer niezaufanych")](troubleshooting-images/untrusted01.png#lightbox)
 
 Aby rozwiązać ten problem, wykonaj następujące czynności:
 
 1. Uruchom środowisko Xcode (Najnowsza wersja beta) na programowanie Mac.
 2. Wybierz **urządzeń** z **okna** menu, aby otworzyć okno urządzeń: 
 
-    [ ![](troubleshooting-images/untrusted02.png "Oknie urządzenia")](troubleshooting-images/untrusted02.png)
+    [![](troubleshooting-images/untrusted02.png "Oknie urządzenia")](troubleshooting-images/untrusted02.png#lightbox)
 3. W obszarze **urządzeń** po stronie panelu, wybierz urządzenie, kliknij prawym przyciskiem myszy i wybierz **Pokaż profile inicjowania obsługi administracyjnej...** : 
 
-    [ ![](troubleshooting-images/untrusted03.png "Profile inicjowania obsługi SShow")](troubleshooting-images/untrusted03.png)
+    [![](troubleshooting-images/untrusted03.png "Profile inicjowania obsługi SShow")](troubleshooting-images/untrusted03.png#lightbox)
 4. Każdy profil inicjowania obsługi administracyjnej obecnie na urządzenie i kliknij przycisk Wybierz  **-**  przycisk, aby usunąć go: 
 
-    [ ![](troubleshooting-images/untrusted04.png "Usuwanie profilu inicjowania obsługi administracyjnej")](troubleshooting-images/untrusted04.png)
+    [![](troubleshooting-images/untrusted04.png "Usuwanie profilu inicjowania obsługi administracyjnej")](troubleshooting-images/untrusted04.png#lightbox)
 5. Z **Xcode** menu, wybierz opcję **Preferencje...**  i **kont**: 
 
-    [ ![](troubleshooting-images/untrusted05.png "Preferencje konta Xcode")](troubleshooting-images/untrusted05.png)
+    [![](troubleshooting-images/untrusted05.png "Preferencje konta Xcode")](troubleshooting-images/untrusted05.png#lightbox)
 6. Kliknij przycisk **wyświetlić szczegóły...**  przycisk, a następnie kliknij przycisk **pobranie wszystkich** przycisk: 
 
-    [ ![](troubleshooting-images/untrusted06.png "Pobierz wszystkie profile")](troubleshooting-images/untrusted06.png)
+    [![](troubleshooting-images/untrusted06.png "Pobierz wszystkie profile")](troubleshooting-images/untrusted06.png#lightbox)
 7. Po zakończeniu liście aktualizacji kliknij **gotowe** przycisk, a następnie zamknij okno Preferencje.
 8. Usuń istniejącą wersję aplikacji platformy Xamarin.iOS, które próbowano przetestować z urządzenia z systemem iOS.
 9. Wróć do programu Visual Studio dla komputerów Mac, wykonać czystą kompilację i spróbuj ponownie uruchomić aplikację na urządzeniu.

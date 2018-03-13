@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 11/16/2017
-ms.openlocfilehash: 32a058ace69fe5647d3285ac46bc981ddef39a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0113cc15bf1de5e0e668b05c2b0288a6ead141b5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>Gdzie można ustawić Moje lokalizacji zestawu SDK systemu Android
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 W programie Visual Studio, przejdź do **Narzędzia > Opcje > Xamarin > Ustawienia systemu Android** do wyświetlania i Ustaw lokalizację zestawu SDK systemu Android:
 
-[![Przykład karta lokalizacje w preferencjach](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png)
+[![Przykład karta lokalizacje w preferencjach](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 Domyślna lokalizacja dla każdej ścieżki jest następujący:
 
@@ -44,7 +44,7 @@ Na przykład, jeśli lokalizacja zestawu SDK systemu Android w **C:\\użytkownik
 
 W programie Visual Studio dla komputerów Mac, przejdź do **Preferencje > Projekty > Lokalizacje SDK > Android**. W **Android** kliknij przycisk **lokalizacje** kartę, aby wyświetlić i Ustaw lokalizację zestawu SDK:
 
-[![Przykład karta lokalizacje w preferencjach](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png)
+[![Przykład karta lokalizacje w preferencjach](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 Domyślna lokalizacja dla każdej ścieżki jest następujący:
 
@@ -62,6 +62,6 @@ Domyślna lokalizacja dla każdej ścieżki jest następujący:
 
 Należy pamiętać, że numer wersji zestawu NDK może się różnić. Na przykład zamiast z **r14b-android-zestawu ndk**, takich jak może być starsza wersja **r10e-android-zestawu ndk**.
 
-Aby ustawić lokalizacji zestawu SDK systemu Android, wprowadź pełną ścieżkę do katalogu zestawu SDK systemu Android **lokalizacji zestawu SDK systemu Android** pole. Możesz wybrać folder zestawu SDK systemu Android w wyszukiwanie, naciśnij klawisz **CTRL + &#8984; + I** Aby wyświetlić informacje o folderze, kliknij i przeciągnij ścieżkę na prawo od **gdzie:**, skopiować, a następnie wklej go do **zestawu SDK systemu Android Lokalizacja** polu **lokalizacje** kartę. Na przykład, jeśli lokalizacja zestawu SDK systemu Android w **~/Library/Developer/Android/Sdk**, wyczyść starej ścieżki w **lokalizacji zestawu SDK systemu Android** wkleić w tej ścieżce, a kliknij **OK**.
+Aby ustawić lokalizacji zestawu SDK systemu Android, wprowadź pełną ścieżkę do katalogu zestawu SDK systemu Android **lokalizacji zestawu SDK systemu Android** pole. Możesz wybrać folder zestawu SDK systemu Android w wyszukiwanie, naciśnij klawisz **CTRL +&#8984;+ I** Aby wyświetlić informacje o folderze, kliknij i przeciągnij ścieżkę na prawo od **gdzie:**, skopiować, a następnie wklej go do **zestawu SDK systemu Android Lokalizacja** polu **lokalizacje** kartę. Na przykład, jeśli lokalizacja zestawu SDK systemu Android w **~/Library/Developer/Android/Sdk**, wyczyść starej ścieżki w **lokalizacji zestawu SDK systemu Android** wkleić w tej ścieżce, a kliknij **OK**.
 
 -----

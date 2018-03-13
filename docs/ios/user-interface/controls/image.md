@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 71f3774c12add26e818b0859cf90c17ab6358538
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 716189fbf1518e9100a78cc5ae64e9e63a24c949
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-images"></a>Wyświetlanie obrazów
 
@@ -25,7 +25,7 @@ Visual Studio for Mac obsługuje również specjalne katalog o nazwie zasoby, kt
 
 Ten zrzut ekranu przedstawia **Akcja kompilacji** opcje, które są wyświetlane, gdy plik jest klikniętego:
 
- [ ![](image-images/image30a.png "Tworzenie menu Akcja")](image-images/image30a.png)
+ [![](image-images/image30a.png "Tworzenie menu Akcja")](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac będzie zazwyczaj wybierz poprawny **Akcja kompilacji** automatycznie, ale należy zwrócić uwagę, te ustawienia, zwłaszcza, jeśli można przenosić pliki w projekcie.
 
@@ -33,15 +33,15 @@ Visual Studio for Mac będzie zazwyczaj wybierz poprawny **Akcja kompilacji** au
 
 Aby dodać plik do projektu, najpierw kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Dodawanie plików...**
 
- [ ![](image-images/image31a.png "Dodaj pliki menu")](image-images/image31a.png)
+ [![](image-images/image31a.png "Dodaj pliki menu")](image-images/image31a.png#lightbox)
 
 Wybierz obraz (lub obrazów) mają zostać uwzględnione w oknie dialogowym standardowego pliku. Wartość domyślna akcja kompilacji dla obrazów będą **BundleResource** — nie zastąpienie tej wartości, chyba że masz powód.
 
- [ ![](image-images/image32a.png "Dodaj pliki w oknie dialogowym")](image-images/image32a.png)
+ [![](image-images/image32a.png "Dodaj pliki w oknie dialogowym")](image-images/image32a.png#lightbox)
 
 Obraz zostanie dodany do projektu i jest dostępny dla załadowana i wyświetlona w kodzie. Ten zrzut ekranu przedstawia obraz dodany do projektu aplikacji systemu iOS:
 
- [ ![](image-images/image33a.png "Obraz w projekcie")](image-images/image33a.png)
+ [![](image-images/image33a.png "Obraz w projekcie")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Co to jest katalog zasobów?
 
@@ -61,11 +61,11 @@ Katalog zasobów musi mieć nazwę tak, a wszystkie pliki powinny mieć Akcja ko
 
 Aby wyświetlić obraz przy użyciu narzędzia Projektant, widok obrazu powinna być używana jako kontener i jeden obraz lub animacji obrazów można wyświetlić. **Widoku obrazu** ikonę z przybornika przedstawiono poniżej:
 
- [ ![](image-images/image35a.png "ImageView w przyborniku")](image-images/image35.png)
+ [![](image-images/image35a.png "ImageView w przyborniku")](image-images/image35.png#lightbox)
 
 Przeciągnij **obrazu widoku** z **Toobox** na kontroler widoku. Następnie w obszarze ** widoku obrazu > Obraz ** listy rozwijanej będzie zawierają listę wszystkich dostępnych obrazów pliki w projekcie. Wybierz jedno z nich, aby dodać je do obrazu.
 
- [ ![](image-images/image36a.png "ImageView w przyborniku")](image-images/image36.png)
+ [![](image-images/image36a.png "ImageView w przyborniku")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Programowo wyświetlania obrazu
 

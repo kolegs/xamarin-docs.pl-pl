@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7ce674ea38bc847bc9064a5a61113900a45b991d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 434a12c26a5823b082751c95c2090b22c39cf081
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 
 W tym przewodniku pokazano, jak utworzyć aplikację konwertujący alfanumeryczne numer wprowadzony przez użytkownika do numeru telefonu liczbowych i kod, który odwołuje. Końcowe aplikacji jest pokazany poniżej:
 
-[![](quickstart-images/intro-app-examples-sml.png "Aplikacja Phoneword")](quickstart-images/intro-app-examples.png "Phoneword aplikacji")
+[![](quickstart-images/intro-app-examples-sml.png "Aplikacja Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikacji")
 
 Utwórz aplikację Phoneword w następujący sposób:
 
@@ -113,7 +113,7 @@ Utwórz aplikację Phoneword w następujący sposób:
         }
 
   > [!NOTE]
-> **Uwaga**: próba skompilowania aplikacji, w tym momencie będą powodować błędy, które zostanie rozwiązany później.
+  > Próba skompilowania aplikacji, w tym momencie będą powodować błędy, które zostanie rozwiązany później.
 
   Zapisać zmiany w **MainPage.xaml.cs** naciskając **CTRL + S**i zamknij plik.
 
@@ -515,7 +515,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             </StackLayout>
         </ContentPage>
 
-  Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
 
@@ -565,9 +565,9 @@ Utwórz aplikację Phoneword w następujący sposób:
         }
 
   > [!NOTE]
-> **Uwaga**: próba skompilowania aplikacji, w tym momencie będą powodować błędy, które zostanie rozwiązany później.
+  > Próba skompilowania aplikacji, w tym momencie będą powodować błędy, które zostanie rozwiązany później.
 
-  Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
@@ -606,7 +606,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **Phoneword.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **Phoneword.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
@@ -670,7 +670,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **PhoneTranslator.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **PhoneTranslator.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
@@ -690,7 +690,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **IDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **IDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
   > [!NOTE]
 > Typowy kod aplikacji jest teraz ukończona. Specyficzne dla platformy phone telefon kod będzie teraz zaimplementowana jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
@@ -723,7 +723,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
@@ -780,7 +780,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }
 
-  Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**w **Phoneword.Droid** projektu, kliknij dwukrotnie **MainActivity.cs** go otworzyć, Usuń wszystkie kod szablonu i zastąp go następującym kodem Kod:
 
@@ -809,7 +809,7 @@ Utwórz aplikację Phoneword w następujący sposób:
             }
         }        
 
-  Zapisać zmiany w **MainActivity.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **MainActivity.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, rozwiń węzeł **właściwości** folder i kliknij dwukrotnie **AndroidManifest.xml** pliku:
 
@@ -819,10 +819,10 @@ Utwórz aplikację Phoneword w następujący sposób:
 
   ![](quickstart-images/xs/android-manifest-changed.png "Włącz uprawnień CallPhone")
 
-  Zapisać zmiany w **AndroidManifest.xml** , wybierając **Plik > Zapisz** (lub naciskając klawisz **&#8984; + S**) i zamknij plik.
+  Zapisać zmiany w **AndroidManifest.xml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 1. W **konsoli rozwiązania**, Usuń **PhonewordPage** klasę z **Phoneword** projektu. Ta strona została dodana automatycznie, gdy projekt został utworzony i nie jest już wymagane.
-1. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac paska narzędzi.
+1. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz  **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac paska narzędzi.
 
   ![](quickstart-images/xs/build-successful.png "Pomyślnie kompilacji")
 

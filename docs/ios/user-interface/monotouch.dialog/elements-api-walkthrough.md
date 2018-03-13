@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Wskazówki — tworzenie aplikacji przy użyciu interfejsu API elementów
 
@@ -19,7 +19,7 @@ _W tym artykule opisano informacje przedstawione w wprowadzenie do okna dialogow
 
 W ramach tego przewodnika użyjemy patrz hasło MT. D elementów interfejsu API można utworzyć stylu główny szczegółowy aplikacji, która wyświetla listę zadań. Gdy użytkownik wybierze <span class="ui"> + </span> przycisk na pasku nawigacyjnym zostanie dodany nowy wiersz do tabeli dla zadania. Wybranie wiersza spowoduje przejście do ekranu szczegółów, która pozwala zaktualizować opis zadania i Data ukończenia, jak przedstawiono poniżej:
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "Wybranie wiersza spowoduje przejście do ekranu szczegółów, która pozwala zaktualizować opis zadania i Data ukończenia")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "Wybranie wiersza spowoduje przejście do ekranu szczegółów, która pozwala zaktualizować opis zadania i Data ukończenia")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 Powyższy kod tworzy wystąpienie `RootElement` i przekazuje je do `DialogViewController`. `DialogViewController` Ma zawsze `RootElement` u góry hierarchii. W tym przykładzie `RootElement` jest tworzony z ciągiem "Lista zadań do wykonania,", która służy jako tytuł w kontrolerze nawigacji na pasku nawigacyjnym. W tym momencie uruchamiania aplikacji przedstawia ekranu pokazano poniżej:
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Uruchamianie aplikacji przedstawi ekranu pokazano tutaj")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Uruchamianie aplikacji przedstawi ekranu pokazano tutaj")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 Zobaczmy, jak używać MonoTouch.Dialog w strukturę hierarchiczną `Sections` i `Elements` można dodać więcej ekranów.
 
@@ -148,11 +148,11 @@ My używamy `RootElement` tak, aby MonoTouch.Dialog będzie automatycznie twórz
 
 Sam ekran szczegółów zadań składa się z dwóch części; Każda z tych sekcji zawiera pojedynczy element. Pierwszy element jest tworzona na podstawie `EntryElement` zapewnienie można edytować wiersza zadania `Description` właściwości. Po wybraniu elementu klawiatury do edycji tekstu przedstawiono, jak pokazano poniżej:
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "Po wybraniu elementu klawiatury do edycji tekstu przedstawiono, jak pokazano")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "Po wybraniu elementu klawiatury do edycji tekstu przedstawiono, jak pokazano")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 Druga sekcja zawiera `DateElement` pozwala nam Zarządzanie zadaniami `DueDate` właściwości. Automatyczne zaznaczanie daty ładuje wyboru daty, jak pokazano:
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "Automatyczne zaznaczanie daty ładuje formant wyboru daty jako")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "Automatyczne zaznaczanie daty ładuje formant wyboru daty jako")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 W obu `EntryElement` i `DateElement` przypadków (lub dla każdego elementu wprowadzania danych w MonoTouch.Dialog), wszystkie zmiany wartości są zachowywane automatycznie. Firma Microsoft może pokazują edycji daty, a następnie i z powrotem nawigowanie między ekranu głównego i różnych szczegółów zadania, gdy wartości na ekranach szczegółów są zachowywane.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 015bce612f369797f0540a0cb55f71f420f007a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Wskazówki — przy użyciu Usługa transferu w tle i NSURLSession
 
@@ -20,7 +20,7 @@ _W tym przewodniku używamy Usługa transferu w tle i NSURLSession interfejsu AP
 
 Transferu w tle jest inicjowane przez skonfigurowanie tło `NSURLSession` i enqueuing przekazywanie lub pobieranie zadań. Jeśli zadania ukończone podczas backgrounded, wstrzymane lub przerwane aplikacji, iOS powiadomi aplikacji przez wywołanie metody obsługi uzupełniania w aplikacji *AppDelegate*. Poniższy diagram ilustruje to w akcji:
 
- [ ![](background-transfer-walkthrough-images/transfer.png "Transferu w tle jest inicjowane przez skonfigurowanie tła NSURLSession i enqueuing przekazywanie lub pobieranie zadań")](background-transfer-walkthrough-images/transfer.png)
+ [![](background-transfer-walkthrough-images/transfer.png "Transferu w tle jest inicjowane przez skonfigurowanie tła NSURLSession i enqueuing przekazywanie lub pobieranie zadań")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 Zobaczmy, to wygląda podobnie jak w kodzie.
 

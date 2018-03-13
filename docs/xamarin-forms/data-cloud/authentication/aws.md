@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 85413cf223e794ad2fda093601f9221d0261af39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Uwierzytelnianie użytkowników przy użyciu usługi Amazon SimpleDB usługi
 
@@ -61,7 +61,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync` Metoda zwraca odpowiedź zawierający kolekcję elementów i skojarzonych z nimi atrybutów, które pasują do wyrażenia zapytania. Wyrażenia zapytania zapewnia zostaną pobrane tylko elementów, które odpowiadają adres e-mail użytkownika. Aby uzyskać więcej informacji o wyrażeniach zapytań, zobacz [przy użyciu umożliwia tworzenie kwerend SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) w witrynie sieci Web firmy Amazon.
 
 > [!NOTE]
-> **Uwaga**: należy zachować ostrożność, postępuj zgodnie z regułami quoting podczas tworzenia wyrażenia zapytania. Aby uzyskać więcej informacji, zobacz [Wybierz reguły zamykający](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) w witrynie sieci Web firmy Amazon.
+> Należy zachować ostrożność, postępuj zgodnie z regułami quoting podczas tworzenia wyrażenia zapytania. Aby uzyskać więcej informacji, zobacz [Wybierz reguły zamykający](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) w witrynie sieci Web firmy Amazon.
 
 ## <a name="summary"></a>Podsumowanie
 

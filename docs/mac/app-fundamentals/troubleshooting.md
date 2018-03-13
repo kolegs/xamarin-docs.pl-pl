@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>Raportowanie błędów
 
@@ -70,7 +70,7 @@ W poniższych częściach omówiono znane problemy i ich rozwiązania.
 
 Debuger łączy się Xamarin.Mac aplikacji za pośrednictwem protokołu TCP, co oznacza, że po włączeniu sandboxing, jest domyślnie nie można nawiązać połączenia z aplikacji, więc jeśli zostanie podjęta próba uruchomienia aplikacji bez odpowiednich uprawnień, które są włączone, występuje błąd *"nie można nawiązać połączenia z Debuger"*. 
 
-[![Edytowanie uprawnień](troubleshooting-images/debug01.png "edycji uprawnień")](troubleshooting-images/debug01-large.png)
+[![Edytowanie uprawnień](troubleshooting-images/debug01.png "edycji uprawnień")](troubleshooting-images/debug01-large.png#lightbox)
 
 **Zezwalaj wychodzących połączeń sieciowych (klient)** uprawnienie jest wymagane dla debugera, włączenie tego umożliwi debugowania normalnie. Ponieważ nie można debugować bez niego, zostały zaktualizowane `CompileEntitlements` docelowe dla `msbuild` automatyczne dodawanie uprawnienie do uprawnień dla dowolnej aplikacji, która jest w trybie piaskownicy dla debugowania tylko kompilacje. Kompilacje wydania należy używać uprawnienia określone w pliku uprawnień, nie mają być modyfikowane.
 
@@ -80,7 +80,7 @@ Po tym 3 bibliotek strony w aplikacji Xamarin.Mac, może być błąd pojawia si�
 
 To będzie możliwe, otwierając opcje projektu Xamarin.Mac, przechodząc do **kompilacji Mac** > **internacjonalizacji** i sprawdzanie **zachodnie** ustawienia międzynarodowe:
 
-[![Opcje kompilacji edycji](troubleshooting-images/issue01.png "edycji opcje kompilacji")](troubleshooting-images/issue01-large.png)
+[![Opcje kompilacji edycji](troubleshooting-images/issue01.png "edycji opcje kompilacji")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>Nie można skompilować (mm5103)
 
@@ -100,7 +100,7 @@ Z nowego programu Visual Studio dla komputerów Mac, podczas tworzenia nowego pr
 
 Po dwukrotnym kliknięciu **Entitlements.plist** pliku, Edytor uprawnień będą wyświetlane:
 
-[![Edytowanie uprawnień](troubleshooting-images/entitlements02.png "edycji uprawnień")](troubleshooting-images/entitlements02-large.png)
+[![Edytowanie uprawnień](troubleshooting-images/entitlements02.png "edycji uprawnień")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 Dla istniejących projektów Xamarin.Mac, konieczne będzie ręczne tworzenie **Entitlements.plist** plików przez kliknięcie prawym przyciskiem myszy projekt w **konsoli rozwiązania** i wybierając **Dodaj**  >  **Nowego pliku...** . Następnie wybierz pozycję **Xamarin.Mac** > **pusta lista właściwości**:
 
@@ -108,7 +108,7 @@ Dla istniejących projektów Xamarin.Mac, konieczne będzie ręczne tworzenie **
 
 Wprowadź `Entitlements` dla nazwy i kliknij przycisk **nowy** przycisku. Jeśli projekt zawiera wcześniej pliku uprawnień, pojawi się monit, aby dodać go do projektu zamiast tworzenia nowego pliku:
 
-[![Weryfikowanie nadpisanie pliku](troubleshooting-images/entitlements04.png "weryfikowanie nadpisanie pliku")](troubleshooting-images/entitlements04-large.png)
+[![Weryfikowanie nadpisanie pliku](troubleshooting-images/entitlements04.png "weryfikowanie nadpisanie pliku")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>Trwa nawiązywanie kontaktu z pomocy technicznej (licencji w firmie lub organizacji)
 

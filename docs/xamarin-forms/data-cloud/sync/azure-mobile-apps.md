@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronizowanie danych w trybie Offline z usługi Azure Mobile Apps
 
@@ -133,7 +133,7 @@ public async Task SyncAsync()
 Ściągania odbywa się za pośrednictwem `IMobileServiceSyncTable.PullAsync` metodę dla pojedynczej tabeli. Pierwszy parametr `PullAsync` metody jest to nazwa zapytania jest używana tylko na urządzeniu przenośnym. Zapewnianie zapytania inną niż null powoduje nazwa wykonywania zestawu SDK klienta usługi Azure Mobile *synchronizacja przyrostowa*, gdzie każdy czas operacji ściągania zwraca wyniki, najnowsze `updatedAt` sygnatury czasowej z wyników jest przechowywany w lokalnym tabel systemowych. Operacji ściągania kolejnych następnie tylko pobieranie rekordów po tym sygnatury czasowej. Alternatywnie *pełnej synchronizacji* można osiągnąć przez przekazanie `null` jako nazwa zapytania, które powoduje wszystkich rekordów pobieranych w każdej operacji ściągania. Po żadnej operacji synchronizacji odebranych danych są wstawiane do lokalnego magazynu.
 
 > [!NOTE]
-> **Uwaga**: Jeśli ściąganie jest wykonywane względem tabeli, która ma oczekujące aktualizacje lokalnej, ściągania najpierw wykonać wypychanej w kontekście synchronizacji. Pozwala to zmniejszyć konfliktów między zmiany, które już są umieszczane w kolejce i nowych danych z wystąpienia usługi Azure Mobile Apps.
+> Jeśli ściąganie jest wykonywane względem tabeli, która ma oczekujące aktualizacje lokalnej, ściągania najpierw wykonać wypychanej w kontekście synchronizacji. Pozwala to zmniejszyć konfliktów między zmiany, które już są umieszczane w kolejce i nowych danych z wystąpienia usługi Azure Mobile Apps.
 
 `SyncAsync` Metoda zawiera również podstawowe implementacji konfliktów, gdy ten sam rekord został zmieniony w magazynie lokalnym i w wystąpieniu usługi Azure Mobile Apps. Jeśli występuje konflikt, że dane został zaktualizowany, zarówno w lokalnym magazynie, jak i w wystąpieniu usługi Azure Mobile Apps `SyncAsync` metody aktualizacji danych w lokalnym magazynie danych przechowywanych w wystąpieniu usługi Azure Mobile Apps. W przypadku innych konflikt `SyncAsync` metody spowoduje odrzucenie zmian lokalnych. Obsługuje scenariusza, gdy istnieje lokalne zmiany danych, który jest usunięty z wystąpienia usługi Azure Mobile Apps.
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 Wywołanie `PurgeAsync` wyzwala również operacji push. W związku z tym wszystkie elementy, które są oznaczone jako zakończone lokalnie będą wysyłane do wystąpienia usługi Azure Mobile Apps przed usuwany z magazynu lokalnego. Jednak w przypadku operacji oczekujących synchronizacji z wystąpieniem usługi Azure Mobile Apps przeczyszczanie zgłosi `InvalidOperationException` chyba że `force` ustawiono parametr `true`. Strategia alternatywnych jest zbadanie `IMobileServiceSyncContext.PendingOperations` właściwość, która zwraca liczbę oczekujących operacji, które nie zostały przekazane do wystąpienia usługi Azure Mobile Apps i wykonywać przeczyszczanie, tylko jeśli właściwość jest równy zero.
 
 > [!NOTE]
-> **Uwaga**: wywoływanie `PurgeAsync` z `force` ustawiona `true` spowoduje utratę wszystkich oczekujących zmian.
+> Wywoływanie `PurgeAsync` z `force` ustawiona `true` spowoduje utratę wszystkich oczekujących zmian.
 
 ## <a name="initiating-synchronization"></a>Inicjowanie synchronizacji
 

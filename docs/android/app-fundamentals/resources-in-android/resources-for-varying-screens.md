@@ -6,18 +6,17 @@ ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/12/2017
-ms.openlocfilehash: aeb7115e3c7521f6679e8802eb759d7e56ba1cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: fcd77d97d492baee441cfd428e58ea83525f927e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-resources-for-varying-screens"></a>Tworzenie zasobów dla różnych ekranów
 
 Android sama działa na różnych urządzeniach, każde posiada szerokiego zakresu rozwiązania, rozmiaru ekranu i gęstości ekranu. System android będzie wykonywać skalowanie i zmiany rozmiaru, aby aplikacja działa na tych urządzeniach, ale może to spowodować nieoptymalnych użytkowników. Na przykład obrazy mogą być rozmyte, obrazy mogą zajmować zbyt dużo (lub nie ma wystarczającej ilości) miejsca na ekranie co powoduje, że położenie elementów interfejsu użytkownika w układzie będzie nakładają się lub jest zbyt daleko od siebie.
 
-<a name="Concepts" />
 
 ## <a name="concepts"></a>Pojęcia
 
@@ -39,7 +38,6 @@ Należy zauważyć, że pierwsze trzy tych pojęć między są powiązane &ndash
 
 Ułatwiające biznesowych w radzeniu sobie z tym złożoność platformy systemu Android chce używać *pikselach niezależnych od gęstości (dp)* dla układów ekranu głównego. Za pomocą pikselach niezależnych od gęstości, elementy interfejsu użytkownika będą wyświetlane użytkownikowi, aby mieć taki sam rozmiar fizycznych na ekranach o różnych gęstości.
 
-<a name="Supporting_Various_Screen_Sizes_and_Densities" />
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Obsługa różnych rozmiarów ekranu i gęstości
 
@@ -49,7 +47,6 @@ Korzystanie z pikselach niezależnych od gęstości zamiast rzeczywistej pikseli
 Android skalowały drawables w czasie wykonywania do odpowiedniego rozmiaru.
 Jednak jest możliwe, że ta skalowanie spowoduje być rozmyte map bitowych. Aby tego uniknąć, może być konieczne podanie alternatywnych zasobów dla różnych gęstości. Podczas projektowania urządzeń dla wielu rozwiązania i gęstości ekranu będzie okazać się łatwiejsze do uruchomienia z wyższej rozdzielczości lub gęstość obrazy i następnie skali. Pozwoli to uniknąć rozmycia lub zakłócenia, które mogą być wynikiem zmiany rozmiaru.
 
-<a name="Declare_the_Screen_Size_the_Application_Supports" />
 
 ### <a name="declare-the-screen-size-the-application-supports"></a>Deklarowanie aplikacja obsługuje rozmiaru ekranu
 
@@ -59,29 +56,21 @@ Aby to zrobić w Xamarin.Android, należy najpierw dodać **AndroidManifest.xml*
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Manifestu systemu android](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Manifestu systemu android](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png)
-
------
-
+[![Manifestu systemu android](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png#lightbox)
 
 **AndroidManifest.xml** jest dodawany do **właściwości** katalogu. Aby uwzględnić zostanie zmieniony plik [obsługuje ekrany](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Dodawanie ekranów obsługuje](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png)
+[![Dodawanie ekranów obsługuje](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dodawanie ekranów obsługuje](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png)
+[![Manifestu systemu android](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png#lightbox)
+
+**AndroidManifest.xml** jest dodawany do **właściwości** katalogu. Aby uwzględnić zostanie zmieniony plik [obsługuje ekrany](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+
+[![Dodawanie ekranów obsługuje](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png#lightbox)
 
 -----
-
-
-<a name="Provide_Alternate_Layouts_for_Different_Screen_Sizes" />
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Podanie alternatywnych układów różnych rozmiarów ekranu
 
@@ -148,7 +137,6 @@ Dla aplikacji obejmujących stary i nowy poziom interfejsu API może być koniec
 -----
 
 
-<a name="Provide_Different_Bitmaps_for_Different_Screen_Densities" />
 
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Podaj inną map bitowych gęstości inny ekran
 
@@ -162,17 +150,15 @@ Porównaj te układ stworzonego z dużą gęstością określonych zasobów:
 
 ![Zrzuty ekranu przy użyciu zasobów specyficznych dla gęstość](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-<a name="Create_Varying_Density_Resources_with_Android_Asset_Studio" />
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Utwórz różne zasoby gęstość z zasobów Android Studio
 
 Tworzenie tych map bitowych różnych gęstości mogą być nieco nużące. W efekcie Google utworzył narzędzia online, co może zmniejszyć niektóre konieczność powtarzania związane z tworzeniem tych map bitowych o nazwie [ **Android Studio zasobów**](https://romannurik.github.io/AndroidAssetStudio/).
 
-[![Zasobów android Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png)
+[![Zasobów android Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 Tworzenie map bitowych target cztery typowe gęstości ekranu zapewniając jednego obrazu pomoże tej witryny sieci Web. Android Studio zasobów utworzeniu map bitowych o pewne dostosowania, a następnie zezwolić im na można pobrać jako plik zip.
 
-<a name="Tips_for_Multiple_Screens" />
 
 ## <a name="tips-for-multiple-screens"></a>Porady dotyczące wielu ekranów
 
@@ -189,7 +175,6 @@ Android działa na bewildering liczbę urządzeń, i kombinacja rozmiarów ekran
 
 - **Użyj LayoutParams wysokość i szerokość** — podczas definiowania elementów interfejsu użytkownika w pliku XML układu aplikację systemu Android przy użyciu **wrap_content** i **fill_parent** wartości będą mieć więcej Powodzenie zapewnienia prawidłowego wyglądu wielu różnych urządzeniach niż przy użyciu pikseli lub gęstość niezależne jednostki. Te wartości powodują systemu Android do skali mapy bitowej zasobów zgodnie z potrzebami. Z tego powodu tej samej jednostki miary niezależne gęstość są najlepiej zarezerwowane dla podczas określania marginesy i dopełnienia elementów interfejsu użytkownika.
 
-<a name="Testing_Multiple_Screens" />
 
 ## <a name="testing-multiple-screens"></a>Testowanie wielu ekranów
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>Praca z wskaźniki postępu
 
@@ -21,7 +21,7 @@ _Ten artykuł obejmuje projektowanie i Praca z wskaźniki postępu wewnątrz apl
 
 Mogą wystąpić podczas aplikacji Xamarin.tvOS musi załadować nowej zawartości lub wykonania operacji przetwarzania długie czasy. W tych godzinach powinni przedstawić wskaźnika działania albo pasek postępu użytkownikowi należy sprawdzić, czy aplikacja nadal jest uruchomiony i nadanie im niektóre wskazania długość zadanie uruchomione.
 
-[ ![](progress-indicators-images/intro01.png "Przykładowe wskaźniki postępu")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "Przykładowe wskaźniki postępu")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Najprostszym sposobem, aby pracować ze wskaźnikiem postępu w aplikacji Xamari
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **wskaźnika działania** z **przybornika** i upuść go w widoku: 
 
-    [ ![](progress-indicators-images/activity01.png "Wskaźnik aktywności")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "Wskaźnik aktywności")](progress-indicators-images/activity01.png#lightbox)
 1. W **kartę Widget** z **konsoli właściwości**, można dostosować kilka właściwości wskaźnika działania, takie jak jego **styl** i **zachowanie**: 
 
-    [ ![](progress-indicators-images/activity02.png "Na karcie widżetu ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "Na karcie widżetu ")](progress-indicators-images/activity02.png#lightbox)
 1. Przeciągnij **widoku postępu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](progress-indicators-images/activity03.png "Wyświetlanie postępu")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "Wyświetlanie postępu")](progress-indicators-images/activity03.png#lightbox)
 1. W **kartę Widget** z **Explorer właściwości**, można dostosować kilka właściwości widoku postępu, takie jak jego **styl** i **postępu**(wykonano): 
 
-    [ ![](progress-indicators-images/activity04.png "Na karcie widżetu")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "Na karcie widżetu")](progress-indicators-images/activity04.png#lightbox)
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](progress-indicators-images/activity05.png "Przypisz nazwę")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "Przypisz nazwę")](progress-indicators-images/activity05.png#lightbox)
 1. Zapisz zmiany.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Najprostszym sposobem, aby pracować ze wskaźnikiem postępu w aplikacji Xamari
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **wskaźnika działania** z **przybornika** i upuść go w widoku: 
 
-    [ ![](progress-indicators-images/activity01-vs.png "Wskaźnik aktywności")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "Wskaźnik aktywności")](progress-indicators-images/activity01-vs.png#lightbox)
 1. W **kartę Widget** z **Explorer właściwości**, można dostosować kilka właściwości wskaźnika działania, takie jak jego **styl** i **zachowanie**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "Na karcie widżetu")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "Na karcie widżetu")](progress-indicators-images/activity02-vs.png#lightbox)
 1. Przeciągnij **widoku postępu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](progress-indicators-images/activity03-vs.png "Wyświetlanie postępu")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "Wyświetlanie postępu")](progress-indicators-images/activity03-vs.png#lightbox)
 1. W **kartę Widget** z **Explorer właściwości**, można dostosować kilka właściwości widoku postępu, takie jak jego **styl** i **postępu**(wykonano): 
 
-    [ ![](progress-indicators-images/activity04-vs.png "Na karcie widżetu")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "Na karcie widżetu")](progress-indicators-images/activity04-vs.png#lightbox)
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](progress-indicators-images/activity05-vs.png "Przypisz nazwę")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "Przypisz nazwę")](progress-indicators-images/activity05-vs.png#lightbox)
 1. Zapisz zmiany.
 
 -----
@@ -134,7 +134,7 @@ W tym artykule pokrywającego projektowanie i Praca z wskaźniki postępu wewną
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Przykłady dla systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [systemu tvOS człowieka przewodniki — interfejs](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Przewodnik programowania w języku aplikacji dla systemu tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

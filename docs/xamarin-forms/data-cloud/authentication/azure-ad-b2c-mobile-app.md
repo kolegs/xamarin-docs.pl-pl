@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3a7d89d9b0f383d365b18364e5d902ee0642f395
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Integrowanie usługi Azure Active Directory B2C z usługi Azure Mobile Apps
 
@@ -21,7 +21,7 @@ _Usługa Azure Active Directory B2C jest chmury rozwiązania do zarządzania to�
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie wersji wstępnej")
 
 > [!NOTE]
-> **Uwaga**: [biblioteki uwierzytelniania](https://www.nuget.org/packages/Microsoft.Identity.Client) jest wciąż w wersji zapoznawczej, ale są odpowiednie do użycia w środowisku produkcyjnym. Jednak mogą być istotne zmiany interfejsu API, format wewnętrznej pamięci podręcznej i innych mechanizmów biblioteki, która może wpływać na działanie aplikacji.
+> [Biblioteki uwierzytelniania](https://www.nuget.org/packages/Microsoft.Identity.Client) jest wciąż w wersji zapoznawczej, ale są odpowiednie do użycia w środowisku produkcyjnym. Jednak mogą być istotne zmiany interfejsu API, format wewnętrznej pamięci podręcznej i innych mechanizmów biblioteki, która może wpływać na działanie aplikacji.
 
 ## <a name="overview"></a>Omówienie
 
@@ -72,7 +72,7 @@ Zarządzane przez klienta uwierzytelniania przepływu pracy dzierżawy usługi A
 
 Poniższy zrzut ekranu przedstawia tej konfiguracji:
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Usługa Azure Active Directory B2C konfiguracji")](azure-ad-b2c-mobile-app-images/client-flow-config.png "usługi Azure Active Directory B2C konfiguracji")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Usługa Azure Active Directory B2C konfiguracji")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "usługi Azure Active Directory B2C konfiguracji")
 
 Zasady usługi Azure Active Directory B2C dzierżawy powinien również być skonfigurowany tak, aby adres URL odpowiedzi jest ustawiona na tej samej niestandardowych schemat adresu URL, a następnie `://auth/`. Poniższy zrzut ekranu przedstawia tej konfiguracji:
 
@@ -158,7 +158,7 @@ Serwer zarządzany uwierzytelniania przepływu pracy dzierżawy usługi Azure Ac
 
 Poniższy zrzut ekranu przedstawia tej konfiguracji:
 
-[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Usługa Azure Active Directory B2C konfiguracji")](azure-ad-b2c-mobile-app-images/server-flow-config.png "usługi Azure Active Directory B2C konfiguracji")
+[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Usługa Azure Active Directory B2C konfiguracji")](azure-ad-b2c-mobile-app-images/server-flow-config.png#lightbox "usługi Azure Active Directory B2C konfiguracji")
 
 Zasady usługi Azure Active Directory B2C dzierżawy powinien również być skonfigurowany tak, aby adres URL odpowiedzi jest ustawiona jako adres aplikacji mobilnej Azure, a następnie `/.auth/login/aad/callback`. Poniższy zrzut ekranu przedstawia tej konfiguracji:
 

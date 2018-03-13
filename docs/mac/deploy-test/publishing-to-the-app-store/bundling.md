@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e138fc1176c646a2e4e9caf94462028dd7c68e9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Pakiet dla sklepu Mac App Store
 
@@ -25,11 +25,11 @@ W tej sekcji opisano podstawowe informacje dotyczące tworzenia aplikacji dla we
 
 Zmień **konfiguracji** do **wersji** przed zaktualizowaniem podpisywania kodu i opcje tworzenia pakietów. Deweloper musi się upewnić, że używają one firma **tożsamości** i profil inicjowania obsługi administracyjnej, które zostały utworzone powyżej podczas podpisywania aplikacji w wersji w sklepie z aplikacjami.
 
- [![Edytowanie kodu opcje podpisywania](bundling-images/config02.png "edycji opcje podpisywania kodu")](bundling-images/config02-large.png)
+ [![Edytowanie kodu opcje podpisywania](bundling-images/config02.png "edycji opcje podpisywania kodu")](bundling-images/config02-large.png#lightbox)
 
 Upewnij się, zaewidencjonowany opcję, aby utworzyć pakiet Instalatora **kompilacji Mac** ustawienia:
 
-[![Opcje kompilacji edycji](bundling-images/config03.png "edycji opcje kompilacji")](bundling-images/config03-large.png)
+[![Opcje kompilacji edycji](bundling-images/config03.png "edycji opcje kompilacji")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>Kompilacja
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 9ba8fc1a82e932c01b8a07b49d9ae11ad1ceb81c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -42,7 +42,6 @@ Jeśli *klucza* rozpoczyna się od małej litery, następnie *klucza* jest trakt
 
 Obsługuje platformy Xamarin.Android `XA_HTTP_CLIENT_HANDLER_TYPE` zmiennej, która może być ustawiona albo za pośrednictwem `adb shell setprop debug.mono.env` lub za pośrednictwem `$(AndroidEnvironment)` akcji kompilacji.
 
-<a name="XA_HTTP_CLIENT_HANDLER_TYPE" />
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
@@ -148,7 +147,7 @@ XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
 ```
 
 > [!NOTE]
-> **Uwaga:** podstawowej urządzenia Android muszą obsługiwać protokół TLS 1.2.
+> Podstawowym urządzeniu z systemem Android muszą obsługiwać protokół TLS 1.2.
 Obsługa systemu android 5.0 i nowszych protokołu TLS 1.2
 
 

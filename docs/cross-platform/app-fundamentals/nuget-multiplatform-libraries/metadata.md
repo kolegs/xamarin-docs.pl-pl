@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8afce6021c2816f354e26ccecd7d0c40ceb2a9bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: babbe0344130dc0ce38023eabe7479d2b464276b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing-nuget-metadata"></a>Edytowanie metadanych NuGet
 
@@ -26,7 +26,7 @@ Biblioteka typów projektów (na przykład PCL lub .NET Standard lub nowy typ pr
 
 **Ogólne** karta zawiera cztery pola, które należy podać można wygenerować pakietu NuGet:
 
-[ ![](metadata-images/metadata-general-sml.png "Okno wymaganych metadanych pakietu NuGet")](metadata-images/metadata-general.png)
+[![](metadata-images/metadata-general-sml.png "Okno wymaganych metadanych pakietu NuGet")](metadata-images/metadata-general.png#lightbox)
 
 - **Identyfikator** — identyfikator pakietu, która powinna być unikatowa w obrębie Nuget.org (lub wszędzie tam, gdzie dystrybucji pakietu). Po tym [wskazówki](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) i używać tylko znaków, które są dozwolone w adresie URL (bez spacji i znaków specjalnych uniknąć).
 - **Wersja** — wybierz numer wersji zgodnie z [reguły kontroli wersji NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
@@ -45,7 +45,7 @@ Aby uzyskać więcej informacji, zobacz [odwołania wymagane elementy](https://d
 
 **Szczegóły** karta zawiera pola opcjonalne, które mają zostać uwzględnione w pliku manifestu pakietu NuGet.
 
-[ ![](metadata-images/metadata-detail-sml.png "Okno opcjonalne metadane pakietów NuGet")](metadata-images/metadata-detail.png)
+[![](metadata-images/metadata-detail-sml.png "Okno opcjonalne metadane pakietów NuGet")](metadata-images/metadata-detail.png#lightbox)
 
 Zapoznaj się [opcjonalne informacje dodatkowe elementy](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) Aby uzyskać więcej informacji o polach wymaganych i opcjonalnych.
 

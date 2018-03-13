@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadane powiązania Java
 
 _Kod C# w Xamarin.Android wywołuje bibliotek języka Java za pomocą powiązania, które są mechanizm abstracts szczegółów niskiego poziomu, które są określone w języku Java natywnego interfejsu (JNI). Xamarin.Android udostępnia narzędzia, który generuje tych powiązań. Tego narzędzia umożliwia deweloperowi kontroli, jak powiązania jest tworzona przy użyciu metadanych, dzięki czemu procedury przykład: modyfikacja przestrzenie nazw oraz zmiana nazwy elementów członkowskich. Ten dokument w tym artykule omówiono, jak metadanych działa, znajduje się podsumowanie atrybuty metadane obsługuje i wyjaśniono, jak rozwiązać problemy z powiązaniami, modyfikując te metadane._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -74,7 +73,6 @@ Pliki mapowania XML można znaleźć w **przekształca** folderu projektu:
 
 Pozwala przejść do omówienia **Metadata.xml** bardziej szczegółowo.
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Plik transformacji METADATA.XML
 
@@ -114,7 +112,6 @@ Poniższa lista zawiera niektóre z najczęściej używanych elementów XPath dl
 -   `parameter` &ndash; Określenie parametru metody. Np. `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>Dodawanie typów
 
@@ -129,7 +126,6 @@ Poniższa lista zawiera niektóre z najczęściej używanych elementów XPath dl
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>Usuwanie typów
 
@@ -138,8 +134,6 @@ Istnieje możliwość nakazać generatora powiązania platformy Xamarin.Android,
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>Zmiana nazwy elementów członkowskich
 
@@ -169,6 +163,8 @@ Aby poprawnie zmienić nazwę zarządzanego opakowanej typu (lub metody), należ
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>Zmiana nazwy `EventArg` klasy otoki
 
 Gdy identyfikuje generator powiązania Xamarin.Android `onXXX` metody ustawiającej _typu odbiornika_, zdarzenia C# i `EventArgs` podklasy zostanie wygenerowany do obsługi .NET o interfejsu API dla odbiornika opartych na języku Java wzorzec. Na przykład należy wziąć pod uwagę następujące klasy Java i metody:
@@ -193,7 +189,6 @@ Nie jest dozwoloną nazwą klasy C#. Aby rozwiązać ten problem, autora powiąz
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>Obsługiwanych atrybutów
 
@@ -341,7 +336,6 @@ Biorąc pod uwagę te zmiany w miejscu, można użyć kodu wykonaj platformie Xa
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

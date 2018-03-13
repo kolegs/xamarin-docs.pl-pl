@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Uwierzytelnianie użytkowników z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
 
@@ -81,7 +81,7 @@ Proces hostingu broker token zasobu w usłudze Azure App Service jest następuj�
 
     Poniższy zrzut ekranu przedstawia tej konfiguracji:
 
-    [![](authentication-images/azure-web-app-settings.png "Ustawienia aplikacji sieci Web usługi aplikacji")](authentication-images/azure-web-app-settings-large.png "ustawień aplikacji sieci Web usługi aplikacji")
+    [![](authentication-images/azure-web-app-settings.png "Ustawienia aplikacji sieci Web usługi aplikacji")](authentication-images/azure-web-app-settings-large.png#lightbox "ustawień aplikacji sieci Web usługi aplikacji")
 
 1. Publikuj rozwiązanie tokenu brokera zasobów w aplikacji sieci web w usłudze Azure App Service.
 
@@ -117,7 +117,7 @@ Proces konfigurowania aplikacji usługi jest łatwe uwierzytelnianie w następuj
 
   Poniższy zrzut ekranu przedstawia tej konfiguracji:
 
-  [![](authentication-images/app-service-authentication-settings.png "Ustawienia uwierzytelniania aplikacji sieci Web usługi aplikacji")](authentication-images/app-service-authentication-settings-large.png "ustawienia uwierzytelniania aplikacji sieci Web usługi aplikacji")
+  [![](authentication-images/app-service-authentication-settings.png "Ustawienia uwierzytelniania aplikacji sieci Web usługi aplikacji")](authentication-images/app-service-authentication-settings-large.png#lightbox "ustawienia uwierzytelniania aplikacji sieci Web usługi aplikacji")
 
 Aplikacja sieci web usługi aplikacji powinien również być skonfigurowany do komunikowania się z aplikacjami usługi Facebook, aby umożliwić przepływ uwierzytelniania. Można to zrobić przez wybranie dostawcy tożsamości usługi Facebook i wprowadzając **identyfikator aplikacji** i **klucz tajny aplikacji** wartości z ustawień aplikacji Facebook w Centrum deweloperów usługi Facebook. Aby uzyskać więcej informacji, zobacz [informacje dodać Facebook dla aplikacji](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 

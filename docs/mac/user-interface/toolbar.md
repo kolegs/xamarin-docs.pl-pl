@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>Paski narzędzi
 
@@ -82,7 +82,7 @@ Do udostępnienia elementy interfejsu użytkownika do kodu C# za pomocą gniazda
 2. Wybierz kontroler okna na powierzchni projektu.
 3. Przełącz się do **inspektora tożsamości** , a następnie wprowadź "WindowController" jako **Nazwa klasy**: 
 
-    [![Ustawienie niestandardowej klasy nazwę kontrolera okna](toolbar-images/windowcontroller01.png "ustawienie niestandardowej klasy nazwę kontrolera okna")](toolbar-images/windowcontroller01-large.png) 
+    [![Ustawienie niestandardowej klasy nazwę kontrolera okna](toolbar-images/windowcontroller01.png "ustawienie niestandardowej klasy nazwę kontrolera okna")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji.
 5. A **WindowController.cs** plik zostanie dodany do projektu w **konsoli rozwiązania** w programie Visual Studio dla komputerów Mac: 
@@ -92,7 +92,7 @@ Do udostępnienia elementy interfejsu użytkownika do kodu C# za pomocą gniazda
 6. Otwórz ponownie scenorysu w Konstruktorze interfejsu w środowisku Xcode.
 7. **WindowController.h** pliku będą dostępne do użycia: 
 
-    [![The WindowController.h file](toolbar-images/windowcontroller03.png "The WindowController.h file")](toolbar-images/windowcontroller03-large.png)
+    [![The WindowController.h file](toolbar-images/windowcontroller03.png "The WindowController.h file")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Tworzenie i obsługę paski narzędzi w środowisku Xcode
 
@@ -188,7 +188,7 @@ W tym miejscu Użyj konstruktora interfejsu, aby skonfigurować pola wyszukiwani
 
 Kilka elementów interfejsu użytkownika Cocoa interakcję z elementami standardowym pasku narzędzi domyślnie. Na przykład, przeciągnij **widoku tekstu** na okna aplikacji i umieść go w celu wypełnienia obszaru zawartości:
 
-[![Dodawanie widoku tekstu do aplikacji](toolbar-images/edit09.png "Dodawanie widoku tekstu do aplikacji")](toolbar-images/edit09-large.png)
+[![Dodawanie widoku tekstu do aplikacji](toolbar-images/edit09.png "Dodawanie widoku tekstu do aplikacji")](toolbar-images/edit09-large.png#lightbox)
 
 Zapisz dokument, wróć do programu Visual Studio for Mac w celu synchronizacji z Xcode, uruchom aplikację, wprowadź tekst, zaznacz go i kliknij **kolory** element paska narzędzi. Należy zauważyć, że widoku tekstu automatycznie współpracuje z próbnika kolorów:
 
@@ -201,7 +201,7 @@ Przy użyciu **element paska narzędzi obrazu**, żadnego obrazu mapy bitowej do
 1. W programie Visual Studio dla komputerów Mac w **konsoli rozwiązania**, kliknij prawym przyciskiem myszy **zasobów** i wybierz polecenie **Dodaj** > **Dodaj pliki** .
 2. Z **Dodaj pliki** okna dialogowego polu, przejdź do żądanego obrazów, zaznacz je i kliknij przycisk **Otwórz** przycisk: 
 
-    [![Wybieranie obrazów, aby dodać](toolbar-images/edit11.png "wybierania obrazów do dodania")](toolbar-images/edit11-large.png)
+    [![Wybieranie obrazów, aby dodać](toolbar-images/edit11.png "wybierania obrazów do dodania")](toolbar-images/edit11-large.png#lightbox)
 
 3. Wybierz **kopiowania**, sprawdź **dla wszystkich wybranych plików, użyj tego samego akcji**i kliknij przycisk **OK**:
 
@@ -225,7 +225,7 @@ Przy użyciu **element paska narzędzi obrazu**, żadnego obrazu mapy bitowej do
 
 9. Przeciągnij **element paska narzędzi separatora** z **inspektora biblioteki** do paska narzędzi **dozwolone elementy paska narzędzi** obszar: 
 
-    [![Element separatora narzędzi dodany do obszaru dozwolone elementy paska narzędzi](toolbar-images/edit17.png "A separatora narzędzi element dodany do obszaru dozwolone elementy paska narzędzi")](toolbar-images/edit17-large.png)
+    [![Element separatora narzędzi dodany do obszaru dozwolone elementy paska narzędzi](toolbar-images/edit17.png "A separatora narzędzi element dodany do obszaru dozwolone elementy paska narzędzi")](toolbar-images/edit17-large.png#lightbox)
 
 10. Przeciągnij element separatora i elementu "Kosza" **domyślne elementy paska narzędzi** obszarów i zestaw elementów kolejności paska narzędzi z lewej do prawej w następujący sposób (kolory, czcionki, separatora, Kosz, elastyczne miejsca, drukowania): 
 
@@ -244,7 +244,7 @@ Aby uzyskać dostęp do paska narzędzi lub element paska narzędzi w kodzie, mu
 1. W **konsoli rozwiązania**, kliknij dwukrotnie **Main.storyboard** go otworzyć w programie Xcode.
 2. Upewnij się, że niestandardowej klasy "WindowController" została przypisana do kontrolera w głównym oknie **inspektora tożsamości**:
 
-    [![Za pomocą Inspektora tożsamości można ustawić niestandardowej klasy kontrolera okna](toolbar-images/edit20a.png "Inspektor tożsamości można ustawić niestandardowej klasy kontrolera okna")](toolbar-images/edit20a-large.png)
+    [![Za pomocą Inspektora tożsamości można ustawić niestandardowej klasy kontrolera okna](toolbar-images/edit20a.png "Inspektor tożsamości można ustawić niestandardowej klasy kontrolera okna")](toolbar-images/edit20a-large.png#lightbox)
 
 3. Następnie wybierz element paska narzędzi w **hierarchii interfejsów**: 
 
@@ -253,11 +253,11 @@ Aby uzyskać dostęp do paska narzędzi lub element paska narzędzi w kodzie, mu
 4. Otwórz **Asystenta widoku**, wybierz pozycję **WindowController.h** plików i przeciągnij formant z elementu narzędzi do **WindowController.h** pliku.
 5. Ustaw **połączenia** typ **akcji**, wprowadź "trashDocument" **nazwa**i kliknij przycisk **Connect** przycisk: 
 
-    [![Konfigurowanie akcji dla elementu narzędzi](toolbar-images/edit23.png "Konfigurowanie akcji dla elementu paska narzędzi")](toolbar-images/edit23-large.png)
+    [![Konfigurowanie akcji dla elementu narzędzi](toolbar-images/edit23.png "Konfigurowanie akcji dla elementu paska narzędzi")](toolbar-images/edit23-large.png#lightbox)
 
 6. Udostępnianie **widoku tekstu** jako gniazda o nazwie "documentEditor" w **ViewController.h** pliku: 
 
-    [![Konfigurowanie sposobu wykorzystania widoku tekstu](toolbar-images/edit24.png "Konfigurowanie gniazda dla widoku tekstu")](toolbar-images/edit24-large.png)
+    [![Konfigurowanie sposobu wykorzystania widoku tekstu](toolbar-images/edit24.png "Konfigurowanie gniazda dla widoku tekstu")](toolbar-images/edit24-large.png#lightbox)
 
 7. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 

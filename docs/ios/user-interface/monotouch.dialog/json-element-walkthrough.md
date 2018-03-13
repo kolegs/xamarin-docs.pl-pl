@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Wskazówki: Tworzenie przy użyciu elementu JSON interfejsu użytkownika
 
@@ -22,7 +22,7 @@ PATRZ HASŁO MT. D obsługuje tworzenie interfejsów użytkownika zadeklarowany 
 
 PATRZ HASŁO MT. D obsługuje pełny zakres funkcji, które są dostępne w interfejsie API elementy, korzystając z formatu JSON. Na przykład w aplikacji na poniższym zrzucie ekranu przy użyciu całkowicie jest zadeklarowany:
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "Na przykład aplikacji na tym zrzucie ekranu pokazano całkowicie zadeklarowano przy użyciu") ](json-element-walkthrough-images/01-load-from-file.png) [ ![ ] (json-element-walkthrough-images/02-load-from-file-details.png "na przykład aplikacji na tym zrzucie ekranu pokazano jest całkowicie zadeklarowane za pomocą JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "Na przykład aplikacji na tym zrzucie ekranu pokazano całkowicie zadeklarowano przy użyciu") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "na przykład aplikacji na tym zrzucie ekranu pokazano jest całkowicie zadeklarowane za pomocą JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Umożliwia ponowne przeanalizowanie przykład z [elementów interfejsu API wskazówki](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) Samouczek przedstawiający sposób dodawania ekran szczegółów zadania przy użyciu formatu JSON.
 
@@ -30,7 +30,7 @@ Umożliwia ponowne przeanalizowanie przykład z [elementów interfejsu API wskaz
 
 Przykładem tego przewodnika pozwala utworzyć zadania. Po wybraniu zadania na pierwszym ekranie zostanie wyświetlony ekran szczegółów, jak pokazano:
 
- [ ![](json-element-walkthrough-images/03-task-list.png "Po wybraniu zadania na pierwszym ekranie ekranu szczegółów przedstawiono, jak pokazano")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "Po wybraniu zadania na pierwszym ekranie ekranu szczegółów przedstawiono, jak pokazano")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>Tworzenie JSON
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 W czasie wykonywania plik zostanie pobrana i analizowane przez patrz hasło MT. D, gdy użytkownik przechodzi do drugiego widoku, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "Plik zostanie pobrana i analizowane przez patrz hasło MT. D, gdy użytkownik przechodzi do drugiego widoku")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "Plik zostanie pobrana i analizowane przez patrz hasło MT. D, gdy użytkownik przechodzi do drugiego widoku")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

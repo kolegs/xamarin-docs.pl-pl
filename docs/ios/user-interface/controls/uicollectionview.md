@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 716555c2456663cb2be24498348240c571849c24
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Kolekcja widoków
 
@@ -36,7 +36,7 @@ iOS zapewnia układ klasy o nazwie `UICollectionViewFlowLayout` , która umożli
 
 Komórki są obiekty reprezentujące jeden element w zestawie danych, który zobaczy przez widok kolekcji. Każda komórka jest wystąpieniem `UICollectionViewCell` klasy, która składa się z trzech różnych widoków, jak pokazano na poniższej ilustracji:
 
- [ ![](uicollectionview-images/01-uicollectionviewcell.png "Każda komórka składa się z trzech różnych widoków, jak pokazano poniżej")](uicollectionview-images/01-uicollectionviewcell.png)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "Każda komórka składa się z trzech różnych widoków, jak pokazano poniżej")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 `UICollectionViewCell` Klasa ma następujące właściwości dla każdego z tych widoków:
 
@@ -47,7 +47,7 @@ Komórki są obiekty reprezentujące jeden element w zestawie danych, który zob
 
 Przez ustawienie `ContentView` taki sposób, że jego rozmiar jest mniejszy niż `BackgroundView` i `SelectedBackgroundView`, `BackgroundView` pozwala wizualnie ramki zawartości, w trybie `SelectedBackgroundView` pojawi się po wybraniu komórki, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/02-cells.png "Elementy innej komórki")](uicollectionview-images/02-cells.png)
+ [![](uicollectionview-images/02-cells.png "Elementy innej komórki")](uicollectionview-images/02-cells.png#lightbox)
 
 Komórek na zrzucie ekranu powyżej są tworzone przez dziedziczenie z `UICollectionViewCell` i ustawienie `ContentView`, `SelectedBackgroundView` i `BackgroundView` właściwości, odpowiednio, jak pokazano w poniższym kodzie:
 
@@ -92,7 +92,7 @@ Dodatkowe widoki są widoki, które są dostępne informacje związane z każdej
 
 Na przykład wyświetlanie dodatkowych mogła zostać użyta do prezentowania nagłówka dla określonej sekcji, jak pokazano na poniższej ilustracji:
 
- [ ![](uicollectionview-images/02a-supplementary-view.png "Dodatkowy widok używany do wyświetlania zawartości nagłówka dla określonej sekcji, jak pokazano poniżej")](uicollectionview-images/02a-supplementary-view.png)
+ [![](uicollectionview-images/02a-supplementary-view.png "Dodatkowy widok używany do wyświetlania zawartości nagłówka dla określonej sekcji, jak pokazano poniżej")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 Aby użyć widoku dodatkowych, najpierw musi być zarejestrowana w `ViewDidLoad` metody:
 
@@ -122,7 +122,7 @@ Może być umieszczony w dowolnym miejscu w widoku kolekcji, a może składać s
 
 Widoki decoration są wyłącznie visual widoków, które mogą być wyświetlane w `UICollectionView`. W odróżnieniu od komórek i dodatkowe widoki one są nie opartych na danych. Zawsze są tworzone w ramach podklasy układ, a następnie zmienić jako układ zawartości. Na przykład widoku Decoration może posłużyć do prezentowania Przewija widok tła z zawartością w `UICollectionView`, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/02c-decoration-view.png "Widok decoration czerwonym tle")](uicollectionview-images/02c-decoration-view.png)
+ [![](uicollectionview-images/02c-decoration-view.png "Widok decoration czerwonym tle")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  Poniższy fragment kodu zmienia się tła na czerwono przykłady `CircleLayout` klasy:
 
@@ -153,7 +153,7 @@ Dla wygody `UICollectionViewController` klasy jest dostępny. To jest automatycz
 Jak `UITableView`, `UICollectionView` klasy będzie wywoływać tylko źródła danych można uzyskać komórek elementów znajdujących się na ekranie.
 Komórkom przewinięcie ekranu są umieszczane w kolejce do ponownego użycia, jak na poniższym obrazie przedstawiono:
 
- [ ![](uicollectionview-images/03-cell-reuse.png "Komórkom przewinięcie ekranu są umieszczane w kolejce do ponownego użycia w sposób pokazany poniżej")](uicollectionview-images/03-cell-reuse.png)
+ [![](uicollectionview-images/03-cell-reuse.png "Komórkom przewinięcie ekranu są umieszczane w kolejce do ponownego użycia w sposób pokazany poniżej")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 Uproszczonej ponownemu komórki `UICollectionView` i `UITableView`. Nie trzeba utworzyć komórki bezpośrednio w źródle danych, jeśli jeden nie jest dostępna w kolejce ponownemu jako komórki są zarejestrowane w systemie. Jeśli komórka nie jest dostępna podczas wywołania do usuwania kolejki komórki z kolejki ponownemu, iOS zostanie utworzony automatycznie na podstawie typu lub nib, który został zarejestrowany.
 Ta sama metoda jest również dostępny do dodatkowych widoków.
@@ -207,7 +207,7 @@ Podobnie jak w przypadku źródła danych `UICollectionViewController` jest domy
 
 Po naciśnięciu komórki, przejścia do komórki w zaznaczony stan i nie jest zaznaczone do użytkownika wind ich palca z komórki. Dzięki tymczasowej zmiany wyglądu komórki przed faktycznie jest zaznaczone. W przypadku zaznaczenia, komórki `SelectedBackgroundView` jest wyświetlany. Na poniższym rysunku przedstawiono zaznaczony stan tuż przed ustawieniem występuje:
 
- [ ![](uicollectionview-images/04-cell-highlight.png "Na poniższym rysunku pokazano zaznaczony stan tuż przed ustawieniem występuje")](uicollectionview-images/04-cell-highlight.png)
+ [![](uicollectionview-images/04-cell-highlight.png "Na poniższym rysunku pokazano zaznaczony stan tuż przed ustawieniem występuje")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 Aby zaimplementować wyróżnianie, `ItemHighlighted` i `ItemUnhighlighted` metody `UICollectionViewDelegate` mogą być używane. Na przykład następujący kod zastosuje żółty tła `ContentView` podczas komórki zostanie wyróżniona i białe tło podczas odinstalowywania wyróżnione, jak pokazano na ilustracji powyżej:
 
@@ -257,7 +257,7 @@ Każda komórka w `UICollectionView` Wyświetla menu, które umożliwia wycinani
 
 Poniższy zrzut ekranu Pokaż menu po naciśnięciu klawisza komórki długo:
 
- [ ![](uicollectionview-images/04a-menu.png "Ten zrzut ekranu Pokaż menu po naciśnięciu długo komórki")](uicollectionview-images/04a-menu.png)
+ [![](uicollectionview-images/04a-menu.png "Ten zrzut ekranu Pokaż menu po naciśnięciu długo komórki")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
@@ -303,7 +303,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 To są wystarczające do układu zawartości w siatce. Ponadto podczas orientację zmiany, `UICollectionViewFlowLayout` obsługuje zmienianie rozmieszczenia zawartości odpowiednio, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/05-layout-orientation.png "Przykład zmiany orientacji")](uicollectionview-images/05-layout-orientation.png)
+ [![](uicollectionview-images/05-layout-orientation.png "Przykład zmiany orientacji")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
@@ -319,7 +319,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 Powoduje to odstępy wokół sekcji, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/06-sectioninset.png "Odstępy dookoła sekcji, jak pokazano poniżej")](uicollectionview-images/06-sectioninset.png)
+ [![](uicollectionview-images/06-sectioninset.png "Odstępy dookoła sekcji, jak pokazano poniżej")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
@@ -328,7 +328,7 @@ Powoduje to odstępy wokół sekcji, jak pokazano poniżej:
 
 W wersji przy użyciu `UICollectionViewFlowLayout` bezpośrednio, jego można również odziedziczenia dostosować układ zawartości wzdłuż linii. Na przykład to mogą służyć do tworzenia układu nie jest zawijany komórek w siatce, ale zamiast tego tworzy pojedynczy wiersz z efektem przewijania poziomie, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/07-line-layout.png "Pojedynczy wiersz z efektem przewijania pozioma")](uicollectionview-images/07-line-layout.png)
+ [![](uicollectionview-images/07-line-layout.png "Pojedynczy wiersz z efektem przewijania pozioma")](uicollectionview-images/07-line-layout.png#lightbox)
 
 Aby zaimplementować to przez podklasy `UICollectionViewFlowLayout` wymaga:
 
@@ -423,7 +423,7 @@ Klucza metody do przesłonięcia to:
 
 Na przykład tej samej zawartości może być przedstawiony w układzie cykliczne, jak pokazano poniżej:
 
- [ ![](uicollectionview-images/08-circle-layout.png "Cykliczne niestandardowego układu, jak pokazano poniżej")](uicollectionview-images/08-circle-layout.png)
+ [![](uicollectionview-images/08-circle-layout.png "Cykliczne niestandardowego układu, jak pokazano poniżej")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 Zaawansowane kwestią dotyczącą układów jest to, że można zmienić z układu siatki na układ poziomy przewijania i następnie do tego układu cykliczne wymaga tylko klasy układu dostarczony do `UICollectionView` można zmienić. Nic w `UICollectionView`, jego delegata lub danych źródła zmian kodu w ogóle.
 
@@ -435,7 +435,7 @@ W systemie iOS 9, widok kolekcji (`UICollectionView`) teraz obsługuje przeciąg
 
 Przy użyciu tych nowych metod, można łatwo zaimplementować przeciągnij, aby zmienić kolejność, w widoku kolekcji i dostępna jest opcja Dostosowywanie wyglądu elementy w każdym etapie procesu opcję.
 
-[ ![](uicollectionview-images/intro01.png "Przykład procesu opcję")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Przykład procesu opcję")](uicollectionview-images/intro01.png#lightbox)
 
 W tym artykule firma Microsoft będzie Przyjrzyjmy się implementacja przeciągania do zmiany kolejności w aplikacji platformy Xamarin.iOS, a także niektóre zmiany wprowadzone do kontrolki widok kolekcji z systemem iOS 9:
 
@@ -468,7 +468,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 Przykład szybki start nowego projektu platformy Xamarin.iOS i edytować **Main.storyboard** pliku. Przeciągnij `UICollectionViewController` na powierzchnię projektu:
 
-[ ![](uicollectionview-images/quick01.png "Dodawanie UICollectionViewController")](uicollectionview-images/quick01.png)
+[![](uicollectionview-images/quick01.png "Dodawanie UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
 
 Wybierz widok kolekcji (być może jest ona najłatwiej wykonać te czynności w konspekt dokumentu). Na karcie Układ konsoli właściwości należy ustawić następujące wymiary, jak pokazano na poniższym zrzucie ekranu:
 
@@ -478,28 +478,28 @@ Wybierz widok kolekcji (być może jest ona najłatwiej wykonać te czynności w
 - **Odstępy min**: dla komórek — 8 | Wiersze — 8
 - **Sekcja marginesy**: Top – 16 | Dolny – 16 | Po lewej – 16 | Prawo – 16
 
-[ ![](uicollectionview-images/quick04.png "Ustaw rozmiary widok kolekcji")](uicollectionview-images/quick04.png)
+[![](uicollectionview-images/quick04.png "Ustaw rozmiary widok kolekcji")](uicollectionview-images/quick04.png#lightbox)
 
 Następnie Edytuj domyślne komórki:
     - Zmienianie kolorów tła niebieski
     - Dodaj etykietę do działania jako tytuł w komórce
     - Ustaw identyfikator ponownemu **komórki**
 
-[ ![](uicollectionview-images/quick02.png "Edytuj domyślne komórki")](uicollectionview-images/quick02.png)
+[![](uicollectionview-images/quick02.png "Edytuj domyślne komórki")](uicollectionview-images/quick02.png#lightbox)
 
 Dodawanie ograniczeń do zachowania wyśrodkowana wewnątrz komórki, ponieważ zmienia rozmiar etykiety:
 
 W **konsoli właściwości** dla _CollectionViewCell_ i ustaw **klasy** do `TextCollectionViewCell`:
 
-[ ![](uicollectionview-images/quick05.png "Ustaw klasy TextCollectionViewCell")](uicollectionview-images/quick05.png)
+[![](uicollectionview-images/quick05.png "Ustaw klasy TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
 
 Ustaw **wielokrotnego użytku widok kolekcji** do `Cell`:
 
-[ ![](uicollectionview-images/quick06.png "Ustawianie widoku do ponownego użycia kolekcji do komórki")](uicollectionview-images/quick06.png)
+[![](uicollectionview-images/quick06.png "Ustawianie widoku do ponownego użycia kolekcji do komórki")](uicollectionview-images/quick06.png#lightbox)
 
 Na koniec wybierz etykietę i nadaj mu nazwę `TextLabel`:
 
-[ ![](uicollectionview-images/quick07.png "Etykieta nazwy TextLabel")](uicollectionview-images/quick07.png)
+[![](uicollectionview-images/quick07.png "Etykieta nazwy TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
 Edytuj `TextCollectionViewCell` klasy i dodaj następujące właściwości.:
 
@@ -695,7 +695,7 @@ Zapisać zmiany wprowadzone do interfejsu użytkownika i uruchomić aplikację.
 Jeśli użytkownik wybierze element z listy i przeciągania go do nowej lokalizacji, innych elementów zostanie animować automatycznie, jak przenieść do końca elementu.
 Gdy użytkownik porzuca elementu w nowej lokalizacji, będzie trzymaj do tej lokalizacji. Na przykład:
 
-[ ![](uicollectionview-images/intro01.png "Przykład przeciągnięcie elementu do nowej lokalizacji")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Przykład przeciągnięcie elementu do nowej lokalizacji")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
@@ -1205,7 +1205,7 @@ Tworzy wystąpienie naszych niestandardowego układu, ustawia zdarzenie w celu u
 
 Jeśli firma Microsoft uruchamianie aplikacji platformy Xamarin.iOS widok kolekcji będzie teraz wyglądać następująco:
 
-[ ![](uicollectionview-images/custom01.png "Widok kolekcji będzie wyglądać tak jak to")](uicollectionview-images/custom01.png)
+[![](uicollectionview-images/custom01.png "Widok kolekcji będzie wyglądać tak jak to")](uicollectionview-images/custom01.png#lightbox)
 
 Firma Microsoft może nadal przeciągnij do-zmiany kolejności elementów jako przed, ale elementy teraz zmieni rozmiar, aby dopasować nowej lokalizacji, gdy są one usuwane.
 

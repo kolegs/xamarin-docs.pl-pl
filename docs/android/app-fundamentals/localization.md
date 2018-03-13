@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Lokalizacja systemu android
 
@@ -81,7 +81,7 @@ Większość deweloperów zna już przy użyciu **dpi** sufiksy na **obiektów d
 ![Zrzut ekranu przedstawiający foldery obiektów drawable/zasobów i zasobów/wartości dla wielu identyfikatorów kultury](localization-images/resources.png)
 
 > [!NOTE]
-> **Uwaga:** podczas określania językiem najwyższego poziomu, takich jak `es` tylko dwa znaki są wymagane; jednak podczas określania pełnej ustawień regionalnych, format nazwy katalogu wymaga kreska i małe **r** do dwóch oddzielnych na przykład części **pt rBR** lub **zh-rCN**. To porównać do wartości zwracanej w kodzie, który zawiera znak podkreślenia (np.) `pt_BR`). Oba te są różne wartości .NET `CultureInfo` klasy zastosowań, mającego łącznikiem tylko (np.) `pt-BR`). Zachowaj te różnice na uwadze podczas pracy różnych platform Xamarin.
+> Podczas określania językiem najwyższego poziomu, takich jak `es` tylko dwa znaki są wymagane; jednak podczas określania pełnej ustawień regionalnych, format nazwy katalogu wymaga kreska i małe **r** do oddzielania dwie części, na przykład **pt rBR** lub **zh-rCN**. To porównać do wartości zwracanej w kodzie, który zawiera znak podkreślenia (np.) `pt_BR`). Oba te są różne wartości .NET `CultureInfo` klasy zastosowań, mającego łącznikiem tylko (np.) `pt-BR`). Zachowaj te różnice na uwadze podczas pracy różnych platform Xamarin.
 
 #### <a name="stringsxml-file-format"></a>Format pliku Strings.XML
 
@@ -164,13 +164,13 @@ W **Strings.xml**
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Korzystając z systemem Android 4.2 (poziomu 17 interfejsu API) i nowsze, ustawi
 
 Poniższy zrzut ekranu przedstawia [zlokalizowanych **Tasky** próbki](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) w arabski:
 
-[![Zrzut ekranu przedstawiający Tasky aplikacji w arabski](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![Zrzut ekranu przedstawiający Tasky aplikacji w arabski](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 Następny zrzut ekranu przedstawia [zlokalizowanych **Tasky** próbki](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) (wersja hebrajska):
 
-[![Zrzut ekranu przedstawiający Tasky aplikacji (wersja hebrajska)](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![Zrzut ekranu przedstawiający Tasky aplikacji (wersja hebrajska)](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 Tekst od prawej do lewej jest zlokalizowana przy użyciu **Strings.xml** pliki w taki sam sposób jak tekstu od lewej do prawej.
-
-<a name="testing" />
 
 ## <a name="testing"></a>Testowanie
 

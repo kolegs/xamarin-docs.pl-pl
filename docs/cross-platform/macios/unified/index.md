@@ -3,16 +3,16 @@ title: Ujednolicony interfejs API
 description: "Nowy styl interfejsu API ułatwia niż kiedykolwiek współużytkowanie kodu Mac i z systemem iOS, jak również umożliwiając obsługę 32- i 64 bitowych aplikacji o tej samej binarnego."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 12027F75-70DD-436B-8668-4FF66567B4A8
+ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4845b603fd7877e4bada5f452ef006f0341f0e61
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6d6e4f7a60468090797c61fc78119d759f57b728
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="unified-api"></a>Ujednolicony interfejs API
 
@@ -22,9 +22,6 @@ Do poprawy kodu udostępnianie między Mac i z systemem iOS i umożliwia dewelop
 
 > [!IMPORTANT]
 > **Amortyzacja klasycznego profilu:** miarę dodawania nowych platform w Xamarin.iOS zostanie użyty stopniowo zastąpić funkcji z klasycznym profilu (monotouch.dll). Na przykład opcja z systemem innym niż NRC (liczba nowych ref) została usunięta. NRC zawsze została włączona dla wszystkich ujednoliconego aplikacji (tj. z systemem innym niż NRC nigdy nie był opcję) i ma nie znanych problemów. Przyszłych wydaniach usunie opcję użycia Boehm jako moduł garbage collector. Było również opcję Nigdy nie są dostępne do ujednoliconego aplikacji. Dalej znajduje się w wersji Xamarin.iOS 10.0 zaplanowano całkowite usunięcie klasycznego pomocy technicznej.
-
-
-
 
 ## <a name="overviewoverviewmd"></a>[Omówienie](overview.md)
 
@@ -44,42 +41,7 @@ Wykonaj odpowiednie instrukcje dla danej platformy:
 
 Niezależnie od tego, jakie aplikacje w przypadku migracji, zapoznaj się z [te wskazówki](updating-tips.md) pomaga pomyślnie zaktualizować do interfejsu API Unified.
 
-
-
-# <a name="the-road-to-64-bits"></a>Drogi 64-bitowy
-
-Dla tła na obsługa 32- i 64 bitowych aplikacji, jak i informacji na temat struktury [32 i 64-bitowy zagadnień dotyczących platformy](~/cross-platform/macios/32-and-64.md).
-
- <a name="new-data-types" />
-
-## <a name="new-data-types"></a>Nowe typy danych
-
-Fundament różnica zarówno Mac i interfejsów API systemu iOS Użyj typów danych architektury, które są zawsze 32-bitowych na platformach 32-bitowe i 64-bitowych na platformach 64 bitowych.
-
-Na przykład mapuje Objective-C `NSInteger` typ danych `int32_t` w systemach 32-bitowe i do `int64_t` w systemach 64-bitowych.
-
-Aby dopasować to zachowanie na interfejsach API Unified możemy zastępowanie wcześniejszych zastosowań `int` (który w .NET jest zdefiniowany jako zawsze `System.Int32`) na nowy typ danych: `System.nint`.  Można traktować "n" jako znaczenie "native", więc natywnych liczb całkowitych typu platformy.
-
-Wprowadzamy `nint`, `nuint` i `nfloat` także dostarczanie typy danych wbudowane je w miarę potrzeby.
-
-Aby dowiedzieć się więcej o tych zmianach typu danych, zobacz [natywnych typów](~/cross-platform/macios/nativetypes.md) dokumentu.
-
-#<a name="how-to-detect-the-architecture-of-ios-apps"></a>Jak wykryć architektury aplikacji dla systemu iOS
-
-Mogą wystąpić sytuacje, gdy aplikacja musi wiedzieć, czy działa na 32-bitowym lub 64-bitowym systemie iOS. Poniższy kod może służyć do sprawdzania architekturę:
-
-```csharp
-if (IntPtr.Size == 4) {
-    Console.WriteLine ("32-bit App");
-} else if (IntPtr.Size == 8) {
-    Console.WriteLine ("64-bit App");
-}
-```
-
-
-<a name="namespace-changes" />
-
-# <a name="library-split"></a>Biblioteka podziału
+## <a name="library-split"></a>Biblioteka podziału
 
 Od tego momentu naszych interfejsów API, zostaną wyświetlone na dwa sposoby:
 
@@ -87,6 +49,8 @@ Od tego momentu naszych interfejsów API, zostaną wyświetlone na dwa sposoby:
 -  **Ujednolicony interfejs API:** obsługuje zarówno 32- i 64 programowanie bitowego z jednego interfejsu API dostępne w `Xamarin.iOS.dll` i `Xamarin.Mac.dll` zestawów.
 
 Oznacza to, że dla przedsiębiorstwa Deweloperzy (nie wskazuje sklepu App Store), możesz kontynuować korzystanie z istniejących interfejsów API klasycznych, jak firma Microsoft będzie przechowywać utrzymania je w nieskończoność, lub przeprowadzić uaktualnienie do nowych interfejsów API.
+
+<a name="namespace-changes" />
 
 ## <a name="namespace-changes"></a>Namespace zmiany
 
@@ -136,7 +100,6 @@ Interfejsu API Unified usuwa przestarzałe metody i kilka wystąpień w przypadk
 
 Aby zapoznać się z pełną listą zmiany podczas przełączania z klasycznego interfejsu API Unified, zobacz nasze [vs klasyczny (monotouch.dll) interfejsu API Unified (Xamarin.iOS.dll) różnice](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) dokumentacji.
 
-
 ## <a name="updating-to-unified"></a>Aktualizowanie do ujednoliconego
 
 Kilka stary/uszkodzony/przestarzałe interfejs API w **klasycznego** nie są dostępne w **Unified** interfejsu API. Można łatwiej rozwiązać `CS0616` uaktualnienia ostrzeżenia przed uruchomieniem programu (ręczne lub automatyczne), ponieważ będziesz mieć `[Obsolete]` atrybutu komunikatu (część ostrzeżenia), prowadzące do prawej interfejsu API.
@@ -146,8 +109,7 @@ Należy pamiętać, że firma Microsoft publikują [ *różnicowego* ](https://d
 Wykonaj te instrukcje, aby [zaktualizować istniejące aplikacje dla systemu iOS](~/cross-platform/macios/unified/updating-ios-apps.md), lub [aplikacji Mac](~/cross-platform/macios/unified/updating-mac-apps.md) do interfejsu API Unified.
 Przejrzyj pozostałą część tej strony i [te wskazówki](~/cross-platform/macios/unified/updating-tips.md) Aby uzyskać dodatkowe informacje na temat migracji kodu.
 
-
-## <a name="nuget"></a>NuGet
+### <a name="nuget"></a>NuGet
 
 Pakiety NuGet, które wcześniej obsługiwane platformy Xamarin.iOS przy użyciu klasycznego interfejsu API opublikowane ich zestawów przy użyciu **Monotouch10** moniker platformy.
 
@@ -156,17 +118,13 @@ Interfejsu API Unified wprowadzono nowy identyfikator platformy zgodne pakietów
 > [!IMPORTANT]
 > **Uwaga:** Jeśli wystąpił błąd w formularzu _"błąd 3 nie może zawierać zarówno"monotouch.dll"i"Xamarin.iOS.dll"w tym samym projekcie platformy Xamarin.iOS —"Xamarin.iOS.dll"odwołuje się do jawnie, gdy"monotouch.dll"odwołuje się do niego" xxx Wersja = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ po przekonwertowaniu aplikacji do interfejsów API Unified, jest zazwyczaj z powodu konieczności składnika lub pakietu NuGet w projekcie, który nie został jeszcze zaktualizowany do interfejsu API Unified. Należy usunąć istniejący składnik/NuGet, aktualizacja do wersji, która obsługuje interfejsy API Unified i wykonać czystą kompilację.
 
+### <a name="the-road-to-64-bits"></a>Drogi 64-bitowy
 
-
-
-
-# <a name="the-road-to-64-bits"></a>Drogi 64-bitowy
-
-Dla tła na obsługa 32- i 64 bitowych aplikacji, jak i informacji na temat struktury [32 i 64-bitowy zagadnień dotyczących platformy](~/cross-platform/macios/32-and-64.md).
+Dla tła na obsługa 32- i 64 bitowych aplikacji, jak i informacji na temat struktury [32 i 64-bitowy zagadnień dotyczących platformy](~/cross-platform/macios/32-and-64/index.md).
 
  <a name="new-data-types" />
 
-## <a name="new-data-types"></a>Nowe typy danych
+#### <a name="new-data-types"></a>Nowe typy danych
 
 Fundament różnica zarówno Mac i interfejsów API systemu iOS Użyj typów danych architektury, które są zawsze 32-bitowych na platformach 32-bitowe i 64-bitowych na platformach 64 bitowych.
 
@@ -178,7 +136,7 @@ Wprowadzamy `nint`, `nuint` i `nfloat` także dostarczanie typy danych wbudowane
 
 Aby dowiedzieć się więcej o tych zmianach typu danych, zobacz [natywnych typów](~/cross-platform/macios/nativetypes.md) dokumentu.
 
-#<a name="how-to-detect-the-architecture-of-ios-apps"></a>Jak wykryć architektury aplikacji dla systemu iOS
+### <a name="how-to-detect-the-architecture-of-ios-apps"></a>Jak wykryć architektury aplikacji dla systemu iOS
 
 Mogą wystąpić sytuacje, gdy aplikacja musi wiedzieć, czy działa na 32-bitowym lub 64-bitowym systemie iOS. Poniższy kod może służyć do sprawdzania architekturę:
 
@@ -190,10 +148,9 @@ if (IntPtr.Size == 4) {
 }
 ```
 
-
 <a name="deprecated-apis" />
 
-#<a name="arrays-and-systemcollectionsgeneric"></a>System.Collections.Generic — i tablic
+### <a name="arrays-and-systemcollectionsgeneric"></a>System.Collections.Generic — i tablic
 
 Ponieważ C# indeksatory oczekuje typu `int`, musisz jawnie rzutowania `nint` wartości do `int` do uzyskania dostępu do elementów w kolekcji lub tablicy. Na przykład:
 
@@ -209,7 +166,7 @@ public string GetName(nint index) {
 
 Jest to zachowanie oczekiwane, ponieważ rzutowania z `int` do `nint` jest stratna na 64-bitowym, niejawna konwersja nie została wykonana.
 
-# <a name="converting-datetime-to-nsdate"></a>Konwertowanie daty/godziny na NSDate
+### <a name="converting-datetime-to-nsdate"></a>Konwertowanie daty/godziny na NSDate
 
 Korzystając z Unified API niejawnej konwersji wartości `DateTime` do `NSDate` wartości jest już wykonywane. Te wartości, należy jawnie można przekonwertować typu na inny. Następujące metody rozszerzenia może służyć do automatyzowania ten proces:
 
@@ -237,7 +194,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 <a name="deprecated-typos" />
 
-# <a name="deprecated-apis-and-typos"></a>Przestarzałe interfejsy API i błędów
+### <a name="deprecated-apis-and-typos"></a>Przestarzałe interfejsy API i błędów
 
 Wewnątrz Xamarin.iOS klasycznego interfejsu API (monotouch.dll) `[Obsolete]` atrybut był używany na dwa sposoby:
 
@@ -245,12 +202,11 @@ Wewnątrz Xamarin.iOS klasycznego interfejsu API (monotouch.dll) `[Obsolete]` at
  Takie interfejsu API (i `[Obsolete]` atrybut) są umieszczone w nowej zestawów platformy Xamarin.iOS.
 -  **Niepoprawny interfejs API** niektóre interfejsu API, które miał literówki na ich nazwy.
 
-
 Dla oryginalnego zestawów (monotouch.dll i XamMac.dll) firma Microsoft zachowana poprzedni kod dostępne zgodność, ale zostały usunięte z zestawów Unified API (Xamarin.iOS.dll i Xamarin.Mac)
 
 <a name="NSObject_ctor" />
 
-# <a name="nsobject-subclasses-ctorintptr"></a>.Ctor(IntPtr) podklasy NSObject
+### <a name="nsobject-subclasses-ctorintptr"></a>.Ctor(IntPtr) podklasy NSObject
 
 Każdy `NSObject` podklasy ma konstruktora akceptującego `IntPtr`. Jest to, jak firma Microsoft wystąpienia nowe wystąpienie zarządzanego z uchwyt macierzysty ObjC.
 
@@ -266,7 +222,7 @@ Należy pamiętać, że `.ctor(NSObjectFlag)` jest teraz również `protected` ,
 
 <a name="NSAction" />
 
-# <a name="nsaction-replaced-with-action"></a>NSAction zastąpione akcji
+### <a name="nsaction-replaced-with-action"></a>NSAction zastąpione akcji
 
 Z API Unified `NSAction` zostały usunięte na rzecz standard .NET `Action`. Jest to duży poprawy jakości, ponieważ `Action` jest wspólny typ .NET, podczas gdy `NSAction` został specyficzne dla platformy Xamarin.iOS. Robią dokładnie tak samo, ale były unikatowe i niezgodne typy i spowodowało więcej kodu o są zapisywane w ten sam efekt.
 
@@ -285,7 +241,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 Wcześniej wyniesie wystąpi błąd kompilatora ponieważ `Action` nie można przypisać do `NSAction`, ale ponieważ `UITapGestureRecognizer` teraz przyjmuje `Action` zamiast `NSAction` jest nieprawidłowy w Unified API.
 
-# <a name="custom-delegates-replaced-with-actiont"></a>Niestandardowych delegatów zastąpione akcji<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>Niestandardowych delegatów zastąpione akcji<T>
 
 W **ujednoliconego** prostych (np. jeden parametr) zostały zastąpione delegatów .net `Action<T>`. Np.
 
@@ -293,14 +249,13 @@ W **ujednoliconego** prostych (np. jeden parametr) zostały zastąpione delegat�
 
 można teraz używać jako `Action<NSNotification>`. Ten kod Podnieś poziom ponownego wykorzystania i zmniejszyć zduplikowania kodu wewnątrz zarówno Xamarin.iOS własnych aplikacji.
 
-
-# <a name="taskbool-replaced-with-taskbooleannserror"></a>Zadanie<bool> zastąpione zadań < wartość logiczna, NSError >>
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Zadanie<bool> zastąpione zadań < wartość logiczna, NSError >>
 
 W **klasycznego** wystąpiły pewne async interfejsów API zwracanie `Task<bool>`. Jednak niektóre z nich gdzie ma być używany, gdy `NSError` było częścią podpisu, tj. `bool` został już `true` musiały catch wyjątku, aby uzyskać `NSError`.
 
 Ponieważ błędy są często i wartości zwracanej nie jest przydatne w tym wzorcu został zmieniony w **ujednoliconego** do zwrócenia `Task<Tuple<Boolean,NSError>>`. Dzięki temu można sprawdzić sukcesów i wszelkie błąd, który może się to zdarzyć podczas wywołania asynchronicznego.
 
-# <a name="nsstring-vs-string"></a>Ciąg wersji programu vs NSString
+### <a name="nsstring-vs-string"></a>Ciąg wersji programu vs NSString
 
 W niektórych przypadkach niektóre stałe musiała zostać zmieniony z `string` do `NSString`, np. `UITableViewCell`
 
@@ -314,10 +269,9 @@ W niektórych przypadkach niektóre stałe musiała zostać zmieniony z `string`
 
 Generalnie firma Microsoft preferowane .NET `System.String` typu. Jednak mimo z wytycznymi firmy Apple, niektóre natywnego interfejsu API są porównywania wskaźniki stałe (nie ciąg, sam), to prawidłowe tylko gdy uwidaczniamy stałe jako `NSString`.
 
-
  <a name="protocols" />
 
-# <a name="objective-c-protocols"></a>Protokoły języka Objective C
+### <a name="objective-c-protocols"></a>Protokoły języka Objective C
 
 Oryginalnego MonoTouch nie miał pełną obsługę dla protokołów ObjC i niektóre,-optymalne, interfejsu API zostały dodane do obsługi najbardziej typowym scenariuszem. To ograniczenie nie istnieje, ale dla zgodności z poprzednimi wersjami kilka interfejsów API są przechowywane wokół wewnątrz `monotouch.dll` i `XamMac.dll`.
 
@@ -345,7 +299,7 @@ Może on również niektóre API być bardziej dokładne i łatwy w użyciu, np.
 
 Takie interfejsu API są teraz łatwiejsze do nas, bez odwołuje się z dokumentacją i uzupełniania kodu użytkownika IDE zapewnia bardziej użyteczne sugestie oparte na protokole/interfejsu.
 
-## <a name="nscoding-protocol"></a>NSCoding Protocol
+#### <a name="nscoding-protocol"></a>NSCoding Protocol
 
 Nasze powiązania pierwotnej uwzględnione .ctor(NSCoder) dla każdego typu — nawet wtedy, gdy nie obsługuje `NSCoding` protokołu.  Pojedynczy `Encode(NSCoder)` metody był obecny w `NSObject` do kodowania obiektu.
 Jednak ta metoda będzie działać tylko, jeśli wystąpienie były zgodne z protokołem NSCoding.
@@ -354,18 +308,16 @@ Interfejs API Unified Naprawiono to.  Nowe zestawy będą mieć tylko `.ctor(NSC
 
 Niski wpływ: W większości przypadków ta zmiana nie mają wpływu na aplikacje jako nie można używać konstruktorów stare, zostały usunięte.
 
-
 ## <a name="further-tips"></a>Dalsze wskazówki
 
 Należy pamiętać o dodatkowych zmian są wymienione w [porady dotyczące aktualizowania aplikacji interfejsu API Unified](~/cross-platform/macios/unified/updating-tips.md).
 
-# <a name="sample-code"></a>Przykładowy kod
+## <a name="sample-code"></a>Przykładowy kod
 
 Począwszy od 31 lipca możemy opublikowano porty próbek iOS ten nowy interfejs API na `magic-types` gałęzi w [monotouch przykłady](https://github.com/xamarin/monotouch-samples/commits/magic-types).
 
 Dla komputerów Mac, sprawdzamy próbek w obu [przykłady mac](https://github.com/xamarin/mac-samples) repozytorium (przedstawiający nowych interfejsów API w Mavericks/Yosemite), a także przykłady 32/x 64 w gałęzi typy magic [przykłady mac](https://github.com/xamarin/monotouch-samples/commits/magic-types).
 -->
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

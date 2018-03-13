@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 4c61a588eafdf0a86f4124d264c41cabef3e7a14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Witaj, Android Wieloekranowy: Szybki Start
 
@@ -22,7 +22,7 @@ _W tym przewodniku dwuczęściową rozszerza Phoneword aplikacji do obsługi dru
 
 W tym przewodniku części wskazówki dodasz drugi ekranu do [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) aplikacji do rejestrowania historii numerów translacji przy użyciu aplikacji. [Końcowego aplikacji](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/) będzie mieć drugi ekranu, który wyświetla numery, które zostały "tłumaczone", jak pokazano na zrzucie ekranu po prawej stronie:
 
-[![Zrzuty ekranu aplikacji przykład](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Zrzuty ekranu aplikacji przykład](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 Towarzyszącego [nowości](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md) sprawdza co został utworzony i zawiera omówienie architektury, nawigacji i innych nowych pojęć Android napotkał na bieżąco.
 
@@ -44,15 +44,15 @@ Uruchamianie przez otwarcie **Phoneword** aplikacji w Visual Studio i edytowanie
 
 Z **przybornika**, przeciągnij **przycisk** na projekt surface i umieść go poniżej **TranslatedPhoneWord** TextView. W **właściwości** okienka, zmień przycisk **identyfikator** do `@+id/TranslationHistoryButton` 
 
-[![Przeciągnij nowy przycisk](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png)
+[![Przeciągnij nowy przycisk](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
 Ustaw **tekst** właściwość przycisk, aby `@string/translationHistory`. Android projektanta zinterpretuje to dosłownie, ale użytkownik chce wprowadź kilka zmian, tak aby tekst przycisku zostaną wyświetlone poprawnie:
 
-[![Ustawianie tekstu przycisku historii tłumaczenia](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png)
+[![Ustawianie tekstu przycisku historii tłumaczenia](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png#lightbox)
 
 Rozwiń węzeł **wartości** węźle **zasobów** folderu w **Eksploratora rozwiązań** i kliknij dwukrotnie plik zasobów ciągu **Strings.xml**:
 
-[![Open Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png)
+[![Open Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 Dodaj `translationHistory` ciągu nazwy i wartości do **Strings.xml** plik i zapisać go:
 
@@ -66,17 +66,17 @@ Dodaj `translationHistory` ciągu nazwy i wartości do **Strings.xml** plik i za
 
 **Historii tłumaczenia** tekst przycisku należy zaktualizować, aby odzwierciedlić nową wartość ciągu:
 
-[![Przycisk odzwierciedla nową wartość ciągu](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)
+[![Przycisk odzwierciedla nową wartość ciągu](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png#lightbox)
 
 Z **historii tłumaczenia** przycisk jest zaznaczony na powierzchni projektu, Znajdź `enabled` w **właściwości** okienko i ustaw dla niego wartość `false` wyłączenie przycisku. To spowoduje, że przycisk, aby stać się ciemniejszego na powierzchni projektu:
 
-[![Wyłącz przycisk Historia tłumaczenia](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png)
+[![Wyłącz przycisk Historia tłumaczenia](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>Tworzenie drugiego działania
 
 Utworzyć drugi działanie zasilania drugi ekranu. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz pozycję **Dodaj > Nowy element...** :
 
-[![Dodaj nowy plik](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png)
+[![Dodaj nowy plik](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
 W **Dodaj nowy element** okno dialogowe, wybierz **Visual C# > działania** i nazwij plik działania **TranslationHistoryActivity.cs**.
 
@@ -171,7 +171,7 @@ Zapisz i tworzenia aplikacji, aby upewnić się, że nie ma żadnych błędów.
 
 Wdróż aplikację na emulator lub urządzenie. Poniższe zrzuty ekranu przedstawiają działanie **Phoneword** aplikacji:
 
-[![Przykład zrzuty ekranu](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Przykład zrzuty ekranu](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -181,16 +181,16 @@ Uruchamianie przez otwarcie **Phoneword** projektu programu Visual Studio for Ma
 
 Z **przybornika**, przeciągnij **przycisk** na projekt surface i umieść go poniżej **TranslatedPhoneWord** TextView. W **właściwości** konsoli, zmień przycisk **identyfikator** do `@+id/TranslationHistoryButton` 
 
-[![Przeciągnij nowy przycisk](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png)
+[![Przeciągnij nowy przycisk](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
 Ustaw **tekst** właściwość przycisk, aby `@string/translationHistory`. Android projektanta zinterpretuje to dosłownie, ale użytkownik chce wprowadź kilka zmian, tak aby tekst przycisku zostaną wyświetlone poprawnie:
 
-[![Ustawianie tekstu przycisku historii tłumaczenia](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png)
+[![Ustawianie tekstu przycisku historii tłumaczenia](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
 
 Rozwiń węzeł **wartości** węźle **zasobów** folderu w **konsoli rozwiązania** i kliknij dwukrotnie plik zasobów ciągu **Strings.xml**:
 
-[![Otwórz ciągów](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png)
+[![Otwórz ciągów](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
 
 
 Dodaj `translationHistory` ciągu nazwy i wartości do **Strings.xml** plik i zapisać go:
@@ -205,12 +205,12 @@ Dodaj `translationHistory` ciągu nazwy i wartości do **Strings.xml** plik i za
 
 **Historii tłumaczenia** tekst przycisku należy zaktualizować, aby odzwierciedlić nową wartość ciągu:
 
-[![Przycisk odzwierciedla nową wartość ciągu](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png)
+[![Przycisk odzwierciedla nową wartość ciągu](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
 
 Z **historii tłumaczenia** przycisk wybranego na powierzchnię projektu, otwórz **zachowanie** karcie w **konsoli właściwości** i kliknij dwukrotnie **włączone**  pole wyboru, aby wyłączyć przycisku. To spowoduje, że przycisk, aby stać się ciemniejszego na powierzchni projektu:
 
-[![Wyłącz przycisk Historia tłumaczenia](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png)
+[![Wyłącz przycisk Historia tłumaczenia](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>Tworzenie drugiego działania
 
@@ -304,7 +304,7 @@ translateButton.Click += (sender, e) =>
 
 Wdróż aplikację na emulator lub urządzenie. Poniższe zrzuty ekranu przedstawiają działanie **Phoneword** aplikacji:
 
-[![Przykład zrzuty ekranu](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Przykład zrzuty ekranu](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 -----
 

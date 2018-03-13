@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>Układy
 
-Platformy Xamarin.Forms ma kilka układów i funkcji do organizowania zawartości ekranu. Każdego formantu układu jest opisane poniżej, a także szczegółowe informacje na temat obsługi zmiany orientacji ekranu:
+Platformy Xamarin.Forms ma kilka układów i funkcji do organizowania zawartości ekranu. 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Układy platformy Xamarin.Forms, przez [Xamarin University](https://university.xamarin.com/)**
+
+Każdego formantu układu jest opisane poniżej, a także szczegółowe informacje na temat obsługi zmiany orientacji ekranu:
 
 * **[StackLayout](stack-layout.md)**  &ndash; służy do rozmieszczania liniowo, widoki poziomo czy pionowo. Widoki StackLayout może być wyrównany do Centrum lewego lub prawego układu.
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; używany do rozmiaru w postaci wartości bezwzględne lub stosunek & Rozmieść widoków ustawiając współrzędnych. AbsoluteLayout może służyć do warstwy widoków, a także zakotwiczyć je w lewo, prawo lub center.
@@ -35,7 +42,7 @@ Formanty platformy można również bezpośrednio w układów platformy Xamarin.
 
 Poniższa ilustracja wizualizuje formantów układu:
 
-[ ![](images/layouts-sml.png "Układy platformy Xamarin.Forms")](images/layouts.png "układów platformy Xamarin.Forms")
+[![](images/layouts-sml.png "Układy platformy Xamarin.Forms")](images/layouts.png#lightbox "układów platformy Xamarin.Forms")
 
 ## <a name="choosing-the-right-layout"></a>Wybieranie układu prawo
 
@@ -176,7 +183,7 @@ Platformy Xamarin.Forms i swoją wbudowanych układów są w stanie obsługiwać
 
 systemy iOS, Android i Windows wszystkie obsługi większych rozmiarów ekranu na platformach tablet urządzeń (a także komputerów przenośnych i stacjonarnych dla systemu Windows). Platformy Xamarin.Forms umożliwia optymalizowanie aplikacji na ekranach większych wykrywania typu urządzenia i dostosowywania układ strony lub przy użyciu całkiem strony całkowicie dla większych ekranów.
 
-### <a name="creating-a-custom-layoutcustommd"></a>[Tworzenie układu niestandardowego](custom.md)
+### <a name="creating-a-custom-layoutcustommd"></a>[Tworzenie niestandardowego układu](custom.md)
 
 Cztery układ klasy — definiuje platformy Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/), i [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), i każdego Rozmieszcza elementy podrzędne w inny sposób. Jednak czasami jego niezbędne do obsługi zawartości strony przy użyciu układu nie udostępniane przez platformy Xamarin.Forms. W tym artykule opisano sposób tworzenia niestandardowego układu klasy i prezentuje działanie zależne orientacji `WrapLayout` klasy, która Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
 

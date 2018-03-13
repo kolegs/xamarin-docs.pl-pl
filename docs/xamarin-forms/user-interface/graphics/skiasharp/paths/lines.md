@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linie i obrysu CAP
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Dla każdego członka `SKStrokeCap` wyliczenia, obsługę rysuje dwa wiersze, jeden z grubość pociągnięć 50 pikseli i innego wiersza znajduje się w górnej części z grubość pociągnięć 2 pikseli. Wiersz jest za zadanie zilustrowanie geometrycznych rozpoczęcia i zakończenia, niezależnie od grubości linii i koniec obrysu wiersza:
 
-[![](lines-images/strokecaps-small.png "Potrójna zrzut ekranu przedstawiający stronę Caps obrysu")](lines-images/strokecaps-large.png "Potrójna zrzut ekranu przedstawiający stronę Caps obrysu")
+[![](lines-images/strokecaps-small.png "Potrójna zrzut ekranu przedstawiający stronę Caps obrysu")](lines-images/strokecaps-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Caps obrysu")
 
 Jak widać, `Square` i `Round` caps obrysu skutecznie wydłużyć wiersza o połowę szerokości obrysu na początku wiersza i ponownie na końcu. To rozszerzenie staje się ważne, gdy konieczne jest Określ wymiary obiektu odtwarzane grafiki.
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 Zrzut ekranu przedstawia różne `Picker` wybrane elementy na trzy platformach:
 
-[![](lines-images/multiplelines-small.png "Potrójna zrzut ekranu przedstawiający stronę wiele wierszy")](lines-images/multiplelines-large.png "Potrójna zrzut ekranu przedstawiający stronę wielu wierszy")
+[![](lines-images/multiplelines-small.png "Potrójna zrzut ekranu przedstawiający stronę wiele wierszy")](lines-images/multiplelines-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wielu wierszy")
 
 IPhone, w lewym pokazuje sposób `SKPointMode.Points` powoduje, że element członkowski wyliczenia `DrawPoints` do renderowania każdego z punktów w `SKPoint` tablicy jako kwadrat, jeśli jest zakończenie linii `Butt` lub `Square`. Okręgi są renderowane w przypadku zakończenia wiersza `Round`.
 

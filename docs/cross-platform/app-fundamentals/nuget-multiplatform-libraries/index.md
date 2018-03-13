@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 66bf9c215e3d30687fa8037220b8b35409ca285d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 49e7c00feb697d25d61a5e09b051c41945c260c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>Projekty NuGet (Nugetizer 3000)
 
@@ -21,14 +21,18 @@ _Automatyczne tworzenie pakietów NuGet udostępnianie kodu na platformach przy 
 Istnieje możliwość automatycznego tworzenia pakietów NuGet udostępnianie kodu na platformach przy użyciu _Nugetizer 3000_. Sprawia to, że możliwe jest utworzenie pakietów NuGet z istniejących projektów biblioteki lub tworząc nowe **projektu biblioteki Multiplatform**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
 Nugetizer 3000 jest dołączony do programu Visual Studio for Mac 6.2.
+
+[![](images/mulitplatform-library-sml.png "Utwórz nowe okno Multiplatform biblioteki")](images/mulitplatform-library.png#lightbox)
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-<a name="to-use-the-nugetizer-3000-in-visual-studio-please-download-and-run-the-vsix-installerhttpbitlynugetizer-2017"></a>Aby użyć Nugetizer 3000 w programie Visual Studio, skontaktuj się z [Pobierz i uruchom Instalatora VSIX](http://bit.ly/nugetizer-2017).
+
+Aby użyć Nugetizer 3000 w programie Visual Studio, skontaktuj się z [Pobierz i uruchom Instalatora VSIX](http://bit.ly/nugetizer-2017).
+
 -----
 
-
-
-[ ![](images/mulitplatform-library-sml.png "Utwórz nowe okno Multiplatform biblioteki")](images/mulitplatform-library.png)
+## <a name="building-nuget-packages"></a>Pakiety NuGet Building
 
 Po skonfigurowaniu pełną pakiet NuGet, który jest używany wewnętrznie udostępnianie kodu z innych aplikacji lub przekazany do danych wyjściowych co kompilacji projektu [NuGet.org](https://www.nuget.org).
 
@@ -49,7 +53,7 @@ Istnieją trzy scenariusze dla tej funkcji:
 Zapoznaj się [przewodnik metadanych](metadata.md) szczegółowe informacje o wymaganych i opcjonalnych metadanych, który musi zostać dodany do dowolnego pakietu NuGet.
 
 
-## <a name="further-nuget-information"></a>Dalsze informacje NuGet
+## <a name="further-nuget-information"></a>Więcej informacji o NuGet
 
 Przeczytaj więcej na temat [ręcznego tworzenia NuGets xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) oraz sposób [obejmują pakietu NuGet w aplikacji](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 

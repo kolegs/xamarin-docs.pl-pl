@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6b4d63637eae7c1719f3f6e525327d416ddff59d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-styles"></a>Wprowadzenie do stylów
 
@@ -84,7 +84,7 @@ public class NoStylesPageCS : ContentPage
 
 Każdy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpienie ma kontrolowanie wyglądu tekstu wyświetlanego przez wartości właściwości identyczne `Label`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](introduction-images/no-styles.png "Etykieta wygląd bez style")](introduction-images/no-styles-large.png "etykietę wygląd bez style")
+[![](introduction-images/no-styles.png "Etykieta wygląd bez style")](introduction-images/no-styles-large.png#lightbox "etykietę wygląd bez style")
 
 Ustawianie wygląd każdego pojedynczego formantu może być powtarzane i błąd podatnych na błędy. Zamiast tego stylu można utworzyć, która definiuje wygląd, a następnie stosowane do wymaganych kontrolek.
 

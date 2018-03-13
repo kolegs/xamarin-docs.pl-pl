@@ -4,14 +4,15 @@ description: "Odnajdywanie przekształcenia skali SkiaSharp skalowania obiektów
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>Przekształcanie skali
 
@@ -103,7 +104,7 @@ Być może zastanawiasz się: jak skalowania czynniki wpływają na wartość zw
 
 Jak widać, wszystko rysowane po `Scale` proporcjonalnie wywołać zwiększa:
 
-[![](scale-images/basicscale-small.png "Potrójna zrzut ekranu strony podstawowej skali")](scale-images/basicscale-large.png "Potrójna zrzut ekranu strony podstawowej skali")
+[![](scale-images/basicscale-small.png "Potrójna zrzut ekranu strony podstawowej skali")](scale-images/basicscale-large.png#lightbox "Potrójna zrzut ekranu strony podstawowej skali")
 
 Tekst, szerokość linii kreskowanej długość kreski w tym wierszu zaokrąglania narożników i marginesu 10 pikseli od lewej lub górnej krawędzi obszaru roboczego i zaokrąglony prostokąt podlegają wszystkie tego samego czynniki skalowania.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Znajduje się w lewym górnym rogu zaokrąglony prostokąt `margin` pikseli z lewej strony obszaru roboczego i `margin` pikseli od góry. Dwa ostatnie argumenty do `Scale` metody ustawienie tych wartości oraz szerokość i wysokość tekst, który jest także szerokość i wysokość prostokąta zaokrąglone. Oznacza to, że wszystkie skalowania ma względem Centrum tego prostokąta:
 
-[![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")](scale-images/centeredscale-large.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")
+[![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")](scale-images/centeredscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")
 
 `Slider` Elementy w tym programie mają zakres & #x 2013; 10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds` Prostokąt uzyskane w górnej części tego kodu, a następnie używana później szerokość i wysokość obszaru roboczego w `Scale` wywołania. Czy wywołanie samodzielnie są skalowane współrzędne ścieżki, gdy jest on renderowany przy `DrawPath` wywołanie, ale gwiazdy będzie wyśrodkowany w prawym górnym rogu obszaru roboczego. Musi zostać przesunięty w dół i w lewo. To zadanie z `Translate` wywołania. Te dwie właściwości `pathBounds` są-około 100, więc czynniki tłumaczenia około 100. Ponieważ `Translate` po wywołaniu `Scale` wywołać, te wartości są skalowane skutecznie czynniki skalowania, co ich przenieść w środku kanwy środku gwiazdy:
 
-[![](scale-images/anisotropicscaling-small.png "Potrójna zrzut ekranu strony skalowanie anizotropowych")](scale-images/anisotropicscaling-large.png "Potrójna zrzut ekranu strony anizotropowych skalowania")
+[![](scale-images/anisotropicscaling-small.png "Potrójna zrzut ekranu strony skalowanie anizotropowych")](scale-images/anisotropicscaling-large.png#lightbox "Potrójna zrzut ekranu strony anizotropowych skalowania")
 
 Należy zwrócić uwagę w inny sposób `Scale` i `Translate` wywołania jest można ustalić skutek w odwrotnej kolejności: `Translate` wywołania przewiduje ścieżka staje się ona pełni widoczny, ale orientacji w lewym górnym rogu obszaru roboczego. `Scale` — Metoda następnie sprawia, że ten gwiazdkę większy względem lewego górnego rogu.
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 Jest podobne logiki i tekst rozwijany do rozmiaru strony oparte na prostokątne granice tekst zwrócony z `MeasureText` (czyli nieco większy niż rzeczywisty tekst):
 
-[![](scale-images/anisotropictext-small.png "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowej")](scale-images/anisotropictext-large.png "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowych")
+[![](scale-images/anisotropictext-small.png "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowej")](scale-images/anisotropictext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowych")
 
 Jeśli chcesz zachować współczynnik proporcji obiektów graficznych chcesz użyć izotropowego skalowania. **Izotropowego skalowanie** strony pokazano to odnosi się do 11 gwiazdki. Koncepcyjnie kroki do wyświetlania obiektu graficznego na środku strony z izotropowego skalowanie są:
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kod wyświetla również gwiazdy dziesięć razy, zawsze zmniejszenie skalowanie dwuetapowego przy 10% i stopniowo zmiana koloru z kolor czerwony, niebieski:
 
-[![](scale-images/isotropicscaling-small.png "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowanie")](scale-images/isotropicscaling-large.png "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowania")
+[![](scale-images/isotropicscaling-small.png "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowanie")](scale-images/isotropicscaling-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowania")
 
 
 ## <a name="related-links"></a>Linki pokrewne

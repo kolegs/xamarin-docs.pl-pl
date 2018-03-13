@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: e71d497201cc2d8f2b3e2b8b252e5f963806a75b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-bindings"></a>Dostosowywanie powiązania
 
 _Powiązanie z platformy Xamarin.Android można dostosować, edytując metadanych, która kontroluje proces wiązania. Ręczne modyfikacje często są niezbędne w celu rozwiązania błędów kompilacji i kształtowania wynikowy interfejsu API, aby był bardziej spójny z C# / .NET. Te przewodniki opisano strukturę tych metadanych, jak modyfikować metadanych i sposobu użycia JavaDoc odzyskać nazwy parametrów metody._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
  
@@ -34,7 +33,6 @@ Xamarin.Android automatyzuje większa część procesu powiązania; Jednak w nie
 
 Możesz wprowadzić niektóre lub wszystkie te zmiany, modyfikując metadanych, która kontroluje proces wiązania.
 
-<a name="guides" />
 
 ## <a name="guides"></a>Przewodniki
 

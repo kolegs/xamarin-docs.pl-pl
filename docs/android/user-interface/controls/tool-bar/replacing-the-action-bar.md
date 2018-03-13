@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 91d5612991c2297418cf7003c499c1a1bbfc7558
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="replacing-the-action-bar"></a>Zastępowanie na pasku akcji
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -36,16 +35,14 @@ Aby zastąpić pasku akcji domyślnej aplikacji z `Toolbar`:
 W poniższych sekcjach opisano ten proces. Prosta aplikacja jest tworzona i zastępuje jego pasku akcji z dostosowany `Toolbar`. 
 
 
-<a name="start_project" />
 
 ## <a name="start-an-app-project"></a>Projekt aplikacji
 
 Utwórz nowy projekt dla systemu Android o nazwie **ToolbarFun** (zobacz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) uzyskać więcej informacji dotyczących tworzenia nowego projektu systemu Android). Po utworzeniu tego projektu, Ustaw poziom interfejsu API systemu Android docelowy i co najmniej **Android 5.0 (21 poziom interfejsu API — typu lizak)**. Aby uzyskać więcej informacji na temat ustawienie wersji Android poziomów zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md). Wbudowane i uruchamianie aplikacji wyświetla na pasku akcji domyślnej w tym zrzut ekranu: 
 
-[![Zrzut ekranu przedstawiający pasek Akcja domyślna](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png)
+[![Zrzut ekranu przedstawiający pasek Akcja domyślna](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
 
-<a name="custom_theme" />
 
 ## <a name="create-a-custom-theme"></a>Utwórz kompozycję niestandardową
 
@@ -89,7 +86,6 @@ Edytuj **Properties/AndroidManifest.xml** i dodaj następującą `android:theme`
 Aby uzyskać więcej informacji dotyczących stosowania niestandardowy motyw do aplikacji, zobacz [przy użyciu niestandardowych kompozycji](~/android/user-interface/material-theme.md#customtheme). 
 
 
-<a name="toolbar_layout" />
 
 ## <a name="define-a-toolbar-layout"></a>Zdefiniuj Układ paska narzędzi
 
@@ -127,7 +123,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 To ustawienie jest używane, tak aby elementy menu, natomiast ciemniejszego kolor tła.
 
 
-<a name="include_layout" />
 
 ## <a name="include-the-toolbar-layout"></a>Obejmują Układ paska narzędzi
 
@@ -153,7 +148,6 @@ Przeprowadź edycję pliku układu **Resources/layout/Main.axml** i zastąp jego
 Ten układ zawiera `Toolbar` zdefiniowane w **toolbar.xml** i używa `RelativeLayout` Aby określić, że `Toolbar` ma być umieszczone na górze interfejsu użytkownika (p. wyżej przycisku). 
 
 
-<a name="activate_toolbar" />
 
 ## <a name="find-and-activate-the-toolbar"></a>Znajdź i uaktywnić pasek narzędzi
 
@@ -173,12 +167,11 @@ ActionBar.Title = "My Toolbar";
 
 Ten kod znajduje `Toolbar` i wywołania `SetActionBar` , aby `Toolbar` spowoduje przejście na domyślne działania Pasek właściwości. Tytuł paska narzędzi jest zmieniana na **Moje narzędzi**. W tym przykładzie kodu `ToolBar` można odwoływać się bezpośrednio jako pasek akcji. Kompilowanie i uruchamianie tej aplikacji &ndash; dostosowywane `Toolbar` jest wyświetlany zamiast na pasku akcji domyślne: 
 
-[![Zrzut ekranu przedstawiający niestandardowych narzędzi ze schematem kolor zielony](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png)
+[![Zrzut ekranu przedstawiający niestandardowych narzędzi ze schematem kolor zielony](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
 
 Zwróć uwagę, że `Toolbar` wyglądzie niezależnie od `Theme.Material.Light.DarkActionBar` motywu, która jest stosowana do pozostałej części aplikacji. 
 
 
-<a name="main_menus" />
  
 ## <a name="add-menu-items"></a>Dodawanie elementów Menu 
 
@@ -197,13 +190,11 @@ Aby dodać menu `Toolbar`:
 Poniższe sekcje pokazują ten proces przez dodanie **Edytuj** i **zapisać** elementy menu do dostosowywane `Toolbar`. 
 
 
-<a name="menu_icons" />
 
 ### <a name="install-menu-icons"></a>Zainstaluj ikony Menu
 
 Kontynuowanie `ToolbarFun` przykładową aplikację, Dodaj menu ikony do projektu aplikacji. Pobierz [icons.zip narzędzi](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) i Rozpakuj go. Skopiuj zawartość wyodrębnionego *mipmap -* foldery do projektu *mipmap -* foldery znajdujące się w **ToolbarFun/zasoby** i dołączyć każdy plik dodany ikony w projekcie.
 
-<a name="menu_resource" />
 
 ### <a name="define-a-menu-resource"></a>Zdefiniuj zasób Menu
 
@@ -239,7 +230,6 @@ Plik XML tworzy trzy elementy menu:
 
 `showAsAction` Atrybuty **Edytuj** i **zapisać** elementy menu są ustawione na `ifRoom` &ndash; to ustawienie powoduje, że te elementy menu w wynikach `Toolbar` Jeśli istnieje wystarczające miejsce na ich do wyświetlenia. **Preferencje** ustawia element menu `showAsAction` do `never` &ndash; powoduje **preferencje** menu pojawią się w *przepełnienie* menu (trzy punktów w pionie). 
 
-<a name="on_create_options_menu" />
 
 ### <a name="implement-oncreateoptionsmenu"></a>Implementowanie OnCreateOptionsMenu
 
@@ -256,7 +246,6 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 Android wywołania `OnCreateOptionsMenu` metody, dzięki czemu aplikacja może określić zasobów menu dla działania. W przypadku tej metody **top_menus.xml** zasobów jest zwiększony do przekazanych `menu`. Ten kod powoduje, że nowe **Edytuj**, **zapisać**, i **preferencje** elementów menu w wynikach `Toolbar`. 
 
 
-<a name="on_options_item_selected" />
 
 ### <a name="implement-onoptionsitemselected"></a>Implementowanie OnOptionsItemSelected
 
@@ -275,15 +264,15 @@ Po naciśnięciu pozycji menu Android wywołuje `OnOptionsItemSelected` — meto
 
 Tworzenie i uruchamianie `ToolbarFun` nowych elementów menu na pasku narzędzi. `Toolbar` Zostaną wyświetlone trzy ikony menu, w tym zrzut ekranu: 
 
-[![Diagram ilustrujący lokalizacje edycji, zapisywania i przepełnienie elementów menu](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png)
+[![Diagram ilustrujący lokalizacje edycji, zapisywania i przepełnienie elementów menu](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
 
 Gdy podsłuchu użytkownika **Edytuj** element menu, wyskakujące jest wyświetlany w celu wskazania, że `OnOptionsItemSelected` wywołano metodę: 
 
-[![Zrzut ekranu wyskakujące wyświetlany jest wybrany element edycji](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png)
+[![Zrzut ekranu wyskakujące wyświetlany jest wybrany element edycji](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
 
 Gdy użytkownik naciska menu przeciążenia **preferencje** element menu jest wyświetlany. Zazwyczaj mniej typowe akcje powinny być umieszczone w taki sposób, w menu przeciążenia &ndash; w tym przykładzie użyto menu przeciążenia dla **preferencje** ponieważ tyle razy, nie jest używany jako **Edytuj** i  **Zapisz**: 
 
-[![Zrzut ekranu preferencje element menu, który jest wyświetlany w menu przeciążenia](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png)
+[![Zrzut ekranu preferencje element menu, który jest wyświetlany w menu przeciążenia](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
 Aby uzyskać więcej informacji na temat menu systemu Android, zobacz Android Developer [menu](https://developer.android.com/guide/topics/ui/menus.html) tematu. 
  

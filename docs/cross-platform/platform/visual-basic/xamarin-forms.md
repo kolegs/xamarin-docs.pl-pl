@@ -3,24 +3,25 @@ title: "Za pomocą Visual języku platformy Xamarin.Forms"
 description: "Szablon projektu platformy Xamarin.Forms PCL można zmodyfikować w taki sposób, aby używać języka Visual Basic dla zestawu głównego, efektywnie co pozwala na tworzenie wieloplatformowych aplikacji mobilnych za pomocą VB.NET."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
+ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 332882bcef9563ef060c5151c2997ac3b4c8497c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84240b6ac384c79c732abc783de84bfa1289f599
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Za pomocą Visual języku platformy Xamarin.Forms
 
 Xamarin nie obsługuje bezpośredniego Visual Basic — postępuj zgodnie z instrukcjami na tej stronie, aby utworzyć rozwiązanie PCL platformy Xamarin.Forms C#, a następnie zastąpić projektu wspólnego PCL kodu języka Visual Basic.
 
-[ ![](xamarin-forms-images/hero-sml.png "Tworzenie rozwiązania PCL platformy Xamarin.Forms i zamienić projektu wspólnego PCL kodu języka Visual Basic")](xamarin-forms-images/hero.png)
+[![](xamarin-forms-images/hero-sml.png "Tworzenie rozwiązania PCL platformy Xamarin.Forms i zamienić projektu wspólnego PCL kodu języka Visual Basic")](xamarin-forms-images/hero.png#lightbox)
 
-> ℹ️ **Uwaga:** należy użyć programu Visual Studio w systemie Windows w celu program za pomocą Visual Basic.
+> [!NOTE]
+> Aby program za pomocą Visual Basic, należy użyć programu Visual Studio w systemie Windows.
 
 ## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Platformy Xamarin.Forms z przewodnikiem Visual Basic
 
@@ -33,7 +34,7 @@ Przejdź do **Plik > Nowy projekt** i w **nowy projekt** okna przejdź do **zain
 
 3. Wybierz **Visual Basic > biblioteki klas (przenośna)** typ projektu:
 
-   [ ![](xamarin-forms-images/add-vb-2-sml.png "Dodawanie nowego projektu biblioteki klas przenośnych")](xamarin-forms-images/add-vb-2.png)
+   [![](xamarin-forms-images/add-vb-2-sml.png "Dodawanie nowego projektu biblioteki klas przenośnych")](xamarin-forms-images/add-vb-2.png#lightbox)
 
 4. Wybierz platformy, jak skonfigurować poprawnego profilu PCL (należy uwzględnić Xamarin.iOS i Xamarin.Android):
 
@@ -45,11 +46,11 @@ Przejdź do **Plik > Nowy projekt** i w **nowy projekt** okna przejdź do **zain
 
 6. Kliknij prawym przyciskiem myszy nowy projekt Visual Basic i wybierz polecenie **Zarządzaj pakietami Nuget**, następnie zainstalować **platformy Xamarin.Forms** i zamknąć okno Menedżera pakietów.
 
-   [ ![](xamarin-forms-images/add-vb-4-sml.png "Formularze, a następnie zamknij okno Menedżera pakietów")](xamarin-forms-images/add-vb-4.png)
+   [![](xamarin-forms-images/add-vb-4-sml.png "Formularze, a następnie zamknij okno Menedżera pakietów")](xamarin-forms-images/add-vb-4.png#lightbox)
 
 7. Zmień nazwę domyślnego **Class1** pliku *i* klasy do `App`:
 
-   [ ![](xamarin-forms-images/add-vb-5-sml.png "Zmień nazwę domyślnego pliku Class1 i klasa aplikacji")](xamarin-forms-images/add-vb-5.png)
+   [![](xamarin-forms-images/add-vb-5-sml.png "Zmień nazwę domyślnego pliku Class1 i klasa aplikacji")](xamarin-forms-images/add-vb-5.png#lightbox)
 
 8. Wklej następujący kod do **App.vb** pliku, który będzie punktem początkowym aplikacji platformy Xamarin.Forms. Pamiętaj, aby uwzględnić `Imports Xamarin.Forms` i Dodaj `Inherits Application` do klasy:
 
@@ -81,7 +82,7 @@ Przejdź do **Plik > Nowy projekt** i w **nowy projekt** okna przejdź do **zain
 9. Teraz musimy punkt systemów iOS i Android projekty w nowych projektach Visual Basic.
 Kliknij prawym przyciskiem myszy **odwołania** węzeł systemu iOS i Android projektów, aby otworzyć **Menedżera odwołań**. NZ — znacznik C# przenośnej biblioteki oraz znaczników VB przenośnej biblioteki (nie zapomnij, wykonaj dla systemów iOS i Android projektów).
 
-   [ ![](xamarin-forms-images/add-vb-8-sml.png "Usuń stare odwołania do projektu, należy dodać odwołanie w Visual Basic")](xamarin-forms-images/add-vb-8.png)
+   [![](xamarin-forms-images/add-vb-8-sml.png "Usuń stare odwołania do projektu, należy dodać odwołanie w Visual Basic")](xamarin-forms-images/add-vb-8.png#lightbox)
 
 10. Usuń przenoścnego projektu C#. Dodaj nowy **.vb** plików do kompilacji mieszczą się w aplikacji platformy Xamarin.Forms. Szablon dla nowych `ContentPage`s w języku Visual Basic, przedstawiono poniżej:
 
@@ -108,7 +109,7 @@ Kliknij prawym przyciskiem myszy **odwołania** węzeł systemu iOS i Android pr
 
 ## <a name="limitations-of-visual-basic-in-xamarinforms"></a>Ograniczenia Visual Basic w platformy Xamarin.Forms
 
-Jak wspomniano w [strony przenośnej języku Visual](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/), Xamarin nie obsługuje języka Visual Basic. Oznacza to, że istnieją pewne ograniczenia, na której można użyć języka Visual Basic:
+Jak wspomniano w [strony przenośnej języku Visual](~/cross-platform/platform/visual-basic/index.md), Xamarin nie obsługuje języka Visual Basic. Oznacza to, że istnieją pewne ograniczenia, na której można użyć języka Visual Basic:
 
  - W języku Visual Basic nie można zapisać niestandardowe moduły renderowania, ich musi być napisana w języku C# w projektach natywnego platformy.
 

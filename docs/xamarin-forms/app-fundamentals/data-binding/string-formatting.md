@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b54ed876857f0cd04d7a304ff05b9710fbd9e04
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6735e9c03bee981f048231b53539c3b239f64484
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="string-formatting"></a>Ciąg formatowania
 
@@ -121,7 +121,7 @@ Ostatni zestawy sekcji `BindingContext` wartość `Math.PI` i wyświetla je z do
 
 Oto programu uruchomionego na wszystkich platformach trzy:
 
-[![Ciąg formatowania](string-formatting-images/stringformatting-small.png "ciągu formatowania")](string-formatting-images/stringformatting-large.png "ciągu formatowania")
+[![Ciąg formatowania](string-formatting-images/stringformatting-small.png "ciągu formatowania")](string-formatting-images/stringformatting-large.png#lightbox "ciągu formatowania")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels i ciągu formatowania
 
@@ -174,7 +174,7 @@ Takie podejście jest wyświetlany w obszarze **lepsze selektor kolorów** prób
 
 Obecnie dostępne są trzy pary `Slider` i `Label` elementów, które są powiązane do tego samego źródła właściwości w `HslColorViewModel` obiektu. Jedyną różnicą jest to, że `Label` ma `StringFormat` właściwości do wyświetlenia każdego `Slider` wartość.
 
-[![Kolor lepiej selektora](string-formatting-images/bettercolorselector-small.png "lepiej kolor selektora")](string-formatting-images/bettercolorselector-large.png "lepiej kolor selektora")
+[![Kolor lepiej selektora](string-formatting-images/bettercolorselector-small.png "lepiej kolor selektora")](string-formatting-images/bettercolorselector-large.png#lightbox "lepiej kolor selektora")
 
 Możesz może się zastanawiać, jak można wyświetlić wartości RGB (czerwony, zielony, niebieski) format tradycyjnych dwóch cyfr szesnastkowych. Te wartości całkowite nie są bezpośrednio dostępne `Color` struktury. Jedno rozwiązanie będzie można obliczyć wartości będące liczbami całkowitymi składniki kolorów w ViewModel i ujawniać je jako właściwości. Następnie można sformatować przy użyciu `X2` specyfikacji formatowania.
 
@@ -185,5 +185,5 @@ Kolejnym artykule jednak Eksploruje [ **ścieżka wiązania** ](binding-path.md)
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pokazy powiązania danych (przykład)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Rozdział powiązania danych z książki platformy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Prezentacja powiązania danych (przykład)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Rozdział dotyczący powiązania danych z książki Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

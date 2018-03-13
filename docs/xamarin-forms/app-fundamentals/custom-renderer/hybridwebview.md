@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementowanie HybridWebView
 
@@ -151,7 +151,7 @@ Proces tworzenia klasy niestandardowego modułu renderowania wygląda następuj�
 1. Dodaj `ExportRenderer` atrybutu klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania Kontrolki niestandardowe platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
 
 > [!NOTE]
-> **Uwaga**: w przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
+> W przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
 
 Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
@@ -316,7 +316,7 @@ Ta funkcja jest osiągnięte w następujący sposób:
   - Zasoby zostały zwolnione.
 
 > [!NOTE]
-> **Uwaga**: `WKWebView` klasa jest obsługiwana tylko w systemie iOS 8 lub nowszy.
+> `WKWebView` Klasa jest obsługiwana tylko w systemie iOS 8 lub nowszy.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Tworzenie niestandardowego modułu renderowania w systemie Android
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 Klasa musi pochodzić od `Java.Lang.Object`, oraz metody, które są widoczne dla JavaScript musi być dekorowane za `[JavascriptInterface]` i `[Export]` atrybutów. W związku z tym, kiedy `invokeCSharpAction` funkcji JavaScript jest wstrzykiwane do strony sieci web i jest wykonywana, zostanie wywołany `JSBridge.InvokeAction` metody z powodu trwa ozdobione `[JavascriptInterface]` i `[Export("invokeAction")]` atrybutów. Z kolei `InvokeAction` wywołuje metodę `HybridWebView.InvokeAction` metody, które będą wywoływane zarejestrowanych akcji do wyświetlenia w oknie podręcznym.
 
 > [!NOTE]
-> **Uwaga**: projekty używające `[Export]` atrybutu musi zawierać odwołanie do `Mono.Android.Export`, lub spowoduje błąd kompilatora.
+> Projekty używające `[Export]` atrybutu musi zawierać odwołanie do `Mono.Android.Export`, lub spowoduje błąd kompilatora.
 
 Należy pamiętać, że `JSBridge` obsługuje klasy `WeakReference` do `HybridWebViewRenderer` klasy. Pozwoli to uniknąć, tworząc odwołanie cykliczne między dwiema klasami. Aby uzyskać więcej informacji, zobacz [słabe odwołania](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) w witrynie MSDN.
 

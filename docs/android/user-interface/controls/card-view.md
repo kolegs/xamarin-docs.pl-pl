@@ -7,18 +7,17 @@ ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: b8f643c8158c5a3a849a3d8ee3dd8d0e7e30addf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cardview"></a>CardView
 
 _-Cardview to składnik interfejsu użytkownika, który przedstawia zawartość tekstowych i obrazów w widokach, które przypominają kart. W tym przewodniku opisano sposób używania i dostosowywania CardView w aplikacji platformy Xamarin.Android, zachowując zgodność z wcześniejszymi wersjami systemu android._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -59,7 +58,6 @@ Aby dodać `Xamarin.Android.Support.v7.CardView` pakietu w programie Visual Stud
 Aby dowiedzieć się, jak skonfigurować projekt aplikacji systemu Android 5.0, zobacz [ustawienie się projekt systemu Android 5.0](~/android/platform/lollipop.md).
 Aby uzyskać więcej informacji na temat instalowania pakietów NuGet, zobacz [wskazówki: w tym NuGet w projekcie](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-<a name="basic" />
 
 ## <a name="introducing-cardview"></a>Wprowadzenie do CardView
 
@@ -94,11 +92,10 @@ Jeśli używasz tego kodu XML, aby zastąpić istniejącą zawartość elementu 
 
 W tym przykładzie układu tworzy domyślne `CardView` z jednego wiersza tekstu, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu CardView białe tło i wiersz tekstu](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png)
+[![Zrzut ekranu CardView białe tło i wiersz tekstu](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 W tym przykładzie styl aplikacji ustawiono jasny motyw materiału (`Theme.Material.Light`), aby `CardView` cieni i krawędzi są lepiej widoczne. Aby uzyskać więcej informacji o aplikacjach motywów Android 5.0, zobacz [motyw materiału](~/android/user-interface/material-theme.md). W następnej sekcji możemy dowiedzieć się, jak dostosować `CardView` dla aplikacji.
 
-<a name="customizing" />
 
 ## <a name="customizing-cardview"></a>Dostosowywanie CardView
 
@@ -159,30 +156,28 @@ Można wywołać tej przestrzeni nazw `card_view` lub nawet `myapp` wybranie opc
 
 Jeśli w tym przykładzie układ jest używany do wyświetlania obrazu w aplikacji wyświetlanie zdjęć, `CardView` ma wygląd migawkę fotografii, jak pokazano na poniższym zrzucie ekranu:
 
-[![CardView z obrazu i opisach obrazu](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png)
+[![CardView z obrazu i opisach obrazu](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 Tego zrzutu ekranu jest pobierana z [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer) przykładowej aplikacji, który używa `RecyclerView` elementu widget do prezentowania przewijanej listy `CardView` obrazów do wyświetlania zdjęcia. Aby uzyskać więcej informacji na temat `RecyclerView`, zobacz [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) przewodnik.
 
 Zwróć uwagę, że `CardView` można wyświetlić więcej niż jeden widok podrzędny w obszarze jego zawartości. Na przykład, na przykład aplikacji wyświetlanie zdjęciu powyżej, obszar zawartości składa się z `ListView` zawierający `ImageView` i `TextView`. Mimo że `CardView` wystąpień często są ułożone pionowo, można także porządkować je w poziomie (zobacz [tworzenie niestandardowy widok styl](~/android/user-interface/material-theme.md#customview) na zrzucie ekranu).
 
-<a name="layout" />
 
 ### <a name="cardview-layout-options"></a>Opcje układu CardView
 
 `CardView` układy może zostać dostosowane przez ustawienie jeden lub więcej atrybutów, które mają wpływ na dopełnienie, podniesienia uprawnień, promień narożnika i kolor tła:
 
-[![Diagram CardView atrybutów](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png)
+[![Diagram CardView atrybutów](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 Każdy atrybut można zmienić dynamicznie przez wywołanie metody odpowiednik `CardView` — metoda (Aby uzyskać więcej informacji na temat `CardView` metod, zobacz [odwołania do klasy CardView](https://developer.android.com/reference/android/support/v7/widget/CardView.html)).
 Należy pamiętać, że te atrybuty (z wyjątkiem kolor tła) zaakceptuj wartości wymiaru, która jest liczbą dziesiętną, a po niej jednostkę. Na przykład `11.5dp` określa 11,5 pikselach niezależnych od gęstości.
 
-<a name="padding" />
 
 #### <a name="padding"></a>Dopełnienie
 `
 CardView` oferuje pięciu atrybutów dopełnienie położenie zawartości w ramach karty. Można je ustawić w układzie XML lub analogicznych metody można wywołać w kodzie:
 
-[![Diagram CardView dopełnienie atrybutów](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png)
+[![Diagram CardView dopełnienie atrybutów](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 Atrybuty dopełnienie opisano szczegółowo w następujący sposób:
 
@@ -200,13 +195,12 @@ Atrybuty uzupełnienie zawartości są względem granic obszaru zawartości, a n
 Na przykład jeśli `contentPadding` wystarczająco wzroście w aplikacji wyświetlanie zdjęć `CardView` czy przyciąć tekst wyświetlany na karcie i obrazu.
 
 
-<a name="elevation" />
 
 #### <a name="elevation"></a>Podniesienie uprawnień
 
 `CardView` oferuje dwa atrybuty podniesienia uprawnień do sterowania jego podniesienia uprawnień, co w efekcie, rozmiar jego cień:
 
-[![Diagram CardView atrybutów podniesienia uprawnień](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png)
+[![Diagram CardView atrybutów podniesienia uprawnień](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 Atrybuty podniesienia uprawnień opisano szczegółowo w następujący sposób:
 
@@ -217,13 +211,12 @@ Atrybuty podniesienia uprawnień opisano szczegółowo w następujący sposób:
 Większe wartości `cardElevation` Zwiększ rozmiar cienia, aby `CardView` prawdopodobnie float wyższej powyżej tła. `cardElevation` Atrybut określa również kolejność rysowania nakładających się widoków; `CardView` będzie rysowany innego widoku nakładające się przy użyciu nowszej ustawienia podniesienia uprawnień i powyżej wszelkich nakładających się widoków z na niższy podniesienia uprawnień.
 `cardMaxElevation` Ustawienie jest przydatne w przypadku aplikacji zmiany podniesienia uprawnień dynamicznie &ndash; uniemożliwia cień rozszerzanie minął limit definiujący tego ustawienia.
 
-<a name="radius" />
 
 #### <a name="corner-radius-and-background-color"></a>Promień narożnika i kolor tła
 
 `CardView` udostępnia Atrybuty, których można kontrolować jego promień narożnika i jego kolor tła. Te dwie właściwości umożliwia zmianę ogólnej stylu `CardView`:
 
-[![Diagram rogu CardView radious i atrybutów koloru tła](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png)
+[![Diagram rogu CardView radious i atrybutów koloru tła](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 Te atrybuty zostały wyjaśnione w następujący sposób:
 
@@ -233,8 +226,6 @@ Te atrybuty zostały wyjaśnione w następujący sposób:
 
 Na tym diagramie `cardCornerRadius` ustawiono więcej zaokrąglony 10dp i `cardBackgroundColor` ma ustawioną wartość `"#FFFFCC"` (żółty światła).
 
-
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Zgodność
 
@@ -255,7 +246,6 @@ Aby pomóc w zarządzaniu tych różnic zgodności `CardView` udostępnia kilka 
 
 Aby uzyskać więcej informacji dotyczących zachowania zgodności z wcześniejszymi wersjami systemu android, zobacz [utrzymania zgodności](https://developer.android.com/training/material/compatibility.html).
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

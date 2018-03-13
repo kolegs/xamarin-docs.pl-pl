@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 053696ebf37e73e3b121e2aa52b80b7ea1b8ed64
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Układ aplikacji typu Tablet i pulpitu
 
@@ -41,7 +41,7 @@ Aby zapewnić środowisko uruchamiania przyjemne i zapewnienia pełnej rozdzielc
 Przed systemu iOS 9 wszystkie aplikacje miały pełnego ekranu na urządzeniu, ale niektóre Ipad można teraz wykonywać [podzielić wielozadaniowości ekranu](~/ios/platform/multitasking.md).
 Oznacza to, że aplikacja może zająć tylko kolumnę cienki boku ekranu, 50% szerokości ekranu lub cały ekran.
 
-[ ![](tablet-images/ipad-sml.png "Przykład ekranu podziału iPad")](tablet-images/ipad.png "iPad przykład ekranu podziału")
+[![](tablet-images/ipad-sml.png "Przykład ekranu podziału iPad")](tablet-images/ipad.png#lightbox "iPad przykład ekranu podziału")
 
 Funkcje podzielonym ekranem oznacza, że należy projektować aplikacji działają prawidłowo w zaledwie 320 pikseli szerokości lub jak 1366 pikseli szerokości.
 
@@ -63,7 +63,7 @@ Do obsługi, tablety i komputery stacjonarne z systemem Windows, należy użyć 
 
 Aplikacje działające na tablety z systemem Windows i pulpitami może być zmniejszony do dowolnego wymiarów dodatkowo uruchomiona pełnego ekranu.
 
-[ ![](tablet-images/splitscreen-sml.png "Przykład ekranu podzielić Windows")](tablet-images/splitscreen.png "przykład ekranu podział systemu Windows")
+[![](tablet-images/splitscreen-sml.png "Przykład ekranu podzielić Windows")](tablet-images/splitscreen.png#lightbox "przykład ekranu podział systemu Windows")
 
 
 <a name="optimize" />

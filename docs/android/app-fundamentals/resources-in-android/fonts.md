@@ -2,20 +2,19 @@
 title: Czcionki
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA$
+ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 01/30/2018
-ms.openlocfilehash: 3b7c45a50ffb0748b5f63edfd444cb02af3fdc67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 7cde19a153585a6f9739aa02f3ea69dc4f09be58
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fonts"></a>Czcionki
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -60,7 +59,6 @@ Tak długo, jak czcionki są dostarczane do aplikacji systemu Android w sposób 
 
 W tym przewodniku najpierw opisano, jak używać czcionek jako zasób systemu Android, a następnie przejdź do omówienia sposobu pobierania czcionek w czasie wykonywania.
 
-<a name="fonts_as_a_resource" />
 
 ## <a name="fonts-as-a-resource"></a>Czcionki jako zasób
 
@@ -139,7 +137,6 @@ Po zdefiniowaniu rodziny czcionek, można deklaratywnie przez ustawienie `fontFa
     />
 ```
 
-<a name="programatically_assigning_fonts" />
 
 ### <a name="programmatically-assigning-fonts"></a>Programowo Przypisywanie czcionek
 
@@ -158,7 +155,6 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-<a name="downloading_fonts" />
 
 ## <a name="downloading-fonts"></a>Pobieranie czcionek
 
@@ -202,7 +198,6 @@ Niezależnie od tego, które rozwiązanie jest używana można pobrać pliki zas
 
 Po zdefiniowaniu czcionek, może być konieczne podanie informacji o _certyfikaty czcionki_ związane z pobierania.
 
-<a name="font_certificates" />
 
 ### <a name="font-certificates"></a>Certyfikaty czcionki
 
@@ -232,7 +227,6 @@ Na przykład następujący kod XML ma nazwę **Resources/values/fonts_cert.xml**
 
 Z tymi plikami zasobów w miejscu aplikacji ma możliwość pobierania czcionek.
 
-<a name="downloadable_font_resource_declaration" />
 
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Deklarowanie czcionki do pobrania jako zasoby
 
@@ -253,7 +247,6 @@ Aby pobrać te czcionki, ich musi być zadeklarowana w **AndroidManifest.XML** p
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
 
-<a name="programatically_downloading_fonts" />
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Pobieranie czcionki z czcionek interfejsami API
 
@@ -326,10 +319,6 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
     }
 }
 
-
-/// <summary>
-/// EventArg when a font has been downloaded. 
-/// </summary>
 public class FontDownloadEventArg : EventArgs
 {
     public FontDownloadEventArg(Android.Graphics.Typeface typeface)
@@ -360,7 +349,6 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

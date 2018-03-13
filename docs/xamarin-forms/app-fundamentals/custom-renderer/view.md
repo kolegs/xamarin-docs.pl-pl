@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>Implementowanie widoku
 
@@ -115,7 +115,7 @@ Proces tworzenia klasy niestandardowego modułu renderowania wygląda następuj�
 1. Dodaj `ExportRenderer` atrybutu klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania Kontrolki niestandardowe platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
 
 > [!NOTE]
-> **Uwaga**: w przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
+> W przypadku większości elementów platformy Xamarin.Forms jest opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany. Jednak niestandardowe moduły renderowania są wymagane w każdym projekcie platformy podczas renderowania [widoku](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
 
 Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 Pod warunkiem że `Control` właściwość jest `null`, nowy `CaptureElement` zostanie uruchomiony i `InitializeAsync` wywoływana jest metoda, która używa `MediaCapture` interfejsu API w celu zapewnienia strumienia podglądu z aparatu fotograficznego. `SetNativeControl` Wywoływana jest metoda następnie przypisać odwołania do `CaptureElement` wystąpienie do `Control` właściwości. `CaptureElement` Kontrolować ujawnia `Tapped` zdarzeń, który jest obsługiwany przez `OnCameraPreviewTapped` metody do zatrzymywania i uruchamiania podglądu wideo, jest on wybrany. `Tapped` Zdarzeń jest subskrybentem podczas niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms i Anulowano subskrypcję tylko, gdy element renderującego jest dołączony do zmiany.
 
 > [!NOTE]
-> **Uwaga**: ważne jest, aby zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji Windows Phone lub platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) dla aplikacji środowiska wykonawczego systemu Windows i [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) dla aplikacji platformy uniwersalnej systemu Windows.
+> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows lub Windows Phone. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) dla aplikacji środowiska wykonawczego systemu Windows i [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) dla aplikacji platformy uniwersalnej systemu Windows.
 
 ## <a name="summary"></a>Podsumowanie
 

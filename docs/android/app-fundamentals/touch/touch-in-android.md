@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>Touch w systemie Android
 
@@ -33,7 +33,7 @@ Wiele takich jak systemy iOS, Android tworzy obiekt przechowujący dane dotyczą
 
 
 > [!NOTE]
-> **Uwaga:** nie wszystkie urządzenia Android obsługują ekranów dotykowych. 
+> Nie wszystkie urządzenia Android obsługują ekranów dotykowych. 
 
 Dodawanie następujący tag do pliku manifestu powoduje Google Play do wyświetlenia tylko aplikację do tych urządzeń, które są z obsługą dotyku:
 
@@ -90,11 +90,11 @@ Gesty to doskonały sposób na użytkownikom na interakcję z aplikacją. Interf
 
 Od systemu Android w wersji 1.6 zestaw SDK systemu Android jest dostarczany z preinstalowanym emulatora wywołuje konstruktor gestów aplikacji. Ta aplikacja umożliwia deweloperom tworzenie wstępnie zdefiniowane gesty, które mogą być osadzone w aplikacji. Poniższy zrzut ekranu przedstawia przykład konstruktora gestów:
 
-[![Zrzut ekranu gestów konstruktora za pomocą gestów przykład](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![Zrzut ekranu gestów konstruktora za pomocą gestów przykład](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 Ulepszone wersję tej aplikacji o nazwie gestu narzędzie można znaleźć Google Play. Narzędzie gestu jest bardzo podobne gesty, przy użyciu konstruktora z tą różnicą, że można testować gesty, po ich utworzeniu. Ten dalej zrzut ekranu przedstawia konstruktora gestów:
 
-[![Zrzut ekranu narzędzia gestu za pomocą gestów przykład](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![Zrzut ekranu narzędzia gestu za pomocą gestów przykład](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 Narzędzie gestu jest nieco bardziej użyteczna w przypadku tworzenia gestów niestandardowych, który zezwala gestów do sprawdzenia, ponieważ są one tworzone i jest łatwo dostępna za pośrednictwem witryny Google Play.
 

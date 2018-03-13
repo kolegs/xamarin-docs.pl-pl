@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3de0150bd34667a9310b796bf98a6bff6c07a67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="databases"></a>Bazy danych
 
@@ -27,7 +27,7 @@ W tym artykule firma Microsoft będzie obejmował dostęp do danych SQLite na dw
 1. **Bezpośredni dostęp** — uzyskując bezpośrednio dostęp do bazy danych SQLite, możemy użyć danych z bazy danych dla kodowania klucz wartość, a powiązanie danych z elementów interfejsu użytkownika utworzone w konstruktora interfejsu w środowisku Xcode. Przy użyciu kodowania i powiązanie technik w aplikacji Xamarin.Mac danych klucz wartość, można znacznie zmniejszyć ilość kodu, które trzeba zapisać i zachować do wypełnienia i pracować z nimi elementy interfejsu użytkownika. Masz również zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) od z przodu kończyć interfejsu użytkownika (_Model-View-Controller_), prowadzących do łatwiejsze w obsłudze, bardziej elastyczne aplikacji Projekt.
 2. **SQLite.NET ORM** — przy użyciu typu open source [SQLite.NET](http://www.sqlite.org) relacji Menedżera ORM (Object) firma Microsoft może znacznie zmniejszyć ilość kod wymagany do odczytywania i zapisywania danych z bazy danych SQLite. Aby wypełnić element interfejsu użytkownika, takie jak widok tabeli można następnie te dane.
 
-[![Przykład uruchomionej aplikacji](databases-images/intro01.png "przykładem uruchomionej aplikacji")](databases-images/intro01-large.png)
+[![Przykład uruchomionej aplikacji](databases-images/intro01.png "przykładem uruchomionej aplikacji")](databases-images/intro01-large.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z kluczy i wartości kodowania i powiązanie danych z bazy danych SQLite w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -52,7 +52,7 @@ Wykonaj następujące czynności:
 1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy **odwołania** i wybierz polecenie **edytować odwołania**.
 2. Wybierz oba **Mono.Data.Sqlite** i **system.dane** zestawów: 
 
-    [![Dodawanie odwołania wymagane](databases-images/reference01.png "Dodawanie odwołania wymagane")](databases-images/reference01-large.png)
+    [![Dodawanie odwołania wymagane](databases-images/reference01.png "Dodawanie odwołania wymagane")](databases-images/reference01-large.png#lightbox)
 3. Kliknij przycisk **OK** przycisk, aby zapisać zmiany i dodać odwołań.
 
 ### <a name="modifying-the-data-model"></a>Modyfikowanie modelu danych
@@ -1019,7 +1019,7 @@ Formanty Menu dostępne dla macOS (np. pola kombi) można ustawić do wypełnien
 
 Na przykład edytować proste powiązania powyższego przykładu w Konstruktorze interfejsu dodać pole kombi i pozostawić ją przy użyciu gniazda o nazwie `EmployeeSelector`:
 
-[![Udostępnianie gniazda pole kombi](databases-images/combo01.png "udostępnianie gniazda pola kombi")](databases-images/combo01-large.png)
+[![Udostępnianie gniazda pole kombi](databases-images/combo01.png "udostępnianie gniazda pola kombi")](databases-images/combo01-large.png#lightbox)
 
 W **inspektora atrybuty**, sprawdź **Autocompletes** i **źródło danych używa** właściwości:
 
@@ -1924,7 +1924,7 @@ Wykonaj następujące polecenie, aby dodać pakiet:
 1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy **pakiety** i wybierz polecenie **Dodawanie pakietów...**
 2. Wprowadź `SQLite.net` w **pole wyszukiwania** i wybierz **sqlite net** wpis:
 
-    [![Dodawanie pakietu SQLite NuGet](databases-images/nuget01.png "dodanie pakietu SQLite NuGet")](databases-images/nuget01-large.png)
+    [![Dodawanie pakietu SQLite NuGet](databases-images/nuget01.png "dodanie pakietu SQLite NuGet")](databases-images/nuget01-large.png#lightbox)
 3. Kliknij przycisk **Dodaj pakiet** przycisk, aby zakończyć.
 
 ### <a name="creating-the-data-model"></a>Tworzenie modelu danych
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 Jako przykład użycia dodamy widoku tabeli do naszego interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode. Będzie uwidaczniamy ten widok tabeli za pomocą gniazda (`OccupationTable`), firma Microsoft może do niego dostęp przez kod w języku C#:
 
-[![Udostępnianie gniazda widok tabeli](databases-images/table01.png "udostępnianie gniazda widoku tabeli")](databases-images/table01-large.png)
+[![Udostępnianie gniazda widok tabeli](databases-images/table01.png "udostępnianie gniazda widoku tabeli")](databases-images/table01-large.png#lightbox)
 
 Następnie dodamy klas niestandardowych, aby wypełnić tę tabelę z danymi z bazy danych SQLite.NET.
 

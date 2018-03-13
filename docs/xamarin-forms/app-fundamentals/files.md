@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>Pliki
 
@@ -40,18 +40,18 @@ Aby osadzić pliku do **PCL** zestawu, utworzyć lub dodać plik i upewnij się,
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Konfigurowanie osadzonych Akcja kompilacji zasobu](files-images/vs-embeddedresource-sml.png "EmbeddedResource BuildAction ustawienie")](files-images/vs-embeddedresource.png "EmbeddedResource BuildAction ustawienie")
+[![Konfigurowanie osadzonych Akcja kompilacji zasobu](files-images/vs-embeddedresource-sml.png "EmbeddedResource BuildAction ustawienie")](files-images/vs-embeddedresource.png#lightbox "EmbeddedResource BuildAction ustawienie")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Plik tekstowy osadzone w PCL Konfigurowanie akcji kompilacji zasobów osadzonych](files-images/xs-embeddedresource-sml.png "EmbeddedResource BuildAction ustawienie")](files-images/xs-embeddedresource.png "EmbeddedResource BuildAction ustawienie")
+[![Plik tekstowy osadzone w PCL Konfigurowanie akcji kompilacji zasobów osadzonych](files-images/xs-embeddedresource-sml.png "EmbeddedResource BuildAction ustawienie")](files-images/xs-embeddedresource.png#lightbox "EmbeddedResource BuildAction ustawienie")
 
 -----
 
 `GetManifestResourceStream` Umożliwia dostęp do plików osadzonych przy użyciu jego **identyfikator zasobu**. Domyślnie identyfikator zasobu jest nazwa pliku jest poprzedzony prefiksem domyślnej przestrzeni nazw dla projektu jest osadzony w — w takim przypadku zestaw jest **WorkingWithFiles** i nazwa pliku jest **PCLTextResource.txt**, Dlatego jest identyfikator zasobu `WorkingWithFiles.PCLTextResource.txt`.
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 `text` Zmiennej następnie można używać do wyświetlania tekstu lub używania w kodzie. Ten zrzut ekranu przedstawiający [Przykładowa aplikacja](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) wyświetlany jest tekst renderowany w `Label` formantu.
 
- [ ![Plik tekstowy osadzone w PCL](files-images/pcltext-sml.png "osadzonego pliku tekstowego w PCL wyświetlany w aplikacji")](files-images/pcltext.png "osadzonego pliku tekstowego w PCL wyświetlany w aplikacji")
+ [![Plik tekstowy osadzone w PCL](files-images/pcltext-sml.png "osadzonego pliku tekstowego w PCL wyświetlany w aplikacji")](files-images/pcltext.png#lightbox "osadzonego pliku tekstowego w PCL wyświetlany w aplikacji")
 
 Ładowanie i deserializacji XML jest równie proste. Poniższy kod przedstawia plik XML jest załadowany i rozszeregować z zasobu, a następnie powiązany z `ListView` do wyświetlenia. Plik XML zawierający tablicę `Monkey` obiektów (klasa jest zdefiniowana w przykładowym kodzie).
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![Plik XML osadzone w PCL wyświetlany w elemencie ListView](files-images/pclxml-sml.png "osadzonego pliku XML w PCL wyświetlany w elemencie ListView")](files-images/pclxml.png "osadzonego pliku XML w PCL wyświetlane w widoku listy.")
+ [![Plik XML osadzone w PCL wyświetlany w elemencie ListView](files-images/pclxml-sml.png "osadzonego pliku XML w PCL wyświetlany w elemencie ListView")](files-images/pclxml.png#lightbox "osadzonego pliku XML w PCL wyświetlane w widoku listy.")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Ponieważ czasami trudno jest zrozumienie, dlaczego nie został załadowany okre
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Platformy Xamarin.Forms działa na wielu platformach, każde z nich własny system plików, nie istnieje żadne pojedynczego podejście do ładowania i zapisywania plików utworzonych przez użytkownika. Aby zademonstrować sposób zapisania i załadować plików tekstowych Przykładowa aplikacja zawiera ekranu, który zapisuje i ładuje niektóre dane wejściowe użytkownika — Zakończono ekranu przedstawiono poniżej:
 
- [ ![Zapisywanie i ładowanie tekstu](files-images/saveandload-sml.png "zapisywanie i ładowanie plików w aplikacji")](files-images/saveandload.png "zapisywanie i ładowanie plików w aplikacji")
+ [![Zapisywanie i ładowanie tekstu](files-images/saveandload-sml.png "zapisywanie i ładowanie plików w aplikacji")](files-images/saveandload.png#lightbox "zapisywanie i ładowanie plików w aplikacji")
 
 Dotyczy wszystkich platform struktury katalogów nieco inne i możliwości innego systemu plików — na przykład Xamarin.iOS i Xamarin.Android obsługuje większość `System.IO` funkcji, ale Windows Phone obsługuje tylko `IsolatedStorage` i [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Interfejsów API.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 0ab1daa9ce76900067f374cda58040354688c7be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e77c5653171ec6c69608858805de28843fc0db56
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="shared-projects"></a>Udostępnionych projektów
 
@@ -25,20 +25,8 @@ Obsługują one dyrektywy kompilatora, tak aby warunkowo mogą obejmować specyf
 Jeśli użyto łączenie plików w przeszłości udostępnianie kodu między projektami, udostępnionych projektów działa w podobny sposób, ale znacznie ulepszona obsługa środowiska IDE.
 
 
-# <a name="requirements"></a>Wymagania
 
-W programie Xamarin Studio 5 i Visual Studio 2013 Update 2 (patrz uwaga) została dodana obsługa projektu współużytkowanych.
-
-> [!IMPORTANT]
->  Firma Microsoft opublikowała program ten nowy typ projektu - **udostępnionych projektów ([Pobierz rozszerzenia programu Visual Studio w wersji zapoznawczej](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450))** — dla programu Visual Studio 2013 Update 2 (kwietnia 2014 r.). Odnoszą się do firmy Microsoft [Windows Phone 8.1](http://blogs.msdn.com/b/visualstudio/archive/2014/04/08/building-windows-phone-8-1-apps-in-html.aspx) i [Microsoft Store](http://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#CrossPlatform) dokumentów, aby uzyskać dodatkowe szczegóły dotyczące sposobu działania z tych platform.
-
-
-
-
- <a name="Walkthrough" />
-
-
-# <a name="what-is-a-shared-project"></a>Co to jest projekt udostępniony?
+## <a name="what-is-a-shared-project"></a>Co to jest projekt udostępniony?
 
 W przeciwieństwie do większości innych typów projektu udostępnionego projektu nie ma żadnych danych wyjściowych (w postaci bibliotek DLL), zamiast tego kodu jest kompilowany do każdego projektu, który odwołuje się on. Jest to zilustrowane na poniższym diagramie — koncepcyjnie jest cała zawartość projektu udostępnionego "kopiowane do" każdego projektu odwołującego się i skompilowanych tak, jakby był część z nich.
 
@@ -54,9 +42,7 @@ Należy pamiętać, że projekty aplikacji systemu Android nie mogą odwoływać
 
 
 
-<a name="Xamarin_Studio_Walkthrough" />
-
-# <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac Walkthrough
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac Walkthrough
 
 
 W tej sekcji przedstawiono sposób tworzenia i używania projektu udostępnionego przy użyciu programu Visual Studio dla komputerów Mac. Odwołuje się do [udostępniony przykładowy projekt](#Shared_Project_Example) sekcji pełny przykład.
@@ -109,15 +95,13 @@ Gdy kliknij prawym przyciskiem myszy w projekcie udostępnionym i wybierz polece
 
 
 
-<a name="Visual_Studio_Walkthrough" />
-
-# <a name="visual-studio-walkthrough"></a>Visual Studio Walkthrough
+## <a name="visual-studio-walkthrough"></a>Visual Studio Walkthrough
 
 
 W tej sekcji przedstawiono sposób tworzenia i używania projektu udostępnionego przy użyciu programu Visual Studio. Odwołuje się do [udostępniony przykładowy projekt](#Shared_Project_Example) sekcji zakończenia wdrożenia.
 
 
-## <a name="creating-a-shared-project"></a>Tworzenie projektu udostępnionego
+### <a name="creating-a-shared-project"></a>Tworzenie projektu udostępnionego
 
 
 Aby utworzyć nowy projekt udostępniony przejdź do **Plik > Nowy rozwiązania...**  i wybierz nazwę dla projektu i rozwiązania.
@@ -145,7 +129,7 @@ Dodawanie odwołania do projektu udostępnionego odbywa się ten sam sposób jak
 Po projektu udostępnionego odwołuje się do niego inny biblioteki lub aplikacji można Skompiluj rozwiązanie i wyświetlanie błędów w kodzie. Gdy odwołuje się do projektu udostępnionego _dwóch lub więcej_ inne projekty, w lewym górnym Edytor kodu źródłowego, aby wyświetlić projekty, do których odwołują się bieżący plik kodu zostanie wyświetlone menu.
 
 
-## <a name="shared-project-properties"></a>Właściwości projektu udostępnionego
+### <a name="shared-project-properties"></a>Właściwości projektu udostępnionego
 
 
 Po wybraniu udostępnionego projektu istnieje mniej ustawienia w panelu Właściwości od innych typów projektu. Ponieważ udostępnionych projektów nie są kompilowane (samodzielnie), nie można ustawić opcji danych wyjściowych lub kompilatora, konfiguracje projektu, podpisywanie zestawu lub polecenia niestandardowych. Kod w projekcie udostępnionym skutecznie dziedziczy te wartości niezależnie od odwołuje się do nich.
@@ -161,10 +145,9 @@ Po wybraniu udostępnionego projektu istnieje mniej ustawienia w panelu Właści
 
 -----
 
- <a name="Shared_Project_Example" />
+<a name="Shared_Project_Example"/>
 
-
-# <a name="shared-project-example"></a>Przykład projektu udostępnionego
+## <a name="shared-project-example"></a>Przykład projektu udostępnionego
 
 [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) przykład używa projektu udostępnionego zawiera typowy kod używany przez obie systemu iOS, Android i Windows Phone aplikacje. Zarówno `SQLite.cs` i `TaskRepository.cs` plików kodu źródłowego wykorzystywać dyrektywy kompilatora (np.) `#if __ANDROID__`) do generowania danych wyjściowych różnych dla każdej z aplikacji, które odwołują się do nich.
 
@@ -186,10 +169,9 @@ Uruchamianie aplikacji są wyświetlane poniżej.
 
  ![](shared-projects-images/example.png "systemy iOS, Android, Windows Phone przykłady")
 
- <a name="Summary" />
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 Ten dokument opisano, jak działają udostępnionych projektów, jak mogą być tworzone i używane w Visual Studio dla komputerów Mac i Visual Studio i wprowadzono proste przykładową aplikację prezentującą projektu udostępnionego w akcji.
 

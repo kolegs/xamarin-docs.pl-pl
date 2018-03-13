@@ -2,16 +2,16 @@
 title: "Profil użytkownika"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
+ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/21/2017
-ms.openlocfilehash: 53ac30abea05095583fcac5ddc315f93ce7024f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-profile"></a>Profil użytkownika
 
@@ -38,13 +38,11 @@ if (cursor.MoveToFirst ()) {
 
 Z systemem Android 4 (14 poziom interfejsu API) nowy `ContactsContact.Profile` klasy jest dostępny za pośrednictwem dostawcy ContactsContract. `ContactsContact.Profile` Zapewnia dostęp do osobistych profilu dla właściciela urządzenia, który zawiera dane kontaktowe, takie jak właściciel urządzenia nazwę i numer telefonu.
 
-<a name="Required_Permissions" />
 
 ## <a name="required-permissions"></a>Wymagane uprawnienia
 
 Odczytywanie i zapisywanie danych kontaktowych, należy zażądać aplikacji `Read_Contacts` i `Write_Contacts` uprawnienia, odpowiednio. Ponadto do odczytu i edycji profilu użytkownika, aplikacje należy zażądać `Read_Profile` i `Write_Profile` uprawnienia.
 
-<a name="Updating_Profile_Data" />
 
 ## <a name="updating-profile-data"></a>Aktualizowanie danych profilu
 
@@ -60,7 +58,6 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
     values, null, null);
 ```
 
-<a name="Reading_Profile_Data" />
 
 ## <a name="reading-profile-data"></a>Odczytywanie danych profilu
 
@@ -78,7 +75,6 @@ if (cursor.MoveToFirst ()) {
 }
 ```
 
-<a name="Navigating_to_the_People_App" />
 
 ## <a name="navigating-to-the-people-app"></a>Nawigacja do aplikacji użytkowników
 
@@ -92,7 +88,7 @@ StartActivity (intent);
 
 Podczas uruchamiania powyższej kodu, aplikacja osób załaduje profilu użytkownika, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu osób aplikacji wyświetlanie profilu użytkownika Jan Kowalski](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png)
+[![Zrzut ekranu osób aplikacji wyświetlanie profilu użytkownika Jan Kowalski](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
 
 Praca z profilu użytkownika teraz jest podobny do interakcji z innymi danymi w systemie Android i zapewnia dodatkowy poziom personalizacji urządzenia.
 

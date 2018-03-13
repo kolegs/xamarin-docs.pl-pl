@@ -7,12 +7,12 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6139b5e27e9689da6366a2107acc14a6adcfc928
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cpu-architectures"></a>Architektury Procesora
 
@@ -32,7 +32,7 @@ Zazwyczaj należy jawnie wybierz architekturę (lub architektury), gdy aplikacja
 
 W programie Visual Studio, kliknij dwukrotnie **właściwości** w obszarze projektu w **Eksploratora rozwiązań** i wybierz **Android opcje** strony. Kliknij przycisk **pakowania** kartę i sprawdź, czy **Użyj udostępnionych w czasie wykonywania** jest wyłączone (wyłączenie tej opcji można jawnie wybrać które ABIs do obsługi). Kliknij przycisk **zaawansowane** kartę i w obszarze **właściwości zaawansowane**, sprawdź architektury, które mają być obsługiwane:
 
-[ ![Wybieranie armeabi i armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png)
+[![Wybieranie armeabi i armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -40,7 +40,7 @@ Zazwyczaj należy jawnie wybierz architekturę (lub architektury), gdy aplikacja
 
 W programie Visual Studio dla komputerów Mac, zlokalizować projektu w **rozwiązania** konsoli, kliknij koło zębate ikonę obok projektu i wybierz **opcje**. W **opcje projektu** okna dialogowego, kliknij przycisk **Android kompilacji**. Kliknij przycisk **ogólne** kartę i sprawdź, czy **użycie wspólnych Mono środowiska uruchomieniowego** jest wyłączone (wyłączenie tej opcji można jawnie wybrać które ABIs do obsługi). Kliknij przycisk **zaawansowane** kartę i w obszarze **obsługiwane ABIs**, sprawdź ABIs dla architektury, które mają być obsługiwane:
 
-[ ![Wybieranie armeabi i armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png)
+[![Wybieranie armeabi i armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
@@ -66,7 +66,7 @@ Docelowy kilku architektury Procesora, można wybrać więcej niż jeden ABI (ko
 Nie trzeba wybrać **arm64 v8a** lub **x86_64** pod kątem urządzeniach 64-bitowych; Obsługa 64-bitowych nie jest wymagana do uruchamiania aplikacji na 64-bitowym sprzęcie. Na przykład urządzeniach ARM 64-bitowych (takie jak [9 węzła](http://www.google.com/nexus/9/)) mogą korzystać z aplikacji skonfigurowanych do `armeabi-v7a`. Główną zaletą włączania obsługi 64-bitowych jest aby umożliwić aplikacji w celu rozwiązania więcej pamięci.
 
 > [!NOTE]
-> **Uwaga:**: Obsługa 64-bitowego środowiska uruchomieniowego obecnie jest to funkcja eksperymentalna. Należy pamiętać, że 64-bitowego środowiska uruchomieniowe *nie* wymagane do uruchamiania aplikacji na urządzeniach 64-bitowych. 
+> Obsługa 64-bitowego środowiska uruchomieniowego obecnie jest to funkcja eksperymentalna. Należy pamiętać, że 64-bitowego środowiska uruchomieniowe *nie* wymagane do uruchamiania aplikacji na urządzeniach 64-bitowych. 
 
 ## <a name="additional-information"></a>Dodatkowe informacje
 

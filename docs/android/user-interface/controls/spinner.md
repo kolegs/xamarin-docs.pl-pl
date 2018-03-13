@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44775853a29a384216af308a607cfddd18c9c192
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="spinner"></a>pokrętło
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 W pierwszej części tego samouczka utworzysz widżet proste pokrętła, który wyświetla listę planety. Po wybraniu planety wyskakujące zostanie wyświetlony komunikat z wybranego elementu:
 
-[![Przykład zrzuty ekranu aplikacji HelloSpinner](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png)
+[![Przykład zrzuty ekranu aplikacji HelloSpinner](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 Utwórz nowy projekt o nazwie **HelloSpinner**.
 
@@ -120,7 +120,7 @@ Po wybraniu elementu nadawcy jest rzutowane na [ `Spinner` ](https://developer.x
 
 Uruchamianie aplikacji; go powinien wyglądać następująco:
 
-[![Zrzut ekranu przykład pokrętło z Mars wybrany jako świecie](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png)
+[![Zrzut ekranu przykład pokrętło z Mars wybrany jako świecie](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>Pokrętła przy użyciu pary klucz wartość
 
@@ -188,10 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 Uruchamianie aplikacji; wyskakujące powinien wyglądać następująco:
 
-[![Przykład zaznaczenia planety wyświetlanie temperatury](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png)
+[![Przykład zaznaczenia planety wyświetlanie temperatury](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
-<a name="Resources" />
 
 ## <a name="resources"></a>Resources
 

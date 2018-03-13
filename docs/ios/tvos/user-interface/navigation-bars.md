@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Praca z kontrolerami nawigacji
 
@@ -20,7 +20,7 @@ _Ten artykuł obejmuje projektowanie i Praca z paskami nawigacji wewnątrz aplik
 
 Pasek nawigacyjny można dodać na początku widoków do wyświetlenia, tytuł i opcjonalnie przycisków na pasku nawigacyjnym. Zwykle są one używane, gdy użytkownik ma przeszedł ze strony głównej, takich jak widok tabeli, kolekcji lub Menu Widok podrzędny pokazywanie szczegółów wybranego elementu.
 
-[ ![](navigation-bars-images/navbar01.png "Pasek nawigacyjny próbki")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "Pasek nawigacyjny próbki")](navigation-bars-images/navbar01.png#lightbox)
 
 Ponadto do tytułu (który jest wyświetlany na środku) pasków nawigacji może zawierać jeden lub więcej przycisków paska nawigacji (`UIBarButtonItem`) po lewej i prawej stronie paska.
 
@@ -42,16 +42,16 @@ Najprostszym sposobem, aby pracować z pasków nawigacji w aplikacji Xamarin.tvO
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **pasek nawigacyjny** z **przybornika** i upuść go w widoku w górnej części ekranu: 
 
-    [ ![](navigation-bars-images/navbar02.png "Pasek nawigacyjny")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "Pasek nawigacyjny")](navigation-bars-images/navbar02.png#lightbox)
 1. Kliknij dwukrotnie **pasek nawigacyjny** zaznacz do **element nawigacji**. W **elementu Widget** karcie **konsoli właściwości**, można ustawić **tytuł**: 
 
-    [ ![](navigation-bars-images/navbar03.png "Ustaw tytuł")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "Ustaw tytuł")](navigation-bars-images/navbar03.png#lightbox)
 1. Następnie można dodać jeden lub więcej **elementy przycisk paska** na dowolnym jej końcu paska: 
 
-    [ ![](navigation-bars-images/navbar04.png "A element przycisku Superpaska")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "A element przycisku Superpaska")](navigation-bars-images/navbar04.png#lightbox)
 1. Na koniec przewodowy up **elementy przycisk paska** do akcji w **zdarzenia** na karcie **Explorer właściwości**: 
 
-    [ ![](navigation-bars-images/navbar05.png "A paska akcji elementu przycisku")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "A paska akcji elementu przycisku")](navigation-bars-images/navbar05.png#lightbox)
 1. Zapisz zmiany.
 
 
@@ -61,16 +61,16 @@ Najprostszym sposobem, aby pracować z pasków nawigacji w aplikacji Xamarin.tvO
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **pasek nawigacyjny** z **przybornika** i upuść go w widoku w górnej części ekranu: 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "Pasek nawigacyjny")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "Pasek nawigacyjny")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Kliknij dwukrotnie **pasek nawigacyjny** zaznacz do **element nawigacji**. W **elementu Widget** karcie **Explorer właściwości**, można ustawić **tytuł**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "Ustaw tytuł")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "Ustaw tytuł")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Następnie można dodać jeden lub więcej **elementy przycisk paska** na dowolnym jej końcu paska: 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "A paska przycisk elementów")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "A paska przycisk elementów")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Na koniec przewodowy up **elementy przycisk paska** do akcji w **zdarzenia** na karcie **Explorer właściwości**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "A paska akcji elementu przycisków")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "A paska akcji elementu przycisków")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Zapisz zmiany.
 
 
@@ -147,7 +147,7 @@ W tym artykule pokrywającego projektowanie i Praca z paskami nawigacji wewnątr
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Przykłady dla systemu tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [systemu tvOS człowieka przewodniki — interfejs](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Przewodnik programowania w języku aplikacji dla systemu tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

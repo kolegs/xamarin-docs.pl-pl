@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: a95b49fa3f090339773233dada46a14e69c8bb43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-platform-specifics"></a>Szczegóły Platform systemu iOS
 
@@ -180,10 +180,10 @@ On<iOS>().SetUseSafeArea(true);
 
 Wynik jest, że zawartość strony może być umieszczony na powierzchni ekranu, który jest bezpieczne dla wszystkich telefonów iPhone:
 
-[![](ios-images/safe-area-layout.png "Przewodnik układu bezpieczny obszar")](ios-images/safe-area-layout-large.png "bezpieczne obszaru układu przewodnik")
+[![](ios-images/safe-area-layout.png "Przewodnik układu bezpieczny obszar")](ios-images/safe-area-layout-large.png#lightbox "bezpieczne obszaru układu przewodnik")
 
 > [!NOTE]
-> **Uwaga**: bezpieczne obszar zdefiniowany przez firmę Apple służy do ustawiania w platformy Xamarin.Forms [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) właściwości oraz spowoduje zastąpienie poprzedniej wartości tej właściwości, które zostały ustawione.
+> Bezpieczne obszar zdefiniowany przez firmę Apple służy do ustawiania w platformy Xamarin.Forms [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) właściwości oraz spowoduje zastąpienie poprzedniej wartości tej właściwości, które zostały ustawione.
 
 Bezpieczny obszar może zostać dostosowane przez pobieranie jej [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) wartości z `Page.SafeAreaInsets` metody z [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) przestrzeni nazw. Następnie można zmodyfikować jako wymagane i ponownie przypisany do `Padding` właściwości w Konstruktorze strony lub [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) zastąpienia:
 
@@ -385,7 +385,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Wynik jest to, że określonej `UpdateMode` jest stosowany do [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), która kontroluje, gdy wystąpi Wybór elementu:
 
-[![](ios-images/picker-updatemode.png "Selektor UpdateMode specyficzne dla platformy")](ios-images/picker-updatemode-large.png "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Selektor UpdateMode specyficzne dla platformy")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
@@ -468,7 +468,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 W wyniku [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) można wyłączyć opóźnienia odbieranie zawartości akcenty, tak że w tym scenariuszu [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) odbiera gestu zamiast [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) strony [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-[![](ios-images/scrollview-delay-content-touches.png "Opóźnienie ScrollView zawartość stykała specyficzne dla platformy")](ios-images/scrollview-delay-content-touches-large.png "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "Opóźnienie ScrollView zawartość stykała specyficzne dla platformy")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>Podsumowanie
 

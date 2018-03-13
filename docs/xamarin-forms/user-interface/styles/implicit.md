@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>Niejawne style
 
@@ -51,7 +51,7 @@ Poniższy kod przedstawia przykład *niejawne* styl zadeklarowany w języku XAML
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definiuje jedną *niejawne* styl stosowany do strony [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) wystąpień. `Style` Służy do wyświetlania niebieski tekst na tle żółty, podczas ustawiania również inne opcje wyglądu. `Style` Zostanie dodany do strony [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) bez określania `x:Key` atrybutu. W związku z tym `Style` jest stosowane do wszystkich `Entry` niejawnie wystąpienia, ponieważ są one zgodne [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) właściwość `Style` dokładnie. Jednak `Style` nie ma zastosowania do `CustomEntry` wystąpienia, która jest podklasą `Entry`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](implicit-images/implicit-styles.png "Przykład niejawne style")](implicit-images/implicit-styles-large.png "przykład niejawne style")
+[![](implicit-images/implicit-styles.png "Przykład niejawne style")](implicit-images/implicit-styles-large.png#lightbox "przykład niejawne style")
 
 Ponadto czwarty [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) zastępuje [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) i [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) właściwości stylu niejawne do różnych `Color`wartości.
 
@@ -82,7 +82,7 @@ W tym przykładzie *niejawne* [ `Style` ](https://developer.xamarin.com/api/type
 
 Informacje o tworzeniu style w aplikacji [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), zobacz [stylów globalnych](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>Tworzenie stylu niejawne w & 35;
+## <a name="creating-an-implicit-style-in-c35"></a>Tworzenie stylu niejawne w języku C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) wystąpienia mogą być dodawane do strony sieci [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekcji w języku C#, tworząc nowe [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), a następnie dodając `Style` wystąpień do `ResourceDictionary`, jak pokazano w Poniższy przykład kodu:
 

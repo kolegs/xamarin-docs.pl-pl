@@ -8,21 +8,21 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: effa527b330fb6ca75800392e557289a326f17aa
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 388744d48799e84587a4f554a4eb67cd677d8c9a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="storyboards"></a>scenorysy
 
 Scenorysu definiuje wszystkie interfejsu użytkownika dla danej aplikacji, podzielić na funkcjonalności omówienie jego kontrolerów widoku. W Konstruktorze interfejsu w programie Xcode każdy z tych kontrolerów przebywa w jego własnej sceny.
 
-[ ![](indepth-images/intro01.png "Scenorysu w Konstruktorze interfejsu w środowisku Xcode")](indepth-images/intro01.png)
+[![](indepth-images/intro01.png "Scenorysu w Konstruktorze interfejsu w środowisku Xcode")](indepth-images/intro01.png#lightbox)
 
 Plik zasobów jest scenorysu (z rozszerzeniem `.storyboard`) która pobiera zawartych w pakiecie aplikacji Xamarin.Mac podczas kompilacji i wysłane. Aby zdefiniować początkowy scenorysu dla aplikacji, edytować go w `Info.plist` plik i wybierz **interfejsu Main** w polu listy rozwijanej: 
 
-[ ![](indepth-images/sb01.png "Edytor Info.plist")](indepth-images/sb01.png)
+[![](indepth-images/sb01.png "Edytor Info.plist")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 `FromName` Ładuje plik scenorysu o podanej nazwie, która została uwzględniona w pakiecie aplikacji. `InstantiateControllerWithIdentifier` Tworzy wystąpienie kontrolera widoku o podanej tożsamości. Ustawisz tożsamość konstruktora interfejsu w środowisku Xcode podczas projektowania interfejsu użytkownika:
 
-[ ![](indepth-images/sb02.png "Ustawienie Identyfikatora scenorysu")](indepth-images/sb02.png)
+[![](indepth-images/sb02.png "Ustawienie Identyfikatora scenorysu")](indepth-images/sb02.png#lightbox)
 
 Opcjonalnie można użyć `InstantiateInitialController` metodę, aby załadować przypisany początkowej kontrolera interfejsu konstruktora kontroler widoku:
 
-[ ![](indepth-images/sb03.png "Ustawianie początkowego kontrolera")](indepth-images/sb03.png)
+[![](indepth-images/sb03.png "Ustawianie początkowego kontrolera")](indepth-images/sb03.png#lightbox)
 
 Zostało oznaczone przez **punktu wejścia scenorysu** i powyżej Strzałka Otwórz została zakończona.
 
@@ -76,7 +76,7 @@ Dodano kilka nowych metod `NSViewController` klasy do obsługi Scenorys w macOS.
 
 Ponadto `NSViewControllers` są teraz częścią okna _obiektu odpowiadającego w łańcuchu_:
 
-[ ![](indepth-images/vc01.png "Łańcuch obiektu odpowiadającego")](indepth-images/vc01.png)
+[![](indepth-images/vc01.png "Łańcuch obiektu odpowiadającego")](indepth-images/vc01.png#lightbox)
 
 I jako taki są przewodowej w górę do pobierania i reagowania na zdarzenia, takie jak wycinania, kopiowania i wklejania zaznaczenia elementu menu. To automatyczne kontrolera widoku danych przesyłanych w sieci w górę występuje tylko w aplikacji działających na macOS Sierra (10.12) lub nowszej.
 
@@ -86,13 +86,13 @@ I jako taki są przewodowej w górę do pobierania i reagowania na zdarzenia, ta
 
 W Scenorys, kontrolerów widoku (na przykład kontroler widoku podziału i kartę View Controller) można teraz wdrożyć _zawierania_, że "zawierają" innych sub kontrolerów widoku:
 
-[ ![](indepth-images/vc02.png "Przykład zawierania kontrolera widoku")](indepth-images/vc02.png)
+[![](indepth-images/vc02.png "Przykład zawierania kontrolera widoku")](indepth-images/vc02.png#lightbox)
 
 Kontrolery widok podrzędny zawiera metody i właściwości, aby powiązać je wykonać ich kopię do ich nadrzędnej widoku kontrolera i pracy z wyświetlanie i usuwanie widoków z ekranu.
 
 Wszystkie kontrolery widoku kontenera wbudowane w system macOS mają określony układ, które sugeruje firmy Apple należy wykonać w przypadku tworzenia własnego niestandardowego kontrolerów widoku kontenera:
 
-[ ![](indepth-images/vc03.png "Układ kontrolera widoku")](indepth-images/vc03.png)
+[![](indepth-images/vc03.png "Układ kontrolera widoku")](indepth-images/vc03.png#lightbox)
 
 Kontroler widoku kolekcji zawiera tablicę elementów widok kolekcji, z których każdy zawiera co najmniej jeden kontroler widoku, które zawierają własne widoki.
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 Identyfikator Segue zdefiniowano wewnątrz konstruktora interfejsu w środowisku Xcode podczas układania Interfejsie użytkownika aplikacji:
 
-[ ![](indepth-images/sg02.png "Wprowadzanie nazwy Segue")](indepth-images/sg02.png)
+[![](indepth-images/sg02.png "Wprowadzanie nazwy Segue")](indepth-images/sg02.png#lightbox)
 
 W kontroler widoku, który działa jako źródło Segue, należy zastąpić `PrepareForSegue` — metoda i czy inicjowanie wymagane przed wykonaniem Segue i określony kontroler widoku są wyświetlane:
 
@@ -215,7 +215,7 @@ Kilka rzeczy do uwzględnienia w tym miejscu:
 
 Aby użyć tego nowego typu Segue w Konstruktorze interfejsu w programie Xcode, należy najpierw skompilować aplikację, a następnie przełącz xcode i dodać nowe Segue między dwoma sceny. Ustaw **styl** do **niestandardowych** i **Segue klasy** do `ReplaceViewSegue` (Nazwa klasy Segue nasze niestandardowe):
 
-[ ![](indepth-images/sg01.png "Klasa Segue ustawień")](indepth-images/sg01.png)
+[![](indepth-images/sg01.png "Klasa Segue ustawień")](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ Aby dodać odwołanie do zewnętrznej scenorysu, wykonaj następujące czynnośc
 
 1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Dodaj** > **nowego pliku...**   >  **Mac** > **scenorysu**. Wprowadź **nazwa** nowego scenorysu i kliknij **nowy** przycisk: 
 
-    [ ![](indepth-images/ref01.png "Dodawanie nowego scenorysu")](indepth-images/ref01.png)
+    [![](indepth-images/ref01.png "Dodawanie nowego scenorysu")](indepth-images/ref01.png#lightbox)
 2. W **Eksploratora rozwiązań**, kliknij dwukrotnie nową nazwę scenorysu, aby go otworzyć do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Projektowanie układu sceny nowego scenorysu zazwyczaj będzie i Zapisz zmiany: 
 
-    [ ![](indepth-images/ref02.png "Projektowanie interfejsu")](indepth-images/ref02.png)
+    [![](indepth-images/ref02.png "Projektowanie interfejsu")](indepth-images/ref02.png#lightbox)
 3. Przełącz się do scenorysu, który ma być Dodawanie odwołania do konstruktora interfejsu.
 4. Przeciągnij **scenorysu odwołanie** z **obiekt bibliotece** na powierzchnię projektu: 
 
-    [ ![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu w bibliotece")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu w bibliotece")](indepth-images/ref03.png#lightbox)
 5. W **inspektora atrybutu**, wybierz nazwę **scenorysu** utworzoną wcześniej: 
 
-    [ ![](indepth-images/ref04.png "Konfigurowanie odwołania")](indepth-images/ref04.png)
+    [![](indepth-images/ref04.png "Konfigurowanie odwołania")](indepth-images/ref04.png#lightbox)
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony.  Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](indepth-images/ref06.png "Ustawienie typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Ustawienie typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Zapisz zmiany do scenorysu.
 9. Wróć do programu Visual Studio for Mac zsynchronizować zmiany.
 
@@ -300,20 +300,20 @@ Można dodać odwołania do sceny określonego scenorysu zewnętrzne (i nie pocz
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie zewnętrznych scenorysu, aby go otworzyć do edycji w Konstruktorze interfejsu w środowisku Xcode.
 2. Dodaj nowe sceny i projektowanie układu w zwykły sposób: 
 
-    [ ![](indepth-images/ref07.png "Projektowanie układu w środowisku Xcode")](indepth-images/ref07.png)
+    [![](indepth-images/ref07.png "Projektowanie układu w środowisku Xcode")](indepth-images/ref07.png#lightbox)
 3. W **inspektora tożsamości**, wprowadź **identyfikator scenorysu** sceny nowe okno kontrolera: 
 
-    [ ![](indepth-images/ref08.png "Ustawienie Identyfikatora scenorysu")](indepth-images/ref08.png)
+    [![](indepth-images/ref08.png "Ustawienie Identyfikatora scenorysu")](indepth-images/ref08.png#lightbox)
 3. Otwórz scenorysu, który ma być Dodawanie odwołania do konstruktora interfejsu.
 4. Przeciągnij **scenorysu odwołanie** z **obiekt bibliotece** na powierzchnię projektu: 
 
-    [ ![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu z biblioteki")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu z biblioteki")](indepth-images/ref03.png#lightbox)
 5. W **inspektora tożsamości**, wybierz nazwę **scenorysu** i **Identyfikatora odwołania** (identyfikator scenorysu) sceny utworzoną wcześniej: 
 
-    [ ![](indepth-images/ref09.png "Ustawienie Identyfikatora odwołania")](indepth-images/ref09.png)
+    [![](indepth-images/ref09.png "Ustawienie Identyfikatora odwołania")](indepth-images/ref09.png#lightbox)
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony. Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](indepth-images/ref06.png "Ustawienie typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Ustawienie typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Zapisz zmiany do scenorysu.
 9. Wróć do programu Visual Studio for Mac zsynchronizować zmiany.
 
@@ -328,19 +328,19 @@ Aby dodać odwołanie do określonego sceny tego samego scenorysu, wykonaj nast�
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie scenorysu, aby go otworzyć do edycji.
 2. Dodaj nowe sceny i projektowanie układu w zwykły sposób: 
 
-    [ ![](indepth-images/ref11.png "Edytowanie scenorysu w środowisku Xcode")](indepth-images/ref11.png)
+    [![](indepth-images/ref11.png "Edytowanie scenorysu w środowisku Xcode")](indepth-images/ref11.png#lightbox)
 3. W **inspektora tożsamości**, wprowadź **identyfikator scenorysu** sceny nowe okno kontrolera: 
 
-    [ ![](indepth-images/ref12.png "Ustawienie Identyfikatora scenorysu")](indepth-images/ref12.png)
+    [![](indepth-images/ref12.png "Ustawienie Identyfikatora scenorysu")](indepth-images/ref12.png#lightbox)
 3. Przeciągnij **scenorysu odwołanie** z **przybornika** na powierzchnię projektu: 
 
-    [ ![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu z biblioteki")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Wybieranie odwołanie scenorysu z biblioteki")](indepth-images/ref03.png#lightbox)
 5. W **inspektora atrybutu**, wybierz pozycję **Identyfikatora odwołania** (identyfikator scenorysu) sceny utworzoną wcześniej: 
 
-    [ ![](indepth-images/ref13.png "Ustawienie Identyfikatora odwołania")](indepth-images/ref13.png)
+    [![](indepth-images/ref13.png "Ustawienie Identyfikatora odwołania")](indepth-images/ref13.png#lightbox)
 6. Formantu, kliknij pozycję element Widget interfejsu użytkownika (na przykład przycisk) na istniejących sceny i Utwórz nowe Segue do **odwołania scenorysu** nowo utworzony. Wybierz z menu podręcznego **Pokaż** przeprowadzenie Segue: 
 
-    [ ![](indepth-images/ref06.png "Wybieranie typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Wybieranie typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Zapisz zmiany do scenorysu.
 9. Wróć do programu Visual Studio for Mac zsynchronizować zmiany.
 

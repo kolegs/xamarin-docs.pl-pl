@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>Ikony aplikacji
 
@@ -32,13 +32,13 @@ W ten sam sposób aplikacji platformy Xamarin.iOS można użyć obrazu zasobów 
 
 - **Ikona aplikacji** — wszystkie aplikacje systemu iOS musi definiować ikonę aplikacji. Jest to ikonę, która będzie wybierz użytkownika z ekranu głównego z systemem iOS można uruchomić aplikacji. Ponadto ta ikona jest stosowana przez Centrum gier, jeśli ma to zastosowanie. Przykład: 
 
-    [ ![](app-icons-images/000.png "Ikona aplikacji")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "Ikona aplikacji")](app-icons-images/000-full.png#lightbox)
 - **Wyróżnione ikona** — zawsze, gdy użytkownik wprowadza nazwę aplikacji w wyszukiwanie Spotlight, ta ikona jest wyświetlana. Przykład: 
 
-    [ ![](app-icons-images/000a.png "Ikona uwagi")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "Ikona uwagi")](app-icons-images/000a-full.png#lightbox)
 - **Ikona ustawień** — Jeśli użytkownik wprowadzi **ustawienia** aplikacji na urządzeniu z systemem iOS, ta ikona pojawi się na końcu **ustawienia** listy aplikacji. Przykład: 
 
-    [ ![](app-icons-images/000b.png "Ikona ustawień")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "Ikona ustawień")](app-icons-images/000b-full.png#lightbox)
 
 Następujące rozmiary obrazów zasobów i rozwiązania będzie potrzebnych do obsługi wszystkich typów ikona wymagane przez aplikację platformy Xamarin.iOS przeznaczonych dla systemu iOS 5 za pomocą systemu iOS 9 (lub nowszego):
 

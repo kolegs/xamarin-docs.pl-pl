@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: d8fa54f23dfea063fa25f6e26e2df2c2ed82101e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Kolekcja widoków
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, deweloper ma dostęp do tej s
 
 A `NSCollectionView` wyświetlana siatka zorganizowane przy użyciu widoków podrzędnych `NSCollectionViewLayout`. Każdy widok podrzędny w siatce jest reprezentowana przez `NSCollectionViewItem` który zarządza ładowania zawartości widoku z `.xib` pliku.
 
-[ ![Uruchom przykładową aplikację](collection-view-images/intro01.png)](collection-view-images/intro01.png)
+[![Uruchom przykładową aplikację](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 W tym artykule opisano podstawy Praca z widokami kolekcja w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które są używane w tym artykule.
 

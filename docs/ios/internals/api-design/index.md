@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fab7579be256e478c69b76b5e41b8c1b0568ba6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="api-design"></a>Projekt interfejsu API
 
@@ -25,7 +25,6 @@ Fundament Xamarin.iOS jest aparat międzyoperacyjnego, który stanowi world C# i
 ## <a name="design-principles"></a>Zasady projektowania
 
 Oto nasze zasady projektowania dla powiązania Xamarin.iOS (te dotyczą także Xamarin.Mac, Mono powiązań dla języka Objective-C w OS X):
-
 
 - Postępuj zgodnie z wytycznymi projektowania Framework
 - Umożliwiają deweloperom klasy podklasy Objective-C:
@@ -78,15 +77,14 @@ Xamarin.iOS obejmuje kilka zestawów, które stanowią *profilu Xamarin.iOS*. [Z
 
 ### <a name="major-namespaces"></a>Przestrzenie nazw głównych 
 
- <a name="MonoTouch.ObjCRuntime" />
+<a name="MonoTouch.ObjCRuntime" />
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) przestrzeni nazw umożliwia deweloperom zestawiania względem między C# i Objective-C.
 Jest to nowe powiązanie, przeznaczonego dla systemu iOS, na podstawie doświadczeń z Cocoa # i Gtk #.
 
- <a name="MonoTouch.Foundation" />
-
+<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -100,10 +98,7 @@ Ta przestrzeń nazw zapewnia powiązania dla typów podstawowych Foundation Obje
 
 - Różne pomocnika interfejsów API są widoczne w tym miejscu umożliwiają deweloperom do powiązania innej interfejsów API języka Objective-C, iOS, innych interfejsów API i interfejsów API, które aktualnie nie są powiązane przez platformy Xamarin.iOS.
 
-
 Więcej szczegółów na powiązanie interfejsów API, zobacz [Xamarin.iOS powiązania Generator](~/cross-platform/macios/binding/binding-types-reference.md) sekcji.
-
- <a name="NSObject" />
 
 
 ##### <a name="nsobject"></a>NSObject
@@ -116,7 +111,6 @@ Gdy Mono zapewni wyrzucanie elementów bezużytecznych dla wszystkich obiektów,
 
 Jeśli z danym typem musi wykonać finalizacja deterministyczna, Zastąp [NSObject.Dispose(bool) — Metoda](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) parametru do usunięcia jest "bool disposing", i jeśli ustawić go TRUE oznacza, że metodę Dispose jest wywoływana, ponieważ użytkownik jawnie wywoływane metody Dispose () w obiekcie. Jeśli wartość to false, oznacza to, że metodę Dispose (bool disposing) jest wywoływana z finalizator w wątku finalizatora. []()
 
-<a name="Categories" />
 
 ##### <a name="categories"></a>Kategorie
 
@@ -185,7 +179,6 @@ class Rotation_IOS6 {
 }
 ```
 
-<a name="PreserveAttribute" />
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
@@ -197,8 +190,7 @@ Na przykład można utworzyć wystąpienia dynamicznie typy, można zachować do
 
 Ten atrybut można stosować każdy element członkowski typu lub samego typu. Jeśli chcesz zachować całą typu za pomocą składni [zachować (AllMembers = true)] typu.
 
- <a name="MonoTouch.UIKit" />
-
+<a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>UIKit
 
@@ -206,8 +198,7 @@ Ten atrybut można stosować każdy element członkowski typu lub samego typu. J
 
 C# delegatów są dostępne dla typowych operacji. Zobacz [delegatów](#Delegates) sekcji, aby uzyskać więcej informacji.
 
- <a name="OpenGLES" />
-
+<a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
@@ -219,8 +210,6 @@ Funkcja OpenGLES 2.0 jest dostępna za pośrednictwem typu ES20.GL, udokumentowa
 
 Funkcja OpenGLES 3.0 jest dostępna za pośrednictwem typu ES30.GL, udokumentowane [tutaj](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) typu.
 
- <a name="Binding_Design" />
-
 
 ### <a name="binding-design"></a>Powiązania projektu
 
@@ -230,8 +219,6 @@ Tak samo, jak P/Invoke jest przydatne narzędzie do wywołania natywnych bibliot
 
 Omówienie w następnych sekcjach kilka nie jest niezbędna dla użytkowników, którzy są tworzenie aplikacji platformy Xamarin.iOS, ale pomaga deweloperom Dowiedz się, jak czynności są wykonywane i pomoże im podczas tworzenia bardziej złożonych aplikacji.
 
-
- <a name="Types" />
 
 
 #### <a name="types"></a>Types
@@ -254,16 +241,13 @@ Istnieje kilka metod w `NSArray`, dla sytuacjach wyjątkowych, których można u
 
 Ponadto w **klasycznego interfejsu API** zamiast udostępnianie `CGRect`, `CGPoint` i `CGSize` z interfejsu API CoreGraphics, możemy zastąpić z `System.Drawing` implementacje `RectangleF`, `PointF`i `SizeF` zgodnie z ich może pomóc deweloperom zachować istniejący kod OpenGL, która używa OpenTK. Korzystając z nowego 64-bitowych **Unified API**, należy użyć interfejsu API CoreGraphics.
 
- <a name="Inheritance" />
-
+<a name="Inheritance" />
 
 #### <a name="inheritance"></a>Dziedziczenie
 
 Projekt interfejsu API platformy Xamarin.iOS umożliwia deweloperom rozszerzyć natywnych typów języka Objective-C w taki sam sposób, że może rozszerzyć się C# typu przy użyciu słowa kluczowego "override" w klasie pochodnej, a także tworzenie łańcuchów do podstawowej implementacji przy użyciu "base" C# — słowo kluczowe.
 
 Ten projekt umożliwia deweloperom uniknięcie korzystania z języka Objective-C selektorów jako część procesu tworzenia, ponieważ całego systemu w języku Objective C jest już opakowana wewnątrz bibliotek platformy Xamarin.iOS.
-
- <a name="Types_and_Interface_Builder" />
 
 
 #### <a name="types-and-interface-builder"></a>Typy i konstruktora interfejsu
@@ -279,8 +263,7 @@ public partial class void MyView : UIView {
 }
 ```
 
-
- <a name="Delegates" />
+<a name="Delegates" />
 
 
 #### <a name="delegates"></a>Delegaty
@@ -302,15 +285,13 @@ W klasach Objective-C, zobaczysz, że klasy, które używają tego wzorca progra
 
 W Xamarin.iOS trzy mechanizmy wykluczają się wzajemnie, aby powiązać te obiekty delegowane są oferowane:
 
-1.  [Za pomocą zdarzeń](#Events) .
-2.  [Jednoznacznie za pośrednictwem `Delegate`właściwości](#StrongDelegate) .
-3.  [Typowaniem za pośrednictwem `WeakDelegate`właściwości](#WeakDelegate) .
-
+1.  [Za pomocą zdarzeń](#Via_Events).
+2.  [Jednoznacznie za pośrednictwem `Delegate` właściwości](#StrongDelegate)
+3.  [Typowaniem za pośrednictwem `WeakDelegate` właściwości](#WeakDelegate)
 
 Rozważmy na przykład [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) klasy. Wywołuje się to do [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) wystąpienia, która jest przypisana do [delegować](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) właściwości.
 
- <a name="Via_Events" />
-
+<a name="Via_Events" />
 
 ##### <a name="via-events"></a>Za pomocą zdarzeń
 
@@ -320,7 +301,6 @@ Dla wielu typów Xamarin.iOS automatycznie utworzy odpowiedni delegata, który p
 -  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) metody jest mapowany na [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) zdarzeń.
 -  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) metody jest mapowany na [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) zdarzeń.
 
-
 Na przykład prosty program rejestruje czas rozpoczęcia i zakończenia, gdy wyświetlić ładowania sieci web:
 
 ```csharp
@@ -329,8 +309,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
- <a name="Via_Properties" />
 
 
 ##### <a name="via-properties"></a>Za pomocą właściwości
@@ -353,6 +331,7 @@ void SetupTextField (UITextField tf)
 
 `UITextField`w `ShouldReturn` właściwości w tym przypadku przyjmuje jako argumentu delegata, który zwraca wartości logicznej i określa, czy TextField zrobić coś o naciśnięcie przycisku powrotu. W naszym metoda zostanie zwrócona *true* do obiektu wywołującego, ale możemy również usunąć klawiatury z ekranu (dzieje się tak podczas wywołania elementu textfield `ResignFirstResponder`).
 
+<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Silnie Typizowane za pomocą właściwości delegata
 
@@ -389,8 +368,9 @@ Ten wzorzec jest również służące do sterowania zachowaniem dla niektórych 
 
 Wzorzec służy także do dostarczania danych na żądanie dla kilku formantów. Na przykład [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) formant jest formantem zaawansowanych renderowanie tabeli — i zarówno wyglądu, jak i zawartość są regulowane przez wystąpienie [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
+<a name="WeakDelegate"/>
 
-@### Typowaniem za pomocą właściwości WeakDelegate
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>Typowaniem za pomocą właściwości WeakDelegate
 
 Oprócz właściwość jednoznacznie jest także słabe typu delegata, który umożliwia deweloperowi inaczej powiązać rzeczy, w razie potrzeby.
 Wszędzie silnie typizowaną `Delegate` właściwości jest widoczna w Xamarin.iOS przez powiązanie, odpowiadający jej `WeakDelegate` właściwość również jest widoczne.
@@ -423,7 +403,7 @@ web.WeakDelegate = new Notifier ();
 Należy pamiętać, że raz `WeakDelegate` przypisany właściwości `Delegate` właściwość nie będzie używana. Ponadto w przypadku zastosowania metody w dziedziczonej klasie podstawowej, którego ma zostać [eksportu], użytkownik musi być publiczną metodę.
 
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Mapowanie wzorzec delegata Objective-C C & 35;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Mapowanie wzorca delegata Objective-C-C&#35;
 
 Po wyświetleniu przykłady Objective-C, które wyglądają następująco:
 
@@ -440,7 +420,7 @@ foo.Delegate = new SomethingDelegate ();
 W Xamarin.iOS zostały podane jednoznacznie klas, które mapują Objective-C delegować klasy. Z nich korzystać, użytkownik zostanie tworzenie podklas i zastępowanie metody zdefiniowane przez implementację dla platformy Xamarin.iOS. Aby uzyskać więcej informacji dotyczących sposobu ich działania zobacz sekcję "modele" poniżej.
 
 
-##### <a name="mapping-delegates-to-c35"></a>Mapowanie delegatów C & 35;
+##### <a name="mapping-delegates-to-c35"></a>Mapowanie delegatów C&#35;
 
 UIKit ogólnie używa języka Objective-C delegatów w dwóch formach.
 
@@ -575,12 +555,12 @@ public class AppController : UIApplicationDelegate {
 Zalety są czy nie istnieje potrzeba dalszego w plikach nagłówka Objective-C, aby znaleźć selektor, typy argumentów lub mapowania na język C# i uzyskanie intellisense w programie Visual Studio dla komputerów Mac, wraz z silnymi typami
 
 
-#### <a name="xib-outlets-and-c35"></a>Gniazda XIB i s & 35;
+#### <a name="xib-outlets-and-c35"></a>Gniazda XIB i C&#35;
 
 > [!IMPORTANT]
 > W tej sekcji opisano integracji IDE z gniazda podczas korzystania z plików XIB. Jeśli przy użyciu narzędzia Projektant Xamarin dla systemu iOS, to wszystkie zastępuje, wprowadzając nazwę w polu **tożsamości > nazwa** w sekcji właściwości IDE, jak pokazano poniżej:
 >
-> [![](images/designeroutlet.png "Wprowadzanie nazwy elementu w Projektancie systemu iOS")](images/designeroutlet.png)
+> [![](images/designeroutlet.png "Wprowadzanie nazwy elementu w Projektancie systemu iOS")](images/designeroutlet.png#lightbox)
 >
 >Aby uzyskać więcej informacji w systemie iOS projektanta, zapoznaj się z tematem [wprowadzenie do projektanta dla systemu iOS](~/ios/user-interface/designer/introduction.md#how-it-works) dokumentu.
 

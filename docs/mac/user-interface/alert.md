@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 73b0a3292d7b1681b4086e8366e8b813194969a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8901bb57ace4f05e8c26fdc43dfe8c476927903a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alerts"></a>Alerty
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej ale
 
 Alert jest specjalnym rodzajem okna dialogowego, który jest wyświetlany, gdy występuje poważny problem (np. Błąd) lub jako ostrzeżenie (takich jak przygotowywanie do usunięcia pliku). Ponieważ alert jest okno dialogowe, wymagany jest również odpowiedzi użytkownika przed jego zamknięciem.
 
-[ ![](alert-images/alert06.png "Przykład alertu")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Przykład alertu")](alert-images/alert06.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z alertami w aplikacji Xamarin.Mac. 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 Powyższy kod wyświetla alert z ikoną aplikacji na ikonę ostrzeżenia, tytuł, ostrzeżenie i jeden **OK** przycisk:
 
-[ ![](alert-images/alert01.png "Alert o przycisku OK")](alert-images/alert01.png)
+[![](alert-images/alert01.png "Alert o przycisku OK")](alert-images/alert01.png#lightbox)
 
 Apple zapewnia kilka właściwości, które mogą służyć do dostosowywania alertu:
 
@@ -92,7 +92,7 @@ alert.RunModal ();
 ```
 Jeśli ten kod jest uruchamiana, wyświetlane są następujące:
 
-[ ![](alert-images/alert02.png "Proste alertu")](alert-images/alert02.png)
+[![](alert-images/alert02.png "Proste alertu")](alert-images/alert02.png#lightbox)
 
 Poniższy kod wyświetla ten sam alert jako arkusz:
 
@@ -107,7 +107,7 @@ alert.BeginSheet (this);
 
 Jeśli ten kod jest uruchamiana, poniżej zostanie wyświetlony:
 
-[ ![](alert-images/alert03.png "Alert wyświetlany jako arkusz")](alert-images/alert03.png)
+[![](alert-images/alert03.png "Alert wyświetlany jako arkusz")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
@@ -136,7 +136,7 @@ Przycisk pierwszego dodane będzie _przycisk domyślny_ który zostanie aktywowa
 
 Jeśli firma Microsoft wykonywania kodu poniżej będą wyświetlane:
 
-[ ![](alert-images/alert04.png "Alert z trzech opcji przycisku")](alert-images/alert04.png)
+[![](alert-images/alert04.png "Alert z trzech opcji przycisku")](alert-images/alert04.png#lightbox)
 
 Oto kod dla tego samego alertu jako arkusz:
 
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 ```
 Jeśli ten kod jest uruchamiana, poniżej zostanie wyświetlony:
 
-[ ![](alert-images/alert05.png "W przypadku wystąpienia alertu trzy przycisk wyświetlany jako arkusz")](alert-images/alert05.png)
+[![](alert-images/alert05.png "W przypadku wystąpienia alertu trzy przycisk wyświetlany jako arkusz")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > Nigdy nie należy dodawać więcej niż trzy przyciski do alertu.
@@ -184,7 +184,7 @@ Jeśli wartość `alert.SuppressionButton.State` jest `NSCellStateValue.On`, uż
 
 Jeśli kod jest uruchamiana, poniżej zostanie wyświetlony:
 
-[ ![](alert-images/alert06.png "Alert o przycisk Pomiń")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Alert o przycisk Pomiń")](alert-images/alert06.png#lightbox)
 
 Oto kod dla tego samego alertu jako arkusz:
 
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Jeśli ten kod jest uruchamiana, poniżej zostanie wyświetlony:
 
-[ ![](alert-images/alert07.png "Wyświetl alert z przyciskiem Pomiń jako arkusz")](alert-images/alert07.png)
+[![](alert-images/alert07.png "Wyświetl alert z przyciskiem Pomiń jako arkusz")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
@@ -235,7 +235,7 @@ W tym miejscu klucza wiersze są `var input = new NSTextField (new CGRect (0, 0,
 
 Jeśli firma Microsoft wykonywania kodu poniżej będą wyświetlane:
 
-[ ![](alert-images/alert08.png "Jeśli przeprowadzana kod, poniżej zostanie wyświetlony")](alert-images/alert08.png)
+[![](alert-images/alert08.png "Jeśli przeprowadzana kod, poniżej zostanie wyświetlony")](alert-images/alert08.png#lightbox)
 
 W tym miejscu jest ten sam alert jako arkusz:
 
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Jeśli firma Microsoft uruchomić ten kod, poniżej zostanie wyświetlony:
 
-[ ![](alert-images/alert09.png "Alert o widok niestandardowy")](alert-images/alert09.png)
+[![](alert-images/alert09.png "Alert o widok niestandardowy")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 

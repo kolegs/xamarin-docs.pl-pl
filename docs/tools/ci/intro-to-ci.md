@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
 
@@ -33,13 +33,13 @@ Ponownie ciągłej integracji czynność zatwierdzania zmian powoduje, że serwe
 
 Na poniższym diagramie przedstawiono ten proces:
 
-[![](intro-to-ci-images/intro01-small.png "Ten diagram przedstawia proces")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "Ten diagram przedstawia proces")](intro-to-ci-images/intro01.png#lightbox)
 
 Aplikacje mobilne wprowadzenie wyjątkowe wyzwanie dla ciągłej integracji. Aplikacje mogą wymagać czujników takich jak GPS lub aparatu fotograficznego, które są dostępne tylko na fizycznych urządzeniach. Ponadto symulatorów lub emulatory są zbliżenia sprzętu i może użyć w celu zamaskowania lub przesłaniać problemów. Dzięki temu jest niezbędne do testowania aplikacji mobilnej na rzeczywiste sprzęt, aby mieć pewność, że to naprawdę klientowi.
 
 [Test Centrum aplikacji](https://docs.microsoft.com/en-us/appcenter/test-cloud) rozwiązano ten problem określonego przez testowanie aplikacji bezpośrednio na setki urządzeń fizycznych. Deweloperzy zapisu akceptacji zautomatyzowanych testów, umożliwiających wydajne testowania interfejsu użytkownika. Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na poniższym diagramie:
 
-[![](intro-to-ci-images/intro02-small.png "Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na tym diagramie")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na tym diagramie")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>Składniki ciągłej integracji
 
@@ -72,7 +72,7 @@ Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM
 
 Git może działać wyłącznie za pośrednictwem przeglądarki sieci web lub za pomocą [klientach graficznego interfejsu użytkownika](http://git-scm.com/downloads/guis) uruchomionymi w systemie Linux, Mac OS x i Windows. Jest bezpłatna dla repozytoriów publicznych; Wymagaj prywatne repozytoria [plan płatnej](https://github.com/pricing).
 
-Visual Studio 2015 i Visual Studio for Mac zapewniają natywną obsługę dla Git; dla programu Visual Studio 2013 i starszych wersji, firma Microsoft udostępnia [dostępne do pobrania rozszerzenie Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak wspomniano powyżej, Visual Studio Team Services i TFS można użyć narzędzia Git kontroli wersji, zamiast TFVC.
+Visual Studio 2015 i Visual Studio for Mac zapewniają natywną obsługę dla Git; dla starszych wersji, firma Microsoft udostępnia [dostępne do pobrania rozszerzenie Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak wspomniano powyżej, Visual Studio Team Services i TFS można użyć narzędzia Git kontroli wersji, zamiast TFVC.
 
 
 ### <a name="subversion"></a>Podwersją
@@ -102,7 +102,7 @@ Z Team Foundation Server w przypadku skonfigurowania maszyny kompilacji w nastę
 
 Na poniższym diagramie przedstawiono ten topografii:
 
-[![](intro-to-ci-images/intro03-small.png "Ten diagram przedstawia tego topografii")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "Ten diagram przedstawia tego topografii")](intro-to-ci-images/intro03.png#lightbox)
 
 Użytkownik może również połączyć z lokalnego serwera TFS z projektu programu Visual Studio Team Services, tak aby kompilacji programu VSTS mają delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zobacz [Wdróż i skonfiguruj serwer kompilacji](http://msdn.microsoft.com/en-us/library/ms181712.aspx) w witrynie MSDN.
 
@@ -110,13 +110,13 @@ Użytkownik może również połączyć z lokalnego serwera TFS z projektu progr
 
 Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Usługi Git i Wpięć
 
 Inne typowe środowisko CI może być całkowicie OS X na podstawie. Ten scenariusz polega na użyciu narzędzia Git dla kontroli kodu źródłowego i Wpięć dla serwera kompilacji. Oba te działają na pojedynczym komputerze Mac OS X przy użyciu programu Visual Studio dla komputerów Mac zainstalowane. To jest bardzo podobny do programu Visual Studio Team Services + środowiska Wpięć opisanych w poprzedniej sekcji:
 
-[![](intro-to-ci-images/intro05-small.png "To jest bardzo podobny do programu Visual Studio Team Services + środowiska Wpięć opisanych w poprzedniej sekcji")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "To jest bardzo podobny do programu Visual Studio Team Services + środowiska Wpięć opisanych w poprzedniej sekcji")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Uwaga: Jest Wpięć [nie są obsługiwane przez program Xamarin](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**

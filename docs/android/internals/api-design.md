@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>Projekt interfejsu API
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -23,7 +22,6 @@ Oprócz podstawowych podstawowej biblioteki klas, które są częścią Mono Xam
 
 Fundament platformy Xamarin.Android jest aparat międzyoperacyjnego tego world mostków C# innym osobom Java i dostarcza deweloperom dostępu do interfejsów API języka Java z języka C# lub innych języków .NET.
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>Zasady projektowania
 
@@ -64,7 +62,6 @@ Oto nasze zasady projektowania dla powiązania platformy Xamarin.Android
     - Mechanizm do wywołania dowolnego bibliotek języka Java ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)).
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>Zestawy
 
@@ -72,11 +69,9 @@ Xamarin.Android obejmuje kilka zestawów, które stanowią *profilu MonoMobile*.
 
 Powiązania z platformy systemu Android są zawarte w `Mono.Android.dll` zestawu. Ten zestaw zawiera całą powiązanie odbierającą interfejsów API systemu Android i komunikacji z maszyny Wirtualnej w czasie wykonywania dla systemu Android.
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>Powiązania projektu
 
-<a name="Collections" />
 
 ### <a name="collections"></a>Kolekcje
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>Właściwości
 
@@ -127,7 +121,6 @@ Metody języka Java przekształceniem właściwości, gdy jest to konieczne:
 -  Właściwości są *nie* generowane, jeśli typ właściwości może być tablicą.
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>Zdarzenia i odbiorników
 
@@ -177,7 +170,6 @@ Firma Microsoft planuje dodanie przeciążenia dla innych metod i konstruktorami
 
 Wszystkie interfejsy odbiorników zaimplementować [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) interfejsu z powodu szczegóły implementacji powiązania, więc klasy odbiornika musi zawierać implementację tego interfejsu. Można to zrobić przez zaimplementowanie interfejsu odbiornika w podklasą [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) lub inne obiektu języka Java, na przykład działanie systemu Android.
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>Runnables
 
@@ -188,7 +180,6 @@ Wykorzystuje Java [java.lang.Runnable](https://developer.xamarin.com/api/type/Ja
 
 Firma Microsoft pozostałych [interfejsu IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/) przesłonięć w miejscu zamiast zastąpić je, ponieważ kilka typów implementuje interfejsu i dlatego może być przekazywane jako runnables bezpośrednio.
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>Klasy wewnętrzne
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 Uwaga jak `CubeWallpaper.CubeEngine` jest zagnieżdżony w `CubeWallpaper`, `CubeWallpaper` dziedziczy z klasy zawierające `WallpaperService.Engine`, i `CubeWallpaper.CubeEngine` ma konstruktora, który przyjmuje typ deklarujący-- `CubeWallpaper` w takim przypadku — wszystkie jako wymienione powyżej.
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>Interfejsy
 
@@ -254,7 +244,7 @@ Rozważmy na przykład [android.os.Parcelable](https://developer.xamarin.com/api
 
 
 > [!NOTE]
-> **Uwaga:** począwszy od platformy Xamarin.Android 1.9 są stałe interfejsu Java <em>zduplikowane</em> w celu uproszczenia eksportowanie Java kodu. Pomaga to zapewnić przenoszenia kodu języka Java, która zależy od [android dostawcy](http://developer.android.com/reference/android/provider/package-summary.html) interfejsu stałe.
+> Począwszy od platformy Xamarin.Android 1.9 są stałe interfejsu Java <em>zduplikowane</em> w celu uproszczenia eksportowanie Java kodu. Pomaga to zapewnić przenoszenia kodu języka Java, która zależy od [android dostawcy](http://developer.android.com/reference/android/provider/package-summary.html) interfejsu stałe.
 
 Oprócz folderów dla powyższych typów istnieją cztery dalszych zmian:
 
@@ -277,7 +267,6 @@ Wcześniej, do portu tego wyrażenia na język C# należy przyjrzeć się wszyst
 
 Na koniec typów z *stałych* sufiks, takich jak *Android.OS.ParcelableConsts* są teraz przestarzałe, inne niż nowo wprowadzonych InterfaceConsts zagnieżdżone typy. Zostaną one usunięte 3.0 platformy Xamarin.Android.
 
-<a name="Resources" />
 
 ## <a name="resources"></a>Resources
 
@@ -323,7 +312,6 @@ public class Resource {
 
 Następnie użyje `Resource.Drawable.icon` do odwołania `drawable/icon.png` pliku, lub `Resource.Layout.main` do odwołania `layout/main.xml` pliku, lub `Resource.String.first_string` do odwołania pierwszy ciąg w pliku słownika `values/strings.xml`.
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>Stałe i wyliczenia
 

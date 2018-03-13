@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b752ebdd1a98d5258cc27b2221d33e07fa04aa46
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44813ea6c1e795889444d949ca2706c0f50483c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-build-mechanics"></a>Mechanika kompilacji systemu iOS
 
@@ -33,7 +33,7 @@ Aby włączyć dane wyjściowe diagnostyki programu MSBuild w programie Visual S
 
 1. Kliknij przycisk **programu Visual Studio for Mac > Preferencje...**
 2. W widoku drzewa po lewej stronie wybierz **projekty > kompilacji**
-3. W okienku po prawej stronie, ustawić poziom szczegółowości dziennika listy rozwijanej **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2.png "ustawienie szczegółowości dziennika")](ios-build-mechanics-images/image2.png)
+3. W okienku po prawej stronie, ustawić poziom szczegółowości dziennika listy rozwijanej **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2.png "ustawienie szczegółowości dziennika")](ios-build-mechanics-images/image2.png#lightbox)
 4. Kliknij przycisk **OK**
 5. Uruchom ponownie program Visual Studio dla komputerów Mac
 6. Czyszczenie i skompiluj ponownie pakiet
@@ -46,7 +46,7 @@ Aby włączyć dane wyjściowe diagnostyki programu MSBuild w programie Visual S
 
 1. Kliknij przycisk **Narzędzia > Opcje...**
 2. W widoku drzewa po lewej stronie wybierz **projekty i rozwiązania > Tworzenie i uruchamianie**
-3. W okienku po prawej stronie, ustaw *listy rozwijanej poziom szczegółowości danych wyjściowych kompilacji MSBuild* do **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "ustawienie MSBuild dane wyjściowe kompilacji poziom szczegółowości")](ios-build-mechanics-images/image2-vs.png)
+3. W okienku po prawej stronie, ustaw *listy rozwijanej poziom szczegółowości danych wyjściowych kompilacji MSBuild* do **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "ustawienie MSBuild dane wyjściowe kompilacji poziom szczegółowości")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Kliknij przycisk **OK**
 5. Czyszczenie i skompiluj ponownie pakiet.
 6. Dane wyjściowe diagnostyki jest widoczna w panelu wyjścia.
@@ -101,7 +101,7 @@ Biorąc pod uwagę powyższe informacje, na poniższej liście daje niektóre in
 
 Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcjach iOS:
 
-[ ![](ios-build-mechanics-images/image3.png "Ustawianie opcji")](ios-build-mechanics-images/image3.png)
+[![](ios-build-mechanics-images/image3.png "Ustawianie opcji")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Lewy urządzenia
 
@@ -155,7 +155,7 @@ Dodatkowe porady
 
 Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcjach iOS:
 
-[ ![](ios-build-mechanics-images/image4.png "Ustawianie opcji")](ios-build-mechanics-images/image4.png)
+[![](ios-build-mechanics-images/image4.png "Ustawianie opcji")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Za pomocą konsolidatora
 
@@ -317,4 +317,4 @@ L3 Cache: 4 MB
 
 - [Wpis w blogu](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Łączenie w systemie iOS](~/ios/deploy-test/linker.md)
-- [Konfiguracja niestandardowych konsolidatora](~/cross-platform/deploy-test/linker.md)
+- [Konfiguracja konsolidatora niestandardowego](~/cross-platform/deploy-test/linker.md)

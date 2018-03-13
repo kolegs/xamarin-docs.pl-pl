@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 74635b10e97513d6b023cb44ede7745448aa153c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc6a5f3fe9ff63081936e5714dfb85058204ef33
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-google-play"></a>Publikowanie do witryny Google Play
 
@@ -19,7 +19,6 @@ Choć wiele rynków aplikację do dystrybucji aplikacja, Google Play jest raczej
 
 Ta sekcja obejmuje tematów, które są specyficzne dla sklepu Google Play, takie jak rejestrowanie jako wydawca zasoby ułatwiające Google Play wspierania i anonsowanie aplikacji, wskazówki dotyczące klasyfikacji aplikacji w witrynie Google Play i za pomocą filtrów do zbierania Ogranicz wdrożenia aplikacji na niektórych urządzeniach.
 
-<a name="Requirements"  />
 
 ## <a name="requirements"></a>Wymagania
 
@@ -32,7 +31,6 @@ Maksymalny rozmiar APK publikowane w witrynie Google Play wynosi 100MB. Jeśli a
 Google Play nie jest ogólnie dostępna. Niektóre lokalizacje może nie być obsługiwana dystrybucji aplikacji.
 
 
-<a name="Becoming_a_Publisher"  />
 
 ## <a name="becoming-a-publisher"></a>Staje się wydawca
 
@@ -53,14 +51,12 @@ Google Play nie obsługuje pewnych krajach na całym świecie. Najbardziej aktua
 1.  [Obsługiwane lokalizacje dla dystrybucji użytkownikom Google Play](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; jest lista wszystkich krajów, w których aplikacje mogą być dystrybuowane.
 
 
-<a name="Preparing_Promotional_Assets"  />
 
 ### <a name="preparing-promotional-assets"></a>Trwa przygotowywanie zasobów promocyjna
 
 Efektywne wspierania i anonsowanie aplikacji w witrynie Google Play, Google umożliwia deweloperom przesłać promocyjna zasoby, takie jak zrzuty ekranu, grafiki i wideo do przesłania. Google Play reklamy i promocji aplikacja będzie używać tych zasobów.
 
 
-<a name="Launcher_Icons"  />
 
 #### <a name="launcher-icons"></a>Uruchamianie ikon
 
@@ -83,7 +79,6 @@ Wskazówki dotyczące uruchamiania ikon:
 1.  **Użyj kanału alfa** &ndash; ikony należy wykonać przy użyciu kanału alfa, a nie powinien być obrazy pełnej w ramce.
 
 
-<a name="High_Resolution_Application_Icon"  />
 
 #### <a name="high-resolution-application-icons"></a>Ikony aplikacji wysokiej rozdzielczości
 
@@ -96,7 +91,6 @@ Aplikacje w sklepie Google Play wymagają wersji o wysokiej wierności ikony apl
 [Android Studio zasobów](https://romannurik.github.io/AndroidAssetStudio/) jest przydatne narzędzie do tworzenia odpowiedniego uruchamiania ikony i ikona aplikacji o wysokiej rozdzielczości.
 
 
-<a name="Screen_shots"  />
 
 #### <a name="screen-shots"></a>Zrzuty ekranu
 
@@ -108,7 +102,6 @@ Dane techniczne dla zrzuty ekranu są:
 1.  320w x 480h lub 480w x 800h lub 480w x 854 h. Obrazy landscaped zostaną przycięte.
 
 
-<a name="Promotional_Graphic" />
 
 #### <a name="promotional-graphic"></a>Promocyjna grafiki
 
@@ -118,7 +111,6 @@ Jest to opcjonalny obraz używany przez Google Play:
 1.  Brak obramowania kompozycji.
 
 
-<a name="Feature_Graphic" />
 
 #### <a name="feature-graphic"></a>Funkcja grafiki
 
@@ -129,14 +121,12 @@ Używany przez sekcji promocji Google Play. Ta grafika mogą być wyświetlane p
 1.  Ta grafika może być skalowany w dół: Użyj duży i zachować grafiki proste.
 
 
-<a name="Video_Link" />
 
 #### <a name="video-link"></a>Łącze wideo
 
 Jest to adres URL wideo pokazujące aplikacji YouTube. Wideo należy 2 minuty długości 30 sekund i pokazują najlepsze części aplikacji.
 
 
-<a name="pubgp" />
 
 ### <a name="publishing-to-google-play"></a>Publikowanie do witryny Google Play
 
@@ -155,19 +145,19 @@ Xamarin Android 7.0 wprowadza zintegrowane przepływu pracy w przypadku publikow
 
 W [archiwum publikowania](~/android/deploy-test/release-prep/index.md#archive), **kanału dystrybucji** okna dialogowego prezentowane dwa wybory dla dystrybucji: **Ad Hoc** i **Google Play** . Jeśli **tożsamość podpisywania** zamiast tego zostanie wyświetlone okno dialogowe, kliknij przycisk **ponownie** aby powrócić do **kanału dystrybucji** okna dialogowego. Wybierz **Google Play** i kliknij przycisk **dalej**:
 
-[ ![Okno dialogowe kanału dystrybucji](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png)
+[![Okno dialogowe kanału dystrybucji](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 W **tożsamość podpisywania** okno dialogowe, wybierz tożsamość utworzone w [Tworzenie nowego świadectwa](~/android/deploy-test/signing/index.md#newcert) i kliknij przycisk **Kontynuuj**:
 
-[ ![Okno dialogowe tożsamość podpisywania](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png)
+[![Okno dialogowe tożsamość podpisywania](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
 W **Google Play kont** okna dialogowego, kliknij przycisk  **+**  przycisk, aby dodać nowe konto Google Play:
 
-[ ![Okno dialogowe konta usługi Google Play](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png)
+[![Okno dialogowe konta usługi Google Play](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
 W **zarejestrować dostępu do interfejsu API Google** okna dialogowego, należy podać _identyfikator klienta_ i _klucz tajny klienta_ , który zapewnia dostęp API do swojego konta Google Play Developer:
 
-[ ![Okno dialogowe rejestracji dostępu do interfejsu API Google](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png)
+[![Okno dialogowe rejestracji dostępu do interfejsu API Google](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png#lightbox)
 
 Następnej sekcji opisano sposób tworzenia nowego projektu interfejsu API Google i generować wymagane _identyfikator klienta_ i _klucz tajny klienta_.
 
@@ -186,11 +176,11 @@ Visual Studio for Mac ma zintegrowane przepływu pracy w przypadku publikowania 
 
 W [archiwum publikowania](~/android/deploy-test/release-prep/index.md#archive), **utworzyć i dystrybuować...**  okna dialogowego prezentowane dwa wybory dla dystrybucji. Wybierz **Google Play**i kliknij przycisk **dalej**:
 
-[ ![Wybierz opcję dystrybucji Android okna dialogowego](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png)
+[![Wybierz opcję dystrybucji Android okna dialogowego](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png#lightbox)
 
 W **Google Play konto interfejsu API** okna dialogowego, należy podać _identyfikator klienta_ i _klucz tajny klienta_ , który zapewnia dostęp API do swojego konta Google Play Developer:
 
-[ ![Okno dialogowe Google Play konto interfejsu API](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png)
+[![Okno dialogowe Google Play konto interfejsu API](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png#lightbox)
 
 Następnej sekcji opisano sposób tworzenia nowego projektu interfejsu API Google i generować wymagane _identyfikator klienta_ i _klucz tajny klienta_.
 
@@ -203,34 +193,34 @@ Po pierwsze, zaloguj się do Twojego [konto Google Play dewelopera](https://play
 Jeśli nie masz już konto Google Play dewelopera, zobacz [wprowadzenie do publikowania](http://developer.android.com/distribute/googleplay/start.html).
 Ponadto Google Play Developer interfejsu API [wprowadzenie](https://developers.google.com/android-publisher/getting_started) wyjaśniono, jak za pomocą interfejsu API Developer odtwarzania Google. Po zalogowaniu się do konsoli Google Play dewelopera, kliknij przycisk **ustawienia**:
 
-[ ![Ikona ustawień](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png)
+[![Ikona ustawień](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
 
 W **ustawienia** wybierz pozycję **dostępu do interfejsu API**i kliknij przycisk **Tworzenie nowego projektu** przycisk:
 
-[ ![Tworzenie nowego przycisku projektu](images/02-create-new-project-sml.png)](images/02-create-new-project.png)
+[![Tworzenie nowego przycisku projektu](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
 
 Po minucie lub to nowy projekt interfejsu API jest automatycznie generowany i połączony z kontem Google Play konsoli dewelopera.
 
 Następnym krokiem jest można utworzyć klienta OAuth dla aplikacji (jeśli jest to jeden nie już utworzono). Gdy użytkownik zażąda dostępu do swoich danych za pomocą aplikacji, identyfikator klienta OAuth służy do uwierzytelniania aplikacji.
 Kliknij przycisk **utworzyć klienta OAuth** do utworzenia nowego klienta OAuth:
 
-[ ![Tworzenie klienta OAuth przycisku](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png)
+[![Tworzenie klienta OAuth przycisku](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png#lightbox)
 
 Po kilku sekundach jest generowany nowy identyfikator klienta. Kliknij przycisk **widoku w konsoli deweloperów Google** wyświetlić nowy identyfikator klienta w konsoli dla deweloperów Google:
 
-[ ![Wyświetla identyfikator klienta](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png)
+[![Wyświetla identyfikator klienta](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png#lightbox)
 
 Identyfikator klienta jest wyświetlana wraz z jego nazwy i tworzenia daty. Kliknij przycisk **edytowanie klienta OAuth** ikonę, aby wyświetlić klucz tajny klienta aplikacji:
 
-[ ![Widok aplikacji poświadczeń](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png)
+[![Widok aplikacji poświadczeń](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png#lightbox)
 
 Domyślna nazwa klienta OAuth to *Google Play systemu Android Developer*. Można to zmienić nazwę aplikacji platformy Xamarin.Android lub dowolnego odpowiednią nazwę. W tym przykładzie nazwa klienta OAuth została zmieniona na nazwę aplikacji, **moja_aplikacja**:
 
-[ ![Identyfikator klienta i klucz tajny wyświetlane](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png)
+[![Identyfikator klienta i klucz tajny wyświetlane](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
 Kliknij przycisk **zapisać**można zapisać zmian. To polecenie zwróci do **poświadczenia** strony, skąd pobrać poświadczenia, klikając **Pobierz JSON** ikonę:
 
-[ ![Pobierz ikonę JSON](images/07-download-json-sml.png)](images/07-download-json.png)
+[![Pobierz ikonę JSON](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
 Ten plik JSON zawiera identyfikator klienta i klucz tajny klienta, który można wyciąć i wkleić do **logowania i rozpowszechnij** okna dialogowego w następnym kroku.
 
@@ -241,18 +231,18 @@ Ten plik JSON zawiera identyfikator klienta i klucz tajny klienta, który można
 
 Wykonać przy użyciu Identyfikatora klienta i klucz tajny klienta **Google Play konto interfejsu API** okna dialogowego w programie Visual Studio dla komputerów Mac. Można podać opis konta &ndash; umożliwia zarejestrować więcej niż jedno konto Google Play i przekazać przyszłych APK do różnych kont Google Play. Skopiuj identyfikator klienta i klucz tajny klienta do tego okna dialogowego, a następnie kliknij przycisk **zarejestrować**:
 
-[ ![Okno dialogowe rejestracji dostępu do interfejsu API Google](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png)
+[![Okno dialogowe rejestracji dostępu do interfejsu API Google](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png#lightbox)
 
 Przeglądarki sieci web spowoduje uruchomienie i wyświetlenie monitu zaloguj się do konta Google Play dewelopera systemu Android (Jeśli użytkownik nie są już podpisane). Po zalogowaniu się w następujących monit jest wyświetlany w przeglądarce sieci web.
 Kliknij przycisk **Zezwalaj** do autoryzacji aplikacji:
 
-[ ![Zezwolić aplikacji w oknie dialogowym](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png)
+[![Zezwolić aplikacji w oknie dialogowym](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png#lightbox)
 
 #### <a name="publish"></a>Publish
 
 Po kliknięciu przycisku **Zezwalaj**, przeglądarki raportów _Odebrano kod weryfikacyjny. Zamykanie..._  i aplikacja zostaje dodany do listy kont Google Play w programie Visual Studio. W **Google Play kont** okna dialogowego, kliknij przycisk **Kontynuuj**:
 
-[ ![Konto dodane do usługi Google Play Acccounts](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png)
+[![Konto dodane do usługi Google Play Acccounts](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
 Następnie **Google Play Śledź** jest wyświetlone okno dialogowe. Google Play oferuje cztery możliwych ścieżek do przekazywania aplikacji:
 
@@ -263,33 +253,33 @@ Następnie **Google Play Śledź** jest wyświetlone okno dialogowe. Google Play
 
 Wybierz opcję Śledź Google Play, które będzie służyć do przekazywania aplikacji i kliknij pozycję **przekazać**. W przypadku wybrania **wdrożenia**, należy określić wartość procentową:
 
-[ ![Wybierz alfa, Beta, wdrożenia i produkcji](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png)
+[![Wybierz alfa, Beta, wdrożenia i produkcji](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
 
 Aby uzyskać więcej informacji na temat testowania Google Play i wdrożeniach przemieszczanego, zobacz [Konfigurowanie testy alfa/beta](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 Okno dialogowe są prezentowane obok, wprowadź hasło dla certyfikatu podpisywania.
 Wprowadź hasło i kliknij przycisk **OK**:
 
-[ ![Podpisywanie hasło w oknie dialogowym](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png)
+[![Podpisywanie hasło w oknie dialogowym](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png#lightbox)
 
 **Menedżera archiwum** Wyświetla postęp przekazywania:
 
-[ ![Przekazywanie postęp APK](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png)
+[![Przekazywanie postęp APK](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png#lightbox)
 
 Po zakończeniu przekazywania, stan ukończenia jest wyświetlany w dolnym rogu po lewej stronie programu Visual Studio:
 
-[ ![Komunikat ukończone publikowania projektu](images/vs/11-published-sml.png)](images/vs/11-published.png)
+[![Komunikat ukończone publikowania projektu](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
 
 
 ### <a name="troubleshooting"></a>Rozwiązywanie problemów
 
 Należy pamiętać, że jeden APK musi już zostały przesłane do witryny Google Play przechowywania przed **publikowania do witryny Google Play** będzie działać. Jeśli nie zostało już załadowane APK Kreatora publikacji wyświetli następujący błąd w **błędy** okienka:
 
-[ ![Musisz ręcznie przekazać Twojego pierwszego APK dla tej aplikacji](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png)
+[![Musisz ręcznie przekazać Twojego pierwszego APK dla tej aplikacji](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
 
 Podczas tego occures błąd ręcznie przekazać APK (np. kompilacja Ad Hoc) za pomocą konsoli Google Play deweloperów i użyj **kanału dystrybucji** okna dialogowego podczas kolejnych aktualizacji APK.  Aby uzyskać więcej informacji, zobacz [ręcznie przekazać plik APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md). Kod wersji plik APK musi zmienić z każdym przekazywania, w przeciwnym razie wystąpi następujący błąd:
 
-[ ![APK z kodem wersji (1) został już zaktualizowany.](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png)
+[![APK z kodem wersji (1) został już zaktualizowany.](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png#lightbox)
 
 Aby rozwiązać ten problem, ponownie skompilować aplikację z numerem wersji o różnych i ponownie prześlij go do witryny Google Play za pośrednictwem **kanału dystrybucji** okna dialogowego.
 
@@ -297,15 +287,15 @@ Aby rozwiązać ten problem, ponownie skompilować aplikację z numerem wersji o
 
 Wykonać przy użyciu Identyfikatora klienta i klucz tajny klienta **Google Play konto interfejsu API** okna dialogowego w programie Visual Studio dla komputerów Mac. Można podać opis konta &ndash; umożliwia zarejestrować więcej niż jedno konto Google Play i przekazać przyszłych APK do różnych kont Google Play. Skopiuj identyfikator klienta i klucz tajny klienta do tego okna dialogowego, a następnie kliknij przycisk **zarejestrować**:
 
-[ ![Autoryzuj dostęp do okna dialogowego](images/xs/10-register-sml.png)](images/xs/10-register.png)
+[![Autoryzuj dostęp do okna dialogowego](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
 
 Jeśli identyfikator klienta i klucz tajny klienta są akceptowane, **pomyślnej rejestracji** zostanie wyświetlony komunikat. Kliknij przycisk **dalej**:
 
-[ ![Pomyślne komunikat dotyczący rejestracji](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png)
+[![Pomyślne komunikat dotyczący rejestracji](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
 
 W **konta usługi Google Play** okno dialogowe, wybierz konto Google i ścieżki dla przekazywania aplikacji:
 
-[ ![Wybierz w oknie dialogowym konta Google](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png)
+[![Wybierz w oknie dialogowym konta Google](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png#lightbox)
 
 Google Play oferuje cztery możliwych ścieżek do przekazywania aplikacji:
 
@@ -322,11 +312,11 @@ Aby uzyskać więcej informacji na temat testowania Google Play i wdrożeniach p
 Następnie wybierz tożsamości podpisywania, do którego zostanie użyty do podpisania aplikacji.
 Wybierz **Użyj istniejącego klucza** Aby użyć istniejącej tożsamości podpisywania, w przeciwnym razie zapoznaj się z podręcznikiem [Tworzenie nowego świadectwa](~/android/deploy-test/signing/index.md#newcert) informacji o tworzeniu nowego klucza. Po wybraniu certyfikat do podpisania aplikacji, kliknij przycisk **dalej**:
 
-[ ![Android dialogowe tożsamość podpisywania](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png)
+[![Android dialogowe tożsamość podpisywania](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
 
 W tym momencie można przekazać aplikację do witryny Google Play. **Publikowania do witryny Google Play** okno dialogowe zawiera podsumowanie informacji na temat aplikacji &ndash; kliknij **publikowania** do publikowania aplikacji ze sklepu Google Play:
 
-[ ![Publikowanie do okna dialogowego Google Play](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png)
+[![Publikowanie do okna dialogowego Google Play](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
 
 Należy pamiętać, że jeden APK musi już zostały przesłane do witryny Google Play przechowywania przed **publikowania do witryny Google Play** będzie działać. Jeśli nie zostało załadowane APK może wystąpić następujący błąd:
 

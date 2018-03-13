@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Wdrażanie do sklepu z aplikacjami
 
@@ -63,12 +63,14 @@ Możesz sprawdzić, profilu inicjowania obsługi administracyjnej w **opcje proj
 
 ![](appstore-images/options-selectprofile-sml.png "Okno dialogowe podpisywania pakietu systemu iOS")
 
+<a name="iTunes_Connect"/>
+
 ## <a name="itunes-connect"></a>iTunes Connect
 
 Postępuj zgodnie z [omówienie dystrybucji aplikacji](~/ios/deploy-test/app-distribution/index.md), w szczególności:
 
 - [Konfigurowanie aplikacji w iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Publikowanie do sklepu z aplikacjami](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Publikowanie w sklepie App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 Podczas konfigurowania aplikacji w iTunes Connect, nie zapomnij dodać ikona monitorowania i zrzuty ekranu:
 
@@ -123,7 +125,7 @@ Xcode automatycznie wyświetli archiwa utworzone w programie Visual Studio dla k
 
 5. Odwiedź stronę iTunes Połącz ponownie, aby zobaczyć przekazanego pliku binarnego. Przejdź do strony konfiguracji aplikacji i wybierz **wersja wstępna** z górnego menu, aby wyświetlić **kompilacje** listy:
 
-  [ ![](appstore-images/itc-prerelease-sml.png "Strona konfiguracji aplikacji w iTunes Connect")](appstore-images/itc-prerelease.png)
+  [![](appstore-images/itc-prerelease-sml.png "Strona konfiguracji aplikacji w iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Następnie można przesłać do zatwierdzenia aplikacji na **wersji** strony. Zapoznaj się [omówienie dystrybucji aplikacji systemu iOS](~/ios/deploy-test/app-distribution/index.md) Aby uzyskać więcej informacji.
 

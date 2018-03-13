@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Zdarzenia, protokołów i Delegaty
 
@@ -32,7 +32,7 @@ W tym artykule dowiesz się o tych tematów, umożliwiając solidną podstawę d
 
 Aby zilustrować protokołów i delegatów, firma Microsoft będzie kompilacji aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy, jak pokazano poniżej:
 
- [ ![](delegates-protocols-and-events-images/01-map.png "Przykładem aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy") ](delegates-protocols-and-events-images/01-map.png) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "adnotacji przykład dodany do mapy")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "Przykładem aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "adnotacji przykład dodany do mapy")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Przed czoła tej aplikacji, Rozpocznijmy analizując zdarzenia platformy .NET w obszarze UIKit.
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 Poprzedni kod przewodowej się w metodzie ViewDidLoad UIViewContoller. Zmienna aButton odwołuje się do przycisku, który można dodać w systemie iOS Designer lub z kodem. Na poniższej ilustracji przedstawiono ten przycisk, który jest dodawany w systemie iOS projektanta, pobiera z próbki, dołączony w tym artykule:
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Przycisk dodane w systemie iOS projektanta")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Przycisk dodane w systemie iOS projektanta")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS obsługuje również łączenie kodu z interakcją występuje z formantem styl akcję docelową. Aby utworzyć akcję docelową dla przycisku Hello, kliknij dwukrotnie tę pozycję w systemie iOS projektanta. Plik CodeBehind UIViewController zostanie wyświetlony i dewelopera poprosimy Cię o wybierz lokalizację, aby wstawić łączącego — metoda:
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "Plik CodeBehind UIViewControllers")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "Plik CodeBehind UIViewControllers")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 Po wybraniu lokalizacji nowej metody jest utworzony i przewodowej w górę do formantu. W poniższym przykładzie komunikat zostanie wyświetlony w konsoli, po kliknięciu przycisku:
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "Komunikat zostanie wyświetlony w konsoli, po kliknięciu przycisku")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "Komunikat zostanie wyświetlony w konsoli, po kliknięciu przycisku")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 Aby uzyskać więcej informacji o wzorcu akcję docelową dla systemu iOS, zobacz sekcję akcję docelową " [podstawowe umiejętności aplikacji dla systemu iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)" w bibliotece deweloperów systemu iOS firmy Apple.
 
@@ -170,7 +170,7 @@ Spójrzmy na przykład przy użyciu protokołu Objective-C z platformy Xamarin.i
 
 W ten sposób `MKAnnotation` protokół służy do zapewnienia potrzebnych danych dołączona adnotacja. Rzeczywista widok dla adnotacji sam składa się z danych obiektu, który przyjmuje `MKAnnotation` protokołu. Na przykład tekst objaśnienia, który jest wyświetlany, gdy użytkownik naciska adnotację (jak pokazano na poniższym zrzucie ekranu) pochodzą z `Title` właściwości klasy, który implementuje ten protokół:
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Przykładowy tekst objaśnienia po naciśnięciu na adnotacji")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Przykładowy tekst objaśnienia po naciśnięciu na adnotacji")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Zgodnie z opisem w następnej sekcji nowości protokołów Xamarin.iOS wiąże protokoły klas abstrakcyjnych. Dla `MKAnnotation` protokołu, powiązanej klasy C# o nazwie `MKAnnotation` aby naśladował nazwę protokołu który jest podklasą `NSObject`, klasa podstawowa dla CocoaTouch. Protokół wymaga określonej metody pobierającej i ustawiającej do zaimplementowania współrzędnej; Jednakże tytuł i podtytuł są opcjonalne. W związku z tym w `MKAnnotation` klasy `Coordinate` właściwość jest *abstrakcyjny*, wymaganiem go do zaimplementowania i `Title` i `Subtitle` właściwości są oznaczone *wirtualnego* , dzięki czemu opcjonalne, jak pokazano poniżej:
 

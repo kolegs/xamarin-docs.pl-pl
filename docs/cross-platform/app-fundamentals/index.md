@@ -3,22 +3,22 @@ title: Podstawy aplikacji
 description: Podstawowe koncepcje aplikacji
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 9e4e7705e1ca29b6abf716a48ae3fa0e7c1a19ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c5b823370e5b65fbcf9ba366cb89c05e003b1a89
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>Podstawy aplikacji
 
 Ta sekcja zawiera przewodnik dla niektórych zadań rzeczy częściej lub pojęcia, które deweloperzy muszą znać podczas opracowywania aplikacji dla urządzeń przenośnych.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Tworzenie Cross Platform aplikacji](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Tworzenie aplikacji międzyplatformowych](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
 Wybierając Xamarin i utrzymywanie kilka rzeczy pod uwagę podczas projektowania i opracowywania aplikacji mobilnych, można realizować ogromne kodu udostępnianie platform urządzeń przenośnych, ograniczenie czasu na rynek, wykorzystać istniejące talenty, spełniają popyt na dostęp z urządzeń przenośnych, i zmniejszyć złożoność i platform. &nbsp;w tym dokumencie przedstawiono wskazówki klucza do realizacji tych korzyści narzędzia i wydajności aplikacji.
 
@@ -41,7 +41,7 @@ Wskazówki dotyczące wprowadzania regionalnymi aplikacje, które można przetł
 
 Projektów biblioteki klas przenośnych umożliwiają tworzenie i dystrybucji zestawów zawierających udostępniony kod wymagany do uruchomienia na wielu platformach. Tworzenie przenośnej biblioteki klas (lub "PCL") najpierw wybrać platformy, na których docelowego, a następnie pisać kod dla podzbioru .NET Framework, która jest dostępna w profilu zdefiniowane dla tych platform. Ten dokument zawiera opis sposobu tworzenia i używania PCLs za pomocą platformy Xamarin.
 
-##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Udostępnionych projektów](~/cross-platform/app-fundamentals/shared-projects.md)
+##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Projekty udostępnione](~/cross-platform/app-fundamentals/shared-projects.md)
 
 Udostępnionych projektów umożliwiają pisanie wspólnej kodu, który odwołuje się wiele projektów różnych aplikacji. Kod jest skompilowana jako część każdego odwołaniem do projektu i może zawierać dyrektywy kompilatora, aby obsługiwać funkcje specyficzne dla platformy w podstawowym udostępnionego kodu. W tym artykule omówiono sposób działania udostępnionych projektów i jak utworzyć i używać go z projektami Xamarin.
 

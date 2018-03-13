@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>Części ListView i funkcji
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -31,41 +30,36 @@ A `ListView` składa się z następujących elementów:
 
 Te zrzuty ekranu Użyj podstawowego `ListView` kontroli pokazanie sposobu renderowania szybkie przewijanie i Indeks sekcji:
 
-[![Zrzuty ekranu aplikacji przy użyciu zwykłego starego wierszy, szybkie przewijanie i Indeks sekcji](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![Zrzuty ekranu aplikacji przy użyciu zwykłego starego wierszy, szybkie przewijanie i Indeks sekcji](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 Elementy wchodzące w skład `ListView` są opisane bardziej szczegółowo poniżej:
 
-<a name="Rows" />
 
 ## <a name="rows"></a>Wiersze
 
 Każdy wiersz ma własną `View`. Widok może być jedną z wbudowanych widoki zdefiniowane w `Android.Resources`, lub widok niestandardowy. Każdy wiersz może używać ten sam układ widoku lub wszystkie były różne. Istnieją przykłady w tym dokumencie korzystania z wbudowanych układów i innymi informacjami o tym, jak zdefiniować układy niestandardowe.
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>Adapter
 
 `ListView` Formant wymaga `Adapter` do dostarczania sformatowany `View` dla każdego wiersza. Android ma wbudowanych kart i widoki, które mogą być używane, lub można tworzyć niestandardowe klasy.
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>Szybkie przewijanie
 
 Gdy `ListView` zawiera wiele wierszy danych przewijanie fast można włączyć pomóc użytkownikowi, przejdź do dowolnej części listy. Fast przewijania "scroll bar" może być opcjonalnie włączone (i dostosowane na poziomie interfejsu API 11 lub nowszej).
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>Indeks sekcji
 
 Podczas przewijania długich list, Indeks sekcji opcjonalnej udostępnia użytkownikowi opinii na jakie części listy są obecnie wyświetlane. Należy tylko na listach długie, zwykle w połączeniu z szybkie przewijanie.
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>Przegląd klas
 
 Klasy podstawowej, używany do wyświetlania `ListViews` są wyświetlane tutaj:
 
-[![Diagram UML pokazujący relacje między ListView i skojarzonych klas](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![Diagram UML pokazujący relacje między ListView i skojarzonych klas](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 Poniżej opisano przeznaczenie każdej klasy:
 

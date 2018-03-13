@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e26fcb81bb99e5a49d16731777171b4efa4163c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-specifics"></a>Platformy systemu android — szczegóły
 
@@ -54,7 +54,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 Wynik jest, że klawiatura programowa wprowadź obszar, który można ustawić trybu pracy po aktywowaniu kontrolki wprowadzania:
 
-[![](android-images/pan-resize.png "Klawiatura programowa działających w trybie specyficzne dla platformy")](android-images/pan-resize-large.png "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Klawiatura programowa działających w trybie specyficzne dla platformy")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
@@ -98,7 +98,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Wynik jest, że szybkie przewijanie danych w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) można włączyć, który zmienia rozmiar przycisku przewijania suwaka:
 
-[![](android-images/fastscroll.png "Element ListView FastScroll specyficzne dla platformy")](android-images/fastscroll-large.png "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "Element ListView FastScroll specyficzne dla platformy")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
@@ -244,7 +244,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 W wyniku [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) i [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) zdarzenia strony nie będą uruchamiane w wstrzymania aplikacji i wznowić odpowiednio i że jeśli klawiatura programowa został wyświetlony podczas aplikacji została wstrzymana, będzie również wyświetlana po wznowieniu działania aplikacji:
 
-[![](android-images/keyboard-on-resume.png "Cykl życia zdarzenia specyficzne dla platformy")](android-images/keyboard-on-resume-large.png "cyklu życia zdarzenia specyficzne dla platformy")
+[![](android-images/keyboard-on-resume.png "Cykl życia zdarzenia specyficzne dla platformy")](android-images/keyboard-on-resume-large.png#lightbox "cyklu życia zdarzenia specyficzne dla platformy")
 
 ## <a name="summary"></a>Podsumowanie
 

@@ -2,16 +2,16 @@
 title: Odtwarzanie wideo w sieci Web
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2e44d32f199d5c85bbae242d9168a43e028c73d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5a98df4346c8720ae25fae4f27b5294993111c4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="playing-a-web-video"></a>Odtwarzanie wideo w sieci Web
 
@@ -462,7 +462,7 @@ Wykonanie tych właściwości w trzech moduły renderowania prawdopodobnie odtwa
 
 `VideoSourceConverter` Klasy konwertuje ciąg na `UriVideoSource`. Po przejściu do **odtwarzania wideo w sieci Web** strony, wideo rozpoczyna się ładowania i rozpoczyna odtwarzanie po pobraniu i buforowane wystarczającej ilości danych. Plik wideo jest około 10 minut, długość:
 
-[![Odtwarzanie wideo w sieci Web](web-videos-images/playwebvideo-small.png "odtwarzania wideo w sieci Web")](web-videos-images/playwebvideo-large.png "odtwarzania wideo w sieci Web")
+[![Odtwarzanie wideo w sieci Web](web-videos-images/playwebvideo-small.png "odtwarzania wideo w sieci Web")](web-videos-images/playwebvideo-large.png#lightbox "odtwarzania wideo w sieci Web")
 
 Na wszystkich platformach trzy formanty transportu zanikania się, jeśli nie są używane, ale mogą zostać przywrócone, aby wyświetlić, wybierając wideo.
 

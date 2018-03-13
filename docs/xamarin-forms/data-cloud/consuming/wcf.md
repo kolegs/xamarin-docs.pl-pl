@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 372ea9a20e9f67c41c74fb01afb8110ee741a709
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Korzystanie z usługi sieci Web Windows Communication Foundation (WCF)
 
@@ -76,7 +76,7 @@ Usługa WCF oferuje następujące operacje:
 Aby uzyskać więcej informacji na temat modelu danych używany w aplikacji, zobacz [modelowania danych](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Uwaga**: przykładowa aplikacja korzysta z usługi WCF hostowanej Xamarin, która umożliwia dostęp tylko do odczytu do usługi sieci web. W związku z tym operacje, które tworzenie, aktualizowanie i usuwanie danych nie ma wpływu czy dane używane w aplikacji. Jednak jest dostępna w wersji pełnić rolę hosta usługi ASMX **TodoWCFService** folderu w towarzyszący przykładowej aplikacji. Ta wersja pełnić rolę hosta zezwoleń usługi WCF pełna tworzenia, aktualizacji, do odczytu i usuwania dostęp do danych.
+> Przykładowa aplikacja korzysta z usługi WCF hostowanej Xamarin, która umożliwia dostęp tylko do odczytu do usługi sieci web. W związku z tym operacje, które tworzenie, aktualizowanie i usuwanie danych nie ma wpływu czy dane używane w aplikacji. Jednak jest dostępna w wersji pełnić rolę hosta usługi ASMX **TodoWCFService** folderu w towarzyszący przykładowej aplikacji. Ta wersja pełnić rolę hosta zezwoleń usługi WCF pełna tworzenia, aktualizacji, do odczytu i usuwania dostęp do danych.
 
 A *proxy* musi zostać wygenerowany użycie usługi WCF, dzięki czemu aplikacji połączyć się z usługą. Serwer proxy jest tworzony przez odbierającą metadanych usługi definiują metody i skojarzona usługa konfiguracji. Te metadane jest widoczna w formularzu sieci Web Services Description Language (WSDL) dokument, który jest generowany przez usługę sieci web. Serwer proxy mogą być tworzone przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 można dodać odwołania do usługi dla usługi sieci web do biblioteki standardowej .NET. Zamiast tworzenia proxy przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 jest za pomocą narzędzia narzędzie metadanych elementu ServiceModel (svcutil.exe). Aby uzyskać więcej informacji, zobacz [narzędzie narzędzia metadanych elementu ServiceModel (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 

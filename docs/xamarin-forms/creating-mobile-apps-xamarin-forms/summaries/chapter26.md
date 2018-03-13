@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 26. Układy niestandardowe"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: dbddaaf2f4a5ad9d7161013f2ae11466b953e20c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Podsumowanie rozdział 26. Układy niestandardowe
 
@@ -98,9 +99,9 @@ Tej metody jest teraz przestarzałe i zastępowane:
 Każda klasa, która jest pochodną `Layout` lub `Layout<T>` przesłonięcie `OnSizeRequest` lub `OnMeasure`. Jest to, gdy klasa układu określa własnej rozmiarze, który jest zazwyczaj na podstawie rozmiaru jego elementów podrzędnych, których uzyskuje się poprzez wywołanie `GetSizeRequest` lub `Measure` na elementy podrzędne. Przed i po wywołaniu `OnSizeRequest` lub `OnMeasure`, `GetSizeRequest` lub `Measure` sprawia, że dopasowania na podstawie następujących właściwości:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)typu `double`, ma wpływ na `Request` właściwości `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)typu `double`, ma wpływ na `Request` właściwości `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/)typu `double`, ma wpływ na `Minimum` właściwości `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/)typu `double`, ma wpływ na `Minimum` właściwości `SizeRequest`
+- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) typu `double`, ma wpływ na `Request` właściwości `SizeRequest`
+- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) typu `double`, ma wpływ na `Minimum` właściwości `SizeRequest`
+- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) typu `double`, ma wpływ na `Minimum` właściwości `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Nieskończone ograniczenia
 
@@ -159,7 +160,7 @@ Często zmiany w elemencie właściwości ma wpływ na sposób wyświetlania teg
 
 [ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) przykładzie pokazano `UniformGridLayout`:
 
-[![Potrójna zrzut ekranu przedstawiający Siatka zdjęć](images/ch26fg08-small.png "Uniform Układ tabelaryczny")](images/ch26fg08-large.png "Uniform układ siatki")
+[![Potrójna zrzut ekranu przedstawiający Siatka zdjęć](images/ch26fg08-small.png "Uniform Układ tabelaryczny")](images/ch26fg08-large.png#lightbox "Uniform układ siatki")
 
 ### <a name="overlapping-children"></a>Nakładające się elementy podrzędne
 
@@ -174,7 +175,7 @@ Nakładające się podrzędnych elementów podrzędnych na końcu kolekcji są w
 
 [ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) Biblioteka definiuje właściwości dołączonej do wskazywania kolejności renderowania i w związku z tym zezwolić jednemu z jego elementy podrzędne wyświetlany u góry innych. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) przykładzie pokazano to:
 
-[![Potrójna zrzut ekranu przedstawiający siatki pliku karty uczniowie](images/ch26fg10-small.png "nakładających się dzieci układu")](images/ch26fg10-large.png "nakładających się dzieci układu")
+[![Potrójna zrzut ekranu przedstawiający siatki pliku karty uczniowie](images/ch26fg10-small.png "nakładających się dzieci układu")](images/ch26fg10-large.png#lightbox "nakładających się dzieci układu")
 
 ### <a name="more-attached-bindable-properties"></a>Więcej dołączone właściwości
 

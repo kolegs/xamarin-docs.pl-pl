@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: beff54d2b2bb72b2adf1e77819c56004b92e13f7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -22,7 +22,7 @@ Portfela jest aplikacja dla urządzenia iPhone i iPod sięga z systemem iOS 6. P
 
 Ten dokument wprowadza portfela, przy użyciu interfejsu API zestawu przekazać z Xamarin.iOS i omówiono sposób wdrożenia przekazuje na serwerze.
 
- [ ![](passkit-images/image1.png "Portfela przechowuje i organizuje wszystkie przebiegi na telefonie")](passkit-images/image1.png)
+ [![](passkit-images/image1.png "Portfela przechowuje i organizuje wszystkie przebiegi na telefonie")](passkit-images/image1.png#lightbox)
 
 
 ## <a name="requirements"></a>Wymagania
@@ -55,7 +55,7 @@ Zasadniczo przekazać zestawu zapewnia prosty i wygodny sposób przechowywania i
 
 Przebieg zestawu nie jest tylko interfejs API w CocoaTouch, a nie jest częścią większej ekosystemem aplikacji, danych i usług, które ułatwiają bezpiecznego udostępniania i zarządzania kodów kreskowych i innych danych. Ten diagram wysokiego poziomu przedstawia różnych obiektów, które mogą być wykonywane w tworzenie i używanie przekazuje:
 
- [ ![](passkit-images/image2.png "Ten wysokiego poziomu diagram przedstawia jednostek zaangażowane w tworzenie i używanie przebiegów")](passkit-images/image2.png)
+ [![](passkit-images/image2.png "Ten wysokiego poziomu diagram przedstawia jednostek zaangażowane w tworzenie i używanie przebiegów")](passkit-images/image2.png#lightbox)
 
 Każda część ekosystemu ma jasno określonych ról:
 
@@ -86,7 +86,7 @@ Obecnie obsługiwane pięć typów, które można rozróżnić w aplikacji portf
 
 Przebieg pięć typów są wyświetlane w tym zrzucie ekranu pokazano (w kolejności: papieru wartościowego, ogólny, przechowywać karty, przebieg wsiadania i biletów zdarzeń):
 
- [ ![](passkit-images/image3.png "Przebieg pięć typów są wyświetlane w tym zrzut ekranu")](passkit-images/image3.png)
+ [![](passkit-images/image3.png "Przebieg pięć typów są wyświetlane w tym zrzut ekranu")](passkit-images/image3.png#lightbox)
 
 ### <a name="file-structure"></a>Struktura pliku
 
@@ -103,7 +103,7 @@ Plik — dostęp próbny jest rzeczywiście archiwum ZIP z **.pkpass** rozszerze
 
 Poniżej przedstawiono struktura katalogów plik — dostęp próbny (jest to zawartość archiwum ZIP):
 
- [ ![](passkit-images/image4.png "W tym miejscu przedstawiono struktura katalogów plik — dostęp próbny")](passkit-images/image4.png)
+ [![](passkit-images/image4.png "W tym miejscu przedstawiono struktura katalogów plik — dostęp próbny")](passkit-images/image4.png#lightbox)
 
 ### <a name="passjson"></a>pass.json
 
@@ -238,9 +238,9 @@ Aby utworzyć następujące przekazania identyfikator typu.
 
 Pierwszym krokiem jest ustanowienie identyfikator typu przekazać dla każdego innego _typu_ przebiegu obsługiwany. Identyfikator przekazać (lub identyfikator typu przekazać) tworzy unikatowy identyfikator dla przebiegu. Aby połączyć przebiegu z konta dewelopera przy użyciu certyfikatu użyjemy tego Identyfikatora.
 
-1. W [sekcji certyfikaty identyfikatory i profile systemu IOS w portalu inicjowania obsługi](https://developer.apple.com/account/overview.action), przejdź do **identyfikatory** i wybierz **przekazać identyfikatorów typu** . Następnie wybierz  **+**  przycisk, aby utworzyć nowy typ przebiegu: [ ![ ] (passkit-images/passid.png "utworzyć nowy typ — dostęp próbny")](passkit-images/passid.png)
+1. W [sekcji certyfikaty identyfikatory i profile systemu IOS w portalu inicjowania obsługi](https://developer.apple.com/account/overview.action), przejdź do **identyfikatory** i wybierz **przekazać identyfikatorów typu** . Następnie wybierz  **+**  przycisk, aby utworzyć nowy typ przebiegu: [ ![ ] (passkit-images/passid.png "utworzyć nowy typ — dostęp próbny")](passkit-images/passid.png#lightbox)
 
-2.   Podaj **opis** (nazwa) i **identyfikator** (unikatowy ciąg) dla przebiegu. Należy pamiętać, że wszystkie identyfikatory typu przekazać musi rozpoczynać się od ciągu `pass.` w tym przykładzie używamy `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Podaj opis i identyfikator")](passkit-images/register.png)
+2.   Podaj **opis** (nazwa) i **identyfikator** (unikatowy ciąg) dla przebiegu. Należy pamiętać, że wszystkie identyfikatory typu przekazać musi rozpoczynać się od ciągu `pass.` w tym przykładzie używamy `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Podaj opis i identyfikator")](passkit-images/register.png#lightbox)
 
 
 3.   Potwierdź identyfikator przekazywane przez naciśnięcie przycisku **zarejestrować** przycisku.
@@ -252,11 +252,11 @@ Pierwszym krokiem jest ustanowienie identyfikator typu przekazać dla każdego i
 
 Aby utworzyć nowy certyfikat dla tego Identyfikatora przekazać typ, wykonaj następujące czynności:
 
-1.  Wybierz nowo utworzony identyfikator przekazywania na liście, a następnie kliknij przycisk **Edytuj** : [ ![ ] (passkit-images/pass-done.png "wybierz z listy nowy identyfikator przekazywania")](passkit-images/pass-done.png)
+1.  Wybierz nowo utworzony identyfikator przekazywania na liście, a następnie kliknij przycisk **Edytuj** : [ ![ ] (passkit-images/pass-done.png "wybierz z listy nowy identyfikator przekazywania")](passkit-images/pass-done.png#lightbox)
 
     Następnie wybierz opcję **Utwórz certyfikat...** :
 
-    [ ![](passkit-images/cert-dist.png "Wybierz opcję utworzenia certyfikatu")](passkit-images/cert-dist.png)
+    [![](passkit-images/cert-dist.png "Wybierz opcję utworzenia certyfikatu")](passkit-images/cert-dist.png#lightbox)
 
 
 2.  Wykonaj kroki, aby utworzyć certyfikat podpisywania żądania obsługi.
@@ -286,7 +286,7 @@ Teraz, utworzyliśmy przekazać typ, można ręcznie spreparować przebieg do te
 
 Brak niektórych plików źródłowych w przykładowym kodzie tego artykułu, który może służyć do generowania przebiegu. Użyj plików w `CouponBanana.raw` katalogu CreateAPassManually katalogu. Występują następujące pliki:
 
- [ ![](passkit-images/image18.png "Te pliki są obecne")](passkit-images/image18.png)
+ [![](passkit-images/image18.png "Te pliki są obecne")](passkit-images/image18.png#lightbox)
 
 Otwórz pass.json i Edycja kodu JSON. Należy zaktualizować co najmniej `passTypeIdentifier` i `teamIdentifer` odpowiadające konta dewelopera firmy Apple.
 
@@ -330,11 +330,11 @@ W przykładzie kod w tym artykule jest to projekt o nazwie `signpassnet` systeme
 
 Gdyby Sprawdź dane wyjściowe z tych narzędzi (przez ustawienie Nazwa pliku zip, a następnie otwierając), zobaczysz następujące pliki (należy pamiętać, dodanie `manifest.json` i `signature` plików):
 
- [ ![](passkit-images/image19.png "Badanie dane wyjściowe z tych narzędzi")](passkit-images/image19.png)
+ [![](passkit-images/image19.png "Badanie dane wyjściowe z tych narzędzi")](passkit-images/image19.png#lightbox)
 
 Po podpisany ZIPped i zmienić nazwy pliku (np.) Aby `BananaCoupon.pkpass`) przeciągnij go do symulatora do testowania, lub Wyślij wiadomość e-mail do siebie, aby pobrać rzeczywistego urządzenia. Powinien zostać wyświetlony ekran, aby **Dodaj** przebiegu w następujący sposób:
 
- [ ![](passkit-images/image20.png "Dodaj ekran — dostęp próbny")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Dodaj ekran — dostęp próbny")](passkit-images/image20.png#lightbox)
 
 Zwykle tego procesu będzie można zautomatyzować na serwerze, jednak ręczne tworzenie przebieg może być dostępny dla małych firm, które tworzysz tylko kupony, które nie wymagają obsługi serwera zaplecza.
 
@@ -344,7 +344,7 @@ Zwykle tego procesu będzie można zautomatyzować na serwerze, jednak ręczne t
 
 Portfela jest centralna ekosystemu przekazać zestawu. Ten zrzut ekranu przedstawia pusty portfela i wyglądu listy przebieg i przekazuje poszczególnych:
 
- [ ![](passkit-images/image21.png "Ten zrzut ekranu przedstawia pusty portfela i wyglądu listy przebieg i przekazuje poszczególnych")](passkit-images/image21.png)
+ [![](passkit-images/image21.png "Ten zrzut ekranu przedstawia pusty portfela i wyglądu listy przebieg i przekazuje poszczególnych")](passkit-images/image21.png#lightbox)
 
 Funkcje portfela:
 
@@ -377,9 +377,9 @@ Kanał aplikacje to aplikacje pośredniego, może odbierać przebiegów w imieni
 
 Ten zrzut ekranu pokazuje, jak **poczty** w systemie iOS 6 rozpoznaje załącznika przebieg i (jeśli dotknięciu) oferuje **Dodaj** go do portfela.
 
- [ ![](passkit-images/image22.png "Ten zrzut ekranu pokazuje, jak poczty w systemie iOS 6 rozpoznaje załącznika — dostęp próbny")](passkit-images/image22.png)
+ [![](passkit-images/image22.png "Ten zrzut ekranu pokazuje, jak poczty w systemie iOS 6 rozpoznaje załącznika — dostęp próbny")](passkit-images/image22.png#lightbox)
 
- [ ![](passkit-images/image23.png "Ten zrzut ekranu pokazuje, jak poczta oferuje Dodaj załącznik przebiegu portfela")](passkit-images/image23.png)
+ [![](passkit-images/image23.png "Ten zrzut ekranu pokazuje, jak poczta oferuje Dodaj załącznik przebiegu portfela")](passkit-images/image23.png#lightbox)
 
 Jeśli tworzysz aplikację, która może być kanał dla przebiegów mogą być rozpoznawane przez:
 
@@ -498,7 +498,7 @@ var passes = library.GetPasses ();  // returns PKPass[]
 
 Należy pamiętać, że symulator nie zastosować filtr do listy przebiegów zwrócone, ta metoda zawsze należy badać w rzeczywistych urządzeń. Tej listy mogą być wyświetlane w UITableView, wygląd aplikacji przykładowej podobny do tego, po dodaniu dwóch kupony:
 
- [ ![](passkit-images/image29.png "Wygląd aplikacji przykładowej, takich jak to po dodaniu dwóch kupony")](passkit-images/image29.png)
+ [![](passkit-images/image29.png "Wygląd aplikacji przykładowej, takich jak to po dodaniu dwóch kupony")](passkit-images/image29.png#lightbox)
 
 
 ### <a name="displaying-passes"></a>Wyświetlanie przebiegów
@@ -520,7 +520,7 @@ string passInfo =
 
 Ten ciąg jest wyświetlany jako alertu w przykładzie:
 
- [ ![](passkit-images/image30.png "Alert kupon wybrane w próbce.")](passkit-images/image30.png)
+ [![](passkit-images/image30.png "Alert kupon wybrane w próbce.")](passkit-images/image30.png#lightbox)
 
 Można również użyć `LocalizedValueForFieldKey()` metody do pobierania danych z polami w przebiegach zaprojektowany (od momentu będzie wiadomo, które pola powinien znajdować się). Przykład kodu nie pokazuj tego.
 
@@ -541,7 +541,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 Zostanie wyświetlony przebiegu **Dodaj** i **anulować** opcje:
 
- [ ![](passkit-images/image20.png "Przebieg wyświetlone opcje Dodaj i Anuluj")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Przebieg wyświetlone opcje Dodaj i Anuluj")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Zastąp istniejące hasło
 

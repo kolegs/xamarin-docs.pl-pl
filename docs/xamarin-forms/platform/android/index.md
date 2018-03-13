@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: d68d84671028ded14b4b885f2c134656fc639f9e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b5e9a4c449bc99bd88fc415f5ebb969d2c2a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-features"></a>Funkcje platformy systemu android
 
@@ -28,14 +28,14 @@ Aby dodać kompozycje materiały do projektu platformy Xamarin.Forms Android, wy
 
 Oto **Todo** przykładowa przy użyciu domyślnego `FormsApplicationActivity`:
 
-[ ![](images/before-appcompat-sml.png "TODO przykładowej aplikacji bez AppCompat")](images/before-appcompat.png "Todo przykładowej aplikacji bez AppCompat")
+[![](images/before-appcompat-sml.png "TODO przykładowej aplikacji bez AppCompat")](images/before-appcompat.png#lightbox "Todo przykładowej aplikacji bez AppCompat")
 
 I jest to ten sam kod po uaktualnieniu projektu do `FormsAppCompatActivity` (i dodać informacje dodatkowe motywu):
 
-[ ![](images/post-appcompat-sml.png "TODO przykładową aplikację z AppCompat i motywów")](images/post-appcompat.png "Todo przykładową aplikację z AppCompat i motywów")
+[![](images/post-appcompat-sml.png "TODO przykładową aplikację z AppCompat i motywów")](images/post-appcompat.png#lightbox "Todo przykładową aplikację z AppCompat i motywów")
 
 > [!NOTE]
-> **Uwaga**: korzystając z `FormsAppCompatActivity`, [podstawowa klasy dla niektórych Android niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) będą inne.
+> Korzystając z `FormsAppCompatActivity`, [podstawowa klasy dla niektórych Android niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) będą inne.
 
 
 ## <a name="related-links"></a>Linki pokrewne

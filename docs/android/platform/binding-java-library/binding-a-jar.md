@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 011b6d184e55c9054a845d4922687b4565221859
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bbbf3fb09edb802f1315977fb14ecfe154b2572f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-jar"></a>Powiązanie. JAR
 
@@ -75,7 +75,6 @@ Picasso.With (this)
 
 ```
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>Tworzenie biblioteki powiązania
 
@@ -83,19 +82,19 @@ Przed rozpoczęciem poniższe kroki, Pobierz [picasso 2.x.x.jar](http://repo1.ma
 
 Najpierw utwórz nowy projekt biblioteki powiązania. W programie Visual Studio dla komputerów Mac lub Visual Studio, Utwórz nowe rozwiązanie i wybierz *biblioteki systemu Android powiązania* szablonu. (Zrzuty ekranu w tym przewodniku użyć programu Visual Studio, ale programu Visual Studio for Mac jest bardzo podobny). Nazwa rozwiązania **JarBinding**: 
 
-[ ![Tworzenie projektu biblioteki JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png)
+[![Tworzenie projektu biblioteki JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
 
 Szablon zawiera **Jars** folder, w którym można dodać użytkownika. JAR(s) do projektu biblioteki powiązania. Kliknij prawym przyciskiem myszy **Jars** i wybierz polecenie **Dodaj > istniejący element**: 
 
-[ ![Dodaj istniejący element](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png)
+[![Dodaj istniejący element](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
 Przejdź do **picasso 2.x.x.jar** wcześniej pobrany plik, zaznacz go i kliknij **Dodaj**: 
 
-[ ![Wybierz plik jar, a następnie kliknij przycisk Dodaj](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png)
+[![Wybierz plik jar, a następnie kliknij przycisk Dodaj](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
 Sprawdź, czy **picasso 2.x.x.jar** został pomyślnie dodany do projektu: 
 
-[ ![JAR dodany do projektu](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png)
+[![JAR dodany do projektu](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 Podczas tworzenia projektu biblioteki powiązania Java, należy określić czy. JAR jest osadzony w bibliotece powiązania lub umieszczane w pakietach oddzielnie. Aby to zrobić, należy określić jedną z następujących *akcji*: 
 
@@ -107,19 +106,18 @@ Zazwyczaj **EmbeddedJar** Akcja kompilacji, aby. JAR jest automatycznie umieszcz
 
 Akcja kompilacji ustawioną **EmbeddedJar**: 
 
-[ ![Wybierz akcję kompilacji EmbeddedJar](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png)
+[![Wybierz akcję kompilacji EmbeddedJar](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
 Następnie otwórz właściwości, aby skonfigurować projekt *platformy docelowej*. Jeśli. JAR używa żadnych API systemu Android, ustaw docelową platformę na poziom interfejsu API. JAR oczekuje. Zazwyczaj dewelopera. Plik JAR będzie wskazać poziom interfejsu API (lub poziomy) który. JAR jest zgodny z. (Aby uzyskać więcej informacji o ustawianiu platformy docelowej i poziomy interfejsu API systemu Android w ogólności, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).)
 
 Ustaw docelowego interfejsu API poziom biblioteki powiązania (w tym przykładzie używamy poziom interfejsu API 19): 
 
-[ ![Docelowy poziom interfejsu API do interfejsu API 19](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png)
+[![Docelowy poziom interfejsu API do interfejsu API 19](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
 Na koniec Utwórz bibliotekę powiązania. Mimo że niektóre ostrzeżenia mogą być wyświetlane, projektu biblioteki wiązania należy pomyślnie kompilacji i utworzenie danych wyjściowych. Biblioteki DLL w następującej lokalizacji: **JarBinding/bin/Debug/JarBinding.dll**
     
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>Za pomocą biblioteki powiązania
 
@@ -133,19 +131,19 @@ W poniższych krokach, utworzymy minimalnego aplikację, która korzysta z bibli
 
 Najpierw utwórz nową aplikację platformy Xamarin.Android, który wykorzystuje biblioteki powiązania. Kliknij prawym przyciskiem myszy rozwiązanie, a następnie wybierz **Dodawanie nowego projektu**; Nazwa nowego projektu **BindingTest**. W tym samym rozwiązaniu jako biblioteki powiązania tworzymy tej aplikacji w celu uproszczenia tego przewodnika; Aplikacja, która korzysta z biblioteki powiązania zamiast tego można jednak znajdować się w inne rozwiązanie: 
 
-[ ![Dodaj nowy projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png)
+[![Dodaj nowy projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
 
 Kliknij prawym przyciskiem myszy **odwołania** węzła **BindingTest** projekt i wybierz **Dodawanie odwołania...** :
 
-[ ![Prawo Dodaj odwołanie](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png)
+[![Prawo Dodaj odwołanie](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
 Sprawdź **JarBinding** wcześniej utworzony projekt i kliknij przycisk **OK**:
 
-[ ![Wybierz projekt JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png)
+[![Wybierz projekt JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
 Otwórz **odwołania** węzła **BindingTest** projektu i sprawdź, czy **JarBinding** występuje odwołanie: 
 
-[ ![JarBinding jest wyświetlany w obszarze odwołań](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png)
+[![JarBinding jest wyświetlany w obszarze odwołań](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
 Modyfikowanie **BindingTest** układu (**Main.axml**), aby pojedynczy `ImageView`:
 
@@ -191,11 +189,10 @@ public class MainActivity : Activity
 
 Kompilowanie i uruchamianie **BindingTest** projektu. Aplikacja zostanie uruchomione, i z niewielkim opóźnieniem (w zależności od warunki sieciowe), należy pobrać i wyświetlić obraz podobny do następującego zrzutu ekranu:
 
-[ ![Zrzut ekranu BindingTest uruchomiona](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png)
+[![Zrzut ekranu BindingTest uruchomiona](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 Gratulacje! Biblioteka języka Java pomyślnie zostały powiązane. JAR i użyć go w aplikacji platformy Xamarin.Android.
  
-<a name="summary" />
  
 ## <a name="summary"></a>Podsumowanie
 

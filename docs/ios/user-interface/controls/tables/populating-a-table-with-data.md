@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fb0e4341d8d8ad0719f35c691add9bad1d3f85a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-table-with-data"></a>Wypełnianie tabeli z danymi
 
@@ -88,7 +88,7 @@ public override void ViewDidLoad ()
 
 Tabeli wynikowej wygląda następująco:
 
- [ ![](populating-a-table-with-data-images/image3.png "Przykładowa tabela uruchomiona")](populating-a-table-with-data-images/image3.png)
+ [![](populating-a-table-with-data-images/image3.png "Przykładowa tabela uruchomiona")](populating-a-table-with-data-images/image3.png#lightbox)
 
 Większość tabel umożliwia użytkownikowi touch wiersza, aby go zaznaczyć, a następnie wykonać inną akcję (np. odtwarzanie utworu, wywoływania kontaktu lub przedstawiający inny ekran). Aby to osiągnąć, istnieje kilka rzeczy, które należy wykonać. Najpierw utwórz AlertController, aby wyświetlić komunikat, gdy użytkownik kliknie na wiersz, dodając następujące polecenie, aby `RowSelected` metody:
 
@@ -140,7 +140,7 @@ Teraz użytkownik może touch wiersza i pojawi się alert:
 
 
 
- [ ![](populating-a-table-with-data-images/image4.png "Wybrany alert wiersza")](populating-a-table-with-data-images/image4.png)
+ [![](populating-a-table-with-data-images/image4.png "Wybrany alert wiersza")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>Ponowne użycie komórki
@@ -220,7 +220,7 @@ Zawiera przykłady tematów przedstawionych powyżej w **BasicTable** próbki po
 
 Indeks ułatwia użytkownikom przewijać długich list, zwykle w kolejności alfabetycznej mimo że może indeksować według niezależnie od kryteriów ma. **BasicTableIndex** próbki ładuje znacznie dłużej listę elementów z pliku, aby pokazać indeksu. Każdy element w indeksie odpowiada "sekcji" w tabeli.
 
- [ ![](populating-a-table-with-data-images/image5.png "Wyświetlanie indeksu")](populating-a-table-with-data-images/image5.png)
+ [![](populating-a-table-with-data-images/image5.png "Wyświetlanie indeksu")](populating-a-table-with-data-images/image5.png#lightbox)
 
 Do obsługi danych tabeli należy grupowane, więc tworzy próbki BasicTableIndex "sections" `Dictionary<>` z tablicy ciągów za pomocą pierwszą literę każdego elementu jako klucz słownika:
 
@@ -270,7 +270,7 @@ Indeksy zwykle są używane tylko przy użyciu stylu zwykły tabeli.
 Nagłówki i stopki może służyć do grupowania wizualnie wierszy w tabeli. Struktura danych, wymagane jest bardzo podobne do dodawania indeksu — `Dictionary<>` naprawdę dobrze działa. Zamiast używać alfabetu do grupowania komórek, w tym przykładzie pozwala grupować warzyw według typu botaniczne.
 Dane wyjściowe wyglądają następująco:
 
- [ ![](populating-a-table-with-data-images/image6.png "Przykładowe nagłówki i stopki")](populating-a-table-with-data-images/image6.png)
+ [![](populating-a-table-with-data-images/image6.png "Przykładowe nagłówki i stopki")](populating-a-table-with-data-images/image6.png#lightbox)
 
 Aby wyświetlić nagłówki i stopki `UITableViewSource` podklasy wymaga tych dodatkowych metod:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: 3046d779239076098a8b2fb74fc87e2f211074e9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a2445e49005175f62e4d7cd8aadccb5f596177bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-designer-basics"></a>podstawowe informacje o projektancie systemu iOS
 
@@ -38,15 +38,15 @@ Widok Kontroler ma dwie części: wizualną reprezentację w systemie iOS projek
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Kontrolera widoku w systemie iOS projektanta](introduction-images/1-storyboardwithviewcontroller-vsmac.png "kontrolera widoku w Projektancie systemu iOS")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png)
+[![Kontrolera widoku w systemie iOS projektanta](introduction-images/1-storyboardwithviewcontroller-vsmac.png "kontrolera widoku w Projektancie systemu iOS")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
 
-[![Kod dla kontrolera widoku](introduction-images/2-viewcontrollercode-vsmac.png "kod kontrolera widoku")](introduction-images/2-viewcontrollercode-vsmac-large.png)
+[![Kod dla kontrolera widoku](introduction-images/2-viewcontrollercode-vsmac.png "kod kontrolera widoku")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kontrolera widoku w systemie iOS projektanta](introduction-images/1-storyboardwithviewcontroller-vs.png "kontrolera widoku w Projektancie systemu iOS")](introduction-images/1-storyboardwithviewcontroller-vs-large.png)
+[![Kontrolera widoku w systemie iOS projektanta](introduction-images/1-storyboardwithviewcontroller-vs.png "kontrolera widoku w Projektancie systemu iOS")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
 
-[![Kod dla kontrolera widoku](introduction-images/2-viewcontrollercode-vs.png "kod kontrolera widoku")](introduction-images/2-viewcontrollercode-vs-large.png)
+[![Kod dla kontrolera widoku](introduction-images/2-viewcontrollercode-vs.png "kod kontrolera widoku")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
@@ -54,11 +54,11 @@ W stanie domyślnym kontrolera widoku nie udostępnia żadnych funkcji; powinno 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Widok kontroler zawierające przycisk](introduction-images/3-viewcontrollerwithbutton-vsmac.png "kontrolera widoku zawierające przycisk")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png)
+[![Widok kontroler zawierające przycisk](introduction-images/3-viewcontrollerwithbutton-vsmac.png "kontrolera widoku zawierające przycisk")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Widok kontroler zawierające przycisk](introduction-images/3-viewcontrollerwithbutton-vs.png "kontrolera widoku zawierające przycisk")](introduction-images/3-viewcontrollerwithbutton-vs-large.png)
+[![Widok kontroler zawierające przycisk](introduction-images/3-viewcontrollerwithbutton-vs.png "kontrolera widoku zawierające przycisk")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
 -----
 
@@ -68,13 +68,13 @@ Niektóre formanty, takie jak etykiety, zawierających tekst statyczny, mogą by
 
 Aby uzyskać dostęp i manipulowania przycisku w kodzie, musi mieć unikatowy identyfikator. Podaj unikatowy identyfikator, wybierając przycisk, otwierając **konsoli właściwości**i ustawienie jej **nazwa** pola do wartości, takich jak "SubmitButton":
 
-[![Nazwa przycisku Ustawienia w konsoli właściwości](introduction-images/4-settingbuttonname-vsmac.png "nazwa przycisku Ustawienia w konsoli właściwości")](introduction-images/4-settingbuttonname-vsmac-large.png)
+[![Nazwa przycisku Ustawienia w konsoli właściwości](introduction-images/4-settingbuttonname-vsmac.png "nazwa przycisku Ustawienia w konsoli właściwości")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Aby uzyskać dostęp i manipulowania przycisku w kodzie, musi mieć unikatowy identyfikator. Podaj unikatowy identyfikator, wybierając przycisk, otwierając **okna właściwości**i ustawienie jej **nazwa** pola do wartości, takich jak "SubmitButton":
 
-[![Nazwa przycisku Ustawienia w oknie właściwości](introduction-images/4-settingbuttonname-vs.png "nazwa przycisku Ustawienia w oknie właściwości")](introduction-images/4-settingbuttonname-vs-large.png)
+[![Nazwa przycisku Ustawienia w oknie właściwości](introduction-images/4-settingbuttonname-vs.png "nazwa przycisku Ustawienia w oknie właściwości")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
@@ -84,13 +84,13 @@ Teraz, gdy przycisk ma nazwę, jest dostępny w kodzie. Ale jak to działa?
 
 W **konsoli rozwiązania**, nawigacyjnego do **ViewController.cs** i klikając wskaźnik ujawnienie wykaże, że kontroler widoku `ViewController` obejmuje definicję klasy, dwa pliki, z których każdy zawiera [częściowej klasy](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definicji:
 
-[![Dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png)
+[![Dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 W **Eksploratora rozwiązań**, nawigacyjnego do **ViewController.cs** i klikając wskaźnik ujawnienie wykaże, że kontroler widoku `ViewController` definicji klasy obejmuje dwa pliki, każdy z zawierającą [częściowej klasy](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definicji:
 
-[![Dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png)
+[![Dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "dwa pliki wchodzących w skład klasy ViewController: ViewController.cs i ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
@@ -125,11 +125,11 @@ Poniższy zrzut ekranu przedstawia IntelliSense teraz rozpoznaje `SubmitButton` 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Rozpoznawanie odwołania SubmitButton IntelliSense](introduction-images/6-submitbuttonintellisense-vsmac.png "Rozpoznawanie odwołania SubmitButton IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png)
+[![Rozpoznawanie odwołania SubmitButton IntelliSense](introduction-images/6-submitbuttonintellisense-vsmac.png "Rozpoznawanie odwołania SubmitButton IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Rozpoznawanie odwołania SubmitButton IntelliSense](introduction-images/6-submitbuttonintellisense-vs.png "Rozpoznawanie odwołania SubmitButton IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png)
+[![Rozpoznawanie odwołania SubmitButton IntelliSense](introduction-images/6-submitbuttonintellisense-vs.png "Rozpoznawanie odwołania SubmitButton IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
 -----
 
@@ -147,13 +147,13 @@ W tej sekcji przedstawiono części iOS projektanta i zawiera przegląd funkcji.
 
 Projekty platformy Xamarin.iOS utworzone w programie Visual Studio dla komputerów Mac obejmują scenorysu. Aby wyświetlić zawartość scenorysu, dwukrotnie kliknij plik .storyboard **konsoli rozwiązania**:
 
-[![Otwórz scenorysu w systemie iOS projektanta](introduction-images/7-storyboardopen-vsmac.png "scenorysu Otwórz w Projektancie systemu iOS")](introduction-images/7-storyboardopen-vsmac-large.png)
+[![Otwórz scenorysu w systemie iOS projektanta](introduction-images/7-storyboardopen-vsmac.png "scenorysu Otwórz w Projektancie systemu iOS")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Większości projektów platformy Xamarin.iOS utworzone za pomocą programu Visual Studio 2015 lub 2017 obejmują scenorysu. Aby wyświetlić zawartość scenorysu, dwukrotnie kliknij plik .storyboard **Eksploratora rozwiązań**:
 
-[![Otwórz scenorysu w systemie iOS projektanta](introduction-images/7-storyboardopen-vs.png "scenorysu Otwórz w Projektancie systemu iOS")](introduction-images/7-storyboardopen-vs-large.png)
+[![Otwórz scenorysu w systemie iOS projektanta](introduction-images/7-storyboardopen-vs.png "scenorysu Otwórz w Projektancie systemu iOS")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
@@ -165,7 +165,7 @@ IOS projektanta ma sześć głównej sekcje:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Sekcje iOS projektanta](introduction-images/8-sixpartsofiosdesigner-vsmac.png "sekcje projektanta dla systemu iOS")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png)
+[![Sekcje iOS projektanta](introduction-images/8-sixpartsofiosdesigner-vsmac.png "sekcje projektanta dla systemu iOS")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
 1. **Projektowanie powierzchni** — Projektant iOS podstawowym obszarem roboczym. Wyświetlany w obszarze dokumentu, umożliwia wizualnego tworzenia interfejsów użytkownika.
 2. **Ograniczenia narzędzi** — umożliwia przełączanie ramek edycji trybu i ograniczenia trybu edycji, dwa różne sposoby położenie elementów w interfejsie użytkownika.
@@ -176,7 +176,7 @@ IOS projektanta ma sześć głównej sekcje:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Sekcje iOS projektanta](introduction-images/8-sixpartsofiosdesigner-vs.png "sekcje projektanta dla systemu iOS")](introduction-images/8-sixpartsofiosdesigner-vs-large.png)
+[![Sekcje iOS projektanta](introduction-images/8-sixpartsofiosdesigner-vs.png "sekcje projektanta dla systemu iOS")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
 1. **Projektowanie powierzchni** — Projektant iOS podstawowym obszarem roboczym. Wyświetlany w obszarze dokumentu, umożliwia wizualnego tworzenia interfejsów użytkownika.
 2. **Ograniczenia narzędzi** — umożliwia przełączanie ramek edycji trybu i ograniczenia trybu edycji, dwa różne sposoby położenie elementów w interfejsie użytkownika.
@@ -211,7 +211,7 @@ Niebieska linia przerywana w powyższym przykładzie przedstawiono wskazówki vi
 
 Menu kontekstowe jest dostępne zarówno na powierzchni projektu i **konspekt dokumentu**. To menu zawiera polecenia do zaznaczonego formantu i jego element nadrzędny, co jest przydatne podczas pracy z widoków w zagnieżdżonych hierarchii:
 
-[![Menu kontekstowe na powierzchni projektowej](introduction-images/10-contextmenudesignsurface-vsmac.png "menu kontekstowego na powierzchni projektu")](introduction-images/10-contextmenudesignsurface-vsmac-large.png)
+[![Menu kontekstowe na powierzchni projektowej](introduction-images/10-contextmenudesignsurface-vsmac.png "menu kontekstowego na powierzchni projektu")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -221,11 +221,11 @@ Menu kontekstowe jest dostępne zarówno na powierzchni projektu i **konspekt do
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
  
-[![Na pasku narzędzi ograniczenia](introduction-images/11-constraintstoolbar-vsmac.png "narzędzi ograniczenia")](introduction-images/11-constraintstoolbar-vsmac-large.png)
+[![Na pasku narzędzi ograniczenia](introduction-images/11-constraintstoolbar-vsmac.png "narzędzi ograniczenia")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Na pasku narzędzi ograniczenia](introduction-images/11-constraintstoolbar-vs.png "narzędzi ograniczenia")](introduction-images/11-constraintstoolbar-vs-large.png)
+[![Na pasku narzędzi ograniczenia](introduction-images/11-constraintstoolbar-vs.png "narzędzi ograniczenia")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -272,11 +272,11 @@ Dolnym pasku narzędzi umożliwia wybierz urządzenie, orientację i powiększen
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchni projektowej](introduction-images/13-bottomtoolbar-vsmac.png "dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchnię projektu")](introduction-images/13-bottomtoolbar-vsmac-large.png)
+[![Dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchni projektowej](introduction-images/13-bottomtoolbar-vsmac.png "dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchnię projektu")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchni projektowej](introduction-images/13-bottomtoolbar-vs.png "dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchnię projektu")](introduction-images/13-bottomtoolbar-vs-large.png)
+[![Dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchni projektowej](introduction-images/13-bottomtoolbar-vs.png "dolnym pasku narzędzi, używany do wybierania urządzenia i orientację powierzchnię projektu")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ Po rozwinięciu dolnym pasku narzędzi Wyświetla wszystkie urządzenia, orienta
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji](introduction-images/14-bottomtoolbarexpanded-vsmac.png "dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png)
+[![Dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji](introduction-images/14-bottomtoolbarexpanded-vsmac.png "dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji](introduction-images/14-bottomtoolbarexpanded-vs.png "dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji")](introduction-images/14-bottomtoolbarexpanded-vs-large.png)
+[![Dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji](introduction-images/14-bottomtoolbarexpanded-vs.png "dolnym pasku narzędzi, rozwinięty, ukazując urządzenia i orientacji")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
 -----
 
@@ -303,11 +303,11 @@ Gdy [klasy wielkości](~/ios/user-interface/storyboards/unified-storyboards.md#s
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Trwa służące do różnicowania interfejs przez klasę rozmiar dolnym pasku narzędzi](introduction-images/15-edittraitsbutton-vsmac.png "dolnym pasku narzędzi są służące do różnicowania interfejs według klasy wielkości")](introduction-images/15-edittraitsbutton-vsmac-large.png)
+[![Trwa służące do różnicowania interfejs przez klasę rozmiar dolnym pasku narzędzi](introduction-images/15-edittraitsbutton-vsmac.png "dolnym pasku narzędzi są służące do różnicowania interfejs według klasy wielkości")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Trwa służące do różnicowania interfejs przez klasę rozmiar dolnym pasku narzędzi](introduction-images/15-edittraitsbutton-vs.png "dolnym pasku narzędzi są służące do różnicowania interfejs według klasy wielkości")](introduction-images/15-edittraitsbutton-vs-large.png)
+[![Trwa służące do różnicowania interfejs przez klasę rozmiar dolnym pasku narzędzi](introduction-images/15-edittraitsbutton-vs.png "dolnym pasku narzędzi są służące do różnicowania interfejs według klasy wielkości")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
 -----
 
@@ -340,7 +340,7 @@ Formanty Dostosuj powiększenia na powierzchni projektu. Nie ma wpływu na inter
 
 Użyj **konsoli właściwości** do edycji tożsamości, style wizualne, dostępność i zachowanie formantu. Poniższy zrzut ekranu przedstawia **konsoli właściwości** opcje dla przycisku:
 
-[![Konsola właściwości dla przycisku](introduction-images/17-buttonpropertiespad-vsmac.png "konsoli właściwości dla przycisku")](introduction-images/17-buttonpropertiespad-vsmac-large.png)
+[![Konsola właściwości dla przycisku](introduction-images/17-buttonpropertiespad-vsmac.png "konsoli właściwości dla przycisku")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Właściwości sekcji konsoli
 
 **Konsoli właściwości** zawiera trzy sekcje:
@@ -351,7 +351,7 @@ Użyj **konsoli właściwości** do edycji tożsamości, style wizualne, dostęp
 
 Użyj **okna właściwości** do edycji tożsamości, style wizualne, dostępność i zachowanie formantu. Poniższy zrzut ekranu przedstawia **okna właściwości** opcje dla przycisku:
 
-[![W oknie właściwości przycisku](introduction-images/17-buttonpropertieswindow-vs.png "okno właściwości dla przycisku")](introduction-images/17-buttonpropertieswindow-vs-large.png)
+[![W oknie właściwości przycisku](introduction-images/17-buttonpropertieswindow-vs.png "okno właściwości dla przycisku")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>Sekcje okno właściwości
 
@@ -369,9 +369,9 @@ Użyj **okna właściwości** do edycji tożsamości, style wizualne, dostępno�
 
 Oprócz visual edycji na powierzchni projektu iOS projektanta obsługuje edycję właściwości w **konsoli właściwości**. Zmiana właściwości dostępne oparte na wybraną kontrolkę, jak pokazano na zrzutach ekranu poniżej:
 
-[![Przycisk Właściwości](introduction-images/18a-buttonpropertiespad-vsmac.png "przycisk Właściwości")](introduction-images/18a-buttonpropertiespad-vsmac-large.png)
+[![Przycisk Właściwości](introduction-images/18a-buttonpropertiespad-vsmac.png "przycisk Właściwości")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
-[![Wyświetl właściwości kontrolera](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "wyświetlić właściwości kontrolera")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png)
+[![Wyświetl właściwości kontrolera](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "wyświetlić właściwości kontrolera")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -379,9 +379,9 @@ Oprócz visual edycji na powierzchni projektu iOS projektanta obsługuje edycję
 
 Oprócz visual edycji na powierzchni projektu iOS projektanta obsługuje edycję właściwości w **okna właściwości**. Zmiana właściwości dostępne oparte na wybraną kontrolkę, jak pokazano na zrzutach ekranu poniżej:
 
-[![Przycisk Właściwości](introduction-images/18a-buttonpropertieswindow-vs.png "przycisk Właściwości")](introduction-images/18a-buttonpropertieswindow-vs-large.png)
+[![Przycisk Właściwości](introduction-images/18a-buttonpropertieswindow-vs.png "przycisk Właściwości")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
-[![Wyświetl właściwości kontrolera](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "wyświetlić właściwości kontrolera")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png)
+[![Wyświetl właściwości kontrolera](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "wyświetlić właściwości kontrolera")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
 
 -----
 
@@ -406,13 +406,13 @@ Wiele właściwości w **okna właściwości** Pokaż żadna wartość lub warto
 
 Aby określić obsługi zdarzeń niestandardowych dla różnych zdarzeń, użyj **zdarzenia** karcie **konsoli właściwości**. Na przykład na zrzucie ekranu poniżej `HandleClick` metoda obsługuje przycisku **Touch się wewnątrz** zdarzeń:
 
-[![W konsoli właściwości z obsługi zdarzeń dla przycisku](introduction-images/19-buttonpropertiespadevents-vsmac.png "konsoli właściwości z obsługi zdarzeń dla przycisku")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png)
+[![W konsoli właściwości z obsługi zdarzeń dla przycisku](introduction-images/19-buttonpropertiespadevents-vsmac.png "konsoli właściwości z obsługi zdarzeń dla przycisku")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Aby określić obsługi zdarzeń niestandardowych dla różnych zdarzeń, użyj **zdarzenia** karcie **okna właściwości**. Na przykład na zrzucie ekranu poniżej `HandleClick` metoda obsługuje przycisku **Touch się wewnątrz** zdarzeń:
 
-[![Okno właściwości z obsługi zdarzeń dla przycisku](introduction-images/19-buttonpropertieswindowevents-vs.png "okna właściwości, z obsługi zdarzeń dla przycisku")](introduction-images/19-buttonpropertieswindowevents-vs-large.png)
+[![Okno właściwości z obsługi zdarzeń dla przycisku](introduction-images/19-buttonpropertieswindowevents-vs.png "okna właściwości, z obsługi zdarzeń dla przycisku")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
@@ -420,13 +420,13 @@ Gdy program obsługi zdarzeń został określony, metody o tej samej nazwie nale
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Wystąpił wyjątek nierozpoznany selektora](introduction-images/20-unrecognizedselector-vsmac.png "wyjątek nierozpoznany selektora")](introduction-images/20-unrecognizedselector-vsmac-large.png)
+[![Wystąpił wyjątek nierozpoznany selektora](introduction-images/20-unrecognizedselector-vsmac.png "wyjątek nierozpoznany selektora")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
 Należy pamiętać, że po program obsługi zdarzeń został określony w **konsoli właściwości**, iOS projektanta zostanie natychmiast otworzyć odpowiedni plik kodu i oferują do wstawienia deklaracji metody. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Wystąpił wyjątek nierozpoznany selektora](introduction-images/20-unrecognizedselector-vs.png "wyjątek nierozpoznany selektora")](introduction-images/20-unrecognizedselector-vs-large.png)
+[![Wystąpił wyjątek nierozpoznany selektora](introduction-images/20-unrecognizedselector-vs.png "wyjątek nierozpoznany selektora")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
@@ -438,11 +438,11 @@ Projektant z systemem iOS można również wyświetlić hierarchii interfejsów 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Konspekt dokumentu](introduction-images/21-buttonoutlineview-vsmac.png "konspektu dokumentu")](introduction-images/21-buttonoutlineview-vsmac-large.png)
+[![Konspekt dokumentu](introduction-images/21-buttonoutlineview-vsmac.png "konspektu dokumentu")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Konspekt dokumentu](introduction-images/21-buttonoutlineview-vs.png "konspektu dokumentu")](introduction-images/21-buttonoutlineview-vs-large.png)
+[![Konspekt dokumentu](introduction-images/21-buttonoutlineview-vs.png "konspektu dokumentu")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
 -----
 
@@ -454,7 +454,7 @@ Wybrany formant w widoku konspektu pozostaje zsynchronizowany z wybraną kontrol
 
 Istnieje możliwość Użyj zamiennie iOS projektanta i kompilatora interfejsu Xcode. Aby otworzyć scenorysu lub plik .xib konstruktora interfejsu Xcode, kliknij prawym przyciskiem myszy plik i wybierz **Otwórz za pomocą > konstruktora interfejsu Xcode**, jak pokazano na poniższym zrzucie ekranu:
 
-[![Otwieranie scenorysu w Konstruktorze interfejsu Xcode](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "otwierania scenorysu w Konstruktorze interfejsu Xcode")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png)
+[![Otwieranie scenorysu w Konstruktorze interfejsu Xcode](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "otwierania scenorysu w Konstruktorze interfejsu Xcode")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
 Po wprowadzeniu zmian w środowisku Xcode interfejsu konstruktora, Zapisz plik i wróć do programu Visual Studio dla komputerów Mac. Zmiany zsynchronizuje się do projektu platformy Xamarin.iOS.
 

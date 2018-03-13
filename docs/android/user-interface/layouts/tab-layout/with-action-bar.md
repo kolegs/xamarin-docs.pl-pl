@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Układy z kartami z elementów nadrzędnych.
 
 _Ten przewodnik zawiera wprowadzenie oraz wyjaśniono, jak utworzyć interfejs użytkownika z kartami w aplikacji platformy Xamarin.Android przy użyciu interfejsów API elementów nadrzędnych._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -27,7 +26,6 @@ Na pasku akcji to wzorzec Android interfejsu użytkownika, który zapewnia spój
 Należy pamiętać, że `Toolbar` to składnik paska nowszej i bardziej ogólną akcję należy użyć zamiast z `ActionBar` (`Toolbar` zaprojektowano tak, aby zastąpić `ActionBar`). Aby uzyskać więcej informacji, zobacz [narzędzi](~/android/user-interface/controls/tool-bar/index.md). 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Wymagania
 
@@ -36,7 +34,6 @@ Dowolnej aplikacji platformy Xamarin.Android, która dotyczy poziom interfejsu A
 Niektóre z interfejsów API elementów nadrzędnych wstecz systemie poziom interfejsu API 7 (Android 2.1) i są dostępne za pośrednictwem [w wersji 7 AppCompat biblioteki](http://developer.android.com/tools/support-library/features.html#v7-appcompat), który ma zostać udostępnione aplikacji platformy Xamarin.Android przy użyciu [Xamarin Android Obsługa biblioteki — w wersji 7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu.
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>Wprowadzenie do karty w elementów nadrzędnych.
 
@@ -63,7 +60,6 @@ Opakowuje Xamarin.Android `ActionBar.ITabListener` ze zdarzeniami w `ActionBar.T
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>Dodawanie kart do elementów nadrzędnych.
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Vs programów obsługi zdarzeń ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ Aplikacje powinny używać programów obsługi zdarzeń i `ActionBar.ITabListene
 Podczas pracy nad wielu kartach lub udostępniania często używane funkcje między kartami elementów nadrzędnych, może być skuteczniejsza pod względem pamięci i wydajność, aby utworzyć niestandardowe klasy, która implementuje `ActionBar.ITabListener`i udostępniania jednego wystąpienia klasy. Zmniejszy to liczbę GREF w używanej aplikacji platformy Xamarin.Android. 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Zapewnienia zgodności dla starszych urządzeń
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

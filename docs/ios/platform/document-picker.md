@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="document-picker"></a>Selektor dokumentu
 
@@ -54,7 +54,7 @@ Przed rozpoczęciem pracy z kodem musieli używać selektora dokumentu za pomoc�
 
 Ponieważ można zmodyfikować pliku z różnych miejsc, koordynacji należy użyć, aby zapobiec utracie danych.
 
- [ ![](document-picker-images/image1.png "Przy użyciu pliku koordynacji")](document-picker-images/image1.png)
+ [![](document-picker-images/image1.png "Przy użyciu pliku koordynacji")](document-picker-images/image1.png#lightbox)
 
 Spójrzmy na powyższej ilustracji:
 
@@ -193,7 +193,7 @@ Jest to sposób odnajdywania i listy dokumentów przy użyciu istniejącego `NSM
 
 Przed iOS 8 `NSMetadataQuery` przebiegało powoli na zmiany pliku lokalnego podnoszenia takich jak: usuwa, tworzy i zmienia jego nazwę.
 
- [ ![](document-picker-images/image2.png "Omówienie zmiany pliku lokalnego NSMetadataQuery")](document-picker-images/image2.png)
+ [![](document-picker-images/image2.png "Omówienie zmiany pliku lokalnego NSMetadataQuery")](document-picker-images/image2.png#lightbox)
 
 Na powyższym diagramie:
 
@@ -208,7 +208,7 @@ Ze względu na opóźnienie do tworzenia `NSMetadata` rekordów, aplikacja miał
 
 W systemie iOS 8 `NSMetadataQuery` jest łatwiejsze do użycia bezpośrednio z nową funkcję o nazwie Stitching:
 
- [ ![](document-picker-images/image3.png "NSMetadataQuery z nową funkcję o nazwie Stitching")](document-picker-images/image3.png)
+ [![](document-picker-images/image3.png "NSMetadataQuery z nową funkcję o nazwie Stitching")](document-picker-images/image3.png#lightbox)
 
 Przy użyciu Stitching na powyższym diagramie:
 
@@ -824,7 +824,7 @@ Przed iOS 8 było bardzo trudne do dostęp do dokumentów z innej aplikacji, pon
 
 ### <a name="existing-behavior"></a>Zachowanie istniejącej
 
- [ ![](document-picker-images/image31.png "Istniejące zachowanie — omówienie")](document-picker-images/image31.png)
+ [![](document-picker-images/image31.png "Istniejące zachowanie — omówienie")](document-picker-images/image31.png#lightbox)
 
 Spójrzmy na uzyskiwanie dostępu do zewnętrznego dokumentu przed iOS 8:
 
@@ -839,7 +839,7 @@ Z tego miejsca dokumentu jest dostępna dla drugiego aplikacji, aby otworzyć i 
 
 W systemie iOS 8 aplikacja jest w stanie uzyskać dostęp do dokumentów poza kontener własnej aplikacji z łatwością:
 
- [ ![](document-picker-images/image32.png "Odnajdywanie dokumentów spoza kontenera aplikacji")](document-picker-images/image32.png)
+ [![](document-picker-images/image32.png "Odnajdywanie dokumentów spoza kontenera aplikacji")](document-picker-images/image32.png#lightbox)
 
 Przy użyciu nowej usługi iCloud selektora dokumentu ( `UIDocumentPickerViewController`), aplikacji systemu iOS mogą bezpośrednio odnaleźć i dostępu poza jego kontenera aplikacji. `UIDocumentPickerViewController` Udostępnia mechanizm dla użytkownika do udostępnienia i edytowania tych odnalezione dokumentów za pomocą uprawnień.
 
@@ -910,16 +910,16 @@ Poniżej przedstawiono przykład sposobu powyższy kod wyświetla selektora doku
 
 1.  Użytkownik uruchamia aplikację i wyświetlany jest interfejs główne:   
  
-    [ ![](document-picker-images/image33.png "Wyświetlany jest interfejs głównego")](document-picker-images/image33.png)
+    [![](document-picker-images/image33.png "Wyświetlany jest interfejs głównego")](document-picker-images/image33.png#lightbox)
 1.  Podsłuchu użytkownika **akcji** w górnej części ekranu i jest wyświetlony monit o wybranie **dostawcy dokumentu** z listy dostępnych dostawców:   
  
-    [ ![](document-picker-images/image34.png "Wybierz dostawcę dokumentu z listy dostępnych dostawców")](document-picker-images/image34.png)
+    [![](document-picker-images/image34.png "Wybierz dostawcę dokumentu z listy dostępnych dostawców")](document-picker-images/image34.png#lightbox)
 1.  **Dokumentu selektora widoku kontrolera** jest wyświetlane dla wybranego **dostawcy dokumentu**:   
  
-    [ ![](document-picker-images/image35.png "Kontroler widoku selektora dokumentu jest wyświetlany.")](document-picker-images/image35.png)
+    [![](document-picker-images/image35.png "Kontroler widoku selektora dokumentu jest wyświetlany.")](document-picker-images/image35.png#lightbox)
 1.  Użytkownik naciska na **Folder dokumentów** Aby wyświetlić jego zawartość:   
  
-    [ ![](document-picker-images/image36.png "Zawartość dokumentu")](document-picker-images/image36.png)
+    [![](document-picker-images/image36.png "Zawartość dokumentu")](document-picker-images/image36.png#lightbox)
 1.  Użytkownik wybiera **dokumentu** i **selektora dokumentu** jest zamknięty.
 1.  Interfejs głównego zostanie wyświetlony ponownie, **dokumentu** są ładowane z zewnętrznego kontenera i jego zawartość wyświetlana.
 
@@ -930,7 +930,7 @@ Rzeczywiste wyświetlania dokumentu selektora widoku kontrolera zależy od dosta
 
 Jak wspomniano powyżej, przed iOS 8, aplikację tylko może uzyskać dostępu do dokumentów, które były częścią jego kontenera aplikacji. W systemie iOS 8 aplikacja może uzyskiwać dostęp do dokumentów ze źródeł zewnętrznych:
 
- [ ![](document-picker-images/image37.png "Omówienie dokumentów zewnętrznych zarządzania")](document-picker-images/image37.png)
+ [![](document-picker-images/image37.png "Omówienie dokumentów zewnętrznych zarządzania")](document-picker-images/image37.png#lightbox)
 
 Gdy użytkownik wybierze dokumentu ze źródła zewnętrznego, dokumentu odwołania są zapisywane do kontenera aplikacji, który wskazuje w oryginalnym dokumencie.
 
@@ -1021,10 +1021,10 @@ Kontroler widoku selektora dokumentu zawiera dwa różne tryby działania:
 
 1.  **Otwórz tryb** — w tym trybie, gdy użytkownik wybierze i zewnętrznym dokumencie selektora dokumentu spowoduje utworzenie zakładki zakres zabezpieczeń w kontenerze aplikacji.   
  
-    [ ![](document-picker-images/image37.png "Zabezpieczenia zakres zakładek w kontenerze aplikacji")](document-picker-images/image37.png)
+    [![](document-picker-images/image37.png "Zabezpieczenia zakres zakładek w kontenerze aplikacji")](document-picker-images/image37.png#lightbox)
 1.  **Trybu importu** — w tym trybie, gdy użytkownik wybierze i zewnętrznym dokumencie, selektora dokumentu zostanie nie utworzyć zakładki, lecz skopiuj plik do lokalizacji tymczasowej i zapewnić dostęp aplikacji do dokumentu w tej lokalizacji:   
  
-    [ ![](document-picker-images/image38.png "Selektor dokumentu zostanie skopiuj plik do lokalizacji tymczasowej i zapewnienia dostępu aplikacji do dokumentu w tej lokalizacji")](document-picker-images/image38.png)   
+    [![](document-picker-images/image38.png "Selektor dokumentu zostanie skopiuj plik do lokalizacji tymczasowej i zapewnienia dostępu aplikacji do dokumentu w tej lokalizacji")](document-picker-images/image38.png#lightbox)   
  Gdy aplikacja zakończy jakiejkolwiek przyczyny, lokalizacji tymczasowej jest opróżniany i usunąć pliku. Jeśli aplikacja musi do obsługi dostępu do pliku, jego wykonanie kopii i umieścić go w jego kontenera aplikacji.
 
 
@@ -1069,7 +1069,7 @@ Ten sposób jest implementowany przy użyciu dwóch różnych rozszerzeń:
 
 Na poniższym diagramie przedstawiono przepływ typowych danych podczas pracy z dokumentu dostawcy rozszerzeń:
 
- [ ![](document-picker-images/image39.png "Ten diagram przedstawia przepływ typowych danych, podczas pracy z rozszerzeniami dostawcy dokumentu")](document-picker-images/image39.png)
+ [![](document-picker-images/image39.png "Ten diagram przedstawia przepływ typowych danych, podczas pracy z rozszerzeniami dostawcy dokumentu")](document-picker-images/image39.png#lightbox)
 
 Odbywa się następujący proces:
 
@@ -1095,7 +1095,7 @@ Ze względów bezpieczeństwa z systemem iOS 8 ma warstwy izolacji, która będz
 
 Na poniższym diagramie przedstawiono przepływ danych podczas pracy z zakładek i rozszerzenie dostawcy dokumentu:
 
- [ ![](document-picker-images/image40.png "Ten diagram przedstawia przepływ danych podczas pracy z zakładek i rozszerzenie dostawcy dokumentu")](document-picker-images/image40.png)
+ [![](document-picker-images/image40.png "Ten diagram przedstawia przepływ danych podczas pracy z zakładek i rozszerzenie dostawcy dokumentu")](document-picker-images/image40.png#lightbox)
 
 Odbywa się następujący proces:
 

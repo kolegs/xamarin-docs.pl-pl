@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 676bd443d2f45c6ed502c2f94feec3599b068341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 74911f583a2e28a99ceb7c087a8542d0a8cab71d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="getting-started-with-ff35"></a>Wprowadzenie do FF & 35;
+# <a name="getting-started-with-f35"></a>Wprowadzenie do F&#35;
 
 ## <a name="requirements"></a>Wymagania
 
@@ -22,30 +22,30 @@ F # jest domyślnie włączone w programie Visual Studio dla komputerów Mac.
 
 W systemie Windows, należy zainstalować narzędzia kompilatora autonomiczny F #, zgodnie z instrukcjami na [lokacji FSharp.org](http://fsharp.org/use/windows/).
 
-## <a name="creating-an-f35-project"></a>Tworzenie F & 35; Projekt
+## <a name="creating-an-f35-project"></a>Tworzenie F&#35; projektu
 
 Tworzenie nowej aplikacji F # odbywa się w tym samym **nowy projekt** okna używane dla języka C#.
 
 W programie Visual Studio for Mac wybierz **Plik > nowe rozwiązanie**. W **nowy projekt** okno dialogowe, wybierz szablon projektu. Użyj listy rozwijanej z prawej strony szablonu, aby wybrać język, którego chcesz użyć:
 
- [ ![](overview-images/choosefsharp.png "Użyj listy rozwijanej z prawej strony szablonu, aby wybrać język, którego chcesz użyć")](overview-images/choosefsharp.png)
+ [![](overview-images/choosefsharp.png "Użyj listy rozwijanej z prawej strony szablonu, aby wybrać język, którego chcesz użyć")](overview-images/choosefsharp.png#lightbox)
 
 Wybierz typ projektu, a następnie kliknij przycisk **dalej** aby go utworzyć.
 
 
 Jesteś teraz rozpocząć tworzenie niektórych niezawodnych aplikacji F #!
 
-## <a name="learning-to-use-f35"></a>Nauka Użyj i &#35;
+## <a name="learning-to-use-f35"></a>Nauka korzystania F&#35;
 
 Samouczek języka F # można także utworzyć z poziomu **nowe rozwiązanie** okna dialogowego w programie Visual Studio dla komputerów Mac. Przejdź do **innych > .NET > Samouczek języka F #**, szczegółowych na poniższej ilustracji:
 
- [ ![](overview-images/fsharptutorial.png "Przejdź do innych / .NET / samouczek języka F #")](overview-images/fsharptutorial.png)
+ [![](overview-images/fsharptutorial.png "Przejdź do innych / .NET / samouczek języka F #")](overview-images/fsharptutorial.png#lightbox)
 
 Spowoduje to otwarcie nowego rozwiązania interaktywnego. Eksploracja to jest doskonałym sposobem na do grips podstawy języka.
 
- [ ![](overview-images/newtutorial-sml.png "Eksploracja to jest doskonałym sposobem na do grips podstawy języka")](overview-images/newtutorial.png)
+ [![](overview-images/newtutorial-sml.png "Eksploracja to jest doskonałym sposobem na do grips podstawy języka")](overview-images/newtutorial.png#lightbox)
 
-Zapoznaj się z [lista przykładów](/guides/cross-platform/fsharp/samples/) wyświetlić F # w akcji.
+Zapoznaj się z [lista przykładów](~/cross-platform/platform/fsharp/samples.md) wyświetlić F # w akcji.
 
 ## <a name="references"></a>Odwołania
 

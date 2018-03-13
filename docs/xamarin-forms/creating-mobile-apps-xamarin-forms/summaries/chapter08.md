@@ -3,14 +3,15 @@ title: "Podsumowanie rozdziału 8. Kod i języka XAML w zgodzie"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e95d6a20e828c92deb0e03fe1bcbcf18aac9e508
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 452a7835bcb54501edffe7a2467544c6677616ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Podsumowanie rozdziału 8. Kod i języka XAML w zgodzie
 
@@ -69,7 +70,7 @@ Wszelkie `View` uzyskać wprowadzania dotykowego i generowanie zdarzeń z te dan
 
 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Generuje [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) zdarzenia. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program pokazano, jak dołączyć `TapGestureRecognizer` obiektów cztery `BoxView` elementów do tworzenia gier imitacje:
 
-[![Potrójna zrzut ekranu przedstawiający naciśnij małp](images/ch08fg07-small.png "gry imitacja")](images/ch08fg07-large.png "imitacja gry")
+[![Potrójna zrzut ekranu przedstawiający naciśnij małp](images/ch08fg07-small.png "gry imitacja")](images/ch08fg07-large.png#lightbox "imitacja gry")
 
 Ale **MonkeyTap** program wymaga naprawdę dźwięku. (Zobacz [następnego rozdziału](chapter09.md).)
 

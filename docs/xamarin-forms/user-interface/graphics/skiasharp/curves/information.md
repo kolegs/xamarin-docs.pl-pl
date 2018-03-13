@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>Informacje o ścieżce i wyliczenia
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length` Właściwość nowo utworzony `SKPathMeasure` obiektu uzyskuje długość ścieżki. To jest podzielona przez `baseTextWidth` wartość, (czyli szerokości tekstu, na podstawie rozmiaru tekstu, 10), a następnie pomnożona przez rozmiar tekst podstawowy 10. Wynik jest nowy rozmiar tekstu do wyświetlania tekstu w tej ścieżce:
 
-[![](information-images/pathlength-small.png "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")](information-images/pathlength-large.png "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")
+[![](information-images/pathlength-small.png "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")](information-images/pathlength-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")
 
 Zgodnie z krzywej Beziera pobiera dłuższy lub krótszy, widać Zmień rozmiar tekstu.
 
@@ -136,7 +136,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Potoku połowie motocyklem** rysunku USB na motocyklem, który wydaje się, które wywołują i z powrotem krzywej Beziera sześcienny animuje strony:
 
-[![](information-images/unicyclehalfpipe-small.png "Potrójna zrzut ekranu strony potoku połowie motocyklem")](information-images/unicyclehalfpipe-large.png "Potrójna zrzut ekranu strony motocyklem połowie potoku")
+[![](information-images/unicyclehalfpipe-small.png "Potrójna zrzut ekranu strony potoku połowie motocyklem")](information-images/unicyclehalfpipe-large.png#lightbox "Potrójna zrzut ekranu strony motocyklem połowie potoku")
 
 `SKPaint` Obiekt używany do używana do malowania zarówno połowa kreski pionowej, jak i motocyklem jest zdefiniowany jako pole w [ `UnicycleHalfPipePage` ]() klasy. Jest także zdefiniowana `SKPath` obiektu dla motocyklem:
 
@@ -425,7 +425,7 @@ Powiadomienie, że metoda zachowuje pierwszy punkt każdej rozkład w zmiennej o
 
 **GlobularText** w przykładzie użyto tę metodę rozszerzenie pozornie tekstem półkulę efektu 3D:
 
-[![](information-images/globulartext-small.png "Potrójna zrzut ekranu strony tekstu Globular")](information-images/globulartext-large.png "Potrójna zrzut ekranu przedstawiający stronę Globular tekstu")
+[![](information-images/globulartext-small.png "Potrójna zrzut ekranu strony tekstu Globular")](information-images/globulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Globular tekstu")
 
 [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktora klasy wykonuje tej transformacji. Tworzy `SKPaint` obiekt tekstu, a następnie uzyskuje `SKPath` obiekt z `GetTextPath` metody. Jest to ścieżka przekazany do `CloneWithTransform` — metoda rozszerzenia wraz z funkcji przekształcenia: 
 

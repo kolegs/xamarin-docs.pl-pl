@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>Praca z alertami
 
@@ -21,7 +21,7 @@ _Ten artykuł dotyczy pracy z UIAlertController, aby wyświetlić komunikat ostr
 
 Jeśli trzeba uzyskać uwagi użytkownika systemu tvOS lub poproś uprawnienia do wykonania destrukcyjnego akcji (np. usunięcie pliku), może ona za pomocą ostrzeżenie `UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "Przykład UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "Przykład UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 Jeśli oprócz wyświetlania komunikatu, możesz dodać przycisków i pola tekstowego do alertu, aby zezwolić użytkownikowi na odpowiadanie na akcje i wyrazić swoją opinię.
 
@@ -31,7 +31,7 @@ Jeśli oprócz wyświetlania komunikatu, możesz dodać przycisków i pola tekst
 
 Jak już wspomniano, alerty służą do pobrania uwagi użytkownika i poinformować o stanie aplikacji lub żądanie opinii użytkowników. Alerty musi przedstawić tytuł, można opcjonalnie stosować wiadomości i jeden lub więcej przycisków lub pól tekstowych.
 
-[ ![](alerts-images/alert04.png "Przykład alertu")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "Przykład alertu")](alerts-images/alert04.png#lightbox)
 
 Apple ma poniższe sugestie dotyczące pracy z alertami:
 
@@ -118,11 +118,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 Oprócz dodania akcje (przyciski) do alertu, można dodać pola tekstowe do alertu, aby zezwolić użytkownikowi na Wypełnij informacje, takie jak nazwy użytkowników i hasła:
 
-[ ![](alerts-images/alert02.png "Pole tekst w alercie")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "Pole tekst w alercie")](alerts-images/alert02.png#lightbox)
 
 Jeśli użytkownik wybierze pola tekstowego, zostanie wyświetlony klawiatury standardowa systemu tvOS, umożliwiając wprowadź wartość w polu:
 
-[ ![](alerts-images/alert03.png "Wprowadzanie tekstu")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "Wprowadzanie tekstu")](alerts-images/alert03.png#lightbox)
 
 Poniższy kod przedstawia alertu OK i Anuluj z jednym polem tekstowym wprowadzenie wartości:
 

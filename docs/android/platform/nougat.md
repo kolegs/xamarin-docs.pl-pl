@@ -3,16 +3,16 @@ title: Funkcje nugacie
 description: "Jak rozpocząć pracę, aby opracowywać aplikacje dla systemu Android nugacie przy użyciu platformy Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
+ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 60879273b5a736d4834bd6ba1685d5685fd05e67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="nougat-features"></a>Funkcje nugacie
 
@@ -20,13 +20,12 @@ _Jak rozpocząć pracę, aby opracowywać aplikacje dla systemu Android nugacie 
 
 Ten artykuł zawiera konspekt funkcje wprowadzone w Android nugacie omówiono sposoby przygotowania do tworzenia aplikacji systemu Android nugacie platformy Xamarin.Android i łącza do przykładowych aplikacji, które ilustrują sposób korzystania z funkcji systemu Android nugacie w Aplikacji platformy Xamarin.Android.
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
 [Android nugacie](https://developer.android.com/about/versions/nougat/android-7.0.html) jest monitowania firmy Google do systemu Android marshmallow w wersji 6.0. Xamarin.Android zapewnia obsługę **Android 7.x powiązania** w Xamarin Android 7.0 i nowszych. Android nugacie dodaje wiele nowych interfejsów API funkcji nugacie opisanych poniżej; te interfejsy API są dostępne dla aplikacji platformy Xamarin.Android, gdy używasz 7.0 platformy Xamarin.Android.
 
-[![Obrazy bohater tablety z systemem Android i telefony z systemem Android nugacie](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png)
+[![Obrazy bohater tablety z systemem Android i telefony z systemem Android nugacie](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
 Aby uzyskać więcej informacji na temat Android 7.x interfejsów API, zobacz [Android 7.1 dla deweloperów](http://developer.android.com/preview/api-overview.html).
 Aby uzyskać listę znanych problemów Xamarin.Android 7.0, zobacz [informacje o wersji](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/).
@@ -44,8 +43,6 @@ Ponadto Android nugacie oferuje inne rozszerzenia przydatne dla deweloperów apl
 W tym artykule wyjaśniono, jak rozpocząć tworzenie aplikacji za pomocą systemu Android nugacie wypróbowanie nowych funkcji i planowanie migracji lub funkcja pracy pod kątem nowych platformy systemu Android nugacie.
 
 
-<a name="requirements" />
-
 ## <a name="requirements"></a>Wymagania
 
 Poniżej jest wymagany do korzystania z nowych funkcji systemu Android nugacie w aplikacjach opartych na platformie Xamarin:
@@ -59,12 +56,11 @@ Poniżej jest wymagany do korzystania z nowych funkcji systemu Android nugacie w
 -   **Java Developer Kit** &ndash; tworzenie aplikacji platformy Xamarin Android 7.0 wymaga [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) lub nowszym, jeśli tworzysz poziom interfejsu API 24 lub większym (JDK 8 obsługuje również poziomy interfejsu API starszych niż 24). 64-bitowej wersji JDK 8 jest wymagany, jeśli używasz Kontrolki niestandardowe lub podglądzie formularzy.
 
 > [!IMPORTANT]
-> **Uwaga:** Xamarin.Android nie obsługuje JDK 9.
+> Xamarin.Android nie obsługuje JDK 9.
 
 Należy pamiętać, że aplikacje musi zostać również przebudowany z Xamarin C6SR4 lub nowszym niezawodny sposób pracy z nugacie systemu Android. Ponieważ nugacie Android można połączyć tylko z [dostarczane do zestawu NDK natywnych bibliotek](https://developer.android.com/about/versions/nougat/android-7.0-changes.html), istniejących aplikacji przy użyciu biblioteki, takich jak **Mono.Data.Sqlite.dll** może ulec awarii podczas uruchamiania na nugacie systemu Android, jeśli nie są poprawnie odbudowane.
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Wprowadzenie
 
@@ -80,14 +76,12 @@ Aby rozpocząć korzystanie z platformy Xamarin.Android nugacie systemu Android,
 
 Każdy z tych kroków znajduje się w następujących sekcjach:
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Zainstaluj aktualizacje Xamarin
 
 Aby dodać obsługę Xamarin Android nugacie, zmienić kanału aktualizacji w programie Visual Studio lub Visual Studio dla komputerów Mac do kanału stabilna i Zastosuj najnowsze aktualizacje. Należy również funkcje, które są obecnie dostępne tylko w kanału alfa lub Beta, możesz przełączyć kanału alfa lub Beta (kanałów alfa i Beta również zapewnić obsługę dla systemu Android 7.x). Aby uzyskać informacje o tym, jak zmienić kanału aktualizacji (wydań), zobacz [Zmiana kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>Zainstaluj zestaw SDK systemu Android
 
@@ -97,22 +91,21 @@ Aby utworzyć projekt z Xamarin Android 7.0, Android SDK Manager musi najpierw u
 
 2.  Zainstaluj **Android 7.0 (interfejs API 24)** lub nowszy:
 
-    [![Wybranie pakietów Android 7.0 w Menedżerze zestawu SDK systemu Android](nougat-images/preview-packages.png)](nougat-images/preview-packages.png)
+    [![Wybranie pakietów Android 7.0 w Menedżerze zestawu SDK systemu Android](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
 3.  Zainstaluj najnowsze narzędzia zestawu SDK systemu Android:
 
-    [![Wybieranie najnowsze narzędzia zestawu SDK systemu Android w programie Android SDK Manager](nougat-images/preview-tools.png)](nougat-images/preview-tools.png)
+    [![Wybieranie najnowsze narzędzia zestawu SDK systemu Android w programie Android SDK Manager](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Należy zainstalować poprawkę narzędzia zestawu SDK systemu Android 25.2.2 lub nowszym, systemem Android SDK platformy narzędzia 24.0.3 lub nowszy oraz Android kompilacji zestawu SDK 24.0.2 lub nowszym.
 
 4.  Sprawdź, czy **Java Development Kit lokalizacji** jest skonfigurowany dla JDK 1.8:
 
-    [![Konfigurowanie ścieżki JDK 8 w obszarze opcji narzędzi](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png)
+    [![Konfigurowanie ścieżki JDK 8 w obszarze opcji narzędzi](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
     Aby wyświetlić to ustawienie w programie Visual Studio, kliknij przycisk **Narzędzia > Opcje > Xamarin > Ustawienia systemu Android**. W programie Visual Studio for Mac, kliknij przycisk **Preferencje > Projekty > Lokalizacje SDK > Android**.
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Uruchom projekt platformy Xamarin.Android
 
@@ -122,10 +115,9 @@ Podczas tworzenia projektu systemu Android, należy skonfigurować ustawienia we
 
 
 > [!NOTE]
-> **Uwaga:** obecnie należy ustawić **wersji Minimum Android** do **Android 7.0 (interfejs API 24 - nugacie)** do wdrożenia aplikacji na urządzeniach z systemem Android nugacie lub emulatory.
+> Obecnie należy ustawić **wersji Minimum Android** do **Android 7.0 (interfejs API 24 - nugacie)** do wdrożenia aplikacji na urządzeniach z systemem Android nugacie lub emulatory.
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Skonfiguruj Emulator lub urządzenie
 
@@ -137,28 +129,26 @@ Jeśli używasz emulatora, uruchom Menedżera AVD Android i utworzyć nowe urzą
 
 Na przykład to urządzenie wirtualne jest skonfigurowany do emulowania 6 węzła:
 
-[![Konfigurowanie AVD przy użyciu urządzenia 6 węzła, docelowy z systemem Android 7.0 i Intel Atom x86 procesora CPU/ABI](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png)
+[![Konfigurowanie AVD przy użyciu urządzenia 6 węzła, docelowy z systemem Android 7.0 i Intel Atom x86 procesora CPU/ABI](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
 
 Jeśli używasz urządzenia fizycznego, takie jak węzła 5 X, 6 lub 9, można zaktualizować urządzenie do automatycznego za pośrednictwem aktualizacji lotniczego (Stachnio) lub pobranie obrazu systemu i flash urządzenia bezpośrednio. Aby uzyskać więcej informacji na temat ręcznie zaktualizować urządzenie do nugacie systemu Android, zobacz [Stachnio obrazów dla urządzeń z węzła](https://developers.google.com/android/nexus/ota).
 
 Uwaga 5 węzła urządzenia nie są obsługiwane przez nugacie systemu Android.
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Nowe funkcje
 
 Android nugacie wprowadzono wiele nowych funkcji i możliwości, takie jak obsługa wielu okna, rozszerzenia powiadomienia i wygaszacz danych. W poniższych sekcjach zaznacz te funkcje i znajdują się linki ułatwiające rozpoczęcie pracy z ich w aplikacji.
 
 
-<a name="multiwindow" />
 
 ### <a name="multi-window-mode"></a>Tryb wielu okna
 
 Tryb wielu okna sprawiają, że użytkownicy będą mogli otwierać dwie aplikacje jednocześnie z obsługą wielozadaniowości pełna. Te aplikacje można uruchomić side-by-side (pozioma) lub jeden powyżej inne (w pionie) w trybie pełnoekranowym podziału.
 Użytkownicy będą mogli przeciągać linię podziału między aplikacjami, aby zmienić ich rozmiar, a ich wycinanie i wklejanie zawartości między aplikacjami. Gdy dwie aplikacje są prezentowane w trybie wielu okna, wybrane działanie jest nadal uruchomiona podczas działania niezaznaczone jest wstrzymana, ale nadal widoczny. Tryb wielu okna nie modyfikuje cyklu życia działanie systemu Android.
 
-[![Przykład aplikacji działających w trybie wielu okna zarówno w orientacji pionowej, jak i w orientacji poziomej](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png)
+[![Przykład aplikacji działających w trybie wielu okna zarówno w orientacji pionowej, jak i w orientacji poziomej](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
 Można skonfigurować sposób działania aplikacji platformy Xamarin.Android obsługuje tryb wielu okna. Na przykład można skonfigurować atrybuty, które ustawić minimalny rozmiar i domyślna wysokość i szerokość aplikacji w trybie wielu okna. Można użyć nowej `Activity.IsInMultiWindowMode` właściwość, aby określić, czy działanie jest w trybie wielu okna. Na przykład:
 
@@ -175,20 +165,18 @@ if (!IsInMultiWindowMode) {
 Aby uzyskać więcej informacji o trybie okna usługi, zobacz [wielu okien obsługi](https://developer.android.com/guide/topics/ui/multi-window.html).
 
 
-<a name="enhanced_notifications" />
 
 ### <a name="enhanced-notifications"></a>Ulepszone powiadomienia
 
 Android nugacie wprowadza system zmienioną powiadomień. Zawiera funkcje nowa funkcja bezpośredniego odpowiedzi, która umożliwia użytkownikom szybkie odpowiedzi na powiadomienia przychodzących wiadomości tekstowych bezpośrednio w powiadomieniu interfejsu użytkownika. Począwszy od systemu Android 7.0, powiadomienie o wiadomości mogą stworzyć pakiet jako pojedynczej grupy po odebraniu więcej niż jeden komunikat. Ponadto deweloperzy można dostosować powiadomień widoków, korzystać z systemu dekoracje w powiadomieniach i korzystać z nowych szablonów powiadomień podczas generowania powiadomień.
 
-<a name="direct_reply" />
 
 #### <a name="direct-reply"></a>Bezpośrednie odpowiedzi
 
 Gdy użytkownik otrzyma powiadomienie o wiadomości przychodzących, Android nugacie umożliwia odpowiedzi na wiadomość w ramach powiadomienia (zamiast otwarcie aplikacji obsługi komunikatów do wysłania odpowiedzi).
 Ta funkcja odpowiedzi wbudowanego umożliwia użytkownikom szybkie odpowiadanie na wiadomość SMS lub tekst bezpośrednio z poziomu interfejsu powiadomień:
 
-[![Zrzut ekranu przedstawiający powiadomienie z polem bezpośrednie odpowiedzi wbudowany](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png)
+[![Zrzut ekranu przedstawiający powiadomienie z polem bezpośrednie odpowiedzi wbudowany](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
 
 Do obsługi tej funkcji w aplikacji, należy dodać *akcji odpowiedzi wbudowanego* do aplikacji za pośrednictwem [RemoteInput](https://developer.xamarin.com/api/type/Android.App.RemoteInput/) obiektów, dzięki czemu użytkownicy mogą wysyłać odpowiedzi przy użyciu tekstu bezpośrednio z powiadomień interfejsu użytkownika.
 Na przykład poniższy kod kompilacji `RemoteInput` do odbierania wprowadzania tekstu, tworzy oczekujące celem akcji odpowiedzi, a następnie tworzy akcję zdalną włączone wejściowych:
@@ -224,25 +212,22 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 
 [Usługa wiadomości](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/) Przykładowa aplikacja zawiera kod C#, który demonstruje sposób rozszerzyć powiadomienia z `RemoteInput` obiektu. Aby uzyskać więcej informacji o dodawaniu odpowiedzi wbudowanej akcji do aplikacji dla systemu Android 7.0 lub nowszej, zobacz Android [podczas odpowiadania na powiadomienia](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) tematu.
 
-<a name="bundled_notifications" />
 
 #### <a name="bundled-notifications"></a>Powiązane powiadomienia
 
 Android nugacie można zgrupować komunikatów powiadomień (na przykład w temacie wiadomości) i grupy, a nie oddzielnych wiadomości.
 To *powiązane powiadomienia* funkcja umożliwia użytkownikom odrzucić lub archiwum grupy powiadomień w jednej akcji. Użytkownika można Przesuń w dół, aby rozwinąć pakietu powiadomienia, aby wyświetlić szczegóły każdego powiadomienia:
 
-[![Zrzut ekranu przykład powiązane powiadomienia](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png)
+[![Zrzut ekranu przykład powiązane powiadomienia](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png#lightbox)
 
 Aby obsługiwać powiązane powiadomienia, może używać aplikacja [Builder.SetGroup](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetGroup/p/System.String/) metodę, aby powiązać podobne powiadomienia. Aby uzyskać więcej informacji o grupach powiązane powiadomienia w systemie Android N, zobacz Android [tworzenie pakietów powiadomienia](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle) tematu.
 
-<a name="custom_views" />
 
 #### <a name="custom-views"></a>Widoki niestandardowe
 
 Android nugacie pozwala tworzyć widoki niestandardowe powiadomienie z systemu powiadomień, akcje i rozwijania układów. Aby uzyskać więcej informacji na temat widoków niestandardowych powiadomień w systemie Android nugacie Zobacz Android [ulepszenia powiadomień](https://developer.android.com/about/versions/nougat/android-7.0.html#notification_enhancements) tematu.
 
 
-<a name="datasaver" />
 
 ### <a name="data-saver"></a>Oszczędzanie danych
 
@@ -251,7 +236,6 @@ Począwszy od systemu Android nugacie, użytkownicy mogą włączyć nowe *danyc
 Aby uzyskać więcej informacji o nowej funkcji wygaszacz danych w systemie Android nugacie, zobacz Android [optymalizacji użycia danych sieci](https://developer.android.com/training/basics/network-ops/data-saver.html) tematu.
 
 
-<a name="app_shortcuts" />
 
 ### <a name="app-shortcuts"></a>Skróty do aplikacji
 
@@ -259,12 +243,11 @@ Android 7.1 wprowadzone *skróty aplikacji* funkcja, która umożliwia użytkown
 Aby aktywować menu skrótów, long naciśnięcie przez użytkownika ikony aplikacji na kilka sekund &ndash; z szybkiego wibrację w wyświetlonym menu.
 Zwalnianie naciśnij powoduje, że menu będzie:
 
-[![Przykładowy ekran menu skrótów aplikacji dla aplikacji obsługi wiadomości](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png)
+[![Przykładowy ekran menu skrótów aplikacji dla aplikacji obsługi wiadomości](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
 
 Ta funkcja jest dostępna tylko poziom interfejsu API 25 lub większą.
 Aby uzyskać więcej informacji o nowej funkcji skróty do aplikacji w systemie Android 7.1, zobacz Android [skróty aplikacji](https://developer.android.com/guide/topics/ui/shortcuts.html) tematu.
 
-<a name="sample_code" />
 
 ### <a name="sample-code"></a>Przykładowy kod
 
@@ -280,7 +263,6 @@ Kilka przykładów Xamarin.Android są dostępne dla pokazano, jak korzystać z 
 
 -   [Bezpośrednie rozruchu](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/) przedstawiono sposób przechowywania danych w magazynie urządzenie zaszyfrowane, który zawsze jest dostępny, gdy urządzenie rozruchu zarówno przed i po wprowadzeniu credentials(PIN/Pattern/Password) dowolnego użytkownika.
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

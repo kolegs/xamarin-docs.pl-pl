@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c5deb294aac679d60535f3f3bd6c9745e8bff358
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-sizing-row-height"></a>Wysokość wiersza Auto-Sizing
 
@@ -23,25 +23,25 @@ iOS 11 został dodany przez wiersze rozwinąć automatycznie. Komórek nagłówk
 
 Otwórz scenorysu widoku tabeli mają w celu zapewnienia wiersza automatycznej zmiany rozmiaru dla systemu iOS Designer, zaznacz komórki *prototypu* i zaprojektować układ komórki. Na przykład:
 
-[ ![](autosizing-row-height-images/table01.png "Projekt prototypu komórki")](autosizing-row-height-images/table01.png)
+[![](autosizing-row-height-images/table01.png "Projekt prototypu komórki")](autosizing-row-height-images/table01.png#lightbox)
 
 Dla każdego elementu w prototyp dodać ograniczeń do zachowania elementów w poprawnej pozycji jako rozmiaru widoku tabeli obrotu lub różnych rozmiarów ekranu urządzenia z systemem iOS. Na przykład przypinanie `Title` u góry po lewej i prawej komórki *widok zawartości*:
 
-[ ![](autosizing-row-height-images/table02.png "Przypinanie tytuł do góry, lewy i prawy widoku zawartości komórek")](autosizing-row-height-images/table02.png)
+[![](autosizing-row-height-images/table02.png "Przypinanie tytuł do góry, lewy i prawy widoku zawartości komórek")](autosizing-row-height-images/table02.png#lightbox)
 
 W przypadku naszego Przykładowa tabela małą `Label` (w obszarze `Title`) to pole, można zmniejszyć rozmiar i powiększać, aby zwiększyć lub zmniejszyć wysokość wiersza. Aby uzyskać ten efekt, Dodaj następujące ograniczenia, aby przypiąć lewo, prawo, górny i dolny etykiety:
 
-[ ![](autosizing-row-height-images/table03.png "Te ograniczenia, aby przypiąć lewo, prawo, górny i dolny etykiety")](autosizing-row-height-images/table03.png)
+[![](autosizing-row-height-images/table03.png "Te ograniczenia, aby przypiąć lewo, prawo, górny i dolny etykiety")](autosizing-row-height-images/table03.png#lightbox)
 
 Teraz, gdy będziemy mieć pełni ograniczonego elementów w komórce, musimy wyjaśnienia, który element powinien zostać rozciągnięty. Aby to zrobić, ustaw **zawartości priorytet — potem** i **zawartości priorytet odporności kompresji** w miarę potrzeb **układu** sekcji konsoli do właściwości:
 
-[ ![](autosizing-row-height-images/table03a.png "Układ części konsoli do właściwości")](autosizing-row-height-images/table03a.png)
+[![](autosizing-row-height-images/table03a.png "Układ części konsoli do właściwości")](autosizing-row-height-images/table03a.png#lightbox)
 
 Ustaw element, który ma być rozszerzony, aby **niższe** wartość priorytetu — potem, a **niższe** wartość priorytetu odporności kompresji.
 
 Następnie należy zaznaczyć komórki prototypu i nadaj mu unikatowy **identyfikator**:
 
-[ ![](autosizing-row-height-images/table04.png "Nadanie prototypu komórki Unikatowy identyfikator")](autosizing-row-height-images/table04.png)
+[![](autosizing-row-height-images/table04.png "Nadanie prototypu komórki Unikatowy identyfikator")](autosizing-row-height-images/table04.png#lightbox)
 
 W przypadku naszym przykładzie `GrowCell`. Użyjemy tej wartości później podczas wypełnimy tabeli.
 
@@ -50,19 +50,19 @@ W przypadku naszym przykładzie `GrowCell`. Użyjemy tej wartości później pod
 
 Dla każdego elementu naszych prototypu komórki przypisać **nazwa** je ujawnić do kodu C#. Na przykład:
 
-[ ![](autosizing-row-height-images/table05.png "Przypisz nazwę do udostępnienia jej do kodu C#")](autosizing-row-height-images/table05.png)
+[![](autosizing-row-height-images/table05.png "Przypisz nazwę do udostępnienia jej do kodu C#")](autosizing-row-height-images/table05.png#lightbox)
 
 Następnie Dodaj klasę niestandardowych dla `UITableViewController`, `UITableView` i `UITableCell` (prototypu). Na przykład: 
 
-[ ![](autosizing-row-height-images/table06.png "Dodawanie niestandardowej klasy UITableViewController, UITableView i UITableCell")](autosizing-row-height-images/table06.png)
+[![](autosizing-row-height-images/table06.png "Dodawanie niestandardowej klasy UITableViewController, UITableView i UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
 Na koniec, aby wszystkie oczekiwane zawartość jest wyświetlana w naszym etykiety, ustaw **wierszy** właściwości `0`:
 
-[ ![](autosizing-row-height-images/table06.png "Właściwość linii ustawiony na 0")](autosizing-row-height-images/table06a.png)
+[![](autosizing-row-height-images/table06.png "Właściwość linii ustawiony na 0")](autosizing-row-height-images/table06a.png#lightbox)
 
 Przy użyciu interfejsu użytkownika zdefiniowane możemy dodać kod, aby umożliwić zmianę rozmiaru wysokość wiersza automatycznie.
 
-##<a name="enabling-auto-resizing-height"></a>Włączanie automatycznej zmiany rozmiaru wysokości
+## <a name="enabling-auto-resizing-height"></a>Włączanie automatycznej zmiany rozmiaru wysokości
 
 W jednym widoku naszych tabeli źródła danych (`UITableViewDatasource`) lub źródło (`UITableViewSource`), gdy firma Microsoft usuwania z kolejki w komórce, należy użyć `Identifier` zdefiniowanego w projektancie. Na przykład:
 
@@ -106,7 +106,7 @@ Ta Szacowana nie musi być dokładnie, wstępnie Oszacowana średnia wysokość 
 
 Ten kod w miejscu gdy aplikacja jest uruchamiana, każdego wiersza zostanie zmniejszyć i powiększania na podstawie wysokości ostatnia etykieta w prototypu komórki. Na przykład:
 
-[ ![](autosizing-row-height-images/table07.png "Uruchom przykładową tabelę")](autosizing-row-height-images/table07.png)
+[![](autosizing-row-height-images/table07.png "Uruchom przykładową tabelę")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>Linki pokrewne

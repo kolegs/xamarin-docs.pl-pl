@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>Powiązanie biblioteka języka Java
 
@@ -30,7 +30,7 @@ W tym przewodniku opisano pierwsza opcja: tworzenie *biblioteki powiązania* kt�
 
 Xamarin.Android implementuje powiązania za pomocą *zarządzane wywoływane otoki* (*MCW*). MCW jest mostek JNI, który jest używany, gdy kod zarządzany musi wywołać kodu języka Java. Wywoływane otoki zarządzanych również zapewniają obsługę dla tworzenie podklas typów języka Java i przesłanianie wirtualnej metody na typach Java. Podobnie gdy kod środowiska uruchomieniowego systemu Android (GRAFIKA) zamierza wywołanie kodu zarządzanego, kopiuje je za pomocą innego Mostek JNI znane jako Android można wywołać otoki (Aktywnej). To [architektura](~/android/internals/architecture.md) przedstawiono na poniższym diagramie:
 
-[ ![Android JNI Mostek architektury](images/architecture.png)](images/architecture.png)
+[![Android JNI Mostek architektury](images/architecture.png)](images/architecture.png#lightbox)
 
 Biblioteka powiązania jest zestawu zawierającego zarządzane wywoływane otoki dla typów języka Java. Na przykład, w tym miejscu jest typem Java `MyClass`, która ma być zawijany w bibliotece powiązania:
 
@@ -74,7 +74,6 @@ Powiązanie istniejącej biblioteki systemu Android, należy mieć na uwadze nas
 
 * **Jakiej wersji zestaw JDK, który został użyty do kompilowania biblioteki?** &ndash; Powiązanie błędy mogą wystąpić, jeśli biblioteka systemu Android został utworzony za pomocą innej wersji JDK niż używana przez platformy Xamarin.Android. Jeśli to możliwe Skompiluj ponownie biblioteki systemu Android przy użyciu tej samej wersji JDK, używanego przez instalację platformy Xamarin.Android.
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>Tworzenie działania
 
@@ -127,7 +126,6 @@ Generator powiązanie Xamarin.Android zmieni niektóre Java idioms i wzorce odpo
 -   _Klasy wewnętrzny_ w języku Java jest _zagnieżdżona klasa_ z konstruktorem wystąpień w języku C#.
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>Scenariusze wiązania
 

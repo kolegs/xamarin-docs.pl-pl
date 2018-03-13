@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: df1287d2389d7645ee3f17b166af790f79aa70e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Przekazywanie parametrów efekt jako dołączone właściwości
 
@@ -29,7 +29,7 @@ Proces tworzenia skutku parametrów, które odpowiadają na zmiany właściwośc
 Następnie parametry mogą być przekazywane w celu przez dodanie dołączone właściwości i wartości właściwości do właściwej opcji kontroli. Ponadto parametrów można zmienić w czasie wykonywania przez podanie nowej wartości właściwości dołączonych.
 
 > [!NOTE]
-> **Uwaga**: dołączona właściwość jest specjalnym rodzajem właściwości możliwej do wiązania, zdefiniowana w jedną klasę, ale dołączone do innych obiektów i rozpoznawalną w języku XAML jako atrybuty, które zawiera klasy i nazwę właściwości oddzielone kropką. Aby uzyskać więcej informacji, zobacz [dołączonych właściwości](~/xamarin-forms/xaml/attached-properties.md).
+> Dołączona właściwość jest specjalnym rodzajem właściwości możliwej do wiązania, zdefiniowana w jedną klasę, ale dołączone do innych obiektów i rozpoznawalną w języku XAML jako atrybuty, które zawiera klasy i nazwę właściwości oddzielone kropką. Aby uzyskać więcej informacji, zobacz [dołączonych właściwości](~/xamarin-forms/xaml/attached-properties.md).
 
 Aplikacja przykładowa prezentuje `ShadowEffect` dodaje cienia do tekstu wyświetlanego przez [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) formantu. Ponadto można zmienić kolor cienia w czasie wykonywania. Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
@@ -434,7 +434,7 @@ W tym artykule wykazała, za pomocą dołączonych właściwości do przekazania
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Effect](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
 - [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
 - [RoutingEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: d75c1393f2b5701226433235010a41da9c1aeb03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78528c750c6350d113b34a07d166a03773119a8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-changes"></a>Zmiany w sklepie z aplikacjami
 
@@ -87,6 +87,7 @@ Istnieje kilka sposobów pod uwagę przy odpowiadaniu na użytkowników:
 
 Aby uzyskać więcej informacji, zobacz firmy Apple [odpowiada na żądania przeglądami](https://developer.apple.com/app-store/responding-to-reviews/) strony.
 
+<a name="Phased_Release"/>
 
 ## <a name="phased-release"></a>Etapowe zlecenia
 

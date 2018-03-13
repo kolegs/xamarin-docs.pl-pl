@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dyspozytor zadania firebase
 
@@ -138,7 +138,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job`w _okres istnienia_ (jak długo go zostanie zaplanowane do uruchomienia) jest tylko do momentu ponownego uruchamiania urządzenia &ndash; po ponownym uruchomieniu urządzenia `Job` zostaną utracone.
 * A `Job` nie jest cykliczny &ndash; zostanie uruchomiony tylko raz.
 * A `Job` zostanie zaplanowane do uruchomienia tak szybko, jak to możliwe.
-* Strategia ponawiania domyślne `Job` jest użycie _wykładniczego wycofywania_ (w bardziej szczegółowo poniżej w sekcji [ustawienie RetryStrategy](#Setting_a_RestryStrategy))
+* Strategia ponawiania domyślne `Job` jest użycie _wykładniczego wycofywania_ (w bardziej szczegółowo poniżej w sekcji [ustawienie RetryStrategy](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>Planowanie `Job`
 
@@ -164,12 +164,14 @@ Wartość zwrócona przez `FirebaseJobDispatcher.Schedule` będzie jedną z nast
 
 Istnieje możliwość dostosowania zadania. Jak można dostosować zadania przykłady następujących czynności:
 
-* [Przekazywanie parametrów do zadania](#Passing_Parameters_to_a_Job) &ndash; A `Job` może wymagać dodatkowych wartości do wykonywania pracy, na przykład pobierania pliku.
+* [Przekazywanie parametrów z zadaniem](#Passing_Parameters_to_a_Job) &ndash; A `Job` może wymagać dodatkowych wartości do wykonywania pracy, na przykład pobierania pliku.
 * [Ustaw ograniczenia](#Setting_Constraints) &ndash; może być konieczne uruchomienie zadania tylko, gdy zostaną spełnione określone warunki. Na przykład uruchomić tylko `Job` gdy urządzenie jest ładowana. 
 * [Określ, kiedy `Job` powinno być ono uruchomione](#Setting_Job_Triggers) &ndash; dyspozytora zadania Firebase umożliwia aplikacjom określić czas uruchomienia zadania.  
 * [Deklarowanie strategię ponów próbę wykonania zadania zakończone niepowodzeniem](#Setting_a_RetryStrategy) &ndash; A _ponów strategii_ zawiera wskazówki dotyczące `FirebaseJobDispatcher` co zrobić z `Jobs` który nie powiedzie się. 
 
 Każdego z tych tematów zostanie omówiona bardziej w poniższych sekcjach.
+
+<a name="Passing_Parameters_to_a_Job" />
 
 #### <a name="passing-parameters-to-a-job"></a>Przekazywanie parametrów do zadania
 
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>Ustawienie ograniczenia
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>Wyzwala zadanie ustawienie
 
 `JobTrigger` Zawiera wskazówki dotyczące systemu operacyjnego dotyczące rozpoczęcia zadania. A `JobTrigger` ma _wykonywania okna_ definiuje zaplanowanym czasie program `Job` powinno być ono uruchomione. Okna wykonania ma _uruchomić okno_ wartość i _zakończenia okna_ wartość. Okno rozpoczęcia jest liczbę sekund, które urządzenia ma odczekać przed uruchomieniem zadania i wartość końcowa okna jest maksymalna liczba sekund oczekiwania przed uruchomieniem `Job`. 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 Wartość domyślna `JobTrigger` dla zadania jest reprezentowany przez wartość `Trigger.Now`, który określa, że zadanie można uruchomić jak najszybciej po planowany..
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>Ustawienie RetryStrategy
 

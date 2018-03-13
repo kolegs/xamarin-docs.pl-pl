@@ -3,16 +3,16 @@ title: "Część 1. Wprowadzenie do języka XAML"
 description: "W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartości strony. Plik XAML zawsze jest skojarzony z plikiem kodu C#, który obsługuje kod znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Część 1. Wprowadzenie do języka XAML
 
@@ -195,7 +195,7 @@ Mimo że zwykle nie trzeba poświęcić czas z plikami wygenerowanego kodu, czas
 
 Gdy skompilować i uruchomić ten program `Label` element będzie wyświetlany na środku strony zgodnie z sugestią, XAML. Trzy platform od lewej do prawej są z systemem iOS, Android i Windows 10 Mobile:
 
-[![](get-started-with-xaml-images/xamlsamples.png "Domyślnie wyświetlana platformy Xamarin.Forms")](get-started-with-xaml-images/xamlsamples-large.png "wyświetlana domyślna platformy Xamarin.Forms")
+[![](get-started-with-xaml-images/xamlsamples.png "Domyślnie wyświetlana platformy Xamarin.Forms")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "wyświetlana domyślna platformy Xamarin.Forms")
 
 Aby uzyskać bardziej interesujące elementy wizualne, wystarczy więcej interesujące XAML.
 
@@ -354,7 +354,7 @@ public MainPage()
 
 Ustawienie `Content` właściwości strony zastępuje ustawienie `Content` właściwość w pliku XAML. Podczas kompilacji i wdrażania nowej wersji tego programu, na ekranie pojawi się przycisk. Użycie jej przechodzi do `HelloXamlPage`. Oto wynikowe strony na telefonie iPhone, Android i Windows 10 Mobile urządzeń:
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "Tekst etykiety obrócony")](get-started-with-xaml-images/helloxaml1-large.png "obracany tekst etykiety")
+[![](get-started-with-xaml-images/helloxaml1.png "Tekst etykiety obrócony")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "obracany tekst etykiety")
 
 Można przejść do `MainPage` przy użyciu **< Wstecz** przycisk w systemach iOS, w górnej części strony lub w dolnej części telefonu w systemie Android, za pomocą strzałki w lewo lub strzałki w lewo w dolnej części strony w systemie Windows 10 Mobile.
 
@@ -364,7 +364,7 @@ Możesz eksperymentować XAML dla różnych sposobów renderowania `Label`. Jeś
 
 Oto wygląda następująco:
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "Obracany tekst etykiety ze znaków Unicode")](get-started-with-xaml-images/helloxaml2-large.png "obracany tekst etykiety ze znaków Unicode")
+[![](get-started-with-xaml-images/helloxaml2.png "Obracany tekst etykiety ze znaków Unicode")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "obracany tekst etykiety ze znaków Unicode")
 
 ## <a name="xaml-and-code-interactions"></a>XAML i kodem interakcji
 
@@ -392,7 +392,7 @@ Oto wygląda następująco:
 
 Ten plik XAML zakończeniu składnię, a Oto wygląda następująco:
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "Wiele formantów na stronie")](get-started-with-xaml-images/xamlpluscode1-large.png "wiele formantów na stronie")
+[![](get-started-with-xaml-images/xamlpluscode1.png "Wiele formantów na stronie")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "wiele formantów na stronie")
 
 Jednak użytkownik prawdopodobnie wziąć pod uwagę ten program jest funkcjonalnie niewystarczające. Być może `Slider` powinien spowodować `Label` Aby wyświetlić bieżącą wartość i `Button` prawdopodobnie jest przeznaczona do zrobienia czegoś w programie.
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 Przy pierwszym uruchomieniu programu, `Label` nie są wyświetlane `Slider` wartości, ponieważ `ValueChanged` zdarzenie jeszcze nie wyzwolone. Ale manipulowania `Slider` powoduje, że wartość do wyświetlenia:
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "Wartość suwaka wyświetlane")](get-started-with-xaml-images/xamlpluscode2-large.png "wyświetlana wartość suwaka")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Wartość suwaka wyświetlane")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "wyświetlana wartość suwaka")
 
 Teraz dla `Button`. Załóżmy symulować odpowiedzi na `Clicked` zdarzeń za pomocą wyświetlania alertu o `Text` przycisku. Program obsługi zdarzeń można bezpiecznie rzutowany `sender` argument `Button` i uzyskuje dostęp do jego właściwości:
 

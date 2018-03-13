@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 34063be728f8a13bbe5d68440d9aceba417c5627
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0717b8484c6094bb1d9589c44df37745d9e21900
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-user-interface"></a>watchOS interfejsu użytkownika
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) przykładzie pokazano różnych watchOS formantów. Scenorysu aplikacji w tym polu jest wyświetlana (kliknij, aby powiększyć):
 
-[ ![](images/storyboard-sml.png "Przykładowy układ watchOS")](images/storyboard.png)
+[![](images/storyboard-sml.png "Przykładowy układ watchOS")](images/storyboard.png#lightbox)
 
 Programowe nazwy wszystkich kontrolek jest prefiksem `WKInterface` (np.) `WKInterfaceLabel`, `WKInterfaceButton`).
 

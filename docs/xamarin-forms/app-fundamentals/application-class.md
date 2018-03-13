@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>Klasa aplikacji
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 Zawsze sprawdzaj obecności klucza przed uzyskaniem dostępu do go w celu uniemożliwienia nieoczekiwane błędy.
 
 > [!NOTE]
-> **Uwaga:** `Properties` słownika może serializować tylko typy pierwotne dla magazynu. Próba zapisu innych typów (takich jak `List<string>`) może nie w trybie dyskretnym.
+> `Properties` Słownika może serializować tylko typy pierwotne dla magazynu. Próba zapisu innych typów (takich jak `List<string>`) może nie w trybie dyskretnym.
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **Uwaga:** istnieje nowsza [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) podstawowa klasa, która może służyć do lepszej obsługi projektowania w systemie Android materiału.
+> Istnieje nowsza [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) podstawowa klasa, która może służyć do lepszej obsługi projektowania w systemie Android materiału.
 > Będzie to domyślny szablon dla systemu Android w przyszłości, ale można wykonać [tych instrukcji](~/xamarin-forms/platform/android/appcompat.md) do zaktualizowania istniejącej aplikacji systemu Android.
 
 

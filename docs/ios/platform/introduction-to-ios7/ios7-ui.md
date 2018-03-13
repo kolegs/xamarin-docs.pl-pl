@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>System iOS 7 omówienie interfejsu użytkownika
 
@@ -146,7 +146,7 @@ Podczas przygotowywania aplikacji dla systemu iOS 7 można wyrównać widoków p
 
  `TopLayoutGuide` i `BottomLayoutGuide` służyć jako odwołanie dla których widoków powinny rozpoczynać się ani kończyć, tak, aby zawartość nie nakłada się półprzezroczyste `UIKit` pasek, jak w poniższym przykładzie:
 
- [ ![](ios7-ui-images/clipped.png "Przykładowe zawartości nie nakłada się pasek UIKit półprzezroczyste")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Przykładowe zawartości nie nakłada się pasek UIKit półprzezroczyste")](ios7-ui-images/clipped.png#lightbox)
 
 Te interfejsy API mogą być używane do obliczania widoku przesunięcie od góry lub u dołu ekranu, a następnie odpowiednio umieszczania zawartości:
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 Możemy użyć obliczonego powyżej, aby ustawić wartość naszych `ImageView`przez przesunięcie od górnej krawędzi ekranu, tak aby widoczne całego obrazu:
 
- [ ![](ios7-ui-images/good2.png "Przykład ImageViews przesunięcie z góry ekranu")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "Przykład ImageViews przesunięcie z góry ekranu")](ios7-ui-images/good2.png#lightbox)
 
 Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) dla przykładu pracy.
 
@@ -179,15 +179,15 @@ Wartość przesunięcia jest generowany dynamicznie po widok został dodany do h
 
 Ten interfejs API Określa, które krawędzi widoku wydłużony do pełnego ekranu, niezależnie od tego paska przejrzystości. W systemie iOS 7 pasków nawigacji i paski narzędzi są wyświetlane warstwę ponad kontrolera widoku — w odróżnieniu od w systemie iOS poprzedniej wersji, której nie zajmują tą samą przestrzenią. Aplikacje systemu iOS 7 zdjęć przedstawiono domyślne `UIViewController.EdgesForExtendedLayout` wartość `UIRectEdge.All`. To ustawienie wypełnia wszystkich czterech krawędzi w widoku z zawartością, tworzenie efektu nakładających się i pełnego ekranu:
 
- [ ![](ios7-ui-images/photos.png "EdgesForExtendedLayout próbki")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "EdgesForExtendedLayout próbki")](ios7-ui-images/photos.png#lightbox)
 
 Naciskając obrazu usuwa pasków i przedstawia pełnoekranowym obrazu:
 
- [ ![](ios7-ui-images/photos2.png "EdgesForExtendedLayout z paskami usunięte")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout z paskami usunięte")](ios7-ui-images/photos2.png#lightbox)
 
 Ponieważ zawartość pełnego ekranu jest wartość domyślna, aplikacje skonfigurowane pod kątem iOS 6 mają część widoku przycinana, tak jak na poniższym zrzucie ekranu:
 
- [ ![](ios7-ui-images/clipped.png "Aplikacje skonfigurowane dla systemu iOS 6 będzie mieć część widoku przycinana, tak jak tego zrzutu ekranu")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Aplikacje skonfigurowane dla systemu iOS 6 będzie mieć część widoku przycinana, tak jak tego zrzutu ekranu")](ios7-ui-images/clipped.png#lightbox)
 
 Modyfikowanie `UIViewController.EdgesForExtendedLayout` ustawia właściwości tego zachowania. Firma Microsoft można określić, czy widok nie wypełnia żadnych krawędzi, więc naszych widoku pozwoli uniknąć wyświetlania zawartości w miejsce zajmowane przez nawigacji lub paski narzędzi (w każdym orientacja):
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 W naszej aplikacji możemy wyświetlony zostanie ponownie zmienić ich pozycji widok, aby cały obraz jest widoczne:
 
- [ ![](ios7-ui-images/good.png "Przykład: widoczne całego obrazu")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "Przykład: widoczne całego obrazu")](ios7-ui-images/good.png#lightbox)
 
 Należy pamiętać, że podczas skutków `TopLayoutGuide/BottomLayoutGuide` i `EdgesForExtendedLayout` interfejsy API są podobne, są przeznaczone do wypełniania różnych celów. Zmiana `EdgesForExtendedLayout` ustawienie domyślnego mogą ustalić przyciętą widoków w aplikacji dla systemu iOS 6, ale projektowanie dobrej systemów iOS 7 należy przestrzegać estetycznych pełnego ekranu i podaj pełnego ekranu przeglądania środowisko, zależne `TopLayoutGuide` i `BottomLayoutGuide`prawidłowo umieścić zawartość, która ma operować na wygodne miejsce dla użytkownika.
 

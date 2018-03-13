@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons-and-images"></a>Praca z obrazów i ikon
 
@@ -67,13 +67,13 @@ Aby ustawić uruchamianie obrazu dla projektu systemu tvOS, wykonaj następując
 
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Assets.xcassets` go otworzyć do edycji: 
 
-    [ ![](icons-images-images/asset01.png "Plik Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Plik Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. W **edytora zasobów**, kliknij `LaunchImages` zasobów: 
 
-    [ ![](icons-images-images/asset02.png "LaunchImages zasobów")](icons-images-images/asset02.png)
+    [![](icons-images-images/asset02.png "LaunchImages zasobów")](icons-images-images/asset02.png#lightbox)
 3. Polecenie **1 x Apple TV** wejścia i wybierz obraz Uruchom lub opcjonalnie przeciągnij nowy obraz z systemu plików: 
 
-    [ ![](icons-images-images/asset03.png "Wybierz obraz uruchamiania")](icons-images-images/asset03.png)
+    [![](icons-images-images/asset03.png "Wybierz obraz uruchamiania")](icons-images-images/asset03.png#lightbox)
 4. Zapisz zmiany.
 
 <a name="Layered-Images" />
@@ -84,7 +84,7 @@ Jesteś nowym użytkownikiem Apple TV, obrazy warstwie korzystają z efekt paral
 
 Obrazy z warstwami zawierają z dwóch (2) do pięciu (5) osobne warstwy, które są łączone na formularzu pełny obraz. Z wyjątkiem warstwę tła każdej warstwy używa jej porządek wraz z przezroczystość do utworzenia iluzji głębi. Gdy użytkownik wchodzi w interakcję z obrazem z warstwami, wyższych warstw uporządkowane Z są skalowane i nakładają się na ten efekt.
 
-[ ![](icons-images-images/layered01.png "Uporządkowane obrazów Z diagramu warstwowego")](icons-images-images/layered01.png)
+[![](icons-images-images/layered01.png "Uporządkowane obrazów Z diagramu warstwowego")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > **Uwaga:** Layered obrazy są wymagane dla ikony aplikacji i są opcjonalne dla innych [Focusable elementów](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (takich jak obraz górnej półki). Jednak Apple sugeruje, przy użyciu obrazów warstwie dla żadnego obrazu, który może uzyskać fokusu w aplikacji.
@@ -109,7 +109,7 @@ Jeśli to możliwe, należy zawsze używać wbudowanych `UIKit` formantów na wy
 
 Należy pamiętać o uwzględnieniu _strefy bezpieczeństwa_ obramowanie do każdej warstwy, która zostanie utworzenie obrazu warstwie. Ponieważ można skalować i przycięte podczas efekt paralaksy w poszczególnych warstwach, zawartość warstwy można przycięte poza, jeśli jest zbyt blisko krawędzi warstwy:
 
-[ ![](icons-images-images/layered02.png "Obramowanie 35 pikseli")](icons-images-images/layered02.png)
+[![](icons-images-images/layered02.png "Obramowanie 35 pikseli")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -128,7 +128,7 @@ systemu tvOS współpracuje z warstwami obrazów w następujących formatach:
 
 Apple utworzony [Podgląd paralaksy](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) utworzony warstwie obrazów, wymagane dla ikony aplikacji i elementów opcjonalnych Focusable i w wersji zapoznawczej. Podglądzie przedstawia każdej warstwie będącej ukończone warstwie obrazu:
 
-[ ![](icons-images-images/layered03.png "Podgląd paralaksy")](icons-images-images/layered03.png)
+[![](icons-images-images/layered03.png "Podgląd paralaksy")](icons-images-images/layered03.png#lightbox)
 
 Podczas wyświetlania podglądu obraz z warstwami, mysz służy do obracania obrazu i Podgląd efektu paralaksy. Użyj  **+**  (plus) i  **-**  (minus), aby dodawać i usuwać warstwy.
 
@@ -142,7 +142,7 @@ Aby uzyskać więcej informacji na temat tworzenia i Podgląd warstwie obrazów,
 
 Aplikacji Xamarin.tvOS wymaga nie tylko ikony aplikacji dla ekranu Apple TV Narzędzia główne, ale również ikony dla sklepu z aplikacjami. Ikona aplikacji jest pierwszego Zmień aby dużą wrażenie na potencjalne użytkownika i skontaktować się cel aplikacji w jednym rzutem oka.
 
-[ ![](icons-images-images/icon01.png "Ikona aplikacji")](icons-images-images/icon01.png)
+[![](icons-images-images/icon01.png "Ikona aplikacji")](icons-images-images/icon01.png#lightbox)
 
 Każda aplikacja podać zarówno małych i dużych wersji ikona aplikacji. Małych ikon będzie używany na ekranie Apple TV Narzędzia główne, gdy aplikacja jest zainstalowana. Duża wersja jest używana przez sklepu z aplikacjami. Dużych ikon aplikacji, powinien naśladować wygląd i działanie wersji małych ikon.
 
@@ -202,16 +202,16 @@ Aby ustawić ikony aplikacji wymagane dla projektu systemu tvOS, wykonaj następ
 
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Assets.xcassets` go otworzyć do edycji: 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
 2. W **edytora zasobów**, rozwiń węzeł `App Icon & Top Shelf Image` zasobów: 
 
-    [ ![](icons-images-images/asset04.png "Rozwiń węzeł zasobów górnej półki obrazu")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Rozwiń węzeł zasobów górnej półki obrazu")](icons-images-images/asset04.png#lightbox)
 3. Następnie rozwiń węzeł `App Icon - Small` zasobów: 
 
-    [ ![](icons-images-images/asset05.png "Rozwiń ikonę aplikacji - małe zasobów")](icons-images-images/asset05.png)
+    [![](icons-images-images/asset05.png "Rozwiń ikonę aplikacji - małe zasobów")](icons-images-images/asset05.png#lightbox)
 4. Następnie rozwiń węzeł `Back` zasobów i kliknięcie `Contents` wpis: 
 
-    [ ![](icons-images-images/asset06.png "Rozwiń węzeł zasobów Wstecz")](icons-images-images/asset06.png)
+    [![](icons-images-images/asset06.png "Rozwiń węzeł zasobów Wstecz")](icons-images-images/asset06.png#lightbox)
 5. Polecenie **1 x wpis Apple TV** i wybierz plik obrazu.
 6. Powtórz powyższe kroki dla `Front` i `Middle` zasoby.
 7. Następnie powtórz te same kroki, aby zdefiniować `App Icon - Large` zasobów.
@@ -223,7 +223,7 @@ Aby ustawić ikony aplikacji wymagane dla projektu systemu tvOS, wykonaj następ
 
 Jeśli użytkownik ma dotyczącymi aplikacji Xamarin.tvOS górny wiersz na ekranie Apple TV Narzędzia główne, duży obraz górnej półki będą wyświetlane po wybraniu aplikacji przez użytkownika. Ten obraz powinien przedstawiające funkcje aplikacji lub podaj linki bezpośrednie do jego zawartości.
 
-[ ![](icons-images-images/topshelf01.png "Górny przykład półki obrazu")](icons-images-images/topshelf01.png)
+[![](icons-images-images/topshelf01.png "Górny przykład półki obrazu")](icons-images-images/topshelf01.png#lightbox)
 
 Obraz górnej półki albo można podać jako pojedynczy statycznego `.png` lub `.lsr` pliku (zobacz [tworzenia obrazów warstwie](#Creating-Layered-Images)) lub go mogą być tworzone dynamicznie w czasie wykonywania jako pojedynczy wiersz Focusable elementów (zobacz [ Zawartość dynamiczna górnej półki](#Dynamic-Top-Shelf-Content) poniżej).
 
@@ -253,13 +253,13 @@ Aby ustawić obraz półki Top wymagane dla projektu systemu tvOS, wykonaj nast�
 
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Assets.xcassets` go otworzyć do edycji: 
 
-    [ ![](icons-images-images/asset01.png "Plik Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Plik Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. W **edytora zasobów**, rozwiń węzeł `App Icon & Top Shelf Image` zasobów: 
 
-    [ ![](icons-images-images/asset04.png "Rozwiń węzeł zasobów górnej półki obrazu")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Rozwiń węzeł zasobów górnej półki obrazu")](icons-images-images/asset04.png#lightbox)
 3. Polecenie `Top Shelf Image` zasobów: 
 
-    [ ![](icons-images-images/asset07.png "Zasób górnej półki obrazu")](icons-images-images/asset07.png)
+    [![](icons-images-images/asset07.png "Zasób górnej półki obrazu")](icons-images-images/asset07.png#lightbox)
 5. Polecenie **1 x wpis Apple TV** i wybierz plik obrazu.
 6. Zapisz zmiany.
 
@@ -423,10 +423,10 @@ Wykonaj następujące czynności:
 
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Info.plist` go otworzyć do edycji: 
 
-    [ ![](icons-images-images/info01.png "Plik Info.plist")](icons-images-images/info01.png)
+    [![](icons-images-images/info01.png "Plik Info.plist")](icons-images-images/info01.png#lightbox)
 2. W **Edytor Info.Plist**, wybierz opcję katalog zasobów (skonfigurowanych powyżej w [ustawienie ikon aplikacji](#Setting-the-App-Icons) sekcji) dla **ikony aplikacji**: 
 
-    [ ![](icons-images-images/info02.png "Edytor Info.Plist")](icons-images-images/info02.png)
+    [![](icons-images-images/info02.png "Edytor Info.Plist")](icons-images-images/info02.png#lightbox)
 3. Następnie wybierz opcję katalog zasobów (skonfigurowanych powyżej w [ustawienie uruchamiania obrazu](#Setting-the-Launch-Image) sekcji) dla **uruchomić obrazów**.
 4. Zapisz zmiany.
 

@@ -8,21 +8,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/03/2016
-ms.openlocfilehash: 29e9ad7aa2ca9553f488dfa697caf1fd71966eee
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83da1e44d7671d7ac5f6a493856331af9d0ba77a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-and-location"></a>Mapy i lokalizacja
 
-<a name="location" />
 
 ##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[Usługi lokalizacji](~/android/platform/maps-and-location/location.md)
 
 Ten przewodnik zawiera wprowadzenie Rozpoznawanie lokalizacji w aplikacjach systemu Android oraz pokazano, jak pobrać lokalizacji użytkownika przy użyciu interfejsu API systemu Android usługi lokalizacji, a także dostawcy lokalizacji zespolone dostępne przy użyciu interfejsu API Google lokalizacji usług.
 
- <a name="maps" />
 
 ##  <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[Mapy](~/android/platform/maps-and-location/maps/index.md)
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 8e36548e0d9926a28c133f8f1dc688fcbfa9f78e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Witaj, iOS Wieloekranowy nowości
 
@@ -27,7 +27,7 @@ Następnie możemy Poznaj kontrolera nawigacji i Dowiedz się użyć go do zapew
 
 W [Hello, iOS](~/ios/get-started/hello-ios/index.md) samouczka dowiedzieliśmy się, że aplikacje systemu iOS mają tylko jeden *okna* będące kontrolerów widoku odpowiedzialnym za ładowania ich *zawartości widoku hierarchie* do Okno. W drugim wskazówki Phoneword możemy dodać drugi ekranu do naszej aplikacji i przekazywane niektóre dane — Lista numerów telefonów — między obu ekranach, jak pokazano na poniższym diagramie:
 
- [ ![](hello-ios-multiscreen-deepdive-images/08.png "Ten diagram przedstawia przekazywanie danych pomiędzy dwoma ekranów")](hello-ios-multiscreen-deepdive-images/08.png)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "Ten diagram przedstawia przekazywanie danych pomiędzy dwoma ekranów")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 W naszym przykładzie dane zostały zebrane na pierwszym ekranie przekazane z pierwszego kontrolera widoku do drugiego i wyświetlane w drugiej ekranu. Rozdzielenie ekranów, kontrolerów widoku i danych następuje *modelu widoku, kontroler (MVC)* wzorca. W kolejnych sekcjach kilka omówimy korzyści wzorzec, jego składników i jak możemy używany w naszej aplikacji Phoneword.
 
@@ -35,7 +35,7 @@ W naszym przykładzie dane zostały zebrane na pierwszym ekranie przekazane z pi
 
 Model-View-Controller jest *wzorca projektowego* — wielokrotnego użytku architektury rozwiązania typowych przypadkach problem lub używania w kodzie. MVC to Architektura aplikacji za pomocą *graficznego interfejsu użytkownika (GUI)*. Przypisuje obiektów w aplikacji, z jedną z trzech ról - *modelu* (logika danych lub aplikacji), *widoku* (interfejsu użytkownika) i *kontrolera* (kod za). Na poniższym diagramie przedstawiono relacje między trzy wzorzec MVC i użytkownika:
 
- [ ![](hello-ios-multiscreen-deepdive-images/00.png "Ten diagram przedstawia relacje między trzy wzorzec MVC i użytkownika")](hello-ios-multiscreen-deepdive-images/00.png)
+ [![](hello-ios-multiscreen-deepdive-images/00.png "Ten diagram przedstawia relacje między trzy wzorzec MVC i użytkownika")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 Wzorzec MVC jest przydatne, ponieważ zawiera separacji logicznej między poszczególnymi częściami aplikacji graficznego interfejsu użytkownika i ułatwia nam do ponownego użycia w kodzie i widokach. Umożliwia przejście w i spójrz na każdej z trzech ról bardziej szczegółowo.
 
@@ -71,23 +71,23 @@ W aplikacji Phoneword użyliśmy *kontrolera nawigacji* pomagające w zarządzan
 
 Kontroler nawigacji jest typowe w przypadku aplikacji systemu iOS oraz udostępnia nawigowanie dla aplikacji systemu iOS zszywania, takich jak **ustawienia** aplikacji, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](hello-ios-multiscreen-deepdive-images/01.png "Kontroler nawigacji udostępnia nawigowanie w aplikacjach systemu iOS, takie jak aplikacja ustawienia pokazane")](hello-ios-multiscreen-deepdive-images/01.png)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Kontroler nawigacji udostępnia nawigowanie w aplikacjach systemu iOS, takie jak aplikacja ustawienia pokazane")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Nawigacji kontroler trzy podstawowe funkcje:
 
 -  **Udostępnia punkty zaczepienia dla nawigacji do przodu** — kontroler nawigacji używa metaphor hierarchiczna nawigacji, gdzie zawartości widoku hierarchie są *wypchniętych* na *stos nawigacji* . Stos nawigacji można traktować jako stos karty do gry, w których tylko górna karta większości jest widoczny, jak pokazano na poniższym diagramie:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/02.png "Ten diagram przedstawia nawigacji jako stos kart")](hello-ios-multiscreen-deepdive-images/02.png)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "Ten diagram przedstawia nawigacji jako stos kart")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
 -  **Opcjonalnie zawiera przycisk Wstecz** — gdy firma Microsoft push nowy element na stosie nawigacji na pasku tytułu może automatycznie wyświetlane *przycisku Wstecz* umożliwiająca użytkownikowi Przejdź wstecz. Naciśnięcie przycisku Wstecz *POP* bieżący kontroler widoku stos nawigacji i obciążeń poprzedniej hierarchii widok zawartości do okna:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/03.png "Ten diagram przedstawia wyświetlanie karty ze stosu")](hello-ios-multiscreen-deepdive-images/03.png)
+    [![](hello-ios-multiscreen-deepdive-images/03.png "Ten diagram przedstawia wyświetlanie karty ze stosu")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
 -  **Pasek tytułu zawiera** — górnej części **kontrolera nawigacji** jest nazywany *paska tytułu* . Odpowiada za wyświetlanie tytułu kontrolera widoku, jak pokazano na poniższym diagramie:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/04.png "Na pasku tytułu jest odpowiedzialny za wyświetlanie tytułu kontrolera widoku")](hello-ios-multiscreen-deepdive-images/04.png)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "Na pasku tytułu jest odpowiedzialny za wyświetlanie tytułu kontrolera widoku")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 
 
@@ -97,11 +97,11 @@ Nawigacji kontroler trzy podstawowe funkcje:
 A **kontrolera nawigacji** nie Zarządzanie hierarchii zawartości widoku, dzięki go nie ma nic do wyświetlenia samodzielnie.
 Zamiast tego **kontrolera nawigacji** wraz z *kontrolera widoku głównego*:
 
- [ ![](hello-ios-multiscreen-deepdive-images/05.png "Kontroler nawigacji łączyć się z kontrolerem widoku głównego")](hello-ios-multiscreen-deepdive-images/05.png)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "Kontroler nawigacji łączyć się z kontrolerem widoku głównego")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Kontroler widoku głównego reprezentuje pierwszy kontroler widoku **kontrolera nawigacji** stosu, a kontroler widoku głównego zawartości widoku hierarchii jest pierwszy hierarchii widok zawartości do załadowania do okna. Jeśli chcemy, aby umieścić naszych całej aplikacji na stosie kontrolera nawigacji, możesz teraz przystąpić Sourceless Segue do **kontrolera nawigacji** i ustaw kontroler widoku naszym pierwszym ekranie jako kontroler widoku głównego, jak robiliśmy Phoneword aplikacji:
 
- [ ![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless Segue ustawia ekrany pierwszy kontroler widoku jako kontroler widoku głównego")](hello-ios-multiscreen-deepdive-images/06.png)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless Segue ustawia ekrany pierwszy kontroler widoku jako kontroler widoku głównego")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Opcje dodatkowe nawigacji
 
@@ -115,7 +115,7 @@ W przewodniku Phoneword możemy obsługi przejścia między dwa kontrolery widok
 
 Gdy dodamy Segue z **Pokaż** akcji do scenorysu, możemy poinstruować iOS wypychanej drugiego kontrolera widoku na stosie kontrolera nawigacji:
 
- [ ![](hello-ios-multiscreen-deepdive-images/09.png "Ustawienie typu segue z listy rozwijanej")](hello-ios-multiscreen-deepdive-images/09.png)
+ [![](hello-ios-multiscreen-deepdive-images/09.png "Ustawienie typu segue z listy rozwijanej")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 Dodawanie Segue do scenorysu jest wystarczająca liczba na tworzenie prostych przejścia między ekranami. Jeśli chcemy przekazać dane między kontrolerami widoku, konieczne jest zastąpienie `PrepareForSegue` metody i obsługi danych, nad:
 

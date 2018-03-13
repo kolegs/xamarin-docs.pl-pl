@@ -8,17 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 044dc0f3c0b5a86944fc852cdd97f8affcb8e874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7289d92043bdbe9e4ec55776835530f8ccec526
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sharing-code-options"></a>Opcje udostępniania kodu
 
 _Ten dokument porównuje różne metody udostępniania kodu między projektami i platform: udostępnionych projektów, przenośnej biblioteki klas i .NET Standard, w tym zalety i wady każdego z nich._
-
-## <a name="overview"></a>Omówienie
 
 Istnieją trzy metody alternatywnej dla udostępniania kodu między aplikacjami i platform:
 
@@ -34,9 +32,9 @@ W tym artykule porównuje trzy metody pomaga wybrać typ projektu dla aplikacji.
 
 <a name="Shared_Projects" />
 
-# <a name="shared-projects"></a>Udostępnionych projektów
+## <a name="shared-projects"></a>Udostępnionych projektów
 
-Najprostszym sposobem udostępniania plików kodu jest używania projektu udostępnionego (wprowadzone w programie Xamarin Studio 5 i Visual Studio 2013 Update 2). Udostępnionych projektów są [szczegółowo opisana w tym miejscu](~/cross-platform/app-fundamentals/shared-projects.md).
+Najprostszym rozwiązaniem do udostępniania plików kodu jest użycie [projektu udostępnionego](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Ten zrzut ekranu przedstawia plik rozwiązania zawierający trzy projekty aplikacji (dla systemu Android, iOS i Windows Phone), z **Shared** projekt, który zawiera typowe C# — pliki kodu źródłowego:
 
@@ -47,7 +45,7 @@ Architektura koncepcyjna przedstawiono na poniższym diagramie, w którym każdy
  ![](code-sharing-images/sharedassetproject.png "Diagram projektu udostępnionego")
 
 
-## <a name="example"></a>Przykład
+### <a name="example"></a>Przykład
 
 Aplikacji międzyplatformowego, która obsługuje systemy iOS, Android i Windows Phone wymagają projekt aplikacji dla każdej platformy. Typowy kod znajduje się w projekcie udostępnionym.
 
@@ -62,7 +60,7 @@ Przykładowe rozwiązanie zawiera następujące foldery i projekty (nazwy projek
 W ten sposób projekty aplikacji trzy współużytkują tego samego kodu źródłowego (C# pliki w współużytkowane). Wszystkie edycje do udostępnionego kodu będzie ono współużytkowane przez wszystkie trzy projekty.
 
 
-## <a name="benefits"></a>Zalety
+### <a name="benefits"></a>Zalety
 
 -  Umożliwia udostępnianie kodu w wielu projektach.
 -  Udostępniony kod może rozgałęzionych oparte na platformie za pomocą dyrektywy kompilatora (np.) przy użyciu `#if __ANDROID__` , zgodnie z opisem w [tworzenie aplikacji dla wielu Platform](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu).
@@ -70,7 +68,7 @@ W ten sposób projekty aplikacji trzy współużytkują tego samego kodu źród�
 
 
 
-## <a name="disadvantages"></a>Wady
+### <a name="disadvantages"></a>Wady
 
 -  W przeciwieństwie do większości innych typów projektów projektu udostępnionego ma nie zestawu "output". Podczas kompilacji pliki są traktowane jako część odwołaniem do projektu i kompilowane do tego zestawu. Jeśli chcesz udostępniać kodu jako zestawu przenośnej biblioteki klas lub .NET Standard to lepszym rozwiązaniem.
 -  Refaktoryzacje, które mają wpływ na kod wewnątrz dyrektywy kompilatora "inactive" nie może zaktualizować kodu.
@@ -78,14 +76,14 @@ W ten sposób projekty aplikacji trzy współużytkują tego samego kodu źród�
 
  <a name="Shared_Remarks" />
 
-## <a name="remarks"></a>Uwagi
+### <a name="remarks"></a>Uwagi
 
 Dobre rozwiązanie dla deweloperów aplikacji pisania kodu, który jest przeznaczone tylko dla udostępniania w aplikacji (i nie dystrybucja inni deweloperzy).
 
  <a name="Portable_Class_Libraries" />
 
 
-# <a name="portable-class-libraries"></a>Biblioteki klas przenośnych
+## <a name="portable-class-libraries"></a>Biblioteki klas przenośnych
 
 
 Biblioteki klas przenośnych są [szczegółowo opisana w tym miejscu](~/cross-platform/app-fundamentals/pcl.md).
@@ -93,19 +91,19 @@ Biblioteki klas przenośnych są [szczegółowo opisana w tym miejscu](~/cross-p
  ![](code-sharing-images/portableclasslibrary.png "Diagram biblioteki klas przenośnych")
 
 
-## <a name="benefits"></a>Zalety
+### <a name="benefits"></a>Zalety
 
 -  Umożliwia udostępnianie kodu w wielu projektach.
 -  Operacje refaktoryzacji zawsze aktualizują wszystkie odwołania.
 
 
-## <a name="disadvantages"></a>Wady
+### <a name="disadvantages"></a>Wady
 
 -  Nie można użyć dyrektywy kompilatora.
 -  Tylko podzbiór programu .NET framework jest dostępna do użycia, określany przez wybrany profil (zobacz [wprowadzenie do PCL](~/cross-platform/app-fundamentals/pcl.md) Aby uzyskać więcej informacji).
 
 
-## <a name="remarks"></a>Uwagi
+### <a name="remarks"></a>Uwagi
 
 Dobrym rozwiązaniem, jeśli ma być używany wspólnie z innymi deweloperami wynikowego zestawu.
 
@@ -113,29 +111,29 @@ Dobrym rozwiązaniem, jeśli ma być używany wspólnie z innymi deweloperami wy
 
 <a name="Net_Standard" />
 
-# <a name="net-standard-libraries"></a>Standardowych bibliotek .NET
+## <a name="net-standard-libraries"></a>Standardowych bibliotek .NET
 
 .NET standard jest [szczegółowo opisana w tym miejscu](~/cross-platform/app-fundamentals/net-standard.md).
 
 ![](code-sharing-images/netstandard.png "Diagram .NET standard")
 
-## <a name="benefits"></a>Zalety
+### <a name="benefits"></a>Zalety
 
 -  Umożliwia udostępnianie kodu w wielu projektach.
 -  Operacje refaktoryzacji zawsze aktualizują wszystkie odwołania.
 -  Większe powierzchni biblioteki klasy podstawowej platformy .NET (BCL) jest dostępna niż PCL profile.
 
-## <a name="disadvantages"></a>Wady
+### <a name="disadvantages"></a>Wady
 
  -  Nie można użyć dyrektywy kompilatora.
 
-## <a name="remarks"></a>Uwagi
+### <a name="remarks"></a>Uwagi
 
 .NET standard jest podobny do PCL, ale z modelem łatwiejsze do obsługi platform i większej liczby klas z BCL.
 
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 Kod udostępnianie strategii wybrane będzie uzależniona platform docelowych. Wybierz metodę, która działa najlepiej w projekcie.
 
@@ -151,4 +149,3 @@ PCL lub .NET Standard powinno się do tworzenia biblioteki zabezpieczać kodu (s
 - [Analiza przypadku: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Przykładowe tasky (github)](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Przykładowe tasky przy użyciu PCL (github)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
-- [Udostępnione Menedżera odwołań projektu dla Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450)

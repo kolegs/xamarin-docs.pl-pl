@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>Tryb wiązania
 
@@ -45,7 +45,7 @@ Na początku, to rozwiązanie może wydawać się wstecz: teraz `Label` jest źr
 
 Zgodnie z oczekiwaniami może `Slider` jest ustawiana na wartość 1, z początkowej `Opacity` wartość `Label`. Jest to przedstawione na zrzucie ekranu z systemem iOS, po lewej stronie:
 
-[![Wstecznego powiązania](binding-mode-images/reversebinding-small.png "wstecznego powiązania")](binding-mode-images/reversebinding-large.png "wstecznego powiązania")
+[![Wstecznego powiązania](binding-mode-images/reversebinding-small.png "wstecznego powiązania")](binding-mode-images/reversebinding-large.png#lightbox "wstecznego powiązania")
 
 Ale może być oczekiwano, że `Slider` nadal działa, jak pokazują zrzuty ekranu Android i platformy uniwersalnej systemu Windows. Prawdopodobnie sugeruje, że powiązanie danych działa lepiej, gdy `Slider` jest cel wiązania zamiast `Label` ponieważ inicjowanie działa tak, jak firma Microsoft może spodziewać się.
 
@@ -250,7 +250,7 @@ Gdy ViewModel jest ustawiona jako źródło powiązania, infrastruktura powiąza
 
 Po pierwszym uruchomieniu programu `BoxView`, `Label`i trzy `Slider` elementy są wszystkie zestaw na podstawie ViewModel oparte na początkowej `Color` właściwość ViewModel zostało uruchomione. Przedstawiono to w zrzut ekranu dla systemu iOS po lewej stronie:
 
-[![Wybór koloru proste](binding-mode-images/simplecolorselector-small.png "selektor kolorów proste")](binding-mode-images/simplecolorselector-large.png "selektor kolorów proste")
+[![Wybór koloru proste](binding-mode-images/simplecolorselector-small.png "selektor kolorów proste")](binding-mode-images/simplecolorselector-large.png#lightbox "selektor kolorów proste")
 
 Jak manipulowania suwaki, `BoxView` i `Label` są aktualizowane w związku z tym, jak pokazano na zrzutach ekranu Android i platformy uniwersalnej systemu Windows.
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 Zrzut ekranu dla systemu iOS po lewej stronie zawiera program po pierwszym uruchomieniu. Konstruktor w `SampleSettingsViewModel` inicjuje kolor tła na kolor biały i jest wybranej `ListView`:
 
-[![Ustawienia przykładowe](binding-mode-images/samplesettings-small.png "ustawienia przykładowe")](binding-mode-images/samplesettings-large.png "ustawienia przykładowe")
+[![Ustawienia przykładowe](binding-mode-images/samplesettings-small.png "ustawienia przykładowe")](binding-mode-images/samplesettings-large.png#lightbox "ustawienia przykładowe")
 
 Inne dwa zrzuty ekranu pokazują zmienionych ustawień. Eksperymentując z tej strony, pamiętaj, aby umieścić w stan uśpienia lub zakończenia działania na urządzeniu lub emulatorze, który jest uruchomiony program. Nie spowoduje zakończenie programu Visual Studio debugger `OnSleep` zastąpienia w `App` klasy do wywołania.
 

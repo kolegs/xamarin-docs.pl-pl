@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0be4e7f1d8719fdd174d51399178eb1bc000c4b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding z zadaniami
 
@@ -114,11 +114,11 @@ Największych zmiany w systemie iOS 7 w odniesieniu do zadania w tle jest nie sp
 
 Odwołaj wstępnego systemu iOS 7, zadania uruchomione w tle ma 600 sekund do wykonania. Jedną z przyczyn ten limit jest, że zadania uruchomione w tle zachowa urządzenia wznowione na czas trwania zadania:
 
- [ ![](ios-backgrounding-with-tasks-images/ios6.png "Wykres zadań utrzymywanie aplikacji wznowione wstępnego systemu iOS 7")](ios-backgrounding-with-tasks-images/ios6.png)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "Wykres zadań utrzymywanie aplikacji wznowione wstępnego systemu iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 przetwarzanie w tle dla systemu iOS 7 jest zoptymalizowana pod kątem dłuższy czas pracy baterii. W systemie iOS 7, backgrounding staje się oportunistyczne: zamiast utrzymywanie urządzenia wznowione, zgodne urządzenie przejdzie do uśpienia, a zamiast tego wykonaj ich przetwarzania w fragmentów podczas działania urządzenia do obsługi połączeń telefonicznych, powiadomienia, przychodzących wiadomości e-mail i innych zadań Typowe przerw w działaniu. Na poniższym diagramie przedstawiono wgląd w sposób zadanie może być uszkodzona zapasową:
 
- [ ![](ios-backgrounding-with-tasks-images/ios7.png "Wykres zadania jest dzielony na fragmenty po systemów iOS 7")](ios-backgrounding-with-tasks-images/ios7.png)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "Wykres zadania jest dzielony na fragmenty po systemów iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 Czas wykonywania zadania nie jest już ciągłego, zadań, które wykonuje transferów sieci można obsłużyć inaczej w systemie iOS 7. Deweloperzy są zachęcani do użycia `NSURlSession` interfejsu API do obsługi transferów sieci. Następna sekcja zawiera omówienie transfery w tle.
 

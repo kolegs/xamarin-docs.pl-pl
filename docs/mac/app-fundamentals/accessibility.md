@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0117364f02302add1f8788de1a79e4c4210fd07b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4363258a9047ee4e2de4f53595a6eedc5dfe5861
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-macos"></a>Ułatwienia dostępu w macOS
 
@@ -30,7 +30,7 @@ Używa AppKit `NSAccessibility` protokołu uwidacznia interfejsów API udostępn
 Xamarin.Mac używa konstruktora interfejsu Xcode do edycji plików scenorysu.
 Informacje o ułatwieniach dostępu można edytowane w **inspektora tożsamości** po wybraniu formantu na powierzchni projektu (jak pokazano na poniższym zrzucie ekranu):
 
-[![Dodawanie ułatwień dostępu w programie Xcode interfejsu konstruktora](accessibility-images/xcode.png "Dodawanie ułatwień dostępu w programie Xcode konstruktora interfejsu")](accessibility-images/xcode-large.png)
+[![Dodawanie ułatwień dostępu w programie Xcode interfejsu konstruktora](accessibility-images/xcode.png "Dodawanie ułatwień dostępu w programie Xcode konstruktora interfejsu")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>Kod
 
@@ -80,7 +80,7 @@ Odblokowania ekranu ustawienia (Jeśli wymagane w lewym dolnym) i znaczników **
 
 Po włączeniu inspektor jest wyświetlany jako okno przestawne, które mogą być przenoszone między ekranu. Poniższy zrzut ekranu przedstawia inspektora systemem obok Mac przykładową aplikację. W miarę przenoszenia kursor nad okno, Inspektor wyświetla dostępne właściwości każdego formantu:
 
-[![Przykład inspektora ułatwień dostępu, uruchamiania](accessibility-images/accessibility-example.png "uruchomiona inspektora przykład ułatwień dostępu")](accessibility-images/accessibility-example-large.png)
+[![Przykład inspektora ułatwień dostępu, uruchamiania](accessibility-images/accessibility-example.png "uruchomiona inspektora przykład ułatwień dostępu")](accessibility-images/accessibility-example-large.png#lightbox)
 
 Aby uzyskać więcej informacji, przeczytaj [testowania dostępności przewodnika OS X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 

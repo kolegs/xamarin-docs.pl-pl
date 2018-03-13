@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ca3afa892176a11c4688b4f4d8d34e59d1758585
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging"></a>Debugowanie
 
@@ -34,11 +34,11 @@ Gdy wszystko będzie gotowe można rozpocząć debugowania aplikacji pierwszym k
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1.png "Ustawianie punktów przerwania")](debugging-in-xamarin-ios-images/debugging1.png)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Ustawianie punktów przerwania")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1a.png "Ustawianie punktów przerwania")](debugging-in-xamarin-ios-images/debugging1a.png)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Ustawianie punktów przerwania")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -46,13 +46,13 @@ Można wyświetlić wszystkie punkty przerwania, które zostały ustawione w kod
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/image0a.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image0a.png)
+[![](debugging-in-xamarin-ios-images/image0a.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Jeśli konsola punkty przerwania nie są automatycznie wyświetlane, można tworzyć i widoczne po wybraniu _Widok > debugowanie Windows > punkty przerwania_
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/image0.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image0.png)
+[![](debugging-in-xamarin-ios-images/image0.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Jeśli konsola punkty przerwania nie są automatycznie wyświetlane, można tworzyć i widoczne po wybraniu _Debuguj > Windows > punkty przerwania_
  
@@ -62,13 +62,13 @@ Przed rozpoczęciem debugowania dowolnej aplikacji, upewnij się, że konfigurac
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7.png "Debugowanie w symulatorze") ](debugging-in-xamarin-ios-images/debugging7.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7a.png "debugowania na urządzeniu fizycznym")](debugging-in-xamarin-ios-images/debugging7a.png)
+[![](debugging-in-xamarin-ios-images/debugging7.png "Debugowanie w symulatorze")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "debugowania na urządzeniu fizycznym")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7c.png "Debugowanie w symulatorze") ](debugging-in-xamarin-ios-images/debugging7c.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7d.png "debugowania na urządzeniu fizycznym")](debugging-in-xamarin-ios-images/debugging7d.png)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "Debugowanie w symulatorze")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "debugowania na urządzeniu fizycznym")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -77,11 +77,11 @@ Aby rozpocząć debugowanie, wybierz urządzenie docelowe lub podobne środowisk
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7b.png "Wybierz urządzenie docelowe")](debugging-in-xamarin-ios-images/debugging7b.png)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Wybierz urządzenie docelowe")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7e.png "Wybierz urządzenie docelowe")](debugging-in-xamarin-ios-images/debugging7e.png)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Wybierz urządzenie docelowe")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -91,11 +91,11 @@ Następnie Wdróż aplikację, naciskając klawisz **odtwarzanie** przycisku.
 
 Po trafieniu punktu przerwania kod będzie wyróżniony żółty:
 
-[ ![](debugging-in-xamarin-ios-images/image2.png "Kod będzie wyróżniony żółty")](debugging-in-xamarin-ios-images/image2.png)
+[![](debugging-in-xamarin-ios-images/image2.png "Kod będzie wyróżniony żółty")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 Debugowanie narzędzi, takich jak sprawdzanie wartości obiektów, można w tym momencie uzyskać więcej informacji o tym, co się dzieje w kodzie:
 
-[ ![](debugging-in-xamarin-ios-images/image3.png "Wyświetlanie wartości koloru")](debugging-in-xamarin-ios-images/image3.png)
+[![](debugging-in-xamarin-ios-images/image3.png "Wyświetlanie wartości koloru")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Warunkowe punkty przerwania
 
@@ -108,26 +108,26 @@ Aby ustawić warunkowe punktu przerwania, Uzyskaj dostęp do **okna Właściwoś
 
 - Aby dodać nowego punktu przerwania warunkowego, kliknij prawym przyciskiem myszy na marginesie edytor z lewej strony numer wiersza dla kodu, który chcesz ustawić punkt przerwania i wybierz nowego punktu przerwania:
 
-    [ ![](debugging-in-xamarin-ios-images/image4.png "Wybierz nowego punktu przerwania")](debugging-in-xamarin-ios-images/image4.png)
+    [![](debugging-in-xamarin-ios-images/image4.png "Wybierz nowego punktu przerwania")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Aby dodać warunek do istniejącego punktu przerwania, kliknij prawym przyciskiem myszy punkt przerwania i wybierz **właściwości punktu przerwania** lub **konsoli punktów przerwania** kliknij przycisk Właściwości zostały pokazane poniżej:
 
-    [ ![](debugging-in-xamarin-ios-images/image5.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image5.png)
+    [![](debugging-in-xamarin-ios-images/image5.png "Konsola punkty przerwania")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Warunek, pod którym można wprowadzić do punktu przerwania występuje:
 
-[ ![](debugging-in-xamarin-ios-images/image6.png "Wprowadź warunku punktu przerwania występuje")](debugging-in-xamarin-ios-images/image6.png)
+[![](debugging-in-xamarin-ios-images/image6.png "Wprowadź warunku punktu przerwania występuje")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Aby ustawić warunkowe punktu przerwania w programie Visual Studio 2015, najpierw [Ustaw punkt przerwania regularne](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Kliknij prawym przyciskiem myszy punkt przerwania, aby wyświetlić jego menu kontekstowe:
 
- [ ![](debugging-in-xamarin-ios-images/image4vs.png "Menu kontekstowe punktu przerwania")](debugging-in-xamarin-ios-images/image4vs.png)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "Menu kontekstowe punktu przerwania")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Wybierz **warunki...**  do wyświetlenia _ustawienia punktów przerwania_ menu:
 
- [ ![](debugging-in-xamarin-ios-images/image6vs.png "W menu ustawienia punktów przerwania")](debugging-in-xamarin-ios-images/image6vs.png)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "W menu ustawienia punktów przerwania")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 W tym miejscu można wprowadzić warunki, w których punkt przerwania występuje
 
@@ -143,7 +143,7 @@ Po osiągnięciu punktu przerwania, narzędzi debugowania umożliwiają uzyskani
 
 W programie Visual Studio for Mac będzie wyglądać następująco:
 
- [ ![](debugging-in-xamarin-ios-images/image7.png "Narzędzia debugowania umożliwić deweloperowi Pełna kontrola wykonywania programu")](debugging-in-xamarin-ios-images/image7.png)
+ [![](debugging-in-xamarin-ios-images/image7.png "Narzędzia debugowania umożliwić deweloperowi Pełna kontrola wykonywania programu")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 Są to:
 
@@ -156,7 +156,7 @@ Są to:
 
 W programie Visual Studio będzie wyglądać następująco:
 
-[ ![](debugging-in-xamarin-ios-images/image7vs.png "Narzędzia debugowania umożliwić deweloperowi Pełna kontrola wykonywania programu")](debugging-in-xamarin-ios-images/image7vs.png)
+[![](debugging-in-xamarin-ios-images/image7vs.png "Narzędzia debugowania umożliwić deweloperowi Pełna kontrola wykonywania programu")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 Są to:
 
@@ -224,13 +224,13 @@ Ponieważ ta funkcja wymaga większej ilości pamięci podczas debugowania, to j
 
 Aby włączyć tę funkcję, upewnij się, **debugowania tylko kodu projektu; nie wykonywanie kodu framework** opcja jest wyłączona w obszarze _programu Visual Studio for Mac > Preferencje > debugera_ menu zgodnie z opisami poniżej:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6.png "Debugowanie bibliotek klas w jedno")](debugging-in-xamarin-ios-images/debugging6.png)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Debugowanie bibliotek klas w jedno")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Aby debugować biblioteki klas w programie Visual Studio, należy wyłączyć **tylko mój kod** w obszarze _Debuguj > Opcje_ menu. W _debugowanie > Ogólne_ węzła, wyczyść **Włącz opcję tylko mój kod** wyboru:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugowanie bibliotek klas w jedno")](debugging-in-xamarin-ios-images/debugging6vs.png)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugowanie bibliotek klas w jedno")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

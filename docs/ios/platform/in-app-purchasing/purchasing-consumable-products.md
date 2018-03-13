@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7366a4ce5cbb6a3026a7445a03f03b45d89d9210
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-consumable-products"></a>Zakup eksploatacyjny produktów
 
@@ -21,7 +21,7 @@ Produkty eksploatacyjny są łatwo zaimplementować, ponieważ nie jest wymagane
 
 Przykładowy kod towarzyszące tym dokumencie przedstawiono wbudowane produktów — identyfikatory produktów są zapisane na stałe do aplikacji, ponieważ są bezpośrednio powiązane do kodu, który "odblokowuje" funkcję po płatności. Proces zakupu można wizualizowane następująco:   
    
-[ ![Wizualizacja procesu zakupu](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png)     
+[![Wizualizacja procesu zakupu](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Podstawowy przepływ pracy jest:   
    
@@ -49,7 +49,7 @@ Istnieje inny typ przepływu pracy — *produktów Server-Delivered* — to znac
    
    
    
- [ ![Każdy zakup dodaje więcej środków małp równowagi użytkowników](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png)   
+ [![Każdy zakup dodaje więcej środków małp równowagi użytkowników](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
@@ -57,7 +57,7 @@ Istnieje inny typ przepływu pracy — *produktów Server-Delivered* — to znac
    
    
    
- [ ![Interakcje między klas niestandardowych StoreKit i sklepu z aplikacjami](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png)
+ [![Interakcje między klas niestandardowych StoreKit i sklepu z aplikacjami](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
@@ -214,7 +214,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 Gdy użytkownik zakupi wielu ilości, alert potwierdzenia StoreKit będzie odzwierciedlać ilość i cenie jednostkowej całkowita cen, który one będą naliczane opłaty, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Potwierdzenie zamówienia zakupu](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png)
+[![Potwierdzenie zamówienia zakupu](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>Obsługa awarii sieci
 
@@ -328,7 +328,7 @@ Aby przetestować tę metodę, należy użyć **ograniczenia** funkcji systemu I
    
    
    
- [ ![Funkcja ograniczenia systemu IOS, aby wyłączyć zakupy w aplikacji](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png)   
+ [![Funkcja ograniczenia systemu IOS, aby wyłączyć zakupy w aplikacji](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
@@ -352,7 +352,7 @@ Aplikacja wygląda podczas **zakupy w aplikacji** funkcji jest ograniczony — p
    
    
    
- [ ![Aplikacja wygląda na to, gdy zakupy w aplikacji, funkcja jest ograniczone zakupu, które przyciski są wyłączone](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png)   
+ [![Aplikacja wygląda na to, gdy zakupy w aplikacji, funkcja jest ograniczone zakupu, które przyciski są wyłączone](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
@@ -361,7 +361,7 @@ Informacje o produkcie może nadal być żądane, gdy `CanMakePayments` jest fal
    
    
    
- [ ![Zakupy w aplikacji nie są dozwolone.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png)   
+ [![Zakupy w aplikacji nie są dozwolone.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    

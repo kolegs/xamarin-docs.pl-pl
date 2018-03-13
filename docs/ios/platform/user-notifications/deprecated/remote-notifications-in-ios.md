@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>Powiadomienia wypychane w systemie iOS
 
@@ -45,37 +45,37 @@ Każdy z tych środowisk wspomniano w poprzedniej sekcji wymagają własny certy
 
 1.  Aby utworzyć certyfikatów przejdź do systemu iOS portalu inicjowania obsługi w witrynie sieci Web firmy Apple, jak pokazano na poniższym zrzucie ekranu (Uwaga identyfikatorów aplikacji element menu po lewej stronie):
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "IOS portalu inicjowania obsługi w witrynie sieci Web jabłek")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "IOS portalu inicjowania obsługi w witrynie sieci Web jabłek")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  Następnie przejdź do sekcji identyfikatorów aplikacji i Utwórz nowy identyfikator aplikacji, jak pokazano na poniższym zrzucie ekranu:
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "Przejdź do sekcji identyfikatorów aplikacji i Utwórz nowy identyfikator aplikacji")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "Przejdź do sekcji identyfikatorów aplikacji i Utwórz nowy identyfikator aplikacji")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  Po kliknięciu  **+**  przycisku, będzie można wprowadzić opis i identyfikator pakietu dla identyfikator aplikacji, jak pokazano w następnym zrzut ekranu:
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "Wprowadź opis oraz identyfikator pakietu dla Identyfikatora aplikacji")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "Wprowadź opis oraz identyfikator pakietu dla Identyfikatora aplikacji")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. Upewnij się wybrać **jawny identyfikator aplikacji** i czy identyfikator pakietu nie kończą się `*` . Spowoduje to utworzenie identyfikatora, który jest dobra dla wielu aplikacji, a certyfikaty powiadomień wypychanych muszą mieć dla pojedynczej aplikacji.
 
 1. W obszarze usług aplikacji, wybierz **powiadomień wypychanych**:
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "Wybierz powiadomienia wypychane")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "Wybierz powiadomienia wypychane")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. I naciśnij klawisz **przesyłania** do Potwierdź rejestrację nowy identyfikator aplikacji:
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "Potwierdź rejestrację nowego Identyfikatora aplikacji")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "Potwierdź rejestrację nowego Identyfikatora aplikacji")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  Następnie należy utworzyć certyfikat dla identyfikatora aplikacji. W obszarze nawigacji po lewej stronie, przejdź do **certyfikaty > wszystkie** i wybierz `+` przycisku, jak pokazano na poniższym zrzucie ekranu:
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "Utwórz certyfikat dla Identyfikatora aplikacji")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "Utwórz certyfikat dla Identyfikatora aplikacji")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  Wybierz, czy chcesz użyć certyfikatu rozwoju lub produkcji:
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "Wybierz certyfikat rozwoju lub produkcji")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "Wybierz certyfikat rozwoju lub produkcji")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. A następnie wybierz nowy identyfikator aplikacji, które właśnie utworzyliśmy:
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "Wybierz właśnie utworzony nowy identyfikator aplikacji")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "Wybierz właśnie utworzony nowy identyfikator aplikacji")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  Spowoduje to wyświetlenie instrukcji, które przeprowadzi użytkownika przez proces tworzenia *żądania podpisania certyfikatu* przy użyciu **dostęp łańcucha kluczy** aplikacji opartym na systemie
 
@@ -85,11 +85,11 @@ Każdy z tych środowisk wspomniano w poprzedniej sekcji wymagają własny certy
 
 9.  Po utworzeniu profilu inicjowania obsługi administracyjnej otwarcie **organizatora Xcode** i go odświeżyć. Jeśli utworzony profil inicjowania obsługi administracyjnej nie jest widoczna, może być konieczne pobranie profilu z portalu inicjowania obsługi systemu iOS i zaimportować go ręcznie. Poniższy zrzut ekranu przedstawia przykład organizatora z profilem należy dodać:
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "Ten zrzut ekranu przedstawia przykład organizatora z profilem należy dodać")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "Ten zrzut ekranu przedstawia przykład organizatora z profilem należy dodać")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  Na tym etapie należy skonfigurować projektu platformy Xamarin.iOS do nowo utworzonej profilu inicjowania obsługi administracyjnej. Można to zrobić w **opcje projektu** okna dialogowego, w obszarze **iOS podpisywania pakietu** kartę jako przedstawiający na poniższym zrzucie ekranu:
 
-    [ ![](remote-notifications-in-ios-images/image11.png "Konfigurowanie projektu platformy Xamarin.iOS do nowo utworzonej profilu inicjowania obsługi administracyjnej")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "Konfigurowanie projektu platformy Xamarin.iOS do nowo utworzonej profilu inicjowania obsługi administracyjnej")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

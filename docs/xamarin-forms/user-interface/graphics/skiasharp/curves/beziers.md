@@ -4,14 +4,15 @@ description: "Eksploruj sposób użycia SkiaSharp do renderowania sześcienny kw
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Trzy typy krzywych Beziera
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym miejscu jest uruchomiona na wszystkich platformach trzy:
 
-[![](beziers-images/beziercurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")](beziers-images/beziercurve-large.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")
+[![](beziers-images/beziercurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")](beziers-images/beziercurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")
 
 Matematycznie krzywa jest wielomianu trzeciego stopnia. Krzywej co najwyżej przecina prostej na trzy punkty. W momencie rozpoczęcia krzywa jest zawsze stycznej, a w tym samym kierunku co prostej od początku wskaż pierwszy punkt kontrolny. W punkcie końcowym krzywa jest zawsze stycznej, a w tym samym kierunku co polecenie prostej z drugiego punktu końcowego.
 
@@ -206,7 +207,7 @@ Punkt początkowy i końcowy (`point0` i `point3`) są obliczane w zależności 
 
 Oto działająca na platformach trzy, z trzema różnymi kątami program:
 
-[![](beziers-images/beziercirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")](beziers-images/beziercirculararc-large.png "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")
+[![](beziers-images/beziercirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")](beziers-images/beziercirculararc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")
 
 Należy dokładnie przejrzeć ekranu Windows Mobile, i zobaczysz, że krzywej Beziera będzie szczególnie odbiega od Półkolista, gdy kąt jest 180 stopni, ale ekranu dla systemu iOS pokazuje, że prawdopodobnie dopasowania koło kwartału tylko drobne kąt wynosi 90 stopni.
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Punkty są interpolowane na podstawie wartości sinusoidally OSCYLUJĄCA `t`. Interpolowane punkty są następnie używane do utworzenia serii cztery połączonych krzywych Beziera. Oto animacji działająca na platformach trzy, wskaźnik postępu z okręgu do kwadratu:
 
-[![](beziers-images/squaringthecircle-small.png "Potrójna zrzut ekranu przedstawiający Squaring strony koło")](beziers-images/squaringthecircle-large.png "Potrójna zrzut ekranu przedstawiający Squaring strony okręgu")
+[![](beziers-images/squaringthecircle-small.png "Potrójna zrzut ekranu przedstawiający Squaring strony koło")](beziers-images/squaringthecircle-large.png#lightbox "Potrójna zrzut ekranu przedstawiający Squaring strony okręgu")
 
 Takie animacji byłoby możliwe bez krzywych algorithmically wystarczająco elastyczny, aby być renderowane jako zarówno proste, jak i łuki okręgu.
 
@@ -337,7 +338,7 @@ Może to być dobry wykonywania do wykreślenia tych współrzędnych na papier,
 
 W tym miejscu jest znak nieskończoności na wszystkich platformach trzy:
 
-[![](beziers-images/bezierinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")](beziers-images/bezierinfinity-large.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")
+[![](beziers-images/bezierinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")](beziers-images/bezierinfinity-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")
 
 Jest nieco łatwiejsze do Centrum niż znak nieskończoności renderowana przez **nieskończoności łuk** strony z [ **trzech sposobów, aby narysować łuk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) artykułu.
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 I w tym miejscu jest uruchomiona na wszystkich platformach trzy:
 
-[![](beziers-images/quadraticcurve-small.png "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")](beziers-images/quadraticcurve-large.png "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")
+[![](beziers-images/quadraticcurve-small.png "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")](beziers-images/quadraticcurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")
 
 Wiersze przerywana tangens na krzywą na punkt początkowy i punkt końcowy oraz że spełniają na punkt kontrolny.
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 W tym miejscu jest uruchomiona na wszystkich platformach trzy:
 
-[![](beziers-images/coniccurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Conic")](beziers-images/coniccurve-large.png "Potrójna zrzut ekranu przedstawiający stronę Conic krzywej")
+[![](beziers-images/coniccurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Conic")](beziers-images/coniccurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Conic krzywej")
 
 Jak widać, punkt kontrolny jest prawdopodobnie ściągnięcia krzywej kierunku więcej, kiedy waga jest wyższy. Waga wynosi zero, krzywej staje się linii prostej punkt początkowy do punktu końcowego.
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jak widać, nie ma żadnej visual różnicy między `ConicTo` ścieżka zaznaczone na czerwono i podstawowej okręgu wyświetlane dla odwołania:
 
-[![](beziers-images/coniccirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę Conic łuku okręgu")](beziers-images/coniccirculararc-large.png "Potrójna zrzut ekranu przedstawiający stronę Conic łuk okręgu")
+[![](beziers-images/coniccirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę Conic łuku okręgu")](beziers-images/coniccirculararc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Conic łuk okręgu")
 
 Ale kąt 180 stopni i matematyce kończyć się niepowodzeniem.
 

@@ -3,16 +3,16 @@ title: "Część 2. Składnia podstawowych języka XAML"
 description: "XAML przede wszystkim jest przeznaczony do tworzenia wystąpienia i Inicjowanie obiektów. Ale często złożonych obiektów, które łatwo nie może być reprezentowany jako ciągi XML musi mieć wartość właściwości, a czasami należy ustawić właściwości zdefiniowane przez klasę jednej klasy podrzędnej. Te dwie potrzeba podstawowych języka XAML składni właściwości elementów właściwości i dołączone właściwości."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Część 2. Składnia podstawowych języka XAML
 
@@ -253,7 +253,7 @@ W tym miejscu jest pełny plik GridDemoPage.xaml:
 
 Oto, co prawdopodobnie na wszystkich platformach trzy:
 
-[ ![](essential-xaml-syntax-images/griddemo.png "Układ siatki")](essential-xaml-syntax-images/griddemo-large.png "siatki układu")
+[![](essential-xaml-syntax-images/griddemo.png "Układ siatki")](essential-xaml-syntax-images/griddemo-large.png#lightbox "siatki układu")
 
 Oceny wyłącznie z składnię, te `Grid.Row`, `Grid.Column`, `Grid.RowSpan`, i `Grid.ColumnSpan` atrybuty wydają się być statycznego pola lub właściwości `Grid`, ale interesujące jest, że wystarczająco, `Grid` nie definiuje żadnych o nazwie `Row`, `Column`, `RowSpan`, lub `ColumnSpan`.
 
@@ -310,7 +310,7 @@ Dołączone właściwości są zawsze rozpoznawalną w plikach XAML jako atrybut
 
 A tutaj jest:
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "Układ bezwzględną")](essential-xaml-syntax-images/absolutedemo-large.png "układu bezwzględne")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "Układ bezwzględną")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "układu bezwzględne")
 
 Dla mniej więcej tak może pytanie mądry programu przy użyciu kodu XAML. Oczywiście powtarzania i prawidłowości `LayoutBounds` prostokąt sugeruje, że może go lepiej rozumieją w kodzie.
 

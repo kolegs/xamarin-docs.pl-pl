@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>Etykiety
 
-`UILabel` Formant jest używany do wyświetlania jednego oraz wiele wierszy, odczytać tylko tekst. W tym artykule omówiono następujące tematy:
-
-- [Implementowanie etykiety](#Implementing_a_Label)
-- [Obcinanie i zawijania](#Truncating_and_Wrapping)
-- [Formatowanie tekstu i etykiety](#Formatting_Text_and_Label)
+`UILabel` Formant jest używany do wyświetlania jednego oraz wiele wierszy, odczytać tylko tekst. 
 
 ## <a name="implementing-a-label"></a>Implementowanie etykiety
 
@@ -52,6 +48,8 @@ W konsoli właściwości można dostosować następujące właściwości:
 ## <a name="truncating-and-wrapping"></a>Obcinanie i zawijania
 
 Dla informacji o korzystaniu z wiersza dzieli w systemie iOS, zobacz [Truncate i Zawijaj tekst](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) przepisu.
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>Formatowanie tekstu i etykiety
 

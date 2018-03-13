@@ -2,16 +2,16 @@
 title: fastlane dla systemu iOS - zgodne
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 435ba4c3799288724625ca06016770b3ecad56a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d92f820e22277148b4de3ff87e3fdaca0f573f52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane dla systemu iOS - zgodne
 
@@ -56,15 +56,15 @@ Przy użyciu terminala, zmień katalog w katalogu projektu i uruchom:
 
 Po wyświetleniu monitu wprowadź adres URL repozytorium git:
 
- [ ![](match-images/fastlane-image7.png "Wprowadź adres URL repozytorium git")](match-images/fastlane-image7.png)
+ [![](match-images/fastlane-image7.png "Wprowadź adres URL repozytorium git")](match-images/fastlane-image7.png#lightbox)
 
 Adres URL można znaleźć i skopiować, klikając **klonowania lub pobrać** przycisk w witrynie github.com, jak przedstawiono poniżej:
 
-[ ![](match-images/fastlane-image6.png "Adres URL w klonowania lub pobierania przycisk w witrynie github.com")](match-images/fastlane-image6.png)
+[![](match-images/fastlane-image6.png "Adres URL w klonowania lub pobierania przycisk w witrynie github.com")](match-images/fastlane-image6.png#lightbox)
 
 Inicjowanie projektu tworzy matchfile — plik tekstowy, który może być edytowany do przekazania do narzędzia do dopasowania zmiennych środowiskowych. Poniżej przedstawiono przykład matchfile:
 
-[ ![](match-images/fastlane-image8.png "Przykład matchfile")](match-images/fastlane-image8.png)
+[![](match-images/fastlane-image8.png "Przykład matchfile")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -88,7 +88,7 @@ Oprócz tworzenia nowych certyfikatów i profile, przy użyciu dowolnego z tych 
 - Plik readme podstawowe instrukcje
 - Dopasowanie wersji
 
-[ ![](match-images/fastlane-image9.png "Struktury projektu w repozytorium git")](match-images/fastlane-image9.png)
+[![](match-images/fastlane-image9.png "Struktury projektu w repozytorium git")](match-images/fastlane-image9.png#lightbox)
 
 Profile inicjowania obsługi administracyjnej są zainstalowane w `~/Library/MobileDevice/Provisioning Profiles`. Certyfikaty i klucze prywatne są zainstalowane bezpośrednio w Twojej łańcucha kluczy.
 

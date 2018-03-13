@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: e19949c3a2efa4a5ddb17393d58c4430662254eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-distribution"></a>Dystrybucji sklepu z aplikacjami
 
@@ -48,13 +48,13 @@ Można wybrać takie same **identyfikator aplikacji** i **urządzeń** używana 
 3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **sklepu z aplikacjami i Ad Hoc**:
 
-    [ ![](images/createcertmanually01.png "Wybierz sklepu z aplikacjami i Ad Hoc")](images/createcertmanually01.png)
+    [![](images/createcertmanually01.png "Wybierz sklepu z aplikacjami i Ad Hoc")](images/createcertmanually01.png#lightbox)
 5. Kliknij przycisk **Kontynuuj**, a następnie postępuj zgodnie z instrukcjami, aby utworzyć żądanie podpisania certyfikatu za pośrednictwem dostępu łańcucha kluczy:
 
-    [ ![](images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](images/createcertmanually02.png)
+    [![](images/createcertmanually02.png "Utwórz certyfikat podpisywania żądania za pośrednictwem dostępu łańcucha kluczy")](images/createcertmanually02.png#lightbox)
 6. Po utworzeniu obsługi zgodnie z instrukcjami, kliknij przycisk **Kontynuuj**i przekazać do witryny Member Center obsługi:
 
-    [ ![](images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](images/createcertmanually03.png)
+    [![](images/createcertmanually03.png "Przekaż do witryny Member Center obsługi klienta")](images/createcertmanually03.png#lightbox)
 
 7. Kliknij przycisk **Generuj** można utworzyć certyfikatu.
 8. Na koniec **Pobierz** gotowy certyfikat i kliknij dwukrotnie plik go zainstalować.
@@ -62,11 +62,11 @@ Można wybrać takie same **identyfikator aplikacji** i **urządzeń** używana 
 
 Alternatywnie jest możliwość żądania certyfikatu za pomocą okna dialogowego preferencji w środowisku Xcode. Aby to zrobić, wykonaj następujące czynności:
 
-1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [ ![ ] (images/selectteam.png "Wybierz zespołu i Wyświetl szczegóły")](images/selectteam.png)
+1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [ ![ ] (images/selectteam.png "Wybierz zespołu i Wyświetl szczegóły")](images/selectteam.png#lightbox)
 
-2.   Następnie kliknij przycisk **Utwórz** znajdujący się obok **dystrybucji certyfikat iOS**: [ ![ ] (images/selectcert.png "Tworzenie dystrybucji certyfikatu systemu iOS")](images/selectcert.png)
+2.   Następnie kliknij przycisk **Utwórz** znajdujący się obok **dystrybucji certyfikat iOS**: [ ![ ] (images/selectcert.png "Tworzenie dystrybucji certyfikatu systemu iOS")](images/selectcert.png#lightbox)
 
-3.   W zależności od swoich uprawnień zespołu tożsamości podpisywania zostanie wygenerowany, jak pokazano poniżej, lub należy czekać do momentu agenta zespołu lub administratora zatwierdza ją: [ ![ ] (images/generated.png "tożsamości podpisywania zostanie wygenerowany i wyświetlane okno dialogowe")](images/generated.png)
+3.   W zależności od swoich uprawnień zespołu tożsamości podpisywania zostanie wygenerowany, jak pokazano poniżej, lub należy czekać do momentu agenta zespołu lub administratora zatwierdza ją: [ ![ ] (images/generated.png "tożsamości podpisywania zostanie wygenerowany i wyświetlane okno dialogowe")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
@@ -95,27 +95,27 @@ Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wy
 
 1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej** > **dystrybucji**:
 
-    [ ![](images/distribute01.png "Inicjowanie obsługi administracyjnej RSelect > dystrybucji")](images/distribute01.png)
+    [![](images/distribute01.png "Inicjowanie obsługi administracyjnej RSelect > dystrybucji")](images/distribute01.png#lightbox)
 
 2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**:
 
-    [ ![](images/distribute02.png "Utwórz profil dystrybucji sklepu z aplikacjami")](images/distribute02.png)
+    [![](images/distribute02.png "Utwórz profil dystrybucji sklepu z aplikacjami")](images/distribute02.png#lightbox)
 
 3. Kliknij przycisk **Kontynuuj** i wybrać z listy rozwijanej, która ma zostać utworzony profil dystrybucji dla Identyfikatora aplikacji:
 
-    [ ![](images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](images/distribute03.png)
+    [![](images/distribute03.png "Wybierz z listy rozwijanej identyfikator aplikacji")](images/distribute03.png#lightbox)
 
 4. Kliknij przycisk **Kontynuuj** i wybrać certyfikat wymagany do podpisywania aplikacji:
 
-    [ ![](images/distribute04.png "Wybierz certyfikat wymagany do podpisywania aplikacji")](images/distribute04.png)
+    [![](images/distribute04.png "Wybierz certyfikat wymagany do podpisywania aplikacji")](images/distribute04.png#lightbox)
 
 5. Kliknij przycisk **Kontynuuj** i wybrać urządzenia z systemem iOS, które aplikacji platformy Xamarin.iOS będzie mogła działać:
 
-    [ ![](images/distribute05.png "Wybierz iOS urządzenia, aplikacja będzie mogła działać")](images/distribute05.png)
+    [![](images/distribute05.png "Wybierz iOS urządzenia, aplikacja będzie mogła działać")](images/distribute05.png#lightbox)
 
 6. Kliknij przycisk **Kontynuuj** przycisk, a następnie wprowadź **nazwa** nowego profilu dystrybucji:
 
-    [ ![](images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](images/distribute06.png)
+    [![](images/distribute06.png "Wprowadź nazwę nowego profilu dystrybucji")](images/distribute06.png#lightbox)
 
 7. Kliknij przycisk **Generuj** przycisk, aby utworzyć nowy profil i zakończenia procesu.
 

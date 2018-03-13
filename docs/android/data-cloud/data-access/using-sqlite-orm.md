@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b1eb886685597e671dccf70063c34e102ce2cac9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-sqlitenet"></a>Using SQLite.NET
 
@@ -21,7 +21,7 @@ Biblioteka SQLite.NET Xamarin zalecane jest bardzo proste ORM, która pozwala w 
 
 Aby dołączyć biblioteki SQLite.NET w aplikacji platformy Xamarin, należy dodać [pakietu SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) do projektu przy użyciu **PCL SQLite net** pakietu NuGet:
 
-[ ![SQLite.NET NuGet package](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet package")](using-sqlite-orm-images/image1a.png)
+[![SQLite.NET NuGet package](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet package")](using-sqlite-orm-images/image1a.png#lightbox)
 
 Po utworzeniu biblioteki SQLite.NET dostępna, wykonaj następujące trzy kroki, aby umożliwia dostęp do bazy danych:
 
@@ -185,7 +185,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> **Uwaga:** podczas pisania instrukcji SQL bezpośrednio utworzyć zależność na nazwy tabel i kolumn w bazie danych, które zostały wygenerowane z klas i ich atrybutów. W przypadku zmiany nazwy w kodzie należy pamiętać, aby zaktualizować wszystkie ręcznie napisane instrukcji SQL.
+> Podczas pisania instrukcji SQL bezpośrednio tworzona zależności na nazwy tabel i kolumn w bazie danych, które zostały wygenerowane z klas i ich atrybutów. W przypadku zmiany nazwy w kodzie należy pamiętać, aby zaktualizować wszystkie ręcznie napisane instrukcji SQL.
 
 ### <a name="deleting-an-object"></a>Usunięcie obiektu
 

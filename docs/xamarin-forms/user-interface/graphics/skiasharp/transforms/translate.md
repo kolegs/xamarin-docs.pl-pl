@@ -4,14 +4,15 @@ description: "Używanie transformacji Przetłumacz przesunięcie SkiaSharp grafi
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 491c82406dafceb876ddbb4a0a7204447b95f57d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-translate-transform"></a>Przekształcanie Przetłumacz
 
@@ -68,7 +69,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kolejne prostokąty ścieknie w dół strony:
 
-[![](translate-images/accumulatedtranslate-small.png "Potrójna zrzut ekranu strony zgromadzonych tłumaczenie")](translate-images/accumulatedtranslate-large.png "Potrójna zrzut ekranu strony zgromadzonych tłumaczenia")
+[![](translate-images/accumulatedtranslate-small.png "Potrójna zrzut ekranu strony zgromadzonych tłumaczenie")](translate-images/accumulatedtranslate-large.png#lightbox "Potrójna zrzut ekranu strony zgromadzonych tłumaczenia")
 
 Jeśli czynniki skumulowany tłumaczenia `dx` i `dy`, i określić w funkcji rysowania punkt znajduje się (`x`, `y`), a następnie obiektu graficznego jest renderowany w punkcie (`x'`, `y'`), gdzie:
 
@@ -125,7 +126,7 @@ using (SKPaint textPaint = new SKPaint())
 
 W każdej z trzech przykładach `Translate` nosi nazwę do wyświetlania tekstu do przesunięcia ją z lokalizacji określonej przez `x` i `y` zmiennych. Następnie tekst jest wyświetlany ponownie w innym kolorze bez zmiany tłumaczenia:
 
-[![](translate-images/translatetexteffects-small.png "Potrójna zrzut ekranu przedstawiający stronę tłumaczenie efektów tekstowych")](translate-images/translatetexteffects-large.png "Potrójna zrzut ekranu przedstawiający stronę tłumaczenie efektów tekstowych")
+[![](translate-images/translatetexteffects-small.png "Potrójna zrzut ekranu przedstawiający stronę tłumaczenie efektów tekstowych")](translate-images/translatetexteffects-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę tłumaczenie efektów tekstowych")
 
 Każdego z trzech przykładach przedstawiono inną metodę Negacja `Translate` wywołania:
 
@@ -209,7 +210,7 @@ public class HendecagramArrayPage : ContentPage
 
 W tym miejscu jest wynikiem:
 
-[![](translate-images/hendecagramarray-small.png "Potrójna zrzut ekranu przedstawiający stronę tablicy Hendecagram")](translate-images/hendecagramarray-large.png "Potrójna zrzut ekranu przedstawiający stronę Hendecagram tablicy")
+[![](translate-images/hendecagramarray-small.png "Potrójna zrzut ekranu przedstawiający stronę tablicy Hendecagram")](translate-images/hendecagramarray-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Hendecagram tablicy")
 
 Animacje obejmują często transformacji. **Animacji Hendecagram** strony przenosi gwiazdy odnosi się do 11 okręgu. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Klasy rozpoczyna się od niektórych pól i zastąpień o `OnAppearing` i `OnDisappearing` metody, aby uruchomić i zatrzymać czasomierza platformy Xamarin.Forms:
 
@@ -294,7 +295,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface` Wywołań obsługi `Translate` metody dwa razy, aby najpierw przełożyć na środku kanwy, a następnie przełożyć na obwód koła skupia się wokół (0, 0). Promień okrągłego ustawiono być możliwie jak największy, jednocześnie zachowując gwiazdy w obrębie strony:
 
-[![](translate-images/hendecagramanimation-small.png "Potrójna zrzut ekranu przedstawiający stronę animacji Hendecagram")](translate-images/hendecagramanimation-large.png "Potrójna zrzut ekranu przedstawiający stronę Hendecagram animacji")
+[![](translate-images/hendecagramanimation-small.png "Potrójna zrzut ekranu przedstawiający stronę animacji Hendecagram")](translate-images/hendecagramanimation-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Hendecagram animacji")
 
 Zwróć uwagę, że problemem go na środku strony gwiazdy utrzymuje tę samą orientację. Nie Obróć wcale. To zadanie obracania transformacji.
 

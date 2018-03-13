@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>Handoff
 
@@ -19,7 +19,7 @@ _Ten artykuł obejmuje pracy z przekazaniem w aplikacji platformy Xamarin.iOS tr
 
 Firma Apple wprowadziła przekazaniem iOS 8 i OS X Yosemite (10.10) do typowych mechanizm umożliwiający użytkownikowi transfer działania uruchomione na jednym ze swoich urządzeń do innego urządzenia z tej samej aplikacji lub innej aplikacji obsługującej tego samego działania.
 
-[ ![](handoff-images/handoff02.png "Przykładem operacji przekazaniem")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Przykładem operacji przekazaniem")](handoff-images/handoff02.png#lightbox)
 
 W tym artykule otrzymuje krótki przegląd umożliwiające udostępnianie informacji w aplikacji platformy Xamarin.iOS działania i framework przekazaniem szczegółowo opisano:
 
@@ -45,7 +45,7 @@ Przekazaniem przekazuje bez systemu operacyjnego co najmniej informacje, aby zde
 
 Na urządzenie odbierające użytkownik otrzyma powiadomienie, że czynność jest gotowa do kontynuacji. Jeśli użytkownik zdecyduje się na kontynuowanie działania na nowe urządzenie, określonej aplikacji jest uruchamiane (jeśli jeszcze nie działa) i ładunku z `NSUserActivity` służy do ponownego uruchamiania działania.
 
-[ ![](handoff-images/handoffinteractions.png "Omówienie kontynuowanie działania użytkownika")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "Omówienie kontynuowanie działania użytkownika")](handoff-images/handoffinteractions.png#lightbox)
 
 Tylko te aplikacje, które współużytkują ten sam Deweloper identyfikator zespołu a odpowiadanie na danym _typ działania_ kwalifikują się do kontynuacji. Aplikacji Określa typy działań, obsługujący w obszarze `NSUserActivityTypes` klucza z jego **Info.plist** pliku. Biorąc pod uwagę to, kontynuowanie urządzenia wybiera aplikację, aby wykonać kontynuacji na podstawie Identyfikatora zespołu, typ działania i opcjonalnie _tytuł działania_.
 
@@ -114,21 +114,21 @@ Wykonaj następujące czynności:
 3. Jeśli jeszcze tego nie zrobiono, kliknij polecenie **identyfikatory** i Utwórz identyfikator aplikacji (np. `com.company.appname`), Edytuj else identyfikatora istniejącego
 4. Upewnij się, że **iCloud** usługi została sprawdzona dla podanego Identyfikatora: 
 
-    [ ![](handoff-images/provision01.png "Włączanie usługi iCloud dla podanego Identyfikatora")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "Włączanie usługi iCloud dla podanego Identyfikatora")](handoff-images/provision01.png#lightbox)
 5. Zapisz zmiany.
 4. Polecenie **profile inicjowania obsługi** > **programowanie** i tworzenie nowych aplikacji profilu inicjowania obsługi administracyjnej dla Ciebie aplikacji: 
 
-    [ ![](handoff-images/provision02.png "Tworzenie nowego profilu aplikacji inicjowania obsługi administracyjnej")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "Tworzenie nowego profilu aplikacji inicjowania obsługi administracyjnej")](handoff-images/provision02.png#lightbox)
 5. Pobierz i zainstaluj nowy profil inicjowania obsługi administracyjnej albo użyj Xcode, aby pobrać i zainstalować profil.
 6. Edytuj opcje projektu platformy Xamarin.iOS i upewnij się, że używasz profilu inicjowania obsługi administracyjnej, który został właśnie utworzony: 
 
-    [ ![](handoff-images/provision03.png "Wybierz utworzony właśnie profil inicjowania obsługi administracyjnej")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "Wybierz utworzony właśnie profil inicjowania obsługi administracyjnej")](handoff-images/provision03.png#lightbox)
 7. Następnie edytuj Twojej **Info.plist** i upewnij się, że używasz identyfikator aplikacji, który został użyty do utworzenia profilu inicjowania obsługi administracyjnej: 
 
-    [ ![](handoff-images/provision04.png "Ustaw identyfikator aplikacji")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "Ustaw identyfikator aplikacji")](handoff-images/provision04.png#lightbox)
 8. Przewiń do **tryby tła** sekcji i sprawdź następujące elementy: 
 
-    [ ![](handoff-images/provision05.png "Włącz tryby tła wymagane")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "Włącz tryby tła wymagane")](handoff-images/provision05.png#lightbox)
 9. Zapisz zmiany do wszystkich plików.
 
 Przy użyciu tych ustawień w miejscu aplikacja jest teraz gotowy dostępu do interfejsów API Framework przekazaniem. Aby uzyskać szczegółowe informacje o inicjowaniu obsługi, zobacz nasze [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md) i [Inicjowanie obsługi aplikacji](~/ios/get-started/installation/device-provisioning/index.md) przewodniki.
@@ -155,7 +155,7 @@ Na przykład zamierzamy utworzyć przykładową aplikację o nazwie **MonkeyBrow
 
 Aby utworzyć wymagane identyfikatory typu działań do obsługi tego zachowania, należy edytować **Info.plist** plików i przejdź do **źródła** widoku. Dodaj `NSUserActivityTypes` klucza i utworzyć następujące identyfikatory:
 
-[ ![](handoff-images/type01.png "Klucz NSUserActivityTypes i wymagane identyfikatory w edytorze plist")](handoff-images/type01.png)
+[![](handoff-images/type01.png "Klucz NSUserActivityTypes i wymagane identyfikatory w edytorze plist")](handoff-images/type01.png#lightbox)
 
 Utworzyliśmy cztery nowe działanie typu identyfikatory, po jednej dla każdej z kart w przykładzie **MonkeyBrowser** aplikacji. Podczas tworzenia własnych aplikacji, Zastąp zawartość `NSUserActivityTypes` tablicy o identyfikatorach typu działania specyficzne dla działania aplikacji obsługuje.
 
@@ -610,15 +610,15 @@ Jako przykład w aplikacji platformy Xamarin.iOS przy użyciu programowi Handoff
 
 Na każdej z kart, gdy użytkownik wprowadzi nowy adres URL i podsłuchu **Przejdź** przycisk Nowy `NSUserActivity` jest tworzony na tej karcie, który zawiera adres URL, który użytkownik jest obecnie przeglądania:
 
-[ ![](handoff-images/handoff01.png "Przykład programowi Handoff aplikacji")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "Przykład programowi Handoff aplikacji")](handoff-images/handoff01.png#lightbox)
 
 Jeśli inny urządzeń użytkownika zawiera **MonkeyBrowser** aplikacja jest zainstalowana, jest zalogowaniem się do usługi iCloud przy użyciu tego samego konta użytkownika, jest w tej samej sieci, a w pobliżu urządzenia powyżej, przekazaniem działania będzie wyświetlana na stronę główną ekran (w dolnym rogu po lewej stronie):
 
-[ ![](handoff-images/handoff02.png "Działanie przekazaniem wyświetlane na ekranie macierzystego w dolnym rogu po lewej stronie")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Działanie przekazaniem wyświetlane na ekranie macierzystego w dolnym rogu po lewej stronie")](handoff-images/handoff02.png#lightbox)
 
 Jeśli użytkownik przeciąga w górę na ikonie przekazaniem, aplikacja zostanie uruchomiona i aktywności użytkownika określonego w `NSUserActivity` będzie dalej na nowe urządzenie:
 
-[ ![](handoff-images/handoff03.png "Nadal aktywność użytkownika na nowe urządzenie")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "Nadal aktywność użytkownika na nowe urządzenie")](handoff-images/handoff03.png#lightbox)
 
 Jeśli aktywność użytkownika została pomyślnie wysłana do innej firmy Apple urządzenia, urządzenia wysyłającego `NSUserActivity` otrzymają wywołanie `UserActivityWasContinued` metody na jego `NSUserActivityDelegate` opcję wiedzieć, że działanie użytkownika została pomyślnie przeniesiona do innego urządzenie.
 

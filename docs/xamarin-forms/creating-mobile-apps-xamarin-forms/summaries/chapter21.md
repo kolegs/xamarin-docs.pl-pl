@@ -3,14 +3,15 @@ title: "Podsumowanie działu 21. Przekształcenia"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Podsumowanie działu 21. Przekształcenia
 
@@ -49,7 +50,7 @@ Podano niezerowe wartości [ `TranslationX` ](https://developer.xamarin.com/api/
 
 Jedno użycie wspólnej właściwości tłumaczenia jest nieco przesunięcie renderowanie tekstu. To jest przedstawiona w [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets) próbki:
 
-[![Potrójna zrzut ekranu przedstawiający powoduje przesunięcie tekstu](images/ch21fg03-small.png "przesunięcia tekst")](images/ch21fg03-large.png "przesunięcia tekstu")
+[![Potrójna zrzut ekranu przedstawiający powoduje przesunięcie tekstu](images/ch21fg03-small.png "przesunięcia tekst")](images/ch21fg03-large.png#lightbox "przesunięcia tekstu")
 
 Inny powoduje renderowanie wiele kopii `Label` tak, aby przypominały 3D bloku, takich jak zostało to pokazane w [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText) próbki.
 
@@ -101,7 +102,7 @@ Zawarte w **Xamarin.FormsBook.Toolkit** jest [ `SecondTickConverter` ](https://g
 
 [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock) używa `BoxView` dla bardziej dużą ilością grafiki, w tym znaczników oznacza wokół tarczy zegara i przekazuje to obracania małego odległości od ich końce:
 
-[![Potrójna zrzut ekranu przedstawiający zegara BoxView](images/ch21fg17-small.png "tarczy zegara analogowy")](images/ch21fg17-large.png "analogowy tarczy zegara")
+[![Potrójna zrzut ekranu przedstawiający zegara BoxView](images/ch21fg17-small.png "tarczy zegara analogowy")](images/ch21fg17-large.png#lightbox "analogowy tarczy zegara")
 
 Ponadto [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) klasy w **Xamarin.FormsBook.Toolkit** powoduje, że używane wydaje się wycofać nieco przed przeskok w przód, a następnie przenieść z powrotem do odpowiedniej pozycji.
 

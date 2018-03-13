@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 14. Układ bezwzględne"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ac4c41ebd70b58e95a3fa4fa7a391a473361b1db
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Podsumowanie rozdział 14. Układ bezwzględne
 
@@ -91,7 +92,7 @@ Można użyć `AbsoluteLayout` do skonstruowania *nakładki*, strony z innych ko
 
 [ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) próbki wyświetla bieżący czas wyświetlania symulowane Mozaika 5 x 7. Każdy okrąg `BoxView` (istnieją 228 z nich) o rozmiarze i umieszczony w `AbsoluteLayout`.
 
-[![Potrójna zrzut ekranu przedstawiający zegara Mozaika](images/ch14fg08-small.png "zegara Mozaika")](images/ch14fg08-large.png "Mozaika zegara")
+[![Potrójna zrzut ekranu przedstawiający zegara Mozaika](images/ch14fg08-small.png "zegara Mozaika")](images/ch14fg08-large.png#lightbox "Mozaika zegara")
 
 [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) program animuje dwa `Label` obiektów Odbijanie poziomie i w pionie na ekranie.
 

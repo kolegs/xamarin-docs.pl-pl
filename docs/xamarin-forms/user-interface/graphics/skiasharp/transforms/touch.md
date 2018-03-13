@@ -4,14 +4,15 @@ description: "Użyj macierzy przekształca do zaimplementowania przeciąganie to
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: b418e0179c95a424c88d5f5063a09f984bb13ec0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch-manipulations"></a>Manipulacje Touch
 
@@ -545,7 +546,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface` Obsługi stwierdza, wyświetlając `MatrixDisplay` przedstawiający macierzy skumulowany touch obiektu:
 
-[![](touch-images/touchmanipulation-small.png "Potrójna zrzut ekranu przedstawiający stronę Touch manipulowania")](touch-images/touchmanipulation-large.png "Potrójna zrzut ekranu przedstawiający stronę manipulowania Touch")
+[![](touch-images/touchmanipulation-small.png "Potrójna zrzut ekranu przedstawiający stronę Touch manipulowania")](touch-images/touchmanipulation-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę manipulowania Touch")
 
 ## <a name="manipulating-multiple-bitmaps"></a>Manipulowanie wiele map bitowych
 
@@ -684,7 +685,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 Kod w pętli kolekcji i wyświetla map bitowych od początku kolekcji na końcu stosu:
 
-[![](touch-images/bitmapscatterview-small.png "Potrójna zrzut ekranu strony mapy bitowej punktowy widoku")](touch-images/bitmapscatterview-large.png "Potrójna zrzut ekranu strony widoku punktowy mapy bitowej")
+[![](touch-images/bitmapscatterview-small.png "Potrójna zrzut ekranu strony mapy bitowej punktowy widoku")](touch-images/bitmapscatterview-large.png#lightbox "Potrójna zrzut ekranu strony widoku punktowy mapy bitowej")
 
 
 ## <a name="related-links"></a>Linki pokrewne

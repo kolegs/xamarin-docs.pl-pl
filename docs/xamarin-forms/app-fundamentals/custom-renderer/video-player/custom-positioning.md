@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>Niestandardowe pozycjonowanie wideo
 
@@ -472,7 +472,7 @@ W związku z tym `Position` właściwość `VideoPlayer` może być powiązana z
 
 Ukrywa pierwszy wielokropka (···) `ActivityIndicator`; jest taka sama jak w poprzedniej **transportu niestandardowe** strony. Zwróć uwagę, dwa `Label` wyświetlanie elementów `Position` i `TimeToEnd` właściwości. Wielokropek między tymi dwoma `Label` elementy ukrywa dwa `Button` elementy wyświetlane w **transportu niestandardowe** dla odtwarzania, Wstrzymaj, strony i zatrzymać. Logika CodeBehind również jest taka sama jak **transportu niestandardowe** strony.
 
-[![Niestandardowe pozycjonowanie](custom-positioning-images/custompositioning-small.png "Niestandardowe pozycjonowanie")](custom-positioning-images/custompositioning-large.png "Niestandardowe pozycjonowanie")
+[![Niestandardowe pozycjonowanie](custom-positioning-images/custompositioning-small.png "Niestandardowe pozycjonowanie")](custom-positioning-images/custompositioning-large.png#lightbox "Niestandardowe pozycjonowanie")
 
 Zakończenie z omówieniem `VideoPlayer`.
 

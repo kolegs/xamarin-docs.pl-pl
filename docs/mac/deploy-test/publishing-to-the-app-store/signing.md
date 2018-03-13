@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d9e0bb41360185ffbe476ec5eed3a5c8c2ebf8f9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 46d5527a33b82a795029f62900e782d644671f0d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sign-with-developer-id"></a>Znak o identyfikatorze Developer
 
@@ -24,24 +24,24 @@ Przeczytaj więcej na temat [identyfikator deweloperów i strażnika](https://de
 
 Do tworzenia aplikacji na potrzeby wdrożenia bezpośrednio do zbioru użytkowników (nie za pośrednictwem sklepu Mac App Store) **ustawień podpisywania** do używania **Identyfikator dewelopera**. Upewnij się, aby edytować **wersji** konfiguracji.
 
- [ ![](signing-images/config02.png "Opcje podpisywania Mac")](signing-images/config02.png)
+ [![](signing-images/config02.png "Opcje podpisywania Mac")](signing-images/config02.png#lightbox)
 
 
 ## <a name="build"></a>Kompilacja
 
 Przed rozpoczęciem budowania, upewnij się aby wybrane prawidłowej konfiguracji i wybierz, aby utworzyć pakiet instalacji w **kompilacji Mac** ustawienia:
 
-[ ![](signing-images/config03.png "Opcje kompilacji")](signing-images/config03.png)
+[![](signing-images/config03.png "Opcje kompilacji")](signing-images/config03.png#lightbox)
 
 Podczas tworzenia aplikacji, deweloper pojawi się monit korzystanie z obu certyfikatów:
 
- [ ![](signing-images/image57.png "Zezwalanie na dostęp łańcucha kluczy")](signing-images/image57.png)
+ [![](signing-images/image57.png "Zezwalanie na dostęp łańcucha kluczy")](signing-images/image57.png#lightbox)
 
- [ ![](signing-images/image58.png "Zezwalanie na dostęp łańcucha kluczy")](signing-images/image58.png)
+ [![](signing-images/image58.png "Zezwalanie na dostęp łańcucha kluczy")](signing-images/image58.png#lightbox)
 
 Po Po skompilowaniu aplikacji deweloper może kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Otwórz Folder zawierający** można znaleźć pliku pakietu (w `bin/Release` katalogu). Ten plik zawiera Instalator dla aplikacji, mogą zostać przekazane z żadnym użytkownikiem macOS dla instalacji.
 
- [ ![](signing-images/image59.png "Wybieranie pakietu aplikacji w wyszukiwanie")](signing-images/image59.png)
+ [![](signing-images/image59.png "Wybieranie pakietu aplikacji w wyszukiwanie")](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>Linki pokrewne
 

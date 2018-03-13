@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 89636b874f8dbc8f66280dcc1ed99d0f832ff312
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5a7d4ab69ff3ccd1a50ea4fccb6e494f7c73fc72
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-forms"></a>Formularze natywnego
 
@@ -31,7 +31,7 @@ Proces służący do konsumowania platformy Xamarin.Forms [ `ContentPage` ](http
 Platformy Xamarin.Forms musi zostać zainicjowany przez wywołanie metody `Forms.Init` metoda przed natywnego projektu można konstruować [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych strony. Wybieranie, kiedy w tym celu głównie zależy od daty dogodnym w Twojej aplikacji przepływu — może być wykonana podczas uruchamiania aplikacji lub po prostu przed `ContentPage`-strony pochodny jest tworzony. W tym artykule i towarzyszące przykładowe aplikacje `Forms.Init` metoda jest wywoływana podczas uruchamiania aplikacji.
 
 > [!NOTE]
-> **Uwaga**: **NativeForms** przykładowe rozwiązanie aplikacji nie zawiera żadnych projektów platformy Xamarin.Forms. Zamiast tego składa się z projektem platformy Xamarin.iOS projektu platformy Xamarin.Android i projektu platformy uniwersalnej systemu Windows. Każdy projekt jest natywnego projektu, który używa natywnego formularzy użycie [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron. Jednak nie ma powodu, dlaczego nie można korzystać z projektów natywnych `ContentPage`-pochodną stron PCL, biblioteki standardowej .NET lub projektu udostępnionego.
+> **NativeForms** przykładowe rozwiązanie aplikacji nie zawiera żadnych projektów platformy Xamarin.Forms. Zamiast tego składa się z projektem platformy Xamarin.iOS projektu platformy Xamarin.Android i projektu platformy uniwersalnej systemu Windows. Każdy projekt jest natywnego projektu, który używa natywnego formularzy użycie [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron. Jednak nie ma powodu, dlaczego nie można korzystać z projektów natywnych `ContentPage`-pochodną stron PCL, biblioteki standardowej .NET lub projektu udostępnionego.
 
 Podczas korzystania z natywnej formularzy, platformy Xamarin.Forms funkcje, takie jak [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)oraz aparat wiązania danych, wszystkie nadal wykonywane.
 
@@ -85,7 +85,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Raz `FinishedLaunching` metody zostało wykonane, interfejs użytkownika zdefiniowane w platformy Xamarin.Forms `PhonewordPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png "iOS PhonewordPage")
+[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
 
 Interakcja z interfejsu użytkownika, na przykład, naciskając pozycję na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), spowoduje obsługi zdarzeń w `PhonewordPage` wykonywania związane z kodem. Na przykład, gdy użytkownik naciska **Historia wywołań** przycisku, następujące programu obsługi zdarzeń jest wykonywana:
 
@@ -109,7 +109,7 @@ public void NavigateToCallHistoryPage()
 
 `NavigateToCallHistoryPage` Metoda konwertuje platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stronę, aby `UIViewController` z `CreateViewController` — metoda rozszerzenia i zestawy `Title` właściwość `UIViewController`. `UIViewController` Następnie spoczywa na `UINavigationController` przez `PushViewController` metody. W związku z tym interfejsu użytkownika zdefiniowane w platformy Xamarin.Forms `CallHistoryPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png "iOS CallHistoryPage")
+[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
 
 Podczas `CallHistoryPage` jest wyświetlany, naciskając tylnej strzałkę będzie pop `UIViewController` dla `CallHistoryPage` klasę z `UINavigationController`, zwracanie użytkownikowi `UIViewController` dla `PhonewordPage` klasy.
 
@@ -157,11 +157,11 @@ public class MainActivity : AppCompatActivity
 Aby uzyskać więcej informacji na temat fragmentów, zobacz [fragmenty](~/android/platform/fragments/index.md).
 
 > [!NOTE]
-> **Uwaga**: oprócz `CreateFragment` metody rozszerzenia platformy Xamarin.Forms obejmuje również `CreateSupportFragment` metody. `CreateFragment` Metoda tworzy `Android.App.Fragment` które może być używany w aplikacjach, które odnoszą się do interfejsu API 11 i większa. `CreateSupportFragment` Metoda tworzy `Android.Support.V4.App.Fragment` które mogą być używane w aplikacjach, które odnoszą się do wersji interfejsu API przed 11.
+> Oprócz `CreateFragment` metody rozszerzenia platformy Xamarin.Forms obejmuje również `CreateSupportFragment` metody. `CreateFragment` Metoda tworzy `Android.App.Fragment` które może być używany w aplikacjach, które odnoszą się do interfejsu API 11 i większa. `CreateSupportFragment` Metoda tworzy `Android.Support.V4.App.Fragment` które mogą być używane w aplikacjach, które odnoszą się do wersji interfejsu API przed 11.
 
 Raz `OnCreate` metody zostało wykonane, interfejs użytkownika zdefiniowane w platformy Xamarin.Forms `PhonewordPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png "PhonewordPage systemu Android")
+[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "PhonewordPage systemu Android")
 
 Interakcja z interfejsu użytkownika, na przykład, naciskając pozycję na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), spowoduje obsługi zdarzeń w `PhonewordPage` wykonywania związane z kodem. Na przykład, gdy użytkownik naciska **Historia wywołań** przycisku, następujące programu obsługi zdarzeń jest wykonywana:
 
@@ -188,7 +188,7 @@ public void NavigateToCallHistoryPage()
 
 `NavigateToCallHistoryPage` Metoda konwertuje platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stronę, aby `Fragment` z `CreateFragment` — metoda rozszerzenia i dodaje `Fragment` fragment z powrotem stosu. W związku z tym interfejsu użytkownika zdefiniowane w platformy Xamarin.Forms `CallHistoryPage` będą wyświetlane, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png "CallHistoryPage systemu Android")
+[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "CallHistoryPage systemu Android")
 
 Podczas `CallHistoryPage` jest wyświetlany, naciskając tylnej strzałkę będzie pop `Fragment` dla `CallHistoryPage` w stosie przechodzenia wstecz fragmentu zwracanie użytkownikowi `Fragment` dla `PhonewordPage` klasy.
 
@@ -271,7 +271,7 @@ public sealed partial class MainPage : Page
 
 Raz `MainPage` Konstruktor zostało wykonane, interfejs użytkownika zdefiniowane w platformy Xamarin.Forms `PhonewordPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png "PhonewordPage platformy uniwersalnej systemu Windows")
+[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "PhonewordPage platformy uniwersalnej systemu Windows")
 
 Interakcja z interfejsu użytkownika, na przykład, naciskając pozycję na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), spowoduje obsługi zdarzeń w `PhonewordPage` wykonywania związane z kodem. Na przykład, gdy użytkownik naciska **Historia wywołań** przycisku, następujące programu obsługi zdarzeń jest wykonywana:
 
@@ -293,7 +293,7 @@ public void NavigateToCallHistoryPage()
 
 Nawigacja w platformy uniwersalnej systemu Windows jest zwykle wykonywany z `Frame.Navigate` metodę, która przyjmuje `Page` argumentu. Definiuje platformy Xamarin.Forms `Frame.Navigate` — metoda rozszerzenia, która przyjmuje [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych wystąpienie strony. W związku z tym, kiedy `NavigateToCallHistoryPage` wykonuje metodę interfejsu użytkownika zdefiniowane w platformy Xamarin.Forms `CallHistoryPage` będą wyświetlane, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png "UWP CallHistoryPage")
+[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
 
 Podczas `CallHistoryPage` jest wyświetlany, naciskając tylnej strzałkę będzie pop `FrameworkElement` dla `CallHistoryPage` w stosie przechodzenia wstecz w aplikacji, zwracając użytkownikowi `FrameworkElement` dla `PhonewordPage` klasy.
 

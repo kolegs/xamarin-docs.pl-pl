@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: c1dd3495b0d7f76197126094cfd10e50d0ca760d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-fragment"></a>Tworzenie fragmentu
 
@@ -28,7 +28,7 @@ Powyższy kod będzie zwiększyć widoku `Resource.Layout.Example_Fragment`i dod
 
 
 > [!NOTE]
-> **Uwaga:** podklas fragmentu musi mieć domyślnego publicznego konstruktora nie argumentów.
+> Podklasy fragmentu musi mieć domyślnego publicznego konstruktora nie argumentów.
 
 ## <a name="adding-a-fragment-to-an-activity"></a>Dodanie fragmentu do działania
 
@@ -108,7 +108,7 @@ LUB
 Fragmenty mają własne cyklu życia, w pewnym stopniu niezależny od, ale nadal wykorzystywanych przez [cyklu życia hostingu działania](~/android/app-fundamentals/activity-lifecycle/index.md).
 Na przykład gdy wstrzymuje działanie, wszystkie jego skojarzony fragmenty są wstrzymane. Poniższy diagram przedstawia cyklu życia fragmentu.
 
-[![Diagram przepływu pokazujący fragmentu cykl życia](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png)
+[![Diagram przepływu pokazujący fragmentu cykl życia](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 
 ### <a name="fragment-creation-lifecycle-methods"></a>Metody cyklu życia tworzenia fragmentu
@@ -238,4 +238,4 @@ public override void OnCreate(Bundle savedState)
 
 Następujący ekran pokazuje, jak będzie wyglądać menu:
 
-[![Zrzut ekranu aplikacji My rund wyświetlanie elementów menu](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png)
+[![Zrzut ekranu aplikacji My rund wyświetlanie elementów menu](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

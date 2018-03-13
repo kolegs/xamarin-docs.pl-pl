@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 040a5979339ed12f212f932f3b7e51cf48a9d382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatycznie Rozmieść przy użyciu projektanta Xamarin dla systemu iOS
 
@@ -54,7 +54,7 @@ Domyślnie nie ograniczenia są utworzone lub widoczne na powierzchni. Zamiast t
 
 ## <a name="constraints-toolbar"></a>Ograniczenia paska narzędzi
 
- [ ![](designer-auto-layout-images/toolbarnew.png "Polecenia Menu kontekstowe")](designer-auto-layout-images/toolbarnew.png)
+ [![](designer-auto-layout-images/toolbarnew.png "Polecenia Menu kontekstowe")](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 Narzędzi ograniczenia została zaktualizowana i obecnie obejmuje dwie główne części:
 
@@ -83,7 +83,7 @@ Zdefiniuj 4 dojść w kształcie T na każdej stronie elementu *górnej*, *prawo
 
 Aby utworzyć ograniczenia, wybierają uchwyt i przeciągnij je gdzieś na powierzchnię projektu. Po uruchomieniu przeciągania szereg zielone wierszy/pola będą wyświetlane na powierzchni informujący, co może ograniczyć. Na przykład na poniższym zrzucie ekranu, możemy są ograniczający górnej środkowego przycisku:
 
- [ ![](designer-auto-layout-images/image07.png "Ograniczający górnej środkowego przycisku")](designer-auto-layout-images/image07.png)
+ [![](designer-auto-layout-images/image07.png "Ograniczający górnej środkowego przycisku")](designer-auto-layout-images/image07.png#lightbox)
 
 Należy zauważyć trzy wiersze zielony przerywane w dwóch przycisków. Zielony linie wskazują *obszarów upuszczania*, lub innych elementów, których firma Microsoft może ograniczyć atrybuty. Na zrzucie ekranu powyżej, dwóch przycisków oferują 3 obszary upuszczania pionowy ( *dolnej*, *centerY*, *górnej*) aby ograniczyć naszych przycisku. Zielony linia przerywana w górnej części widoku oznacza kontroler widoku umożliwia ograniczenie u góry widoku i wypełniony prostokąt zielony oznacza, że kontroler widoku oferuje ograniczenia poniżej przewodnik układu top.
 
@@ -98,13 +98,13 @@ Trzech kolejnych sekcjach przedstawiono pracy z różnymi typami warunków ogran
 
 Z ograniczeniami rozmiar - *wysokość* i *szerokość* — dostępne są dwie opcje. Pierwsza opcja jest przeciągnij uchwyt, aby ograniczyć do rozmiaru elementu sąsiedniego, jak pokazano w przykładzie powyżej. Inną możliwością jest kliknij dwukrotnie uchwyt, aby utworzyć ograniczenia samoobsługowego. Pozwala to określić wartość stały rozmiar, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](designer-auto-layout-images/sizec.png "Przeciągnij uchwyt, aby ograniczyć do rozmiaru elementu sąsiedniego, jak pokazano w tym miejscu")](designer-auto-layout-images/sizec.png)
+ [![](designer-auto-layout-images/sizec.png "Przeciągnij uchwyt, aby ograniczyć do rozmiaru elementu sąsiedniego, jak pokazano w tym miejscu")](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>Ograniczenia Center
 
 Utworzy kwadratowy uchwyt *centerX* lub *centerY* ograniczenie, w zależności od kontekstu. Przeciąganie kwadratowy uchwyt uaktywni się inne elementy do zaoferowania obydwu tych obszarach poziome i pionowe upuszczania, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](designer-auto-layout-images/centerc.png "Ograniczenia Center")](designer-auto-layout-images/centerc.png)
+ [![](designer-auto-layout-images/centerc.png "Ograniczenia Center")](designer-auto-layout-images/centerc.png#lightbox)
 
 Jeśli wybierzesz obszar upuszczania pionowy *centerY* można utworzyć ograniczenia. Jeśli wybierzesz obszar upuszczania poziome, na podstawie ograniczenie *centerX*.
 
@@ -112,17 +112,17 @@ Jeśli wybierzesz obszar upuszczania pionowy *centerY* można utworzyć ogranicz
 
 Do utworzenia zarówno wyrównanie i ograniczenia rozmiaru równości między dwoma elementami, możesz wybrać elementy z górnym pasku narzędzi, aby określić — w kolejności - wyrównanie poziome wyrównanie w pionie i equalities rozmiar, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](designer-auto-layout-images/image06.png "Ograniczenia combinational")](designer-auto-layout-images/image06.png)
+ [![](designer-auto-layout-images/image06.png "Ograniczenia combinational")](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>Wizualizacja i edytowania ograniczenia
 
 Po dodaniu ograniczenie będzie wyświetlana na powierzchni projektowej jako linię niebieski po wybraniu elementu:
 
- [ ![](designer-auto-layout-images/image09.png "Wizualizacja ograniczenia")](designer-auto-layout-images/image09.png)
+ [![](designer-auto-layout-images/image09.png "Wizualizacja ograniczenia")](designer-auto-layout-images/image09.png#lightbox)
 
 Ograniczenie można wybrać, klikając niebieski wiersza i edytowania wartości ograniczenia bezpośrednio w panelu właściwość. Alternatywnie klikając niebieski wiersza zostanie wyświetlone okno popover, który umożliwia edytowanie wartości bezpośrednio na powierzchni projektu:
 
- [ ![](designer-auto-layout-images/image08.png "Edytowanie ograniczenia")](designer-auto-layout-images/image08.png)
+ [![](designer-auto-layout-images/image08.png "Edytowanie ograniczenia")](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>Ograniczenie problemów
 
@@ -139,27 +139,27 @@ W tej sekcji rosnącego trzy powyższe problemy i zawiera szczegółowe informac
 
 Powodujące konflikt ograniczenia są oznaczone na czerwono i symboli ostrzeżenie. Wyświetlenie kursora myszy nad symbole ostrzeżenie popover informacje o konflikt:
 
- [ ![](designer-auto-layout-images/image11.png "Powodujące konflikt ograniczenia ostrzeżenie")](designer-auto-layout-images/image11.png)
+ [![](designer-auto-layout-images/image11.png "Powodujące konflikt ograniczenia ostrzeżenie")](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Elementy underconstrained
 
 Underconstrained elementy są wyświetlane w kolorze pomarańczowym i wyzwolić wyglądu znacznika pomarańczowy ikony na pasku obiektu kontrolera widoku:
 
- [ ![](designer-auto-layout-images/image02.png "Underconstrained elementy są wyświetlane w kolorze pomarańczowym")](designer-auto-layout-images/image02.png)
+ [![](designer-auto-layout-images/image02.png "Underconstrained elementy są wyświetlane w kolorze pomarańczowym")](designer-auto-layout-images/image02.png#lightbox)
 
 Po kliknięciu tej ikony znacznika można uzyskać informacji o underconstrained elementów w scenie i rozwiązać problemy przez albo pełni ograniczający je lub usuwając ich ograniczenia, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](designer-auto-layout-images/image10.png "Ustalania Underconstrained elementów")](designer-auto-layout-images/image10.png)
+ [![](designer-auto-layout-images/image10.png "Ustalania Underconstrained elementów")](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>Przemieszczenie ramki
 
 Przemieszczenie ramki używa tego samego kodu kolor jako underconstrained elementów. Element będzie zawsze renderowany na powierzchni przy użyciu jego natywną, ale w przypadku przemieszczenie ramki czerwonym prostokątem oznaczy, gdy element zakończą się po uruchomieniu aplikacji, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](designer-auto-layout-images/image05.png "Przykładowy widok przemieszczenie ramki")](designer-auto-layout-images/image05.png)
+ [![](designer-auto-layout-images/image05.png "Przykładowy widok przemieszczenie ramki")](designer-auto-layout-images/image05.png#lightbox)
 
 Aby usunąć błędy przemieszczenie ramki, wybierz **aktualizacji ramek na podstawie ograniczeń** przycisku paska narzędzi ograniczenia (przycisk prawej):
 
- [ ![](designer-auto-layout-images/image03.png "Aktualizowanie oparte na przycisku paska narzędzi ograniczenia ramki")](designer-auto-layout-images/image03.png)
+ [![](designer-auto-layout-images/image03.png "Aktualizowanie oparte na przycisku paska narzędzi ograniczenia ramki")](designer-auto-layout-images/image03.png#lightbox)
 
 Automatycznie dopasuje ramki elementu do dopasowania pozycji zdefiniowane przez formanty.
 
@@ -174,10 +174,10 @@ Aby uzyskać dostęp do ograniczenia w kodzie, najpierw trzeba je ujawnić w sys
 1. Ograniczenia Normal (przy użyciu dowolnej z metod wymienionych powyżej).
 2. W **Explorer konspektu dokumentu**, Znajdź żądane ograniczenie i wybierz ją:
 
-    [ ![](designer-auto-layout-images/modify01.png "W Eksploratorze konspektu dokumentu")](designer-auto-layout-images/modify01.png)
+    [![](designer-auto-layout-images/modify01.png "W Eksploratorze konspektu dokumentu")](designer-auto-layout-images/modify01.png#lightbox)
 3. Następnie przypisać **nazwa** ograniczenia w **elementu Widget** karcie **Explorer właściwości**:
 
-    [ ![](designer-auto-layout-images/modify02.png "Na karcie widżetu")](designer-auto-layout-images/modify02.png)
+    [![](designer-auto-layout-images/modify02.png "Na karcie widżetu")](designer-auto-layout-images/modify02.png#lightbox)
 4. Zapisz zmiany.
 
 Powyższe zmiany w miejscu można dostępu ograniczenia w kodzie i zmodyfikować jego właściwości. Na przykład aby ustawić wysokości widoku podłączonego do zera może Użyj następujące:
@@ -188,7 +188,7 @@ ViewInfoHeight.Constant = 0;
 
 Podane następujące ustawienie ograniczenia w Projektancie z systemem iOS:
 
-[ ![](designer-auto-layout-images/modify03.png "Edytowanie ograniczenia w Eksploratorze właściwości")](designer-auto-layout-images/modify03.png)
+[![](designer-auto-layout-images/modify03.png "Edytowanie ograniczenia w Eksploratorze właściwości")](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>Odroczone przebiegu układu
 

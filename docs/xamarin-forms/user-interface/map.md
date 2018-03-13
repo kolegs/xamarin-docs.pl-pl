@@ -3,16 +3,16 @@ title: mapy
 description: "Platformy Xamarin.Forms korzysta natywnych interfejsów API mapy na każdej z platform."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 98e6cade952e656046c6c0981a0b73ff0894c9d6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="map"></a>mapy
 
@@ -28,7 +28,7 @@ Po skonfigurowaniu `Map` kontrolować działa tak samo jak element platformy Xam
 
 Użyto formantu mapy [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) próbki, które są wyświetlane poniżej.
 
- [ ![Mapy w przykładowym MobileCRM](map-images/maps-zoom-sml.png "przykład formantu mapy")](map-images/maps-zoom.png "przykład formantu mapy")
+ [![Mapy w przykładowym MobileCRM](map-images/maps-zoom-sml.png "przykład formantu mapy")](map-images/maps-zoom.png#lightbox "przykład formantu mapy")
 
 Funkcje mapy może zostać poprawione dalsze tworząc [mapy niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -103,7 +103,7 @@ Po wykonaniu tych instrukcji, Wklej klucz interfejsu API w **Properties/AndroidM
 Bez prawidłowego klucza interfejsu API w formancie mapy zostaną wyświetlone jako szare pole w systemie Android.
 
 > [!NOTE]
-> **Uwaga**: Pamiętaj, aby wygenerować inny klucz przy użyciu pliku magazynu kluczy, który jest używany do podpisywania wydanej wersji programu dowolnej aplikacji, która została przekazana do sklepu Google Play. Klucz Generowanie dla rozwoju i debugowanie nie będzie działać i z aplikacji pobranej ze sklepu Google Play zostaną przerwane ekran mapy. Pamiętaj także można ponownie wygenerować klucza if aplikacji **nazwy pakietu** zmiany.
+> Pamiętaj, aby wygenerować inny klucz przy użyciu pliku magazynu kluczy, który jest używany do podpisywania wydanej wersji programu dowolnej aplikacji, która została przekazana do sklepu Google Play. Klucz Generowanie dla rozwoju i debugowanie nie będzie działać i z aplikacji pobranej ze sklepu Google Play zostaną przerwane ekran mapy. Pamiętaj także można ponownie wygenerować klucza if aplikacji **nazwy pakietu** zmiany.
 
 Należy również włączyć odpowiednie uprawnienia, kliknięcie prawym przyciskiem myszy projekt Android i wybierając **Opcje > kompilacji > aplikacji systemu Android** i zaznaczenie następujących czynności:
 
@@ -185,7 +185,7 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [ ![Mapy z powiększenia](map-images/maps-zoom-sml.png "powiększenie formantu mapy")](map-images/maps-zoom.png "powiększenie formantu mapy")
+ [![Mapy z powiększenia](map-images/maps-zoom-sml.png "powiększenie formantu mapy")](map-images/maps-zoom.png#lightbox "powiększenie formantu mapy")
 
 ### <a name="map-pins"></a>Szpilki
 

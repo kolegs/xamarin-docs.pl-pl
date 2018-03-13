@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6327c00253036f5ede8bf1934f56e6d4bb8f0ecd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="set-up-device-for-development"></a>Konfigurowanie urządzeń środowiska deweloperskiego
 
@@ -28,13 +28,11 @@ Przez teraz prawdopodobnie w tym samouczku dużą nowej aplikacji uruchomionych 
 
 Każdy z tych kroków zostanie omówiona bardziej szczegółowo w poniższych sekcjach.
 
-<a name="EnableDebugging" />
 
 ## <a name="enable-debugging-on-the-device"></a>Włącz debugowanie na urządzeniu
 
 Istnieje możliwość użycia dowolne urządzenie z systemem Android do testowania aplikacji systemu Android. Jednak urządzenia muszą zostać prawidłowo skonfigurowane przed debugowania mogą wystąpić. Czynności procedury są nieco inne w zależności od wersji Android uruchomionej na urządzeniu.
 
-<a name="EnableDebuggingAndroid4" />
 
 ### <a name="android-40-to-android-41"></a>Android 4.0 dla systemu Android 4.1
 
@@ -46,23 +44,21 @@ Debugowanie jest włączone dla systemu Android 4.0.x do 4.1.x systemu Android, 
 
 Ten zrzut ekranu przedstawia **opcje dewelopera** ekranu na urządzeniu z systemem Android 4.0.3:
 
-[![Opcje dewelopera](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png)
+[![Opcje dewelopera](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
 
-<a name="EnableDebuggingAndroid42" />
 
 ### <a name="android-42-and-higher"></a>System android 4.2 lub nowszej
 
 Począwszy od systemu Android 4.2 i nowszym, **opcje dewelopera** domyślnie ukryty. Aby było to możliwe, przejdź do **Ustawienia > informacje o telefonie**, a następnie naciśnij pozycję **numer kompilacji** elementu siedem razy, aby wyświetlić **opcje dewelopera** kartę:
 
-[![Element numeru kompilacji](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png)
+[![Element numeru kompilacji](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
 
 Raz **opcje dewelopera** karta jest dostępna w obszarze **Ustawienia > System**, otwórz go, aby wyświetlić ustawienia dewelopera:
 
-[![Ekran ustawień dewelopera](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png)
+[![Ekran ustawień dewelopera](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
 
 Jest to miejsce, aby włączyć opcje dewelopera, takich jak debugowanie USB i pozostać w trybie aktywności.
 
-<a name="USB_Debugging" />
 
 ## <a name="install-usb-drivers"></a>Zainstaluj sterowniki USB
 
@@ -71,13 +67,12 @@ Ten krok nie jest konieczne dla systemu OS X. Podłącz urządzenie do komputera
 Może być konieczne zainstalowanie pewnych dodatkowych sterowników przed komputerem z systemem Windows będą rozpoznawać urządzenia z systemem Android połączonymi USB.
 
 > [!NOTE]
-> **Uwaga:** są kroki, aby skonfigurować urządzenie węzła Google i znajdują się jako odwołanie. Kroki dla określonego urządzenia może się różnić, ale zastosują się do tego samego typu. Jeśli masz problem wyszukiwania w Internecie dla danego urządzenia.
+> Są kroki, aby skonfigurować urządzenie węzła Google i znajdują się jako odwołanie. Kroki dla określonego urządzenia może się różnić, ale zastosują się do tego samego typu. Jeśli masz problem wyszukiwania w Internecie dla danego urządzenia.
 
 Uruchom **android.bat** aplikacji w **\tools [ścieżka instalacji zestawu SDK systemu Android]** katalogu. Domyślnie Instalator platformy Xamarin.Android umieści zestawu SDK systemu Android w następującej lokalizacji na komputerze z systemem Windows:
 
     C:\Users\[username]\AppData\Local\Android\android-sdk
 
-<a name="Download_the_USB_Drivers" />
 
 ### <a name="download-the-usb-drivers"></a>Pobieranie sterowników USB
 
@@ -86,7 +81,7 @@ Wszystkie urządzenia z systemem Android należy używać [sterownik USB ich odp
 
 Zainstaluj **sterownik USB Google** pakietu, uruchamiając narzędzie Android SDK Manager i rozwijając **dodatki** folderu, co wynika wykonaj zrzut ekranu:
 
-[![Pakiet sterowników USB Google wybrany](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png)
+[![Pakiet sterowników USB Google wybrany](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
 
 Sprawdź **sterownik USB Google** i kliknij **zainstalować** przycisku.
 Pliki sterowników są pobierane w następującej lokalizacji:
@@ -98,7 +93,6 @@ Domyślna ścieżka instalacji platformy Xamarin.Android to:
     C:\Users\[username]\AppData\Local\Android\android-sdk\extras\google\usb_driver
 
 
-<a name="Installing_the_USB_Driver" />
 
 ### <a name="installing-the-usb-driver"></a>Instalowanie sterownika USB
 
@@ -122,7 +116,6 @@ Aby zainstalować sterowniki w systemie Windows 7:
 
 8.  Kliknij przycisk **dalej** do zainstalowania sterownika.
 
-<a name="Windows_8" />
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Instalowanie sterowników niezweryfikowane w systemie Windows 8
 
@@ -140,7 +133,6 @@ Aby zainstalować sterownik niezweryfikowane w systemie Windows może być wymag
 4.  **Instalowanie sterowników urządzeń** -zainstalować sterowniki urządzeń, jak opisano powyżej.
 
 
-<a name="ConnectDevice" />
 
 ## <a name="connect-the-device-to-the-computer"></a>Podłącz urządzenie do komputera
 
@@ -150,7 +142,6 @@ Ostatnim krokiem jest Podłącz urządzenie do komputera. Istnieją dwa sposoby,
 
 -   **Wi-Fi** — umożliwia łączenie urządzenia z systemem Android do komputera bez za pośrednictwem sieci Wi-Fi za pomocą kabla USB. Ta metoda wymaga nieco więcej wysiłku, ale mogą być przydatne, gdy istnieje nie kabla USB lub urządzenie ma daleko kabla USB. Łączenie za pośrednictwem sieci Wi-Fi zostanie omówiona w następnej sekcji.
 
-<a name="Debug_over_WiFi" />
 
 ### <a name="connecting-over-wifi"></a>Połączenie za pośrednictwem sieci Wi-Fi
 
@@ -186,7 +177,6 @@ Użytkownik może zażądać ADB, aby wyświetlić listę urządzeń, które są
 
     adb devices
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

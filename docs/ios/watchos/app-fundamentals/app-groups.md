@@ -3,14 +3,15 @@ title: Praca z grupami aplikacji
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-ios
+ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 27ce6c48c5bca69605773eb5ef5637201b9ce6c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9365bc2707876816419bb5d136a6a1011cf129d7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-app-groups"></a>Praca z grupami aplikacji
 
@@ -29,18 +30,18 @@ Lokalizacji udostępnionej została skonfigurowana przy użyciu [grupy aplikacji
 
 Grupa aplikacji ma identyfikator, który zazwyczaj jest Identyfikatorem pakietu z `group.` prefiks. Na przykład można użyć Identyfikatora pakietu `com.xamarin.WatchSettings` i grupy aplikacji `group.com.xamarin.WatchSettings`.
 
-[ ![](app-groups-images/app-group-sml.png "Użyj com.xamarin.WatchSettings identyfikator pakietu i group.com.xamarin.WatchSettings grupy aplikacji")](app-groups-images/app-group.png)
+[![](app-groups-images/app-group-sml.png "Użyj com.xamarin.WatchSettings identyfikator pakietu i group.com.xamarin.WatchSettings grupy aplikacji")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 A także Konfigurowanie profilu inicjowania obsługi administracyjnej **włączyć grupy aplikacji** w **Entitlements.plist** i podaj identyfikator wybrano:
 
-[ ![](app-groups-images/entitlements-sml.png "Konfigurowanie właściwości i podaj identyfikator")](app-groups-images/entitlements.png)
+[![](app-groups-images/entitlements-sml.png "Konfigurowanie właściwości i podaj identyfikator")](app-groups-images/entitlements.png#lightbox)
 
 
 ### <a name="deployment"></a>wdrażania
 
-Upewnij się, skonfiguruj grupy aplikacji poprawnie w Twojej [wdrożenia](~/ios/watchos/deploy-test/index.md#app-groups) inicjowania obsługi administracyjnej.
+Upewnij się, skonfiguruj grupy aplikacji poprawnie w Twojej [wdrożenia](~/ios/watchos/deploy-test/index.md#App_Groups) inicjowania obsługi administracyjnej.
 
 
 Aby uzyskać więcej informacji, zobacz [możliwości grupy aplikacji](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) dokumentacji.

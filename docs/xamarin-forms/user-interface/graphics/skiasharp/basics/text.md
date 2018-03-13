@@ -4,14 +4,15 @@ description: "Informacje o określaniu rozmiar ciągu tekstowego renderowanych t
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrowanie tekstu i grafiki
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Po tym, że pozostała metody jest proste. Tworzy innego `SKPaint` obiektu obramowania i wywołania `DrawRoundRect` dwa razy. Drugie wywołanie używa prostokąt zwiększony o innym 10 pikseli. Pierwsze wywołanie określa promień narożnika 20 pikseli; drugi ma promień narożnika 30 pikseli, więc ich wydają się być równoległe:
 
- [![](text-images/framedtext-small.png "Potrójna zrzut ekranu strony tekstu w ramce")](text-images/framedtext-large.png "Potrójna zrzut ekranu strony tekstu w ramce")
+ [![](text-images/framedtext-small.png "Potrójna zrzut ekranu strony tekstu w ramce")](text-images/framedtext-large.png#lightbox "Potrójna zrzut ekranu strony tekstu w ramce")
 
 Można włączyć swój telefon lub symulator bok tekstu i zwiększyć rozmiar ramki.
 
@@ -121,7 +122,7 @@ Jeśli wymagane jest tylko część tekstu na ekranie Centrum, możesz zrobić t
 
 Sam tekst może być znacznie traktowana jak graficzną opcję. Jedną z opcji proste jest wyświetlanie konspektu znaków, a nie normalne wyświetlania wypełniony:
 
-[![](text-images/outlinedtext-small.png "Potrójne zrzut ekranu strony opisane tekst")](text-images/outlinedtext-large.png "potrójne zrzut ekranu strony opisane tekstu")
+[![](text-images/outlinedtext-small.png "Potrójne zrzut ekranu strony opisane tekst")](text-images/outlinedtext-large.png#lightbox "potrójne zrzut ekranu strony opisane tekstu")
 
 Ma to zmieniając po prostu normalnej `Style` właściwość `SKPaint` obiektu na podstawie ustawień domyślnych `SKPaintStyle.Fill` do `SKPaintStyle.Stroke` i określając szerokość pociągnięć. `PaintSurface` Obsługi **opisane tekst** strony pokazuje, jak jest wykonywane:
 

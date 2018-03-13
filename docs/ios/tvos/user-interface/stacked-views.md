@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2b16fd970e724228215fd0dd1c9022227ab84435
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-stacked-view"></a>Praca z widokiem skumulowany
 
@@ -23,7 +23,7 @@ Formant widoku stosu (`UIStackView`) wykorzystuje zasilania układu automatyczne
 
 Układ wszystkich widoków podrzędnych dołączone do widoku stosu są zarządzane przez go na podstawie właściwości developer zdefiniowane takich jak osi, dystrybucji i wyrównanie odstępy:
 
-[ ![](stacked-views-images/stacked01.png "Diagram układu widok podrzędny")](stacked-views-images/stacked01.png)
+[![](stacked-views-images/stacked01.png "Diagram układu widok podrzędny")](stacked-views-images/stacked01.png#lightbox)
 
 Korzystając z `UIStackView` w aplikacji Xamarin.tvOS dewelopera można zdefiniować widoków podrzędnych albo wewnątrz scenorysu w systemie iOS projektanta lub przez dodawanie i usuwanie widoków podrzędnych w kodzie języka C#.
 
@@ -103,21 +103,21 @@ Najprostszym sposobem Praca z widokami stosu w aplikacji Xamarin.tvOS jest dodan
 1. W **konsoli rozwiązania**, klikając dwukrotnie pozycję `Main.storyboard` pliku i otwórz go do edycji.
 1. Projektowanie układu poszczególnych elementów, które chcesz dodać do widoku stosu: 
 
-    [ ![](stacked-views-images/layout01.png "Przykład układu elementu")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Przykład układu elementu")](stacked-views-images/layout01.png#lightbox)
 1. Dodaj wszystkie wymagane ograniczenia do elementy, aby upewnić się, że są one poprawnie skalowania. Ten krok jest ważne, gdy element zostanie dodany do widoku stosu.
 1. Aby wymagana liczba kopii (cztery w tym przypadku): 
 
-    [ ![](stacked-views-images/layout02.png "Wymagana liczba kopii")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Wymagana liczba kopii")](stacked-views-images/layout02.png#lightbox)
 1. Przeciągnij **widoku stosu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](stacked-views-images/layout03.png "Widok stosu")](stacked-views-images/layout03.png)
+    [![](stacked-views-images/layout03.png "Widok stosu")](stacked-views-images/layout03.png#lightbox)
 1. Wybierz widok stosu w **kartę Widget** z **konsoli właściwości** wybierz **wypełnienia** dla **wyrównanie**, **wypełnienia Równie** dla **dystrybucji** , a następnie wprowadź `25` dla **odstępy**: 
 
-    [ ![](stacked-views-images/layout04.png "Na karcie widżetu")](stacked-views-images/layout04.png)
+    [![](stacked-views-images/layout04.png "Na karcie widżetu")](stacked-views-images/layout04.png#lightbox)
 1. Umieść widoku stosu na ekranie, gdzie będzie i dodać ograniczeń do przechowuj go w lokalizacji wymagane.
 1. Wybierz poszczególne elementy i przeciągnij je do widoku stosu: 
 
-    [ ![](stacked-views-images/layout05.png "Poszczególne elementy w widoku stosu")](stacked-views-images/layout05.png)
+    [![](stacked-views-images/layout05.png "Poszczególne elementy w widoku stosu")](stacked-views-images/layout05.png#lightbox)
 1. Układ zostaną dostosowane i rozmieszczenia elementów w widoku stosu na podstawie atrybutów ustawione powyżej.
 1. Przypisz **nazwy** w **kartę Widget** z **Explorer właściwości** do pracy z formantów interfejsu użytkownika w kodzie języka C#.
 1. Zapisz zmiany.
@@ -127,21 +127,21 @@ Najprostszym sposobem Praca z widokami stosu w aplikacji Xamarin.tvOS jest dodan
 1. W **Eksploratora rozwiązań**, klikając dwukrotnie pozycję `Main.storyboard` pliku i otwórz go do edycji.
 1. Projektowanie układu poszczególnych elementów, które chcesz dodać do widoku stosu: 
 
-    [ ![](stacked-views-images/layout01.png "Przykład elementu układu")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Przykład elementu układu")](stacked-views-images/layout01.png#lightbox)
 1. Dodaj wszystkie wymagane ograniczenia do elementy, aby upewnić się, że są one poprawnie skalowania. Ten krok jest ważne, gdy element zostanie dodany do widoku stosu.
 1. Aby wymagana liczba kopii (cztery w tym przypadku): 
 
-    [ ![](stacked-views-images/layout02.png "Wymagana liczba kopii")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Wymagana liczba kopii")](stacked-views-images/layout02.png#lightbox)
 1. Przeciągnij **widoku stosu** z **przybornika** i upuść go w widoku: 
 
-    [ ![](stacked-views-images/layout03-vs.png "Widok stosu")](stacked-views-images/layout03-vs.png)
+    [![](stacked-views-images/layout03-vs.png "Widok stosu")](stacked-views-images/layout03-vs.png#lightbox)
 1. Wybierz widok stosu w **kartę Widget** z **Explorer właściwości** wybierz **wypełnienia** dla **wyrównanie**, **wypełnienia Równie** dla **dystrybucji** , a następnie wprowadź `25` dla **odstępy**: 
 
-    [ ![](stacked-views-images/layout04-vs.png "Na karcie widżetu")](stacked-views-images/layout04-vs.png)
+    [![](stacked-views-images/layout04-vs.png "Na karcie widżetu")](stacked-views-images/layout04-vs.png#lightbox)
 1. Umieść widoku stosu na ekranie, gdzie będzie i dodać ograniczeń do przechowuj go w lokalizacji wymagane.
 1. Wybierz poszczególne elementy i przeciągnij je do widoku stosu: 
 
-    [ ![](stacked-views-images/layout05-vs.png "Poszczególne elementy w widoku stosu")](stacked-views-images/layout05-vs.png)
+    [![](stacked-views-images/layout05-vs.png "Poszczególne elementy w widoku stosu")](stacked-views-images/layout05-vs.png#lightbox)
 1. Układ zostaną dostosowane i rozmieszczenia elementów w widoku stosu na podstawie atrybutów ustawione powyżej.
 1. Przypisz **nazwy** w **kartę Widget** z **Explorer właściwości** do pracy z formantów interfejsu użytkownika w kodzie języka C#.
 1. Zapisz zmiany.
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Gdy aplikacja jest uruchamiana, cztery elementy będą dystrybuowane jednakowo naszym zdaniem stosu:
 
-[ ![](stacked-views-images/layout06.png "Gdy aplikacja jest uruchamiana, cztery elementy będą równomiernie naszym zdaniem stosu")](stacked-views-images/layout06.png)
+[![](stacked-views-images/layout06.png "Gdy aplikacja jest uruchamiana, cztery elementy będą równomiernie naszym zdaniem stosu")](stacked-views-images/layout06.png#lightbox)
 
 Jeśli zmniejsza się liczba uczestników, nieużywane widoki są ukryte i Wyświetl stosu dopasowanie układu, aby dopasować:
 
-[ ![](stacked-views-images/layout07.png "Jeśli zmniejsza się liczba uczestników, nieużywane widoki są ukryte i Wyświetl stosu dopasowanie układu, aby dopasować")](stacked-views-images/layout07.png)
+[![](stacked-views-images/layout07.png "Jeśli zmniejsza się liczba uczestników, nieużywane widoki są ukryte i Wyświetl stosu dopasowanie układu, aby dopasować")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 

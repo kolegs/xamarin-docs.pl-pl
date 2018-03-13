@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: d9859f4e705f74e490b50443870f71f049adeaf8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c5f6e6ef61e3705920770d317e4d5f680d4c8fbe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -225,7 +225,7 @@ Zarówno Mono i Xamarin.iOS instalatorów wykraczać, jeśli masz uruchamiania s
 
 Upewnij się, musisz zamknąć symulatora telefonu iPhone i ponów próbę instalacji.
 
-<a name="trampolines">
+<a name="trampolines"/>
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>Za mało trampolines typu 0
 

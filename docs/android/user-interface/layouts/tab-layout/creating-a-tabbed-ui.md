@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>Wskazówki — tworzenie z kartami interfejsu użytkownika z TabHost
 
 _Ten artykuł przeprowadzi tworzenie z kartami interfejsu użytkownika w platformy Xamarin.Android przy użyciu interfejsu API TabHost._
 
 > [!NOTE]
-> **Uwaga:** `TabHost` jest stary interfejsu API, która została zastąpiona przez firmę Google. Deweloperzy są zachęcani do kompilacji z kartami aplikacji przy użyciu [elementów nadrzędnych](~/android/user-interface/controls/action-bar.md). `ActionBar` Jest dostępna we wszystkich wersji systemu android. Została wprowadzona w 3.0 dla systemu Android (interfejs API na poziomie 11), a była powrotem przenoszone do 2.2 systemu Android (interfejs API na poziomie 8) i Android 2.3 (interfejs API na poziomie 10) w [w wersji 7 AppCompat biblioteki](http://developer.android.com/tools/support-library/features.html#v7-appcompat), które są dostępne dla platformy Xamarin.Android przy użyciu [Xamarin Biblioteka obsługi systemu android - 7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu.
+> `TabHost` to interfejs API stare, która została zastąpiona przez firmę Google. Deweloperzy są zachęcani do kompilacji z kartami aplikacji przy użyciu [elementów nadrzędnych](~/android/user-interface/controls/action-bar.md). `ActionBar` Jest dostępna we wszystkich wersji systemu android. Została wprowadzona w 3.0 dla systemu Android (interfejs API na poziomie 11), a była powrotem przenoszone do 2.2 systemu Android (interfejs API na poziomie 8) i Android 2.3 (interfejs API na poziomie 10) w [w wersji 7 AppCompat biblioteki](http://developer.android.com/tools/support-library/features.html#v7-appcompat), które są dostępne dla platformy Xamarin.Android przy użyciu [Xamarin Biblioteka obsługi systemu android - 7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu.
 
 Ten artykuł przeprowadzi tworzenie z kartami interfejsu użytkownika w platformy Xamarin.Android przy użyciu `TabHost` interfejsu API. Jest to starsza interfejsu API, która jest dostępna we wszystkich wersjach systemu android. W tym przykładzie aplikacja zostanie utworzona z trzema kartami z logiką dla każdej karty są hermetyzowane w działaniu.
 Poniższy zrzut ekranu znajduje się przykład aplikacji, która zostanie utworzona:
 
 ![Zrzut ekranu aplikacji z wieloma kartami](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>Tworzenie aplikacji
 
@@ -61,7 +60,7 @@ Pierwszy teraz zaktualizować plik układu **Resources/Layout/Main.axml** który
 
 Poniższy zrzut ekranu przedstawia układ w Projektancie Xamarin:
 
-[![Zrzut ekranu przedstawiający układu TabHost w Projektancie Xamarin](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![Zrzut ekranu przedstawiający układu TabHost w Projektancie Xamarin](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 TabHost musi mieć dwa widoki podrzędnych w nim: `TabWidget` i `FrameLayout`. Położenie `TabWidget` i `FrameLayout` pionie wewnątrz `TabHost`, `LinearLayout` jest używany. FrameLayout jest, gdzie dla każdej karty należy wstawić zawartość, która jest pusta ponieważ `TabHost` zostanie automatycznie osadzić każde działanie w czasie wykonywania. Istnieje kilka reguł, które muszą być spełnione po przejściu do tworzenia układu dla interfejsów użytkownika z kartami:
 
@@ -203,7 +202,6 @@ Uruchom aplikację. Aplikacja powinna przypominać zrzucie ekranu pokazano na po
 To już wszystko! Został utworzony z kartami aplikacji, która zapewnia łatwy sposób przejdź do różnych części aplikacji.
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

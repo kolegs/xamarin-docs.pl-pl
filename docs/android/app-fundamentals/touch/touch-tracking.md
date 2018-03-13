@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 53e972211ce506b6bf32ee4785c853982528d92e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e90f49ba9aa217659e20d4bef1fc826fe085fa7f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="multi-touch-finger-tracking"></a>Obsługa wielodotyku palca śledzenia
 
@@ -192,7 +192,7 @@ public override bool OnTouchEvent(MotionEvent args)
 
 Ten typ przetwarzania umożliwia [FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint) program, aby śledzić poszczególne palców i rysowanie wyników na ekranie:
 
-[![Zrzut ekranu z przykładu FingerPaint](touch-tracking-images/image01.png)](touch-tracking-images/image01.png)
+[![Zrzut ekranu z przykładu FingerPaint](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
 Teraz przedstawiono sposób śledzenia poszczególnych palców na ekranie i odróżnić je.
 

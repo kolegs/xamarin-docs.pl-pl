@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Licencjonowanie usług Google
 
@@ -26,7 +26,7 @@ Licencjonowanie Google jest bezpieczne, w tym każdego odpowiedzi jest podpisany
 
 Aplikacja, która została zaimplementowana licencjonowania Google wysyła żądanie do usługi hostowanej przez aplikację ze sklepu Google Play na urządzeniu. Google Play wysyła następnie żądanie do serwera licencji Google, która odpowiada ze stanem licencji: 
 
-[ ![Diagram przepływu pracy serwera licencjonowania](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![Diagram przepływu pracy serwera licencjonowania](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 Na powyższym diagramie przedstawiono tego przepływu pracy: 
 
@@ -36,7 +36,6 @@ Na powyższym diagramie przedstawiono tego przepływu pracy:
 
 Usługa licencjonowania Google również jest kluczowym elementem APK rozszerzenia plików, (które zostały omówione w dalszej części tego dokumentu). Pliki rozszerzeń APK wykorzystują Google licencjonowania usługi można uzyskać adresy URL plików rozszerzeń, które zostaną pobrane.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Wymagania
 

@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Wskazówki — Zapisywanie stanu działania
 
@@ -22,7 +22,7 @@ _Firma Microsoft ma objętych teorii za Zapisywanie stanu w przewodniku cyklu ż
 
 Umożliwia otwarcie **ActivityLifecycle_Start** projektu (w [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) przykładowe), skompiluj go i uruchom go. Jest to bardzo proste projekt, który ma dwa działania, aby zademonstrować cyklu życia działania i jak są nazywane różnych metod cyklu życia. Po uruchomieniu aplikacji na ekranie `MainActivity` wyświetleniem: 
 
-[ ![Działania A ekranu](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![Działania A ekranu](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>Wyświetlanie stanu przejścia
 
@@ -48,7 +48,7 @@ Po kliknięciu pozycji **Start B działania** przycisku, widzimy *działania A* 
 
 W związku z tym *działania B* pracy i wyświetlić zamiast *działania A*: 
 
-[ ![Ekran działania B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![Ekran działania B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 Po kliknięciu pozycji **ponownie** przycisku *działania B* zostanie zniszczony i *działania A* wznawiania: 
 
@@ -62,7 +62,7 @@ Po kliknięciu pozycji **ponownie** przycisku *działania B* zostanie zniszczony
 ```
 ### <a name="adding-a-click-counter"></a>Dodawanie liczników kliknij
 
-Następnie wdrożymy Zmień aplikacji, tak aby mamy zlicza i wyświetla liczbę razy kliknięciu przycisku. Po pierwsze możemy dodać `_counter` zmienna wystąpienia na `MainActivity`: 
+Następnie wdrożymy Zmień aplikacji, tak aby mamy zlicza i wyświetla liczbę razy kliknięciu przycisku. Po pierwsze możemy dodać `_counter` zmienna wystąpienia na `MainActivity`:
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 Gdy budujemy i ponownie uruchom aplikację, nowe pojawia się przycisk zwiększa i wyświetla wartość `_counter` przy każdym kliknięciu:
 
-[![Dodaj liczba touch](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![Dodaj liczba touch](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 Jednak gdy firma Microsoft obracania urządzenia do tryb poziomo, ta liczba jest utracone:
 
-[ ![Obracanie na poziomą Ustawia liczbę wstecz od zera.](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![Obracanie na poziomą Ustawia liczbę wstecz od zera.](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 Badanie danych wyjściowych aplikacji, widzimy, który *działania A* została wstrzymana, zatrzymana, zniszczona, odtworzone, ponowne uruchomienie, a następnie wznowiona podczas obrotu pionowy tryb poziomo: 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 Tworzenie i ponownie uruchom aplikację, a następnie kliknij przycisk drugi kilka razy. Firma Microsoft obracania urządzenia do tryb poziomo, zostaną zachowane licznik!
 
-[ ![Obracanie ekranu pokazuje liczbę cztery zachowane](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![Obracanie ekranu pokazuje liczbę cztery zachowane](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 Spójrzmy w oknie danych wyjściowych, aby zobaczyć, co się stało:

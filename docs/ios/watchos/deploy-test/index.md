@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deployment-and-testing"></a>Wdrażanie i testowanie
 
@@ -23,7 +23,7 @@ Czy podczas wdrażania w teście czujki lub przekazywania do sklepu z aplikacjam
 - W **Centrum deweloperów systemu iOS**:
   - [Identyfikatory aplikacji](#App_IDs) zostały utworzone.
   - [Grupy aplikacji](#App_Groups) skonfigurowane (jeśli jest to wymagane).
-  - [*Dystrybucji* profile inicjowania obsługi administracyjnej](#Provisioning_Profiles) utworzony.
+  - Utworzone profile inicjowania obsługi administracyjnej dystrybucji
 
 - W rozwiązaniu:
 
@@ -36,6 +36,7 @@ Czy podczas wdrażania w teście czujki lub przekazywania do sklepu z aplikacjam
   - [Wdrażanie na Apple Watch testowania](~/ios/watchos/deploy-test/device.md), lub
   - [Przekaż do sklepu z aplikacjami](~/ios/watchos/deploy-test/appstore.md).
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>Identyfikatory aplikacji
 
@@ -65,7 +66,7 @@ Należy pamiętać, że niektóre funkcje nie można użyć z symbolem wieloznac
 
 Do dystrybucji tylko należy utworzyć jeden dystrybucji profil udostępniania dla symbolu wieloznacznego identyfikator aplikacji.
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>Grupy aplikacji
 
@@ -102,8 +103,6 @@ Kliknij dwukrotnie, aby edytować **Entitlements.plist** pliku w tych projektach
 .![Edytor Entitlements.plist](images/entitlements-plist-sml.png)
 
 Czy **nie** Włącz uprawnień w projekcie czujki aplikacji. Nie jest to wymagane w czujki, sama.
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

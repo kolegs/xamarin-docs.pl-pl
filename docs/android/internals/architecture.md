@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -22,13 +22,12 @@ Można używać [systemu](http://msdn.microsoft.com/en-us/library/system.aspx), 
 
 W systemie Android, większość funkcji systemu, takie jak Audio, grafiki, OpenGL i telefonii nie są dostępne bezpośrednio do natywnych aplikacji, są dostępne tylko za pośrednictwem systemu Android API języka Java Runtime znajdującej się w jednym z [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * przestrzenie nazw lub [Android](https://developer.xamarin.com/api/namespace/Android/). * przestrzeni nazw. Architektura jest około następująco:
 
-[![Diagram Mono i GRAFIK powyżej jądra i poniżej .NET/Java + powiązania](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![Diagram Mono i GRAFIK powyżej jądra i poniżej .NET/Java + powiązania](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Deweloperom platformy Xamarin.Android dostęp do różnych funkcji w systemie operacyjnym, przez wywoływanie interfejsów API architektury .NET, który wiedzieli, (dla niskiego poziomu dostępu) lub przy użyciu klas w przestrzenie nazw systemu Android, która zapewnia mostka do interfejsów API języka Java, które są dostępne w środowisko wykonawcze systemu Android.
 
 Więcej informacji na sposób komunikacji klasy systemu Android z klasy systemu Android środowiska uruchomieniowego [projekt interfejsu API](~/android/internals/api-design.md) dokumentu.
 
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Pakiety aplikacji
 
@@ -44,7 +43,6 @@ Pakiety aplikacji systemu android są kontenerami ZIP z *apk* rozszerzenia pliku
 Również zawierać aplikacji platformy Xamarin.Android *Android wywoływane otoki* umożliwia systemu Android do wywołania wewnątrz kodu zarządzanego.
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Wywoływane otoki dla systemu android
 
@@ -67,7 +65,6 @@ Odwołania do globalnego może zostać jawnie zwolnione przez wywołanie metody 
 Należy zachować ostrożność podczas usuwanie zarządzanego wywoływane otoki, jeśli wystąpienie mogą przypadkowo udostępniać wątków jako usuwanie wystąpienia będzie miało wpływ na odwołania z innych wątków. Maksymalna bezpieczeństwa, tylko `Dispose()` wystąpień, które zostały przydzielone za pośrednictwem `new` *lub* z metody która będzie *wiedzieć* zawsze przydzielić nowych wystąpień i wystąpień nie pamięci podręcznej, które mogą spowodować wystąpienie przypadkowe udostępnianie między wątkami.
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Wywoływana otoka podklasy zarządzane
 
@@ -76,7 +73,6 @@ Wywoływana otoka zarządzanych podklasy są miejsca zamieszkania może całą l
 Jak zarządzać wywoływane otoki zarządzane podklasy wywoływana otoka również zawierać odwołania do globalnej, dostępny za pośrednictwem [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) właściwości. Tak samo jak z zarządzanego wywoływane otoki, odwołań do globalnych można jawnie zwolniona przez wywołanie metody [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
 W przeciwieństwie do zarządzanego wywoływane otoki *szczególną uwagę na to* należy podjąć w celu usuwania wystąpień, jako *Dispose()*używać wystąpienia spowoduje przerwanie mapowanie między wystąpienia Java (wystąpienia Wywoływana otoka systemu android) i zarządzanego obiektu.
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Aktywacja Java
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 Tylko *Dispose()* z zarządzanych podklasy wywoływana otoka, gdy wiesz, że obiekt Java nie będą już używane lub podklasy nie zawiera żadnych danych wystąpienia i a *(IntPtr, JniHandleOwnership)* podano konstruktora.
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>Uruchamianie aplikacji
 

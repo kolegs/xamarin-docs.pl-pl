@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ba5249a275d3aa695ccc6527805c56907bbda0ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enhanced-user-notifications"></a>Powiadomienia użytkowników
 
@@ -168,11 +168,11 @@ Aby zapewnić wymagane uprawnienia, wykonaj następujące czynności:
 1. Kliknij dwukrotnie `Entitlements.plist` w pliku **konsoli rozwiązania** go otworzyć do edycji.
 2. Przełącz się do **źródła** widoku: 
 
-    [ ![](enhanced-user-notifications-images/setup01.png "Wyświetl źródło")](enhanced-user-notifications-images/setup01.png)
+    [![](enhanced-user-notifications-images/setup01.png "Wyświetl źródło")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. Kliknij przycisk  **+**  przycisk, aby dodać nowy klucz.
 4. Wprowadź `aps-environment` dla **właściwości**, pozostaw **typu** jako `String` , a następnie wprowadź albo `development` lub `production` dla **wartość**: 
 
-    [ ![](enhanced-user-notifications-images/setup02.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Zapisz zmiany w pliku.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,7 +181,7 @@ Aby zapewnić wymagane uprawnienia, wykonaj następujące czynności:
 3. Kliknij przycisk  **+**  przycisk, aby dodać nowy klucz.
 4. Wprowadź `aps-environment` dla **właściwości**, pozostaw **typu** jako `String` , a następnie wprowadź albo `development` lub `production` dla **wartość**: 
 
-    [ ![](enhanced-user-notifications-images/setup02w.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02w.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Zapisz zmiany w pliku.
 
 -----
@@ -190,7 +190,7 @@ Aby zapewnić wymagane uprawnienia, wykonaj następujące czynności:
 
 Jeśli aplikacja będzie wysyłania i odbierania powiadomień zdalnego, nadal trzeba będzie wykonać _tokenu rejestracji_ przy użyciu istniejącego `UIApplication` interfejsu API. Rejestracja wymaga podłączenia urządzenia do aktywnego połączenia dostępu do sieci usługi APNs, które wygeneruje niezbędne token, który zostanie wysłany do aplikacji. Aplikacja potrzebuje do przesyłania dalej ten token do aplikacji po stronie serwera dewelopera zarejestrować powiadomień zdalnego:
 
-[ ![](enhanced-user-notifications-images/token01.png "Token rejestracji — omówienie")](enhanced-user-notifications-images/token01.png)
+[![](enhanced-user-notifications-images/token01.png "Token rejestracji — omówienie")](enhanced-user-notifications-images/token01.png#lightbox)
 
 Aby zainicjować wymagana rejestracja, należy użyć następującego kodu:
 
@@ -200,7 +200,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 Token, który są wysyłane do aplikacji po stronie serwera dewelopera potrzebne do uwzględnienia jako część ładunek powiadomienia tego get w wysłanych z serwera do usługi APNs, podczas wysyłania powiadomień zdalnego:
 
-[ ![](enhanced-user-notifications-images/token02.png "Token wchodzącego w skład ładunek powiadomienia")](enhanced-user-notifications-images/token02.png)
+[![](enhanced-user-notifications-images/token02.png "Token wchodzącego w skład ładunek powiadomienia")](enhanced-user-notifications-images/token02.png#lightbox)
 
 Token działa jako klucz, który wiąże ze sobą, powiadomienia i otwarty lub Odpowiedz na powiadomienie aplikacji.
 
@@ -519,7 +519,7 @@ Przekazany w `UNNotificationResponse` klasa ma `ActionIdentifier` właściwość
 
 Podczas pracy ze zdalnego powiadomienia _rozszerzenia usługi_ sposób, aby włączyć szyfrowanie na całej trasie wewnątrz ładunek powiadomienia. Rozszerzenia usługi są interfejsu użytkownika rozszerzeniem (dostępne w systemie iOS 10) uruchomionymi w tle z głównym celem rozbudować lub wymiana widocznej zawartości powiadomienia, zanim są prezentowane użytkownika. 
 
-[ ![](enhanced-user-notifications-images/extension01.png "Omówienie rozszerzenia usługi")](enhanced-user-notifications-images/extension01.png)
+[![](enhanced-user-notifications-images/extension01.png "Omówienie rozszerzenia usługi")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 Rozszerzenia usługi są przeznaczone do szybkiego uruchamiania oraz podano tylko krótkim czas wykonywania przez system. W przypadku, gdy rozszerzenie usługi nie powiedzie się jej zadania w przydzielonym czasie, rezerwowy metoda zostanie wywołana. W przypadku niepowodzenia powrotu oryginalnego powiadomień zawartości będzie widoczny dla użytkownika.
 
@@ -538,13 +538,13 @@ Aby zaimplementować rozszerzenia usługi w aplikacji platformy Xamarin.iOS, wyk
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **konsoli rozwiązania** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **rozszerzenia usługi powiadomień** i kliknij przycisk **dalej** przycisk: 
 
-    [ ![](enhanced-user-notifications-images/extension02.png "Wybierz rozszerzenia usługi powiadomień")](enhanced-user-notifications-images/extension02.png)
+    [![](enhanced-user-notifications-images/extension02.png "Wybierz rozszerzenia usługi powiadomień")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **dalej** przycisk: 
 
-    [ ![](enhanced-user-notifications-images/extension03.png "Wprowadź nazwę rozszerzenia")](enhanced-user-notifications-images/extension03.png)
+    [![](enhanced-user-notifications-images/extension03.png "Wprowadź nazwę rozszerzenia")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. Dostosuj **Nazwa projektu** i/lub **Nazwa rozwiązania** wymagane, a następnie kliknij przycisk **Utwórz** przycisk: 
 
-    [ ![](enhanced-user-notifications-images/extension04.png "Zmień nazwę projektu i/lub nazwa rozwiązania")](enhanced-user-notifications-images/extension04.png) 
+    [![](enhanced-user-notifications-images/extension04.png "Zmień nazwę projektu i/lub nazwa rozwiązania")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -552,7 +552,7 @@ Aby zaimplementować rozszerzenia usługi w aplikacji platformy Xamarin.iOS, wyk
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
 3. Wybierz **iOS** > **rozszerzenia** > **rozszerzenia usługi powiadomień**: 
 
-    [ ![](enhanced-user-notifications-images/extension01w.png "Wybierz rozszerzenia usługi powiadomień")](enhanced-user-notifications-images/extension01w.png)
+    [![](enhanced-user-notifications-images/extension01w.png "Wybierz rozszerzenia usługi powiadomień")](enhanced-user-notifications-images/extension01w.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **OK** przycisku.
 
 -----

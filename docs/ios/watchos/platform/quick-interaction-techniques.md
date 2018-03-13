@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>Szybkie techniki interakcji watchOS 3
 
@@ -77,7 +77,7 @@ W kodzie Odpowiedz na akcję aparatu rozpoznawania do obsługi gestów inicjowan
 
 Odrębny gestów akcji jest wywoływana po rozpoznaniu gestu i stan (`WKGestureRecognizerState`) jest przypisany jako:
 
-[ ![](quick-interaction-techniques-images/quick01.png "Stany gestu odrębny")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "Stany gestu odrębny")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 Wszystkie gesty odrębny uruchamiane `Possible` stanu i przejście do albo `Failed` lub `Recognized` stanu. Gdy za pomocą gestów odrębny, dewelopera zazwyczaj nie uwzględniać bezpośrednio ze stanem. Zamiast tego opierają się na akcję wywoływany po rozpoznaniu gestu tylko.
 
@@ -85,7 +85,7 @@ Wszystkie gesty odrębny uruchamiane `Possible` stanu i przejście do albo `Fail
 
 Ciągłe gestów są nieco inne niż odrębny gestów, w którym akcja jest wywołana wiele razy, jak rozpoznano gestu:
 
-[ ![](quick-interaction-techniques-images/quick02.png "Stany gestu ciągłej")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "Stany gestu ciągłej")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 Ponownie, ciągłe gestów rozpoczyna się `Possible` stanu, ale postępu za pośrednictwem wielu aktualizacji. W tym miejscu dewelopera należy wziąć pod uwagę stanu przez aparat rozpoznawania i aktualizacji w Interfejsie użytkownika aplikacji podczas `Changed` fazy, dopóki nie zostanie ostatecznie gestu `Recognized` lub `Canceled`.
 
@@ -168,7 +168,7 @@ Apple opuścił go do projektanta, aby określić, jak liczby obrotu odpowiadaj�
 
 Znak (`+/-`) obrotowej różnicowych wskazuje kierunek, czy użytkownik jest włączenie wierzchołek cyfrowych:
 
-[ ![](quick-interaction-techniques-images/quick03.png "Znak obrotowej różnicowych wskazuje kierunek, czy użytkownik jest włączenie wierzchołek cyfrowych")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "Znak obrotowej różnicowych wskazuje kierunek, czy użytkownik jest włączenie wierzchołek cyfrowych")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 Jeśli użytkownik jest przewijanie w górę WatchKit zwróci delty dodatnią i przewijanie w dół, następnie ujemna delty zostaną zwrócone, niezależnie od tego, jakie orientacji w użytkownik sobie czujki w.
@@ -189,15 +189,15 @@ Jest developer do określania, kiedy ich element niestandardowy interfejs musi m
 
 Standardowy sposób, że użytkownik przechodzi widoku tabeli w aplikacji watchOS jest przewiń do żądanego elementu danych, wybierz określonego wiersza, aby wyświetlić widok szczegółowy, naciśnij przycisk Wstecz, po zakończeniu wyświetlanie szczegółów i powtórz ten proces dla innych informacji który y są zainteresowani z wewnątrz tabeli:
 
-[ ![](quick-interaction-techniques-images/quick04.png "Przenoszenie między tabelą i widok szczegółów")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "Przenoszenie między tabelą i widok szczegółów")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 Nowy do watchOS 3 dewelopera można włączyć stronicowanie w pionie na ich kontrolki widoku tabeli. Ta funkcja jest włączona użytkownik może przewiń do Znajdź wiersz tabeli widoku i wybierz wiersz, aby wyświetlić jego szczegóły jako przed. Jednak ich można teraz szybko przesuń zapasowej wybierz następnego wiersza w tabeli lub w dół, aby wybrać poprzedniego wiersza (lub użyć wierzchołek cyfrowego), wszystko to bez konieczności powrócić do widoku tabeli najpierw:
 
-[ ![](quick-interaction-techniques-images/quick05.png "Przenoszenie między tabelą i widok szczegółów i szybko przesuwając w górę i w dół do przechodzenia między innych wierszy")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "Przenoszenie między tabelą i widok szczegółów i szybko przesuwając w górę i w dół do przechodzenia między innych wierszy")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 Aby włączyć ten tryb, Otwórz aplikację watchOS scenorysu w środowisku Xcode do edycji, wybierz widok tabeli i sprawdź **pionowy stronicowania szczegółów** wyboru:
 
-[ ![](quick-interaction-techniques-images/quick06.png "Zaznacz pole wyboru pionowy stronicowania szczegółów")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "Zaznacz pole wyboru pionowy stronicowania szczegółów")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 Upewnij się, że tabela używa Segues Aby wyświetlić widok szczegółowy i zapisać zmiany do scenorysu i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji.
 
@@ -313,7 +313,7 @@ Apple sugeruje szukasz sposobów, aby połączyć wszystkie nowe funkcje interak
 
 W przypadku, gdy w szczególności staje się on problemu jest po wykonanie dowolnego typu połączenia sieciowego lub udostępnianie informacji z aplikacji iPhone jego pomocnika aplikacji czujki. Często może to prowadzić do wskaźnika oczekiwania, podczas transakcji, która nie jest pożądane podczas szybkiego interakcji. Wykonaj poniższy przykład:
 
-[ ![](quick-interaction-techniques-images/quick07.png "Diagram aplikacji czujki podczas połączenia sieciowego oraz udostępniania tych informacji z jego pomocnika iPhone aplikacji")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "Diagram aplikacji czujki podczas połączenia sieciowego oraz udostępniania tych informacji z jego pomocnika iPhone aplikacji")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. Użytkownik wybiera element, aby kupić na czujki.
 2. One naciśnij przycisk Kup.
@@ -325,7 +325,7 @@ Od czasu naciśnięciu przycisku Kup do czasu ukończenia transakcji mają one i
 
 Przy użyciu modelu sugerowane firmy Apple, Przyjrzyjmy się ponownie tej samej interakcji szybkie:
 
-[ ![](quick-interaction-techniques-images/quick08.png "Diagram modelu sugerowane jabłek")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "Diagram modelu sugerowane jabłek")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. Użytkownik wybiera element, aby kupić na czujki.
 2. One naciśnij przycisk Kup.

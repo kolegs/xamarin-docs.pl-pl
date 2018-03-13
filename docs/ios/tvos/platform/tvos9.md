@@ -3,16 +3,16 @@ title: Wprowadzenie do systemu tvOS 9
 description: "W tym artykule przedstawiono wszystkich nowych i zmodyfikowanych interfejsów API i funkcje dostępne w systemu tvOS 9 dla deweloperów Xamarin.tvOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>Wprowadzenie do systemu tvOS 9
 
@@ -91,7 +91,7 @@ Używanie programu Siri zdalnego jest obecnie dostępny w następujących krajac
 
 Innych krajach otrzymają Apple TV zdalnego zastępujący przycisk Siri z przycisku wyszukiwania, który powoduje wyświetlenie ekranu wyszukiwania domyślne wprowadzanie tekstu do wyszukiwania:
 
-[ ![](tvos9-images/remote02.png "Używanie programu Siri zdalnego")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Używanie programu Siri zdalnego")](tvos9-images/remote02.png#lightbox)
 
 Aby uzyskać więcej informacji, zobacz nasze [Siri zdalnego oraz kontrolerów Bluetooth](~/ios/tvos/platform/remote-bluetooth.md) dokumentacji.
 
@@ -155,7 +155,7 @@ Aby uzyskać więcej informacji, zobacz nasze [Praca z nawigacji i skoncentrowa�
 
 Na ekranie Apple TV Home zostaną wyświetlone wszystkie aplikacje, które są zainstalowane i umożliwia dostęp do preferencji użytkownika:
 
-[ ![](tvos9-images/home01.png "Ekranu głównego")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "Ekranu głównego")](tvos9-images/home01.png#lightbox)
 
 Użytkownik nawiguje siatki ikon aplikacji za pomocą gestów dotykowych na komputerze zdalnym Siri, wybierz aplikację i uruchom ją przy użyciu fokus. Ikona aplikacji jest pierwszej szansy aby dużą wrażenie na potencjalne użytkownika i celu aplikacji w jednym rzutem oka skontaktować się.
 
@@ -169,7 +169,7 @@ Aby uzyskać więcej informacji, zobacz nasze [Praca z obrazów i ikon](~/ios/tv
 
 Jeśli użytkownik ma dotyczącymi aplikacji Xamarin.tvOS górny wiersz na ekranie Apple TV Narzędzia główne, duży obraz górnej półki będą wyświetlane po wybraniu aplikacji przez użytkownika. Ten obraz powinien przedstawiające funkcje aplikacji lub podaj linki bezpośrednie do jego zawartości.
 
-[ ![](tvos9-images/topshelf01.png "Górnej półki")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "Górnej półki")](tvos9-images/topshelf01.png#lightbox)
 
 Obraz górnej półki albo można podać jako pojedynczy statycznego `.png` lub `.lsr` plikiem lub mogą być tworzone dynamicznie w czasie wykonywania jako pojedynczy wiersz Focusable elementów.
 

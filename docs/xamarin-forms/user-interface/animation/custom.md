@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>Animacji niestandardowej
 
@@ -54,7 +54,7 @@ Następujące argumenty zostały określone w `Commit` metody:
 Ogólny efekt jest utworzenie animacji, które zwiększa [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwość [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) od 1 do 2, ponad 2 sekundy (2000 MS), za pomocą [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) wyjścia funkcji sterowania tempem. Zawsze zakończeniu animacji, jego `Scale` właściwości jest zmieniany na 1 i powtarza animacji.
 
 > [!NOTE]
-> **Uwaga**: równoczesnych animacji, działające niezależnie od siebie nawzajem można skonstruować przez utworzenie `Animation` obiekt każdej animacji, a następnie wywołując `Commit` metody w każdej animacji.
+> Tworząc można skonstruować równoczesnych animacji, niezależnie od siebie z systemem `Animation` obiekt każdej animacji, a następnie podczas wywoływania `Commit` metody w każdej animacji.
 
 <a name="child" />
 

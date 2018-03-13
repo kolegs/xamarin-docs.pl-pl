@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>Wyszukiwania z NSUserActivity
 
@@ -20,7 +20,7 @@ Umożliwia tworzenie w określonych części aplikacji, które można następnie
 
 Jesteś nowym użytkownikiem systemu iOS 9, `NSUserActivity` może być indeksowana (zarówno publiczne i prywatne) i przeszukiwane przez wyszukiwanie Spotlight i Safari. Oznaczając `NSUserActivity` jako można wyszukiwać i dodawanie metadanych można indeksować, działanie może być wymieniona w wynikach wyszukiwania na urządzeniu z systemem iOS.
 
-[ ![](nsuseractivity-images/apphistory01.png "Informacje o historii aplikacji")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "Informacje o historii aplikacji")](nsuseractivity-images/apphistory01.png#lightbox)
 
 Jeśli użytkownik wybierze wynik wyszukiwania, który należy do działania z aplikacji, aplikacja zostanie uruchomiona i działania opisanego przez `NSUserActivity` zostanie ponownie uruchomiony i widoczne dla użytkownika.
 
@@ -58,7 +58,7 @@ Identyfikator typu działania jest używany podczas tworzenia `NSUserActivity` w
 
 Aby utworzyć wymagane identyfikatory typu działań do obsługi tego zachowania, należy edytować **Info.plist** plików i przejdź do **źródła** widoku. Dodaj `NSUserActivityTypes` klucza i tworzenia identyfikatorów w następującym formacie:
 
-[ ![](nsuseractivity-images/type01.png "Klucz NSUserActivityTypes i wymagane identyfikatory w edytorze plist")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "Klucz NSUserActivityTypes i wymagane identyfikatory w edytorze plist")](nsuseractivity-images/type01.png#lightbox)
 
 W powyższym przykładzie utworzyliśmy jeden nowy identyfikator typu działania dla działania wyszukiwania (`com.xamarin.platform`). Podczas tworzenia własnych aplikacji, Zastąp zawartość `NSUserActivityTypes` tablicy o identyfikatorach typu działania specyficzne dla działania aplikacji obsługuje.
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 Firma Microsoft można dodać więcej szczegółów, ustawiając `ContentAttributeSet` właściwość naszych `NSUserActivity` w następujący sposób:
 
-[ ![](nsuseractivity-images/apphistory02.png "Dodawanie szczegółów wyszukiwania przegląd")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "Dodawanie szczegółów wyszukiwania przegląd")](nsuseractivity-images/apphistory02.png#lightbox)
 
 Za pomocą `ContentAttributeSet` można tworzyć wyniki wyszukiwania sformatowanego, które zachęcić użytkownika końcowego do interakcji z użytkownikiem.
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 Należy pamiętać, że jest używany do odpowiadania na żądania przekazaniem tego samego metodę zastępującą. Teraz, gdy użytkownik kliknie łącze z naszej aplikacji w wynikach wyszukiwania Spotlight, aplikacji zostanie przesunięte na pierwszy plan (lub pracy, jeśli nie jest jeszcze uruchomiona) i zawartości, nawigacji lub funkcji reprezentowany przez łącze będą wyświetlane:
 
-[ ![](nsuseractivity-images/apphistory03.png "Przywróć stan poprzedniego wyszukiwania")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "Przywróć stan poprzedniego wyszukiwania")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

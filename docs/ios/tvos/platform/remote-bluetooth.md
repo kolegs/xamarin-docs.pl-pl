@@ -3,16 +3,16 @@ title: "Używanie programu Siri zdalnego i kontrolerów Bluetooth"
 description: "W tym artykule omówiono pomocniczych w aplikacjach Xamarin.tvOS nowe kontrolery gier Siri Remote i Bluetooth."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5d74479e995c5c6ba6f6fd9fd23fbca78718ee31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Używanie programu Siri zdalnego i kontrolerów Bluetooth
 
@@ -23,7 +23,7 @@ Użytkownicy aplikacji Xamarin.tvOS nie będzie interakcja jego interfejsu bezpo
 
 Jeśli aplikacja jest gier, można opcjonalnie utworzyć wsparcie dla strony 3, wprowadzone dla systemu iOS (MIF) [kontrolery gier Bluetooth](#Bluetooth-Game-Controllers) również Twojej aplikacji.
 
-[ ![](remote-bluetooth-images/intro01.png "Bluetooth zdalnego i kontroler gier")](remote-bluetooth-images/intro01.png)
+[![](remote-bluetooth-images/intro01.png "Bluetooth zdalnego i kontroler gier")](remote-bluetooth-images/intro01.png#lightbox)
 
 W tym artykule opisano [zdalnego Siri](#The-Siri-Remote), [dotykać powierzchni gestów](#Touch-Surface-Gestures) i [przycisków zdalnego Siri](#Siri-Remote-Buttons) i pokazuje, jak pracować z nimi za pośrednictwem [gestów i Scenorys](#Gestures-and-Storyboards), [gestów i kod](#Gestures-and-Code) i [obsługi zdarzeń niskiego poziomu](#Low-Level-Event-Handling). Ponadto omówiono [Praca z kontrolery gier](#Working-with-Game-Controllers) w aplikacji Xamarin.tvOS.
 
@@ -35,7 +35,7 @@ Sposób głównego, który użytkownicy będą interakcji z Apple TV, a aplikacj
 
 Twoje żądanie jako Deweloper aplikacji systemu tvOS jest tworzenie interfejsu użytkownika szybkie, łatwe w użyciu i wizualny, który korzysta z powierzchni touch zdalnego Siri, przyspieszeniomierza Żyroskop i przycisków.
 
-[ ![](remote-bluetooth-images/remote01.png "Używanie programu Siri zdalnego")](remote-bluetooth-images/remote01.png)
+[![](remote-bluetooth-images/remote01.png "Używanie programu Siri zdalnego")](remote-bluetooth-images/remote01.png#lightbox)
 
 Używanie programu Siri zdalnego ma następujące funkcje i oczekiwanego użycia w aplikacji systemu tvOS:
 
@@ -128,14 +128,14 @@ Aby dodać aparat rozpoznawania gestów, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik i otworzyć do edycji w Projektancie interfejsu.
 2. Przeciągnij **wybierz aparat rozpoznawania gestów** z **biblioteki** i upuść go w widoku: 
 
-    [ ![](remote-bluetooth-images/storyboard01.png "Aparat rozpoznawania gestów Tap")](remote-bluetooth-images/storyboard01.png)
+    [![](remote-bluetooth-images/storyboard01.png "Aparat rozpoznawania gestów Tap")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Sprawdź **wybierz** w **przycisk** sekcji **inspektora atrybutu**: 
 
-    [ ![](remote-bluetooth-images/storyboard02.png "Sprawdź wybierz")](remote-bluetooth-images/storyboard02.png)
+    [![](remote-bluetooth-images/storyboard02.png "Sprawdź wybierz")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Wybierz** oznacza gestu będzie odpowiadać na kliknięcie użytkownika **dotykać powierzchni** na komputerze zdalnym Siri. Istnieje również możliwość reagowania na **Menu**, **Odtwórz/Wstrzymaj**, **się**, **dół**, **lewej** i **Prawej** przycisków.
 5. Następnie okablować się **akcji** z **wybierz aparat rozpoznawania gestów** i nadaj mu `TouchSurfaceClicked`: 
 
-    [ ![](remote-bluetooth-images/storyboard03.png "Aparat rozpoznawania gestów naciśnij akcji")](remote-bluetooth-images/storyboard03.png)
+    [![](remote-bluetooth-images/storyboard03.png "Aparat rozpoznawania gestów naciśnij akcji")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac.
 
 Edytuj kontroler widoku (przykład `FirstViewController.cs`) i Dodaj następujący kod, aby obsłużyć gestu inicjowane:
@@ -314,7 +314,7 @@ Jak `UITouch` zdarzenia, jeśli musisz wdrożyć dowolną z `UIPress` zastąpien
 
 Oprócz standardowych zdalnego Siri dostarczaną z programem Apple TV, strona 3, wprowadzone dla systemu iOS można łączyć się z Apple TV i użyć do kontrolowania aplikacji Xamarin.tvOS kontrolery gier Bluetooth (MIF).
 
-[ ![](remote-bluetooth-images/game01.png "Kontrolery gier Bluetooth")](remote-bluetooth-images/game01.png)
+[![](remote-bluetooth-images/game01.png "Kontrolery gier Bluetooth")](remote-bluetooth-images/game01.png#lightbox)
 
 Kontrolery gier może służyć do zwiększenia gry i zapewnienia w pewnym sensie immersyjną w grę. One mogą służyć do kontrolowania standardowy interfejs Apple TV, więc użycie nie ma w celu przełączania się między zdalnego i kontroler.
 
@@ -425,7 +425,7 @@ Apple ma kilka wymagań, które muszą zostać spełnione w przypadku aplikacji 
 
 Aby włączyć obsługę kontrolera gry w aplikacji Xamarin.tvOS, kliknij dwukrotnie `Info.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji:
 
-[ ![](remote-bluetooth-images/game02.png "Edytor Info.plist")](remote-bluetooth-images/game02.png)
+[![](remote-bluetooth-images/game02.png "Edytor Info.plist")](remote-bluetooth-images/game02.png#lightbox)
 
 W obszarze **kontrolera gry** sekcji, zaznacz przez **włączyć kontrolery gier**, następnie sprawdź wszystkich typów kontrolera gier, które będą obsługiwane przez aplikację.
 

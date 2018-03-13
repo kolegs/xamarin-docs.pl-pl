@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6b4958c6a82b824f19cc041b124e79034eba4c86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Publikowanie do sklepu z aplikacjami firmy Amazon
 
 Program dystrybucji aplikacji mobilnej Amazon umożliwia deweloperom aplikacji mobilnej publikowanie ich aplikacji w portalu Amazon. W tej sekcji omówiono pokrótce Amazon sklepu z aplikacjami dla systemu Android. 
 
-[![Sklep z aplikacjami firmy Amazon ekranu](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png)
+[![Sklep z aplikacjami firmy Amazon ekranu](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon limit rozmiaru APKs. Jednak jeśli APK jest większy niż 30MB, następnie użyje FTP dla dystrybucji zamiast portalu dystrybucji aplikacji mobilnych firmy Amazon.
 
-<a name="Submitting_Apps:_Binary_Info" />
 
 ## <a name="submitting-apps-binary-info"></a>Przesyłanie aplikacji: Informacje o binarne
 
@@ -34,7 +33,6 @@ Przesyłanie aplikacji do sklepu z aplikacjami firmy Amazon jest procesem podobn
 -  Mogą być udostępniane aktualizacje do pięciu wideo.
 
 
-<a name="Approval_Process" />
 
 ## <a name="approval-process"></a>Proces zatwierdzania
 

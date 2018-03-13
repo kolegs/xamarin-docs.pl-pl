@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eb310b13a97e345bab68bf4e878f81a6187da691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handling-rotation"></a>Obsługa obrotu
 
 _W tym temacie opisano, jak obsługiwać zmiany orientacji urządzenia platformie Xamarin.Android. Uwzględniono również sposób pracy z systemem Android zasobów można automatycznie załadować zasobów w orientacji określonego urządzenia, jak programowo obsługi orientacji zmiany._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -30,7 +29,6 @@ W tym przewodniku sprawdza następujące tematy orientacji:
 
 -   **Programowe obrotu układu** &ndash; jak programowo Dodaj formanty, a także sposób obsługi zmiany orientacji ręcznie.
 
-<a name="Handling_Rotation_Declaratively_with_Layouts" />
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Obsługa obrotu deklaratywnie układy
 
@@ -41,13 +39,12 @@ Obejmuje to obsługę:
 
 -   *Zasoby obiektów drawable* &ndash; określenie, które drawables są ładowane do każdej orientacji.
 
-<a name="Layout_Resources" />
 
 ### <a name="layout-resources"></a>Układ zasobów
 
 Domyślnie pliki XML dla systemu Android (AXML) zawarte w **zasobów/układ** folderu są używane do renderowania widoków dla działania. Ten folder zasobów są używane dla orientacji pionowej, zarówno i poziomej, jeśli żadne zasoby dodatkowe układu są udostępniane specjalnie z myślą o orientacji poziomej. Należy wziąć pod uwagę struktury projektu utworzonych przez domyślny szablon projektu:
 
-[ ![Domyślnej struktury szablonu projektu](handling-rotation-images/00.png)](handling-rotation-images/00.png)
+[![Domyślnej struktury szablonu projektu](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
 Ten projekt tworzy pojedynczy **Main.axml** w pliku **zasobów/układ** folderu. Podczas działania `OnCreate` metoda jest wywoływana, nadyma on zdefiniowany w widoku **Main.axml,** która deklaruje przycisku, jak pokazano w poniższym XML:
 
@@ -67,9 +64,8 @@ Ten projekt tworzy pojedynczy **Main.axml** w pliku **zasobów/układ** folderu.
 
 Jeśli urządzenie jest obracana w orientacji poziomej, działanie w `OnCreate` metoda jest wywoływana ponownie i tym samym **Main.axml** zwiększony pliku, jak pokazano na poniższym zrzucie ekranu:
 
-[ ![Sam, ale w ekranie orientacji poziomej](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png)
+[![Sam, ale w ekranie orientacji poziomej](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
-<a name="Orientation-Specific_Layouts" />
 
 #### <a name="orientation-specific-layouts"></a>Układy specyficzne dla orientacji
 
@@ -105,9 +101,8 @@ Jeśli folder o nazwie ziemi układu, który zawiera dodatkowe **Main.axml** pli
 
 Uruchomienie tego kodu i obracanie urządzeń z pionowej na poziomą przedstawiono nowe ładowanie XML, jak pokazano poniżej:
 
-[ ![Zrzuty ekranu pionowej i poziomej drukowania w trybie portret](handling-rotation-images/02.png)](handling-rotation-images/02.png)
+[![Zrzuty ekranu pionowej i poziomej drukowania w trybie portret](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
-<a name="Drawable_Resources" />
 
 ### <a name="drawable-resources"></a>Obiektów drawable zasobów
 
@@ -126,15 +121,13 @@ Na przykład projekt zawiera obraz o nazwie Monkey.png w **obiektów drawable/za
 
 Umożliwia dalsze przyjęto założenie, że inna wersja **Monkey.png** znajduje się w obszarze **zasobów/obiektów drawable ziemi**. Tylko jak z plikami układu, gdy urządzenie jest obrócony zmian obiektów drawable dla danego orientacji, jak pokazano poniżej:
 
-[ ![Inna wersja Monkey.png wyświetlany w trybie portret i orientacji poziomej](handling-rotation-images/03.png)](handling-rotation-images/03.png)
+[![Inna wersja Monkey.png wyświetlany w trybie portret i orientacji poziomej](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
-<a name="Handling_Rotation_Programmatically" />
 
 ## <a name="handling-rotation-programmatically"></a>Obsługa obrotu programowo
 
 Czasami definiujemy układów w kodzie. Może to nastąpić z różnych powodów, takich jak ograniczeń technicznych, preferencji Deweloper itd. Gdy firma Microsoft Dodaj formanty programowo aplikacji musi ręcznie konta dla orientacji urządzenia, które odbywa się automatycznie po używamy zasobów XML.
 
-<a name="Adding_Controls_in_Code" />
 
 ### <a name="adding-controls-in-code"></a>Dodawanie formantów w kodzie
 
@@ -178,9 +171,8 @@ protected override void OnCreate (Bundle bundle)
 
 Ten kod tworzy wystąpienie `RelativeLayout` klasy i ustawia jej `LayoutParameters` właściwości. `LayoutParams` Klasa jest sposób firmy Android zawierający położenie formantów w sposób wielokrotnego użytku. Po utworzeniu wystąpienia układu kontrolek można tworzyć i dodać do niego. Formanty również mieć `LayoutParameters`, takich jak `TextView` w tym przykładzie. Po `TextView` utworzeniu dodanie go do `RelativeLayout` i ustawienie `RelativeLayout` jako widoku zawartości powoduje wyświetlanie aplikacji `TextView` pokazany:
 
-[ ![Przycisk licznika przyrostu wyświetlany w trybach pionowa i pozioma](handling-rotation-images/04.png)](handling-rotation-images/04.png)
+[![Przycisk licznika przyrostu wyświetlany w trybach pionowa i pozioma](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
-<a name="Detecting_Orientation_in_Code" />
 
 ### <a name="detecting-orientation-in-code"></a>Wykrywanie orientacji w kodzie
 
@@ -226,9 +218,8 @@ protected override void OnCreate (Bundle bundle)
 
 Ten kod ustawia `TextView` do rozmieszczanych 100 pikseli od góry po lewej części ekranu automatycznie animacji na nowy układ podczas obracania w poziomie, jak pokazano poniżej:
 
-[ ![Stan widoku jest zachowywany w trybie portret i orientacji poziomej](handling-rotation-images/05.png)](handling-rotation-images/05.png)
+[![Stan widoku jest zachowywany w trybie portret i orientacji poziomej](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
-<a name="Preventing_Activity_Restart" />
 
 ### <a name="preventing-activity-restart"></a>Uniemożliwia ponowne uruchomienie działania
 
@@ -292,7 +283,6 @@ W tym miejscu `TextView's` układu parametry są inicjowane dla orientacji pozio
 
 Uruchomienie aplikacji, Android ładuje zmiany interfejsu użytkownika występuje obracanie urządzeń i ponownego uruchamiania działania.
 
-<a name="Preventing_Activity_Restart_for_Declarative_Layouts" />
 
 ## <a name="preventing-activity-restart-for-declarative-layouts"></a>Uniemożliwia ponowne uruchomienie działania dla układów deklaratywne
 
@@ -300,7 +290,6 @@ Ponowne uruchomienie działania spowodowane obracanie urządzeń również możn
 
 Aby to zrobić, możemy postępuj zgodnie z tym samym korzystające z układem programowe. Wystarczy ustawić `ConfigurationChanges` w `ActivityAttribute`, jak robiliśmy `CodeLayoutActivity` wcześniej. Wszelki kod, który trzeba uruchomić ponownie można zaimplementować zmiany orientacji w `OnConfigurationChanged` metody.
 
-<a name="Maintaining_State_During_Orientation_Changes" />
 
 ## <a name="maintaining-state-during-orientation-changes"></a>Zachowanie stanu podczas zmiany orientacji
 
@@ -308,7 +297,6 @@ Czy obsługa obrotu deklaratywnie lub programowo, wszystkie aplikacje systemu An
 
 Aby uzyskać więcej informacji na utrwalanie stanu w systemie Android, zapoznaj się [cyklu życia działania](~/android/app-fundamentals/activity-lifecycle/index.md) przewodnik.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

@@ -8,23 +8,22 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ebb53398edba64e255f1a534556836df8734ba6f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-with-fragments"></a>Wdrażanie z fragmenty
 
 _Android 3.0 wprowadzono fragmenty. Fragmenty są samodzielnymi, modułowymi składnikami ułatwiającymi radzenie sobie ze złożonością pisania aplikacji, które mogą być uruchamiane na ekranach o różnych rozmiarach. W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android i jak obsługiwać fragmenty na urządzeniach wstępnie Android 3.0._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
 W tej sekcji zostanie omówiony sposób tworzenia aplikacji, która wyświetli listę Szekspir w pełni i oferty z każdego wybranego play. Aplikacji będzie korzystał fragmenty, dzięki czemu możemy zdefiniować naszych składniki interfejsu użytkownika w jednym miejscu, ale następnie używać ich w różnych rozmiarach. Na przykład poniższe zrzuty ekranu przedstawiają aplikacja była uruchomiona na komputerze typu tablet 10", a także na telefonie:
 
-[![Zrzuty ekranu aplikacji przykład systemem tabletu lub telefonu](images/intro-screenshot-sml.png)](images/intro-screenshot.png)
+[![Zrzuty ekranu aplikacji przykład systemem tabletu lub telefonu](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
 
 W tej sekcji omówiono następujące tematy:
 
@@ -34,13 +33,11 @@ W tej sekcji omówiono następujące tematy:
 
 - **Przy użyciu pakietu obsługi systemu Android** &ndash; implementuje pakietu obsługi systemu Android, a następnie sprawia, że niektóre drobne zmiany z działaniami w aplikacji, co pozwala na uruchamianie jej w starszych wersjach systemu android.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Wymagania
 
 W tym przewodniku wymaga platformy Xamarin.Android 4.0 lub nowszy. Będzie też niezbędne do zainstalowania pakietu obsługi systemu Android, jak opisano w dokumentacji fragmenty.
 
-<a name="Introduction" />
 
 ## <a name="introduction"></a>Wprowadzenie
 

@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>Alternatywne zasobów
 
@@ -142,7 +142,7 @@ Android określa zasoby podstawowej przez Iterowanie za pośrednictwem następuj
 
 Na poniższym schemacie przedstawiono również te reguły:
 
-[![Schemat blokowy zasobów](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![Schemat blokowy zasobów](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 Gdy system jest szuka zasobów specyficznych dla gęstości i nie są one dostępne, spróbuje zlokalizować innych gęstość określonych zasobów i skalować je. Android nie musi używać domyślnych zasobów.
 Na przykład podczas wyszukiwania dla zasobu o małej gęstości i nie jest dostępny, Android może wybrać wersji o wysokiej gęstości zasobu nad zasobami domyślnej lub gęstość średnia liczba godzin. Dzieje się tak, ponieważ zasobu o wysokiej gęstości może być skalowany w dół według współczynnika 0,5, co spowoduje mniej problemów widoczność niż skalowania zasobu gęstość średni wymagające współczynnik 0,75.
@@ -196,4 +196,4 @@ Następnie jest kwalifikator dla ekranu w pikselach, `ldpi`, które powoduje wy�
 W wyniku tego procesu systemu Android wykorzystuje zasoby obiektów drawable w katalogu zasobów `drawable-en-port-ldpi` dla urządzenia.
 
 > [!NOTE]
-> **Uwaga:** kwalifikatory rozmiaru ekranu Podaj jeden wyjątek tego procesu wyboru. Istnieje możliwość dla systemu Android wybrać zasoby, które są przeznaczone do ekranu mniejsze niż zapewnia jakie bieżącego urządzenia. Na przykład urządzenie większym ekranem mogą korzystać z zasobów zapewniają normalnym rozmiarze ekranu. Jednak to odwrotnej nie jest prawdziwe: na tym samym urządzeniu większym ekranem nie będzie używać zasobów dla xlarge ekranu. Jeśli dla systemu Android nie może znaleźć zestaw zasobów, który dopasowuje rozmiar danego ekranu, aplikacja ulegnie awarii.
+> Kwalifikatory rozmiaru ekranu Podaj jeden wyjątek tego procesu wyboru. Istnieje możliwość dla systemu Android wybrać zasoby, które są przeznaczone do ekranu mniejsze niż zapewnia jakie bieżącego urządzenia. Na przykład urządzenie większym ekranem mogą korzystać z zasobów zapewniają normalnym rozmiarze ekranu. Jednak to odwrotnej nie jest prawdziwe: na tym samym urządzeniu większym ekranem nie będzie używać zasobów dla xlarge ekranu. Jeśli dla systemu Android nie może znaleźć zestaw zasobów, który dopasowuje rozmiar danego ekranu, aplikacja ulegnie awarii.

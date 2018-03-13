@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 3cc5db39280c72f0de9dbdae07a49b56416c90a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc6bc9e1d4625f8f45887b0a144a31383046b296
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -116,11 +116,10 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 Uruchom aplikację. Powinny być widoczne następujące czynności:
 
-[ ![Zrzut ekranu aplikacji pierwszy LinearLayout ułożone poziomo, drugie w pionie](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png)
+[![Zrzut ekranu aplikacji pierwszy LinearLayout ułożone poziomo, drugie w pionie](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
 Zwróć uwagę, jak atrybutów XML określają zachowanie każdego widoku. Spróbuj eksperymentowanie z różnych wartości `android:layout_weight` aby zobaczyć rozkład nieruchomości ekranu na podstawie wagi każdego elementu. Zobacz [wspólnych obiektów układu](http://developer.android.com/guide/topics/ui/declaring-layout.html) dokumentu, aby uzyskać więcej informacji na temat [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) dojść `android:layout_weight` atrybutu.
 
-<a name="References" />
 
 ## <a name="references"></a>Odwołania
 

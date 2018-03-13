@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>Komunikat zaawansowanych aplikacji rozszerzenia
 
@@ -50,11 +50,11 @@ Rozszerzenia komunikatów aplikacji są obsługiwane tylko w systemie iOS 10, je
 
 Interakcyjne komunikaty stanowią bąbelków komunikat niestandardowy i są dostarczane przez rozszerzenie aplikacji wiadomości. Zezwalaj użytkownikowi na tworzenie interaktywnych komunikat zawartości, ich Wstaw go w polu danych wejściowych komunikat i wysłać go.
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "Tworzenie zawartości wiadomości interakcyjne")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "Tworzenie zawartości wiadomości interakcyjne")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 Odbieranie użytkownika można odpowiedzi na wiadomość interaktywne, naciskając jego bąbelków komunikat w historii wiadomości, aby załadować rozszerzenia aplikacji komunikat, który go utworzył. Rozszerzenie zostanie uruchomiona pełnego ekranu i umożliwia użytkownikowi utworzenie odpowiedzi i wysłać go użytkownikowi pochodzące.
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "Rozszerzenie uruchomić pełnego ekranu")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "Rozszerzenie uruchomić pełnego ekranu")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 Poniższe tematy zostanie omówiona szczegółowo poniżej:
@@ -68,7 +68,7 @@ Poniższe tematy zostanie omówiona szczegółowo poniżej:
 
 Po wywołaniu przez użytkownika, rozszerzenie aplikacji komunikat zostanie wyświetlony w dolnej części historii wiadomości w trybie compact widoku:
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "Przegląd interfejsu API wiadomości")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "Przegląd interfejsu API wiadomości")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. `MSMessageAppViewController` Obiektu w rozszerzeniu aplikacji wiadomości jest klasy głównym, która jest wywoływane, gdy zostanie wyświetlony widok rozszerzenia dla użytkownika.
 2. Konwersacji jest wyświetlana jako `MSConversation` wystąpienie obiektu.
@@ -80,7 +80,7 @@ Po wywołaniu przez użytkownika, rozszerzenie aplikacji komunikat zostanie wyś
 
 Spójrz na proces aktywację rozszerzenie aplikacji komunikat:
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "Proces aktywację rozszerzenie aplikacji wiadomości")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "Proces aktywację rozszerzenie aplikacji wiadomości")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. Gdy rozszerzenie jest uruchamiana (na przykład z szuflady aplikacji), aplikacji komunikat spowoduje uruchomienie procesu.
 2. `DidBecomeActive` Metoda jest wywoływana i przekazany `MSConversation` reprezentujący komunikat rozszerzenia aplikacji działającej w konwersacji.
@@ -88,7 +88,7 @@ Spójrz na proces aktywację rozszerzenie aplikacji komunikat:
 
 Następnie spójrz na proces staje się dezaktywowane rozszerzenie aplikacji komunikat:
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "Proces rozszerzenia aplikacji wiadomości, staje się dezaktywowany")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "Proces rozszerzenia aplikacji wiadomości, staje się dezaktywowany")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. Jeśli rozszerzenie aplikacji wiadomości jest dezaktywowany, `ViewWillDisappear` najpierw wywołana metoda.
 2. Następnie przy użyciu `ViewDidDisappear` metoda zostanie wywołana.
@@ -128,7 +128,7 @@ Gdy użytkownik kliknie bąbelków komunikat w konwersacji na macOS, Mac spróbu
 
 `AccessibilityLabel` Właściwość jest używana przez czytników ekranu do odczytu zapisu konwersacji dla użytkownika. `Layout` Właściwość określa, jak zostanie wyświetlony komunikat, obecnie tylko `MSMessageTemplateLayout` jest obsługiwana i wygląda podobnie do następującej:
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "Szablon MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "Szablon MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 `Image` Właściwość `MSMessageTemplateLayout` udostępnia zawartość dla głównej części MessageBubble na ekranie. `MediaFileUrl` Właściwość również zapewnia zawartości dla treści wiadomości bąbelków, ale zezwala na zawartość, która nie jest obsługiwana przez `UIImage` (na przykład plik wideo, który będzie Pętla w tle). Jeśli oba `Image` i `MediaFileUrl` podano właściwości `Image` właściwość będzie mieć wyższy priorytet. `MediaFileUrl` Obsługuje PNG, JPEG, GIF i wideo (w formacie, który może zostać odtworzone przez platformę Media Player) formatów multimediów.
 
@@ -140,7 +140,7 @@ Gdy zasoby są wysyłane do odbiornika, wszelkie nośniki dołączony zostanie a
 
 `Caption`, `SubCaption`, `TrailingCaption` i `TrailingSubcaption` właściwości dodatkowo opisujący obraz i są wyświetlane w sekcji poniżej obrazu. Wszystkie te właściwości do ustawienia `null` utworzy bąbelkowy wiadomość bez obszaru podpis:
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "Bąbelkowy wiadomość bez obszaru podpisu")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "Bąbelkowy wiadomość bez obszaru podpisu")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 Ostatnim etapem należy pamiętać, jest aplikacji Messages będzie rysowanie ikony wiadomości rozszerzenia aplikacji w górnym lewym dolnym rogu bąbelków wiadomości.
 
@@ -181,7 +181,7 @@ Po nowej zawartości znajduje się w polu dane wejściowe, użytkownik będzie m
 
 Rozszerzenie aplikacji komunikat może być wyświetlany w jednym z dwóch trybów inny widok:
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "Rozszerzenie aplikacji komunikat wyświetlany w dwóch trybach inny widok: CD & rozwinięty")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "Rozszerzenie aplikacji komunikat wyświetlany w dwóch trybach inny widok: CD & rozwinięty")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** — jest to domyślny tryb gdzie rozszerzenia aplikacji komunikat zajmuje 25% widoku wiadomości. Tryb kompaktowy aplikacji nie ma dostępu do klawiatury, przewijanie w poziomie lub aparaty rozpoznawania gestów Przejdź. Aplikacja ma dostęp do pola danych wejściowych i wywołań `InsertMessage` natychmiast będzie widoczny dla użytkownika istnieje.
 - **Rozszerzona** — rozszerzenie aplikacji komunikat wypełnienia całego widoku komunikatów. Nie ma dostępu do pola danych wejściowych, ale ma dostępu do klawiatury, przewijanie w poziomie i aparatów rozpoznawania gestów Przejdź.
@@ -384,7 +384,7 @@ Opcjonalnie można mają korzystać z aplikacji `WillTransition` metodę, aby ob
 
 Istnieją dwa przypadków, które musi obsłużyć przy odpowiadaniu na wiadomość rozszerzenia aplikacji komunikat:
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "Rozszerzenie aplikacji wiadomości w trybach nieaktywny i aktywne")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "Rozszerzenie aplikacji wiadomości w trybach nieaktywny i aktywne")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **Rozszerzenie jest nieaktywna** — istnieje bąbelków komunikat rozszerzenia aplikacji wiadomości w wykazie komunikat, który użytkownik może nacisnąć do aktywowania rozszerzeń i kontynuować interakcyjne konwersacji.
 - **Rozszerzenie jest aktywny** — użytkownik może nacisnąć bąbelków komunikat rozszerzenia aplikacji wiadomości w wykazie komunikatów do trybu widoku rozwinięty i kontynuować proces interaktywny, z którym ją przerwał.
@@ -393,7 +393,7 @@ Istnieją dwa przypadków, które musi obsłużyć przy odpowiadaniu na wiadomo�
 
 Gdy bąbelków wiadomości jest dotknięciu przez użytkownika w wykazie wiadomości i rozszerzenie aplikacji wiadomości jest nieaktywny, odbędzie się następujący proces:
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "Obsługa nieaktywne bąbelków wiadomości")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "Obsługa nieaktywne bąbelków wiadomości")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. Użytkownik naciska bąbelków komunikat rozszerzenia.
 2. Po uruchomieniu rozszerzenie, komunikat aplikacji spowoduje uruchomienie procesu.
@@ -406,7 +406,7 @@ Po ukończeniu procesu rozszerzenia aplikacji komunikat zostanie wyświetlone w 
 
 Gdy bąbelków wiadomości jest dotknięciu przez użytkownika w wykazie wiadomości i rozszerzenie aplikacji wiadomości jest aktywny, odbędzie się następujący proces:
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "Obsługa active bąbelków wiadomości")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "Obsługa active bąbelków wiadomości")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. Użytkownik naciska bąbelków komunikat rozszerzenia.
 2. Ponieważ rozszerzenia aplikacji wiadomości jest już aktywny, `WillTransition` metoda `MSMessagesAppViewController` jest wywoływana w celu obsługi kompaktowania przełączania do trybu wyświetlania rozwinięty.
@@ -457,11 +457,11 @@ Wybranego komunikatu mają być wyświetlane w interfejsie użytkownika rozszerz
 
 W trakcie wysyłania wykonania różnych kroków interakcyjne konwersację między dwiema użytkownika w konwersacji, częściowo ukończone dymki wiadomości, można zacząć zajmowały wykaz komunikat:
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "Częściowo ukończone dymki komunikat może przeładowania wykaz wiadomości")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "Częściowo ukończone dymki komunikat może przeładowania wykaz wiadomości")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 Zamiast tego rozszerzenia aplikacji komunikat powinien zwijane poprzedniej dymki wiadomości zwięzły komentarz w wykazie komunikat:
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "Zwijanie poprzedniej dymki wiadomości w wykazie wiadomości")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "Zwijanie poprzedniej dymki wiadomości w wykazie wiadomości")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 Jest to obsługiwane przy użyciu `MSSession` Aby zwinąć wszystkich istniejących kroków. Dlatego `DidSelectMessage` metody `MSMessagesAppViewController` klasy mogą być modyfikowane w wyglądać następująco:
 
@@ -516,7 +516,7 @@ Rozszerzenie aplikacji wiadomości mogą być używane, a użytkownicy są zaang
 
 Spójrz na poniższe interakcji grupy konwersacji z trzech użytkowników:
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "Interakcja grupy konwersacji z trzech użytkowników")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "Interakcja grupy konwersacji z trzech użytkowników")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. Użytkownika 1 wysyła grupę komunikat interakcyjne pytania użytkownika 2 i 3 użytkownika, aby wybrać nadmiarów burgera.
 2. Użytkownik 2 wybiera pomidorów.
@@ -531,7 +531,7 @@ Gdy użytkownik wysyła wiadomość, tokenu sesji jest generowany i przypisany d
 
 Omówienia, uzyskiwanie dostępu do identyfikator nadawcy wiadomości, wykonaj przykład grupy konwersacji podane powyżej:
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "Grupa konwersacji wysyłania identyfikatorów")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "Grupa konwersacji wysyłania identyfikatorów")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. Ponownie, 1 użytkownik wysyła grupę interakcyjne komunikat zapytaniem użytkownika 2 i 3 użytkownika, aby wybrać nadmiarów burgera.
 2. Użytkownik 3 wybiera czekoladę.

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7ee2af392a00e045b1992d189a15d7a0ee04b02f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -29,7 +29,7 @@ Aby w pełni zrozumieć funkcji Touch ID i jego wartość, możemy Eksploruj ła
 Łańcucha kluczy jest specjalne bazy danych, w której każdy wiersz jest nazywany _elementu łańcucha kluczy_. Każdy element jest opisane przez atrybuty łańcucha kluczy i składa się z zaszyfrowanych wartości. Aby zezwolić na efektywne wykorzystanie łańcucha kluczy, jest zoptymalizowana pod kątem małych elementów, lub _kluczy tajnych_.
 Każdy element łańcucha kluczy jest chroniony przez kod dostępu użytkowników i urządzeń Unikatowy klucz tajny. Elementy łańcucha kluczy powinny być chronione, nawet wtedy, gdy użytkownicy nie używa swoich urządzeń. Ten sposób jest implementowany w systemie iOS zezwalając tylko elementy staną się dostępne, gdy urządzenie zostanie odblokowane, gdy urządzenie jest zablokowane stają się niedostępne. Może być również przechowywane w zaszyfrowanej kopii zapasowej. Jednym z kluczowych funkcji usługi łańcucha kluczy jest wymusić kontrolę dostępu; aplikacja ma dostęp do jego część łańcucha kluczy, a nie będzie można uruchamiać wszystkie inne aplikacje. Na poniższym diagramie przedstawiono sposób komunikowania się z łańcucha kluczy:
 
-[![](touchid-images/image1.png "Ten diagram przedstawia sposób komunikowania się z łańcucha kluczy")](touchid-images/image1.png)
+[![](touchid-images/image1.png "Ten diagram przedstawia sposób komunikowania się z łańcucha kluczy")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>Bezpieczne enklawę
 
@@ -49,7 +49,7 @@ Najpierw aplikacji powinien zapytania do łańcucha kluczy, aby zobaczyć, czy i
 
 Listy kontroli dostępu jest nowy atrybut elementu łańcucha kluczy w systemie iOS 8, który opisuje informacje dotyczące co musi stanie, aby zezwolić na określonej operacji występuje. Może to być w formie wyświetlanie okna dialogowego alertu i żądania kodu dostępu. Listy kontroli dostępu umożliwia ustawienie ułatwień dostępu i uwierzytelniania dla łańcucha elementów. Na poniższym diagramie przedstawiono, jak to nowy atrybut wiąże się przy użyciu reszty elementu łańcucha kluczy:
 
-[![](touchid-images/image2.png "Ten diagram przedstawia, jak to nowy atrybut wiąże się przy użyciu reszty elementu łańcucha kluczy")](touchid-images/image2.png)
+[![](touchid-images/image2.png "Ten diagram przedstawia, jak to nowy atrybut wiąże się przy użyciu reszty elementu łańcucha kluczy")](touchid-images/image2.png#lightbox)
 
 Począwszy od systemu iOS 8, jest teraz nowe zasady obecności użytkownika `SecAccessControl`, który jest wymuszana przez bezpieczny enklawę na telefonie iPhone 5s lub nowszym. Firma Microsoft jest widoczna w poniższej tabeli, podobnie jak konfiguracja urządzenia mogą mieć wpływ oceny zasad:
 
@@ -94,7 +94,7 @@ Po drugie LocalAuthentication udostępnia dwie metody uwierzytelniania aplikacji
 Gdy obie możliwości zapewniają uwierzytelnianie lokalne, nie udostępniają mechanizm dla aplikacji lub użytkownik, do uwierzytelniania na serwerze zdalnym.
 Uwierzytelniania lokalnego zawiera nowy interfejs użytkownika standardowego w celu uwierzytelnienia. W przypadku funkcji Touch ID jest widok alertów z dwóch przycisków, jak pokazano poniżej. Jeden przycisk Anuluj i używać rezerwowej metodę uwierzytelniania — kod dostępu. Istnieje również niestandardowy komunikat, który musi być ustawiona. Dobrym rozwiązaniem na potrzeby wyjaśnić użytkownikowi, dlaczego wymagane jest uwierzytelnienie funkcji Touch ID jest.
 
-[![](touchid-images/image12.png "Alert uwierzytelniania funkcji Touch ID")](touchid-images/image12.png)
+[![](touchid-images/image12.png "Alert uwierzytelniania funkcji Touch ID")](touchid-images/image12.png#lightbox)
 
 ### <a name="with-keychain-services"></a>Z usługami łańcucha kluczy
 
@@ -116,7 +116,7 @@ Uwierzytelnianie lokalnych został utworzony jako sposób do zbierania poświadc
 
 W tym celu aplikację wywołuje oceny zasad wewnątrz uwierzytelnianie lokalne, które uruchamia wykonywanie operacji wewnątrz enklawę Secure. Można wykorzystać do zapewnienia uwierzytelniania do aplikacji, bez bezpośrednio zapytań/uzyskiwania dostępu do bezpiecznego enklawę.
 
-[![](touchid-images/image13a.png "Przy użyciu uwierzytelniania lokalnego bez usług łańcucha kluczy")](touchid-images/image13a.png)
+[![](touchid-images/image13a.png "Przy użyciu uwierzytelniania lokalnego bez usług łańcucha kluczy")](touchid-images/image13a.png#lightbox)
 
 W aplikacji przy użyciu uwierzytelniania lokalnego zapewnia prostą metodę wdrażania weryfikacji użytkownika, na przykład w celu odblokowania funkcji wyłącznie dla oczu właściciel urządzenia, takich jak bankowość aplikacji lub do kontroli rodzicielskiej wsparcia dla poszczególnych aplikacja. Można również użyć jej jako sposób rozszerzenia uwierzytelniania, która już istnieje — informacje do zabezpieczenia, takich jak użytkownicy, ale one również chce mieć opcje.
 
@@ -150,16 +150,16 @@ Dlatego Przyjrzyjmy się dodanie niektórych uwierzytelniania Touch ID do naszej
 2.  Kliknij dwukrotnie `MainStoryboard.Storyboard` otworzyć próbki w systemie iOS projektanta. Z tej próbki chcemy dodać nowy ekran do naszej aplikacji, która będzie określać uwierzytelniania. To zostanie umieszczona przed bieżącą `MasterViewController`.
 3.  Przeciągnij nowy **kontrolera widoku** z **przybornika** do **powierzchni projektowej**. Ustaw jako **główny kontroler widoku** przez **Ctrl + przeciągnij** z **kontrolera nawigacji**:
 
-    [![](touchid-images/image4.png "Ustaw kontroler widoku głównego")](touchid-images/image4.png)
+    [![](touchid-images/image4.png "Ustaw kontroler widoku głównego")](touchid-images/image4.png#lightbox)
 4.  Nazwa nowego kontrolera widoku `AuthenticationViewController`.
 5.  Następnie przeciągnij przycisk i umieść ją na `AuthenticationViewController`. To wywołanie `AuthenticateButton`i nadaj mu tekst `Add a Chore`.
 6.  Utwórz zdarzenia na `AuthenticateButton` o nazwie `AuthenticateMe`.
 7.  Utwórz ręcznie segue z `AuthenticationViewController` klikając pasek czarny u dołu i **Ctrl i przeciągnij** na pasku do `MasterViewController` i wybierając polecenie **wypychania** (lub **Pokaż** Jeśli przy użyciu klasy wielkości):
 
-    [![](touchid-images/image5.png "Przeciągnij z paska MasterViewController i wybierając wypychania lub Pokaż")](touchid-images/image6.png)
+    [![](touchid-images/image5.png "Przeciągnij z paska MasterViewController i wybierając wypychania lub Pokaż")](touchid-images/image6.png#lightbox)
 8.  Kliknij nowo utworzony segue i nadaj mu identyfikator `AuthenticationSegue`, jak pokazano poniżej:
 
-    [![](touchid-images/image7.png "Ustaw identyfikator segue AuthenticationSegue")](touchid-images/image7.png)
+    [![](touchid-images/image7.png "Ustaw identyfikator segue AuthenticationSegue")](touchid-images/image7.png#lightbox)
 9.  Dodaj następujący kod do `AuthenticationViewController`:
 
     ```
@@ -191,19 +191,19 @@ Dlatego Przyjrzyjmy się dodanie niektórych uwierzytelniania Touch ID do naszej
 
 Jest to całego kodu, należy wdrożyć funkcję Touch ID uwierzytelniania za pomocą uwierzytelniania lokalnego. Wyróżnione wiersze w poniższym obrazie Pokaż uwierzytelnianie lokalne:
 
-[![](touchid-images/image8.png "Wyróżnione wiersze zawierają uwierzytelnianie lokalne")](touchid-images/image8.png)
+[![](touchid-images/image8.png "Wyróżnione wiersze zawierają uwierzytelnianie lokalne")](touchid-images/image8.png#lightbox)
 
 Najpierw należy do ustalenia, czy urządzenie jest w stanie akceptowania funkcji Touch ID do wprowadzania, za pomocą `CanEvaluatePolicy` i przekazywanie w zasadach `DeviceOwnerAuthenticationWithBiometrics`. Jeśli to PRAWDA, można wyświetlić interfejsu użytkownika funkcji Touch ID przy użyciu `EvaluatePolicy`. Istnieją trzy informacje mamy do przekazania do `EvaluatePolicy` — same zasady, ciąg wyjaśniający, dlaczego wymagane jest uwierzytelnienie i obsługi odpowiedzi. Program obsługi odpowiedzi informuje aplikacji, co powinno to w przypadku uwierzytelniania powiodła się czy nie. Oto bliżej w odpowiedzi program obsługi:
 
-[![](touchid-images/image9.png "Program obsługi odpowiedzi")](touchid-images/image9.png)
+[![](touchid-images/image9.png "Program obsługi odpowiedzi")](touchid-images/image9.png#lightbox)
 
 Program obsługi odpowiedzi określono typu `LAContextReplyHandler`, który przyjmuje parametry Powodzenie — `bool` wartości i `NSError` o nazwie `error`. Jeśli powiedzie się, to gdy faktycznie zostaną wykonane niezależnie od jest ona chcemy uwierzytelniania — w takim przypadku wyświetlania ekranu, który Daj nam doda nowe kwestii. Należy pamiętać, jest jeden ostrzeżenia lokalnego uwierzytelniania, należy uruchomić na pierwszym planie, dlatego upewnij się `InvokeOnMainThread`:
 
-[![](touchid-images/image10.png "InvokeOnMainThread jest używany do uwierzytelniania lokalnego")](touchid-images/image10.png)
+[![](touchid-images/image10.png "InvokeOnMainThread jest używany do uwierzytelniania lokalnego")](touchid-images/image10.png#lightbox)
 
 Ponadto podczas uwierzytelniania przebiegło pomyślnie, chcemy przejście do `MasterViewController`. `PerformSegue` Metody można użyć w tym celu:
 
-[![](touchid-images/image11.png "Wywołaj metodę PerformSegue przechodzenia do MasterViewController")](touchid-images/image11.png)
+[![](touchid-images/image11.png "Wywołaj metodę PerformSegue przechodzenia do MasterViewController")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 W tym przewodniku analizujemy łańcucha kluczy i jak działa w systemie iOS. Możemy również zbadane łańcucha kluczy listy ACL, a to zmiany w systemie iOS. Wybraliśmy dalej, poszukaj w ramach uwierzytelniania lokalnych, co nowego w systemie iOS 8 i następnie przeglądał Implementowanie uwierzytelniania funkcji Touch ID w naszej aplikacji.

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>Praca z formantem strony
 
@@ -20,7 +20,7 @@ _Ten artykuł obejmuje projektowanie i Praca z formantem strony wewnątrz aplika
 
 Czasami może być konieczne wyświetlane w aplikacji Xamarin.tvOS kolejne strony lub obrazów. Formant strony została zaprojektowana w celu wyraźnego wyświetlania strony, która jest użytkownik poza maksymalną liczbę stron. Formant strony wyświetla kropek na ciemnym, oval w kształcie tła. Bieżąca strona będzie wyświetlana wypełniony okrąg, pozostałych stronach wyświetlane jako pusty kropek. Formantu strony będzie Przytnij zewnętrzne większość punktów, jeśli jest zbyt duża, aby zmieścić ją w obszarze jej tła.
 
-[ ![](page-controls-images/page01.png "Formant strony próbki")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "Formant strony próbki")](page-controls-images/page01.png#lightbox)
 
 Kontrolka strony w elemencie nieinterakcyjnym zaprojektowane, aby przekazać opinię tylko dla użytkownika. Należy dodać inne formanty, aby zmienić numer bieżącej strony (takie jak przyciski lub gestów).
 
@@ -41,14 +41,14 @@ Najprostszym sposobem korzystania z formantów strony w aplikacji Xamarin.tvOS j
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **formantu strony** z **przybornika** i upuść go w widoku: 
 
-    [ ![](page-controls-images/page02.png "Formant strony")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "Formant strony")](page-controls-images/page02.png#lightbox)
 1. W **kartę Widget** z **konsoli właściwości**, można dostosować kilka właściwości formantu strony, takie jak jego **bieżącej strony** i **# stron**: 
 
-    [ ![](page-controls-images/page03.png "Na karcie widżetu")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "Na karcie widżetu")](page-controls-images/page03.png#lightbox)
 1. Następnie dodaj formanty lub gestów do widoku do tyłu i przekazywać je za pomocą kolekcji stron.
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](page-controls-images/page04.png "Nazwa kontrolki")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "Nazwa kontrolki")](page-controls-images/page04.png#lightbox)
 1. Zapisz zmiany.
     
 
@@ -58,14 +58,14 @@ Najprostszym sposobem korzystania z formantów strony w aplikacji Xamarin.tvOS j
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **formantu strony** z **przybornika** i upuść go w widoku: 
 
-    [ ![](page-controls-images/page02-vs.png "Formant strony")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "Formant strony")](page-controls-images/page02-vs.png#lightbox)
 1. W **kartę Widget** z **Explorer właściwości**, można dostosować kilka właściwości formantu strony, takie jak jego **bieżącej strony** i **# stron**: 
 
-    [ ![](page-controls-images/page03-vs.png "Na karcie widżetu")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "Na karcie widżetu")](page-controls-images/page03-vs.png#lightbox)
 1. Następnie dodaj formanty lub gestów do widoku do tyłu i przekazywać je za pomocą kolekcji stron.
 1. Na koniec przypisać **nazwy** do formantów, dzięki czemu można odpowiedzieć je w kodzie języka C#. Na przykład: 
 
-    [ ![](page-controls-images/page04-vs.png "Nazwa kontrolki")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "Nazwa kontrolki")](page-controls-images/page04-vs.png#lightbox)
 1. Zapisz zmiany.
     
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji
 
 Implementowanie zakupy w aplikacji wymaga aplikacji mogą korzystać z interfejsu API StoreKit na urządzeniu. StoreKit zarządza cała komunikacja z serwerami iTunes firmy Apple, aby uzyskać informacje o produkcie i wykonywać transakcje. Profil inicjowania obsługi administracyjnej musi być skonfigurowany do zakupu w aplikacji i informacji o produkcie należy wprowadzić w iTunes Connect.
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit zarządza cała komunikacja z firmy Apple, jak pokazano na tym wykresie.")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit zarządza cała komunikacja z firmy Apple, jak pokazano na tym wykresie.")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 Zapewnienie zakupu w aplikacji przy użyciu sklepu wymaga następujących instalacji i konfiguracji:
 
@@ -58,11 +58,11 @@ Te trzy kroki powinna zakończyć się przed pisania żadnego kodu:
 
 Tworzenie i dystrybucja bezpłatnych aplikacji wymaga bardzo małego konfiguracji w [iTunes Connect](https://itunesconnect.apple.com), jednak do sprzedaży płatnych aplikacji i zakupy w aplikacji wymaga podania Apple informacji bankowych i podatków. Polecenie **umów podatku i bankowości** z poziomu menu głównego, pokazano poniżej:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "Polecenie umowy, podatku i banku z poziomu menu głównego")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "Polecenie umowy, podatku i banku z poziomu menu głównego")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 Konto dewelopera ma **płatnej aplikacji systemu iOS** kontraktu w efekcie, jak pokazano w tym zrzut ekranu:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "Konto dewelopera ma iOS, które aplikacje płatnej kontraktu w celu")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "Konto dewelopera ma iOS, które aplikacje płatnej kontraktu w celu")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 Nie można przetestować dowolne funkcje StoreKit, aż do uzyskania **płatnej aplikacji systemu iOS** kontraktu — StoreKit wywołań w kodzie zakończy się niepowodzeniem do czasu przetworzenia Apple Twojej **umów podatku i bankowości** informacje.
 
@@ -75,7 +75,7 @@ Tworzenie nowego formularza **identyfikatorów aplikacji**
 
  wygląda następująco:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "Formularz służący do tworzenia nowych identyfikatorów aplikacji")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "Formularz służący do tworzenia nowych identyfikatorów aplikacji")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 Wprowadź odpowiednie dla elementu *opis*, więc można łatwo zidentyfikować ten identyfikator aplikacji na liście. Aby uzyskać *prefiks Identyfikatora aplikacji*, wybierz nazwę zespołu.
 
@@ -90,7 +90,7 @@ Można użyć dowolnego ciągu dla Twojego **identyfikator pakietu** (o ile jest
 
 Należy pamiętać, że **zakupu w aplikacji** zostaną automatycznie włączone na liście usług:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "Funkcja zakupu w aplikacji zostaną automatycznie włączone na liście usług")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "Funkcja zakupu w aplikacji zostaną automatycznie włączone na liście usług")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>Profile aprowizacji
 
@@ -100,16 +100,16 @@ Utworzyć rozwoju i produkcji profile inicjowania obsługi, ponieważ zwykle wyb
 
 Kliknij przycisk **Moje aplikacje** w iTunes Connect do tworzenia lub edytowania wpisu aplikacji systemu iOS. Strona informacje o aplikacji jest następujący:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "Strona informacje o aplikacji")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "Strona informacje o aplikacji")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 Kliknij przycisk **zakupy w aplikacji** do tworzenia lub edytowania produktów do sprzedaży. Ten zrzut ekranu przedstawia przykładową aplikację z kilku produktów już dodany:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "Przykładowa aplikacja z kilku produktów już dodana")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "Przykładowa aplikacja z kilku produktów już dodana")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 Proces dodawania nowych produktów obejmuje dwa kroki:
 
-1.   Wybierz typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "wybierz typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   Wprowadź atrybuty produktu, w tym identyfikator produktu, warstwa cenowa i opisy zlokalizowanych: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "wprowadzania atrybutów produktów")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   Wybierz typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "wybierz typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Wprowadź atrybuty produktu, w tym identyfikator produktu, warstwa cenowa i opisy zlokalizowanych: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "wprowadzania atrybutów produktów")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Poniżej opisano pól wymaganych dla każdego produktu zakupu w aplikacji:
 
@@ -158,13 +158,13 @@ Nie zezwala na wybranie dowolnego ceny dla produktów pakietu sklepu z aplikacja
 
 Apple zawiera macierz cen ułatwiające wybranie poprawne warstwy waluty/cen, który ma. Fragment macierzy cen (sierpień 2012) jest następujący:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "Fragment macierzy cen — sierpień 2012")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "Fragment macierzy cen — sierpień 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 W okresie przygotowywania niniejszych materiałów (czerwiec 2013) są 87 warstwy z USD 0,99 do 999,99 USD. Cennik macierzy pokazuje ceny, że klienci będą płatności i również wielkość otrzymany od firmy Apple — jest to mniej ich opłat 30% i również wszystkie podatki lokalne są wymagane do zbierania (powiadomienia w przykładzie, że sprzedających amerykańskich lub kanadyjskich otrzymywać 70 c do 99 p c mień, podczas gdy Australian sprzedających odbierać tylko 63 c ze względu na "towarów &amp; podatku usług" pobierane w cenie sprzedaży).
 
 Cennik produktu może zostać zaktualizowana w dowolnym momencie, w tym cen zaplanowane zmiany, które zostały wprowadzone w przyszłości. Ten zrzut ekranu pokazuje, jak zmiany ceny datę w przyszłości zostanie dodany — ceny jest tymczasowo zmieniane z warstwy 1 do warstwy 3 dla miesiąca września tylko:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "Gdzie ceny jest tymczasowo zmieniane z warstwy 1 do warstwy 3 dla miesiąca września tylko zmiany ceny datę w przyszłości")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "Gdzie ceny jest tymczasowo zmieniane z warstwy 1 do warstwy 3 dla miesiąca września tylko zmiany ceny datę w przyszłości")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>Bezpłatne produkty nie są obsługiwane
 
@@ -174,7 +174,7 @@ Mimo że Apple udostępnił specjalnych opcji bezpłatnej subskrypcji dla aplika
 
 W iTunes Connect można wprowadzić inną nazwę i opis tekstu dla dowolnej liczby obsługiwanych języków. Każdego z języków można dodać/edytować w za pomocą menu podręcznego:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "Każdego z języków można dodać/edytować w za pomocą menu podręcznego")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "Każdego z języków można dodać/edytować w za pomocą menu podręcznego")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ Taki sam jak aplikacje — każdy z produktów jest sprawdzone przez firmę Appl
 
 Przy pierwszym uruchomieniu aplikacji jest przesyłany z zakupów w aplikacji włączone (czy jest nowa aplikacja lub funkcja została dodana do istniejącego) należy wybrać niektórych produktów, aby przesłać z nim. ITunes Connect portal spowoduje wyświetlenie monitu w tym celu opisane w tym zrzut ekranu:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect portal spowoduje wyświetlenie monitu o przesyłanie niektórych produktów, a także")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect portal spowoduje wyświetlenie monitu o przesyłanie niektórych produktów, a także")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>Rejestrowanie aplikacji do uruchamiania w tle
 
@@ -34,7 +34,7 @@ Zarejestrowane aplikacje można podzielić na kilka kategorii:
 
 Aplikacje mogą być rejestrowane przez ustawienie **wymagane trybów tła** właściwości w aplikacji *Info.plist*. Aplikację można zarejestrować dowolną liczbę kategorii, ponieważ wymaga ona:
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "Ustawianie trybów tła")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Ustawianie trybów tła")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Przewodnik krok po kroku do rejestrowania aplikacji w tle lokalizacji aktualizacji, zobacz [tła lokalizacji wskazówki](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
@@ -42,7 +42,7 @@ Przewodnik krok po kroku do rejestrowania aplikacji w tle lokalizacji aktualizac
 
 Inna właściwość, która może być ustawiona w *Info.plist* jest *aplikacja nie działa w tle*, lub `UIApplicationExitsOnSuspend` właściwości:
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "Wyłączanie uruchomione w tle")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "Wyłączanie uruchomione w tle")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 Ma dokładnie sam efekt co ustawienie odświeżanie aplikacji w tle, wyłączona w systemie iOS 7 +, z wyjątkiem można zmienić tylko po stronie deweloperów i jest dostępna dla systemu iOS 4 lub nowszym. Aplikacja zostanie zawieszona natychmiast po wprowadzeniu tła i nie będzie można wykonać żadnych przetwarzania.
 

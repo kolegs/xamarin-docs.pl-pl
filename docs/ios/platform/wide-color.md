@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>Kolor międzynarodowe
 
@@ -38,19 +38,19 @@ Następujące podstawowe koncepcje kolor muszą zostać rozpatrzone przed zmian�
 
 Przestrzeń kolorów to środowisko, w którym można reprezentowany i porównaniu kolorów. Można go przestrzeni trójwymiarowej 1 do 4 zdefiniowanego przez zwiększeniem jego składniki kolorów. 
 
-[ ![](wide-color-images/color00.png "Przestrzeń kolorów")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "Przestrzeń kolorów")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>Kanały kolorów
 
 Składniki kolorów można także określane jako kanałów koloru. Niektóre znane oświadczenia będą RGB spacji, spacje szary, przestrzenie CMYK lub spacje niezależnie od urządzenia. 
 
-[ ![](wide-color-images/color02.png "Składniki kolorów może być również określany jako kanałów koloru")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "Składniki kolorów może być również określany jako kanałów koloru")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>Kolor kolory podstawowe
 
 Kolor kolory podstawowe Podaj współrzędnych, który służy do porównywania i obliczeniowe kolorów. Kolor kolory podstawowe zazwyczaj dzielą się najwyżej intensywny wersję danego kolor, który można wygenerować w ramach kanału koloru.
 
-[ ![](wide-color-images/color01.png "Kolor kolory podstawowe Podaj współrzędnych, który służy do porównywania i obliczeniowe kolorów")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "Kolor kolory podstawowe Podaj współrzędnych, który służy do porównywania i obliczeniowe kolorów")](wide-color-images/color01.png#lightbox)
 
 W przypadku reprezentowane powyżej przestrzeń kolorów RGB kolory podstawowe kolor jest where `1.0` jest zakotwiczona współrzędne (takich jak `[1.0, 0.0, 0.0]` czerwony).
 
@@ -58,7 +58,7 @@ W przypadku reprezentowane powyżej przestrzeń kolorów RGB kolory podstawowe k
 
 Kolor przestrzeni odwołuje się do wszystkich kolorów, które mogą być definiowane jako kombinacja poszczególnych kanałów w zapewnia przestrzeń kolorów.
 
-[ ![](wide-color-images/color03.png "Przykład przestrzeni kolorów")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "Przykład przestrzeni kolorów")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>Co to jest szeroki kolorów
 
@@ -80,7 +80,7 @@ Użytkownicy, którzy mają zostały przechwytywania obrazów cyfrowych w formac
 
 W przypadku 2015 Apple wydawane nowych produktów (iMac i iPad Pro 9.7") zawierających nowe przestrzeń kolorów P3 wyświetlania do obsługi problemów utworzone przez sRGB przestrzeń kolorów.
 
-[ ![](wide-color-images/color04.png "Nowe przestrzeń kolorów na wyświetlanie P3")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "Nowe przestrzeń kolorów na wyświetlanie P3")](wide-color-images/color04.png#lightbox)
 
 Kolor P3 ekran ma następujące właściwości:
 
@@ -112,7 +112,7 @@ Przy pozwalającą na wartości mniejsze od zera i większy niż jeden, sRGB roz
 
 Aby zobaczyć, jak wartości spoza zero i co działa w sRGB rozszerzony zakres przestrzeń kolorów, należy wykonać poniższy przykład przedstawia najbardziej nasycenia czerwonego dostępne w przestrzeni wyświetlania P3 kolorów:
 
-[ ![](wide-color-images/color05.png "Jak działa wartości spoza zero i jeden w sRGB rozszerzony zakres przestrzeń kolorów")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "Jak działa wartości spoza zero i jeden w sRGB rozszerzony zakres przestrzeń kolorów")](wide-color-images/color05.png#lightbox)
 
 W P3 wyświetlania tego koloru jest przedstawiany jako `[1.0, 0.0, 0.0]` w sRGB rozszerzony zakres byłoby `[1.358, -0.074, -0.012]`. Ponieważ sRGB wartości są pełne zawartych wewnątrz P3 wyświetlania i wartości wyświetlania P3 leżą "poza" sRGB zakresów.
 

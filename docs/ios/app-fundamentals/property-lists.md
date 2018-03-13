@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d7b4c5a539470a3544d0117251f40fd6bd37f2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-property-lists"></a>Praca z listy właściwości
 
@@ -24,7 +24,7 @@ Visual Studio for Mac funkcjami edytorze graficznego .plist, który umożliwia e
 
 Lista właściwości informacji ( `Info.plist`) jest plikiem z systemem iOS, który zawiera informacje o konfiguracji aplikacji do systemu. Visual Studio dla komputerów Mac do niestandardowych `Info.plist` funkcje edycji trzy panele kontrolowane przez kart na dole po lewej okna edytora:
 
- [ ![](property-lists-images/tabs.png "Left Info.plist Edytor karty u dołu okna edytora")](property-lists-images/tabs.png)
+ [![](property-lists-images/tabs.png "Left Info.plist Edytor karty u dołu okna edytora")](property-lists-images/tabs.png#lightbox)
 
 Każdy panel kontrolki inne właściwości przedstawione poniżej:
 
@@ -57,11 +57,11 @@ Te ustawienia są opisane bardziej szczegółowo w kolejnych sekcjach.
 Ta sekcja zawiera ważne informacje, które zawiera opis aplikacji.
 **Identyfikator** przechowywane w tym miejscu musi odpowiadać identyfikator pakietu, który jest wprowadzana w iTunes Connect (dla aplikacji sklepu App Store), a także na liście inicjowania obsługi administracyjnej identyfikatorów aplikacji portalu systemu iOS i rozwoju i dystrybucji certyfikatów.
 
- [ ![](property-lists-images/image24.png "Docelowy aplikacji systemu iOS")](property-lists-images/image24.png)
+ [![](property-lists-images/image24.png "Docelowy aplikacji systemu iOS")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Wdrażanie urządzenia
 
- [ ![](property-lists-images/deployment.png "Wdrażanie urządzenia")](property-lists-images/deployment.png)
+ [![](property-lists-images/deployment.png "Wdrażanie urządzenia")](property-lists-images/deployment.png#lightbox)
 
 Urządzenie **wdrożenia** sekcje informacje są wyświetlane selektywnie, w zależności od opcji wybranej w **urządzeń** listy rozwijanej w **aplikacji docelowej** powyższej sekcji. **Interfejsu Main** ma ustawioną wartość listy rozwijanej **MainStoryboard** w aplikacjach opartych na scenorysu. Jeśli interfejs użytkownika jest całkowicie zapisywane w kodzie, to może być pusty.
 
@@ -73,7 +73,7 @@ Urządzenie **wdrożenia** sekcje informacje są wyświetlane selektywnie, w zal
 
 **Style paska stanu** sekcja jest interfejsem graficznym do edycji aplikacji `UIStatusBarStyle`:
 
- [ ![](property-lists-images/status.png "Style paska stanu")](property-lists-images/status.png)
+ [![](property-lists-images/status.png "Style paska stanu")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
@@ -89,11 +89,11 @@ Informacji na temat używania ikony, obrazy i kompozycji w pliku Info.plist znaj
 
 `Info.plist` Zawiera specjalne sekcjach, aby określić integracji mapy i backgrounding trybów. Wybranie opcji, które mają być obsługiwane dodać wymagane właściwości do aplikacji za Ciebie.
 
- [ ![](property-lists-images/maps.png "Integracja mapy")](property-lists-images/maps.png)
+ [![](property-lists-images/maps.png "Integracja mapy")](property-lists-images/maps.png#lightbox)
 
 Aby uzyskać więcej informacji na temat pracy z mapy, zapoznaj się Xamarin [mapy iOS](~/ios/user-interface/controls/ios-maps/index.md) przewodnik.
 
- [ ![](property-lists-images/bging.png "Tryby tła")](property-lists-images/bging.png)
+ [![](property-lists-images/bging.png "Tryby tła")](property-lists-images/bging.png#lightbox)
 
 Aby uzyskać więcej informacji na trybów tła dotyczą Xamarin [Backgrounding w systemie iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) przewodnik.
 
@@ -101,7 +101,7 @@ Aby uzyskać więcej informacji na trybów tła dotyczą Xamarin [Backgrounding 
 
 Zaawansowane panelu kontroluje typów dokumentów i schematy adresów URL, obsługiwanych przez aplikację.
 
- [ ![](property-lists-images/image34.png "Zaawansowane panelu")](property-lists-images/image34.png)
+ [![](property-lists-images/image34.png "Zaawansowane panelu")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
@@ -116,7 +116,7 @@ Zapoznaj się z dokumentacją na [rejestrowanie pliku typy Your App obsługuje](
 
 Czasami aplikacja musi obsługiwać otwarcia niestandardowy typ pliku. Na przykład chcemy może otworzyć plików obrazów z niestandardowego rozszerzenia *.xam*. Aby określić niestandardowy typ pliku, utworzymy niestandardowych przy użyciu UTI - uniwersalnego identyfikatora typu - `UIExportedTypeDeclarations` klucza. Poniższy zrzut ekranu przedstawia sposób tworzenia niestandardowych UTI rozszerzenia .xam:
 
- [ ![](property-lists-images/uti.png "Edytor UTIs")](property-lists-images/uti.png)
+ [![](property-lists-images/uti.png "Edytor UTIs")](property-lists-images/uti.png#lightbox)
 
 Podobnie jak wyeksportowanego typu UTIs określić niestandardowe UTIs specyficzne dla aplikacji, *importowany typ UTIs* ( `UIImportedTypeDeclarations` klucza) określić niestandardowe typy obsługiwane, ale nie należy do Twojej aplikacji.
 
@@ -126,7 +126,7 @@ Aby uzyskać więcej informacji na temat używania niestandardowych UTIs odwoły
 
 Nazwa schematu adresu URL (nazywanych również protocol) jest pierwsza część adresu URL. Na przykład `http://` i `https://` są typowe schematy adresów URL. Istnieje możliwość tworzenia niestandardowych schemat adresu URL aplikacji. Niestandardowe schematy adresów URL są używane do komunikacji i przesyłania danych i z powrotem z innymi aplikacjami. Poniższy zrzut ekranu przedstawia tworzenie nowego adresu URL schemat niestandardowy o nazwie `monkeys://`:
 
- [ ![](property-lists-images/url.png "Niestandardowe adresy URL")](property-lists-images/url.png)
+ [![](property-lists-images/url.png "Niestandardowe adresy URL")](property-lists-images/url.png#lightbox)
 
 
 
@@ -136,15 +136,15 @@ Aby uzyskać więcej informacji na implementacji niestandardowych Schematy adres
 
 **Źródła** karcie `Info.plist` pliku umożliwia wartości niestandardowych w celu dodania lub edytować. Visual Studio for Mac zawiera listę typowych właściwości:
 
- [ ![](property-lists-images/image31.png "Dodawanie nowej właściwości z listy rozwijanej")](property-lists-images/image31.png)
+ [![](property-lists-images/image31.png "Dodawanie nowej właściwości z listy rozwijanej")](property-lists-images/image31.png#lightbox)
 
 Znane właściwości programu Visual Studio for Mac będzie listę prawidłowych wartości, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](property-lists-images/image32.png "Wybierz wartość z listy wartości wiedzieć")](property-lists-images/image32.png)
+ [![](property-lists-images/image32.png "Wybierz wartość z listy wartości wiedzieć")](property-lists-images/image32.png#lightbox)
 
 Visual Studio for Mac wykrywa również typ właściwości, jak pokazano:
 
- [ ![](property-lists-images/image33.png "Dostępne typy właściwości")](property-lists-images/image33.png)
+ [![](property-lists-images/image33.png "Dostępne typy właściwości")](property-lists-images/image33.png#lightbox)
 
 Przejrzyj firmy Apple [powiązane zasoby aplikacji](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) linki do dodatkowych informacji na temat właściwości opcjonalne.
 

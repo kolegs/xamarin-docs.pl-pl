@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>Walidacja
 
@@ -19,7 +19,7 @@ Dowolną aplikację, która akceptuje dane wejściowe od użytkowników powinny 
 
 W kontekście modelu ViewModel modelu (MVVM) wzorca model widoku lub model często będzie wymagane do wykonywania sprawdzania poprawności danych i sygnalizuje wszystkie błędy weryfikacji do widoku, dzięki czemu użytkownik może je poprawić. Aplikacja mobilna eShopOnContainers wykonuje synchroniczne weryfikacji po stronie klienta właściwości modelu widoku i powiadamia użytkownika o błędach weryfikacji przez wyróżnianie formant, który zawiera nieprawidłowe dane i wyświetlając komunikaty o błędach, które informują użytkownika Dlaczego danych jest nieprawidłowy. Rysunek 6-1 przedstawiono objętego przeprowadzania weryfikacji w aplikacji mobilnej eShopOnContainers klasy.
 
-[![](validation-images/validation.png "Klasy weryfikacji w aplikacji mobilnej eShopOnContainers")](validation-images/validation-large.png "klasy weryfikacji w aplikacji mobilnej eShopOnContainers")
+[![](validation-images/validation.png "Klasy weryfikacji w aplikacji mobilnej eShopOnContainers")](validation-images/validation-large.png#lightbox "klasy weryfikacji w aplikacji mobilnej eShopOnContainers")
 
 **Rysunek 6-1**: klasy weryfikacji w aplikacji mobilnej eShopOnContainers
 

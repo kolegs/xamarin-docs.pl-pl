@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>Interfejs polecenia
 
@@ -279,7 +279,7 @@ Oto jak to działa: użytkownik naciśnie pierwszy **nowy** przycisku. To umożl
 
 Po lewej stronie ekranu dla systemu iOS pokazuje układ przed wprowadzono prawidłowy wiek. Android i platformy uniwersalnej systemu Windows ekrany Pokaż **przesyłania** przycisk włączona po ustawieniu wieku:
 
-[![Wpis osoby](commanding-images/personentry-small.png "wpis osoby")](commanding-images/personentry-large.png "wpis osoby")
+[![Wpis osoby](commanding-images/personentry-small.png "wpis osoby")](commanding-images/personentry-large.png#lightbox "wpis osoby")
 
 Program nie ma żadnych funkcje do edycji istniejących i nie są zapisywane wpisy po wyjściu z strony.
 
@@ -531,7 +531,7 @@ Przyciski 11 10 cyfr i dziesiętnego udziału powiązanie z `DigitCommand`. `Com
 
 Oto program w akcji:
 
-[![Decimal klawiatury](commanding-images/decimalkeyboard-small.png "dziesiętną klawiatury")](commanding-images/decimalkeyboard-large.png "dziesiętną klawiatury")
+[![Decimal klawiatury](commanding-images/decimalkeyboard-small.png "dziesiętną klawiatury")](commanding-images/decimalkeyboard-large.png#lightbox "dziesiętną klawiatury")
 
 Należy zauważyć, że przycisk dziesiętnego wszystkie trzy zrzuty ekranu jest wyłączona, ponieważ podanej liczby zawiera już separatorem dziesiętnym. 
 

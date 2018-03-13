@@ -3,16 +3,16 @@ title: "Ręcznego inicjowania obsługi administracyjnej"
 description: "Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
+ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 46d2f9f9f1a22ef13e994c91255f0fb29c52ca5d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ad3bd55ae0abc44b0c9757bd79c2711eddf171d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="manual-provisioning"></a>Ręcznego inicjowania obsługi administracyjnej
 
@@ -38,37 +38,37 @@ Aby wygenerować tożsamości podpisywania, wykonaj następujące czynności:
 
 1. Zaloguj się do [certyfikaty identyfikatory i profile części portalu dla deweloperów](https://developer.apple.com/account/overview.action) i wybierz **certyfikaty** sekcji z **aplikacji dla systemu iOS** kolumny. Następnie kliknij przycisk  **+**  można utworzyć nowego certyfikatu:
 
-    [ ![](manual-provisioning-images/cert-plus.png "Kliknij pozycję +, aby utworzyć nowy certyfikat")](manual-provisioning-images/cert-plus.png)
+    [![](manual-provisioning-images/cert-plus.png "Kliknij pozycję +, aby utworzyć nowy certyfikat")](manual-provisioning-images/cert-plus.png#lightbox)
 
 2. Wybierz **tworzenie aplikacji dla systemu iOS** opcji dla typów certyfikatów, a następnie kliknij przycisk **Kontynuuj**. Ten ekran mogą różnić się w zależności od uprawnień z konta:
 
-    [ ![](manual-provisioning-images/cert-first.png "Wybierz opcję tworzenia aplikacji dla typów certyfikatów dla systemu iOS")](manual-provisioning-images/cert-first.png)
+    [![](manual-provisioning-images/cert-first.png "Wybierz opcję tworzenia aplikacji dla typów certyfikatów dla systemu iOS")](manual-provisioning-images/cert-first.png#lightbox)
 
 3. Żądanie żądanie podpisania certyfikatu, który zostanie przekazany do wygenerowania certyfikatu ręcznie. Aby to zrobić, uruchom **dostęp łańcucha kluczy** na komputerach Mac. Przejdź do menu głównego i wybierz **Asystent certyfikatu** i **zażądać certyfikatu od urzędu certyfikacji...** , jak pokazano poniżej:
 
-      [ ![](manual-provisioning-images/key-first.png "Żądanie żądania podpisania certyfikatu")](manual-provisioning-images/key-first.png)
+      [![](manual-provisioning-images/key-first.png "Żądanie żądania podpisania certyfikatu")](manual-provisioning-images/key-first.png#lightbox)
 
 4. Wypełnij informacje, a następnie wybierz opcję **Zapisz, aby dysk**:
 
-    [ ![](manual-provisioning-images/key-second.png "Wypełnij informacje")](manual-provisioning-images/key-second.png)
+    [![](manual-provisioning-images/key-second.png "Wypełnij informacje")](manual-provisioning-images/key-second.png#lightbox)
 
 5. Zapisz CSR w lokalizacji, w którym można je łatwo znaleźć:
 
-    [ ![](manual-provisioning-images/cert-third.png "Zapisz obsługi klienta")](manual-provisioning-images/cert-third.png)
+    [![](manual-provisioning-images/cert-third.png "Zapisz obsługi klienta")](manual-provisioning-images/cert-third.png#lightbox)
 
 6. Wróć do portalu inicjowania obsługi administracyjnej, Przekaż certyfikat do portalu i przesyłania:
 
-    [ ![](manual-provisioning-images/cert-second.png "Przekaż certyfikat do portalu")](manual-provisioning-images/cert-second.png)
+    [![](manual-provisioning-images/cert-second.png "Przekaż certyfikat do portalu")](manual-provisioning-images/cert-second.png#lightbox)
 
     Jeśli nie masz uprawnień administratora, certyfikat musi być zatwierdzony przez administratora lub zespołu agenta.
 
 7. Po zatwierdzeniu certyfikatu należy go pobrać z portalu inicjowania obsługi administracyjnej:
 
-    [ ![](manual-provisioning-images/status-dev.png "Pobierz certyfikat z portalu inicjowania obsługi administracyjnej")](manual-provisioning-images/status-dev.png)
+    [![](manual-provisioning-images/status-dev.png "Pobierz certyfikat z portalu inicjowania obsługi administracyjnej")](manual-provisioning-images/status-dev.png#lightbox)
 
 8. Kliknij dwukrotnie pobrany certyfikat do uruchomienia dostęp łańcucha kluczy i otworzyć **moje certyfikaty** panelu wyświetlane nowe certyfikaty i skojarzony klucz prywatny:
 
-    [ ![](manual-provisioning-images/keychain.png "Certyfikat w łańcuchu kluczy dostępu")](manual-provisioning-images/keychain.png)
+    [![](manual-provisioning-images/keychain.png "Certyfikat w łańcuchu kluczy dostępu")](manual-provisioning-images/keychain.png#lightbox)
 
 <a name="keypairs" />
 
@@ -103,34 +103,34 @@ Podczas tworzenia profilu inicjowania obsługi administracyjnej dla rozwoju, mo�
 2. Podłącz urządzenie być przygotowana do komputera Mac za pomocą dostarczonego kabel USB.
 2. Z **Windows** menu wybierz opcję **urządzeń**:
 
-  [ ![](manual-provisioning-images/add01.png "Wybierz urządzenia, z menu systemu Windows")](manual-provisioning-images/add01.png)
+  [![](manual-provisioning-images/add01.png "Wybierz urządzenia, z menu systemu Windows")](manual-provisioning-images/add01.png#lightbox)
 
 3. Wybierz urządzenie iOS żądaną z **urządzeń** listy po lewej stronie okna urządzenia.
 4. Wyróżnij **identyfikator** ciągów i skopiuj go do Schowka:
 
-  [ ![](manual-provisioning-images/add02.png "Wyróżnij ciąg identyfikatora")](manual-provisioning-images/add02.png)
+  [![](manual-provisioning-images/add02.png "Wyróżnij ciąg identyfikatora")](manual-provisioning-images/add02.png#lightbox)
 
 5. W programie Safari, przejdź do [Centrum deweloperów firmy Apple](https://developer.apple.com/membercenter/index.action) i zaloguj się.
 6. Kliknij przycisk **certyfikaty, identyfikatory & profile** łącza:
 
-  [ ![](manual-provisioning-images/add03.png "Kliknij pozycję certyfikaty, profile identyfikatory łącza")](manual-provisioning-images/add03.png)
+  [![](manual-provisioning-images/add03.png "Kliknij pozycję certyfikaty, profile identyfikatory łącza")](manual-provisioning-images/add03.png#lightbox)
 
 7. Polecenie **urządzeń** łącza:
 
-  [ ![](manual-provisioning-images/add04.png "Kliknij łącze urządzeń")](manual-provisioning-images/add04.png)
+  [![](manual-provisioning-images/add04.png "Kliknij łącze urządzeń")](manual-provisioning-images/add04.png#lightbox)
 
 8. Kliknij przycisk  **+**  przycisk:
 
-  [ ![](manual-provisioning-images/add05.png "Kliknij przycisk +")](manual-provisioning-images/add05.png)
+  [![](manual-provisioning-images/add05.png "Kliknij przycisk +")](manual-provisioning-images/add05.png#lightbox)
 
 9. Podaj nazwę dla nowego urządzenia i Wklej urządzenia **identyfikator** możemy kopiowane powyżej w **UUID** pola:
 
-  [ ![](manual-provisioning-images/add06.png "Podaj nazwę dla nowego urządzenia i identyfikator urządzenia")](manual-provisioning-images/add06.png)
+  [![](manual-provisioning-images/add06.png "Podaj nazwę dla nowego urządzenia i identyfikator urządzenia")](manual-provisioning-images/add06.png#lightbox)
 
 10. Kliknij przycisk **Kontynuuj** przycisku.
 11. Ponadto, przejrzyj informacje i kliknij przycisk **zarejestrować** przycisk:
 
-  [ ![](manual-provisioning-images/add07.png "Zapoznaj się z informacjami")](manual-provisioning-images/add07.png)
+  [![](manual-provisioning-images/add07.png "Zapoznaj się z informacjami")](manual-provisioning-images/add07.png#lightbox)
 
 Powtórz powyższe kroki dla każdego urządzenia z systemem iOS, które będzie służyć do testowania i debugowania aplikacji platformy Xamarin.iOS.
 
@@ -150,10 +150,10 @@ Przed utworzeniem profilu inicjowania obsługi administracyjnej, *identyfikator 
 1. W [portalu dla deweloperów](https://developer.apple.com/account/overview.action) przejdź do *certyfikatu, identyfikatory i profile* sekcji w Centrum deweloperów firmy Apple. Wybierz **identyfikatorów aplikacji** w obszarze **identyfikatory**.
 2. Kliknij przycisk  **+**  przycisk i podaj **nazwa**:
 
-    [ ![](manual-provisioning-images/appid05a.png "Podaj nazwę")](manual-provisioning-images/appid05a.png)
+    [![](manual-provisioning-images/appid05a.png "Podaj nazwę")](manual-provisioning-images/appid05a.png#lightbox)
 3. Prefiks aplikacji należy wstępnie. Wybierz **identyfikator aplikacji symboli wieloznacznych** sufiksu aplikacji. Wprowadź identyfikator pakietu w formacie `com.[DomainName].*`:
 
-  [ ![](manual-provisioning-images/appid05b.png "Wprowadź identyfikator pakietu")](manual-provisioning-images/appid05b.png)
+  [![](manual-provisioning-images/appid05b.png "Wprowadź identyfikator pakietu")](manual-provisioning-images/appid05b.png#lightbox)
 
 3. Kliknij przycisk **Kontynuuj** przycisk i zgodnie z instrukcjami wyświetlanymi na ekranie można utworzyć nowego identyfikatora aplikacji.
 
@@ -167,25 +167,25 @@ Aby ręcznie utworzyć profil inicjowania obsługi administracyjnej do tworzenia
 2. Kliknij przycisk  **+**  przycisk, w prawym górnym rogu, aby utworzyć nowy profil.
 3. Z **programowanie** wybierz przycisk radiowy obok **tworzenie aplikacji dla systemu iOS**i naciśnij klawisz **Kontynuuj**:
 
-    [ ![](manual-provisioning-images/provisioning-profile01.png "Wybierz typ profilu")](manual-provisioning-images/provisioning-profile01.png)
+    [![](manual-provisioning-images/provisioning-profile01.png "Wybierz typ profilu")](manual-provisioning-images/provisioning-profile01.png#lightbox)
 4. Z menu rozwijanego wybierz aplikację IDENTYFIKATORA, który umożliwia:
 
-    [ ![](manual-provisioning-images/provisioning-profile02.png "Wybierz aplikację IDENTYFIKATORA, który umożliwia")](manual-provisioning-images/provisioning-profile02.png)
+    [![](manual-provisioning-images/provisioning-profile02.png "Wybierz aplikację IDENTYFIKATORA, który umożliwia")](manual-provisioning-images/provisioning-profile02.png#lightbox)
 5. Wybierz certyfikaty do uwzględnienia w profilu inicjowania obsługi administracyjnej, a następnie naciśnij klawisz **Kontynuuj**:
 
-    [ ![](manual-provisioning-images/provisioning-profile03.png "Wybierz certyfikaty, które mają być uwzględnione w profilu inicjowania obsługi administracyjnej")](manual-provisioning-images/provisioning-profile03.png)
+    [![](manual-provisioning-images/provisioning-profile03.png "Wybierz certyfikaty, które mają być uwzględnione w profilu inicjowania obsługi administracyjnej")](manual-provisioning-images/provisioning-profile03.png#lightbox)
 6. Wybierz wszystkie urządzenia, których aplikacja zostanie zainstalowana na.
 
-    [ ![](manual-provisioning-images/provisioning-profile04.png "Wybierz urządzenia, które aplikacja zostanie zainstalowana na")](manual-provisioning-images/provisioning-profile04.png)
+    [![](manual-provisioning-images/provisioning-profile04.png "Wybierz urządzenia, które aplikacja zostanie zainstalowana na")](manual-provisioning-images/provisioning-profile04.png#lightbox)
 7. Udostępnianie profilu inicjowania obsługi administracyjnej zidentyfikować nazwę i naciśnij klawisz **Kontynuuj** Aby utworzyć profil:
 
-    [ ![](manual-provisioning-images/provisioning-profile05.png "Podaj nazwę profilu inicjowania obsługi administracyjnej z osobowe")](manual-provisioning-images/provisioning-profile05.png)
+    [![](manual-provisioning-images/provisioning-profile05.png "Podaj nazwę profilu inicjowania obsługi administracyjnej z osobowe")](manual-provisioning-images/provisioning-profile05.png#lightbox)
 8. Naciśnij klawisz **Pobierz** można pobrać profilu inicjowania obsługi administracyjnej na komputerze Mac:
 
-    [ ![](manual-provisioning-images/provisioning-profile06.png "Pobierz profil inicjowania obsługi administracyjnej")](manual-provisioning-images/provisioning-profile06.png)
+    [![](manual-provisioning-images/provisioning-profile06.png "Pobierz profil inicjowania obsługi administracyjnej")](manual-provisioning-images/provisioning-profile06.png#lightbox)
 9. Kliknij dwukrotnie plik, aby zainstalować profil inicjowania obsługi administracyjnej w środowisku Xcode. Należy pamiętać, że się, że wszystkie visual clues został on zainstalowany profil z wyjątkiem otwierania Xcode nie mogą być wyświetlane. Można to zweryfikować przechodząc do **Xcode > Preferencje > kont**. Wybierz identyfikator Apple ID, a następnie kliknij przycisk **Wyświetl szczegóły...** . Powinien być wyświetlany nowy profil inicjowania obsługi administracyjnej, jak przedstawiono poniżej:
 
-      [ ![](manual-provisioning-images/provisioning-profile07.png "Wyświetlanie profilu w środowisku Xcode")](manual-provisioning-images/provisioning-profile07.png)
+      [![](manual-provisioning-images/provisioning-profile07.png "Wyświetlanie profilu w środowisku Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
 Po pomyślnym utworzeniu profilu inicjowania obsługi administracyjnej może być konieczne odświeżyć Xcode, dzięki czemu wszystkie certyfikaty programowanie są dostępne dla programu Visual Studio for Mac i Visual Studio.
 
@@ -199,7 +199,7 @@ Certyfikaty i inicjowania obsługi administracyjnej profilów, które zostały u
 2.   Uruchom środowisko Xcode.
 3.   Wybierz **Xcode Menu > Preferencje...**
 4.   Kliknij przycisk **kont** kartę.
-5.   Wybierz zespół, a następnie kliknij przycisk **Pobierz Podręcznik profile** przycisku: [ ![ ] (manual-provisioning-images/selectteam1.png "profile ręcznego pobierania")](manual-provisioning-images/selectteam1.png)
+5.   Wybierz zespół, a następnie kliknij przycisk **Pobierz Podręcznik profile** przycisku: [ ![ ] (manual-provisioning-images/selectteam1.png "profile ręcznego pobierania")](manual-provisioning-images/selectteam1.png#lightbox)
 
 6.   Zamknij Xcode.
 7.  Uruchom program Visual Studio dla komputerów Mac lub Visual Studio.
@@ -276,7 +276,7 @@ W tym przewodniku opisano kroki wymagane do konfiguracji środowiska programowan
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Bezpłatne, inicjowania obsługi administracyjnej](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Bezpłatna aprowizacja](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Dystrybucja aplikacji](~/ios/deploy-test/app-distribution/index.md)
 - [Rozwiązywanie problemów](~/ios/deploy-test/troubleshooting.md)
 - [Apple — podręczniku dystrybucji aplikacji](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

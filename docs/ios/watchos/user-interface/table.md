@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>Formant tabeli
 
@@ -24,7 +24,7 @@ WatchOS `WKInterfaceTable` kontroli jest znacznie prostsze niż jego odpowiednik
 
 Przeciągnij **tabeli** kontroli do sceny. Domyślnie będzie wyglądać (przedstawiający układu pojedynczy wiersz nieokreślony):
 
-[ ![](table-images/add-table-sml.png "Dodawanie tabeli")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "Dodawanie tabeli")](table-images/add-table.png#lightbox)
 
 Nadaj nazwę tabeli **właściwości** pad **nazwa** polu, tak, aby go mogą być przywoływane w kodzie.
 
@@ -34,7 +34,7 @@ Automatycznie uwzględniono w jednym wierszu, reprezentowany przez kontroler wie
 
 Aby ustawić **klasy** kontroler wiersza, zaznacz wiersz w **konspekt dokumentu** i wpisz nazwę klasy w **właściwości** konsoli:
 
-[ ![](table-images/add-row-controller-sml.png "Wprowadzanie nazwy klasy w konsoli do właściwości")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "Wprowadzanie nazwy klasy w konsoli do właściwości")](table-images/add-row-controller.png#lightbox)
 
 Po ustawieniu klasy dla wiersza kontrolera IDE spowoduje utworzenie odpowiedniego pliku języka C# w projekcie. Przeciągnij formanty (na przykład etykiety) na wiersz i nadaj im nazwy, więc ich mogą być przywoływane w kodzie.
 

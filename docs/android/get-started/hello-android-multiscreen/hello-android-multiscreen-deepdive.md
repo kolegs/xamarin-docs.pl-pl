@@ -3,16 +3,16 @@ title: "Witaj, Android Wieloekranowy: Nowości"
 description: "W tym przewodniku dwuczęściową Phoneword aplikacji w warstwie podstawowa (utworzonych w Hello, przewodnik Android) jest rozszerzyć, aby obsłużyć drugi ekranu. Na bieżąco wprowadzono podstawowe bloki konstrukcyjne aplikacji systemu Android. Bardziej zgłębić temat w architekturze systemu Android został uwzględniony w celu lepszego zrozumienia struktury aplikacji dla systemu Android i funkcji."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a47dea43b1fb1e84a0cd3dffc07b483497edbe09
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Witaj, Android Wieloekranowy: Nowości
 
@@ -30,7 +30,6 @@ W tym przewodniku będzie Eksploruj bardziej zaawansowane Android architektura j
 
 W [Hello, Android nowości](~/android/get-started/hello-android/hello-android-deepdive.md), wiesz, że aplikacje systemu Android są programy unikatowy, ponieważ mają jeden punkt wejścia. Zamiast tego systemu operacyjnego (lub inną aplikację) uruchamia jednego z zarejestrowanych działania aplikacji, która z kolei spowoduje uruchomienie procesu dla aplikacji. Ta nowości w architekturze systemu Android rozszerza Twojej zrozumienie, jak Android aplikacji są wykonane przez wprowadzenie Android bloków konstrukcyjnych aplikacji i ich funkcje.
 
-<a name="AndroidApplicationBlocks" />
 
 ### <a name="android-application-blocks"></a>Bloki aplikacji systemu android
 
@@ -52,7 +51,6 @@ Jest zaprojektowana dla systemu android *zasadą najniższych uprawnień* &ndash
 
 Do komunikacji, bloki aplikacji wysyłać asynchroniczne o nazwie *intencje* i z powrotem. Profile zawierają informacje dotyczące odbierania bloku i czasami niektórych danych. Celem wysyłane z jednego wyzwalacze składnika aplikacji coś w inny składnik aplikacji, powiązanie dwa składniki aplikacji, dzięki czemu komunikacji. Wysyłając intencje i z powrotem, możesz uzyskać bloków do koordynowania złożonych akcje, takie jak uruchomienie aplikacji aparatu wziąć i zapisać, zbieranie informacji o lokalizacji lub przechodzenie z jednego ekranu do następnego.
 
-<a name="AndroidManifestXML" />
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 

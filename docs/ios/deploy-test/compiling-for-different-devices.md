@@ -7,27 +7,26 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 13838215b32abe49a5fe07b04088bc4216250844
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12b8f51156c2ed750c59ef79522121c6c5d2c03c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="compiling-for-different-devices"></a>Kompilowanie dla różnych urządzeń
 
 Można skonfigurować właściwości kompilacji pliku wykonywalnego w projekcie **kompilacji systemu iOS** stronę właściwości, który znajduje się przez kliknięcie prawym przyciskiem myszy nazwę projektu i przechodząc do **Opcje > iOS kompilacji** w Visual Studio for Mac, i **właściwości** w programie Visual Studio:
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](compiling-for-different-devices-images/image1.png "Strony właściwości kompilacji projektów dla systemu iOS")](compiling-for-different-devices-images/image1.png) 
 
-[[/ide]] 
+[![](compiling-for-different-devices-images/image1.png "Strony właściwości kompilacji projektów dla systemu iOS")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-[[ide name="vs"]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](compiling-for-different-devices-images/image1a.png "Strony właściwości kompilacji projektów dla systemu iOS")](compiling-for-different-devices-images/image1a.png)
+[![](compiling-for-different-devices-images/image1a.png "Strony właściwości kompilacji projektów dla systemu iOS")](compiling-for-different-devices-images/image1a.png#lightbox)
 
-[[/ide]]
+-----
 
 Oprócz opcje konfiguracji dostępne w interfejsie użytkownika, można również przekazać własny zestaw opcji wiersza polecenia, aby [Xamarin.iOS kompilacji narzędzia (mtouch)](~/ios/deploy-test/mtouch.md).
 
@@ -66,9 +65,9 @@ LLVM optymalizacji aparatu wewnętrznej bazy danych tworzy kod zarówno szybsze 
 
 Można włączyć je z iOS opcje kompilacji w programie Visual Studio dla komputerów Mac lub Visual Studio.
 
-[ ![](compiling-for-different-devices-images/image2.png "Włączanie LLVM")](compiling-for-different-devices-images/image2.png)
+[![](compiling-for-different-devices-images/image2.png "Włączanie LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
 
-[ ![](compiling-for-different-devices-images/image2a.png "Włączanie LLVM")](compiling-for-different-devices-images/image2a.png)
+[![](compiling-for-different-devices-images/image2a.png "Włączanie LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
 
@@ -132,7 +131,7 @@ W tym celu należy wykonać następujące czynności:
 -  Dodaj `'-gcc_flags "-weak_framework iAd"'` do **dodatkowe opcje** dla każdej konfiguracji chcesz słabo łącza:
 
 
-[ ![](compiling-for-different-devices-images/image3.png "Dodatkowe opcje")](compiling-for-different-devices-images/image3.png)
+[![](compiling-for-different-devices-images/image3.png "Dodatkowe opcje")](compiling-for-different-devices-images/image3.png#lightbox)
 
 
 Oprócz tego należy zabezpieczyć użycie typów z korzystają ze starszych wersji systemu IOS, w którym mogą nie istnieć. Istnieje kilka metod, w tym celu, ale jeden z nich podczas analizowania `UIDevice.CurrentDevice.SystemVersion`.
@@ -141,5 +140,5 @@ Oprócz tego należy zabezpieczyć użycie typów z korzystają ze starszych wer
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Linker](~/ios/deploy-test/linker.md)
+- [Konsolidator](~/ios/deploy-test/linker.md)
 - [Zewnętrzne - macierz obsługi systemu iOS](http://iossupportmatrix.com/)

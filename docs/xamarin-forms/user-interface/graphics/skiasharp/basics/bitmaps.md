@@ -4,14 +4,15 @@ description: "Załaduj map bitowych z różnych źródeł i wyświetlić je."
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 9045fb2f54407fe8c9071efc5570296bb102f72e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bitmap-basics"></a>Podstawy mapy bitowej
 
@@ -204,7 +205,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Mapy bitowej jest rozciągany tak, aby wymiary prostokąta, dlatego małp poziomo jest rozciągany tak, te zrzuty ekranu:
 
-[![](bitmaps-images/basicbitmaps-small.png "Potrójna zrzut ekranu strony mapy bitowe podstawowe")](bitmaps-images/basicbitmaps-large.png "Potrójna zrzut ekranu strony podstawowe mapy bitowe")
+[![](bitmaps-images/basicbitmaps-small.png "Potrójna zrzut ekranu strony mapy bitowe podstawowe")](bitmaps-images/basicbitmaps-large.png#lightbox "Potrójna zrzut ekranu strony podstawowe mapy bitowe")
 
 Trzeci obrazu & #x 2014; który można wyświetlić tylko jeśli uruchomienie programu i załadować zdjęcie z własnych biblioteki obrazów & #x 2014; jest również wyświetlany w prostokącie, ale prostokąta położenie i rozmiar są dostosowane do mapy bitowej współczynnik proporcji. Obliczona w ten sposób jest nieco więcej wysiłku, ponieważ wymaga obliczania zależnie od rozmiaru mapy bitowej, jak i docelowy prostokąt czynnik skalowania oraz wyśrodkowanie prostokąt w tym obszarze:
 

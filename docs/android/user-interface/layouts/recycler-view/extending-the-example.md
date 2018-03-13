@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>Rozszerzanie przykład RecyclerView
 
 
 Podstawowa aplikacja opisanego w [A podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) faktycznie nie znacznie &ndash; po prostu przewija i wyświetla listę stałych elementów fotografii ułatwia przeglądanie. W rzeczywistych aplikacjach użytkownicy będą mieć możliwość interakcji z aplikacją, naciskając elementów na ekranie. Ponadto źródła danych można zmienić (lub można zmienić za pomocą aplikacji), a zawartość ekranu musi być zgodna z tych zmian. W poniższych sekcjach dowiesz się, jak obsługi zdarzeń kliknięcia elementu i aktualizować `RecyclerView` po zmianie w źródle danych.
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>Obsługa zdarzeń kliknięcia elementu
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 Teraz podczas kompilacji i uruchamianie przykładowej aplikacji wyświetlanie zdjęć, naciskając zdjęcie wyświetlania spowoduje, że wyskakujące się pojawiać się, że aby raporty, które fotografii została dotknięciu:
 
-[ ![Obszar jest wyskakujące przykładzie, który jest wyświetlany, gdy zdjęcie karty](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![Obszar jest wyskakujące przykładzie, który jest wyświetlany, gdy zdjęcie karty](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 W tym przykładzie pokazano tylko jeden ze sposobów wykonywania programów obsługi zdarzeń z `RecyclerView`. Innym rozwiązaniem, które mogą zostać użyte w tym miejscu jest umieszczenie zdarzenia właścicielowi widoku i karta subskrybowanie tych zdarzeń. W przypadku przykładowej aplikacji zdjęcie zdjęcie funkcje edycji odrębne zdarzenia jest wymagana dla `ImageView` i `TextView` w ramach każdej `CardView`: dotyczące `TextView` czy uruchomić `EditView` okna dialogowego, w którym użytkownik może edytować Podpis i poprawki na `ImageView` może uruchomić narzędzie Korygowanie fotografii, którym użytkownik może obracać zdjęcie lub Przytnij. W zależności od potrzeb aplikacji należy zaprojektować najlepszym podejściem w celu obsługi i reagowanie na zdarzenia touch.
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 Teraz, gdy **pobranie losowej** wybrany przycisk `RecyclerView` aktualizuje widok, aby pokazać, że dalsze zdjęcie w dół w kolekcji została zapisana przy pierwszym zdjęcie w kolekcji:
 
-[ ![Pierwszy zrzut ekranu przed wymiany, drugi zrzut ekranu po wymiany](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![Pierwszy zrzut ekranu przed wymiany, drugi zrzut ekranu po wymiany](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 Oczywiście `NotifyDataSetChanged` mógł zostać wywołany zamiast dwóch wywołań do `NotifyItemChanged`, ale spowoduje to spowodowałby `RecyclerView` odświeżyć całej kolekcji mimo że tylko dwa elementy w kolekcji zostały zmienione. Wywoływanie `NotifyItemChanged` jest znacznie bardziej efektywne niż wywołania `NotifyDataSetChanged`.
 

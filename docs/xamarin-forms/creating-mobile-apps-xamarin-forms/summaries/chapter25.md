@@ -3,14 +3,15 @@ title: "Podsumowanie rozdział 25. Odmian strony"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bbe960357d9180df90a4423d6acfdf3f869d1b77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Podsumowanie rozdział 25. Odmian strony
 
@@ -54,7 +55,7 @@ Platformy Windows 8.1 i Windows Phone 8.1 wymagają, że mapy bitowej mieć usta
 
 Plik XAML także ustawia [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) właściwość `MasterDetailPage` do `True`. Powoduje to, że strony wzorcowej, który będzie wyświetlany podczas uruchamiania; Domyślnie zostanie wyświetlona strona szczegółów. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) plików zestawów `IsPresented` do `false` po wybraniu elementu z `ListView` na stronie głównej. Następnie zostanie wyświetlona strona szczegółów:
 
-[![Potrójna zrzut ekranu szczegółów i szkoły](images/ch25fg09-small.png "strony szczegółów z MasterDetailPage")](images/ch25fg09-large.png "strony szczegółów z MasterDetailPage")
+[![Potrójna zrzut ekranu szczegółów i szkoły](images/ch25fg09-small.png "strony szczegółów z MasterDetailPage")](images/ch25fg09-large.png#lightbox "strony szczegółów z MasterDetailPage")
 
 ### <a name="your-own-user-interface"></a>Interfejs użytkownika
 
@@ -98,7 +99,7 @@ Jednak ta metoda nie działa dobrze w systemie iOS Jeśli kolekcja zawiera więc
 
 Dla każdej strony, która jest wyświetlana w `TabbedPage`, `Title` jest wymagana właściwość, aby określić na karcie tekst i sklepu Apple wymaga również użycia ikony więc `Icon` właściwość jest ustawiona dla systemu iOS:
 
-[![Potrójna zrzut ekranu przedstawiający odrębne kolory na kartach](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png "TabbedPage")
+[![Potrójna zrzut ekranu przedstawiający odrębne kolory na kartach](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
 [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes) strony głównej, który zawiera listę wszystkich studentów ma próbki. Wybrany studenta powoduje to przejście do `TabbedPage` pochodnej, [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml), który zawiera trzy `ContentPage` obiekty w jego drzewie wizualnym, z których jedna umożliwia wprowadzanie niektórych notatek dla tego uczniów.
 

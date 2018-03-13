@@ -3,16 +3,16 @@ title: Dodawanie aplikacji platformy Uniwersalnej uniwersalnej systemu Windows
 description: "W tym artykule wyjaśniono, jak dodać projekt aplikacji platformy uniwersalnej systemu Windows do rozwiązania platformy Xamarin.Forms, który został utworzony w programie Visual Studio dla komputerów Mac."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
+ms.assetid: 34AAA045-64B8-4FDE-BB49-3FF0B4FFA17C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: a3746165db83b5b8adba9adb862f9ea09f7069b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Dodawanie aplikacji platformy Uniwersalnej uniwersalnej systemu Windows
 
@@ -38,7 +38,7 @@ Wykonaj te instrukcje, aby dodać aplikację platformy uniwersalnej systemu Wind
 
  4 . Upewnij się, że nowy projekt platformy uniwersalnej systemu Windows zostanie skompilowany **kompilacji > programu Configuration Manager** okna (to prawdopodobnie nie będzie się to zdarzyć domyślnie). Znaczników **kompilacji** i **Wdróż** pól dla uniwersalnych projektów:
 
-  [ ![](universal-images/configuration-sml.png "Okno programu Configuration Manager")](universal-images/configuration.png "okno programu Configuration Manager")
+  [![](universal-images/configuration-sml.png "Okno programu Configuration Manager")](universal-images/configuration.png#lightbox "okno programu Configuration Manager")
 
  5 . Kliknij prawym przyciskiem myszy na projekt i wybierz **Dodaj > odwołania** i utworzyć odwołanie do projektu aplikacji platformy Xamarin.Forms (PCL, .NET Standard lub udostępnionego projektu).
 

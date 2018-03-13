@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: eb1602a96b304919fe563d1bb9ea0a15722e436b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Przy użyciu Wpięć za pomocą platformy Xamarin
 
@@ -34,7 +34,7 @@ Po skonfigurowaniu Wpięć i zainstalowane niezbędne się jakieś wtyczki, zost
 
 Ten przewodnik przeprowadzi sposób konfigurowania serwera Wpięć obejmujące każdego z tych punktów. Do końca go firma Microsoft ma dobrą znajomością działania do instalacji i konfiguracji Wpięć można utworzyć plik IPA i jego APK dla naszych projektów mobilnymi Xamarin.
 
-# <a name="requirements"></a>Wymagania
+## <a name="requirements"></a>Wymagania
 
 Serwer idealne kompilacji jest komputerem autonomicznym dedykowany wyłącznie w celu tworzenia i prawdopodobnie testowania aplikacji. Dedykowanym komputerze gwarantuje, że artefakty, które mogą być wymagane dla innych ról (np. z serwera sieci web) nie skażenia kompilacji. Na przykład jeśli serwer kompilacji jest również działającym jako serwer sieci web, serwer sieci web może wymagać powodujące konflikt wersji niektórych typowych biblioteki. Ze względu na konflikt serwera sieci web mogą nie działać poprawnie lub Wpięć może utworzyć kompilacje, które nie działają w przypadku wdrożone dla użytkowników.
 
@@ -42,7 +42,7 @@ Serwer kompilacji dla aplikacji mobilnych Xamarin skonfigurowano się bardzo pod
 
 Na poniższym diagramie przedstawiono wszystkie te elementy na serwerze kompilacji typowe Wpięć:
 
- [ ![](jenkins-walkthrough-images/image1.png "Ten diagram przedstawia wszystkich tych elementów na serwerze kompilacji typowe Wpięć")](jenkins-walkthrough-images/image1.png)
+ [![](jenkins-walkthrough-images/image1.png "Ten diagram przedstawia wszystkich tych elementów na serwerze kompilacji typowe Wpięć")](jenkins-walkthrough-images/image1.png#lightbox)
 
 aplikacje systemu iOS można tylko wbudowane i podpisane na komputerze z systemem Mac OS X. Mac Mini jest uzasadnione opcja tanie, ale każdy komputer umożliwiający uruchomienie systemu OS X 10.10 (Yosemite) lub nowszy jest wystarczająca.
 
@@ -50,7 +50,7 @@ Jeśli TFS jest używana do kontroli kodu źródłowego, można zainstalować [T
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-# <a name="installing-jenkins"></a>Instalowanie Wpięć
+## <a name="installing-jenkins"></a>Instalowanie Wpięć
 
 Pierwszym zadaniem do korzystania z Wpięć jest jej zainstalowanie. Istnieją trzy sposoby uruchamiania Wpięć na OS X:
 
@@ -63,57 +63,57 @@ Uruchomione w tle, albo jako demon najbardziej tradycyjne aplikacje ciągłej in
 
 Jenkins.App jest wygodnym sposobem instalowania Wpięć. Jest to otoki AppleScript, które upraszcza początkową i zatrzymywanie serwera Wpięć. Zamiast działać w powłoki bash, Wpięć działa jako aplikacja z ikony w doku, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image2.png "Zamiast działać w powłoki bash, Wpięć działa jako aplikacji z ikoną w doku, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image2.png)
+ [![](jenkins-walkthrough-images/image2.png "Zamiast działać w powłoki bash, Wpięć działa jako aplikacji z ikoną w doku, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image2.png#lightbox)
 
 Uruchamianie lub zatrzymywanie Wpięć jest tak proste, jak uruchamianie lub zatrzymywanie Jenkins.App.
 
 Aby zainstalować Jenkins.App, Pobierz najnowszą wersję ze strony pobierania projektu, na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image3.png "Aplikacja, pobierania strony, na tym zrzucie ekranu pokazano pobierania najnowszej wersji w projektach")](jenkins-walkthrough-images/image3.png)
+ [![](jenkins-walkthrough-images/image3.png "Aplikacja, pobierania strony, na tym zrzucie ekranu pokazano pobierania najnowszej wersji w projektach")](jenkins-walkthrough-images/image3.png#lightbox)
 
 Wyodrębnij plik zip do `/Applications` folderu na serwerze kompilacji i rozpoczęcia, podobnie jak inne aplikacji OS X.
 Podczas pierwszego uruchamiania Jenkins.App, wyświetli się okno dialogowe informujące, że będą pobierać Wpięć:
 
- [ ![](jenkins-walkthrough-images/image4.png "Aplikacja, przedstawi okno dialogowe informujące, że będą pobierać Wpięć")](jenkins-walkthrough-images/image4.png)
+ [![](jenkins-walkthrough-images/image4.png "Aplikacja, przedstawi okno dialogowe informujące, że będą pobierać Wpięć")](jenkins-walkthrough-images/image4.png#lightbox)
 
 Po zakończeniu jego pobierania Jenkins.App wyświetli okno dialogowe pytaniem, jeśli chcesz dostosować uruchamiania Wpięć, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image5.png "Aplikacja zakończyło się jego pobierania, wyświetli okno dialogowe pytaniem, jeśli chcesz dostosować uruchamiania Wpięć w tym zrzut ekranu")](jenkins-walkthrough-images/image5.png)
+ [![](jenkins-walkthrough-images/image5.png "Aplikacja zakończyło się jego pobierania, wyświetli okno dialogowe pytaniem, jeśli chcesz dostosować uruchamiania Wpięć w tym zrzut ekranu")](jenkins-walkthrough-images/image5.png#lightbox)
 
 Dostosowywanie Wpięć jest opcjonalna i nie trzeba wykonywać zawsze, gdy aplikacja jest uruchomiona — ustawienia domyślne dla Wpięć będzie działać w większości sytuacji.
 
 Jeśli jest to niezbędne do dostosowania Wpięć polecenie **zmienić ustawienia domyślne** przycisku. To spowoduje wyświetlenie dwóch kolejnych okien dialogowych: jeden z pytaniem, czy parametry wiersza polecenia języka Java, a druga pyta o Wpięć parametry wiersza polecenia. Dwa poniższe zrzuty ekranu pokazują tych dwóch okien dialogowych:
 
- [ ![](jenkins-walkthrough-images/image6.png "Ten zrzut ekranu przedstawia okna dialogowe")](jenkins-walkthrough-images/image6.png)
+ [![](jenkins-walkthrough-images/image6.png "Ten zrzut ekranu przedstawia okna dialogowe")](jenkins-walkthrough-images/image6.png#lightbox)
 
- [ ![](jenkins-walkthrough-images/image7.png "Ten zrzut ekranu przedstawia okna dialogowe")](jenkins-walkthrough-images/image7.png)
+ [![](jenkins-walkthrough-images/image7.png "Ten zrzut ekranu przedstawia okna dialogowe")](jenkins-walkthrough-images/image7.png#lightbox)
 
 Po uruchomieniu Wpięć, można skonfigurować jako element logowania tak zostanie uruchomiony podczas logowania użytkownika w na komputerze. Aby to zrobić, klikając prawym przyciskiem myszy ikonę Wpięć w doku i wybierając polecenie **opcje... Otwórz przy logowaniu**, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image8.png "Aby to zrobić, prawym przyciskiem myszy ikonę Wpięć w doku i wybierając polecenie OptionsOpen przy logowaniu, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image8.png)
+ [![](jenkins-walkthrough-images/image8.png "Aby to zrobić, prawym przyciskiem myszy ikonę Wpięć w doku i wybierając polecenie OptionsOpen przy logowaniu, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image8.png#lightbox)
 
 Spowoduje to Jenkins.App automatycznie uruchomić zawsze loguje się użytkownik, ale nie gdy komputer jest uruchamiany. Istnieje możliwość określenia konta użytkownika używanego do automatycznego logowania przy użyciu OS X w czasie rozruchu. Otwórz **preferencjach systemowych**i wybierz **& grupy użytkowników** ikony, jak pokazano w tym zrzut ekranu:
 
- [ ![](jenkins-walkthrough-images/image9.png "Otwórz preferencjach systemowych i wybierz ikonę grupy użytkowników, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image9.png)
+ [![](jenkins-walkthrough-images/image9.png "Otwórz preferencjach systemowych i wybierz ikonę grupy użytkowników, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image9.png#lightbox)
 
 Polecenie **opcje logowania** przycisk, a następnie wybierz konta używanego do logowania OS X w czasie rozruchu.
 
 W tym momencie Wpięć została zainstalowana. Jednak jeśli chcemy do tworzenia aplikacji platformy Xamarin dla urządzeń przenośnych, możemy będą musieli zainstalować niektórych wtyczek.
 
 
-## <a name="installing-plugins"></a>Instalowanie wtyczki
+### <a name="installing-plugins"></a>Instalowanie wtyczki
 
 Po zakończeniu Instalator Jenkins.App go uruchomi Wpięć i uruchomić przeglądarki sieci web z adresem URL adresem http://localhost: 8080, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image10.png "8080, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image10.png)
+ [![](jenkins-walkthrough-images/image10.png "8080, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image10.png#lightbox)
 
 Na tej stronie wybierz **Wpięć > Zarządzaj Wpięć > Zarządzaj wtyczkami** z menu w lewy górny róg, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image11.png "Na tej stronie Wybierz wtyczki, zarządzanie Wpięć Zarządzanie Wpięć z menu w lewy górny narożnik")](jenkins-walkthrough-images/image11.png)
+ [![](jenkins-walkthrough-images/image11.png "Na tej stronie Wybierz wtyczki, zarządzanie Wpięć Zarządzanie Wpięć z menu w lewy górny narożnik")](jenkins-walkthrough-images/image11.png#lightbox)
 
 Spowoduje to wyświetlenie **Wpięć wtyczki Menedżera** strony. Po kliknięciu na karcie dostępne, zostanie wyświetlona lista ponad 600 wtyczek, które może zostać pobrana i zainstalowana. To jest przedstawiony na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image12.png "Po kliknięciu na karcie dostępne, zostanie wyświetlona lista ponad 600 wtyczek, które może zostać pobrana i zainstalowana")](jenkins-walkthrough-images/image12.png)
+ [![](jenkins-walkthrough-images/image12.png "Po kliknięciu na karcie dostępne, zostanie wyświetlona lista ponad 600 wtyczek, które może zostać pobrana i zainstalowana")](jenkins-walkthrough-images/image12.png#lightbox)
 
 Przewijanie wszystkie wtyczki, aby znaleźć kilka może być niewygodny 600 i błąd podatnych na błędy. Wpięć zawiera pole wyszukiwania filtru w prawym górnym rogu interfejsu. Za pomocą tego pola filtru wyszukiwania uprości lokalizowania i zainstalowane jedno lub wszystkie następujące wtyczki:
 
@@ -125,22 +125,22 @@ Bez żadnych dodatkowych wtyczek Wpięć obsługuje Git.
 
 Po zainstalowaniu wszystkich wtyczek, należy ponownie uruchomić Wpięć i skonfigurować globalne ustawienia dla każdej wtyczki. Ustawienia globalne dla wtyczki można znaleźć po wybraniu **Wpięć > Zarządzaj Wpięć > skonfiguruj System** z lewy górny róg, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image13.png "Ustawienia globalne dla wtyczki można znaleźć po wybraniu Wpięć / Zarządzanie Wpięć / rogu ręcznie skonfigurować System z lewej górnej")](jenkins-walkthrough-images/image13.png)
+ [![](jenkins-walkthrough-images/image13.png "Ustawienia globalne dla wtyczki można znaleźć po wybraniu Wpięć / Zarządzanie Wpięć / rogu ręcznie skonfigurować System z lewej górnej")](jenkins-walkthrough-images/image13.png#lightbox)
 
 Po wybraniu tej opcji menu, nastąpi przekierowanie do **skonfigurować System [Wpięć]** strony. Ta strona zawiera sekcje do konfigurowania Wpięć się i ustawić niektórych wartości globalnej wtyczki.  Poniższy zrzut ekranu przedstawia przykład strony:
 
- [ ![](jenkins-walkthrough-images/image14.png "Ten zrzut ekranu przedstawia przykład strony")](jenkins-walkthrough-images/image14.png)
+ [![](jenkins-walkthrough-images/image14.png "Ten zrzut ekranu przedstawia przykład strony")](jenkins-walkthrough-images/image14.png#lightbox)
 
 
-### <a name="configuring-the-msbuild-plugin"></a>Konfigurowanie wtyczki programu MSBuild
+#### <a name="configuring-the-msbuild-plugin"></a>Konfigurowanie wtyczki programu MSBuild
 
 Wtyczka programu MSBuild musi być skonfigurowana do używania **/Library/Frameworks/Mono.framework/Commands/xbuild** skompilować dla komputerów Mac pliki rozwiązań i projektów programu Visual Studio. Przewiń w dół **skonfigurować System [Wpięć]** strony do **dodać MSBuild** przycisk pojawia się, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image15.png "Przewiń w dół strony konfigurowania systemu Wpięć aż pojawi się przycisk Dodaj MSBuild")](jenkins-walkthrough-images/image15.png)
+ [![](jenkins-walkthrough-images/image15.png "Przewiń w dół strony konfigurowania systemu Wpięć aż pojawi się przycisk Dodaj MSBuild")](jenkins-walkthrough-images/image15.png#lightbox)
 
 Kliknij ten przycisk, a następnie wypełnij **nazwa** i **ścieżki** do **MSBuild** pól w wyświetlonym formularzu. Nazwa użytkownika **MSBuild** instalacja powinna być, wpisując tekst opisowy, podczas **ścieżki dla programu MSBuild** powinna być ścieżką do `xbuild`, co jest typowe **/Library/struktury / Mono.framework/Commands/xbuild**. Po możemy zapisać zmiany, klikając przycisk Zastosuj w dolnej części strony lub Zapisz Wpięć będą mogli używać `xbuild` skompilować rozwiązań.
 
-### <a name="configuring-the-tfs-plugin"></a>Konfigurowania serwera TFS
+#### <a name="configuring-the-tfs-plugin"></a>Konfigurowania serwera TFS
 
 Ta sekcja jest wymagane, jeśli zamierzasz używać programu TFS dla programu kontroli kodu źródłowego.
 
@@ -160,34 +160,34 @@ Aby stacji roboczej OS X do interakcji z serwerem TFS Team Explorer Everywhere m
 
 Po zainstalowaniu klienta wiersza polecenia dla serwerów TFS Wpięć musi być skonfigurowany z pełną ścieżką do `tf` klient wiersza polecenia. Przewiń w dół **skonfigurować System [Wpięć]** strony do momentu znalezienia sekcji Team Foundation Server, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image17.png "Przewiń w dół strony konfigurowania Wpięć systemu do Znajdź sekcję Team Foundation Server")](jenkins-walkthrough-images/image17.png)
+ [![](jenkins-walkthrough-images/image17.png "Przewiń w dół strony konfigurowania Wpięć systemu do Znajdź sekcję Team Foundation Server")](jenkins-walkthrough-images/image17.png#lightbox)
 
 Wprowadź pełną ścieżkę do `tf` polecenia, a następnie kliknij przycisk **zapisać** przycisku.
 
-## <a name="configure-jenkins-security"></a>Konfigurowanie zabezpieczeń Wpięć
+### <a name="configure-jenkins-security"></a>Konfigurowanie zabezpieczeń Wpięć
 
 Podczas pierwszej instalacji Wpięć ma zabezpieczeń wyłączone, co dla każdego użytkownika skonfigurować i uruchomić anonimowo dowolnego rodzaju zadania. W tej sekcji opisano sposób konfigurowania zabezpieczeń przy użyciu bazy danych użytkowników Wpięć Konfigurowanie uwierzytelniania i autoryzacji.
 
 Ustawienia zabezpieczeń można znaleźć po wybraniu **Wpięć > Zarządzaj Wpięć > Konfigurowanie zabezpieczeń globalnych**, jak pokazano w tym zrzut ekranu:
 
- [ ![](jenkins-walkthrough-images/image18.png "Ustawienia zabezpieczeń można znaleźć po wybraniu Wpięć / Zarządzanie Wpięć / Konfigurowanie zabezpieczeń globalnych")](jenkins-walkthrough-images/image18.png)
+ [![](jenkins-walkthrough-images/image18.png "Ustawienia zabezpieczeń można znaleźć po wybraniu Wpięć / Zarządzanie Wpięć / Konfigurowanie zabezpieczeń globalnych")](jenkins-walkthrough-images/image18.png#lightbox)
 
 Na **Konfigurowanie zabezpieczeń globalnych** strony, sprawdź **Włącz zabezpieczenia** wyboru i **kontroli dostępu** formularza powinny wyglądać, podobnie jak dalej zrzut ekranu:
 
- [ ![](jenkins-walkthrough-images/image19.png "Na stronie Konfigurowanie zabezpieczeń globalnych Sprawdź Włącz zabezpieczenia wyboru i kontroli dostępu formularza powinna zostać wyświetlona, podobny do tego zrzutu ekranu")](jenkins-walkthrough-images/image19.png)
+ [![](jenkins-walkthrough-images/image19.png "Na stronie Konfigurowanie zabezpieczeń globalnych Sprawdź Włącz zabezpieczenia wyboru i kontroli dostępu formularza powinna zostać wyświetlona, podobny do tego zrzutu ekranu")](jenkins-walkthrough-images/image19.png#lightbox)
 
 Przełącz przycisk radiowy **bazy danych użytkowników własnych Wpięć** w **sekcji obszaru zabezpieczeń**i upewnij się, że **umożliwiają użytkownikom logowanie** jest również sprawdzane, zgodnie z opisami w Poniższy zrzut ekranu:
 
- [ ![](jenkins-walkthrough-images/image20.png "Przełącz przycisk radiowy Wpięć własnych użytkownika z bazy danych w sekcji obszaru zabezpieczeń i upewnij się również zaznaczono Zezwalaj użytkownikom logowanie")](jenkins-walkthrough-images/image20.png)
+ [![](jenkins-walkthrough-images/image20.png "Przełącz przycisk radiowy Wpięć własnych użytkownika z bazy danych w sekcji obszaru zabezpieczeń i upewnij się również zaznaczono Zezwalaj użytkownikom logowanie")](jenkins-walkthrough-images/image20.png#lightbox)
 
 Na koniec uruchom ponownie Wpięć i Utwórz nowe konto. Pierwsze konto, który jest tworzony jest konta głównego i to konto zostanie automatycznie podwyższony do poziomu administratora. Przejdź z powrotem do **Konfigurowanie zabezpieczeń globalnych** strony, a następnie odznaczyć **zabezpieczenia oparte na macierzy** przycisk radiowy. Konta głównego może być przyznany dostęp, a konto anonimowe ma uzyskać dostęp tylko do odczytu, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](jenkins-walkthrough-images/image21.png "Konta głównego może być przyznany dostęp, a konto anonimowe ma uzyskać dostęp tylko do odczytu")](jenkins-walkthrough-images/image21.png)
+ [![](jenkins-walkthrough-images/image21.png "Konta głównego może być przyznany dostęp, a konto anonimowe ma uzyskać dostęp tylko do odczytu")](jenkins-walkthrough-images/image21.png#lightbox)
 
 Gdy te ustawienia są zapisywane i ponownym uruchomieniu Wpięć zabezpieczeń zostanie włączona.
 
 
-### <a name="disabling-security"></a>Wyłączenie zabezpieczeń
+#### <a name="disabling-security"></a>Wyłączenie zabezpieczeń
 
 W przypadku zapomniane hasło lub całej Wpięć blokady możliwe jest wyłączenie zabezpieczeń, wykonaj następujące czynności:
 
@@ -199,7 +199,7 @@ W przypadku zapomniane hasło lub całej Wpięć blokady możliwe jest wyłącze
 4. Usuń `<authorizationstrategy></authorizationstrategy>` i `<securityrealm></securityrealm>` elementy z pliku.
 5. Uruchom ponownie Wpięć.
 
-# <a name="setting-up-a-job"></a>Konfigurowanie zadania
+## <a name="setting-up-a-job"></a>Konfigurowanie zadania
 
 Na najwyższym poziomie Wpięć organizuje wszystkie poszczególne zadania wymagane do tworzenia oprogramowania do *zadania*. Zadanie ma również metadane skojarzone z nią dostarczanie informacji o kompilacji, takich jak uzyskiwanie kod źródłowy, jak często ma być uruchamiany kompilacji, zmienne specjalne, które są niezbędne do tworzenia i jak powiadomić deweloperów, jeśli kompilacja zakończy się niepowodzeniem.
 
@@ -226,11 +226,11 @@ Po utworzeniu zadania początkowej, musi być skonfigurowany z co najmniej jeden
  - Co najmniej jeden *akcji* musi zostać dodany do projektu. Oto kroki lub zadania wymagane do tworzenia aplikacji.
  - To zadanie należy przypisać jedną *kompilacji wyzwalacza* — zestaw instrukcji dowie się, jak często Wpięć można pobrać kodu i kompilacji ostatecznego projektu.
 
-## <a name="configuring-source-code-control"></a>Konfigurowanie kontroli kodu źródłowego
+### <a name="configuring-source-code-control"></a>Konfigurowanie kontroli kodu źródłowego
 
 Pierwszym zadaniem Wpięć nie jest pobrać kodu źródłowego z systemu zarządzania kodu źródłowego. Wpięć obsługuje wiele obecnie dostępne w systemach zarządzania kodem źródłowym popularnych. W tej sekcji omówiono dwóch popularnych systemów Git i Team Foundation Server. Każdy z tych systemach zarządzania kodem źródłowym omówiono bardziej szczegółowo w poniższych sekcjach.
 
-### <a name="using-git-for-source-code-control"></a>Przy użyciu usługi Git do kontroli kodu źródłowego
+#### <a name="using-git-for-source-code-control"></a>Przy użyciu usługi Git do kontroli kodu źródłowego
 
 Jeśli używasz programu TFS do kontroli kodu źródłowego, [pominąć](#Using_TFS_for_Source_Code_Management) tej sekcji, a następnie przejdź do następnej sekcji za pomocą TFS.
 
@@ -240,7 +240,7 @@ Wpięć obsługuje Git fabrycznej — nie dodatkowe wtyczki są niezbędne. Aby 
 
 Po zapisaniu zmian Git konfiguracja zostanie zakończona.
 
-### <a name="using-tfs-for-source-code-management"></a>Za pomocą TFS do zarządzania kodem źródłowym
+#### <a name="using-tfs-for-source-code-management"></a>Za pomocą TFS do zarządzania kodem źródłowym
 
 Ta sekcja dotyczy tylko użytkowników TFS.
 
@@ -253,7 +253,7 @@ Podaj informacje niezbędne do TFS. Poniższy zrzut ekranu przedstawia przykład
 
 ![](jenkins-walkthrough-images/image27.png "Ten zrzut ekranu przedstawia przykład wypełnionego formularza")
 
-### <a name="testing-the-source-code-control-configuration"></a>Testowanie konfiguracji kontroli kodu źródłowego
+#### <a name="testing-the-source-code-control-configuration"></a>Testowanie konfiguracji kontroli kodu źródłowego
 
 Po skonfigurowaniu kontroli kodu źródłowego odpowiednie kliknij **zapisać** Aby zapisać zmiany. Spowoduje to powrót do strony głównej dla zadania, które będą wyglądać Poniższy zrzut ekranu:
 
@@ -273,7 +273,7 @@ Aby pomóc w rozwiązywaniu problemów, które mogą wystąpić podczas kompilac
 
 ![](jenkins-walkthrough-images/image31.png "Ten zrzut ekranu przedstawia łącze dane wyjściowe konsoli, a także niektóre z danych wyjściowych z zadania powiodło się")
 
-### <a name="location-of-build-artifacts"></a>Lokalizacja artefaktów kompilacji
+#### <a name="location-of-build-artifacts"></a>Lokalizacja artefaktów kompilacji
 
 Wpięć pobierze kod źródłowy całego do specjalnego folderu o nazwie *obszaru roboczego*. Ten katalog znajduje się w folderze w następującej lokalizacji:
 
@@ -285,7 +285,7 @@ Umożliwia przeglądanie folderu roboczego w Wpięć nawigowania do strony docel
 
 ![](jenkins-walkthrough-images/image32.png "Ten zrzut ekranu przedstawia przykład obszaru roboczego dla zadania o nazwie HelloWorld")
 
-## <a name="build-triggers"></a>Tworzenie wyzwalaczy
+### <a name="build-triggers"></a>Tworzenie wyzwalaczy
 
 Istnieje kilka strategii inicjowania kompilacji w Wpięć — są one nazywane *kompilacji wyzwalaczy*. Wyzwalacz kompilacji pomaga Wpięć zadecydować o czasie rozpocząć zadanie i skompilować projekt. Dwa najczęściej wyzwalaczy kompilacji są:
 
@@ -297,7 +297,7 @@ Sondowanie SCM jest popularnych wyzwalacza, ponieważ zapewnia szybkie opinii de
 Okresowe kompilacje są często używane do tworzenia wersję aplikacji, które mogą być dystrybuowane testerów. Na przykład kompilacja okresowych może zostać zaplanowane wieczorem piątek, aby członkowie zespołu pytań i odpowiedzi można testować pracy poprzedniego tygodnia.
 
 
-## <a name="compiling-a-xamarinios-applications"></a>Kompilowanie aplikacji platformy Xamarin.iOS
+### <a name="compiling-a-xamarinios-applications"></a>Kompilowanie aplikacji platformy Xamarin.iOS
 Za pomocą wiersza polecenia można kompilować projektów platformy Xamarin.iOS `xbuild` lub `msbuild`. Polecenia powłoki będzie wykonywany w kontekście konta użytkownika, który działa Wpięć. Należy pamiętać, że konto użytkownika ma dostęp do profilu inicjowania obsługi administracyjnej, dzięki czemu można poprawnie spakować aplikację do dystrybucji. Istnieje możliwość dodania tego polecenia powłoki do strony Konfiguracja zadania.
 
 Przewiń w dół do **kompilacji** sekcji. Kliknij przycisk **kroku kompilacji Dodaj** i wybrać **wykonywania powłoki**, jak pokazano na poniższym zrzucie ekranu:
@@ -307,7 +307,7 @@ Przewiń w dół do **kompilacji** sekcji. Kliknij przycisk **kroku kompilacji D
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-## <a name="building-a-xamarinandroid-project"></a>Tworzenie projektu platformy Xamarin.Android
+### <a name="building-a-xamarinandroid-project"></a>Tworzenie projektu platformy Xamarin.Android
 
 Tworzenie projektu platformy Xamarin.Android jest bardzo podobna do tworzenia projektu platformy Xamarin.iOS. Aby utworzyć APK z projektu platformy Xamarin.Android, Wpięć musi być skonfigurowana do wykonania następujących dwóch kroków:
 
@@ -316,7 +316,7 @@ Tworzenie projektu platformy Xamarin.Android jest bardzo podobna do tworzenia pr
 
 Następujące dwa kroki zostanie omówiona bardziej szczegółowo w dwóch następnych sekcjach.
 
-## <a name="creating-the-apk"></a>Tworzenie plik APK
+### <a name="creating-the-apk"></a>Tworzenie plik APK
 
 Polecenie **kroku kompilacji Dodaj** i wybrać **kompilacji projektu programu Visual Studio lub za pomocą MSBuild rozwiązania**, jak pokazano na poniższym zrzucie ekranu:
 
@@ -337,7 +337,7 @@ Poniższy zrzut ekranu przedstawia przykład tego APK:
 
 To APK nie jest gotowa do wdrożenia, ponieważ nie został podpisany z prywatnej magazynu kluczy i muszą być zip wyrównane.
 
-### <a name="signing-and-zipaligning-the-apk-for-release"></a>Podpisywanie i Zipaligning APK w wersji
+#### <a name="signing-and-zipaligning-the-apk-for-release"></a>Podpisywanie i Zipaligning APK w wersji
 
 Podpisywanie i zipaligning plik APK są technicznie dwóch oddzielnych zadań wykonywanych przez dwa oddzielne wiersza polecenia narzędzi z zestawu SDK systemu Android. Jednak jest wygodne wykonywanie je w jednej kompilacji akcji. Aby uzyskać więcej informacji o logowaniu i zipaligning APK dokumentacji firmy Xamarin na przygotowanie aplikacji systemu Android w wersji.
 
@@ -410,12 +410,12 @@ Poniższy zrzut ekranu przedstawia przykład sposobu wprowadzania `jarsigner` i 
 
 Po zatwierdzeniu wszystkich akcji kompilacji w miejscu, jest dobrym rozwiązaniem, aby wyzwolić ręczne kompilacji, aby sprawdzić, czy wszystko działa. Jeśli kompilacja zakończy się niepowodzeniem, **dane wyjściowe konsoli** należy sprawdzić, aby uzyskać informacje dotyczące przyczyn niepowodzenia kompilacji.
 
-## <a name="submitting-tests-to-test-cloud"></a>Przesyłanie testów do chmury testowej
+### <a name="submitting-tests-to-test-cloud"></a>Przesyłanie testów do chmury testowej
 
 Testy automatyczne może zostać przesłane do chmury testowej przy użyciu powłoki poleceń. Aby uzyskać więcej informacji na temat konfigurowania uruchomienia testu w chmury testowej Xamarin mamy przewodniki dotyczące korzystania z [Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/) lub [Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
 
 
-#<a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku możemy wprowadzono Wpięć jako serwer kompilacji w systemie Mac OS X i skonfigurować go skompilować i przygotować aplikacje platformy Xamarin dla wersji. Zainstalowano Wpięć na komputerze Mac OS X oraz kilka wtyczek do obsługi procesu kompilacji. Firma Microsoft utworzone i skonfigurowane zadania pobierania kodu z Git lub TFS, a następnie skompilować kod w wersji aplikacji gotowe. Możemy również przedstawione dwa różne sposoby Zaplanuj, kiedy zadania są uruchamiane.
 

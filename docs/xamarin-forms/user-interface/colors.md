@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 69ab69efd60c486255164987795db1937b36b97d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9c40d99d80766c5d32a76e424e902bd1b7d141ba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="colors"></a>Kolory
 
@@ -47,7 +47,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 Kolorów te są wyświetlane na każdej z platform. Zwróć uwagę, kolor końcowy - `Accent` -blue-ish kolor dla systemów iOS i Android; ta wartość jest definiowana przez platformy Xamarin.Forms. Na Windows Phone `Accent` pokazuje kolorem czerwonym *ponieważ jest to kolor akcentu wybrane przez użytkownika dla tego urządzenia*; zmiany tej wartości w zależności od preferencji użytkownika.
 
- [ ![Pokaz kolor](colors-images/colors-sml.png "pokaz kolor")](colors-images/colors.png "pokaz kolorów")
+ [![Pokaz kolor](colors-images/colors-sml.png "pokaz kolor")](colors-images/colors.png#lightbox "pokaz kolorów")
 
 ## <a name="colordefault"></a>Color.Default
 

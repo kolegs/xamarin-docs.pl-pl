@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>Widoki alternatywnych układu
 
 _W tym temacie wyjaśniono, jak układów można numerów wersji przy użyciu kwalifikatory zasobów. Na przykład może istnieć wersję układu, który jest używany tylko, gdy urządzenie jest w trybie krajobraz i tylko w trybie portret wersji układu._
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>Tworzenie układów alternatywnych
 
@@ -26,11 +25,11 @@ Po kliknięciu **alternatywnych widoku układu** ikona (z lewej strony **urządz
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alternatywne układ widoku okienka](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "okienka widoku układu alternatywnej")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![Alternatywne układ widoku okienka](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "okienka widoku układu alternatywnej")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![W okienku widoku Układ alternatywnej](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![W okienku widoku Układ alternatywnej](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ Po kliknięciu zielony znak plus obok **nowej wersji**, **utworzyć zmiany ukła
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tworzenie układu odmiany](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "tworzenie odmiany układu")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![Tworzenie układu odmiany](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "tworzenie odmiany układu")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Tworzenie układu odmiany](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![Tworzenie układu odmiany](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ W poniższym przykładzie kwalifikator zasobów dla **orientacji ekranu** ustawi
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Duży ziemi odmiany](alternative-layout-views-images/vs/03-large-land-sml.png "odmiany ziemi duży")](alternative-layout-views-images/vs/03-large-land.png)
+[![Duży ziemi odmiany](alternative-layout-views-images/vs/03-large-land-sml.png "odmiany ziemi duży")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Zmiana ziemi duży](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![Zmiana ziemi duży](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ Należy pamiętać, że okienko podglądu po lewej stronie wyświetla skutków o
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Wskaźnik załadować układu](alternative-layout-views-images/vs/04-new-layout-sml.png "wskaźnik załadować układu")](alternative-layout-views-images/vs/04-new-layout.png)
+[![Wskaźnik załadować układu](alternative-layout-views-images/vs/04-new-layout-sml.png "wskaźnik załadować układu")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Wskaźnik załadować układu](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![Wskaźnik załadować układu](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>Edytowanie alternatywnych układów
 
@@ -83,11 +81,11 @@ Aby uprościć zarządzanie wieloma wersjami układu, Projektant udostępnia **e
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Ikona edytowania wielu](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "ikonę edycji wielu")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![Ikona edytowania wielu](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "ikonę edycji wielu")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Ikona wielu edycji](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![Ikona wielu edycji](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ Po kliknięciu **edycji wielu** ikona, są wyświetlane linie wskazujące, że u
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Rozłącz wszystkich układów](alternative-layout-views-images/vs/06-multi-linked-sml.png "odłączyć wszystkich układów")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![Rozłącz wszystkich układów](alternative-layout-views-images/vs/06-multi-linked-sml.png "odłączyć wszystkich układów")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Rozłącz wszystkich układów](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![Rozłącz wszystkich układów](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ Jeśli masz więcej niż dwóch układów można selektywnie Przełącz przycisk
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Rozłącz środkowej układu](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "układu środkowej Rozłącz")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![Rozłącz środkowej układu](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "układu środkowej Rozłącz")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Rozłącz środkowej układu](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![Rozłącz środkowej układu](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ Jeśli masz więcej niż dwóch układów można selektywnie Przełącz przycisk
 W tym przykładzie zmienione jako **domyślne** lub **długi** układu będzie propagowane do innych układu, ale nie do **dużych ziemi** układu. 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>Przykład wielu edycji 
 
@@ -129,11 +126,11 @@ Ogólnie rzecz biorąc po wprowadzeniu zmian w jeden układ tego samego zmiana j
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dodaj element TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "Dodaj element TextView")](alternative-layout-views-images/vs/08-add-textview.png)
+[![Dodaj element TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "Dodaj element TextView")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Dodaj element TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![Dodaj element TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ Ogólnie rzecz biorąc po wprowadzeniu zmian w jeden układ tego samego zmiana j
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Poziomą TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "poziomą TextView")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![Poziomą TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "poziomą TextView")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Element TextView orientacji poziomej](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![Element TextView orientacji poziomej](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ Ogólnie rzecz biorąc po wprowadzeniu zmian w jeden układ tego samego zmiana j
 Ale co zrobić, jeśli chcesz wprowadzić zmianę, która jest tylko jeden układ lokalną (to znaczy, że nie chcesz zmiany są propagowane do żadnego z innych układów)? Aby to zrobić, musisz odłączyć układu, który chcesz zmienić przed przystąpieniem do modyfikacji, jak wyjaśniono dalej. 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>Wprowadzanie zmian lokalnych 
 
@@ -162,11 +158,11 @@ Załóżmy, że chcemy mieć dodany obu układów `TextView`, ale chcemy też zm
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zmiana lokalna](alternative-layout-views-images/vs/10-local-change-sml.png "lokalne zmiany")](alternative-layout-views-images/vs/10-local-change.png)
+[![Zmiana lokalna](alternative-layout-views-images/vs/10-local-change-sml.png "lokalne zmiany")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Zmiana lokalna](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![Zmiana lokalna](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ Załóżmy, że chcemy mieć dodany obu układów `TextView`, ale chcemy też zm
 Po kliknięciu **domyślne** układu, aby wyświetlić jego `TextView` ciąg tekstowy nadal jest ustawione `Portrait`. 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>Konfliktów 
 
@@ -182,22 +177,21 @@ Jeśli zdecydujesz się zmienić kolor tekstu w **domyślne** układu zielony, p
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zmiany powodujące konflikt](alternative-layout-views-images/vs/11-conflicting-change-sml.png "zmiany powodujące konflikt")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![Zmiany powodujące konflikt](alternative-layout-views-images/vs/11-conflicting-change-sml.png "zmiany powodujące konflikt")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Powodujące konflikt zmiany](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![Powodujące konflikt zmiany](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 A *okno konfliktów* jest wyświetlana po prawej stronie widżetu wyjaśnić konfliktu: 
 
-[ ![Ostrzeżenie konflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![Ostrzeżenie konflikt](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 Pole konflikt zawiera listę właściwości, które zostały zmienione, a także ich wartości. Kliknięcie przycisku **Ignoruj konflikt** stosuje zmiany właściwości tylko do tego elementu widget. Kliknięcie przycisku **Zastosuj** stosuje zmiany właściwości do tego elementu widget oraz aby widżetów duplikat w połączonych **domyślne** układu. Jeśli wszystkie zmiany właściwości są stosowane, konflikt jest automatycznie odrzucane. 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>Konflikty widoku grupy 
 
@@ -205,11 +199,11 @@ Zmiany właściwości nie są jedyne źródło konfliktów. Konflikty mogą być
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Wyświetl konflikt grupy](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "wyświetlić konflikt grupy")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![Wyświetl konflikt grupy](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "wyświetlić konflikt grupy")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Widok grupy konflikt](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![Widok grupy konflikt](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ Jeśli `CheckBox` jest dodawany do **domyślne** układu, jest generowany innego
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Konflikt wyboru](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "konflikt wyboru")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![Konflikt wyboru](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "konflikt wyboru")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Konflikt wyboru](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![Konflikt wyboru](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ Kliknięcie przycisku **dużych ziemi** układu ujawnia konflikt. Zostanie wyśw
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Konflikt ALT układu](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "konflikt układu Alt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![Konflikt ALT układu](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "konflikt układu Alt")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Konflikt układu ALT](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![Konflikt układu ALT](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 Ponadto w polu konflikt zostanie wyświetlony następujący komunikat:
 
-[ ![Konflikt wiadomości](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![Konflikt wiadomości](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 Dodawanie `CheckBox` powoduje konflikt, ponieważ **dużych ziemi** układ ma zmiany `LinearLayout` go zawiera. Jednak w takim przypadku pole konflikt zawiera element widget, która właśnie została umieszczona w **domyślne** układu ( `CheckBox`).
 
@@ -252,11 +246,11 @@ Jeśli klikniesz przycisk **Ignoruj konflikt**, Projektant rozwiązuje konflikt,
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Rozwiązano konflikt grupy](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "rozwiązano konflikt grupy")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![Rozwiązano konflikt grupy](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "rozwiązano konflikt grupy")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Rozwiązano konflikt grupy](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![Rozwiązano konflikt grupy](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ Jeśli klikniesz przycisk **Ignoruj konflikt**, Projektant rozwiązuje konflikt,
 Jak pokazano w poprzednim przykładzie z `Button`, `CheckBox` nie ma znacznik red zmian, ponieważ tylko `LinearLayout` zawiera zmiany, które zostały zastosowane w **dużych ziemi** układu.
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>Konflikt trwałości
 

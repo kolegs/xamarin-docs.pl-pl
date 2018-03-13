@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>Słowniki zasobów
 
@@ -83,10 +83,10 @@ Wszystkie zasoby, ma klucz, który jest określany przy użyciu `x:Key` atrybut,
 
 Pierwszy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpienia pobiera i wykorzystuje `LabelPageHeadingStyle` zasobów zdefiniowane na poziomie aplikacji [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), drugi `Label` wystąpienia Pobieranie i przetwarzanie `LabelNormalStyle` zasobów zdefiniowane na poziomie formantu `ResourceDictionary`. Podobnie [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wystąpienia pobiera i wykorzystuje `NormalTextColor` zasobów zdefiniowane na poziomie aplikacji `ResourceDictionary`i `MediumBoldText` zasobów zdefiniowane na poziomie formantu `ResourceDictionary`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
 
-[![](resource-dictionaries-images/screenshots-sml.png "Korzystanie z zasobów ResourceDictionary")](resource-dictionaries-images/screenshots.png "korzysta z zasobów ResourceDictionary")
+[![](resource-dictionaries-images/screenshots-sml.png "Korzystanie z zasobów ResourceDictionary")](resource-dictionaries-images/screenshots.png#lightbox "korzysta z zasobów ResourceDictionary")
 
 > [!NOTE]
-> **Uwaga**: zasoby, które są specyficzne dla pojedynczej strony nie powinny być uwzględniane w słowniku zasobów na poziomie aplikacji, w związku zasobów zostanie następnie można analizować przy uruchamianiu aplikacji zamiast na żądanie przez stronę. Aby uzyskać więcej informacji, zobacz [zmniejszyć rozmiar słownika zasobów aplikacji](~/xamarin-forms/deploy-test/performance.md).
+> Zasoby, które są specyficzne dla pojedynczej strony nie powinny znajdować się w aplikacji zasobów na poziomie słownika, jako takie zasoby następnie będzie analizowany przy uruchamianiu aplikacji zamiast, gdy jest to wymagane przez stronę. Aby uzyskać więcej informacji, zobacz [zmniejszyć rozmiar słownika zasobów aplikacji](~/xamarin-forms/deploy-test/performance.md).
 
 ## <a name="overriding-resources"></a>Zastępowanie zasobów
 
@@ -118,7 +118,7 @@ Gdy [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Form
 
 Oryginalna `PageBackgroundColor` i `NormalTextColor` wystąpień zdefiniowane na poziomie aplikacji zostały zastąpione przez `PageBackgroundColor` i `NormalTextColor` wystąpień zdefiniowane na poziomie strony. W związku z tym kolor tła strony staje się niebieska i tekstu na stronie stanie się żółty, jak pokazano na poniższych zrzutach ekranu:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "Zastępowanie zasobów ResourceDictionary")](resource-dictionaries-images/overridding-screenshots.png "zastępowanie ResourceDictionary zasobów")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "Zastępowanie zasobów ResourceDictionary")](resource-dictionaries-images/overridding-screenshots.png#lightbox "zastępowanie ResourceDictionary zasobów")
 
 Jednak należy pamiętać, że na pasku tła [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) jest nadal żółty, ponieważ [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) właściwości ustawiono wartość `PageBackgroundColor` zasobów zdefiniowanych w aplikacji poziom [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).
 
@@ -175,7 +175,7 @@ W przypadku scalania [ `ResourceDictionary` ](https://developer.xamarin.com/api/
 1. Zasoby zawarte w słownikach zasobów, które zostały scalone za pośrednictwem `MergedDictionaries` kolekcji w kolejności, w jakiej występują w `MergedDictionaries` właściwości.
 
 > [!NOTE]
-> **Uwaga**: wyszukiwanie słowniki zasobów może być praktyce znacznym zadania, jeśli aplikacja zawiera wiele słowniki dużych zasobów. W związku z tym upewnić się, że każdej strony w aplikacji tylko używa słowniki zasobów, które są odpowiednie do strony, aby uniknąć niepotrzebnych wyszukiwania.
+> Wyszukiwanie słowniki zasobów może być praktyce znacznym zadania, jeśli aplikacja zawiera wiele słowniki dużych zasobów. W związku z tym upewnić się, że każdej strony w aplikacji tylko używa słowniki zasobów, które są odpowiednie do strony, aby uniknąć niepotrzebnych wyszukiwania.
 
 ## <a name="summary"></a>Podsumowanie
 

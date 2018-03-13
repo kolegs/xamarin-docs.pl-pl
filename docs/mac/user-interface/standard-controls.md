@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e6df7f9308285b87ff0f42b73c8404b375cbb0de
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="standard-controls"></a>Formanty standardowe
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej App
 
 Formanty AppKit są elementy interfejsu użytkownika, które są używane do tworzenia interfejsu użytkownika aplikacji Xamarin.Mac. One składają się z elementów, takich jak przyciski, etykiety, pola tekstowego, pola wyboru i formanty segmentu i spowodować błyskawiczny akcje lub widoczne wyniki, gdy użytkownik modyfikuje je.
 
-[ ![](standard-controls-images/intro01.png "Przykład ekranu głównego aplikacji")](standard-controls-images/intro01.png)
+[![](standard-controls-images/intro01.png "Przykład ekranu głównego aplikacji")](standard-controls-images/intro01.png#lightbox)
 
 W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z AppKit formantów w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -51,7 +51,7 @@ Aby uzyskać więcej informacji, zobacz pleas [o kontrolek i widoki](https://dev
 
 Brak podzbiór formantów AppKit, który zawiera styl wyświetlania, która to umożliwia uwzględnienie w obszarze ramki okna. Na przykład zobacz narzędzi aplikacji poczty:
 
-[ ![](standard-controls-images/mailapp.png "Ramkę okna Mac")](standard-controls-images/mailapp.png)
+[![](standard-controls-images/mailapp.png "Ramkę okna Mac")](standard-controls-images/mailapp.png#lightbox)
 
 - **Zaokrąglanie teksturą przycisk** — `NSButton` z styl `NSTexturedRoundedBezelStyle`.
 - **Teksturę zaokrąglona Segmentowanych kontroli** — `NSSegmentedControl` z styl `NSSegmentStyleTexturedRounded`.
@@ -73,15 +73,15 @@ Aby uzyskać więcej informacji, zobacz pleas [o kontrolek i widoki](https://dev
 
 Podczas tworzenia nowej aplikacji Xamarin.Mac Cocoa, otrzymasz standardowe okno puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie dołączony do projektu. Aby edytować w projekcie systemu windows **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
 
-[ ![](standard-controls-images/edit01.png "Wybieranie głównego Storyboard w Eksploratorze rozwiązań")](standard-controls-images/edit01.png)
+[![](standard-controls-images/edit01.png "Wybieranie głównego Storyboard w Eksploratorze rozwiązań")](standard-controls-images/edit01.png#lightbox)
 
 Spowoduje to otwarcie okna projektu w Konstruktorze interfejsu w środowisku Xcode:
 
-[ ![](standard-controls-images/edit02.png "Edytowanie scenorysu w środowisku Xcode")](standard-controls-images/edit02.png)
+[![](standard-controls-images/edit02.png "Edytowanie scenorysu w środowisku Xcode")](standard-controls-images/edit02.png#lightbox)
 
 Aby utworzyć interfejsu użytkownika, będzie przeciągnij elementy interfejsu użytkownika (AppKit formantów) z **inspektora biblioteki** do **Edytor interfejsu** w Konstruktorze interfejsu. W poniższym przykładzie **widok Podziel pionowo** formant został narkotyków z **inspektora biblioteki** i umieścić w oknie **Edytor interfejsu**:
 
-[ ![](standard-controls-images/edit03.png "Wybranie widoku podział z biblioteki")](standard-controls-images/edit03.png)
+[![](standard-controls-images/edit03.png "Wybranie widoku podział z biblioteki")](standard-controls-images/edit03.png#lightbox)
 
 Aby uzyskać więcej informacji na temat tworzenia interfejsu użytkownika w Konstruktorze interfejsu, zobacz nasze [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) dokumentacji.
 
@@ -91,21 +91,21 @@ Aby uzyskać więcej informacji na temat tworzenia interfejsu użytkownika w Kon
 
 Po formant został uwzględniony w interfejsie użytkownika, użyj **edytora ograniczeń** jej lokalizacja i rozmiar przez ręczne wprowadzanie wartości i sterowanie znajduje się automatycznie i o rozmiarze, gdy formant nadrzędny okna lub widoku Zmieniono rozmiar:
 
-[ ![](standard-controls-images/edit04.png "Ustawienie z ograniczeniami")](standard-controls-images/edit04.png)
+[![](standard-controls-images/edit04.png "Ustawienie z ograniczeniami")](standard-controls-images/edit04.png#lightbox)
 
 Użyj **czerwony I świateł** wokół zewnętrznej **Autoresizing** polu _USB_ formantu do lokalizacji w danym (x, y). Na przykład: 
 
-[ ![](standard-controls-images/edit05.png "Edytowanie ograniczenia")](standard-controls-images/edit05.png)
+[![](standard-controls-images/edit05.png "Edytowanie ograniczenia")](standard-controls-images/edit05.png#lightbox)
 
 Określa, że wybrany formant (w **Widok hierarchii** & **Edytor interfejsu**) zostać zablokowana lokalizacji górnego i prawego widoku lub okna zmiany rozmiaru lub przenieść. 
 
 Inne elementy właściwości formantu edytora, takie jak wysokość i szerokość:
 
-[ ![](standard-controls-images/edit06.png "Ustawienie wysokość")](standard-controls-images/edit06.png)
+[![](standard-controls-images/edit06.png "Ustawienie wysokość")](standard-controls-images/edit06.png#lightbox)
 
 Można też kontrolować sposób wyrównania elementów z ograniczeniami przy użyciu **Edytor wyrównanie**:
 
-[ ![](standard-controls-images/edit07.png "Edytor wyrównania")](standard-controls-images/edit07.png)
+[![](standard-controls-images/edit07.png "Edytor wyrównania")](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > W przeciwieństwie do systemu iOS gdzie (0,0) jest górnym lewym dolnym rogu ekranu, w macOS (0,0) jest niższa po lewej stronie ekranu. Jest to spowodowane macOS używa matematyczne układ współrzędnych z wartości liczbowe zwiększenie wartości w górę i w prawo. Należy to uwzględnić podczas umieszczania AppKit kontrolek interfejsu użytkownika.
@@ -197,7 +197,7 @@ Gdzie `[Register("SourceListView")]` ujawnia instrukcji `SourceListView` klasy j
 
 Powyższy kod w miejscu możesz przeciągnąć kontrolkę AppKit typu podstawowego, który powiększa się, na powierzchnię projektu (w poniższym przykładzie **listy źródeł**), przełącz się do **inspektora tożsamości** i ustaw **klasy niestandardowej** na nazwę, która ujawniony dla języka Objective-C (przykład `SourceListView`):
 
-[ ![](standard-controls-images/edit10.png "Ustawienie niestandardowej klasy w środowisku Xcode")](standard-controls-images/edit10.png)
+[![](standard-controls-images/edit10.png "Ustawienie niestandardowej klasy w środowisku Xcode")](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions" />
 
@@ -205,15 +205,15 @@ Powyższy kod w miejscu możesz przeciągnąć kontrolkę AppKit typu podstawowe
 
 Zanim formant AppKit można uzyskać w kodzie języka C#, musi on być udostępniany jako albo **gniazda** lub i **akcji**. Aby zrobić to wybierz daną kontrolkę w jednym **hierarchii interfejsów** lub **Edytor interfejsu** i przejdź do **Asystenta widoku** (Upewnij się, że masz `.h`okna zaznaczony w celu edycji):
 
-[ ![](standard-controls-images/edit11.png "Wybranie poprawnego pliku do edycji")](standard-controls-images/edit11.png)
+[![](standard-controls-images/edit11.png "Wybranie poprawnego pliku do edycji")](standard-controls-images/edit11.png#lightbox)
 
 Przeciągnij formant z formantu AppKit na przyznanie `.h` plik, aby rozpocząć tworzenie **gniazda** lub **akcji**:
 
-[ ![](standard-controls-images/edit12.png "Przeciąganie w celu utworzenia gniazda lub akcji")](standard-controls-images/edit12.png)
+[![](standard-controls-images/edit12.png "Przeciąganie w celu utworzenia gniazda lub akcji")](standard-controls-images/edit12.png#lightbox)
 
 Wybierz typ zagrożeń, aby utworzyć i nadaj **gniazda** lub **akcji** **nazwa**: 
 
-[ ![](standard-controls-images/edit13.png "Konfigurowanie gniazda lub akcji")](standard-controls-images/edit13.png)
+[![](standard-controls-images/edit13.png "Konfigurowanie gniazda lub akcji")](standard-controls-images/edit13.png#lightbox)
 
 
 Aby uzyskać więcej informacji na temat pracy z **gniazda** i **akcje**, można znaleźć pod adresem [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcji naszych [wprowadzenie do programów Xcode i interfejsu Konstruktor](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) dokumentacji.
@@ -226,7 +226,7 @@ Po przełączeniu do programu Visual Studio dla komputerów Mac w programie Xcod
 
 W przypadku wybrania `SplitViewController.designer.cs` w **Eksploratora rozwiązań** będzie mógł wyświetlić sposób z **gniazda** i **akcji** zostały przewodowej się w naszym kodzie C#:
 
-[ ![](standard-controls-images/sync01.png "Synchronizowanie zmian z Xcode")](standard-controls-images/sync01.png)
+[![](standard-controls-images/sync01.png "Synchronizowanie zmian z Xcode")](standard-controls-images/sync01.png#lightbox)
 
 Powiadomienie jak definicji w `SplitViewController.designer.cs` pliku:
 
@@ -270,7 +270,7 @@ Zwykle nie należy otworzyć `SplitViewController.designer.cs` samodzielnie, jeg
 
 AppKit udostępnia kilka typów przycisku, który może być używana w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [przyciski](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons01.png "Przykładem przycisku różnych typów")](standard-controls-images/buttons01.png)
+[![](standard-controls-images/buttons01.png "Przykładem przycisku różnych typów")](standard-controls-images/buttons01.png#lightbox)
 
 Jeśli przycisk narażony był za pośrednictwem **gniazda**, następujący kod będzie odpowiadać jej naciśnięcie:
 
@@ -311,7 +311,7 @@ Dla dowolnego przycisku, który został dodany do projektu interfejsu użytkowni
 
 Przycisk Ustaw jako domyślny, należy wybrać w Konstruktorze interfejsu w środowisku Xcode. Dalej w **inspektora atrybutu**, wybierz pozycję **klucza równoważne** pole i naciśnij klawisz **Return/Enter** klucza:
 
-[ ![](standard-controls-images/buttons03.png "Edytowanie odpowiednikiem klucza")](standard-controls-images/buttons03.png)
+[![](standard-controls-images/buttons03.png "Edytowanie odpowiednikiem klucza")](standard-controls-images/buttons03.png#lightbox)
 
 Podobnie można przypisać sekwencja klucza, który może służyć do aktywacji przy użyciu klawiatury, zamiast myszy przycisk. Na przykład przez nacisnąć klawisze Command-C w powyższy obraz.
 
@@ -323,7 +323,7 @@ Gdy aplikacja jest uruchamiana i okna z przycisku jest klucz i fokus, gdy użytk
 
 AppKit zapewnia kilka typów pól wyboru i grup przycisków radiowych, które mogą być używane w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [przyciski](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons02.png "Przykład pola wyboru dostępne typy")](standard-controls-images/buttons02.png)
+[![](standard-controls-images/buttons02.png "Przykład pola wyboru dostępne typy")](standard-controls-images/buttons02.png#lightbox)
 
 
 Pola wyboru i przycisków radiowych (udostępniane za pośrednictwem funkcji **gniazda**) mają stan (takich jak **na** i **poza**), stan można sprawdzić lub zestaw z `State` właściwość `NSCellStateValue` wyliczenia. Na przykład:
@@ -375,7 +375,7 @@ Można użyć `Tag` właściwości, aby zobaczyć, która została zaznaczona op
 
 AppKit udostępnia kilka typów formantów Menu, które mogą być używane w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [kontrolek Menu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/menu01.png "Przykład kontrolek menu")](standard-controls-images/menu01.png)
+[![](standard-controls-images/menu01.png "Przykład kontrolek menu")](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data" />
 
@@ -429,7 +429,7 @@ Można dostosować wygląd formantu Menu są następujące metody:
 
 W przypadku typów listy rozwijanej `NSPopupButtons`, pierwszy element Menu udostępnia tytuł dla formantu. Na przykład: 
 
-[ ![](standard-controls-images/menu02.png "Przykład formant menu")](standard-controls-images/menu02.png)
+[![](standard-controls-images/menu02.png "Przykład formant menu")](standard-controls-images/menu02.png#lightbox)
 
 Aby zmienić tytuł, ujawnia tego elementu jako **gniazda** i użyć kodu podobnie do następującej:
 
@@ -481,7 +481,7 @@ Aby uzyskać więcej informacji na temat pracy z menu i formantów Menu, zobacz 
 
 AppKit zapewnia kilka typów formanty zaznaczenia, których można użyć w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [kontrolki wyboru](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/select01.png "Przykład zaznaczanie formantów")](standard-controls-images/select01.png)
+[![](standard-controls-images/select01.png "Przykład zaznaczanie formantów")](standard-controls-images/select01.png#lightbox)
 
 Istnieją dwa sposoby śledzenia, gdy formant wyboru ma interakcji z użytkownikiem, w przypadku wystawianego go jako **akcji**. Na przykład:
 
@@ -526,7 +526,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit udostępnia kilka typów formantów wskaźnika, które mogą być używane w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [formanty wskaźnika](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/level01.png "Przykład wskaźnik formantów")](standard-controls-images/level01.png)
+[![](standard-controls-images/level01.png "Przykład wskaźnik formantów")](standard-controls-images/level01.png#lightbox)
 
 Istnieją dwa sposoby, aby sprawdzić, kiedy wskaźnik formantem interakcji z użytkownikiem, albo w przypadku wystawianego go jako **akcji** lub **gniazda** i dołączania **delegata** do `Activated`zdarzeń. Na przykład:
 
@@ -557,7 +557,7 @@ Wywoływanie `StopAnimation` metody przestanie animacji.
 
 AppKit zapewnia kilka typów formantami, które mogą być używane w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [formantami](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/text01.png "Przykład kontrolek tekstowych")](standard-controls-images/text01.png)
+[![](standard-controls-images/text01.png "Przykład kontrolek tekstowych")](standard-controls-images/text01.png#lightbox)
 
 Dla pól tekstowych (`NSTextField`), następujące zdarzenia mogą służyć do śledzenia interakcji z użytkownikiem:
 
@@ -589,7 +589,7 @@ Pełni komentarzem kodu SourceWriter i, jeśli jest dostępna, zostały podane l
 
 AppKit zapewnia kilka typów zawartości widoków, które mogą być używane w projekcie interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [zawartości widoków](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
 
-[ ![](standard-controls-images/content01.png "Przykładowy widok zawartości")](standard-controls-images/content01.png)
+[![](standard-controls-images/content01.png "Przykładowy widok zawartości")](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers" />
 
@@ -602,16 +602,16 @@ Aby utworzyć popover, wykonaj następujące czynności:
 1. Otwórz `.storyboard` pliku okna, które chcesz dodać popover do przez dwukrotne kliknięcie w **Eksploratora rozwiązań**
 2. Przeciągnij **wyświetlić kontroler** z **inspektora biblioteki** na **interfejs edytora**: 
 
-    [ ![](standard-controls-images/content02.png "Wybiera kontroler widoku z biblioteki")](standard-controls-images/content02.png)
+    [![](standard-controls-images/content02.png "Wybiera kontroler widoku z biblioteki")](standard-controls-images/content02.png#lightbox)
 4. Zdefiniuj rozmiar i układ **widok niestandardowy**: 
 
-    [ ![](standard-controls-images/content04.png "Edytowanie układu")](standard-controls-images/content04.png)
+    [![](standard-controls-images/content04.png "Edytowanie układu")](standard-controls-images/content04.png#lightbox)
 5. Sterowania kliknij i przeciągnij od źródła menu podręczne na **kontrolera widoku**: 
 
-    [ ![](standard-controls-images/content05.png "Przeciąganie w celu utworzenia segue")](standard-controls-images/content05.png)
+    [![](standard-controls-images/content05.png "Przeciąganie w celu utworzenia segue")](standard-controls-images/content05.png#lightbox)
 6. Wybierz **Popover** z menu podręcznego: 
 
-    [ ![](standard-controls-images/content06.png "Ustawienie typu segue")](standard-controls-images/content06.png)
+    [![](standard-controls-images/content06.png "Ustawienie typu segue")](standard-controls-images/content06.png#lightbox)
 7. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
 <a name="Tab_Views" />
@@ -622,11 +622,11 @@ Widoki karta zawiera listę kartę (który podobne do Segmentowanych formantu wy
 
 Podczas pracy z widoku kartę w Konstruktorze interfejsu w programie Xcode, użyj **inspektora atrybutu** liczbę kart:
 
-[ ![](standard-controls-images/content08.png "Liczba kart edycji")](standard-controls-images/content08.png)
+[![](standard-controls-images/content08.png "Liczba kart edycji")](standard-controls-images/content08.png#lightbox)
 
 Wybierz kartę każdego w **hierarchii interfejsów** można ustawić jej **tytuł** i Dodaj elementy interfejsu użytkownika do jego **okienko**:
 
-[ ![](standard-controls-images/content09.png "Edytowanie karty w środowisku Xcode")](standard-controls-images/content09.png)
+[![](standard-controls-images/content09.png "Edytowanie karty w środowisku Xcode")](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls" />
 

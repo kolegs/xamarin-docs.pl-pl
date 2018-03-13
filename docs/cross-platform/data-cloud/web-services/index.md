@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 76934b56503c381b40081d2ac82a785a7bb86fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Wprowadzenie do usługi sieci Web
 
@@ -305,7 +305,7 @@ Adres URL usługi sieci web może być hostowana zdalnego źródła lub zasób s
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[ ![](images/add-webreference-dialog.png "Adres URL usługi sieci web może być hostowana zdalnego źródła lub zasób systemowy pliku lokalnego dostępny za pośrednictwem prefiks ścieżka pliku")](images/add-webreference-dialog.png)
+[![](images/add-webreference-dialog.png "Adres URL usługi sieci web może być hostowana zdalnego źródła lub zasób systemowy pliku lokalnego dostępny za pośrednictwem prefiks ścieżka pliku")](images/add-webreference-dialog.png#lightbox)
 
 Spowoduje to wygenerowanie serwera proxy sieci Web lub usługi odwołuje się do folderu projektu. Ponieważ serwer proxy jest generowany kod nie powinien być modyfikowany.
 

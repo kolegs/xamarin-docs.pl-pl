@@ -3,16 +3,16 @@ title: Touch
 description: "Ekranów dotykowych na wielu urządzeniach współczesnych Zezwalaj użytkownikom na interakcję z urządzeniami, szybkie i skuteczne jak fizyczną i intuicyjne. Ta interakcja nie jest ograniczona tylko w celu wykrywania touch proste — można również gesty. Na przykład gestu powiększanie gestem uszczypnięcia jest bardzo typowym przykładem tego — punkty zaciskające części ekranu z dwoma palcami, które użytkownik może powiększanie lub pomniejszanie. W tym przewodniku sprawdza touch i gestów w systemie iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4A17FD28-313F-4AAC-B82B-3847B4D64A88
+ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: 8f6c26048bc0ece0d64acf069151ff1d67403ccc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b0e1cf8b1cb18982fe319fef7c524aeb70be4a9b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch"></a>Touch
 
@@ -31,9 +31,9 @@ Jednak są potrzebne do przetwarzania touch niskiego poziomu, a nawet śledzić 
 
 ## <a name="sections"></a>Sekcje
 
--  [Touch w systemie iOS](touch-in-ios.md)
+-  [Dotyk w systemie iOS](touch-in-ios.md)
 -  [Wskazówki: Używanie Touch w systemie iOS](ios-touch-walkthrough.md)
--  [Obsługa wielodotyku śledzenia](touch-tracking.md)
+-  [Śledzenie wielodotyku](touch-tracking.md)
 
 W tym przewodniku stanowi wprowadzenie do platformy Touch w systemie iOS. Aby uzyskać więcej informacji na temat używania 3D Touch i dotykowych opinie w systemie iOS, które zostały wprowadzone w systemie iOS 9 i 10 odpowiednio, zapoznaj się z przewodnikami określonych poniżej:
 

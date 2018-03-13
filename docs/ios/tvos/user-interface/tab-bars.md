@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 37c0b3f1f826893bef5c1a7ffb5d422c1c8c5c78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>Praca z kontrolera kart
 
@@ -20,7 +20,7 @@ _Ten artykuł obejmuje projektowanie i Praca z kontrolera pasek kartę wewnątrz
 
 Dla wielu typów aplikacji systemu tvOS głównej nawigacji jest przedstawiany jako pasek karty uruchomionych w górnej części ekranu. Użytkownik swipes lewy i prawy przez listę możliwych kategorii i obszar zawartości poniżej zmiany, aby odzwierciedlić wybór użytkownika.
 
-[ ![](tab-bars-images/tab01.png "Przykładowe kart")](tab-bars-images/tab01.png)
+[![](tab-bars-images/tab01.png "Przykładowe kart")](tab-bars-images/tab01.png#lightbox)
 
 Na pasku karty jest domyślnie przezroczyste i zawsze jest wyświetlany w górnej części ekranu. Aktywnego, pasek karty obejmie top 140 pikseli ekranu, ale gdy fokus jest przenoszony do obszaru zawartości, poniżej zostanie szybko Przesuń do optymalizacji.
 
@@ -64,22 +64,22 @@ Najprostszym sposobem Praca z paskami kartę w aplikacji Xamarin.tvOS jest dodan
     
 1. Uruchom nową aplikację Xamarin.tvOS i wybierz **systemu tvOS** > **aplikacji** > **aplikacji z kartami**: 
 
-    [ ![](tab-bars-images/tab02.png "Wybierz aplikację z kartami")](tab-bars-images/tab02.png)
+    [![](tab-bars-images/tab02.png "Wybierz aplikację z kartami")](tab-bars-images/tab02.png#lightbox)
 1. Postępuj zgodnie z monitami, aby utworzyć nowe rozwiązanie Xamarin.tvOS wszystkie.
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Aby zmienić **ikona** lub **tytuł** dla danej kategorii, wybierz **element paska kartę** dla **kontrolera widoku** w  **Konspekt dokumentu**:
 
-    [ ![](tab-bars-images/tab03a.png "Na pasku karty elementu kontrolera widoku konspektu dokumentu")](tab-bars-images/tab03a.png)
+    [![](tab-bars-images/tab03a.png "Na pasku karty elementu kontrolera widoku konspektu dokumentu")](tab-bars-images/tab03a.png#lightbox)
 1. Następnie ustaw właściwości wymaganych **kartę Widget** z **Explorer właściwości**: 
 
-    [ ![](tab-bars-images/tab03.png "Na karcie widżetu")](tab-bars-images/tab03.png)
+    [![](tab-bars-images/tab03.png "Na karcie widżetu")](tab-bars-images/tab03.png#lightbox)
 1. Aby dodać nową kategorię (Tab), należy porzucić **kontrolera widoku** na Twoje powierzchnię projektu: 
 
-    [ ![](tab-bars-images/tab04.png "Kontroler widoku")](tab-bars-images/tab04.png)
+    [![](tab-bars-images/tab04.png "Kontroler widoku")](tab-bars-images/tab04.png#lightbox)
 1. Formant kliknij i przeciągnij od **kontrolera widoku kartę** do nowego **kontrolera widoku**.
 1. Wybierz z menu podręcznego **wyświetlić kontrolerów** Aby dodać nowy widok jako karty (kategoria): 
 
-    [ ![](tab-bars-images/tab05.png "Wybierz kartę")](tab-bars-images/tab05.png)
+    [![](tab-bars-images/tab05.png "Wybierz kartę")](tab-bars-images/tab05.png#lightbox)
 1. Zaprojektować układ interfejsu użytkownika dla każdego obszaru zawartości Caterogies normalnie, dodając elementy interfejsu użytkownika w systemie iOS projektanta.
 1. Ujawnia żadnych zdarzeń wymagane, aby pracować z formantów interfejsu użytkownika w kodzie języka C#.
 1. Nazwy formantów interfejsu użytkownika, które chcesz udostępnić w kodzie języka C#.
@@ -89,22 +89,22 @@ Najprostszym sposobem Praca z paskami kartę w aplikacji Xamarin.tvOS jest dodan
     
 1. Uruchom nową aplikację Xamarin.tvOS i wybierz **systemu tvOS** > **aplikacji** > **aplikacji z kartami**: 
 
-    [ ![](tab-bars-images/tab02vs.png "Wybierz aplikację z kartami")](tab-bars-images/tab02vs.png)
+    [![](tab-bars-images/tab02vs.png "Wybierz aplikację z kartami")](tab-bars-images/tab02vs.png#lightbox)
 1. Postępuj zgodnie z monitami, aby utworzyć nowe rozwiązanie Xamarin.tvOS wszystkie.
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Aby zmienić **ikona** lub **tytuł** dla danej kategorii, wybierz **element paska kartę** dla **kontrolera widoku** w  **Konspekt dokumentu**:
 
-    [ ![](tab-bars-images/tab03avs.png "Kontroler widoku konspektu dokumentu")](tab-bars-images/tab03avs.png)
+    [![](tab-bars-images/tab03avs.png "Kontroler widoku konspektu dokumentu")](tab-bars-images/tab03avs.png#lightbox)
 1. Następnie ustaw właściwości wymaganych **kartę Widget** z **Explorer właściwości**: 
 
-    [ ![](tab-bars-images/tab03vs.png "Na karcie widżetu")](tab-bars-images/tab03vs.png)
+    [![](tab-bars-images/tab03vs.png "Na karcie widżetu")](tab-bars-images/tab03vs.png#lightbox)
 1. Aby dodać nową kategorię (Tab), przeciągnij **kontrolera widoku** z **przybornika** i upuść ją z powierzchni projektu: 
 
-    [ ![](tab-bars-images/tab04vs.png "Kontroler widoku")](tab-bars-images/tab04vs.png)
+    [![](tab-bars-images/tab04vs.png "Kontroler widoku")](tab-bars-images/tab04vs.png#lightbox)
 1. Formant kliknij i przeciągnij od **kontrolera widoku kartę** do nowego **kontrolera widoku**.
 1. Wybierz z menu podręcznego **wyświetlić kontrolerów** Aby dodać nowy widok jako karty (kategoria): 
 
-    [ ![](tab-bars-images/tab05vs.png "Wybierz kartę")](tab-bars-images/tab05vs.png)
+    [![](tab-bars-images/tab05vs.png "Wybierz kartę")](tab-bars-images/tab05vs.png#lightbox)
 1. Zaprojektować układ interfejsu użytkownika dla każdego obszaru zawartości Caterogies normalnie, dodając elementy interfejsu użytkownika w systemie iOS projektanta.
 1. Ujawnia żadnych zdarzeń wymagane, aby pracować z formantów interfejsu użytkownika w kodzie języka C#.
 1. Nazwy formantów interfejsu użytkownika, które chcesz udostępnić w kodzie języka C#.
@@ -137,7 +137,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Które dałby w efekcie uruchamianych następujące wyniki:
 
-[ ![](tab-bars-images/tab06.png "Element paska karty z wskaźnika")](tab-bars-images/tab06.png)
+[![](tab-bars-images/tab06.png "Element paska karty z wskaźnika")](tab-bars-images/tab06.png#lightbox)
 
 Użyj `Title` właściwość `UITabBarItem` zmienić tytuł i `Image` właściwości, aby zmienić ikony.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 9751b39987819428f93e09d4bfb6bee261604bb5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84e60e8ce698e3d87db3e1bdc61613325ad831c8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="attached-behaviors"></a>Zachowania dołączone
 
@@ -101,10 +101,10 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 W czasie wykonywania zachowanie będzie odpowiadać interakcji z formantem, zgodnie z implementacją zachowanie. Poniższe zrzuty ekranu pokazują dołączone zachowanie odpowiada na nieprawidłowe dane wejściowe:
 
-[ ![](attached-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem dołączonych")](attached-images/screenshots.png "Przykładowa aplikacja z zachowaniem dołączone")
+[![](attached-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem dołączonych")](attached-images/screenshots.png#lightbox "Przykładowa aplikacja z zachowaniem dołączone")
 
 > [!NOTE]
-> **Uwaga**: zachowania dołączone są zapisywane dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie spowoduje zachowanie nieznany i zależy od implementacji zachowanie.
+> Zachowania dołączone są przeznaczone dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie spowoduje zachowanie nieznany i zależy od implementacji zachowanie.
 
 ### <a name="removing-an-attached-behavior-from-a-control"></a>Usuwanie dołączonych zachowanie za pomocą formantu
 

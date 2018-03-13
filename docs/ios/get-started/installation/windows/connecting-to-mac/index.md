@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d0234cad243e523716d95f467e3fe44c50a182d5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
 
@@ -36,7 +36,7 @@ Połączenie z komputerem Mac składa się z wielu procesów dla różnych czę�
 
 Na poniższym diagramie przedstawiono proste omówienie przepływu pracy programowania Xamarin.iOS:
 
-[![przepływ pracy programowanie dla systemu iOS](images/xma2.png)](images/xma2.png)
+[![przepływ pracy programowanie dla systemu iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](#commandline) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
@@ -70,11 +70,11 @@ Aby skonfigurować hosta Mac, należy włączyć komunikację między rozszerzen
 
 1. Otwórz *Spotlight* (**miejsca ⌘**) i wyszukaj *logowania zdalnego* , a następnie wybierz *udostępniania* wynik. Spowoduje to otwarcie *preferencjach systemowych* w *udostępniania* panelu:
 
-   [![Zwracanie przez wyszukiwanie Spotlight do logowania zdalnego](images/spotlight.png)](images/spotlight.png)
+   [![Zwracanie przez wyszukiwanie Spotlight do logowania zdalnego](images/spotlight.png)](images/spotlight.png#lightbox)
 
 2. Znaczników *logowania zdalnego* opcji *usługi* liście z lewej strony, aby umożliwić Xamarin dla Visual Studio, aby połączyć się z adresem MAC:
 
-   [![Opcja logowania zdalnego na liście usług znaczników](images/sharing.png)](images/sharing.png)
+   [![Opcja logowania zdalnego na liście usług znaczników](images/sharing.png)](images/sharing.png#lightbox)
 
 3. Upewnij się, że *logowania zdalnego* jest ustawiona, aby umożliwić dostęp do *wszystkie* użytkowników lub że Mac nazwa użytkownika lub grupy znajduje się na liście dozwolonych użytkowników na liście po prawej stronie.
 
@@ -94,21 +94,21 @@ Istnieją dwa sposoby do połączenia z hostem kompilacji Mac:
 
 Na pasku narzędzi z systemem iOS:
 
-[![Na pasku narzędzi z systemem iOS](images/image1.png)](images/image1.png)
+[![Na pasku narzędzi z systemem iOS](images/image1.png)](images/image1.png#lightbox)
 
 Lub przechodząc do **Narzędzia > Opcje** w programie Visual Studio, wybierając **Xamarin > Ustawienia systemu iOS** i klikając **znaleźć Xamarin Mac Agent** przycisk:
 
-[![Znajdowanie Xamarin Mac Agent](images/image2.png)](images/image2.png)
+[![Znajdowanie Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
 
 Nawigacja w obu przypadkach prowadzi do **Mac Agent** okna dialogowego, zostały pokazane poniżej:
 
-[![Okno dialogowe Mac Agent](images/image3.png)](images/image3.png)
+[![Okno dialogowe Mac Agent](images/image3.png)](images/image3.png#lightbox)
 
 Spowoduje to wyświetlenie listy wszystkich maszyn, albo został wcześniej podłączany, które są przechowywane jako znanych maszyn lub komputerów, które są dostępne dla *logowania zdalnego*.
 
 Wybierz Mac, klikając dwukrotnie w celu nawiązania połączenia. Przy pierwszym połączeniu Mac, pojawi się monit o podanie poświadczeń użytkownika Mac zezwalały na połączenie zdalne:
 
-[![Wprowadź poświadczenia użytkownika Mac](images/image4.png)](images/image4.png)
+[![Wprowadź poświadczenia użytkownika Mac](images/image4.png)](images/image4.png#lightbox)
 
 Agent użyje tych poświadczeń, aby utworzyć nowe połączenie SSH komputerów Mac. Jeśli próba powiedzie się, zostanie utworzony klucz SSH, a musi być [zarejestrowany](#commandline) w `authorized_keys` pliku w tym komputerów Mac. Podczas kolejnych połączeń agent zostanie użyty plik nazwy użytkownika i klucz do nawiązania połączenia najbardziej ostatnio połączony host znane kompilacji.
 
@@ -119,13 +119,13 @@ Agent użyje tych poświadczeń, aby utworzyć nowe połączenie SSH komputerów
 
 Po pomyślnym nawiązaniu połączenia będą wyświetlane w oknie dialogowym Wybór hosta z **połączone** ikona obok niej, jak przedstawiono poniżej:
 
-[![Okno dialogowe wybór hosta z połączonych ikona obok niej](images/image6.png)](images/image6.png)
+[![Okno dialogowe wybór hosta z połączonych ikona obok niej](images/image6.png)](images/image6.png#lightbox)
 
 Może istnieć tylko jeden Mac połączonych w dowolnym momencie.
 
 Każdej maszynie, na liście, czy połączenia lub w inny sposób, będą wyświetlane menu kontekstowe na kliknij prawym przyciskiem myszy, umożliwiając **Connect**, **rozłączenia**, lub **zapomnij Mac** jako wymagane:
 
-[![Połącz, odłącz lub zapomnij Mac to menu kontekstowe](images/image7.png)](images/image7.png)
+[![Połącz, odłącz lub zapomnij Mac to menu kontekstowe](images/image7.png)](images/image7.png#lightbox)
 
 Jeśli użytkownik chce **zapomnij Mac to**, musisz ponownie wprowadzić swoje poświadczenia, aby się z nim połączyć ponownie.
 
@@ -137,23 +137,23 @@ W pewnych okolicznościach możesz ręcznie dodać Mac, jeśli nie widać nazwy 
 
 1. Znajdź adres IP komputera Mac przy użyciu albo przeglądania **preferencjach systemowych > Udostępnianie > logowania zdalnego** na komputerze Mac:
 
-   [![Adres Mac w preferencjach systemowych](images/image8.png)](images/image8.png)
+   [![Adres Mac w preferencjach systemowych](images/image8.png)](images/image8.png#lightbox)
 
    Lub, jeśli wolisz korzystać z wiersza polecenia można znaleźć adres IP, wprowadzając `ipconfig getifaddr en0` do terminali (należy pamiętać, że w zależności od typu połączenia zmiennej może być `en1`, `en2` itp.):
 
-   [![Adres IP w terminalu aplikacji](images/image9.png)](images/image9.png)
+   [![Adres IP w terminalu aplikacji](images/image9.png)](images/image9.png#lightbox)
 
 2. Zwracany do programu Visual Studio i w oknie dialogowym Wybór hosta, wybierz opcję **Mac. Dodaj...** :
 
-   [![Okna dialogowego wyboru hosta](images/image10.png)](images/image10.png)
+   [![Okna dialogowego wyboru hosta](images/image10.png)](images/image10.png#lightbox)
 
 3. Wprowadź adres IP należy Mac w oknie dialogowym Dodawanie Mac, a następnie kliknij przycisk **Dodaj**:
 
-   [![Wprowadź adres MAC w oknie dialogowym Dodawanie Mac](images/image11.png)](images/image11.png)
+   [![Wprowadź adres MAC w oknie dialogowym Dodawanie Mac](images/image11.png)](images/image11.png#lightbox)
 
 4. Na koniec wprowadź nazwę użytkownika (nie pełna nazwa), a odpowiednie hasło konta administratora Mac:
 
-   [![Wprowadź nazwę użytkownika i hasło](images/image12.png)](images/image12.png)
+   [![Wprowadź nazwę użytkownika i hasło](images/image12.png)](images/image12.png#lightbox)
 
 Po kliknięciu **logowania**, Visual Studio będzie zalogować się do komputera Mac przy użyciu protokołu SSH i doda to Mac jako znanych maszyny.
 

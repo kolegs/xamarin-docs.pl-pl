@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>Margines i wypełnienie
 
@@ -27,7 +27,7 @@ Margines i wypełnienie są powiązane układu pojęcia:
 
 Na poniższym diagramie przedstawiono dwa pojęcia:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Marginesy i dopełnienia pojęcia")](margin-and-padding-images/margins-and-padding.png "marginesy i dopełnienia pojęcia")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Marginesy i dopełnienia pojęcia")](margin-and-padding-images/margins-and-padding.png#lightbox "marginesy i dopełnienia pojęcia")
 
 Należy pamiętać, że [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) wartości są dodatku. W związku z tym jeśli dwa elementy sąsiednie określić margines 20 pikseli, odległość między elementami będzie 40 pikseli. Ponadto, czy margines i wypełnienie dodatku, gdy oba są stosowane, w tym odległość między elementem i zawartość będzie marginesu oraz dopełnienie.
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **Uwaga**: `Thickness` wartości może być ujemna, które zwykle klipy lub overdraws zawartości.
+> `Thickness` wartości może być ujemna, które zwykle klipy lub overdraws zawartości.
 
 ## <a name="summary"></a>Podsumowanie
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 79ce4a1393b2affade3422f73e1c3d4680d199df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1e65207e987dbdab8bf2fe5f48f0b0a500dd27bc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-datapages"></a>Wprowadzenie do korzystania z DataPages
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/28/2018
 
 Aby rozpocząć tworzenie za pomocą podglądu DataPages strony proste dysk danych, wykonaj poniższe kroki. To użycie demonstracyjnej, kompilacje stylu zapisane na stałe ("zdarzenia") w wersji zapoznawczej, które działa tylko w określonym formacie JSON w kodzie.
 
-[ ![](get-started-images/demo-sml.png "Aplikacja przykładowa DataPages")](get-started-images/demo.png "DataPages przykładowej aplikacji")
+[![](get-started-images/demo-sml.png "Aplikacja przykładowa DataPages")](get-started-images/demo.png#lightbox "DataPages przykładowej aplikacji")
 
 ## <a name="1-add-nuget-packages"></a>1. Dodawanie pakietów NuGet
 
@@ -134,7 +134,7 @@ Przykład danych JSON z [źródła pokaz](http://demo3143189.mockable.io/session
 
 Powyższe kroki powinno spowodować pracy strony danych:
 
-[ ![](get-started-images/demo-sml.png "Aplikacja przykładowa DataPages")](get-started-images/demo.png "DataPages przykładowej aplikacji")
+[![](get-started-images/demo-sml.png "Aplikacja przykładowa DataPages")](get-started-images/demo.png#lightbox "DataPages przykładowej aplikacji")
 
 To działa, ponieważ wbudowanych styl **"Zdarzenia"** istnieje w pakiecie Nuget motywu jasny i ma zdefiniowane style, zgodne (np źródła danych. "title", "obrazu", "prezenterze").
 
@@ -163,7 +163,7 @@ Określanie szablonu i używając powiązania źródła danych można przesłoni
 
 Zapewniając `DataTemplate` ten kod zastępuje `StyleClass` i użyje domyślnego układu dla `ListItemControl`.
 
-[ ![](get-started-images/custom-sml.png "Aplikacja przykładowa DataPages")](get-started-images/custom.png "DataPages przykładowej aplikacji")
+[![](get-started-images/custom-sml.png "Aplikacja przykładowa DataPages")](get-started-images/custom.png#lightbox "DataPages przykładowej aplikacji")
 
 Deweloperów, którzy preferowane C# w języku XAML mogą tworzyć dane źródłowe powiązania zbyt (Pamiętaj, aby uwzględnić `using Xamarin.Forms.Pages;` instrukcji):
 

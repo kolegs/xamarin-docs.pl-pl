@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 278b9e782073a26dc04bac9418613ea4c09db445
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -46,7 +46,7 @@ Aby rozwiązać ten problem, wykonaj następujące czynności:
 1. W programie Visual Studio for Mac, kliknij prawym przyciskiem myszy plik projektu Xamarin.tvOS w **Eksploratora rozwiązań** i wybierz **opcje**.
 2. Wybierz **systemu tvOS kompilacji** i upewnij się, że znajdują się na **wersji** konfiguracji: 
 
-    [ ![](troubleshooting-images/ts01.png "Wybierz opcje kompilacji systemu tvOS")](troubleshooting-images/ts01.png)
+    [![](troubleshooting-images/ts01.png "Wybierz opcje kompilacji systemu tvOS")](troubleshooting-images/ts01.png#lightbox)
 3. Dodaj `--bitcode=asmonly` do **mtouch dodatkowe argumenty** a następnie kliknij przycisk **OK** przycisku.
 4. Skompiluj ponownie aplikację w **wersji** konfiguracji.
 
@@ -124,7 +124,7 @@ Ponownie skompilować aplikację dla wersji i ponownie prześlij do iTunes Conne
 
 Jeśli korzystasz z 3 biblioteki firm (na przykład MonoGame) i Twojej wersji kompilacji nie powiodło się z szeregu długo komunikaty o błędach kończy się rozszerzeniem `Task "MTouch" execution -- FAILED`, spróbuj dodać `-gcc_flags="-framework OpenAL"` do Twojej **touch dodatkowe argumenty**:
 
-[ ![](troubleshooting-images/mtouch01.png "Wykonywanie zadań MTouch")](troubleshooting-images/mtouch01.png)
+[![](troubleshooting-images/mtouch01.png "Wykonywanie zadań MTouch")](troubleshooting-images/mtouch01.png#lightbox)
 
 Należy także uwzględnić `--bitcode=asmonly` w **touch dodatkowe argumenty**, ustawiono opcje konsolidatora **wszystkie łącza** i wykonaj czystą kompilacji.
 

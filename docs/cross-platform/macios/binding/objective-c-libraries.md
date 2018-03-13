@@ -4,19 +4,16 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 ms.technology: xamarin-cross-platform
-author: asb3993
-ms.author: amburns
-ms.date: 06/26/2017
-ms.openlocfilehash: 286600eb0919d6280a8c861d5d1e217900c5a02e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/06/2018
+ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Powiązanie bibliotek języka Objective C
-
-[//]: # (Oryginalny plik znajduje się w obszarze https://github.com/xamarin/xamarin-macios/tree/master/docs/website/)
-[//]: # (Umożliwia wszystkich współautorzy (w tym zewnętrzne) można przesłać, przy użyciu Ściągnięcia, spowoduje to zaktualizowanie dokumentacji są zgodne ze zmianami narzędzia) [ // ]: # (modyfikacje poza xamarin-macios/głównego zostaną utracone w przyszłości aktualizacje))
 
 Podczas pracy z Xamarin.iOS lub Xamarin.Mac, mogą występować w przypadkach, w której chcesz korzystać z biblioteki języka Objective-C innych firm. W takiej sytuacji Xamarin powiązania projektów służy do tworzenia powiązanie C# do natywnych bibliotek języka Objective-C. Projekt używa tych samych narzędzi, których używamy w celu przełączenia systemów iOS i Mac interfejsów API języka C#.
 
@@ -35,30 +32,24 @@ Można użyć [iOS powiązania przykładowych](https://github.com/xamarin/monoto
 
 <a name="Getting_Started" />
 
-# <a name="getting-started"></a>Wprowadzenie
+## <a name="getting-started"></a>Wprowadzenie
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 Najprostszym sposobem tworzenia powiązania jest tworzenie projektu platformy Xamarin.iOS powiązania.
 Można to zrobić w programie Visual Studio dla komputerów Mac, wybierając typ projektu **systemu iOS > Biblioteka > biblioteki powiązania**:
 
-
-[![](objective-c-libraries-images/00-sml.png "W tym celu z programu Visual Studio dla komputerów Mac Wybieranie typu projektu iOS biblioteki powiązania biblioteki")](objective-c-libraries-images/00.png)
-
+[![](objective-c-libraries-images/00-sml.png "W tym celu z programu Visual Studio dla komputerów Mac Wybieranie typu projektu iOS biblioteki powiązania biblioteki")](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 
 Najprostszym sposobem tworzenia powiązania jest tworzenie projektu platformy Xamarin.iOS powiązania.
 Można to zrobić w programie Visual Studio w systemie Windows, wybierając typ projektu **Visual C# > iOS > biblioteki powiązania (iOS)**:
 
-
-[![](objective-c-libraries-images/00vs-sml.png "iOS powiązania biblioteki z systemem iOS")](objective-c-libraries-images/00vs.png)
+[![](objective-c-libraries-images/00vs-sml.png "iOS powiązania biblioteki z systemem iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > Uwaga: Powiązania projektów dla **Xamarin.Mac** są obsługiwane tylko w programie Visual Studio dla komputerów Mac.
-
 
 -----
 
@@ -68,7 +59,7 @@ Wygenerowanego projektu zawiera małe szablon, który można edytować, zawiera 
 
 <a name="Binding_an_API" />
 
-# <a name="binding-an-api"></a>Powiązanie z interfejsu API
+## <a name="binding-an-api"></a>Powiązanie z interfejsu API
 
 Wykonywania kompleksowe powiązania, należy zrozumieć definicji interfejsu API języka Objective C i zapoznać się z wytycznymi dla platformy .NET Framework projektu.
 
@@ -111,10 +102,9 @@ Aby uzyskać pełną powiązanie, będzie zwykle dotyczy cztery składniki:
 -  Opcjonalnie: dodatkowe źródeł, które może rozwinąć wygenerowanego powiązanie lub podać więcej C# przyjazną interfejsu API (C# pliki, które można dodać do projektu).
 -  Natywnej biblioteki dokonywane jest wiązanie.
 
-
 Ten wykres pokazuje relację między plikami:
 
- [ ![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Ten wykres pokazuje relację między plikami")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Ten wykres pokazuje relację między plikami")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 Plik definicji interfejsu API: będzie zawierać tylko obszary nazw i interfejs definicji (żadnych elementów członkowskich, które interfejs może zawierać) i nie powinna zawierać klas, wyliczeń, delegatów lub struktury. Plik definicji interfejsu API jest jedynie kontraktu, która będzie służyć do generowania interfejsu API.
 
@@ -145,7 +135,7 @@ Kompilowanie biblioteki utworzy natywnego wiązania.
 Aby ukończyć tego powiązania, należy dodać natywnej biblioteki do projektu.  Można to zrobić przez dodanie do projektu, poprzez przeciągnięcie i upuszczenie natywnej biblioteki z wyszukiwania na projekt w Eksploratorze rozwiązań lub natywnej biblioteki prawym przyciskiem myszy projekt i wybierając pozycję **Dodaj**  >  **Dodaj pliki** wybierz natywnej biblioteki.
 Natywnych bibliotek Konwencja rozpoczynać się od słowa "lib" i kończy się rozszerzeniem ".a". Gdy to zrobisz, Visual Studio for Mac doda dwa pliki: `.a` plików i automatycznie wypełnione C# plik zawierający informacje o natywnej biblioteki zawiera:
 
- [ ![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Natywnych bibliotek Konwencja rozpoczynać word lib i kończyć .a rozszerzenia")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Natywnych bibliotek Konwencja rozpoczynać word lib i kończyć .a rozszerzenia")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 Zawartość `libMagicChord.linkwith.cs` plik zawiera informacje o używaniu tej biblioteki i instruuje środowiskiem IDE, aby ten plik binarny tworzenia pakietów w wynikowym pliku DLL:
 
@@ -164,8 +154,7 @@ Czasami może się okazać konieczne kilka wartości wyliczenia i definicji dele
 
  <a name="The_API_definition_file" />
 
-
-# <a name="the-api-definition-file"></a>Plik definicji interfejsu API
+## <a name="the-api-definition-file"></a>Plik definicji interfejsu API
 
 Plik definicji interfejsu API składa się z wielu interfejsów. Interfejsy w definicji interfejsu API zostanie włączone w deklaracji klasy, a musi być dekorowane za [[BaseType]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu, aby określić klasę podstawową dla klasy.
 
@@ -175,7 +164,7 @@ Jednak ponieważ interfejsu jako szkielet jest używany do generowania klasy by�
 
 <a name="Binding_Methods" />
 
-## <a name="binding-methods"></a>Metody wiązania
+### <a name="binding-methods"></a>Metody wiązania
 
 Najprostsza powiązania, które może wykonywać jest powiązać metodę. Po prostu zadeklarować metody w interfejsie o konwencje nazewnictwa C# i dekoracji metody [[eksportowanie]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu. Atrybut [eksportu] jest co łączy nazwę C# o nazwie Objective-C w środowisku uruchomieniowym platformy Xamarin.iOS. Parametr atrybut eksportu jest nazwą selektor języka Objective-C, kilka przykładów:
 
@@ -214,7 +203,7 @@ Podczas eksportowania z typem referencyjnym `[Export]` — słowo kluczowe możn
 
 <a name="Binding_Properties" />
 
-## <a name="binding-properties"></a>Właściwości powiązania
+### <a name="binding-properties"></a>Właściwości powiązania
 
 Podobnie jak metody, właściwości języka Objective C jest powiązana za pomocą [[eksportowanie]](~/cross-platform/macios/binding/binding-types-reference.md) atrybut i mapy bezpośrednio do właściwości języka C#. Podobnie jak metody, właściwości mogą być dekorowane za [[Static]](~/cross-platform/macios/binding/binding-types-reference.md) i [[wewnętrznego]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutów.
 
@@ -264,7 +253,7 @@ string Text { get; set; }
 string Text { get; [NullAllowed] set; }
 ```
 
-### <a name="caveats-of-binding-custom-controls"></a>Ostrzeżenia powiązania Kontrolki niestandardowe
+#### <a name="caveats-of-binding-custom-controls"></a>Ostrzeżenia powiązania Kontrolki niestandardowe
 
 Podczas konfigurowania wiązania dla kontrolki niestandardowej, należy rozważyć następujące ostrzeżenia:
 
@@ -278,8 +267,7 @@ Nieprzestrzeganie wszelkie ostrzeżenia wymienionych powyżej może spowodować 
 
 <a name="MutablePattern" />
 
-### <a name="objective-c-mutable-pattern-and-properties"></a>Wzorzec modyfikowalną Objective-C i właściwości
-
+#### <a name="objective-c-mutable-pattern-and-properties"></a>Wzorzec modyfikowalną Objective-C i właściwości
 
 Struktury języka Objective-C za pomocą idiom gdzie niektórych klas są niezmienne z modyfikowalną podklasy.   Na przykład `NSString` jest niezmienialny wersji, podczas gdy `NSMutableString` podklasą klasy, która umożliwia mutacji.
 
@@ -306,8 +294,7 @@ interface MyMutableTree {
 
  <a name="Binding_Constructors" />
 
-
-## <a name="binding-constructors"></a>Powiązanie konstruktorów
+### <a name="binding-constructors"></a>Powiązanie konstruktorów
 
 **Btouch native** narzędzie automatycznie wygeneruje fours konstruktorów w klasie, dla danej klasy `Foo`, generuje:
 
@@ -315,7 +302,6 @@ interface MyMutableTree {
 -  `Foo (NSCoder)`: Konstruktor używany podczas deserializacji obiektu NIB plików (mapuje Objective-C "initWithCoder:" Konstruktor).
 -  `Foo (IntPtr handle)`: Konstruktor tworzonej na podstawie dojścia wywoływanie odbywa się przez środowisko uruchomieniowe gdy środowiska uruchomieniowego musi ujawniać obiektu zarządzanego z niezarządzanej obiektu.
 -  `Foo (NSEmptyFlag)`: Aby uniknąć podwójnego inicjowania jest używany przez klas pochodnych.
-
 
 Dla konstruktorów zdefiniowanych przez użytkownika, muszą być deklarowane przy użyciu następujących podpisu wewnątrz definicji interfejsu: one musi zwracać `IntPtr` wartość i nazwa metody powinna być konstruktora. Na przykład aby powiązać `initWithFrame:` konstruktora, jest to, czy użyć:
 
@@ -326,8 +312,7 @@ IntPtr Constructor (CGRect frame);
 
  <a name="Binding_Protocols" />
 
-
-## <a name="binding-protocols"></a>Powiązania protokołów
+### <a name="binding-protocols"></a>Powiązania protokołów
 
 Zgodnie z opisem w dokumencie projekt interfejsu API w sekcji [dyskutować modeli i protokoły](~/ios/internals/api-design/index.md), Xamarin.iOS mapuje protokołów Objective-C do klasy, które zostały oznaczone stanem [[Model]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu. Służy to zazwyczaj podczas implementowania Objective-C klasy obiektów delegowanych.
 
@@ -434,7 +419,7 @@ interface MyTool {
 
 Powyższe jest potrzebna, ponieważ w czasie wiązania `IMyProtocol` czy nie istnieje, to znaczy Dlaczego należy podać pustego interfejsu.
 
-### <a name="adopting-protocol-generated-interfaces"></a>Przyjmowanie protokołu wygenerowany interfejsów
+#### <a name="adopting-protocol-generated-interfaces"></a>Przyjmowanie generowanych przez protokół interfejsów
 
 Zawsze, gdy wdrożenie jest jednego z interfejsów wygenerowany dla protokołów, w następujący sposób:
 
@@ -445,8 +430,6 @@ class MyDelegate : NSObject, IUITableViewDelegate {
     }
 }
 ```
-
-
 
 Implementację metody interfejsu automatycznie pobiera wyeksportowane o nazwie poprawnej, więc jest to równoważne:
 
@@ -463,8 +446,7 @@ Nie ma znaczenia, jeśli interfejs zostanie zaimplementowana jawnie lub niejawni
 
 <a name="Binding_Class_Extensions" />
 
-
-## <a name="binding-class-extensions"></a>Powiązanie rozszerzenia klas
+### <a name="binding-class-extensions"></a>Powiązanie rozszerzenia klas
 
 <!--In Objective-C it is possible to extend classes with new methods,
 similar in spirit to C#'s extension methods. When one of these methods
@@ -499,8 +481,7 @@ interface NSStringDrawingExtensions {
 
  <a name="Binding_Objective-C_Argument_Lists" />
 
-
-## <a name="binding-objective-c-argument-lists"></a>Powiązanie listy argumentów Objective-C
+### <a name="binding-objective-c-argument-lists"></a>Powiązanie listy argumentów Objective-C
 
 Objective-C obsługuje argumentów ze zmienną liczbą argumentów, możesz użyć następujących techniki opisane przez Zach Gris na [ten wpis](http://forums.monotouch.net/yaf_postst311_SOLVED-Binding-ObjectiveC-Argument-Lists.aspx).
 
@@ -541,8 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
  <a name="Binding_Fields" />
 
-
-## <a name="binding-fields"></a>Powiązywanie pól
+### <a name="binding-fields"></a>Powiązywanie pól
 
 Czasami można uzyskać dostępu do pola publiczne, które zostały zgłoszone w bibliotece.
 
@@ -579,7 +559,6 @@ Powyższe wygeneruje `LonelyClass` który nie pochodzi od `NSObject` i będzie z
 -  `System.Drawing.SizeF`
 -  `CGSize`
 
-
 Oprócz nazwy natywnego pola można określić nazwy biblioteki pole lokalizacji, przekazując nazwę biblioteki:
 
 ```csharp
@@ -602,8 +581,7 @@ interface LonelyClass {
 
 <a name="Binding_Enums" />
 
-
-## <a name="binding-enums"></a>Typy wyliczeniowe powiązania
+### <a name="binding-enums"></a>Typy wyliczeniowe powiązania
 
 Możesz dodać `enum` bezpośrednio w powiązaniu z plików ułatwia ich używać wewnątrz definicji interfejsu API - bez korzystania z innego źródła pliku (musi być skompilowany w powiązaniach i ostatecznego projektu).
 
@@ -652,8 +630,7 @@ Jednak powoduje ograniczenie tworzenie podklas typ jako wrażeń zastosowań alt
 
 Alternatywą jest oryginalne, Oznacz `NSString`— na podstawie definicji jako `[Protected]`. Umożliwi to podklasy do pracy, gdy jest to wymagane, a wersja wrap'ed będą nadal działać i Wywołaj przesłoniętej metody.
 
-
-## <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Powiązanie NSValue NSNumber i NSString lepsze typem
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Powiązanie NSValue, NSNumber i NSString lepsze typem
 
 [[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu umożliwia powiązanie `NSNumber`, `NSValue` i `NSString`(Typy wyliczeniowe) do dokładniejsze typów C#. Ten atrybut służy do tworzenia lepsze, bardziej precyzyjne interfejs API .NET za pośrednictwem natywnego interfejsu API.
 
@@ -699,8 +676,7 @@ Zobacz [dokumentacji [BindAs]](~/cross-platform/macios/binding/binding-types-ref
 
  <a name="Binding_Notifications" />
 
-
-## <a name="binding-notifications"></a>Powiązanie powiadomienia
+### <a name="binding-notifications"></a>Powiązanie powiadomienia
 
 Powiadomienia są komunikaty, które są wysyłane do `NSNotificationCenter.DefaultCenter` i są używane jako mechanizm wysyłać wiadomości z jednej części aplikacji do innej. Deweloperzy subskrybować powiadomienia zwykle używanie [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)w [AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) metody. Gdy aplikacja ogłasza komunikatu do Centrum powiadomień, zwykle zawiera przechowywana w ładunku [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) słownika. Ten słownik lekko został wpisany i uzyskiwanie informacji z jego błędu podatnych na błędy, ponieważ użytkownicy muszą się zazwyczaj do odczytu w dokumentacji klucze, które są dostępne w słowniku i typy wartości, które mogą być przechowywane w słowniku. Obecność klucze czasami jest używany jako wartość logiczną, a także.
 
@@ -743,7 +719,6 @@ Zwracana wartość z `ObserveDidStart` można łatwo zrezygnować z otrzymywania
 token.Dispose ();
 ```
 
-
 Lub możesz wywołać [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/) i przekaż token. Jeśli powiadomienia zawiera parametry, należy określić obiekt pomocnika `EventArgs` interfejsu następująco:
 
 ```csharp
@@ -779,8 +754,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 
  <a name="Binding_Categories" />
 
-
-## <a name="binding-categories"></a>Powiązanie kategorii
+### <a name="binding-categories"></a>Powiązanie kategorii
 
 Kategorie są mechanizm Objective-C, używany do rozszerzania zestaw metod i właściwości dostępne w klasie.   W praktyce, są one używane do albo rozszerzyć funkcjonalność klasy podstawowej (na przykład `NSObject`) podczas konsolidowana określonej platformy (na przykład `UIKit`), co ich metod dostępne, ale tylko wtedy, gdy jest dołączane nowej struktury.   W niektórych przypadkach są one używane do organizowania funkcji w klasie według funkcji.   Są one podobne w duchu do metody rozszerzenia C#. Jest to, jak kategoria będzie wyglądać w celu C:
 
@@ -789,8 +763,6 @@ Kategorie są mechanizm Objective-C, używany do rozszerzania zestaw metod i wł
 -(void) makeBackgroundRed;
 @end
 ```
-
-
 
 Powyższy przykład jeśli znaleziono na biblioteki może rozszerzać wystąpienia `UIView` z metodą `makeBackgroundRed`.
 
@@ -807,8 +779,6 @@ interface MyUIViewExtension {
 }
 ```
 
-
-
 Powyższe utworzy `MyUIViewExtension` klasę, która zawiera `MakeBackgroundRed` — metoda rozszerzenia.  Oznacza to, że można teraz wywołać "MakeBackgroundRed" na dowolnym `UIView` podklasy, umożliwiając te same funkcje jak Objective-C. W niektórych przypadkach kategorie są używane, nie można rozszerzyć klasy systemu, ale do organizowania funkcji wyłącznie w celach decoration.  Jak to:
 
 ```csharp
@@ -821,8 +791,6 @@ Powyższe utworzy `MyUIViewExtension` klasę, która zawiera `MakeBackgroundRed`
 picture;
 @end
 ```
-
-
 
 Chociaż można używać `Category` atrybutu również tego stylu decoration deklaracji, można także po prostu dodać je wszystkie do definicji klasy.  Czy oba te osiągnięcia takie same:
 
@@ -861,8 +829,7 @@ interface SocialNetworking {
 
  <a name="Binding_Blocks" />
 
-
-## <a name="binding-blocks"></a>Bloki powiązania
+### <a name="binding-blocks"></a>Bloki powiązania
 
 Bloki są nową konstrukcję wprowadzone przez firmę Apple, aby wyświetlić funkcjonalności odpowiednikiem metod anonimowych C# w celu Objective-C. Na przykład `NSSet` klasy udostępnia teraz tej metody:
 
@@ -907,8 +874,7 @@ s.Enumerate ((obj, stop) => {
 
  <a name="GeneratingAsync" />
 
-
-## <a name="asynchronous-methods"></a>Metod asynchronicznych
+### <a name="asynchronous-methods"></a>Metod asynchronicznych
 
 Generator powiązania można włączyć klasy metod do metod asynchronicznych przyjaznego (metody, które zwracają Task lub Task&lt;T&gt;).
 
@@ -922,8 +888,6 @@ Przykład:
 void LoadFile (string file, Action<string> completed);
 ```
 
-
-
 Powyższy kod zostanie wygenerowany zarówno funkcję LoadFile metody, jak również:
 
 ```csharp
@@ -933,7 +897,7 @@ Task<string> LoadFileAsync (string file);
 
 <a name="Surfacing_Strong_Types" />
 
-## <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Udostępniając Silne typy parametrów słabego NSDictionary
+### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Udostępniając Silne typy parametrów słabego NSDictionary
 
 W wielu miejscach w interfejsie API języka Objective-C, parametry są przekazywane jako lekko wpisany `NSDictionary` interfejsów API za pomocą określonych kluczy i wartości, ale te są podatne na (przekazać nieprawidłowe klucze i pobrać żadnych ostrzeżeń; Przekaż nieprawidłowe wartości i uzyskiwanie żadnych ostrzeżeń) błąd i irytujące Aby użyć, ponieważ wymagają one wiele rund dokumentacji w celu wyszukania możliwe nazwy klucza i wartości.
 
@@ -959,10 +923,9 @@ Utwórz silnie typizowanej klasy albo ręcznie lub za pomocą generatora wykonyw
 
 Należy utworzyć plik obsługi dla tego, nie przechodzi w dany kontrakt interfejsu API.  Jest to musiałaby zapisu można utworzyć klasy XyzOptions:
 
-
 ```csharp
 public class XyzOptions : DictionaryContainer {
-#if !COREBUILD
+# if !COREBUILD
     public XyzOptions () : base (new NSMutableDictionary ()) {}
     public XyzOptions (NSDictionary dictionary) : base (dictionary){}
 
@@ -974,7 +937,7 @@ public class XyzOptions : DictionaryContainer {
        get { return GetStringValue (XyzOptionsKeys.CaptionKey); }
        set { SetStringValue (XyzOptionsKeys.CaptionKey, value); }
     }
-#endif
+# endif
 }
 ```
 
@@ -1048,15 +1011,13 @@ W razie potrzeby można odwoływać się w sieci `XyzOption` członków innego p
 
  <a name="Type_mappings" />
 
-# <a name="type-mappings"></a>Mapowanie typu
-
+## <a name="type-mappings"></a>Mapowanie typu
 
 W tej sekcji omówiono sposób Objective-C typy są mapowane na typach C#.
 
 <a name="Simple_Types" />
 
-
-## <a name="simple-types"></a>Typy proste
+### <a name="simple-types"></a>Typy proste
 
 W poniższej tabeli przedstawiono, jak powinna mapowania typów z języka Objective C i CocoaTouch world World Xamarin.iOS:
 
@@ -1212,8 +1173,7 @@ nuint </td>
 
  <a name="Arrays" />
 
-
-## <a name="arrays"></a>Tablice
+### <a name="arrays"></a>Tablice
 
 Środowisko uruchomieniowe platformy Xamarin.iOS automatycznie zajmuje się konwertowanie tablic C# do `NSArrays` i wykonywania konwersji, tak na przykład urojony metody Objective-C, która zwraca `NSArray` z `UIViews`:
 
@@ -1241,8 +1201,7 @@ W przypadkach, gdy nie można śledzić w dół rzeczywisty typ najdalszych poch
 
  <a name="Selectors" />
 
-
-## <a name="selectors"></a>Selektorów.
+### <a name="selectors"></a>Selektorów.
 
 Selektory są wyświetlane w interfejsie API języka Objective-C jako specjalny typ "Zaznaczenia". Podczas tworzenia wiązania selektora, czy mapowanie typu `ObjCRuntime.Selector`.  Zwykle selektory są widoczne w interfejsie API zarówno obiektu, obiekt docelowy i selektora do wywołania w obiekcie docelowym. Zapewnianie oba te zasadniczo odpowiada delegata C#: coś, który hermetyzuje zarówno metoda do wywołania, jak i obiektów można wywołać metody w.
 
@@ -1312,19 +1271,17 @@ class DialogPrint : UIViewController {
 
  <a name="Strings" />
 
-
-## <a name="strings"></a>Ciągi
+### <a name="strings"></a>Ciągi
 
 Gdy są powiązanie metody pobierającej `NSString`, można zastąpić, że C# typu ciąg, zwracać na typy i parametry.
 
 Tylko wówczas, gdy ma być `NSString` jest bezpośrednio, gdy ten ciąg jest używany jako tokenu. Aby uzyskać więcej informacji na temat ciągów i `NSString`, przeczytaj [projekt interfejsu API w NSString](~/ios/internals/api-design/nsstring.md) dokumentu.
 
-W rzadkich przypadkach interfejs API może narazić ciąg notacji języka C (`char *`) zamiast ciągu języka Objective-C (`NSString *`). W takich przypadkach może dodawać adnotacje do parametru z [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu.
+W rzadkich przypadkach interfejs API może narazić ciąg notacji języka C (`char *`) zamiast ciągu języka Objective-C (`NSString *`). W takich przypadkach może dodawać adnotacje do parametru z [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring) atrybutu.
 
  <a name="outref_parameters" />
 
-
-## <a name="outref-parameters"></a>out / ref parametrów
+### <a name="outref-parameters"></a>out / ref parametrów
 
 Niektóre funkcje interfejsu API zwracają wartości w ich parametrów lub przekazania parametrów przez odwołanie.
 
@@ -1348,8 +1305,7 @@ void SomeString (ref NSObject byref);
 
  <a name="Memory_management_attributes" />
 
-
-## <a name="memory-management-attributes"></a>Atrybuty zarządzania pamięci
+### <a name="memory-management-attributes"></a>Atrybuty zarządzania pamięci
 
 Jeśli używasz `[Export]` atrybutu i przekazywane dane, które zostaną zachowane w nazwie metody, można określić semantykę argumentu, przekazując go jako drugiego parametru, na przykład:
 
@@ -1363,16 +1319,13 @@ Flaga będzie powyższych wartości jako mający semantyki "Zachowaj". Semantyka
 -  Copy:
 -  Zachowaj:
 
-
  <a name="Style_Guidelines" />
 
-
-## <a name="style-guidelines"></a>Styl wskazówki
+### <a name="style-guidelines"></a>Styl wskazówki
 
  <a name="Using_[Internal]" />
 
-
-### <a name="using-internal"></a>Za pomocą [wewnętrznych]
+#### <a name="using-internal"></a>Za pomocą [wewnętrznych]
 
 Można użyć [[wewnętrznego]](~/cross-platform/macios/binding/binding-types-reference.md) atrybutu, aby ukryć metodę z publiczny interfejs API. Można to zrobić w przypadku gdy narażonych interfejs API jest zbyt niski poziom i chcesz wysokiego poziomu implementacji w osobnym pliku na podstawie tej metody.
 
@@ -1380,8 +1333,7 @@ Umożliwia także to po uruchomieniu do ograniczenia w generatorze powiązanie, 
 
  <a name="Event_Handlers_and_Callbacks" />
 
-
-# <a name="event-handlers-and-callbacks"></a>Programy obsługi zdarzeń i wywołania zwrotne
+## <a name="event-handlers-and-callbacks"></a>Programy obsługi zdarzeń i wywołania zwrotne
 
 Klasy języka Objective-C zwykle emisji powiadomienia lub żądają informacji wysyłając wiadomość na klasie delegata (delegat Objective-C).
 
@@ -1422,7 +1374,6 @@ Aby zawijać klasy należy:
 
 -  W klasie hosta, należy dodać do Twojego `[BaseType]` deklaracji typu działający jako swojego delegata i C# nazwę, która jest widoczne. W naszym przykładzie powyżej te są "typeof (MyClassDelegate)" i "WeakDelegate" odpowiednio.
 -  W klasie delegata na każda metoda ma więcej niż dwóch parametrów należy określić typ, który ma być używany dla automatycznie wygenerowana klasa EventArgs.
-
 
 Generator powiązania nie jest ograniczona do zawijania tylko pojedyncze zdarzenie docelowego, możliwe jest tego delegata niektórych klas języka Objective-C do wysyłania komunikatów do więcej niż jeden, więc będzie musiał podać tablic do obsługi tej instalacji. Większość ustawień nie będą potrzebne, ale generatora jest gotowe do obsługi tych przypadkach.
 
@@ -1481,15 +1432,13 @@ DefaultValue będzie kodowania zwracanej wartości, podczas gdy `[DefaultValueFr
 
  <a name="Enumerations_and_Base_Types" />
 
-
-# <a name="enumerations-and-base-types"></a>Wyliczeń i typy podstawowe
+## <a name="enumerations-and-base-types"></a>Wyliczeń i typy podstawowe
 
 Można także odwoływać wyliczenia lub typów podstawowych, które nie są bezpośrednio obsługiwane przez system definicji interfejsu btouch. W tym celu należy umieścić Twoje wyliczeń i typy podstawowe w osobnym pliku i uwzględniać to w ramach dodatkowe pliki, które świadczą btouch.
 
  <a name="Linking_the_Dependencies" />
 
-
-# <a name="linking-the-dependencies"></a>Łączenie zależności
+## <a name="linking-the-dependencies"></a>Łączenie zależności
 
 Są wiązane interfejsów API, które nie są częścią aplikacji, należy się upewnić, że pliku wykonywalnego jest połączony z tych bibliotek.
 
@@ -1515,8 +1464,7 @@ Może być zastanawiasz się, dlaczego potrzebujesz polecenia "force_load" i że
 
  <a name="Assisted_References" />
 
-
-# <a name="assisted-references"></a>Asystowaną odwołań
+## <a name="assisted-references"></a>Asystowaną odwołań
 
 Niektóre obiekty przejściowy, takich jak arkusze akcji i pola alertu są skomplikowane do śledzenia dla deweloperów i generator powiązanie pomaga trochę tutaj.
 
@@ -1560,14 +1508,12 @@ class Demo {
 
  <a name="Inheriting_Protocols" />
 
-
-# <a name="inheriting-protocols"></a>Dziedziczenie protokołów
+## <a name="inheriting-protocols"></a>Dziedziczenie protokołów
 
 Począwszy od platformy Xamarin.iOS wersja 3.2 lub, firma Microsoft obsługuje dziedziczenia z protokołów, które zostały oznaczone `[Model]` właściwości. Jest to przydatne w pewnych wzorców interfejsu API, takich jak w `MapKit` gdzie `MKOverlay` protokołu, dziedziczy `MKAnnotation` protokołu i jest stosowane przez liczbę klas, które dziedziczą z `NSObject`.
 
 W przeszłości firma Microsoft wymaga kopiowanie co implementacji protokołu, ale w tych przypadkach firma Microsoft może już `MKShape` klasa dziedziczy `MKOverlay` protokołu i wygeneruje wymaganych metod automatycznie.
 
-
-## <a name="related-links"></a>Linki pokrewne
+### <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe powiązania](https://developer.xamarin.com/samples/BindingSample/)

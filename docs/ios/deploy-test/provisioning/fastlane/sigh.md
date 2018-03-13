@@ -2,16 +2,16 @@
 title: "sigh fastlane dla systemu iOS —"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d80a0ab5583231f95241fb8d4f6e339e44a84ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>sigh fastlane dla systemu iOS —
 
@@ -61,7 +61,7 @@ Identyfikator aplikacji można utworzyć przy użyciu następującego polecenia:
 
 Gdzie `com.company.appname` jest identyfikator pakietu aplikacji, która znajduje się w pliku Info.plist aplikacji platformy Xamarin.iOS, jak przedstawiono poniżej:
 
-[ ![](sigh-images/fastlane-image5.png "Pliku Info.plist aplikacji platformy Xamarin.iOS")](sigh-images/fastlane-image5.png)
+[![](sigh-images/fastlane-image5.png "Pliku Info.plist aplikacji platformy Xamarin.iOS")](sigh-images/fastlane-image5.png#lightbox)
 
 Unikatowy identyfikator aplikacji musi być ciągiem styl wstecznego DNS. Po jej utworzeniu, Zachowaj Uwaga, jak należy użyć, jeśli przy użyciu sigh w dalszej części tego przewodnika.
 
@@ -108,7 +108,7 @@ Wprowadź identyfikator Apple ID nazwy użytkownika po wyświetleniu monitu prze
 
 Jeśli identyfikator Apple ID jest podłączona do wielu zespołów będą wyświetlane w tym miejscu. Wybierz numer, który odpowiada zespół, który chcesz użyć:
 
-[ ![](sigh-images/fastlane-image2.png "Wybierz zespół, który chcesz użyć")](sigh-images/fastlane-image2.png)
+[![](sigh-images/fastlane-image2.png "Wybierz zespół, który chcesz użyć")](sigh-images/fastlane-image2.png#lightbox)
 
 Identyfikator zespołu mogą zostać przekazane do interfejsu wiersza polecenia w następujący sposób:
 
@@ -124,7 +124,7 @@ fastlane zostanie następnie utworzyć, Pobierz i zainstaluj profil inicjowania 
 
 Podczas przeglądania Centrum deweloperów, można wyświetlić nowo utworzony profil inicjowania obsługi administracyjnej, jak przedstawiono poniżej:
 
-[ ![](sigh-images/fastlane-image10.png "Widok nowo utworzony profil inicjowania obsługi administracyjnej")](sigh-images/fastlane-image10.png)
+[![](sigh-images/fastlane-image10.png "Widok nowo utworzony profil inicjowania obsługi administracyjnej")](sigh-images/fastlane-image10.png#lightbox)
 
 Domyślnie sigh będzie przechowywać profilów aprowizacji w bieżącym folderze. Aby zmienić katalog wyjściowy `output_path`, lub wykonaj następujące czynności:
 
@@ -140,19 +140,19 @@ Następujące opcje można zapewnić dodatkową pomoc przy użyciu sigh:
 
 - Aby pobrać wszystkie profile inicjowania obsługi administracyjnej używać:
 
-    ````bash
+    ```bash
     fastlane sigh download_all
     ```
 
-- To use a specific signing identity for your provisioning profile use:
+- Aby użyć określonej tożsamości podpisywania do wykorzystania w profilu inicjowania obsługi administracyjnej:
 
     ```bash
     fastlane sigh -c "Amy cert"
     ```
     
-    Where `Amy cert` is the Code Signing Identity name.
+    Gdzie `Amy cert` jest nazwą tożsamość podpisywania kodu.
 
 
-## Related Links
+## <a name="related-links"></a>Linki pokrewne
 
 - [fastlane - sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)

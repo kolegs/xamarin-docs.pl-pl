@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5db53bef0f62937f7be0a5e5fb6f64f1bf3ca007
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b6fad9eadbff272f86f9e426e3f6eb5d48847127
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurowanie Twojego systemu tvOS aplikacji w iTunes Connect
 
@@ -39,11 +39,11 @@ Opcjonalnie można także mogą wymagać:
 
 Biorąc pod uwagę powyższe kroki ukończone Otwórz iTunes rekordu Connect i wybierz, aby dodać obsługę systemu tvOS, za pomocą paska bocznego po lewej stronie aplikacji:
 
-[ ![](itunes-connect-images/connect01.png "Dodaj obsługę systemu tvOS, za pomocą paska bocznego po lewej stronie")](itunes-connect-images/connect01.png)
+[![](itunes-connect-images/connect01.png "Dodaj obsługę systemu tvOS, za pomocą paska bocznego po lewej stronie")](itunes-connect-images/connect01.png#lightbox)
 
 Ekrany określone informacje systemu tvOS będzie dostępna dla danej iTunes rekordu Connect:
 
-[ ![](itunes-connect-images/connect02.png "Na ekranie informacje systemu tvOS")](itunes-connect-images/connect02.png)
+[![](itunes-connect-images/connect02.png "Na ekranie informacje systemu tvOS")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -51,7 +51,7 @@ Ekrany określone informacje systemu tvOS będzie dostępna dla danej iTunes rek
 
 Na pasku bocznym po lewej stronie zaznacz **1.0 Przygotowanie do przesyłania** sekcji systemu tvOS aplikacji:
 
-[ ![](itunes-connect-images/connect03.png "informacje o wersji systemu tvOS")](itunes-connect-images/connect03.png)
+[![](itunes-connect-images/connect03.png "informacje o wersji systemu tvOS")](itunes-connect-images/connect03.png#lightbox)
 
 Na tym ekranie wprowadź następujące informacje:
 
@@ -63,7 +63,7 @@ Na tym ekranie wprowadź następujące informacje:
 
 Po wprowadzeniu wymaganych informacji, kliknij przycisk **zapisać** przycisk w prawym górnym rogu ekranu, aby zapisać zmiany:
 
-[ ![](itunes-connect-images/connect04.png "gotowy do przesyłania informacji o wersji systemu tvOS")](itunes-connect-images/connect04.png)
+[![](itunes-connect-images/connect04.png "gotowy do przesyłania informacji o wersji systemu tvOS")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -71,7 +71,7 @@ Po wprowadzeniu wymaganych informacji, kliknij przycisk **zapisać** przycisk w 
 
 Gdy wszystko będzie gotowe na koniec można przesłać Xamarin.tvOS aplikacji do sklepu Apple TV aplikacji do przeglądu, wróć do aplikacji iTunes rekordu Connect i kliknij przycisk **przesłać do przeglądu** przycisk w prawym górnym rogu ekranu:
 
-[ ![](itunes-connect-images/connect05.png "Przesłać do przeglądu")](itunes-connect-images/connect05.png)
+[![](itunes-connect-images/connect05.png "Przesłać do przeglądu")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

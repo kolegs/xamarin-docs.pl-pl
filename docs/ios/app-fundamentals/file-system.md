@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>Praca w systemie plików
 
@@ -26,7 +26,7 @@ iOS ma także niektóre funkcje specyficzne dla systemu plików: niektórych kat
 
 W tym artykule omówiono funkcje i ograniczenia systemu IOS system plików szczegółowo i zawiera przykładową aplikację prezentującą wykonać pewne operacje systemu plików prostych przy użyciu platformy Xamarin.iOS:
 
- [ ![](file-system-images/05-sampleapp.png "Przykładowe wykonywania pewnych operacji systemu prostego pliku systemu IOS")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "Przykładowe wykonywania pewnych operacji systemu prostego pliku systemu IOS")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ Aby uzyskać więcej informacji na temat nazw System.IO zobacz [dokumentacji MSD
 
 Praca z Json danych w aplikacji platformy Xamarin.iOS jest bardzo łatwe przy użyciu [Json.NET](http://www.newtonsoft.com/json) wysokiej wydajności JSON framework .NET pakietu NuGet. Po prostu Dodaj pakiet NuGet do projektu aplikacji: 
 
-[ ![](file-system-images/json01.png "Dodawanie pakietu NuGet do projektu aplikacji")](file-system-images/json01.png)
+[![](file-system-images/json01.png "Dodawanie pakietu NuGet do projektu aplikacji")](file-system-images/json01.png#lightbox)
 
 Następnie Dodaj klasę do działania jako model danych do serializacji/deserializacji (w tym przypadku `Account.cs`):
 
@@ -217,11 +217,11 @@ Po przejściu do Twojego pakietu aplikacji w systemie Mac OS, wydaje się z inn�
 
 Aby wyświetlić przykładowy kod pakietu aplikacji, kliknij prawym przyciskiem myszy projekt w programie Visual Studio dla komputerów Mac i wybierz **Otwórz Folder zawierający**. Następnie przejdź do **bin/debugowanie/** gdzie powinna być widoczna ikona aplikacji (podobnie jak na poniższym zrzucie ekranu).
 
- [ ![](file-system-images/40-bundle.png "Przejdź do bin/Debug, aby znaleźć podobne do tego zrzutu ekranu ikony aplikacji")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "Przejdź do bin/Debug, aby znaleźć podobne do tego zrzutu ekranu ikony aplikacji")](file-system-images/40-bundle.png#lightbox)
 
 Kliknij prawym przyciskiem myszy tę ikonę, a następnie wybierz pozycję **Wyświetl zawartość pakietu** do przeglądania zawartości katalogu pakietu aplikacji. Zawartość jest wyświetlana tak samo jak zawartość katalogu regularne, jak pokazano poniżej:
 
- [ ![](file-system-images/45-bundle.png "Zawartości pakietu aplikacji")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "Zawartości pakietu aplikacji")](file-system-images/45-bundle.png#lightbox)
 
 Pakiet aplikacji jest zainstalowanych w symulatorze lub na urządzeniu podczas testowania, a ostatecznie to, co jest przesyłany do firmy Apple w celu włączenia w sklepie z aplikacjami.
 
@@ -313,7 +313,7 @@ Zawartość tego katalogu nigdy nie są widoczne dla użytkownika za pomocą pro
 
 Ten zrzut ekranu przedstawia struktury katalogów, w oknie wyszukiwania:
 
- [ ![](file-system-images/08-library-directory.png "Ten zrzut ekranu przedstawia struktura katalogów w oknie wyszukiwania")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "Ten zrzut ekranu przedstawia struktura katalogów w oknie wyszukiwania")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 Użytkownicy mają dostęp do plików w katalogu dokumentów aplikacji, edytując `Info.plist` i tworzenie **aplikacja obsługuje udostępnianie iTunes** (`UIFileSharingEnabled`) wpisu w **źródła** widoku jako przedstawione tutaj:
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "Dodawanie aplikacji obsługuje iTunes udostępnianie właściwości")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "Dodawanie aplikacji obsługuje iTunes udostępnianie właściwości")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 Te pliki będą dostępne w programach iTunes, gdy urządzenie jest podłączone i użytkownik wybierze `Apps` kartę. Poniższy zrzut ekranu przedstawia pliki w wybranej aplikacji udostępnianych za pośrednictwem programu iTunes:
 
- [ ![](file-system-images/10-itunes-file-sharing.png "Ten zrzut ekranu przedstawia pliki w wybranej aplikacji udostępnianych za pośrednictwem programu iTunes")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "Ten zrzut ekranu przedstawia pliki w wybranej aplikacji udostępnianych za pośrednictwem programu iTunes")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 Użytkownicy mogą uzyskiwać dostęp tylko do elementów najwyższego poziomu, w tym katalogu za pomocą programu iTunes. Zawartość podkatalogów nie widzą (mimo że można je skopiować na swoich komputerach lub usunąć je). Na przykład GoodReader, plików PDF i EPUB mogą być udostępniane z aplikacją, dzięki czemu użytkownicy mogą odczytywać je na swoich urządzeniach z systemem iOS.
 
@@ -364,7 +364,7 @@ Użytkownicy, którzy zmodyfikować zawartość folderu Dokumenty, ich może spo
 
 Przykładowy kod w tym artykule tworzy plik i folderu w folderze dokumenty (w **SampleCode.cs**) i umożliwia udostępnianie plików w **Info.plist** pliku. Ten zrzut ekranu pokazuje, jak są one wyświetlane w programach iTunes:
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "Ten zrzut ekranu pokazuje, jak pliki są wyświetlane w programach iTunes")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "Ten zrzut ekranu pokazuje, jak pliki są wyświetlane w programach iTunes")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 Zapoznaj się [Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md) artykuł, aby uzyskać informacje na temat ustawienie ikon dla aplikacji i dla wszystkich typów dokumentów niestandardowych tworzenia.
 

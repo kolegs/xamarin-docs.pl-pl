@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b8d8aed397f72df53fdca7e455b8ef723e48e0a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction"></a>Wprowadzenie
 
@@ -88,7 +88,7 @@ Informacje o implementacji usługi wewnętrznej bazy danych, zobacz [Mikrousług
 
 Ten przewodnik koncentruje się na tworzeniu organizacji i platform aplikacji przy użyciu platformy Xamarin.Forms i korzysta z aplikacji mobilnej eShopOnContainers jako przykład. Rysunek 1 i 2 zawiera strony z aplikacji mobilnej eShopOnContainers, które zapewniają funkcje opisane wcześniej.
 
-[![](introduction-images/screenshots.png "Aplikacja mobilna eShopOnContainers")](introduction-images/screenshots-large.png "eShopOnContainers aplikacji mobilnej")
+[![](introduction-images/screenshots.png "Aplikacja mobilna eShopOnContainers")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers aplikacji mobilnej")
 
 **Rysunek 1 i 2**: eShopOnContainers aplikacji mobilnej
 

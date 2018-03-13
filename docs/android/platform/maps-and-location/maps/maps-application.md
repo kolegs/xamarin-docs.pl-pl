@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>Mapowania aplikacji
 
 Najprostszym sposobem, aby pracować przy użyciu map platformie Xamarin.Android ma korzystać z aplikacji wbudowanej mapy, pokazano poniżej:
 
-[![Zrzut ekranu aplikacji map programu Google wbudowane](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![Zrzut ekranu aplikacji map programu Google wbudowane](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Podczas używania aplikacji mapy, mapy nie będzie częścią aplikacji. Zamiast tego aplikacja uruchomienia aplikacji map i załadować mapy zewnętrznie. Następna sekcja sprawdza, czy uruchomić mapy jak powyżej przy użyciu platformy Xamarin.Android.
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>Tworzenie celem
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 Ten kod jest są wystarczające do uruchomienia na mapie pokazano poprzedni zrzut ekranu. Oprócz określenia współrzędne geograficzne, schemat identyfikatora URI dla mapowania obsługuje kilka innych opcji.
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>Schemat identyfikatora URI Geo
 
@@ -52,10 +50,9 @@ Powyższy kod używany schemat geograficznie do utworzenia identyfikatora URI. T
 
 Wersje identyfikatora URI wykonać zapytanie (czyli ulicy warunki adres lub wyszukiwania) umożliwia pobrać lokalizacji, która jest następnie wyświetlone na mapie usługi geocoder firmy Google. Na przykład identyfikator URI `geo:0,0?q=coop+Cambridge` powoduje mapy pokazano poniżej:
 
-[![Zrzut ekranu przedstawiający map programu Google terminem wyszukiwania](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![Zrzut ekranu przedstawiający map programu Google terminem wyszukiwania](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 Aby uzyskać więcej informacji na temat schematy identyfikatorów URI geograficznie zobacz [Pokaż lokalizację na mapie](http://developer.android.com/guide/components/intents-common.html#Maps).
 
@@ -64,7 +61,7 @@ Aby uzyskać więcej informacji na temat schematy identyfikatorów URI geografic
 
 Oprócz schemat geograficznie Android obsługuje również, ładowania ulicy widoków z celem. Poniżej przedstawiono przykład aplikacji ulicy widoku uruchamiana z platformy Xamarin.Android:
 
-[![Zrzut ekranu widoku ulicy](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![Zrzut ekranu widoku ulicy](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 Aby uruchomić ulicy widoku, po prostu użyć `google.streetview` schemat identyfikatora URI, jak pokazano w poniższym kodzie:
 

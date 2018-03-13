@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Omówienie integracji Java
 
 _Ekosystemu języka Java obejmuje różne i olbrzymie zbiór elementów. Wiele z tych składników można skrócić czas potrzebny do opracowywania aplikacji systemu Android. Ten dokument zostanie wprowadzić i stanowią ogólne omówienie niektórych metod, deweloperzy mogą używać tych istniejące składniki Java zwiększające ich możliwości tworzenia aplikacji platformy Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -41,7 +40,6 @@ Drugiej techniki przy użyciu JNI, działa na wiele niższym poziomie, ale możn
 Trzeci technika znacząco różni się od poprzedniej dwa: eksportowanie kodu w języku Java na język C#. Eksportowanie kodu z jednego języka do innego może być bardzo pracochłonne proces, ale można zmniejszyć, że wywoływana nakładu pracy za pomocą narzędzia *wyostrzania*. Wyostrzania jest narzędziem typu open source, które jest Java-do-C# konwertera. 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

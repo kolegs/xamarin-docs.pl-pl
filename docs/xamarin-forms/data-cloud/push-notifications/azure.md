@@ -5,32 +5,35 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cccbe64f69b926ced77403bcf85540ef1060dbac
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f0f767179a9280d7a6c6d7ce8125696d5e664cba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Wysyłanie powiadomień wypychanych z usługi Azure Mobile Apps
 
 _Centra powiadomień Azure zapewnia infrastrukturę skalowalne wypychanych umożliwiający wysyłanie powiadomień wypychanych przenośnych z poziomu dowolnego zaplecza na dowolną platformę mobilną, dzięki czemu na złożoność używanego w wewnętrznej bazie danych o do komunikowania się z różnych systemów powiadomień platformy. W tym artykule opisano sposób użycia usługi Azure Notification Hubs można wysyłać powiadomienia wypychane z wystąpienia usługi Azure Mobile Apps do aplikacji platformy Xamarin.Forms._
 
-## <a name="overview"></a>Omówienie
+> [!VIDEO https://youtube.com/embed/le2lDY22xwM]
+
+**Azure wypychanie przez Centrum powiadomień i platformy Xamarin.Forms, [Xamarin University](https://university.xamarin.com/)**
 
 Powiadomienie wypychane jest używany do dostarczania informacji, takich jak wiadomości z systemem zaplecza do aplikacji na urządzeniu przenośnym w celu zwiększenia aplikacji zaangażowania i użycia. Powiadomienia mogą być wysyłane w dowolnym momencie, nawet wtedy, gdy użytkownik nie jest aktywnie używa aplikacji docelowej.
 
 Systemy zaplecza wysyłać powiadomienia wypychane do urządzeń przenośnych za pomocą systemów powiadomień platformy (PNS), jak pokazano na poniższym diagramie:
 
-[![](azure-images/pns.png "Systemy powiadomień platformy")](azure-images/pns-large.png "systemów powiadomień platformy")
+[![](azure-images/pns.png "Systemy powiadomień platformy")](azure-images/pns-large.png#lightbox "systemów powiadomień platformy")
 
 System wewnętrznej bazy danych do wysyłania powiadomień wypychanych, kontaktuje się PNS specyficzne dla platformy, aby wysłać powiadomienie do wystąpienia aplikacji klienta. To znacznie zwiększa złożoność wewnętrznej bazy danych powiadomień wypychanych i platform są wymagane, ponieważ wewnętrznej bazy danych musi używać każdego specyficzne dla platformy systemu powiadomień platformy interfejsu API i protokół.
 
 Centra powiadomień Azure eliminuje to złożoność przez zapewniając abstrakcyjność szczegółów różnych systemów powiadomień platformy, dzięki czemu powiadomienia i platform do wysłania przy użyciu jednego wywołania interfejsu API, jak pokazano na poniższym diagramie:
 
-[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png)
+[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png#lightbox)
 
 Aby wysyłać powiadomienia wypychane, kontakty tylko system Azure Centrum powiadomień, który z kolei komunikuje się z różnych systemów powiadomień platformy, w związku z tym zmniejszenie złożoności wewnętrznej bazy danych zaplecza kodu tego wysyła powiadomienia wypychane.
 
@@ -44,7 +47,7 @@ Aplikacje mobilne platformy Azure ma wbudowaną obsługę powiadomień wypychany
 
 Aplikacja przykładowa prezentuje aplikacji zarządzającej listą, którego dane są przechowywane w wystąpieniu usługi Azure Mobile Apps. Za każdym razem, gdy nowy element jest dodawany do wystąpienia usługi Azure Mobile Apps, powiadomienia wypychane są wysyłane do aplikacji platformy Xamarin.Forms. Poniższe zrzuty ekranu pokazują każdej z platform wyświetlanie powiadomień wypychanych Odebrano:
 
-[![](azure-images/screenshots.png "Przykładowa aplikacja odbierania powiadomień wypychanych")](azure-images/screenshots-large.png "Przykładowa aplikacja odbierania powiadomień wypychanych")
+[![](azure-images/screenshots.png "Przykładowa aplikacja odbierania powiadomień wypychanych")](azure-images/screenshots-large.png#lightbox "Przykładowa aplikacja odbierania powiadomień wypychanych")
 
 Aby uzyskać więcej informacji na temat usługi Azure Notification Hubs, zobacz [usługi Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) i [Dodawanie powiadomień wypychanych do aplikacji platformy Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
 
@@ -118,7 +121,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 Rejestruje aplikacji systemu iOS w usłudze APNS musi określać typy powiadomień wypychanych, który chcesz otrzymywać. `RegisterUserNotificationSettings` Metoda rejestruje typy powiadomień, aplikacja może odbierać, z `RegisterForRemoteNotifications` metoda rejestrowania, aby odbierać powiadomienia wypychane z usługi APNS.
 
 > [!NOTE]
-> **Uwaga**: nie można wywołać `RegisterUserNotificationSettings` metody spowoduje powiadomień wypychanych jest w trybie dyskretnym odebranych przez aplikację.
+> Nie można wywołać `RegisterUserNotificationSettings` metody spowoduje powiadomień wypychanych jest w trybie dyskretnym odebranych przez aplikację.
 
 <a name="ios_registration_response" />
 
@@ -146,7 +149,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 Ta metoda tworzy szablon wiadomości prostego powiadomienia w formacie JSON i rejestruje urządzenia, aby otrzymywać powiadomienia szablonu z Centrum powiadomień.
 
 > [!NOTE]
-> **Uwaga**: `FailedToRegisterForRemoteNotifications` zastąpienie powinny być implementowane w celu obsługi sytuacji takich jak brak połączenia z siecią. Jest to ważne, ponieważ użytkownicy mogą uruchamiać aplikacji podczas w trybie offline.
+> `FailedToRegisterForRemoteNotifications` Zastąpienie powinny być implementowane w celu obsługi sytuacji takich jak brak połączenia z siecią. Jest to ważne, ponieważ użytkownicy mogą uruchamiać aplikacji podczas w trybie offline.
 
 <a name="ios_process_incoming" />
 
@@ -177,7 +180,7 @@ public override void DidReceiveRemoteNotification(
 `userInfo` Słownik zawiera `aps` klucza, którego wartość jest `alert` słownik z pozostałych danych powiadomień. Ten słownik jest pobierana, z `string` komunikatu powiadomienia są wyświetlane w oknie dialogowym.
 
 > [!NOTE]
-> **Uwaga**: Jeśli aplikacja nie jest uruchomiony po odebraniu powiadomienia wypychane, aplikacja zostanie uruchomiona, ale `DidReceiveRemoteNotification` — metoda nie będzie przetwarzać powiadomienia. Zamiast tego należy pobrać ładunek powiadomienia i odpowiednio odpowiadać z `WillFinishLaunching` lub `FinishedLaunching` zastąpienia.
+> Jeśli aplikacja nie jest uruchomiony po odebraniu powiadomienia wypychane, aplikacja zostanie uruchomiona, ale `DidReceiveRemoteNotification` — metoda nie będzie przetwarzać powiadomienia. Zamiast tego należy pobrać ładunek powiadomienia i odpowiednio odpowiadać z `WillFinishLaunching` lub `FinishedLaunching` zastąpienia.
 
 Aby uzyskać więcej informacji na temat APNS, zobacz [powiadomień wypychanych w systemie iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
 
@@ -330,7 +333,7 @@ public class FirebaseNotificationService : FirebaseMessagingService
         intent.AddFlags(ActivityFlags.ClearTop);
         var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-        var notificationBuilder = new Notification.Builder(this)
+        var notificationBuilder = new NotificationCompat.Builder(this)
             .SetSmallIcon(Resource.Drawable.ic_stat_ic_notification)
             .SetContentTitle("New Todo Item")
             .SetContentText(messageBody)

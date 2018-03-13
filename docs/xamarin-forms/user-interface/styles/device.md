@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: dbe88f39999ee163ff2e7cdf4b9301aa0f0681bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ad057f55ed69174bef55c0364e5e7ea30bae2789
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-styles"></a>Style urządzenia
 
@@ -115,7 +115,7 @@ public class DeviceStylesPageCS : ContentPage
 
 Poniższe zrzuty ekranu pokazują style urządzenia na każdej platformie, z najmniejszy rozmiar czcionki dostępne:
 
-[![](device-images/minimum-size.png "Style dostępnego urządzenia małych na każdej platformie")](device-images/minimum-size-large.png "style dostępnego urządzenia małych na każdej platformie")
+[![](device-images/minimum-size.png "Style dostępnego urządzenia małych na każdej platformie")](device-images/minimum-size-large.png#lightbox "style dostępnego urządzenia małych na każdej platformie")
 
 Poniższe zrzuty ekranu pokazują style urządzenia na każdej platformie, największy rozmiar czcionki dostępne:
 

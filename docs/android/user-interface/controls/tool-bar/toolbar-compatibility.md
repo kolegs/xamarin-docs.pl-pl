@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>Zgodność z paska narzędzi
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -36,7 +35,6 @@ Aby zmodyfikować aplikację na AppCompat wersja narzędzi:
 Każdy z tych kroków jest szczegółowo opisane w kolejnych sekcjach.
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>Wartość minimalna i docelowa wersja systemu Android
 
@@ -44,23 +42,20 @@ Platformę docelową aplikacji musi być ustawiony na 21 poziom interfejsu API l
 
 Ustaw docelową platformę mniejsza od poziomu do 21 poziom interfejsu API i ustaw ustawienia poziomu projektu interfejsu API systemu Android minimalna wersja systemu Android aplikacji jest zapewnienie pomocy technicznej. Aby uzyskać więcej informacji na temat ustawiania poziomy interfejsu API systemu Android, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md). W `ToolbarFun` przykład Minimalna wersja systemu Android ma ustawioną wartość KitKat (4.4 poziom interfejsu API). 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>Zainstaluj pakiet AppCompat NuGet
 
 Następnie dodaj [biblioteki obsługi systemu Android w wersji 7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) pakietu do projektu. W programie Visual Studio, kliknij prawym przyciskiem myszy **odwołania** i wybierz **Zarządzaj pakietami NuGet...** . Kliknij przycisk **Przeglądaj** i wyszukaj **biblioteki obsługi systemu Android w wersji 7 AppCompat**. Wybierz **Xamarin.Android.Support.v7.AppCompat** i kliknij przycisk **zainstalować**: 
 
-[![Zrzut ekranu w wersji 7 Appcompat pakietu wybranego w pakiety zarządzania pakietami NuGet](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![Zrzut ekranu w wersji 7 Appcompat pakietu wybranego w pakiety zarządzania pakietami NuGet](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 Podczas instalowania NuGet to kilka pakietów NuGet są również instalowane Jeśli nie są jeszcze zainstalowane (takich jak **Xamarin.Android.Support.Animated.Vector.Drawable**, **Xamarin.Android.Support.v4**, i **Xamarin.Android.Support.Vector.Drawable**). Aby uzyskać więcej informacji na temat instalowania pakietów NuGet, zobacz [wskazówki: w tym NuGet w projekcie](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Użyj AppCompat kompozycji i narzędzi
 
 Biblioteka AppCompat jest dostarczany z kilku `Theme.AppCompat` kompozycje, których można użyć w dowolnej wersji systemu Android obsługiwany przez bibliotekę AppCompat. `ToolbarFun` Przykład motywu aplikacji jest pochodną `Theme.Material.Light.DarkActionBar`, która nie jest dostępne na systemu Android w wersji wcześniejszej niż interfejs typu lizak. W związku z tym `ToolbarFun` muszą być dostosowane do użycia dla tego motywu odpowiednikiem AppCompat `Theme.AppCompat.Light.DarkActionBar`. Ponadto ponieważ `Toolbar` jest niedostępne w wersjach systemu android starszych niż interfejs typu lizak, musi używamy wersja AppCompat `Toolbar`. W związku z tym należy użyć układów `android.support.v7.widget.Toolbar` zamiast `Toolbar`. 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>Układy aktualizacji
 
@@ -91,7 +86,6 @@ Edytuj **Resources/layout/toolbar.xml** i zastąp jego zawartość XML następuj
 
 Należy pamiętać, że `?attr` wartości nie są poprzedzane prefiksem `android:` (przypominają, iż `?` notacji odwołuje się do zasobu w bieżącego motywu). Jeśli `?android:attr` nadal były używane w tym miejscu Android będzie odwoływać wartość atrybutu z aktualnie uruchomioną platformy, a nie z biblioteki AppCompat. Ponieważ w tym przykładzie użyto `actionBarSize` zdefiniowany przez bibliotekę AppCompat `android:` prefiks zostało porzucone. Podobnie `@android:style` jest zmieniana na `@style` , aby `android:theme` atrybut ma ustawioną w bibliotece AppCompat motyw &ndash; `ThemeOverlay.AppCompat.Dark.ActionBar` motywu jest tu używany zamiast `ThemeOverlay.Material.Dark.ActionBar`. 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>Aktualizuj styl
 
@@ -113,7 +107,6 @@ Edytuj **Resources/values/styles.xml** i zastąp jego zawartość XML następuj�
 Nazwy elementów i motyw nadrzędnego, w tym przykładzie nie są poprzedzane prefiksem `android:` ponieważ używamy AppCompat biblioteki. Ponadto motywu nadrzędnego jest zmieniana na wersję AppCompat `Light.DarkActionBar`. 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>Aktualizowanie menu
 
@@ -180,7 +173,6 @@ Podobnie, Edytuj **Resources/menu/edit_menus.xml** i zastąp jego zawartość XM
 
 W jaki sposób ten przełącznik przestrzeń nazw zapewnia obsługę `showAsAction` atrybutu Android wersje starsze niż 11 poziom interfejsu API? Atrybut niestandardowy `showAsAction` i wszystkie jego możliwych wartości zostaną uwzględnione w aplikacji, podczas instalowania AppCompat NuGet. 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>Podklasy AppCompatActivity
 
@@ -208,7 +200,7 @@ Na koniec zmień Minimum Android poziom na wartość wstępne interfejs typu liz
 
 Tworzenie aplikacji i uruchom go na wstępne interfejs typu lizak urządzenia lub emulatora systemu Android. Poniższy zrzut ekranu przedstawia wersję AppCompat **ToolbarFun** na 4 węzła uruchomionego KitKat (interfejsu API 19): 
 
-[![Zrzut pełnego ekranu aplikacji uruchomionej na urządzeniu KitKat przedstawiono oba paski narzędzi](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![Zrzut pełnego ekranu aplikacji uruchomionej na urządzeniu KitKat przedstawiono oba paski narzędzi](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 W przypadku biblioteki AppCompat kompozycji nie trzeba można przełączyć w wersji dla systemu Android &ndash; biblioteki AppCompat pozwala zapewnić spójne środowisko we wszystkich obsługiwanych wersjach systemu Android. 
 

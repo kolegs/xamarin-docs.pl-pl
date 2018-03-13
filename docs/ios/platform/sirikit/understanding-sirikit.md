@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Pojęcia SiriKit
 
@@ -57,7 +57,7 @@ Zarówno Siri, jak i mapy zarządzanie wszystkimi interakcji użytkownika i wyś
 
 W tej sekcji przedstawia omówienie sposobu SiriKit zezwala użytkownikowi na interakcję z aplikacji przy użyciu Siri. Dla tego przykładu będziemy używać fałszywych aplikacji MonkeyChat:
 
-[ ![](understanding-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat zachowuje własną kontaktów w książce znajomych użytkownika, każde skojarzone z nazwą ekranu (na przykład Bobo, na przykład) i umożliwia użytkownikowi wysyłanie rozmowy tekstu do każdego przyjazne nazwy ekranu.
 
@@ -179,7 +179,7 @@ Niezależnie od tego, jak żądanie lub jak Siri odpowiada na żądanie Siri obs
 
 Gdy użytkownik wysyła żądanie ustne Siri, są kroki, które Siri będzie wykonać:
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Kroki, które będzie wykonać Siri")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Kroki, które będzie wykonać Siri")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. Po pierwsze, Siri przyjmuje audio użytkownika **mowy** i konwertuje ją na tekst.
 2. Następnie tekst jest konwertowany na **zamiar**, strukturę reprezentację żądanie użytkownika.
@@ -188,7 +188,7 @@ Gdy użytkownik wysyła żądanie ustne Siri, są kroki, które Siri będzie wyk
 
 Istnieją trzy sposoby, które aplikacji mogą brać udział w konwersacji użytkownika z Siri:
 
-[ ![](understanding-sirikit-images/monkeychat03.png "Trzy sposoby aplikacji mogą brać udział w konwersacji użytkowników z Siri")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "Trzy sposoby aplikacji mogą brać udział w konwersacji użytkowników z Siri")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **Słownik** — jest to, jak aplikacja informuje Siri słowa musi wiedzieć, aby korzystać z niego.
 2. **Aplikacja logiki** — są to akcje i odpowiedzi, które będą miały aplikacji na podstawie podanych opcji.
@@ -219,7 +219,7 @@ Biorąc pod uwagę powyższe informacje, sprawdź następujące konwersacji czy 
 
 Pierwsza rola aplikacji przyjmującego konwersacji jest pomoc Siri zrozumieć mowy użytkownika:
 
-[ ![](understanding-sirikit-images/monkeychat04.png "Pomaga zrozumieć mowy użytkowników Siri")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "Pomaga zrozumieć mowy użytkowników Siri")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri nie ma nazwę "Bobo" w swojej bazie danych, ale aplikacja i ma udostępniać te informacje Siri za pośrednictwem jego słownika. Aplikacja pomaga również w Siri Bobo jest adresata, ponieważ określone je do Siri jako *skontaktuj się z*.
 
@@ -227,7 +227,7 @@ Używanie programu Siri wie więcej jest wymagany do wysyłania wiadomości niż
 
 W powyższym przykładzie użytkownik odpowiedział, *"Wyślij więcej bananów"*, który Siri będzie pakietu w strukturze **zamiar**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Używanie programu Siri będzie pakietu odpowiedzi użytkownika do zamiar strukturalnych")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Używanie programu Siri będzie pakietu odpowiedzi użytkownika do zamiar strukturalnych")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 Celem strukturalnych będzie zawierać następujące informacje:
 
@@ -248,7 +248,7 @@ Używanie programu Siri automatycznie utworzy odpowiedni `NSUserActivity` do Uru
 
 Po przetwarzane zamiar i zwrócił odpowiedź na używanie programu Siri aplikacji, następnie stanowi wyniki dla użytkownika (słownie i wizualnie):
 
-[ ![](understanding-sirikit-images/monkeychat06.png "Wyniki wyświetlane słownie i wizualne")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "Wyniki wyświetlane słownie i wizualne")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Używanie programu Siri zawiera kilka wbudowanych odpowiedzi interfejsu użytkownika dla każdej z domen, które są dostępne dla aplikacji. Jednak ponieważ MonkeyChat udostępnił opcjonalne rozszerzenie interfejsu użytkownika zamiar, służy do użytkownika w powyższym przykładzie są wyświetlane wyniki konwersacji.
 
@@ -256,7 +256,7 @@ Używanie programu Siri zawiera kilka wbudowanych odpowiedzi interfejsu użytkow
 
 Istnieją trzy główne zadania, które rozszerzenia aplikacji należy wykonać podczas pracy nad lokalizacji docelowych:
 
-[ ![](understanding-sirikit-images/monkeychat07.png "Konwersji cykl życia")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "Konwersji cykl życia")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. Aplikacja musi **rozwiązać** każdego parametru w zdarzeniu. W związku z tym aplikacji wywoła Rozwiąż wiele razy (raz na każdy parametr), a czasami wiele razy dla tego samego parametru aż do aplikacji i użytkownika uzgodnić co to jest wymagany.
 2. Aplikacja musi **Potwierdź** można go obsłużyć żądanego zamiar i opisz Siri oczekiwany wynik.
@@ -329,7 +329,7 @@ Istnieje również interfejs API zapewnienie słów i wyrażeń Siri ułatwiają
 
 Rozszerzenia lokalizacji docelowych jest odpowiedzialna za obsługę głównego interakcje między aplikacją i używanie programu Siri w następujący sposób:
 
-[ ![](understanding-sirikit-images/intents01.png "Rozszerzenia lokalizacji docelowych")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "Rozszerzenia lokalizacji docelowych")](understanding-sirikit-images/intents01.png#lightbox)
 
 Rozszerzenie celem może obsługiwać jeden lub więcej lokalizacji docelowych, do deweloperów decyzji o tym, jak chcą zaimplementować SiriKit w aplikacji. Deweloper również można dodać rozszerzenie oddzielne opcje dla każdego zamiar konieczności obsługi.  Inaczej mówiąc, Apple żądań, że deweloper Ogranicz liczbę celem rozszerzenia tak, aby Siri nie ma wiele procesów Otwórz względem aplikacji, które wymagają więcej pamięci i czasu obsługi.
 
@@ -355,7 +355,7 @@ Jednym z typowych rzeczy, które użytkownicy będą robić jest "verbify" Nazwa
 
 Rozszerzenie interfejsu użytkownika intencje przedstawia informacje o możliwość dostosowania interfejsu użytkownika aplikacji i znakowanie do obsługi Siri i upewnij użytkowników możesz podłączonej do aplikacji. Dla tego rozszerzenia aplikację można przełączyć marki, a także visual i innych informacji do zapisu.
 
-[ ![](understanding-sirikit-images/intents02.png "Przykładowe dane wyjściowe intencje rozszerzenie interfejsu użytkownika")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "Przykładowe dane wyjściowe intencje rozszerzenie interfejsu użytkownika")](understanding-sirikit-images/intents02.png#lightbox)
 
 Zawsze zwraca rozszerzenie interfejsu użytkownika intencje `UIViewController` i dodać niczego potrzeby wewnątrz kontrolera widoku, takie jak wyświetlanie dodatkowe informacje, które wykraczają poza wstępnej reakcji aplikacji. Opcje interfejsu użytkownika można także zaktualizować użytkownika o stanie, długotrwałą zdarzenia, takie jak jak długo trwa jazdy udostępnianie samochodu do ich lokalizacji.
 

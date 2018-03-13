@@ -3,16 +3,16 @@ title: Podstawy aplikacji
 description: Podstawowe koncepcje aplikacji
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 9cace37a9e762a49a90963591931793d30d05453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="application-fundamentals"></a>Podstawy aplikacji
 
@@ -23,7 +23,7 @@ Ta sekcja zawiera przewodnik dla niektórych zadań rzeczy częściej lub pojęc
 W tym artykule przedstawiono zmiany zabezpieczeń, które zabezpieczeń transportu aplikacji wymusza na aplikację systemu iOS 9 i jego znaczenia dla projektów Xamarin.iOS i opisano opcje konfiguracji ATS omówiono sposób Wypisz ATS, jeśli jest to wymagane. Ponieważ ATS jest domyślnie włączona, wszystkie niezabezpieczonego połączenia internetowe zgłosi wyjątek w aplikacji systemu iOS 9 (chyba że jawnie już dozwolone).
 
 
-## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Uruchamianie procesów w tle](~/ios/app-fundamentals/backgrounding/index.md)
 
 Tło przetwarzania lub backgrounding jest proces umożliwienie aplikacji wykonać zadania w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. W tym przewodniku stanowi wprowadzenie do przetwarzania w systemie iOS w tle.
 
@@ -56,7 +56,7 @@ W tym artykule sprawdza sposób tworzenia aplikacji systemu iOS w całości kodu
 
 `NSUserDefaults` Klasa udostępnia sposób dla systemu iOS aplikacje i rozszerzenia programowo interakcję z systemowe domyślny System. Przy użyciu ustawienia domyślne systemu, użytkownik może konfigurować zachowanie aplikacji lub style w celu spełnienia preferencji (oparte na projekt aplikacji). Na przykład, aby przedstawiać dane w programie vs metryki angielskie pomiary, lub wybierz motyw danego interfejsu użytkownika.
 
-## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Touch](~/ios/app-fundamentals/touch/index.md)
+## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Dotyk](~/ios/app-fundamentals/touch/index.md)
 
 Ekranów dotykowych na wielu urządzeniach współczesnych Zezwalaj użytkownikom na interakcję z urządzeniami, szybkie i skuteczne jak fizyczną i intuicyjne. Ta interakcja nie jest ograniczona tylko w celu wykrywania touch proste — można również gesty. Na przykład gestu powiększanie gestem uszczypnięcia jest bardzo typowym przykładem tego — punkty zaciskające części ekranu z dwoma palcami, które użytkownik może powiększanie lub pomniejszanie. W tym przewodniku sprawdza touch i gestów w systemie iOS.
 

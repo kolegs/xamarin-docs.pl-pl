@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>Tworzenie macOS nowoczesnych aplikacji
 
@@ -24,7 +24,7 @@ _W tym artykule opisano kilka porad, funkcje i techniki przez dewelopera umożli
 
 Nowoczesny wygląd obejmuje nowoczesny wygląd okna i narzędzi takie jak aplikacja przykładzie pokazano poniżej:
 
-[ ![](modern-cocoa-apps-images/content08.png "Przykład nowoczesnych aplikacji Mac interfejsu użytkownika")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Przykład nowoczesnych aplikacji Mac interfejsu użytkownika")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Tej funkcji można również włączyć w Konstruktorze interfejsu w środowisku Xcode wybierając okna i sprawdzanie **pełny widok zawartości o rozmiarze**:
 
-[ ![](modern-cocoa-apps-images/content01.png "Edytowanie głównego storyboard w Konstruktorze interfejsu w środowisku Xcode")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "Edytowanie głównego storyboard w Konstruktorze interfejsu w środowisku Xcode")](modern-cocoa-apps-images/content01.png#lightbox)
 
 Podczas korzystania z pełnego widoku zawartości rozmiar, deweloper może być konieczne przesunięcia zawartości poniżej obszarów paska tytułu i narzędzia, aby określonej zawartości (na przykład etykiety) nie slajd pod nimi.
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Normalne macOS okna zawiera standard, który uruchamia paska tytułu u górnej krawędzi okna. Jeśli okno zawiera również pasek narzędzi, zostanie wyświetlony w obszarze ten obszar paska tytułu:
 
-[ ![](modern-cocoa-apps-images/content02.png "Standardowych narzędzi Mac")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "Standardowych narzędzi Mac")](modern-cocoa-apps-images/content02.png#lightbox)
 
 Jeśli przy użyciu narzędzi prostsze, obszar tytułu zniknie i pasek narzędzi zostanie przesunięty w określonej pozycji na pasku tytułu, w linii z Zamknij okno, przyciski:
 
-[ ![](modern-cocoa-apps-images/content03.png "Prostsze narzędzi Mac")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "Prostsze narzędzi Mac")](modern-cocoa-apps-images/content03.png#lightbox)
 
 Włączono zoptymalizowane paska narzędzi przez zastąpienie `ViewWillAppear` metody `NSViewController` i co wyglądać podobnie do następującego:
 
@@ -171,7 +171,7 @@ W tym celu jest zazwyczaj używana w przypadku _aplikacji Shoebox_ (jedno okno a
 
 W zależności od projektu aplikacji, deweloper może być również konieczne uzupełniają paska tytułu są obszaru z kontrolera widoku dodatek wyświetlany w prawej poniżej obszar paska tytułu/narzędzia zapewnienie kontekstowe kontrolki użytkownika na podstawie działania one obecnie zajmujących się:
 
-[ ![](modern-cocoa-apps-images/content04.png "Przykładowy dodatek kontrolera widoku")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "Przykładowy dodatek kontrolera widoku")](modern-cocoa-apps-images/content04.png#lightbox)
 
 Kontroler widoku akcesoriów zostaną automatycznie rozmyciu i dopasowane przez system bez interwencji developer.
 
@@ -180,13 +180,13 @@ Aby dodać kontroler widoku akcesoriów, wykonaj następujące czynności:
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji.
 2. Przeciągnij **kontroler niestandardowy widok** do okna hierarchii: 
 
-    [ ![](modern-cocoa-apps-images/content05.png "Dodawanie nowego kontrolera widoku niestandardowego")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "Dodawanie nowego kontrolera widoku niestandardowego")](modern-cocoa-apps-images/content05.png#lightbox)
 3. Układ widoku akcesoriów interfejsu użytkownika: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "Projektowanie nowego widoku")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "Projektowanie nowego widoku")](modern-cocoa-apps-images/content06.png#lightbox)
 4. Udostępnianie akcesoriów widoku w postaci **gniazda** oraz wszelkie inne **akcje** lub **gniazda** jego interfejsu użytkownika: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "Dodawanie wymaganych gniazda")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "Dodawanie wymaganych gniazda")](modern-cocoa-apps-images/content07.png#lightbox)
 5. Zapisz zmiany.
 6. Wróć do programu Visual Studio for Mac zsynchronizować zmiany.
 
@@ -248,7 +248,7 @@ Ponieważ system macOS teraz jest zlokalizowana w pełni, `Left` i `Right` `NSLa
 
 Ponadto macOS system może dodać kontrolery widoku akcesoriów do okna aplikacji. Na przykład, aby utworzyć na kartach systemu Windows, gdy kilka aplikacji systemu Windows są scalane w jednym oknie wirtualnego:
 
-[ ![](modern-cocoa-apps-images/content08.png "Przykład okno Mac z kartami")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Przykład okno Mac z kartami")](modern-cocoa-apps-images/content08.png#lightbox)
 
 Zazwyczaj dewelopera, musisz podjąć akcję ograniczone użycie Windows kartach w swoich aplikacjach Xamarin.Mac, system obsługi je automatycznie w następujący sposób:
 
@@ -430,7 +430,7 @@ Ponadto Apple sugeruje korzystanie z widoków kopii warstwy w przeciwieństwie d
 
 Warstwy kopii można włączyć, ustawiając `WantsLayer` z `NSView` do `true` lub wewnątrz konstruktora interfejsu Xcode firmy w obszarze **inspektora efekty widoku** sprawdzając **warstwy animacji Core**:
 
-[ ![](modern-cocoa-apps-images/content09.png "Widok inspektora efekty")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "Widok inspektora efekty")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple sugerują, wykonując następujące czynności:
 
 Apple udostępnił kilka funkcji w Konstruktorze interfejsu w programie Xcode, że deweloper może użyć podczas projektowania lub edycji w Interfejsie użytkownika aplikacji do obsługi lokalizacji. **Kierunek tekstu** sekcji **inspektora atrybutu** umożliwia deweloperowi zawierają wskazówki na sposób wykorzystania i aktualizowane na wybierz widok tekstowy kierunek (takie jak `NSTextField`):
 
-[ ![](modern-cocoa-apps-images/content10.png "Opcje kierunek tekstu")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "Opcje kierunek tekstu")](modern-cocoa-apps-images/content10.png#lightbox)
 
 Istnieją trzy możliwe wartości **kierunek tekstu**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 System macOS nowoczesnych aplikacji może przyjąć nowy ciemny wygląd interfejsu, który dobrze aplikacji do tworzenia, edytowania i prezentacji obrazu:
 
-[ ![](modern-cocoa-apps-images/content11.png "Przykład ciemny UI okna Mac")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "Przykład ciemny UI okna Mac")](modern-cocoa-apps-images/content11.png#lightbox)
 
 Można to zrobić przed okna są prezentowane, dodając jeden wiersz kodu. Na przykład:
 
@@ -898,7 +898,7 @@ Scenorys umożliwiają deweloperom nie tylko projektowy przepływu poszczególne
 
 Kontrolery umożliwiają deweloperom Zbieranie elementów na jednostkę układ i abstrakcyjny Segues i Usuń typowe "przyklej kodu" wymagane do przeniesienia w całej hierarchii widoku:
 
-[ ![](modern-cocoa-apps-images/content12.png "Edytowanie interfejsu użytkownika w programie Xcode konstruktora interfejsu")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "Edytowanie interfejsu użytkownika w programie Xcode konstruktora interfejsu")](modern-cocoa-apps-images/content12.png#lightbox)
 
 Aby uzyskać więcej informacji, zobacz nasze [wprowadzenie do scenorysu](~/mac/platform/storyboards/index.md) dokumentacji.
 

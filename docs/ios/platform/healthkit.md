@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 50684d82726a398aabe77d09ff62eac40e277f02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -32,7 +32,7 @@ W tym artykule nie opisano bardziej zaawansowanych tematów, takich jak kwerendy
 
 W tym artykule firma Microsoft będzie można tworzenia przykładowej aplikacji do rejestrowania Puls użytkownika:
 
-[![](healthkit-images/image01.png "Przykładowa aplikacja do rejestrowania Puls użytkowników")](healthkit-images/image01.png)
+[![](healthkit-images/image01.png "Przykładowa aplikacja do rejestrowania Puls użytkowników")](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>Wymagania
 
@@ -72,22 +72,22 @@ Bieżące **identyfikatorów aplikacji** są wymienione w [certyfikaty, identyfi
 Aby utworzyć jawne **identyfikator aplikacji**, kliknij przycisk  **+**  przycisk w prawym górnym umożliwiające przejście do **zarejestrować identyfikator aplikacji systemu iOS** strony:
 
 
-[![](healthkit-images/image02.png "Rejestrowanie aplikacji w portalu dla deweloperów firmy Apple")](healthkit-images/image02.png)
+[![](healthkit-images/image02.png "Rejestrowanie aplikacji w portalu dla deweloperów firmy Apple")](healthkit-images/image02.png#lightbox)
 
 Jak przedstawiono na ilustracji powyżej, po utworzeniu opis aplikacji, użyj **jawny identyfikator aplikacji** sekcji, aby utworzyć identyfikator aplikacji. W **usługi aplikacji** sekcji wyboru **Kit kondycji** w **Włącz usługi** sekcji.
 
 Gdy wszystko będzie gotowe, naciśnij klawisz **Kontynuuj** przycisk, aby zarejestrować **identyfikator aplikacji** na Twoim koncie. Zostanie wyświetlona Wstecz **certyfikaty identyfikatory i profile** strony. Kliknij przycisk **profile inicjowania obsługi** przejście do listy do bieżącego profilu inicjowania obsługi administracyjnej, a następnie kliknij przycisk  **+**  przycisk w prawym górnym rogu, aby przejść do **dodać systemu iOS Profil inicjowania obsługi administracyjnej** strony. Wybierz **tworzenie aplikacji dla systemu iOS** opcję i kliknij przycisk **Kontynuuj** na uzyskanie dostępu do **wybierz identyfikator aplikacji** strony. W tym miejscu, wybierz jawnych **identyfikator aplikacji** określonej wcześniej:
 
 
-[![](healthkit-images/image03.png "Wybierz jawny identyfikator aplikacji")](healthkit-images/image03.png)
+[![](healthkit-images/image03.png "Wybierz jawny identyfikator aplikacji")](healthkit-images/image03.png#lightbox)
 
 Kliknij przycisk **Kontynuuj** służbowych przez pozostałe ekrany, w której będzie można określić, jak i z **certyfikaty Developer**, **urządzenia**i **nazwa** tego **profil inicjowania obsługi administracyjnej**:
 
-[![](healthkit-images/image04.png "Generowanie profilu inicjowania obsługi administracyjnej")](healthkit-images/image04.png)
+[![](healthkit-images/image04.png "Generowanie profilu inicjowania obsługi administracyjnej")](healthkit-images/image04.png#lightbox)
 
 Kliknij przycisk **Generuj** i await tworzenia profilu. Pobierz plik, a następnie kliknij dwukrotnie, aby zainstalować w środowisku Xcode. Potwierdzenie instalacji w obszarze **Xcode > Preferencje > kont > Wyświetl szczegóły...** Powinny pojawić się zainstalowanego profilu inicjowania obsługi administracyjnej, a powinien mieć ikony dla zestawu kondycji i innych usług specjalne w jego **uprawnień** wiersza:
 
-[![](healthkit-images/image05.png "Wyświetlanie profilu w środowisku Xcode")](healthkit-images/image05.png)
+[![](healthkit-images/image05.png "Wyświetlanie profilu w środowisku Xcode")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 
@@ -97,11 +97,11 @@ Po utworzeniu i zainstalowany odpowiedni **profilu inicjowania obsługi administ
 
 Zamiast poprowadzą przez proces tworzenia projektu Xamarin iOS 8 ręcznie, otwórz przykładową aplikację dołączony do tego artykułu (która obejmuje wbudowane scenorysu i kodu). Skojarzenie przykładową aplikację z Twojego zestawu kondycji włączone **profilu inicjowania obsługi**w **konsoli rozwiązania**, kliknij prawym przyciskiem myszy projekt i wyświetlić jego **opcje** okna dialogowego. Przełącz się do **aplikacji systemu iOS** panelu, a następnie wprowadź jawnych **identyfikator aplikacji** utworzone wcześniej jako aplikację **identyfikator pakietu**:
 
-[![](healthkit-images/image06.png "Wprowadź jawny identyfikator aplikacji")](healthkit-images/image06.png)
+[![](healthkit-images/image06.png "Wprowadź jawny identyfikator aplikacji")](healthkit-images/image06.png#lightbox)
 
 Teraz przełączyć się do **iOS podpisywania pakietu** panelu. Z ostatnio zainstalowanych **profilu inicjowania obsługi administracyjnej**, z jego skojarzenie z jawnych **identyfikator aplikacji**, będą teraz dostępne jako **profilu inicjowania obsługi administracyjnej**:
 
-[![](healthkit-images/image07.png "Wybierz profil inicjowania obsługi administracyjnej")](healthkit-images/image07.png)
+[![](healthkit-images/image07.png "Wybierz profil inicjowania obsługi administracyjnej")](healthkit-images/image07.png#lightbox)
 
 Jeśli **profilu inicjowania obsługi administracyjnej** jest niedostępny, dokładnie **identyfikator pakietu** w **aplikacji systemu iOS** panelu określonej w porównaniu z **systemu iOS Centrum deweloperów** i **profilu inicjowania obsługi administracyjnej** zainstalowano (**Xcode > Preferencje > kont > Wyświetl szczegóły** ).
 
@@ -148,11 +148,11 @@ Kondycja zestawu danych jest ograniczona do firmy Apple określone typy. Te typy
 
 Typy możliwą w zestawu kondycji magazynu danych są wszystkie podklasy `HKObjectType`. `HKCharacteristicType` obiekty przechowywać biologicznych płeć, typ krwi i datę urodzenia. Jednak są typowe więcej `HKSampleType` obiektów, które zawierają dane, które jest próbkowany o określonej godzinie lub w danym okresie czasu. 
 
-[![](healthkit-images/image08.png "HKSampleType obiekty wykresu")](healthkit-images/image08.png)
+[![](healthkit-images/image08.png "HKSampleType obiekty wykresu")](healthkit-images/image08.png#lightbox)
 
 `HKSampleType` jest abstrakcyjny i ma cztery konkretnych podklas. Obecnie jest tylko jeden typ `HKCategoryType` danych, który jest analiza uśpienia. Większość dużych danych w zestawie kondycji jest typu `HKQuantityType` i przechowywać swoje dane w `HKQuantitySample` obiektów, które są tworzone przy użyciu znanych wzorca projektowego fabryki:
 
-[![](healthkit-images/image09.png "Znaczną część danych w zestawie kondycji typu HKQuantityType i dane przechowywane w obiektach HKQuantitySample")](healthkit-images/image09.png)
+[![](healthkit-images/image09.png "Znaczną część danych w zestawie kondycji typu HKQuantityType i dane przechowywane w obiektach HKQuantitySample")](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType` typy należeć do zakresu od `HKQuantityTypeIdentifier.ActiveEnergyBurned` do `HKQuantityTypeIdentifier.StepCount`. 
 
@@ -162,11 +162,11 @@ Typy możliwą w zestawu kondycji magazynu danych są wszystkie podklasy `HKObje
 
 Użytkownicy końcowi muszą umożliwia aplikacji do odczytu lub zapisu danych kondycji zestaw czynności dodatnią. Jest to realizowane za pośrednictwem aplikacji kondycji, który jest wstępnie zainstalowane na urządzeniach z systemem iOS 8. Podczas pierwszego uruchomienia aplikacji zestawu kondycji, użytkownik zobaczy pod kontrolą systemu **kondycji dostęp** okna dialogowego:
 
-[![](healthkit-images/image10.png "Zostanie wyświetlone okno dialogowe kondycji dostęp pod kontrolą systemu")](healthkit-images/image10.png)
+[![](healthkit-images/image10.png "Zostanie wyświetlone okno dialogowe kondycji dostęp pod kontrolą systemu")](healthkit-images/image10.png#lightbox)
 
 Później, użytkownik może zmienić uprawnień przy użyciu aplikacji kondycji **źródeł** okna dialogowego:
 
-[![](healthkit-images/image11.png "Użytkownik może zmienić uprawnień za pomocą okna dialogowego źródeł aplikacje kondycji")](healthkit-images/image11.png)
+[![](healthkit-images/image11.png "Użytkownik może zmienić uprawnień za pomocą okna dialogowego źródeł aplikacje kondycji")](healthkit-images/image11.png#lightbox)
 
 Ponieważ informacje o kondycji jest bardzo poufne, deweloperzy aplikacji należy pamiętać o, zapisać swoje programy przy założeniu uprawnienia zostało odrzucone i zmienić, gdy aplikacja jest uruchomiona. Najbardziej typowe idiom ma zażądać uprawnień w `UIApplicationDelegate.OnActivated` metody, a następnie zmodyfikować interfejsu użytkownika.
 
@@ -413,12 +413,12 @@ Dołącz urządzenia programowanie prawidłowo elastycznie iOS 8 do systemu. Wyb
 Przy założeniu, że przepisy zostały ustawione prawidłowo, aplikacja zostanie uruchomione. Po osiągnięciu jego `OnActivated` metody, będzie żądać autoryzacji zestawu kondycji. Przy pierwszym uruchomieniu występujących systemu operacyjnego użytkownika zostanie wyświetlone następujące okno dialogowe:
 
 
-[![](healthkit-images/image12.png "Użytkownik zobaczy tego okna dialogowego")](healthkit-images/image12.png)
+[![](healthkit-images/image12.png "Użytkownik zobaczy tego okna dialogowego")](healthkit-images/image12.png#lightbox)
 
 Włącz aplikację, aby zaktualizować dane o szybkości pulsu i aplikacja pojawi się ponownie. `ReactToHealthCarePermissions` Zostanie uaktywniona asynchroniczne wywołanie zwrotne. Spowoduje to `HeartRateModel’s` `Enabled` właściwości do zmiany, które zostanie podniesiony `EnabledChanged` zdarzeń, co spowoduje `HKPermissionsViewController.OnEnabledChanged()` obsługi zdarzeń, aby uruchomić, co pozwoli `StoreData` przycisku. Na poniższym diagramie przedstawiono sekwencję:
 
 
-[![](healthkit-images/image13.png "Na tym wykresie przedstawiono sekwencję zdarzeń")](healthkit-images/image13.png)
+[![](healthkit-images/image13.png "Na tym wykresie przedstawiono sekwencję zdarzeń")](healthkit-images/image13.png#lightbox)
 
 Naciśnij klawisz **rekordu** przycisku. Spowoduje to `StoreData_TouchUpInside()` obsługi do uruchomienia, który będzie podejmować próby przeanalizować wartość `heartRate` pola tekstowego, przekształcić `HKQuantity` za pośrednictwem już wspomniano `HeartRateModel.HeartRateInBeatsPerMinute()` funkcji i przekaż ilości do `HeartRateModel.StoreHeartRate()`. Jak wspomniano wcześniej, to podejmie do przechowywania danych i zgłosi albo `HeartRateStored` lub `ErrorMessageChanged` zdarzeń.
 

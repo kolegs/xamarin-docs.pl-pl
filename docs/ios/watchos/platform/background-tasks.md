@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 524d551a96dd1352d86671238a63c103cef9b0c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="background-tasks"></a>Zadania w tle
 
@@ -30,7 +30,7 @@ Przed omówieniem wszystkich sposobów deweloper może przechowywać dane i inte
 
 Wykonaj poniższy przykład:
 
-[ ![](background-tasks-images/update00.png "Jak użytkownik może przechodzić między ich iPhone i ich Apple Watch w ciągu dnia")](background-tasks-images/update00.png)
+[![](background-tasks-images/update00.png "Jak użytkownik może przechodzić między ich iPhone i ich Apple Watch w ciągu dnia")](background-tasks-images/update00.png#lightbox)
 
 1. W nocy, podczas oczekiwania w kolejce kawy użytkownik będzie przeglądać bieżącej wiadomości w ich iPhone kilka minut.
 2. Przed opuszczeniem kawiarni, szybko sprawdzić pogodzie Complication na ich powierzchni czujki.
@@ -43,7 +43,7 @@ Z powodu "szybkiego dostępu" (mniej niż trzy sekundy) rodzaj jak użytkownik j
 
 Przy użyciu nowych interfejsów API firmy Apple była dostępna w watchOS 3 aplikacji można zaplanować na _odświeżania w tle_ i mieć odpowiednie informacje gotowe, aby na żądanie użytkownika. Wykonaj przykład Complication pogody opisanych wyżej:
 
-[ ![](background-tasks-images/update01.png "Przykład Complication pogody")](background-tasks-images/update01.png)
+[![](background-tasks-images/update01.png "Przykład Complication pogody")](background-tasks-images/update01.png#lightbox)
 
 1. Harmonogramy aplikacji do wznawiane przez system w określonym czasie. 
 2. Aplikacja pobiera informacje, że trzeba będzie generować aktualizacji.
@@ -52,7 +52,7 @@ Przy użyciu nowych interfejsów API firmy Apple była dostępna w watchOS 3 apl
 
 Jak pokazano powyżej, watchOS system działania aplikacji przy użyciu jednego lub więcej zadań, które ma bardzo ograniczony puli dostępne:
 
-[ ![](background-tasks-images/update02.png "WatchOS system działania aplikacji przy użyciu jednego lub więcej zadań")](background-tasks-images/update02.png)
+[![](background-tasks-images/update02.png "WatchOS system działania aplikacji przy użyciu jednego lub więcej zadań")](background-tasks-images/update02.png#lightbox)
 
 Apple sugeruje efektywne korzystanie z tego zadania (ponieważ jest to ograniczona zasobów do aplikacji), przytrzymując na niego, do momentu zakończenia procesu aktualizacji samej aplikacji.
 
@@ -86,7 +86,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 Gdy aplikacja zakończy działanie danego zadania, zwraca go do systemu przez oznaczenie go wykonać:
 
-[ ![](background-tasks-images/update03.png "Zadanie zwraca systemu przez oznaczenie jej ukończone")](background-tasks-images/update03.png)
+[![](background-tasks-images/update03.png "Zadanie zwraca systemu przez oznaczenie jej ukończone")](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks" />
 
@@ -107,7 +107,7 @@ Te zadania zostanie omówiona szczegółowo w poniższych sekcjach.
 
 `WKApplicationRefreshBackgroundTask` To ogólny zadanie, które mogą być planowane aplikacjami wybudzane w przyszłości:
 
-[ ![](background-tasks-images/update04.png "WKApplicationRefreshBackgroundTask wybudzane w przyszłości")](background-tasks-images/update04.png)
+[![](background-tasks-images/update04.png "WKApplicationRefreshBackgroundTask wybudzane w przyszłości")](background-tasks-images/update04.png#lightbox)
 
 W czasie wykonywania zadania aplikacji można wykonać dowolny rodzaj przetwarzania lokalnego, takich jak aktualizacja osi czasu Complication lub pobrać niektórych wymaganych danych z `NSUrlSession`.
 
@@ -118,7 +118,7 @@ W czasie wykonywania zadania aplikacji można wykonać dowolny rodzaj przetwarza
 
 System będzie wysyłać `WKURLSessionRefreshBackgroundTask` kiedy dane Zakończono pobieranie i gotowe do przetworzenia przez aplikację:
 
-[ ![](background-tasks-images/update05.png "WKURLSessionRefreshBackgroundTask, gdy dane zakończył pobieranie")](background-tasks-images/update05.png)
+[![](background-tasks-images/update05.png "WKURLSessionRefreshBackgroundTask, gdy dane zakończył pobieranie")](background-tasks-images/update05.png#lightbox)
 
 Aplikacja nie pozostaje uruchomiona podczas pobierania danych w tle. Zamiast tego aplikacja planuje żądanie dotyczące danych, a następnie jest wstrzymana i system obsługuje pobieranie danych, tylko reawakening aplikacji po ukończeniu pobierania.
 
@@ -128,17 +128,17 @@ Aplikacja nie pozostaje uruchomiona podczas pobierania danych w tle. Zamiast teg
 
 W watchOS 3 Apple został dodany dokowania, w którym użytkownicy mogą przypiąć ich ulubionych aplikacji i szybko uzyskiwać do nich dostęp. Gdy użytkownik naciśnie przycisk po stronie na Apple Watch, pojawi się galerii migawek przypiętych aplikacji. Użytkownik może szybko przesuń od lewej lub prawej strony, aby znaleźć odpowiednią aplikację, a następnie wybierz aplikację, aby uruchomić go zamianę migawki interfejsu uruchomionej aplikacji.
 
-[ ![](background-tasks-images/update06.png "Zastępowanie migawki interfejsie uruchomionej aplikacji")](background-tasks-images/update06.png)
+[![](background-tasks-images/update06.png "Zastępowanie migawki interfejsie uruchomionej aplikacji")](background-tasks-images/update06.png#lightbox)
 
 System ma okresowo migawki w Interfejsie użytkownika aplikacji (wysyłając `WKSnapshotRefreshBackgroundTask`) i użyje tych migawek, aby wypełnić doku. watchOS daje aplikacji możliwość jego zawartość i interfejsu użytkownika aktualizacji przed podjęciem tej migawki.
 
 Migawki są bardzo ważne w watchOS 3, ponieważ działają jako obrazy zarówno w wersji zapoznawczej i uruchamiania aplikacji. Jeśli użytkownik reguluje aplikacji w doku, utworzy Rozwiń do pełnego ekranu, wprowadź pierwszego planu i uruchomione, więc jest konieczne, że migawki być aktualne:
 
-[ ![](background-tasks-images/update07.png "Jeśli użytkownik reguluje aplikacji w doku, rozwinie do pełnego ekranu")](background-tasks-images/update07.png)
+[![](background-tasks-images/update07.png "Jeśli użytkownik reguluje aplikacji w doku, rozwinie do pełnego ekranu")](background-tasks-images/update07.png#lightbox)
 
 Ponownie, system będzie wystawiać `WKSnapshotRefreshBackgroundTask` tak, aby przygotować aplikację (aktualizując dane i interfejsu użytkownika) przed migawki:
 
-[ ![](background-tasks-images/update08.png "Aplikację można przygotować przez zaktualizowanie danych i Interfejsie użytkownika przed migawki")](background-tasks-images/update08.png)
+[![](background-tasks-images/update08.png "Aplikację można przygotować przez zaktualizowanie danych i Interfejsie użytkownika przed migawki")](background-tasks-images/update08.png#lightbox)
 
 Gdy aplikacja oznacza `WKSnapshotRefreshBackgroundTask` ukończone, system automatycznie podejmie migawkę Interfejsie użytkownika aplikacji.
 
@@ -150,7 +150,7 @@ Gdy aplikacja oznacza `WKSnapshotRefreshBackgroundTask` ukończone, system autom
 
 Ponadto gdy użytkownik otrzyma powiadomienie z aplikacji i naciska go do przełączenia aplikacji na pierwszym planie, migawki musi być aktualne, ponieważ działa jako ekran startowy również:
 
-[ ![](background-tasks-images/update09.png "Użytkownik otrzyma powiadomienie z aplikacji i naciska go do przełączenia aplikacji na pierwszym planie.")](background-tasks-images/update09.png)
+[![](background-tasks-images/update09.png "Użytkownik otrzyma powiadomienie z aplikacji i naciska go do przełączenia aplikacji na pierwszym planie.")](background-tasks-images/update09.png#lightbox)
 
 Ponieważ użytkownik ma interakcji z aplikacją watchOS została już więcej niż jedną godzinę, będzie można przywrócić do stanu domyślnego. Domyślny stan może mieć różne znaczenie do różnych aplikacji i oparte na projekt aplikacji, może nie mieć domyślny stan w ogóle.
 
@@ -162,13 +162,13 @@ Ponieważ użytkownik ma interakcji z aplikacją watchOS została już więcej n
 
 W watchOS 3 Apple ma zintegrowany czujki łączności z tła Odśwież API za pomocą nowej `WKWatchConnectivityRefreshBackgroundTask`. Przy użyciu tej nowej funkcji, aplikację telefonów iPhone można dostarczać nowe dane z jego odpowiednikiem aplikacji czujki uruchomionej aplikacji watchOS w tle:
 
-[ ![](background-tasks-images/update10.png "Aplikację telefonów iPhone mogą dostarczać nowe dane do partnera czujki aplikacji uruchomionej aplikacji watchOS w tle")](background-tasks-images/update10.png)
+[![](background-tasks-images/update10.png "Aplikację telefonów iPhone mogą dostarczać nowe dane do partnera czujki aplikacji uruchomionej aplikacji watchOS w tle")](background-tasks-images/update10.png#lightbox)
 
 Inicjowanie Complication Push, kontekst aplikacji, wysłanie pliku lub aktualizowanie informacji o użytkowniku z aplikacji iPhone spowoduje wznowienie pracy aplikacji Apple Watch w tle.
 
 Gdy aplikacja czujki jest wybudzany za pośrednictwem `WKWatchConnectivityRefreshBackgroundTask` trzeba będzie użyć standardowych metod interfejsu API do odbierania danych z aplikacji iPhone.
 
-[ ![](background-tasks-images/update11.png "Przepływ danych WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png)
+[![](background-tasks-images/update11.png "Przepływ danych WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png#lightbox)
 
 1. Upewnij się, że sesja została uaktywniona.
 2. Monitorowanie nowej `HasContentPending` tak długo, jak jest wartość właściwości `true`, aplikacja nadal zawiera dane do przetwarzania. Jak przedtem aplikacji powinno zawierać na zadania przed zakończeniem przetwarzania wszystkich danych.
@@ -180,7 +180,7 @@ Gdy aplikacja czujki jest wybudzany za pośrednictwem `WKWatchConnectivityRefres
 
 Umieszczenie ze sobą wszystkie elementy nowy interfejs API zadania tła, typowy zestaw interakcje będzie wyglądać następujące czynności:
 
-[ ![](background-tasks-images/update12.png "Cykl życia interfejsu API tła")](background-tasks-images/update12.png)
+[![](background-tasks-images/update12.png "Cykl życia interfejsu API tła")](background-tasks-images/update12.png#lightbox)
 
 1. Najpierw aplikacji watchOS planuje tle zadanie do uaktywnienie jako pewnym momencie w przyszłości.
 2. Aplikacja jest wybudzany przez system i wysłane zadanie.
@@ -196,7 +196,7 @@ Bardzo ważne, czy aplikacja watchOS zachowuje się odpowiedzialne w ekosystemie
 
 Spójrz na następujący scenariusz:
 
-[ ![](background-tasks-images/update13.png "Aplikacja watchOS ogranicza jego zużycie zasobów udostępnionych systemu")](background-tasks-images/update13.png)
+[![](background-tasks-images/update13.png "Aplikacja watchOS ogranicza jego zużycie zasobów udostępnionych systemu")](background-tasks-images/update13.png#lightbox)
 
 1. Użytkownik uruchamia aplikację watchOS na 1:00 PM.
 2. Aplikacja planuje zadania wznawiania i Pobierz nową zawartość w ciągu godziny przy 2:00 PM.
@@ -213,7 +213,7 @@ Ze względu na przykład tego dokumentu użyje fałszywych aplikacji MonkeySocce
 
 Spójrz na poniższy scenariusz, w typowy sposób użycia:
 
-[ ![](background-tasks-images/update14.png "Scenariusz typowy sposób")](background-tasks-images/update14.png)
+[![](background-tasks-images/update14.png "Scenariusz typowy sposób")](background-tasks-images/update14.png#lightbox)
 
 Użytkownika nożną ulubionych zespołu odtwarzania big dopasowania z 7:00 PM do 9:00, aplikacja oczekiwać użytkownikowi należy regularnie sprawdzanie wynik i zdecyduje się na 30 minut aktualizacji.
 
@@ -262,7 +262,7 @@ System zwróci `NSError` Jeśli nie można było zaplanować żądanego zadania.
 
 Następnie należy przełączyć bliższe spojrzenie na okna 5 minut, przedstawiający na krokach wymaganych do aktualizacji wynik:
 
-[ ![](background-tasks-images/update15.png "Okno 5 minut, przedstawiający na krokach wymaganych do aktualizacji wynik")](background-tasks-images/update15.png)
+[![](background-tasks-images/update15.png "Okno 5 minut, przedstawiający na krokach wymaganych do aktualizacji wynik")](background-tasks-images/update15.png#lightbox)
 
 1. W 19:30:02: 00 aplikacji jest wznowione przez system i danych zadania w tle aktualizacji. Pobierz najnowsze wyniki z serwera jest jej priorytet. Zobacz [planowania NSUrlSession](#Scheduling-a-NSUrlSession) poniżej.
 2. W 7:30:05 aplikacji zakończeniu zadania oryginalnego, system umieszcza aplikacji w tryb uśpienia i kontynuuje można pobrać żądanych danych w tle.
@@ -529,7 +529,7 @@ Ponadto również informuje o tym zadania migawki nie powraca do stanu domyślne
 
 Jak pokazano w powyższym przykładzie okna pięciu minut, w którym aplikacja MonkeySoccer trwało zaktualizować jego wyniki wydajności pracy, a następnie użyć nowego watchOS 3 zadania w tle, aplikacja była tylko aktywne dla wszystkich 15 sekund: 
 
-[ ![](background-tasks-images/update16.png "Aplikacja była tylko aktywne dla wszystkich 15 sekund")](background-tasks-images/update16.png)
+[![](background-tasks-images/update16.png "Aplikacja była tylko aktywne dla wszystkich 15 sekund")](background-tasks-images/update16.png#lightbox)
 
 Zmniejsza to wpływ, jaki aplikacja będzie mieć na dostępne zasoby Apple Watch i czas pracy baterii, a także umożliwia aplikacji lepiej współpracuje z innych aplikacji działających na czujki.
 
@@ -617,7 +617,7 @@ Używa `RemainingComplicationUserInfoTransfers` właściwość `WCSession` aby z
 
 W watchOS 3 Apple został dodany dokowania, w którym użytkownicy mogą przypiąć ich ulubionych aplikacji i szybko uzyskiwać do nich dostęp. Gdy użytkownik naciśnie przycisk po stronie na Apple Watch, pojawi się galerii migawek przypiętych aplikacji. Użytkownik może szybko przesuń od lewej lub prawej strony, aby znaleźć odpowiednią aplikację, a następnie wybierz aplikację, aby uruchomić go zamianę migawki interfejsu uruchomionej aplikacji.
 
-[ ![](background-tasks-images/dock01.png "Doku")](background-tasks-images/dock01.png)
+[![](background-tasks-images/dock01.png "Doku")](background-tasks-images/dock01.png#lightbox)
 
 System okresowo przyjmuje migawki w Interfejsie użytkownika aplikacji i użyje tych migawek, aby wypełnić z dokumentami. watchOS daje aplikacji możliwość jego zawartość i interfejsu użytkownika aktualizacji przed podjęciem tej migawki.
 
@@ -676,7 +676,7 @@ Podczas pracy z aktualizacji migawek, Apple sprawia, że poniższe sugestie:
 
 Apple Sugeruj następujące do pracy z przepływem danych:
 
-[ ![](background-tasks-images/update17.png "Diagram przepływu danych aplikacji")](background-tasks-images/update17.png)
+[![](background-tasks-images/update17.png "Diagram przepływu danych aplikacji")](background-tasks-images/update17.png#lightbox)
 
 Zdarzenie zewnętrzne (na przykład łączności czujki) wznawia działanie aplikacji. Dzięki temu aplikacji na aktualizowanie modelu danych, jej (reprezentujący bieżący stan aplikacji). W wyniku zmiany modelu danych aplikacji należy zaktualizować jej komplikacji żądania nową migawkę, prawdopodobnie uruchomienie tło `NSURLSession` można ściągnąć większej ilości danych i zaplanować dodatkowe tła odświeża.
 

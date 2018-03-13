@@ -4,18 +4,17 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d20b2aa7df17f2000e2de9cb67f091c52989719b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
@@ -42,7 +41,7 @@ Przed wysłaniem żądania jedno lub więcej uprawnień, jest najlepszym rozwią
 
 Całego przepływu pracy sprawdzanie i żąda uprawnienia nosi nazwę _uprawnienia wykonawcze_ Sprawdź i można podsumować na poniższym diagramie: 
 
-[ ![Schemat blokowy wyboru uprawnień środowiska wykonawczego](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png)
+[![Schemat blokowy wyboru uprawnień środowiska wykonawczego](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Backports biblioteki obsługi systemu Android niektóre z nowych interfejsów API dla: uprawnienia do starszych wersji systemu android. Te backported interfejsów API automatycznie będzie sprawdzać wersją systemu android na urządzeniu, więc nie można sprawdzić interfejsu API poziomu zawsze.  
 
@@ -50,7 +49,7 @@ Ten dokument będzie omawiać temat Dodaj uprawnienia do aplikacji platformy Xam
 
 
 > [!NOTE]
-> **Uwaga:** jest możliwe, że uprawnienia dla sprzętu może mieć wpływ na sposób filtrowania aplikacji w sklepie Google Play. Na przykład jeśli aplikacja wymaga uprawnień dla aparatu, następnie Google Play nie będą widoczne aplikacji w sklepie Google Play na urządzeniu nie ma zainstalowanej kamery.
+> Istnieje możliwość, że uprawnienia dla sprzętu może mieć wpływ na sposób filtrowania aplikacji w sklepie Google Play. Na przykład jeśli aplikacja wymaga uprawnień dla aparatu, następnie Google Play nie będą widoczne aplikacji w sklepie Google Play na urządzeniu nie ma zainstalowanej kamery.
 
 
 <a name="requirements" />
@@ -59,7 +58,6 @@ Ten dokument będzie omawiać temat Dodaj uprawnienia do aplikacji platformy Xam
 
 Zdecydowanie zaleca się, że projekty platformy Xamarin.Android obejmuje [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) pakietu NuGet. Ten pakiet zostanie Poprawka usterki systemu uprawnienia, które poszczególnych interfejsów API do starszych wersji systemu android, zapewniając wspólny jeden interfejs bez konieczności stale sprawdź wersję systemu android, że aplikacja jest uruchomiona na.
 
-<a name="requesting_permissions" />
 
 ## <a name="requesting-system-permissions"></a>Żądanie uprawnień systemu
 
@@ -68,9 +66,8 @@ Pierwszym krokiem podczas pracy z systemem Android uprawnień jest do deklarowan
 Aplikacje, które są stosowane do systemu Android 6.0 lub nowszy nie zakłada, że ponieważ uprawnienie przyznane przez użytkownika w pewnym momencie w przeszłości, że uprawnienie będzie obowiązywać przy następnym. Aplikacja, która jest przeznaczony dla systemu Android 6.0 zawsze należy wykonać sprawdzanie uprawnień czasu wykonywania. Aplikacje przeznaczone dla systemu Android 5.1 lub niższy nie trzeba sprawdzić uprawnienia wykonawcze.
 
 > [!NOTE]
-> **Uwaga:** aplikacji tylko powinien zażądać uprawnień, których wymagają.
+> Aplikacje tylko powinien zażądać uprawnień, których wymagają.
 
-<a name="declaring_permissions_in_the_manifest" />
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Deklarowanie uprawnienia w manifeście
 
@@ -87,15 +84,15 @@ Istnieje możliwość zadeklarować uprawnienia za pomocą narzędzia pomocy tec
 
 1. Kliknij dwukrotnie **właściwości** w **Eksploratora rozwiązań** i wybierz **manifestu systemu Android** karty w oknie właściwości:
 
-    [![Wymagane uprawnienia na karcie manifestu systemu Android](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png)
+    [![Wymagane uprawnienia na karcie manifestu systemu Android](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. Jeśli aplikacja nie ma pliku AndroidManifest.xml, kliknij przycisk **AndroidManifest.xml nie znaleziono. Kliknij, aby dodać jedną** w sposób przedstawiony poniżej:
 
-    [![Żaden komunikat AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png)
+    [![Żaden komunikat AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. Wybierz wszystkie uprawnienia tę aplikację z **wymagane uprawnienia** listy i Zapisz:
 
-    [![Przykład aparatu uprawnienia wybrane](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png)
+    [![Przykład aparatu uprawnienia wybrane](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -103,15 +100,15 @@ Istnieje możliwość zadeklarować uprawnienia za pomocą narzędzia pomocy tec
 
 1. Kliknij dwukrotnie plik projektu w **konsoli rozwiązania** i wybierz **Opcje > kompilacji > aplikacji systemu Android**:
 
-    [![Wymaganej sekcji uprawnień pokazano](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png)
+    [![Wymaganej sekcji uprawnień pokazano](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. Kliknij przycisk **dodać manifestu systemu Android** przycisku, jeśli projekt nie ma jeszcze **AndroidManifest.xml**:
 
-    [![Brak projektu manifestu systemu Android](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png)
+    [![Brak projektu manifestu systemu Android](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. Wybierz wszystkie uprawnienia tę aplikację z **wymagane uprawnienia** listy i kliknij przycisk **OK**:
 
-    [![Przykład aparatu uprawnienia wybrane](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png)
+    [![Przykład aparatu uprawnienia wybrane](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -119,7 +116,6 @@ Xamarin.Android automatycznie doda niektóre uprawnienia w czasie kompilacji do 
 
 Dla aplikacji przeznaczonych dla 5.1 systemu Android (interfejs API na poziomie 22) lub mniej nie ma nic więcej, które należy wykonać. Aplikacje, systemem Android 6.0 (23 interfejsu API na poziomie 23) lub nowszy powinny działać na następną sekcję na temat sposobu wykonywania sprawdza uprawnienia do wykonania. 
 
-<a name="run_time_permission_checks" />
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Sprawdza uprawnienia środowiska uruchomieniowego w systemie Android 6.0
 
@@ -213,7 +209,6 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-<a name="summary" />
 
 ## <a name="summary"></a>Podsumowanie
 

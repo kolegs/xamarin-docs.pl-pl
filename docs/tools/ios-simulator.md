@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Zdalny iOS Simulator (dla systemu Windows)
 
 _Test i debugowania aplikacji systemu iOS w całości w programie Visual Studio w systemie Windows_
 
-[ ![](ios-simulator-images/hero-sml.png "symulatora systemu iOS uruchomiony w systemie Windows")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "symulatora systemu iOS uruchomiony w systemie Windows")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>Pobierz i zainstaluj
 
@@ -36,7 +36,7 @@ Aby użyć symulatora zdalnego systemu iOS:
 
 Możesz wyłączyć symulatorze zdalnego systemu iOS z **Narzędzia > Opcje > Xamarin > Ustawienia systemu iOS** usuwając zaznaczenie pola wyboru pole **zdalnego symulator systemu Windows** pokazano poniżej:
 
-[ ![](ios-simulator-images/options-sml.png "pole wyboru, aby użyć symulatora")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "pole wyboru, aby użyć symulatora")](ios-simulator-images/options.png#lightbox)
 
 Na komputerze Mac w podłączonych następnie otworzy symulatora systemu iOS. Zaznacz tę opcję, aby włączyć symulatora zdalnego systemu iOS.
 
@@ -54,14 +54,14 @@ Pasek narzędzi okna obejmuje kilka przycisków wchodzić w interakcje z symulat
 - [**Ustawienia** ](#settings) — konfigurowanie klawiatury i lokalizacji.
  - Inne [ **opcje** ](#options) — różne opcje symulatora są dostępne, takie jak obracanie, potrząsania powoduje lub wywołanie innych stanów w symulatorze. Jeśli niektóre opcje są zasłonięty, możliwy z ikoną wielokropka, wyświetlane na pasku narzędzi lub klikając prawym przyciskiem myszy w oknie.
 
-    [ ![](ios-simulator-images/maps-app-sml.png "przykład mapuje symulatora systemu iOS")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "przykład mapuje symulatora systemu iOS")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>Ustawienia
 
 Ikona "narzędzia" otwiera **ustawienia** okno:
 
-[ ![](ios-simulator-images/settings-sml.png "Ustawienia symulatora systemu iOS")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "Ustawienia symulatora systemu iOS")](ios-simulator-images/settings.png#lightbox)
 
 Dzięki temu można włączyć klawiatury sprzętu w symulatorze i wybierz polecenie lokalizacji jest zgłaszany na urządzeniu (w tym statycznego lokalizacji lub inne opcje przenoszenia lokalizacji).
 
@@ -71,7 +71,7 @@ Dzięki temu można włączyć klawiatury sprzętu w symulatorze i wybierz polec
 
 Kliknij prawym przyciskiem myszy w oknie symulator, aby wyświetlić wszystkie opcje dostępne w symulatorze, takie jak obracanie wyzwalania gest potrząsania powoduje i ponownego uruchamiania symulatora:
 
-[ ![](ios-simulator-images/more-sml.png "dodatkowe ustawienia symulatora systemu iOS")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "dodatkowe ustawienia symulatora systemu iOS")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>Obsługa ekranu dotykowego
 

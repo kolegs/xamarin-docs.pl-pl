@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: 582fcbacbf1959e05773babb1219817ba319a937
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e14cfb8d3c09d17bdee4b60786f434ff94ef31dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-document-icons"></a>Ikony niestandardowy dokument
 
@@ -20,7 +20,7 @@ _Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xa
 
 W przypadku aplikacji platformy Xamarin.iOS obsługuje ładowania typu określonego dokumentu, deweloper może zapewnić ikony, które będą używane przez system po napotkaniu tego typu dokumentu, na przykład gdy użytkownik posiada dół załącznik w *poczcie* jako przedstawione tutaj:
 
- [ ![](custom-document-types-images/17.png "Przykład ikony typu dokumentu")](custom-document-types-images/17.png)
+ [![](custom-document-types-images/17.png "Przykład ikony typu dokumentu")](custom-document-types-images/17.png#lightbox)
 
 Deweloper można dodać informacji o typie dokumentu formacie pliku aplikacji jest w stanie otwarcia przez dołączenie wpisy słownika dla `CFBundleTypeName` ciągu i `LSItemContentTypes` tablicy w aplikacji `Info.plist`. Ikony typu dokumentu go w programie `CFBundleTypeIconFiles` tablicy. Jeśli ikona dokumentu nie jest dostarczane z systemem iOS będzie pochodzić z ikonę aplikacji.
 W przypadku kilku rozmiarów zoptymalizowane dla różnych rozdzielczości urządzenia mogą być dostarczane ikon. 
@@ -29,7 +29,7 @@ W przypadku kilku rozmiarów zoptymalizowane dla różnych rozdzielczości urzą
 
 Aby przypisać te wartości w programie Visual Studio dla komputerów Mac, należy użyć **typów dokumentów** w obszarze **zaawansowane** karcie na `Info.plist` edytora, aby dodać typ dokumentu i przypisać do obrazu ikony. Na przykład poniżej przedstawiono zrzut ekranu przedstawiający rejestracji do obsługi plików PDF:
 
- [ ![](custom-document-types-images/18.png "W sekcji typów dokumentów, na karcie Zaawansowane w edytorze "Info.plist"")](custom-document-types-images/18.png)
+ [![](custom-document-types-images/18.png "W sekcji typów dokumentów, na karcie Zaawansowane w edytorze "Info.plist"")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

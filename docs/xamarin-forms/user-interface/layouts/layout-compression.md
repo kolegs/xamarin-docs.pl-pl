@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>Kompresja układu
 
@@ -60,7 +60,7 @@ Wynikowy hierarchia zagnieżdżonych widoku można zbadać z [inspektora Xamarin
 Układ kompresji, która jest dostępna dla aplikacji platformy Xamarin.Forms w systemach iOS i Android platform, ma na celu spłaszczanie zagnieżdżania przez usunięcie określonego układów z drzewa wizualnego, co może poprawić wydajność renderowania stron widoku. Korzyści wydajności, która jest dostarczana różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym jest uruchomiona aplikacja. Jednakże wydajność będzie widoczny na starszych urządzeń.
 
 > [!NOTE]
-> **Uwaga**: gdy ten artykuł skupia się na wynikach stosowania układu kompresji w systemie Android, jest równie dotyczą systemu iOS.
+> Chociaż ten artykuł dotyczy wyniki stosowania układu kompresji w systemie Android, jest równie dotyczą systemu iOS.
 
 ## <a name="layout-compression"></a>Kompresja układu
 

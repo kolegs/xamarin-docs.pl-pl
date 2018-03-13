@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Witaj, nowości w systemie iOS
 
@@ -102,7 +102,7 @@ Przed aplikacji systemu iOS można załadować interfejsu użytkownika, dwie czy
 
 W tej sekcji badań relacje przedstawiony na poniższym diagramie:
 
-[ ![](hello-ios-deepdive-images/image32.png "Przedstawiono relacje architektury i podstawowe informacje na temat aplikacji na tym diagramie")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "Przedstawiono relacje architektury i podstawowe informacje na temat aplikacji na tym diagramie")](hello-ios-deepdive-images/image32.png#lightbox)
 
 Teraz rozpocząć od początku i Dowiedz się, co się dzieje podczas uruchamiania aplikacji.
 
@@ -197,7 +197,7 @@ _Widoku_ można wybrać, klikając wewnątrz biała część sceny. Widok jest w
 
 Z lewej strony sceny jest Szara strzałka z ikoną flagi, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](hello-ios-deepdive-images/image37.png "Szara strzałka z ikoną flagi")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "Szara strzałka z ikoną flagi")](hello-ios-deepdive-images/image37.png#lightbox)
 
 Szara strzałka reprezentuje przejście scenorysu o nazwie *Segue* (Wymowa "seg sposób"). Ponieważ ta Segue nie ma żadnych źródła, jest nazywany *Sourceless Segue*. Sourceless Segue wskazuje pierwszy sceny, którego widoki pobiera załadowane do naszej aplikacji okna przy uruchamianiu aplikacji. Sceny i widoki w nim będą najpierw, użytkownik zobaczy załadowanie aplikacji.
 
@@ -243,7 +243,7 @@ Następna sekcja zawiera podział według hierarchii widok zawartości reprezent
 
 A _hierarchii widok zawartości_ jest stos widoki i widoków podrzędnych zarządzany przez pojedynczy kontroler widoku, jak pokazano na poniższym diagramie:
 
- [ ![](hello-ios-deepdive-images/image41.png "Wyświetlanie zawartości hierarchii")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "Wyświetlanie zawartości hierarchii")](hello-ios-deepdive-images/image41.png#lightbox)
 
 Firma Microsoft może wprowadzać hierarchii widok zawartości naszych `ViewController` widoczność tymczasowo zmiana koloru tła widoku głównego żółty w sekcji widoku z **konsoli właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
@@ -259,7 +259,7 @@ Firma Microsoft może wprowadzać hierarchii widok zawartości naszych `ViewCont
 
 Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia:
 
- [ ![](hello-ios-deepdive-images/image43.png "Relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "Relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](hello-ios-deepdive-images/image43.png#lightbox)
 
 W następnej sekcji opisano sposób pracy z widoków w kodzie i Naucz się programować za pomocą kontrolerów widoku i cyklem życia widok interakcji z użytkownikiem.
 
@@ -331,7 +331,7 @@ Najważniejsze roli kontrolera widoku odpowiada na żądania interakcji użytkow
 Teraz, aby mieć lepiej zrozumieć widokach i kontrolerach widoku, Przyjrzyjmy się, jak to działa.
 W `Phoneword_iOS` projektu, przycisk dodano o nazwie `TranslateButton` do hierarchii widok zawartości:
 
- [ ![](hello-ios-deepdive-images/image1.png "Przycisk dodano wywołane TranslateButton hierarchii widoku zawartości")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "Przycisk dodano wywołane TranslateButton hierarchii widoku zawartości")](hello-ios-deepdive-images/image1.png#lightbox)
 
 Gdy **nazwa** jest przypisany do **przycisk** kontroli w **właściwości konsoli**, projektanta iOS automatycznie mapowane go do kontroli w  **ViewController.designer.cs**, wprowadzania `TranslateButton` dostępne wewnątrz `ViewController` klasy. Formanty najpierw staną się dostępne w `ViewDidLoad` etapie cyklu życia widoku, więc ta metoda cyklu życia służy odpowiedzieć touch użytkownika:
 
@@ -432,7 +432,7 @@ Po zainicjowaniu obsługi urządzenia, można wdrożyć do niej przez podłącze
 
 Aplikacja zostanie wdrożona na urządzeniu z systemem iOS:
 
-[ ![](hello-ios-deepdive-images/image1.png "Wdroży na urządzeniu z systemem iOS i uruchamianie aplikacji")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "Wdroży na urządzeniu z systemem iOS i uruchamianie aplikacji")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Generowanie ikon niestandardowych i uruchamianie obrazów
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>Platforma docelowa
 
@@ -44,7 +44,7 @@ Aby zmienić typ platformy docelowej dla projektu Xamarin.Mac, wykonaj następuj
 2. W **Eksploratora rozwiązań**, kliknij dwukrotnie plik projektu, aby otworzyć **opcje projektu** okno dialogowe.
 3. Z **ogólne** , a następnie wybierz typ **platformy docelowej** które odpowiada potrzebom aplikacji:
 
-  [![Za pomocą okna Opcje projektu, aby wybrać platformę docelową](target-framework-images/select-target-full.png "za pomocą okna Opcje projektu, aby wybrać platformy docelowej")](target-framework-images/select-target-full-large.png)
+  [![Za pomocą okna Opcje projektu, aby wybrać platformę docelową](target-framework-images/select-target-full.png "za pomocą okna Opcje projektu, aby wybrać platformy docelowej")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Kliknij przycisk **OK** przycisk, aby zapisać zmiany.
 

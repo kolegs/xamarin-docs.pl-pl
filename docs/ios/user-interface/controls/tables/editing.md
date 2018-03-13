@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>Edytowanie
 
 Funkcje edycji tabeli są włączone przez zastąpienie metody `UITableViewSource` podklasy. Najprostsza zachowanie edycji jest gestu przejdź do usunięcia, który może być zaimplementowany z zastąpienie pojedynczej metody.
 Bardziej złożone edytowanie (takie jak przenoszenie wierszy) może zostać wykonane z tabelą w trybie edycji.
 
-W tym przewodniku sprawdza następujące czynności:
-
-- [Przejdź do usunięcia](#Swipe_to_Delete)
-- [Tryb edycji](#Edit_Mode)
-- [Styl edycji wstawiania wiersza](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>Przejdź do usunięcia
 
 Przejdź do usunięcia funkcji jest gestu fizycznych w systemie iOS, które użytkownicy będą. 
 
- [ ![](editing-images/image10.png "Przykład przejdź do usunięcia")](editing-images/image10.png)
+ [![](editing-images/image10.png "Przykład przejdź do usunięcia")](editing-images/image10.png#lightbox)
 
 Istnieją trzy zastąpień — metoda, które mają wpływ na gestu przejdź do wyświetlenia **usunąć** przycisku w komórce:
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 W tym przykładzie `UITableViewSource` zostały zaktualizowane do używania `List<TableItem>` (zamiast tablicy ciągów) jako źródła danych, ponieważ obsługuje dodawanie i usuwanie elementów z kolekcji.
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>Tryb edycji
 
 Gdy tabela jest w trybie edycji użytkownik widzi red widżet "stop" w każdym wierszu, który ujawnia przycisk Usuń, po dotknięciu. W tabeli przedstawiono również ikona "uchwytu", aby wskazać, że można przeciągnąć wiersza, aby zmienić kolejność.
 **TableEditMode** próbki implementuje te funkcje, jak pokazano.
 
- [ ![](editing-images/image11.png "Przykładowe TableEditMode implementuje te funkcje, jak pokazano")](editing-images/image11.png)
+ [![](editing-images/image11.png "Przykładowe TableEditMode implementuje te funkcje, jak pokazano")](editing-images/image11.png#lightbox)
 
 Istnieje kilka różnych metod na `UITableViewSource` które wpływają na zachowanie w trybie edycji tabeli:
 
@@ -136,13 +127,12 @@ i po zakończeniu edycji, **gotowe** przycisk należy wyłączyć tryb edycji:
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>Style edycji wstawiania wiersza
 
 Wstawiania wierszy z tabeli jest interfejsem użytkownika rzadko — jest najlepszym przykładem w aplikacjach iOS standardowe **Edytuj kontakt** ekranu. Ten zrzut ekranu przedstawia sposób działania funkcji wstawiania wiersza — w edycji tryb Brak kolejnych wierszy która (po kliknięciu) wstawia dodatkowe wiersze do danych. Po zakończeniu edycji, tymczasowy **(Dodaj nowy)** wiersza zostanie usunięty.
 
- [ ![](editing-images/image12.png "Po zakończeniu edycji tymczasowy Dodawanie nowego wiersza zostanie usunięty.")](editing-images/image12.png)
+ [![](editing-images/image12.png "Po zakończeniu edycji tymczasowy Dodawanie nowego wiersza zostanie usunięty.")](editing-images/image12.png#lightbox)
 
 Istnieje kilka różnych metod na `UITableViewSource` które wpływają na zachowanie w trybie edycji tabeli. Te metody są zaimplementowane w następujący sposób w przykładowym kodzie:
 

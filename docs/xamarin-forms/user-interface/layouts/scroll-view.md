@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: c305075d37a25bfe828f16d4e69955437a591f9a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 648125ca8bd2c7c8a015b4c29195dc75c0bbf0a0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="scrollview"></a>ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zawiera układy i umożliwia przewijania niewidocznej. `ScrollView` jest również stosowane do umożliwienia widoków, które można automatycznie przełączona na widoczną część ekranu, gdy jest pokazywany klawiatury.
 
-[ ![](scroll-view-images/layouts-sml.png "Układy platformy Xamarin.Forms")](scroll-view-images/layouts.png "układów platformy Xamarin.Forms")
+[![](scroll-view-images/layouts-sml.png "Układy platformy Xamarin.Forms")](scroll-view-images/layouts.png#lightbox "układów platformy Xamarin.Forms")
 
 W tym artykule omówiono:
 
@@ -35,7 +35,7 @@ W tym artykule omówiono:
 ## <a name="usage"></a>Użycie
 
 > [!NOTE]
-> **Uwaga**: `ScrollView`s nie powinien być zagnieżdżone. Ponadto `ScrollView`s nie powinny być zagnieżdżane z innym kontrolki udostępniające przewijanie, tak samo, jak `ListView` i `WebView`.
+> `ScrollView`s nie powinien być zagnieżdżone. Ponadto `ScrollView`s nie powinny być zagnieżdżane z innym kontrolki udostępniające przewijanie, tak samo, jak `ListView` i `WebView`.
 
 `ScrollView` przedstawia `Content` właściwość, którą można ustawić jednego widoku ani układu. Należy wziąć pod uwagę w tym przykładzie układ z bardzo dużych boxView, a następnie `Entry`:
 

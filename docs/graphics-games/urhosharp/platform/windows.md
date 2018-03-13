@@ -1,17 +1,17 @@
 ---
 title: "Obsługa systemu Windows UrhoSharp"
-description: "Windows określonych ustawień i funkcji"
+description: "Określone Instalatora systemu Windows oraz funkcje dla UrhoSharp."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: ec4fec01aa27e522aeec6df09041f14b1c3db080
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0deefe0e00ec96a21317bfa2e8bf4894d5deae47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-windows-support"></a>Obsługa systemu Windows UrhoSharp
 
@@ -27,11 +27,11 @@ Zawiera pełną przykłady przedstawiający sposób użycia to w naszym [próbek
 
 # <a name="standalone-project"></a>Autonomiczny projektu
 
-## <a name="creating-a-project"></a>Tworzenie projektu
+### <a name="creating-a-project"></a>Tworzenie projektu
 
 Utwórz projekt konsoli, Urho NuGet odwołania, a następnie upewnij się, czy można zlokalizować zasoby (katalogi zawierającym katalog danych).
 
-## <a name="configuring-and-launching-urho"></a>Konfigurowanie i uruchamianie Urho
+### <a name="configuring-and-launching-urho"></a>Konfigurowanie i uruchamianie Urho
 
 Aby uruchomić aplikację, wykonaj następujące czynności:
 
@@ -39,17 +39,17 @@ Aby uruchomić aplikację, wykonaj następujące czynności:
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
 new MyGame().Run();
 ```
-## <a name="example"></a>Przykład
+### <a name="example"></a>Przykład
 
 [Pełny przykład](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
 
-# <a name="integrated-with-wpf"></a>Zintegrowana z WPF
+## <a name="integrated-with-wpf"></a>Zintegrowana z WPF
 
-## <a name="creating-a-project"></a>Tworzenie projektu
+### <a name="creating-a-project"></a>Tworzenie projektu
 
 Utwórz projekt WPF, Urho NuGet odwołania, a następnie upewnij się, czy można zlokalizować zasoby (katalogi zawierającym katalog danych).
 
-## <a name="configuring-and-launching-urho-from-wpf"></a>Konfigurowanie i uruchamianie Urho z WPF
+### <a name="configuring-and-launching-urho-from-wpf"></a>Konfigurowanie i uruchamianie Urho z WPF
 
 Utwórz podklasę `Window` i skonfigurować zasobów następująco:
 
@@ -83,17 +83,17 @@ Utwórz podklasę `Window` i skonfigurować zasobów następująco:
     }
 ```
 
-## <a name="example"></a>Przykład
+### <a name="example"></a>Przykład
 
 [Pełny przykład](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
-# <a name="integrated-with-uwp"></a>Zintegrowana z platformy uniwersalnej systemu Windows
+## <a name="integrated-with-uwp"></a>Zintegrowana z platformy uniwersalnej systemu Windows
 
-## <a name="creating-a-project"></a>Tworzenie projektu
+### <a name="creating-a-project"></a>Tworzenie projektu
 
 Tworzenie projektu platformy uniwersalnej systemu Windows, Urho NuGet odwołania, a następnie upewnij się, czy można zlokalizować zasoby (katalogi zawierającym katalog danych).
 
-## <a name="configuring-and-launching-urho-from-uwp"></a>Konfigurowanie i uruchamianie Urho z platformy uniwersalnej systemu Windows
+### <a name="configuring-and-launching-urho-from-uwp"></a>Konfigurowanie i uruchamianie Urho z platformy uniwersalnej systemu Windows
 
 Utwórz podklasę `Window` i skonfigurować zasobów następująco:
 
@@ -116,17 +116,17 @@ Utwórz podklasę `Window` i skonfigurować zasobów następująco:
     }
 ```
 
-## <a name="example"></a>Przykład
+### <a name="example"></a>Przykład
 
 [Pełny przykład](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
 
-# <a name="integrated-with-windowsforms"></a>Zintegrowana z Windows.Forms
+## <a name="integrated-with-windowsforms"></a>Zintegrowana z Windows.Forms
 
-## <a name="creating-a-project"></a>Tworzenie projektu
+### <a name="creating-a-project"></a>Tworzenie projektu
 
 Tworzenie projektu Windows.Forms, Urho NuGet odwołania, a następnie upewnij się, czy można zlokalizować zasoby (katalogi zawierającym katalog danych).
 
-## <a name="configuring-and-launching-urho-from-windowsforms"></a>Konfigurowanie i uruchamianie Urho z Windows.Forms
+### <a name="configuring-and-launching-urho-from-windowsforms"></a>Konfigurowanie i uruchamianie Urho z Windows.Forms
 
 Uruchamianie Urho w formularzu, zobacz [kompletnego przykładu](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
 

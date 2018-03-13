@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>Dostosowywanie wartość ContentPage
 
@@ -99,7 +99,7 @@ Proces tworzenia klasy niestandardowego modułu renderowania wygląda następuj�
 1. Dodaj `ExportRenderer` atrybutu klasy renderowania strony, aby określić, że będą używane do renderowania strony platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
 
 > [!NOTE]
-> **Uwaga**: jest to pozycja opcjonalna zapewnienie renderowania strony, w każdym projekcie platformy. Jeśli renderowania strony nie jest zarejestrowany, domyślne renderowanie strony będzie używany.
+> Jest to pozycja opcjonalna zapewnienie renderowania strony, w każdym projekcie platformy. Jeśli renderowania strony nie jest zarejestrowany, domyślne renderowanie strony będzie używany.
 
 Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, wraz z relacji między nimi:
 
@@ -248,7 +248,7 @@ Na platformie Windows Phone typu odwołanie do natywnego strony używane na plat
 Podczas implementowania niestandardowego modułu renderowania, która jest pochodną `PageRenderer` na środowiska uruchomieniowego systemu Windows `ArrangeOverride` metody również powinny być implementowane ułożyć formantów strony, ponieważ podstawowy mechanizm renderujący nie może ustalić, co należy zrobić z nimi. W przeciwnym razie wartość pusta strona wyników. W związku z tym, w tym przykładzie `ArrangeOverride` wywołania metody `Arrange` metoda `Page` wystąpienia.
 
 > [!NOTE]
-> **Uwaga**: ważne jest, aby zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji Windows Phone 8.1 WinRT. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz `CleanUpCaptureResourcesAsync` metody w projekcie Windows Phone w rozwiązaniu próbki i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
+> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji Windows Phone 8.1 WinRT. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz `CleanUpCaptureResourcesAsync` metody w projekcie Windows Phone w rozwiązaniu próbki i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Tworzenie modułu renderowania strony na platformy uniwersalnej systemu Windows
 
@@ -297,7 +297,7 @@ Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy `FrameworkEleme
 Podczas implementowania niestandardowego modułu renderowania, która jest pochodną `PageRenderer` na platformy uniwersalnej systemu Windows, `ArrangeOverride` metody również powinny być implementowane ułożyć formantów strony, ponieważ podstawowy mechanizm renderujący nie może ustalić, co należy zrobić z nimi. W przeciwnym razie wartość pusta strona wyników. W związku z tym, w tym przykładzie `ArrangeOverride` wywołania metody `Arrange` metoda `Page` wystąpienia.
 
 > [!NOTE]
-> **Uwaga**: ważne jest, aby zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Podsumowanie
 

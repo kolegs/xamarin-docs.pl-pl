@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 3de0e09b15b704db5e67fbbee6ba9bac86f58557
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="async-support-overview"></a>Omówienie obsługi Async
 
@@ -28,7 +28,7 @@ Bardziej szczegółowe omówienie nowych funkcji asynchronicznych języka C# 5 (
 
 Przykładowa aplikacja wysyła żądanie proste asynchroniczne sieci web (bez blokowania wątku głównego), a następnie aktualizuje interfejsu użytkownika przy użyciu pobranego html i liczba znaków.
 
- [ ![](async-images/AsyncAwait_427x368.png "Przykładowa aplikacja wysyła żądanie simple web asynchroniczne bez blokowania wątku głównego, a następnie aktualizuje interfejsu użytkownika przy użyciu pobranego html i liczba znaków")](async-images/AsyncAwait.png)
+ [![](async-images/AsyncAwait_427x368.png "Przykładowa aplikacja wysyła żądanie simple web asynchroniczne bez blokowania wątku głównego, a następnie aktualizuje interfejsu użytkownika przy użyciu pobranego html i liczba znaków")](async-images/AsyncAwait.png#lightbox)
 
 Obsługa asynchronicznego dla platformy Xamarin jest oparty na podstawie Mono 3.0 i uaktualnia profilu interfejsu API jest przyjazna wersji Silverlight, aby być w wersji platformy .NET 4.5 przyjaznych dla urządzeń przenośnych.
 

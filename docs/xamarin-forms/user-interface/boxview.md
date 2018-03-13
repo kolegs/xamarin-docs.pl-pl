@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 78ccb117e621b89d85e701b2ea027115f8681dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="boxview"></a>BoxView
 
@@ -68,7 +68,7 @@ A `BoxView` może być ograniczony w jednym wymiarze i nieograniczonego w innym.
 
 W tym miejscu jest wynikiem:
 
-[![Podstawowe BoxView](boxview-images/basicboxview-small.png "BoxView podstawowe")](boxview-images/basicboxview-large.png "BasicBoxView")
+[![Podstawowe BoxView](boxview-images/basicboxview-small.png "BoxView podstawowe")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 Jeśli `VerticalOptions` i `HorizontalOptions` właściwości są usuwane z `BoxView` tagu lub są ustawione na `Fill`, a następnie `BoxView` staje się ograniczona przez rozmiar strony, a rozwijany do wypełnienia strony.
 
@@ -113,7 +113,7 @@ Można użyć `BoxView` można dodać kilka prostych dekoracje na stronach w pos
 
 Wszystkich znaczników, który następuje są elementami podrzędnymi `StackLayout`. Ten kod znaczników składa się z wielu typów ozdobne `BoxView` elementów używanych z `Label` elementu:
 
-[![Dekoracji tekstu](boxview-images/textdecoration-small.png "dekoracji tekstu")](boxview-images/textdecoration-large.png "dekoracji tekstu")
+[![Dekoracji tekstu](boxview-images/textdecoration-small.png "dekoracji tekstu")](boxview-images/textdecoration-large.png#lightbox "dekoracji tekstu")
 
 Stylowy nagłówka w górnej części strony odbywa się z `AbsoluteLayout` którego elementy podrzędne są cztery `BoxView` elementów i `Label`, wszystkie są przypisane do określonych lokalizacji i rozmiary:
 
@@ -168,7 +168,7 @@ Na koniec Rysowanie linii pionowej na jednej stronie tekstu akapitu ograniczają
 
 `BoxView` Jest wygodne wyświetlanie kolorów. Ten program używa `ListView` Aby wyświetlić listę wszystkich publicznego statycznego pola tylko do odczytu z platformy Xamarin.Forms `Color` struktury:
 
-[![Kolory ListView](boxview-images/listviewcolors-small.png "kolory ListView")](boxview-images/listviewcolors-large.png "kolory ListView")
+[![Kolory ListView](boxview-images/listviewcolors-small.png "kolory ListView")](boxview-images/listviewcolors-large.png#lightbox "kolory ListView")
 
 [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program zawiera klasę o nazwie `NamedColor`. Konstruktor statyczny uzyskują dostęp wszystkie pola odbicia `Color` struktury i Utwórz `NamedColor` obiekt dla każdego z nich. Są one przechowywane w statycznych `All` właściwości:
 
@@ -350,7 +350,7 @@ class LifeCell : BoxView
 
 **GameOfLife** obejmuje także program `LifeGrid` klasy, która hermetyzuje znacznie logiki gry i `MainPage` klasa, która obsługuje program elementów wizualnych. Obejmują one nakładce, która opisuje reguły gry. Oto program w akcji przedstawiający kilka kilkaset `LifeCell` obiektów na stronie:
 
-[![Gry życia](boxview-images/gameoflife-small.png "gry życia")](boxview-images/gameoflife-large.png "gry życia")
+[![Gry życia](boxview-images/gameoflife-small.png "gry życia")](boxview-images/gameoflife-large.png#lightbox "gry życia")
 
 <a name="digitalclock" />
 
@@ -358,7 +358,7 @@ class LifeCell : BoxView
 
 [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program tworzy 210 `BoxView` elementy, aby symulować punktów stosowane wyświetlania 5-za-7-Mozaika. Czas w trybie pionowa lub pozioma może odczytywać, ale ma on większy w orientacji poziomej:
 
-[![Zegar Mozaika](boxview-images/dotmatrixclock-small.png "zegara Mozaika")](boxview-images/dotmatrixclock-large.png "-Mozaika zegara")
+[![Zegar Mozaika](boxview-images/dotmatrixclock-small.png "zegara Mozaika")](boxview-images/dotmatrixclock-large.png#lightbox "-Mozaika zegara")
 
 Plik XAML nieco więcej niż wystąpienia `AbsoluteLayout` używane zegara:
 
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
 
 Zegar Mozaika mogą wydawać się oczywiste stosowania `BoxView`, ale `BoxView` elementy są także możliwość realizacji zegar analogowy:
 
-[![Zegar BoxView](boxview-images/boxviewclock-small.png "zegara BoxView")](boxview-images/boxviewclock-large.png "BoxView zegara")
+[![Zegar BoxView](boxview-images/boxviewclock-small.png "zegara BoxView")](boxview-images/boxviewclock-large.png#lightbox "BoxView zegara")
 
 Wszystkie elementy wizualne na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu są elementami podrzędnymi `AbsoluteLayout`. Te elementy są skonfigurowane przy użyciu `LayoutBounds` dołączona właściwość i obracać za pomocą `Rotation` właściwości. 
 

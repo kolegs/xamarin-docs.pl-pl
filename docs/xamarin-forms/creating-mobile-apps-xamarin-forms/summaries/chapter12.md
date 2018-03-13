@@ -3,14 +3,15 @@ title: Podsumowanie rozdziale 12. Style
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 168ad0bc2f59f0afd5b457dba38ae39cfa148c89
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9563bc811250038e8932067280a8e5292a379077
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-12-styles"></a>Podsumowanie rozdziale 12. Style
 
@@ -30,7 +31,7 @@ Można określić `Value` ustawienie za pomocą elementu właściwości `<Setter
 
 [ **BasicStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle) program przedstawia podstawowe składnię i pokazano sposób odwoływania się do `Style` z `StaticResource` — rozszerzenie znaczników:
 
-[![Potrójna zrzut ekranu przedstawiający styl podstawowy](images/ch12fg01-small.png "style podstawowe")](images/ch12fg01-large.png "style podstawowe")
+[![Potrójna zrzut ekranu przedstawiający styl podstawowy](images/ch12fg01-small.png "style podstawowe")](images/ch12fg01-large.png#lightbox "style podstawowe")
 
 `Style` Obiekt i żaden z obiektów utworzonych w `Style` obiekt jako `Value` ustawienia są współużytkowane przez wszystkie widoki, który odwołuje się do `Style`. `Style` Nie może zawierać wszystko, co nie może zostać udostępniony, takich jak `View` zależnych.
 

@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>Dostosowywanie wyglądu elementu ListView
 
-<a name="overview" />
 
 ## <a name="overview"></a>Omówienie
 
 Układ jest wyświetlanych wierszy jest zależna wyglądu w elemencie ListView. Aby zmienić wygląd `ListView`, użyj układu innego wiersza.
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>Widoki wbudowanych wiersza
 
@@ -53,11 +51,11 @@ Brak dwanaście wbudowana widoki, które można odwoływać się przy użyciu **
 
 Każdy widok wbudowany wiersz ma wbudowany styl skojarzony z nim. Te zrzuty ekranu przedstawiają sposób wyświetlania każdego widoku:
 
-[![Zrzuty ekranu TestListItem, SimpleSelectableListItem SimpleListitem1 i SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![Zrzuty ekranu TestListItem, SimpleSelectableListItem SimpleListitem1 i SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![Zrzuty ekranu SimpleListItemActivated1, SimpleListItemActivated2 SimpleListItemChecked i SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![Zrzuty ekranu SimpleListItemActivated1, SimpleListItemActivated2 SimpleListItemChecked i SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![Zrzuty ekranu SimpleListItemSingleChoice, TwoLineListItem ActivityListItem i SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![Zrzuty ekranu SimpleListItemSingleChoice, TwoLineListItem ActivityListItem i SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 **BuiltInViews/HomeScreenAdapter.cs** przykładowego pliku (w **BuiltInViews** rozwiązania) zawiera kod, aby utworzyć ekrany element listy nie można rozwijać. Widok jest ustawiany w `GetView` metody następująco:
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 Następnie można ustawić właściwości widoku grupy i widok podrzędny za pomocą odwołań do standardowego `Text1` i `Text2` kontrolować identyfikatory, jak pokazano powyżej. Zrzut ekranu SimpleExpandableListItem (należy pokazanym powyżej) zawiera przykładowy widok grupy jednego wiersza (SimpleExpandableListItem1) oraz widok podrzędny dwóch wierszy (SimpleExpandableListItem2). Alternatywnie widok grupy można skonfigurować na dwa wiersze (SimpleExpandableListItem2) i widok podrzędny można skonfigurować dla jednego wiersza (SimpleExpandableListItem1), lub obie grupy widoku i widok podrzędny może mieć taką samą liczbę wierszy. 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>Akcesoria
 
@@ -102,7 +99,7 @@ Wiersze mogą być dodawane po prawej stronie widoku w celu wskazania stanu zazn
 
 Na następnych ekranach, ich kolejność odpowiednich przedstawiono Akcesoria wyżej:
 
-[![Zrzuty ekranu SimpleListItemChecked, SimpleListItemSingleChoice i SimpleListItemMultipleChoice z Akcesoria](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![Zrzuty ekranu SimpleListItemChecked, SimpleListItemSingleChoice i SimpleListItemMultipleChoice z Akcesoria](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 Aby wyświetlić jeden z tych przebiegu Akcesoria układu wymagany identyfikator zasobu do karty następnie ręcznie ustawić stan zaznaczenia wierszy wymagane. Ten wiersz kodu pokazano, jak utworzyć i przypisać `Adapter` przy użyciu jednej z tych układów:
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 `ListView` Sama obsługuje tryby wyboru różnych, niezależnie od akcesoriów będzie wyświetlany. Aby uniknąć pomyłek, należy użyć `Single` tryb zaznaczania z `Checked` i `SingleChoice` Akcesoria i `Multiple` trybu `MultipleChoice` stylu. Tryb zaznaczania jest kontrolowany przez `ChoiceMode` właściwość `ListView`.
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>Obsługa poziom interfejsu API
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>Programowy wybór elementów
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>Tworzenie układów wiersza niestandardowe
 
@@ -188,7 +182,6 @@ W tym przykładzie różni się w poprzednich przykładach na kilka sposobów:
 
 Te zmiany są szczegółowo opisane poniżej, począwszy od tworzenia działania widoku oraz widoku niestandardowego wiersza i następnie obejmujące modyfikacje karty i aktywności do renderowania je.
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Dodawanie elementu ListView z układem działania
 
@@ -220,7 +213,6 @@ Ponieważ `HomeScreen` już dziedziczy `ListActivity` nie ma widok domyślny, dl
 
 Zaletą używania `Activity` z niestandardowego układu (zamiast `ListActivity`) zaletą jest możliwość dodawania dodatkowych funkcji kontroli na ekranie, takie jak nagłówek `TextView` w tym przykładzie.
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>Tworzenie układu niestandardowego wiersza
 
@@ -267,7 +259,6 @@ Inny plik układu AXML jest wymagany do zawierają niestandardowego układu dla 
 
 Układ wiersza niestandardowej może zawierać wiele inne formanty, przewijanie wydajności mogą mieć wpływ złożonych wzorów i przy użyciu obrazów (zwłaszcza, jeśli mają być ładowane za pośrednictwem sieci). Zobacz artykuł firmy Google, aby uzyskać więcej informacji w rozwiązaniu problemów z wydajnością przewijania.
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>Odwołuje się do widoku wiersza niestandardowe
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Odwołuje się do niestandardowego elementu ListView w działaniu
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 Wynikowa ekranu wygląda następująco:
 
-[![Zrzut ekranu przedstawiający wynikowy CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![Zrzut ekranu przedstawiający wynikowy CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>Dostosowywanie kolorów selektora wiersza
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 Wybranego wiersza i odpowiadający mu `Toast` komunikatu teraz wygląda następująco:
 
-[![Wybranego wiersza w kolorze pomarańczowym z komunikatem powiadomienia wyskakującego wyświetlanie nazwy wybranego wiersza](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![Wybranego wiersza w kolorze pomarańczowym z komunikatem powiadomienia wyskakującego wyświetlanie nazwy wybranego wiersza](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>Zapobieganie migotanie na układy niestandardowe
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f77a9b8d3bb69bb47d973a56aed5ad1d49f9a02d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="custom-button"></a>Przycisk niestandardowy
 
@@ -19,7 +19,7 @@ W tej sekcji utworzysz przycisk z niestandardowego obrazu zamiast tekstu, za pom
 
 Kliknij prawym przyciskiem myszy i pobrać trzy obrazy poniżej, a następnie skopiuj je do **obiektów drawable/zasoby** katalogu projektu. Te będą służyć do różnych stanów przycisku.
 
- [![Zielony Android ikona normalnego stanu](custom-button-images/android-normal.png)](custom-button-images/android-normal.png) [ ![Android pomarańczowy ikona stanu ukierunkowanych](custom-button-images/android-focused.png)](custom-button-images/android-focused.png) [ ![Android żółta ikona stanu naciśniętego](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png)
+ [![Zielony Android ikona normalnego stanu](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![Android pomarańczowy ikona stanu ukierunkowanych](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![Android żółta ikona stanu naciśniętego](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
 Utwórz nowy plik w **obiektów drawable/zasoby** katalog o nazwie **android_button.xml**. Wstaw następujący kod XML:
 
@@ -38,7 +38,7 @@ Definiuje pojedynczego zasobu obiektów drawable, co spowoduje zmianę jego obra
 
 
 > [!NOTE]
-> **Uwaga:** kolejność `<item>` elementów jest ważna. Po odwołaniu tym obiektów drawable `<item>`jest przesunięta w kolejności do określenia, która jest odpowiednia dla bieżącego stanu przycisku.
+> Kolejność `<item>` elementów jest ważna. Po odwołaniu tym obiektów drawable `<item>`jest przesunięta w kolejności do określenia, która jest odpowiednia dla bieżącego stanu przycisku.
 > Ponieważ ostatni obraz "normal", jest tylko dotyczy sytuacji, gdy warunki `android:state_pressed` i `android:state_focused` zarówno oszacowania wartość false.
 
 Otwórz **Resources/layout/Main.axml** plik i dodać [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) elementu:

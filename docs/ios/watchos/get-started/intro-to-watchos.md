@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>Wprowadzenie do watchOS
 
@@ -29,11 +29,11 @@ Rozwiązanie aplikacji watchOS ma projektów 3:
 
 W aplikacjach watchOS 1 kod w rozszerzeniu działa na telefonie iPhone — Apple Watch jest wyświetlanych. Uruchom aplikacje watchOS 2 i 3 na Apple Watch. Na poniższym diagramie przedstawiono to tej różnicy:
 
-[ ![](intro-to-watchos-images/arch-sml.png "Różnica między watchOS 1 i watchOS 2 (lub nowszej) jest wyświetlany na tym diagramie")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "Różnica między watchOS 1 i watchOS 2 (lub nowszej) jest wyświetlany na tym diagramie")](intro-to-watchos-images/arch.png#lightbox)
 
 Niezależnie od tego, która wersja watchOS podlega w Visual Studio for Mac w rozwiązaniu konsoli kompletne rozwiązanie będzie wyglądać następująco:
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "Konsola rozwiązania")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "Konsola rozwiązania")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 *Aplikacji nadrzędnej* w watchOS rozwiązaniem jest aplikacji iOS regularne. Jest to tylko projektu w rozwiązaniu, które są widoczne **na telefonie**. Przypadki użycia dla tej aplikacji obejmuje samouczki, ekranów administracyjnych i warstwy środkowej filtrowania cacheing itp. Warto jednak użytkownik może zainstalować i uruchomić rozszerzenia czujki aplikacji/bez **kiedykolwiek** po otwarciu aplikacji nadrzędnej Jeśli potrzebujesz aplikacji nadrzędnej przeprowadzić jednorazowe inicjowanie lub administracyjnej, należy więc program Twojej czujki aplikacji/rozszerzenia Monituj użytkownika, który.
 
@@ -139,4 +139,4 @@ Zapoznaj się dokumentacją firmy Apple:
 - [Pierwszy wideo aplikacji czujki](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple do projektowania dla przewodnik zestawu czujki](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Porady WatchKit firmy Apple](https://developer.apple.com/watchkit/tips/)
-- [Wprowadzenie do watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [Wprowadzenie do systemu watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 88db45135104f14ca3a4b18e466e95288853a6df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-pay-capabilities"></a>Możliwości płatności firmy Apple
 
@@ -79,8 +79,8 @@ Identyfikator sprzedawcy umożliwia Apple Pay może akceptować płatności, a s
 7.  Przewiń w dół w tej sekcji rozwinięte, a następnie kliknij przycisk **Edytuj**.
 8.  Przewiń w dół na liście, aby zwrócić firmy Apple, a następnie kliknij przycisk **Edytuj** przycisk:  
     
-    
     ![Edytuj szczegóły firmy Apple należy zwrócić identyfikator aplikacji](apple-pay-capabilities-images/image39.png)
+
 9.  Wybierz identyfikator sprzedawcy z tym Identyfikatorem aplikacji, a następnie kliknij przycisk **Kontynuuj**:  
     
     ![Wybierz identyfikator sprzedawcy do użycia dla Identyfikatora aplikacji](apple-pay-capabilities-images/image40.png)

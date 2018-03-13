@@ -3,16 +3,16 @@ title: "Tworzenie niestandardowych formantów"
 description: "W tym artykule opisano sposób tworzenia niestandardowych formantów i pracować z nimi w Konstruktorze interfejsu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>Tworzenie niestandardowych formantów
 
@@ -22,7 +22,7 @@ Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego u
 
 System macOS zawiera wiele wbudowanych kontrolki użytkownika, natomiast może być razy, które należy utworzyć niestandardowego formantu w ramach zapewnienia funkcji nie podano poza pole lub odpowiadające motywu niestandardowego interfejsu użytkownika (na przykład gier interface).
 
-[ ![](custom-controls-images/intro01.png "Przykład niestandardowych formantu interfejsu użytkownika")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "Przykład niestandardowych formantu interfejsu użytkownika")](custom-controls-images/intro01.png#lightbox)
 
 W tym artykule firma Microsoft będzie kroki te obejmują podstawy tworzenia wielokrotnego użytku niestandardowe kontrolki interfejsu użytkownika w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
 
@@ -50,7 +50,7 @@ Ponieważ formant niestandardowy tworzymy będzie odpowiadać, aby dane wejścio
 
 W programie Visual Studio dla komputerów Mac Otwórz projekt Xamarin.Mac, który chcesz utworzyć niestandardowe kontrolki interfejsu użytkownika dla (lub Utwórz nową). Dodaj nową klasę i nadaj mu `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "Dodawanie nowej klasy")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "Dodawanie nowej klasy")](custom-controls-images/custom01.png#lightbox)
 
 Następnie Edytuj `NSFlipSwitch.cs` klasy i zapewnić ich wyglądać następująco:
 
@@ -336,19 +336,19 @@ Z naszych kontrolki niestandardowej w pełni zdefiniowana firma Microsoft albo d
 
 Aby dodać formantu przy użyciu narzędzia Konstruktor interfejsu, najpierw wykonaj czystą kompilacji projektu Xamarin.Mac, a następnie kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć go w Konstruktorze interfejs do edycji:
 
-[ ![](custom-controls-images/custom02.png "Edytowanie scenorysu w środowisku Xcode")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "Edytowanie scenorysu w środowisku Xcode")](custom-controls-images/custom02.png#lightbox)
 
 Następnie przeciągnij `Custom View` do projektu interfejsu użytkownika:
 
-[ ![](custom-controls-images/custom03.png "Wybieranie widok niestandardowy z biblioteki")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "Wybieranie widok niestandardowy z biblioteki")](custom-controls-images/custom03.png#lightbox)
 
 Z widoku niestandardowym nadal zaznaczone, przełącz się do **inspektora tożsamości** i zmienić widok **klasy** do `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "Ustawienie klasy widoku")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "Ustawienie klasy widoku")](custom-controls-images/custom04.png#lightbox)
 
 Przełącz się do **Edytor Asystenta** i Utwórz **gniazda** dla formantu niestandardowego (upewnieniu się powiązać go w `ViewControler.h` pliku i nie `.m` pliku):
 
-[ ![](custom-controls-images/custom05.png "Konfigurowanie nowego gniazda")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "Konfigurowanie nowego gniazda")](custom-controls-images/custom05.png#lightbox)
 
 Zapisz zmiany, wróć do programu Visual Studio for Mac i pozwala na wprowadzanie zmian do synchronizacji. Edytuj `ViewController.cs` plików i upewnij `ViewDidLoad` wygląd metody podobne do poniższych:
 
@@ -369,7 +369,7 @@ W tym miejscu odpowiemy na `ValueChanged` zdarzeń zdefiniowanego powyżej na `N
 
 Opcjonalnie można możemy powrót do konstruktora interfejsu i zdefiniuj **akcji** w formancie:
 
-[ ![](custom-controls-images/custom06.png "Konfigurowanie nowej akcji")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "Konfigurowanie nowej akcji")](custom-controls-images/custom06.png#lightbox)
 
 Ponownie, Edytuj `ViewController.cs` pliku i dodaj następującą metodę:
 
