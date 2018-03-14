@@ -6,23 +6,20 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 68ddb9baa008ec8222b4399a5ab25330fda2afd1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="build-process"></a>Proces kompilacji
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
 Proces kompilacji Xamarin.Android jest odpowiedzialny za przyklejanie wszystko, co łącznie: [generowania `Resource.designer.cs` ](~/android/internals/api-design.md), pomocnicze `AndroidAsset`, `AndroidResource`i innych [akcji](#Build_Actions), Generowanie [Android wywoływane otoki](~/android/platform/java-integration/android-callable-wrappers.md)oraz generowanie `.apk` do wykonania na urządzeniach z systemem Android.
 
-<a name="App_Packaging" />
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Pakiety aplikacji
 
@@ -34,7 +31,6 @@ Szerokie warunków, istnieją dwa typy pakietów aplikacji systemu Android (`.ap
 
 Nie przypadkowo odpowiadają one MSBuild `Configuration` który tworzy pakiet.
 
-<a name="Shared_Runtime" />
 
 ### <a name="shared-runtime"></a>Udostępniony środowiska wykonawczego
 
@@ -53,7 +49,6 @@ Szybkie wdrożenie jest znany niepowodzenie na urządzeniach, które blokują `a
 Szybkie wdrożenie jest domyślnie włączona i mogą być wyłączone w wydajność debugowania kompilacji dzięki ustawienie `$(EmbedAssembliesIntoApk)` właściwości `True`.
 
 
-<a name="MSBuild_Projects" />
 
 ## <a name="msbuild-projects"></a>Projektów MSBuild
 
@@ -81,7 +76,6 @@ Następujące obiekty docelowe kompilacji są definiowane dla platformy Xamarin.
 
 -   **UpdateAndroidResources** &ndash; aktualizacje `Resource.designer.cs` pliku. Ten element docelowy jest zazwyczaj wywoływana IDE po dodaniu nowych zasobów do projektu.
 
-<a name="Build_Properties" />
 
 ## <a name="build-properties"></a>Właściwości kompilacji
 
@@ -116,7 +110,6 @@ Właściwości instalacji sterowania zachowaniem `Install` i `Uninstall` element
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 
-<a name="App_Packaging" />
 
 ### <a name="packaging-properties"></a>Właściwości pakowania
 
@@ -146,7 +139,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Ta właściwość jest `False` domyślnie.
 
--   **AndroidFastDeploymentType** &ndash; A `:` (dwukropek)-rozdzielana lista wartości, aby kontrolować, jakie typy mogą być wdrażane [katalogu szybkiego wdrożenia](#Fast_Deployment) na urządzeniu docelowym po [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) Właściwość MSBuild jest `False`. Jeśli zasób jest szybkie wdrożony, to *nie* osadzone w wygenerowanym `.apk`, który przyspiesza czas wdrażania. (Więcej, który jest szybkie wdrożone, następnie rzadziej `.apk` musi zostać również przebudowany i proces instalacji może być szybsza.) Prawidłowe wartości to:
+-   **AndroidFastDeploymentType** &ndash; A `:` (dwukropek)-rozdzielana lista wartości, aby kontrolować, jakie typy mogą być wdrażane [katalogu szybkiego wdrożenia](#Fast_Deployment) na urządzeniu docelowym po `$(EmbedAssembliesIntoApk)` Właściwość MSBuild jest `False`. Jeśli zasób jest szybkie wdrożony, to *nie* osadzone w wygenerowanym `.apk`, który przyspiesza czas wdrażania. (Więcej, który jest szybkie wdrożone, następnie rzadziej `.apk` musi zostać również przebudowany i proces instalacji może być szybsza.) Prawidłowe wartości to:
 
     - `Assemblies`: Wdrażanie zestawów aplikacji.
 
@@ -158,7 +151,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
 -   **AndroidApplicationJavaClass** &ndash; Pełna nazwa klasy Java do użycia zamiast `android.app.Application` po klasie dziedziczy [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/).
 
-    Ta właściwość jest zwykle ustawiona *innych* właściwości, takie jak [ `$(AndroidEnableMultiDex)` ](#AndroidEnableMultiDex) właściwości programu MSBuild.
+    Ta właściwość jest zwykle ustawiona *innych* właściwości, takie jak `$(AndroidEnableMultiDex)` właściwości programu MSBuild.
 
     Dodane w Xamarin.Android 6.1.
 
@@ -285,7 +278,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
 -   **MonoSymbolArchive** &ndash; właściwości typu boolean, który kontroluje, czy `.mSYM` artefakty są tworzone w celu późniejszego użycia z `mono-symbolicate`, aby wyodrębnić &ldquo;rzeczywistych&rdquo; nazwę pliku i wiersza informacji z o numerze Wersja śladów stosu.
 
-    Jest to wartość PRAWDA domyślnie &ldquo;wersji&rdquo; aplikacje, które mają włączone symbole debugowania: [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) ma wartość PRAWDA, `$(DebugSymbols)` ma wartość PRAWDA, i `$(Optimize)` ma wartość True.
+    Jest to wartość PRAWDA domyślnie &ldquo;wersji&rdquo; aplikacje, które mają włączone symbole debugowania: `$(EmbedAssembliesIntoApk)` ma wartość PRAWDA, `$(DebugSymbols)` ma wartość PRAWDA, i `$(Optimize)` ma wartość True.
 
     Dodane w Xamarin.Android 7.1.
 
@@ -312,13 +305,11 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     -   **versionCode** &ndash; używa wersji direrctly kodu z `Properties\AndroidManifest.xml`.
 
-    Możesz zdefiniować niestandardowy elementów za pomocą [AndroidVersionCodeProperties](#AndroidVersionCodeProperties) właściwości.
+    Możesz zdefiniować niestandardowy elementów za pomocą `AndroidVersionCodeProperties` właściwość (dalej).
 
     Dodane w Xamarin.Android 7.2.
 
--   **AndroidVersionCodeProperties** &ndash; właściwości ciągu, który umożliwia deweloperowi definiowania niestandardowych elementów do użycia z [AndroidVersionCodePattern](#AndroidVersionCodePattern).
-    Są one w formie `key=value` pary. Wszystkie elementy w `value` powinny być wartościami całkowitymi. Na przykład: `screen=23;target=$(_SupportedApiLevel)`.
-    Jak widać, możesz wprowadzić, użyj programu MSBuild istniejących lub niestandardowych właściwości w ciągu.
+-   **AndroidVersionCodeProperties** &ndash; właściwości ciągu, który umożliwia deweloperowi definiowania niestandardowych elementów do użycia z `AndroidVersionCodePattern`. Są one w formie `key=value` pary. Wszystkie elementy w `value` powinny być wartościami całkowitymi. Na przykład: `screen=23;target=$(_SupportedApiLevel)`. Jak widać, możesz wprowadzić, użyj programu MSBuild istniejących lub niestandardowych właściwości w ciągu.
 
     Dodane w Xamarin.Android 7.2.
 
@@ -365,8 +356,6 @@ Następujące właściwości programu MSBuild są używane z [powiązania projek
     Wartość domyślna ulegnie zmianie w przyszłych wydaniach.
 
 
-<a name="Resgen" />
-<a name="Resource_Properties" />
 
 ### <a name="resource-properties"></a>Właściwości zasobów
 
@@ -385,7 +374,6 @@ Właściwości zasobów formantu Generowanie `Resource.designer.cs` pliku, któr
     **Eksperymentalne**. Dodane w Xamarin.Android 7.0.
 
 
-<a name="Signing" />
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>Podpisywanie właściwości
@@ -446,21 +434,16 @@ Aby użyć magazynu kluczy wygenerowany powyżej, użyj właściwości grupy:
 Pliki z akcją kompilacji `AndroidEnvironment` są używane do [zainicjować zmienne środowiskowe i właściwości systemu podczas uruchamiania procesu](~/android/deploy-test/environment.md).
 `AndroidEnvironment` Akcji kompilacji można stosować do wielu plików i zostanie obliczone w losowej kolejności (tak, aby nie Określ tę samą właściwość zmiennej lub systemu środowiska w wielu plikach).
 
-<a name="Java_Interop_Support" />
-<a name="AndroidJavaSource" />
 
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Pliki z akcją kompilacji `AndroidJavaSource` są kodu źródłowego języka Java, które mają być uwzględnieni w ostatnim pakietu systemu Android.
 
-<a name="AndroidJavaLibrary" />
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Pliki z akcją kompilacji `AndroidJavaLibrary` są archiwa Java ( `.jar` pliki) które mają być uwzględnieni w ostatnim pakietu systemu Android.
 
-<a name="Resources" />
-<a name="AndroidResource" />
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -499,8 +482,6 @@ Bardziej zaawansowanym użytkownikom może być może chcesz, aby różne zasoby
 </ItemGroup>
 ```
 
-<a name="Native_Library_Support" />
-<a name="AndroidNativeLibrary" />
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -546,7 +527,6 @@ Pliki z *ProguardConfiguration* akcji kompilacji zawiera opcje, które są używ
 Pliki te są ignorowane, chyba że `$(EnableProguard)` właściwość MSBuild jest `True`.
 
 
-<a name="Target_Definitions" />
 
 ## <a name="target-definitions"></a>Definicje docelowego
 

@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0d08b2ff5131996984dbe41862ad1d6aac33b3d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1232c96f5ea978c8adc640160a1e9b7e42663d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-ios-6"></a>Wprowadzenie do systemu iOS 6
 
 _iOS 6 zawiera szereg nowych technologii umożliwiający projektowanie aplikacji, które Xamarin.iOS 6 oferuje deweloperom C#._
 
-[ ![](images/ios6-large.jpg "Logo systemu iOS 6")](images/ios6-large.jpg)
+[ ![](images/ios6-large.jpg "Logo systemu iOS 6")](images/ios6-large.jpg#lightbox)
 
 IOS 6 i Xamarin.iOS 6 deweloperzy teraz dysponują wiele możliwości do tworzenia aplikacji systemu iOS, w tym te, że docelowy telefonu iPhone 5.
 Ten dokument zawiera listę niektórych ciekawsze nowe funkcje, które są dostępne i łącza do artykułów dla każdego tematu. Ponadto dotyka na kilka zmian, które będą ważne, jak przenieść deweloperzy systemu iOS 6 i nowe rozwiązanie telefonu iPhone 5.
@@ -92,11 +92,11 @@ W przypadku zapisania stanu aplikacji można wykonać w `ViewWillDisappear` i `V
 
 urządzenia iPhone 5 mieć rozdzielczość 640 x 1136. Aplikacje, które objęte poprzedniej wersji systemu iOS zostaną wyświetlone letterboxed uruchamiania na telefonie iPhone 5, jak pokazano poniżej:
 
- [ ![](images/01-letterboxed.png "Aplikacje, które objęte poprzedniej wersji systemu iOS będą wyświetlane letterboxed uruchamianych na telefonie iPhone 5")](images/01-letterboxed.png)
+ [![](images/01-letterboxed.png "Aplikacje, które objęte poprzedniej wersji systemu iOS będą wyświetlane letterboxed uruchamianych na telefonie iPhone 5")](images/01-letterboxed.png#lightbox)
 
 W kolejności stosowania pojawią się pełnego ekranu na telefonach iPhone 5, po prostu Dodaj obraz o nazwie `Default-568h@2x.png` posiadające rozdzielczość 640 x 1136. Poniższy zrzut ekranu przedstawia aplikacja była uruchomiona po uwzględniono tego obrazu:
 
- [ ![](images/02-fullscreen.png "Ten zrzut ekranu przedstawia aplikacja była uruchomiona po ten obraz został dołączony")](images/02-fullscreen.png)
+ [![](images/02-fullscreen.png "Ten zrzut ekranu przedstawia aplikacja była uruchomiona po ten obraz został dołączony")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>Tworzenie podklas UINavigationBar
 
@@ -130,7 +130,7 @@ navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolb
 
 Za pomocą tej `UINavigationBar` podklasy powoduje wyświetlanie obrazu będzie wyświetlany, jak pokazano na poniższym zrzucie ekranu:
 
- [ ![](images/03-navbar.png "Za pomocą tego UINavigationBar podklasy wyniki w widoku obrazu wyświetlanego, jak pokazano w tym zrzut ekranu")](images/03-navbar.png)
+ [![](images/03-navbar.png "Za pomocą tego UINavigationBar podklasy wyniki w widoku obrazu wyświetlanego, jak pokazano w tym zrzut ekranu")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>Orientacja interfejsu
 

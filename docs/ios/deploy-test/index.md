@@ -3,16 +3,16 @@ title: "Wdrażanie i testowanie"
 description: "Stabilizacji i wskazówki dotyczące wdrażania"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0c152c389a6aa62512882863cd2830b436587475
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f051e855c9d32f5c9667dc70c7cb9cf9ba8105fb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="deployment-and-testing"></a>Wdrażanie i testowanie
 
@@ -23,9 +23,9 @@ W tej sekcji omówiono tematy wykorzystywane do testowania aplikacji oraz do roz
 
 W tym artykule przedstawiono sposób konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji za pośrednictwem różnych różne sposoby, w tym:
 
-- [Dystrybucji sklepu z aplikacjami](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Dystrybucji wewnętrznych (Enterprise)](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Ad Hoc dystrybucji](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Dystrybucja w sklepie App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Dystrybucja wewnętrzna (w przedsiębiorstwie)](~/ios/deploy-test/app-distribution/in-house-distribution.md)
+- [Dystrybucja Ad Hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 
 ##  <a name="ipa-deploymentiosdeploy-testapp-distributionipa-supportmd"></a>[Wdrożenie IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
 
@@ -35,7 +35,7 @@ Ad Hoc i wdrożeń w przedsiębiorstwie umożliwiają deweloperom tworzenie paki
 
 Ten zestaw przewodniki obejmuje podpisywania kodu i inicjowania obsługi administracyjnej essentials, takich jak praca z listy właściwości oraz sposobu udostępniania aplikacji dla usług aplikacji. 
 
-## <a name="wireless-deploymentwireless-deploymentmd"></a>[Wdrażanie bezprzewodowej](wireless-deployment.md)
+## <a name="wireless-deploymentwireless-deploymentmd"></a>[Wdrażanie bezprzewodowe](wireless-deployment.md)
 
  Xcode 9 wprowadzono możliwość wdrażania na urządzeniu z systemem iOS lub Apple TV za pośrednictwem sieci, zamiast do sprzętowych urządzeń za każdym razem, gdy chcesz wdrożyć, a debugowanie aplikacji. Ta funkcja jest obecnie w przeglądzie.
 
@@ -61,7 +61,7 @@ W tym artykule opisano sposób korzystania z dokumentów na dowolnym urządzeniu
 
 
 
-##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Wskazówki — za pomocą narzędzia Instrumentacji firmy Apple](~/ios/deploy-test/walkthrough-apples-instrument.md)
+##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Przewodnik — Używanie narzędzia Instruments firmy Apple](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
 W tym artykule przedstawiono sposób użycia narzędzia dokumentów firmy Apple do diagnozowania problemów pamięci w aplikacji systemu iOS utworzonej za pomocą platformy Xamarin. Go pokazano, jak uruchomić dokumentów, wykonać migawki sterty i analizować wzrostu pamięci. Widoczny jest również sposób używać dokumentów do wyświetlania i wskazanie dokładne wierszy kodu, które przyczyną problemu pamięci.
 
