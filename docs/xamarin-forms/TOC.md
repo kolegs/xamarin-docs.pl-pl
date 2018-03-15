@@ -266,7 +266,7 @@
 #### [Dlaczego projektant XAML programu Visual Studio nie działa dla plików XAML zestawu narzędzi Xamarin.Forms?](troubleshooting/questions/forms-xaml-designer.md)
 #### [Błąd kompilacji systemu Android: zadanie „LinkAssemblies” nieoczekiwanie zakończyło się niepowodzeniem](troubleshooting/questions/android-linkassemblies-error.md)
 #### [Dlaczego mój projekt Xamarin.Forms.Maps dla systemu Android kończy się niepowodzeniem z powodu błędu COMPILETODALVIK: NIEOCZEKIWANY BŁĄD NAJWYŻSZEGO POZIOMU?](troubleshooting/questions/maps-compiletodalvik-error.md)
-## [Uwagi do wersji](https://developer.xamarin.com/releases/mac/)
+## [Uwagi do wersji](https://developer.xamarin.com/releases/xamarin-forms/)
 ## [Przykłady](samples/index.yml)
 ## [Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms — książka](creating-mobile-apps-xamarin-forms/index.md)
 ## [Wzorce aplikacji dla przedsiębiorstw — książka elektroniczna](enterprise-application-patterns/index.md)
