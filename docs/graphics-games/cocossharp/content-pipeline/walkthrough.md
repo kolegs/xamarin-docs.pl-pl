@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: df3692777eaa0791385c9ef3d114fbc8a9ab752e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Za pomocą narzędzia MonoGame potoku
 
@@ -135,7 +135,7 @@ Aby dodać nowy plik .sprintefont, kliknij prawym przyciskiem folder czcionki i 
 Plik .spritefont jest rzeczywiście pliku XML, który można edytować w edytorze tekstu, w tym programu Visual Studio dla komputerów Mac. Najbardziej typowe zmienne edytowane w pliku .spritefont `FontName` i `Size` właściwości:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>
 
@@ -147,7 +147,7 @@ Plik .spritefont jest rzeczywiście pliku XML, który można edytować w edytorz
 Firma Microsoft będzie Otwórz plik w edytorze tekstu. Jako naszych **arial 36.spritefont** sugeruje nazwa pozostanie `FontName` jako `Arial` , ale zmiana `Size` do wartości `36`:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>   
   

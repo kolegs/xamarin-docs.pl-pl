@@ -1,6 +1,6 @@
 ---
 title: "Wdrażanie bezprzewodowej"
-description: "Ta funkcja podglądu umożliwia wdrożenia dla systemu iOS lub urządzeń Apple TV za pośrednictwem połączenia sieciowego"
+description: "Ta funkcja umożliwia wdrożenia dla systemu iOS lub urządzeń Apple TV za pośrednictwem połączenia sieciowego"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>Wdrażanie bezprzewodowej
 
-_Ta funkcja podglądu umożliwia wdrożenia dla systemu iOS lub urządzeń Apple TV za pośrednictwem połączenia sieciowego_
-
-![Wersja zapoznawcza](~/media/shared/preview.png)
-
-Ważnym elementem developer przepływu pracy jest wdrażana na urządzeniu. Xcode 9 wprowadzono możliwość wdrażania na urządzeniu z systemem iOS lub Apple TV za pośrednictwem sieci, zamiast do sprzętowych urządzeń za każdym razem, gdy chcesz wdrożyć, a debugowanie aplikacji. Ta funkcja został wprowadzony w programie Visual Studio w wersji systemów Mac i Visual Studio 15,6, który jest obecnie w wersji zapoznawczej.
+Ważnym elementem developer przepływu pracy jest wdrażana na urządzeniu. Xcode 9 wprowadzono możliwość wdrażania na urządzeniu z systemem iOS lub Apple TV za pośrednictwem sieci, zamiast do sprzętowych urządzeń za każdym razem, gdy chcesz wdrożyć, a debugowanie aplikacji. Ta funkcja został wprowadzony w programie Visual Studio w wersji Mac 7.4 i Visual Studio 15,6.
 
 Ten przewodnik zawiera szczegóły parę i wdrażanie do urządzenia za pośrednictwem sieci.
 
 ## <a name="requirements"></a>Wymagania
 
-Wdrażanie bezprzewodowej jest dostępna jako **Podgląd** funkcji w Visual Studio dla komputerów Mac i Visual Studio.
-
+Wdrożenie bezprzewodowego jest dostępna jako funkcja w Visual Studio dla komputerów Mac i Visual Studio.
 
 Przy użyciu wdrażania sieci bezprzewodowej, należy dysponować następującymi elementami:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - macOS 10.12.4
-- Najnowszej wersji wstępnej programu Visual Studio dla komputerów Mac 
-    - Aby zainstalować ten przełącznik, aby [kanału alfa lub Beta](https://docs.microsoft.com/en-us/visualstudio/mac/update) w programie Visual Studio dla komputerów Mac.
+- Najnowszą wersję programu Visual Studio dla komputerów Mac
 - Xcode 9.0 lub nowszej
 - Urządzenia z systemem iOS 11.0 lub systemu tvOS 11.0 lub nowszy
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- R [wersji zapoznawczej](https://www.visualstudio.com/vs/preview/) programu Visual Studio
+- Najnowszą wersję programu Visual Studio
 - Urządzenia z systemem iOS 11.0 lub systemu tvOS 11.0 lub nowszy
 
 Na hoście kompilacji Mac należy zainstalować następujące składniki:
 
 - macOS 10.12.4
-- Visual Studio for Mac w wersji zapoznawczej
-    - Aby zainstalować przełącznik, aby [kanału alfa lub Beta](https://docs.microsoft.com/en-us/visualstudio/mac/update) w programie Visual Studio dla komputerów Mac.
+- Visual Studio for Mac
 - Xcode 9.0 lub nowszej
 
 -----

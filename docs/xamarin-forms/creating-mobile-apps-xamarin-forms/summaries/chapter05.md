@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Podsumowanie rozdziału 5. Zajmujących się rozmiary
 
@@ -42,7 +42,7 @@ Podsumowując programista platformy Xamarin.Forms przeznaczonych dla telefonów 
 - 160 jednostek na cal, odpowiednikiem
 - 64 jednostki do centymetr
 
-Tylko do odczytu [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) i [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) właściwości zdefiniowane przez `VisualElement` domyślny "mock" wartości & #x 2013; 1. Tylko wtedy, gdy element został o rozmiarze i umieszczone w układzie te właściwości odpowiada rzeczywisty rozmiar elementu w jednostkach niezależnych od urządzenia. Ten rozmiar zawiera dowolną `Padding` ustawionej dla elementu, ale nie `Margin`.
+Tylko do odczytu [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) i [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) właściwości zdefiniowane przez `VisualElement` domyślny "mock" wartości &ndash;1. Tylko wtedy, gdy element został o rozmiarze i umieszczone w układzie te właściwości odpowiada rzeczywisty rozmiar elementu w jednostkach niezależnych od urządzenia. Ten rozmiar zawiera dowolną `Padding` ustawionej dla elementu, ale nie `Margin`.
 
 Element wizualny generowane [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) zdarzeń po jego `Width` lub `Height` została zmieniona. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) w przykładzie użyto to zdarzenie, aby wyświetlić rozmiar ekranu programu.
 
@@ -75,7 +75,7 @@ Istnieje możliwość dopasowania bloku tekstu w prostokącie określonego oblic
 
 ## <a name="empirically-fitting-text"></a>Empirycznie dopasowywania tekstu
 
-Innym sposobem tekstu do prostokąta jest empirycznie Obliczanie rozmiaru tekstu renderowanych i dostosowanie go w górę lub w dół. Program w wywołaniach książki [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) na element wizualny, aby uzyskać wymagany rozmiar elementu. Metoda jest przestarzała, czy programy należy zamiast tego wywołać [`Measure`] (/ api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Innym sposobem tekstu do prostokąta jest empirycznie Obliczanie rozmiaru tekstu renderowanych i dostosowanie go w górę lub w dół. Program w wywołaniach książki [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) na element wizualny, aby uzyskać wymagany rozmiar elementu. Metoda jest przestarzała, czy zamiast tego należy wywołać programy [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
 
 Dla `Label`, pierwszy argument powinien być szerokość kontenera (aby umożliwić zawijania), a drugi argument powinien być ustawiony na `Double.PositiveInfinity` aby nieograniczonego wysokość. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) przykładzie pokazano tej metody.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Mowy systemu android
 
@@ -128,11 +128,11 @@ Przede wszystkim, urządzenia z systemem Android pochodzą z domyślnym zainstal
 
 ### <a name="step-1---instantiating-texttospeech"></a>Krok 1 — Tworzenie wystąpień TextToSpeech
 
-`TextToSpeech` może potrwać do 3 parametry, dwa pierwsze są wymagane w przypadku innych opcjonalne (`AppContext`, `IOnInitListener`, `engine`). Odbiornik jest używane dla wiązania usługi i test awarii z aparatem jest dowolną liczbę aparatów dostępne dla systemu Android tekst na mowę, co najmniej, urządzenia będą mieć aparat firmy Google.
+`TextToSpeech` może potrwać do 3 parametry, dwa pierwsze są wymagane w przypadku innych opcjonalne (`AppContext`, `IOnInitListener`, `engine`). Odbiornik jest używane dla wiązania usługi i test awarii z aparatem są dostępne dla systemu Android tekst na mowę aparaty dowolną liczbę. Co najmniej urządzenia będą mieć aparat firmy Google.
 
 ### <a name="step-2---finding-the-languages-available"></a>Krok 2 — wyszukiwanie dostępnych języków
 
-`Java.Util.Locale` Przestrzeń nazw zawiera przydatne metody o nazwie `GetAvailableLocales()`. Ta lista języków obsługiwanych przez aparat rozpoznawania mowy testowana następnie zainstalowane języki.
+`Java.Util.Locale` Klasa zawiera przydatne metody o nazwie `GetAvailableLocales()`. Ta lista języków obsługiwanych przez aparat rozpoznawania mowy testowana następnie zainstalowane języki.
 
 Jest to kwestia trivial wygenerować listę języków "zrozumiał". Zawsze będzie język domyślny (język użytkownik ustawił podczas najpierw konfigurowania urządzenia), tak aby w tym przykładzie `List<string>` ma "Default" jako pierwszego parametru, w zależności od wyniku zostaną wypełnione w pozostałej części listy `textToSpeech.IsLanguageAvailable(locale)`.
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>Krok 5 - IOnInitListener
 
-Dla działania można było przekonwertować tekst na mowę, metody interfejsu `OnInit` musi być utworzony (jest to drugi parametr określony dla procesu tworzenia wystąpienia `TextToSpeech` klasy). Inicjuje odbiornika, a wyniki testów.
+Dla działania można było przekonwertować tekst na mowę, metody interfejsu `OnInit` musi być implementowana (jest to drugi parametr określony dla procesu tworzenia wystąpienia `TextToSpeech` klasy). Inicjuje odbiornika, a wyniki testów.
 
 Odbiornik należy przetestować zarówno `OperationResult.Success` i `OperationResult.Failure` co najmniej.
 W poniższym przykładzie pokazano tylko dla niej:

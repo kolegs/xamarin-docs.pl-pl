@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Zdalny iOS Simulator (dla systemu Windows)
 
@@ -52,7 +52,7 @@ Pasek narzędzi okna obejmuje kilka przycisków wchodzić w interakcje z symulat
 - **Zablokuj** — blokuje symulatora (użytkownik może szybko Przesuń do odblokowania).
 - **Zrzut ekranu** — zrzut ekranu symulatora jest zapisywany na dysku.
 - [**Ustawienia** ](#settings) — konfigurowanie klawiatury i lokalizacji.
- - Inne [ **opcje** ](#options) — różne opcje symulatora są dostępne, takie jak obracanie, potrząsania powoduje lub wywołanie innych stanów w symulatorze. Jeśli niektóre opcje są zasłonięty, możliwy z ikoną wielokropka, wyświetlane na pasku narzędzi lub klikając prawym przyciskiem myszy w oknie.
+- Inne [ **opcje** ](#options) — różne opcje symulatora są dostępne, takie jak obracanie, potrząsania powoduje lub wywołanie innych stanów w symulatorze. Jeśli niektóre opcje są zasłonięty, możliwy z ikoną wielokropka, wyświetlane na pasku narzędzi lub klikając prawym przyciskiem myszy w oknie.
 
     [![](ios-simulator-images/maps-app-sml.png "przykład mapuje symulatora systemu iOS")](ios-simulator-images/maps-app.png#lightbox)
 

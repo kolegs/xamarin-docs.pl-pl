@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 26a543cc096d96346cd4503bf4fa2382f8ca9b78
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-up-device-for-development"></a>Konfigurowanie urządzeń środowiska deweloperskiego
 
@@ -119,8 +119,7 @@ Aby zainstalować sterowniki w systemie Windows 7:
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Instalowanie sterowników niezweryfikowane w systemie Windows 8
 
-Aby zainstalować sterownik niezweryfikowane w systemie Windows może być wymagane dodatkowych czynności
-8. W poniższych krokach opisano sposób instalowania sterowników dla węzła Galaxy:
+Aby zainstalować sterownik niezweryfikowane w systemie Windows 8 może wymagać dodatkowych czynności. W poniższych krokach opisano sposób instalowania sterowników dla węzła Galaxy:
 
 1.  **Dostęp do systemu Windows 8 zaawansowane opcje rozruchu** — ten krok polega na ponowne uruchomienie komputera, aby uzyskać dostęp zaawansowane opcje rozruchu. Uruchom wpisz w wierszu polecenia i uruchom ponownie komputer za pomocą następującego polecenia:
 

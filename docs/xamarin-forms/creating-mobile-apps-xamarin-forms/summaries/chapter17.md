@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Podsumowanie rozdział 17. Opanowanie siatki
 
@@ -29,16 +29,16 @@ Definicja `Grid` w języku XAML zazwyczaj rozpoczyna się od wypełnianie [ `Row
 
 W języku XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) konwertuje ciągów prosty tekst do `GridLength` wartości. W tle [ `GridLength` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) tworzy `GridLength` wartości na podstawie numeru i wartości typu [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), wyliczenie z trzech elementów członkowskich:
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) & #x 2014; szerokość lub wysokość jest określony w jednostkach niezależnych od urządzenia (liczba w języku XAML)
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) & #x 2014; wysokość lub szerokość jest autosized na podstawie zawartości komórki ("Auto" w języku XAML)
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) & #x 2014; pozostałość wysokość lub szerokość jest przydzielona proporcjonalnie (liczbę "\*" o nazwie *gwiazdy*, w języku XAML)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; szerokość lub wysokość jest określony w jednostkach niezależnych od urządzenia (liczba w języku XAML)
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; wysokość lub szerokość jest autosized na podstawie zawartości komórki ("Auto" w języku XAML)
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; pozostałość wysokość lub szerokość jest przydzielona proporcjonalnie (liczbę "\*" o nazwie *gwiazdy*, w języku XAML)
 
-Poszczególne elementy podrzędne elementu `Grid` muszą być przypisane wierszy i kolumn (jawnie lub niejawnie). Obejmuje wiersza i kolumny zakresy są opcjonalne. Te są wszystkie określone za pomocą dołączonych właściwości & #x 2014; właściwości zdefiniowane przez `Grid` ale ustawione na elementy podrzędne `Grid`. `Grid` definiuje cztery statyczne dołączonych właściwości:
+Poszczególne elementy podrzędne elementu `Grid` muszą być przypisane wierszy i kolumn (jawnie lub niejawnie). Obejmuje wiersza i kolumny zakresy są opcjonalne. Te są wszystkie określone przy użyciu właściwości dołączonych &mdash; właściwości, które są zdefiniowane przez `Grid` ale ustawione na elementy podrzędne `Grid`. `Grid` definiuje cztery statyczne dołączonych właściwości:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) & #x 2014; liczony od zera wiersza; domyślna to 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) & #x 2014; liczony od zera kolumnach. domyślna to 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) & #x 2014; Liczba wierszy podrzędnych obejmuje; Wartość domyślna to 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) & #x 2014; Liczba kolumn podrzędnych obejmuje; Wartość domyślna to 1
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; liczony od zera wiersza; domyślna to 0
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; liczony od zera kolumnach. domyślna to 0
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; Liczba wierszy podrzędnych obejmuje; Wartość domyślna to 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; Liczba kolumn podrzędnych obejmuje; Wartość domyślna to 1
 
 W kodzie program umożliwia osiem metod statycznych Ustawianie i pobieranie te wartości:
 

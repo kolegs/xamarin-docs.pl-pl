@@ -7,11 +7,11 @@ ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Podsumowanie rozdziału 11. Powiązania infrastruktury
 
@@ -47,9 +47,9 @@ W rzeczywistości `Text` właściwość CLR całkowicie jest implementowane za p
 
 Zawsze, gdy właściwość, która nie jest obsługiwana przez zmiany właściwości możliwej do wiązania, `BindableObject` uruchamiany [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/) zdarzeń identyfikujące właściwość, która została zmieniona. To zdarzenie nie jest uruchamiany, gdy właściwość jest ustawiona na tę samą wartość.
 
-Niektóre właściwości są ona obsługiwana przez właściwości oraz niektóre klasy platformy Xamarin.Forms & #x 2014; takie jak `Span` & #x 2014; nie pochodzi od `BindableObject`. Tylko klasy, która pochodzi z `BindableObject` może obsługiwać właściwości, ponieważ `BindableObject` definiuje `SetValue` i `GetValue` metody.
+Niektóre właściwości nie można powiązać właściwości, a niektóre klasy platformy Xamarin.Forms kopii &mdash; takich jak `Span` &mdash; nie pochodzi od `BindableObject`. Tylko klasy, która pochodzi z `BindableObject` może obsługiwać właściwości, ponieważ `BindableObject` definiuje `SetValue` i `GetValue` metody.
 
-Ponieważ `Span` nie pochodzi od `BindableObject`, żaden z jego właściwości & #x 2014; takich jak `Text` & #x 2014; bazują na właściwości możliwej do wiązania. Jest to dlaczego `DynamicResource` ustawienie `Text` właściwości `Span` zgłasza wyjątek w [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) przykładowa w poprzednim rozdziale. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) przykładzie pokazano sposób ustawiania dynamiczna zasobów za pomocą kodu [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) metody zdefiniowanej przez `Element`. Pierwszy argument jest typu obiektu `BindableProperty`.
+Ponieważ `Span` nie pochodzi od `BindableObject`, żaden z jego właściwości &mdash; takich jak `Text` &mdash; bazują na właściwości możliwej do wiązania. Jest to dlaczego `DynamicResource` ustawienie `Text` właściwości `Span` zgłasza wyjątek w [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) przykładowa w poprzednim rozdziale. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) przykładzie pokazano sposób ustawiania dynamiczna zasobów za pomocą kodu [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) metody zdefiniowanej przez `Element`. Pierwszy argument jest typu obiektu `BindableProperty`.
 
 Podobnie [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) metody zdefiniowanej przez `BindableObject` ma pierwszy argument typu `BindableProperty`.
 

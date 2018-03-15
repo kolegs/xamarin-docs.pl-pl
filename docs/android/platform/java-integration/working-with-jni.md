@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>Praca z JNI
 
@@ -154,7 +154,7 @@ Zwróć uwagę, czy klasa podstawowa jest zachowywana i deklaracje metody natywn
 
 Zazwyczaj Xamarin.Android automatycznie generuje kod języka Java, który obejmuje Aktywnej; tej generacji jest oparta na nazwy klasy i metody, gdy klasa pochodzi od klasy Java i zastępuje istniejące metody Java. Jednak w niektórych scenariuszach generowanie kodu nie jest odpowiedni, przedstawione poniżej:
 
--   Obsługa systemu android akcji nazwy w układzie atrybutów xml, na przykład [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) atrybutu XML. Jeśli nie zostanie określony, nadmuchany wystąpienia widoku próby odszukania metody Java.
+-   Android obsługuje nazwy akcji w układzie atrybutów XML, na przykład [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) atrybutu XML. Jeśli nie zostanie określony, nadmuchany wystąpienia widoku próbuje odszukać metody Java.
 
 -   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html) wymaga interfejsu `readObject` i `writeObject` metody. Ponieważ nie są członkami tego interfejsu, naszych odpowiedniej implementacji zarządzanego nie ujawnia tych metod kodu języka Java.
 

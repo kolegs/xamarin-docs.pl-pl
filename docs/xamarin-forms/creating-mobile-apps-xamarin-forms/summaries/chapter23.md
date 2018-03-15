@@ -7,11 +7,11 @@ ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ddb76e00cfe1c19a9d31dc3e53b80a2be0697dbc
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Podsumowanie działu 23. Wyzwalacze i zachowania
 
@@ -131,7 +131,7 @@ Wszystko można zrobić za pomocą wyzwalacza, możesz również wykonać za pom
 
 Argument jest dołączona do zachowania elementu. Ogólnie rzecz biorąc `OnAttachedTo` metody dołącza niektóre programy obsługi zdarzeń i `OnDetachingFrom` odłącza je. Ponieważ takie klasy zwykle zapisuje niektórych stanu, jego zazwyczaj nie może być współużytkowana w `Style`.
 
-[**BehaviorEntryValidation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) próbki jest podobny do **TriggerEntryValidation** z tą różnicą, że używa zachowanie & #x 2014; [ `NumericValidationBehavior` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) w —Klasa[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) biblioteki.
+[**BehaviorEntryValidation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) próbki jest podobny do **TriggerEntryValidation** z tą różnicą, że używa zachowanie &mdash; [ `NumericValidationBehavior` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) biblioteki.
 
 ### <a name="behaviors-with-properties"></a>Zachowania z właściwościami
 

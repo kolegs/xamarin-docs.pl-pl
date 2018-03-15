@@ -8,11 +8,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1d174e441cd46255d62283521e7db2802b49072f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrowanie tekstu i grafiki
 
@@ -61,13 +61,13 @@ Drugi [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPai
 `Left` i `Top` właściwości `SKRect` struktury wskazują współrzędne górnego lewego rogu renderowanego tekstu, jeżeli tekst jest wyświetlany przez `DrawText` wywołania z pozycji 0 X i Y. Na przykład, gdy ten program jest uruchomiony w symulatorze iPhone 7 `TextSize` jest przypisywana wartość 90.6254 wyniku obliczania po pierwszym wywołaniu `MeasureText`. `SKRect` Wartość uzyskane z drugie wywołanie `MeasureText` ma następujące wartości właściwości:
 
 - `Left` = 6
-- `Top` = &#x2013;68
+- `Top` = &ndash;68
 - `Width` = 664.8214
 - `Height` = 88;
 
-Należy pamiętać, że współrzędne X i Y należy przekazać do `DrawText` metody Określ lewej stronie tekstu w linii bazowej. `Top` Wartość oznacza, że tekst rozszerza 68 pikseli powyżej tej linii bazowej i (odjęcie 68 it z 88) 20 pikseli poniżej linii bazowej. `Left` Wartość 6 oznacza, że tekst rozpoczyna się 6 pikseli w prawo w wartości X `DrawText` wywołania. Umożliwia to normalne odstępów między znakami. Jeśli chcesz wyświetlić tekst prawidłowo osadzone w lewym górnym rogu ekranu, Przekaż negatywów tych `Left` i `Top` wartości jak współrzędne X i Y `DrawText`, w tym przykładzie & #x 2013; 6 i 68.
+Należy pamiętać, że współrzędne X i Y należy przekazać do `DrawText` metody Określ lewej stronie tekstu w linii bazowej. `Top` Wartość oznacza, że tekst rozszerza 68 pikseli powyżej tej linii bazowej i (odjęcie 68 it z 88) 20 pikseli poniżej linii bazowej. `Left` Wartość 6 oznacza, że tekst rozpoczyna się 6 pikseli w prawo w wartości X `DrawText` wywołania. Umożliwia to normalne odstępów między znakami. Jeśli chcesz wyświetlić tekst prawidłowo osadzone w lewym górnym rogu ekranu, Przekaż negatywów tych `Left` i `Top` wartości jak współrzędne X i Y `DrawText`, w tym przykładzie &ndash;6 i 68.
 
-`SKRect` Struktury definiuje kilka przydatną właściwości i metody, niektóre z nich są używane w pozostałej części `PaintSurface` programu obsługi. `MidX` i `MidY` wartości wskazują współrzędne Centrum prostokąta. (W tym przykładzie iPhone 7, te wartości są 338.4107 i & #x 2013; 24.) W poniższym kodzie użyto tych wartości obliczania najprostszym współrzędnych do środka tekstu na wyświetlaczu:
+`SKRect` Struktury definiuje kilka przydatną właściwości i metody, niektóre z nich są używane w pozostałej części `PaintSurface` programu obsługi. `MidX` i `MidY` wartości wskazują współrzędne Centrum prostokąta. (W tym przykładzie iPhone 7, te wartości są 338.4107 i &ndash;24.) W poniższym kodzie użyto tych wartości obliczania najprostszym współrzędnych do środka tekstu na wyświetlaczu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

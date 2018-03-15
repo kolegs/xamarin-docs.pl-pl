@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>Podstawy mapy bitowej
 
 _Załaduj map bitowych z różnych źródeł i wyświetlić je._
 
-Obsługa map bitowych w SkiaSharp jest dość rozbudowana. W tym artykule opisano tylko podstawowe informacje o & #x 2014; jak załadować mapy bitowe i sposób ich wyświetlania:
+Obsługa map bitowych w SkiaSharp jest dość rozbudowana. W tym artykule opisano tylko podstawowe informacje o &mdash; sposób załadować mapy bitowe i można je wyświetlić:
 
 ![](bitmaps-images/bitmapssample.png "Wyświetlanie dwóch mapy bitowe")
 
@@ -207,7 +207,7 @@ Mapy bitowej jest rozciągany tak, aby wymiary prostokąta, dlatego małp poziom
 
 [![](bitmaps-images/basicbitmaps-small.png "Potrójna zrzut ekranu strony mapy bitowe podstawowe")](bitmaps-images/basicbitmaps-large.png#lightbox "Potrójna zrzut ekranu strony podstawowe mapy bitowe")
 
-Trzeci obrazu & #x 2014; który można wyświetlić tylko jeśli uruchomienie programu i załadować zdjęcie z własnych biblioteki obrazów & #x 2014; jest również wyświetlany w prostokącie, ale prostokąta położenie i rozmiar są dostosowane do mapy bitowej współczynnik proporcji. Obliczona w ten sposób jest nieco więcej wysiłku, ponieważ wymaga obliczania zależnie od rozmiaru mapy bitowej, jak i docelowy prostokąt czynnik skalowania oraz wyśrodkowanie prostokąt w tym obszarze:
+Trzeci obrazu &mdash; który można wyświetlić tylko jeśli uruchomienie programu i załadować zdjęcie z biblioteki obrazów &mdash; jest wyświetlany również w prostokącie, ale prostokąta położenie i rozmiar są dostosowane do mapy bitowej współczynnik proporcji. Obliczona w ten sposób jest nieco więcej wysiłku, ponieważ wymaga obliczania zależnie od rozmiaru mapy bitowej, jak i docelowy prostokąt czynnik skalowania oraz wyśrodkowanie prostokąt w tym obszarze:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

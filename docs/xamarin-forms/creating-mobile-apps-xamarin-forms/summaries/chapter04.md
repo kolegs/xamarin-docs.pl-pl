@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Podsumowanie rozdziału 4. Przewijanie stosu
 
@@ -67,9 +67,9 @@ Dla pionowym `StackLayout`, `HorizontalOptions` ustawienie określa poziomie po�
 
 Dla pionowym `StackLayout`każdego elementu podrzędnego jest pionowo nieograniczonego i pobiera pionowym gniazdo w zależności od wysokość dziecka, w którym to przypadku `VerticalOptions` ustawienie nie ma znaczenia.
 
-Jeśli pionową `StackLayout` jest nieograniczonego & jest #x 2014; jeśli jego `VerticalOptions` ustawienie jest `Start`, `Center`, lub `End`, następnie wysokość `StackLayout` jest całkowita wysokość jego elementów podrzędnych.
+Jeśli pionową `StackLayout` jest nieograniczonego&mdash;czyli jeśli jego `VerticalOptions` jest ustawienie `Start`, `Center`, lub `End`, następnie wysokość `StackLayout` jest całkowita wysokość jego elementów podrzędnych.
 
-Jednak jeśli pionową `StackLayout` pionowo jest ograniczona & #x 2014; jeśli jego `VerticalOptions` jest ustawienie `Fill`& #x 2014; a następnie wysokość `StackLayout` będzie wysokość jego kontenera, który może być większa niż całkowita wysokość elementy podrzędne. Jeśli tak jest, a ma co najmniej jeden element podrzędny `VerticalOptions` ustawienie `Expands` flagę `true`, następnie dodatkowe miejsce w `StackLayout` przydzielania jednakowo wszystkie te elementy podrzędne z `Expands` flagę `true`. Całkowita wysokość elementu podrzędnego następnie będzie równa wysokość `StackLayout`i `Alignment` częścią `VerticalOptions` ustawienie określa, jak dziecka zostanie umieszczone w jego miejscu.
+Jednak jeśli pionową `StackLayout` pionowo jest ograniczane&mdash;jeśli jego `VerticalOptions` jest ustawienie `Fill` &mdash;następnie wysokość `StackLayout` będzie wysokość jego kontenera, który może być większa niż suma wysokość jego elementów podrzędnych. Jeśli tak jest, a ma co najmniej jeden element podrzędny `VerticalOptions` ustawienie `Expands` flagę `true`, następnie dodatkowe miejsce w `StackLayout` przydzielania jednakowo wszystkie te elementy podrzędne z `Expands` flagę `true`. Całkowita wysokość elementu podrzędnego następnie będzie równa wysokość `StackLayout`i `Alignment` częścią `VerticalOptions` ustawienie określa, jak dziecka zostanie umieszczone w jego miejscu.
 
 To jest przedstawiona w [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) próbki.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Dodawanie analizy z usługami kognitywnych
 
@@ -36,7 +36,7 @@ Zadania są przechowywane w lokalnej bazie danych SQLite. Aby uzyskać więcej i
 
 ![](images/sample-application-1.png "TodoListPage")
 
-Mogą być tworzone nowe elementy, klikając  *+*  przycisku, który przechodzi do `TodoItemPage`. Ta strona może zostać przesłane do wybierając zadania:
+Mogą być tworzone nowe elementy, klikając * + * przycisku, który przechodzi do `TodoItemPage`. Ta strona może zostać przesłane do wybierając zadania:
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -52,51 +52,20 @@ Kliknięcie przycisku smilies `TodoListPage` przechodzi do `RateAppPage`, która
 
 Projekt przenośnej biblioteki klasy (PCL) dla aplikacji przykładowej składa się z pięciu foldery główne:
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>Cel</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Modele</strong></td>
-            <td>Zawiera klasy modelu danych dla aplikacji. Dotyczy to również <code>TodoItem</code> klasy, która modele pojedynczego elementu danych używanych przez aplikację. Folder zawiera także klasy używane do odpowiedzi JSON modelu zwrócony z różnych Microsoft kognitywnych interfejsów API usługi Service.</td>
-        </tr>
-        <tr>
-            <td><strong>Repozytoria</strong></td>
-                        <td>Zawiera <code>ITodoItemRepository</code> interfejsu i <code>TodoItemRepository</code> klasy, które są używane do wykonywania operacji bazy danych.</td>
-        </tr>
-        <tr>
-            <td><strong>Usługi</strong></td>
-                        <td>Zawiera interfejsy i klasy, które umożliwiają dostęp do różnych Microsoft kognitywnych interfejsów API usługi Service, oraz interfejsy, które są używane przez <code>DependencyService</code> klasy można znaleźć klasy, które implementują interfejsy w projektach platformy.</td>
-        </tr>
-        <tr>
-            <td><strong>Witryny</strong></td>
-            <td>Zawiera <code>Timer</code> klasy, która jest używana przez <code>AuthenticationService</code> klasy do odnawiania tokenu dostępu JWT co 9 minut.</td>
-        </tr>
-        <tr>
-            <td><strong>Widoki</strong></td>
-            <td>Zawiera strony dla aplikacji.</td>
-        </tr>
-    </tbody>
-</table>
+|Folder|Cel|
+|--- |--- |
+|Modele|Zawiera klasy modelu danych dla aplikacji. Dotyczy to również `TodoItem` klasy, która modele pojedynczego elementu danych używanych przez aplikację. Folder zawiera także klasy używane do odpowiedzi JSON modelu zwrócony z różnych Microsoft kognitywnych interfejsów API usługi Service.|
+|Repozytoria|Zawiera `ITodoItemRepository` interfejsu i `TodoItemRepository` klasy, które są używane do wykonywania operacji bazy danych.|
+|Usługi|Zawiera interfejsy i klasy, które umożliwiają dostęp do różnych Microsoft kognitywnych interfejsów API usługi Service, oraz interfejsy, które są używane przez `DependencyService` klasy można znaleźć klasy, które implementują interfejsy w projektach platformy.|
+|Witryny|Zawiera `Timer` klasy, która jest używana przez `AuthenticationService` klasy do odnawiania tokenu dostępu JWT co 9 minut.|
+|Widoki|Zawiera strony dla aplikacji.|
 
 Projekt PCL zawiera również kilka ważnych plików:
 
-<table>
-    <thead>
-      <tr><td><strong>Plik</strong></td><td><strong>Cel</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Klasy, która określa klucze interfejsu API i punktów końcowych dla Microsoft kognitywnych usługi interfejsów API, które są wywoływane. Stałe klucza interfejsu API wymaga aktualizacji dostępu do różnych kognitywnych interfejsów API usługi.
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td><code>App</code> Klasy jest odpowiedzialny za tworzenie wystąpień zarówno pierwszej strony wyświetlanej przez aplikację na każdej platformie i <code>TodoManager</code> klasy, która służy do wywoływania operacji w bazie danych.</td>
-        </tr>
-    </tbody>
-</table>
+|Plik|Cel|
+|--- |--- |
+|Constants.CS|`Constants` Klasy, która określa klucze interfejsu API i punktów końcowych dla Microsoft kognitywnych usługi interfejsów API, które są wywoływane. Stałe klucza interfejsu API wymaga aktualizacji dostępu do różnych kognitywnych interfejsów API usługi.|
+|App.xaml.cs|`App` Klasy jest odpowiedzialny za tworzenie wystąpień zarówno pierwszej strony wyświetlanej przez aplikację na każdej platformie i `TodoManager` klasy, która służy do wywoływania operacji w bazie danych.|
 
 ### <a name="nuget-packages"></a>Pakiety NuGet
 

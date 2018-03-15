@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>Domyślne zasoby
 
@@ -31,7 +31,7 @@ Pełną listę typów zasobów znajduje się poniżej:
 -  **anim** &ndash; plików XML, które opisują *animacji* animacji. Animacji są szereg instrukcji animacji w celu wykonania przekształcenia na zawartość widoku obrót obiektu lub przykład obrazu lub rośnie rozmiar tekstu. Animacji są ograniczone do wyświetlania tylko obiektów.
 
 -  **kolor** &ndash; pliki XML, opisujące stan listę kolorów. Aby zrozumieć Wyświetla stan kolorów, warto rozważyć element widget interfejsu użytkownika, takie jak przycisk.
-   Rozsądne może mieć różne stany, takich jak naciśnięcie lub wyłączona, a przycisk może zmienić kolor przy każdej zmianie stanu. Listy jest wyrażona w postaci listy stanu.
+   Może mieć różne stany, takich jak naciśnięcie lub wyłączona, a przycisk może zmienić kolor przy każdej zmianie stanu. Listy jest wyrażona w postaci listy stanu.
 
 -  **obiektów drawable** &ndash; obiektów Drawable zasoby są ogólne koncepcji grafiki, która może być skompilowany w aplikacji, a następnie dostęp do interfejsu API lub odwołuje się inne zasoby XML.
    Przykłady drawables są pliki map bitowych (PNG, GIF, jpg), specjalne map bitowych o zmiennych rozmiarach, znany jako [dziewięć poprawki](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), stan listy ogólnego kształtów zdefiniowane w XML itp.

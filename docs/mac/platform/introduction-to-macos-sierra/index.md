@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 161a5be643ccf5f96b04413cec5956264af6ce60
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Wprowadzenie do macOS Sierra
 
@@ -63,8 +63,6 @@ Nasze [macOS tworzenie nowoczesnych aplikacji](~/mac/platform/introduction-to-ma
 W ramach CloudKit została rozszerzona w macOS Sierra, aby zezwolić użytkownikowi na szybkie i łatwe udostępnianie rekordów lub zestawów rekordów z swoje prywatne iCloud bazy danych.
 
 CloudKit zapewnia pełną interfejsu użytkownika do wysyłania i akceptowanie udostępnionego rekordu zaproszeń i użytkownik ma odczytu/zapisu pełną kontrolę nad użytkowników, którzy mają dostęp do rekordów.
-
-<!--To find out more, please see our [CloudKit Data Sharing](~/mac/platform-features/introduction-to-macos-sierra/cloudkit-data-sharing/) guide.-->
 
 Aby uzyskać więcej informacji, zobacz firmy Apple [odwołania Framework CloudKit](https://developer.apple.com/reference/clockkit) i [odwołania Framework JS CloudKit](https://developer.apple.com/reference/cloudkitjs).
 

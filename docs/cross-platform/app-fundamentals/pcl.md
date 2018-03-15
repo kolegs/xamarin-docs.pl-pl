@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Wprowadzenie do bibliotek klas przenośnych
 
@@ -39,94 +39,13 @@ Podczas tworzenia biblioteki klas przenośnych, jednak można wybrać kombinacj�
 
 W poniższej tabeli przedstawiono niektóre funkcje, które zależą od platformy .NET. Można zapisać zestawu PCL, który działanie na urządzeniach określonych/platform możesz po prostu wybierz których obsługa jest wymagana podczas tworzenia projektu.
 
-<table border="1" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-Funkcja </td>
-      <td>
-.NET Framework </td>
-      <td>
-Aplikacji platformy uniwersalnej systemu Windows </td>
-      <td>
-Silverlight </td>
-      <td>
-Windows Phone </td>
-      <td>
-Xamarin </td>
-    </tr>
-    <tr>
-      <td>
-Core </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-    </tr>
-    <tr>
-      <td>
-LINQ </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-    </tr>
-    <tr>
-      <td>
-IQueryable </td>
-       <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-7.5 + </td>
-      <td>
-T </td>
-    </tr>
-    <tr>
-      <td>
-Serializacja </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-T </td>
-    </tr>
-    <tr>
-      <td>
-Adnotacji danych </td>
-      <td>
-4.0.3 + </td>
-      <td>
-T </td>
-      <td>
-T </td>
-      <td>
-      </td>
-      <td>
-T </td>
-    </tr>
-  </tbody>
-</table>
+|Funkcja|.NET Framework|Aplikacji platformy uniwersalnej systemu Windows|Silverlight|Windows Phone|Xamarin|
+|---|---|---|---|---|---|
+|Core|T|T|T|T|T|
+|LINQ|T|T|T|T|T|
+|IQueryable|T|T|T|7.5 +|T|
+|Serializacja|T|T|T|T|T|
+|Adnotacji danych|4.0.3 +|T|T||T|
 
 Kolumna Xamarin odzwierciedla fakt, że Xamarin.iOS i Xamarin.Android obsługuje wszystkie profile dostarczanego z programem Visual Studio i dostępność funkcji w bibliotekach, wszystkie utworzone jest ograniczona tylko przez wybranych do obsługi platform.
 

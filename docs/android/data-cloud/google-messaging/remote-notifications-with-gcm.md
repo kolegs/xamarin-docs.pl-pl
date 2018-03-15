@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Powiadomienia zdalnego przy użyciu usługi Google Cloud Messaging
 
@@ -507,32 +507,12 @@ W powyższym kodzie XML, zmień *YOUR_PACKAGE_NAME* do nazwy pakietu dla projekt
 
 Zobaczmy, czego poszczególnych ustawień w tym pliku XML:
 
-<table>
-    <thead>
-        <tr>
-            <th>Ustawienie</th>
-            <th>Opis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>Deklaruje, że aplikacji implementuje odbiornika usługi GCM, która przechwytuje i przetwarza wiadomości przychodzących powiadomień wypychanych.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>Deklaruje tylko serwery usługi GCM może wysyłać komunikaty bezpośrednio do aplikacji.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>Filtr konwersji reklamy, jaki aplikacji obsługuje emisji komunikatów z usługi GCM.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>Filtr konwersji reklamy, jaki aplikacji obsługuje nowe opcje rejestracji (to znaczy wdrożonych wystąpienia Identyfikatora odbiornika usługi).</td>
-        </tr>
-    </tbody>
-</table>
+|Ustawienie|Opis|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|Deklaruje, że aplikacji implementuje odbiornika usługi GCM, która przechwytuje i przetwarza wiadomości przychodzących powiadomień wypychanych.|
+|`com.google.android.c2dm.permission.SEND`|Deklaruje tylko serwery usługi GCM może wysyłać komunikaty bezpośrednio do aplikacji.|
+|`com.google.android.c2dm.intent.RECEIVE`|Filtr konwersji reklamy, jaki aplikacji obsługuje emisji komunikatów z usługi GCM.|
+|`com.google.android.c2dm.intent.REGISTRATION`|Filtr konwersji reklamy, jaki aplikacji obsługuje nowe opcje rejestracji (to znaczy wdrożonych wystąpienia Identyfikatora odbiornika usługi).|
 
 Alternatywnie można dekoracji `GcmListenerService` z tych atrybutów, a nie określając je w kodzie XML; w tym miejscu możemy określić je w **AndroidManifest.xml** tak, aby przykłady kodu są łatwiejsze do wykonania. 
 

@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Podsumowanie działu 21. Przekształcenia
 
@@ -19,9 +19,9 @@ Widok platformy Xamarin.Forms pojawia się na ekranie położenie i rozmiar okre
 
 Platformy Xamarin.Forms obsługuje trzy podstawowe typy transformacji:
 
-- *Tłumaczenie* & #x 2014; przesunięcie elementu w poziomie lub pionie
-- *Skala* & #x 2014; Zmień rozmiar elementu
-- *Obracanie* & #x 2014; Włącz element wokół punktu lub osi
+- *Tłumaczenie* &mdash; przesunięcia element w poziomie czy w pionie
+- *Skala* &mdash; Zmień rozmiar elementu
+- *Obracanie* &mdash; włączyć element wokół punktu lub osi
 
 W przypadku platformy Xamarin.Forms skalowanie jest izotropowego; wpływa na szerokość i wysokość jednakowo. Obracanie jest obsługiwana zarówno na powierzchni dwuwymiarowa ekranu i w przestrzeni 3D. Brak nie przekształcenia pochylenia (lub znaczne zmniejszenie), a nie przekształcenia macierzy uogólniony.
 

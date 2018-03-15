@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>Automatyczne inicjowanie obsługi administracyjnej
 
@@ -34,23 +34,15 @@ Aby automatycznie zarejestrować aplikację do wdrożenia na urządzeniu z syste
 
 1. Otwórz projekt dla systemu iOS w programie Visual Studio dla komputerów Mac.
 
-2. Otwórz **Info.plist** pliku:
+2. Otwórz **Info.plist** pliku.
 
-    ![Plik info.plist](automatic-provisioning-images/image1.png)
-
-3. W **podpisywanie** wybierz zespół z **zespołu** listy rozwijanej:
+3. W **podpisywanie** wybierz wybierz **automatyczne udostępnianie**:
 
     ![Lista rozwijana selektora zespołu](automatic-provisioning-images/image2.png)
 
-4. Wybierz **automatycznie zarządzać podpisywania** pole wyboru, jak pokazano poniżej. Ten początkowy proces podpisywania automatycznego gdzie programu Visual Studio for Mac będzie podejmować próby wygenerowania identyfikator aplikacji, profilu inicjowania obsługi administracyjnej i tożsamości podpisywania i ustawić te artefakty ma być używany do podpisywania. Zaznaczenie pola wyboru formanty ręcznego wybierania tożsamości podpisywania są wyłączone.
+4. Wybierz zespół z **zespołu** listy rozwijanej.
 
-    ![automatycznie zarządzać opcja zespołów](automatic-provisioning-images/image3.png)
-
-5. To okno dialogowe będzie wyskakujące, udzielanie porad będzie zmodyfikowania pliku projektu, aby użyć nowo utworzonego certyfikatu i profil inicjowania obsługi administracyjnej:
-
-    ![okno dialogowe z informacją o tym pliku projektu zostaną zmodyfikowane.](automatic-provisioning-images/image4.png)
-
-6. Po kilku sekundach zostanie utworzona i wyświetlane profilu certyfikatu podpisywania i inicjowania obsługi administracyjnej:
+6. Po kilku sekundach zostanie utworzony profil certyfikatu podpisywania i inicjowania obsługi administracyjnej:
 
     ![Pomyślnie utworzono certyfikat i profil](automatic-provisioning-images/image5.png)
 

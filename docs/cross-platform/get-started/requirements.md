@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: 024e73ddfe517f6fe9766607fa17efbd5703234c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a2b5a1135a4d08c2a89caf0fbf4b2cdb1ac624c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>Wymagania systemowe
 
@@ -32,7 +32,7 @@ Odwiedź stronę [instrukcje dotyczące instalacji](#install) Aby uzyskać więc
 
 Ten przedstawia tabeli platformy, których można wbudować o różnych programowanie narzędzia & systemu operacyjnego:
 
-[!include[](~/cross-platform/includes/development-environment.html)]
+[!include[](~/cross-platform/includes/development-environment.md)]
 
 
 > [!NOTE]
@@ -44,7 +44,7 @@ Ten przedstawia tabeli platformy, których można wbudować o różnych programo
 
 Używanie komputera Mac do tworzenia aplikacji platformy Xamarin wymaga następujących wersji oprogramowania/pakiet SDK. Sprawdź wersję systemu operacyjnego i postępuj zgodnie z instrukcjami dotyczącymi [Instalator Xamarin](#install).
 
-[!include[](~/cross-platform/includes/macos-requirements.html)]
+[!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
 > Uwaga: Xcode można instalować (i zaktualizować) na [developer.apple.com](https://developer.apple.com/xcode/download/) lub za pośrednictwem sklepu Mac App Store.
@@ -53,7 +53,7 @@ Używanie komputera Mac do tworzenia aplikacji platformy Xamarin wymaga następu
 
 Aplikacje mobilne platformy Xamarin można wdrożyć na fizycznych urządzeniach przez połączenie USB testowanie i debugowanie (Xamarin.Mac aplikacji można przetestować bezpośrednio na komputerze dewelopera; Apple Watch aplikacje są wdrażane najpierw sparowanego iPhone).
 
-[!include[](~/cross-platform/includes/macos-testing.html)]
+[!include[](~/cross-platform/includes/macos-testing.md)]
 
 
 <a name="windows" />
@@ -64,7 +64,7 @@ Używanie komputerem z systemem Windows do tworzenia aplikacji platformy Xamarin
 Sprawdź wersję systemu operacyjnego (i upewnij się, że nie używasz *Express* wersji programu Visual Studio — Jeśli tak, może być konieczna aktualizacja do *społeczności* edition).
 Visual Studio 2015 i instalatorów 2017 zawierają opcję automatycznie Zainstaluj program Xamarin.
 
-[!include[](~/cross-platform/includes/windows-requirements.html)]
+[!include[](~/cross-platform/includes/windows-requirements.md)]
 
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Visual Studio 2015 i instalatorów 2017 zawierają opcję automatycznie Zainstal
 
 Aplikacje mobilne platformy Xamarin można wdrożyć na fizycznych urządzeniach przez połączenie USB testowanie i debugowanie (iOS, które urządzenia musi być podłączony do komputera Mac, nie komputera z uruchomionym Visual Studio).
 
-[!include[](~/cross-platform/includes/windows-testing.html)]
+[!include[](~/cross-platform/includes/windows-testing.md)]
 
 
 > [!NOTE]

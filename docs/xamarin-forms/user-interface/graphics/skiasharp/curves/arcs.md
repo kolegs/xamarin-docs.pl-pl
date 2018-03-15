@@ -8,11 +8,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 739efa994f172a7a1de82ac02d1c10b0d80f4c30
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysować łuk
 
@@ -238,7 +238,7 @@ Te trzy punkty definiują dwa połączone linie:
 
 ![](arcs-images/tangentarcconnectinglines.png "Linie łączące trzy punkty stycznej łuk")
 
-Jeśli trzy wskazuje, czy colinear & #x 2014; oznacza to, gdy znajdują się one w tej samej prostej & #x 2014; Łuk nie będą pobierane.
+Jeśli colinear trzy punkty &mdash; oznacza to, czy znajdują się one w tej samej prostej &mdash; łuk nie będą pobierane.
 
 `ArcTo` Zawiera również metody `radius` parametru. Określa promień okręgu:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a02627d5e5b40fe9e7b2fdbd3a6995a2d96fbf03
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Korzystanie z usługi sieci Web Windows Communication Foundation (WCF)
 
@@ -41,37 +41,12 @@ Instrukcje dotyczące konfigurowania usługi WCF można znaleźć w pliku readme
 
 Usługa WCF oferuje następujące operacje:
 
-<table>
-  <thead>
-    <tr>
-      <th>Operacja</th>
-      <th>Opis</th>
-      <th>Parametry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>Pobierz listę elementów do wykonania</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>Utwórz nowy element zadania do wykonania</td>
-      <td>Serializowany XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>Aktualizuj element do wykonania</td>
-      <td>Serializowany XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>Usuń element do wykonania</td>
-      <td>Serializowany XML <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|Operacja|Opis|Parametry|
+|--- |--- |--- |
+|GetTodoItems|Pobierz listę elementów do wykonania|
+|CreateTodoItem|Utwórz nowy element zadania do wykonania|TodoItem serializacji XML|
+|EditTodoItem|Aktualizuj element do wykonania|TodoItem serializacji XML|
+|DeleteTodoItem|Usuń element do wykonania|TodoItem serializacji XML|
 
 Aby uzyskać więcej informacji na temat modelu danych używany w aplikacji, zobacz [modelowania danych](~/xamarin-forms/data-cloud/walkthrough.md).
 

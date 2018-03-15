@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
 
@@ -21,7 +21,7 @@ Jest jednym z najbardziej nieprzyjemny zadania w programowaniu eksportowanie kod
 
 Ten problem jest typowe w przypadku przeznaczonych dla platformy urządzeń przenośnych. Obecnie istnieje dwóch głównych platform urządzeń przenośnych, rodzina Apple iPhone i Ipad zainstalowano system operacyjny iOS oraz Android systemu operacyjnego, który działa na różne telefony i tablety. Innej platformie istotne jest firmy Microsoft Windows platformy Uniwersalnej, dzięki czemu jeden program pod kątem zarówno systemu Windows 10 i Windows 10 Mobile.
 
-Dostawcy oprogramowania, która chce te trzy platform docelowych musi uwzględniać wzorcami inny interfejs użytkownika, trzy różne środowiska projektowania, trzech różnych interfejsów programowania i & #x 2014; prawdopodobnie większość nienaturalnej & #x 2014; trzy różnych językach programowania: Objective-C dla urządzenia iPhone i iPad, Java dla systemu Android i C# dla systemu Windows.
+Dostawcy oprogramowania, która chce te trzy platform docelowych musi uwzględniać wzorcami inny interfejs użytkownika, trzy różne środowiska projektowania, trzech różnych interfejsów programowania i&mdash;prawdopodobnie najbardziej nienaturalnej&mdash; trzech różnych językach programowania: Objective-C dla urządzenia iPhone i iPad, Java dla systemu Android i C# dla systemu Windows.
 
 ## <a name="the-c-and-net-solution"></a>Rozwiązanie C# i .NET
 

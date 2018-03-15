@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Podsumowanie działu 20. We/Wy Async i plików
 
@@ -65,7 +65,7 @@ Tradycyjnie .NET [ `System.IO` ](https://developer.xamarin.com/api/namespace/Sys
 
 ### <a name="good-news-and-bad-news"></a>Dobre wieści i złych wiadomości
 
-Wszystkie platformy obsługiwane przez Magazyn lokalny aplikacji platformy Xamarin.Forms Obsługa & #x 2014; pamięć masowa jest prywatny do aplikacji.
+Wszystkie platformy obsługiwane przez Magazyn lokalny aplikacji platformy Xamarin.Forms Obsługa &mdash; magazynu, który jest prywatny do aplikacji.
 
 Biblioteki Xamarin.iOS i platformy Xamarin.Android zawierają wersję platformy .NET, który Xamarin ma wyraźnie zoptymalizowanych pod kątem te dwie platformy. Obejmują one klas z `System.IO` można wykonać operacji We/Wy pliku z magazynu lokalnego aplikacji w tych dwóch platform.
 
@@ -117,7 +117,7 @@ Aby korzystać z tych bibliotek, rozwiązanie aplikacji musi zawierać wszystkie
 
 ### <a name="keeping-it-in-the-background"></a>Utrzymywanie go w tle
 
-Metody w bibliotekach, które wykonywania wywołań do wielu metod asynchronicznych & #x 2014; takie jak `WriteFileAsync` i `ReadFileASync` metody w środowisku wykonawczym systemu Windows [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) klasy & #x 2014; może się nieco bardziej wydajne przy użyciu [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) metody Unikaj przełączanie z powrotem do wątku interfejsu użytkownika.
+Metody w bibliotekach, które wykonywania wywołań do metod asynchronicznych wielu &mdash; takich jak `WriteFileAsync` i `ReadFileASync` metody w środowisku wykonawczym systemu Windows [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) klasy &mdash; może się nieco większa wydajność przy użyciu [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) metody w celu uniknięcia przełączanie z powrotem do wątku interfejsu użytkownika.
 
 ### <a name="dont-block-the-ui-thread"></a>Nie należy blokować wątku interfejsu użytkownika!
 

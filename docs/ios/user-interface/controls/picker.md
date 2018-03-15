@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: 3418d0b7946e1da68380512d64bdfc8b13d1d784
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b92bdc365cae524cee1f586b293c4638225c6178
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="picker"></a>Selektor
 
@@ -22,7 +22,7 @@ Dla selektorami jej do ustawienia daty i / lub godzina sprawy jednego określone
 
 Artykuł obejmuje wdrażanie i używanie [selektora](#picker) i [wyboru daty](#datepicker) kontrolki.
 
-<a name="picker"/>
+<a name="picker" />
 
 ## <a name="picker"></a>Selektor
 
@@ -143,7 +143,7 @@ Zwracana wartość oznacza liczbę wybierania, które użytkownika selektora.
 Wygląd `UIPickerView` można dostosować za pomocą `UIPickerView.UIPickerViewAppearance` klasy lub poprzez przesłonięcie `UIPickerViewModel.GetView` i `UIPickerViewModel.GetRowHeight` metod w `UIPickerViewModel`.
 
 
-<a name="datepicker"/>
+<a name="datepicker" />
 
 ## <a name="date-picker"></a>Wybór daty
 

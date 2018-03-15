@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Rysowanie okręgu prosty
 
@@ -146,7 +146,7 @@ Podczas uruchamiania programu samodzielnie, możesz włączyć telefonu lub symu
 
 `SKPaint` Obiekt jest więcej niż zbiór właściwości rysowania grafiki. Te obiekty są bardzo uproszczonego. Można użyć ponownie `SKPaint` obiektów, ponieważ nie tego programu, lub można utworzyć wiele `SKPaint` obiektów dla różnych kombinacji Rysowanie właściwości. Możesz utworzyć i zainicjować tych obiektów poza `PaintSurface` obsługi zdarzeń, a można ją zapisać jako pola w klasie strony.
 
-Mimo że szerokość konturu koło jest określony jako 25 pikseli & #x 2014; lub co kwartał Promień okrągłego & #x 2014; wydaje się być grubsza i powody, dla którego: pełnej szerokości linii jest zasłonięty przez niebieski. Argumenty `DrawCircle` abstrakcyjny geometrycznych współrzędne koło zdefiniuj — metoda. Niebieski wewnętrznych jest dopasowywany do tego wymiaru do najbliższej pikseli, ale konspektu 25 pikseli na poziomie pokrywającej geometrycznych koło & #x 2014; połowa na wewnątrz, a druga połowa na zewnątrz.
+Mimo że szerokość konturu koło jest określony jako 25 pikseli &mdash; lub co kwartał promień okręgu &mdash; wydaje się być grubsza i powody, dla którego: pełnej szerokości linii jest zasłonięty przez niebieski. Argumenty `DrawCircle` abstrakcyjny geometrycznych współrzędne koło zdefiniuj — metoda. Niebieski wewnętrznych jest dopasowywany do tego wymiaru do najbliższej pikseli, ale konspektu 25 pikseli na poziomie pokrywającej geometrycznych okręgu &mdash; połowy na wewnątrz, a druga połowa na zewnątrz.
 
 Następna próbka w [integracji z platformy Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) artykule przedstawiono to wizualne.
 

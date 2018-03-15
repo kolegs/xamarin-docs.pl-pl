@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 21ae62ee0d43e688e63ca8b7feb6a8aebb227cd5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>Plik iTunesMetadata.plist
 
@@ -239,7 +239,7 @@ Opcjonalnie `subgenres` klucza może służyć do zdefiniowania maksymalnie dwó
 
 W aplikacjach systemu iOS firmy Apple obecnie definiuje następujące genres i genre identyfikatory:
 
-[!include[](~/ios/includes/table-appstore.html)]
+[!include[](~/ios/includes/table-appstore.md)]
 
 Aby uzyskać więcej informacji, zobacz firmy Apple [Genre identyfikatorów dodatku](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html) dokumentacji.
 
@@ -306,7 +306,7 @@ Wykonaj następujące czynności:
 4. Kliknij dwukrotnie `iTunesMetadata.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji:
 
     ![](itunesmetadata-images/image02.png "Edytor iTunesMetadata.plist")
-5. Kliknij zielony  **+**  Aby utworzyć nowy wpis, a następnie wprowadź `UIRequiredDeviceCapabilities` jako nazwa klucza:
+5. Kliknij zielony ** + ** Aby utworzyć nowy wpis, a następnie wprowadź `UIRequiredDeviceCapabilities` jako nazwa klucza:
 
     ![](itunesmetadata-images/image03.png "Utwórz nowy wpis, a następnie wprowadź UIRequiredDeviceCapabilities jako nazwa klucza")
 6. Polecenie **ciąg** wartość typu i wybierz **słownika** z listy menu podręczne:
@@ -315,7 +315,7 @@ Wykonaj następujące czynności:
 7. Kliknij turndown po lewej stronie nazwy właściwości, aby wyświetlić wpisy słownika:
 
     ![](itunesmetadata-images/image05.png "Odsłoń wpisy słownika")
-8. Polecenie **Dodaj nowy wpis** tekstu, następnie kliknij zielony  **+**  Aby dodać wpis do słownika:
+8. Polecenie **Dodaj nowy wpis** tekstu, następnie kliknij zielony ** + ** Aby dodać wpis do słownika:
 
     ![](itunesmetadata-images/image06.png "Dodaj wpis do słownika")
 9. Wprowadź `armv7` jako nazwę klucza, wybierz typ **logiczna** , a następnie wprowadź **tak** jako wartość:
@@ -333,7 +333,7 @@ Wykonaj następujące czynności:
 2. Kopiuj zawartość przykład z [zawartość iTunesMetadata.plist](#iTunesMetadata_contents) powyższej sekcji.
 3. Wklej zawartość w pliku i edytować je zgodnie z potrzebami.
 4. Zapisz plik i powrócić do programu Visual Studio dla komputerów Mac.
-5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików...** .
+5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików... **.
 6. W oknie dialogowym Otwórz plik wybierz `iTunesMetadata.plist` pliku, który został utworzony wcześniej, a następnie kliknij przycisk **OK** przycisku.
 7. Pozostaw **Akcja kompilacji** tego pliku ustawioną **Brak**.
 
@@ -347,7 +347,7 @@ Wykonaj następujące czynności:
 2. Kopiuj zawartość przykład z [zawartość iTunesMetadata.plist](#iTunesMetadata_contents) powyższej sekcji.
 3. Wklej zawartość w pliku i edytować je zgodnie z potrzebami.
 4. Zapisz plik i wróć do programu Visual Studio.
-5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików...** .
+5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików... **.
 6. W oknie dialogowym Otwórz plik wybierz `iTunesMetadata.plist` utworzoną wcześniej plik i kliknij przycisk **Otwórz** przycisku.
 7. Pozostaw **Akcja kompilacji** tego pliku ustawioną **Brak**.
 

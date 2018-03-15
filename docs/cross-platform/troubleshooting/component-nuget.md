@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 
@@ -27,6 +27,82 @@ Większość składników należą do jednego z powyższych kategorii.
 Jeśli używasz składnik, który nie ma odpowiednik pakietu NuGet, przeczytaj [składników, bez ścieżki migracji NuGet](#require-update) poniższej sekcji.
 
 Odwoływać się do tych stron, aby uzyskać szczegółowe instrukcje dotyczące dodawania pakietów NuGet w [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) lub [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+
+## <a name="opening-a-project-containing-a-component"></a>Otwieranie projektu zawierającego składnika
+
+2017 listopada został [ogłoszenia](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) który magazynie składników Xamarin będzie przerywane. W ramach działań zmierzających do przejście z sunsetting składników 15.6 wydania programu Visual Studio i 7.4 wydania programu Visual Studio dla komputerów Mac nie obsługują składników w projekcie. 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Po załadowaniu projektu w programie Visual Studio, zostanie wyświetlone następujące okno dialogowe z informacjami o tym, że należy usunąć wszystkie składniki z projektu ręcznie:
+
+![Alert okna dialogowego wyjaśniający, czy składnik zostały znalezione w projekcie i muszą zostać usunięte](component-nuget-images/component-alert-vs.png)
+
+Aby usunąć składnik z projektu:
+
+1. Otwórz pliku .csproj. Aby to zrobić, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Zwolnij projekt**. 
+
+2. Ponownie kliknij prawym przyciskiem myszy projekt zwolnione i wybierz **Edytuj .csproj {nazwa swój projekt}**.
+
+3. Znajdź wszystkie odwołania w pliku `XamarinComponentReference`. Powinien wyglądać podobnie do poniższego przykładu:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. Usuń odwołania do `XamarinComponentReference` i Zapisz plik. W powyższym przykładzie jest bezpiecznie usunąć całą `ItemGroup`.
+
+5. Po zapisaniu pliku, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Załaduj ponownie projekt**.
+
+6. Powtórz powyższe kroki dla każdego projektu w rozwiązaniu.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Po załadowaniu projektu w programie Visual Studio dla komputerów Mac, zostanie wyświetlone następujące okno dialogowe z informacjami o tym, że należy usunąć wszystkie składniki z projektu ręcznie:
+
+![Alert okna dialogowego wyjaśniający, czy składnik zostały znalezione w projekcie i muszą zostać usunięte](component-nuget-images/component-alert.png)
+
+Aby usunąć składnik z projektu:
+
+1. Otwórz pliku .csproj. Aby to zrobić, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Narzędzia > Edytuj plik**.
+
+2. Znajdź wszystkie odwołania w pliku `XamarinComponentReference`. Powinien wyglądać podobnie do poniższego przykładu:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. Usuń odwołania do `XamarinComponentReference` i Zapisz plik. W powyższym przykładzie jest bezpiecznie usunąć całą `ItemGroup`
+
+4. Powtórz powyższe kroki dla każdego projektu w rozwiązaniu. 
+
+-----
 
 <a name="contain" />
 
@@ -94,7 +170,7 @@ Spowoduje to usunięcie składnik i wszystkie odwołania. Spowoduje to przerwani
 
 #### <a name="add-the-nuget-package"></a>Dodaj pakiet NuGet
 
-1. Kliknij prawym przyciskiem myszy **pakiety** węzeł i wybierz polecenie **Dodawanie pakietów...** .
+1. Kliknij prawym przyciskiem myszy **pakiety** węzeł i wybierz polecenie **Dodawanie pakietów... **.
 2. Wyszukaj według nazwy lub autora zastąpienia NuGet:
 
   ![](component-nuget-images/nuget-search-sml.png)

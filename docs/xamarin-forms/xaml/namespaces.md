@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: b0afba90dab5cba4bad385f8d6447d8b83c1de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xaml-namespaces"></a>Przestrzeń nazw XAML
 
@@ -38,40 +38,14 @@ XAML używa prefiksy, aby zadeklarować przestrzeni nazw z systemem innym niż d
 
 W poniższej tabeli przedstawiono `x` obsługiwana przez platformy Xamarin.Forms atrybuty przestrzeni nazw:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Construct</strong></td>
-     <td><strong>Opis</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><code>x:Arguments</code></td>
-     <td>Określa argumenty konstruktora z systemem innym niż domyślny konstruktor lub deklaracji obiektu metody fabryki.</td>
-   </tr>
-   <tr>
-     <td><code>x:Class</code></td>
-     <td>Określa nazwę przestrzeni nazw i klasy dla klasy zdefiniowany w języku XAML. Nazwa klasy musi odpowiadać nazwie klasy pliku CodeBehind. Należy pamiętać, że ta konstrukcja może występować tylko w elemencie głównym pliku XAML.</td>
-   </tr>
-   <tr>
-     <td><code>x:FactoryMethod</code></td>
-     <td>Określa metodę fabryka, która może służyć do zainicjowania obiektu.</td>
-   </tr>
-   <tr>
-     <td><code>x:Key</code></td>
-     <td>Określa unikatowy klucz użytkownika dla każdego zasobu w <code>ResourceDictionary</code>. Wartość klucza służy do pobierania zasobu XAML i zazwyczaj jest używane jako argument dla <code>StaticResource</code> — rozszerzenie znaczników.</td>
-   </tr>
-   <tr>
-     <td><code>x:Name</code></td>
-     <td>Określa nazwę obiektu środowiska wykonawczego dla elementu XAML. Ustawienie <code>x:Name</code> jest podobny do deklarowania zmiennych w kodzie.</td>
-   </tr>
-   <tr>
-     <td><code>x:TypeArguments</code></td>
-     <td>Określa argumenty typu ogólnego do konstruktora typu ogólnego.</td>
-   </tr>
- </tbody>
-</table>
+|Konstrukcja|Opis|
+|--- |--- |
+|`x:Arguments`|Określa argumenty konstruktora z systemem innym niż domyślny konstruktor lub deklaracji obiektu metody fabryki.|
+|`x:Class`|Określa nazwę przestrzeni nazw i klasy dla klasy zdefiniowany w języku XAML. Nazwa klasy musi odpowiadać nazwie klasy pliku CodeBehind. Należy pamiętać, że ta konstrukcja może występować tylko w elemencie głównym pliku XAML.|
+|`x:FactoryMethod`|Określa metodę fabryka, która może służyć do zainicjowania obiektu.|
+|`x:Key`|Określa unikatowy klucz użytkownika dla każdego zasobu w `ResourceDictionary`. Wartość klucza służy do pobierania zasobu XAML i zazwyczaj jest używane jako argument dla `StaticResource` — rozszerzenie znaczników.|
+|`x:Name`|Określa nazwę obiektu środowiska wykonawczego dla elementu XAML. Ustawienie `x:Name` jest podobny do deklarowania zmiennych w kodzie.|
+|`x:TypeArguments`|Określa argumenty typu ogólnego do konstruktora typu ogólnego.|
 
 Aby uzyskać więcej informacji na temat `x:Arguments`, `x:FactoryMethod`, i `x:TypeArguments` atrybutów, zobacz [przekazywanie argumentów w języku XAML](~/xamarin-forms/xaml/passing-arguments.md).
 

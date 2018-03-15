@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>Opis próbki
 
@@ -38,47 +38,19 @@ Poszczególne tematy w tym przewodniku Link pobierania do *różnych* wersja apl
 
 Projekt PCL dla każdej aplikacji przykładowej składa się z trzech głównych folderów:
 
-<table>
-    <thead>
-        <tr><td><strong>Folder</strong></td><td><strong>Cel</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Dane</strong></td>
-                        <td>Zawiera klasy i interfejsy używane do zarządzania elementami danych i komunikować się z usługą sieci web. Co najmniej obejmuje <code>TodoItemManager</code> klasy, która jest uwidaczniany za pośrednictwem właściwości w <code>App</code> klasy do wywołania operacji usługi sieci web.</td>
-        </tr>
-        <tr>
-            <td><strong>Modele</strong></td>
-                        <td>Zawiera klasy modelu danych dla aplikacji. Co najmniej obejmuje <code>TodoItem</code> klasy, która modele pojedynczego elementu danych używanych przez aplikację. Folder można także ewentualne dodatkowe klasy używane do modelu danych użytkownika.</td>
-        </tr>
-        <tr>
-            <td><strong>Widoki</strong></td>
-                        <td>Zawiera strony dla aplikacji. Zazwyczaj składa się z <code>TodoListPage</code> i <code>TodoItemPage</code> klasy i wszystkie dodatkowe klasy używane na potrzeby uwierzytelniania.</td>
-                </tr>
-    </tbody>
-</table>
+|Folder|Cel|
+|--- |--- |
+|Dane|Zawiera klasy i interfejsy używane do zarządzania elementami danych i komunikować się z usługą sieci web. Co najmniej obejmuje `TodoItemManager` klasy, która jest uwidaczniany za pośrednictwem właściwości w `App` klasy do wywołania operacji usługi sieci web.|
+|Modele|Zawiera klasy modelu danych dla aplikacji. Co najmniej obejmuje `TodoItem` klasy, która modele pojedynczego elementu danych używanych przez aplikację. Folder można także ewentualne dodatkowe klasy używane do modelu danych użytkownika.|
+|Widoki|Zawiera strony dla aplikacji. Zazwyczaj składa się z `TodoListPage` i `TodoItemPage` klasy i wszystkie dodatkowe klasy używane na potrzeby uwierzytelniania.|
 
 Projekt PCL dla każdej aplikacji również składa się z kilku ważnych plików:
 
-<table>
-    <thead>
-      <tr><td><strong>Plik</strong></td><td><strong>Cel</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Klasy, która określa wszelkie stałe używane przez aplikację do komunikacji z usługą sieci web. Te stałe wymagają aktualizacji do uzyskania dostępu do usługi zaplecza osobiste utworzone przez dostawcę.
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td><code>ITextToSpeech</code> Interfejs, który określa, że <code>Speak</code> metoda musi być dostarczona przez wszystkie klasy implementującej.</td>
-        </tr>
-        <tr>
-          <td><strong>Todo.cs</strong></td>
-          <td><code>App</code> Klasy, która odpowiada za tworzenie wystąpień zarówno pierwszej strony wyświetlanej przez aplikację na każdej platformie i <code>TodoItemManager</code> klasy, która jest używana do wywołania operacji usługi sieci web.</td>
-        </tr>
-    </tbody>
-</table>
+|Plik|Cel|
+|--- |--- |
+|Constants.CS|`Constants` Klasy, która określa wszelkie stałe używane przez aplikację do komunikacji z usługą sieci web. Te stałe wymagają aktualizacji do uzyskania dostępu do usługi zaplecza osobiste utworzone przez dostawcę.|
+|ITextToSpeech.cs|`ITextToSpeech` Interfejs, który określa, że `Speak` metoda musi być dostarczona przez wszystkie klasy implementującej.|
+|TODO.CS|`App` Klasy, która odpowiada za tworzenie wystąpień zarówno pierwszej strony wyświetlanej przez aplikację na każdej platformie i `TodoItemManager` klasy, która jest używana do wywołania operacji usługi sieci web.|
 
 ### <a name="viewing-pages"></a>Przeglądanie stron
 

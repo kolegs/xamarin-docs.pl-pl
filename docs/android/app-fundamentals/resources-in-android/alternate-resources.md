@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="alternate-resources"></a>Alternatywne zasobów
 
@@ -44,7 +44,7 @@ Dodawanie kwalifikatory typu zasobu obowiązują następujące reguły:
 Poniżej przedstawiono możliwe kwalifikatory dla odwołania:
 
 - **MCC i MNC** &ndash; [numer kierunkowy kraju przenośnych](http://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) i opcjonalnie [kodu sieci komórkowej](http://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). Karta SIM zapewni MCC, gdy urządzenie jest podłączone do sieci zapewnia MNC. Chociaż jest możliwe do docelowego ustawień regionalnych przy użyciu kodu kraju przenośnych, zaleca się rozwiązaniem jest użycie kwalifikatora języka wymienionymi poniżej. Na przykład do zasobów docelowych Niemczech, będzie kwalifikator `mcc262`. Do zasobów docelowych dla urządzeń przenośnych T w Stanach Zjednoczonych kwalifikator jest `mcc310-mnc026`.
-  Pełną listę kodów kraju przenośnych i sieci komórkowej zobacz <http://mcclist.com/>.
+  Pełną listę kodów kraju przenośnych i sieci komórkowej zobacz <http://mcc-mnc.com/>.
 
 - **Język** &ndash; dwuliterowych [kod języka 639 1 ISO](http://en.wikipedia.org/wiki/ISO_639-1) i opcjonalnie następują litery dwa [kodu regionu ISO 3166-alfa-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
   Jeśli oba kwalifikatorów są udostępniane, a następnie są rozdzielone `-r`. Na przykład do ustawień regionalnych docelowy mówiąc francuski, a następnie kwalifikatora `fr` jest używany. Pod kątem French-Canadian ustawień regionalnych, `fr-rCA` mają być używane. Aby uzyskać pełną listę kodów języków i kodów regionów, zobacz [kody reprezentacja nazwy języków](http://www.loc.gov/standards/iso639-2/php/English_list.php) i [nazwy kraju i elementy kodu](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).

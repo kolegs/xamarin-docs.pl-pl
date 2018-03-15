@@ -8,11 +8,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e84bce5d4280ded801ed58999a2570d3c6bd327e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Wycinka przy użyciu ścieżek i regiony
 
@@ -267,7 +267,7 @@ Jednak przeciążeń `ClipPath` i `ClipRect` z `SKRegionOperation` parametry są
 
 Można nadal używać `SKRegionOperation` wyliczenia, ale wymaga zdefiniowania obszar przycinania na podstawie [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu.
 
-Nowo utworzone `SKRegion` obiektu opisuje pustym obszarem. Zazwyczaj jest pierwsze wywołanie w obiekcie [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby obszar opisano prostokątny obszar. Parametr `SetRect` jest `SKRectI` wartość & #x 2014; wartość prostokąt z właściwościami liczby całkowitej. Następnie można wywołać [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) z `SKPath` obiektu. Spowoduje to utworzenie region, który jest taki sam jak wewnątrz ścieżki, ale przycinane do początkowej prostokątny obszar.
+Nowo utworzone `SKRegion` obiektu opisuje pustym obszarem. Zazwyczaj jest pierwsze wywołanie w obiekcie [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby obszar opisano prostokątny obszar. Parametr `SetRect` jest `SKRectI` wartość &mdash; wartość prostokąt z właściwościami liczby całkowitej. Następnie można wywołać [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) z `SKPath` obiektu. Spowoduje to utworzenie region, który jest taki sam jak wewnątrz ścieżki, ale przycinane do początkowej prostokątny obszar.
 
 `SKRegionOperation` Wyliczenie pochodzi wyłącznie do gry podczas wywoływania jednej z [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) przeciążenia metody, taką jak:
 

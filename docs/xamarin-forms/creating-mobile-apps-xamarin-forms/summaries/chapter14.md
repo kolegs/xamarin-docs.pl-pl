@@ -7,11 +7,11 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Podsumowanie rozdział 14. Układ bezwzględne
 
@@ -25,7 +25,7 @@ W tym rozdziale przedstawiono również ważna cecha *dołączonych właściwoś
 
 Możesz dodać element podrzędny `Children` Kolekcja `AbsoluteLayout` przy użyciu standardu [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) metody, ale `AbsoluteLayout` udostępnia rozszerzone [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) Metoda, która umożliwia określenie [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Inny [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) metoda wymaga tylko [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), w takim przypadku jest nieograniczonego elementu podrzędnego, a sam rozmiar.
 
-Można utworzyć `Rectangle` wartości z [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) wymagający cztery wartości & #x 2014; dwa pierwsze wskazującą położenie lewego górnego rogu elementu podrzędnego względem jego elementu nadrzędnego, a następne dwa wskazujący rozmiar tego elementu podrzędnego. Lub użyć [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) wymagającego `Point` i [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) wartości.
+Można utworzyć `Rectangle` wartości z [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) wymagający cztery wartości &mdash; dwa pierwsze wskazującą położenie lewego górnego rogu elementu podrzędnego względem jego elementu nadrzędnego, a następne dwa wskazujący rozmiar tego elementu podrzędnego. Lub użyć [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) wymagającego `Point` i [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) wartości.
 
 Te `Add` metod przedstawiono w części [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), których pozycje `BoxView` elementów za pomocą `Rectangle` wartości, a `Label` elementu za pomocą tylko `Point` wartość.
 

@@ -1,43 +1,37 @@
 ---
-title: Instalacja i wymagania
+title: Skoroszyty instalacji i wymagania
+description: "Jak pobrać, zainstalować i skoroszyty Xamarin."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Instalacja i wymagania
-
-<script> var inspectorOnLoad = (funkcja) {var primaryTextBase = "Skoroszyty Xamarin dla"; var secondaryTextBase = "lub Pobierz dla"; var inspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin = " https://DL.xamarin.com/Interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  Jeśli (/win/i.test(navigator.platform.toLowerCase())) {aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase;}
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="workbooks-installation-and-requirements"></a>Skoroszyty instalacji i wymagania
 
 <a name="install" />
 
 ## <a name="download-and-install"></a>Pobierz i zainstaluj
 
-<ol>
-  <li>Sprawdź <a href="#Requirements"> wymagania</a> poniżej.</li>
-  <li>Pobierz i zainstaluj <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">skoroszytów Xamarin dla komputerów Mac</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">lub pobrania dla systemu Windows</a>).
-  </li>
-  <li>Uruchom <a href="~/tools/workbooks/workbook.md"> odtwarzanie</a> skoroszytów lub wypróbowywać <a href="https://developer.xamarin.com/workbooks/">przykłady</a>.
-    </li>
-</ol>
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Sprawdź [wymagania](#requirements) poniżej.
+2. Pobierz i zainstaluj [skoroszytów Xamarin dla systemu Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+3. Uruchom [odtwarzanie](~/tools/workbooks/workbook.md) skoroszytów lub wypróbowywać [próbek](https://developer.xamarin.com/workbooks)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Sprawdź [wymagania](#Requirements) poniżej.
+2. Pobierz i zainstaluj [skoroszytów Xamarin dla komputerów Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+3. Uruchom [odtwarzanie](~/tools/workbooks/workbook.md) skoroszytów lub wypróbowywać [próbek](https://developer.xamarin.com/workbooks)
+
+-----
 
 ## <a name="requirements"></a>Wymagania
 
@@ -48,52 +42,15 @@ document.addEventListener("DOMContentLoaded", inspectorOnLoad);
 
 #### <a name="supported-app-platforms"></a>Platformy obsługiwanej aplikacji
 
-<table>
-<thead>
-  <tr>
-    <th>Platforma aplikacji</th>
-    <th>Obsługa systemu operacyjnego</th>
-    <th>Uwagi</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Unified)</td>
-    <td>Obsługiwane tylko dla komputerów Mac</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Unified)</td>
-    <td>Obsługiwane w Mac i systemu Windows</td>
-    <td>
-      <ul>
-        <li>Xamarin.iOS 11.0 i Xcode 9.0 lub nowszej musi być zainstalowany na komputerach Mac.</li>
-        <li>Uruchamianie iOS skoroszytów w systemie Windows wymaga hosta kompilacji Mac z systemem wszystkie powyższe i <a href="~/tools/ios-simulator.md">zdalny symulatora systemu iOS</a> zainstalowany w systemie Windows.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Obsługiwane w Mac i systemu Windows</td>
-    <td>Należy użyć emulatora programu Visual Studio lub Xamarin Android Google, z urządzenia wirtualnego > = 5.0</td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Obsługiwane tylko w systemie Windows</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>W konsoli (.NET Framework)</td>
-    <td>Obsługiwane w Mac i systemu Windows</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>W konsoli (.NET Core)</td>
-    <td>Obsługiwane w Mac i systemu Windows</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Platforma aplikacji|Obsługa systemu operacyjnego|Uwagi|
+|--- |--- |--- |
+|Mac (Unified)|Obsługiwane tylko dla komputerów Mac|
+|iOS (Unified)|Obsługiwane w Mac i systemu Windows|Xamarin.iOS 11.0 i Xcode 9.0 lub nowszej musi być zainstalowany na komputerach Mac. Uruchamianie iOS skoroszytów w systemie Windows wymaga hosta kompilacji Mac z systemem wszystkie powyższe i [zdalny symulatora systemu iOS](~/tools/ios-simulator.md) zainstalowany w systemie Windows.|
+|Android|Obsługiwane w Mac i systemu Windows|Należy użyć emulatora programu Visual Studio lub Xamarin Android Google, z urządzenia wirtualnego > = 5.0|
+|WPF|Obsługiwane tylko w systemie Windows|
+|W konsoli (.NET Framework)|Obsługiwane w Mac i systemu Windows|
+|W konsoli (.NET Core)|Obsługiwane w Mac i systemu Windows|
+
 
 ## <a name="reporting-bugs"></a>Raportowanie błędów
 
@@ -108,7 +65,7 @@ Zawsze Dołącz pliki dziennika klienta skoroszyty:
 
 1.4.x funkcji również możliwość wybrania pliku dziennika w wyszukiwania (macOS) lub w Eksploratorze (system Windows) bezpośrednio z poziomu menu głównego:
 
-- **Plik dziennika ujawniania → pomocy**
+- **Pomoc > ujawnić pliku dziennika**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Ścieżki dziennika dla skoroszytów 1.3 i starszych wersji:
 
@@ -121,23 +78,23 @@ Jest bardzo przydatne poznać szczegóły systemu operacyjnego i zainstalowanych
 
 Z poziomu menu głównego w skoroszytach:
 
-* **Pomoc informacje o wersji kopiowania →**
+* **Pomoc > skopiować informacje o wersji**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>Instrukcje dla skoroszytów 1.3 i starszych wersji:
 
 Visual Studio For Mac
 
-- **Informacje programu Visual Studio → Pokaż szczegóły → kopii programu Visual Studio →**
+- **Visual Studio > o Visual Studio > Pokaż szczegóły > Kopiowanie informacji**
 - Wklej do usterek — raport
 
 Visual Studio
 
-- **Pomoc → o informacje o kopii → programu Visual Studio**
+- **Pomoc > o Visual Studio > Kopiowanie informacji**
 - Daj nam znać, wersji systemu operacyjnego i czy jest uruchomiona 32-bitowy lub 64-bitowego systemu Windows.
 
 ### <a name="samples"></a>Przykłady
 
-Jeśli możesz dołączyć lub połączyć `.workbooks` plik problemów z, może pomóc w rozwiązaniu z usterki szybciej.
+Jeśli możesz dołączyć lub połączyć **.workbooks** plik problemów z, może pomóc w rozwiązaniu z usterki szybciej.
 
 ### <a name="devices"></a>Urządzenia
 
@@ -148,7 +105,7 @@ Jeśli występują problemy z połączeniem z systemem iOS lub Android skoroszyt
 - System android: Sprawdź, czy używasz x86 emulatora
 - System android: Platformy emulatora używasz? Emulator systemu Google?
   Visual Studio Emulator systemu Android? Odtwarzacz dla systemu Xamarin Android?
-- System iOS w systemie Windows: jakiej wersji zdalnego Xamarin iOS Simulator zainstalowano (Sprawdź `Add/Remove Programs` w `Control Panel`)?
+- System iOS w systemie Windows: jakiej wersji zdalnego Xamarin iOS Simulator zainstalowano (Sprawdź **Dodaj lub usuń programy** w **Panelu sterowania**)?
 - System iOS w systemie Windows: również Podaj informacje o wersji platformy dla komputerów Mac hosta kompilacji
 - Czy urządzenie ma łączność sieciową (wyboru za pomocą przeglądarki sieci web)?
 
@@ -168,7 +125,7 @@ Jeśli masz program Visual Studio 2017 Otwórz **Instalator programu Visual Stud
 
 Jeśli zainstalowano skoroszyty & Inspektor samodzielnie przy użyciu pobranego Instalatora, będzie musiała zostać usunięta przez **aplikacje i funkcje** strona Ustawienia systemu Windows 10 lub za pośrednictwem **Dodaj lub usuń programy**w Panelu sterowania w starszych wersjach systemu Windows.
 
-> **Uruchom ustawienia → → systemu → aplikacje i funkcje**
+> **Start > Ustawienia > System > aplikacje i funkcje**
 
 ![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w &quot;aplikacji &amp; funkcji&quot;")
 
@@ -197,7 +154,7 @@ Dla starszych wersji należy ręcznie usunąć następujące czynności:
 
 ## <a name="downgrading"></a>Zmiana wersji na starszą
 
-Identyfikator pakietu dla `/Applications/Xamarin Workbooks.app` zmieniła się z `com.xamarin.Inspector` do `com.xamarin.Workbooks` w wersji 1.4 ułatwiające przyszłych podziału instalatorów skoroszyty Xamarin & Inspektor.
+Identyfikator pakietu dla **Workbooks.app aplikacji/Xamarin** zmieniła się z `com.xamarin.Inspector` do `com.xamarin.Workbooks` w wersji 1.4 ułatwiające przyszłych podziału instalatorów skoroszyty Xamarin & Inspektor.
 
 Ze względu na błąd w starszych programów instalacyjnych nie jest możliwe obniżyć 1.4 lub nowszej wersji za pomocą 1.3.2 lub starsze pliki instalacyjne.
 

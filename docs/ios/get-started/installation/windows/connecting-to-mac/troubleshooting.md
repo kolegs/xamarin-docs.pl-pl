@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="connection-troubleshooting"></a>Rozwiązywanie problemów z połączenia
 
@@ -40,7 +40,7 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
 > Jeśli żadna z tych opcji rozwiązać ten problem, następnie postępuj zgodnie z instrukcjami wyświetlanymi w [kroku 9](#stepnine) do pliku nowy raport o usterce.
 
 1. Sprawdź, czy są zainstalowane opartym na systemie niezgodne wersje platformy Xamarin.iOS Zrobić to z programu Visual Studio 2017 upewnij się, że znajdują się na **stabilna** kanału dystrybucji w programie Visual Studio dla komputerów Mac. W programie Visual Studio 2015 lub starszym, upewnij się, są w tym samym kanale dystrybucji na obu IDEs.
-    * W programie Visual Studio dla komputerów Mac, przejdź do **programu Visual Studio for Mac > sprawdzić aktualizacje...**  do wyświetlania lub zmieniania **kanału aktualizacji**.
+    * W programie Visual Studio dla komputerów Mac, przejdź do **programu Visual Studio for Mac > sprawdzić aktualizacje... ** do wyświetlania lub zmieniania **kanału aktualizacji**.
     * W programie Visual Studio 2015 i starszych Sprawdź kanału dystrybucji w obszarze **Narzędzia > Opcje > Xamarin > innych**.
 
 2. Upewnij się, że **logowania zdalnego** jest włączona na komputerach Mac. Ustaw dostęp dla **tylko ci użytkownicy**i upewnij się, że użytkowników komputerów Mac znajduje się na liście lub grupy:
@@ -127,7 +127,7 @@ Znane Przyczyna:
 
 ### <a name="trying-to-connect-never-completes"></a>"Próby nawiązania połączenia..." nigdy nie wykonuje
 
-- **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  — ten problem może wystąpić na program Xamarin 4.1 w przypadku **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w  **Preferencje systemu &gt; użytkowników &amp; grup** ma ustawioną wartość innych niż **/bin/bash**. (Począwszy od platformy Xamarin 4.2, w tym scenariuszu zamiast prowadzi do komunikat o błędzie "Nie może nawiązać połączenia".) **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
+- **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264) ** — ten problem może wystąpić na program Xamarin 4.1 w przypadku **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w ** Preferencje systemu &gt; użytkowników &amp; grup** ma ustawioną wartość innych niż **/bin/bash**. (Począwszy od platformy Xamarin 4.2, w tym scenariuszu zamiast prowadzi do komunikat o błędzie "Nie może nawiązać połączenia".) **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
 
 <a name="tryagain" />
 
@@ -139,11 +139,11 @@ Zgłoszony przyczyny:
 
 - **Błąd** — w przypadku niektórych użytkowników umieścić ten błąd podczas próby nawiązania połączenia z hostem kompilacji przez dwukrotne kliknięcie nazwy komputerów Mac w oknie dialogowym połączenia. **Możliwym obejściem**: [ręcznie dodać Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add) przy użyciu adresu IP.
 
-- **Błąd [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)**  — w przypadku niektórych użytkowników zostało uruchomione przez ten błąd, korzystając z połączenia sieci bezprzewodowej między hostem kompilacji Mac i systemu Windows. **Możliwym obejściem**: Przenieś oba komputery do połączeń sieci przewodowej.
+- **Błąd [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971) ** — w przypadku niektórych użytkowników zostało uruchomione przez ten błąd, korzystając z połączenia sieci bezprzewodowej między hostem kompilacji Mac i systemu Windows. **Możliwym obejściem**: Przenieś oba komputery do połączeń sieci przewodowej.
 
-- **Błąd [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)**  — na platformie Xamarin 4.0, zostanie wyświetlony ten komunikat w każdej chwili **$ głównej/.bashrc** plik na Mac zawiera błąd. (Począwszy od program Xamarin 4.1 błędów w **.bashrc** pliku nie będzie miało wpływ na proces łączenia.) **Obejście**: Przenieś **.bashrc** plików do lokalizacji kopii zapasowej (lub usuń go, jeśli wiadomo, że nie będzie potrzebny).
+- **Błąd [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642) ** — na platformie Xamarin 4.0, zostanie wyświetlony ten komunikat w każdej chwili **$ głównej/.bashrc** plik na Mac zawiera błąd. (Począwszy od program Xamarin 4.1 błędów w **.bashrc** pliku nie będzie miało wpływ na proces łączenia.) **Obejście**: Przenieś **.bashrc** plików do lokalizacji kopii zapasowej (lub usuń go, jeśli wiadomo, że nie będzie potrzebny).
 
-- **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  — ten błąd może wystąpić, jeśli **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w **systemu Preferencje > Użytkownicy i grupy** ma ustawioną wartość innych niż **/bin/bash**. **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
+- **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264) ** — ten błąd może wystąpić, jeśli **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w **systemu Preferencje > Użytkownicy i grupy** ma ustawioną wartość innych niż **/bin/bash**. **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
 
 - **Ograniczenie** — ten błąd może wystąpić, jeśli host kompilacji Mac jest podłączony do routera, który nie ma dostępu do Internetu (lub Mac jest przy użyciu serwera DNS, który upłynął limit czasu po otrzymaniu monitu, dla wyszukiwania wstecznego DNS komputer z systemem Windows). Visual Studio będzie zająć około 30 sekund można pobrać odcisku palca SSH i ostatecznie mogły nawiązać połączenia.
 
@@ -238,8 +238,7 @@ Jeśli w oknie danych wyjściowych nie zawiera wystarczających informacji do zd
 
     [![](troubleshooting-images/troubleshooting-image12.png "Zbieranie dzienników z pomocy > Xamarin > Zip dzienników")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
-4. Po otwarciu pliku zip, zostanie wyświetlona lista plików, podobnie jak w poniższym przykładzie. Błędy połączenia są najważniejsze pliki  **\*Ide.log** i  **\*Ide.svclog** plików. Te pliki zawierają tej wiadomości w dwóch nieco różne formaty. **.Svclog** XML i jest przydatne, jeśli chcesz przeglądać wiadomości. **Log** jest zwykły tekst i jest przydatne, jeśli chcesz przefiltrować komunikaty przy użyciu narzędzia wiersza polecenia.
-
+4. Po otwarciu pliku zip, zostanie wyświetlona lista plików, podobnie jak w poniższym przykładzie. Błędy połączenia są najważniejsze pliki ** \*Ide.log** i ** \*Ide.svclog** plików. Te pliki zawierają tej wiadomości w dwóch nieco różne formaty. **.Svclog** XML i jest przydatne, jeśli chcesz przeglądać wiadomości. **Log** jest zwykły tekst i jest przydatne, jeśli chcesz przefiltrować komunikaty przy użyciu narzędzia wiersza polecenia.
 
     Aby przejrzeć wszystkie komunikaty, wybierz i Otwórz **.svclog** pliku:
 
@@ -313,13 +312,13 @@ Uruchom środowisko Xcode dla komputerów Mac i upewnij się, że komputer firmy
 
 Zgłoszony przyczyny:
 
-- **Rozszerzenie [#36118](https://bugzilla.xamarin.com/show_bug.cgi?id=36118)**  — ten błąd może uniemożliwić kompilacje pomyślne, korzystając z programu Visual Studio jest adres IPv6 do połączenia z hostem kompilacji. (Połączenie host kompilacji nie obsługuje jeszcze adresów IPv6.)
+- **Rozszerzenie [#36118](https://bugzilla.xamarin.com/show_bug.cgi?id=36118) ** — ten błąd może uniemożliwić kompilacje pomyślne, korzystając z programu Visual Studio jest adres IPv6 do połączenia z hostem kompilacji. (Połączenie host kompilacji nie obsługuje jeszcze adresów IPv6.)
 
 ### <a name="xamarinios-visual-studio-plugin-fails-to-load-after-reinstallation-of-betaalpha-channel"></a>Xamarin.iOS Visual Studio wtyczki nie udało się załadować po ponownej instalacji kanału alfa/beta
 
 Usterka odpowiednich [#40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781).
 
-Ten problem może się tak zdarzyć, gdy program Visual Studio nie można odświeżyć pamięci podręcznej składników MEF. Jeśli tak jest, mogą pomóc w instalacji tego rozszerzenia programu Visual Studio: [https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
+Ten problem może się tak zdarzyć, gdy program Visual Studio nie można odświeżyć pamięci podręcznej składników MEF. Jeśli tak jest, instalowanie tego rozszerzenia programu Visual Studio może pomóc: [https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
 
 Spowoduje to wyczyszczenie pamięci podręcznej składników MEF usługi Visual Studio umożliwiają rozwiązywanie problemów z uszkodzenie pamięci podręcznej.
 

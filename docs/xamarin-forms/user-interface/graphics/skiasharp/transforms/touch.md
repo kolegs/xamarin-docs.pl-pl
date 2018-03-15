@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>Manipulacje Touch
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Jeśli `HitTest` metoda zwraca `true` & #x 2014; co oznacza, że palcem ma dotknięciu ekranu w obszarze zajmowane przez mapy bitowej & #x 2014; a następnie touch ID jest dodawany do `TouchIds` kolekcji. Ten identyfikator reprezentuje sekwencję zdarzeń touch dla tej linii papilarnych, dopóki palca wind na ekranie. Jeśli wiele palców touch mapę bitową, a następnie `touchIds` kolekcja zawiera identyfikator touch, dla każdej linii papilarnych.
+Jeśli `HitTest` metoda zwraca `true` &mdash; co oznacza, że palcem ma dotknięciu ekranu w obszarze zajmowane przez mapy bitowej &mdash; touch ID jest dodawana do `TouchIds` kolekcji. Ten identyfikator reprezentuje sekwencję zdarzeń touch dla tej linii papilarnych, dopóki palca wind na ekranie. Jeśli wiele palców touch mapę bitową, a następnie `touchIds` kolekcja zawiera identyfikator touch, dla każdej linii papilarnych.
 
 `TouchAction` Również wywołuje program obsługi `ProcessTouchEvent` klasy w `TouchManipulationBitmap`. Jest to, gdy niektóre (ale nie wszystkie) rzeczywistych dotykowego przetwarzanie zachodzi.
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 Zawsze, gdy został wybrany obracanie, metod manipulowania palca jednego i dwa palca najpierw obsługi obrót. W przypadku wykrycia obracania składnika obrotu skutecznie zostaną usunięte. Co to jest jest interpretowany jako przesuwać i skalowania.
 
-Oto `OneFingerManipulate` metody. Jeśli nie włączono obrotu jeden palca, następnie logiki jest prosty & #x 2014; po prostu używa poprzedniego punktu i nowy punkt do utworzenia wektora o nazwie `delta` odpowiada dokładnie tłumaczenia. Z obrotu palca jeden włączony metoda wykorzystuje kąty z punktu obrotu (center mapy bitowej) do poprzedniego punktu i nowy punkt do utworzenia macierzy obrotu:
+Oto `OneFingerManipulate` metody. Jeden palca obrotu nie została włączona, a następnie logiki jest proste &mdash; po prostu używa poprzedniego punktu i nowy punkt do utworzenia wektora o nazwie `delta` odpowiada dokładnie tłumaczenia. Z obrotu palca jeden włączony metoda wykorzystuje kąty z punktu obrotu (center mapy bitowej) do poprzedniego punktu i nowy punkt do utworzenia macierzy obrotu:
 
 ```csharp
 class TouchManipulationManager

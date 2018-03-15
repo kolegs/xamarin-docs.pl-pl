@@ -1,5 +1,6 @@
 ---
-title: Instalacja i wymagania
+title: Inspektor instalacji i wymagania
+description: "Jak pobrać, zainstalować i używać Inspektora Xamarin."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
@@ -7,35 +8,28 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a587935e35882ed1dc68817fbbe1ae3e91200f29
-ms.sourcegitcommit: 0bdcd00b64d581d4c5179bc39ded4018c9374229
+ms.openlocfilehash: a2e6f254c77ac099b5700543db5763b8bbb44fef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Instalacja i wymagania
-
-<script> var inspectorOnLoad = (funkcja) {var primaryTextBase = "Skoroszyty Xamarin & inspektora dla"; var secondaryTextBase = "lub Pobierz dla"; var inspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin = "https://dl.xamarin.com/interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  Jeśli (/win/i.test(navigator.platform.toLowerCase())) {aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase;}
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="inspector-installation-and-requirements"></a>Inspektor instalacji i wymagania
 
 ## <a name="download-and-installation"></a>Pobierania i instalacji
 
-<ol>
-  <li>Pobierz i zainstaluj <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">skoroszytów Xamarin & Inspektor dla komputerów Mac</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">lub pobrania dla systemu Windows</a>).
-  </li>
-  <li><a href="~/tools/inspector/inspect.md"> Sprawdź własną aplikację!</a>
-    </li>
-</ol>
+
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Pobierz i zainstaluj [skoroszytów Xamarin & inspektora dla systemu Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+2. [Sprawdź własną aplikację!](~/tools/inspector/inspect.md)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Pobierz i zainstaluj [skoroszytów Xamarin & Inspektor dla komputerów Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+2. [Sprawdź własną aplikację!](~/tools/inspector/inspect.md)
+
+-----
 
 ## <a name="requirements"></a>Wymagania
 
@@ -57,43 +51,13 @@ Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
 ### <a name="supported-app-platforms"></a>Platformy obsługiwanej aplikacji
 
-<table>
-<thead>
-  <tr>
-    <th>Platforma aplikacji</th>
-    <th>Obsługa środowiska IDE</th>
-    <th>Uwagi</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Unified)</td>
-    <td>Obsługiwane tylko dla komputerów Mac</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Unified)</td>
-    <td>Obsługiwane w XS i Visual Studio</td>
-    <td>Procedury kontroli aplikacji systemu iOS z systemu Windows wymaga tej samej wersji Inspektora można także zainstalować na hoście kompilacji Mac.</td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Obsługiwane w XS i Visual Studio</td>
-    <td>
-      <ul>
-        <li>Muszą wskazywać Android > = 4.0.3</li>
-        <li>Musi mieć fastdev włączone</li>
-        <li>Należy użyć Google, Visual Studio lub Xamarin Android emulatorów. Android emulatorów 7 kontroli w tej chwili jest niedozwolona.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Obsługiwane tylko w programie Visual Studio w systemie Windows</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Platforma aplikacji|Obsługa środowiska IDE|Uwagi|
+|--- |--- |--- |
+|Mac (Unified)|Obsługiwane tylko dla komputerów Mac|
+|iOS (Unified)|Obsługiwane w XS i Visual Studio|Procedury kontroli aplikacji systemu iOS z systemu Windows wymaga tej samej wersji Inspektora można także zainstalować na hoście kompilacji Mac.|
+|Android|Obsługiwane w XS i Visual Studio|Muszą wskazywać Android > = 4.0.3, z **fastdev** włączone.<br />Należy użyć Google, Visual Studio lub Xamarin Android emulatorów. Android emulatorów 7 kontroli w tej chwili jest niedozwolona.|
+|WPF|Obsługiwane tylko w programie Visual Studio w systemie Windows|
+
 
 <a name="reporting-bugs" />
 
@@ -101,7 +65,7 @@ Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
 Powinny być zgłaszane usterki bezpośrednio za pomocą programu Visual Studio:
 
-- **Pomoc → Wyślij opinię → Raportowanie problemu**
+- **Pomoc > Prześlij opinię > Zgłoś Problem**
 
 Podaj następujące informacje:
 
@@ -111,12 +75,12 @@ Te informacje są istotne.
 
 Visual Studio For Mac
 
-- **Informacje programu Visual Studio → Pokaż szczegóły → kopii programu Visual Studio →**
+- **Visual Studio > o Visual Studio > Pokaż szczegóły > Kopiowanie informacji**
 - Wklej do usterek — raport
 
 Xamarin Studio
 
-- **Program Xamarin Studio → o program Xamarin Studio → Pokaż szczegóły → kopiowanie informacji**
+- **Program Xamarin Studio > o Xamarin Studio > Pokaż szczegóły > Kopiowanie informacji**
 - Wklej do usterek — raport
 
 Visual Studio
@@ -135,7 +99,7 @@ Inspektor klienta
 
 1.4.x funkcji również możliwość wybrania pliku dziennika w wyszukiwania (macOS) lub w Eksploratorze (system Windows) bezpośrednio z poziomu menu głównego:
 
-- **Plik dziennika ujawniania → pomocy**
+- **Pomoc > ujawnić pliku dziennika**
 
 Visual Studio For Mac
 
@@ -148,11 +112,11 @@ Xamarin Studio
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Zawartość programu Visual Studio `Output` okienko może również służyć jako źródło informacji.
+- Zawartość programu Visual Studio **dane wyjściowe** okienko może również służyć jako źródło informacji.
 
 ### <a name="project-settings"></a>Ustawienia projektu
 
-Jeśli możesz dołączyć `.csproj` dla projektu chcesz sprawdzić, czy można bardzo przydatne. To jest łatwiejsze niż pytaniem o poszczególnych ustawieniach.
+Jeśli możesz dołączyć **.csproj** dla projektu chcesz sprawdzić, czy można bardzo przydatne. To jest łatwiejsze niż pytaniem o poszczególnych ustawieniach.
 
 Również Potwierdź, że jesteś w konfiguracji debugowania.
 
@@ -177,13 +141,13 @@ W zależności od tego, jak nabył skoroszyty & Inspektor należy wykonać dwie 
 
 #### <a name="visual-studio-installer"></a>Visual Studio Installer
 
-Jeśli masz program Visual Studio 2017 Otwórz "Instalator programu Visual Studio" i Znajdź "Pojedynczych składników" dla "Xamarin skoroszytów". Jeśli jest ono zaznaczone, usuń jej zaznaczenie, a następnie kliknij przycisk "Modyfikuj", aby odinstalować.
+Jeśli masz program Visual Studio 2017 Otwórz **Instalator programu Visual Studio**i Znajdź **pojedynczych składników** dla **skoroszytów Xamarin**. Jeśli jest ono zaznaczone, usuń jej zaznaczenie, a następnie kliknij przycisk "Modyfikuj", aby odinstalować.
 
 #### <a name="system-uninstall"></a>System Uninstall
 
 Jeśli zainstalowano skoroszyty & Inspektor samodzielnie przy użyciu pobranego Instalatora, będzie musiała zostać usunięta przez **aplikacje i funkcje** strona Ustawienia systemu Windows 10 lub za pośrednictwem **Dodaj lub usuń programy**w Panelu sterowania w starszych wersjach systemu Windows.
 
-> **Uruchom ustawienia → → systemu → aplikacje i funkcje**
+> **Start > Ustawienia > System > aplikacje i funkcje**
 
 ![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w temacie "Aplikacje i funkcje"")
 

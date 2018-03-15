@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a37773b666e015277d2fecc103066e82b6f7f108
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ec91a7c100f294437bb1498fcd56a35f5b19c399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="navigation"></a>Nawigacji
 
@@ -51,36 +51,13 @@ public interface INavigationService
 
 Ten interfejs określa, że klasa implementująca musi zapewniać następujących metod:
 
-<table>
-<thead>
-<tr class="header">
-<th>Metoda</th>
-<th>Cel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>InitializeAsync</code></td>
-<td>Wykonuje nawigacji do jednej z dwóch stron, gdy aplikacja jest uruchamiana.</td>
-</tr>
-<tr class="even">
-<td><code>NavigateToAsync<T></code></td>
-<td>Wykonuje hierarchiczna nawigacji do określonej strony.</td>
-</tr>
-<tr class="odd">
-<td><code>NavigateToAsync<T>(parameter)</code></td>
-<td>Wykonuje hierarchiczna nawigacji do określonej strony, przekazanie parametru.</td>
-</tr>
-<tr class="even">
-<td><code>RemoveLastFromBackStackAsync</code></td>
-<td>Usuwa poprzedniej strony z stos nawigacji.</td>
-</tr>
-<tr class="odd">
-<td><code>RemoveBackStackAsync</code></td>
-<td>Usuwa wszystkich poprzednich stron z stos nawigacji.</td>
-</tr>
-</tbody>
-</table>
+|Metoda|Cel|
+|--- |--- |
+|`InitializeAsync`|Wykonuje nawigacji do jednej z dwóch stron, gdy aplikacja jest uruchamiana.|
+|`NavigateToAsync`|Wykonuje hierarchiczna nawigacji do określonej strony.|
+|`NavigateToAsync(parameter)`|Wykonuje hierarchiczna nawigacji do określonej strony, przekazanie parametru.|
+|`RemoveLastFromBackStackAsync`|Usuwa poprzedniej strony z stos nawigacji.|
+|`RemoveBackStackAsync`|Usuwa wszystkich poprzednich stron z stos nawigacji.|
 
 Ponadto `INavigationService` interfejsu określa, że klasa implementująca musi zapewniać `PreviousPageViewModel` właściwości. Ta właściwość zwraca typ modelu widoku skojarzone z poprzedniej strony w stosie nawigacji.
 

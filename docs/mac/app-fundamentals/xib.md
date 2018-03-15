@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xib-files"></a>pliki .xib
 
@@ -67,7 +67,7 @@ Po otwarciu pliku .xib do edycji w programie Xcode, Visual Studio for Mac tworzy
 
 #### <a name="properties--utilities"></a>Właściwości i narzędzia
 
-**Właściwości i narzędzia** sekcji jest devided na dwie sekcje główne, które firma Microsoft będzie działać, **właściwości** (nazywanych również inspektorzy) i **biblioteki**:
+**Właściwości i narzędzia** sekcja jest podzielona na dwie sekcje główne, które firma Microsoft będzie działać, **właściwości** (nazywanych również inspektorzy) i **biblioteki**:
 
 ![Inspektora właściwości](xib-images/xcode04.png "Inspektora właściwości")
 
@@ -375,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 Ten kod dołącza do akcji, który został utworzony w programie Xcode i kompilatora interfejsu i zostanie wywołana w dowolnym momencie użytkownik kliknie przycisk.
 
-Niektóre elementy interfejsu użytkownika automatycznie utworzone w akcji, na przykład na pasku Menu domyślne elementów takich jak **Otwórz...**  elementu menu (`openDocument:`). W **konsoli rozwiązania**, kliknij dwukrotnie `AppDelegate.CS` plik, aby otworzyć do edycji i Dodaj następujący kod poniżej `DidFinishLaunching` metody:
+Niektóre elementy interfejsu użytkownika automatycznie utworzone w akcji, na przykład na pasku Menu domyślne elementów takich jak **Otwórz... ** elementu menu (`openDocument:`). W **konsoli rozwiązania**, kliknij dwukrotnie **AppDelegate.cs** plik, aby otworzyć do edycji i Dodaj następujący kod poniżej `DidFinishLaunching` metody:
 
 ```csharp
 [Export ("openDocument:")]
@@ -440,7 +440,7 @@ Jako uzupełnienie okna głównego dokumentu aplikacji Xamarin.Mac może być ko
 
 Aby dodać nowe okno, wykonaj następujące czynności:
 
-1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik.** .
+1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik. **.
 2. W oknie dialogowym Nowy plik, wybierz **Xamarin.Mac** > **Cocoa okna z kontrolera**:
 
     ![Dodawanie nowego kontrolera okna](xib-images/new01.png "dodawania nowego kontrolera okna")
@@ -466,7 +466,7 @@ void ShowPreferences (NSObject sender)
 
 `var preferences = new PreferencesWindowController ();` Wiersz tworzy nowe wystąpienie klasy kontrolera okna, który ładuje okna z pliku .xib i nadyma go. `preferences.Window.MakeKeyAndOrderFront (this);` Wiersz zawiera nowe okno do użytkownika.
 
-Jeżeli możesz uruchomić kod i wybierz **Preferencje...**  z **Menu aplikacja**, wyświetli się okno:
+Jeżeli możesz uruchomić kod i wybierz **Preferencje... ** z **Menu aplikacja**, wyświetli się okno:
 
 ![Przykładowa aplikacja uruchomiona](xib-images/new04.png "systemem przykładowej aplikacji")
 
@@ -481,7 +481,7 @@ Podczas dodawania nowego widoku do projektu należy zawsze używać **Cocoa wido
 
 Aby dodać nowy widok, wykonaj następujące czynności:
 
-1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik.** .
+1. W **konsoli rozwiązania**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik. **.
 2. W oknie dialogowym Nowy plik, wybierz **Xamarin.Mac** > **Cocoa widoku z kontrolerem**:
 
     ![Dodawanie nowego widoku](xib-images/view01.png "dodanie nowego widoku")

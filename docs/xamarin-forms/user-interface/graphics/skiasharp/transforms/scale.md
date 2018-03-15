@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-scale-transform"></a>Przekształcanie skali
 
@@ -44,7 +44,7 @@ Wartości domyślne czynników Przetłumacz to 0; wartości domyślne czynników
 public void Scale (Single s)
 ```
 
-Jest to nazywane *izotropowego* skalowanie & #x 2014; skalowanie który jest taka sama w obu kierunkach. Skalowanie izotropowego zachowuje współczynnik proporcji obiektu.
+Jest to nazywane *izotropowego* skalowanie &mdash; skalowanie który jest taka sama w obu kierunkach. Skalowanie izotropowego zachowuje współczynnik proporcji obiektu.
 
 Drugi [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metoda pozwala określić różne wartości skalowanie w pionie i w poziomie:
 
@@ -168,7 +168,7 @@ Znajduje się w lewym górnym rogu zaokrąglony prostokąt `margin` pikseli z le
 
 [![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")](scale-images/centeredscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")
 
-`Slider` Elementy w tym programie mają zakres & #x 2013; 10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
+`Slider` Elementów w tym programie ma wartości zakresu &ndash;10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
 
 Ta wersja czwarty `Scale` metoda jest rzeczywiście skrótu. Możesz zobaczyć, jak to działa przez zastąpienie `Scale` metody w tym kodzie następującym kodem:
 

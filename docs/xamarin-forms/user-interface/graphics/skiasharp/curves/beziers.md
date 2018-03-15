@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Trzy typy krzywych Beziera
 
@@ -20,7 +20,7 @@ _Eksploruj sposób użycia SkiaSharp do renderowania sześcienny kwadratową i c
 
 Po Pierre Beziera (1910 — 1999), francuskim inżynierem motoryzacyjnych firmy Renault, przy krzywej dotyczące projektowania przy pomocy komputera organów samochodu nosi nazwę krzywej Beziera.
 
-Krzywe Beziera wiadomo, jest odpowiednie do interaktywnego projektowania: one są dobrze działa & #x 2014; oznacza to że nie ma singularities powodujących krzywej do nieskończonej lub niewygodna & #x 2014; i są zwykle aesthetically czytelnych. Zawiera znak czcionek oparte na komputerze są zazwyczaj definiowane przy użyciu krzywych Beziera:
+Krzywe Beziera wiadomo, jest odpowiednie do interaktywnego projektowania: znajdują się również behaved &mdash; innymi słowy, nie ma singularities powodujących krzywej do nieskończonej lub niewygodna &mdash; i zwykle aesthetically czytelnych . Zawiera znak czcionek oparte na komputerze są zazwyczaj definiowane przy użyciu krzywych Beziera:
 
 ![](beziers-images/beziersample.png "Przykładowe krzywej Beziera")
 
@@ -411,7 +411,7 @@ Jednak kształt kwadratową krzywej Beziera nie jest eliptycznej, dlatego wiele 
 
 ## <a name="the-conic-bzier-curve"></a>Conic krzywej Beziera
 
-Conic krzywej Beziera & #x 2014; znany również jako wymierna kwadratową krzywej Beziera & #x 2014; jest stosunkowo niedawne dodanie do rodziny krzywych Beziera. Podobnie jak kwadratową krzywej Beziera wymierna kwadratową krzywej Beziera obejmuje punkt początkowy punkt końcowy i punkt kontrolny jeden. Ale wymaga wymierna kwadratową krzywej Beziera *wagi* wartość. Jest to *wymierna* kwadratową, ponieważ parametrycznych formuły wymagają wskaźników.
+Conic krzywej Beziera &mdash; znanej także jako wymierna kwadratową krzywej Beziera &mdash; jest stosunkowo niedawne dodanie do rodziny krzywych Beziera. Podobnie jak kwadratową krzywej Beziera wymierna kwadratową krzywej Beziera obejmuje punkt początkowy punkt końcowy i punkt kontrolny jeden. Ale wymaga wymierna kwadratową krzywej Beziera *wagi* wartość. Jest to *wymierna* kwadratową, ponieważ parametrycznych formuły wymagają wskaźników.
 
 Parametrycznych równania X i Y to współczynnik, które współużytkują tego samego denominator. Oto równanie denominator dla *t* zakresu od 0 do 1 i wartość wagi *w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t) ²x₀ + 2wt (1 – t) x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1 – t) y₁ + t²y₂)) ÷ d(t)
 
-Wymierna kwadratową krzywych Beziera są również nazywane *conics* ponieważ dokładnie reprezentują segmenty dowolnej sekcji conic & #x 2014; hiperbole, parabole elipsy i kółka.
+Wymierna kwadratową krzywych Beziera są również nazywane *conics* ponieważ dokładnie reprezentują segmentów dowolnej sekcji conic &mdash; hiperbole, parabole elipsy i kółka.
 
 Aby dodać krzywą kwadratową Beziera wymierna do ścieżki, użyj [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metody lub [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` współrzędne:
 

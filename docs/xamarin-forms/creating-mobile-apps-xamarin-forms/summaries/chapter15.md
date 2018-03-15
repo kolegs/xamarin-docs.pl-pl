@@ -7,11 +7,11 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 09b999771ec500409e40dc2aef671045bf9f5565
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Podsumowanie działu 15. Interaktywnego interfejsu
 
@@ -30,37 +30,12 @@ Platformy Xamarin.Forms zawiera 20 tworzone jako wystąpienia klasy, które poch
 
 Osiem widoków, w tym rozdziale skutecznie Zezwalaj użytkownikom na interakcję z podstawowych typów danych .NET:
 
-<table>
-  <tr>
-    <th>Typ danych</th>
-    <th>Widoki</th>
-  </tr>
-  <tr>
-    <td>`Double`</td>
-    <td
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/">Suwak</a></code>,
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/">Stepper</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`Boolean`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/">Switch</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`String`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">Entry</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/">Editor</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/">SearchBar</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`DateTime`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/">DatePicker</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/">TimePicker</a></code>
-    </td>
-  </tr>
-</table>
+|Typ danych|Widoki|
+|--- |--- |
+|`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
+|`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
+|`String`|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/), [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|
+|`DateTime`|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/), [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|
 
 Widoki te można traktować jako podstawowe typy danych visual interaktywnej prezentacji. To pojęcie jest bardziej przedstawione w rozdziale dalej [ **rozdziale 16. Powiązanie danych**](chapter16.md).
 
@@ -116,7 +91,7 @@ Inicjowanie `Slider` właściwości może spowodować `Value` właściwości do 
 
 - [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) typu `double`, zainicjowane 1
 
-Efekty wizualne `Stepper` składa się z dwóch przycisków z etykietą **& #x 2013;** i  **+** . Naciśnięcie przycisku **& #x 2013;** zmniejsza `Value` przez `Increment` co najmniej `Minimum`. Naciśnięcie przycisku  **+**  zwiększa `Value` przez `Increment` maksymalnie `Maximum`.
+Efekty wizualne `Stepper` składa się z dwóch przycisków z etykietą  **&ndash;**  i  **+** . Naciśnięcie przycisku  **&ndash;**  zmniejsza `Value` przez `Increment` co najmniej `Minimum`. Naciśnięcie przycisku  **+**  zwiększa `Value` przez `Increment` maksymalnie `Maximum`.
 
 Wskazuje na [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) próbki.
 

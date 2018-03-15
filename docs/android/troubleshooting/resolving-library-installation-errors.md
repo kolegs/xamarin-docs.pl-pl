@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/14/2018
+ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Rozwiązywanie błędów instalacji biblioteki
 
@@ -104,7 +104,7 @@ Jeśli wykonano za pomocą powyższe kroki automatycznego odzyskiwania i nadal w
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    Jeśli **m2repository** archiwum nie ma w tej tabeli, można utworzyć adres URL pobierania, dołączając **https://dl-ssl.google.com/android/repository/** na nazwę **m2repository**  do pobrania. Na przykład użyć **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** do pobrania **android\_m2repository\_r10.zip** .
+    Jeśli **m2repository** archiwum nie ma w tej tabeli, można utworzyć adres URL pobierania, dołączając  **https://dl-ssl.google.com/android/repository/**  na nazwę **m2repository** do pobrania. Na przykład użyć  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** do pobrania **android\_m2repository\_r10.zip**.
 
 2.  Zmień nazwę pliku do odpowiedniego skrótu MD5 adresu URL pobierania, jak pokazano w powyższej tabeli. Na przykład, jeśli pobrano **android\_m2repository\_r25.zip**, zmienić jego nazwę na **0B3F1796C97C707339FB13AE8507AF50.zip**. Jeśli wartość skrótu MD5 dla adresu URL pobierania pobranego pliku nie jest wyświetlany w tabeli, możesz użyć [online MD5 generator](http://www.webconfs.com/online-md5-generator.php) można przekonwertować na ciąg skrótu MD5 adresu URL. 
 
@@ -160,6 +160,8 @@ Wykonaj następujące kroki, aby pobrać **m2repository** i zainstaluj jego zawa
     [![Przykładowe pliki kopiowane do folderu 23.1.1.0/embedded](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  Upewnij się, że wszystkie pliki są kopiowane. **Osadzone** katalogu teraz powinien zawierać pliki takie jak **JAR**, **.aar**, i **.pom**.
+
+9.  Rozpakuj żadnego wyodrębnione **.aar** plików. W systemie Windows, dołącz **.zip** rozszerzenia **.aar** pliku, kliknij go prawym przyciskiem myszy i wybierz **Wyodrębnij wszystkie...** , następnie usuń **.zip** rozszerzenia. Na macOS, Rozpakuj **.aar** pliku przy użyciu **Rozpakuj** w terminalu (na przykład **Rozpakuj file.aar**).
 
 W tym momencie ręcznie zainstalowano brakujące składniki i projektu powinno utworzyć bez błędów. Jeśli nie, upewnij się, że pobrano **m2repository** **.zip** archiwum wersji, która dokładnie odpowiada wersji w komunikacie o błędzie, a następnie sprawdź, czy zostały zainstalowane jego zawartość w Popraw lokalizacje, zgodnie z opisem w powyższej procedurze. 
 

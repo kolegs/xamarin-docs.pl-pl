@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>Korzystanie z usługi sieci RESTful Web
 
@@ -49,42 +49,12 @@ Instrukcje dotyczące konfigurowania usługi REST można znaleźć w pliku readm
 
 Usługa REST jest zapisywany przy użyciu platformy ASP.NET Core i zapewnia następujące operacje:
 
-<table>
-  <thead>
-    <tr>
-      <th>Operacja</th>
-      <th>Metoda HTTP</th>
-      <th>Względny identyfikator URI</th>
-      <th>Parametry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Pobierz listę elementów do wykonania</td>
-      <td>GET</td>
-      <td>/API/todoitems /</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Utwórz nowy element zadania do wykonania</td>
-      <td>POST</td>
-      <td>/API/todoitems /</td>
-      <td>W formacie JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Aktualizuj element do wykonania</td>
-      <td>UMIEŚĆ</td>
-      <td>/API/todoitems /</td>
-      <td>W formacie JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Usuń element do wykonania</td>
-      <td>DELETE</td>
-      <td>/API/todoitems / {id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|Operacja|Metoda HTTP|Względny identyfikator URI|Parametry|
+|--- |--- |--- |--- |
+|Pobierz listę elementów do wykonania|GET|/API/todoitems /|
+|Utwórz nowy element zadania do wykonania|POST|/API/todoitems /|TodoItem w formacie JSON|
+|Aktualizuj element do wykonania|UMIEŚĆ|/API/todoitems /|TodoItem w formacie JSON|
+|Usuń element do wykonania|DELETE|/API/todoitems / {id}|
 
 Większość identyfikatory URI obejmują `TodoItem` identyfikator w ścieżce. Na przykład, aby usunąć `TodoItem` których identyfikator jest `6bb8a868-dba1-4f1a-93b7-24ebce87e243`, klient wysyła żądanie usunięcia `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`. Aby uzyskać więcej informacji na temat modelu danych używany w przykładowej aplikacji, zobacz [modelowania danych](~/xamarin-forms/data-cloud/walkthrough.md).
 

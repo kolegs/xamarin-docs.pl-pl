@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>Podstawowe animacji
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while` Pętli rozpoczyna się od czasu cyklu od uzyskania `Slider`. Jest to czas w sekundach, na przykład 5. Druga instrukcja oblicza wartość `t` dla *czas*. Aby uzyskać `cycleTime` 5, `t` zwiększa z zakresu od 0 do 1 co 5 sekund. Argument `Math.Sin` funkcji w drugim instrukcji w zakresie od 0 do 2π co 5 sekund. `Math.Sin` Funkcja zwraca wartość z zakresu od 0 do 1 z powrotem na 0, a następnie & #x 2013; 1 lub 0 co 5 sekund, ale z wartości, które zmieniają wolniej, gdy wartość jest bliski 1 lub -1. Wartość 1 jest dodawana, więc wartości są zawsze dodatnią, a następnie scenariusz jest podzielony przez 2, więc wartości z zakresu od ½, 1, aby ½ na 0, aby ½, ale wolniej, gdy wartość jest równa około 1 i 0. To jest przechowywane w `scale` pola i `SKCanvasView` zostało unieważnione.
+`while` Pętli rozpoczyna się od czasu cyklu od uzyskania `Slider`. Jest to czas w sekundach, na przykład 5. Druga instrukcja oblicza wartość `t` dla *czas*. Aby uzyskać `cycleTime` 5, `t` zwiększa z zakresu od 0 do 1 co 5 sekund. Argument `Math.Sin` funkcji w drugim instrukcji w zakresie od 0 do 2π co 5 sekund. `Math.Sin` Funkcja zwraca wartość z zakresu od 0 do 1 wstecz na 0, a następnie &ndash;1 i 0 co 5 sekund, ale z wartości, które zmieniają wolniej, gdy wartość jest bliski 1 lub -1. Wartość 1 jest dodawana, więc wartości są zawsze dodatnią, a następnie scenariusz jest podzielony przez 2, więc wartości z zakresu od ½, 1, aby ½ na 0, aby ½, ale wolniej, gdy wartość jest równa około 1 i 0. To jest przechowywane w `scale` pola i `SKCanvasView` zostało unieważnione.
 
 `PaintSurface` Metoda używa to `scale` wartość do obliczenia dwóch osiach elipsy:
 

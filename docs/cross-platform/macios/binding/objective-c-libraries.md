@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f0e8dabc47352213d18d079ee9f8abb3e557b868
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Powiązanie bibliotek języka Objective C
 
@@ -1514,6 +1514,6 @@ Począwszy od platformy Xamarin.iOS wersja 3.2 lub, firma Microsoft obsługuje d
 
 W przeszłości firma Microsoft wymaga kopiowanie co implementacji protokołu, ale w tych przypadkach firma Microsoft może już `MKShape` klasa dziedziczy `MKOverlay` protokołu i wygeneruje wymaganych metod automatycznie.
 
-### <a name="related-links"></a>Linki pokrewne
+## <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe powiązania](https://developer.xamarin.com/samples/BindingSample/)

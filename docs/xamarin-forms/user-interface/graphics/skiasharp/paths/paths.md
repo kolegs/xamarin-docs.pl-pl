@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>Podstawowe informacje o ścieżce
 
@@ -115,7 +115,7 @@ Jak widać, pierwszy rozkład to oczywiście szereg trzy połączone linie, ale 
 - `AddPath` Aby dodać inną ścieżkę do bieżącej ścieżki
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) Aby dodać inną ścieżkę odwrotnie
 
-Należy pamiętać, że `SKPath` definiuje obiekt tylko geometrii & #x 2014; serii punktów i połączeń. Tylko wtedy, gdy `SKPath` jest połączona z `SKPaint` obiektu jest ścieżką z konkretnym kolor, szerokość pociągnięć i tak dalej. Ponadto należy pamiętać, że `SKPaint` obiekt przekazywany do `DrawPath` metoda definiuje właściwości pełną ścieżkę. Jeśli chcesz narysować coś wymagające kilka kolorów, należy użyć oddzielnych ścieżki dla każdego koloru.
+Należy pamiętać, że `SKPath` obiekt definiuje tylko geometrię &mdash; serii punktów i połączeń. Tylko wtedy, gdy `SKPath` jest połączona z `SKPaint` obiektu jest ścieżką z konkretnym kolor, szerokość pociągnięć i tak dalej. Ponadto należy pamiętać, że `SKPaint` obiekt przekazywany do `DrawPath` metoda definiuje właściwości pełną ścieżkę. Jeśli chcesz narysować coś wymagające kilka kolorów, należy użyć oddzielnych ścieżki dla każdego koloru.
 
 Tak jak wygląd rozpoczęcia i zakończenia wiersza jest definiowana za pomocą koniec obrysu, wygląd połączenie między dwoma liniami jest definiowana za pomocą *sprzężenia obrysu*. Określ to ustawienie [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) właściwość `SKPaint` do elementu członkowskiego [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) wyliczenie:
 
