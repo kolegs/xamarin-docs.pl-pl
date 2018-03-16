@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 30cfb1c8bbd65ec8ef69d2d9bc22906a8726ae62
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
-ms.translationtype: HT
+ms.openlocfilehash: 1f3f9316aec4ebfa0bb0868dd341abbfaa613cbc
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="build-process"></a>Proces kompilacji
 
@@ -23,40 +23,37 @@ Proces kompilacji Xamarin.Android jest odpowiedzialny za przyklejanie wszystko, 
 
 ## <a name="application-packages"></a>Pakiety aplikacji
 
-Szerokie warunków, istnieją dwa typy pakietów aplikacji systemu Android (`.apk` plików), które mogą generować Xamarin.Android system kompilacji:
+Szerokie warunków, istnieją dwa typy pakietów aplikacji systemu Android (`.apk` plików), które mogą generować Xamarin.Android system kompilacji: 
 
--   **Wersja** kompilacje, które są całkowicie niezależne i nie wymagają dodatkowych pakietów do wykonania. Są to pakiety, które można dostarczyć do sklepu z aplikacjami.
+-   **Wersja** kompilacje, które są całkowicie niezależne i nie wymagają dodatkowych pakietów do wykonania. Są to pakiety, które można dostarczyć do sklepu z aplikacjami. 
 
--   **Debugowanie** kompilacje, które nie są.
+-   **Debugowanie** kompilacje, które nie są. 
 
 Nie przypadkowo odpowiadają one MSBuild `Configuration` który tworzy pakiet.
-
 
 ### <a name="shared-runtime"></a>Udostępniony środowiska wykonawczego
 
 *Udostępnionych środowiska uruchomieniowego* jest para dodatkowe pakiety systemu Android, które zawierają Biblioteka klasy podstawowej (`mscorlib.dll`, itd.) i biblioteki systemu Android powiązania (`Mono.Android.dll`itp.). Debugowanie kompilacji opierają się na udostępnionym środowiska uruchomieniowego zamiast tym Biblioteka klasy podstawowej i zestawy powiązania w pakiecie aplikacji systemu Android, dzięki czemu pakiet debugowania może być mniejszy.
 
-Udostępniony środowiska uruchomieniowego, które mogą być wyłączone w kompilacjach debugowania przez ustawienie `$(AndroidUseSharedRuntime)` właściwości `False`.
+Udostępniony środowiska uruchomieniowego, które mogą być wyłączone w kompilacjach debugowania przez ustawienie `$(AndroidUseSharedRuntime)` właściwości `False`. 
 
 <a name="Fast_Deployment" />
 
 ### <a name="fast-deployment"></a>Szybkie wdrażanie
 
-*Szybkie wdrażanie* współdziała z udostępnionego środowiska uruchomieniowego dalsze zmniejszenie rozmiaru pakietu aplikacji systemu Android. Jest to realizowane przez nie tworzenie pakietów aplikacji zestawów w pakiecie. Zamiast tego są kopiowane na urządzeniu docelowym za pośrednictwem `adb push`. Ten proces szybciej cyklu kompilacji/wdrażanie/debug, ponieważ jeśli *tylko* zestawy są zmieniane, pakiet nie zostanie ponownie zainstalowana. Zamiast tego zaktualizowane zestawy są ponownie zsynchronizować na urządzeniu docelowym.
+*Szybkie wdrażanie* współdziała z udostępnionego środowiska uruchomieniowego dalsze zmniejszenie rozmiaru pakietu aplikacji systemu Android. Jest to realizowane przez nie tworzenie pakietów aplikacji zestawów w pakiecie. Zamiast tego są kopiowane na urządzeniu docelowym za pośrednictwem `adb push`. Ten proces szybciej cyklu kompilacji/wdrażanie/debug, ponieważ jeśli *tylko* zestawy są zmieniane, pakiet nie zostanie ponownie zainstalowana. Zamiast tego zaktualizowane zestawy są ponownie zsynchronizować na urządzeniu docelowym. 
 
-Szybkie wdrożenie jest znany niepowodzenie na urządzeniach, które blokują `adb` z synchronizacją katalogu `/data/data/@PACKAGE_NAME@/files/.__override__`.
+Szybkie wdrożenie jest znany niepowodzenie na urządzeniach, które blokują `adb` z synchronizacją katalogu `/data/data/@PACKAGE_NAME@/files/.__override__`. 
 
 Szybkie wdrożenie jest domyślnie włączona i mogą być wyłączone w wydajność debugowania kompilacji dzięki ustawienie `$(EmbedAssembliesIntoApk)` właściwości `True`.
-
 
 
 ## <a name="msbuild-projects"></a>Projektów MSBuild
 
 Proces kompilacji Xamarin.Android jest oparta na MSBuild, który jest także format pliku projektu, które są używane przez program Visual Studio for Mac i Visual Studio.
-Zwykle, użytkownicy nie muszą ręcznie edytować pliki programu MSBuild &ndash; IDE tworzy funkcjonalnej projektów i aktualizuje je ze zmianami wprowadzonymi i automatycznie wywołują obiekty docelowe kompilacji zgodnie z potrzebami.
+Zwykle, użytkownicy nie muszą ręcznie edytować pliki programu MSBuild &ndash; IDE tworzy funkcjonalnej projektów i aktualizuje je ze zmianami wprowadzonymi i automatycznie wywołują obiekty docelowe kompilacji zgodnie z potrzebami. 
 
-Użytkownicy wersji Advanced możesz wykonać czynności nie są obsługiwane przez interfejsu graficznego programu IDE, więc proces kompilacji jest funkcję przez bezpośrednią edycję pliku projektu.
-Ta strona dokumentów tylko funkcje specyficzne dla platformy Xamarin.Android i dostosowania &ndash; wiele więcej opcji są możliwe z normalnym MSBuild elementów, właściwości i elementów docelowych.
+Użytkownicy wersji Advanced możesz wykonać czynności nie są obsługiwane przez interfejsu graficznego programu IDE, więc proces kompilacji jest funkcję przez bezpośrednią edycję pliku projektu. Ta strona dokumentów tylko funkcje specyficzne dla platformy Xamarin.Android i dostosowania &ndash; wiele więcej opcji są możliwe z normalnym MSBuild elementów, właściwości i elementów docelowych. 
 
 <a name="Build_Targets" />
 
@@ -79,13 +76,13 @@ Następujące obiekty docelowe kompilacji są definiowane dla platformy Xamarin.
 
 ## <a name="build-properties"></a>Właściwości kompilacji
 
-Właściwości programu MSBuild kontrolują zachowanie docelowych. Są one np. określone w pliku projektu **MyApp.csproj**, poziomu [MSBuild PropertyGroup — element](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx).
+Właściwości programu MSBuild kontrolują zachowanie docelowych. Są one np. określone w pliku projektu **MyApp.csproj**, poziomu [MSBuild PropertyGroup — element](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx). 
 
 -   **Konfiguracja** &ndash; Określa konfigurację kompilacji, aby użyć, np. "Debug" i "Release". Właściwość konfiguracji jest używana do określania wartości domyślnej dla innych właściwości, które określają zachowanie docelowego. Można tworzyć dodatkowe konfiguracje w ramach programu IDE.
 
     *Domyślnie*, `Debug` konfiguracji powoduje `Install` i `SignAndroidPackage` celów tworzenia mniejszych pakietu systemu Android, która wymaga obecności inne pliki i pakietów do działania.
 
-    Wartość domyślna `Release` konfiguracji powoduje w `Install` i `SignAndroidPackage` celów tworzenia pakietu, który jest Android *autonomicznej*i może być używany bez instalowania innych pakietów lub plików.
+    Wartość domyślna `Release` konfiguracji powoduje `Install` i `SignAndroidPackage` celów tworzenia pakietu systemu Android, która jest *autonomicznej*i może być używany bez instalowania innych pakietów lub plików.
 
 -   **DebugSymbols** &ndash; wartość logiczna, która określa, czy jest pakietu systemu Android *możliwością debugowania*, w połączeniu z `$(DebugType)` właściwości. Możliwością debugowania pakiet zawiera symbole debugowania, ustawia `//application/@android:debuggable` atrybutu `true`i automatycznie dodaje `INTERNET` uprawnienia tak, aby debuger może dołączyć do procesu. Aplikacja jest możliwością debugowania Jeśli `DebugSymbols` jest `True` *i* `DebugType` jest pustym ciągiem lub `Full`.
 
@@ -117,6 +114,12 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 [Właściwości podpisywania](#Signing_Properties) mają również zastosowanie podczas packaing wersji aplikacji.
 
 
+-   **AndroidApkSigningAlgorithm** &ndash; wartość ciągu, który określa algorytm podpisywania do użycia z `jarsigner -sigalg`.
+
+    Wartość domyślna to `md5withRSA`.
+
+    Dodane w 8.2 platformy Xamarin.Android.
+
 -   **AndroidApplication** &ndash; wartość logiczną wskazującą, czy projekt jest dla aplikacji systemu Android (`True`) lub w projekcie biblioteki systemu Android (`False` lub nieobecny).
 
     Tylko jeden projekt z `<AndroidApplication>True</AndroidApplication>` może znajdować się w ramach pakietu systemu Android. (Niestety ta nie została jeszcze zweryfikowana, co może skutkować delikatny i Nieoczekiwana błędy dotyczące zasobów dla systemu Android.)
@@ -139,6 +142,27 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Ta właściwość jest `False` domyślnie.
 
+-   **AndroidErrorOnCustomJavaObject** &ndash; właściwości typu boolean, która określa, czy typy mogą implementować `Android.Runtime.IJavaObject` 
+     *bez* również dziedziczących `Java.Lang.Object` lub `Java.Lang.Throwable`:
+
+    ```csharp
+    class BadType : IJavaObject {
+        public IntPtr Handle {
+            get {return IntPtr.Zero;}
+        }
+
+        public void Dispose()
+        {
+        }
+    }
+    ```
+
+    W przypadku wartości True takich typów wygeneruje błąd XA4212, w przeciwnym razie zostanie wygenerowany ostrzeżenie XA4212.
+
+    Obsługa tej właściwości został dodany w 8.1 platformy Xamarin.Android.
+
+    Ta właściwość jest `True` domyślnie.
+
 -   **AndroidFastDeploymentType** &ndash; A `:` (dwukropek)-rozdzielana lista wartości, aby kontrolować, jakie typy mogą być wdrażane [katalogu szybkiego wdrożenia](#Fast_Deployment) na urządzeniu docelowym po `$(EmbedAssembliesIntoApk)` Właściwość MSBuild jest `False`. Jeśli zasób jest szybkie wdrożony, to *nie* osadzone w wygenerowanym `.apk`, który przyspiesza czas wdrażania. (Więcej, który jest szybkie wdrożone, następnie rzadziej `.apk` musi zostać również przebudowany i proces instalacji może być szybsza.) Prawidłowe wartości to:
 
     - `Assemblies`: Wdrażanie zestawów aplikacji.
@@ -155,23 +179,37 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Dodane w Xamarin.Android 6.1.
 
--   **AndroidHttpClientHandlerType** &ndash; umożliwia ustawienie wartości [ `XA_HTTP_CLIENT_HANDLER_TYPE` zmiennej środowiskowej](~/android/deploy-test/environment.md).
-    Ta wartość nie spowoduje zastąpienia jawnie określona `XA_HTTP_CLIENT_HANDLER_TYPE` wartość. `XA_HTTP_CLIENT_HANDLER_TYPE` Określony w wartości zmiennej środowiskowej [ `@(AndroidEnvironment)` ](#AndroidEnvironment) pliku będzie mieć wyższy priorytet.
+-   **AndroidHttpClientHandlerType** &ndash; Określa domyślne `System.Net.Http.HttpMessageHandler` implementacji, które będą używane przez `System.Net.Http.HttpClient` domyślnego konstruktora. Wartość jest nazwa kwalifikowana zestawu typu `HttpMessageHandler` podklasy odpowiednie do użycia z [ `System.Type.GetType(string)` ](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
+
+    Wartość domyślna to `System.Net.Http.HttpClientHandler, System.Net.Http`.
+
+    To może zostać zastąpiona w celu zamiast tego zawierają `Xamarin.Android.Net.AndroidClientHandler`, który używa do wykonania żądania sieciowe Android interfejsów API języka Java. Dzięki temu dostęp do protokołu TLS 1.2 w adresach URL, podczas gdy podstawowej wersji systemu Android obsługuje protokół TLS 1.2.  
+    Tylko Android 5.0 i nowszych niezawodnie zapewniają obsługę protokołu TLS 1.2, za pomocą języka Java.
+
+    *Uwaga*: Obsługa protokołu TLS 1.2 Jeśli jest wymagany w wersjach systemu Android przed 5.0, *lub* Jeśli obsługa protokołu TLS 1.2 jest wymagany w przypadku `System.Net.WebClient` i powiązanych interfejsów API, następnie `$(AndroidTlsProvider)` powinien być używany.
+
+    *Uwaga*: Obsługa ta właściwość działa przez ustawienie [ `XA_HTTP_CLIENT_HANDLER_TYPE` zmiennej środowiskowej](~/android/deploy-test/environment.md).
+    A `$XA_HTTP_CLIENT_HANDLER_TYPE` wartość znajduje się w pliku z akcją kompilacji `@(AndroidEnvironment)` mają wyższy priorytet.
 
     Dodane w Xamarin.Android 6.1.
 
--   **AndroidTlsProvider** &ndash; wartość ciągu, która określa, który dostawca TLS powinny być używane w aplikacji. Możliwe wartości to: prawidłowe wartości to:
+-   **AndroidTlsProvider** &ndash; wartość ciągu, która określa, który dostawca TLS powinny być używane w aplikacji. Możliwe wartości to:
 
     - `btls`: Użyj [wytaczania SSL](https://boringssl.googlesource.com/boringssl) TLS komunikacji z [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
-      Umożliwia to korzystanie z protokołu TLS 1.2.
+      Umożliwia to korzystanie z protokołu TLS 1.2 we wszystkich wersjach systemu Android.
 
     - `legacy`: Użyj historycznych zarządzaną implementację protokołu SSL do interakcji z sieci. To *nie* obsługi protokołu TLS 1.2.
 
-    - `default`, lub nie ustawiono / pusty ciąg: Xamarin.Android 7.1, co jest równoważne `legacy`.
+    - `default`: Zezwalaj na *Mono* wybrać domyślnego dostawcę TLS.
+      Jest to równoważne `legacy`, nawet w 7.3 platformy Xamarin.Android.  
+      *Uwaga*: Ta wartość jest prawdopodobnie nie są wyświetlane w `.csproj` wartości, jako "Domyślne" IDE wartość powoduje *usuwania* z `$(AndroidTlsProvider)` właściwości.
+
+    - Unset / pusty ciąg: Xamarin.Android 7.1, co jest równoważne `legacy`.  
+      W Xamarin.Android 7.3, co jest równoważne `btls`.
 
     Wartość domyślna to ciąg pusty.
 
-    **Eksperymentalne**. Dodane w Xamarin.Android 7.1.
+    Dodane w Xamarin.Android 7.1.
 
 -   **AndroidLinkMode** &ndash; Określa typ [łączenie](~/android/deploy-test/linker.md) powinien być wykonywany na zestawy zawartych w pakiecie systemu Android. Używana tylko w projektach aplikacji systemu Android. Wartość domyślna to *SdkOnly*. Prawidłowe wartości to:
 
@@ -199,7 +237,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
     Podczas kompilacji, zostaną scalone niezbędnych wartości do tworzenia rzeczywistych `AndroidManifest.xml`.
     `$(AndroidManifest)` Musi zawierać nazwę pakietu w `/manifest/@package` atrybutu.
 
--   **AndroidSdkBuildToolsVersion** &ndash; pakietu narzędzi kompilacji dla systemu Android SDK udostępnia **aapt** i **zipalign** narzędzi, m.in. Jednocześnie można zainstalować wiele różnych wersji pakietu narzędzia kompilacji. Pakiet narzędzi kompilacji wybranych do tworzenia pakietów jest realizowane przez sprawdzanie i przy użyciu wersji narzędzia kompilacji "preferowane", jeśli jest obecny; Jeśli wersja "preferowane" jest *nie* istnieje, a następnie jest używany pakiet narzędzi kompilacji zainstalowany highested z kontrolą wersji.
+-   **AndroidSdkBuildToolsVersion** &ndash; pakietu narzędzi kompilacji dla systemu Android SDK udostępnia **aapt** i **zipalign** narzędzi, m.in. Jednocześnie można zainstalować wiele różnych wersji pakietu narzędzia kompilacji. Pakiet narzędzi kompilacji wybranych do tworzenia pakietów jest realizowane przez sprawdzanie i przy użyciu wersji narzędzia kompilacji "preferowane", jeśli jest obecny; Jeśli wersja "preferowane" jest *nie* stanowią najwyższy pakietu wersji zainstalowanego narzędzia kompilacji będzie używana.
 
     `$(AndroidSdkBuildToolsVersion)` Właściwość MSBuild zawiera własną wersję narzędzia kompilacji. System kompilacji platformy Xamarin.Android dostarcza wartość domyślną w `Xamarin.Android.Common.targets`, i wartość domyślną mogą zostać zastąpione w pliku projektu youur wybrać wersję narzędzia kompilacji alternatywne, jeśli (na przykład) awarii najnowsze aapt się podczas poprzedniej wersji aapt jest znany do pracy.
 
@@ -272,6 +310,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     -   **Zachodnie**: obejmują zachodni kodowania, takich jak *Europa Zachodnia (Mac)* \[macintosh, CP10000\], *islandzkim (Mac)* \[x-mac islandzkim CP10079\], *centralnej Europejskiego (system Windows)* \[iso 8859-2, CP1250\], *Europa Zachodnia (system Windows)* \[iso 8859-1, CP1252\], *Grecki (system Windows)* \[iso-8859-7 CP1253\], *centralnej Europejskiego (ISO)* \[iso 8859-2, CP28592\], *Alfabetu łacińskiego 3 (ISO)* \[iso 8859-3 CP28593\], *Grecki (ISO)* \[iso-8859-7 CP28597\], *Łaciński 9 (ISO)*  \[iso-8859-15, CP28605\], *Stanów Zjednoczonych OEM* \[CP437\], *zachodni Europejskiego (DOS)* \[CP850\], *portugalski (DOS)* \[CP860\], *islandzkim (DOS)* \[CP861\],  *Francuski kanadyjskich (DOS)* \[CP863\], i *Nordycki (DOS)* \[CP865\].
 
+
     ```xml
     <MandroidI18n>West</MandroidI18n>
     ```
@@ -284,14 +323,14 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
 -   **AndroidVersionCodePattern** &ndash; właściwości ciągu, który umożliwia deweloperowi dostosować `versionCode` w manifeście.
     Zobacz [tworzenie kod wersji dla plik APK](~/android/deploy-test/building-apps/abi-specific-apks.md) informacji na temat wyboru `versionCode`.
-
+    
     Przykłady, jeśli `abi` jest `armeabi` i `versionCode` w manifeście jest `123`, `{abi}{versionCode}` utworzy versionCode z `1123` podczas `$(AndroidCreatePackagePerAbi)` ma wartość PRAWDA, w przeciwnym razie zostanie uzyskiwania wartości 123.
     Jeśli `abi` jest `x86_64` i `versionCode` w manifeście jest `44`. Spowoduje to utworzenie `544` podczas `$(AndroidCreatePackagePerAbi)` ma wartość PRAWDA, w przeciwnym razie będzie mieć wartość z `44`.
 
     Jeśli przeprowadzamy Lewe dopełnienie ciąg formatu `{abi}{versionCode:0000}`, jego dałby w efekcie `50044` ponieważ są pozostawiane, dopełnienie `versionCode` z `0`. Możesz też użyć przecinka, takie jak uzupełnianie `{abi}{versionCode:D4}` która działa identycznie jak poprzedni.
 
     Tylko "0" i "Dx" padding format ciągi są obsługiwane, ponieważ wartość musi być liczbą całkowitą.
-
+    
     Wstępnie zdefiniowane elementy klucza
 
     -   **ABI** &ndash; wstawia abi docelowych dla aplikacji
@@ -303,9 +342,11 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     -   **minSDK** &ndash; wstawia minimalna obsługiwana wartość zestawu Sdk z `AndroidManifest.xml` lub `11` Jeśli brak jest zdefiniowany.
 
-    -   **versionCode** &ndash; używa wersji direrctly kodu z `Properties\AndroidManifest.xml`.
+    -   **versionCode** &ndash; używa wersji direrctly kodu z `Properties\AndroidManifest.xml`. 
 
-    Możesz zdefiniować niestandardowy elementów za pomocą `AndroidVersionCodeProperties` właściwość (dalej).
+    Możesz zdefiniować niestandardowy elementów za pomocą `$(AndroidVersionCodeProperties)` właściwość (dalej).
+
+    Domyślnie wartość będzie ustawiona wartość `{abi}{versionCode:D6}`. Jeśli Deweloper chce zachować starego zachowania przez ustawienie można zastąpić domyślną `$(AndroidUseLegacyVersionCode)` właściwości `true`
 
     Dodane w Xamarin.Android 7.2.
 
@@ -313,6 +354,21 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Dodane w Xamarin.Android 7.2.
 
+-   **AndroidUseLegacyVersionCode** &ndash; właściwości typu boolean będzie umożliwia deweloperowi przywrócić obliczania versionCode do jego stare sprzed zachowania 8.2 platformy Xamarin.Android. To należy używać tylko dla deweloperów z istniejących aplikacji w sklepie Google Play. Zdecydowanie zalecane jest nowy `$(AndroidVersionCodePattern)` właściwość jest używana.
+
+    Dodane w 8.2 platformy Xamarin.Android.
+
+-  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; właściwości typu boolean, której nastąpi przełączenie w czasie projektowania kompilacje do użycia zasobów zarządzanych analizator zamiast `aapt`.
+
+    Dodane w Xamarin.Android 8.1.
+
+-  **AndroidUseApkSigner** &ndash; właściwości wartości logicznej, która umożliwia deweloperom stosowanie do `apksigner` narzędzie zamiast `jarsigner`.
+
+    Dodane w 8.2 platformy Xamarin.Android.
+
+-  **AndroidApkSignerAdditionalArguments** &ndash; właściwości ciągu, która umożliwia deweloperowi podać dodatkowe argumenty `apksigner` narzędzia.
+
+    Dodane w 8.2 platformy Xamarin.Android.
 
 ### <a name="binding-project-build-properties"></a>Właściwości kompilacji projektu powiązania
 
@@ -320,7 +376,7 @@ Następujące właściwości programu MSBuild są używane z [powiązania projek
 
 -   **AndroidClassParser** &ndash; właściwości ciągu, który kontroluje sposób `.jar` pobieranych plików. Możliwe wartości:
 
-    - **Klasa analizy**: używa `class-parse.exe` można przeanalizować kodu bajtowego Java bezpośrednio, bez pomocy maszyny wirtualnej Java. Ta wartość jest eksperymentalne.
+    - **Klasa analizy**: używa `class-parse.exe` można przeanalizować kodu bajtowego Java bezpośrednio, bez pomocy maszyny wirtualnej Java. Ta wartość jest eksperymentalne. 
 
 
     - **jar2xml**: Użyj `jar2xml.jar` używać odbicia Java w celu wyodrębnienia typów i członków z `.jar` pliku.
@@ -356,10 +412,9 @@ Następujące właściwości programu MSBuild są używane z [powiązania projek
     Wartość domyślna ulegnie zmianie w przyszłych wydaniach.
 
 
-
 ### <a name="resource-properties"></a>Właściwości zasobów
 
-Właściwości zasobów formantu Generowanie `Resource.designer.cs` pliku, który zapewnia dostęp do zasobów systemu Android.
+Właściwości zasobów formantu Generowanie `Resource.designer.cs` pliku, który zapewnia dostęp do zasobów systemu Android. 
 
 -   **AndroidResgenExtraArgs** &ndash; określa dodatkowe opcje wiersza polecenia do przekazania do **aapt** poleceń podczas przetwarzania zasoby systemu Android i zasobów.
 
@@ -384,13 +439,13 @@ Domyślnie element docelowy podpisywania generuje nowego klucza podpisywania deb
 
 -   **AndroidKeyStore** &ndash; wartość logiczną wskazującą, czy można używać niestandardowych informacji do podpisywania. Wartość domyślna to `False`, co oznacza, że domyślny klucz podpisywania debugowania będzie służyć do podpisywania pakietów.
 
--   **AndroidSigningKeyAlias** &ndash; określa aliasu dla klucza w magazynie kluczy. Jest to **keytool-alias** wartość używana podczas tworzenia magazynu kluczy.
+-   **AndroidSigningKeyAlias** &ndash; określa aliasu dla klucza w magazynie kluczy. Jest to **keytool-alias** wartość używana podczas tworzenia magazynu kluczy. 
 
 -   **AndroidSigningKeyPass** &ndash; Określa hasło dostępu do klucza w pliku magazynu kluczy. Jest to wartość wprowadzona podczas `keytool` zapyta **wprowadź hasło klucza dla $(AndroidSigningKeyAlias)**.
 
 -   **AndroidSigningKeyStore** &ndash; Określa nazwę pliku magazynu kluczy utworzone przez `keytool`. Odpowiada to wartość podana dla **keytool - keystore** opcji.
 
--   **AndroidSigningStorePass** &ndash; Określa hasło `$(AndroidSigningKeyStore)`. Jest to wartość podana dla `keytool` podczas tworzenia pliku magazynu kluczy i wystąpiły **wprowadź hasło magazynu kluczy:**.
+-   **AndroidSigningStorePass** &ndash; Określa hasło `$(AndroidSigningKeyStore)`. Jest to wartość podana dla `keytool` podczas tworzenia pliku magazynu kluczy i wystąpiły **wprowadź hasło magazynu kluczy:**. 
 
 Na przykład, należy wziąć pod uwagę następujące `keytool` wywołania:
 
@@ -421,11 +476,15 @@ Aby użyć magazynu kluczy wygenerowany powyżej, użyj właściwości grupy:
 </PropertyGroup>
 ```
 
+-   **AndroidDebugKeyAlgorithm** &ndash; Określa domyślny algorytm do użycia na potrzeby `debug.keystore`. Domyślnie `RSA`.
+
+-   **AndroidDebugKeyValidity** &ndash; określa ważności domyślną na potrzeby `debug.keystore`. Domyślnie `10950` lub `30 * 365` lub `30 years`.
+
 <a name="Build_Actions" />
 
 ## <a name="build-actions"></a>Tworzenie działania
 
-*Tworzenie akcje* są [zastosowane do plików](http://msdn.microsoft.com/en-us/library/bb629388.aspx) w ramach projektu i kontroli sposobu przetwarzania pliku.
+*Tworzenie akcje* są [zastosowane do plików](http://msdn.microsoft.com/en-us/library/bb629388.aspx) w ramach projektu i kontroli sposobu przetwarzania pliku. 
 
 <a name="AndroidEnvironment" />
 
@@ -492,10 +551,10 @@ Należy pamiętać, że od systemu Android obsługuje wiele interfejsów binarne
 1.  Ścieżka "wykrywania".
 2.  Przy użyciu `Abi` atrybutu element.
 
-Z wykrywanie ścieżka, nazwa katalogu nadrzędnego natywnej biblioteki służy do określania ABI który cele biblioteki. W związku z tym jeśli dodasz `lib/armeabi/libfoo.so` do kompilacji, następnie ABI będzie można "ten sposób" jako `armeabi`.
+Z wykrywanie ścieżka, nazwa katalogu nadrzędnego natywnej biblioteki służy do określania ABI który cele biblioteki. W związku z tym jeśli dodasz `lib/armeabi/libfoo.so` do kompilacji, następnie ABI będzie można "ten sposób" jako `armeabi`. 
 
 
-### <a name="item-attribute-name"></a>Nazwa atrybutu elementu
+#### <a name="item-attribute-name"></a>Nazwa atrybutu elementu
 
 **ABI** &ndash; określa ABI natywnej biblioteki.
 
@@ -506,6 +565,13 @@ Z wykrywanie ścieżka, nazwa katalogu nadrzędnego natywnej biblioteki służy 
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
+
+
+### <a name="androidaarlibrary"></a>AndroidAarLibrary
+
+Akcja kompilacji z `AndroidAarLibrary` należy bezpośrednio odwoływać pliki AAR. Ta akcja kompilacji będą najczęściej używane przez składniki platformy Xamarin. To znaczy do uwzględnienia odwołania do plików AAR, które są wymagane do pobrania z witryny Google Play i innych usług, praca.
+
+Z tą kompilacją akcja będzie traktowany w podobny sposób za zasoby osadzone można znaleźć plików w projektach biblioteki. AAR zostaną wyodrębnione w katalogu pośrednim. Wszystkie zasoby, a następnie plików zasobów i JAR zostaną uwzględnione w grupie odpowiedni element.  
 
 ### <a name="content"></a>Zawartość
 
@@ -527,7 +593,6 @@ Pliki z *ProguardConfiguration* akcji kompilacji zawiera opcje, które są używ
 Pliki te są ignorowane, chyba że `$(EnableProguard)` właściwość MSBuild jest `True`.
 
 
-
 ## <a name="target-definitions"></a>Definicje docelowego
 
 Specyficzne dla platformy Xamarin.Android części procesu kompilacji są zdefiniowane w `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets`, ale w normalnych specyficzny dla języka elementów docelowych, takich jak *Microsoft.CSharp.targets* są również wymagane do utworzenia zestawu.
@@ -542,7 +607,7 @@ Przed zaimportowaniem obiektów docelowych, język należy ustawić następując
 </PropertyGroup>
 ```
 
-Wszystkie te elementy docelowe i właściwości mogą być uwzględnione w języku C#, importując *Xamarin.Android.CSharp.targets*:
+Wszystkie te elementy docelowe i właściwości mogą być uwzględnione w języku C#, importując *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
