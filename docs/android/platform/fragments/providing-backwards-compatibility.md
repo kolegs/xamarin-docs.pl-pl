@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Zapewnianie zapewnienia zgodności z pakietem Obsługa systemu Android
 
@@ -25,13 +25,13 @@ Użyteczności odłamków będzie ograniczony bez zapewnienia zgodności wstępn
 
 Pakiet pomocy technicznej dla systemu Android nie jest automatycznie dodawany do aplikacji platformy Xamarin.Android. Udostępnia Xamarin [pakiet NuGet biblioteki obsługi systemu Android w wersji 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) uprościć dodawanie bibliotek obsługi do aplikacji platformy Xamarin.Android. Pakiety mają być pomocy technicznej w Twojej platformy Xamarin.Android aplikacji obejmują [biblioteki obsługi systemu Android w wersji 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) składnika do projektu platformy Xamarin.Android, jak pokazano na poniższym zrzucie ekranu: 
 
-[![Zrzut ekranu biblioteki obsługi systemu Android w wersji 4 pakietu zostanie dodany do projektu](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Zrzut ekranu biblioteki obsługi systemu Android w wersji 4 pakietu zostanie dodany do projektu](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 Po wykonaniu tych kroków, staje się możliwe użycie fragmentów w starszych wersjach systemu android. Interfejsy API fragmentu działa teraz tego samego w starszych wersjach, z następującymi wyjątkami: 
 
 -   **Zmień minimalna wersja systemu Android** &ndash; aplikacji nie będzie już potrzebował pod kątem systemu Android w wersji 3.0 lub nowszej, jak pokazano poniżej: 
 
-    [![Zrzut ekranu z Minimum Android docelowej ustawiany w obszarze właściwości aplikacji](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Zrzut ekranu z Minimum Android docelowej ustawiany w obszarze manifestu systemu Android](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **Rozszerzanie FragmentActivity** &ndash; działań, które prowadzą hosting fragmenty musi dziedziczyć `Android.Support.V4.App.FragmentActivity` , a nie z `Android.App.Activity` . 
 

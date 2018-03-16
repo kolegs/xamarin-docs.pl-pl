@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android Performance
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 Jako użytkownik przewija widok, [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) wywołania `GetView` należy przesłonić, aby zażądać nowych widoków do wyświetlenia — Jeśli jest dostępna przekazaniem nieużywane widoku w `convertView` parametru. Jeśli ta wartość jest `null` , a następnie kod tworzy nową [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) wystąpienia, w przeciwnym razie `convertView` można zresetować właściwości i ponownie.
 
-Aby uzyskać więcej informacji, zobacz [wiersza widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md) w [podczas wypełniania elementu ListView z danymi](~/android/user-interface/layouts/list-view/populating.md).
+Aby uzyskać więcej informacji, zobacz [wiersza widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use) w [podczas wypełniania elementu ListView z danymi](~/android/user-interface/layouts/list-view/populating.md).
 
 <a name="removeeventhandlers" />
 
@@ -225,7 +225,7 @@ Aby otrzymać powiadomienie, gdy użytkownik opuszcza interfejsu użytkownika, n
 
 ## <a name="optimize-image-resources"></a>Optymalizacja zasoby obrazów
 
-Obrazy są niektóre z najdroższych zasobów korzystających z aplikacji, a często są przechwytywane w wysokiej rozdzielczości. W związku z tym podczas wyświetlania obrazu Wyświetl ją z rozdzielczością wymagane na ekranie urządzenia. Jeśli obraz jest o rozdzielczości wyższej niż ekran, powinien być skalowany w dół.
+Obrazy są niektóre z najdroższych zasobów korzystających z aplikacji, a często są przechwytywane w wysokiej rozdzielczości. W związku z tym podczas wyświetlania obrazu, wyświetl ją z rozdzielczością wymagane na ekranie urządzenia. Jeśli obraz jest o rozdzielczości wyższej niż ekran, powinien być skalowany w dół.
 
 Aby uzyskać więcej informacji, zobacz [optymalizacji zasobów obrazu](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) w [wydajności i Platform](~/cross-platform/deploy-test/memory-perf-best-practices.md) przewodnik.
 

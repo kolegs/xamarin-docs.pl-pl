@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>Interfejs polecenia
 
@@ -22,7 +22,7 @@ Interfejs sterująca umożliwia innym podejściu do wykonania polecenia, który 
 
 Aby umożliwić powiązania danych między `Button` oraz ViewModel, `Button` definiuje dwie właściwości:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) typu `Object`
 
 Aby używać interfejsu polecenia, należy zdefiniować powiązania danych, którego celem jest `Command` właściwość `Button` której źródłem jest właściwość ViewModel typu `ICommand`. ViewModel zawiera kod skojarzony z tym `ICommand` właściwość, która jest wykonywana po kliknięciu przycisku. Można ustawić `CommandParameter` dowolne dane do rozróżnienia wielu przycisków, jeśli są wszystkie powiązane do tej samej `ICommand` właściwości w ViewModel.
@@ -39,7 +39,7 @@ Tych poleceń mogą być obsługiwane w ramach ViewModel w taki sposób, który 
 
 ## <a name="the-icommand-interface"></a>Interfejs ICommand
 
-[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) Interfejsu nie jest częścią platformy Xamarin.Forms. Jest on zdefiniowany zamiast tego w [ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/) przestrzeni nazw i składa się z dwóch metod i jedno zdarzenie:
+<xref:System.Windows.Input.ICommand> Interfejsu nie jest częścią platformy Xamarin.Forms. Jest on zdefiniowany zamiast tego w [System.Windows.Input](xref:System.Windows.Input) przestrzeni nazw i składa się z dwóch metod i jedno zdarzenie:
 
 ```csharp
 public interface ICommand

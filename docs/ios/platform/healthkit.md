@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ Aby dowiedzieć się więcej na temat udostępniania aplikacji dla systemu iOS [
 
 Jawne tworzenie **identyfikator aplikacji** i odpowiednią **profilu inicjowania obsługi administracyjnej** odbywa się w obrębie firmy Apple [Centrum deweloperów systemu iOS](https://developer.apple.com/devcenter/ios/index.action). 
 
-Bieżące **identyfikatorów aplikacji** są wymienione w [certyfikaty, identyfikatory & profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) sekcji Centrum deweloperów. Często, lista zawiera **identyfikator** wartości `*`, wskazujące który **identyfikator aplikacji*- **nazwa** może być używany z dowolnej liczby sufiksy. Takie *identyfikatorów aplikacji symboli wieloznacznych* nie można używać z zestawu kondycji.
+Bieżące **identyfikatorów aplikacji** są wymienione w [certyfikaty, identyfikatory & profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) sekcji Centrum deweloperów. Często, lista zawiera **identyfikator** wartości `*`, wskazujące który **identyfikator aplikacji** - **nazwa** może być używany z dowolnej liczby sufiksy. Takie *identyfikatorów aplikacji symboli wieloznacznych* nie można używać z zestawu kondycji.
  
 Aby utworzyć jawne **identyfikator aplikacji**, kliknij przycisk  **+**  przycisk w prawym górnym umożliwiające przejście do **zarejestrować identyfikator aplikacji systemu iOS** strony:
 

@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>Praca z domyślnych ustawień użytkownika
 
-_Ten artykuł dotyczy pracy z NSUserDefault, aby zapisać ustawienia domyślne w Xamarin iOS aplikacji lub rozszerzenia._
+_Ten artykuł dotyczy pracy z NSUserDefault, aby zapisać ustawienia domyślne w aplikacji platformy Xamarin.iOS lub rozszerzenia._
 
 
-`NSUserDefaults` Klasa udostępnia sposób dla systemu iOS aplikacje i rozszerzenia programowo interakcję z systemowe domyślny System. Przy użyciu ustawienia domyślne systemu, użytkownik może konfigurować zachowanie aplikacji lub style w celu spełnienia preferencji (oparte na projekt aplikacji). Na przykład, aby przedstawiać dane w programie vs metryki angielskie pomiary, lub wybierz motyw danego interfejsu użytkownika.
+`NSUserDefaults` Klasa udostępnia sposób dla systemu iOS aplikacje i rozszerzenia do interakcji programowo w systemie systemowe ustawienia domyślne. Przy użyciu ustawienia domyślne systemu, użytkownik może konfigurować zachowanie aplikacji lub style w celu spełnienia preferencji (oparte na projekt aplikacji). Na przykład, aby przedstawiać dane w programie vs metryki angielskie pomiary, lub wybierz motyw danego interfejsu użytkownika.
 
-Podczas używania grup aplikacji `NSUserDefaults` także sposób komunikacji między aplikacjami (lub rozszerzenia) w ramach danej grupy.
+W przypadku użycia z grup aplikacji `NSUserDefaults` także sposób komunikacji między aplikacjami (lub rozszerzenia) w ramach danej grupy.
 
 <a name="About-User-Defaults" />
 
@@ -32,7 +32,7 @@ Jak wspomniano powyżej, domyślne ustawienia użytkownika (`NSUserDefaults`) mo
 Gdy aplikacja najpierw wykonuje, `NSUserDefaults` odczytuje klucze i wartości z bazy danych aplikacji użytkownika domyślne i przechowuje je w pamięci, aby uniknąć otwieranie i Odczyt bazy danych zawsze wymagana jest wartość. 
 
 > [!IMPORTANT]
-> **Uwaga**: Apple już sugeruje, że deweloper wywołać `Synchronize` metody do synchronizacji pamięci podręcznej z bazą danych bezpośrednio. Zamiast tego zostanie automatycznie wywołany okresowo, aby zapewnić synchronizację z bazą danych domyślne ustawienia użytkownika w pamięci podręcznej.
+> **Uwaga**: Apple już zaleca wywołania developer `Synchronize` metodę, aby zsynchronizować bezpośrednio w pamięci podręcznej z bazą danych. Zamiast tego zostanie automatycznie wywołany okresowo, aby zapewnić synchronizację z bazą danych domyślne ustawienia użytkownika w pamięci podręcznej.
 
 `NSUserDefaults` Klasa zawiera kilka metod wygody do odczytywania i zapisywania preferencji wartości dla typowych danych, takich jak: ciąg, liczbę całkowitą, float, boolean i adresów URL. Inne typy danych mogą być archiwizowane za pomocą `NSData`, następnie odczytu lub zapisu w bazie danych użytkownika ustawienia domyślne. Aby uzyskać więcej informacji, zobacz firmy Apple [preferencji i ustawień przewodnik programowania w języku](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -46,7 +46,7 @@ Wystąpienie domyślne użytkownika udostępnionego zapewnia dostęp do domyśln
 - Domena identyfikator pakietu aplikacji.
 - `NSGlobalDomain` Składające się z wartości domyślnych, współużytkowana przez wszystkie aplikacje.
 - Osobnej domenie dla każdego z języków preferowanym przez użytkownika.
-- `NSRegistationDomain` z zestawem tymczasowej wartości domyślnych, które mogą być modyfikowane przez aplikację, aby upewnić się, są zawsze pomyślnych wyszukiwań.
+- `NSRegistrationDomain` z zestawem tymczasowej wartości domyślnych, które mogą być modyfikowane przez aplikację, aby upewnić się, są zawsze pomyślnych wyszukiwań.
 
 Aby uzyskać dostęp do wystąpienia domyślne użytkownika udostępnionego, należy użyć poniższego kodu:
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Uzyskiwanie dostępu do wystąpienia NSUserDefaults grupy aplikacji
 
-Jak już wspomniano, korzystając z grup aplikacji `NSUserDefaults` może służyć do komunikacji między aplikacjami (lub rozszerzenia) w ramach danej grupy. Najpierw należy upewnić się, że grupy aplikacji i wymagane identyfikatorów aplikacji zostały poprawnie skonfigurowane w **certyfikaty, identyfikatory & profile** sekcji na [Centrum deweloperów systemu iOS](https://developer.apple.com/devcenter/ios/) i zostały zainstalowane w w środowisku programistycznym.
+Jak już wspomniano, korzystając z grup aplikacji `NSUserDefaults` może służyć do komunikacji między aplikacjami (lub rozszerzenia) w ramach danej grupy. Najpierw należy upewnić się, że grupy aplikacji i wymagane identyfikatorów aplikacji zostały poprawnie skonfigurowane w **certyfikaty, identyfikatory & profile** sekcji na [Centrum deweloperów systemu iOS](https://developer.apple.com/devcenter/ios/) i zostały zainstalowane w środowisku programistycznym.
 
-Następnie projektów aplikacji i/lub rozszerzenie musi być jedną z prawidłową identyfikatorów aplikacji utworzone powyżej, który `Entitlements.plist` plik ma włączone i określone grupy aplikacji i on pobrać jego zawartych w pakiecie aplikacji.
+Następnie projektów aplikacji i/lub rozszerzenie musi być jedną z prawidłową identyfikatorów aplikacji utworzone powyżej i `Entitlements.plist` pliku musi zostać uwzględniony w pakiecie aplikacji przy użyciu grup aplikacji włączone i określone.
 
-Z tym wszystkie w miejscu udostępnionych domyślne ustawienia użytkowników aplikacji grupy jest możliwy przy użyciu następującego kodu:
+Z tym wszystkie w miejscu udostępnionych aplikacji grupy domyślne ustawienia użytkownika jest możliwy przy użyciu następującego kodu:
 
 ```csharp
 // Get App Group User Defaults

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Ustawienia odtwarzacza na żywo Xamarin
 
@@ -68,7 +68,7 @@ Xamarin Player na żywo wymaga:
 
   Jeśli urządzenie nie jest parowania, kod QR pojawi się z instrukcjami, aby skojarzyć urządzenia:
 
-    ![Para okno urządzenia](install-images/manage-empty-windows.png)
+  ![Para okno urządzenia](install-images/manage-empty-windows.png)
 
   Jeśli urządzenie nie można skontaktować się z parowania, może wystąpić błąd.
 
@@ -111,11 +111,11 @@ Xamarin Player na żywo wymaga:
 
   Jeśli urządzenie nie jest sparowana, kod QR pojawi się z instrukcjami skojarzyć urządzenia:
 
-    ![Para okno urządzenia](install-images/manage-empty.png)
+  ![Para okno urządzenia](install-images/manage-empty.png)
 
   Jeśli urządzenie nie można skontaktować się z parowania, pojawi się błąd:
 
-    ![Nie można połączyć się komunikat o błędzie urządzenia](install-images/error-cannot-connect.png)
+  ![Nie można połączyć się komunikat o błędzie urządzenia](install-images/error-cannot-connect.png)
 
 
 -----

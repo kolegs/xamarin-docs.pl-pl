@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>Odzyskiwanie pamięci
 
@@ -21,12 +21,12 @@ Xamarin.Android używa w Mono [proste pokoleniowej modułu zbierającego element
 -   Kolekcje głównych (stosów miejsce zbiera Gen1 i dużego obiektu). 
 
 > [!NOTE]
-> W przypadku braku jawne kolekcji za pomocą [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekcje są *na żądanie*, oparte na alokacji sterty. *To nie jest zliczanie systemu*; obiekty *nie zostaną zebrane, jak są żadnych oczekujących odwołań*, lub gdy zakres został zakończony. Wykaz Globalny zostanie uruchomiony, gdy pomocnicza sterty zabrakło pamięci dla nowej alokacji. Jeśli nie ma żadnych alokacji, nie będzie działał.
+> W przypadku braku jawne kolekcji za pomocą [GC. Collect()](xref:System.GC.Collect) kolekcje są *na żądanie*, oparte na alokacji sterty. *To nie jest zliczanie systemu*; obiekty *nie zostaną zebrane, jak są żadnych oczekujących odwołań*, lub gdy zakres został zakończony. Wykaz Globalny zostanie uruchomiony, gdy pomocnicza sterty zabrakło pamięci dla nowej alokacji. Jeśli nie ma żadnych alokacji, nie będzie działał.
 
 
-Drobne kolekcje są tanie i częste i służą do łączenia obiektów ostatnio przydzielone i martwy. Drobne kolekcje są wykonywane po co kilka MB przydzielonych obiektów. Kolekcje pomocnicza może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+Drobne kolekcje są tanie i częste i służą do łączenia obiektów ostatnio przydzielone i martwy. Drobne kolekcje są wykonywane po co kilka MB przydzielonych obiektów. Kolekcje pomocnicza może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-Kolekcje głównych jest kosztowne i mniej częste i służą do odzyskania wszystkie obiekty martwy. Główne kolekcje są wykonywane po wyczerpaniu pamięci dla bieżącego rozmiaru sterty (przed zmianą rozmiaru sterty). Główne kolekcje może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj ()](https://developer.xamarin.com/api/member/System.GC.Collect/) , przez wywołanie [GC. Zbieraj (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) z argumentem [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
+Kolekcje głównych jest kosztowne i mniej częste i służą do odzyskania wszystkie obiekty martwy. Główne kolekcje są wykonywane po wyczerpaniu pamięci dla bieżącego rozmiaru sterty (przed zmianą rozmiaru sterty). Główne kolekcje może być wykonana ręcznie przez wywołanie metody [GC. Zbieraj ()](xref:System.GC.Collect) , przez wywołanie [GC. Zbieraj (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) z argumentem [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
 
 
 
@@ -34,7 +34,7 @@ Kolekcje głównych jest kosztowne i mniej częste i służą do odzyskania wszy
 
 Istnieją trzy kategorie typów obiektów.
 
--   **Zarządzane obiekty**: typy, które są *nie* dziedziczyć [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , np. [System.String](https://developer.xamarin.com/api/type/System.String/). 
+-   **Zarządzane obiekty**: typy, które są *nie* dziedziczyć [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , np. [System.String](xref:System.String). 
     Są one zebrane zwykle przez wykaz Globalny. 
 
 -   **Obiekty Java**: typy Java, które znajdują się w obrębie maszyny Wirtualnej w czasie wykonywania dla systemu Android, ale nie są widoczne dla maszyny Wirtualnej Mono. Są to nudnych które nie omówiono dalej. Są one zbierane zwykle przez środowisko wykonawcze systemu Android maszyny Wirtualnej. 
@@ -71,7 +71,7 @@ W rezultacie zaletą jest to, że wystąpienie obiektu równorzędnego będzie f
 
 Obiekty równorzędne są logicznie obecne w ramach środowiska uruchomieniowego systemu Android i Mono maszyny Wirtualnej. Na przykład [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) wystąpienia zarządzanego elementu równorzędnego będzie mieć odpowiednią [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework równorzędnej Java wystąpienia. Wszystkie obiekty, które dziedziczą z [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) można spodziewać się ma reprezentacji w obu maszynach wirtualnych. 
 
-Wszystkie obiekty, które ma reprezentacji w obie maszyny wirtualne mają okresy istnienia, które zostały rozszerzone w porównaniu do obiektów, które znajdują się tylko w obrębie jednej maszyny Wirtualnej (takie jak [ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/)). Wywoływanie [GC. Zbieraj](https://developer.xamarin.com/api/member/System.GC.Collect/) musi będzie zbierać tych obiektów upewnić się, że obiekt nie odwołuje się albo maszyny Wirtualnej przed zbierania potrzeb GC platformy Xamarin.Android. 
+Wszystkie obiekty, które ma reprezentacji w obie maszyny wirtualne mają okresy istnienia, które zostały rozszerzone w porównaniu do obiektów, które znajdują się tylko w obrębie jednej maszyny Wirtualnej (takie jak [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Wywoływanie [GC. Zbieraj](xref:System.GC.Collect) musi będzie zbierać tych obiektów upewnić się, że obiekt nie odwołuje się albo maszyny Wirtualnej przed zbierania potrzeb GC platformy Xamarin.Android. 
 
 Aby skrócić czas życia obiektów, [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) powinna być wywoływana. To spowoduje ręcznie "Server" połączenia dla obiektu między dwóch maszyn wirtualnych przy zwalnianiu odwołanie do globalnych, dzięki czemu obiekty, które mają być zbierane szybciej. 
 
@@ -140,7 +140,7 @@ Wykaz Globalny jest niekompletne widok procesu i może nie być możliwe po jest
 Na przykład wystąpienie [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) lub typu pochodnego jest co najmniej 20 bajtów (mogą ulec zmianie bez powiadomienia itp., itp.). 
 [Wywoływane otoki zarządzane](~/android/internals/architecture.md) nie należy dodawać elementów członkowskich dodatkowe wystąpienia, więc jeśli masz [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) wystąpienia, która odwołuje się do obiektu blob 10MB pamięci, GC dla platformy Xamarin.Android będą wiedzieć, który &ndash; GC zostanie wyświetlony obiektu 20-bajtową i nie będzie można określić, że jest połączony do systemu Android przydzielone środowiska uruchomieniowego obiektów, które może być utrzymywanie 10MB pamięci aktywności. 
 
-Często należy pomocy GC. Niestety *GC. AddMemoryPressure()* i *GC. RemoveMemoryPressure()* nie są obsługiwane, więc jeśli możesz *wiedzieć* właśnie zwolniła wykres dużego obiektu przydzielone Java może być konieczne ręczne wywołać [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) monit GC, aby zwolnić Java serwerowe pamięci, lub można jawnie usuwa *Java.Lang.Object* podklas uszkodzić mapowania między zarządzanych wywoływana otoka i wystąpienia Java. Na przykład, zobacz [1084 usterki](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
+Często należy pomocy GC. Niestety *GC. AddMemoryPressure()* i *GC. RemoveMemoryPressure()* nie są obsługiwane, więc jeśli możesz *wiedzieć* właśnie zwolniła wykres dużego obiektu przydzielone Java może być konieczne ręczne wywołać [GC. Collect()](xref:System.GC.Collect) monit GC, aby zwolnić Java serwerowe pamięci, lub można jawnie usuwa *Java.Lang.Object* podklas uszkodzić mapowania między zarządzanych wywoływana otoka i wystąpienia Java. Na przykład, zobacz [1084 usterki](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>Drobne kolekcje
 
-Kolekcje pomocnicza może być wykonana ręcznie przez wywołanie metody [GC. Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32). Drobne kolekcje są tanie (w porównaniu do kolekcji głównej), ale mają znaczny koszt, stały, więc nie ma uruchamiać je zbyt często i powinien mieć czasu wstrzymania, kilka milisekund. 
+Kolekcje pomocnicza może być wykonana ręcznie przez wywołanie metody [GC. Collect(0)](xref:System.GC.Collect). Drobne kolekcje są tanie (w porównaniu do kolekcji głównej), ale mają znaczny koszt, stały, więc nie ma uruchamiać je zbyt często i powinien mieć czasu wstrzymania, kilka milisekund. 
 
 Jeśli aplikacja ma "cykl pracy" w którym to samo odbywa się samodzielnego, może być wskazane ręcznie wykonać pomocnicza kolekcji po zakończeniu cykl pracy. Przykład należności cykle obejmują: 
 
@@ -326,7 +326,7 @@ Jeśli aplikacja ma "cykl pracy" w którym to samo odbywa się samodzielnego, mo
 
 ## <a name="major-collections"></a>Główne kolekcje
 
-Główne kolekcje może być wykonana ręcznie przez wywołanie metody [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) lub `GC.Collect(GC.MaxGeneration)`. 
+Główne kolekcje może być wykonana ręcznie przez wywołanie metody [GC. Collect()](xref:System.GC.Collect) lub `GC.Collect(GC.MaxGeneration)`. 
 
 Powinny być rzadko wykonywane i może mieć czasu wstrzymania, sekundy na urządzeniu z systemem Android stylu, zbierając sterty 512MB. 
 

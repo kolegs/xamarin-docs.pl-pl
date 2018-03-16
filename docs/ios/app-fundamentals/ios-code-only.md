@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie
 
@@ -69,7 +69,7 @@ Pusty szablon projektu dodaje 4 plików do projektu:
 ## <a name="ios-templates"></a>iOS szablonów
 
 
-Visual Studio for Mac nie oferuje pustego szablonu. Wszystkie szablony pochodzą z obsługą scenorysu, którym Apple zalecane jako podstawowy sposób tworzenia interfejsu użytkownika. Jednak jest możliwe do tworzenia interfejsu użytkownika w całości w kodzie. 
+Visual Studio for Mac nie oferuje pustego szablonu. Wszystkie szablony pochodzą z obsługą scenorysu, którym Apple zalecane jako podstawowy sposób tworzenia interfejsu użytkownika. Istnieje możliwość utworzenia Interfejsie całkowicie w kodzie. 
 
 Poniższe kroki prowadzące przez usunięcie scenorysu z aplikacji: 
 
@@ -316,7 +316,7 @@ W powyższym przykładzie mamy rozpoczął tworzenie interfejsu użytkownika w k
 
 interfejsy użytkownika iOS składają się z hierarchii widoku. Dodatkowe widoki, takich jak etykiety, przyciski, suwaki, itp., są dodawane jako widoków podrzędnych niektórych widoku nadrzędnego.
 
-Na przykład, załóżmy Edytuj, aby `CustomViewController` utworzyć ekran logowania, w którym użytkownik może wprowadzić nazwę użytkownika i hasło. Ekranu będzie zawierać dwa pola tekstowe i przycisk.
+Na przykład, załóżmy edytować `CustomViewController` utworzyć ekran logowania, w którym użytkownik może wprowadzić nazwę użytkownika i hasło. Ekranu będzie zawierać dwa pola tekstowe i przycisk.
 
 ### <a name="adding-the-text-fields"></a>Dodawanie pól tekstowych
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>Dodawanie przycisku funkcji
 
-Po kliknięciu przycisku użytkownicy będą oczekiwać coś nastąpić czy ten alert lub przechodzenie do innego ekranu. 
+Po kliknięciu przycisku użytkownicy będą oczekiwać, że coś nastąpić. Na przykład wyświetlany jest alert lub nawigacji odbywa się na inny ekran. 
 
 Dodajmy trochę kodu do dystrybuowania drugiego kontrolera widoku na stosie nawigacji.
 
@@ -497,7 +497,7 @@ Oprócz za pomocą formantów, które są częścią UIKit, może także służy
 
 ### <a name="inheriting-from-uiview"></a>Dziedziczenie z UIView
 
-W pierwszej kolejności konieczne jest, Utwórz klasę widoku niestandardowego. Firma Microsoft będzie to zrobić przy użyciu **klasy** szablonu w programie Visual Studio, aby dodać pustą klasę o nazwie `CircleView`. Klasa podstawowa powinna być ustawiona na `UIView`, która odwołania jest `UIKit` przestrzeni nazw. Poprosimy Cię o również `System.Drawing` również przestrzeni nazw. Inne różnych `System.*` przestrzeni nazw nie będzie używana w tym przykładzie, więc możesz je usunąć.
+W pierwszej kolejności konieczne jest, Utwórz klasę widoku niestandardowego. Firma Microsoft będzie to zrobić przy użyciu **klasy** szablonu w programie Visual Studio, aby dodać pustą klasę o nazwie `CircleView`. Klasa podstawowa powinna być równa `UIView`, który mamy odwołania jest w `UIKit` przestrzeni nazw. Poprosimy Cię o również `System.Drawing` również przestrzeni nazw. Inne różnych `System.*` przestrzeni nazw nie będzie używana w tym przykładzie, więc możesz je usunąć.
 
 Klasa powinna wyglądać następująco:
 

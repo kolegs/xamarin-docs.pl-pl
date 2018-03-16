@@ -6,38 +6,33 @@ ms.assetid: DACD0C14-5DDF-7BDE-6844-80550D301307
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 242adc94f04b3bda40238370ca924c1807a0c787
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 109c1e0f16d3a288160b64ec6ff833e5b31c4efd
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="supporting-pre-honeycomb-android-using-support-packages"></a>Obsługa pustakowym wstępnego systemu Android przy użyciu pakietów pomocy technicznej
 
 *Android pakietu obsługi* składa się z biblioteki, w których ponownie portu niektóre z nowym interfejsem API &ndash; takich jak fragmenty &ndash; do starszych wersji systemu android. Tak przez dodanie pakietu obsługi systemu Android, firma Microsoft można uruchomić aplikacji na urządzeniach z systemem Android 2.3 pokazany następujące ekrany:
 
-![Zrzut ekranu wskazówki fragmentów](supporting-pre-honeycomb-images/00.png)
-
-![Zrzut ekranu przedstawiający informacje działania](supporting-pre-honeycomb-images/01.png)
-
+[![Fragmenty zrzuty ekranu wskazówki i szczegóły dotyczące działania](supporting-pre-honeycomb-images/01-sml.png)](supporting-pre-honeycomb-images/01.png#lightbox)
 
 ## <a name="adding-the-support-package"></a>Dodawanie pakietu obsługi
 
 Pakiet pomocy technicznej dla systemu Android nie jest automatycznie dodawany do aplikacji platformy Xamarin.Android. Udostępnia Xamarin [pakiet NuGet biblioteki obsługi systemu Android w wersji 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) uprościć dodawanie bibliotek obsługi do aplikacji platformy Xamarin.Android.
 Pakiety mają być pomocy technicznej w Twojej platformy Xamarin.Android aplikacji obejmują [biblioteki obsługi systemu Android w wersji 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) składnika do projektu platformy Xamarin.Android, jak pokazano na poniższym zrzucie ekranu:
 
-![Dodawanie pakietu biblioteki obsługi systemu Android w wersji 4](supporting-pre-honeycomb-images/02.png)
+[![Dodawanie pakietu biblioteki obsługi systemu Android w wersji 4](supporting-pre-honeycomb-images/02-sml.png)](supporting-pre-honeycomb-images/02.png#lightbox)
 
 Po dodaniu pakietu zmienić platformę docelową dla systemu Android w wersji 2.2 lub nowszy:
 
-![Zrzut ekranu przedstawiający zmiana docelowy Framework poziom interfejsu API](supporting-pre-honeycomb-images/03.png)
+[![Zrzut ekranu przedstawiający zmiana docelowy Framework poziom interfejsu API](supporting-pre-honeycomb-images/03-sml.png)](supporting-pre-honeycomb-images/03.png#lightbox)
 
 Upewnij się również, że minimalna wersja systemu Android przeznaczony na tym samym poziomie interfejsu API:
 
-![Zrzut ekranu przedstawiający ustawienie wersji Minimum Android](supporting-pre-honeycomb-images/04.png)
-
-
+[![Zrzut ekranu przedstawiający ustawienie wersji Minimum Android](supporting-pre-honeycomb-images/04-sml.png)](supporting-pre-honeycomb-images/04.png#lightbox)
 
 ### <a name="change-mainactivity-to-derive-from-fragmentactivity"></a>Zmień MainActivity pochodzić z FragmentActivity
 
