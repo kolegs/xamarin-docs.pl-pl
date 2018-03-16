@@ -6,12 +6,12 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
-ms.translationtype: MT
+ms.date: 03/14/2018
+ms.openlocfilehash: 30cfb1c8bbd65ec8ef69d2d9bc22906a8726ae62
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="build-process"></a>Proces kompilacji
 
@@ -106,7 +106,7 @@ Właściwości instalacji sterowania zachowaniem `Install` i `Uninstall` element
 
     ```bash
     # Install package onto emulator via -e
-    # Use `/Library/Frameworks/Mono.framework/Commands/xbuild` on OS X
+    # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 
@@ -268,7 +268,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     -   **Inne**: obejmują takie jak inne kodowanie *cyrylica (system Windows)* \[CP1251\], *Bałtyckiego (system Windows)* \[iso-8859-4 CP1257\], *Wietnamski (system Windows)* \[CP1258\], *cyrylica (KOI8-R)* \[koi8-r, CP1251\], *ukraiński (KOI8-U)*  \[koi8-u, CP1251\], *Bałtyckiego (ISO)* \[iso-8859-4 CP1257\], *cyrylica (ISO)* \[iso-8859-5, CP1251\], *ISCII Davenagari* \[x-iscii-de, CP57002\], *ISCII bengalski* \[x-iscii być, CP57003 \], *ISCII tamilski* \[x-iscii — ta, CP57004\], *ISCII Telugu* \[x-iscii-te CP57005\], *ISCII assamski* \[x-iscii — jako CP57006\], *ISCII orija* \[x iscii lub, CP57007\], *ISCII Kannada* \[x-iscii-ka CP57008\], *ISCII malajalam* \[x-iscii-ma CP57009\], *ISCII Gudżarati* \[x-iscii-gu CP57010\], *ISCII pendżabski* \[x-iscii-pa CP57011\], i *tajski (System Windows)*  \[CP874\].
 
-    -   **Rzadkie**: obejmują rzadkich kodowania, takich jak *IBM EBCDIC (turecki)* \[CP1026\], *IBM EBCDIC (Otwórz systemów Latin 1)* \[CP1047\], *IBM EBCDIC (USA Kanada z EUR)* \[CP1140\], *IBM EBCDIC (Niemcy z EUR)* \[CP1141\], *IBM EBCDIC (Dania/Norwegia z EUR)* \[CP1142\], *IBM EBCDIC (Finlandia/Szwecja z EUR)* \[CP1143\], *IBM EBCDIC (Włochy z EUR)* \[CP1144\], *IBM EBCDIC (Ameryka Łacińska/Hiszpania z EUR)* \[CP1145\], *IBM EBCDIC (Zjednoczone Brytania z EUR)* \[CP1146\], *IBM EBCDIC (Francja z EUR)* \[CP1147\], *IBM EBCDIC (międzynarodowy z EUR)*  \[CP1148\], *IBM EBCDIC (islandzki z EUR)* \[CP1149\], *IBM EBCDIC (Niemcy)* \[ CP20273\], *IBM EBCDIC (Dania/Norwegia)* \[CP20277\], *IBM EBCDIC (Finlandia/Szwecja)* \[CP20278\], *IBM EBCDIC (Włochy)* \[CP20280\], *IBM EBCDIC (Ameryka Łacińska/Hiszpania)* \[CP20284\], *IBM EBCDIC (Zjednoczone Królestwo)* \[CP20285\], *IBM EBCDIC (japoński Katakana rozszerzony)* \[CP20290\], *IBM EBCDIC (Francja)* \[CP20297\], *IBM EBCDIC (arabski)* \[CP20420\], *IBM EBCDIC (wersja hebrajska)* \[CP20424\], *IBM EBCDIC (islandzki)* \[ CP20871\], *IBM EBCDIC (cyrylica — serbski, bułgarski)* \[CP21025\], *IBM EBCDIC (USA Kanada)* \[ CP37\], *IBM EBCDIC (międzynarodowy)* \[CP500\], *arabski (ASMO 708)* \[CP708\], *Central European (DOS)* \[CP852\]*, Cyrillic (DOS)* \[CP855\], *Turkish (DOS)* \[CP857\], *Western European (DOS with Euro)* \[CP858\], *Hebrew (DOS)* \[CP862\], *Arabic (DOS)* \[CP864\], *Russian (DOS)* \[CP866\], *Greek (DOS)* \[CP869\], *IBM EBCDIC (Latin 2)* \[CP870\], and *IBM EBCDIC (Greek)* \[CP875\].
+    -   **Rzadkie**: obejmują rzadkich kodowania, takich jak *IBM EBCDIC (turecki)* \[CP1026\], *IBM EBCDIC (Otwórz systemów Latin 1)* \[CP1047\], *IBM EBCDIC (USA Kanada z EUR)* \[CP1140\], *IBM EBCDIC (Niemcy z EUR)* \[CP1141\], *IBM EBCDIC (Dania/Norwegia z EUR)* \[CP1142\], *IBM EBCDIC (Finlandia/Szwecja z EUR)* \[CP1143\], *IBM EBCDIC (Włochy z EUR)* \[CP1144\], *IBM EBCDIC (Ameryka Łacińska/Hiszpania z EUR)* \[CP1145\], *IBM EBCDIC (Zjednoczone Brytania z EUR)* \[CP1146\], *IBM EBCDIC (Francja z EUR)* \[CP1147\], *IBM EBCDIC (międzynarodowy z EUR)*  \[CP1148\], *IBM EBCDIC (islandzki z EUR)* \[CP1149\], *IBM EBCDIC (Niemcy)* \[ CP20273\], *IBM EBCDIC (Dania/Norwegia)* \[CP20277\], *IBM EBCDIC (Finlandia/Szwecja)* \[CP20278\], *IBM EBCDIC (Włochy)* \[CP20280\], *IBM EBCDIC (Ameryka Łacińska/Hiszpania)* \[CP20284\], *IBM EBCDIC (Zjednoczone Królestwo)* \[CP20285\], *IBM EBCDIC (japoński Katakana rozszerzony)* \[CP20290\], *IBM EBCDIC (Francja)* \[CP20297\], *IBM EBCDIC (arabski)* \[CP20420\], *IBM EBCDIC (wersja hebrajska)* \[CP20424\], *IBM EBCDIC (islandzki)* \[ CP20871\], *IBM EBCDIC (cyrylica — serbski, bułgarski)* \[CP21025\], *IBM EBCDIC (USA Kanada)* \[ CP37\], *IBM EBCDIC (międzynarodowy)* \[CP500\], *arabski (ASMO 708){10
 
     -   **Zachodnie**: obejmują zachodni kodowania, takich jak *Europa Zachodnia (Mac)* \[macintosh, CP10000\], *islandzkim (Mac)* \[x-mac islandzkim CP10079\], *centralnej Europejskiego (system Windows)* \[iso 8859-2, CP1250\], *Europa Zachodnia (system Windows)* \[iso 8859-1, CP1252\], *Grecki (system Windows)* \[iso-8859-7 CP1253\], *centralnej Europejskiego (ISO)* \[iso 8859-2, CP28592\], *Alfabetu łacińskiego 3 (ISO)* \[iso 8859-3 CP28593\], *Grecki (ISO)* \[iso-8859-7 CP28597\], *Łaciński 9 (ISO)*  \[iso-8859-15, CP28605\], *Stanów Zjednoczonych OEM* \[CP437\], *zachodni Europejskiego (DOS)* \[CP850\], *portugalski (DOS)* \[CP860\], *islandzkim (DOS)* \[CP861\],  *Francuski kanadyjskich (DOS)* \[CP863\], i *Nordycki (DOS)* \[CP865\].
 
