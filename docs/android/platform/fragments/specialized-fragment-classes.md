@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7ddb4b7d4867813311448258bb4fb177ae4cd175
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="specialized-fragment-classes"></a>Klasy fragmentu specjalne
 
@@ -191,8 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-Aby ułatwić zarządzanie preferencje, zapewnia API fragmenty `PreferenceFragment` podklasy. `PreferenceFragment` Jest podobny do [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/
-) &ndash; hierarchii preferencji użytkownika będzie widoczny na fragmentu. Jako użytkownik wchodzi w interakcję z preferencji, zostaną one automatycznie zapisane do [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
+Aby ułatwić zarządzanie preferencje, zapewnia API fragmenty `PreferenceFragment` podklasy. `PreferenceFragment` Jest podobny do [PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash; hierarchii preferencji użytkownika będzie widoczny na fragmentu. Jako użytkownik wchodzi w interakcję z preferencji, zostaną one automatycznie zapisane do [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
 W Android 3.0 lub nowszej aplikacji, użyj `PreferenceFragment` radzenia sobie z Preferencje w aplikacjach. Na poniższej ilustracji przedstawiono przykład `PreferenceFragment`:
 
 [![Przykład PreferencesFragment z wbudowanego, okno dialogowe i preferencje uruchamiania](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)

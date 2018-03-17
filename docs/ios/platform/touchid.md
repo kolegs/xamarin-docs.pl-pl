@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3564b4f7d41822fdd9ab167fb3e756f26678a17b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -39,11 +39,8 @@ Każdy element łańcucha kluczy jest chroniony przez kod dostępu użytkownikó
 
 Najpierw aplikacji powinien zapytania do łańcucha kluczy, aby zobaczyć, czy istnieje hasła. Jeśli nie istnieje, może być konieczne monitować o hasło, więc użytkownik nie jest stale poproszony. Jeśli hasło musi zostać zaktualizowany, monit o podanie nowego hasła i przekaż zaktualizowanej wartości do łańcucha kluczy.
 
-
-> ℹ️ **Uwaga**: Z żadnych kluczy tajnych z bazy danych nie jest po prostu najlepszych praktyk, lecz oczekiwano, że hasła nie będą przechowywane w pamięci. Klucz tajny dla należy przechowywać tylko w przypadku, jak długo, jak jest to konieczne i absolutnie nie należy przypisywać jej do zmiennej globalnej!
-
-
-
+> [!NOTE]
+> Po pobraniu przy użyciu klucza tajnego z łańcucha kluczy, wszystkie odwołania do danych powinien wyczyszczone z pamięci. Nigdy nie przypisany do zmiennej globalnej.
 
 ## <a name="keychain-acl-and-touch-id"></a>Listy kontroli dostępu łańcucha kluczy i Touch ID
 
@@ -53,32 +50,11 @@ Listy kontroli dostępu jest nowy atrybut elementu łańcucha kluczy w systemie 
 
 Począwszy od systemu iOS 8, jest teraz nowe zasady obecności użytkownika `SecAccessControl`, który jest wymuszana przez bezpieczny enklawę na telefonie iPhone 5s lub nowszym. Firma Microsoft jest widoczna w poniższej tabeli, podobnie jak konfiguracja urządzenia mogą mieć wpływ oceny zasad:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Konfiguracja urządzenia</td>
-    <td>Ocena zasad</td>
-    <td>Mechanizm tworzenia kopii zapasowej</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Urządzenia bez kodu dostępu</td>
-    <td>Brak dostępu</td>
-    <td>Brak</td>
-</tr>
-<tr>
-    <td>Urządzenia z kodu dostępu</td>
-    <td>Wymaga kodu dostępu</td>
-    <td>Brak</td>
-</tr>
-<tr>
-    <td>Urządzenia z Touch ID</td>
-    <td>Preferuje Touch ID</td>
-    <td>Umożliwia kodu dostępu</td>
-</tr>
-</tbody>
-</table>
+|Konfiguracja urządzenia|Ocena zasad|Mechanizm tworzenia kopii zapasowej|
+|--- |--- |--- |
+|Urządzenia bez kodu dostępu|Brak dostępu|Brak|
+|Urządzenia z kodu dostępu|Wymaga kodu dostępu|Brak|
+|Urządzenia z Touch ID|Preferuje Touch ID|Umożliwia kodu dostępu|
 
 Wszystkie operacje wewnątrz enklawę Secure można relacją wzajemnego zaufania. Oznacza to, że firma Microsoft można używać funkcji Touch ID Wynik uwierzytelniania do autoryzowania odszyfrowywania elementu łańcucha kluczy. Secure enklawę zachowanie licznik nieudanych dopasowania funkcji Touch ID, w których przypadku użytkownik będzie musiał przywrócić za pomocą kodu dostępu.
 Nowa struktura w systemie iOS 8, nazywany _uwierzytelniania lokalnych_, obsługuje ten proces uwierzytelniania w urządzeniu. Przeanalizujemy to w następnej sekcji.

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Przy użyciu Wpięć za pomocą platformy Xamarin
 
@@ -343,40 +343,14 @@ Podpisywanie i zipaligning plik APK są technicznie dwóch oddzielnych zadań wy
 
 Oba te polecenia wymaga parametrów wiersza polecenia, które mogą się różnić od projektu do projektu. Ponadto niektóre z tych parametrów wiersza polecenia są hasła, które nie mogą występować w danych wyjściowych konsoli, gdy kompilacja jest uruchomiona. Niektóre z tych parametrów wiersza polecenia będą przechowywane w zmiennych środowiskowych. Zmienne środowiskowe wymagane do podpisywania i/lub wyrównywanie zip zostały opisane w poniższej tabeli:
 
-<table>
-    <thead>
-        <tr>
-            <td>Zmienna środowiskowa</td>
-            <td>Opis</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>To jest ścieżka do magazynu kluczy do podpisywania plik APK</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>Klucz w magazynie kluczy, który będzie służyć do logowania się plik APK.</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>APK, który jest tworzony przez `xbuild`.</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>Podpisem APK utworzonego przez `jarsigner`.</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>Jest to zip wyrównane APK, który jest generowany przez `zipalign`.</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>To hasło, które jest używane do dostępu do zawartości dla singing pliku magazynu kluczy.</td>
-        </tr>
-    </tbody>
-</table>
+|Zmienna środowiskowa|Opis|
+|--- |--- |
+|KEYSTORE_FILE|To jest ścieżka do magazynu kluczy do podpisywania plik APK|
+|KEYSTORE_ALIAS|Klucz w magazynie kluczy, który będzie służyć do logowania się plik APK.|
+|INPUT_APK|APK, który jest tworzony przez `xbuild`.|
+|SIGNED_APK|Podpisem APK utworzonego przez `jarsigner`.|
+|FINAL_APK|Jest to zip wyrównane APK, który jest generowany przez `zipalign`.|
+|STORE_PASS|To hasło, które jest używane do dostępu do zawartości dla singing pliku magazynu kluczy.|
 
 Zgodnie z opisem w sekcji wymagań, podczas kompilacji za pomocą wtyczki EnvInject można ustawić zmienne środowiskowe. Zadanie powinno mieć nowej kompilacji krok dodany oparte na wsuwania zmiennych środowiskowych, jak pokazano w następnym zrzut ekranu:
 

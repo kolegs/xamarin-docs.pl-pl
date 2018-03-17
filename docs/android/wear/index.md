@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/16/2018
+ms.openlocfilehash: 31114df0b631aea909e82f3a8b836d5ef922d2c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -37,6 +37,10 @@ Wyświetl podgląd i optymalizowanie interfejsu użytkownika dla rozmiaru ekranu
 ##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Wdrażanie i testowanie](~/android/wear/deploy-test/index.md)
 
 Wyjaśniono, jak wdrożyć aplikację systemu Android nosić na urządzenia z systemem Android nosić lub skonfigurowany dla zużycia emulatora systemu Android. Obejmuje on też debugowania porady i informacje dotyczące sposobu konfigurowania połączenia Bluetooth między komputerem programowanie i urządzenia z systemem Android.
+
+##  <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Używać interfejsów API](https://developer.android.com/reference/android/support/wearable)
+
+Witryny dewelopera systemu Android zawiera szczegółowe informacje dotyczące klucza nosić interfejsów API, takich jak [Wearable działania](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html), [intencje](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html), [uwierzytelniania](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html), [ Komplikacji](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html), [komplikacji renderowania](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html), [powiadomienia](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html), [widoków](https://developer.android.com/reference/android/support/wearable/view/package-summary.html), i [WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html).
 
 
 

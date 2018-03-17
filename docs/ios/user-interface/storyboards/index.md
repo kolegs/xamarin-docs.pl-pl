@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>Wprowadzenie do scenorysu
 
@@ -84,32 +84,12 @@ Aplikacje korzystające z klasy wielkości będą też używać nowego [ *adapta
 
 [![](images/adaptivesegue.png "Lista rozwijana adaptacyjną Segues")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>Segue</th>
-            <th>Opis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Pokaż</td>
-            <td>To jest bardzo podobny do wypychania segue, lecz uwzględnia ona zawartości ekranu. </td>
-        </tr>
-        <tr>
-            <td>Pokaż szczegóły</td>
-            <td>Jeśli aplikacja wyświetla widok główny i szczegóły (na przykład w kontrolerze widoku podziału na urządzeniu iPAd), zawartości spowoduje zastąpienie widok szczegółów. Jeśli aplikacja wyświetla tylko wzorcu <strong>lub</strong> szczegółów, zawartości spowoduje zastąpienie ze szczytu stosu kontrolera widoku.</td>
-        </tr>
-        <tr>
-            <td>Prezentacji</td>
-            <td>To jest podobny do segue modalne i pozwala na wybór stylów prezentacji i przejścia.</td>
-        </tr>
-        <tr>
-            <td>Popover prezentacji</td>
-            <td>Stwarza zawartości jako popover</td>
-        </tr>
-    </tbody>
-</table>
+|Segue|Opis|
+|--- |--- |
+|Pokaż|To jest bardzo podobny do wypychania segue, lecz uwzględnia ona zawartości ekranu.|
+|Pokaż szczegóły|Jeśli aplikacja wyświetla widok główny i szczegóły (na przykład w kontrolerze widoku podziału na urządzeniu iPad), zawartości spowoduje zastąpienie widok szczegółów. Jeśli aplikacja wyświetla tylko głównego lub szczegółów, zawartości spowoduje zastąpienie ze szczytu stosu kontrolera widoku.|
+|Prezentacji|To jest podobny do segue modalne i pozwala na wybór stylów prezentacji i przejścia.|
+|Popover prezentacji|Stwarza zawartości jako popover|
 
 ### <a name="transferring-data-with-segues"></a>Transfer danych z Segues
 

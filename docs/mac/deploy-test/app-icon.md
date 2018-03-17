@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ceeb0d33b00288e2a50dc7f758902c1dbc7ab04a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icon"></a>Ikona aplikacji
 
@@ -61,52 +61,18 @@ Na przykład aby przekazać wersji 512 x 512 ikony aplikacji, plik będzie nosi�
 
 Aby upewnić się, że ikony wygląda bardzo we wszystkich miejscach, że użytkownicy będą widzieć go, należy podać zasobów do rozmiarów wymienionych poniżej:
 
-<table width="100%" border="1px">
-<tr>
-    <td>Nazwa pliku</td>
-    <td>Rozmiar w pikselach</td>
-</tr>
-<tr>
-    <td>icon_512x512@2x.png</td>
-    <td>1024 x 1024</td>
-</tr>
-<tr>
-    <td>icon_512x512.png</td>
-    <td>512 x 512</td>
-</tr>
-<tr>
-    <td>icon_256x256@2x.png</td>
-    <td>512 x 512</td>
-</tr>
-<tr>
-    <td>icon_256x256.png</td>
-    <td>256 x 256</td>
-</tr>
-<tr>
-    <td>icon_128x128@2x.png</td>
-    <td>256 x 256</td>
-</tr>
-<tr>
-    <td>icon_128x128.png</td>
-    <td>128 x 128</td>
-</tr>
-<tr>
-    <td>icon_32x32@2x.png</td>
-    <td>64 x 64</td>
-</tr>
-<tr>
-    <td>icon_32x32.png</td>
-    <td>32 x 32</td>
-</tr>
-<tr>
-    <td>icon_16x16@2x.png</td>
-    <td>32 x 32</td>
-</tr>
-<tr>
-    <td>icon_16x16.png</td>
-    <td>16 x 16</td>
-</tr>
-</table>
+|Nazwa pliku|Rozmiar w pikselach|
+|---|---|
+|icon_512x512@2x.png|1024 x 1024|
+|icon_512x512.png|512 x 512|
+|icon_256x256@2x.png|512 x 512|
+|icon_256x256.png|256 x 256|
+|icon_128x128@2x.png|256 x 256|
+|icon_128x128.png|128 x 128|
+|icon_32x32@2x.png|64 x 64|
+|icon_32x32.png|32 x 32|
+|icon_16x16@2x.png|32 x 32|
+|icon_16x16.png|16 x 16|
 
 Aby uzyskać więcej informacji, zobacz firmy Apple [Podaj rozdzielczości wersji z wszystkich aplikacji zasobów graficznych](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3) dokumentacji.
 

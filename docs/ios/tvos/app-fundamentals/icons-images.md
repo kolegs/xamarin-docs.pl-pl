@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>Praca z obrazów i ikon
 
@@ -40,17 +40,9 @@ Uruchamianie obrazu pojawi się szybko i daje wrażenie, że aplikacja jest szyb
 
 Obrazy uruchomienia nie są możliwość reklam lub wyrażenie artystyczny, istnieją one tylko do dają pogląd, że aplikacja uruchamia szybko i jest gotowy do użycia.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Uruchamianie obrazu</b></td>
-</tr>
-<tr>
-    <td><b>Rozmiar</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|Rozmiar obrazu uruchamiania|Uwagi|
+|---|---|
+|1920x1080px|Tylko pliki PNG warstwie inne niż|
 
 Apple sprawia, że poniższe sugestie dotyczące projektowania obrazu uruchamianie aplikacji:
 
@@ -146,39 +138,15 @@ Aplikacji Xamarin.tvOS wymaga nie tylko ikony aplikacji dla ekranu Apple TV Narz
 
 Każda aplikacja podać zarówno małych i dużych wersji ikona aplikacji. Małych ikon będzie używany na ekranie Apple TV Narzędzia główne, gdy aplikacja jest zainstalowana. Duża wersja jest używana przez sklepu z aplikacjami. Dużych ikon aplikacji, powinien naśladować wygląd i działanie wersji małych ikon.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Małe ikony</b></td>
-    <td colspan="2"><b>Dużych ikon</b></td>
-</tr>
-<tr>
-    <td><b>Rzeczywisty rozmiar</b></td>
-    <td>400px x 240px</td>
-    <td><b>Rozmiar</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar strefy bezpieczeństwa</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Rozmiaru bez fokusu</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Rozmiar mającego fokus</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|Małe ikony||Dużych ikon||
+|---|---|---|---|
+|Rzeczywisty rozmiar|400x240px|Rozmiar|1280x768px|
+|Rozmiar strefy bezpieczeństwa|370x222px|||
+|Rozmiaru bez fokusu|300x180px|||
+|Rozmiar mającego fokus|370x222px|||
 
 > [!IMPORTANT]
-> **Uwaga:** ikony aplikacji musi być dostarczona jako **warstwie obrazów**. Zobacz [warstwie obrazu](#Layered-Images) sekcji powyżej, aby uzyskać więcej informacji.
+> Ikony aplikacji musi być dostarczona jako **warstwie obrazów**. Zobacz [warstwie obrazu](#Layered-Images) sekcji powyżej, aby uzyskać więcej informacji.
 
 
 
@@ -227,17 +195,9 @@ Jeśli użytkownik ma dotyczącymi aplikacji Xamarin.tvOS górny wiersz na ekran
 
 Obraz górnej półki albo można podać jako pojedynczy statycznego `.png` lub `.lsr` pliku (zobacz [tworzenia obrazów warstwie](#Creating-Layered-Images)) lub go mogą być tworzone dynamicznie w czasie wykonywania jako pojedynczy wiersz Focusable elementów (zobacz [ Zawartość dynamiczna górnej półki](#Dynamic-Top-Shelf-Content) poniżej).
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Obraz z górnej półki</b></td>
-</tr>
-<tr>
-    <td><b>Rozmiar</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|Rozmiar obrazu górnej półki|Uwagi|
+|---|---|
+|1920x720px|Statyczne PNG lub pliku .lsr warstwowej|
 
 Apple zawiera poniższe sugestie dotyczące tworzenia obrazów górnej półki:
 
@@ -279,38 +239,12 @@ Zawartość jest przedstawiany jako pojedynczej, poziomy przewijanej listy zawar
 
 Wymagane będą następujące wymiary zawartości:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Plakat (2:3)</b></td>
-    <td><b>(1:1) kwadratu</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>Rzeczywisty rozmiar</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar strefy bezpieczeństwa</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>Rozmiaru bez fokusu</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar mającego fokus</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||Plakat (2:3)|(1:1) kwadratu|HDTV (16:9)|
+|---|---|---|---|
+|Rzeczywisty rozmiar|404x608px|608x608px|908x512px|
+|Rozmiar strefy bezpieczeństwa|380x570px|570x570px|852x479px|
+|Rozmiaru bez fokusu|333x500px|500x500px|782x440px|
+|Rozmiar mającego fokus|380x570px|570x570px|852x479px|
 
 Apple zawiera poniższe sugestie podzielonym zawartości wiersza:
 
@@ -325,27 +259,14 @@ Opcjonalnie aplikacji Xamarin.tvOS może stanowić jego zawartość w górnej p�
 
 Oprócz automatycznego przewijania, użytkownik może przejąć kontrolę nad transparentach i przewiń w żadnym kierunku przy użyciu zdalnego Siri. Tworzenie małych, cykliczne gestów na komputerze zdalnym Siri, gdy fokus transparent uaktywni efekt paralaksy w tym transparent.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Obraz transparentu (bardzo szerokie)</b></td>
-</tr>
-<tr>
-    <td><b>Rzeczywisty rozmiar</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar strefy bezpieczeństwa</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>Rozmiaru bez fokusu</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar mającego fokus</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**Obraz transparentu (bardzo szerokie)**
+
+|   |   |
+|---|---|
+|Rzeczywisty rozmiar|1940x624px|
+|Rozmiar strefy bezpieczeństwa|1740x620px|
+|Rozmiaru bez fokusu|1740x560px|
+|Rozmiar mającego fokus|1740x620px|
 
 Przewijanie transparentach wstawki albo można podać jako statycznego `.png` lub warstwie `.lsr` pliku.
 
@@ -366,44 +287,13 @@ Jeśli aplikacji Xamarin.tvOS gier oraz obsługa Game Center zostały dołączon
 - **Pulpit nawigacyjny kompozycji** — opcjonalnie obrazu można podać wyświetlanego w górnej części pulpitu nawigacyjnego aplikacji w Centrum gier. Te obrazy są z systemem innym niż focusable.
 - **Kompozycja Liderzy** -należy podać między jednego (1) do trzech (3) obrazów współczynnik proporcji 16:9 dla każdego Liderzy, która obsługuje aplikację. Może to być statycznych `.png` lub warstwie `.lsr` plików. Kompozycja Liderzy jest focusable.
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Ikony osiągnięcia</b></td>
-    <td><b>Kompozycja pulpitu nawigacyjnego</b></td>
-    <td><b>Liderzy kompozycji</b></td>
-</tr>
-<tr>
-    <td><b>Rozmiar widoczne</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>n/d</td>
-</tr>
-<tr>
-    <td><b>Rzeczywisty rozmiar</b></td>
-    <td>320px x 320px</td>
-    <td>n/d</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar strefy bezpieczeństwa</b></td>
-    <td>n/d</td>
-    <td>n/d</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>Rozmiaru bez fokusu</b></td>
-    <td>n/d</td>
-    <td>n/d</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>Rozmiar mającego fokus</b></td>
-    <td>n/d</td>
-    <td>n/d</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||Ikony osiągnięcia|Kompozycja pulpitu nawigacyjnego|Liderzy kompozycji|
+|---|---|---|---|
+|Rozmiar widoczne|200x200px|923x150px|n/d|
+|Rzeczywisty rozmiar|320x320px|n/d|659x371px|
+|Rozmiar strefy bezpieczeństwa|n/d|n/d|618x348px|
+|Rozmiaru bez fokusu|n/d|n/d|548x309px|
+|Rozmiar mającego fokus|n/d|n/d|618x348px|
 
 Aby uzyskać więcej informacji na temat pracy z Centrum gier, zobacz firmy Apple [Game Center Programming Guide](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
 

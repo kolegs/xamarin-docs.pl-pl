@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>Przewodnik odwołań dla typów powiązania
 
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 Obsługiwane są następujące typy danych w `StrongDictionary` definicji:
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>Typ interfejsu C#</td>
-    <td>Typ magazynu NSDictionary</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>Wartość logiczna przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>Wartości wyliczenia</td>
-    <td>Liczba całkowita przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>Liczba całkowita 32-bitowych przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>przechowywane w NSNumber liczbę całkowitą bez znaku 32-bitowych</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>NSInteger przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>NSUInteger przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>64-bitowej liczby całkowitej przechowywane w NSNumber</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>Liczba całkowita 32-bitowych przechowywane jako NSNumber</td>
-  </tr>
-  <tr>
-    <td>double</td>
-    <td>64-bitowej liczby całkowitej przechowywane jako NSNumber</td>
-  </tr>
-  <tr>
-    <td>NSObject i podklas</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>string</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>C# tablicę NSObject</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>C# tablicę wyliczenia</td>
-    <td>NSArray zawierający NSNumbers o wartości</td>
-  </tr>
-</tbody>
+|Typ interfejsu C#|`NSDictionary` Typ magazynu|
+|---|---|
+|`bool`|`Boolean` przechowywane w `NSNumber`|
+|Wartości wyliczenia|Liczba całkowita przechowywane w `NSNumber`|
+|`int`|Liczba całkowita 32-bitowych przechowywane w `NSNumber`|
+|`uint`|przechowywane w liczbę całkowitą bez znaku 32-bitowych `NSNumber`|
+|`nint`|`NSInteger` przechowywane w `NSNumber`|
+|`nuint`|`NSUInteger` przechowywane w `NSNumber`|
+|`long`|64-bitowej liczby całkowitej przechowywane w `NSNumber`|
+|`float`|Liczba całkowita 32-bitowych przechowywane jako `NSNumber`|
+|`double`|64-bitowej liczby całkowitej przechowywane jako `NSNumber`|
+|`NSObject` i podklas|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C# `Array` z `NSObject`|`NSArray`|
+|C# `Array` z wyliczenia|`NSArray` zawierający `NSNumber` wartości|

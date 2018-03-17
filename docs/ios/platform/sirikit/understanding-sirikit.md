@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Pojęcia SiriKit
 
@@ -65,108 +65,33 @@ Istnieje wiele sposobów, użytkownik może zainicjować interakcji z aplikacją
 
 Na przykład jeśli użytkownik chce wysłać komunikat do ich friend Bobo, mogą pojawić się następujące konwersacji z Siri:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Witaj Siri, wysyłania wiadomości MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Aby kogo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo"</td>
-</tr>
-<tr>
-    <td>"Co chcesz powiedzieć, aby Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Wyślij bananów więcej"</td>
-</tr>
-</table>
+_Użytkownik: Witaj Siri, Wyślij wiadomość MonkeyChat._<br />
+_Używanie programu Siri: komu?_<br />
+_Użytkownik: Bobo._<br />
+_Używanie programu Siri: Co chcesz powiedzieć, aby Bobo?_<br />
+_Użytkownik: Wyślij bananów więcej._<br />
 
 Inna osoba może uniemożliwić tego samego żądania o różnych konwersacji:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Wyślij wiadomość do Bobo na MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Co chcesz powiedzieć, aby Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Wyślij bananów więcej"</td>
-</tr>
-</table>
+_Użytkownik: Wyślij wiadomość do Bobo na MonkeyChat._<br />
+_Używanie programu Siri: Co chcesz powiedzieć, aby Bobo?_<br />
+_Użytkownik: Wyślij bananów więcej._<br />
 
 I inny użytkownik może uniemożliwić nawet krótszą żądania:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo Wyślij bananów więcej"</td>
-</tr>
-<tr>
-    <td>"Ok wysyłania komunikatu Wyślij więcej bananów do Bobo na Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Użytkownik: MonkeyChat Bobo Wyślij bananów więcej._<br />
+_Używanie programu Siri: Ok wysyłania komunikatu Wyślij więcej bananów do Bobo na Monkeychat._<br />
 
 Lub nawet zgłoszenia tego samego żądania w innym języku:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo s'il vous plaît envoyer plus de bananes"</td>
-</tr>
-<tr>
-    <td>"Oui, envoi komunikat s'il vous plaît envoyer plus de bananes a Bobo sur Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Użytkownik: MonkeyChat Bobo s'il vous plaît envoyer plus de bananes._<br />
+_Używanie programu Siri: Oui, envoi komunikat s'il vous plaît envoyer plus de bananes a Bobo sur Monkeychat._<br />
 
 Jeszcze inny użytkownik może być bardzo pełne ich konwersacji:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Witaj Siri, można Sprawdź nie mnie Preferuj i uruchom aplikację MonkeyChat wysłać więcej bananów Wyślij tekstowy z komunikatem"</td>
-</tr>
-<tr>
-    <td>"Aby kogo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Moje najlepsze pal Bobo"</td>
-</tr>
-</table>
+_Użytkownik: Witaj Siri, można prosimy nie mnie Preferuj i uruchamianie aplikacji MonkeyChat wysyłanie tekstowy z komunikatem Wyślij bananów więcej._<br />
+_Używanie programu Siri: komu?_<br />
+_Użytkownik: Moje najlepsze pal Bobo._<br />
 
 Ponadto istnieje wiele sposobów, które Siri może odpowiadać na żądanie, niektóre oparte na jak żądanie zostało utworzone:
 
@@ -198,24 +123,9 @@ Istnieją trzy sposoby, które aplikacji mogą brać udział w konwersacji użyt
 
 Biorąc pod uwagę powyższe informacje, sprawdź następujące konwersacji czy interakcję z aplikacji MonkeyChat:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Używanie programu Siri</b></td>
-    <td width="50%"><b>Użytkownika</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Witaj Siri, wysyłania komunikatu do Bobo na MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Co chcesz powiedzieć, aby Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Wyślij bananów więcej"</td>
-</tr>
-</table>
+_Użytkownik: Witaj Siri, wysyłania komunikatu do Bobo na MonkeyChat._<br />
+_Używanie programu Siri: Co chcesz powiedzieć, aby Bobo?_<br />
+_Użytkownik: Wyślij bananów więcej._<br />
 
 Pierwsza rola aplikacji przyjmującego konwersacji jest pomoc Siri zrozumieć mowy użytkownika:
 

@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Jakie opcje pomocy technicznej są dostępne dla platformy Xamarin?
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 Jak pokazano na [strony pomocy technicznej Xamarin](https://www.xamarin.com/support), jest dostępnych kilka opcji.  Oto niektóre szybkie wstępne zalecenia [inspirowana przez przepełnienie stosu](http://stackoverflow.com/help/product-support) na wybieranie najlepszych opcji:
 
-<table>
-    <tr>
-        <td>"Co ten błąd oznacza?" lub "Jak...?"</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">Przepełnienie stosu</a> w obszarze <em>xamarin</em> tag</td>
-    </tr>
-    <tr>
-        <td>I nadzieję, że przyczyną tego problemu jest usterką w kodzie źródłowym Xamarin.</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>Masz pomysł, żądanie funkcji lub nowe żądanie dokumentacji.</td>
-        <td><a href="https://xamarin.uservoice.com">Strona Xamarin UserVoice</a></td>
-    </tr>
-    <tr>
-        <td>Jakie zasoby, struktury lub narzędzia innych użytkowników zaleca się dla...? (i innych dyskusji otwarty)</td>
-        <td><a href="https://forums.xamarin.com/">Fora Xamarin</a></td>
-    </tr>
-    <tr>
-        <td>Użytkownik ma pytania dotyczące subskrypcji, licencji lub cennik.</td>
-        <td>W wiadomościach e-mail lub wywołać przy użyciu informacje kontaktowe na <a href="https://www.xamarin.com/faq">— często zadawane pytania</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|"Co ten błąd oznacza?" lub "Jak...?"|[Przepełnienie stosu](http://stackoverflow.com/questions/ask?tags=xamarin) w obszarze *xamarin* tag|
+|I nadzieję, że przyczyną tego problemu jest usterką w kodzie źródłowym Xamarin.|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|Masz pomysł, żądanie funkcji lub nowe żądanie dokumentacji.|[Strona Xamarin UserVoice](https://xamarin.uservoice.com)|
+|Jakie zasoby, struktury lub narzędzia innych użytkowników zaleca się dla...? (i innych dyskusji otwarty)|[Fora Xamarin](https://forums.xamarin.com)|
+|Użytkownik ma pytania dotyczące subskrypcji, licencji lub cennik.|W wiadomościach e-mail lub wywołać przy użyciu informacje kontaktowe na [— często zadawane pytania](https://www.xamarin.com/faq)|
 
 Zespół pomocy technicznej Xamarin pomaga monitorować każdą z tych opcji.  Firma Microsoft zachęca wszystkich użytkowników do ich współtworzenia przemyślane pytania oraz zalet i zwiększyć wiedzę społeczności deweloperów platformy Xamarin raporty.  Pod względem wad podejrzanych Pamiętaj przesyłać raporty błędów, jeśli to możliwe upewnić się, że problemy są śledzone formalnie przez zespół inżynieryjny Xamarin.
 

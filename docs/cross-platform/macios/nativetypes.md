@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: b78ade19efed92ab3b2d8ba790f2d7334472bab4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09858bd7902b44bbedd96f1be9c9c827131ee16f
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="native-types"></a>Typy natywne
 
@@ -27,28 +27,11 @@ Z tych nowych typów danych ten sam kod źródłowy jest kompilowany dla 32-bito
 
 W poniższej tabeli przedstawiono zmian w naszej typy danych do dopasowania tego nowego świata 32/x 64:
 
-<table>
-        <tr>
-            <th>Typ macierzysty</th>
-            <th>32-bitowe zapasowy typ</th> 
-            <th>64-bitowych zapasowy typ</th>
-        </tr>
-        <tr>
-            <td><code>System.nint</code></td>
-        <td><code>System.Int32</code> (<code>int</code>)</td>
-        <td><code>System.Int64</code> (<code>long</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nuint</code></td>
-        <td><code>System.UInt32</code> (<code>uint</code>)</td>
-        <td><code>System.UInt64</code> (<code>ulong</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nfloat</code></td>
-        <td><code>System.Single</code> (<code>float</code>)</td>
-        <td><code>System.Double</code> (<code>double</code>)</td>
-        </tr>
-    </table>
+|Typ macierzysty|32-bitowe zapasowy typ|64-bitowych zapasowy typ|
+|--- |--- |--- |
+|`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
+|`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
+|`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
 Wybraliśmy tych nazw, aby umożliwić kodu C# do wyglądać mniej więcej tak samo jak będzie wyglądać dzisiaj.
 
@@ -76,32 +59,15 @@ Typy danych punktu, rozmiar i prostokąt, które są używane z CoreGraphics Uż
 
 Podczas przenoszenia na **Unified**, należy zastąpić wystąpienia `System.Drawing` z ich `CoreGraphics` odpowiedników, jak pokazano w poniższej tabeli:
 
-<table>
-        <tr>
-            <th>Stary typ w System.Drawing</th>
-            <th>Nowe CoreGraphics typu danych</th> 
-            <th>Opis</th>
-        </tr>
-        <tr>
-        <td><code>RectangleF</code></td>
-        <td><code>CGRect</code></td>
-        <td>Liczby zmiennoprzecinkowe informacji dotyczących punktów prostokąta blokad.  </td>
-        </tr>
-        <tr>
-        <td><code>SizeF</code></td>
-        <td><code>CGSize</code></td>
-        <td>Informacje o rozmiarze (szerokość, wysokość) punktu blokad liczby zmiennoprzecinkowe</td>
-        </tr>
-        <tr>
-        <td><code>PointF</code></td>
-        <td><code>CGPoint</code></td>
-        <td>Przechowuje zmiennoprzecinkowych, punktu informacje (X, Y)</td>
-        </tr>
-    </table>
+|Stary typ w System.Drawing|Nowe CoreGraphics typu danych|Opis|
+|--- |--- |--- |
+|`RectangleF`|`CGRect`|Liczby zmiennoprzecinkowe informacji dotyczących punktów prostokąta blokad.|
+|`SizeF`|`CGSize`|Informacje o rozmiarze (szerokość, wysokość) punktu blokad liczby zmiennoprzecinkowe|
+|`PointF`|`CGPoint`|Przechowuje zmiennoprzecinkowych, punktu informacje (X, Y)|
 
 Stary elementów przestawnych typów używanych danych do przechowywania elementów struktury danych podczas nowej używa jednego `System.nfloat`.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Praca z typy natywne w wieloplatformowych aplikacji](~/cross-platform/macios/native-types-cross-platform.md)
-- [Klasycznym vs różnice Unified API](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Praca z typami natywnymi w aplikacjach międzyplatformowych](~/cross-platform/macios/native-types-cross-platform.md)
+- [Klasycznym vs różnice Unified API](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

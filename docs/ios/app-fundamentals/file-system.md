@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fd6aa66a7e5e788babc0df3e94b8f3677a7625f0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-the-file-system"></a>Praca w systemie plików
 
@@ -238,78 +238,14 @@ Poniżej wymieniono tych katalogów oraz ich celów:
 
 &nbsp;
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-Katalog </td>
-      <td>
-Opis </td>
-    </tr>
-    <tr>
-      <td>
-        <p>[ApplicationName].app/</p>
-      </td>
-      <td>
-        <p><b>W systemie iOS 7 i wcześniejszych</b> to <code>ApplicationBundle</code> katalogu, w którym przechowywana jest aplikacja pliku wykonywalnego. Struktury katalogów, które są tworzone w aplikacji istnieje w tym katalogu (na przykład obrazów i innych typów plików, które zostały oznaczone jako zasoby w Visual Studio dla projektu Mac).</p>
-        <p>Jeśli potrzebujesz dostępu do zawartości plików wewnątrz Twojego pakietu aplikacji, ścieżka do tego katalogu jest dostępna za pośrednictwem <code>NSBundle.MainBundle.BundlePath</code> właściwości.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Dokumenty /</p>
-      </td>
-      <td>
-        <p>Użyj tego katalogu do przechowywania dokumentów użytkownika i pliki danych aplikacji.</p>
-        <p>Zawartość tego katalogu mogą dostępne użytkownika za pośrednictwem udostępniania (mimo że to jest domyślnie wyłączona) plików programu iTunes. Dodaj <code>UIFileSharingEnabled</code> logiczna klucz do pliku Info.plist, aby umożliwić użytkownikom dostęp do tych plików.</p>
-        <p>Nawet jeśli aplikacja nie natychmiast włączone udostępnianie plików, należy unikać umieszczania plików, które mają być ukryte przed użytkownicy w tym katalogu (takich jak pliki bazy danych, chyba że chcesz udostępniać je). Tak długo, jak poufne pliki pozostają ukryte, te pliki zostanie nie widoczne (i potencjalnie przeniesiony, zmodyfikowany lub usunięty przez iTunes) po włączeniu udostępniania plików w przyszłych wersjach.</p>
-        <p>Można użyć <code>Environment.GetFolderPath
-(Environment.SpecialFolder.MyDocuments)</code> metody można uzyskać ścieżki do katalogu dokumentów aplikacji.</p>
-        <p>Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Biblioteka /</p>
-      </td>
-      <td>
-        <p>Katalog biblioteki jest dobrym miejscem do przechowywania plików, które nie są tworzone bezpośrednio przez użytkownika, takie jak bazy danych lub inne pliki wygenerowane w aplikacji.
-Zawartość tego katalogu nigdy nie są widoczne dla użytkownika za pomocą programu iTunes.</p>
-        <p>Można utworzyć własny podkatalogów w bibliotece; istnieją już niektóre systemowy katalogów w tym miejscu należy pamiętać o tym preferencje i pamięci podręczne.</p>
-        <p>Zawartość tego katalogu (z wyjątkiem podkatalogu pamięci podręcznych) kopie zapasowe są wykonywane iTunes. Katalogi niestandardowe, które należy utworzyć w bibliotece będą kopii zapasowej.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Preferencje dotyczące/biblioteki /</p>
-      </td>
-      <td>
-        <p>Pliki preferencji specyficzne dla aplikacji są przechowywane w tym katalogu. Nie bezpośrednio tworzenia tych plików. Zamiast tego należy użyć <code>NSUserDefaults</code> klasy.</p>
-        <p>Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Biblioteka/pamięci podręcznych /</p>
-      </td>
-      <td>
-        <p>Katalog pamięci podręcznej jest uruchomienie dobrym miejscem do przechowywania plików danych, które mogą pomóc aplikacji, ale który można łatwo utworzyć ponownie w razie potrzeby. Aplikacji należy utworzyć i usunąć te pliki, zgodnie z potrzebami i mieć możliwość ponownego tworzenia tych plików, jeśli to konieczne. iOS 5 może to również usunięcie tych plików (w obszarze sytuacji bardzo małych magazynu), jednak nie będzie wykonywał, gdy aplikacja jest uruchomiona.</p>
-        <p>Zawartość tego katalogu nie kopie zapasowe są wykonywane iTunes, co oznacza, że nie będzie wyświetlany, jeśli użytkownik przywraca urządzenia, a nie mogą być obecne po zainstalowaniu zaktualizowanej wersji aplikacji.</p>
-        <p>Na przykład w przypadku, gdy aplikacja nie może połączyć się z siecią, można użyć katalogu pamięci podręcznej do przechowywania danych lub plików, aby zapewnić dobrą środowisko w trybie offline. Aplikację można zapisywać i szybko pobrać te dane podczas oczekiwania na odpowiedzi sieci, ale go nie należy wykonać kopię i łatwo można odzyskać lub ponownie utworzyć po aktualizacji Przywróć lub wersji.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>TMP /</p>
-      </td>
-      <td>
-        <p>Aplikacje można przechowywać pliki tymczasowe, które są wymagane tylko przez krótki czas, w tym katalogu. Aby zaoszczędzić miejsce na pliki mają zostać usunięte, gdy nie są już wymagane. System operacyjny może również usunięcie plików z tego katalogu, jeśli aplikacja nie jest uruchomiona.</p>
-        <p>Zawartość tego katalogu nie jest wykonywana przez program iTunes.</p>
-        <p>Na przykład katalogu tmp może służyć do przechowywania plików tymczasowych, które zostaną pobrane do wyświetlenia dla użytkownika (na przykład awatarów Twitter lub załączników wiadomości e-mail), ale które można usunąć, po ich zostały zostały wyświetlić (i ponownie pobrany, jeśli są wymagane w przyszłości ).</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Katalog|Opis|
+|---|---|
+|[ApplicationName].app/|**W systemie iOS 7 i wcześniejszych** to `ApplicationBundle` katalogu, w którym przechowywana jest aplikacja pliku wykonywalnego. Struktury katalogów, które są tworzone w aplikacji istnieje w tym katalogu (na przykład obrazów i innych typów plików, które zostały oznaczone jako zasoby w Visual Studio dla projektu Mac).<br /><br />Jeśli potrzebujesz dostępu do zawartości plików wewnątrz Twojego pakietu aplikacji, ścieżka do tego katalogu jest dostępna za pośrednictwem `NSBundle.MainBundle.BundlePath` właściwości.|
+|Dokumenty /|Użyj tego katalogu do przechowywania dokumentów użytkownika i pliki danych aplikacji.<br /><br />Zawartość tego katalogu mogą dostępne użytkownika za pośrednictwem udostępniania (mimo że to jest domyślnie wyłączona) plików programu iTunes. Dodaj `UIFileSharingEnabled` logiczna klucz do pliku Info.plist, aby umożliwić użytkownikom dostęp do tych plików.<br /><br />Nawet jeśli aplikacja nie natychmiast włączone udostępnianie plików, należy unikać umieszczania plików, które mają być ukryte przed użytkownicy w tym katalogu (takich jak pliki bazy danych, chyba że chcesz udostępniać je). Tak długo, jak poufne pliki pozostają ukryte, te pliki zostanie nie widoczne (i potencjalnie przeniesiony, zmodyfikowany lub usunięty przez iTunes) po włączeniu udostępniania plików w przyszłych wersjach.<br /><br /> Można użyć `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` metody można uzyskać ścieżki do katalogu dokumentów aplikacji.<br /><br />Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.|
+|Biblioteka /|Katalog biblioteki jest dobrym miejscem do przechowywania plików, które nie są tworzone bezpośrednio przez użytkownika, takie jak bazy danych lub inne pliki wygenerowane w aplikacji. Zawartość tego katalogu nigdy nie są widoczne dla użytkownika za pomocą programu iTunes.<br /><br />Można utworzyć własny podkatalogów w bibliotece; istnieją już niektóre systemowy katalogów w tym miejscu należy pamiętać o tym preferencje i pamięci podręczne.<br /><br />Zawartość tego katalogu (z wyjątkiem podkatalogu pamięci podręcznych) kopie zapasowe są wykonywane iTunes. Katalogi niestandardowe, które należy utworzyć w bibliotece będą kopii zapasowej.|
+|Preferencje dotyczące/biblioteki /|Pliki preferencji specyficzne dla aplikacji są przechowywane w tym katalogu. Nie bezpośrednio tworzenia tych plików. Zamiast tego należy użyć `NSUserDefaults` klasy.<br /><br />Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.|
+|Biblioteka/pamięci podręcznych /|Katalog pamięci podręcznej jest uruchomienie dobrym miejscem do przechowywania plików danych, które mogą pomóc aplikacji, ale który można łatwo utworzyć ponownie w razie potrzeby. Aplikacji należy utworzyć i usunąć te pliki, zgodnie z potrzebami i mieć możliwość ponownego tworzenia tych plików, jeśli to konieczne. iOS 5 może to również usunięcie tych plików (w obszarze sytuacji bardzo małych magazynu), jednak nie będzie wykonywał, gdy aplikacja jest uruchomiona.<br /><br />Zawartość tego katalogu nie kopie zapasowe są wykonywane iTunes, co oznacza, że nie będzie wyświetlany, jeśli użytkownik przywraca urządzenia, a nie mogą być obecne po zainstalowaniu zaktualizowanej wersji aplikacji.<br /><br />Na przykład w przypadku, gdy aplikacja nie może połączyć się z siecią, można użyć katalogu pamięci podręcznej do przechowywania danych lub plików, aby zapewnić dobrą środowisko w trybie offline. Aplikację można zapisywać i szybko pobrać te dane podczas oczekiwania na odpowiedzi sieci, ale go nie należy wykonać kopię i łatwo można odzyskać lub ponownie utworzyć po aktualizacji Przywróć lub wersji.|
+|TMP /|Aplikacje można przechowywać pliki tymczasowe, które są wymagane tylko przez krótki czas, w tym katalogu. Aby zaoszczędzić miejsce na pliki mają zostać usunięte, gdy nie są już wymagane. System operacyjny może również usunięcie plików z tego katalogu, jeśli aplikacja nie jest uruchomiona.<br /><br />Zawartość tego katalogu nie jest wykonywana przez program iTunes.<br /><br />Na przykład katalogu tmp może służyć do przechowywania plików tymczasowych, które zostaną pobrane do wyświetlenia dla użytkownika (na przykład awatarów Twitter lub załączników wiadomości e-mail), ale które można usunąć, po ich zostały zostały wyświetlić (i ponownie pobrany, jeśli są wymagane w przyszłości ).|
 
 Ten zrzut ekranu przedstawia struktury katalogów, w oknie wyszukiwania:
 

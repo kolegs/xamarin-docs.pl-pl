@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>Za pomocą selektora daty
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Gdy `DateTime` wartości w określonej w języku XAML, używa analizatora języka XAML `DateTime.Parse` metody z `CultureInfo.InvariantCulture` argument można przekonwertować ciągu na `DateTime` wartość. Należy określić daty w formacie dokładne: dwucyfrowe miesięcy, dni dwucyfrowe i lata czterocyfrowe oddzielone ukośniki:
+Gdy `DateTime` wartość została określona w języku XAML, używa analizatora języka XAML `DateTime.Parse` metody z `CultureInfo.InvariantCulture` argument można przekonwertować ciągu na `DateTime` wartość. Należy określić daty w formacie dokładne: dwucyfrowe miesięcy, dni dwucyfrowe i lata czterocyfrowe oddzielone ukośniki:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -78,7 +78,7 @@ Można użyć opcji nieograniczonego układ poziomy, takich jak `Center`, `Start
             ··· />
 ```
 
-Jednak nie jest to zalecane. W zależności od ustawienia `Format` właściwości wybrane daty mogą wymagać różnych wyświetlania szerokości. Na przykład ciąg formatu "D" powoduje, że `DateTime` na potrzeby wyświetlania dat w formacie długim i "Środa, 12 września 2018" wymaga szerokości ekranu większą niż "Piątek, 4 może 2018". W zależności od platformy, może spowodować tej różnicy `DateTime` widoku, aby zmienić szerokość w układzie lub wyświetlania do skrócenia.
+Jednak nie jest to zalecane. W zależności od ustawienia `Format` właściwości wybrane daty mogą wymagać różnych wyświetlania szerokości. Na przykład ciąg formatu "D" powoduje, że `DateTime` na potrzeby wyświetlania dat w formacie długim i "Środa, 12 września 2018" wymaga szerokości ekranu większą niż "Piątek, 4 może 2018." W zależności od platformy, może spowodować tej różnicy `DateTime` widoku, aby zmienić szerokość w układzie lub wyświetlania do skrócenia.
 
 > [!TIP]
 > Najlepiej użyć domyślnego `HorizontalOptions` ustawienie `Fill` z `DatePicker`i nie należy używać szerokości `Auto` podczas umieszczania `DatePicker` w `Grid` komórki.
@@ -139,7 +139,7 @@ Oto pliku XAML:
 </ContentPage>
 ```
 
-Każdy `DatePicker` przypisano `Format` właściwości "D" w formacie daty długiej. Zauważ również, że `endDatePicker` obiekt ma powiązanie, którego celem jest jego `MinimumDate` właściwości. Źródło powiązania jest wybrane `Date` właściwość `startDatePicker` obiektu. Dzięki temu, że data zakończenia jest zawsze później lub taka sama jak Data rozpoczęcia. Oprócz dwóch `DatePicker` obiektów, `Switch` etykietą "Uwzględnij zarówno dzień w sumie". 
+Każdy `DatePicker` przypisano `Format` właściwości "D" w formacie daty długiej. Zauważ również, że `endDatePicker` obiekt ma powiązanie, którego celem jest jego `MinimumDate` właściwości. Źródło powiązania jest wybrane `Date` właściwość `startDatePicker` obiektu. Dzięki temu, że data zakończenia jest zawsze później lub taka sama jak Data rozpoczęcia. Oprócz dwóch `DatePicker` obiektów, `Switch` etykietą "Dołącz zarówno dni w sumie". 
 
 Dwa `DatePicker` widoki mają procedurami obsługi dołączonymi do `DateSelected` zdarzenia i `Switch` dołączył obsługi do jego `Toggled` zdarzeń. Te programy obsługi zdarzeń znajdują się w pliku CodeBehind i wyzwolić nowego obliczenia dni między dwoma datami:
 

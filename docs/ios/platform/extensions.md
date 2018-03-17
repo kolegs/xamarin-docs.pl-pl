@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>Rozszerzenia systemu iOS
 
@@ -44,63 +44,14 @@ W tym artykule omówiono następujące tematy:
 
 ## <a name="extension-points"></a>Punkty rozszerzenia
 
-Istnieje kilka typów rozszerzenia, które można utworzyć w systemie iOS 8 (i nowsze):
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >Typ</th>
-    <th >Opis</th>
-    <th >Punkt rozszerzenia</th>
-    <th >Host aplikacji</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >Akcja</td>
-    <td >Edytor specjalnych, lub podglądu dla określonego typu nośnika</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >wszystkie</td>
-</tr>
-<tr>
-    <td >Dostawca dokumentu</td>
-    <td >Umożliwia aplikacji korzystanie z magazynu zdalnego dokumentu</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >Aplikacje używające <a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >Klawiatury</td>
-    <td >Alternatywne klawiatury</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >wszystkie</td>
-</tr>
-<tr>
-    <td >Edytowanie fotografii</td>
-    <td >Manipulowanie zdjęć i edytowania</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Edytor Photos.App</td>
-</tr>
-<tr>
-    <td >Udostępnij</td>
-    <td >Udostępnia dane z sieciami społecznościowymi, wiadomości usługi itd.</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >wszystkie</td>
-</tr>
-<tr>
-    <td >Dzisiaj</td>
-    <td >"Elementy widget" wyświetlanych na ekranie dzisiaj lub Centrum powiadomień</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >Centrum powiadomień i dziś</td>
-</tr>
-</tbody>
-</table>
+|Typ|Opis|Punkt rozszerzenia|Host aplikacji|
+|--- |--- |--- |--- |
+|Akcja|Edytor specjalnych, lub podglądu dla określonego typu nośnika|`com.apple.ui-services`|wszystkie|
+|Dostawca dokumentu|Umożliwia aplikacji korzystanie z magazynu zdalnego dokumentu|`com.apple.fileprovider-ui`|Aplikacje używające [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Klawiatury|Alternatywne klawiatury|`com.apple.keyboard-service`|wszystkie|
+|Edytowanie fotografii|Manipulowanie zdjęć i edytowania|`com.apple.photo-editing`|Edytor Photos.App|
+|Udostępnij|Udostępnia dane z sieciami społecznościowymi, wiadomości usługi itd.|`com.apple.share-services`|wszystkie|
+|Dzisiaj|"Elementy widget" wyświetlanych na ekranie dzisiaj lub Centrum powiadomień|`com.apple.widget-extensions`|Centrum powiadomień i dziś|
 
 [Dodatkowe rozszerzenia punktów](~/ios/platform/introduction-to-ios10/index.md#app-extensions) zostały dodane w systemie iOS 10.
 

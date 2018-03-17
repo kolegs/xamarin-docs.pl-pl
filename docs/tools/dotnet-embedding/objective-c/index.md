@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Obsługa języka Objective C
 
@@ -201,13 +201,11 @@ Ze względu na `NSDate` Data, wszystkie konwersje między on odwołania i `DateT
 
 Podczas konwertowania z `DateTime` do `NSDate` element DateTime `Kind` właściwości jest brana pod uwagę.
 
-<table>
-<tr><th> rodzaj         </th><th> Wyniki                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> Czas UTC          </td><td> Konwersja odbywa się przy użyciu podany obiekt DateTime, jak to.                                  </td></tr>
-<tr><td> Lokalny        </td><td> Wyniku wywołania metody `ToUniversalTime ()` w DateTime podany obiekt jest używany na potrzeby konwersji. </td></tr>
-<tr><td> Nieokreślony  </td><td> Podany obiekt DateTime zakłada, że UTC, tak samo jak rodzaj == Utc.                </td></tr>
-</table>
+|rodzaj|Wyniki                                                                                            |
+|---|---|
+|Czas UTC|Konwersja odbywa się przy użyciu dostarczonego `DateTime` obiektu, ponieważ jest.|
+|Lokalny|Wyniku wywołania metody `ToUniversalTime()` w określonych `DateTime` obiekt jest używany na potrzeby konwersji.|
+|Nieokreślony|Podana `DateTime` obiektu zakłada, że UTC, tak samo jak rodzaj == Utc.|
 
 Konwersja odbywa się przy użyciu następującej formuły:
 

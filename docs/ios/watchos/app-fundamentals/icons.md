@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 98cd780a29abdbeaab02483e4b6ed01a218f88e5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d80ef6bdac7f35b282f6347a0356453a413b39c
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons"></a>Praca z ikonami
 
@@ -21,48 +21,12 @@ Apple Watch rozwiązania wymagają dwa zestawy ikon:
 
 ## <a name="apple-watch-icons"></a>Apple Watch ikon
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-    <tr>
-      <td valign="top">
-        <b>Ikona aplikacji systemu iOS</b>
-      </td>
-      <td valign="top">
-Pojawi się na telefonie iPhone i uruchomienie aplikacji nadrzędnej </td>
-      <td>
-        <img src="icons-images/icon-ios.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" rowspan="3">
-        <b>Ikona aplikacji monitorowania</b>
-      </td>
-      <td valign="top">
-Pojawi się Apple Watch ekranu głównego </td>
-      <td>
-        <img src="icons-images/icon-home.png" class="tableimg" />
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Pojawi się na powiadomienia czujki </td>
-      <td>
-        <img src="icons-images/notification-icon.png" class="tableimg" />
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Zostanie wyświetlony w <a href="~/ios/watchos/app-fundamentals/settings.md">Apple Watch aplikacja systemu iOS</a>
-      </td>
-      <td>
-        <a href="icons-images/watch-app.png">
-          <img src="icons-images/watch-app-sml.png" class="tableimg">
-        </a>
-      </td>
-    </tr>
-    <tbody>
-</table>
-
-
+| | | |
+|-|-|-|
+|Ikona aplikacji systemu iOS|Pojawi się na telefonie iPhone i uruchomienie aplikacji nadrzędnej|![](icons-images/icon-ios.png)|
+|Ikona aplikacji monitorowania|Pojawi się Apple Watch ekranu głównego|![](icons-images/icon-home.png)|
+||Pojawi się na powiadomienia czujki|![](icons-images/notification-icon.png)|
+||Zostanie wyświetlony w [Apple Watch aplikacja systemu iOS](~/ios/watchos/app-fundamentals/settings.md)|![](icons-images/watch-app-sml.png)|
 
 ## <a name="configuring-your-solution"></a>Konfigurowanie rozwiązania
 

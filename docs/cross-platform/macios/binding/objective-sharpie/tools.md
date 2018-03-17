@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0d6e953a6a45b78d470c7ff73e1d6faa7444a683
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4985d67f74d54644cbc033d6c76148f88d741ee1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tools--commands"></a>Narzędzia i polecenia
 
@@ -53,19 +53,14 @@ Available Tools:
 
 Sharpie celu zawiera następujące narzędzia:
 
-<table>
-  <thead>
-    <tr><td>Narzędzie</td><td>Opis</td>
-  </thead>
-  <tbody>
-    <tr><td><b>Xcode</b></td><td>Zawiera informacje o bieżącej instalacji Xcode i wersje systemu iOS i Mac zestawów SDK, które są dostępne. Użyjemy tych informacji później gdy firma Microsoft generuje naszych powiązania.</td></tr>
-    <tr><td><b>pod</b></td><td>Wyszukuje, konfiguruje instaluje (w katalogu lokalnym) i wiąże Objective-C <a href="https://cocoapods.org">CocoaPod</a> bibliotek, które są dostępne w głównym repozytorium specyfikacji. To narzędzie ocenia zainstalowanych CocoaPod ustalenie automatycznie poprawne dane wejściowe do przekazania do <code>bind</code> narzędzie poniżej. <em><strong>Nowość w wersji 3.0!</strong></em></td></tr>
-    <tr><td><b>BIND</b></td><td>Analizuje pliki nagłówkowe (<code>*.h</code>) w bibliotece języka Objective-C do <a href="~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md">początkowej <i>ApiDefinition.cs</i> i <i>StructsAndEnums.cs</i> pliki</a>.</td></tr>
-    <tr><td><b>update</b></td><td>Sprawdza, czy są dostępne nowsze wersje Sharpie cel i pobiera i uruchamia Instalator, jeśli jest dostępny.</td></tr>
-    <tr><td><b>Sprawdź dokumentów</b></td><td>Przedstawia szczegółowe informacje o <code>[Verify]</code> atrybutów.</td></tr>
-    <tr><td><b>Dokumentacja</b></td><td>Przechodzi do tego dokumentu w domyślnej przeglądarce sieci web.</td></tr>
-  </tbody>
-</table>
+|Narzędzie|Opis|
+|--- |--- |
+|**Xcode**|Zawiera informacje o bieżącej instalacji Xcode i wersje systemu iOS i Mac zestawów SDK, które są dostępne. Użyjemy tych informacji później gdy firma Microsoft generuje naszych powiązania.|
+|**pod**|Wyszukuje, konfiguruje instaluje (w katalogu lokalnym) i wiąże Objective-C [CocoaPod](https://cocoapods.org/) bibliotek, które są dostępne w głównym repozytorium specyfikacji. To narzędzie ocenia zainstalowanych CocoaPod ustalenie automatycznie poprawne dane wejściowe do przekazania do `bind` narzędzie poniżej. Nowość w wersji 3.0!|
+|**BIND**|Analizuje pliki nagłówkowe (`*.h`) w bibliotece języka Objective-C do początkowej [ApiDefinition.cs i StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) plików.|
+|**update**|Sprawdza, czy są dostępne nowsze wersje Sharpie cel i pobiera i uruchamia Instalator, jeśli jest dostępny.|
+|**Sprawdź dokumentów**|Przedstawia szczegółowe informacje o `[Verify]` atrybutów.|
+|**Dokumentacja**|Przechodzi do tego dokumentu w domyślnej przeglądarce sieci web.|
 
 Aby uzyskać pomoc dotyczącą konkretnego narzędzia Sharpie cel, wprowadź nazwę, narzędzia i `-help` opcji. Na przykład `sharpie xcode -help` zwraca następujące dane wyjściowe:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Używanie programu Siri zdalnego i kontrolerów Bluetooth
 
@@ -39,43 +39,14 @@ Twoje żądanie jako Deweloper aplikacji systemu tvOS jest tworzenie interfejsu 
 
 Używanie programu Siri zdalnego ma następujące funkcje i oczekiwanego użycia w aplikacji systemu tvOS:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funkcja</b></td>
-    <td><b>Użycie aplikacji ogólne</b></td>
-    <td><b>Użycie aplikacji gry</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>Dotykać powierzchni</b><br/>Przejdź do Przejdź, naciśnij klawisz, aby wybrać i przytrzymaj ją menu kontekstowe.</td>
-    <td valign="top"><b>Naciśnij/Przejdź:</b><br/>Interfejs użytkownika nawigacji między elementami focusable.<br/><br/><b>Kliknij pozycję:</b><br/>Aktywuje wybranego elementu (fokusu).</td>
-    <td valign="top"><b>Naciśnij/Przejdź:</b><br/>Zależy od gier projektu i mogą być używane jako D-Pad, naciskając pozycję na krawędzi.<br/><br/><b>Kliknij pozycję:</b><br/>Wykonanie czynności przycisk podstawowy.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menu</b><br/>Naciśnij, aby powrócić do poprzedniego ekranu lub menu.</td>
-    <td valign="top">Zwraca do poprzedniego ekranu i kończy działanie do firmy Apple TV Home ekranu z ekranu głównego aplikacji.</td>
-    <td valign="top">Wstrzymywanie i wznawianie gry, zwraca do poprzedniego ekranu i wyjścia do firmy Apple TV Home ekranu z ekranu głównego aplikacji.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Siri/Search</b><br/>W krajach z Siri naciśnij i przytrzymaj ją głosu formantu, we wszystkich innych krajach, wyświetla ekran wyszukiwania.</td>
-    <td valign="top">n/d</td>
-    <td valign="top">n/d</td>
-</tr>
-<tr>
-    <td valign="top"><b>Odtwórz/Wstrzymaj</b><br/>Odtwarzanie i wstrzymać media lub dodatkowej funkcję w aplikacjach.</td>
-    <td valign="top">Rozpoczyna odtwarzanie multimediów i wstrzymanie/wznowienie odtwarzania.</td>
-    <td valign="top">Wykonuje funkcję przycisku dodatkowej lub pomija wprowadzenie wideo (jeśli istnieje).</td>
-</tr>
-<tr>
-    <td valign="top"><b>Strona główna</b><br/>Naciśnij, aby powrócić do ekranu główną, kliknij dwukrotnie, aby wyświetlić uruchomionych aplikacji, naciśnij i przytrzymaj ją w stan uśpienia urządzenia.</td>
-    <td valign="top">n/d</td>
-    <td valign="top">n/d</td>
-</tr>
-<tr>
-    <td valign="top"><b>Wolumin</b><br/>Formanty dołączony woluminu urządzenia audio i wideo.</td>
-    <td valign="top">n/d</td>
-    <td valign="top">n/d</td>
-</tr>
-</table>
+|Funkcja|Użycie aplikacji ogólne|Użycie aplikacji gry|
+|---|---|---|
+|**Dotykać powierzchni**<br />Przejdź do Przejdź, naciśnij klawisz, aby wybrać i przytrzymaj ją menu kontekstowe.|**Naciśnij/przejdź**<br />Interfejs użytkownika nawigacji między elementami focusable.<br /><br />**Kliknij przycisk**<br />Aktywuje wybranego elementu (fokusu).|**Naciśnij/przejdź**<br />Zależy od gier projektu i mogą być używane jako D-Pad, naciskając pozycję na krawędzi.<br /><br />**Kliknij przycisk**<br />Wykonanie czynności przycisk podstawowy.|
+|**Menu**<br />Naciśnij, aby powrócić do poprzedniego ekranu lub menu.|Zwraca do poprzedniego ekranu i kończy działanie do firmy Apple TV Home ekranu z ekranu głównego aplikacji.|Wstrzymywanie i wznawianie gry, zwraca do poprzedniego ekranu i wyjścia do firmy Apple TV Home ekranu z ekranu głównego aplikacji.|
+|**Siri/Search**<br />W krajach z Siri naciśnij i przytrzymaj ją głosu formantu, we wszystkich innych krajach, wyświetla ekran wyszukiwania.|n/d|n/d|
+|**Odtwórz/Wstrzymaj**<br />Odtwarzanie i wstrzymać media lub dodatkowej funkcję w aplikacjach.|Rozpoczyna odtwarzanie multimediów i wstrzymanie/wznowienie odtwarzania.|Wykonuje funkcję przycisku dodatkowej lub pomija wprowadzenie wideo (jeśli istnieje).|
+|**Strona główna**<br />Naciśnij, aby powrócić do ekranu główną, kliknij dwukrotnie, aby wyświetlić uruchomionych aplikacji, naciśnij i przytrzymaj ją w stan uśpienia urządzenia.|n/d|n/d|
+|**Wolumin**<br />Formanty dołączony woluminu urządzenia audio i wideo.|n/d|n/d|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -83,18 +54,10 @@ Używanie programu Siri zdalnego ma następujące funkcje i oczekiwanego użycia
 
 Zdalne Siri dotykać powierzchni jest w stanie wykryć różnych palca jednym gestów można uwzględniać w aplikacji Xamarin.tvOS:
 
-<table width="100%">
-<tr>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture01.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture02.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture03.png"></td>
-</tr>
-<tr>
-    <td valign="top"><b>Przejdź:</b><br/>Przenosi zaznaczenie (fokus) między elementy interfejsu użytkownika na ekranie (górę, dół po lewej stronie kliknij prawym przyciskiem myszy). Szybko przesuwając może służyć do przewijania dużych list zawartości szybko przy użyciu bezwładności.</td>
-    <td valign="top"><b>Kliknij pozycję:</b><br/>Aktywuje wybranego elementu (fokusu) lub zachowuje się jak przycisk podstawowy w grę. Kliknięcie i przytrzymanie aktywować menu kontekstowe lub dodatkowej funkcji.</td>
-    <td valign="top"><b>Naciśnij kolejno pozycje:</b><br/>Naciskając lekkim dotykać powierzchni na krawędziach działa jak kierunkową przycisków w D-konsola, przeniesienie fokusu w górę, dół, lewo lub w prawo w zależności od obszaru dotknięciu. W zależności od aplikacji można wyświetlić ukryte kontrolki.</td>
-</tr>
-</table>
+|Przejdź|Kliknij|Wybierz opcję|
+|---|---|---|
+|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|Przenosi zaznaczenie (fokus) między elementy interfejsu użytkownika na ekranie (górę, dół po lewej stronie kliknij prawym przyciskiem myszy). Szybko przesuwając może służyć do przewijania dużych list zawartości szybko przy użyciu bezwładności.|Aktywuje wybranego elementu (fokusu) lub zachowuje się jak przycisk podstawowy w grę. Kliknięcie i przytrzymanie aktywować menu kontekstowe lub dodatkowej funkcji.|Naciskając lekkim dotykać powierzchni na krawędziach działa jak kierunkową przycisków w D-konsola, przeniesienie fokusu w górę, dół, lewo lub w prawo w zależności od obszaru dotknięciu. W zależności od aplikacji można wyświetlić ukryte kontrolki.|
 
 Apple zawiera poniższe sugestie dotyczące pracy za pomocą gestów dotykać powierzchni:
 
@@ -112,7 +75,7 @@ Oprócz gestów na powierzchni Touch aplikacja może odpowiadać na użytkownika
 Ponadto naciśnięcie przycisku menu mogą zostać wykryte przy użyciu aparat rozpoznawania gestów ze standardowym `UIKit` elementów. Jeśli przechwycić naciśnięcie przycisku Menu, będzie odpowiedzialny za zamknięcie bieżącego widoku oraz widoku kontrolera i wróć do poprzedniego.
 
 > [!IMPORTANT]
-> **Uwaga:** należy **zawsze** przydzielenie funkcji przycisk Odtwórz/Wstrzymaj na komputerze zdalnym. Posiadające przycisk współzależności funkcjonalnych można zapewnić aplikacji Szukaj przerwane dla użytkownika końcowego. Jeśli nie jest prawidłową funkcją dla tego przycisku, przypisz taką samą funkcję jak przycisk podstawowy (dotykać powierzchni kliknij).
+> Należy **zawsze** przydzielenie funkcji przycisk Odtwórz/Wstrzymaj na komputerze zdalnym. Posiadające przycisk współzależności funkcjonalnych można zapewnić aplikacji Szukaj przerwane dla użytkownika końcowego. Jeśli nie jest prawidłową funkcją dla tego przycisku, przypisz taką samą funkcję jak przycisk podstawowy (dotykać powierzchni kliknij).
 
 
 
@@ -319,77 +282,24 @@ Oprócz standardowych zdalnego Siri dostarczaną z programem Apple TV, strona 3,
 Kontrolery gier może służyć do zwiększenia gry i zapewnienia w pewnym sensie immersyjną w grę. One mogą służyć do kontrolowania standardowy interfejs Apple TV, więc użycie nie ma w celu przełączania się między zdalnego i kontroler.
 
 > [!IMPORTANT]
-> **Uwaga:** kontrolery gier Bluetooth są opcjonalne zakupu, które może uniemożliwić użytkownikom końcowym, aplikacja nie zmusza użytkownika do kupić. Jeśli aplikacja obsługuje kontrolery gier również musi obsługiwać zdalne Siri tak, aby gry jest użyteczny przez wszystkich użytkowników Apple TV.
-
+> Kontrolery gier Bluetooth są opcjonalne zakupu, które może uniemożliwić użytkownikom końcowym, aplikacja nie zmusza użytkownika do kupić. Jeśli aplikacja obsługuje kontrolery gier również musi obsługiwać zdalne Siri tak, aby gry jest użyteczny przez wszystkich użytkowników Apple TV.
 
 Kontroler gry ma następujące funkcje i oczekiwanego użycia w aplikacji systemu tvOS:
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funkcja</b></td>
-    <td><b>Użycie aplikacji ogólne</b></td>
-    <td><b>Użycie aplikacji gry</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>D-Pad</b></td>
-    <td valign="top">Nawiguje elementy interfejsu użytkownika (zmiany fokusu).</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>A</b></td>
-    <td valign="top">Aktywuje wybranego elementu (fokusu).</td>
-    <td valign="top">Przycisk podstawowy działa i potwierdza Akcje okna dialogowego.</td>
-</tr>
-<tr>
-    <td valign="top"><b>B</b></td>
-    <td valign="top">Zwraca do poprzedniego ekranu lub kończy pracę na ekranie głównym, jeśli na ekranie głównym aplikacji.</td>
-    <td valign="top">Wykonuje funkcję przycisku dodatkowej lub zwraca do poprzedniego ekranu.</td>
-</tr>
-<tr>
-    <td valign="top"><b>X</b></td>
-    <td valign="top">Rozpoczyna odtwarzanie multimediów lub Wstrzymaj/wznawia odtwarzanie.</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Y</b></td>
-    <td valign="top">n/d</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menu</b></td>
-    <td valign="top">Zwraca do poprzedniego ekranu lub kończy pracę na ekranie głównym, jeśli na ekranie głównym aplikacji.</td>
-    <td valign="top">Wstrzymanie/wznowienie gry, zwraca do poprzedniego ekranu lub wyjść na ekranie głównym Jeśli na ekranie głównym aplikacji.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Ramię lewego przycisku</b></td>
-    <td valign="top">Nawiguje po lewej.</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Po lewej stronie wyzwalacza</b></td>
-    <td valign="top">Nawiguje po lewej.</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Ramię prawy przycisk</b></td>
-    <td valign="top">Nawiguje po prawej.</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Prawy wyzwalacza</b></td>
-    <td valign="top">Przechodzi do prawej</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Po lewej stronie Thumbstick</b></td>
-    <td valign="top">Nawiguje elementy interfejsu użytkownika (zmiany fokusu).</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Prawy Thumbstick</b></td>
-    <td valign="top">n/d</td>
-    <td valign="top">Zależy od gry.</td>
-</tr>
-</table>
+
+|Funkcja|Użycie aplikacji ogólne|Użycie aplikacji gry|
+|---|---|---|
+|**D-Pad**|Nawiguje elementy interfejsu użytkownika (zmiany fokusu).|Zależy od gry.|
+|**A**|Aktywuje wybranego elementu (fokusu).|Przycisk podstawowy działa i potwierdza Akcje okna dialogowego.|
+|**B**|Zwraca do poprzedniego ekranu lub kończy pracę na ekranie głównym, jeśli na ekranie głównym aplikacji.|Wykonuje funkcję przycisku dodatkowej lub zwraca do poprzedniego ekranu.|
+|**X**|Rozpoczyna odtwarzanie multimediów lub Wstrzymaj/wznawia odtwarzanie.|Zależy od gry.|
+|**Y**|n/d|Zależy od gry.|
+|**Menu**|Zwraca do poprzedniego ekranu lub kończy pracę na ekranie głównym, jeśli na ekranie głównym aplikacji.|Wstrzymanie/wznowienie gry, zwraca do poprzedniego ekranu lub wyjść na ekranie głównym Jeśli na ekranie głównym aplikacji.|
+|**Ramię lewego przycisku**|Nawiguje po lewej.|Zależy od gry.|
+|**Po lewej stronie wyzwalacza**|Nawiguje po lewej.|Zależy od gry.|
+|**Ramię prawy przycisk**|Nawiguje po prawej.|Zależy od gry.|
+|**Prawy wyzwalacza**|Przechodzi do prawej|Zależy od gry.|
+|**Po lewej stronie Thumbstick**|Nawiguje elementy interfejsu użytkownika (zmiany fokusu).|Zależy od gry.|
+|**Prawy Thumbstick**|n/d|Zależy od gry.|
 
 Apple zawiera poniższe sugestie dotyczące pracy z kontrolery gier:
 

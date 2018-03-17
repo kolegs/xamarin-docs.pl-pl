@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -147,40 +147,12 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 Poniżej przedstawiono różnice między typami bazy danych:
 
-<table cellpadding="1" cellspacing="1" border="1" width="100%">
-<thead>
-<tr>
-<td></td>
-<td>Publiczny bazy danych</td>
-<td>Prywatna baza danych</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Typ danych</td>
-<td>Udostępnionych danych</td>
-<td>Bieżący użytkownik danych</td>
-</tr>
-
-<tr>
-<td>limit przydziału</td>
-<td>Uwzględnione w przydziału dewelopera</td>
-<td>Uwzględnione w przydziału użytkownika</td>
-</tr>
-
-<tr>
-<td>Domyślne uprawnienia</td>
-<td>World do odczytu</td>
-<td>Użytkownik, który może zostać odczytany</td>
-</tr>
-
-<tr>
-<td>Edytowanie uprawnień</td>
-<td>iCloud ról pulpitu nawigacyjnego za pomocą poziomu rekordu — klasa</td>
-<td>Brak</td>
-</tr>
-</tbody>
-</table>
+||Publiczny bazy danych|Prywatna baza danych|
+|---|--- |--- |
+|**Typ danych**|Udostępnionych danych|Bieżący użytkownik danych|
+|**Quota**|Uwzględnione w przydziału dewelopera|Uwzględnione w przydziału użytkownika|
+|**Domyślne uprawnienia**|World do odczytu|Użytkownik, który może zostać odczytany|
+|**Edytowanie uprawnień**|iCloud ról pulpitu nawigacyjnego za pomocą poziomu rekordu — klasa|Brak|
 
 ### <a name="records"></a>Rekordy
 

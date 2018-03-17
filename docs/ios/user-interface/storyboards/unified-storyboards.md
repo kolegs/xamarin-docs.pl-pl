@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>Ujednolicone Scenorys
 
@@ -116,63 +116,23 @@ W tej sekcji opisano typy typowe cechy kolekcje, które użytkownik może wystą
 
 Poniżej przedstawiono typowe cechy kolekcji deweloper może być wyświetlana na telefonie iPhone:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Właściwość</td>
-    <td>Wartość</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>CD</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Regularne</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>Telefon</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2.0</td>
-</tr>
-</tbody>
-</table>
+|Właściwość|Wartość|
+|--- |--- |
+|`HorizontalSizeClass`|CD|
+|`VerticalSizeClass`|Regularne|
+|`UserInterfaceIdom`|Telefon|
+|`DisplayScale`|2.0|
 
 Powyżej zestawu czy stanowiące pełni kwalifikowaną cechy kolekcję, ponieważ nie ma ona wartości dla wszystkich właściwości cechy.
 
 Istnieje również możliwość ma kolekcji cechy, w którym brakuje niektórych wartości jego (czyli Apple jako *nieokreślony*):
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Właściwość</td>
-    <td>Wartość</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>CD</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{nieokreślonych}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{nieokreślonych}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{nieokreślonych}</td>
-</tr>
-</tbody>
-</table>
+|Właściwość|Wartość|
+|--- |--- |
+|`HorizontalSizeClass`|CD|
+|`VerticalSizeClass`|Nieokreślony|
+|`UserInterfaceIdom`|Nieokreślony|
+|`DisplayScale`|Nieokreślony|
 
 Ogólnie rzecz biorąc jednak podczas dewelopera wprowadza się jego kolekcja cechy środowiska cechy, zwróci pełną kolekcję jak w powyższym przykładzie.
 
@@ -216,7 +176,6 @@ Innej funkcji, która deweloper może przeprowadzać w kolekcjach cechy jest dod
 
 Jak już wspomniano, jeśli wszystkie cechy jest nieokreślona w jednej z kolekcji cechy i jest określona w innym wartość zostanie ustawiona na określonej wersji. Jednak w przypadku wielu wersji określoną wartość danej wartości w ciągu ostatnich cechy kolekcji będą wartość, która jest używana.
 
-
 ## <a name="adaptive-view-controllers"></a>Kontrolery adaptacyjną widoku
 
 W tej sekcji opisano szczegóły jak iOS widoku oraz widoku kontrolerów wdrożyły cech i klasy rozmiar automatycznie za więcej adaptacyjną w aplikacjach dewelopera.
@@ -259,58 +218,11 @@ Najpierw iOS 8 powoduje przywrócenie konfiguracji w celu przygotowania do przej
 
 System iOS 8 zawiera kilka wywołania zwrotne, które deweloper może użyć do udziału w przypadku zmiany cechy, jak pokazano w poniższej tabeli:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Etap</td>
-    <td>Wywołanie zwrotne</td>
-    <td>Opis</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Konfiguracja</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Ta metoda jest wywoływana na początku zmiany cechy przed kolekcji cechy jest ustawiony na wartość nowego.</li>
-        <li>Metoda jest wywoływana, gdy zmieniono wartość kolekcji cechy, ale przed dokonaniem żadnych animacji.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Animacja</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Koordynator przejścia, który zostanie przekazany do tej metody ma <code>AnimateAlongside</code> właściwość, która umożliwia deweloperowi Dodawanie animacji, które zostaną wykonane wraz z animacji domyślne.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Wyczyść</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Udostępnia metodę deweloperom zawierają własne oczyszczanie kodu po wystąpieniu przejścia.</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Etap|Wywołanie zwrotne|Opis|
+|--- |--- |--- |
+|Konfiguracja|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Ta metoda jest wywoływana na początku zmiany cechy przed kolekcji cechy jest ustawiony na wartość nowego.</li><li>Metoda jest wywoływana, gdy zmieniono wartość kolekcji cechy, ale przed dokonaniem żadnych animacji.</li></ul>|
+|Animacja|`WillTransitionToTraitCollection`|Koordynator przejścia, który zostanie przekazany do tej metody ma `AnimateAlongside` właściwość, która umożliwia deweloperowi Dodawanie animacji, które zostaną wykonane wraz z animacji domyślne.|
+|Wyczyść|`WillTransitionToTraitCollection`|Udostępnia metodę deweloperom zawierają własne oczyszczanie kodu po wystąpieniu przejścia.|
 
 `WillTransitionToTraitCollection` Metody jest doskonałym rozwiązaniem dla animacji kontrolerów widoku oraz zmiany kolekcji cechy. `WillTransitionToTraitCollection` Metoda jest dostępna tylko na kontrolerach widoku ( `UIViewController`), a nie w innych środowiskach cechy, takie jak `UIViews`.
 
