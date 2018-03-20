@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>Narzędzia usług
 
-Niektóre usługi są wykonywane niektórych zadań, które użytkownicy są aktywnie wiedzieć, te usługi są określane jako _pierwszego planu usług_. Przykładem usługi pierwszego planu to aplikacja, która zapewnia użytkownikowi wskazówki podczas kierowania lub przejście. Nawet jeśli aplikacja jest w tle, jest nadal ważny, czy usługa ma wystarczające zasoby do poprawnego działania i czy użytkownik ma szybki i wygodny sposób dostęp do aplikacji. Dla aplikacji systemu Android, to oznacza, że usługa pierwszego planu powinien zostać wyświetlony wyższy priorytet niż "regularnej" i podaj usługi pierwszego planu `Notification` wyświetlające Android tak długo, jak usługa jest uruchomiona.
+Usługa pierwszego planu to specjalny typ powiązania usługi lub uruchomiono usługi. Od czasu do czasu usługi będzie wykonywać zadania, które użytkownicy muszą znać aktywnie, te usługi są określane jako _pierwszego planu usług_. Przykładem usługi pierwszego planu to aplikacja, która zapewnia użytkownikowi wskazówki podczas kierowania lub przejście. Nawet jeśli aplikacja jest w tle, jest nadal ważny, czy usługa ma wystarczające zasoby do poprawnego działania i czy użytkownik ma szybki i wygodny sposób dostęp do aplikacji. Dla aplikacji systemu Android, to oznacza, że usługa pierwszego planu powinien zostać wyświetlony wyższy priorytet niż "regularnej" i podaj usługi pierwszego planu `Notification` wyświetlające Android tak długo, jak usługa jest uruchomiona.
  
-Usługa pierwszego planu utworzeniu i uruchomieniu podobnie jak inne usługi. Podczas uruchamiania usługi zarejestruje się w Android jako usługa pierwszego planu.
- 
-W tym przewodniku będzie omawiać dodatkowych czynności, które należy podjąć zarejestrować usługi pierwszego planu i zatrzymać usługę po jej zakończeniu.
+Aby uruchomić usługę pierwszego planu, aplikacja musi być wysłany celem informujący o Android, aby uruchomić usługę. Następnie usługa musi zarejestrować się jako pierwszego planu usługi za pomocą systemu Android. Aplikacje, które są uruchomione na 8.0 dla systemu Android (lub nowszej) należy użyć `Context.StartForegroundService` metodę, aby uruchomić usługę, podczas powinien używać aplikacji, które działają na urządzeniach przy użyciu starszej wersji systemu android `Context.StartService`
+
+Ta metoda rozszerzenia C# jest przykładem uruchomić usługę pierwszego planu. W systemie Android 8.0 i nowsze użyje `StartForegroundService` metody, w przeciwnym razie starszej `StartService` zostanie użyta metoda.  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>Rejestrowanie jako usługa pierwszego planu
 
-Usługa pierwszego planu to specjalny typ powiązania usługi lub uruchomiono usługi. Usługi, po rozpoczęciu, wywołuje [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/) metody do zarejestrowania się w usłudze Android jako usługa pierwszego planu.   
+Po uruchomieniu usługi pierwszego planu, jego musi zarejestrować się z systemem Android za pomocą [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Jeśli usługa jest uruchomiona z `Service.StartForegroundService` metody, ale nie rejestruje, Android będą Zatrzymaj usługę i Flaga aplikacji jako przestać odpowiadać.
 
 `StartForeground` przyjmuje dwa parametry, które są wymagane:
  
@@ -78,8 +98,7 @@ Wyświetlane powiadomienia paska stanu może zostać także usunięty przez prze
 StopForeground(true);
 ```
 
-Jeśli usługa jest zatrzymany w wyniku wywołania `StopSelf` lub `StopService`, a następnie powiadomienie paska stanu zostaną również usunięte.
-
+Jeśli usługa jest zatrzymany w wyniku wywołania `StopSelf` lub `StopService`, powiadomień paska stanu zostaną usunięte.
 
 ## <a name="related-links"></a>Linki pokrewne
 

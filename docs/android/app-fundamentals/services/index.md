@@ -7,12 +7,12 @@ ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 5dc1fb0fb02014e123b3a161394155bde725f288
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="creating-android-services"></a>Tworzenie usług dla systemu Android
 
@@ -43,7 +43,7 @@ Praca w tle mogą być podzielone na dwie szerokie klasyfikacje:
 
 Istnieją cztery typy usług z systemem Android:
 
-* **Powiązane usługi** &ndash; A _powiązane usługi_ to usługa, która ma niektórych innych składników (zazwyczaj działanie) powiązane z nim. Powiązane usługi udostępnia interfejs umożliwiający składnika powiązane i usłudze na współdziałanie z sobą. Gdy nie ma żadnych więcej klientów powiązany z usługami, Android zamknie usługę.
+* **Powiązane usługi** &ndash; A _powiązane usługi_ to usługa, która ma niektórych innych składników (zazwyczaj działanie) powiązane z nim. Powiązane usługi udostępnia interfejs umożliwiający składnika powiązane i usłudze na współdziałanie z sobą. Gdy nie ma żadnych więcej klientów powiązany z usługami, Android zamknie usługę. 
 
 * **`IntentService`** &ndash;  _`IntentService`_  Jest podklasą specjalne `Service` klasy, które upraszcza tworzenie usług i użycia. `IntentService` Jest przeznaczona do obsługi poszczególnych odwołań autonomicznego. W przeciwieństwie do usługi, która jednocześnie może obsłużyć wielu wywołań, `IntentService` przypomina _pracy kolejki procesora_ &ndash; pracy jest umieszczone w kolejce i `IntentService` przetwarza każde zadanie jednym naraz w wątku pojedynczego procesu roboczego. Zazwyczaj`IntentService` nie jest powiązany z działania lub fragmentu. 
 
@@ -57,4 +57,26 @@ Podczas gdy większość usługi są uruchomione w tle, istnieje specjalne podka
 
 Istnieje również możliwość uruchomienia usługi w jego własnym procesie na jednym urządzeniu, jest to czasami określane jako _zdalny_ lub jako _usługi poza procesem_. Wymaga to więcej działań zmierzających do tworzenia, ale może być przydatne w przypadku gdy aplikacja potrzebuje dzielenie funkcji z innymi aplikacjami i w niektórych przypadkach ulepszyć środowisko użytkownika aplikacji. 
 
-Każdy z tych usług ma własne charakterystyki i działania i tak, zostanie omówiona bardziej szczegółowo w ich własnych przewodnikach.
+### <a name="background-execution-limits-in-android-80"></a>Limity wykonywania tła w 8.0 dla systemu Android
+
+Począwszy od systemu Android 8.0 (poziom interfejsu API 26), aplikacji systemu Android nie jest już mieć możliwość uruchamiania za darmo w tle. W przypadku pierwszego planu, aplikację można uruchomić i uruchamiania usług bez ograniczeń. Gdy aplikacja zostanie przeniesiony w tle, Android będzie zezwalał na aplikację określoną ilość czasu, aby uruchomić i korzystania z usług. Po upływie tego czasu, aplikacja nie będzie można uruchomić wszystkie usługi i usług, które zostały uruchomione, zostanie zakończony. AT jest ten punkt nie jest możliwe w dla aplikacji, które może wykonywać wszystkie zadania. Android uwzględnia aplikacji na pierwszym planie, jeśli jest spełniony jeden z następujących warunków:
+
+* Brak widoczne działania (uruchomiona lub wstrzymana).
+* Aplikacja została uruchomiona usługa pierwszego planu.
+* Innej aplikacji działa na pierwszym planie i używa składników z aplikacji, które w przeciwnym razie będą w tle. Jest na przykład jeśli A aplikacji, który działa na pierwszym planie, jest powiązana z usługi aplikacji B. aplikacji B następnie również będą uznawane za na pierwszym planie i nie przerwany przez system Android jest w tle.
+
+Istnieje kilka sytuacji, where, nawet jeśli aplikacja jest w tle, Android będzie wznawiania aplikacji i zwalnia te ograniczenia kilka minut, dzięki czemu aplikacja może wykonywać pewne zadania:
+* Wysoki priorytet, który Firebase chmury komunikat jest odbierany przez aplikację.
+* Aplikacja odbiera emisji, 
+* Po otrzymaniu wykonuje `PendingIntent` w odpowiedzi na powiadomienie.
+
+Istniejące aplikacje platformy Xamarin.Android może być konieczna zmiana, jak działają w celu uniknięcia problemów, które mogą wystąpić w systemie Android 8.0 Praca w tle. Poniżej przedstawiono niektóre praktyczne alterantives usługą systemu Android:
+
+* **Harmonogramu pracy do uruchomienia w tle przy użyciu harmonogramu zadań systemu Android lub [dyspozytora zadania Firebase](~/android/platform/firebase-job-dispatcher.md)**  &ndash; te dwie biblioteki zapewniają framework dla aplikacji może też oddzielić Praca w tle w celu _zadania_, odrębny jednostkę pracy. Zadanie można uruchomić aplikacji następnie można zaplanować zadanie w systemie operacyjnym oraz pewne kryteria dotyczące.
+* **Uruchom usługę na pierwszym planie** &ndash; usługi pierwszego planu jest przydatne w przypadku kiedy aplikacja musi wykonać niektóre zadania w tle i użytkownik może być konieczne okresowe interakcję z tym zadaniem. Usługa pierwszego planu wyświetli stałe powiadomienie tak, aby użytkownik pamiętać, że aplikacja działa zadanie w tle i także sposób monitorowania lub interakcji z zadania. Przykładem tego może być aplikacji emisja podkastów, który jest odtwarzanie Podkast dla użytkownika lub możliwe, że pobieranie epizodu podkastów tak, aby można go później korzystać. 
+* **Użyj komunikatu chmura Firebase (FCM) o wysokim priorytecie** &ndash; podczas Android odbiera wysoki priorytet FCM dla aplikacji, umożliwi tej aplikacji do uruchamiania usług w tle dla krótkim czasie. Będzie to dobrą alternatywą do o usługi tła, który sonduje aplikacji w tle. 
+* **Odroczenie pracy kiedy zaczyna aplikacji na pierwszym planie** &ndash; Jeśli żaden z poprzednich rozwiązania nie jest działało, a następnie aplikacji musi opracowanie własnych sposób, aby wstrzymać lub wznowić pracę po wyjściu aplikacji na pierwszym planie.
+
+## <a name="related-links"></a>Linki pokrewne
+
+* [Limity wykonywania tła Oreo systemu android](https://www.youtube.com/watch?v=Pumf_4yjTMc)

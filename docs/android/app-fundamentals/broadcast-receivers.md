@@ -7,12 +7,12 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: b2da136ddfa6aab4121ba21d0e6f83b2390ba10b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 67b150650c21c781b7081de4e1f3b095c0ea560f
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Emisji odbiorców w platformy Xamarin.Android
 
@@ -23,14 +23,14 @@ _W tej sekcji omówiono sposób użycia odbiornik emisji._
 
 A _emisji odbiornika_ jest składnikiem systemu Android umożliwiający aplikacji odpowiada na komunikaty (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)) rozgłaszanych przez system operacyjny Android lub przez aplikację. Wykonaj emisje _publikowania / subskrypcji_ modelu &ndash; zdarzenia powoduje emisji zostanie opublikowany i odbierane przez te składniki, które są zainteresowane w zdarzeniu. 
 
-Android identyfikuje dwie kategorie emisji:
+Android identyfikuje dwa typy programów:
 
-* **Normalne emisji** &ndash; normalne emisji będą kierowane do wszystkich zarejestrowanych odbiorców emisji w nieokreślonej kolejności. Każdy odbiorca otrzyma zamiar niezdefiniowaną kolejność. 
-* **Uporządkowane emisji** &ndash; uporządkowanej emisji jest dostarczany pojedynczo do zarejestrowanych odbiorców. Po odebraniu celem emisji odbiornika można zmodyfikować celem lub jego zakończenie emitowania.
+* **Jawne emisji** &ndash; tych typów emisji docelowych określonych aplikacji. Najczęściej używane jawne emisji jest uruchomienia działania. Przykład jawne emisji, gdy aplikacja potrzebuje do wybierania numeru telefonu; wyśle jego celem przeznaczonego dla aplikacji Phone w systemach Android i przebiegu wzdłuż numer telefonu ma być wybrany. Android skieruje następnie celem aplikacji telefonicznej.
+* **Niejawne broadcase** &ndash; emisje te są wysyłane do wszystkich aplikacji na urządzeniu. Na przykład niejawne emisji `ACTION_POWER_CONNECTED` celem. Celem tego jest publikowany w każdym razem, gdy Android wykryje, że jest ładowana baterii na urządzeniu. Android będzie przekierowywać to zamierzone do wszystkich aplikacji, które zostały zarejestrowane dla tego zdarzenia.
 
-Odbiornik emisji jest podklasą `BroadcastReceiver` przesłonięcie klasy i [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metody. Android zostanie wykonany `OnReceive` w głównym wątku, więc tej metody należy tak zaprojektować wykonać szybko. Należy zwrócić uwagę, gdy dochodzi do uruchamiania wątków w `OnReceive` ponieważ Android może zakończyć proces po zakończeniu metody. Jeśli odbiornik emisji należy wykonać długotrwała pracy, zaleca się zaplanowanie _zadania_ przy użyciu `JobScheduler` lub _dyspozytora zadania Firebase_. Planowanie pracy z zadaniem zostaną dokładniej omówione w przewodniku oddzielne.
+Odbiornik emisji jest podklasą `BroadcastReceiver` przesłonięcie typu i [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metody. Android zostanie wykonany `OnReceive` w głównym wątku, więc tej metody należy tak zaprojektować wykonać szybko. Należy zwrócić uwagę, gdy dochodzi do uruchamiania wątków w `OnReceive` ponieważ Android może zakończyć proces po zakończeniu metody. Jeśli odbiornik emisji należy wykonać długotrwała pracy, zaleca się zaplanowanie _zadania_ przy użyciu `JobScheduler` lub _dyspozytora zadania Firebase_. Planowanie pracy z zadaniem zostaną dokładniej omówione w przewodniku oddzielne.
 
-_Konwersji filtru_ służy do rejestrowania emisji odbiornika Android prawidłowo rozesłać komunikaty. Filtr konwersji można określić w czasie wykonywania (jest to czasami określane jako _kontekst zarejestrowany odbiornik_ lub jako _dynamicznej rejestracji_) lub może być statycznie zdefiniowany w ( manifestusystemuAndroid_zarejestrowany manifestu odbiorcy_). Xamarin.Android zapewnia C# atrybutu, `IntentFilterAttribute`, który zarejestruje statycznie filtr konwersji (to zostanie dokładnie omówione w dalszej części tego przewodnika). 
+_Konwersji filtru_ służy do rejestrowania emisji odbiornika Android prawidłowo rozesłać komunikaty. Filtr konwersji można określić w czasie wykonywania (jest to czasami określane jako _kontekst zarejestrowany odbiornik_ lub jako _dynamicznej rejestracji_) lub może być statycznie zdefiniowany w ( manifestusystemuAndroid_zarejestrowany manifestu odbiorcy_). Xamarin.Android zapewnia C# atrybutu, `IntentFilterAttribute`, który zarejestruje statycznie filtr konwersji (to zostanie dokładnie omówione w dalszej części tego przewodnika). Począwszy od systemu Android 8.0, nie jest możliwe w dla aplikacji, aby zarejestrować statycznie niejawne emisji.
 
 Główną różnicą między odbiornika zarejestrowany manifestu i kontekst zarejestrowany odbiornik jest, że kontekst zarejestrowany odbiornik tylko odpowie na emisje aplikacja jest uruchomiona, gdy odbiornik zarejestrowany manifest mogą odpowiadać na emituje, nawet jeśli nie jest uruchomiona aplikacja.  
 
@@ -68,7 +68,7 @@ Kiedy Xamarin.Android kompiluje klasy, jego również zaktualizuje AndroidManife
 
 `OnReceive` Metody odbiera odwołanie do `Intent` który został wysłany do emisji odbiornika. To sprawia, że jest możliwe nadawcy opcje do przekazania wartości do emisji odbiornika.
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Statycznie rejestrowanie emisji odbiornika konwersji filtru
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Statycznie zarejestrowanie odbiornika emisji opcje filtru
 
 Gdy `BroadcastReceiver` zostanie nadany [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/), Xamarin.Android doda niezbędnych `<intent-filter>` elementu Android manifestu w czasie kompilacji. Poniższy fragment jest przykładem emisji odbiornika, który będzie uruchamiany, gdy urządzenie zostało zakończone, rozruch (jeśli jest to odpowiednie dla systemu Android uprawnienia zostały przyznane przez użytkownika):
 
@@ -98,9 +98,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
+Aplikacje, które odnoszą się do 8.0 dla systemu Android (interfejs API na poziomie 26) lub nowszego mogą nie statycznie zarejestrować niejawne emisji. Aplikacje mogą nadal statycznie zarejestrować jawne emisji. Brak krótką listę niejawne programów, które są wykluczone z tego ograniczenia. Wyjątki te są opisane w [niejawne wyjątki emisji](https://developer.android.com/guide/components/broadcast-exceptions.html) przewodnik w dokumentacji systemu Android. Aplikacje, które są zainteresowane w niejawnych emisji należy wykonać, więc dynamicznie za pomocą `RegisterReceiver` metody. To jest opisane w dalszej części.  
+
 ### <a name="context-registering-a-broadcast-receiver"></a>Kontekst zarejestrowanie odbiornika emisji 
 
-Rejestracja kontekstu odbiornika odbywa się za pomocą `RegisterReceiver` — metoda i emisji odbiornika musi być wyrejestrowany z wywołaniem do `UnregisterReceiver` metody. Zapobiegaj ulatniający zasobów, jest wyrejestrować odbiornik, gdy nie jest już nieaktualny do kontekstu. Na przykład usługa może emisji celem informują o tym działaniu dostępnych aktualizacji, który będzie wyświetlany użytkownikowi. Po uruchomieniu działania może zarejestrować się w tych opcji. Podczas działania jest przenoszony do tła i nie jest już widoczny dla użytkownika, jego należy wyrejestrować odbiornika ponieważ interfejsu użytkownika do wyświetlania widoku aktualizacji nie jest już widoczna. Poniższy fragment kodu przedstawiono przykładowy sposób rejestrowanie i wyrejestrowywanie odbiornik emisji w ramach działania:
+Kontekst Rejestracja (zwaną także dynamicznej rejestracji) odbiornik odbywa się za pomocą `RegisterReceiver` — metoda i emisji odbiornika musi być wyrejestrowany z wywołaniem do `UnregisterReceiver` metody. Aby zapobiec ulatniający zasobów, ważne jest wyrejestrować odbiornik, gdy nie jest już nieaktualny kontekstu (działania lub usługi). Na przykład usługa może emisji celem informują o tym działaniu dostępnych aktualizacji, który będzie wyświetlany użytkownikowi. Po uruchomieniu działania może zarejestrować się w tych opcji. Podczas działania jest przenoszony do tła i nie jest już widoczny dla użytkownika, jego należy wyrejestrować odbiornika ponieważ interfejsu użytkownika do wyświetlania widoku aktualizacji nie jest już widoczna. Poniższy fragment kodu przedstawiono przykładowy sposób rejestrowanie i wyrejestrowywanie odbiornik emisji w ramach działania:
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -136,19 +138,10 @@ W poprzednim przykładzie, gdy działanie na pierwszym planie, zarejestruje emis
 
 ## <a name="publishing-a-broadcast"></a>Publikowanie emisji
 
-Emisja jest publikowany hermetyzując _akcji_ celem i wysyła je z jedną z dwóch interfejsów API: 
+Wszystkie aplikacje zainstalowane na urządzeniu tworzenia obiektu konwersji i wysyła je z mogą być publikowane emisji `SendBroadcast` lub `SendOrderedBroadcast` metody.  
 
-1. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; Opcje, które są publikowane z `LocalBroadcastManager` tylko zostanie odebrana przez aplikacji, nie będą kierowane do innych aplikacji. Powinno to być preferowane, przechowując intencje w bieżącej aplikacji zapewnia dodatkowy poziom zabezpieczeń i wszystko jest w trakcie więc nie istnieje żadne obciążenia związanego z wywołań między procesami. Następujący fragment kodu przedstawia sposób działania może wysłać konwersji przy użyciu `LocalBroadcastManager`:
-
-   ```csharp
-   Intent message = new Intent("com.xamarin.example.TEST");
-   // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-   ```
-
-2. **[`Context.SendBroadcast`](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/) metody** &ndash; istnieje kilka implementacje tej metody.
-   Tych metod będzie emisji zamiarem całego systemu. To zapewnia dużą elastyczność, ale oznacza, że inne aplikacje mogą zarejestrować do odbierania aplikacji. Może to stanowić zagrożenie bezpieczeństwa. Aplikacje może być konieczne dodanie zabezpieczeń, aby zapewnić nieautoryzowanego dostępu do celem wdrożenia. Przykład sposobu wysyłania przy użyciu jednej z celem jest ten fragment kodu `SendBroadcast` metod:
+1. **Metody Context.SendBroadcast** &ndash; istnieje kilka implementacje tej metody.
+   Tych metod będzie emisji zamiarem całego systemu. Odbiorniki emisji thatwill odbierać zamiar w nieokreślonej kolejności. To zapewnia dużą elastyczność, ale oznacza, że inne aplikacje mogą zarejestrować i odbierać celem. Może to stanowić zagrożenie bezpieczeństwa. Aplikacje muszą implementować dodanie zabezpieczeń, aby uniemożliwić nieautoryzowany dostęp. Możliwe rozwiązanie jest użycie `LocalBroadcastManager` która wyśle tylko komunikaty w prywatnej przestrzeni aplikacji. Przykład sposobu wysyłania przy użyciu jednej z celem jest ten fragment kodu `SendBroadcast` metod:
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
@@ -156,20 +149,30 @@ Emisja jest publikowany hermetyzując _akcji_ celem i wysyła je z jedną z dwó
    intent.PutExtra("key", "value");
    SendBroadcast(intent);
    ```
-        
-> [!NOTE]
-> Jest dostępna za pośrednictwem LocalBroadcastManager [v4 Biblioteka obsługi Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) pakietu NuGet. 
 
-Ta Wstawka kodu jest inny przykład wysyła przy użyciu emisji `Intent.SetAction` metodę identyfikowania akcji:
+    Ta Wstawka kodu jest inny przykład wysyła przy użyciu emisji `Intent.SetAction` metodę identyfikowania akcji:
+    
+    ```csharp 
+    Intent intent = new Intent();
+    intent.SetAction("com.xamarin.example.TEST");
+    intent.PutExtra("key", "value");
+    SendBroadcast(intent);
+    ```
+   
+2. **Context.SendOrderedBroadcast** &ndash; jest metoda jest bardzo podobny do `Context.SendBroadcast`, z tą różnicą jest, że celem będzie jeden opublikowanych w czasie do odbiorców w kolejności, że zarejestrowano recievers.
+   
+### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-```csharp 
-Intent intent = new Intent();
-intent.SetAction("com.xamarin.example.TEST");
+[V4 Biblioteka obsługi Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) udostępnia klasę pomocy o nazwie [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Jest przeznaczony dla aplikacji, których nie chcesz wysyłać ani odbierać emisje z innych aplikacji na urządzeniu. `LocalBroadcastManager` Będzie publikować tylko komunikaty w kontekście aplikacji. Inne aplikacje na urządzeniu nie można odebrać wiadomości, które są publikowane z `LocalBroadcastManager`. 
+
+Następujący fragment kodu przedstawia sposób wysłania konwersji przy użyciu `LocalBroadcastManager`:
+
+```csharp
+Intent message = new Intent("com.xamarin.example.TEST");
+// If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
-SendBroadcast(intent);
-```
-
-
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
+``` 
 
 ## <a name="related-links"></a>Linki pokrewne
 

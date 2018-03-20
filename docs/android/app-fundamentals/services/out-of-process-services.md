@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>Uruchamianie systemu Android usług w procesach zdalnego
 
@@ -415,7 +415,7 @@ Uproszczony przykład tworzenia niestandardowego `normal` uprawnienia będzie op
 
 Aby korzystać z uprawnień niestandardowych, jest zadeklarowany jako przez usługę podczas, gdy wyraźnie zażąda tego uprawnienia.
 
-Można utworzyć uprawnienia w usłudze APK, `permission` element zostanie dodany do `manifest` element**AndroidManifest.xml**. To uprawnienie musi mieć `name`, `protectionLevel`, i `label` zestawu atrybutów. `name` Atrybut musi mieć ustawioną ciąg, który unikatowo identyfikuje uprawnienia. Nazwa będzie wyświetlana w **informacje o aplikacji** widoku **ustawień systemu Android** (jak pokazano w następnej sekcji).
+Można utworzyć uprawnienia w usłudze APK, `permission` element zostanie dodany do `manifest` element **AndroidManifest.xml**. To uprawnienie musi mieć `name`, `protectionLevel`, i `label` zestawu atrybutów. `name` Atrybut musi mieć ustawioną ciąg, który unikatowo identyfikuje uprawnienia. Nazwa będzie wyświetlana w **informacje o aplikacji** widoku **ustawień systemu Android** (jak pokazano w następnej sekcji).
 
 `protectionLevel` Atrybut musi być ustawiony na jedną z wartości ciągu czterech, które zostały opisane powyżej.  `label` i `description` musi odwoływać się do zasobów ciągu i służą do zapewniania przyjazną dla użytkownika nazwę i opis dla użytkownika.
 

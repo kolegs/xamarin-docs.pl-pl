@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>Wygląd komórek
 
@@ -73,11 +73,9 @@ Należy pamiętać, że jeśli celem Windows Phone 8.1, `ImageCell` nie będzie 
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Niestandardowe komórek
-Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek zaimplementowana wymagane układu. Na przykład można prezentować komórki dwie etykiety, które mają ta sama waga. A `LabelCell` będzie za mało ponieważ `LabelCell` ma jednej etykiety, która jest mniejsza.
+Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek zaimplementowana wymagane układu. Na przykład można prezentować komórki dwie etykiety, które mają ta sama waga. A `LabelCell` będzie za mało ponieważ `LabelCell` ma jednej etykiety, która jest mniejsza. Większość dostosowania komórki dodać dodatkowych danych tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania).
 
 Wszystkie niestandardowe komórki musi pochodzić od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tej samej klasy podstawowej, że wszystkie komórki wbudowane typy użycia.
-
-Większość dostosowania komórki dodać dodatkowych danych tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania). Jeśli dodano przyciski lub inne formanty, które może posiadać fokus samej komórki nie może być aktywne w systemie Android. Poniżej znajduje się sposobem obejść to ograniczenie.
 
 Platformy Xamarin.Forms 2 wprowadzono nowy [zachowanie buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` kontroli, którą można ustawić w celu usprawnienia przewijania w przypadku niektórych typów niestandardowych komórek.
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 W systemach iOS i Android Jeśli [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest odtwarzania elementów i niestandardowych komórki używa niestandardowego modułu renderowania, niestandardowego modułu renderowania należy poprawnie zaimplementować powiadomienia o zmianie właściwości. Po komórki są ponownie ich wartości właściwości zostaną zmienione po zaktualizowaniu niż dostępna komórki, kontekst powiązania z `PropertyChanged` zdarzeń zgłaszanych. Aby uzyskać więcej informacji, zobacz [Dostosowywanie ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Aby uzyskać więcej informacji na temat odtwarzania komórki, zobacz [strategii buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
-
-### <a name="enabling-row-selection-on-android"></a>Włączanie zaznaczenie wiersza w systemie Android
-
-Umożliwia zaznaczenie wiersza dla komórki, które również obejmować elementów input takie jak przyciski, prosty [ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) jest wymagana. W typowy kod, Utwórz podklasę `Button` , dzięki czemu można dodać niestandardowego modułu renderowania w projektach platformy:
-
-```csharp
-public class ListButton : Button { }
-```
-
-Ustawia implementację renderowania dla systemu Android `Focusable` właściwości, dzięki czemu wiersz, aby możliwe wybranie oraz przyciski do klikania hosta. Ten kod został dodany do projektu aplikacji systemu Android:
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-Jak już wspomniano, wymaga tylko Android `ButtonRenderer` do zaimplementowania. iOS i Windows Phone platformy zezwala na przycisku można klikać bez stosowania niestandardowego modułu renderowania.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

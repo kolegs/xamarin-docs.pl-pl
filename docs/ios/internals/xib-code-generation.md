@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c98d4100a758e624c851ed2294cfe0c6b7f16fdd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d320b3fc40c852c337e5fd1e9bda4e90920cf70
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="xib-code-generation"></a>Generowanie kodu .xib
 
 > [!IMPORTANT]
 >  W tym dokumencie opisano Visual Studio dla komputerów Mac integracji z usługą tylko w środowisku Xcode interfejsu konstruktora jako akcje i gniazda nie są używane w Projektancie Xamarin dla systemu iOS. Aby uzyskać więcej informacji w systemie iOS projektanta, zapoznaj się z tematem [iOS projektanta](~/ios/user-interface/designer/index.md) dokumentu.
 
-Narzędzia Apple konstruktora interfejsu ("IB") można zaprojektować wizualnie interfejsów użytkownika. Definicje interfejsu utworzone przez IB są zapisywane w **.xib** plików. Elementy widget i innych obiektów w **.xib** pliki mogą mieć "klasy tożsamości", który może być zdefiniowana przez użytkownika typu niestandardowego. Dzięki temu można dostosować zachowanie widżetów i zapisywania niestandardowe elementy widget.
+Narzędzia Apple konstruktora interfejsu ("IB") można zaprojektować wizualnie interfejsów użytkownika. Definicje interfejsu utworzone przez IB są zapisywane w **.xib** plików. Elementy widget i innych obiektów w **.xib** pliki mogą mieć "klasy tożsamości", który może być zdefiniowana przez użytkownika typu niestandardowego. Dzięki temu można dostosować zachowanie elementów widget i zapisują niestandardowe elementy widget.
 
 Te klasy użytkownika są zazwyczaj podklas klas kontrolera interfejsu użytkownika. Mają one *gniazda* (odpowiednikiem właściwości) i *akcje* (odpowiednikiem zdarzeń) które mogą być połączone z obiektami interfejsu. W czasie wykonywania podczas ładowania pliku IB obiekty są tworzone i gniazda i akcje są podłączone do różnych obiektów interfejsu użytkownika dynamicznie. Podczas definiowania tych klas zarządzanych, należy zdefiniować wszystkie akcje i gniazda, aby dopasować te, które IB oczekuje. Visual Studio for Mac korzysta z modelu plik CodeBehind podobne do uproszczenia tego procesu. Jest to podobne do Xcode jest dla języka Objective-C, ale model generowanie kodu i konwencje ma zostały tweaked więcej znać deweloperom platformy .NET.
 
@@ -26,7 +26,7 @@ Praca z **.xib** plików nie jest obecnie obsługiwane w Xamarin.iOS dla program
 
 ## <a name="xib-files-and-custom-classes"></a>pliki .xib i klas niestandardowych
 
-Oraz przy użyciu istniejących typów z Cocoa Touch, istnieje możliwość definiowania niestandardowych typów w **.xib** plików. Istnieje również możliwość użycia których typy zostały zdefiniowane w innych **.xib** pliki lub zdefiniowany wyłącznie w kodzie języka C#. Konstruktor interfejsu nie jest obecnie znane Szczegóły typów zdefiniowanych poza bieżącą **.xib** plików, nie będzie ich ani ich gniazda niestandardowych i akcje. Usunięcie tego ograniczenia planowane pewnego czasu w przyszłości.
+Oraz przy użyciu istniejących typów z Cocoa Touch, istnieje możliwość definiowania niestandardowych typów w **.xib** plików. Istnieje również możliwość użycia których typy zostały zdefiniowane w innych **.xib** pliki lub zdefiniowany wyłącznie w kodzie języka C#. Konstruktor interfejsu nie jest obecnie znane Szczegóły typów zdefiniowanych poza bieżącą **.xib** pliku zostanie umieszczone na liście lub nie Pokaż ich gniazda niestandardowych i akcje. Usunięcie tego ograniczenia planowane pewnego czasu w przyszłości.
 
 Można zdefiniować klas niestandardowych w **.xib** plików za pomocą polecenia "Dodaj podklasy" na karcie "Klasy" interfejsu konstruktora. Firma Microsoft można znaleźć je jako klasy "Plik CodeBehind". Jeśli **.xib** plik ma ". xib.designer.cs" odpowiednikiem pliku w projekcie, a następnie programu Visual Studio for Mac zostanie automatycznie wypełnić go definicje klas częściowych dla klas niestandardowych w **.xib**. Nazywamy tych klas częściowych "projektanta klas".
 
@@ -42,7 +42,7 @@ Visual Studio for Mac generuje projektanta klas przy użyciu domyślnej przestrz
 
 Klasa stał się wykrywalny przez środowisko uruchomieniowe języka Objective-C, Visual Studio dla komputerów Mac dotyczy `[Register (name)]` do klasy atrybutu. Mimo że Xamarin.iOS automatycznie rejestruje `NSObject`-pochodzi z klasy, używa nazwy .NET w pełni kwalifikowane. Atrybut zastosowany przez program Visual Studio dla komputerów Mac zastępuje to w celu zapewnienia każdej klasy został zarejestrowany za pomocą nazwę używaną w **.xib** pliku. Jeśli używasz klas niestandardowych w IB bez korzystania z programu Visual Studio for Mac na wygenerowanie plików projektanta, może mieć jej zastosowania ręcznie, aby utworzyć sieci zarządzanej klasy pasują do oczekiwanej nazwy klas języka Objective-C.
 
-Klas nie może być zdefiniowana w więcej niż jeden **.xib**, lub może powodować konflikt.
+Klas nie może być zdefiniowana w więcej niż jednym **.xib**, lub może powodować konflikt.
 
 ## <a name="non-designer-class-parts"></a>Części z systemem innym niż projektanta klas
 
@@ -60,9 +60,9 @@ Częściowe projektanta klas Visual Studio for Mac generuje właściwości odpow
 
 ### <a name="outlet-properties"></a>Właściwości gniazda
 
-Projektanta klas zawiera właściwości odpowiadającej gniazda wszystkie zdefiniowane dla klasy niestandardowej. Fakt, że są one właściwości jest implementacja szczegółowości Xamarin.iOS Mostek Objective C, aby umożliwić wiązanie opóźnieniem. Należy rozważyć je jako odpowiednik pól prywatnych może być używany tylko z klasy plik CodeBehind. Jeśli chcesz były publicznych, jak w przypadku innych pole prywatne dodać właściwości metody dostępu do części z systemem innym niż projektanta klas.
+Projektanta klas zawiera właściwości odpowiadającej gniazda wszystkie zdefiniowane dla klasy niestandardowej. Fakt, że są one właściwości jest implementacja szczegółowości Xamarin.iOS Mostek Objective C, aby umożliwić wiązanie opóźnieniem. Należy rozważyć ich równoważne pola prywatne, może być używany tylko z klasy plik CodeBehind. Jeśli chcesz były publicznych, jak w przypadku innych pole prywatne dodać właściwości metody dostępu do części z systemem innym niż projektanta klas.
 
-Jeśli ma typ są zdefiniowane właściwości gniazda **identyfikator** (odpowiednikiem `NSObject`), a następnie generatora kodu projektanta Określa aktualnie najwyższego poziomu może typy oparte na obiektach podłączone do tego gniazda dla wygody.
+Jeśli ma typ są zdefiniowane właściwości gniazda `id` (odpowiednikiem `NSObject`), a następnie generatora kodu projektanta Określa aktualnie najwyższego poziomu może typy oparte na obiektach podłączone do tego gniazda dla wygody.
 Jednak to może być nieobsługiwana w przyszłych wersjach, dlatego zalecane jest jawnie silnie wpisz gniazda podczas definiowania klasy niestandardowej.
 
 ### <a name="action-properties"></a>Właściwości akcji
@@ -70,12 +70,12 @@ Jednak to może być nieobsługiwana w przyszłych wersjach, dlatego zalecane je
 Projektanta klas zawiera metody częściowe odpowiadający wszystkich akcji zdefiniowane na niestandardowych klasy. Są to metody bez implementacji. Metody częściowe ma dwa cele:
 
 1.  W przypadku wpisania `partial` w treści klasy części z systemem innym niż projektanta klas, Visual Studio for Mac będzie oferować autocomplete sygnatur wszystkie nie zaimplementowano metody częściowe.
-1.  Sygnatury metody częściowej mają zastosowany atrybut, który udostępnia je w świecie Objective-C, można uzyskać obsługi dotyczącą odpowiednich akcji.
+2.  Sygnatury metody częściowej mają zastosowany atrybut, który udostępnia je w świecie Objective-C, mogą uzyskać obsługiwane jako działanie.
 
 
 W razie potrzeby, może zignorować metody częściowej i wdrożenia działań przez zastosowanie atrybutu do innej metody lub pozwól mu przechodzić do klasy podstawowej.
 
-Jeśli akcje zdefiniowane typu nadawcy `id` (odpowiednikiem `NSObject`), a następnie generatora kodu projektanta Określa aktualnie najwyższy typ możliwe oparte na obiektach podłączone do tej akcji. Jednak to może być nieobsługiwana w przyszłych wersjach, dlatego zalecane jest jawnie silnie wpisz akcje podczas definiowania klasy niestandardowej.
+Jeśli akcje są zdefiniowane ma typ nadawcy `id` (odpowiednikiem `NSObject`), a następnie generatora kodu projektanta Określa aktualnie najwyższy typ możliwe oparte na obiektach podłączone do tego działania. Jednak to może być nieobsługiwana w przyszłych wersjach, dlatego zalecane jest jawnie silnie wpisz akcje podczas definiowania klasy niestandardowej.
 
 Należy pamiętać, że te metody częściowe są tworzone tylko dla C#, ponieważ CodeDOM nie obsługuje metody częściowe, nie są generowane dla innych języków.
 
@@ -83,10 +83,10 @@ Należy pamiętać, że te metody częściowe są tworzone tylko dla C#, poniewa
 
 Czasami, chcesz odwołać się do tej samej klasy z wielu użytkowników **.xib** plików, na przykład z kontrolerami kartę. Można to zrobić przez explictly odwołuje się do definicji klasy z innego **.xib** plików lub poprzez definiowanie tej samej nazwie klasy ponownie w ciągu sekundy **.xib**.
 
-Drugim przypadku można powodować problemy. Jest do programu Visual Studio dla komputerów Mac przetwarzania **.xib** pliki pojedynczo. Nie można automatycznie wykryć i scalić zduplikowane definicje, może to spowodować z konfliktami stosowania atrybutu rejestru wielokrotnie zdefiniowane w wielu plikach projektanta na tej samej klasy częściowej. Nowe wersje programu Visual Studio for Mac spróbować rozwiązać ten problem, ale to może nie zawsze działać zgodnie z oczekiwaniami. W przyszłości jest jest mogą być nieobsługiwane i zamiast tego programu Visual Studio for Mac spowoduje wszystkich zdefiniowanych we wszystkich typów **.xib** plików i kod zarządzany w projekcie bezpośrednio widoczne ze wszystkich **.xib** plików.
+Drugim przypadku mogą być problemy z powodu Visual Studio do przetwarzania Mac **.xib** pliki pojedynczo. Nie można automatycznie wykryć i scalić zduplikowane definicje, może to spowodować z konfliktami stosowania atrybutu rejestru wielokrotnie zdefiniowane w wielu plikach projektanta na tej samej klasy częściowej. Nowe wersje programu Visual Studio for Mac spróbować rozwiązać ten problem, ale może nie zawsze działać zgodnie z oczekiwaniami. W przyszłości jest mogą być nieobsługiwane i zamiast tego programu Visual Studio for Mac spowoduje wszystkich zdefiniowanych we wszystkich typów **.xib** plików i kod zarządzany w projekcie bezpośrednio widoczne ze wszystkich **.xib** plików.
 
 ## <a name="type-resolution"></a>Rozpoznawania typu
 
-Typy używane w IB są nazwy typów języka Objective-C. Są one mapowane na CLR types jednak zastosowanie atrybutów rejestru. Podczas generowania kodu gniazda i akcji, Visual Studio for Mac rozwiązać odpowiednie typy CLR dla wszystkich typów języka Objective-C opakowane przez podstawowe Xamarin.iOS i pełnej kwalifikacji nazwy typu.
+Typy używane w IB są nazwy typów języka Objective-C. Te są mapowane na typy CLR za pomocą atrybutów z rejestru. Podczas generowania kodu gniazda i akcji, Visual Studio for Mac rozwiązać odpowiednie typy CLR dla wszystkich typów języka Objective-C opakowane przez podstawowe Xamarin.iOS i pełnej kwalifikacji nazwy typu.
 
 Jednak generatora kodu aktualnie nie można rozpoznać typów CLR z nazwy typów języka Objective-C w kodzie użytkownika lub bibliotek, więc w takich przypadkach danych wyjściowych dosłownego wyrażenia nazwy typu. Oznacza to, że odpowiedni typ CLR musi mieć taką samą nazwę jak typ Objective-C i musi być w tej samej przestrzeni nazw jako kod, który jest używany przez. Planowane jest ustalana pewnego czasu w przyszłości przez uwzględnieniu wszystkich typów języka Objective-C w projekcie podczas generowania kodu.

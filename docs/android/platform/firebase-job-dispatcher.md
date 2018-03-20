@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dyspozytor zadania firebase
 
@@ -27,7 +27,7 @@ Na przykład zadanie w tle może sondować witryny sieci Web co kilka minut, aby
 Android już zawiera kilka interfejsów API w celu wykonywania pracy w tle, jednak żaden z nich nie jest to kompleksowe rozwiązanie:
 
 * **[Usługi w celu](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; celem usługi są doskonałe do wykonywania pracy, jednak zapewniają sposób harmonogramu pracy.
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash; te interfejsy API umożliwiają tylko pracy można zaplanować, ale nie umożliwiają faktycznie wykonać operację. Ponadto AlarmManager umożliwia tylko ograniczenia na podstawie czasu, co oznacza, że podnieść alarmu w określonym czasie lub po upływie pewnego czasu. 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; te interfejsy API umożliwiają tylko pracy można zaplanować, ale nie umożliwiają faktycznie wykonać operację. Ponadto AlarmManager umożliwia tylko ograniczenia na podstawie czasu, co oznacza, że podnieść alarmu w określonym czasie lub po upływie pewnego czasu. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; harmonogram zadań to doskonały interfejs API, który działa w systemie operacyjnym do planowania zadań. Jednak jest tylko dostępne dla tych aplikacji systemu Android, które odnoszą się do poziom interfejsu API 21 lub nowszej. 
 * **[Emisji odbiorcy](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; aplikacji systemu Android można skonfigurować emisji odbiorcy do wykonywania pracy w odpowiedzi na szeroki zdarzeń systemowych lub lokalizacji docelowych. Jednak emisji odbiorcy nie udostępniają kontrolę uruchamiania zadania. Również ograniczy zmian w systemie Android podczas emisji odbiorcy będą działać lub rodzaje pracy, którą może odpowiedzieć. 
 * **Menedżer sieci komunikatu chmura Google** &ndash; przez długi czas, to był, można przypuszczać, że działa najlepiej inteligentnie harmonogram tła. Jednak ponieważ została zastąpiona GCMNetworkManager. 
