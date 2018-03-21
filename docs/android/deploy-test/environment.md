@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Komentarze są wiersze, które zaczynają `#`. Puste wiersze są ignorowane.
 
 Jeśli *klucza* rozpoczyna się wielką literę, następnie *klucza* jest traktowany jako zmienną środowiskową i **setenv**(3) jest używana do ustawiania zmiennej środowiskowej do określonego *wartość* podczas uruchamiania procesu.
 
-Jeśli *klucza* rozpoczyna się od małej litery, następnie *klucza* jest traktowany jako właściwość systemu Android i *wartość* jest *wartość domyślna*: Właściwości systemu android, które kontrolują sposób wykonywania platformy Xamarin.Android są najpierw wyszukiwane z serwera właściwości systemu Android, a jeśli wartość nie znajduje się wartość określona w pliku środowiska jest używany. To jest umożliwienie `adb shell setprop` ma być używany do zastępowania wartości, które pochodzą z pliku środowiska w celach diagnostycznych.
+Jeśli *klucza* rozpoczyna się od małej litery, następnie *klucza* jest traktowany jako właściwość systemu Android i *wartość* jest *wartość domyślna*: Właściwości systemu android, które kontrolują sposób wykonywania platformy Xamarin.Android są najpierw wyszukiwane w sklepie właściwości systemu Android, a jeśli wartość nie znajduje się wartość określona w pliku środowiska jest używany. To jest umożliwienie `adb shell setprop` ma być używany do zastępowania wartości, które pochodzą z pliku środowiska w celach diagnostycznych.
 
 ## <a name="xamarinandroid-environment-variables"></a>Zmienne środowiskowe platformy Xamarin.Android
 
@@ -45,9 +45,9 @@ Obsługuje platformy Xamarin.Android `XA_HTTP_CLIENT_HANDLER_TYPE` zmiennej, kt�
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Typu kwalifikowanego zestawu, który musi dziedziczyć z [HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) i jest tworzona z [ `HttpClient()` domyślnego konstruktora](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx).
+Typu kwalifikowanego zestawu, który musi dziedziczyć z [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) i jest tworzona z [ `HttpClient()` domyślnego konstruktora](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
-W Xamarin.Android 6.1 tej zmiennej środowiskowej nie jest ustawiona domyślnie i [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx) będą używane.
+W Xamarin.Android 6.1 tej zmiennej środowiskowej nie jest ustawiona domyślnie i [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) będą używane.
 
 Alternatywnie wartość `Xamarin.Android.Net.AndroidClientHandler` można określić, aby użyć [ `java.net.URLConnection` ](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) dostępu do sieci, które *może* zezwala na korzystanie z protokołu TLS 1.2, podczas Android obsługuje tę funkcję.
 

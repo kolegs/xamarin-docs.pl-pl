@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 65037029d01d499421fd825f72347ae1bebd9966
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe516a9780b8b1cdc478a49fe3b6963097649a80
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="debuggable-attribute"></a>Atrybut debugowalny
 
@@ -22,12 +22,12 @@ Aby umożliwić debugowanie, Android obsługuje protokół debugowania przewodow
 JDWP może być wartością `android:debuggable` atrybutu w aplikacji systemu Android. Xamarin.Android oferuje następujące sposoby ten atrybut:
 
 1.  Utworzony `AndroidManifext.xml` pliku, a ustawienie `android:debuggable` Brak atrybutu.
-1.  W tym `ApplicationAttribute` w `.CS` plików w następujący sposób: `[assembly: Application(Debuggable=false)]` .
+2.  W tym `ApplicationAttribute` w `.CS` plików w następujący sposób: `[assembly: Application(Debuggable=false)]` .
 
 
 Jeśli oba `AndroidManifest.xml` i `ApplicationAttribute` są Pokaż zawartość `AndroidManifest.xml` mają priorytet wyższy niż określonym przez `ApplicationAttribute`.
 
-Jeśli żadna `AndroidManifest.xml` i `ApplicationAttribute`, następnie wartość domyślną `android:debuggable` atrybutu zależy od tego, czy są generowane symboli debugowania. Jeśli występują symboli debugowania, a następnie ustawi Xamarin.Android `android:debuggable` atrybutu `true`.
+Jeśli żadna `AndroidManifest.xml` ani `ApplicationAttribute` jest obecny, a następnie wartość domyślną `android:debuggable` atrybutu zależy od tego, czy są generowane symboli debugowania. Jeśli występują symboli debugowania, a następnie ustawi Xamarin.Android `android:debuggable` atrybutu `true`.
 
 Należy pamiętać, że wartość `android:debuggable` atrybutu nie zawsze zależy od konfiguracji kompilacji. Istnieje możliwość dla wersji kompilacji mają `android:debuggable` atrybut na wartość true.
 

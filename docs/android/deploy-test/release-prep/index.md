@@ -6,12 +6,12 @@ ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/19/2018
+ms.openlocfilehash: e26c855133d0b32676aa2d0a6084754a80055e30
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Przygotowywanie aplikacji dla wersji
 
@@ -40,13 +40,7 @@ Każdy z tych kroków poniżej opisano bardziej szczegółowo.
 
 ## <a name="specify-the-application-icon"></a>Określ ikona aplikacji
 
-Zdecydowanie zaleca się, że każda aplikacja platformy Xamarin.Android Określanie ikony aplikacji. Rynków niektórych aplikacji nie zezwoli aplikacji systemu Android do opublikowania bez ani jednego.
-
-`Icon` Właściwość `Application` atrybut służy do określania ikona aplikacji dla projektu platformy Xamarin.Android. Ten atrybut można zadeklarować w pliku **Properties\AssemblyInfo.cs**, jak pokazano w ta Wstawka kodu próbki:
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+Zdecydowanie zaleca się, że każda aplikacja platformy Xamarin.Android Określanie ikony aplikacji. Rynków niektórych aplikacji nie zezwoli aplikacji systemu Android do opublikowania bez ani jednego. `Icon` Właściwość `Application` atrybut służy do określania ikona aplikacji dla projektu platformy Xamarin.Android.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,12 @@ W programie Visual Studio dla komputerów Mac, jest również możliwe określen
 [![Ustaw ikona aplikacji](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+W tych przykładach `@drawable/icon` odwołuje się do pliku ikony, która znajduje się pod adresem **Resources/drawable/icon.png** (należy pamiętać, że **.png** rozszerzenia nie jest uwzględniony w nazwie zasobów). Ten atrybut również mogą być deklarowane w pliku **Properties\AssemblyInfo.cs**, jak pokazano w ta Wstawka kodu próbki:
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
 
 <a name="Versioning" />
 

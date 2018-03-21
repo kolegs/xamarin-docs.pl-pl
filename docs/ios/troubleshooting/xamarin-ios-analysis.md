@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a63cc916d3c182baccb4ddd3c9003bdb8e5f30c7
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Reguły analizy platformy Xamarin.iOS
 
@@ -24,33 +24,45 @@ Aby uruchomić reguły, w programie Visual Studio dla komputerów Mac w menu, wy
 > [!NOTE]
 > Analiza platformy Xamarin.iOS działa tylko w aktualnie wybranej konfiguracji. Zdecydowanie zaleca się uruchomienie narzędzia do debugowania **i** konfiguracje wydania.
 
-## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
+<a name="XIA0001" />
+
+## <a name="xia0001-disabledlinkerrule"></a>XIA0001: DisabledLinkerRule
 
 - **Problem:** konsolidator jest wyłączona na urządzeniu w trybie debugowania.
 - **Poprawka:** należy spróbować uruchomić kod z konsolidator, aby uniknąć wszelkich niespodzianki.
 Aby go skonfigurować, przejdź do projektu > kompilacji systemu iOS > zachowanie konsolidatora.
 
-## <a name="a-namexia0002xia0002-testcloudagentreleaserule"></a><a name="XIA0002"/>XIA0002: TestCloudAgentReleaseRule
+<a name="XIA0002" />
+
+## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002: TestCloudAgentReleaseRule
 
 - **Problem:** kompilacje aplikacji, które zainicjować agenta chmury testowej zostanie odrzucony przez firmę Apple podczas przesyłania, ponieważ używają one prywatnego interfejsu API.
 - **Poprawka:** Dodaj lub usuń konieczne #if i definiuje w kodzie.
 
-## <a name="a-namexia0003xia0003-ipadebugbuildsrule"></a><a name="XIA0003"/>XIA0003: IPADebugBuildsRule
+<a name="XIA0003" />
+
+## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003: IPADebugBuildsRule
 
 - **Problem:** konfigurację debugowania, który korzysta z kluczy podpisywania developer nie powinna generować IPA tylko jest wymagana do dystrybucji, którego obecnie korzysta z Kreatora publikacji.
 - **Poprawka:** wyłączyć IPA kompilacji w opcje projektu dla konfiguracji debugowania.
 
-## <a name="a-namexia0004xia0004-missing64bitsupportrule"></a><a name="XIA0004"/>XIA0004: Missing64BitSupportRule
+<a name="XIA0004" />
+
+## <a name="xia0004-missing64bitsupportrule"></a>XIA0004: Missing64BitSupportRule
 
 - **Problem:** obsługiwana architektura dla "wersji | urządzenie"nie jest zgodny, brak ARM64 64-bitowym. Jest to problem, ponieważ firmy Apple nie akceptuje tylko aplikacje systemu iOS 32-bitowy w sklepu AppStore.
 - **Poprawka:** podwójne kliknięcie projektu systemu iOS, przejdź do kompilacji > iOS kompilacji i zmienić obsługiwane architektury, więc ARM64.
 
-## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
+<a name="XIA0005" />
+
+## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
 - **Problem:** nie przy użyciu opcji float32 (--Opcje drzewa obiektów aplikacji = O = float32) prowadzi do hefty wydajność, szczególnie w przypadku urządzeń przenośnych, gdzie jest widoczny wolniejsze Podwójna precyzja matematycznych. Zwróć uwagę, że .NET używa podwójnej precyzji wewnętrznie, nawet w przypadku liczb zmiennoprzecinkowych, dlatego włączenie tej opcji ma wpływ na dokładność i prawdopodobnie zgodności.
 - **Poprawka:** podwójne kliknięcie projektu systemu iOS, przejdź do kompilacji > iOS kompilacji i usuń zaznaczenie pola wyboru "Wykonywać wszystkie operacje 32-bitowych liczb zmiennoprzecinkowych jako 64-bit float".
 
-## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+<a name="XIA0006" />
+
+## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006: HttpClientAvoidManaged
 
 - **Problem:** zaleca się używanie natywnej obsługi HttpClient zamiast zarządzanego w celu poprawy wydajności mniejszego rozmiaru pliku wykonywalnego i umożliwia łatwą obsługę nowszych standardów.
 - **Poprawka:** podwójne kliknięcie projektu systemu iOS, przejdź do kompilacji > iOS kompilacji i zmień implementację HttpClient NSUrlSession (iOS 7 +) albo CFNetwork obsługi wersji poprzedzającej systemów iOS 7.

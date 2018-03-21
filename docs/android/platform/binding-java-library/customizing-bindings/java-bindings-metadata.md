@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadane powiązania Java
 
@@ -313,7 +313,7 @@ Istnieją przypadki, w którym korzystać z biblioteki systemu Android stałe ca
 </mapping>
 ```
 
-W tym miejscu przekierowaliśmy Klasa Java `SKRealReachSettings` i definicja wyliczenia C# o nazwie `SKRealReachSettings` w przestrzeni nazw `Skobbler.Ngx.Map.RealReach`. `field` Wpisy definiuje nazwę stała Java (przykład `UNIT\_SECOND`), nazwę wpisu wyliczenia (przykład `Second`) i wartość całkowita reprezentowany przez oba podmioty (przykład `0`). 
+W tym miejscu przekierowaliśmy Klasa Java `SKRealReachSettings` i definicja wyliczenia C# o nazwie `SKMeasurementUnit` w przestrzeni nazw `Skobbler.Ngx.Map.RealReach`. `field` Wpisy definiuje nazwę stała Java (przykład `UNIT_SECOND`), nazwę wpisu wyliczenia (przykład `Second`) i wartość całkowita reprezentowany przez oba podmioty (przykład `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definiowanie metody Getter i Setter za pomocą EnumMethods.xml
 
@@ -328,7 +328,7 @@ Podane `SKRealReachSettings` wyliczenia zdefiniowanych powyżej, następujące *
 </mapping>
 ```
 
-Pierwszy `method` linii mapy wartość zwracaną Java `getMeasurementUnit` metodę `SKRealReachSettings` wyliczenia. Drugi `method` linii mapy pierwszy parametr `setMeasurementUnit` do tego samego wyliczenia.
+Pierwszy `method` linii mapy wartość zwracaną Java `getMeasurementUnit` metodę `SKMeasurementUnit` wyliczenia. Drugi `method` linii mapy pierwszy parametr `setMeasurementUnit` do tego samego wyliczenia.
 
 Biorąc pod uwagę te zmiany w miejscu, można użyć kodu wykonaj platformie Xamarin.Android można ustawić `MeasurementUnit`: 
 

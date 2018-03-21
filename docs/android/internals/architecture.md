@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9834da444032622cc3547e7c99ca3de0e41bb603
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -33,7 +33,7 @@ Więcej informacji na sposób komunikacji klasy systemu Android z klasy systemu 
 
 Pakiety aplikacji systemu android są kontenerami ZIP z *apk* rozszerzenia pliku. Pakiety aplikacji platformy Xamarin.Android mają taką samą strukturę i układu jako normalne pakiety systemu Android, z następującymi dodatkami:
 
--   Zestawy aplikacji (zawierający IL) są *przechowywane* nieskompresowanych w *zestawy* folderu. Podczas uruchamiania w wersji kompilacji *apk* jest *mmap()* ed w proces i zestawy są ładowane z pamięci. Pozwala to na szybsze uruchamianie aplikacji jako zestawy nie trzeba wyodrębnienia przed jej wykonaniem. - *Uwaga:* informacji o lokalizacji zestawu, takich jak [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) i [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   Zestawy aplikacji (zawierający IL) są *przechowywane* nieskompresowanych w *zestawy* folderu. Podczas uruchamiania w wersji kompilacji *apk* jest *mmap()* ed w proces i zestawy są ładowane z pamięci. Pozwala to na szybsze uruchamianie aplikacji, jak zestawy nie są do wyodrębnienia przed jej wykonaniem. - *Uwaga:* informacji o lokalizacji zestawu, takich jak [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) i [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *nie może opierać się* w wersji kompilacji. Nie są dostępne jako wpisy różne systemu plików i mają nie można używać lokalizacji.
 
 

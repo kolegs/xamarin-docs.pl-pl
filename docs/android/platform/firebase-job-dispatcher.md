@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dyspozytor zadania firebase
 
 _W tym przewodniku omówiono sposób tworzenia harmonogramu praca w tle przy użyciu biblioteki Firebase zadania dyspozytora z Google._
 
-## <a name="firebase-job-dispatcher-overview"></a>Przegląd dyspozytora zadań firebase
+## <a name="overview"></a>Omówienie
 
 Jednym z najlepszych sposobów zachowanie reakcji użytkownikowi aplikacji systemu Android jest upewnij się, że złożonych lub długotrwałych zadań są wykonywane w tle. Jednak jest ważne, aby praca w tle nie ma negatywnego wpływu przez użytkownika z urządzeniem. 
 
-Na przykład zadanie w tle może sondować witryny sieci Web co kilka minut, aby zapytania zmian do określonego zestawu danych. Prawdopodobnie niegroźne, jednak może ona Fatalne wpływu na urządzeniu. Aplikacja zakończą się wznawiania urządzenia, podnosząc procesora CPU na wyższe stan zasilania, włączanie komunikacji radiowej, wysyłania żądań sieci i następnie przetwarzania wyników. Pobiera on gorsza, ponieważ urządzenie nie jest od razu zasilanie i nie powrócić do stanu bezczynności niskiego poboru energii. Praca w tle nieprawidłowo zaplanowane przypadkowo mogą przechowywać urządzenie w stanie z zasilania niepotrzebnych i nadmierne wymagania. Ostatecznie to seeming działanie nieszkodliwie (sondowania witryny sieci Web) spowoduje, że urządzenie stanie się bezużyteczny w względnie krótkim czasie.
+Na przykład zadanie w tle może sondować witryny sieci Web co trzy lub cztery minut do zapytania zmiany określonego zestawu danych. Prawdopodobnie niegroźne, jednak byłyby Fatalne wpływu na czas pracy baterii. Aplikacji będzie wielokrotnie wznawiania urządzenia, podnieść poziom Procesora do wyższych stan zasilania, włączenia komunikacji radiowej, żądania sieci, a następnie przetwarzania wyników. Pobiera on gorsza, ponieważ urządzenie nie jest od razu zasilanie i nie powrócić do stanu bezczynności niskiego poboru energii. Praca w tle nieprawidłowo zaplanowane przypadkowo mogą przechowywać urządzenie w stanie z zasilania niepotrzebnych i nadmierne wymagania. To działanie pozornie nieszkodliwie (sondowania witryny sieci Web) spowoduje, że urządzenie stanie się bezużyteczny w względnie krótkim czasie.
 
-Android już zawiera kilka interfejsów API w celu wykonywania pracy w tle, jednak żaden z nich nie jest to kompleksowe rozwiązanie:
+Android udostępnia następujące interfejsy API ułatwiające wykonywanie pracy w tle, ale samodzielnie nie są wystarczające do planowania zadań inteligentnego. 
 
 * **[Usługi w celu](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; celem usługi są doskonałe do wykonywania pracy, jednak zapewniają sposób harmonogramu pracy.
 * **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; te interfejsy API umożliwiają tylko pracy można zaplanować, ale nie umożliwiają faktycznie wykonać operację. Ponadto AlarmManager umożliwia tylko ograniczenia na podstawie czasu, co oznacza, że podnieść alarmu w określonym czasie lub po upływie pewnego czasu. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; harmonogram zadań to doskonały interfejs API, który działa w systemie operacyjnym do planowania zadań. Jednak jest tylko dostępne dla tych aplikacji systemu Android, które odnoszą się do poziom interfejsu API 21 lub nowszej. 
-* **[Emisji odbiorcy](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; aplikacji systemu Android można skonfigurować emisji odbiorcy do wykonywania pracy w odpowiedzi na szeroki zdarzeń systemowych lub lokalizacji docelowych. Jednak emisji odbiorcy nie udostępniają kontrolę uruchamiania zadania. Również ograniczy zmian w systemie Android podczas emisji odbiorcy będą działać lub rodzaje pracy, którą może odpowiedzieć. 
-* **Menedżer sieci komunikatu chmura Google** &ndash; przez długi czas, to był, można przypuszczać, że działa najlepiej inteligentnie harmonogram tła. Jednak ponieważ została zastąpiona GCMNetworkManager. 
+* **[Emisji odbiorcy](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; aplikacji systemu Android można skonfigurować emisji odbiorcy do wykonywania pracy w odpowiedzi na zdarzenia systemowe lub lokalizacji docelowych. Jednak emisji odbiorcy nie udostępniają kontrolę uruchamiania zadania. Również ograniczy zmian w systemie Android podczas emisji odbiorcy będą działać lub rodzaje pracy, którą może odpowiedzieć. 
 
-Istnieją dwa kluczowe funkcje do wykonywania skutecznie Praca w tle (czasami zwanej _zadanie w tle_ lub _zadania_):
+Istnieją dwa kluczowe funkcje do wykonywania wydajnie Praca w tle (czasami zwanej _zadanie w tle_ lub _zadania_):
 
-1. **Inteligentnie Planowanie pracy** &ndash; należy pamiętać, że gdy aplikacja jest operacją pracy w tle robi to jako dobra obywateli. Najlepiej, jeśli w aplikacji uruchomić zadania nie powinna wymagać. Zamiast tego aplikacja powinna określają warunki, które muszą być spełnione, gdy zadanie można uruchomić, a następnie Zaplanuj który współpracujących uruchamiany, gdy są spełnione warunki. Dzięki temu systemu Android do inteligentnie wykonywania pracy. Na przykład żądania sieci mogą można umieścić w partii do uruchomienia wszystkich w tym samym czasie, aby maksymalne użycie koszty związane z obsługą sieci.
+1. **Inteligentnie Planowanie pracy** &ndash; należy pamiętać, że gdy aplikacja jest operacją pracy w tle robi to jako dobra obywateli. Najlepiej, jeśli w aplikacji uruchomić zadania nie powinna wymagać. Zamiast tego aplikacja powinna określają warunki, które muszą być spełnione, gdy zadanie można uruchomić, a następnie Zaplanuj pracy do uruchomienia po spełnieniu warunków. Dzięki temu systemu Android do inteligentnie wykonywania pracy. Na przykład żądania sieci mogą można umieścić w partii do uruchomienia wszystkich w tym samym czasie, aby maksymalne użycie koszty związane z obsługą sieci.
 2. **Zawieranie pracy** &ndash; kod, aby wykonać Praca w tle należy hermetyzowany w odrębny składnik, który może działać niezależnie od interfejsu użytkownika i będzie stosunkowo łatwa do ponownie zaplanować, jeśli praca nie powiedzie się niektóre przyczyny.
 
 Dyspozytor zadania Firebase to biblioteka z Google, która zapewnia interfejs API fluent uprościć planowania Praca w tle. Ma ona być zastąpienia dla Menedżera chmury Google. Dyspozytor zadania Firebase składa się z następujących interfejsów API:
@@ -66,7 +65,7 @@ Aby rozpocząć pracę z Firebase dyspozytora zadań, należy najpierw dodać [p
 
 Po dodaniu biblioteki Firebase dyspozytora zadań, należy utworzyć `JobService` klasy, a następnie zaplanować uruchomienie przy użyciu wystąpienia `FirebaseJobDispatcher`.
 
-### <a name="creating-a-jobservice"></a>Tworzenie `JobService`
+### <a name="creating-a-jobservice"></a>Tworzenie JobService
 
 Wszystkie pracy wykonanej przez bibliotekę Firebase zadania dyspozytora musi odbywać się w typie, rozszerzający `Firebase.JobDispatcher.JobService` klasy abstrakcyjnej. Tworzenie `JobService` jest bardzo podobny do tworzenia `Service` z platformy systemu Android: 
 
@@ -74,7 +73,7 @@ Wszystkie pracy wykonanej przez bibliotekę Firebase zadania dyspozytora musi od
 2. Dekoracji podklasy z `ServiceAttribute`. Mimo że nie są ściśle wymagane, zalecane jest jawnie ustawiona `Name` parametr, aby pomóc w debugowaniu `JobService`. 
 3. Dodaj `IntentFilter` Aby zadeklarować `JobService` w **AndroidManifest.xml**. Pomoże to również biblioteki dyspozytora zadania Firebase zlokalizuj i wywołania `JobService`.
 
-Następujący kod jest przykładem najprostszą `JobService` dla aplikacji:
+Następujący kod jest przykładem najprostszą `JobService` dla aplikacji, za pomocą TPL asynchronicznie wykonania dodatkowych czynności:
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>Tworzenie `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>Tworzenie FirebaseJobDispatcher
 
 Przed można zaplanować pracę, należy utworzyć `Firebase.JobDispatcher.FirebaseJobDispatcher` obiektu. `FirebaseJobDispatcher` Jest odpowiedzialny za planowanie `JobService`. Poniższy fragment kodu jest jednym ze sposobów tworzenia wystąpienia `FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 Raz `FirebaseJobDispatcher` został uruchomiony, jest możliwość utworzenia `Job` i uruchamianie kodu w `JobService` klasy. `Job` Jest tworzony przez `Job.Builder` obiektu i zostanie omówiona w następnej sekcji.
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Tworzenie `Firebase.JobDispatcher.Job` z `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Tworzenie Firebase.JobDispatcher.Job z Job.Builder
 
 `Firebase.JobDispatcher.Job` Klasy jest odpowiedzialny za, hermetyzując meta dane niezbędne do uruchomienia `JobService`. A`Job` zawiera informacje, takie jak wszystkie ograniczenia, które muszą zostać spełnione przed uruchomienia zadania, jeśli `Job` cykliczne, lub żadne wyzwalacze, które spowoduje, że aby uruchomić zadanie.  Co najmniej systemu od zera `Job` musi mieć _tag_ (unikatowy ciąg identyfikujący zadanie `FirebaseJobDispatcher`) i typ `JobService` powinny być uruchamiane. Dyspozytor zadania Firebase zostanie utworzenie wystąpienia `JobService` po nadszedł czas, aby uruchomić to zadanie.  A `Job` jest tworzona przy użyciu wystąpienia `Firebase.JobDispatcher.Job.JobBuilder` klasy. 
 
@@ -140,7 +142,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job` zostanie zaplanowane do uruchomienia tak szybko, jak to możliwe.
 * Strategia ponawiania domyślne `Job` jest użycie _wykładniczego wycofywania_ (w bardziej szczegółowo poniżej w sekcji [ustawienie RetryStrategy](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>Planowanie `Job`
+### <a name="scheduling-a-job"></a>Planowanie zadania
 
 Po utworzeniu `Job`, musi on zostać zaplanowane z `FirebaseJobDispatcher` przed uruchomieniem. Istnieją dwie metody planowania `Job`:
 
@@ -173,7 +175,7 @@ Każdego z tych tematów zostanie omówiona bardziej w poniższych sekcjach.
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>Przekazywanie parametrów do zadania
+#### <a name="passing-jarameters-to-a-job"></a>Przekazywanie jarameters do zadania
 
 Parametry są przekazywane do zadania, tworząc `Bundle` jest ono przekazywane wraz z programem `Job.Builder.SetExtras` metody:
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>Wyzwala zadanie ustawienie
 
 `JobTrigger` Zawiera wskazówki dotyczące systemu operacyjnego dotyczące rozpoczęcia zadania. A `JobTrigger` ma _wykonywania okna_ definiuje zaplanowanym czasie program `Job` powinno być ono uruchomione. Okna wykonania ma _uruchomić okno_ wartość i _zakończenia okna_ wartość. Okno rozpoczęcia jest liczbę sekund, które urządzenia ma odczekać przed uruchomieniem zadania i wartość końcowa okna jest maksymalna liczba sekund oczekiwania przed uruchomieniem `Job`. 
 
@@ -283,7 +283,7 @@ Każda metoda zwróci wartość całkowitą:
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku omówiono sposób użycia dyspozytora zadania Firebase może inteligentnie wykonywać zadania w tle. Go omówiony sposób Hermetyzowanie pracy do wykonania jako `JobService` oraz sposób `FirebaseJobDispatcher` do zaplanowania pracy, określając kryteria `JobTrigger` i sposób obsługi błędów z `RetryStrategy`.
+W tym przewodniku omówiono sposób użycia dyspozytora zadania Firebase może inteligentnie wykonywać zadania w tle. Go omówiony sposób Hermetyzowanie pracy do wykonania jako `JobService` i sposobu użycia `FirebaseJobDispatcher` do zaplanowania pracy, określając kryteria `JobTrigger` i sposób obsługi błędów z `RetryStrategy`.
 
 
 ## <a name="related-links"></a>Linki pokrewne
