@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -43,7 +43,7 @@ Poniższe elementy są wymagane do wykonania czynności przedstawionych w tym ar
 - **System iOS 8 (lub nowszego) urządzenia** — urządzenia z systemem iOS z najnowszą wersją systemu IOS 8 lub nowszego do testowania.
 
 > [!IMPORTANT]
-> **Uwaga:** kondycji zestaw został wprowadzony w systemie iOS 8. Obecnie kondycji zestawu nie jest dostępna w symulatorze systemu iOS i debugowanie wymaga połączenia z urządzeniem fizycznych z systemem iOS.
+> Zestaw kondycji została wprowadzona w systemie iOS 8. Obecnie kondycji zestawu nie jest dostępna w symulatorze systemu iOS i debugowanie wymaga połączenia z urządzeniem fizycznych z systemem iOS.
 
 
 
@@ -216,7 +216,7 @@ Zadaniem `ValidateAuthorization()` jest utworzenie zestawu `HKObjectTypes` czy a
 `ReactToHealthCarePermissions()` Wywołania zwrotnego będzie wywoływana po wykonaniu ma interakcji z okna dialogowego uprawnień i jest przekazywany informacje użytkownika: `bool` wartość, która będzie `true` Jeśli użytkownik ma interakcji z okna dialogowego uprawnień i `NSError`Jeśli inną niż null, wskazuje określonego rodzaju błąd związany z wyświetlania okna dialogowego uprawnień.
 
 > [!IMPORTANT]
-> **Uwaga:** jednoznaczne argumentów dla tej funkcji: _Powodzenie_ i _błąd_ parametrów nie wskazują, czy użytkownik ma uprawnienia dostępu do danych kondycji zestawu! Tylko wskazują, że użytkownik ma możliwość zezwolenie na dostęp do danych.
+> Jednoznaczne argumentów dla tej funkcji: _Powodzenie_ i _błąd_ parametrów nie wskazują, czy użytkownik ma uprawnienia dostępu do danych kondycji zestawu! Tylko wskazują, że użytkownik ma możliwość zezwolenie na dostęp do danych.
 
 Aby potwierdzić, czy aplikacja ma dostęp do danych, `HKHealthStore.GetAuthorizationStatus()` jest używana, przekazując `HKQuantityTypeIdentifierKey.HeartRate`. Na podstawie stanu zwrócony, aplikacja włącza lub wyłącza możliwość wprowadzania danych. Nie środowisko użytkownika standardowego dotyczące postępowania w przypadku odmowy dostępu, a istnieje wiele możliwych opcji. W aplikacji przykładzie stan jest ustawiony na `HeartRateModel` pojedynczego obiektu, który z kolei wywołuje istotne zdarzenia.
 
@@ -404,7 +404,7 @@ Symulatora systemu iOS nie obsługuje zestawu kondycji. Debugowanie musi odbywa�
 Dołącz urządzenia programowanie prawidłowo elastycznie iOS 8 do systemu. Wybierz go jako cel wdrożenia w programie Visual Studio dla komputerów Mac i z menu wybierz **Uruchom > debugowanie**.
 
 > [!IMPORTANT]
-> **Uwaga:** błędy dotyczące inicjowania obsługi będzie w tym momencie powierzchni. Rozwiązywanie problemów, przejrzyj tworzenie i Inicjowanie obsługi powyższej sekcji kondycji zestawu aplikacji. Dostępne są następujące składniki: 
+> Błędy dotyczące inicjowania obsługi będzie w tym momencie powierzchni. Rozwiązywanie problemów, przejrzyj tworzenie i Inicjowanie obsługi powyższej sekcji kondycji zestawu aplikacji. Dostępne są następujące składniki: 
 >
 > - **Centrum deweloperów systemu iOS** -jawny identyfikator aplikacji & Kit kondycji włączono profil inicjowania obsługi administracyjnej. 
 > - **Opcje projektu** — identyfikator pakietu (jawny identyfikator aplikacji) i profilu inicjowania obsługi administracyjnej.

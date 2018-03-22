@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b622da2d6d9777fc200a091ccf003369b1c2e8d1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji
 
@@ -84,7 +84,7 @@ Wprowadź odpowiednie dla elementu *opis*, więc można łatwo zidentyfikować t
 Można użyć dowolnego ciągu dla Twojego **identyfikator pakietu** (o ile jest unikatowa w ramach konta), jednak zaleca firmy Apple, wykonaj format wstecznego DNS zamiast możesz użyć dowolnego dowolnego ciągu. Przykładowej aplikacji, który towarzyszy w tym artykule używa com.xamarin.storekit.testing identyfikatora pakietu, jednak byłoby jednakowo można użyć identyfikatora, takich jak my_store_example (nawet jeśli firmy Apple nie zaleca się jej).
 
 > [!IMPORTANT]
-> **Uwaga**: Apple umożliwia również — symbol wieloznaczny gwiazdka do dodania na koniec **identyfikator pakietu** tak, aby pojedynczy identyfikator aplikacji może służyć do wielu aplikacji, jednak _identyfikatorów aplikacji — symbol wieloznaczny nie może służyć do W AppPurchase_. Przykład, że identyfikator pakietu — symbol wieloznaczny może być com.xamarin.*
+> Apple umożliwia również — symbol wieloznaczny gwiazdka do dodania na koniec **identyfikator pakietu** tak, aby pojedynczy identyfikator aplikacji może służyć do wielu aplikacji, jednak _identyfikatorów aplikacji — symbol wieloznaczny nie może służyć do AppPurchase_. Przykład, że identyfikator pakietu — symbol wieloznaczny może być com.xamarin.*
 
 #### <a name="enabling-app-services"></a>Włączanie usług aplikacji
 

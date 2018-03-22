@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>Nowe style interfejsu użytkownika
 
@@ -101,7 +101,7 @@ Ponadto cechy kolekcje mają następujące funkcje w systemu tvOS 10:
 - Aplikacja systemu tvOS może obsługiwać zmiany kolekcji cechy przez zastąpienie `TraitCollectionDidChange` metody `UIView` lub `UIViewController` klasy.
 
 > [!IMPORTANT]
-> **Uwaga:** Xamarin.tvOS Podgląd wczesne systemu tvOS 10 nie obsługują w pełni `UIUserInterfaceStyle` dla `UITraitCollection` jeszcze. Pełna obsługa zostanie dodana w przyszłej wersji.
+> Podgląd wczesne Xamarin.tvOS systemu tvOS 10 nie obsługują w pełni `UIUserInterfaceStyle` dla `UITraitCollection` jeszcze. Pełna obsługa zostanie dodana w przyszłej wersji.
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** Niestety systemu tvOS 10 w wersji zapoznawczej Xamarin.tvOS nie obsługują w pełni `UIUserInterfaceStyle` dla `UITraitCollection`, więc dostosowania tego typu nie jest jeszcze dostępna. Pełna obsługa zostanie dodana w przyszłej wersji.
+> Niestety, nie w pełni obsługują systemu tvOS 10 w wersji zapoznawczej Xamarin.tvOS `UIUserInterfaceStyle` dla `UITraitCollection`, więc dostosowania tego typu nie jest jeszcze dostępna. Pełna obsługa zostanie dodana w przyszłej wersji.
 
 <a name="Responding-to-Theme-Changes-Directly" />
 

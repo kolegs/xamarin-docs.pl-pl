@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b35905d14086dcfc0cb749c8e4cc7de1608dd5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-sizing-row-height"></a>Wysokość wiersza Auto-Sizing
 
@@ -46,7 +46,7 @@ Następnie należy zaznaczyć komórki prototypu i nadaj mu unikatowy **identyfi
 W przypadku naszym przykładzie `GrowCell`. Użyjemy tej wartości później podczas wypełnimy tabeli.
 
 > [!IMPORTANT]
-> **Uwaga:** Jeśli tabela zawiera więcej niż jeden typ komórki (**prototypu**), należy się upewnić, każdy typ ma własny unikatowy `Identifier` automatycznej pracy zmiany rozmiaru wiersza.
+> Jeśli tabela zawiera więcej niż jeden typ komórki (**prototypu**), należy się upewnić, każdy typ ma własny unikatowy `Identifier` automatycznej pracy zmiany rozmiaru wiersza.
 
 Dla każdego elementu naszych prototypu komórki przypisać **nazwa** je ujawnić do kodu C#. Na przykład:
 

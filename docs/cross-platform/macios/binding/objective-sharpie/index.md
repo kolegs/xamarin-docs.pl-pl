@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 08796d38301ba9c6ae15c3ddfe700b1cd2166ace
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="objective-sharpie"></a>Sharpie celu
 
@@ -34,17 +34,13 @@ Działa on za analizowanie plików nagłówka natywnej biblioteki do mapowania p
 Sharpie celu używa Clang analizy pliki nagłówkowe, więc jest powiązanie w pełnych i dokładne. Może to znacznie skrócić czas i nakładu pracy potrzebnego do tworzenia powiązań jakości.
 
 > [!IMPORTANT]
-> **Ostrzeżenie:** celu Sharpie to narzędzie dla deweloperów programu Xamarin doświadczenie z zaawansowanej wiedzy na temat języka Objective-C (i przez rozszerzenie, C). Przed podjęciem próby powiązania biblioteka języka Objective-C powinien mieć stałe wiedzę na temat sposobu tworzenia natywnej biblioteki w wierszu polecenia (i dobrą znajomością działania natywnej biblioteki).
-
-
+> Celu Sharpie to narzędzie dla deweloperów programu Xamarin doświadczenie z zaawansowanej wiedzy na temat języka Objective-C (i przez rozszerzenie, C). Przed podjęciem próby powiązania biblioteka języka Objective-C powinien mieć stałe wiedzę na temat sposobu tworzenia natywnej biblioteki w wierszu polecenia (i dobrą znajomością działania natywnej biblioteki).
 
 ## <a name="history"></a>Historia
 
 Firma Microsoft rozwijającymi i za pomocą Sharpie cel wewnętrznie na platformie Xamarin dla ostatnich trzech lat. Jako dowód do potęgi Sharpie cel interfejsy API wprowadzone w Xamarin.iOS i Xamarin.Mac począwszy od zestawu iOS 8, Mac OS X 10.10, i watchOS 2.0 zostały zainicjowano z Sharpie cel. Xamarin zależy od silnie Sharpie cel wewnętrznie do tworzenia własnych produktów.
 
 Jednak Sharpie celem jest bardzo zaawansowane narzędzia, która wymaga zaawansowanej wiedzy na temat języka Objective-C C, jak używać clang kompilator w wierszu polecenia i Podsumowując zazwyczaj jak natywnych bibliotek. Z powodu tego paska wysoka, możemy mieli świadomość o graficzny interfejs użytkownika kreator służy do ustawiania niewłaściwy oczekiwań i w efekcie Sharpie celem jest obecnie dostępna tylko jako narzędzie wiersza polecenia.
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

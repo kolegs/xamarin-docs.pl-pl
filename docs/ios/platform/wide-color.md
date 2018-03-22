@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 34f2e249c5474997b2e2e179285f455c425739cf
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="wide-color"></a>Kolor międzynarodowe
 
@@ -191,7 +191,7 @@ Apple ma następujące sugestie dotyczące formaty plików i profile kolorów u�
 - Eksportuj zasoby obrazu jako 16-bitowe pliki PNG z osadzonym profilem ICC "Wyświetlania P3".
 
 > [!IMPORTANT]
-> **Uwaga:** Using **zapisać dla sieci Web** lub **Eksportuj zasoby** funkcje znalezione w najbardziej popularnych oprogramowanie do edycji obrazów _nie_ nadają się do szerokości obrazy od te funkcje nie zostały zaktualizowane do obsługi jeszcze specyfikacje formatu wymaganego pliku.
+> Przy użyciu **zapisać dla sieci Web** lub **Eksportuj zasoby** funkcje znalezione w najbardziej popularnych oprogramowanie do edycji obrazów _nie_ nadają się do szerokości obrazy ponieważ te funkcje nie zostały jeszcze Zaktualizowano o obsługę jeszcze specyfikacje formatu wymaganego pliku.
 
 ### <a name="supporting-wide-color-with-asset-catalogs"></a>Obsługa szeroki koloru z katalogami zasobów
 

@@ -6,11 +6,11 @@ ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 2664fbf7dc28591ac9f4e0271382b427b5293900
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a311bace159a450dc27e15baa8ef1c260a90c36e
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Reprezentacje w skoroszytach Xamarin
 
@@ -64,7 +64,7 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> Uwaga: Interfejsów API, który tworzy `ISerializableObject` obiektów bezpośrednio nie muszą być obsługiwane przez `RepresentationProvider`. Jeśli obiekt ma być wyświetlany jest **nie** `ISerializableObject`, można obsłużyć zawijania go w sieci `RepresentationProvider`.
+> Interfejsy API, który tworzy `ISerializableObject` obiektów bezpośrednio nie muszą być obsługiwane przez `RepresentationProvider`. Jeśli obiekt ma być wyświetlany jest **nie** `ISerializableObject`, można obsłużyć zawijania go w sieci `RepresentationProvider`.
 
 ### <a name="rendering-a-representation"></a>Renderowanie reprezentację
 
@@ -87,7 +87,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 W tym miejscu `PersonRenderer` implementuje `Renderer` interfejsu. Zobacz [typów wyeksportowanych] [ typings] więcej szczegółów.
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
-[xir-color]: /api/type/Xamarin.Interactive.Representations.Color/
-[repman]: /api/type/Xamarin.Interactive.Representations.IRepresentationManager/
-[repp]: /api/type/Xamarin.Interactive.Representations.RepresentationProvider/
-[serobj]: /api/type/Xamarin.Interactive.Serialization.ISerializableObject/
+[xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
+[repman]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.IRepresentationManager/
+[repp]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.RepresentationProvider/
+[serobj]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Serialization.ISerializableObject/

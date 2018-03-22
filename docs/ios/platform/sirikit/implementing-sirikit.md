@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implementing-sirikit"></a>Implementowanie SiriKit
 
@@ -211,7 +211,7 @@ Z powodu ograniczeniami zabezpieczeń, który Apple umieścił wokół framework
 
 Wykonaj następujące czynności na komputerze Mac:
 
-1. W przeglądarce sieci web, przejdź do [http://developer.apple.com](http://developer.apple.com) i zaloguj się do swojego konta.
+1. W przeglądarce sieci web, przejdź do [ http://developer.apple.com ](http://developer.apple.com) i zaloguj się do swojego konta.
 2. Polecenie **certyfikaty**, **identyfikatory** i **profile**.
 3. Wybierz **profile inicjowania obsługi** i wybierz **identyfikatorów aplikacji**, następnie kliknij przycisk  **+**  przycisku.
 4. Wprowadź **nazwa** nowego profilu.
@@ -246,7 +246,7 @@ Wykonaj następujące czynności na komputerze Mac:
 22. Kliknij przycisk **OK** przycisk, aby zapisać zmiany.
 
 > [!IMPORTANT]
-> **Uwaga:** SiriKit testowanie działa tylko na rzeczywistą iOS 10 urządzenia sprzętowego, a nie w systemie iOS 10 symulatora. Jeśli masz problemy z zainstalowaniem SiriKit włączona aplikacji platformy Xamarin.iOS na sprzęcie prawdziwe, upewnij się, czy wymagane uprawnienia, identyfikator aplikacji, identyfikator podpisywania i profilu inicjowania obsługi administracyjnej zostały poprawnie skonfigurowane w firmy Apple Developer Portal i Visual Studio dla komputerów Mac.
+> Testowanie SiriKit działa tylko na rzeczywistą iOS 10 urządzenia sprzętowego, a nie w systemie iOS 10 symulatora. Jeśli masz problemy z zainstalowaniem SiriKit włączona aplikacji platformy Xamarin.iOS na sprzęcie prawdziwe, upewnij się, czy wymagane uprawnienia, identyfikator aplikacji, identyfikator podpisywania i profilu inicjowania obsługi administracyjnej zostały poprawnie skonfigurowane w firmy Apple Developer Portal i Visual Studio dla komputerów Mac.
 
 ### <a name="requesting-siri-authorization"></a>Żąda autoryzacji Siri
 
@@ -432,7 +432,7 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** Siri traktuje słownika niestandardowego jako wskazówek i będzie zawierać tyle terminologii, jak to możliwe. Jednak miejsce do słownika niestandardowego jest ograniczona, dzięki czemu należy zarejestrować _tylko_ terminologii, która może być mylące, w związku z tym zachowaniu całkowita liczba zarejestrowanych warunków do minimum.
+> Używanie programu Siri traktuje słownika niestandardowego jako wskazówek i będzie zawierać tyle terminologii, jak to możliwe. Jednak miejsce do słownika niestandardowego jest ograniczona, dzięki czemu należy zarejestrować _tylko_ terminologii, która może być mylące, w związku z tym zachowaniu całkowita liczba zarejestrowanych warunków do minimum.
 
 Aby uzyskać więcej informacji, zobacz nasze [odwołanie do użytkownika określonego słownika](~/ios/platform/sirikit/understanding-sirikit.md) i firmy Apple [Określanie niestandardowych słownictwa odwołanie](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -587,7 +587,7 @@ Aby dodać `AppIntentVocabulary.plist` plik do projektu aplikacji, wykonaj nast�
 -----
 
 > [!IMPORTANT]
-> **Uwaga:** `AppIntentVocabulary.plist` zostanie zarejestrowany z Siri na testowej urządzeń podczas rozwoju i może zająć trochę czasu na używanie programu Siri uwzględnienie słownika niestandardowego. W związku z tym tester będzie konieczne Poczekaj kilka minut przed podjęciem próby test słownictwa określonych aplikacji, gdy została zaktualizowana.
+> `AppIntentVocabulary.plist` Zostanie zarejestrowany z Siri na testowej urządzeń podczas rozwoju i może zająć trochę czasu na używanie programu Siri uwzględnienie słownika niestandardowego. W związku z tym tester będzie konieczne Poczekaj kilka minut przed podjęciem próby test słownictwa określonych aplikacji, gdy została zaktualizowana.
 
 Aby uzyskać więcej informacji, zobacz nasze [określonego słownika materiały referencyjne dotyczące aplikacji](~/ios/platform/sirikit/understanding-sirikit.md) i firmy Apple [Określanie niestandardowych słownictwa odwołanie](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -1013,7 +1013,7 @@ Używanie programu Siri również zostaną spełnione programu obsługi zakończ
 Układ interfejsu użytkownika intencje rozszerzenie interfejsu użytkownika w systemie iOS projektanta. Kliknij dwukrotnie rozszerzenia `MainInterface.storyboard` w pliku **Eksploratora rozwiązań** go otworzyć do edycji. Przeciągnij we wszystkich wymaganych elementów interfejsu użytkownika do tworzenia interfejsu użytkownika i zapisać zmiany.
 
 > [!IMPORTANT]
-> **Uwaga:** zablokowaniu można dodać elementy interaktywne, takie jak `UIButtons` lub `UITextFields` rozszerzenie interfejsu użytkownika zamiar `UIViewController`, te są ściśle zabroniony jako zamiar interfejsu użytkownika w nieinterakcyjnym, a użytkownik nie będzie obsługiwać interakcję z nimi.
+> W trakcie można dodać elementy interaktywne, takie jak `UIButtons` lub `UITextFields` celem rozszerzenia interfejsu użytkownika `UIViewController`, te są ściśle zabroniony jako zamiar interfejsu użytkownika w nieinterakcyjnym, a użytkownik nie będzie obsługiwać interakcję z nimi.
 
 ### <a name="wire-up-the-user-interface"></a>Podczas transmisji w górę interfejsu użytkownika
 

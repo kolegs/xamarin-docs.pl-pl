@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="document-picker"></a>Selektor dokumentu
 
@@ -221,7 +221,7 @@ Przy użyciu Stitching na powyższym diagramie:
 Przy użyciu Stitching aplikacji nie ma już otworzyć źródła danych, do monitorowania lokalnych i chmurze zmiany pliku. Teraz aplikacji może polegać na `NSMetadataQuery` bezpośrednio.
 
 > [!IMPORTANT]
-> **Uwaga**: łączenia działa tylko, jeśli aplikacja używa pliku koordynacji przedstawionych w powyższej sekcji. Jeśli nie jest używany plik koordynacji, interfejsy API domyślnie zachowanie istniejącej iOS 8 wstępnie.
+> Łączenia działa tylko, jeśli aplikacja używa pliku koordynacji przedstawionych w powyższej sekcji. Jeśli nie jest używany plik koordynacji, interfejsy API domyślnie zachowanie istniejącej iOS 8 wstępnie.
 
 
 
@@ -465,7 +465,7 @@ Wykonaj następujące czynności:
 6.  Kliknij prawym przyciskiem myszy `Entitlements.plist` w **Eksploratora rozwiązań** aby otworzyć go w edytorze.
 
     > [!IMPORTANT]
-> **Uwaga**: W programie Visual Studio może być konieczne Otwórz Edytor uprawnień, klikając prawym przyciskiem myszy, wybierając **Otwórz za pomocą...** i wybierając Edytor listy właściwości
+    > W programie Visual Studio może być konieczne Otwórz Edytor uprawnień, klikając prawym przyciskiem myszy, wybierając **Otwórz za pomocą...** i wybierając Edytor listy właściwości
 
 7.  Sprawdź **włączyć iCloud** , **dokumenty iCloud** , **magazynu kluczy i wartości** i **CloudKit** .
 8.  Upewnij się, **kontenera** istnieje dla aplikacji (jak utworzyć powyżej). Przykład: `iCloud.com.your-company.AppName`
@@ -793,7 +793,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> **Uwaga**: powyżej kodu zawiera kod z powyższej sekcji Discovering i wyświetlanie dokumentów. On jest przedstawiony w tym miejscu w całości, podobnie jak w rzeczywistej aplikacji. Dla uproszczenia, w tym przykładzie współpracuje z pojedynczą, ustalony pliku (`test.txt`) tylko.
+> Powyższy kod obejmuje kod z powyższej sekcji Discovering i wyświetlanie dokumentów. On jest przedstawiony w tym miejscu w całości, podobnie jak w rzeczywistej aplikacji. Dla uproszczenia, w tym przykładzie współpracuje z pojedynczą, ustalony pliku (`test.txt`) tylko.
 
 Powyższy kod przedstawia kilka skróty iCloud dysku, aby łatwiej współpracować w pozostałej części aplikacji.
 
@@ -902,7 +902,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> **Uwaga**: deweloper musi wywołać `StartAccessingSecurityScopedResource` metody `NSUrl` przed zewnętrznym dokumencie jest dostępny. `StopAccessingSecurityScopedResource` Można wywołać metody, aby zwolnić blokady zabezpieczeń jak dokument został załadowany.
+> Deweloper musi wywołać `StartAccessingSecurityScopedResource` metody `NSUrl` przed zewnętrznym dokumencie jest dostępny. `StopAccessingSecurityScopedResource` Można wywołać metody, aby zwolnić blokady zabezpieczeń jak dokument został załadowany.
 
 ### <a name="sample-output"></a>Przykładowe dane wyjściowe
 
@@ -1134,7 +1134,7 @@ Na Mac OS X Yosemite, Apple nie wymaga zapewnienia zgodności wszystkie dokument
 Po przeprowadzeniu migracji konta użytkownika do usługi iCloud dysku tylko na urządzeniach przy użyciu usługi iCloud dysku będzie można propagować zmian do dokumentów na tych urządzeniach.
 
 > [!IMPORTANT]
-> **Uwaga**: deweloperzy należy zwrócić uwagę, że nowe funkcje omówione w tym artykule są dostępne tylko jeśli przeprowadzono migrację konta użytkownika do usługi iCloud dysku. 
+> Deweloperzy należy zwrócić uwagę, że nowe funkcje omówione w tym artykule są dostępne tylko jeśli przeprowadzono migrację konta użytkownika do usługi iCloud dysku. 
 
 ## <a name="summary"></a>Podsumowanie
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53494e61d702b83a28534c644f33fb5327b5958
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 128ec8d19dc25dc2231521756ee0f00690e0d134
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="core-graphics"></a>Podstawowe grafiki
 
@@ -228,7 +228,7 @@ Następnie jest wyświetlany obraz wynikowy pionowo:
  ![](core-graphics-images/04-upright-monkey.png "Obraz wyświetlany słupka próbki")
 
 > [!IMPORTANT]
->  **Uwaga:** zmiany kontekstu grafiki zastosowane do wszystkich kolejnych operacji rysowania. W związku z tym gdy jest on przekształcany CTM, ma wpływ na wszystkie dodatkowe rysunku. Na przykład jeśli został narysowany trójkąt po przekształceniu CTM, wydaje się odwrócony.
+> Zmiany w kontekście grafiki zastosowane do wszystkich kolejnych operacji rysowania. W związku z tym gdy jest on przekształcany CTM, ma wpływ na wszystkie dodatkowe rysunku. Na przykład jeśli został narysowany trójkąt po przekształceniu CTM, wydaje się odwrócony.
 
 ### <a name="adding-text-to-the-image"></a>Dodawanie tekstu do obrazu
 

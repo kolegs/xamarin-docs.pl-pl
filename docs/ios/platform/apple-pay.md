@@ -7,11 +7,11 @@ ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ac2a19e9020113df273897a8ec2c86ee1763ec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af899bb1c5708e3fc0be88db6224d9127f5a5c6d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay"></a>Płatności firmy Apple
 
@@ -118,7 +118,7 @@ Aby włączyć nowego środowiska testowego, wykonaj następujące czynności:
 4. Użyj jednej z kart płatniczych testu z [firmy Apple należy zwrócić przewodnik](https://developer.apple.com/apple-pay/) dokonanie płatności.
 
 > [!IMPORTANT]
->  **Uwaga:** przełączając iCloud kont, urządzenie zostanie automatycznie przełączona do nowego środowiska testowego. Jednak nadal Apple **wymaga** aplikacji ma zostać przetestowana, do rzeczywistych karty w środowisku produkcyjnym przed ich przesłaniem do iTunes App Store.
+> Przełączając iCloud kont, urządzenie zostanie automatycznie przełączona do nowego środowiska testowego. Jednak nadal Apple **wymaga** aplikacji ma zostać przetestowana, do rzeczywistych karty w środowisku produkcyjnym przed ich przesłaniem do iTunes App Store.
 
 ## <a name="summary"></a>Podsumowanie
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Witaj, iOS Wieloekranowy nowości
 
@@ -40,7 +40,7 @@ Model-View-Controller jest *wzorca projektowego* — wielokrotnego użytku archi
 Wzorzec MVC jest przydatne, ponieważ zawiera separacji logicznej między poszczególnymi częściami aplikacji graficznego interfejsu użytkownika i ułatwia nam do ponownego użycia w kodzie i widokach. Umożliwia przejście w i spójrz na każdej z trzech ról bardziej szczegółowo.
 
 > [!NOTE]
-> **Uwaga**: wzorzec MVC jest luźno odpowiednikiem struktury stron ASP.NET lub aplikacji WPF. W tym przykładzie widok jest składnik, który są odpowiedzialne za opisu interfejsu użytkownika i odpowiada strony ASPX (HTML) w programie ASP.NET lub XAML w aplikacji WPF. Kontroler jest składnik, który jest odpowiedzialny za zarządzanie widoku, który odpowiada kodem w programie ASP.NET lub WPF.
+> Wzorzec MVC jest luźno odpowiednikiem struktury stron ASP.NET lub aplikacji WPF. W tym przykładzie widok jest składnik, który są odpowiedzialne za opisu interfejsu użytkownika i odpowiada strony ASPX (HTML) w programie ASP.NET lub XAML w aplikacji WPF. Kontroler jest składnik, który jest odpowiedzialny za zarządzanie widoku, który odpowiada kodem w programie ASP.NET lub WPF.
 
 
 ### <a name="model"></a>Model
@@ -52,7 +52,7 @@ MVC jest całkowicie niezależny od *trwałości danych* i *dostępu* modelu. In
 W niektórych przypadkach może być pusty Model część platformy MVC. Na przykład wybieramy opcję Dodaj niektórych statycznych stron do naszej aplikacji wyjaśniający, jak działa translator telefonu, dlaczego budujemy oraz sposobu skontaktuj się z nami usterki raportu. Ekrany tych aplikacji będą nadal utworzone przy użyciu widoków i kontrolerów, ale nie będzie zawierało wszystkie dane modelu.
 
 > [!NOTE]
-> **Uwaga**: W niektórych materiały części modelu wzorzec MVC mogą odwoływać się do całej aplikacji wewnętrznej bazy danych, nie tylko dane wyświetlane w interfejsie użytkownika. W tym przewodniku używamy nowoczesnych interpretacja modelu, ale rozróżnienie nie jest szczególnie istotna.
+> W niektórych materiały części modelu wzorzec MVC mogą odwoływać się do całej aplikacji wewnętrznej bazy danych, nie tylko dane wyświetlane w interfejsie użytkownika. W tym przewodniku używamy nowoczesnych interpretacja modelu, ale rozróżnienie nie jest szczególnie istotna.
 
 
 ### <a name="view"></a>Widok

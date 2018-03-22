@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 7ae41e99d20f0e8f3cad6b933e415002903a3294
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d3a370c3a8d930c817d38422b249b496532fa33f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="text-kit"></a>Zestaw tekstu
 
@@ -143,7 +143,7 @@ public class ExclusionPathView : UITextView
 Ten kod dodaje obsługę Rysowanie w widoku tekstu przy użyciu grafiki Core. Ponieważ `UITextView` klasy jest teraz wbudowany do renderowania tekstu i układu za pomocą zestawu tekstu, można użyć wszystkich funkcji zestawu tekstu, takie jak ustawianie ścieżki wykluczeń.
 
 > [!IMPORTANT]
->   Uwaga: Ten przykład podklasy `UITextView` można dodać touch rysowania pomocy technicznej. Tworzenie podklas `UITextView` nie jest niezbędne, aby uzyskać funkcji zestawu tekstu.
+> Ten przykład podklasy `UITextView` można dodać touch rysowania pomocy technicznej. Tworzenie podklas `UITextView` nie jest niezbędne, aby uzyskać funkcji zestawu tekstu.
 
 
 

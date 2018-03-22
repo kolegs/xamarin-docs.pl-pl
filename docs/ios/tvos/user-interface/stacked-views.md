@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: efc0da0b0f0a800069efb00a402361a8b0cd7f1d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-stacked-view"></a>Praca z widokiem skumulowany
 
@@ -76,7 +76,7 @@ Jeśli `BaselineRelativeArrangement` właściwość jest `true`, widoków podrz�
 * Poziomy widoku stosu użyje jego najwyższego widok podrzędny dla podstawy imię i nazwisko. Jeśli najwyższego widok również jest widokiem stosu, jego Widok najwyższego podrzędny zostanie użyty jako linii bazowej.
 
 > [!IMPORTANT]
-> **Uwaga:** wyrównanie linii bazowej nie działa na rozmiary rozciągnięty lub skompresowanych widok podrzędny, jako linii bazowej będzie obliczane na niewłaściwym miejscu. Dla wyrównanie linii bazowej, upewnij się, że widok podrzędny **wysokość** odpowiada wewnętrzne widok zawartości **wysokość**.
+> Wyrównanie linii bazowej nie działa na rozciągnięty lub skompresowanych widok podrzędny rozmiarów linii bazowej zostanie obliczony na niewłaściwym miejscu. Dla wyrównanie linii bazowej, upewnij się, że widok podrzędny **wysokość** odpowiada wewnętrzne widok zawartości **wysokość**.
 
 
 
@@ -149,7 +149,7 @@ Najprostszym sposobem Praca z widokami stosu w aplikacji Xamarin.tvOS jest dodan
 -----
 
 > [!IMPORTANT]
-> **Uwaga:** Uwaga: w trakcie można przypisać akcje, takie jak `TouchUpInside` do elementu interfejsu użytkownika (takich jak `UIButton`) w systemie iOS projektanta podczas tworzenia program obsługi zdarzeń go zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma touch dotykowego ekranu lub pomocy technicznej zdarzenia. Należy zawsze używać domyślnej `Action Type` podczas tworzenia akcji dla systemu tvOS elementy interfejsu użytkownika.
+> Mimo że jest można przypisać akcje, takie jak `TouchUpInside` do elementu interfejsu użytkownika (takich jak `UIButton`) w systemie iOS projektanta podczas tworzenia program obsługi zdarzeń go zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma dotykowego ekranu lub obsługuje zdarzenia touch. Należy zawsze używać domyślnej `Action Type` podczas tworzenia akcji dla systemu tvOS elementy interfejsu użytkownika.
 
 Aby uzyskać więcej informacji na temat pracy z Scenorys, zobacz nasze [Hello, przewodnik Szybki Start systemu tvOS](~/ios/tvos/get-started/hello-tvos.md).
 

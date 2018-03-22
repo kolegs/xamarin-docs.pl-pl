@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 46a0920efc8d80db7f3783654630f65086907f50
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="advanced-user-notifications"></a>Powiadomienia użytkowników zaawansowanych
 
@@ -145,7 +145,7 @@ Oprócz zdalnego powiadomień przedstawionych powyżej, załączniki nośnika r�
 Powiadomienie w systemie iOS 10 obsługuje załączników nośnika obrazów (statyczne i pliki GIF), audio i wideo i system zostanie automatycznie wyświetlona poprawne niestandardowego interfejsu użytkownika dla każdego z tych typów załączników przedstawionej powiadomienie do użytkownika.
 
 > [!NOTE]
-> **Uwaga:** ostrożność optymalizacji rozmiaru nośnika i czas pobierania nośnika z serwera zdalnego (lub utworzyć nośnik lokalnego powiadomienia o) jako system nakłada strict limity zarówno podczas uruchamiania usługi aplikacji Rozszerzenie. Rozważmy na przykład wysyłanie skalowany w dół wersję obrazu lub niewielki rozmiar klipu wideo przedstawiane w powiadomienia.
+> Należy zachować ostrożność optymalizacji rozmiaru nośnika i czas wymagany do pobrania nośnika z serwera zdalnego (lub utworzyć nośnik lokalnego powiadomienia o) jako system nakłada strict limity zarówno podczas uruchamiania rozszerzenia usługi aplikacji. Rozważmy na przykład wysyłanie skalowany w dół wersję obrazu lub niewielki rozmiar klipu wideo przedstawiane w powiadomienia.
 
 ## <a name="creating-custom-user-interfaces"></a>Tworzenie niestandardowych interfejsów użytkownika
 
@@ -299,7 +299,7 @@ W sytuacji, gdy niestandardowego UI powiadomień będą wyświetlane tę samą z
 Projektowanie rozszerzenia zawartości powiadomienia niestandardowego interfejsu użytkownika, kliknij dwukrotnie `MainInterface.storyboard` plik, aby otworzyć do edycji w systemie iOS projektanta, przeciągnij elementy, które należy utworzyć żądanego interfejsu (takich jak `UILabels` i `UIImageViews`).
 
 > [!NOTE]
-> **Uwaga:** interfejsu użytkownika powiadomienie jest _nie_ obsługuje interaktywnych kontrolek, takie jak przyciski lub pól tekstowych w rozszerzeniu zawartości powiadomienia. Gdy będzie możliwe ich dodanie do scenorysu, użytkownik nie będzie obsługiwać interakcję z nimi. Aby dodać interakcji z użytkownikiem do niestandardowego interfejsu użytkownika powiadomienia, należy użyć akcji niestandardowych.
+> Interfejs użytkownika powiadomienie jest _nie_ obsługuje interaktywnych kontrolek, takie jak przyciski lub pól tekstowych w rozszerzeniu zawartości powiadomienia. Gdy będzie możliwe ich dodanie do scenorysu, użytkownik nie będzie obsługiwać interakcję z nimi. Aby dodać interakcji z użytkownikiem do niestandardowego interfejsu użytkownika powiadomienia, należy użyć akcji niestandardowych.
 
 Po Interfejsie użytkownika została zaprojektowana i niezbędnych opcji ujawniony dla kodu C#, otwórz `NotificationViewController.cs` do edycji i zmodyfikować `DidReceiveNotification` metody do wypełnienia interfejsu użytkownika, gdy użytkownik rozwija powiadomienia. Na przykład:
 

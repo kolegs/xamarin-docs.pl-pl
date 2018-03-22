@@ -7,11 +7,11 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 773df1eec7c8694143ad6c31044ce281c1265282
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5053d8d0cf9c1c3e6d3282ee8d6e42448e733c2c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Zmiany struktury dodatkowe systemu iOS 9
 
@@ -53,7 +53,7 @@ CloudKit framework upraszcza tworzenie aplikacji tego dostępu do usługi iCloud
 Nowy _usług sieci Web CloudKit_ framework zapewnia biblioteki JavaScript (CloudKit JS), która może być zawarte w witrynie sieci Web w celu zapewnienia dostępu do tych samych danych na podstawie CloudKit i zawartość jako aplikację platformy Xamarin.iOS.
 
 > [!IMPORTANT]
-> **Uwaga:** przed dostęp, stanowią lub zaktualizować zawartość z CloudKit bazy danych przy użyciu CloudKit JS, należy wcześniej zdefiniowane schemat tej bazy danych.
+> Przed dostęp, stanowią lub zaktualizować zawartość z CloudKit bazy danych przy użyciu CloudKit JS, należy wcześniej zdefiniowane schemat tej bazy danych.
 
 
 

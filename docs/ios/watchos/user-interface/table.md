@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>Formant tabeli
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **Uwaga**: wiersze tabeli nie są zwirtualizowane, jak są one w systemie iOS. Spróbuj ograniczyć liczbę wierszy (Apple zaleca mniej niż 20).
+> Wiersze tabeli nie są zwirtualizowanych, jak są one w systemie iOS. Spróbuj ograniczyć liczbę wierszy (Apple zaleca mniej niż 20).
+
 Po utworzeniu wiersze, musisz wypełnić każdej komórki (takie jak `GetCell` sposób jak w systemie iOS). Następujący fragment kodu z [WatchTables przykład](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) aktualizuje etykiety w każdym wierszu
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** Using `SetNumberOfRows` , a następnie w pętli przy użyciu `GetRowController` powoduje, że do wysłania do czujki całą tabelę. Na kolejnych widoków tabeli, jeśli chcesz dodać lub usunąć określonych wierszy użyj `InsertRowsAt` i `RemoveRowsAt` w celu poprawy wydajności.
+> Przy użyciu `SetNumberOfRows` , a następnie w pętli przy użyciu `GetRowController` powoduje, że do wysłania do czujki całą tabelę. Na kolejnych widoków tabeli, jeśli chcesz dodać lub usunąć określonych wierszy użyj `InsertRowsAt` i `RemoveRowsAt` w celu poprawy wydajności.
 
 
 ## <a name="respond-to-taps"></a>Odpowiadanie na podsłuchu
@@ -148,7 +149,7 @@ watchOS 3 wprowadzono nową funkcję dla tabel: możliwość przewijać strony s
 ![](table-images/table-scroll-sml.png "Przykład szczegółów stronicowania pionowe") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **Ostrzeżenie:** ta funkcja jest obecnie dostępna tylko, edytując scenorysu w Konstruktorze interfejsu Xcode.
+> Ta funkcja jest obecnie tylko dostępna, edytując scenorysu w Konstruktorze interfejsu Xcode.
 
 Aby włączyć tę funkcję, wybierz `WKInterfaceTable` na powierzchni projektowej oraz znaczników **pionowy stronicowania szczegółów** opcji:
 

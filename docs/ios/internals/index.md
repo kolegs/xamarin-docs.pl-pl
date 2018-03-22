@@ -7,11 +7,11 @@ ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d6e9dc47f2610fbc1e84cc74880ced13d4c99dce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 00e5d84cd39312cdf6ac0107b4c7ffedcd82f3c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS pojęcia zaawansowane i elementy wewnętrzne
 
@@ -39,7 +39,7 @@ Wyświetla listę dostępnych zestawów i klas z biblioteki klasy podstawowej pl
 Obejmuje ona również, jak Visual Studio for Mac i kompilatora interfejsu w środowisku Xcode umożliwia przy użyciu konstruktora interfejsu do projektu interfejsu użytkownika.
 
 > [!IMPORTANT]
-> **Uwaga**: w tym dokumencie opisano Visual Studio dla komputerów Mac integracji z usługą w programie Xcode interfejsu tylko konstruktora. Aby uzyskać więcej informacji w systemie iOS projektanta, zapoznaj się z tematem [iOS projektanta](~/ios/user-interface/designer/index.md) dokumentu.
+> W tym dokumencie opisano Visual Studio dla komputerów Mac integracji z usługą w programie Xcode interfejsu tylko konstruktora. Aby uzyskać więcej informacji w systemie iOS projektanta, zapoznaj się z tematem [iOS projektanta](~/ios/user-interface/designer/index.md) dokumentu.
 
 
 

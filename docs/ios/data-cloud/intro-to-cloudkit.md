@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -43,7 +43,7 @@ CloudKit obsługuje pojęcie baz danych prywatnych i publicznych. Publiczny baz 
 CloudKit obsługuje zarówno strukturalnych i zbiorczo dane. To może obsługiwać bezproblemowo transferu dużych plików. CloudKit odpowiada on za wydajnie transferu dużych plików do i z iCloud serwerów w tle, zwalnianie deweloperom skoncentrować się na inne zadania.
 
 > [!NOTE]
-> **Uwaga:** ważne jest, aby należy pamiętać, że CloudKit _technologii transportu_. Nie zapewnia żadnych trwałości; tylko umożliwia aplikacji wysyłanie i odbieranie informacji z serwerów wydajnie.
+> Należy pamiętać, że CloudKit _technologii transportu_. Nie zapewnia żadnych trwałości; tylko umożliwia aplikacji wysyłanie i odbieranie informacji z serwerów wydajnie.
 
 Opracowywania tego tekstu Apple początkowo dostarcza CloudKit bezpłatnie z ograniczeniem wysokiej zarówno przepustowość i pojemność pamięci masowej. Dla większych projektów lub aplikacje z podstawowej dużej liczby użytkowników Apple ma ze wskazówką dostarczenia ekonomiczny cenową skali.
 
@@ -239,7 +239,7 @@ Odwołania są widoczne w ramach CloudKit za pośrednictwem `CKReference` klasy.
 Odwołania zawierają mechanizm za kaskadowych usuwa. Jeśli rekord nadrzędny zostanie usunięty z bazy danych, wszystkie podrzędne rekordy (jak określono w relacji) automatycznie zostaną usunięte z bazy danych również.
 
 > [!NOTE]
-> **Uwaga**: wskaźniki delegujące są możliwość przy użyciu CloudKit. Na przykład w czasie aplikacji ma pobranych listę rekordów wskaźników, wybrać rekord i następnie monitu dla rekordu, rekord może istnieje już w bazie danych. Aplikacji musi być kodowane można bezpiecznie obsłużyć tej sytuacji.
+> Wskaźniki delegujące są możliwość przy użyciu CloudKit. Na przykład w czasie aplikacji ma pobranych listę rekordów wskaźników, wybrać rekord i następnie monitu dla rekordu, rekord może istnieje już w bazie danych. Aplikacji musi być kodowane można bezpiecznie obsłużyć tej sytuacji.
 
 Podczas gdy nie jest to wymagane, ponownie odwołania są preferowane, podczas pracy z CloudKit Framework. Apple ma dopracowaniu systemu, aby ustawić to najefektywniej typu odwołania.
 
@@ -395,7 +395,7 @@ Trzy czynności należy pamiętać o kodzie powyżej:
 
 
 > [!NOTE]
-> **Uwaga**: z powodu "stratnej" rodzaj sieci komórkowej łączności, gdzie połączeń są stale usuwane lub przerwane jedno z pierwszym zagadnień dewelopera należy wybrać podczas pracy z CloudKit jest obsługa błędów.
+> Z powodu "stratnej" rodzaj sieci komórkowej łączności, gdzie połączeń są stale usuwane lub przerwany, jednym z pierwszego zagadnień, które deweloper musi wykonać podczas pracy z CloudKit jest obsługa błędów.
 
 ### <a name="fetching-a-record"></a>Pobieranie rekordu
 
@@ -560,7 +560,7 @@ Na koniec powiadomienie wypychane mają wysyłane do każdego urządzenia dołą
 Subskrypcje są widoczne w ramach CloudKit za pośrednictwem `CKSubscription` klasy. Łączą typu rekordu ( `RecordType`), predykat ( `NSPredicate`) i Apple Push Notification ( `Push`).
 
 > [!NOTE]
-> **Uwaga**: CloudKit wypchnięć są nieco rozszerzony, ponieważ zawierają one ładunku zawierających informacje dotyczące CloudKit, takie jak przyczyn wypychania nastąpić.
+> CloudKit wypchnięć są nieco rozszerzony, ponieważ zawierają one zawierających informacje dotyczące CloudKit, takie jak przyczyn wypychania nastąpić ładunku.
 
 #### <a name="how-subscriptions-work"></a>Jak działają subskrypcji
 
@@ -678,7 +678,7 @@ Ponieważ jest to pochodzi z usługą iCloud, brak wzbogaconej kopii informacje 
 Na podstawie kontenera przez kontener unikatowy, losowo wygenerowany identyfikator użytkownika jest utworzona i skojarzona z konta usługi iCloud (adres e-mail). Ta nazwa użytkownika jest zwracana do aplikacji i mogą być używane w dowolny sposób, które uzna za stosowne dewelopera.
 
 > [!NOTE]
-> **Uwaga**: różnych aplikacji uruchomionych na tym samym urządzeniu, dla tego samego użytkownika iCloud będzie mają różne identyfikatory użytkowników, ponieważ są one połączone z różnych kontenerów CloudKit.
+> Różnych aplikacji uruchomionych na tym samym urządzeniu dla tego samego użytkownika w ramach usługi iCloud mają różne identyfikatory użytkowników, ponieważ są one połączone z różnych kontenerów CloudKit.
 
 Następujący kod pobiera identyfikator użytkownika CloudKit dla obecnie zalogowanego w ramach usługi iCloud użytkownika na urządzeniu:
 
@@ -810,7 +810,7 @@ Deweloper można użyć tej funkcji, wprowadzać zmiany do schematu podczas twor
 Przed wdrożeniem aplikacji, deweloper można migrować ich schemat i dane do środowiska produkcyjnego przy użyciu **pulpitu nawigacyjnego CloudKit**. Podczas uruchamiania w środowisku produkcyjnym, serwera uniemożliwia programistyczna schematu. Deweloper można wprowadzić zmiany z **pulpitu nawigacyjnego CloudKit** , ale próbuje dodać pól do rekordu w środowisku produkcyjnym spowodować błędy.
 
 > [!NOTE]
-> **Uwaga:** iOS Simulator działa tylko w przypadku **środowisko projektowe**. Gdy dewelopera jest gotowy do testowania aplikacji w **środowiska produkcyjnego**, urządzenie fizyczne z systemem iOS jest wymagana.
+> IOS Simulator działa tylko w przypadku **środowisko projektowe**. Gdy dewelopera jest gotowy do testowania aplikacji w **środowiska produkcyjnego**, urządzenie fizyczne z systemem iOS jest wymagana.
 
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>Wysyłanie CloudKit aplikacji z obsługą

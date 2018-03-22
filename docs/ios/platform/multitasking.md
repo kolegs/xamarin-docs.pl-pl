@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>Wielozadaniowości dla urządzeń iPad
 
@@ -33,7 +33,7 @@ Kilka rzeczy, które należy wziąć pod uwagę podczas [Obsługa wielozadaniowo
 - [Skróty klawiaturowe niestandardowego sprzętu](#Custom-Hardware-Keyboard-Shortcuts)
 - [Resource Management](#Resource-Management-Considerations)
 
-Deweloper aplikacji można też [Wypisz wielowątkowości](#Opting-Out-of-Multitasking), takie jak [wyłączenie odtwarzanie wideo PIP](#Disabling-PIP-Video-Playback).
+Deweloper aplikacji można też [zrezygnować z wielozadaniowości](#Opting-Out-of-Multitasking), takie jak [wyłączenie odtwarzanie wideo PIP](#Disabling-PIP-Video-Playback).
 
 W tym artykule opisano kroki wymagane do zapewnienia, że aplikacja Xamarin.iOS będzie działać poprawnie w środowisku wielozadaniowości jak rezygnacji z wielozadaniowości, jeśli nie jest dobrze nadające się do aplikacji.
 
@@ -205,7 +205,7 @@ Zobacz przykład [aplikacji MultiTask](http://developer.xamarin.com/samples/mono
 
 Nawet w przypadku aplikacji, które już używają przewodniki projektowania i najlepsze rozwiązania dla systemu iOS 8 zarządzanie zasobami wydajne może wystąpić problem. W systemie iOS 9 aplikacje nie muszą już wyłączne użycie pamięci, procesora CPU lub innych zasobów.
 
-W związku z tym należy dostosować aplikację platformy Xamarin.iOS, aby skutecznie wykorzystuje zasoby systemowe lub zwróconym zakończenia w sytuacji braku pamięci. Dotyczy to jednakowo aplikacji, które Wypisz wielowątkowości, od drugiej aplikacji mogą nadal działać w panelu slajd za pośrednictwem lub obrazu w oknie Obraz wymagających dodatkowe zasoby lub powoduje częstotliwość odświeżania spadnie poniżej 60 klatek na sekundę.
+W związku z tym należy dostosować aplikację platformy Xamarin.iOS, aby skutecznie wykorzystuje zasoby systemowe lub zwróconym zakończenia w sytuacji braku pamięci. Dotyczy to jednakowo aplikacji, które zrezygnować z wielozadaniowości, od drugiej aplikacji mogą nadal działać w panelu slajd za pośrednictwem lub obrazu w oknie Obraz wymagających dodatkowe zasoby lub powoduje częstotliwość odświeżania spadnie poniżej 60 klatek na sekundę.
 
 Należy wziąć pod uwagę następujące akcje użytkownika i ich wpływ na:
 
@@ -223,19 +223,16 @@ Zobacz firmy Apple [energii przewodnik wydajności dla aplikacji systemu iOS](ht
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>Rezygnacja ruch wychodzący wielowątkowości
+## <a name="opting-out-of-multitasking"></a>Rezygnacja z wielozadaniowości
 
 Podczas Apple sugeruje, że wszystkie aplikacje systemu iOS 9 obsługują wielozadaniowości, może być powodów bardzo specyficzne dla aplikacji nie zbyt takich jak gry lub aparatu aplikacji, które wymagają pełny ekran, aby działać poprawnie.
 
-Dla aplikacji platformy Xamarin.iOS zrezygnować z uruchomione w trybie podzielony widok lub albo przesuwa się panelu, Edytuj projektu **Info.plist** plik i sprawdź **wymaga pełnego ekranu**:
+Dla aplikacji platformy Xamarin.iOS rezygnacji z uruchomione w trybie podzielony widok lub albo przesuwa się panelu, Edytuj projektu **Info.plist** plik i sprawdź **wymaga pełnego ekranu**:
 
-[![](multitasking-images/fullscreen01.png "Rezygnacja ruch wychodzący wielowątkowości")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "Rezygnacja z wielozadaniowości")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga:** podczas Opting poza wielozadaniowości uniemożliwia aplikację uruchamianą w przesuwa się lub podzielony widok, tak **nie** uniemożliwić uruchomione w przesuwa się lub obraz obrazu wideo przy wyświetlaniu wraz z innej aplikacji z aplikacja.
-
-
-
+> Gdy rezygnacja z wielozadaniowości uniemożliwia aplikację uruchamianą w przesuwa się lub podzielony widok, zapobiega ono innej aplikacji działa w przesuwa się lub obraz obrazu wideo przy wyświetlaniu wraz z aplikacji.
 
 <a name="Disabling-PIP-Video-Playback" />
 

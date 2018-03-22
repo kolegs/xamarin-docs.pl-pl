@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualizowanie aplikacji w tle
 
@@ -79,7 +79,7 @@ Gdy skończymy aktualizowania zawartości, nie możemy udostępnić wiedzieć, w
 Aplikacje przy użyciu pobieranie w tle można wykonywać wywołania można zaktualizować interfejsu użytkownika w tle. Gdy użytkownik otwiera aplikację, interfejs użytkownika zostanie aktualny i wyświetlanie nowej zawartości. Spowoduje to również aktualizację migawki przełącznik aplikacji aplikacji, użytkownik może wyświetlić, gdy aplikacja ma nową zawartość.
 
 > [!IMPORTANT]
-> **Uwaga**: raz `PerformFetch` jest wywoływana, aplikacja musi około 30 sekund zaczną działać poza pobierania nową zawartość i Wywołaj bloku obsługi zakończenia. Jeśli to trwa za długo, aplikacja zostanie zakończona. Należy rozważyć użycie tła pobrać z _Usługa transferu w tle_ podczas pobierania multimediów lub innych dużych plików.
+> Raz `PerformFetch` jest wywoływana, aplikacja musi około 30 sekund zaczną działać poza pobierania nową zawartość i Wywołaj bloku obsługi zakończenia. Jeśli to trwa za długo, aplikacja zostanie zakończona. Należy rozważyć użycie tła pobrać z _Usługa transferu w tle_ podczas pobierania multimediów lub innych dużych plików.
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 Powiadomienia zdalnego należy używać rzadkim aktualizacji z zawartością, która ma podstawowe znaczenie dla funkcjonalności aplikacji. Aby uzyskać więcej informacji na powiadomienia zdalnego, zobacz Xamarin [powiadomień wypychanych w systemie iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) przewodnik.
 
 > [!IMPORTANT]
-> **Uwaga**: ponieważ mechanizm aktualizacji w powiadomieniach zdalnego opiera się na pobieranie w tle, aplikacja musi rozpocząć wyłączyć pobieranie nowej zawartości i Wywołaj bloku obsługi uzupełniania w ciągu 30 sekund od otrzymania powiadomienia lub z systemem iOS zostanie zakończyć działanie aplikacji. Należy wziąć pod uwagę parowanie zdalnego powiadomienia z _Usługa transferu w tle_ podczas pobierania multimediów lub innych dużych plików w tle.
+> Ponieważ mechanizm aktualizacji w powiadomieniach zdalnego jest oparta na pobieranie w tle, aplikacja musi rozpocząć wyłączyć pobieranie nowej zawartości i Wywołaj bloku obsługi uzupełniania w ciągu 30 sekund od otrzymania powiadomienia lub iOS spowoduje przerwanie aplikacji. Należy wziąć pod uwagę parowanie zdalnego powiadomienia z _Usługa transferu w tle_ podczas pobierania multimediów lub innych dużych plików w tle.
 
 
 ### <a name="silent-remote-notifications"></a>Dyskretnej zdalnego powiadomienia
@@ -156,7 +156,7 @@ Jednak APN umożliwi dyskretnej powiadomienia "potwierdzeń" obok normalne powia
  [![](updating-an-application-in-the-background-images/silent.png "Powiadomienia regularnego może służyć do wypychać przechowywanych dyskretnej powiadomienia za pomocą usługi APNs do urządzenia, jak pokazano na tym diagramie")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga**: Apple zachęca deweloperów do wysyłania powiadomień wypychanych w trybie dyskretnym, zawsze, gdy aplikacja wymaga i umożliwiają APN zaplanować ich dostarczania.
+> Apple zachęca deweloperom wysyłać powiadomienia wypychane w trybie dyskretnym, zawsze, gdy aplikacja wymaga i umożliwić APN zaplanować ich dostarczania.
 
 
 W tej sekcji możemy zostały objęte różne opcje odświeżanie zawartości w tle do uruchamiania zadań, które nie pasują do kategorii konieczne tła. Teraz zobaczmy, niektóre z tych interfejsów API w akcji.

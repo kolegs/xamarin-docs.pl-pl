@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>System iOS 7 omówienie interfejsu użytkownika
 
@@ -173,7 +173,7 @@ Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui
 Wartość przesunięcia jest generowany dynamicznie po widok został dodany do hierarchii, dlatego próby odczytu `TopLayoutGuide` i `BottomLayoutGuide` wartości w `ViewDidLoad` zwraca wartość 0. Obliczanie wartości po widok został załadowany — na przykład w `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> **Uwaga**: `TopLayoutGuide` i `BottomLayoutGuide` zostały uznane za przestarzałe w systemie iOS 11 na rzecz nowy układ obszaru bezpieczne. Apple ma stwierdził, że użycie bezpiecznego miejsca jest zgodny z systemem iOS w wersji wcześniejszej niż iOS 11. Aby uzyskać więcej informacji, zobacz [aktualizowanie aplikacji dla systemu iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) przewodnik.
+> `TopLayoutGuide` i `BottomLayoutGuide` zostały uznane za przestarzałe w systemie iOS 11 na rzecz nowy układ obszaru bezpieczne. Apple ma stwierdził, że użycie bezpiecznego miejsca jest zgodny z systemem iOS w wersji wcześniejszej niż iOS 11. Aby uzyskać więcej informacji, zobacz [aktualizowanie aplikacji dla systemu iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) przewodnik.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ Na przykład poniższy zrzut ekranu przedstawia wynik zmiana koloru odcień w wi
 Kolor odcienia może odnosić się do obrazów, a także gdy `RenderingMode` ma ustawioną wartość `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
-> Uwaga: Kolor odcienia nie można ustawić za pomocą `UIAppearance`.
+> Kolor odcienia, nie można ustawić za pomocą `UIAppearance`.
 
 
 ### <a name="dynamic-type"></a>Typ dynamiczny

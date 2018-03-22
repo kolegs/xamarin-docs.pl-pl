@@ -7,12 +7,12 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 75dc51b5372ae4d8a322c29e39a585a547ab1963
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Menedżer urządzeń Xamarin Android
 
@@ -469,9 +469,9 @@ Aby uzyskać więcej informacji na temat tych właściwości, zobacz [właściwo
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 Poniżej opisano typowe problemy Menedżera urządzeń Xamarin Android i rozwiązania:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Zestaw SDK systemu android w lokalizacji niestandardowej
 
@@ -503,19 +503,64 @@ Aby obejść ten problem, wykonaj następujące czynności:
 
 Po wprowadzeniu tej zmiany do **user.config**, można uruchomić Menedżera urządzeń Xamarin Android.
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Migawki wyłącza sieci Wi-Fi na Oreo systemu Android
+
+Jeśli masz AVD skonfigurowano dla systemu Android Oreo symulowane dostępu do sieci Wi-Fi, ponowne uruchomienie AVD po migawki może spowodować dostępu do sieci Wi-Fi ma zostać wyłączona.
+
+Aby obejść ten problem
+
+1. Wybierz AVD w Menedżerze urządzeń Xamarin.
+
+2. W menu opcji dodatkowych kliknij **ujawnić w Eksploratorze**.
+
+3. Przejdź do **migawki > default_boot**.
+
+4. Usuń **snapshot.pb** pliku:
+
+    [![Lokalizacja pliku snapshot.pb](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. Uruchom ponownie AVD. 
+
+Po wprowadzeniu tych zmian, AVD zostanie uruchomiony ponownie w stanie, który umożliwia sieci Wi-Fi do pracy ponownie.
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Migawki wyłącza sieci Wi-Fi na Oreo systemu Android
+
+Jeśli masz AVD skonfigurowano dla systemu Android Oreo symulowane dostępu do sieci Wi-Fi, ponowne uruchomienie AVD po migawki może spowodować dostępu do sieci Wi-Fi ma zostać wyłączona.
+
+Aby obejść ten problem
+
+1. Wybierz AVD w Menedżerze urządzeń Xamarin.
+
+2. W menu opcji dodatkowych kliknij **ujawnić w wyszukiwarce**.
+
+3. Przejdź do **migawki > default_boot**.
+
+4. Usuń **snapshot.pb** pliku:
+
+    [![Lokalizacja pliku snapshot.pb](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. Uruchom ponownie AVD. 
+
+Po wprowadzeniu tych zmian, AVD zostanie uruchomiony ponownie w stanie, który umożliwia sieci Wi-Fi do pracy ponownie.
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>Generowanie raport o usterce
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Jeśli napotkasz problem przy użyciu platformy Xamarin Android Menedżera urządzeń którego nie można rozwiązać przy użyciu powyższego wskazówki dotyczące rozwiązywania problemów, klikając prawym przyciskiem myszy pasek tytułu i wybierając pliku raport o usterce **wygenerować raport o usterce**:
 
 ![Lokalizacja elementu menu dla składanie raport o usterce](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Obecnie nie istnieją żadne znane problemy/obejścia dla platformy Xamarin Android Menedżera urządzeń w programie Visual Studio dla komputerów Mac. 
-
-### <a name="generating-a-bug-report"></a>Generowanie raport o usterce
-
-Jeśli napotkasz problem, klikając pliku raport o usterce **Pomoc > Generowanie raportu o usterce**:
+Jeśli napotkasz problem przy użyciu platformy Xamarin Android Menedżera urządzeń którego nie można rozwiązać przy użyciu powyższego wskazówki dotyczące rozwiązywania problemów, klikając pliku raport o usterce **Pomoc > Generowanie raportu o usterce**:
 
 ![Lokalizacja elementu menu dla składanie raport o usterce](xamarin-device-manager-images/mac/35-bug-report.png)
 

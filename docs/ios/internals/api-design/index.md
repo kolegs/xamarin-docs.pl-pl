@@ -8,68 +8,72 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="api-design"></a>Projekt interfejsu API
 
 Oprócz podstawowych podstawowej biblioteki klas, które są częścią Mono [Xamarin.iOS](http://www.xamarin.com/iOS) jest dostarczany z powiązań dla różnych interfejsów API umożliwiają deweloperom tworzenie aplikacji natywnej systemu iOS z Mono z systemem iOS.
 
-Fundament Xamarin.iOS jest aparat międzyoperacyjnego, który stanowi world C# innym osobom Objective-C jako, także powiązania dla systemu iOS na podstawie C interfejsów API, takich jak CoreGraphics i [OpenGLES](#OpenGLES).
+Fundament Xamarin.iOS jest aparat międzyoperacyjnego, który stanowi world C# z world Objective-C, a także powiązań dla systemu iOS na podstawie C interfejsów API, takich jak CoreGraphics i [OpenGL ES](#OpenGLES).
 
-Środowisko uruchomieniowe niskiego poziomu do komunikowania się z kodu języka Objective C jest [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). U góry tego powiązania [Foundation](#MonoTouch.Foundation), CoreFoundation i [UIKit](#MonoTouch.UIKit) są udostępniane.
+Środowisko uruchomieniowe niskiego poziomu do komunikowania się z kodu języka Objective C jest [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). U góry tego powiązania [Foundation](#MonoTouch.Foundation), CoreFoundation, i [UIKit](#MonoTouch.UIKit) są udostępniane.
 
 ## <a name="design-principles"></a>Zasady projektowania
 
-Oto nasze zasady projektowania dla powiązania Xamarin.iOS (te dotyczą także Xamarin.Mac, Mono powiązań dla języka Objective-C w OS X):
+Oto nasze zasady projektowania dla powiązania Xamarin.iOS (również dotyczą one Xamarin.Mac, Mono powiązań dla języka Objective-C w macOS):
 
-- Postępuj zgodnie z wytycznymi projektowania Framework
+- Wykonaj [zaleceń dotyczących projektowania Framework](https://docs.microsoft.com/dotnet/standard/design-guidelines)
 - Umożliwiają deweloperom klasy podklasy Objective-C:
 
   - Pochodzi z istniejącej klasy
   - Wywołanie konstruktora podstawowego łańcucha
   - Zastępowanie metody ma się odbywać z C# przez zastąpienie systemu
+  - Podklasy powinny współpracować z C# konstrukcje
 
-- Podklasy powinny współpracować z C# konstrukcje
 - Nie ujawniaj deweloperom selektorów Objective-C
 - Mechanizm do wywołania dowolnego bibliotek języka Objective C
 - Należy typowych zadań Objective-C łatwe i twardych możliwe zadania Objective-C
 - Udostępnianie właściwości Objective-C jako właściwości języka C#
-- Ujawniać silnie typizowane interfejsu API:
-- Zwiększyć bezpieczeństwo typów
-- Minimalizowanie błędy środowiska wykonawczego
-- Pobierz IDE intellisense na typy zwracane
-- Umożliwia dokumentacji podręcznego IDE
+- Uwidacznia interfejs API jednoznacznie:
+
+  - Zwiększyć bezpieczeństwo typów
+  - Minimalizowanie błędy środowiska wykonawczego
+  - Pobierz IDE IntelliSense na typy zwracane
+  - Umożliwia dokumentacji podręcznego IDE
+
 - Zachęca eksploracji w IDE interfejsów API:
+
+  - Na przykład zamiast udostępnianie tablicą słabą kontrolą następująco:
+    
+    ```objc
+    NSArray *getViews
+    ```
+    Pokazuje silnego typu, jak to:
+    
+    ```csharp
+    NSView [] Views { get; set; }
+    ```
+    
+    To umożliwia Visual Studio dla komputerów Mac do automatycznego uzupełniania podczas przeglądania interfejsu API, że wszystkie `System.Array` operacje dostępne dla zwracanej wartości i umożliwia wartości zwracanej brać udziału w składniku LINQ.
+
 - C# typach natywnych:
 
-    - Przykład: zamiast udostępnianie tablicy słabą kontrolą następująco:
-        ```
-        NSArray *getViews
-        ```
-        uwidaczniamy je z silnymi typami następująco:
-    
-        ```
-        NSView [] Views { get; set; }
-        ```
-    
-    To umożliwi Visual Studio dla komputerów Mac wykonaj automatycznego uzupełniania podczas przeglądania interfejsu API i umożliwia również wszystkie `System.Array` operacje są dostępne w zwracanej wartości i umożliwia wartości zwracanej brać udziału w składniku LINQ
+  - [`NSString` staje się `string`](~/ios/internals/api-design/nsstring.md)
+  - Włącz `int` i `uint` parametrów, które powinny zostać wyliczenia do wyliczenia C# i C# wyliczeń o `[Flags]` atrybutów
+  - Zamiast niezależny od typu `NSArray` obiektów, ujawnia tablic jako jednoznacznie tablic.
+  - Dla zdarzeń i powiadomień zapewniają użytkownikom wybór między:
 
-- [NSString staje się ciąg](~/ios/internals/api-design/nsstring.md)
-- Włącz int i uint parametrów, które powinny zostać wyliczenia jako wyliczenia C# i C# wyliczenia z atrybutami [Flags]
-- Zamiast obiektów NSArray niezależny od typu uwidocznić tablic jako silnie typizowaną tablicę.
-- Zdarzeń i powiadomień, zapewniają użytkownikom wybór między:
-
-    - Domyślnym ustawieniem jest silnie typizowaną wersję
-    - Lekko typizowaną wersję dla wcześniejszego przypadki użycia
+    - Domyślnie wersję silnie typizowane
+    - Słabą kontrolą wersji dla przypadków użycia zaawansowane
 
 - Wzorzec delegata obsługi języka Objective-C:
 
     - System zdarzeń w języku C#
-    - Udostępnianie C# delegatów (wyrażeń lambda, metody anonimowe i System.Delegate) do interfejsów API języka Objective-C jako""
+    - Uwidacznia obiekty delegowane C# (wyrażeń lambda, metody anonimowe i `System.Delegate`) do interfejsów API języka Objective-C jako bloków
 
 ### <a name="assemblies"></a>Zestawy
 

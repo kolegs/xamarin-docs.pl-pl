@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enhanced-user-notifications"></a>Powiadomienia użytkowników
 
@@ -558,7 +558,7 @@ Aby zaimplementować rozszerzenia usługi w aplikacji platformy Xamarin.iOS, wyk
 -----
 
 > [!IMPORTANT]
-> Uwaga: Identyfikator pakietu rozszerzenia usługi powinna być zgodna identyfikator pakietu aplikacji głównej z `.appnameserviceextension` dołączany na końcu. Na przykład jeśli identyfikator pakietu aplikacji głównej `com.xamarin.monkeynotify`, rozszerzenie usługi powinien mieć identyfikator pakietu `com.xamarin.monkeynotify.monkeynotifyserviceextension`. To automatycznie należy ustawić, gdy rozszerzenie jest dodane do rozwiązania. 
+> Identyfikator pakietu rozszerzenia usługi powinno być zgodne, identyfikator pakietu aplikacji głównej z `.appnameserviceextension` dołączany na końcu. Na przykład jeśli identyfikator pakietu aplikacji głównej `com.xamarin.monkeynotify`, rozszerzenie usługi powinien mieć identyfikator pakietu `com.xamarin.monkeynotify.monkeynotifyserviceextension`. To automatycznie należy ustawić, gdy rozszerzenie jest dodane do rozwiązania. 
 
 Brak jednej klasy głównym w rozszerzeniu usługi powiadomień, który będzie musiał zostać zmodyfikowane w celu zapewnienie wymaganej funkcjonalności. Na przykład:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikowanie do sklepu z aplikacjami
 
@@ -185,7 +185,7 @@ Z aplikacji platformy Xamarin.iOS prawidłowo skonfigurowane można teraz przyst
 
 
 > [!NOTE]
-> Uwaga: Podczas stary _sklepu z aplikacjami_ i _Ad Hoc_ konfiguracje teraz zostały usunięte ze wszystkich programu Visual Studio for Mac szablonów projektów, może się okazać, że starsze projekty nadal zawierać te konfiguracje . Jeśli jest to możliwe, można nadal używać **sklepu | Urządzenie** konfiguracji w kroku 1 z listy powyżej.
+> Podczas stary _sklepu z aplikacjami_ i _Ad Hoc_ konfiguracje teraz zostały usunięte ze wszystkich programu Visual Studio for Mac szablonów projektów, może się okazać, że starsze projekty nadal zawierać te konfiguracje. Jeśli jest to możliwe, można nadal używać **sklepu | Urządzenie** konfiguracji w kroku 1 z listy powyżej.
 
 ### <a name="sign-and-distribute-your-app"></a>Zaloguj się i dystrybucja aplikacji
 
@@ -309,7 +309,7 @@ Z dystrybucją kompilacja utworzona i archiwizowane, możesz teraz przystąpić 
 ## <a name="submitting-your-app-to-apple"></a>Przesyłanie aplikacji do firmy Apple
 
 > [!NOTE]
-> Uwaga: Ostatnio zmieniła się z jego proces weryfikacji w aplikacjach systemu iOS firmy Apple, a może odrzucić aplikacji za pomocą `iTunesMetadata.plist` objęte IPA. Jeśli wystąpi błąd `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`rozwiązanie opisane [tutaj](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) powinno rozwiązać problem.
+> Ostatnio zmieniła się z jego proces weryfikacji w aplikacjach systemu iOS firmy Apple i może odrzucić aplikacji za pomocą `iTunesMetadata.plist` objęte IPA. Jeśli wystąpi błąd `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`rozwiązanie opisane [tutaj](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) powinno rozwiązać problem.
 
 Ukończono budowanie dystrybucji można przystąpić do przesyłania aplikacji systemu iOS do firmy Apple w celu przeglądu i wersję ze sklepu App Store.
 

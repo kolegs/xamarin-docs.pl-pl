@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-capabilities"></a>Możliwości płatności firmy Apple
 
@@ -116,7 +116,7 @@ Aby utworzyć certyfikat, wykonaj następujące czynności:
     ![Tworzenie żądania podpisania certyfikatu](apple-pay-capabilities-images/image45.png)
     
     > [!IMPORTANT]
-> Jeśli używasz dostawcy płatności Apple Pay, takie JudoPay lub Stripe, ich może udostępnić CSR prawidłowo sformatowane, którego można użyć w tym momencie. Informacje dotyczące żądania to znajduje się na [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) i [Stripe](https://stripe.com/docs/apple-pay/apps#csr) witryny. Aby utworzyć własną CSR, wykonaj kroki 5 – 8 poniżej. Po utworzeniu CSR, przejdź do kroku 9.
+    > Jeśli używasz dostawcy płatności Apple Pay, takie JudoPay lub Stripe, ich może udostępnić CSR prawidłowo sformatowane, którego można użyć w tym momencie. Informacje dotyczące żądania to znajduje się na [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) i [Stripe](https://stripe.com/docs/apple-pay/apps#csr) witryny. Aby utworzyć własną CSR, wykonaj kroki 5 – 8 poniżej. Po utworzeniu CSR, przejdź do kroku 9.
 
 5.  Otwórz aplikację dostęp łańcucha kluczy, a następnie przejdź do **dostęp łańcucha kluczy > Asystent certyfikatu > zażądać certyfikatu od urzędu certyfikacji:** 
 

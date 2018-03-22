@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08bf8b2b7c56983c43cf1ae080ab112e81851fbb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Instalowanie platformy Xamarin.iOS w systemie Windows
 
@@ -37,7 +37,7 @@ Na poniższym diagramie przedstawiono proste omówienie przepływu pracy program
 [![Przepływ pracy tworzenia platformy Xamarin.iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](~/ios/get-started/installation/windows/connecting-to-mac/index.md) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
+> Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](~/ios/get-started/installation/windows/connecting-to-mac/index.md) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
 
 ## <a name="requirements"></a>Wymagania
 
@@ -105,7 +105,7 @@ Aby zainstalować narzędzia platformy Xamarin.iOS na hoście z systemem mac nal
 Po zainstalowaniu oprogramowania, wykonaj kroki opisane w kolejnych sekcjach, aby skonfigurować Xamarin.iOS na macOS umożliwia Xamarin dla Visual Studio, aby się z nim połączyć.
 
 > [!IMPORTANT]
->  Komputer z systemem Windows muszą używać tej samej wersji platformy Xamarin.iOS jako Mac, do którego jest podłączony. Aby to zapewnić jest spełnionych:
+> Komputer z systemem Windows muszą używać tej samej wersji platformy Xamarin.iOS jako Mac, do którego jest podłączony. Aby to zapewnić jest spełnionych:
 >
 > - **Visual Studio 2015 lub starszym**: Upewnij się, że jesteś w tym samym [kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) co program Visual Studio dla komputerów Mac.
 >

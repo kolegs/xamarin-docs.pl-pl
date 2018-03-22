@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Wskazówki — Touch korzystanie w systemie iOS
 
@@ -92,12 +92,12 @@ W tym przykładzie przedstawiono niektóre touch interfejsów API. Wykonaj nast�
         }
     }
     ```
+    
     Ta metoda działa przez wyszukiwanie `UITouch` obiektu, a jeśli istnieje wykonanie akcji oparte na którym wystąpił touch:
 
     * _Wewnątrz TouchImage_ — Wyświetl tekst `Touches Began` etykiety i zmiany obrazu.
     * _Wewnątrz DoubleTouchImage_ — zmienić obraz wyświetlany, jeśli gestu dwukrotnym naciśnięciu.
     * _Wewnątrz DragImage_ — Ustaw flagę wskazującą, czy touch została uruchomiona. Metoda `TouchesMoved` użyje do określenia, czy ta flaga `DragImage` powinna zostać przeniesiona po ekranie, lub nie, jak firma Microsoft przestrzega w następnym kroku.
-
 
     Powyższy kod tylko dotyczy poszczególnych poprawek, brak nadal zachowania w przypadku użytkownika jest przenoszenia ich palca na ekranie. Aby odpowiedzieć ruchu, należy zaimplementować `TouchesMoved` jak pokazano w poniższym kodzie:
 
@@ -192,7 +192,7 @@ Wykonaj następujące kroki, aby zaimplementować aparaty rozpoznawania gestów:
 
 1. Przeprowadź edycję pliku **GestureViewController.cs** i dodaj następującą zmienną wystąpienie:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool imageHighlighted = false;
     private RectangleF originalImageFrame = RectangleF.Empty;
@@ -204,7 +204,7 @@ Aparat rozpoznawania gestów przesuwanie użyje `originalImageFrame` wartość d
 
 1. Dodaj następującą metodę do kontrolera:
 
-    ```chsarp
+    ```csharp
     private void WireUpDragGestureRecognizer()
     {
         // Create a new tap gesture
@@ -223,7 +223,7 @@ Zwróć uwagę, możemy przypisać element docelowy do gestu w formularzu metod�
 
 1. Aby zaimplementować HandleDrag, Dodaj następujący kod do kontrolera:
 
-    ```chsarp
+    ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
     {
         // If it's just began, cache the location of the image
@@ -250,7 +250,7 @@ Zwróć uwagę, możemy przypisać element docelowy do gestu w formularzu metod�
 
 1. Dodaj `UITapGestureRecognizer` zmieni to obraz jest wyświetlany w DoubleTouchImage. Dodaj następującą metodę do `GestureViewController` kontrolera:
 
-    ```chsarp
+    ```csharp
     private void WireUpTapGestureRecognizer()
     {
         // Create a new tap gesture
@@ -286,7 +286,7 @@ Zwróć uwagę, możemy przypisać element docelowy do gestu w formularzu metod�
 
 1. Element końcowego, konieczne jest zmodyfikowanie `ViewDidLoad` tak, aby metody właśnie dodaliśmy. Zmień ViewDidLoad, podobny do następującego kodu:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
@@ -324,7 +324,7 @@ Wykonaj następujące kroki, aby utworzyć aparat rozpoznawania gestów niestand
 
 1. Dodaj nową klasę do projektu o nazwie `CheckmarkGestureRecognizer`i przydzielić mu wyglądać podobnie do następującego kodu:
 
-    ```chsarp
+    ```csharp
     using System;
     using CoreGraphics;
     using Foundation;
@@ -444,7 +444,7 @@ Klasa można teraz rozpocząć od nowa pracę następnym razem, gdy użytkownik 
 
 1. Teraz, gdy firma Microsoft zdefiniowany przez aparat rozpoznawania gestów niestandardowych (`CheckmarkGestureRecognizer`) Edytuj **CustomGestureViewController.cs** i dodaj następujące zmienne dwa wystąpienia:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool isChecked = false;
     private CheckmarkGestureRecognizer checkmarkGesture;
@@ -453,7 +453,7 @@ Klasa można teraz rozpocząć od nowa pracę następnym razem, gdy użytkownik 
 
 1. Aby utworzyć wystąpienia i skonfigurować naszych aparat rozpoznawania gestów, dodaj następującą metodę do kontrolera:
 
-    ```chsarp
+    ```csharp
     private void WireUpCheckmarkGestureRecognizer()
     {
         // Create the recognizer
@@ -482,7 +482,7 @@ Klasa można teraz rozpocząć od nowa pracę następnym razem, gdy użytkownik 
 
 1. Edytuj `ViewDidLoad` tak, aby `WireUpCheckmarkGestureRecognizer`, jak pokazano w poniższy fragment kodu:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();

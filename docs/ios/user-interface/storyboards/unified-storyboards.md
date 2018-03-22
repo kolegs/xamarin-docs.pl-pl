@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="unified-storyboards"></a>Ujednolicone Scenorys
 
@@ -581,7 +581,7 @@ IOS projektanta wyświetli monit o potwierdzenie Deweloper chce przekonwertować
  [![](unified-storyboards-images/sizeclass02.png "Użyj klasy rozmiar alertu")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga**: automatycznie Rozmieść również muszą zostać sprawdzone za klasy rozmiar, aby działać poprawnie.
+> Automatycznie Rozmieść również muszą zostać sprawdzone za klasy rozmiar, aby działać poprawnie.
 
 ### <a name="generic-device-types"></a>Typy ogólne urządzeń
 
@@ -630,7 +630,7 @@ Zobacz sekcję klasy rozmiar tego artykułu, aby uzyskać więcej informacji na 
 Jeśli projektanta został użyty scenorys przed, a następnie będzie można zapoznać się z istniejących typów segue **Push**, **modalne** i **Popover**. Po włączeniu klas rozmiaru na plik scenorysu Unified adaptacyjną Segue następujące (odpowiadające nowy widok kontrolera interfejsu API opisanych wyżej) stają się dostępne: **Pokaż** i **Pokaż szczegóły** .
 
 > [!IMPORTANT]
-> **Uwaga**: gdy klasy rozmiar są włączone, wszelkie istniejące segues zostanie przekonwertowane na nowe typy.
+> Po włączeniu klas wielkości wszelkie istniejące segues zostanie przekonwertowane na nowe typy.
 
 Zająć przykład iOS 8 aplikacji, która używa scenorysu Unified dla kontrolera widoku podziału, który zawiera menu proste gier nawigacji w widoku głównego. Gdy użytkownik kliknie przycisk menu, wybranego elementu View Controller powinny być wyświetlane w sekcji szczegółów kontrolera widoku podziału uruchomionej na urządzeniu iPad. Na telefonie iPhone elementu View Controller powinna zostać przesunięta na stosie nawigacji.
 

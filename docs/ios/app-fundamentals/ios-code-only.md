@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie
 
@@ -620,7 +620,7 @@ Aby uzyskać więcej informacji na temat tworzenia ekranu uruchamiania można sk
 - [Zarządzanie uruchamiania ekrany z Scenorys](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **Uwaga:** począwszy od systemu iOS 9, Firma Apple zaleca czy Scenorys powinna być używana jako podstawowej metody tworzenia ekranu uruchamiania.
+> Począwszy od systemu iOS 9 Apple, zaleca się, że Scenorys powinna być używana jako podstawowej metody tworzenia ekranu uruchamiania.
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Tworzenie obrazu uruchamiania dla wstępnego systemu iOS 8 aplikacji
 
@@ -629,7 +629,7 @@ Obraz statyczny umożliwia oprócz .xib lub ekran startowy scenorysu aplikacji e
 Ten statyczny obraz można ustawić w pliku Info.plist lub jako katalog zasobów (dla systemu iOS 7) w aplikacji. Należy podać oddzielne obrazy dla każdego rozmiaru urządzenia (320 x 480, 640 x 960 640 x 1136), który aplikacja może być uruchamiana. Aby uzyskać więcej informacji na temat rozmiarów ekranu uruchamiania wyświetlić [uruchamianie obrazy ekranu](~/ios/app-fundamentals/images-icons/launch-screens.md) przewodnik.
 
 > [!IMPORTANT]
-> **Uwaga:** Jeśli aplikacja nie ma żadnych ekranu uruchamiania, można zauważyć, że nie pełni dopasowania do ekranu. Jeśli jest to możliwe, należy upewnić się, że zawierają co najmniej obraz 640 x 1136 o nazwie `Default-568@2x.png` do Twojego pliku Info.plist. 
+> Jeśli aplikacja nie ma żadnych ekranu uruchamiania, można zauważyć, że nie pełni dopasowania do ekranu. Jeśli jest to możliwe, należy upewnić się, że zawierają co najmniej obraz 640 x 1136 o nazwie `Default-568@2x.png` do Twojego pliku Info.plist. 
 
 
 

@@ -6,12 +6,12 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: ec6536ee9bdd5f25a7f9ef90e5cf052717b23143
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/21/2018
+ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="android-debug-log"></a>Dziennik debugowania dla systemu android
 
@@ -19,13 +19,15 @@ Jeden często deweloperzy lewy umożliwia debugowanie aplikacji jest do łączen
 
 ## <a name="android-debug-log-overview"></a>Omówienie dziennika debugowania dla systemu android
 
-**Dziennika debugowania** narzędzie zapewnia sposób wyświetlania danych wyjściowych dziennika podczas debugowania aplikacji. Dziennik debugowania obsługuje następujące urządzenia:
+**Dziennika debugowania** narzędzie zapewnia sposób wyświetlania danych wyjściowych dziennika podczas debugowania aplikacji za pomocą programu Visual Studio. Dziennik debugowania obsługuje następujące urządzenia:
 
 -   Fizyczny telefony, tablety i wearables.
 -   Urządzenie Android wirtualne uruchomione na Emulator systemu Google Android. 
 
 > [!NOTE]
 > **Dziennika debugowania** narzędzie nie obsługuje Xamarin Player na żywo.
+
+**Dziennika debugowania** nie są wyświetlane komunikaty dziennika, które są generowane, gdy aplikacja jest uruchomiona autonomiczny na urządzeniu (tj. gdy jest on odłączony z programu Visual Studio).
 
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Uzyskiwanie dostępu do dzienników debugowania w programie Visual Studio

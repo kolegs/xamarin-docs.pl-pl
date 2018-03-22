@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 768ee4a2f33475b5327bf9c0fd006f1da580d836
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e72c013516de5bcf97e2e9f58a7a4f5cd87c730b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="resources-and-data-storage"></a>Magazyn danych i zasoby
 
@@ -35,7 +35,7 @@ Każda aplikacja systemu tvOS podano katalogu tymczasowego pamięci podręcznej,
 W związku z tym Twoja aplikacja nie bazuje na wcześniej pobranej zawartości, są dostępne przy następnym uruchomieniu go. Xamarin.tvOS aplikacji należy zawsze Sprawdzaj istnienie wymaganych zasobów i pobrać je zgodnie z potrzebami.
 
 > [!IMPORTANT]
-> **Uwaga:** gdy masz możliwość pobrania innych zasobów i zasobów, zgodnie z wymaganiami firmy Apple ostrzega przed wykorzystywanie całego miejsca w pamięci podręcznej aplikacji, ponieważ może spowodować nieprzewidywalne skutki.
+> Gdy masz możliwość pobrania innych zasobów i zasobów, zgodnie z wymaganiami firmy Apple ostrzega przed wykorzystywanie całego miejsca w pamięci podręcznej aplikacji, ponieważ może spowodować nieprzewidywalne skutki.
 
 
 
@@ -70,7 +70,7 @@ Te zasoby mogą nadal być buforowane na Apple TV w całym przeprowadzający wie
 Xcode umożliwia tworzenie pakiety skojarzone z podać Tag zasobu powiązanej zawartości (np. wszystkie zasoby na poziom 2). Później aplikacja będzie żądać zasobów na żądanie, określając ten Tag zasobu. Aplikacji powinni przedstawić interfejsu użytkownika dla użytkownika, podając tej zawartości jest pobierany. Aby uzyskać więcej informacji, zobacz firmy Apple [przewodnik zasobów na żądanie](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 > [!IMPORTANT]
-> **Uwaga:** ostrożność uzyskanie kompromisu między ile razy aplikacja ma pobrać zasobów na żądanie i rozmiaru poszczególnych plików do pobrania. Użytkownik może stać się sfrustrowani z aplikacją, gra jest stale przerwania można pobrać nowej zawartości lub jeśli pojedynczy pobierania ma zbyt dużo czasu.
+> Należy zachować ostrożność, uzyskanie kompromisu między ile razy aplikacja ma pobrać zasobów na żądanie i rozmiaru poszczególnych plików do pobrania. Użytkownik może stać się sfrustrowani z aplikacją, gra jest stale przerwania można pobrać nowej zawartości lub jeśli pojedynczy pobierania ma zbyt dużo czasu.
 
 
 

@@ -8,22 +8,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 76f35819b00302f4a586643798afbd27416d3997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a77dcc8ae1c698e1f1ef40757ab03558f329719
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Ręczne tworzenie pakietów NuGet dla platformy Xamarin
 
 _Ta strona zawiera kilka wskazówek dotyczących ułatwienia tworzenia pakietów NuGet, które odnoszą się do platformy Xamarin._
 
 > [!NOTE]
-> Program Xamarin Studio 6.2 (i Visual Studio for Mac) obejmuje możliwość _automatycznie_ generowania pakietów NuGet PCL, .NET Standard lub udostępnionych projektów.
-> Zapoznaj się [Multiplatform biblioteki dla udostępniania kodu](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) przewodnika, aby uzyskać więcej informacji.
+> Program Xamarin Studio 6.2 (i Visual Studio for Mac) obejmuje możliwość _automatycznie_ generowania pakietów NuGet PCL, .NET Standard lub udostępnionych projektów. Zapoznaj się [Multiplatform biblioteki dla udostępniania kodu](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) przewodnika, aby uzyskać więcej informacji.
 
 ## <a name="nuget-package-xamarin-profiles"></a>Profile platformy Xamarin pakietu NuGet
-
 
 Witryny NuGet [obsługi wielu wersje programu .NET Framework i profile](https://docs.nuget.org/create/enforced-package-conventions) omówiono sposób obsługi różnych platform firmy Microsoft i profile, ale nie ma nazwy framework obiektów docelowych, które są używane przez program Xamarin.
 

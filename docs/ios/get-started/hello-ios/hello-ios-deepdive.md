@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Witaj, nowości w systemie iOS
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 `ViewController` Teraz dyski interakcji hierarchii widok zawartości skojarzone z tym kontrolerem widoku w scenorysu. Następnie dowiesz się rolę kontrolera widoku w zarządzaniu widoki dzięki zastosowaniu w procesie nazywanym cyklu życia widoku.
 
 > [!NOTE]
-> **Uwaga:** dla tylko visual ekrany, które nie wymagają interakcji użytkownika, **klasy** właściwość może być pusty w **konsoli właściwości**. To ustawienie jako domyślna Implementacja klasy zapasowy kontroler widoku `UIViewController`, które jest odpowiednie, jeśli nie jest planowane dodanie niestandardowego kodu.
+> Dla tylko visual ekrany, które nie wymagają interakcji użytkownika **klasy** właściwość może być pusty w **konsoli właściwości**. To ustawienie jako domyślna Implementacja klasy zapasowy kontroler widoku `UIViewController`, które jest odpowiednie, jeśli nie jest planowane dodanie niestandardowego kodu.
 
 ### <a name="view-lifecycle"></a>Cykl życia widoku
 
@@ -416,7 +416,7 @@ Symulatora systemu iOS jest szybkim sposobem testowania aplikacji. Symulator ma 
 Urządzenie czas do udostępniania i wymaga konta dewelopera firmy Apple. [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md) przewodniku znajdują się szczegółowe instrukcje na przygotowanie urządzenie do programowania.
 
 > [!NOTE]
-> **Uwaga:** w chwili obecnej, ze względu na wymagania firmy Apple, należy mieć certyfikatu deweloperskiego lub _tożsamości podpisywania_ do kompilacji kodu dla urządzenie lub symulator. Postępuj zgodnie z instrukcjami [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) tej konfiguracji.
+> W chwili obecnej, ze względu na wymagania firmy Apple, należy mieć certyfikatu deweloperskiego lub _tożsamości podpisywania_ do kompilacji kodu dla urządzenie lub symulator. Postępuj zgodnie z instrukcjami [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) tej konfiguracji.
 
 Po zainicjowaniu obsługi urządzenia, można wdrożyć do niej przez podłączenie w zmiana obiekt docelowy w pasku narzędzi kompilacji na urządzeniu z systemem iOS, a następnie naciskając klawisz **Start** ( **odtwarzanie**) jak pokazano na poniższym zrzucie ekranu:
 

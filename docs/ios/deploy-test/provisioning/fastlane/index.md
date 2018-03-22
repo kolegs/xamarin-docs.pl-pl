@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4bba92180e77accaa42b70843fb5dbf12c94d632
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Wprowadzenie do fastlane dla systemu iOS
 
@@ -44,10 +44,10 @@ Zawartość można jako punktu wyjścia do pomocy z dystrybucji aplikacji, w tym
     error: command line tools are already installed, use "Software Update" to install updates
     ```
 
-2. Pobierz narzędzia fastlane z [https://download.fastlane.tools](https://download.fastlane.tools). 
+2. Pobierz narzędzia fastlane z [ https://download.fastlane.tools ](https://download.fastlane.tools). 
 
     > [!NOTE]
-> Istnieje możliwość zainstalować narzędzia fastlane z przy użyciu oprogramowania Homebrew `brew cask install fastlane` lub za pośrednictwem Rubygems (2.0 lub nowszej) przy użyciu `sudo gem install fastlane –NV`. Jednak za pomocą Instalatora zostanie upewnij się, że dostępne są prawidłowymi zależnościami. 
+    > Istnieje możliwość zainstalować narzędzia fastlane z przy użyciu oprogramowania Homebrew `brew cask install fastlane` lub za pośrednictwem Rubygems (2.0 lub nowszej) przy użyciu `sudo gem install fastlane –NV`. Jednak za pomocą Instalatora zostanie upewnij się, że dostępne są prawidłowymi zależnościami. 
 
 3. Zainstaluj fastlane przy rozpakować pliku, a następnie kliknij dwukrotnie `install` pliku wykonywalnego. Jeśli wystąpi błąd udzielanie porad, który "nie można otworzyć pliku, ponieważ jest z programisty niezidentyfikowane", naciśnij przycisk OK i wykonaj następujące czynności:
     - Control + kliknięcie `install` pliku wykonywalnego. Spowoduje to wyświetlenie okna dialogowego poniżej:

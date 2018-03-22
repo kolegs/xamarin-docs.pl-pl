@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatycznie Rozmieść przy użyciu projektanta Xamarin dla systemu iOS
 
@@ -88,7 +88,7 @@ Aby utworzyć ograniczenia, wybierają uchwyt i przeciągnij je gdzieś na powie
 Należy zauważyć trzy wiersze zielony przerywane w dwóch przycisków. Zielony linie wskazują *obszarów upuszczania*, lub innych elementów, których firma Microsoft może ograniczyć atrybuty. Na zrzucie ekranu powyżej, dwóch przycisków oferują 3 obszary upuszczania pionowy ( *dolnej*, *centerY*, *górnej*) aby ograniczyć naszych przycisku. Zielony linia przerywana w górnej części widoku oznacza kontroler widoku umożliwia ograniczenie u góry widoku i wypełniony prostokąt zielony oznacza, że kontroler widoku oferuje ograniczenia poniżej przewodnik układu top.
 
 > [!IMPORTANT]
-> **Uwaga**: prowadnice są specjalne typy elementów docelowych ograniczenia, które umożliwiają tworzenie górny i dolny ograniczenia, które wziąć pod uwagę obecności paski systemu, takie jak paski stanu lub paski narzędzi. Jednym z głównych zastosowań ma mieć aplikacji, które są zgodne z systemem iOS 6 lub iOS 7, ponieważ najnowsza wersja ma widok kontenera rozszerzanie poniżej paska stanu. Aby uzyskać więcej informacji na przewodnik układu top, zapoznaj się [dokumentacji firmy Apple](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
+> Prowadnice to specjalne typy celów ograniczenia, które umożliwiają tworzenie górnej i dolnej ograniczenia, które wziąć pod uwagę obecności paski systemu, takie jak paski stanu lub paski narzędzi. Jednym z głównych zastosowań ma mieć aplikacji, które są zgodne z systemem iOS 6 lub iOS 7, ponieważ najnowsza wersja ma widok kontenera rozszerzanie poniżej paska stanu. Aby uzyskać więcej informacji na przewodnik układu top, zapoznaj się [dokumentacji firmy Apple](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
 
 
 

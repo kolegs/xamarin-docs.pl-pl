@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 73f3beb87fffcb37ef3e36d54f634c3bc62da538
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-user-defaults"></a>Praca z domyślnych ustawień użytkownika
 
@@ -32,7 +32,7 @@ Jak wspomniano powyżej, domyślne ustawienia użytkownika (`NSUserDefaults`) mo
 Gdy aplikacja najpierw wykonuje, `NSUserDefaults` odczytuje klucze i wartości z bazy danych aplikacji użytkownika domyślne i przechowuje je w pamięci, aby uniknąć otwieranie i Odczyt bazy danych zawsze wymagana jest wartość. 
 
 > [!IMPORTANT]
-> **Uwaga**: Apple już zaleca wywołania developer `Synchronize` metodę, aby zsynchronizować bezpośrednio w pamięci podręcznej z bazą danych. Zamiast tego zostanie automatycznie wywołany okresowo, aby zapewnić synchronizację z bazą danych domyślne ustawienia użytkownika w pamięci podręcznej.
+> Apple już zaleca wywołania developer `Synchronize` metodę, aby zsynchronizować bezpośrednio w pamięci podręcznej z bazą danych. Zamiast tego zostanie automatycznie wywołany okresowo, aby zapewnić synchronizację z bazą danych domyślne ustawienia użytkownika w pamięci podręcznej.
 
 `NSUserDefaults` Klasa zawiera kilka metod wygody do odczytywania i zapisywania preferencji wartości dla typowych danych, takich jak: ciąg, liczbę całkowitą, float, boolean i adresów URL. Inne typy danych mogą być archiwizowane za pomocą `NSData`, następnie odczytu lub zapisu w bazie danych użytkownika ustawienia domyślne. Aby uzyskać więcej informacji, zobacz firmy Apple [preferencji i ustawień przewodnik programowania w języku](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** podczas aplikacji najpierw, `NSUserDefaults` odczytuje klucze i wartości z bazy danych aplikacji użytkownika domyślne i przechowuje je w pamięci, aby uniknąć otwieranie i Odczyt bazy danych zawsze wymagana jest wartość.
+> Gdy aplikacja najpierw wykonuje, `NSUserDefaults` odczytuje klucze i wartości z bazy danych aplikacji użytkownika domyślne i przechowuje je w pamięci, aby uniknąć otwieranie i Odczyt bazy danych zawsze wymagana jest wartość.
 
 
 

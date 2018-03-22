@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 083920aba3c8dc83b157b591e194c43935dcc566
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="message-app-extension-basics"></a>Podstawowe rozszerzenia aplikacji wiadomości
 
@@ -87,7 +87,7 @@ W przypadku obrazu do uwzględnienia w pakiecie naklejce spełniają następują
 - Obrazy nie może być mniejsza niż 100 x 100 punktów lub większa tego punktów 206 x 206.
 
 > [!IMPORTANT]
-> **Uwaga:** zawsze należy podawać obrazy naklejce na `@3x` rozwiązania w zakresie 300 x 300 do 618 x 618 pikseli. System automatycznie wygeneruje `@2x` i `@1x` wersji w czasie wykonywania, zgodnie z wymaganiami.
+> Zawsze należy podawać obrazy naklejce na `@3x` rozwiązania w zakresie 300 x 300 do 618 x 618 pikseli. System automatycznie wygeneruje `@2x` i `@1x` wersji w czasie wykonywania, zgodnie z wymaganiami.
 
 Apple sugeruje testowania zasoby obrazu naklejce przed różnych różnych kolorowe tło (na przykład biały, czarny, czerwony, żółty i wielu kolorze) i powyżej zdjęć do zapewnienia wyglądają najlepiej w wszystkich możliwych sytuacji.
 

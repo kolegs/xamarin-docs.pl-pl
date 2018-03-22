@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>Praca z funkcjami
 
@@ -58,7 +58,7 @@ W tej sekcji wyjaśniono, jak włączyć większość funkcji za pomocą program
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Uwaga**: nie wszystkie funkcje, które mogą być dodawane lub zarządzanych w programie Visual Studio dla komputerów Mac. Poniższa lista zawiera obsługiwane możliwości:
+> Nie wszystkie funkcje, które mogą być dodawane lub zarządzanych w programie Visual Studio dla komputerów Mac. Poniższa lista zawiera obsługiwane możliwości:
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Teraz Utwórz profil inicjowania obsługi administracyjnej, który zawiera ten i
     ![Visual Studio for Mac opcje projektu](images/image16.png)
 
 > [!IMPORTANT]
-> Uwaga: Mogą również należy ustawić uprawnienia kluczach w pliku Entitlement.plist i ochrony prywatności w pliku Info.plist. Więcej informacji na temat tych uprawnień znajduje się w [Praca z uprawnieniami](~/ios/deploy-test/provisioning/entitlements.md) przewodnik.
+> Może również należy ustawić uprawnienia kluczach w pliku Entitlement.plist i ochrony prywatności w pliku Info.plist. Więcej informacji na temat tych uprawnień znajduje się w [Praca z uprawnieniami](~/ios/deploy-test/provisioning/entitlements.md) przewodnik.
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ Poniższa lista zawiera szczegóły dotyczące niektórych typowych problemów, 
 -   Upewnij się, że zostały zainstalowane profile inicjowania obsługi i identyfikatorów aplikacji i że aplikacja **Info.plist** (w projekcie Xamarin) jest przy użyciu jednej z identyfikatorów aplikacji skonfigurowanych powyżej.
 -   Upewnij się, że aplikacja **Entitlements.plist** pliku (w projekcie Xamarin) jest włączona usługa poprawne.
 -   Upewnij się, że odpowiednie klucze prywatności są ustawione w pliku info.plist
--   W aplikacji **iOS podpisywania pakietu**, upewnij się, że **uprawnień niestandardowych** ustawiono **Entitlements.plist**. **Uwaga:** jest _nie_ tworzy domyślne ustawienie dla debugowania i symulatora systemu iOS.
+-   W aplikacji **iOS podpisywania pakietu**, upewnij się, że **uprawnień niestandardowych** ustawiono **Entitlements.plist**. Jest to _nie_ tworzy domyślne ustawienie dla debugowania i symulatora systemu iOS.
 
 <a name="summary" />
 

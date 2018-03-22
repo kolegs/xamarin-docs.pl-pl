@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>Aplikacje ćwiczeń
 
@@ -472,7 +472,7 @@ Ponadto nowe watchOS 3 są wstrzymane ruchu (`HKWorkoutEventType.MotionPaused`) 
 Gdy aplikacja odbiera zdarzenia wstrzymana ruchu, należy zatrzymać zbieranie danych, dopóki użytkownik wznawia ruchu i odebraniu zdarzenia wznawia ruchu. Aplikację aplikacji nie powinna wstrzymania sesji ćwiczeń w odpowiedzi na zdarzenie ruchu wstrzymana.
 
 > [!IMPORTANT]
-> **Uwaga:** zdarzenia wstrzymana ruchu i Wznów ruchu są obsługiwane tylko dla działania typu RunningWorkout (`HKWorkoutActivityType.Running`).
+> Zdarzenia wstrzymana ruchu i Wznów ruchu są obsługiwane tylko dla działania typu RunningWorkout (`HKWorkoutActivityType.Running`).
 
 Ponownie, zdarzenia te mogą być obsługiwane przez zastąpienie `DidGenerateEvent` metody `HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ Spójrz na działanie tego procesu:
 3. W konfiguracji ćwiczeń przy użyciu przekazanych, nowej sesji ćwiczeń uruchomieniu aplikacji watchOS 3 (`HKWorkoutSession`).
 
 > [!IMPORTANT]
-> **Uwaga:** aby aplikacji iPhone nadrzędnej można uruchomić ćwiczeń na Apple Watch, aplikacja watchOS 3 musi mieć uruchomiony tła włączone. Zobacz [włączenie uruchamiania tła](#Enabling-Background-Running) powyżej więcej szczegółów.
+> Aby uruchomić ćwiczeń na Apple Watch aplikacji iPhone nadrzędnego aplikacja watchOS 3 musi mieć uruchomiony tła włączone. Zobacz [włączenie uruchamiania tła](#Enabling-Background-Running) powyżej więcej szczegółów.
 
 Ten proces jest bardzo podobny do procesu uruchamiania sesji ćwiczeń bezpośrednio w aplikacji watchOS 3. Na telefonie iPhone należy użyć poniższego kodu:
 
@@ -764,7 +764,7 @@ Biorąc, wszystkie informacje przedstawione w tym dokumencie, aplikacji na podst
 3. **watchOS 3 `OutdoorRunDelegate.cs`**  -niestandardowego `HKWorkoutSessionDelegate` do obsługi zdarzeń dla ćwiczeń.
 
 > [!IMPORTANT]
-> **Uwaga:** kodu pokazano w poniższych sekcjach zawiera tylko elementy wymagane do wdrożenia nowego, ulepszone funkcje oferowane ćwiczeń w aplikacjach w watchOS 3. Cały kod obsługi i kod, aby przedstawić i zaktualizuj interfejs użytkownika nie jest dołączana, ale można łatwo tworzyć wykonując naszej dokumentacji watchOS.<p/>
+> Kodu pokazano w poniższych sekcjach zawiera tylko elementy wymagane do wdrożenia nowego, ulepszone funkcje oferowane ćwiczeń w aplikacjach w watchOS 3. Cały kod obsługi i kod, aby przedstawić i zaktualizuj interfejs użytkownika nie jest dołączana, ale można łatwo tworzyć wykonując naszej dokumentacji watchOS.<p/>
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons-and-images"></a>Praca z obrazów i ikon
 
@@ -28,7 +28,7 @@ Tworzenie urzekające ikon i obrazów jest krytyczną częścią zdobywania doś
 - [Ustawianie obrazów projektu Xamarin.tvOS](#Setting-Xamarin.tvOS-Project-Images) -omówiono czynności, jakie można ustawić dla aplikacji Xamarin.tvOS ikona aplikacji i uruchamianie obrazów.
 
 > [!IMPORTANT]
-> **Uwaga:** są wszystkie obrazy w Apple TV rozdzielczością 1 x (`@1x`) i należy _tylko_ obrazy tej wielkości. W tym większy, wyższej rozdzielczości grafiki nie tylko trwać pobranie i użycie więcej pamięci oraz Magazyn, ale muszą być dynamicznie przeskalowywany w ten sposób w czasie wykonywania i negatywnie wpłynąć na wydajność rysowania.
+> Wszystkie obrazy w Apple TV są rozdzielczością 1 x (`@1x`) i należy _tylko_ obrazy tej wielkości. W tym większy, wyższej rozdzielczości grafiki nie tylko trwać pobranie i użycie więcej pamięci oraz Magazyn, ale muszą być dynamicznie przeskalowywany w ten sposób w czasie wykonywania i negatywnie wpłynąć na wydajność rysowania.
 
 <a name="Launch-Image" />
 
@@ -79,7 +79,7 @@ Obrazy z warstwami zawierają z dwóch (2) do pięciu (5) osobne warstwy, które
 [![](icons-images-images/layered01.png "Uporządkowane obrazów Z diagramu warstwowego")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga:** Layered obrazy są wymagane dla ikony aplikacji i są opcjonalne dla innych [Focusable elementów](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (takich jak obraz górnej półki). Jednak Apple sugeruje, przy użyciu obrazów warstwie dla żadnego obrazu, który może uzyskać fokusu w aplikacji.
+> Obrazy z warstwami są wymagane dla ikony aplikacji i są opcjonalne dla innych [Focusable elementów](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (takich jak obraz górnej półki). Jednak Apple sugeruje, przy użyciu obrazów warstwie dla żadnego obrazu, który może uzyskać fokusu w aplikacji.
 
 
 

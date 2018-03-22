@@ -6,11 +6,11 @@ ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 2e9f1282ec567e894f4e0841ae42f791d8a77d3f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e51aa9ab9d4d63d16b3a68d24084c872d831975
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="external-integrations"></a>Zewnętrzne integracji
 
@@ -55,6 +55,6 @@ Zgodnie z zestawu, który jest przywoływany przez skoroszytu lub na żywo spraw
 Integracja zestawu skutecznie jest mostka między aplikacją lub zestawu SDK zainteresowania i sesji. Umożliwia ona nowych interfejsów API, sensu, szczególnie w kontekście skoroszytu lub na żywo sprawdzić sesji, lub podaj nie publiczne interfejsy API i po prostu wykonać zadania w "w tle", takie jak reaguje obiektu [reprezentacje](~/tools/workbooks/sdk/representations.md).
 
 > [!NOTE]
-> Uwaga: Interfejsy API, które muszą być publiczne, ale nie powinny być udostępniane za pośrednictwem IntelliSense może być oznaczony przez zwykle `[EditorBrowsable (EditorBrowsableState.Never)]` atrybutu.
+> Interfejsy API, które muszą być publiczne, ale nie powinny być udostępniane za pośrednictwem IntelliSense może być oznaczony przez zwykle `[EditorBrowsable (EditorBrowsableState.Never)]` atrybutu.
 
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f59e8f5e732a45f7e6148a08de80fffc56dbb26
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Praca z kontrolerami nawigacji
 
@@ -25,7 +25,7 @@ Pasek nawigacyjny można dodać na początku widoków do wyświetlenia, tytuł i
 Ponadto do tytułu (który jest wyświetlany na środku) pasków nawigacji może zawierać jeden lub więcej przycisków paska nawigacji (`UIBarButtonItem`) po lewej i prawej stronie paska.
 
 > [!IMPORTANT]
-> **Uwaga:** pasków nawigacji są całkowicie niewidoczne domyślnie. Należy zachować ostrożność, aby upewnić się, zawartość paska nawigacyjnego pozostaje można odczytać zawartości podrzędne. Na przykład, gdy zawartość w widoku tabeli lub kolekcji Przewija na jego podstawie.
+> Pasek nawigacyjny są całkowicie niewidoczne domyślnie. Należy zachować ostrożność, aby upewnić się, zawartość paska nawigacyjnego pozostaje można odczytać zawartości podrzędne. Na przykład, gdy zawartość w widoku tabeli lub kolekcji Przewija na jego podstawie.
 
 
 
@@ -77,7 +77,7 @@ Najprostszym sposobem, aby pracować z pasków nawigacji w aplikacji Xamarin.tvO
 -----
 
 > [!IMPORTANT]
-> **Uwaga:** zablokowaniu można przypisać zdarzenia, takie jak `TouchUpInside` do elementu interfejsu użytkownika (na przykład UIButton) w systemie iOS projektanta, jego zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma dotykowego ekranu lub obsługuje zdarzenia touch. Zawsze należy używać `Primary Action` zdarzenie, gdy tworzenie obsługi zdarzeń dla systemu tvOS elementy interfejsu użytkownika.
+> Gdy jest można przypisać zdarzenia, takie jak `TouchUpInside` do elementu interfejsu użytkownika (na przykład UIButton) w systemie iOS projektanta, jego zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma dotykowego ekranu lub obsługuje zdarzenia touch. Zawsze należy używać `Primary Action` zdarzenie, gdy tworzenie obsługi zdarzeń dla systemu tvOS elementy interfejsu użytkownika.
 
 
 

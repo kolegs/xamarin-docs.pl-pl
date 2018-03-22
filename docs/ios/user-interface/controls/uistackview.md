@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b8d3fc920610b357520dfebddb79492c44d4781c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="stack-view"></a>Widok stosu
 
@@ -62,7 +62,7 @@ Gdzie:
 Podczas pracy z widokiem stosu, możesz traktować **wyrównanie** jako **X** i **Y** lokalizacji widok podrzędny i **dystrybucji** jako **Wysokość** i **szerokość**.
 
 > [!IMPORTANT]
-> **Uwaga:** `UIStackView` zaprojektowano jako widok-rendering kontenera i jako taki nie jest rysowana na obszar roboczy, podobnie jak inne podklasy `UIView`. Dlatego takie jak ustawienie właściwości `BackgroundColor` lub przesłonięcie `DrawRect` nie odniesie żadnego skutku visual.
+> `UIStackView` zaprojektowano jako widok-rendering kontenera i jako taki nie jest rysowana na obszar roboczy, podobnie jak inne podklasy `UIView`. Dlatego takie jak ustawienie właściwości `BackgroundColor` lub przesłonięcie `DrawRect` nie odniesie żadnego skutku visual.
 
 Nadal układ interfejsu aplikacji przez dodanie etykietę, ImageView, przycisków i poziomy widoku stosu, dzięki czemu jest podobny do następującego:
 
@@ -209,7 +209,7 @@ Jeśli `BaselineRelativeArrangement` właściwość jest `true`, widoków podrz�
  - Poziomy widoku stosu użyje jego najwyższego widok podrzędny dla podstawy imię i nazwisko. Jeśli najwyższego widok również jest widokiem stosu, jego Widok najwyższego podrzędny zostanie użyty jako linii bazowej.
 
 > [!IMPORTANT]
-> **Uwaga:** wyrównanie linii bazowej nie działa na rozmiary rozciągnięty lub skompresowanych widok podrzędny, jako linii bazowej będzie obliczane na niewłaściwym miejscu. Dla wyrównanie linii bazowej, upewnij się, że widok podrzędny **wysokość** odpowiada wewnętrzne widok zawartości **wysokość**.
+> Wyrównanie linii bazowej nie działa na rozciągnięty lub skompresowanych widok podrzędny rozmiarów linii bazowej zostanie obliczony na niewłaściwym miejscu. Dla wyrównanie linii bazowej, upewnij się, że widok podrzędny **wysokość** odpowiada wewnętrzne widok zawartości **wysokość**.
 
 ### <a name="common-stack-view-uses"></a>Najczęstsze zastosowania widoku stosu
 

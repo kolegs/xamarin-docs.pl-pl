@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72d0dd89593002dbb6ea8ac9369666b811f3a73
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -173,7 +173,7 @@ Rozwiązanie to dodanie obsługi zdalnego Siri (`GCMicroGamepad`) do swojej apli
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** kontrolery gier Bluetooth są opcjonalne zakupu, które może uniemożliwić użytkownikom końcowym, aplikacja nie zmusza użytkownika do kupić. Jeśli aplikacja obsługuje kontrolery gier również musi obsługiwać zdalne Siri tak, aby gry jest użyteczny przez wszystkich użytkowników Apple TV.
+> Kontrolery gier Bluetooth są opcjonalne zakupu, które może uniemożliwić użytkownikom końcowym, aplikacja nie zmusza użytkownika do kupić. Jeśli aplikacja obsługuje kontrolery gier również musi obsługiwać zdalne Siri tak, aby gry jest użyteczny przez wszystkich użytkowników Apple TV.
 
 Aby uzyskać więcej informacji, zobacz nasze [Praca z kontrolery gier](~/ios/tvos/platform/remote-bluetooth.md#Working-with-Game-Controllers) sekcji naszych [Siri zdalnego oraz kontrolerów Bluetooth](~/ios/tvos/platform/remote-bluetooth.md) dokumentacji.
 

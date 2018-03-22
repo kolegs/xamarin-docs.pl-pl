@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e868c0ee71688e208c5217d9f5a89ea3acec988c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="speech-recognition"></a>Rozpoznawanie mowy
 
@@ -127,7 +127,7 @@ Aby zapewnić wymagane `NSSpeechRecognitionUsageDescription` klucza w `Info.plis
 -----
 
 > [!IMPORTANT]
-> **Uwaga:** nie dostarczając jednej z powyższych `Info.plist` kluczy (`NSSpeechRecognitionUsageDescription` lub `NSMicrophoneUsageDescription`) może spowodować aplikacji niepowodzeniem bez ostrzeżenia, jeśli próbujesz uzyskać dostęp do rozpoznawania mowy lub mikrofon audio na żywo.
+> Nie można podać powyższe `Info.plist` kluczy (`NSSpeechRecognitionUsageDescription` lub `NSMicrophoneUsageDescription`) może skutkować niepowodzeniem bez ostrzeżenia, jeśli próby uzyskania dostępu do rozpoznawania mowy lub mikrofon audio na żywo do aplikacji.
 
 
 
@@ -186,7 +186,7 @@ namespace MonkeyTalk
 A `SFSpeechRecognizerAuthorizationStatus` wynik zostanie zwrócony do `RequestAuthorization` procedura wywołania zwrotnego metody, który może służyć do wykonania akcji na podstawie użytkownika uprawnienia. 
 
 > [!IMPORTANT]
-> **Uwaga:** Apple sugeruje dopiero użytkownik rozpoczął akcję w aplikacji, która wymaga rozpoznawania mowy przed wysłaniem żądania to uprawnienie.
+> Apple sugeruje, oczekiwania, aż użytkownik rozpoczął akcję w aplikacji, która wymaga rozpoznawania mowy przed wysłaniem żądania to uprawnienie.
 
 ### <a name="recognizing-pre-recorded-speech"></a>Rozpoznawanie mowy z uprzednio nagranego
 
@@ -373,7 +373,7 @@ RecognitionTask.Cancel ();
 Ważne jest, aby wywołać `RecognitionTask.Cancel` Jeśli użytkownik anuluje tłumaczenia, aby zwolnić pamięć i procesora urządzenia.
 
 > [!IMPORTANT]
-> **Uwaga:** nie dostarczając `NSSpeechRecognitionUsageDescription` lub `NSMicrophoneUsageDescription` `Info.plist` kluczy może skutkować niepowodzeniem bez ostrzeżenia, jeśli próbujesz uzyskać dostęp do rozpoznawania mowy lub mikrofon audio na żywo aplikacji (`var node = AudioEngine.InputNode;`). Zobacz **podanie opisu użycia** sekcji powyżej, aby uzyskać więcej informacji.
+> Nie dostarczając `NSSpeechRecognitionUsageDescription` lub `NSMicrophoneUsageDescription` `Info.plist` kluczy może skutkować niepowodzeniem bez ostrzeżenia, jeśli próbujesz uzyskać dostęp do rozpoznawania mowy lub mikrofon audio na żywo aplikacji (`var node = AudioEngine.InputNode;`). Zobacz **podanie opisu użycia** sekcji powyżej, aby uzyskać więcej informacji.
 
 ## <a name="speech-recognition-limits"></a>Limity rozpoznawania mowy
 

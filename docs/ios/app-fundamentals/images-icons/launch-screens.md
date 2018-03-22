@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/19/2018
-ms.openlocfilehash: 54ec41636f491708ea72585d3889fbbca85c8eb1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e07a6b72f2821e8cc65e0b0d690dbadf1a6713b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="launch-screens"></a>Uruchamianie ekranów
 
@@ -179,7 +179,7 @@ W systemie iOS 8 (lub nowszy) dewelopera można tworzyć specjalne scenorysu Uni
 -----
 
 > [!NOTE]
-> **Uwaga**: A scenorysu używane jako ekran uruchamianie _musi_ obejmują tylko prostego, wbudowanego elementy interfejsu użytkownika i **nie** nie wszystkie obliczenia ani nie pochodzi od klasy niestandardowej.
+> Scenorysu używane jako ekran uruchamianie _musi_ obejmują tylko prostego, wbudowanego elementy interfejsu użytkownika i **nie** nie wszystkie obliczenia ani nie pochodzi od klasy niestandardowej.
 
 Aby uzyskać więcej informacji o tworzeniu ekranu uruchamiania Unified scenorysu, zobacz [dynamiczne ekrany uruchamianie](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) sekcji [Unified Scenorys](~/ios/user-interface/storyboards/unified-storyboards.md) przewodnik.
 

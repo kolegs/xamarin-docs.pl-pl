@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>Skoroszyty interakcyjne
 
@@ -32,7 +32,7 @@ Okno edycji kodu zawiera uzupełniania kodu, kolorowanie składni wbudowanego li
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "Okno edycji kodu udostępnia uzupełniania kodu, kolorowanie składni wbudowanego live Diagnostyka i obsługi instrukcji wiele wierszy")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Skoroszyty Xamarin są zapisywane w `.workbook` pliku, który jest plikiem CommonMark z niektóre metadane u góry (zobacz [typów plików skoroszytów](#Workbooks_Files_Types) więcej szczegółów, w jaki sposób można zapisać skoroszyty).
+Skoroszyty Xamarin są zapisywane w `.workbook` pliku, który jest plikiem CommonMark z niektóre metadane u góry (zobacz [typów plików skoroszytów](#workbooks-files-types) więcej szczegółów, w jaki sposób można zapisać skoroszyty).
 
 ### <a name="nuget-package-support"></a>Obsługa pakietu NuGet
 
@@ -132,7 +132,7 @@ Katalog musi zawierać `index.workbook` pliku, który jest skoroszytu zwykłego 
 Jeśli jako zwykły tekst `.workbook` pliku, który odwołuje się do zasobów z jego samego katalogu jest otwarty w skoroszytach 0.99.3 lub później, po jego zapisaniu go zostanie skonwertowana na `.workbook` pakietu. Dotyczy to zarówno komputerów Mac i systemu Windows.
 
 > [!NOTE]
-> **Uwaga:** użytkowników systemu Windows zostanie otwarty `package.workbook\index.workbook` pliku bezpośrednio, ale w przeciwnym razie pakietu będą zachowywać się takie same jak na komputerach Mac.
+> Użytkownicy systemu Windows zostanie otwarty `package.workbook\index.workbook` pliku bezpośrednio, ale w przeciwnym razie pakietu będą zachowywać się takie same jak na komputerach Mac.
 
 ### <a name="archives"></a>Archiwa
 

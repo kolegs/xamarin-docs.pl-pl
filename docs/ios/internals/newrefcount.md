@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 723a9c4a052f7f432ba0f32ec501af3221b2696f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-reference-counting-system"></a>Nowy System zliczania odwołania
 
@@ -46,7 +46,7 @@ Należy pamiętać, że te opcje został usunięty w nowszej wersji programu Vis
 
     
 > [!IMPORTANT]
-> **Uwaga:** wcześniejszej wersji tej funkcji została wokół ponieważ MonoTouch 5.2 ale była dostępna tylko dla **sgen** jako eksperymentalne podglądu. Ta wersja nowego, rozszerzone teraz jest również dostępny do **Boehm** modułu zbierającego elementy bezużyteczne.
+> Ponieważ MonoTouch 5.2 ale była dostępna tylko dla starszych wersji tej funkcji została wokół **sgen** jako eksperymentalne podglądu. Ta wersja nowego, rozszerzone teraz jest również dostępny do **Boehm** modułu zbierającego elementy bezużyteczne.
 
 
 W przeszłości pojawiły się dwa rodzaje obiekty zarządzane przez Xamarin.iOS: te, które zazwyczaj były jedynie otokę obiekt natywny (obiektów równorzędnych) i tymi, które rozszerzony lub włączyć nowe funkcje (obiekty pochodne) - przechowując bardzo stan w pamięci. Poprzednio było możliwe, że firma Microsoft może rozszerzyć obiektu równorzędnego o stanie (na przykład przez dodanie obsługi zdarzeń języka C#), ale że nie możemy udostępnić obiekt Przejdź, której nie istniały odwołania, a następnie zbierane. Może to spowodować awarię później (np. Jeśli środowiska uruchomieniowego języka Objective-C wywołanie zwrotne do zarządzanego obiektu).

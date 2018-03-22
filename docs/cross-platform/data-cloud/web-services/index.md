@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Wprowadzenie do usługi sieci Web
 
@@ -29,8 +29,8 @@ W tym artykule omówiono następujące zagadnienia:
 Dla klientów korzystających z platformy Xamarin.Forms, są kompletne przykłady każdego z tych technologii w [usługi sieci Web platformy Xamarin.Forms](~/xamarin-forms/data-cloud/index.md) dokumentacji.
 
 > [!IMPORTANT]
-> **Uwaga dotycząca platformy Xamarin.iOS:** w systemie iOS 9, zabezpieczeń transportu aplikacji (ATS) wymusza bezpiecznego połączenia między zasobami Internetu (na przykład serwera zaplecza aplikacji) i aplikacji, zapobiegając w ten sposób przypadkowego ujawnienia informacji poufnych. Ponieważ ATS jest domyślnie włączone w aplikacje dla systemu iOS 9, wszystkie połączenia będą podlegać ATS wymagania dotyczące zabezpieczeń. W przypadku połączeń nie spełniają tych wymagań, zakończy się niepowodzeniem z powodu wyjątku.
-
+> W systemie iOS 9 zabezpieczeń transportu aplikacji (ATS) wymusza bezpiecznego połączenia między zasobami Internetu (na przykład serwera zaplecza aplikacji) i aplikacji, zapobiegając w ten sposób przypadkowego ujawnienia informacji poufnych.
+> Ponieważ ATS jest domyślnie włączone w aplikacje dla systemu iOS 9, wszystkie połączenia będą podlegać ATS wymagania dotyczące zabezpieczeń. W przypadku połączeń nie spełniają tych wymagań, zakończy się niepowodzeniem z powodu wyjątku.
 
 Użytkownik może zrezygnować z ATS Jeśli nie jest możliwe użycie `HTTPS` protokołu i zabezpieczania komunikacji dla zasobów w Internecie. Można to osiągnąć przez zaktualizowanie aplikacji **Info.plist** pliku. Aby uzyskać więcej informacji, zobacz [zabezpieczeń transportu aplikacji](~/ios/app-fundamentals/ats.md).
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **Uwaga:** podczas narzędzi, takich jak ServiceStack i RestSharp nawiązywanie połączenia i korzystać z REST usługi, jest czasami nieuproszczony użycie XML lub JSON, który nie jest zgodny z normą _DataContract_ szeregowanie konwencje. W razie potrzeby wywołać żądanie i obsługi odpowiednich serializacji jawnie za pomocą biblioteki ServiceStack.Text omówiony poniżej.
+> Podczas narzędzi, takich jak ServiceStack i RestSharp nawiązywanie połączenia i korzystać z REST usługi, jest czasami nieuproszczony użycie XML lub JSON, który nie jest zgodny z normą _DataContract_ szeregowanie Konwencji. W razie potrzeby wywołać żądanie i obsługi odpowiednich serializacji jawnie za pomocą biblioteki ServiceStack.Text omówiony poniżej.
 
 
 <a name="Options_for_consuming_RESTful_data" />

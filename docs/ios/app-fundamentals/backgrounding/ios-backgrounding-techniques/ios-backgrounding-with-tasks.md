@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding z zadaniami
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 Proces rejestracji pary zadań z unikatowym identyfikatorem `taskID`i jest zawijana w odpowiadającym `BeginBackgroundTask` i `EndBackgroundTask` wywołania. Aby wygenerować identyfikator, możemy wywoływania `BeginBackgroundTask` metoda `UIApplication` obiektu, a następnie uruchom długotrwałe zadanie, zazwyczaj w nowym wątku. Po zakończeniu zadania nazywamy `EndBackgroundTask` i przebiegu w tym samym identyfikatorze. Jest to ważne, ponieważ iOS spowoduje przerwanie aplikacji, jeśli `BeginBackgroundTask` wywołania nie ma odpowiadającego mu `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> **Uwaga**: zadania tła palety można uruchomić w wątku głównego lub wątku w tle, w zależności od potrzeb aplikacji.
+> Bezpieczne tła zadań można uruchamiać na wątku głównego lub wątku w tle, w zależności od potrzeb aplikacji.
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>Wykonywanie zadań podczas DidEnterBackground
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 Zaczniemy przez zastąpienie `DidEnterBackground` metody w `AppDelegate`, gdzie możemy zarejestrować nasze zadania za pomocą `BeginBackgroundTask` jak robiliśmy w poprzednim przykładzie. Następnie możemy zduplikować nowego wątku i wykonać naszych długotrwałe zadanie. Należy pamiętać, że `EndBackgroundTask` teraz wywołanie z wewnątrz długotrwałe zadanie, ponieważ `DidEnterBackground` metoda ma już zwróciła.
 
 > [!IMPORTANT]
-> **Uwaga**: używa iOS [programu alarmowego mechanizm](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zapewnienie reaguje interfejsu użytkownika aplikacji. Aplikacja, która zużywa zbyt dużo czasu, w `DidEnterBackground` będzie odpowiadać w interfejsie użytkownika. Zasób wyłączyć zadania w tle umożliwia `DidEnterBackground` do zwrócenia w odpowiednim czasie, pamiętając reakcji interfejsu użytkownika i uniemożliwia programu alarmowego skasowanie aplikacji.
+> iOS używa [programu alarmowego mechanizm](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zapewnienie reaguje interfejsu użytkownika aplikacji. Aplikacja, która zużywa zbyt dużo czasu, w `DidEnterBackground` będzie odpowiadać w interfejsie użytkownika. Zasób wyłączyć zadania w tle umożliwia `DidEnterBackground` do zwrócenia w odpowiednim czasie, pamiętając reakcji interfejsu użytkownika i uniemożliwia programu alarmowego skasowanie aplikacji.
 
 
 ## <a name="handling-background-task-time-limits"></a>Limit czasu zadania obsługi w tle
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **Uwaga**: należy unikać wykonywania wywołań do aktualizacji interfejsu użytkownika w tle w kodzie 6 zgodne z systemem iOS, iOS 6, nie obsługuje aktualizacje interfejsu użytkownika w tle, a zakończy aplikacji.
+> Należy unikać wykonywania wywołań do aktualizacji interfejsu użytkownika w tle w kodzie 6 zgodne z systemem iOS, iOS 6, nie obsługuje aktualizacje interfejsu użytkownika w tle, a zakończy aplikacji.
 
 
 `NSURLSession` Interfejsu API zawiera bogaty zestaw funkcji, aby obsługiwać uwierzytelnianie, zarządzania transferami nie powiodło się i raportować błędy po stronie klienta — ale nie po stronie serwera —. Pomaga mostek, który przerw w zadaniu wykonawczego wprowadzone w systemie iOS 7, a także zapewnia obsługę transferu dużych plików, szybkie i niezawodne. Następna sekcja opisuje tej drugiej funkcji.

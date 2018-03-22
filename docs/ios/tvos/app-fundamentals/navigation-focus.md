@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fe1358d330c2a0fd94016853cedeabe094c394da
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Praca z nawigacji i fokus
 
@@ -123,7 +123,7 @@ Niestandardowych elementów, które dziedziczą z `UIView` lub `UIViewController
 Żądanie, że aparat fokus przenosi fokus z powrotem do `PreferredFocusedView` elementu interfejsu użytkownika, wywołania `SetNeedsUpdateFocus` kontrolera widoku.
 
 > [!IMPORTANT]
-> **Uwaga:** wywoływania `SetNeedsUpdateFocus` ma znaczenie tylko wtedy, gdy kontroler widoku jest wywoływana przed zawiera widok, który aktualnie ma fokus.
+> Wywoływanie `SetNeedsUpdateFocus` ma znaczenie tylko wtedy, gdy kontroler widoku jest wywoływana przed zawiera widok, który aktualnie ma fokus.
 
 
 

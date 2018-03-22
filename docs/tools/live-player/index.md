@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c636e706e702afa23c36a3d6c618f3e02c2582f1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
@@ -20,8 +20,8 @@ Xamarin Live Player umożliwia wprowadzanie zmian na żywo do aplikacji i mają 
 
 [![Xamarin Player na żywo: Kodu, skanowania testu](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Włącz *Xamarin Live Player* w **preferencje**, a następnie wybierz pozycję z **urządzeń** listy.
-2. Debugowanie lub Uruchom, a następnie przeskanuj pary QRCodeto urządzenia.
+1. Włącz *Xamarin Live Player* w **preferencje**, następnie wybierz urządzenie z **urządzeń** listy.
+2. Debugowanie lub Uruchom, a następnie Zeskanuj kod QR, tak aby skojarzyć urządzenia.
 3. Aplikacja jest uruchamiana w prawo na swój telefon lub tablet.
 
 ## <a name="xamarin-live-player-setupinstallmd"></a>[Ustawienia odtwarzacza na żywo Xamarin](install.md)

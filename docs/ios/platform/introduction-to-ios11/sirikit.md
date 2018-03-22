@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6331912eedcd52df45c0d25d83a5b599c55ca7d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -146,12 +146,10 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 Musi dziedziczyć po klasie `INExtension`, i próbka przechodzi do obsługi list i uwagi dotyczące lokalizacji docelowych, dlatego też implementuje `IINNotebookDomainHandling`.
 
 > [!NOTE]
-> **Uwagi dotyczące nazewnictwa:** Brak Konwencji w .NET dla interfejsów do wielką prefiksem `I`, które odpowiada Xamarin powiązań protokołów z zestawu SDK dla systemu iOS.
->
-> Xamarin zachowuje również nazwy typu z systemem iOS i Apple używa dwóch pierwszych znaków nazwy typu do uwzględnienia w ramach należącego do typu.
->
-> Aby uzyskać `Intents` framework, typy są poprzedzane prefiksem `IN*` (np.) `INExtension`), ale są one _nie_ interfejsów.
-> Również wynika, że protokołów (które stają się interfejsów w języku C#) na końcu dwa `I`s, takich jak `IINAddTasksIntentHandling`.
+> - Brak Konwencji w .NET dla interfejsów do wielką prefiksem `I`, które odpowiada Xamarin powiązań protokołów z zestawu SDK dla systemu iOS.
+> - Xamarin zachowuje również nazwy typu z systemem iOS i Apple używa dwóch pierwszych znaków nazwy typu do uwzględnienia w ramach należącego do typu.
+> - Aby uzyskać `Intents` framework, typy są poprzedzane prefiksem `IN*` (np.) `INExtension`), ale są one _nie_ interfejsów.
+> - Również wynika, że protokołów (które stają się interfejsów w języku C#) na końcu dwa `I`s, takich jak `IINAddTasksIntentHandling`.
 
 #### <a name="handling-intents"></a>Opcje obsługi
 

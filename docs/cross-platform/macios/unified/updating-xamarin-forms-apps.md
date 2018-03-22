@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualizowanie istniejącej aplikacji platformy Xamarin.Forms
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 Czasami zostanie wyświetlony błąd podobny do poniższego po zaktualizowaniu pakietu NuGet platformy Xamarin.Forms. Występuje, gdy NuGet updater nie całkowicie usunąć odwołania do starszych wersji z Twojego **csproj** plików.
 
->Twoje\_PROJECT.csproj: błąd: ten projekt zawiera odwołania do pakietów NuGet Brak na tym komputerze. Włącz Przywracanie pakietu NuGet, aby je pobrać.  Aby uzyskać więcej informacji zobacz http://go.microsoft.com/fwlink/?LinkID=322105. Brak pliku jest... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.TARGETS. (TWOJEJ\_PROJEKTU)
+>Twoje\_PROJECT.csproj: błąd: ten projekt zawiera odwołania do pakietów NuGet Brak na tym komputerze. Włącz Przywracanie pakietu NuGet, aby je pobrać.  Aby uzyskać więcej informacji, zobacz http://go.microsoft.com/fwlink/?LinkID=322105. Brak pliku jest... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.TARGETS. (TWOJEJ\_PROJEKTU)
 
 Aby usunąć te błędy, otwórz **csproj** plik w edytorze tekstów i Znajdź `<Target` elementy, które odwołują się do starszych wersji platformy Xamarin.Forms, takich jak pokazano poniżej elementu. Należy ręcznie usunąć to cały element z **csproj** plik i zapisać zmiany.
 
@@ -226,7 +226,7 @@ Gdy firma Microsoft przyczyniły się zmiany NuGet do pracy z obsługą Unified 
 Do tego czasu, podobnie jak składniki musisz przełączyć dowolnego pakietu NuGet, zostały uwzględnione w projekcie na wersję obsługującą interfejsy API Unified i wykonaj czystą kompilację później.
 
 > [!IMPORTANT]
-> **Uwaga:** Jeśli wystąpił błąd w formularzu _"błąd 3 nie może zawierać zarówno"monotouch.dll"i"Xamarin.iOS.dll"w tym samym projekcie platformy Xamarin.iOS —"Xamarin.iOS.dll"odwołuje się do jawnie, gdy"monotouch.dll"odwołuje się do niego" xxx Wersja = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ po przekonwertowaniu aplikacji do interfejsów API Unified, jest zazwyczaj z powodu konieczności składnika lub pakietu NuGet w projekcie, który nie został jeszcze zaktualizowany do interfejsu API Unified. Należy usunąć istniejący składnik/NuGet, aktualizacja do wersji, która obsługuje interfejsy API Unified i wykonać czystą kompilację.
+> Jeśli masz wystąpił błąd w formie _"błąd 3 nie może zawierać zarówno"monotouch.dll"i"Xamarin.iOS.dll"w tym samym projekcie platformy Xamarin.iOS —"Xamarin.iOS.dll"odwołuje się do jawnie, gdy"monotouch.dll"odwołuje się do niego" xxx, wersja = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ po przekonwertowaniu aplikacji do interfejsów API Unified, jest zazwyczaj z powodu konieczności składnika lub pakietu NuGet w projekcie, który nie został jeszcze zaktualizowany do interfejsu API Unified. Należy usunąć istniejący składnik/NuGet, aktualizacja do wersji, która obsługuje interfejsy API Unified i wykonać czystą kompilację.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Włączanie 64-bitowym kompilacji aplikacji platformy Xamarin.iOS
 

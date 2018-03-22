@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Rozwiązywanie problemów
 
@@ -33,13 +33,6 @@ Ta strona zawiera dodatkowe informacje i obejścia funkcji nadal w fazie tworzen
 ### <a name="general"></a>Ogólne
 
 <a name="deploy" />
-<!--
-* You cannot deploy to the App Store *from within Visual Studio for Mac or Visual Studio*
-    in the current release. You should create an **Archive** in Visual Studio for Mac
-    and then switch to Xcode to upload the archive to iTunes Connect. Visual Studio
-    is not currently supported (but will be a future release). Refer to the
-    [deployment guide](~/ios/watchos/deploy-test/appstore.md) for more information.
--->
 
 - Wcześniejszych wersjach programu Visual Studio for Mac niepoprawnie Pokaż jedną z **AppleCompanionSettings** ikony jako pikseli 88 x 88; co skutkuje **Brak ikony błędu** przy próbie przesłać do aplikacji Magazyn.
     Ikona powinny być 87 x 87 pikseli (29 jednostki dla  **@3x**  siatkówki ekrany). Nie można rozwiązać ten problem w programie Visual Studio dla komputerów Mac — albo zasób obrazu w środowisku Xcode edycji lub ręcznie edytować **Contents.json** plików (do dopasowania [w tym przykładzie](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
@@ -47,14 +40,6 @@ Ta strona zawiera dodatkowe informacje i obejścia funkcji nadal w fazie tworzen
 - Jeśli projekt rozszerzenia czujki **Info.plist > identyfikator pakietu WKApp** nie jest [poprawnie ustawić](~/ios/watchos/get-started/project-references.md) odpowiadające aplikacji czujki **identyfikator pakietu**, debuger będą mogły nawiązać połączenia i Visual Studio for Mac będzie czekać z komunikatem *"Oczekiwanie na debugera połączyć"*.
 
 - Debugowanie jest obsługiwane w **powiadomienia** tryb, ale mogą być nieprawidłowe. Ponawianie próby czasami będzie działać. Upewnij się, że aplikacja czujki **Info.plist** `WKCompanionAppBundleIdentifier` ma ustawioną wartość odpowiada identyfikator pakietu aplikacji systemu iOS/kontenera (ie. ten, który jest uruchamiany na telefonie iPhone).
-
-<!--
-- **Can't launch application on Watch simulator.** This seems to
-    be an issue with the iOS Simulator hanging when trying to
-    install an app that has changed. Xcode release notes (beta 4)
-    includes a similar known issue:
-    If the issue persists, reset the Simulator (**iOS Simulator > Reset Content and Settings...**).
--->
 
 - iOS projektanta nie są wyświetlane strzałki punktu wejścia dla kontrolerów interfejsu oka lub powiadomienia.
 
@@ -69,15 +54,6 @@ Ta strona zawiera dodatkowe informacje i obejścia funkcji nadal w fazie tworzen
 ### <a name="visual-studio"></a>Visual Studio
 
 Obsługa systemu iOS projektanta dla zestawu czujki *wymaga* rozwiązania, które są skonfigurowane poprawnie. Jeśli nie ustawiono odwołania do projektu (zobacz [jak ustawić odwołania](~/ios/watchos/get-started/project-references.md)) powierzchni projektu nie będzie działał prawidłowo, a następnie.
-
-<!--
-* New Watch Kit apps created in Visual Studio might not allow
-    starting in Notifications mode.
-
-* You cannot deploy to the App Store from Visual Studio (see [notes above](#deploy)
-    and the [deployment guide](~/ios/watchos/deploy-test/appstore.md)). Use
-    Visual Studio for Mac and Xcode on your Mac Build Host.
-    -->
 
 <a name="noalpha" />
 
@@ -109,11 +85,10 @@ with an alpha channel. Icons should not have an alpha channel.
 ## <a name="manually-adding-interface-controller-files"></a>Ręczne dodanie plików kontrolera interfejsu
 
 > [!IMPORTANT]
-> Obsługa zestawu czujki platformy Xamarin w obejmuje projektowanie scenorys czujki w Projektancie iOS (zarówno w programie Visual Studio dla komputerów Mac i Visual Studio), które nie wymagają kroki opisane poniżej. Po prostu nazwę kontrolera interfejsu klasy w Visual Studio for Mac właściwości konsoli i kodu C#, które pliki zostaną utworzone automatycznie.
+> Obsługa WatchKit dla platformy Xamarin obejmuje projektowanie scenorys czujki w Projektancie iOS (zarówno w programie Visual Studio dla komputerów Mac i Visual Studio), które nie wymagają kroki opisane poniżej. Po prostu nazwę kontrolera interfejsu klasy w Visual Studio for Mac właściwości konsoli i kodu C#, które pliki zostaną utworzone automatycznie.
 
 
 *Jeśli* używasz konstruktora interfejsu Xcode, wykonaj następujące kroki, aby utworzyć nowe kontrolery interfejsu aplikacji czujki i Włącz synchronizację z Xcode, dzięki czemu gniazda i akcji dostępnych w języku C#:
-
 
 1. Otwórz aplikację czujki **Interface.storyboard** w **Xcode interfejsu konstruktora**.
     
@@ -256,7 +231,7 @@ Parametr należy zaktualizować w celu uwzględnienia aplikacji jest `launchsimw
 Pełna ścieżka do pakietu aplikacji głównej *aplikacji systemu iOS, który zawiera wyrażenie kontrolne aplikacji i rozszerzenia*.
 
 > [!NOTE]
-> *Uwaga:* należy podać dotyczy *pliku .app aplikacji iPhone*, tj. jeden który będzie wdrażany w symulatorze systemu iOS i zawiera rozszerzenia czujki i obejrzyj aplikacji.
+> Należy podać dotyczy *pliku .app aplikacji iPhone*, tj. jeden który będzie wdrażany w symulatorze systemu iOS i zawiera rozszerzenia czujki i obejrzyj aplikacji.
 
 Przykład:
 

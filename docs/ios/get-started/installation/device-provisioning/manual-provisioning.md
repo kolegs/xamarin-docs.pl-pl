@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>Ręcznego inicjowania obsługi administracyjnej
 
@@ -85,7 +85,7 @@ Profil Developer zawiera certyfikaty, ich skojarzone klucze i żaden profil inic
 -----
 
 > [!WARNING]
-> **Uwaga:** utraty certyfikatu i skojarzonych kluczy mogą być bardzo dużo, trzeba będzie odwoływanie istniejących certyfikatów i ponowne inicjowanie obsługi administracyjnej wszystkie skojarzone urządzenia, włącznie z tymi zarejestrowany dla wdrożenia ad hoc. Po skonfigurowaniu pomyślnie programowanie certyfikaty, eksportowanie kopii zapasowej i zapisanie ich w bezpiecznym miejscu. Aby uzyskać więcej informacji, jak to zrobić, zapoznaj się z sekcją eksportowanie i importowanie certyfikatów oraz profile [obsługi certyfikatów](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) przewodnik w dokumentów firmy Apple.
+> Utraty certyfikatu i skojarzonych kluczy mogą być bardzo dużo, trzeba będzie odwoływanie istniejących certyfikatów i ponowne inicjowanie obsługi administracyjnej wszystkie skojarzone urządzenia, włącznie z tymi zarejestrowany dla wdrożenia ad hoc. Po skonfigurowaniu pomyślnie programowanie certyfikaty, eksportowanie kopii zapasowej i zapisanie ich w bezpiecznym miejscu. Aby uzyskać więcej informacji, jak to zrobić, zapoznaj się z sekcją eksportowanie i importowanie certyfikatów oraz profile [obsługi certyfikatów](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) przewodnik w dokumentów firmy Apple.
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ Nowe certyfikaty lub profile inicjowania obsługi administracyjnej jest dostępn
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Uwaga:** może być konieczne do zatrzymywania i ponownego uruchomienia programu Visual Studio for Mac zobaczą żadnych nowych lub zmodyfikowanych certyfikatów ani profile zaktualizowany przez Xcode.
+> Być może trzeba zatrzymać i uruchomić ponownie program Visual Studio dla komputerów Mac, zanim zobaczą żadnych certyfikatów nowe lub zmodyfikowane ani zaktualizowany w środowisku Xcode profile.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **Uwaga:** może być konieczne zatrzymać i uruchomić ponownie program Visual Studio przed zobaczą żadnych certyfikatów nowe lub zmodyfikowane ani zaktualizowany w środowisku Xcode profilów.
+> Być może trzeba zatrzymać i uruchomić ponownie program Visual Studio przed zobaczą żadnych nowych lub zmodyfikowanych certyfikatów ani profile zaktualizowany przez Xcode.
 
 -----
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 357528c559de36329ca4bf12ab2597247a17222d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-transport-security"></a>Zabezpieczenia transportu aplikacji
 
@@ -82,7 +82,7 @@ Poziom TLS jest kontrolowany przez usługę sieci web, które są wykorzystywani
 W zależności od serwera, że trwa konwersacja (zwłaszcza, jeśli jest usługą strona 3), może być konieczne wyłączenie utajnienie lub wybierz niższej TLS. Zobacz [Konfigurowanie opcji ATS](#Configuring-ATS-Options) sekcji poniżej, aby uzyskać więcej informacji.
 
 > [!IMPORTANT]
-> **Uwaga:** zabezpieczeń transportu aplikacji nie ma zastosowania do przy użyciu aplikacji Xamarin **implementacje zarządzane HTTPClient**. Dotyczy on połączeń za pomocą CFNetwork **implementacje HTTPClient** lub **NSURLSession HTTPClient implementacje** tylko.
+> Zabezpieczenia transportu aplikacji nie ma zastosowania do przy użyciu aplikacji Xamarin **implementacje zarządzane HTTPClient**. Dotyczy on połączeń za pomocą CFNetwork **implementacje HTTPClient** lub **NSURLSession HTTPClient implementacje** tylko.
 
 ### <a name="setting-the-httpclient-implementation"></a>Ustawienie wdrażania HTTPClient
 
@@ -138,7 +138,7 @@ Zalety:
 
 Podczas próby połączenia z Internetem bezpośrednio lub z widoku sieci web w systemie iOS 9, może być błąd pojawia się w postaci:
 
-> Zabezpieczenia transportu aplikacji zablokował obciążenia zasobu HTTP (http://www.-the-blocked-domain.com) jako zwykły tekst, ponieważ jest niebezpieczne. Wyjątki tymczasowego można skonfigurować za pomocą pliku Info.plist aplikacji.
+> Zabezpieczenia transportu aplikacji zablokował jako zwykły tekst HTTP (http://www.-the-blocked-domain.com) obciążeniu zasobów, ponieważ jest niebezpieczne. Wyjątki tymczasowego można skonfigurować za pomocą pliku Info.plist aplikacji.
 
 W iOS9 zabezpieczeń transportu aplikacji (ATS) wymusza bezpiecznego połączenia między zasobami Internetu (na przykład serwera zaplecza aplikacji) i aplikacji. Ponadto ATS wymaga komunikacji przy użyciu `HTTPS` protokołu i być szyfrowana przy użyciu protokołu TLS w wersji 1.2 z utajnienie wysokiego poziomu komunikacji interfejsu API.
 
@@ -243,7 +243,7 @@ W programie Visual Studio for Mac, kliknij dwukrotnie `Info.plist` w pliku **Eks
 [![](ats-images/ats02.png "Widok źródła w pliku Info.plist")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga:** Jeśli aplikacja wymaga połączenia niezabezpieczonego witryny sieci Web, należy **zawsze** wprowadź domenę jako wyjątków za pomocą `NSExceptionDomains` zamiast wyłączania ATS całkowicie przy użyciu `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` należy używać tylko extreme sytuacji awaryjnych.
+> Jeśli aplikacja wymaga połączenia niezabezpieczonego witryny sieci Web, należy **zawsze** wprowadź domenę jako wyjątków za pomocą `NSExceptionDomains` zamiast wyłączania ATS całkowicie przy użyciu `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` należy używać tylko extreme sytuacji awaryjnych.
 
 
 

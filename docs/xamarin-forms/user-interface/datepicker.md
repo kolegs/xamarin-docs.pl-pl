@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ad214b3986d039de40f8ed46b300e8d3cfd06328
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-datepicker"></a>Za pomocą selektora daty
 
@@ -78,7 +78,7 @@ Można użyć opcji nieograniczonego układ poziomy, takich jak `Center`, `Start
             ··· />
 ```
 
-Jednak nie jest to zalecane. W zależności od ustawienia `Format` właściwości wybrane daty mogą wymagać różnych wyświetlania szerokości. Na przykład ciąg formatu "D" powoduje, że `DateTime` na potrzeby wyświetlania dat w formacie długim i "Środa, 12 września 2018" wymaga szerokości ekranu większą niż "Piątek, 4 może 2018." W zależności od platformy, może spowodować tej różnicy `DateTime` widoku, aby zmienić szerokość w układzie lub wyświetlania do skrócenia.
+Jednak nie jest to zalecane. W zależności od ustawienia `Format` właściwości wybrane daty mogą wymagać różnych wyświetlania szerokości. Na przykład ciąg formatu "D" powoduje, że `DateTime` na potrzeby wyświetlania dat w formacie długim i "Środa, 12 września 2018" wymaga szerokości ekranu większą niż "Piątek, 4 może 2018". W zależności od platformy, może spowodować tej różnicy `DateTime` widoku, aby zmienić szerokość w układzie lub wyświetlania do skrócenia.
 
 > [!TIP]
 > Najlepiej użyć domyślnego `HorizontalOptions` ustawienie `Fill` z `DatePicker`i nie należy używać szerokości `Auto` podczas umieszczania `DatePicker` w `Grid` komórki.
@@ -139,7 +139,7 @@ Oto pliku XAML:
 </ContentPage>
 ```
 
-Każdy `DatePicker` przypisano `Format` właściwości "D" w formacie daty długiej. Zauważ również, że `endDatePicker` obiekt ma powiązanie, którego celem jest jego `MinimumDate` właściwości. Źródło powiązania jest wybrane `Date` właściwość `startDatePicker` obiektu. Dzięki temu, że data zakończenia jest zawsze później lub taka sama jak Data rozpoczęcia. Oprócz dwóch `DatePicker` obiektów, `Switch` etykietą "Dołącz zarówno dni w sumie". 
+Każdy `DatePicker` przypisano `Format` właściwości "D" w formacie daty długiej. Zauważ również, że `endDatePicker` obiekt ma powiązanie, którego celem jest jego `MinimumDate` właściwości. Źródło powiązania jest wybrane `Date` właściwość `startDatePicker` obiektu. Dzięki temu, że data zakończenia jest zawsze później lub taka sama jak Data rozpoczęcia. Oprócz dwóch `DatePicker` obiektów, `Switch` etykietą "Obejmują zarówno dni w sumie". 
 
 Dwa `DatePicker` widoki mają procedurami obsługi dołączonymi do `DateSelected` zdarzenia i `Switch` dołączył obsługi do jego `Toggled` zdarzeń. Te programy obsługi zdarzeń znajdują się w pliku CodeBehind i wyzwolić nowego obliczenia dni między dwoma datami:
 

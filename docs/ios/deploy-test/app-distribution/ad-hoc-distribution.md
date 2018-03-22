@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ad-hoc-distribution"></a>Dystrybucji Ad Hoc
 
@@ -39,7 +39,7 @@ Nawet wtedy, gdy planujesz wydanie aplikacji platformy Xamarin.iOS wewnętrznych
 Następnej sekcji opisano sposób uzyskać certyfikat dystrybucji i profil inicjowania obsługi administracyjnej dystrybucji.
 
 > [!NOTE]
->  Uwaga: Tylko agentów zespołu i Administratorzy mogą tworzyć certyfikaty dystrybucji i profile inicjowania obsługi.
+> Tylko agentów zespołu i Administratorzy, można utworzyć dystrybucji certyfikatów oraz profile inicjowania obsługi.
 
 <a name="createcertificate" />
 

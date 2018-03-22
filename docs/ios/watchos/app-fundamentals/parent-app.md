@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dab1f5d571473fbbdb12ef78eed3788165c3f0a6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82f85808da6776f2f718b21b2e87ff6d4d8087fd
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-the-parent-application"></a>Praca z aplikacji nadrzędnej
 
 _Udostępnianie danych aplikacji z systemami iOS i obejrzyj w watchOS 1_
 
 > [!IMPORTANT]
-> **Uwaga:** podczas uzyskiwania dostępu do aplikacji nadrzędnej tylko za pomocą poniższych przykładów działa na aplikacje czujki watchOS 1.
+> Uzyskiwanie dostępu do aplikacji nadrzędnej tylko za pomocą poniższych przykładów działa na aplikacje czujki watchOS 1.
 
 
 Istnieją różne sposoby komunikacji między aplikacją czujki i aplikacji dla systemu iOS, które jest powiązane z:

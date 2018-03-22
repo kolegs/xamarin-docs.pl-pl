@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 46118b5879589c963898ab7f60c61bd8e38f3900
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualizowanie istniejącej aplikacji Mac
 
@@ -116,7 +116,7 @@ Gdy firma Microsoft przyczyniły się zmiany NuGet do pracy z obsługą Unified 
 Do tego czasu, podobnie jak składniki musisz przełączyć dowolnego pakietu NuGet, zostały uwzględnione w projekcie na wersję obsługującą interfejsy API Unified i wykonaj czystą kompilację później.
 
 > [!IMPORTANT]
-> **Uwaga:** Jeśli wystąpił błąd w formularzu _"błąd 3 nie może zawierać zarówno"monomac.dll"i"Xamarin.Mac.dll"w tym samym projekcie Xamarin.Mac —"Xamarin.Mac.dll"odwołuje się do jawnie, gdy"monomac.dll"odwołuje się do niego" xxx Wersja = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ po przekonwertowaniu aplikacji do interfejsów API Unified, jest zazwyczaj z powodu konieczności składnika lub pakietu NuGet w projekcie, który nie został jeszcze zaktualizowany do interfejsu API Unified. Należy usunąć istniejący składnik/NuGet, aktualizacja do wersji, która obsługuje interfejsy API Unified i wykonać czystą kompilację.
+> Jeśli wystąpił błąd w formularzu _"błąd 3 nie może zawierać zarówno"monomac.dll"i"Xamarin.Mac.dll"w tym samym projekcie Xamarin.Mac —"Xamarin.Mac.dll"odwołuje się do jawnie, gdy"monomac.dll"odwołuje się do niego" xxx, wersja = 0.0.000, Culture = neutral, PublicKeyToken = null ""_ po przekonwertowaniu aplikacji do interfejsów API Unified, jest zazwyczaj z powodu konieczności składnika lub pakietu NuGet w projekcie, który nie został jeszcze zaktualizowany do interfejsu API Unified. Należy usunąć istniejący składnik/NuGet, aktualizacja do wersji, która obsługuje interfejsy API Unified i wykonać czystą kompilację.
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Włączanie 64-bitowym kompilacje Xamarin.Mac aplikacji
 

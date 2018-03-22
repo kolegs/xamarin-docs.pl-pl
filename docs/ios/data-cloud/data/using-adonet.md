@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b53f98206c100ed76f601937844bf182a6dc146c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8d7c942e0be52ed12fc20bc838e693af81dd989f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-adonet"></a>Za pomocą ADO.NET
 
@@ -43,7 +43,7 @@ Używamy `Mono.Data.Sqlite.SqliteConnection` klasy w celu utworzenia pliku pust�
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-> **Uwaga:** zmiennej dbPath należy określić zgodnie z regułami opisem we wcześniejszej części tego dokumentu.
+    > `dbPath` Zmiennej należy określić zgodnie z regułami opisem we wcześniejszej części tego dokumentu.
 
 2. **Tworzenie połączenia z bazą danych** — po utworzeniu pliku bazy danych SQLite można utworzyć obiektu połączenia dostępu do danych. Połączenie jest tworzony przy użyciu parametrów połączenia, które mają postać `Data Source=file_path`, jak pokazano poniżej:
 

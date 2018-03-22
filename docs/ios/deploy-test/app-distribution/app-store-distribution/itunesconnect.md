@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurowanie aplikacji w iTunes Connect
 
@@ -198,7 +198,7 @@ Ta część programu iTunes, z którą połączyć rekord aplikacji zawiera unik
 ### <a name="app-icon"></a>Ikona aplikacji
 
 > [!IMPORTANT]
->  **Uwaga**: ikony aplikacji nie są przesyłane za pośrednictwem usługi Connect iTunes. Musi być przesłane za pośrednictwem **AppIcon** obrazu zestawu do projektu **Assets.xcassets** pliku. Aby uzyskać więcej informacji, zobacz [ikonę aplikacji sklepu](~/ios/app-fundamentals/images-icons/app-store-icon.md) przewodnik.
+>  Ikony aplikacji nie są przesyłane za pośrednictwem usługi Connect iTunes. Musi być przesłane za pośrednictwem **AppIcon** obrazu zestawu do projektu **Assets.xcassets** pliku. Aby uzyskać więcej informacji, zobacz [ikonę aplikacji sklepu](~/ios/app-fundamentals/images-icons/app-store-icon.md) przewodnik.
 
 Ikona aplikacji jest kroju aplikacji do użytkowników, więc należy ją do zapamiętania i wyświetlania dobrze przy mały rozmiar. Ikony do zapamiętania są czyste, proste i natychmiast rozpoznawalnych.
 

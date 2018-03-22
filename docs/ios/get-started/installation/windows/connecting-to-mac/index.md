@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4f7b55fa859473e84298151bc08878bc2161192
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
 
@@ -39,7 +39,7 @@ Na poniższym diagramie przedstawiono proste omówienie przepływu pracy program
 [![przepływ pracy programowanie dla systemu iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](#commandline) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
+> Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](#commandline) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
 
 ## <a name="requirements"></a>Wymagania
 
@@ -53,7 +53,7 @@ Wymagania systemowe można znaleźć w [Xamarin.iOS instalowania w systemie Wind
 #### <a name="compatibility"></a>Zgodność
 
 > [!IMPORTANT]
->  Komputer z systemem Windows muszą używać tej samej wersji platformy Xamarin.iOS jako Mac, do którego jest podłączony. Aby to zapewnić jest spełnionych:                                                    
+> Komputer z systemem Windows muszą używać tej samej wersji platformy Xamarin.iOS jako Mac, do którego jest podłączony. Aby to zapewnić jest spełnionych:                                                    
 >                                                                                                                 
 > - **Visual Studio 2015 lub starszym**: Upewnij się, że jesteś w tym samym [kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) co program Visual Studio dla komputerów Mac.
 >                                                                                                                 
@@ -113,7 +113,7 @@ Wybierz Mac, klikając dwukrotnie w celu nawiązania połączenia. Przy pierwszy
 Agent użyje tych poświadczeń, aby utworzyć nowe połączenie SSH komputerów Mac. Jeśli próba powiedzie się, zostanie utworzony klucz SSH, a musi być [zarejestrowany](#commandline) w `authorized_keys` pliku w tym komputerów Mac. Podczas kolejnych połączeń agent zostanie użyty plik nazwy użytkownika i klucz do nawiązania połączenia najbardziej ostatnio połączony host znane kompilacji.
 
 > [!NOTE]
->  **Uwaga**: należy użyć _username_ i nie _Pełna nazwa_ podczas wprowadzania poświadczeń.  Można to sprawdzić za pomocą `whoami` polecenia w terminalu.  Na przykład w poniższym zrzucie ekranu, nazwa konta będzie **amyb** i nie **oparzenia Amy**:
+> Należy użyć _username_ i nie _Pełna nazwa_ podczas wprowadzania poświadczeń.  Można to sprawdzić za pomocą `whoami` polecenia w terminalu.  Na przykład w poniższym zrzucie ekranu, nazwa konta będzie **amyb** i nie **oparzenia Amy**:
 >
 > ![Znajdowanie nazwy użytkownika w terminalu aplikacji](images/image5.png)
 

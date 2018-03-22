@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>Wprowadzenie do technologii 3D Touch
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 `MaximumPossibleForce` Właściwość zwraca najwyższą możliwą wartość dla `Force` właściwość [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) oparty na urządzeniu z systemem iOS, że aplikacja jest uruchomiona na.
 
 > [!IMPORTANT]
-> **Uwaga:** spowoduje, że zmiany w wykorzystania `TouchesMoved` się zdarzenia, nawet jeśli X / Y współrzędne nie uległy zmianie. Z powodu tej zmiany w zachowaniu aplikacji systemu iOS powinna być przygotowana do `TouchesMoved` zdarzenia wywoływanej częściej i x / Y koordynuje być taki sam, jak ostatni `TouchesMoved` wywołania.
+> Zmiany w wykorzystania mogą spowodować `TouchesMoved` się zdarzenia, nawet jeśli X / Y współrzędne nie uległy zmianie. Z powodu tej zmiany w zachowaniu aplikacji systemu iOS powinna być przygotowana do `TouchesMoved` zdarzenia wywoływanej częściej i x / Y koordynuje być taki sam, jak ostatni `TouchesMoved` wywołania.
 
 
 
@@ -281,7 +281,7 @@ W tym miejscu możemy definiowania dwa statycznego szybkie czynności do wykonan
 * `UIApplicationShortcutItemType` -Jest wartość ciągu, który będzie używany do identyfikowania elementów w naszej aplikacji. Aby uzyskać więcej informacji, zobacz następującą sekcję.
 
 > [!IMPORTANT]
-> **Uwaga:** elementy skrótów szybkie działanie, które są ustawiane w `Info.plist` nie można uzyskać dostępu do pliku z `Application.ShortcutItems` właściwości. Są one tylko przekazywane w celu `HandleShortcutItem` obsługi zdarzeń. 
+> Szybkie elementy skrótów akcji, które są ustawiane w `Info.plist` nie można uzyskać dostępu do pliku z `Application.ShortcutItems` właściwości. Są one tylko przekazywane w celu `HandleShortcutItem` obsługi zdarzeń. 
 
 
 

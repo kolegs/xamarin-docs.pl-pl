@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS Szybki Start
 
@@ -90,7 +90,7 @@ Na ekranie uruchamiania kliknij **nowy projekt...**  do tworzenia nowego rozwią
   ![](hello-ios-quickstart-images/image8new.png "Przeciągnij etykietę na powierzchni projektowej obszaru w Centrum")
 
   > [!NOTE]
-> **Uwaga:** można uzupełnić **konsoli właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **Widok > konsole**.
+  > Można wyświetlić **konsoli właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **Widok > konsole**.
 
 9. Uchwyty z *przeciąganie formanty* (kółka wokół formantu) i szersze etykietę:
 
@@ -268,9 +268,8 @@ Na ekranie uruchamiania kliknij **nowy projekt...**  do tworzenia nowego rozwią
 
   ![](hello-ios-quickstart-images/image27new.png "Naciśnij przycisk Start")
 
-
   > [!NOTE]
-> **Uwaga:** w chwili obecnej, ze względu na wymagania firmy Apple, może być konieczne certyfikatu deweloperskiego lub *tożsamości podpisywania* do kompilacji kodu dla urządzenie lub symulator. Postępuj zgodnie z instrukcjami [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) tej konfiguracji.
+  > W chwili obecnej, ze względu na wymagania firmy Apple, może być konieczne certyfikatu deweloperskiego lub *tożsamości podpisywania* do kompilacji kodu dla urządzenie lub symulator. Postępuj zgodnie z instrukcjami [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) tej konfiguracji.
 
 28. Spowoduje to uruchomienie aplikacji w narzędziu iOS Simulator:
 
@@ -289,7 +288,7 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
 **Uwaga**: w tym przewodniku zastosowano Visual Studio Enterprise 2017 na maszynie wirtualnej systemu Windows 10. Konfiguracji może różnić się od tego, tak długo, jak spełnia wymagania powyżej, ale należy pamiętać, że niektóre zrzuty ekranu mogą różnić się do konfiguracji.
 
 > [!NOTE]
-> **Przed kontynuowaniem pracy z tym przewodnikiem** można _musi_ został już podłączony do komputera Mac w programie Visual Studio. Jest to spowodowane Xamarin.iOS zależy od firmy Apple narzędzi, aby skompilować i uruchomić projektanta i aplikacje dla systemu iOS. Aby pobrać, postępuj zgodnie z instrukcjami [nawiązywania Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
+> Przed kontynuowaniem w tym przewodniku, należy nawiązano już połączenie do komputera Mac w programie Visual Studio. Jest to spowodowane Xamarin.iOS zależy od firmy Apple narzędzi, aby skompilować i uruchomić projektanta i aplikacje dla systemu iOS. Aby pobrać, postępuj zgodnie z instrukcjami [nawiązywania Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
 
 1. Uruchom program Visual Studio z **Start** menu:
 
@@ -333,7 +332,7 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
   ![](hello-ios-quickstart-images/vs-image10.png "Zmień wartość właściwości tekst etykiety "Wprowadzić Phoneword"")
 
   > [!NOTE]
-> **Uwaga:** można uzupełnić **właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **widoku** menu.
+  > Można wyświetlić **właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **widoku** menu.
 
 
 9. Wyszukaj "pola tekstowego" wewnątrz przeciągania przybornika **pola tekstowego** z **przybornika** na projekt surface i umieść go w obszarze **etykiety**. Dopasuj szerokość do **pola tekstowego** jest szerokość **etykiety**:
@@ -377,7 +376,7 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
   ![](hello-ios-quickstart-images/vs-image19.png "Dodaj nową klasę o nazwie PhoneTranslator")
 
   > [!IMPORTANT]
-> Upewnij się, że wybrano szablon "class", który ma C# w ikony. W przeciwnym razie nie można się odwoływać ta nowa klasa.
+  > Upewnij się, że wybrano szablon "class", który ma C# w ikony. W przeciwnym razie nie można się odwoływać ta nowa klasa.
 
 
 17. Spowoduje to utworzenie nowej klasy C#. Usuń kod szablonu i zastąp go następującym kodem:

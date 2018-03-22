@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>Powiadomienia wypychane w systemie iOS
 
 _W tej sekcji opisano powiadomień wypychanych w systemie iOS. Podaj Usługa bramy powiadomień wypychanych w Apple oraz roli, która jest odtwarzany w publikacji powiadomienia do aplikacji systemu iOS. Go objaśnia sposób tworzenia niezbędne do włączenia powiadomień wypychanych i omówiono w nim certyfikaty zabezpieczeń. Na koniec w tej sekcji będzie omawiać niektóre zadania celów, które serwery aplikacji należy wykonać, aby śledzić klienckie urządzenia przenośne._
 
 > [!IMPORTANT]
-> **Uwaga:** informacje w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.
+> Informacje przedstawione w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.
 
 Powiadomienia wypychane powinny być przechowywane krótki i zawierać tylko za mało danych do powiadomienie aplikacji mobilnej, że kontaktowej aplikacji serwera aktualizacji. Na przykład momencie nadejścia nowych wiadomości e-mail, aplikacja serwera czy tylko powiadamiać aplikacji mobilnej, które Odebrano nowe wiadomości e-mail. Powiadomienia nie będzie zawierał nowych wiadomości e-mail, do samej siebie. Aplikacji mobilnej może następnie pobrać nowe wiadomości e-mail z serwera, gdy właściwe
 

@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c0369fe52897a2557a92fd56ebcd816b8427faf7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Wprowadzenie do Backgrounding w systemie iOS
 
@@ -67,7 +67,7 @@ Przełącznik aplikacji jest funkcją kontroli ważne wprowadzone w systemie iOS
 Z tym przełącznikiem aplikacji, użytkowników można przewijać migawek wszystkich backgrounded i wstrzymania aplikacji. Naciskając aplikacji uruchamia go na pierwszym planie. Szybko przesuwając w górę spowoduje usunięcie aplikacji z tła zakończenia procesu. Firma Microsoft podejmie bliższe spojrzenie na przełącznik aplikacji w [pokaz cyklem życia aplikacji systemu iOS](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) w następnej sekcji.
 
 > [!IMPORTANT]
-> **Uwaga**: przełącznik aplikacji nie występuje różnica między aplikacjami backgrounded i wstrzymania.
+> Przełącznik aplikacji nie są wyświetlane różnica między aplikacjami backgrounded i wstrzymania.
 
 
 

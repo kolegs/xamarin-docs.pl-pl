@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 1b998628efc133590a543dd45730070a457d61d5
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>Odinstalowywanie platformy Xamarin
 
@@ -69,7 +69,7 @@ rm -rf ~/Library/XamarinStudio-*
 Mono jest implementacją typu open source firmy Microsoft .NET Framework i umożliwia Products—Xamarin.iOS platformy Xamarin.IOS, Xamarin.Android i Xamarin.Mac rozwój tych platform w języku C#.
 
 > [!IMPORTANT]
-> Uwaga: Istnieją inne aplikacje poza Xamarin wykorzystujących Mono, takich jak Unity. Pamiętaj, że nie ma żadnych innych zależności na Mono przed jego odinstalowaniem.
+> Istnieją inne aplikacje poza Xamarin wykorzystujących Mono, takich jak Unity. Pamiętaj, że nie ma żadnych innych zależności na Mono przed jego odinstalowaniem.
 
 Aby usunąć Mono Framework z komputera, uruchom następujące polecenia w terminalu:
 
@@ -258,7 +258,7 @@ Całkowicie odinstalować program Visual Studio 2017, wybierz **Odinstaluj** z t
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Całkowicie Odinstaluj program Visual Studio")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **Ostrzeżenie:** Jeśli masz dwie (lub więcej) wystąpienia zainstalowanego programu Visual Studio side-by-side (SxS) — takie jak zlecenia i wersja zapoznawcza — odinstalowanie jedno wystąpienie może usunąć niektóre funkcje Xamarin z innych wystąpień programu Visual Studio w tym:
+> Jeśli masz dwie (lub więcej) wystąpienia programu Visual Studio instalowane side-by-side (SxS) — takie jak zlecenia i wersja zapoznawcza — odinstalowanie jedno wystąpienie może usunąć niektóre funkcje Xamarin z innych wystąpień programu Visual Studio, w tym:
 >
 > - Xamarin Profiler
 > - Xamarin skoroszytów/Inspektora

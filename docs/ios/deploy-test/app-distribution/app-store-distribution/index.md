@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>Dystrybucji sklepu z aplikacjami
 
@@ -37,7 +37,7 @@ Niezależnie od tego, jak zamierzasz wersji aplikacji platformy Xamarin.iOS, mus
 Można wybrać takie same **identyfikator aplikacji** i **urządzeń** używana na potrzeby programowania profil inicjowania obsługi administracyjnej, ale jeśli nie masz jeszcze jeden, należy utworzyć certyfikat dystrybucji do identyfikowania użytkownika organizacja podczas przesyłania aplikacji do sklepu z aplikacjami. W poniższej sekcji opisano kroki dotyczące sposobu tworzenia certyfikatu dystrybucji.
 
 > [!NOTE]
->  Uwaga: Tylko agentów zespołu i Administratorzy mogą tworzyć certyfikaty dystrybucji i profile inicjowania obsługi.
+> Tylko agentów zespołu i Administratorzy, można utworzyć dystrybucji certyfikatów oraz profile inicjowania obsługi.
 
 <a name="creatingcertificate" />
 

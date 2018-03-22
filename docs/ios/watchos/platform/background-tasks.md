@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8fd2b5069e175a68ff7609e75775db1929507582
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="background-tasks"></a>Zadania w tle
 
@@ -143,7 +143,7 @@ Ponownie, system będzie wystawiać `WKSnapshotRefreshBackgroundTask` tak, aby p
 Gdy aplikacja oznacza `WKSnapshotRefreshBackgroundTask` ukończone, system automatycznie podejmie migawkę Interfejsie użytkownika aplikacji.
 
 > [!IMPORTANT]
-> **Uwaga:** ważne jest, aby zawsze zaplanować ` WKSnapshotRefreshBackgroundTask` po otrzymał nowe dane i zaktualizować interfejs użytkownika aplikacji lub modyfikacji informacje nie będą wyświetlane przez użytkownika.
+> Ważne jest, aby zawsze zaplanować ` WKSnapshotRefreshBackgroundTask` po otrzymał nowe dane i zaktualizować interfejs użytkownika aplikacji lub modyfikacji informacje nie będą wyświetlane przez użytkownika.
 
 
 
@@ -630,7 +630,7 @@ Aplikacje, które została przypięta do stacji dokującej można spodziewać si
 Ostatni aplikacji użytkownik uruchomi będą uznawane za _ostatnio używanych_ aplikacji i zajmują ostatniego miejsca w doku. Z tego miejsca można przypiąć go trwale do stacji dokującej. Ostatnio używanych będą traktowane jak wszystkie inne ulubionych aplikacji użytkownik ma już przypięty do doku.
 
 > [!IMPORTANT]
-> **Uwaga:** aplikacji, które zostały dodane tylko do ekranu Home nie otrzymają regularne planowania. Odbierać Planowanie regularnych i tła aktualizacji aplikacji _musi_ można dodać do stacji dokującej.
+> Aplikacje, które zostały dodane tylko do ekranu Home nie będzie mógł skorzystać z regularnych planowania. Odbierać Planowanie regularnych i tła aktualizacji aplikacji _musi_ można dodać do stacji dokującej.
 
 Jak wspomniano wcześniej w tym dokumencie, migawki są bardzo ważne w watchOS 3 od momentu ich działanie jako obrazy zarówno w wersji zapoznawczej i uruchamiania aplikacji. Jeśli użytkownik reguluje aplikacji w doku, utworzy Rozwiń do pełnego ekranu, wprowadź pierwszego planu i uruchomione, więc jest konieczne, że migawki są nieaktualne.
 

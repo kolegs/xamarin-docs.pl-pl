@@ -7,18 +7,18 @@ ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfdf0c73226eec472eb671d5543f5ce124919ab8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3f52ef88224e65f12502c9fbf82e240233890a82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-9-compatibility"></a>System iOS 9 zgodności
 
 _Nawet jeśli nie zamierzasz dodać funkcji systemu iOS 9 razu do aplikacji, należy odbudować aplikacjami za pomocą najnowszej wersji programu Xamarin._
 
 > [!IMPORTANT]
-> **Uwaga:** te informacje na tej stronie jest przeznaczona dla klientów z aplikacjami już w magazynie aplikacji przeznaczonych dla systemu iOS 8 lub starszym, którzy nie mają już przesłać aktualizacji dla zgodności z systemem iOS 9. Jeśli korzystasz już z najnowszych wersji - Xcode 7 i 9 Xamarin.iOS — na potrzeby programowania aplikacji można znaleźć [wprowadzenie do systemu iOS 9](~/ios/platform/introduction-to-ios9/index.md).
+> Informacje na tej stronie jest przeznaczona dla klientów z aplikacjami już w magazynie aplikacji przeznaczonych dla systemu iOS 8 lub starszym, który nie zostały już przesłane aktualizacje dla zgodności z systemem iOS 9. Jeśli korzystasz już z najnowszych wersji - Xcode 7 i 9 Xamarin.iOS — na potrzeby programowania aplikacji można znaleźć [wprowadzenie do systemu iOS 9](~/ios/platform/introduction-to-ios9/index.md).
 
 Pojawił się pierwszy wersje beta systemu iOS 9, możemy zidentyfikować dwóch problemów ze starszymi wersjami programu Xamarin, który dyskowe widoczne jako starsze aplikacje nie będą mogli uruchomić na komputerze z systemem iOS 9.
 

@@ -6,11 +6,11 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: eb188abb3e757f6f66af7758ced311ae1236d3ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530abec733ec1d842559bf9c898217a8e45465aa
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Rozwiązywanie problemów z Xamarin skoroszytów w systemie Android
 
@@ -25,7 +25,8 @@ Musi mieć emulator z systemem Android 5.0 lub nowszej. Emulatory ARM nie są ob
 
 Przeczytaj [naszej dokumentacji na temat konfigurowania systemu Android emulatorów] [ android-emu] Jeśli nie masz doświadczenia z procesem.
 
-**Uwaga:** skoroszytów 1.1 i starszych będzie spróbuj (i zakończyć się niepowodzeniem!) do użycia ARM emulatory, jeśli są dostępne. W celu obejścia tego emulatora uruchamiania x86 wybranym przed otwarciem i utworzeniem Android skoroszytu. Skoroszyty zawsze preferowane nawiązać działającego emulatora, tak długo, jak jest zgodny.
+> [!NOTE]
+> Skoroszyty 1.1 i starszych będzie spróbuj (i niepowodzenie!) emulatory ARM Użyj, jeśli są dostępne. W celu obejścia tego emulatora uruchamiania x86 wybranym przed otwarciem i utworzeniem Android skoroszytu. Skoroszyty zawsze preferowane nawiązać działającego emulatora, tak długo, jak jest zgodny.
 
 ## <a name="workbooks-wont-load"></a>Nie można załadować skoroszytów
 
@@ -33,7 +34,7 @@ Przeczytaj [naszej dokumentacji na temat konfigurowania systemu Android emulator
 
 Najpierw sprawdź, czy Twoje emulatora ma dostęp do sieci w pełni pracy testując wszystkich witryn sieci Web w przeglądarce sieci web to emulator.
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-internet"></a>Visual Studio Emulator systemu Android nie można połączyć z Internetem
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Emulator systemu Android nie może połączyć się z Internetem
 
 Jeśli Twoje emulatora nie ma dostępu do sieci, może być konieczne wykonaj następujące kroki, aby naprawić przełącznika sieci funkcji Hyper-V. Przełączanie między sieci Wi-Fi często może być konieczne okresowo Powtórz tę czynność:
 

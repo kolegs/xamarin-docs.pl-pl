@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Powiadomienia w Xamarin.iOS
 
 _W tej sekcji przedstawiono sposób wdrożenia lokalnego powiadomienia w platformy Xamarin.iOS. Zostanie wyjaśnić różnych elementów interfejsu użytkownika powiadomienie z systemem iOS i omówienia interfejsu API użytkownika związane z tworzenie i wyświetlanie powiadomienie._
 
 > [!IMPORTANT]
-> **Uwaga:** informacje w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.
+> Informacje przedstawione w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.
 
 iOS ma wskazać użytkownikowi, że otrzymał powiadomienie na trzy sposoby:
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 Na Apple Human Interface Guidelines Jeśli powiadomienie odtwarza dźwięk, jego powinny również towarzyszyć wskaźnika lub alert, aby pomóc użytkownikowi w poznaniu aplikacji, która wygenerowała alert. Ponadto jeśli dźwięk jest dłuższy niż 30 sekund, iOS zostanie odtworzona domyślnie dźwięku zamiast tego.
 
 > [!IMPORTANT]
-> **Uwaga**: jest to błąd w symulatorze systemu iOS, które będą wyzwalać powiadomienia delegata dwa razy. Ten problem nie powinien wystąpić przy uruchamianiu aplikacji na urządzeniu.
+> Jest to błąd w symulatorze systemu iOS, które będą wyzwalać powiadomienia delegata dwa razy. Ten problem nie powinien wystąpić przy uruchamianiu aplikacji na urządzeniu.
 
 ## <a name="handling-notifications"></a>Obsługiwanie powiadomień
 
