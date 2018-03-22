@@ -1,6 +1,6 @@
 ---
 title: Widoki platformy Xamarin.Forms
-description: "Widoki platformy Xamarin.Forms są blokami konstrukcyjnymi interfejsów i platform przenośnych użytkownika."
+description: Widoki platformy Xamarin.Forms są blokami konstrukcyjnymi interfejsów i platform przenośnych użytkownika.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -8,8 +8,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 45dc110104d7bb064aff1c883f65d894cbe6402f
+ms.sourcegitcommit: c3abb91d1a944de07d1b2b0878b02752c768d722
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/22/2018
@@ -100,7 +100,7 @@ Widoki są obiekty interfejsu użytkownika, takie jak etykiety, przycisków i su
 
 |     |     |
 | --- | --- |
-| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) ma postać przełącznik wł. / wył. umożliwia użytkownikowi wybranie wartość logiczną. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Właściwości jest w stanie przełącznika i [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) zdarzenie jest wywoływane po zmianie stanu.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Przełącz przykład](views-images/Switch.png "przełącznika przykład")](views-images/Stepper-Large.png#lightbox "przełącznika przykład")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) ma postać przełącznik wł. / wył. umożliwia użytkownikowi wybranie wartość logiczną. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Właściwości jest w stanie przełącznika i [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) zdarzenie jest wywoływane po zmianie stanu.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Przełącz przykład](views-images/Switch.png "przełącznika przykład")](views-images/Switch-Large.png#lightbox "przełącznika przykład")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
