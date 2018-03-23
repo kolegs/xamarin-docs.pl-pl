@@ -1,6 +1,6 @@
 ---
-title: "Szczegóły implementacji czasu monety"
-description: "W tym przewodniku opisano szczegóły implementacji w grze monety czas, tym Praca z kafelków mapy, tworzenie jednostek animacji ikony i implementowanie kolizji wydajne."
+title: Szczegóły implementacji czasu monety
+description: W tym przewodniku opisano szczegóły implementacji w grze monety czas, tym Praca z kafelków mapy, tworzenie jednostek animacji ikony i implementowanie kolizji wydajne.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>Szczegóły implementacji czasu monety
 
@@ -61,10 +61,7 @@ Kafelki można umieścić, klikając w **mastersheet** tileset, a następnie kli
 1. Kliknij Kafelek do rysowania
 1. Kliknij przycisk lub wypychania i przeciągnij mapy do malowania kafelka
 
-
     ![](cointime-images/image2.png "Kliknij Kafelek, aby narysować 1")
-
- 
 
 Od lewej górnej tileset zawiera wszystkie terenu w czasie monety. Obejmuje terenu, który jest pełny, **SolidCollision** właściwości, jak pokazano w właściwości kafelka po lewej stronie ekranu:
 
@@ -97,15 +94,11 @@ Proces dodawania poziomy na czas monety wymaga nie zmian w kodzie, a tylko kilka
 1. Zmień nazwę nowego pliku .tmx, takich jak nadal poziomu sekwencja z poziomami istniejących **level8.tmx**
 1. W programie Visual Studio lub Visual Studio dla komputerów Mac należy dodać nowy plik .tmx do folderu Android poziomów. Sprawdź, czy plik używa **AndroidAsset** akcji kompilacji.
 
-
     ![](cointime-images/image8.png "Sprawdź, czy plik używa AndroidAsset Akcja kompilacji")
-
 
 1. Dodaj nowy plik .tmx do folderu poziomy systemu iOS. Połącz plik z oryginalnej lokalizacji i sprawdź, czy używa **BundleResource** akcji kompilacji.
 
-
     ![](cointime-images/image9.png "Połącz plik z oryginalnej lokalizacji i sprawdź korzysta z BundleResource Akcja kompilacji")
-
 
 Nowy poziom powinien pojawiać się na poziomie ekranu wybierz jako poziom 9 (poziom nazwy plików rozpoczynają się od 0, ale przyciski poziomu rozpocząć o numerze 1):
 

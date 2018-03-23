@@ -1,6 +1,6 @@
 ---
 title: Obrazy
-description: "Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, może być załadowany specjalnie dla każdej platformy, lub mogą być pobierane do wyświetlenia."
+description: Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, może być załadowany specjalnie dla każdej platformy, lub mogą być pobierane do wyświetlenia.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b2cc302cf45527319bb22a4942290e0b0ac414d7
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="images"></a>Obrazy
 
@@ -24,7 +24,7 @@ Obrazy specyficzne dla platformy są również wymagane ikon i ekranów powitaln
 
 W tym dokumencie omówiono następujące tematy:
 
-- [ **Obrazy lokalnego** ](#Local_Images) — wyświetlanie obrazów dostarczanych z aplikacji, w tym rozwiązaniu rozdzielczości, takich jak iOS siatkówki lub Android wersji wysokiej rozdzielczości obrazu.
+- [ **Obrazy lokalnego** ](#Local_Images) — wyświetlanie obrazów dostarczanych z aplikacji, w tym rozwiązaniu rozdzielczości, takich jak iOS siatkówki, Android lub platformy uniwersalnej systemu Windows wersji wysokiej rozdzielczości obrazu.
 - [ **Obrazy osadzone** ](#Embedded_Images) — wyświetlanie obrazów osadzony jako zasób zestawu.
 - [ **Pobrane obrazy** ](#Downloading_Images) — pobieranie i wyświetlanie obrazów.
 - [ **Ikon i ekranów powitalnych** ](#Icons_and_splashscreens) -uruchamiania obrazów i ikon specyficzne dla platformy.
@@ -94,15 +94,17 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Rozdzielczości (siatkówki i wysokiej rozdzielczości DPI)
 
-Zarówno platform iOS i Android obsługują rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiednie obrazu w czasie wykonywania w oparciu o możliwości urządzenia. Ładowanie lokalnego obrazów, aby automatycznie program obsługuje rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie platformy Xamarin.Forms używa wybranych platformach natywnych interfejsów API.
+iOS, Android, Windows Phone i platformy uniwersalnej systemu Windows obsługują rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiednie obrazu w czasie wykonywania w oparciu o możliwości urządzenia. Ładowanie lokalnego obrazów, aby automatycznie program obsługuje rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie platformy Xamarin.Forms używa wybranych platformach natywnych interfejsów API.
 
 Preferowany sposób zarządzać obrazami, ponieważ system iOS 9 polega na przeciągnięciu obrazami dla każdego rozwiązania wymagane do odpowiednich zasobów katalogu obrazu zestawu. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Przed iOS 9, siatkówki wersje obrazu może być umieszczone w **zasobów** folderu - 2 i 3 razy rozpoznawania o  **@2x**  lub  **@3x** sufiksy na nazwę pliku przed rozszerzeniem (np.) **myimage@2x.png**). Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+Przed iOS 9, siatkówki wersje obrazu może być umieszczone w **zasobów** folderu - 2 i 3 razy rozpoznawania o **@2x** lub **@3x**sufiksy na nazwę pliku przed rozszerzeniem (np.) **myimage@2x.png**). Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Obrazy systemu android rozwiązania alternatywne powinna zostać umieszczona w [specjalnie o nazwie katalogów](http://developer.android.com/guide/practices/screens_support.html) w projekcie systemu Android, jak pokazano na poniższym zrzucie ekranu:
 
 [![Lokalizacja systemu android wielu rozdzielczość obrazu](images-images/xs-highdpisolution-sml.png "lokalizacji systemu Android wielu rozdzielczość obrazu")](images-images/xs-highdpisolution.png#lightbox "lokalizacji systemu Android wielu rozdzielczość obrazu")
+
+Nazwy pliku obrazu platformy uniwersalnej systemu Windows i Windows Phone [kończyły się słowem `.scale-xxx` przed rozszerzeniem](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), gdzie `xxx` procent skalowania zastosować do zasobu, np. **myimage.scale-200.png**. Obrazy mogą być następnie przywoływane w kodzie lub XAML bez modyfikatora skali, np. po prostu **myimage.png**. Platforma wybierze oparte na bieżącej DPI wyświetlacza najbliższej skali odpowiednich zasobów.
 
 ### <a name="additional-controls-that-display-images"></a>Dodatkowe funkcje kontroli, które wyświetlanie obrazów
 
@@ -168,7 +170,7 @@ Poniższe zrzuty ekranu pokazują wynik wyświetlanie osadzony obraz na każdej 
 Ponieważ nie istnieje żaden konwerter typów wbudowanych z `string` do `ResourceImageSource`, te typy obrazów nie można załadować natywnie przez XAML. Zamiast tego prostego niestandardowego rozszerzenia znaczników XAML mogą być zapisywane do ładowania obrazów za pomocą **identyfikator zasobu** określony w języku XAML:
 
 ```csharp
-[ContentProperty ("Source")]
+[ContentProperty (nameof(Source))]
 public class ImageResourceExtension : IMarkupExtension
 {
  public string Source { get; set; }
@@ -179,6 +181,7 @@ public class ImageResourceExtension : IMarkupExtension
    {
      return null;
    }
+   
    // Do your translation lookup here, using whatever method you require
    var imageSource = ImageSource.FromResource(Source);
 

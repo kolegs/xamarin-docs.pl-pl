@@ -1,6 +1,6 @@
 ---
 title: Witaj, Mac
-description: "Ten przewodnik przeprowadzi Cię przez kroki tworzenia pierwszej aplikacji Xamarin.Mac, a w procesie wprowadza łańcuch narzędzi rozwoju, w tym programu Visual Studio for Mac, Xcode i konstruktora interfejsu. Również wprowadza gniazda i akcji, które ujawnia kontrolek interfejsu użytkownika do kodu, a na koniec go ilustruje sposób tworzenia, uruchamianie i testowanie aplikacji Xamarin.Mac."
+description: Ten przewodnik przeprowadzi Cię przez kroki tworzenia pierwszej aplikacji Xamarin.Mac, a w procesie wprowadza łańcuch narzędzi rozwoju, w tym programu Visual Studio for Mac, Xcode i konstruktora interfejsu. Również wprowadza gniazda i akcji, które ujawnia kontrolek interfejsu użytkownika do kodu, a na koniec go ilustruje sposób tworzenia, uruchamianie i testowanie aplikacji Xamarin.Mac.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,19 +8,19 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="hello-mac"></a>Witaj, Mac
 
 Xamarin.Mac pozwala na projektowanie aplikacji całkowicie natywnych Mac w języku C# i platformy .NET przy użyciu tej samej biblioteki OS X i formantów interfejsu, które są używane podczas tworzenia w *Objective-C* i *Xcode*. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, deweloper może użyć w środowisku Xcode _konstruktora interfejsu_ utworzenie aplikacji interfejsy użytkownika (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-Ponadto ponieważ Xamarin.Mac aplikacji są napisane w języku C# i .NET, typowe, kod zaplecza można udostępniać aplikacje mobilne platformy Xamarin.iOS i Xamarin.Android; wszystkie dostarczając natywnym środowiskiem na każdej z platform.
+Ponadto ponieważ Xamarin.Mac aplikacje są napisane w języku C# i .NET, typowy kod zaplecza można udostępniać aplikacje mobilne platformy Xamarin.iOS i Xamarin.Android; wszystkie dostarczając natywnym środowiskiem na każdej z platform.
 
-W tym artykule przedstawiono podstawowe pojęcia, które są potrzebne do utworzenia aplikacji Mac, za pomocą Xamarin.Mac, programu Visual Studio for Mac i w środowisku Xcode konstruktora interfejsu przez krótki proces tworzenia po prostu **Hello, Mac** aplikacji, które zlicza liczbę razy przycisk zostanie kliknięta:
+W tym artykule przedstawiono podstawowe pojęcia, które są potrzebne do utworzenia przy użyciu Xamarin.Mac, programu Visual Studio for Mac i w środowisku Xcode konstruktora interfejsu przez krótki proces tworzenia prostej aplikacji Mac **Hello, Mac** aplikacji, które zlicza liczbę razy przycisk zostanie kliknięta:
 
 [![](hello-mac-images/run02.png "Przykład Witaj, uruchomieniu aplikacji Mac")](hello-mac-images/run02.png#lightbox)
 
@@ -89,7 +89,7 @@ W razie potrzeby dewelopera można utworzyć co najmniej jeden kod biblioteki pr
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Anatomia aplikacji Xamarin.Mac
 
-Jeśli znasz iOS programowania, istnieje wiele podobieństw tutaj. W rzeczywistości iOS używa struktury CocoaTouch, która jest wersja slimmed rozwijanej Cocoa, używany przez Mac, więc będzie skrzyżowany partii koncepcji.
+Jeśli znasz iOS programowania, istnieje wiele podobieństw. W rzeczywistości iOS używa struktury CocoaTouch, która jest wersja slimmed rozwijanej Cocoa, używany przez Mac, więc będzie skrzyżowany partii koncepcji.
 
 Spójrz na pliki w projekcie:
 
@@ -163,7 +163,7 @@ namespace Hello_Mac
 
 Ten kod jest prawdopodobnie nieznane, chyba że deweloper opracowała aplikację systemu iOS przed, ale jest dość proste.
 
-`FinishedLaunching` Metoda jest uruchamiana po utworzeniu wystąpienia aplikacji i jest odpowiedzialny za faktycznie tworzenia okna aplikacji i rozpoczyna proces wyświetlania widoku w nim.
+`DidFinishLaunching` Metoda jest uruchamiana po utworzeniu wystąpienia aplikacji i jest odpowiedzialny za faktycznie tworzenia okna aplikacji i rozpoczyna proces wyświetlania widoku w nim.
 
 `WillTerminate` Metoda zostanie wywołana po użytkownik lub system ma wystąpienia zamknięcia aplikacji. Dewelopera należy używać tej metody, aby zakończyć aplikację przed jej kończy działanie (na przykład zapisywania preferencji użytkownika lub rozmiaru okna i lokalizacji).
 
@@ -171,7 +171,7 @@ Ten kod jest prawdopodobnie nieznane, chyba że deweloper opracowała aplikację
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Cocoa (i przez pochodnym, CocoaTouch) używa, co jest nazywane *Model View Controller* wzorzec (MVC). `ViewController` Deklaracji reprezentuje formantów obiektu okna rzeczywistej aplikacji. Ogólnie rzecz biorąc dla każdego okna utworzonego (i wiele innych zastosowań w systemie windows) znajduje się kontroler, która jest odpowiedzialna za cykl życiowy okna, takie jak wyświetlanie, dodawanie nowych widoków (formanty) do jego itp.
+Cocoa (i przez pochodnym, CocoaTouch) używa, co jest nazywane *Model View Controller* wzorzec (MVC). `ViewController` Deklaracji reprezentuje obiekt, który kontroluje okna rzeczywistej aplikacji. Ogólnie rzecz biorąc dla każdego okna utworzonego (i wiele innych zastosowań w systemie windows) znajduje się kontroler, który jest odpowiedzialny za cały cykl życia okna, takie jak wyświetlanie, dodawanie nowych widoków (formanty) do jego itp.
 
 `ViewController` Klasa jest głównym oknie kontrolera. Oznacza to, że jest odpowiedzialny za cykl życiowy okna głównego. To spowoduje badane szczegółowo później, na wykonaj teraz krótki przegląd go:
 
@@ -236,7 +236,7 @@ namespace Hello_Mac
 }
 ```
 
-Deweloper zwykle nie jest związane z plików projektanta, automatycznie są zarządzane przez program Visual Studio dla komputerów Mac i podaj wymagane pluming kod, który umożliwia dostęp do formantów, które zostały dodane do dowolnego okna lub widoku w aplikacji.
+Projektanta nie jest zazwyczaj zainteresowani plików projektanta, automatycznie są zarządzane przez program Visual Studio dla komputerów Mac i podaj kod wymagania żmudne procesy, który umożliwia dostęp do formantów, które zostały dodane do dowolnego okna lub widoku w aplikacji.
 
 Z utworzonego projektu aplikacji Xamarin.Mac i podstawową wiedzę na temat składników Przełącz się do Xcode, można utworzyć interfejsu użytkownika przy użyciu narzędzia Konstruktor interfejsu.
 
@@ -248,7 +248,7 @@ Z utworzonego projektu aplikacji Xamarin.Mac i podstawową wiedzę na temat skł
 
 [![](hello-mac-images/infoplist01.png "Visual Studio for Mac plist edytora")](hello-mac-images/infoplist01.png#lightbox)
 
-I definiuje _scenorysu_ który będzie używany do wyświetlania interfejsu użytkownika dla aplikacji Xamarin.Mac w obszarze **interfejsu Main** listy rozwijanej. W przypadku powyższym przykładzie `Main` na liście rozwijanej odnosi się do `Main.storyboard` w drzewie źródła projektu w **Eksploratora rozwiązań**. Definiuje również ikon aplikacji, określając *katalogu zasobów* zawierający je (AppIcons w tym przypadku).
+Definiuje również _scenorysu_ który będzie używany do wyświetlania interfejsu użytkownika dla aplikacji Xamarin.Mac w obszarze **interfejsu Main** listy rozwijanej. W przypadku powyższym przykładzie `Main` na liście rozwijanej odnosi się do `Main.storyboard` w drzewie źródła projektu w **Eksploratora rozwiązań**. Definiuje również ikon aplikacji, określając *katalogu zasobów* zawierający je (AppIcons w tym przypadku).
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -300,7 +300,7 @@ Podczas otwierania `.storyboard` pliku do edycji w programie Xcode, Visual Studi
 
 ### <a name="interface-hierarchy"></a>Interfejs hierarchii
 
-**Hierarchii interfejsów** sekcja umożliwia deweloperowi łatwo uzyskiwać dostęp kilka właściwości klucza interfejsu użytkownika, takie jak ma **symbole zastępcze** i głównym **okna**. Ta sekcja umożliwia dostęp do poszczególnych elementów (widoki) wchodzące w skład interfejs użytkownika i Dostosuj sposób, że są zagnieżdżone przeciągając je w hierarchii.
+**Hierarchii interfejsów** sekcja umożliwia deweloperowi łatwo uzyskiwać dostęp do wielu właściwości klucza interfejsu użytkownika takich jak jej **symbole zastępcze** i głównym **okna**. W tej sekcji służy do uzyskania dostępu do poszczególnych elementów (widoki), wchodzące w skład interfejsu użytkownika i dostosowanie sposobu są zagnieżdżone, przeciągając je w hierarchii.
 
 <a name="Interface_Editor" />
 
@@ -318,7 +318,7 @@ Podczas otwierania `.storyboard` pliku do edycji w programie Xcode, Visual Studi
 
 Początkowo w tej sekcji jest prawie pusta, ale jeśli Deweloper wybiera element **Edytor interfejsu** lub **hierarchii interfejsów**, **właściwości** sekcja będzie wypełnione informacjami o danego elementu i właściwości, które można zmienić.
 
-W ramach **właściwości** sekcji, są różne 8 *karty inspektora*, jak pokazano na poniższej ilustracji:
+W ramach **właściwości** sekcji, istnieją ośmiu różnych *karty inspektora*, jak pokazano na poniższej ilustracji:
 
 [![](hello-mac-images/xcode05.png "Przegląd wszystkich inspektorzy")](hello-mac-images/xcode05.png#lightbox)
 
@@ -395,7 +395,7 @@ Wykonaj następujące czynności:
 
 Podczas zmiany rozmiaru i przenoszenia kontrolek wokół, zwróć uwagę, że interfejs konstruktora zapewnia wskazówki przydatne przystawki, oparte na [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). Te wskazówki pomogą deweloperów do tworzenia wysokiej jakości aplikacji, które będą miały znanych wyglądu i działania dla użytkowników komputerów Mac.
 
-Szukaj w **hierarchii interfejsów** sekcji jak układ i hierarchię elementów wchodzące w skład interfejsu użytkownika są wyświetlane:
+Szukaj w **hierarchii interfejsów** sekcji jak układ i hierarchię elementów, które składają się na interfejsie użytkownika są wyświetlane:
 
 [![](hello-mac-images/xcode15.png "Zaznaczenie elementu w hierarchii interfejsów")](hello-mac-images/xcode15.png#lightbox)
 
@@ -407,7 +407,7 @@ Przy użyciu interfejsu użytkownika utworzone deweloper musi ujawniać element�
 
 ### <a name="outlets-and-actions"></a>Gniazda i akcji
 
-Co to są **gniazda** i **akcje**? W programowaniu tradycyjnych interfejs użytkownika platformy .NET, formantu w interfejsie użytkownika jest automatycznie widoczne jako właściwość, gdy jest ona dodawana. Elementy działają inaczej w Mac, po prostu Dodawanie formantu do widoku nie ona łatwiej dostępna dla kodu. Deweloper musi ujawniać jawnie elementu interfejsu użytkownika do kodu. W kolejności to zrobić, Apple są dostępne dwie opcje:
+Co to są **gniazda** i **akcje**? W tradycyjnych programowania interfejsu użytkownika platformy .NET, formantu w interfejsie użytkownika jest automatycznie widoczne jako właściwość, gdy jest ona dodawana. Elementy działają inaczej w Mac, po prostu Dodawanie formantu do widoku nie ona łatwiej dostępna dla kodu. Deweloper musi ujawniać jawnie elementu interfejsu użytkownika do kodu. W kolejności to zrobić, Apple są dostępne dwie opcje:
 
 -   **Gniazda** — gniazda są podobne do właściwości. Jeśli dewelopera tworzącej formantu do gniazda, jest widoczne w kodzie za pomocą właściwości, więc mogą je rzeczy, takich jak dołączanie procedury obsługi zdarzeń, wywoływać metod w jego itp.
 -   **Akcje** — akcje są analogiczne do polecenia wzorzec na platformie WPF. Na przykład jeśli akcja jest wykonywana na formancie, powiedz kliknij przycisk, formantu zostanie automatycznie wywołania metody w kodzie. Akcje są wydajne i wygodne, ponieważ deweloper może okablować się wiele formantów do tego samego działania.
@@ -490,7 +490,7 @@ Wykonaj następujące czynności:
 Przy użyciu interfejsu użytkownika przewodowej w pionie i ujawniony dla kodu C# przełączyć się do programu Visual Studio dla komputerów Mac i pozwól mu zsynchronizować zmiany wprowadzone w programie Xcode i kompilatora interfejsu.
 
 > [!NOTE]
-> Prawdopodobnie zajęło dużo czasu, można utworzyć interfejsu użytkownika i **gniazda** i **akcje** to pierwszy aplikacji która może się wydawać dużo pracy, ale wprowadzono wiele nowych pojęć i mnóstwo czasu był poświęcony na obejmujące nowe podstaw. Po ćwiczenia przez pewien czas pracy z konstruktora interfejsu, tego interfejsu i wszystkie jego **gniazda** i **akcje** można tworzyć w tylko minutę lub dwie.
+> Prawdopodobnie zajęło dużo czasu, można utworzyć interfejsu użytkownika i **gniazda** i **akcje** to pierwszy aplikacji która może się wydawać dużo pracy, ale wprowadzono wiele nowych pojęć i mnóstwo czasu był poświęcony na obejmujące nowe podstaw. Po ćwiczenia przez pewien czas i pracy z konstruktora interfejsu, tego interfejsu i wszystkie jego **gniazda** i **akcje** można tworzyć w tylko minutę lub dwie.
 
 <a name="Synchronizing_Changes_with_Xcode" />
 
@@ -498,7 +498,7 @@ Przy użyciu interfejsu użytkownika przewodowej w pionie i ujawniony dla kodu C
 
 Kiedy dewelopera przełącza do programu Visual Studio dla komputerów Mac w programie Xcode, wszystkie zmiany wprowadzone w programie Xcode automatycznie zostaną zsynchronizowane z projektu Xamarin.Mac.
 
-Wybiera **ViewController.designer.cs** w **Eksploratora rozwiązań** aby zobaczyć, jak **gniazda** i **akcji** zostały przewodowej się w języku C Kod #:
+Wybierz **ViewController.designer.cs** w **Eksploratora rozwiązań** aby zobaczyć, jak **gniazda** i **akcji** zostały przewodowej się w języku C# Kod:
 
 [![](hello-mac-images/sync01.png "Synchronizowanie zmian z Xcode")](hello-mac-images/sync01.png#lightbox)
 
@@ -524,13 +524,13 @@ Visual Studio for Mac wykrywa zmiany **.h** pliku, a następnie automatycznie sy
 Zwykle deweloper nigdy nie będzie można otworzyć **ViewController.designer.cs**, jego został przedstawiony tutaj wyłącznie w celach edukacyjnych.
 
 > [!NOTE]
-> W większości przypadków programu Visual Studio for Mac automatycznie Zobacz wszystkie zmiany wprowadzone w programie Xcode i zsynchronizować je do projektu Xamarin.Mac. W wystąpieniu wyłączenia synchronizacji nie jest realizowane automatycznie przejdź do programów Xcode i je do programu Visual Studio dla komputerów Mac ponownie. Zwykle będzie to rozpocząć poza cyklu synchronizacji.
+> W większości przypadków programu Visual Studio for Mac automatycznie Zobacz wszystkie zmiany wprowadzone w programie Xcode i zsynchronizować je do projektu Xamarin.Mac. W wystąpieniu wyłączenia synchronizacji nie jest realizowane automatycznie wrócić do Xcode, a następnie z powrotem do programu Visual Studio dla komputerów Mac. Zwykle będzie to rozpocząć poza cyklu synchronizacji.
 
 <a name="Writing_the_Code" />
 
 ## <a name="writing-the-code"></a>Pisanie kodu
 
-Przy użyciu interfejsu użytkownika utworzone i jest elementów interfejsu użytkownika do kodu za pomocą **gniazda** i **akcje**, możemy finally już przystąpić do pisania kodu można wyświetlić program do życia.
+Interfejs użytkownika utworzone i jego elementów interfejsu użytkownika do kodu za pomocą **gniazda** i **akcje**, możemy finally już przystąpić do pisania kodu można wyświetlić program do życia.
 
 Dla tej aplikacji przykładowej za każdym razem, gdy po kliknięciu przycisku pierwszej etykiety zostaną zaktualizowane do wyświetlenia, ile razy przycisk został kliknięty. W tym celu otwórz `ViewController.cs` plik do edycji przez dwukrotne kliknięcie w **Eksploratora rozwiązań**:
 
@@ -559,9 +559,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-Użyj `ViewDidLoad`, zamiast innej metody, takie jak `Initialize`, ponieważ `ViewDidLoad` jest nazywany *po* system operacyjny został załadowany i utworzyć wystąpienia interfejsu użytkownika z **.storyboard** pliku. Jeśli dewelopera próbował uzyskać dostęp formantu etykiety przed **.storyboard** pliku została całkowicie załadowany i wystąpienia, zostałyby `NullReferenceException` błąd ponieważ formantu etykiety nie zostałyby jeszcze utworzone.
+Użyj `ViewDidLoad`, zamiast innej metody, takie jak `Initialize`, ponieważ `ViewDidLoad` jest nazywany *po* system operacyjny został załadowany i utworzyć wystąpienia interfejsu użytkownika z **.storyboard** pliku. Jeśli dewelopera próbował uzyskać dostęp formantu etykiety przed **.storyboard** pliku została całkowicie załadowany i wystąpienia, zostałyby `NullReferenceException` błąd ponieważ formantu etykiety nie będą jeszcze istnieje.
 
-Następnie dodaj kod, który odpowiada na użytkownika, klikając przycisk. Dodaj następujące klasy częściowej do `ViewController` klasy:
+Następnie dodaj kod, który odpowiada na użytkownika, klikając przycisk. Dodaj następujące metody częściowej do `ViewController` klasy:
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {
@@ -606,7 +606,7 @@ Istnieją trzy sposoby, aby uruchomić aplikację:
 -  Z **Uruchom** menu, wybierz **debugowania**.
 -  Kliknij przycisk **odtwarzanie** przycisk w Visual Studio for Mac paska narzędzi (tylko powyżej **Eksploratora rozwiązań**).
 
-Aplikacja kompilacji (Jeśli nie został skompilowany już), uruchomi w trybie debugowania i wyświetlić jej okna głównego interfejsu:
+Aplikacja kompilacji (Jeśli nie został skompilowany już), uruchomi w trybie debugowania i wyświetl jego okno główne interfejsu:
 
 [![](hello-mac-images/run02.png "Uruchamianie aplikacji")](hello-mac-images/run02.png#lightbox)
 

@@ -1,6 +1,6 @@
 ---
-title: "Wyszukiwanie danych za pomocą usługi Azure Search"
-description: "Wyszukiwanie Azure to usługa w chmurze, który zapewnia indeksowanie i badania możliwości przekazywane dane. Spowoduje to usunięcie wymagania dotyczące infrastruktury i złożoności algorytmu wyszukiwania tradycyjnie skojarzone z wdrożeniem funkcji wyszukiwania w aplikacji. W tym artykule przedstawiono sposób korzystania z biblioteki usługi Microsoft Azure wyszukiwania Integrowanie usługi Azure Search w aplikacji platformy Xamarin.Forms."
+title: Wyszukiwanie danych za pomocą usługi Azure Search
+description: Wyszukiwanie Azure to usługa w chmurze, który zapewnia indeksowanie i badania możliwości przekazywane dane. Spowoduje to usunięcie wymagania dotyczące infrastruktury i złożoności algorytmu wyszukiwania tradycyjnie skojarzone z wdrożeniem funkcji wyszukiwania w aplikacji. W tym artykule przedstawiono sposób korzystania z biblioteki usługi Microsoft Azure wyszukiwania Integrowanie usługi Azure Search w aplikacji platformy Xamarin.Forms.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Wyszukiwanie danych za pomocą usługi Azure Search
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 Po zdefiniowaniu indeksu, dane mogą być przekazywane do niego przy użyciu jednej z dwóch modeli:
 
-- **Model ściągania** — danych jest okresowo pozyskanych z usługi Azure DocumentDB, bazy danych SQL Azure, magazyn obiektów Blob Azure lub programu SQL Server obsługiwanych w maszynie wirtualnej platformy Azure.
+- **Model ściągania** — danych jest okresowo pozyskanych z bazy danych Azure rozwiązania Cosmos, baza danych SQL Azure, magazyn obiektów Blob Azure lub programu SQL Server obsługiwanych w maszynie wirtualnej platformy Azure.
 - **Wypychanie modelu** — programowo wysłaniu danych do indeksu. Jest to model przyjęte w tym artykule.
 
 A `SearchIndexClient` wystąpienia należy utworzyć w celu importowania danych do indeksu. Można to zrobić przez wywołanie metody `SearchServiceClient.Indexes.GetClient` metody, jak pokazano w poniższym przykładzie:

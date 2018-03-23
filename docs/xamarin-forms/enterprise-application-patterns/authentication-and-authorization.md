@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>Uwierzytelnianie i autoryzacja
 
@@ -21,7 +21,7 @@ Istnieje wiele sposobów integracji aplikacji platformy Xamarin.Forms, który ko
 
 ## <a name="authentication"></a>Uwierzytelnianie
 
-Gdy aplikacja musi znać tożsamość bieżącego użytkownika jest wymagane uwierzytelnianie. Mechanizm podstawowej platformy ASP.NET Core do identyfikacji użytkowników jest systemu członkostwa ASP.NET Core Identity, która przechowuje informacje o użytkowniku w magazynie danych skonfigurowane przez dewelopera. Zazwyczaj ten magazyn danych zostanie zapisana EntityFramework, chociaż niestandardowe magazyny lub pakiety innych firm może służyć do przechowywania informacji o tożsamości usługi Azure storage, DocumentDB lub innych lokalizacji.
+Gdy aplikacja musi znać tożsamość bieżącego użytkownika jest wymagane uwierzytelnianie. Mechanizm podstawowej platformy ASP.NET Core do identyfikacji użytkowników jest systemu członkostwa ASP.NET Core Identity, która przechowuje informacje o użytkowniku w magazynie danych skonfigurowane przez dewelopera. Zazwyczaj ten magazyn danych zostanie zapisana EntityFramework, chociaż niestandardowe magazyny lub pakiety innych firm może służyć do przechowywania informacji o tożsamości usługi Azure storage, bazy danych Azure rozwiązania Cosmos lub innych lokalizacji.
 
 Scenariusze uwierzytelniania, należy użyć magazynu danych użytkowników lokalnych i który utrwalenia informacji o tożsamości między żądaniami za pomocą plików cookie (podobnie jak w typowej w aplikacji sieci web platformy ASP.NET MVC), ASP.NET Core Identity to odpowiednie rozwiązanie. Jednak pliki cookie nie zawsze są fizyczną oznacza przechowywanie i przesyłania danych. Na przykład aplikacji sieci web platformy ASP.NET Core, który ujawnia RESTful punktów końcowych, które są dostępne z aplikacji mobilnej zwykle należy użyć tokenu uwierzytelniania elementu nośnego, ponieważ w tym scenariuszu nie można używać plików cookie. Jednak tokenów elementu nośnego można łatwo je pobrać i zawarte w nagłówku autoryzacji żądania sieci web z poziomu aplikacji mobilnej.
 

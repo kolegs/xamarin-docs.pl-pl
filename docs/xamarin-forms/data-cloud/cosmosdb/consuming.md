@@ -1,6 +1,6 @@
 ---
-title: "Korzystanie z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych"
-description: "Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji. W tym artykule opisano sposób użycia Biblioteka klienta programu Microsoft Azure DocumentDB do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms."
+title: Korzystanie z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
+description: Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji. W tym artykule opisano sposób korzystania z rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -9,15 +9,15 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e2fa5ae12531069e1ad1bc19e110e4dcffe23a02
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Korzystanie z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
 
-_Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji. W tym artykule opisano sposób użycia Biblioteka klienta programu Microsoft Azure DocumentDB do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms._
+_Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji. W tym artykule opisano sposób korzystania z rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms._
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
@@ -33,23 +33,20 @@ Do celów programistycznych dokumentów bazy danych mogą być używane przez em
 
 W tym artykule i towarzyszące przykładowej aplikacji przedstawiono aplikację listy Todo, gdzie zadania są przechowywane w bazie danych dokumentów bazy danych Azure rozwiązania Cosmos. Aby uzyskać więcej informacji na temat przykładowej aplikacji, zobacz [opis próbki](~/xamarin-forms/data-cloud/walkthrough.md).
 
-> [!NOTE]
-> Biblioteka klienta usługi DocumentDB aktualnie nie jest zgodne z systemem Windows platformy Uniwersalnej aplikacji. Jednak bazy danych dokumentów bazy danych Azure rozwiązania Cosmos można z poziomu aplikacji platformy uniwersalnej systemu Windows przez utworzenie usługi sieci web warstwy środkowej, który korzysta z biblioteki klienta usługi DocumentDB i wywoływanie tej usługi z aplikacji platformy uniwersalnej systemu Windows.
-
 Aby uzyskać więcej informacji na temat bazy danych Azure rozwiązania Cosmos, zobacz [Azure rozwiązania Cosmos DB dokumentacji](/azure/cosmos-db/).
 
 ## <a name="setup"></a>Konfiguracja
 
 Integrowanie bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms proces wygląda następująco:
 
-1. Utwórz konto DB rozwiązania Cosmos. Aby uzyskać więcej informacji, zobacz [Tworzenie konta bazy danych rozwiązania Cosmos](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
-1. Dodaj [biblioteki klienta usługi DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) pakiet NuGet do projektów platformy w rozwiązaniu platformy Xamarin.Forms.
+1. Utwórz konto DB rozwiązania Cosmos. Aby uzyskać więcej informacji, zobacz [utworzyć konto bazy danych Azure rozwiązania Cosmos](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
+1. Dodaj [biblioteki klienta usługi Azure rozwiązania Cosmos DB .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) pakiet NuGet do projektów platformy w rozwiązaniu platformy Xamarin.Forms.
 1. Dodaj `using` dyrektywy `Microsoft.Azure.Documents`, `Microsoft.Azure.Documents.Client`, i `Microsoft.Azure.Documents.Linq` obszarów nazw do klasy, które będą uzyskiwać dostęp do konta DB rozwiązania Cosmos.
 
-Po wykonaniu tych kroków, Biblioteka klienta usługi DocumentDB można skonfigurować i wykonywać żądania w bazie danych dokumentu.
+Po wykonaniu tych kroków, można skonfigurować i wykonywać żądania w bazie danych dokumentów bibliotece klienta usługi Azure rozwiązania Cosmos DB .NET Standard.
 
 > [!NOTE]
-> Biblioteka klienta usługi Azure DocumentDB można zainstalować tylko do projektów platformy, a nie w projekcie przenośnej biblioteki klasy (PCL). W związku z tym Przykładowa aplikacja jest udostępnione dostępu do projektu (SAP) aby uniknąć zduplikowania kodu. Jednak `DependencyService` klasa może być używana w projekcie PCL można wywołać zawarte w projektach specyficzne dla platformy kod biblioteki klienta usługi Azure DocumentDB.
+> Rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta można zainstalować tylko do projektów platformy, a nie w projekcie przenośnej biblioteki klasy (PCL). W związku z tym Przykładowa aplikacja jest udostępnione dostępu do projektu (SAP) aby uniknąć zduplikowania kodu. Jednak `DependencyService` klasa może być używana w projekcie PCL do wywołania rozwiązania Cosmos Azure DB .NET Standard kod biblioteki klienta zawartych w projektach specyficzne dla platformy.
 
 ## <a name="consuming-the-azure-cosmos-db-account"></a>Korzystanie z konta bazy danych Azure rozwiązania Cosmos
 
@@ -59,7 +56,7 @@ Po wykonaniu tych kroków, Biblioteka klienta usługi DocumentDB można skonfigu
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Należy podać rozwiązania Cosmos DB Uri oraz primary key, aby `DocumentClient` konstruktora. Można je uzyskać z portalu Azure. Aby uzyskać więcej informacji, zobacz [Połącz z kontem usługi Azure DB rozwiązania Cosmos](/azure/cosmos-db/documentdb-dotnetcore-get-started#a-idconnectastep-3-connect-to-an-azure-cosmos-db-account).
+Należy podać rozwiązania Cosmos DB Uri oraz primary key, aby `DocumentClient` konstruktora. Można je uzyskać z portalu Azure. Aby uzyskać więcej informacji, zobacz [Połącz z kontem usługi Azure DB rozwiązania Cosmos](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect).
 
 ### <a name="creating-a-database"></a>Tworzenie bazy danych
 
@@ -226,13 +223,13 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono, jak używać Biblioteka klienta programu Microsoft Azure DocumentDB do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms. Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji.
+W tym artykule wyjaśniono, jak używać rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms. Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [TodoDocumentDB (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
-- [Dokumentacja rozwiązania cosmos bazy danych](/azure/cosmos-db/)
-- [Biblioteka klienta DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Interfejs API Azure Cosmos DB](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [Bazy danych rozwiązania Cosmos Azure ToDo (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+- [Dokumentacja rozwiązania Cosmos Azure DB](/azure/cosmos-db/)
+- [Biblioteka klienta usługi Azure rozwiązania Cosmos DB .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Interfejs API Azure Cosmos DB](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)
 

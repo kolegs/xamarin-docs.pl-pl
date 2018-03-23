@@ -6,12 +6,12 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.date: 03/22/2018
+ms.openlocfilehash: 1b6b8ed99c3b2ccc9c39499c9bb9f585bd335c46
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="android-debug-log"></a>Dziennik debugowania dla systemu android
 
@@ -110,17 +110,24 @@ Po wybraniu urządzenia **dziennika urządzenia** narzędzie automatycznie dodaj
 
 Innym rozwiązaniem jest wyświetlanie dzienników debugowania przy użyciu wiersza polecenia. Otwórz okno wiersza polecenia i przejdź do folderu narzędzi platformy zestawu SDK systemu Android (zazwyczaj folderu narzędzi platformy zestawu SDK znajduje się w **C:\\Program Files (x86)\\Android\\zestawu sdk systemu android\\ narzędzia platformy**).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-Innym rozwiązaniem jest wyświetlanie dzienników debugowania przy użyciu wiersza polecenia. Otwórz okno terminala i przejdź do folderu narzędzi platformy zestawu SDK systemu Android (zazwyczaj folderu narzędzi platformy zestawu SDK znajduje się w **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
-
------
-
 Jeśli tylko pojedyncze urządzenie (fizyczne urządzenia lub emulatora) jest dołączony, dziennik można wyświetlić, wprowadzając następujące polecenie:
 
 ```shell
 $ adb logcat
 ```
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Innym rozwiązaniem jest wyświetlanie dzienników debugowania przy użyciu wiersza polecenia. Otwórz okno terminala i przejdź do folderu narzędzi platformy zestawu SDK systemu Android (zazwyczaj folderu narzędzi platformy zestawu SDK znajduje się w **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
+
+Jeśli tylko pojedyncze urządzenie (fizyczne urządzenia lub emulatora) jest dołączony, dziennik można wyświetlić, wprowadzając następujące polecenie:
+
+```shell
+$ ./adb logcat
+```
+
+-----
+
 
 Jeśli więcej niż jedno urządzenie jest podłączone, urządzenia muszą być jawnie określone. Na przykład **logcat -d adb** Wyświetla dziennik tylko fizyczne urządzenia podłączone, podczas gdy **logcat -e adb** przedstawia dziennik uruchomionym emulatorem tylko.
 
