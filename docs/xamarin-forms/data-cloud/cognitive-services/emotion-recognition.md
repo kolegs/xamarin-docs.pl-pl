@@ -1,6 +1,6 @@
 ---
-title: "Przy użyciu emocji interfejsu API rozpoznawania emocji"
-description: "Interfejs API rozpoznawania emocji — warstwa przyjmuje wyrażenia twarzy na obrazie jako dane wejściowe i zwraca poziomy zaufania zestawu emocji dla każdej powierzchni w obrazie. W tym artykule opisano sposób korzystania z interfejsu API rozpoznawania emocji — warstwa do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms."
+title: Przy użyciu powierzchni interfejsu API rozpoznawania emocji
+description: Interfejs API krój przyjmuje wyrażenia twarzy na obrazie jako dane wejściowe i zwraca danych, który zawiera poziomy zaufania zestawu emocji dla każdej powierzchni w obrazie. W tym artykule opisano sposób użycia interfejsu API krój do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
@@ -8,74 +8,72 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 159bd1b23eb7505c5d5629570a34d54e0525567e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fc69fb1283ea2afd95900348cdecec5d6514ae0
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="emotion-recognition-using-the-emotion-api"></a>Przy użyciu emocji interfejsu API rozpoznawania emocji
+# <a name="emotion-recognition-using-the-face-api"></a>Przy użyciu powierzchni interfejsu API rozpoznawania emocji
 
-_Interfejs API rozpoznawania emocji — warstwa przyjmuje wyrażenia twarzy na obrazie jako dane wejściowe i zwraca poziomy zaufania zestawu emocji dla każdej powierzchni w obrazie. W tym artykule opisano sposób korzystania z interfejsu API rozpoznawania emocji — warstwa do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms._
-
-![](~/media/shared/preview.png "Ten interfejs API jest obecnie wersji wstępnej")
-
-> [!NOTE]
-> Interfejs API rozpoznawania emocji — warstwa jest wciąż w wersji zapoznawczej. Może być istotne zmiany przed ostateczną wersją interfejsu API.
+_Interfejs API krój przyjmuje wyrażenia twarzy na obrazie jako dane wejściowe i zwraca danych, który zawiera poziomy zaufania zestawu emocji dla każdej powierzchni w obrazie. W tym artykule opisano sposób użycia interfejsu API krój do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms._
 
 ## <a name="overview"></a>Omówienie
 
-API rozpoznawania emocji — warstwa może wykryć gniew, contempt wstręt, obawy, szczęście, neutral, sadness i niespodziewanego, w wyrażeniu twarzy. Te emocji są uniwersalnie i cross-culturally przekazywane za pośrednictwem tego samego podstawowego twarzy. Oraz zwraca wynik emocji wyrażenia twarzy, interfejsu API rozpoznawania emocji — warstwa zwraca obwiedni kroje wykryte za pomocą interfejsu API twarzy na obrazie. Jeśli użytkownik została już wywołana powierzchni interfejsu API, prostokąt krój może ją następnie przesłać jako opcjonalny danych wejściowych. Należy pamiętać, że używanie interfejsu API rozpoznawania emocji — warstwa należy uzyskać klucz interfejsu API. To znajduje się w [wprowadzenie bezpłatnie](https://www.microsoft.com/cognitive-services/sign-up) w witrynie microsoft.com.
+Powierzchni interfejsu API można wykonać wykrywania emocji wykryć gniew, contempt, wstręt, obawy, szczęście neutralne, sadness i niespodziewanego, w wyrażeniu twarzy. Te emocji są uniwersalnie i cross-culturally przekazywane za pośrednictwem tego samego podstawowego twarzy. Oraz zwraca wynik emocji wyrażenia twarzy, powierzchni interfejsu API może również zwraca obwiedni dla wykrytych powierzchni. Należy pamiętać, że klucz interfejsu API musi uzyskana za pomocą interfejsu API twarzy na obrazie. To znajduje się w [spróbuj kognitywnych usług](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 
-Rozpoznawania emocji można wykonać za pomocą biblioteki klienta i za pośrednictwem interfejsu API REST. Ten artykuł skupia się na wykonywanie rozpoznawania emocji za pośrednictwem [Microsoft.ProjectOxford.Emotion](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/) biblioteki klienta, który można pobrać z pakietu NuGet.
+Rozpoznawania emocji można wykonać za pomocą biblioteki klienta i za pośrednictwem interfejsu API REST. Ten artykuł skupia się na wykonywanie rozpoznawania emocji za pośrednictwem [Microsoft.ProjectOxford.Face](https://www.nuget.org/packages/Microsoft.ProjectOxford.Face/) biblioteki klienta, który można pobrać z pakietu NuGet.
 
-Interfejs API rozpoznawania emocji — warstwa może służyć do rozpoznawania twarzy osób wideo i zwraca podsumowanie ich emocji. Aby uzyskać więcej informacji, zobacz [emocji wideo](https://www.microsoft.com/cognitive-services/emotion-api/documentation#emotion-in-video) w witrynie microsoft.com.
+Interfejs API krój mogą służyć do rozpoznawania twarzy osób wideo i może zwrócić podsumowanie ich emocji. Aby uzyskać więcej informacji, zobacz [sposobu analizowania wideo w czasie rzeczywistym](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/).
 
-Aby uzyskać więcej informacji na temat interfejsu API rozpoznawania emocji — warstwa zobacz [dokumentacji interfejsu API rozpoznawania emocji — warstwa](https://www.microsoft.com/cognitive-services/emotion-api/documentation) w witrynie microsoft.com.
+Aby uzyskać więcej informacji na temat powierzchni interfejsu API, zobacz [powierzchni interfejsu API](/azure/cognitive-services/face/overview/).
 
 ## <a name="performing-emotion-recognition"></a>Wykonywanie rozpoznawania emocji
 
-Rozpoznawania emocji uzyskuje się poprzez przekazanie strumień obrazu do interfejsu API rozpoznawania emocji — warstwa. Rozmiar pliku obrazu nie powinien być większy niż 4MB, a są obsługiwane formaty plików, JPEG, GIF, PNG i BMP. W obrazie zakres rozmiaru wykrywalny krój to 36 x 36 do 4096 x 4096 pikseli. Nie można wykryć żadnych kroje poza tym zakresem.
+Rozpoznawania emocji uzyskuje się poprzez przekazanie strumień obrazu do powierzchni interfejsu API. Rozmiar pliku obrazu nie powinien być większy niż 4MB, a są obsługiwane formaty plików, JPEG, GIF, PNG i BMP.
 
 Poniższy przykładowy kod przedstawia proces rozpoznawania emocji:
 
 ```csharp
-using Microsoft.ProjectOxford.Emotion;
-using Microsoft.ProjectOxford.Emotion.Contract;
+using Microsoft.ProjectOxford.Face;
+using Microsoft.ProjectOxford.Face.Contract;
 
-var emotionClient = new EmotionServiceClient(Constants.EmotionApiKey);
+var faceServiceClient = new FaceServiceClient(Constants.FaceApiKey, Constants.FaceEndpoint);
+// e.g. var faceServiceClient = new FaceServiceClient("a3dbe2ed6a5a9231bb66f9a964d64a12", "https://westus.api.cognitive.microsoft.com/face/v1.0/detect");
 
+var faceAttributes = new FaceAttributeType[] { FaceAttributeType.Emotion };
 using (var photoStream = photo.GetStream())
 {
-  Emotion[] emotionResult = await emotionClient.RecognizeAsync(photoStream);
-  if (emotionResult.Any())
-  {
-    // Emotions detected are happiness, sadness, surprise, anger, fear, contempt, disgust, or neutral.
-    emotionResultLabel.Text = emotionResult.FirstOrDefault().Scores.ToRankedList().FirstOrDefault().Key;
-  }
-  // Store emotion as app rating
-  ...
+    Face[] faces = await faceServiceClient.DetectAsync(photoStream, true, false, faceAttributes);
+    if (faces.Any())
+    {
+        // Emotions detected are happiness, sadness, surprise, anger, fear, contempt, disgust, or neutral.
+        emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRankedList().FirstOrDefault().Key;
+    }
+    // Store emotion as app rating
+    ...
 }
 ```
 
-`EmotionServiceClient` Można utworzyć wystąpienia, przeprowadzać rozpoznawania emocji przy użyciu klucza interfejsu API rozpoznawania emocji — warstwa przekazywany jako argument `EmotionServiceClient` konstruktora.
+`FaceServiceClient` Można utworzyć wystąpienia, aby wykonać rozpoznawania emocji, za pomocą klucza powierzchni interfejsu API i punktu końcowego są przekazywane jako argumenty do `FaceServiceClient` konstruktora.
 
-`RecognizeAsync` Metodę, która jest wywoływana `EmotionServiceClient` wystąpienia, przesyła obraz do interfejsu API rozpoznawania emocji — warstwa jako `Stream`. Klucz interfejsu API zostanie przesłany do interfejsu API rozpoznawania emocji — warstwa po wywołaniu tej operacji. Brak przesłać prawidłowego klucza interfejsu API spowoduje `Microsoft.ProjectOxford.Common.ClientException` został zgłoszony z wyjątek komunikat wskazujący, że przekazano nieprawidłowy klucz interfejsu API.
+> [!NOTE]
+> W Twojej powierzchni interfejsu API podczas uzyskiwania kluczy subskrypcji, należy użyć tego samego regionu. Na przykład, jeśli użytkownik uzyskał klucze subskrypcji z `westus` regionu, punkt końcowy wykrywania twarzy na obrazie będzie `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`.
 
-`RecognizeAsync` Metoda zwróci `Emotion` tablicy, pod warunkiem, że krój został rozpoznany. Dla każdego obrazu maksymalna liczba kroje, które mogą być wykrywane to 64, a powierzchni są uporządkowane według krój rozmiar prostokąta w kolejności malejącej. W przypadku wykrycia nie krój pustą `Emotion` tablicy zostaną zwrócone.
+`DetectAsync` Metodę, która jest wywoływana `FaceServiceClient` wystąpienia, przesyła obraz do powierzchni interfejsu API, jako `Stream`. Klucz interfejsu API zostanie przesłany do interfejsu API krój po wywołaniu tej operacji. Brak przesłać prawidłowego klucza interfejsu API spowoduje `Microsoft.ProjectOxford.Face.FaceAPIException` został zgłoszony z wyjątek komunikat wskazujący, że przekazano nieprawidłowy klucz interfejsu API.
 
-Przy interpretowaniu wyników z interfejsu API rozpoznawania emocji — warstwa, wykryto emocji powinny być rozumiane jako emocji z najwyższym wynik, zgodnie z znormalizowanych są wyniki do zsumowania do jednego. W związku z tym przykładowej aplikacji wyświetla rozpoznanym emocji najwyższy wynik dla największy powierzchni wykrytych w obrazie, jak pokazano na poniższych zrzutach ekranu:
+`DetectAsync` Metoda zwróci `Face` tablicy, pod warunkiem, że krój został rozpoznany. Każdy zwracany krój zawiera prostokąt wskazująca lokalizacji, w połączeniu z serii krój opcjonalne atrybuty, które są określone przez `faceAttributes` argument `DetectAsync` metody. W przypadku wykrycia nie krój pustą `Face` tablicy zostaną zwrócone.
+
+Przy interpretowaniu wyników z powierzchni interfejsu API, wykryto emocji powinny być rozumiane jako emocji z najwyższym wynik, zgodnie z znormalizowanych są wyniki do zsumowania do jednego. W związku z tym przykładowej aplikacji wyświetla rozpoznanym emocji najwyższy wynik dla największy powierzchni wykrytych w obrazie, jak pokazano na poniższych zrzutach ekranu:
 
 ![](emotion-recognition-images/emotion-recognition.png "Rozpoznawania emocji")
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono sposób użycia interfejsu API rozpoznawania emocji — warstwa do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms. Interfejs API rozpoznawania emocji — warstwa ma wyrażenia twarzy na obrazie jako dane wejściowe i zwraca zaufania zestawu emocji dla każdej powierzchni w obrazie.
-
+W tym artykule opisano sposób użycia interfejsu API krój do rozpoznawania emocji, aby ocenić aplikacji platformy Xamarin.Forms. Interfejs API krój przyjmuje wyrażenia twarzy na obrazie jako dane wejściowe i zwraca danych, który zawiera zaufania zestawu emocji dla każdej powierzchni w obrazie.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Dokumentacja interfejsu API emocji](https://www.microsoft.com/cognitive-services/emotion-api/documentation)
+- [Dostęp do interfejsu API](/azure/cognitive-services/face/overview/).
 - [Usługi kognitywnych ToDo (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [Microsoft.ProjectOxford.Emotion](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/)
-- [Emocji interfejsu API](https://dev.projectoxford.ai/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa)
+- [Microsoft.ProjectOxford.Face](https://www.nuget.org/packages/Microsoft.ProjectOxford.Face/)

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 246dd135b8a6e8a60bca9ba38e91ca8fd2d43674
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -163,7 +163,7 @@ Jeden Marszczenie: `_Gdb` docelowy programu MSBuild będzie kill wcześniej uruc
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` nie działa
 
-`mono_pmip` — Funkcja (przydatne w przypadku [uzyskiwania ramek stosu zarządzanych](http://www.mono-project.com/Debugging#Debugging_with_GDB)) są eksportowane z `libmonosgen-2.0.so`, który `_Gdb` docelowych nie będzie ściągać w dół. (Ten problem zostanie rozwiązany w przyszłej wersji.)
+`mono_pmip` — Funkcja (przydatne w przypadku [uzyskiwania ramek stosu zarządzanych](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) są eksportowane z `libmonosgen-2.0.so`, który `_Gdb` docelowych nie będzie ściągać w dół. (Ten problem zostanie rozwiązany w przyszłej wersji.)
 
 Aby włączyć wywoływanie funkcji znajduje się w `libmonosgen-2.0.so`, skopiuj go z tego urządzenia do `gdb-symbols` katalogu:
 

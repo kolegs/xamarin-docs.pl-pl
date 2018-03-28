@@ -1,18 +1,18 @@
 ---
-title: "Część 3. Rozszerzenia znaczników XAML"
-description: "Rozszerzenia znaczników XAML stanowi ważną funkcją w języku XAML, który umożliwia właściwości można ustawić obiektów lub wartości, które odwołuje się pośrednio z innych źródeł. Rozszerzenia znaczników XAML są szczególnie ważne w przypadku udostępniania obiektów i odwołuje się do stałych używanych w całej aplikacji, ale ich największy narzędzie znajduje się w powiązania danych."
+title: Część 3. Rozszerzenia znaczników XAML
+description: Rozszerzenia znaczników XAML stanowi ważną funkcją w języku XAML, który umożliwia właściwości można ustawić obiektów lub wartości, które odwołuje się pośrednio z innych źródeł. Rozszerzenia znaczników XAML są szczególnie ważne w przypadku udostępniania obiektów i odwołuje się do stałych używanych w całej aplikacji, ale ich największy narzędzie znajduje się w powiązania danych.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Część 3. Rozszerzenia znaczników XAML
 
@@ -45,7 +45,7 @@ Niektóre strony XAML zawiera kilka widoków z tej samej wartości właściwośc
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ Niektóre strony XAML zawiera kilka widoków z tej samej wartości właściwośc
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ Niektóre strony XAML zawiera kilka widoków z tej samej wartości właściwośc
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -136,7 +136,7 @@ Teraz należy ustawić `HorizontalOptions` i `VerticalOptions` właściwości ty
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 `StaticResource` — Rozszerzenie znaczników zawsze rozdzielana w nawiasach klamrowych i zawiera klucz słownika.
@@ -192,7 +192,7 @@ Te dwa zasoby może być przywoływany w taki sam sposób jak `LayoutOptions` wa
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 Dla zasobów typu `Color`, można użyć tego samego reprezentacji ciągu używanych podczas bezpośrednie przypisywanie atrybutów tych typów. Typy konwerterów są wywoływane po utworzeniu zasobu. Oto zasobu typu `Color`:
@@ -201,14 +201,10 @@ Dla zasobów typu `Color`, można użyć tego samego reprezentacji ciągu używa
 <Color x:Key="textColor">Red</Color>
 ```
 
-`FontSize` Właściwość stanowi mały problem. Właściwość jest zdefiniowana jako typu `double`. Po ustawieniu właściwości do elementu członkowskiego `NamedSize` wyliczenia, takich jak `Large`, `FontSizeConverter` działa w tle, aby przekonwertować go na wartość zależny od platformy przy użyciu klasy `Device.GetNamedSized` metody.
-
-Jednak nie można zdefiniować zasobu na rozmiar czcionki jako `double` i ustaw wartość "Duży". Podczas przetwarzania zasobu przez XAML parser nie o tym, że wartość będzie używany jako rozmiar czcionki. 
-
-Rozwiązanie jest określenie zasobu jako `string` przy użyciu `x:String` typu:
+Często programy zestaw `FontSize` właściwości do elementu członkowskiego `NamedSize` wyliczenia, takich jak `Large`. `FontSizeConverter` Działa w tle, aby przekonwertować go na wartość zależny od platformy przy użyciu klasy `Device.GetNamedSized` metody. Jednak podczas definiowania zasobów rozmiar czcionki, warto więcej używać wartości liczbowe wyświetlane jako `x:Double` typu:
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 Teraz wszystkie właściwości z wyjątkiem `Text` są definiowane przez ustawienia zasobów:
@@ -275,7 +271,7 @@ Oto końcowego pełny plik XAML z trzy przyciski uzyskiwanie dostępu do udostę
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

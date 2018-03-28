@@ -1,6 +1,6 @@
 ---
-title: "Dodawanie analizy z usługami kognitywnych"
-description: "Kognitywnych usługi Microsoft są zestaw interfejsów API, zestawy SDK i usług dostępnych dla deweloperów można wprowadzić do swoich aplikacji inteligentne, dodając funkcje, takie jak rozpoznawanie twarzy, rozpoznawanie mowy i zrozumienia języka. Ten artykuł zawiera wprowadzenie do aplikacji przykładowej, który demonstruje sposób wywołania niektóre Microsoft kognitywnych interfejsów API usługi Service."
+title: Dodawanie analizy z usługami kognitywnych
+description: Kognitywnych usługi Microsoft są zestaw interfejsów API, zestawy SDK i usług dostępnych dla deweloperów można wprowadzić do swoich aplikacji inteligentne, dodając funkcje, takie jak rozpoznawanie twarzy, rozpoznawanie mowy i zrozumienia języka. Ten artykuł zawiera wprowadzenie do aplikacji przykładowej, który demonstruje sposób wywołania niektóre Microsoft kognitywnych interfejsów API usługi Service.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Dodawanie analizy z usługami kognitywnych
 
@@ -23,12 +23,12 @@ _Kognitywnych usługi Microsoft są zestaw interfejsów API, zestawy SDK i usłu
 Przykład towarzyszący jest aplikacja listy todo, która zapewnia funkcje:
 
 - Wyświetlanie listy zadań.
-- Dodawanie i edytowanie zadań za pomocą klawiatura programowa lub wykonując rozpoznawania mowy przy użyciu interfejsu API mowy usługi Bing. Aby uzyskać więcej informacji na temat wykonywania rozpoznawania mowy, zobacz [rozpoznawania mowy przy użyciu interfejsu API mowy usługi Bing](speech-recognition.md).
+- Dodawanie i edytowanie zadań za pomocą klawiatura programowa lub wykonując rozpoznawania mowy przy użyciu interfejsu API mowy firmy Microsoft. Aby uzyskać więcej informacji na temat wykonywania rozpoznawania mowy, zobacz [rozpoznawania mowy przy użyciu interfejsu API mowy Microsoft](speech-recognition.md).
 - Pisowni wyboru zadań za pomocą API sprawdzania pisowni usługi Bing. Aby uzyskać więcej informacji, zobacz [sprawdzanie pisowni korzystanie z API sprawdzania pisowni usługi Bing](spell-check.md).
 - Wykonuje zadania z języka angielskiego na język niemiecki, przy użyciu interfejsu API translatora. Aby uzyskać więcej informacji, zobacz [tłumaczenie tekstu przy użyciu interfejsu API Translator](text-translation.md).
 - Usuwanie zadań.
 - Ustaw stan zadania na "gotowe".
-- Oceń aplikację do rozpoznawania emocji, przy użyciu interfejsu API rozpoznawania emocji — warstwa. Aby uzyskać więcej informacji, zobacz [rozpoznawania emocji przy użyciu interfejsu API rozpoznawania emocji — warstwa](emotion-recognition.md).
+- Oceń aplikację do rozpoznawania emocji, przy użyciu interfejsu API twarzy na obrazie. Aby uzyskać więcej informacji, zobacz [rozpoznawania emocji przy użyciu interfejsu API krój](emotion-recognition.md).
 
 Zadania są przechowywane w lokalnej bazie danych SQLite. Aby uzyskać więcej informacji na temat korzystania z lokalnej bazy danych SQLite, zobacz [Praca z lokalnej bazy danych](~/xamarin-forms/app-fundamentals/databases.md).
 
@@ -36,7 +36,7 @@ Zadania są przechowywane w lokalnej bazie danych SQLite. Aby uzyskać więcej i
 
 ![](images/sample-application-1.png "TodoListPage")
 
-Mogą być tworzone nowe elementy, klikając * + * przycisku, który przechodzi do `TodoItemPage`. Ta strona może zostać przesłane do wybierając zadania:
+Mogą być tworzone nowe elementy, klikając *+* przycisku, który przechodzi do `TodoItemPage`. Ta strona może zostać przesłane do wybierając zadania:
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -46,7 +46,7 @@ Kliknięcie przycisku smilies `TodoListPage` przechodzi do `RateAppPage`, która
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage` Zezwala użytkownikowi na Zrób zdjęcie ich krój, który jest przesyłany do interfejsu API rozpoznawania emocji — warstwa z emocji zwrócone, będzie wyświetlany.
+`RateAppPage` Zezwala użytkownikowi na Zrób zdjęcie ich krój, który jest przesyłany do interfejsu API krojów z emocji zwrócone, będzie wyświetlany.
 
 ## <a name="understanding-the-application-anatomy"></a>Opis Anatomia aplikacji
 
@@ -73,7 +73,7 @@ Przykładowa aplikacja korzysta z następujących pakietów NuGet:
 
 - `Microsoft.Net.Http` — zapewnia `HttpClient` klasa do tworzenia żądań za pośrednictwem protokołu HTTP.
 - `Newtonsoft.Json` — zapewnia platformę JSON dla platformy .NET.
-- `Microsoft.ProjectOxford.Emotion` — biblioteki klienta do uzyskiwania dostępu do interfejsu API rozpoznawania emocji — warstwa.
+- `Microsoft.ProjectOxford.Face` — biblioteki klienta do uzyskiwania dostępu do interfejsu API twarzy na obrazie.
 - `PCLStorage` — zawiera zestaw interfejsów API We/Wy plików lokalnych i platform.
 - `sqlite-net-pcl` — Umożliwia przechowywanie bazy danych SQLite.
 - `Xam.Plugin.Media` — Umożliwia pobieranie zdjęć i platform i pobrania interfejsów API.
@@ -117,11 +117,10 @@ public class TodoItem
 
 Przykładowa aplikacja wywołuje następujących kognitywnych usług firmy Microsoft:
 
-- Mowy usługi Bing interfejsu API. Aby uzyskać więcej informacji, zobacz [rozpoznawania mowy przy użyciu interfejsu API mowy usługi Bing](speech-recognition.md).
+- Microsoft mowy interfejsu API. Aby uzyskać więcej informacji, zobacz [rozpoznawania mowy przy użyciu interfejsu API mowy Microsoft](speech-recognition.md).
 - Interfejsu API sprawdzania pisowni usługi Bing. Aby uzyskać więcej informacji, zobacz [sprawdzanie pisowni korzystanie z API sprawdzania pisowni usługi Bing](spell-check.md).
 - Tłumaczenie interfejsu API. Aby uzyskać więcej informacji, zobacz [tłumaczenie tekstu przy użyciu interfejsu API Translator](text-translation.md).
-- Emocji interfejsu API. Aby uzyskać więcej informacji, zobacz [rozpoznawania emocji przy użyciu interfejsu API rozpoznawania emocji — warstwa](emotion-recognition.md).
-
+- Powierzchni interfejsu API. Aby uzyskać więcej informacji, zobacz [rozpoznawania emocji przy użyciu interfejsu API krój](emotion-recognition.md).
 
 ## <a name="related-links"></a>Linki pokrewne
 

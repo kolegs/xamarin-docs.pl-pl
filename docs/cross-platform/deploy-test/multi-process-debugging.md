@@ -1,5 +1,5 @@
 ---
-title: "Debugowanie wielu procesów"
+title: Debugowanie wielu procesów
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9454c65298dbb5417f91765f541d22ae1d6137d7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7bc230b43d0b50746a6076ffb2633e7fad0283d9
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="multi-process-debugging"></a>Debugowanie wielu procesów
 
@@ -31,7 +31,7 @@ Aby pomóc deweloperom z wieloma procesem debugowania, Visual Studio for Mac prz
 
 Domyślnie program Visual Studio for Mac spowoduje wyświetlenie pojedynczego projektu w **konfiguracji rozwiązania** obszar paska narzędzi debugowania. Po zainicjowaniu sesji debugowania, jest to projekt, który uruchomi i Dołącz debuger do programu Visual Studio for Mac.
 
-Aby uruchomić i debugowanie wielu procesów w programie Visual Studio dla komputerów Mac, jest niezbędne do utworzenia _konfiguracji rozwiązania_. Konfiguracja rozwiązania opisano, jakie projektów w rozwiązaniu powinny być włączone po zainicjowaniu sesji debugowania jednym kliknięciem **Start** przycisk lub podczas &#8984; &#8617; (**Wprowadź Cmd**) zostanie naciśnięty. Poniższy zrzut ekranu jest stanowi przykład rozwiązania w programie Visual Studio dla komputerów Mac, który ma wiele konfiguracji rozwiązania:
+Aby uruchomić i debugowanie wielu procesów w programie Visual Studio dla komputerów Mac, jest niezbędne do utworzenia _konfiguracji rozwiązania_. Konfiguracja rozwiązania opisano, jakie projektów w rozwiązaniu powinny być włączone po zainicjowaniu sesji debugowania jednym kliknięciem **Start** przycisk lub gdy &#8984; &#8617; (**wprowadź Cmd**) jest Naciśnięto. Poniższy zrzut ekranu jest stanowi przykład rozwiązania w programie Visual Studio dla komputerów Mac, który ma wiele konfiguracji rozwiązania:
 
 ![](multi-process-debugging-images/mpd01-xs.png "Rozwiązania z wielu konfiguracji rozwiązania")
 
@@ -60,7 +60,7 @@ Po uruchomieniu konfiguracji rozwiązania wielu część programu Visual Studio 
 
 Po napotkaniu punktu przerwania w jednym procesie tego procesu wstrzyma wykonywania, podczas gdy inne procesy nadal działać. W przypadku jednego procesu Visual Studio for Mac można łatwo wyświetlić informacje, takie jak wątków, zmienne lokalne, danych wyjściowych aplikacji w jednym zestawie konsole. Jednak w przypadku wielu procesów z wielu punktów przerwania i potencjalnie wiele wątków można okaże utrudnione deweloperowi radzenia sobie z informacjami z sesji debugowania, która próbuje go wyświetlać wszystkie informacje ze wszystkich wątków (i procesów) na raz.
 
-Aby rozwiązać ten problem, Visual Studio dla komputerów Mac w czasie będą wyświetlane tylko dane z jednego wątku, jest to nazywane _aktywnego wątku_. Pierwszy wątek, który wstrzymuje w punkcie przerwania jest uważany za _aktywnego wątku_. Aktywnego wątku jest wątku, który jest celem dewelopera uwagi. Debugowanie poleceń, takich jak **Step Over** &#8679; &#8984; O (Shift-Cmd-O), które zostaną wystawione do aktywnego wątku.
+Aby rozwiązać ten problem, Visual Studio dla komputerów Mac w czasie będą wyświetlane tylko dane z jednego wątku, jest to nazywane _aktywnego wątku_. Pierwszy wątek, który wstrzymuje w punkcie przerwania jest uważany za _aktywnego wątku_. Aktywnego wątku jest wątku, który jest celem dewelopera uwagi. Debugowanie poleceń, takich jak **Step Over** &#8679; &#8984;O (Shift-Cmd-O), będą wystawiane do aktywnego wątku.
 
 **Konsoli wątku** będą wyświetlane informacje dotyczące wszystkich procesów i wątków, które podlegają kontroli w konfiguracji rozwiązania i podaj wizualnych jest aktywnym wątkiem:
 
@@ -104,7 +104,7 @@ Istnieje również możliwość debugowania projektu, drugi po rozpoczęciu pier
 
 ## <a name="creating-a-solution-configuration"></a>Tworzenie konfiguracji rozwiązania
 
-A _konfiguracji rozwiązania_ informuje Visual Studio dla komputerów Mac, jakie projektu do uruchomienia podczas sesji debugowania jest intiated z **Start** przycisku. Może istnieć więcej niż jedną konfigurację rozwiązania na rozwiązanie. Dzięki temu można określić, jakie projekty są uruchamiane podczas debugowania projektu.
+A _konfiguracji rozwiązania_ informuje Visual Studio dla komputerów Mac, jakie projektu do uruchomienia po zainicjowaniu sesji debugowania z **Start** przycisku. Może istnieć więcej niż jedną konfigurację rozwiązania na rozwiązanie. Dzięki temu można określić, jakie projekty są uruchamiane podczas debugowania projektu.
 
 Aby utworzyć nową konfigurację rozwiązania w Xamaring Studio:
 

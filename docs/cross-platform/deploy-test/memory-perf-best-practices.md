@@ -1,6 +1,6 @@
 ---
-title: "Wydajność i Platform"
-description: "Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za pomocą platformy Xamarin. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki."
+title: Wydajność i Platform
+description: Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za pomocą platformy Xamarin. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8b597221e806c2338d6f1965d3d151f998a3011
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="cross-platform-performance"></a>Wydajność i Platform
 
@@ -352,7 +352,7 @@ Niezależnie od rozdzielczość obrazu wyświetlania zasobów obrazu może znacz
 
 ## <a name="reduce-the-application-activation-period"></a>Zmniejsz okres aktywacji aplikacji
 
-Wszystkie aplikacje *okres aktywacji*, która jest czas od uruchomienia aplikacji oraz gdy aplikacja jest gotowa do użycia. Ten okres aktywacji zapewnia użytkownikom ich wyglądu aplikacji i dlatego ważne jest, aby ograniczyć okres aktywacji i wrażenie użytkowników, aby uzyskanie pozytywnych wrażenie pierwszej aplikacji.
+Wszystkie aplikacje *okres aktywacji*, która jest czas od uruchomienia aplikacji oraz gdy aplikacja jest gotowa do użycia. Ten okres aktywacji zapewnia użytkownikom ich wyglądu aplikacji i dlatego ważne jest, aby ograniczyć okres aktywacji i użytkownika z punktu widzenia użytkownika, aby uzyskanie pozytywnych wrażenie pierwszej aplikacji.
 
 Przed jego początkowej interfejsu użytkownika są wyświetlane w aplikacji, powinien udostępniać ekran powitalny, aby poinformować użytkownika, że aplikacja jest uruchamiana. Jeśli aplikacja nie może szybko wyświetlić jego początkowej interfejsu użytkownika, pojawi się ekran powitalny należy poinformować użytkownika postępu przez okres aktywacji oferowanie zabezpieczenie, które aplikacji nie odpowiada. To zabezpieczenie można pasek postępu lub podobne formantu.
 

@@ -1,6 +1,6 @@
 ---
-title: "Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C"
-description: "Ten artykuł zawiera praktyczne wskazówki tworzenia powiązania Xamarin.iOS dla istniejącej biblioteki języka Objective-C, InfColorPicker. Obejmuje ona tematy, takie jak kompilowanie biblioteki statycznej Objective-C, powiązania jej i za pomocą tego powiązania w aplikacji platformy Xamarin.iOS."
+title: 'Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C'
+description: Ten artykuł zawiera praktyczne wskazówki tworzenia powiązania Xamarin.iOS dla istniejącej biblioteki języka Objective-C, InfColorPicker. Obejmuje ona tematy, takie jak kompilowanie biblioteki statycznej Objective-C, powiązania jej i za pomocą tego powiązania w aplikacji platformy Xamarin.iOS.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C
 
@@ -94,7 +94,7 @@ Z zainstalowanymi narzędziami wiersza polecenia jest już kontynuować przewodn
 W tym przewodniku firma Microsoft będzie obejmuje następujące kroki:
 
 - **[Utwórz bibliotekę statyczną](#Creating_A_Static_Library)**  — ten krok obejmuje tworzenia biblioteki statycznej **InfColorPicker** kod języka Objective-C. Biblioteka statyczna będzie mieć `.a` rozszerzenie pliku i zostanie osadzony w zestawie .NET projektu biblioteki.
-- **[Tworzenie projektu platformy Xamarin.iOS powiązania](#Create_a_Xamarin.iOS_Binding_Project)**  — gdy mamy biblioteki statycznej użyjemy jej do utworzenia projektu platformy Xamarin.iOS powiązania. Projekt powiązanie składa się z biblioteką statyczną, którą właśnie utworzyliśmy i metadanych w postaci kodu C#, który objaśnia, jak można użyć interfejsu API języka Objective-C. Te metadane jest często określana jako definicje interfejsu API. Użyjemy  **[Sharpie cel](#Using_Objective_Sharpie)**  aby pomóc nam o utworzenie definicji interfejsu API.
+- **[Tworzenie projektu platformy Xamarin.iOS powiązania](#Create_a_Xamarin.iOS_Binding_Project)**  — gdy mamy biblioteki statycznej użyjemy jej do utworzenia projektu platformy Xamarin.iOS powiązania. Projekt powiązanie składa się z biblioteką statyczną, którą właśnie utworzyliśmy i metadanych w postaci kodu C#, który objaśnia, jak można użyć interfejsu API języka Objective-C. Te metadane jest często określana jako definicje interfejsu API. Użyjemy **[Sharpie cel](#Using_Objective_Sharpie)** aby pomóc nam o utworzenie definicji interfejsu API.
 - **[Normalizuj definicji interfejsu API](#Normalize_the_API_Definitions)**  — Sharpie celem jest Dobra robota pomagającym nam, ale nie wszystko. Omówiono pewne zmiany, które są konieczne do definicji interfejsu API przed ich użyciem.
 - **[Korzystanie z biblioteki powiązania](#Using_the_Binding)**  -Finally, utworzymy aplikację platformy Xamarin.iOS pokazanie sposobu korzystania z naszych projektu nowo utworzone wiązanie.
 
@@ -159,7 +159,7 @@ Pierwszym krokiem jest dla nas do dodania do biblioteki statycznej InfoColorPick
 
     [![](walkthrough-images/image16b.png "Rozwiń sekcję binarny z bibliotekami")](walkthrough-images/image16b.png#lightbox)
 
-13. Użyj  **+**  przycisk, aby otworzyć okno dialogowe umożliwiające dodanie struktury wymagane ramki wymienione powyżej:
+13. Użyj **+** przycisk, aby otworzyć okno dialogowe umożliwiające dodanie struktury wymagane ramki wymienione powyżej:
 
     [![](walkthrough-images/image16c.png "Dodaj struktury wymagane ramki wymienionych powyżej")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Tworzenie binarnego fat jest procesem trzech fazach:
 
 Gdy te trzy kroki są raczej proste, a może być konieczne powtarzanie ich w przyszłości, gdy biblioteka języka Objective-C odbiera aktualizacje, lub jeśli wymagane poprawki. Jeśli zdecydujesz się zautomatyzować następujące kroki, uprości przyszłych konserwacji i pomocy technicznej dla projektu iOS powiązania.
 
-Istnieje wiele narzędzi dostępne w celu automatyzacji takiego zadania — skrypt powłoki, [nachylenia](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/Microsoft.Build), i [upewnij](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Zainstalowano narzędzia wiersza polecenia Xcode, będziemy również zainstalować upewnij, wtedy system kompilacji, który będzie używany w ramach tego przewodnika. Oto **pliku reguł programu make** używanej do utworzenia wielu architektura biblioteki udostępnionej, który będzie działać na urządzeniu z systemem iOS i symulatora dla żadnej biblioteki:
+Istnieje wiele narzędzi dostępne w celu automatyzacji takiego zadania — skrypt powłoki, [nachylenia](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), i [upewnij](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Zainstalowano narzędzia wiersza polecenia Xcode, będziemy również zainstalować upewnij, wtedy system kompilacji, który będzie używany w ramach tego przewodnika. Oto **pliku reguł programu make** używanej do utworzenia wielu architektura biblioteki udostępnionej, który będzie działać na urządzeniu z systemem iOS i symulatora dla żadnej biblioteki:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

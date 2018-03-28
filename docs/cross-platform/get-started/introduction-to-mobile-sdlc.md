@@ -1,6 +1,6 @@
 ---
-title: "Wprowadzenie do cyklu programistycznym oprogramowanie dla urządzeń przenośnych"
-description: "W tym artykule omówiono cyklu programistycznym oprogramowania w odniesieniu do aplikacji dla urządzeń przenośnych i omówiono niektóre kwestie wymagane podczas kompilowania projekty przenośnych. Deweloperzy chcący wystarczy przejść bezpośrednio w i rozpocząć tworzenie w tym przewodniku można pominięty i przeczytać później, aby uzyskać bardziej szczegółowy opis rozwoju przenośnych."
+title: Wprowadzenie do cyklu programistycznym oprogramowanie dla urządzeń przenośnych
+description: W tym artykule omówiono cyklu programistycznym oprogramowania w odniesieniu do aplikacji dla urządzeń przenośnych i omówiono niektóre kwestie wymagane podczas kompilowania projekty przenośnych. Deweloperzy chcący wystarczy przejść bezpośrednio w i rozpocząć tworzenie w tym przewodniku można pominięty i przeczytać później, aby uzyskać bardziej szczegółowy opis rozwoju przenośnych.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Wprowadzenie do cyklu programistycznym oprogramowanie dla urządzeń przenośnych
 
@@ -25,7 +25,7 @@ W tym dokumencie chcemy się zająć zbadania wprowadzające tworzenia aplikacji
 1.   **Proces** — proces tworzenia oprogramowania jest nazywany cyklu tworzenia oprogramowania (SDLC). Zajmiemy się wszystkich faz SDLC względem rozwoju aplikacji mobilnej, w tym: Inspirującymi, projekt programowanie, stabilizacji, wdrażania i konserwacji.
 1.   **Zagadnienia dotyczące** — istnieją pewne kwestie podczas tworzenia aplikacji dla urządzeń przenośnych, szczególnie w przeciwieństwie do tradycyjnych sieci web lub aplikacji klasycznych. Zajmiemy się powyższe zagadnienia i ich wpływ na projektowanie przenośnych.
 
-Ten dokument jest przeznaczony do odpowiedzi na podstawowe pytania dotyczące tworzenia aplikacji mobilnych, dla deweloperów aplikacji nowych i doświadczonym podobne. Trwa dość wyczerpującą wprowadzenie większość pojęcia, które będą uruchamiane w podczas cały cykl życia rozwoju oprogramowania (SDLC). Ten dokument mogą nie być dla wszystkich użytkowników, jeśli jest itching można po prostu zacznij tworzenie aplikacji, firma Microsoft zaleca jednak przeskok w przód jednej [wprowadzenie do programowania aplikacji mobilnych](~/cross-platform/get-started/introduction-to-mobile-development.md), [Hello, Android](~/android/get-started/hello-android/index.md) lub [Hello, iPhone](~/ios/get-started/hello-ios/index.md) samouczki, a następnie powracające do tego dokumentu później.
+Ten dokument jest przeznaczony do odpowiedzi na podstawowe pytania dotyczące tworzenia aplikacji mobilnych, dla deweloperów aplikacji nowych i doświadczonym podobne. Trwa dość wyczerpującą wprowadzenie większość pojęcia, które będą uruchamiane w podczas cały cykl życia rozwoju oprogramowania (SDLC). Ten dokument nie może być dla wszystkich użytkowników, jeśli jest itching można po prostu zacznij tworzenie aplikacji firma Microsoft zaleca jednak przeskok w przód do [wprowadzenie do programowania aplikacji mobilnych](~/cross-platform/get-started/introduction-to-mobile-development.md) guide, a następnie powracające do tego dokumentu później.
 
 ## <a name="mobile-development-sdlc"></a>Mobile Development SDLC
 
@@ -73,19 +73,17 @@ Po określeniu funkcji i funkcjonalności aplikacji, następnym krokiem jest sta
 
 #### <a name="ux-design"></a>Projektowanie interfejsu użytkownika
 
-UX zwykle odbywa się za pośrednictwem wireframes lub za pomocą narzędzi takich jak makiety [Balsamiq](http://www.balsamiq.com/), [Mockingbird](https://gomockingbird.com/), [Visio](http://office.microsoft.com/en-us/visio/), lub tylko zwykły ol' pióra i papieru. Zezwalaj na makiety UX UX projektowane, nie martwiąc się o rzeczywisty projekt interfejsu użytkownika:
+UX zwykle odbywa się za pośrednictwem wireframes lub makiety przy użyciu jednej z wielu [projektowania narzędzi](https://docs.microsoft.com/windows/uwp/design/downloads/). Zezwalaj na makiety UX UX projektowane, nie martwiąc się o rzeczywisty projekt interfejsu użytkownika:
 
  [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX zwykle odbywa się za pośrednictwem wireframes lub makiety za pomocą narzędzi, takich jak Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
-Podczas tworzenia makiety UX, jest istotnym elementem do rozważenia Interface Guidelines dla różnych platform, których aplikacja będzie obowiązywać. Aplikacja powinna "możesz w domu" na każdej z platform. Wskazówki dotyczące projektowania oficjalnego dla każdej platformy są:
+Podczas tworzenia makiety środowiska użytkownika, należy wziąć pod uwagę wytyczne interfejs dla różnych platform, których aplikacja będzie obowiązywać. Aplikacja powinna "możesz w domu" na każdej z platform. Oficjalna wskazówek dla każdej platformy są:
 
-1.   **Apple** -  [Human Interface Guidelines](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+1.   **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1.   **Android** — [wskazówki dotyczące projektowania](http://developer.android.com/design/index.html)
-1.   **Windows Phone** — [biblioteki projektu dla Windows Phone](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx)
+1.   **Platformy uniwersalnej systemu Windows** — [podstawowe informacje o projekcie platformy UWP](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-Na przykład każda aplikacja ma metaphor do przełączania między częściami w aplikacji. iOS używa pasek karty u dołu ekranu, Android wykorzystuje pasek karty w górnej części ekranu, a Windows Phone używa widoku Panorama rozwiązania:
-
- ![](introduction-to-mobile-sdlc-images/38.png "Każda aplikacja ma metaphor do przełączania między częściami w aplikacji")
+Na przykład każda aplikacja ma metaphor do przełączania między częściami w aplikacji. iOS używa pasek karty u dołu ekranu, Android używa pasek karty w górnej części ekranu i platformy uniwersalnej systemu Windows używa [Pivot lub kartę](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) widoku.
 
 Ponadto samego sprzętu decyduje również decyzji dotyczących środowiska użytkownika. Na przykład urządzenia z systemem iOS mieć nie fizycznych *ponownie* przycisk i wprowadzić metaphor kontrolera nawigacji:
 
@@ -104,15 +102,6 @@ Po określeniu środowiska użytkownika następnym krokiem jest utworzenie proje
 Zgodnie z UX, ważne jest, aby zrozumieć, że każdej z platform został jest języka własny projekt, tak dobrze zaprojektowanej aplikacji mogą nadal różnić się na każdej platformie:
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "Dobrze zaprojektowanej aplikacji nadal mogą wyglądać inaczej w każdej z platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
-
-Dla dobra pomysłów projektu interfejsu użytkownika zapoznaj się z następujących witryn:
-
-1.   [pttrns.com](http://pttrns.com) — (tylko iOS)
-1.   [androidpttrns.com](http://androidpttrns.com) — (tylko Android)
-1.   [lovelyui.com](http://lovelyui.com) — (systemy iOS, Android i Windows Phone)
-1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) — (systemy iOS, Android i Windows Phone)
-
-Ponadto istnieje możliwość takich jak wyświetlić portfela projektanci w lokacjach [Behance.com](http://behance.com) i [Dribbble.com](http://dribbble.com). Projektanci z na całym świecie można znaleźć, często w miejscach, gdzie jest preferowana, kursu wymiany tak dobre graficznej nie muszą być cenę.
 
 ### <a name="development"></a>Tworzenie
 
@@ -135,12 +124,7 @@ Zwykle, gdy aplikacja przechodzi dalej w tym samym w cyklu życia zostało otwar
 
 Do wczesnego testowania i wdrażania na urządzeniach względnie mało zwykle wdrażanie bezpośrednio na komputerze programowanie jest wystarczająca. Jednak ponieważ odbiorców rozszerzenie, to może szybko stać się skomplikowane. Tak istnieje wiele testów opcje wdrażania tam powodujących, że ten proces ułatwi, umożliwiając Zaproś inne osoby do testowania puli, wersja kompilacje w sieci web i zapewniają narzędzia, która pozwala na opinie użytkowników.
 
-Najpopularniejsze należą:
-
-1.   **Testflight** — jest to produkt systemu iOS, który umożliwia dystrybucję aplikacji na potrzeby testowania, a także odbierać raporty awarii i informacje o użyciu od klientów. To jest uwzględniona jako część programu iTunes połączenia, nie jest dostępna, jeśli należą członkostwa Apple Developer Enterprise.
-2.   **Aplikacja LaunchPad (launchpadapp.com)** — przeznaczony dla systemu Android, ta usługa jest bardzo podobny do TestFlight.
-3.   **Statku (vessel.io)** — usługi dla systemów iOS i Android, która umożliwia monitorowanie użycia, śledzić klientów i nawet do A / B, testowanie z wewnątrz aplikacji.
-4.  **hockeyapp.com** — udostępnia usługi testowania dla systemu iOS, Android i Windows Phone.
+W przypadku testowania i wdrażania, można użyć [Centrum aplikacji](https://appcenter.ms/) do stale tworzenia, testowania, wersji i monitorować aplikacje.
 
 ### <a name="distribution"></a>Dystrybucji
 
@@ -170,9 +154,9 @@ Dzięki temu deweloperzy mogą potencjalnie większego jeszcze bardziej złożon
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="windows"></a>Windows 
+#### <a name="uwp"></a>Platforma UWP 
 
-Aplikacje systemu Windows są dystrybuowane do użytkowników za pośrednictwem Microsoft Store. Deweloperzy przesłać swoje aplikacje do zatwierdzenia, po którym są wyświetlane w magazynie.
+Aplikacji platformy uniwersalnej systemu Windows są dystrybuowane do użytkowników za pośrednictwem Microsoft Store. Deweloperzy przesłać swoje aplikacje do zatwierdzenia, po którym są wyświetlane w magazynie. Aby uzyskać więcej informacji na temat publikowania aplikacji systemu Windows, zobacz dla platformy UWP [publikowania](https://docs.microsoft.com/windows/uwp/publish/) dokumentacji.
 
 ## <a name="mobile-development-considerations"></a>Zagadnienia dotyczące Mobile Development
 
@@ -237,9 +221,9 @@ Wielozadaniowości w systemie Android ma dwa składniki; Pierwsza to cyklem życ
 Drugim składnikiem do wielozadaniowości w systemie Android jest korzystanie z usług.
 Usługi są niezależne od aplikacji procesy długotrwałe, które istnieją i są używane do wykonywania procesów, podczas gdy aplikacja jest w tle. Aby uzyskać więcej informacji, zobacz [tworzenie usług](~/android/app-fundamentals/services/index.md) przewodnik.
 
-#### <a name="many-devices-amp-many-form-factors"></a>Wiele urządzeń &amp; tworzą wiele czynników
+#### <a name="many-devices-and-many-form-factors"></a>Wiele urządzeń i wiele obudów
 
-W przeciwieństwie do systemu iOS, która ma niewielki zestaw urządzeń lub nawet Windows Phone, która działa tylko na urządzeniach zatwierdzone, które spełniają minimalne określone wymagania dotyczące platformy, Google nie nakłada żadnych limitów, urządzeń, które można uruchomić system operacyjny Android. Ten model Otwórz wyniki w środowisku produkcyjnym wprowadzana przez różnych różnych urządzeń z bardzo sprzętowe, rozdzielczości ekranu i wskaźniki funkcji urządzenia i możliwości.
+Google nie nakłada żadnych limitów, urządzeń, które można uruchomić system operacyjny Android. Ten model Otwórz wyniki w środowisku produkcyjnym wprowadzana przez różnych różnych urządzeń z bardzo sprzętowe, rozdzielczości ekranu i wskaźniki funkcji urządzenia i możliwości.
 
 Z powodu fragmentacji extreme urządzeń z systemem Android większość użytkowników wybierz najpopularniejszych urządzeń 5 lub 6 do projektowania i testowania i priorytety tych.
 
@@ -252,25 +236,17 @@ Jest to kluczowy etap w modelu Android dystrybucji ze względu na otwartej aplik
 
 #### <a name="multitasking"></a>Wielozadaniowości
 
-Wielozadaniowości w Windows Phone również ma dwie części: cykl dla stron i aplikacji i procesów w tle. Każdy ekranu w aplikacji jest wystąpieniem klasy strony, która ma zdarzenia związane z odbywa się aktywne lub nieaktywne (z reguły specjalne obsługi stan nieaktywny lub trwa "replikacji"). 
+Wielozadaniowości w platformy uniwersalnej systemu Windows ma dwie części: cykl dla stron i aplikacji i procesów w tle. Każdy ekranu w aplikacji jest wystąpieniem klasy strony, która ma zdarzenia związane z odbywa się aktywne lub nieaktywne (z reguły specjalne obsługi stan nieaktywny lub trwa "replikacji"). 
 
 Druga część dostarcza agentów przetwarzania w tle dla przetwarzania zadań, nawet wtedy, gdy aplikacja nie jest uruchomiona na pierwszym planie. 
 
 #### <a name="device-capabilities"></a>Możliwości urządzenia
 
-Windows Phone sprzętu jest dość jednorodnych z powodu strict wytycznych obsługiwane przez firmę Microsoft, istnieją składniki, które są opcjonalne i dlatego wymaga specjalnych rozważane podczas kodowania. Możliwości sprzętu obejmują aparatu, kompas i Żyroskop. Jest również specjalną klasę ilości pamięci (256MB), który wymaga szczególną uwagę lub deweloperzy mogą zrezygnować obsługi ilości pamięci.
-
-#### <a name="database"></a>Baza danych
-
-Zarówno dla systemu iOS i Android obejmują aparat bazy danych SQLite umożliwiający zaawansowane pamięci masowej działający między platformami. Windows Phone 7 nie zawiera bazę danych, podczas gdy Windows Phone 7.1 i 8 obejmuje [lokalnej bazy danych aparatu](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx) które mogą być przeszukiwane tylko z [LINQ do SQL](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) i nie obsługuje zapytań języka Transact-SQL. Brak [open source port SQLite](http://code.google.com/p/csharp-sqlite/) dostępne który można dodać do aplikacji Windows Phone, ze względu na znany zgodność języka Transact-SQL pomocy technicznej i między platformami.
+Chociaż sprzętu platformy uniwersalnej systemu Windows jest dość jednorodne, istnieją składniki, które są opcjonalne i dlatego wymaga specjalnych rozważane podczas kodowania. Możliwości sprzętu obejmują aparatu kompas i Żyroskop. Jest również specjalną klasę ilości pamięci (256MB), który wymaga szczególną uwagę lub deweloperzy mogą zrezygnować obsługi ilości pamięci.
 
 #### <a name="security-considerations"></a>Zagadnienia dotyczące zabezpieczeń
 
-Aplikacje Windows Phone są uruchamiane z ograniczonym zestawem uprawnień izoluje ich od siebie nawzajem, który ogranicza działania, które mogą wykonywać.
-Dostęp do sieci muszą być wykonywane za pomocą poszczególnych interfejsów API i komunikacji wewnątrz aplikacji jest możliwe tylko za pomocą mechanizmów kontrolowany. Dostęp do systemu plików jest również ograniczony; Izolowane interfejsu API magazynu zawiera pary klucz wartość magazynu i możliwość tworzenia plików i folderów w sposób kontrolowany (dotyczą [izolowanego magazynu — omówienie](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx) Aby uzyskać więcej informacji).
-
-Dostęp aplikacji do funkcji sprzętu i systemu operacyjnego jest kontrolowana przez funkcje wymienione w pliku manifestu (podobnie jak w systemie Android).
-Manifest musi deklarować funkcje wymagane przez aplikacje, tak aby użytkownicy mogli widzieć i zaakceptować te uprawnienia, a także tak, aby system operacyjny zezwala na dostęp do interfejsów API. Aplikacji musi poprosić o dostęp do funkcji, takich jak dane kontaktów lub terminów, aparatu fotograficznego, lokalizacji, biblioteki multimediów i inne. Zobacz firmy Microsoft [pliku manifestu aplikacji](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx) dokumentacji, aby uzyskać dodatkowe informacje.
+Aby uzyskać informacje na ważne zagadnienia dotyczące zabezpieczeń w platformy uniwersalnej systemu Windows, zapoznaj się [zabezpieczeń](https://docs.microsoft.com/windows/uwp/security/) dokumentacji.
 
 ## <a name="summary"></a>Podsumowanie
 

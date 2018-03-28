@@ -1,6 +1,6 @@
 ---
 title: F#
-description: "F # to silnie typizowane funkcjonalny język programowania przeznaczonych do uruchamiania na platformie .NET"
+description: 'F # to silnie typizowane funkcjonalny język programowania przeznaczonych do uruchamiania na platformie .NET'
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
@@ -8,32 +8,33 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 3d89e8986c098d14d2540d729338fe4b90554556
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf41df7b3ff8186fa37dcdab0458c6b2a9844391
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="f35"></a>F&#35;
 
-_F # to silnie typizowane funkcjonalny język programowania przeznaczonych do uruchamiania na platformie .NET_
+F # to open source, obsługujący wiele platform, funkcjonalny język programowania dla platformy .NET.
 
-F # łączy succinctness, expressivity i możliwości wywnioskować typu programowanie funkcjonalne, kompilacji bezpieczeństwa silnie typizowane kodu i obsługa środowiska uruchomieniowego, bibliotek, współdziałanie, narzędzi i modelu obiektów programu .NET.
+F # łączy succinctness expressivity i możliwości wywnioskować typu programowanie funkcjonalne, kompilacji bezpieczeństwa silnie typizowane kodu i obsługa środowiska uruchomieniowego, bibliotek, współdziałanie, narzędzi i modelu obiektów programu .NET.
 
-F # jest teraz dostępna "out pola" jako język programowania dla platformy Xamarin użytkowników na wszystkich platformach obsługiwanych przez program Xamarin: Android, OS X i iOS.
+F # jest dostępna jako język programowania dla platformy Xamarin użytkowników na wszystkich platformach obsługiwanych przez program Xamarin: Android, macOS i iOS.
 
-- [Wprowadzenie do języka F #](overview.md)
-- [Przykłady dotyczące języka F #](samples.md)
+- [Podręcznik języka F #](https://docs.microsoft.com/en-us/dotnet/fsharp/)
+- [Wprowadzenie do języka F # i Xamarin](overview.md)
+- [Przykłady Mobile F #](samples.md)
 
 ## <a name="f-features-in-visual-studio-for-mac"></a>Funkcje F # w programie Visual Studio dla komputerów Mac
 
-Istnieje szereg [nowe funkcje F #](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements) dostępne w programie Visual Studio dla komputerów Mac, w tym:
+F # jest obsługiwanych języków w programie Visual Studio dla komputerów Mac. Obsługiwane funkcje:
 
-- Obsługa języka F # 4
-- Obsługa PCL F #
+- Obsługa 4.1 F #
+- Obsługa PCL F # i .NET Standard
 - Obsługa języka F # projektu udostępnionego
-- Ulepszenia nawigacji kodu
+- Nawigacja w kodzie
 - Wyróżnianie składni w F # Interactive
-- F # szablonów dla projektów platformy Xamarin.Forms
-- [*i wiele innych...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
+- Szablony F # dla platformy Xamarin.Forms, iOS i Android
+- [*i więcej...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
 

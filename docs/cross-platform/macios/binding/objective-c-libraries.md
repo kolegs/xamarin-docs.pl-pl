@@ -1,5 +1,5 @@
 ---
-title: "Powiązanie bibliotek języka Objective C"
+title: Powiązanie bibliotek języka Objective C
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 3b1894555c27e368fc80cc4ebaa1f6b40446e2aa
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Powiązanie bibliotek języka Objective C
 
 Podczas pracy z Xamarin.iOS lub Xamarin.Mac, mogą występować w przypadkach, w której chcesz korzystać z biblioteki języka Objective-C innych firm. W takiej sytuacji Xamarin powiązania projektów służy do tworzenia powiązanie C# do natywnych bibliotek języka Objective-C. Projekt używa tych samych narzędzi, których używamy w celu przełączenia systemów iOS i Mac interfejsów API języka C#.
 
-W tym dokumencie opisano sposób powiązania interfejsów API języka Objective-C, są wiązane tylko interfejsy API C, w tym celu należy używać standardowego mechanizmu .NET [framework P/Invoke](http://mono-project.com/Dllimport).
+W tym dokumencie opisano sposób powiązania interfejsów API języka Objective-C, są wiązane tylko interfejsy API C, w tym celu należy używać standardowego mechanizmu .NET [framework P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/).
 Więcej informacji na temat statycznie łączyć biblioteki C są dostępne na [łączenie natywnych bibliotek](~/ios/platform/native-interop.md) strony.
 
 Zobacz nasze Pomocnika [powiązanie Podręcznik typy](~/cross-platform/macios/binding/binding-types-reference.md).

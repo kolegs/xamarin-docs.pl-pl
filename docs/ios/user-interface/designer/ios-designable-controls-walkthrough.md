@@ -1,6 +1,6 @@
 ---
-title: "Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS"
-description: "Ten artykuł zawiera przewodnik krok po kroku przedstawiająca sposób utworzyć niestandardowego formantu i korzystać z niego w Projektancie Xamarin dla systemu iOS. Widoczny jest sposób udostępnić formantu w przyborniku projektanta, aby można było ją przeciągania/porzucić na widoku. Ponadto zawiera implementowania formantu, aby poprawnie renderowania w czasie projektowania i środowiska uruchomieniowego, jak również sposób tworzenia właściwości, które można ustawić w czasie projektowania."
+title: Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS
+description: Ten artykuł zawiera przewodnik krok po kroku przedstawiająca sposób utworzyć niestandardowego formantu i korzystać z niego w Projektancie Xamarin dla systemu iOS. Widoczny jest sposób udostępnić formantu w przyborniku projektanta, aby można było ją przeciągania/porzucić na widoku. Ponadto zawiera implementowania formantu, aby poprawnie renderowania w czasie projektowania i środowiska uruchomieniowego, jak również sposób tworzenia właściwości, które można ustawić w czasie projektowania.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS
 
@@ -32,15 +32,11 @@ W tym przewodniku założono znajomość zawartość objęte [wprowadzenie prowa
 
 1. Utworzenie nowego rozwiązania z **systemu iOS > aplikacji > Aplikacja pojedynczego widoku > C#** szablonu, nadaj jej nazwę `ScratchTicket`i kontynuuj pracę Kreatora nowego projektu:
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "Utwórz nowe rozwiązanie")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. Utwórz nowy plik pustą klasę o nazwie `ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "Utwórz nową klasę ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. Dodaj następujący kod do `ScratchTicketView` klasy:
 

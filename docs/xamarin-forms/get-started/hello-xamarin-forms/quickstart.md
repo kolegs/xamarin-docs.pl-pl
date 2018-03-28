@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 5ee36d63e2751eb5d09ee526755d62dda4ef537e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 
@@ -31,7 +31,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/vs/new-solution.png "Nowy projekt")
 
-3. W **nowy projekt** okna dialogowego, kliknij przycisk **wieloplatformowych**, wybierz pozycję **Cross Platform aplikacji (platformy Xamarin.Forms)** szablonu, ustaw nazwę nazwy i rozwiązanie `Phoneword`, Wybierz odpowiednią lokalizację projektu i kliknij przycisk **OK** przycisk:
+3. W **nowy projekt** okna dialogowego, kliknij przycisk **wieloplatformowych**, wybierz pozycję **aplikacji mobilnej (platformy Xamarin.Forms)** szablonu, ustaw nazwę nazwy i rozwiązanie `Phoneword`, wybierz odpowiednią lokalizację projektu i kliknij przycisk **OK** przycisk:
 
     ![](quickstart-images/vs/new-project.png "Szablony projektów i Platform")
 

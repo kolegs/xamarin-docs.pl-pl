@@ -1,20 +1,19 @@
 ---
-title: "Zastępowanie na pasku akcji"
+title: Zastępowanie na pasku akcji
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>Zastępowanie na pasku akcji
-
 
 ## <a name="overview"></a>Omówienie
 
@@ -38,7 +37,7 @@ W poniższych sekcjach opisano ten proces. Prosta aplikacja jest tworzona i zast
 
 ## <a name="start-an-app-project"></a>Projekt aplikacji
 
-Utwórz nowy projekt dla systemu Android o nazwie **ToolbarFun** (zobacz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) uzyskać więcej informacji dotyczących tworzenia nowego projektu systemu Android). Po utworzeniu tego projektu, Ustaw poziom interfejsu API systemu Android docelowy i co najmniej **Android 5.0 (21 poziom interfejsu API — typu lizak)**. Aby uzyskać więcej informacji na temat ustawienie wersji Android poziomów zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md). Wbudowane i uruchamianie aplikacji wyświetla na pasku akcji domyślnej w tym zrzut ekranu: 
+Utwórz nowy projekt dla systemu Android o nazwie **ToolbarFun** (zobacz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) uzyskać więcej informacji dotyczących tworzenia nowego projektu systemu Android). Po utworzeniu tego projektu, Ustaw poziom interfejsu API systemu Android docelowy i co najmniej **Android 5.0 (21 poziom interfejsu API — typu lizak)** lub nowszym. Aby uzyskać więcej informacji na temat ustawienie wersji Android poziomów zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md). Wbudowane i uruchamianie aplikacji wyświetla na pasku akcji domyślnej w tym zrzut ekranu:
 
 [![Zrzut ekranu przedstawiający pasek Akcja domyślna](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Oliwkowozielony `colorPrimary` ustawienie jest stosowane do kolor tła paska nar
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>Zastosować niestandardowy motyw
 
 Edytuj **Properties/AndroidManifest.xml** i dodaj następującą `android:theme` atrybutu `<application>` element, aby aplikacja korzysta z `MyTheme` motyw niestandardowy: 
 
@@ -136,12 +137,6 @@ Przeprowadź edycję pliku układu **Resources/layout/Main.axml** i zastąp jego
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ Ten kod znajduje `Toolbar` i wywołania `SetActionBar` , aby `Toolbar` spowoduje
 
 Zwróć uwagę, że `Toolbar` wyglądzie niezależnie od `Theme.Material.Light.DarkActionBar` motywu, która jest stosowana do pozostałej części aplikacji. 
 
+Jeśli wystąpi wyjątek podczas uruchamiania aplikacji, zobacz [Rozwiązywanie problemów](#troubleshooting) poniższej sekcji.
 
  
 ## <a name="add-menu-items"></a>Dodawanie elementów Menu 
@@ -193,7 +189,7 @@ Poniższe sekcje pokazują ten proces przez dodanie **Edytuj** i **zapisać** el
 
 ### <a name="install-menu-icons"></a>Zainstaluj ikony Menu
 
-Kontynuowanie `ToolbarFun` przykładową aplikację, Dodaj menu ikony do projektu aplikacji. Pobierz [icons.zip narzędzi](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) i Rozpakuj go. Skopiuj zawartość wyodrębnionego *mipmap -* foldery do projektu *mipmap -* foldery znajdujące się w **ToolbarFun/zasoby** i dołączyć każdy plik dodany ikony w projekcie.
+Kontynuowanie `ToolbarFun` przykładową aplikację, Dodaj menu ikony do projektu aplikacji. Pobierz [ikony na pasku narzędzi](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true), Rozpakuj i skopiuj zawartość wyodrębnionego *mipmap -* foldery do projektu *mipmap -* foldery w **ToolbarFun / Zasoby** i dołączyć każdy plik dodany ikony w projekcie.
 
 
 ### <a name="define-a-menu-resource"></a>Zdefiniuj zasób Menu
@@ -277,6 +273,19 @@ Gdy użytkownik naciska menu przeciążenia **preferencje** element menu jest wy
 Aby uzyskać więcej informacji na temat menu systemu Android, zobacz Android Developer [menu](https://developer.android.com/guide/topics/ui/menus.html) tematu. 
  
 
+## <a name="troubleshooting"></a>Rozwiązywanie problemów
+
+Poniższe porady mogą pomóc debugowania problemów, które mogą wystąpić podczas zastępowania na pasku akcji z paska narzędzi.
+
+### <a name="activity-already-has-an-action-bar"></a>Działanie ma już pasek akcji
+
+Jeśli aplikacja nie jest poprawnie skonfigurowany do użycia niestandardowego motywu, zgodnie z objaśnieniem w [zastosować niestandardowy motyw](#apply-the-custom-theme), występuje następujący wyjątek podczas uruchamiania aplikacji:
+
+![Błąd, który może wystąpić, gdy nie jest używany niestandardowy motyw](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+Ponadto komunikatu o błędzie, takie jak następujące może być przedstawiony: _Java.Lang.IllegalStateException: to działanie ma już pasek akcji dostarczonych przez decor okna._ 
+
+Aby rozwiązać ten problem, sprawdź, czy `android:theme` atrybutu niestandardowego motywu jest dodawany do `<application>` (w **Properties/AndroidManifest.xml**) zgodnie z wcześniejszym opisem w [zastosować niestandardowy motyw](#apply-the-custom-theme). Ponadto ten błąd może być spowodowany `Toolbar` układ lub motyw niestandardowy nie jest skonfigurowany prawidłowo.
 
 
 ## <a name="related-links"></a>Linki pokrewne

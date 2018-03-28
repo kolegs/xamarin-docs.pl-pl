@@ -6,11 +6,11 @@ ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b099e8ddd6acc3e8cc4ce94580313a39a0c686
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c099797f0687f198ed220c1bd366bd93ab6c6e99
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="limitations"></a>Ograniczenia
 
@@ -25,7 +25,7 @@ Ograniczenia platformy Xamarin.iOS w porównaniu do pulpitu Mono są to:
 
 W przeciwieństwie do tradycyjnych Mono/.NET na telefonach iPhone statycznie kompilowania kodu wcześniejsze zamiast kompilowany na żądanie za pomocą kompilatora JIT.
 
-W mono [pełnego drzewa obiektów aplikacji](http://www.mono-project.com/AOT#Full_AOT) technologii ma kilka ograniczeń względem ogólne, powodem, ponieważ nie wszystkie możliwe konkretyzacja rodzajowa można określić góry w czasie kompilacji. Nie jest problemem w regularnych środowisk uruchomieniowych .NET lub Mono, ponieważ kod jest zawsze kompilowane w czasie wykonywania za pomocą tylko w kompilatorze czasu. Jednak to stanowi wyzwanie dla statycznych kompilatora, takich jak platformy Xamarin.iOS.
+W mono [pełnego drzewa obiektów aplikacji](http://www.mono-project.com/docs/advanced/aot/#full-aot) technologii ma kilka ograniczeń względem ogólne, powodem, ponieważ nie wszystkie możliwe konkretyzacja rodzajowa można określić góry w czasie kompilacji. Nie jest problemem w regularnych środowisk uruchomieniowych .NET lub Mono, ponieważ kod jest zawsze kompilowane w czasie wykonywania za pomocą tylko w kompilatorze czasu. Jednak to stanowi wyzwanie dla statycznych kompilatora, takich jak platformy Xamarin.iOS.
 
 Typowe problemy, które wystąpiły deweloperów, między innymi:
 
@@ -117,13 +117,10 @@ W standardowe Mono jest możliwe do przekazania do kodu niezarządzanego zamiast
 
 W Mono mostków te są implementowane przez Just in Time kompilatora. Jeśli przy użyciu kompilatora z wyprzedzeniem o czasie wymagane przez telefonów iPhone się, że na tym etapie istnieją dwie ważne ograniczenia:
 
--  Należy wszystkie metody wywołania zwrotnego z flagą [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/MonoPInvokeCallbackAttribute/) 
+-  Należy wszystkie metody wywołania zwrotnego z flagą [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Metody musi być metody statyczne, nie jest obsługiwane dla wystąpienia metody. 
-
-
  
- <a name="No_Remoting" />
-
+<a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Nie komunikacji zdalnej
 
