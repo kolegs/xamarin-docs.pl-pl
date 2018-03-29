@@ -1,6 +1,6 @@
 ---
-title: "Słowniki zasobów"
-description: "Zasoby XAML są definicje obiektów, które mogą być używane w więcej niż raz. ResourceDictionary umożliwia zasoby zdefiniowane w jednej lokalizacji i ponownego użycia w aplikacji platformy Xamarin.Forms. W tym artykule opisano tworzenie i stosowanie ResourceDictionary oraz sposobu scalania słownikach zasobów."
+title: Słowniki zasobów
+description: Zasoby XAML są definicje obiektów, które mogą być używane w więcej niż raz. ResourceDictionary umożliwia zasoby zdefiniowane w jednej lokalizacji i ponownego użycia w aplikacji platformy Xamarin.Forms. W tym artykule opisano tworzenie i stosowanie ResourceDictionary oraz sposobu scalania słownikach zasobów.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: aa3ae9fed67b6cd7521e5c59edcb54f05cc6b7c5
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="resource-dictionaries"></a>Słowniki zasobów
 

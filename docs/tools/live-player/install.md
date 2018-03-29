@@ -1,6 +1,6 @@
 ---
-title: "Ustawienia odtwarzacza na żywo Xamarin"
-description: "Edytuj i testowania aplikacji w czasie rzeczywistym na urządzenia z systemem iOS lub Android"
+title: Ustawienia odtwarzacza na żywo Xamarin
+description: Edytuj i testowania aplikacji w czasie rzeczywistym na urządzenia z systemem iOS lub Android
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 05d6a679f318406d1ee5c6893ae4d01452a79723
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Ustawienia odtwarzacza na żywo Xamarin
 
@@ -22,25 +22,28 @@ Xamarin Live Player umożliwia wprowadzanie zmian na żywo do aplikacji i mają 
 
 ## <a name="1-get-the-app"></a>1. Pobierz aplikację
 
-### <a name="xamarin-live-player-for-android"></a>Odtwarzacz na żywo Xamarin dla systemu Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Xamarin Player na żywo jest dostępna dla systemu Android ze sklepu Google Play:
 
 [ ![Dostępne w witrynie Google Play](install-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Dla urządzeń z systemem Android bez Google Play Xamarin odtwarzacz na żywo jest dostępna za pośrednictwem [HockeyApp](https://aka.ms/xlp-hockeyapp) dystrybucji. Ponadto Podgląd wczesne kompilacje dla systemu Android mogą być instalowane bezpośrednio z witryny Google Play przez zgody na korzystanie z [otwarte w wersji beta programu](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>Odtwarzacz Live Xamarin dla systemu iOS
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 Firma Microsoft zachęca użytkowników do dołączenia do [aplikacji odtwarzacza Live Xamarin _z systemem iOS w wersji zapoznawczej_ ](https://aka.ms/liveplayeralpha) można uzyskiwać dostęp do najnowszych ulepszeń za pośrednictwem TestFlight.
 
+-----
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="2-get-visual-studio-2017-preview-on-windows-or-for-mactabsvsmac"></a>2. Pobierz Podgląd 2017 r w usłudze Visual Studio w systemie Windows (lub [dla komputerów Mac](?tabs=vsmac))
+## <a name="2-get-visual-studio-2017"></a>2. Get Visual Studio 2017
 
 Xamarin Player na żywo wymaga:
 
-- Visual Studio 2017 [15.4](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/#visualstudio2017) lub nowszej.
-- Visual Studio komputera i urządzenia w tej samej sieci Wi-Fi
+- 15.4 2017 r w usłudze Visual Studio lub nowszej.
+- Visual Studio komputer i urządzenia w tej samej sieci Wi-Fi.
 
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. Za pomocą platformy Xamarin Player na żywo po raz pierwszy
 
@@ -72,9 +75,9 @@ Xamarin Player na żywo wymaga:
 
   Jeśli urządzenie nie można skontaktować się z parowania, może wystąpić błąd.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac-or-for-windowstabsvswin"></a>2. Pobierz program Visual Studio dla komputerów Mac (lub [dla systemu Windows](?tabs=vswin))
+## <a name="2-get-visual-studio-for-mac"></a>2. Pobierz program Visual Studio dla komputerów Mac
 
 Xamarin Player na żywo wymaga:
 
@@ -120,7 +123,7 @@ Xamarin Player na żywo wymaga:
 
 -----
 
-Jeśli wystąpią problemy, zobacz [ograniczenia i rozwiązywanie problemów z](~/tools/live-player/troubleshooting.md).
+Jeśli występują problemy lub nie można połączyć, zobacz [ograniczenia i rozwiązywanie problemów z](~/tools/live-player/troubleshooting.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne

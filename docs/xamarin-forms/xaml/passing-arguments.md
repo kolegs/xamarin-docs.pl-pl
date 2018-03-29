@@ -1,6 +1,6 @@
 ---
-title: "Przekazywanie argumentów w języku XAML"
-description: "W tym artykule przedstawiono przy użyciu atrybutów XAML, które mogą służyć do przekazywania argumentów innych niż domyślne konstruktorów, wywoływanie metod fabryki i określić typ argument rodzajowy."
+title: Przekazywanie argumentów w języku XAML
+description: W tym artykule przedstawiono przy użyciu atrybutów XAML, które mogą służyć do przekazywania argumentów innych niż domyślne konstruktorów, wywoływanie metod fabryki i określić typ argument rodzajowy.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>Przekazywanie argumentów w języku XAML
 
@@ -135,7 +135,7 @@ Można wywołać metody fabryki w języku XAML, określając metody nazwy przy u
 </BoxView>
 ```
 
-Liczba elementów w obrębie `x:Arguments` tagu i typy te elementy muszą być zgodne argumenty wywołania metody fabryki. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Metoda fabryki wymaga cztery [ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/) parametry, które reprezentują czerwony, zielony, niebieski i alfa wartości od 0 do 255 odpowiednio. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Metoda fabryki wymaga cztery [ `Double` ](https://developer.xamarin.com/api/type/System.Double/) parametry, które reprezentują odcień, nasycenie, jasność i wartości alfa od 0 do 1 odpowiednio. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Wymaga metoda fabryki [ `String` ](https://developer.xamarin.com/api/type/System.String/) reprezentujący szesnastkowym kolor RGB, ().
+Liczba elementów w obrębie `x:Arguments` tagu i typy te elementy muszą być zgodne argumenty wywołania metody fabryki. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Metoda fabryki wymaga cztery [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) parametry, które reprezentują czerwony, zielony, niebieski i alfa wartości od 0 do 255 odpowiednio. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Metoda fabryki wymaga cztery [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) parametry, które reprezentują odcień, nasycenie, jasność i wartości alfa od 0 do 1 odpowiednio. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Wymaga metoda fabryki [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) reprezentujący szesnastkowym kolor RGB, ().
 
 Poniższe zrzuty ekranu wskazuje wynik każdego wywołania [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) metoda fabryki wartościami określony argument:
 

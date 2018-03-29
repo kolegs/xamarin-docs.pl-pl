@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08d15095c8d1d08a65f18d5ad867efdd89d3b795
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="android-beam"></a>Android Beam
 
-Android światła jest nową technologią w pobliżu komunikacji Zbliżeniowej (NFC) w systemie Android 4, który umożliwia aplikacjom na udostępnianie informacji przez NFC w pobliżu.
+Android światła to technologia niemal komunikacji Zbliżeniowej (NFC) wprowadzone w systemu Android 4.0, który umożliwia aplikacjom na udostępnianie informacji przez NFC w pobliżu.
 
 [![Diagram pokazujący dwoma urządzeniami w pobliżu udostępnianie informacji](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 

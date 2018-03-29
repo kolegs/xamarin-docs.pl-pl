@@ -4,14 +4,10 @@ Tytuł: "Część 6 — testowanie i aplikacji sklepu zatwierdzenia" ms.topic: a
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Część 6 - testowania i zatwierdzeń sklepu z aplikacjami
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>Testowanie
 
 Wiele aplikacji (nawet aplikacji systemu Android, na niektóre sklepy z), należy przekazać proces zatwierdzania przed ich opublikowaniem; Dzięki testowania jest szczególnie ważne, aby upewnić się, aplikacja osiągnie rynku (wspominając już zakończy się pomyślnie z klientami). Testowanie może mieć wiele form, z poziomu projektanta jednostki testy w celu zarządzania testowania wersji beta w różnych sprzętu.
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>Test na wszystkich platformach
@@ -22,16 +18,12 @@ Zawsze jest dobrym rozwiązaniem w emulatorze/symulatorze umożliwia testowanie 
 
 Należy również przetestować na tyle urządzenia innego sprzętu fizycznego, jak to możliwe.
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>Urządzenia w chmurze
 
 Przenośne ekosystemu Telefon i tablet rośnie cały czas, uniemożliwiając test coraz większej liczby dostępnych urządzeń. Aby rozwiązać ten problem, liczbę usług oferuje możliwość zdalnego sterowania wiele różnych urządzeń, dzięki czemu aplikacje można instalować i przetestowane bez konieczności inwestowania bezpośrednio w partiach sprzętu.
 
 [Test aplikacji Centrum](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) oferuje łatwe testowanie iOS i Android aplikacji na kilkuset różnych urządzeń.
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>Zarządzanie testami
@@ -44,10 +36,8 @@ Podczas testowania aplikacji w obrębie organizacji lub zarządzania programu w 
 
 Istnieje wiele pomocy usługi w celu rozwiązania tych problemów, zapewniając infrastrukturę, która jest wbudowana w aplikacji do zbierania i raportowania w przypadku użycia i błędów i również usprawnienie procesu udostępniania pomoc rejestracji i zarządzania ich urządzeniami i testerów .
 
-[Xamarin wgląd w wersji zapoznawczej](http://xamarin.com/insights) stanowi rozwiązanie do drugiej części tego problemu, zapewniając awarii raportowania i rozbudowanych aplikacji informacje o użyciu.
+[Visual Studio aplikacji Centrum](/appcenter/) oferuje rozwiązanie tych problemów, dystrybucji wersji testu, raportowania awarii i informacje o użyciu rozbudowanych aplikacji.
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>Automatyzacja testów
@@ -55,12 +45,10 @@ Istnieje wiele pomocy usługi w celu rozwiązania tych problemów, zapewniając 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) może służyć do tworzenia interfejsu użytkownika zautomatyzowanych skryptów testu, które można uruchomić lokalnie lub przekazane do [aplikacji Centrum testowania](https://docs.microsoft.com/appcenter/test-cloud/).
 
 
- <a name="Unit_Testing" />
 
 
 ## <a name="unit-testing"></a>Testowanie jednostkowe
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS obejmuje strukturę testowania jednostkowego o nazwie Touch.Unit nas
 
 Odwoływać się do naszej [testów jednostkowych z Xamarin.iOS](~/ios/deploy-test/touch.unit.md) dokumentację, aby uzyskać więcej informacji dotyczących pisania testów i systemem Touch.Unit.
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 Jest odpowiednikiem Touch.Unit dla systemu Android o nazwie Andr.Unit open source. Możesz pobrać go z [github](https://github.com/spouliot/Andr.Unit) i przeczytaj informacje o narzędziu na [ @spouliotw blogu](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-Poniżej przedstawiono niektóre łącza, które ułatwiają ustawienia testu jednostkowego dla Windows Phone:
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>Zatwierdzenia sklepu z aplikacjami
@@ -100,7 +72,6 @@ Firmy Apple i Microsoft działać magazynie tylko na platformach ich: App Store 
 
 Oczekiwanie na aplikację, należy sprawdzić może być stresujące — naciskom firm często oznacza, że wnioski o zatwierdzenie bardzo mało marginesu błędu wcześniejsza od daty uruchamiania "docelowej". Sam proces może potrwać do dwóch tygodni, a nie zawsze przezroczysty: Istnieje ograniczona opinie o postępie aplikacji dopóki zostanie ostatecznie odrzucone lub zatwierdzone. Odrzucenia oznacza brak okno marketingu możliwości, zwłaszcza, jeśli występuje więcej niż jeden raz i przekazać tygodni między datą oryginalnego uruchomienia i, jeśli aplikacja jest ostatecznie zatwierdzone.
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>Można go przygotować
@@ -117,7 +88,6 @@ Po zatwierdzeniu Twoje konto, możesz przystąpić do przesyłania aplikacji. Rz
 
 W pozostałej części tej sekcji omówiono czynności, które należy wziąć pod uwagę, aby upewnić się, że aplikacja została zatwierdzona bez żadnych hiccups.
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>Jakość
@@ -127,8 +97,6 @@ Wydaje się oczywista, ale aplikacje często zostaną odrzucone, ponieważ nie s
 Awarie są Częstą przyczyną odrzucenia. Jeśli jest zbyt łatwe awarii Twojej aplikacji ma gwarancji odrzucane. Większość deweloperów nie przesyłaj swoje aplikacje przy założeniu, że będą one awarii, ale często nie. Dokładnie przetestuj aplikację przed przesłaniem go, koncentrujących się nie tylko w upewnieniu się, że wszystko działa, ale także że obsługi typowych scenariuszy przenośnych błąd, takie jak problemy z siecią i ograniczenia zasobów, takich jak pamięć lub miejsce do magazynowania. Użyj symulator i fizyczne urządzenia do testowania — niezależnie od tego, jak kod jest uruchamiany w symulatorze, tylko urządzenia wykaże rzeczywistą wydajność aplikacji. Użyj jako wiele różnych urządzeń, jak znaleźć i zarejestrować zespół testerzy wersji beta, jeśli można — usług innych firm może ułatwić zarządzanie, rozkład beta i przesyłania opinii.
 
 Wszystkie systemy operacyjne przenośnych będą kill aplikacji, która nie uruchamia się wystarczająco szybko. Czas dozwolony jest różny, ale ogólnie aplikacje powinny mieć na celu odpowiadać za kilka sekund i użyć zadania w tle w pracy, który będzie trwać dłużej. Aplikacje, które trwa zbyt długo, aby załadować lub nie odpowiada wystarczająco regularnie używane są zostanie odrzucone. Zawsze dostarczaj opinie użytkowników, gdy coś jest wykonywane w tle lub aplikacja pojawi się do awarii i jeszcze raz odrzucane.
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>Sprawdź z przypadków krawędzi
@@ -143,7 +111,6 @@ Poniższa lista jest dobry punkt wyjścia do sprawdzania przypadków krawędzi, 
 -   **Zmienia się sprzętu** — Pamiętaj, aby przetestować na sprzęcie najstarsze, najwolniejsze, który ma być obsługiwana. Istnieją dwie kwestie, które mogą wpływać na aplikację: wydajności, które mogą być niezdatna do użycia na starszych urządzeń i obsługę funkcji sprzętu, takich jak aparatu fotograficznego, mikrofonu, GPS, żyroskop lub innych składników opcjonalnych. Aplikacje powinny pogorszyć bezpiecznie (i nie awaria) gdy składnik jest niedostępny.
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Wytyczne mają więcej niż tylko "Przewodnik"
@@ -158,7 +125,6 @@ Deweloperzy systemu Windows należy podobnie ostrożnie; powszechnym błędem ni
 
 Zachęca Twojej projektantów do odczytywania i postępuj zgodnie z wytycznymi projektowania dla każdej platformy.
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>Implementowanie funkcji specyficznych dla platformy
@@ -171,7 +137,6 @@ Elementy są nieco bardziej restrykcyjne, jeśli chodzi o implementacji usług s
 -   **Mapuje** — jest coraz częściej, aby dodać nakładki i inne funkcje do mapy przenośne, jednak należy uważać nie zasłaniać mapy "środków na korzystanie z" informacji (takich jak logo firmy Google w iOS5) jak w ten sposób spowoduje odrzucenie.
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>Zarządzanie metadanych
@@ -185,7 +150,6 @@ Oprócz widocznych problemów technicznych, które mogą skutkować aplikacji od
 
 Umieść jako nakład do metadanych aplikacji jako do projektowania i testowania. Aplikacje odrzucone dla mniejszych naruszeń w metadanych, warto poświęcenie czasu na pobrać go w prawo.
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>Sklepów z aplikacjami: Nie dla wszystkich użytkowników
@@ -198,8 +162,6 @@ Android zapewnia większą elastyczność w tym zakresie: aplikacje można insta
 Apple udostępnia opcję wewnętrznych wdrażania dla deweloperów zarejestrowane w systemie iOS Developer Enterprise Program, który pomija procesu zatwierdzania sklepu z aplikacjami i umożliwia firmom dystrybucji wewnętrznych aplikacji dla użytkowników.
 Niestety ta licencja nie usuwa potrzebę dystrybucji aplikacji korzystających z ekstranetu podobne do innych grup zamknięte przez klientów i dostawców. [Enterprise (i Ad Hoc) wdrożenia](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>Podsumowanie sklepu z aplikacjami

@@ -1,6 +1,6 @@
 ---
 title: Xamarin Profiler
-description: "Ten przewodnik opisuje najważniejsze funkcje profilera Xamarin. Wygląda na profilowania, profilowania i kiedy należy użyć i na standardowe przepływu pracy do profilowania aplikacji platformy Xamarin."
+description: Ten przewodnik opisuje najważniejsze funkcje profilera Xamarin. Wygląda na profilowania, profilowania i kiedy należy użyć i na standardowe przepływu pracy do profilowania aplikacji platformy Xamarin.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -48,7 +48,7 @@ W tym przewodniku sprawdza typowych scenariuszy profilowania i wprowadza profile
 ## <a name="download-and-install"></a>Pobierz i zainstaluj
 
 > [!NOTE]
-> **Uwaga:** należy być subskrybent Visual Studio Enterprise, aby odblokować tę funkcję w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac na komputerach Mac.
+> **Uwaga:** należy być [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) subskrybenta, aby odblokować tę funkcję w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac na komputerach Mac.
 
 Xamarin Profiler to aplikacja autonomiczna i jest zintegrowana z programu Visual Studio for Mac i Visual Studio włączyć profilowanie z w środowisku IDE.
 
@@ -60,10 +60,6 @@ Pobierz pakiet instalacyjny dla danej platformy:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Po pobraniu, uruchom Instalatora, aby dodać profilera Xamarin do systemu.
-
-Integracja IDE jest dostępna we wszystkich wersjach wersji programu Xamarin.
-Jednak [Visual Studio Enterprise](https://www.xamarin.com/compare-visual-studio) jest wymagana dla profilowania.
-
 
 
 ## <a name="profilers-and-profiling"></a>Profilery i profilowania
