@@ -1,8 +1,8 @@
 ---
 layout: HubPage
-hide_bc: 
-title: "Dokumentacja środowiska Xamarin"
-description: "Środowisko Xamarin pozwala tworzyć natywne aplikacje dla systemu Android, iOS i macOS przy użyciu kodu .NET i interfejsów użytkownika specyficznych dla platformy. Zestaw narzędzi Xamarin.Forms umożliwia tworzenie natywnych aplikacji ze współdzielonym kodem interfejsu użytkownika napisanym w języku C# lub XAML."
+hide_bc: true
+title: Dokumentacja środowiska Xamarin
+description: Środowisko Xamarin pozwala tworzyć natywne aplikacje dla systemu Android, iOS i macOS przy użyciu kodu .NET i interfejsów użytkownika specyficznych dla platformy. Zestaw narzędzi Xamarin.Forms umożliwia tworzenie natywnych aplikacji ze współdzielonym kodem interfejsu użytkownika napisanym w języku C# lub XAML.
 featureFlags:
 - clicktale
 ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
