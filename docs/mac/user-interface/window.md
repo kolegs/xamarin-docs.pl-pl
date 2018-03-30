@@ -1,6 +1,6 @@
 ---
 title: Windows
-description: "W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie."
+description: W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.
 
 Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, mają dostęp do tego samego systemu Windows i płyty, które osoba używająca *Objective-C* i *Xcode* jest. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ do tworzenia i obsługi sieci systemu Windows i panele (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-W oparciu o jego przeznaczenie, aplikacji Xamarin.Mac może stanowić co najmniej jednego okna na ekranie do zarządzania i koordynowania informacje w nim wyświetlane oraz współpracuje z. Podstawowe funkcje systemu Windows są:
+W oparciu o jego przeznaczenie, aplikacji Xamarin.Mac może stanowić co najmniej jednego systemu Windows na ekranie do zarządzania i koordynowania informacje w nim wyświetlane oraz współpracuje z. Podstawowe funkcje okna są:
 
 1. Aby zapewnić obszar widoki i formanty może być umieszczone i zarządzane.
 2. Aby zaakceptować i reagowania na zdarzenia w odpowiedzi na interakcję użytkownika z klawiatury i myszy.
