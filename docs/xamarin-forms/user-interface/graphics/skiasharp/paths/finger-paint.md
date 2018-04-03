@@ -1,6 +1,6 @@
 ---
 title: Malowania
-description: "Użyj palcami do rysowania na kanwie."
+description: Użyj palcami do rysowania na kanwie.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dacb9f399ad044d2d5e9c960bce398092766020c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="finger-painting"></a>Malowania
 
@@ -24,7 +24,7 @@ _Użyj palcami do rysowania na kanwie._
 
 Obsługa touch w platformy Xamarin.Forms nie zezwala na śledzenia poszczególnych palców na ekranie, więc efekt touch śledzenia platformy Xamarin.Forms został opracowany do obsługi dodatkowych touch. W tym celu jest opisana w artykule [ **wywoływanie zdarzeń od efekty**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Przykładowy program [ **pokazy efekt śledzenia Touch** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) zawiera dwie strony, które używają SkiaSharp, w tym finger-painting program.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) rozwiązanie zawiera to zdarzenie śledzenia touch. Projekt biblioteki klas przenośnych zawiera `TouchEffect` klasy, `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmują `TouchEffect` klasy dla tej platformy; zawiera także projektu iOS `TouchRecognizer` klasy.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) rozwiązanie zawiera to zdarzenie śledzenia touch. Projekt biblioteki klas przenośnych zawiera `TouchEffect` klasy, `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmują `TouchEffect` klasy dla tej platformy; zawiera także projektu iOS `TouchRecognizer` klasy.
 
 **Paint palca** strony **SkiaSharpFormsDemos** jest uproszczoną implementację malowania. Nie zezwalaj na wybieranie koloru lub obrysu szerokość go nie ma możliwości wyczyścić obszar roboczy, a oczywiście nie można zapisać kompozycji.
 
@@ -169,6 +169,6 @@ Twoje obrazy palca tylko są ograniczone przez użytkownika talenty:
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Pokazy efekt Touch śledzenia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [Wywoływanie zdarzeń z efekty](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

@@ -1,18 +1,18 @@
 ---
 title: Mowy systemu android
-description: "W tym artykule opisano podstawy za pomocą bardzo zaawansowane Android.Speech przestrzeni nazw. Od czasu jego powstania Android mógł rozpoznawanie mowy i wyjścia go jako tekst. Jest procesem stosunkowo proste. Tekst na mowę, jednak proces jest więcej wysiłku, jako nie tylko przez aparat rozpoznawania mowy trzeba należy wziąć pod uwagę, ale także języki dostępne i zainstalowane w systemie tekst na mowę (TTS)."
+description: W tym artykule opisano podstawy za pomocą bardzo zaawansowane Android.Speech przestrzeni nazw. Od czasu jego powstania Android mógł rozpoznawanie mowy i wyjścia go jako tekst. Jest procesem stosunkowo proste. Tekst na mowę, jednak proces jest więcej wysiłku, jako nie tylko przez aparat rozpoznawania mowy trzeba należy wziąć pod uwagę, ale także języki dostępne i zainstalowane w systemie tekst na mowę (TTS).
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Mowy systemu android
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+Ten kod wywołuje [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) Aby sprawdzić, czy pakiet językowy dla danego ustawień regionalnych jest już obecny na urządzeniu. Ta metoda zwraca [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), która wskazuje, czy język dla przekazanych ustawień regionalnych jest dostępne. Jeśli `LanguageAvailableResult` oznacza, że język `NotSupported`, a następnie nie ma pakietu głosu dostępnej (nawet do pobrania) dla tego języka. Jeśli `LanguageAvailableResult` ma ustawioną wartość `MissingData`, a następnie można pobrać pakiet językowy, jak wyjaśniono poniżej w kroku 4.
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Krok 3 — Ustawianie szybkości i wysokości
 
 Android zezwala użytkownikowi na alter dźwięk mowy, zmieniając `SpeechRate` i `Pitch` (liczba szybkości i ton mowy). To łączy się z zakresu od 0 do 1, z mowy "normal", jest 1 dla obu.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Krok 4 — testowanie i ładowanie nowych języków
 
-Jest to wykonywane przy użyciu `Intent` z wynikiem interpretowane w `OnActivityResult`. W odróżnieniu od przykład mowy na tekst, który używany `RecognizerIntent` jako `PutExtra` parametr `Intent`, instalacja używa zamiar `Action`.
+Pobieranie nowy język jest wykonywane przy użyciu `Intent`. Wynik tego celem powoduje, że [OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/) wywoływanej metody. W odróżnieniu od przykład mowy na tekst (, których [RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/) jako `PutExtra` parametr `Intent`), testowania i ładowanie `Intent`s są `Action`— na podstawie:
 
-Istnieje możliwość zainstalować nowy język z Google, używając następującego kodu. Wynik `Activity` sprawdza, czy język jest wymagana, a jeśli tak jest, instaluje język po monitowaniu do pobrania występuje.
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash; rozpoczyna działania od platformy `TextToSpeech` aparatu, aby sprawdzić prawidłowej instalacji i dostępność zasobów języka na urządzeniu.
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash; rozpoczyna się działanie, które monituje użytkownika o języków niezbędnych do pobrania.
+
+Poniższy przykładowy kod przedstawia sposób używać tych działań do testowania dla zasobów językowych i Pobierz nowy język:
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` badania dostępności zasobów językowych. `OnActivityResult` jest wywoływane po zakończeniu tego testu. Jeśli język zasobów muszą być pobierane, `OnActivityResult` generowane `TextToSpeech.Engine.ActionInstallTtsData` akcji, aby uruchomić działanie, które pozwala użytkownikom na pobieranie języków niezbędnych. Uwaga tego `OnActivityResult` implementacji nie sprawdza `Result` kodu, ponieważ w tym przykładzie uproszczony określenie podjęto już pakiet językowy muszą zostać pobrane.
+
+`TextToSpeech.Engine.ActionInstallTtsData` Przyczyny akcji **danych głosowych Google TTS** działania będą widoczne dla użytkownika dotyczące wybierania języków do pobrania:
+
+![Działania danych głosowych Google TTS](speech-images/01-google-tts-voice-data.png)
+
+Na przykład użytkownik może wybrać francuski, a następnie kliknij ikonę pobierania podczas pobierania danych głosowych francuskim:
+
+![Przykład pobieranie języka francuskiego](speech-images/02-selecting-french.png)
+
+Instalacja tych danych odbywa się automatycznie po zakończeniu pobierania.
+
 
 ### <a name="step-5---the-ioninitlistener"></a>Krok 5 - IOnInitListener
 

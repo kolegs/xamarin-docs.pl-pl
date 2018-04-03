@@ -1,6 +1,6 @@
 ---
-title: "Poprawa szybkość klatek z CCSpriteSheet"
-description: "CCSpriteSheet udostępnia funkcję łączenia i korzystania z wielu plików obrazów w jedną teksturę. Zmniejszenie liczby tekstury można zwiększyć czas ładowania gry i szybkość klatek."
+title: Poprawa szybkość klatek z CCSpriteSheet
+description: CCSpriteSheet udostępnia funkcję łączenia i korzystania z wielu plików obrazów w jedną teksturę. Zmniejszenie liczby tekstury można zwiększyć czas ładowania gry i szybkość klatek.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: ec8a641fbd15f826e92ada62f65b17dd46b369e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2bb5b98b5c93fb625ce645692d8a3ccb3d143b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="improving-framerate-with-ccspritesheet"></a>Poprawa szybkość klatek z CCSpriteSheet
+# <a name="improving-frame-rate-with-ccspritesheet"></a>Poprawa szybkość klatek z CCSpriteSheet
 
 _CCSpriteSheet udostępnia funkcję łączenia i korzystania z wielu plików obrazów w jedną teksturę. Zmniejszenie liczby tekstury można zwiększyć czas ładowania gry i szybkość klatek._
 
 Wiele gier wymaga optymalizacji wysiłków bezproblemowe działanie i szybkość ładowania na sprzęcie przenośnym. `CCSpriteSheet` Klasy mogą pomóc w pokonywaniu wielu typowych problemów z wydajnością występujących CocosSharp gier. W tym przewodniku przedstawiono typowe problemy z wydajnością i sposobu ich rozwiązania przy użyciu `CCSpriteSheet` klasy.
 
 
-# <a name="what-is-a-sprite-sheet"></a>Co to jest arkusz Sprite?
+## <a name="what-is-a-sprite-sheet"></a>Co to jest arkusz sprite?
 
 A *arkusza sprite*, które mogą być również określany jako *atlas tekstury*, jest obrazem, który łączy wiele obrazów w jednym pliku. Może to poprawić wydajność środowiska uruchomieniowego, a także czasy ładowania zawartości.
 
@@ -30,7 +30,7 @@ Na przykład poniższy obraz jest arkusz proste sprite utworzone przez trzy oddz
 ![](ccspritesheet-images/image1.png "Poszczególne obrazy może być dowolnym rozmiarze, a wynikowy arkusza sprite nie jest wymagane do można całkowicie wypełnione")
 
 
-## <a name="render-states"></a>Stany renderowania
+### <a name="render-states"></a>Renderowanie stanów
 
 Visual CocosSharp obiektów (takich jak `CCSprite`) uprościć renderowania kodu za pośrednictwem tradycyjnych graficznego interfejsu API renderowania kodu na przykład MonoGame lub OpenGL, które wymagają utworzenia buforów wierzchołków (zgodnie z opisem w [rysowania grafiki 3D Wierzchołków w MonoGame](~/graphics-games/monogame/3d/part2.md) przewodniku). Niezależnie od jego prostota CocosSharp nie eliminuje koszty ustawienie *renderowania stanów*, liczbę razy, że kod renderowania musi się przestawić tekstury lub innych stanów związanych z renderowania, które są.
 
@@ -62,7 +62,7 @@ Stany renderowania może być trudne do optymalizacji, ponieważ kolejność rys
 
 Oczywiście sytuacji idealnej ma stan renderowania pojedynczego, pomimo mających wiele obrazów. Gry CocosSharp można to zrobić przez łączenie wszystkich obrazów w jednym pliku, a następnie ładowania tego jeden plik (wraz z jego towarzyszące **.plist** pliku) do `CCSpriteSheet`. Przy użyciu `CCSpriteSheet` klasa staje się jeszcze bardziej istotne, gier, który ma dużą liczbę obrazów, lub które mają bardzo skomplikowane układów. 
 
-## <a name="load-times"></a>Czas ładowania
+### <a name="load-times"></a>Czas ładowania
 
 Łączenie wielu obrazów w jednym pliku zwiększa również czas ładowania gry z kilku powodów:
 
@@ -70,7 +70,7 @@ Oczywiście sytuacji idealnej ma stan renderowania pojedynczego, pomimo mającyc
  - Ładowanie plików mniej oznacza mniejsze koszty każdego pliku, np. podczas analizowania nagłówków .png
  - Ładowanie plików mniej wymaga mniej czasu, co jest ważne dla opartej na dyskach nośniki, takie jak dyski DVD tradycyjnych dyskach twardych przeszukiwania
 
-# <a name="using-ccspritesheet-in-code"></a>Przy użyciu CCSpriteSheet w kodzie
+## <a name="using-ccspritesheet-in-code"></a>Przy użyciu CCSpriteSheet w kodzie
 
 Aby utworzyć `CCSpriteSheet` wystąpienia, należy podać kod, obrazu i pliku, który definiuje regionów obrazu do użycia dla każdej ramce. Obraz mogą być ładowane jako **.png** lub **.xnb** plik (Jeśli za pomocą [zawartości potoku](~/graphics-games/cocossharp/content-pipeline/index.md)). Jest plik definiujący ramek **.plist** plików, które mogą być tworzone ręcznie lub *TexturePacker* (co omówiono poniżej).
 
@@ -110,7 +110,7 @@ CCSprite sprite = new CCSprite (frame);
 Ponieważ `CCSprite` Konstruktor może zająć `CCSpriteFrame` parametru kod nigdy nie sprawdzić szczegóły `CCSpriteFrame`, takie jak tekstury, który używa lub obszaru obrazu w arkuszu sprite wzorca.
 
 
-#  <a name="creating-a-sprite-sheet-plist"></a>Tworzenie Sprite arkusza .plist
+## <a name="creating-a-sprite-sheet-plist"></a>Tworzenie .plist arkusza sprite
 
 Plik .plist jest plik opartych na języku xml, który można tworzyć i edytować ręcznie. Podobnie programy do edycji obrazów mogą być używane do łączenia wielu plików w jeden rozmiar pliku. Od czasu utworzenia i utrzymywania arkusze sprite może być bardzo czasochłonne, zajmiemy program TexturePacker, który można eksportować pliki w formacie CocosSharp. TexturePacker oferuje bezpłatny i wersji "Zaawansowany" i jest dostępna dla systemów Windows i Mac OS. W dalszej części tego podręcznika można wykonać przy użyciu bezpłatnej wersji. 
 
@@ -124,13 +124,13 @@ Pliki obrazów (takich jak **.png**) można dodać do TexturePacker przeciągani
 
 Aby wyeksportować arkusz sprite, kliknij przycisk **publikowania arkusza sprite** i wybrać lokalizację arkusza sprite. TexturePacker zapisze plik .plist i plikiem obrazu.
 
-Aby użyć pliki wynikowe, należy dodać do projektu CocosSharp .png i plist. Aby uzyskać informacje dotyczące dodawania plików do projektów CocosSharp, zobacz [implementacja przewodnik BouncingGame](~/graphics-games/cocossharp/first-game/part2.md). Po dodaniu plików, może być załadowany do `CCSpriteSheet` pokazany został wcześniej w powyższym kodzie:
+Aby użyć pliki wynikowe, należy dodać do projektu CocosSharp .png i plist. Aby uzyskać informacje dotyczące dodawania plików do projektów CocosSharp, zobacz [przewodnik BouncingGame](~/graphics-games/cocossharp/bouncing-game.md). Po dodaniu plików, może być załadowany do `CCSpriteSheet` pokazany został wcześniej w powyższym kodzie:
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-## <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>Zagadnienia dotyczące obsługi arkusza TexturePacker Sprite
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>Zagadnienia dotyczące obsługi arkusz sprite TexturePacker
 
 Opracowanej gry artystów może dodać, usunąć lub zmodyfikować kompozycji. Każda zmiana wymaga arkusza sprite zaktualizowane. Przedstawione poniżej zagadnienia może ułatwić sprite arkusza konserwacji:
 
@@ -144,7 +144,7 @@ Opracowanej gry artystów może dodać, usunąć lub zmodyfikować kompozycji. K
 
     ![](ccspritesheet-images/image10.png "Aby dołączyć ścieżki folderu, kliknij przycisk Pokaż zaawansowane w sekcji danych i sprawdź nazwę folderu Prepend")
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku opisano sposób tworzenia i używania `CCSpriteSheet` klasy. Obejmuje ona również sposób tworzenia plików, które mogą być ładowane do `CCSpriteSheet` wystąpienia przy użyciu programu TexturePacker.
 

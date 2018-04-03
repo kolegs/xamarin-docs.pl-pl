@@ -1,6 +1,6 @@
 ---
-title: "Buforowanie tekstury za pomocą CCTextureCache"
-description: "Klasa CCTextureCache w CocosSharp udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości. Jest to szczególnie przydatne w przypadku dużych gry, które mogą nie mieści się całkowicie w pamięci RAM, w celu uproszczenia procesu grupowania i usuwanie tekstury."
+title: Buforowanie tekstury za pomocą CCTextureCache
+description: Klasa CCTextureCache w CocosSharp udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości. Jest to szczególnie przydatne w przypadku dużych gry, które mogą nie mieści się całkowicie w pamięci RAM, w celu uproszczenia procesu grupowania i usuwanie tekstury.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 365e343a55a208b63f4dc52999e8857b5f0ec1f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 350a454bc94c796b34cfeeb319481919b18d334f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="texture-caching-using-cctexturecache"></a>Buforowanie tekstury za pomocą CCTextureCache
 
@@ -29,7 +29,7 @@ W tym przewodniku dotyczą `CCTextureCache` i dlatego jest ważne w przypadku tw
  - Usuwanie tekstury
 
 
-# <a name="why-texture-caching-matters"></a>Dlaczego Texture sprawach buforowania
+## <a name="why-texture-caching-matters"></a>Dlaczego texture sprawach buforowania
 
 Buforowanie tekstury jest ważną kwestią w opracowywaniu gier, ponieważ podczas ładowania tekstury jest czasochłonna operacja i tekstury wymaga znaczną ilość pamięci RAM w czasie wykonywania.
 
@@ -38,7 +38,7 @@ Podobnie jak w przypadku żadnej operacji pliku ładowania tekstury z dysku moż
 Jak wspomniano powyżej, tekstury zajmować dużą ilość pamięci w czasie wykonywania. Na przykład obraz tła o rozmiarze do rozdzielczości iPhone 6 (1344 x 750) zajmują 4 MB pamięci RAM — nawet jeśli plik PNG jest tylko kilku kilobajtów. Buforowanie tekstury udostępnia sposób współużytkowania tekstury odwołań w aplikacji, a także łatwe zwolnienie całej zawartości podczas przejścia między Stanami gier różne.
 
 
-# <a name="texture-lifespan"></a>Cykl życia tekstury
+## <a name="texture-lifespan"></a>Cykl życia tekstury
 
 Tekstury CocosSharp może być przechowywany w pamięci przez cały czas wykonywania aplikacji lub może być krótko. Aby zminimalizować pamięci użycia aplikacji należy dysponować tekstury, gdy nie są już potrzebne. Oczywiście oznacza to, że tekstury może być usunięty i ponownie załadowany w późniejszym czasie, które mogą zwiększyć czas ładowania lub obniżyć wydajność podczas obciążenia. 
 
@@ -58,7 +58,7 @@ Jeśli długą gry wystarczająco go po pewnym czasie będzie załadować za ma�
 Diagram pokazanym powyżej wskazuje przez zwalnianie można zmniejszyć użycie pamięci tekstury, że może to wymagać czasy ładowania dodatkowe, jeśli zdecyduje się on na poziomie powtarzania. Warto również zauważyć, że tekstury UITexture i MainCharacter są załadowane, a nigdy nie został zwolniony. Oznacza to, że te tekstury nie są potrzebne na wszystkich poziomach, dlatego zawsze są przechowywane w pamięci. 
 
 
-# <a name="using-sharedtexturecache"></a>Using SharedTextureCache
+## <a name="using-sharedtexturecache"></a>Using SharedTextureCache
 
 Podczas ładowania ich za pośrednictwem CocosSharp automatycznie buforuje tekstury `CCSprite` konstruktora. Na przykład poniższy kod tworzy tylko jedno wystąpienie tekstury.
 
@@ -84,7 +84,7 @@ CCSprite starSprite = new CCSprite ();
 `AddImage` sprawdza, czy plik argumentu (w tym przypadku `star.png`) został już załadowany. Jeśli tak, jest zwracana buforowane wystąpienie. Jeśli następnie nie został załadowany z systemu plików, a odwołania do tekstury są przechowywane wewnętrznie przez kolejne `AddImage` wywołania. Innymi słowy `star.png` ładowany jest obraz tylko raz i kolejnych wywołań wymagają nie dostęp do dodatkowych dysku lub pamięć dodatkowe tekstury.
 
 
-# <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Powolne ładowanie wersji programu vs. Wstępne ładowanie z AddImage
+## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Powolne ładowanie a wstępne ładowanie z AddImage
 
 `AddImage` Umożliwia kodu w celu zapisania taka sama czy żądanej tekstury jest już załadowany, czy nie. Oznacza to, że zawartość nie zostanie załadowany, dopóki nie jest wymagana; Jednak to może spowodować problemy z wydajnością w czasie wykonywania, ze względu na zawartość nieprzewidywalne ładowania.
 
@@ -114,12 +114,12 @@ void PreLoadImages()
 Ta wstępnego ładowania może spowodować nieużywanego pamięci i może spowodować wydłużenie czasu uruchamiania. Na przykład odtwarzacz nigdy może uzyskać reprezentowany przez włączania zasilania `powerup3.png` tekstury, więc zostanie niepotrzebnie załadowana. Oczywiście może to być konieczne koszt płatności uniknąć potencjalnych pop w gry, więc jest zazwyczaj najlepiej wstępnego ładowania zawartości, jeśli zmieści się w pamięci RAM.
 
 
-# <a name="disposing-textures"></a>Usuwanie tekstury
+## <a name="disposing-textures"></a>Usuwanie tekstury
 
 Jeśli gry nie wymaga więcej pamięci tekstury niż dostępna w minimalnej specyfikacji urządzenia, a następnie tekstury nie muszą zostać usunięte. Z drugiej strony większe gry może być konieczne zwolnić pamięć tekstury, aby zwolnić miejsce na nową zawartość. Na przykład gry może używać dużej ilości pamięci przechowywania tekstury dla środowiska. Jeśli środowisko jest używane wyłącznie w określony poziom następnie powinno być zwolniony podczas kończenia poziomu.
 
 
-## <a name="disposing-a-single-texture"></a>Usuwanie jednego tekstury
+### <a name="disposing-a-single-texture"></a>Usuwanie jednego tekstury
 
 Usunięcie jednego tekstury najpierw wymaga wywołania `Dispose` metody, a następnie ręczne usunięcie z `CCTextureCache`.
 
@@ -187,7 +187,7 @@ Metodę Dispose zlikwiduje wszystkie wewnętrzny tekstury, czyszcząc limit pami
 
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 Ten przewodnik przedstawia sposób użycia `CCTextureCache` klasy saldo wydajności użycia i obsługi pamięci. `CCTexturCache.SharedTextureCache` można jawnie lub niejawnie używany do ładowania i pamięci podręcznej tekstury przez cały okres istnienia aplikacji, podczas gdy `CCTextureCache` wystąpień może służyć do zwolnienia tekstury, aby zmniejszyć użycie pamięci.
 

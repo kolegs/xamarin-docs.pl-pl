@@ -1,6 +1,6 @@
 ---
-title: "Przy użyciu rozmieszczany z CocosSharp"
-description: "Rozmieszczany jest wydajne, elastyczne i mapowania dojrzałe aplikacji do tworzenia Kafelek prostopadły i izometryczny gier. CocosSharp zapewnia wbudowanej integracji sąsiadująco w natywny plik formatu."
+title: Przy użyciu rozmieszczany z CocosSharp
+description: Rozmieszczany jest wydajne, elastyczne i mapowania dojrzałe aplikacji do tworzenia Kafelek prostopadły i izometryczny gier. CocosSharp zapewnia wbudowanej integracji sąsiadująco w natywny plik formatu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 5a469a372a9299712be7aef46c51f3d644946535
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>Przy użyciu rozmieszczany z CocosSharp
 
@@ -30,7 +30,7 @@ Gdy Zakończono firma Microsoft będzie mieć pokaz następujące:
 ![](tiled-images/image1.png "Aplikacja demonstracyjna utworzone, wykonując kroki opisane w tym przewodniku")
 
 
-# <a name="the-purpose-of-tile-maps"></a>Celem kafelków mapy
+## <a name="the-purpose-of-tile-maps"></a>Celem kafelków mapy
 
 Kafelek map istniejących w opracowywaniu gier dla dekad, ale są nadal powszechnie używane w gier 2W w celu ich wydajności i esthetics. Kafelków mapy są niemożliwe do osiągnięcia na bardzo wysokim poziomie wydajności za pośrednictwem ich używania zestawów kafelka — używane przez kafelków mapy obrazu źródłowego. Zestaw kafelków jest kolekcją obrazów połączone w jeden plik. Mimo że zestawy kafelka odwołują się do obrazy używane w kafelków mapy, pliki, które zawierają wiele obrazów mniejszych są również nazywane arkusze sprite lub sprite mapy w opracowywaniu gier. Firma Microsoft wizualizacji, używania zestawów kafelka, dodając siatka do zestawu kafelka, który będzie używany w naszej Pokaz:
 
@@ -43,7 +43,7 @@ Kafelków mapy rozmieszczać Kafelki poszczególnych z zestawów kafelka. Należ
 ![](tiled-images/image4.png "Ten obraz zawiera uzgodnienia możliwe przy użyciu tego samego zestawu kafelka")
 
 
-# <a name="working-with-tmx-files"></a>Praca z plikami .tmx
+## <a name="working-with-tmx-files"></a>Praca z plikami .tmx
 
 Format pliku .tmx jest plik XML utworzony przez aplikację sąsiadująco, który może być [pobrać bezpłatnie w witrynie sieci Web sąsiadująco](http://www.mapeditor.org/). Format pliku .tmx przechowuje informacje dla kafelków mapy. Zwykle gry będzie mieć jeden plik .tmx dla każdego poziomu lub osobnych obszaru.
 
@@ -80,7 +80,7 @@ Jeśli przeprowadzana grę, którą zostanie wyświetlone mapy kafelka są wyśw
 ![](tiled-images/image6.png "Jeśli uruchomienia gry mapy kafelka są wyświetlane w lewym dolnym rogu ekranu")
 
 
-# <a name="considerations-for-rendering-pixel-art"></a>Zagadnienia dotyczące renderowania pikseli grafiki
+## <a name="considerations-for-rendering-pixel-art"></a>Zagadnienia dotyczące renderowania pikseli grafiki
 
 Pikseli grafiki, w kontekście rozwoju gier wideo odwołuje się do 2D visual grafikę, który jest zwykle tworzony przez strony, a często jest w niskiej rozdzielczości. Pikseli grafiki może być twierdzi czasu znacznym do tworzenia, więc pikseli grafiki kafelka zestawy często zawierają Kafelki w niskiej rozdzielczości, takich jak 16 lub 32 pikseli szerokości i wysokości. Jeśli nie są skalowane w czasie wykonywania, grafikę pikseli często jest zbyt mały dla większość nowoczesnych telefony i tablety.
 
@@ -161,7 +161,7 @@ Teraz naszych kafelków mapy nie będą wyświetlane rozmyte:
 ![](tiled-images/image8.png "Teraz kafelków mapy nie będą wyświetlane rozmyte")
 
 
-# <a name="using-tile-properties-at-runtime"></a>Przy użyciu właściwości kafelka w czasie wykonywania
+## <a name="using-tile-properties-at-runtime"></a>Przy użyciu właściwości kafelka w czasie wykonywania
 
 Do tej pory mamy `CCTileMap` ładowania pliku .tmx i wyświetlanie, ale firma Microsoft nie ma możliwości wchodzić w interakcje z nią. W szczególności niektórych Kafelki (np. nasze Skarb piersi) musi być niestandardowej logiki. Firma Microsoft czynności w sposób wykrywania kafelka niestandardowe właściwości i różnych sposobach reagowania na te właściwości zidentyfikowane raz w czasie wykonywania.
 
@@ -175,7 +175,7 @@ Jeśli nie są wyświetlane właściwości piersi Skarb, kliknij prawym przycisk
 
 ![](tiled-images/image10.png "Jeśli nie są wyświetlane właściwości piersi Skarb, kliknij prawym przyciskiem myszy na piersi Skarb i wybierz polecenie Właściwości kafelka")
 
-Ułożenie sąsiadujące właściwości są wdrażane z nazwą i wartością. Aby dodać właściwość, kliknij przycisk  **+**  przycisku, wprowadź nazwę **IsTreasure**, kliknij przycisk **OK**, wprowadź wartość **true**: 
+Ułożenie sąsiadujące właściwości są wdrażane z nazwą i wartością. Aby dodać właściwość, kliknij przycisk **+** przycisku, wprowadź nazwę **IsTreasure**, kliknij przycisk **OK**, wprowadź wartość **true**: 
 
 ![](tiled-images/image11.png "Aby dodać właściwość, kliknij przycisk, wprowadź nazwę IsTreasure, kliknij przycisk OK, a następnie wprowadź wartość true")
 
@@ -273,7 +273,7 @@ Większość kodu jest oczywiste, ale powinien omówimy Obsługa Skarb kafelków
 Innymi słowy, piersi Skarb będą korzystać z jest jednostką, a nie jako proste kafelka w `CCTileMap`. Aby uzyskać więcej informacji na jednostkach gier, zobacz [przewodnik jednostek w CocosSharp](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku opisano sposób załadować .tmx tworzonych przez sąsiadująco w aplikacji CocosSharp. Widoczny jest sposób modyfikowania rozpoznawania aplikacji do uwzględnienia niższej rozdzielczości pikseli grafiki i jak znaleźć Kafelki według ich właściwości, do wykonania niestandardowej logiki, takich jak tworzenie wystąpienia jednostki.
 

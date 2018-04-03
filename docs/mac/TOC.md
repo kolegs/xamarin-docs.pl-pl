@@ -53,6 +53,7 @@
 #### [Przekazywanie do sklepu Mac App Store](deploy-test/publishing-to-the-app-store/uploading.md)
 ## [Pojęcia zaawansowane i elementy wewnętrzne](internals/index.md)
 ### [AOT](internals/aot.md)
+### [Dostępne zestawy](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
 ### [Architektura komputera Mac](internals/architecture.md)
 ### [Jak działa rozszerzenie Xamarin.Mac](internals/how-it-works.md)
 ### [Struktury](internals/frameworks.md)

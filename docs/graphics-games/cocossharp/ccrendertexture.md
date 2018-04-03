@@ -1,17 +1,17 @@
 ---
-title: "Wydajność i efekty wizualne z CCRenderTexture"
-description: "CCRenderTexture umożliwia deweloperom poprawić wydajność ich gry CocosSharp zmniejszając wywołań rysowania i umożliwia tworzenie efektów wizualnych. W tym przewodniku towarzyszy próbki CCRenderTexture zapewnienie praktyczne przykład efektywnie korzystać z tej klasy."
+title: Wydajność i efekty wizualne z CCRenderTexture
+description: CCRenderTexture umożliwia deweloperom poprawić wydajność ich gry CocosSharp zmniejszając wywołań rysowania i umożliwia tworzenie efektów wizualnych. W tym przewodniku towarzyszy próbki CCRenderTexture zapewnienie praktyczne przykład efektywnie korzystać z tej klasy.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 8283c299d0e6529ef4cf8c285ec47b4d42fc682a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36661344fc0f4b9e132e3f721c50f82f3a8db057
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Wydajność i efekty wizualne z CCRenderTexture
 
@@ -24,7 +24,7 @@ Jak używać sprawdza, czy ten przewodnik `CCRenderTexture` obiekt, aby poprawi�
 ![](ccrendertexture-images/image1.png "Ten przewodnik odwołuje się do CCRenderTexture przykładowy projekt")
 
 
-# <a name="card--a-typical-entity"></a>Karta — typowe jednostki
+## <a name="card--a-typical-entity"></a>Karta — typowe jednostki
 
 Przed spojrzenie na sposób używania `CCRenderTexture` obiektu, firma Microsoft będzie najpierw zapoznać nad z `Card` jednostki, która zostanie użyta w tym projekcie Aby zapoznać się z `CCRenderTexture` klasy. `Card` Klasy jest typowy jednostki, zgodnie ze wzorcem jednostki opisane w temacie [przewodnik jednostki](~/graphics-games/cocossharp/entities.md). Klasa karty ma wszystkie jego składniki visual (wystąpienia `CCSprite` i `CCLabel`) wymienionych jako pola:
 
@@ -65,7 +65,7 @@ Próbki jest kodowane do udostępnienia dwa problemy, które mogą wystąpić po
 - Niektóre efekty wizualne, takie jak przezroczystości, nie można zaimplementować dokładnie, jak przeanalizujemy później
 
 
-## <a name="card-draw-calls"></a>Karta wywołań rysowania
+### <a name="card-draw-calls"></a>Karta wywołań rysowania
 
 Naszego kodu jest uproszczenie co można znaleźć w pełnym *do zebrania gra* (CCG) takie jak "Zbieranie Magic:" lub "Hearthstone". Nasze gry tylko jednocześnie zawiera trzy karty i ma niewielkiej liczby możliwych jednostki (blue zielony i kolor pomarańczowy). Z kolei pełne gry może mieć ponad dwudziestu kart na ekranie w danym momencie, i odtwarzacze może mieć setki kart, które można wybierać podczas tworzenia ich talii. Mimo że nasze gry nie obecnie doświadczają problemy z wydajnością, może być pełny gry z implementacją podobne.
 
@@ -76,7 +76,7 @@ CocosSharp zawiera niektóre analizę wydajności renderowania w przypadku wysta
 Zwróć uwagę, pomimo o trzy karty na ekranie, mając dziewiętnastu wywołań rysowania (każdej karty wyników w sześć wywołań, pisania tekstu wyświetlanie kont informacji o wydajności dla jednej). Wywołań rysowania mieć znaczący wpływ na wydajność grę, więc CocosSharp udostępnia kilka sposobów, aby zmniejszyć ich. Techniki co opisano w [przewodnik CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md). Jest użycie innej techniki `CCRenderTexture` do zmniejszenia każdej jednostki w dół, aby jedno wywołanie, jak zostaną omówione w tym przewodniku.
 
 
-## <a name="card-transparency"></a>Karta przezroczystości
+### <a name="card-transparency"></a>Karta przezroczystości
 
 Nasze `Card` zawiera jednostki `Opacity` przezroczystość kontroli, jak pokazano w poniższy fragment kodu dla właściwości:
 
@@ -143,7 +143,7 @@ Aby ułatwić wizualizacji, dlaczego dzieje się tak, musimy należy pamiętać,
 Przy użyciu `CCRenderTexture` pozwala przezroczystego całego karty bez wpływu na renderowanie pojedynczych składników w ramach karty, jak przedstawiono w dalszej części tego przewodnika.
 
 
-# <a name="using-ccrendertexture"></a>Przy użyciu CCRenderTexture
+## <a name="using-ccrendertexture"></a>Przy użyciu CCRenderTexture
 
 Teraz, gdy określiliśmy problemy związane z indywidualnie renderowania każdego składnika, firma Microsoft będzie włączyć renderowania `CCRenderTexture` i porównaj zachowanie.
 
@@ -159,7 +159,7 @@ protected override void AddedToScene ()
 ```
 
 
-## <a name="card-draw-calls"></a>Karta wywołań rysowania
+### <a name="card-draw-calls"></a>Karta wywołań rysowania
 
 Jeśli teraz możemy uruchomić grę, zajmiemy się tym wywołań rysowania zmniejszony z nineteen cztery (każda karta zmniejszony z sześciu do jednego):
 
@@ -168,7 +168,7 @@ Jeśli teraz możemy uruchomić grę, zajmiemy się tym wywołań rysowania zmni
 Jak wcześniej wspomniano tego rodzaju redukcji może mieć znaczący wpływ na gry z kolejnych jednostek visual na ekranie.
 
 
-## <a name="card-transparency"></a>Karta przezroczystości
+### <a name="card-transparency"></a>Karta przezroczystości
 
 Raz `useRenderTextures` ma ustawioną wartość `true`, przezroczysty kart spowoduje, że inaczej:
 
@@ -181,7 +181,7 @@ Umożliwia porównanie karty przezroczysty robot, przy użyciu tekstury renderow
 Najbardziej oczywisty różnice znajdują się w tekst szczegóły (czarna zamiast światła szary) i sprite robota (zmniejszonym i ciemny zamiast światła).
 
 
-# <a name="ccrendertexture-details"></a>Szczegóły CCRenderTexture
+## <a name="ccrendertexture-details"></a>Szczegóły CCRenderTexture
 
 Teraz, gdy firma Microsoft w tym samouczku korzyści wynikające ze stosowania `CCRenderTexture`, Spójrzmy na sposobie ich użycia w `Card` jednostki.
 
@@ -256,7 +256,7 @@ private void SwitchToRenderTexture()
 Poniższe sekcje Eksploruj `SwitchToRenderTexture` metody. 
 
 
-## <a name="ccrendertexture-size"></a>Rozmiar CCRenderTexture
+### <a name="ccrendertexture-size"></a>Rozmiar CCRenderTexture
 
 Konstruktor CCRenderTexture wymaga dwóch zestawów wymiarów. Pierwszy steruje rozmiarem pamięci `CCRenderTexture` podczas wprowadzania, a drugi określa pikseli szerokości i wysokości jego zawartość. `Card` Tworzy wystąpienie jednostki jego `CCRenderTexture` przy użyciu tła [contentsize będzie mieć](https://developer.xamarin.com/api/property/CocosSharp.CCSprite.ContentSize/). Nasze gra `DesignResolution` z 512 przez 384, jak pokazano w `ViewController.LoadGame` w systemie iOS i `MainActivity.LoadGame` w systemie Android:
 
@@ -293,7 +293,7 @@ renderTexture = new CCRenderTexture(unitResolution, pixelResolution);
 ![](ccrendertexture-images/image9.png "Aby porównać, można zmienić wartość pixelResolution, aby dopasować tło. ContentSize bez podwajając i porównać wynik")
 
 
-## <a name="rendering-to-a-ccrendertexture"></a>Renderowania CCRenderTexture
+### <a name="rendering-to-a-ccrendertexture"></a>Renderowania CCRenderTexture
 
 Zazwyczaj obiekty widoczne w CocosSharp nie są jawnie renderowane. Zamiast tego obiekty widoczne są dodawane do `CCLayer` który jest częścią `CCScene`. Automatycznie renderuje CocosSharp `CCScene` i jego visual hierarchii w każdej ramce bez żadnego kodu renderowania wywoływane. 
 
@@ -355,7 +355,7 @@ foreach (var component in visualComponents)
 this.AddChild(renderTexture.Sprite);
 ```
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 Omówione w tym przewodniku `CCRenderTexture` przy użyciu `Card` jednostki, która mogła zostać użyta w grze kolekcjonowanych karty. Pokazano, jak używać `CCRenderTexture` klasę, aby zwiększyć szybkość klatek i prawidłowo zaimplementować przezroczystość całej jednostki.
 

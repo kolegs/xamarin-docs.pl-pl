@@ -1,6 +1,6 @@
 ---
 title: Integrowanie z platformy Xamarin.Forms
-description: "Utwórz SkiaSharp grafika touch i elementy platformy Xamarin.Forms"
+description: Utwórz SkiaSharp grafika touch i elementy platformy Xamarin.Forms
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: aa6011c783228848212c633c1c8059c402fdaa3f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3edc71977820ca618447e02caa032cf908e1aae4
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrowanie z platformy Xamarin.Forms
 
@@ -23,7 +23,7 @@ Grafika SkiaSharp można zintegrować z resztą platformy Xamarin.Forms na kilka
 ![](integration-images/integrationexample.png "Wybór koloru za pomocą suwaka")
 
 Inną metodą tworzenia interaktywnych grafiki SkiaSharp w platformy Xamarin.Forms jest touch.
-W drugiej stronie [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) programu jest uprawniony **naciśnij przycisk przełączania wypełnienia**. Go rysuje Proste kółko dwa sposoby &mdash; bez wypełnienia i z wypełnieniem &mdash; przełączane przez tap. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasy pokazuje, jak w przypadku modyfikowania SkiaSharp grafiki w odpowiedzi na dane wejściowe użytkownika.
+W drugiej stronie [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu jest uprawniony **naciśnij przycisk przełączania wypełnienia**. Go rysuje Proste kółko dwa sposoby &mdash; bez wypełnienia i z wypełnieniem &mdash; przełączane przez tap. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasy pokazuje, jak w przypadku modyfikowania SkiaSharp grafiki w odpowiedzi na dane wejściowe użytkownika.
 
 Na tej stronie `SKCanvasView` utworzyć wystąpienia klasy w [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) pliku, który określa również platformy Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) w widoku:
 
@@ -241,4 +241,4 @@ Ale jest najlepszym sposobem, aby uzyskać pewne pojęcie o dwa modele do eksper
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

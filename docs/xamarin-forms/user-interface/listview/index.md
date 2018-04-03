@@ -1,6 +1,6 @@
 ---
 title: ListView
-description: "Przedstawia dane na listach doskonałych, interakcyjne."
+description: Przedstawia dane na listach doskonałych, interakcyjne.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 3c12ccd5dc77dd7dff9d4eab07eeaf04c6b2c161
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 494c69700ed0b12b4c9151b9a1b04ea091ebfa57
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -40,7 +40,7 @@ Element ListView ma liczbę składników dostępnych do wykonywania funkcji maci
 
 ![](images/grouping-depth.png "Element ListView z zgrupowanych danych")
 
-- **[Komórki](customizing-cell-appearance.md)**  &ndash; zobaczy w komórkach danych w elemencie ListView. Każda komórka odpowiada wiersz danych. Brak arebuilt-komórek do wyboru, albo można zdefiniować własne niestandardowe komórki. Komórek zarówno wbudowanych i niestandardowych można używać/zdefiniowany w języku XAML lub kodu.
+- **[Komórki](customizing-cell-appearance.md)**  &ndash; zobaczy w komórkach danych w elemencie ListView. Każda komórka odpowiada wiersz danych. Dostępne są wbudowane komórek do wyboru, lub można definiować własne niestandardowe komórki. Komórek zarówno wbudowanych i niestandardowych można używać/zdefiniowany w języku XAML lub kodu.
   - **[Wbudowane](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; wbudowane w komórkach, szczególnie TextCell i ImageCell, może być doskonałą wydajność, ponieważ odpowiada kontrolki natywne na każdej z platform.
     - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; wyświetla ciąg tekstu, opcjonalnie z tekstem szczegółów. Tekst szczegółów jest renderowane jako drugi wiersz w mniejszej czcionki z kolor akcentu.
     - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; Wyświetla obraz z tekstem. Pojawia się jako TextCell z obrazem po lewej stronie.

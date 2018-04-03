@@ -1,6 +1,6 @@
 ---
-title: "Krzywe SkiaSharp i ścieżek"
-description: "Dowiedz się, jak za pomocą SkiaSharp Rysowanie krzywych i korzystanie z funkcji ścieżki"
+title: Krzywe SkiaSharp i ścieżek
+description: Dowiedz się, jak za pomocą SkiaSharp Rysowanie krzywych i korzystanie z funkcji ścieżki
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 9daea43ea09f7acaa2f3cd1300785391f69c4746
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3f2ab787d88ce2f5703a2d6ac670116ad224d32c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>Krzywe SkiaSharp i ścieżek
 
@@ -20,7 +20,7 @@ _Dowiedz się, jak za pomocą SkiaSharp Rysowanie krzywych i korzystanie z funkc
 
 Badań [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) metody i właściwości rozpoczął się w [SkiaSharp wierszy i ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md) artykułu. Artykuły w tym miejscu kontynuować metod, które krzywych, aby dodać `SKPath` obiekty i wykorzystać inne funkcje zaawansowane ścieżki. Zobaczysz, jak można określić pełną ścieżkę w ciągu tekstowym zwięzły, jak używać efekty ścieżki i dotyczące dalszego do ścieżki wewnętrzne.
 
-Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **krzywych i bardziej ścieżki** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) programu w [ **Krzywych** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) folderu rozwiązania.
+Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **krzywych i bardziej ścieżki** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu w [ **Krzywych** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) folderu rozwiązania.
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Trzy sposoby narysowania łuku](arcs.md)
 
@@ -54,4 +54,4 @@ Uzyskaj informacje na temat ścieżek i analizy zawartości
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

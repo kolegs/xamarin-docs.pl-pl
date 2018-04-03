@@ -1,5 +1,5 @@
 ---
-title: Szczegóły implementacji czasu monety
+title: Szczegóły gier monety godziny
 description: W tym przewodniku opisano szczegóły implementacji w grze monety czas, tym Praca z kafelków mapy, tworzenie jednostek animacji ikony i implementowanie kolizji wydajne.
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>Szczegóły implementacji czasu monety
+# <a name="coin-time-game-details"></a>Szczegóły gier monety godziny
 
 _W tym przewodniku opisano szczegóły implementacji w grze monety czas, tym Praca z kafelków mapy, tworzenie jednostek animacji ikony i implementowanie kolizji wydajne._
 
@@ -24,27 +24,27 @@ Czas monety jest pełna platformera gier dla systemu iOS i Android. Celem gry je
 
 W tym przewodniku omówiono szczegóły implementacji w czasie monety, obejmujące następujące tematy:
 
-- [Praca z plikami TMX](#Working_with_TMX_Files)
-- [Poziom ładowania](#Level_Loading)
-- [Dodawanie nowych jednostek](#Adding_New_Entities)
-- [Animowany jednostek](#Animated_Entities)
+- [Praca z plikami tmx](#working-with-tmx-files)
+- [Poziom ładowania](#level-loading)
+- [Dodawanie nowych jednostek](#adding-new-entities)
+- [Animowany jednostek](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>W czasie monety zawartości
+## <a name="content-in-coin-time"></a>W czasie monety zawartości
 
 Czas monety jest przykładowy projekt, reprezentujący może organizowania pełne projektu CocosSharp. Monety czasu struktury ma na celu uproszczenie Dodawanie i Konserwacja zawartości. Używa **.tmx** pliki tworzone przez [sąsiadująco](http://www.mapeditor.org) dla poziomów i pliki XML do definiowania animacji. Modyfikowanie lub Dodawanie nowej zawartości można osiągnąć przy minimalnym wysiłku. 
 
 Podczas tego podejścia sprawia, że czas monety skuteczne projektu do nauki i eksperymenty, również odzwierciedla jak professional gry zostały wprowadzone. W tym przewodniku omówiono podejścia podjąć w celu uproszczenia Dodawanie i modyfikowanie zawartości.
 
 
-# <a name="working-with-tmx-files"></a>Praca z plikami TMX
+## <a name="working-with-tmx-files"></a>Praca z plikami tmx
 
 Poziomów czasu monety są zdefiniowane przy użyciu formatu pliku .tmx, który jest wynikiem [sąsiadująco](http://www.mapeditor.org) kafelków mapy edytora. Szczegółowe omówienie pracy z sąsiadująco, zobacz [przy użyciu rozmieszczany z przewodnik gwałtowny Cocos](~/graphics-games/cocossharp/tiled.md). 
 
 Każdy poziom jest zdefiniowany w własnego zawarte w pliku .tmx **CoinTime/zasoby/zawartości/poziomy** folderu. Wszystkie poziomy czasu monety udostępniania jednego pliku tileset, który jest zdefiniowany w **mastersheet.tsx** pliku. Ten plik definiuje niestandardowe właściwości dla każdego kafelka, na przykład czy Kafelek zawiera stałe kolizji lub czy Kafelek powinna zostać zastąpiona wystąpienia jednostki. Plik mastersheet.tsx umożliwia właściwości, które mają zostać zdefiniowany tylko raz i używać na wszystkich poziomach. 
 
 
-## <a name="editing-a-tile-map"></a>Edytowanie mapy kafelka
+### <a name="editing-a-tile-map"></a>Edytowanie mapy kafelka
 
 Aby edytować kafelków mapy, otwórz plik .tmx w sąsiadująco, klikając dwukrotnie plik .tmx lub otwierając go za pomocą menu Plik w sąsiadująco. Czas monety mapy poziomu kafelka zawiera trzy warstwy: 
 
@@ -54,7 +54,8 @@ Aby edytować kafelków mapy, otwórz plik .tmx w sąsiadująco, klikając dwukr
 
 Jak przeanalizujemy później, kod ładowania poziom oczekuje, że te trzy warstwy na wszystkich poziomach monety czasu.
 
-### <a name="editing-terrain"></a>Edytowanie terenu
+#### <a name="editing-terrain"></a>Edytowanie terenu
+
 Kafelki można umieścić, klikając w **mastersheet** tileset, a następnie klikając pozycję na kafelku mapy. Na przykład do malowania nowe terenu na poziomie:
 
 1. Wybierz warstwę terenu
@@ -67,7 +68,8 @@ Od lewej górnej tileset zawiera wszystkie terenu w czasie monety. Obejmuje tere
 
 ![](cointime-images/image3.png "Terenu, który jest pełny, zawiera właściwość SolidCollision opisane we właściwościach kafelka po lewej stronie ekranu")
 
-### <a name="editing-entities"></a>Edytowanie obiektów
+#### <a name="editing-entities"></a>Edytowanie obiektów
+
 Jednostki można dodać lub usunąć z poziomu — podobnie jak terenu. **Mastersheet** tileset ma wszystkich jednostek umieszczone o połowie poziomie, dlatego mogą nie być widoczne bez przewijania w prawo:
 
 ![](cointime-images/image4.png "Mastersheet tileset ma wszystkich jednostek umieszczone o połowie poziomie, dlatego mogą nie być widoczne bez przewijania w prawo")
@@ -85,7 +87,7 @@ Gdy plik ma zostały zmodyfikowane i zapisane, zmiany będą automatycznie widoc
 ![](cointime-images/image7.png "Gdy plik ma zostały zmodyfikowane i zapisane, zmiany będą automatycznie widoczne czy projekt jest wbudowana i uruchom")
 
 
-## <a name="adding-new-levels"></a>Dodawanie nowych poziomów
+### <a name="adding-new-levels"></a>Dodawanie nowych poziomów
 
 Proces dodawania poziomy na czas monety wymaga nie zmian w kodzie, a tylko kilka niewielkich zmian w projekcie. Aby dodać nowy poziom:
 
@@ -105,7 +107,7 @@ Nowy poziom powinien pojawiać się na poziomie ekranu wybierz jako poziom 9 (po
 ![](cointime-images/image10.png "Nowy poziom powinien pojawiać się na poziomie ekranu wybierz jako start nazwy pliku poziomu poziom 9 na 0, ale przyciski poziomu rozpocząć o numerze 1")
 
 
-# <a name="level-loading"></a>Poziom ładowania
+## <a name="level-loading"></a>Poziom ładowania
 
 Jak pokazano wcześniej, nowe poziomy nie wymagają żadnych zmian w kodzie — gry automatycznie wykrywa poziomy, jeśli są one poprawnie o nazwie i dodane do **poziomy** folder z akcją kompilacji poprawne (**BundleResource**lub **AndroidAsset**).
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 Następnie przeniesiemy przyjrzeć się metody wywołane `GoToLevel`.
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 `LoadLevel` Metoda jest odpowiedzialna za ładowania pliku .tmx i dodać go do `GameScene`. Ta metoda nie powoduje żadnych interakcyjne obiekty, takie jak kolizji lub jednostek — po prostu tworzy wizualnych poziomu, nazywana także *środowiska*.
 
@@ -227,7 +229,7 @@ private void LoadLevel(int levelNumber)
 Obecnie CocosSharp nie zezwala na zmianę kolejności warstw bez usunięcia i ponownego dodania ich do ich nadrzędnej `CCScene` (czyli `GameScene` w takim przypadku), przez co kilka ostatnich wierszy metody są wymagane, aby zmienić kolejność warstw.
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 `CreateCollision` Konstrukcji — metoda `LevelCollision` wystąpienia, który służy do wykonywania *stałe kolizji* między player i środowiska.
 
@@ -245,7 +247,7 @@ Bez tej konflikt odtwarzacz spowoduje przejście do poziomu i gry będą odtworz
 Kolizji w czasie monety można dodać z żaden dodatkowy kod — tylko modyfikacje plików w układzie sąsiadującym. 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 Po załadowaniu poziomu i utworzeniu kolizji `ProcessTileProperties` jest wywoływana w celu wykonywania logiki oparte na kafelku właściwości. Godzina monety zawiera `PropertyLocation` struktury do definiowania właściwości oraz współrzędne fragmentu z następującymi właściwościami:
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>Dodawanie nowych jednostek
+## <a name="adding-new-entities"></a>Dodawanie nowych jednostek
 
 Czas monety korzysta ze wzorca jednostki dla swoich gier obiektów (opisano w temacie [jednostek CocosSharp przewodnik](~/graphics-games/cocossharp/entities.md)). Dziedzicz wszystkich jednostek `CCNode`, co oznacza, że mogą być dodawane jako elementy podrzędne `gameplayLayer`.
 
@@ -352,19 +354,19 @@ Poszczególnych typów jednostek, również jest przywoływany bezpośrednio za 
 Istniejący kod udostępnia wiele typów jednostek jako przykłady sposobu tworzenia nowych jednostek. Poniższe kroki mogą służyć do utworzenia nowego obiektu:
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 — Zdefiniuj nową klasę przy użyciu wzorca jednostki
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 — Zdefiniuj nową klasę przy użyciu wzorca jednostki
 
 Jedynym wymaganiem tworzenia jednostki polega na utworzeniu klasy, która dziedziczy `CCNode`. Większość mają niektóre visual, takich jak `CCSprite`, które powinny zostać dodane jako element podrzędny obiektu jego konstruktora.
 
-Udostępnia CoinTime `AnimatedSpriteEntity` klasy, która ułatwia tworzenie jednostek animowany. Animacje zostanie omówiona bardziej szczegółowo w [sekcji animowany jednostek](#Animated_Entities).
+Udostępnia CoinTime `AnimatedSpriteEntity` klasy, która ułatwia tworzenie jednostek animowany. Animacje zostanie omówiona bardziej szczegółowo w [sekcji animowany jednostek](#animated-entities).
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 — Dodaj nowy wpis do TryCreateEntity instrukcji switch
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 — Dodaj nowy wpis do TryCreateEntity instrukcji switch
 
 Wystąpienia jednostki nowego wystąpienia powinny być tworzone w `TryCreateEntity`. Jeśli jednostka wymaga logiki co ramki kolizji, AI lub odczytywania danych wejściowych, a następnie `GameScene` trzeba utrzymywać odwołania do obiektu. Jeśli potrzebne są wielu wystąpień (takich jak `Coin` lub `Enemy` wystąpień), następnie nowy `List` powinny zostać dodane do `GameScene` klasy.
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 — Modyfikuj właściwości kafelków dla nowego obiektu
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 — Modyfikuj właściwości kafelków dla nowego obiektu
 
 Po kodzie obsługuje tworzenie nowych jednostek, Nowa jednostka musi zostać dodany do tileset. Tileset mogą być edytowane przez otwarcie dowolnym poziomie `.tmx` pliku. 
 
@@ -389,7 +391,7 @@ Tileset czy zastąpić istniejące **mastersheet.tsx** tileset:
 ![](cointime-images/image15.png "HE tileset czy zastąpić istniejące tileset mastersheet.tsx")
 
 
-# <a name="entity-tile-removal"></a>Usunięcie kafelka jednostki
+## <a name="entity-tile-removal"></a>Usunięcie kafelka jednostki
 
 Podczas ładowania kafelków mapy do gier, poszczególne Kafelki są statycznych obiektów. Ponieważ jednostek wymagane jest zachowanie niestandardowych, takich jak przepływ, kodu w czasie monety usuwa Kafelki podczas tworzenia jednostek.
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>Jednostka przesunięcia
+## <a name="entity-offsets"></a>Jednostka przesunięcia
 
 Utworzone na podstawie Kafelki jednostki są pozycjonowane ustawiając Centrum jednostki przy użyciu Centrum fragmentu. Większe jednostek, takich jak `Door`, można umieścić poprawnie za pomocą dodatkowych właściwości i logika. 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>Animowany jednostek
+## <a name="animated-entities"></a>Animowany jednostek
 
 Godzina monety zawiera kilka animowany jednostek. `Player` i `Enemy` jednostek odtwarzanie animacji przeszukiwania i `Door` encji animację otwierania po zebraniu wszystkich monet.
 
 
-## <a name="achx-files"></a>pliki .achx
+### <a name="achx-files"></a>pliki .achx
 
 Monety czasu animacji są definiowane w plikach .achx. Każda animacja zdefiniowano między `AnimationChain` tagów, jak pokazano w poniższej animacji zdefiniowane w **propanimations.achx**:
 
@@ -533,7 +535,7 @@ Ramki zdefiniuj obraz do wyświetlenia w `TextureName` parametr i współrzędne
 Wszystkie inne właściwości AnimationChain w pliku .achx są ignorowane przez czas monety.
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 Logika animacji jest zawarta w `AnimatedSpriteEntity` klasy, która służy jako klasa podstawowa dla większości obiektów używanych w `GameScene`. Udostępnia ona następujące funkcje:
 
@@ -562,7 +564,7 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku przedstawiono szczegóły implementacji monety czasu. Monety czas ukończenia gry jest tworzona, ale jest również projektu, który można łatwo modyfikować i rozwinięty. Czytniki zachęcamy poświęcić czas wprowadzania zmian do poziomu, dodawanie nowych poziomów i tworzenia nowych jednostek, aby jeszcze lepiej zrozumieć, jak czas monety jest zaimplementowana.
 

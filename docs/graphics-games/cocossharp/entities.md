@@ -1,6 +1,6 @@
 ---
 title: Jednostki w CocosSharp
-description: "Wzorzec jednostki to wydajny sposób organizowania gier kodu. Poprawia czytelność, sprawia, że kod jest łatwiejsze w obsłudze i korzysta z funkcji wbudowanych nadrzędny/podrzędny."
+description: Wzorzec jednostki to wydajny sposób organizowania gier kodu. Poprawia czytelność, sprawia, że kod jest łatwiejsze w obsłudze i korzysta z funkcji wbudowanych nadrzędny/podrzędny.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>Jednostki w CocosSharp
 
@@ -34,7 +34,7 @@ Zakończono gry będzie wyglądać następująco:
 ![](entities-images/image1.png "Zakończono gry będzie wyglądać następująco")
 
 
-# <a name="introduction-to-game-entities"></a>Wprowadzenie do gier jednostek
+## <a name="introduction-to-game-entities"></a>Wprowadzenie do gier jednostek
 
 Gry jednostki są klasy, które definiują obiekty wymagające logiki renderowania, kolizję, fizycznych lub sztucznego analizy. Na szczęście jednostek w grę kodu odpowiada często koncepcyjnej obiektów w grę. Jeśli to PRAWDA, identyfikowanie jednostek w grę można łatwiej wykonywać. 
 
@@ -51,7 +51,7 @@ Na przykład miejsca motywem [zdobycia 'em zapasowej gry](http://en.wikipedia.or
 Te jednostki są własnych klas w grze i każde wystąpienie wymagają instalacji żadnych poza wystąpienia.
 
 
-# <a name="general-vs-specific-entity-types"></a>Ogólne vs. Typy jednostek określonych
+## <a name="general-vs-specific-entity-types"></a>Ogólne a jednostki określonych typów
 
 Jedno z pierwszym pytań przez deweloperów gier przy użyciu systemu jednostki, które muszą ponieść jest znacznie do uogólnienia ich jednostek. Specyficzny implementacje zdefiniowane klasy dla każdego typu jednostki, nawet jeżeli różnią się one kilka właściwości. Więcej ogólnych systemów łączenie grup jednostek w jedną klasę i zezwolić wystąpień do dostosowania.
 
@@ -84,7 +84,7 @@ Poziom generalizacji używane zależy od wielu zagadnienia, w tym:
 Dla uproszczenia będziemy używać określonego rozwiązania opartego na klasach z pojedynczej jednostki wysyłki i punktor w tym samouczku.
 
 
-# <a name="project-setup"></a>Ustawienia projektu
+## <a name="project-setup"></a>Ustawienia projektu
 
 Zanim zaczniemy implementacja naszej jednostek, należy utworzyć projekt. Szablony projektów CocosSharp będzie używany w celu uproszczenia procesu tworzenia projektu. [Sprawdź ten wpis](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio) informacje dotyczące tworzenia projektu CocosSharp z programu Visual Studio for Mac szablonów. W dalszej części tego podręcznika użyje nazwy projektu **EntityProject**.
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 Aby uzyskać więcej informacji o obsłudze CocosSharp rozwiązania, zobacz nasze [Przewodnik po obsługi wielu rozwiązań w CocosSharp](~/graphics-games/cocossharp/resolutions.md).
 
 
-# <a name="adding-content-to-the-project"></a>Dodawanie zawartości do projektu
+## <a name="adding-content-to-the-project"></a>Dodawanie zawartości do projektu
 
 Po utworzeniu projektu naszych dodamy plików znajdujących się w [ten plik zip zawartości](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true). Aby to zrobić, Pobierz plik zip i Rozpakuj go. Dodaj **ship.png** i **bullet.png** do **zawartości** folderu. **Zawartości** folder będzie znajdować się wewnątrz **zasoby** folder w systemie Android i będzie w katalogu głównym projektu w systemie iOS. Po dodaniu powinien przedstawiono oba pliki w **zawartości** folderu:
 
 ![](entities-images/image2.png "Po dodaniu oba pliki powinny się znajdować w folderze zawartości")
 
 
-# <a name="creating-the-ship-entity"></a>Tworzenie jednostki wysyłki
+## <a name="creating-the-ship-entity"></a>Tworzenie jednostki wysyłki
 
 `Ship` Klasa będzie naszych gry pierwszy jednostki. Aby dodać `Ship` klasy, najpierw utwórz folder o nazwie **jednostek** na poziomie głównym projektu. Dodaj nową klasę w **jednostek** folder o nazwie `Ship`:
 
@@ -179,16 +179,16 @@ Jeśli przeprowadzana naszych gry teraz zostanie wyświetlone naszych jednostki 
 ![](entities-images/image4.png "Podczas uruchamiania gry, zostaną wyświetlone jednostki wysyłki")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Dlaczego dziedziczyć CCNode zamiast CCSprite?
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Dlaczego dziedziczyć CCNode zamiast CCSprite?
 
 W tym momencie nasze `Ship` klasy jest proste otoki dla `CCSprite` wystąpienia. Ponieważ `CCSprite` również dziedziczy `CCNode`, firma Microsoft może mieć odziedziczone bezpośrednio `CCSprite`, która będzie ograniczona kod w `Ship.cs`. Ponadto dziedziczenie bezpośrednio z `CCSprite` zmniejsza liczbę obiektów w pamięci i może poprawić wydajność dzięki mniejszych drzewo zależności.
 
 Pomimo tych korzyści, możemy odziedziczone `CCNode` można ukryć część `CCSprite` właściwości z każdego wystąpienia. Na przykład `Texture` nie można zmodyfikować właściwości poza `Ship` klasy, a dziedziczących `CCNode` pozwala ukryć tej właściwości. Publiczne elementy członkowskie naszych jednostek stają się szczególnie ważne, jak zwiększa się gier oraz jak deweloperzy dodatkowe są dodawane do zespołu.
 
 
-# <a name="adding-input-to-the-ship"></a>Dodawanie danych wejściowych do wydania
+## <a name="adding-input-to-the-ship"></a>Dodawanie danych wejściowych do wydania
 
-Teraz, naszych statku jest widoczny na ekranie dodamy danych wejściowych. Nasze podejście będą wyglądać podobnie do podejście przyjęte [wprowadzenie do przewodnika CocosSharp](~/graphics-games/cocossharp/first-game/part2.md), z wyjątkiem tego, że firma Microsoft będzie wprowadzenie kodu dla ruchu w `Ship` klasy, a nie w zawierający `CCLayer` lub `CCScene`.
+Teraz, naszych statku jest widoczny na ekranie dodamy danych wejściowych. Nasze podejście będą wyglądać podobnie do podejście przyjęte [przewodnik BouncingGame](~/graphics-games/cocossharp/bouncing-game.md), z wyjątkiem tego, że firma Microsoft będzie wprowadzenie kodu dla ruchu w `Ship` klasy, a nie w zawierający `CCLayer` lub `CCScene`.
 
 Dodaj kod, aby `Ship` do obsługi przeniesienie jej do wszędzie tam, gdzie użytkownik zachodzi ekranu:
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 Wiele zdobycia 'em się wdrożenie gry maksymalna szybkość pracy mimicking tradycyjnych przepływu oparte na kontrolerze. Inaczej mówiąc, po prostu będzie wprowadzania natychmiastowego ruchu do zachowania naszego kodu krótszy.
 
 
-# <a name="creating-the-bullet-entity"></a>Tworzenie jednostki punktor
+## <a name="creating-the-bullet-entity"></a>Tworzenie jednostki punktor
 
 Drugi jednostki w naszym proste gry jest jednostką wyświetlania punktory. Podobnie jak `Ship` jednostki, `Bullet` jednostka będzie zawierać `CCSprite` tak, aby na ekranie. Logikę przepływu różni się, że nie jest zależny od danych wejściowych użytkownika dla przepływu; zamiast `Bullet` wystąpień zostanie przesunięty w prostym przy użyciu właściwości szybkość pracy.
 
@@ -288,7 +288,7 @@ Jako uzupełnienie Zmienianie pliku używany do `CCSprite` do `bullet.png`, kod 
 `Schedule` Metoda umożliwia dodawanie delegatów wywoływanie co ramki. W takim przypadku Trwa dodawanie `ApplyVelocity` metody, aby nasze punktor przenosi zgodnie z jego wartości szybkość pracy. `Schedule` Ma metodę `Action<float>`, gdzie parametr float określa ilość czasu (w sekundach) od czasu ostatniego ramki, który używamy w celu wdrożenia na podstawie czasu przepływu. Od czasu wartość jest mierzony w sekundach, a następnie naszych wartości prędkość reprezentują ruch w *pikseli na sekundę*.
 
 
-# <a name="adding-bullets-to-gamelayer"></a>Dodawanie do GameLayer punktorów
+## <a name="adding-bullets-to-gamelayer"></a>Dodawanie do GameLayer punktorów
 
 Zanim dodamy żadnego `Bullet` wystąpień do naszej gry firma Microsoft będzie wprowadzać kontener, w szczególności `List<Bullet>`. Modyfikowanie `GameLayer` , uwzględniając listę punktorów:
 
@@ -422,14 +422,14 @@ Teraz możemy uruchomienia gry i zobacz `Ship` premia `Bullet` wystąpień:
 ![](entities-images/image1.png "Uruchom gry i statku będzie premia punktor wystąpień")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>Dlaczego GameLayer ma członków wysyłki i punktorów
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>Dlaczego GameLayer ma członków wysyłki i punktorów
 
 Naszych `GameLayer` klasa definiuje dwa pola do przechowywania odwołań do naszej wystąpień jednostek (`ship` i `bullets`), ale żadne z nich. Ponadto jednostki są zobowiązani do ich własnych zachowanie, takie jak przepływu i premia. Dlaczego możemy dodać `ship` i `bullets` pól do `GameLayer`?
 
 Jest przyczyna dodaliśmy tych elementów członkowskich, ponieważ implementacja pełnej gier wymaga logikę w `GameLayer` interakcji między różnymi jednostkami. Na przykład gry może dalej rozwijany do uwzględnienia wrogów, które mogą zostać zniszczone przez odtwarzacz. Te wrogów byłby zawarty w `List` w `GameLayer`i logiki, aby sprawdzić czy `Bullet` wystąpień kolidują z wrogów zostałoby przeprowadzone w `GameLayer` również. Innymi słowy `GameLayer` główny *właściciela* jednostki wszystkich wystąpień, a jest odpowiedzialny za interakcje między wystąpieniami jednostki.
 
 
-# <a name="bullet-destruction-considerations"></a>Zagadnienia dotyczące zniszczenie punktor
+## <a name="bullet-destruction-considerations"></a>Zagadnienia dotyczące zniszczenie punktor
 
 Nasze gry obecnie nie ma kodu niszczenia `Bullet` wystąpień. Każdy `Bullet` wystąpienie ma logiki przenoszenia na ekranie, ale nie dodano żadnego kodu do zniszczenia żadnego ekranem `Bullet` wystąpień.
 
@@ -437,8 +437,7 @@ Ponadto zniszczenie `Bullet` wystąpień nie może należeć w `GameLayer`. Na p
 
 Najprostszym rozwiązaniem jest rozwiń odpowiedzialność fabryki klasy do obsługi zniszczenia. Następnie fabryka powiadomienia mogą być wysyłane wystąpienia jednostki niszczone, które są obsługiwane przez inne obiekty, takie jak `GameLayer` usuwanie wystąpienia jednostki z jego list. 
 
-
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku przedstawiono sposób tworzenia jednostek CocosSharp przez dziedziczenie z `CCNode` klasy. Te jednostki są obiektami niezależne, obsługa tworzenia własnych elementów wizualnych i niestandardowej logiki. Ten przewodnik określa kod, który należy wewnątrz jednostki (przepływu i tworzenia innych jednostek) z kodu, który należy do kontenera jednostek głównego (kolizji i logika interakcji innych jednostek).
 

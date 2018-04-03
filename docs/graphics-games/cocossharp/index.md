@@ -1,127 +1,110 @@
 ---
 title: CocosSharp
+description: Ten dokument łącza do różnych artykułów na temat tworzenia gier z CocosSharp.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5a1e28bc9a8a17b4b06ec45746a6ce60ddd129ad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/29/2018
+ms.openlocfilehash: d61f74aefad09935b957b15ebb0daafb61dab8d5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 
-CocosSharp jest łatwy w użyciu biblioteki gier 2W przy użyciu języka C# i F #. Jest port .NET popularnych aparatu Cocos2D.
+_CocosSharp jest biblioteki do tworzenia gier 2W przy użyciu języka C# i F #. Jest port .NET popularnych aparatu Cocos2D._
 
 ## <a name="introduction-to-cocossharp"></a>Wprowadzenie do CocosSharp
 
-###  <a name="developing-cross-platform-2d-games-in-c-and-cocossharp-video"></a>Tworzenia gier 2W i platform w języku C# i CocosSharp wideo
+Aparat CocosSharp gier 2W zapewnia technologii do wybierania gry dla wielu platform. Aby uzyskać pełną listę obsługiwanych platform zobacz [CocosSharp stron typu wiki w witrynie GitHub](https://github.com/mono/CocosSharp/wiki).
+Te przewodniki Użyj C# dla przykładów kodu, chociaż CocosSharp jest również pełni funkcjonalny i F #.
 
-To praktyczne wideo przedstawia sposób tworzenia prostego CocosSharp wieloplatformowych gier.
+Podstawowe CocosSharp są dostarczane przez [MonoGame framework](http://www.monogame.net/)przyspieszane interfejsu API, zapewniając grafiki, zarządzanie stanem audio, gier, dane wejściowe i zawartości potoku do importowania zasobów, które jest między platformami.
+CocosSharp jest warstwę abstrakcji wydajne dobrze nadaje się do gier 2W.
+Ponadto większych gry może wykonywać własne optymalizacje poza ich podstawowe biblioteki wraz z rozwojem gry w złożoności. Innymi słowy CocosSharp zawiera mieszane łatwość użycia i wydajności, umożliwiają deweloperom szybkie rozpoczęcie pracy bez ograniczania gier rozmiar lub złożoność.
+
+To praktyczne wideo przedstawia sposób tworzenia prostego CocosSharp wieloplatformowych gier:
 
 > [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
-###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[Wprowadzenie do tworzenia gier za pomocą narzędzia CocosSharp](~/graphics-games/cocossharp/first-game/index.md)
+## <a name="bouncinggamegraphics-gamescocossharpbouncing-gamemd"></a>[BouncingGame](~/graphics-games/cocossharp/bouncing-game.md)
 
-![](images/first-game.png "Proste gier 2W za pomocą CocosSharp")
+![BouncingGame](images/bouncing-game.png "BouncingGame")
 
-W tym przewodniku wieloczęściowych przedstawiono sposób tworzenia prostego gier 2W za pomocą CocosSharp. Obejmuje on typowe gier pojęcia dotyczące programowania grafiki, dane wejściowe i fizycznych.
+Ten przewodnik zawiera opis BouncingGame, w tym sposób pracy z zawartości, używany do tworzenia gier, Dodawanie logiki gry i innych różnych elementów wizualnych.
 
+## <a name="fruity-falls-gamegraphics-gamescocossharpfruity-fallsmd"></a>[Wypada owocowy gry](~/graphics-games/cocossharp/fruity-falls.md)
 
+![Zrzut ekranu gier owocowy wypada](images/fruity-falls.png "owocowy wypada gier zrzut ekranu")
 
-##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Szczegóły gry Fruity Falls](~/graphics-games/cocossharp/fruity-falls.md)
+W tym przewodniku opisano gry wypada Fruity obejmujące wspólnej CocosSharp i tworzenia gier pojęcia, takie jak fizycznych, zarządzania zawartością stanu gry i gier projektu.  
 
-![](images/fruity-falls.png "W tym przewodniku przegląda gry wypada Fruity")
+## <a name="coin-time-gamegraphics-gamescocossharpcointimemd"></a>[Monety czasu gry](~/graphics-games/cocossharp/cointime.md)
 
-W tym przewodniku przegląda gry wypada Fruity obejmujące wspólnej CocosSharp i tworzenia gier pojęcia, takie jak fizycznych, zarządzania zawartością stanu gry i gier projektu.  
-
-
-
-## <a name="coin-timegraphics-gamescocossharpcointimemd"></a>[Czas monety](~/graphics-games/cocossharp/cointime.md)
-
-![](images/cointime.png "Czas monety jest pełna platformera gier dla systemu iOS i Android")
+![Monety czasu gry zrzut ekranu](images/cointime.png "monety czasu gry zrzut ekranu")
 
 Czas monety jest pełna platformera gier dla systemu iOS i Android. Celem gry jest zbieranie wszystkich monet na poziomie i następnie osiągnąć drzwi zakończenia unikając wrogów i wąskich gardeł.
 
-
-
 ## <a name="drawing-geometry-with-ccdrawnodegraphics-gamescocossharpccdrawnodemd"></a>[Rysowanie geometrii z CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md)
 
-![](images/ccdrawnode.png "CCDrawNode udostępnia metody rysowania obiektów pierwotnych, takich jak linie, okręgi i trójkąty")
+![Kształty z CCDrawNode](images/ccdrawnode.png "narysowany CCDrawNode kształtów")
 
 CCDrawNode udostępnia metody rysowania obiektów pierwotnych, takich jak linie, okręgi i trójkąty.
 
-
-
 ## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[Animowanie za pomocą narzędzia CCAction](~/graphics-games/cocossharp/ccaction.md)
 
-![](images/ccaction.png "CCAction jest klasą podstawową, która może służyć do Animowanie obiektów CocosSharp")
+![Animacja CCAction](images/ccaction.png "A CCAction animacji")
 
-`CCAction` jest klasą podstawową, która może służyć do animowania CocosSharp obiektów. Ten przewodnik obejmuje wbudowane `CCAction` implementacji dla typowych zadań, takich jak rozmieszczania, skalowanie i obrót. Prawdopodobnie również w sposób tworzenia niestandardowych implementacji przez dziedziczenie z `CCAction`.
-
-
+`CCAction` jest klasą podstawową, która może służyć do Animowanie obiektów CocosSharp. Ten przewodnik obejmuje wbudowane `CCAction` implementacji dla typowych zadań, takich jak rozmieszczania, skalowanie i obrót. Prawdopodobnie również w sposób tworzenia niestandardowych implementacji przez dziedziczenie z `CCAction`.
 
 ## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[Stosowanie układu sąsiadującego za pomocą narzędzia CocosSharp](~/graphics-games/cocossharp/tiled.md)
 
-![](images/tiled.png "Rozmieszczany jest wydajne, elastyczne i mapowania dojrzałe aplikacji do tworzenia Kafelek prostopadły i izometryczny gier") rozmieszczany wydajne, elastyczne i dojrzałe aplikacji do tworzenia Kafelek prostopadły i izometryczny mapowanym gier. CocosSharp zapewnia wbudowanej integracji sąsiadująco w natywny plik formatu.
+![Poziom w grę](images/tiled.png "poziomu gry")
 
+Rozmieszczany jest wydajne, elastyczne i mapowania dojrzałe aplikacji do tworzenia Kafelek prostopadły i izometryczny gier. CocosSharp zapewnia wbudowanej integracji sąsiadująco w natywny plik formatu.
 
+## <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[Jednostki w narzędziu CocosSharp](~/graphics-games/cocossharp/entities.md)
 
-##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[Jednostki w narzędziu CocosSharp](~/graphics-games/cocossharp/entities.md)
-
-![](images/entities.png "Wzorzec jednostki to wydajny sposób organizowania kodu gier")
+![Pojazdu kosmicznego z gry](images/entities.png "pojazdu kosmicznego z gry")
 
 Wzorzec jednostki to wydajny sposób organizowania gier kodu. Poprawia czytelność, sprawia, że kod jest łatwiejsze w obsłudze i korzysta z funkcji wbudowanych nadrzędny/podrzędny.
 
+## <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Obsługa wielu rozwiązań w CocosSharp](~/graphics-games/cocossharp/resolutions.md)
 
-
-##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Obsługa wielu rozdzielczości w narzędziu CocosSharp](~/graphics-games/cocossharp/resolutions.md)
-
-![](images/resolutions.png "W tym przewodniku pokazano, jak pracować z CocosSharp tworzenia gier, w których wyświetlać się poprawnie na urządzeniach z różnych rozwiązań")
+![Siatka reprezentujący rozdzielczość ekranu](images/resolutions.png "siatka reprezentujący rozdzielczość ekranu")
 
 W tym przewodniku pokazano, jak pracować z CocosSharp tworzenia gier, w których wyświetlać się poprawnie na urządzeniach różnej rozdzielczości.
 
+## <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[Potok zawartości w narzędziu CocosSharp](~/graphics-games/cocossharp/content-pipeline/index.md)
 
-
-##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[Potok zawartości w narzędziu CocosSharp](~/graphics-games/cocossharp/content-pipeline/index.md)
-
-![](images/content-pipeline.png "Potoki zawartości są często używane w opracowywaniu gier do optymalizacji zawartość i format")
+![XNB](images/content-pipeline.png "XNB")
 
 Potoki zawartości są często używane w opracowywaniu gier do optymalizacji zawartości i sformatuj go w taki sposób, że może zostać załadowany na niektórych sprzętu lub niektórych struktur tworzenia gier.
 
+## <a name="improving-frame-rate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Poprawa szybkość klatek z CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md)
 
-
-## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Zwiększanie szybkości klatek za pomocą narzędzia CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md)
-
-![](images/ccspritesheet.png "CCSpriteSheet udostępnia funkcje łączenie i korzystania z wielu plików obrazów w jedną teksturę")
+![Drzewo z CCSpriteSheet](images/ccspritesheet.png "drzewa z CCSpriteSheet")
 
 `CCSpriteSheet` udostępnia funkcję łączenia i korzystania z wielu plików obrazów w jedną teksturę. Zmniejszenie liczby tekstury można zwiększyć czas ładowania gry i szybkość klatek.
 
-
-
 ## <a name="texture-caching-using-cctexturecachegraphics-gamescocossharptexture-cachemd"></a>[Buforowanie tekstury za pomocą CCTextureCache](~/graphics-games/cocossharp/texture-cache.md)
 
-![](images/texture-cache.png "Klasa CCTextureCache w CocosSharp udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości")
+![Reprezentacja jak CocosSharp buforuje obrazy](images/texture-cache.png "reprezentację jak CocosSharp buforuje obrazów")
 
-Klasa CCTextureCache w CocosSharp udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości. 
+W CocosSharp `CCTextureCache` klasa udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości. 
 
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[2D matematyczne z CocosSharp](~/graphics-games/cocossharp/math.md)
 
-
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[Obliczenia matematyczne 2D za pomocą narzędzia CocosSharp](~/graphics-games/cocossharp/math.md)
-
-![](images/math.png "W tym przewodniku dotyczą 2D matematyce do tworzenia gier")
+![Obraz jest obracana](images/math.png "za obrazu")
 
 W tym przewodniku dotyczą 2D matematyce do tworzenia gier. Wykorzystuje CocosSharp aby pokazują, jak wykonywać typowe zadania tworzenia gier oraz wyjaśniono matematyczne za te zadania.
 
-
-
 ## <a name="performance-and-visual-effects-with-ccrendertexturegraphics-gamescocossharpccrendertexturemd"></a>[Wydajność i efekty wizualne z CCRenderTexture](~/graphics-games/cocossharp/ccrendertexture.md)
 
-![](images/ccrendertexture.png "Klasa CCRenderTexture udostępnia funkcje do renderowania wiele obiektów CocosSharp do pojedynczego tekstury")
+![Sprite z gry](images/ccrendertexture.png "sprite z gry")
 
 `CCRenderTexture` Klasa udostępnia funkcje do renderowania wiele obiektów CocosSharp do pojedynczego tekstury. Raz utworzone, `CCRenderTexture` wystąpień może służyć do renderowania grafiki wydajne i wdrożenie efektów wizualnych.
-
- 

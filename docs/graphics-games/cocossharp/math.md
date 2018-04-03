@@ -1,6 +1,6 @@
 ---
 title: 2D matematyczne z CocosSharp
-description: "W tym przewodniku dotyczą 2D matematyce do tworzenia gier. Wykorzystuje CocosSharp aby pokazują, jak wykonywać typowe zadania tworzenia gier oraz wyjaśniono matematyczne za te zadania."
+description: W tym przewodniku dotyczą 2D matematyce do tworzenia gier. Wykorzystuje CocosSharp aby pokazują, jak wykonywać typowe zadania tworzenia gier oraz wyjaśniono matematyczne za te zadania.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 7573ca423c3d9462d400f117c2116209e7c2a410
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D matematyczne z CocosSharp
 
@@ -28,12 +28,12 @@ Do umieszczenia i przenieść obiekty kod jest częścią core tworzenie gier r�
 Deweloperzy, którzy nie mają tła silne matematyczne lub który long zapomni tych tematów z służbowe, nie trzeba martwić — ten dokument zostanie rozbicie pojęcia na części o rozmiarze raz i będzie towarzyszyć teoretycznego wyjaśnienia wraz z przykładami praktyczne. Krótko mówiąc, w tym artykule będzie odpowiedzi na pytanie uczniowie age-old matematyczne: "Kiedy zostanie faktycznie należy użyć tego rzeczy?"
 
 
-# <a name="requirements"></a>Wymagania
+## <a name="requirements"></a>Wymagania
 
 Chociaż ten dokument koncentruje się przede wszystkim na stronie matematyczne CocosSharp, przykłady kodu założono pracy z obiektami dziedziczenie formularza `CCNode`. Ponadto, ponieważ `CCNode` nie zawiera wartości szybkość pracy i przyspieszenie kodu zakłada pracy z obiektami, które zawierają wartości, takie jak VelocityX, VelocityY AccelerationX i AccelerationY. Aby uzyskać więcej informacji dotyczących jednostek, zobacz nasze wskazówki w [jednostek CocosSharp](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="velocity"></a>Szybkość pracy
+## <a name="velocity"></a>Szybkość pracy
 
 Deweloperzy gier używany jest termin *prędkość* opisano, jak obiekt jest przenoszenie — w szczególności szybkość coś porusza się i kierunek jego są przenoszenia. 
 
@@ -50,7 +50,7 @@ bulletInstance.VelocityY = 300;
 ```
 
 
-## <a name="implementing-velocity"></a>Implementowanie szybkość pracy
+### <a name="implementing-velocity"></a>Implementowanie szybkość pracy
 
 CocosSharp nie implementuje szybkość pracy, dlatego obiekty wymagające przepływu należy wdrożyć logikę własnych przepływu. Nowych deweloperów gier często Implementowanie prędkość skonfiguruj błąd polegający na wprowadzaniu ich prędkość zależał od szybkość klatek. Oznacza to, że *niepoprawna implementacja* będzie wydawać się zapewnienie poprawnych wyników, ale będą oparte na szybkość klatek gry:
 
@@ -75,7 +75,7 @@ Należy rozważyć gry uruchamianego w dolnym szybkość klatek uaktualnią pozy
 Na przykład sposobu dodawania ruchu na podstawie czasu zobacz [ruchu na podstawie tego przepisu obejmujące czas](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/).
 
 
-## <a name="calculating-positions-using-velocity"></a>Obliczanie stanowisk przy użyciu szybkość pracy
+### <a name="calculating-positions-using-velocity"></a>Obliczanie stanowisk przy użyciu szybkość pracy
 
 Szybkość pracy może służyć do tworzenia prognoz, o której będzie obiektu po niektórych ilość czasu, lub aby dostosować zachowanie obiektów bez konieczności uruchomienia gry. Na przykład deweloper, który implementuje przepływu wypalane punktor musi ustawić prędkość punktor po zostanie on uruchomiony. Rozmiar ekranu może służyć do stanowią podstawę do ustawiania szybkość pracy. Oznacza to czy dewelopera wie, że punktor należy przenosić wysokości ekranu w 2 sekundy, a następnie prędkości powinien być ustawiony na wysokość ekranu podzielona przez 2. Jeśli ekran jest wysokości 800 pikseli, szybkość punktor czy ustawić do 400 (czyli 800/2).
 
@@ -92,7 +92,7 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 ```
 
 
-# <a name="acceleration"></a>Akceleracja
+## <a name="acceleration"></a>Akceleracja
 
 *Akceleracja* jest działaniem typowych w opracowywaniu gier, i go udostępnia wiele podobieństw szybkość pracy. Akceleracja podaje wielkość, czy obiekt jest przyspieszenie spowolnieniem (jak wartość prędkość zmienia się wraz z upływem czasu). Akceleracja *dodaje* do prędkości, podobnie jak prędkość dodaje się do pozycji. Aplikacje przyspieszenia obejmują grawitacji, samochodu przyspieszania i statku miejsca wyzwalania jego mechanizmy do wymuszania. 
 
@@ -111,12 +111,12 @@ icicle.AccelerationY = -50;
 ```
 
 
-## <a name="acceleration-vs-deceleration"></a>Akceleracja vs. Opóźnienia
+### <a name="acceleration-vs-deceleration"></a>Akceleracja a opóźnienia
 
 Mimo że przyspieszenia i opóźnienia są czasami zróżnicowana w każdym dniu mowy, nie ma różnic technicznych, między nimi. Grawitacji jest force, co prowadzi do przyspieszania. Jeśli obiekt jest generowany w górę następnie grawitacji spowolni go (decelerating), ale po obiektu została zatrzymana, typu i jest objęte w tym samym kierunku co grawitacji następnie grawitacji jest przyspieszenie go (przyspieszania). Jak pokazano poniżej, aplikacja przyspieszenie jest taki sam, czy jest stosowany w tym samym kierunku lub odwrotnie kierunek ruchu. 
 
 
-## <a name="implementing-acceleration"></a>Implementowanie przyspieszenia
+### <a name="implementing-acceleration"></a>Implementowanie przyspieszenia
 
 Przyspieszenie przypomina prędkość podczas implementowania — nie jest automatycznie implementowana przez CocosSharp i przyspieszenie na podstawie czasu jest żądanej implementacji (w przeciwieństwie do przyspieszania na podstawie ramki). W związku z tym wykonania prostego acceleration (wraz z prędkość) może wyglądać tak:
 
@@ -149,7 +149,7 @@ Najbardziej oczywisty różnica w kodzie powyżej jest `halfSecondsSquared` zmie
 Praktyczne wpływ `halfSecondSquare` jest, że przyspieszenie będą zachowywać się ze sobą matematycznie dokładnie i przewidywalnego niezależnie od szybkość klatek. Liniowy zbliżenia przyspieszenia podlega szybkość klatek — im niższy szybkości klatek spadnie staje się zbliżenia mniej dokładne. Przy użyciu `halfSecondsSquared` gwarantuje, że kod będą zachowywać się taka sama niezależnie od szybkość klatek.
 
 
-# <a name="angles-and-rotation"></a>Kąty i obrotu
+## <a name="angles-and-rotation"></a>Kąty i obrotu
 
 Visual obiekty, takie jak `CCSprite` obsługuje obracania za pośrednictwem `Rotation` zmiennej. Można ustawić jej obrotu w stopniach to można przypisać do wartości. Na przykład poniższy kod przedstawia sposób Obróć `CCSprite` wystąpienie:
 
@@ -189,7 +189,7 @@ Różnica w tym ważne jest, ponieważ `System.Math` klasy używa obrotu zegara,
 Firma Microsoft zauważyć, że powyższe diagramy wyświetlenia obrotu w stopniach; Jednak niektóre funkcje matematyczne (takich jak funkcje w `System.Math` przestrzeni nazw) oczekuje i zwracają wartości w *radianach* zamiast stopni. Wyjaśniono, jak przekonwertować między typami jednostek dwóch nieco później w tym przewodniku.
 
 
-## <a name="rotating-to-face-a-direction"></a>Obracanie na rzecz kierunku
+### <a name="rotating-to-face-a-direction"></a>Obracanie na rzecz kierunku
 
 Jak pokazano powyżej, `CCSprite` można obracać przy użyciu `Rotation` właściwości. `Rotation` Właściwość jest udostępniana przez `CCNode` (klasa podstawowa dla `CCSprite`), co oznacza, że obrotu może odnosić się do jednostki, które dziedziczą z `CCNode` również. 
 
@@ -261,14 +261,16 @@ Ten kod powoduje następujące działania:
 
 ![](math-images/image5.gif "Ten kod skutkuje to zachowanie")
 
-### <a name="using-atan2-to-convert-offsets-to-angles"></a>Aby przekonwertować przesunięcia kąty przy użyciu Atan2
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Atan2 dokonywać konwersji przesunięcia do kątów
+
 `System.Math.Atan2` może służyć do przekonwertowania na kąt przesunięcia. Nazwa funkcji `Atan2` pochodzi z tangens trygonometryczne funkcji. Ta funkcja pozwala odróżnić sufiksem "2" zgodne ze standardem `Atan` funkcji, która jest ściśle zgodna z tangens matematyczne zachowaniem. Arcus tangens to funkcja, która zwraca wartość z zakresu od -90 i + 90 stopni (lub odpowiednik w radianach). Wiele aplikacji, w tym gry komputera często wymagają pełnego 360 stopni wartości, więc `Math` klasa zawiera `Atan2` by spełnić te wymagania.
 
 Zwróć uwagę, że powyższy kod przekazuje parametr Y najpierw, następnie parametru X podczas wywoływania metody `Atan2` metody. Jest to wstecz z zwykle X, Y kolejność współrzędne. Aby uzyskać więcej informacji [zobacz dokumentacja Atan2](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
 
 Warto również zauważyć, że zwracany wartość z `Atan2` jest podany w radianach, czyli innej jednostki używanych do pomiarów kątów. Ten przewodnik nie obejmuje szczegóły radiany, ale należy pamiętać, że wszystkie funkcje trygonometryczne w `System.Math` przestrzeni nazw użyj radiany, więc wartości muszą zostać skonwertowane do stopni przed ich użyciem w obiektach CocosSharp. Można znaleźć więcej informacji na temat radianach [w radianach strony Wikipedia](http://en.wikipedia.org/wiki/Radian).
 
-### <a name="forward-angle"></a>Kąt do przodu
+#### <a name="forward-angle"></a>Kąt do przodu
+
 Raz `FacePoint` metoda Konwertuje kąt na radiany, definiuje `forwardAngle` wartość. Ta wartość przedstawia kąt, w którym jednostki jest skierowany, gdy jego wartość obrotu jest równa 0. W tym przykładzie przyjęto założenie, że jednostka jest skierowane w górę, czyli 90 stopni, używając matematyczne obrotu (w przeciwieństwie do obrotu CocosSharp). Używamy matematyczne obrót tutaj ponieważ firma Microsoft nie zostały jeszcze odwrócony obrotu dla CocosSharp.
 
 Poniżej pokazano, jakie jednostki z `forwardAngle` o 90 stopni może wyglądać tak:
@@ -276,7 +278,7 @@ Poniżej pokazano, jakie jednostki z `forwardAngle` o 90 stopni może wyglądać
 ![](math-images/image6.png "Oznacza to, co może wyglądać jednostki z forwardAngle 90 stopni.")
 
 
-## <a name="angled-velocity"></a>Pod kątem szybkość pracy
+### <a name="angled-velocity"></a>Pod kątem szybkość pracy
 
 Do tej pory zostały Analizujemy sposób konwertowania przesunięcia pod kątem. W tej sekcji przechodzi w inny sposób — przyjmuje kąt i konwertuje ją na X i wartości Y. Typowe przykłady samochodu przenoszenie w kierunku, w którym jest on skierowany lub statku miejsca premia punktor, który przenosi kierunku, w którym jest ukierunkowane statku. 
 
@@ -354,6 +356,6 @@ Ten kod może powodować wyglądać mniej więcej tak:
 ![](math-images/image9.png "Ten kod może powodować ekran podobny do tego zrzutu ekranu")
 
 
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku przedstawiono typowe matematyczne w opracowywaniu gier 2W. Pokazuje, jak przypisać i wdrożenie szybkość pracy i przyspieszenie i opisano sposób Obróć obiektów i wektorów do przenoszenia zawartości w dowolnym kierunku.

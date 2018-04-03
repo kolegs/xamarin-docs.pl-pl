@@ -1,6 +1,6 @@
 ---
-title: "Dane ścieżki SVG"
-description: "Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Skalowalna grafika wektorowa"
+title: Dane ścieżki SVG
+description: Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Skalowalna grafika wektorowa
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 0fcef7ce40a575e015232e1ed5996e6b799dd085
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="svg-path-data"></a>Dane ścieżki SVG
 
@@ -431,4 +431,4 @@ Coś specjalne odbywa się z drugiej strony, jednak. Ponieważ zegar jest aktual
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

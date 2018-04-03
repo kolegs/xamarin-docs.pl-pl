@@ -1,6 +1,6 @@
 ---
 title: Linie i obrysu CAP
-description: "Dowiedz się, jak używać SkiaSharp do rysowania linii z informacji o różnych możliwościach"
+description: Dowiedz się, jak używać SkiaSharp do rysowania linii z informacji o różnych możliwościach
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 96b8a990f4644d5e4c9c8ffe6cdb6c173c50657c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linie i obrysu CAP
 
@@ -36,7 +36,7 @@ Wygląd rozpoczęcia i zakończenia wierszy jest nazywany *zakończenie linii* l
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Najlepiej są one przedstawiane za pomocą przykładowy program. Druga sekcja strony głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program zaczyna się od strony zatytułowany **Caps obrysu** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza w pętli trzech elementów członkowskich `SKStrokeCap` wyliczenia, wyświetlana nazwa elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego koniec obrysu:
+Najlepiej są one przedstawiane za pomocą przykładowy program. Druga sekcja strony głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zaczyna się od strony zatytułowany **Caps obrysu** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza w pętli trzech elementów członkowskich `SKStrokeCap` wyliczenia, wyświetlana nazwa elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego koniec obrysu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -244,4 +244,4 @@ Czy wiersze są połączony lub niepołączony jest niezwykle istotne aspektów 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

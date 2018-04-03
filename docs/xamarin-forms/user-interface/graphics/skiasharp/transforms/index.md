@@ -1,6 +1,6 @@
 ---
 title: Transformacje SkiaSharp
-description: "Dowiedz się więcej o przekształceń do wyświetlania SkiaSharp grafiki"
+description: Dowiedz się więcej o przekształceń do wyświetlania SkiaSharp grafiki
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 668488ab7efae66f1777e9ae6ded1f725833fe16
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-transforms"></a>Transformacje SkiaSharp
 
@@ -49,7 +49,7 @@ Przekształcenia SkiaSharp są względem lewego górnego rogu `SKCanvas` platfor
 
 Naprawdę istotną różnicą jest to, że SKiaSharp przekształceń są *metody* podczas przekształcenia platformy Xamarin.Forms *właściwości*. Jest semantycznego różnica poza syntaktycznych różnica: transformacje SkiaSharp wykonać operacji, gdy transformacje platformy Xamarin.Forms ustawić stanu. Transformacje SkiaSharp mają zastosowanie do obiektów graficznych następnie narysowanego, ale nie do obiektów graficznych, które są rysowane przed stosowana jest transformacja. Z kolei transformacji platformy Xamarin.Forms dotyczy wcześniej renderowanego elementu jak właściwość jest ustawiona. Transformacje SkiaSharp kumulują się jako metody są wywoływane; Transformacje platformy Xamarin.Forms zostaną zastąpione, gdy właściwość jest ustawiona na inną wartość.
 
-Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **przekształca** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) programu, a następnie w [ **Przekształca** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) folderu rozwiązania.
+Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **przekształca** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu, a następnie w [ **Przekształca** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) folderu rozwiązania.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Przekład — przekształcenie](translate.md)
 
@@ -87,4 +87,4 @@ Affine — przekształcenia umożliwia obracanie 2D obiektów w przestrzeni 3D.
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

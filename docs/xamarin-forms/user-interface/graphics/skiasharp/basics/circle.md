@@ -1,5 +1,5 @@
 ---
-title: "Rysowanie okręgu prosty"
+title: Rysowanie okręgu prosty
 description: Poznaj podstawy rysunku SkiaSharp, w tym kanw i malowania
 ms.topic: article
 ms.prod: xamarin
@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Rysowanie okręgu prosty
 
@@ -20,7 +20,7 @@ _Poznaj podstawy rysunku SkiaSharp, w tym kanw i malowania_
 
 W tym artykule przedstawiono koncepcję rysowanie grafiki w platformy Xamarin.Forms przy użyciu SkiaSharp, w tym tworzenie `SKCanvasView` obiektu do hostowania obsługę grafiki `PaintSurface` zdarzeń i przy użyciu `SKPaint` obiektu w celu określenia, kolor i inne rysunki atrybuty.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program zawiera wszystkie przykładowy kod dla tej serii SkiaSharp artykułów. Pierwsza strona jest uprawniony **prosty koło** i wywołuje klasy strony [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Ten kod przedstawia sposób narysować okrąg na środku strony z protokołem radius 100 pikseli. Konspekt okręgu jest czerwony, a wewnątrz okręgu jest niebieski.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zawiera wszystkie przykładowy kod dla tej serii SkiaSharp artykułów. Pierwsza strona jest uprawniony **prosty koło** i wywołuje klasy strony [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Ten kod przedstawia sposób narysować okrąg na środku strony z protokołem radius 100 pikseli. Konspekt okręgu jest czerwony, a wewnątrz okręgu jest niebieski.
 
 ![](circle-images/circleexample.png "Niebieskie koło opisane na czerwono")
 
@@ -154,4 +154,4 @@ Następna próbka w [integracji z platformy Xamarin.Forms](~/xamarin-forms/user-
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

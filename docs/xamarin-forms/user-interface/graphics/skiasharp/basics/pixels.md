@@ -1,6 +1,6 @@
 ---
-title: "Pikseli i jednostki niezależnych od urządzenia"
-description: "Eksploruj różnice między współrzędne SkiaSharp i współrzędne platformy Xamarin.Forms"
+title: Pikseli i jednostki niezależnych od urządzenia
+description: Eksploruj różnice między współrzędne SkiaSharp i współrzędne platformy Xamarin.Forms
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1698c18eafdce0585daa81c9462ee038c15586bd
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pikseli i jednostki niezależnych od urządzenia
 
@@ -26,7 +26,7 @@ Jeśli możesz już został Programowanie w platformy Xamarin.Forms przez pewien
 
 Te okręgi *są* małe w porównaniu z rozmiary platformy Xamarin.Forms. Domyślnie SkiaSharp pobiera w jednostkach pikseli a platformy Xamarin.Forms podstawowych współrzędnych i rozmiary w jednostce niezależnych od urządzenia, zgodnie z podstawowej platformy. (Więcej informacji na temat platformy Xamarin.Forms współrzędnych znajdują się w [rozdział 5. Zajmujących się rozmiary](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) książki *tworzenia aplikacji mobilnych za pomocą platformy Xamarin.Forms*.)
 
-Strona w [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program prawo **rozmiar powierzchni** używa SkiaSharp tekst wyjściowy rozmiar powierzchni ekranu z trzech różnych źródeł:
+Strona w [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program prawo **rozmiar powierzchni** używa SkiaSharp tekst wyjściowy rozmiar powierzchni ekranu z trzech różnych źródeł:
 
 - Normalne platformy Xamarin.Forms [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) i [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) właściwości `SKCanvasView` obiektu.
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Właściwość `SKCanvasView` obiektu.
@@ -165,4 +165,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

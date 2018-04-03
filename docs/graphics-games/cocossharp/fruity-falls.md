@@ -1,6 +1,6 @@
 ---
-title: "Wypada owocowy gier szczegóły"
-description: "W tym przewodniku przegląda gry wypada Fruity obejmujące wspólnej CocosSharp i tworzenia gier pojęcia, takie jak fizycznych, zarządzania zawartością stanu gry i gier projektu."
+title: Szczegóły gier owocowy wypada
+description: W tym przewodniku przegląda gry wypada Fruity obejmujące wspólnej CocosSharp i tworzenia gier pojęcia, takie jak fizycznych, zarządzania zawartością stanu gry i gier projektu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A5664930-F9F0-4A08-965D-26EF266FED24
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 307fdec697f2b94ddfdfe0c380e02fd69e197132
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d37b289249e5c9e2c23b45c998d1e24960637ba6
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="fruity-falls-game-details"></a>Wypada owocowy gier szczegóły
+# <a name="fruity-falls-game-details"></a>Szczegóły gier owocowy wypada
 
 _W tym przewodniku przegląda gry wypada Fruity obejmujące wspólnej CocosSharp i tworzenia gier pojęcia, takie jak fizycznych, zarządzania zawartością stanu gry i gier projektu._
 
@@ -22,7 +22,7 @@ Wypada owocowy jest prostą, opartą na fizycznych gry, w którym odtwarzacz sor
 
 ![](fruity-falls-images/image1.png "Celem gry jest uzyskanie dowolną liczbę punktów możliwe bez umożliwienie spadek owoców do niewłaściwej pojemnika zakończenia gry")
 
-Wypada owocowy rozszerza pojęciami opisanymi w [przewodnik BouncingGame](~/graphics-games/cocossharp/first-game/index.md) przez dodanie poniższego:
+Wypada owocowy rozszerza pojęciami opisanymi w [przewodnik BouncingGame](~/graphics-games/cocossharp/bouncing-game.md) przez dodanie poniższego:
 
  - Zawartości w formie PNG
  - Zaawansowane fizycznych
@@ -32,20 +32,20 @@ Wypada owocowy rozszerza pojęciami opisanymi w [przewodnik BouncingGame](~/grap
  - Kod organizacji przy użyciu jednostek gier
  - Projekt gier koncentruje się na wartość fun i powtórzeń
 
-Gdy BouncingGame fokus na wprowadzenie podstawowe koncepcje CocosSharp, wypada Fruity pokazuje, jak wszystkie ze sobą w celu gotowego produktu gier. Ponieważ ten przewodnik odwołuje się BouncingGame, czytników najpierw należy zapoznać się z [przewodnik BouncingGame](~/graphics-games/cocossharp/first-game/index.md) przed odczytaniem w tym przewodniku.
+Gdy [przewodnik BouncingGame](~/graphics-games/cocossharp/bouncing-game.md) wypada Fruity koncentruje się na wprowadzenie podstawowe koncepcje CocosSharp, pokazuje, jak wszystkie ze sobą w celu gotowego produktu gier. Ponieważ ten przewodnik odwołuje się BouncingGame, czytników najpierw należy zapoznać się z [przewodnik BouncingGame](~/graphics-games/cocossharp/bouncing-game.md) przed odczytaniem w tym przewodniku.
 
 Ten przewodnik zawiera implementację projektu Fruity powróci do udostępniającym szczegółowe informacje ułatwiające własne gry. Obejmuje on następujące tematy:
 
 
-- [Klasa GameController](#GameController_Class)
-- [Gry jednostek](#Game_Entities)
-- [Owoców grafiki](#Fruit_Graphics)
-- [Fizycznych](#Physics)
-- [Zawartości](#Game_Content)
-- [GameCoefficients](#GameCoefficients)
+- [Klasa GameController](#gamecontroller-class)
+- [Gry jednostek](#game-entities)
+- [Owoców grafiki](#fruit-graphics)
+- [Fizycznych](#physics)
+- [Gry zawartości](#game-content)
+- [GameCoefficients](#gamecoefficients)
 
 
-# <a name="gamecontroller-class"></a>Klasa GameController
+## <a name="gamecontroller-class"></a>Klasa GameController
 
 Projekt owocowy PCL wypada zawiera `GameController` klasy, która odpowiada za tworzenie wystąpień gry i przechodzenia między sceny. Ta klasa jest używana przez iOS i Android projekty w celu wyeliminowania zduplikowanych kodu.
 
@@ -79,7 +79,7 @@ GameView.DesignResolution = new CCSizeI (width, height);
 Na koniec `GameController` klasa dostarcza metody statycznej, który może być wywoływany przez żadną `CCGameScene` do przejścia na inny `CCScene`. Ta metoda służy do przenoszenia między `TitleScene` i `GameScene`.
 
 
-# <a name="game-entities"></a>Gry jednostek
+## <a name="game-entities"></a>Gry jednostek
 
 Wypada owocowy korzysta z wzorca jednostki dla większości obiektów gier. Szczegółowy opis tego wzorca znajdują się w [przewodnik jednostek w CocosSharp](~/graphics-games/cocossharp/entities.md).
 
@@ -107,7 +107,7 @@ public Fruit ()
 ```
 
 
-## <a name="fruit-graphics"></a>Owoców grafiki
+### <a name="fruit-graphics"></a>Owoców grafiki
 
 `CreateFruitGraphic` Metoda tworzy `CCSprite` wystąpienia i dodaje go do `Fruit`. `IsAntialiased` Właściwość jest ustawiona na FAŁSZ umożliwiają gry wygląd podzielony na piksele. Ta wartość jest ustawiana na wartość false na wszystkich `CCSprite` i `CCLabel` wystąpień w trakcie gry:
 
@@ -179,7 +179,7 @@ Pierwsza instrukcja if w `UpdateGraphics` aktualizacji grafiki debugowania, któ
 ![](fruity-falls-images/image4.png "Kolor extraPointsLabel jest dostosowana do zachowania kontrastu z obrazem owoców i jego wartość PositionY jest dostosowana do środka CCLabel na owoców CCSprite")
 
 
-## <a name="collision"></a>Kolizji
+### <a name="collision"></a>Kolizji
 
 Wypada owocowy zaimplementuje rozwiązanie niestandardowe kolizji w folderze geometrii przy użyciu obiektów:
 
@@ -218,17 +218,17 @@ private void CreateCollision()
 }
 ```
 
-Logika kolizji jest objęte [dalszej części tego przewodnika](#Collision).
+Logika kolizji jest objęte [dalszej części tego przewodnika](#collision).
 
 
-# <a name="physics"></a>Fizycznych
+## <a name="physics"></a>Fizycznych
 
 Fizycznych w wypada Fruity można podzielić na dwie kategorie: przemieszczanie i kolizji. 
 
 
-## <a name="movement-using-velocity-and-acceleration"></a>Przenoszenie przy użyciu szybkość pracy i przyspieszenia
+### <a name="movement-using-velocity-and-acceleration"></a>Przenoszenie przy użyciu szybkość pracy i przyspieszenia
 
-Używa owocowy wypada `Velocity` i `Acceleration` wartości kontroli przemieszczania jej podmioty, podobnie jak [BouncingGame](~/graphics-games/cocossharp/first-game/index.md). Jednostek implementować ich logiki przenoszenia metodę o nazwie `Activity`, która jest wywoływana raz na klatkę. Na przykład można zobaczyć implementacji przepływu w `Fruit` klasy `Activity` metody:
+Używa owocowy wypada `Velocity` i `Acceleration` wartości kontroli przemieszczania jej podmioty, podobnie jak [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md). Jednostek implementować ich logiki przenoszenia metodę o nazwie `Activity`, która jest wywoływana raz na klatkę. Na przykład można zobaczyć implementacji przepływu w `Fruit` klasy `Activity` metody:
 
 ```csharp
 public void Activity(float frameTimeInSeconds)
@@ -274,7 +274,7 @@ public void HandleInput(CCPoint touchPoint)
 }
 ```
 
-## <a name="collision"></a>Kolizji
+### <a name="collision"></a>Kolizji
 
 Owocowy wypada implementuje częściowo realistyczne zderzenia owoców i innych obiektów collidable, takich jak `Paddle` i `GameScene.Splitter`. Aby debugować kolizji wypada Fruity kolizji obszarów były widoczne, zmieniając `GameCoefficients.ShowDebugInfo` w `GameCoefficients.cs` pliku:
 
@@ -330,7 +330,8 @@ private void PerformCollision()
 }
 ```
 
-### <a name="fruitvsborders"></a>FruitVsBorders
+#### <a name="fruitvsborders"></a>FruitVsBorders
+
 `FruitVsBorders` kolizji przeprowadza własnej logiki kolizji zamiast polegania na logice zawarte w innej klasy. Ta różnica nie istnieje, ponieważ zderzenia owoców i obramowania ekranu nie jest dokładnie pełny — istnieje możliwość owoców, które mają być mieści się krawędzi ekranu, dokładne paletkę ruchem. Owoców będzie Odbijanie poza ekran po trafieniu z paletki, ale jeśli odtwarzacz powoli wypchnięcia owoców przejdzie poza krawędź włączenia i wyłączenia ekranu:
 
 
@@ -352,7 +353,8 @@ private void FruitVsBorders(Fruit fruit)
 }
 ```
 
-### <a name="fruitvsbins"></a>FruitVsBins
+#### <a name="fruitvsbins"></a>FruitVsBins
+
 `FruitVsBins` Metoda jest odpowiedzialna za sprawdzania, czy wszystkie owoców spadła do jednej z dwóch bins. Jeśli tak, odtwarzacza otrzymał punktów (jeśli owoców/bin kolory dopasowania) lub gra kończy się (jeśli kolory nie są zgodne):
 
 
@@ -380,7 +382,8 @@ private void FruitVsBins(Fruit fruit)
 }
 ```
 
-### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle i FruitPolygonCollision
+#### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle i FruitPolygonCollision
+
 Owoców a paletkę i owoców a podziału (obszar rozdzielających dwa bins) kolizji za pośrednictwem `FruitPolygonCollision` metody. Ta metoda ma trzy części:
 
 1. Sprawdź, czy obiekty dojść do kolizji
@@ -419,7 +422,7 @@ Obliczenia za logiki kolizji zawarte w `Polygon` i `CollisionResponse` klasy wyk
  
 
 
-# <a name="game-content"></a>Zawartości
+## <a name="game-content"></a>Gry zawartości
 
 Grafikę w wypada Fruity natychmiast odróżnia gry od BouncingGame. Podczas gry projektów są podobne, odtwarzaczach będzie wyświetlany natychmiast różnica w wygląd dwóch gier. Często gracze zdecyduj, czy próby gry przez jego elementy wizualne. W związku z tym jest zasadnicze znaczenie, że deweloperzy inwestycji zasobów podczas podejmowania atrakcyjność gier.
 
@@ -432,7 +435,7 @@ Grafiki w wypada Fruity utworzono za pomocą następujących celów:
  - Możliwość tworzenia prostych efekty wizualne bez animacji ciężki zasobów
 
 
-## <a name="content-location"></a>Lokalizacja zawartości
+### <a name="content-location"></a>Lokalizacja zawartości
 
 Wypada owocowy obejmuje całą jego zawartość w folderze obrazów w projekt systemu Android:
 
@@ -445,9 +448,9 @@ Tych samych plików połączonych w projekcie systemu iOS, aby uniknąć dupliko
 Warto zauważyć, że zawartość nie jest zawarty w **Ld** lub **Hd** foldery, które są częścią szablonu CocosSharp domyślne. **Ld** i **Hd** foldery mają służyć do gier, które zawierają dwa zestawy zawartości — jeden dla urządzeń niższej rozdzielczości, takich jak telefony i jeden dla urządzeń wysokiej rozdzielczości, takich jak tablety. Grafik wypada Fruity celowo tworzona jest podzielony na piksele estetycznych, więc nie trzeba wprowadzić zawartość dla różnych rozmiarów ekranu. W związku z tym **Ld** i **Hd** foldery zostały całkowicie usunięte z projektu.
 
 
-## <a name="gamescene-layering"></a>Tworzenie warstw GameScene
+### <a name="gamescene-layering"></a>Tworzenie warstw GameScene
 
-Jak wspomniano wcześniej w tym przewodniku, GameScene jest odpowiedzialny za wszystkie wystąpienia obiektu gier, pozycjonowanie i logiki obiektów (takich jak kolizji). Wszystkie obiekty są dodawane do jednej z czterech `CCLayer` wystąpień:
+Jak wspomniano wcześniej w tym przewodniku `GameScene` jest odpowiedzialny za wszystkie wystąpienia obiektu gier, pozycjonowanie i logiki obiektów (takich jak kolizji). Wszystkie obiekty są dodawane do jednej z czterech `CCLayer` wystąpień:
 
 
 ```csharp
@@ -488,7 +491,7 @@ private void CreateBackground()
 ```
 
 
-## <a name="vine-entity"></a>Winorośli jednostki
+### <a name="vine-entity"></a>Winorośli jednostki
 
 `Vine` Jednostki jednoznacznie jest używany dla zawartości — nie ma to wpływu na gry. Składa się z 20 `CCSprite` wystąpienia liczbą wybranych przez prób i błędów, aby upewnić się, winorośli zawsze osiągnie górnej części ekranu:
 
@@ -557,7 +560,7 @@ public void Activity(float frameTimeInSeconds)
 Zwróć uwagę, że niewielkie obrotu został dodany do winorośli za pośrednictwem `vineAngle` współczynnik. Aby dostosować, ile Obróć winorośli można zmienić tę wartość.
 
 
-# <a name="gamecoefficients"></a>GameCoefficients
+## <a name="gamecoefficients"></a>GameCoefficients
 
 Co dobrej gry jest produktu iteracji, więc wypada Fruity zawiera klasy o nazwie `GameCoefficients` które kontroluje sposób gry jest odtwarzany. Ta klasa zawiera obszerne zmiennych, które są używane w trakcie gry do sterowania fizycznych, układ, dochodzi do uruchamiania i oceniania.
 
@@ -606,7 +609,7 @@ public static class GameCoefficients
 ```
 
 
-# <a name="conclusion"></a>Wniosek
+## <a name="conclusion"></a>Wniosek
 
 W tym przewodniku przedstawione gry wypada Fruity. On objęty koncepcji, w tym zawartości, fizycznych i zarządzanie stanem gier.
 
