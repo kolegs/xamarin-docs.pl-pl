@@ -1,28 +1,27 @@
 ---
 title: Funkcje platformy
-description: "Pojęć i funkcji i platform aplikacji."
-ms.topic: article
+description: Pojęć i funkcji i platform aplikacji.
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 26b33b1fbf546f734e6661380f63b574cccbcae5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1699c8bde336c040253a5560a2979de8b3fabf5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
 Ta sekcja zawiera dokumenty, które opisano niektóre pojęć i bardziej zaawansowanych funkcji i platform aplikacji.
 
-##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Omówienie obsługi Async](~/cross-platform/platform/async.md)
+##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Asynchroniczna pomoc techniczna — omówienie](~/cross-platform/platform/async.md)
 
 C# w wersji 5 wprowadzone dwóch nowych słów kluczowych express operacji asynchronicznych: async i await. Słowa kluczowe umożliwiają pisania prostych kodu, który korzysta z biblioteki równoległych zadań do wykonania długotrwałe operacje (np. dostępu do sieci) w innym wątku i łatwo uzyskiwać dostęp do wyników po zakończeniu. Najnowsze wersje platformy Xamarin.iOS i platformy Xamarin.Android obsługuje async i await — ten dokument zawiera wyjaśnienia dotyczące i przykład za pomocą nowej składni za pomocą platformy Xamarin.
 
-## <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Funkcje 6 języka C#](~/cross-platform/platform/csharp-six.md)
+## <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Funkcje języka C# 6](~/cross-platform/platform/csharp-six.md)
 
 Najnowsza wersja języka C# — w wersji 6 — w dalszym ciągu rozwijany języka mniej standardowej, zwiększenia przejrzystości i spójności więcej. Składnia inicjalizacji czyszczący, możliwość używania `await` w `catch/finally` bloków i warunkowe null `?` operator są szczególnie użyteczne.
 

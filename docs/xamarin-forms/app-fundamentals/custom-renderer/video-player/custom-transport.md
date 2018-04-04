@@ -1,17 +1,16 @@
 ---
 title: Formanty niestandardowe transportu wideo
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>Formanty niestandardowe transportu wideo
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 Przy użyciu znaków Unicode dla symboliczne **odtwarzanie**, **Wstrzymaj**, i **zatrzymać** obrazów jest problematyczne. [Różne techniczne](https://unicode-table.com/en/blocks/miscellaneous-technical/) sekcji standardu Unicode określa trzy znaki symboli pozornie odpowiednie do tego celu. Są to:
 
-- 0x23F5 (czarny średnia wskazująca w prawo trójkąt) lub & #x23F5; Aby uzyskać **odtwarzania**
-- 0x23F8 (dwa razy pionowy pasek) lub & #x23F8; Aby uzyskać **Wstrzymaj**
-- 0x23F9 (czarny kwadrat) lub & #x23F9; Aby uzyskać **zatrzymania**
+- 0x23F5 (czarny średnia wskazująca w prawo trójkąt) lub &#x23F5; dla **odtwarzania**
+- 0x23F8 (dwa razy pionowy pasek) lub &#x23F8; dla **Wstrzymaj**
+- 0x23F9 (czarny kwadrat) lub &#x23F9; dla **zatrzymania**
 
 Niezależnie od sposobu te symbole są wyświetlane w przeglądarce (i różnych przeglądarkach obsługi je na różne sposoby), nie są wyświetlane spójnie na platformach obsługiwanych przez platformy Xamarin.Forms. W systemach iOS i urządzenia platformy uniwersalnej systemu Windows **Wstrzymaj** i **zatrzymać** znaków ma wygląd graficzny, niebieski tła 3W i białe pierwszego planu. To nie jest w systemie Android, w którym symbol jest po prostu niebieski. Jednak 0x23F5 punktów kodowych znaków dwuskładnikowych dla **odtwarzanie** nie ma czy sam wygląd na platformy uniwersalnej systemu Windows, a nawet nie jest obsługiwana w systemach iOS i Android.
 
 Z tego powodu nie można używać punktów 0x23F5 **odtwarzanie**. Dobrym zastępuje jest:
 
-- 0x25B6 (czarny trójkąt wskazująca w prawo) lub & #x25B6; Aby uzyskać **odtwarzania**
+- 0x25B6 (czarny trójkąt wskazująca w prawo) lub &#x25B6; dla **odtwarzania**
 
 Jest to obsługiwane przez wszystkie trzy platformy, z tą różnicą, że jest zwykły trójkąt czarny, który wygląda inaczej wygląd 3D **Wstrzymaj** i **zatrzymać**. Wykonaj 0x25B6 punktów kodowych znaków dwuskładnikowych z kodem wariantu jest jedną z możliwości:
 
-- 0x25B6 następuje 0xFE0F (wariant 16) lub & #x25B6; & #xFE0F; Aby uzyskać **odtwarzania**
+- 0x25B6 następuje 0xFE0F (wariant 16) lub &#x25B6; &#xFE0F; dla **odtwarzania**
 
 Jest to, co jest używany w znaczniku pokazano poniżej. W systemach iOS, daje **odtwarzanie** symbolu sam wygląd 3D jako **Wstrzymaj** i **zatrzymać** przycisków, ale wariantu nie działa w systemach Android i platformy uniwersalnej systemu Windows.
 

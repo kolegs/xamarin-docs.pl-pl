@@ -1,18 +1,17 @@
 ---
-title: "Formanty ręczne aparatu"
-description: "AVFoundation Framework umożliwia łatwiejsze niż dotychczas użytkownikom podjęcie zdjęć w celu umożliwienia formanty aparatu ręcznego. Za pomocą tego framework, aplikacja może zająć bezpośrednią kontrolę nad aparatu fokus, białe saldo i ekspozycję. Aplikacja umożliwia także przechwytywania w nawiasach kwadratowych narażenia automatycznie przechwytywania obrazów za pomocą różnych ustawień ekspozycji. W tym artykule potrwa krótki przegląd za pomocą formantów aparatu ręcznego w aplikacji mobilnej proste iOS 8."
-ms.topic: article
+title: Formanty ręczne aparatu
+description: AVFoundation Framework umożliwia łatwiejsze niż dotychczas użytkownikom podjęcie zdjęć w celu umożliwienia formanty aparatu ręcznego. Za pomocą tego framework, aplikacja może zająć bezpośrednią kontrolę nad aparatu fokus, białe saldo i ekspozycję. Aplikacja umożliwia także przechwytywania w nawiasach kwadratowych narażenia automatycznie przechwytywania obrazów za pomocą różnych ustawień ekspozycji. W tym artykule potrwa krótki przegląd za pomocą formantów aparatu ręcznego w aplikacji mobilnej proste iOS 8.
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f11305fcbf8a5b9bf6552fa31ecfa1c0e8e7a68f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-camera-controls"></a>Formanty ręczne aparatu
 

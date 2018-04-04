@@ -1,18 +1,17 @@
 ---
-title: "Przy użyciu Wpięć za pomocą platformy Xamarin"
-description: "W tym przewodniku przedstawiono sposób ustawiania Wpięć jako serwer ciągłej integracji i automatyzacji Kompilowanie aplikacji utworzony za pomocą platformy Xamarin dla urządzeń przenośnych. Przedstawiono sposób instalowania Wpięć na OS X, jest skonfigurowana i skonfigurować zadania do skompilowania aplikacji platformy Xamarin.iOS i Xamarin.Android podczas zmiany zostały zastosowane systemu zarządzania kodu źródłowego."
-ms.topic: article
+title: Przy użyciu Wpięć za pomocą platformy Xamarin
+description: W tym przewodniku przedstawiono sposób ustawiania Wpięć jako serwer ciągłej integracji i automatyzacji Kompilowanie aplikacji utworzony za pomocą platformy Xamarin dla urządzeń przenośnych. Przedstawiono sposób instalowania Wpięć na OS X, jest skonfigurowana i skonfigurować zadania do skompilowania aplikacji platformy Xamarin.iOS i Xamarin.Android podczas zmiany zostały zastosowane systemu zarządzania kodu źródłowego.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Przy użyciu Wpięć za pomocą platformy Xamarin
 
@@ -103,7 +102,7 @@ W tym momencie Wpięć została zainstalowana. Jednak jeśli chcemy do tworzenia
 
 ### <a name="installing-plugins"></a>Instalowanie wtyczki
 
-Po zakończeniu Instalator Jenkins.App go uruchomi Wpięć i uruchomić przeglądarki sieci web z adresem URL adresem http://localhost: 8080, jak pokazano na poniższym zrzucie ekranu:
+Po zakończeniu Instalator Jenkins.App go uruchomi Wpięć i uruchomić przeglądarki sieci web z adresem URL http://localhost:8080, jak pokazano na poniższym zrzucie ekranu:
 
  [![](jenkins-walkthrough-images/image10.png "8080, jak pokazano w tym zrzut ekranu")](jenkins-walkthrough-images/image10.png#lightbox)
 

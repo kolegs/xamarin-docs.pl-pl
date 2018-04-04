@@ -1,18 +1,17 @@
 ---
-title: "Możliwości portfela"
-description: "Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji portfela."
-ms.topic: article
+title: Możliwości portfela
+description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji portfela.
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 952fa7dfa93c1dcb45eafe4eec08c73d2a8571eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f41ba2b693b37f39ea49f62e322932537014a317
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wallet-capabilities"></a>Możliwości portfela
 
@@ -37,7 +36,7 @@ Aby utworzyć nowy profil inicjowania obsługi administracyjnej do użytku z por
     
     ![Wybór identyfikator aplikacji](wallet-capabilities-images/image17.png)
 
-3.  Kliknij przycisk  **+**  ikonę w górnym rogu strony.
+3.  Kliknij przycisk **+** ikonę w górnym rogu strony.
 4.  Zarejestruj nowy identyfikator aplikacji przez nadanie mu **nazwa** i identyfikatora pakietu. (Należy pamiętać, że ten identyfikator pakietu musi być zgodna z Identyfikatorem pakietu w projekcie):
    
     ![Dodaj szczegóły Identyfikatora aplikacji](wallet-capabilities-images/image18.png)

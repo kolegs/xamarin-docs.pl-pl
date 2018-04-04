@@ -1,18 +1,17 @@
 ---
 title: Dystrybucji Ad Hoc
-description: "Ten dokument zawiera omówienie techniki dystrybucji Ad Hoc, które są używane przede wszystkim do testowania aplikacji platformy Xamarin.iOS przy użyciu szerokiej grupy osób."
-ms.topic: article
+description: Ten dokument zawiera omówienie techniki dystrybucji Ad Hoc, które są używane przede wszystkim do testowania aplikacji platformy Xamarin.iOS przy użyciu szerokiej grupy osób.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ad-hoc-distribution"></a>Dystrybucji Ad Hoc
 
@@ -48,7 +47,7 @@ Następnej sekcji opisano sposób uzyskać certyfikat dystrybucji i profil inicj
 
 1. Przejdź do *certyfikaty, identyfikatory & profile* sekcji Apple Developer Member Center.
 2. W obszarze *certyfikaty*, wybierz pozycję **produkcji**.
-3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
+3. Kliknij przycisk **+** przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **wewnętrznych i Ad Hoc**, lub **sklepu z aplikacjami i Ad Hoc**w oparciu o członkostwo w programie:
 
   [![](ad-hoc-distribution-images/cert-first-small.png "Wybierz wewnętrznych i Ad Hoc lub sklepu z aplikacjami i Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
@@ -82,7 +81,7 @@ Jako wszystkie inne inicjowania obsługi profilu możesz utworzyć identyfikator
 
 
 1. W [Centrum deweloperów firmy Apple](https://developer.apple.com/account/overview.action) przejdź do *certyfikatu, identyfikatory i profile* sekcji. Wybierz **identyfikatorów aplikacji** w obszarze **identyfikatory**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa** której znajdą w portalu.
+2. Kliknij przycisk **+** przycisk i podaj **nazwa** której znajdą w portalu.
 3. Prefiks aplikacji powinna być już ustawiona jako Identyfikatora zespołu i nie można zmienić. Wybierz jawne lub identyfikator aplikacji symboli wieloznacznych i wprowadź identyfikator pakietu w formacie wstecznego DNS, takich jak:
     - **Jawne**: `com.[DomainName].[AppName]`
     - **Symbol wieloznaczny**: `com.[DomainName].*`
@@ -93,7 +92,7 @@ Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wy
 
 1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej > dystrybucji**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "wybierz udostępniania > dystrybucji")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
-2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **Ad Hoc**:
+2. Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **Ad Hoc**:
 
     [![](ad-hoc-distribution-images/distribute02.png "Utwórz typ dystrybucji Ad Hoc")](ad-hoc-distribution-images/distribute02.png#lightbox)
 

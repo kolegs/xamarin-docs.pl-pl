@@ -1,18 +1,17 @@
 ---
 title: eXtensible Application Markup Language (XAML)
-description: "XAML jest językiem znaczników deklaratywne, który może służyć do definiowania interfejsów użytkownika. Interfejs użytkownika jest zdefiniowany w pliku XML przy użyciu składni języka XAML podczas zachowania w czasie wykonywania jest zdefiniowany w pliku oddzielne kodem."
-ms.topic: article
+description: XAML jest językiem znaczników deklaratywne, który może służyć do definiowania interfejsów użytkownika. Interfejs użytkownika jest zdefiniowany w pliku XML przy użyciu składni języka XAML podczas zachowania w czasie wykonywania jest zdefiniowany w pliku oddzielne kodem.
 ms.prod: xamarin
 ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/24/2016
-ms.openlocfilehash: a6e31fa9da7a5764d9a7fd04aa73d7d246143384
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: bb3b4c4f80171f676e8b5f9a7464f4da890a4643
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 

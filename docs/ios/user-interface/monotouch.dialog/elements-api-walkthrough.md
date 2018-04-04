@@ -1,17 +1,16 @@
 ---
-title: "Wskazówki — tworzenie aplikacji przy użyciu interfejsu API elementów"
-description: "W tym artykule opisano informacje przedstawione w wprowadzenie do okna dialogowego MonoTouch artykułu. Stanowi wskazówki, która przedstawia sposób użycia MonoTouch.Dialog (patrz hasło MT. D) elementów interfejsu API umożliwiają szybkie rozpoczęcie tworzenia aplikacji z patrz hasło MT. D."
-ms.topic: article
+title: Wskazówki — tworzenie aplikacji przy użyciu interfejsu API elementów
+description: W tym artykule opisano informacje przedstawione w wprowadzenie do okna dialogowego MonoTouch artykułu. Stanowi wskazówki, która przedstawia sposób użycia MonoTouch.Dialog (patrz hasło MT. D) elementów interfejsu API umożliwiają szybkie rozpoczęcie tworzenia aplikacji z patrz hasło MT. D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Wskazówki — tworzenie aplikacji przy użyciu interfejsu API elementów
 

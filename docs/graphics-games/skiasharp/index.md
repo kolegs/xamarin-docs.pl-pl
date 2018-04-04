@@ -1,18 +1,17 @@
 ---
 title: Rysunek 2D
 description: Cross Platform 2D rysunku z SkiaSharp
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a6249525e8a5f85284c462888a7698312321642f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-drawing"></a>Rysunek 2D
 
@@ -74,4 +73,4 @@ Możesz przeglądać [dokumentacji interfejsu API](https://developer.xamarin.com
 
 SkiaSharp jest pracy w toku możemy korzystają z naszej społeczności. Gdy firma Microsoft powiązania ważne części Skia API dużo pracy pozostaje do zrobienia. Używamy stabilna C API udostępniane przez Skia i naszego planu jest kontynuowanie Współtworzenie naszej współpracują w celu powiązania C Skia, aby zapewnić pełne pokrycie interfejsów API.
 
-Aby pomóc nam przewodnik dążenie powiązanie, pozostaw komentarze i propozycje jako problemów w repozytorium GitHub [http://github.com/mono/SkiaSharp](http://github.com/mono/SkiaSharp).
+Aby pomóc nam przewodnik dążenie powiązanie, pozostaw komentarze i propozycje jako problemów w repozytorium GitHub [ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp).

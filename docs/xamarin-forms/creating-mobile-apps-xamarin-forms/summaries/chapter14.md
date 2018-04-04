@@ -1,17 +1,16 @@
 ---
-title: "Podsumowanie rozdział 14. Układ bezwzględne"
-ms.topic: article
+title: Podsumowanie rozdział 14. Układ bezwzględne
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 87feb17f79dadb0eb8da271f7c072e4a9753381c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Podsumowanie rozdział 14. Układ bezwzględne
 

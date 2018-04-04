@@ -1,18 +1,17 @@
 ---
 title: Praca z widokami Kolekcja
-description: "Ten artykuł obejmuje projektowanie i Praca z widokami kolekcja wewnątrz aplikacji Xamarin.tvOS."
-ms.topic: article
+description: Ten artykuł obejmuje projektowanie i Praca z widokami kolekcja wewnątrz aplikacji Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-collection-views"></a>Praca z widokami Kolekcja
 

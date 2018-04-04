@@ -1,18 +1,17 @@
 ---
 title: CloudKit
-description: "iCloud interfejsy API umożliwia aplikacji systemu iOS 8 do przechowywania danych w iCloud o obsługę automatycznego synchronizowanie przez konto użytkownika. Przy użyciu CloudKit umożliwia użytkownikom spójne i łatwego środowisko na urządzeniach z obsługą usługi iCloud. W tym artykule omówiono włączanie CloudKit w aplikacji systemu iOS 8 przy użyciu interfejsu API wygody."
-ms.topic: article
+description: iCloud interfejsy API umożliwia aplikacji systemu iOS 8 do przechowywania danych w iCloud o obsługę automatycznego synchronizowanie przez konto użytkownika. Przy użyciu CloudKit umożliwia użytkownikom spójne i łatwego środowisko na urządzeniach z obsługą usługi iCloud. W tym artykule omówiono włączanie CloudKit w aplikacji systemu iOS 8 przy użyciu interfejsu API wygody.
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 

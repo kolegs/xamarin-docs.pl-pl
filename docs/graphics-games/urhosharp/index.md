@@ -1,18 +1,17 @@
 ---
 title: UrhoSharp - 3D/2D aparatu
-description: "UrhoSharp jest wieloplatformowych wysokiego poziomu 3D i 2D aparatem, który może służyć do tworzenia animowany sceny 3W i 2D aplikacji przy użyciu mają geometrię, materiałów, świateł i aparatów fotograficznych."
-ms.topic: article
+description: UrhoSharp jest wieloplatformowych wysokiego poziomu 3D i 2D aparatem, który może służyć do tworzenia animowany sceny 3W i 2D aplikacji przy użyciu mają geometrię, materiałów, świateł i aparatów fotograficznych.
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 747c38c4a279b740bf52645c00df85ea9357f4a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8df53d90ab1245aecff3eab1393c009b7910aa5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp - 3D/2D aparatu
 

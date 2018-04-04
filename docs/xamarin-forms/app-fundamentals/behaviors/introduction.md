@@ -1,18 +1,17 @@
 ---
 title: Wprowadzenie do zachowania
-description: "Zachowania umożliwiają dodawanie funkcji do formantów interfejsu użytkownika bez konieczności podklasy je. Zamiast tego funkcji jest zaimplementowana w klasie zachowania i dołączonej do formantu, jakby było częścią samego formantu. Ten artykuł zawiera wprowadzenie do zachowania."
-ms.topic: article
+description: Zachowania umożliwiają dodawanie funkcji do formantów interfejsu użytkownika bez konieczności podklasy je. Zamiast tego funkcji jest zaimplementowana w klasie zachowania i dołączonej do formantu, jakby było częścią samego formantu. Ten artykuł zawiera wprowadzenie do zachowania.
 ms.prod: xamarin
 ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 9a92a80bae49a20b276e0d985845fbf08fe92bec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b5aa0d3de7092ac87d511ab8d59c329471fa6a28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-behaviors"></a>Wprowadzenie do zachowania
 

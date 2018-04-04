@@ -1,17 +1,16 @@
 ---
-title: "Powiązanie Objective-C"
-ms.topic: article
+title: Powiązanie Objective-C
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: e836081d79d904e2d0952386e536eefdabe361e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fef2826f536042dc9be830a4c0dc358658c359d9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-objective-c"></a>Powiązanie Objective-C
 
@@ -21,7 +20,7 @@ Ta sekcja zawiera szereg dokumenty, które obejmują tworzenie powiązania z bib
 
 Ten dokument zawiera niektóre funkcje wewnętrzne sposób następuje powiązanie. Jest zaawansowane dokument pewne informacje techniczne.
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Powiązanie bibliotek języka Objective C](~/cross-platform/macios/binding/objective-c-libraries.md)
+##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Tworzenie powiązań bibliotek języka Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 Ten dokument zawiera opis procesu używane do tworzenia powiązań C# interfejsów API języka Objective C i sposobie mapowania idioms w języku Objective C idioms używane w programie .NET.
 Są wiązane tylko interfejsy API C, należy użyć standardowego mechanizmu .NET dla tego framework P/Invoke.
@@ -31,7 +30,7 @@ Są wiązane tylko interfejsy API C, należy użyć standardowego mechanizmu .NE
 Jest to przewodnik odwołania, który opisuje wszystkie atrybuty, które są dostępne dla autorów powiązania do procesu tworzenia powiązania.
 
 
-## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Sharpie celu](~/cross-platform/macios/binding/objective-sharpie/index.md)
+## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Narzędzie Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
 Celu Sharpie to narzędzie wiersza polecenia ułatwiające bootstrap przebiegu pierwszy powiązania. Działa on za analizowanie plików nagłówka natywnej biblioteki do mapowania publiczny interfejs API do [powiązania definicji](~/cross-platform/macios/binding/objective-c-libraries.md) (proces można również wykonać ręcznie).
 

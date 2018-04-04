@@ -1,18 +1,17 @@
 ---
-title: "Urządzenia z procesorami wielordzeniowymi & platformy Xamarin.Android"
-description: "Android można uruchamiać na wielu architektur innym komputerze. W tym dokumencie omówiono różne architektury Procesora, które mogą być zastosowane do aplikacji platformy Xamarin.Android. Ten dokument również objaśnia sposób Android aplikacje pakiecie w celu obsługi innej architektury Procesora. Aplikacja interfejsu binarne (ABI) zostaną wprowadzone, a będzie wskazówki dotyczące ABIs, których można użyć w aplikacji platformy Xamarin.Android."
-ms.topic: article
+title: Urządzenia z procesorami wielordzeniowymi & platformy Xamarin.Android
+description: Android można uruchamiać na wielu architektur innym komputerze. W tym dokumencie omówiono różne architektury Procesora, które mogą być zastosowane do aplikacji platformy Xamarin.Android. Ten dokument również objaśnia sposób Android aplikacje pakiecie w celu obsługi innej architektury Procesora. Aplikacja interfejsu binarne (ABI) zostaną wprowadzone, a będzie wskazówki dotyczące ABIs, których można użyć w aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Urządzenia z procesorami wielordzeniowymi & platformy Xamarin.Android
 

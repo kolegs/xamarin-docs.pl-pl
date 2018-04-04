@@ -1,18 +1,17 @@
 ---
 title: Praca z tabelami w Projektancie systemu iOS
-description: "W poprzednich sekcjach możemy przedstawione tworzenie przy użyciu tabel. W tym celu sekcji piątego i końcowych Zapoznamy agregacji, co ma dowiedzieliśmy się do tej pory i utworzyć aplikację podstawowych kwestii listy przy użyciu scenorysu."
-ms.topic: article
+description: W poprzednich sekcjach możemy przedstawione tworzenie przy użyciu tabel. W tym celu sekcji piątego i końcowych Zapoznamy agregacji, co ma dowiedzieliśmy się do tej pory i utworzyć aplikację podstawowych kwestii listy przy użyciu scenorysu.
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Praca z tabelami w Projektancie systemu iOS
 
@@ -115,7 +114,7 @@ Następnie musisz utworzyć przycisku, który doda nowe zadania, jak przedstawio
 Wykonaj następujące czynności: 
 
 -  Przeciągnij **element przycisku paska** z przybornika do _po prawej stronie paska nawigacyjnego_.
--  W **konsoli właściwości**w obszarze **element przycisku paska** wybierz **identyfikator: Dodaj** (aby stał się  *+*  oraz przycisk). 
+-  W **konsoli właściwości**w obszarze **element przycisku paska** wybierz **identyfikator: Dodaj** (aby stał się *+* oraz przycisk). 
 -  Nadaj mu nazwę, aby można go zidentyfikować w kodzie w późniejszym terminie. Należy pamiętać, że konieczne będzie nadaj nazwę klasy kontrolera widoku głównego (na przykład **ItemViewController**) można ustawić nazwy element przycisku paska.
 
 

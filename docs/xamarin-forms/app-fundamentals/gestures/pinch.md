@@ -1,18 +1,17 @@
 ---
-title: "Dodawanie rozpoznawania gestów Uszczypnięcia"
-description: "Gest uszczypnięcia służy do wykonywania interakcyjne powiększenia i jest realizowana za pomocą klasy PinchGestureRecognizer. Typowy scenariusz dla gestu uszczypnięcia jest przeprowadzenie interakcyjne powiększenia obrazu w lokalizacji uszczypnięcia. Odbywa się przez skalowanie zawartość okienka ekranu, a przedstawionej w tym artykule."
-ms.topic: article
+title: Dodawanie rozpoznawania gestów Uszczypnięcia
+description: Gest uszczypnięcia służy do wykonywania interakcyjne powiększenia i jest realizowana za pomocą klasy PinchGestureRecognizer. Typowy scenariusz dla gestu uszczypnięcia jest przeprowadzenie interakcyjne powiększenia obrazu w lokalizacji uszczypnięcia. Odbywa się przez skalowanie zawartość okienka ekranu, a przedstawionej w tym artykule.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 38e46af1d928a3d4e5dc33e2a46fe04cd169ed60
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f8f81418cf5284b288f29fd2363b6b8f2d9d5fdd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>Dodawanie rozpoznawania gestów Uszczypnięcia
 

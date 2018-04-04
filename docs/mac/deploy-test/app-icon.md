@@ -1,18 +1,17 @@
 ---
 title: Ikona aplikacji
-description: "W tym artykule opisano tworzenie obrazów wymaganych dla ikony aplikacji Xamarin.Mac, tworzenie pakietów obrazów do pliku .icns i, w tym ikonę w projekcie Xamarin.Mac."
-ms.topic: article
+description: W tym artykule opisano tworzenie obrazów wymaganych dla ikony aplikacji Xamarin.Mac, tworzenie pakietów obrazów do pliku .icns i, w tym ikonę w projekcie Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ceeb0d33b00288e2a50dc7f758902c1dbc7ab04a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-icon"></a>Ikona aplikacji
 
@@ -55,9 +54,9 @@ Przeczytaj [galerii ikona aplikacji](https://developer.apple.com/library/mac/doc
 Podobnie jak wszystkie inne zasobu obrazu dewelopera ma użyć w aplikacji Xamarin.Mac aplikacji ikona musi podać zarówno Standard, jak i rozpoznawania siatkówki wersji. Ponownie, podobnie jak każdy inny obraz, należy użyć `@2x` formatowania w nazwach plików ikony:
 
 - **Standard rozpoznawania**  - _Nazwa_obrazu_**.** _rozszerzenie nazwy pliku_ (przykład: **icon_512x512.png**)
-- **O wysokiej rozdzielczości**  - _Nazwa_obrazu_**@2x.** _rozszerzenie nazwy pliku_ (przykład:  **icon_512x512@2x.png** )
+- **O wysokiej rozdzielczości**  - _Nazwa_obrazu_**@2x.** _rozszerzenie nazwy pliku_ (przykład: **icon_512x512@2x.png**)
 
-Na przykład aby przekazać wersji 512 x 512 ikony aplikacji, plik będzie nosić **icon_512x512.png** i  **icon_512x512@2x.png** .
+Na przykład aby przekazać wersji 512 x 512 ikony aplikacji, plik będzie nosić **icon_512x512.png** i **icon_512x512@2x.png**.
 
 Aby upewnić się, że ikony wygląda bardzo we wszystkich miejscach, że użytkownicy będą widzieć go, należy podać zasobów do rozmiarów wymienionych poniżej:
 

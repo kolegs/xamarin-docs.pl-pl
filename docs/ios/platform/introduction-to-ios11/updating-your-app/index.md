@@ -1,18 +1,17 @@
 ---
 title: Aktualizowanie aplikacji w systemach iOS 11
 description: Poznawanie nowych funkcji systemu IOS 11
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: cced7cc3d1b0579c36d598ef0d05da872478c8dc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualizowanie aplikacji w systemach iOS 11
 
@@ -20,17 +19,17 @@ _Poznawanie nowych funkcji systemu IOS 11_
 
 W systemie iOS 11 Apple wprowadziła procesu Connect zaktualizowane iTunes, nowe zmiany wizualne i architektura aktualizacji. Ten przewodnik opisuje każdego z tych zmian umożliwia uzyskiwanie aktualizacji dla systemu iOS 11 dla swojej aplikacji platformy Xamarin.iOS.
 
-## <a name="architecture-changesarchitecture-changesmd"></a>[Architektura zmiany](architecture-changes.md)
+## <a name="architecture-changesarchitecture-changesmd"></a>[Zmiany architektury](architecture-changes.md)
 
 Jednym z najważniejszych zmian, które należy zwrócić uwagę z systemem iOS 11 jest amortyzacja obsługa 32-bitowych aplikacji, zgodnie z opisem w [firmy Apple](https://developer.apple.com/news/?id=06282017b) naciśnij wersji.
 
 Ten przewodnik przeprowadzi Cię przez aktualizowanie aplikacji dla wersji 64-bitowych.
 
-## <a name="visual-design-updatesvisual-designmd"></a>[Projekt Visual aktualizacji](visual-design.md)
+## <a name="visual-design-updatesvisual-designmd"></a>[Aktualizacje projektu wizualnego](visual-design.md)
 
 W systemie iOS 11 Firma Apple wprowadziła nowe zmiany wizualne w tym aktualizacje na pasku nawigacyjnym, pasek wyszukiwania i widoków tabel. Dodatkowo udoskonalono aby umożliwić większą elastyczność za pośrednictwem marginesy i pełny ekran zawartości. Te zmiany zostały uwzględnione w tym przewodniku.
 
-## <a name="app-store-changesapp-store-changesmd"></a>[Zmiany w sklepie z aplikacjami](app-store-changes.md)
+## <a name="app-store-changesapp-store-changesmd"></a>[Zmiany w sklepie App Store](app-store-changes.md)
 
 IOS App Store miał pełną one, które nie tylko umożliwia wydajne Przejdź magazynu, ale można też, Deweloper, aby promować aplikację dla użytkowników. Promocje te obejmują aktualizacje na zakupy w aplikacji i aktualizacji do strony produktu. iOS 11 dodaje również aktualizacje dotyczące sposób komunikowania się z użytkownikami, jak dodać ikonę Twojej aplikacji i jak zwolnić aplikacji publicznie.
 

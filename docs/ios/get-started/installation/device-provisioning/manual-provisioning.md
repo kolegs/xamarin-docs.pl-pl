@@ -1,18 +1,17 @@
 ---
-title: "Ręcznego inicjowania obsługi administracyjnej"
-description: "Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu."
-ms.topic: article
+title: Ręcznego inicjowania obsługi administracyjnej
+description: Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-provisioning"></a>Ręcznego inicjowania obsługi administracyjnej
 
@@ -36,7 +35,7 @@ Zespoły deweloperów, certyfikaty i profile, które mogą być zarządzane prze
 
 Aby wygenerować tożsamości podpisywania, wykonaj następujące czynności:
 
-1. Zaloguj się do [certyfikaty identyfikatory i profile części portalu dla deweloperów](https://developer.apple.com/account/overview.action) i wybierz **certyfikaty** sekcji z **aplikacji dla systemu iOS** kolumny. Następnie kliknij przycisk  **+**  można utworzyć nowego certyfikatu:
+1. Zaloguj się do [certyfikaty identyfikatory i profile części portalu dla deweloperów](https://developer.apple.com/account/overview.action) i wybierz **certyfikaty** sekcji z **aplikacji dla systemu iOS** kolumny. Następnie kliknij przycisk **+** można utworzyć nowego certyfikatu:
 
     [![](manual-provisioning-images/cert-plus.png "Kliknij pozycję +, aby utworzyć nowy certyfikat")](manual-provisioning-images/cert-plus.png#lightbox)
 
@@ -119,7 +118,7 @@ Podczas tworzenia profilu inicjowania obsługi administracyjnej dla rozwoju, mo�
 
   [![](manual-provisioning-images/add04.png "Kliknij łącze urządzeń")](manual-provisioning-images/add04.png#lightbox)
 
-8. Kliknij przycisk  **+**  przycisk:
+8. Kliknij przycisk **+** przycisk:
 
   [![](manual-provisioning-images/add05.png "Kliknij przycisk +")](manual-provisioning-images/add05.png#lightbox)
 
@@ -148,7 +147,7 @@ Przed utworzeniem profilu inicjowania obsługi administracyjnej, *identyfikator 
 ### <a name="app-id"></a>Identyfikator aplikacji
 
 1. W [portalu dla deweloperów](https://developer.apple.com/account/overview.action) przejdź do *certyfikatu, identyfikatory i profile* sekcji w Centrum deweloperów firmy Apple. Wybierz **identyfikatorów aplikacji** w obszarze **identyfikatory**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa**:
+2. Kliknij przycisk **+** przycisk i podaj **nazwa**:
 
     [![](manual-provisioning-images/appid05a.png "Podaj nazwę")](manual-provisioning-images/appid05a.png#lightbox)
 3. Prefiks aplikacji należy wstępnie. Wybierz **identyfikator aplikacji symboli wieloznacznych** sufiksu aplikacji. Wprowadź identyfikator pakietu w formacie `com.[DomainName].*`:
@@ -164,7 +163,7 @@ Po utworzeniu Identyfikatora aplikacji można wyprodukować profilu inicjowania 
 Aby ręcznie utworzyć profil inicjowania obsługi administracyjnej do tworzenia aplikacji, wykonaj następujące czynności:
 
 1. Użyj Safari, aby przejść do [Member Center przeznaczonej dla deweloperów firmy Apple](https://developer.apple.com/membercenter/index.action)i w sekcji *certyfikaty, identyfikatory & profile* Wybierz profile inicjowania obsługi.
-2. Kliknij przycisk  **+**  przycisk, w prawym górnym rogu, aby utworzyć nowy profil.
+2. Kliknij przycisk **+** przycisk, w prawym górnym rogu, aby utworzyć nowy profil.
 3. Z **programowanie** wybierz przycisk radiowy obok **tworzenie aplikacji dla systemu iOS**i naciśnij klawisz **Kontynuuj**:
 
     [![](manual-provisioning-images/provisioning-profile01.png "Wybierz typ profilu")](manual-provisioning-images/provisioning-profile01.png#lightbox)

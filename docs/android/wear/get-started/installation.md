@@ -1,18 +1,17 @@
 ---
 title: Instalacja i Konfiguracja
-description: "W tym artykule przedstawiono kroki instalacji i elementy konfiguracji wymagane w celu przygotowania komputera i urządzeń dla systemu Android nosić programowanie. Na koniec tego artykułu będziesz mieć działającego instalacji platformy Xamarin.Android zużycia zintegrowana z programu Visual Studio dla komputerów Mac i/lub programu Microsoft Visual Studio, a będzie gotowa rozpocząć tworzenie pierwszej aplikacji platformy Xamarin.Android zużycia."
-ms.topic: article
+description: W tym artykule przedstawiono kroki instalacji i elementy konfiguracji wymagane w celu przygotowania komputera i urządzeń dla systemu Android nosić programowanie. Na koniec tego artykułu będziesz mieć działającego instalacji platformy Xamarin.Android zużycia zintegrowana z programu Visual Studio dla komputerów Mac i/lub programu Microsoft Visual Studio, a będzie gotowa rozpocząć tworzenie pierwszej aplikacji platformy Xamarin.Android zużycia.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setup-and-installation"></a>Instalacja i Konfiguracja
 

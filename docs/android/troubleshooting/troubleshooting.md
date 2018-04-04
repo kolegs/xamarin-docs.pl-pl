@@ -1,17 +1,17 @@
 ---
-title: "Porady dotyczące rozwiązywania problemów"
-ms.topic: article
+title: Porady dotyczące rozwiązywania problemów
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>Porady dotyczące rozwiązywania problemów
 
@@ -200,7 +200,7 @@ Istnieją cztery komunikaty konsekwencji:
 -  Niska globalne odwołania zniszczenia: są to wiersze rozpoczynające się *-w —* .
 
 
-W wszystkie komunikaty *grefc* wartość jest liczba odwołań globalne, które platformy Xamarin.Android został utworzony, gdy *grefwc* wartość jest liczbą słabe odwołania globalne, które utworzył platformy Xamarin.Android. *Obsługi* lub *dojście obj* wartość jest wartością dojście JNI i znaków po "  */* " jest typ wartości dojścia: */L* lokalnego odwołania */G* globalne odwołań i */W* słabego odwołania globalnego.
+W wszystkie komunikaty *grefc* wartość jest liczba odwołań globalne, które platformy Xamarin.Android został utworzony, gdy *grefwc* wartość jest liczbą słabe odwołania globalne, które utworzył platformy Xamarin.Android. *Obsługi* lub *dojście obj* wartość jest wartością dojście JNI i znaków po " */*" jest typ wartości dojścia: */L* lokalnego odwołania */G* globalne odwołań i */W* słabego odwołania globalnego.
 
 Jako część procesu GC, odwołania do globalnego (+ g +) są konwertowane na słabe odwołania globalnego (przyczyną + w + i - g-), jest kopać GC Java serwerowe i sprawdzana słabe odwołanie globalne aby zobaczyć, czy został zebrany. Jeśli jest nadal aktywna, nowe gref jest tworzony wokół słabe odwołanie (+ g +, -w —), w przeciwnym razie zostanie zniszczony słabe odwołanie (-w).
 
@@ -270,7 +270,7 @@ To powinno programy do pracy. Jeśli nadal występują problemy, możesz spróbo
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Odbieranie "niekompletne komunikat aktywacji
 
-Ten problem może wystąpić w przypadku używania platformy Xamarin.Android dla programu Visual Studio. Aby rozwiązać ten problem, należy wysłać dzienniki z następującej lokalizacji w celu  *contact@xamarin.com* .
+Ten problem może wystąpić w przypadku używania platformy Xamarin.Android dla programu Visual Studio. Aby rozwiązać ten problem, należy wysłać dzienniki z następującej lokalizacji w celu *contact@xamarin.com*.
 
 -  Lokalizacja dziennika: **LocalAppData %\\Xamarin\\dzienniki**
 
@@ -301,7 +301,7 @@ W tym celu Znajdź platformy wyboru poniżej i wykonaj kroki:
 5. Wprowadź swoje poświadczenia
 6. Sprawdź dostępność aktualizacji
 
-Jeśli ten komunikat o błędzie będzie nadal występować, skontaktuj e-mail  **contact@xamarin.com** .
+Jeśli ten komunikat o błędzie będzie nadal występować, skontaktuj e-mail **contact@xamarin.com**.
 
 
 

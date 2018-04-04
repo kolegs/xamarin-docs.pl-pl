@@ -1,18 +1,17 @@
 ---
-title: "Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps"
-description: "Aplikacje mobilne platformy Azure korzystają z różnych dostawców tożsamości zewnętrznych do obsługi uwierzytelniania i autoryzacji użytkowników aplikacji, w tym usługi Facebook, Google, Microsoft, Twitter i Azure Active Directory. Uprawnienia można ustawić w tabelach, aby ograniczyć dostęp tylko użytkownikom uwierzytelnionym. W tym artykule opisano sposób korzystania z usługi Azure Mobile Apps do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms."
-ms.topic: article
+title: Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps
+description: Aplikacje mobilne platformy Azure korzystają z różnych dostawców tożsamości zewnętrznych do obsługi uwierzytelniania i autoryzacji użytkowników aplikacji, w tym usługi Facebook, Google, Microsoft, Twitter i Azure Active Directory. Uprawnienia można ustawić w tabelach, aby ograniczyć dostęp tylko użytkownikom uwierzytelnionym. W tym artykule opisano sposób korzystania z usługi Azure Mobile Apps do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: D50D6F56-8B19-44E7-81F3-E0E1C6E240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 823dcdfdaca79045a407b62ec7e75079ee25d72f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f5c69601c11a3c0d25bc804c60883841b0fb30d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps
 
@@ -187,7 +186,7 @@ W tym artykule wyjaśniono, jak używać usługi Azure Mobile Apps do zarządzan
 ## <a name="related-links"></a>Linki pokrewne
 
 - [TodoAzureAuth (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuth/)
-- [Zużycie aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
+- [Korzystanie z aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Dodawanie uwierzytelniania do aplikacji platformy Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users/)
 - [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

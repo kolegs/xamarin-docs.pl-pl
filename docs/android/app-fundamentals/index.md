@@ -1,18 +1,17 @@
 ---
 title: Podstawy aplikacji
 description: Podstawowe koncepcje aplikacji
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 4abb8c823c62bc62fd2e6f717cc1b5bde9057e4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>Podstawy aplikacji
 
@@ -35,7 +34,7 @@ W tym artykule przedstawiono koncepcję zasobów systemu Android, Xamarin.Androi
 
 
 
-##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Cykl życia działania](~/android/app-fundamentals/activity-lifecycle/index.md)
+##  <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[Cykl życia aktywności](~/android/app-fundamentals/activity-lifecycle/index.md)
 
 Działania są podstawowych blok tworzenia aplikacji systemu Android i istnieją w wielu innych stanów. Cykl życia działania rozpoczyna się od wystąpienia kończy zniszczenie i zawiera wiele stanów między nimi. Po zmianie stanu działania wywoływana jest metoda zdarzenia cyklu życia odpowiednie, powiadamiania o zbliżającym się zmiana stanu działania, dzięki czemu jej do wykonania kodu w celu dostosowania do tej zmiany. W tym artykule sprawdza cyklu życia działań i wyjaśniono odpowiedzialność to działanie ma podczas każdego z tych zmian stanu jako część aplikacji dobrze behaved, niezawodne.
 
@@ -59,12 +58,12 @@ Obsługę narzędzi wbudowanych w programie Visual Studio for Mac lub Visual Stu
 
 
 
-##  <a name="graphics-and-animationandroidapp-fundamentalsgraphics-and-animationmd"></a>[Grafiki i animacji](~/android/app-fundamentals/graphics-and-animation.md)
+##  <a name="graphics-and-animationandroidapp-fundamentalsgraphics-and-animationmd"></a>[Grafiki i animacje](~/android/app-fundamentals/graphics-and-animation.md)
 
 Android zapewnia bardzo zaawansowane i różnych framework do obsługi 2D grafiki i animacji. Ten dokument zawiera wprowadzenie tych platform oraz opisano, jak utworzyć niestandardowe grafiki i animacji i używać go w aplikacji platformy Xamarin.Android.
 
 
-##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architektury Procesora](~/android/app-fundamentals/cpu-architectures.md)
+##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architektury procesorów](~/android/app-fundamentals/cpu-architectures.md)
 
 Xamarin.Android obsługuje kilka architektury Procesora, łącznie z urządzeniami 32-bitowe i 64-bitowych. W tym artykule wyjaśniono, jak wybrać aplikację do co najmniej jeden architektury Procesora obsługiwany system Android.
 
@@ -90,13 +89,13 @@ W tej sekcji wyjaśniono, jak do zaimplementowania powiadomień lokalnych i zdal
 
 
 
-##  <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Touch](~/android/app-fundamentals/touch/index.md)
+##  <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Dotyk](~/android/app-fundamentals/touch/index.md)
 
 W tej sekcji wyjaśniono, że pojęcia i szczegóły dotyczące implementowania touch gestów w systemie Android. Interfejsy API Touch są wprowadzone i wyjaśniono następuje eksploracji aparaty rozpoznawania gestów.
 
 
 
-##  <a name="httpclient-stack-and-ssltlsandroidapp-fundamentalshttp-stackmd"></a>[Stos HttpClient i protokołu SSL/TLS](~/android/app-fundamentals/http-stack.md)
+##  <a name="httpclient-stack-and-ssltlsandroidapp-fundamentalshttp-stackmd"></a>[Stos HttpClient i protokoły SSL/TLS](~/android/app-fundamentals/http-stack.md)
 
 W tej sekcji opisano selektorów HttpClient stosu i implementacji protokołów SSL/TLS dla systemu Android. Te ustawienia określają HttpClient i SSL/TLS implementację, które będą używane przez aplikacje platformy Xamarin.Android.
 

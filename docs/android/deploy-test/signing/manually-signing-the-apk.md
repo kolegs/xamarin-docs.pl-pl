@@ -1,17 +1,16 @@
 ---
-title: "Ręcznie podpisywania plik APK"
-ms.topic: article
+title: Ręcznie podpisywania plik APK
 ms.prod: xamarin
 ms.assetid: 08549E1C-7F04-4D20-9E7A-794B9D09FD12
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9e1b168b7212f093b50a36c40550fba2e7d63e77
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manually-signing-the-apk"></a>Ręcznie podpisywania plik APK
 
@@ -137,7 +136,7 @@ Zobacz [dokumentacji firmy Google](https://developer.android.com/studio/command-
 > [!WARNING]
 > Ta sekcja dotyczy tylko, jeśli jest nececssary do podpisania APK z **jarsigner** narzędzia. Deweloperzy są zachęcani do użycia **apksigner** Aby podpisać plik APK.
 
-Ta metoda obejmuje podpisywanie przy użyciu pliku APK  **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)**  polecenia z zestawu Java SDK.  **Jarsigner** narzędzie jest dostarczane przez zestaw SDK Java. 
+Ta metoda obejmuje podpisywanie przy użyciu pliku APK **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** polecenia z zestawu Java SDK.  **Jarsigner** narzędzie jest dostarczane przez zestaw SDK Java. 
 
 Poniżej pokazano, jak zarejestrować APK przy użyciu **jarsigner** oraz klucz `publishingdoc` który jest zawarty w pliku magazynu kluczy o nazwie **xample.keystore** :
 

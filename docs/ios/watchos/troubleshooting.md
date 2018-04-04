@@ -1,18 +1,18 @@
 ---
-title: "watchOS Rozwiązywanie problemów"
-description: "Znane problemy i rozwiązania problemów programowanie watchOS."
-ms.topic: article
+title: watchOS Rozwiązywanie problemów
+description: Znane problemy i rozwiązania problemów programowanie watchOS.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Rozwiązywanie problemów
 
@@ -35,7 +35,7 @@ Ta strona zawiera dodatkowe informacje i obejścia funkcji nadal w fazie tworzen
 <a name="deploy" />
 
 - Wcześniejszych wersjach programu Visual Studio for Mac niepoprawnie Pokaż jedną z **AppleCompanionSettings** ikony jako pikseli 88 x 88; co skutkuje **Brak ikony błędu** przy próbie przesłać do aplikacji Magazyn.
-    Ikona powinny być 87 x 87 pikseli (29 jednostki dla  **@3x**  siatkówki ekrany). Nie można rozwiązać ten problem w programie Visual Studio dla komputerów Mac — albo zasób obrazu w środowisku Xcode edycji lub ręcznie edytować **Contents.json** plików (do dopasowania [w tym przykładzie](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Ikona powinny być 87 x 87 pikseli (29 jednostki dla **@3x** siatkówki ekrany). Nie można rozwiązać ten problem w programie Visual Studio dla komputerów Mac — albo zasób obrazu w środowisku Xcode edycji lub ręcznie edytować **Contents.json** plików (do dopasowania [w tym przykładzie](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Jeśli projekt rozszerzenia czujki **Info.plist > identyfikator pakietu WKApp** nie jest [poprawnie ustawić](~/ios/watchos/get-started/project-references.md) odpowiadające aplikacji czujki **identyfikator pakietu**, debuger będą mogły nawiązać połączenia i Visual Studio for Mac będzie czekać z komunikatem *"Oczekiwanie na debugera połączyć"*.
 

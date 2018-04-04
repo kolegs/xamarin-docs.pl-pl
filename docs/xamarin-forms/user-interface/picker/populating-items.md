@@ -1,18 +1,17 @@
 ---
-title: "Dodawanie danych do kolekcji elementów selektora"
-description: "Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi przez dodanie go do kolekcji elementów oraz jak reagować na wybór elementu przez użytkownika."
-ms.topic: article
+title: Dodawanie danych do kolekcji elementów selektora
+description: Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi przez dodanie go do kolekcji elementów oraz jak reagować na wybór elementu przez użytkownika.
 ms.prod: xamarin
 ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 3468e38d8ef46dfef870a05bf72d93c28195dae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 63a72861895f79d2d0154297f88610ddb8bb8beb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>Dodawanie danych do kolekcji elementów selektora
 

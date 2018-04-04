@@ -1,18 +1,17 @@
 ---
-title: "Rozszerzenia znaczników XAML"
-description: "Rozszerz zakres źródła, z których XAML atrybuty są ustawiane"
-ms.topic: article
+title: Rozszerzenia znaczników XAML
+description: Rozszerz zakres źródła, z których XAML atrybuty są ustawiane
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 11889115b65608c750690c33052a9c86f7081e25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-markup-extensions"></a>Rozszerzenia znaczników XAML
 
@@ -46,11 +45,11 @@ Wszystkie ustawienia atrybutów w nawiasach klamrowych jest *zawsze* rozszerzeni
 
 W tym artykule jest podzielony na dwie części:
 
-## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Korzystanie z rozszerzeń znaczników XAML](consuming.md)  
+## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Korzystanie z rozszerzeń struktury znaczników XAML](consuming.md)  
 
 Użyj rozszerzenia znaczników XAML, które są zdefiniowane w platformy Xamarin.Forms.
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Tworzenie rozszerzeń znaczników XAML](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Tworzenie rozszerzeń struktury znaczników XAML](creating.md) 
 
 Pisanie własnych niestandardowych rozszerzeń znaczników XAML.
 

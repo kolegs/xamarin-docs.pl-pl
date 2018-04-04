@@ -1,18 +1,17 @@
 ---
-title: "Bezpłatne, inicjowania obsługi administracyjnej"
-description: "W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy — bez udostępniania."
-ms.topic: article
+title: Bezpłatne, inicjowania obsługi administracyjnej
+description: W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy — bez udostępniania.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 26ac40360b4e706180f4154f4fddcd9c992ad94b
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="free-provisioning"></a>Bezpłatne, inicjowania obsługi administracyjnej
 
@@ -41,7 +40,7 @@ Do korzystania z bezpłatnej obsługi administracyjnej do wdrażania aplikacji n
 
 1. Jeśli nie ma identyfikatora Apple ID, utworzyć w [appleid.apple.com](https://appleid.apple.com/account).
 2. Otwórz środowisko Xcode i przejdź do **Xcode > Preferencje**.
-3. W obszarze **kont**, użyj  **+**  przycisk, aby dodać do istniejącego identyfikatora firmy Apple. Powinien wyglądać podobnie jak na poniższym zrzucie ekranu:
+3. W obszarze **kont**, użyj **+** przycisk, aby dodać do istniejącego identyfikatora firmy Apple. Powinien wyglądać podobnie jak na poniższym zrzucie ekranu:
 
   [![](free-provisioning-images/launchapp1.png "Xcode preferencji konta")](free-provisioning-images/launchapp1.png#lightbox)
 

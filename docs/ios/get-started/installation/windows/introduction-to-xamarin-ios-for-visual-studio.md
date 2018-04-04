@@ -1,18 +1,17 @@
 ---
 title: Wprowadzenie do platformy Xamarin.iOS dla programu Visual Studio
-description: "W tym artykule przedstawiono sposób tworzenia i testowania aplikacji systemu iOS Xamarin przy użyciu programu Visual Studio. Będzie on opisano sposób tworzenie nowych projektów dla systemu iOS, tworzenia aplikacji systemu iOS, a następnie skompilować, testowania i debugowania za pomocą sieci Mac kompilatora Apple hosta i symulator i łańcuch narzędzi kompilacji dla platformy Xamarin za pomocą programu Visual Studio."
-ms.topic: article
+description: W tym artykule przedstawiono sposób tworzenia i testowania aplikacji systemu iOS Xamarin przy użyciu programu Visual Studio. Będzie on opisano sposób tworzenie nowych projektów dla systemu iOS, tworzenia aplikacji systemu iOS, a następnie skompilować, testowania i debugowania za pomocą sieci Mac kompilatora Apple hosta i symulator i łańcuch narzędzi kompilacji dla platformy Xamarin za pomocą programu Visual Studio.
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Wprowadzenie do platformy Xamarin.iOS dla programu Visual Studio
 

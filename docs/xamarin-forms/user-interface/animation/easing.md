@@ -1,18 +1,17 @@
 ---
 title: Zwalnianie funkcji
-description: "Platformy Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia czemu można kontrolować sposób przyspieszenia animacji lub spowolnić nich uruchomiony. W tym artykule przedstawiono, jak używać funkcji sterowania tempem zmian wstępnie zdefiniowane i sposób tworzenia niestandardowych funkcji sterowania tempem zmian."
-ms.topic: article
+description: Platformy Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia czemu można kontrolować sposób przyspieszenia animacji lub spowolnić nich uruchomiony. W tym artykule przedstawiono, jak używać funkcji sterowania tempem zmian wstępnie zdefiniowane i sposób tworzenia niestandardowych funkcji sterowania tempem zmian.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: a57fd6e45d744d0e527c811649ce5299ebcd34d5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9171b885bdf5958b6969719301a1d7dad51d95b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="easing-functions"></a>Zwalnianie funkcji
 

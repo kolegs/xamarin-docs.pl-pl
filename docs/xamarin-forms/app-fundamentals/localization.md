@@ -1,18 +1,17 @@
 ---
 title: Lokalizacja
-description: "Może być lokalizowany aplikacji platformy Xamarin.Forms przy użyciu plików zasobów .NET."
-ms.topic: article
+description: Może być lokalizowany aplikacji platformy Xamarin.Forms przy użyciu plików zasobów .NET.
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="localization"></a>Lokalizacja
 
@@ -760,7 +759,7 @@ Ten zrzut ekranu przedstawia Przykładowa aplikacja dla systemu iOS z specyficzn
 
 ![](localization-images/ios-resources.png "Lokalizacja katalogu projektu systemu iOS")
 
-Każdy katalog języka zawiera kopię **flag.png**zlokalizowaną dla tego języka. Jeśli obraz nie zostanie podany, system operacyjny będzie domyślnie obrazu w katalogu język domyślny. Aby uzyskać pełną pomoc siatkówki, należy określić  **@2x**  i  **@3x**  kopie każdego obrazu.
+Każdy katalog języka zawiera kopię **flag.png**zlokalizowaną dla tego języka. Jeśli obraz nie zostanie podany, system operacyjny będzie domyślnie obrazu w katalogu język domyślny. Aby uzyskać pełną pomoc siatkówki, należy określić **@2x** i **@3x** kopie każdego obrazu.
 
 #### <a name="app-name"></a>Nazwa aplikacji
 

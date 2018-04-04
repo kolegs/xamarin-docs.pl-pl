@@ -1,18 +1,17 @@
 ---
-title: "Ręczne tworzenie pakietów NuGet dla platformy Xamarin"
-description: "Ta strona zawiera kilka wskazówek dotyczących ułatwienia tworzenia pakietów NuGet, które odnoszą się do platformy Xamarin."
-ms.topic: article
+title: Ręczne tworzenie pakietów NuGet dla platformy Xamarin
+description: Ta strona zawiera kilka wskazówek dotyczących ułatwienia tworzenia pakietów NuGet, które odnoszą się do platformy Xamarin.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a77dcc8ae1c698e1f1ef40757ab03558f329719
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: ce8003c862205ac80dfea2095009562ae7ebb23f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Ręczne tworzenie pakietów NuGet dla platformy Xamarin
 

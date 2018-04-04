@@ -1,17 +1,16 @@
 ---
-title: "pokrętło"
-ms.topic: article
+title: pokrętło
 ms.prod: xamarin
 ms.assetid: 004089E9-7C1D-2285-765A-B69143091F2A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 039c3f3a177d62a43679facba821675c6d716a91
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="spinner"></a>pokrętło
 
@@ -192,7 +191,7 @@ Uruchamianie aplikacji; wyskakujące powinien wyglądać następująco:
    
   
 
-## <a name="resources"></a>Resources
+## <a name="resources"></a>Zasoby
 
 -   [`Resource.Layout`](https://developer.xamarin.com/api/type/Android.Resource+Layout/) 
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) 

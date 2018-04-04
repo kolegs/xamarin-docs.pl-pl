@@ -1,18 +1,17 @@
 ---
-title: "Menedżer urządzeń Xamarin Android"
-description: "Menedżer urządzeń Android Xamarin, obecnie w wersji zapoznawczej, zastępuje starszy Menedżer urządzeń firmy Google. W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego."
-ms.topic: article
+title: Menedżer urządzeń Xamarin Android
+description: Menedżer urządzeń Android Xamarin, obecnie w wersji zapoznawczej, zastępuje starszy Menedżer urządzeń firmy Google. W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego.
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/20/2018
-ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3dd67f25e389adda1af31f4a2b85abd4cfd751d0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Menedżer urządzeń Xamarin Android
 
@@ -495,7 +494,7 @@ Aby obejść ten problem, wykonaj następujące czynności:
 
 3. Przejdź do tej lokalizacji i kliknij dwukrotnie **user.config** go otworzyć. 
 
-4. W **user.config**, zlokalizuj  **&lt;ustawienia użytkownika&gt;**  element i Dodaj **AndroidSdkPath** do niej atrybut. Ten atrybut ustawiony na ścieżkę zainstalowanym zestawu SDK systemu Android na komputerze, a następnie zapisz plik. Na przykład  **&lt;ustawienia użytkownika&gt;**  będzie wyglądać podobnie do następującej, jeśli zainstalowano zestaw SDK systemu Android w **C:\\programy\\Android\\zestawuSDK**:
+4. W **user.config**, zlokalizuj **&lt;ustawienia użytkownika&gt;** element i Dodaj **AndroidSdkPath** do niej atrybut. Ten atrybut ustawiony na ścieżkę zainstalowanym zestawu SDK systemu Android na komputerze, a następnie zapisz plik. Na przykład **&lt;ustawienia użytkownika&gt;** będzie wyglądać podobnie do następującej, jeśli zainstalowano zestaw SDK systemu Android w **C:\\programy\\Android\\zestawuSDK**:
         
     ```xml
     <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />

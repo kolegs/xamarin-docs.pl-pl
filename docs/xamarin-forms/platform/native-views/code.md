@@ -1,18 +1,17 @@
 ---
-title: "Natywny widoków w języku C#"
-description: "Natywny widoków z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron platformy Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoków natywnego układ platformy Xamarin.Forms utworzone przy użyciu języka C# oraz do zastąpienia układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API."
-ms.topic: article
+title: Natywny widoków w języku C#
+description: Natywny widoków z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron platformy Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoków natywnego układ platformy Xamarin.Forms utworzone przy użyciu języka C# oraz do zastąpienia układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-c"></a>Natywny widoków w języku C#
 

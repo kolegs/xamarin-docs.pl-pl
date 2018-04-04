@@ -1,18 +1,17 @@
 ---
 title: Dystrybucji sklepu z aplikacjami
-description: "W tym dokumencie opisano wymagania dotyczące dystrybucji do sklepu z aplikacjami firmy Apple."
-ms.topic: article
+description: W tym dokumencie opisano wymagania dotyczące dystrybucji do sklepu z aplikacjami firmy Apple.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-store-distribution"></a>Dystrybucji sklepu z aplikacjami
 
@@ -45,7 +44,7 @@ Można wybrać takie same **identyfikator aplikacji** i **urządzeń** używana 
 
 1. Przejdź do *certyfikaty, identyfikatory & profile* sekcji Apple Developer Member Center.
 2. W obszarze *certyfikaty*, wybierz pozycję **produkcji**.
-3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
+3. Kliknij przycisk **+** przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **sklepu z aplikacjami i Ad Hoc**:
 
     [![](images/createcertmanually01.png "Wybierz sklepu z aplikacjami i Ad Hoc")](images/createcertmanually01.png#lightbox)
@@ -81,7 +80,7 @@ Jako wszystkie inne inicjowania obsługi profilu możesz utworzyć identyfikator
 
 
 1. W [Centrum deweloperów firmy Apple](https://developer.apple.com/account/overview.action) przejdź do *certyfikatu, identyfikatory i profile* sekcji. Wybierz **identyfikatorów aplikacji** w obszarze **identyfikatory**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa** której znajdą w portalu.
+2. Kliknij przycisk **+** przycisk i podaj **nazwa** której znajdą w portalu.
 3. Prefiks aplikacji powinna być już ustawiona jako Identyfikatora zespołu i nie można zmienić. Wybierz jawne lub identyfikator aplikacji symboli wieloznacznych i wprowadź identyfikator pakietu w formacie wstecznego DNS, takich jak:
     - **Jawne**: modelu com. [nazwa_domeny]. [ Nazwa aplikacji]
     - **Wildcard**:com.[DomainName].*
@@ -97,7 +96,7 @@ Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wy
 
     [![](images/distribute01.png "Inicjowanie obsługi administracyjnej RSelect > dystrybucji")](images/distribute01.png#lightbox)
 
-2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**:
+2. Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**:
 
     [![](images/distribute02.png "Utwórz profil dystrybucji sklepu z aplikacjami")](images/distribute02.png#lightbox)
 

@@ -1,18 +1,17 @@
 ---
 title: HealthKit
-description: "HealthKit to platforma wprowadzona w systemie iOS 8, która zapewnia scentralizowane, skoordynowanej i bezpieczny magazyn danych informacji dotyczących kondycji. System operacyjny zapewnia prywatności i bezpieczeństwa informacji o kondycji oraz za pomocą aplikacji kondycji pulpitu nawigacyjnego dla użytkownika. Za zgodą użytkownika aplikacje można odczytu i zapisu szerokiej gamy informacji o kondycji."
-ms.topic: article
+description: HealthKit to platforma wprowadzona w systemie iOS 8, która zapewnia scentralizowane, skoordynowanej i bezpieczny magazyn danych informacji dotyczących kondycji. System operacyjny zapewnia prywatności i bezpieczeństwa informacji o kondycji oraz za pomocą aplikacji kondycji pulpitu nawigacyjnego dla użytkownika. Za zgodą użytkownika aplikacje można odczytu i zapisu szerokiej gamy informacji o kondycji.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -69,14 +68,14 @@ Jawne tworzenie **identyfikator aplikacji** i odpowiednią **profilu inicjowania
 
 Bieżące **identyfikatorów aplikacji** są wymienione w [certyfikaty, identyfikatory & profile](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) sekcji Centrum deweloperów. Często, lista zawiera **identyfikator** wartości `*`, wskazujące który **identyfikator aplikacji** - **nazwa** może być używany z dowolnej liczby sufiksy. Takie *identyfikatorów aplikacji symboli wieloznacznych* nie można używać z zestawu kondycji.
  
-Aby utworzyć jawne **identyfikator aplikacji**, kliknij przycisk  **+**  przycisk w prawym górnym umożliwiające przejście do **zarejestrować identyfikator aplikacji systemu iOS** strony:
+Aby utworzyć jawne **identyfikator aplikacji**, kliknij przycisk **+** przycisk w prawym górnym umożliwiające przejście do **zarejestrować identyfikator aplikacji systemu iOS** strony:
 
 
 [![](healthkit-images/image02.png "Rejestrowanie aplikacji w portalu dla deweloperów firmy Apple")](healthkit-images/image02.png#lightbox)
 
 Jak przedstawiono na ilustracji powyżej, po utworzeniu opis aplikacji, użyj **jawny identyfikator aplikacji** sekcji, aby utworzyć identyfikator aplikacji. W **usługi aplikacji** sekcji wyboru **Kit kondycji** w **Włącz usługi** sekcji.
 
-Gdy wszystko będzie gotowe, naciśnij klawisz **Kontynuuj** przycisk, aby zarejestrować **identyfikator aplikacji** na Twoim koncie. Zostanie wyświetlona Wstecz **certyfikaty identyfikatory i profile** strony. Kliknij przycisk **profile inicjowania obsługi** przejście do listy do bieżącego profilu inicjowania obsługi administracyjnej, a następnie kliknij przycisk  **+**  przycisk w prawym górnym rogu, aby przejść do **dodać systemu iOS Profil inicjowania obsługi administracyjnej** strony. Wybierz **tworzenie aplikacji dla systemu iOS** opcję i kliknij przycisk **Kontynuuj** na uzyskanie dostępu do **wybierz identyfikator aplikacji** strony. W tym miejscu, wybierz jawnych **identyfikator aplikacji** określonej wcześniej:
+Gdy wszystko będzie gotowe, naciśnij klawisz **Kontynuuj** przycisk, aby zarejestrować **identyfikator aplikacji** na Twoim koncie. Zostanie wyświetlona Wstecz **certyfikaty identyfikatory i profile** strony. Kliknij przycisk **profile inicjowania obsługi** przejście do listy do bieżącego profilu inicjowania obsługi administracyjnej, a następnie kliknij przycisk **+** przycisk w prawym górnym rogu, aby przejść do **dodać systemu iOS Profil inicjowania obsługi administracyjnej** strony. Wybierz **tworzenie aplikacji dla systemu iOS** opcję i kliknij przycisk **Kontynuuj** na uzyskanie dostępu do **wybierz identyfikator aplikacji** strony. W tym miejscu, wybierz jawnych **identyfikator aplikacji** określonej wcześniej:
 
 
 [![](healthkit-images/image03.png "Wybierz jawny identyfikator aplikacji")](healthkit-images/image03.png#lightbox)

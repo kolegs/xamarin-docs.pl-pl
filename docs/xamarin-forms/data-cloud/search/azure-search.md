@@ -1,18 +1,17 @@
 ---
 title: Wyszukiwanie danych za pomocą usługi Azure Search
 description: Wyszukiwanie Azure to usługa w chmurze, który zapewnia indeksowanie i badania możliwości przekazywane dane. Spowoduje to usunięcie wymagania dotyczące infrastruktury i złożoności algorytmu wyszukiwania tradycyjnie skojarzone z wdrożeniem funkcji wyszukiwania w aplikacji. W tym artykule przedstawiono sposób korzystania z biblioteki usługi Microsoft Azure wyszukiwania Integrowanie usługi Azure Search w aplikacji platformy Xamarin.Forms.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: b0542b330e54a41a0cbe6ffe364def78ab6386b8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Wyszukiwanie danych za pomocą usługi Azure Search
 

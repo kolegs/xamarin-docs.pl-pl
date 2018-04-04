@@ -1,18 +1,17 @@
 ---
-title: "Przechowywanie i uzyskiwanie dostępu do danych w magazynie Azure"
-description: "Magazyn Azure to rozwiązanie magazynu w chmurze skalowalne może służyć do przechowywania danych niestrukturalnych i strukturalnych. W tym artykule przedstawiono, jak za pomocą platformy Xamarin.Forms do przechowywania tekstu i danych binarnych w usłudze Azure Storage oraz sposobu uzyskiwania dostępu do danych."
-ms.topic: article
+title: Przechowywanie i uzyskiwanie dostępu do danych w magazynie Azure
+description: Magazyn Azure to rozwiązanie magazynu w chmurze skalowalne może służyć do przechowywania danych niestrukturalnych i strukturalnych. W tym artykule przedstawiono, jak za pomocą platformy Xamarin.Forms do przechowywania tekstu i danych binarnych w usłudze Azure Storage oraz sposobu uzyskiwania dostępu do danych.
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: d2d85840a0c698bfd3aa01dbacb204072ecca119
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 63afeec81eff350b034e8dd3a13da52801937826
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storing-and-accessing-data-in-azure-storage"></a>Przechowywanie i uzyskiwanie dostępu do danych w magazynie Azure
 

@@ -1,7 +1,6 @@
 ---
 title: Wprowadzenie do platformy Xamarin.Forms
 description: Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układów interfejsu, które mogą być współużytkowane przez iOS, Android, Windows Phone i aplikacji platformy uniwersalnej systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: a04f2e592cb5a90021cc8951bb039fc889b65441
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 58c0fa2041c106f697166891c0e88a409283c17f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="getting-started-with-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 

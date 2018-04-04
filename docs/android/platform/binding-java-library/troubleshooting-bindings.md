@@ -1,18 +1,17 @@
 ---
-title: "Rozwiązywanie problemów z powiązań"
-description: "W tym artykule przedstawiono kilka typowych błędów, które mogą wystąpić podczas generowania powiązań, a także możliwe przyczyny i sugerowane sposoby ich rozwiązywania."
-ms.topic: article
+title: Rozwiązywanie problemów z powiązań
+description: W tym artykule przedstawiono kilka typowych błędów, które mogą wystąpić podczas generowania powiązań, a także możliwe przyczyny i sugerowane sposoby ich rozwiązywania.
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>Rozwiązywanie problemów z powiązań
 
@@ -51,7 +50,7 @@ Gdy ma decompiled biblioteki systemu Android, zbadanie kodu źródłowego. Ogól
 
 - **Klasy, które mają właściwości zaciemnienie** &ndash; cechy zaciemnionego klasy:
 
-    - Nazwa klasy zawiera  **$** , tj. **$.class**
+    - Nazwa klasy zawiera **$**, tj. **$.class**
     - Nazwa klasy jest całkowicie naruszenia zabezpieczeń z małych liter, tj. **a.class**      
 
 - **`import` instrukcje dla bibliotek nieużywane** &ndash; zidentyfikować nieużywane biblioteki i Dodaj do projektu platformy Xamarin.Android powiązania z tych zależności **Akcja kompilacji** z **ReferenceJar**  lub **EmbedddedReferenceJar**.

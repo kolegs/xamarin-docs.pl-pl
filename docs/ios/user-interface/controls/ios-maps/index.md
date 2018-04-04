@@ -1,18 +1,17 @@
 ---
 title: Mapy
-description: "iOS obejmuje MapKit mapuje struktury, która ułatwia dodawanie do aplikacji. Za pomocą zestawu mapy, aplikacji systemu iOS można dodać interakcyjne mapy, obsługujące funkcje, takie jak przesuwanie i powiększanie, przedstawiający lokalizacji użytkownika i nakładania sformatowanego grafiki na mapie. W tym artykule delves w szereg funkcji zestawu mapy, pokazujący sposób móc korzystać z nich do tworzenia geograficzne funkcji do aplikacji"
-ms.topic: article
+description: iOS obejmuje MapKit mapuje struktury, która ułatwia dodawanie do aplikacji. Za pomocą zestawu mapy, aplikacji systemu iOS można dodać interakcyjne mapy, obsługujące funkcje, takie jak przesuwanie i powiększanie, przedstawiający lokalizacji użytkownika i nakładania sformatowanego grafiki na mapie. W tym artykule delves w szereg funkcji zestawu mapy, pokazujący sposób móc korzystać z nich do tworzenia geograficzne funkcji do aplikacji
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3fecf17a4f70e44ca169c825bf0dd34a5127cec8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>Mapy
 

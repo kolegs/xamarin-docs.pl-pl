@@ -1,17 +1,16 @@
 ---
 title: Projekt interfejsu API
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a9c0b02457f006f75dc5b6f0a52e68865d620f67
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="api-design"></a>Projekt interfejsu API
 
@@ -268,7 +267,7 @@ Wcześniej, do portu tego wyrażenia na język C# należy przyjrzeć się wszyst
 Na koniec typów z *stałych* sufiks, takich jak *Android.OS.ParcelableConsts* są teraz przestarzałe, inne niż nowo wprowadzonych InterfaceConsts zagnieżdżone typy. Zostaną one usunięte 3.0 platformy Xamarin.Android.
 
 
-## <a name="resources"></a>Resources
+## <a name="resources"></a>Zasoby
 
 Obrazy, opisy układu, binarne obiekty BLOB i słowników ciąg może być uwzględniony w aplikacji jako [pliki zasobów](http://developer.android.com/guide/topics/resources/providing-resources.html).
 Różne interfejsów API systemu Android mają na celu [działać na identyfikatorów zasobów](http://developer.android.com/guide/topics/resources/accessing-resources.html) zamiast zajmowanie się obrazy, ciągi lub binarne obiektów blob bezpośrednio.

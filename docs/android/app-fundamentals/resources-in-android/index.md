@@ -1,18 +1,17 @@
 ---
 title: Zasoby dla systemu android
-description: "W tym artykule pojęcia związane z Android zasobów na platformie Xamarin.Android i będzie udokumentować sposób ich użycia. Uwzględniono również sposób użycia zasobów w aplikacji systemu Android do obsługi aplikacji lokalizacji i wielu urządzeń, takich jak różnych rozmiarów ekranu i gęstości."
-ms.topic: article
+description: W tym artykule pojęcia związane z Android zasobów na platformie Xamarin.Android i będzie udokumentować sposób ich użycia. Uwzględniono również sposób użycia zasobów w aplikacji systemu Android do obsługi aplikacji lokalizacji i wielu urządzeń, takich jak różnych rozmiarów ekranu i gęstości.
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: 6546870d85f7b77e60dff0cb9e6075f982c9cb8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7b6ba9cdc222019bfa2e1cb9a61b54e290e69bba
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-resources"></a>Zasoby dla systemu android
 

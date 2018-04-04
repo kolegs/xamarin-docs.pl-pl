@@ -1,18 +1,17 @@
 ---
 title: Powiadomienia wypychane w systemie iOS
-description: "W tej sekcji opisano powiadomień wypychanych w systemie iOS. Podaj Usługa bramy powiadomień wypychanych w Apple oraz roli, która jest odtwarzany w publikacji powiadomienia do aplikacji systemu iOS. Go objaśnia sposób tworzenia niezbędne do włączenia powiadomień wypychanych i omówiono w nim certyfikaty zabezpieczeń. Na koniec w tej sekcji będzie omawiać niektóre zadania celów, które serwery aplikacji należy wykonać, aby śledzić klienckie urządzenia przenośne."
-ms.topic: article
+description: W tej sekcji opisano powiadomień wypychanych w systemie iOS. Podaj Usługa bramy powiadomień wypychanych w Apple oraz roli, która jest odtwarzany w publikacji powiadomienia do aplikacji systemu iOS. Go objaśnia sposób tworzenia niezbędne do włączenia powiadomień wypychanych i omówiono w nim certyfikaty zabezpieczeń. Na koniec w tej sekcji będzie omawiać niektóre zadania celów, które serwery aplikacji należy wykonać, aby śledzić klienckie urządzenia przenośne.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>Powiadomienia wypychane w systemie iOS
 
@@ -51,7 +50,7 @@ Każdy z tych środowisk wspomniano w poprzedniej sekcji wymagają własny certy
 
     [![](remote-notifications-in-ios-images/image6new.png "Przejdź do sekcji identyfikatorów aplikacji i Utwórz nowy identyfikator aplikacji")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Po kliknięciu  **+**  przycisku, będzie można wprowadzić opis i identyfikator pakietu dla identyfikator aplikacji, jak pokazano w następnym zrzut ekranu:
+3.  Po kliknięciu **+** przycisku, będzie można wprowadzić opis i identyfikator pakietu dla identyfikator aplikacji, jak pokazano w następnym zrzut ekranu:
 
     [![](remote-notifications-in-ios-images/image7new.png "Wprowadź opis oraz identyfikator pakietu dla Identyfikatora aplikacji")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

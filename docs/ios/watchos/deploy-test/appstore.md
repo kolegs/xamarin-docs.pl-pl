@@ -1,18 +1,17 @@
 ---
-title: "Wdrażanie do sklepu z aplikacjami"
-description: "Wdrażanie aplikacji czujki do sklepu z aplikacjami"
-ms.topic: article
+title: Wdrażanie do sklepu z aplikacjami
+description: Wdrażanie aplikacji czujki do sklepu z aplikacjami
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Wdrażanie do sklepu z aplikacjami
 
@@ -177,7 +176,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Upewnij się, masz najnowszą wersję programu Visual Studio dla komputerów Mac, a Twoje **AppIcons.appiconset** zawiera pełen zestaw obrazów. Jeśli są nadal występuje błąd, Wyświetl źródło **Contents.json** aby potwierdzić zawiera wpis dla wszystkich wymaganych obrazów. Alternatywnie, po upewnieniu się, używasz najnowszej wersji programu Xamarin, Usuń i Utwórz ponownie **AppIcons.appiconset**.
 
 > [!IMPORTANT]
-> Jest znaną usterką w programie Visual Studio obsługi dla komputerów Mac czujki ikony: oczekuje 88 x 88 piksel obrazu  **29x29@3x**  obrazu (która powinna być pikseli 87 x 87).
+> Jest znaną usterką w programie Visual Studio obsługi dla komputerów Mac czujki ikony: oczekuje 88 x 88 piksel obrazu **29x29@3x** obrazu (która powinna być pikseli 87 x 87).
 
 
 Nie można rozwiązać ten problem w programie Visual Studio dla komputerów Mac — albo zasób obrazu w środowisku Xcode edycji lub ręcznie edytować **Contents.json** plików (do dopasowania [w tym przykładzie](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).

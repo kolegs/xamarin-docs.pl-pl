@@ -1,17 +1,16 @@
 ---
 title: Handoff
-description: "Ten artykuł obejmuje pracy z przekazaniem w aplikacji platformy Xamarin.iOS transferu działań użytkownika między aplikacje działające na użytkownika przez inne urządzenia."
-ms.topic: article
+description: Ten artykuł obejmuje pracy z przekazaniem w aplikacji platformy Xamarin.iOS transferu działań użytkownika między aplikacje działające na użytkownika przez inne urządzenia.
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handoff"></a>Handoff
 
@@ -463,7 +462,7 @@ Ten plik JSON zawiera słownik, który określa listę identyfikatorów aplikacj
 }
 ```
 
-Do podpisywania pliku JSON (dzięki czemu jest on prawidłowy `Content-Type` z `application/pkcs7-mime`), użyj **terminali** aplikacji i `openssl` z certyfikat i klucz wystawiony przez urząd certyfikacji zaufany przez system iOS (zobacz [ http://support.Apple.com/kb/ht5012](http://support.apple.com/kb/ht5012) lista). Na przykład:
+Do podpisywania pliku JSON (dzięki czemu jest on prawidłowy `Content-Type` z `application/pkcs7-mime`), użyj **terminali** aplikacji i `openssl` z certyfikat i klucz wystawiony przez urząd certyfikacji zaufany przez system iOS (zobacz [ http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012) lista). Na przykład:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",

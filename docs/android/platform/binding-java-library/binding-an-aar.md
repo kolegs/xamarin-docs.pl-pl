@@ -1,18 +1,17 @@
 ---
-title: "Powiązanie. AAR"
-description: "Ten przewodnik zawiera instrukcje krok po kroku do tworzenia biblioteki powiązania Xamarin.Android Java z systemem Android. Plik AAR."
-ms.topic: article
+title: Powiązanie. AAR
+description: Ten przewodnik zawiera instrukcje krok po kroku do tworzenia biblioteki powiązania Xamarin.Android Java z systemem Android. Plik AAR.
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-an-aar"></a>Powiązanie. AAR
 
@@ -26,7 +25,7 @@ _Ten przewodnik zawiera instrukcje krok po kroku do tworzenia biblioteki powiąz
 
 -   Skompilowany kod języka Java
 -   Identyfikatory zasobów
--   Resources
+-   Zasoby
 -   Meta-data (na przykład deklaracje działania, uprawnienia)
 
 W tym przewodniku możemy czynności w podstawy tworzenia biblioteki powiązania z jednym. Plik AAR. Omówienie Java biblioteki powiązanie ogólnie (za pomocą przykładowego kodu podstawowych), zobacz [powiązanie biblioteka języka Java](~/android/platform/binding-java-library/index.md).
@@ -284,7 +283,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Textanalyzer.aar** przykład zawierający plik obrazu, który znajduje się w **res/drawable/monkey.png**. Umożliwia dostęp do tego zasobu obrazu i używać go w naszym przykładzie aplikacji:
 
-Edytuj **BindingTest** układu (**Main.axml**) i Dodaj `ImageView` na końcu `LinearLayout` kontenera. To `ImageView` Wyświetla obraz znaleźć pod adresem  **@drawable/monkey** ; ten obraz zostaną załadowane z sekcji zasobów **textanalyzer.aar**:
+Edytuj **BindingTest** układu (**Main.axml**) i Dodaj `ImageView` na końcu `LinearLayout` kontenera. To `ImageView` Wyświetla obraz znaleźć pod adresem **@drawable/monkey**; ten obraz zostaną załadowane z sekcji zasobów **textanalyzer.aar**:
 
 ```xml
     ...

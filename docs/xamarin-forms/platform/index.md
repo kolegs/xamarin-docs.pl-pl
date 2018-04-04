@@ -1,18 +1,17 @@
 ---
 title: Funkcje platformy
-description: "Korzystać z funkcji specyficznych dla platformy z platformy Xamarin.Forms"
-ms.topic: article
+description: Korzystać z funkcji specyficznych dla platformy z platformy Xamarin.Forms
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 950cc4a8611b05c22825ef89a85827fa0d3e5f7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
@@ -22,7 +21,7 @@ Platformy Xamarin.Forms umożliwia wprowadzają funkcje specyficzne dla platform
 
 Ten przewodnik opisuje sposób implementowania projektu materiałów, aktualizując istniejących aplikacji platformy Xamarin.Forms Android.
 
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indeksowanie aplikacji i połączeń bezpośrednich](deep-linking.md)
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indeksowanie aplikacji i tworzenie linku do strony docelowej](deep-linking.md)
 
 Indeksowanie aplikacji umożliwia aplikacji, które w przeciwnym razie mogłyby zapomniane, po kilku używa pozostanie odpowiednich przez znajdujących się w wynikach wyszukiwania. Bezpośrednich połączeń umożliwia aplikacjom na odpowiadanie na wynik wyszukiwania, które zwykle zawiera dane aplikacji, przechodząc na stronę odwołanie z link bezpośredni.
 
@@ -38,11 +37,11 @@ Niektóre style z systemem iOS można wykonać za pomocą **Info.plist** i `UIAp
 
 Platformy Xamarin.Forms ma teraz obsługę podglądu macOS aplikacji.
 
-## <a name="native-formsnative-formsmd"></a>[Formularze natywnego](native-forms.md)
+## <a name="native-formsnative-formsmd"></a>[Formularze natywne](native-forms.md)
 
 Formularze natywnego Zezwalaj platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron, które mają być używane przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej.
 
-## <a name="native-viewsnative-viewsindexmd"></a>[Widoki natywnego](native-views/index.md)
+## <a name="native-viewsnative-viewsindexmd"></a>[Widoki natywne](native-views/index.md)
 
 Natywny widoków z systemem iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio z platformy Xamarin.Forms. W widokach natywny można ustawić właściwości i procedury obsługi zdarzeń i współdziałają z widokami platformy Xamarin.Forms.
 
@@ -50,7 +49,7 @@ Natywny widoków z systemem iOS, Android i platformy uniwersalnej systemu Window
 
 Szczegóły platformy pozwalają na korzystanie z funkcji, które są dostępne tylko na danej platformie, bez konieczności niestandardowe moduły renderowania lub efekty.
 
-## <a name="pluginspluginsmd"></a>[Dodatki plug-in](plugins.md)
+## <a name="pluginspluginsmd"></a>[Wtyczki](plugins.md)
 
 Są dostępne w witrynie Github, Nuget i magazynie składników Xamarin pomóc wydłużyć aplikacji platformy Xamarin.Forms szerokiej gamy dodatki typu open source.
 

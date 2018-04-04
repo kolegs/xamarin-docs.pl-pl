@@ -1,18 +1,17 @@
 ---
-title: "Pasek narzędzi"
-description: "Pasek narzędzi jest składnik paska akcji, który zapewnia większą elastyczność niż na pasku akcji domyślnej: może być umieszczony w dowolnym miejscu aplikacji, można zmienić jego rozmiaru i może używać schemat kolorów, który różni się od aplikacji motywu. Ponadto każdy ekran aplikacji może mieć wiele pasków narzędzi."
-ms.topic: article
+title: Pasek narzędzi
+description: 'Pasek narzędzi jest składnik paska akcji, który zapewnia większą elastyczność niż na pasku akcji domyślnej: może być umieszczony w dowolnym miejscu aplikacji, można zmienić jego rozmiaru i może używać schemat kolorów, który różni się od aplikacji motywu. Ponadto każdy ekran aplikacji może mieć wiele pasków narzędzi.'
 ms.prod: xamarin
 ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08fa00b539bd5baca4f5d61b04419a76a4a72ab1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="toolbar"></a>Pasek narzędzi
 

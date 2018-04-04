@@ -1,18 +1,18 @@
 ---
-title: "Hello, Android: Nowości"
-description: "W tym przewodniku dwuczęściową możesz tworzenie pierwszej aplikacji platformy Xamarin.Android i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android."
-ms.topic: article
+title: 'Hello, Android: Nowości'
+description: W tym przewodniku dwuczęściową możesz tworzenie pierwszej aplikacji platformy Xamarin.Android i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Nowości
 
@@ -106,7 +106,7 @@ Przyjrzyj się elementy wewnątrz każdego folderu i jego celem projektu:
 
 -   **Zasoby** &ndash; zawiera zasoby aplikacji, takich jak ciągów, obrazy i układów. Dostęp do tych zasobów w kodzie za pomocą wygenerowany `Resource` klasy. [Android zasobów](~/android/app-fundamentals/resources-in-android/index.md) przewodnik zawiera szczegółowe informacje o **zasobów** katalogu. Szablon aplikacji zawiera również krótkie przewodnik dotyczący zasobów w **AboutResources.txt** pliku.
 
-### <a name="resources"></a>Resources
+### <a name="resources"></a>Zasoby
 
 **Zasobów** katalog zawiera cztery foldery o nazwie **obiektów drawable**, **układu**, **mipmap** i **wartości**, a także plik o nazwie **Resource.designer.cs**.
 

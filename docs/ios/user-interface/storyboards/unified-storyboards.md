@@ -1,18 +1,17 @@
 ---
 title: Ujednolicone Scenorys
-description: "Ujednolicone scenorys Zezwalaj iOS deweloperom tworzenie interfejsu użytkownika z jednego scenorysu, zamiast wielu scenorys, aby pokrywał większą liczbę rozmiaru ekranu urządzenia. W tym artykule jest przeznaczona do zapewniają bardziej omówienie działania ujednoliconego scenorysu w ramach platformy Xamarin.iOS."
-ms.topic: article
+description: Ujednolicone scenorys Zezwalaj iOS deweloperom tworzenie interfejsu użytkownika z jednego scenorysu, zamiast wielu scenorys, aby pokrywał większą liczbę rozmiaru ekranu urządzenia. W tym artykule jest przeznaczona do zapewniają bardziej omówienie działania ujednoliconego scenorysu w ramach platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>Ujednolicone Scenorys
 
@@ -680,7 +679,7 @@ A po uruchomieniu aplikacji na telefonie iPhone symulatora brakuje elementu:
 
  [![](unified-storyboards-images/exclude05.png "Brak elementu podczas uruchomionej aplikacji w symulatorze telefonów iPhone")](unified-storyboards-images/exclude05.png#lightbox)
 
-Aby usunąć element przypadku wykluczenia, po prostu wybierz element w **powierzchni projektowej**, przewiń do dołu **Explorer właściwości** i kliknij przycisk  **-** przycisk obok wielkości liter, aby usunąć.
+Aby usunąć element przypadku wykluczenia, po prostu wybierz element w **powierzchni projektowej**, przewiń do dołu **Explorer właściwości** i kliknij przycisk **-**przycisk obok wielkości liter, aby usunąć.
 
 Implementacja interfejsu Unified Scenorys obejrzeć w `UnifiedStoryboard` Przykładowa aplikacja dla systemu iOS 8 Xamarin dołączony do tego dokumentu.
 

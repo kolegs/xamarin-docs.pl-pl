@@ -1,18 +1,17 @@
 ---
-title: "Wyróżnianie trasy na mapie"
-description: "W tym artykule opisano sposób dodawania nakładki linię łamaną na mapę. Nakładki łamanej jest serią połączonych segmentów, które zwykle są używane do wyświetlenia trasy na mapie lub z dowolnym kształcie, która jest wymagana."
-ms.topic: article
+title: Wyróżnianie trasy na mapie
+description: W tym artykule opisano sposób dodawania nakładki linię łamaną na mapę. Nakładki łamanej jest serią połączonych segmentów, które zwykle są używane do wyświetlenia trasy na mapie lub z dowolnym kształcie, która jest wymagana.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c7becef16009596148b4de28e4e8f6892cb44fe1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f781a472a63d97c8859aff36b28e0fd4fa0c7756
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Wyróżnianie trasy na mapie
 
@@ -31,7 +30,7 @@ Gdy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) re
 1. [Dostosowywanie](#Customizing_the_Map) mapy przez utworzenie niestandardowego modułu renderowania mapy na każdej z platform.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 Informacje o dostosowywaniu mapy, przy użyciu niestandardowego modułu renderowania, zobacz [Dostosowywanie mapy numer Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 

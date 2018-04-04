@@ -1,18 +1,17 @@
 ---
-title: "Przy użyciu TestFlight"
-description: "TestFlight teraz jest własnością firmy Apple, a jest to podstawowy sposób do wersji beta testowania aplikacji platformy Xamarin.iOS. Ten artykuł przeprowadzi Cię przez wszystkie kroki procesu TestFlight — z przekazywania aplikacji, do pracy z iTunes Connect."
-ms.topic: article
+title: Przy użyciu TestFlight
+description: TestFlight teraz jest własnością firmy Apple, a jest to podstawowy sposób do wersji beta testowania aplikacji platformy Xamarin.iOS. Ten artykuł przeprowadzi Cię przez wszystkie kroki procesu TestFlight — z przekazywania aplikacji, do pracy z iTunes Connect.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-testflight"></a>Przy użyciu TestFlight
 
@@ -69,7 +68,7 @@ Poniższy przepływ pracy zawiera opis czynności, aby rozpocząć korzystanie z
     [![](testflight-images/my-apps.png "Wybierz Moje aplikacje")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Na **Moje aplikacje** ekranu, kliknij pozycję  **+**  przycisk w lewym górnym rogu ekranu, aby dodać nową aplikację. Jeśli masz konta dewelopera Mac i z systemem iOS, pojawi się monit, aby wybrać nowy typ aplikacji w tym miejscu.
+3.  Na **Moje aplikacje** ekranu, kliknij pozycję **+** przycisk w lewym górnym rogu ekranu, aby dodać nową aplikację. Jeśli masz konta dewelopera Mac i z systemem iOS, pojawi się monit, aby wybrać nowy typ aplikacji w tym miejscu.
 
 Użytkownik zobaczy **nowych aplikacji dla systemu iOS** przesyłanie okna, które musi zawierać dokładnie takie same informacje jak Info.plist aplikacji
 
@@ -204,7 +203,7 @@ Istniejące iTunes Połącz użytkowników będą wyświetlane na liście. Aby j
 
 [![](testflight-images/internal-tester.png "Włącz przełącznik wewnętrzny Tester")](testflight-images/internal-tester.png#lightbox)
 
-Aby dodać użytkownika, który nie znajduje się na liście, wybierz opcję  **+**  znajdujący się obok *użytkowników*i podaj pierwszy adres nazwę, nazwisko i adres e-mail do utworzenia konta. Użytkownik musi potwierdzić swój adres e-mail, aby uaktywnić konto:
+Aby dodać użytkownika, który nie znajduje się na liście, wybierz opcję **+** znajdujący się obok *użytkowników*i podaj pierwszy adres nazwę, nazwisko i adres e-mail do utworzenia konta. Użytkownik musi potwierdzić swój adres e-mail, aby uaktywnić konto:
 
 [![](testflight-images/add-new-user.png "Dodawanie użytkownika")](testflight-images/add-new-user.png#lightbox)
 

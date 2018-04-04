@@ -1,18 +1,17 @@
 ---
 title: Style globalne
-description: "Style mogą być udostępniane globalnie przez dodanie ich do słownika zasobów aplikacji. Pozwala to uniknąć duplikowania style na stronach lub formantów."
-ms.topic: article
+description: Style mogą być udostępniane globalnie przez dodanie ich do słownika zasobów aplikacji. Pozwala to uniknąć duplikowania style na stronach lub formantów.
 ms.prod: xamarin
 ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a505720e5fef8fe9e9ef82d03e53370210772f45
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="global-styles"></a>Style globalne
 

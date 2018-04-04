@@ -1,18 +1,17 @@
 ---
 title: Tworzenie APKs specyficzne dla interfejsu ABI
-description: "Ten dokument zostanie omówiono sposób tworzenia APK, który będzie współpracować z jednym ABI, przy użyciu platformy Xamarin.Android."
-ms.topic: article
+description: Ten dokument zostanie omówiono sposób tworzenia APK, który będzie współpracować z jednym ABI, przy użyciu platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 89a78c8dd1243dcfea9d14bd9758c5403d1d21ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="building-abi-specific-apks"></a>Tworzenie APKs specyficzne dla interfejsu ABI
 

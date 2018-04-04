@@ -1,18 +1,17 @@
 ---
 title: ViewPager
-description: "ViewPager jest Menedżer układu, umożliwiające wdrożenie gestural nawigacji. Gestural nawigacji umożliwia użytkownikowi Przejdź lewy i prawy kroków strony danych. Ten przewodnik opisuje sposób nadawania gestural nawigacja z użyciem ViewPager, z włączonymi i wyłączonymi fragmenty. Zawiera ona również opis sposobu dodawania wskaźniki strony przy użyciu PagerTitleStrip i PagerTabStrip."
-ms.topic: article
+description: ViewPager jest Menedżer układu, umożliwiające wdrożenie gestural nawigacji. Gestural nawigacji umożliwia użytkownikowi Przejdź lewy i prawy kroków strony danych. Ten przewodnik opisuje sposób nadawania gestural nawigacja z użyciem ViewPager, z włączonymi i wyłączonymi fragmenty. Zawiera ona również opis sposobu dodawania wskaźniki strony przy użyciu PagerTitleStrip i PagerTabStrip.
 ms.prod: xamarin
 ms.assetid: D42896C0-DE7C-4818-B171-CB2D5E5DD46A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e2f93eea970a15df03b00cc962ca7482624973d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bd687175048bb6a19dde21e66619667511a76796
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager"></a>ViewPager
 

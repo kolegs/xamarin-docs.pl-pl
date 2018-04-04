@@ -1,18 +1,17 @@
 ---
-title: "Dostosowywanie powiązania"
-description: "Powiązanie z platformy Xamarin.Android można dostosować, edytując metadanych, która kontroluje proces wiązania. Ręczne modyfikacje często są niezbędne w celu rozwiązania błędów kompilacji i kształtowania wynikowy interfejsu API, aby był bardziej spójny z C# / .NET. Te przewodniki opisano strukturę tych metadanych, jak modyfikować metadanych i sposobu użycia JavaDoc odzyskać nazwy parametrów metody."
-ms.topic: article
+title: Dostosowywanie powiązania
+description: Powiązanie z platformy Xamarin.Android można dostosować, edytując metadanych, która kontroluje proces wiązania. Ręczne modyfikacje często są niezbędne w celu rozwiązania błędów kompilacji i kształtowania wynikowy interfejsu API, aby był bardziej spójny z C# / .NET. Te przewodniki opisano strukturę tych metadanych, jak modyfikować metadanych i sposobu użycia JavaDoc odzyskać nazwy parametrów metody.
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb4f3b24be2072cb8b33893899a23951ace63607
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-bindings"></a>Dostosowywanie powiązania
 

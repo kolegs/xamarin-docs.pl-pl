@@ -1,18 +1,17 @@
 ---
-title: "Możliwości usługi iCloud"
-description: "Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji w ramach usługi iCloud."
-ms.topic: article
+title: Możliwości usługi iCloud
+description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji w ramach usługi iCloud.
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 22a1cd8a300533560f617fd60fc99474922247d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud-capabilities"></a>Możliwości usługi iCloud
 
@@ -47,7 +46,7 @@ Poniższe kroki przedstawiono następujące kroki:
     
      ![Strona główna Centrum deweloperów firmy Apple](icloud-capabilities-images/image22.png)
 
-2.  W obszarze **identyfikatory** wybierz **iCloud kontenery**, a następnie wybierz  **+**  Aby utworzyć nowy kontener:  
+2.  W obszarze **identyfikatory** wybierz **iCloud kontenery**, a następnie wybierz **+** Aby utworzyć nowy kontener:  
     
     ![ekran kontenera usługi iCloud](icloud-capabilities-images/image23.png)
 
@@ -65,7 +64,7 @@ Aby utworzyć nowy identyfikator aplikacji i Dodaj do niej kontener, wykonaj nas
     
     ![Identyfikator sekcji w Centrum deweloperów](icloud-capabilities-images/image26.png)
 
-2.  Wybierz  **+**  przycisk, aby dodać nowy identyfikator aplikacji: 
+2.  Wybierz **+** przycisk, aby dodać nowy identyfikator aplikacji: 
     
     ![Dodaj nowy przycisk Identyfikator aplikacji](icloud-capabilities-images/image27.png)
 

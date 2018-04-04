@@ -1,18 +1,17 @@
 ---
-title: "Wskazówki — przy użyciu lokalnego powiadomienia o platformie Xamarin.Android"
-description: "W tym przewodniku przedstawiono sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.Android. Jednak przedstawia podstawy tworzenia i publikowania lokalnego powiadomienia. Gdy użytkownik kliknie powiadomienie w obszarze powiadomień, uruchamiany drugi działania."
-ms.topic: article
+title: Wskazówki — przy użyciu lokalnego powiadomienia o platformie Xamarin.Android
+description: W tym przewodniku przedstawiono sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.Android. Jednak przedstawia podstawy tworzenia i publikowania lokalnego powiadomienia. Gdy użytkownik kliknie powiadomienie w obszarze powiadomień, uruchamiany drugi działania.
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a2ca3755e3201263584447ba47ec36d2096386da
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Wskazówki — przy użyciu lokalnego powiadomienia o platformie Xamarin.Android
 

@@ -1,18 +1,18 @@
 ---
-title: "Aktualizacja odwołania do składników do NuGet"
-description: "Zamień odwołania do składnika pakietów NuGet do zabezpieczenie przyszłych potrzeb aplikacji."
-ms.topic: article
+title: Aktualizacja odwołania do składników do NuGet
+description: Zamień odwołania do składnika pakietów NuGet do zabezpieczenie przyszłych potrzeb aplikacji.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 
@@ -170,7 +170,7 @@ Spowoduje to usunięcie składnik i wszystkie odwołania. Spowoduje to przerwani
 
 #### <a name="add-the-nuget-package"></a>Dodaj pakiet NuGet
 
-1. Kliknij prawym przyciskiem myszy **pakiety** węzeł i wybierz polecenie **Dodawanie pakietów... **.
+1. Kliknij prawym przyciskiem myszy **pakiety** węzeł i wybierz polecenie **Dodawanie pakietów...** .
 2. Wyszukaj według nazwy lub autora zastąpienia NuGet:
 
   ![](component-nuget-images/nuget-search-sml.png)

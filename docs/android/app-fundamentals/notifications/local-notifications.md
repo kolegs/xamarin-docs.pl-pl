@@ -1,18 +1,17 @@
 ---
 title: Lokalnego powiadomienia
-description: "W tej sekcji przedstawiono sposób wykonania lokalnego powiadomienia o platformie Xamarin.Android. Opisano różne elementy interfejsu użytkownika powiadomień systemu Android i w tym artykule omówiono interfejsu API użytkownika związane z tworzenie i wyświetlanie powiadomienie."
-ms.topic: article
+description: W tej sekcji przedstawiono sposób wykonania lokalnego powiadomienia o platformie Xamarin.Android. Opisano różne elementy interfejsu użytkownika powiadomień systemu Android i w tym artykule omówiono interfejsu API użytkownika związane z tworzenie i wyświetlanie powiadomienie.
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 97c8372656f0cbfa5b8f7bb12d15b00feac4b5c3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-notifications"></a>Lokalnego powiadomienia
 

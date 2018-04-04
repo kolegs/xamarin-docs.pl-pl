@@ -1,18 +1,17 @@
 ---
 title: 'Analiza przypadku: Tasky'
-description: "Tym dokumencie opisano, jak zastosowano zasady tworzenie wieloplatformowych aplikacji w przenośnych Tasky przykładowej aplikacji. Krawędzi na projekt aplikacji mobilnej, zapisywanie typowy kod do ponownego użycia i wdrażanie projektach specyficzne dla platformy, które są przeznaczone dla systemu iOS, Android i Windows Phone platformy."
-ms.topic: article
+description: Tym dokumencie opisano, jak zastosowano zasady tworzenie wieloplatformowych aplikacji w przenośnych Tasky przykładowej aplikacji. Krawędzi na projekt aplikacji mobilnej, zapisywanie typowy kod do ponownego użycia i wdrażanie projektach specyficzne dla platformy, które są przeznaczone dla systemu iOS, Android i Windows Phone platformy.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5b16fe1d6dab776af31e0aff97a00065517550ec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="case-study-tasky"></a>Analiza przypadku: Tasky
 

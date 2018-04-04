@@ -1,17 +1,16 @@
 ---
-title: "Podstawowe informacje dotyczące zasobów dla systemu android"
-ms.topic: article
+title: Podstawowe informacje dotyczące zasobów dla systemu android
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6be1001e5d3455a94e677f1bb5dc52ca574b873
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-resource-basics"></a>Podstawowe informacje dotyczące zasobów dla systemu android
 
@@ -136,7 +135,7 @@ Na przykład zawartości pliku układu, **Main.axml**, są następujące:
 </LinearLayout>
 ```
 
-W tym przykładzie ma [ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview) wymagający obiektów drawable zasób o nazwie **flagi**. `ImageView` Ma jego `src` ustawić atrybutu  **@drawable/flag** . Po uruchomieniu działania Android będzie wyglądać w katalogu **zasobów/Drawable** dla pliku o nazwie **flag.png** (rozszerzenie pliku może być inny format obrazu, takie jak **flag.jpg**) i załadowania tego pliku i wyświetl ją w `ImageView`.
+W tym przykładzie ma [ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview) wymagający obiektów drawable zasób o nazwie **flagi**. `ImageView` Ma jego `src` ustawić atrybutu **@drawable/flag**. Po uruchomieniu działania Android będzie wyglądać w katalogu **zasobów/Drawable** dla pliku o nazwie **flag.png** (rozszerzenie pliku może być inny format obrazu, takie jak **flag.jpg**) i załadowania tego pliku i wyświetl ją w `ImageView`.
 Po uruchomieniu tej aplikacji, jego może wyglądać poniższej ilustracji:
 
 ![ImageView zlokalizowanych](android-resource-basics-images/03-localized-screenshot.png)

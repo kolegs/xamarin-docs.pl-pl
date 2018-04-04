@@ -1,18 +1,17 @@
 ---
-title: "Praca w systemie plików"
-description: "Xamarin.iOS można użyć tej samej klasy System.IO do pracy z plików i katalogów w systemie iOS, który ma zostać użyty w dowolnej aplikacji .NET. Pomimo znanych klasy i metody, iOS implementuje pewne ograniczenia na plikach, które można utworzyć lub uzyskać dostępu do i udostępnia funkcje specjalne określonych katalogów. W tym artykule opisano te ograniczenia i funkcje oraz pokazano, jak działa dostęp do plików w aplikacji platformy Xamarin.iOS."
-ms.topic: article
+title: Praca w systemie plików
+description: Xamarin.iOS można użyć tej samej klasy System.IO do pracy z plików i katalogów w systemie iOS, który ma zostać użyty w dowolnej aplikacji .NET. Pomimo znanych klasy i metody, iOS implementuje pewne ograniczenia na plikach, które można utworzyć lub uzyskać dostępu do i udostępnia funkcje specjalne określonych katalogów. W tym artykule opisano te ograniczenia i funkcje oraz pokazano, jak działa dostęp do plików w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a3337264bf04f5ad5495043c7e958276aba9eaee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-the-file-system"></a>Praca w systemie plików
 

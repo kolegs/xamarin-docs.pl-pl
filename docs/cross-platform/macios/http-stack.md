@@ -1,18 +1,17 @@
 ---
-title: "Stos HttpClient i selektor implementacji protokołu SSL/TLS dla systemu iOS/macOS"
-description: "Stos HttpClient i selektor implementacji protokołu SSL/TLS określa implementacji HttpClient i SSL/TLS, który będzie używany przez aplikację systemu iOS, systemu tvOS lub macOS Xamarin."
-ms.topic: article
+title: Stos HttpClient i selektor implementacji protokołu SSL/TLS dla systemu iOS/macOS
+description: Stos HttpClient i selektor implementacji protokołu SSL/TLS określa implementacji HttpClient i SSL/TLS, który będzie używany przez aplikację systemu iOS, systemu tvOS lub macOS Xamarin.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: 01b316e296f78ea2739e2f3ed1bd8d8ec112fca8
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: ba9eb6a062ce91db5f1597de6f9a2b01ad18a367
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>Stos HttpClient i selektor implementacji protokołu SSL/TLS dla systemu iOS/macOS
 

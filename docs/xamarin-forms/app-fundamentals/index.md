@@ -1,18 +1,17 @@
 ---
 title: Podstawy aplikacji
 description: Eksploracja podstawy rozwoju platformy Xamarin.Forms
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: afa3bf25b1448d98c49c95a66bd0f4dc55bde39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-fundamentals"></a>Podstawy aplikacji
 
@@ -32,7 +31,7 @@ Wskazówek, aby włączyć funkcje ułatwień dostępu (takie jak obsługa narz�
 
 Formanty interfejsu użytkownika można łatwo rozszerzyć bez podklasy przez dodawanie funkcji za pomocą zachowań.
 
-## <a name="custom-rendererscustom-rendererindexmd"></a>[Niestandardowe moduły renderowania](custom-renderer/index.md)
+## <a name="custom-rendererscustom-rendererindexmd"></a>[Niestandardowe programy renderujące](custom-renderer/index.md)
 
 Renderuje niestandardowe umożliwiają deweloperom "override" odwzorowanie domyślne platformy Xamarin.Forms formantów, aby dostosować wygląd i zachowanie na każdej z platform (przy użyciu natywnych zestawów SDK w razie potrzeby).
 
@@ -48,7 +47,7 @@ Powiązanie danych łączy właściwości dwa obiekty możliwości zmiany w jedn
 
 Efekty Zezwalaj kontrolki natywne każdej platformy można dostosować i są zwykle używane do zmian małych style.
 
-## <a name="gesturesgesturesindexmd"></a>[Gestów](gestures/index.md)
+## <a name="gesturesgesturesindexmd"></a>[Gesty](gestures/index.md)
 
 Platformy Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/) klasa obsługuje tap, powiększanie i przesuwanie gestów na formanty interfejsu użytkownika.
 
@@ -56,7 +55,7 @@ Platformy Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/ap
 
 Wbudowane .NET framework lokalizacja może służyć do tworzenia i platform aplikacji wielojęzycznych za pomocą platformy Xamarin.Forms.
 
-## <a name="local-databasesdatabasesmd"></a>[Lokalnych baz danych](databases.md)
+## <a name="local-databasesdatabasesmd"></a>[Lokalne bazy danych](databases.md)
 
 Platformy Xamarin.Forms obsługuje opartej na bazie danych aplikacji przy użyciu aparatu bazy danych SQLite, co umożliwia przy ładowaniu i zapisywaniu obiektów w kodzie udostępnionego.
 
@@ -64,7 +63,7 @@ Platformy Xamarin.Forms obsługuje opartej na bazie danych aplikacji przy użyci
 
 Platformy Xamarin.Forms `MessagingCenter` umożliwia wyświetlanie modeli i inne składniki do komunikowania się z bez znajomości cokolwiek innego niż prosty kontraktu komunikatu.
 
-## <a name="navigationnavigationindexmd"></a>[Nawigacji](navigation/index.md)
+## <a name="navigationnavigationindexmd"></a>[Nawigacja](navigation/index.md)
 
 Platformy Xamarin.Forms udostępnia wiele zastosowań nawigacji innej strony, w zależności od `Page` wpisz używane.
 

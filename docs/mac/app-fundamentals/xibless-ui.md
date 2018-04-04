@@ -1,18 +1,17 @@
 ---
-title: "Projekt interfejsu użytkownika.Storyboard/.XIb-less"
-description: "W tym artykule opisano tworzenie interfejsu użytkownika aplikacji Xamarin.Mac bezpośrednio z kodu C# bez .storyboard plików, pliki .xib lub konstruktora interfejsu."
-ms.topic: article
+title: Projekt interfejsu użytkownika.Storyboard/.XIb-less
+description: W tym artykule opisano tworzenie interfejsu użytkownika aplikacji Xamarin.Mac bezpośrednio z kodu C# bez .storyboard plików, pliki .xib lub konstruktora interfejsu.
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52d300ac583ec2313d3169c7b2adb73c15ebe4fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="storyboardxib-less-user-interface-design"></a>Projekt interfejsu użytkownika.Storyboard/.XIb-less
 

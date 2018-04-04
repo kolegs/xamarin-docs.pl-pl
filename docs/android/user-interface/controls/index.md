@@ -1,18 +1,17 @@
 ---
 title: Formanty
-description: "Bloki konstrukcyjne do tworzenia interfejsów użytkownika platformy Xamarin.Android"
-ms.topic: article
+description: Bloki konstrukcyjne do tworzenia interfejsów użytkownika platformy Xamarin.Android
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>Formanty
 
@@ -26,7 +25,7 @@ Xamarin.Android przedstawia wszystkie kontrolki interfejsu użytkownika macierzy
 ![Przykład elementów nadrzędnych.](images/action-bar.png)
 
 
-## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Automatyczne uzupełnianie](~/android/user-interface/controls/auto-complete.md)
+## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Autouzupełnianie](~/android/user-interface/controls/auto-complete.md)
 
 `AutoCompleteTextView` jest element widoku można edytować tekst, który zawiera sugestie dotyczące uzupełniania automatycznie podczas wpisywania jest użytkownik. W menu, z którego użytkownik może wybrać element, aby zastąpić zawartość pola edycji z rozwijane zostanie wyświetlona lista sugestie.
 
@@ -62,21 +61,21 @@ Przyciski są elementy interfejsu użytkownika, które użytkownik naciska do wy
 ![Przykład edycji tekstu](images/edit-text.png)
 
 
-## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Gallery](~/android/user-interface/controls/gallery.md)
+## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Galeria](~/android/user-interface/controls/gallery.md)
 
 `Gallery` jest element widget układu, który jest używany do wyświetlania elementów w poziomie przewijanej listy; bieżące zaznaczenie go umieszcza środek widoku.
 
 ![Przykład galerii](images/gallery.png)
 
 
-## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Pasek nawigacyjny](~/android/user-interface/controls/navigation-bar.md)
+## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Pasek nawigacji](~/android/user-interface/controls/navigation-bar.md)
 
 *Pasek nawigacyjny* zawiera kontrolki na urządzeniach, które nie zawierają przyciski sprzętu **Home**, **ponownie**, i **Menu**.
 
 ![Przykład paska nawigacyjnego](images/navigation-bar.png)
 
 
-## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Formanty wyboru](~/android/user-interface/controls/pickers/index.md)
+## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Selektory](~/android/user-interface/controls/pickers/index.md)
 
 *Selektorami* są elementy interfejsu użytkownika, które umożliwiają użytkownikom wybierz datę lub godzinę za pomocą okien dialogowych, które są dostarczane przez system Android.
 
@@ -90,7 +89,7 @@ Przyciski są elementy interfejsu użytkownika, które użytkownik naciska do wy
 ![Przykład Menu podręcznego](images/popup-menu.png)
 
 
-## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Pokrętła](~/android/user-interface/controls/spinner.md)
+## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Pokrętło](~/android/user-interface/controls/spinner.md)
 
 `Spinner` jest elementem interfejsu użytkownika, który umożliwia szybkie można wybrać jedną wartość z zestawu. Jest simmilar do listy rozwijanej. 
 
@@ -125,7 +124,7 @@ Przyciski są elementy interfejsu użytkownika, które użytkownik naciska do wy
 ![Przykład ViewPager](images/viewpager.png)
 
 
-## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[Widok sieci Web](~/android/user-interface/controls/web-view.md)
+## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
 `WebView` jest elementem interfejsu użytkownika, który pozwala utworzyć własne okna do wyświetlania stron sieci web (lub nawet utworzyć pełną przeglądarki).
 

@@ -1,18 +1,17 @@
 ---
-title: "Tworzenie krój czujki"
-description: "W tym przewodniku objaśniono sposób implementacji usługi krój czujki niestandardowych dla systemu Android nosić. Krok po kroku instrukcje tworzenia pozbawionego włókien dół usługi krój czujki cyfrowych, następuje więcej kod w celu utworzenia krój czujki analogowy stylu."
-ms.topic: article
+title: Tworzenie krój czujki
+description: W tym przewodniku objaśniono sposób implementacji usługi krój czujki niestandardowych dla systemu Android nosić. Krok po kroku instrukcje tworzenia pozbawionego włókien dół usługi krój czujki cyfrowych, następuje więcej kod w celu utworzenia krój czujki analogowy stylu.
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c02755cc3ff5b46a5a97b6c14185794d8ad538d8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-watch-face"></a>Tworzenie krój czujki
 

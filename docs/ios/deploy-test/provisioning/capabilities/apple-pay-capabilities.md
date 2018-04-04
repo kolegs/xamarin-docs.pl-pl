@@ -1,18 +1,17 @@
 ---
-title: "Możliwości płatności firmy Apple"
-description: "Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla Apple Pay możliwości."
-ms.topic: article
+title: Możliwości płatności firmy Apple
+description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla Apple Pay możliwości.
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c389dc4831009d760e4a6a810b5b3c01637c822e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apple-pay-capabilities"></a>Możliwości płatności firmy Apple
 
@@ -38,7 +37,7 @@ Identyfikator sprzedawcy umożliwia Apple Pay może akceptować płatności, a s
  
     ![Wybór identyfikator sprzedawcy Centrum deweloperów](apple-pay-capabilities-images/image57.png)
 
-2.  W obszarze **identyfikatory**, wybierz pozycję **identyfikatorów sprzedawcy**, a następnie wybierz  **+**  do utworzenia nowego sprzedawcy Identyfikatora:  
+2.  W obszarze **identyfikatory**, wybierz pozycję **identyfikatorów sprzedawcy**, a następnie wybierz **+** do utworzenia nowego sprzedawcy Identyfikatora:  
 
 3.  Wypełnij formularz, przedstawione poniżej, nowy opis i identyfikator. Opis sprawia, że identyfikator do zidentyfikowania użytkownika i będzie można zmienić później. Identyfikator musi być unikatowa dla Ciebie i musi rozpoczynać się od ciągu `merchant`. Apple zaleca się, że identyfikator być w następującym formacie: `merchant.com.[Your-App-Name]`:
    
@@ -56,7 +55,7 @@ Identyfikator sprzedawcy umożliwia Apple Pay może akceptować płatności, a s
     
     ![Wybierz identyfikator aplikacji w Centrum deweloperów](apple-pay-capabilities-images/image6.png)
 
-2.  Wybierz  **+**  przycisk, aby dodać nowy identyfikator aplikacji: 
+2.  Wybierz **+** przycisk, aby dodać nowy identyfikator aplikacji: 
    
     ![Dodaj nowy przycisk Identyfikator aplikacji](apple-pay-capabilities-images/image27.png)
 

@@ -1,18 +1,17 @@
 ---
-title: "Dystrybucji wewnętrznych"
-description: "Ten dokument zawiera krótkie omówienie dystrybucji aplikacji we własnym zakresie, jako członka Program firmy Apple Developer Enterprise."
-ms.topic: article
+title: Dystrybucji wewnętrznych
+description: Ten dokument zawiera krótkie omówienie dystrybucji aplikacji we własnym zakresie, jako członka Program firmy Apple Developer Enterprise.
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-house-distribution"></a>Dystrybucji wewnętrznych
 
@@ -53,7 +52,7 @@ Należy pamiętać, że nie można odnowić wygasłe certyfikaty, a zamiast tego
 
 1. Przejdź do *certyfikaty, identyfikatory & profile* sekcji Apple Developer Member Center.
 2. W obszarze *certyfikaty*, wybierz pozycję **produkcji**.
-3. Kliknij przycisk  **+**  przycisk, aby utworzyć nowy certyfikat.
+3. Kliknij przycisk **+** przycisk, aby utworzyć nowy certyfikat.
 4. W obszarze *produkcji* nagłówek, wybierz **wewnętrznych i Ad Hoc**:
 
    [![](in-house-distribution-images/createcertmanually01.png "Wybierz wewnętrznych i Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -96,7 +95,7 @@ Jako wszystkie inne inicjowania obsługi profilu możesz utworzyć identyfikator
 
 
 1. W [Centrum deweloperów firmy Apple](https://developer.apple.com/account/overview.action) przejdź do *certyfikatu, identyfikatory i profile* sekcji. Wybierz **identyfikatorów aplikacji** w obszarze **identyfikatory**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa** której znajdą w portalu.
+2. Kliknij przycisk **+** przycisk i podaj **nazwa** której znajdą w portalu.
 3. Prefiks aplikacji powinna być już ustawiona jako Identyfikatora zespołu i nie można zmienić. Wybierz opcję Explicit, lub identyfikator aplikacji symboli wieloznacznych, a następnie wprowadź identyfikator pakietu w formacie wstecznego DNS, takich jak: **Explicit**: modelu com. [nazwa_domeny]. [ Nazwa aplikacji] **symbolu wieloznacznego**: modelu com. [nazwa_domeny]. *
 4. Wybierz dowolne [usługi aplikacji](~/ios/get-started/installation/device-provisioning/index.md#appservices) aplikację wymagającej.
 5. Kliknij przycisk **Kontynuuj** przycisk i zgodnie z instrukcjami wyświetlanymi na ekranie można utworzyć nowego identyfikatora aplikacji.
@@ -107,7 +106,7 @@ Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wy
 
    [![](in-house-distribution-images/distribute01.png "Wybierz opcję inicjowania obsługi administracyjnej > dystrybucji")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **wewnętrznych**:
+2. Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **wewnętrznych**:
 
    [![](in-house-distribution-images/distribute02.png "Utwórz profil dystrybucji wewnętrznych")](in-house-distribution-images/distribute02.png#lightbox)
 

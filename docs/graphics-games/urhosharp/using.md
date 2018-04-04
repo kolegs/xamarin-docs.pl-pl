@@ -1,17 +1,16 @@
 ---
-title: "Przy użyciu UrhoSharp"
-description: "Omówienie aparatu UrhoSharp"
-ms.topic: article
+title: Przy użyciu UrhoSharp
+description: Omówienie aparatu UrhoSharp
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>Przy użyciu UrhoSharp
 
@@ -497,7 +496,7 @@ Budżetów pamięci można ustawić na typ zasobu: Jeśli zasoby zużywać więc
 
 Urho3D próbuje użyć istniejącego formatów plików w miarę możliwości i definiowanie niestandardowych formatów plików tylko wtedy, gdy jest to bezwzględnie konieczne, takie jak w przypadku modeli (*.mdl) i animacji (*.ani). W przypadku tych typów zasobów Urho zapewnia konwertera - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) zużywające wielu popularnych formatach 3D fbx dae, 3ds i obj, np.
 
-Dostępna jest również przydatne dodatku dla mieszarce [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) który można wyeksportować w formacie, który jest odpowiedni dla Urho3D zasobów mieszarce.
+Dostępna jest również przydatne dodatku dla mieszarce [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) który można wyeksportować w formacie, który jest odpowiedni dla Urho3D zasobów mieszarce.
 
 ## <a name="background-loading-of-resources"></a>Tło ładowanie zasobów
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>Cząstki
 
-Cząstki zapewniają prosty sposób dodawania niektóre proste i niedrogie efekty w aplikacji.  Za pomocą takich narzędzi jak może wykorzystać cząstki przechowywane w formacie PEX [http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/).
+Cząstki zapewniają prosty sposób dodawania niektóre proste i niedrogie efekty w aplikacji.  Za pomocą takich narzędzi jak może wykorzystać cząstki przechowywane w formacie PEX [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
 Cząstki są składniki, które mogą zostać dodane do węzła.  Należy wywołać węzła `CreateComponent<ParticleEmitter2D>` metodę, aby utworzyć cząstka, a następnie skonfiguruj cząstka przez ustawienie właściwości efekt 2D efekt, który jest ładowany z pamięci podręcznej zasobów.
 

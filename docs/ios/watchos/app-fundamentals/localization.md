@@ -1,17 +1,16 @@
 ---
 title: Praca z lokalizacji
-description: "Dostosowania watchOS aplikacji dla wielu języków"
-ms.topic: article
+description: Dostosowania watchOS aplikacji dla wielu języków
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>Praca z lokalizacji
 
@@ -86,13 +85,13 @@ Po wyrenderowaniu scenorysu na czujki poprawne wartości zostanie automatycznie 
 
 #### <a name="storyboard-images"></a>Obrazy scenorysu
 
-Zawiera również przykład rozwiązania  **gradient@2x.png**  obrazu w każdym folderze języka. Ten obraz mogą być różne dla każdego języka (np.) go osadzonych tekst, który ma tłumaczenia, lub użyj zlokalizowanych nadruków).
+Zawiera również przykład rozwiązania **gradient@2x.png** obrazu w każdym folderze języka. Ten obraz mogą być różne dla każdego języka (np.) go osadzonych tekst, który ma tłumaczenia, lub użyj zlokalizowanych nadruków).
 
 Wystarczy ustawić obrazu **obrazu** właściwości scenorysu i prawidłowy obraz będzie odtwarzany na czujki zgodnie z językiem wybranym przez użytkownika.
 
 ![](localization-images/storyboard-image.png "Ustaw właściwości obrazu w scenorysu obrazów")
 
-Uwaga: ponieważ wszystkie obserwowanie Apple Wyświetla siatkówki tylko  **@2x**  wymagana jest wersja obrazu. Nie należy określić  **@2x**  w scenorysu.
+Uwaga: ponieważ wszystkie obserwowanie Apple Wyświetla siatkówki tylko **@2x** wymagana jest wersja obrazu. Nie należy określić **@2x** w scenorysu.
 
 ### <a name="watch-extension"></a>Obejrzyj rozszerzenia
 
@@ -130,7 +129,7 @@ Obrazy, które są wypełnione przez kod można ustawić na dwa sposoby.
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. Obraz można przenosić z rozszerzenia, przy użyciu czujki `FromBundle` i aplikacja będzie automatycznie wybierać obrazu poprawny wybór języka użytkownika. W rozwiązaniu przykład jest obrazem  **language@2x.png**  w każdym z tych języków folderu który jest wyświetlany na `DetailController` przy użyciu następującego kodu:
+2. Obraz można przenosić z rozszerzenia, przy użyciu czujki `FromBundle` i aplikacja będzie automatycznie wybierać obrazu poprawny wybór języka użytkownika. W rozwiązaniu przykład jest obrazem **language@2x.png** w każdym z tych języków folderu który jest wyświetlany na `DetailController` przy użyciu następującego kodu:
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ Obrazy, które są wypełnione przez kod można ustawić na dwa sposoby.
   }
   ```
 
-  Należy pamiętać, że nie należy określić  **@2x**  podczas odwoływania się do nazwy pliku obrazu.
+  Należy pamiętać, że nie należy określić **@2x** podczas odwoływania się do nazwy pliku obrazu.
 
 Druga metoda dotyczy również pobranie obrazu na serwerze zdalnym do renderowania czujki; Jednak w takim przypadku należy upewnić się, obraz, który można pobrać poprawnie zlokalizowaną zgodnie z preferencjami użytkownika.
 

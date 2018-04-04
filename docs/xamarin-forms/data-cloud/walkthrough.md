@@ -1,18 +1,17 @@
 ---
-title: "Opis próbki"
-description: "W tym temacie przedstawiono wskazówki przykładowej aplikacji platformy Xamarin.Forms, który demonstruje sposób komunikowania się z usługami sieci web inną. Podczas każdej usługi sieci web używa oddzielnych przykładowej aplikacji, są podobne i wspólnych klas."
-ms.topic: article
+title: Opis próbki
+description: W tym temacie przedstawiono wskazówki przykładowej aplikacji platformy Xamarin.Forms, który demonstruje sposób komunikowania się z usługami sieci web inną. Podczas każdej usługi sieci web używa oddzielnych przykładowej aplikacji, są podobne i wspólnych klas.
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-the-sample"></a>Opis próbki
 
@@ -56,7 +55,7 @@ Projekt PCL dla każdej aplikacji również składa się z kilku ważnych plikó
 
 Większość aplikacji przykładowej zawiera co najmniej dwie strony:
 
-- **TodoListPage** — ta strona zostanie wyświetlona lista `TodoItem` wystąpień i ikona znaczników Jeśli `TodoItem.Done` jest właściwość `true`. Kliknięcie elementu przechodzi do `TodoItemPage`. Ponadto można tworzyć nowe elementy, klikając  *+*  symbolu.
+- **TodoListPage** — ta strona zostanie wyświetlona lista `TodoItem` wystąpień i ikona znaczników Jeśli `TodoItem.Done` jest właściwość `true`. Kliknięcie elementu przechodzi do `TodoItemPage`. Ponadto można tworzyć nowe elementy, klikając *+* symbolu.
 - **TodoItemPage** — ta strona Wyświetla szczegóły wybranego `TodoItem`i umożliwia jego można edytowane, zapisane, usunięte i używany.
 
 Ponadto niektóre przykładowe aplikacje zawierają dodatkowe strony, które są używane do zarządzania procesem uwierzytelniania użytkownika.

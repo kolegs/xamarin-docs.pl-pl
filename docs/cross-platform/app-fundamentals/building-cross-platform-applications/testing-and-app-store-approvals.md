@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-Tytuł: "Część 6 — testowanie i aplikacji sklepu zatwierdzenia" ms.topic: article ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: Autor xamarin i platform: asb3993 ms.author: amburns ms.date: 2017-03/23
+Tytuł: "Część 6 — testowanie i aplikacji sklepu zatwierdzenia" ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: Autor xamarin i platform: asb3993 ms.author: amburns ms.date: 2017-03/23
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Część 6 - testowania i zatwierdzeń sklepu z aplikacjami

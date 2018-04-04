@@ -1,18 +1,17 @@
 ---
-title: "Interfejs użytkownika"
-description: "Środowisko użytkownika (UX) zapotrzebowania łącznie z formantami, projektanta i zasady projektowania środowiska użytkownika."
-ms.topic: article
+title: Interfejs użytkownika
+description: Środowisko użytkownika (UX) zapotrzebowania łącznie z formantami, projektanta i zasady projektowania środowiska użytkownika.
 ms.prod: xamarin
 ms.assetid: 2B3E45FA-C30F-D708-0E8F-3EE02BD1A867
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 896b92b9520e7aa85c6d62e02cb1355c9757f0d6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a3d88c2698ebd290929ceca842c28b3a43aed6e0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>Interfejs użytkownika
 
@@ -21,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 Stworzyliśmy projektanta dla systemu iOS formacie scenorysu, który jest w pełni zintegrowana w programie Visual Studio dla komputerów Mac. Projektant iOS zachowuje pełnej zgodności z formatem scenorysu, dzięki czemu plików można edytować w programie Xcode lub Visual Studio dla komputerów Mac. Ponadto Edytor obsługuje zaawansowane funkcje, takie jak Kontrolki niestandardowe, które są renderowane w czasie projektowania w edytorze.
 
 
-## <a name="introduction-to-storyboardsiosuser-interfacestoryboardsindexmd"></a>[Wprowadzenie do scenorysu](~/ios/user-interface/storyboards/index.md)
+## <a name="introduction-to-storyboardsiosuser-interfacestoryboardsindexmd"></a>[Wprowadzenie do scenorysów](~/ios/user-interface/storyboards/index.md)
 
 Scenorysu jest wizualną reprezentację wygląd i przepływu aplikacji. Xamarin wprowadziła projektanta, aby umożliwić aplikacjom Xamarin.iOS zalet scenorys, dzięki czemu można zaprojektować wizualnie ekranu aplikacji i dostępu do widoków, kontrolery i segues w języku C# Aby uzyskać większą kontrolę. Można także odwoływać się do [w tym przewodniku](~/ios/user-interface/designer/introduction.md) wyjaśnienie i wskazówki projektanta Xamarin dla systemu iOS
 

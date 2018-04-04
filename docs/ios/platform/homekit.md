@@ -1,18 +1,17 @@
 ---
 title: HomeKit
-description: "HomeKit to platforma firmy Apple do kontrolowania urządzeń macierzystego automatyzacji. W tym artykule przedstawiono HomeKit i obejmuje Konfigurowanie Akcesoria testu w symulatorze akcesoriów HomeKit i zapisywanie prostej aplikacji platformy Xamarin.iOS wchodzić w interakcje z te urządzenia."
-ms.topic: article
+description: HomeKit to platforma firmy Apple do kontrolowania urządzeń macierzystego automatyzacji. W tym artykule przedstawiono HomeKit i obejmuje Konfigurowanie Akcesoria testu w symulatorze akcesoriów HomeKit i zapisywanie prostej aplikacji platformy Xamarin.iOS wchodzić w interakcje z te urządzenia.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -104,7 +103,7 @@ Aby uruchomić symulatora akcesoriów HomeKit i utworzyć kilka wirtualnych Akce
 1. Z folderu aplikacji należy uruchomić symulatora akcesoriów HomeKit: 
 
     [![](homekit-images/simulator02.png "Symulator akcesoriów HomeKit")](homekit-images/simulator02.png#lightbox)
-2. Kliknij przycisk  **+**  i wybrać **nowe akcesoriów...** : 
+2. Kliknij przycisk **+** i wybrać **nowe akcesoriów...** : 
 
     [![](homekit-images/simulator03.png "Dodaj nowy akcesoriów")](homekit-images/simulator03.png#lightbox)
 3. Podaj informacje o nowych dodatek, a następnie kliknij przycisk **Zakończ** przycisk: 

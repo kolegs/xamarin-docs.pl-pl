@@ -1,18 +1,17 @@
 ---
-title: "Wdrażanie i testowanie"
-description: "Jak przetestować aplikację zużycia na urządzeniu z systemem Android (lub w emulatorze) i przygotowywania ich do wdrożenia."
-ms.topic: article
+title: Wdrażanie i testowanie
+description: Jak przetestować aplikację zużycia na urządzeniu z systemem Android (lub w emulatorze) i przygotowywania ich do wdrożenia.
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/19/2017
-ms.openlocfilehash: f80be1c61d28ce73342399a0b4f2346007cd14de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deployment-and-testing"></a>Wdrażanie i testowanie
 
@@ -23,7 +22,7 @@ Gdy aplikacja jest gotowa, ostatni temacie wyjaśniono, jak do przygotowania apl
 
 Jak debugowanie aplikacji platformy Xamarin.Android zużycia emulatora Android SDK.
 
-## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Debugowanie na urządzeniu zużycie](~/android/wear/deploy-test/debug-on-device.md)
+## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Debugowanie na urządzeniu Wear](~/android/wear/deploy-test/debug-on-device.md)
 
 Jak skonfigurować urządzenia z systemem Android, dzięki czemu aplikacje platformy Xamarin.Android zużycia można wdrażać do niego bezpośrednio z programu Visual Studio lub Visual Studio dla komputerów Mac.
 

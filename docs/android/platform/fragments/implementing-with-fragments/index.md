@@ -1,18 +1,17 @@
 ---
-title: "Wdrażanie z fragmenty"
-description: "Android 3.0 wprowadzono fragmenty. Fragmenty są samodzielnymi, modułowymi składnikami ułatwiającymi radzenie sobie ze złożonością pisania aplikacji, które mogą być uruchamiane na ekranach o różnych rozmiarach. W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android i jak obsługiwać fragmenty na urządzeniach wstępnie Android 3.0."
-ms.topic: article
+title: Wdrażanie z fragmenty
+description: Android 3.0 wprowadzono fragmenty. Fragmenty są samodzielnymi, modułowymi składnikami ułatwiającymi radzenie sobie ze złożonością pisania aplikacji, które mogą być uruchamiane na ekranach o różnych rozmiarach. W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android i jak obsługiwać fragmenty na urządzeniach wstępnie Android 3.0.
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-with-fragments"></a>Wdrażanie z fragmenty
 

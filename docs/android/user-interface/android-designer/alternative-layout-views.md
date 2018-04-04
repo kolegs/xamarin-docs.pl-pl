@@ -1,18 +1,17 @@
 ---
-title: "Widoki alternatywnych układu"
-description: "W tym temacie wyjaśniono, jak układów można numerów wersji przy użyciu kwalifikatory zasobów. Na przykład może istnieć wersję układu, który jest używany tylko, gdy urządzenie jest w trybie krajobraz i tylko w trybie portret wersji układu."
-ms.topic: article
+title: Widoki alternatywnych układu
+description: W tym temacie wyjaśniono, jak układów można numerów wersji przy użyciu kwalifikatory zasobów. Na przykład może istnieć wersję układu, który jest używany tylko, gdy urządzenie jest w trybie krajobraz i tylko w trybie portret wersji układu.
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2228169ed5d8575c9e332c85d963fca0400dea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternative-layout-views"></a>Widoki alternatywnych układu
 

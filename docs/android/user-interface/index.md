@@ -1,28 +1,27 @@
 ---
-title: "Interfejs użytkownika"
-description: "Tworzenie interfejsów użytkownika dla aplikacji platformy Xamarin.Android"
-ms.topic: article
+title: Interfejs użytkownika
+description: Tworzenie interfejsów użytkownika dla aplikacji platformy Xamarin.Android
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 40d02def5c0aae3334ae59cec78f6d22a1d5d772
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 152f5551e2f539e8ab93121c35c2acca7eb7f2e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>Interfejs użytkownika
 
 W poniższych sekcjach opisano różne narzędzia i bloki konstrukcyjne, które są używane do tworzenia interfejsów użytkownika w aplikacji platformy Xamarin.Android.
 
-## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Projektant systemu android](~/android/user-interface/android-designer/index.md)
+## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
 W tej sekcji wyjaśniono, jak za pomocą projektanta Android układ formantów wizualnie i edytować właściwości. Wyjaśniono również sposób pracy z interfejsów użytkownika i zasoby na różne konfiguracje, takie jak kompozycje, języki i konfiguracji urządzeń za pomocą projektanta, a także sposobu projektowania dla widoków alternatywnych jak orientacji poziomej i pionowej.
 
-## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Materiał motywu](~/android/user-interface/material-theme.md)
+## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Motyw materiału](~/android/user-interface/material-theme.md)
 
 *Motyw materiału* jest styl interfejsu użytkownika, który określa wygląd i działanie widoki i działań w systemie Android. Materiału motywu jest wbudowana w systemu Android, dlatego jest używana przez układ interfejsu użytkownika, a także przez aplikacje. W tym przewodniku przedstawiono zasady projektowania materiałów oraz wyjaśniono, jak motyw do aplikacji przy użyciu motywów materiałów wbudowanych lub niestandardowych kompozycji.
 

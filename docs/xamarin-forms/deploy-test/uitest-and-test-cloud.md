@@ -1,18 +1,17 @@
 ---
-title: "Automatyzowanie platformy Xamarin.Forms testowanie za pomocą Centrum aplikacji i Xamarin.UITest"
-description: "Składnik Xamarin UITest może służyć z platformy Xamarin.Forms napisać testy interfejsu użytkownika do uruchamiania w chmurze na setki urządzeń."
-ms.topic: article
+title: Automatyzowanie platformy Xamarin.Forms testowanie za pomocą Centrum aplikacji i Xamarin.UITest
+description: Składnik Xamarin UITest może służyć z platformy Xamarin.Forms napisać testy interfejsu użytkownika do uruchamiania w chmurze na setki urządzeń.
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: 78788524c1afdda127762049018ca769926f729e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f671f31dcc0aaf339a7c9f3d6465f4777a8f7f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="automate-xamarinforms-testing-with-xamarinuitest-and-app-center"></a>Automatyzowanie platformy Xamarin.Forms testowanie za pomocą Centrum aplikacji i Xamarin.UITest
 

@@ -1,18 +1,17 @@
 ---
 title: Implementowanie HybridWebView
-description: "Formanty interfejsu użytkownika platformy Xamarin.Forms powinien pochodzić od klasy widoku, który służy do umieszczania układy i kontroli na ekranie. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania HybridWebView kontrolki niestandardowej, która pokazuje, jak poprawić formanty specyficzne dla platformy sieci web umożliwia kodu C# do wywołania z poziomu języka JavaScript."
-ms.topic: article
+description: Formanty interfejsu użytkownika platformy Xamarin.Forms powinien pochodzić od klasy widoku, który służy do umieszczania układy i kontroli na ekranie. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania HybridWebView kontrolki niestandardowej, która pokazuje, jak poprawić formanty specyficzne dla platformy sieci web umożliwia kodu C# do wywołania z poziomu języka JavaScript.
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementowanie HybridWebView
 

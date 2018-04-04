@@ -1,18 +1,17 @@
 ---
 title: Publikowanie do sklepu z aplikacjami
-description: "W tym artykule przedstawiono sposób konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji za pośrednictwem sklepu z aplikacjami. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, finally, jak opublikować aplikację do sklepu z aplikacjami."
-ms.topic: article
+description: W tym artykule przedstawiono sposób konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji za pośrednictwem sklepu z aplikacjami. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, finally, jak opublikować aplikację do sklepu z aplikacjami.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikowanie do sklepu z aplikacjami
 
@@ -71,7 +70,7 @@ Apple zawiera specjalne usług aplikacji, nazywane również uprawnienia, które
 Tworzenie Identyfikatora aplikacji i opcjonalnie wybranie uprawnień obejmuje następujące czynności przy użyciu firmy Apple iOS opartych na sieci web portalu inicjowania obsługi:
 
 1. W **certyfikaty, identyfikatory & profile** sekcji wybierz **identyfikatory** > **identyfikator aplikacji**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
+2. Kliknij przycisk **+** przycisk i podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
 3. Przewiń do dołu ekranu i wybrać dowolną **usługi aplikacji** które będzie wymagane przez aplikację platformy Xamarin.iOS.
 4. Kliknij przycisk **Kontynuuj** przycisk i następujących wyświetlanymi instrukcjami, aby utworzyć nowy identyfikator aplikacji.
 
@@ -109,7 +108,7 @@ iOS używa *profile aprowizacji* do kontrolowania wdrażanie kompilacji określo
 Udostępnianie obejmuje następujące czynności przy użyciu firmy Apple iOS opartego na sieci web portalu inicjowania obsługi:
 
 1.  Wybierz **inicjowania obsługi administracyjnej** > **dystrybucji**.
-2.  Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**.
+2.  Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**.
 3.  Wybierz **identyfikator aplikacji** z listy rozwijanej, który chcesz utworzyć profil dystrybucji.
 4.  Wybierz prawidłowy certyfikat produkcyjny (dystrybucja) do podpisania aplikacji.
 5.  Wprowadź **nazwa** nowego **profil dystrybucji** i generować profilu.

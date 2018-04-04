@@ -1,18 +1,17 @@
 ---
 title: Funkcje grupy aplikacji
-description: "Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji grupy aplikacji."
-ms.topic: article
+description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji grupy aplikacji.
 ms.prod: xamarin
 ms.assetid: 0A61220B-BBAC-492B-9D3B-578986E64064
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 687c894fbda8dc8b7c6aceb7eef73971b50de57e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0c6cb1a080e05cfa60af72c4140f7109e3c37b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-group-capabilities"></a>Funkcje grupy aplikacji
 
@@ -34,7 +33,7 @@ Aby utworzyć nową grupę aplikacji, wykonaj następujące czynności:
 
 1.  Odwiedź stronę firmy Apple [Centrum deweloperów systemu iOS](https://developer.apple.com/account/), otwórz Twojej **konta** i zaloguj się.
 2.  Wybierz **certyfikaty, identyfikatory & profile**.
-3.  W obszarze **identyfikatory** wybierz **grupy aplikacji** i kliknij przycisk  **+**  przycisk, aby utworzyć nową grupę.
+3.  W obszarze **identyfikatory** wybierz **grupy aplikacji** i kliknij przycisk **+** przycisk, aby utworzyć nową grupę.
 4.  Wprowadź **nazwa** i **identyfikator** dla nowej grupy i kliknij przycisk **Kontynuuj** przycisk: 
    
     ![Szczegóły dodać grupy aplikacji](app-groups-capabilities-images/image52.png)
@@ -49,7 +48,7 @@ Wykonaj następujące czynności:
 
 1.  Odwiedź stronę firmy Apple [Centrum deweloperów systemu iOS](https://developer.apple.com/account/)i zaloguj się przy użyciu konta dewelopera firmy Apple.
 2.  Z **zasobów programu** menu, wybierz opcję **certyfikaty, identyfikatory & profile**.
-3.  W obszarze **identyfikatory** wybierz **identyfikatorów aplikacji** i kliknij przycisk  **+**  przycisk, aby utworzyć nowy identyfikator.
+3.  W obszarze **identyfikatory** wybierz **identyfikatorów aplikacji** i kliknij przycisk **+** przycisk, aby utworzyć nowy identyfikator.
 4.  Wprowadź nazwę dla Identyfikatora aplikacji i nadaj mu identyfikator jawnej aplikacji.
 5.  W obszarze **usługi aplikacji** włączyć **grupy aplikacji**, następnie kliknij przycisk Kontynuuj:
 

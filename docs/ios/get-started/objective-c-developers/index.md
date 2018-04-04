@@ -1,17 +1,16 @@
 ---
-title: "Xamarin dla deweloperów języka Objective C"
-description: "Jeśli jesteś deweloperem Objective-C, to również w sposób korzystania z umiejętności, a istniejący kod języka Objective-C na platformie Xamarin podczas kod korzystać ponownie wykorzystać zalety języka C#. W tej sekcji służy jako punkt wejścia do Xamarin.iOS i wskazuje szereg informacji o korzystaniu z istniejącego kodu języka Objective-C w języku C#."
-ms.topic: article
+title: Xamarin dla deweloperów języka Objective C
+description: Jeśli jesteś deweloperem Objective-C, to również w sposób korzystania z umiejętności, a istniejący kod języka Objective-C na platformie Xamarin podczas kod korzystać ponownie wykorzystać zalety języka C#. W tej sekcji służy jako punkt wejścia do Xamarin.iOS i wskazuje szereg informacji o korzystaniu z istniejącego kodu języka Objective-C w języku C#.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin dla deweloperów języka Objective C
 

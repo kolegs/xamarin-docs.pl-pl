@@ -1,18 +1,17 @@
 ---
 title: Buforowanie tekstury za pomocą CCTextureCache
 description: Klasa CCTextureCache w CocosSharp udostępnia standardowy sposób organizowania pamięci podręcznej i zwolnić zawartości. Jest to szczególnie przydatne w przypadku dużych gry, które mogą nie mieści się całkowicie w pamięci RAM, w celu uproszczenia procesu grupowania i usuwanie tekstury.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 350a454bc94c796b34cfeeb319481919b18d334f
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: f0a8121d5e90d2f39fb1b0cbd8d283253c2bf76d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="texture-caching-using-cctexturecache"></a>Buforowanie tekstury za pomocą CCTextureCache
 

@@ -1,18 +1,17 @@
 ---
-title: "Przenośne języku Visual"
-description: "W tym przewodniku wyjaśniono, jak Visual Basic może służyć do zapisu projektów przenośnej biblioteki klasy (PCL), które mogą być używane w rozwiązaniach przeznaczonych dla platformy Xamarin.iOS i platformy Xamarin.Android."
-ms.topic: article
+title: Przenośne języku Visual
+description: W tym przewodniku wyjaśniono, jak Visual Basic może służyć do zapisu projektów przenośnej biblioteki klasy (PCL), które mogą być używane w rozwiązaniach przeznaczonych dla platformy Xamarin.iOS i platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 978d9e569825e20b40e963f590049eaab1d4e752
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a4ecad0b28dc4b8ba4060966ccefb678c8e6794
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="portable-visual-basicnet"></a>Przenośne języku Visual
 

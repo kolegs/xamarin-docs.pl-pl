@@ -1,17 +1,16 @@
 ---
 title: Podpisywanie pakietu aplikacji systemu Android
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/26/2018
-ms.openlocfilehash: 56d6eea891de3aef8efbe1a971ce3af96ffd8fab
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="signing-the-android-application-package"></a>Podpisywanie pakietu aplikacji systemu Android
 
@@ -44,7 +43,7 @@ W [archiwum publikowania](~/android/deploy-test/release-prep/index.md#archive), 
 
 Po **Ad Hoc** jest wybrany, Visual Studio zostanie otwarte **tożsamość podpisywania** strony okna dialogowego, jak pokazano w następnym zrzut ekranu. Aby opublikować. APK, najpierw muszą być podpisane przy użyciu klucza podpisywania (nazywane również certyfikatu).
 
-Istniejący certyfikat mogą być używane przez kliknięcie przycisku **importu** przycisk, a następnie kontynuowanie [podpisać plik APK](#signapkvs). W przeciwnym razie kliknij przycisk kliknięcie  **+**  przycisk, aby utworzyć nowy certyfikat:
+Istniejący certyfikat mogą być używane przez kliknięcie przycisku **importu** przycisk, a następnie kontynuowanie [podpisać plik APK](#signapkvs). W przeciwnym razie kliknij przycisk kliknięcie **+** przycisk, aby utworzyć nowy certyfikat:
 
 [![Ad Hoc tożsamości podpisywania](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 

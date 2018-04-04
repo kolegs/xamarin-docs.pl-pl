@@ -1,18 +1,17 @@
 ---
 title: Tworzenie efektu
-description: "Efekty uprościć Dostosowywanie formantu. W tym artykule przedstawiono sposób tworzenia wpływ, jaki kolor tła formantu wpis zostanie zmieniona, gdy formant uzyska fokus."
-ms.topic: article
+description: Efekty uprościć Dostosowywanie formantu. W tym artykule przedstawiono sposób tworzenia wpływ, jaki kolor tła formantu wpis zostanie zmieniona, gdy formant uzyska fokus.
 ms.prod: xamarin
 ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-an-effect"></a>Tworzenie efektu
 

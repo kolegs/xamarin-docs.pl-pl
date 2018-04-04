@@ -1,18 +1,17 @@
 ---
 title: Funkcje ziarna galaretki
-description: "Ten dokument zapewni wysokiego poziomu omówienie nowych funkcji dla deweloperów, które zostały wprowadzone w systemie Android 4.1. Te funkcje obejmują: powiadomienia, aktualizacji systemu Android światła udostępnianie duże pliki, aktualizacje do odnajdywania sieci multimedia, peer-to-peer, animacji, nowe uprawnienia rozszerzone."
-ms.topic: article
+description: 'Ten dokument zapewni wysokiego poziomu omówienie nowych funkcji dla deweloperów, które zostały wprowadzone w systemie Android 4.1. Te funkcje obejmują: powiadomienia, aktualizacji systemu Android światła udostępnianie duże pliki, aktualizacje do odnajdywania sieci multimedia, peer-to-peer, animacji, nowe uprawnienia rozszerzone.'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1d8068ccfc8d0f159a88704370261ec5f20d8b7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="jelly-bean-features"></a>Funkcje ziarna galaretki
 

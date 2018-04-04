@@ -1,18 +1,17 @@
 ---
-title: "Powiadomienia użytkowników"
-description: "W tym artykule opisano wszystkich sposobów powiadomienia użytkowników zostały rozszerzone iOS 10 i sposób ich użycia w aplikacji platformy Xamarin.iOS."
-ms.topic: article
+title: Powiadomienia użytkowników
+description: W tym artykule opisano wszystkich sposobów powiadomienia użytkowników zostały rozszerzone iOS 10 i sposób ich użycia w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enhanced-user-notifications"></a>Powiadomienia użytkowników
 
@@ -169,7 +168,7 @@ Aby zapewnić wymagane uprawnienia, wykonaj następujące czynności:
 2. Przełącz się do **źródła** widoku: 
 
     [![](enhanced-user-notifications-images/setup01.png "Wyświetl źródło")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. Kliknij przycisk  **+**  przycisk, aby dodać nowy klucz.
+3. Kliknij przycisk **+** przycisk, aby dodać nowy klucz.
 4. Wprowadź `aps-environment` dla **właściwości**, pozostaw **typu** jako `String` , a następnie wprowadź albo `development` lub `production` dla **wartość**: 
 
     [![](enhanced-user-notifications-images/setup02.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png#lightbox)
@@ -178,7 +177,7 @@ Aby zapewnić wymagane uprawnienia, wykonaj następujące czynności:
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Kliknij dwukrotnie `Entitlements.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji.
-3. Kliknij przycisk  **+**  przycisk, aby dodać nowy klucz.
+3. Kliknij przycisk **+** przycisk, aby dodać nowy klucz.
 4. Wprowadź `aps-environment` dla **właściwości**, pozostaw **typu** jako `String` , a następnie wprowadź albo `development` lub `production` dla **wartość**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Właściwość punktach dostępu do środowiska")](enhanced-user-notifications-images/setup02.png#lightbox)

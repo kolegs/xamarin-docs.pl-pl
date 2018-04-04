@@ -1,18 +1,17 @@
 ---
-title: "Opis poziomów interfejsu API systemu Android"
-description: "Xamarin.Android ma kilka ustawienia poziom interfejsu API systemu Android, które określają zgodność aplikacji z wieloma wersjami systemu android. W tym przewodniku wyjaśniono znaczenie tych ustawień, jak skonfigurować je i wpływ, jaki mają w aplikacji w czasie wykonywania."
-ms.topic: article
+title: Opis poziomów interfejsu API systemu Android
+description: Xamarin.Android ma kilka ustawienia poziom interfejsu API systemu Android, które określają zgodność aplikacji z wieloma wersjami systemu android. W tym przewodniku wyjaśniono znaczenie tych ustawień, jak skonfigurować je i wpływ, jaki mają w aplikacji w czasie wykonywania.
 ms.prod: xamarin
 ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-android-api-levels"></a>Opis poziomów interfejsu API systemu Android
 

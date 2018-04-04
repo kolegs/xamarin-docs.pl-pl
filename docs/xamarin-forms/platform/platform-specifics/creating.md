@@ -1,18 +1,17 @@
 ---
-title: "Tworzenie charakterystykę platformy"
-description: "Dostawcy mogą tworzyć własne charakterystyki platformy o skutki. Efekt zapewnia określonych funkcji, który następnie jest ujawniany przez poszczególnych platform. Wynik jest wpływ, jaki mogą być łatwo używane za pośrednictwem XAML i za pośrednictwem interfejsu API fluent kodu. W tym artykule przedstawiono sposób ujawniać efekt za pomocą poszczególnych platform."
-ms.topic: article
+title: Tworzenie charakterystykę platformy
+description: Dostawcy mogą tworzyć własne charakterystyki platformy o skutki. Efekt zapewnia określonych funkcji, który następnie jest ujawniany przez poszczególnych platform. Wynik jest wpływ, jaki mogą być łatwo używane za pośrednictwem XAML i za pośrednictwem interfejsu API fluent kodu. W tym artykule przedstawiono sposób ujawniać efekt za pomocą poszczególnych platform.
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: 7cdc67f8ea1038226bb6ef8c8add8c03e9635e6a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6283e22d75d9e52ad3e2f300617818c98d887481
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-platform-specifics"></a>Tworzenie charakterystykę platformy
 

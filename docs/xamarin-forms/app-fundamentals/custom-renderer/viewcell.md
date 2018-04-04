@@ -1,18 +1,17 @@
 ---
 title: Dostosowywanie ViewCell
-description: "ViewCell platformy Xamarin.Forms jest komórki, można dodać do elementu ListView lub TableView, zawierający widok zdefiniowany przez dewelopera. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla ViewCell, który znajduje się w formancie ListView platformy Xamarin.Forms. Zatrzymuje obliczeń układ platformy Xamarin.Forms jest wielokrotnie wywoływane podczas przewijania ListView."
-ms.topic: article
+description: ViewCell platformy Xamarin.Forms jest komórki, można dodać do elementu ListView lub TableView, zawierający widok zdefiniowany przez dewelopera. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla ViewCell, który znajduje się w formancie ListView platformy Xamarin.Forms. Zatrzymuje obliczeń układ platformy Xamarin.Forms jest wielokrotnie wywoływane podczas przewijania ListView.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 9e980dd428ec0efab8578a25f9191dbc71bbaf6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-viewcell"></a>Dostosowywanie ViewCell
 

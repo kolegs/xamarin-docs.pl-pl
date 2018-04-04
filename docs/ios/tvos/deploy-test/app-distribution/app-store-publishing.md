@@ -1,18 +1,17 @@
 ---
 title: Publikowanie do sklepu z aplikacjami firmy Apple TV
-description: "W tym artykule pokazano, jak konfigurowanie, tworzenie i publikowanie aplikacji Xamarin.tvOS dla dystrybucji za pośrednictwem sklepu z aplikacjami firmy Apple TV. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, ostatecznie, jak opublikować aplikację do sklepu z aplikacjami firmy Apple TV."
-ms.topic: article
+description: W tym artykule pokazano, jak konfigurowanie, tworzenie i publikowanie aplikacji Xamarin.tvOS dla dystrybucji za pośrednictwem sklepu z aplikacjami firmy Apple TV. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, ostatecznie, jak opublikować aplikację do sklepu z aplikacjami firmy Apple TV.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikowanie do sklepu z aplikacjami firmy Apple TV
 
@@ -80,7 +79,7 @@ Apple zawiera specjalne usług aplikacji, nazywane również uprawnienia, które
 Tworzenie Identyfikatora aplikacji i opcjonalnie wybranie uprawnień obejmuje następujące czynności przy użyciu firmy Apple iOS opartych na sieci web portalu inicjowania obsługi:
 
 1. Wybierz **inicjowania obsługi administracyjnej** > **programowanie**.
-2. Kliknij przycisk  **+**  przycisk i podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
+2. Kliknij przycisk **+** przycisk i podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
 3. Przewiń do dołu ekranu i wybrać dowolną **usługi aplikacji** które będzie wymagane przez aplikację Xamarin.tvOS.
 4. Kliknij przycisk **Kontynuuj** przycisk i następujących wyświetlanymi instrukcjami, aby utworzyć nowy identyfikator aplikacji.
 
@@ -114,7 +113,7 @@ używa systemu tvOS *profile aprowizacji* do kontrolowania wdrażanie kompilacji
 Udostępnianie obejmuje następujące czynności przy użyciu firmy Apple iOS opartego na sieci web portalu inicjowania obsługi:
 
 1.  Wybierz **inicjowania obsługi administracyjnej** > **dystrybucji**.
-2.  Kliknij przycisk  **+**  przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami firmy Apple TV**.
+2.  Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami firmy Apple TV**.
 3.  Wybierz **identyfikator aplikacji** z listy rozwijanej, który chcesz utworzyć profil dystrybucji.
 4.  Wybierz certyfikat wymagany do podpisywania aplikacji.
 5.  Wprowadź **nazwa** nowego **profil dystrybucji** i generować profilu.

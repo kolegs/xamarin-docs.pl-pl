@@ -1,18 +1,17 @@
 ---
-title: "Wywoływanie zdarzeń z efekty"
-description: "Efekt można zdefiniować i wywołaj zdarzenie sygnalizowania zmiany w podstawowym widoku macierzystego. W tym artykule przedstawiono, jak zaimplementować niskiego poziomu palca wielodotyku śledzenia i sposób generowania zdarzeń, które sygnalizują touch działania."
-ms.topic: article
+title: Wywoływanie zdarzeń z efekty
+description: Efekt można zdefiniować i wywołaj zdarzenie sygnalizowania zmiany w podstawowym widoku macierzystego. W tym artykule przedstawiono, jak zaimplementować niskiego poziomu palca wielodotyku śledzenia i sposób generowania zdarzeń, które sygnalizują touch działania.
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="invoking-events-from-effects"></a>Wywoływanie zdarzeń z efekty
 

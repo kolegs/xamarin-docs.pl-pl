@@ -1,18 +1,17 @@
 ---
 title: Obrazy
-description: "Ten artykuł dotyczy pracy z obrazów i ikon w aplikacji Xamarin.Mac. Opisuje tworzenie i obsługę obrazów potrzebne do utworzenia ikony aplikacji i używanie obrazów w kodzie C# i kompilatora interfejsu w środowisku Xcode."
-ms.topic: article
+description: Ten artykuł dotyczy pracy z obrazów i ikon w aplikacji Xamarin.Mac. Opisuje tworzenie i obsługę obrazów potrzebne do utworzenia ikony aplikacji i używanie obrazów w kodzie C# i kompilatora interfejsu w środowisku Xcode.
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>Obrazy
 
@@ -46,7 +45,7 @@ Przy dodawaniu obrazu do użycia w aplikacji Xamarin.Mac, istnieje kilka miejsca
 - **Drzewo projektu [przestarzały]** — obrazy można dodać bezpośrednio do drzewa projektów. Podczas wywoływania metody obrazy przechowywane w drzewie projektu z kodu, lokalizacja folderu, nie została określona. Na przykład: `NSImage image = NSImage.ImageNamed("tags.png");`. 
 - **Folderu zasobów [przestarzały]** -specjalną **zasobów** jest folder dla każdego pliku, który będzie częścią aplikacji do pakietu, takich jak ikony, uruchom ekranu lub ogólne obrazów (lub inne obrazu lub pliku projektanta chce dodać). Podczas wywoływania metody obrazy przechowywane w **zasobów** folder z kodu, po prostu, takich jak obrazy przechowywane w drzewie projektu, lokalizacja folderu nie została określona. Na przykład: `NSImage.ImageNamed("tags.png")`.
 - **Niestandardowe Folder lub podfolder [przestarzały]** -dewelopera można dodać folderu niestandardowego do drzewa źródła projektów i obrazy są przechowywane. Lokalizacja, w której plik zostanie dodany mogą być zagnieżdżane w podfolderze do dalszego ułatwić organizowanie projektu. Na przykład dodać dewelopera `Card` folderu do projektu i podfolderem folderu `Hearts` do tego folderu, a następnie zapisać obrazu **Jack.png** w `Hearts` folderu, `NSImage.ImageNamed("Card/Hearts/Jack.png")` czy ładowanie obrazu na środowisko uruchomieniowe.
-- **Ustawia obraz katalogu zasobów [preferowane]** — dodano w Capitan El OS X **Ustawia obraz katalogi zasobów** zawiera wszystkie wersje lub reprezentacje obrazu, które są niezbędne do obsługi różnych urządzeń i skalować czynniki użytkownika aplikacja. Zamiast polegania na nazwę pliku zasobów obrazu (**@1x**,  **@2x** ).
+- **Ustawia obraz katalogu zasobów [preferowane]** — dodano w Capitan El OS X **Ustawia obraz katalogi zasobów** zawiera wszystkie wersje lub reprezentacje obrazu, które są niezbędne do obsługi różnych urządzeń i skalować czynniki użytkownika aplikacja. Zamiast polegania na nazwę pliku zasobów obrazu (**@1x**, **@2x**).
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ Jak wspomniano powyżej, **Ustawia obraz katalogi zasobów** zawiera wszystkie w
 
     [![Edytowanie obrazu Ustaw nazwę](image-images/imageset04.png "edycji obrazu Nazwa zestawu")](image-images/imageset04-large.png#lightbox)
     
-Specjalny **wektor** klasa został dodany do **Ustawia obraz** która pozwala obejmują _PDF_ wektor obrazu w casset zamiast niej w tym mapy bitowej poszczególnych plików w formacie różne metody rozwiązywania. Za pomocą tej metody, podaj wektor pojedynczego pliku  **@1x**  rozdzielczości (w formacie pliku PDF wektor) i  **@2x**  i  **@3x**  wersje pliku, zostanie wygenerowany w czasie kompilacji i zawartych w pakiecie aplikacji.
+Specjalny **wektor** klasa został dodany do **Ustawia obraz** która pozwala obejmują _PDF_ wektor obrazu w casset zamiast niej w tym mapy bitowej poszczególnych plików w formacie różne metody rozwiązywania. Za pomocą tej metody, podaj wektor pojedynczego pliku **@1x** rozdzielczości (w formacie pliku PDF wektor) i **@2x** i **@3x** wersje pliku, zostanie wygenerowany w czasie kompilacji i zawartych w pakiecie aplikacji.
 
 [![Obraz ustawić interfejs edytora](image-images/imageset05.png "obrazu ustawić interfejs Edytora")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ Zasób graficzne dodany do aplikacji Xamarin.Mac (ikony, niestandardowe kontrolk
 Podczas tworzenia wersji standard i o wysokiej rozdzielczości obrazu, wykonaj tę konwencję nazewnictwa dla pary obrazu podczas umieszczania ich w projekcie Xamarin.Mac:
 
 - **Standard rozpoznawania**  - **rozszerzenia ImageName.filename** (przykład: **tags.png**)
-- **O wysokiej rozdzielczości**   -   **ImageName@2x.filename-extension**  (przykład:  **tags@2x.png** )
+- **O wysokiej rozdzielczości**   -  **ImageName@2x.filename-extension** (przykład: **tags@2x.png**)
 
 Jeśli dodano do projektu, czy pojawią się one w następujący sposób:
 
@@ -150,7 +149,7 @@ Jeśli dodano do projektu, czy pojawią się one w następujący sposób:
 
 Gdy obraz jest przypisany do elementu interfejsu użytkownika w Konstruktorze interfejs będzie wystarczy wybrać plik w _Nazwa_obrazu_**.** _rozszerzenie nazwy pliku_ formatu (przykład: **tags.png**). Taki sam dla przy użyciu obrazu w kodzie języka C#, będzie pobranie pliku w _Nazwa_obrazu_**.** _rozszerzenie nazwy pliku_ format.
 
-Uruchomienie aplikacji Xamarin.Mac jest na komputerze Mac _Nazwa_obrazu_**.** _rozszerzenie nazwy pliku_ obraz w formacie będą używane w standardowe wyświetlacze o rozdzielczości  **ImageName@2x.filename-extension**  obrazu będzie automatycznie pobierane wyświetlanie siatkówki podstawowych Mac.
+Uruchomienie aplikacji Xamarin.Mac jest na komputerze Mac _Nazwa_obrazu_**.** _rozszerzenie nazwy pliku_ obraz w formacie będą używane w standardowe wyświetlacze o rozdzielczości **ImageName@2x.filename-extension** obrazu będzie automatycznie pobierane wyświetlanie siatkówki podstawowych Mac.
 
 
 ## <a name="using-images-in-interface-builder"></a>Używanie obrazów w Konstruktorze — interfejs
@@ -176,7 +175,7 @@ Aby użyć obrazu w Konstruktorze interfejsu, wykonaj następujące czynności:
      ![Obraz jest wyświetlany w edytorze paska narzędzi](image-images/ib04.png "obraz jest wyświetlany w edytorze paska narzędzi")
 6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
 
-Powyższe kroki pracy elementów interfejsu użytkownika, które umożliwia ich właściwość obrazu w **inspektora atrybutu**. Ponownie jeśli zostały uwzględnione  **@2x**  wersję pliku obrazu, jego zostaną automatycznie użyte na Mac na podstawie wyświetlania siatkówki.
+Powyższe kroki pracy elementów interfejsu użytkownika, które umożliwia ich właściwość obrazu w **inspektora atrybutu**. Ponownie jeśli zostały uwzględnione **@2x** wersję pliku obrazu, jego zostaną automatycznie użyte na Mac na podstawie wyświetlania siatkówki.
 
 > [!IMPORTANT]
 > Jeśli obraz nie jest dostępna w **nazwa obrazu** listy rozwijanej, zamknij projekt .storyboard w środowisku Xcode i otwórz go ponownie z programu Visual Studio dla komputerów Mac. Jeśli obraz jest nadal niedostępna, upewnij się, że jego **Akcja kompilacji** jest `BundleResource` oraz że obraz został dodany do **zasobów** folderu.
@@ -189,7 +188,7 @@ Podczas ładowania obrazu do pamięci w aplikacji Xamarin.Mac przy użyciu kodu 
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-Powyższy kod używa statycznych `ImageNamed("...")` metody `NSImage` klasę, aby załadować danego obrazu do pamięci z **zasobów** folderu, jeśli nie można znaleźć obrazu, `null` zostaną zwrócone. Jeśli zostały uwzględnione, takich jak obrazy przypisane w Konstruktorze interfejsu  **@2x**  wersję pliku obrazu, jego zostaną automatycznie użyte na Mac na podstawie wyświetlania siatkówki.
+Powyższy kod używa statycznych `ImageNamed("...")` metody `NSImage` klasę, aby załadować danego obrazu do pamięci z **zasobów** folderu, jeśli nie można znaleźć obrazu, `null` zostaną zwrócone. Jeśli zostały uwzględnione, takich jak obrazy przypisane w Konstruktorze interfejsu **@2x** wersję pliku obrazu, jego zostaną automatycznie użyte na Mac na podstawie wyświetlania siatkówki.
 
 Aby załadować obrazy poza pakietu aplikacji (z systemu Mac), należy użyć poniższego kodu:
 

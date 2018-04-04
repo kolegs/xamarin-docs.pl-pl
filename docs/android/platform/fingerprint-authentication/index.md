@@ -1,18 +1,17 @@
 ---
 title: Odcisk palca uwierzytelniania
-description: "W tym przewodniku omówiono sposób dodawania odcisku palca uwierzytelniania, wprowadzone w systemie Android 6.0 do aplikacji platformy Xamarin.Android."
-ms.topic: article
+description: W tym przewodniku omówiono sposób dodawania odcisku palca uwierzytelniania, wprowadzone w systemie Android 6.0 do aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 79f5f81e11f62359c3b951500d4ab5cbd63fb507
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b28b16dfd92ef3a31201ef2e86681a425a58ab8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="fingerprint-authentication"></a>Odcisk palca uwierzytelniania
 

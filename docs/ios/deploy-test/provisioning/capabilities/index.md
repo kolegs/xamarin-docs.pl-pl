@@ -1,18 +1,17 @@
 ---
 title: Praca z funkcjami
-description: "Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla wszystkich możliwości."
-ms.topic: article
+description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla wszystkich możliwości.
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-capabilities"></a>Praca z funkcjami
 
@@ -141,7 +140,7 @@ Przy użyciu Centrum deweloperów jest procesem dwóch krok, który wymaga tworz
 
     ![Wybór identyfikator aplikacji w Centrum deweloperów](images/image6.png)
 
-4.  Naciśnij klawisz  **+**  przycisk w prawym górnym rogu, aby utworzyć nowy identyfikator aplikacji.
+4.  Naciśnij klawisz **+** przycisk w prawym górnym rogu, aby utworzyć nowy identyfikator aplikacji.
 5.  Wprowadź opis Identyfikatora aplikacji, wybierz jawny identyfikator aplikacji, a następnie wprowadź identyfikator pakietu w formacie `com.domain.appname`. Ten identyfikator pakietu, powinien być zgodny z Identyfikatorem pakietu w projekcie:
 
     ![Dodawanie szczegółów identyfikator aplikacji](images/image7.png)
@@ -168,7 +167,7 @@ Teraz Utwórz profil inicjowania obsługi administracyjnej, który zawiera ten i
 
     ![Inicjowanie obsługi profilu](images/image10.png)
 
-2.  Naciśnij klawisz  **+**  przycisk w prawym górnym rogu, aby utworzyć nowy profil inicjowania obsługi administracyjnej.
+2.  Naciśnij klawisz **+** przycisk w prawym górnym rogu, aby utworzyć nowy profil inicjowania obsługi administracyjnej.
 3.  Wybierz typ profilu inicjowania obsługi administracyjnej, który należy i kliknij przycisk **Kontynuuj**:
 
     ![Wybieranie profilu inicjowania obsługi administracyjnej](images/image11.png)

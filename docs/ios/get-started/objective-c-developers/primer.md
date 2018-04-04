@@ -1,17 +1,16 @@
 ---
-title: "Elementarz C# dla programistów języka Objective C"
-description: "Xamarin.iOS umożliwia niezależne od platformy kod napisany w języku C# do udostępnienia platformach. Istniejące aplikacje dla systemu iOS może być jednak wykorzystać kod języka Objective-C, który został już utworzony. W tym artykule służy jako krótki Elementarz dla deweloperów języka Objective-C chce przenieść do platformy Xamarin i języka C#."
-ms.topic: article
+title: Elementarz C# dla programistów języka Objective C
+description: Xamarin.iOS umożliwia niezależne od platformy kod napisany w języku C# do udostępnienia platformach. Istniejące aplikacje dla systemu iOS może być jednak wykorzystać kod języka Objective-C, który został już utworzony. W tym artykule służy jako krótki Elementarz dla deweloperów języka Objective-C chce przenieść do platformy Xamarin i języka C#.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfc91ba92b2ed62e61d7ba99dec03784933295bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Elementarz C# dla programistów języka Objective C
 

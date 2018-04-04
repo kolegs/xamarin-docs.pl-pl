@@ -1,17 +1,16 @@
 ---
 title: Skoroszyty instalacji i wymagania
-description: "Jak pobrać, zainstalować i skoroszyty Xamarin."
-ms.topic: article
+description: Jak pobrać, zainstalować i skoroszyty Xamarin.
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: bf3d675224a1e1696d4ce526fa42260d2102aa7d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 68cac91a9b430d2abd138c0bb8bd334b65986329
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>Skoroszyty instalacji i wymagania
 

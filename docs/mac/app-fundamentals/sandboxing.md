@@ -1,18 +1,17 @@
 ---
 title: Sandboxing aplikacji Xamarin.Mac
-description: "W tym artykule omówiono sandboxing aplikacją Xamarin.Mac w wersji ze sklepu App Store. Obejmuje wszystkie elementy, które wchodzą w sandboxing, takie jak katalogi kontenera, uprawnień, uprawnienia użytkownika, separacji uprawnień i wymuszania jądra."
-ms.topic: article
+description: W tym artykule omówiono sandboxing aplikacją Xamarin.Mac w wersji ze sklepu App Store. Obejmuje wszystkie elementy, które wchodzą w sandboxing, takie jak katalogi kontenera, uprawnień, uprawnienia użytkownika, separacji uprawnień i wymuszania jądra.
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a02d7639975de092b05f31bacedd6bde4c9392f9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing aplikacji Xamarin.Mac
 

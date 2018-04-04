@@ -1,18 +1,17 @@
 ---
-title: "Tworzenie układu niestandardowego"
-description: "Platformy Xamarin.Forms definiuje cztery układ klasy — StackLayout, AbsoluteLayout RelativeLayout i siatki, i każdego Rozmieszcza elementy podrzędne w inny sposób. Jednak czasami jest niezbędne do obsługi zawartości strony przy użyciu układu nie został dostarczony przez platformy Xamarin.Forms. W tym artykule opisano sposób tworzenia niestandardowego układu klasy i przedstawia klasę WrapLayout liter orientacji Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy."
-ms.topic: article
+title: Tworzenie układu niestandardowego
+description: Platformy Xamarin.Forms definiuje cztery układ klasy — StackLayout, AbsoluteLayout RelativeLayout i siatki, i każdego Rozmieszcza elementy podrzędne w inny sposób. Jednak czasami jest niezbędne do obsługi zawartości strony przy użyciu układu nie został dostarczony przez platformy Xamarin.Forms. W tym artykule opisano sposób tworzenia niestandardowego układu klasy i przedstawia klasę WrapLayout liter orientacji Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 4c7bf5f2c867faef7d9baf8d511393dbe2d129a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0728ac110fcf86f44a5ccb5ddd80b00af1b8d62
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-custom-layout"></a>Tworzenie układu niestandardowego
 

@@ -1,18 +1,17 @@
 ---
-title: "Wprowadzenie do zużycia dla systemu Android"
-description: "Wraz z wprowadzeniem nosić systemu Android firmy Google nie jesteś już ograniczona do właśnie telefony i tablety po przejściu do tworzenia niezwykłych aplikacji dla systemu Android. Dla platformy Xamarin.Android obsługę systemu Android nosić umożliwia uruchomienie kodu C# na nadgarstka! To wprowadzenie zawiera ogólne omówienie nosić systemu Android, opisano najważniejsze funkcje i udostępnia przegląd funkcji dostępnych w systemie Android nosić 2.0. Przedstawiono najpopularniejszych urządzeń z systemem Android nosić i linki do podstawowych Google Android nosić dokumentacji, aby uzyskać więcej informacji."
-ms.topic: article
+title: Wprowadzenie do zużycia dla systemu Android
+description: Wraz z wprowadzeniem nosić systemu Android firmy Google nie jesteś już ograniczona do właśnie telefony i tablety po przejściu do tworzenia niezwykłych aplikacji dla systemu Android. Dla platformy Xamarin.Android obsługę systemu Android nosić umożliwia uruchomienie kodu C# na nadgarstka! To wprowadzenie zawiera ogólne omówienie nosić systemu Android, opisano najważniejsze funkcje i udostępnia przegląd funkcji dostępnych w systemie Android nosić 2.0. Przedstawiono najpopularniejszych urządzeń z systemem Android nosić i linki do podstawowych Google Android nosić dokumentacji, aby uzyskać więcej informacji.
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ab166bb71c23d456cb70d35a2794717110642fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-android-wear"></a>Wprowadzenie do zużycia dla systemu Android
 

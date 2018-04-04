@@ -1,18 +1,17 @@
 ---
 title: 'Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C'
 description: Ten artykuł zawiera praktyczne wskazówki tworzenia powiązania Xamarin.iOS dla istniejącej biblioteki języka Objective-C, InfColorPicker. Obejmuje ona tematy, takie jak kompilowanie biblioteki statycznej Objective-C, powiązania jej i za pomocą tego powiązania w aplikacji platformy Xamarin.iOS.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 7a25aa1043dcaf52406059d3fa184da36dc4875e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C
 

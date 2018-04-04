@@ -1,18 +1,17 @@
 ---
-title: "Tworzenie usług dla systemu Android"
-description: "W tym przewodniku omówiono Xamarin.Android usług, które są składniki systemu Android, które umożliwiają pracy bez interfejsu aktywnego użytkownika. Usługi w bardzo często są używane dla zadań, które są wykonywane w tle, takie jak dużo czasu obliczeń, pobierania plików odtwarzanie muzyki i tak dalej. Opisano różne scenariusze, które usługi są odpowiednie do, a pokazano, jak zarówno do wykonywania długotrwałych zadań w tle, a także udostępnia interfejs dla zdalnego wywołania procedury ich wdrażania."
-ms.topic: article
+title: Tworzenie usług dla systemu Android
+description: W tym przewodniku omówiono Xamarin.Android usług, które są składniki systemu Android, które umożliwiają pracy bez interfejsu aktywnego użytkownika. Usługi w bardzo często są używane dla zadań, które są wykonywane w tle, takie jak dużo czasu obliczeń, pobierania plików odtwarzanie muzyki i tak dalej. Opisano różne scenariusze, które usługi są odpowiednie do, a pokazano, jak zarówno do wykonywania długotrwałych zadań w tle, a także udostępnia interfejs dla zdalnego wywołania procedury ich wdrażania.
 ms.prod: xamarin
 ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-android-services"></a>Tworzenie usług dla systemu Android
 
@@ -45,7 +44,7 @@ Istnieją cztery typy usług z systemem Android:
 
 * **Powiązane usługi** &ndash; A _powiązane usługi_ to usługa, która ma niektórych innych składników (zazwyczaj działanie) powiązane z nim. Powiązane usługi udostępnia interfejs umożliwiający składnika powiązane i usłudze na współdziałanie z sobą. Gdy nie ma żadnych więcej klientów powiązany z usługami, Android zamknie usługę. 
 
-* **`IntentService`** &ndash;  _`IntentService`_  Jest podklasą specjalne `Service` klasy, które upraszcza tworzenie usług i użycia. `IntentService` Jest przeznaczona do obsługi poszczególnych odwołań autonomicznego. W przeciwieństwie do usługi, która jednocześnie może obsłużyć wielu wywołań, `IntentService` przypomina _pracy kolejki procesora_ &ndash; pracy jest umieszczone w kolejce i `IntentService` przetwarza każde zadanie jednym naraz w wątku pojedynczego procesu roboczego. Zazwyczaj`IntentService` nie jest powiązany z działania lub fragmentu. 
+* **`IntentService`** &ndash; _`IntentService`_ Jest podklasą specjalne `Service` klasy, które upraszcza tworzenie usług i użycia. `IntentService` Jest przeznaczona do obsługi poszczególnych odwołań autonomicznego. W przeciwieństwie do usługi, która jednocześnie może obsłużyć wielu wywołań, `IntentService` przypomina _pracy kolejki procesora_ &ndash; pracy jest umieszczone w kolejce i `IntentService` przetwarza każde zadanie jednym naraz w wątku pojedynczego procesu roboczego. Zazwyczaj`IntentService` nie jest powiązany z działania lub fragmentu. 
 
 * **Uruchomiono usługę** &ndash; A _uruchomił usługę_ to usługa, która została uruchomiona przez inne Android składników (na przykład działanie) i jest uruchamiany ciągłe w tle, aż coś jawnie informuje zatrzymanie usługi. W przeciwieństwie do powiązanej usługi uruchomiono usługi nie ma żadnych klientów bezpośrednio powiązane z nim. Z tego powodu należy projektować uruchomionych usług, tak aby ich może zostać bezpiecznie uruchomione ponownie w razie potrzeby.
 

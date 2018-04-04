@@ -1,18 +1,17 @@
 ---
-title: "Uwierzytelnianie użytkowników przy użyciu usługi Amazon SimpleDB usługi"
-description: "Amazon SimpleDB nie oferuje własny system uprawnień opartych na zasobach. Zamiast tego aby upewnić się, że użytkownicy mają tylko dostęp do swoich własnych danych w domenie SimpleDB można uwierzytelniania względem dostawcy tożsamości. W tym artykule wyjaśniono, jak ograniczyć dostęp użytkowników do ich własnych danych SimpleDB."
-ms.topic: article
+title: Uwierzytelnianie użytkowników przy użyciu usługi Amazon SimpleDB usługi
+description: Amazon SimpleDB nie oferuje własny system uprawnień opartych na zasobach. Zamiast tego aby upewnić się, że użytkownicy mają tylko dostęp do swoich własnych danych w domenie SimpleDB można uwierzytelniania względem dostawcy tożsamości. W tym artykule wyjaśniono, jak ograniczyć dostęp użytkowników do ich własnych danych SimpleDB.
 ms.prod: xamarin
 ms.assetid: 797C91A5-9720-4DAC-89D8-5C85996584C8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 592e957e0c64e7189d6f01f1ba0f23da074c4bec
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Uwierzytelnianie użytkowników przy użyciu usługi Amazon SimpleDB usługi
 

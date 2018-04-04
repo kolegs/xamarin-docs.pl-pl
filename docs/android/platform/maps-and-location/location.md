@@ -1,18 +1,17 @@
 ---
-title: "Usługi lokalizacji"
-description: "Ten przewodnik zawiera wprowadzenie Rozpoznawanie lokalizacji w aplikacjach systemu Android oraz pokazano, jak pobrać lokalizacji użytkownika przy użyciu interfejsu API systemu Android usługi lokalizacji, a także dostępnego dostawcę kolei lokalizacji przy użyciu interfejsu API Google lokalizacji usług."
-ms.topic: article
+title: Usługi lokalizacji
+description: Ten przewodnik zawiera wprowadzenie Rozpoznawanie lokalizacji w aplikacjach systemu Android oraz pokazano, jak pobrać lokalizacji użytkownika przy użyciu interfejsu API systemu Android usługi lokalizacji, a także dostępnego dostawcę kolei lokalizacji przy użyciu interfejsu API Google lokalizacji usług.
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="location-services"></a>Usługi lokalizacji
 

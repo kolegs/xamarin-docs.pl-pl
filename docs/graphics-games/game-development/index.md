@@ -1,18 +1,17 @@
 ---
-title: "Wprowadzenie do tworzenia gier za pomocą platformy Xamarin"
-description: "Rodzaj tworzenia gier może znacznie się różnić od rozwoju innych typów aplikacji. Ten artykuł zawiera wprowadzenie do tworzenia gier, oferujący funkcje technologii, których można użyć platformy Xamarin.Android i Xamarin.iOS. Platformy Xamarin.Android i Xamarin.iOS zapewnia zarówno wysokiego poziomu omówienie sposobu gry zostały wprowadzone, jak i próbkowania technologie dostępne do użycia."
-ms.topic: article
+title: Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
+description: Rodzaj tworzenia gier może znacznie się różnić od rozwoju innych typów aplikacji. Ten artykuł zawiera wprowadzenie do tworzenia gier, oferujący funkcje technologii, których można użyć platformy Xamarin.Android i Xamarin.iOS. Platformy Xamarin.Android i Xamarin.iOS zapewnia zarówno wysokiego poziomu omówienie sposobu gry zostały wprowadzone, jak i próbkowania technologie dostępne do użycia.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
 
@@ -97,8 +96,8 @@ Niektóre potoki zawartości mogą być bardzo szybko i wymagają nie nakładu p
 Tworzenie gier wprowadza nowe role i tytuły dla użytkowników indywidualnych związane z procesem. Większość deweloperów gier nie będą mogli spełniają szeroką gamę umiejętności wymagane do wersji pełnej gier, więc istnieje wiele zasad. Należy pamiętać, że nie jest pełną listę obszarów programowanie — tylko niektóre z tych częściej.
 
 - **Programista** — najczęściej odczytu, w tym artykule mieszczą się w tej kategorii. Rola programisty w opracowywaniu gier jest podobny do roli programisty w aplikacji innej niż gry. Obowiązki obejmują pisanie logiki do sterowania przepływem gry rozwijanie systemów do wykonywania typowych zadań w ramach danego projektu, dodawanie i wyświetlania zawartości i — oczywiście — naprawiania błędów.
-- **2D wykonawcy** — artystów 2D są odpowiedzialne za tworzenie *2D zasoby*. Obejmują one pliki obrazów dla gry graficznego interfejsu użytkownika, cząstki środowisk i znaki. Jeśli grę, którą tworzysz 3D, artystów 2D nie można odpowiedzialny za środowisk i znaki. Można znaleźć wolnej grafiki w grę w [http://opengameart.org/](http://opengameart.org/) .
-- **3D artystów** — artystów 3D są odpowiedzialne za tworzenie *3D zasoby*. Obejmują one modeli 3D w środowiskach, znaków i właściwości (mebli, giełdowych i innych obiektów inanimate). Niektóre zespoły odróżnić 3D artystów i 3D twórcy animacji, w zależności od wielkości zespołu. Można znaleźć wolnej grafiki 3D w grę w [http://opengameart.org/](http://opengameart.org/) .
+- **2D wykonawcy** — artystów 2D są odpowiedzialne za tworzenie *2D zasoby*. Obejmują one pliki obrazów dla gry graficznego interfejsu użytkownika, cząstki środowisk i znaki. Jeśli grę, którą tworzysz 3D, artystów 2D nie można odpowiedzialny za środowisk i znaki. Można znaleźć wolnej grafiki w grę w [ http://opengameart.org/ ](http://opengameart.org/) .
+- **3D artystów** — artystów 3D są odpowiedzialne za tworzenie *3D zasoby*. Obejmują one modeli 3D w środowiskach, znaków i właściwości (mebli, giełdowych i innych obiektów inanimate). Niektóre zespoły odróżnić 3D artystów i 3D twórcy animacji, w zależności od wielkości zespołu. Można znaleźć wolnej grafiki 3D w grę w [ http://opengameart.org/ ](http://opengameart.org/) .
 - **Projektant gier** — projektantów gier są zobowiązani do definiowania jak gry jest odtwarzany. Może to obejmować wysokiego poziomu decyzji na przykład ustawienie grę, ogólnym celem gry i jak odtwarzacza przechodzi przez gry. Definiowanie współczynniki dla ruchu lub poziom ups i projektowanie układu poziomu projektantów gry może być również objętego bardzo szczegółowe decyzji, takich jak dane wejściowe mapowania akcji. Należy pamiętać, że termin *projektanta* może odwoływać się do gier designer lub wizualnego projektanta w zależności od kontekstu.
 - **Dźwięk projektanta** — projektantów dźwięku są odpowiedzialne za zasoby audio gier. Niektóre zespołów może odróżnić osób odpowiedzialnych za tworzenie efekty i Kompozytorzy, mimo niewielkich zespołów może być jedna osoba odpowiedzialna za wszystkie audio.
 
@@ -171,9 +170,9 @@ Zapoznaj się z [przewodniki UrhoSharp](~/graphics-games/urhosharp/index.md) roz
 
 Technologie wyróżnione powyżej jest tylko przykładem technologie dostępne. Inne technologie zauważalne obejmują:
 
-- **Zestaw Sprite** — program Xamarin obsługuje firmy Apple zestawu Sprite gier struktury, która umożliwia dostęp do wszystkich funkcji natywnego interfejsu API. Zestaw Sprite jest technologią utworzone przez firmę Apple, zapewnia głęboką integrację z resztą ekosystemu systemu iOS. Oczywiście Sprite zestawu nie jest między platformami, nie można użyć w systemie Android. Aby uzyskać więcej informacji na temat używania zestawu Sprite, zobacz ten wpis: [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Zestaw sceny** — Xamarin także zapewnia obsługę struktury zestawu sceny firmy Apple, która upraszcza wdrażanie grafiki 3D do aplikacji systemu iOS. Zestaw sceny jest również dostarczane przez firmę Apple, co powoduje integracji i wymienione powyżej dla zestawu Sprite zagadnienia specyficzne dla platformy technologię. Aby uzyskać więcej informacji na scenie Kit, zobacz ten wpis: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK —** OpenTK (oznaczającą Otwórz zestaw narzędzi) zapewnia dostęp OpenGL niskiego poziomu z systemem iOS firmy Apple i Mac sprzętu. Aby uzyskać więcej informacji o OpenTK, zobacz strony głównej w: [http://www.opentk.com/](http://www.opentk.com/)
+- **Zestaw Sprite** — program Xamarin obsługuje firmy Apple zestawu Sprite gier struktury, która umożliwia dostęp do wszystkich funkcji natywnego interfejsu API. Zestaw Sprite jest technologią utworzone przez firmę Apple, zapewnia głęboką integrację z resztą ekosystemu systemu iOS. Oczywiście Sprite zestawu nie jest między platformami, nie można użyć w systemie Android. Aby uzyskać więcej informacji na temat używania zestawu Sprite zobacz ten wpis:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Zestaw sceny** — Xamarin także zapewnia obsługę struktury zestawu sceny firmy Apple, która upraszcza wdrażanie grafiki 3D do aplikacji systemu iOS. Zestaw sceny jest również dostarczane przez firmę Apple, co powoduje integracji i wymienione powyżej dla zestawu Sprite zagadnienia specyficzne dla platformy technologię. Aby uzyskać więcej informacji na scenie Kit Zobacz ten wpis: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK —** OpenTK (oznaczającą Otwórz zestaw narzędzi) zapewnia dostęp OpenGL niskiego poziomu z systemem iOS firmy Apple i Mac sprzętu. Aby uzyskać więcej informacji o OpenTK zobacz strony głównej na:  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>Podsumowanie

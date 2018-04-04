@@ -1,18 +1,17 @@
 ---
-title: "Część 1. Wprowadzenie do języka XAML"
-description: "W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartości strony. Plik XAML zawsze jest skojarzony z plikiem kodu C#, który obsługuje kod znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu."
-ms.topic: article
+title: Część 1. Wprowadzenie do języka XAML
+description: W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartości strony. Plik XAML zawsze jest skojarzony z plikiem kodu C#, który obsługuje kod znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Część 1. Wprowadzenie do języka XAML
 

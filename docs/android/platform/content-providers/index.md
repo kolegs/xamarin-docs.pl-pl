@@ -1,18 +1,17 @@
 ---
-title: "Wprowadzenie do usługi ContentProviders"
-description: "System operacyjny Android korzysta z dostawców zawartości do ułatwienia dostępu do udostępnionych danych, takich jak pliki multimedialne, kontakty i Kalendarz informacje. W tym artykule przedstawiono klasy ContentProvider i przedstawiono dwa przykłady jak z niego korzystać."
-ms.topic: article
+title: Wprowadzenie do usługi ContentProviders
+description: System operacyjny Android korzysta z dostawców zawartości do ułatwienia dostępu do udostępnionych danych, takich jak pliki multimedialne, kontakty i Kalendarz informacje. W tym artykule przedstawiono klasy ContentProvider i przedstawiono dwa przykłady jak z niego korzystać.
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 53408220f1bbd3b0aa97e0c54bd8f4c09847b448
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e534c02820bfeab3a5bc1211bf0cbb20b9821af3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="intro-to-contentproviders"></a>Wprowadzenie do usługi ContentProviders
 

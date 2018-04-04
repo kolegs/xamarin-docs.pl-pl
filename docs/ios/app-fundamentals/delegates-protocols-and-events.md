@@ -1,18 +1,17 @@
 ---
-title: "Zdarzenia, protokołów i Delegaty"
-description: "Ten artykuł przedstawia informacje o technologii klucza iOS używany do odbierania wywołania zwrotne i wypełnianie formantów interfejsu użytkownika z danymi. Technologie te są zdarzenia, protokołów i delegatów. W tym artykule opisano, co każdy z nich jest i jak są używane w języku C#. Pokazuje, jak Xamarin.iOS używa kontrolki z systemem iOS do udostępnienia znanych zdarzenia platformy .NET, jak również, jak Xamarin.iOS zapewnia obsługę pojęcia języka Objective-C, takie jak protokoły i delegatów (Objective-C delegatów nie należy mylić z delegatów C#). Ten artykuł zawiera również przykłady, których pokazano, jak używane protokoły — zarówno jako podstawę dla języka Objective-C delegatów i w scenariuszach niebędącego delegatem."
-ms.topic: article
+title: Zdarzenia, protokołów i Delegaty
+description: Ten artykuł przedstawia informacje o technologii klucza iOS używany do odbierania wywołania zwrotne i wypełnianie formantów interfejsu użytkownika z danymi. Technologie te są zdarzenia, protokołów i delegatów. W tym artykule opisano, co każdy z nich jest i jak są używane w języku C#. Pokazuje, jak Xamarin.iOS używa kontrolki z systemem iOS do udostępnienia znanych zdarzenia platformy .NET, jak również, jak Xamarin.iOS zapewnia obsługę pojęcia języka Objective-C, takie jak protokoły i delegatów (Objective-C delegatów nie należy mylić z delegatów C#). Ten artykuł zawiera również przykłady, których pokazano, jak używane protokoły — zarówno jako podstawę dla języka Objective-C delegatów i w scenariuszach niebędącego delegatem.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Zdarzenia, protokołów i Delegaty
 

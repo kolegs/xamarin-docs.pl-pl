@@ -1,17 +1,16 @@
 ---
 title: Selektor dokumentu
-description: "Kontroler widoku dokumentu selektora przyznaje użytkownikom dostępu do plików spoza aplikacji piaskownicy. Jest prosty mechanizm udostępniania dokumentów między aplikacjami. Umożliwia również bardziej złożonych przepływów pracy, ponieważ użytkownicy mogą edytować pojedynczego dokumentu z wieloma aplikacjami. Ten artykuł zawiera wprowadzenie do aplikacji platformy Xamarin.iOS przy użyciu selektora dokumentu i zmiany w dokumentach iCloud wymagane do jego obsługi."
-ms.topic: article
+description: Kontroler widoku dokumentu selektora przyznaje użytkownikom dostępu do plików spoza aplikacji piaskownicy. Jest prosty mechanizm udostępniania dokumentów między aplikacjami. Umożliwia również bardziej złożonych przepływów pracy, ponieważ użytkownicy mogą edytować pojedynczego dokumentu z wieloma aplikacjami. Ten artykuł zawiera wprowadzenie do aplikacji platformy Xamarin.iOS przy użyciu selektora dokumentu i zmiany w dokumentach iCloud wymagane do jego obsługi.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="document-picker"></a>Selektor dokumentu
 

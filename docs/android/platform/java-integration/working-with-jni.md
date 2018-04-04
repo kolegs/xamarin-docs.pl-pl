@@ -1,18 +1,17 @@
 ---
 title: Praca z JNI
-description: "Xamarin.Android umożliwia pisanie aplikacji systemu Android w języku C# zamiast Java. Kilka zestawów są dostarczane z platformy Xamarin.Android, które zapewniają powiązania dla bibliotek języka Java, w tym Mono.Android.dll i Mono.Android.GoogleMaps.dll. Powiązania nie są dostarczane dla każdego możliwe biblioteka języka Java i powiązania, które znajdują się nie może powiązać każdy typ Java i element członkowski. Aby użyć niepowiązanych typów języka Java i elementów członkowskich, Java interfejsu macierzystego (JNI) mogą być używane. W tym artykule przedstawiono metodę zastosowania JNI wchodzić w interakcje z typów języka Java i elementów członkowskich z aplikacji platformy Xamarin.Android."
-ms.topic: article
+description: Xamarin.Android umożliwia pisanie aplikacji systemu Android w języku C# zamiast Java. Kilka zestawów są dostarczane z platformy Xamarin.Android, które zapewniają powiązania dla bibliotek języka Java, w tym Mono.Android.dll i Mono.Android.GoogleMaps.dll. Powiązania nie są dostarczane dla każdego możliwe biblioteka języka Java i powiązania, które znajdują się nie może powiązać każdy typ Java i element członkowski. Aby użyć niepowiązanych typów języka Java i elementów członkowskich, Java interfejsu macierzystego (JNI) mogą być używane. W tym artykule przedstawiono metodę zastosowania JNI wchodzić w interakcje z typów języka Java i elementów członkowskich z aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>Praca z JNI
 

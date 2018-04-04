@@ -1,18 +1,17 @@
 ---
-title: "Orientacja urządzenia"
-description: "Zrozumienie sposobu określania układu aplikacji, które wygląda świetnie w orientacji pionowej i poziomej."
-ms.topic: article
+title: Orientacja urządzenia
+description: Zrozumienie sposobu określania układu aplikacji, które wygląda świetnie w orientacji pionowej i poziomej.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: cb17c224fc6102d9e0dc25853c2222734299647a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-orientation"></a>Orientacja urządzenia
 
@@ -88,9 +87,9 @@ Określanie orientacji Xamarin.Android obsługuje kilka opcji:
 - **ReversePortrait** &ndash; powoduje, że aplikacja do użycia w orientacji pionowej, skierowane w odwrotnym kierunku z zwykle były wyświetlane "odwrócony."
 - **FullSensor** &ndash; powoduje, że aplikacja polegać na dane czujników, aby wybrać poprawny orientację (poza możliwe 4).
 - **FullUser** &ndash; powoduje aplikacji przy użyciu preferencji orientację użytkownika. Jeśli włączono automatyczne obracanie, wszystkie orientacje 4 można użyć.
-- **UserLandscape** &ndash;  _\[nieobsługiwane\]_  powoduje aplikacji orientację poziomą, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
-- **UserPortrait** &ndash;  _\[nieobsługiwane\]_  powoduje, że aplikacja do użycia w orientacji pionowej, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
-- **Zablokowane** &ndash;  _\[nieobsługiwane\]_  powoduje, że aplikacja do użycia orientacji ekranu niezależnie od jest podczas uruchamiania, nie odpowiada na zmiany w urządzeniu użytkownika fizycznych Orientacja. Ta opcja spowoduje przerwanie kompilacji.
+- **UserLandscape** &ndash; _\[nieobsługiwane\]_ powoduje aplikacji orientację poziomą, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
+- **UserPortrait** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia w orientacji pionowej, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
+- **Zablokowane** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia orientacji ekranu niezależnie od jest podczas uruchamiania, nie odpowiada na zmiany w urządzeniu użytkownika fizycznych Orientacja. Ta opcja spowoduje przerwanie kompilacji.
 
 Należy pamiętać, że wiele kontrolę nad jak jest zarządzany orientację Podaj macierzystych interfejsów API systemu Android, włącznie z opcjami, które jawnie są sprzeczne użytkownika wyrażone Preferencje.
 

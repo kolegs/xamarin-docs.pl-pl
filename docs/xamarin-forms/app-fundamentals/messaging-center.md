@@ -1,18 +1,17 @@
 ---
 title: MessagingCenter
-description: "Platformy Xamarin.Forms zawiera proste usługą obsługi wiadomości do wysyłania i odbierania wiadomości."
-ms.topic: article
+description: Platformy Xamarin.Forms zawiera proste usługą obsługi wiadomości do wysyłania i odbierania wiadomości.
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: ede78d4a041f8619ff97b3da802efb18943ef8ae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e8145847f3c91683aa7433208d70198998cda87f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="messagingcenter"></a>MessagingCenter
 
@@ -30,8 +29,8 @@ Platformy Xamarin.Forms `MessagingCenter` umożliwia wyświetlanie modeli i inne
 
 Istnieją dwie części `MessagingCenter`:
 
--  ** Ten sam komunikat może nasłuchuje wielu subskrybentów.
--  ** Jeśli nie odbiorników masz subskrypcję wiadomości jest ignorowana.
+-  **Subskrypcja** — nasłuchiwać komunikatów za pomocą niektórych podpisu i wykonanie akcji po odebraniu. Ten sam komunikat może nasłuchuje wielu subskrybentów.
+-  **Wyślij** — Opublikuj komunikat w przypadku odbiorników działanie. Jeśli nie odbiorników masz subskrypcję wiadomości jest ignorowana.
 
 
 `MessagingService` Jest Klasa statyczna z `Subscribe` i `Send` metod, które są używane w rozwiązaniu.

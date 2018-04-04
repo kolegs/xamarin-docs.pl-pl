@@ -1,17 +1,16 @@
 ---
 title: Zakup w aplikacji
-description: "aplikacje systemu iOS sprzedać cyfrowe produktów i usług przy użyciu interfejsów API zestawu magazynu. Produkty są tworzone i zarządzane w portalu Connect iTunes. Apple zarządza przetwarzanie transakcji i zatwierdza wszystkie produkty przed ich można sprzedać, a opłaty opłaty za każdą transakcję (obecnie 30%). Firma Apple wymaga, że używasz zakupu w aplikacji dla żadnej cyfrowe sprzedaży w aplikacji, ale nie można używać go sprzedaży fizycznych towarów lub usług-cyfrowego. Aplikacje, które oferują opcje płatności alternatywny cyfrowe produkty i usługi są prawdopodobnie odrzucane. Ten dokument wyjaśniono, jak skonfigurować aplikację tak, aby użyć zestawu magazynu i zawiera przykłady najbardziej typowych scenariuszy zakupów w aplikacji platformy Xamarin.iOS."
-ms.topic: article
+description: aplikacje systemu iOS sprzedać cyfrowe produktów i usług przy użyciu interfejsów API zestawu magazynu. Produkty są tworzone i zarządzane w portalu Connect iTunes. Apple zarządza przetwarzanie transakcji i zatwierdza wszystkie produkty przed ich można sprzedać, a opłaty opłaty za każdą transakcję (obecnie 30%). Firma Apple wymaga, że używasz zakupu w aplikacji dla żadnej cyfrowe sprzedaży w aplikacji, ale nie można używać go sprzedaży fizycznych towarów lub usług-cyfrowego. Aplikacje, które oferują opcje płatności alternatywny cyfrowe produkty i usługi są prawdopodobnie odrzucane. Ten dokument wyjaśniono, jak skonfigurować aplikację tak, aby użyć zestawu magazynu i zawiera przykłady najbardziej typowych scenariuszy zakupów w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>Zakup w aplikacji
 

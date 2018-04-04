@@ -1,18 +1,17 @@
 ---
 title: Android Audio
-description: "System operacyjny Android zapewnia zaawansowaną obsługę multimediów, obejmujące audio i wideo. Ten przewodnik koncentruje się na audio w systemie Android i obejmuje odtwarzanie oraz nagrywanie dźwięku za pomocą wbudowanych odtwarzacz audio i klasy rejestratora, jak również interfejs API audio niskiego poziomu. Obejmuje ona również pracy ze zdarzeniami Audio emisji przez inne aplikacje, dzięki czemu deweloperzy mogą tworzyć aplikacje dobrze behaved."
-ms.topic: article
+description: System operacyjny Android zapewnia zaawansowaną obsługę multimediów, obejmujące audio i wideo. Ten przewodnik koncentruje się na audio w systemie Android i obejmuje odtwarzanie oraz nagrywanie dźwięku za pomocą wbudowanych odtwarzacz audio i klasy rejestratora, jak również interfejs API audio niskiego poziomu. Obejmuje ona również pracy ze zdarzeniami Audio emisji przez inne aplikacje, dzięki czemu deweloperzy mogą tworzyć aplikacje dobrze behaved.
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 91bd5ae83cd0d59872e11a6b1bdc7b84c751e64f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: aff0d67549707129bfc85246318c33c522e4f1f6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-audio"></a>Android Audio
 

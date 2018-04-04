@@ -1,18 +1,17 @@
 ---
-title: "Powiązane usługi platformie Xamarin.Android"
-description: "Powiązane usługi są usługi dla systemu Android, które zapewniają interfejs klient serwer, który może interakcyjnie przeprowadzić klienta (na przykład działanie systemu Android). W tym przewodniku będzie omawiać najważniejsze składniki związane z tworzeniem powiązania usługi i jak z niego korzystać w aplikacji platformy Xamarin.Android."
-ms.topic: article
+title: Powiązane usługi platformie Xamarin.Android
+description: Powiązane usługi są usługi dla systemu Android, które zapewniają interfejs klient serwer, który może interakcyjnie przeprowadzić klienta (na przykład działanie systemu Android). W tym przewodniku będzie omawiać najważniejsze składniki związane z tworzeniem powiązania usługi i jak z niego korzystać w aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Powiązane usługi platformie Xamarin.Android
 
@@ -34,7 +33,7 @@ Ten diagram przedstawia sposób działania, połączenia z usługą, integratora
 
 ![Diagram przedstawiający sposób składniki usługi odnoszą się do siebie](bound-services-images/bound-services-02.png "diagram przedstawiający sposób składniki usługi odnoszą się do siebie.")
 
-W tym przewodniku będzie omawiać temat rozszerzyć `Service` klasy do zaimplementowania powiązanej usługi. Będzie również obejmowała implementacja `IServiceConnection` i rozszerzanie `Binder` umożliwia klientowi komunikowanie się z usługą. Przykładowa aplikacja dołączony tego przewodnika, które zawierają rozwiązania z pojedynczego projektu platformy Xamarin.Android o nazwie  **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  . Jest to bardzo proste aplikacji, w której przedstawiono implementację usługi oraz powiązać działania. Powiązane usługi jest bardzo prosty interfejs API z tylko jedną metodę `GetFormattedTimestamp`, która zwraca ciąg, który informuje użytkownika, gdy usługa została uruchomiona i jak długo od on uruchomiony. Aplikacja umożliwia użytkownikowi ręcznie usuń powiązanie i ich powiązania z usługą.
+W tym przewodniku będzie omawiać temat rozszerzyć `Service` klasy do zaimplementowania powiązanej usługi. Będzie również obejmowała implementacja `IServiceConnection` i rozszerzanie `Binder` umożliwia klientowi komunikowanie się z usługą. Przykładowa aplikacja dołączony tego przewodnika, które zawierają rozwiązania z pojedynczego projektu platformy Xamarin.Android o nazwie **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** . Jest to bardzo proste aplikacji, w której przedstawiono implementację usługi oraz powiązać działania. Powiązane usługi jest bardzo prosty interfejs API z tylko jedną metodę `GetFormattedTimestamp`, która zwraca ciąg, który informuje użytkownika, gdy usługa została uruchomiona i jak długo od on uruchomiony. Aplikacja umożliwia użytkownikowi ręcznie usuń powiązanie i ich powiązania z usługą.
 
 [![Zrzut ekranu aplikacji uruchomionych na telefonie z systemem Android](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 

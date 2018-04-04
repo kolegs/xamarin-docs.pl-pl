@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "Portfela jest system aplikacji dla systemu iOS, która przechowuje i wyświetla kodów kreskowych i inne informacje, aby połączyć transakcji odbiorcy na telefon z świecie rzeczywistym."
-ms.topic: article
+description: Portfela jest system aplikacji dla systemu iOS, która przechowuje i wyświetla kodów kreskowych i inne informacje, aby połączyć transakcji odbiorcy na telefon z świecie rzeczywistym.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -238,7 +237,7 @@ Aby utworzyć następujące przekazania identyfikator typu.
 
 Pierwszym krokiem jest ustanowienie identyfikator typu przekazać dla każdego innego _typu_ przebiegu obsługiwany. Identyfikator przekazać (lub identyfikator typu przekazać) tworzy unikatowy identyfikator dla przebiegu. Aby połączyć przebiegu z konta dewelopera przy użyciu certyfikatu użyjemy tego Identyfikatora.
 
-1. W [sekcji certyfikaty identyfikatory i profile systemu IOS w portalu inicjowania obsługi](https://developer.apple.com/account/overview.action), przejdź do **identyfikatory** i wybierz **przekazać identyfikatorów typu** . Następnie wybierz  **+**  przycisk, aby utworzyć nowy typ przebiegu: [ ![ ] (passkit-images/passid.png "utworzyć nowy typ — dostęp próbny")](passkit-images/passid.png#lightbox)
+1. W [sekcji certyfikaty identyfikatory i profile systemu IOS w portalu inicjowania obsługi](https://developer.apple.com/account/overview.action), przejdź do **identyfikatory** i wybierz **przekazać identyfikatorów typu** . Następnie wybierz **+** przycisk, aby utworzyć nowy typ przebiegu: [ ![ ] (passkit-images/passid.png "utworzyć nowy typ — dostęp próbny")](passkit-images/passid.png#lightbox)
 
 2.   Podaj **opis** (nazwa) i **identyfikator** (unikatowy ciąg) dla przebiegu. Należy pamiętać, że wszystkie identyfikatory typu przekazać musi rozpoczynać się od ciągu `pass.` w tym przykładzie używamy `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "Podaj opis i identyfikator")](passkit-images/register.png#lightbox)
 

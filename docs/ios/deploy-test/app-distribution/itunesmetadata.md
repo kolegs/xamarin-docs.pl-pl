@@ -1,18 +1,17 @@
 ---
 title: Plik iTunesMetadata.plist
-description: "W tym artykule omówiono pliku iTunesMetadata.plist zapewniające informacje aplikacji systemu iOS przy użyciu rozkładu Ad Hoc do testowania lub wdrożenia w przedsiębiorstwie programu iTunes."
-ms.topic: article
+description: W tym artykule omówiono pliku iTunesMetadata.plist zapewniające informacje aplikacji systemu iOS przy użyciu rozkładu Ad Hoc do testowania lub wdrożenia w przedsiębiorstwie programu iTunes.
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1b1b0c758126acb0c1e7953ea36e5ac871ee20ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>Plik iTunesMetadata.plist
 
@@ -306,7 +305,7 @@ Wykonaj następujące czynności:
 4. Kliknij dwukrotnie `iTunesMetadata.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji:
 
     ![](itunesmetadata-images/image02.png "Edytor iTunesMetadata.plist")
-5. Kliknij zielony ** + ** Aby utworzyć nowy wpis, a następnie wprowadź `UIRequiredDeviceCapabilities` jako nazwa klucza:
+5. Kliknij zielony **+** Aby utworzyć nowy wpis, a następnie wprowadź `UIRequiredDeviceCapabilities` jako nazwa klucza:
 
     ![](itunesmetadata-images/image03.png "Utwórz nowy wpis, a następnie wprowadź UIRequiredDeviceCapabilities jako nazwa klucza")
 6. Polecenie **ciąg** wartość typu i wybierz **słownika** z listy menu podręczne:
@@ -315,7 +314,7 @@ Wykonaj następujące czynności:
 7. Kliknij turndown po lewej stronie nazwy właściwości, aby wyświetlić wpisy słownika:
 
     ![](itunesmetadata-images/image05.png "Odsłoń wpisy słownika")
-8. Polecenie **Dodaj nowy wpis** tekstu, następnie kliknij zielony ** + ** Aby dodać wpis do słownika:
+8. Polecenie **Dodaj nowy wpis** tekstu, następnie kliknij zielony **+** Aby dodać wpis do słownika:
 
     ![](itunesmetadata-images/image06.png "Dodaj wpis do słownika")
 9. Wprowadź `armv7` jako nazwę klucza, wybierz typ **logiczna** , a następnie wprowadź **tak** jako wartość:
@@ -333,7 +332,7 @@ Wykonaj następujące czynności:
 2. Kopiuj zawartość przykład z [zawartość iTunesMetadata.plist](#iTunesMetadata_contents) powyższej sekcji.
 3. Wklej zawartość w pliku i edytować je zgodnie z potrzebami.
 4. Zapisz plik i powrócić do programu Visual Studio dla komputerów Mac.
-5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików... **.
+5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików...** .
 6. W oknie dialogowym Otwórz plik wybierz `iTunesMetadata.plist` pliku, który został utworzony wcześniej, a następnie kliknij przycisk **OK** przycisku.
 7. Pozostaw **Akcja kompilacji** tego pliku ustawioną **Brak**.
 
@@ -347,7 +346,7 @@ Wykonaj następujące czynności:
 2. Kopiuj zawartość przykład z [zawartość iTunesMetadata.plist](#iTunesMetadata_contents) powyższej sekcji.
 3. Wklej zawartość w pliku i edytować je zgodnie z potrzebami.
 4. Zapisz plik i wróć do programu Visual Studio.
-5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików... **.
+5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy plik projektu platformy Xamarin.iOS i wybierz **Dodaj** > **istniejących plików...** .
 6. W oknie dialogowym Otwórz plik wybierz `iTunesMetadata.plist` utworzoną wcześniej plik i kliknij przycisk **Otwórz** przycisku.
 7. Pozostaw **Akcja kompilacji** tego pliku ustawioną **Brak**.
 

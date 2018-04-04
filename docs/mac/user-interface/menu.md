@@ -1,18 +1,17 @@
 ---
 title: Menu
-description: "W tym artykule omówiono Praca z menu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie menu i elementów menu w środowisku Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie."
-ms.topic: article
+description: W tym artykule omówiono Praca z menu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie menu i elementów menu w środowisku Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>Menu
 
@@ -439,7 +438,7 @@ Następnie kliknij dwukrotnie plik scenorysu aplikacji w **konsoli rozwiązania*
 
 ![Atrybuty inspektora](menu-images/action01.png "inspektora atrybutów")
 
-Kliknij przycisk  **+**  przycisk w dolnej części **inspektora atrybuty** do dodania nowych akcji niestandardowej:
+Kliknij przycisk **+** przycisk w dolnej części **inspektora atrybuty** do dodania nowych akcji niestandardowej:
 
 ![Dodawanie nowej akcji](menu-images/action02.png "Dodawanie nowej akcji")
 

@@ -1,18 +1,17 @@
 ---
-title: "Niestandardowe moduły renderowania"
-description: "Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Niestandardowe moduły renderowania umożliwiają deweloperom zastąpienie tego procesu, aby dostosować wygląd i zachowanie platformy Xamarin.Forms kontrolek w każdej z platform."
-ms.topic: article
+title: Niestandardowe moduły renderowania
+description: Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Niestandardowe moduły renderowania umożliwiają deweloperom zastąpienie tego procesu, aby dostosować wygląd i zachowanie platformy Xamarin.Forms kontrolek w każdej z platform.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a92da0320addf1569c25ed05873aa11a198b1daa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-renderers"></a>Niestandardowe moduły renderowania
 

@@ -1,18 +1,17 @@
 ---
-title: "Omówienie dystrybucji aplikacji"
-description: "Ten dokument zawiera omówienie metod dystrybucji, które są dostępne dla aplikacji Xamarin.tvOS i służy jako wskaźnik do bardziej szczegółowych dokumentów na temat."
-ms.topic: article
+title: Omówienie dystrybucji aplikacji
+description: Ten dokument zawiera omówienie metod dystrybucji, które są dostępne dla aplikacji Xamarin.tvOS i służy jako wskaźnik do bardziej szczegółowych dokumentów na temat.
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e5be0bef158c87fe06516d9a58e34c741e6e14b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-distribution-overview"></a>Omówienie dystrybucji aplikacji
 

@@ -1,18 +1,17 @@
 ---
 title: Strona Karuzela
-description: "CarouselPage platformy Xamarin.Forms jest strony, który użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, takich jak galerii. W tym artykule przedstawiono sposób użycia CarouselPage poruszać się po jest zestawem stron."
-ms.topic: article
+description: CarouselPage platformy Xamarin.Forms jest strony, który użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, takich jak galerii. W tym artykule przedstawiono sposób użycia CarouselPage poruszać się po jest zestawem stron.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c4f8d70625fd8ee0e07832f8bdb3b7e502b5b38f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="carousel-page"></a>Strona Karuzela
 

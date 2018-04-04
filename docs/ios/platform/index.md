@@ -1,18 +1,17 @@
 ---
 title: Funkcje platformy
-description: "Dokumenty w tej sekcji opisano funkcje właściwe dla systemu iOS."
-ms.topic: article
+description: Dokumenty w tej sekcji opisano funkcje właściwe dla systemu iOS.
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 88ddd7c74fd800c71e63c03f6a8492ecfcc28f9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
@@ -43,7 +42,7 @@ O najważniejszych nowych interfejsów API wprowadzone w systemie iOS 7 w tym ko
 
 Wyjaśnienia dotyczące funkcji wprowadzonych w systemie iOS 6, w tym widokiem kolekcji, Przekaż zestawu zestaw zdarzeń i Framework społecznościowych.
 
-##  <a name="apple-payiosplatformapple-paymd"></a>[Płatności firmy Apple](~/ios/platform/apple-pay.md)
+##  <a name="apple-payiosplatformapple-paymd"></a>[Apple Pay](~/ios/platform/apple-pay.md)
 
 Apple Pay został wprowadzony wraz z systemem iOS 8, umożliwiając użytkownikom opłacać towarów fizycznych, takich jak żywności, rozrywce i członkostwa za pomocą ich urządzeń z systemem iOS. Jest ona dostępna na telefonie iPhone 6 i iPhone 6 Plus, a także mogą łączyć się z Apple Watch dotyczące zakupów w sklepie. Gdy jest używany na telefonie iPhone, używa funkcji Touch ID jako sposób potwierdzić i autoryzować transakcji użytkownika kredytową lub debetową.
 
@@ -55,11 +54,11 @@ W tym artykule będzie udostępniać i wprowadzenie do Dodawanie gestów poufnyc
 
 Nowy interfejs API CallKit w systemie iOS 10 umożliwia aplikacjom VOIP integrują się z iPhone interfejsu użytkownika i znanych interfejs i środowisko użytkownika końcowego. W tym interfejsie API użytkownicy mogą wyświetlać i interakcyjnie VOIP wywołania z ekranem blokady urządzenia z systemem iOS i zarządzać kontaktami przy użyciu aplikacji Phone **ulubione** i **ostatnich** widoków.
 
-##  <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[Kontakty i ContactsUI](~/ios/platform/contacts.md)
+##  <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[Kontakty i interfejs użytkownika kontaktów](~/ios/platform/contacts.md)
 
 Wraz z wprowadzeniem systemu iOS 9, Apple wydała dwóch nowych struktur, `Contacts` i `ContactsUI`, książka adresowa istniejących tego Zamień i interfejsu użytkownika książki adresowej struktury używane przez system iOS 8 i wcześniejszych.
 
-##  <a name="document-pickeriosplatformdocument-pickermd"></a>[Selektor dokumentu](~/ios/platform/document-picker.md)
+##  <a name="document-pickeriosplatformdocument-pickermd"></a>[Selektor dokumentów](~/ios/platform/document-picker.md)
 
 Selektor dokumentu umożliwia dokumenty mogą być współużytkowane przez aplikacje. Te dokumenty mogą być przechowywane w ramach usługi iCloud lub w katalogu inną aplikację. Dokumenty są udostępniane przez zestaw [dokumentu dostawcy rozszerzeń](~/ios/platform/extensions.md) użytkownik zainstalował na urządzeniu.
 
@@ -71,7 +70,7 @@ iOS ma dwie aplikacje związanych z kalendarzem wbudowanych: kalendarza aplikacj
 
 Rozszerzenia, wprowadzoną w systemie iOS 8, są przystosowane w szczególności `UIViewControllers` które są przedstawiane przez iOS wewnątrz kontekstów standardowe takie jak w **Centrum powiadomień**, jak specjalizowany niestandardowych typów żądanej przez użytkownika do wykonania dane wejściowe lub innych kontekstach, takich jak edytowanie fotografii, w którym rozszerzenia można podać efekt specjalny filtry.
 
-##  <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Grafiki i animacji w systemie iOS](~/ios/platform/graphics-animation-ios/index.md)
+##  <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Grafika i animacje w systemie iOS](~/ios/platform/graphics-animation-ios/index.md)
 
 Grafiki i animacji w systemie iOS omówiono podstawowe koncepcje grafiki w systemie iOS, takie jak CoreImage, grafiki Core i Core animacji.
 
@@ -87,19 +86,19 @@ Zestaw kondycji zapewnia bezpieczny magazyn danych informacji dotyczących kondy
 
 Firma Apple wprowadziła HomeKit w systemie iOS 8 w celu zapewnienia wspólnej struktury odnajdywania i komunikacji z urządzeniami automatyzacji macierzystego w głównej użytkownika. HomeKit zapewnia platformę wspólnej Konfigurowanie urządzeń i konfigurowanie działań ich kontroli.
 
-##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[Zakup w aplikacji](~/ios/platform/in-app-purchasing/index.md)
+##  <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[Zakupy w aplikacjach](~/ios/platform/in-app-purchasing/index.md)
 
 aplikacje systemu iOS sprzedać cyfrowe produktów lub usług przy użyciu StoreKit — zestaw interfejsów API dostarczonych przez system iOS, które komunikują się z serwerami firmy Apple do przeprowadzania transakcji finansowych z użytkownikiem za pośrednictwem ich Apple ID. Interfejsy API StoreKit dotyczy głównie podczas pobierania informacji o produkcie i przeprowadzanie transakcji — nie składnik interfejsu użytkownika. Aplikacje, które implementują zakupu w aplikacji należy Tworzenie interfejsu użytkownika i śledzić zakupione elementy kodu niestandardowego, aby zapewnić użytkownikowi wymaganych produktów lub usług.
 
-##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[interfejsy API gier systemu iOS](~/ios/platform/gaming/index.md)
+##  <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[Interfejsy API gier dla systemu iOS](~/ios/platform/gaming/index.md)
 
 Apple oferuje ulepszenia wielu technologii do gier interfejsów API w systemie iOS 9 ułatwiające wdrażanie grafikę gier i audio w aplikacji platformy Xamarin.iOS. Dotyczy to zarówno łatwość programowania za pośrednictwem struktury wysokiego poziomu i wykorzystanie mocy procesora GPU urządzenie iOS ulepszone szybkości i możliwości graficzne.
 
-##  <a name="message-app-integrationiosplatformmessage-app-integrationindexmd"></a>[Integracja aplikacji wiadomości](~/ios/platform/message-app-integration/index.md)
+##  <a name="message-app-integrationiosplatformmessage-app-integrationindexmd"></a>[Integracja z aplikacją do obsługi wiadomości](~/ios/platform/message-app-integration/index.md)
 
 Nowe w systemach iOS 10, rozszerzenie aplikacji komunikat integruje się z **wiadomości** aplikacji i przedstawia nowych funkcji dla użytkownika. Rozszerzenie można wysyłać tekstu, nalepek, plików multimedialnych i interaktywne wiadomości.
 
-##  <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[Wielozadaniowości dla urządzeń iPad](~/ios/platform/multitasking.md)
+##  <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[Wielozadaniowość dla iPadów](~/ios/platform/multitasking.md)
 
 System iOS 9 dodaje obsługę wielozadaniowości sprzęt określonego urządzenia iPad z systemem dwie aplikacje w tym samym czasie. Wielozadaniowości dla tabletu iPad jest obsługiwana za pomocą następujących funkcji: slajd za pośrednictwem, podzielony widok & obraz na rysunku.
 
@@ -113,7 +112,7 @@ Ten dokument wprowadza Passbook, przy użyciu interfejsu API zestawu przekazać 
 
 Zdjęcie Kit to nowe struktury, która umożliwia aplikacjom zapytania Biblioteka obrazów systemu oraz tworzenie niestandardowych interfejsów użytkownika do wyświetlania i modyfikowania jego zawartość. Zawiera liczbę klas reprezentujących obrazu i zasoby wideo, a także kolekcji zasobów, takich jak albumów i folderów.
 
-##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[Przegląd żądania aplikacji](~/ios/platform/request-app-review.md)
+##  <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[Żądanie przeglądu aplikacji](~/ios/platform/request-app-review.md)
 
 Jesteś nowym użytkownikiem iOS 10.3 `RequestReview()` metody umożliwia aplikacji systemu iOS poprosić użytkownika o szybkości lub zapoznaj się z nim. Gdy ta metoda jest wywoływana w aplikacji wysyłki zainstalowanym ze sklepu z aplikacjami, iOS 10 będzie obsługiwać cały klasyfikacji i przejrzeć proces dla deweloperów. Ponieważ ten proces podlega zasadom sklepu z aplikacjami, alert może lub nie mogą być wyświetlane.
 
@@ -145,13 +144,13 @@ Touch ID została wprowadzona w systemie iOS 7 jako metody uwierzytelniania uży
 
 Jesteś nowym użytkownikiem iOS 10, powiadomienie użytkownika pozwala dostarczania i obsługi powiadomień lokalnych i zdalnych. Przy użyciu tego framework, aplikacji lub rozszerzenia aplikacji można zaplanować dostarczania lokalnego powiadomienia, określając zestaw warunków, takich jak lokalizacji lub godzinę.
 
-##  <a name="wide-coloriosplatformwide-colormd"></a>[Kolor międzynarodowe](~/ios/platform/wide-color.md)
+##  <a name="wide-coloriosplatformwide-colormd"></a>[Szeroki zakres kolorów](~/ios/platform/wide-color.md)
 
 iOS 10 i macOS Sierra podnosi poziom obsługi formatów pikseli rozszerzony zakres i całej gamy przestrzenie w całym systemie, w tym platform, takich jak Core grafiki, Core obrazu systemu operacyjnego i AVFoundation. Obsługa urządzeń z przedstawia szeroką kolor dalsze jest ułatwiony dostarczając to zachowanie przez cały stos całej grafiki.
 
 
 
-##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Powiązanie Objective-C](binding-objective-c/index.md)
+##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Tworzenie powiązań języka Objective-C](binding-objective-c/index.md)
 
 Podczas pracy w systemie iOS, mogą występować w przypadkach, w której chcesz korzystać z biblioteki języka Objective-C innych firm. W takiej sytuacji w MonoTouch powiązania projektów służy do tworzenia powiązanie C# do natywnych bibliotek języka Objective-C. Projekt używa tych samych narzędzi, których używamy w celu przełączenia iOS interfejsów API języka C#. &nbsp;w tym dokumencie opisano sposób powiązania interfejsów API języka Objective-C.
 
@@ -163,6 +162,6 @@ Xamarin.iOS obsługuje łączenie z natywnych bibliotek C i bibliotek języka Ob
 
 Wyjaśniono, jak osadzanie struktur użytkownika Objective-C w aplikacji platformy Xamarin.iOS.
 
-## <a name="exception-marshalingexception-marshalingmd"></a>[Organizowanie wyjątku](exception-marshaling.md)
+## <a name="exception-marshalingexception-marshalingmd"></a>[Marshaling wyjątku](exception-marshaling.md)
 
 W tym artykule opisano, jak Objective-C i zarządzane wyjątki są przekazywane między ramek natywnych i zarządzanych.

@@ -1,18 +1,17 @@
 ---
-title: "Łączenie aplikacji w systemie Android"
-description: "W tym przewodniku będzie omawiać jak system Android 6.0 obsługuje aplikacji łączenia, metody, która umożliwia aplikacji mobilnych odpowiedzieć na adresy URL w witrynach sieci Web. Przedstawimy jakie łączenie aplikacji jest implementowania łączenie aplikacji w aplikacji systemu Android w wersji 6.0 i konfigurowania witryny sieci Web, aby udzielić uprawnień do aplikacji mobilnej dla domeny."
-ms.topic: article
+title: Łączenie aplikacji w systemie Android
+description: W tym przewodniku będzie omawiać jak system Android 6.0 obsługuje aplikacji łączenia, metody, która umożliwia aplikacji mobilnych odpowiedzieć na adresy URL w witrynach sieci Web. Przedstawimy jakie łączenie aplikacji jest implementowania łączenie aplikacji w aplikacji systemu Android w wersji 6.0 i konfigurowania witryny sieci Web, aby udzielić uprawnień do aplikacji mobilnej dla domeny.
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>Łączenie aplikacji w systemie Android
 
@@ -56,7 +55,7 @@ Konfigurowanie aplikacji łącza w systemie Android 6.0 obejmuje dwa główne kr
 Należy skonfigurować konwersji filtr, który mapuje identyfikatora URI (lub możliwe zestaw identyfikatorów URI) z witryny sieci Web do działania w aplikacji systemu Android. W Xamarin.Android, ta relacja jest ustanawiane przez adorning działania [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Filtr konwersji musi deklarować następujące informacje:
 
 * **`Intent.ActionView`** &ndash; To spowoduje zarejestrowanie konwersji filtr, aby odpowiadał na żądania, aby wyświetlić informacje
-* **`Categories`** &ndash;  Filtr konwersji należy zarejestrować zarówno  **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**  i  **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**  Aby można było poprawnie Obsługa sieci web identyfikatora URI.
+* **`Categories`** &ndash;  Filtr konwersji należy zarejestrować zarówno **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** i **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** Aby można było poprawnie Obsługa sieci web identyfikatora URI.
 * **`DataScheme`** &ndash; Filtr konwersji musi deklarować `http` i/lub `https`. Są to tylko dwa systemy prawidłowe.
 * **`DataHost`** &ndash; Jest to domena, którego pochodzą z identyfikatory URI.
 * **`DataPathPrefix`** &ndash; Jest opcjonalna ścieżka do zasobów w sieci Web.

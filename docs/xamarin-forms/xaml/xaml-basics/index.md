@@ -1,18 +1,17 @@
 ---
-title: "Podstawy języka XAML platformy Xamarin.Forms"
-description: "Wprowadzenie do znaczników i platform urządzeń przenośnych"
-ms.topic: article
+title: Podstawy języka XAML platformy Xamarin.Forms
+description: Wprowadzenie do znaczników i platform urządzeń przenośnych
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a3f3dbbe0f12cfa7cc1fc6606ec8bd48a96e407c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-xaml-basics"></a>Podstawy języka XAML platformy Xamarin.Forms
 

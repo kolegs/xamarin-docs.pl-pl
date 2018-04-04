@@ -1,18 +1,17 @@
 ---
 title: Konfigurowanie aplikacji w iTunes Connect
-description: "W tym artykule opisano kroki wymagane do instalacji i obsługa aplikacji platformy Xamarin.iOS w iTunes Connect, dzięki czemu może być zwolnione dystrybucji ze sklepu App Store."
-ms.topic: article
+description: W tym artykule opisano kroki wymagane do instalacji i obsługa aplikacji platformy Xamarin.iOS w iTunes Connect, dzięki czemu może być zwolnione dystrybucji ze sklepu App Store.
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: b54313668a2cb87a6cce0b8c519a06247524df81
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurowanie aplikacji w iTunes Connect
 
@@ -62,7 +61,7 @@ Wykonaj następujące czynności [iTunes Connect](https://itunesconnect.apple.co
 1. Polecenie **Moje aplikacje**:
 
     [![](itunesconnect-images/add01.png "Polecenie Moje aplikacje")](itunesconnect-images/add01.png#lightbox)
-2. Kliknij przycisk  **+**  w prawym górnym po lewej stronie rogu i wybierz pozycję **nowych aplikacji dla systemu iOS**:
+2. Kliknij przycisk **+** w prawym górnym po lewej stronie rogu i wybierz pozycję **nowych aplikacji dla systemu iOS**:
 
     [![](itunesconnect-images/add02.png "Dodawanie nowej aplikacji systemu iOS")](itunesconnect-images/add02.png#lightbox)
 3. iTunes wyświetli Connect **nowych aplikacji dla systemu iOS** okna dialogowego:

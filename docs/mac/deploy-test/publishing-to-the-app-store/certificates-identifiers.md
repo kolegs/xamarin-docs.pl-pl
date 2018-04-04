@@ -1,18 +1,17 @@
 ---
 title: Certyfikaty i identyfikatory
-description: "Ten przewodnik przeprowadzi Cię przez proces tworzenia wymagane certyfikaty i identyfikatorów, które będą wymagane do publikowania aplikacji Xamarin.Mac."
-ms.topic: article
+description: Ten przewodnik przeprowadzi Cię przez proces tworzenia wymagane certyfikaty i identyfikatorów, które będą wymagane do publikowania aplikacji Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1065fb91a23827c4876654470cda5022aa1d3b8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="certificates-and-identifiers"></a>Certyfikaty i identyfikatory
 
@@ -32,7 +31,7 @@ Przejdź do menu **Link certyfikaty** w obszarze **aplikacji Mac** sekcji:
 
 [![Wybieranie link certyfikaty](certificates-identifiers-images/devcenter03.png "kliknąć łącze certyfikatów")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-Polecenie **wszystkie** łącze i kliknij  **+**  przycisk:
+Polecenie **wszystkie** łącze i kliknij **+** przycisk:
 
 [![Wybranie wszystkich i dodawania nowego elementu](certificates-identifiers-images/certif01.png "wybranie wszystkich i dodawania nowego elementu")](certificates-identifiers-images/certif01-large.png#lightbox)
 
@@ -77,7 +76,7 @@ W tym miejscu dewelopera można skonfigurować bazy danych, które mogą używa�
 
 Aby utworzyć profil inicjowania obsługi administracyjnej do testowania, deweloper trzeba swoje komputery Mac zarejestrowane. Mogą one zarejestrować maksymalnie 100 komputerów do testowania aplikacji Mac.
 
-W Centrum deweloperów Mac wybierz **wszystkie** z **urządzeń** sekcji, a następnie kliknij przycisk  **+**  przycisk:
+W Centrum deweloperów Mac wybierz **wszystkie** z **urządzeń** sekcji, a następnie kliknij przycisk **+** przycisk:
 
 [![Dodawanie nowego komputera](certificates-identifiers-images/devcenter10.png "Dodawanie nowego komputera")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
@@ -175,7 +174,7 @@ Samodzielnie, aby wydać aplikację Xamarin.Mac (nie wersji za pośrednictwem sk
 
 Wykonaj następujące czynności:
 
-1. Z **certyfikaty** sekcji, Rozpocznij od kliknij  **+**  przycisk, a następnie wybierz **Identyfikator dewelopera** przycisku radiowego: 
+1. Z **certyfikaty** sekcji, Rozpocznij od kliknij **+** przycisk, a następnie wybierz **Identyfikator dewelopera** przycisku radiowego: 
 
     [![Dodawanie Identyfikator dewelopera](certificates-identifiers-images/certif07.png "Dodawanie Identyfikator dewelopera")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. Kliknij przycisk **Kontynuuj** i wybrać typ Identyfikatora Developer, aby utworzyć: 

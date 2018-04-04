@@ -1,16 +1,16 @@
 ---
-title: "Dlaczego Wpięć nie jest obsługiwany przez program Xamarin"
-ms.topic: article
+title: Dlaczego Wpięć nie jest obsługiwany przez program Xamarin
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 8129229a821edd2ef4f251679ee46bca7b74c8f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8112f9bfc8975b12e3c300c0c981d21749173f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Dlaczego Wpięć nie jest obsługiwany przez program Xamarin
 
@@ -50,7 +50,7 @@ lub
 
 > Błąd: Starter Edition Xamarin.iOS nie obsługuje kompilowania poza Xamarin Studio 
 
-Najczęstszą przyczyną tego scenariusza jest korzystanie z Wpięć, logując się przy użyciu konta użytkownika nie są skojarzone z licencji programu Xamarin. Najprostszym sposobem rozwiązywania tego jest zainstalowanie Wpięć jako aplikacji bezpośrednio za pomocą konta użytkownika. W tym miejscu opisano proces i kilka dodatkowych kwestii dotyczących: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+Najczęstszą przyczyną tego scenariusza jest korzystanie z Wpięć, logując się przy użyciu konta użytkownika nie są skojarzone z licencji programu Xamarin. Najprostszym sposobem rozwiązywania tego jest zainstalowanie Wpięć jako aplikacji bezpośrednio za pomocą konta użytkownika. Ten proces i kilka dodatkowych kwestii dotyczących są opisane w tym miejscu: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
 
 Inną możliwością jest, że informacje o licencji Xamarin jest jakiś sposób uszkodzony, możesz użyć [Resync licencji Xamarin przewodnik](~/cross-platform/troubleshooting/legacy-licenses/resync-licenses.md) do rozwiązania problemów dotyczących tego scenariusza.
 

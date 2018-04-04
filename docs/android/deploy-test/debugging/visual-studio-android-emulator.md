@@ -1,18 +1,17 @@
 ---
 title: Visual Studio Emulator systemu Android
 description: W tym przewodniku opisano sposób konfigurowania i korzystania z programu Visual Studio Emulator systemu Android umożliwiające tworzenie aplikacji platformy Xamarin.Android w programie Visual Studio 2015.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2018
-ms.openlocfilehash: 49ae82e1d2b72d7cdebd3ab91833be88a3e95424
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: bcc88ba4c46aa9abe9038d6ea65bc9c17f337da6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Emulator systemu Android
 

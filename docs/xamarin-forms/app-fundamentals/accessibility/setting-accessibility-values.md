@@ -1,18 +1,17 @@
 ---
-title: "Ustawienie wartości dostępności na elementy interfejsu użytkownika"
-description: "Platformy Xamarin.Forms umożliwia wartości dostępności ma być ustawiony na elementy interfejsu użytkownika przy użyciu dołączone właściwości z klasy AutomationProperties, które z kolei wartości dostępności natywny zestaw. W tym artykule opisano sposób użycia klasy AutomationProperties, dzięki czemu czytnika ekranu można mowy o elementach na stronie."
-ms.topic: article
+title: Ustawienie wartości dostępności na elementy interfejsu użytkownika
+description: Platformy Xamarin.Forms umożliwia wartości dostępności ma być ustawiony na elementy interfejsu użytkownika przy użyciu dołączone właściwości z klasy AutomationProperties, które z kolei wartości dostępności natywny zestaw. W tym artykule opisano sposób użycia klasy AutomationProperties, dzięki czemu czytnika ekranu można mowy o elementach na stronie.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 4aeeea7f946a121b12741d2da217daf531935849
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>Ustawienie wartości dostępności na elementy interfejsu użytkownika
 

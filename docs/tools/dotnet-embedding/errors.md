@@ -1,17 +1,16 @@
 ---
-title: "Błędy osadzanie .NET"
-ms.topic: article
+title: Błędy osadzanie .NET
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 90d30b92069bcd6a5c008fa8009c0392c4d26473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64caaf6610d9f9193a686d91b4731cd4d4953fa6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="em0xxx-binding-error-messages"></a>EM0xxx: komunikaty o błędach powiązania
 
@@ -68,7 +67,7 @@ Jest to znany problem, który mamy zamierzają naprawić w przyszłym wydaniu ge
 
 Narzędzia nie można scalić struktur wymienionych w komunikacie o błędzie, ponieważ jest plikiem wspólnej między nimi.
 
-Może to wskazywać na błąd w Embeddinator 4000; Raport o usterce w pliku [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
+Może to wskazywać na błąd w Embeddinator 4000; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
 
 <h3><a name="EM0011"/>EM0011: Zestaw `X` nie istnieje.</h3>
 
@@ -100,11 +99,11 @@ Nie można utworzyć łącza symbolicznego, wymienione w komunikacie o błędzie
 
 Składnia dla opcji wiersza polecenia `A` nie może być analizowana przez narzędzie. Prawdopodobnie niepoprawne, skontaktuj się z dokumentacją lub pomocy poprawną składnię.
 
-<h3><a name="EM0099"/>EM0099: Błąd wewnętrzny *. Raport o usterce z przypadkiem testowym (https://github.com/mono/Embeddinator-4000/issues) pliku.</h3>
+<h3><a name="EM0099"/>EM0099: Błąd wewnętrzny *. Raport o usterce z przypadkiem testowym pliku (https://github.com/mono/Embeddinator-4000/issues).</h3>
 
 Ten komunikat o błędzie jest zgłaszany, gdy wewnętrzne sprawdzenie spójności w Embeddinator 4000 nie powiodło się.
 
-To wskazuje na usterkę w Embeddinator 4000; Raport o usterce w pliku [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
+To wskazuje na usterkę w Embeddinator 4000; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
 
 
 <!-- 1xxx: code processing -->

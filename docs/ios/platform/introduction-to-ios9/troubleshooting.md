@@ -1,18 +1,17 @@
 ---
-title: "Rozwiązywanie problemów"
-description: "Ten artykuł zawiera kilka porad dotyczących rozwiązywania problemów do pracy z systemem iOS 9 w aplikacji platformy Xamarin.iOS."
-ms.topic: article
+title: Rozwiązywanie problemów
+description: Ten artykuł zawiera kilka porad dotyczących rozwiązywania problemów do pracy z systemem iOS 9 w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>Rozwiązywanie problemów
 
@@ -150,7 +149,7 @@ Aby rozwiązać ten problem, wykonaj następujące czynności:
 3. W obszarze **urządzeń** po stronie panelu, wybierz urządzenie, kliknij prawym przyciskiem myszy i wybierz **Pokaż profile inicjowania obsługi administracyjnej...** : 
 
     [![](troubleshooting-images/untrusted03.png "Profile inicjowania obsługi SShow")](troubleshooting-images/untrusted03.png#lightbox)
-4. Każdy profil inicjowania obsługi administracyjnej obecnie na urządzenie i kliknij przycisk Wybierz  **-**  przycisk, aby usunąć go: 
+4. Każdy profil inicjowania obsługi administracyjnej obecnie na urządzenie i kliknij przycisk Wybierz **-** przycisk, aby usunąć go: 
 
     [![](troubleshooting-images/untrusted04.png "Usuwanie profilu inicjowania obsługi administracyjnej")](troubleshooting-images/untrusted04.png#lightbox)
 5. Z **Xcode** menu, wybierz opcję **Preferencje...**  i **kont**: 

@@ -1,18 +1,17 @@
 ---
-title: "Kolekcja widoków"
-description: "Kolekcja widoków zezwala na zawartość mają być wyświetlane przy użyciu dowolnego układów. Umożliwiają one łatwe tworzenie układów siatki fabrycznej, również obsługuje układy niestandardowe."
-ms.topic: article
+title: Kolekcja widoków
+description: Kolekcja widoków zezwala na zawartość mają być wyświetlane przy użyciu dowolnego układów. Umożliwiają one łatwe tworzenie układów siatki fabrycznej, również obsługuje układy niestandardowe.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>Kolekcja widoków
 
@@ -140,7 +139,7 @@ Widoki decoration są wyłącznie visual widoków, które mogą być wyświetlan
 
 ## <a name="data-source"></a>Źródło danych
 
-Podobnie jak w przypadku innych części systemu IOS, takie jak `UITableView` i `MKMapView`, `UICollectionView` pobiera dane z *źródła danych*, która jest widoczna w Xamarin.iOS za pośrednictwem  **`UICollectionViewDataSource`**  klasy. Ta klasa jest odpowiedzialny za zapewnienie zawartości do `UICollectionView` takich jak:
+Podobnie jak w przypadku innych części systemu IOS, takie jak `UITableView` i `MKMapView`, `UICollectionView` pobiera dane z *źródła danych*, która jest widoczna w Xamarin.iOS za pośrednictwem **`UICollectionViewDataSource`** klasy. Ta klasa jest odpowiedzialny za zapewnienie zawartości do `UICollectionView` takich jak:
 
 -  **Komórki** — zwrócony z `GetCell` metody.
 -  **Dodatkowe widoki** — zwrócony z `GetViewForSupplementaryElement` metody.

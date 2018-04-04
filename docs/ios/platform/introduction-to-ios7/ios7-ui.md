@@ -1,18 +1,17 @@
 ---
-title: "System iOS 7 omówienie interfejsu użytkownika"
-description: "System iOS 7 wprowadza nadmiar zmiany interfejsu użytkownika. W tym artykule omówiono niektóre zmiany większe, zarówno w wygląd formantów i interfejsów API, który obsługuje nowy projekt."
-ms.topic: article
+title: System iOS 7 omówienie interfejsu użytkownika
+description: System iOS 7 wprowadza nadmiar zmiany interfejsu użytkownika. W tym artykule omówiono niektóre zmiany większe, zarówno w wygląd formantów i interfejsów API, który obsługuje nowy projekt.
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3f5ea8abd41e718f9ac947c5acb290dffe400ddd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>System iOS 7 omówienie interfejsu użytkownika
 

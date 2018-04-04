@@ -1,18 +1,18 @@
 ---
 title: Witaj, Mac
 description: Ten przewodnik przeprowadzi Cię przez kroki tworzenia pierwszej aplikacji Xamarin.Mac, a w procesie wprowadza łańcuch narzędzi rozwoju, w tym programu Visual Studio for Mac, Xcode i konstruktora interfejsu. Również wprowadza gniazda i akcji, które ujawnia kontrolek interfejsu użytkownika do kodu, a na koniec go ilustruje sposób tworzenia, uruchamianie i testowanie aplikacji Xamarin.Mac.
-ms.topic: article
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-mac"></a>Witaj, Mac
 

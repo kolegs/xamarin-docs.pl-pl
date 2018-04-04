@@ -1,18 +1,17 @@
 ---
 title: Wprowadzenie do Renderscript
-description: "Ten przewodnik zawiera wprowadzenie Renderscript oraz wyjaśniono sposób używania wewnętrznej Renderscript interfejsu API w aplikacji platformy Xamarin.Android tego poziomu elementów docelowych interfejsu API 17 lub nowszej."
-ms.topic: article
+description: Ten przewodnik zawiera wprowadzenie Renderscript oraz wyjaśniono sposób używania wewnętrznej Renderscript interfejsu API w aplikacji platformy Xamarin.Android tego poziomu elementów docelowych interfejsu API 17 lub nowszej.
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 552c1db347d9bc37724691247648fa0e938baa88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9e21a51c409c5444f137a63eb2c6fadfef03cbe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="an-introduction-to-renderscript"></a>Wprowadzenie do Renderscript
 

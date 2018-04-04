@@ -1,18 +1,18 @@
 ---
 title: 'Witaj, Android: Szybki Start'
-description: "W tym przewodniku dwuczęściową zostanie tworzenie pierwszej aplikacji platformy Xamarin.Android (z wykorzystaniem programu Visual Studio lub Visual Studio dla komputerów Mac) i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android."
-ms.topic: article
+description: W tym przewodniku dwuczęściową zostanie tworzenie pierwszej aplikacji platformy Xamarin.Android (z wykorzystaniem programu Visual Studio lub Visual Studio dla komputerów Mac) i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Witaj, Android: Szybki Start
 
@@ -276,7 +276,7 @@ Z okna dialogowego wyboru, przejdź do katalogu Xamarin AdApp ikony rozpakowane,
 
 Powtórz te kroki dla każdego z **mipmap -** folderów do zawartości **mipmap -** ikony aplikacji platformy Xamarin folderów zostają skopiowane do ich odpowiednika **mipmap -** folderów w **Phoneword** projektu.
 
-Po skopiowaniu wszystkie ikony do projektu platformy Xamarin.Android, otwórz **opcje projektu** okno dialogowe, klikając prawym przyciskiem myszy na projekt w **konsoli rozwiązania**. Wybierz **kompilacji > aplikacji systemu Android** i wybierz  **@mipmap/icon**  z **ikona aplikacji** pola kombi:
+Po skopiowaniu wszystkie ikony do projektu platformy Xamarin.Android, otwórz **opcje projektu** okno dialogowe, klikając prawym przyciskiem myszy na projekt w **konsoli rozwiązania**. Wybierz **kompilacji > aplikacji systemu Android** i wybierz **@mipmap/icon** z **ikona aplikacji** pola kombi:
 
 [![Ustawienie ikona projektu](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png#lightbox)
 
@@ -518,7 +518,7 @@ W **Dodaj plik do folderu** okno dialogowe, wybierz opcję **skopiuj plik do kat
 
 Powtórz te kroki dla każdego z **mipmap -** folderów do zawartości **mipmap -** ikony aplikacji platformy Xamarin folderów zostają skopiowane do ich odpowiednika **mipmap -** folderów w **Phoneword** projektu.
 
-Po skopiowaniu wszystkie ikony do projektu platformy Xamarin.Android, otwórz **opcje projektu** okno dialogowe, klikając prawym przyciskiem myszy na projekt w **konsoli rozwiązania**. Wybierz **kompilacji > aplikacji systemu Android** i wybierz  **@mipmap/icon**  z **ikona aplikacji** pola kombi:
+Po skopiowaniu wszystkie ikony do projektu platformy Xamarin.Android, otwórz **opcje projektu** okno dialogowe, klikając prawym przyciskiem myszy na projekt w **konsoli rozwiązania**. Wybierz **kompilacji > aplikacji systemu Android** i wybierz **@mipmap/icon** z **ikona aplikacji** pola kombi:
 
 [![Ustawienie ikona projektu](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 

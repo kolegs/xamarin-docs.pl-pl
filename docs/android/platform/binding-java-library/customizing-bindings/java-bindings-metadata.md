@@ -1,18 +1,17 @@
 ---
-title: "Metadane powiązania Java"
-description: "Kod C# w Xamarin.Android wywołuje bibliotek języka Java za pomocą powiązania, które są mechanizm abstracts szczegółów niskiego poziomu, które są określone w języku Java natywnego interfejsu (JNI). Xamarin.Android udostępnia narzędzia, który generuje tych powiązań. Tego narzędzia umożliwia deweloperowi kontroli, jak powiązania jest tworzona przy użyciu metadanych, dzięki czemu procedury przykład: modyfikacja przestrzenie nazw oraz zmiana nazwy elementów członkowskich. Ten dokument w tym artykule omówiono, jak metadanych działa, znajduje się podsumowanie atrybuty metadane obsługuje i wyjaśniono, jak rozwiązać problemy z powiązaniami, modyfikując te metadane."
-ms.topic: article
+title: Metadane powiązania Java
+description: 'Kod C# w Xamarin.Android wywołuje bibliotek języka Java za pomocą powiązania, które są mechanizm abstracts szczegółów niskiego poziomu, które są określone w języku Java natywnego interfejsu (JNI). Xamarin.Android udostępnia narzędzia, który generuje tych powiązań. Tego narzędzia umożliwia deweloperowi kontroli, jak powiązania jest tworzona przy użyciu metadanych, dzięki czemu procedury przykład: modyfikacja przestrzenie nazw oraz zmiana nazwy elementów członkowskich. Ten dokument w tym artykule omówiono, jak metadanych działa, znajduje się podsumowanie atrybuty metadane obsługuje i wyjaśniono, jak rozwiązać problemy z powiązaniami, modyfikując te metadane.'
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadane powiązania Java
 
@@ -246,7 +245,7 @@ Zmienia typ zwracany metody. Nie ma to wpływu zwracany atrybutu (jako zmiany, a
 
 ### <a name="obfuscated"></a>obfuscated
 
-Narzędzia, które zasłaniają bibliotek języka Java może zakłócać Generator powiązanie platformy Xamarin.Android i jego zdolność do generowania klasy otoki C#. Cechy zaciemnionego klas: * Nazwa klasy zawiera  **$** , tj. **$.class** * Nazwa klasy jest całkowicie naruszenia zabezpieczeń z małych liter, tj.  **a.class**
+Narzędzia, które zasłaniają bibliotek języka Java może zakłócać Generator powiązanie platformy Xamarin.Android i jego zdolność do generowania klasy otoki C#. Cechy zaciemnionego klas: * Nazwa klasy zawiera **$**, tj. **$.class** * Nazwa klasy jest całkowicie naruszenia zabezpieczeń z małych liter, tj.  **a.class**
 
 Ta Wstawka kodu przedstawiono przykładowy sposób generowania "bez zaciemnionego" typ C#:
 
