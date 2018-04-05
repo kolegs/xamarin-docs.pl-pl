@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 7f6885415e1b5e0c988d13fe331703213b9b8fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Wskazówki — Praca z programem WCF
 
@@ -167,7 +167,6 @@ Hosting usług WCF lokalnie jest odpowiednia, gdy występują tylko połączenia
 1. Zacznijmy przez skonfigurowanie usług IIS Express do nasłuchiwania żądań zewnętrznych. Firma Microsoft może to zrobić, edytując plik konfiguracji dla usług IIS Express w `[solutiondirectory]\.vs\config\applicationhost.config`, jak pokazano na poniższym zrzucie ekranu:
 
     [![](walkthrough-working-with-wcf-images/image05.png "Firma Microsoft to zrobić, edytując plik konfiguracji dla usług IIS Express w solutiondirectory.vsconfigapplicationhost.config, jak pokazano w tym zrzut ekranu")](walkthrough-working-with-wcf-images/image05.png#lightbox)
-
 
     Zlokalizuj `site` elementu o nazwie `HelloWorldWcfHost`. Powinien on wyglądać podobnie jak następujący fragment kodu XML:
 

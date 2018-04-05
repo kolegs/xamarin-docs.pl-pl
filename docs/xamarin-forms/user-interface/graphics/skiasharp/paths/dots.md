@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>Kropki i łączniki
 
@@ -29,7 +29,7 @@ Ogólnie rzecz biorąc będzie ma być wielokrotnością szerokość pociągnię
 
 Jednak `StrokeCap` ustawienie `SKPaint` obiektu dotyczy także te kropki i łączniki. Jak można zauważyć wkrótce, który ma wpływ na elementy tej tablicy.
 
-Kropkami i linie przerywane przedstawiono na **kropki i kreski** strony. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) pliku tworzy dwa `Picker` widoków, jeden dla możliwości wybierania koniec obrysu i drugą do tablicy dash wybierz:
+Kropkami i linie przerywane przedstawiono na **kropki i kreski** strony. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) pliku tworzy dwa `Picker` widoków, jeden dla możliwości wybierania koniec obrysu i drugą do tablicy dash wybierz:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ Kropkami i linie przerywane przedstawiono na **kropki i kreski** strony. [ **Dot
 
 Pierwsze trzy elementy `dashArrayPicker` założono, że szerokość pociągnięć jest 10 pikseli. {10, 10} tablicy dotyczy linię kropkowaną {30, 10} jest linię kropkowaną i {10, 10, 30, 10} jest dla wiersza kropki i kreski. (Inne trzech zostanie dokładnie omówione wkrótce.)
 
-[ `DotsAndDashesPage` Pliku CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) zawiera `PaintSurface` obsługi zdarzeń i kilka procedury pomocnika do uzyskiwania dostępu do `Picker` widoków:
+[ `DotsAndDashesPage` Pliku CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) zawiera `PaintSurface` obsługi zdarzeń i kilka procedury pomocnika do uzyskiwania dostępu do `Picker` widoków:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ Nagrania ekranu systemu Windows z kropkami i linii dla linii kreskowanej cap z `
 
 Do tej pory wprowadzono nie wymieniono drugiego parametru `SKPathEffect.CreateDash` metody. Ten parametr ma nazwę `phase` i odnosi się do przesunięcie w wzorcu kropki i kreski do początku wiersza. Na przykład, jeśli tablica dash to {10, 10} i `phase` wynosi 10, a następnie wiersz rozpoczyna się od przerwę zamiast kropką.
 
-Jeden interesujące stosowania `phase` parametr jest animacji. **Animowany spirali** strona jest podobna do **spirali Archimedean** strony, z wyjątkiem [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje klasy `phase` parametru. Strona przedstawiono również innego podejścia do animacji. Przykład wcześniejszych [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) używane `Task.Delay` metody kontrolowania animacji. W tym przykładzie użyto zamiast tego platformy Xamarin.Forms `Device.Timer` metody:
+Jeden interesujące stosowania `phase` parametr jest animacji. **Animowany spirali** strona jest podobna do **spirali Archimedean** strony, z wyjątkiem [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje klasy `phase` parametru. Strona przedstawiono również innego podejścia do animacji. Przykład wcześniejszych [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) używane `Task.Delay` metody kontrolowania animacji. W tym przykładzie użyto zamiast tego platformy Xamarin.Forms `Device.Timer` metody:
 
 
 ```csharp

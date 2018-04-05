@@ -7,11 +7,11 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0bd13cc58d4f15b46edc03eda35f04d7ca866dec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2b730690e508c29e9bee45ccfdd05d5dd6e92d7b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>Krzywe SkiaSharp i ścieżek
 
@@ -19,7 +19,7 @@ _Dowiedz się, jak za pomocą SkiaSharp Rysowanie krzywych i korzystanie z funkc
 
 Badań [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) metody i właściwości rozpoczął się w [SkiaSharp wierszy i ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md) artykułu. Artykuły w tym miejscu kontynuować metod, które krzywych, aby dodać `SKPath` obiekty i wykorzystać inne funkcje zaawansowane ścieżki. Zobaczysz, jak można określić pełną ścieżkę w ciągu tekstowym zwięzły, jak używać efekty ścieżki i dotyczące dalszego do ścieżki wewnętrzne.
 
-Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **krzywych i bardziej ścieżki** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu w [ **Krzywych** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) folderu rozwiązania.
+Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **krzywych i bardziej ścieżki** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu w [ **Krzywych** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves) folderu rozwiązania.
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Trzy sposoby narysowania łuku](arcs.md)
 

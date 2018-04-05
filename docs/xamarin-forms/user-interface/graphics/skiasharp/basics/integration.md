@@ -7,11 +7,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 67c4330d8e446a407dec7792fe5f40cdd9d23c22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ebe153ead2bb62b19ad6b25bf0093e20bf15c04
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrowanie z platformy Xamarin.Forms
 
@@ -22,9 +22,9 @@ Grafika SkiaSharp można zintegrować z resztą platformy Xamarin.Forms na kilka
 ![](integration-images/integrationexample.png "Wybór koloru za pomocą suwaka")
 
 Inną metodą tworzenia interaktywnych grafiki SkiaSharp w platformy Xamarin.Forms jest touch.
-W drugiej stronie [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu jest uprawniony **naciśnij przycisk przełączania wypełnienia**. Go rysuje Proste kółko dwa sposoby &mdash; bez wypełnienia i z wypełnieniem &mdash; przełączane przez tap. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasy pokazuje, jak w przypadku modyfikowania SkiaSharp grafiki w odpowiedzi na dane wejściowe użytkownika.
+W drugiej stronie [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu jest uprawniony **naciśnij przycisk przełączania wypełnienia**. Go rysuje Proste kółko dwa sposoby &mdash; bez wypełnienia i z wypełnieniem &mdash; przełączane przez tap. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasy pokazuje, jak w przypadku modyfikowania SkiaSharp grafiki w odpowiedzi na dane wejściowe użytkownika.
 
-Na tej stronie `SKCanvasView` utworzyć wystąpienia klasy w [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) pliku, który określa również platformy Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) w widoku:
+Na tej stronie `SKCanvasView` utworzyć wystąpienia klasy w [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) pliku, który określa również platformy Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) w widoku:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -99,7 +99,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 W obu przypadkach `h` argument może się wahać od 0 do 360. `s`, `l`, I `v` argumenty należeć do zakresu od 0 do 100. `a` (Alfa lub przezroczystość) argument w zakresie od 0 do 255.
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) plików umożliwia utworzenie dwóch `SKCanvasView` obiekty w `StackLayout` side-by-side z `Slider` i `Label` widoków, które umożliwiają użytkownikowi na wybranie HSL i HSV wartości kolorów:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) plików umożliwia utworzenie dwóch `SKCanvasView` obiekty w `StackLayout` side-by-side z `Slider` i `Label` widoków, które umożliwiają użytkownikowi na wybranie HSL i HSV wartości kolorów:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -181,7 +181,7 @@ W obu przypadkach `h` argument może się wahać od 0 do 360. `s`, `l`, I `v` ar
 
 Dwa `SKCanvasView` elementy znajdują się w pojedynczej komórki `Grid` z `Label` z góry do wyświetlania wartości kolorów RGB wynikowe.
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) pliku CodeBehind jest stosunkowo proste. Udostępniony `ValueChanged` obsługi dla trzech `Slider` elementów po prostu unieważnia zarówno `SKCanvasView` elementów. `PaintSurface` Obsługi wyczyścić obszar roboczy z kolor wskazywany przez `Slider` elementy, a także ustawić `Label` działo się nad `SKCanvasView` elementy:
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) pliku CodeBehind jest stosunkowo proste. Udostępniony `ValueChanged` obsługi dla trzech `Slider` elementów po prostu unieważnia zarówno `SKCanvasView` elementów. `PaintSurface` Obsługi wyczyścić obszar roboczy z kolor wskazywany przez `Slider` elementy, a także ustawić `Label` działo się nad `SKCanvasView` elementy:
 
 ```csharp
 public partial class ColorExplorePage : ContentPage

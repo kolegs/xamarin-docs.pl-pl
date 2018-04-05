@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 312d487111f8e36170c97ca7a29fb91556c72569
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Trzy typy krzywych Beziera
 
@@ -46,7 +46,7 @@ Krzywej rozpoczyna się od bieżącego punktu rozkładu. Zakończenie sześcienn
 
 Wynikowe krzywej zaczyna się od punktu początkowego i kończy się w punkcie końcowym. Krzywej generalnie nie przechodzi przez punkty kontrolne dwóch; Zamiast tego funkcjonują dużo pól podobnego do ściągnięcia krzywej do nich.
 
-Aby uzyskać pewne pojęcie sześcienny krzywej Beziera najlepiej przez eksperymenty. To jest celem **krzywej Beziera** strony, która jest pochodną `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) tworzy plik `SKCanvasView` i `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) plik CodeBehind tworzy cztery `TouchPoint` obiektów w jego konstruktora. `PaintSurface` Tworzy program obsługi zdarzeń `SKPath` do renderowania krzywej Beziera, oparte na czterech `TouchPoint` obiektów, a także pobiera kropkowanej stycznej wiersze z punktów kontrolnych do punktów końcowych:
+Aby uzyskać pewne pojęcie sześcienny krzywej Beziera najlepiej przez eksperymenty. To jest celem **krzywej Beziera** strony, która jest pochodną `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) tworzy plik `SKCanvasView` i `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) plik CodeBehind tworzy cztery `TouchPoint` obiektów w jego konstruktora. `PaintSurface` Tworzy program obsługi zdarzeń `SKPath` do renderowania krzywej Beziera, oparte na czterech `TouchPoint` obiektów, a także pobiera kropkowanej stycznej wiersze z punktów kontrolnych do punktów końcowych:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -128,7 +128,7 @@ L = 4 × tan(α / 4) / 3
 
 Na ilustracji przedstawiono pod kątem 45 stopni, dlatego L równa 0.265. W kodzie ta wartość będzie mnożona przez żądaną promień okręgu.
 
-**Łuku okręgu krzywej Beziera** strony można wypróbować Definiowanie krzywej Beziera na łuk okręgu kątów zakresu do 180 stopni w przybliżeniu. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) tworzy plik `SKCanvasView` i `Slider` wybierania kąta. `PaintSurface` Obsługi zdarzeń w [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) plik CodeBehind używa transformacji ustawioną na środku kanwy punkt (0, 0). Rysowanie okręgu skupia się na prowadzące do porównania, a następnie oblicza punkty kontrolny krzywej Beziera:
+**Łuku okręgu krzywej Beziera** strony można wypróbować Definiowanie krzywej Beziera na łuk okręgu kątów zakresu do 180 stopni w przybliżeniu. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) tworzy plik `SKCanvasView` i `Slider` wybierania kąta. `PaintSurface` Obsługi zdarzeń w [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) plik CodeBehind używa transformacji ustawioną na środku kanwy punkt (0, 0). Rysowanie okręgu skupia się na prowadzące do porównania, a następnie oblicza punkty kontrolny krzywej Beziera:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Obliczanie współrzędne punktów kontrolnych dwóch jest dość łatwe, gdy k�
 
 Jeśli promień okręgu wynosi 100, następnie *L* jest 55 i która jest liczbą łatwe do zapamiętania.
 
-**Squaring okręgu** cyfrę koło kwadrat animuje strony. Okręgu jest w przybliżeniu cztery krzywych Beziera których współrzędne są wyświetlane w pierwszej kolumnie tej definicji tablicy w [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) klasy:
+**Squaring okręgu** cyfrę koło kwadrat animuje strony. Okręgu jest w przybliżeniu cztery krzywych Beziera których współrzędne są wyświetlane w pierwszej kolumnie tej definicji tablicy w [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) klasy:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -292,7 +292,7 @@ Punkty są interpolowane na podstawie wartości sinusoidally OSCYLUJĄCA `t`. In
 
 Takie animacji byłoby możliwe bez krzywych algorithmically wystarczająco elastyczny, aby być renderowane jako zarówno proste, jak i łuki okręgu.
 
-**Nieskończoności Beziera** strony korzysta również możliwość przybliżona łuku okręgu krzywej Beziera. Oto `PaintSurface` programu obsługi [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) klasy:
+**Nieskończoności Beziera** strony korzysta również możliwość przybliżona łuku okręgu krzywej Beziera. Oto `PaintSurface` programu obsługi [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -359,7 +359,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 Metody dodać krzywą z bieżącej pozycji do `point2` z `point1` jako punkt kontrolny.
 
-Możesz eksperymentować z kwadratową krzywych Beziera z **było dodać krzywą kwadratową** strony, która jest bardzo podobny do **krzywej Beziera** strony, lecz ma ona tylko trzy punkty touch. Oto `PaintSurface` obsługi w [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) pliku CodeBehind:
+Możesz eksperymentować z kwadratową krzywych Beziera z **było dodać krzywą kwadratową** strony, która jest bardzo podobny do **krzywej Beziera** strony, lecz ma ona tylko trzy punkty touch. Oto `PaintSurface` obsługi w [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) pliku CodeBehind:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -436,7 +436,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 Zwróć uwagę, ostatecznych `weight` parametru.
 
-**Conic krzywej** strony można wypróbować te krzywych. `ConicCurvePage` Pochodną klasy `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) tworzy plik `Slider` wybierz wartość wagi z zakresu od -2 i 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) plik CodeBehind tworzy trzy `TouchPoint` obiekty i `PaintSurface` obsługi po prostu renderuje wynikowe krzywej liniami stycznej do formantu punkty:
+**Conic krzywej** strony można wypróbować te krzywych. `ConicCurvePage` Pochodną klasy `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) tworzy plik `Slider` wybierz wartość wagi z zakresu od -2 i 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) plik CodeBehind tworzy trzy `TouchPoint` obiekty i `PaintSurface` obsługi po prostu renderuje wynikowe krzywej liniami stycznej do formantu punkty:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ Jest bardzo proste pochodzić punkt kontrolny i wagi do użycia `ConicTo` metod�
 
 Można określić odległość punkt kontrolny od środka okręgu trygonometryczne: jest radius rozdzielonych cosinus kąta połowa α okręgu. Rysowanie łuku okręgu między początkową i punktów końcowych, należy ustawić wagę do tego samego cosinus połowa kąta. Należy zauważyć, że jeśli kąt jest 180 stopni, w następnie stycznej wierszy nigdy nie spełnia a waga wynosi zero. Jednak dla kątów mniej niż 180 stopni, obliczenia działa prawidłowo.
 
-**Conic łuku okręgu** strony pokazano to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) tworzy plik `Slider` wybierania kąta. `PaintSurface` Obsługi w [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) pliku CodeBehind oblicza punkt kontrolny i wagi:
+**Conic łuku okręgu** strony pokazano to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) tworzy plik `Slider` wybierania kąta. `PaintSurface` Obsługi w [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) pliku CodeBehind oblicza punkt kontrolny i wagi:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

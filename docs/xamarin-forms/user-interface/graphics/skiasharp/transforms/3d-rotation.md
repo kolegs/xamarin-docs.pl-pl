@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>Obrotów 3D
 
@@ -221,7 +221,7 @@ Gdy 2D obiekty są obracane dodatnią kąt wokół osi Y, a następnie dodatnią
 
 Korzystając z `SKMatrix44`, wykonywać wszystkie obrotu 3W i operacje perspektywy przez pomnożenie różnych `SKMatrix44` wartości. Następnie można wyodrębnić dwuwymiarowa macierzy 3 x 3 z 4-na-4 przy użyciu macierzy [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) właściwość `SKMatrix44` klasy. Ta właściwość zwraca znane `SKMatrix` wartość.
 
-**Obrotu 3W** strony umożliwia eksperymentować obrotu 3W. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) pliku tworzy cztery suwaki, aby ustawić obrót wokół osi X, Y i Z i do ustawiania wartości głębokości:
+**Obrotu 3W** strony umożliwia eksperymentować obrotu 3W. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) pliku tworzy cztery suwaki, aby ustawić obrót wokół osi X, Y i Z i do ustawiania wartości głębokości:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ Korzystając z `SKMatrix44`, wykonywać wszystkie obrotu 3W i operacje perspekty
 
 Zwróć uwagę, że `depthSlider` jest inicjowany z `Minimum` wartość 250. Oznacza to, że obiekt 2D jest obracana tutaj ma współrzędne X i Y, które są ograniczone do koło zdefiniowane przez radius 250 pikseli, wokół punktu początkowego. Współrzędna wartości mniejszej niż 250 zawsze spowoduje obracania tego obiektu w przestrzeni 3D.
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) ładuje plik CodeBehind mapy bitowej 300 pikseli kwadratowych:
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) ładuje plik CodeBehind mapy bitowej 300 pikseli kwadratowych:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage

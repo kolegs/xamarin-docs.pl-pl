@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>Informacje o ścieżce i wyliczenia
 
@@ -31,7 +31,7 @@ W artykule [ **ścieżek i tekst** ](~/xamarin-forms/user-interface/graphics/ski
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Klasy może pomóc. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) akceptuje `SKPath` argument, a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) właściwości ujawnia jej długość.
 
-To jest przedstawiona w **długość ścieżki** próbki, która jest oparta na **krzywej Beziera** strony. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) plik pochodzi z `InteractivePage` i zawiera interfejs touch:
+To jest przedstawiona w **długość ścieżki** próbki, która jest oparta na **krzywej Beziera** strony. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) plik pochodzi z `InteractivePage` i zawiera interfejs touch:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ To jest przedstawiona w **długość ścieżki** próbki, która jest oparta na 
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) pliku CodeBehind umożliwia przeniesienie cztery punkty touch do definiowania punktów końcowych i kontrolowania punktów krzywej Beziera trzeciego stopnia. Ciąg tekstowy, zdefiniuj trzy pola `SKPaint` obiekt i obliczeniowej szerokości tekstu:
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) pliku CodeBehind umożliwia przeniesienie cztery punkty touch do definiowania punktów końcowych i kontrolowania punktów krzywej Beziera trzeciego stopnia. Ciąg tekstowy, zdefiniuj trzy pola `SKPaint` obiekt i obliczeniowej szerokości tekstu:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ Niektóre informacje w `SKPoint` tablicy jest nadmiarowy. Na przykład jeśli `M
 
 Zlecenie problemy, jednak jest `Close`. To polecenie Rysuje prostą od bieżącego położenia na początku rozkład ustanowić wcześniej przez `Move` polecenia. W idealnym przypadku `Close` zlecenie powinno dostarczyć te dwa punkty, a nie tylko jeden punkt. Co to jest pogarsza się wraz z oznacza, że punkt towarzyszącego `Close` zlecenie jest zawsze (0, 0). Oznacza to, że podczas wyliczania za pomocą ścieżki, prawdopodobnie musisz zachować `Move` punktu i bieżącego położenia.
 
-Statycznych [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) klasa zawiera kilka metod, które przekonwertować trzy typy krzywych Beziera na serię niewielki rozmiar proste, które przybliżona krzywej. (Parametrycznych formuły zostały przedstawione w artykule [ **trzy typy krzywych Beziera**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metody dzieli prostej do wielu krótkich wierszy, które są tylko jedną jednostkę długości:
+Statycznych [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) klasa zawiera kilka metod, które przekonwertować trzy typy krzywych Beziera na serię niewielki rozmiar proste, które przybliżona krzywej. (Parametrycznych formuły zostały przedstawione w artykule [ **trzy typy krzywych Beziera**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metody dzieli prostej do wielu krótkich wierszy, które są tylko jedną jednostkę długości:
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ Powiadomienie, że metoda zachowuje pierwszy punkt każdej rozkład w zmiennej o
 
 [![](information-images/globulartext-small.png "Potrójna zrzut ekranu strony tekstu Globular")](information-images/globulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Globular tekstu")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktora klasy wykonuje tej transformacji. Tworzy `SKPaint` obiekt tekstu, a następnie uzyskuje `SKPath` obiekt z `GetTextPath` metody. Jest to ścieżka przekazany do `CloneWithTransform` — metoda rozszerzenia wraz z funkcji przekształcenia: 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktora klasy wykonuje tej transformacji. Tworzy `SKPaint` obiekt tekstu, a następnie uzyskuje `SKPath` obiekt z `GetTextPath` metody. Jest to ścieżka przekazany do `CloneWithTransform` — metoda rozszerzenia wraz z funkcji przekształcenia: 
 
 ```csharp
 public class GlobularTextPage : ContentPage

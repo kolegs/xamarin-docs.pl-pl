@@ -7,11 +7,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0451653b4ee5c85b9bcf884b6b5609a251cf577c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Wycinka przy użyciu ścieżek i regiony
 
@@ -23,7 +23,7 @@ Czasami jest konieczne ograniczanie Renderowanie grafiki do określonego obszaru
 
 *Obszar przycinania* jest obszar ekranu renderowania grafiki. Wszystko, co jest wyświetlane poza obszarem wycinka nie jest renderowany. Obszar przycinania są zazwyczaj zdefiniowane przez [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) obiekt, ale można również zdefiniować obszar przycinania za pomocą [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu. Te dwa typy obiektów w najpierw prawdopodobnie pokrewne ponieważ regionie można utworzyć na podstawie ścieżki. Jednak nie można utworzyć ścieżki z regionu i są bardzo różnych wewnętrznie: ścieżka zawiera ciąg linii i krzywych, gdy region jest definiowana za pomocą serii linii poziomych skanowania.
 
-Powyższy obraz został utworzony przez **małp za pośrednictwem dziurką od klucza** strony. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Klasy ścieżki przy użyciu danych pliku SVG definiuje i używa konstruktora załadować mapy bitowej z zasobów programu:
+Powyższy obraz został utworzony przez **małp za pośrednictwem dziurką od klucza** strony. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Klasy ścieżki przy użyciu danych pliku SVG definiuje i używa konstruktora załadować mapy bitowej z zasobów programu:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -118,7 +118,7 @@ Istnieje również [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaS
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Domyślnie obszar wynikowe wycinka jest przecięcie istniejącego obszaru przycinania i `SKPath` lub `SKRect` określonym w `ClipPath` lub `ClipRect` metody. To jest przedstawiona w **cztery okręgi Intersect klip** strony. `PaintSurface` Obsługi w [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) klasy ponownie używa takie same `SKPath` obiekt, aby utworzyć cztery nakładające się okręgi, z których każdy zmniejsza obszar przycinania za pośrednictwem kolejnych wywołań `ClipPath`:
+Domyślnie obszar wynikowe wycinka jest przecięcie istniejącego obszaru przycinania i `SKPath` lub `SKRect` określonym w `ClipPath` lub `ClipRect` metody. To jest przedstawiona w **cztery okręgi Intersect klip** strony. `PaintSurface` Obsługi w [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) klasy ponownie używa takie same `SKPath` obiekt, aby utworzyć cztery nakładające się okręgi, z których każdy zmniejsza obszar przycinania za pośrednictwem kolejnych wywołań `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -183,7 +183,7 @@ Cztery nakładające się okręgi zostały usunięte z obszaru przycinania.
 
 [![](clipping-images//clipoperations-small.png "Potrójna zrzut ekranu strony Operacje klip")](clipping-images/clipoperations-large.png#lightbox "Potrójna zrzut ekranu strony Operacje Clip")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasa definiuje dwie `SKPaint` obiekty jako pola, a następnie dzieli ekranu na dwa obszary prostokątne. Te obszary są różne w zależności od tego, czy telefon jest w trybie pionowa lub pozioma. `DisplayClipOp` Klasy następnie wyświetla tekst i wywołania `ClipPath` ze ścieżkami dwóch koło w celu zilustrowania każdej operacji klip:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasa definiuje dwie `SKPaint` obiekty jako pola, a następnie dzieli ekranu na dwa obszary prostokątne. Te obszary są różne w zależności od tego, czy telefon jest w trybie pionowa lub pozioma. `DisplayClipOp` Klasy następnie wyświetla tekst i wywołania `ClipPath` ze ścieżkami dwóch koło w celu zilustrowania każdej operacji klip:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -286,7 +286,7 @@ Poniższy zrzut ekranu przedstawia na podstawie operacji region sześć obszaró
 
 Czy te wszystkie możliwości łączenia tych dwóch okręgi? Należy wziąć pod uwagę Wynikowy obraz jako kombinację trzech składników, które same są widoczne w `Difference`, `Intersect`, i `ReverseDifference` operacji. Całkowita liczba kombinacji jest trzeci zasilania, co najmniej dwóch osiem. Dwa, które nie są spełnione są regionu oryginalnego (którego wynikiem wywołania nie `Op` w ogóle) i całkowicie pusty region.
 
-Jest trudniej regionów na potrzeby wycinka, ponieważ trzeba najpierw utworzyć ścieżkę, a następnie region z tej ścieżki, a następnie połączenie wielu regionach. Ogólna struktura **operacji Region** strony jest bardzo podobny do **operacji klip** , ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) klasy dzieli ekranu na sześć obszarów i przedstawia dodatkowej pracy wymagane do używania regiony dla tego zadania:
+Jest trudniej regionów na potrzeby wycinka, ponieważ trzeba najpierw utworzyć ścieżkę, a następnie region z tej ścieżki, a następnie połączenie wielu regionach. Ogólna struktura **operacji Region** strony jest bardzo podobny do **operacji klip** , ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) klasy dzieli ekranu na sześć obszarów i przedstawia dodatkowej pracy wymagane do używania regiony dla tego zadania:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -370,7 +370,7 @@ Co to jest obszarem: serii linii poziomych skanowania, która definiuje obszar.
 
 Jednak gdy obszar zostanie zmniejszona do serii skanowanie linii, te skanowania wierszy na podstawie których wymiaru piksela. Mówiąc ściślej region nie jest obiektem grafiki wektorowej. Jest charakteru bliżej skompresowany monochromatyczny mapę bitową niż do ścieżki. W rezultacie regionów nie, i bez utraty wierności i z tego powodu nie są przekształcony użycie obszarów wycinka.
 
-Jednak można stosować przekształceń do regionów dla celów malowania. **Region Paint** program żywe ilustruje wewnętrzny rodzaj regionów. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Tworzy klasy `SKRegion` na podstawie obiektu `SKPath` koła radius 10 jednostki. Następnie transformacji rozwija tego okręgu do wypełnienia strony:
+Jednak można stosować przekształceń do regionów dla celów malowania. **Region Paint** program żywe ilustruje wewnętrzny rodzaj regionów. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Tworzy klasy `SKRegion` na podstawie obiektu `SKPath` koła radius 10 jednostki. Następnie transformacji rozwija tego okręgu do wypełnienia strony:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -427,7 +427,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Region jest wyraźnie szereg odrębny współrzędnych.
 
-Jeśli nie trzeba transformacje używane na obszary wycinka, możesz użyć regionów dla wycinka, jako **czterech — liścia koniczyna** pokazuje stronę. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Klasy tworzy złożonego region z czterech cykliczną regionami, ustawia tego regionu złożonego jako obszar przycinania i następnie rysuje szereg 360 proste pochodzących od środka strony:
+Jeśli nie trzeba transformacje używane na obszary wycinka, możesz użyć regionów dla wycinka, jako **czterech — liścia koniczyna** pokazuje stronę. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Klasy tworzy złożonego region z czterech cykliczną regionami, ustawia tego regionu złożonego jako obszar przycinania i następnie rysuje szereg 360 proste pochodzących od środka strony:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

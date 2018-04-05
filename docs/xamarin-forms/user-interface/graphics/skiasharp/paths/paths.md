@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 3a828baccda83822237d2564d771bcd89c9099e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-basics"></a>Podstawowe informacje o ścieżce
 
@@ -50,7 +50,7 @@ Argument tej metody jest pojedynczy punkt, który można wyrazić jako `SKPoint`
 
 Rozkład kończy się wraz z innym wywołaniu `MoveTo` lub `RMoveTo`, zaczynający rozkład nowych lub wywołanie `Close`, który zamyka rozkładu. `Close` — Metoda automatycznie dołącza prostej od bieżącego punktu do pierwszego punktu rozkład i oznacza ścieżkę jako zamknięte, co oznacza, że będzie renderowany bez żadnych informacji o możliwościach stroke.
 
-Przedstawia różnice między konturów otwarte i zamknięte **dwóch konturów trójkąt** strony, który korzysta z `SKPath` obiektu z dwóch konturów do renderowania, dwie trójkąty. Rozkład pierwszy jest otwarty i drugi jest zamknięty. Oto [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) klasy:
+Przedstawia różnice między konturów otwarte i zamknięte **dwóch konturów trójkąt** strony, który korzysta z `SKPath` obiektu z dwóch konturów do renderowania, dwie trójkąty. Rozkład pierwszy jest otwarty i drugi jest zamknięty. Oto [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -122,7 +122,7 @@ Tak jak wygląd rozpoczęcia i zakończenia wiersza jest definiowana za pomocą 
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) zaokrąglony sprzężenia
 - [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) w celu utworzenia sprzężenia kostki wyłączone
 
-**Sprzężenia obrysu** strony przedstawiono te trzy obrysu dołączeń kodu podobne do **Caps obrysu** strony. Jest to `PaintSurface` obsługi zdarzeń w [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) klasy:
+**Sprzężenia obrysu** strony przedstawiono te trzy obrysu dołączeń kodu podobne do **Caps obrysu** strony. Jest to `PaintSurface` obsługi zdarzeń w [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 32eefb0607bc06602098fdc5cfb11aa5e46c80d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linie i obrysu CAP
 
@@ -35,7 +35,7 @@ Wygląd rozpoczęcia i zakończenia wierszy jest nazywany *zakończenie linii* l
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Najlepiej są one przedstawiane za pomocą przykładowy program. Druga sekcja strony głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zaczyna się od strony zatytułowany **Caps obrysu** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza w pętli trzech elementów członkowskich `SKStrokeCap` wyliczenia, wyświetlana nazwa elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego koniec obrysu:
+Najlepiej są one przedstawiane za pomocą przykładowy program. Druga sekcja strony głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zaczyna się od strony zatytułowany **Caps obrysu** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza w pętli trzech elementów członkowskich `SKStrokeCap` wyliczenia, wyświetlana nazwa elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego koniec obrysu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,7 +107,7 @@ DrawPoints (SKPointMode mode, points, paint)
 - [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) Aby połączyć każda para punkty
 - [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) Aby połączyć wszystkie kolejne punkty
 
-**Wiele wierszy** strona przedstawia tę metodę. [ `MultipleLinesPage` Pliku XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) tworzy dwa `Picker` członkiem wybierz widoki, które pozwalają `SKPointMode` wyliczenie i elementem członkowskim `SKStrokeCap` wyliczenie:
+**Wiele wierszy** strona przedstawia tę metodę. [ `MultipleLinesPage` Pliku XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) tworzy dwa `Picker` członkiem wybierz widoki, które pozwalają `SKPointMode` wyliczenie i elementem członkowskim `SKStrokeCap` wyliczenie:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

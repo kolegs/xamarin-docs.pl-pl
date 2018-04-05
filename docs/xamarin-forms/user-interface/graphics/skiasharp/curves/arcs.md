@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysować łuk
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 Ta wersja `ArcTo` rysuje od bieżącej pozycji na początku łuk. Oznacza to, że łuk można gdzieś środku rozkład większy.
 
-**Łuk kąt** strona pozwala określić uruchomienia i odchylenia kąty za pomocą suwaków dwa. Plik XAML tworzy dwa `Slider` elementów i `SKCanvasView`. `PaintCanvas` Obsługi w [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) pliku rysuje zarówno oval, jak i za pomocą dwóch łuk `SKPaint` obiektów zdefiniowanych jako pola:
+**Łuk kąt** strona pozwala określić uruchomienia i odchylenia kąty za pomocą suwaków dwa. Plik XAML tworzy dwa `Slider` elementów i `SKCanvasView`. `PaintCanvas` Obsługi w [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) pliku rysuje zarówno oval, jak i za pomocą dwóch łuk `SKPaint` obiektów zdefiniowanych jako pola:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y = oval. MidY + (oval. Wysokość / 2) * sin(angle)
 
 `angle` Wartość to `startAngle` lub `startAngle + sweepAngle`.
 
-Korzystanie z dwóch kąty do definiowania łuk jest najlepsze w przypadku, gdy znasz kątowego długość przewidzianą do rysowania, na przykład, aby wykresu kołowego łuku. **Rozsunięty wykres kołowy** strony pokazano to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasa używana Wewnętrzna klasa do definiowania niektórych danych metalowych i kolory:
+Korzystanie z dwóch kąty do definiowania łuk jest najlepsze w przypadku, gdy znasz kątowego długość przewidzianą do rysowania, na przykład, aby wykresu kołowego łuku. **Rozsunięty wykres kołowy** strony pokazano to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasa używana Wewnętrzna klasa do definiowania niektórych danych metalowych i kolory:
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ Poniżej przedstawiono końcowego prostej i łuk, który jest dodawany do kontur
 
 Rozkład może być kontynuowane z drugiego punktu stycznej.
 
-**Arcus tangens** strony można wypróbować arcus tangens. Jest to pierwszy kilka stron, które pochodzą z [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs), który definiuje kilka przydatną `SKPaint` obiekty i wykonuje `TouchPoint` przetwarzania:
+**Arcus tangens** strony można wypróbować arcus tangens. Jest to pierwszy kilka stron, które pochodzą z [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), który definiuje kilka przydatną `SKPaint` obiekty i wykonuje `TouchPoint` przetwarzania:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` Pochodną klasy `InteractivePage`. Konstruktor w [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) plik jest odpowiedzialny za tworzenie wystąpień i Inicjowanie `touchPoints` tablicy i ustawienie `baseCanvasView` (w `InteractivePage`) do `SKCanvasView` wystąpienie obiektu w [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) pliku:
+`TangentArcPage` Pochodną klasy `InteractivePage`. Konstruktor w [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) plik jest odpowiedzialny za tworzenie wystąpień i Inicjowanie `touchPoints` tablicy i ustawienie `baseCanvasView` (w `InteractivePage`) do `SKCanvasView` wystąpienie obiektu w [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) pliku:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ Na urządzeniu z systemem Windows Mobile trzy punkty są prawie colinear i łuk 
 
 Arcus tangens jest idealny dla tworzenia zaokrąglonymi narożnikami, takich jak zaokrąglony prostokąt. Ponieważ `SKPath` zawiera już `AddRoundedRect` metody **zaokrąglona Heptagon** strony przedstawiają sposób użycia `ArcTo` zaokrąglania narożników dwustronnych siedmiu wielokąta. (Kod uogólniony żadnych regularne wielokąta.)
 
-`PaintSurface` Obsługi [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) klasy zawiera jeden `for` pętli do obliczenia współrzędne siedmiu wierzchołki heptagon oraz drugiego obliczyć pośrednie siedmiu stron z nich wierzchołków. Te punkty środkowe są następnie używane do utworzenia ścieżki:
+`PaintSurface` Obsługi [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) klasy zawiera jeden `for` pętli do obliczenia współrzędne siedmiu wierzchołki heptagon oraz drugiego obliczyć pośrednie siedmiu stron z nich wierzchołków. Te punkty środkowe są następnie używane do utworzenia ścieżki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ Jeśli Wychylny elipsy nie jest wystarczająco duży, aby zmieścić między dwo
 
 Mimo że takie podejście do definiowania łuk dźwięki złożonych na podczas pierwszego potyczki, jest tylko podejście, które umożliwia zdefiniowanie łuk o obrócony elipsy i jest często najłatwiejszy gdy konieczny do integracji z innymi składnikami rozkład łuków.
 
-**Łuku** strona umożliwia interakcyjne ustawić dwa punkty i rozmiarem i rotacją elipsy. `EllipticalArcPage` Pochodną klasy `InteractivePage`i `PaintSurface` obsługi w [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) pliku CodeBehind rysuje cztery łuków:
+**Łuku** strona umożliwia interakcyjne ustawić dwa punkty i rozmiarem i rotacją elipsy. `EllipticalArcPage` Pochodną klasy `InteractivePage`i `PaintSurface` obsługi w [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) pliku CodeBehind rysuje cztery łuków:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ Cztery punkty stycznej są niezbędne do rysowania znak nieskończoności skupia
 
 ![](arcs-images/infinitycoordinates.png "Dwa okręgi z liniami stycznej i współrzędnych")
 
-`PaintSurface` Obsługi w [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) klasa pozycje znak nieskończoności, aby (0, 0) punkt znajduje się na środku strony i skaluje ścieżkę do rozmiaru ekranu:
+`PaintSurface` Obsługi w [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) klasa pozycje znak nieskończoności, aby (0, 0) punkt znajduje się na środku strony i skaluje ścieżkę do rozmiaru ekranu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

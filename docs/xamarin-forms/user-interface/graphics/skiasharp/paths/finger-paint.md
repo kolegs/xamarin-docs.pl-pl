@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 9f7e3f64122f3b95291973d032aaf507dfbc8fab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="finger-painting"></a>Malowania
 
@@ -27,7 +27,7 @@ Obsługa touch w platformy Xamarin.Forms nie zezwala na śledzenia poszczególny
 
 **Paint palca** strony **SkiaSharpFormsDemos** jest uproszczoną implementację malowania. Nie zezwalaj na wybieranie koloru lub obrysu szerokość go nie ma możliwości wyczyścić obszar roboczy, a oczywiście nie można zapisać kompozycji.
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) pliku naraża `SKCanvasView` w komórce jednym `Grid` i dołącza `TouchEffect` w tym `Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) pliku naraża `SKCanvasView` w komórce jednym `Grid` i dołącza `TouchEffect` w tym `Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -50,7 +50,7 @@ Obsługa touch w platformy Xamarin.Forms nie zezwala na śledzenia poszczególny
 
 Dołączanie `TouchEffect` bezpośrednio do `SKCanvasView` nie działa w ramach wszystkich platform.
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) plik CodeBehind definiuje dwie kolekcje do przechowywania `SKPath` obiektów, a także `SKPaint` obiektu do renderowania tych ścieżek:
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) plik CodeBehind definiuje dwie kolekcje do przechowywania `SKPath` obiektów, a także `SKPaint` obiektu do renderowania tych ścieżek:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage

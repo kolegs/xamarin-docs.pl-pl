@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>Dane ścieżki SVG
 
@@ -147,7 +147,7 @@ Statycznych [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/memb
 
 [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda jest przydatna do uzyskania SVG ścieżki danych z istniejącego `SKPath` obiektu do przenoszenia do innego programu, lub do przechowywania w formacie pliku tekstowym, takich jak XML. ( `ToSvgPathData` — Metoda nie jest prezentowana w przykładowym kodzie w tym artykule.) Czy *nie* oczekiwać `ToSvgPathData` zwraca ciąg odpowiadający dokładnie wywołania metody, które utworzone ścieżki. W szczególności dowiesz się, że Łuki są konwertowane na wielu `QuadTo` poleceń, i sposobu ich wyświetlania w ścieżce danych zwróconych z `ToSvgPathData`.
 
-**Ścieżki danych Hello** stronę zaklęć limit słowo "HELLO" przy użyciu danych ścieżki SVG. Zarówno `SKPath` i `SKPaint` obiekty są zdefiniowane jako pola w [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) klasy:
+**Ścieżki danych Hello** stronę zaklęć limit słowo "HELLO" przy użyciu danych ścieżki SVG. Zarówno `SKPath` i `SKPaint` obiekty są zdefiniowane jako pola w [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) klasy:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ public class PathDataHelloPage : ContentPage
 
 [![](path-data-images/pathdatahello-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")](path-data-images/pathdatahello-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")
 
-**Ścieżki danych Cat** przypomina strony. Obiekt ścieżki i paint zarówno zdefiniowano jako pola w [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasy:
+**Ścieżki danych Cat** przypomina strony. Obiekt ścieżki i paint zarówno zdefiniowano jako pola w [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasy:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ Oto programu uruchomionego na wszystkich platformach trzy:
 
 Zwykle, gdy `SKPath` obiektu jest zdefiniowana jako pole, konturów ścieżka musi być zdefiniowana w konstruktorze lub innej metody. Podczas korzystania z danych ścieżki SVG, jednak przedstawiono można określić wyłącznie w definicji pola ścieżka.
 
-Wcześniej **Ugly zegar analogowy** przykładowa w [ **Obróć przekształcenie** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) artykułu wyświetlany ręce zegara jako prostych linii. **Pretty analogowy zegara** poniższy program zastępuje te wiersze z `SKPath` obiektów zdefiniowanych jako pola w [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) klasy wraz z programem `SKPaint` obiektów:
+Wcześniej **Ugly zegar analogowy** przykładowa w [ **Obróć przekształcenie** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) artykułu wyświetlany ręce zegara jako prostych linii. **Pretty analogowy zegara** poniższy program zastępuje te wiersze z `SKPath` obiektów zdefiniowanych jako pola w [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) klasy wraz z programem `SKPaint` obiektów:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

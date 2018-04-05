@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>Ścieżki i tekst
 
@@ -45,7 +45,7 @@ Jeden z tych zadań jest wycinka. **Tekst wycinka** strony tworzy ścieżkę wyc
 
 [![](text-paths-images/clippingtext-small.png "Potrójna zrzut ekranu przedstawiający stronę wycinka tekst")](text-paths-images/clippingtext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wycinka tekstu")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktora klasy ładuje mapę bitową, która jest przechowywana jako osadzony zasób w **nośnika** folderu rozwiązania:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktora klasy ładuje mapę bitową, która jest przechowywana jako osadzony zasób w **nośnika** folderu rozwiązania:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ Po ścieżce wycinka jest ustawiona, można wyświetlić mapę bitową i zostani
 
 [![](text-paths-images/textpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")](text-paths-images/textpatheffect-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")
 
-Dużo pracy w [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) klasa występuje w polach i konstruktora. Dwa `SKPaint` obiektów zdefiniowana jako pola służą do dwóch różnych celów: pierwszy (o nazwie `textPathPaint`) służy do konwertowania handlowego "i" z `TextSize` 50 do ścieżki dla efektu ścieżki 1 D. Druga (`textPaint`) służy do wyświetlania większej wersji handlowego "i" począwszy tej ścieżki. Z tego powodu `Style` tego paint drugi obiekt został ustawiony na `Stroke`, ale `StrokeWidth` właściwość nie jest ustawiona, ponieważ tej właściwości nie jest konieczne, gdy za pomocą efektu ścieżki 1 D:
+Dużo pracy w [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) klasa występuje w polach i konstruktora. Dwa `SKPaint` obiektów zdefiniowana jako pola służą do dwóch różnych celów: pierwszy (o nazwie `textPathPaint`) służy do konwertowania handlowego "i" z `TextSize` 50 do ścieżki dla efektu ścieżki 1 D. Druga (`textPaint`) służy do wyświetlania większej wersji handlowego "i" począwszy tej ścieżki. Z tego powodu `Style` tego paint drugi obiekt został ustawiony na `Stroke`, ale `StrokeWidth` właściwość nie jest ustawiona, ponieważ tej właściwości nie jest konieczne, gdy za pomocą efektu ścieżki 1 D:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ Zwykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPa
 
 Możesz także wywołać `GetFillPath` w ścieżce zwrócony z `GetTextPath` , ale na początku może nie być całkowicie się, jakie chcesz wyglądu.
 
-**Przedstawiono konspektu znak** strony pokazuje techniki. Odpowiedni kod znajduje się w `PaintSurface` obsługi [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) klasy.
+**Przedstawiono konspektu znak** strony pokazuje techniki. Odpowiedni kod znajduje się w `PaintSurface` obsługi [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) klasy.
 
 Konstruktor, który rozpoczyna się od utworzenia `SKPaint` obiektu o nazwie `textPaint` z `TextSize` właściwości na podstawie rozmiaru strony. To jest konwertowana na ścieżkę przy użyciu `GetTextPath` metody. Współrzędna argumenty `GetTextPath` skutecznie Centrum ścieżki na ekranie:
 
@@ -287,7 +287,7 @@ Tekst określony w pierwszym argumencie dotyczące uruchamiania na ścieżce okr
 
 Ta metoda ma możliwość wytyczne dotyczące ustawienie `TextSize` właściwość `SKPaint` aby tekst o rozmiarze doskonale do uruchomienia od początku ścieżki na końcu. Czasami może ustalić ten rozmiar tekstu samodzielnie. Innym razem, musisz być opisane w artykule przyszłych za pomocą funkcji pomiaru ścieżki.
 
-**Cykliczne tekst** program zawijania tekstu wokół okręgu. Jest łatwy do określenia obwód koła, dzięki czemu łatwiej rozmiar tekstu, aby dokładnie dopasować. `PaintSurface` Obsługi [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) klasy oblicza Promień okrągłego, zależnie od rozmiaru strony. Staje się tym koło `circularPath`:
+**Cykliczne tekst** program zawijania tekstu wokół okręgu. Jest łatwy do określenia obwód koła, dzięki czemu łatwiej rozmiar tekstu, aby dokładnie dopasować. `PaintSurface` Obsługi [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) klasy oblicza Promień okrągłego, zależnie od rozmiaru strony. Staje się tym koło `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
