@@ -7,11 +7,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 52bed94724d330b74a9604c54fcfebad1e562267
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="non-affine-transforms"></a>Affine — przekształcenia
 
@@ -95,7 +95,7 @@ Jeśli x to 100, a następnie z "denominator jest 2, więc współrzędne x i y 
 
 `Persp` Część nazwy tych komórek odwołuje się do "perspektywy", ponieważ foreshortening sugeruje, że pole jest teraz przechylono z prawej strony, od przeglądarki.
 
-**Perspektywy testu** strony można wypróbować wartości `Persp0` i `Pers1` można uzyskać pewne pojęcie działania. Rozsądne wartości tych komórkach macierzy są tyle mały, który `Slider` w platformy uniwersalnej systemu Windows nie może poprawnie obsługiwać je. Aby uwzględnić problem platformy uniwersalnej systemu Windows, dwa `Slider` elementów w [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) musi zostać zainicjowany do zakresu od -1 do 1:
+**Perspektywy testu** strony można wypróbować wartości `Persp0` i `Pers1` można uzyskać pewne pojęcie działania. Rozsądne wartości tych komórkach macierzy są tyle mały, który `Slider` w platformy uniwersalnej systemu Windows nie może poprawnie obsługiwać je. Aby uwzględnić problem platformy uniwersalnej systemu Windows, dwa `Slider` elementów w [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) musi zostać zainicjowany do zakresu od -1 do 1:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ Jeśli x to 100, a następnie z "denominator jest 2, więc współrzędne x i y 
 </ContentPage>
 ```
 
-Programy obsługi zdarzeń dla suwaki w [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) pliku CodeBehind dzielenia wartości przez 100, tak aby ich w zakresie między –0.01 i 0,01. Ponadto konstruktora ładuje mapy bitowej:
+Programy obsługi zdarzeń dla suwaki w [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) pliku CodeBehind dzielenia wartości przez 100, tak aby ich w zakresie między –0.01 i 0,01. Ponadto konstruktora ładuje mapy bitowej:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -240,7 +240,7 @@ Jedno takie przekształcenie podobne jest *stożkowy (zbieżny) transformacji*. 
 
 ![](non-affine-images/tapertransform.png "Okno poddane transformacji stożkowy (zbieżny)")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Klasa wykonuje uogólniony obliczania-affine — przekształcenia, na podstawie tych parametrów:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Klasa wykonuje uogólniony obliczania-affine — przekształcenia, na podstawie tych parametrów:
 
 - prostokątne rozmiar obrazu transformacji,
 - Wyliczenie wskazuje stronę prostokąt zwężający,
@@ -349,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Ta klasa jest używana w **stożkowy (zbieżny) przekształcenie** strony. Plik XAML tworzy dwa `Picker` elementy, aby wybrać wartości wyliczenia i `Slider` dotyczące wybierania ułamek stożkowy (zbieżny). [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Łączy obsługi transformacji stożkowy (zbieżny) przy użyciu dwóch tłumaczenie transformacje dokonanie przekształcenia względem lewego górnego rogu mapy bitowej:
+Ta klasa jest używana w **stożkowy (zbieżny) przekształcenie** strony. Plik XAML tworzy dwa `Picker` elementy, aby wybrać wartości wyliczenia i `Slider` dotyczące wybierania ułamek stożkowy (zbieżny). [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Łączy obsługi transformacji stożkowy (zbieżny) przy użyciu dwóch tłumaczenie transformacje dokonanie przekształcenia względem lewego górnego rogu mapy bitowej:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -398,7 +398,7 @@ Affine — przekształcenia można przekształcić prostokąta do dowolnego wypu
 
 [![](non-affine-images/shownonaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")](non-affine-images/shownonaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")
 
-Tak długo, jak nie próbie kąta wewnątrz jednej narożników mapy bitowej większa niż 180 stopni, lub utworzyć dwa boki między sobą pomyślnie jest obliczana przy użyciu tej metody z transformacji [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) klasy:
+Tak długo, jak nie próbie kąta wewnątrz jednej narożników mapy bitowej większa niż 180 stopni, lub utworzyć dwa boki między sobą pomyślnie jest obliczana przy użyciu tej metody z transformacji [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) klasy:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -459,7 +459,7 @@ W celu ułatwienia obliczeń ta metoda uzyskuje całkowita przekształcenia jako
 
 Współrzędne końcowego po prawej są cztery punkty skojarzone z touch cztery punkty. Są to ostateczne współrzędne narożników mapy bitowej.
 
-Sz i reprezentują szerokość i wysokość mapy bitowej. Pierwszy transformacji (`S`) po prostu skaluje mapy bitowej do kwadratu 1 piksela. Drugi przekształcenie jest-affine — przekształcenia `N`, a trzeci affine — przekształcenia `A`. Dzięki ma podobnie jak wcześniej podobne tego affine — przekształcenia opiera się na trzy punkty [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metody i nie może dotyczyć czwartego wiersza z (, (b) punktu.
+Sz i reprezentują szerokość i wysokość mapy bitowej. Pierwszy transformacji (`S`) po prostu skaluje mapy bitowej do kwadratu 1 piksela. Drugi przekształcenie jest-affine — przekształcenia `N`, a trzeci affine — przekształcenia `A`. Dzięki ma podobnie jak wcześniej podobne tego affine — przekształcenia opiera się na trzy punkty [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metody i nie może dotyczyć czwartego wiersza z (, (b) punktu.
 
 `a` i `b` wartości są obliczane, aby trzeci przekształcenie jest podobne. Kod uzyskuje odwrotność affine — przekształcenia, a następnie użyty do mapowania prawym dolnym rogu. To punkt (, b).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>Ograniczenia
 
@@ -51,7 +51,7 @@ Istnieją pewne ograniczenia dotyczące czynności, które można uruchomić Xam
 - Ograniczona obsługa odbicia (aktualnie ma wpływ na niektóre popularnych NuGets, takich jak SQLite i Json.NET). Inne NuGets nadal może być obsługiwana.
 - Nie można zastąpić niektóre klasy systemu (na przykład użytkownik nie może implementować podklasy).
 - Niektóre funkcje platformy, które wymagają obsługi nie może działać w aplikacji platformy Xamarin Player na żywo (jednak została skonfigurowana dla typowe operacje, takie jak dostęp do galerii fotografii).
-- Niestandardowe elementy docelowe i kroki kompilacji są ignorowane. Na przykład narzędzi, takich jak Fody, Retit, AutoFac i AutoMapper nie może być włączona.
+- Niestandardowe elementy docelowe i kroki kompilacji są ignorowane. Na przykład narzędzi, takich jak Fody, Refit AutoFac i AutoMapper nie może być włączona.
 - Projekty języka F # nie są obsługiwane w systemie Android a ograniczony pomocy technicznej w systemie iOS
 - Scenariusze Zaawansowane z niestandardowych ogólne klasy i interfejsy może nie być obsługiwana.
 

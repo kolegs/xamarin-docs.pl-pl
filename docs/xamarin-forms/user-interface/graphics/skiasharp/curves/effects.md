@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-effects"></a>Efekty ścieżki
 
@@ -50,7 +50,7 @@ Dotyczy zakończenia kresek `StrokeCap` właściwość `SKPaint`. Międzynarodow
 
 [![](effects-images/animateddottedtext-small.png "Potrójna zrzut ekranu strony animowany tekst kropkami")](effects-images/animateddottedtext-large.png#lightbox "Potrójna zrzut ekranu strony animowany kropkami tekstu")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy rozpoczyna się od definicji niektóre stałe, a także zastępuje `OnAppearing` i `OnDisappearing` metody dla animacji:
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy rozpoczyna się od definicji niektóre stałe, a także zastępuje `OnAppearing` i `OnDisappearing` metody dla animacji:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -158,7 +158,7 @@ Można zmienić długość wzorze dopasowywane do długości ścieżki, ale któ
 
 [![](effects-images/dotdashmorph-small.png "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")](effects-images/dotdashmorph-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Morph Dash kropka")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy zastąpienia `OnAppearing` i `OnDisappearing` metody tak samo jak jak poprzedni program, ale definiuje klasę `SKPaint` obiektu jako pola:
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Klasy zastąpienia `OnAppearing` i `OnDisappearing` metody tak samo jak jak poprzedni program, ale definiuje klasę `SKPaint` obiektu jako pola:
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -287,7 +287,7 @@ W ogólności, ścieżkę, którą można przekazać do `Create1DPath` będą ma
 
 `Translate` Ścieżki pozostają w tym samym orientacji są replikowane wzdłuż linii lub krzywej powoduje, że element członkowski. Aby uzyskać `Rotate`, ścieżka jest obracana oparte na tangens krzywej. Ścieżka ma jego normalnej orientację poziome linie. `Morph` przypomina `Rotate` z tą różnicą, że sama ścieżka jest również krzywych odpowiadające łuku wiersza jest malowania.
 
-**1 D ścieżki efekt** strony przedstawiono te trzy opcje. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) plik definiuje selektora, zawierający trzy elementy odpowiadające trzy elementy członkowskie wyliczenia:
+**1 D ścieżki efekt** strony przedstawiono te trzy opcje. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) plik definiuje selektora, zawierający trzy elementy odpowiadające trzy elementy członkowskie wyliczenia:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -323,7 +323,7 @@ W ogólności, ścieżkę, którą można przekazać do `Create1DPath` będą ma
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) plik CodeBehind definiuje trzy `SKPathEffect` obiektów jako pola. Te są wszystkie utworzone za pomocą `SKPathEffect.Create1DPath` z `SKPath` obiektów utworzonych przy użyciu `SKPath.ParseSvgPathData`. Pierwsza to proste pole, kształtu romb jest drugi i trzeci jest prostokąt. Są one używane do zaprezentowania style trzy wpływu:
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) plik CodeBehind definiuje trzy `SKPathEffect` obiektów jako pola. Te są wszystkie utworzone za pomocą `SKPathEffect.Create1DPath` z `SKPath` obiektów utworzonych przy użyciu `SKPath.ParseSvgPathData`. Pierwsza to proste pole, kształtu romb jest drugi i trzeci jest prostokąt. Są one używane do zaprezentowania style trzy wpływu:
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -422,7 +422,7 @@ Znajdowanie odpowiednich wartości *a* dopasowania sieci jezdnej wymiary strony 
 
 cosh(w / 2 / a) = 1 + h / a
 
-W następujące metody [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) klasy zawiera tego równości, odwołując się do dwóch wyrażeń po lewej i prawej znak równości jako `left` i `right`. Dla małych wartości *a*, `left` jest większa niż `right`; w przypadku dużych wartości *a*, `left` jest mniejsza niż `right`. `while` Pętli zawęża w optymalnych wartości *a*:
+W następujące metody [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) klasy zawiera tego równości, odwołując się do dwóch wyrażeń po lewej i prawej znak równości jako `left` i `right`. Dla małych wartości *a*, `left` jest większa niż `right`; w przypadku dużych wartości *a*, `left` jest mniejsza niż `right`. `while` Pętli zawęża w optymalnych wartości *a*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -551,7 +551,7 @@ Ten program Określa ścieżkę używaną w `Create1DPath` mieć jego (0, 0) pun
 
 (0, 0) punktu ścieżki zasobnika jest uchwytu, tak po wybraniu `phase` argument jest animowany, zasobników prawdopodobnie obracać wokół taśmy taśmy, prawdopodobnie tworzenie zakresów się wody u dołu i zrzucanie go na początku.
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Klasa implementuje animacji z zastąpieniami o `OnAppearing` i `OnDisappearing` metody. Ścieżka zasobnika jest zdefiniowany w Konstruktorze strony:
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Klasa implementuje animacji z zastąpieniami o `OnAppearing` i `OnDisappearing` metody. Ścieżka zasobnika jest zdefiniowany w Konstruktorze strony:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -712,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 Domyślnie kreskowania wiersze są poziomej. Jeśli `matrix` parametr zawiera obracanie, linie kreskowania są obracane wskazówek zegara.
 
-**Kreskowania wypełnienia** strony ilustruje efekt tej ścieżki. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Klasa definiuje trzy skutki ścieżkę jako pola, pierwszy kreskowania poziomych linii o szerokości 3 pikseli z skalowania wskazujący współczynnik, że są rozmieszczone 6 pikseli od siebie. Rozdzielenie między wierszami w związku z tym jest 3 pikseli. Drugi ścieżka powoduje dla linii pionowej kreskowania szerokość 6 pikseli rozmieszczonych 24 pikseli od siebie, (tak oddzielenie jest 18 pikseli), a trzeci jest ukośnych kreskowania linii 12 pikseli szerokości rozmieszczonych w odległości 36 pikseli od siebie. 
+**Kreskowania wypełnienia** strony ilustruje efekt tej ścieżki. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Klasa definiuje trzy skutki ścieżkę jako pola, pierwszy kreskowania poziomych linii o szerokości 3 pikseli z skalowania wskazujący współczynnik, że są rozmieszczone 6 pikseli od siebie. Rozdzielenie między wierszami w związku z tym jest 3 pikseli. Drugi ścieżka powoduje dla linii pionowej kreskowania szerokość 6 pikseli rozmieszczonych 24 pikseli od siebie, (tak oddzielenie jest 18 pikseli), a trzeci jest ukośnych kreskowania linii 12 pikseli szerokości rozmieszczonych w odległości 36 pikseli od siebie. 
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -812,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 Zreplikowane ścieżki zwykle jest wyrównany do lewej lub górnej krawędzi ekranu, a nie w obszarze wypełniany. To zachowanie można przesłonić, zapewniając czynniki tłumaczenie między 0 a skalowania czynniki, które określają przesunięcia w poziomie i w pionie z lewej i górnej krawędzi.
 
-**Wypełnienia kafelka ścieżki** strony ilustruje efekt tej ścieżki. Nie zdefiniowano ścieżki używany w obszarze przy podziale jako pola w [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) klasy. Współrzędne poziome i pionowe zakres z od – 40 do 40, co oznacza, że ta ścieżka jest kwadratowy 80 następującą liczbę pikseli: 
+**Wypełnienia kafelka ścieżki** strony ilustruje efekt tej ścieżki. Nie zdefiniowano ścieżki używany w obszarze przy podziale jako pola w [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) klasy. Współrzędne poziome i pionowe zakres z od – 40 do 40, co oznacza, że ta ścieżka jest kwadratowy 80 następującą liczbę pikseli: 
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -868,7 +868,7 @@ public static SKPathEffect CreateCorner (Single radius)
 
 Chociaż jeden argument ma nazwę `radius` należy skonfigurować urządzenie do połowy promień narożnika żądany. (Jest to cecha Skia kodu).
 
-Oto `PaintSurface` obsługi w [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) klasy:
+Oto `PaintSurface` obsługi w [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -944,7 +944,7 @@ Ostatni argument jest inicjator służący do generowania sekwencja pseudolosowe
 
 [![](effects-images/jitterexperiment-small.png "Potrójne zrzut ekranu przedstawiający stronę zakłóceń eksperymentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-Program jest straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) pliku tworzy dwa `Slider` elementów i `SKCanvasView`:
+Program jest straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) pliku tworzy dwa `Slider` elementów i `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1000,7 +1000,7 @@ Program jest straightfoward. [ **JitterExperimentPage.xaml** ](https://github.co
 </ContentPage>
 ```
 
-`PaintSurface` Obsługi w [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) pliku CodeBehind jest wywoływana przy każdym `Slider` wartość zmienia się. Wywołuje `SKPathEffect.CreateDiscrete` przy użyciu dwóch `Slider` wartości i użyty do obrysu prostokąt:
+`PaintSurface` Obsługi w [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) pliku CodeBehind jest wywoływana przy każdym `Slider` wartość zmienia się. Wywołuje `SKPathEffect.CreateDiscrete` przy użyciu dwóch `Slider` wartości i użyty do obrysu prostokąt:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1031,7 +1031,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-W tym celu można użyć do wypełniania, jak również w takim przypadku podlega te odchylenia losowe konspektu wypełnienia obszaru. **Zakłóceń tekst** pokazuje strony za pomocą tego efektu ścieżki do wyświetlania tekstu. Większość kodu w `PaintSurface` obsługi [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) klasy jest przeznaczony do zmiany rozmiaru i wyśrodkowania tekst:
+W tym celu można użyć do wypełniania, jak również w takim przypadku podlega te odchylenia losowe konspektu wypełnienia obszaru. **Zakłóceń tekst** pokazuje strony za pomocą tego efektu ścieżki do wyświetlania tekstu. Większość kodu w `PaintSurface` obsługi [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) klasy jest przeznaczony do zmiany rozmiaru i wyśrodkowania tekst:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1086,7 +1086,7 @@ Jedno podstawowe użycie tej metody nie wiąże się z efekty ścieżki w ogóle
 
 Na przykład jeśli `src` ścieżka jest proste kółko promienia 500 i `SKPaint` obiektu określa szerokość pociągnięć 100, a następnie `dst` ścieżka staje się dwie koncentrycznych, jeden z promień 450, a druga z protokołem radius 550. Metoda jest wywoływana `GetFillPath` ponieważ wypełnianie to `dst` ścieżka jest taka sama jak używana do malowania `src` ścieżki. Ale można również obrysu `dst` ścieżkę, aby zobaczyć zawiera ścieżkę.
 
-**Naciśnij, aby konspektu, ścieżka** pokazano to. `SKCanvasView` i `TapGestureRecognizer` wystąpienia są tworzone w [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) pliku. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) plik CodeBehind definiuje trzy `SKPaint` obiektów jako pola, dwa dla używana do malowania z obrysu szerokości 100 i 20 i trzeci na wypełnianie:
+**Naciśnij, aby konspektu, ścieżka** pokazano to. `SKCanvasView` i `TapGestureRecognizer` wystąpienia są tworzone w [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) pliku. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) plik CodeBehind definiuje trzy `SKPaint` obiektów jako pola, dwa dla używana do malowania z obrysu szerokości 100 i 20 i trzeci na wypełnianie:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1239,7 +1239,7 @@ Jedno użycie oczywiste `CreateSum` jest określenie `SKPaint` obiekt, który wy
 
 [![](effects-images/catsinframe-small.png "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")](effects-images/catsinframe-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kotów w ramce")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasy rozpoczyna się od definicji kilka pól. Rozpoznają pierwsze pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasę z [ **danych ścieżki SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) artykułu. Drugi ścieżka jest oparta na wiersz i łuk dla wzorca St Jacques ramki:
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Klasy rozpoczyna się od definicji kilka pól. Rozpoznają pierwsze pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasę z [ **danych ścieżki SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) artykułu. Drugi ścieżka jest oparta na wiersz i łuk dla wzorca St Jacques ramki:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1353,7 +1353,7 @@ Algorytmy za skutki ścieżki zawsze powodować całej ścieżki używana do mal
 
 Często, aby użyć `SKPathEffect.CreateCompose` można dodać niektóre zakłócenia w innym celu ścieżki. Oczywiście możesz eksperymentować samodzielnie, ale w tym miejscu jest nieco inny przykład:
 
-**Linie przerywane kreskowania** wypełnia elipsy kreskowania linii, które są oznaczone kreskowaną. Większość pracy w [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) klasy jest wykonywane bezpośrednio w definicji pola. Te pola zdefiniuj efekt łączniki i efekt kreskowania. Są one zdefiniowane jako `static` ponieważ są one następnie przywoływany w `SKPathEffect.CreateCompose` wywołanie w `SKPaint` definicji:
+**Linie przerywane kreskowania** wypełnia elipsy kreskowania linii, które są oznaczone kreskowaną. Większość pracy w [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) klasy jest wykonywane bezpośrednio w definicji pola. Te pola zdefiniuj efekt łączniki i efekt kreskowania. Są one zdefiniowane jako `static` ponieważ są one następnie przywoływany w `SKPathEffect.CreateCompose` wywołanie w `SKPaint` definicji:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage

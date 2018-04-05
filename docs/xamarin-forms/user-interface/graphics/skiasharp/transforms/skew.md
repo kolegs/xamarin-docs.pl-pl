@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: c9f5f9f20296b1c2443a8addeebd4d12ccaa1ab4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-skew-transform"></a>Przekształcanie pochylenia
 
@@ -39,7 +39,7 @@ public void Skew (SKPoint skew)
 
 Jednak jest mało prawdopodobne, że należy używać jednej z tych dwóch metod w izolacji.
 
-**Pochylanie eksperymentu** strona umożliwia eksperymentować zegara wartości od –10 do 10. Ciąg tekstowy znajduje się w lewym górnym rogu strony, wartościami pochylenia uzyskane z dwóch `Slider` elementów. Oto `PaintSurface` obsługi w [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) klasy:
+**Pochylanie eksperymentu** strona umożliwia eksperymentować zegara wartości od –10 do 10. Ciąg tekstowy znajduje się w lewym górnym rogu strony, wartościami pochylenia uzyskane z dwóch `Slider` elementów. Oto `PaintSurface` obsługi w [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,7 +109,7 @@ Może uznać wygodniejsze Określanie pochylenia jako kąt nachylenia, takich ja
 
 Stosunek shift 150 pikseli na pionowy 100 pikseli jest tangens kąta, w tym przykładzie 56.3 stopni.
 
-Plik XAML **pochylanie eksperymentu kąt** strona jest podobna do **pochylanie kąt** strony z wyjątkiem `Slider` elementy należeć do zakresu od – 90 do 90 stopni. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Pliku CodeBehind Wyśrodkowuje tekst na stronie i używa `Translate` można ustawić środka pochylanie na środku strony. Krótki `SkewDegrees` metoda w dolnej części kodu konwertuje kąty fałszować wartości:
+Plik XAML **pochylanie eksperymentu kąt** strona jest podobna do **pochylanie kąt** strony z wyjątkiem `Slider` elementy należeć do zakresu od – 90 do 90 stopni. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Pliku CodeBehind Wyśrodkowuje tekst na stronie i używa `Translate` można ustawić środka pochylanie na środku strony. Krótki `SkewDegrees` metoda w dolnej części kodu konwertuje kąty fałszować wartości:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -154,7 +154,7 @@ Jako wartość kąta zbliża się do 90 stopni dodatnie lub ujemne, tangens zbli
 
 [![](skew-images/skewangleexperiment-small.png "Potrójna zrzut ekranu przedstawiający stronę pochylanie eksperymentu kąt")](skew-images/skewangleexperiment-large.png#lightbox "Potrójna zrzut ekranu strony pochylanie eksperymentu kąta")
 
-Mała ujemna zegara poziomy można naśladować nachylone lub kursywą tekstu, jako **nachylone tekst** pokazuje strony. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Klasy pokazuje, jak jest wykonywane:
+Mała ujemna zegara poziomy można naśladować nachylone lub kursywą tekstu, jako **nachylone tekst** pokazuje strony. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Klasy pokazuje, jak jest wykonywane:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
