@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: db8b767d6e7a6c5e5badc1c74703825a66ea2ab8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="app-class"></a>Klasa aplikacji
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/04/2018
 * Trwałe [ `Properties` słownika](#Properties_Dictionary) do przechowywania wartości prostego zachowuje zmiany stanu cyklu życia.
 * Statycznego `Current` właściwość, która zawiera odwołanie do bieżącego obiektu aplikacji.
 
-Jeśli udostępnia również [metody cyklu życia](~/xamarin-forms/app-fundamentals/app-lifecycle.md) takich jak `OnStart`, `OnSleep`, i `OnResume` oraz zdarzenia modalne nawigacji.
+Również przedstawia [metody cyklu życia](~/xamarin-forms/app-fundamentals/app-lifecycle.md) takich jak `OnStart`, `OnSleep`, i `OnResume` oraz zdarzenia modalne nawigacji.
 
 W zależności od tego, jaki szablon wybrano, `App` klasy można zdefiniować w jeden z dwóch sposobów:
 

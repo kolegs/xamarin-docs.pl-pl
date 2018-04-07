@@ -6,17 +6,13 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: cdddc66df4da22654e44b5b72d4b0b1c659c1fde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 579393a8830e73f7ab64f750c0176eb4c4e36029
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="general-frequently-asked-questions"></a>Ogólne — często zadawane pytania
-
-## <a name="visual-studio-2017-release-candidate"></a>Visual Studio 2017 Release Candidate
-### <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarinvisualstudio-2017-rcmd"></a>[Czy mogę używać programu Visual Studio 2017 Release Candidate ze środowiskiem Xamarin?](visualstudio-2017-rc.md)
-Opis bieżącego skutki korzystania z programu Visual Studio 2017 Release Candidate (RC) oraz Xamarin podobnie jak w przypadku informacji o sposobie instalowania Xamarin w programie Visual Studio2017 RC.
 
 ## <a name="portable-class-libraries"></a>Biblioteki klas przenośnych
 ### <a name="how-can-i-view-what-libraries-are-supported-in-a-pclpcl-support-librariesmd"></a>[Jak wyświetlić biblioteki obsługiwane w aplikacji PCL?](pcl-support-libraries.md)

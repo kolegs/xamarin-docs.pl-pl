@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="list-appearance"></a>Wygląd listy
 
@@ -117,14 +117,12 @@ Należy pamiętać, że mamy:
 - Zmienione `ListView`w `ItemsSource` do listy grupowanych
 
 ### <a name="customizing-grouping"></a>Dostosowywanie grupowania
-Teraz, gdy firma Microsoft przedstawiono sposób wykonania podstawowych grupowania w elemencie ListView, zobaczmy, jak dostosować wyświetlanie nagłówków grup.
 
-Podobnie jak `ListView` ma `ItemTemplate` określających sposób wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`. Jest to przykład ListView z góry za pomocą szablonu nagłówka grupy niestandardowe:
+Jeśli grupa została włączona na liście, można również dostosować nagłówka grupy.
 
-![](customizing-list-appearance-images/grouping-depth.png "Element ListView z dostosowanych GroupHeaderTemplate")
+Podobnie jak `ListView` ma `ItemTemplate` określających sposób wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`. 
 
-
-Poniżej przedstawiono sposób wykonania tego projektu w języku XAML:
+Przykład Dostosowywanie nagłówek grupy w języku XAML jest następujący:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
