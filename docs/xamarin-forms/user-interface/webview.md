@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="webview"></a>Widok sieci Web
 
@@ -399,6 +399,8 @@ Zakończono ładowanie:
 Najnowsze funkcje jak już wspomniano wszystkich popularnych przeglądarkach przyjmuje technologii, takich jak przyspieszane renderowania i kompilacja kodu JavaScript. Niestety, ze względu na ograniczenia zabezpieczeń większość tych korzyści nie były dostępne w iOS-equaivalent z `WebView`, `UIWebView`. Platformy Xamarin.Forms `WebView` używa `UIWebView`. Jeśli jest to problem, musisz zapisać niestandardowego modułu renderowania, które używa `WKWebView`, który obsługuje szybsze przeglądania. Należy pamiętać, że `WKWebView` jest obsługiwana tylko w systemie iOS 8 i nowszych.
 
 Widok sieci Web w systemie Android, domyślnie jest około tak szybko, jak przeglądarki wbudowanej.
+
+[Widoku sieci Web platformy uniwersalnej systemu Windows](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) używa aparatu renderowania Microsoft Edge. Komputery stacjonarne i tablet urządzeń powinna zostać wyświetlona wydajności tej samej jako przy użyciu samej przeglądarki Edge.
 
 `WebBrowser` Formantu Windows Phone 8 i Windows Phone 8.1 ma nie obsługują HTML5 najnowsze funkcje i często może zawierać pogorszenie wydajności. Należy pamiętać o jak lokacje będą wyświetlane w Windows Phone `WebView`. Nie jest wystarczająca do testowania w programie Internet Explorer.
 

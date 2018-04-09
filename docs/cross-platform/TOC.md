@@ -83,7 +83,6 @@
 ### [Stos HttpClient i selektor implementacji protokołów SSL/TLS](macios/http-stack.md)
 ## [Rozwiązywanie problemów](troubleshooting/index.md)
 ### [Często zadawane pytania](troubleshooting/questions/index.md)
-#### [Czy mogę używać programu Visual Studio 2017 Release Candidate ze środowiskiem Xamarin?](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [Jak wyświetlić biblioteki obsługiwane w aplikacji PCL?](troubleshooting/questions/pcl-support-libraries.md)
 #### [Interfejs API odbicia aplikacji PCL](troubleshooting/questions/pcl-reflection.md)
 #### [Analiza przypadku aplikacji PCL: jak rozwiązać problemy związane z obiektem System.Diagnostics.Tracing dla pakietu NuGet przepływu danych TPL firmy Microsoft?](troubleshooting/questions/pcl-case-study.md)
@@ -96,6 +95,14 @@
 #### [Kiedy i jak należy zgłosić raport o usterce?](troubleshooting/questions/howto-file-bug.md)
 #### [Dlaczego system Jenkins nie jest obsługiwany przez środowisko Xamarin?](troubleshooting/questions/xamarin-jenkins.md)
 #### [Jakie ustawienia projektu są wymagane dla debugera?](troubleshooting/questions/debugger-settings.md)
+
+### Pytania dotyczące programu Visual Studio
+#### [Pola wyboru wdrażania są wyłączone w programie Configuration Manager](troubleshooting/questions/deploy-checkboxes.md)
+#### [Brak rozszerzeń programu Visual Studio po instalacji](troubleshooting/questions/missing-vs-extensions.md)
+#### [Jak całkowicie odinstalować platformę Xamarin dla programu Visual Studio?](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [Jak zebrać stosy wywołań bieżącego procesu programu Visual Studio?](troubleshooting/questions/vs-callstack.md)
+#### [Dlaczego program Visual Studio nie uwzględnia przywoływanego projektu biblioteki w mojej kompilacji?](troubleshooting/questions/vs-config-manager.md)
+
 ### [Aktualizowanie odwołań do składników na potrzeby narzędzia NuGet](troubleshooting/component-nuget.md)
 ### [Opcje pomocy technicznej](troubleshooting/support-options.md)
 ### [Pytania dotyczące starszych licencji](troubleshooting/legacy-licenses/index.md)
