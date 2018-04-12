@@ -1,5 +1,5 @@
 ---
-title: Korzystanie z usługi Amazon SimpleDB
+title: Consuming an Amazon SimpleDB Service
 description: Amazon SimpleDB to usługa sieci web, która zapewnia możliwość przechowywania i zapytania na danych w chmurze firmy Amazon. W tym artykule opisano sposób używania usług AWS zestawu SDK dla platformy .NET do zapytania, tworzenie, Zastąp i usuwanie danych przechowywanych w usłudze SimpleDB.
 ms.prod: xamarin
 ms.assetid: 823819AA-15F9-4144-B355-78A10AD37513
@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: 1602319dbf5a5d00ac5de75f2d438b9aea692699
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/12/2018
 ---
-# <a name="consuming-an-amazon-simpledb-service"></a>Korzystanie z usługi Amazon SimpleDB
+# <a name="consuming-an-amazon-simpledb-service"></a>Consuming an Amazon SimpleDB Service
 
 _Amazon SimpleDB to usługa sieci web, która zapewnia możliwość przechowywania i zapytania na danych w chmurze firmy Amazon. W tym artykule opisano sposób używania usług AWS zestawu SDK dla platformy .NET do zapytania, tworzenie, Zastąp i usuwanie danych przechowywanych w usłudze SimpleDB._
 
@@ -198,6 +198,6 @@ W tym artykule opisano sposób używania usług AWS zestawu SDK dla platformy .N
 - [TodoAWS (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS/)
 - [Przewodnik dewelopera Xamarin zestawu SDK usług sieci Web firmy Amazon](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/)
 - [Amazon Cognito Identity](http://docs.aws.amazon.com/cognito/devguide/identity/)
-- [Dokumentacja dla deweloperów SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
+- [Amazon SimpleDB Developer Documentation](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
 - [AmazonSimpleDBClient Class](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
-- [Aktualizacja usług Amazon Web Services SDK dla platformy .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
+- [Amazon Web Services SDK for .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
