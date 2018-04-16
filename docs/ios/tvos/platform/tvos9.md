@@ -85,7 +85,7 @@ Używanie programu Siri zdalnego jest obecnie dostępny w następujących krajac
  - Niemcy
  - Japonia
  - Hiszpania
- - Wielka Brytania
+ - Zjednoczone Królestwo
  - Stany Zjednoczone
 
 Innych krajach otrzymają Apple TV zdalnego zastępujący przycisk Siri z przycisku wyszukiwania, który powoduje wyświetlenie ekranu wyszukiwania domyślne wprowadzanie tekstu do wyszukiwania:
