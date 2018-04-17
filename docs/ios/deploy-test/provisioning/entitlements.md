@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>Praca z uprawnieniami
 
@@ -112,7 +112,7 @@ Klucze uprawnienia można dodać za pomocą panelu Źródło Entitlements.plist 
 
 <a name="icloud" />
 
-### <a name="icloud"></a>iCloud
+### <a name="icloud"></a>usługi iCloud
 
 *   **Opis elementu**: iCloud zapewnia użytkownicy systemu iOS wygodne i prosty sposób, aby przechowywać zawartość i udostępniać je między urządzeniami. Istnieją cztery metody deweloperzy mogą używać iCloud zapewnienie środków magazynu dla użytkowników: magazyn kluczy i wartości, magazynu UIDocument CoreData i przy użyciu CloudKit bezpośrednio w celu zapewnienia magazynu dla poszczególnych plików i katalogów. Aby uzyskać więcej informacji o tych dotyczą wprowadzenie do przewodnika iCloud.
 
@@ -127,6 +127,9 @@ Klucze uprawnienia można dodać za pomocą panelu Źródło Entitlements.plist 
     - `$(TeamIdentifierPrefix)` Ciąg mogą znajdować się na rejestrowanie, aby developer.apple.com i odwiedziny **Member Center > Twoje konto > Podsumowanie konta dewelopera** uzyskać identyfikator zespołu (lub poszczególne identyfikator dla deweloperów jednego). Będzie to ciąg znaków 10 (A93A5CM278 na przykład).
     - `$(CFBundleIdentifier)` Rozpoczyna się od ciągu `iCloud` i jest ustawiona, gdy kontener iCloud została utworzona zgodnie z harmonogramem kroki opisane w [Praca z funkcjami](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) przewodnik.
     - $`(TeamIdentifierPrefix)` i `$(CFBundleIdentifier)` symbole zastępcze mogą być używane i zostanie zamieniony poprawne wartości podczas kompilacji.
+
+> [!IMPORTANT]
+> Apple [udostępnia narzędzia](https://developer.apple.com/support/allowing-users-to-manage-data/) aby pomóc deweloperom poprawnie obsługiwać interfejsów Unii Europejskiej ogólne dane ochrony rozporządzenia (GDPR).
 
 ### <a name="app-groups"></a>Grupy aplikacji
 
@@ -151,11 +154,11 @@ Klucze uprawnienia można dodać za pomocą panelu Źródło Entitlements.plist 
 ### <a name="siri"></a>Używanie programu Siri
 
 - **Opis elementu**: SiriKit umożliwia aplikacji systemu iOS do świadczenia usług, które są dostępne dla Siri i map aplikacji na urządzeniu z systemem iOS przy użyciu rozszerzeń aplikacji i nowych lokalizacji docelowych i opcji interfejsu użytkownika platformy. Aby uzyskać więcej informacji zapoznaj się wprowadzenie do przewodnika SiriKit.
-    - **Key**: com.apple.developer.siri
+    - **Klucz**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>Osobista sieć VPN
 
-- **Key**: com.apple.developer.networking.vpn.api
+- **Klucz**: com.apple.developer.networking.vpn.api
 - **Ciąg**: Zezwalaj na sieci vpn
 
 ### <a name="keychain-sharing"></a>Udostępnianie łańcucha kluczy
@@ -173,7 +176,7 @@ Klucze uprawnienia można dodać za pomocą panelu Źródło Entitlements.plist 
 ### <a name="associated-domains"></a>Skojarzone domen
 
 - **Opis elementu**: skojarzony domen, które powinny być traktowane jako łącza uniwersalnych powinien zostać przekazany z tych uprawnień. Można zaimplementować uniwersalnych łącza umożliwiają bezpośrednich połączeń między aplikacjami a witryny sieci Web. Należy podać wpis do każdej domeny, która obsługuje Twojej aplikacji i każdego wpisu powinny rozpoczynać się od `applinks:`
-    - **Key**: com.apple.developer.associated-domains
+    - **Klucz**: com.apple.developer.associated domen
     - **Ciąg**: webcredentials:example.com
 
 ### <a name="data-protection"></a>Ochrona danych

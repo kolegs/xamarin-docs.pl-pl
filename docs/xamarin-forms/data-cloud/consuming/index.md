@@ -1,21 +1,21 @@
 ---
 title: Korzystanie z usług sieci Web
-description: W tym przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikacji z ASMX usługi, usługi WCF usługi REST usługi, usługi Azure Mobile Apps i usług Amazon Web Services.
+description: W tym przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikowania się z usługami ASMX, usługi WCF, usług REST i Azure Mobile Apps.
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="consuming-web-services"></a>Korzystanie z usług sieci Web
 
-_W tym przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikacji z ASMX usługi, usługi WCF usługi REST usługi, usługi Azure Mobile Apps i usług Amazon Web Services._
+_Ten przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikowania się z usługami ASMX, usługi WCF, usług REST i Azure Mobile Apps.
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[Korzystanie z usługi sieci Web platformy ASP.NET (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
@@ -32,11 +32,6 @@ Representational State (Transfer REST) jest architektury stylu do tworzenia usł
 ## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[Korzystanie z aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Aplikacje mobilne platformy Azure umożliwiają opracowywanie aplikacji z zapleczy skalowalne hostowanych w usłudze Azure App Service z obsługą przenośnych uwierzytelniania, synchronizacji w trybie offline i powiadomień wypychanych. W tym artykule, która ma zastosowanie wyłącznie do usługi Azure Mobile Apps, która użycia zaplecza Node.js, wyjaśniono, jak zapytania, wstawiania, aktualizowania i usuwania danych przechowywanych w tabeli w wystąpieniu usługi Azure Mobile Apps.
-
-## <a name="consuming-an-amazon-simpledb-servicexamarin-formsdata-cloudconsumingawsmd"></a>[Korzystanie z usługi Amazon SimpleDB](~/xamarin-forms/data-cloud/consuming/aws.md)
-
-Amazon SimpleDB to usługa sieci web, która zapewnia możliwość przechowywania i zapytania na danych w chmurze firmy Amazon. W tym artykule opisano sposób używania usług AWS zestawu SDK dla platformy .NET zapytania, Utwórz i zastąpić i usunięcia danych przechowywanych w usłudze SimpleDB.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

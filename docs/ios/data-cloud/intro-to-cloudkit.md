@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -20,6 +20,9 @@ _iCloud interfejsy API umożliwia aplikacji systemu iOS 8 do przechowywania dany
 CloudKit framework upraszcza tworzenie aplikacji tego dostępu do usługi iCloud. Obejmuje to pobieranie danych aplikacji i zasobów prawa, jak również mogą bezpiecznie przechowywać informacji o aplikacji. Ten zestaw zapewnia warstwę anonimowość zezwalając na dostęp do aplikacji przy użyciu ich identyfikatorów iCloud bez udostępniania informacji osobistych.
 
 Deweloperzy mogą skupić się na swoich aplikacji po stronie klienta i pozwól iCloud wyeliminować konieczność pisania logiki aplikacji po stronie serwera. CloudKit zapewnia uwierzytelnianie, prywatne i publiczne baz danych i danych strukturalnych i usługi magazynu trwałego.
+
+> [!IMPORTANT]
+> Apple [udostępnia narzędzia](https://developer.apple.com/support/allowing-users-to-manage-data/) aby pomóc deweloperom poprawnie obsługiwać interfejsów Unii Europejskiej ogólne dane ochrony rozporządzenia (GDPR).
 
 ## <a name="requirements"></a>Wymagania
 

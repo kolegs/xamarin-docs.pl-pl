@@ -1,5 +1,5 @@
 ---
-title: iCloud
+title: usługi iCloud
 description: Firma Apple wprowadziła iCloud w systemie iOS 5 jako usługa, aby umożliwić aplikacjom przechowywanie danych na serwerach firmy Apple i jego synchronizację wszystkie urządzenia używane przez tę samą osobę (za pośrednictwem ich identyfikator Apple ID). Ma również składnik kopii zapasowej, której dane na urządzeniach jest kopii zapasowej do serwerów firmy Apple. Ten dokument zawiera opis sposobu korzystać z niektórych iCloud interfejsów API podany przez firmę Apple do przechowywania i pobierania danych ze swoich serwerów, z C# próbki do przechowywania par klucz wartość niewielkie zbiory danych i do przechowywania dokumentów. Omówiono również, jak iCloud kopii zapasowej może mieć wpływ projektu danej aplikacji.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="icloud"></a>iCloud
+# <a name="icloud"></a>usługi iCloud
 
 _Firma Apple wprowadziła iCloud w systemie iOS 5 jako usługa, aby umożliwić aplikacjom przechowywanie danych na serwerach firmy Apple i jego synchronizację wszystkie urządzenia używane przez tę samą osobę (za pośrednictwem ich identyfikator Apple ID). Ma również składnik kopii zapasowej, której dane na urządzeniach jest kopii zapasowej do serwerów firmy Apple. Ten dokument zawiera opis sposobu korzystać z niektórych iCloud interfejsów API podany przez firmę Apple do przechowywania i pobierania danych ze swoich serwerów, z C# próbki do przechowywania par klucz wartość niewielkie zbiory danych i do przechowywania dokumentów. Omówiono również, jak iCloud kopii zapasowej może mieć wpływ projektu danej aplikacji._
 
@@ -30,6 +30,9 @@ Dostępne są cztery typy magazynu:
 - **Poszczególnych plików i katalogów** — do zarządzania wiele różnych plików bezpośrednio w systemie plików.
 
 W tym dokumencie omówiono pierwsze dwa typy — pary klucz-wartość i podklasy UIDocument — oraz sposób używania tych funkcji w platformy Xamarin.iOS.
+
+> [!IMPORTANT]
+> Apple [udostępnia narzędzia](https://developer.apple.com/support/allowing-users-to-manage-data/) aby pomóc deweloperom poprawnie obsługiwać interfejsów Unii Europejskiej ogólne dane ochrony rozporządzenia (GDPR).
 
 ## <a name="requirements"></a>Wymagania
 

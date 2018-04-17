@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
@@ -33,9 +33,17 @@ Jak używać `Device` klasy w celu utworzenia zachowanie specyficzne dla platfor
 
 Niektóre style z systemem iOS można wykonać za pomocą **Info.plist** i `UIAppearance` interfejsu API. Ten przewodnik zawiera przykłady obejmują funkcje systemu iOS 9 w aplikacji systemu iOS rozwiązania platformy Xamarin.Forms, w tym przez wyszukiwanie Core Spotlight.
 
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+
+Platformy Xamarin.Forms ma teraz obsługę podglądu GTK # aplikacji.
+
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
 Platformy Xamarin.Forms ma teraz obsługę podglądu macOS aplikacji.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Platformy Xamarin.Forms ma teraz obsługę podglądu dla aplikacji Windows Presentation Foundation (WPF).
 
 ## <a name="native-formsnative-formsmd"></a>[Formularze natywne](native-forms.md)
 

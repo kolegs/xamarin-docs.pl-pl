@@ -5,15 +5,14 @@ ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/13/2018
+ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts"></a>Czcionki
-
 
 ## <a name="overview"></a>Omówienie
 
@@ -41,7 +40,7 @@ V26 biblioteki obsługi systemu Android zostanie Poprawka usterki systemu obsłu
             app:fontStyle="normal" 
             app:fontWeight="400" />
 
-</font-family>    
+</font-family>
 ```
 
 Tak długo, jak czcionki są dostarczane do aplikacji systemu Android w sposób właściwe, które można zastosować widżetu interfejsu użytkownika przez ustawienie [ `fontFamily` atrybutu](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily). Na przykład poniższy fragment kodu przedstawiono sposób wyświetlania czcionkę w element TextView:
@@ -49,8 +48,8 @@ Tak długo, jak czcionki są dostarczane do aplikacji systemu Android w sposób 
 ```xml
 <TextView
     android:text="The quick brown fox jumped over the lazy dog."
-    android:fontFamily="@font/caveat_bold"
-    app:fontFamily="@font/caveat_bold"
+    android:fontFamily="@font/sourcesanspro_regular"
+    app:fontFamily="@font/sourcesanspro_regular"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
@@ -58,14 +57,12 @@ Tak długo, jak czcionki są dostarczane do aplikacji systemu Android w sposób 
 
 W tym przewodniku najpierw opisano, jak używać czcionek jako zasób systemu Android, a następnie przejdź do omówienia sposobu pobierania czcionek w czasie wykonywania.
 
-
 ## <a name="fonts-as-a-resource"></a>Czcionki jako zasób
 
 Pakowanie czcionkę w systemie Android APK gwarantuje, że zawsze jest dostępne dla aplikacji. Plik czcionki (albo. TTF lub. Plik OTF) jest dodawany do aplikacji platformy Xamarin.Android, podobnie jak inne zasobów przez kopiowanie plików do podkatalogu w **zasobów** folderu projektu platformy Xamarin.Android. Czcionki zasobów są przechowywane w **czcionki** podkatalogu z **zasobów** folderu projektu. 
 
-
 > [!NOTE]
->  Czcionek powinien mieć **Akcja kompilacji** z **AndroidResource** lub nie będą one umieszczone w ostatnim APK. Akcja kompilacji powinien być ustawiony automatycznie IDE.
+> Czcionek powinien mieć **Akcja kompilacji** z **AndroidResource** lub nie będą one umieszczone w ostatnim APK. Akcja kompilacji powinien być ustawiony automatycznie IDE.
 
 Wiele podobnych czcionki plików (na przykład czcionkę tej samej wagi różnych lub style) jest możliwy do grupowania ich w danej rodzinie czcionek.
 
@@ -75,7 +72,7 @@ Wiele podobnych czcionki plików (na przykład czcionkę tej samej wagi różnyc
 
 Rodzina czcionek to zestaw czcionek, które mają różne wagi i style. Na przykład może być czcionki oddzielne pliki czcionek pogrubieniem lub kursywą. Rodzina czcionek jest definiowana za pomocą `font` elementów w pliku XML, który jest przechowywany w **zasobów/czcionki** katalogu. Każdy rodziny czcionek powinien mieć własny plik XML.
 
-Aby utworzyć rodziny czcionek, najpierw dodać czcionki, aby **zasobów/czcionki** folderu. Następnie utwórz nowy plik XML w folderze czcionki dla rodziny czcionek. Ten plik XML będzie mieć główny `font-family` element, który zawiera co najmniej jeden `font` elementów. Każdy `font` element deklaruje atrybuty czcionki. 
+Aby utworzyć rodziny czcionek, najpierw dodać czcionki, aby **zasobów/czcionki** folderu. Następnie utwórz nowy plik XML w folderze czcionki dla rodziny czcionek. Nazwa pliku XML nie ma koligacji ani relacji z czcionkami przywoływane; Plik zasobów może być dowolną nazwą pliku prawne zasobu systemu Android. Ten plik XML będzie mieć główny `font-family` element, który zawiera co najmniej jeden `font` elementów. Każdy `font` element deklaruje atrybuty czcionki.
 
 Następujący kod XML jest przykładem rodziny czcionek _źródeł sieci SAN Pro_ czcionki, który definiuje wiele wag czcionkę. To jest zapisywany jako plik w **zasobów/czcionki** folder o nazwie **sourcesanspro.xml**:
 
@@ -86,7 +83,7 @@ Następujący kod XML jest przykładem rodziny czcionek _źródeł sieci SAN Pro
     <font android:font="@font/sourcesanspro_regular" 
           android:fontStyle="normal" 
           android:fontWeight="400"
-          app:font="@font/sourcesanspro_" 
+          app:font="@font/sourcesanspro_regular" 
           app:fontStyle="normal" 
           app:fontWeight="400" />
     <font android:font="@font/sourcesanspro_bold" 
@@ -136,7 +133,6 @@ Po zdefiniowaniu rodziny czcionek, można deklaratywnie przez ustawienie `fontFa
     />
 ```
 
-
 ### <a name="programmatically-assigning-fonts"></a>Programowo Przypisywanie czcionek
 
 Czcionki można programowo ustawić za pomocą [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int)) metoda pobierania [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html) obiektu. Wiele widoków ma `TypeFace` właściwość, która może służyć do przypisania czcionki do elementu widget. Następujący fragment kodu przedstawia sposób programowo ustawienia czcionki na element TextView:
@@ -154,14 +150,13 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-
 ## <a name="downloading-fonts"></a>Pobieranie czcionek
 
 Zamiast czcionki opakowania jako zasób aplikacji systemu Android można pobrać czcionki ze źródła zdalnego. Ma to wpływu pożądane zmniejszenie rozmiaru plik APK. 
 
 Czcionki są pobierane z pomocą _dostawcy czcionki_. Jest to specjalne dostawcy zawartości, który zarządza pobieranie i buforowanie czcionki do wszystkich aplikacji na urządzeniu. 8.0 dla systemu android zawiera dostawcy czcionki, aby pobrać czcionki z [repozytorium czcionki Google](http://fonts.google.com). Ten dostawca czcionki domyślny jest backported poziom interfejsu API 14 z v26 biblioteki obsługi systemu Android.
- 
- Aplikacja wysyła żądanie do czcionki, dostawca czcionki zostanie najpierw sprawdź, czy czcionka jest już na urządzeniu. Jeśli nie, następnie spróbuje pobrać czcionkę. Jeśli czcionka nie może zostać pobrany, następnie Android użyje domyślnej czcionki systemowej. Pobrany czcionki jest dostępna we wszystkich aplikacjach na urządzeniu, a nie tylko aplikacji, który zgłosił żądanie początkowej.
+
+Aplikacja wysyła żądanie do czcionki, dostawca czcionki zostanie najpierw sprawdź, czy czcionka jest już na urządzeniu. Jeśli nie, następnie spróbuje pobrać czcionkę. Jeśli czcionka nie może zostać pobrany, następnie Android użyje domyślnej czcionki systemowej. Pobrany czcionki jest dostępna we wszystkich aplikacjach na urządzeniu, a nie tylko aplikacji, który zgłosił żądanie początkowej.
 
 Po wysłaniu żądania do pobrania czcionki, aplikacja nie bezpośrednio zbadać dostawcy czcionki. Zamiast tego użyje wystąpienia aplikacji [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) interfejsu API (lub [ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html) Jeśli 26 biblioteki obsługi jest używany).  
 
@@ -184,19 +179,18 @@ Niezależnie od tego, które rozwiązanie jest używana można pobrać pliki zas
              app:fontProviderPackage="com.google.android.gms" 
              app:fontProviderQuery="VT323"
              app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
-    >
+>
 </font-family>
 ```
 
 `font-family` Element zawiera następujące atrybuty deklarowanie informacje, czy system Android wymaga, aby pobrać czcionki:
- 
+
 1. **fontProviderAuthority** &ndash; urzędu dostawcy czcionki do użycia dla żądania.
 2. **fontPackage** &ndash; pakiet dla dostawcy czcionki do użycia dla żądania. Służy to, aby sprawdzić tożsamość dostawcy.
 3. **fontQuery** &ndash; to ciąg, który pomoże dostawcy czcionki zlokalizować żądanej czcionki. Szczegóły dotyczące zapytania czcionki są specyficzne dla dostawcy czcionki. [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs) Klasy w [czcionki do pobrania](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/) Przykładowa aplikacja udostępniono pewne informacje o formacie zapytania czcionek z kolekcji Google czcionki Otwórz źródła.
 4. **fontProviderCerts** &ndash; tablicy zasobów z listę zestawów wartości skrótów dotyczących certyfikatów, które powinny być podpisane dostawcy z.
 
 Po zdefiniowaniu czcionek, może być konieczne podanie informacji o _certyfikaty czcionki_ związane z pobierania.
-
 
 ### <a name="font-certificates"></a>Certyfikaty czcionki
 
@@ -226,7 +220,6 @@ Na przykład następujący kod XML ma nazwę **Resources/values/fonts_cert.xml**
 
 Z tymi plikami zasobów w miejscu aplikacji ma możliwość pobierania czcionek.
 
-
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Deklarowanie czcionki do pobrania jako zasoby
 
 Poprzez wyszczególnienie czcionki do pobrania w **AndroidManifest.XML**, Android asynchronicznie pobierze czcionki po pierwszym uruchomieniu aplikacji. Czcionka przez siebie są wymienione w pliku zasobów tablicy podobny do: 
@@ -238,14 +231,13 @@ Poprzez wyszczególnienie czcionki do pobrania w **AndroidManifest.XML**, Androi
         <item>@font/vt323</item>
     </array>
 </resources>
-```        
+```
 
 Aby pobrać te czcionki, ich musi być zadeklarowana w **AndroidManifest.XML** przez dodanie `meta-data` jako element podrzędny `application` elementu. Na przykład, jeśli czcionki do pobrania został zadeklarowany w pliku zasobów na **Resources/values/downloadable_fonts.xml**, a następnie ta Wstawka kodu musi zostać dodany do manifestu: 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
-
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Pobieranie czcionki z czcionek interfejsami API
 
@@ -269,17 +261,16 @@ W poprzednich fragment `FontToDownload` zapytanie, które pomogą czcionki z kol
 Przed przekazaniem `FontRequest` do `FontContractCompat.RequestFont` metody, istnieją dwa obiekty, które muszą zostać utworzone:
 
 * **`FontsContractCompat.FontRequestCallback`** &ndash; To jest klasą abstrakcyjną, która musi zostać rozszerzony. To wywołanie zwrotne, które będą wywoływane, gdy `RequestFont` zostało zakończone. Aplikacji platformy Xamarin.Android musi podklasy `FontsContractCompat.FontRequestCallback` i zastąpienia `OnTypefaceRequestFailed` i `OnTypefaceRetrieved`, zapewniając akcje do wykonania, kiedy pobieranie nie powiodło się lub odpowiednio zakończy się pomyślnie.
-* **`Handler`** &ndash; Jest to `Handler` który będzie używany przez `RequestFont` pobrać czcionki w wątku, w razie potrzeby. Czcionek powinien **nie** pobrane w wątku interfejsu użytkownika.  
+* **`Handler`** &ndash; Jest to `Handler` który będzie używany przez `RequestFont` pobrać czcionki w wątku, w razie potrzeby. Czcionek powinien **nie** pobrane w wątku interfejsu użytkownika.
 
 Ta Wstawka kodu jest przykładem klasy C#, która pobierze asynchronicznie czcionki z kolekcji typu Open Source czcionki Google. Implementuje `FontRequestCallback` interfejsu i zgłasza zdarzenie C# podczas `FontRequest` zostało zakończone. 
-
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
 {
     // A very simple font query; replace as necessary
     public static readonly String FontToDownload = "Courgette";
-    
+
     Android.OS.Handler Handler = null;
 
     public event EventHandler<FontDownloadEventArg> FontDownloaded = delegate
@@ -305,7 +296,7 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
         base.OnTypefaceRetrieved(typeface);
         FontDownloaded(this, new FontDownloadEventArg(typeface));
     }
-    
+
     Handler GetHandlerThreadHandler()
     {
         if (Handler == null)
@@ -335,9 +326,8 @@ public class FontDownloadEventArg : EventArgs
 }
 ```
 
-
-
 Aby użyć tego pomocnika nowy `FontDownloadHelper` jest tworzony, i program obsługi zdarzeń jest przypisany:  
+
 ```csharp
 var fontHelper = new FontDownloadHelper();
 
@@ -348,11 +338,9 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku opisano nowe interfejsy API systemu Android 8.0 do obsługi do pobrania czcionek i czcionek jako zasoby. Go omówiono sposób osadzania czcionek istniejących w APK i używać ich w układzie. Omówiono również, jak 8.0 dla systemu Android obsługuje pobieranie czcionki od dostawcy czcionki programowo lub przez zadeklarowanie czcionki meta danych zasobów plików. 
-
+W tym przewodniku opisano nowe interfejsy API systemu Android 8.0 do obsługi do pobrania czcionek i czcionek jako zasoby. Go omówiono sposób osadzania czcionek istniejących w APK i używać ich w układzie. Omówiono również, jak 8.0 dla systemu Android obsługuje pobieranie czcionki od dostawcy czcionki programowo lub przez zadeklarowanie czcionki meta danych zasobów plików.
 
 ## <a name="related-links"></a>Linki pokrewne
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ab373d708d47ad7c3dbbf4507284be04a1f9934
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3b8211e4c38fd37040fab5b35be4709d4b926c91
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Wprowadzenie do macOS Sierra
 
@@ -64,6 +64,9 @@ W ramach CloudKit została rozszerzona w macOS Sierra, aby zezwolić użytkownik
 CloudKit zapewnia pełną interfejsu użytkownika do wysyłania i akceptowanie udostępnionego rekordu zaproszeń i użytkownik ma odczytu/zapisu pełną kontrolę nad użytkowników, którzy mają dostęp do rekordów.
 
 Aby uzyskać więcej informacji, zobacz firmy Apple [odwołania Framework CloudKit](https://developer.apple.com/reference/clockkit) i [odwołania Framework JS CloudKit](https://developer.apple.com/reference/cloudkitjs).
+
+> [!IMPORTANT]
+> Apple [udostępnia narzędzia](https://developer.apple.com/support/allowing-users-to-manage-data/) aby pomóc deweloperom poprawnie obsługiwać interfejsów Unii Europejskiej ogólne dane ochrony rozporządzenia (GDPR).
 
 <a name="Safari-App-Extensions-Support" />
 

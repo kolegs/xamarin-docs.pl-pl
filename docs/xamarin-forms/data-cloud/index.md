@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f20042b9599f7b4dde699a125e63c5ce435f6bc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e67820fa83ddea46f934b4eaedde2c6334f9cc6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="data--cloud-services"></a>Usługi danych i usługi w chmurze
 
@@ -25,11 +25,11 @@ Ten artykuł zawiera wskazówki przykładowej aplikacji platformy Xamarin.Forms,
 
 ## <a name="consuming-web-servicesxamarin-formsdata-cloudconsumingindexmd"></a>[Korzystanie z usług internetowych](~/xamarin-forms/data-cloud/consuming/index.md)
 
-W tym przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikacji z [usługami ASMX](consuming/asmx.md), [usługi WCF](consuming/wcf.md), [usługi REST](consuming/rest.md), [Azure Mobile Apps](consuming/azure.md)i [ Usług Amazon Web Services](consuming/aws.md).
+W tym przewodniku pokazano, jak łączyć się z usługami innej witryny sieci web w celu zapewnienia tworzenia, odczytu, aktualizacji i usuwania (CRUD) funkcje do aplikacji platformy Xamarin.Forms. Tematy obejmują komunikacji z [usługami ASMX](consuming/asmx.md), [usługi WCF](consuming/wcf.md), [usługi REST](consuming/rest.md), i [Azure Mobile Apps](consuming/azure.md).
 
 ## <a name="authenticating-access-to-web-servicesxamarin-formsdata-cloudauthenticationindexmd"></a>[Uwierzytelnianie dostępu do usług internetowych](~/xamarin-forms/data-cloud/authentication/index.md)
 
-W tym przewodniku objaśniono sposób integrowania usługi uwierzytelniania do aplikacji platformy Xamarin.Forms, aby użytkownicy mogli udostępniać wewnętrznej bazie danych podczas tylko mieli dostęp do swoich własnych danych. Tematy zawierają [przy użyciu uwierzytelniania podstawowego, za pomocą usługi REST](authentication/rest.md), [do uwierzytelniania OAuth dostawców tożsamości za pomocą składnika Xamarin.Auth](authentication/oauth.md)i przy użyciu wbudowanych uwierzytelniania mechanizmy oferowane przez [Azure Mobile Apps](authentication/azure.md), i [usług Amazon Web Services](authentication/aws.md).
+W tym przewodniku objaśniono sposób integrowania usługi uwierzytelniania do aplikacji platformy Xamarin.Forms, aby użytkownicy mogli udostępniać wewnętrznej bazie danych podczas tylko mieli dostęp do swoich własnych danych. Tematy zawierają [przy użyciu uwierzytelniania podstawowego, za pomocą usługi REST](authentication/rest.md), [do uwierzytelniania OAuth dostawców tożsamości za pomocą składnika Xamarin.Auth](authentication/oauth.md)i przy użyciu wbudowanych uwierzytelniania mechanizmy oferowane przez [Azure Mobile Apps](authentication/azure.md).
 
 ## <a name="synchronizing-data-with-web-servicessyncindexmd"></a>[Synchronizowanie danych z usługami internetowymi](sync/index.md)
 

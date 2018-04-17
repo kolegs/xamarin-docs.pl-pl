@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Zdalnego powiadomienia z Firebase Cloud Messaging
 
@@ -427,7 +427,7 @@ Wybierz **dziennika tokenu** przycisku. W oknie danych wyjściowych IDE powinien
 Długość ciągu etykietą **tokenu** jest token Identyfikatora wystąpienia zostanie wklejona do konsoli Firebase &ndash; zaznacz i skopiuj ten ciąg do Schowka. Jeśli nie ma tokenu Identyfikatora wystąpienia, Dodaj następujący wiersz do góry `OnCreate` metody do sprawdzenia, czy **google services.json** poprawnie przeanalizować:
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 `google_app_id` Rejestrowane w oknie danych wyjściowych wartość powinna być zgodna `mobilesdk_app_id` wartość rejestrowane w **google services.json**. 
@@ -683,6 +683,27 @@ Teraz, komunikat, który został zarejestrowany w oknie danych wyjściowych rów
 Po otwarciu powiadomienia, powinny pojawić ostatnią wiadomością wysłaną z Firebase konsoli powiadomienia graficznego interfejsu użytkownika: 
 
 [![Powiadomienie pierwszego planu pokazano ikoną pierwszego planu](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>Odłączanie od FCM
+
+Aby anulować subskrypcję tematu, należy wywołać [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) metoda [FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) klasy. Na przykład, aby zrezygnować z _wiadomości_ tematu subskrybuje wcześniej, **anulowania subskrypcji** przycisk mogą zostać dodane do układu z następującym kodem obsługi:
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+Aby wyrejestrować urządzenie z całkowicie FCM, Usuń identyfikator wystąpienia poprzez wywołanie [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) metoda [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) klasy. Na przykład:
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+Wywołanie tej metody Usuwa identyfikator wystąpienia i skojarzonych z nim danych. W związku z tym jest zatrzymywane wysyłania okresowych FCM danych na urządzeniu.
 
  
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów

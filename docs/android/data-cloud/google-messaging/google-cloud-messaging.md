@@ -6,12 +6,12 @@ ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: 29cccf414759a79a8ba74dfc35b7ba9f6a1cc5d6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="google-cloud-messaging"></a>Usługa Google Cloud Messaging
 
@@ -21,6 +21,9 @@ _Google Cloud Messaging (GCM) to usługa, która umożliwia wysyłanie komunikat
 
 Ten temat zawiera omówienie sposobu Google Cloud Messaging tras wiadomości między aplikacji i serwera aplikacji, i zapewnia szczegółową procedurę uzyskania poświadczeń, dzięki czemu aplikacja może używać usługi GCM.
 
+> [!NOTE]
+> GCM została zastąpiona [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
+> GCM serwera i klienta interfejsów API [są przestarzałe](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) i nie będzie dostępna tak szybko, jak 11 kwietnia 2019.
 
 ## <a name="overview"></a>Omówienie
 
@@ -107,7 +110,7 @@ Szczegółowe informacje (w tym przykłady kodu) dotyczące odbierania podrzędn
 *Grupowanie komunikatów* jest typem podrzędnym obsługi komunikatów, których serwer aplikacji wysyła pojedynczą wiadomość na wielu urządzeniach aplikacji klienta, które należą do grupy (na przykład grupy urządzeń, które należą do jednego użytkownika). Grupy komunikaty mogą zostać maksymalnie 2KB długości w przypadku urządzeń z systemem iOS i maksymalnie 4KB długości w przypadku urządzeń z systemem Android. Grupa jest ograniczone do maksymalnie 20 członków. Firmy Google [Device Messaging grupy](https://developers.google.com/cloud-messaging/notifications) wyjaśniono, jak serwery aplikacji można wysłać wiadomość jeden do wielu wystąpień aplikacji klienta uruchomiony na urządzeniach, które należą do grupy.
 
 
-### <a name="upstream-messaging"></a>Upstream Messaging
+### <a name="upstream-messaging"></a>Nadrzędny obsługi wiadomości
 
 Jeśli Twoja aplikacja kliencka łączy się z serwera, który obsługuje [XMPP](https://developers.google.com/cloud-messaging/ccs), jak pokazano na poniższym diagramie może wysłać wiadomości do serwera aplikacji:
 

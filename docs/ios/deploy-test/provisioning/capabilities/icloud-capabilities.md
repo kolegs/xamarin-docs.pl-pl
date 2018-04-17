@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e426423854e7c569576c374ea1284c4de099a2d1
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="icloud-capabilities"></a>Możliwości usługi iCloud
 
@@ -21,14 +21,8 @@ iCloud zapewnia użytkownicy systemu iOS wygodne i prosty sposób, aby przechowy
 
 Dodawanie w ramach usługi iCloud możliwość do aplikacji jest nieco trudniejsze niż innych aplikacji usługi z powodu _kontenery_. Kontenery są używane w ramach usługi iCloud do przechowywania informacji o aplikacji, a następnie poczekanie wszystkie informacje zawarte w rozdzielony — podobnie jak sandboxing na urządzeniu z systemem iOS użytkownika przy użyciu konta pojedynczego iCloud. Aby uzyskać więcej informacji na kontenery dotyczą [wprowadzenie do CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) przewodnik.
 
-<!--# Xcode
-
-The steps in section [Adding App Services ](~/ios/deploy-test/provisioning/capabilities/index.md) above can be used to toggle the required iCloud capability. Depending on which means of storage is being used in your app, you may need to do additional setup. The image below shows the iCloud capabilities pane:
-
- ![iCloud Capability section](icloud-capabilities-images/image21.png)
-
-First select the required service. If iCloud Documents or CloudKit have been selected, you must select a container. Selecting the default container will create a new container that is unique to the app. Alternatively, if you have created a container either via Xcode or the developer portal, select it here.
--->
+> [!IMPORTANT]
+> Apple [udostępnia narzędzia](https://developer.apple.com/support/allowing-users-to-manage-data/) aby pomóc deweloperom poprawnie obsługiwać interfejsów Unii Europejskiej ogólne dane ochrony rozporządzenia (GDPR).
 
 <a name="icloud-developer-center" />
 
