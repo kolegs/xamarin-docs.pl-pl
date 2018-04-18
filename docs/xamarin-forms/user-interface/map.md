@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f78b16a99d8bc828e26bb6aecdb67d4ba07e18d4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="map"></a>mapy
 
@@ -95,8 +95,9 @@ Postępuj zgodnie z instrukcjami w dokumencie Xamarin [uzyskiwania klucza interf
 Po wykonaniu tych instrukcji, Wklej klucz interfejsu API w **Properties/AndroidManifest.xml** pliku (Wyświetl źródło i Znajdź lub zaktualizowania następujący element):
 
 ```xml
-<meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AbCdEfGhIjKlMnOpQrStUvWValueGoesHere" />
+<meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="YOUR_API_KEY"/>
 ```
 
 Bez prawidłowego klucza interfejsu API w formancie mapy zostaną wyświetlone jako szare pole w systemie Android.

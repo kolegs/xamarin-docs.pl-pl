@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Przy użyciu Miasto zespołu za pomocą platformy Xamarin
 
@@ -39,7 +39,7 @@ Istnieje kilka czynności niezbędnych do konfigurowania TeamCity:
 
 - **Tworzenie projektu TeamCity A** — po wykonaniu poprzednie trzy kroki utworzyć projekt TeamCity, który będzie zawierać wszystkie dane meta pobrać kodu źródłowego, Kompiluj projekty i przesłać testów do chmury testowej Xamarin.
 
-# <a name="requirements"></a>Wymagania
+## <a name="requirements"></a>Wymagania
 
 Obsługa przy użyciu z [chmury testowej Xamarin](https://developer.xamarin.com/guides/testcloud) jest wymagana.
 
@@ -88,7 +88,6 @@ Skrypt kompilacji można tak proste, jak plik programu Powershell (w systemie Wi
 - [**SFAŁSZOWAĆ** ](http://fsharp.github.io/FAKE/) — jest to DSL, na podstawie języka F # co umożliwia wykorzystanie istniejącej bibliotek .NET, w razie potrzeby.
 
 Jaki język skryptów zależy preferencji i wymagania. [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) przykład zawiera przykład użycia nachylenia jako [kompilacji skryptu](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
-
 
 > [!NOTE]
 > Istnieje możliwość użycia systemu kompilacji oparte na języku XML, na przykład programu MSBuild lub NAnt, ale brakuje wyrazistość i łatwości konserwacji DSL, służącego do tworzenia oprogramowania.
@@ -166,35 +165,35 @@ Po zainstalowaniu TeamCity i programu Visual Studio for Mac można skompilować 
 
 1. Rozpoczęto, logując się do TeamCity za pośrednictwem przeglądarki sieci web. Przejdź do katalogu głównego projektu:
 
-    ![](teamcity-images/image2.png "Przejdź do katalogu głównego projektu") poniżej główny projekt, Utwórz nowy projekt podrzędne:
+    ![Przejdź do katalogu głównego projektu](teamcity-images/image2.png "przejdź do katalogu głównego projektu") poniżej główny projekt, Utwórz nowy projekt podrzędne:
 
-    ![](teamcity-images/image3.png "Przejdź do katalogu głównego projektu Underneath głównego projektu, Utwórz nowy projekt podrzędne")
+    ![Przejdź do katalogu głównego projektu Underneath głównego projektu, Utwórz nowy projekt podrzędne](teamcity-images/image3.png "przejdź do katalogu głównego projektu Underneath głównego projektu Utwórz nowy projekt podrzędne")
 2. Po utworzeniu projektu podrzędnego, Dodaj nową konfigurację kompilacji:
 
-    ![](teamcity-images/image5.png "Po utworzeniu projektu podrzędnego, dodać nową konfigurację kompilacji")
+    ![Po utworzeniu projektu podrzędnego, dodać nową konfigurację kompilacji](teamcity-images/image5.png "po utworzeniu projektu podrzędnego, dodać nową konfigurację kompilacji")
 3. Dołączanie projektu VC dla konfiguracji kompilacji. Można to zrobić za pośrednictwem ekranu ustawienia kontroli wersji:
 
-    ![](teamcity-images/image6.png "Odbywa się za pośrednictwem ekranu ustawienia kontroli wersji")
+    ![Odbywa się za pośrednictwem ekranu ustawienia kontroli wersji](teamcity-images/image6.png "odbywa się za pośrednictwem ekranu ustawienia kontroli wersji")
 
     Jeśli nie nie utworzonego projektu VC, masz opcję, aby utworzyć nowy element główny VC strony pokazano poniżej:
 
-    ![](teamcity-images/image7.png "Jeśli nie nie utworzonego projektu VC, masz opcję, aby utworzyć nowy element główny VC strony")
+    ![Jeśli nie nie utworzonego projektu VC, masz opcję, aby utworzyć nowy element główny VC strony](teamcity-images/image7.png "Jeśli nie nie utworzonego projektu VC, masz opcję, aby utworzyć nowy element główny VC strony")
 
     Po dołączeniu głównego VC wyewidencjonowania spowoduje TeamCity projektu i spróbuj automatycznie wykryć kroki procesu kompilacji. Jeśli znasz TeamCity, następnie należy wybrać jeden z kroków kompilacji wykryte. Jest bezpiecznie zignorować kroków kompilacji wykryto teraz.
 
 4. Skonfiguruj wyzwalacz kompilacji. Spowoduje to kolejki kompilację, gdy zostaną spełnione określone warunki, na przykład gdy użytkownik zatwierdza kod do repozytorium. Poniższy zrzut ekranu przedstawia sposób dodawania wyzwalacz kompilacji:
 
-    ![](teamcity-images/image8.png "Ten zrzut ekranu pokazuje, jak dodać wyzwalacza kompilacji") przykład konfigurowania wyzwalacz kompilacji są widoczne na poniższym zrzucie ekranu:
+    ![Ten zrzut ekranu pokazuje, jak dodać wyzwalacza kompilacji](teamcity-images/image8.png "tego zrzutu ekranu pokazuje, jak dodać wyzwalacza kompilacji") przykład konfigurowania wyzwalacz kompilacji są widoczne na poniższym zrzucie ekranu:
 
-    ![](teamcity-images/image9.png "Przykład konfigurowania wyzwalacz kompilacji są widoczne w tym zrzut ekranu")
+    ![Przykład konfigurowania wyzwalacz kompilacji są widoczne w tym zrzucie ekranu pokazano](teamcity-images/image9.png "przykład konfigurowania wyzwalacz kompilacji są widoczne w tym zrzut ekranu")
 
 5. Poprzedniej sekcji, ustawianie skryptu kompilacji sugerowane przechowywania niektórych wartości jako zmienne środowiskowe. Te zmienne można dodawać do konfiguracji kompilacji za pomocą parametrów ekranu. Dodaj zmienne dla testu klucz interfejsu API w chmurze, identyfikator urządzenia z systemem iOS i Android identyfikator urządzenia, jak pokazano na poniższym zrzucie ekranu:
 
-    ![](teamcity-images/image11.png "Dodawanie zmienne dla testu klucz interfejsu API w chmurze, identyfikator urządzenia z systemem iOS i Android identyfikator urządzenia")
+    ![Dodawanie zmienne dla testu klucz interfejsu API w chmurze, identyfikator urządzenia z systemem iOS i Android identyfikator urządzenia](teamcity-images/image11.png "dodać zmienne dla testu klucz interfejsu API w chmurze, identyfikator urządzenia z systemem iOS i Android identyfikator urządzenia")
 
 6. Ostatnim krokiem jest dodać kroku kompilacji, która wywoła skryptu kompilacji do skompilowania aplikacji i umieścić w kolejce aplikacji w chmurze testu. Poniższy zrzut ekranu jest przykładem krok kompilacji, który używa Rakefile do utworzenia aplikacji:
 
-    ![](teamcity-images/image12.png "Ten zrzut ekranu jest przykładem krok kompilacji, który używa Rakefile do tworzenia aplikacji")
+    ![Ten zrzut ekranu jest przykładem kroku kompilacji, używaną do tworzenia aplikacji Rakefile](teamcity-images/image12.png "tego zrzutu ekranu znajduje się przykład krok kompilacji, który używa Rakefile do tworzenia aplikacji")
 
 7. W tym momencie konfiguracja kompilacji zostanie zakończona. Należy dobrze, aby wyzwolić kompilację, aby upewnić się, że projekt jest skonfigurowany prawidłowo. Dobrym sposobem, w tym celu jest można przekazać małe, nieznaczne zmiany do repozytorium. TeamCity powinna wykryć zatwierdzenia i uruchomić kompilację.
 

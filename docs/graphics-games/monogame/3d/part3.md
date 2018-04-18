@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0273b4f13c91fd766530ff7c0976096de3239dc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3538efef107778397bd8c799bdd63eb6c2f3de3
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>Współrzędne MonoGame 3D
 
@@ -23,26 +23,26 @@ Koncepcji przedstawionych pochodzić z algebraiczną skali liniowej, ale przenie
 
 Firma Microsoft będzie obejmujące następujące tematy:
 
- - Tworzenie projektu
- - Tworzenie jednostki Robot
- - Przenoszenie jednostki Robot
- - Mnożenie macierzy
- - Tworzenie jednostki aparatu
- - Przenoszenie aparatu przy użyciu danych wejściowych
+- Tworzenie projektu
+- Tworzenie jednostki Robot
+- Przenoszenie jednostki Robot
+- Mnożenie macierzy
+- Tworzenie jednostki aparatu
+- Przenoszenie aparatu przy użyciu danych wejściowych
 
 Po skończeniu mamy będzie projekt z robotem przenoszenie koło i aparatu, które mogą być kontrolowane na podstawie wprowadzania dotykowego:
 
 ![](part3-images/image1.gif "Po skończeniu aplikacji obejmuje projekt robotem przenoszenie koło i aparatu, które mogą być kontrolowane na podstawie wprowadzania dotykowego")
 
 
-# <a name="creating-a-project"></a>Tworzenie projektu
+## <a name="creating-a-project"></a>Tworzenie projektu
 
 Ten przewodnik koncentruje się na przenoszenie obiektów w przestrzeni 3D. Rozpocznie się z projektem dla modeli renderowania i tablice wierzchołków [której można znaleźć tutaj](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/). Po pobraniu, Rozpakuj i otworzyć projekt, aby upewnić się na uruchomieniu i firma Microsoft powinien zostać wyświetlony następujący:
 
 ![](part3-images/image2.png "Po pobraniu, Rozpakowywanie i otwieranie projektu, aby upewnić się na uruchomieniu i można wyświetlić tego widoku")
 
 
-# <a name="creating-a-robot-entity"></a>Tworzenie jednostki Robot
+## <a name="creating-a-robot-entity"></a>Tworzenie jednostki Robot
 
 Zanim zaczniemy przenoszenie naszych robota wokół, utworzymy `Robot` klasa może zawierać logiki rysowania i przepływu. Deweloperzy gier odwoływać się do tego hermetyzacji logikę i dane jako *jednostki*.
 
@@ -51,7 +51,6 @@ Dodaj nowy plik pustą klasę **MonoGame3D** przenośnej biblioteki klas (nie Mo
 ![](part3-images/image3.png "Nadaj mu nazwę Robot, a następnie kliknij przycisk Nowy")
 
 Modyfikowanie `Robot` klas w następujący sposób:
-
 
 ```csharp
 using System;
@@ -88,7 +87,7 @@ namespace MonoGame3D
 
                     effect.View = Matrix.CreateLookAt (
                         cameraPosition, cameraLookAtVector, cameraUpVector);
-                        
+
                     float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
                     float nearClipPlane = 1;
                     float farClipPlane = 200;
@@ -109,7 +108,6 @@ namespace MonoGame3D
 ```
 
 `Robot` Kod jest zasadniczo taki sam kod w `Game1` do rysowania `Model`. Przegląd na `Model` ładowania i rysowanie, zobacz [ten przewodnik na temat pracy z modelami](~/graphics-games/monogame/3d/part1.md). Można teraz usunąć wszystkie `Model` ładowanie i renderowania kodu z `Game1`i zastąp go z `Robot` wystąpienie:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -135,7 +133,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -226,7 +224,7 @@ namespace MonoGame3D
                     2);
             }
         }
-    }                                          
+    }
 }
 ```
 
@@ -234,15 +232,13 @@ Jeśli jest przeprowadzana kod teraz będzie mamy sceny z tylko jedną robot, kt
 
 ![](part3-images/image4.png "Jeśli kod jest teraz uruchomione, aplikacja wyświetli sceny tylko jeden robot, który jest rysowany głównie w obszarze piętro")
 
-
-# <a name="moving-the-robot"></a>Przenoszenie robota
+## <a name="moving-the-robot"></a>Przenoszenie robota
 
 Teraz, gdy mamy `Robot` klasy, można dodać do robota logiki przenoszenia. W takim przypadku po prostu wybierzemy robota przenieść koło uzależnionych od czasu gry. Jest to nieco niepraktyczne implementacji dla rzeczywistym gry, ponieważ znak zwykle mogą odpowiadać na dane wejściowe lub sztucznego analizy, ale zapewnia środowisko nam poznać 3D pozycjonowanie i obrotu.
 
 Tylko informacje będą potrzebne z poza `Robot` klasy jest bieżący czas gier. Dodamy `Update` metodę, która spowoduje przejście `GameTime` parametru. To `GameTime` parametr będzie służyć do zwiększane kątowi zmiennej, która zostanie użyta do określenia pozycji końcowej dla robota.
 
 Najpierw dodamy pola kąt `Robot` klasy w obszarze `model` pola:
-
 
 ```csharp
 public class Robot
@@ -251,11 +247,10 @@ public class Robot
 
     // new code:
     float angle;
-    ... 
+    ...
 ```
 
  Teraz możemy zwiększenie tej wartości w `Update` funkcji:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -267,17 +262,15 @@ public void Update(GameTime gameTime)
 
 Należy upewnić się, że `Update` metoda jest wywoływana z `Game1.Update`:
 
-
 ```csharp
 protected override void Update(GameTime gameTime)
 {
     robot.Update (gameTime);
     base.Update(gameTime);
-} 
+}
 ```
 
 Oczywiście w tym momencie nie działają w polu Kąt — należy napisać kod, aby go użyć. Firma Microsoft będzie zmodyfikować `Draw` — metoda tak, aby firma Microsoft może obliczyć świecie `Matrix` w metodzie dedykowany: 
-
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -296,7 +289,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
             effect.View = Matrix.CreateLookAt (
                 cameraPosition, cameraLookAtVector, cameraUpVector);
-                
+
             float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
             float nearClipPlane = 1;
             float farClipPlane = 200;
@@ -307,18 +300,17 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 Następnie będzie wdrożymy `GetWorldMatrix` metoda `Robot` klasy:
-
 
 ```csharp
 Matrix GetWorldMatrix()
 {
     const float circleRadius = 8;
     const float heightOffGround = 3;
-    
+
     // this matrix moves the model "out" from the origin
     Matrix translationMatrix = Matrix.CreateTranslation (
         circleRadius, 0, heightOffGround);
@@ -330,15 +322,14 @@ Matrix GetWorldMatrix()
     Matrix combined = translationMatrix * rotationMatrix;
 
     return combined;
-} 
+}
 ```
 
 Wynik uruchomienia tego kodu powoduje robota przenoszenie w koło:
 
 ![](part3-images/image5.gif "Uruchamianie wyniki tego kodu w robota przenoszenie w okręgu")
 
-
-# <a name="matrix-multiplication"></a>Mnożenie macierzy
+## <a name="matrix-multiplication"></a>Mnożenie macierzy
 
 Powyższy kod obraca robota, tworząc `Matrix` w `GetWorldMatrix` metody. `Matrix` Struktury zawiera 16 wartości typu float, które mogą być używane do tłumaczenia (zestaw pozycji), obracanie i skalowanie (Ustaw rozmiar). Gdy firma Microsoft przypisać `effect.World` właściwości, firma Microsoft informuje bazowy renderowania pozycji, rozmiaru i orientacji niezależnie od systemu możemy się zdarzyć, aby pobierać ( `Model` lub geometrii wierzchołków). 
 
@@ -348,9 +339,9 @@ Na szczęście `Matrix` struktury obejmuje kilka metod, które ułatwiają tworz
 
 Drugi macierzy utworzymy jest macierzy obrotu przy użyciu `CreateRotationZ` macierzy. Jest to jeden z trzech metod, które mogą być używane do tworzenia obrotu:
 
- - `CreateRotationX`
- - `CreateRoationY`
- - `CreateRotationZ`
+- `CreateRotationX`
+- `CreateRoationY`
+- `CreateRotationZ`
 
 Każda metoda tworzy macierzy obrotu przez obrócenie o danym osi. W tym przypadku firma Microsoft obrót wokół osi Z, które punktów "". Następujące może pomóc wizualizować sposób oparte na osi obrotu działania:
 
@@ -359,7 +350,6 @@ Każda metoda tworzy macierzy obrotu przez obrócenie o danym osi. W tym przypad
 Korzystamy również `CreateRotationZ` metody z polem kąta, który zwiększa się wraz z upływem czasu ze względu na naszych `Update` wywołania metody. W wyniku `CreateRotationZ` metoda powoduje, że nasze robot obracać wokół źródła w miarę upływu czasu.
 
 Końcowe wiersz kodu łączy macierzy dwa na jeden:
-
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
@@ -370,7 +360,6 @@ Jest to określane jako mnożenie macierzy, które działa nieco inne niż w reg
 ![](part3-images/image8.png "Wizualizacja pf sposób pozycji i obrotu wpływa na wiersz powyżej")
 
 Aby lepiej zrozumieć, jak kolejnością mnożenie macierzy może wpłynąć na wyniki, należy wziąć pod uwagę poniższe polecenie, gdzie jest odwrócony mnożenie macierzy:
-
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
@@ -384,13 +373,11 @@ Możemy uruchomić kod z odwróconą mnożenia, firma Microsoft zauważyć, że 
 
 ![](part3-images/image10.gif "Model obraca się w miejscu")
 
-
-# <a name="creating-the-camera-entity"></a>Tworzenie jednostki aparatu
+## <a name="creating-the-camera-entity"></a>Tworzenie jednostki aparatu
 
 `Camera` Jednostki będzie zawierać wszystkie niezbędne do wykonania na podstawie danych wejściowych przepływu i zapewnienia właściwości przypisywania właściwości na logiki `BasicEffect` klasy.
 
 Firma Microsoft będzie najpierw implementuje statycznej aparatu (nie na podstawie danych wejściowych przepływu) i zintegrować ją z naszych istniejący projekt. Dodaj nową klasę do **MonoGame3D** przenośnej biblioteki klas (takie same projektu z `Robot.cs`) i nadaj mu nazwę **aparatu**. Zastąp zawartość pliku następującym kodem:
-
 
 ```csharp
 using System;
@@ -427,7 +414,7 @@ namespace MonoGame3D
                 float nearClipPlane = 1;
                 float farClipPlane = 200;
                 float aspectRatio = graphicsDevice.Viewport.Width / (float)graphicsDevice.Viewport.Height;
-                
+
                 return Matrix.CreatePerspectiveFieldOfView(
                     fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
             }
@@ -448,8 +435,7 @@ namespace MonoGame3D
 
 Powyższy kod jest bardzo podobny do kodu z `Game1` i `Robot` który przypisać macierze `BasicEffect`. 
 
-Teraz zostanie zintegrowana nowe `Camera` klasy do naszej istniejące projekty. Najpierw, firma Microsoft będzie zmodyfikować `Robot` klasy podjęcie `Camera` wystąpienia w jego` Draw `metodę, która wyeliminuje wiele zduplikowanych kodu. Zastąp `Robot.Draw` metody z następujących czynności:
-
+Teraz zostanie zintegrowana nowe `Camera` klasy do naszej istniejące projekty. Najpierw, firma Microsoft będzie zmodyfikować `Robot` klasy podjęcie `Camera` wystąpienia w jego `Draw` metodę, która wyeliminuje wiele zduplikowanych kodu. Zastąp `Robot.Draw` metody z następujących czynności:
 
 ```csharp
 public void Draw(Camera camera)
@@ -468,11 +454,10 @@ public void Draw(Camera camera)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 Następnie należy zmodyfikować `Game1.cs` pliku:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -499,7 +484,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -585,35 +570,32 @@ namespace MonoGame3D
             }
         }
     }
-} 
+}
 ```
 
 Zmiany `Game1` z poprzedniej wersji (które są oznaczone symbolem `// New camera code` ) są:
 
- - `Camera` pole w `Game1`
- - `Camera` Podczas tworzenia wystąpienia w `Game1.Initialize`
- - `Camera.Update` Wywołanie w `Game1.Update`
- - `Robot.Draw` obecnie trwa `Camera` parametru
- - `Game1.Draw` używa teraz `Camera.ViewMatrix` i `Camera.ProjectionMatrix`
+- `Camera` pole w `Game1`
+- `Camera` Podczas tworzenia wystąpienia w `Game1.Initialize`
+- `Camera.Update` Wywołanie w `Game1.Update`
+- `Robot.Draw` obecnie trwa `Camera` parametru
+- `Game1.Draw` używa teraz `Camera.ViewMatrix` i `Camera.ProjectionMatrix`
 
-
-# <a name="moving-the-camera-with-input"></a>Przenoszenie aparatu przy użyciu danych wejściowych
+## <a name="moving-the-camera-with-input"></a>Przenoszenie aparatu przy użyciu danych wejściowych
 
 Do tej pory dodaliśmy `Camera` jednostki, ale nie dokonano żadnych zmian, które służy do zmiany zachowania w czasie wykonywania. Zachowanie, dzięki czemu użytkownik zostanie dodany do:
 
- - Touch lewej części ekranu, aby włączyć aparatu w lewo
- - Touch z prawej strony ekranu, aby włączyć aparatu w prawo
- - Touch Centrum ekranu, aby przejść do przodu aparatu
+- Touch lewej części ekranu, aby włączyć aparatu w lewo
+- Touch z prawej strony ekranu, aby włączyć aparatu w prawo
+- Touch Centrum ekranu, aby przejść do przodu aparatu
 
-
-## <a name="making-lookat-relative"></a>Czeki przekształcenie względne
+### <a name="making-lookat-relative"></a>Czeki przekształcenie względne
 
 Najpierw będziemy informować `Camera` klasy, aby uwzględnić `angle` pola, które będą używane do zestawu kierunek `Camera` jest skierowany. Obecnie naszych `Camera` Określa kierunek jest on skierowany za pośrednictwem lokalnej `lookAtVector`, który jest przypisany do `Vector3.Zero`. Innymi słowy naszych `Camera` zawsze szuka w źródle. Jeśli aparat jest przenoszony, kąt, który jest skierowany aparatu również zostanie zmieniona:
 
 ![](part3-images/image11.gif "Jeśli aparat jest przenoszony, następnie kąta, który aparat jest ukierunkowane spowoduje również zmianę")
 
-Chcemy `Camera` do zwrócone niezależnie od jego położenie — tym samym kierunku co najmniej do czasu firma Microsoft implementują logikę obracanie` Camera `przy użyciu danych wejściowych. Pierwsza zmiana należy dostosować `lookAtVector` zmienną zależeć od naszych bieżącej lokalizacji, a nie na położenie bezwzględne wyglądającej:
-
+Chcemy `Camera` do zwrócone niezależnie od jego położenie — tym samym kierunku co najmniej do czasu firma Microsoft implementują logikę obracanie `Camera` przy użyciu danych wejściowych. Pierwsza zmiana należy dostosować `lookAtVector` zmienną zależeć od naszych bieżącej lokalizacji, a nie na położenie bezwzględne wyglądającej:
 
 ```csharp
 public class Camera
@@ -635,7 +617,7 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
@@ -643,15 +625,13 @@ Powoduje to `Camera` wyświetlanie bezpośrednio na świecie. Zwróć uwagę, ż
 
 ![](part3-images/image12.png "Uruchamianie gry zawiera tego widoku")
 
-
-## <a name="creating-an-angle-variable"></a>Tworzenie kąta zmiennej
+### <a name="creating-an-angle-variable"></a>Tworzenie kąta zmiennej
 
 `lookAtVector` Zmiennej określa kąt naszych aparatu jest wyświetlana. Obecnie jest stałą wyświetlić dół ujemna osi Y i nieco przechylono w dół (z `-.5f` wartość Z). Utworzymy `angle` zmiennej, która będzie używana w celu dostosowania `lookAtVector` właściwości. 
 
 We wcześniejszych sekcjach tego przewodnika firma Microsoft wykazały, że macierzy może służyć do obracania, w jaki sposób obiekty są rysowane. Możemy również użyć obracania kierunków, takich jak macierze `lookAtVector` przy użyciu `Vector3.Transform` metody. 
 
 Dodaj `angle` pól i zmodyfikuj `ViewMatrix` właściwości w następujący sposób:
-
 
 ```csharp
 public class Camera
@@ -678,12 +658,11 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
-
-## <a name="reading-input"></a>Odczytywanie danych wejściowych
+### <a name="reading-input"></a>Odczytywanie danych wejściowych
 
 Nasze `Camera` jednostki można teraz pełni kontrolowane przez jego położenie i zmienne kąt — potrzebujemy je zmienić zgodnie z danych wejściowych.
 
@@ -693,13 +672,11 @@ Jeśli użytkownik zachodzi na po lewej stronie trzeciej, firma Microsoft będzi
 
 Najpierw dodaj using instrukcji, aby zakwalifikować `TouchPanel` i `TouchCollection` klas w `Camera.cs`:
 
-
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
 Następnie należy zmodyfikować `Update` metody odczytu panelu touch i odpowiednio `angle` i `position` zmienne odpowiednio:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -734,7 +711,7 @@ public void Update(GameTime gameTime)
             angle -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
-} 
+}
 ```
 
 Teraz `Camera` będzie odpowiadać wprowadzania dotykowego:
@@ -747,8 +724,7 @@ Jeśli użytkownik jest dotknięcie ekranu, kod sprawdza sprawdzać, czy pierwsz
 
 Jeśli użytkownik dotknięcie innej Centrum ekranu, następnie aparatu zostanie przesunięty do przodu. W tym celu najpierw uzyskiwania wektorów do przodu, który jest wstępnie zdefiniowany jako skierowana ujemna osi Y, a następnie obracać o macierzy utworzone za pomocą `Matrix.CreateRotationZ` i `angle` wartość. Na koniec `forwardVector` jest stosowany do `position` przy użyciu `unitsPerSecond` współczynnik.
 
-
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku opisano sposób przenoszenia i Obróć `Models` w 3D miejsce przy użyciu `Matrices` i `BasicEffect.World` właściwości. Ten formularz przepływ stanowi podstawę do przenoszenia obiektów w grach 3W. Ten przewodnik obejmuje również implementowania `Camera` jednostki do wyświetlania na świecie z dowolnej pozycji i kąta.
 

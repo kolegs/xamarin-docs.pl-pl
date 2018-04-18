@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 243498e1d5a24a0a6b8d1e911b374df61dfa6971
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6c46d7648d1f1bb8863abe092bae5c44850d3cf1
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="an-introduction-to-urhosharp"></a>Wprowadzenie do UrhoSharp
 
 _Zapewnia to krótkie wprowadzenie do pojęć dotyczących UrhoSharp_
 
-![](introduction-images/urhosharp-icon.png "UrhoSharp jest zaawansowany aparat 3D gry dla deweloperów platformy Xamarin i .NET")
+![UrhoSharp logo](introduction-images/urhosharp-icon.png)
 
 UrhoSharp to zaawansowany aparat 3D gry dla deweloperów platformy Xamarin i .NET.  Podobnie w duchu SceneKit i SpriteKit firmy Apple, a obejmują fizycznych, nawigacji, sieci i wiele więcej przy zachowaniu cross platform.
 
@@ -25,7 +25,7 @@ Jest powiązanie .NET [Urho3D](http://urho3d.github.io/) aparat i umożliwia dew
 
 UrhoSharp jest aparatem gier wiele funkcji poza pola:
 
- - Zaawansowane renderowania grafiki 3D
+- Zaawansowane renderowania grafiki 3D
 - [Fizyka symulacji](https://developer.xamarin.com/api/namespace/Urho.Physics/) (przy użyciu biblioteki punktorów)
 - [Obsługa sceny](https://developer.xamarin.com/api/type/Urho.Scene/)
 - Obsługa await Async
@@ -38,15 +38,15 @@ UrhoSharp jest aparatem gier wiele funkcji poza pola:
 - [Generowanie wypukłych powłoki wykrywania kolizji](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/) (przy użyciu StanHull)
 - [Odtwarzanie](https://developer.xamarin.com/api/namespace/Urho.Audio/) (z **libvorbis**)
 
-# <a name="getting-started"></a>Wprowadzenie
+## <a name="getting-started"></a>Wprowadzenie
 
 UrhoSharp wygodnie jest rozpowszechniany jako [pakietu NuGet](https://www.nuget.org/) i jego mogą być dodawane do projektów C# lub języka F # kierowanych systemu Windows, Mac, Android lub iOS.  NuGet zawiera zarówno biblioteki wymagane do uruchamiania programu, jak również zasoby podstawowe (CoreData) używanego przez aparat.
 
-## <a name="urho-as-a-portable-class-library"></a>Urho jako biblioteki klas przenośnych
+### <a name="urho-as-a-portable-class-library"></a>Urho jako biblioteki klas przenośnych
 
 Pakiet Urho mogą być używane z projektu specyficzne dla platformy lub z projektu biblioteki klas przenośnych, co umożliwia ponowne użycie kodu na wszystkich platformach.  Oznacza, że wszystko, co należy wykonać na każdej platformie zapisu z platformy konkretny punkt wejścia, a następnie transfer kontroli do udostępnionego kodu gier.
 
-## <a name="samples"></a>Przykłady
+### <a name="samples"></a>Przykłady
 
 Smak funkcji systemu Urho można uzyskać przez otwarcie w programie Visual Studio for Mac lub Visual Studio przykładowe rozwiązanie z:
 
@@ -68,7 +68,7 @@ Poniższy przykład pokazuje, co aparat jest w stanie zrobić:
 
 Podczas gdy inne przykłady Pokaż poszczególnych właściwości każdej próbki.
 
-# <a name="basic-structure"></a>Podstawowa struktura
+## <a name="basic-structure"></a>Podstawowa struktura
 
 Podklasy powinny gry [ `Application` ](https://developer.xamarin.com/api/type/Urho.Application/) klasa, jest to, gdzie należy skonfigurować gry (na [ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/) — metoda) i uruchomienia gry (w [ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start) metody).  Następnie można utworzyć interfejsu użytkownika głównego.  Zamierzamy przeprowadzenie małej przykładowej, pokazujący interfejsów API, aby Instalator scenę 3D, niektóre elementy interfejsu użytkownika i dołączanie do niego proste zachowanie.
 
@@ -98,7 +98,7 @@ class MySample : Application {
         UI.Root.AddChild(helloText);
 
         // Create a top-level scene, must add the Octree
-    // to visualize any 3D content.
+        // to visualize any 3D content.
         var scene = new Scene();
         scene.CreateComponent<Octree>();
         // Box
@@ -133,7 +133,9 @@ Daj nam opisano, co dzieje się w tym miejscu.
 
 Do uruchamiania aplikacji, należy wywołać funkcję inicjowania aparat następuje Tworzenie nowego wystąpienia klasy aplikacji, takich jak to:
 
-    new MySample().Run();
+```csharp
+new MySample().Run();
+```
 
 Środowisko uruchomieniowe wywoła `Setup` i `Start` metody dla Ciebie.  Jeśli można zastąpić `Setup` można skonfigurować parametrów aparat (nie pokazuj tego przykładu).
 
@@ -141,50 +143,56 @@ Konieczne jest przesłonięcie `Start` ponieważ spowoduje to uruchomienie gry. 
 
 Następujący fragment kodu używa framework interfejsu użytkownika do tworzenia tekstowy element i dodaj go do aplikacji:
 
-        // UI text
-        var helloText = new Text()
-        {
-            Value = "Hello World from UrhoSharp",
-            HorizontalAlignment = HorizontalAlignment.Center,
-            VerticalAlignment = VerticalAlignment.Center
-        };
-        helloText.SetColor(new Color(0f, 1f, 1f));
-        helloText.SetFont(
-            font: ResourceCache.GetFont("Fonts/Font.ttf"),
-            size: 30);
-        UI.Root.AddChild(helloText);
+```csharp
+// UI text
+var helloText = new Text()
+{
+    Value = "Hello World from UrhoSharp",
+    HorizontalAlignment = HorizontalAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center
+};
+helloText.SetColor(new Color(0f, 1f, 1f));
+helloText.SetFont(
+    font: ResourceCache.GetFont("Fonts/Font.ttf"),
+    size: 30);
+UI.Root.AddChild(helloText);
+```
 
 W ramach interfejsu użytkownika ma na celu dostarczenie interfejsu użytkownika w grze bardzo proste i działa przez dodanie nowych węzłów do [ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/) węzła.
 
-Druga część nasze przykładowe konfiguracje głównego sceny.  Ten proces obejmuje kilka kroków tworzenia scenę 3D, tworzenie 3D pole na ekranie, dodawanie światło, aparatu i okienko ekranu.  Zostały one opisane bardziej szczegółowo w sekcji "[sceny, węzłów, składników i aparaty fotograficzne](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)"
+Druga część nasze przykładowe konfiguracje głównego sceny.  Ten proces obejmuje kilka kroków tworzenia scenę 3D, tworzenie 3D pole na ekranie, dodawanie światło, aparatu i okienko ekranu.  Zostały one opisane bardziej szczegółowo w sekcji [sceny, węzłów, składników i aparaty fotograficzne](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras).
 
 Trzeci część naszej próbki wyzwala kilka akcji.  Akcje są przepisami opisano szczególnych skutków, które utworzonej one mogą być wykonywane przez węzeł na żądanie przez wywołanie metody [ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync) metoda `Node`.
 
 Pierwszą akcją Skaluje pole z efektem podskakujące i drugi obraca pole nieskończona:
 
-    await boxNode.RunActionsAsync(
-        new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```csharp
+await boxNode.RunActionsAsync(
+    new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```
 
 Powyższe pokazuje, jak jest pierwszym akcję, która utworzymy [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/) akcji, to jedynie przepisu, która wskazuje, że skalowania na sekundę na jedną wartość właściwości scale węzła.  Ta akcja z kolei jest otaczający akcję dynamiki [ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/) akcji.  Akcje dynamiki zakłóca liniowej wykonywanie akcji i efekt, w tym przypadku zapewnia efekt odbijania poza.
 Dlatego naszych przepisu może być zapisany jako:
 
-    var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```csharp
+var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```
 
 Po utworzeniu przepisu, możemy wykonać przepisu:
 
-    await boxNode.RunActionsAsync (recipe)
+```csharp
+await boxNode.RunActionsAsync (recipe)
+```
 
 Await wskazuje, że chcesz wznowić pracę po tym wierszu, po ukończeniu akcji.  Po ukończeniu akcji wyzwalana drugi animacji.
 
 [Przy użyciu UrhoSharp](~/graphics-games/urhosharp/using.md) dokumentu Eksploruje bardziej szczegółowo pojęcia dotyczące Urho i struktury kodu do tworzenia gier.
 
-# <a name="copyrights"></a>Prawa autorskie
+## <a name="copyrights"></a>Prawa autorskie
 
 W tej dokumentacji zawiera oryginalną zawartość z Xamarin Inc, ale często rysuje dokumentacji typu open source dla projektu Urho3D i zawiera zrzuty ekranu z projektu Cocos2D.
 
-
-
-## <a name="related-links"></a>Linki pokrewne
+### <a name="related-links"></a>Linki pokrewne
 
 - [Planety ziemi skoroszytu](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
 - [Eksploracja współrzędne skoroszytu](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

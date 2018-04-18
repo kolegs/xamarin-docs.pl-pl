@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 77f9873259a2a44426007c50efbd7ff83c8a0ccb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Podgląd XAML dla platformy Xamarin.Forms
 
@@ -33,7 +33,7 @@ Użyj **Widok > inne okna > Podgląd platformy Xamarin.Forms** menu programu Vis
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-**Podgląd** przycisk mogą być wyświetlane w edytorze prawym przyciskiem myszy plik XAML, a następnie wybierając **Otwórz za pomocą > Podgląd XAML**. Okienko podglądu może następnie być widoczny, czy ukryty przez naciśnięcie przycisku **Podgląd** przycisk w prawym górnym rogu wszystkie okna dokumentu XAML:
+**Podgląd** przycisk mogą być wyświetlane w edytorze prawym przyciskiem myszy plik XAML, a następnie wybierając **Otwórz za pomocą > Podgląd formularzy programu**. Okienko podglądu może następnie być widoczny, czy ukryty przez naciśnięcie przycisku **Podgląd** przycisk w prawym górnym rogu wszystkie okna dokumentu XAML:
 
 [![Podgląd formantu ListView w programie Visual Studio dla komputerów Mac](xaml-previewer-images/xamlp-list-sml.png "podgląd formularzy w programie Visual Studio for Mac")](xaml-previewer-images/xamlp-list.png#lightbox "podgląd formularzy w programie Visual Studio dla komputerów Mac")
 

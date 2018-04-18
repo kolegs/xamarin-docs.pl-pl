@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-the-model-class"></a>Używanie klasy modelu
 
@@ -21,27 +21,26 @@ Interfejs API MonoGame zawiera `Model` klasy, która może służyć do przechow
 
 W tym przewodniku zastosowano [modelu 3D robotem](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true) i obejmuje następujące czynności:
 
- - Uruchamianie nowego projektu gier
- - Tworzenie XNBs dla modelu i jego tekstury
- - W tym XNBs w projekcie gier
- - Rysowanie modelu 3D
- - Rysowanie wielu modeli
+- Uruchamianie nowego projektu gier
+- Tworzenie XNBs dla modelu i jego tekstury
+- W tym XNBs w projekcie gier
+- Rysowanie modelu 3D
+- Rysowanie wielu modeli
 
 Po zakończeniu naszych projektu będzie wyglądać następująco:
 
-![](part1-images/image1.png "Po zakończeniu projektu pojawia się jako to")
+![Zakończono przykład przedstawiający sześciu robotów](part1-images/image1.png)
 
-
-# <a name="creating-an-empty-game-project"></a>Tworzenie pusty projekt gier
+## <a name="creating-an-empty-game-project"></a>Tworzenie pusty projekt gier
 
 Potrzebujemy skonfigurować projekt gier najpierw o nazwie MonoGame3D. Aby uzyskać informacje dotyczące tworzenia nowego projektu MonoGame, zobacz [ten przewodnik dotyczący tworzenia projektu Monogame Cross Platform](~/graphics-games/monogame/introduction/part1.md).
 
 Przed przejściem możemy zweryfikować, że projekt zostanie otwarty i wdraża poprawnie. Raz wdrożonym mamy powinna zostać wyświetlona pusta niebieski ekran:
 
-![](part1-images/image2.png "Raz wdrożonej powinna zostać wyświetlona projektanta ekranu blue pustym")
+![Puste niebieski ekran gier](part1-images/image2.png)
 
 
-# <a name="including-the-xnbs-in-the-game-project"></a>W tym XNBs w projekcie gier
+## <a name="including-the-xnbs-in-the-game-project"></a>W tym XNBs w projekcie gier
 
 Format pliku .xnb jest standardowym rozszerzeniem wbudowanej zawartości (zawartości, który został utworzony przez [MonoGame potoku narzędzia](http://www.monogame.net/documentation/?page=Pipeline)). Cała zawartość wbudowanych ma (czyli pliku fbx w przypadku naszego modelu) pliku źródłowego i docelowego pliku (.xnb). Format fbx jest wspólny format modelu 3D, można utworzyć przez aplikacje takie jak [Maya](http://www.autodesk.com/products/maya/overview) i [mieszarce](http://www.blender.org/). 
 
@@ -53,20 +52,19 @@ Firma Microsoft będzie Rozpakuj [pliku Content.zip](https://github.com/xamarin/
 
 Dwa pliki powinny być teraz częścią naszego projektu:
 
-![](part1-images/xnbsinxs.png "Dwa pliki powinna być teraz częścią projektu")
+![Folder rozwiązania explorer zawartości z plikami xnb](part1-images/xnbsinxs.png)
 
 Visual Studio for Mac nie może automatycznie ustawiona akcja kompilacji dla nowo dodanych XNBs. Dla systemu iOS, kliknij prawym przyciskiem myszy każdy z plików, a następnie wybierz **BundleResource -> Akcja kompilacji**. Dla systemu Android, kliknij prawym przyciskiem myszy każdy z plików, a następnie wybierz **AndroidAsset -> Akcja kompilacji**.
 
-# <a name="rendering-a-3d-model"></a>Renderowanie modelu 3D
+## <a name="rendering-a-3d-model"></a>Renderowanie modelu 3D
 
 Ostatnim krokiem należy na ekranie Zobacz modelu jest, aby dodać ładowania i rysowanie kodu. W szczególności firma Microsoft będzie można wykonać następujące czynności:
 
- - Definiowanie `Model` wystąpienia w naszym `Game1` — klasa
- - Ładowanie `Model` wystąpienia w `Game1.LoadContent`
- - Rysowanie `Model` wystąpienia w `Game1.Draw`
+- Definiowanie `Model` wystąpienia w naszym `Game1` — klasa
+- Ładowanie `Model` wystąpienia w `Game1.LoadContent`
+- Rysowanie `Model` wystąpienia w `Game1.Draw`
 
 Zastąp `Game1.cs` pliku kodu (który znajduje się w **WalkingGame** PCL) z następujących czynności:
-
 
 ```csharp
 public class Game1 : Game
@@ -81,7 +79,7 @@ public class Game1 : Game
     {
         graphics = new GraphicsDeviceManager(this);
         graphics.IsFullScreen = true;
-                    
+
         Content.RootDirectory = "Content";
     }
     protected override void LoadContent()
@@ -162,17 +160,13 @@ public class Game1 : Game
         base.Draw(gameTime);
     }
 }
-                                                                                                                 
 ```
 
 Jeśli firma Microsoft uruchomić ten kod zajmiemy się tym modelu na ekranie:
 
-![](part1-images/image8.png "Jeśli ten kod jest uruchamiana, model zostanie wyświetlony na ekranie")
+![Model wyświetlany na ekranie](part1-images/image8.png "Jeśli uruchamiać ten kod, model zostanie wyświetlony na ekranie")
 
-Oto niektóre z ważniejsze części kodu powyżej.
-
-
-## <a name="model-class"></a>Klasa modelu
+### <a name="model-class"></a>Klasa modelu
 
 `Model` Klasa jest klasą core do wykonywania renderowania 3W z zawartości plików (takich jak pliki fbx). Zawiera wszystkie informacje wymagane do renderowania, w tym geometrii 3D odwołania tekstury i `BasicEffect` wystąpień kontrolujące wartości rozmieszczania, oświetlenia i aparatu.
 
@@ -180,20 +174,17 @@ Oto niektóre z ważniejsze części kodu powyżej.
 
 Każdy `Model` składa się z co najmniej jeden `ModelMesh` wystąpienia, które są dostępne za pośrednictwem `Meshes` właściwości. Mimo że firma Microsoft może wziąć pod uwagę `Model` jako pojedynczy gry obiektu (na przykład robotem lub samochód), każdy `ModelMesh` mogą pochodzić z różnych `BasicEffect` wartości. Na przykład części poszczególnych sieci może stanowić etapy robotem lub koła na samochodu i firma Microsoft może przypisać `BasicEffect` Przenieś wartości pokrętła koła lub etapy. 
 
-
-## <a name="basiceffect-class"></a>Klasa BasicEffect
+### <a name="basiceffect-class"></a>Klasa BasicEffect
 
 `BasicEffect` Klasa udostępnia właściwości umożliwiające sterowanie opcje renderowania. Modyfikacja pierwszy wykonujemy do `BasicEffect` jest wywołanie `EnableDefaultLighting` metody. Jak wskazuje nazwę, dzięki temu oświetlenia domyślny, który jest bardzo przydatna do sprawdzenia, czy `Model` pojawia się w grze zgodnie z oczekiwaniami. Jeśli firma Microsoft komentarz `EnableDefaultLighting` wywołań, a następnie zajmiemy się tym model renderowany tylko jego tekstury, ale nie blask cieniowania lub odblasków:
 
-
 ```csharp
-//effect.EnableDefaultLighting (); 
+//effect.EnableDefaultLighting ();
 ```
 
-![](part1-images/image9.png "Model renderowany tylko jego tekstury, ale nie blask cieniowania lub odblasków")
+![Model renderowany tylko jego tekstury, ale nie blask cieniowania lub odblasków](part1-images/image9.png "model renderowany tylko jego tekstury, ale nie blask cieniowania lub odblasków")
 
 `World` Właściwości można ustawić pozycji, obracanie i skali modelu. Kod nad używa `Matrix.Identity` wartości, co oznacza, że `Model` spowoduje, że w grze dokładnie tak jak określono w pliku fbx. Firma Microsoft będzie obejmujące macierzy i 3D współrzędne bardziej szczegółowo w [część 3](~/graphics-games/monogame/3d/part3.md), ale jako przykład możemy zmienić jego położenie `Model` zmieniając `World` właściwości w następujący sposób:
-
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -203,10 +194,9 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 Ten kod wyniki w obiekcie przenoszony w jednostkach 3:
 
-![](part1-images/image10.png "Ten kod wyniki w obiekcie przenoszony w jednostkach 3")
+![Ten kod wyniki w obiekcie przenoszony przez 3 jednostki world](part1-images/image10.png "ten kod wyniki w obiekcie przenoszony w jednostkach 3")
 
 Końcowe dwie właściwości, przypisane na `BasicEffect` są `View` i `Projection`. Firma Microsoft będzie obejmujące 3D kamer w [część 3](~/graphics-games/monogame/3d/part3.md), ale na przykład firma Microsoft modyfikować, zmieniając lokalnej pozycja kamery `cameraPosition` zmienną:
-
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
@@ -215,10 +205,9 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 Możemy stwierdzić, aparatu przeniósł dalsze Wstecz, co powoduje `Model` znajdujących się na mniejsze z powodu perspektywy:
 
-![](part1-images/image11.png "Aparatu przeniósł dalsze, co w modelu, przy mniejszym z powodu perspektywy")
+![Aparat przeniósł dalsze Wstecz, co w modelu, przy mniejszym z powodu perspektywy](part1-images/image11.png "aparatu przeniósł dalsze Wstecz, co w modelu, przy mniejszym z powodu perspektywy")
 
-
-# <a name="rendering-multiple-models"></a>Renderowanie wielu modeli
+## <a name="rendering-multiple-models"></a>Renderowanie wielu modeli
 
 Jak wspomniano powyżej, pojedynczy `Model` mogą być wystawiane wiele razy. Aby to ułatwić będziemy przenoszenie `Model` rysowania kod na własną metodę, która przyjmuje żądaną `Model` pozycji jako parametr. Po zakończeniu naszych `Draw` i `DrawModel` będzie wyglądać metod:
 
@@ -266,10 +255,9 @@ void DrawModel(Vector3 modelPosition)
 
 Powoduje to robot modelu rysowania sześć razy:
 
-![](part1-images/image1.png "Powoduje to robot modelu rysowania sześć razy")
+![Powoduje to robot modelu rysowania sześć razy](part1-images/image1.png "skutkuje robota modelu rysowania sześć razy")
 
-
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku wprowadzone przez MonoGame `Model` klasy. Obejmuje konwertowania pliku fbx na .xnb, które w Włącz można załadować do `Model` klasy. Zawiera także sposób modyfikacje `BasicEffect` może wpłynąć na wystąpienie `Model` rysowania.
 

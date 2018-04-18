@@ -6,11 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 7d54203fe391af6acde70f4c2a073b7f71332c91
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-urhosharp"></a>Przy użyciu UrhoSharp
 
@@ -20,7 +21,7 @@ Przed przystąpieniem do napisania pierwszy gry chcesz pobrać zapoznaniu podsta
 
 <a name="scenenodescomponentsandcameras"/>
 
-# <a name="scenes-nodes-components-and-cameras"></a>Sceny, węzłów, składników i aparaty fotograficzne
+## <a name="scenes-nodes-components-and-cameras"></a>Sceny, węzłów, składników i aparaty fotograficzne
 
 Model sceny można określić jako wykres na podstawie składnika sceny. Sceny składa się z hierarchii sceny węzłów, począwszy od węzła głównego, reprezentujący całej sceny. Każdy [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) ma transformacja 3D (pozycja, obracanie i skalowania), nazwę, identyfikator oraz dowolną liczbę składników.  Składniki przenieść węzła do życia, mogą one ułatwić dodawanie wizualną reprezentację ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), mogły one wysyłać dźwięk ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), zapewniają granic kolizji i tak dalej.
 
@@ -28,7 +29,7 @@ Można utworzyć sceny, a Instalator węzłów za pomocą [Edytor Urho](#UrhoEdi
 
 Oprócz konfigurowania sceny, należy w Instalatorze [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), jest to, co określa, jakie uzyskać pokazywana użytkownikowi.
 
-## <a name="setting-up-your-scene"></a>Konfigurowanie sceny
+### <a name="setting-up-your-scene"></a>Konfigurowanie sceny
 
 Przeważnie tworzy się tego formularza metody uruchamiania:
 
@@ -52,7 +53,7 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-## <a name="components"></a>Składniki
+### <a name="components"></a>Składniki
 
 Renderowanie obiektów 3W, odtwarzanie dźwięku, fizycznych i korzystające ze skryptów logiki aktualizacji są włączone przez utworzenie różnych składników do węzłów, wywołując [ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/).  Na przykład instalacji węzła, a światła składnika następująco:
 
@@ -82,11 +83,11 @@ Zwykłe składników, takich jak [ `Light` ](https://developer.xamarin.com/api/t
 
 Biblioteka jest dostarczany z różnych składników, które można dołączyć do węzły w celu zapewnienia ich życia: elementy widoczny dla użytkownika (modeli), dźwięki, sztywne treści, kolizji kształtów, aparaty fotograficzne, źródła światła, emitery cząstki i wiele innych.
 
-## <a name="shapes"></a>Kształty
+### <a name="shapes"></a>Kształty
 
 Dla wygody różnych kształtów są dostępne jako proste węzłów w przestrzeni nazw Urho.Shapes.  Obejmują one pola, obszary, szyszki, cylindrów i płaszczyzny.
 
-## <a name="camera-and-viewport"></a>Aparat fotograficzny i okienka ekranu
+### <a name="camera-and-viewport"></a>Aparat fotograficzny i okienka ekranu
 
 Podobnie jak światło, kamer są składnikami, więc należy dołączyć składnik do węzła, odbywa się podobnie do następującej:
 
@@ -104,7 +105,7 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 I teraz powinno być możliwe wyświetlić wyniki tworzenia użytkownika.
 
-## <a name="identification-and-scene-hierarchy"></a>Identyfikowanie i sceny hierarchii
+### <a name="identification-and-scene-hierarchy"></a>Identyfikowanie i sceny hierarchii
 
 W przeciwieństwie do węzłów składniki nie mają nazw; składniki w tym samym węźle tylko są identyfikowane według typu i indeks w węzła składnika listę, która jest wypełniony w kolejności tworzenia, na przykład można pobrać [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light) składnika z `lightNode` obiektu powyżej podobnie do następującej:
 
@@ -128,13 +129,13 @@ Należy pamiętać, że [ `Scene` ](https://developer.xamarin.com/api/type/Urho.
 
 Istnieje również możliwość utworzenia `Node` nienależącym do sceny. Jest to przydatne na przykład za pomocą aparatu przenoszenie sceny, który może być załadowany lub zapisane, ponieważ aparat nie zostaną zapisane razem z rzeczywistego sceny, a następnie nie zostaną usunięte po załadowaniu sceny. Jednak należy pamiętać, że tworzenie składników geometry, fizycznych lub skrypt do węzła odłączyć, a następnie jego przeniesieniem do sceny później spowoduje, że te składniki, może nie działać poprawnie.
 
-## <a name="scene-updates"></a>Aktualizacje sceny
+### <a name="scene-updates"></a>Aktualizacje sceny
 
 Sceny, w której aktualizacje są włączone (ustawienie domyślne) zostanie automatycznie zaktualizowana w każdej iteracji pętli głównej.  Aplikacji [ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/) program obsługi zdarzeń jest wywoływana na nim.
 
 Węzły i składniki mogą być wykluczone z aktualizacji sceny wyłączając je, zobacz [ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled).  Zachowanie zależy od określonego składnika, ale np. wyłączenie składnika obiektów drawable ułatwia też niewidoczne, gdy wyłączenie składnika źródła dźwięku wycisza go. Jeśli węzeł jest wyłączony, wszystkie jego składniki są traktowane jako wyłączone niezależnie od stanu włączenia i wyłączenia.
 
-# <a name="adding-behavior-to-your-components"></a>Dodawanie zachowania do składników programu
+## <a name="adding-behavior-to-your-components"></a>Dodawanie zachowania do składników programu
 
 Najlepszym sposobem struktury gry jest zapewnienie własne składnik, który hermetyzować aktora lub element na grę.  Dzięki temu funkcja samodzielnego zawartych z zasobów używany do wyświetlania, do jego działania.
 
@@ -142,7 +143,7 @@ Jest to najprostszy sposób dodawania zachowanie składnika akcje, które są in
 
 Alternatywnie można kontrolować, dokładnie co się stanie do składnika, aktualizując właściwości składnika w każdej ramce (opisanych w sekcji zachowanie na podstawie ramki).
 
-## <a name="actions"></a>Akcje
+### <a name="actions"></a>Akcje
 
 Zachowanie można dodać do węzłów bardzo łatwo przy użyciu akcji.  Działania może zmieniać różne właściwości węzła i ich wykonania w okresie czasu lub powtarzanie ich wiele razy z krzywej danego animacji.
 
@@ -182,7 +183,7 @@ W powyższym przykładzie chmury przeniesie i zanikania w tym samym czasie.
 
 Można zauważyć, że te używają C# await, co pozwala na wziąć pod uwagę liniowo działanie, aby uzyskać informacje.
 
-## <a name="basic-actions"></a>Podstawowe akcje
+### <a name="basic-actions"></a>Podstawowe akcje
 
 Są obsługiwane w UrhoSharp akcje:
 
@@ -196,7 +197,7 @@ Są obsługiwane w UrhoSharp akcje:
 
 Inne zaawansowane funkcje programu to kombinacja [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn) i [ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence) akcje.
 
-## <a name="easing---controlling-the-speed-of-your-actions"></a>Ułatwianie - kontrolowanie prędkości czynności użytkownika
+### <a name="easing---controlling-the-speed-of-your-actions"></a>Ułatwianie - kontrolowanie prędkości czynności użytkownika
 
 Ułatwianie jest sposób, który kieruje sposób ujawniać będzie animacji, czy go animacji znacznie więcej przyjemne.  Domyślnie czynności użytkownika będzie mieć zachowanie liniowego, na przykład [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo) akcji musi bardzo zautomatyzowanej przepływu.  Podczas opakowywania akcje użytkownika na akcję dynamiki Aby zmienić to zachowanie, na przykład czy wolno start przemieszczania, przyspieszanie i powoli zakończą się ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut)).
 
@@ -212,7 +213,7 @@ Istnieje wiele metod sterowania tempem zmian, w poniższej tabeli przedstawiono 
 
 ![Ułatwianie tryby](using-images/easing.png "ten wykres pokazuje różnych typów sterowania tempem zmian i ich zachowanie na wartość obiektu kontrolować w okresie czasu")
 
-## <a name="using-actions-and-async-code"></a>Przy użyciu akcji i kod Async
+### <a name="using-actions-and-async-code"></a>Przy użyciu akcji i kod Async
 
 W Twojej [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/) podklasy, należy wprowadzić to metoda asynchroniczna, który przygotowuje Twoje zachowanie składnika i dyski funkcji dla niego.
 Powodowałoby wywołanie tej metody, przy użyciu języka C#, a następnie `await` — słowo kluczowe z części innego programu, albo z `Application.Start` metody lub w odpowiedzi na użytkownika lub wątek punktu w aplikacji.
@@ -267,7 +268,7 @@ class Robot : Component {
 
 W `Launch` metody powyżej trzy czynności są uruchamiane: robota wejścia sceny, ta akcja spowoduje zmianę lokalizacji węzła w okresie 0,6 sekund.  Ponieważ jest to opcja asynchronicznego, nastąpi to jednocześnie jako następną instrukcję, która jest wywołanie do `MoveRandomly`.  Ta metoda zmieni położenie robota równolegle losowo wybranej lokalizacji.  Jest to osiągane przez wykonanie dwie akcje złożone, ruch do nowej lokalizacji, a po powrocie do oryginalnej pozycji i powtórz tę czynność, dopóki robota pozostaje aktywne.  I Postaramy bardziej interesujące, robota będzie przechowywać premia jednocześnie.  Wydawania uruchamia się co 0,1 sekund.
 
-## <a name="frame-based-behavior-programming"></a>Zachowanie na podstawie ramki programowania
+### <a name="frame-based-behavior-programming"></a>Zachowanie na podstawie ramki programowania
 
 Jeśli chcesz kontrolować zachowanie składnika na podstawie przez klatka zamiast akcje, co możesz zrobić jest zastąpienie [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate) metody z [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component) podklasy.  Ta metoda jest wywoływana raz na klatkę i jest wywoływane tylko wtedy, gdy właściwość ReceiveSceneUpdates zostanie ustawiona wartość true.
 
@@ -299,7 +300,7 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-## <a name="combining-styles"></a>Łączenie style
+### <a name="combining-styles"></a>Łączenie style
 
 Można użyć danego modelu async/akcji na podstawie znacznie zachowania, które jest doskonałym rozwiązaniem fire i zapomnij styl programowania w języku programowania, ale można również precyzyjnego określania zachowania danego składnika można także uruchomić kod niektórych aktualizacji w każdej ramce.
 
@@ -316,7 +317,7 @@ Na przykład w pokaz SamplyGame jest on używany w `Enemy` klasy koduje akcje u�
     }
 ```
 
-# <a name="loading-and-saving-scenes"></a>Ładowanie i zapisywanie sceny
+## <a name="loading-and-saving-scenes"></a>Ładowanie i zapisywanie sceny
 
 Sceny może być załadowany i zapisane w formacie XML. Zobacz funkcje [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml) i [ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml). Po załadowaniu sceny najpierw usunąć wszystkie istniejące zawartości (węzły podrzędne i składniki). Węzły i składników, które są oznaczone jako tymczasowy z `Temporary` właściwości nie zostaną zapisane. Serializator wszystkich wbudowanych składników i właściwości, ale nie inteligentnych do obsługi niestandardowej właściwości i pola zdefiniowane w Twojej podklasy składnika. Natomiast udostępnia dwie metody wirtualne w tym:
 
@@ -355,7 +356,7 @@ class MyComponent : Component {
 }
 ```
 
-## <a name="object-prefabs"></a>Obiekt Prefabs
+### <a name="object-prefabs"></a>Obiekt Prefabs
 
 Tylko podczas ładowania lub zapisywania całego sceny nie jest wystarczająco elastyczny, gier której nowych obiektów muszą być tworzone dynamicznie. Z drugiej strony tworzenia złożonych obiektów i ustawiania ich właściwości w kodzie będzie również nużące. Z tego powodu jest również można zapisać węzła sceny, który będzie zawierać jej podrzędnych węzłów, składników i atrybutów. Później łatwo te mogą być ładowane jako grupa.  Obiekt zapisany jest często określany jako prefab. Istnieją trzy sposoby, w tym:
 
@@ -374,7 +375,7 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 }
 ```
 
-# <a name="events"></a>Zdarzenia
+## <a name="events"></a>Zdarzenia
 
 UrhoObjects podnieść liczbę zdarzeń, te są udostępniane jako C# zdarzenia różnych klas, które generują je.  Oprócz języka C# — zdarzenia na podstawie modelu, istnieje również możliwość użycia `SubscribeToXXX` metod, które umożliwia subskrybowanie i Zachowaj token subskrypcji, który później można anulować subskrypcję.  Różnica polega na pierwszej umożliwi wiele wywołań do subskrypcji, drugi tylko jedną umożliwia, ale umożliwia wrażeń stylu lambda podejścia do użycia, a jeszcze, umożliwiają łatwe usuwania subskrypcji.  Są one wykluczają się wzajemnie.
 
@@ -421,7 +422,7 @@ public void override Start ()
 
 Parametr odebranych przez program obsługi zdarzeń jest klasą argumenty zdarzeń jednoznacznie będą specyficzne dla każdego zdarzenia, który zawiera ładunek zdarzenia.
 
-# <a name="responding-to-user-input"></a>Odpowiada na dane wejściowe użytkownika
+## <a name="responding-to-user-input"></a>Odpowiada na dane wejściowe użytkownika
 
 Możesz uzyskać subskrypcję do różnych zdarzeń, takich jak naciśnięcia klawiszy dół przez subskrybowanie zdarzeń i reagowanie na dane wejściowe są dostarczane:
 
@@ -459,7 +460,7 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-# <a name="resources-assets"></a>Zasoby (zasoby)
+## <a name="resources-assets"></a>Zasoby (zasoby)
 
 Zasoby obejmują w UrhoSharp większości zadań, które są ładowane z pamięci masowej podczas inicjowania środowiska uruchomieniowego:
 
@@ -492,13 +493,13 @@ Zasoby można również utworzone ręcznie i przechowywane w pamięci podręczne
 
 Budżetów pamięci można ustawić na typ zasobu: Jeśli zasoby zużywać więcej pamięci niż jest to dozwolone, najstarsze zasoby zostaną usunięte z pamięci podręcznej w przeciwnym razie używanymi już. Domyślnie budżetów pamięci są ustawione na nieograniczony.
 
-## <a name="bringing-3d-models-and-images"></a>Przywracanie modele 3D i obrazów
+### <a name="bringing-3d-models-and-images"></a>Przywracanie modele 3D i obrazów
 
 Urho3D próbuje użyć istniejącego formatów plików w miarę możliwości i definiowanie niestandardowych formatów plików tylko wtedy, gdy jest to bezwzględnie konieczne, takie jak w przypadku modeli (*.mdl) i animacji (*.ani). W przypadku tych typów zasobów Urho zapewnia konwertera - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) zużywające wielu popularnych formatach 3D fbx dae, 3ds i obj, np.
 
 Dostępna jest również przydatne dodatku dla mieszarce [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) który można wyeksportować w formacie, który jest odpowiedni dla Urho3D zasobów mieszarce.
 
-## <a name="background-loading-of-resources"></a>Tło ładowanie zasobów
+### <a name="background-loading-of-resources"></a>Tło ładowanie zasobów
 
 Zwykle podczas żądania zasobów przy użyciu jednej z `ResourceCache`w `Get` metody są załadowane bezpośrednio w głównym wątku, co może potrwać kilka milisekund wszystkie kroki wymagane (załaduj plik z dysku, analizy danych, przekazywanie do procesora GPU, jeśli to konieczne ) i w związku z tym może spowodować porzucania szybkość klatek.
 
@@ -510,7 +511,7 @@ Na koniec maksymalny czas (w milisekundach) działania każdej ramce na zakończ
 
 <a name="sound"/>
 
-# <a name="sound"></a>Dźwięk
+## <a name="sound"></a>Dźwięk
 
 Dźwięk jest ważnym elementem gry i UrhoSharp framework zapewnia możliwość odtwarzanie dźwięku w grę.  Odtwarzanie dźwięków dołączając [ `SoundSource` ](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/) składnika do [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) , a następnie odtworzyć wskazanego pliku z Twoich zasobów.
 
@@ -526,7 +527,7 @@ soundSource.AutoRemove = true;
 
 <a name="particles"/>
 
-# <a name="particles"></a>Cząstki
+## <a name="particles"></a>Cząstki
 
 Cząstki zapewniają prosty sposób dodawania niektóre proste i niedrogie efekty w aplikacji.  Za pomocą takich narzędzi jak może wykorzystać cząstki przechowywane w formacie PEX [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
@@ -561,22 +562,19 @@ I to wygląda użycie bloki tekstury:
 
 ![Cząstki teksturą pole](using-images/image-2.png "i są to wygląda używania bloki tekstury")
 
-# <a name="multithreading-support"></a>Obsługa wielowątkowości
+## <a name="multithreading-support"></a>Obsługa wielowątkowości
 
 UrhoSharp to jedna biblioteka wątków.  Oznacza to, że nie należy próbować wywołać metod w UrhoSharp z wątku w tle lub ryzyko uszkodzenia stanu aplikacji i może ulec awarii aplikacji.
 
 Jeśli chcesz uruchomić kodu w tle, a następnie zaktualizuj Urho składników na głównym interfejsu użytkownika, możesz użyć [ `Application.InvokeOnMain(Action)` ](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain) metody.  Ponadto można Użyj C# await i .NET zadanie interfejsów API, aby upewnić się, że kod jest wykonywany w odpowiednich wątku.
 
-
-# <a name="urhoeditor"></a>UrhoEditor
+## <a name="urhoeditor"></a>UrhoEditor
 
 Możesz pobrać edytor Urho dla danej platformy z [Urho witryny sieci Web](http://urho3d.github.io/), przejdź do pobrania i pobrania najnowszej wersji.
 
-# <a name="copyrights"></a>Prawa autorskie
+## <a name="copyrights"></a>Prawa autorskie
 
 W tej dokumentacji zawiera oryginalną zawartość z Xamarin Inc, ale często rysuje dokumentacji typu open source dla projektu Urho3D i zawiera zrzuty ekranu z projektu Cocos2D.
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

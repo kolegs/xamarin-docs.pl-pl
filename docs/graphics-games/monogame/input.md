@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 37e6b0a6365b1e93192c0eaad4fd3975c3cbf010
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="monogame-gamepad-reference"></a>Odwołanie do MonoGame Konsola do gier
 
@@ -19,24 +19,20 @@ _Konsola do gier jest klasą standardowe, i platform do uzyskiwania dostępu do 
 
 `GamePad` może być użyte do odczytu danych wejściowych z urządzenia wejściowe na wielu platformach MonoGame. W tym przewodniku pokazano, jak pracować z klasy Konsola do gier. Ponieważ układ i liczba przycisków zapewnia różni się każdego urządzenia wejściowego, ten przewodnik zawiera diagramów przedstawiających mapowania różnych urządzeń.
 
-
-# <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Konsola do gier jako zamiennik Xbox360GamePad
+## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Konsola do gier jako zamiennik Xbox360GamePad
 
 Oryginalny API XNA podane `Xbox360GamePad` klasę dla danych wejściowych odczytu z kontrolera gier na konsoli Xbox 360 lub komputera. MonoGame zastąpił to z `GamePad` klasy, ponieważ nie można użyć konsoli Xbox 360 kontrolerów na większości platform MonoGame (np. z systemem iOS lub konsoli Xbox One). Pomimo zmiany nazwy, użycie `GamePad` klasy jest podobna do `Xbox360GamePad` klasy.
 
-
-# <a name="reading-input-from-gamepad"></a>Dane wejściowe odczytu Konsola do gier
+## <a name="reading-input-from-gamepad"></a>Dane wejściowe odczytu Konsola do gier
 
 `GameController` Klasa udostępnia sposób Zestandaryzowany odczytu danych wejściowych na dowolnej platformie MonoGame. Zawiera informacje za pomocą dwóch metod:
 
- - `GetState` — Zwraca bieżący stan przycisków, analogowy USB i konsola d kontrolera.
- - `GetCapabilities` — Zwraca informacje na temat możliwości sprzętu, takich jak czy kontroler ma pewne przyciski lub obsługuje wibrację.
+- `GetState` — Zwraca bieżący stan przycisków, analogowy USB i konsola d kontrolera.
+- `GetCapabilities` — Zwraca informacje na temat możliwości sprzętu, takich jak czy kontroler ma pewne przyciski lub obsługuje wibrację.
 
-
-## <a name="example-moving-a-character"></a>Przykład: Przenoszenie znak
+### <a name="example-moving-a-character"></a>Przykład: Przenoszenie znak
 
 Poniższy kod przedstawia sposób USB po lewej stronie przycisku suwaka można przenieść znak przez ustawienie jej `XVelocity` i `YVelocity` właściwości. Ten kod, przy założeniu, że `characterInstance` jest wystąpieniem obiektu, który ma `XVelocity` i `YVelocity` właściwości:
-
 
 ```csharp
 // In Update, or some code called every frame:
@@ -46,13 +42,11 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-
-## <a name="example-detecting-pushes"></a>Przykład: Wykrywanie Wypchnięć
+### <a name="example-detecting-pushes"></a>Przykład: Wykrywanie Wypchnięć
 
 `GamePadState` zawiera informacje o bieżącym stanie kontrolera, takie jak czy niektórych przycisk zostanie naciśnięty. Niektóre akcje, takie jak znak przejść, co wymagać wykonania sprawdzania, czy został naciśnięty przycisk (nie był w dół ostatniej ramki, ale ta ramka nie działa) lub (był dół ostatniej ramki, ale nie w dół do tej ramki). 
 
 Aby wykonać ten rodzaj logiki, zmienne lokalne, które przechowują poprzedniej ramki `GamePadState` i bieżącej ramki `GamePadState` musi zostać utworzony. Poniższy przykład przedstawia sposób przechowywania i użyć poprzedniej ramki `GamePadState` do zaimplementowania przeskakiwanie:
-
 
 ```csharp
 // At class scope:
@@ -76,11 +70,9 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-
-## <a name="example-checking-for-buttons"></a>Przykład: Sprawdzanie przycisków
+### <a name="example-checking-for-buttons"></a>Przykład: Sprawdzanie przycisków
 
 `GetCapabilities` może służyć do sprawdzenia, czy kontroler ma niektórych sprzętu, takiego jak określonego przycisku lub analogowy USB. Poniższy kod przedstawia sposób sprawdzania B i Y przycisków w kontrolerze w grę, co wymaga obecności przyciski:
-
 
 ```csharp
 var capabilities = GamePad.GetCapabilities(PlayerIndex.One);
@@ -92,29 +84,24 @@ if(!hasBButton || !hasXButton)
 }
 ```
 
-
-# <a name="ios"></a>iOS
+## <a name="ios"></a>iOS
 
 aplikacje dla systemu iOS obsługują dane wejściowe bezprzewodowej kontroler gier.
 
 > [!IMPORTANT]
 > Pakiety NuGet dla MonoGame 3.5 nie obsługują bezprzewodowej kontrolery gier. W systemie iOS przy użyciu klasy Konsola do gier wymaga tworzenia 3.5 MonoGame ze źródła lub przy użyciu plików binarnych MonoGame 3,6 NuGet. 
 
-
-
-## <a name="ios-game-controller"></a>iOS kontrolera gry
+### <a name="ios-game-controller"></a>iOS kontrolera gry
 
 `GamePad` Klasa zwraca właściwości odczytywać z kontrolerów sieci bezprzewodowej. Właściwości w `GamePad` zapewnienia dobrej pokrycia standardowe iOS sprzętu kontrolera, jak pokazano na poniższym diagramie:
 
 ![](input-images/image1.png "Właściwości w Konsola do gier zapewniają dobrą pokrycia dla standardowych systemu iOS sprzętu kontrolera, jak pokazano na tym diagramie")
 
-
-# <a name="apple-tv"></a>Apple TV
+## <a name="apple-tv"></a>Apple TV
 
 Gry Apple TV, można użyć zdalnego Siri lub bezprzewodowej kontrolery gier dla danych wejściowych.
 
-
-## <a name="siri-remote"></a>Używanie programu Siri zdalnego
+### <a name="siri-remote"></a>Używanie programu Siri zdalnego
 
 *Używanie programu Siri zdalnego* jest natywny urządzenia wejściowego dla Apple TV. Mimo że można odczytać wartości z elementu zdalnego Siri za pomocą zdarzeń (jak pokazano w [Siri zdalnego oraz kontrolerów Bluetooth przewodnik](~/ios/tvos/platform/remote-bluetooth.md)), `GamePad` klasa może zwrócić wartości z elementu zdalnego Siri.
 
@@ -124,25 +111,21 @@ Zwróć uwagę, że `GamePad` można tylko do odczytu danych wejściowych z przy
 
 Po naciśnięciu przeczytania powierzchni przepływu `DPad` przepływu podanych przy użyciu właściwości `ButtonState` klasy. Innymi słowy, wartości są dostępne tylko jako `ButtonState.Pressed` lub `ButtonState.Released`, w przeciwieństwie do wartości liczbowe lub gestów.
 
-
-## <a name="apple-tv-game-controller"></a>Apple TV gry kontrolera
+### <a name="apple-tv-game-controller"></a>Apple TV gry kontrolera
 
 Kontrolery gier dla Apple TV zachowują się tak samo, aby kontrolery gier dla aplikacji systemu iOS. Aby uzyskać więcej informacji, zobacz [iOS kontrolera gry](#iOS_Game_Controller). 
 
-
-# <a name="xbox-one"></a>Xbox One
+## <a name="xbox-one"></a>Xbox One
 
 Konsoli Xbox jeden obsługuje wprowadzanie odczytu z konsoli Xbox One kontrolera gier.
 
-
-## <a name="xbox-one-game-controller"></a>Kontroler gier Xbox One
+### <a name="xbox-one-game-controller"></a>Kontroler gier Xbox One
 
 Kontroler gier konsoli Xbox One jest najczęściej używane urządzenia wejściowego dla konsoli Xbox One. `GamePad` Klasa udostępnia wartości wejściowe od sprzętu kontrolera gier.
 
 ![](input-images/image3.png "Klasa Konsola do gier udostępnia wartości wejściowe od sprzętu kontrolera gier")
 
-
-# <a name="summary"></a>Podsumowanie
+## <a name="summary"></a>Podsumowanie
 
 Omówienie MonoGame w podane w tym przewodniku `GamePad` klasy implementowania logikę odczytywania danych wejściowych i diagramy wspólnych `GamePad` implementacji.
 
