@@ -1,31 +1,37 @@
 ---
-title: Using SQLite.NET
+title: Przy użyciu SQLite.NET z systemem Android
+description: Biblioteka SQLite.NET PCL NuGet zapewnia mechanizm dostępu proste danych dotyczących aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="using-sqlitenet"></a>Using SQLite.NET
+# <a name="using-sqlitenet"></a>Przy użyciu SQLite.NET
 
 Biblioteka SQLite.NET Xamarin zalecane jest bardzo proste ORM, która pozwala w prosty sposób przechowywania i pobierania obiekty w lokalnej bazie danych SQLite na urządzeniu z systemem Android. ORM oznacza obiektów relacyjnych mapowania &ndash; interfejs API, który umożliwia zapisywanie i pobrać "obiekty" z bazy danych bez pisania instrukcji SQL.
 
-## <a name="using-sqlitenet"></a>Using SQLite.NET
+Aby uwzględnić biblioteki SQLite.NET w aplikacji platformy Xamarin, Dodaj następujący pakiet NuGet do projektu:
 
-Aby dołączyć biblioteki SQLite.NET w aplikacji platformy Xamarin, należy dodać [pakietu SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) do projektu przy użyciu **PCL SQLite net** pakietu NuGet:
+- **Nazwa pakietu:** PCL SQLite net
+- **Autor:** Paweł Krueger A.
+- **Identyfikator:** sqlite-net-pcl
+- **Adres URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet package](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet package")](using-sqlite-orm-images/image1a.png#lightbox)
 
+> [!TIP]
+> Istnieje kilka różnych pakietów SQLite — należy wybrać właściwy (może być najwyższym wynik wyszukiwania).
+
 Po utworzeniu biblioteki SQLite.NET dostępna, wykonaj następujące trzy kroki, aby umożliwia dostęp do bazy danych:
 
-
-1.  **Dodaj using instrukcji** &ndash; Dodaj następującą instrukcję do plików języka C# którym wymagany jest dostęp do danych: 
+1.  **Dodaj using instrukcji** &ndash; Dodaj następującą instrukcję do plików języka C# którym wymagany jest dostęp do danych:
 
     ```csharp
     using SQLite;
@@ -206,7 +212,7 @@ Aby zmienić tryb wątków, należy wywołać `SqliteConnection.SetConfig`. Na p
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-Wersja bazy danych SQLite dla systemu Android ma ograniczenie, które wymaga podjęcia kilku czynności więcej. Jeśli wywołanie `SqliteConnection.SetConfig` tworzy wyjątek SQLite, takich jak `library used incorrectly`, należy użyć następującego rozwiązania: 
+Wersja bazy danych SQLite dla systemu Android ma ograniczenie, które wymaga podjęcia kilku czynności więcej. Jeśli wywołanie `SqliteConnection.SetConfig` tworzy wyjątek SQLite, takich jak `library used incorrectly`, należy użyć następującego rozwiązania:
 
 1.  Łącze do natywnego **libsqlite.so** biblioteki, aby `sqlite3_shutdown` i `sqlite3_initialize` interfejsy API są udostępniane dla aplikacji:
 
@@ -228,8 +234,6 @@ Wersja bazy danych SQLite dla systemu Android ma ograniczenie, które wymaga pod
     ```
 
 To rozwiązanie działa także dla `Mono.Data.Sqlite` biblioteki. Aby uzyskać więcej informacji na temat SQLite i wielowątkowości, zobacz [SQLite i wiele wątków](https://www.sqlite.org/threadsafe.html). 
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a54c69ff708ff7438ef1a8fd14c17e77b5375039
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Rozwiązywanie błędów instalacji biblioteki
 
@@ -161,7 +161,8 @@ Wykonaj następujące kroki, aby pobrać **m2repository** i zainstaluj jego zawa
 
 8.  Upewnij się, że wszystkie pliki są kopiowane. **Osadzone** katalogu teraz powinien zawierać pliki takie jak **JAR**, **.aar**, i **.pom**.
 
-9.  Rozpakuj żadnego wyodrębnione **.aar** plików. W systemie Windows, dołącz **.zip** rozszerzenia **.aar** pliku, kliknij go prawym przyciskiem myszy i wybierz **Wyodrębnij wszystkie...** , następnie usuń **.zip** rozszerzenia. Na macOS, Rozpakuj **.aar** pliku przy użyciu **Rozpakuj** w terminalu (na przykład **Rozpakuj file.aar**).
+9.  Rozpakuj zawartość każdej wyodrębnione **.aar** plików do **osadzone** katalogu. W systemie Windows, dołącz **.zip** rozszerzenia **.aar** , otwórz go, a następnie skopiuj zawartość do **osadzone** katalogu.
+    Na macOS, Rozpakuj **.aar** pliku przy użyciu **Rozpakuj** w terminalu (na przykład **Rozpakuj file.aar**).
 
 W tym momencie ręcznie zainstalowano brakujące składniki i projektu powinno utworzyć bez błędów. Jeśli nie, upewnij się, że pobrano **m2repository** **.zip** archiwum wersji, która dokładnie odpowiada wersji w komunikacie o błędzie, a następnie sprawdź, czy zostały zainstalowane jego zawartość w Popraw lokalizacje, zgodnie z opisem w powyższej procedurze. 
 

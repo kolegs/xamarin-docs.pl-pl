@@ -7,28 +7,21 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 
-_Zamień odwołania do składnika pakietów NuGet do zabezpieczenie przyszłych potrzeb aplikacji._
+> [!NOTE]
+> Xamarin składniki nie są już obsługiwane w programie Visual Studio i powinna zostać zastąpiona pakietów NuGet. Postępuj zgodnie z instrukcjami poniżej, aby ręcznie usunąć odwołania do składników z projektów.
 
-W tym przewodniku objaśniono sposób aktualizacji w istniejących rozwiązaniach Xamarin zmienić składnika odwołania do pakietów NuGet.
+Dotyczą te instrukcje dotyczące dodawania pakietów NuGet w [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) lub [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-- [Składniki, które zawierają pakietów NuGet](#contain)
-- [Składniki z zamiany NuGet](#replace)
-
-Większość składników należą do jednego z powyższych kategorii.
-Jeśli używasz składnik, który nie ma odpowiednik pakietu NuGet, przeczytaj [składników, bez ścieżki migracji NuGet](#require-update) poniższej sekcji.
-
-Odwoływać się do tych stron, aby uzyskać szczegółowe instrukcje dotyczące dodawania pakietów NuGet w [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) lub [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
-
-## <a name="opening-a-project-containing-a-component"></a>Otwieranie projektu zawierającego składnika
+## <a name="manually-removing-component-references"></a>Ręczne usuwanie odwołań składnika
 
 2017 listopada został [ogłoszenia](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) który magazynie składników Xamarin będzie przerywane. W ramach działań zmierzających do przejście z sunsetting składników 15.6 wydania programu Visual Studio i 7.4 wydania programu Visual Studio dla komputerów Mac nie obsługują składników w projekcie. 
 
@@ -40,7 +33,7 @@ Po załadowaniu projektu w programie Visual Studio, zostanie wyświetlone nastę
 
 Aby usunąć składnik z projektu:
 
-1. Otwórz pliku .csproj. Aby to zrobić, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Zwolnij projekt**. 
+1. Otwórz **.csproj** pliku. Aby to zrobić, kliknij prawym przyciskiem myszy nazwę projektu i wybierz **Zwolnij projekt**. 
 
 2. Ponownie kliknij prawym przyciskiem myszy projekt zwolnione i wybierz **Edytuj .csproj {nazwa swój projekt}**.
 
@@ -100,9 +93,21 @@ Aby usunąć składnik z projektu:
 
 3. Usuń odwołania do `XamarinComponentReference` i Zapisz plik. W powyższym przykładzie jest bezpiecznie usunąć całą `ItemGroup`
 
-4. Powtórz powyższe kroki dla każdego projektu w rozwiązaniu. 
+4. Powtórz powyższe kroki dla każdego projektu w rozwiązaniu.
 
 -----
+
+> [!WARNING]
+> Poniższe instrukcje działają tylko ze starszymi wersjami programu Visual Studio.
+> **Składniki** węzeł nie jest już dostępne w bieżącej wersji programu Visual Studio 2017 lub Visual Studio dla komputerów Mac.
+
+W poniższych sekcjach opisano sposób aktualizacji w istniejących rozwiązaniach Xamarin zmienić składnika odwołania do pakietów NuGet.
+
+- [Składniki, które zawierają pakietów NuGet](#contain)
+- [Składniki z zamiany NuGet](#replace)
+
+Większość składników należą do jednego z powyższych kategorii.
+Jeśli używasz składnik, który nie ma odpowiednik pakietu NuGet, przeczytaj [składników, bez ścieżki migracji NuGet](#require-update) poniższej sekcji.
 
 <a name="contain" />
 
@@ -147,14 +152,12 @@ Należy pamiętać, że **pakiety** karta prawdopodobnie będzie pusta:
 
 _Może on zawierać zależności NuGet, ale można je zignorować._
 
-
 Aby potwierdzić zastępczy istnieje pakiet NuGet, wyszukaj [NuGet.org](https://www.nuget.org/packages), przy użyciu nazwy składnika lub alternatywnie przez autora.
 
 Na przykład można znaleźć popularnych **sqlite-net-pcl** pakietu, wyszukując:
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) — Nazwa produktu.
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) — profilu autora.
-
 
 ### <a name="updating-the-solution"></a>Aktualizowanie rozwiązania
 
