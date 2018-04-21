@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>Przy użyciu SQLite.NET
+# <a name="using-sqlitenet-with-android"></a>Przy użyciu SQLite.NET z systemem Android
 
 Biblioteka SQLite.NET Xamarin zalecane jest bardzo proste ORM, która pozwala w prosty sposób przechowywania i pobierania obiekty w lokalnej bazie danych SQLite na urządzeniu z systemem Android. ORM oznacza obiektów relacyjnych mapowania &ndash; interfejs API, który umożliwia zapisywanie i pobrać "obiekty" z bazy danych bez pisania instrukcji SQL.
 
 Aby uwzględnić biblioteki SQLite.NET w aplikacji platformy Xamarin, Dodaj następujący pakiet NuGet do projektu:
 
-- **Nazwa pakietu:** PCL SQLite net
+- **Nazwa pakietu:** sqlite-net-pcl
 - **Autor:** Paweł Krueger A.
 - **Identyfikator:** sqlite-net-pcl
 - **Adres URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

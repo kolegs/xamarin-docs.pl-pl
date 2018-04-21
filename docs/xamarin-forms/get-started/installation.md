@@ -6,12 +6,12 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/19/2017
-ms.openlocfilehash: e62c82b351bab759192a4fe879a3b63754cdf0af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: d2125c1ddaa3edc3e2ee76d8e03e384efdca42c6
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinforms-requirements"></a>Wymagania dotyczące platformy Xamarin.Forms
 
@@ -85,7 +85,7 @@ Visual Studio for Mac można użyć do opracowywania aplikacji platformy Xamarin
 
 ## <a name="windows-system-requirements"></a>Wymagania dotyczące systemu Windows
 
-Aplikacje platformy Xamarin.Forms dla systemów iOS i Android mogą być wbudowane w żadnej instalacji systemu Windows, która obsługuje programowanie Xamarin. Wymaga programu Visual Studio 2015 lub nowsza działa w systemie Windows 7 lub nowszej. Mac sieci jest wymagana dla opracowywania aplikacji systemu iOS.
+Aplikacje platformy Xamarin.Forms dla systemów iOS i Android mogą być wbudowane w żadnej instalacji systemu Windows, która obsługuje programowanie Xamarin. Wymaga programu Visual Studio 2017 lub nowszej działa w systemie Windows 7 lub nowszej. Mac sieci jest wymagana dla opracowywania aplikacji systemu iOS.
 
 ### <a name="universal-windows-platform-uwp"></a>Platforma uniwersalna systemu Windows (UWP)
 
@@ -93,7 +93,7 @@ Tworzenie aplikacji platformy Xamarin.Forms dla platformy uniwersalnej systemu W
 
 * Windows 10 (aktualizacja twórców spadek zalecane)
 
-* Zaleca się programu Visual Studio 2017 r.
+* Visual Studio 2017
 
 * [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 

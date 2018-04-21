@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7531a8a21b6895de6113f5edd85d09a5e150877e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="sharing-code-options"></a>Opcje udostępniania kodu
 
@@ -136,7 +136,7 @@ Dobrym rozwiązaniem, jeśli ma być używany wspólnie z innymi deweloperami wy
 
 Kod udostępnianie strategii wybrane będzie uzależniona platform docelowych. Wybierz metodę, która działa najlepiej w projekcie.
 
-PCL lub .NET Standard powinno się do tworzenia biblioteki zabezpieczać kodu (szczególnie publikowanie na NuGet). Udostępnionych projektów działa także dla deweloperów aplikacji, planowane jest używanie w swoich aplikacjach platforma między wiele funkcji z platformą.
+PCL lub .NET Standard powinno się do tworzenia biblioteki zabezpieczać kodu (szczególnie publikowanie na NuGet). Udostępnionych projektów działa także dla deweloperów aplikacji, planowane jest używanie wielu funkcji z platformą w swoich aplikacjach i platform.
 
 
 ## <a name="related-links"></a>Linki pokrewne

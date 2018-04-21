@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: ac87ee44163d53b11c15538f382379aae962cbb2
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="monogame-gamepad-reference"></a>Odwołanie do MonoGame Konsola do gier
 
@@ -25,7 +25,7 @@ Oryginalny API XNA podane `Xbox360GamePad` klasę dla danych wejściowych odczyt
 
 ## <a name="reading-input-from-gamepad"></a>Dane wejściowe odczytu Konsola do gier
 
-`GameController` Klasa udostępnia sposób Zestandaryzowany odczytu danych wejściowych na dowolnej platformie MonoGame. Zawiera informacje za pomocą dwóch metod:
+`GamePad` Klasa udostępnia sposób Zestandaryzowany odczytu danych wejściowych na dowolnej platformie MonoGame. Zawiera informacje za pomocą dwóch metod:
 
 - `GetState` — Zwraca bieżący stan przycisków, analogowy USB i konsola d kontrolera.
 - `GetCapabilities` — Zwraca informacje na temat możliwości sprzętu, takich jak czy kontroler ma pewne przyciski lub obsługuje wibrację.

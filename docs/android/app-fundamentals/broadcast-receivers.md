@@ -6,17 +6,16 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/19/2018
-ms.openlocfilehash: 75d42da4ba01aaefded0081da02b8e1651695f46
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Emisji odbiorców w platformy Xamarin.Android
 
 _W tej sekcji omówiono sposób użycia odbiornik emisji._
-
 
 ## <a name="broadcast-receiver-overview"></a>Omówienie odbiornika emisji
 
@@ -55,7 +54,7 @@ public class SampleReceiver : BroadcastReceiver
     public override void OnReceive(Context context, Intent intent)
     {
         // Do stuff here.
-        
+
         String value = intent.GetStringExtra("key");
     }
 }
@@ -97,9 +96,9 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Aplikacje, które odnoszą się do 8.0 dla systemu Android (interfejs API na poziomie 26) lub nowszego mogą nie statycznie zarejestrować niejawne emisji. Aplikacje mogą nadal statycznie zarejestrować jawne emisji. Brak krótką listę niejawne programów, które są wykluczone z tego ograniczenia. Wyjątki te są opisane w [niejawne wyjątki emisji](https://developer.android.com/guide/components/broadcast-exceptions.html) przewodnik w dokumentacji systemu Android. Aplikacje, które są zainteresowane w niejawnych emisji należy wykonać, więc dynamicznie za pomocą `RegisterReceiver` metody. To jest opisane w dalszej części.  
+Aplikacje, które odnoszą się do 8.0 dla systemu Android (interfejs API na poziomie 26) lub nowszego mogą nie statycznie zarejestrować niejawne emisji. Aplikacje mogą nadal statycznie zarejestrować jawne emisji. Brak krótką listę niejawne programów, które są wykluczone z tego ograniczenia. Wyjątki te są opisane w [niejawne wyjątki emisji](https://developer.android.com/guide/components/broadcast-exceptions.html) przewodnik w dokumentacji systemu Android. Aplikacje, które są zainteresowane w niejawnych emisji należy wykonać, więc dynamicznie za pomocą `RegisterReceiver` metody. To jest opisane w dalszej części.
 
-### <a name="context-registering-a-broadcast-receiver"></a>Kontekst zarejestrowanie odbiornika emisji 
+### <a name="context-registering-a-broadcast-receiver"></a>Kontekst zarejestrowanie odbiornika emisji
 
 Kontekst Rejestracja (zwaną także dynamicznej rejestracji) odbiornik odbywa się za pomocą `RegisterReceiver` — metoda i emisji odbiornika musi być wyrejestrowany z wywołaniem do `UnregisterReceiver` metody. Aby zapobiec ulatniający zasobów, ważne jest wyrejestrować odbiornik, gdy nie jest już nieaktualny kontekstu (działania lub usługi). Na przykład usługa może emisji celem informują o tym działaniu dostępnych aktualizacji, który będzie wyświetlany użytkownikowi. Po uruchomieniu działania może zarejestrować się w tych opcji. Podczas działania jest przenoszony do tła i nie jest już widoczny dla użytkownika, jego należy wyrejestrować odbiornika ponieważ interfejsu użytkownika do wyświetlania widoku aktualizacji nie jest już widoczna. Poniższy fragment kodu przedstawiono przykładowy sposób rejestrowanie i wyrejestrowywanie odbiornik emisji w ramach działania:
 
@@ -108,22 +107,22 @@ Kontekst Rejestracja (zwaną także dynamicznej rejestracji) odbiornik odbywa si
 public class MainActivity: Activity 
 {
     MySampleBroadcastReceiver receiver;
-    
+
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
         receiver = new MySampleBroadcastReceiver()
-        
+
         // Code omitted for clarity
     }
-    
+
     protected override OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
-    
+
     protected override OnPause() 
     {
         UnregisterReceiver(receiver);
@@ -150,28 +149,32 @@ Wszystkie aplikacje zainstalowane na urządzeniu tworzenia obiektu konwersji i w
    ```
 
     Ta Wstawka kodu jest inny przykład wysyła przy użyciu emisji `Intent.SetAction` metodę identyfikowania akcji:
-    
+
     ```csharp 
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
-   
+
 2. **Context.SendOrderedBroadcast** &ndash; jest metoda jest bardzo podobny do `Context.SendBroadcast`, z tą różnicą jest, że celem będzie jeden opublikowanych w czasie do odbiorców w kolejności, że zarejestrowano recievers.
-   
+
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-[V4 Biblioteka obsługi Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) udostępnia klasę pomocy o nazwie [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Jest przeznaczony dla aplikacji, których nie chcesz wysyłać ani odbierać emisje z innych aplikacji na urządzeniu. `LocalBroadcastManager` Będzie publikować tylko komunikaty w kontekście aplikacji. Inne aplikacje na urządzeniu nie można odebrać wiadomości, które są publikowane z `LocalBroadcastManager`. 
+[V4 Biblioteka obsługi Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) udostępnia klasę pomocy o nazwie [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Jest przeznaczony dla aplikacji, których nie chcesz wysyłać ani odbierać emisje z innych aplikacji na urządzeniu. `LocalBroadcastManager` Będzie publikować tylko komunikaty w kontekście aplikacji i tylko te odbiorniki emisji, które są zarejestrowane w usłudze `LocalBroadcastManager`. Następujący fragment kodu jest przykład rejestrowania emisji odbiornika z `LocalBroadcastManager`:
 
-Następujący fragment kodu przedstawia sposób wysłania konwersji przy użyciu `LocalBroadcastManager`:
+```csharp
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
+```
+
+Inne aplikacje na urządzeniu nie można odebrać wiadomości, które są publikowane z `LocalBroadcastManager`. Następujący fragment kodu przedstawia sposób wysłania konwersji przy użyciu `LocalBroadcastManager`:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-``` 
+```
 
 ## <a name="related-links"></a>Linki pokrewne
 
