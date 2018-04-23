@@ -1,189 +1,245 @@
 ---
-title: Łączenie z adresem MAC
-description: Xamarin.iOS dla programu Visual Studio umożliwia deweloperom tworzenie, kompilacji i debugowanie aplikacji systemu iOS na komputerze z systemem Windows przy użyciu programu Visual Studio IDE. W tym przewodniku opisano dostępne funkcje platformy Xamarin.iOS dla programu Visual Studio i staje się jak połączenia z adresem MAC kompilacji hosta.
+title: Para Mac
+description: W tym przewodniku informacje dotyczące używania pary Mac nawiązywania połączenia z hostem kompilacji Mac Visual Studio 2017 r.
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 5a76c443521276a66e820fa0b1877ae2a4cce8f0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/16/2018
+ms.openlocfilehash: adaa74e206b1e756398f1ef1a38f387082c1e8f5
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
-# <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
+# <a name="pair-to-mac"></a>Para Mac
 
-_Xamarin.iOS dla programu Visual Studio umożliwia deweloperom tworzenie, kompilacji i debugowanie aplikacji systemu iOS na komputerze z systemem Windows przy użyciu programu Visual Studio IDE. W tym przewodniku opisano dostępne funkcje platformy Xamarin.iOS dla programu Visual Studio i staje się jak połączenia z adresem MAC kompilacji hosta._
+_W tym przewodniku informacje dotyczące używania pary Mac nawiązywania połączenia z hostem kompilacji Mac Visual Studio 2017 r._
 
-Visual Studio łączy się z adresem MAC za pomocą protokołu SSH, co zapewnia kilka korzyści, w tym:
+## <a name="overview"></a>Omówienie
 
-- Visual Studio można uruchomić i bezpośrednio sterowania agenta kompilacji. Brak nie jest już widoczny dla użytkownika aplikacji, która wymaga ręcznego uruchamiania i zatrzymywania.
+Tworzenie aplikacji systemu iOS natywnych wymaga dostępu do narzędzi kompilacji firmy Apple, które uruchamiane tylko na komputerach Mac. W związku z tym Visual Studio 2017 musi połączyć się z dostępne w sieci Mac do tworzenia aplikacji platformy Xamarin.iOS.
 
-- Odkrywanie nowych Menedżera połączeń w programie Visual Studio, uwierzytelniania i pamiętaj Mac hosta kompilacji.
+W programie Visual Studio 2017 pary funkcji Mac odnajduje, łączy się z jest uwierzytelniany w usłudze i pamięta hostów kompilacji Mac, dzięki czemu deweloperzy systemu iOS może efektywnie działać. 
 
-- Ponieważ bezpieczny tunel całą komunikację za pośrednictwem protokołu SSH, wymagane jest tylko połączenie jednego portu port 22.
+Para Mac umożliwia poniższy przepływ pracy tworzenia:
 
-- Visual Studio jest powiadamiany o zmianach, jak wystąpią. Na przykład, gdy urządzenia z systemem iOS jest podłączone na pasku narzędzi spowoduje zaktualizowanie natychmiast.
+- Programiści mogą pisać kod platformy Xamarin.iOS w programie Visual Studio 2017 r.
 
-- Jednocześnie połączyć wiele wystąpień programu Visual Studio.
+- Visual Studio 2017 otwiera połączenie sieciowe z hosta kompilacji Mac i używa narzędzia kompilacji na tej maszynie do Skompiluj i podpisz aplikację systemu iOS.
 
-- Połączenie nie zostanie mającym na programowanie. Go tylko wyświetli monit o połączenie z komputerem Mac podczas wykonywania operacji, dla którego Mac jest wymagane, na przykład debugowania lub przy użyciu projektanta dla systemu iOS.
+- Nie istnieje potrzeba do uruchamiania innej aplikacji dla komputerów Mac — Visual Studio 2017 wywołuje kompilacje Mac bezpieczny sposób za pomocą protokołu SSH.
 
-Połączenie z komputerem Mac składa się z wielu procesów dla różnych części jej funkcji — na przykład agent projektanta systemu iOS i agenta kompilacji —, które są kontrolowane przez brokera. Ta brokera jest kontrolowany i aktualizowane przez program Visual Studio i zostanie automatycznie uruchomiony ponownie żadnego procesów niezależnie od ich awarii.
+- Visual Studio 2017 jest powiadamiany o zmianach, natychmiast po ich wprowadzeniu. Na przykład gdy urządzenia z systemem iOS jest podłączone do komputera Mac lub stanie się dostępny w sieci, systemu iOS narzędzi aktualizuje natychmiast.
 
-Na poniższym diagramie przedstawiono proste omówienie przepływu pracy programowania Xamarin.iOS:
+- Wiele wystąpień programu Visual Studio 2017 mogą łączyć się z Mac jednocześnie.
 
-[![przepływ pracy programowanie dla systemu iOS](images/xma2.png)](images/xma2.png#lightbox)
-
-> [!IMPORTANT]
-> Visual Studio faktycznie uruchamia oddzielnych procesach MSBuild do tworzenia projektów. Ten proces tworzy nowe połączenie do komputera Mac, co oznacza, że są faktycznie dwóch połączeń SSH z systemu Windows do komputera Mac, w kompilacji programu Visual Studio. Kompilowanie z [wiersza polecenia](#commandline) tworzy tylko jednego procesu programu MSBuild. Dla uproszczenia ten diagram wszystkie połączenia są po prostu reprezentowane przez jedną strzałkę.
-
-## <a name="requirements"></a>Wymagania
-
-Xamarin.iOS dla programu Visual Studio umożliwia zrealizowanie niesamowite feat: umożliwia deweloperom tworzenie, kompilacji i debugowanie aplikacji systemu iOS na komputerze z systemem Windows przy użyciu programu Visual Studio IDE. Nie można wykonać tego samego — nie można utworzyć aplikacji systemu iOS bez kompilatora firmy Apple i nie można wdrożyć bez certyfikaty i narzędzia podpisywania kodu firmy Apple. To oznacza, że Twoje Xamarin.iOS dla instalacji programu Visual Studio wymaga połączenia na komputerach Mac OS X (czyli dalej *hosta* lub *kompilacji hosta*) do wykonywania tych zadań za Ciebie. Po skonfigurowaniu narzędzi dla platformy Xamarin spowoduje, że proces jako bezproblemowe, jak to możliwe.
-
-### <a name="system-requirements"></a>Wymagania systemowe
-
-Wymagania systemowe można znaleźć w [Xamarin.iOS instalowania w systemie Windows](~/ios/get-started/installation/windows/index.md#system-requirements) przewodnik
-
-
-#### <a name="compatibility"></a>Zgodność
-
-> [!IMPORTANT]
-> Komputer z systemem Windows muszą używać tej samej wersji platformy Xamarin.iOS jako Mac, do którego jest podłączony. Aby to zapewnić jest spełnionych:                                                    
->                                                                                                                 
-> - **Visual Studio 2015 lub starszym**: Upewnij się, że jesteś w tym samym [kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) co program Visual Studio dla komputerów Mac.
->                                                                                                                 
-> - **Visual Studio 2017, wersja wydana**: Upewnij się, że znajdują się na **stabilna** kanału programu Visual Studio dla komputerów Mac.
->                                                                                                                 
-> - **Visual Studio 2017, wersja zapoznawcza**: Upewnij się, że znajdują się na **alfa** kanału programu Visual Studio dla komputerów Mac. Program Visual Studio nie będzie sprawdzać, czy zestaw SDK platformy Xamarin.iOS i Xcode istnieje i wersje zgodne.
->   Który będzie sprawdzany przez agenta kompilacji, liczbę błędów kompilacji; i przez agenta projektanta dla systemu iOS, liczbę błędów projektanta.
-
-### <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
-
-#### <a name="mac-setup"></a>Instalator Mac
-
-Aby skonfigurować hosta Mac, należy włączyć komunikację między rozszerzenie Xamarin dla Visual Studio i z komputerów Mac. Aby to zrobić, należy umożliwić **logowania zdalnego** na komputerze Mac, wykonując następujące czynności:
-
-1. Otwórz *Spotlight* (**miejsca ⌘**) i wyszukaj *logowania zdalnego* , a następnie wybierz *udostępniania* wynik. Spowoduje to otwarcie *preferencjach systemowych* w *udostępniania* panelu:
-
-   [![Zwracanie przez wyszukiwanie Spotlight do logowania zdalnego](images/spotlight.png)](images/spotlight.png#lightbox)
-
-2. Znaczników *logowania zdalnego* opcji *usługi* liście z lewej strony, aby umożliwić Xamarin dla Visual Studio, aby połączyć się z adresem MAC:
-
-   [![Opcja logowania zdalnego na liście usług znaczników](images/sharing.png)](images/sharing.png#lightbox)
-
-3. Upewnij się, że *logowania zdalnego* jest ustawiona, aby umożliwić dostęp do *wszystkie* użytkowników lub że Mac nazwa użytkownika lub grupy znajduje się na liście dozwolonych użytkowników na liście po prawej stronie.
-
-Oprócz tego, jeśli masz zapory OS X, domyślnie ustawione blokowanie podpisanych aplikacji może być konieczne Zezwalaj `mono-sgen` do odbierania przychodzących połączeń. Okna dialogowego alertu pojawi się monit, jeśli jest to możliwe.
-
-Jeśli istnieje sesji bieżącej, Otwórz na komputerze Mac, teraz należy wykrywalny przez program Visual Studio jeśli znajduje się w tej samej sieci.
-
-Visual Studio uruchomi i Zatrzymaj agenta na komputerze Mac, więc nie ma nic, jako użytkownik, potrzebne do uruchomienia.
-
-### <a name="windows-setup"></a>Instalator systemu Windows
-
-Upewnij się, że [zainstalować](~/ios/get-started/installation/windows/index.md) Xamarin narzędzia na komputerze z systemem Windows.
-
-### <a name="connecting-to-the-mac-build-host"></a>Połączenie się z hostem kompilacji Mac
-
-Istnieją dwa sposoby do połączenia z hostem kompilacji Mac:
-
-Na pasku narzędzi z systemem iOS:
-
-[![Na pasku narzędzi z systemem iOS](images/image1.png)](images/image1.png#lightbox)
-
-Lub przechodząc do **Narzędzia > Opcje** w programie Visual Studio, wybierając **Xamarin > Ustawienia systemu iOS** i klikając **znaleźć Xamarin Mac Agent** przycisk:
-
-[![Znajdowanie Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
-
-Nawigacja w obu przypadkach prowadzi do **Mac Agent** okna dialogowego, zostały pokazane poniżej:
-
-[![Okno dialogowe Mac Agent](images/image3.png)](images/image3.png#lightbox)
-
-Spowoduje to wyświetlenie listy wszystkich maszyn, albo został wcześniej podłączany, które są przechowywane jako znanych maszyn lub komputerów, które są dostępne dla *logowania zdalnego*.
-
-Wybierz Mac, klikając dwukrotnie w celu nawiązania połączenia. Przy pierwszym połączeniu Mac, pojawi się monit o podanie poświadczeń użytkownika Mac zezwalały na połączenie zdalne:
-
-[![Wprowadź poświadczenia użytkownika Mac](images/image4.png)](images/image4.png#lightbox)
-
-Agent użyje tych poświadczeń, aby utworzyć nowe połączenie SSH komputerów Mac. Jeśli próba powiedzie się, zostanie utworzony klucz SSH, a musi być [zarejestrowany](#commandline) w `authorized_keys` pliku w tym komputerów Mac. Podczas kolejnych połączeń agent zostanie użyty plik nazwy użytkownika i klucz do nawiązania połączenia najbardziej ostatnio połączony host znane kompilacji.
+- Istnieje możliwość używania wiersza polecenia systemu Windows do tworzenia aplikacji systemu iOS.
 
 > [!NOTE]
-> Należy użyć _username_ i nie _Pełna nazwa_ podczas wprowadzania poświadczeń.  Można to sprawdzić za pomocą `whoami` polecenia w terminalu.  Na przykład w poniższym zrzucie ekranu, nazwa konta będzie **amyb** i nie **oparzenia Amy**:
+> Przed wykonaniem instrukcji zawartych w tym przewodniku, wykonaj następujące czynności: 
+> 
+> - Na komputerze z systemem Windows [zainstalować program Visual Studio 2017 r.](~/cross-platform/get-started/installation/windows.md)
+> - Na komputerze Mac [Zainstaluj program Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) i [programu Visual Studio dla komputerów Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 >
-> ![Znajdowanie nazwy użytkownika w terminalu aplikacji](images/image5.png)
+> Jeśli użytkownik nie chce zainstalować program Visual Studio dla komputerów Mac, Visual Studio 2017 może automatycznie skonfigurować hosta kompilacji Mac z Xamarin.iOS i Mono.
+> Aby uzyskać więcej informacji, zobacz [Mac automatycznego inicjowania obsługi administracyjnej](#automatic-mac-provisioning).
 
-Po pomyślnym nawiązaniu połączenia będą wyświetlane w oknie dialogowym Wybór hosta z **połączone** ikona obok niej, jak przedstawiono poniżej:
+## <a name="enable-remote-login-on-the-mac"></a>Włączanie logowania zdalnego dla komputerów Mac
 
-[![Okno dialogowe wybór hosta z połączonych ikona obok niej](images/image6.png)](images/image6.png#lightbox)
+Aby skonfigurować hosta kompilacji Mac, należy najpierw włączyć logowania zdalnego:
 
-Może istnieć tylko jeden Mac połączonych w dowolnym momencie.
+1. Dla komputerów Mac, otwórz preferencjach systemowych i przejdź do **udostępniania** okienka.
 
-Każdej maszynie, na liście, czy połączenia lub w inny sposób, będą wyświetlane menu kontekstowe na kliknij prawym przyciskiem myszy, umożliwiając **Connect**, **rozłączenia**, lub **zapomnij Mac** jako wymagane:
+2. Sprawdź **logowania zdalnego** w **usługi** listy.
 
-[![Połącz, odłącz lub zapomnij Mac to menu kontekstowe](images/image7.png)](images/image7.png#lightbox)
+    ![Włączanie logowania zdalnego](images/sharing.png "Włączanie logowania zdalnego")
 
-Jeśli użytkownik chce **zapomnij Mac to**, musisz ponownie wprowadzić swoje poświadczenia, aby się z nim połączyć ponownie.
+    Upewnij się, że jest skonfigurowana, aby zezwolić na dostęp **wszyscy użytkownicy**, lub że Mac nazwa użytkownika lub grupy znajduje się na liście dozwolone użytkowników.
 
-<a name="manual-add"/>
+3. Jeśli zostanie wyświetlony monit, należy skonfigurować zaporę macOS.
 
-### <a name="manually-adding-a-mac"></a>Ręczne dodanie Mac
+    Jeśli ustawisz macOS zapory do blokowania połączeń przychodzących, konieczne może być Zezwalaj `mono-sgen` do odbierania przychodzących połączeń. Monitowanie, jeśli jest to możliwe, zostanie wyświetlony alert.
 
-W pewnych okolicznościach możesz ręcznie dodać Mac, jeśli nie widać nazwy mDNS na liście z okna dialogowego wyboru hosta. Aby to zrobić, wykonaj następujące czynności:
+4. Jeśli jest on w tej samej sieci co maszyny z systemem Windows, Mac teraz powinno być wykrywalny przez Visual Studio 2017 r. Jeśli nadal nie wykrywalny Mac, spróbuj [ręczne dodanie Mac](#manually-add-a-mac) lub Przyjrzyjmy się [przewodnik rozwiązywania problemów](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md).
 
-1. Znajdź adres IP komputera Mac przy użyciu albo przeglądania **preferencjach systemowych > Udostępnianie > logowania zdalnego** na komputerze Mac:
+## <a name="connect-to-the-mac-from-visual-studio-2017"></a>Połącz do komputera Mac z programu Visual Studio 2017 r.
 
-   [![Adres Mac w preferencjach systemowych](images/image8.png)](images/image8.png#lightbox)
+Teraz tego zdalnego logowania jest włączona, Visual Studio 2017 połączyć się z komputerów Mac.
 
-   Lub, jeśli wolisz korzystać z wiersza polecenia można znaleźć adres IP, wprowadzając `ipconfig getifaddr en0` do terminali (należy pamiętać, że w zależności od typu połączenia zmiennej może być `en1`, `en2` itp.):
+1. W Visual Studio 2017 r, otwórz istniejący projekt dla systemu iOS lub Utwórz nową, wybierając **Plik > Nowy > Projekt** i wybierając szablon projektu systemu iOS.
 
-   [![Adres IP w terminalu aplikacji](images/image9.png)](images/image9.png#lightbox)
+2. Otwórz **pary Mac** okna dialogowego. 
 
-2. Zwracany do programu Visual Studio i w oknie dialogowym Wybór hosta, wybierz opcję **Mac. Dodaj...** :
+    - Użyj **pary Mac** przycisk narzędzi dla systemu iOS:
 
-   [![Okna dialogowego wyboru hosta](images/image10.png)](images/image10.png#lightbox)
+        ![Pasek narzędzi dla systemu iOS z pary podświetlony przycisk Mac](images/ios-toolbar.png "paska narzędzi dla systemu iOS z pary podświetlony przycisk Mac")
 
-3. Wprowadź adres IP należy Mac w oknie dialogowym Dodawanie Mac, a następnie kliknij przycisk **Dodaj**:
+    - Lub wybierz **Narzędzia > iOS > pary Mac**.
 
-   [![Wprowadź adres MAC w oknie dialogowym Dodawanie Mac](images/image11.png)](images/image11.png#lightbox)
+    - **Pary Mac** okna dialogowego zostanie wyświetlona lista wszystkich wcześniej połączona i aktualnie dostępnych hostów Mac w kompilacji:
 
-4. Na koniec wprowadź nazwę użytkownika (nie pełna nazwa), a odpowiednie hasło konta administratora Mac:
+        ![Para do okna dialogowego Mac](images/pairtomac.png "pary do okna dialogowego Mac")
 
-   [![Wprowadź nazwę użytkownika i hasło](images/image12.png)](images/image12.png#lightbox)
+3. Wybierz z listy Mac. Kliknij przycisk **Połącz**. 
 
-Po kliknięciu **logowania**, Visual Studio będzie zalogować się do komputera Mac przy użyciu protokołu SSH i doda to Mac jako znanych maszyny.
+4. Wprowadź nazwę użytkownika i hasło.
+    
+    - Po raz pierwszy nawiązywane żadnych szczególnych Mac, zostanie wyświetlony monit o wprowadzenie nazwy użytkownika i hasła dla tego komputera:
 
-<a name="commandline"/>
+        ![Wprowadzanie nazwy użytkownika i hasła dla komputerów Mac](images/auth.png "wprowadzania nazwy użytkownika i hasła dla komputerów Mac")
 
-### <a name="command-line-support"></a>Obsługę wiersza polecenia
+        > [!TIP]
+        > Podczas logowania, użyj Twojej nazwy użytkownika systemu zamiast pełnej nazwy.
 
-Agent obsługuje również tworzenie konfiguracji platformy Xamarin.iOS z wiersza polecenia.  Aby go użyć, należy skonfigurować następujące ustawienia wymagane dla programu MSBuild:
+    - Para Mac używa tych poświadczeń, aby utworzyć nowe połączenie SSH komputerów Mac. Jeśli próba powiedzie się, klucz zostanie dodany do **authorized_keys** plików na komputerach Mac. Kolejnych połączeń z tym samym adresem MAC zostanie logowania automatycznego.
 
-- `ServerAddress` — Adres IP serwera Mac.
+5. Para Mac automatycznie konfiguruje komputerów Mac.
 
-- `ServerUser` — Nazwa użytkownika (nie pełna nazwa) używanego do logowania do serwera Mac.
+    [Począwszy od programu Visual Studio 2017 wersji 15,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)i Visual Studio 2017 instaluje lub aktualizuje Mono Xamarin.iOS na komputerze Mac w podłączonych kompilacji hosta jako potrzebne (należy pamiętać, że Xcode musi nadal należy zainstalować ręcznie). Zobacz [Mac automatycznego inicjowania obsługi administracyjnej](#automatic-mac-provisioning) więcej szczegółów.
 
-- `ServerPassword` — Hasło używane do logowania do hosta Mac (opcjonalnie).
+6. Poszukaj ikona stanu połączenia.
+    
+    - Po Visual Studio 2017 jest podłączony do komputera Mac, że Mac elementu w **pary Mac** okno dialogowe wyświetla ikonę wskazującą, czy jest aktualnie połączony:
 
-`ServerPassword` Parametr nie jest wymagany.
+        ![A połączone Mac](images/connected.png "A połączone Mac")
 
-Zamiast tego po raz pierwszy przekazano hasła przy użyciu programu Visual Studio lub wiersza polecenia dla tego konkretnego konfiguracji systemu Windows, Mac i użytkownika pary kluczy zostanie wygenerowany i przechowywane na komputerze z systemem Windows do użycia w przyszłości. Będą znajdować się w **%localappdata%\Xamarin\MonoTouch\id_rsa**.  Jeśli nie są przekazywane `ServerPassword` parametru `id_rsa` keyfile będzie używany do uwierzytelniania.
+      Jednocześnie może istnieć tylko jeden Mac w podłączonych.
 
-Przykładowe polecenie, aby nawiązać połączenie przy użyciu Mac 10.211.55.2 **xamUser** konta z hasłem **mojehasło** przedstawiono poniżej:
+      > [!TIP]
+      > Prawym przyciskiem myszy dowolnego Mac w **pary Mac** listy powoduje wyświetlenie menu kontekstowego, która pozwala na **połączenia...** , **Zapomnij tego Mac**, lub **rozłączyć**:
+      >
+      > ![Para do menu kontekstowe Mac](images/contextmenu.png "pary Mac menu kontekstowe") 
+      >
+      > Jeśli wybierzesz **zapomnij Mac to**, poświadczenia dla wybranych komputerów Mac będzie zapomnienia hasła. Ponownie nawiązać połączenie z tym Mac, należy ponownie wprowadzić nazwę użytkownika i hasło.
+
+Jeśli zostały pomyślnie łączyć się z hostem kompilacji Mac, można przystąpić do tworzenia aplikacji platformy Xamarin.iOS w programie Visual Studio 2017 r. Spójrz na [wprowadzenie do platformy Xamarin.iOS dla programu Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md) przewodnik.
+
+Jeśli nie zostały jeszcze można skojarzyć Mac, spróbuj [ręczne dodanie Mac](#manually-add-a-mac) lub Przyjrzyjmy się [przewodnik rozwiązywania problemów](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md).
+
+## <a name="manually-add-a-mac"></a>Ręcznie Dodaj Mac
+
+Jeśli nie widzisz konkretnej Mac, na liście **pary Mac** okna dialogowego, dodaj ją ręcznie:
+
+1. Zlokalizuj komputera Mac, adres IP. 
+
+    - Otwórz **preferencjach systemowych > Udostępnianie > logowania zdalnego** na komputerze Mac:
+
+        [![Adres Mac w preferencjach systemowych > Udostępnianie](images/sharing-ipaddress.png "adres Mac w preferencjach systemowych > udostępniania")](images/sharing.png#lightbox)
+
+    - Można również użyć wiersza polecenia. W terminalu wydaj polecenie: 
+   
+        ```bash
+        $ ipconfig getifaddr en0
+        196.168.1.8
+        ```
+
+      W zależności od konfiguracji sieci, konieczne może być inny niż Użyj nazwy interfejsu `en0`. Na przykład: `en1`, `en2`itp.
+
+2. W w programie Visual Studio 2017 **pary Mac** okno dialogowe, wybierz opcję **dodać Mac...** :
+
+    [![Przycisk Dodaj Mac w parze do okna dialogowego Mac](images/addtomac.png "przycisku Dodaj Mac w parze do okna dialogowego Mac")](images/addtomac-large.png#lightbox)
+
+3. Wprowadź adres Mac, a następnie kliknij przycisk **Dodaj**:
+
+    ![Wprowadzenie adresu IP Mac](images/enteripaddress.png "wprowadzania adresu Mac")
+
+4. Wprowadź nazwę użytkownika i hasło dla komputerów Mac:
+
+    ![Wprowadź nazwę użytkownika i hasło](images/auth.png "wprowadzania nazwy użytkownika i hasła")
+
+   > [!TIP]
+   > Podczas logowania, użyj Twojej nazwy użytkownika systemu zamiast pełnej nazwy.
+
+5. Kliknij przycisk **logowania** nawiązać Visual Studio 2017 Mac za pomocą protokołu SSH i dodaj go do listy znanych maszyn.
+
+## <a name="automatic-mac-provisioning"></a>Automatyczne inicjowanie obsługi komputerów Mac
+
+Począwszy od [programu Visual Studio 2017 wersji 15,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), pary Mac automatycznie inicjuje Mac z oprogramowanie niezbędne do tworzenia aplikacji platformy Xamarin.iOS: Mono, Xamarin.iOS (oprogramowania framework, nie programu Visual Studio for Mac IDE ) oraz różne narzędzia związane z Xcode (ale nie Xcode, sam).
+
+> [!IMPORTANT]
+> - Para Mac nie może zainstalować Xcode; należy ręcznie zainstalować na hoście Mac kompilacji. Jest wymagane do tworzenia aplikacji platformy Xamarin.iOS.
+> - Automatyczne udostępnianie Mac wymaga logowania zdalnego jest włączone dla komputerów Mac, czy Mac musi być dostępne w sieci z komputerem z systemem Windows. Zobacz [Włączanie logowania zdalnego dla komputerów Mac](#enable-remote-login-on-the-mac) więcej szczegółów.
+
+Para Mac wykonuje instalacji/aktualizacje oprogramowania niezbędne w przypadku programu Visual Studio 2017 [połączenie z komputerem Mac](#connect-to-the-mac-from-visual-studio-2017).
+
+### <a name="mono"></a>Mono
+
+Para Mac sprawdzi, aby upewnić się, że zainstalowano Mono. Jeśli nie jest zainstalowany, pary Mac pobierze i zainstaluje najnowsza stabilna wersja Mono na komputerach Mac. 
+
+Postęp jest określane przez różnych monitów, jak to przedstawiono na poniższych zrzutach ekranu (kliknij, aby powiększyć):
+
+||Zainstaluj wyboru|Pobieranie|Instalowanie programu
+|---|---|---|---|
+|Mono|[![Brak Mono instalacji](images/mono-missing.png "Brak Mono instalacji")](images/mono-missing-large.png#lightbox)|[![Pobieranie Mono](images/mono-downloading.png "pobieranie Mono")](images/mono-downloading-large.png#lightbox)|[![Instalowanie Mono](images/mono-installing.png "instalowanie Mono")](images/mono-installing-large.png#lightbox)|
+
+### <a name="xamarinios"></a>Xamarin.iOS 
+
+Para Mac uaktualnia Xamarin.iOS dla komputerów Mac, aby dopasować wersja zainstalowana na komputerze z systemem Windows.
+
+> [!IMPORTANT]
+> Para Mac nie będzie starszą wersję platformy Xamarin.iOS na Mac z alfa/wersji beta do stabilnego. Jeśli masz program Visual Studio dla komputerów Mac, Ustaw użytkownika [kanału wersji](https://docs.microsoft.com/visualstudio/mac/update) w następujący sposób:
+> - Jeśli używasz programu Visual Studio 2017 wybierz **stabilna** kanału aktualizacji w programie Visual Studio dla komputerów Mac.
+> - Jeśli używasz programu Visual Studio 2017 podglądu, wybierz **alfa** kanału aktualizacji w programie Visual Studio dla komputerów Mac.
+
+Postęp jest określane przez różnych monitów, jak to przedstawiono na poniższych zrzutach ekranu (kliknij, aby powiększyć):
+
+||Zainstaluj wyboru|Pobieranie|Instalowanie programu
+|---|---|---|---|
+|Xamarin.iOS|[![Brak instalacji Xamarin.iOS](images/xamios-missing.png "instalacji brakuje platformy Xamarin.iOS")](images/xamios-missing-large.png#lightbox)|[![Pobieranie Xamarin.iOS](images/xamios-downloading.png "pobieranie platformy Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![Instalowanie platformy Xamarin.iOS](images/xamios-installing.png "instalowanie platformy Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+
+### <a name="xcode-tools-and-license"></a>Narzędzia Xcode i licencji
+
+Para Mac sprawdza również określić, czy zainstalowano Xcode i zaakceptowane jej licencji. Gdy pary Mac nie można zainstalować Xcode, jak pokazano na poniższych zrzutach ekranu (kliknij, aby powiększyć) Monituj o akceptacji licencji:
+
+||Zainstaluj wyboru|Akceptacja licencji|
+|---|---|---|
+|Xcode|[![Brak instalacji Xcode](images/xcode-missing.png "instalacji brak Xcode")](images/xcode-missing-large.png#lightbox)|[![Licencja Xcode](images/xcode-license.png "Xcode licencji")](images/xcode-license-large.png#lightbox)|
+
+Ponadto pary Mac będzie Zainstaluj lub zaktualizuj różnych pakietów rozproszonych w programie Xcode. Na przykład:
+
+- **MobileDeviceDevelopment.pkg**
+- **XcodeExtensionSupport.pkg**
+- **MobileDevice.pkg**
+- **XcodeSystemResources.pkg**
+
+Instalację tych pakietów odbywa się szybko i bez monitu.
+
+> [!NOTE]
+> Te narzędzia są różne od Xcode narzędzi wiersza polecenia, które od macOS 10.9 są [zainstalowane z Xcode](https://developer.apple.com/library/content/technotes/tn2339/_index.html).
+
+### <a name="troubleshooting-automatic-mac-provisioning"></a>Rozwiązywanie problemów z automatycznego inicjowania obsługi komputerów Mac
+
+Jeśli wystąpią problemy ze przy użyciu automatycznego inicjowania obsługi komputerów Mac, zapoznaj się w dziennikach programu Visual Studio IDE 2017 przechowywane w **%LOCALAPPDATA%\Xamarin\Logs\15.0**. Te dzienniki mogą zawierać komunikaty o błędach ułatwiających lepsze diagnozowania awarii lub uzyskać pomoc techniczną.
+
+## <a name="build-ios-apps-from-the-windows-command-line"></a>Tworzenie aplikacji systemu iOS z wiersza polecenia systemu Windows 
+
+Para Mac obsługuje tworzenie aplikacji platformy Xamarin.iOS z wiersza polecenia. Na przykład:
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
 ```
+Parametry przekazywane do `msbuild` w powyższym przykładzie są:
 
-### <a name="summary"></a>Podsumowanie
+- `ServerAddress` — Adres IP hosta Mac kompilacji.
+- `ServerUser` — Nazwa użytkownika używana podczas logowania do hosta kompilacji Mac.
+  Użyj nazwy użytkownika systemu nie swoje imię i nazwisko.
+- `ServerPassword` — Hasło do użycia podczas logowania się do hosta Mac kompilacji.
+ 
+> [!NOTE]
+> Visual Studio 2017 przechowuje `msbuild` w następującym katalogu: **\Microsoft Visual Studio\2017 C:\Program Files (x86)\<wersji > \MSBuild\15.0\Bin**
 
-Ten artykuł eksplorowanych połączenie między usługą Visual Studio i narzędzi kompilacji i projektanta dla systemu iOS dla komputerów Mac, co pozwala na tworzenie aplikacji platformy Xamarin.iOS przy użyciu programu Visual Studio.
+Para Mac loguje się do określonego hosta kompilacji Mac z programu Visual Studio 2017 lub wiersza polecenia, po raz pierwszy konfiguruje kluczy SSH. Z tych kluczy przyszłych logowania nie wymagają nazwy użytkownika i hasła. Nowo utworzony klucze są przechowywane w **%LOCALAPPDATA%\Xamarin\MonoTouch**.
 
-### <a name="related-links"></a>Linki pokrewne
+Jeśli `ServerPassword` parametr zostanie pominięty z wywołania kompilacji wiersza polecenia, pary Mac próbuje zalogować się do hosta kompilacji Mac przy użyciu zapisanych kluczy SSH.
 
-- [Instalacja](~/ios/get-started/installation/windows/index.md)
+## <a name="summary"></a>Podsumowanie
+
+W tym artykule opisano Visual Studio 2017 nawiązać połączenia z hostem kompilacji Mac włączenie programu Visual Studio 2017 deweloperom tworzenie aplikacji natywnej systemu iOS za pomocą platformy Xamarin.iOS przy użyciu pary Mac.
+
+## <a name="next-steps"></a>Następne kroki
+
 - [Rozwiązywanie problemów z połączeniem](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Łączenie Mac do środowiska Visual Studio z XMA (klip wideo)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Xamarin Mac wykładu Lightning Xamarin University agenta - kompilacji](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Wprowadzenie do rozwiązania Xamarin.iOS dla programu Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)

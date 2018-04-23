@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f30e49122c343a967a2348c03ce4f06d9452dc76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f5bd88da2d95f91add9e19c7a53d793256b49238
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="connection-troubleshooting"></a>Rozwiązywanie problemów z połączenia
 
@@ -114,36 +114,36 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
 
 <a name="knownissues" />
 
-## <a name="known-issues-and-limitations"></a>Znane problemy i ograniczenia
+### <a name="known-issues-and-limitations"></a>Znane problemy i ograniczenia
 
 > [!NOTE]
 > Ta sekcja dotyczy tylko, jeśli nawiązano już połączenie pomyślnie hosta kompilacji Mac w Mac nazwę użytkownika i hasło przy użyciu OpenSSH SSH klienta, zgodnie z opisem w kroku 8 i 9 powyżej.
 
-### <a name="invalid-credentials-please-try-again"></a>"Nieprawidłowych poświadczeń. Spróbuj ponownie."
+#### <a name="invalid-credentials-please-try-again"></a>"Nieprawidłowych poświadczeń. Spróbuj ponownie."
 
 Znane przyczyny:
 
 - **Ograniczenie** — ten błąd może wystąpić podczas próby logowania do hosta kompilacji przy użyciu konta _imię i nazwisko_ Jeśli nazwa zawiera znak akcentowane. Jest to ograniczenie z [biblioteki SSH.NET](https://sshnet.codeplex.com/) Xamarin używany dla połączenia SSH. **Obejście**: zobacz krok 5 powyżej.
 
-### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"Nie można uwierzytelnić z kluczy SSH. Spróbuj najpierw zaloguj się przy użyciu poświadczeń"
+#### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"Nie można uwierzytelnić z kluczy SSH. Spróbuj najpierw zaloguj się przy użyciu poświadczeń"
 
 Znane Przyczyna:
 
 - **Ograniczenia zabezpieczeń SSH** — ten komunikat najczęściej oznacza, że jeden z plików lub katalogów w pełni kwalifikowana ścieżka **$HOME/.ssh/authorized\_klucze** Mac ma uprawnienia do zapisu dla włączone_innych_ lub _grupy_ elementów członkowskich. **Poprawka wspólnej**: Uruchom `chmod og-w "$HOME"` w terminalu wiersza polecenia na komputerach Mac. Szczegółowe informacje o którym określonego pliku lub katalogu powoduje problem, uruchom `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` w terminalu, a następnie otwórz **sshd.log** plik z pulpitu, a następnie wyszukaj "Uwierzytelnianie zostało odrzucone: zły własność lub tryby".
 
-### <a name="trying-to-connect-never-completes"></a>"Próby nawiązania połączenia..." nigdy nie wykonuje
+#### <a name="trying-to-connect-never-completes"></a>"Próby nawiązania połączenia..." nigdy nie wykonuje
 
 - **Błąd [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  — ten problem może wystąpić na program Xamarin 4.1 w przypadku **powłoka logowania** w **zaawansowane opcje** menu kontekstowe dla użytkowników komputerów Mac w  **Preferencje systemu &gt; użytkowników &amp; grup** ma ustawioną wartość innych niż **/bin/bash**. (Począwszy od platformy Xamarin 4.2, w tym scenariuszu zamiast prowadzi do komunikat o błędzie "Nie może nawiązać połączenia".) **Obejście**: zmiana **powłoka logowania** oryginalnego domyślną z **/bin/bash**.
 
 <a name="tryagain" />
 
-### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nie może połączyć się z MacBuildHost.local. Spróbuj ponownie."
+#### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nie może połączyć się z MacBuildHost.local. Spróbuj ponownie."
 
 Zgłoszony przyczyny:
 
 - **Błąd** — w przypadku kilku użytkowników miały ten komunikat o błędzie, wraz z bardziej szczegółowe informacje o błędzie w plikach dziennika "Wystąpił nieoczekiwany błąd podczas konfigurowania SSH dla użytkownika... Upłynął limit czasu operacji sesji"podczas próby logowania do hosta kompilacji przy użyciu usługi Active Directory lub inne konto użytkownika domeny usługi katalogu. **Obejście problemu:** zalogować się do hosta kompilacji zamiast konta użytkownika lokalnego.
 
-- **Błąd** — w przypadku niektórych użytkowników umieścić ten błąd podczas próby nawiązania połączenia z hostem kompilacji przez dwukrotne kliknięcie nazwy komputerów Mac w oknie dialogowym połączenia. **Możliwym obejściem**: [ręcznie dodać Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add) przy użyciu adresu IP.
+- **Błąd** — w przypadku niektórych użytkowników umieścić ten błąd podczas próby nawiązania połączenia z hostem kompilacji przez dwukrotne kliknięcie nazwy komputerów Mac w oknie dialogowym połączenia. **Możliwym obejściem**: [ręcznie dodać Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac) przy użyciu adresu IP.
 
 - **Błąd [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)**  — w przypadku niektórych użytkowników zostało uruchomione przez ten błąd, korzystając z połączenia sieci bezprzewodowej między hostem kompilacji Mac i systemu Windows. **Możliwym obejściem**: Przenieś oba komputery do połączeń sieci przewodowej.
 
@@ -181,7 +181,7 @@ Zgłoszony przyczyny:
 
 <a name="clearing" />
 
-### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Wyczyszczenie brokera, IDB, kompilacji i projektanta agentów dla komputerów Mac
+#### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Wyczyszczenie brokera, IDB, kompilacji i projektanta agentów dla komputerów Mac
 
 Jeśli pliki dziennika wskazuje na problem podczas "Instalowanie", "Przekazywanie" lub "Początkowy" kroki dla każdego z agentów Mac, możesz spróbować usunąć **XMA** folder pamięci podręcznej, aby wymusić Visual Studio, aby ponownie przekazać je.
 
@@ -201,31 +201,31 @@ Jeśli pliki dziennika wskazuje na problem podczas "Instalowanie", "Przekazywani
     del %localappdata%\Temp\Xamarin\XMA
     ```
     
-## <a name="warning-messages"></a>Komunikaty ostrzegawcze
+### <a name="warning-messages"></a>Komunikaty ostrzegawcze
 
 W tej sekcji omówiono kilka wiadomości, które mogą być wyświetlane w oknie danych wyjściowych i dzienniki, które zwykle można zignorować.
 
-### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"Wystąpiła niezgodność między... zainstalowanych Xamarin.iOS i lokalnej platformy Xamarin.iOS"
+#### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"Wystąpiła niezgodność między... zainstalowanych Xamarin.iOS i lokalnej platformy Xamarin.iOS"
 
 Tak długo, jak została potwierdzona, zarówno Mac i systemu Windows zostały zaktualizowane do tej samej kanałów dystrybucji Xamarin, to ostrzeżenie jest do pominięcia.
 
-### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"Nie można wykonać"/usr/bin/mono ls": ExitStatus = 1"
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"Nie można wykonać"/usr/bin/mono ls": ExitStatus = 1"
 
 To jest komunikat do pominięcia pod warunkiem, systemem Mac OS X 10.11 (El Capitan) lub nowszej. Ten komunikat nie jest problemu, OS X 10.11, ponieważ sprawdza również Xamarin **/usr/local/bin/mono**, jest poprawna oczekiwana lokalizacja dla `mono` na OS X 10.11.
 
-### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Usługa Bonjour 'MacBuildHost' nie odpowiedział swój adres IP."
+#### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Usługa Bonjour 'MacBuildHost' nie odpowiedział swój adres IP."
 
-Ten komunikat jest do pominięcia, chyba że można zauważyć, że okno dialogowe połączenia nie wyświetla adres IP hosta kompilacji Mac. Jeśli adres IP _jest_ Brak, w tym oknie dialogowym, nadal możesz [ręcznie dodać Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add).
+Ten komunikat jest do pominięcia, chyba że można zauważyć, że okno dialogowe połączenia nie wyświetla adres IP hosta kompilacji Mac. Jeśli adres IP _jest_ Brak, w tym oknie dialogowym, nadal możesz [ręcznie dodać Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac).
 
-### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Nieprawidłowy użytkownik z 10.1.8.95" i "wejściowych\_userauth\_żądania: Nieprawidłowy użytkownik autoryzacji [wstępnej]"
+#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Nieprawidłowy użytkownik z 10.1.8.95" i "wejściowych\_userauth\_żądania: Nieprawidłowy użytkownik autoryzacji [wstępnej]"
 
 Można zauważyć to wiadomości w **sshd.log**. Komunikaty te są częścią procesu normalne połączenia. Ich występowania, ponieważ nazwa użytkownika używa Xamarin **a** tymczasowo podczas pobierania _odcisk palca SSH_.
 
-## <a name="output-window-and-log-files"></a>Okno danych wyjściowych i pliki dziennika
+### <a name="output-window-and-log-files"></a>Okno danych wyjściowych i pliki dziennika
 
 Jeśli program Visual Studio trafienia wystąpił błąd podczas nawiązywania połączenia z hostem kompilacji, są 2 lokalizacje, aby sprawdzić, aby przejrzeć dodatkowe komunikaty: w oknie danych wyjściowych i pliki dziennika.
 
-### <a name="output-window"></a>Okno wyniku
+#### <a name="output-window"></a>Okno wyniku
 
 W oknie danych wyjściowych jest najlepszym miejscem, aby rozpocząć. Wyświetla komunikaty dotyczące połączenie główne kroki i błędów. Aby wyświetlać komunikaty Xamarin w oknie danych wyjściowych:
 
@@ -235,7 +235,7 @@ W oknie danych wyjściowych jest najlepszym miejscem, aby rozpocząć. Wyświetl
 
 [![](troubleshooting-images/troubleshooting-image11.png "Wybierz Xamarin na karcie dane wyjściowe")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
-### <a name="log-files"></a>Pliki dziennika
+#### <a name="log-files"></a>Pliki dziennika
 
 Jeśli w oknie danych wyjściowych nie zawiera wystarczających informacji do zdiagnozowania problemu, pliki dziennika są miejsca dalej do wyszukiwania. Pliki dziennika zawierają dodatkowych diagnostyczne komunikatów, które nie są wyświetlane w oknie danych wyjściowych. Aby wyświetlić pliki dziennika:
 
@@ -262,7 +262,7 @@ Jeśli w oknie danych wyjściowych nie zawiera wystarczających informacji do zd
 
 <a name="verboselogs" />
 
-### <a name="verbose-log-files"></a>Plików pełnego dziennika
+#### <a name="verbose-log-files"></a>Plików pełnego dziennika
 
 Jeśli pliki dziennika normalne nie zapewniają wystarczających informacji do zdiagnozowania problemu, co technika ostatniej próby jest Włącz pełne rejestrowanie. Pełne dzienniki również są preferowane w raportach usterek.
 
@@ -287,6 +287,12 @@ Jeśli pliki dziennika normalne nie zapewniają wystarczających informacji do z
    ```
 
 Jeśli te pliki dziennika pełne nie udostępniają wystarczającej liczby wskazówek, aby rozwiązać ten problem, bezpośrednio, skontaktuj się z [nowy raport o usterkach](https://bugzilla.xamarin.com/newbug) i Dołącz plik zip z kroku 5 i pliku log w kroku 6.
+
+## <a name="troubleshooting-automatic-mac-provisioning"></a>Rozwiązywanie problemów z automatycznego inicjowania obsługi komputerów Mac
+
+### <a name="ide-log-files"></a>Pliki dziennika IDE
+
+Jeśli wystąpią wszelkie problemy przy użyciu [automatyczne udostępnianie Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning), zapoznaj się w dziennikach programu Visual Studio IDE 2017 przechowywane w **%LOCALAPPDATA%\Xamarin\Logs\15.0**.
 
 ## <a name="troubleshooting-build-and-deployment-errors"></a>Rozwiązywanie problemów z kompilacji i błędy wdrożenia
 
@@ -369,5 +375,5 @@ Jeśli rozwiązać problem kompilacji i chce mieć pewność, że zachowanie nie
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Nawiązywanie połączenia z komputerem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Łączenie Mac do środowiska Visual Studio z XMA (klip wideo)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Para Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Xamarin Mac wykładu Lightning Xamarin University agenta - kompilacji](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e4828f1ae5448a94fa1f52147d1aef3787e95521
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS Szybki Start
 
@@ -52,7 +52,7 @@ Przed rozpoczęciem pracy należy pobrać [ustawić ikony aplikacji platformy Xa
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac Walkthrough
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac wskazówki
 
 Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który tłumaczy numer telefonu alfanumeryczne pod numer telefonu liczbowych.
 
@@ -288,7 +288,7 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
 **Uwaga**: w tym przewodniku zastosowano Visual Studio Enterprise 2017 na maszynie wirtualnej systemu Windows 10. Konfiguracji może różnić się od tego, tak długo, jak spełnia wymagania powyżej, ale należy pamiętać, że niektóre zrzuty ekranu mogą różnić się do konfiguracji.
 
 > [!NOTE]
-> Przed kontynuowaniem w tym przewodniku, należy nawiązano już połączenie do komputera Mac w programie Visual Studio. Jest to spowodowane Xamarin.iOS zależy od firmy Apple narzędzi, aby skompilować i uruchomić projektanta i aplikacje dla systemu iOS. Aby pobrać, postępuj zgodnie z instrukcjami [nawiązywania Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
+> Przed kontynuowaniem w tym przewodniku, należy nawiązano już połączenie do komputera Mac w programie Visual Studio. Jest to spowodowane Xamarin.iOS zależy od firmy Apple narzędzi, aby skompilować i uruchomić projektanta i aplikacje dla systemu iOS. Aby pobrać, postępuj zgodnie z instrukcjami [pary Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
 
 1. Uruchom program Visual Studio z **Start** menu:
 

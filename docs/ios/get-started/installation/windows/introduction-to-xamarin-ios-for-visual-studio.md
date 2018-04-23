@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Wprowadzenie do platformy Xamarin.iOS dla programu Visual Studio
 
@@ -36,39 +36,25 @@ Istnieje kilka wymagań, które należy przestrzegać podczas opracowywania dla 
 
 Brak dostępnych kilka opcji konfiguracji, można zdecydować, który najlepiej pasuje do potrzeb. Są one wymienione poniżej:
 
--  Użyj Mac jako główny programowania maszyny i uruchomić maszynę wirtualną systemu Windows z zainstalowanego programu Visual Studio. Firma Microsoft zaleca używanie oprogramowania maszyny Wirtualnej, takich jak [równoleżników](http://www.parallels.com/products/desktop/) lub [VMWare](http://www.vmware.com/products/fusion/) .
--  Mac należy użyć tylko jako hosta usługi kompilacji. W tym scenariuszu byłoby simply podłączone do tej samej sieci co maszyna systemu Windows z [niezbędne](~/cross-platform/get-started/installation/windows.md#installation) narzędzia są zainstalowane.
+-  Użyj Mac jako komputerze deweloperskim głównego i uruchomić maszynę wirtualną systemu Windows z zainstalowanego programu Visual Studio. Firma Microsoft zaleca używanie oprogramowania maszyny Wirtualnej, takich jak [równoleżników](http://www.parallels.com/products/desktop/) lub [VMWare](http://www.vmware.com/products/fusion/) .
+-  Mac należy użyć tylko jako host kompilacji. W tym scenariuszu byłyby one połączone z tą samą siecią, jako maszynę z systemem Windows z [niezbędne](~/cross-platform/get-started/installation/windows.md#installation) narzędzia są zainstalowane.
 
 
 W obu przypadkach należy wykonaj następujące kroki:
 
-- [Zainstaluj narzędzia platformy Xamarin.iOS na hoście z systemem Mac](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Konfigurowanie komputerów Mac](~/ios/get-started/installation/windows/index.md#configuring)
+- [Zainstaluj program Visual Studio dla komputerów Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 - [Zainstaluj narzędzia platformy Xamarin w systemie Windows](~/cross-platform/get-started/installation/windows.md)
-
-Aby opracować za pomocą platformy Xamarin w programie Visual Studio, należy używać **co najmniej** Visual Studio 2015 Professional lub nowszego. Zostanie Xamarin **działa** z Express wersje programu Visual Studio, ponieważ nie obsługują dodatków.
 
 ## <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
 
-Możesz połączyć się z komputera Mac kompilacji hosta, albo za pośrednictwem ikony na pasku narzędzi programu Visual Studio (dostarczanie aplikacji systemu iOS jest otwarty):
+Do połączenia z programu Visual Studio z hostem kompilacji Mac, postępuj zgodnie z instrukcjami [pary Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Połącz ikonę Mac")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
-
-Lub przechodząc do **Narzędzia > Opcje** w Visual Studio i wybierając **Xamarin > Ustawienia systemu iOS**:
-
- [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "Opcja systemu iOS")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
-
-Hosta kompilacji Mac można zmienić, klikając **znaleźć Xamarin Mac Agent** przycisku. Następujący ekran jest wyświetlany można zaktualizować hosta kompilacji Mac:
-
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Xamarin Mac Agent w oknie dialogowym")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Omówienie narzędzi Visual Studio
 
 Xamarin iOS dla programu Visual Studio dodaje elementy na standardowym pasku narzędzi i nowy pasek narzędzi dla systemu iOS.
 Poniżej opisano funkcje te pasków narzędzi.
-
-
 
 ### <a name="standard-toolbar"></a>Standardowym pasku narzędzi
 
@@ -174,7 +160,7 @@ Aby dodać obiekty do widoku, należy użyć **przybornika** okienko, aby przeci
 
 ### <a name="device-logging"></a>Rejestrowanie urządzeń
 
-W programie Visual Studio 2015 i nowszych systemów Android i iOS są unified tablety dziennika
+W programie Visual Studio 2017 r, Android i iOS są unified tablety dziennika.
 
 Nowe okno narzędzi urządzenia dziennika dla programu Visual Studio umożliwia pokazanie dzienniki dla urządzeń z systemami Android i iOS. Mogą być wyświetlane, wykonując jedną z następujących poleceń:
 
