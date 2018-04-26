@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a25aa1043dcaf52406059d3fa184da36dc4875e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C
 
@@ -735,4 +735,4 @@ W tym artykule udał przez proces tworzenia i używania powiązania projektu pla
 - [Szczegóły powiązania](~/cross-platform/macios/binding/overview.md)
 - [Powiązanie typy Podręcznik](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin dla deweloperów języka Objective C](~/ios/get-started/objective-c-developers/index.md)
-- [Struktura — zalecenia dotyczące projektowania](http://msdn.microsoft.com/en-us/library/ms229042.aspx)
+- [Struktura — zalecenia dotyczące projektowania](http://msdn.microsoft.com/library/ms229042.aspx)

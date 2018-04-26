@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: feef0a4083d2455cc189ddab6ed22762c044d848
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 799ee198f776b963bb8779d71bacc322001e2882
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Wprowadzenie do bibliotek klas przenośnych
 
@@ -55,7 +55,7 @@ Obejmuje to profilów, które są kombinacje:
 -  Windows Phone 8
 -  Aplikacji platformy uniwersalnej systemu Windows
 
-Więcej o możliwościach różne profile na [witryny sieci Web firmy Microsoft](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx) i zobacz innego członka społeczności [podsumowanie profilu PCL](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) w tym obsługiwane framework informacji oraz inne wybrane uwagi.
+Więcej o możliwościach różne profile na [witryny sieci Web firmy Microsoft](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) i zobacz innego członka społeczności [podsumowanie profilu PCL](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) w tym obsługiwane framework informacji oraz inne wybrane uwagi.
 
 
 
@@ -92,7 +92,7 @@ Ten diagram przedstawia architekturę i platform aplikacji korzystanie z przeno�
 
 
 
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac Walkthrough
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac wskazówki
 
 
 W tej sekcji przedstawiono sposób tworzenia i używania biblioteki klas przenośnych przy użyciu programu Visual Studio dla komputerów Mac. Zobacz na przykład PCL sekcji zakończenia wdrożenia.
@@ -429,4 +429,4 @@ W tym artykule ma krótko omówione korzyści i problemów przenośnej bibliotek
 - [Przenośne Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [Projekty udostępnione](~/cross-platform/app-fundamentals/shared-projects.md)
 - [Opcje udostępniania kodu](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Programowanie wieloplatformowych aplikacji za pomocą programu .NET Framework (Microsoft)](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [Programowanie wieloplatformowych aplikacji za pomocą programu .NET Framework (Microsoft)](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Powiązane usługi platformie Xamarin.Android
 
@@ -54,8 +54,8 @@ Aby utworzyć usługę za pomocą platformy Xamarin.Android, jest niezbędne do 
 
 * `OnCreate` &ndash; Ta metoda jest wywoływana przez system Android, jak jest uruchamianiu usługi. Służy do inicjowania zmiennych ani obiektów, które są wymagane przez usługę przez jego okres istnienia. Ta metoda jest opcjonalne.
 * `OnBind` &ndash; Ta metoda musi być implementowana przez wszystkie usługi powiązane. Jest wywoływana, gdy pierwszy klient próbuje połączyć się z usługą. Zwraca wystąpienie `IBinder` , dzięki czemu klient może współpracować z usługą. Tak długo, jak usługa jest uruchomiona, `IBinder` obiektu będzie służyć do spełnienia żądania przyszłych klientów do powiązania z usługą.
-* `OnUnbind` &ndash; Ta metoda jest wywoływana, gdy wszyscy klienci powiązania ma niezwiązane. Zwracając `true` z tej metody później wywoła usługę `OnRebind` z zamiarem przekazany do `OnUnbind` podczas wiązania nowych klientów do niego. Można to zrobić po usługi nadal uruchomiona po przeprowadzeniu niepowiązanych. Może się to zdarzyć, jeśli ostatnio niezwiązanego usługi zostały również uruchomiono usługi, i `StopService` lub `StopSelf` nie została wywołana. W takiej sytuacji `OnRebind` umożliwia opcje, które mają zostać pobrane. Zwraca domyślny `false` , które nie działają. Opcjonalny.
-* `OnDestroy` &ndash; Ta metoda jest wywoływana, gdy Android jest niszczenie usługi. Niezbędne oczyszczania, takie jak zwolnienie zasobów, należy wykonać w ramach tej metody. Opcjonalny.
+* `OnUnbind` &ndash; Ta metoda jest wywoływana, gdy wszyscy klienci powiązania ma niezwiązane. Zwracając `true` z tej metody później wywoła usługę `OnRebind` z zamiarem przekazany do `OnUnbind` podczas wiązania nowych klientów do niego. Można to zrobić po usługi nadal uruchomiona po przeprowadzeniu niepowiązanych. Może się to zdarzyć, jeśli ostatnio niezwiązanego usługi zostały również uruchomiono usługi, i `StopService` lub `StopSelf` nie została wywołana. W takiej sytuacji `OnRebind` umożliwia opcje, które mają zostać pobrane. Zwraca domyślny `false` , które nie działają. Opcjonalna.
+* `OnDestroy` &ndash; Ta metoda jest wywoływana, gdy Android jest niszczenie usługi. Niezbędne oczyszczania, takie jak zwolnienie zasobów, należy wykonać w ramach tej metody. Opcjonalna.
 
 Zdarzenia cyklu życia klucza powiązanej usługi są wyświetlane na tym diagramie:
 
@@ -263,7 +263,7 @@ Niektóre purists Obiektowo może odrzucić poprzedniego wdrożenia `TimestampBi
 Mówiąc ściślej, nie jest niezbędna dla klienta wiedzieć o `TimestampService` i udostępnianie konkretnych klas klientom może wykonywać aplikacji bardziej łamliwa i trudniej Obsługa okresu jego istnienia. Alternatywne rozwiązaniem jest użycie interfejsu, który opisuje `GetFormattedTimestamp()` — metoda i wywołania usługi za pośrednictwem serwera proxy `Binder` (lub możliwe klasy połączenia usługi):  
 
 ```csharp
-public class TimestampBinder : Binder, IGetTimesamp
+public class TimestampBinder : Binder, IGetTimestamp
 {
     TimestampService service;
     public TimestampBinder(TimestampService service)

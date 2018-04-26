@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D matematyczne z CocosSharp
 
@@ -264,7 +264,7 @@ Ten kod powoduje następujące działania:
 
 `System.Math.Atan2` może służyć do przekonwertowania na kąt przesunięcia. Nazwa funkcji `Atan2` pochodzi z tangens trygonometryczne funkcji. Ta funkcja pozwala odróżnić sufiksem "2" zgodne ze standardem `Atan` funkcji, która jest ściśle zgodna z tangens matematyczne zachowaniem. Arcus tangens to funkcja, która zwraca wartość z zakresu od -90 i + 90 stopni (lub odpowiednik w radianach). Wiele aplikacji, w tym gry komputera często wymagają pełnego 360 stopni wartości, więc `Math` klasa zawiera `Atan2` by spełnić te wymagania.
 
-Zwróć uwagę, że powyższy kod przekazuje parametr Y najpierw, następnie parametru X podczas wywoływania metody `Atan2` metody. Jest to wstecz z zwykle X, Y kolejność współrzędne. Aby uzyskać więcej informacji [zobacz dokumentacja Atan2](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
+Zwróć uwagę, że powyższy kod przekazuje parametr Y najpierw, następnie parametru X podczas wywoływania metody `Atan2` metody. Jest to wstecz z zwykle X, Y kolejność współrzędne. Aby uzyskać więcej informacji [zobacz dokumentacja Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
 Warto również zauważyć, że zwracany wartość z `Atan2` jest podany w radianach, czyli innej jednostki używanych do pomiarów kątów. Ten przewodnik nie obejmuje szczegóły radiany, ale należy pamiętać, że wszystkie funkcje trygonometryczne w `System.Math` przestrzeni nazw użyj radiany, więc wartości muszą zostać skonwertowane do stopni przed ich użyciem w obiektach CocosSharp. Można znaleźć więcej informacji na temat radianach [w radianach strony Wikipedia](http://en.wikipedia.org/wiki/Radian).
 

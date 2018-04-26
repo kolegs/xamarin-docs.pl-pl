@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Część 5 - praktyczne kodu strategii udostępniania
 
@@ -200,7 +200,7 @@ Izolowany magazyn jest wspólnego interfejsu API dla zapisywanie i ładowanie pl
 
 Jest to domyślny mechanizm przy dostępie do plików w Windows Phone (platformy Silverlight), które zostało zaimplementowane w Xamarin.iOS i Xamarin.Android wspólnej kodu dostępu do pliku do zapisania. `System.IO.IsolatedStorage` Klasy można odwoływać się na wszystkich platformach trzy w [projektu udostępnionego](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Zapoznaj się [izolowanego magazynu — omówienie dla Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx) Aby uzyskać więcej informacji.
+Zapoznaj się [izolowanego magazynu — omówienie dla Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) Aby uzyskać więcej informacji.
 
 Interfejsy API izolowanego magazynu nie są dostępne w [przenośnej biblioteki klas](~/cross-platform/app-fundamentals/pcl.md). Jest jednym zamiast PCL [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
@@ -377,7 +377,7 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 Składnia dla operacji kierowania do wątku interfejsu użytkownika dla kodu, które nie korzystają Biblioteka zadań równoległych dotyczy wszystkich platform:
 
--  **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+-  **iOS** — `owner.BeginInvokeOnMainThread(new NSAction(action))`
 -  **Android** — `owner.RunOnUiThread(action)`
 -  **Platformy Xamarin.Forms** — `Device.BeginInvokeOnMainThread(action)`
 -  **Windows** — `Deployment.Current.Dispatcher.BeginInvoke(action)`

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ios-architecture"></a>Architektura systemu iOS
 
@@ -23,14 +23,14 @@ Na poniższym diagramie przedstawiono ogólne omówienie tej architektury:
 
 ## <a name="native-and-managed-code-an-explanation"></a>Natywnego i kodu zarządzanego: wyjaśnienie
 
-Wdrażając aplikacje dla platformy Xamarin warunki *natywnych i zarządzanych* kodu są często używane. [Kod zarządzany](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) jest kod, który ma ona zarządzana przez [środowisko uruchomieniowe języka wspólnego .NET Framework](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx), lub w przypadku jego Xamarin: Mono środowiska uruchomieniowego. Jest to określane mianem język pośredni.
+Wdrażając aplikacje dla platformy Xamarin warunki *natywnych i zarządzanych* kodu są często używane. [Kod zarządzany](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) jest kod, który ma ona zarządzana przez [środowisko uruchomieniowe języka wspólnego .NET Framework](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), lub w przypadku jego Xamarin: Mono środowiska uruchomieniowego. Jest to określane mianem język pośredni.
 
 Kod natywny jest kod, który będzie uruchamiany natywnie na danej platformie (na przykład Objective-C lub nawet drzewa obiektów aplikacji skompilowany kod, w układzie ARM). Ten przewodnik opisuje sposób drzewa obiektów aplikacji kompiluje kodu zarządzanego do kodu natywnego i wyjaśniono sposób działania aplikacji platformy Xamarin.iOS pełnego wykorzystania firmy Apple iOS interfejsów API przy użyciu powiązań, a jednocześnie ma również dostęp do. BCL w sieci i zaawansowane języka, takich jak C#.
 
 
-## <a name="aot"></a>AOT
+## <a name="aot"></a>DRZEWA OBIEKTÓW APLIKACJI
 
-Podczas kompilowania aplikacji platformy Xamarin kompilatora Mono C# (lub F #) zostanie uruchomiony i kompilowania kodu C# i F # do firmy Microsoft pośredniego Language (MSIL). Jeśli używasz platformy Xamarin.Android, aplikacja Xamarin.Mac lub nawet aplikacji platformy Xamarin.iOS w symulatorze, [.NET środowiska uruchomieniowego języka wspólnego (CLR)](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx) kompiluje MSIL przy użyciu tylko w kompilatorze czas (JIT). W czasie wykonywania, który to jest kompilowany do kodu natywnego, które można uruchamiać na architektury aplikacji.
+Podczas kompilowania aplikacji platformy Xamarin kompilatora Mono C# (lub F #) zostanie uruchomiony i kompilowania kodu C# i F # do firmy Microsoft pośredniego Language (MSIL). Jeśli używasz platformy Xamarin.Android, aplikacja Xamarin.Mac lub nawet aplikacji platformy Xamarin.iOS w symulatorze, [.NET środowiska uruchomieniowego języka wspólnego (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) kompiluje MSIL przy użyciu tylko w kompilatorze czas (JIT). W czasie wykonywania, który to jest kompilowany do kodu natywnego, które można uruchamiać na architektury aplikacji.
 
 Istnieje jednak ograniczenia zabezpieczeń w systemach iOS, ustaw przez firmę Apple, która nie zezwala na wykonywanie kodu dynamicznie generowanym na urządzeniu.
 Aby upewnić się, że firma Microsoft stosować się do tych protokołów bezpieczeństwa, Xamarin.iOS użyje kompilatora wyprzedzeniem o czasie (drzewa obiektów aplikacji) do kompilowania kodu zarządzanego. Tworzy natywnego systemu iOS binarny, opcjonalnie zoptymalizowane z LLVM dla urządzeń, które można wdrożyć na procesor oparty na architekturze ARM firmy Apple. Poniżej przedstawiono diagram nierównej jak to dopasowuje razem:
@@ -69,7 +69,7 @@ Pseudo-poniższy kod przedstawia przykład jak to zrobić:
  }
 ```
 
-**Objective-C:**
+**Cel — C:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }
@@ -177,6 +177,6 @@ W tym przewodniku przeglądał kompilacji drzewa obiektów aplikacji w aplikacji
 
 - [Ograniczenia](~/ios/internals/limitations.md)
 - [Tworzenie powiązań języka Objective-C](~/cross-platform/macios/binding/overview.md)
-- [Objective-C Selectors](~/ios/internals/objective-c-selectors.md)
+- [Selektory Objective-C](~/ios/internals/objective-c-selectors.md)
 - [Typ rejestratora](~/ios/internals/registrar.md)
 - [Konsolidator](~/ios/deploy-test/linker.md)

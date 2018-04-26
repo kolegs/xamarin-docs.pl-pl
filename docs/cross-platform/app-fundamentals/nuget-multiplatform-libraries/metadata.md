@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: fa526d33758afb73965e315c8e471d960d84e781
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d30f564d54b96d358d37059f9dababaf8f3314e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="editing-nuget-metadata"></a>Edytowanie metadanych NuGet
 
@@ -19,7 +19,7 @@ _Opcje projektu umożliwia edytowanie NuGet metadanych dla biblioteki dla wielu 
 
 Biblioteka typów projektów (na przykład PCL lub .NET Standard lub nowy typ projektu NuGet) ma **pakietu NuGet** sekcji **opcje projektu** okna.
 
-**Metadanych** sekcji konfiguruje wartości użyte w [ **.nuspec** pliku manifestu pakietu NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
+**Metadanych** sekcji konfiguruje wartości użyte w [ **.nuspec** pliku manifestu pakietu NuGet](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
 
 ## <a name="required-information"></a>Wymagane informacje
 
@@ -27,15 +27,15 @@ Biblioteka typów projektów (na przykład PCL lub .NET Standard lub nowy typ pr
 
 [![](metadata-images/metadata-general-sml.png "Okno wymaganych metadanych pakietu NuGet")](metadata-images/metadata-general.png#lightbox)
 
-- **Identyfikator** — identyfikator pakietu, która powinna być unikatowa w obrębie Nuget.org (lub wszędzie tam, gdzie dystrybucji pakietu). Po tym [wskazówki](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) i używać tylko znaków, które są dozwolone w adresie URL (bez spacji i znaków specjalnych uniknąć).
-- **Wersja** — wybierz numer wersji zgodnie z [reguły kontroli wersji NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
+- **Identyfikator** — identyfikator pakietu, która powinna być unikatowa w obrębie Nuget.org (lub wszędzie tam, gdzie dystrybucji pakietu). Po tym [wskazówki](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) i używać tylko znaków, które są dozwolone w adresie URL (bez spacji i znaków specjalnych uniknąć).
+- **Wersja** — wybierz numer wersji zgodnie z [reguły kontroli wersji NuGet](https://docs.microsoft.com/nuget/create-packages/dependency-versions).
 - **Autorzy** — rozdzielana przecinkami lista nazw.
 - **Opis elementu** — Przegląd funkcji pakietu, która jest wyświetlana, gdy użytkownicy wybierają pakietu.
 
 > [!NOTE]
 > Pamiętaj, aby zwiększyć numer wersji, podczas tworzenia nowych wersji w celu dystrybucji do NuGet lub innych użytkowników.
 
-Aby uzyskać więcej informacji, zobacz [odwołania wymagane elementy](https://docs.microsoft.com/en-us/nuget/schema/nuspec#required-metadata-elements) uzyskać więcej informacji, a także jak te szczegółowe instrukcje na [wybranie identyfikator unikatowy pakiet i ustawianie numeru wersji](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) i [ Ustawienie typu pakietu](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#setting-a-package-type).
+Aby uzyskać więcej informacji, zobacz [odwołania wymagane elementy](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements) uzyskać więcej informacji, a także jak te szczegółowe instrukcje na [wybranie identyfikator unikatowy pakiet i ustawianie numeru wersji](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) i [ Ustawienie typu pakietu](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type).
 
 > [!IMPORTANT]
 > Należy wprowadzić wszystkie pola na tej karcie; w przeciwnym razie zostanie wyświetlony komunikat o błędzie: _"projektu nie ma metadanych NuGet dlatego pakietu NuGet nie zostanie utworzona. Metadane pakietów NuGet można określić w sekcji Opcje projektu w metadanych"_
@@ -46,7 +46,7 @@ Aby uzyskać więcej informacji, zobacz [odwołania wymagane elementy](https://d
 
 [![](metadata-images/metadata-detail-sml.png "Okno opcjonalne metadane pakietów NuGet")](metadata-images/metadata-detail.png#lightbox)
 
-Zapoznaj się [opcjonalne informacje dodatkowe elementy](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) Aby uzyskać więcej informacji o polach wymaganych i opcjonalnych.
+Zapoznaj się [opcjonalne informacje dodatkowe elementy](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements) Aby uzyskać więcej informacji o polach wymaganych i opcjonalnych.
 
 > [!NOTE]
 > Jeśli pakiet NuGet jest dystrybuowany na [NuGet.org](https://www.nuget.org) zaleca się Podaj jak najwięcej informacji.
@@ -54,4 +54,4 @@ Zapoznaj się [opcjonalne informacje dodatkowe elementy](https://docs.microsoft.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [odwołanie .nuspec](https://docs.microsoft.com/en-us/nuget/schema/nuspec#general-form-and-schema)
+- [odwołanie .nuspec](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>Praca w systemie plików
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-Zapoznaj się z dokumentacją MSDN dla [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml.aspx) przestrzeni nazw, aby uzyskać więcej informacji na temat [serializacji](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx). Należy także przejrzeć [dokumentacji platformy Xamarin.iOS](~/ios/deploy-test/linker.md) na konsolidator — zwykle należy dodać `[Preserve]` atrybutu klasy mają do serializacji.
+Zapoznaj się z dokumentacją MSDN dla [System.Xml](http://msdn.microsoft.com/library/system.xml.aspx) przestrzeni nazw, aby uzyskać więcej informacji na temat [serializacji](http://msdn.microsoft.com/library/system.xml.serialization.aspx). Należy także przejrzeć [dokumentacji platformy Xamarin.iOS](~/ios/deploy-test/linker.md) na konsolidator — zwykle należy dodać `[Preserve]` atrybutu klasy mają do serializacji.
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-Aby uzyskać więcej informacji na temat nazw System.IO zobacz [dokumentacji MSDN](http://msdn.microsoft.com/en-us/library/system.io.aspx).
+Aby uzyskać więcej informacji na temat nazw System.IO zobacz [dokumentacji MSDN](http://msdn.microsoft.com/library/system.io.aspx).
 
 
 ### <a name="serializing-json"></a>Serializacja Json
@@ -239,7 +239,7 @@ Poniżej wymieniono tych katalogów oraz ich celów:
 
 |Katalog|Opis|
 |---|---|
-|[ApplicationName].app/|**W systemie iOS 7 i wcześniejszych** to `ApplicationBundle` katalogu, w którym przechowywana jest aplikacja pliku wykonywalnego. Struktury katalogów, które są tworzone w aplikacji istnieje w tym katalogu (na przykład obrazów i innych typów plików, które zostały oznaczone jako zasoby w Visual Studio dla projektu Mac).<br /><br />Jeśli potrzebujesz dostępu do zawartości plików wewnątrz Twojego pakietu aplikacji, ścieżka do tego katalogu jest dostępna za pośrednictwem `NSBundle.MainBundle.BundlePath` właściwości.|
+|[ApplicationName] .app /|**W systemie iOS 7 i wcześniejszych** to `ApplicationBundle` katalogu, w którym przechowywana jest aplikacja pliku wykonywalnego. Struktury katalogów, które są tworzone w aplikacji istnieje w tym katalogu (na przykład obrazów i innych typów plików, które zostały oznaczone jako zasoby w Visual Studio dla projektu Mac).<br /><br />Jeśli potrzebujesz dostępu do zawartości plików wewnątrz Twojego pakietu aplikacji, ścieżka do tego katalogu jest dostępna za pośrednictwem `NSBundle.MainBundle.BundlePath` właściwości.|
 |Dokumenty /|Użyj tego katalogu do przechowywania dokumentów użytkownika i pliki danych aplikacji.<br /><br />Zawartość tego katalogu mogą dostępne użytkownika za pośrednictwem udostępniania (mimo że to jest domyślnie wyłączona) plików programu iTunes. Dodaj `UIFileSharingEnabled` logiczna klucz do pliku Info.plist, aby umożliwić użytkownikom dostęp do tych plików.<br /><br />Nawet jeśli aplikacja nie natychmiast włączone udostępnianie plików, należy unikać umieszczania plików, które mają być ukryte przed użytkownicy w tym katalogu (takich jak pliki bazy danych, chyba że chcesz udostępniać je). Tak długo, jak poufne pliki pozostają ukryte, te pliki zostanie nie widoczne (i potencjalnie przeniesiony, zmodyfikowany lub usunięty przez iTunes) po włączeniu udostępniania plików w przyszłych wersjach.<br /><br /> Można użyć `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` metody można uzyskać ścieżki do katalogu dokumentów aplikacji.<br /><br />Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.|
 |Biblioteka /|Katalog biblioteki jest dobrym miejscem do przechowywania plików, które nie są tworzone bezpośrednio przez użytkownika, takie jak bazy danych lub inne pliki wygenerowane w aplikacji. Zawartość tego katalogu nigdy nie są widoczne dla użytkownika za pomocą programu iTunes.<br /><br />Można utworzyć własny podkatalogów w bibliotece; istnieją już niektóre systemowy katalogów w tym miejscu należy pamiętać o tym preferencje i pamięci podręczne.<br /><br />Zawartość tego katalogu (z wyjątkiem podkatalogu pamięci podręcznych) kopie zapasowe są wykonywane iTunes. Katalogi niestandardowe, które należy utworzyć w bibliotece będą kopii zapasowej.|
 |Preferencje dotyczące/biblioteki /|Pliki preferencji specyficzne dla aplikacji są przechowywane w tym katalogu. Nie bezpośrednio tworzenia tych plików. Zamiast tego należy użyć `NSUserDefaults` klasy.<br /><br />Zawartość tego katalogu kopie zapasowe są wykonywane iTunes.|

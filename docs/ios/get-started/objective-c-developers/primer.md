@@ -6,11 +6,11 @@ ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c4c8e7246b4414fb4153f0dd9eb812ddff1e7b07
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Elementarz C# dla programistów języka Objective C
 
@@ -20,7 +20,7 @@ iOS i OS X aplikacji utworzonych w języku Objective C mogą korzystać z platfo
 
 Aby móc korzystać z platformy Xamarin przy zachowaniu istniejących zasobów języka Objective-C, pierwsza może być narażony na C# technologię z Xamarin znany jako powiązania, które powierzchni Objective C dla kodu zarządzanego, World C#. Ponadto w razie potrzeby kod można przenieść wiersz po wierszu dla C# oraz. Niezależnie od tego podejścia, czy można go powiązanie lub przenoszenie, pewna znajomość języka Objective C i C# jest efektywnie wykorzystać istniejący kod języka Objective-C z platformy Xamarin.iOS.
 
-## <a name="objective-c-interop"></a>Objective-C Interop
+## <a name="objective-c-interop"></a>Współdziałanie języka Objective C
 
 Obecnie nie istnieje obsługiwana mechanizm do tworzenia biblioteki w języku C# przy użyciu platformy Xamarin.iOS, który można wywołać z Objective-C. Główną przyczyną tego jest Mono środowiska uruchomieniowego jest również wymagany dodatkowo do powiązania. Nadal można jednak utworzyć większość logiki w języku Objective-C, łącznie z interfejsów użytkownika. Aby to zrobić, zawijać kod języka Objective-C w bibliotece, a następnie utwórz powiązanie do niego. Xamarin.iOS jest potrzebne do ładowania początkowego aplikacji (co oznacza, musi utworzyć `Main` punktu wejścia). Po wykonaniu tej innych logiki można w języku Objective-C, ujawniony dla C# za pomocą powiązania (lub przy użyciu elementu P/Invoke). W ten sposób można zachować konkretnej logiki platformy w języku Objective C i opracowanie części o niesprecyzowanym platformy w języku C#.
 
@@ -141,7 +141,7 @@ Używa języka Objective-C *bloków* utworzyć zamknięcia, gdzie można utworzy
 };
 ```
 
-Aby uzyskać więcej informacji dotyczących wyrażeń lambda, zobacz firmy Microsoft [C# przewodnik programowania w języku](http://msdn.microsoft.com/en-us/library/vstudio/bb397687.aspx).
+Aby uzyskać więcej informacji dotyczących wyrażeń lambda, zobacz firmy Microsoft [C# przewodnik programowania w języku](http://msdn.microsoft.com/library/vstudio/bb397687.aspx).
 
 ## <a name="summary"></a>Podsumowanie
 

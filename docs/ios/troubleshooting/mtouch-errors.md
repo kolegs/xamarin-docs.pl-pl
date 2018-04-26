@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinios-errors"></a>Błędy platformy Xamarin.iOS
 
@@ -135,7 +135,7 @@ Sprawdź, czy zainstalowana wersja programu Xcode obsługuje wybranych architekt
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Invalid ABI: *. Są obsługiwane ABIs: i386, x86_64, armv7, armv7 llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 i arm64 + llvm.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Nieprawidłowy ABI: *. Są obsługiwane ABIs: i386, x86_64, armv7, armv7 llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 i arm64 + llvm.
 
 Do mtouch przekazano nieprawidłowy ABI. Określ prawidłowy ABI.
 
@@ -631,7 +631,7 @@ Ponieważ `my/path.o` nie jest prawidłową nazwą pliku z powodu znakiem separa
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Zestaw "{0}" został załadowany z inną ścieżką niż podana ścieżka (podana ścieżka: {1}, rzeczywistej ścieżce: {2}).
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Zestaw '{0}' został załadowany z inną ścieżką niż podana ścieżka (podana ścieżka: {1}, rzeczywistej ścieżce: {2}).
 
 To ostrzeżenie wskazujący załadowany z innej lokalizacji niż żądany zestaw przywoływany przez aplikację.
 
@@ -1653,11 +1653,11 @@ W komunikacie o błędzie nosi nazwę zestawu przyczyną problemu. Aby rozwiąza
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nie można połączyć zestawu "{0}", ponieważ jest on trybu mieszanego.
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nie można połączyć z zestawu '{0}' ponieważ jest on trybu mieszanego.
 
 Zestawy mieszane nie mogą być przetwarzane przez konsolidator.
 
-Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej informacji dotyczących trybu mieszanego zestawów.
+Zobacz https://msdn.microsoft.com/library/x0w2664k.aspx uzyskać więcej informacji dotyczących trybu mieszanego zestawów.
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: Komunikaty o błędach drzewa obiektów aplikacji
 
@@ -2060,7 +2060,7 @@ Sprawdź, czy `Register` atrybutu zarządzanej klasy wymienionych w komunikacie 
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Rejestratora znaleziono nieobsługiwane struktury "\*": wszystkie pola w strukturze musi być również struktur (pola "\*" z typem "{2}" nie jest strukturą).
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Rejestratora znaleziono nieobsługiwane struktury "\*": wszystkie pola w strukturze musi być również struktur (pola "\*"z typem"{2}" nie jest strukturą).
 
 Rejestratora znaleziono struktury z polami nieobsługiwany.
 
@@ -2953,7 +2953,7 @@ Wskazuje to zazwyczaj na usterkę w Xamarin.iOS; Zgłoś usterkę w [ http://bug
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Nieprawidłowy DelegateProxyAttribute dla wartości zwracanej przez metodę *.*: DelegateType firmy ({2}) pola "Handler" ma wartość null. Zgłoś usterkę w http://bugzilla.xamarin.com.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Nieprawidłowy DelegateProxyAttribute dla wartości zwracanej przez metodę *.*: DelegateType ({2}) pola "Handler" ma wartość null. Zgłoś usterkę w http://bugzilla.xamarin.com.
 
 Atrybut DelegateProxy metodą jest nieprawidłowy.
 
@@ -2961,7 +2961,7 @@ Wskazuje to zazwyczaj na usterkę w Xamarin.iOS; Zgłoś usterkę w [ http://bug
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Nieprawidłowy DelegateProxyAttribute dla wartości zwracanej przez metodę *.*: DelegateType firmy ({2}) pola "Handler" nie jest obiektem delegowanym, jest *. Zgłoś usterkę w http://bugzilla.xamarin.com.
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Nieprawidłowy DelegateProxyAttribute dla wartości zwracanej przez metodę *.*: DelegateType ({2}) pola "Handler" nie jest obiektem delegowanym, jest *. Zgłoś usterkę w http://bugzilla.xamarin.com.
 
 Atrybut DelegateProxy metodą jest nieprawidłowy.
 

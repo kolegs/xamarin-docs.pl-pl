@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="api-design"></a>Projekt interfejsu API
 
@@ -693,7 +693,7 @@ Xamarin.iOS ma moduł zbierający elementy bezużyteczne, który zajmie się zwo
 
 Udostępnianie `IDisposable` interfejsu to wygodny sposób udzielania pomocy deweloperów podczas zwalniania obiektów, które mogą Hermetyzowanie dużych bloków pamięci (na przykład `UIImage` może wyglądać podobnie nieszkodliwie wskaźnika, ale może wskazywać na obraz 2 megabajtów ) i inne ważne i ograniczone zasoby (na przykład wideo buforu dekodowania).
 
-NSObject implementuje interfejs IDisposable, a także [wzorzec .NET Dispose](http://msdn.microsoft.com/en-us/library/fs2xkftw.aspx). Dzięki temu deweloperzy tego podklasy NSObject zastąpienie zachowania Dispose i wersji własnych zasobów na żądanie. Rozważmy na przykład tego kontrolera widoku, który utrzymuje wokół grupy obrazów:
+NSObject implementuje interfejs IDisposable, a także [wzorzec .NET Dispose](http://msdn.microsoft.com/library/fs2xkftw.aspx). Dzięki temu deweloperzy tego podklasy NSObject zastąpienie zachowania Dispose i wersji własnych zasobów na żądanie. Rozważmy na przykład tego kontrolera widoku, który utrzymuje wokół grupy obrazów:
 
 ```csharp
 class MenuViewController : UIViewController {

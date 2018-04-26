@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="app-search-enhancements"></a>Ulepszenia wyszukiwania aplikacji
 
@@ -107,7 +107,7 @@ Aby włączyć tę funkcję, wykonaj następujące czynności:
 1. Tworzenie rozszerzenia komunikatów aplikacji.
 2. Dodaj `com.apple.developer.associated-domains` do uprawnień dla aplikacji i zawiera listę domen sieci web, które obsługuje obrazy rozszerzenia komunikatów w aplikacji do udostępniania. Dla każdej domeny, określ `spotlight-image-search` usługi.
 3. Dodaj `apple-app-site-association` plików do witryny sieci Web, który jest hostem obrazów. Ten plik zawiera słownik na potrzeby `spotlight-image-search` usługi i zawiera identyfikator aplikacji, które jest prefiksem Identyfikatora zespołu lub identyfikator aplikacji następuje identyfikator pakietu. Plik może zawierać maksymalnie 500 ścieżek i wzorce, które będą indeksowane według Spotlight i uwzględniane podczas wyszukiwania popularnych obrazu. Aby uzyskać więcej informacji, zobacz firmy Apple [tworzenie i przekazywanie pliku skojarzenia](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4) dokumentacji.
-4. Zezwalaj na Applebot do przeszukiwania witryn sieci Web. Zobacz firmy Apple [o Applebot](https://support.apple.com/en-us/HT204683) dokumentacji.
+4. Zezwalaj na Applebot do przeszukiwania witryn sieci Web. Zobacz firmy Apple [o Applebot](https://support.apple.com/HT204683) dokumentacji.
 
 Zobacz nasze [integracji aplikacji komunikat](~/ios/platform/message-app-integration/index.md) dokumentację, aby uzyskać więcej szczegółowych informacji.
 

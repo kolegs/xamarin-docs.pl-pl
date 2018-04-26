@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 638e16a47d30e1d4d61fe9e7d19a0245261e5d7f
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="async-support-overview"></a>Omówienie obsługi Async
 
@@ -23,7 +23,7 @@ Obsługa asynchronicznego dla platformy Xamarin jest oparty na podstawie Mono 3.
 
 Ten dokument wprowadza nowe async i await słowa kluczowe, a następnie przeszukiwań za pośrednictwem przykłady proste wdrożenie metod asynchronicznych w Xamarin.iOS i platformy Xamarin.Android.
 
-Bardziej szczegółowe omówienie nowych funkcji asynchronicznych języka C# 5 (w tym wiele przykłady i scenariusze użycia różnych) można znaleźć w dokumentacji MSDN [programowanie asynchroniczne z Async i Await](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx).
+Bardziej szczegółowe omówienie nowych funkcji asynchronicznych języka C# 5 (w tym wiele przykłady i scenariusze użycia różnych) można znaleźć w dokumentacji MSDN [programowanie asynchroniczne z Async i Await](http://msdn.microsoft.com/library/vstudio/hh191443.aspx).
 
 Przykładowa aplikacja wysyła żądanie proste asynchroniczne sieci web (bez blokowania wątku głównego), a następnie aktualizuje interfejsu użytkownika przy użyciu pobranego html i liczba znaków.
 
@@ -69,7 +69,7 @@ Przy użyciu await nie blokuje wątków obiektu wywołującego — zamiast zwró
 
 Po zakończeniu zadania, metoda wznawia wykonywanie w tym samym punkcie w kodzie. Dotyczy to również, wracając do zakresu try blok try-catch-finally (jeśli istnieje). await nie można użyć w instrukcji catch lub bloku finally.
 
-Przeczytaj więcej na temat [await w witrynie MSDN](http://msdn.microsoft.com/en-us/library/vstudio/hh156528.aspx).
+Przeczytaj więcej na temat [await w witrynie MSDN](http://msdn.microsoft.com/library/vstudio/hh156528.aspx).
 
 ## <a name="exception-handling"></a>Obsługa wyjątków
 
@@ -85,7 +85,7 @@ Metody asynchroniczne, które trwać bardzo długo powinien obsługiwać anulowa
 
 Następnie zadanie anulowany automatycznie i potwierdza anulowania.
 
-Aby uzyskać więcej informacji na temat anulowania, zobacz [jak anulować zadanie asynchroniczne](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx) w witrynie MSDN.
+Aby uzyskać więcej informacji na temat anulowania, zobacz [jak anulować zadanie asynchroniczne](http://msdn.microsoft.com/library/vstudio/jj155761.aspx) w witrynie MSDN.
 
 ## <a name="example"></a>Przykład
 
@@ -202,9 +202,9 @@ Tego dokumentu została podana omówienie nowych słów kluczowych języka i prz
 - [HttpClient (iOS) (przykład)](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) (przykład)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
 - [Webinar: C# asynchronicznych w systemach iOS i Android (klip wideo)](http://xamarin.wistia.com/medias/k27mc627xz)
-- [Programowanie asynchroniczne z Async i Await (MSDN)](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx)
-- [Szczegółowe Dostrajanie aplikacji Async (MSDN)](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx)
+- [Programowanie asynchroniczne z Async i Await (MSDN)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx)
+- [Szczegółowe Dostrajanie aplikacji Async (MSDN)](http://msdn.microsoft.com/library/vstudio/jj155761.aspx)
 - [Operator await i interfejsu użytkownika i zakleszczenie! Niestety Moje! (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
 - [Przetwarzanie zadań w chwili zakończenia (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
-- [Wzorzec asynchroniczny oparty na zadaniach (TAP)](http://msdn.microsoft.com/en-us/library/hh873175.aspx)
+- [Wzorzec asynchroniczny oparty na zadaniach (TAP)](http://msdn.microsoft.com/library/hh873175.aspx)
 - [Asynchrony w języku C# 5 (blog Lippert marek) — o wprowadzeniu słowa kluczowe](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>Lokalizacja
 
@@ -110,7 +110,7 @@ Jeśli jest on wprowadzania danych przez użytkownika aplikacji, analizy przy u�
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Zobacz [analizowanie ciągów liczbowych](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx) i [ciągów analizowania daty i godziny](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx) MSDN artykuły, aby uzyskać dodatkowe informacje.
+Zobacz [analizowanie ciągów liczbowych](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) i [ciągów analizowania daty i godziny](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN artykuły, aby uzyskać dodatkowe informacje.
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ Zarówno dla systemu iOS i Android obsługują układów od prawej do lewej i re
 
 W różnych językach inaczej, zdefiniuj kolejność ich małych liter, nawet wtedy, gdy korzystają z tego samego zestawu znaków.
 
-Zobacz [szczegółowe porównanie ciągów](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) w [najlepsze rozwiązania dotyczące przy użyciu ciągów w programie .NET Framework](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx) na przykład, gdy język (CultureInfo) dotyczy kolejności sortowania.
+Zobacz [szczegółowe porównanie ciągów](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) w [najlepsze rozwiązania dotyczące przy użyciu ciągów w programie .NET Framework](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) na przykład, gdy język (CultureInfo) dotyczy kolejności sortowania.
 
 Jest mało prawdopodobne, możliwości wbudowaną bazą danych na platformach mobilnych będzie obsługiwać sortowania specyficzny dla języka kolejności, może być wymagane do zaimplementowania dodatkowy kod w logice biznesowej.
 
@@ -312,4 +312,4 @@ Kontynuuj, odczytywanie szczegółowe informacje techniczne dla platformy, któr
 
 - [Omówienie lokalizacja firmy Apple](https://developer.apple.com/internationalization/)
 - [Lista kontrolna lokalizacji dla systemu android](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [Najlepsze rozwiązania dotyczące tworzenia aplikacji gotowych (MSDN)](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [Najlepsze rozwiązania dotyczące tworzenia aplikacji gotowych (MSDN)](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

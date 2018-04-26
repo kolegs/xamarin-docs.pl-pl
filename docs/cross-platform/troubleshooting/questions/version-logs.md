@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a669daf5361e35305182922cdcb7c6a1fb92db47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdbe480c45e9c0117f1437b1ee632f6ea8f142e0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Gdzie można znaleźć Moje informacje o wersji i dzienniki?
 
@@ -103,7 +103,7 @@ Są to dzienniki z `XamarinInstaller.exe` Instalatora.
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-Odwołanie: [opcji wiersza polecenia](http://msdn.microsoft.com/en-us/library/aa367988.aspx)
+Odwołanie: [opcji wiersza polecenia](http://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio uruchamianie pełnych dzienników
 
@@ -111,13 +111,13 @@ Odwołanie: [opcji wiersza polecenia](http://msdn.microsoft.com/en-us/library/aa
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-Odwołanie:  [ /log (devenv.exe)](http://msdn.microsoft.com/en-us/library/ms241272.aspx)
+Odwołanie:  [ /log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Dzienniki Mac
 
 Możesz wybrać **Przejdź > Przejdź do folderu** menu elementu wyszukiwania, a następnie skopiuj i Wklej żadnego z tych ścieżek w oknie dialogowym.
 
-#### <a name="a-idmac-logs-visual-studio-namemac-logs-visual-studio-visual-studio-for-mac"></a><a id="mac-logs-visual-studio" name="mac-logs-visual-studio" />Visual Studio for Mac
+#### <a name="a-idmac-logs-visual-studio-namemac-logs-visual-studio-visual-studio-for-mac"></a><a id="mac-logs-visual-studio" name="mac-logs-visual-studio" />Visual Studio dla komputerów Mac
 
 `~/Library/Logs/VisualStudio/7.0` (ta liczba ulec zmianie w zależności od używanej wersji)
 

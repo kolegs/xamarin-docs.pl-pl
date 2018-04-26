@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8848dd20683163cd42215fe496dd7ff6a9e9f0c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="debugging"></a>Debugowanie
 
@@ -164,7 +164,7 @@ Są to:
 - **Step Into (F10)** — powoduje również uruchomienie następnego wiersza kodu. Następnego wiersza po wywołaniu funkcji Step Into przestanie w pierwszym wierszu funkcji, co pozwala na kontynuowanie wiersz po wierszu debugowanie funkcji. Jeśli następnego wiersza nie jest funkcją, działają taka sama jak Step Over.
 - **Step Out (Shift + F11)** — to nastąpi powrót do wiersza której wywołano bieżącej funkcji.
 
-Aby uzyskać więcej informacji, zobacz dokumentacją głębokość na debugowanie, zobacz [Przejdź kodu za pomocą programu Visual Studio Debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/navigating-through-code-with-the-debugger).
+Aby uzyskać więcej informacji, zobacz dokumentacją głębokość na debugowanie, zobacz [Przejdź kodu za pomocą programu Visual Studio Debugger](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
 
 -----
 

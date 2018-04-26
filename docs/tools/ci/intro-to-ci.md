@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
 
@@ -36,7 +36,7 @@ Na poniższym diagramie przedstawiono ten proces:
 
 Aplikacje mobilne wprowadzenie wyjątkowe wyzwanie dla ciągłej integracji. Aplikacje mogą wymagać czujników takich jak GPS lub aparatu fotograficznego, które są dostępne tylko na fizycznych urządzeniach. Ponadto symulatorów lub emulatory są zbliżenia sprzętu i może użyć w celu zamaskowania lub przesłaniać problemów. Dzięki temu jest niezbędne do testowania aplikacji mobilnej na rzeczywiste sprzęt, aby mieć pewność, że to naprawdę klientowi.
 
-[Test Centrum aplikacji](https://docs.microsoft.com/en-us/appcenter/test-cloud) rozwiązano ten problem określonego przez testowanie aplikacji bezpośrednio na setki urządzeń fizycznych. Deweloperzy zapisu akceptacji zautomatyzowanych testów, umożliwiających wydajne testowania interfejsu użytkownika. Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na poniższym diagramie:
+[Test Centrum aplikacji](https://docs.microsoft.com/appcenter/test-cloud) rozwiązano ten problem określonego przez testowanie aplikacji bezpośrednio na setki urządzeń fizycznych. Deweloperzy zapisu akceptacji zautomatyzowanych testów, umożliwiających wydajne testowania interfejsu użytkownika. Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na poniższym diagramie:
 
 [![](intro-to-ci-images/intro02-small.png "Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na tym diagramie")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -48,21 +48,21 @@ Brak ekosystem szeroką gamę narzędzi handlowych i open source do obsługi ele
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Team Foundation Server i Visual Studio Team Services
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) i [Team Foundation Server](http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx) (TFS) są narzędzia współpracy firmy Microsoft dla ciągłej integracji tworzenie usług, śledzenia zadań, planowania elastycznego i raportowania narzędzia i wersji formant. Z kontroli wersji programu VSTS TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w usłudze GitHub.
+[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) i [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) są narzędzia współpracy firmy Microsoft dla ciągłej integracji tworzenie usług, śledzenia zadań, planowania elastycznego i raportowania narzędzia i wersji formant. Z kontroli wersji programu VSTS TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w usłudze GitHub.
 
  - Visual Studio Team Services udostępnia usługi za pośrednictwem chmury. Jego zalet podstawowego jest nie musi podawać dedykowanego sprzętu i infrastruktury i można uzyskać z dowolnego miejsca za pośrednictwem przeglądarki sieci web oraz narzędzia do programowania popularnych takiego jak Visual Studio, dzięki czemu atrakcyjne dla zespołów, które są od siebie lokalizacjach geograficznych rozproszone. Jest bezpłatna dla zespołów deweloperów pięciu lub mniej, po których dodatkowe licencje można zakupić do uwzględnienia rosnącym zespołu.
  - TFS jest przeznaczona dla serwerów systemu Windows w lokalnych i dostępne za pośrednictwem sieci lokalnej lub połączenie sieci VPN do sieci. Jego głównej korzyści jest w pełni kontrolować konfiguracji serwerów kompilacji i można zainstalować niezależnie od dodatkowego oprogramowania lub usług są wymagane. TFS ma bezpłatna wersja Express klasy podstawowej dla małych zespołów.
 
 Zarówno TFS i programu VSTS są ściśle powiązane z programem Visual Studio i umożliwiają deweloperom wykonywać wiele kontroli wersji i zadań elementu konfiguracji z poziomu komfortu pojedynczego IDE. Dostępna jest również wtyczki programu Team Explorer Everywhere dla programu Eclipse (patrz poniżej). Visual Studio for Mac nie oferuje obsługę TFS lub VSTS.
 
-System kompilacji programu Visual Studio Team usługi ma bezpośrednią obsługę projektów Xamarin, w których tworzenie definicji kompilacji dla każdej platformy, które chcesz docelowego (Android, iOS i Windows). Odpowiednią licencję Xamarin jest wymagany dla każdej definicji kompilacji. Istnieje również możliwość nawiązania połączenia lokalnego, serwer do Visual Studio Team Services, w tym celu kompilacji TFS obsługą Xamarin. W przypadku tej konfiguracji kompilacje, które są umieszczane w kolejce programu VSTS zostanie delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zapoznaj się [Wdróż i skonfiguruj serwer kompilacji](https://msdn.microsoft.com/en-us/library/ms181712.aspx). Alternatywnie można użyć innego narzędzia kompilacji, takie jak Wpięć lub Miasto zespołu.
+System kompilacji programu Visual Studio Team usługi ma bezpośrednią obsługę projektów Xamarin, w których tworzenie definicji kompilacji dla każdej platformy, które chcesz docelowego (Android, iOS i Windows). Odpowiednią licencję Xamarin jest wymagany dla każdej definicji kompilacji. Istnieje również możliwość nawiązania połączenia lokalnego, serwer do Visual Studio Team Services, w tym celu kompilacji TFS obsługą Xamarin. W przypadku tej konfiguracji kompilacje, które są umieszczane w kolejce programu VSTS zostanie delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zapoznaj się [Wdróż i skonfiguruj serwer kompilacji](https://msdn.microsoft.com/library/ms181712.aspx). Alternatywnie można użyć innego narzędzia kompilacji, takie jak Wpięć lub Miasto zespołu.
 
-Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM) programu Visual Studio, Visual Studio Team Services i Team Foundation Server, zobacz [zarządzania cyklem życia aplikacji przy użyciu aplikacji Xamarin](https://msdn.microsoft.com/en-us/library/mt162217(v=vs.140).aspx) w witrynie MSDN.
+Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM) programu Visual Studio, Visual Studio Team Services i Team Foundation Server, zobacz [zarządzania cyklem życia aplikacji przy użyciu aplikacji Xamarin](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) w witrynie MSDN.
 
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/en-us/library/gg413285.aspx) oferuje zespoły rozwoju poza Visual Studio Team Foundation Server i Visual Studio Team Services. Umożliwia deweloperom łączyć się z projektami zespołowymi lokalnie lub w chmurze z Eclipse lub wiersza polecenia obsługujący wiele platform klient OS X i Linux. Programu Team Explorer Everywhere zapewnia pełny dostęp do systemu kontroli wersji (w tym Git) elementów roboczych i kompilacji możliwości dla platform z systemem innym niż Windows.
+[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx) oferuje zespoły rozwoju poza Visual Studio Team Foundation Server i Visual Studio Team Services. Umożliwia deweloperom łączyć się z projektami zespołowymi lokalnie lub w chmurze z Eclipse lub wiersza polecenia obsługujący wiele platform klient OS X i Linux. Programu Team Explorer Everywhere zapewnia pełny dostęp do systemu kontroli wersji (w tym Git) elementów roboczych i kompilacji możliwości dla platform z systemem innym niż Windows.
 
 
 ### <a name="git"></a>Git
@@ -103,11 +103,11 @@ Na poniższym diagramie przedstawiono ten topografii:
 
 [![](intro-to-ci-images/intro03-small.png "Ten diagram przedstawia tego topografii")](intro-to-ci-images/intro03.png#lightbox)
 
-Użytkownik może również połączyć z lokalnego serwera TFS z projektu programu Visual Studio Team Services, tak aby kompilacji programu VSTS mają delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zobacz [Wdróż i skonfiguruj serwer kompilacji](http://msdn.microsoft.com/en-us/library/ms181712.aspx) w witrynie MSDN.
+Użytkownik może również połączyć z lokalnego serwera TFS z projektu programu Visual Studio Team Services, tak aby kompilacji programu VSTS mają delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zobacz [Wdróż i skonfiguruj serwer kompilacji](http://msdn.microsoft.com/library/ms181712.aspx) w witrynie MSDN.
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services i Wpięć
 
-Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
+Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
 
 [![](intro-to-ci-images/intro04-small.png "Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -123,4 +123,4 @@ Inne typowe środowisko CI może być całkowicie OS X na podstawie. Ten scenari
 
 # <a name="summary"></a>Podsumowanie
 
-Ten dokument wprowadzono pojęcie ciągłej integracji i korzyści, które oferuje zespoły rozwoju oprogramowania. Znaczenie kontroli wersji został omówiony oraz role i obowiązki serwera kompilacji. Omówimy niektóre narzędzia, które można użyć do kontroli kodu źródłowego i serwery kompilacji dokumentu wystąpił. Wprowadzono też Test Centrum aplikacji, który ułatwia deweloperom publikowanie atrakcyjnych aplikacji przez uruchomienie zautomatyzowanych testów, które będzie potwierdzenia jakości i możliwości ich aplikacji. Bardziej szczegółowe dokumentacji na przesyłanie aplikacji i testy do Centrum aplikacji można znaleźć [tutaj](https://docs.microsoft.com/en-us/appcenter/test-cloud). Na koniec aby lepiej poznać sposób tych narzędzi i wszystkie składniki dopasowania, możemy opisane kilka różnych środowiskach elementu konfiguracji, których organizacje mogą ustalić dla ciągłej integracji. Aby uzyskać więcej informacji, za pomocą Team Foundation Server i Visual Studio Team Services z projektami Xamarin, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/vsts/tfvc/overview) i to [wprowadzenie ciągłej integracji](https://docs.microsoft.com/en-us/vsts/build-release/actions/ci-cd-part-1). Podobnie w przypadku korzystania z Wpięć zobacz [przy użyciu Wpięć za pomocą platformy Xamarin](~/tools/ci/jenkins-walkthrough.md) Aby uzyskać szczegółowe informacje na temat konfigurowania ciągłej integracji.
+Ten dokument wprowadzono pojęcie ciągłej integracji i korzyści, które oferuje zespoły rozwoju oprogramowania. Znaczenie kontroli wersji został omówiony oraz role i obowiązki serwera kompilacji. Omówimy niektóre narzędzia, które można użyć do kontroli kodu źródłowego i serwery kompilacji dokumentu wystąpił. Wprowadzono też Test Centrum aplikacji, który ułatwia deweloperom publikowanie atrakcyjnych aplikacji przez uruchomienie zautomatyzowanych testów, które będzie potwierdzenia jakości i możliwości ich aplikacji. Bardziej szczegółowe dokumentacji na przesyłanie aplikacji i testy do Centrum aplikacji można znaleźć [tutaj](https://docs.microsoft.com/appcenter/test-cloud). Na koniec aby lepiej poznać sposób tych narzędzi i wszystkie składniki dopasowania, możemy opisane kilka różnych środowiskach elementu konfiguracji, których organizacje mogą ustalić dla ciągłej integracji. Aby uzyskać więcej informacji, za pomocą Team Foundation Server i Visual Studio Team Services z projektami Xamarin, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/vsts/tfvc/overview) i to [wprowadzenie ciągłej integracji](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1). Podobnie w przypadku korzystania z Wpięć zobacz [przy użyciu Wpięć za pomocą platformy Xamarin](~/tools/ci/jenkins-walkthrough.md) Aby uzyskać szczegółowe informacje na temat konfigurowania ciągłej integracji.

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 7f0d40e4adb16e47db18d0796afa42c66af096ce
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Komunikaty o błędach Xamarin.Mac (mmp)
 
@@ -38,15 +38,15 @@ Najprostszym sposobem, aby uzyskać informacje o wersji dokładnie jest użycie 
 
 <a name="MM0003" />
 
-#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003: Aplikacji "{0} .exe" konflikt między nazwą zestawu SDK lub produktu nazwy zestawu (.dll).
+#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003: Nazwa aplikacji "{0}.exe" powoduje konflikt z nazwą zestawu (.dll) zestawu SDK lub produkt.
 
 <a name="MM0007" />
 
-#### <a name="mm0007-the-root-assembly-0-does-not-exist"></a>MM0007: Zestawu głównego "{0}" nie istnieje.
+#### <a name="mm0007-the-root-assembly-0-does-not-exist"></a>MM0007: Zestawu głównego "{0}" nie istnieje
 
 <a name="MM0008" />
 
-#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: Należy podać jedną zestawy tylko, znaleziono {0} zestawu głównego: "{1}"
+#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: Należy podać jedną zestawu głównego tylko, znaleziono {0} zestawów: "{1}"
 
 <a name="MM0010" />
 
@@ -68,11 +68,11 @@ Najprostszym sposobem, aby uzyskać informacje o wersji dokładnie jest użycie 
 
 <a name="MM0020" />
 
-#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: Prawidłowych opcji elementu "{0}" to "{1}".
+#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: Prawidłowych opcji "{0}"są"{1}".
 
 <a name="MM0023" />
 
-#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023: Aplikacji "{0} .exe" konflikt między nazwą zestawu innego użytkownika.
+#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023: Nazwa aplikacji "{0}.exe" powoduje konflikt z innego zestawu użytkownika.
 
 <a name="MM0026" />
 
@@ -100,11 +100,11 @@ Najprostszym sposobem, aby uzyskać informacje o wersji dokładnie jest użycie 
 
 <a name="MM0059" />
 
-#### <a name="mm0059-could-not-find-the-currently-selected-xcode-on-the-system-0"></a>MM0059: Nie można odnaleźć Xcode aktualnie wybranego w systemie: {0}.
+#### <a name="mm0059-could-not-find-the-currently-selected-xcode-on-the-system-0"></a>MM0059: Nie można odnaleźć Xcode aktualnie wybranego w systemie: {0};
 
 <a name="MM0060" />
 
-#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: Nie można odnaleźć Xcode aktualnie wybranego w systemie. zwrócony "xcode — wybierz — ścieżkę drukowania" {0}, ale ten katalog nie istnieje.
+#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: Nie można odnaleźć Xcode aktualnie wybranego w systemie. "xcode — wybierz — Ścieżka drukowania" zwrócił "{0}", ale ten katalog nie istnieje.
 
 <a name="MM0068" />
 
@@ -141,7 +141,7 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM0097" />
 
-#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: nie można odnaleźć pliku machine.config "{0}".
+#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: plik machine.config "{0}" nie można odnaleźć.
 
 <a name="MM0098" />
 
@@ -165,15 +165,15 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM1401" />
 
-#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401: Zestaw wymagane "{0}" brakuje odwołania
+#### <a name="mm1401-the-required-0-assembly-is-missing-from-the-references"></a>MM1401: Wymagane "{0}" zestaw nie ma odwołań
 
 <a name="MM1402" />
 
-#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: Zestaw "{0}" nie jest zgodne z tym narzędziem
+#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: Zestaw '{0}' nie jest zgodny z tego narzędzia
 
 <a name="MM1403" />
 
-#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: nie można odnaleźć {0} "{1}". Platforma docelowa "{0}" nie nadaje się do pakietu aplikacji.
+#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} "{1}" nie można odnaleźć. Platforma docelowa "{0}" nie nadaje się do pakietu aplikacji.
 
 <a name="MM1404" />
 
@@ -181,15 +181,15 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM1405" />
 
-#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework musi zawsze platformy docelowej .NET 4.5, nie "{0}" jest nieprawidłowa
+#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework musi zawsze platformy docelowej .NET 4.5, nie "{0}' który jest nieprawidłowy
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: Platforma docelowa "{0}" jest nieprawidłowy gdy framwork Xamarin.Mac 4.5 .NET Profilowanie grup.
+#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: Platforma docelowa "{0}" jest nieprawidłowa, gdy framwork Xamarin.Mac 4.5 .NET Profilowanie grup.
 
 <a name="MM1407" />
 
-#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: Niezgodność między Xamarin.Mac odwołania "{0}" i obiekt docelowy framework wybrany "{1}".
+#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: Niezgodność odwołania Xamarin.Mac "{0}"i platforma docelowa wybrana"{1}".
 
 ### <a name="mm15xx-assembly-gathering-not-requiring-linker-errors"></a>MM15xx: Błędy zbieranie (niewymagające konsolidatora) zestawu
 
@@ -201,7 +201,7 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM1600" />
 
-#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: Nie cenę O dynamicznej biblioteki (Nieznany nagłówek "0 x {0}"): {1}.
+#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: Nie cenę O dynamicznej biblioteki (Nieznany nagłówek "0 x{0}"): {1}.
 
 <a name="MM1601" />
 
@@ -209,11 +209,11 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM1602" />
 
-#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: Nie cenę O dynamicznej biblioteki (Nieznany nagłówek "0 x {0}"): {1}.
+#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: Nie cenę O dynamicznej biblioteki (Nieznany nagłówek "0 x{0}"): {1}.
 
 <a name="MM1603" />
 
-#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: Nieznany format fat wpis w położeniu {0} w {1}.
+#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: Nieznany format wpisu fat na pozycji {0} w {1}.
 
 <a name="MM1604" />
 
@@ -233,15 +233,15 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM2003" />
 
-#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: Opcja "{0}" zostanie zignorowana, ponieważ połączenie jest wyłączona
+#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: Opcja "{0}" zostanie zignorowany, ponieważ połączenie jest wyłączona
 
 <a name="MM2004" />
 
-#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: Dodatkowy plik definicji konsolidatora "{0}" nie można zlokalizować.
+#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: Plik definicji konsolidatora dodatkowy "{0}" nie można zlokalizować.
 
 <a name="MM2005" />
 
-#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: Nie można przeanalizować definicji "{0}".
+#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: Definicje z "{0}" nie można przeanalizować.
 
 <a name="MM2006" />
 
@@ -253,7 +253,7 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: Odwołuje się {0}. \ {1\} ** ten komunikat jest powiązany z MM2006 **
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: Odwołuje się do {0}.{1}     ** Ten komunikat jest powiązany z MM2006 **
 
 <a name="MM2010" />
 
@@ -265,11 +265,11 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Tylko pierwszy {0} {1} "odwołuje się" wyświetlane ostrzeżenia. ** Tej wiadomości dotyczące 2009 **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Tylko pierwszy {0} z {1} "Odwołuje się" wyświetlane ostrzeżenia. ** Tej wiadomości dotyczące 2009 **
 
 <a name="MM2013" />
 
-#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013: Nie można rozpoznać odwołania do elementu "{0}", do którego odwołuje się "{1}". Aplikacja nie będzie zawierać przywoływanego zestawu i może się nie powieść w czasie wykonywania.
+#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013: Nie można rozpoznać odwołania do "{0}", do którego istnieje odwołanie w"{1}". Aplikacja nie będzie zawierać przywoływanego zestawu i może się nie powieść w czasie wykonywania.
 
 <a name="MM2014" />
 
@@ -303,11 +303,11 @@ W komunikacie o błędzie nosi nazwę zestawu przyczyną problemu. Aby rozwiąza
 
 <a name="MM2104" />
 
-#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nie można połączyć zestawu "{0}", ponieważ jest on trybu mieszanego.
+#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nie można połączyć z zestawu '{0}' ponieważ jest on trybu mieszanego.
 
 Zestawy mieszane nie mogą być przetwarzane przez konsolidator.
 
-Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej informacji dotyczących trybu mieszanego zestawów.
+Zobacz https://msdn.microsoft.com/library/x0w2664k.aspx uzyskać więcej informacji dotyczących trybu mieszanego zestawów.
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: drzewa obiektów aplikacji
 
@@ -315,7 +315,7 @@ Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej i
 
 <a name="MM3001" />
 
-#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: Można drzewa nie obiektów aplikacji zestawu {0}
+#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: Można drzewa nie obiektów aplikacji zestawu "{0}"
 
 <!-- 3002 used by mtouch -->
 <!-- 3003 used by mtouch -->
@@ -327,11 +327,11 @@ Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej i
 
 <a name="MM3009" />
 
-#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: Zażądano drzewa obiektów aplikacji "{0}", ale nie został znaleziony
+#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: Drzewa obiektów aplikacji z "{0}" żądano, ale nie został znaleziony
 
 <a name="MM3010" />
 
-#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: Wykluczeń drzewa obiektów aplikacji '{0}' odebrał żądanie, ale nie został odnaleziony
+#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: Wyłączenie drzewa obiektów aplikacji z "{0}" żądano, ale nie został znaleziony
 
 ## <a name="mm4xxx-code-generation"></a>MM4xxx: generowanie kodu
 
@@ -345,7 +345,7 @@ Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej i
 
 <a name="MM4134" />
 
-#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: Aplikacja używa "{0}" struktury, która nie jest zawarty w zestawie SDK MacOS używany do utworzenia aplikacji (platforma została wprowadzona w {2} OS x, podczas gdy tworzysz MacOS {1} SDK.) Ta konfiguracja nie jest obsługiwana w rejestrze statyczne (pass — rejestratora: dynamiczne jako argument w opcji Mac kompilacji projektu, aby wybrać dodatkowe mmp). W opcjach Mac kompilacji aplikacji można również wybrać nowszej zestawu SDK.
+#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: Aplikacja korzysta "{0}' struktury, która nie jest zawarty w zestawie SDK MacOS używany do utworzenia aplikacji (platforma została wprowadzona w systemie OSX {2}, podczas gdy tworzysz MacOS {1} zestawu SDK.) Ta konfiguracja nie jest obsługiwana w rejestrze statyczne (pass — rejestratora: dynamiczne jako argument w opcji Mac kompilacji projektu, aby wybrać dodatkowe mmp). W opcjach Mac kompilacji aplikacji można również wybrać nowszej zestawu SDK.
 
 ## <a name="mm5xxx-gcc-and-toolchain"></a>MM5xxx: GCC i łańcuch narzędzi
 
@@ -353,7 +353,7 @@ Zobacz https://msdn.microsoft.com/en-us/library/x0w2664k.aspx uzyskać więcej i
 
 <a name="MM5101" />
 
-#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101: Brak kompilatora {0}. Zainstaluj program Xcode składnik "Narzędzia wiersza polecenia".
+#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101: Brak "{0}" kompilatora. Zainstaluj program Xcode składnik "Narzędzia wiersza polecenia".
 
 <!-- 5102 used by mtouch -->
 
