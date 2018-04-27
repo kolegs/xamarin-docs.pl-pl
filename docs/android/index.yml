@@ -2,33 +2,33 @@
 documentType: LandingData
 title: Xamarin.Android
 metadata:
-  description: "Rozszerzenie Xamarin.Android uwidacznia kompletny zestaw Android SDK dla deweloperów platformy .NET."
+  description: Rozszerzenie Xamarin.Android uwidacznia kompletny zestaw Android SDK dla deweloperów platformy .NET.
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/17/2018
+  ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 708dbb752e4ba2e5d5ca6dc16b2a48af72f7632b
-  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+  ms.openlocfilehash: 670b27732bde526db4e28b1b9d5bcff8baff1afd
+  ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 03/15/2018
+  ms.lasthandoff: 04/26/2018
 abstract:
-  description: "Rozszerzenie Xamarin.Android uwidacznia kompletny zestaw Android SDK dla deweloperów platformy .NET. Twórz całkowicie natywne aplikacje dla systemu Android przy użyciu języka C# lub F# w programie Visual Studio."
+  description: Rozszerzenie Xamarin.Android uwidacznia kompletny zestaw Android SDK dla deweloperów platformy .NET. Twórz całkowicie natywne aplikacje dla systemu Android przy użyciu języka C# lub F# w programie Visual Studio.
   menu:
     items:
     - href: ~/android/samples/
-      text: "Przykłady dla systemu Android"
+      text: Przykłady dla systemu Android
     - href: https://developer.xamarin.com/releases/android/
       text: Uwagi do wersji
     - href: https://developers.google.com/
-      text: "Dokumentacja dla deweloperów od firmy Google"
+      text: Dokumentacja dla deweloperów od firmy Google
     - href: /visualstudio/
       text: Visual Studio
 sections:
 - title: Rozpocznij
   items:
   - type: paragraph
-    text: "Dowiedz się, jak utworzyć pierwszą aplikację dla systemu Android, korzystając ze środowiska Xamarin i języka C#."
+    text: Dowiedz się, jak utworzyć pierwszą aplikację dla systemu Android, korzystając ze środowiska Xamarin i języka C#.
   - type: list
     style: icon48
     items:
@@ -46,60 +46,58 @@ sections:
       href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
 - title: Przewodniki
   items:
-  - type: grid
-    style: columns
-    className: column50
+  - type: list
+    style: cards
+    className: cardsB
     items:
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/android/get-started/index.md
-        html: "Samouczki pomagające w rozpoczęciu pracy z rozszerzeniem Xamarin.Android. Upewnij się, że wszystko jest poprawnie zainstalowane, i utwórz pierwsze aplikacje dla komputerów Mac."
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
-          href: ~/android/get-started/index.md
-        title: Wprowadzenie
-      - href: ~/android/user-interface
-        html: "Więcej informacji na temat pełnego zestawu widżetów kontrolek interfejsu użytkownika dostępnych dla systemu Android."
-        image:
-          src: ~/media/icons/i_user-interface.svg
-          href: ~/android/user-interface/
-        title: "Interfejs użytkownika"
-      - href: ~/android/deploy-test/
-        html: "Instrukcje dotyczące tworzenia i wdrażania aplikacji w sklepie Google Play oraz porady na temat ich wcześniejszego testowania."
-        image:
-          src: ~/media/icons/i_deploy-test.svg
-          href: ~/android/deploy-test/
-        title: "Wdrażanie i testowanie"
-      - href: ~/android/wear/
-        html: Tworzenie aplikacji dla systemu Android Wear.
-        image:
-          src: ~/media/icons/i_android-wear.svg
-          href: ~/android/wear/
-        title: Android Wear
-    - type: list
-      style: cards
-      className: cardsB
-      items:
-      - href: ~/android/app-fundamentals/
-        html: "Wszystko, co musisz wiedzieć, aby tworzyć aplikacje dla systemu Android, np. informacje o pracy z plikami, obrazami, bazami danych itp."
-        image:
-          src: ~/media/icons/i_app-build.svg
-          href: ~/android/app-fundamentals/
-        title: Podstawy aplikacji
-      - href: ~/android/platform/
-        html: Praca z funkcjami platformy Android, takimi jak uwierzytelnianie odciskiem palca i najnowszymi funkcjami systemu Android Oreo 8.0.
-        image:
-          src: ~/media/icons/i_platform.svg
-          href: ~/android/platform/
-        title: Funkcje platformy
-      - href: ~/android/internals/
-        html: "Dodatkowe informacje o elementach wewnętrznych zestawu narzędzi Xamarin.Android oraz pomoc z funkcjami takimi jak lokalizacja i ułatwienia dostępu."
-        image:
-          src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
-          href: ~/android/internals/
-        title: "Pojęcia zaawansowane i elementy wewnętrzne"
+    - href: ~/android/get-started/index.md
+      html: Samouczki pomagające w rozpoczęciu pracy z rozszerzeniem Xamarin.Android. Upewnij się, że wszystko jest poprawnie zainstalowane, i utwórz pierwsze aplikacje dla komputerów Mac.
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        href: ~/android/get-started/index.md
+      title: Wprowadzenie
+    - href: ~/android/app-fundamentals/
+      html: Wszystko, co musisz wiedzieć, aby tworzyć aplikacje dla systemu Android, np. informacje o pracy z plikami, obrazami, bazami danych itp.
+      image:
+        src: ~/media/icons/i_app-build.svg
+        href: ~/android/app-fundamentals/
+      title: Podstawy aplikacji
+    - href: ~/android/user-interface
+      html: Więcej informacji na temat pełnego zestawu widżetów kontrolek interfejsu użytkownika dostępnych dla systemu Android.
+      image:
+        src: ~/media/icons/i_user-interface.svg
+        href: ~/android/user-interface/
+      title: Interfejs użytkownika
+    - href: ~/android/platform/
+      html: Praca z funkcjami platformy Android, takimi jak uwierzytelnianie odciskiem palca i najnowszymi funkcjami systemu Android Oreo 8.0.
+      image:
+        src: ~/media/icons/i_platform.svg
+        href: ~/android/platform/
+      title: Funkcje platformy
+    - href: ~/android/data-cloud/
+      html: Magazynowanie i pobieranie danych lokalnych i zdalnych oraz inne usługi chmurowe.
+      image:
+        src: ~/media/icons/i_data-cloud.svg
+        href: ~/android/data-cloud/
+      title: Usługi danych i usługi w chmurze
+    - href: ~/android/deploy-test/
+      html: Instrukcje dotyczące tworzenia i wdrażania aplikacji w sklepie Google Play oraz porady na temat ich wcześniejszego testowania.
+      image:
+        src: ~/media/icons/i_deploy-test.svg
+        href: ~/android/deploy-test/
+      title: Wdrażanie i testowanie
+    - href: ~/android/internals/
+      html: Dodatkowe informacje o elementach wewnętrznych zestawu narzędzi Xamarin.Android oraz pomoc z funkcjami takimi jak lokalizacja i ułatwienia dostępu.
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_advanced.svg
+        href: ~/android/internals/
+      title: Pojęcia zaawansowane i elementy wewnętrzne
+    - href: ~/android/wear/
+      html: Tworzenie aplikacji dla systemu Android Wear.
+      image:
+        src: ~/media/icons/i_android-wear.svg
+        href: ~/android/wear/
+      title: Android Wear
 - title: Tematy pomocy
   items:
   - type: list
@@ -109,9 +107,9 @@ sections:
     - title: interfejs API
       href: https://developer.xamarin.com/api/root/MonoAndroid-lib/
       html: <p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Dokumentacja interfejsu API systemu Android</a></p><p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1">Biblioteka klas bazowych</a></p>
-    - title: "Przykłady"
+    - title: Przykłady
       href: https://developer.xamarin.com/samples/android/all/
-      html: "<p><a href=\"https://developer.xamarin.com/samples/android/all/\">Przykłady dla systemu Android</a></p>"
+      html: <p><a href="https://developer.xamarin.com/samples/android/all/">Przykłady dla systemu Android</a></p>
     - title: Skoroszyty
       href: https://developer.xamarin.com/workbooks#android
       html: <p><a href="https://developer.xamarin.com/workbooks#android">Skoroszyty systemu Android</a></p>
