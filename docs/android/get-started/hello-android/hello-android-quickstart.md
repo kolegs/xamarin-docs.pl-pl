@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Witaj, Android: Szybki Start
 
@@ -185,11 +185,10 @@ Następnym krokiem jest Dodaj kod, aby okablować interfejsu użytkownika, podaj
 (Resource.Layout.Main)` wywołania. Najpierw należy zmodyfikować kod szablonu, aby `OnCreate` metody jest podobny do następującego:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -420,13 +419,10 @@ Kliknij dwukrotnie **MainActivity.cs** w **konsoli rozwiązania** go otworzyć.
 Rozpocznij od Dodawanie obsługi zdarzeń do **Przetłumacz** przycisku. W `MainActivity` klasy, Znajdź `OnCreate` metody. Dodaj kod przycisk wewnątrz `OnCreate`, poniżej `base.OnCreate(bundle)` i `SetContentView (Resource.Layout.Main)` wywołania. Usuń kod obsługi przycisk szablonu, aby `OnCreate` metody jest podobny do następującego:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

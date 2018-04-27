@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>Strona Karuzela
 
@@ -45,7 +45,7 @@ Dwa podejścia może służyć do tworzenia [ `CarouselPage` ](https://developer
 - [Wypełnij](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` z kolekcją podrzędnego [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień.
 - [Przypisz](#Populating_a_CarouselPage_with_a_Template) kolekcji [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) właściwości i przypisać [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) do [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) właściwości do zwrócenia [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień obiektów w kolekcji.
 
-Z obu podejść `CarouselPage` zostanie następnie wyświetlania każdej strony z kolei z interakcji Przejdź, przeniesienie do następnej strony do wyświetlenia. To środowisko nawigacji zostanie uznać fizycznych i znany użytkownikom Windows Phone.
+Z obu podejść `CarouselPage` zostanie następnie wyświetlania każdej strony z kolei z interakcji Przejdź, przeniesienie do następnej strony do wyświetlenia. 
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) tylko można wypełniać za pomocą [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień, lub `ContentPage` pochodnych.
@@ -246,7 +246,7 @@ Aby uzyskać więcej informacji na temat [ `CarouselPage` ](https://developer.xa
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób użycia [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) poruszać się po jest zestawem stron. `CarouselPage` Stronę, które użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, takich jak galerii i zapewnia obsługę nawigacji, który tak jak fizyczną i znany użytkownikom Windows Phone.
+W tym artykule przedstawiono sposób użycia [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) poruszać się po jest zestawem stron. `CarouselPage` Jest strony, który użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, podobnie jak w galerii.
 
 
 ## <a name="related-links"></a>Linki pokrewne

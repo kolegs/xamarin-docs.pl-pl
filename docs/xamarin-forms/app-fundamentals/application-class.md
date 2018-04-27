@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 5c9eed8f48a40bc7feaadd0c644610f691713e9b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="app-class"></a>Klasa aplikacji
 
@@ -198,70 +198,9 @@ public class MainActivity :
 > Istnieje nowsza [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) podstawowa klasa, która może służyć do lepszej obsługi projektowania w systemie Android materiału.
 > Będzie to domyślny szablon dla systemu Android w przyszłości, ale można wykonać [tych instrukcji](~/xamarin-forms/platform/android/appcompat.md) do zaktualizowania istniejącej aplikacji systemu Android.
 
-
-### <a name="windows-phone-project"></a>Windows Phone projektu
-
-Strona główna w projekcie (w oparciu o program Silverlight) Windows Phone powinny dziedziczyć `FormsApplicationPage`. Oznacza to, języka XAML i C# dla `MainPage` odwołania `FormsApplicationPage` klasy, jak pokazano.
-
-XAML używa niestandardowej przestrzeni nazw, aby element główny odzwierciedla `FormsApplicationPage` klasy:
-
-```xaml
-<winPhone:FormsApplicationPage
-   ...
-   xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"
-    ...>
-</winPhone:FormsApplicationPage>
-```
-
-C# dziedziczy `FormsApplicationPage` klasy i wywołania `LoadApplication` można utworzyć wystąpienia użytkownika platformy Xamarin.Forms `App`. Należy pamiętać, że dobrze jest jawnie używać nazw aplikacji do kwalifikowania `App` ponieważ aplikacje Windows Phone również mają swoje własne `App` klasy niezwiązanych ze sobą platformy Xamarin.Forms.
-
-```csharp
-public partial class MainPage :
-    global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new YOUR_APP_NAMESPACE.App()); // new in 1.3, use the correct namespace
-    }
- }
-```
-
-### <a name="windows-81-project"></a>Projekt Windows 8.1
-
-Strona główna w [Windows 8.1 (w oparciu o WinRT)](~/xamarin-forms/platform/windows/installation/tablet.md) projekty powinny dziedziczyć `WindowsPage`. Oznacza to, że XAML dla `MainPage` odwołania `WindowsPage` klasy, jak pokazano:
-
-XAML używa niestandardowej przestrzeni nazw, aby element główny odzwierciedla `FormsApplicationPage` klasy:
-
-```xaml
-<forms:WindowsPage
-   ...
-   xmlns:forms="using:Xamarin.Forms.Platform.WinRT"
-   ...>
-</forms:WindowsPage>
-```
-
-Należy wywołać konstrukcji został C# `LoadApplication` można utworzyć wystąpienia użytkownika platformy Xamarin.Forms `App`. Należy pamiętać, że dobrze jest jawnie używać nazw aplikacji do kwalifikowania `App` ponieważ aplikacji platformy uniwersalnej systemu Windows również mają swoje własne `App` klasy niezwiązanych ze sobą platformy Xamarin.Forms.
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        LoadApplication(new YOUR_APP_NAMESPACE.App());
-    }
- }
-```
-
-Należy pamiętać, że `Forms.Init()` musi zostać wywołana **App.xaml.cs** około 65 wiersza.
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Uniwersalny projekt systemu Windows (UWP) dla systemu Windows 10
 
-[Uniwersalnych projektów systemu Windows](~/xamarin-forms/platform/windows/installation/universal.md) pomocy technicznej w platformy Xamarin.Forms jest obecnie w przeglądzie.
+Zobacz [Instalatora Windows projekty](~/xamarin-forms/platform/windows/installation/index.md) informacje na temat obsługi platformy uniwersalnej systemu Windows w platformy Xamarin.Forms.
 
 Należy dziedziczyć po stronie głównej w projekcie platformy UWP `WindowsPage`. Oznacza to, języka XAML i C# dla `MainPage` odwołania `FormsApplicationPage` klasy, jak pokazano.
 

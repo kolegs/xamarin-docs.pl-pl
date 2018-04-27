@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="path-effects"></a>Efekty ścieżki
 
@@ -420,7 +420,7 @@ y = · COSH(x / a)
 
 Znajdowanie odpowiednich wartości *a* dopasowania sieci jezdnej wymiary strony telefonu nie ma bezpośredniego obliczeń. Jeśli *w* i *h* są szerokość i wysokość prostokąta, wartość optymalne *a* spełnia następujące równanie:
 
-cosh(w / 2 / a) = 1 + h / a
+COSH (p/2 /) = 1 + h /
 
 W następujące metody [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) klasy zawiera tego równości, odwołując się do dwóch wyrażeń po lewej i prawej znak równości jako `left` i `right`. Dla małych wartości *a*, `left` jest większa niż `right`; w przypadku dużych wartości *a*, `left` jest mniejsza niż `right`. `while` Pętli zawęża w optymalnych wartości *a*:
 
@@ -854,7 +854,7 @@ W `PaintSurface` obsługi `SKPathEffect.Create2DPath` wywołania ustawia odstęp
 
 Skalowanie z oryginalnego zrzut ekranu powoduje, że niektóre zakłócenia, szczególnie na ekranie systemu Android.
 
-Zwróć uwagę, że te Kafelki zawsze wyświetlane całego i nigdy nie są obcinane. Z wyjątkiem na ekranie systemu Windows 10 Mobile nie jest jeszcze manipulacji, że obszar wypełniany jest zaokrąglony prostokąt. Jeśli ma zostać obcięta te Kafelki do określonego obszaru, użyj ścieżki przycinania.
+Zwróć uwagę, że te Kafelki zawsze wyświetlane całego i nigdy nie są obcinane. Na pierwszych dwóch zrzuty ekranu nie jest jeszcze manipulacji, że obszar wypełniany jest zaokrąglony prostokąt. Jeśli ma zostać obcięta te Kafelki do określonego obszaru, użyj ścieżki przycinania.
 
 Spróbuj ustawienie `Style` właściwość `SKPaint` do obiektu `Stroke`, i zobaczysz Kafelki poszczególnych opisanych zamiast wypełnione.
 

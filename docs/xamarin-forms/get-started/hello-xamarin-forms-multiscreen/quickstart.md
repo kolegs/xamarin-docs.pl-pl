@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 268622ff8bc7ff05771096549ed694c57139366d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Szybki Start Wieloekranowy platformy Xamarin.Forms
 
@@ -46,7 +46,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -59,7 +59,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
 
 5. W **Eksploratora rozwiązań**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
-    ![](quickstart-images/vs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/vs/open-app-class.png "Otwórz App.xaml.cs")
 
 6. W **App.xaml.cs**, zaimportować `System.Collections.Generic` przestrzeni nazw, Dodaj deklaracja `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) właściwość jako [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekcji będzie służyć do przechowywania listy każdy numer telefonu przetłumaczony przez aplikację:
 
@@ -192,7 +192,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -205,7 +205,7 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
 
 6. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
-    ![](quickstart-images/xs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/xs/open-app-class.png "Otwórz App.xaml.cs")
 
 7. W **App.xaml.cs**, zaimportować `System.Collections.Generic` przestrzeni nazw, Dodaj deklaracja `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) właściwość jako [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekcji będzie służyć do przechowywania listy każdy numer telefonu przetłumaczony przez aplikację:
 

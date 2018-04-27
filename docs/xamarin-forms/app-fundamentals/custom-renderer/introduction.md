@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Wprowadzenie do renderowania niestandardowych
 
@@ -19,7 +19,7 @@ _Niestandardowe moduły renderowania Podaj podejście zaawansowane dostosowywani
 
 Platformy Xamarin.Forms [stron, układów i kontrolek](~/xamarin-forms/user-interface/controls/index.md) przedstawia wspólnego interfejsu API do opisywania interfejsów i platform przenośnych użytkownika. Każdej strony układu i kontroli jest inaczej renderowane na każdej platformie, przy użyciu `Renderer` klasy, która z kolei tworzy macierzystego formantu (odpowiadającej reprezentacja platformy Xamarin.Forms), rozmieszcza ją na ekranie i dodaje zachowanie określone w udostępniony kod.
 
-Deweloperzy mogą implementować własne niestandardowe `Renderer` klas, aby dostosować wygląd i/lub zachowanie formantu. Niestandardowe moduły renderowania dla danego typu można dodać do projektu jedną aplikację, aby dostosować kontroli w jednym miejscu, umożliwiając domyślne zachowanie na różnych platformach; lub różnych niestandardowe moduły renderowania można dodać do każdego projektu aplikacji, aby utworzyć inną wyglądu i działania na systemu iOS, Android i Windows Phone. Jednak implementacja klasy niestandardowego modułu renderowania do wykonania dostosowywania prostego formantu jest często odpowiedzi ciężki. Efekty upraszcza ten proces i są zwykle używane do zmian małych style. Aby uzyskać więcej informacji, zobacz [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
+Deweloperzy mogą implementować własne niestandardowe `Renderer` klas, aby dostosować wygląd i/lub zachowanie formantu. Niestandardowe moduły renderowania dla danego typu można dodać do projektu jedną aplikację, aby dostosować kontroli w jednym miejscu, umożliwiając domyślne zachowanie na różnych platformach; lub różnych niestandardowe moduły renderowania można dodać do każdego projektu aplikacji, aby utworzyć inną wygląd i działanie w systemach iOS, Android i Windows platformy Uniwersalnej. Jednak implementacja klasy niestandardowego modułu renderowania do wykonania dostosowywania prostego formantu jest często odpowiedzi ciężki. Efekty upraszcza ten proces i są zwykle używane do zmian małych style. Aby uzyskać więcej informacji, zobacz [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>Konieczne są orzeczenie Dlaczego niestandardowe moduły renderowania
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Prefiks przestrzeni nazw może być dowolna. Jednak `namespace` i `assembly` wartości muszą być zgodne szczegóły kontrolki niestandardowej. Po zadeklarowaniu obszaru nazw prefiks jest używany do odwołania kontrolki niestandardowej.
 
 > [!NOTE]
-> Definiowanie `xmlns` jest znacznie prostsza w PCLs niż udostępnionych projektów. PCL jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, współużytkowane zasoby (w tym XAML) są kompilowane do każdego z odwołaniem do projektów, które oznacza, że jeśli dla systemu iOS, Android i Windows Phone projekty mają swoje własne *nazwy zestawu* nie jest możliwe Aby zapisać `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
+> Definiowanie `xmlns` jest znacznie prostsza w PCLs niż udostępnionych projektów. PCL jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, do każdego z odwołaniem do projektów, co oznacza że jeśli systemu iOS, Android i platformy uniwersalnej systemu Windows są kompilowane współużytkowane zasoby (w tym XAML) projekty mają swoje własne *nazwy zestawu* nie jest możliwe do zapisu `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
 
 `MyEntry` Kontrolki niestandardowej następnie jest renderowany na każdej platformie, na tle szare, jak pokazano na poniższych zrzutach ekranu:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>Interakcyjności ListView
 
@@ -53,12 +53,10 @@ Z włączoną opcją:
 
 ![](interactivity-images/selection-default.png "Element ListView o wybór włączane")
 
-Należy pamiętać, że na Windows Phone, niektóre komórek, w tym `SwitchCell` nie aktualizuj ich stan wizualny w odpowiedzi do zaznaczenia.
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Kontekst akcji
-Często użytkownicy będą do wykonania akcji na element `ListView`. Rozważmy na przykład listę adresów e-mail w aplikacji poczty. W systemach iOS można szybko przesuń można usunąć wiadomości i Windows Phone można long naciśnij klawisz komunikat i usuń go:
+Często użytkownicy będą do wykonania akcji na element `ListView`. Rozważmy na przykład listę adresów e-mail w aplikacji poczty. W systemach iOS, można szybko przesuń można usunąć wiadomości::
 
 ![](interactivity-images/context-default.png "Element ListView z kontekstu akcji")
 
@@ -149,8 +147,6 @@ listView.IsPullToRefreshEnabled = true;
 ![](interactivity-images/refresh-start.png "Przeciągnij element ListView, aby odświeżyć w toku")
 
 Ściągnięcia, aby odświeżyć jako użytkownik wydała ściągania. Jest to, co użytkownik zobaczy podczas aktualizujesz listy: ![ ] (interactivity-images/refresh-in-progress.png "przeciągnij element ListView, aby odświeżyć pełną")
-
-Należy pamiętać, że począwszy od platformy Xamarin.Forms 1.4.3, pociągnij, aby odświeżyć nie jest obsługiwane w programie Windows Phone 8.1. W systemie Windows phone 8 pociągnij, aby odświeżyć nie jest funkcją natywnego platformy, dlatego implementacja pociągnij, aby odświeżyć są dostarczane przez platformy Xamarin.Forms. Na koniec należy pamiętać, że ściągnięcia, aby odświeżyć nie będą działać na Windows Phone, jeśli wszystkie elementy na liście zmieści się na ekranie (innymi słowy, jeśli przewijanie w pionie nie jest wymagane).
 
 Element ListView udostępnia kilka zdarzeń, które pozwalają na odpowiadanie na zdarzenia pociągnij, aby odświeżyć.
 

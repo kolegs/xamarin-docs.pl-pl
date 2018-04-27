@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="webview"></a>Widok sieci Web
 
@@ -33,12 +33,12 @@ Ten przewodnik składa się z następujących sekcji:
 Widok sieci Web są obsługiwane następujące typy zawartości:
 
 - HTML i CSS witryn sieci Web &ndash; widoku sieci Web zawiera pełną obsługę witryn sieci Web napisane przy użyciu kodu HTML i CSS, w tym obsługi języka JavaScript.
-- Dokumenty &ndash; ponieważ widoku sieci Web jest wdrażane za pomocą natywnego składników na każdej platformie, widoku sieci Web jest w stanie przedstawiający dokumenty, które są widoczne na każdej z platform. Oznacza to, że pliki PDF pracy z systemem iOS i Android, ale nie Windows Phone.
+- Dokumenty &ndash; ponieważ widoku sieci Web jest wdrażane za pomocą natywnego składników na każdej platformie, widoku sieci Web jest w stanie przedstawiający dokumenty, które są widoczne na każdej z platform. Oznacza to, że pliki PDF działać w systemach iOS i Android.
 - Ciągi HTML &ndash; WebView mogą być prezentowane ciągi kodu HTML z pamięci.
 - Lokalne pliki &ndash; widoku sieci Web może ona powodować dowolne z powyższych typów zawartości osadzone w aplikacji.
 
 > [!NOTE]
-> `WebView` w systemach Windows i Windows Phone nie obsługuje Silverlight, Flash lub żadnych formantów ActiveX, nawet jeśli są one obsługiwane przez program Internet Explorer na tej platformie.
+> `WebView` w systemie Windows nie obsługuje Silverlight, Flash lub żadnych formantów ActiveX, nawet jeśli są one obsługiwane przez program Internet Explorer na tej platformie.
 
 ### <a name="websites"></a>Witryny internetowe
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
-Na Windows Phone, umieść HTML, CSS i obrazów w katalogu głównym projektu z akcją kompilacji ustawioną *zawartości* jak pokazano poniżej:
-
-![](webview-images/windows-vs.png "Lokalne pliki na Windows Phone")
-
-Na Windows Phone `BaseUrl` powinien być ustawiony na `""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Środowisko wykonawcze systemu Windows i platforma uniwersalna systemu Windows
-
-W przypadku projektów środowiska wykonawczego systemu Windows i Windows platformy Uniwersalnej, umieść HTML, CSS i obrazów w katalogu głównym projektu z akcją kompilacji ustawioną *zawartości*.
+W przypadku projektów Windows platformy Uniwersalnej umieścić HTML, CSS i obrazów w katalogu głównym projektu z Akcja kompilacji ustawioną *zawartości*.
 
 `BaseUrl` Powinien być ustawiony na `"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ Widok sieci Web w systemie Android, domyślnie jest około tak szybko, jak przeg
 
 [Widoku sieci Web platformy uniwersalnej systemu Windows](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) używa aparatu renderowania Microsoft Edge. Komputery stacjonarne i tablet urządzeń powinna zostać wyświetlona wydajności tej samej jako przy użyciu samej przeglądarki Edge.
 
-`WebBrowser` Formantu Windows Phone 8 i Windows Phone 8.1 ma nie obsługują HTML5 najnowsze funkcje i często może zawierać pogorszenie wydajności. Należy pamiętać o jak lokacje będą wyświetlane w Windows Phone `WebView`. Nie jest wystarczająca do testowania w programie Internet Explorer.
-
 ## <a name="permissions"></a>Uprawnienia
 
 Aby `WebView` działała, należy się upewnić, że uprawnienia zostały ustawione dla każdej platformy. Należy pamiętać, że na niektórych platformach `WebView` będzie działać w trybie debugowania, a nie wbudowanych w wydaniu. To już niektóre uprawnienia, jak uzyskać dostęp do Internetu w systemie Android są ustawione domyślnie w programie Visual Studio dla komputerów Mac w trybie debugowania.
 
-- **Windows Phone 8.0** &ndash; wymaga `ID_CAP_WEBBROWSERCOMPONENT` formantu i `ID_CAP_NETWORKING` dostęp do Internetu.
-- **Windows Phone 8.1 i platformy uniwersalnej systemu Windows** &ndash; wymaga możliwości Internet (klient i serwer), podczas wyświetlania zawartości w sieci.
+- **Platformy uniwersalnej systemu Windows** &ndash; wymaga możliwości Internet (klient i serwer), podczas wyświetlania zawartości w sieci.
 - **Android** &ndash; wymaga `INTERNET` tylko wtedy, gdy wyświetlanie zawartości z sieci. Zawartość lokalna wymaga żadne specjalne uprawnienia.
 - **iOS** &ndash; wymaga żadne specjalne uprawnienia.
 

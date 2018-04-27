@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: a153791893f99a472c3fcf91a205bf91ed971e13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -53,7 +53,7 @@ Aby dowiedzieć się więcej na temat dostosowywania komórek w elemencie ListVi
 Element ListView jest obsługiwanych kilka stylów interakcji, w tym:
 
 - **[Pociągnij, aby odświeżyć](interactivity.md#Pull_to_Refresh)**  &ndash; ListView obsługuje pociągnij, aby odświeżyć na każdej z platform.
-- **[Kontekst akcji](interactivity.md#Context_Actions)**  &ndash; ListView obsługuje podjęcie działań na poszczególne elementy na liście. Na przykład możesz można zaimplementować przejdź do działania w systemie iOS, lub wybierz long akcje w systemach Android i Windows Phone.
+- **[Kontekst akcji](interactivity.md#Context_Actions)**  &ndash; ListView obsługuje podjęcie działań na poszczególne elementy na liście. Na przykład możesz można zaimplementować przejdź do działania w systemie iOS, lub wybierz long akcji w systemie Android.
 - **[Wybór](interactivity.md#selectiontaps)**  &ndash; nasłuchiwania wybrane opcje i usuwanie podjęcie działań jest wybrany wiersz.
 
 ![](images/context-default.png "Element ListView z kontekstu akcji")

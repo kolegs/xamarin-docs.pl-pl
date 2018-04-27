@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dots-and-dashes"></a>Kropki i łączniki
 
@@ -164,7 +164,7 @@ Aby ominąć ten problem, korzystając z obrysu centralnych zasad dostępu z `Sq
 - {30, 10} staje się {20, 20} dla linii kreskowanej
 - {10, 10, 30, 10} staje się {0, 20, 20, 20} dla linię kropkowaną i kreskowane
 
-Nagrania ekranu systemu Windows z kropkami i linii dla linii kreskowanej cap z `Round`. `Round` Koniec obrysu często sprawia, że najważniejsze kropki i kreski w wierszach grubości.
+Nagrania ekranu platformy uniwersalnej systemu Windows z kropkami i linii dla linii kreskowanej cap z `Round`. `Round` Koniec obrysu często sprawia, że najważniejsze kropki i kreski w wierszach grubości.
 
 Do tej pory wprowadzono nie wymieniono drugiego parametru `SKPathEffect.CreateDash` metody. Ten parametr ma nazwę `phase` i odnosi się do przesunięcie w wzorcu kropki i kreski do początku wiersza. Na przykład, jeśli tablica dash to {10, 10} i `phase` wynosi 10, a następnie wiersz rozpoczyna się od przerwę zamiast kropką.
 

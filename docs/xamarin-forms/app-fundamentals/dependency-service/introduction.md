@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 01953d55a104a70b0451c9b796c732254afb081e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>Wprowadzenie do DependencyService
 
@@ -48,53 +48,64 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>Wdrożenia dla każdej platformy
 
-Gdy odpowiedni interfejs został zaprojektowany, ten interfejs musi być implementowana w projekcie dla każdej platformy, która ma być przeznaczona dla. Na przykład następujące klasy wdrożenie `ITextToSpeech` interfejs Windows Phone:
+Gdy odpowiedni interfejs został zaprojektowany, ten interfejs musi być implementowana w projekcie dla każdej platformy, która ma być przeznaczona dla. Na przykład następujące klasy implementuje `ITextToSpeech` interfejsu w systemie iOS:
 
 ```csharp
-namespace TextToSpeech.WinPhone
+namespace UsingDependencyService.iOS
 {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
-Należy pamiętać, co implementacji musi mieć konstruktora domyślnego (bezparametrowego) aby `DependencyService` aby można było utworzyć. Nie można definiować konstruktorów bez parametrów przez interfejs.
-
 ### <a name="registration"></a>Rejestracja
 
-Każda implementacja interfejsu musi być zarejestrowany w usłudze `DependencyService` z atrybutu metadanych. Poniższy kod rejestruje implementację dla Windows Phone:
+Każda implementacja interfejsu musi być zarejestrowany w usłudze `DependencyService` z atrybutu metadanych. Poniższy kod rejestruje implementacji dla systemu iOS:
 
 ```csharp
-using TextToSpeech.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
   ...
+}
 ```
 
 Wprowadzanie wszystkich elementów, implementacja specyficzna dla platformy wygląda następująco:
 
 ```csharp
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
@@ -102,7 +113,7 @@ Uwaga: rejestracji wykonywane na poziomie przestrzeni nazw, a nie poziomie klasy
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>Natywnej kompilacji .NET platformy uniwersalnej systemu Windows
 
-Projekty platformy uniwersalnej systemu Windows, które należy użyć opcji kompilacji platformy .NET Native należy stosować [nieco inne konfiguracji](~/xamarin-forms/platform/windows/installation/universal.md#target-invocation-exception) podczas inicjowania platformy Xamarin.Forms. Kompilacja platformy .NET native wymaga także nieco inne rejestracji zależności usług.
+Projekty platformy uniwersalnej systemu Windows, które należy użyć opcji kompilacji platformy .NET Native należy stosować [nieco inne konfiguracji](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) podczas inicjowania platformy Xamarin.Forms. Kompilacja platformy .NET native wymaga także nieco inne rejestracji zależności usług.
 
 W **App.xaml.cs** plików, należy ręcznie zarejestrować każda usługa zależności zdefiniowane w projekcie platformy uniwersalnej systemu Windows przy użyciu `Register<T>` metody, jak pokazano poniżej:
 

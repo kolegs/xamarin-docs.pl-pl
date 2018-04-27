@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>Obrazy
 
@@ -58,7 +58,6 @@ Pliki obrazów mogą być dodawane do każdego projektu aplikacji lub odwoływan
 
 - **iOS** — preferowany sposób zarządzania i obsługi obrazów, ponieważ jest użycie systemu iOS 9 **Ustawia obraz katalogu zasobów**, który powinien zawierać wszystkie wersje obrazu, które są niezbędne do obsługi różnych urządzeń i skalować czynniki aplikacja. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** -umieścić obrazy w **obiektów drawable/zasoby** katalogu z **Akcja kompilacji: AndroidResource**. Wysoki i niski DPI wersji obrazu można również podać (w nazwanego **zasobów** podkatalogów, takich jak **obiektów drawable ldpi**, **obiektów drawable hdpi**i **obiektów drawable xhdpi**).
-- **Windows Phone** -umieścić obrazy w katalogu głównym aplikacji z **Akcja kompilacji: zawartości**.
 - **Windows platformy Uniwersalnej** -umieścić obrazy w katalogu głównym aplikacji z **Akcja kompilacji: zawartości**.
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Rozdzielczości (siatkówki i wysokiej rozdzielczości DPI)
 
-iOS, Android, Windows Phone i platformy uniwersalnej systemu Windows obsługują rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiednie obrazu w czasie wykonywania w oparciu o możliwości urządzenia. Ładowanie lokalnego obrazów, aby automatycznie program obsługuje rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie platformy Xamarin.Forms używa wybranych platformach natywnych interfejsów API.
+iOS, Android i platformy uniwersalnej systemu Windows obsługują rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiednie obrazu w czasie wykonywania w oparciu o możliwości urządzenia. Ładowanie lokalnego obrazów, aby automatycznie program obsługuje rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie platformy Xamarin.Forms używa wybranych platformach natywnych interfejsów API.
 
 Preferowany sposób zarządzać obrazami, ponieważ system iOS 9 polega na przeciągnięciu obrazami dla każdego rozwiązania wymagane do odpowiednich zasobów katalogu obrazu zestawu. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
@@ -103,7 +102,7 @@ Obrazy systemu android rozwiązania alternatywne powinna zostać umieszczona w [
 
 [![Lokalizacja systemu android wielu rozdzielczość obrazu](images-images/xs-highdpisolution-sml.png "lokalizacji systemu Android wielu rozdzielczość obrazu")](images-images/xs-highdpisolution.png#lightbox "lokalizacji systemu Android wielu rozdzielczość obrazu")
 
-Nazwy pliku obrazu platformy uniwersalnej systemu Windows i Windows Phone [kończyły się słowem `.scale-xxx` przed rozszerzeniem](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), gdzie `xxx` procent skalowania zastosować do zasobu, np. **myimage.scale-200.png**. Obrazy mogą być następnie przywoływane w kodzie lub XAML bez modyfikatora skali, np. po prostu **myimage.png**. Platforma wybierze oparte na bieżącej DPI wyświetlacza najbliższej skali odpowiednich zasobów.
+Nazwy plików obrazów platformy uniwersalnej systemu Windows [kończyły się słowem `.scale-xxx` przed rozszerzeniem](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), gdzie `xxx` procent skalowania zastosować do zasobu, np. **myimage.scale 200.png**. Obrazy mogą być następnie przywoływane w kodzie lub XAML bez modyfikatora skali, np. po prostu **myimage.png**. Platforma wybierze oparte na bieżącej DPI wyświetlacza najbliższej skali odpowiednich zasobów.
 
 ### <a name="additional-controls-that-display-images"></a>Dodatkowe funkcje kontroli, które wyświetlanie obrazów
 

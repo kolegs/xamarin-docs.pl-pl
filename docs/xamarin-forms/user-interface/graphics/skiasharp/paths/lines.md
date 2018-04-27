@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Linie i obrysu CAP
 
@@ -235,7 +235,7 @@ IPhone, w lewym pokazuje sposób `SKPointMode.Points` powoduje, że element czł
 
 Jeśli natomiast używasz `SKPointMode.Lines`, jak pokazano na ekranie systemu Android w Centrum, `DrawPoints` metody rysuje każda para `SKPoint` wartości, przy użyciu określonego wiersza centralnych zasad dostępu, w tym przypadku `Round`.
 
-Urządzenie przenośne z systemem Windows przedstawia wynik `SKPointMode.Polygon` wartość. Wiersz jest rysowany między kolejnych punktów w tablicy, ale bardzo ściśle dostępne, można zobaczyć te wiersze nie są połączone. Każdy z tych osobnych wierszach początek i koniec z centralnych zasad dostępu określonego wiersza. W przypadku wybrania `Round` caps, mogą być wyświetlane linie połączenia, ale ich nie naprawdę połączenia.
+Zrzut ekranu platformy uniwersalnej systemu Windows przedstawia wynik `SKPointMode.Polygon` wartość. Wiersz jest rysowany między kolejnych punktów w tablicy, ale bardzo ściśle dostępne, można zobaczyć te wiersze nie są połączone. Każdy z tych osobnych wierszach początek i koniec z centralnych zasad dostępu określonego wiersza. W przypadku wybrania `Round` caps, mogą być wyświetlane linie połączenia, ale ich nie naprawdę połączenia.
 
 Czy wiersze są połączony lub niepołączony jest niezwykle istotne aspektów pracy z ścieżki grafiki.
 

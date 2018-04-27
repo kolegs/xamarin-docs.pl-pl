@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>Dostosowywanie wpis
 
 _Formant wpis platformy Xamarin.Forms umożliwia pojedynczy wiersz tekstu do edycji. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla formantu wpis umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy._
 
-Formant co platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) renderowania formantu przez aplikację platformy Xamarin.Forms w systemie iOS `EntryRenderer` tworzenia wystąpienia klasy, który włącza tworzy natywny `UITextField` formantu. Na platformie Android `EntryRenderer` tworzy wystąpienie klasy `EditText` formantu. Windows Phone i Windows platformy Uniwersalnej `EntryRenderer` tworzy wystąpienie klasy `TextBox` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Formant co platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) renderowania formantu przez aplikację platformy Xamarin.Forms w systemie iOS `EntryRenderer` tworzenia wystąpienia klasy, który włącza tworzy natywny `UITextField` formantu. Na platformie Android `EntryRenderer` tworzy wystąpienie klasy `EditText` formantu. W systemie Windows platformy Uniwersalnej, `EntryRenderer` tworzy wystąpienie klasy `TextBox` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontroli i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy Android `EditText` kontroli w odniesieniu do kontrolki jest przypisywany do renderowania `Control` właściwości. Kolor tła jest następnie ustawioną jasnozielony z `Control.SetBackgroundColor` metody.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Tworzenie niestandardowego modułu renderowania na Windows Phone i platformy uniwersalnej systemu Windows
+### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
-Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla Windows Phone i platformy uniwersalnej systemu Windows:
+Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

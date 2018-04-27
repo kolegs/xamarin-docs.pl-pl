@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>Dostosowywanie ViewCell
 
 _ViewCell platformy Xamarin.Forms jest komórki, można dodać do elementu ListView lub TableView, zawierający widok zdefiniowany przez dewelopera. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla ViewCell, który znajduje się w formancie ListView platformy Xamarin.Forms. Zatrzymuje obliczeń układ platformy Xamarin.Forms jest wielokrotnie wywoływane podczas przewijania ListView._
 
-Każdej komórki platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ViewCellRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UITableViewCell` formantu. Na platformie Android `ViewCellRenderer` natywny tworzy wystąpienie klasy `View` formantu. Windows Phone i Windows platformy Uniwersalnej `ViewCellRenderer` natywny tworzy wystąpienie klasy `DataTemplate`. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdej komórki platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ViewCellRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UITableViewCell` formantu. Na platformie Android `ViewCellRenderer` natywny tworzy wystąpienie klasy `View` formantu. W systemie Windows platformy Uniwersalnej, `ViewCellRenderer` natywny tworzy wystąpienie klasy `DataTemplate`. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -169,7 +169,7 @@ Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładow
 
 ![](viewcell-images/screenshots.png "NativeCell na każdej platformie")
 
-`ViewCellRenderer` Klasa opisuje metody specyficzne dla platformy renderowanie niestandardowych komórki. Jest to `GetCell` metody na platformie iOS `GetCellCore` metody na platformie Android i `GetTemplate` metody na platformie Windows Phone.
+`ViewCellRenderer` Klasa opisuje metody specyficzne dla platformy renderowanie niestandardowych komórki. Jest to `GetCell` metody na platformie iOS `GetCellCore` metody na platformie Android i `GetTemplate` metody dla platformy uniwersalnej systemu Windows.
 
 Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje mechanizm renderujący platformy Xamarin.Forms. Atrybut przyjmuje dwa parametry — Nazwa typu komórki platformy Xamarin.Forms renderowanego i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
 
@@ -519,15 +519,15 @@ Poniższy przykład kodu pokazuje definicji układu `NativeAndroidCell.axml` pli
 
 Ten układ Określa, że dwa `TextView` formantów i `ImageView` formantu są używane do wyświetlenia zawartości komórki. Dwa `TextView` kontrolki są orientacji pionowej w `LinearLayout` sterowania wszystkie formanty, które są zawarte w `RelativeLayout`.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Tworzenie niestandardowego modułu renderowania na Windows Phone i platformy uniwersalnej systemu Windows
+### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
-Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla Windows Phone i platformy uniwersalnej systemu Windows:
+Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>Czcionki
 
@@ -166,7 +166,7 @@ Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia na ciąg
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Podczas określania krój czcionki niestandardowego, jest zawsze warto użyć `O
 
 ## <a name="using-a-custom-font"></a>Przy użyciu niestandardowych czcionki
 
-Przy użyciu czcionki inne niż wbudowane krojów czcionek wymaga kodowania niektóre specyficzne dla platformy. Ten zrzut ekranu przedstawia niestandardowe czcionki **homara** z [czcionki open source firmy Google](https://www.google.com/fonts) renderowane w systemach iOS, Android i Windows Phone przy użyciu platformy Xamarin.Forms.
+Przy użyciu czcionki inne niż wbudowane krojów czcionek wymaga kodowania niektóre specyficzne dla platformy. Ten zrzut ekranu przedstawia niestandardowe czcionki **homara** z [czcionki open source firmy Google](https://www.google.com/fonts) renderowany przy użyciu platformy Xamarin.Forms.
 
  [![Niestandardowe czcionki w systemach iOS i Android](fonts-images/custom-sml.png "przykład czcionki niestandardowe")](fonts-images/custom.png#lightbox "przykład czcionki niestandardowe")
 
@@ -240,7 +240,7 @@ Można również użyć [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/de
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

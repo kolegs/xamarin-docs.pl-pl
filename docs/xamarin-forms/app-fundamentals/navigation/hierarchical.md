@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>Hierarchiczna nawigacji
 
@@ -47,7 +47,7 @@ Układ [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms
 
 - W systemach iOS, pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł i ma *ponownie* przycisku, który zwraca do poprzedniej strony.
 - W systemie Android, jest obecny w górnej części strony, która wyświetla tytuł, ikona na pasku nawigacji i *ponownie* przycisku, który zwraca do poprzedniej strony. Ikona jest zdefiniowany w `[Activity]` atrybut, który decorates `MainActivity` klasy w projekcie specyficzne dla platformy systemu Android.
-- Na Windows Phone pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł. Windows Phone nie ma *ponownie* znajdującego się na pasku nawigacyjnym, ponieważ na ekranie *ponownie* przycisk znajduje się w dolnej części ekranu.
+- Na platformie Windows Universal pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł. 
 
 Na platformach, wartość [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) właściwości będzie wyświetlany jako tytuł strony.
 

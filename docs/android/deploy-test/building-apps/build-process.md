@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="build-process"></a>Proces kompilacji
 
@@ -52,7 +52,7 @@ Szybkie wdrożenie jest domyślnie włączona i mogą być wyłączone w wydajno
 Proces kompilacji Xamarin.Android jest oparta na MSBuild, który jest także format pliku projektu, które są używane przez program Visual Studio for Mac i Visual Studio.
 Zwykle, użytkownicy nie muszą ręcznie edytować pliki programu MSBuild &ndash; IDE tworzy funkcjonalnej projektów i aktualizuje je ze zmianami wprowadzonymi i automatycznie wywołują obiekty docelowe kompilacji zgodnie z potrzebami. 
 
-Użytkownicy wersji Advanced możesz wykonać czynności nie są obsługiwane przez interfejsu graficznego programu IDE, więc proces kompilacji jest funkcję przez bezpośrednią edycję pliku projektu. Ta strona dokumentów tylko funkcje specyficzne dla platformy Xamarin.Android i dostosowania &ndash; wiele więcej opcji są możliwe z normalnym MSBuild elementów, właściwości i elementów docelowych. 
+Użytkownicy wersji Advanced możesz wykonać czynności nie są obsługiwane przez interfejsu graficznego programu IDE, więc proces kompilacji nie można dostosować, edytując plik projektu bezpośrednio. Ta strona dokumentów tylko funkcje specyficzne dla platformy Xamarin.Android i dostosowania &ndash; wiele więcej opcji są możliwe z normalnym MSBuild elementów, właściwości i elementów docelowych. 
 
 <a name="Build_Targets" />
 
@@ -91,7 +91,7 @@ Właściwości programu MSBuild kontrolują zachowanie docelowych. Są one np. o
 
     - **PdbOnly**: symbole "PDB" zostaną wygenerowane. Pakiet aplikacji będzie *nie* debugować.
 
-    Jeśli `DebugType` nie jest ustawiona lub jest pustym ciągiem, a następnie `DebugSymbols` właściwość określa, czy tą aplikacja jest możliwością debugowania.
+    Jeśli `DebugType` nie jest ustawiona lub jest pustym ciągiem, a następnie `DebugSymbols` właściwość określa, czy aplikacja jest możliwością debugowania.
 
 
 ### <a name="install-properties"></a>Zainstaluj właściwości
@@ -110,7 +110,7 @@ Właściwości instalacji sterowania zachowaniem `Install` i `Uninstall` element
 ### <a name="packaging-properties"></a>Właściwości pakowania
 
 Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używane przez `Install` i `SignAndroidPackage` elementów docelowych.
-[Właściwości podpisywania](#Signing_Properties) mają również zastosowanie podczas packaing wersji aplikacji.
+[Właściwości podpisywania](#Signing_Properties) są również istotne podczas pakowania wersji aplikacji.
 
 
 -   **AndroidApkSigningAlgorithm** &ndash; wartość ciągu, który określa algorytm podpisywania do użycia z `jarsigner -sigalg`.
@@ -238,7 +238,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
 -   **AndroidSdkBuildToolsVersion** &ndash; pakietu narzędzi kompilacji dla systemu Android SDK udostępnia **aapt** i **zipalign** narzędzi, m.in. Jednocześnie można zainstalować wiele różnych wersji pakietu narzędzia kompilacji. Pakiet narzędzi kompilacji wybranych do tworzenia pakietów jest realizowane przez sprawdzanie i przy użyciu wersji narzędzia kompilacji "preferowane", jeśli jest obecny; Jeśli wersja "preferowane" jest *nie* stanowią najwyższy pakietu wersji zainstalowanego narzędzia kompilacji będzie używana.
 
-    `$(AndroidSdkBuildToolsVersion)` Właściwość MSBuild zawiera własną wersję narzędzia kompilacji. System kompilacji platformy Xamarin.Android dostarcza wartość domyślną w `Xamarin.Android.Common.targets`, i wartość domyślną mogą zostać zastąpione w pliku projektu youur wybrać wersję narzędzia kompilacji alternatywne, jeśli (na przykład) awarii najnowsze aapt się podczas poprzedniej wersji aapt jest znany do pracy.
+    `$(AndroidSdkBuildToolsVersion)` Właściwość MSBuild zawiera wersję preferowanych narzędzia kompilacji. System kompilacji platformy Xamarin.Android dostarcza wartość domyślną w `Xamarin.Android.Common.targets`, i wartość domyślną mogą zostać zastąpione w pliku projektu, aby wybrać wersję narzędzia kompilacji alternatywne, jeśli (na przykład) awarii najnowsze aapt się podczas poprzedniej wersji aapt jest znany do pracy.
 
 -   **AndroidSupportedAbis** &ndash; właściwości ciągu zawierający średnikiem (`;`) — lista ograniczanych znakami ABIs, które powinny zostać włączone do `.apk`.
 
@@ -264,9 +264,9 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Ta właściwość powinna być `True` dla wersji kompilacji i `False` w przypadku kompilacji debugowania. On *może* muszą być `True` w kompilacjach debugowania, jeśli szybkiego wdrożenia nie obsługuje urządzenia docelowego.
 
-    Gdy ta właściwość jest `False`, a następnie `$(AndroidFastDeploymentType)` MSBuild właściwość również określa, jaki będzie embedd do `.apk`, która może wpłynąć na czas wdrażania i rebuidl.
+    Gdy ta właściwość jest `False`, a następnie `$(AndroidFastDeploymentType)` właściwości MSBuild również określać, jakie zostaną osadzone w `.apk`, które mogą mieć wpływ na wdrożenie i skompiluj ponownie razy.
 
--   **EnableLLVM** &ndash; właściwości typu boolean określającą czy LLVM będą używane podczas Ahead z czasu kompilacji assemblines kodu natywnego.
+-   **EnableLLVM** &ndash; właściwości typu boolean określającą czy LLVM będą używane podczas Ahead z czasu kompilowanie zestawów kodu natywnego.
 
     Obsługa tej właściwości został dodany w 5.1 platformy Xamarin.Android.
 
@@ -326,13 +326,13 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
     Przykłady, jeśli `abi` jest `armeabi` i `versionCode` w manifeście jest `123`, `{abi}{versionCode}` utworzy versionCode z `1123` podczas `$(AndroidCreatePackagePerAbi)` ma wartość PRAWDA, w przeciwnym razie zostanie uzyskiwania wartości 123.
     Jeśli `abi` jest `x86_64` i `versionCode` w manifeście jest `44`. Spowoduje to utworzenie `544` podczas `$(AndroidCreatePackagePerAbi)` ma wartość PRAWDA, w przeciwnym razie będzie mieć wartość z `44`.
 
-    Jeśli przeprowadzamy Lewe dopełnienie ciąg formatu `{abi}{versionCode:0000}`, jego dałby w efekcie `50044` ponieważ są pozostawiane, dopełnienie `versionCode` z `0`. Możesz też użyć przecinka, takie jak uzupełnianie `{abi}{versionCode:D4}` która działa identycznie jak poprzedni.
+    Jeśli przeprowadzamy Lewe dopełnienie ciąg formatu `{abi}{versionCode:0000}`, jego dałby w efekcie `50044` ponieważ są pozostawiane, dopełnienie `versionCode` z `0`. Alternatywnie można użyć przecinka, takie jak uzupełnianie `{abi}{versionCode:D4}` która działa identycznie jak poprzedni.
 
     Tylko "0" i "Dx" padding format ciągi są obsługiwane, ponieważ wartość musi być liczbą całkowitą.
     
     Wstępnie zdefiniowane elementy klucza
 
-    -   **ABI** &ndash; wstawia abi docelowych dla aplikacji
+    -   **ABI** &ndash; wstawia docelowe abi dla aplikacji  
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
@@ -341,11 +341,11 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     -   **minSDK** &ndash; wstawia minimalna obsługiwana wartość zestawu Sdk z `AndroidManifest.xml` lub `11` Jeśli brak jest zdefiniowany.
 
-    -   **versionCode** &ndash; używa wersji direrctly kodu z `Properties\AndroidManifest.xml`. 
+    -   **versionCode** &ndash; używa wersji kodu bezpośrednio z `Properties\AndroidManifest.xml`. 
 
     Możesz zdefiniować niestandardowy elementów za pomocą `$(AndroidVersionCodeProperties)` właściwość (dalej).
 
-    Domyślnie wartość będzie ustawiona wartość `{abi}{versionCode:D6}`. Jeśli Deweloper chce zachować starego zachowania przez ustawienie można zastąpić domyślną `$(AndroidUseLegacyVersionCode)` właściwości `true`
+    Domyślnie wartość będzie ustawiona wartość `{abi}{versionCode:D6}`. Jeśli Deweloper chce zachować poprzednie działanie można zastąpić domyślną, ustawiając `$(AndroidUseLegacyVersionCode)` właściwości `true`
 
     Dodane w Xamarin.Android 7.2.
 
@@ -353,7 +353,7 @@ Właściwości pakowania kontroli tworzenia pakietu systemu Android i są używa
 
     Dodane w Xamarin.Android 7.2.
 
--   **AndroidUseLegacyVersionCode** &ndash; właściwości typu boolean będzie umożliwia deweloperowi przywrócić obliczania versionCode do jego stare sprzed zachowania 8.2 platformy Xamarin.Android. To należy używać tylko dla deweloperów z istniejących aplikacji w sklepie Google Play. Zdecydowanie zalecane jest nowy `$(AndroidVersionCodePattern)` właściwość jest używana.
+-   **AndroidUseLegacyVersionCode** &ndash; właściwości typu boolean będzie umożliwia deweloperowi przywrócić obliczania versionCode do jego stare sprzed zachowanie 8.2 platformy Xamarin.Android. To należy używać tylko dla deweloperów z istniejących aplikacji w sklepie Google Play. Zdecydowanie zalecane jest nowy `$(AndroidVersionCodePattern)` właściwość jest używana.
 
     Dodane w 8.2 platformy Xamarin.Android.
 
@@ -386,7 +386,7 @@ Następujące właściwości programu MSBuild są używane z [powiązania projek
 
     - `class-parse` nie "Pomiń" klasy, które dziedziczą z lub zawierać elementów członkowskich typu nierozpoznane.
 
-    **Eksperymentalne**. Added in Xamarin.Android 6.0.
+    **Eksperymentalne**. Dodane w wersji 6.0 platformy Xamarin.Android.
 
     Wartość domyślna to `jar2xml`.
 
@@ -394,7 +394,7 @@ Następujące właściwości programu MSBuild są używane z [powiązania projek
 
 -   **AndroidCodegenTarget** &ndash; właściwości ciągu, który kontroluje ABI element docelowy generowania kodu. Możliwe wartości:
 
-    - **XamarinAndroid**: używa interfejsu API powiązania JNI, które są obecne w od Mono 1.0 z systemem Android. Zestawy powiązanie skompilowanej za pomocą platformy Xamarin.Android 5.0 lub nowszej można tylko na platformy Xamarin.Android 5.0 lub nowszej (dodatków interfejsu API/ABI), ale *źródła* jest zgodny z poprzednich wersji produktu.
+    - **XamarinAndroid**: używa interfejsu API powiązania JNI, które są obecne w od Mono 1.0 z systemem Android. Zestawy powiązanie skompilowane z platformy Xamarin.Android 5.0 lub nowszej można tylko na platformy Xamarin.Android 5.0 lub nowszej (dodatków interfejsu API/ABI), ale *źródła* jest zgodny z poprzednich wersji produktu.
 
     - **XAJavaInterop1**: Java.Interop używany dla wywołań JNI. Powiązania zestawów przy użyciu `XAJavaInterop1` można tylko tworzenie i wykonywanie z platformy Xamarin.Android 6.1 lub nowszej. 6.1 platformy Xamarin.Android i nowszym bind `Mono.Android.dll` o tej wartości.
 
@@ -576,7 +576,7 @@ Z tą kompilacją akcja będzie traktowany w podobny sposób za zasoby osadzone 
 
 Normalnej `Content` Akcja kompilacji nie jest obsługiwana (jak nie okazało się, jak do jego obsługi bez kosztownych prawdopodobnie kroku pierwszego uruchomienia).
 
-Począwszy od platformy Xamarin.Android 5.1, próba użycia thw `@(Content)` Akcja kompilacji spowoduje `XA0101` ostrzeżenie.
+Począwszy od platformy Xamarin.Android 5.1, próba użycia `@(Content)` Akcja kompilacji spowoduje `XA0101` ostrzeżenie.
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -606,7 +606,7 @@ Przed zaimportowaniem obiektów docelowych, język należy ustawić następując
 </PropertyGroup>
 ```
 
-Wszystkie te elementy docelowe i właściwości mogą być uwzględnione w języku C#, importując *Xamarin.Android.CSharp.targets*: 
+Wszystkie te elementy docelowe i właściwości mogą być uwzględnione w C# przez zaimportowanie *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

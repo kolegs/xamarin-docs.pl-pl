@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 
@@ -35,7 +35,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/vs/new-project.png "Szablony projektów i Platform")
 
-4. W **nowej aplikacji dla wielu Platform** okna dialogowego, kliknij przycisk **pusta aplikacja**, wybierz pozycję **platformy Xamarin.Forms** technologii interfejsu użytkownika, zaznacz **.NET Standard** jako Strategii udostępniania kodu, a następnie kliknij przycisk **OK** przycisk:
+4. W **nowej aplikacji dla wielu Platform** okna dialogowego, kliknij przycisk **pusta aplikacja**, wybierz pozycję **.NET Standard** strategii udostępniania kodu, a następnie kliknij przycisk **OK** przycisk:
 
     ![](quickstart-images/vs/new-app.png "Nowa aplikacja i Platform")
 
@@ -53,7 +53,7 @@ Utwórz aplikację Phoneword w następujący sposób:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -123,7 +123,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
 9. W **Eksploratora rozwiązań**, rozwiń węzeł **App.xaml** i kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
-    ![](quickstart-images/vs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/vs/open-app-class.png "Otwórz App.xaml.cs")
 
 10. W **App.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `App` Ustawia konstruktora `MainPage` klasy jako strony, który będzie wyświetlany podczas uruchamiania aplikacji:
 
@@ -523,7 +523,7 @@ Utwórz aplikację Phoneword w następujący sposób:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -593,7 +593,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
 11. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
 
-    ![](quickstart-images/xs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/xs/open-app-class.png "Otwórz App.xaml.cs")
 
 12. W **App.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `App` Ustawia konstruktora `MainPage` klasy jako strony, który będzie wyświetlany podczas uruchamiania aplikacji:
 
@@ -630,7 +630,7 @@ Utwórz aplikację Phoneword w następujący sposób:
     }
     ```
 
-    Zapisać zmiany w **Phoneword.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
+    Zapisać zmiany w **App.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
 13. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 

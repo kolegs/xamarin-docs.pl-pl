@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pikseli i jednostki niezależnych od urządzenia
 
@@ -102,7 +102,7 @@ Oto programu uruchomionego na wszystkich platformach trzy:
 
 Jak widać, `CanvasSize` właściwość `SKCanvasView` i `Size` właściwość `SKImageInfo` wartości są spójne w raportowaniu wymiarów w pikselach. `Height` i `Width` właściwości `SKCanvasView` właściwości platformy Xamarin.Forms i zgłoś rozmiar widoku w jednostkach niezależnych od urządzenia, zdefiniowane przez platformę.
 
-2 pikseli na jednostkę niezależnych od urządzenia ma symulatora systemu iOS 7 po lewej stronie, systemem Android 5 węzła w Centrum ma 3 pikseli na jednostkę, a 925 Lumia Nokia po prawej stronie ma 2,25 pikseli na jednostkę. Czy na Dlaczego uproszczonych okrąg pokazano wcześniej wygląda o tym samym rozmiarze na telefonie iPhone i Windows phone, lecz jest mniejszy na telefonach z systemem Android.
+2 pikseli na jednostkę niezależnych od urządzenia ma symulatora systemu iOS 7 po lewej stronie, a Android 5 węzła w Centrum ma 3 pikseli na jednostkę. Dlatego Proste kółko przedstawiona wcześniej ma różne rozmiary na różnych platformach.
 
 Jeśli chcesz użyć do pracy w całości jednostki niezależnych od urządzenia, możesz to zrobić przez ustawienie `IgnorePixelScaling` właściwość `SKCanvasView` do `true`. Jednak nie może Cię zainteresować wyniki. SkiaSharp Renderowanie grafiki na powierzchni mniejsze urządzenia, o rozmiarze pikseli równe rozmiarowi widoku jednostki niezależnych od urządzenia. (Na przykład SkiaSharp użyje powierzchni wyświetlania 360 x 512 pikseli na 5 węzła.) Go następnie skalowanie obrazu w rozmiarze, co w jaggies zauważalne mapy bitowej.
 

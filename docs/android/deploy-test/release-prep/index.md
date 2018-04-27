@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 238e224a1dfbc17089c8b6d03e78043f77f3f383
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Przygotowywanie aplikacji dla wersji
 
@@ -192,7 +192,7 @@ Należy pamiętać, że kompilacje debugowania automatycznie Ustaw niektóre upr
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Nawet w przypadku [debugowania wyłączone](#Disable_Debugging), jest nadal możliwe osobom atakującym ponownego tworzenia pakietów aplikacji, dodawanie lub usuwanie opcji konfiguracji lub uprawnieniami. Dzięki temu ich odtwarzanie, debugowania i odporne na próby z aplikacją.
-[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) może służyć do zasłaniają kodu zarządzanego i Wstaw kod wykrywania stan zabezpieczeń środowiska uruchomieniowego do aplikacji platformy Xamarin.Android podczas kompilacji.
+[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) może służyć do zasłaniają kodu zarządzanego i Wstaw kod wykrywania stan zabezpieczeń środowiska uruchomieniowego do aplikacji platformy Xamarin.Android w czasie kompilacji do wykrywania i reagowania, jeśli aplikacja jest uruchomiona na urządzeniu odblokowanym dostępem.
 
 Dotfuscator CE jest dołączony do programu Visual Studio, jednak tylko Visual Studio 2015 Update 3 (i nowszych) ma poprawną wersję do pracy z platformy Xamarin.Android. Aby użyć Dotfuscator, kliknij **Narzędzia > cenią sobie wcześniejsze ochrony - Dotfuscator**.
 
@@ -202,7 +202,7 @@ Po skonfigurowaniu, Dotfuscator CE będą automatycznie chronić każdej kompila
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Nawet w przypadku [debugowania wyłączone](#Disable_Debugging), jest nadal możliwe osobom atakującym ponownego tworzenia pakietów aplikacji, dodawanie lub usuwanie opcji konfiguracji lub uprawnieniami. Dzięki temu ich odtwarzanie, debugowania i odporne na próby z aplikacją.
-Chociaż nie obsługuje programu Visual Studio dla komputerów Mac, można użyć [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) z programem Visual Studio zasłaniają kodu zarządzanego i Wstaw kod wykrywania stan zabezpieczeń środowiska uruchomieniowego do aplikacji platformy Xamarin.Android w czasie kompilacji .
+Chociaż nie obsługuje programu Visual Studio dla komputerów Mac, można użyć [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) z programem Visual Studio zasłaniają kodu zarządzanego i Wstaw kod wykrywania stan zabezpieczeń środowiska uruchomieniowego do aplikacji platformy Xamarin.Android w czasie kompilacji do wykrywania i reagowania, jeśli aplikacja jest uruchomiona na urządzeniu odblokowanym dostępem.
 
 Aby skonfigurować Dotfuscator CE, zobacz [przy użyciu Dotfuscator Community Edition za pomocą platformy Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Po skonfigurowaniu, Dotfuscator CE będą automatycznie chronić każdej kompilacji, która jest tworzona.
@@ -267,7 +267,7 @@ Przygotowywanie aplikacji platformy Xamarin.Android dla wersji, należy określi
 Gdy ta opcja jest włączona, co APK zostaną utworzone dla każdej z obsługiwanych ABI (wybranego na **zaawansowane** karcie, zgodnie z opisem w [architektury Procesora](~/android/app-fundamentals/cpu-architectures.md)) zamiast jednej, duża APK dla wszystkich obsługiwanych ABI firmy. Ta opcja jest dostępna tylko wtedy, gdy projekt jest skonfigurowany dla trybu wersji i jest domyślnie wyłączona.
 
 
-### <a name="multi-dex"></a>Multi-Dex
+### <a name="multi-dex"></a>Wiele Dex
 
 Gdy **włączyć wielu Dex** jest włączona opcja, zestaw SDK systemu Android narzędzia są używane do obejścia 65 K limit — metoda **.dex** format pliku. Ograniczenia metody 65K opiera się na wiele metod Java który aplikacji _odwołania_ (włącznie z zawartymi żadnych bibliotek, które zależy od aplikacji) &ndash; nie jest oparty na liczbę metod, które są _zapisany Kod źródłowy_. Jeśli aplikacja tylko definiuje kilka metod ale używa wielu (lub dużej biblioteki), jest możliwe, że zostanie przekroczony limit 65K.
 

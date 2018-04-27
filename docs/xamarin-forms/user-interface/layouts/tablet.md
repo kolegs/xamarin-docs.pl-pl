@@ -6,19 +6,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcd277145de13a95a0b19aa4945b02078af52978
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Układ aplikacji typu Tablet i pulpitu
 
 Platformy Xamarin.Forms obsługuje na obsługiwanych platformach wszystkich typów urządzeń, aby oprócz telefonów, aplikacje można również uruchomić na:
 
-* iPads,
+* Ipad,
 * Tablety z systemem android
-* Tablety z systemem Windows i komputerów stacjonarnych (z systemem Windows 8.1 lub Windows 10).
+* Tablety z systemem Windows i komputerów stacjonarnych (z systemem Windows 10).
 
 Ta strona pokrótce omówiono:
 
@@ -53,12 +53,7 @@ Przegląd [Android zasobów](~/android/app-fundamentals/resources-in-android/ind
 
 ### <a name="windows-tablets-and-desktops"></a>Tablety z systemem Windows i komputerów stacjonarnych
 
-Do obsługi, tablety i komputery stacjonarne z systemem Windows, należy użyć jednej z dwóch typów obsługiwanych projektu:
-
-* [Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md) -
-  tworzy aplikacje specjalnie dla Windows 8.1, tablety i komputery stacjonarne.
-* [Obsługa systemu Windows](~/xamarin-forms/platform/windows/installation/universal.md) -
-  kompilacje uniwersalnych aplikacji uruchamianych na zarówno systemu Windows 10 telefony, tablety i komputery stacjonarne.
+Do obsługi, tablety i komputery stacjonarne z systemem Windows, musisz użyć [obsługi systemu Windows](~/xamarin-forms/platform/windows/installation/index.md), która tworzy uniwersalnych aplikacji uruchamianych w systemie Windows 10.
 
 Aplikacje działające na tablety z systemem Windows i pulpitami może być zmniejszony do dowolnego wymiarów dodatkowo uruchomiona pełnego ekranu.
 

@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysować łuk
 
@@ -414,8 +414,6 @@ public partial class TangentArcPage : InteractivePage
 Oto **arcus tangens** strony uruchomionej na wszystkich platformach trzy:
 
 [![](arcs-images/tangentarc-small.png "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")](arcs-images/tangentarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")
-
-Na urządzeniu z systemem Windows Mobile trzy punkty są prawie colinear i łuk jest bardzo mała.
 
 Arcus tangens jest idealny dla tworzenia zaokrąglonymi narożnikami, takich jak zaokrąglony prostokąt. Ponieważ `SKPath` zawiera już `AddRoundedRect` metody **zaokrąglona Heptagon** strony przedstawiają sposób użycia `ArcTo` zaokrąglania narożników dwustronnych siedmiu wielokąta. (Kod uogólniony żadnych regularne wielokąta.)
 

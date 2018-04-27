@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>Przekształcanie skali
 
@@ -27,7 +27,7 @@ Wcześniej był wyświetlany formuły przekształcenia opisujące skutków czynn
 
 x' = x + dx
 
-y' = y + dy
+y "= y + dy
 
 Skalowanie czynników `sx` i `sy` są mnożenia zamiast dodatku:
 
@@ -167,7 +167,7 @@ Znajduje się w lewym górnym rogu zaokrąglony prostokąt `margin` pikseli z le
 
 [![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")](scale-images/centeredscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")
 
-`Slider` Elementów w tym programie ma wartości zakresu &ndash;10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
+`Slider` Elementów w tym programie ma wartości zakresu &ndash;10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu platformy uniwersalnej systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
 
 Ta wersja czwarty `Scale` metoda jest rzeczywiście skrótu. Możesz zobaczyć, jak to działa przez zastąpienie `Scale` metody w tym kodzie następującym kodem:
 

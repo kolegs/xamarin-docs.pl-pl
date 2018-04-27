@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-listview"></a>Dostosowywanie ListView
 
 _ListView platformy Xamarin.Forms jest widoku, który będzie wyświetlany jako pionowy listy zbierania danych. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnego komórki, dzięki czemu większa kontrola nad macierzysty listy kontrolowania wydajności._
 
-Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ListViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UITableView` formantu. Na platformie Android `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. Windows Phone i Windows platformy Uniwersalnej `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ListViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UITableView` formantu. Na platformie Android `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. W systemie Windows platformy Uniwersalnej, `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -467,15 +467,15 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 Ta metoda tworzy nowe wystąpienie klasy `NativeAndroidListViewAdapter` klasy, która dostarcza dane do natywnego `ListView` kontrolować, pod warunkiem, że można powiązać `NativeListView.Items` właściwość zostanie zmieniona.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Tworzenie niestandardowego modułu renderowania na Windows Phone i platformy uniwersalnej systemu Windows
+### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
-Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla Windows Phone i platformy uniwersalnej systemu Windows:
+Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
-[assembly: ExportRenderer (typeof(NativeListView), typeof(NativeWinPhoneListViewRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneListViewRenderer : ListViewRenderer
+    public class NativeUWPListViewRenderer : ListViewRenderer
     {
         ListView listView;
 

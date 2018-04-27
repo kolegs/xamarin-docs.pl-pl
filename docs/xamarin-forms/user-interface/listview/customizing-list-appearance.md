@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>Wygląd listy
 
@@ -35,7 +35,7 @@ Aby włączyć grupowanie:
 - Ustaw `ListView`w `ItemsSource` do tej listy.
 - Ustaw `IsGroupingEnabled` na wartość true.
 - Ustaw [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) można powiązać z właściwością grupy, który jest używany jako tytuł grupy.
-- [Opcjonalnie] Ustaw [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) można powiązać z właściwością grupy, który jest używany jako krótką nazwę grupy. Krótka nazwa jest używana dla listy szybkiego dostępu (kolumna rigt serwerowe w systemie iOS, siatki kafelka w Windows Phone).
+- [Opcjonalnie] Ustaw [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) można powiązać z właściwością grupy, który jest używany jako krótką nazwę grupy. Krótka nazwa jest używana dla listy szybkiego dostępu (kolumna po prawej stronie w systemie iOS).
 
 Rozpocznij od utworzenia klasy dla grup:
 
@@ -120,7 +120,7 @@ Należy pamiętać, że mamy:
 
 Jeśli grupa została włączona na liście, można również dostosować nagłówka grupy.
 
-Podobnie jak `ListView` ma `ItemTemplate` określających sposób wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`. 
+Podobnie jak `ListView` ma `ItemTemplate` określających sposób wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`.
 
 Przykład Dostosowywanie nagłówek grupy w języku XAML jest następujący:
 
@@ -206,7 +206,7 @@ Aby utworzyć dostosowany nagłówku i stopce, zdefiniuj widoków w nagłówku i
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Separatory wierszy
-Są wyświetlane linie separatora między `ListView` elementy domyślnie w systemach iOS i Android. Windows Phone nie obsługuje separator wierszy, na tym platform wskazówki dotyczące interfejsu użytkownika. Jeśli chcesz ukryć separator wierszy w systemach iOS i Android, ustaw `SeparatorVisibility` właściwość z elementu ListView. Opcje `SeparatorVisibility` są:
+Są wyświetlane linie separatora między `ListView` elementy domyślnie w systemach iOS i Android. Jeśli chcesz ukryć separator wierszy w systemach iOS i Android, ustaw `SeparatorVisibility` właściwość z elementu ListView. Opcje `SeparatorVisibility` są:
 
 * **Domyślna** — przedstawia linii separatora w systemach iOS i Android.
 * **Brak** -ukrywa separatora na wszystkich platformach.

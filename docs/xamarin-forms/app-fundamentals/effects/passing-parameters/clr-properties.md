@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 78d14b9764ab0c7cafb9f09fa1c8acea3f45afde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c913ea56af423631c48fb9ee6d8dcb95028a4144
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Przekazywanie parametrów efekt jako właściwości środowiska uruchomieniowego języka wspólnego
 
@@ -184,14 +184,14 @@ namespace EffectsDemo.Droid
 
 `OnAttached` Metoda pobiera `ShadowEffect` wystąpienia i wywołania [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) metodę w celu utworzenia cienia przy użyciu wartości określonej właściwości. Ta funkcja jest ujęte w `try` / `catch` blokowania w przypadku, gdy formant, który efekt jest dołączony do nie ma `Control.Layer` właściwości. Implementacja nie są dostarczane przez `OnDetached` metody ponieważ czyszczenie nie jest niezbędne.
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & projekty platformy uniwersalnej systemu Windows
+### <a name="universal-windows-platform-project"></a>Projekt platformy uniwersalnej systemu Windows
 
-Poniższy kod przedstawia przykład `LabelShadowEffect` implementacji dla projektów Windows Phone i Windows platformy Uniwersalnej:
+Poniższy kod przedstawia przykład `LabelShadowEffect` implementacji dla projektów uniwersalnych platformy systemu Windows (UWP):
 
 ```csharp
 [assembly: ResolutionGroupName ("Xamarin")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -229,7 +229,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Środowiska uruchomieniowego systemu Windows i platformy uniwersalnej systemu Windows nie oferują efekt cieniowania i dlatego element `LabelShadowEffect` implementacji na obu platform symuluje jedną przez dodanie przesunięcia drugi [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za podstawowy `Label`. `OnAttached` Metoda pobiera `ShadowEffect` wystąpienia, tworzy nowy `Label`i ustawia niektóre właściwości układu `Label`. Następnie tworzy cień przez ustawienie [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) właściwości, aby kontrolować koloru i lokalizacji `Label`. `shadowLabel` Zostanie wstawiony przesunięcie za podstawowy `Label`. Ta funkcja jest ujęte w `try` / `catch` blokowania w przypadku, gdy formant, który efekt jest dołączony do nie ma `Control.Layer` właściwości. Implementacja nie są dostarczane przez `OnDetached` metody ponieważ czyszczenie nie jest niezbędne.
+Platforma uniwersalna systemu Windows nie zapewnia efekt cieniowania i dlatego element `LabelShadowEffect` implementacji na obu platform symuluje jedną przez dodanie przesunięcia drugi [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za podstawowy `Label`. `OnAttached` Metoda pobiera `ShadowEffect` wystąpienia, tworzy nowy `Label`i ustawia niektóre właściwości układu `Label`. Następnie tworzy cień przez ustawienie [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) właściwości, aby kontrolować koloru i lokalizacji `Label`. `shadowLabel` Zostanie wstawiony przesunięcie za podstawowy `Label`. Ta funkcja jest ujęte w `try` / `catch` blokowania w przypadku, gdy formant, który efekt jest dołączony do nie ma `Control.Layer` właściwości. Implementacja nie są dostarczane przez `OnDetached` metody ponieważ czyszczenie nie jest niezbędne.
 
 ## <a name="summary"></a>Podsumowanie
 
@@ -239,7 +239,7 @@ W tym artykule wykazała, przy użyciu właściwości CLR do przekazania paramet
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Effect](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
+- [Efekt](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
 - [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
 - [RoutingEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)
 - [Efektem cienia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)

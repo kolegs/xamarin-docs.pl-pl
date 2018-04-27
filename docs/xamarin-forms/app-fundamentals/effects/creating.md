@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>Tworzenie efektu
 
@@ -150,17 +150,17 @@ namespace EffectsDemo.Droid
 
 `OnElementPropertyChanged` Zastąpienie odpowiada na zmiany właściwości możliwej do wiązania w formancie platformy Xamarin.Forms. Gdy [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) zmiany właściwości kolor tła formantu zostanie zmieniona na kolor biały, jeśli formant ma fokus, w przeciwnym razie zostanie zmieniona na jasnozielony. Ta funkcja jest ujęte w `try` / `catch` blokowania w przypadku, gdy formant efekt jest dołączony do nie ma `BackgroundColor` właściwości.
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & projekty platformy uniwersalnej systemu Windows
+## <a name="universal-windows-platform-projects"></a>Projekty platformy uniwersalnej systemu Windows
 
-Poniższy kod przedstawia przykład `FocusEffect` implementacji dla projektów Windows Phone i Windows platformy Uniwersalnej:
+Poniższy kod przedstawia przykład `FocusEffect` implementacji dla projektów uniwersalnych platformy systemu Windows (UWP):
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {
@@ -256,7 +256,7 @@ W tym artykule przedstawiono sposób tworzenia efekt, który zmienia kolor tła 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Effect](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
+- [Efekt](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
 - [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
 - [Efekt koloru tła (przykład)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
 - [Efekt fokus (przykład)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)

@@ -5,12 +5,12 @@ ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f4be88a1eabb3fa3cca733690a3f097a03516272
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9ce1d790f5dea00ac47d5639ae8424793006445a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -70,7 +70,7 @@ Należy zachować ostrożność podczas usuwanie zarządzanego wywoływane otoki
 Wywoływana otoka zarządzanych podklasy są miejsca zamieszkania może całą logikę specyficzne dla aplikacji "interesujące". Obejmują one niestandardowe [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) podklasy (takich jak [działania Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) typu w domyślnym szablonie projektu). (W szczególności są to dowolne *Java.Lang.Object* podklas, które są *nie* zawierają [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) atrybutów niestandardowych lub [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) jest *false*, co jest ustawieniem domyślnym.)
 
 Jak zarządzać wywoływane otoki zarządzane podklasy wywoływana otoka również zawierać odwołania do globalnej, dostępny za pośrednictwem [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) właściwości. Tak samo jak z zarządzanego wywoływane otoki, odwołań do globalnych można jawnie zwolniona przez wywołanie metody [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-W przeciwieństwie do zarządzanego wywoływane otoki *szczególną uwagę na to* należy podjąć w celu usuwania wystąpień, jako *Dispose()*używać wystąpienia spowoduje przerwanie mapowanie między wystąpienia Java (wystąpienia Wywoływana otoka systemu android) i zarządzanego obiektu.
+W przeciwieństwie do zarządzanego wywoływane otoki *szczególną uwagę na to* należy podjąć w celu usuwania wystąpień, jako *Dispose()* używać wystąpienia spowoduje przerwanie mapowanie między wystąpienia Java (wystąpienia Wywoływana otoka systemu android) i zarządzanego obiektu.
 
 
 ### <a name="java-activation"></a>Aktywacja Java
@@ -115,11 +115,7 @@ Kolejność zdarzeń:
 
 11. *LogTextBox (kontekstu, IAttributeSet, int)* konstruktora *dla tego samego wystąpienia utworzone w [7]* .
 
-12. ...
-
-
-Jeśli (IntPtr, JniHandleOwnership) nie można odnaleźć konstruktora, a następnie [System.MissingMethodException](https://developer.xamarin.com/api/type/System.MissingMethodException/) zostanie wygenerowany.
-
+12. Jeśli (IntPtr, JniHandleOwnership) konstruktora nie można znaleźć, następnie System.MissingMethodException] (https://developer.xamarin.com/api/type/System.MissingMethodException/) zostanie wygenerowany.
 
 <a name="Premature_Dispose_Calls" />
 

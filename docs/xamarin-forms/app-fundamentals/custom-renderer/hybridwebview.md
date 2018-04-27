@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementowanie HybridWebView
 
 _Formanty interfejsu użytkownika platformy Xamarin.Forms powinien pochodzić od klasy widoku, który służy do umieszczania układy i kontroli na ekranie. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania HybridWebView kontrolki niestandardowej, która pokazuje, jak poprawić formanty specyficzne dla platformy sieci web umożliwia kodu C# do wywołania z poziomu języka JavaScript._
 
-Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `ViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIView` formantu. Na platformie Android `ViewRenderer` tworzy wystąpienie klasy `View` formantu. Windows Phone i Windows platformy Uniwersalnej `ViewRenderer` natywny tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `ViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIView` formantu. Na platformie Android `ViewRenderer` tworzy wystąpienie klasy `View` formantu. W systemie Windows platformy Uniwersalnej, `ViewRenderer` natywny tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -417,13 +417,13 @@ Należy pamiętać, że `JSBridge` obsługuje klasy `WeakReference` do `HybridWe
 > [!IMPORTANT]
 > W systemie Android Oreo upewnij się, że ustawia manifestu systemu Android **wersji docelowej Android** do **automatyczne**. W przeciwnym razie uruchomienie tego kodu spowoduje błąd komunikat "invokeCSharpAction nie zdefiniowano".
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Tworzenie niestandardowego modułu renderowania na Windows Phone i platformy uniwersalnej systemu Windows
+### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
-Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla Windows Phone i platformy uniwersalnej systemu Windows:
+Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Windows.UI.Xaml.Controls.WebView>
     {

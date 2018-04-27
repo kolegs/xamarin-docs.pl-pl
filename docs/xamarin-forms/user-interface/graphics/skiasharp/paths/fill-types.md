@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>Typy wypełnienia ścieżki
 
@@ -165,7 +165,7 @@ Zwykle typ wypełnienia ścieżki narusza tylko wypełnienia i nie pociągnięć
 
 [![](fill-types-images/fivepointedstar-small.png "Potrójna zrzut ekranu przedstawiający stronę gwiazdkę Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Potrójna zrzut ekranu strony Five-Pointed gwiazdy")
 
-Android i Windows przenośnych zrzuty ekranu Pokaż typowe skutki parzyste i zawijania, ale kolejność obrysu i wypełnienia wpływa na wyniki.
+Typowe skutki parzyste i zawijania Pokaż zrzuty ekranu Android i platformy uniwersalnej systemu Windows, ale kolejność obrysu i wypełnienia wpływa na wyniki.
 
 Algorytm zawijania jest zależna od kierunku rysowania linii. Zwykle podczas tworzenia ścieżki, można sterować tym kierunku jak określić, że wiersze są rysowane z jednego miejsca do innego. Jednak `SKPath` klasy definiuje również metody, takie jak `AddRect` i `AddCircle` który rysowania całego konturów. Aby kontrolować, jak te obiekty są rysowane, metody to parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), która zawiera dwa elementy członkowskie:
 

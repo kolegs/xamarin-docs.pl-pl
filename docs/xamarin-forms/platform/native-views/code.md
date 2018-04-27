@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="native-views-in-c"></a>Natywny widoków w języku C#
 
@@ -34,7 +34,6 @@ W projekcie udostępnionym platformy Xamarin.Forms przy użyciu tych metod wymag
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Windows Runtime** – Xamarin.Forms.Platform.WinRT
 - **Platforma uniwersalna systemu Windows (UWP)** — Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>Dodawanie widoków specyficzne dla platformy na każdej platformie
@@ -70,7 +69,7 @@ contentView.Content = textView.ToView();
 
 W przykładzie założono, że `stackLayout` i `contentView` wystąpień wcześniej zostały utworzone w języku XAML i C#.
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Środowisko wykonawcze systemu Windows i platforma uniwersalna systemu Windows
+### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
 Poniższy przykładowy kod przedstawia sposób dodawania `TextBlock` do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) i [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 

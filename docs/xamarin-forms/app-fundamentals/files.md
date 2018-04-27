@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 8315f1a0056c6a6f084ebfe2c29f0c0c2bb30330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="files"></a>Pliki
 
@@ -99,9 +99,6 @@ var resourcePrefix = "WorkingWithFiles.iOS.";
 #if __ANDROID__
 var resourcePrefix = "WorkingWithFiles.Droid.";
 #endif
-#if WINDOWS_PHONE
-var resourcePrefix = "WorkingWithFiles.WinPhone.";
-#endif
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
@@ -142,7 +139,7 @@ Platformy Xamarin.Forms działa na wielu platformach, każde z nich własny syst
 
  [![Zapisywanie i ładowanie tekstu](files-images/saveandload-sml.png "zapisywanie i ładowanie plików w aplikacji")](files-images/saveandload.png#lightbox "zapisywanie i ładowanie plików w aplikacji")
 
-Dotyczy wszystkich platform struktury katalogów nieco inne i możliwości innego systemu plików — na przykład Xamarin.iOS i Xamarin.Android obsługuje większość `System.IO` funkcji, ale Windows Phone obsługuje tylko `IsolatedStorage` i [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Interfejsów API.
+Dotyczy wszystkich platform struktury katalogów nieco inne i możliwości innego systemu plików — na przykład Xamarin.iOS i Xamarin.Android obsługuje większość `System.IO` funkcji, ale platformy uniwersalnej systemu Windows obsługuje tylko [ `Windows.Storage` ](/uwp/api/windows.storage/) Interfejsów API.
 
 Aby ominąć ten problem, przykładowej aplikacji definiuje interfejs w PCL platformy Xamarin.Forms do ładowania i zapisać pliki. Zapewnia prosty interfejs API do ładowania i zapisać pliki tekstowe, które będą przechowywane na urządzeniu.
 
@@ -190,9 +187,9 @@ namespace WorkingWithFiles {
 }
 ```
 
-### <a name="universal-windows-platform-uwp-windows-81-and-windows-phone-81"></a>Platforma uniwersalna systemu Windows (UWP), Windows 8.1 i Windows Phone 8.1
+### <a name="universal-windows-platform-uwp"></a>Platforma uniwersalna systemu Windows (UWP)
 
-Tych platform mają różne filesystem interfejsu API — [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) — to znaczy umożliwia zapisywanie i ładowanie plików.
+Platformy uniwersalnej systemu Windows ma innego systemu plików API — [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) — to znaczy umożliwia zapisywanie i ładowanie plików.
 `ISaveAndLoad` Interfejs może zostać zaimplementowany, jak pokazano poniżej:
 
 ```csharp
@@ -226,7 +223,6 @@ namespace WindowsApp
     }
 }
 ```
-
 
 <a name="Saving_and_Loading_in_Shared_Projects" />
 

@@ -1,6 +1,6 @@
 ---
 title: Wprowadzenie do platformy Xamarin.Forms
-description: Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układów interfejsu, które mogą być współużytkowane przez iOS, Android, Windows Phone i aplikacji platformy uniwersalnej systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji.
+description: Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układy interfejsu, które można udostępniać dla systemu iOS, Android i uniwersalnych aplikacji platformy systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 58c0fa2041c106f697166891c0e88a409283c17f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="getting-started-with-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 
-_Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układów interfejsu, które mogą być współużytkowane przez iOS, Android, Windows Phone i aplikacji platformy uniwersalnej systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji._
+_Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układy interfejsu, które można udostępniać dla systemu iOS, Android i uniwersalnych aplikacji platformy systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji._
 
 Omówienie instalacji i konfiguracji rozwiązania, mające zastosowanie do aplikacji dla wielu platform, zobacz [wymagania dotyczące platformy Xamarin.Forms](installation.md) i [instalacji](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+> [Szybki Start platformy Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 
 
 

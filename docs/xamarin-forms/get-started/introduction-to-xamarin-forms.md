@@ -1,27 +1,27 @@
 ---
 title: Wprowadzenie do platformy Xamarin.Forms
-description: Platformy Xamarin.Forms jest między platformami natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS, Windows i Windows Phone. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim.
+description: Obsługujący wiele platform natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS i platformy uniwersalnej systemu Windows jest platformy Xamarin.Forms. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 6428f1658245ec5ecf47e474bc5ffd5d49663bf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 
-_Platformy Xamarin.Forms jest między platformami natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS, Windows i Windows Phone. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim._
+_Obsługujący wiele platform natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez Android, iOS, Windows i platformy uniwersalnej systemu Windows jest platformy Xamarin.Forms. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim._
 
 <a name="Overview" />
 
 ## <a name="overview"></a>Omówienie
 
-Platformy Xamarin.Forms to platforma, która umożliwia deweloperom szybkie tworzenie międzyplatformowego interfejsu użytkownika. Zapewnia ona jest abstrakcję własny interfejs użytkownika, który będzie renderowany przy użyciu natywnych kontrolek z systemem iOS, Android, Windows i Windows Phone. Oznacza to, że aplikacje można udostępniać duża część ich kod interfejsu użytkownika i nadal zachować natywnego wyglądu i działania platformy docelowej.
+Platformy Xamarin.Forms to platforma, która umożliwia deweloperom szybkie tworzenie międzyplatformowego interfejsu użytkownika. Zapewnia ona jest abstrakcję własny interfejs użytkownika, który będzie renderowany przy użyciu kontrolki natywne dla systemu iOS, Android lub platformy uniwersalnej systemu Windows (UWP). Oznacza to, że aplikacje można udostępniać duża część ich kod interfejsu użytkownika i nadal zachować natywnego wyglądu i działania platformy docelowej.
 
 Umożliwia szybkie tworzenie prototypów aplikacji, które można rozwijać, wraz z upływem czasu złożonych aplikacji platformy Xamarin.Forms. Ponieważ aplikacje platformy Xamarin.Forms natywnych aplikacji, nie ma ograniczenia innych narzędzi, takich jak sandboxing przeglądarki, ograniczone interfejsów API lub pogorszenie wydajności. Aplikacje napisane przy użyciu platformy Xamarin.Forms będą mogli korzystać z dowolnej z interfejsu API lub funkcji podstawowej platformy, takich jak (ale nie wyłącznie) CoreMotion, PassKit i StoreKit w systemie iOS; NFC i usług Google Play w systemie Android; i Kafelki w systemie Windows. Ponadto istnieje możliwość tworzenia aplikacji, które mają elementy interfejsu użytkownika utworzone za pomocą platformy Xamarin.Forms, podczas gdy inne elementy są tworzone przy użyciu natywnych narzędzi interfejsu użytkownika.
 
@@ -120,39 +120,6 @@ namespace HelloXamarinFormsWorld.Android
 ```
 
 `OnCreate` Zastąpienie inicjuje framework platformy Xamarin.Forms przez wywołanie metody `Init` metody. Powoduje to implementacja specyficzne dla systemu Android platformy Xamarin.Forms, aby można było załadować aplikacji przed załadowaniem aplikacji platformy Xamarin.Forms.
-
-<a name="Launching_in_Windows_Phone" />
-
-#### <a name="windows-phone-81-winrt"></a>Windows Phone 8.1 (WinRT)
-
-W aplikacjach środowiska wykonawczego systemu Windows `Init` metodę, która inicjuje framework platformy Xamarin.Forms jest wywoływany z `App` klasy:
-
-```csharp
-Xamarin.Forms.Forms.Init (e);
-
-if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-{
-  ...
-}
-```
-
-Powoduje to implementacja Windows Phone specyficzne dla platformy Xamarin.Forms do załadowania w aplikacji. Strona początkowa platformy Xamarin.Forms jest uruchamiana przez `MainPage` klasy, jak pokazano w poniższym przykładzie:
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-      this.InitializeComponent();
-      this.NavigationCacheMode = NavigationCacheMode.Required;
-      this.LoadApplication(new HelloXamarinFormsWorld.App());
-    }
-}
-```
-
-Ładowania aplikacji platformy Xamarin.Forms z `LoadApplication` metody.
-
-Platformy Xamarin.Forms ma również obsługę Windows 8.1. Aby uzyskać informacje dotyczące sposobu konfigurowania tego typy projektów, zobacz [Instalatora Windows projekty](~/xamarin-forms/platform/windows/installation/index.md).
 
 #### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
@@ -747,7 +714,7 @@ Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms, książki prze
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule podać wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim. Platformy Xamarin.Forms jest między platformami natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS, Windows i Windows Phone. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy.
+W tym artykule podać wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim. Obsługujący wiele platform natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS i platformy uniwersalnej systemu Windows jest platformy Xamarin.Forms. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy.
 
 
 ## <a name="related-links"></a>Linki pokrewne

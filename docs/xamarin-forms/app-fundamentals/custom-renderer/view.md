@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>Implementowanie widoku
 
 _Formanty interfejsu użytkownika platformy Xamarin.Forms powinien pochodzić od klasy widoku, który służy do umieszczania układy i kontroli na ekranie. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla platformy Xamarin.Forms kontrolki niestandardowej, która jest używana do wyświetlania podglądu strumienia wideo z aparatu fotograficznego urządzenia._
 
-Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `ViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIView` formantu. Na platformie Android `ViewRenderer` natywny tworzy wystąpienie klasy `View` formantu. Windows Phone i Windows platformy Uniwersalnej `ViewRenderer` natywny tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `ViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIView` formantu. Na platformie Android `ViewRenderer` natywny tworzy wystąpienie klasy `View` formantu. W systemie Windows platformy Uniwersalnej, `ViewRenderer` natywny tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 Pod warunkiem że `Control` właściwość jest `null`, `SetNativeControl` metoda jest wywoływana można utworzyć nowy `CameraPreview` kontroli i przypisać odwołanie do niej do `Control` właściwości. `CameraPreview` Formant jest specyficzne dla platformy kontrolki niestandardowej, która używa `Camera` interfejsu API w celu zapewnienia strumienia podglądu z aparatu fotograficznego. `CameraPreview` Kontroli jest następnie konfigurowana, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Ta konfiguracja obejmuje tworzenie nowych natywny `Camera` obiekt na dostęp aparatu konkretnego sprzętu i rejestrowania programu obsługi zdarzeń do przetwarzania `Click` zdarzeń. Z kolei ten program obsługi będzie zatrzymać i uruchomić podglądu wideo, jest on wybrany. `Click` Zdarzeń jest Anulowano subskrypcję, jeśli element platformy Xamarin.Forms renderującego jest dołączony do zmiany.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Tworzenie niestandardowego modułu renderowania na Windows Phone i platformy uniwersalnej systemu Windows
+### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
-Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla Windows Phone i platformy uniwersalnej systemu Windows:
+Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 Pod warunkiem że `Control` właściwość jest `null`, nowy `CaptureElement` zostanie uruchomiony i `InitializeAsync` wywoływana jest metoda, która używa `MediaCapture` interfejsu API w celu zapewnienia strumienia podglądu z aparatu fotograficznego. `SetNativeControl` Wywoływana jest metoda następnie przypisać odwołania do `CaptureElement` wystąpienie do `Control` właściwości. `CaptureElement` Kontrolować ujawnia `Tapped` zdarzeń, który jest obsługiwany przez `OnCameraPreviewTapped` metody do zatrzymywania i uruchamiania podglądu wideo, jest on wybrany. `Tapped` Zdarzeń jest subskrybentem podczas niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms i Anulowano subskrypcję tylko, gdy element renderującego jest dołączony do zmiany.
 
 > [!NOTE]
-> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows lub Windows Phone. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) dla aplikacji środowiska wykonawczego systemu Windows i [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) dla aplikacji platformy uniwersalnej systemu Windows.
+> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
 ## <a name="summary"></a>Podsumowanie
 

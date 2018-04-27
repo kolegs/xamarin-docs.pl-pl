@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementowanie tekst na mowę
 
@@ -20,7 +20,7 @@ Ten artykuł zawiera informacje pomocne podczas tworzenia aplikacji i platform, 
 - **[Tworzenie interfejsu](#Creating_the_Interface)**  &ndash; zrozumieć sposób tworzenia interfejsu w kodzie udostępnionego.
 - **[iOS implementacji](#iOS_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu iOS.
 - **[Implementacja systemu android](#Android_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu Android.
-- **[Implementacja systemu Windows](#WindowsImplementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla Windows Phone i Windows platformy Uniwersalnej.
+- **[Implementacja platformy uniwersalnej systemu Windows](#WindowsImplementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla uniwersalnych platformy systemu Windows (UWP).
 - **[Wdrażanie w kodzie udostępnionego](#Implementing_in_Shared_Code)**  &ndash; Dowiedz się, jak używać `DependencyService` do wywołania do implementacji native z udostępnionego kodu.
 
 Aplikacji przy użyciu `DependencyService` będzie mieć następującą strukturę:
@@ -122,9 +122,9 @@ namespace DependencyServiceSample.Droid
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone i implementacji platformy uniwersalnej systemu Windows
+## <a name="universal-windows-platform-implementation"></a>Implementacja platformy uniwersalnej systemu Windows
 
-Windows Phone i platformy uniwersalnej systemu Windows mają mowy interfejsu API w `Windows.Media.SpeechSynthesis` przestrzeni nazw. Pamiętaj, aby znaczników jest tylko zastrzeżenie: **mikrofon** możliwości w manifeście, w przeciwnym razie dostęp do mowy interfejsy API są zablokowane.
+Platforma uniwersalna systemu Windows ma mowy interfejsu API w `Windows.Media.SpeechSynthesis` przestrzeni nazw. Pamiętaj, aby znaczników jest tylko zastrzeżenie: **mikrofon** możliwości w manifeście, w przeciwnym razie dostęp do mowy interfejsy API są zablokowane.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -165,7 +165,7 @@ public MainPage ()
 }
 ```
 
-Uruchomienie tej aplikacji w systemach iOS, Android, lub platformy systemu Windows i naciśnięcie przycisku spowoduje aplikacji przy użyciu natywnych mowy SDK na każdej platformie, mówiąc.
+W aplikacji przy użyciu natywnych mowy SDK na każdej platformie, mówiąc spowoduje uruchomienie takiej aplikacji systemu iOS, Android lub platformy uniwersalnej systemu Windows i naciskając przycisk.
 
  ![iOS i Android przycisk tekst na mowę](text-to-speech-images/running.png "przykładowy tekst na mowę")
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 8d6276a96d591363c88be4ff7edd8a9d039fb29d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="colors"></a>Kolory
 
@@ -44,7 +44,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Kolorów te są wyświetlane na każdej z platform. Zwróć uwagę, kolor końcowy - `Accent` -blue-ish kolor dla systemów iOS i Android; ta wartość jest definiowana przez platformy Xamarin.Forms. Na Windows Phone `Accent` pokazuje kolorem czerwonym *ponieważ jest to kolor akcentu wybrane przez użytkownika dla tego urządzenia*; zmiany tej wartości w zależności od preferencji użytkownika.
+Kolorów te są wyświetlane na każdej z platform. Zwróć uwagę, kolor końcowy - `Accent` -blue-ish kolor dla systemów iOS i Android; ta wartość jest definiowana przez platformy Xamarin.Forms.
 
  [![Pokaz kolor](colors-images/colors-sml.png "pokaz kolor")](colors-images/colors.png#lightbox "pokaz kolorów")
 
@@ -59,8 +59,6 @@ Deweloperzy mogą używać tę wartość można ustawić `Color` właściwości 
 Ustaw kolor, aby wyczyścić.
 
 ## <a name="coloraccent"></a>Color.Accent
-
-Windows Phone jest kolor dopełniający wybierany przez użytkownika. Dobrym aplikacji Windows Phone umożliwia jako część ich stylów udostępnienie natywnego wyglądu i działania.
 
 W systemach iOS i Android tego wystąpienia wynosi kontrastowy kolor, który jest widoczny na domyślne tło, ale nie jest taka sama jak domyślny kolor tekstu.
 

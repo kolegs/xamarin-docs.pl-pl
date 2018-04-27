@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layouts"></a>Układy
 
@@ -180,7 +180,7 @@ Platformy Xamarin.Forms i swoją wbudowanych układów są w stanie obsługiwać
 
 ### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[Układ aplikacji typu Tablet i pulpitu](tablet.md)
 
-systemy iOS, Android i Windows wszystkie obsługi większych rozmiarów ekranu na platformach tablet urządzeń (a także komputerów przenośnych i stacjonarnych dla systemu Windows). Platformy Xamarin.Forms umożliwia optymalizowanie aplikacji na ekranach większych wykrywania typu urządzenia i dostosowywania układ strony lub przy użyciu całkiem strony całkowicie dla większych ekranów.
+iOS, Android i platformy uniwersalnej systemu Windows na wszystkie obsługują większych rozmiarów ekranu tablet urządzeń (a także komputerów przenośnych i stacjonarnych dla systemu Windows). Platformy Xamarin.Forms umożliwia optymalizowanie aplikacji na ekranach większych wykrywania typu urządzenia i dostosowywania układ strony lub przy użyciu całkiem strony całkowicie dla większych ekranów.
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[Tworzenie niestandardowego układu](custom.md)
 

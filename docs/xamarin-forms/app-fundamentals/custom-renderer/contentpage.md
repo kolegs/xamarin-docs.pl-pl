@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>Dostosowywanie wartość ContentPage
 
 _Wartość ContentPage jest element wizualny, która wyświetla pojedynczego widoku i zajmuje większość ekranu. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania strony wartość ContentPage umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy._
 
-Formant co platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `PageRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIViewController` formantu. Na platformie Android `PageRenderer` tworzy wystąpienie klasy `ViewGroup` formantu. Windows Phone i Windows platformy Uniwersalnej `PageRenderer` tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Formant co platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `PageRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIViewController` formantu. Na platformie Android `PageRenderer` tworzy wystąpienie klasy `ViewGroup` formantu. W systemie Windows platformy Uniwersalnej, `PageRenderer` tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Na poniższym diagramie przedstawiono związek między [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) i odpowiednie natywnego formantów, które implementuje ona:
 
@@ -197,57 +197,6 @@ namespace CustomRenderer.Droid
 Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy Android `ViewGroup` kontroli, która to grupa widoków. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu platformy Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
 
 Strona jest następnie dostosowane przez wywoływanie szereg metod korzystających z `Camera` interfejsu API w celu zapewnienia strumień na żywo z aparatu fotograficznego oraz możliwość przechwytywania fotografii, przed `AddView` metoda jest wywoływana, aby dodać aparatu na żywo strumienia interfejsu użytkownika Służącego do `ViewGroup`.
-
-### <a name="creating-the-page-renderer-on-windows-phone"></a>Tworzenie modułu renderowania strony na Windows Phone
-
-Poniższy przykład kodu pokazuje renderowanie strony dla platformy Windows Phone:
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy Windows Phone `Canvas` kontroli realizacją strony. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu platformy Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
-
-Na platformie Windows Phone typu odwołanie do natywnego strony używane na platformie jest możliwy za pośrednictwem `ContainerElement` właściwości, z `Canvas` kontrolować są typu odwołanie do `FrameworkElement`. Strona jest następnie dostosowane przez wywoływanie szereg metod korzystających z `MediaCapture` interfejsu API w celu zapewnienia strumień na żywo z aparatu fotograficznego oraz możliwość przechwytywania zdjęcie przed dodaniem do dostosowanej strony `Canvas` do wyświetlenia.
-
-Podczas implementowania niestandardowego modułu renderowania, która jest pochodną `PageRenderer` na środowiska uruchomieniowego systemu Windows `ArrangeOverride` metody również powinny być implementowane ułożyć formantów strony, ponieważ podstawowy mechanizm renderujący nie może ustalić, co należy zrobić z nimi. W przeciwnym razie wartość pusta strona wyników. W związku z tym, w tym przykładzie `ArrangeOverride` wywołania metody `Arrange` metoda `Page` wystąpienia.
-
-> [!NOTE]
-> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji Windows Phone 8.1 WinRT. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz `CleanUpCaptureResourcesAsync` metody w projekcie Windows Phone w rozwiązaniu próbki i [Szybki Start: Przechwytywanie obrazu wideo przy użyciu interfejsu API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Tworzenie modułu renderowania strony na platformy uniwersalnej systemu Windows
 

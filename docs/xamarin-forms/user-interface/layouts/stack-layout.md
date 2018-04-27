@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 Powyższy kod wyniki w układzie następujące:
 
 ![](stack-layout-images/stack.png "StackLayout złożonych")
-
-Należy zauważyć, że z powodu różnic w sposób renderowania przycisków przez Windows Phone, niektóre kółka zostały zastąpione przez boxviews na zrzucie ekranu Windows Phone.
 
 Zwróć uwagę, że `StackLayouts`s są zagnieżdżone, ponieważ w niektórych przypadkach zagnieżdżania układów mogą być łatwiejsze niż przedstawienie wszystkich elementów w ten sam układ. Ponadto, ponieważ `StackLayout` nie obsługuje elementów nakładające się Strona nie ma niceties układu znaleźć niektórych dla innych układów na stronach.
 

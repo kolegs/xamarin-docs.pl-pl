@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>Strona z kartami
 
@@ -39,7 +39,6 @@ Układ [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Tab
     > [!NOTE]
   > Należy pamiętać, że przy użyciu AppCompat w systemie Android, każdej karcie będą również wyświetlane ikony. Ponadto `TabbedPageRenderer` dla systemu Android AppCompat ma możliwym do zastąpienia `SetTabIcon` metodę, która może służyć do załadować ikony kartę z niestandardowego `Drawable`. To zastąpienie pozwala używać obrazów SVG jako ikony na `TabbedPage`.
 
-- Na Windows Phone w górnej części ekranu zostanie wyświetlona lista kart i obszaru szczegółów znajduje się poniżej. Jeśli zbyt wiele do jednego ekranu karty, których nazwy są konwertowane na małe litery, a użytkownik mogą być przewijane kolekcję kart.
 - Na typu tablet z systemem Windows-rozmiarach, kartach nie zawsze są widoczne, a użytkownicy muszą Przejdź w dół (lub kliknij prawym przyciskiem myszy, jeśli mają myszy dołączony) do wyświetlania na kartach w `TabbedPage` (jak pokazano poniżej).
 
 ![](tabbed-page-images/windows-tabs.png "TabbedPage karty w systemie Windows")

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 3f098e7f403a4f5e9fd924b8745348197cd4f843
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b437b42c1cb4dd8cbe7612a680032d84e852ff6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-battery-status"></a>Sprawdzanie stanu baterii
 
@@ -22,7 +22,6 @@ Ponieważ platformy Xamarin.Forms nie obejmuje funkcjonalności sprawdzania z bi
 - **[Tworzenie interfejsu](#Creating_the_Interface)**  &ndash; zrozumieć sposób tworzenia interfejsu w kodzie udostępnionego.
 - **[iOS implementacji](#iOS_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu iOS.
 - **[Implementacja systemu android](#Android_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu Android.
-- **[Windows Phone implementacji](#Windows_Phone_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla Windows Phone.
 - **[Uniwersalny implementacji platformy Windows](#UWPImplementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla uniwersalnych platformy systemu Windows (UWP).
 - **[Wdrażanie w kodzie udostępnionego](#Implementing_in_Shared_Code)**  &ndash; Dowiedz się, jak używać `DependencyService` do wywołania do implementacji native z udostępnionego kodu.
 
@@ -311,74 +310,6 @@ namespace DependencyServiceSample.Droid
 
 Ten atrybut rejestruje klasę jako implementacja `IBattery` interfejsu, co oznacza, że `DependencyService.Get<IBattery>` mogą być używane w udostępnionej kodu można utworzyć wystąpienie.
 
-<a name="Windows_Phone_Implementation" />
-
-## <a name="windows-phone-implementation"></a>Implementacja Windows Phone
-
-Ta implementacja jest bardziej ograniczony niż wersje systemów Android i iOS, ponieważ interfejs API zasilania Windows Phone zawiera informacje o mniej niż odpowiedniki systemów Android i iOS.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-namespace DependencyServiceSample.WinPhone
-{
-  public class BatteryImplementation : IBattery
-  {
-    private int last;
-    private BatteryStatus status = BatteryStatus.Unknown;
-
-    public BatteryImplementation()
-    {
-      last = DefaultBattery.RemainingChargePercent;
-    }
-
-    Windows.Phone.Devices.Power.Battery battery;
-    private Windows.Phone.Devices.Power.Battery DefaultBattery
-    {
-      get { return battery ?? (battery = Windows.Phone.Devices.Power.Battery.GetDefault()); }
-    }
-    public int RemainingChargePercent
-    {
-      get
-      { return DefaultBattery.RemainingChargePercent; }
-    }
-
-    public  BatteryStatus Status
-    {
-      get { return status; }
-    }
-
-    public PowerSource PowerSource
-    {
-      get
-      {
-        if (status == BatteryStatus.Full || status == BatteryStatus.Charging)
-          return PowerSource.Ac;
-
-        return PowerSource.Battery;
-      }
-    }
-  }
-}
-```
-
-Dodaj tę `[assembly]` atrybutu powyżej klasy (i poza wszystkie przestrzenie nazw, które zostały zdefiniowane), w tym wszelkie wymagane `using` instrukcje.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (BatteryImplementation))]
-namespace DependencyServiceSample.WinPhone {
-  public class BatteryImplementation : IBattery {
-    ...
-```
-
-Ten atrybut rejestruje klasę jako implementacja `IBattery` interfejsu, co oznacza, że `DependencyService.Get<IBattery>` można użyć w kodzie udostępniony można utworzyć wystąpienie.
-
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>Implementacja platformy uniwersalnej systemu Windows
@@ -537,7 +468,7 @@ public MainPage ()
 }
 ```
 
-Tekst przycisku aktualizacji w celu uwzględnienia bieżący stan zasilania urządzenia spowoduje uruchomienie takiej aplikacji systemu iOS, Android lub platformy systemu Windows i naciskając przycisk.
+Ta aplikacja jest uruchamiana w systemie iOS, Android, lub platformy uniwersalnej systemu Windows i naciśnięcie przycisku spowoduje tekst przycisku aktualizacji w celu uwzględnienia bieżący stan zasilania urządzenia.
 
 ![](battery-info-images/battery.png "Przykładowe stan baterii")
 

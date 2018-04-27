@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Trzy typy krzywych Beziera
 
@@ -92,7 +92,7 @@ W tym miejscu jest uruchomiona na wszystkich platformach trzy:
 
 Matematycznie krzywa jest wielomianu trzeciego stopnia. Krzywej co najwyżej przecina prostej na trzy punkty. W momencie rozpoczęcia krzywa jest zawsze stycznej, a w tym samym kierunku co prostej od początku wskaż pierwszy punkt kontrolny. W punkcie końcowym krzywa jest zawsze stycznej, a w tym samym kierunku co polecenie prostej z drugiego punktu końcowego.
 
-Trzeciego krzywej Beziera zawsze jest ograniczone przez jest Czworokąt wypukłych łączenie cztery punkty. Ta metoda jest wywoływana *wypukłych powłoki*. Jeśli punkty kontrolne znajduje się na prostej między początkowy i punkt końcowy, krzywej Beziera renderuje jako prostej. Ale krzywej mogą również przechodzić, jak przedstawiono zrzut ekranu z urządzenia Windows Mobile.
+Trzeciego krzywej Beziera zawsze jest ograniczone przez jest Czworokąt wypukłych łączenie cztery punkty. Ta metoda jest wywoływana *wypukłych powłoki*. Jeśli punkty kontrolne znajduje się na prostej między początkowy i punkt końcowy, krzywej Beziera renderuje jako prostej. Ale krzywej mogą również przechodzić, jako trzeci zrzut ekranu przedstawia.
 
 Rozkład ścieżki może zawierać wiele połączonych sześcienny krzywych Beziera, ale połączenie między dwoma sześcienny krzywych Beziera będzie smooth, tylko wtedy, gdy colinear następujące trzy punkty (czyli znajduje się na prostej):
 
@@ -124,7 +124,7 @@ Na poniższym diagramie przedstawiono cztery punkty etykietą `pto`, `pt1`, `pt2
 
 Wiersze z punktu początkowego i końcowego do punktów kontrolnych są tangens okręgu i krzywej Beziera i mają długość *L*. Pierwszego artykułu wymienionych powyżej wskazuje, że najważniejsze krzywej Beziera przybliża łuku okręgu podczas tej długości *L* jest obliczane w następujący sposób:
 
-L = 4 × tan(α / 4) / 3
+L = 4 x tan(α / 4) / 3
 
 Na ilustracji przedstawiono pod kątem 45 stopni, dlatego L równa 0.265. W kodzie ta wartość będzie mnożona przez żądaną promień okręgu.
 
@@ -208,7 +208,7 @@ Oto działająca na platformach trzy, z trzema różnymi kątami program:
 
 [![](beziers-images/beziercirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")](beziers-images/beziercirculararc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")
 
-Należy dokładnie przejrzeć ekranu Windows Mobile, i zobaczysz, że krzywej Beziera będzie szczególnie odbiega od Półkolista, gdy kąt jest 180 stopni, ale ekranu dla systemu iOS pokazuje, że prawdopodobnie dopasowania koło kwartału tylko drobne kąt wynosi 90 stopni.
+Należy dokładnie przejrzeć trzeci zrzut ekranu i zobaczysz, że krzywej Beziera będzie szczególnie odbiega od Półkolista, gdy kąt jest 180 stopni, ale ekranu dla systemu iOS pokazuje, że prawdopodobnie dopasowania koło kwartału tylko drobne kąt wynosi 90 stopni.
 
 Obliczanie współrzędne punktów kontrolnych dwóch jest dość łatwe, gdy kółko kwartału jest orientacji w następujący sposób:
 
