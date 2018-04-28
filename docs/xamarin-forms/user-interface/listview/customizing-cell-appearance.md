@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>Wygląd komórek
 
@@ -70,7 +70,7 @@ TextCells są renderowane jako kontrolki natywne w czasie wykonywania, więc wyd
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Niestandardowe komórek
-Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek zaimplementowana wymagane układu. Na przykład można prezentować komórki dwie etykiety, które mają ta sama waga. A `LabelCell` będzie za mało ponieważ `LabelCell` ma jednej etykiety, która jest mniejsza. Większość dostosowania komórki dodać dodatkowych danych tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania).
+Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek zaimplementowana wymagane układu. Na przykład można prezentować komórki dwie etykiety, które mają ta sama waga. A `TextCell` będzie za mało ponieważ `TextCell` ma jednej etykiety, która jest mniejsza. Większość dostosowania komórki dodać dodatkowych danych tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania).
 
 Wszystkie niestandardowe komórki musi pochodzić od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tej samej klasy podstawowej, że wszystkie komórki wbudowane typy użycia.
 
