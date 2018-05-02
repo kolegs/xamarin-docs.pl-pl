@@ -16,6 +16,7 @@
 #### [Part 4. Część 4. Powiązania danych — podstawy](xaml/xaml-basics/data-binding-basics.md)
 #### [Part 5. Część 5. Od powiązań danych do wzorca MVVM](xaml/xaml-basics/data-bindings-to-mvvm.md)
 ### [Kompilacja języka XAML](xaml/xamlc.md)
+### [Ponowne ładowanie na żywo](xaml/live-reload.md)
 ### [Program podglądu języka XAML](xaml/xaml-previewer.md)
 ### [Przestrzeń nazw XAML](xaml/namespaces.md)
 ### [Rozszerzenia struktury znaczników XAML](xaml/markup-extensions/index.md)
