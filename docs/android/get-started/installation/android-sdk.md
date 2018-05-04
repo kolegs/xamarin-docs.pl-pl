@@ -1,5 +1,5 @@
 ---
-title: Instalacja zestawu SDK systemu android
+title: Definiowanie zestawu Android SDK dla platformy Xamarin.Android
 description: Visual Studio zawiera Android SDK Manager zastępujący firmy Google autonomiczny zestaw SDK Manager. W tym przewodniku wyjaśniono, jak pobrać narzędzia zestawu SDK systemu Android, platform i inne składniki potrzebne do tworzenie aplikacji platformy Xamarin.Android przy użyciu Menedżera zestawu SDK.
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="android-sdk-setup"></a>Instalacja zestawu SDK systemu android
+# <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Definiowanie zestawu Android SDK dla platformy Xamarin.Android
 
 _Visual Studio zawiera Android SDK Manager zastępujący firmy Google autonomiczny zestaw SDK Manager. W tym przewodniku wyjaśniono, jak pobrać narzędzia zestawu SDK systemu Android, platform i inne składniki potrzebne do tworzenie aplikacji platformy Xamarin.Android przy użyciu Menedżera zestawu SDK._
 
@@ -82,7 +82,7 @@ Po kliknięciu **Narzędzia > Android > Android SDK Manager** (jak wyjaśniono d
 -----
 
  
-## <a name="sdk-manager"></a>SDK Manager 
+## <a name="sdk-manager"></a>Zestaw SDK Manager 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

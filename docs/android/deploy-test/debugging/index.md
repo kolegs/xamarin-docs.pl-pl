@@ -1,23 +1,24 @@
 ---
-title: Debugowanie
+title: Profilowanie platformy Xamarin.Android na urządzeniach i emulatory
 description: Jak do testowania i debugowania aplikacji platformy Xamarin.Android
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/16/2018
-ms.openlocfilehash: 429a369ddcd11829920f9fb932a737d1a53cec10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 4b51b10965f3f6e77420d657bc0f7f7d25fc6569
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debugging"></a>Debugowanie
 
+W tej sekcji omówiono sposób debugowania aplikacji platformy Xamarin.Android na urządzeniach lub emulatory.
 ## <a name="debugging-overview"></a>Informacje o debugowaniu
 
-Tworzenie aplikacji systemu Android wymaga działania aplikacji, albo na sprzęcie fizycznym lub przy użyciu emulatorem ani symulatorem. Przy użyciu sprzętu jest najlepszym rozwiązaniem, ale nie zawsze najbardziej praktyczne. W wielu przypadkach może być łatwiejsze i bardziej ekonomiczne symulować/emulować sprzętu z systemem Android przy użyciu jednej z emulatory opisane poniżej.
+Tworzenie aplikacji systemu Android wymaga działania aplikacji, albo na sprzęcie fizycznym lub przy użyciu emulatora. Przy użyciu sprzętu jest najlepszym rozwiązaniem, ale nie zawsze najbardziej praktyczne. W wielu przypadkach może być łatwiejsze i bardziej ekonomiczne symulować/emulować sprzętu z systemem Android przy użyciu jednej z emulatory opisane poniżej.
 
 
 ### <a name="android-sdk-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Emulator zestawu SDK systemu Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md)

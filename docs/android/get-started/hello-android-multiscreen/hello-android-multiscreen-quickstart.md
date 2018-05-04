@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Witaj, Android Wieloekranowy: Szybki Start
 
@@ -108,10 +108,11 @@ W tej klasie, tworzysz `ListActivity` i wypełnianie jej programowo, więc nie t
 
 ### <a name="adding-translation-history-code"></a>Dodawanie kodu historii tłumaczenia
 
-Numery telefonów, (tj. użytkownik został przetłumaczony na pierwszym ekranie) zbiera dane tej aplikacji i przekazuje je do drugiego ekranu. Numery telefonów są przechowywane jako lista ciągów. Do obsługi list, Dodaj następujący `using` dyrektywy na początku `MainActivity` klasy:
+Numery telefonów, (tj. użytkownik został przetłumaczony na pierwszym ekranie) zbiera dane tej aplikacji i przekazuje je do drugiego ekranu. Numery telefonów są przechowywane jako lista ciągów. Obsługa list (i lokalizacji docelowych, które są używane później), Dodaj następujący `using` dyrektywy na początku **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Następnie utwórz pustą listę, która może zostać wypełniony z numerami telefonów.
@@ -246,10 +247,11 @@ W tej klasie `ListActivity` jest tworzone i wypełniane programowo, więc nie tr
 
 ### <a name="adding-translation-history-code"></a>Dodawanie kodu historii tłumaczenia
 
-Numery telefonów, (tj. użytkownik został przetłumaczony na pierwszym ekranie) zbiera dane tej aplikacji i przekazuje je do drugiego ekranu. Numery telefonów są przechowywane jako lista ciągów. Do obsługi list, Dodaj następujący `using` dyrektywy na początku `MainActivity` klasy:
+Numery telefonów, (tj. użytkownik został przetłumaczony na pierwszym ekranie) zbiera dane tej aplikacji i przekazuje je do drugiego ekranu. Numery telefonów są przechowywane jako lista ciągów. Obsługa list (i lokalizacji docelowych, które są używane później), Dodaj następujący `using` dyrektywy na początku **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Następnie utwórz pustą listę, która może zostać wypełniony z numerami telefonów. `MainActivity` Klasa będzie wyglądać następująco:

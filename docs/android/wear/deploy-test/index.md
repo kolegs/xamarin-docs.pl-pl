@@ -1,17 +1,17 @@
 ---
-title: Wdrażanie i testowanie
-description: Jak przetestować aplikację zużycia na urządzeniu z systemem Android (lub w emulatorze) i przygotowywania ich do wdrożenia.
+title: Testowanie, optymalizacja i wdrażaniu nosić aplikacje systemu operacyjnego
+description: Jak przetestować aplikację nosić systemu operacyjnego na urządzeniu z systemem Android (lub emulator) i przygotowywania ich do wdrożenia.
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/19/2017
-ms.openlocfilehash: e6472b3bf07750338d9ada7ca62f0a5c9e2c8a7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9e35b383c77e246d453f03c4b6cdac7c01d32ace
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deployment-and-testing"></a>Wdrażanie i testowanie
 

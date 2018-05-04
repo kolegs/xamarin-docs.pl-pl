@@ -1,16 +1,16 @@
 ---
-title: Osadzanie błędów .NET
+title: Osadzanie .NET błędów
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: 0bc4451d8eb93b826fc673bc4e163c9b7b68c36e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 677242ea12f8fd87d82f337eafd96a1743ad806a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-errors"></a>Osadzanie błędów .NET
 
@@ -92,7 +92,7 @@ Jest to znany problem, który mamy zamierzają naprawić w przyszłym wydaniu ge
 
 Narzędzia nie można scalić struktur wymienionych w komunikacie o błędzie, ponieważ jest plikiem wspólnej między nimi.
 
-Może to wskazywać na błąd w Embeddinator 4000; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
+Może to wskazywać na błąd w osadzanie .NET; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
 
 <a name="EM0011" />
 
@@ -142,9 +142,9 @@ Składnia dla opcji wiersza polecenia `A` nie może być analizowana przez narz�
 
 ### <a name="em0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsgithubcommonoembeddinator-4000issues"></a>EM0099: Błąd wewnętrzny *. Raport o usterce z przypadkiem testowym pliku (https://github.com/mono/Embeddinator-4000/issues).
 
-Ten komunikat o błędzie jest zgłaszany, gdy wewnętrzne sprawdzenie spójności w Embeddinator 4000 nie powiodło się.
+Ten komunikat o błędzie jest zgłaszany, gdy wewnętrzne sprawdzenie spójności w osadzanie .NET nie powiodło się.
 
-To wskazuje na usterkę w Embeddinator 4000; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
+To wskazuje na usterkę w osadzanie .NET; Raport o usterce w pliku [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) z przypadkiem testowym.
 
 <!-- 1xxx: code processing -->
 
@@ -189,7 +189,7 @@ public class MyType {
 }
 ```
 
-W takich przypadkach tylko dwa wygenerowany `init` selektorów zostanie utworzony, zarówno wywołanie mono, ale będą istnieć nie otoki dla późniejszej.
+W takich przypadkach tylko dwa wygenerowany `init` selektorów zostanie utworzony, zarówno wywołanie Mono, ale będą istnieć nie otoki dla późniejszej.
 
 <a name="EM1030" />
 
@@ -224,7 +224,7 @@ public class MyType {
 }
 ```
 
-W takich przypadkach tylko dwa wygenerowany `increment` selektorów zostanie utworzony, zarówno wywołanie mono, ale będą istnieć nie otoki dla późniejszej.
+W takich przypadkach tylko dwa wygenerowany `increment` selektorów zostanie utworzony, zarówno wywołanie Mono, ale będą istnieć nie otoki dla późniejszej.
 
 <a name="EM1033" />
 
@@ -236,7 +236,7 @@ Jest to **ostrzeżenie** która metoda `M` nie jest generowany, ponieważ inna m
 
 ### <a name="em1034-extension-method-m-is-not-generated-inside-a-category-because-they-cannot-be-created-on-primitive-type-t-a-normal-static-method-was-generated"></a>EM1034: Metody rozszerzenia `M` nie jest generowany wewnątrz kategorii, ponieważ nie można utworzyć na typ pierwotny `T`. To normalne, statycznej metody został wygenerowany.
 
-Jest to **ostrzeżenie** tej metody rozszerzenia na primivite wpisz (np. `System.Int32`) został znaleziony. W ObjC nie jest możliwe utworzenie kategorii na typ pierwotny. Zamiast tego generatora powoduje wygenerowanie to normalne, statycznej metody.
+Jest to **ostrzeżenie** tej metody rozszerzenia na primivite wpisz (np. `System.Int32`) został znaleziony. W języku Objective C nie jest możliwe utworzenie kategorii na typ pierwotny. Zamiast tego generatora powoduje wygenerowanie to normalne, statycznej metody.
 
 <a name="EM1040" />
 
@@ -286,7 +286,7 @@ Jest to **ostrzeżenie** elementu `E` nie jest generowany, ponieważ jego nazwa 
 
 Jest to **ostrzeżenie** kierowanych `E` jest uznawany za obsługiwany dla platformy Xamarin.iOS i Xamarin.Mac zastosowań. 
 
-Użycie biblioteki Embeddinator statyczne lub dynamiczne mogą wymagać dodatkowej pracy kroków lub ulepszeń i należy unikać w większości przypadków użycia.
+Zużycie statyczne lub dynamiczne bibliotek .NET osadzanie może wymagać dodatkowych działań lub ulepszeń i należy unikać w większości przypadków użycia.
 
 Rozważ usunięcie z `--target` przebieg lub parametr `--target=framework` zamiast tego.
 

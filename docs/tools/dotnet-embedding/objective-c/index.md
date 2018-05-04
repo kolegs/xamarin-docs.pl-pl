@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 515185ca7be8b6e24c92c9f44eb6dadbaf6d9219
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 2a4a235dcb885364fdc5add5970e61f46b6e5d08
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="objective-c-support"></a>Obsługa języka Objective C
 
@@ -20,7 +20,7 @@ Generowanie języka Objective-C ma kilka specjalne funkcje, które są warto zau
 
 ### <a name="automatic-reference-counting"></a>Automatyczne liczenie odwołań
 
-Korzystanie z automatycznego odwołanie zliczania (ARC) jest **wymagane** do wywołania wygenerowanego powiązania. Przy użyciu biblioteki embeddinator na podstawie projektu musi być kompilowana przy użyciu `-fobjc-arc`.
+Korzystanie z automatycznego odwołanie zliczania (ARC) jest **wymagane** do wywołania wygenerowanego powiązania. Przy użyciu biblioteki oparte na osadzanie .NET projektu musi być kompilowana przy użyciu `-fobjc-arc`.
 
 ### <a name="nsstring-support"></a>Obsługa NSString
 

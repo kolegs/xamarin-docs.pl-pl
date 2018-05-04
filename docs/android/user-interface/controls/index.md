@@ -1,5 +1,5 @@
 ---
-title: Formanty
+title: Formanty systemu android (elementy widget)
 description: Bloki konstrukcyjne do tworzenia interfejsów użytkownika platformy Xamarin.Android
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>Formanty
-
+# <a name="android-controls-widgets"></a>Formanty systemu android (elementy widget)
 
 Xamarin.Android przedstawia wszystkie kontrolki interfejsu użytkownika macierzysty (elementy widget) podane przez system Android. Tych kontrolek można łatwo dodać do aplikacji platformy Xamarin.Android przy użyciu narzędzia Projektant Android lub programowo przy użyciu plików układu XML. Niezależnie od wybranej metody Xamarin.Android przedstawia wszystkie właściwości obiektu interfejsu użytkownika i metody w języku C#. W poniższych sekcjach wprowadzenie najbardziej typowych formantów interfejsu użytkownika dla systemu Android i wyjaśniono, jak włączyć je do aplikacji platformy Xamarin.Android.
 

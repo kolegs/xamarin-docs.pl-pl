@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Załaduj ponownie na żywo Xamarin
 
@@ -106,13 +106,33 @@ Nie. W rzeczywistości nawet uruchomić na dowolnej liczbie urządzeń lub symul
 ## <a name="limitations"></a>Ograniczenia
 
 * Obsługiwane jest tylko ponowne ładowanie języka XAML.
-* Obsługiwane tylko w programie Visual Studio.
-* Działa tylko z bibliotekami .NET Standard.
-* Arkusze stylów CSS nie są obsługiwane.
 * Stan interfejsu użytkownika może się nie powieść między wdraża ponownie, chyba że za pomocą MVVM.
-* Ponowne ładowanie zasobów aplikacji firmy (tj. **App.xaml** lub udostępnionego słowniki zasobów), nawigacji aplikacji zostanie zresetowana.
+
+## <a name="known-issues"></a>Znane problemy
+
+* Obsługiwane tylko w programie Visual Studio.
+* Działa tylko z bibliotekami .NET Standard. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
+* Arkusze stylów CSS nie są obsługiwane. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
+* Ponowne ładowanie zasobów aplikacji firmy (tj. **App.xaml** lub udostępnionego słowniki zasobów), nawigacji aplikacji zostanie zresetowana. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
+* Edytowanie języka XAML podczas debugowania platformy uniwersalnej systemu Windows może spowodować awarię środowiska wykonawczego. Obejście problemu: Użyj **uruchomić bez debugowania (Ctrl + F5)** zamiast **Rozpocznij debugowanie (F5)**.
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
+
+### <a name="error-codes"></a>Kody błędów
+
+* **XLR001**: *wersja pakietu NuGet "Xamarin.LiveReload" [wersja] odwołuje się do bieżącego projektu, ale rozszerzenie Załaduj ponownie Xamarin na żywo wymaga wersji [wersja].*
+
+  Aby umożliwić szybkie iteracji i ewolucji funkcja Live Załaduj ponownie, pakiet nuget i rozszerzenia programu Visual Studio muszą być całkowicie zgodne. Zaktualizuj pakiet nuget do tej samej wersji rozszerzenia, które zostały zainstalowane.
+
+* **XLR002**: *Załaduj na żywo wymaga co najmniej właściwość "MqttHostname" podczas kompilowania z wiersza polecenia. Możesz również ustawić "EnableLiveReload" na "fałsz", aby wyłączyć tę funkcję.*
+
+  Właściwości wymagane przez Live przeładowania nie są dostępne podczas kompilowania z wiersza polecenia (lub w ciągłej integracji), a zatem należy podać jawnie. 
+
+* **XLR003**: *pakietu nuget Załaduj na żywo wymaga instalowania rozszerzenia Xamarin Live Załaduj ponownie Visual Studio.*
+
+  Podjęto próbę zbudować projekt odwołujący się na żywo ponowne załadowanie pakietu nuget, ale nie zainstalowano rozszerzenia Visual.  
+
+
 
 ### <a name="app-doesnt-connect"></a>Nie connect aplikacji
 
@@ -145,7 +165,7 @@ Jeśli masz starszej wersji zapoznawczej i występują problemy z odinstalowywan
 
 W scenariuszach, w przypadku, gdy połączenie z aplikacji uruchomionych na komputerze (oznaczony za pomocą `localhost` lub `127.0.0.1` w **Narzędzia > Opcje > Xamarin > Live Załaduj ponownie**) nie jest możliwe (tj. zapór, różnych sieciach), można skonfigurować serwera zdalnego, który zarówno IDE i aplikacja zostanie połączyć do.
 
-Załaduj ponownie na żywo korzysta ze standardu [protokołu MQTT](http://mqtt.org/) do wymiany wiadomości i w związku z tym może komunikować się z [serwerów innych firm](https://github.com/mqtt/mqtt.github.io/wiki/servers). Istnieje nawet [publicznych serwerów](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (znanej także jako *brokerzy*) dostępne, których można używać. Załaduj ponownie na żywo był testowany z `broker.hivemq.com` i `iot.eclipse.org` nazwy hostów, a także usług świadczonych przez [www.cloudmqtt.com](https://www.cloudmqtt.com) i [www.cloudamqp.com](https://www.cloudamqp.com). Można także wdrożyć własny serwer MQTT w chmurze, takich jak [HiveMQ na platformie Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) lub [MQ króliczego na usług AWS](http://www.rabbitmq.com/ec2.html). 
+Załaduj ponownie na żywo korzysta ze standardu [protokołu MQTT](http://mqtt.org/) do wymiany wiadomości i w związku z tym może komunikować się z [serwerów innych firm](https://github.com/mqtt/mqtt.github.io/wiki/servers). Istnieje nawet [publicznych serwerów](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (znanej także jako *brokerzy*) dostępne, których można używać. Załaduj ponownie na żywo był testowany z `broker.hivemq.com` i `iot.eclipse.org` nazwy hostów, a także usług świadczonych przez [www.cloudmqtt.com](https://www.cloudmqtt.com) i [www.cloudamqp.com](https://www.cloudamqp.com). Można także wdrożyć własny serwer MQTT w chmurze, takich jak [HiveMQ na platformie Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
 Można skonfigurować dowolnego portu, ale często jest używany jest domyślny port 1883 dotyczących serwerów zdalnych. Na żywo wiadomości Załaduj ponownie użyj silnego end-to-end AES szyfrowania symetrycznego, więc bezpiecznie nawiązać połączenia z serwerami zdalnymi. Domyślnie zarówno klucz szyfrowania i wektor inicjowania (IV) są generowane w każdej sesji programu Visual Studio.
 

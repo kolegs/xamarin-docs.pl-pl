@@ -1,18 +1,18 @@
 ---
-title: Embeddinator 4000 najlepsze rozwiązania dotyczące ObjC
+title: .NET osadzanie najlepsze rozwiązania dla języka Objective C
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>Embeddinator 4000 najlepsze rozwiązania dotyczące ObjC
+# <a name="net-embedding-best-practices-for-objective-c"></a>Osadzanie .NET najlepsze rozwiązania dla języka Objective C
 
 Jest to projekt i może nie być synchronizacji przy użyciu funkcji obecnie obsługiwany przez narzędzie. Mamy nadzieję, że ten dokument zostanie rozwijać oddzielnie i ostatecznie odpowiada końcowego narzędzia, tj. będzie Sugerujemy długoterminowej najlepszych metod — nie natychmiastowego rozwiązania.
 
@@ -106,7 +106,7 @@ Ta reguła nazewnictwa jest niezgodna w świecie .NET GC; Metoda .NET z `Create`
 
 ## <a name="exceptions"></a>Wyjątki
 
-Jest to jeszcze gotowe commont w .NET używać wyjątków często może raportować błędy. Są one jednak powolne i jeszcze nie są identyczne w ObjC. W miarę możliwości należy je ukryć od dewelopera Objective-C.
+Jest bardzo często w .NET używać wyjątków często może raportować błędy. Są to jednak powolne i jeszcze nie są identyczne w Objective-C. W miarę możliwości należy je ukryć od dewelopera Objective-C.
 
 Na przykład, .NET `Try` wzorzec będzie znacznie łatwiejsze do korzystania z kodu języka Objective-C:
 
@@ -138,6 +138,6 @@ Generator wykonaj takie same `return nil` wzorca dla wygenerowany `init*` metody
 
 Objective-C nie zezwala na operatory przeciążony jak C#, dlatego te są konwertowane na selektory klasy.
 
-["Przyjaznym"](/dotnet/standard/design-guidelines/operator-overloads/) nazwane metody są generowane, zamiast przeciążenia operatora podczas znaleziono i może utworzyć łatwiej korzystać z interfejsu API.
+["Przyjaznym"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) nazwane metody są generowane, zamiast przeciążenia operatora podczas znaleziono i może utworzyć łatwiej korzystać z interfejsu API.
 
 Klasy, które zastępują operatory `==` woluminu `!=` powinny zastępować oraz standardowe metody Equals (obiekt).

@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 0bf8a90741df0be014dd48263a165668d0f7f604
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e61e610de9186978e2924c0e69e7517a39a54f04
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-java"></a>Wprowadzenie do języka Java
-
 
 Jest to stronie początkowej dla języka Java, która obejmuje podstawy dla wszystkich obsługiwanych platformach.
 
@@ -25,13 +24,16 @@ Aby użyć osadzanie .NET z językiem Java należy:
 * [Mono 5.0](http://www.mono-project.com/download/)
 
 Dla komputerów Mac:
+
 * Xcode 8.3.2 lub nowszy
 
 W systemie Windows:
+
 * Visual Studio 2017 z obsługi języka C++
 * Windows 10 SDK
 
 Dla systemu Android:
+
 * [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/) lub nowszy
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) z językiem Java 1.8
 
@@ -44,26 +46,27 @@ Można użyć [programu Visual Studio for Mac](https://www.visualstudio.com/vs/v
 
 Osadzanie .NET jest aktualnie dostępny w [NuGet](https://www.nuget.org/packages/Embeddinator-4000/):
 
-```csharp
+```shell
 nuget install Embeddinator-4000
 ```
-To spowoduje umieszczenie `Embeddinator-4000.exe` do `packages/Embeddinator-4000/tools` katalogu.
 
-Ponadto kompilacji Embeddinator ze źródła, zobacz nasze [repozytorium git](https://github.com/mono/Embeddinator-4000/) i [przyczyniając się](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md) dokumentu, aby uzyskać instrukcje.
+To spowoduje umieszczenie **Embeddinator 4000.exe** do **pakietów/Embeddinator-4000/narzędzia** katalogu.
+
+Ponadto kompilacji platformy .NET osadzanie ze źródła, zobacz nasze [repozytorium git](https://github.com/mono/Embeddinator-4000/) i [przyczyniając się](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md) dokumentu, aby uzyskać instrukcje.
 
 ## <a name="platforms"></a>Platformy
 
 Java jest obecnie w stanie zapoznawczej macOS, systemu Windows i Android.
 
-Wybrano platformę przez przekazanie `--platform=<platform>` embeddinator argument wiersza polecenia. Obecnie `macOS`, `Windows`, i `Android` są obsługiwane.
+Wybrano platformę przez przekazanie `--platform=<platform>` argumentu wiersza polecenia dla narzędzia osadzanie .NET. Obecnie `macOS`, `Windows`, i `Android` są obsługiwane.
 
 ### <a name="macos-and-windows"></a>System macOS i systemu Windows
 
-Do tworzenia aplikacji należy można używać żadnych IDE języka Java, obsługujący Java 1.8. Android Studio można użyć nawet dla tego w razie potrzeby [widoczną w tym miejscu](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects). Dane wyjściowe pliku JAR można użyć, jak w przypadku dowolnego standardowego pliku jar Java.
+Do tworzenia aplikacji można używać żadnych IDE języka Java, obsługujący Java 1.8. Android Studio można użyć nawet dla tego w razie potrzeby [widoczną w tym miejscu](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects). Dane wyjściowe pliku JAR można użyć, jak w przypadku dowolnego standardowego pliku jar Java.
 
 ### <a name="android"></a>Android
 
-Upewnij się, są już skonfigurowane do opracowywania aplikacji systemu Android przed podjęciem próby go utworzyć za pomocą Embeddinator. [Instrukcjami](~/tools/dotnet-embedding/get-started/java/android.md) założono, że masz już pomyślnie skompilowane i wdrożonych aplikacji systemu Android z komputera.
+Upewnij się, są już skonfigurowane do opracowywania aplikacji systemu Android przed podjęciem próby go utworzyć za pomocą osadzanie .NET. [Instrukcjami](~/tools/dotnet-embedding/get-started/java/android.md) założono, że masz już pomyślnie skompilowane i wdrożonych aplikacji systemu Android z komputera.
 
 Android Studio jest zalecane w przypadku rozwoju, ale inne IDEs powinny działać tak długo, jak obsługuje [format pliku AAR](https://developer.android.com/studio/projects/android-library.html).
 
@@ -72,6 +75,6 @@ Android Studio jest zalecane w przypadku rozwoju, ale inne IDEs powinny działa�
 * [Wprowadzenie w systemie Android](~/tools/dotnet-embedding/get-started/java/android.md)
 * [Wywołania zwrotne w systemie Android](~/tools/dotnet-embedding/android/callbacks.md)
 * [Wstępne badanie systemu Android](~/tools/dotnet-embedding/android/index.md)
-* [Ograniczenia Embeddinator](~/tools/dotnet-embedding/limitations.md)
-* [Współtworzenie projekt open source](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
+* [Ograniczenia osadzania .NET](~/tools/dotnet-embedding/limitations.md)
+* [Współtworzenie projekt open source](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Kody błędów wraz z opisami](~/tools/dotnet-embedding/errors.md)

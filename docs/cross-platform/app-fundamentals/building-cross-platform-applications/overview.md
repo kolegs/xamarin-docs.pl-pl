@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e4a55829e35329a50b2e121311b0102328e6fea9
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>Tworzenie między platforma aplikacji — omówienie
 
@@ -25,7 +25,7 @@ Program Xamarin, nie jest po prostu "zapisu — jeden raz, uruchom wszędzie" pl
 Poniżej przedstawiono podsumowanie kluczowych do tworzenia aplikacji i platform Xamarin:
 
 -   **Użyj C#** -zapisu aplikacji w języku C#. Istniejący kod napisany w języku C# można przenieść z systemami iOS i Android za pomocą platformy Xamarin bardzo łatwo i oczywiście używany w aplikacjach systemu Windows.
--   **Korzystanie z MVC lub MVVVM wzorce projektowe** — tworzenie aplikacji interfejsu użytkownika przy użyciu wzorca modelu/widoku/kontrolera. Projektowania aplikacji przy użyciu podejścia modelu/widoku/kontrolera lub metody modelu/widok/ViewModel przypadku wyraźnej separacji między "Modelu" i rest. Określenie części aplikacji, które będą przy użyciu elementów interfejsu użytkownika macierzystego dla każdej z platform (systemy iOS, Android, Windows, Mac) i umożliwia przyjąć podzielić na dwa składniki aplikacji: "Core" i "Interfejsu użytkownika".
+-   **Korzystanie z MVC lub MVVM wzorce projektowe** — Tworzenie interfejsu użytkownika aplikacji przy użyciu wzorca modelu/widoku/kontrolera. Projektowania aplikacji przy użyciu podejścia modelu/widoku/kontrolera lub metody modelu/widok/ViewModel przypadku wyraźnej separacji między "Modelu" i rest. Określenie części aplikacji, które będą przy użyciu elementów interfejsu użytkownika macierzystego dla każdej z platform (systemy iOS, Android, Windows, Mac) i umożliwia przyjąć podzielić na dwa składniki aplikacji: "Core" i "Interfejsu użytkownika".
 -   **Tworzenie natywnych UI** — każda aplikacja specyficzne dla systemu operacyjnego zapewnia warstwę inny interfejs użytkownika (realizowane w C# przy pomocy natywnych narzędzi projektowania interfejsu użytkownika):
 
 1.  W systemach iOS należy użyć interfejsów API UIKit do utworzenia aplikacji wyszukiwania w trybie macierzystym, opcjonalnie przy użyciu platformy Xamarin dla systemu iOS projektanta do wizualnego tworzenia interfejsu użytkownika.

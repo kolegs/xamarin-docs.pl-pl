@@ -5,61 +5,55 @@ ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: 8dff45de6de7c9492b199f323656778ac5c34d57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: 1313d7156a1fd75fd40e2aff65404aef5ab023bb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-c"></a>Wprowadzenie do korzystania z C
 
-
 ## <a name="requirements"></a>Wymagania
 
-Aby C za pomocą osadzanie .NET należy uruchomionej maszyny Mac lub Windows:
+Umożliwia osadzanie .NET z C, potrzebne są uruchomione maszyny Mac lub Windows:
+
+### <a name="macos"></a>macOS
 
 * System macOS 10.12 (Sierra) lub nowszy
 * Xcode 8.3.2 lub nowszy
+* [Mono](http://www.mono-project.com/download/)
+
+### <a name="windows"></a>Windows
 
 * Windows 7, 8, 10 lub nowszy
 * Visual Studio 2015 lub nowszego
 
-* [Mono](http://www.mono-project.com/download/)
+## <a name="installing-net-embedding-from-nuget"></a>Instalowanie .NET osadzanie z NuGet
 
+Postępuj zgodnie z następującymi [instrukcje](~/tools/dotnet-embedding/get-started/install/install.md) do instalowania i konfigurowania osadzanie .NET projektu.
 
-## <a name="installation"></a>Instalacja
+Wywołanie polecenia, które należy skonfigurować będzie wyglądać (prawdopodobnie z różnych numerów wersji i ścieżek):
 
-Następnym krokiem jest pobrać i zainstalować narzędzia osadzanie .NET na tym komputerze.
+### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-Binarnych kompilacji dla generatory C i Java nadal nie są dostępne, ale wkrótce będzie.
+```shell
+mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
+```
 
-Alternatywą jest możliwe utworzenie z naszym repozytorium git, zobacz [przyczyniając się](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md) dokumentu, aby uzyskać instrukcje.
+### <a name="visual-studio-2017"></a>Visual Studio 2017
 
+```shell
+$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
+```
 
 ## <a name="generation"></a>Generowanie
-
-Aby wygenerować kod w języku C, należy wywołać narzędzia .NET osadzanie przekazanie flagi prawo pod kątem języka C:
-
-### <a name="windows"></a>System Windows:
-
-```csharp
-$ build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
-```
-
-Upewnij się, że wywołanie z powłoki poleceń programu Visual Studio określonej wersji programu Visual Studio można teraz Profilowanie grup.
-
-### <a name="macos"></a>macOS
-
-```csharp
-$ mono build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
-```
 
 ### <a name="output-files"></a>Pliki wyjściowe
 
 Jeśli wszystko przebiegnie poprawnie, zostanie wyświetlone następujące dane wyjściowe:
 
-```csharp
+```shell
 Parsing assemblies...
     Parsed 'managed.dll'
 Processing assemblies...
@@ -76,12 +70,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Ponieważ `--compile` flagi został przekazany do narzędzia, osadzanie .NET powinien również mieć skompilowany pliki wyjściowe do biblioteki współużytkowanej, która znajduje się obok plików wygenerowanych `libmanaged.dylib` pliku na macOS, i `managed.dll` w systemie Windows.
+Ponieważ `--compile` flagi został przekazany do narzędzia, osadzanie .NET powinien również mieć skompilowany pliki wyjściowe do biblioteki współużytkowanej, która znajduje się obok plików wygenerowanych **libmanaged.dylib** plik na macOS i **managed.dll** w systemie Windows.
 
-Aby korzystać z biblioteki udostępnionej, mogą obejmować `managed.h` C nagłówek pliku, co zapewnia deklaracje C odpowiadający odpowiednio zarządzane biblioteki interfejsów API i Połącz z wymienionych wcześniej skompilowany biblioteki udostępnionej.
+Aby korzystać z biblioteki współużytkowanej, można umieścić **managed.h** C nagłówek pliku, co zapewnia deklaracje C odpowiadający odpowiednio zarządzane biblioteki interfejsów API i Połącz z wymienionych wcześniej skompilowany biblioteki udostępnionej.
 
 ## <a name="further-reading"></a>Dalsze informacje
 
-* [Ograniczenia Embeddinator](~/tools/dotnet-embedding/limitations.md)
-* [Współtworzenie projekt open source](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
+* [Ograniczenia osadzania .NET](~/tools/dotnet-embedding/limitations.md)
+* [Współtworzenie projekt open source](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Kody błędów wraz z opisami](~/tools/dotnet-embedding/errors.md)
