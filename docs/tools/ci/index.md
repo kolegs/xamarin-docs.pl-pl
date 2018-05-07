@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
 
@@ -35,9 +35,8 @@ Tworzenie rozwiązań platformy Xamarin.iOS i Xamarin.Android w Centrum aplikacj
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Korzystanie z serwera TeamCity w środowisku Xamarin](~/tools/ci/teamcity.md)
 
-W tym przewodniku opisano kroki związane z używaniem TeamCity do kompilowania aplikacji mobilnych i przesłać je do chmury testowej Xamarin.
+W tym przewodniku opisano kroki związane z używaniem TeamCity do kompilowania aplikacji mobilnych i przesłać je do aplikacji Centrum testu.
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Korzystanie z systemu Jenkins w środowisku Xamarin](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Korzystanie z systemu Jenkins w środowisku Xamarin](~/tools/ci/jenkins-walkthrough.md)
 
 W tym przewodniku przedstawiono sposób ustawiania Wpięć jako serwer ciągłej integracji i automatyzacji Kompilowanie aplikacji mobilnych utworzone za pomocą platformy Xamarin. Przedstawiono sposób instalowania Wpięć na OS X, jest skonfigurowana i skonfigurować zadania do skompilowania aplikacji platformy Xamarin.iOS i Xamarin.Android podczas zmiany zostały zastosowane w systemie kontroli wersji.
-
