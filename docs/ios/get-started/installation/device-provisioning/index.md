@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>Inicjowanie obsługi administracyjnej urządzeń
 
@@ -47,23 +47,14 @@ Tych kroków upewnij się, że wszystko, co jest tworzony lub używane podczas p
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>Inicjowanie obsługi administracyjnej urządzeniu
 
-Istnieją dwa sposoby obsługi administracyjnej urządzeniu z systemem iOS w programie Visual Studio dla komputerów Mac:
+Istnieją dwa sposoby obsługi administracyjnej urządzeniu z systemem iOS:
 
-* **Automatycznie (zalecane)** — wybierz **automatycznie zarządzać podpisywania** opcji w pliku Info.plist programu Visual Studio dla komputerów Mac automatycznie Utwórz i zarządzaj nimi Twojej tożsamości podpisywania, identyfikatorów aplikacji i inicjowaniem obsługi administracyjnej Profile.  Aby uzyskać informacje dotyczące automatycznego zarządzania udostępniania, zobacz [automatyczne udostępnianie](automatic-provisioning.md) przewodnik. Jest to zalecany sposób inicjowania obsługi administracyjnej urządzeniu z systemem iOS.
+* **Automatycznie (zalecane)** — wybierz **automatyczne udostępnianie** schemat w projekcie mają Visual Studio automatycznie Utwórz i zarządzaj nimi Twojej tożsamości podpisywania, identyfikatorów aplikacji i profile inicjowania obsługi. Aby uzyskać informacje dotyczące automatycznego zarządzania udostępniania, zobacz [automatyczne udostępnianie](automatic-provisioning.md) przewodnik. Jest to zalecany sposób inicjowania obsługi administracyjnej urządzeniu z systemem iOS.
 
 * **Ręcznie** — podpisywania tożsamości, identyfikatorów aplikacji i profile inicjowania obsługi można tworzyć i zarządzane za pośrednictwem portalu dla deweloperów firmy Apple, zgodnie z opisem w [ręcznego inicjowania obsługi administracyjnej](manual-provisioning.md) przewodnik. Następnie można zarządzać tych artefaktów, zgodnie z opisem w [zarządzania kontem firmy Apple](~/cross-platform/macios/apple-account-management.md) przewodnik.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>Inicjowanie obsługi administracyjnej urządzeniu
-
-Aby uzyskać instrukcje na temat konfigurowania urządzenia firmy Apple, wdrożenia i wdrażania aplikacji z programem Visual Studio w systemie Windows, zalecane jest, postępuj zgodnie z instrukcjami szczegółowe [ręcznego inicjowania obsługi administracyjnej](manual-provisioning.md) przewodnik.
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple zapewnia szereg specjalnych usług aplikacji, nazywane również możliwo�
 * Utwórz identyfikator aplikacji z usługami wymagana aplikacja.
 * Utwórz nową [profil inicjowania obsługi administracyjnej](#Provisioning_Profile) zawierający ten identyfikator aplikacji.
 * Ustawianie uprawnień w projekcie platformy Xamarin.iOS
-
-> [!NOTE]
-> Obecnie inicjowania obsługi administracyjnej Profile utworzone w programie Visual Studio dla komputerów Mac nie weźmie pod uprawnień konta wybrane w projektach (Entitlements.plist). Ta funkcja zostanie dodana w kolejnych wersjach środowiska IDE. Jeśli musisz używać usług aplikacji, zaleca się postępuj zgodnie z instrukcjami [ręcznego inicjowania obsługi administracyjnej](manual-provisioning.md) przewodnik.
 
 ## <a name="related-links"></a>Linki pokrewne
 

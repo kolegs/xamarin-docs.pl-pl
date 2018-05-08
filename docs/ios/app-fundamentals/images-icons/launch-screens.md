@@ -1,17 +1,17 @@
 ---
-title: Uruchamianie ekranów
+title: Uruchamianie ekrany dla aplikacji platformy Xamarin.iOS
 description: W tym artykule opisano sposób tworzenia aplikacji ekranu uruchamiania w przypadku urządzeń z systemem iOS o dowolnej rozdzielczość i orientacji, za pomocą pojedynczego scenorysu Unified.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/19/2018
-ms.openlocfilehash: 991c2f30bcca1969e336f7269ad2a22ce6245b95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="launch-screens"></a>Uruchamianie ekranów
 
@@ -96,17 +96,19 @@ W systemie iOS 8 (lub nowszy) dewelopera można tworzyć specjalne scenorysu Uni
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Utwórz nowy projekt. W programie Visual Studio, wybierz **Plik > Nowy > projektu**, a następnie wybierz pozycję **pojedynczego widoku aplikacji (iPhone)**:
-    
-    ![Okno nowy projekt, z jednej widok aplikacji (iPhone) wybrane](launch-screens-images/launch01-vs.png)
+1. Utwórz nowy projekt. W programie Visual Studio, wybierz **Plik > Nowy > Projekt > Visual C# > iPhone & iPad > iOS App (Xamarin)**:
 
-    - Nazwij projekt, wybierz lokalizację, a następnie wybierz **OK**.
+    ![Okno nowy projekt, z systemem iOS App (Xamarin) wybrane](launch-screens-images/launch01.w157.png)
+
+    Wybierz **jednej aplikacji widoku** szablonu, a następnie kliknij przycisk **OK**:
+
+    ![Jeden szablon widoku aplikacji](launch-screens-images/launch01-2.w157.png)
 
 2. Jeśli **zasobów > LaunchScreen.xib** istnieje w **Eksploratora rozwiązań**, usuń go prawym przyciskiem myszy plik i wybierając pozycję **usunąć**. Ten plik zostanie zastąpiony scenorysu w następnym kroku.
 
 3. Utwórz scenorysu do użycia jako ekranu uruchamiania. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj > Nowy element...**  następuje **pusty scenorysu**. Nazwa tego scenorysu **LaunchScreen.storyboard** i kliknij przycisk **Dodaj**:
 
-    ![Okno Dodawanie nowego elementu z pustą scenorysu wybrane](launch-screens-images/launch03-vs.png)
+    ![Okno Dodawanie nowego elementu z pustą scenorysu wybrane](launch-screens-images/launch03.w157.png)
 
 4. Konfigurowanie projektu do użycia **LaunchScreen.storyboard** jako jego scenorysu ekranu uruchamiania:
 
@@ -119,7 +121,7 @@ W systemie iOS 8 (lub nowszy) dewelopera można tworzyć specjalne scenorysu Uni
 
     - W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **katalogi zasobów** i wybierz **Dodaj katalog zasobów**. Nazwa tego nowego katalogu zasobów **zasoby**:
 
-    ![Okno Dodawanie nowego elementu z katalogu zasobów wybrane](launch-screens-images/launch05-vs.png)
+    ![Okno Dodawanie nowego elementu z katalogu zasobów wybrane](launch-screens-images/launch05.w157.png)
 
     - Dodaj nowy zestaw obrazu do **zasoby** katalogu zasobów, zgodnie z opisem w [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md) sekcji [wyświetlania obrazu](~/ios/app-fundamentals/images-icons/displaying-an-image.md) przewodnik.
 

@@ -4,14 +4,14 @@ description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfigurac
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>Praca z funkcjami
 
@@ -27,7 +27,7 @@ Te możliwości mogą służyć z projektami platformy Xamarin.iOS. Poniżej prz
 * HealthKit
 * HomeKit
 * Konfiguracja zasobów bezprzewodowych
-* iCloud
+* usługi iCloud
 * Funkcja zakupu w aplikacji
 * Dźwięk Inter-App
 * Płatności firmy Apple
@@ -44,20 +44,18 @@ Te możliwości mogą służyć z projektami platformy Xamarin.iOS. Poniżej prz
 * Odczytywanie tagu NFC
 
 
-Możliwości można włączyć za pomocą programu Visual Studio dla komputerów Mac lub ręcznie w portalu dla deweloperów firmy Apple. Pewnych funkcji, takich jak portfela, Apple Pay i usługi iCloud wymagają dodatkowej konfiguracji identyfikatorów aplikacji.
+Możliwości można włączyć za pomocą programu Visual Studio for Mac i Visual Studio 2017 lub ręcznie w portalu dla deweloperów firmy Apple. Pewnych funkcji, takich jak portfela, Apple Pay i usługi iCloud wymagają dodatkowej konfiguracji identyfikatorów aplikacji.
 
-W tym przewodniku objaśniono sposób włączania każdej z tych usług aplikacji w aplikacji w obu Visual Studio dla komputerów Mac i ręcznie za pośrednictwem Centrum deweloperów, włączając dodatkowe ustawienia, które mogą być wymagane. 
+W tym przewodniku objaśniono sposób włączania każdej z tych usług aplikacji w aplikacji automatycznie w programie Visual Studio i ręcznie za pośrednictwem Centrum deweloperów, włączając dodatkowe ustawienia, które mogą być wymagane. 
 
 ## <a name="adding-app-services"></a>Dodawanie usługi aplikacji
 
-Aby korzystać z możliwości, aplikacja musi mieć prawidłowy profil inicjowania obsługi administracyjnej, zawierający identyfikator aplikacji w usłudze poprawne włączone. Tworzenie ten profil inicjowania obsługi administracyjnej albo można automatycznie w programie Visual Studio dla komputerów Mac lub ręcznie w Centrum deweloperów firmy Apple.
+Aby korzystać z możliwości, aplikacja musi mieć prawidłowy profil inicjowania obsługi administracyjnej, zawierający identyfikator aplikacji w usłudze poprawne włączone. Tworzenie ten profil inicjowania obsługi administracyjnej albo można automatycznie w programie Visual Studio for Mac i Visual Studio 2017 lub ręcznie w Centrum deweloperów firmy Apple.
 
-W tej sekcji wyjaśniono, jak włączyć większość funkcji za pomocą programu Visual Studio for Mac na automatyczne udostępnianie lub Centrum deweloperów. Istnieją pewne możliwości, takie jak portfela, iCloud Apple Pay i grupy aplikacji, które wymagają dodatkowej konfiguracji. Te opisano szczegółowo w przewodnikach sąsiadujących.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+W tej sekcji wyjaśniono, jak włączyć większość funkcji za pomocą programu Visual Studio automatyczne udostępnianie lub Centrum deweloperów. Istnieją pewne możliwości, takie jak portfela, iCloud Apple Pay i grupy aplikacji, które wymagają dodatkowej konfiguracji. Te opisano szczegółowo w przewodnikach sąsiadujących.
 
 > [!IMPORTANT]
-> Nie wszystkie funkcje, które mogą być dodawane lub zarządzanych w programie Visual Studio dla komputerów Mac. Poniższa lista zawiera obsługiwane możliwości:
+> Nie wszystkie funkcje mogą być dodawane lub zarządzanych za pomocą automatycznego inicjowania obsługi administracyjnej. Poniższa lista zawiera obsługiwane możliwości:
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ W tej sekcji wyjaśniono, jak włączyć większość funkcji za pomocą program
 >
 >Powiadomienia wypychane, Game Center zakupu w aplikacji, map, udostępnianie łańcucha kluczy, skojarzone domen i funkcji ochrony danych nie są obecnie obsługiwane. Aby dodać tych funkcji, użyj ręcznego inicjowania obsługi administracyjnej i postępuj zgodnie z instrukcjami [Centrum deweloperów](#devcenter) sekcji.
 
+## <a name="using-the-ide"></a>Używanie IDE
 
-Możliwości są dodawane do **Entitlements.plist** w programie Visual Studio dla komputerów Mac. Aby dodać możliwości, wykonaj następujące czynności:
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Otwórz **Info.plist** pliku aplikacji systemu iOS i upewnij się, **automatycznie zarządzać podpisywania** jest zaznaczone. Postępuj zgodnie z instrukcjami [automatyczne udostępnianie](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) przewodnika, jeśli potrzebujesz pomocy:
+Możliwości są dodawane do **Entitlements.plist** w programie Visual Studio dla komputerów Mac. Umożliwiające dodanie funkcji, wykonaj następujące kroki:
+
+1. Otwórz **Info.plist** pliku aplikacji dla systemu iOS i wybierz **automatyczne Inicjowanie obsługi administracyjnej** schemat i **zespołu** w polu kombi. Postępuj zgodnie z instrukcjami [automatyczne udostępnianie](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) przewodnika, jeśli potrzebujesz pomocy:
 
     ![Automatycznie zarządzać opcja podpisywania](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Możliwości są dodawane do **Entitlements.plist** w programie Visual Studio dl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Zgodnie z obecnie nie jest obsługiwane dla automatycznego inicjowania obsługi w programie Visual Studio 2017, należy użyć [Centrum deweloperów](#devcenter) utworzyć identyfikator aplikacji z usługami właściwej aplikacji.
+Możliwości są dodawane do **Entitlements.plist**. Umożliwiające dodanie funkcji w programie Visual Studio 2017, wykonaj następujące kroki:
+
+1. Sparuj programu Visual Studio 2017 na komputerze Mac, zgodnie z opisem w [pary Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
+
+2. Otwórz opcje obsługi administracyjnej, wybierając **projektu > inicjowania obsługi administracyjnej właściwości...**
+
+3. Wybierz **automatyczne Inicjowanie obsługi administracyjnej** schemat i **zespołu** w polu kombi. Postępuj zgodnie z instrukcjami [automatyczne udostępnianie](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) przewodnika, jeśli potrzebujesz pomocy:
+
+    ![Automatycznie zarządzać opcja podpisywania](images/manage-signing-vs.png)
+
+4. Otwórz **Entitlements.plist** plik i wybierz możliwości, który chcesz dodać. Zapisz plik.
+
+    Zapisywanie **Entitlement.plist** wykonuje dwie czynności:
+
+    * Dodaje tej funkcji do Identyfikatora aplikacji
+    * Dodaje parę klucza i wartości uprawnienia do pliku Entitlements.plist.
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>Centrum deweloperów
+## <a name="using-the-developer-center"></a>Przy użyciu Centrum deweloperów
 
 Przy użyciu Centrum deweloperów jest procesem dwóch krok, który wymaga tworzenia identyfikator aplikacji, a następnie utwórz profil inicjowania obsługi administracyjnej przy użyciu tego Identyfikatora aplikacji. Te kroki są szczegółowo opisane poniżej.
 
@@ -190,7 +181,7 @@ Teraz Utwórz profil inicjowania obsługi administracyjnej, który zawiera ten i
 
 8.  Naciśnij klawisz **Pobierz** przycisk, aby go pobrać, a następnie kliknij dwukrotnie plik w wyszukiwanie, aby zainstalować profil inicjowania obsługi administracyjnej.
 
-9. Jeśli używasz programu Visual Studio dla komputerów Mac upewnij się, że **automatycznie zarządzać podpisywania** opcja jest cofnąć wybranego w **Info.plist** pliku
+9. Jeśli używasz programu Visual Studio upewnij się, że **ręcznego inicjowania obsługi administracyjnej** opcja jest zaznaczona.
 
 10. W programie Visual Studio for Mac / Visual Studio, przejdź do **opcje projektu > podpisywania pakietu** i ustaw ten, który został właśnie utworzony profil inicjowania obsługi administracyjnej:
 

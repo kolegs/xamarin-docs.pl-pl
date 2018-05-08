@@ -6,12 +6,12 @@ ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2018
+ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Wprowadzenie do platformy Xamarin.iOS dla programu Visual Studio
 
@@ -48,8 +48,6 @@ W obu przypadkach należy wykonaj następujące kroki:
 ## <a name="connecting-to-the-mac"></a>Łączenie z adresem MAC
 
 Do połączenia z programu Visual Studio z hostem kompilacji Mac, postępuj zgodnie z instrukcjami [pary Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) przewodnik.
-
-
 
 ## <a name="visual-studio-toolbar-overview"></a>Omówienie narzędzi Visual Studio
 
@@ -136,14 +134,17 @@ Właściwości projektu programu Visual Studio, mogą uzyskiwać przez kliknięc
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>Tworzenie nowego projektu dla aplikacji systemu iOS
 
-Tworzenie nowego projektu systemu iOS z poziomu programu Visual Studio jest wykonywane podobnie jak inne typu projektu. Wybieranie **Plik > Nowy projekt** spowoduje otwarcie okna dialogowego pokazano poniżej, pokazujący niektóre szablony dostępne do tworzenia nowego projektu systemu iOS:
+Tworzenie nowego projektu systemu iOS z poziomu programu Visual Studio jest wykonywane podobnie jak inne typu projektu. Wybieranie **Plik > Nowy projekt** spowoduje otwarcie okna dialogowego pokazano poniżej, pokazujący niektórych typów projektów dostępnych do tworzenia nowego projektu systemu iOS:
 
+![Tworzenie nowego projektu](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/newproject.png "Tworzenie nowego projektu")
+Wybieranie **iOS App (Xamarin)** zostaną wyświetlone następujące szablony służące do tworzenia nowej aplikacji platformy Xamarin.iOS:
+
+![Wybór szablonu dla aplikacji systemu iOS](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
 Pliki scenorysu i .xib można edytować w programie Visual Studio przy użyciu projektanta dla systemu iOS. Aby utworzyć scenorysu, wybierz jeden z szablonów scenorysu. Spowoduje to wygenerowanie **Main.storyboard** w pliku **Eksploratora rozwiązań** jak pokazano na poniższym zrzucie ekranu:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.png "Plik Main.storyboard w Eksploratorze rozwiązań")
+![Plik Main.storyboard w Eksploratorze rozwiązań](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 Aby rozpocząć tworzenia lub edytowania Twojej scenorysu, kliknij dwukrotnie `Main.storyboard` aby otworzyć go w Projektancie z systemem iOS:
 

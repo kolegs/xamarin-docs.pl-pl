@@ -6,12 +6,12 @@ ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 54708a7cfd071f77968991c9fe4e52938697c9bb
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-an-aar"></a>Powiązanie. AAR
 
@@ -82,7 +82,7 @@ Przed rozpoczęciem poniższe kroki, Pobierz przykład [textanalyzer.aar](https:
 
 1.  Tworzenie nowego projektu biblioteki powiązania począwszy od szablonu biblioteki systemu Android powiązania. Można użyć programu Visual Studio for Mac lub Visual Studio (na zrzutach ekranu poniżej Pokaż Visual Studio, ale programu Visual Studio for Mac jest bardzo podobny). Nazwa rozwiązania **AarBinding**:
 
-    [![Utwórz projekt AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
+    [![Utwórz projekt AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
 2.  Szablon zawiera **Jars** folder, w którym można dodać użytkownika. AAR(s) do projektu biblioteki powiązania. Kliknij prawym przyciskiem myszy **Jars** i wybierz polecenie **Dodaj > istniejący element**:
 
@@ -118,7 +118,7 @@ Aby korzystać z tego. Biblioteki DLL w aplikacji platformy Xamarin.Android, nal
 
 1.  Trwa tworzenie aplikacji w tym samym rozwiązaniu jako bibliotekę powiązania w celu uproszczenia tego przewodnika. (Aplikacji, który wykorzystuje biblioteki powiązania można również znajdują się w różnych rozwiązaniach.) Utwórz nową aplikację platformy Xamarin.Android: kliknij rozwiązanie prawym przyciskiem myszy i wybierz **Dodawanie nowego projektu**. Nazwa nowego projektu **BindingTest**:
 
-    [![Utwórz nowy projekt BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
+    [![Utwórz nowy projekt BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
 2.  Kliknij prawym przyciskiem myszy **odwołania** węzła **BindingTest** projekt i wybierz **Dodawanie odwołania...** :
 

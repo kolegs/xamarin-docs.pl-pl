@@ -6,12 +6,12 @@ ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/02/2017
+ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Wskazówki: Powiązanie z systemem iOS biblioteka języka Objective C
 
@@ -128,6 +128,7 @@ Pierwszym krokiem jest dla nas do dodania do biblioteki statycznej InfoColorPick
 3. Wybierz **Framework & biblioteki**, **Cocoa Touch biblioteki statycznej** szablon i kliknij przycisk **dalej** przycisk:
 
     [![](walkthrough-images/image05.png "Wybierz szablon Cocoa Touch biblioteki statycznej")](walkthrough-images/image05.png#lightbox)
+
 4. Wprowadź `InfColorPicker` dla **Nazwa projektu** i kliknij przycisk **dalej** przycisk:
 
     [![](walkthrough-images/image06.png "Wprowadź nazwę projektu InfColorPicker")](walkthrough-images/image06.png#lightbox)
@@ -276,11 +277,11 @@ Rozwiązanie zostanie utworzony i dwa domyślne pliki będą dołączone:
 
 1. Z **pliku** menu, wybierz opcję **nowy** > **projektu...** :
 
-    ![](walkthrough-images/bind01vs.png "Uruchamianie nowego projektu")
+    ![Uruchamianie nowego projektu](walkthrough-images/bind01vs.png "uruchamianie nowego projektu")
 
-1. W oknie dialogowym Nowy projekt, wybierz **iOS** > **biblioteki powiązania**:
+1. W oknie dialogowym Nowy projekt, wybierz **Visual C# > iPhone & iPad > iOS biblioteki powiązania (Xamarin)**:
 
-    ![](walkthrough-images/bind02vs.png "Wybierz powiązania biblioteki z systemem iOS")
+    [![Wybierz powiązania biblioteki z systemem iOS](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
 1. Wprowadź "InfColorPickerBinding" jako **nazwa** i kliknij przycisk **OK** przycisk, aby utworzyć rozwiązanie.
 
@@ -289,8 +290,6 @@ Rozwiązanie zostanie utworzony i dwa domyślne pliki będą dołączone:
 ![](walkthrough-images/bind03vs.png "Struktura rozwiązania w Eksploratorze rozwiązań")
 
 -----
-
-
 
 - **ApiDefinition.cs** — ten plik będzie zawierać umów, które definiują sposób API języka Objective-C zostaną opakowane w języku C#.
 - **Structs.cs** — ten plik będzie zawierać wszystkie struktury lub wartości wyliczenia, które są wymagane przez interfejsów i delegatów.
@@ -332,8 +331,7 @@ Wykonaj następujące kroki, aby dodać biblioteki:
 
 -----
 
-
-Gdy plik .a zostanie dodany do projektu, automatycznie ustawi Xamarin.iOS **Akcja kompilacji** pliku do **ObjcBindingNativeLibrary**i utwórz specjalny plik o nazwie `libInfColorPickerSDK.linkwith.cs`.
+Gdy **.a** plik zostanie dodany do projektu, automatycznie ustawi Xamarin.iOS **Akcja kompilacji** pliku do **ObjcBindingNativeLibrary**i utwórz specjalny plik wywołuje się `libInfColorPickerSDK.linkwith.cs`.
 
 
 Ten plik zawiera `LinkWith` atrybut, który informuje Xamarin.iOS sposobu dodawania dojście biblioteki statycznej, która po prostu firma Microsoft. Zawartość tego pliku są wyświetlane w poniższy fragment kodu:
@@ -536,6 +534,7 @@ Wykonaj następujące kroki, aby utworzyć iPhone przykładowej aplikacji do uż
 1. **Utwórz iPhone interfejsu użytkownika** -kliknij dwukrotnie **MainStoryboard.storyboard** w pliku **InfColorPickerSample** projektu, aby go edytować w systemie iOS projektanta. Dodaj **przycisk** do widoku i nadaj mu `ChangeColorButton`, jak pokazano poniżej:
 
     ![](walkthrough-images/use03.png "Dodawanie przycisku do widoku")
+
 1. **Dodaj InfColorPickerView.xib** — zawiera biblioteki InfColorPicker Objective-C **.xib** pliku. Xamarin.iOS nie będzie zawierać to **.xib** w projekcie powiązanie, co spowoduje ignorowanie błędów czasu wykonywania w naszym przykładowej aplikacji. Obejście tego jest dodanie **.xib** pliku do naszej projektu platformy Xamarin.iOS. Wybierz platformy Xamarin.iOS projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Dodaj pliki**i Dodaj **.xib** plików, jak pokazano na poniższym zrzucie ekranu:
 
     ![](walkthrough-images/use04.png "Dodaj InfColorPickerView.xib")
@@ -544,10 +543,11 @@ Wykonaj następujące kroki, aby utworzyć iPhone przykładowej aplikacji do uż
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
+1. **Tworzenie projektu platformy Xamarin.iOS** — Dodawanie nowego projektu platformy Xamarin.iOS o nazwie **InfColorPickerSample** przy użyciu **jednej aplikacji widoku** szablonu:
 
-1. **Tworzenie projektu platformy Xamarin.iOS** — Dodawanie nowego projektu platformy Xamarin.iOS o nazwie **InfColorPickerSample** do rozwiązania, jak pokazano na poniższym zrzucie ekranu:
+    [![Projekt aplikacji (Xamarin) dla systemu iOS](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    ![](walkthrough-images/use01vs.png "Tworzenie projektu platformy Xamarin.iOS")
+    [![Wybierz szablon](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
 1. **Dodaj odwołanie do projektu powiązanie** — aktualizacja **InfColorPickerSample** projekt tak, aby miał on odwołania do **InfColorPickerBinding** projektu:
 
@@ -559,10 +559,7 @@ Wykonaj następujące kroki, aby utworzyć iPhone przykładowej aplikacji do uż
 
 1. **Dodaj InfColorPickerView.xib** — zawiera biblioteki InfColorPicker Objective-C **.xib** pliku. Xamarin.iOS nie będzie zawierać to **.xib** w projekcie powiązanie, co spowoduje ignorowanie błędów czasu wykonywania w naszym przykładowej aplikacji. Obejście tego jest dodanie **.xib** pliku do naszej projektu platformy Xamarin.iOS z naszych **hosta kompilacji Mac**. Wybierz platformy Xamarin.iOS projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj** > **istniejący element...** i Dodaj **.xib** pliku.
 
-
 -----
-
-
 
 Następnie wytłumaczone krótki przegląd protokołów w języku Objective C i jak możemy ich obsługę powiązania i kod w języku C#.
 

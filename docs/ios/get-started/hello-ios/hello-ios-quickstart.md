@@ -1,5 +1,5 @@
 ---
-title: Witaj, iOS
+title: Witaj, iOS Szybki Start
 description: Ten przewodnik dwuczęściową opisuje sposób tworzenia podstawowej aplikacji platformy Xamarin.iOS przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio i zrozumienia podstaw dotyczących tworzenia aplikacji systemu iOS za pomocą platformy Xamarin. Spowoduje to wprowadzenie narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.iOS.
 ms.topic: quickstart
 ms.prod: xamarin
@@ -7,19 +7,18 @@ ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2017
+ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS Szybki Start
 
 W tym przewodniku opisano sposób tworzenia aplikacji, który tłumaczy alfanumeryczne numer wprowadzony przez użytkownika do numeru telefonu liczbowego, a następnie wywołuje ten numer. Końcowe aplikacji wygląda następująco:
 
  [![](hello-ios-quickstart-images/image1.png "Aplikacja szybkiego startu Hello.iOS")](hello-ios-quickstart-images/image1.png#lightbox)
-
 
 <a name="Requirements" />
 
@@ -42,7 +41,7 @@ Xamarin.iOS współpracuje z poniższych konfiguracji:
 
 Xamarin.iOS współpracuje z poniższych konfiguracji:
 
--  Najnowszą wersję programu Visual Studio 2015 lub 2017 Professional lub wyższej w systemie Windows 7 lub nowszym, łączyć się z hosta kompilacji Mac, który pasuje do specyfikacji powyżej.
+-  Najnowszą wersję programu Visual Studio 2017 Community, Professional lub Enterprise w systemie Windows 7 lub nowszym, łączyć się z hosta kompilacji Mac, który pasuje do specyfikacji powyżej.
 
 [Przewodnik instalacji systemu Windows Xamarin.iOS](~/ios/get-started/installation/windows/index.md) jest dostępny, aby uzyskać instrukcje krok po kroku instalacji.
 
@@ -63,7 +62,6 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
 Na ekranie uruchamiania kliknij **nowy projekt...**  do tworzenia nowego rozwiązania Xamarin.iOS:
 
 ![](hello-ios-quickstart-images/image3new.png "rozwiązania dla systemu iOS")
-
 
 2. Z **okno dialogowe nowego rozwiązania**, wybierz **systemu iOS > aplikacji > Aplikacja pojedynczego widoku** szablonu, zapewniając, że C# jest zaznaczona. Kliknij przycisk **dalej**:
 
@@ -294,51 +292,42 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
 
   ![](hello-ios-quickstart-images/image001-.png "Ekranu startowego")
 
-  W polu wyszukiwania w obszarze **nowe rozwiązanie** wprowadź _jednej aplikacji widoku_i wybierz **pojedynczego widoku aplikacji (iPhone)** do tworzenia nowego rozwiązania Xamarin.iOS:
+  Utwórz nowe rozwiązanie Xamarin.iOS wybierając **Plik > Nowy > Projekt... > Visual C# > iPhone & iPad > Aplikacja systemu iOS (Xamari**:
 
-  ![](hello-ios-quickstart-images/image002-.png "Dodaj aplikację pojedynczego widoku")
+  ![Wybierz typ projektu aplikacji (Xamarin) w systemie iOS](hello-ios-quickstart-images/image002.w157.png "wybrać system iOS typu projektu aplikacji (Xamarin)")
 
+  W oknie dialogowym dalej, która jest wyświetlana, wybierz **jednej aplikacji widoku** szablonu i naciśnij klawisz **OK** do utworzenia projektu:
 
-2. Nazwij projekt i rozwiązanie `Phoneword`, jak pokazano poniżej:
+  ![Wybierz szablon projektu jednego widoku](hello-ios-quickstart-images/image002-2.w157.png "wybierz jeden widok projektu szablonu")
 
-  ![](hello-ios-quickstart-images/vs-image3.png "Nazwa PhonewordiOS projektu i nowych Phoneword rozwiązania")
-
-
-3. Naciśnij klawisz **OK** do utworzenia nowego projektu
-
-4. Upewnij się, że Xamarin Mac Agent ikony na pasku narzędzi jest zielony.
+1. Upewnij się, że Xamarin Mac Agent ikony na pasku narzędzi jest zielony.
 
     ![Potwierdź, że Xamarin Mac Agent ikony na pasku narzędzi jest zielony](hello-ios-quickstart-images/vs-image4.png)
 
     Jeśli nie, oznacza to, że istnieje połączenie z hostem kompilacji Mac, postępuj zgodnie z instrukcjami [przewodnik konfiguracji](~/ios/get-started/installation/windows/connecting-to-mac/index.md) połączenia się.
 
-
-5. Otwórz **Main.storyboard** pliku w systemie iOS projektanta przez dwukrotne kliknięcie w **Eksploratora rozwiązań**:
+1. Otwórz **Main.storyboard** pliku w systemie iOS projektanta przez dwukrotne kliknięcie w **Eksploratora rozwiązań**:
 
   ![](hello-ios-quickstart-images/vs-image7.png "Projektant dla systemu iOS")
 
-6. Otwórz **przybornika** karcie, wpisz "etykieta" na pasku wyszukiwania i przeciągnij **etykiety** na powierzchnię projektu (obszar na środku):
+1. Otwórz **przybornika** karcie, wpisz "etykieta" na pasku wyszukiwania i przeciągnij **etykiety** na powierzchnię projektu (obszar na środku):
 
   ![](hello-ios-quickstart-images/vs-image8.png "Przeciągnij etykietę na powierzchni projektowej obszaru w Centrum")
 
-
-7. Następnie uchwyty z *przeciąganie formanty* i szersze etykietę:
+1. Następnie uchwyty z *przeciąganie formanty* i szersze etykietę:
 
   ![](hello-ios-quickstart-images/vs-image9.png "Szersze etykietę")
 
-
-8. Z **etykiety** zaznaczone na powierzchni projektu, użyj **okna właściwości** zmienić **tekst** właściwość **etykiety** do "Enter Phoneword: "
+1. Z **etykiety** zaznaczone na powierzchni projektu, użyj **okna właściwości** zmienić **tekst** właściwość **etykiety** do "Enter Phoneword: "
 
   ![](hello-ios-quickstart-images/vs-image10.png "Zmień wartość właściwości tekst etykiety "Wprowadzić Phoneword"")
 
   > [!NOTE]
   > Można wyświetlić **właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **widoku** menu.
 
-
-9. Wyszukaj "pola tekstowego" wewnątrz przeciągania przybornika **pola tekstowego** z **przybornika** na projekt surface i umieść go w obszarze **etykiety**. Dopasuj szerokość do **pola tekstowego** jest szerokość **etykiety**:
+1. Wyszukaj "pola tekstowego" wewnątrz przeciągania przybornika **pola tekstowego** z **przybornika** na projekt surface i umieść go w obszarze **etykiety**. Dopasuj szerokość do **pola tekstowego** jest szerokość **etykiety**:
 
   ![](hello-ios-quickstart-images/vs-image12.png "Dostosuj szerokość, dopóki pole tekstowe jest tej samej szerokości jako etykieta")
-
 
 10. Z **pola tekstowego** zaznaczone na powierzchni projektu, zmień **pola tekstowego**w **nazwa** właściwości w sekcji tożsamości **właściwości**do `PhoneNumberText`i zmień **tekst** dla właściwości "1-855-XAMARIN":
 
@@ -371,9 +360,9 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
   ![](hello-ios-quickstart-images/vs-image18.png "Dodawanie kodu do tłumaczenia numerów telefonów z alfanumeryczne numeryczne")
 
 
-16. W **nowy plik** okno dialogowe, wybierz opcję **Apple > klasy** i nazwę nowego pliku `PhoneTranslator`:
+16. W **Dodaj nowy element** okna dialogowego (kliknij projekt prawym przyciskiem myszy, wybierz polecenie Dodaj > Nowy element...), wybierz pozycję **Apple > klasy** i nazwę nowego pliku `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/vs-image19.png "Dodaj nową klasę o nazwie PhoneTranslator")
+  ![](hello-ios-quickstart-images/vs-image19.w157.png "Dodaj nową klasę o nazwie PhoneTranslator")
 
   > [!IMPORTANT]
   > Upewnij się, że wybrano szablon "class", który ma C# w ikony. W przeciwnym razie nie można się odwoływać ta nowa klasa.

@@ -6,12 +6,12 @@ ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie
 
@@ -33,9 +33,7 @@ Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków p
 
 [![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png#lightbox)
 
-
 Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio dla komputerów Mac, jednak warto podstawową wiedzę pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i działa z programowanie interfejsu użytkownika tylko do kodu.
-
 
 -----
 
@@ -45,16 +43,17 @@ Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla 
 
 ## <a name="ios-blank-project-template"></a>Pusty szablon projektu systemu iOS
 
-Najpierw utwórz projekt dla systemu iOS w programie Visual Studio przy użyciu telefonów iPhone **pusty projekt** szablonu, pokazano poniżej, które będziemy rozszerzać można dodać widoków i kontrolerów.
+Najpierw utwórz projekt dla systemu iOS w programie Visual Studio przy użyciu **Plik > Nowy Projekt > Visual C# > iPhone & iPad > iOS App (Xamarin)** projektu, pokazano poniżej:
 
+[![Okno dialogowe nowego projektu](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-[![](ios-code-only-images/blankapp-vs.png "Okno dialogowe nowego projektu")](ios-code-only-images/blankapp-vs.png#lightbox)
+Następnie wybierz **pusta aplikacja** szablonu projektu:
 
+[![Wybierz szablon okna dialogowego](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 Pusty szablon projektu dodaje 4 plików do projektu:
 
-
-[![](ios-code-only-images/empty-project.png "Pliki projektu")](ios-code-only-images/empty-project.png#lightbox)
+[![Pliki projektu](ios-code-only-images/empty-project.w157-sml.png "pliki projektu")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
 1. **AppDelegate.cs** — zawiera `UIApplicationDelegate` podklasy, `AppDelegate` , które jest używane do obsługi zdarzeń aplikacji z systemem iOS. W oknie aplikacji jest tworzony w `AppDelegate`w `FinishedLaunching` metody.
@@ -99,18 +98,12 @@ Poniższe kroki prowadzące przez usunięcie scenorysu z aplikacji:
             return true;
         }
 
+Kod, który został dodany do `FinishedLaunching` metoda w kroku 5 powyżej, jest minimalna ilość kod wymagany można utworzyć okna dla aplikacji systemu iOS.
+
 
 -----
 
-## <a name="creating-a-window"></a>Tworzenie okna
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-Kod, który został dodany do `FinishedLaunching` metoda w kroku 3 powyżej, jest minimalna ilość kod wymagany można utworzyć okna dla aplikacji systemu iOS.  
-
------
 
 aplikacje systemu iOS są tworzone przy użyciu [wzorzec MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Pierwszy ekran, który wyświetla aplikacji jest tworzona na podstawie kontrolera widoku głównego okna. Zobacz [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) przewodnik dla więcej informacji na temat platformy MVC wzorca samej siebie.
 
@@ -223,7 +216,7 @@ Dodaj nową klasę o nazwie `CustomViewController` w sposób przedstawiony poni�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](ios-code-only-images/customviewcontroller.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/customviewcontroller.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "Dodaj nową klasę o nazwie CustomViewController")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

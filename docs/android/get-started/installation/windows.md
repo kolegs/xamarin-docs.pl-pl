@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 1cd9a4977aad3f3bd8d8a4e51871698a54f75eb8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: c9155e1d3ebff52337e65cf3b8cd7dc16b8cdb37
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-installation"></a>Instalacja systemu Windows
 
@@ -95,9 +95,9 @@ Teraz, gdy zainstalowano platformy Xamarin.Android, można uruchomić programu V
 
 ![Tworzenie nowego projektu](windows-images/10-new-project.png)
 
-W **nowy projekt** okno dialogowe, wybierz opcję **Android** w obszarze **szablony** i kliknij przycisk **pusta aplikacja (Android)** w okienku po prawej stronie. Wprowadź nazwę dla aplikacji (na poniższym zrzucie ekranu, aplikacja jest wywoływana **moja_aplikacja**), następnie kliknij przycisk **OK**:
+W **nowy projekt** okno dialogowe, wybierz opcję **Android** w obszarze **szablony** i kliknij przycisk **aplikacji systemu Android** w okienku po prawej stronie. Wprowadź nazwę dla aplikacji (na poniższym zrzucie ekranu, aplikacja jest wywoływana **moja_aplikacja**), następnie kliknij przycisk **OK**:
 
-[![Zrzut ekranu nowego projektu dialogowym Tworzenie pusta aplikacja systemu Android](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
+[![Zrzut ekranu nowego projektu dialogowym Tworzenie pusta aplikacja systemu Android](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
 To już wszystko! Teraz można przystąpić do tworzenia aplikacji systemu Android za pomocą platformy Xamarin.Android!
 

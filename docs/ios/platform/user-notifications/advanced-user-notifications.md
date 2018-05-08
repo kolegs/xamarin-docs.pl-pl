@@ -6,12 +6,12 @@ ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9958682ce9e356692f451900d7dca0e343b244da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="advanced-user-notifications"></a>Powiadomienia użytkowników zaawansowanych
 
@@ -181,10 +181,10 @@ Aby zaimplementować interfejs użytkownika powiadomienie użytkownika niestanda
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Otwórz rozwiązanie aplikacji w programie Visual Studio dla komputerów Mac.
-2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu**.
-3. Wybierz **iOS** > **rozszerzenia** > **rozszerzenia zawartości powiadomienia**: 
+2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj > Nowy projekt...** .
+3. Wybierz **Visual C# > rozszerzenia systemu iOS > rozszerzenia zawartości powiadomienia**:
 
-    [![](advanced-user-notifications-images/notify01w.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01w.png#lightbox)
+    [![](advanced-user-notifications-images/notify01.w157-sml.png "Wybierz rozszerzenia zawartości powiadomień")](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. Wprowadź **nazwa** rozszerzenia i kliknij **OK** przycisku.
 
 -----

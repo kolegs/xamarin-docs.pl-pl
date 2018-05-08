@@ -6,12 +6,12 @@ ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implementing-sirikit"></a>Implementowanie SiriKit
 
@@ -95,7 +95,7 @@ Wykonaj następujące czynności:
 2. Kliknij prawym przyciskiem myszy nazwę rozwiązania w **Eksploratora rozwiązań** i wybierz **Dodaj** > **nowy projekt...** .
 3. Wybierz **Visual C#** > **projektu udostępnionego** i kliknij przycisk **dalej** przycisk: 
 
-    [![](implementing-sirikit-images/prep02w.png "Wybierz biblioteki klas")](implementing-sirikit-images/prep02w.png#lightbox)
+    [![](implementing-sirikit-images/prep02.w157-sml.png "Wybierz biblioteki klas")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. Wprowadź `MonkeyChatCommon` dla **nazwa** i kliknij przycisk **Utwórz** przycisku.
 5. Kliknij prawym przyciskiem myszy **odwołania** folder główny aplikacji w **Eksploratora rozwiązań** i wybierz **odwołuje się do edycji...** . Sprawdź **MonkeyChatCommon** projekt i kliknij przycisk **OK** przycisk: 
 
@@ -459,7 +459,7 @@ Aby dodać `AppIntentVocabulary.plist` plik do projektu aplikacji, wykonaj nast�
 
 1. Kliknij prawym przyciskiem myszy nazwę projektu w **Eksploratora rozwiązań** i wybierz **Dodaj** > **nowego pliku...**   >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "Dodaj listę właściwości")](implementing-sirikit-images/plist01.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.png "Dodaj listę właściwości")](implementing-sirikit-images/plist01.png#lightbox)
 2. Kliknij dwukrotnie `AppIntentVocabulary.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji.
 3. Kliknij przycisk **+** Aby dodać klucz, należy ustawić **nazwa** do `ParameterVocabularies` i **typu** do `Array`:
 
@@ -521,9 +521,10 @@ Aby dodać `AppIntentVocabulary.plist` plik do projektu aplikacji, wykonaj nast�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Kliknij prawym przyciskiem myszy nazwę projektu w **Eksploratora rozwiązań** i wybierz **Dodaj** > **nowego pliku...**   >  **iOS**:
+1. Kliknij prawym przyciskiem myszy nazwę projektu w **Eksploratora rozwiązań** i wybierz **Dodaj > Nowy element... > Apple > listę właściwości > Info.plist**:
 
-    [![](implementing-sirikit-images/plist01w.png "Dodaj nowy Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.w157-sml.png "Dodaj nowy Info.plist")](implementing-sirikit-images/plist01.w157.png#lightbox)
+
 2. Kliknij dwukrotnie `AppIntentVocabulary.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji.
 3. Kliknij przycisk **+** Aby dodać klucz, należy ustawić **nazwa** do `ParameterVocabularies` i **typu** do `Array`:
 
@@ -625,11 +626,11 @@ Aby dodać rozszerzenie intencje do rozwiązania, wykonaj następujące czynnoś
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Kliknij prawym przyciskiem myszy **Nazwa rozwiązania** w **Eksploratora rozwiązań** i wybierz **Dodaj** > **Dodawanie nowego projektu...** .
-2. W oknie dialogowym wybierz **iOS** > **rozszerzenia** > **rozszerzenia zamiar** i kliknij przycisk **dalej** przycisk: 
+2. W oknie dialogowym wybierz **Visual C# > rozszerzenia systemu iOS > rozszerzenia zamiar** i kliknij przycisk **dalej** przycisk:
 
-    [![](implementing-sirikit-images/intents05w.png "Wybierz rozszerzenie konwersji")](implementing-sirikit-images/intents05w.png#lightbox)
+    [![](implementing-sirikit-images/intents05.w157-sml.png "Wybierz rozszerzenie konwersji")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Następnie wprowadź **nazwa** rozszerzenia opcje i kliknij **OK** przycisku.
-5. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **odwołania** folderu nowo utworzonego rozszerzenia celem. Sprawdź nazwę wspólnego udostępniony kod biblioteki projektu (aplikacji utworzone powyżej), a następnie kliknij przycisk **OK** przycisk: 
+1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **odwołania** folder rozszerzenia opcji nowo utworzona i wybierz polecenie **Dodaj > odwołania**. Sprawdź nazwę wspólnego udostępniony kod biblioteki projektu (aplikacji utworzone powyżej), a następnie kliknij przycisk **OK** przycisk:
 
     [![](implementing-sirikit-images/intents08w.png "Wybierz nazwę projektu wspólnego biblioteki udostępnionej kodu")](implementing-sirikit-images/intents08w.png#lightbox)
     

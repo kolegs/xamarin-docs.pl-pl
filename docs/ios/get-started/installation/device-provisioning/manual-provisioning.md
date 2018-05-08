@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manual-provisioning"></a>Ręcznego inicjowania obsługi administracyjnej
 
@@ -254,7 +254,10 @@ Jeśli ta wartość jest równa **automatyczne**, Visual Studio dla komputerów 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Podłącz urządzenie do komputerów Mac.
+> [!IMPORTANT]
+> Przed rozpoczęciem upewnij się wybrać **ręcznego inicjowania obsługi administracyjnej** w **projektu > inicjowania obsługi administracyjnej właściwości...** .
+
+1. Podłącz urządzenie do hosta kompilacji Mac.
 2. W projekcie **Info.plist**, upewnij się, że identyfikator pakietu jest zgodny z Identyfikatorem aplikacji:
 
   ![](manual-provisioning-images/servicevs01.png "Wprowadzanie identyfikatora")

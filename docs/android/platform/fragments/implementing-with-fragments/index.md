@@ -1,65 +1,55 @@
 ---
-title: Wdrażanie z fragmenty
-description: Android 3.0 wprowadzono fragmenty. Fragmenty są samodzielnymi, modułowymi składnikami ułatwiającymi radzenie sobie ze złożonością pisania aplikacji, które mogą być uruchamiane na ekranach o różnych rozmiarach. W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android i jak obsługiwać fragmenty na urządzeniach wstępnie Android 3.0.
+title: Implementowanie fragmenty — wskazówki
+description: W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android.
+ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 92c68298d7abd2570efd89e12d7cfb6364e90972
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="implementing-with-fragments"></a>Wdrażanie z fragmenty
+# <a name="implementing-fragments---walkthrough"></a>Implementowanie fragmenty — wskazówki
 
-_Android 3.0 wprowadzono fragmenty. Fragmenty są samodzielnymi, modułowymi składnikami ułatwiającymi radzenie sobie ze złożonością pisania aplikacji, które mogą być uruchamiane na ekranach o różnych rozmiarach. W tym artykule przedstawiono sposób użycia fragmenty do tworzenia aplikacji platformy Xamarin.Android i jak obsługiwać fragmenty na urządzeniach wstępnie Android 3.0._
-
+_Fragmenty są niezależne, modularna składników, które mogą pomóc w pokonywaniu złożoność aplikacji systemu Android, które odnoszą się do urządzenia z różnych rozmiarów ekranu. W tym artykule przedstawiono sposób tworzenia i używania fragmenty, podczas tworzenia aplikacji platformy Xamarin.Android._
 
 ## <a name="overview"></a>Omówienie
 
-W tej sekcji zostanie omówiony sposób tworzenia aplikacji, która wyświetli listę Szekspir w pełni i oferty z każdego wybranego play. Aplikacji będzie korzystał fragmenty, dzięki czemu możemy zdefiniować naszych składniki interfejsu użytkownika w jednym miejscu, ale następnie używać ich w różnych rozmiarach. Na przykład poniższe zrzuty ekranu przedstawiają aplikacja była uruchomiona na komputerze typu tablet 10", a także na telefonie:
+W tej sekcji będzie przeprowadzenie sposobu tworzenia i używania fragmentów w aplikacji platformy Xamarin.Android. Ta aplikacja wyświetli tytuły kilka pełni przez Szekspir łączy na liście. Po naciśnięciu tytuł odtwarzania, w aplikacji zostaną wyświetlone oferty z tym play w oddzielnych działania:
 
-[![Zrzuty ekranu aplikacji przykład systemem tabletu lub telefonu](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
+[![Aplikacji uruchomionej na telefonie z systemem Android w trybie portret](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-W tej sekcji omówiono następujące tematy:
+Gdy telefon jest obracana na poziomą tryb, zmieni się wygląd aplikacji: listy odtwarzania i ofert pojawi się w tym samym działaniu. Po wybraniu Odtwórz oferty będą wyświetlane w tej samej działania:
 
-- **Tworzenie fragmenty** &ndash; przedstawiono sposób tworzenia fragmentu, aby wyświetlić listę Szekspir w pełni i inny fragment do wyświetlenia oferty z każdym play.
+[![Aplikacji uruchomionej na telefonie z systemem Android w trybie krajobraz](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-- **Obsługa różnych rozmiarów ekranu** &ndash; przedstawia sposób układ aplikacji, aby móc korzystać z większych rozmiarów ekranu.
+Na koniec Jeśli aplikacja jest uruchomiona na komputerze typu tablet:
 
-- **Przy użyciu pakietu obsługi systemu Android** &ndash; implementuje pakietu obsługi systemu Android, a następnie sprawia, że niektóre drobne zmiany z działaniami w aplikacji, co pozwala na uruchamianie jej w starszych wersjach systemu android.
+[![Aplikacji uruchomionej na tablet z systemem Android](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
+Ta przykładowa aplikacja mogą łatwo dostosować do różnych rozmiarach i orientacji przy minimalnych zmianach w kodzie za pomocą fragmentów i [alternatywne układy](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources).
 
-## <a name="requirements"></a>Wymagania
+Dane aplikacji będą istnieć w dwóch tablic ciągów, które są zapisane na stałe w aplikacji jako ciąg tablice C#. Każdy tablic będzie służyć jako źródło danych dla jednego fragmentu.  Jedna tablica będą przechowywane nazwy niektórych pełni przez Szekspir i innych tablicy będą przechowywane w sklepie play tej oferty. Podczas uruchamiania aplikacji, będą wyświetlane nazwy play `ListFragment`. Gdy użytkownik kliknie Odtwarzaj na `ListFragment`, aplikacja będzie uruchamiać innego działania, która będzie wyświetlana oferty.
 
-W tym przewodniku wymaga platformy Xamarin.Android 4.0 lub nowszy. Będzie też niezbędne do zainstalowania pakietu obsługi systemu Android, jak opisano w dokumentacji fragmenty.
+Interfejs użytkownika dla aplikacji będzie składają się z dwóch układów, jedno dla orientacji pionowej i w trybie krajobraz. W czasie wykonywania Android będzie ustalić, jakie układu, aby załadować oparta na orientacji urządzenia i zapewnia taki układ do działania do renderowania. Wszystkie logikę odpowiada na żądania użytkownik klika przycisk i wyświetlanie danych będzie znajdować się w fragmenty. Działania w aplikacji istnieje tylko jako kontenerów, które będą obsługiwać fragmentów.
 
+W tym przewodniku będzie można podzielić na dwa przewodniki. [Najpierw część](./walkthrough.md) koncentruje się na podstawowych części aplikacji. Pojedynczy zestaw układów (zoptymalizowane pod kątem trybie portret) zostanie utworzona oraz dwa fragmenty i dwa działania:
 
-## <a name="introduction"></a>Wprowadzenie
+1. `MainActivity` &nbsp; Jest to uruchomienia działania aplikacji.
+1. `TitlesFragment` &nbsp; Ten fragment wyświetli listę tytułów odtwarzania, które zostały napisane przez Szekspir łączy. Będzie obsługiwana przez `MainActivity`.
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` rozpocznie się `PlayQuoteActivity` w odpowiedzi na użytkownika, wybierając Odtwarzaj na `TitlesFragment`.
+1. `PlayQuoteFragment` &nbsp; Ten fragment wyświetli ofertę z Odtwórz przez Szekspir łączy. Będzie obsługiwana przez `PlayQuoteActivity`.
 
-W przykładzie oprzemy będzie w tej sekcji działania nie zawierają logikę ładowania listy, odpowiada na wybór użytkownika lub wyświetlanie oferty dla wybranego play. Istnieje tę logikę w poszczególnych fragmentów.
-Umieszczając tę logikę w się fragmentów, możemy podzielić przepływu pracy aplikacji do obsługi dużych ekranów z jednego działania lub małe ekrany z wielu działań bez konieczności pisania logiki różne dla każdego działania. Na komputerze typu tablet obu fragmentach będzie mieć jedno działanie. Na telefonie fragmentów będą obsługiwane w różnych działań.
-
-Ta aplikacja zawiera następujące elementy:
-
- **MainActivity** — przedstawia jedną lub obie z fragmentów, w zależności od wielkości ekranu. Jest to uruchomienia działania.
-
- **TitlesFragment** — zostanie wyświetlona lista odtwarzania Szekspir firmy, z których użytkownik może wybrać.
-
- **DetailsFragment** — Wyświetla oferty z wybranych play.
-
- **DetailsActivity** — obsługuje i wyświetla DetailsFragment.
-To działanie jest używane przez urządzenia z ekranami małych, takich jak telefony.
-
-
+[Drugiej części tego przewodnika](./walkthrough-landscape.md) przedstawimy Dodawanie alternatywnego układu (zoptymalizowane pod kątem tryb poziomo) wyświetlanych obu fragmentach na ekranie. Ponadto niektóre zmiany kodu drobne będą kod tak, aby aplikacja będzie dostosować zachowanie, aby liczba fragmentów, które jednocześnie są wyświetlane na ekranie.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [FragmentsWalkthrough (przykład)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
 - [Omówienie projektanta](~/android/user-interface/android-designer/index.md)
-- [Przykłady Xamarin.Android: pustakowym galerii](https://developer.xamarin.com/samples/HoneycombGallery/)
 - [Implementowanie fragmentów](http://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Pakiet pomocy technicznej](http://developer.android.com/sdk/compatibility-library.html)

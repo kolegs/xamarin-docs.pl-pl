@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6924cc9989c8ab1ca66472b628cdab677e546a3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 076cadd16c3953ee4e06193190b59035ad57f2c1
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="android-localization"></a>Lokalizacja systemu android
 
@@ -265,5 +265,5 @@ W tym artykule opisano podstawy lokalizowania aplikacji systemu Android przy uż
 - [Tasky (zlokalizowany w kodzie) (przykład)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
 - [Lokalizowanie zasobów systemu android](http://developer.android.com/guide/topics/resources/localization.html)
 - [Informacje o lokalizacji i Platform](~/cross-platform/app-fundamentals/localization.md)
-- [Lokalizacja platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization.md)
+- [Lokalizacja platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Lokalizacja systemu iOS](~/ios/app-fundamentals/localization/index.md)

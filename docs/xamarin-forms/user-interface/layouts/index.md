@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>Układy
 
@@ -28,6 +28,7 @@ Każdego formantu układu jest opisane poniżej, a także szczegółowe informac
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; używany do rozmiaru w postaci wartości bezwzględne lub stosunek & Rozmieść widoków ustawiając współrzędnych. AbsoluteLayout może służyć do warstwy widoków, a także zakotwiczyć je w lewo, prawo lub center.
 * **[RelativeLayout](relative-layout.md)**  &ndash; służy do rozmieszczania widoki przez ustawienia ograniczenia względem ich nadrzędnego wymiary i położenie.
 * **[Siatka](grid.md)**  &ndash; służy do rozmieszczania widoków w siatce. Wartości bezwzględne lub stosunek można określić wierszy i kolumn.
+* **[FlexLayout](flex-layout.md)**  &ndash; służy do rozmieszczania widoków poziomo czy pionowo z zawijaniem.
 * **[ScrollView](scroll-view.md)**  &ndash; używane w celu dostarczania przewijania, jeśli widok nie mieści się całkowicie w zakresie ekranu.
 * **[LayoutOptions](layout-options.md)**  &ndash; zdefiniuj wyrównanie i rozszerzenia dla widoku, względem jego elementu nadrzędnego.
 * **[Dane wejściowe przezroczystość](#input_transparency)**  &ndash; Określa, czy element otrzymuje dane wejściowe.
@@ -59,6 +60,23 @@ Na przykład w sytuacji, w których `StackLayout` może być dobrym rozwiązanie
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+`FlexLayout` Jest podobny do `StackLayout` w tym poziomo czy pionowo zawiera widoki podrzędnych:
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+Jednakże, jeżeli istnieją zbyt wiele elementów podrzędnych, aby zmieścić ją w pojedynczym wierszu lub kolumnę, `FlexLayout` może być zawijania tych widoków. `FlexLayout` jest oparty na Module układu pole elastyczne CSS i ma wiele tych samych opcji wbudowanych pozycjonowanie i dopasowanie jego elementów podrzędnych.
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

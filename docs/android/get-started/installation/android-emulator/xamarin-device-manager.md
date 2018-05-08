@@ -1,41 +1,36 @@
 ---
 title: Zarządzanie systemem Android emulatorów przy użyciu Menedżera urządzeń dla systemu Xamarin Android
-description: Menedżer urządzeń Android Xamarin, obecnie w wersji zapoznawczej, zastępuje starszy Menedżer urządzeń firmy Google. W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego.
+description: W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego.
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/26/2018
-ms.openlocfilehash: 2b41c23bb880ca6150fa5f3f487eb00d8a7a19d8
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/03/2018
+ms.openlocfilehash: 420ffc905659c6fd6245dc8cc3bdae4cb9401a63
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Menedżer urządzeń Xamarin Android
 
-_Menedżer urządzeń Android Xamarin, obecnie w wersji zapoznawczej, zastępuje starszy Menedżer urządzeń firmy Google. W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego._
+_W tym przewodniku wyjaśniono, jak utworzyć i skonfigurować Android urządzeń wirtualnych (urządzeń Avd), które emulują urządzeń z systemem Android przy użyciu Menedżera urządzeń Android Xamarin. Te urządzenia wirtualnego umożliwia uruchamianie i testowanie aplikacji bez konieczności zależą od urządzenia fizycznego._
 
-![Obecnie w wersji zapoznawczej](~/media/shared/preview.png)
- 
 ## <a name="overview"></a>Omówienie
 
-Po upewnieniu się, że jest włączona przyspieszanie sprzętowe (zgodnie z opisem w [przyspieszanie sprzętowe](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), następnym krokiem jest utworzenie urządzeń wirtualnych do użycia na potrzeby testowania i debugowania aplikacji. Menedżer urządzeń Xamarin Android służy do tworzenia urządzeń wirtualnych do użycia przez emulatora Android SDK.
-
-Dlaczego chcesz za pomocą Menedżera urządzeń Xamarin Android, zamiast [Menedżera urządzeń Google](~/android/get-started/installation/android-emulator/google-emulator-manager.md)?
-Począwszy od wersji narzędzia zestawu SDK systemu Android 26.0.1 Firma Google usunęła obsługę interfejsu użytkownika na podstawie AVD i zestawu SDK menedżerowie na rzecz ich nowych narzędzi interfejsu wiersza polecenia (interfejsu wiersza polecenia). Z powodu tej zmiany, należy użyć [Xamarin SDK Manager](~/android/get-started/installation/android-sdk.md) i Xamarin Android Menedżera urządzeń podczas aktualizacji do narzędzia zestawu SDK systemu Android 26.0.1 i nowsze (co jest niezbędne do rozwoju Oreo 8.0 dla systemu Android).
+Po upewnieniu się, że jest włączona przyspieszanie sprzętowe (zgodnie z opisem w [przyspieszanie sprzętowe](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), następnym krokiem jest tworzenie urządzenia wirtualnego na potrzeby testowania i debugowania aplikacji za pomocą Menedżera urządzeń Android Xamarin.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-W tym przewodniku opisano sposób instalacji i za pomocą Menedżera urządzeń Android Xamarin dla Visual Studio w systemie Windows (lub [dla komputerów Mac](?tabs=vsmac)):
+W tym przewodniku wyjaśniono, jak za pomocą Menedżera urządzeń Android Xamarin dla Visual Studio w systemie Windows (lub [dla komputerów Mac](?tabs=vsmac)):
 
 [![Zrzut ekranu Menedżera urządzeń Android Xamarin w zakładce urządzenia](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-W tym przewodniku wyjaśniono, jak zainstalować i używać Menedżera urządzeń Android Xamarin dla Visual Studio dla komputerów Mac (lub [dla systemu Windows](?tabs=vswin)):
+W tym przewodniku wyjaśniono, jak za pomocą Menedżera urządzeń Android Xamarin dla Visual Studio dla komputerów Mac (lub [dla systemu Windows](?tabs=vswin)):
 
 [![Zrzut ekranu Menedżera urządzeń Android Xamarin w zakładce urządzenia](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
@@ -48,7 +43,7 @@ Program Xamarin Studio jest niezgodny przy użyciu Menedżera urządzeń Android
 Za pomocą Menedżera urządzenia Android Xamarin, aby utworzyć i skonfigurować *urządzeń wirtualnych z systemem Android* (urządzeń Avd) uruchomionymi [emulatora Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 Każdy AVD jest konfiguracji emulatora, która symuluje fizycznego urządzenia z systemem Android. Pozwala na uruchamianie i testowanie aplikacji w różnych konfiguracji, które symulować różne fizycznego urządzenia z systemem Android. Menedżer urządzeń Xamarin Android zastępuje autonomiczny firmy Google Menedżera AVD, (która jest przestarzała).
 
-W tym przewodniku dowiesz się, jak zainstalować i uruchomić Menedżera urządzeń systemu Android. Dowiesz się sposobu tworzenia, zduplikowany, dostosowywanie i uruchomić urządzenia wirtualne. W tym przewodniku wyjaśniono również, jak skonfigurować właściwości dla każdego urządzenia wirtualnego (na przykład poziom interfejsu API, Procesora, pamięci i rozpoznawania), aby włączyć lub wyłączyć symulowane czujników, takich jak przyspieszeniomierza, GPS orientację i czujnik oświetlenia oraz konfigurowanie odpowiedniego typu sprzętu Akceleracja używany przez urządzenie wirtualne.
+W tym przewodniku dowiesz się, jak za pomocą Menedżera urządzeń systemu Android do tworzenia, zduplikowany, dostosowywanie i uruchomić urządzenia wirtualne. W tym przewodniku wyjaśniono również, jak skonfigurować właściwości dla każdego urządzenia wirtualnego (na przykład poziom interfejsu API, Procesora, pamięci i rozpoznawania), aby włączyć lub wyłączyć symulowane czujników, takich jak przyspieszeniomierza, GPS orientację i czujnik oświetlenia oraz konfigurowanie odpowiedniego typu sprzętu Akceleracja używany przez urządzenie wirtualne.
 
 ## <a name="requirements"></a>Wymagania
 
@@ -56,74 +51,37 @@ W tym przewodniku dowiesz się, jak zainstalować i uruchomić Menedżera urząd
 
 Aby użyć Menedżera urządzeń Xamarin Android, potrzebne następujące elementy:
 
-- Wymagany jest program Visual Studio 2017 wersji 15.5 lub nowszej. Program Visual Studio Community edition i wyższe jest obsługiwany.
+- Wymagany jest program Visual Studio 2017 wersji 15.7 lub nowszej. Program Visual Studio Community edition i wyższe jest obsługiwany.
 
-- Xamarin dla Visual Studio w wersji 4.8 lub nowszej. Aby uzyskać informacje o aktualizowaniu Xamarin, zobacz [zmienić kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
+- Xamarin dla Visual Studio w wersji 4.9 lub nowszej. Aby uzyskać informacje o aktualizowaniu Xamarin, zobacz [zmienić kanału aktualizacji](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
-- Najnowszą wersję [Instalator Menedżera urządzeń Xamarin](https://go.microsoft.com/fwlink/?linkid=865528) dla systemu Windows.
-
-- **Zestaw SDK systemu android** &ndash; musi być zainstalowany zestaw SDK systemu Android (zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md)), a musi być zainstalowana wersja narzędzia zestawu SDK 26.0, zgodnie z objaśnieniem w następnej sekcji. Należy zainstalować zestaw SDK systemu Android w następującej lokalizacji (Jeśli nie jest już zainstalowany): **C:\\Program Files (x86)\\Android\\zestawu sdk systemu android**.
+- **Zestaw SDK systemu android** &ndash; musi być zainstalowany zestaw SDK systemu Android (zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md)), a musi być zainstalowana wersja narzędzia zestawu SDK 26.0 lub nowszy, zgodnie z objaśnieniem w następnej sekcji. Należy zainstalować zestaw SDK systemu Android w następującej lokalizacji (Jeśli nie jest już zainstalowany): **C:\\Program Files (x86)\\Android\\zestawu sdk systemu android**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-- Program Visual Studio dla komputerów Mac 7.4 lub nowszej.
-
-- Najnowszą wersję [Instalator Menedżera urządzeń Xamarin](https://go.microsoft.com/fwlink/?linkid=865527) dla macOS.
+- Program Visual Studio dla komputerów Mac w wersji 7.5 lub nowszej.
 
 - **Zestaw SDK systemu android** &ndash; Android SDK 8.0 (26 interfejsu API) lub nowszym należy zainstalować za pomocą Menedżera zestawu SDK.
 
 -----
 
-## <a name="installing-the-device-manager"></a>Instalowanie Menedżera urządzeń
-
-Aby zainstalować Menedżera urządzeń Xamarin Android, wykonaj następujące kroki:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-1. Pobierz [Instalator Menedżera urządzeń Xamarin](https://go.microsoft.com/fwlink/?linkid=865528) dla systemu Windows.
-
-2. Kliknij dwukrotnie **Xamarin.DeviceManager.msi** i postępuj zgodnie z instrukcjami instalacji: 
-
-    ![Kreator konfiguracji Menedżera urządzeń Xamarin Android](xamarin-device-manager-images/win/30-installer.png)
-
-
-> [!NOTE]
-> Począwszy od [programu Visual Studio 2017 Preview 5](https://www.visualstudio.com/vs/preview/), Menedżer urządzeń Android będą dystrybuowane jako część VS2017 Instalatora. Nie istnieje potrzeba aby pobrać oddzielne Instalatora można uzyskać Menedżera Xamarin Android urządzeń programu Visual Studio 2017 Preview 5.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-1. Pobierz [Instalator Menedżera urządzeń Xamarin](https://go.microsoft.com/fwlink/?linkid=865527) dla macOS.
-
-2. Kliknij dwukrotnie **AndroidDevices.pkg** i postępuj zgodnie z instrukcjami instalacji: 
-
-    [![Kreator konfiguracji Menedżera urządzeń Xamarin Android](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
-
------
 ## <a name="launching-the-device-manager"></a>Uruchamianie Menedżera urządzeń
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-W programie Visual Studio 15,6 wersji zapoznawczej 3 i nowszych, można uruchomić Menedżera urządzeń Xamarin Android z **narzędzia** menu. Jeśli używasz programu Visual Studio 15,6 Preview 3 lub później, uruchom Menedżera urządzeń, klikając **Narzędzia > Android Emulator Manager**:
+Uruchamianie Menedżera urządzeń Xamarin Android z **narzędzia** menu, klikając **Narzędzia > Android Emulator Manager**:
 
 [![Uruchamianie z menu Narzędzia](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
-Jeśli używasz starszej wersji programu Visual Studio z systemu Windows musi być uruchamiany Menedżer urządzeń Xamarin Android **Start** menu.
-
-![Xamarin Menedżera urządzeń systemu Android w start menu](xamarin-device-manager-images/win/31-start-menu.png)
-
-Kliknij prawym przyciskiem myszy **Menedżera urządzeń Xamarin Android** i wybierz **więcej > Uruchom jako administrator**. Jeśli po uruchomieniu następujących okna dialogowego błędu, zobacz [Rozwiązywanie problemów](#troubleshooting) sekcji instrukcje obejście problemu:
+Jeśli po uruchomieniu następujących okna dialogowego błędu, zobacz [Rozwiązywanie problemów](#troubleshooting) sekcji instrukcje obejście problemu:
 
 ![Błąd wystąpienia zestawu SDK systemu android](xamarin-device-manager-images/win/32-sdk-error.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-W programie Visual Studio for Mac 7.6 Preview 3 (obecnie w kanału alfa) lub nowszym, można uruchomić Menedżera urządzeń Xamarin Android wybierając **Narzędzia > Menedżera emulatora**:
+W programie Visual Studio dla komputerów Mac, uruchom Menedżera urządzeń Xamarin Android wybierając **Narzędzia > Menedżera emulatora**:
 
 [![Uruchamianie z menu Narzędzia](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
-
-Jeśli używasz starszej wersji programu Visual Studio dla komputerów Mac, Menedżer urządzeń Xamarin Android musi być uruchamiany niezależnie. Zlokalizuj **urządzeń z systemem Android** w **aplikacji** folder i kliknij dwukrotnie, aby uruchomić go:
-
-[![Menedżer urządzeń Xamarin Android lokalizacji w wyszukiwaniu](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 -----
 

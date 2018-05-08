@@ -4,14 +4,14 @@ description: Sterowanie przepływem danych między źródłem a celem
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>Tryb wiązania
 
@@ -58,6 +58,7 @@ Określono tryb powiązanie z elementem członkowskim o [ `BindingMode` ](https:
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; dane są zapisywane obu kierunkach między źródłem a celem
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; dane są zapisywane ze źródła do docelowego
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; dane przechodzą z miejsca docelowego do źródła
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; dane będą wysyłane ze źródła do docelowego, ale tylko wtedy, gdy `BindingContext` zmiany (new platformy Xamarin.Forms 3.0)
 
 Dla każdej właściwości powiązania ma domyślny tryb, który jest ustawiana po utworzeniu można powiązać właściwości powiązania i która jest dostępna z [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) właściwość `BindableProperty` obiektu. To domyślny tryb powiązanie wskazuje tryb obowiązywać, gdy ta właściwość jest element docelowy powiązanie danych.
 
@@ -94,6 +95,15 @@ Właściwości tylko do odczytu ma domyślny tryb powiązania z `OneWayToSource`
 - `SelectedItem` Właściwość `ListView`
 
 Decyzja jest powiązanie na `SelectedItem` powinno spowodować ustawienie źródle powiązania właściwości. Przykładem w dalszej części tego artykułu zastąpienia tego zachowania.
+
+### <a name="one-time-bindings"></a>Jednorazowe powiązania
+
+Kilka właściwości ma domyślny tryb powiązania z `OneTime`. Są to:
+
+- `IsTextPredictionEnabled` Właściwość `Entry`
+- `Text`, `BackgroundColor`, i `Style` właściwości `Span`.
+
+Docelowa właściwości z trybu wiązania `OneTime` są aktualizowane tylko wtedy, gdy zmienia kontekstu powiązania. Dla wiązania na te właściwości obiektu docelowego upraszcza to infrastruktura powiązań, ponieważ nie jest to niezbędne do monitorowania zmian źródła właściwości.
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels i powiadomień o zmianie właściwości
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 Gdy `Color` zmiany właściwości, statycznych `GetNearestColorName` metody w `NamedColor` klasy (zawarte w **DataBindingDemos** rozwiązania) uzyskuje najbliższy kolor nazwany i ustawia `Name` właściwości. To `Name` właściwość ma prywatnej `set` dostępu, więc nie można ustawić z poza klasą.
 
 Gdy ViewModel jest ustawiona jako źródło powiązania, infrastruktura powiązań dołącza program obsługi do `PropertyChanged` zdarzeń. W ten sposób powiązania można otrzymywać powiadomienia o zmianach właściwości, a następnie można ustawić właściwości obiektu docelowego ze zmienionymi wartościami.
+
+Jednak gdy właściwość target (lub `Binding` definicji na właściwość target) ma `BindingMode` z `OneTime`, nie jest niezbędna dla infrastruktury powiązanie dołączyć obsługi na `PropertyChanged` zdarzeń. Właściwość docelowa jest aktualizowany tylko wtedy, gdy `BindingContext` zmian i nie samej właściwości źródła zmiany. 
 
 **Prosty selektor kolorów** tworzy plik XAML `HslColorViewModel` w słowniku zasobów i inicjuje strony `Color` właściwości. `BindingContext` Właściwość `Grid` ustawiono `StaticResource` powiązanie rozszerzenia, aby odwołać tego zasobu:
 

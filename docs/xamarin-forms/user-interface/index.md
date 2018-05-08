@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 83fb7a03b3426631fcf772bcb3605fea44fd4f2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="user-interface"></a>Interfejs użytkownika
 
@@ -51,7 +51,7 @@ Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, mo�
 
 ## <a name="layoutslayoutsindexmd"></a>[Układy](layouts/index.md)
 
-Platformy Xamarin.Forms ma kilka układów służący do organizowania zawartości na ekranie. `StackLayout`, `Grid`, `AbsoluteLayout`, `ScrollView`, i `RelativeLayout` każdego służy do tworzenia interfejsów użytkownika doskonałych, reakcji.
+Platformy Xamarin.Forms ma kilka układów służący do organizowania zawartości na ekranie. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, i `RelativeLayout` każdego służy do tworzenia interfejsów użytkownika doskonałych, reakcji.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
@@ -84,6 +84,10 @@ Platformy Xamarin.Forms ma kilka widoków prezentowania i odbierania tekstu. Wid
 ## <a name="themesthemesindexmd"></a>[Motywy](themes/index.md)
 
 Motywy platformy Xamarin.Forms zdefiniuj określonych wygląd dla standardowych formantów. Po dodaniu motyw do słownika zasobów aplikacji zmieni się wygląd standardowych kontrolek.
+
+## <a name="visual-state-managervisual-state-managermd"></a>[Menedżer stanu Visual](visual-state-manager.md)
+
+Visual State Manager umożliwia strukturalnych powodować zmiany w interfejsie użytkownika z kodu, w tym układzie, którego adaptacja do zmian w orientacji urządzenia lub rozmiar.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 

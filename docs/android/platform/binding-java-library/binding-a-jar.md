@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>Powiązanie. JAR
 
@@ -81,7 +81,7 @@ Przed rozpoczęciem poniższe kroki, Pobierz [picasso 2.x.x.jar](http://repo1.ma
 
 Najpierw utwórz nowy projekt biblioteki powiązania. W programie Visual Studio dla komputerów Mac lub Visual Studio, Utwórz nowe rozwiązanie i wybierz *biblioteki systemu Android powiązania* szablonu. (Zrzuty ekranu w tym przewodniku użyć programu Visual Studio, ale programu Visual Studio for Mac jest bardzo podobny). Nazwa rozwiązania **JarBinding**: 
 
-[![Tworzenie projektu biblioteki JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![Tworzenie projektu biblioteki JarBinding](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 Szablon zawiera **Jars** folder, w którym można dodać użytkownika. JAR(s) do projektu biblioteki powiązania. Kliknij prawym przyciskiem myszy **Jars** i wybierz polecenie **Dodaj > istniejący element**: 
 
@@ -130,7 +130,7 @@ W poniższych krokach, utworzymy minimalnego aplikację, która korzysta z bibli
 
 Najpierw utwórz nową aplikację platformy Xamarin.Android, który wykorzystuje biblioteki powiązania. Kliknij prawym przyciskiem myszy rozwiązanie, a następnie wybierz **Dodawanie nowego projektu**; Nazwa nowego projektu **BindingTest**. W tym samym rozwiązaniu jako biblioteki powiązania tworzymy tej aplikacji w celu uproszczenia tego przewodnika; Aplikacja, która korzysta z biblioteki powiązania zamiast tego można jednak znajdować się w inne rozwiązanie: 
 
-[![Dodaj nowy projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![Dodaj nowy projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 Kliknij prawym przyciskiem myszy **odwołania** węzła **BindingTest** projekt i wybierz **Dodawanie odwołania...** :
 
