@@ -6,12 +6,12 @@ ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/04/2018
+ms.openlocfilehash: f4fe1bd753260f05dedb452655572d290c0781d0
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Powiązane usługi platformie Xamarin.Android
 
@@ -42,8 +42,8 @@ W tym przewodniku będzie omawiać temat rozszerzyć `Service` klasy do zaimplem
 Istnieją trzy składniki, które muszą zostać zaimplementowane w kolejności dla aplikacji systemu Android do pracy z usługą powiązane:
 
 1. **Rozszerzanie `Service` klasy i metody wywołania zwrotnego cyklu życia wdrożenia** &ndash; tej klasy będzie zawierać kod, który będzie wykonywania pracy, które będzie wymagane usługi. To zostanie omówiona bardziej szczegółowo poniżej.
-2. **Utwórz klasę tego implementuje `IServiceConnection`**  &ndash; ten obiekt zawiera metody wywołania zwrotnego, które powiadamiają o klienta, gdy jest podłączone do (lub utracono połączenie) z usługi. Połączenie usługi zawiera również odwołanie do obiektu, który klient może używać do bezpośredniej interakcji z usługą. To odwołanie jest nazywany _integratora_.
-3. **Utwórz klasę tego implementuje `IBinder`**  &ndash; A _integratora_ implementacja udostępnia interfejs API, który klient używa do komunikacji z usługą. Obiekt wiążący zapewniają albo odwołanie do powiązanej usługi, zezwalając metody do wywołania bezpośrednio lub integrator może zapewnić klienta interfejsu API, który hermetyzuje i ukrywa usługi powiązane z aplikacji. `IBinder` Podaj kod niezbędne dla zdalnych wywołań procedur. Nie jest konieczne (lub zalecaną) do zaimplementowania `IBinder` interfejsu bezpośrednio. `IBinder` Aplikacji zamiast tego należy rozszerzyć `Binder` zapewniające podstawowe funkcje wymagane przez większość `IBinder`.
+2. **Utwórz klasę tego implementuje `IServiceConnection`**  &ndash; ten interfejs zawiera metody wywołania zwrotnego zostanie wywołany przez system Android, aby powiadomić klienta, gdy połączenie z usługą zostanie zmieniony, tj. klient ma połączone lub rozłączone do Usługa. Połączenie usługi zawiera również odwołanie do obiektu, który klient może używać do bezpośredniej interakcji z usługą. To odwołanie jest nazywany _integratora_.
+3. **Utwórz klasę tego implementuje `IBinder`**  &ndash; A _integratora_ implementacja udostępnia interfejs API, który klient używa do komunikacji z usługą. Obiekt wiążący zapewniają albo odwołanie do powiązanej usługi, zezwalając metody do wywołania bezpośrednio lub integrator może zapewnić klienta interfejsu API, który hermetyzuje i ukrywa usługi powiązane z aplikacji. `IBinder` Podaj kod niezbędne dla zdalnych wywołań procedur. Nie jest konieczne (lub zalecaną) do zaimplementowania `IBinder` interfejsu bezpośrednio. Zamiast tego należy rozszerzyć aplikacji `Binder` typu, który udostępnia podstawowe funkcje wymagane przez większość `IBinder`.
 4. **Uruchamianie i powiązanie z usługą** &ndash; połączenia z usługą, integratora i usługi od momentu utworzenia aplikacji systemu Android jest odpowiedzialna za uruchamianie usługi i powiązania jej.
 
 Każdy z tych kroków zostanie dokładnie omówione w poniższych sekcjach szczegółowo.

@@ -7,9 +7,9 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/28/2018
-ms.openlocfilehash: cb46744b3c0a2f50a02491cc4824dfd4cf847235
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/07/2018
@@ -76,7 +76,7 @@ W platformy Xamarin.Forms arkusze stylów CSS są analizowane i oceniane w środ
 [![Strona szczegółów MonkeyApp ze stylów CSS](css-images/MonkeyAppDetailPage.png "MonkeyApp strony szczegółów z stylów CSS")](css-images/MonkeyAppDetailPage-Large.png#lightbox "MonkeyApp strony szczegółów z stylów CSS")
 
 > [!NOTE]
-> Nie jest obecnie możliwe do nadawania stylu kolor tła [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) przy użyciu arkusza stylów. W związku z tym w przykładowej aplikacji [ `NavigationPage.BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) właściwość jest ustawiona w kodzie.
+> Nie jest obecnie możliwe do nadawania stylu kolor tła [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) przy użyciu arkusza stylów. W związku z tym w przykładowej aplikacji [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) właściwość jest ustawiona w kodzie.
 
 ## <a name="consuming-a-style-sheet"></a>Korzystanie z arkusza stylów
 
@@ -91,7 +91,7 @@ Istnieje kilka metod, które mogą służyć do załadowania arkusza stylów.
 
 ### <a name="xaml"></a>XAML
 
-Arkusz stylów można załadować i przeanalizować z [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) klasy przed dodaniem go do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) strony:
+Arkusz stylów można załadować i przeanalizować z [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) klasy przed dodaniem go do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) strony:
 
 ```xaml
 <ContentPage ...>
@@ -102,12 +102,12 @@ Arkusz stylów można załadować i przeanalizować z [ `StyleSheet` ](https://d
 </ContentPage>
 ```
 
-[ `StyleSheet.Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StyleSheets.Source/) Właściwość określa arkusz stylów jako identyfikatora URI względną wobec lokalizacji pliku otaczającego XAML lub względem katalogu głównego projektu, jeśli identyfikator URI, który rozpoczyna się od `/`.
+[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Właściwość określa arkusz stylów jako identyfikatora URI względną wobec lokalizacji pliku otaczającego XAML lub względem katalogu głównego projektu, jeśli identyfikator URI, który rozpoczyna się od `/`.
 
 > [!WARNING]
 > Plik kodu CSS nie będzie można załadować, jeśli jest akcja kompilacji nie jest ustawiona na **EmbeddedResource**.
 
-Alternatywnie można załadowaniu i przeanalizowaniu z arkusza stylów [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) klasy przez ze śródwierszowaniem w `CDATA` sekcji:
+Alternatywnie można załadowaniu i przeanalizowaniu z arkusza stylów [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) klasy przez ze śródwierszowaniem w `CDATA` sekcji:
 
 ```xaml
 <ContentPage ...>
@@ -126,7 +126,7 @@ Alternatywnie można załadowaniu i przeanalizowaniu z arkusza stylów [ `StyleS
 
 ### <a name="c"></a>C#
 
-W języku C# arkusz stylów może być załadowany jako osadzony zasób i dodawany do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) strony:
+W języku C# arkusz stylów może być załadowany jako osadzony zasób i dodawany do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) strony:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -144,7 +144,7 @@ public partial class MyPage : ContentPage
 
 Pierwszy argument `StyleSheet.FromAssemblyResource` metoda jest zestaw zawierający arkusz stylów, a drugi argument jest `string` reprezentujący identyfikator zasobu. Identyfikator zasobu można uzyskać z **właściwości** okna w przypadku wybrania pliku CSS.
 
-Alternatywnie arkusza stylów mogą być ładowane z `StringReader` i dodane do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) strony:
+Alternatywnie arkusza stylów mogą być ładowane z `StringReader` i dodane do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) strony:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -179,7 +179,7 @@ stacklayout {
 }
 ```
 
-Ten selektor identyfikuje wszelkie [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) elementy na stronach, które zużywają arkusza stylów i ustawia ich marginesy uniform grubości 20.
+Ten selektor identyfikuje wszelkie [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) elementy na stronach, które zużywają arkusza stylów i ustawia ich marginesy uniform grubości 20.
 
 > [!NOTE]
 > `element` Selektor nie będzie rozpoznawał podklas określonego typu.
@@ -194,7 +194,7 @@ Elementy w drzewie wizualnym można wybrać przez klasę podstawową z wielkich 
 }
 ```
 
-Ten selektor identyfikuje wszelkie [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) kolor elementów, które zużywają arkusza stylów i ustawia ich tło `lightgray`.
+Ten selektor identyfikuje wszelkie [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) kolor elementów, które zużywają arkusza stylów i ustawia ich tło `lightgray`.
 
 > [!NOTE]
 > `^base` Selektora są specyficzne dla platformy Xamarin.Forms i nie jest częścią specyfikacji CSS.
@@ -209,7 +209,7 @@ Można wybrać poszczególne elementy w drzewie wizualnym z uwzględnieniem wiel
 }
 ```
 
-Ten selektor identyfikuje element których [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) właściwość jest ustawiona na `listView`. Jednak jeśli `StyleId` właściwość nie jest ustawiona, selektor będzie wrócić korzystania z `x:Name` elementu. W związku z tym w poniższym przykładzie XAML `#listView` określi selektora [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) których `x:Name` atrybut ma ustawioną `listView`i ustawi kolor tła jego `lightgray`.
+Ten selektor identyfikuje element których [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) właściwość jest ustawiona na `listView`. Jednak jeśli `StyleId` właściwość nie jest ustawiona, selektor będzie wrócić korzystania z `x:Name` elementu. W związku z tym w poniższym przykładzie XAML `#listView` określi selektora [ `ListView` ](xref:Xamarin.Forms.ListView) których `x:Name` atrybut ma ustawioną `listView`i ustawi kolor tła jego `lightgray`.
 
 ```xaml
 <ContentPage ...>
@@ -241,7 +241,7 @@ Można wybrać elementy z atrybutem określonej klasy z uwzględnieniem wielkoś
 }
 ```
 
-Ustawiając można przypisać do elementu XAML klasy CSS [ `StyleClass` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.StyleClass/) właściwość elementu Nazwa klasy CSS. W związku z tym w poniższym przykładzie XAML style zdefiniowane przez `.detailPageTitle` klasy są przypisane do pierwszej [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), podczas gdy style zdefiniowane przez `.detailPageSubtitle` klasy są przypisane do drugiego `Label`.
+Ustawiając można przypisać do elementu XAML klasy CSS [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) właściwość elementu Nazwa klasy CSS. W związku z tym w poniższym przykładzie XAML style zdefiniowane przez `.detailPageTitle` klasy są przypisane do pierwszej [ `Label` ](xref:Xamarin.Forms.Label), podczas gdy style zdefiniowane przez `.detailPageSubtitle` klasy są przypisane do drugiego `Label`.
 
 ```xaml
 <ContentPage ...>
@@ -269,7 +269,7 @@ listview image {
 }
 ```
 
-Ten selektor identyfikuje wszelkie [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementy, które są elementami podrzędnymi [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) elementów i ustawia szerokość i wysokość do 60. W związku z tym w poniższym przykładzie XAML `listview image` określi selektora [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) jest elementem podrzędnym [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)i ustawia jej wysokości i szerokości do 60.
+Ten selektor identyfikuje wszelkie [ `Image` ](xref:Xamarin.Forms.Image) elementy, które są elementami podrzędnymi [ `ListView` ](xref:Xamarin.Forms.ListView) elementów i ustawia szerokość i wysokość do 60. W związku z tym w poniższym przykładzie XAML `listview image` określi selektora [ `Image` ](xref:Xamarin.Forms.Image) jest elementem podrzędnym [ `ListView` ](xref:Xamarin.Forms.ListView)i ustawia jej wysokości i szerokości do 60.
 
 ```xaml
 <ContentPage ...>
@@ -308,7 +308,7 @@ stacklayout>image {
 }
 ```
 
-Ten selektor identyfikuje wszelkie [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementy, które są bezpośrednimi elementami podrzędnymi [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) elementów i ustawia szerokość i wysokość 200. W związku z tym w poniższym przykładzie XAML `stacklayout>image` określi selektora [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) jest bezpośrednim elementem podrzędnym elementu [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)i ustawia jej wysokości i szerokości 200.
+Ten selektor identyfikuje wszelkie [ `Image` ](xref:Xamarin.Forms.Image) elementy, które są bezpośrednimi elementami podrzędnymi [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) elementów i ustawia szerokość i wysokość 200. W związku z tym w poniższym przykładzie XAML `stacklayout>image` określi selektora [ `Image` ](xref:Xamarin.Forms.Image) jest bezpośrednim elementem podrzędnym elementu [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)i ustawia jej wysokości i szerokości 200.
 
 ```xaml
 <ContentPage ...>
@@ -401,7 +401,7 @@ Obecnie obsługiwane są następujące właściwości:
 - Właściwości układu (pole lub siatki).
 - Skrótowa właściwości, takie jak `font`, i `border`.
 
-Ponadto istnieje nie `inherit` dziedziczenie wartości i dlatego nie jest obsługiwane. W związku z tym nie można na przykład ustawić `font-size` właściwości układ i oczekują wszystkie [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień w układzie dziedziczona wartością. Jedynym wyjątkiem jest `direction` właściwość, która ma wartość domyślną z `inherit`.
+Ponadto istnieje nie `inherit` dziedziczenie wartości i dlatego nie jest obsługiwane. W związku z tym nie można na przykład ustawić `font-size` właściwości układ i oczekują wszystkie [ `Label` ](xref:Xamarin.Forms.Label) wystąpień w układzie dziedziczona wartością. Jedynym wyjątkiem jest `direction` właściwość, która ma wartość domyślną z `inherit`.
 
 ### <a name="color"></a>Kolor
 

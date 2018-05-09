@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 4aa2ea21c9cf2e9e646465ab7ad4aa0a01de433e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>FlexLayout platformy Xamarin.Forms
 
 _Użyj FlexLayout układania lub zawijania Kolekcja widoków podrzędnych._
 
-Platformy Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexLayout/) stanowi nowość w wersji 3.0 lub nowszej platformy Xamarin.Forms. Opiera się na CSS [elastyczne modułu układu pole](http://www.w3.org/TR/css-flexbox-1/), powszechnie znane jako _flex układu_ lub _pola elastycznego_, więc wywołuje się, ponieważ zawiera on wiele opcji elastyczne rozmieszczenia elementów podrzędnych w układzie.
+Platformy Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) stanowi nowość w wersji 3.0 lub nowszej platformy Xamarin.Forms. Opiera się na CSS [elastyczne modułu układu pole](http://www.w3.org/TR/css-flexbox-1/), powszechnie znane jako _flex układu_ lub _pola elastycznego_, więc wywołuje się, ponieważ zawiera on wiele opcji elastyczne rozmieszczenia elementów podrzędnych w układzie.
 
 `FlexLayout` jest podobny do platformy Xamarin.Forms [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) w tym go rozmieścić elementy podrzędne w poziomie i w pionie na stosie. Jednak `FlexLayout` jest również możliwość zawijania jego elementów podrzędnych, jeśli jest zbyt duża, aby zmieścić ją w pojedynczym wierszu lub kolumnie, a także ma wiele opcji orientacja wyrównania i dostosowania do różnych rozmiarów ekranu.
 
@@ -65,11 +65,11 @@ Oto tej strony z systemem iOS, Android i platformy uniwersalnej systemu Windows:
 
 Trzy właściwości `FlexLayout` są wyświetlane w **SimpleStackPage.xaml** pliku:
 
-- [ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/) Właściwość jest ustawiona na wartość [ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/) wyliczenia. Wartość domyślna to `Row`. Ustawienie właściwości `Column` powoduje, że elementy podrzędne `FlexLayout` być rozmieszczone w jednej kolumnie elementów.
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Właściwość jest ustawiona na wartość [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) wyliczenia. Wartość domyślna to `Row`. Ustawienie właściwości `Column` powoduje, że elementy podrzędne `FlexLayout` być rozmieszczone w jednej kolumnie elementów.
 
     Gdy elementy w `FlexLayout` ułożone w kolumnie `FlexLayout` ma pionowym _osi głównej_ i poziomym _między osi_.
 
-- [ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/) Właściwość jest typu [ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/) i określa sposób wyrównania elementów na osi poprzecznej. `Center` Opcja powoduje, że każdy element, aby wyśrodkowany w poziomie.
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Właściwość jest typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) i określa sposób wyrównania elementów na osi poprzecznej. `Center` Opcja powoduje, że każdy element, aby wyśrodkowany w poziomie.
 
     W przypadku używania `StackLayout` zamiast `FlexLayout` dla tego zadania, czy Centrum wszystkie elementy, przypisując `HorizontalOptions` właściwości każdy element, aby `Center`. `HorizontalOptions` Właściwość nie ma wpływu na elementy podrzędne `FlexLayout`, ale tym pojedynczego `AlignItems` właściwości następuje to w ramach tego samego celu. Jeśli potrzebujesz, możesz użyć `AlignSelf` dołączonych właściwości możliwej do wiązania, aby zastąpić `AlignItems` właściwości dla poszczególnych elementów:
 
@@ -81,7 +81,7 @@ Trzy właściwości `FlexLayout` są wyświetlane w **SimpleStackPage.xaml** pli
 
     Z tą zmianą, ta `Label` znajduje się w lewej krawędzi `FlexLayout` przypadku kolejność czytania od lewej do prawej.
 
-- [ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/) Właściwość jest typu [ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)i określa sposób rozmieszczenia elementów na osi głównej. `SpaceEvenly` Opcja przydziela wszystkie pozostałe miejsce pionowy równomiernie w poszczególnych elementów i powyżej pierwszy element i poniżej ostatniego elementu.
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Właściwość jest typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)i określa sposób rozmieszczenia elementów na osi głównej. `SpaceEvenly` Opcja przydziela wszystkie pozostałe miejsce pionowy równomiernie w poszczególnych elementów i powyżej pierwszy element i poniżej ostatniego elementu.
 
     W przypadku używania `StackLayout`, trzeba przypisać `VerticalOptions` właściwości każdy element, aby `CenterAndExpand` osiągnąć ten sam efekt. Ale `CenterAndExpand` opcja będzie zajmować dwa razy więcej miejsca na dysku między każdym z elementów niż przed pierwszym elementem i po ostatnim elemencie. Można naśladować `CenterAndExpand` opcji `VerticalOptions` przez ustawienie `JustifyContent` właściwość `FlexLayout` do `SpaceAround`.
 
@@ -112,7 +112,7 @@ Te `FlexLayout` właściwości omówiono bardziej szczegółowo w sekcji **[sze�
 
 `Direction` Właściwości tego `FlexLayout` nie jest ustawiona, więc domyślne ustawienie `Row`, co oznacza, że elementy podrzędne są wyświetlane w wierszach i głównych osi jest poziomy.
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/) Właściwość jest typu wyliczenia [ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/). Jeśli istnieje zbyt wiele elementów, aby zmieścić w wierszu, to ustawienie właściwości powoduje elementy, które mają być zawijany do następnego wiersza.
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Właściwość jest typu wyliczenia [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap). Jeśli istnieje zbyt wiele elementów, aby zmieścić w wierszu, to ustawienie właściwości powoduje elementy, które mają być zawijany do następnego wiersza.
 
 Zwróć uwagę, że `FlexLayout` jest elementem podrzędnym `ScrollView`. Jeśli istnieje za dużo wierszy mieści się na stronie, a następnie `ScrollView` ma wartość domyślną `Orientation` właściwość `Vertical` i umożliwia przewijanie w pionie.
 
@@ -398,14 +398,14 @@ Każdy z `Label` widoków ma szare tło pokazujący miejsce przydzielone do tego
 
 ### <a name="the-direction-property"></a>Właściwość kierunku
 
-[ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/) Właściwość jest typu [ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/), wyliczenie z czterech członków:
+[ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Właściwość jest typu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection), wyliczenie z czterech członków:
 
 - `Column`
 - `ColumnReverse` (lub "kolumny reverse" w języku XAML)
 - `Row`, wartość domyślna
 - `RowReverse` (lub "wiersza reverse" w języku XAML)
 
-W języku XAML możesz określić wartość tej właściwości przy użyciu nazwy elementu członkowskiego wyliczenia w małe litery, wielkie litery, lub wielkich i małych liter, lub można użyć dwóch dodatkowe ciągi wyświetlane w nawiasach, które są takie same jak wskaźniki CSS. (Parametry "kolumny wstecznego" i "wiersza wstecznego" są zdefiniowane w [ `FlexDirectionTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirectionTypeConverter/) klasa używana przez XAML parser.)
+W języku XAML możesz określić wartość tej właściwości przy użyciu nazwy elementu członkowskiego wyliczenia w małe litery, wielkie litery, lub wielkich i małych liter, lub można użyć dwóch dodatkowe ciągi wyświetlane w nawiasach, które są takie same jak wskaźniki CSS. (Parametry "kolumny wstecznego" i "wiersza wstecznego" są zdefiniowane w [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) klasa używana przez XAML parser.)
 
 Oto **eksperymentu** strona wyświetlająca (od lewej do prawej), `Row` kierunku, `Column` kierunek i `ColumnReverse` kierunek:
 
@@ -417,7 +417,7 @@ Zwróć uwagę, że dla `Reverse` opcje elementy są liczone od prawej lub dolne
 
 ### <a name="the-wrap-property"></a>Właściwość zawijania
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/) Właściwość jest typu [ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/), wyliczenie z trzech elementów członkowskich:
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Właściwość jest typu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap), wyliczenie z trzech elementów członkowskich:
 
 - `NoWrap`, wartość domyślna
 - `Wrap`
@@ -433,7 +433,7 @@ Gdy `Wrap` właściwość jest ustawiona na `NoWrap` osi głównej jest ogranicz
 
 ### <a name="the-justifycontent-property"></a>Właściwość JustifyContent
 
-[ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/) Właściwość jest typu [ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/), wyliczenie z sześciu członków:
+[ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Właściwość jest typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify), wyliczenie z sześciu członków:
 
 - `Start` (lub "flex-start" w języku XAML), wartość domyślna
 - `Center`
@@ -452,7 +452,7 @@ Wszystkie trzy zrzuty ekranu `Wrap` właściwość jest ustawiona na `Wrap`. `St
 
 ### <a name="the-alignitems-property"></a>Właściwość AlignItems
 
-[ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/) Właściwość jest typu [ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/), wyliczenie z czterech członków:
+[ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Właściwość jest typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems), wyliczenie z czterech członków:
 
 - `Stretch`, wartość domyślna
 - `Center`
@@ -471,7 +471,7 @@ Dla żadnego elementu `AlignItems` ustawienie może zostać zastąpiona przez [ 
 
 ### <a name="the-aligncontent-property"></a>Właściwość AlignContent
 
-[ `AlignContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignContent/) Właściwość jest typu [ `FlexAlignContent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/), wyliczenie z siedmiu członków:
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent) Właściwość jest typu [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent), wyliczenie z siedmiu członków:
 
 - `Stretch`, wartość domyślna
 - `Center`
@@ -501,7 +501,7 @@ W iOS screnshot oba wiersze znajdowały się u góry; Zrzut ekranu dla systemu A
 
 ### <a name="the-alignself-property"></a>Właściwość AlignSelf
 
-[ `AlignSelf` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignSelf/) Jest dołączona właściwość można powiązać typu [ `FlexAlignSelf` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/), wyliczenie z pięciu członków:
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) Jest dołączona właściwość można powiązać typu [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent), wyliczenie z pięciu członków:
 
 - `Auto`, wartość domyślna
 - `Stretch`
@@ -525,15 +525,15 @@ Zwróć uwagę, że nie istnieje żadne odwołanie do `FlexLayout` nadrzędny `L
 
 ### <a name="the-order-property"></a>Właściwości Order
 
-[ `Order` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Order/) Właściwość jest typu `int`. Wartość domyślna to 0.
+[ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty) Właściwość jest typu `int`. Wartość domyślna to 0.
 
 `Order` Właściwości umożliwia zmianę kolejności który elementów podrzędnych `FlexLayout` ułożone. Zazwyczaj dzieci `FlexLayout` ułożone jest tej samej kolejności, w jakiej występują w `Children` kolekcji. Można zastąpić to zamówienie, ustawiając `Order` dołączona właściwość może być powiązana wartość niezerową liczbą całkowitą na jeden lub więcej elementów podrzędnych. `FlexLayout` Następnie Rozmieszcza elementy podrzędne w oparciu o ustawieniu `Order` właściwości w każdej podrzędnej, ale elementów podrzędnych o takim samym `Order` ustawienia są rozmieszczone w kolejności ich występowania w `Children` kolekcji.
 
 ### <a name="the-basis-property"></a>Właściwość podstawy
 
-[ `Basis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Basis/) Dołączona właściwość można powiązać wskazuje ilość miejsca, który jest przydzielony do elementu podrzędnego `FlexLayout` na osi głównej. Określony rozmiar przez `Basis` rozmiar osi głównego elementu nadrzędnego jest właściwość `FlexLayout`. Innymi słowy `Basis` wskazuje szerokość elementu podrzędnego, gdy elementy podrzędne są rozmieszczone w lub wysokość wierszy, gdy elementy podrzędne są rozmieszczone w kolumnach.
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Dołączona właściwość można powiązać wskazuje ilość miejsca, który jest przydzielony do elementu podrzędnego `FlexLayout` na osi głównej. Określony rozmiar przez `Basis` rozmiar osi głównego elementu nadrzędnego jest właściwość `FlexLayout`. Innymi słowy `Basis` wskazuje szerokość elementu podrzędnego, gdy elementy podrzędne są rozmieszczone w lub wysokość wierszy, gdy elementy podrzędne są rozmieszczone w kolumnach.
 
-`Basis` Właściwość jest typu [ `FlexBasis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexBasis/), strukturę. Rozmiar można określić w jednostkach niezależnych od urządzenia lub jako procent rozmiaru `FlexLayout`. Wartość domyślna `Basis` właściwość ma właściwości statycznej `FlexBasis.Auto`, co oznacza, że podrzędne żądanej przez szerokość lub wysokość jest używany.
+`Basis` Właściwość jest typu [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), strukturę. Rozmiar można określić w jednostkach niezależnych od urządzenia lub jako procent rozmiaru `FlexLayout`. Wartość domyślna `Basis` właściwość ma właściwości statycznej `FlexBasis.Auto`, co oznacza, że podrzędne żądanej przez szerokość lub wysokość jest używany.
 
 W kodzie, można ustawić `Basis` właściwość `Label` o nazwie `label` do 40 jednostek niezależnych od urządzenia następująco:
 
@@ -581,7 +581,7 @@ Zrzut ekranu dla systemu iOS po lewej stronie przedstawia dwa `Label` elementy s
 
 ### <a name="the-grow-property"></a>Zwiększ właściwości
 
-[ `Grow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Grow/) Właściwość jest typu `int`. Wartość domyślna to 0, a wartość musi być większa lub równa 0.
+[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) Jest dołączona właściwość można powiązać typu `int`. Wartość domyślna to 0, a wartość musi być większa lub równa 0.
 
 `Grow` Właściwości pełni rolę, podczas gdy `Wrap` właściwość jest ustawiona na `NoWrap` i wierszy podrzędnych ma łączna szerokość mniejszą niż szerokość `FlexLayout`, lub kolumn podrzędnych ma wysokości krótszy niż `FlexLayout`. `Grow` Właściwość wskazuje, jak rozdzielić pozostałe miejsce między elementami podrzędnymi.
 
@@ -597,7 +597,7 @@ Jak widok podrzędny używa tego miejsca zależy od typu danego elementu podrzę
 
 ### <a name="the-shrink-property"></a>Właściwość zmniejszania
 
-[ `Shrink` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Shrink/) Właściwość jest typu `int`. Wartość domyślna to 1, a wartość musi być większa lub równa 0.
+[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty) Jest dołączona właściwość można powiązać typu `int`. Wartość domyślna to 1, a wartość musi być większa lub równa 0.
 
 `Shrink` Właściwości pełni rolę podczas `Wrap` właściwość jest ustawiona na `NoWrap` i łączna szerokość wiersza elementów podrzędnych jest większa niż szerokość `FlexLayout`, albo jest większa niż wysokość agregacji pojedynczej kolumny elementów podrzędnych wysokość `FlexLayout`. Zwykle `FlexLayout` przez constricting ich rozmiary wyświetli te elementy podrzędne. `Shrink` Właściwości można wskazać dzieci, które otrzymują odpowiedni priorytet w wyświetlane w pełnej wielkości.
 

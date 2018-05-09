@@ -5,12 +5,12 @@ ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/01/2018
-ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: 00785ad161f5f05fd70b059bb0a3f1c8d6c31f97
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-service"></a>Tworzenie usługi
 
@@ -82,8 +82,8 @@ Najbardziej podstawową metodą, aby uruchomić usługę w systemie Android jest
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Niejawne zamiar** &ndash; tego typu założeń słabo identyfikuje akcji która powinna być wykonywana, ale dokładne usługi do ukończenia tego działania jest nieznany. Niejawne celem można traktować jako literą, która jest skierowana "Do Whom It może dotyczą...".
-    Android zbada zawartość zamiar i determin przypadku istniejącą usługę, której celem jest zgodna.
+-   **Niejawne zamiar** &ndash; tego typu założeń słabo identyfikuje akcji użytkownik zamierza wykonać, że usługa dokładnie do ukończenia tego działania jest nieznany. Niejawne celem można traktować jako literą, która jest skierowana "Do Whom It może dotyczą...".
+    Android Sprawdź zawartość celem i określenia, czy istniejącą usługę, której celem jest zgodna.
 
     _Konwersji filtru_ służą do niejawnego pozostała z zarejestrowanej usługi. Filtr konwersji jest element XML, który jest dodawany do **AndroidManifest.xml** zawierającą wymagane metadane do wyszukiwania usługi z zamiarem niejawne.
 

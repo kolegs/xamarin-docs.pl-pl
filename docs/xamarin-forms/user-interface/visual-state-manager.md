@@ -7,10 +7,10 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 15519e504f7eec7b85bacb439e729b8be2422888
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: f511f5c33b947704a42df850d2772c0b26511173
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/07/2018
 ---
@@ -30,7 +30,7 @@ Wydanie początkowej Xamarin.Florms Visual State Manager definiuje jedną grupę
 - "Wyłączone"
 - "Fokus"
 
-Ta grupa stan wizualny jest obsługiwana dla wszystkich klas, które pochodzą z [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/), która jest klasą bazową dla [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) i [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). 
+Ta grupa stan wizualny jest obsługiwana dla wszystkich klas, które pochodzą z [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), która jest klasą bazową dla [ `View` ](xref:Xamarin.Forms.View) i [ `Page` ](xref:Xamarin.Forms.Page). 
 
 Możesz również definiować własne grupy stanu wizualnego i Stany wizualne, co w tym artykule przedstawiono.
 
@@ -73,9 +73,9 @@ Następnie wstaw `VisualStateManager.VisualStateGroups` tagi między tych tagów
 
 Może to wyglądać nieco dziwne. Zazwyczaj jest tylko kod znaczników, który pojawi się między dwoma tagami tego rodzaju elementów zawartości lub właściwości oraz `VisualStateManager.VisualStateGroups` tag nie jest ani.
 
-Jest to prawne składni języka XAML, ponieważ [ `VisualStateGroups` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty/) jest dołączona właściwość powiązania zdefiniowane przez [ `VisualStateManager` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroups) klasy. (Aby uzyskać więcej informacji na dołączone właściwości możliwej do wiązania, zobacz artykuł [dołączone właściwości](~/xamarin-forms/xaml/attached-properties.md).) Jest to sposób `VisualStateGroups` zostanie dołączona właściwość `Entry` obiektu.
+Jest to prawne składni języka XAML, ponieważ [ `VisualStateGroups` ](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) jest dołączona właściwość powiązania zdefiniowane przez [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) klasy. (Aby uzyskać więcej informacji na dołączone właściwości możliwej do wiązania, zobacz artykuł [dołączone właściwości](~/xamarin-forms/xaml/attached-properties.md).) Jest to sposób `VisualStateGroups` zostanie dołączona właściwość `Entry` obiektu.
 
-`VisualStateGroups` Właściwość jest typu [ `VisualStateGroupList` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroupList/), która jest kolekcją [ `VisualStateGroup` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/) obiektów. W ramach `VisualStateManager.VisualStateGroups` tagów, wstawić parę `VisualStateGroup` tagi dla każdej grupy stany wizualne, które mają zostać uwzględnione:
+`VisualStateGroups` Właściwość jest typu [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), która jest kolekcją [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) obiektów. W ramach `VisualStateManager.VisualStateGroups` tagów, wstawić parę `VisualStateGroup` tagi dla każdej grupy stany wizualne, które mają zostać uwzględnione:
 
 ```xaml
 <Entry FontSize="18">
@@ -93,7 +93,7 @@ Zwróć uwagę, że `VisualStateGroup` tag ma `x:Name` atrybut wskazujący nazw�
 <VisualStateGroup Name="CommonStates">
 ```
 
-`VisualStateGroup` Klasa definiuje właściwość o nazwie [ `States` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/States/), która jest kolekcją [ `VisualState` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/) obiektów. `States` Właściwość content jest `VisualStateGroups` , mogą obejmować `VisualState` znaczniki bezpośrednio między `VisualStateGroup` tagów.
+`VisualStateGroup` Klasa definiuje właściwość o nazwie [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), która jest kolekcją [ `VisualState` ](xref:Xamarin.Forms.VisualState) obiektów. `States` Właściwość content jest `VisualStateGroups` , mogą obejmować `VisualState` znaczniki bezpośrednio między `VisualStateGroup` tagów.
 
 Następnym krokiem jest uwzględnienie pary znaczników dla każdego stanu wizualnego w tej grupie. Ponadto można je zidentyfikować przy użyciu `x:Name` lub `Name`:
 
@@ -117,7 +117,7 @@ Następnym krokiem jest uwzględnienie pary znaczników dla każdego stanu wizua
 </Entry>
 ```
 
-`VisualState` Definiuje właściwości o nazwie [ `Setters` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/Setters/), która jest kolekcją [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) obiektów. Są one takie same `Setter` obiektów, które są używane w [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) obiektu.
+`VisualState` Definiuje właściwości o nazwie [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), która jest kolekcją [ `Setter` ](xref:Xamarin.Forms.Setter) obiektów. Są one takie same `Setter` obiektów, które są używane w [ `Style` ](xref:Xamarin.Forms.Style) obiektu.
 
 `Setters` jest _nie_ właściwość content `VisualState`, więc konieczne jest stosowanie tagów element właściwości dla `Setters` właściwości:
 
