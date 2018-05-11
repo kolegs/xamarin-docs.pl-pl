@@ -6,24 +6,38 @@ ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ce60c19ab0b680e00338f517e5a3f17f725ed329
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/09/2018
+ms.openlocfilehash: 60d897be8739ff5b78a322bc4ea3f43011785bb5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Gdzie można znaleźć pliku .dSYM symbolicate dzienniki awarii systemu iOS?
 
-Podczas tworzenia aplikacji systemu iOS w programie visual studio, plik .dSYM, który może służyć do symbolicate raporty awarii kończy się na hoście kompilacji w ścieżce:
-```
-    /Users/<username>/Library/Caches/Xamarin/mtbs/builds/<appname>/<guid>/bin/iPhone/<configuration>
-```
+Podczas tworzenia aplikacji systemu iOS przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio 2017, plik .dSYM potrzebne do symbolicate raporty awarii zostaną umieszczone w tej samej hierarchii katalogu co plik projektu aplikacji (.csproj). Lokalizacja zależy od ustawień kompilacji projektu:
 
-Należy pamiętać, że `~/Library` folder jest ukryty. Domyślnie w wyszukiwanie, tak aby w przypadku należy użyć wyszukiwania w **Przejdź > Przejdź do folderu** menu, a następnie wprowadź: `~/Library/Caches/Xamarin/mtbs/builds/` można otworzyć folderu.  
+- Jeśli włączono kompilacje specyficzne dla urządzenia .dSYM można znaleźć w następującym katalogu:
 
-Alternatywnie możesz odkryć `~/Library` folder przy użyciu **Pokaż opcje wyświetlania** panelu folderu macierzystego. Po wybraniu folderu macierzystego na pasku bocznym w wyszukiwanie i użyj menu wyszukiwania **Widok > Pokaż opcje wyświetlania** (lub cmd j), a następnie pojawi się pole wyboru, aby **Pokaż Folder biblioteki**.
+    **&lt;katalog projektu&gt;/bin/&lt;platformy&gt;/&lt;konfiguracji&gt;/device-builds /&lt;urządzenia&gt; - &lt; wersja systemu operacyjnego&gt;/**
 
+    Na przykład:
+  
+    **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
 
-### <a name="see-also"></a>Zobacz też
-- Rozszerzona procedura symbolicating iOS awarii raportów: [http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- Jeśli nie włączono kompilacje specyficzne dla urządzenia, .dSYM można znaleźć w następującym katalogu:
+
+    **&lt;katalog projektu&gt;/bin/&lt;platformy&gt;/&lt;konfiguracji&gt;/**
+
+    Na przykład:
+
+    **TestApp/bin/iPhone/Release /**
+
+> [!NOTE]
+> Jako część procesu kompilacji Visual Studio 2017 kopiuje plik .dSYM z hosta kompilacji Mac do systemu Windows. Jeśli nie ma pliku .dSYM w systemie Windows, należy skonfigurowano ustawienia kompilacji aplikacji [Utwórz plik IPA](~/ios/deploy-test/app-distribution/ipa-support.md).
+
+## <a name="see-also"></a>Zobacz także
+
+- [Symbolicating iOS awarii plików (Xamarin.iOS)](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
 - [Demystifying dzienniki awarii aplikacji systemu iOS](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
+

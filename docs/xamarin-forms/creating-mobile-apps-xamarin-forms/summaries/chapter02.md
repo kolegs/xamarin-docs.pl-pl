@@ -6,11 +6,11 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Podsumowanie rozdział 2. Struktura aplikacji
 
@@ -70,7 +70,7 @@ Ponadto należy utworzyć wystąpienia każdej z platform `App` klasy lokalizacj
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - System android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
+- PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
 - Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
 - Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
@@ -91,7 +91,7 @@ Aby zapewnić obsługę wszystkich platform platformy Xamarin.Forms, wersji plat
 - Windows Phone 8,1
 - Xamarin.Android
 - Xamarin.iOS
-- Xamarin.IOS (Classic)
+- Xamarin.IOS (klasyczny)
 
 Jest to nazywane 111 profil komputera.
 
@@ -202,7 +202,7 @@ Te dwie właściwości są definiowane tylko przez `Label`, podczas gdy `Horizon
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pełny tekst rozdział 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [Przykłady rozdział 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [Przykłady rozdział 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [Pełny tekst rozdział 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Przykłady rozdział 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Przykłady rozdział 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/index.md)

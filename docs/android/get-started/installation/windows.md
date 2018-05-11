@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/10/2018
-ms.openlocfilehash: c9155e1d3ebff52337e65cf3b8cd7dc16b8cdb37
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/04/2018
+ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="windows-installation"></a>Instalacja systemu Windows
 
@@ -67,20 +67,25 @@ Google Android SDK Manager służy do instalowania wersje pakietu narzędzi dla 
 
 Aby uzyskać więcej informacji o korzystaniu z platformy Xamarin Android SDK Manager, zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md).
 
+### <a name="google-android-emulator"></a>Emulator systemu Google Android
 
-### <a name="android-emulator"></a>Emulator systemu android
+[Emulator systemu Google Android](https://developer.android.com/studio/run/emulator) mogą być przydatne narzędzie do projektowania i testowania aplikacji platformy Xamarin.Android. Na przykład urządzenie fizyczne, takie jak tablet nie może być łatwo dostępne podczas tworzenia lub deweloper może być konieczne uruchomienie niektórych testów integracji na komputerach przed wykonaniem kodu.
 
-Jeśli nie masz urządzenia z systemem Android fizycznego na potrzeby testowania można użyć emulatora systemu Android do testowania aplikacji. Aby uzyskać więcej informacji na temat emulator systemu Google Android, zobacz [emulatora Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Emulowanie urządzenia z systemem Android na komputerze obejmuje następujące składniki:
 
-Emulator systemu Google Android używa firmy Intel HAXM (sprzętu przyspieszony menedżera wykonywania), które mogą powodować konflikt z technologii wirtualizacji, używany przez inne emulatory. Są trzy technologie wirtualizacji główne:
+* **Emulator systemu Google Android** &ndash; jest to emulator na podstawie [QEMU](https://www.qemu.org/) tworzącą zwirtualizowanych urządzeniu z systemem na stacji roboczej dewelopera.
+* **Obraz emulatora** &ndash; _obraz emulatora_ jest szablon lub specyfikacji sprzętu i systemu operacyjnego, który ma zostać Zwirtualizowana. Na przykład jeden obraz emulatora będzie zidentyfikować wymagania sprzętowe dla węzła 5 X systemem Android 7.0 z usług Google Play zainstalowane. Inny obraz emulatora może określonej tabeli 10" systemem Android 6.0.
+* **Android Virtual Device (AVD)** &ndash; _Android urządzenia wirtualnego_ jest emulowane urządzenia z systemem Android utworzone na podstawie obrazu emulatora. Podczas uruchamiania i testowania aplikacji systemu Android, Xamarin.Android będzie uruchomić emulatora systemu Android, uruchamianie określonych AVD, zainstaluj plik APK, a następnie uruchom aplikację.
 
--   **Funkcja Hyper-V** (wykorzystywane przez Visual Studio Emulator dla systemów Android i Windows Phone emulator) 
+Do znacznej poprawy wydajności w przypadku komputerów opartych na tworzenie na x86 można osiągnąć za pomocą obrazów emulatora specjalne, które są zoptymalizowane dla x86 architektury i jeden z dwóch technologii wirtualizacji:
 
--   **Pole wirtualnego** (wykorzystywane przez Genymotion)
+1. Firmy Microsoft Hyper-V &ndash; dostępne na komputerach z systemem Windows 10 kwietnia Update.
+2. Firmy Intel sprzętu przyspieszyć wykonywanie Manager (HAXM) &ndash; dostępne na x86 komputery z systemem OS X, macOS lub starszej wersji systemu Windows.
 
--   **Intel HAXM** (wykorzystywane przez emulator Google Android SDK) 
+Aby uzyskać więcej informacji na temat Emulator systemu Google Android funkcji Hyper-V i HAXM, zobacz [przyspieszanie sprzętowe emulatora systemu Android](~/android/get-started/installation/android-emulator/hardware-acceleration.md) przewodnik.
 
-Ponieważ Procesora komputera programowanie może obsługiwać tylko jeden technologii wirtualizacji jednocześnie, najlepiej jest tylko jedna używany na komputerze dewelopera.
+> [!NOTE]
+> W starszych wersjach systemu Windows HAXM nie jest zgodny z funkcją Hyper-V. W tym scenariuszu należy albo [wyłączenie funkcji Hyper-V](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) lub użycie wolniejszych obrazy emulatora, które nie mają x86 optymalizacji.
 
 <a name="device" />
 
@@ -115,5 +120,6 @@ Następnym krokiem jest przyjrzeć [Hello, Android](~/android/get-started/hello-
 - [Instalowanie narzędzi Visual Studio Tools dla platformy Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Wymagania systemowe](~/cross-platform/get-started/requirements.md)
 - [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md)
-- [Emulator zestawu SDK systemu Android](~/android/get-started/installation/android-emulator/index.md)
+- [Emulator systemu Google Android](~/android/get-started/installation/android-emulator/index.md)
 - [Konfigurowanie urządzeń środowiska deweloperskiego](~/android/get-started/installation/set-up-device-for-development.md)
+- [Uruchamianie aplikacji na emulatorze systemu Android](https://developer.android.com/studio/run/emulator#Requirements)

@@ -1,21 +1,21 @@
 ---
-title: Zestaw SDK systemu android Emulator
-description: W tym przewodniku objaśniono sposób korzystania z programu Visual Studio SDK Emulator systemu Google Android.
+title: Emulator systemu Google Android
+description: W tym przewodniku objaśniono sposób korzystania z programu Visual Studio Emulator systemu Google Android.
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bdae9f2189f91a6768419fd930a4ad5ce4b6e0ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="android-sdk-emulator"></a>Zestaw SDK systemu android Emulator
+# <a name="google-android-emulator"></a>Emulator systemu Google Android
 
-_W tym przewodniku objaśniono sposób korzystania z programu Visual Studio SDK Emulator systemu Google Android._
+_W tym przewodniku objaśniono sposób korzystania z programu Visual Studio Emulator systemu Google Android._
 
 
 ## <a name="overview"></a>Omówienie
@@ -27,13 +27,13 @@ Google Android SDK emulatora systemu Android można uruchomić w wielu konfigura
 
 ### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Uruchamianie emulatora](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-Jak można uruchomić emulatora Android SDK z programu Visual Studio.
+Jak uruchomić Emulator systemu Google Android w programie Visual Studio.
 
 ### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[Rozwiązywanie problemów](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Jak zidentyfikować i rozwiązać typowe problemy z emulatora Android SDK.
+Jak zidentyfikować i rozwiązać typowe problemy Emulator systemu Google Android.
 
-Aby uzyskać informacje o konfigurowaniu emulatora Android SDK i tworzenia nowych wirtualnych urządzeń, zobacz [Konfiguracja emulatora systemu Android](~/android/get-started/installation/android-emulator/index.md).
+Aby uzyskać informacje o konfigurowaniu Emulator systemu Google Android i tworzenia nowych wirtualnych urządzeń, zobacz [Konfiguracja emulatora systemu Android](~/android/get-started/installation/android-emulator/index.md).
 
 
 

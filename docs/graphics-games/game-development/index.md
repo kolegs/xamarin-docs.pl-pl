@@ -3,15 +3,14 @@ title: Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
 description: Rodzaj tworzenia gier może znacznie się różnić od rozwoju innych typów aplikacji. Ten artykuł zawiera wprowadzenie do tworzenia gier, oferujący funkcje technologii, których można użyć platformy Xamarin.Android i Xamarin.iOS. Platformy Xamarin.Android i Xamarin.iOS zapewnia zarówno wysokiego poziomu omówienie sposobu gry zostały wprowadzone, jak i próbkowania technologie dostępne do użycia.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
 

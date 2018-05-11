@@ -3,15 +3,14 @@ title: Za pomocą Visual języku platformy Xamarin.Forms
 description: Szablon projektu platformy Xamarin.Forms PCL można zmodyfikować w taki sposób, aby używać języka Visual Basic dla zestawu głównego, efektywnie co pozwala na tworzenie wieloplatformowych aplikacji mobilnych za pomocą VB.NET.
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e26d330d62e6ffdfdb3f9b8eab59e57a6377a86c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b858e26de95d2abbc23917b1ed5a1de65105cd8d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Za pomocą Visual języku platformy Xamarin.Forms
 

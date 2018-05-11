@@ -3,15 +3,14 @@ title: Ujednolicony interfejs API
 description: Nowy styl interfejsu API ułatwia niż kiedykolwiek współużytkowanie kodu Mac i z systemem iOS, jak również umożliwiając obsługę 32- i 64 bitowych aplikacji o tej samej binarnego.
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d0ad5b08aaf5e7b14f75611a28d389e3f7e0477c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bee477a8e84e8cfdd20e89b7ca51c1ac40c0ee52
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unified-api"></a>Ujednolicony interfejs API
 
@@ -62,7 +61,7 @@ Uproszczono współużytkowanie kodu Mac i iOS platform bez konieczności kompil
 -  **Klasycznego interfejsu API:** Użyj przestrzeni nazw `MonoTouch.` lub `MonoMac.` prefiks.
 -  **Ujednolicony interfejs API:** bez prefiksu przestrzeni nazw
 
-## <a name="api-changes"></a>API Changes
+## <a name="api-changes"></a>Zmiany interfejsu API
 
 Interfejsu API Unified usuwa przestarzałe metody i kilka wystąpień w przypadku, gdy błędów pisowni w nazwach interfejsu API podczas były one były powiązane z oryginalnym MonoTouch i MonoMac przestrzeni nazw w klasycznym interfejsów API. Wystąpienia te zostały poprawione w nowych interfejsów API Unified i będzie muszą zostać zaktualizowane składnika, iOS i Mac aplikacji. Poniżej przedstawiono listę typowych te, które możesz napotkać:
 

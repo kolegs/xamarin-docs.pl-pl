@@ -4,15 +4,14 @@ title: Za pomocą platformy Xamarin można użyć programu Visual Studio 2017 Re
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8E752F36-F73A-4EFC-9F82-4E18FDE1C9E2
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: cfad562bfbfbc3985efa6252aa8eb9b6559fcc41
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 4c93653793c7c8cce0d2257107097c89f73fc726
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Za pomocą platformy Xamarin można użyć programu Visual Studio 2017 Release Candidate?
 
@@ -31,7 +30,7 @@ Gdy aktualnie poszukuje zespołu w sposób, aby pominąć to oczekiwane zachowan
 
 * Wybierz **Xamarin** składnika w ramach nowej **Instalator programu Visual Studio**
 
-  [![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC Installer Screen")](visualstudio-2017-rc-images/install1-orig.png#lightbox)
+  [![](visualstudio-2017-rc-images/install1-sml.png "Ekran Instalatora RC 2017 Visual Studio")](visualstudio-2017-rc-images/install1-orig.png#lightbox)
 
 Spowoduje to zainstalowanie rozszerzenie programu Visual Studio do tworzenia aplikacji platformy Xamarin.iOS i platformy Xamarin.Android.
 

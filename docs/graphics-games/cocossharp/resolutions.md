@@ -3,15 +3,14 @@ title: Obsługa wielu rozwiązań w CocosSharp
 description: W tym przewodniku pokazano, jak pracować z CocosSharp tworzenia gier, w których wyświetlać się poprawnie na urządzeniach różnej rozdzielczości.
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Obsługa wielu rozwiązań w CocosSharp
 
@@ -277,7 +276,7 @@ Obecnie Jeśli przeprowadzana gry tekstury 1000 x 1000 pełni widoczne będą:
 ![](resolutions-images/image12.png "Teraz możemy uruchomienia gry tekstury 1000 x 1000 będą widoczne w pełni")
 
 
-### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
+### <a name="defaulttexeltocontentsizeratio-details"></a>Szczegóły DefaultTexelToContentSizeRatio
 
 `DefaultTexelToContentSizeRatio` Jest właściwość `static,` co oznacza, że wszystkie ikony w aplikacji będą mieć takiej samej wartości. Typowa metoda gry z zasobów wprowadzone dla różnych rozdzielczości jest zawierają pełny zestaw zasobów dla każdej kategorii rozwiązania. Domyślnie CocosSharp programu Visual Studio dla szablonów Mac podaj **ld** i **hd** folderów dla zasobów, które mogłyby być przydatne w przypadku gry obsługi dwóch zestawów tekstury. Przykładowy folder zawartości z zawartością może wyglądać tak:
 

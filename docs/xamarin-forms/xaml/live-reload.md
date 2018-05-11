@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 04/23/2018
-ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/08/2018
+ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-reload"></a>Załaduj ponownie na żywo Xamarin
 
@@ -27,8 +27,8 @@ Załaduj ponownie na żywo jest obecnie dostępna tylko w programie Visual Studi
 
 ## <a name="requirements"></a>Wymagania
 
-* [Visual Studio 2017 15.7 Preview 4](https://www.visualstudio.com/vs/preview/) lub nowszego z **Mobile development z platformą .NET** obciążenia.
-* [3.0.354232-pre3 platformy Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) lub nowszej.
+* [Visual Studio 2017 wersji 15.7 lub nowszej](https://www.visualstudio.com/vs/) lub nowszego z **Mobile development z platformą .NET** obciążenia.
+* [Platformy Xamarin.Forms 3.0.0 lub nowszej](https://www.nuget.org/packages/Xamarin.Forms/) lub nowszej.
 
 ## <a name="getting-started"></a>Wprowadzenie
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Zainstaluj na żywo Załaduj ponownie Xamarin z witryny Marketplace programu Visual Studio
@@ -45,8 +45,13 @@ Alternatywnie można wyszukiwać w **Online** karcie **rozszerzenia i aktualizac
 
 Dodawanie na żywo Załaduj ponownie do istniejącej aplikacji mobilnych można wykonać w trzy kroki:
 
-1. Upewnij się, wszystkie projekty zostały zaktualizowane do używania [3.0.354232-pre3 platformy Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) lub nowszej.
-2. Zainstaluj **Xamarin.LiveReload** NuGet do biblioteki .NET 2.0 standardowa. Nie musi być zainstalowany w projektach platformy. Upewnij się, że **źródła pakietu** ustawiono **wszystkich**.
+1. Upewnij się, wszystkie projekty zostały zaktualizowane do używania [platformy Xamarin.Forms 3.0.0 lub nowszej](https://www.nuget.org/packages/Xamarin.Forms/) lub nowszej.
+
+2. Dodaj **Xamarin.LiveReload** pakietu NuGet:
+
+    a. **.NET standard** — instalowanie **Xamarin.LiveReload** NuGet do biblioteki .NET 2.0 standardowa. Nie musi być zainstalowany w projektach platformy. Upewnij się, że **źródła pakietu** ustawiono **wszystkich**.
+    
+    b. **Udostępnionych projektów** — instalowanie **Xamarin.LiveReload** NuGet do wszystkich projektów platformy (takich jak Android, iOS, platformy uniwersalnej systemu Windows, itd.). Upewnij się, że **źródła pakietu** ustawiono **wszystkich**.
 
 ![Dodaj Xamarin na żywo Załaduj ponownie NuGet Menedżera pakietów NuGet](images/addlivereloadnuget.png)
 
@@ -85,7 +90,7 @@ Ponieważ aplikacja jest skompilowana, załaduj Live współpracuje z wszystkie 
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>Jakie zmiany Live Załaduj ponownie wdrożyć? 
 
-Załaduj ponownie na żywo dotyczy tylko zmiany wprowadzone w języku XAML. Jeśli wprowadzisz zmiany w pliku C# ponownej kompilacji będzie wymagane. Obsługa ponownego ładowania C# jest planowane w przyszłości.
+Załaduj ponownie na żywo dotyczy tylko zmiany wprowadzone w pliku XAML lub CSS. Jeśli wprowadzisz zmiany w pliku C# ponownej kompilacji będzie wymagane. Obsługa ponownego ładowania C# jest planowane w przyszłości.
 
 ### <a name="what-platforms-are-supported"></a>Jakie platformy są obsługiwane? 
 
@@ -111,8 +116,6 @@ Nie. W rzeczywistości nawet uruchomić na dowolnej liczbie urządzeń lub symul
 ## <a name="known-issues"></a>Znane problemy
 
 * Obsługiwane tylko w programie Visual Studio.
-* Działa tylko z bibliotekami .NET Standard. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
-* Arkusze stylów CSS nie są obsługiwane. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
 * Ponowne ładowanie zasobów aplikacji firmy (tj. **App.xaml** lub udostępnionego słowniki zasobów), nawigacji aplikacji zostanie zresetowana. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
 * Edytowanie języka XAML podczas debugowania platformy uniwersalnej systemu Windows może spowodować awarię środowiska wykonawczego. Obejście problemu: Użyj **uruchomić bez debugowania (Ctrl + F5)** zamiast **Rozpocznij debugowanie (F5)**.
 
@@ -131,8 +134,6 @@ Nie. W rzeczywistości nawet uruchomić na dowolnej liczbie urządzeń lub symul
 * **XLR003**: *pakietu nuget Załaduj na żywo wymaga instalowania rozszerzenia Xamarin Live Załaduj ponownie Visual Studio.*
 
   Podjęto próbę zbudować projekt odwołujący się na żywo ponowne załadowanie pakietu nuget, ale nie zainstalowano rozszerzenia Visual.  
-
-
 
 ### <a name="app-doesnt-connect"></a>Nie connect aplikacji
 

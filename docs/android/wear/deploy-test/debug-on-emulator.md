@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cf1b586c8e30b2922251104461d9ca7100b8e74e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debugowanie zużycie emulatora systemu Android
 
@@ -21,9 +21,9 @@ _Te artykuły wyjaśniono, jak debugowanie aplikacji na emulatorze platformy Xam
 
 Tworzenie aplikacji systemu Android nosić wymaga działania aplikacji, albo na sprzęcie fizycznym lub przy użyciu emulatorem ani symulatorem. Przy użyciu sprzętu jest najlepszym rozwiązaniem, ale nie zawsze najbardziej praktyczne. W wielu przypadkach może być łatwiejsze i bardziej ekonomiczne symulować/emulować sprzętu dla systemu Android nosić przy użyciu emulatora, zgodnie z poniższym opisem. Jeśli nie są jeszcze zapoznać się z procesem wdrażania i uruchamiania aplikacji systemu Android nosić, zobacz [nosić Witaj,](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-android-sdk-emulator"></a>Skonfiguruj emulatora Android SDK
+## <a name="configure-the-google-android-emulator"></a>Skonfiguruj Emulator systemu Google Android
 
-Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora Android SDK systemu Android i jest skonfigurowana do używania systemu Android. Uzyskać ogólną emulatora Android SDK instalacji i konfiguracji, zobacz [emulatora Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora Android SDK systemu Android i jest skonfigurowana do używania systemu Android. Uzyskać ogólną emulatora Android SDK instalacji i konfiguracji, zobacz [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Podczas tworzenia zużycia urządzenia wirtualnego, wybierz profil urządzenia Android nosić (takich jak **Android zużycia kwadratowe**). Zwiększa wydajność, użyj zużycia **x86** procesora CPU/ABI, jak pokazano w poniższym przykładzie:
 
@@ -47,4 +47,4 @@ Emulator może pozostać uruchomiony; nie jest konieczne zamknąć ją i uruchom
  
 ## <a name="summary"></a>Podsumowanie
  
-W tym przewodniku wyjaśniono sposób konfigurowania emulatora Android SDK do tworzenia zużycia i uruchomić urządzenie wirtualne zużycia do debugowania.
+W tym przewodniku wyjaśniono sposób konfigurowania Emulator systemu Google Android rozwoju zużycia i uruchomić urządzenie wirtualne zużycia do debugowania.

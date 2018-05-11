@@ -1,37 +1,82 @@
 ---
 title: Przyspieszanie sprzętowe emulatora systemu android
-description: Jak przygotować komputer do maksymalnej wydajności emulatora Android SDK
+description: Jak przygotować komputer do maksymalnej wydajności Emulator systemu Google Android
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: 2d903df97da2e8d6ae0c5df3b1ba09dd3015e404
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Przyspieszanie sprzętowe emulatora systemu android
 
-Ponieważ jest zbyt wolno bez przyspieszenia sprzętowego, Intel w emulatorze systemu Android SDK HAXM (menedżera wykonywania przyspieszony sprzętu) jest zalecanym sposobem znacząco poprawić wydajność emulatora Android SDK.
+Emulator systemu Google Android jest zbyt niska bez przyspieszanie sprzętowe. Użytkownik może znacząco zwiększyć wydajność Emulator systemu Google Android przy użyciu emulatora specjalne hardward obrazów, sprzętem docelowej x86 i jeden z dwóch technologii wirtualizacji:
 
+1. **Firmy Microsoft Hyper-V i platformy Hypervisor** &ndash; funkcji Hyper-V jest składnikiem wirtualizacji, który jest dostępny w systemie Windows 10, umożliwiającą uruchomionych systemów komputerowych wirtualnego na hoście fizycznym. Jest to technologii wirtualizacji zalecane przyspieszonego obrazów Emulator systemu Google Android. Aby dowiedzieć się więcej o funkcji Hyper-V, zapoznaj się [funkcję Hyper-V systemu Windows 10 przewodnik](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
+2. **Firmy Intel sprzętu przyspieszyć wykonywanie Manager (HAXM)** &ndash; jest aparatem wirtualizacji dla komputerów z systemem procesory Intel. Jest to aparat wirtualizacji zalecane dla deweloperów, którzy nie mogli użyć funkcji Hyper-V.
+
+Android SDK Manager automatycznie wprowadzi Użyj sprzętowego przyspieszania, gdy jest ona dostępna jest uruchomiona obraz emulatora specjalnie z myślą o **x86**— na podstawie urządzenie wirtualne (zgodnie z opisem w [konfiguracji i użycia ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)).
+
+## <a name="hyper-v-overview"></a>Omówienie funkcji Hyper-V
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![](~/media/shared/preview.png)
+
+> [!NOTE]
+> Obsługa funkcji Hyper-V jest obecnie w przeglądzie.
+
+Deweloperzy, którzy korzystają z systemu Windows 10 (kwiecień 2018 aktualizacja) zdecydowanie zaleca się stosowanie firmy Microsoft Hyper-V. Visual Studio Tools dla platformy Xamarin ułatwiają deweloperom testowanie i debugowanie aplikacji platformy Xamarin.Android w sytuacjach, gdy urządzenia z systemem Android jest niedostępny lub niepraktyczne.
+
+Aby rozpocząć używanie funkcji Hyper-V i Emulator systemu Google Android:
+
+1. **Aktualizacja systemu Windows 10 kwietnia 2018 aktualizacji (kompilacja 1803)** &ndash; Aby sprawdzić, która wersja systemu Windows jest uruchomiona, kliknij Cortana pasek wyszukiwania i wpisz **o**. Wybierz **o Twoim komputerze** w wynikach wyszukiwania. Przewiń w dół **o** okna dialogowego, do **specyfikacje Windows** sekcji. **Wersji** powinien być co najmniej 1803:
+
+    [![Specyfikacje systemu Windows](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
+
+1. **Włączenia funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows** &ndash; pasek w wyszukiwania Cortana, typ **Włącz lub wyłącz funkcje systemu Windows**. Przewiń w dół **funkcje systemu Windows** okna dialogowego i upewnij się, że **platformy funkcji Hypervisor systemu Windows** jest włączona.
+
+    [![Funkcja Hyper-V i włączone platforma funkcji Hypervisor systemu Windows](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+
+    Może być konieczne ponowne uruchomienie systemu Windows po włączeniu funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows.
+
+1. **Zainstaluj [programu Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
+
+1. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszej** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
+
+    [![Okno dialogowe narzędzia i zestawy SDK systemu android](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
+
+### <a name="known-issues"></a>Znane problemy
+
+* Wydajność może się zmniejszyć, korzystając z określonych Intel i procesory AMD procesorów.
+* Android aplikacji może potrwać nietypowe ilość czasu potrzebna na załadowanie na wdrożenie.
+* Błąd dostępu do rozwiązanie MMIO sporadycznie może uniemożliwiać rozruchu w emulatorze systemu Android. Ponowne uruchamianie w emulatorze powinno rozwiązać ten problem.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Obsługa funkcji Hyper-V wymaga systemu Windows 10. Zobacz [wymagania dotyczące funkcji Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#check-requirements) więcej szczegółów.
+
+-----
 
 ## <a name="haxm-overview"></a>Omówienie HAXM
 
 HAXM jest aparatem Wirtualizacja sprzętowa (funkcja hypervisor), który używa Intel Virtualization Technology (VT) w celu przyspieszenia emulacji aplikacji systemu Android na komputerze hosta. W połączeniu z systemem Android x86 emulatora obrazy, pod warunkiem Intel i oficjalna Android SDK Manager HAXM umożliwia szybsze emulacji systemu Android w systemach z obsługą VT. 
 
-Jeśli tworzysz maszynę procesor CPU Intel VT funkcję, można skorzystać z HAXM aby znacznie przyspieszyć emulatora Android SDK (Jeśli nie masz pewności, czy Procesora obsługuje VT, zobacz [ustalić, czy Twoje procesora obsługuje Intel Technologii wirtualizacji](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+Jeśli tworzysz maszynę procesor CPU Intel VT funkcję, można skorzystać z HAXM aby znacznie przyspieszyć Emulator systemu Google Android (Jeśli nie masz pewności, czy Procesora obsługuje VT, zobacz [ustalić, czy Twoje procesora obsługuje Intel Technologii wirtualizacji](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
 > Nie można uruchomić emulatora przyspieszony maszyny Wirtualnej w innej maszyny Wirtualnej, np. maszyna wirtualna hostowana przez VirtualBox, serwery VMWare lub Docker. Należy uruchomić emulator systemu Google Android [bezpośrednio na danym urządzeniu systemu](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Emulatora Android SDK automatycznie korzysta z HAXM gdy jest ona dostępna. Po wybraniu **x86**— na podstawie urządzenia wirtualnego (zgodnie z opisem w [konfiguracji i używania](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), że urządzenie wirtualne użyje HAXM przyspieszanie sprzętowe. Przed użyciem emulatora Android SDK po raz pierwszy, jest dobrym rozwiązaniem, aby sprawdzić, czy HAXM jest zainstalowany i dostępny dla emulatora Android SDK.
+Przed użyciem Emulator systemu Google Android po raz pierwszy, jest dobrym rozwiązaniem, aby sprawdzić, czy HAXM jest zainstalowany i dostępny dla Emulator systemu Google Android.
 
-## <a name="verifying-haxm-installation"></a>Weryfikowanie instalacji HAXM
+### <a name="verifying-haxm-installation"></a>Weryfikowanie instalacji HAXM
 
-Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulatora systemu Android** okno podczas uruchamiania emulatora. Aby uruchomić emulatora Android SDK, wykonaj następujące czynności:
+Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulatora systemu Android** okno podczas uruchamiania emulatora. Aby uruchomić Emulator systemu Google Android, wykonaj następujące czynności:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -47,7 +92,7 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
 3. Wybierz **x86** obrazu (na przykład **Visual Studio\_android 23\_x86\_phone**), kliknij przycisk **Start**, następnie kliknij przycisk  **Uruchamianie**:
 
-    ![Uruchamianie emulatora Android SDK z domyślnego obrazu urządzenia wirtualnego](hardware-acceleration-images/win/02-start-default-avd.png)
+    ![Począwszy od domyślnego obrazu urządzenia wirtualnego Emulator systemu Google Android](hardware-acceleration-images/win/02-start-default-avd.png)
 
 4. Obserwuj **uruchamianie emulatora systemu Android** okno dialogowe podczas uruchamiania emulatora. Jeśli HAXM jest zainstalowany, zostanie wyświetlony komunikat **HAX działa i emulatora działa w trybie szybkiego virt** opisane w tym zrzut ekranu:
 
@@ -73,7 +118,7 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
 3. Wybierz **x86** obrazu (na przykład **Android\_akcelerowanego\_x86**), kliknij przycisk **Start**, następnie kliknij przycisk **uruchamianie**:
 
-    [![Uruchamianie emulatora Android SDK z domyślnego obrazu urządzenia wirtualnego](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
+    [![Począwszy od domyślnego obrazu urządzenia wirtualnego Emulator systemu Google Android](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. Obserwuj **uruchamianie emulatora systemu Android** okno dialogowe podczas uruchamiania emulatora. Jeśli HAXM jest zainstalowany, zostanie wyświetlony komunikat **HAX działa i emulatora działa w trybie szybkiego virt** opisane w tym zrzut ekranu:
 
@@ -86,7 +131,7 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
 <a name="install-haxm" />
 
-## <a name="installing-haxm"></a>Instalowanie HAXM
+### <a name="installing-haxm"></a>Instalowanie HAXM
 
 Jeśli nie zostanie uruchomiony emulator, HAXM może być można zainstalować ręcznie. HAXM zainstalować pakiety dla systemów Windows i macOS są dostępne z [menedżera wykonywania przyspieszony sprzętu Intel](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager) strony. Aby pobrać i zainstalować HAXM ręcznie, wykonaj następujące kroki:
 
@@ -104,84 +149,6 @@ Jeśli nie zostanie uruchomiony emulator, HAXM może być można zainstalować r
 
    ![Okno Ustawienia przyspieszony menedżera wykonywania programu Intel sprzętu](hardware-acceleration-images/win/05-haxm-installer.png)
 
-Jeśli zostanie wyświetlony następujący okna dialogowego błędu (_ten komputer nie obsługuje technologią Intel Virtualization Technology (VT-x) lub jest on wyłącznie używany przez funkcję Hyper-V_), a następnie funkcji Hyper-V musi być wyłączona, aby można było zainstalować HAXM:
-
-![Nie można zainstalować HAXM z powodu konfliktu funkcji Hyper-V](hardware-acceleration-images/win/06-cant-install-haxm.png)
-
-W następnej sekcji objaśniono sposób wyłączania funkcji Hyper-V.
-
-<a name="disable-hyperv" />
-
-## <a name="disabling-hyper-v"></a>Wyłączanie funkcji Hyper-V
-
-Jeśli używasz systemu Windows z włączoną funkcją Hyper-V, należy ją wyłączyć i uruchom ponownie komputer, aby zainstalować i używać HAXM. Można wyłączyć funkcji Hyper-V, z Panelu sterowania, wykonaj następujące czynności:
-
-1. W polu wyszukiwania systemu Windows wprowadź **programy i** kliknięcie **programy i funkcje** wynik wyszukiwania.
-
-2. W Panelu sterowania **programy i funkcje** okna dialogowego, kliknij przycisk **Włącz lub wyłącz funkcje systemu Windows**:
-
-    ![Włącz lub wyłącz funkcje systemu Windows](hardware-acceleration-images/win/07-turn-windows-features.png)
-
-3. Usuń zaznaczenie pola wyboru **funkcji Hyper-V** i ponowne uruchomienie komputera:
-
-    ![Wyłączanie funkcji Hyper-V w oknie dialogowym funkcje systemu Windows](hardware-acceleration-images/win/08-uncheck-hyper-v.png)
-
-Aby wyłączyć funkcji Hyper-v można użyć następującego polecenia cmdlet programu Powershell
-
-`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
-
-Intel HAXM i Microsoft Hyper-V nie może być jednocześnie aktywne w tym samym czasie. Niestety nie jest obecnie nie można przełączać się między funkcją Hyper-V i HAXM bez ponownego uruchamiania komputera. Jeśli chcesz użyć [programu Visual Studio Emulator for Android](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (która jest zależna od funkcji Hyper-V), będzie mógł użyć emulatora Android SDK bez ponownego uruchamiania komputera. Sposób użycia funkcji Hyper-V jak również HAXM jest utworzenie instalacji wielokrotnych zgodnie z objaśnieniem w [tworzenia nie funkcji hypervisor wpisu](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/).
-
-W niektórych przypadkach przy użyciu powyższych kroków nie powiedzie się w wyłączenie funkcji Hyper-V, po włączeniu ochrony urządzeń i ochrona poświadczeń. Jeśli nie można wyłączyć funkcji Hyper-V (lub wydaje się być wyłączona, ale nadal niepowodzenia instalacji HAXM), wykonaj kroki w następnej sekcji, aby wyłączyć urządzenie zabezpieczenia i ochrona poświadczeń.
-
-<a name="disable-devguard" />
-
-## <a name="disabling-device-guard"></a>Wyłączanie ochrony urządzeń
-
-Ochrona urządzeń i ochrona poświadczeń mogą uniemożliwić funkcji Hyper-V jest wyłączona na komputerach z systemem Windows. Często jest to problem maszyn przyłączonych do domeny, które są konfigurowane i kontrolowane przez jego organizację.
-W systemie Windows 10, wykonaj następujące kroki, aby sprawdzić, czy **ochrony urządzeń** działa:
-
-1. W **Windows Search**, typ **informacje o systemie** uruchomić **informacje o systemie** aplikacji.
-
-2. W **Podsumowanie systemu**, wyglądu, aby sprawdzić, czy **zabezpieczenia oparte na urządzeniu zabezpieczenia wirtualizacji** jest istnieje i jest w **systemem** stanu:
-
-   [![Ochrona urządzeń jest obecna i uruchomiona](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
-
-Jeśli jest włączona ochrona urządzeń, wykonaj następujące kroki, aby ją wyłączyć:
-
-1. Upewnij się, że **funkcji Hyper-V** jest wyłączone (w obszarze **Włącz lub wyłącz funkcje systemu Windows**) zgodnie z opisem w poprzedniej sekcji.
-
-2. W polu wyszukiwania systemu Windows wpisz **gpedit** i wybierz **edycji zasad grupy** wynik wyszukiwania. Spowoduje to uruchomienie **Edytora lokalnych zasad grupy**.
-
-3. W **Edytora lokalnych zasad grupy**, przejdź do **Konfiguracja komputera > Szablony administracyjne > System > ochrony urządzeń**:
-
-   [![Ochrona urządzeń w Edytorze lokalnych zasad grupy](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
-
-4. Zmień **włączyć na zabezpieczenia wirtualizacji na podstawie** do **wyłączone** (jak pokazano powyżej) i zamknąć **Edytora lokalnych zasad grupy**.
-
-5. W polu wyszukiwania systemu Windows wpisz **cmd**. Gdy **wiersza polecenia** pojawia się w wynikach wyszukiwania kliknij prawym przyciskiem myszy **wiersza polecenia** i wybierz **Uruchom jako Administrator**.
-
-6. Skopiuj i wklej poniższe polecenia w oknie wiersza polecenia (Jeśli dysk **Z:** w użyć, wybierz na nieużywanej literze dysku zamiast tego użyć):
-
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
-
-7. Uruchom ponownie komputer. Na ekranie rozruchu powinien zostać wyświetlony monit o podobne do poniższych:
-
-   **Czy chcesz wyłączyć ochrona poświadczeń**
-
-   Naciśnij klawisz wskazanych, aby wyłączyć Guard poświadczeń w.
-
-8. Po ponownym uruchomieniu komputera, sprawdź ponownie, aby upewnić się, że funkcja Hyper-V jest wyłączona (co opisano w poprzednich krokach).
-
-Jeśli nadal funkcji Hyper-V nie zostanie wyłączony, zasad na komputerze przyłączonym do domeny mogą uniemożliwiać wyłączenie ochrony urządzeń lub ochrona poświadczeń. W takim przypadku możesz poprosić o wyjątek od administratora domeny, można zrezygnować z ochrona poświadczeń. Alternatywnie można użyć komputera, który nie jest przyłączony do domeny do użycia HAXM.
-
 ## <a name="hardware-acceleration-and-amd-cpus"></a>Przyspieszanie sprzętowe i procesorów AMD
 
 Ponieważ emulator systemu Android firmy Google obecnie obsługuje przyspieszanie sprzętowe AMD [tylko w systemie Linux](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies), przyspieszanie sprzętowe nie jest dostępna dla procesory AMD komputery z systemem Windows.
@@ -196,3 +163,8 @@ Ponieważ emulator systemu Android firmy Google obecnie obsługuje przyspieszani
    [![Okno Ustawienia przyspieszony menedżera wykonywania programu Intel sprzętu](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----
+
+
+## <a name="related-links"></a>Linki pokrewne
+
+* [Uruchamianie aplikacji na emulatorze systemu Android](https://developer.android.com/studio/run/emulator)

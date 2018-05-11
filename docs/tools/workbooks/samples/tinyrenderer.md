@@ -2,15 +2,14 @@
 title: TinyRenderer skoroszytów
 ms.prod: xamarin
 ms.assetid: E4E17836-94C2-436F-ADD8-104AC574D22B
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 37aa6797d5b1e38a9d2db99febb2311b13030c68
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fc0716fc3babd0b2ee835b839ae816f2cb815b0f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer skoroszytów
 
@@ -36,5 +35,5 @@ Kod C# w tych skoroszytów opiera się na tym typu open source [kod w języku C+
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Original Source](https://github.com/ssloy/tinyrenderer/blob/master/README.md)
+- [Oryginalne źródło](https://github.com/ssloy/tinyrenderer/blob/master/README.md)
 - [C# skoroszytów](https://github.com/xamarin/Workbooks/tree/master/graphics/tiny-renderer)

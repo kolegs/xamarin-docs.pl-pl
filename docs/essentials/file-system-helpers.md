@@ -2,15 +2,14 @@
 title: Pomocnicy System plików Xamarin.Essentials
 description: Klasa System plików zawiera szereg pomocników można znaleźć pamięci podręcznej aplikacji i danych katalogów i otwierać pliki wewnątrz pakietu aplikacji.
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 797c74bf6afa1d072d72e695df44e52658131265
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.openlocfilehash: 2d660e4c325b72817c7386c43c0d1dde909c4921
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Pomocnicy System plików Xamarin.Essentials
 

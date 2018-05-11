@@ -6,16 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/20/2018
-ms.openlocfilehash: 124823238968ab21c1e55818ba5b99d2bb0c0bf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/08/2018
+ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dyspozytor zadania firebase
 
 _W tym przewodniku omówiono sposób tworzenia harmonogramu praca w tle przy użyciu biblioteki Firebase zadania dyspozytora z Google._
+
+![Dyspozytor zadania firebase w wersji zapoznawczej](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Omówienie
 
@@ -60,9 +62,13 @@ Dyspozytor zadania Firebase wymaga poziom interfejsu API systemu Android 9 lub n
 
 ## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Za pomocą biblioteki Firebase zadania dyspozytora platformie Xamarin.Android
 
-Aby rozpocząć pracę z Firebase dyspozytora zadań, należy najpierw dodać [pakietu Xamarin.Firebase.JobDispatcher NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher/0.6.0-beta1) w projekcie platformy Xamarin.Android. Wyszukaj Menedżera pakietów NuGet dla **Xamarin.Firebase.Jobdispatcher** pakietu.  
+Aby rozpocząć pracę z Firebase dyspozytora zadań, należy najpierw dodać [pakietu Xamarin.Firebase.JobDispatcher NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) w projekcie platformy Xamarin.Android. Wyszukaj Menedżera pakietów NuGet dla **Xamarin.Firebase.JobDispatcher** pakietu (czyli w wersji wstępnej).
 
 Po dodaniu biblioteki Firebase dyspozytora zadań, należy utworzyć `JobService` klasy, a następnie zaplanować uruchomienie przy użyciu wystąpienia `FirebaseJobDispatcher`.
+
+> [!NOTE]
+> Bieżącego powiązania dla dyspozytora zadania Firebase jest przeznaczony dla starszej wersji biblioteki. Jest [znaną usterką [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] uniemożliwiający powiązania aktualizacji nowsza wersja docelowa platformy Firebase dyspozytora zadania.
+
 
 ### <a name="creating-a-jobservice"></a>Tworzenie JobService
 
@@ -287,8 +293,9 @@ W tym przewodniku omówiono sposób użycia dyspozytora zadania Firebase może i
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Xamarin.Firebase.JobDispatcher na NuGet](https://www.nuget.org/packages/Xamarin.FirebaseJobDispatcher)
+- [Generator powiązania kończy się niepowodzeniem z nieobsługiwany WYJĄTEK krytyczny błąd: System.ArgumentNullException: wartość nie może mieć wartości null.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
+- [Xamarin.Firebase.JobDispatcher na NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [firebase zadania dyspozytora w witrynie GitHub](https://github.com/firebase/firebase-jobdispatcher-android)
-- [Xamarin.Firebase.JobDispatcher Binding](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
+- [Powiązanie Xamarin.Firebase.JobDispatcher](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
 - [Inteligentnego Planowanie zadań](https://developer.android.com/topic/performance/scheduling.html)
 - [Android baterii i optymalizacji pamięci - Google we/wy 2016 (klip wideo)](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)

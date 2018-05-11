@@ -3,15 +3,14 @@ title: 2D matematyczne z CocosSharp
 description: W tym przewodniku dotyczą 2D matematyce do tworzenia gier. Wykorzystuje CocosSharp aby pokazują, jak wykonywać typowe zadania tworzenia gier oraz wyjaśniono matematyczne za te zadania.
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 13279df69b7a22117c10d74f1a15c082aff13264
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D matematyczne z CocosSharp
 

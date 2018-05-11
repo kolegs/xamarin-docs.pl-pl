@@ -1,21 +1,21 @@
 ---
-title: Uruchomiony Emulator zestawu SDK systemu Android
-description: Debugowanie aplikacji za pomocą emulatora Android SDK
+title: Uruchomiony Emulator systemu Google Android
+description: Debugowanie aplikacji za pomocą Emulator systemu Google Android
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>Uruchomiony Emulator zestawu SDK systemu Android
+# <a name="running-the-google-android-emulator"></a>Uruchomiony Emulator systemu Google Android
 
-W tym przewodniku dowiesz się, jak uruchomić urządzenie wirtualne w emulatorze systemu Android SDK do debugowania i testowania aplikacji.
+W tym przewodniku dowiesz się, jak uruchomić urządzenie wirtualne w Emulator systemu Google Android do debugowania i testowania aplikacji.
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Za pomocą wstępnie skonfigurowanych urządzeń wirtualnych
 
@@ -27,7 +27,7 @@ Visual Studio obejmuje wstępnie skonfigurowane urządzeń wirtualnych, które s
 
 -   **Visual Studio\_android 23\_arm\_typu tablet**
 
--   **VisualStudio\_android-23\_x86\_phone** 
+-   **Visual Studio\_android 23\_x86\_telefonu** 
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
@@ -80,13 +80,13 @@ Po wybraniu urządzenia wirtualnego z menu rozwijanego urządzenia, wybierz opcj
 
 -----
 
-Po uruchomieniu emulatora systemu Android platformy Xamarin.Android nastąpi wdrożenie aplikacji na emulatorze. Emulator uruchamia aplikację z obrazem konfigurację urządzenia wirtualnego. Zrzut ekranu z emulatora Android SDK jest wyświetlony poniżej (emulator działa pustą aplikację o nazwie **moja_aplikacja**):
+Po uruchomieniu emulatora systemu Android platformy Xamarin.Android nastąpi wdrożenie aplikacji na emulatorze. Emulator uruchamia aplikację z obrazem konfigurację urządzenia wirtualnego. Zrzut ekranu z Emulator systemu Google Android jest wyświetlony poniżej (emulator działa pustą aplikację o nazwie **moja_aplikacja**):
 
 ![Pusta aplikacja uruchomionym emulatorem](running-the-emulator-images/emulator-running.png)
 
 Emulator może pozostać uruchomiony; nie jest konieczne zamknąć ją i uruchom go ponownie na każdym razem, gdy aplikacja jest uruchamiana. Podczas pierwszego uruchomienia aplikacji platformy Xamarin.Android w emulatorze, środowiska wykonawczego platformy Xamarin.Android udostępnione dla poziomu docelowych interfejsu API jest zainstalowany, wraz z nazwą aplikacji. Instalacja środowiska uruchomieniowego może zająć kilka minut, więc prosimy o cierpliwość. Instalacja środowiska uruchomieniowego odbywa się tylko wtedy, gdy emulator wdrożeniu pierwszej aplikacji platformy Xamarin.Android &ndash; kolejne wdrożenia są szybsze, ponieważ tylko aplikacja jest kopiowany do emulatora.
 
-Aby uzyskać więcej informacji o korzystaniu z emulatora Android SDK zobacz następujące tematy Android Developer:
+Aby uzyskać więcej informacji na temat używania Emulator systemu Google Android zobacz następujące tematy Android Developer:
 
 -   [Na ekranie](https://developer.android.com/studio/run/emulator.html#navigate)
 

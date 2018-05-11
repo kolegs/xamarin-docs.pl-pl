@@ -3,15 +3,14 @@ title: Tworzenie widoków HTML za pomocą szablonów Razor
 description: " Do renderowania elementów HTML za pomocą pełnego ekranu strony sieci Web może być prosty i skuteczny sposób renderowania złożone formatowanie w sposób między platformami, zwłaszcza, jeśli masz już HTML, Javascript i CSS z projektu witryny sieci Web."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Tworzenie widoków HTML za pomocą szablonów Razor
 
@@ -519,6 +518,6 @@ Na koniec spowodował próbki RazorTodo, które pokazują, jak połączyć widok
 
 ### <a name="related-links"></a>Linki pokrewne
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [Przykładowe RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3 - aparatu widoku Razor (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [Wprowadzenie do programowania sieci Web ASP.NET przy użyciu składni Razor (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
