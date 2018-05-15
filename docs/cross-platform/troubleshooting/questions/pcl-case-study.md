@@ -3,15 +3,14 @@ title: Rozwiązywanie problemów związanych z System.Diagnostics.Tracing i prze
 description: 'Analiza przypadku PCL: jak rozwiązać problemy związane z System.Diagnostics.Tracing przez pakiet NuGet przepływu danych TPL firmy Microsoft?'
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
-ms.technology: xamarin-cross-platform
 ms.date: 04/17/2018
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: b1b56b0e831edbb6327f3ca66f6ec8dc780b46f2
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 1acc9ccc78ad14198a59e74d1fae845790d66b16
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>Analiza przypadku PCL: jak rozwiązać problemy związane z System.Diagnostics.Tracing przez pakiet NuGet przepływu danych TPL firmy Microsoft?
 
@@ -118,7 +117,7 @@ Nie, to nie pomoże.
 
 #### <a name="answer"></a>Odpowiedzi
 
-Nie, pakiet NuGet 3.0 "System.Diagnostics.Tracing" obejmuje implementacje specyficzne dla platformy "DNXCore50" i "netcore50". Go jawnie _pomija_ implementacji ("MonoAndroid") platformy Xamarin.Android i Xamarin.iOS ("MonoTouch" i "xamarinios"). Oznacza to, że instalowanie pakietu _efektu_ dla platformy Xamarin.Android i Xamarin.iOS projektów. Pakiet NuGet przyjęto założenie, że obu tych platform zapewniają ich _własnych_ implementacji typów. To założenie jest "Popraw" w tym sensie, że ma Mono __ implementacji przestrzeni nazw, ale jako punkty opisanych w obszarze \#2 i \#3 "Szczegółowe informacje o trzy warstwy błędy" powyżej, Implementacja jest obecnie niekompletne. Tak więc będzie poprawki właściwe dla Mono zespołowi rozwiązać [usterki 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337) i [usterki 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890).
+Nie, pakiet NuGet 3.0 "System.Diagnostics.Tracing" obejmuje implementacje specyficzne dla platformy "DNXCore50" i "netcore50". Go jawnie _pomija_ implementacji ("MonoAndroid") platformy Xamarin.Android i Xamarin.iOS ("MonoTouch" i "xamarinios"). Oznacza to, że instalowanie pakietu _efektu_ dla platformy Xamarin.Android i Xamarin.iOS projektów. Pakiet NuGet przyjęto założenie, że obu tych platform zapewniają ich _własnych_ implementacji typów. To założenie jest "Popraw" w tym sensie, że ma Mono implementacji przestrzeni nazw, ale jako punkty opisanych w obszarze \#2 i \#3 "Szczegółowe informacje o 3 warstwy błędów" powyżej implementacji nie jest obecnie ukończona. Tak więc będzie poprawki właściwe dla Mono zespołowi rozwiązać [usterki 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337) i [usterki 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890).
 
 ## <a name="next-steps"></a>Następne kroki
 
