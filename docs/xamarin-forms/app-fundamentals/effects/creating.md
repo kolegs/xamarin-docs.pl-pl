@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>Tworzenie efektu
 
@@ -188,7 +188,7 @@ namespace EffectsDemo.UWP
 
 ## <a name="consuming-the-effect"></a>Korzystanie z efektu
 
-Proces służący do konsumowania efekt platformy Xamarin.Forms przenośnej biblioteki klasy (PCL) lub projektu biblioteki udostępnione przebiega w następujący sposób:
+Proces służący do konsumowania efekt z biblioteki platformy Xamarin.Forms .NET Standard lub projektu biblioteki udostępnione przebiega w następujący sposób:
 
 1. Zadeklarować formantu, który będzie można dostosować skutków.
 1. Dołącz efekt do formantu przez dodanie go do formantu [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekcji.
@@ -209,7 +209,7 @@ Przedstawia poniższy przykładowy kod XAML [ `Entry` ](https://developer.xamari
 </Entry>
 ```
 
-`FocusEffect` Klasy w PCL obsługuje efekt użycia w języku XAML i przedstawiono w poniższym przykładzie:
+`FocusEffect` Klasy w bibliotece programu .NET Standard obsługuje efekt użycia w języku XAML i przedstawiono w poniższym przykładzie:
 
 ```csharp
 public class FocusEffect : RoutingEffect

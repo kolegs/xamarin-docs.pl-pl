@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>Dostosowywanie mapy numer Pin
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Kontroli jest tworzony w projekcie (PCL) biblioteki klas przenośnych i definiuje niestandardowe mapy interfejsu API. Przedstawia niestandardowe mapy `CustomPins` właściwość, która reprezentuje kolekcję `CustomPin` obiektów, które są wyświetlane przez formant mapy natywnego na każdej z platform. `CustomPin` Klasy przedstawiono w poniższym przykładzie kodu:
+`CustomMap` Kontroli jest tworzony w .NET Standard projektu biblioteki i definiuje niestandardowe mapy interfejsu API. Przedstawia niestandardowe mapy `CustomPins` właściwość, która reprezentuje kolekcję `CustomPin` obiektów, które są wyświetlane przez formant mapy natywnego na każdej z platform. `CustomPin` Klasy przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ Ta klasa definiuje `CustomPin` jako dziedziczenie właściwości [ `Pin` ](https
 
 ## <a name="consuming-the-custom-map"></a>Korzystanie z niestandardowych mapy
 
-`CustomMap` Formant może być przywoływany w XAML w projekcie PCL deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie mapy niestandardowe. Poniższy kod przedstawia przykład sposobu `CustomMap` formant może być zużyte przez strony XAML:
+`CustomMap` Formant może być przywoływany w języku XAML w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie mapy niestandardowe. Poniższy kod przedstawia przykład sposobu `CustomMap` formant może być zużyte przez strony XAML:
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `CustomMKAnnotationView.Url` właściwości. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie PCL.
+Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `CustomMKAnnotationView.Url` właściwości. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwości pobranej `CustomPin` wystąpienie `Marker`. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie PCL.
+Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwości pobranej `CustomPin` wystąpienie `Marker`. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
 Aby uzyskać więcej informacji dotyczących dostosowywania `MapView` wystąpienia, zobacz [interfejsu API map](~/android/platform/maps-and-location/maps/maps-api.md).
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwość `CustomPin` wystąpienia. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie PCL.
+Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwość `CustomPin` wystąpienia. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
 Aby uzyskać więcej informacji dotyczących dostosowywania `MapControl` wystąpienia, zobacz [mapy i informacje o lokalizacji](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) w witrynie MSDN.
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>Klasa urządzenia
 
@@ -155,7 +155,7 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device` Klasa ma również `StartTimer` metodę, która zapewnia prostą metodę do wyzwalania zadania zależne od czasu, który działa w typowy kod platformy Xamarin.Forms (w tym PCLs). Przekaż `TimeSpan` ustawić interwał, a następnie wróć `true` do zachowania czasomierza uruchomiony lub `false` przestanie po bieżącego wywołania.
+`Device` Klasa ma również `StartTimer` metodę, która zapewnia prostą metodę do wyzwalania zadania zależne od czasu działający w typowy kod platformy Xamarin.Forms, łącznie z biblioteki .NET Standard. Przekaż `TimeSpan` ustawić interwał, a następnie wróć `true` do zachowania czasomierza uruchomiony lub `false` przestanie po bieżącego wywołania.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Uwaga tej metody za pomocą `async/await` nie trzeba używać `BeginInvokeOnMain
 
 ## <a name="summary"></a>Podsumowanie
 
-Platformy Xamarin.Forms `Device` klasa umożliwia precyzyjną kontrolę nad funkcjonalność i układy na podstawie na platformie — nawet wspólną kodu (PCL lub udostępnionych projektów).
+Platformy Xamarin.Forms `Device` klasa umożliwia precyzyjną kontrolę nad funkcjonalność i układy na podstawie na platformie — nawet wspólną kodu (projekty bibliotek .NET Standard lub udostępnionych projektów).
 
 
 ## <a name="related-links"></a>Linki pokrewne

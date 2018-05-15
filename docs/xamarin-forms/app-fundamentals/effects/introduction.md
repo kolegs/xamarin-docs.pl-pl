@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>Wprowadzenie do efekty
 
@@ -21,7 +21,7 @@ Platformy Xamarin.Forms [stron, układów i kontrolek](~/xamarin-forms/user-inte
 
 Deweloperzy mogą implementować własne niestandardowe `Renderer` klas, aby dostosować wygląd i/lub zachowanie formantu. Jednak implementacja klasy niestandardowego modułu renderowania do wykonania dostosowywania prostego formantu jest często odpowiedzi ciężki. Efekty upraszcza ten proces, dzięki czemu kontrolki natywne każdej platformy można łatwo dostosować.
 
-Efekty są tworzone w projektach specyficzne dla platformy przez podklasy `PlatformEffect` sterowania, a następnie efekty są używane przez dołączenie do odpowiednich formantu w projekcie platformy Xamarin.Forms przenośnej biblioteki klasy (PCL) lub biblioteki udostępnione.
+Efekty są tworzone w projektach specyficzne dla platformy przez podklasy `PlatformEffect` sterowania, a następnie efekty są używane przez dołączenie do odpowiedniej kontrolki w bibliotece platformy Xamarin.Forms .NET Standard lub projektu biblioteki udostępnione.
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>Dlaczego warto używać efekt za pośrednictwem niestandardowego modułu renderowania?
 

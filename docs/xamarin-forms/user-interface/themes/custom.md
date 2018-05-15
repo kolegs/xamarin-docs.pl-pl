@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: b760f5e1d37f4bc8cc6af063552b974afa435d56
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: c9bc532902e9cfcc080220a05e41401e893783e4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-a-custom-theme"></a>Tworzenie niestandardowego motywu
 
@@ -68,7 +68,7 @@ Kod w tym celu poniżej podano — do utworzenia odwołania poprawnie niestandar
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-pcl-or-shared-project"></a>Kod C# w PCL lub projektu udostępnionego
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Kod C# .NET Standard projektu biblioteki lub projektu udostępnionego
 
 Kod służący do tworzenia round rogu `BoxView` używa [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
 Promień narożnika jest stosowany przy użyciu `BindableProperty` i jest implementowane przez zastosowanie [efekt](~/xamarin-forms/app-fundamentals/effects/index.md). Efekt wymaga kod specyficzne dla platformy w [iOS](#ios) i [Android](#android) projektów (pokazana poniżej).

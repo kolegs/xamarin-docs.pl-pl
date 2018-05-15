@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>Dostosowywanie wpis
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry` Kontrolki jest tworzona w projekcie (PCL) biblioteki klas przenośnych i jest po prostu [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) formantu. Dostosowywanie formantu zostanie przeprowadzone w niestandardowego modułu renderowania, więc nie dodatkowe implementacja jest wymagana w `MyEntry` formantu.
+`MyEntry` Kontroli jest tworzony w .NET Standard projektu biblioteki i jest po prostu [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) formantu. Dostosowywanie formantu zostanie przeprowadzone w niestandardowego modułu renderowania, więc nie dodatkowe implementacja jest wymagana w `MyEntry` formantu.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Korzystanie z formantu niestandardowego
 
-`MyEntry` Formant może być przywoływany w XAML w projekcie PCL deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w elemencie formantu. Poniższy kod przedstawia przykład sposobu `MyEntry` formant może być zużyte przez strony XAML:
+`MyEntry` Formant może być przywoływany w języku XAML w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w elemencie formantu. Poniższy kod przedstawia przykład sposobu `MyEntry` formant może być zużyte przez strony XAML:
 
 ```xaml
 <ContentPage ...

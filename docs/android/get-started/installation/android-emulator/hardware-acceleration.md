@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/07/2018
-ms.openlocfilehash: 2d903df97da2e8d6ae0c5df3b1ba09dd3015e404
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
-ms.translationtype: HT
+ms.date: 05/10/2018
+ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Przyspieszanie sprzętowe emulatora systemu android
 
@@ -39,23 +39,37 @@ Aby rozpocząć używanie funkcji Hyper-V i Emulator systemu Google Android:
 
     [![Specyfikacje systemu Windows](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-1. **Włączenia funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows** &ndash; pasek w wyszukiwania Cortana, typ **Włącz lub wyłącz funkcje systemu Windows**. Przewiń w dół **funkcje systemu Windows** okna dialogowego i upewnij się, że **platformy funkcji Hypervisor systemu Windows** jest włączona.
+2. **Włączenia funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows** &ndash; pasek w wyszukiwania Cortana, typ **Włącz lub wyłącz funkcje systemu Windows**.
+   Przewiń w dół **funkcje systemu Windows** okna dialogowego i upewnij się, że **platformy funkcji Hypervisor systemu Windows** jest włączona.
 
     [![Funkcja Hyper-V i włączone platforma funkcji Hypervisor systemu Windows](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
     Może być konieczne ponowne uruchomienie systemu Windows po włączeniu funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows.
 
-1. **Zainstaluj [programu Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
+3. **Zainstaluj [programu Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
 
-1. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszej** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
+4. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszej** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
 
     [![Okno dialogowe narzędzia i zestawy SDK systemu android](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
+5. Jeśli wersja emulatora systemu Android jest mniejsza niż 27.3.1, zastosuj krok dodatkowe obejście wyjaśniono w **znane problemy** (dalej).
+
+
 ### <a name="known-issues"></a>Znane problemy
 
-* Wydajność może się zmniejszyć, korzystając z określonych Intel i procesory AMD procesorów.
-* Android aplikacji może potrwać nietypowe ilość czasu potrzebna na załadowanie na wdrożenie.
-* Błąd dostępu do rozwiązanie MMIO sporadycznie może uniemożliwiać rozruchu w emulatorze systemu Android. Ponowne uruchamianie w emulatorze powinno rozwiązać ten problem.
+-   Jeśli wersja emulatora jest co najmniej 27.2.7, ale mniej niż 27.3.1, poniższe obejście jest wymagany do użycia funkcji Hyper-V:
+    1.  W **C:\\użytkowników\\_username_\\.android** folderu, Utwórz plik o nazwie **advancedFeatures.ini** w przeciwnym razie już istnieje.
+    2.  Dodaj następujący wiersz do **advancedFeatures.ini**:
+        ```
+        WindowsHypervisorPlatform = on
+        ```
+
+-   Wydajność może się zmniejszyć, korzystając z określonych Intel i procesory AMD procesorów.
+
+-   Android aplikacji może potrwać nietypowe ilość czasu potrzebna na załadowanie na wdrożenie.
+
+-   Błąd dostępu do rozwiązanie MMIO sporadycznie może uniemożliwiać rozruchu w emulatorze systemu Android. Ponowne uruchamianie w emulatorze powinno rozwiązać ten problem.
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>Dostosowywanie ListView
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` Jest tworzony w projekcie (PCL) biblioteki klas przenośnych i definiuje interfejsu API dla kontrolki niestandardowej. Ten formant przedstawia `Items` właściwość, która służy do wypełniania `ListView` przy użyciu danych i które mogą być danymi powiązanymi do wyświetlenia celów. Również przedstawia `ItemSelected` zdarzenie, które będą wywoływane zawsze, gdy element jest zaznaczony w formancie listy natywnego specyficzne dla platformy. Aby uzyskać więcej informacji na temat wiązania danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeListView` Jest tworzony w .NET Standard projektu biblioteki i definiuje interfejsu API dla kontrolki niestandardowej. Ten formant przedstawia `Items` właściwość, która służy do wypełniania `ListView` przy użyciu danych i które mogą być danymi powiązanymi do wyświetlenia celów. Również przedstawia `ItemSelected` zdarzenie, które będą wywoływane zawsze, gdy element jest zaznaczony w formancie listy natywnego specyficzne dla platformy. Aby uzyskać więcej informacji na temat wiązania danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Korzystanie z formantu niestandardowego
 
-`NativeListView` Formant niestandardowy może być przywoływany w języku Xaml w projekcie PCL deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie. Poniższy kod przedstawia przykład sposobu `NativeListView` kontrolki niestandardowej, może być zużyte przez strony XAML:
+`NativeListView` Formant niestandardowy może być przywoływany w języku Xaml w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie. Poniższy kod przedstawia przykład sposobu `NativeListView` kontrolki niestandardowej, może być zużyte przez strony XAML:
 
 ```xaml
 <ContentPage ...

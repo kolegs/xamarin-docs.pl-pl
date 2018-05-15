@@ -7,15 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 6aea0faa65944f33783940178a1d2ce3ef65df1a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fc479b4b0651e3312b855673730be21c2076d833
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Do nowszej pakiet NuGet można zaktualizować domyślnego szablonu platformy Xamarin.Forms?
 
-W tym przewodniku używa szablonu platformy Xamarin.Forms PCL, na przykład, ale tej samej metody ogólne również będzie działać dla szablonu projektu udostępnionego platformy Xamarin.Forms. W tym przewodniku są zapisywane z przykładem aktualizacji z platformy Xamarin.Forms 1.5.1.6471 do 2.1.0.6529, ale można ustawić inne wersje domyślnie zamiast tego są te same kroki.
+W tym przewodniku używa platformy Xamarin.Forms .NET Standard szablonu biblioteki, na przykład, ale ta sama metoda ogólna również będzie działać dla szablonu projektu udostępnionego platformy Xamarin.Forms. W tym przewodniku są zapisywane z przykładem aktualizacji z platformy Xamarin.Forms 1.5.1.6471 do 2.1.0.6529, ale można ustawić inne wersje domyślnie zamiast tego są te same kroki.
 
 1.  Skopiuj oryginalnego szablonu `.zip` od:
 

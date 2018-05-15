@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Część 3. Rozszerzenia znaczników XAML
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Będziesz potrzebować dodatkowe deklaracje przestrzeni nazw XML, dostęp do innych klas. Każdy dodatkowego deklaracji przestrzeni nazw XML definiuje nowy prefiks. Dostęp do klas lokalne dla udostępnionych aplikacji PCL, takich jak `AppConstants`, XAML programistów często używają prefiks `local`. Deklaracja przestrzeni nazw musi wskazywać nazwę przestrzeni nazw CLR (środowisko uruchomieniowe języka wspólnego), znany także jako nazwa przestrzeni nazw .NET, którego nazwa jest wyświetlana w języku C# `namespace` definicji lub `using` dyrektywy:
+Będziesz potrzebować dodatkowe deklaracje przestrzeni nazw XML, dostęp do innych klas. Każdy dodatkowego deklaracji przestrzeni nazw XML definiuje nowy prefiks. Dostęp do klas lokalnych do aplikacji udostępnionej biblioteki .NET Standard, takich jak `AppConstants`, XAML programistów często używają prefiks `local`. Deklaracja przestrzeni nazw musi wskazywać nazwę przestrzeni nazw CLR (środowisko uruchomieniowe języka wspólnego), znany także jako nazwa przestrzeni nazw .NET, którego nazwa jest wyświetlana w języku C# `namespace` definicji lub `using` dyrektywy:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Można również zdefiniować deklaracji przestrzeni nazw XML dla przestrzeni nazw .NET w zestawu, który odwołuje się do PCL. Na przykład, w tym miejscu jest `sys` prefiks dla platformy .NET standard `System` przestrzeni nazw, który znajduje się w **mscorlib** zestawu raz umieszczenia "Wspólnej obiekt biblioteki wykonawczej Microsoft", ale teraz oznacza "wersje językowe standardowe Typowe obiektu Biblioteka środowiska uruchomieniowego." Ponieważ jest to inny zestaw, należy również określić nazwę zestawu, w tym przypadku **mscorlib**:
+Można również zdefiniować deklaracji przestrzeni nazw XML dla przestrzeni nazw .NET w zestawu, który odwołuje się do biblioteki .NET Standard. Na przykład, w tym miejscu jest `sys` prefiks dla platformy .NET standard `System` przestrzeni nazw, który znajduje się w **mscorlib** zestawu raz umieszczenia "Wspólnej obiekt biblioteki wykonawczej Microsoft", ale teraz oznacza "wersje językowe standardowe Typowe obiektu Biblioteka środowiska uruchomieniowego." Ponieważ jest to inny zestaw, należy również określić nazwę zestawu, w tym przypadku **mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

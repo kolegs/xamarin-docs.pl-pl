@@ -1,25 +1,27 @@
 ---
 title: Część 1. Wprowadzenie do języka XAML
-description: W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartości strony. Plik XAML zawsze jest skojarzony z plikiem kodu C#, który obsługuje kod znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu.
+description: W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartość strony i działa razem z pliku CodeBehind.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 04/10/2018
-ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/10/2018
+ms.openlocfilehash: 5883564841a4ef0e19518dd3b12ee00fe35ed778
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Część 1. Wprowadzenie do języka XAML
 
-_W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartości strony. Plik XAML zawsze jest skojarzony z plikiem kodu C#, który obsługuje kod znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu._
+_W aplikacji platformy Xamarin.Forms XAML, przede wszystkim służy do definiowania visual zawartość strony i działa razem z plikiem CodeBehind C#._
+
+Plik CodeBehind zapewnia obsługę kodu znaczników. Razem tych dwóch plików współtworzyć nową definicję klasy widoków podrzędnych i właściwości inicjowania. W pliku XAML klasy i właściwości, które są przywoływane z elementów XML oraz atrybuty i ustanowiono łącza między znaczników i kodu.
 
 ## <a name="creating-the-solution"></a>Tworzenie rozwiązania
 
-Aby rozpocząć edytowanie pierwszego pliku XAML, użyj programu Visual Studio lub Visual Studio dla komputerów Mac, aby utworzyć nowe rozwiązanie platformy Xamarin.Forms. (Wybierz kartę w górnej części strony odpowiadający środowisku).
+Aby rozpocząć edytowanie pierwszego pliku XAML, użyj programu Visual Studio lub Visual Studio dla komputerów Mac, aby utworzyć nowe rozwiązanie platformy Xamarin.Forms. (Wybierz kartę poniżej odpowiadający środowisku).
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -29,13 +31,13 @@ W systemie Windows, użyj programu Visual Studio, aby wybrać **Plik > Nowy > Pr
 
 Wybierz lokalizację dla rozwiązania, nadaj mu nazwę **XamlSamples** (lub użytkownik woli) i naciśnij klawisz **OK**.
 
-Na następnym ekranie Wybierz **pusta aplikacja** szablonu, **platformy Xamarin.Forms** technologii interfejsu użytkownika i **przenośnej biblioteki klasy (PCL)** strategii udostępniania kodu:
+Na następnym ekranie Wybierz **pusta aplikacja** szablonu i **.NET Standard** strategii udostępniania kodu:
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "Okno dialogowe nowego aplikacji")
 
 Press **OK**. 
 
-Cztery projekty są tworzone w rozwiązaniu: **XamlSamples** przenośnej biblioteki klas (PCL) **XamlSamples.Android**, **XamlSamples.iOS**i uniwersalnych systemu Windows Rozwiązanie platformy **XamlSamples.UWP**.
+Cztery projekty są tworzone w rozwiązaniu: **XamlSamples** biblioteki .NET Standard **XamlSamples.Android**, **XamlSamples.iOS**i platformy uniwersalnej systemu Windows rozwiązanie, **XamlSamples.UWP**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -45,7 +47,7 @@ W programie Visual Studio dla komputerów Mac, wybierz **Plik > nowe rozwiązani
 
 Naciśnij klawisz **dalej**.
 
-W oknie dialogowym dalej nazwę projektu z **XamlSamples** (lub użytkownik woli). Upewnij się, że **Użyj przenośnej biblioteki klas** przycisk radiowy zostanie wybrany oraz że **XAML Użyj plików interfejs użytkownika** zaznaczono:
+W oknie dialogowym dalej nazwę projektu z **XamlSamples** (lub użytkownik woli). Upewnij się, że **Użyj .NET Standard** przycisk radiowy zostanie wybrany:
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "Okno dialogowe nowego projektu 2")
 
@@ -57,17 +59,17 @@ W oknie dialogowym następujące można wybrać lokalizację dla projektu:
 
 Naciśnij klawisz **tworzenie**
 
-W rozwiązaniu są tworzone trzy projekty: **XamlSamples** przenośnej biblioteki klas (PCL) **XamlSamples.Android**, i **XamlSamples.iOS**. 
+W rozwiązaniu są tworzone trzy projekty: **XamlSamples** biblioteki .NET Standard **XamlSamples.Android**, i **XamlSamples.iOS**. 
 
 -----
 
 Po utworzeniu **XamlSamples** rozwiązanie, warto przetestować środowiska deweloperskiego, wybierając różne projekty platformy jako projekt startowy rozwiązania i tworzenie i wdrażanie prostej aplikacji utworzone przez szablon projektu na emulatory telefonu lub rzeczywistego urządzenia.
 
-O ile nie trzeba napisać kod specyficzne dla platformy udostępnionego **XamlSamples** PCL projekt jest, gdzie można będzie spędzać praktycznie cały czas programowania. Te artykuły nie będzie ryzyka poza tego projektu.
+O ile nie trzeba napisać kod specyficzne dla platformy udostępnionego **XamlSamples** .NET Standard projektu biblioteki jest, gdzie można będzie spędzać praktycznie cały czas programowania. Te artykuły nie będzie ryzyka poza tego projektu.
 
 ### <a name="anatomy-of-a-xaml-file"></a>Anatomia pliku XAML
 
-W ramach **XamlSamples** przenośnej biblioteki klas są pary plików z następujących nazw:
+W ramach **XamlSamples** biblioteki standardowej .NET są parę pliki z następującymi nazwami:
 
 - **App.XAML**, plik XAML; i
 - **App.XAML.cs**, C# *CodeBehind* plik skojarzony z pliku XAML.
@@ -76,12 +78,10 @@ Musisz kliknij strzałkę obok pozycji **App.xaml** do znajduje się w pliku Cod
 
 Zarówno **App.xaml** i **App.xaml.cs** przyczyniają się do klasy o nazwie `App` która pochodzi z `Application`. Większość klas z plików XAML przyczyniają się do klasy, która jest pochodną `ContentPage`; te pliki umożliwia definiowanie visual zawartość całej strony XAML. Ta zasada dotyczy dwóch plików w **XamlSamples** projektu:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 - **MainPage.xaml**, plik XAML; i
 - **MainPage.xaml.cs**, plik CodeBehind C#.
 
-**MainPage.xaml** pliku wygląda następująco:
+**MainPage.xaml** pliku wygląda następująco (chociaż formatowanie mogą być nieco inne):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,56 +89,27 @@ Zarówno **App.xaml** i **App.xaml.cs** przyczyniają się do klasy o nazwie `Ap
              xmlns:local="clr-namespace:XamlSamples"
              x:Class="XamlSamples.MainPage">
 
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin Forms!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+    </StackLayout>
 
 </ContentPage>
 ```
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- **XamlSamplesPage.xaml**, plik XAML; i
-- **XamlSamplesPage.xaml.cs**, plik CodeBehind C#.
-
-**XamlSamplesPage.xaml** pliku wygląda następująco:
-
-```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:XamlSamples" 
-             x:Class="XamlSamples.XamlSamplesPage">
-
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
-```
-
------
 
 Dwa przestrzeni nazw XML ( `xmlns`) deklaracje odwoływać się do identyfikatorów URI, pierwszy pozornie w witrynie sieci web na platformie Xamarin i drugi na firmy Microsoft. Nie odblokowane, jakie tych identyfikatorów URI wskaż sprawdzanie. Nie ma nic nie. Są po prostu identyfikatorów URI należących do firmy Microsoft i Xamarin i funkcjonują zasadniczo identyfikatorami wersji.
 
 Pierwszej deklaracji przestrzeni nazw XML oznacza, że znaczniki zdefiniowane w pliku XAML z prefiksem nie odwołują się do klasy w platformy Xamarin.Forms, na przykład `ContentPage`. Druga deklaracja przestrzeni nazw definiuje prefiksem `x`. Ten element jest używany dla wielu elementów i atrybutów, które są wewnętrzne w języku XAML sobą i które są obsługiwane przez inne implementacje XAML. Jednak te elementy i atrybuty są nieco inne w zależności od roku osadzone w identyfikatorze URI. Platformy Xamarin.Forms obsługuje specyfikację XAML 2009, ale nie wszystkie z nich.
 
-`local` Deklaracji przestrzeni nazw umożliwia dostęp do innych klas z projektu PCL.
+`local` Deklaracji przestrzeni nazw umożliwia dostęp do innych klas z projektu biblioteki .NET Standard.
 
 Na końcu pierwszego tagu `x` prefiks jest używany w postaci atrybutu o nazwie `Class`. Ponieważ do stosowania `x` takie jak prefiks jest praktycznie uniwersalnych dla przestrzeni nazw XAML atrybuty XAML `Class` prawie zawsze są określane jako `x:Class`.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 `x:Class` Atrybut określa w pełni kwalifikowaną nazwę klasy .NET: `MainPage` klasy w `XamlSamples` przestrzeni nazw. Oznacza to, że ten plik XAML definiuje nową klasę o nazwie `MainPage` w `XamlSamples` przestrzeni nazw, która jest pochodną `ContentPage`— znacznik, w którym `x:Class` atrybut występuje.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-`x:Class` Atrybut określa w pełni kwalifikowaną nazwę klasy .NET: `XamlSamplesPage` klasy w `XamlSamples` przestrzeni nazw. Oznacza to, że ten plik XAML definiuje nową klasę o nazwie `XamlSamplesPage` w `XamlSamples` przestrzeni nazw, która jest pochodną `ContentPage`— znacznik, w którym `x:Class` atrybut występuje.
-
------
-
 `x:Class` Atrybut może występować tylko w elemencie głównym pliku XAML do definiowania klasy pochodnej w języku C#. Jest to tylko nowa klasa zdefiniowana w pliku XAML. Wszystkie inne elementy pojawia się w pliku XAML ma zamiast tego po prostu utworzonych na podstawie istniejących klas i zainicjować.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 **MainPage.xaml.cs** pliku wygląda następująco (jako uzupełnienie nieużywane `using` dyrektywy):
 
@@ -161,34 +132,7 @@ namespace XamlSamples
 
 Gdy program Visual Studio tworzy projekt, analizuje pliku XAML, aby wygenerować plik kodu C#. W **XamlSamples\XamlSamples\obj\Debug** katalogu, można znaleźć w pliku o nazwie **XamlSamples.MainPage.xaml.g.cs**. "g" oznacza dla wygenerowany. To inne klasy częściowej definicji `MainPage` zawierający definicję `InitializeComponent` metoda wywoływana z `MainPage` konstruktora. Te dwie częściowego `MainPage` definicje klas następnie je kompilować razem. W zależności od tego, czy XAML jest kompilowane, czy nie plik XAML lub binarnym pliku XAML jest osadzony w pliku wykonywalnego.
 
-W czasie wykonywania kodu w wywołaniach projektu danej platformy `LoadApplication` metoda przekazywania do niej nowe wystąpienie klasy `App` klasy w PCL. `App` Tworzy konstruktora klasy `MainPage`. Wywołuje konstruktor klasy `InitializeComponent`, które następnie wywołuje `LoadFromXaml` metodę, która wyodrębnia plik XAML (lub jej skompilowanym plikiem binarnym) z PCL. `LoadFromXaml` inicjuje wszystkie obiekty, które są zdefiniowane w pliku XAML, łączy je wszystkie razem w relacji nadrzędny podrzędny, dołącza obsługi zdarzeń zdefiniowanych w kodzie na zdarzenia w pliku XAML i ustawia wynikowe drzewa obiektów jako zawartość strony.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-**XamlSamplesPage.xaml.cs** pliku wygląda następująco:
-
-```csharp
-using Xamarin.Forms;
-
-namespace XamlSamples
-{
-    public partial class XamlSamplesPage : ContentPage
-    {
-        public XamlSamplesPage()
-        {
-            InitializeComponent();
-        }
-    }
-}
-```
-
-`XamlSamplesPage` Pochodną klasy `ContentPage`, ale zauważyć `partial` definicji klasy. Brak sugeruje, że powinien być inny plik C# z innej definicji częściowej klasy dla `XamlSamplesPage`, ale gdy jest on? A co jest `InitializeComponent` metody?
-
-W przypadku programu Visual Studio for Mac kompilacji projektu, analizuje pliku XAML, aby wygenerować plik kodu C#. W **XamlSamples\XamlSamples\obj\Debug** katalogu, można znaleźć w pliku o nazwie **XamlSamples.XamlSamplesPage.xaml.g.cs**. "g" oznacza dla wygenerowany. To inne klasy częściowej definicji `XamlSamplesPage` zawierający definicję `InitializeComponent` metoda wywoływana z `XamlSamplesPage` konstruktora.  Te dwie częściowego `XamlSamplesPage` definicje klas następnie je kompilować razem. W zależności od tego, czy XAML jest kompilowane, czy nie plik XAML lub binarnym pliku XAML jest osadzony w pliku wykonywalnego.
-
-W czasie wykonywania kodu w wywołaniach projektu danej platformy `LoadApplication` metoda przekazywania do niej nowe wystąpienie klasy `App` klasy w PCL. `App` Tworzy konstruktora klasy `XamlSamplesPage`. Wywołuje konstruktor klasy `InitializeComponent`, które następnie wywołuje `LoadFromXaml` metodę, która wyodrębnia plik XAML (lub jej skompilowanym plikiem binarnym) z PCL. `LoadFromXaml` inicjuje wszystkie obiekty, które są zdefiniowane w pliku XAML, łączy je wszystkie razem w relacji nadrzędny podrzędny, dołącza obsługi zdarzeń zdefiniowanych w kodzie na zdarzenia w pliku XAML i ustawia wynikowe drzewa obiektów jako zawartość strony.
-
------
+W czasie wykonywania kodu w wywołaniach projektu danej platformy `LoadApplication` metoda przekazywania do niej nowe wystąpienie klasy `App` klasy w bibliotece programu .NET Standard. `App` Tworzy konstruktora klasy `MainPage`. Wywołuje konstruktor klasy `InitializeComponent`, które następnie wywołuje `LoadFromXaml` metodę, która wyodrębnia plik XAML (lub jej skompilowanym plikiem binarnym) z biblioteki .NET Standard. `LoadFromXaml` inicjuje wszystkie obiekty, które są zdefiniowane w pliku XAML, łączy je wszystkie razem w relacji nadrzędny podrzędny, dołącza obsługi zdarzeń zdefiniowanych w kodzie na zdarzenia w pliku XAML i ustawia wynikowe drzewa obiektów jako zawartość strony.
 
 Mimo że zwykle nie trzeba poświęcić czas z plikami wygenerowanego kodu, czasami środowiska uruchomieniowego wyjątki są zgłaszane na kod w wygenerowanym pliki, należy zapoznać się z nimi.
 
@@ -198,39 +142,17 @@ Gdy skompilować i uruchomić ten program `Label` element będzie wyświetlany n
 
 Aby uzyskać bardziej interesujące elementy wizualne, wystarczy więcej interesujące XAML.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-## <a name="preliminaries"></a>Wymagania wstępne
-
-Aby wprowadzić nazwy plików w programie Visual Studio dla komputerów Mac zgodne z plików utworzonych przez Visual Studio działające w systemie Windows, zmień **XamlSamplesPage.xaml** do **MainPage.xaml**, i  **XamlSamplesPage.xaml.cs** do **MainPage.xaml.cs**. W ramach **XamlSamplesPage.xaml** Zmień `XamlSamplesPage` do `MainPage`. W ramach **XamlSamplesPage.xaml.cs** Zmień dwa wystąpienia `XamlSamplesPage` do `MainPage`. W ramach **App.xaml.cs** pliku, Zmień instrukcję
-
-```csharp
-MainPage = new XamlSamplesPage();
-```
-
-na:
-
-```csharp
-MainPage = new MainPage();
-```
-
------
-
-Test, że program nadal kompiluje i wdraża przed kontynuowaniem.
-
 ## <a name="adding-new-xaml-pages"></a>Dodawanie nowych stron XAML
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Aby dodać inne opartych na języku XAML `ContentPage` klas do projektu, zaznacz **XamlSamples** PCL projektu i wywoływać **projektu > Dodaj nowy element** elementu menu. W lewej części **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C#** i **platformy Xamarin.Forms**. Wybierz z listy **strony zawartości** (nie **strony zawartości (C#)**, który tworzy stronę tylko kod lub **widok zawartości**, który nie jest stroną). Określ stronę nazwę, na przykład **HelloXamlPage.xaml**:
+Aby dodać inne opartych na języku XAML `ContentPage` klas do projektu, zaznacz **XamlSamples** biblioteki .NET Standard projektu i wywoływać **projektu > Dodaj nowy element** elementu menu. W lewej części **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C#** i **platformy Xamarin.Forms**. Wybierz z listy **strony zawartości** (nie **strony zawartości (C#)**, który tworzy stronę tylko kod lub **widok zawartości**, który nie jest stroną). Określ stronę nazwę, na przykład **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Dodaj nowy element okna dialogowego")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aby dodać inne opartych na języku XAML `ContentPage` klas do projektu, zaznacz **XamlSamples** PCL projektu i wywoływać **Plik > Nowy plik** elementu menu. W lewej części **nowy plik** okno dialogowe, wybierz opcję **formularze** po lewej stronie, i **Xaml wartość ContentPage formularzy** (nie **wartość formularze ContentPage**, która tworzy stronę tylko kod lub **widok zawartości**, który nie jest stroną). Określ stronę nazwę, na przykład **HelloXamlPage**:
+Aby dodać inne opartych na języku XAML `ContentPage` klas do projektu, zaznacz **XamlSamples** .NET standardowa biblioteka projektu i wywoływać **Plik > Nowy plik** elementu menu. W lewej części **nowy plik** okno dialogowe, wybierz opcję **formularze** po lewej stronie, i **Xaml wartość ContentPage formularzy** (nie **wartość formularze ContentPage**, która tworzy stronę tylko kod lub **widok zawartości**, który nie jest stroną). Określ stronę nazwę, na przykład **HelloXamlPage**:
 
 ![](get-started-with-xaml-images/mac/newfiledialog.png "Okno dialogowe nowego pliku")
 

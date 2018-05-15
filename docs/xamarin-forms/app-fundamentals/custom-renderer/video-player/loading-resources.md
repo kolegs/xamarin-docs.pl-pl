@@ -6,15 +6,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="loading-application-resource-videos"></a>Ładowanie aplikacji zasobów wideo
 
-Niestandardowe moduły renderowania dla `VideoPlayer` widoku są w stanie odtwarzania plików wideo, które zostały osadzone w projektach poszczególnych platform jako zasoby aplikacji. Jednak w bieżącej wersji programu `VideoPlayer` nie może uzyskać dostęp do zasobów osadzonych w bibliotece klas przenośnych.
+Niestandardowe moduły renderowania dla `VideoPlayer` widoku są w stanie odtwarzania plików wideo, które zostały osadzone w projektach poszczególnych platform jako zasoby aplikacji. Jednak w bieżącej wersji programu `VideoPlayer` nie może uzyskać dostęp do zasobów osadzonych w bibliotece .NET Standard.
 
 Aby załadować te zasoby, Utwórz wystąpienie `ResourceVideoSource` przez ustawienie `Path` właściwości do pliku (lub folderu i nazwa pliku) zasobu. Alternatywnie można wywołać statycznych `VideoSource.FromResource` metodę, aby odwoływać się do zasobu. Następnie ustaw `ResourceVideoSource` do obiektu `Source` właściwość `VideoPlayer`. 
 

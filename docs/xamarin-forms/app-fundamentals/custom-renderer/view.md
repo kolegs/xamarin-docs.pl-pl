@@ -6,12 +6,12 @@ ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/10/2018
+ms.openlocfilehash: 757cd9c0b3b8414b5a8c01af0cf4ffc9b9b8afc4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-view"></a>Implementowanie widoku
 
@@ -268,45 +268,50 @@ Pod warunkiem że `Control` właściwość jest `null`, `SetNativeControl` metod
 Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy uniwersalnej systemu Windows:
 
 ```csharp
-[assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
+[assembly: ExportRenderer(typeof(CameraPreview), typeof(CameraPreviewRenderer))]
 namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
-        MediaCapture mediaCapture;
-        CaptureElement captureElement;
-        CameraOptions cameraOptions;
-        Application app;
-        bool isPreviewing = false;
+        ...
+        CaptureElement _captureElement;
+        bool _isPreviewing;
 
-        protected override void OnElementChanged (ElementChangedEventArgs<CameraPreview> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<CameraPreview> e)
         {
-            base.OnElementChanged (e);
+            base.OnElementChanged(e);
 
-            if (Control == null) {
+            if (Control == null)
+            {
                 ...
-                captureElement = new CaptureElement ();
-                captureElement.Stretch = Stretch.UniformToFill;
+                _captureElement = new CaptureElement();
+                _captureElement.Stretch = Stretch.UniformToFill;
 
-                InitializeAsync ();
-                SetNativeControl (captureElement);
+                SetupCamera();
+                SetNativeControl(_captureElement);
             }
-            if (e.OldElement != null) {
+            if (e.OldElement != null)
+            {
                 // Unsubscribe
                 Tapped -= OnCameraPreviewTapped;
+                ...
             }
-            if (e.NewElement != null) {
+            if (e.NewElement != null)
+            {
                 // Subscribe
                 Tapped += OnCameraPreviewTapped;
             }
         }
 
-        async void OnCameraPreviewTapped (object sender, TappedRoutedEventArgs e)
+        async void OnCameraPreviewTapped(object sender, TappedRoutedEventArgs e)
         {
-            if (isPreviewing) {
-                await StopPreviewAsync ();
-            } else {
-                await StartPreviewAsync ();
+            if (_isPreviewing)
+            {
+                await StopPreviewAsync();
+            }
+            else
+            {
+                await StartPreviewAsync();
             }
         }
         ...
@@ -314,7 +319,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Pod warunkiem że `Control` właściwość jest `null`, nowy `CaptureElement` zostanie uruchomiony i `InitializeAsync` wywoływana jest metoda, która używa `MediaCapture` interfejsu API w celu zapewnienia strumienia podglądu z aparatu fotograficznego. `SetNativeControl` Wywoływana jest metoda następnie przypisać odwołania do `CaptureElement` wystąpienie do `Control` właściwości. `CaptureElement` Kontrolować ujawnia `Tapped` zdarzeń, który jest obsługiwany przez `OnCameraPreviewTapped` metody do zatrzymywania i uruchamiania podglądu wideo, jest on wybrany. `Tapped` Zdarzeń jest subskrybentem podczas niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms i Anulowano subskrypcję tylko, gdy element renderującego jest dołączony do zmiany.
+Pod warunkiem że `Control` właściwość jest `null`, nowy `CaptureElement` zostanie uruchomiony i `SetupCamera` wywoływana jest metoda, która używa `MediaCapture` interfejsu API w celu zapewnienia strumienia podglądu z aparatu fotograficznego. `SetNativeControl` Wywoływana jest metoda następnie przypisać odwołania do `CaptureElement` wystąpienie do `Control` właściwości. `CaptureElement` Kontrolować ujawnia `Tapped` zdarzeń, który jest obsługiwany przez `OnCameraPreviewTapped` metody do zatrzymywania i uruchamiania podglądu wideo, jest on wybrany. `Tapped` Zdarzeń jest subskrybentem podczas niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms i Anulowano subskrypcję tylko, gdy element renderującego jest dołączony do zmiany.
 
 > [!NOTE]
 > Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](/windows/uwp/audio-video-camera/simple-camera-preview-access/).

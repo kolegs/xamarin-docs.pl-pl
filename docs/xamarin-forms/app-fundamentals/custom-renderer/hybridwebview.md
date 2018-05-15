@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementowanie HybridWebView
 
@@ -74,7 +74,7 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView` Formant niestandardowy jest tworzony w projekcie (PCL) biblioteki klas przenośnych i definiuje następujące interfejsu API dla formantu:
+`HybridWebView` Formant niestandardowy jest tworzony w .NET Standard projektu biblioteki i definiuje następujące interfejsu API dla formantu:
 
 - A `Uri` właściwości, który określa adres strony sieci web do załadowania.
 - A `RegisterAction` metodę, która rejestruje `Action` z formantem. Zarejestrowanych akcji zostanie wywołany z poziomu języka JavaScript zawarty w pliku HTML, do których odwołuje się za pośrednictwem `Uri` właściwości.
@@ -85,7 +85,7 @@ public class HybridWebView : View
 
 ## <a name="consuming-the-hybridwebview"></a>Korzystanie z HybridWebView
 
-`HybridWebView` Formant niestandardowy może być przywoływany w XAML w projekcie PCL deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw na kontrolki niestandardowej. Poniższy kod przedstawia przykład sposobu `HybridWebView` kontrolki niestandardowej, może być zużyte przez strony XAML:
+`HybridWebView` Formant niestandardowy może być przywoływany w języku XAML w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw na kontrolki niestandardowej. Poniższy kod przedstawia przykład sposobu `HybridWebView` kontrolki niestandardowej, może być zużyte przez strony XAML:
 
 ```xaml
 <ContentPage ...

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>Lokalizacja
 
@@ -32,7 +32,7 @@ Istnieją dwa przykłady skojarzony z tym dokumentem:
 
 Zawiera przykładowe TodoLocalized [pokaz projektu udostępnionego](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/) jednak ze względu na ograniczenia system kompilacji nie są pliki zasobów **. Designer.cs narzędzie** plik wygenerowany, która dzieli możliwość dostępu do przetłumaczone ciągi jednoznacznie w kodzie.
 
-W pozostałej części tego dokumentu odnosi się do projektów przy użyciu szablonu PCL platformy Xamarin.Forms.
+W pozostałej części tego dokumentu odnosi się do projektów przy użyciu szablonu platformy Xamarin.Forms .NET Standard biblioteki.
 
 ## <a name="globalizing-xamarinforms-code"></a>Globalizacja platformy Xamarin.Forms kodu
 
@@ -46,7 +46,7 @@ Przykłady wybierz języki angielski, francuski, hiszpański, niemiecki, chińsk
 
 ### <a name="adding-resources"></a>Dodawanie zasobów
 
-Pierwszym etapem globalizowanie aplikacji platformy Xamarin.Forms PCL dodaje pliki zasobów RESX, które będą używane do przechowywania wszystkich tekst używany w aplikacji. Musimy dodać plik RESX, który zawiera domyślny tekst, a następnie dodaj dodatkowe pliki RESX dla każdego z języków, które mają zostać firma Microsoft do obsługi.
+Globalizacja platformy Xamarin.Forms .NET Standard aplikacji Biblioteka pierwszym krokiem jest dodanie RESX pliki zasobów, które będą używane do przechowywania wszystkich tekst używany w aplikacji. Musimy dodać plik RESX, który zawiera domyślny tekst, a następnie dodaj dodatkowe pliki RESX dla każdego z języków, które mają zostać firma Microsoft do obsługi.
 
 #### <a name="base-language-resource"></a>Podstawowy język zasobów
 
@@ -98,7 +98,7 @@ Aby właściwości ciąg jednoznacznie `public`, należy ręcznie zmienić konfi
 
 -----
 
-Ta zmiana jest opcjonalna i jest tylko wymagane, jeśli chcesz odwołać zlokalizowanych ciągów w różnych zestawów (na przykład, jeśli pliki RESX należy umieścić w innym zestawie kodu). Przykładowe związane z tym tematem pozostawia ciągi `internal` ponieważ są one zdefiniowane w tym samym zestawie PCL platformy Xamarin.Forms, gdzie są używane.
+Ta zmiana jest opcjonalna i jest tylko wymagane, jeśli chcesz odwołać zlokalizowanych ciągów w różnych zestawów (na przykład, jeśli pliki RESX należy umieścić w innym zestawie kodu). Przykładowe związane z tym tematem pozostawia ciągi `internal` ponieważ są one zdefiniowane w tym samym zestawie biblioteki platformy Xamarin.Forms .NET Standard gdzie są używane.
 
 Musisz ustawić narzędzia niestandardowego w pliku RESX podstawowego, jak pokazano powyżej. nie należy ustawić *żadnych* narzędzia kompilacji na pliki RESX specyficzny dla języka omówione w poniższych sekcjach.
 
@@ -559,7 +559,7 @@ Uniwersalne projekty platformy systemu Windows (UWP) nie wymagają usługi zale�
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-Rozwiń węzeł właściwości w projekcie przenośnej biblioteki klasy (PCL), a następnie kliknij dwukrotnie **AssemblyInfo.cs** pliku. Dodaj następujący wiersz do pliku, aby ustawić język asemblera neutralne zasoby język angielski:
+Rozwiń węzeł właściwości w .NET Standard projektu biblioteki, a następnie kliknij dwukrotnie **AssemblyInfo.cs** pliku. Dodaj następujący wiersz do pliku, aby ustawić język asemblera neutralne zasoby język angielski:
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]

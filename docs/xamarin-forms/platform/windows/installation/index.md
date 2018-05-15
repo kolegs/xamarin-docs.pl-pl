@@ -7,39 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b6ea988aa8c058fe5a92a17e9b72f81e0ccb12db
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-windows-projects"></a>Instalator Windows projektów
 
 _Dodawanie nowych projektów systemu Windows do istniejącego rozwiązania platformy Xamarin.Forms_
 
 Starsze rozwiązań platformy Xamarin.Forms (lub utworzone na macOS) nie będzie miał projekty aplikacji uniwersalnych platformy systemu Windows (UWP). W związku z tym należy ręcznie dodać projekt platformy uniwersalnej systemu Windows do tworzenia aplikacji systemu Windows 10 (UWP).
-
-<a name="pcl" />
-
-## <a name="update-the-pcl-profile"></a>Aktualizuj profil PCL
-
-Istniejących aplikacji platformy Xamarin.Forms użycie szablonu przenośnej biblioteki klasy (PCL), należy zaktualizować jej profilu.
-
-1. **Kliknij prawym przyciskiem myszy > właściwości** (istniejących ustawień może różnić się)
-
-  ![](images/targets.png "Obiekty docelowe PCL")
-
-2. Polecenie **zmian...**  przycisku
-
-3. Upewnij się, **systemu Windows 8** i **Windows Phone 8.1** są zaznaczone opcje (i **Silveright Windows Phone** jest *cofnąć wybrane*):
-
-  ![](images/pcl.png "Target — opcje PCL")
-
-4. Naciśnij klawisz **OK** i zapisać zmiany.
-
-To jest równa **111 profilu** w przypadku konfigurowania sieci PCL w programie Visual Studio dla komputerów Mac przy użyciu listy rozwijanej.
-
-  ![](images/pcl-xs.png "Profil PCL 111")
 
 ## <a name="add-a-universal-windows-platform-app"></a>Dodaj uniwersalnych systemu Windows platformy aplikacji
 
@@ -65,7 +43,7 @@ Wykonaj te instrukcje, aby dodać aplikację platformy uniwersalnej systemu Wind
 
   [![](universal-images/configuration-sml.png "Okno programu Configuration Manager")](universal-images/configuration.png#lightbox "okno programu Configuration Manager")
 
- 5. Kliknij prawym przyciskiem myszy na projekt i wybierz **Dodaj > odwołania** i utworzyć odwołanie do projektu aplikacji platformy Xamarin.Forms (PCL, .NET Standard lub udostępnionego projektu).
+ 5. Kliknij prawym przyciskiem myszy na projekt i wybierz **Dodaj > odwołania** i utworzyć odwołanie do projektu aplikacji platformy Xamarin.Forms (.NET Standard lub udostępnionego projektu).
 
   ![](universal-images/addref-sml.png "Okno dialogowe menedżera odwołań")
 

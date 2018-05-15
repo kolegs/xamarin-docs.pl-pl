@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials bezpiecznego magazynu
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
 **SecureStorage** klasy pozwala bezpiecznie przechowywać pary klucz wartość proste.
+
+## <a name="getting-started"></a>Wprowadzenie
+
+Aby uzyskać dostęp do **SecureStorage** , następujące ustawienia specyficzne dla platformy jest wymagane:
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Nie dodatkowe ustawienia wymagane.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+Podczas tworzenia w symulatorze systemu iOS, Włącz **łańcucha kluczy** uprawnienia i Dodaj grupę dostępu łańcucha kluczy, identyfikator pakietu aplikacji.
+
+Otwórz **Entitlements.plist** projekt dla systemu iOS i Znajdź **łańcucha kluczy** uprawnień i włącz ją. Identyfikator aplikacji zostanie automatycznie dodany jako grupa.
+
+We właściwościach projektu w obszarze **iOS podpisywania pakietu** ustawić **uprawnień niestandardowych** do **Entitlements.plist**.
+
+# <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
+
+Nie dodatkowe ustawienia wymagane.
+
+-----
 
 ## <a name="using-secure-storage"></a>Przy użyciu bezpiecznego magazynu
 
@@ -75,5 +97,5 @@ Ten interfejs API jest przeznaczony do przechowywania niewielkich ilości tekstu
 
 ## <a name="api"></a>interfejs API
 
-- [Kod źródłowy SecureStorage](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [Kod źródłowy SecureStorage](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [Dokumentacja interfejsu API SecureStorage](xref:Xamarin.Essentials.SecureStorage)

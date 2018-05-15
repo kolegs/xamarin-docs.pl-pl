@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6945d64e37bc7e0de930093d8a3f71590026182d
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Pobrania zdjęcia z biblioteki obrazów
 
@@ -27,7 +27,7 @@ W tym artykule przedstawiono tworzenie aplikacji, która umożliwia użytkowniko
 
 ## <a name="creating-the-interface"></a>Tworzenie interfejsu
 
-Najpierw Utwórz interfejs w kodzie udostępnionego, który określa informacji dotyczących odpowiednich funkcji. W przypadku aplikacji pobrania fotografii wymagane jest tylko jedna metoda. To jest zdefiniowany w [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) interfejsu, biblioteki klas przenośnych przykładowy kod:
+Najpierw Utwórz interfejs w kodzie udostępnionego, który określa informacji dotyczących odpowiednich funkcji. W przypadku aplikacji pobrania fotografii wymagane jest tylko jedna metoda. To jest zdefiniowany w [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) interfejsu w bibliotece .NET Standard przykładowy kod:
 
 ```csharp
 namespace DependencyServiceSample
@@ -261,7 +261,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>Implementacja w kodzie udostępnionego
 
-Teraz, gdy interfejs został zaimplementowany dla każdej platformy, aplikacja wspólnej biblioteki klas przenośnych mogą wykorzystać go.
+Teraz, gdy interfejs został zaimplementowany dla każdej platformy, aplikacji w bibliotece programu .NET Standard mogą korzystać z niego.
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Tworzy klasy `Button` do pobrania zdjęcie:
 

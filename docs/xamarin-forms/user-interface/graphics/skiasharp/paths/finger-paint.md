@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="finger-painting"></a>Malowania
 
@@ -23,7 +23,7 @@ _Użyj palcami do rysowania na kanwie._
 
 Obsługa touch w platformy Xamarin.Forms nie zezwala na śledzenia poszczególnych palców na ekranie, więc efekt touch śledzenia platformy Xamarin.Forms został opracowany do obsługi dodatkowych touch. W tym celu jest opisana w artykule [ **wywoływanie zdarzeń od efekty**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Przykładowy program [ **pokazy efekt śledzenia Touch** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) zawiera dwie strony, które używają SkiaSharp, w tym finger-painting program.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) rozwiązanie zawiera to zdarzenie śledzenia touch. Projekt biblioteki klas przenośnych zawiera `TouchEffect` klasy, `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmują `TouchEffect` klasy dla tej platformy; zawiera także projektu iOS `TouchRecognizer` klasy.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) rozwiązanie zawiera to zdarzenie śledzenia touch. Zawiera standardowe .NET projektu biblioteki `TouchEffect` klasy `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmują `TouchEffect` klasy dla tej platformy; zawiera także projektu iOS `TouchRecognizer` klasy.
 
 **Paint palca** strony **SkiaSharpFormsDemos** jest uproszczoną implementację malowania. Nie zezwalaj na wybieranie koloru lub obrysu szerokość go nie ma możliwości wyczyścić obszar roboczy, a oczywiście nie można zapisać kompozycji.
 

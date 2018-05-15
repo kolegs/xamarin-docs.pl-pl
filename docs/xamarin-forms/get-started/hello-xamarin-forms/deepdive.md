@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: ae4f2198e42ab404cabe148108a24ef2219bcf6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Informacje temat dokładnego platformy Xamarin.Forms
 
@@ -54,7 +54,7 @@ Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowani
 
 Projekty są:
 
-- Phoneword — ten projekt jest projektu biblioteki (PCL) klas przenośnych, który przechowuje wszystkie udostępnione kodu i udostępnionych interfejsu użytkownika.
+- Phoneword — ten projekt jest .NET Standard projektu biblioteki, który przechowuje wszystkie udostępnione kodu i udostępnionych interfejsu użytkownika.
 - Phoneword.Droid — ten projekt zawiera określonego kodu dla systemu Android i jest punkt wejścia dla aplikacji systemu Android.
 - Phoneword.iOS — ten projekt zawiera z systemem iOS kod i jest punkt wejścia dla aplikacji systemu iOS.
 
@@ -94,7 +94,7 @@ Aplikacji platformy Xamarin.Forms została zaprojektowana w taki sam sposób jak
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aplikacji platformy Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji i platform. Udostępniony kod jest zwykle umieszczane w przenośnych klasy biblioteki PCL (), a specyficzne dla platformy aplikacji korzystać z udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
+Aplikacji platformy Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji i platform. Udostępniony kod jest zwykle umieszczane w bibliotece .NET Standard, a aplikacje specyficzne dla platformy zużyć udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Architektura Phoneword")
 

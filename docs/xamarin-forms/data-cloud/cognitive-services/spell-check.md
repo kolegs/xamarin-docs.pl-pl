@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 259be743a706c9316e2e275ff305a0fe5ad97906
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Sprawdzanie pisowni przy użyciu interfejsu API sprawdzania pisowni usługi Bing
 
@@ -90,7 +90,7 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-Ta metoda tworzy żądanie GET, dodając klucz interfejsu API jako wartość `Ocp-Apim-Subscription-Key` nagłówka. Żądania GET są następnie wysyłane do `SpellCheck` interfejsu API, za pomocą adresu URL żądania Określanie tekstu do tłumaczenia i tryb sprawdzania pisowni. Odpowiedź jest następnie odczytu i powrót do wywoływania metody.
+Ta metoda wysyła żądanie GET `SpellCheck` interfejsu API, za pomocą adresu URL żądania Określanie tekstu do tłumaczenia i tryb sprawdzania pisowni. Odpowiedź jest następnie odczytu i powrót do wywoływania metody.
 
 `SpellCheck` Interfejsu API będzie wysyłać kod stanu HTTP 200 (OK) w odpowiedzi, pod warunkiem, że żądanie jest prawidłowe, co oznacza, że żądanie zakończyło się pomyślnie i że żądane informacje są w odpowiedzi. Aby uzyskać listę obiektów odpowiedzi, zobacz [obiektów odpowiedzi](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b690b4aed315a78d95d9e0e7444257f0fc2c4a78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-views"></a>Widoki platformy Xamarin.Forms
 
@@ -53,7 +53,7 @@ Widoki są obiekty interfejsu użytkownika, takie jak etykiety, przycisków i su
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Wyświetla grafiki OpenGL projektów dla systemu Android i iOS. Nie jest obsługiwane dla platformy uniwersalnej systemu Windows. IOS i Android projektów wymagają odwołania do **OpenTK 1.0** zestawu lub **OpenTK** zestaw w wersji 1.0.0.0. `OpenGLView` ułatwia stosowanie w projekcie udostępnionym; Jeśli używane w bibliotece PCL lub .NET Standard, Usługa zależności również będzie wymagane (jak pokazano w przykładowym kodzie).<br /><br />Jest to funkcji tylko grafiki, który jest wbudowanych w platformy Xamarin.Forms, ale aplikacji platformy Xamarin.Forms można również renderowania grafiki przy użyciu [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), lub [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Przykład OpenGLView](views-images/OpenGLView.png "przykład OpenGLView")](views-images/OpenGLView-Large.png#lightbox "OpenGLView przykład")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) z [związane z kodem](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Wyświetla grafiki OpenGL projektów dla systemu Android i iOS. Nie jest obsługiwane dla platformy uniwersalnej systemu Windows. IOS i Android projektów wymagają odwołania do **OpenTK 1.0** zestawu lub **OpenTK** zestaw w wersji 1.0.0.0. `OpenGLView` ułatwia stosowanie w projekcie udostępnionym; Jeśli używane w bibliotece .NET Standard, Usługa zależności również będzie wymagane (jak pokazano w przykładowym kodzie).<br /><br />Jest to funkcji tylko grafiki, który jest wbudowanych w platformy Xamarin.Forms, ale aplikacji platformy Xamarin.Forms można również renderowania grafiki przy użyciu [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), lub [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Przykład OpenGLView](views-images/OpenGLView.png "przykład OpenGLView")](views-images/OpenGLView-Large.png#lightbox "OpenGLView przykład")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) z [związane z kodem](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>mapy

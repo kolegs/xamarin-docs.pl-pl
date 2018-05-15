@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>Natywny widoków w języku XAML
 
@@ -74,7 +74,7 @@ Właściwości i dołączonych właściwości można również ustawić na natyw
 Konstruktory android widget wymagają Android `Context` obiekt jako argument, a to może zostać udostępniona za pośrednictwem właściwości statycznych w `MainActivity` klasy. W związku z tym, podczas tworzenia widżetu systemu Android w języku XAML, `Context` obiekt zazwyczaj musi zostać przekazany do konstruktora widżetu przy użyciu `x:Arguments` atrybutem `x:Static` — rozszerzenie znaczników. Aby uzyskać więcej informacji, zobacz [przekazywanie argumentów do natywnej widoków](#passing_arguments).
 
 > [!NOTE]
-> Należy zwrócić uwagę nazewnictwa natywnego widoku z `x:Name` w projekcie przenośnej biblioteki klasy (PCL) lub udostępnionego projektu zasobów (SAP) nie jest możliwe. W ten sposób spowoduje wygenerowanie zmiennej typu macierzystego, co spowoduje błąd kompilacji. Jednak natywnego widoki mogą być ujęte w `ContentView` wystąpień i pobierane w pliku związanym z kodem, pod warunkiem, że jest on używany SAP. Aby uzyskać więcej informacji, zobacz [odwołujących się do widoku natywnych z kodu](#native_view_code).
+> Należy zwrócić uwagę nazewnictwa natywnego widoku z `x:Name` w .NET Standard projektu biblioteki lub udostępnionego projektu zasobów (SAP) nie jest możliwe. W ten sposób spowoduje wygenerowanie zmiennej typu macierzystego, co spowoduje błąd kompilacji. Jednak natywnego widoki mogą być ujęte w `ContentView` wystąpień i pobierane w pliku związanym z kodem, pod warunkiem, że jest on używany SAP. Aby uzyskać więcej informacji, zobacz [odwołujących się do widoku natywnych z kodu](#native_view_code).
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ IOS i Android przyciski natywne udostępnianie takie same `OnButtonTap` program 
 
 ## <a name="subclassing-native-views"></a>Tworzenie podklas natywnego widoków
 
-Wiele systemów iOS i Android native widoków nie są odpowiednie dla wystąpienia w języku XAML, ponieważ korzystają z metody zamiast właściwości, aby skonfigurować kontrolki. Rozwiązanie tego problemu jest podklasą natywnego widoki otoki, które definiują więcej API XAML przyjaznego używający właściwości można skonfigurować kontrolki, i który korzysta z zdarzenia niezależne od platformy. Opakowana widoków natywnego można można umieścić w udostępnionych zasobów projektu (SAP) i ujęty w dyrektywy warunkowej kompilacji, lub umieszczone w projektach specyficzne dla platformy i się do niego odwoływać XAML w projekcie przenośnej biblioteki klasy (PCL).
+Wiele systemów iOS i Android native widoków nie są odpowiednie dla wystąpienia w języku XAML, ponieważ korzystają z metody zamiast właściwości, aby skonfigurować kontrolki. Rozwiązanie tego problemu jest podklasą natywnego widoki otoki, które definiują więcej API XAML przyjaznego używający właściwości można skonfigurować kontrolki, i który korzysta z zdarzenia niezależne od platformy. Opakowana widoków natywnego następnie można umieszczone w udostępnionych zasobów projektu (SAP) i ujęty w dyrektywy warunkowej kompilacji, lub umieszczone w projektach specyficzne dla platformy i do których odwołuje się z XAML .NET Standard projektu biblioteki.
 
 Poniższy przykład kodu pokazuje, że strony platformy Xamarin.Forms, który wykorzystuje podklasy natywnego widoków:
 

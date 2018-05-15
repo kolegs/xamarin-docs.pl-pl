@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Wprowadzenie do renderowania niestandardowych
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Prefiks przestrzeni nazw może być dowolna. Jednak `namespace` i `assembly` wartości muszą być zgodne szczegóły kontrolki niestandardowej. Po zadeklarowaniu obszaru nazw prefiks jest używany do odwołania kontrolki niestandardowej.
 
 > [!NOTE]
-> Definiowanie `xmlns` jest znacznie prostsza w PCLs niż udostępnionych projektów. PCL jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, do każdego z odwołaniem do projektów, co oznacza że jeśli systemu iOS, Android i platformy uniwersalnej systemu Windows są kompilowane współużytkowane zasoby (w tym XAML) projekty mają swoje własne *nazwy zestawu* nie jest możliwe do zapisu `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
+> Definiowanie `xmlns` jest znacznie prostsza w projektach biblioteki .NET Standard niż udostępnionych projektów. Biblioteki .NET Standard jest kompilowany do zestawu, dzięki czemu łatwiej ustalić, co `assembly=CustomRenderer` wartość powinna być. Podczas korzystania z udostępnionych projektów, do każdego z odwołaniem do projektów, co oznacza że jeśli systemu iOS, Android i platformy uniwersalnej systemu Windows są kompilowane współużytkowane zasoby (w tym XAML) projekty mają swoje własne *nazwy zestawu* nie jest możliwe do zapisu `xmlns` deklaracji, ponieważ wartość musi być inny dla poszczególnych aplikacji. Formanty niestandardowe w języku XAML udostępniony projektów będzie wymagać co projekt aplikacji do skonfigurowania z taką samą nazwę.
 
 `MyEntry` Kontrolki niestandardowej następnie jest renderowany na każdej platformie, na tle szare, jak pokazano na poniższych zrzutach ekranu:
 
@@ -74,7 +74,7 @@ Można znaleźć w tematach w tej serii pokazów i wyjaśnienia ten proces dla r
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
-Jeśli formant niestandardowy znajduje się w projekcie PCL dodawanej do rozwiązania (tj. nie PCL utworzony przez program Visual Studio dla aplikacji platformy Xamarin.Forms Mac/Visual Studio szablon projektu), może wystąpić wyjątek w systemie iOS podczas próby dostępu kontrolki niestandardowej. Jeśli wystąpi ten problem można rozwiązać przez utworzenie odwołania do formantu niestandardowego z `AppDelegate` klasy:
+Jeśli formant niestandardowy znajduje się w .NET Standard projektu biblioteki, który został dodany do rozwiązania (tj. nie .NET Standard biblioteki utworzony przez program Visual Studio dla aplikacji platformy Xamarin.Forms Mac/Visual Studio szablon projektu), wyjątek może wystąpić w systemie iOS podczas Próba dostępu kontrolki niestandardowej. Jeśli wystąpi ten problem można rozwiązać przez utworzenie odwołania do formantu niestandardowego z `AppDelegate` klasy:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

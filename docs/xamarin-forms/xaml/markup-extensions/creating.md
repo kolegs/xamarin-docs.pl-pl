@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: d4ae3b42c5c926749310da6e36b6f4e9754d398c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3807ac6a91d3bf650922a01d9111dc34513d62b3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>Tworzenie rozszerzeń znaczników XAML
 
@@ -151,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` jest przydatne, gdy plik XAML wymaga dostępu do pliku obrazu, przechowywane jako osadzony zasób w projekcie przenośnej biblioteki klas. Używa `Source` właściwości do wywoływania statycznych `ImageSource.FromResource` metody. Ta metoda wymaga nazwy zasobu w pełni kwalifikowaną, która składa się z nazwy zestawu, nazwę folderu i nazwę pliku, oddzielone kropkami. `ImageResourceExtension` Nie muszą zestawu Nazwa części ponieważ uzyskuje nazwę zestawu przy użyciu odbicia i dołącza go do `Source` właściwości. Niezależnie od tego `ImageSource.FromResource` musi być wywoływana z zestawu, który zawiera mapa bitowa, co oznacza, że to rozszerzenie zasobu XAML nie może być częścią zewnętrznej biblioteki obrazów nie znajdują się również w tej bibliotece. (Zobacz [ **obrazów osadzonych** ](~/xamarin-forms/user-interface/images.md#embedded_images) artykułu, aby uzyskać więcej informacji na temat uzyskiwania dostępu do mapy bitowe przechowywane jako zasoby osadzone.) 
+`ImageResourceExtension` jest przydatne, gdy plik XAML wymaga dostępu do pliku obrazu, przechowywane jako osadzony zasób w projekcie biblioteki .NET Standard. Używa `Source` właściwości do wywoływania statycznych `ImageSource.FromResource` metody. Ta metoda wymaga nazwy zasobu w pełni kwalifikowaną, która składa się z nazwy zestawu, nazwę folderu i nazwę pliku, oddzielone kropkami. `ImageResourceExtension` Nie muszą zestawu Nazwa części ponieważ uzyskuje nazwę zestawu przy użyciu odbicia i dołącza go do `Source` właściwości. Niezależnie od tego `ImageSource.FromResource` musi być wywoływana z zestawu, który zawiera mapa bitowa, co oznacza, że to rozszerzenie zasobu XAML nie może być częścią zewnętrznej biblioteki obrazów nie znajdują się również w tej bibliotece. (Zobacz [ **obrazów osadzonych** ](~/xamarin-forms/user-interface/images.md#embedded_images) artykułu, aby uzyskać więcej informacji na temat uzyskiwania dostępu do mapy bitowe przechowywane jako zasoby osadzone.) 
 
 Mimo że `ImageResourceExtension` wymaga `Source` można ustawić dla właściwości `Source` właściwości jako właściwość content klasy określonej w atrybucie. Oznacza to, że `Source=` można pominąć części wyrażenia w nawiasach klamrowych. W **pokaz zasobu obrazu** strony, `Image` dwa obrazy przy użyciu nazwy folderu i nazwę pliku, oddzielone kropkami pobrać elementy:
 

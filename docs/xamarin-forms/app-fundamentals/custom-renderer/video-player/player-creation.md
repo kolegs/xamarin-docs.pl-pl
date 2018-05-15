@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 316a6b9e9ce65dfb3c19d611f1b4976709546b5f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9efdc8376d9970cb429654e3d3aa2eef75ac2996
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-the-platform-video-players"></a>Tworzenie odtwarzaczy wideo platformy
 
@@ -18,7 +18,7 @@ ms.lasthandoff: 04/04/2018
 
 ## <a name="the-video-player"></a>Odtwarzacza wideo
 
-[ `VideoPlayer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) Klasy jest częścią **VideoPlayerDemos** przenośnej biblioteki klas (PCL) współużytkowany platformy. Dziedziczy `View`:
+[ `VideoPlayer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) Klasy jest częścią **VideoPlayerDemos** biblioteki standardowej .NET, współużytkowany platformy. Dziedziczy `View`:
 
 ```csharp
 using System;

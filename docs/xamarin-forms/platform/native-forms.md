@@ -1,23 +1,23 @@
 ---
 title: Formularze natywnego
-description: Formularze natywnego Zezwalaj pochodzi wartość platformy Xamarin.Forms ContentPage stron zużywanych przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Projektów natywnych może wykorzystać pochodzi wartość ContentPage stron bezpośrednio dodawane do projektu lub z przenośnej biblioteki klasy (PCL), biblioteki standardowej .NET lub projektu udostępnionego. W tym artykule opisano, jak korzystać z uzyskanych wartość ContentPage stron bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi.
+description: Formularze natywnego Zezwalaj pochodzi wartość platformy Xamarin.Forms ContentPage stron zużywanych przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Projektów natywnych może wykorzystać pochodzi wartość ContentPage stron bezpośrednio dodawane do projektu lub z biblioteki .NET Standard biblioteki standardowej .NET lub projektu udostępnionego. W tym artykule opisano, jak korzystać z uzyskanych wartość ContentPage stron bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 9d0d4e69228ce8a1d9944833bff80b22ea5f9ddd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb7aa9a7071f9ac7bef0dce5790a3fe74302cfb4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-forms"></a>Formularze natywnego
 
-_Formularze natywnego Zezwalaj pochodzi wartość platformy Xamarin.Forms ContentPage stron zużywanych przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Projektów natywnych może wykorzystać pochodzi wartość ContentPage stron bezpośrednio dodawane do projektu lub z przenośnej biblioteki klasy (PCL), biblioteki standardowej .NET lub projektu udostępnionego. W tym artykule opisano, jak korzystać z uzyskanych wartość ContentPage stron bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi._
+_Formularze natywnego Zezwalaj pochodzi wartość platformy Xamarin.Forms ContentPage stron zużywanych przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Projektów natywnych może wykorzystać pochodzi wartość ContentPage stron bezpośrednio dodawane do projektu lub z biblioteki .NET Standard biblioteki standardowej .NET lub projektu udostępnionego. W tym artykule opisano, jak korzystać z uzyskanych wartość ContentPage stron bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi._
 
-Zazwyczaj aplikacji platformy Xamarin.Forms zawiera jedną lub więcej stron, które pochodzą z [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), a te strony są współużytkowane przez wszystkie platformy PCL, biblioteki standardowej .NET lub projektu udostępnionego. Jednak umożliwia natywnego formularzy `ContentPage`-pochodnych stron, które mają zostać dodane bezpośrednio do natywnych aplikacji platformy Xamarin.iOS, Xamarin.Android i platformy uniwersalnej systemu Windows. W porównaniu do o natywnego projektu korzystać `ContentPage`-pochodnej stron z PCL, biblioteki standardowej .NET lub projektu udostępnionego, zaletą Dodawanie stron bezpośrednio do projektów natywnych jest rozszerzone stron z widokami macierzystego. Widoki natywnego następnie może mieć nazwę w języku XAML z `x:Name` i do którego istnieje odwołanie z kodem. Aby uzyskać więcej informacji o widokach macierzystego, zobacz [natywnego widoków](~/xamarin-forms/platform/native-views/index.md).
+Zazwyczaj aplikacji platformy Xamarin.Forms zawiera jedną lub więcej stron, które pochodzą z [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), a te strony są współużytkowane przez wszystkie platformy .NET Standard projektu biblioteki lub projektu udostępnionego. Jednak umożliwia natywnego formularzy `ContentPage`-pochodnych stron, które mają zostać dodane bezpośrednio do natywnych aplikacji platformy Xamarin.iOS, Xamarin.Android i platformy uniwersalnej systemu Windows. W porównaniu do o natywnego projektu korzystać `ContentPage`-pochodnej stron z projektu biblioteki .NET Standard lub projektu udostępnionego, zaletą Dodawanie stron bezpośrednio do projektów natywnych jest rozszerzone stron z widokami macierzystego. Widoki natywnego następnie może mieć nazwę w języku XAML z `x:Name` i do którego istnieje odwołanie z kodem. Aby uzyskać więcej informacji o widokach macierzystego, zobacz [natywnego widoków](~/xamarin-forms/platform/native-views/index.md).
 
 Proces służący do konsumowania platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnej strony natywnego projektu jest następujący:
 
@@ -30,7 +30,7 @@ Proces służący do konsumowania platformy Xamarin.Forms [ `ContentPage` ](http
 Platformy Xamarin.Forms musi zostać zainicjowany przez wywołanie metody `Forms.Init` metoda przed natywnego projektu można konstruować [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych strony. Wybieranie, kiedy w tym celu głównie zależy od daty dogodnym w Twojej aplikacji przepływu — może być wykonana podczas uruchamiania aplikacji lub po prostu przed `ContentPage`-strony pochodny jest tworzony. W tym artykule i towarzyszące przykładowe aplikacje `Forms.Init` metoda jest wywoływana podczas uruchamiania aplikacji.
 
 > [!NOTE]
-> **NativeForms** przykładowe rozwiązanie aplikacji nie zawiera żadnych projektów platformy Xamarin.Forms. Zamiast tego składa się z projektem platformy Xamarin.iOS projektu platformy Xamarin.Android i projektu platformy uniwersalnej systemu Windows. Każdy projekt jest natywnego projektu, który używa natywnego formularzy użycie [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron. Jednak nie ma powodu, dlaczego nie można korzystać z projektów natywnych `ContentPage`-pochodną stron PCL, biblioteki standardowej .NET lub projektu udostępnionego.
+> **NativeForms** przykładowe rozwiązanie aplikacji nie zawiera żadnych projektów platformy Xamarin.Forms. Zamiast tego składa się z projektem platformy Xamarin.iOS projektu platformy Xamarin.Android i projektu platformy uniwersalnej systemu Windows. Każdy projekt jest natywnego projektu, który używa natywnego formularzy użycie [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron. Jednak nie ma powodu, dlaczego nie można korzystać z projektów natywnych `ContentPage`-pochodną stron .NET Standard projektu biblioteki lub projektu udostępnionego.
 
 Podczas korzystania z natywnej formularzy, platformy Xamarin.Forms funkcje, takie jak [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)oraz aparat wiązania danych, wszystkie nadal wykonywane.
 
@@ -84,7 +84,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Raz `FinishedLaunching` metody zostało wykonane, interfejs użytkownika zdefiniowane w platformy Xamarin.Forms `PhonewordPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
+[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "PhonewordPage systemu iOS")
 
 Interakcja z interfejsu użytkownika, na przykład, naciskając pozycję na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), spowoduje obsługi zdarzeń w `PhonewordPage` wykonywania związane z kodem. Na przykład, gdy użytkownik naciska **Historia wywołań** przycisku, następujące programu obsługi zdarzeń jest wykonywana:
 
@@ -108,7 +108,7 @@ public void NavigateToCallHistoryPage()
 
 `NavigateToCallHistoryPage` Metoda konwertuje platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stronę, aby `UIViewController` z `CreateViewController` — metoda rozszerzenia i zestawy `Title` właściwość `UIViewController`. `UIViewController` Następnie spoczywa na `UINavigationController` przez `PushViewController` metody. W związku z tym interfejsu użytkownika zdefiniowane w platformy Xamarin.Forms `CallHistoryPage` będzie wyświetlana klasy, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
+[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "CallHistoryPage systemu iOS")
 
 Podczas `CallHistoryPage` jest wyświetlany, naciskając tylnej strzałkę będzie pop `UIViewController` dla `CallHistoryPage` klasę z `UINavigationController`, zwracanie użytkownikowi `UIViewController` dla `PhonewordPage` klasy.
 
@@ -292,7 +292,7 @@ public void NavigateToCallHistoryPage()
 
 Nawigacja w platformy uniwersalnej systemu Windows jest zwykle wykonywany z `Frame.Navigate` metodę, która przyjmuje `Page` argumentu. Definiuje platformy Xamarin.Forms `Frame.Navigate` — metoda rozszerzenia, która przyjmuje [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych wystąpienie strony. W związku z tym, kiedy `NavigateToCallHistoryPage` wykonuje metodę interfejsu użytkownika zdefiniowane w platformy Xamarin.Forms `CallHistoryPage` będą wyświetlane, jak pokazano na poniższym zrzucie ekranu:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "CallHistoryPage platformy uniwersalnej systemu Windows")
 
 Podczas `CallHistoryPage` jest wyświetlany, naciskając tylnej strzałkę będzie pop `FrameworkElement` dla `CallHistoryPage` w stosie przechodzenia wstecz w aplikacji, zwracając użytkownikowi `FrameworkElement` dla `PhonewordPage` klasy.
 
@@ -349,7 +349,7 @@ Aby uzyskać więcej informacji na temat obsługi nawigacji Wstecz na platformy 
 
 ## <a name="summary"></a>Podsumowanie
 
-Formularze natywnego Zezwalaj platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron, które mają być używane przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Można korzystać z projektów natywnych `ContentPage`-pochodnych stron, które są bezpośrednio dodawane do projektu, lub PCL, biblioteki standardowej .NET lub projektu udostępnionego. W tym artykule wyjaśniono, jak korzystać z `ContentPage`-pochodnych stron, które są bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi.
+Formularze natywnego Zezwalaj platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron, które mają być używane przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej. Można korzystać z projektów natywnych `ContentPage`-pochodnych stron, które bezpośrednio dodawane do projektu lub z projektu biblioteki .NET Standard lub projektu udostępnionego. W tym artykule wyjaśniono, jak korzystać z `ContentPage`-pochodnych stron, które są bezpośrednio dodawane do projektów natywnych i jak przechodzić między nimi.
 
 
 ## <a name="related-links"></a>Linki pokrewne

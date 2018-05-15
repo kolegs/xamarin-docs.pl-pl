@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/11/2018
+ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="splash-screen"></a>Ekran powitalny
 
@@ -152,6 +152,74 @@ public class MainActivity : AppCompatActivity
     // Code omitted for brevity
 }
 ```
+
+## <a name="landscape-mode"></a>Orientacja pozioma
+
+Ekran powitalny zaimplementowana w poprzednich krokach będą wyświetlane poprawnie w trybie zarówno pionowej i poziomej. Jednak w niektórych przypadkach należy mieć ekrany oddzielne powitalny dla trybów pionowej i poziomej (na przykład, jeśli obraz powitalny jest pełnego ekranu).
+
+Aby dodać ekran powitalny w trybie krajobraz, użyj następujących kroków:
+
+1. W **obiektów drawable/zasoby** folderu, dodać wersję pozioma obraz ekranu powitalnego, którego chcesz użyć. W tym przykładzie **splash_logo_land.png** jest wersja pozioma logo, które zostało użyte w powyższych przykładach (używa litery czarny zamiast niebieski).
+
+2. W **obiektów drawable/zasoby** folderu, utworzyć wersję pozioma `layer-list` obiektów drawable która została zdefiniowana wcześniej (na przykład **splash_screen_land.xml**). W tym pliku należy ustawić ścieżkę mapy bitowej do wersji pozioma obraz ekranu powitalnego. W poniższym przykładzie **splash_screen_land.xml** używa **splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+
+    ```
+
+3.  Utwórz **zasobów/wartości ziemi** folderu, jeśli jeszcze nie istnieje.
+
+4.  Dodaj pliki **colors.xml** i **style.xml** do **wartości ziemi** (te można kopiować i modyfikować z istniejącego **values/colors.xml**i **values/style.xml** plików).
+
+5.  Modyfikowanie **wartości grunt/style.xml** korzystającą z wersji pozioma obiektów drawable dla `windowBackground`. W tym przykładzie **splash_screen_land.xml** jest używany:
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  Modyfikowanie **wartości grunt/colors.xml** skonfigurować kolorów ma być używany dla wersji pozioma ekranu powitalnego. W tym przykładzie kolor tła powitalnym zostanie zmieniona na żółty w trybie krajobraz:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#FFFF00</color>
+    </resources>
+    ```
+
+7.  Skompiluj i uruchom ponownie aplikację. Obróć urządzenia na poziomą tryb, gdy nadal jest wyświetlany ekran powitalny. Ekran powitalny zmiany orientacji poziomej wersji:
+
+    [![Obracanie ekranu powitalnego tryb poziomo](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+Należy pamiętać, że korzystanie z ekranu powitalnego tryb poziomo nie zawsze zapewnia bezproblemowe. Domyślnie Android uruchamia aplikację w trybie portret i go w poziomie tryb, nawet jeśli urządzenie jest już w trybie krajobraz przejścia. W związku z tym jeśli aplikacja jest uruchamiana, gdy urządzenie jest w trybie krajobraz, urządzenie krótko wyświetla ekran powitalny pionowa i następnie animuje obrót z pionowej do ekranu powitalnego orientacji poziomej. Niestety, odbywa się to początkowa przejście pionowa pozioma nawet wtedy, gdy `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` jest określony we flagach działania powitalny. Najlepszym sposobem obejść to ograniczenie jest poprawnie utworzyć obraz ekranu powitalnego jednego, który renderuje w trybach pionowa i orientacji poziomej.
 
 
 ## <a name="summary"></a>Podsumowanie

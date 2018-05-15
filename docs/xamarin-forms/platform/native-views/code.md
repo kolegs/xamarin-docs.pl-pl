@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-c"></a>Natywny widoków w języku C#
 
@@ -19,7 +19,7 @@ _Natywny widoków z systemami iOS, Android i platformy uniwersalnej systemu Wind
 
 ## <a name="overview"></a>Omówienie
 
-Wszystkie platformy Xamarin.Forms formant, który umożliwia `Content` ustawiania, lub `Children` kolekcji, można dodawać widoki specyficzne dla platformy. Na przykład iOS `UILabel` można bezpośrednio dodać do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) właściwości, lub do [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekcji. Jednak należy pamiętać, że ta funkcja wymaga użycia `#if` definiuje w rozwiązaniach platformy Xamarin.Forms projektu udostępnionego i nie jest dostępna z rozwiązań platformy Xamarin.Forms przenośnej biblioteki klasy (PCL).
+Wszystkie platformy Xamarin.Forms formant, który umożliwia `Content` ustawiania, lub `Children` kolekcji, można dodawać widoki specyficzne dla platformy. Na przykład iOS `UILabel` można bezpośrednio dodać do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) właściwości, lub do [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekcji. Jednak należy pamiętać, że ta funkcja wymaga użycia `#if` definiuje w rozwiązaniach platformy Xamarin.Forms projektu udostępnionego i nie jest dostępna z rozwiązań biblioteki platformy Xamarin.Forms .NET Standard.
 
 Poniższe zrzuty ekranu pokazują widoki specyficzne dla platformy, został on dodany do platformy Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 

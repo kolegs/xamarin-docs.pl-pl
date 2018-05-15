@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [Układy z kartami](user-interface/layouts/tab-layout/index.md)
 ##### [Karty nawigacji z obiektem ActionBar](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [Omówienie obiektu TabHost](user-interface/layouts/tab-layout/tab-host.md)
-##### [Tworzenie interfejsu użytkownika z kartami za pomocą obiektu TabHost](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [Kontrolki](user-interface/controls/index.md)
 #### [ActionBar](user-interface/controls/action-bar.md)
 #### [Autouzupełnianie](user-interface/controls/auto-complete.md)
