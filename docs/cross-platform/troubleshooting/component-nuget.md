@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 
-> [!NOTE]
+> [!IMPORTANT]
+> Magazyn składników nie jest obsługiwany począwszy od 15 maja 2018 (ta zamknięcia pierwotnie [ogłoszenia](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) w listopadzie 2017).
+>
 > Xamarin składniki nie są już obsługiwane w programie Visual Studio i powinna zostać zastąpiona pakietów NuGet. Postępuj zgodnie z instrukcjami poniżej, aby ręcznie usunąć odwołania do składników z projektów.
 
 Dotyczą te instrukcje dotyczące dodawania pakietów NuGet w [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) lub [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
+Lista popularnych Xamarin [dodatków plug-in i bibliotek](https://github.com/xamarin/XamarinComponents/blob/master/README.md) jest dostępny do znajdowania alternatywy dla składników, które są dostępne, ponieważ NuGet pacakges.
+
 ## <a name="manually-removing-component-references"></a>Ręczne usuwanie odwołań składnika
 
-2017 listopada został [ogłoszenia](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) który magazynie składników Xamarin będzie przerywane. W ramach działań zmierzających do przejście z sunsetting składników 15.6 wydania programu Visual Studio i 7.4 wydania programu Visual Studio dla komputerów Mac nie obsługują składników w projekcie. 
+15.6 wydania programu Visual Studio i 7.4 wydania programu Visual Studio dla komputerów Mac nie obsługują składników w projekcie. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ Wielu dostawców składnika nadal jest wykonywane na temat migracji do NuGet i i
 
 
 ## <a name="related-links"></a>Linki pokrewne
-
+- [Lista popularnych wtyczek Xamarin i biblioteki](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Zainstalować i używać pakietu NuGet (system Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [W tym pakietu NuGet (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

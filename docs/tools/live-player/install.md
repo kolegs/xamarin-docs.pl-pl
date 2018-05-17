@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: topgenorth
 ms.author: toopge
-ms.date: 11/22/2017
-ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2018
+ms.openlocfilehash: bbc935c2770fab1a853bb12fba2b7eb0283bb258
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Ustawienia odtwarzacza na żywo Xamarin
 
@@ -30,7 +30,9 @@ Dla urządzeń z systemem Android bez Google Play Xamarin odtwarzacz na żywo je
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Firma Microsoft zachęca użytkowników do dołączenia do [aplikacji odtwarzacza Live Xamarin _z systemem iOS w wersji zapoznawczej_ ](https://aka.ms/liveplayeralpha) można uzyskiwać dostęp do najnowszych ulepszeń za pośrednictwem TestFlight.
+Zachęcamy do dołączenia Xamarin Live Player iOS aplikacji kredyty szybki dostęp do najnowszych ulepszeń za pośrednictwem TestFlight w wersji zapoznawczej. Po zalogowaniu się do odtwarzacza Live Xamarin, wyraża zgodę na serwerze raportowania Microsoft [warunki użytkowania](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) & [poufności](https://privacy.microsoft.com/en-us/privacystatement). Firma Microsoft może używać Twoich informacji kontaktowych, aby dostarczać aktualizacje i ofert specjalnych dotyczących platformy Xamarin i innych produktów firmy Microsoft i usług. Subskrypcję można anulować w dowolnym momencie.
+
+Aby uzyskać dostęp do Xamarin Live Player iOS w wersji zapoznawczej, przeprowadź [informacje rejestracyjne TestFlight](https://fastring.xamarinliveplayer.com/), po upływie którego użytkownik otrzyma wiadomość e-mail z TestFlight o sposobie instalowania Xamarin Live Player iOS w wersji zapoznawczej.
 
 -----
 
