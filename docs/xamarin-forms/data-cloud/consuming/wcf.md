@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c626008012ccdab2f8ed2c719b34a45471598d47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Korzystanie z usługi sieci Web Windows Communication Foundation (WCF)
 
@@ -52,7 +52,7 @@ Aby uzyskać więcej informacji na temat modelu danych używany w aplikacji, zob
 > [!NOTE]
 > Przykładowa aplikacja korzysta z usługi WCF hostowanej Xamarin, która umożliwia dostęp tylko do odczytu do usługi sieci web. W związku z tym operacje, które tworzenie, aktualizowanie i usuwanie danych nie ma wpływu czy dane używane w aplikacji. Jednak jest dostępna w wersji pełnić rolę hosta usługi ASMX **TodoWCFService** folderu w towarzyszący przykładowej aplikacji. Ta wersja pełnić rolę hosta zezwoleń usługi WCF pełna tworzenia, aktualizacji, do odczytu i usuwania dostęp do danych.
 
-A *proxy* musi zostać wygenerowany użycie usługi WCF, dzięki czemu aplikacji połączyć się z usługą. Serwer proxy jest tworzony przez odbierającą metadanych usługi definiują metody i skojarzona usługa konfiguracji. Te metadane jest widoczna w formularzu sieci Web Services Description Language (WSDL) dokument, który jest generowany przez usługę sieci web. Serwer proxy mogą być tworzone przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 można dodać odwołania do usługi dla usługi sieci web do biblioteki standardowej .NET. Zamiast tworzenia proxy przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 jest za pomocą narzędzia narzędzie metadanych elementu ServiceModel (svcutil.exe). Aby uzyskać więcej informacji, zobacz [narzędzie narzędzia metadanych elementu ServiceModel (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
+A *proxy* musi zostać wygenerowany użycie usługi WCF, dzięki czemu aplikacji połączyć się z usługą. Serwer proxy jest tworzony przez odbierającą metadanych usługi definiują metody i skojarzona usługa konfiguracji. Te metadane jest widoczna w formularzu sieci Web Services Description Language (WSDL) dokument, który jest generowany przez usługę sieci web. Serwer proxy mogą być tworzone przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 można dodać odwołania do usługi dla usługi sieci web do biblioteki .NET Standard. Zamiast tworzenia proxy przy użyciu dostawcy odwołanie usług sieci Web WCF firmy Microsoft w programie Visual Studio 2017 jest za pomocą narzędzia narzędzie metadanych elementu ServiceModel (svcutil.exe). Aby uzyskać więcej informacji, zobacz [narzędzie narzędzia metadanych elementu ServiceModel (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 
 Klasy wygenerowany serwer proxy podania metod służący do konsumowania usługi sieci web, które korzystają z wzorca projektowego asynchronicznego programowania modelu (APM). W tym wzorcu operacji asynchronicznej jest zaimplementowany jako dwie metody o nazwie *BeginOperationName* i *EndOperationName*, który rozpoczęcia i zakończenia operacji asynchronicznej.
 

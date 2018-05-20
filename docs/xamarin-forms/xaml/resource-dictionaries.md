@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="resource-dictionaries"></a>Słowniki zasobów
 
@@ -35,7 +35,7 @@ Zasoby są zdefiniowane w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDi
 Program platformy Xamarin.Forms zawiera tylko jedną klasę, która pochodzi z `Application` , ale często korzysta z wielu klas, które pochodzą z `VisualElement`, w tym stron, układów i kontrolek. Dowolnego z tych obiektów może mieć jego `Resources` ustawioną właściwość `ResourceDictionary`. Wybieranie gdzie umieścić określonego `ResourceDictionary` wpływa na której można użyć zasobów:
 
 - Zasoby w `ResourceDictionary` takich jak, która jest dołączona do widoku `Button` lub `Label` można stosować na dany obiekt, więc nie jest to bardzo przydatne.
-- Zasoby w `ResourceDictionary` dołączony układ, takich jak `StackLayout` lub `Grid` można zastosować układu i wszystkie elementy podrzędne tego układu. 
+- Zasoby w `ResourceDictionary` dołączony układ, takich jak `StackLayout` lub `Grid` można zastosować układu i wszystkie elementy podrzędne tego układu.
 - Zasoby w `ResourceDictionary` zdefiniowane na stronie poziomu może odnosić się do strony i wszystkich jego elementów podrzędnych.
 - Zasoby w `ResourceDictionary` zdefiniowanych w aplikacji poziomu mogą być stosowane w całej aplikacji.
 
@@ -187,7 +187,7 @@ Można utworzyć wystąpienia `MyResourceDictionary` umieszczając między dwoma
         <local:MyResourceDictionary />
     </ContentPage.Resources>
     ...
-</ContentPage>  
+</ContentPage>
 ```
 
 Wystąpienie `MyResourceDictionary` ustawiono `Resources` właściwość `ContentPage` obiektu.
@@ -258,7 +258,7 @@ W przypadku scalania [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDiction
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Scalanie słowniki w platformy Xamarin.Forms 3.0
 
-Począwszy od platformy Xamarin.Forms 3.0, proces scalania `ResourceDictionaries` stał się nieco łatwiejsze i bardziej elastyczne. `MergedDictionaries` Znaczniki elementu właściwości nie są już wymagane. Zamiast tego możesz dodać do słownika zasobów innego `ResourceDictionary` tagu z nowym [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) właściwość nazwy pliku XAML z zasobami:
+Począwszy od platformy Xamarin.Forms 3.0, proces scalania [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) wystąpień stało się nieco łatwiejsze i bardziej elastyczne. `MergedDictionaries` Znaczniki elementu właściwości nie są już wymagane. Zamiast tego możesz dodać do słownika zasobów innego `ResourceDictionary` tagu z nowym [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) właściwość nazwy pliku XAML z zasobami:
 
 ```xaml
 <ContentPage ...>
@@ -294,7 +294,7 @@ Ponieważ 3.0 platformy Xamarin.Forms automatycznie tworzy `ResourceDictionary`,
 </ContentPage>
 ```
 
-Jest to nowej składni _nie_ wystąpienia `MyResourceDictionary` klasy. Zamiast tego odwołuje się plik XAML. Który przyczyny pliku CodeBehind (**MyResourceDictionary.xaml.cs**) nie jest już wymagane. Można również usunąć `x:Class` atrybut z tagu głównego **MyResourceDictionary.xaml** pliku. 
+Jest to nowej składni _nie_ wystąpienia `MyResourceDictionary` klasy. Zamiast tego odwołuje się plik XAML. Który przyczyny pliku CodeBehind (**MyResourceDictionary.xaml.cs**) nie jest już wymagane. Można również usunąć `x:Class` atrybut z tagu głównego **MyResourceDictionary.xaml** pliku.
 
 ## <a name="summary"></a>Podsumowanie
 

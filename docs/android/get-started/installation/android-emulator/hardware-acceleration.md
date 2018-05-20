@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/10/2018
-ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Przyspieszanie sprzętowe emulatora systemu android
 
@@ -46,9 +46,9 @@ Aby rozpocząć używanie funkcji Hyper-V i Emulator systemu Google Android:
 
     Może być konieczne ponowne uruchomienie systemu Windows po włączeniu funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows.
 
-3. **Zainstaluj [programu Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
+3. **Zainstaluj [Visual Studio 15.8 Preview 1 lub nowszym](https://www.visualstudio.com/vs/preview/)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
 
-4. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszej** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
+4. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszym** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
 
     [![Okno dialogowe narzędzia i zestawy SDK systemu android](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 

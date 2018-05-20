@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Platformy systemu android — szczegóły
 
@@ -135,7 +135,7 @@ Wynik jest tym stronicowania przejdź na stronach wyświetlane przez [ `TabbedPa
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>Kontrolowanie podniesienie elementy wizualne
 
-Ta specyficzne dla platformy jest używany do kontrolowania podniesienia uprawnień lub porządek, elementów wizualnych na aplikacje interfejsu API 21 obiektu docelowego lub większą. Podniesienie poziomu elementu wizualnego określa jego kolejność rysowania visual elementami o wyższych wartościach Z occluding elementy wizualne o niższych wartościach Z. Jest używany w języku XAML, ustawiając `Elevation.Elevation` dołączona właściwość do `boolean` wartość:
+Ta specyficzne dla platformy jest używany do kontrolowania podniesienia uprawnień lub porządek, elementów wizualnych na aplikacje interfejsu API 21 obiektu docelowego lub większą. Podniesienie poziomu elementu wizualnego określa jego kolejność rysowania visual elementami o wyższych wartościach Z occluding elementy wizualne o niższych wartościach Z. Jest używany w języku XAML, ustawiając `VisualElement.Elevation` dołączona właściwość do `boolean` wartość:
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ Ta specyficzne dla platformy jest używany do kontrolowania podniesienia uprawni
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` — Metoda określa, czy ten specyficzne dla platformy działa tylko w systemie Android. `Elevation.SetElevation` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do ustawiania podniesienie element wizualny na dopuszczający wartości null `float`. Ponadto `Elevation.GetElevation` metody można użyć do pobierania wartości elementu wizualnego podniesienia uprawnień.
+`Button.On<Android>` — Metoda określa, czy ten specyficzne dla platformy działa tylko w systemie Android. `VisualElement.SetElevation` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do ustawiania podniesienie element wizualny na dopuszczający wartości null `float`. Ponadto `VisualElement.GetElevation` metody można użyć do pobierania wartości elementu wizualnego podniesienia uprawnień.
 
 Wynik jest, że podwyższenie poziomu elementy wizualne mogą być kontrolowane tak, aby elementy wizualne o wyższych wartościach Z occlude elementy wizualne o niższych wartościach Z. W związku z tym, w tym przykładzie drugi [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) jest renderowany powyżej [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) , ponieważ ma ona wartość większą podniesienia uprawnień:
 

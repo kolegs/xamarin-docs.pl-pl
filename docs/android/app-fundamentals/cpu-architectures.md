@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: abfe22683de024f056d7798dc3ac2de13ebd953e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="cpu-architectures"></a>Architektury Procesora
 
@@ -29,7 +29,7 @@ Aby uzyskać więcej informacji na temat sposobu wykonywania, zobacz [urządzeń
 
 Zazwyczaj należy jawnie wybierz architekturę (lub architektury), gdy aplikacja jest skonfigurowany dla **wersji**. Jeśli aplikacja została skonfigurowana do **debugowania**, **Użyj udostępnionych w czasie wykonywania** i **Użyj szybkiego wdrożenia** opcje są włączone, które wyłącz wybieranie jawne architektury.
 
-W programie Visual Studio, kliknij dwukrotnie **właściwości** w obszarze projektu w **Eksploratora rozwiązań** i wybierz **Android opcje** strony. Kliknij przycisk **pakowania** kartę i sprawdź, czy **Użyj udostępnionych w czasie wykonywania** jest wyłączone (wyłączenie tej opcji można jawnie wybrać które ABIs do obsługi). Kliknij przycisk **zaawansowane** kartę i w obszarze **właściwości zaawansowane**, sprawdź architektury, które mają być obsługiwane:
+W programie Visual Studio, kliknij prawym przyciskiem myszy projekt w obszarze **Eksploratora rozwiązań** i wybierz **właściwości**. W obszarze **Android opcje** strony wyboru **właściwości pakowania** sekcji i sprawdź, czy **Użyj udostępnionych w czasie wykonywania** jest wyłączone (wyłączenie tej opcji umożliwia jawnie Wybierz które ABIs do obsługi). Kliknij przycisk **zaawansowane** przycisk i w obszarze **obsługiwane architektury**, sprawdź architektury, które mają być obsługiwane:
 
 [![Wybieranie armeabi i armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 270904b87b1e37d4c4a74d997af50517fd6ffc5f
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="controls-reference"></a>Odwołanie do formantów
 
 _Opis wszystkich elementów wizualnych użyty do utworzenia aplikacji platformy Xamarin.Forms._
 
-Wizualny interfejs aplikacji platformy Xamarin.Forms jest tworzony obiektów, które mapują kontrolki natywne każdej platformy docelowej. Dzięki temu aplikacje specyficzne dla platformy dla systemów iOS, Android i platformy uniwersalnej systemu Windows do platformy Xamarin.Forms kod zawarty w [biblioteki standardowej .NET](~/cross-platform/app-fundamentals/net-standard.md) lub [projektu udostępnionego](~/cross-platform/app-fundamentals/shared-projects.md).
+Wizualny interfejs aplikacji platformy Xamarin.Forms jest tworzony obiektów, które mapują kontrolki natywne każdej platformy docelowej. Dzięki temu aplikacje specyficzne dla platformy dla systemów iOS, Android i platformy uniwersalnej systemu Windows do platformy Xamarin.Forms kod zawarty w [biblioteki .NET Standard](~/cross-platform/app-fundamentals/net-standard.md) lub [projektu udostępnionego](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Cztery grupy formantu używany do tworzenia interfejsu użytkownika aplikacji platformy Xamarin.Forms są przedstawione w następujących artykułach cztery:
 
