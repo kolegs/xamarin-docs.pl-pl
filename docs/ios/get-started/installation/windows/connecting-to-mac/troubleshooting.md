@@ -159,7 +159,7 @@ Zgłoszony przyczyny:
 
     1. Potwierdź lokalizację **sshd\_config** pliku uruchamiając `ls /etc/ssh/sshd_config` i `ls /etc/sshd_config` Terminal wiersza polecenia. Wszystkie pozostałe kroki, należy użyć lokalizacji, która jest _nie_ zwracać "Brak pliku lub katalogu".
 
-        [![](troubleshooting-images/troubleshooting-image18.png "Uruchomiony "/etc/ssh/sshd_config ls" i "/etc/sshd_config ls" w terminalu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "Uruchomiony \"/etc/ssh/sshd_config ls\" i \"/etc/sshd_config ls\" w terminalu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Uruchom `cp /etc/ssh/sshd_config "$HOME/Desktop/"` w terminalu, aby skopiować plik na pulpicie.
 
