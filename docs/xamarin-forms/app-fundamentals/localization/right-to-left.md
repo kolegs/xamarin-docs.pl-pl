@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>Lokalizacja od prawej do lewej
 
@@ -24,7 +24,7 @@ _Lokalizacja od prawej do lewej dodaje obsługę kierunek przepływu od prawej d
 Kierunek przepływu jest kierunek, w którym elementy interfejsu użytkownika na stronie są skanowane przez oczu. Niektóre języki, np. arabski i hebrajski, wymagają poukładany elementy interfejsu użytkownika w kierunku przepływu od prawej do lewej. Można to osiągnąć przez ustawienie [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) właściwości. Ta właściwość pobiera lub Ustawia kierunek, w którym przepływ elementy interfejsu użytkownika w obrębie dowolnego elementu nadrzędnego, który kontroluje ich układ i powinny być ustawione na jedną z [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) wartości wyliczenia:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 Ustawienie [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) właściwości [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) w elemencie zazwyczaj Ustawia wyrównanie w prawo, aby czytania od prawej do lewej i układ formantu przepływać z od prawej do lewej:

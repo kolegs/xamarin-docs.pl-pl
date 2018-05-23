@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Geokodowanie Xamarin.Essentials
+# <a name="xamarinessentials-geolocation"></a>Używanie funkcji Geolokalizacji Xamarin.Essentials
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **używanie funkcji Geolokalizacji** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **Geolokalizacja** , następujące ustawienia specyficzne dla platformy jest wymagane:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -35,9 +35,9 @@ Otwórz **AssemblyInfo.cs** plików w obszarze **właściwości** folderu i doda
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
 ```
 
-LUB zaktualizować manifestu systemu Android:
+Lub zaktualizować manifestu systemu Android:
 
-Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła.
+Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła:
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,15 +47,15 @@ Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i 
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Kliknij prawym przyciskiem myszy projekt Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **ACCESS_COARSE_LOCATION** i **ACCESS_FINE_LOCATION**uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy projekt Android i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **ACCESS_COARSE_LOCATION** i **ACCESS_FINE_LOCATION**uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Aplikacja musi mieć klucze Twojej **Info.plist** dla NSLocationWhenInUseUsageDescription w celu uzyskania dostępu do lokalizacji urządzenia.
+Aplikacji **Info.plist** musi zawierać `NSLocationWhenInUseUsageDescription` klucza w celu uzyskania dostępu do lokalizacji urządzenia.
 
 Otwórz Edytor właściwości i dodać **prywatność — lokalizacja podczas użycia użycia opis** właściwości i wartości do wyświetlenia użytkownika wypełniane.
 
-LUB ręcznie edytować plik i dodaj następujące informacje:
+Lub ręcznie edytować plik i dodaj następujące informacje:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-Kwerenda bieżącego urządzenia [lokalizacji](xref:Xamarin.Essentials.Location) współrzędne `GetLocationAsync` mogą być używane. Zalecane jest przekazywanie pełnej `GeolocationRequest` i `CancellationToken` ponieważ może upłynąć trochę czasu lokalizacji urządzenia.
+Kwerenda bieżącego urządzenia [lokalizacji](xref:Xamarin.Essentials.Location) współrzędne, `GetLocationAsync` mogą być używane. Najlepiej do przekazania w pełni `GeolocationRequest` i `CancellationToken` ponieważ może upłynąć trochę czasu lokalizacji urządzenia.
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>Dokładność używanie funkcji Geolokalizacji
 
-W poniższej tabeli przedstawiono dokładność dla każdej platformy
+W poniższej tabeli przedstawiono dokładność dla każdej platformy:
 
 ### <a name="lowest"></a>Najniższa
 

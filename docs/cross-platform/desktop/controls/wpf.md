@@ -4,11 +4,11 @@ title: 'WPF vs. Platformy Xamarin.Forms: Podobieństwa & różnice'
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 21ffca65ee72308d1340a1db43471228b2adbe91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ac30a29a2b4982b2f995c9f717cf1893ca5d8b8a
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF vs. Platformy Xamarin.Forms: Podobieństwa & różnice
 
@@ -33,7 +33,7 @@ XAML jest używany jako język znaczników deklaratywne WPF i platformy Xamarin.
 
 - Obsługuje platformy Xamarin.Forms [specyfikacji języka XAML 2009](/dotnet/framework/xaml-services/xaml-2009-language-features/); ułatwia określenie danych, takich jak `string`s, `int`s, itp. oraz jak Definiowanie typów ogólnych i przekazywanie argumentów konstruktorów.
 
-- Nie istnieje obecnie sposób załadować dyanmically XAML jak WPF z `XamlReader`. Możesz uzyskać te same funkcje podstawowe z [pakietu NuGet](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) chociaż.
+- Obecnie nie istnieje sposób załadować dynamicznie XAML, jak WPF z `XamlReader`. Możesz uzyskać te same funkcje podstawowe z [pakietu NuGet](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) chociaż.
 
 ### <a name="markup-extensions"></a>Rozszerzenia znaczników
 

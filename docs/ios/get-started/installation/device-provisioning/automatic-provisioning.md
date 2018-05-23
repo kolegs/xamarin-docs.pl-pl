@@ -6,12 +6,12 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/06/2018
-ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/22/2018
+ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="automatic-provisioning"></a>Automatyczne inicjowanie obsługi administracyjnej
 
@@ -37,6 +37,14 @@ Możesz muszą również łączyć się z hostem kompilacji Mac, który ma nast�
 ## <a name="enabling-automatic-signing"></a>Włączenie automatycznego podpisywania
 
 Przed rozpoczęciem procesu podpisywania automatyczne powinny zapewnić zostały dodane w programie Visual Studio identyfikator Apple ID, zgodnie z opisem w [zarządzania kontami Apple](~/cross-platform/macios/apple-account-management.md) przewodnik. Po dodaniu identyfikator Apple ID, można użyć dowolnego skojarzonego _zespołu_. Dzięki temu certyfikaty, profile i innych identyfikatorów, które ma zostać wykonane przed zespołu. Identyfikator jest również używany do tworzenia zespołu prefiks dla Identyfikatora aplikacji, która zostanie uwzględniona w profilu inicjowania obsługi administracyjnej. Mając to umożliwia firmy Apple sprawdzić, za kogo się podaje się, że są.
+
+> [!IMPORTANT]
+> Przed rozpoczęciem upewnij się, że Zaloguj się do albo [iTunes Connect](https://itunesconnect.apple.com/) lub [appleid.apple.com](https://appleid.apple.com) do sprawdzenia zaakceptowali najnowszą zasady konta firmy Apple. Jeśli zostanie wyświetlony monit, wykonaj kroki, aby zaakceptować żadnych nowych umów konto od firmy Apple. Jeśli nie zaakceptujesz umowę prywatności z maja 2018 podczas próby zainicjowania obsługi administracyjnej urządzeniu zostanie wyświetlony następujący alert:
+> ```
+> Unexpected authentication failure. Reason: {
+> "authType" : "sa"
+>}
+>```
 
 Aby automatycznie zarejestrować aplikację do wdrożenia na urządzeniu z systemem iOS, wykonaj następujące czynności:
 

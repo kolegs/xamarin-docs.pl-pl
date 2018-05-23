@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 
@@ -21,7 +21,7 @@ _Obsługujący wiele platform natywnie kopii abstrakcji zestawu narzędzi interf
 
 ## <a name="overview"></a>Omówienie
 
-Platformy Xamarin.Forms to platforma, która umożliwia deweloperom szybkie tworzenie międzyplatformowego interfejsu użytkownika. Zapewnia ona jest abstrakcję własny interfejs użytkownika, który będzie renderowany przy użyciu kontrolki natywne dla systemu iOS, Android lub platformy uniwersalnej systemu Windows (UWP). Oznacza to, że aplikacje można udostępniać duża część ich kod interfejsu użytkownika i nadal zachować natywnego wyglądu i działania platformy docelowej.
+Platformy Xamarin.Forms to platforma, która umożliwia deweloperom szybkie tworzenie międzyplatformowego interfejsu użytkownika. Udostępnia abstrakcję własnego interfejsu użytkownika, który będzie renderowany przy użyciu kontrolki natywne dla systemu iOS, Android lub platformy uniwersalnej systemu Windows (UWP). Oznacza to, że aplikacje można udostępniać duża część ich kod interfejsu użytkownika i nadal zachować natywnego wyglądu i działania platformy docelowej.
 
 Umożliwia szybkie tworzenie prototypów aplikacji, które można rozwijać, wraz z upływem czasu złożonych aplikacji platformy Xamarin.Forms. Ponieważ aplikacje platformy Xamarin.Forms natywnych aplikacji, nie ma ograniczenia innych narzędzi, takich jak sandboxing przeglądarki, ograniczone interfejsów API lub pogorszenie wydajności. Aplikacje napisane przy użyciu platformy Xamarin.Forms będą mogli korzystać z dowolnej z interfejsu API lub funkcji podstawowej platformy, takich jak (ale nie wyłącznie) CoreMotion, PassKit i StoreKit w systemie iOS; NFC i usług Google Play w systemie Android; i Kafelki w systemie Windows. Ponadto istnieje możliwość tworzenia aplikacji, które mają elementy interfejsu użytkownika utworzone za pomocą platformy Xamarin.Forms, podczas gdy inne elementy są tworzone przy użyciu natywnych narzędzi interfejsu użytkownika.
 

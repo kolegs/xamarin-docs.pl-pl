@@ -5,12 +5,12 @@ ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/26/2018
-ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/21/2018
+ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="signing-the-android-application-package"></a>Podpisywanie pakietu aplikacji systemu Android
 
@@ -113,9 +113,9 @@ Przejdź do odpowiedniej lokalizacji, a następnie kliknij przycisk **zapisać**
 
 [![Podpisywanie hasło w oknie dialogowym](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-Po zakończeniu procesu podpisywania, kliknij przycisk **Otwórz Folder**:
+Po zakończeniu procesu podpisywania, kliknij przycisk **dystrybucji Otwórz**:
 
-[![Przycisk Otwórz Folder](images/vs/08-open-folder-vs-sml.png)](images/vs/08-open-folder-vs.png#lightbox)
+[![Przycisk Otwórz dystrybucji](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
 Powoduje to, że program Eksplorator Windows otwórz folder zawierający wygenerowanego pliku APK. W tym momencie program Visual Studio został skompilowany aplikacji platformy Xamarin.Android APK, który jest gotowy do dystrybucji.
 Poniższy zrzut ekranu przedstawia przykład gotowe do publikowania aplikacji, **MyApp.MyApp.apk**:

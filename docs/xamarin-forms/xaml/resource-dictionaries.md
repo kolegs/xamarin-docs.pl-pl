@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/07/2018
-ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/21/2018
+ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="resource-dictionaries"></a>Słowniki zasobów
 
@@ -30,7 +30,7 @@ W języku XAML, zasobów, które są przechowywane w `ResourceDictionary` nastę
 Zasoby są zdefiniowane w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) który jest następnie ustawioną na jedną z następujących `Resources` właściwości:
 
 - [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Właściwości każdej klasy, która jest pochodną [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Właściwości każdej klasy, która jest pochodną ["VisualElement"](xref:Xamarin.Forms.Application)
+- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Właściwości każdej klasy, która jest pochodną [`VisualElement`](xref:Xamarin.Forms.Application)
 
 Program platformy Xamarin.Forms zawiera tylko jedną klasę, która pochodzi z `Application` , ale często korzysta z wielu klas, które pochodzą z `VisualElement`, w tym stron, układów i kontrolek. Dowolnego z tych obiektów może mieć jego `Resources` ustawioną właściwość `ResourceDictionary`. Wybieranie gdzie umieścić określonego `ResourceDictionary` wpływa na której można użyć zasobów:
 

@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Xamarin Profiler ma liczbę dokumentów, które są dostępne dla profilowania �
 
 W tym przewodniku sprawdza typowych scenariuszy profilowania i wprowadza profilera jako narzędzie można ułatwić analizowanie i zoptymalizować iOS i Android aplikacji.
 
-## <a name="contents"></a>Spis treści
-
-- [Pobierz i zainstaluj](#Download_and_Install)
-- [Profilery i profilowania](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [Obsługa profilera](#Profiler_Support)
-- [Podstawy profilera](#Profiler_Basics)
-    - [Stosowanie profilowania w aplikacji](#Allowing_Profiling_in_your_App)
-    - [Uruchamianie profilera](#Launching_the_Profiler)
-        - [Uruchamianie z programu Visual Studio dla komputerów Mac](#Launching_from_Xamarin_Studio)
-        - [Uruchamianie z programu Visual Studio](#Launching_from_Visual_Studio)
-        - [Zapisywanie i ładowanie sesji profilera](#Saving_and_Loading_Profiler_Sessions)
-        - [Profiler funkcje i narzędzia](#Profiler_Features)
-    - [Alokacje](#Allocations)
-    - [Profiler czasu](#Time_Profiler)
-    - [Cykle](#Cycles)
-- [Profilowanie aplikacji](#Profiling_Applications)
-- [Podsumowanie](#Summary)
-
 ## <a name="download-and-install"></a>Pobierz i zainstaluj
 
 > [!NOTE]
-> **Uwaga:** należy być [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) subskrybenta, aby odblokować tę funkcję w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac na komputerach Mac.
+> Musisz być [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) subskrybenta, aby odblokować tę funkcję w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac na komputerach Mac.
 
 Xamarin Profiler to aplikacja autonomiczna i jest zintegrowana z programu Visual Studio for Mac i Visual Studio włączyć profilowanie z w środowisku IDE.
-
-### <a name="download"></a>Pobieranie
 
 Pobierz pakiet instalacyjny dla danej platformy:
 
@@ -58,7 +37,6 @@ Pobierz pakiet instalacyjny dla danej platformy:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Po pobraniu, uruchom Instalatora, aby dodać profilera Xamarin do systemu.
-
 
 ## <a name="profilers-and-profiling"></a>Profilery i profilowania
 
@@ -199,7 +177,6 @@ Można załadować *.mlpd* plików do profilera, otwierając aplikacja autonomic
 
 Aby uzyskać więcej informacji, zobacz [Generowanie plików .mlpd ](~/tools/profiler/troubleshooting.md#gen_mlpd).
 
-
 ## <a name="profiler-features"></a>Funkcje profilera
 
 Xamarin Profiler składa się z pięciu sekcji, jak przedstawiono poniżej:
@@ -298,7 +275,6 @@ Wykres skrzynkowy jak pokazano na zrzucie ekranu poniżej, wyświetla liczbę pr
 
 -----
 
-
 - **Drzewie wywołań** — przedstawia ilość czasu przeznaczonego w każdej z metod:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -340,24 +316,7 @@ Jeśli profil aplikacji z dowolnej innej konfiguracji, zostanie wyświetlone nas
 
 -----
 
-
 Wybierz **aktualizacji** aby kontynuować.
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>Moduł zbierający elementy bezużyteczne SGen i profilowania
 
@@ -374,7 +333,6 @@ Aby uzyskać więcej informacji dotyczących zarządzania pamięcią, zapoznaj s
 ## <a name="summary"></a>Podsumowanie
 
 W tym przewodniku analizujemy jakie profilowania jest i jak jest korzystne do deweloperów. Następnie wprowadzono profilera Xamarin, niektóre historii oraz informacji w jej działania. Na koniec możemy toured funkcje profilera Xamarin i zbadane, alokacji i czasu profilera narzędzia.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

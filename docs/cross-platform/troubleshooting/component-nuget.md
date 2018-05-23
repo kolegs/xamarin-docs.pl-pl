@@ -7,11 +7,11 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
-ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
+ms.openlocfilehash: e9c056d37577a280b66bb3aa7ded19e966bca43b
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 05/14/2018
 
 Dotyczą te instrukcje dotyczące dodawania pakietów NuGet w [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) lub [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-Lista popularnych Xamarin [dodatków plug-in i bibliotek](https://github.com/xamarin/XamarinComponents/blob/master/README.md) jest dostępny do znajdowania alternatywy dla składników, które są dostępne, ponieważ NuGet pacakges.
+Lista popularnych Xamarin [wtyczek i bibliotek](https://github.com/xamarin/XamarinComponents/blob/master/README.md) jest dostępny do znajdowania alternatywy dla składników, które są dostępne, ponieważ pakietów NuGet.
 
 ## <a name="manually-removing-component-references"></a>Ręczne usuwanie odwołań składnika
 
