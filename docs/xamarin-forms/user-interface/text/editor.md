@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="editor"></a>Edytor
 
@@ -19,8 +19,8 @@ _Wprowadzanie tekstu wielowierszowego_
 
 `Editor` Kontroli służy do przyjmowania danych wejściowych wiele wierszy. W tym artykule opisano:
 
-- **[Dostosowywanie](#Customization)**  &ndash; opcje klawiatury i kolor.
-- **[Interakcyjności](#Interactivity)**  &ndash; zdarzenia, które mogą być nasłuch dla zapewnienie interakcji.
+- **[Dostosowywanie](#customization)**  &ndash; opcje klawiatury i kolor.
+- **[Interakcyjności](#interactivity)**  &ndash; zdarzenia, które mogą być nasłuch dla zapewnienie interakcji.
 
 ## <a name="customization"></a>Dostosowywanie
 
