@@ -48,7 +48,7 @@ W niektórych sytuacjach Xamarin Instalator może automatycznie usunąć zaznacz
     Jeśli rozszerzenia są poprawnie zainstalowane (dla wersji 3.1.228), będą 60 elementy w folderze:
 
 
-    ![](missing-vs-extensions-images/folder.png "Lista zawartości folderu "Xamarin\3.1.228.0" w Eksploratorze")
+    ![](missing-vs-extensions-images/folder.png "Lista zawartości folderu \"Xamarin\3.1.228.0\" w Eksploratorze")
 
 2. Po potwierdzeniu, że ten folder poprawne, Przekaż programowi Visual Studio próby konfigurowania rozszerzenia ponownie:
 

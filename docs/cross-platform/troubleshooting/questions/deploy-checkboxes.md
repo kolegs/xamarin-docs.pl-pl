@@ -18,7 +18,7 @@ Od Xamarin 3.5 projektów platformy Xamarin.iOS wdrażane automatycznie po naci�
 
 W związku z tym **Wdróż** pola wyboru celowo są wyłączone w programie Visual Studio Configuration Manager dla platformy Xamarin.iOS projektów:
 
-![](deploy-checkboxes-images/configuration.png "Wyświetlane pole wyboru "Wdróż" wyłączone dla projektu platformy Xamarin.iOS w wersji 3.5 Xamarin programu Visual Studio Configuration Manager")
+![](deploy-checkboxes-images/configuration.png "Wyświetlane pole wyboru \"Wdróż\" wyłączone dla projektu platformy Xamarin.iOS w wersji 3.5 Xamarin programu Visual Studio Configuration Manager")
 
 Ta zmiana eliminuje błąd, który może być w starszych wersjach programu Xamarin (wersja 3.3 i starszych), gdy projekt aplikacji platformy Xamarin.iOS nie został ustawiony na wdrażanie:
 
