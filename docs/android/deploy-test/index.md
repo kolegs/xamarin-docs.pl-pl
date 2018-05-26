@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: 8f14a067528067a34521452297080c98b4c1d1af
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="deployment-and-testing"></a>Wdrażanie i testowanie
 
@@ -57,6 +57,11 @@ W tym artykule omówiono proces łączenia używane przez platformy Xamarin.Andr
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android Performance](~/android/deploy-test/performance.md)
 
 Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za pomocą platformy Xamarin.Android. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację.
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Profilowanie aplikacji systemu Android](~/android/deploy-test/profiling.md)
+
+W tym przewodniku objaśniono sposób użycia profiler narzędzi do sprawdzania wydajności i użycie pamięci przez aplikację systemu Android.
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[Przygotowywanie aplikacji dla wersji](~/android/deploy-test/release-prep/index.md)
 
