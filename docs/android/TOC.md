@@ -232,6 +232,7 @@
 ### [Ustawienia konsolidatora niestandardowego](deploy-test/linker.md)
 ### [Urządzenia z procesorami wielordzeniowymi](deploy-test/multicore-devices.md)
 ### [Wydajność](deploy-test/performance.md)
+### [Profilowanie](deploy-test/profiling.md)
 ### [Przygotowanie do wydania](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [Podpisywanie zestawu APK](deploy-test/signing/index.md)
