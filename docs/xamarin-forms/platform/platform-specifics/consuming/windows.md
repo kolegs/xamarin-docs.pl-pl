@@ -6,12 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: d1610e4c9e6a8799362ff955061953962dd755ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/23/2018
+ms.openlocfilehash: d4ddb662bf167a0c80561cce097104a7f5fc8096
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "34546011"
 ---
 # <a name="windows-platform-specifics"></a>Platformy systemu Windows — szczegóły
 
@@ -19,8 +20,9 @@ _Szczegóły platformy pozwalają na korzystanie z funkcji, które są dostępne
 
 W systemie Windows platformy Uniwersalnej, platformy Xamarin.Forms zawiera następujące szczegóły platformy:
 
-- Opcje położenie paska narzędzi. Aby uzyskać więcej informacji, zobacz [zmiana rozmieszczenia narzędzi](#toolbar_placement).
-- Częściowo zwijane [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) paska nawigacyjnego. Aby uzyskać więcej informacji, zobacz [zwijanie paska nawigacyjnego MasterDetailPage](#collapsable_navigation_bar).
+- Ustawianie opcji położenia paska narzędzi. Aby uzyskać więcej informacji, zobacz [zmiana rozmieszczenia narzędzi](#toolbar_placement).
+- Zwijanie [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) paska nawigacyjnego. Aby uzyskać więcej informacji, zobacz [zwijanie paska nawigacyjnego MasterDetailPage](#collapsable_navigation_bar).
+- Włączanie [ `WebView` ](xref:Xamarin.Forms.WebView) do wyświetlania alertów JavaScript w oknie dialogowym komunikatu platformy uniwersalnej systemu Windows. Aby uzyskać więcej informacji, zobacz [wyświetlanie alertów JavaScript](#webview-javascript-alert).
 
 <a name="toolbar_placement" />
 
@@ -34,7 +36,6 @@ Poszczególnych platform służy do zmiany rozmieszczenia paska narzędzi na [ `
             windows:Page.ToolbarPlacement="Bottom">
   ...
 </TabbedPage>
-
 ```
 
 Alternatywnie mogą być używane w języku C# przy użyciu interfejsu API fluent:
@@ -85,10 +86,52 @@ Wynik jest to, że określonej [ `CollapseStyle` ](https://developer.xamarin.com
 
 [![](windows-images/collapsed-navigation-bar.png "Zwinięte specyficzne dla platformy pasek nawigacyjny")](windows-images/collapsed-navigation-bar-large.png#lightbox "zwinięte specyficzne dla platformy paska nawigacyjnego")
 
+<a name="webview-javascript-alert" />
+
+## <a name="displaying-javascript-alerts"></a>Wyświetlanie alertów JavaScript
+
+Umożliwia to specyficzne dla platformy [ `WebView` ](xref:Xamarin.Forms.WebView) do wyświetlania alertów JavaScript w oknie dialogowym komunikatu platformy uniwersalnej systemu Windows. Jest używany w języku XAML, ustawiając [ `WebView.IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) dołączona właściwość do `boolean` wartość:
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <WebView ... windows:WebView.IsJavaScriptAlertEnabled="true" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatywnie mogą być używane w języku C# przy użyciu interfejsu API fluent:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var webView = new Xamarin.Forms.WebView
+{
+  Source = new HtmlWebViewSource
+  {
+    Html = @"<html><body><button onclick=""window.alert('Hello World from JavaScript');"">Click Me</button></body></html>"
+  }
+};
+webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
+```
+
+`WebView.On<Windows>` Metoda określa, że poszczególnych platform będą uruchamiane tylko na platformy uniwersalnej systemu Windows. [ `WebView.SetIsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.SetIsJavaScriptAlertEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.WebView},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw, służy do sterowania czy JavaScript alerty są włączone. Ponadto `WebView.SetIsJavaScriptAlertEnabled` metody można użyć do wywoływania włączyć lub wyłączyć alerty JavaScript [ `IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) metody do zwrócenia, czy są włączone:
+
+```csharp
+_webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
+```
+
+Wynik jest, że JavaScript alerty mogą być wyświetlane w oknie dialogowym komunikatu platformy uniwersalnej systemu Windows:
+
+![Ostrzeżenie WebView JavaScript specyficzne dla platformy](windows-images/webview-javascript-alert.png "alert WebView JavaScript specyficzne dla platformy")
+
 ## <a name="summary"></a>Podsumowanie
 
 W tym artykule przedstawiono sposób korzystać z systemu Windows platformy — szczegółowe informacje na temat wbudowanych w platformy Xamarin.Forms. Szczegóły platformy pozwalają na korzystanie z funkcji, które są dostępne tylko na danej platformie, bez stosowania niestandardowe moduły renderowania lub efekty.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 
