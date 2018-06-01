@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689477"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>Stos HttpClient i selektor implementacji protokołów SSL/TLS dla systemu Android
 
@@ -89,9 +90,9 @@ Wybór między `AndroidClientHandler` i `HttpClientHandler` zależy od wymagań 
 
 Począwszy od platformy Xamarin.Android 8.3, `HttpClientHandler` wartość domyślna to wytaczania SSL (`btls`) jako podstawowy dostawca protokołu TLS. Dostawca wytaczania SSL TLS oferuje następujące korzyści:
 
--   Obsługuje ona protokołu TLS 1.2.
+-   Obsługuje ona protokołu TLS 1.2 +.
 -   Obsługuje ona wszystkie wersje systemu Android.
--   Zapewnia obsługę protokołu TLS 1.2 dla obu `HttpClient` i `WebClient`.
+-   Zapewnia Obsługa protokołu TLS 1.2 + zarówno `HttpClient` i `WebClient`.
 
 Przy użyciu wytaczania SSL jako podstawowy dostawca TLS wadą jest to, że może zwiększyć rozmiar wynikowy APK (dodaje dodatkowe rozmiar APK na obsługiwanych ABI około 1MB).
 
