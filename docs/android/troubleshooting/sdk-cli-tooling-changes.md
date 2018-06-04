@@ -7,12 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/02/2018
-ms.openlocfilehash: b5de9d673a348ddd4b939ae387257f835b37117a
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.date: 06/02/2018
+ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732869"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Zmiany do narzędzi zestawu SDK systemu Android
 
@@ -20,7 +21,7 @@ _Zmiany w zarządzaniu zestawu SDK systemu Android zainstalowane poziomy interfe
 
 ## <a name="changes-to-android-sdk-tooling"></a>Zmiany do narzędzi zestawu SDK systemu Android
 
-W nowszych wersjach narzędzia zestawu SDK dla systemu Android Firma Google usunęła istniejącego menedżera AVD i zestaw SDK na rzecz nowych narzędzi interfejsu wiersza polecenia (interfejsu wiersza polecenia). **Android** program został usunięty i menedżerów Google graficznego interfejsu użytkownika (graficznego interfejsu użytkownika) w programie Visual Studio for Mac i starszych wersji programu Xamarin dla Visual Studio nie będzie dłużej działać wcześniejszą wersję 25.2.5 narzędzia zestawu SDK systemu Android. Na przykład podjęto próbę użycia **android** program za pomocą wiersza polecenia spowoduje komunikat o błędzie, podobnie do następującej:
+W nowszych wersjach narzędzia zestawu SDK dla systemu Android Firma Google usunęła istniejącego menedżera AVD i zestaw SDK na rzecz nowych narzędzi interfejsu wiersza polecenia (interfejsu wiersza polecenia). **Android** program został usunięty i nie będzie działać menedżerów Google graficznego interfejsu użytkownika (graficznego interfejsu użytkownika) w programie Visual Studio for Mac i starsze wersje programu Visual Studio Tools for Xamarin wcześniejszą wersję 25.2.5 narzędzia zestawu SDK systemu Android. Na przykład podjęto próbę użycia **android** program za pomocą wiersza polecenia spowoduje komunikat o błędzie, podobnie do następującej:
 
 ```shell
 The "android" command is deprecated.
@@ -37,7 +38,7 @@ Visual Studio i Visual Studio for Mac zawierają teraz Xamarin zastępujące wyc
 
 -   Aby pobrać narzędzia zestawu SDK systemu Android, platform i inne składniki, które są potrzebne do tworzenia aplikacji platformy Xamarin.Android, należy użyć [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md) zamiast starszy Menedżer SDK Google.
 
--   Aby utworzyć i skonfigurować urządzeń wirtualnych z systemem Android, należy użyć [Menedżera urządzeń Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) zamiast starszych Menedżera emulatora Google.
+-   Aby utworzyć i skonfigurować urządzeń wirtualnych z systemem Android, należy użyć [Menedżera urządzeń Android](~/android/get-started/installation/android-emulator/device-manager.md) zamiast starszych Menedżera emulatora Google.
 
 Te narzędzia są taką samą funkcję jak Google graficzny interfejs menedżerów zastępują one.
 
@@ -69,7 +70,7 @@ Można nadal używać oryginalnego graficznego interfejsu użytkownika, uruchami
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md)
-- [Menedżer urządzeń systemu android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
+- [Menedżer urządzeń systemu android](~/android/get-started/installation/android-emulator/device-manager.md)
 - [Opis poziomów interfejsu API systemu Android](~/android/app-fundamentals/android-api-levels.md)
 - [Informacje o wersji (Google) narzędzia zestawu SDK](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

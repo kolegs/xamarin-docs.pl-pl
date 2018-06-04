@@ -6,12 +6,13 @@ ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 04/16/2018
-ms.openlocfilehash: e2f9b23bb298b0bb01f7e5491963daed4521ac9c
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 05/29/2018
+ms.openlocfilehash: 4be29dabfd98c84876b65cd1655dcc4a6d444eeb
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562844"
 ---
 # <a name="pair-to-mac"></a>Para Mac
 
@@ -38,6 +39,7 @@ Para Mac umożliwia poniższy przepływ pracy tworzenia:
 - Istnieje możliwość używania wiersza polecenia systemu Windows do tworzenia aplikacji systemu iOS.
 
 > [!NOTE]
+> 
 > Przed wykonaniem instrukcji zawartych w tym przewodniku, wykonaj następujące czynności: 
 > 
 > - Na komputerze z systemem Windows [zainstalować program Visual Studio 2017 r.](~/cross-platform/get-started/installation/windows.md)
@@ -161,6 +163,7 @@ Począwszy od [programu Visual Studio 2017 wersji 15,6](https://docs.microsoft.c
 > [!IMPORTANT]
 > - Para Mac nie może zainstalować Xcode; należy ręcznie zainstalować na hoście Mac kompilacji. Jest wymagane do tworzenia aplikacji platformy Xamarin.iOS.
 > - Automatyczne udostępnianie Mac wymaga logowania zdalnego jest włączone dla komputerów Mac, czy Mac musi być dostępne w sieci z komputerem z systemem Windows. Zobacz [Włączanie logowania zdalnego dla komputerów Mac](#enable-remote-login-on-the-mac) więcej szczegółów.
+> - Automatyczne udostępnianie Mac wymaga 3GB wolnego miejsca dla komputerów Mac do zainstalowania platformy Xamarin.iOS.
 
 Para Mac wykonuje instalacji/aktualizacje oprogramowania niezbędne w przypadku programu Visual Studio 2017 [połączenie z komputerem Mac](#connect-to-the-mac-from-visual-studio-2017).
 

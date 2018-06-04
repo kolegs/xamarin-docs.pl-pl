@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: b5aa0d3de7092ac87d511ab8d59c329471fa6a28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc6d8396c2908d251290e4540dbb3cec3344542f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732791"
 ---
 # <a name="introduction-to-behaviors"></a>Wprowadzenie do zachowania
 
@@ -38,4 +39,4 @@ Ten przewodnik koncentruje się na platformy Xamarin.Forms zachowania, ponieważ
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Zachowanie<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Zachowanie&lt;T&gt;](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)

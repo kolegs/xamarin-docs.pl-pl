@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732726"
 ---
 # <a name="introduction-to-effects"></a>Wprowadzenie do efekty
 
@@ -53,7 +54,7 @@ Efekty nie ma informacji o typie o kontenera, kontroli lub są one dołączone d
 
 Każdy specyficzne dla platformy `PlatformEffect` klasy udostępnia następujące metody, które musi zostać zastąpiona w celu wykonania wpływ:
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) — wywoływane, gdy wpływ jest dołączony do formantu platformy Xamarin.Forms. Zastąpiona wersja tej metody, w każdej klasie efekt platfom specyficzne jest miejscem do wykonania Dostosowywanie formantu, wraz z obsługą wyjątków w przypadku efekt nie można zastosować do określonego formantu platformy Xamarin.Forms.
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) — wywoływane, gdy efekt jest dołączony do formantu platformy Xamarin.Forms. Zastąpiona wersja tej metody, w każdej klasie efekt platfom specyficzne jest miejscem do wykonania Dostosowywanie formantu, wraz z obsługą wyjątków w przypadku efekt nie można zastosować do określonego formantu platformy Xamarin.Forms.
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) — wywoływane, gdy efekt jest odłączony od formantu platformy Xamarin.Forms. Zastąpiona wersja tej metody, w każdej klasie efekt specyficzne dla platformy jest miejscem do wykonania oczyszczania efekt takich jak deserializować rejestrowania programu obsługi zdarzeń.
 
 Ponadto `PlatformEffect` przedstawia [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/) metodę, która również może zostać zastąpiona. Ta metoda jest wywoływana, gdy zmieniono właściwość elementu. Zastąpiona wersja tej metody, w każdej klasie specyficzne dla platformy efekt jest miejscem do reagowania na zmiany właściwości możliwej do wiązania w formancie platformy Xamarin.Forms. Sprawdź właściwości, które uległy zmianie zawsze należy, jak to zastąpienie może zostać wywołana wiele razy.

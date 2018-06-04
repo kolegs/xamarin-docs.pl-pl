@@ -6,18 +6,19 @@ ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 32d98efd644fb033785fbae0d9689494e42b2809
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 691be280b80e379863cc09d0f1bba0ff5882cf21
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732924"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Zmiana parametrów pamięci Java projektanta dla systemu Android
 
 Domyślne parametry pamięci, które są używane podczas uruchamiania `java` przetworzyć dla systemu Android projektanta mogą być niezgodne z niektóre konfiguracje systemu.
 
-W programie Xamarin Studio 5.7.2.7 (i nowszym, w programie Visual Studio for Mac) i Xamarin dla Visual Studio 3.9.344 te ustawienia można dostosować dla projektu.
+W programie Xamarin Studio 5.7.2.7 (i nowszym, w programie Visual Studio for Mac) i Visual Studio Tools dla platformy Xamarin 3.9.344, te ustawienia można dostosować dla projektu.
 
 ## <a name="new-android-designer-properties-and-corresponding-java-options"></a>Nowe właściwości projektanta dla systemu Android i odpowiednie opcje języka Java
 

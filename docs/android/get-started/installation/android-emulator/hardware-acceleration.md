@@ -1,28 +1,43 @@
 ---
-title: Przyspieszanie sprzętowe emulatora systemu android
-description: Jak przygotować komputer do maksymalnej wydajności Emulator systemu Google Android
+title: Przyspieszanie sprzętowe emulatora wydajności
+description: W tym artykule wyjaśniono, jak używać funkcji przyspieszenia sprzętowego komputera w celu zwiększenia wydajności Emulator systemu Google Android.
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/10/2018
-ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/30/2018
+ms.openlocfilehash: cf75d070dfff97f48bab2210f72af747bc53099c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732947"
 ---
-# <a name="android-emulator-hardware-acceleration"></a>Przyspieszanie sprzętowe emulatora systemu android
+# <a name="hardware-acceleration-for-emulator-performance"></a>Przyspieszanie sprzętowe emulatora wydajności
 
-Emulator systemu Google Android jest zbyt niska bez przyspieszanie sprzętowe. Użytkownik może znacząco zwiększyć wydajność Emulator systemu Google Android przy użyciu emulatora specjalne hardward obrazów, sprzętem docelowej x86 i jeden z dwóch technologii wirtualizacji:
+_W tym artykule wyjaśniono, jak używać funkcji przyspieszenia sprzętowego komputera w celu zwiększenia wydajności Emulator systemu Google Android._
 
-1. **Firmy Microsoft Hyper-V i platformy Hypervisor** &ndash; funkcji Hyper-V jest składnikiem wirtualizacji, który jest dostępny w systemie Windows 10, umożliwiającą uruchomionych systemów komputerowych wirtualnego na hoście fizycznym. Jest to technologii wirtualizacji zalecane przyspieszonego obrazów Emulator systemu Google Android. Aby dowiedzieć się więcej o funkcji Hyper-V, zapoznaj się [funkcję Hyper-V systemu Windows 10 przewodnik](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
-2. **Firmy Intel sprzętu przyspieszyć wykonywanie Manager (HAXM)** &ndash; jest aparatem wirtualizacji dla komputerów z systemem procesory Intel. Jest to aparat wirtualizacji zalecane dla deweloperów, którzy nie mogli użyć funkcji Hyper-V.
+## <a name="overview"></a>Omówienie
 
-Android SDK Manager automatycznie wprowadzi Użyj sprzętowego przyspieszania, gdy jest ona dostępna jest uruchomiona obraz emulatora specjalnie z myślą o **x86**— na podstawie urządzenie wirtualne (zgodnie z opisem w [konfiguracji i użycia ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)).
+Visual Studio ułatwia deweloperom testowanie i debugowanie aplikacji platformy Xamarin.Android przy użyciu Emulator systemu Google Android w sytuacjach, gdy urządzenia z systemem Android jest niedostępny lub niepraktyczne.
+Jednak emulatora systemu Android jest uruchamiany zbyt wolno Jeśli przyspieszanie sprzętowe nie jest dostępny na komputerze, który uruchamia go. Może znacząco zwiększyć wydajność emulatora systemu Android przy użyciu obrazów specjalne urządzenia wirtualnego sprzętem docelowej x86 w połączeniu z jednej z dwóch technologii wirtualizacji:
 
-## <a name="hyper-v-overview"></a>Omówienie funkcji Hyper-V
+1. **Firmy Microsoft Hyper-V i platformy Hypervisor**. Funkcja Hyper-V jest funkcją wirtualizacji systemu Windows, która umożliwia systemami zwirtualizowanych komputera na fizycznym komputerze hosta. Jest to technologii wirtualizacji zalecane przyspieszenia Emulator systemu Google Android. Aby dowiedzieć się więcej o funkcji Hyper-V, zobacz [funkcji Hyper-V w systemie Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
+
+2. **Firmy Intel przyspieszane menedżera wykonywania (HAXM)**. 
+   HAXM jest aparatem wirtualizacji dla komputerów z systemem procesory Intel.
+   To jest aparat wirtualizacji zalecane dla komputerów, które nie można uruchomić funkcji Hyper-V.
+
+Google, który automatycznie wprowadzi emulatora systemu Android Użyj przyspieszenia sprzętowego, jeśli są spełnione poniższe kryteria:
+
+-   Przyspieszanie sprzętowe jest dostępna i włączona na komputerze dewelopera.
+
+-   Emulator działa obraz emulatora utworzone specjalnie do **x86**— na podstawie urządzenia wirtualnego.
+
+Aby uzyskać informacje o uruchamianiu i debugowanie za pomocą emulatora systemu Android, zobacz [debugowania za pomocą Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+
+## <a name="hyper-v"></a>Funkcja Hyper-V
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,38 +46,39 @@ Android SDK Manager automatycznie wprowadzi Użyj sprzętowego przyspieszania, g
 > [!NOTE]
 > Obsługa funkcji Hyper-V jest obecnie w przeglądzie.
 
-Deweloperzy, którzy korzystają z systemu Windows 10 (kwiecień 2018 aktualizacja) zdecydowanie zaleca się stosowanie firmy Microsoft Hyper-V. Visual Studio Tools dla platformy Xamarin ułatwiają deweloperom testowanie i debugowanie aplikacji platformy Xamarin.Android w sytuacjach, gdy urządzenia z systemem Android jest niedostępny lub niepraktyczne.
+Deweloperzy, którzy korzystają z systemu Windows 10 (kwiecień 2018 aktualizacji lub nowszym) zdecydowanie zaleca się stosowanie firmy Microsoft Hyper-V w celu przyspieszenia Emulator systemu Google Android. Aby Emulator systemu Google Android za pomocą funkcji Hyper-V:
 
-Aby rozpocząć używanie funkcji Hyper-V i Emulator systemu Google Android:
-
-1. **Aktualizacja systemu Windows 10 kwietnia 2018 aktualizacji (kompilacja 1803)** &ndash; Aby sprawdzić, która wersja systemu Windows jest uruchomiona, kliknij Cortana pasek wyszukiwania i wpisz **o**. Wybierz **o Twoim komputerze** w wynikach wyszukiwania. Przewiń w dół **o** okna dialogowego, do **specyfikacje Windows** sekcji. **Wersji** powinien być co najmniej 1803:
+1. **Aktualizacja systemu Windows 10 kwietnia 2018 aktualizacji (kompilacja 1803) lub nowszym**.
+   Aby sprawdzić, która wersja systemu Windows jest uruchomiona, kliknij na pasku wyszukiwania Cortany i typ **o**. Wybierz **o Twoim komputerze** w wynikach wyszukiwania. Przewiń w dół **o** okna dialogowego, aby **specyfikacje Windows** sekcji. **Wersji** powinien być co najmniej 1803:
 
     [![Specyfikacje systemu Windows](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-2. **Włączenia funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows** &ndash; pasek w wyszukiwania Cortana, typ **Włącz lub wyłącz funkcje systemu Windows**.
-   Przewiń w dół **funkcje systemu Windows** okna dialogowego i upewnij się, że **platformy funkcji Hypervisor systemu Windows** jest włączona.
+2. **Włączanie obsługi platformy funkcji Hypervisor systemu Windows**.
+   Na pasku wyszukiwania Cortany wpisz **Włącz lub wyłącz funkcje systemu Windows**.
+   Przewiń w dół **funkcje systemu Windows** okna dialogowego i upewnij się, że **platformy funkcji Hypervisor systemu Windows** jest włączona:
 
-    [![Funkcja Hyper-V i włączone platforma funkcji Hypervisor systemu Windows](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+    [![Platforma funkcji Hypervisor systemu Windows włączona](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
-    Może być konieczne ponowne uruchomienie systemu Windows po włączeniu funkcji Hyper-V i platformy funkcji Hypervisor systemu Windows.
+   Włączanie **platformy funkcji Hypervisor systemu Windows** automatycznie włącza funkcji Hyper-V. Zaleca się ponowne uruchomienie systemu Windows po wprowadzeniu tej zmiany.
 
-3. **Zainstaluj [Visual Studio 15.8 Preview 1 lub nowszym](https://www.visualstudio.com/vs/preview/)**  &ndash; tej wersji programu Visual Studio zapewnia obsługę środowiska IDE uruchamianie Emulator systemu Google Android z obsługą funkcji Hyper-V.
-
-4. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszym** &ndash; Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, składnik emulatora systemu Android jest co najmniej wersji 27.2.7.
+3. **Zainstaluj [Visual Studio 15.8 Preview 1 lub nowszym](https://www.visualstudio.com/vs/preview/)**.
+   Ta wersja programu Visual Studio zapewnia obsługę środowiska IDE uruchomiony Emulator systemu Google Android przy użyciu funkcji Hyper-V.
+ 
+4. **Zainstaluj pakiet emulator systemu Google Android 27.2.7 lub nowszym**. Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, że wersja emulatora systemu Android jest co najmniej 27.2.7. Upewnij się również, czy wersja narzędzia zestawu SDK systemu Android to 26.1.1 lub nowszy:
 
     [![Okno dialogowe narzędzia i zestawy SDK systemu android](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
-5. Jeśli wersja emulatora systemu Android jest mniejsza niż 27.3.1, zastosuj krok dodatkowe obejście wyjaśniono w **znane problemy** (dalej).
+5. Jeśli wersja emulatora jest co najmniej 27.2.7, ale mniej niż 27.3.1, poniższe obejście jest wymagany do użycia funkcji Hyper-V:
 
+    1.  W **C:\\użytkowników\\_username_\\.android** folderu, Utwórz plik o nazwie **advancedFeatures.ini** (jeśli go nie już istnieje).
 
-### <a name="known-issues"></a>Znane problemy
-
--   Jeśli wersja emulatora jest co najmniej 27.2.7, ale mniej niż 27.3.1, poniższe obejście jest wymagany do użycia funkcji Hyper-V:
-    1.  W **C:\\użytkowników\\_username_\\.android** folderu, Utwórz plik o nazwie **advancedFeatures.ini** w przeciwnym razie już istnieje.
     2.  Dodaj następujący wiersz do **advancedFeatures.ini**:
         ```
         WindowsHypervisorPlatform = on
         ```
+
+
+### <a name="known-issues"></a>Znane problemy
 
 -   Wydajność może się zmniejszyć, korzystając z określonych Intel i procesory AMD procesorów.
 
@@ -77,16 +93,16 @@ Obsługa funkcji Hyper-V wymaga systemu Windows 10. Zobacz [wymagania dotyczące
 
 -----
 
-## <a name="haxm-overview"></a>Omówienie HAXM
+## <a name="haxm"></a>HAXM
 
-HAXM jest aparatem Wirtualizacja sprzętowa (funkcja hypervisor), który używa Intel Virtualization Technology (VT) w celu przyspieszenia emulacji aplikacji systemu Android na komputerze hosta. W połączeniu z systemem Android x86 emulatora obrazy, pod warunkiem Intel i oficjalna Android SDK Manager HAXM umożliwia szybsze emulacji systemu Android w systemach z obsługą VT. 
+HAXM jest aparatem Wirtualizacja sprzętowa (funkcja hypervisor), który używa Intel Virtualization Technology (VT) w celu przyspieszenia emulacji aplikacji systemu Android na komputerze hosta. Przy użyciu HAXM w połączeniu z systemem Android x86 firmy Intel — obrazy emulatora umożliwia szybsze Android emulacji w systemach z obsługą VT.
 
-Jeśli tworzysz maszynę procesor CPU Intel VT funkcję, można skorzystać z HAXM aby znacznie przyspieszyć Emulator systemu Google Android (Jeśli nie masz pewności, czy Procesora obsługuje VT, zobacz [ustalić, czy Twoje procesora obsługuje Intel Technologii wirtualizacji](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+Jeśli tworzysz maszynę procesor CPU Intel VT funkcję, można skorzystać z HAXM aby znacznie przyspieszyć Emulator systemu Google Android (Jeśli nie masz pewności, czy Procesora obsługuje VT, zobacz [jest Moje procesora obsługuje Intel Technologia wirtualizacji? ](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
 > Nie można uruchomić emulatora przyspieszony maszyny Wirtualnej w innej maszyny Wirtualnej, np. maszyna wirtualna hostowana przez VirtualBox, serwery VMWare lub Docker. Należy uruchomić emulator systemu Google Android [bezpośrednio na danym urządzeniu systemu](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Przed użyciem Emulator systemu Google Android po raz pierwszy, jest dobrym rozwiązaniem, aby sprawdzić, czy HAXM jest zainstalowany i dostępny dla Emulator systemu Google Android.
+Przed użyciem Emulator systemu Google Android po raz pierwszy, jest dobrym rozwiązaniem, aby sprawdzić, czy HAXM jest zainstalowany i dostępny dla Emulator systemu Google Android do użycia.
 
 ### <a name="verifying-haxm-installation"></a>Weryfikowanie instalacji HAXM
 
@@ -94,9 +110,9 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Uruchom Menedżera emulatora systemu Android, klikając **Narzędzia > Android > Android Emulator Manager**:
+1. Uruchamianie Menedżera urządzeń systemu Android, klikając **Narzędzia > Android > Menedżera urządzeń Android**:
 
-    [![Lokalizacja elementu menu Menedżera emulatora systemu android](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
+    [![Lokalizacja elementu menu Menedżera urządzeń systemu android](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. Jeśli widzisz **ostrzeżenie wydajności** okno dialogowe podobne do następujących, a następnie HAXM jeszcze nie jest zainstalowane lub prawidłowo skonfigurowane na tym komputerze:
 
@@ -104,7 +120,7 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
    Jeśli **ostrzeżenie wydajności** jest wyświetlane okno dialogowe następująco, zobacz [ostrzeżeń dotyczących wydajności](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn) Aby zidentyfikować przyczynę i rozwiązać pierwotny problem.
 
-3. Wybierz **x86** obrazu (na przykład **Visual Studio\_android 23\_x86\_phone**), kliknij przycisk **Start**, następnie kliknij przycisk  **Uruchamianie**:
+3. Wybierz **x86** obrazu (na przykład **VisualStudio\_android 23\_x86\_phone**) i kliknij przycisk **Start**:
 
     ![Począwszy od domyślnego obrazu urządzenia wirtualnego Emulator systemu Google Android](hardware-acceleration-images/win/02-start-default-avd.png)
 
@@ -120,9 +136,9 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Uruchom Menedżera emulatora systemu Android, klikając **Narzędzia > Google Emulator Manager**:
+1. Uruchamianie Menedżera urządzeń systemu Android, klikając **Narzędzia > Menedżera urządzeń**:
 
-    [![Lokalizacja elementu menu Menedżera emulatora systemu android](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
+    [![Lokalizacja elementu menu Menedżera urządzeń systemu android](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. Jeśli widzisz **ostrzeżenie wydajności** okno dialogowe podobne do następujących, a następnie HAXM jeszcze nie jest zainstalowane lub prawidłowo skonfigurowane na tym komputerze:
 
@@ -130,7 +146,7 @@ Można sprawdzić, czy HAXM jest dostępna, wyświetlając **uruchamianie emulat
 
    Jeśli **ostrzeżenie wydajności** jest wyświetlane okno dialogowe następująco, zobacz [ostrzeżeń dotyczących wydajności](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn) Aby zidentyfikować przyczynę i rozwiązać pierwotny problem.
 
-3. Wybierz **x86** obrazu (na przykład **Android\_akcelerowanego\_x86**), kliknij przycisk **Start**, następnie kliknij przycisk **uruchamianie**:
+3. Wybierz **x86** obrazu (na przykład **Android\_akcelerowanego\_x86**) i kliknij przycisk **odtwarzanie**:
 
     [![Począwszy od domyślnego obrazu urządzenia wirtualnego Emulator systemu Google Android](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 

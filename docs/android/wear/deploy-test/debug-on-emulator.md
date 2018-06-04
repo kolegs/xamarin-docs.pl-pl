@@ -6,12 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732986"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debugowanie zużycie emulatora systemu Android
 
@@ -23,7 +24,7 @@ Tworzenie aplikacji systemu Android nosić wymaga działania aplikacji, albo na 
 
 ## <a name="configure-the-google-android-emulator"></a>Skonfiguruj Emulator systemu Google Android
 
-Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora Android SDK systemu Android i jest skonfigurowana do używania systemu Android. Uzyskać ogólną emulatora Android SDK instalacji i konfiguracji, zobacz [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora Android SDK systemu Android i jest skonfigurowana do używania systemu Android. Uzyskać ogólną emulatora Android SDK instalacji i konfiguracji, zobacz [Konfiguracja emulatora systemu Android](~/android/get-started/installation/android-emulator/index.md).
 
 Podczas tworzenia zużycia urządzenia wirtualnego, wybierz profil urządzenia Android nosić (takich jak **Android zużycia kwadratowe**). Zwiększa wydajność, użyj zużycia **x86** procesora CPU/ABI, jak pokazano w poniższym przykładzie:
 

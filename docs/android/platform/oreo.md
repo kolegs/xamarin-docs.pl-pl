@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732765"
 ---
 # <a name="oreo-features"></a>Funkcje Oreo
 
@@ -133,8 +134,8 @@ Jeśli próba uruchomienia domyślne Google graficznego interfejsu użytkownika 
 
 Ten komunikat jest wyświetlany, ponieważ Google nie zawiera już autonomicznym Menedżera AVD graficznego interfejsu użytkownika, który obsługuje interfejs API 26.0 lub nowszy. Dla systemu Android Oreo 8.0, należy użyć programu Xamarin Android Emulator Manager lub wiersza polecenia `avdmanager` narzędzia do tworzenia urządzeń wirtualnych dla systemu Android Oreo.
 
-Aby użyć Menedżera urządzeń Xamarin Android tworzenie i zarządzanie nimi urządzeń wirtualnych, zobacz [Menedżera urządzeń Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md).
-Aby utworzyć urządzeń wirtualnych bez Xamarin Android Emulator Manager, wykonaj czynności opisane w następnej sekcji.
+Aby użyć Menedżera urządzeń systemu Android, tworzenie i zarządzanie nimi urządzeń wirtualnych, zobacz [Zarządzanie urządzeń wirtualnych przy użyciu Menedżera urządzeń Android](~/android/get-started/installation/android-emulator/device-manager.md).
+Aby utworzyć wirtualny urządzeń bez Menedżera urządzeń systemu Android, wykonaj czynności opisane w następnej sekcji.
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>Tworzenie urządzenia wirtualnego z avdmanager
@@ -190,7 +191,7 @@ Po użyciu **avdmanager** Aby utworzyć urządzenie wirtualne, mają być uwzgl�
 
 -----
 
-Aby uzyskać więcej informacji o konfigurowaniu emulatorze systemu Android do testowania i debugowania, zobacz [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Aby uzyskać więcej informacji o konfigurowaniu emulatorze systemu Android do testowania i debugowania, zobacz [debugowania za pomocą Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Jeśli używasz urządzenia fizycznego, takie jak węzła lub piksel można zaktualizować urządzenie do automatycznego za pośrednictwem aktualizacji lotniczego (Stachnio) lub pobranie obrazu systemu i flash urządzenia bezpośrednio. Aby uzyskać więcej informacji na temat ręcznie zaktualizować urządzenie do Oreo systemu Android, zobacz [obrazy fabryki dla węzła i pikseli urządzenia](https://developers.google.com/android/images).
 

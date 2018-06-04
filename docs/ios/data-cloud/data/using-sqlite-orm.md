@@ -11,7 +11,7 @@ ms.openlocfilehash: 861b024a7ff5dd07752662cc45306b6533cd38bd
 ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34689504"
 ---
 # <a name="using-sqlitenet-with-ios"></a>Przy użyciu SQLite.NET z systemem iOS

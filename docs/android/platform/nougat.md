@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732521"
 ---
 # <a name="nougat-features"></a>Funkcje nugacie
 
@@ -46,7 +47,7 @@ W tym artykule wyjaśniono, jak rozpocząć tworzenie aplikacji za pomocą syste
 
 Poniżej jest wymagany do korzystania z nowych funkcji systemu Android nugacie w aplikacjach opartych na platformie Xamarin:
 
--   **Visual Studio lub Visual Studio for Mac** &ndash; Jeśli używasz programu Visual Studio w wersji 4.2.0.628 lub nowszej programu Xamarin dla Visual Studio jest wymagany. Jeśli używasz programu Visual Studio dla komputerów Mac, wersji 6.1.0 lub nowszej programu Visual Studio dla komputerów Mac jest wymagana.
+-   **Visual Studio lub Visual Studio for Mac** &ndash; Jeśli używasz programu Visual Studio w wersji 4.2.0.628 lub nowszej programu Visual Studio Tools dla platformy Xamarin jest wymagana. Jeśli używasz programu Visual Studio dla komputerów Mac, wersji 6.1.0 lub nowszej programu Visual Studio dla komputerów Mac jest wymagana.
 
 -   **Xamarin.Android** &ndash; Xamarin.Android w wersji 7.0 lub nowszej, musi być zainstalowana i skonfigurowana przy użyciu programu Visual Studio lub Visual Studio dla komputerów Mac.
 

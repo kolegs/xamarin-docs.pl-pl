@@ -7,11 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562893"
 ---
 # <a name="application-icons"></a>Ikony aplikacji
 
@@ -114,7 +115,7 @@ Aby użyć katalogu zasobów, wykonaj następujące czynności:
 
 1. Kliknij dwukrotnie `Info.plist` w pliku **Eksploratora rozwiązań** go otworzyć do edycji.
 2. Przewiń w dół do **ikony aplikacji** sekcji.
-3. Z **źródła** listy rozwijanej liście, upewnij się, **AppIcons** wybrano: 
+3. Z **źródła** listy rozwijanej liście, upewnij się, **AppIcon** wybrano: 
 
     ![](app-icons-images/migrate01.png "Upewnij się, że wybrano AppIcons")
 4. Z **Eksploratora rozwiązań**, kliknij dwukrotnie `Assets.xcassets` plik, aby otworzyć do edycji: 

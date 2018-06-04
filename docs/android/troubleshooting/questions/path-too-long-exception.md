@@ -7,12 +7,13 @@ ms.assetid: 60EE1C8D-BE44-4612-B3B5-70316D71B1EA
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/20/2018
-ms.openlocfilehash: f50ca3e738cb781f9c80e83f58f2e0fa1fa8e113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/29/2018
+ms.openlocfilehash: 8303e71d516fcec8d1136bd99adf2eb0797a9a40
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562789"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Jak usunąć błąd pathtoolongexception —?
 
@@ -37,6 +38,14 @@ Aby ustawić tę właściwość, należy dodać następujące właściwości pro
 ```xml
 <PropertyGroup>
     <UseShortFileNames>True</UseShortFileNames>
+</PropertyGroup>
+```
+
+Jeśli ustawienie tej flagi nie rozwiąże **pathtoolongexception —** błąd, innym podejściem jest określenie [typowy katalog główny pośrednich danych wyjściowych](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/) dla projektów w rozwiązaniu przez ustawienie `IntermediateOutputPath` w Projekt **.csproj** pliku. Spróbuj użyć stosunkowo krótkich ścieżki. Na przykład:
+
+```xml
+<PropertyGroup>
+    <IntermediateOutputPath>C:\Projects\MyApp</IntermediateOutputPath>
 </PropertyGroup>
 ```
 

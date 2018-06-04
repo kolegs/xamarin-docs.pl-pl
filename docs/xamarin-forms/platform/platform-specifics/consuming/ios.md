@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34546193"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732999"
 ---
 # <a name="ios-platform-specifics"></a>Szczegóły Platform systemu iOS
 
@@ -30,6 +30,7 @@ W systemach iOS platformy Xamarin.Forms zawiera następujące szczegóły platfo
 - Ustawienie widoczności paska stanu [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Aby uzyskać więcej informacji, zobacz [ustawienie widoczności paska stanu na stronie](#set_status_bar_visibility).
 - Kontrolowanie czy [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) obsługi gestów dotykowych i przekazuje je do jego zawartości. Aby uzyskać więcej informacji, zobacz [opóźnienia zawartości poprawki w ScrollView](#delay_content_touches).
 - Ustawienie stylu separatora [ `ListView` ](xref:Xamarin.Forms.ListView). Aby uzyskać więcej informacji, zobacz [ustawienie stylu separatora w elemencie ListView](#listview-separatorstyle).
+- Wyłączenie trybu starszych kolor na obsługiwanej [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [wyłączenie trybu koloru starszych](#legacy-color-mode).
 
 <a name="blur" />
 
@@ -507,6 +508,47 @@ Wynik jest to, że określonej [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformC
 
 > [!NOTE]
 > Po stylu separatora została ustawiona jako `FullWidth`, nie można zmienić do `Default` w czasie wykonywania.
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Wyłączenie starsza wersja trybu koloru
+
+Niektóre widoki platformy Xamarin.Forms funkcji trybu koloru starszej wersji. W tym trybie podczas [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) właściwości widoku ustawiono `false`, widok spowoduje zastąpienie kolory ustawionych przez użytkownika z domyślne kolory natywnego stanie wyłączenia. Dla zapewnienia zgodności, w tym trybie Kolor starszej wersji pozostaje domyślne zachowanie dla obsługiwane widoki.
+
+Poszczególnych platform wyłącza ten tryb kolor starszej wersji, aby kolory, ustaw dla widoku przez użytkownika pozostają nawet wtedy, gdy widok jest wyłączony. Jest używany w języku XAML, ustawiając [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) dołączona właściwość do `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatywnie mogą być używane w języku C# przy użyciu interfejsu API fluent:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<iOS>` — Metoda określa, czy ten specyficzne dla platformy działa tylko w systemie iOS. [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) przestrzeni nazw, służy do sterowania czy tryb starszej wersji kolorów jest wyłączona. Ponadto [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) metody można użyć do zwrócenia, czy tryb starszej wersji kolorów jest wyłączone.
+
+Wynik jest czy kolor starszej wersji trybu można ją wyłączyć, dzięki czemu kolorów, ustaw dla widoku przez użytkownika pozostają nawet wtedy, gdy widok jest wyłączony:
+
+![](ios-images/legacy-color-mode-disabled.png "Wyłączono tryb starszej wersji kolorów")
+
+> [!NOTE]
+> Podczas ustawiania [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) w widoku, tryb starszej wersji kolor całkowicie jest ignorowany. Aby uzyskać więcej informacji na temat stany wizualne, zobacz [platformy Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="summary"></a>Podsumowanie
 

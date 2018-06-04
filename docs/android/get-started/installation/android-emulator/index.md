@@ -1,44 +1,53 @@
 ---
-title: Ustawienia emulatora systemu android
-description: W tej sekcji opisano sposób przygotowania Emulator systemu Google Android do testowania aplikacji. Wyjaśniono, jak przyspieszanie emulatora o maksymalnej wydajności i przedstawia sposób tworzenia i dostosowywania urządzeń wirtualnych przy użyciu Menedżera emulatora.
+title: Instalator Emulator systemu Google Android
+description: Emulator systemu Google Android można uruchomić w wielu konfiguracjach, aby symulować różnych urządzeń. W tym przewodniku opisano sposób przygotowania emulatora systemu Android do testowania aplikacji.
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/25/2018
-ms.openlocfilehash: 215e298068b7a3a23b2e469e923f172c8303bbcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/01/2018
+ms.openlocfilehash: e5ba2cc23ea9751ca60644d3eb5b7e3f31bbb6bb
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732534"
 ---
-# <a name="android-emulator-setup"></a>Ustawienia emulatora systemu android
+# <a name="google-android-emulator-setup"></a>Instalator Emulator systemu Google Android
 
-_W tej sekcji opisano sposób przygotowania Emulator systemu Google Android do testowania aplikacji. Wyjaśniono, jak przyspieszanie emulatora o maksymalnej wydajności i przedstawia sposób tworzenia i dostosowywania urządzeń wirtualnych przy użyciu Menedżera emulatora._
+_W tym przewodniku opisano sposób przygotowania Emulator systemu Google Android do testowania aplikacji._
 
 
 ## <a name="overview"></a>Omówienie
 
-W wielu konfiguracjach, aby symulować różnych urządzeń można uruchomić emulatora Google Android SDK. Każdy z tych konfiguracji jest tworzony jako _urządzenia wirtualnego_. W tym przewodniku dowiesz się, jak przyspieszanie emulatora systemu Android w celu poprawy wydajności i tworzenie urządzenia wirtualnego za pomocą platformy Xamarin Android Emulator Manager lub starszej wersji Menedżera emulatora Google.
+Emulator systemu Google Android można uruchomić w wielu konfiguracjach, aby symulować różnych urządzeń. Każdy konfiguracja jest nazywana _urządzenia wirtualnego_. Wdrażanie i testowanie aplikacji w emulatorze, wybierz wstępnie skonfigurowane lub niestandardowych urządzenia wirtualnego, która symuluje fizycznych Android urządzeniami, takimi jak telefon węzła lub pikseli.
 
-
-> [!NOTE]
-> Począwszy od wersji narzędzia zestawu SDK systemu Android **26.0.1** i później, firma Google usunęła obsługę istniejącego menedżera AVD/pakiet SDK na rzecz ich nowych narzędzi interfejsu wiersza polecenia (interfejsu wiersza polecenia). Z powodu tej zmiany amortyzacja Xamarin zestawu SDK lub urządzeniu menedżerów są teraz używane zamiast menedżerów SDK/emulatora Google dla narzędzi dla systemu Android 26.0.1 i nowszych. (Aby uzyskać więcej informacji o Menedżerze zestawu SDK platformy Xamarin, zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md)).
-
+Sekcje wymienione poniżej opisano, jak w celu przyspieszenia emulator systemu Google Android maksymalną wydajność, jak tworzyć i dostosowywać urządzeń wirtualnych przy użyciu Menedżera urządzeń systemu Android i dostosowywanie właściwości profilu urządzenia wirtualnego. Ponadto sekcji dotyczącej rozwiązywania problemów opisano typowe problemy z instalacją i rozwiązania problemu.
 
 ## <a name="sections"></a>Sekcje
 
-### <a name="hardware-accelerationandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Przyspieszanie sprzętowe](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Przyspieszanie sprzętowe emulatora wydajności](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-Jak przygotować komputer do maksymalnej wydajności Emulator systemu Google Android. Ponieważ Emulator systemu Google Android mogą być zbyt wolno bez przyspieszenia sprzętowego, zaleca się włączenie przyspieszanie sprzętowe na komputerze przed użyciem Emulator systemu Google Android.
+Jak przygotować komputer do maksymalnej wydajności emulatora systemu Android.
+Ponieważ Emulator systemu Google Android mogą być zbyt wolno bez przyspieszenia sprzętowego, zaleca się włączyć przyspieszanie sprzętowe na komputerze przed użyciem tego emulatora.
 
-### <a name="xamarin-android-device-managerandroidget-startedinstallationandroid-emulatorxamarin-device-managermd"></a>[Menedżer urządzeń Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Zarządzanie urządzeniami wirtualnego przy użyciu Menedżera urządzeń systemu Android](~/android/get-started/installation/android-emulator/device-manager.md)
 
-Jak tworzyć i dostosowywać urządzeń wirtualnych Emulator systemu Google Android przy użyciu Menedżera urządzeń Android Xamarin. **Menedżera urządzeń Xamarin Android**, obecnie w wersji zapoznawczej, ma zastąpić starszego Menedżera emulatora Google. Jeśli ma być przeznaczona dla systemu Android Oreo 8.0 lub później, należy użyć Menedżera urządzeń Xamarin Android zamiast Menedżera emulatora Google.
+Jak tworzyć i dostosowywać urządzeń wirtualnych przy użyciu Menedżera urządzeń systemu Android.
 
-### <a name="google-emulator-managerandroidget-startedinstallationandroid-emulatorgoogle-emulator-managermd"></a>[Menedżer emulatora Google](~/android/get-started/installation/android-emulator/google-emulator-manager.md)
+### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[Edytowanie właściwości urządzenia wirtualnego systemu Android](~/android/get-started/installation/android-emulator/device-properties.md)
 
-Jak tworzyć i dostosowywać urządzeń wirtualnych Emulator systemu Google Android przy użyciu starszej wersji Menedżera emulatora Google. Możesz kontynuować uruchamianie Emulator systemu Google Android przy użyciu oryginalnego Google emulatora Menedżera poprzez na wersję narzędzia zestawu SDK systemu Android 25.2.5 lub niższy.
+Jak edytować właściwości profilu wirtualnego urządzenia z systemem Android za pomocą Menedżera urządzeń systemu Android.
 
-Po skonfigurowaniu emulatora Android SDK, zobacz [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md) informacji o sposobie uruchamiania emulatora i użyć jej do testowania i debugowania aplikacji.
+### <a name="troubleshooting-emulator-setup-problemsandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Rozwiązywanie problemów z emulatorem problemy z instalacją](~/android/get-started/installation/android-emulator/troubleshooting.md)
+
+Jak zdiagnozować i rozwiązać problemy Menedżera urządzeń systemu Android, które mogą wystąpić podczas konfigurowania emulatora systemu Android.
+
+
+Po skonfigurowaniu emulatora systemu Android, zobacz [debugowania za pomocą Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md) informacji o sposobie uruchamiania emulatora i użyć jej do testowania i debugowania aplikacji.
+
+
+> [!NOTE]
+> Począwszy od wersji narzędzia zestawu SDK systemu Android **26.0.1** i później, firma Google usunęła obsługę istniejącego menedżera AVD/pakiet SDK na rzecz ich nowych narzędzi interfejsu wiersza polecenia (interfejsu wiersza polecenia). Z powodu tej zmiany amortyzacja Xamarin zestawu SDK lub urządzeniu menedżerów są teraz używane zamiast menedżerów zestawu SDK lub urządzeniu Google dla narzędzi dla systemu Android 26.0.1 i nowszych. Aby uzyskać więcej informacji o Menedżerze zestawu SDK platformy Xamarin, zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md).
+
