@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732323"
 ---
 # <a name="understanding-android-api-levels"></a>Opis poziomów interfejsu API systemu Android
 
@@ -29,6 +30,10 @@ Xamarin.Android udostępnia trzy ustawienia poziomu projektu interfejsu API syst
 -   [Docelowa wersja systemu Android](#target) &ndash; określa systemu android, która aplikacja jest przeznaczona do uruchamiania na. Ten poziom interfejsu API jest używany w *Uruchom* czasu przez system Android.
 
 Zanim będzie można skonfigurować poziom interfejsu API dla projektu, należy zainstalować składniki platformy SDK na danym poziomie interfejsu API. Aby uzyskać więcej informacji o pobieraniu i instalowaniu składników zestawu SDK systemu Android, zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md).
+
+> [!NOTE]
+> Począwszy od sierpnia 2018 konsoli Google Play będzie wymagać czy nowych aplikacji docelowy poziom interfejsu API 26 (8.0 dla systemu Android) lub nowszej.
+Istniejące aplikacje będą musieli docelowy poziom interfejsu API 26 lub nowszej, począwszy od listopada 2018. Aby uzyskać więcej informacji, zobacz [poprawy zabezpieczeń aplikacji i wydajności w witrynie Google Play lat do](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -173,10 +178,6 @@ Przed wybraniem poziomu docelowego lub co najmniej interfejsu API w Xamarin.Andr
 Platforma docelowa identyfikuje których aplikacja jest połączony z wersji biblioteki &ndash; określa interfejsów API, które można użyć w aplikacji. Na przykład, jeśli chcesz użyć [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) metodę, która została wprowadzona w Android 5.0 interfejs typu lizak, należy ustawić platformę docelową **21 poziom interfejsu API (interfejs typu lizak)** lub nowszym. Jeśli ustawisz platformy docelowej projektu do interfejsu API poziomu, takich jak **19 poziom interfejsu API (KitKat)** i spróbuj `SetCategory` metody w kodzie, wystąpi błąd kompilacji.
 
 Firma Microsoft zaleca, aby zawsze kompilacja z *najnowsze* dostępna wersja platformy docelowej. W ten sposób zapewnia przydatne komunikaty ostrzegawcze dla przestarzałe interfejsy API, który może być wywoływany przez kod. Jest używana najnowsza wersja platformy docelowej jest szczególnie ważne, gdy używasz najnowszej wersji biblioteki obsługi &ndash; każdej biblioteki oczekuje aplikacji musi być skompilowany w minimalny poziom interfejsu API tej biblioteki pomocy technicznej lub większy. 
-
-> [!NOTE]
-> Począwszy od sierpnia 2018 konsoli Google Play będzie wymagać czy nowych aplikacji docelowy poziom interfejsu API 26 (8.0 dla systemu Android) lub nowszej.
-Istniejące aplikacje będą musieli docelowy poziom interfejsu API 26 lub nowszej, począwszy od listopada 2018. Aby uzyskać więcej informacji, zobacz [poprawy zabezpieczeń aplikacji i wydajności w witrynie Google Play lat do](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
