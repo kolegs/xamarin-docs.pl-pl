@@ -1,19 +1,20 @@
 ---
-title: Rozwiązywanie problemów
-description: Porady i wskazówki, aby utworzyć wdrożenie smooth
+title: Xamarin.iOS testowanie i wdrażanie — Rozwiązywanie problemów
+description: Ten dokument zawiera wskazówki dotyczące rozwiązywania problemów związanych z podpisywania kodu i inicjowania obsługi administracyjnej, TestFlight i kopiowanie aplikacji systemu iOS pakietu z hosta kompilacji Mac do systemu Windows.
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785388"
 ---
-# <a name="troubleshooting"></a>Rozwiązywanie problemów
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS testowanie i wdrażanie — Rozwiązywanie problemów
 
 ## <a name="code-signing--provisioning"></a>Podpisywanie kodu i inicjowania obsługi
 
@@ -32,7 +33,6 @@ Podpisywanie kodu i inicjowania obsługi administracyjnej z systemem iOS może b
 * Upewnij się, że wszystkie wymagane certyfikaty i odpowiadające im klucze prywatne są dostępne. Dla każdego zespołu należy certyfikat dewelopera (w celu instalowania aplikacji na własnych urządzeniach), a certyfikat dystrybucji (w celu instalowania na innych urządzeniach)
 
 * Uruchom ponownie Xcode i Visual Studio for Mac / Visual Studio po zainstalowaniu nowego profilu inicjowania obsługi administracyjnej lub certyfikatu.
-
 
 ## <a name="testflight"></a>TestFlight
 

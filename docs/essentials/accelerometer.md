@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials przyspieszeniomierza
-description: Klasa przyspieszeniomierza umożliwia monitorowanie czujnik przyspieszeniomierza urządzenia, co oznacza przyspieszenie urządzenia w przestrzeni trójwymiarowej.
+title: 'Xamarin.Essentials: przyspieszeniomierza'
+description: Klasa przyspieszeniomierza w Xamarin.Essentials umożliwia monitorowanie czujnik przyspieszeniomierza urządzenia, co oznacza przyspieszenie urządzenia w przestrzeni trójwymiarowej.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: bb62ad438c2db906af112322174656bc62740cbc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781868"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials przyspieszeniomierza
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: przyspieszeniomierza
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

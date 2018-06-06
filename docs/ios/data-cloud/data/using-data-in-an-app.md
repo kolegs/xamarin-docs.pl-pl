@@ -1,16 +1,18 @@
 ---
 title: Przy użyciu danych w aplikacji systemu iOS
+description: W tym dokumencie opisano DataAccess_Adv przykładzie pokazano, jak zbierać dane wejściowe użytkownika i wykonywać tworzenia, odczytu, aktualizacji i usuwania (CRUD) bazy danych operacji w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: eded0918c6994481cdc82fe7662a985ea243b24d
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 5c9eab9316539ecf5988c8768bef9ef2cd61513e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784543"
 ---
 # <a name="using-data-in-an-ios-app"></a>Przy użyciu danych w aplikacji systemu iOS
 

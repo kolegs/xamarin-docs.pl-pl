@@ -1,20 +1,21 @@
 ---
-title: Nowe interfejsy API wyszukiwania
+title: Interfejsy API wyszukiwania w Xamarin.iOS
 description: W tym artykule omówiono, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu nowych aplikacji wyszukiwania interfejsów API dostarczonych przez system iOS 9.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788179"
 ---
-# <a name="new-search-apis"></a>Nowe interfejsy API wyszukiwania
+# <a name="search-apis-in-xamarinios"></a>Interfejsy API wyszukiwania w Xamarin.iOS
 
-_W tym artykule omówiono, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu nowych aplikacji wyszukiwania interfejsów API dostarczonych przez system iOS 9._
+_W tym artykule omówiono, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API wyszukiwania aplikacji, które zostały udostępnione przez system iOS 9._
 
 Wyszukiwanie została rozszerzona w systemie iOS 9, aby zapewnić doskonałe nowe sposoby na dostęp do informacji i funkcji w aplikacji platformy Xamarin.iOS. Przy użyciu nowych interfejsów API aplikacji wyszukiwania, zawartość aplikacji jest nawiązywane za pośrednictwem Spotlight oraz Safari wyniki wyszukiwania, przekazaniem i używanie programu Siri przypomnienia i sugestie dotyczące wyszukiwania. Dzięki temu użytkownicy mogą szybko uzyskać dostęp do działań i informacji głęboko w aplikacji.
 

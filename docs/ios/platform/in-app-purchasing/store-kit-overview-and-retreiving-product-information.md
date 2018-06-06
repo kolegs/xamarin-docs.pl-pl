@@ -1,18 +1,20 @@
 ---
-title: Przechowywanie zestaw omówienie i pobierania informacji o produkcie
+title: Omówienie StoreKit i pobieranie informacje o produkcie w Xamarin.iOS
+description: Ten dokument zawiera omówienie StoreKit. Opisuje klasy używane z StoreKit, testowanie StoreKit interakcji, Wyświetlanie produktów do sprzedaży obsługi nieprawidłowy produktów i wyświetlanie zlokalizowanych ceny.
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787227"
 ---
-# <a name="store-kit-overview-and-retrieving-product-information"></a>Przechowywanie zestaw omówienie i pobierania informacji o produkcie
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>Omówienie StoreKit i pobieranie informacje o produkcie w Xamarin.iOS
 
 Interfejs użytkownika funkcji zakupu w aplikacji jest wyświetlany na zrzutach ekranu poniżej.
 Przed każdą transakcję ma miejsce, aplikacja musi pobrać ceny i opis do wyświetlenia tego produktu. Następnie, gdy użytkownik naciśnie **kupić**, aplikacja wysyła żądanie do StoreKit, która zarządza okno dialogowe potwierdzenia i identyfikator Apple ID logowania. Przy założeniu, że transakcja następnie zakończy się powodzeniem, StoreKit powiadamia kodu aplikacji, które musi przechowywać wynik transakcji i zapewnić użytkownikowi dostęp do ich zakupu.   

@@ -1,18 +1,20 @@
 ---
-title: Formant tabeli
+title: watchOS formantów tabeli w programie Xamarin
+description: Ten dokument zawiera opis sposobu formanty tabeli watchOS w Xamarin. Go w tym artykule omówiono Dodawanie tabeli, Dodawanie kontrolera wiersza, tworzenie i wypełnianie wierszy odpowiada podsłuchu i inne.
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3f596b424292dd0f4db08429bc7c5d4a885d3954
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afb8f9a96fa14877cbd0352869e23972719a4480
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791361"
 ---
-# <a name="table-control"></a>Formant tabeli
+# <a name="watchos-table-controls-in-xamarin"></a>watchOS formantów tabeli w programie Xamarin
 
 WatchOS `WKInterfaceTable` kontroli jest znacznie prostsze niż jego odpowiednik z systemem iOS, ale wykonuje podobną rolę. Tworzy przewijanej listy wierszy, które mają układy niestandardowe i które odpowiadanie na zdarzenia touch.
 

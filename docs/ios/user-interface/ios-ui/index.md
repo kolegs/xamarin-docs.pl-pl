@@ -1,19 +1,20 @@
 ---
-title: Interfejs użytkownika w systemie iOS
-description: Obejmuje pracy z systemem iOS interfejsu użytkownika w aplikacji platformy Xamarin.iOS.
+title: Interfejsy użytkownika w systemie iOS
+description: Ten dokument zawiera łącza do przewodników zawierających opis sposobu tworzenia interfejsów użytkownika w aplikacji platformy Xamarin.iOS. Przewodniki połączonego obejmuje API wygląd, tworzenia obiektów interfejsu użytkownika, opcje układu i inne.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: dd07ba6853901c93ad26b371ea88b7d39c37d3f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a51d3f57106a282ed72b45dedf356739244e247f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790370"
 ---
-# <a name="user-interface-in-ios"></a>Interfejs użytkownika w systemie iOS
+# <a name="user-interfaces-in-ios"></a>Interfejsy użytkownika w systemie iOS
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[Interfejs API wyglądu](introduction-to-the-appearance-api.md)
 

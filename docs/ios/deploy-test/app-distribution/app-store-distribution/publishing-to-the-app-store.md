@@ -1,21 +1,20 @@
 ---
-title: Publikowanie do sklepu z aplikacjami
-description: W tym artykule przedstawiono sposób konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji za pośrednictwem sklepu z aplikacjami. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, finally, jak opublikować aplikację do sklepu z aplikacjami.
+title: Publikowanie aplikacji platformy Xamarin.iOS do sklepu z aplikacjami
+description: Ten dokument zawiera opis sposobu konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji w sklepie z aplikacjami.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785703"
 ---
-# <a name="publishing-to-the-app-store"></a>Publikowanie do sklepu z aplikacjami
-
-_W tym artykule przedstawiono sposób konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji za pośrednictwem sklepu z aplikacjami. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, finally, jak opublikować aplikację do sklepu z aplikacjami._
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikowanie aplikacji platformy Xamarin.iOS do sklepu z aplikacjami
 
 W kolejności dystrybuować aplikacje na wszystkich urządzeniach z systemem iOS, Firma Apple wymaga aplikacji, które mają być opublikowane za pośrednictwem *sklepu z aplikacjami*, co pojedynczej lokalizacji zakupów w aplikacjach systemu iOS ze sklepu App Store. Z ponad 500 000 aplikacji w sklepie deweloperzy wiele typów aplikacji kapitalizacji na ogromną Powodzenie ten pojedynczy punkt dystrybucji. Sklep App Store to gotowe rozwiązanie, oferty deweloperzy aplikacji systemów dystrybucji i płatności.
 

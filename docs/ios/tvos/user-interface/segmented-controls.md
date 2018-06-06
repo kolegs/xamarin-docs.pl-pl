@@ -1,22 +1,20 @@
 ---
-title: Praca z kontrolkami segmentu
-description: Ten artykuł obejmuje projektowanie i Praca z kontrolkami Segmentowanych wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS Segmentowanych formantów w Xamarin
+description: Ten dokument zawiera opis sposobu pracy z systemu tvOS segmentowanych formantów w aplikacji skompilowanej za pomocą platformy Xamarin. Zawarto informacje ikony segmentu i tekst, zdarzenia, modyfikując wygląd formantu i inne.
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8980f9fbf6996217dbcaec869e4c81598ac36552
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789242"
 ---
-# <a name="working-with-segmented-controls"></a>Praca z kontrolkami segmentu
-
-_Ten artykuł obejmuje projektowanie i Praca z kontrolkami Segmentowanych wewnątrz aplikacji Xamarin.tvOS._
-
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Praca z systemu tvOS Segmentowanych formantów w Xamarin
 
 Segmentu kontrola zapewnia zbiór elementów liniowego, z których każdy może zawierać tekst lub ikonę i służy do zapewnienia zestawu opcji powiązanych z użytkownikiem.
 

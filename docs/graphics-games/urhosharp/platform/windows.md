@@ -1,20 +1,19 @@
 ---
 title: Obsługa systemu Windows UrhoSharp
-description: Określone Instalatora systemu Windows oraz funkcje dla UrhoSharp.
+description: Obsługa systemu Windows dla UrhoSharp omówione w tym dokumencie. Opisuje sposób tworzenia projektu, konfigurowania i uruchamiania Urho, integracji z WPF i zintegrować z platformy uniwersalnej systemu Windows.
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: ac563e18c714a276ebe94a491999e61630d53ef3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783236"
 ---
 # <a name="urhosharp-windows-support"></a>Obsługa systemu Windows UrhoSharp
-
-_Windows określonych ustawień i funkcji_
 
 Biblioteka klas przenośnych jest Urho i zezwala na tego samego interfejsu API do użycia przez różne platformy dla logiki gier, nadal należy zainicjować Urho w sterowniku określonych platform, a w niektórych przypadkach, można wykorzystać funkcje specyficzne dla platformy .
 

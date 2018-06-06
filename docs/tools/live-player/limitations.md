@@ -1,18 +1,19 @@
 ---
-title: Ograniczenia
-description: Niektóre ograniczenia Xamarin Live Player
+title: Ograniczenia programu Xamarin Player na żywo
+description: W tym dokumencie opisano ograniczenia Xamarin Live Player. Go w tym artykule omówiono wymagania dotyczące urządzeń, ich funkcje współpracuje z typów projektów i innych dodatkowych tematów.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793678"
 ---
-# <a name="limitations"></a>Ograniczenia
+# <a name="limitations-of-xamarin-live-player"></a>Ograniczenia programu Xamarin Player na żywo
 
 ![Funkcja w wersji zapoznawczej](~/media/shared/preview.png)
 
@@ -36,6 +37,7 @@ Aplikacja odtwarzacza Live Xamarin obsługuje następujące urządzenia:
 Istnieją pewne ograniczenia dotyczące czynności, które można uruchomić Xamarin Live Player, łącznie z poniższych elementów:
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
+
 - Niestandardowe moduły renderowania nie są obsługiwane.
 - Efekty nie są obsługiwane.
 - Niestandardowe formanty mających właściwości niestandardowe nie są obsługiwane.
@@ -44,9 +46,11 @@ Istnieją pewne ograniczenia dotyczące czynności, które można uruchomić Xam
 - Katalogi zasobów w systemie iOS nie są obsługiwane.
 
 ### <a name="other-project-types"></a>Inne typy projektów
+
 - Player na żywo nie jest przeznaczony dla systemu Android native lub projektów dla systemu iOS, (korzystających z systemem Android XML lub Scenorys dla interfejsu użytkownika).
 
 ### <a name="misc"></a>Różne
+
 - Ograniczona obsługa odbicia (aktualnie ma wpływ na niektóre popularnych NuGets, takich jak SQLite i Json.NET). Inne NuGets nadal może być obsługiwana.
 - Nie można zastąpić niektóre klasy systemu (na przykład użytkownik nie może implementować podklasy).
 - Niektóre funkcje platformy, które wymagają obsługi nie może działać w aplikacji platformy Xamarin Player na żywo (jednak została skonfigurowana dla typowe operacje, takie jak dostęp do galerii fotografii).
@@ -55,7 +59,6 @@ Istnieją pewne ograniczenia dotyczące czynności, które można uruchomić Xam
 - Scenariusze Zaawansowane z niestandardowych ogólne klasy i interfejsy może nie być obsługiwana.
 
 Zgłoś wszelkie dodatkowe problemy na [bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

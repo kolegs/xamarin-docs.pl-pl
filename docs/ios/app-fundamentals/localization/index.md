@@ -1,19 +1,20 @@
 ---
-title: Lokalizacja systemu iOS
-description: W tym dokumencie opisano funkcje lokalizacji systemu IOS SDK oraz sposób uzyskiwać do nich dostęp za pomocą platformy Xamarin.
+title: Lokalizacja w Xamarin.iOS
+description: Tego dokumentu opisano funkcje lokalizacji systemu iOS i sposób używania tych funkcji w aplikacji platformy Xamarin.iOS. Zawarto informacje języka, ustawienia regionalne, ciągi pliki i obrazy uruchamiania.
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785269"
 ---
-# <a name="ios-localization"></a>Lokalizacja systemu iOS
+# <a name="localization-in-xamarinios"></a>Lokalizacja w Xamarin.iOS
 
 _W tym dokumencie opisano funkcje lokalizacji systemu IOS SDK oraz sposób uzyskiwać do nich dostęp za pomocą platformy Xamarin._
 

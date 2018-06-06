@@ -1,6 +1,6 @@
 ---
-title: Wprowadzenie do systemu tvOS
-description: W tym artykule przedstawiono tworzenie aplikacji systemu tvOS za pomocą platformy Xamarin.
+title: Wprowadzenie do systemu tvOS w Xamarin
+description: Ten dokument prowadzi do różnych prowadnice i przykłady, które pokazują, jak tworzyć aplikacje systemu tvOS, za pomocą platformy Xamarin. Prowadnice omówiono w nim różne funkcje, takie jak projektowanie interfejsu użytkownika, magazynu danych, ikony i inne.
 ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 457e1c01365017f699c5902376cdb44b9127d88e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 45a509f6ee86e42279ec7877272965e8f6d7338f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788689"
 ---
-# <a name="introduction-to-tvos"></a>Wprowadzenie do systemu tvOS
+# <a name="introduction-to-tvos-in-xamarin"></a>Wprowadzenie do systemu tvOS w Xamarin
 
 ## <a name="introducing-tvos"></a>Wprowadzenie do systemu tvOS
 

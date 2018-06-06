@@ -1,5 +1,5 @@
 ---
-title: Adnotacje i nakładki
+title: Adnotacje i nakładki na platformy Xamarin.iOS
 description: W tym artykule przedstawiono wskazówki krok po kroku, przedstawiający sposób pracy z funkcjami adnotacji i nakładki zestawu mapy. Widoczny jest sposób dodawania mapy do aplikacji, która wyświetla adnotacji i nakładki w lokalizacji konferencji Xamarin rozwijać 2013.
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9defbade6fafefb26d87e88665c491b3a559c1ae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789583"
 ---
-# <a name="annotations-and-overlays--walkthrough"></a>Adnotacje i nakładki — wskazówki
+# <a name="annotations-and-overlays-in-xamarinios"></a>Adnotacje i nakładki na platformy Xamarin.iOS
 
 Aplikacja, którą spróbujemy kompilacji w tym przewodniku przedstawiono poniżej:
 

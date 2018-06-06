@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: e2e3843506061cc79ad911404468477bf49dfe56
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789027"
 ---
 # <a name="introduction-to-tvos-9"></a>Wprowadzenie do systemu tvOS 9
 
 _W tym artykule przedstawiono wszystkich nowych i zmodyfikowanych interfejsów API i funkcje dostępne w systemu tvOS 9 dla deweloperów Xamarin.tvOS._
-
 
 Apple wydała 4. Generowanie sprzętu Apple TV, oferujący funkcje zmienioną, zdalne Włączanie touch, nowego systemu operacyjnego systemu tvOS (oparte na systemu iOS 9).
 
@@ -37,7 +37,7 @@ aplikacje systemu tvOS systemem Apple TV ma następujące obsługiwane funkcje i
  - Ochrona danych
  - Centrum gier
  - Kontrolery gier
- - iCloud
+ - usługi iCloud
  - Zakupy w aplikacji
  - Udostępnianie łańcucha kluczy
 
@@ -45,14 +45,14 @@ Nie są obsługiwane następujące funkcje i możliwości:
 
  - Płatności firmy Apple
  - Piaskownica aplikacji
- - Skojarzone domen
+ - Skojarzone domeny
  - HealthKit
  - HomeKit
  - Dźwięk Inter-App
  - Mapy
  - Osobista sieć VPN
  - Powiadomienia wypychane
- - Portfela
+ - Portfel
  - Konfiguracja zasobów bezprzewodowych
 
 Zobacz nasze [obsługiwane zestawy](~/ios/tvos/internals/assemblies.md) i [obsługiwanych platform](~/ios/tvos/internals/frameworks.md) dokumentacji, aby uzyskać więcej informacji.

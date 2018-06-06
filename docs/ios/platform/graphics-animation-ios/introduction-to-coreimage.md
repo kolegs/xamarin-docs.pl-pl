@@ -1,23 +1,24 @@
 ---
-title: CoreImage
-description: CoreImage jest nowa struktura wprowadzone w systemie iOS 5, aby zapewnić przetwarzania obrazów i na żywo wideo zwiększające funkcjonalność. W tym artykule przedstawiono te funkcje próbki platformy Xamarin.iOS.
+title: Obraz podstawowej platformy Xamarin.iOS
+description: Obraz Core jest nowa struktura wprowadzone w systemie iOS 5, aby zapewnić przetwarzania obrazów i na żywo wideo zwiększające funkcjonalność. W tym artykule przedstawiono te funkcje próbki platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786635"
 ---
-# <a name="coreimage"></a>CoreImage
+# <a name="core-image-in-xamarinios"></a>Obraz podstawowej platformy Xamarin.iOS
 
-_CoreImage jest nowa struktura wprowadzone w systemie iOS 5, aby zapewnić przetwarzania obrazów i na żywo wideo zwiększające funkcjonalność. W tym artykule przedstawiono te funkcje próbki platformy Xamarin.iOS._
+_Obraz Core jest nowa struktura wprowadzone w systemie iOS 5, aby zapewnić przetwarzania obrazów i na żywo wideo zwiększające funkcjonalność. W tym artykule przedstawiono te funkcje próbki platformy Xamarin.iOS._
 
-CoreImage jest nowa struktura wprowadzone w systemie iOS 5, która udostępnia szereg wbudowanych filtrów i efekty do zastosowania do obrazów i plików wideo, w tym wykrywania twarzy na obrazie.
+Obraz Core jest nowa struktura wprowadzone w systemie iOS 5, która udostępnia szereg wbudowanych filtrów i efekty do zastosowania do obrazów i plików wideo, w tym wykrywania twarzy na obrazie.
 
 Ten dokument zawiera proste przykłady:
 
@@ -26,7 +27,7 @@ Ten dokument zawiera proste przykłady:
 -  Lista dostępnych filtrów.
 
 
-Te przykłady powinna ułatwić rozpoczęcie włączenia funkcji CoreImage do aplikacji platformy Xamarin.iOS.
+Te przykłady powinna ułatwić rozpoczęcie włączenia funkcji podstawowych obrazu do aplikacji platformy Xamarin.iOS.
 
 ## <a name="requirements"></a>Wymagania
 
@@ -34,7 +35,7 @@ Należy używać najnowszej wersji narzędzia xcode.
 
 ## <a name="face-detection"></a>Wykrywanie twarzy na obrazie
 
-Funkcja wykrywania twarzy na obrazie CoreImage jest po prostu widnieje — próbuje określić powierzchni fotografii i zwraca współrzędne żadnych kroje, które rozpoznaje. Te informacje może służyć do liczbę osób w obrazie, rysowania wskaźników do obrazu (np.) dla "znakowanie" osób w fotografii), lub innych elementów można traktować.
+Funkcji wykrywania twarzy na obrazie Core obrazu jest po prostu widnieje — próbuje określić powierzchni fotografii i zwraca współrzędne żadnych kroje, które rozpoznaje. Te informacje może służyć do liczbę osób w obrazie, rysowania wskaźników do obrazu (np.) dla "znakowanie" osób w fotografii), lub innych elementów można traktować.
 
 Ten kod z CoreImage\SampleCode.cs ilustruje sposób tworzenia i używania wykrywania twarzy na obrazie osadzonego obrazu:
 
@@ -219,11 +220,11 @@ Każdego wymienionego filtru narażony był jako klasa w Xamarin.iOS, więc moż
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule pokazuje, jak korzystać z niektórych nowych funkcji framework CoreImage iOS 5, takich jak wykrywania twarzy na obrazie i stosowania filtrów do obrazu. Są dostępne w ramach można użyć wielu filtrów inny obraz.
+W tym artykule pokazuje, jak korzystać z niektórych nowych funkcji framework Core obrazu z systemem iOS 5 jak wykrywania twarzy na obrazie i stosowania filtrów do obrazu. Są dostępne w ramach można użyć wielu filtrów inny obraz.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Obraz Core (przykład)](https://developer.xamarin.com/samples/CoreImage/)
 - [Dostosuj kontraktu i jasności przepisu obrazu](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [Za pomocą filtrów CoreImage](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Za pomocą filtrów obrazu Core](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [Odwołania do klasy CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

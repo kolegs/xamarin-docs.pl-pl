@@ -1,6 +1,6 @@
 ---
-title: Witaj, Mac
-description: Ten przewodnik przeprowadzi Cię przez kroki tworzenia pierwszej aplikacji Xamarin.Mac, a w procesie wprowadza łańcuch narzędzi rozwoju, w tym programu Visual Studio for Mac, Xcode i konstruktora interfejsu. Również wprowadza gniazda i akcji, które ujawnia kontrolek interfejsu użytkownika do kodu, a na koniec go ilustruje sposób tworzenia, uruchamianie i testowanie aplikacji Xamarin.Mac.
+title: Witaj, Mac — wskazówki
+description: Ten dokument przedstawia sposób tworzenia aplikacji Xamarin.Mac i wprowadza Visual Studio for Mac, Xcode i konstruktora interfejsu. Zawarto informacje uwidaczniającą kontrolek interfejsu użytkownika do kodu za pomocą akcji i gniazda, a jego ilustruje sposób tworzenia, uruchamianie i testowanie aplikacji Xamarin.Mac.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,13 +8,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792788"
 ---
-# <a name="hello-mac"></a>Witaj, Mac
+# <a name="hello-mac--walkthrough"></a>Witaj, Mac — wskazówki
 
 Xamarin.Mac pozwala na projektowanie aplikacji całkowicie natywnych Mac w języku C# i platformy .NET przy użyciu tej samej biblioteki OS X i formantów interfejsu, które są używane podczas tworzenia w *Objective-C* i *Xcode*. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, deweloper może użyć w środowisku Xcode _konstruktora interfejsu_ utworzenie aplikacji interfejsy użytkownika (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 

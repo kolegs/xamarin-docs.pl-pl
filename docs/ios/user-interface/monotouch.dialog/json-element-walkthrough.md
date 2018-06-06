@@ -1,21 +1,21 @@
 ---
-title: 'Wskazówki: Tworzenie przy użyciu elementu JSON interfejsu użytkownika'
+title: Tworzenie interfejsu użytkownika w platformy Xamarin.iOS przy użyciu JSON
 description: MonoTouch.Dialog (patrz hasło MT. D) obsługuje dynamiczne generowanie interfejsu użytkownika za pomocą danych JSON. W tym samouczku zostanie omówiony sposób użycia JSONElement do tworzenia interfejsu użytkownika z formatu JSON, które jest dołączone do aplikacji, lub ładowane z zdalnego adresu Url.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790656"
 ---
-# <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Wskazówki: Tworzenie przy użyciu elementu JSON interfejsu użytkownika
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Tworzenie interfejsu użytkownika w platformy Xamarin.iOS przy użyciu JSON
 
 _MonoTouch.Dialog (patrz hasło MT. D) obsługuje dynamiczne generowanie interfejsu użytkownika za pomocą danych JSON. W tym samouczku zostanie omówiony sposób użycia JSONElement do tworzenia interfejsu użytkownika z formatu JSON, które jest dołączone do aplikacji, lub ładowane z zdalnego adresu Url._
-
 
 PATRZ HASŁO MT. D obsługuje tworzenie interfejsów użytkownika zadeklarowany w formacie JSON. Gdy elementy zadeklarowane za pomocą formatu JSON, patrz hasło MT. D utworzy skojarzonych elementów można automatycznie. JSON mogą być ładowane z pliku lokalnego przeanalizowany `JsonObject` wystąpienia lub nawet zdalnego adresu Url.
 

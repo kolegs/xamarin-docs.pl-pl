@@ -1,21 +1,20 @@
 ---
-title: Publikowanie do sklepu z aplikacjami
-description: Ten przewodnik przeprowadzi Cię przez wdrażanie aplikacji Xamarin.Mac, za pomocą programu Visual Studio dla komputerów Mac. Go wyjaśniono, jak skonfigurować konta dewelopera Mac, przeprowadzi Cię przez proces tworzenia certyfikatów do podpisywania kodu i pokazuje, jak ich używać do tworzenia aplikacji Mac, które mogą być dystrybuowane bezpośrednio lub za pośrednictwem sklepu Mac App Store.
+title: Publikowanie aplikacji Xamarin.Mac Mac App Store
+description: Ten dokument zawiera opis sposobu wdrażania aplikacji Xamarin.Mac z programem Visual Studio dla komputerów Mac. Wyjaśniono, jak skonfigurować konta dewelopera Mac, jak w celu utworzenia certyfikatów do podpisywania kodu i jak ich używać do tworzenia aplikacji Mac, które mogą być dystrybuowane bezpośrednio lub za pośrednictwem sklepu Mac App Store.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791969"
 ---
-# <a name="publishing-to-the-app-store"></a>Publikowanie do sklepu z aplikacjami
-
-_Ten przewodnik przeprowadzi Cię przez wdrażanie aplikacji Xamarin.Mac, za pomocą programu Visual Studio dla komputerów Mac. Go wyjaśniono, jak skonfigurować konta dewelopera Mac, przeprowadzi Cię przez proces tworzenia certyfikatów do podpisywania kodu i pokazuje, jak ich używać do tworzenia aplikacji Mac, które mogą być dystrybuowane bezpośrednio lub za pośrednictwem sklepu Mac App Store._
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Publikowanie aplikacji Xamarin.Mac Mac App Store
 
 ## <a name="overview"></a>Omówienie
 

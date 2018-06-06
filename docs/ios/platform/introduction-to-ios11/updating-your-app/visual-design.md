@@ -1,21 +1,20 @@
 ---
-title: Projekt Visual aktualizacji
-description: Poznawanie nowych funkcji systemu IOS 11
+title: Visual aktualizacje projektu w systemie iOS 11
+description: W tym dokumencie opisano projekt visual aktualizacje wprowadzone w systemie iOS 11. Go w tym artykule omówiono zmiany pasków nawigacji, wyszukiwania kontrolerów marginesy, zawartość pełnego ekranu i widoków tabel.
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787854"
 ---
-# <a name="visual-design-updates"></a>Projekt Visual aktualizacji
-
-_Poznawanie nowych funkcji systemu IOS 11_
+# <a name="visual-design-updates-in-ios-11"></a>Visual aktualizacje projektu w systemie iOS 11
 
 W systemie iOS 11 Firma Apple wprowadziła nowe zmiany wizualne w tym aktualizacje na pasku nawigacyjnym, pasek wyszukiwania i widoków tabel. Dodatkowo udoskonalono aby umożliwić większą elastyczność za pośrednictwem marginesy i pełny ekran zawartości. Te zmiany zostały uwzględnione w tym przewodniku.
 

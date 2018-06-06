@@ -1,17 +1,18 @@
 ---
-title: Kompas Xamarin.Essentials
-description: Klasa kompas umożliwia monitorowanie nagłówek Północna magnetycznych urządzenia.
+title: 'Xamarin.Essentials: kompas'
+description: W tym dokumencie opisano klasy kompas w Xamarin.Essentials, który umożliwia monitorowanie nagłówek Północna magnetycznych urządzenia.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 39f141424ddd247458b9c8b35ae02ab29e2c2206
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 30ef4c7c155b09c06c8bc36404b92c2a91b7eb0d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782297"
 ---
-# <a name="xamarinessentials-compass"></a>Kompas Xamarin.Essentials
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: kompas
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

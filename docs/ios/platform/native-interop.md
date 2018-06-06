@@ -1,18 +1,20 @@
 ---
-title: Odwołania do natywnych bibliotek
+title: Odwołanie do natywnego bibliotek platformy Xamarin.iOS
+description: Ten dokument omówiono sposób połączyć natywnych bibliotek C w aplikacji platformy Xamarin.iOS. Przedstawiono sposób tworzenia uniwersalnych natywnych bibliotek i uzyskiwaniem dostępu do metody C w języku C#.
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787730"
 ---
-# <a name="referencing-native-libraries"></a>Odwołania do natywnych bibliotek
+# <a name="referencing-native-libraries-in-xamarinios"></a>Odwołanie do natywnego bibliotek platformy Xamarin.iOS
 
 Xamarin.iOS obsługuje łączenie z natywnych bibliotek C i bibliotek języka Objective-C. Ten dokument omówiono sposób połączyć natywnych bibliotek C z projektu platformy Xamarin.iOS. Aby uzyskać informacje na ten sam bibliotek języka Objective-C, zobacz nasze [powiązanie typów języka Objective-C](~/ios/platform/binding-objective-c/index.md) dokumentu.
 

@@ -1,19 +1,20 @@
 ---
-title: Touch w systemie iOS
+title: Touch zdarzenia i gestów platformy Xamarin.iOS
+description: Ten dokument zawiera opis sposobu pracy z zdarzenia touch, wielodotyku gesty, wiele gestów i gestów niestandardowych w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689544"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784592"
 ---
-# <a name="touch-in-ios"></a>Touch w systemie iOS
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Touch zdarzenia i gestów platformy Xamarin.iOS
 
 Ważne jest zrozumienie zdarzenia touch i touch interfejsów API w aplikacji systemu iOS, ponieważ są one centralnej na wszystkich fizycznych interakcji z urządzeniem. Wszystkie interakcje dotykowej dotyczą `UITouch` obiektu. W tym artykule firma Microsoft będzie Dowiedz się, jak używać `UITouch` klasy i jej interfejsów API do obsługi touch. Później firma Microsoft będzie rozszerzać na naszych wiedzy, aby dowiedzieć się, jak obsługiwać gestów.
 

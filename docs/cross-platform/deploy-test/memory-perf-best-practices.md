@@ -1,23 +1,21 @@
 ---
 title: Wydajność i Platform
-description: Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za pomocą platformy Xamarin. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki.
+description: W tym dokumencie opisano różne techniki, które pozwalają poprawić wydajność aplikacji mobilnej. Zawarto informacje profilera, interfejs IDisposable zasobów słabe odwołania, moduł zbierający elementy bezużyteczne SGen, sposobów zmniejszania rozmiaru i więcej.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781985"
 ---
 # <a name="cross-platform-performance"></a>Wydajność i Platform
 
-_Istnieje wiele technik zwiększającą wydajność aplikacji skompilowanej za pomocą platformy Xamarin. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki._
-
 Niską wydajnością przedstawia na wiele sposobów. Go aplikacja prawdopodobnie nie odpowiada, może spowodować wolne przewijanie i może zmniejszyć czas pracy baterii. Jednak optymalizacji wydajności wymaga więcej niż tylko wdrażania wydajność kodu. Środowisko użytkownika wydajność aplikacji, należy również rozważyć. Na przykład zapewniając wykonanie operacji bez blokowania użytkownika wykonywanie innych działań może pomóc ulepszyć środowisko użytkownika.
-
 
 <a name="profiler" />
 

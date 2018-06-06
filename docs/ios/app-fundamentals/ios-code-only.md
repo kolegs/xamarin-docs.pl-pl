@@ -1,21 +1,20 @@
 ---
-title: Tworzenie interfejsów użytkownika systemu iOS w kodzie
-description: Xamarin.iOS udostępnia dwie metody tworzenia interfejsu użytkownika dla aplikacji — przy użyciu projektanta Xamarin dla systemu iOS lub w kodzie. W tym artykule sprawdza, czy tworzenie interfejsów użytkownika dla systemu iOS całkowicie w kodzie. Widoczny jest sposób Rozpocznij od szablonu projektu do tworzenia przez utworzenie hierarchii widoków z UIKit ekran aplikacji w kontrolerze. Następnie zawarto informacje, jak tworzyć widoki niestandardowe, które mogą być ładowane w kontrolerze.
+title: Tworzenie interfejsów użytkownika systemu iOS w kodzie w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu tworzenia interfejsu użytkownika dla aplikacji platformy Xamarin.iOS przy użyciu kodu. Zawarto informacje kontrolerów widoku, tworzenie hierarchii widoku, obsługę rotacji i inne.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784637"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie
-
-_Xamarin.iOS udostępnia dwie metody tworzenia interfejsu użytkownika dla aplikacji — przy użyciu projektanta Xamarin dla systemu iOS lub w kodzie. W tym artykule sprawdza, czy tworzenie interfejsów użytkownika dla systemu iOS całkowicie w kodzie. Widoczny jest sposób Rozpocznij od szablonu projektu do tworzenia przez utworzenie hierarchii widoków z UIKit ekran aplikacji w kontrolerze. Następnie zawarto informacje, jak tworzyć widoki niestandardowe, które mogą być ładowane w kontrolerze._
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie w Xamarin.iOS
 
 Interfejs użytkownika aplikacji systemu iOS przypomina sklepu — aplikacji zwykle pobiera jedno okno, ale jego może zapełnić okna z musi wiele obiektów jego, a obiekty i ustalenia można zmieniać w zależności od tego, co aplikacja potrzebuje do wyświetlenia. W tym scenariuszu - rzeczy, które użytkownik widzi — obiekty są nazywane widoków. Tworzenie jednego ekranu w aplikacji, widoki stos na siebie w hierarchii widok zawartości i hierarchii jest zarządzany przez pojedynczy kontroler widoku. Aplikacje z ekranami wielu mają wiele zawartości widoku hierarchii, każde z nich własny kontroler widoku i aplikacji umieszcza widoków w oknie można utworzyć innej hierarchii widok zawartości oparte na ekranie, której należy użytkownik.
 

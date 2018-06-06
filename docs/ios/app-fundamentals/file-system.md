@@ -1,21 +1,20 @@
 ---
-title: Praca w systemie plików
-description: Xamarin.iOS można użyć tej samej klasy System.IO do pracy z plików i katalogów w systemie iOS, który ma zostać użyty w dowolnej aplikacji .NET. Pomimo znanych klasy i metody, iOS implementuje pewne ograniczenia na plikach, które można utworzyć lub uzyskać dostępu do i udostępnia funkcje specjalne określonych katalogów. W tym artykule opisano te ograniczenia i funkcje oraz pokazano, jak działa dostęp do plików w aplikacji platformy Xamarin.iOS.
+title: Praca w systemie plików w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu pracy przy użyciu systemu plików w platformy Xamarin.iOS. Zawarto informacje katalogów odczytywania plików, serializacji XML i JSON, izolowanym aplikacji do udostępniania plików za pomocą programu iTunes i inne.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784244"
 ---
-# <a name="working-with-the-file-system"></a>Praca w systemie plików
-
-_Xamarin.iOS można użyć tej samej klasy System.IO do pracy z plików i katalogów w systemie iOS, który ma zostać użyty w dowolnej aplikacji .NET. Pomimo znanych klasy i metody, iOS implementuje pewne ograniczenia na plikach, które można utworzyć lub uzyskać dostępu do i udostępnia funkcje specjalne określonych katalogów. W tym artykule opisano te ograniczenia i funkcje oraz pokazano, jak działa dostęp do plików w aplikacji platformy Xamarin.iOS._
+# <a name="working-with-the-file-system-in-xamarinios"></a>Praca w systemie plików w Xamarin.iOS
 
 Można użyć Xamarin.iOS i `System.IO` klas w *biblioteki klasy podstawowej platformy .NET (BCL)* uzyskać dostępu do systemu plików z systemem iOS. `File` Klasa umożliwia tworzenie, usuwanie i odczytywać pliki i `Directory` klasa umożliwia tworzenie, usuwanie lub wyliczyć zawartości katalogów. Można również użyć `Stream` podklas, które zapewniają lepszej kontroli nad operacji na plikach (takie jak wyszukiwanie kompresji lub pozycji w pliku).
 
@@ -29,15 +28,13 @@ W tym artykule omówiono funkcje i ograniczenia systemu IOS system plików szcze
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>Dostęp do plików ogólne
 
 Xamarin.iOS umożliwia przy użyciu programu .NET `System.IO` klasy dla operacji systemu plików w systemie iOS.
 
 Poniższe fragmenty kodu przedstawiają pewne typowe operacje na plikach. Znajdziesz je wszystkie poniżej `SampleCode.cs` pliku w przykładowej aplikacji w tym artykule.
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>Praca z katalogami
 

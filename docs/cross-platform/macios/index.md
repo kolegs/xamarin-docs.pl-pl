@@ -1,20 +1,19 @@
 ---
 title: Platforma firmy Apple (z systemem iOS i Mac)
-description: W tej sekcji możemy obejmuje strategii współużytkowanie kodu platformy Xamarin.iOS i Xamarin.Mac projektów.
+description: 'W tym dokumencie opisano różne tematy związane z programowaniem Xamarin.iOS i Xamarin.Mac: code udostępnianie interfejsu API Unified, powiązanie Objective-C bibliotek, natywnego odwołania natywnych typów i więcej.'
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781536"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Platforma firmy Apple (z systemem iOS i Mac)
-
-_W tej sekcji możemy obejmuje strategii współużytkowanie kodu platformy Xamarin.iOS i Xamarin.Mac projektów._
 
 ## <a name="code-sharing"></a>Udostępnianie kodu
 
@@ -48,8 +47,6 @@ Xamarin pozwala dostosować natywnych bibliotek do aplikacji z powiązaniami. W 
 
 ## <a name="native-referencesnative-referencesmd"></a>[Odwołania natywne](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Typy natywne Mac/z systemem iOS](nativetypes.md)
 
 Aby obsługiwać 32 i 64-bitowy kod przezroczysty z C# i F #, wprowadzono nowe typy danych.   Dowiedz się więcej o je tutaj.
@@ -62,7 +59,6 @@ Co należy wiedzieć, do obsługi 32- i 64 bitowych aplikacji.
 
 W tym artykule omówiono za pomocą nowego systemu iOS Unified API natywnych typów (`nint`, `nuint`, `nfloat`) w aplikacji i platform, gdy kod jest współużytkowany z urządzeń z systemem innym niż z systemem iOS, takich jak Android i Windows Phone w systemach operacyjnych.
 Zapewnia wgląd w stosowania natywnych typów, a udostępnia kilka możliwych rozwiązań przypadkach gdy nowy typ musi być stosowana z kodem i platform.
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[Stos HttpClient i selektor implementacji protokołów SSL/TLS](http-stack.md)
 

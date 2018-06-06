@@ -1,20 +1,19 @@
 ---
-title: 'Analiza przypadku: Tasky'
-description: Tym dokumencie opisano, jak zastosowano zasady tworzenie wieloplatformowych aplikacji w przenośnych Tasky przykładowej aplikacji. Krawędzi na projekt aplikacji mobilnej, zapisywanie typowy kod do ponownego użycia i wdrażanie projektach specyficzne dla platformy, które są przeznaczone dla systemu iOS, Android i Windows Phone platformy.
+title: 'Analiza przypadku wieloplatformowych aplikacji: Tasky'
+description: W tym dokumencie opisano sposób Tasky przenośne przykładowej aplikacji został zaprojektowany i zbudowany jako wieloplatformowych aplikacji mobilnej. Zawarto informacje aplikacji wymagania, interfejsu, modelu danych, podstawowe funkcje, wdrożenia i inne.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 48650445d06ad3bc7ca6d4da84c9b8837f8a0f88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782238"
 ---
-# <a name="case-study-tasky"></a>Analiza przypadku: Tasky
-
-_Tym dokumencie opisano, jak zastosowano zasady tworzenie wieloplatformowych aplikacji w przenośnych Tasky przykładowej aplikacji. Krawędzi na projekt aplikacji mobilnej, zapisywanie typowy kod do ponownego użycia i wdrażanie projektach specyficzne dla platformy, które są przeznaczone dla systemu iOS, Android i Windows Phone platformy._
+# <a name="cross-platform-app-case-study-tasky"></a>Analiza przypadku wieloplatformowych aplikacji: Tasky
 
 *Tasky* *przenośne* jest aplikacją listy zadań do wykonania prostego. W tym dokumencie omówiono sposób został zaprojektowany i zbudowany, następujących wskazówek z [tworzenie aplikacji wieloplatformowych](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu. Dyskusja obejmuje następujące zagadnienia:
 

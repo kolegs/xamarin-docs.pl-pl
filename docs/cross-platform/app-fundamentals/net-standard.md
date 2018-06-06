@@ -1,19 +1,21 @@
 ---
-title: .NET standard
+title: Udostępnianie kodu przy użyciu standardowych bibliotek .NET
+description: Ten dokument zawiera opis sposobu standardowych bibliotek .NET umożliwia udostępnianie kodu. Omówiono jej tworzenia biblioteki .NET Standard, edytowania jego ustawienia i używania go w aplikacji.
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781036"
 ---
-# <a name="net-standard"></a>.NET standard
+# <a name="using-net-standard-libraries-to-share-code"></a>Udostępnianie kodu przy użyciu standardowych bibliotek .NET
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>Udostępnianie kodu przy użyciu standardowych projektów bibliotek .NET
+## <a name="net-standard"></a>.NET standard
 
 Standardowa biblioteka .NET jest formalną specyfikację interfejsów API architektury .NET, które mają być dostępne na wszystkich programów .NET. Motywacją za biblioteki standardowej jest ustanowienie większej jednolitości w ekosystemie .NET.
 [ECMA-335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) ustanowić jednolitość zachowania środowiska uruchomieniowego .NET, w dalszym ciągu, ale nie specyfikacji podobne dla .NET Base klasy biblioteki (BCL) w przypadku implementacji biblioteki .NET nie istnieje.

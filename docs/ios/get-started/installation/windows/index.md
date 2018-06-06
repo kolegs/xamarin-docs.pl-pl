@@ -1,17 +1,18 @@
 ---
 title: Instalowanie platformy Xamarin.iOS w systemie Windows
-description: W tym artykule opisano sposób konfigurowania komputera z systemem Windows i Mac kompilacji hosta do tworzenia aplikacji platformy Xamarin.iOS.
+description: Ten dokument zawiera opis sposobu konfigurowania maszynę z systemem Windows, Mac hosta kompilacji i para systemu Windows do komputera Mac do tworzenia aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: e6f50a48481be3ca5c64332f5a182e44715740c0
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 2bff37aba9b961b7308bf261377951dc96bd8e34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786067"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Instalowanie platformy Xamarin.iOS w systemie Windows
 

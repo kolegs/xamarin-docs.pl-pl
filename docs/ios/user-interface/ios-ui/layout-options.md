@@ -1,24 +1,25 @@
 ---
-title: Opcje układu
+title: Opcje układu w Xamarin.iOS
+description: W tym dokumencie opisano różne sposoby układ interfejsu użytkownika w Xamarin.iOS. Zawarto informacje automatyczna zmiana rozmiaru i układu automatycznego.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8f197bbffeabb708769c48f0130aa27a86b14386
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790119"
 ---
-# <a name="layout-options"></a>Opcje układu
+# <a name="layout-options-in-xamarinios"></a>Opcje układu w Xamarin.iOS
 
 Istnieją dwa mechanizmy kontroli układ, gdy widok jest obracana:
 
 -  **Automatyczna zmiana rozmiaru** — inspektora automatyczna zmiana rozmiaru w Projektancie pozwala ustawić `AutoresizingMask` właściwości. Umożliwi to formant jest zakotwiczony krawędziami kontenera ich i/lub usuń ich rozmiar. Automatyczna zmiana rozmiaru działa we wszystkich wersjach systemu IOS. Jest to opisane bardziej szczegółowo poniżej
--  **AutoLayout** — funkcja wprowadzona w iOS6, który umożliwia szczegółową kontrolę nad relacje kontrolek interfejsu użytkownika. Umożliwia kontrolę nad położenia elementów do innych elementów na powierzchni projektu. W tym temacie omówiono bardziej szczegółowo w [układ automatyczny z Xamarin iOS projektanta](~/ios/user-interface/designer/designer-auto-layout.md) przewodnik.
-
+-  **Automatyczny układ** — funkcja wprowadzona w systemie iOS 6, który umożliwia szczegółową kontrolę nad relacje kontrolek interfejsu użytkownika. Umożliwia kontrolę nad położenia elementów do innych elementów na powierzchni projektu. W tym temacie omówiono bardziej szczegółowo w [układ automatyczny z Xamarin iOS projektanta](~/ios/user-interface/designer/designer-auto-layout.md) przewodnik.
 
 ## <a name="autosizing"></a>Automatyczna zmiana rozmiaru
 

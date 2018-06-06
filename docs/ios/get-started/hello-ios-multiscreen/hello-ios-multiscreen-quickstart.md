@@ -1,6 +1,6 @@
 ---
-title: Witaj, iOS Multiscreen
-description: W tym przewodniku dwuczęściową możemy rozwiń aplikację Phoneword utworzone w Hello, iOS Podręcznik obsługi drugi ekranu. Wzdłuż sposób firma Microsoft będzie wprowadzenie wzorca projektowego Model-View-Controller, zaimplementować w naszym pierwszym nawigacji dla systemu iOS oraz opracowanie głębsze zrozumienie struktury aplikacji dla systemu iOS i funkcji.
+title: Witaj, iOS Multiscreen — Szybki Start
+description: Ten dokument przedstawia sposób rozwiń Phoneword przykładowej aplikacji, aby dodać drugi ekran, zawierająca model-view-controller, nawigacji dla systemu iOS oraz inne podstawowe koncepcje programowanie dla systemu iOS na bieżąco.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 469032dc7caa46c6a89b350dc37bc9a93366066a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785674"
 ---
-# <a name="helloios-multiscreen-quickstart"></a>Hello.iOS Wieloekranowy Szybki Start
+# <a name="hello-ios-multiscreen--quickstart"></a>Witaj, iOS Multiscreen — Szybki Start
 
 Ta część przewodnika doda drugi ekranu aplikacji Phoneword, która spowoduje wyświetlenie historii numerów telefonów, które zostały wywołane z aplikacją. Końcowe aplikacji będą mieć drugi ekranu, który wyświetla historię wywołanie, jak pokazano na poniższym zrzucie ekranu:
 
@@ -75,7 +76,7 @@ Następnie przenieś **Phoneword** sceny dalej, aby **kontrolera nawigacji**:
 
 8. Kliknij dwukrotnie **Phoneword** ekranu **tytuł** pasek i zmień **tytuł** do **Phoneword**:
 
-  ![](hello-ios-multiscreen-quickstart-images/09.png "Zmień tytuł do "Phoneword"")
+  ![](hello-ios-multiscreen-quickstart-images/09.png "Zmień tytuł do \"Phoneword\"")
 
 
 9. Przeciągnij **przycisk** z **przybornika** i umieść go w obszarze **przycisk Wywołaj**. Przeciągnij uchwyty, aby utworzyć nowy **przycisk** szerokość **przycisk Wywołaj**:
@@ -342,7 +343,7 @@ W tym przewodniku doda ekran Historia wywołań do naszej **Phoneword** aplikacj
 
 10. W **Explorer właściwości**, zmień **nazwa** z **przycisk** do `CallHistoryButton` i zmienić **tytuł** do  **Historia rozmów**:
 
-  ![](hello-ios-multiscreen-quickstart-images/image9.png "Zmień nazwę przycisku "CallHistoryButton" i tytuł "Historia rozmów"")
+  ![](hello-ios-multiscreen-quickstart-images/image9.png "Zmień nazwę przycisku \"CallHistoryButton\" i tytuł \"Historia rozmów\"")
 
 
 11. Utwórz **Historia wywołań** ekranu. Z **przybornika**, przeciągnij **kontrolera widoku tabeli** na powierzchnię projektu:

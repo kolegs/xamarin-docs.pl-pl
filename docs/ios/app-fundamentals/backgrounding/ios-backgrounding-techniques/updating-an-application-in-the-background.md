@@ -1,18 +1,20 @@
 ---
-title: Aktualizowanie aplikacji w tle
+title: Aktualizowanie aplikacji platformy Xamarin.iOS w tle
+description: Ten dokument zawiera opis różnych sposobów, aby zaktualizować aplikację platformy Xamarin.iOS, który znajduje się w tle, takie jak monitorowanie regionu, pobieranie w tle i zdalnego powiadomienia.
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 973c18528eee2096b29ba86e82ceff31ecf3e207
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784068"
 ---
-# <a name="updating-an-application-in-the-background"></a>Aktualizowanie aplikacji w tle
+# <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualizowanie aplikacji platformy Xamarin.iOS w tle
 
 Odświeżania w tle jest proces wznawiania pracy aplikacji, która jest wstrzymana lub nie działa i aktualizowanie jej z nową zawartość. dla systemu iOS zawiera trzy opcje odświeżanie zawartości w tle:
 

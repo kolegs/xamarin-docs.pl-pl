@@ -1,18 +1,20 @@
 ---
-title: Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji
+title: Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji platformy Xamarin.iOS
+description: W tym dokumencie opisano zakupy w aplikacji w Xamarin.iOS dyskutować istotne informacje o regułach, konfiguracji i iTunes Connect.
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ded160ad4b31346c400e63d739a3dc21f6304d3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787246"
 ---
-# <a name="in-app-purchase-basics-and-configuration"></a>Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Podstawowe informacje dotyczące zakupu w aplikacji i konfiguracji platformy Xamarin.iOS
 
 Implementowanie zakupy w aplikacji wymaga aplikacji mogą korzystać z interfejsu API StoreKit na urządzeniu. StoreKit zarządza cała komunikacja z serwerami iTunes firmy Apple, aby uzyskać informacje o produkcie i wykonywać transakcje. Profil inicjowania obsługi administracyjnej musi być skonfigurowany do zakupu w aplikacji i informacji o produkcie należy wprowadzić w iTunes Connect.
 

@@ -1,19 +1,20 @@
 ---
-title: System macOS interfejsu użytkownika
-description: Ten artykuł zawiera łącza do prowadnic opisujących różne macOS kontrolki interfejsu użytkownika.
+title: System macOS formantów interfejsu użytkownika w Xamarin.Mac
+description: Ten dokument prowadzi do prowadnic opisujących różne formantów interfejsu użytkownika dostępnych dla deweloperów Xamarin.Mac. Połączonej zawartości przedstawia systemu windows, okna dialogowe, alerty, menu, paski narzędzi, widoki tabel, widoków konspektu i więcej.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792957"
 ---
-# <a name="macos-user-interface"></a>System macOS interfejsu użytkownika
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>System macOS formantów interfejsu użytkownika w Xamarin.Mac
 
 _Ten artykuł zawiera łącza do prowadnic opisujących różne macOS kontrolki interfejsu użytkownika._
 

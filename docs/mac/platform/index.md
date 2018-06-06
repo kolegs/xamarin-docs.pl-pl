@@ -1,22 +1,22 @@
 ---
-title: Funkcje platformy
-description: Główne elementy macOS platformy
+title: System macOS funkcji platformy
+description: 'Ten dokument zawiera linki do prowadnic opisujące macOS ważne i funkcji platformy Xamarin.Mac: OpenTK, Scenorys, rozszerzenia i inne.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792228"
 ---
-# <a name="platform-features"></a>Funkcje platformy
+# <a name="macos-platform-features"></a>System macOS funkcji platformy
 
 Dokumenty w tej sekcji opisano pracy z funkcji macOS w aplikacji Xamarin.Mac klucza, specyficzne dla platformy.
-
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Wprowadzenie do systemu macOS Sierra](~/mac/platform/introduction-to-macos-sierra/index.md)
 

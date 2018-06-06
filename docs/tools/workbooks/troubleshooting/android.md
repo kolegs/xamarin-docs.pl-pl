@@ -1,14 +1,16 @@
 ---
 title: Rozwiązywanie problemów z Xamarin skoroszytów w systemie Android
+description: Ten dokument zawiera wskazówki dotyczące rozwiązywania problemów podczas pracy ze skoroszytami Xamarin w systemie Android. Zawarto informacje obsługi emulatora, których nie można załadować i innych tematów.
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: cbae5439b7f83d6114024b1f7225b3aaf2a1d166
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b01fa5b67f8a7f5577c6598f63f8c38e8fa4cf3c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793987"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Rozwiązywanie problemów z Xamarin skoroszytów w systemie Android
 

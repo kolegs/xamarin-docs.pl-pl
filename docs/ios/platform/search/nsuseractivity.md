@@ -1,18 +1,20 @@
 ---
-title: Wyszukiwania z NSUserActivity
+title: Wyszukiwania z NSUserActivity w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu indeksu NSUserActivity, dzięki czemu wyszukiwanie Spotlight oraz Safari. Zawarto informacje, jak reagować na wybór NSUserActivity w wynikach wyszukiwania.
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788211"
 ---
-# <a name="search-with-nsuseractivity"></a>Wyszukiwania z NSUserActivity
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>Wyszukiwania z NSUserActivity w Xamarin.iOS
 
 `NSUserActivity` został wprowadzony w systemie iOS 8 i służy do zapewnienia danych przekazaniem.
 Umożliwia tworzenie w określonych części aplikacji, które można następnie przekazać do innego wystąpienia aplikacji uruchomionej na urządzeniu iOS różnych działań. Urządzenie odbierające następnie nadal uruchomione na urządzeniu poprzedniej pobrania się po prawej, gdy użytkownik przerwał pracę działania. Aby uzyskać więcej informacji na temat używania przekazaniem, zobacz nasze [wprowadzenie do przekazaniem](~/ios/platform/handoff.md) dokumentacji.

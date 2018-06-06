@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials telefon
-description: Klasa PhoneDialer.Document umożliwia aplikacji w celu otwarcia link sieci web w przeglądarce preferowanych zoptymalizowanego systemu lub zewnętrznej przeglądarki.
+title: 'Xamarin.Essentials: Telefon'
+description: Klasa PhoneDialer.Document w Xamarin.Essentials umożliwia aplikacji w celu otwarcia link sieci web w przeglądarce preferowanych zoptymalizowanego systemu lub zewnętrznej przeglądarki.
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 112cc305457413ad057e390d46c5a765ea29514f
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782854"
 ---
-# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials telefon
+# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Telefon
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

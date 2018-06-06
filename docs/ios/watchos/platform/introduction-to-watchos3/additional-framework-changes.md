@@ -1,17 +1,18 @@
 ---
 title: Zmiany struktury dodatkowe watchOS 3
-description: W tym artykule omówiono dodatkowych, drobne zmiany lub ulepszenia istniejących struktur dla watchOS 3.
+description: W tym dokumencie opisano różne zmiany framework wprowadzone w systemie watchOS 3 i jak pracować z nimi w programie Xamarin. Omówiono podstawowe dane, Core ruchu Foundation, HealthKit, HomeKit, PassKit i UIKit.
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 572aaff9d010ec1ec1f48db2878859e445e2fb20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: af44096928c5e543ac99df3faec9f2e9215f666d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791518"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Zmiany struktury dodatkowe watchOS 3
 

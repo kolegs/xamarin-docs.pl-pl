@@ -1,17 +1,19 @@
 ---
-title: Wątkowość
+title: Wątkowość w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu korzystanie z interfejsów API System.Threading w aplikacji platformy Xamarin.iOS. Biblioteka zadań równoległych, tworzenie reakcji aplikacji i wyrzucanie elementów bezużytecznych zawarto informacje.
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63a213a62021923ac6dae8b080f3f8931621251d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784920"
 ---
-# <a name="threading"></a>Wątkowość
+# <a name="threading-in-xamarinios"></a>Wątkowość w Xamarin.iOS
 
 Środowisko uruchomieniowe platformy Xamarin.iOS umożliwia deweloperom dostęp do programu .NET wątkowość interfejsów API, zarówno jawnie za pomocą wątków (`System.Threading.Thread, System.Threading.ThreadPool`) i niejawnie używając wzorce asynchroniczne delegata lub metody BeginXXX, jak również pełny zakres z interfejsów API, które obsługują Biblioteka zadań równoległych.
 

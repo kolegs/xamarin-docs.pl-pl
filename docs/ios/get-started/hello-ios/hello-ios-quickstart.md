@@ -1,6 +1,6 @@
 ---
-title: Witaj, iOS Szybki Start
-description: Ten przewodnik dwuczęściową opisuje sposób tworzenia podstawowej aplikacji platformy Xamarin.iOS przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio i zrozumienia podstaw dotyczących tworzenia aplikacji systemu iOS za pomocą platformy Xamarin. Spowoduje to wprowadzenie narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.iOS.
+title: Witaj, iOS — Szybki Start
+description: W tym przewodniku pokazano, jak utworzyć prostą aplikację platformy Xamarin.iOS o nazwie Hello, z systemem iOS. W ten sposób wprowadza podstawowe narzędzia i pojęcia, które muszą być rozpatrywana umożliwiające tworzenie aplikacji platformy Xamarin.iOS.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785989"
 ---
-# <a name="helloios-quickstart"></a>Hello.iOS Szybki Start
+# <a name="hello-ios--quickstart"></a>Witaj, iOS — Szybki Start
 
 W tym przewodniku opisano sposób tworzenia aplikacji, który tłumaczy alfanumeryczne numer wprowadzony przez użytkownika do numeru telefonu liczbowego, a następnie wywołuje ten numer. Końcowe aplikacji wygląda następująco:
 
@@ -320,7 +321,7 @@ Ten przewodnik opisuje sposób tworzenia aplikacji o nazwie Phoneword, który t�
 
 1. Z **etykiety** zaznaczone na powierzchni projektu, użyj **okna właściwości** zmienić **tekst** właściwość **etykiety** do "Enter Phoneword: "
 
-  ![](hello-ios-quickstart-images/vs-image10.png "Zmień wartość właściwości tekst etykiety "Wprowadzić Phoneword"")
+  ![](hello-ios-quickstart-images/vs-image10.png "Zmień wartość właściwości tekst etykiety \"Wprowadzić Phoneword\"")
 
   > [!NOTE]
   > Można wyświetlić **właściwości** lub **przybornika** w dowolnym momencie, przechodząc do **widoku** menu.

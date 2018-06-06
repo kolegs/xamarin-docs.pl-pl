@@ -1,5 +1,5 @@
 ---
-title: Źródło listy
+title: Źródło listy w Xamarin.Mac
 description: Ten artykuł dotyczy pracy z listy źródła w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie list źródła w środowisku Xcode i konstruktora interfejsu i interakcji z nimi w kodzie języka C#.
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a8d3a67768b9e47833d1819c3bf44774a52d2438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792775"
 ---
-# <a name="source-lists"></a>Źródło listy
+# <a name="source-lists-in-xamarinmac"></a>Źródło listy w Xamarin.Mac
 
 _Ten artykuł dotyczy pracy z listy źródła w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie list źródła w środowisku Xcode i konstruktora interfejsu i interakcji z nimi w kodzie języka C#._
 

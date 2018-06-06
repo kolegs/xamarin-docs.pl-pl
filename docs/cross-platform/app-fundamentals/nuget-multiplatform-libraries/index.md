@@ -1,16 +1,17 @@
 ---
 title: Projekty NuGet (Nugetizer 3000)
-description: Automatyczne tworzenie pakietów NuGet udostępnianie kodu na platformach przy użyciu 'Nugetizer 3000'!
+description: Ten dokument zawiera opis sposobu narzędzie Nugetizer 3000 służy do automatycznego tworzenia pakietów NuGet, aby udostępnić kodu na platformach.
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 60c78385d0ffd2fbbdd7af5a4ef4af63e30feb9f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f79ed775173e05dd850fbc74c53127b63c0d5f34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780773"
 ---
 # <a name="nuget-projects-nugetizer-3000"></a>Projekty NuGet (Nugetizer 3000)
 

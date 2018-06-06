@@ -1,5 +1,5 @@
 ---
-title: Wskazówki — przy użyciu CoreGraphics i CoreAnimation
+title: Przy użyciu grafiki Core i Core animacji w Xamarin.iOS
 description: W tym artykule krok po kroku przedstawiono sposób tworzenia aplikacji, która używa grafiki Core i Core animacji. Pokazuje sposób rysowania na ekranie w odpowiedzi na touch użytkownika, a także sposobu animowany obraz przesyłanie wzdłuż ścieżki.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787058"
 ---
-# <a name="drawing-and-animating-along-a-path"></a>Rysowanie i animowanie wzdłuż ścieżki
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Przy użyciu grafiki Core i Core animacji w Xamarin.iOS
 
 W ramach tego przewodnika zamierzamy narysować ścieżkę przy użyciu grafiki podstawowej w odpowiedzi do wprowadzania dotykowego. Następnie dodamy `CALayer` zawierającego obraz, który firma Microsoft będzie animować wzdłuż ścieżki.
 

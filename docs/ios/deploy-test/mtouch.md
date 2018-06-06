@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: Przy użyciu mtouch do pakietu aplikacji platformy Xamarin.iOS
+description: W tym dokumencie opisano mtouch, narzędzie dysków wiele z tych kroków wymaganych do Włącz aplikację platformy Xamarin.iOS do pakietu, uruchom ją w symulatorze i wdrożyć go na urządzeniu fizycznym.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784956"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Przy użyciu mtouch do pakietu aplikacji platformy Xamarin.iOS
 
 iPhone aplikacje są dostarczane jako pakiety aplikacji. Są to katalogi z rozszerzeniem `.app` zawierające kod, dane i pliki konfiguracji manifestu, który używa telefonów iPhone, aby dowiedzieć się więcej na temat aplikacji.
 
 Proces przekształcania wykonywalny .NET do aplikacji przede wszystkim jest wymuszany przez `mtouch` polecenia narzędzia, która integruje się z wielu kroków wymaganych do Włączanie aplikacji do pakietu. Narzędzie to jest również używane do uruchamiania aplikacji w symulatorze i wdrażania oprogramowania do rzeczywistego urządzenia iPhone lub iPod Touch.
-
 
 ## <a name="detailed-instructions"></a>Szczegółowe instrukcje
 

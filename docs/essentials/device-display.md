@@ -1,17 +1,18 @@
 ---
-title: Wyświetl informacje o urządzeniu Xamarin.Essentials
-description: Klasa DeviceDisplay zawiera informacje o metryki ekranu urządzenia aplikacja jest uruchomiona na.
+title: 'Xamarin.Essentials: Wyświetl informacje o urządzeniu'
+description: W tym dokumencie opisano klasy DeviceDisplay w Xamarin.Essentials, który zawiera metryki ekranu urządzenia, na którym działa aplikacja.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 05701ff2bc9fceac8a0a490989e52d0327079d46
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 830b96bcc21397047cb5aaacb5c568bc2ee863c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782375"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Wyświetl informacje o urządzeniu Xamarin.Essentials
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Wyświetl informacje o urządzeniu
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

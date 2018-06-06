@@ -1,19 +1,20 @@
 ---
-title: Wyszukiwania za pomocą znacznika sieci Web
-description: Dodawanie wyniki wyszukiwania opartych na sieci web, które można połączyć aplikację.
+title: Wyszukiwania za pomocą znacznika sieci Web w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu tworzenia wyniki wyszukiwania opartych na sieci web, które łącze do aplikacji platformy Xamarin.iOS. Zawarto informacje, jak włączyć zawartość sieci web indeksowania, przez co wykrywalny, przy użyciu transparentach inteligentne aplikacji, uniwersalnych łącza i innych aplikacji witryny sieci Web.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787997"
 ---
-# <a name="search-with-web-markup"></a>Wyszukiwania za pomocą znacznika sieci Web
+# <a name="search-with-web-markup-in-xamarinios"></a>Wyszukiwania za pomocą znacznika sieci Web w Xamarin.iOS
 
 W przypadku aplikacji, które zapewniają dostęp do zawartości za pośrednictwem witryny sieci web (nie tylko z poziomu aplikacji), zawartość sieci web może być oznaczony specjalne łącza, który będzie przeszukiwana przez firmę Apple oraz podaj połączeń bezpośrednich do aplikacji na urządzeniu z systemem iOS 9 użytkownika.
 

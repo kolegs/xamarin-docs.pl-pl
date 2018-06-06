@@ -1,17 +1,19 @@
 ---
 title: Tematy zaawansowane integracji
+description: W tym dokumencie opisano Tematy zaawansowane powiązany integracji skoroszyty Xamarin. Zawarto informacje pakietu Xamarin.Workbook.Integrations NuGet i zagrożeń interfejsu API w skoroszycie Xamarin.
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: fc108c3d7f6f4c0fbd948182b4e60a3eee0aea0a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1aa6b5d0ca574345e1d349ea53df96f554c06bc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793839"
 ---
-# <a name="external-integrations"></a>Zewnętrzne integracji
+# <a name="advanced-integration-topics"></a>Tematy zaawansowane integracji
 
 Zestawy integracji powinien odwoływać [ `Xamarin.Workbooks.Integrations` NuGet][nuget]. Zapoznaj się z naszym [szybki start dokumentacji](~/tools/workbooks/sdk/index.md) Aby uzyskać więcej informacji na temat rozpoczynania pracy z pakietu NuGet.
 

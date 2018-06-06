@@ -1,21 +1,20 @@
 ---
-title: Praca z kontrolerami nawigacji
-description: Ten artykuł obejmuje projektowanie i Praca z paskami nawigacji wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS pasków nawigacji w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z pasków nawigacji w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin. Go w tym artykule omówiono konfigurowanie pasków nawigacji w scenorysu i reagowanie na zdarzenia z tych przycisków.
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789294"
 ---
-# <a name="working-with-navigation-controllers"></a>Praca z kontrolerami nawigacji
-
-_Ten artykuł obejmuje projektowanie i Praca z paskami nawigacji wewnątrz aplikacji Xamarin.tvOS._
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Praca z systemu tvOS pasków nawigacji w programie Xamarin
 
 Pasek nawigacyjny można dodać na początku widoków do wyświetlenia, tytuł i opcjonalnie przycisków na pasku nawigacyjnym. Zwykle są one używane, gdy użytkownik ma przeszedł ze strony głównej, takich jak widok tabeli, kolekcji lub Menu Widok podrzędny pokazywanie szczegółów wybranego elementu.
 
@@ -26,9 +25,6 @@ Ponadto do tytułu (który jest wyświetlany na środku) pasków nawigacji może
 > [!IMPORTANT]
 > Pasek nawigacyjny są całkowicie niewidoczne domyślnie. Należy zachować ostrożność, aby upewnić się, zawartość paska nawigacyjnego pozostaje można odczytać zawartości podrzędne. Na przykład, gdy zawartość w widoku tabeli lub kolekcji Przewija na jego podstawie.
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>Pasków nawigacji i planów
@@ -36,7 +32,6 @@ Ponadto do tytułu (który jest wyświetlany na środku) pasków nawigacji może
 Najprostszym sposobem, aby pracować z pasków nawigacji w aplikacji Xamarin.tvOS jest dodanie ich do interfejsu użytkownika aplikacji przy użyciu projektanta dla systemu iOS.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 1. W **konsoli rozwiązania**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **pasek nawigacyjny** z **przybornika** i upuść go w widoku w górnej części ekranu: 
@@ -77,9 +72,6 @@ Najprostszym sposobem, aby pracować z pasków nawigacji w aplikacji Xamarin.tvO
 
 > [!IMPORTANT]
 > Gdy jest można przypisać zdarzenia, takie jak `TouchUpInside` do elementu interfejsu użytkownika (na przykład UIButton) w systemie iOS projektanta, jego zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma dotykowego ekranu lub obsługuje zdarzenia touch. Zawsze należy używać `Primary Action` zdarzenie, gdy tworzenie obsługi zdarzeń dla systemu tvOS elementy interfejsu użytkownika.
-
-
-
 
 Poniższy kod zapewnia przykład programów obsługi zdarzeń na trzy różne BarButtonItems: `ShowFirstHotel`, `ShowSecondHotel`, i `ShowThirdHotel`. Po kliknięciu każdego elementu, obrazu tła `HotelImage` zostanie zmieniona. To jest edytowany w kontroler widoku (przykład `ViewController.cs`) plików:
 

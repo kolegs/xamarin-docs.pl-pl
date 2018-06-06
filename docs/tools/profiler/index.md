@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
-ms.date: 10/27/2017
-ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 06/03/2018
+ms.openlocfilehash: 42a8a2e3751d111f6ba8ccbea32e0446460f9a29
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793878"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -289,13 +290,15 @@ Wykres skrzynkowy jak pokazano na zrzucie ekranu poniżej, wyświetla liczbę pr
 
 ### <a name="cycles"></a>Cykle
 
-Przy użyciu języka C# i F # zarządzanego kodu może być dość często i Niestety bardzo łatwo utworzyć odwołania do obiektów, które nigdy nie zostaną usunięte. Ta intrument umożliwia wskazanie tych obiektów, a następnie Wyświetl cykle, do których odwołuje się do aplikacji.
+Przy użyciu języka C# i F # zarządzanego kodu może być dość często i Niestety bardzo łatwo utworzyć odwołania do obiektów, które nigdy nie zostaną usunięte. Niniejszy dokument umożliwia wskazanie tych obiektów, a następnie Wyświetl cykle, do których odwołuje się do aplikacji.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
+[![Cykle dokumentu](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cykle dokumentu](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
+[![Cykle dokumentu](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
 -----
 

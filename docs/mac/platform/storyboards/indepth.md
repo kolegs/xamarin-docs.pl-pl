@@ -1,19 +1,20 @@
 ---
-title: Praca z Scenorys
-description: Tworzenie macOS interfejsy użytkownika z scenorys za pomocą środowiska Xcode.
+title: Praca z Scenorys w Xamarin.Mac
+description: Ten dokument w tym artykule opisano sposób pracy z scenorys w Xamarin.Mac badanie jak załadować je z kodu, cyklu życia kontrolera widoku, łańcuch obiektu odpowiadającego w trybie, segues okna kontrolerów, aparaty rozpoznawania gestów i inne.
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 72986ed4247c3b6f66f6f1813d74bf0a95d0de53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792843"
 ---
-# <a name="storyboards"></a>scenorysy
+# <a name="working-with-storyboards-in-xamarinmac"></a>Praca z Scenorys w Xamarin.Mac
 
 Scenorysu definiuje wszystkie interfejsu użytkownika dla danej aplikacji, podzielić na funkcjonalności omówienie jego kontrolerów widoku. W Konstruktorze interfejsu w programie Xcode każdy z tych kontrolerów przebywa w jego własnej sceny.
 

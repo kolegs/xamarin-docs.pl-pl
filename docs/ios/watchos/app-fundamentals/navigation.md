@@ -1,18 +1,20 @@
 ---
-title: Praca z nawigacji
+title: Praca z watchOS nawigacji w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z nawigacji w aplikacji watchOS. Zawarto informacje modalne interfejsów, hierarchicznych nawigacji i interfejsów opartych na stronie.
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3cef621479db89bfe30c1e82bf5e12f18d0e46af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9bcfc388164060549ca7010d11671abfa8230ac
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790643"
 ---
-# <a name="working-with-navigation"></a>Praca z nawigacji
+# <a name="working-with-watchos-navigation-in-xamarin"></a>Praca z watchOS nawigacji w programie Xamarin
 
 Najprostsza opcja nawigacji dostępne na wyrażenie kontrolne jest prostą [modalnych menu podręczne](#modal) wyświetlonym u góry bieżącej sceny.
 

@@ -1,21 +1,20 @@
 ---
-title: Zmiany w sklepie z aplikacjami
-description: Poznawanie nowych funkcji systemu IOS 11
+title: Zmiany sklepu z aplikacjami systemu iOS 11
+description: Ten dokument Eksploruje zmiany do sklepu z aplikacjami w systemie iOS 11. Omówiono go ikona magazynu aplikacji, awansowana zakupy w aplikacji, produktu przeprojektowana strona, komunikacji z klientami i wersjach etapowe.
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9c9355c047d2e7083ca787f473515163d8e6f5f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59f5d2c0c05ec2950ae7cc74e4f5aaa2565020f0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787393"
 ---
-# <a name="app-store-changes"></a>Zmiany w sklepie z aplikacjami
-
-_Poznawanie nowych funkcji systemu IOS 11_
+# <a name="app-store-changes-in-ios-11"></a>Zmiany sklepu z aplikacjami systemu iOS 11
 
 IOS App Store miał pełną one, które nie tylko umożliwia wydajne Przejdź magazynu, ale można też, Deweloper, aby promować aplikację dla użytkowników. Promocje te obejmują aktualizacje na zakupy w aplikacji i aktualizacji do strony produktu. iOS 11 dodaje również aktualizacje dotyczące sposób komunikowania się z użytkownikami, jak dodać ikonę Twojej aplikacji i jak zwolnić aplikacji publicznie.
 

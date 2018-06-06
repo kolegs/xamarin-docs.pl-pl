@@ -1,19 +1,20 @@
 ---
-title: Organizowanie wyjątku
-description: Xamarin.iOS zawiera nowych zdarzeń, aby pomóc odpowiedzieć na wyjątki, szczególnie w kodzie natywnym.
+title: Wyjątek przekazywanie w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu pracy z natywnych i zarządzanych wyjątków w aplikacji platformy Xamarin.iOS. Zawarto informacje problemów, które mogą wystąpić i rozwiązanie tych problemów.
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786746"
 ---
-# <a name="exception-marshaling"></a>Organizowanie wyjątku
+# <a name="exception-marshaling-in-xamarinios"></a>Wyjątek przekazywanie w Xamarin.iOS
 
 _Xamarin.iOS zawiera nowych zdarzeń, aby pomóc odpowiedzieć na wyjątki, szczególnie w kodzie natywnym._
 
@@ -108,7 +109,7 @@ W tym miejscu tylko ramki zarządzane są ramki 8-10, ale zarządzanych wyjątku
 
 Przykład kodu:
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ I `@finally` klauzuli nie zostanie wykonany, ponieważ Mono środowisko uruchomi
 
 Odmiana to ma throw zarządzanym wyjątku w kod zarządzany, a następnie rozwinięcia za pośrednictwem ramek natywnych, aby uzyskać pierwszy zarządzanych `catch` klauzuli:
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {

@@ -1,18 +1,20 @@
 ---
-title: Łączenie w systemie iOS
+title: Łączenie aplikacji platformy Xamarin.iOS
+description: W tym dokumencie opisano przez konsolidatora Xamarin.iOS, aby zmniejszyć jego rozmiar jest używany w celu wyeliminowania nieużywane kod z aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: 1d83a152c0949abe0221f6eb6dfb42f4e79eaf38
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f80faa961fe4bef45df33c411d914ba80e605c75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785583"
 ---
-# <a name="linking-on-ios"></a>Łączenie w systemie iOS
+# <a name="linking-xamarinios-apps"></a>Łączenie aplikacji platformy Xamarin.iOS
 
 Podczas tworzenia aplikacji, programu Visual Studio for Mac lub Visual Studio wywołuje narzędzie **mtouch** zawierającą konsolidatora dla kodu zarządzanego. Służy do usunięcia z bibliotek klas funkcje, które nie korzysta z aplikacji. Celem jest, aby zmniejszyć rozmiar aplikacji, która będzie dostarczany z tylko niezbędne usługi bits.
 

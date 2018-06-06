@@ -1,18 +1,20 @@
 ---
-title: Tworzenie obiektów interfejsu użytkownika
+title: Tworzenie obiektów interfejsu użytkownika platformy Xamarin.iOS
+description: Ten dokument zawiera omówienie sposobu tworzenia interfejsu użytkownika w Xamarin.iOS. Zawarto informacje iOS projektanta, konstruktora interfejsu Xcode, C# i scenorys.
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790155"
 ---
-# <a name="creating-user-interface-objects"></a>Tworzenie obiektów interfejsu użytkownika
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Tworzenie obiektów interfejsu użytkownika platformy Xamarin.iOS
 
 Apple grupuje pokrewne elementy funkcji do "platformy", które są równoważne Xamarin.iOS przestrzeni nazw. `UIKit` jest przestrzenią nazw, który zawiera wszystkie kontrolki interfejsu użytkownika dla systemu iOS.
 
@@ -21,7 +23,6 @@ Zawsze, gdy kod musi odwoływać kontrolki interfejsu użytkownika, takie jak et
 ```csharp
 using UIKit;
 ```
-
 
 Wszystkie opcje omówionych w tym rozdziale znajdują się w przestrzeni nazw UIKit i ma nazwę klasy formantu każdego użytkownika `UI` prefiks.
 

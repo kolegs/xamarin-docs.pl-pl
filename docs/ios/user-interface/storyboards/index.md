@@ -1,21 +1,20 @@
 ---
-title: Wprowadzenie do scenorysu
-description: Scenorysu jest wizualną reprezentację wygląd i przepływu aplikacji. Xamarin wprowadziła projektanta, aby umożliwić aplikacjom Xamarin.iOS zalet scenorys, dzięki czemu można zaprojektować wizualnie ekranu aplikacji i dostępu do widoków, kontrolery i segues w języku C# Aby uzyskać większą kontrolę.
+title: Wprowadzenie do scenorysu w Xamarin.iOS
+description: Ten dokument zawiera wprowadzenie do scenorysu w platformy Xamarin.iOS. W tym artykule opisano, jak scenorysu służy do definiowania interfejsu użytkownika, segues i sposobu używania projektanta dla systemu iOS do edycji plików scenorysu.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790971"
 ---
-# <a name="introduction-to-storyboards"></a>Wprowadzenie do scenorysu
-
-_Scenorysu jest wizualną reprezentację wygląd i przepływu aplikacji. Xamarin wprowadziła projektanta, aby umożliwić aplikacjom Xamarin.iOS zalet scenorys, dzięki czemu można zaprojektować wizualnie ekranu aplikacji i dostępu do widoków, kontrolery i segues w języku C# Aby uzyskać większą kontrolę._
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Wprowadzenie do scenorysu w Xamarin.iOS
 
 W tym przewodniku Wyjaśnijmy, jakie scenorysu jest i sprawdź, czy niektóre najważniejsze składniki — takie jak Segues. Wyjaśniono, jak Scenorys można tworzyć i używane, i jakie zalety mają dla deweloperów.
 

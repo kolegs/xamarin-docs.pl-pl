@@ -1,18 +1,19 @@
 ---
-title: Platforma SkiaSharp konkretne szczegółowe informacje
-description: Więcej informacji na temat do Twojej zawartości SKSurface do natywnej aplikacji.
+title: Zawiera informacje specyficzne dla platformy SkiaSharp
+description: W tym dokumencie opisano istotne SkiaSharp szczegóły specyficzne dla platformy. Przykładowy kod zapewnia dla systemu iOS, Android, macOS, Windows i platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f40c7ea0b118816b7be373617795db9158c1450
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783532"
 ---
-# <a name="platform-specific-integration"></a>Integracja określonej platformy
+# <a name="skiasharp-platform-specific-notes"></a>Zawiera informacje specyficzne dla platformy SkiaSharp
 
 Poniższe przykłady przydzielić buforów obrazu ręcznie, to aby zilustrować wspólnego wzorca platformy, który jest uwzględnienie istniejącemu buforowi RBGA dostarczone przez platformę.
 

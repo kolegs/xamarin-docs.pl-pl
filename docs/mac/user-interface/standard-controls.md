@@ -1,5 +1,5 @@
 ---
-title: Formanty standardowe
+title: Formanty standardowe w Xamarin.Mac
 description: Ten artykuł dotyczy pracy z standardowych formantów AppKit, takie jak przyciski, etykiet, pola tekstu pola wyboru, a segmentem formantów w aplikacji Xamarin.Mac. Opisuje dodanie ich do interfejsu z konstruktora interfejsu i interakcji z nimi w kodzie.
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3fe155508b60cbe502c3beca58426528d6f49c9d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9d110d0d7a46d431ea6fca50caffe05903ddce2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793048"
 ---
-# <a name="standard-controls"></a>Formanty standardowe
+# <a name="standard-controls-in-xamarinmac"></a>Formanty standardowe w Xamarin.Mac
 
 _Ten artykuł dotyczy pracy z standardowych formantów AppKit, takie jak przyciski, etykiet, pola tekstu pola wyboru, a segmentem formantów w aplikacji Xamarin.Mac. Opisuje dodanie ich do interfejsu z konstruktora interfejsu i interakcji z nimi w kodzie._
 

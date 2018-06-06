@@ -1,18 +1,20 @@
 ---
-title: Transakcje i weryfikacji
+title: Transakcje i weryfikacja w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu umożliwić przywrócenie poprzednich zakupy w aplikacji platformy Xamarin.iOS. Zawiera omówienie również metody zabezpieczania zakupów i produktów dostarczonych przez serwer.
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d86d0ce3119b3e104a65a170ab141484af44a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2cb38df4bbabc3534f5c90c7695569d68349ccc3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786928"
 ---
-# <a name="transactions-and-verification"></a>Transakcje i weryfikacji
+# <a name="transactions-and-verification-in-xamarinios"></a>Transakcje i weryfikacja w Xamarin.iOS
 
 ## <a name="restoring-past-transactions"></a>Przywracanie transakcje w przeszłości
 
@@ -195,7 +197,7 @@ Alternatywną implementację produktu bardzo dużych plików zawartości mogą o
 
 ### <a name="writing-server-side-receipt-verification-code"></a>Pisanie kodu weryfikacyjnego otrzymania po stronie serwera
 
-Sprawdzanie poprawności przyjęcia w kodzie po stronie serwera można zrobić za pomocą prostego POST protokołu HTTP żądania/odpowiedzi, która obejmuje kroki #5 – &#8; w diagram przepływu pracy.   
+Sprawdzanie poprawności przyjęcia w kodzie po stronie serwera można zrobić za pomocą prostego POST protokołu HTTP żądania/odpowiedzi, która obejmuje kroki #5 – 8 # w diagram przepływu pracy.   
    
    
    

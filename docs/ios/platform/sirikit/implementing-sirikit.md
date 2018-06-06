@@ -1,23 +1,22 @@
 ---
-title: Implementowanie SiriKit
-description: W tym artykule opisano kroki wymagane do zaimplementowania SiriKit pomocy technicznej w aplikacji platformy Xamarin.iOS.
+title: Implementowanie SiriKit w Xamarin.iOS
+description: Ten dokument zawiera opis czynności wymagane do zaimplementowania SiriKit pomocy technicznej w aplikacji platformy Xamarin.iOS. Go w tym artykule omówiono rozszerzenia intencje i rozszerzenia intencje interfejsu użytkownika.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788852"
 ---
-# <a name="implementing-sirikit"></a>Implementowanie SiriKit
+# <a name="implementing-sirikit-in-xamarinios"></a>Implementowanie SiriKit w Xamarin.iOS
 
 _W tym artykule opisano kroki wymagane do zaimplementowania SiriKit pomocy technicznej w aplikacji platformy Xamarin.iOS._
-
-
 
 Nowość w systemach iOS 10, SiriKit umożliwia aplikacji platformy Xamarin.iOS do świadczenia usług, które są dostępne dla użytkownika za pomocą aplikacja map i używanie programu Siri na urządzeniu z systemem iOS. W tym artykule opisano kroki wymagane do wykonania SiriKit pomocy technicznej w aplikacji platformy Xamarin.iOS przez dodanie wymaganych opcji rozszerzenia, rozszerzenia interfejsu użytkownika intencje i słownika.
 

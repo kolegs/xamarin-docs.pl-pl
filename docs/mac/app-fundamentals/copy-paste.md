@@ -1,5 +1,5 @@
 ---
-title: Kopiowanie i wklejanie
+title: Skopiuj i Wklej w Xamarin.Mac
 description: Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i wklejania w aplikacji Xamarin.Mac. Widoczny jest sposób pracy z typy standardowych danych, które może być współużytkowana wielu aplikacji oraz sposobu obsługi danych niestandardowych w danej aplikacji.
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: becdec771949584919595c84b13ae9e05bfd377b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791900"
 ---
-# <a name="copy-and-paste"></a>Kopiowanie i wklejanie
+# <a name="copy-and-paste-in-xamarinmac"></a>Skopiuj i Wklej w Xamarin.Mac
 
 _Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i wklejania w aplikacji Xamarin.Mac. Widoczny jest sposób pracy z typy standardowych danych, które może być współużytkowana wielu aplikacji oraz sposobu obsługi danych niestandardowych w danej aplikacji._
 

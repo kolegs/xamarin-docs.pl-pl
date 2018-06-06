@@ -1,21 +1,20 @@
 ---
-title: Karta paski i kontrolery kart
-description: aplikacje systemu iOS przy użyciu interfejsu użytkownika karty nawigacji są tworzone za pomocą klasy UITabBarController. W tym artykule zostanie omówiony sposób z kartami aplikacji, która zawiera kilka widoków i kontrolerów. Następnie zajmiemy się jak załadować UITabBarController, gdy nie jest ona głównego kontrolera, takie jak po ekranie logowania.
+title: Karta paski i kontrolerów kart w Xamarin.iOS
+description: W tym dokumencie opisano kontrolerów pasek kartę iOS i z nich korzystać z platformy Xamarin.iOS. Go pokazano, jak skonfigurować UITabBarController, Praca z obrazami, ustaw wartości wskaźnika, Praca ze zdarzeniami i inne.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789761"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>Karta paski i kontrolery kart
-
-_aplikacje systemu iOS przy użyciu interfejsu użytkownika karty nawigacji są tworzone za pomocą klasy UITabBarController. W tym artykule zostanie omówiony sposób z kartami aplikacji, która zawiera kilka widoków i kontrolerów. Następnie zajmiemy się jak załadować UITabBarController, gdy nie jest ona głównego kontrolera, takie jak po ekranie logowania._
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Karta paski i kontrolerów kart w Xamarin.iOS
 
 Aplikacje z kartami są używane w systemie iOS do obsługi interfejsu użytkownika, której można uzyskać dostęp do wielu ekranów w określonej kolejności. Za pomocą `UITabBarController` klasy, aplikacje można łatwo obejmują obsługę takich scenariuszy z wieloma ekranu. `UITabBarController` zapewnia obsługę zarządzania wieloma ekranu, dzięki czemu Deweloper aplikacji skoncentrować się na szczegóły każdego ekranu.
 

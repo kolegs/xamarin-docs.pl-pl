@@ -1,5 +1,5 @@
 ---
-title: Framework społecznościowych
+title: Struktura społecznościowych w Xamarin.iOS
 description: Społecznościowych Framework zapewnia ujednolicony interfejs API do interakcji z sieciami społecznościowymi, łącznie z serwisem Twitter i Facebook, a także SinaWeibo dla użytkowników w Chinach.
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 334e05ad653d766b48f7f6028a1e98b0a0548c0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b7269282b18adc46f53b708a0af4934a1621d23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788198"
 ---
-# <a name="social-framework"></a>Framework społecznościowych
+# <a name="social-framework-in-xamarinios"></a>Struktura społecznościowych w Xamarin.iOS
 
 _Społecznościowych Framework zapewnia ujednolicony interfejs API do interakcji z sieciami społecznościowymi, łącznie z serwisem Twitter i Facebook, a także SinaWeibo dla użytkowników w Chinach._
-
 
 Przy użyciu platformy społecznościowych umożliwia aplikacjom komunikowanie się z sieciami społecznościowymi z jednego interfejsu API bez konieczności zarządzania uwierzytelniania. Obejmuje on system dostępne kontrolera widoku w celu tworzenia wpisów, a także abstrakcji, która umożliwia korzystanie z interfejsu API w każdej sieci społecznościowych za pośrednictwem protokołu HTTP.
 

@@ -1,15 +1,17 @@
 ---
 title: Tworzenie nowej biblioteki dla wielu platform dla NuGet
+description: Ten dokument zawiera opis sposobu tworzenia biblioteki dla wielu platform do użytku z programem NuGet. Ta technika jest odpowiedni dla logiki biznesowej i algorytmy, które mogą być wyrażone w całości biblioteki .NET klasa podstawowa i w związku z tym będzie uruchamiany na wszystkich platformach docelowych bez kodu specyficzne dla platformy.
 ms.prod: xamarin
 ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ee508d40423e3757f7e2934b7682f840ebf8b86a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b59450ac949bffdf927475598d3678564f09f8cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781331"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Tworzenie nowej biblioteki dla wielu platform dla NuGet
 

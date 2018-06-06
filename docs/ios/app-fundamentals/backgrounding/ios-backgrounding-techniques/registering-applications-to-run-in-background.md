@@ -1,18 +1,20 @@
 ---
-title: Rejestrowanie aplikacji do uruchamiania w tle
+title: Rejestrowanie aplikacji platformy Xamarin.iOS do uruchamiania w tle
+description: Ten dokument zawiera opis sposobu zarejestrować aplikację platformy Xamarin.iOS do uruchamiania w tle. Zawarto informacje Audio aplikacji, VoIP aplikacji zewnętrznych Akcesoria i bluetooth i więcej.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783678"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>Rejestrowanie aplikacji do uruchamiania w tle
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Rejestrowanie aplikacji platformy Xamarin.iOS do uruchamiania w tle
 
 Rejestrowanie poszczególne zadania dla tła uprawnienia działa w przypadku niektórych aplikacji, ale co się stanie, jeśli aplikacja jest stale wywołana po w celu przeprowadzenia ważne, długotrwałe zadania, takie jak pobieranie wskazówki dotyczące użytkownika za pośrednictwem GPS? Aplikacje, takie jak te zamiast tego powinien zostać zarejestrowany jako znanych aplikacji konieczne tła.
 

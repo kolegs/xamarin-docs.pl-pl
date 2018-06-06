@@ -1,29 +1,26 @@
 ---
 title: Procedury kontroli aplikacji na żywo
-description: Tworzenie wizualizacji i debugowanie aplikacji na żywo
+description: Ten dokument zawiera opis sposobu kontroli aplikacji za pomocą Inspektora Xamarin. Zawiera omówienie również ograniczeń tego narzędzia inspektora Xamarin.
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 8bcdc5ac50a0f03086ad9e9c3265e3ce86b06704
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793482"
 ---
 # <a name="inspecting-live-applications"></a>Procedury kontroli aplikacji na żywo
 
 Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
-
 1. [Zainstaluj program Xamarin skoroszytów & Inspektor.](~/tools/inspector/install.md)
-
 1. Otwórz dowolną [obsługiwane projektu aplikacji](~/tools/inspector/install.md#supported-platforms) w Visual Studio for Mac lub Visual Studio.
 1. Uruchom aplikację w trybie debugowania.
 1. Kliknij przycisk **inspekcję** przycisku w pasku narzędzi IDE (w programie Visual Studio **inspekcję bieżącej aplikacji...**  element menu jest również dostępna z **narzędzia** lub **debugowania** menu).
-
-
 
 [![](inspect-images/mac-heres-the-button.png "Kliknij przycisk Inspekcja, na pasku narzędzi IDE")](inspect-images/mac-heres-the-button.png#lightbox)
 

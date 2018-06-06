@@ -1,20 +1,19 @@
 ---
-title: Selektor dokumentu
-description: Kontroler widoku dokumentu selektora przyznaje użytkownikom dostępu do plików spoza aplikacji piaskownicy. Jest prosty mechanizm udostępniania dokumentów między aplikacjami. Umożliwia również bardziej złożonych przepływów pracy, ponieważ użytkownicy mogą edytować pojedynczego dokumentu z wieloma aplikacjami. Ten artykuł zawiera wprowadzenie do aplikacji platformy Xamarin.iOS przy użyciu selektora dokumentu i zmiany w dokumentach iCloud wymagane do jego obsługi.
+title: Selektor dokumentu w Xamarin.iOS
+description: Ten dokument zawiera opis iOS selektora dokumentu i omówiono sposoby używania go w platformy Xamarin.iOS. Trwa przyjrzeć się iCloud, dokumentów, typowy kod Instalatora i rozszerzenia dokumentu.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786889"
 ---
-# <a name="document-picker"></a>Selektor dokumentu
-
-_Kontroler widoku dokumentu selektora przyznaje użytkownikom dostępu do plików spoza aplikacji piaskownicy. Jest prosty mechanizm udostępniania dokumentów między aplikacjami. Umożliwia również bardziej złożonych przepływów pracy, ponieważ użytkownicy mogą edytować pojedynczego dokumentu z wieloma aplikacjami. Ten artykuł zawiera wprowadzenie do aplikacji platformy Xamarin.iOS przy użyciu selektora dokumentu i zmiany w dokumentach iCloud wymagane do jego obsługi._
+# <a name="document-picker-in-xamarinios"></a>Selektor dokumentu w Xamarin.iOS
 
 Selektor dokumentu umożliwia dokumenty mogą być współużytkowane przez aplikacje. Te dokumenty mogą być przechowywane w ramach usługi iCloud lub w katalogu inną aplikację. Dokumenty są udostępniane przez zestaw [dokumentu dostawcy rozszerzeń](~/ios/platform/extensions.md) użytkownik zainstalował na urządzeniu. 
 

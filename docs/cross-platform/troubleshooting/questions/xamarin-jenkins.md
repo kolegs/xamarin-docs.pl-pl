@@ -1,15 +1,17 @@
 ---
 title: Dlaczego Wpięć nie jest obsługiwany przez program Xamarin
+description: W tym dokumencie opisano na wysokim poziomie, Xamarin w interakcję z systemem Wpięć elementu CI. Zawiera omówienie również kilka typowych problemów, które znaleziona podczas pracy z Wpięć.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 37fc134f7e97af74f5bb019f3262972273f0c4cf
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cf1a59d3084f178187209fdf3999af10efe6203a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782453"
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Dlaczego Wpięć nie jest obsługiwany przez program Xamarin
 
@@ -24,6 +26,7 @@ Wyjątkiem jest problemów, które mogą być izolowane do konkretnego usterki w
 Jak wspomniano powyżej problemy z Wpięć nie są obsługiwane bezpośrednio przez nasz zespół; [przy użyciu Wpięć za pomocą platformy Xamarin](~/tools/ci/jenkins-walkthrough.md) Przewodnik może służyć do konfigurowania serwera Wpięć elementu konfiguracji, który jest zintegrowany z platformą Xamarin. 
 
 ## <a name="fixes-for-common-issues"></a>Poprawki dla typowych problemów
+
 ### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Nie można odnaleźć zestawu SDK systemu Android jest Wpięć
 
 Komunikat o błędzie dla tego problemu jest podobny do następującego:

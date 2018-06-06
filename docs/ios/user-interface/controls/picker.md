@@ -1,19 +1,20 @@
 ---
-title: Selektor
-description: Ten przewodnik obejmuje projektowanie i pracy z selektorami w aplikacji platformy Xamarin.iOS.
+title: Formant wyboru w Xamarin.iOS
+description: Ten dokument zawiera informacje dotyczące projektowania i Praca z kontrolkami selektora w aplikacji platformy Xamarin.iOS. Zawarto informacje, jak zaimplementować formant wyboru w kodzie i w systemie iOS projektanta.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789915"
 ---
-# <a name="picker"></a>Selektor
+# <a name="picker-control-in-xamarinios"></a>Formant wyboru w Xamarin.iOS
 
 Formant wyboru Wyświetla formantu "przypominającej koło", który zawiera listę o wartości z zaznaczonej wartości są wyróżnione. Użytkownicy Obróć koło z opcją, które mają.
 

@@ -1,16 +1,17 @@
 ---
 title: Osadzanie kodu .NET
-description: 'Osadzanie .NET umożliwia istniejącego kodu platformy .NET (C#, F # i inne) do użycia z innych języków programowania'
+description: 'Osadzanie .NET umożliwia istniejącego kodu platformy .NET (C#, F # i inne) być używane przez kod napisany w językach programowania.'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6edf25faa00bc7c90a52b76a6e90168ccd85b32
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793124"
 ---
 # <a name="net-embedding"></a>Osadzanie kodu .NET
 
@@ -24,7 +25,7 @@ Osadzanie .NET jest oparta na [Embeddinator 4000](https://github.com/mono/Embedd
 
 ## <a name="environments-and-languages"></a>Środowisk i języki
 
-Narzędzie to jest zarówno pamiętać o środowisku, który będzie używany, a także język, w którym będą korzystać z jej.   Na przykład w przypadku platformy iOS dopuszczają just in time (JIT) kompilacji, .NET osadzanie statycznie zostanie skompilowany kod .NET kodu natywnego, które mogą być używane w systemie iOS.  Innych środowisk Zezwalaj kompilacji JIT, a w tych enviroments możemy zdecydować się na kompilacji JIT.
+Narzędzie to jest zarówno pamiętać o środowisku, który będzie używany, a także język, w którym będą korzystać z jej.   Na przykład w przypadku platformy iOS dopuszczają just in time (JIT) kompilacji, .NET osadzanie statycznie zostanie skompilowany kod .NET kodu natywnego, które mogą być używane w systemie iOS.  Innych środowisk Zezwalaj kompilacji JIT, a w tych środowiskach możemy zdecydować się na kompilacji JIT.
 
 Obsługuje ona różnych języka konsumentów, więc go powierzchnie kodu platformy .NET idiomatyczne kodu w języku docelowym.   Listę obsługiwanych języków jest obecnie:
 

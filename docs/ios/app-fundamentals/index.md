@@ -1,19 +1,20 @@
 ---
-title: Podstawy aplikacji
-description: Podstawowe koncepcje aplikacji
+title: Podstawowe informacje na temat aplikacji platformy Xamarin.iOS
+description: Ten dokument prowadzi do różnych przewodników opisano pojęcia podstawowych do rozwoju platformy Xamarin.iOS, takie jak aplikacja zabezpieczeń transportu, backgrounding, zdarzeń i wątków.
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784500"
 ---
-# <a name="application-fundamentals"></a>Podstawy aplikacji
+# <a name="xamarinios-application-fundamentals"></a>Podstawowe informacje na temat aplikacji platformy Xamarin.iOS
 
 Ta sekcja zawiera przewodnik dla niektórych zadań rzeczy częściej lub pojęcia deweloperzy muszą znać podczas tworzenia aplikacji platformy Xamarin.iOS (dawniej MonoTouch).
 

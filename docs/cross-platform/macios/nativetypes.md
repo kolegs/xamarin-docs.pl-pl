@@ -1,29 +1,31 @@
 ---
-title: Typy natywne
+title: Typy natywne dla systemów iOS i macOS
+description: W tym dokumencie opisano sposób interfejsu API na platformie Xamarin Unified mapowania typów .NET 32-bitowe i 64-bitowe natywnych typów, w razie potrzeby oparty na architekturze docelowego kompilacji.
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781107"
 ---
-# <a name="native-types"></a>Typy natywne
+# <a name="native-types-for-ios-and-macos"></a>Typy natywne dla systemów iOS i macOS
 
-Fundament różnica zarówno Mac i interfejsów API systemu iOS Użyj typów danych architektury, które są zawsze 32-bitowych na platformach 32-bitowe i 64-bitowych na platformach 64 bitowych.
+Mac i interfejsów API systemu iOS używają typów danych architektury, które są zawsze 32-bitowy na platformach 32-bitowych i 64-bitowy na platformach 64-bitowych.
 
-Na przykład mapuje Objective-C `NSInteger` typ danych `int32_t` w systemach 32-bitowe i do `int64_t` w systemach 64-bitowych.
+Na przykład mapuje Objective-C `NSInteger` typ danych `int32_t` w systemach 32-bitowych i do `int64_t` w systemach 64-bitowych.
 
-Aby dopasować to zachowanie na naszych ujednolicony interfejs API, możemy zastępowanie wcześniejszych zastosowań `int` (który w .NET jest zdefiniowany jako zawsze `System.Int32`) na nowy typ danych: `System.nint`.  Można traktować "n" jako znaczenie "native", więc natywnych liczb całkowitych typu platformy.
+Aby dopasować to zachowanie na naszych ujednolicony interfejs API, możemy zastępowanie wcześniejszych zastosowań `int` (który w .NET jest zdefiniowany jako zawsze `System.Int32`) na nowy typ danych: `System.nint`. Można traktować "n" jako znaczenie "native", więc natywnych liczb całkowitych typu platformy.
 
-Z tych nowych typów danych ten sam kod źródłowy jest kompilowany dla 32-bitowy, 32-bitowe i 64-bitowy lub 64-bitowy, w zależności od flagi kompilacji.
+Z tych nowych typów danych ten sam kod źródłowy jest kompilowany dla architektury 32-bitowe i 64-bitowe, w zależności od flagi kompilacji.
 
 ## <a name="new-data-types"></a>Nowe typy danych
 
-W poniższej tabeli przedstawiono zmian w naszej typy danych do dopasowania tego nowego świata 32/x 64:
+W poniższej tabeli przedstawiono zmian w naszej typach danych odpowiadające tego nowego świata 64-32-bitowe:
 
 |Typ macierzysty|32-bitowe zapasowy typ|64-bitowych zapasowy typ|
 |--- |--- |--- |
@@ -35,7 +37,7 @@ Wybraliśmy tych nazw, aby umożliwić kodu C# do wyglądać mniej więcej tak s
 
 ### <a name="implicit-and-explicit-conversions"></a>Konwersje jawne i niejawne
 
-Nowe typy danych została zaprojektowana umożliwia jednego języka C# plik źródłowy naturalnie używać 32 lub 64 bitowej magazynu, w zależności od platformę hosta oraz ustawienia kompilacji.
+Nowe typy danych została zaprojektowana umożliwia jednego języka C# plik źródłowy naturalnie używać 32 lub 64 bit magazynu, w zależności od platformę hosta oraz ustawienia kompilacji.
 
 Wymagane firmie Microsoft w celu projektowania zestaw Konwersje jawne i niejawne do i z typów specyficzne dla platformy danych do typów danych całkowitych i zmiennoprzecinkowych punkt .NET.
 

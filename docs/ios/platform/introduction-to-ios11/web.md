@@ -1,16 +1,18 @@
 ---
 title: Zmiany w sieci Web w systemie iOS 11
+description: W tym dokumencie omówiono zmiany WebKit i framework usług Safari w systemie iOS 11. Przedstawiono sposób pracy z style aktualizacji w SFSafariViewController i nowe funkcje w WKWebView.
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/12/2016
-ms.openlocfilehash: 5cbf1d2f6c7b8a110cb65cad81df18f9f0568fda
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f5876a9d201950ebac45e8b1f786b0e97452a7f1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787451"
 ---
 # <a name="web-changes-in-ios-11"></a>Zmiany w sieci Web w systemie iOS 11
 

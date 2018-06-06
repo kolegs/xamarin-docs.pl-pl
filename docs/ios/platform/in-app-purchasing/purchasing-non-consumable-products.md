@@ -1,18 +1,20 @@
 ---
-title: Zakup produktów z systemem innym niż niestandardowe
+title: Zakup z systemem innym niż niestandardowe produktów platformy Xamarin.iOS
+description: Ten dokument zawiera opis produktów niestandardowe z systemem innym niż w Xamarin.iOS, które są funkcje zakupionych przez użytkownika, które pozostają dostępne przez czas nieokreślony, niezależnie od urządzenia.
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0a581dc222e43f8d4742bd52dc56dc691449a8f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db193493ea11a7963fe5fc57f0c45978c26a7a74
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786954"
 ---
-# <a name="purchasing-non-consumable-products"></a>Zakup produktów z systemem innym niż niestandardowe
+# <a name="purchasing-non-consumable-products-in-xamarinios"></a>Zakup z systemem innym niż niestandardowe produktów platformy Xamarin.iOS
 
 Produkty jednoznacznie składnika są "właścicielem" klienta. Oczekuje się, że będzie zawsze mają do nich dostępu, nawet wtedy, gdy ich urządzenie zostanie utracone kradzieży lub zakupu nowego. Są one przydatne w przypadku książki, magazine problemy, gier, filtry fotografii, "pro funkcji", np. Po zakupieniu użytkownika produktu niestandardowe nie mają nigdy nie opłacać go ponownie. Kod umożliwi przypadkowo spróbuj, StoreKit wyświetli komunikat, który już został kupiony.
 

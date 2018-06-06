@@ -1,5 +1,5 @@
 ---
-title: Podstawowe grafiki
+title: Grafika Core w Xamarin.iOS
 description: W tym artykule omówiono podstawowe grafiki struktury systemu iOS. Widoczny jest sposób umożliwia grafiki Core Rysuj geometrię, obrazów i plików PDF.
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e7b28ae8014928d82628bd8069d30ca88a4be05f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d7124c7d09ca4e36ce22d60f578ea4a75d4a05b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786759"
 ---
-# <a name="core-graphics"></a>Podstawowe grafiki
+# <a name="core-graphics-in-xamarinios"></a>Grafika Core w Xamarin.iOS
 
 _W tym artykule omówiono podstawowe grafiki struktury systemu iOS. Widoczny jest sposób umożliwia grafiki Core Rysuj geometrię, obrazów i plików PDF._
 
@@ -168,7 +169,7 @@ Te zmiany przedstawienia wypełnienia gradientowego, jak pokazano poniżej:
 
  ![](core-graphics-images/01-gradient-fill.png "Przykład z wypełnieniem gradientowym")
 
-## <a name="modifying-line-patterns"></a>Modifying Line Patterns
+## <a name="modifying-line-patterns"></a>Modyfikowanie wzorce wiersza
 
 Atrybuty rysowania linii może również zostać zmieniony z grafiką Core. Obejmuje to zmianę szerokości i obrysu kolor linii, a także wzorzec wierszy, jak pokazano w poniższym kodzie:
 

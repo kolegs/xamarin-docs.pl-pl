@@ -1,18 +1,20 @@
 ---
-title: Praca z wątku interfejsu użytkownika
+title: Praca z wątku interfejsu użytkownika platformy Xamarin.iOS
+description: Ten dokument zawiera opis sposobu pracy z wątku interfejsu użytkownika w Xamarin.iOS. W tym artykule omówiono wykonywanie wątków interfejsu użytkownika, zawiera przykład wątku tła i sprawdza async/await.
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 72f161001509519fb02a652f23eaa7805a55f7ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790412"
 ---
-# <a name="working-with-the-ui-thread"></a>Praca z wątku interfejsu użytkownika
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Praca z wątku interfejsu użytkownika platformy Xamarin.iOS
 
 Interfejsy użytkownika aplikacji są zawsze jednowątkowe, nawet w przypadku urządzeń wielowątkowych — istnieje tylko jeden reprezentację ekranu i wszelkie zmiany wyświetlanych muszą być skoordynowane za pośrednictwem jednego "punkt dostępu". Zapobiega to próby zaktualizowania tej samej piksel w tym samym czasie (na przykład) przez wiele wątków.
 

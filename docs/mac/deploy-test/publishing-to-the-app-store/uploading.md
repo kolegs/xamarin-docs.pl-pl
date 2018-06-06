@@ -1,17 +1,18 @@
 ---
 title: Przekaż do sklepu Mac App Store
-description: Ten przewodnik przeprowadzi Cię przez przekazywania do sklepu Mac App Store aplikacji Xamarin.Mac dla publikacji.
+description: Ten dokument zawiera opis sposobu Użyj iTunes Connect, aby przekazać aplikację Xamarin.Mac do sklepu Mac App Store. Go w tym artykule omówiono informacje wymagane przez iTunes Connect, aby ukończyć proces.
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4ddbbdc32ecb2de4f9dcb89162bc38803fa7159e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e51171f0f5153f48237ebe76e393c2077453bbd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792167"
 ---
 # <a name="upload-to-mac-app-store"></a>Przekaż do sklepu Mac App Store
 

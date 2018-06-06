@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: Interfejsu API zestawu tekstu oferuje zaawansowane tekst układ i renderowania funkcje w Xamarin.iOS.
+title: TextKit w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu użycia TextKit w Xamarin.iOS. TextKit udostępnia tekst zaawansowane funkcje układ i renderowania.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788338"
 ---
-# <a name="text-kit"></a>Zestaw tekstu
+# <a name="textkit-in-xamarinios"></a>TextKit w Xamarin.iOS
 
-Tekst Kit to nowy interfejs API, który oferuje tekst zaawansowane funkcje układ i renderowania. Jest oparty na niski poziom framework Core tekstu, ale jest znacznie prostsze niż tekst Core korzystanie z.
+TextKit to nowy interfejs API, który oferuje tekst zaawansowane funkcje układ i renderowania. Jest oparty na niskiego poziomu framework Core tekstu, ale jest znacznie prostsze niż tekst Core korzystanie z.
 
-Aby udostępnić funkcje tekstu zestaw standardowych kontrolek, kilka formantów tekstu iOS zostały ponownie wdrożony, aby użyć zestawu tekstu, w tym:
+Aby udostępnić funkcje TextKit standardowych kontrolek, kilka formantów tekstu iOS zostały ponownie wdrożony do użycia TextKit, w tym:
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>Architektura
 
-Zestaw tekst zawiera warstwowa architektura, która oddziela przechowywanie tekstu z układu i wyświetlania, w tym następujące klasy:
+TextKit zapewnia warstwowa architektura, która oddziela przechowywanie tekstu z układu i wyświetlania, w tym następujące klasy:
 
 -  `NSTextContainer` — Zapewnia współrzędnych i geometry, który jest używany do układu tekstu.
 -  `NSLayoutManager` — Wychodzi poza tekstu przez włączenie tekstu do symboli. 
@@ -37,7 +37,7 @@ Te trzy klasy są stosowane do widoku, który renderuje tekstu. Tekst wbudowany 
 
 Na poniższym rysunku przedstawiono tej architektury:
 
- ![](textkit-images/textkitarch.png "Poniższy rysunek przedstawia architektura zestawu tekstu")
+ ![](textkit-images/textkitarch.png "Poniższy rysunek przedstawia architekturę TextKit")
 
 ## <a name="text-storage-and-attributes"></a>Przechowywanie tekstu i atrybuty
 
@@ -56,7 +56,7 @@ Po `EndEditing` jest wywoływana, zmiany są wysyłane do menedżera układu, kt
 
 ## <a name="layout-with-exclusion-path"></a>Układ z ścieżka wykluczenia
 
-Zestaw tekstu również obsługuje układ i umożliwia złożonych scenariuszy, takich jak wielokolumnowego tekstu i przechodzenia tekstem określonych ścieżek o nazwie *ścieżki wykluczeń*. Ścieżki wykluczeń są stosowane do kontenera tekst, który modyfikuje geometrii układu tekstu, powodując przebieg wokół określonych ścieżek tekstu.
+TextKit również obsługuje układ i umożliwia złożonych scenariuszy, takich jak wielokolumnowego tekstu i przechodzenia tekstem określonych ścieżek o nazwie *ścieżki wykluczeń*. Ścieżki wykluczeń są stosowane do kontenera tekst, który modyfikuje geometrii układu tekstu, powodując przebieg wokół określonych ścieżek tekstu.
 
 Dodawanie ścieżka wykluczenia wymaga ustawienia `ExclusionPaths` właściwości Menedżera układu. Ustawienie tej właściwości powoduje, że Menedżer układu unieważnienie układu tekstu i przepływu tekstu wokół ścieżka wykluczenia.
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Ten kod dodaje obsługę Rysowanie w widoku tekstu przy użyciu grafiki Core. Ponieważ `UITextView` klasy jest teraz wbudowany do renderowania tekstu i układu za pomocą zestawu tekstu, można użyć wszystkich funkcji zestawu tekstu, takie jak ustawianie ścieżki wykluczeń.
+Ten kod dodaje obsługę Rysowanie w widoku tekstu przy użyciu grafiki Core. Ponieważ `UITextView` klasy jest teraz wbudowany do użycia TextKit renderowanie tekstu i układ, można użyć wszystkich funkcji TextKit, takie jak ustawianie ścieżki wykluczeń.
 
 > [!IMPORTANT]
-> Ten przykład podklasy `UITextView` można dodać touch rysowania pomocy technicznej. Tworzenie podklas `UITextView` nie jest niezbędne, aby uzyskać funkcji zestawu tekstu.
+> Ten przykład podklasy `UITextView` można dodać touch rysowania pomocy technicznej. Tworzenie podklas `UITextView` nie jest niezbędne, aby uzyskać funkcji TextKit.
 
 
 

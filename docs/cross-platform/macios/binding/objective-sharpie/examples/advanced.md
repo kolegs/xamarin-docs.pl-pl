@@ -1,21 +1,21 @@
 ---
 title: Zaawansowane przykład rzeczywistych (ręczna)
+description: Tym dokumencie opisano sposób użycia danych wyjściowych xcodebuild jako dane wejściowe Sharpie cel, który zapewnia wgląd w Sharpie celem jest kulisy.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 82bca525433e5c8fea3a29250afb83962f2e64fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781259"
 ---
 # <a name="advanced-manual-real-world-example"></a>Zaawansowane przykład rzeczywistych (ręczna)
 
-
 **W tym przykładzie użyto [biblioteki POP z usługi Facebook](https://github.com/facebook/pop).**
-
 
 W tej sekcji omówiono bardziej zaawansowanych podejście do wiązania, w której będzie korzystać firmy Apple `xcodebuild` narzędzia, aby najpierw skompilować projekt POP i ręcznie wywnioskować dane wejściowe dla Sharpie cel. Obejmuje to zasadniczo Sharpie cel czynności kulisy w poprzedniej sekcji.
 

@@ -1,20 +1,19 @@
 ---
 title: Microsoft Azure Active Directory
-description: Przy użyciu usługi Active Directory do uwierzytelniania użytkowników w aplikacji platformy Xamarin dla urządzeń przenośnych.
+description: Ten dokument zawiera opis sposobu użycia usługi Azure Active Directory do uwierzytelniania użytkowników w aplikacji skompilowanej za pomocą platformy Xamarin dla urządzeń przenośnych.
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7182b0ff308b952205c0d89ecb929695b0183e53
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9d34b38cf30a9d5a21f5d106f78823a2b077ef7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780574"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
-
-_Przy użyciu usługi Active Directory do uwierzytelniania użytkowników w aplikacji platformy Xamarin dla urządzeń przenośnych._
 
 
 Usługa Azure Active Directory umożliwia deweloperom zabezpieczanie zasobów, takich jak pliki, łącza i interfejsów API sieci Web, usługi Office 365 i inne przy użyciu tego samego konta organizacyjnego pracownicy korzystają na zalogowanie się do systemów lub sprawdź ich wiadomości e-mail.

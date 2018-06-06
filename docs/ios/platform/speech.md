@@ -1,5 +1,5 @@
 ---
-title: Rozpoznawanie mowy
+title: Rozpoznawanie mowy w Xamarin.iOS
 description: Ten artykuł przedstawia informacje o nowy interfejs API mowy i pokazuje, jak ją wdrożyć w aplikacji platformy Xamarin.iOS do obsługi rozpoznawania mowy i wykonać transkrypcji mowy (strumienie na żywo lub nagrania audio) na tekst.
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fa010f57d163cabe544176608cff2eb6efe872ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00841a73f9da3c4c434419cdb37726b17c08cf31
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788364"
 ---
-# <a name="speech-recognition"></a>Rozpoznawanie mowy
+# <a name="speech-recognition-in-xamarinios"></a>Rozpoznawanie mowy w Xamarin.iOS
 
 _Ten artykuł przedstawia informacje o nowy interfejs API mowy i pokazuje, jak ją wdrożyć w aplikacji platformy Xamarin.iOS do obsługi rozpoznawania mowy i wykonać transkrypcji mowy (strumienie na żywo lub nagrania audio) na tekst._
 
@@ -240,7 +241,7 @@ A `SFSpeechUrlRecognitionRequest` jest tworzona na podstawie `NSUrl` lokalizacj�
 
 Gdy wywołanie zwrotne jest wywoływana, jeśli `NSError` nie jest `null` wystąpił błąd, który musi być obsługiwane. Ponieważ rozpoznawanie mowy jest wykonywana stopniowo, procedura wywołania zwrotnego może być wywoływana więcej niż raz, więc `SFSpeechRecognitionResult.Final` właściwości jest testowany czy tłumaczenia została zakończona i jest zapisywany najlepszą wersję tłumaczenia (`BestTranscription`).
 
-### <a name="recognizing-live-speech"></a>Recognizing Live Speech
+### <a name="recognizing-live-speech"></a>Rozpoznawanie mowy na żywo
 
 Jeśli aplikacja chce rozpoznawanie mowy na żywo, proces jest bardzo podobny do rozpoznawania mowy z uprzednio nagranego. Na przykład:
 

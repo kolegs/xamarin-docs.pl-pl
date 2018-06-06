@@ -1,20 +1,19 @@
 ---
 title: Zestawy dostępne
-description: Zestawy dostępne w Xamarin.iOS, Xamarin.Android i Xamarin.Mac
+description: Ten dokument zawiera listę zestawów dostępnych dla platformy Xamarin.iOS, Xamarin.Android i Xamarin.Mac. Również linki do dokumentacji .NET standardowych bibliotek i przenośnej biblioteki klas.
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: ef1dde061ffce4082922cc2eb2af1ae9b045aedd
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b73a818d3864c7c4d1d776e104d95090e87f5877
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781910"
 ---
 # <a name="available-assemblies"></a>Zestawy dostępne
-
-_Zestawy dostępne w Xamarin.iOS, Xamarin.Android i Xamarin.Mac_
 
 Xamarin.iOS, Xamarin.Android i Xamarin.Mac wszystkie dostarczany z ponad dwanaście zestawów. Tak samo, jak Silverlight jest rozszerzona podzbiór pulpitu zestawów platformy .NET, platform Xamarin jest również rozszerzonej podzbiór kilka Silverlight i pulpitu zestawów platformy .NET.
 

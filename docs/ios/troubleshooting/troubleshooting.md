@@ -1,5 +1,6 @@
 ---
-title: Rozwiązywanie problemów
+title: Porady dotyczące rozwiązywania problemów dla platformy Xamarin.iOS
+description: Ten dokument zawiera różne wskazówki przydatne podczas rozwiązywania problemów podczas tworzenia aplikacji platformy Xamarin.iOS. Opisuje określone komunikaty o błędach, jak również inne potencjalne problemy.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -7,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: 6a179c1d63e9b5a7b8a42705d5c112a7b71a4906
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 26fe2fb848fb81940bc01a34c69b1b28897005dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789356"
 ---
-# <a name="troubleshooting"></a>Rozwiązywanie problemów
+# <a name="troubleshooting-tips-for-xamarinios"></a>Porady dotyczące rozwiązywania problemów dla platformy Xamarin.iOS 
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS nie można rozpoznać System.ValueTuple
 

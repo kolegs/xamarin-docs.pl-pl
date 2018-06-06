@@ -1,19 +1,20 @@
 ---
-title: Widoki sieci Web
-description: Usuwania niejednoznaczności w nazwach opcje widoku sieci web z systemem iOS
+title: Widoki sieci Web platformy Xamarin.iOS
+description: W tym dokumencie opisano różne sposoby aplikacji platformy Xamarin.iOS można wyświetlać zawartość sieci web. Zawarto informacje UIWebView, WKWebView SFSafariViewController, Safari i zabezpieczeń transportu aplikacji.
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f720eae68415ab9efe021e53c9da4875209cd221
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790499"
 ---
-# <a name="web-views"></a>Widoki sieci Web
+# <a name="web-views-in-xamarinios"></a>Widoki sieci Web platformy Xamarin.iOS
 
 W okresie istnienia systemu iOS firmy Apple wydała na wiele sposobów dla deweloperów aplikacji włączenie funkcji widoku sieci web w swoich aplikacjach. Większość użytkowników korzystania z wbudowanych przeglądarki sieci web Safari na urządzeniu z systemem iOS i w związku z tym spodziewać, że funkcje widoku sieci web z innych aplikacji są zgodne z tym środowiskiem. Oczekiwane tego samego gestów do pracy, wydajność, aby być na par oraz funkcje takie same.
 

@@ -1,21 +1,22 @@
 ---
-title: Ręcznego inicjowania obsługi administracyjnej
-description: Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu.
+title: Ręcznego inicjowania obsługi dla platformy Xamarin.iOS
+description: Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik opisuje konfigurowania certyfikatów programowanie i profile z za pomocą ręcznego inicjowania obsługi administracyjnej.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786106"
 ---
-# <a name="manual-provisioning"></a>Ręcznego inicjowania obsługi administracyjnej
+# <a name="manual-provisioning-for-xamarinios"></a>Ręcznego inicjowania obsługi dla platformy Xamarin.iOS
 
-_Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu._
+_Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik opisuje konfigurowania certyfikatów programowanie i profile z za pomocą ręcznego inicjowania obsługi administracyjnej._
 
 <a name="signingidentity" />
 

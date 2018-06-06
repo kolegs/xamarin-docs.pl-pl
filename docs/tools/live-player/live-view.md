@@ -1,17 +1,18 @@
 ---
 redirect_url: /xamarin/tools/live-player/
 title: XAML na żywo podglądu
-description: Testowanie zmian w kodzie aplikacji w czasie rzeczywistym na urządzenia z systemem iOS lub Android
+description: Ten dokument omówiono sposób za pomocą platformy Xamarin Live odtwarzacza live preview strony XAML, wprowadzić zmiany w pliku XAML i zobaczyć zmiany pojawiają się teraz na urządzeniu.
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: e485ea596d9c6c7aee378d50ae41d13faa7c0a80
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc68044342fca84e62e3b17770170e1d7a23f677
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793705"
 ---
 # <a name="xaml-live-previewing"></a>XAML na żywo podglądu
 
@@ -30,8 +31,6 @@ Jedną z zalet Xamarin Live Player jest możliwość live preview strony XAML, w
 2. Program Visual Studio dla komputerów Mac 7.2 lub nowszego. Firma Microsoft zaleca najnowszej wersji.
 
 -----
-
-
 
 <a name="deploydevice" />
 
@@ -69,13 +68,6 @@ Zanim użyjesz Xamarin Live Player z urządzenia z systemem iOS lub Android, mus
 
 -----
 
-
-
-
-
-
-
-
 ## <a name="deploying-to-android-emulator"></a>Wdrażanie na emulatorze systemu Android
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -108,10 +100,6 @@ Zanim użyjesz Xamarin Live Player z urządzenia z systemem iOS lub Android, mus
 
 -----
 
-
-
-
-
 ## <a name="deploying-to-ios-simulator"></a>Wdrażanie do symulatora systemu iOS
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -137,13 +125,6 @@ Obecnie nie jest obsługiwane dla przy użyciu podglądu XAML na żywo w symulat
     ![](live-view-images/image5.png)  
 
 -----
-
-
-
-
-
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

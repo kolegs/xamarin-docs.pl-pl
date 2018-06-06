@@ -1,18 +1,20 @@
 ---
-title: Ograniczenia
+title: Ograniczenia platformy Xamarin.iOS
+description: W tym dokumencie opisano ograniczenia Xamarin.iOS dyskutować ogólne, ogólny podklasy NSObjects, P/Invoke w ogólnych obiektów i inne.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786232"
 ---
-# <a name="limitations"></a>Ograniczenia
+# <a name="limitations-of-xamarinios"></a>Ograniczenia platformy Xamarin.iOS
 
 Ponieważ aplikacje na telefonie iPhone, przy użyciu platformy Xamarin.iOS są kompilowane do statycznego kodu, nie jest możliwe używać żadnych urządzeń, które wymagają generowanie kodu w czasie wykonywania.
 

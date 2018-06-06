@@ -1,21 +1,20 @@
 ---
-title: Mapy
-description: iOS obejmuje MapKit mapuje struktury, która ułatwia dodawanie do aplikacji. Za pomocą zestawu mapy, aplikacji systemu iOS można dodać interakcyjne mapy, obsługujące funkcje, takie jak przesuwanie i powiększanie, przedstawiający lokalizacji użytkownika i nakładania sformatowanego grafiki na mapie. W tym artykule delves w szereg funkcji zestawu mapy, pokazujący sposób móc korzystać z nich do tworzenia geograficzne funkcji do aplikacji
+title: Mapy w Xamarin.iOS
+description: W tym dokumencie opisano iOS MapKit framework i sposobu korzystania z platformy Xamarin.iOS. Zawarto informacje, jak dodać mapy, style, kadrować i Powiększenie, pracować z lokalizacji użytkownika, dodawanie adnotacji, Praca z objaśnieniami i nakładki i lokalnego wyszukiwania.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790233"
 ---
-# <a name="maps"></a>Mapy
-
-_iOS obejmuje MapKit mapuje struktury, która ułatwia dodawanie do aplikacji. Za pomocą zestawu mapy, aplikacji systemu iOS można dodać interakcyjne mapy, obsługujące funkcje, takie jak przesuwanie i powiększanie, przedstawiający lokalizacji użytkownika i nakładania sformatowanego grafiki na mapie. W tym artykule delves w szereg funkcji zestawu mapy, pokazujący sposób móc korzystać z nich do tworzenia geograficzne funkcji do aplikacji_
+# <a name="maps-in-xamarinios"></a>Mapy w Xamarin.iOS
 
 Mapy są typową funkcją w nowoczesnych przenośnych systemów operacyjnych. iOS oferuje obsługę mapowania natywnie przez strukturę zestawu mapy. Z zestawem mapy aplikacje można łatwo dodać rozbudowanych, interakcyjnych mapy. Mapy te można dostosować na różne sposoby, takie jak dodawanie adnotacji do oznaczania lokalizacji na mapie i nakładanie grafiki dowolnych kształtów. Zestaw mapy nawet ma wbudowaną obsługę przedstawiający bieżącej lokalizacji urządzenia.
 

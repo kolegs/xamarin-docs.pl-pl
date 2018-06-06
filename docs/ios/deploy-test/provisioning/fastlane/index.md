@@ -1,21 +1,20 @@
 ---
 title: Wprowadzenie do fastlane dla systemu iOS
-description: W tym przewodniku przedstawiono różne narzędzia fastlane, które mogą służyć do kodu logowania aplikacji systemu iOS
+description: W tym przewodniku przedstawiono różne narzędzia fastlane, które mogą służyć do kodu logowania aplikacji systemu iOS. Przedstawiono sposób aktualizacji, instalowania i korzystania z narzędzi fastlane.
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785492"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Wprowadzenie do fastlane dla systemu iOS
-
-_W tym przewodniku przedstawiono różne narzędzia fastlane, które mogą służyć do kodu logowania aplikacji systemu iOS_
 
 fastlane to projekt typu open source utworzona w celu uproszczenia procesu mylące i często nużące zwolnienia z systemami iOS i aplikacje dla systemu Android. Składa się z kilku narzędzi czy określonej proporcji wersji aplikacji, takich jak obsługują:
 

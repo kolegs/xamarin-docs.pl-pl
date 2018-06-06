@@ -1,17 +1,18 @@
 ---
-title: Żyroskop Xamarin.Essentials
-description: Klasa Żyroskop umożliwia monitorowanie czujnik Żyroskop urządzenia, czyli obrót wokół trzy osie głównej urządzenia.
+title: 'Xamarin.Essentials: Żyroskop'
+description: Klasa Żyroskop w Xamarin.Essentials umożliwia monitorowanie czujnik Żyroskop urządzenia, czyli miary obrót wokół trzy osie głównej urządzenia.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a987978882a928ad50578d3a0031bce07e60fb6e
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 2f2961c6cb78293891e186e7e0f749a7aa2fb8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783018"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Żyroskop Xamarin.Essentials
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Żyroskop
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

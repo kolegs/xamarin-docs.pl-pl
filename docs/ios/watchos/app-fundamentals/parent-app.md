@@ -1,21 +1,20 @@
 ---
-title: Praca z aplikacji nadrzędnej
-description: Udostępnianie danych aplikacji z systemami iOS i obejrzyj w watchOS 1
+title: Praca z watchOS nadrzędnej aplikacji w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z watchOS nadrzędnej aplikacji w programie Xamarin. Zawarto informacje WatchKit rozszerzeń aplikacji, aplikacje dla systemu iOS, Magazyn udostępniony i.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790695"
 ---
-# <a name="working-with-the-parent-application"></a>Praca z aplikacji nadrzędnej
-
-_Udostępnianie danych aplikacji z systemami iOS i obejrzyj w watchOS 1_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Praca z watchOS nadrzędnej aplikacji w programie Xamarin
 
 > [!IMPORTANT]
 > Uzyskiwanie dostępu do aplikacji nadrzędnej tylko za pomocą poniższych przykładów działa na aplikacje czujki watchOS 1.

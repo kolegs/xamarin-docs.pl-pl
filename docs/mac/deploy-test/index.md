@@ -1,19 +1,20 @@
 ---
-title: Wdrażanie i testowanie
-description: Ten dokument prowadzi do przewodników ikony, wydajności i publikowanie do sklepu z aplikacjami.
+title: Wdrażanie i testowanie aplikacji Xamarin.Mac
+description: Ten dokument łącza do różnych prowadnic, które opisują sposób wdrażania i testowania aplikacji Xamarin.Mac. Przewodniki połączonego omówiono w nim ikony aplikacji, wydajności i publikowanie do sklepu z aplikacjami.
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/17/2018
-ms.openlocfilehash: 7e0af30b412a0a4c9d73009dad5d66d7762edbb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf1643be8c7a8fc5371c2dda5cf8d5bf1b5ec1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792088"
 ---
-# <a name="deployment-and-testing"></a>Wdrażanie i testowanie
+# <a name="deploying-and-testing-xamarinmac-apps"></a>Wdrażanie i testowanie aplikacji Xamarin.Mac
 
 ## <a name="application-iconapp-iconmd"></a>[Ikona aplikacji](app-icon.md)
 

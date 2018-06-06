@@ -1,5 +1,5 @@
 ---
-title: Wielozadaniowości dla urządzeń iPad
+title: Wielozadaniowości dla tabletu iPad w Xamarin.iOS
 description: System iOS 9 obsługuje dwie aplikacje działające na tym samym czasie, przy użyciu slajdów przez lub podzielony widok. Obsługuje ona również wideo odtwarzanie obraz w obrazie.
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7eacd9ece067d2ddf6363c0551055daa3df4433a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787958"
 ---
-# <a name="multitasking-for-ipad"></a>Wielozadaniowości dla urządzeń iPad
+# <a name="multitasking-for-ipad-in-xamarinios"></a>Wielozadaniowości dla tabletu iPad w Xamarin.iOS
 
 _System iOS 9 obsługuje dwie aplikacje działające na tym samym czasie, przy użyciu slajdów przez lub podzielony widok. Obsługuje ona również wideo odtwarzanie obraz w obrazie._
 
@@ -30,7 +31,7 @@ Kilka rzeczy, które należy wziąć pod uwagę podczas [Obsługa wielozadaniowo
 
 - [Rozmiaru i orientacji ekranu](#Screen-Size-Considerations)
 - [Skróty klawiaturowe niestandardowego sprzętu](#Custom-Hardware-Keyboard-Shortcuts)
-- [Resource Management](#Resource-Management-Considerations)
+- [Zarządzanie zasobami](#Resource-Management-Considerations)
 
 Deweloper aplikacji można też [zrezygnować z wielozadaniowości](#Opting-Out-of-Multitasking), takie jak [wyłączenie odtwarzanie wideo PIP](#Disabling-PIP-Video-Playback).
 
@@ -126,7 +127,7 @@ Na Ipad obsługujące slajd za pośrednictwem i widok podzielony może kończyć
 
 | **Orientacja** | **Głównej aplikacji** | **Dodatkowej aplikacji** |
 |--- |--- |--- |
-| **Portrait** |75% ekranu<br />Poziomy Compact<br />Regularne pionowe|25% ekranu<br />Poziomy Compact<br />Regularne pionowe|
+| **Orientacji pionowej** |75% ekranu<br />Poziomy Compact<br />Regularne pionowe|25% ekranu<br />Poziomy Compact<br />Regularne pionowe|
 | **orientacji poziomej** |75% ekranu<br />Regularne poziomej<br />Regularne pionowe|25% ekranu<br />Poziomy Compact<br />Regularne pionowe|
 | **orientacji poziomej** |50% ekranu<br />Poziomy Compact<br />Regularne pionowe|50% ekranu<br />Poziomy Compact<br />Regularne pionowe|
 

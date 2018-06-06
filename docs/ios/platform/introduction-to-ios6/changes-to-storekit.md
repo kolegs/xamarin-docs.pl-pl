@@ -1,5 +1,5 @@
 ---
-title: Zmiany StoreKit
+title: Zmiany StoreKit w systemie iOS 6
 description: 'iOS 6 wprowadza dwie zmiany do interfejsu API zestawu magazynu: możliwość wyświetlania iTunes (i sklepu z aplikacjami/iBookstore) opcji, gdzie Apple będzie hostować pliki do pobrania zakupu produktów z aplikacji i nowych w aplikacji. Ten dokument wyjaśniono, jak wdrożyć te funkcje z platformy Xamarin.iOS.'
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ff717d1e4ea7da947d5534f1ce790b58d84fdfd4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787695"
 ---
-# <a name="changes-to-storekit"></a>Zmiany StoreKit
+# <a name="changes-to-storekit-in-ios-6"></a>Zmiany StoreKit w systemie iOS 6
 
 _iOS 6 wprowadza dwie zmiany do interfejsu API zestawu magazynu: możliwość wyświetlania iTunes (i sklepu z aplikacjami/iBookstore) opcji, gdzie Apple będzie hostować pliki do pobrania zakupu produktów z aplikacji i nowych w aplikacji. Ten dokument wyjaśniono, jak wdrożyć te funkcje z platformy Xamarin.iOS._
 
@@ -142,8 +143,8 @@ Wyniki zawiera również inne metadane, w tym adresy URL kompozycji, które mog�
 
 Oto kilka przykładów:
 
--   **Aplikacja iBooks*- [http://itunes.apple.com/search?term=ibooks&amp;jednostki = oprogramowania&amp;kraju = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
--   **Kropka i iBook kangura*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;jednostki = książki elektronicznej&amp;kraju = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
+-   **Aplikacja iBooks*- [http://itunes.apple.com/search?term=ibooks&amp; jednostki = oprogramowania&amp;kraju = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **Kropka i iBook kangura*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; jednostki = książki elektronicznej&amp;kraju = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 
 ### <a name="enterprise-partner-feed"></a>Organizacji partnera źródła

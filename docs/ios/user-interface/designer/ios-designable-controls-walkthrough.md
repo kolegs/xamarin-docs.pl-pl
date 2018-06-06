@@ -1,21 +1,20 @@
 ---
-title: Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS
-description: Ten artykuł zawiera przewodnik krok po kroku przedstawiająca sposób utworzyć niestandardowego formantu i korzystać z niego w Projektancie Xamarin dla systemu iOS. Widoczny jest sposób udostępnić formantu w przyborniku projektanta, aby można było ją przeciągania/porzucić na widoku. Ponadto zawiera implementowania formantu, aby poprawnie renderowania w czasie projektowania i środowiska uruchomieniowego, jak również sposób tworzenia właściwości, które można ustawić w czasie projektowania.
+title: Używanie formantów niestandardowych z systemem iOS projektanta
+description: Ten dokument zawiera opis sposobu utworzyć niestandardowego formantu i korzystać z niego przy użyciu projektanta Xamarin dla systemu iOS. Widoczny jest sposób udostępnić formantu w przyborniku projektanta dla systemu iOS, zaimplementować formantu, aby poprawnie renderowania i projektowania czasu i inne.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790168"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Wskazówki — za pomocą kontrolki niestandardowe przy użyciu projektanta Xamarin dla systemu iOS
-
-_Ten artykuł zawiera przewodnik krok po kroku przedstawiająca sposób utworzyć niestandardowego formantu i korzystać z niego w Projektancie Xamarin dla systemu iOS. Widoczny jest sposób udostępnić formantu w przyborniku projektanta, aby można było ją przeciągania/porzucić na widoku. Ponadto zawiera implementowania formantu, aby poprawnie renderowania w czasie projektowania i środowiska uruchomieniowego, jak również sposób tworzenia właściwości, które można ustawić w czasie projektowania._
+# <a name="using-custom-controls-with-the-ios-designer"></a>Używanie formantów niestandardowych z systemem iOS projektanta
 
 ## <a name="requirements"></a>Wymagania
 

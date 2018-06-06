@@ -1,15 +1,17 @@
 ---
 title: Platformy Objective-C
+description: W tym dokumencie opisano różne platformy, które osadzanie .NET można kierować podczas pracy z kodu języka Objective-C. Zawarto informacje macOS, iOS, systemu tvOS i watchOS.
 ms.prod: xamarin
 ms.assetid: 43253BE4-A03A-4646-9A14-32C05174E672
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 8c48a14e5d58f95bf93363e0b354fcf3afd94b44
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6eeb776959d1a2a37d67bfae6603971d0e5a22b7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793894"
 ---
 # <a name="objective-c-platforms"></a>Platformy Objective-C
 

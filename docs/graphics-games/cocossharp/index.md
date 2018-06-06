@@ -1,18 +1,19 @@
 ---
-title: CocosSharp
-description: Ten dokument łącza do różnych artykułów na temat tworzenia gier z CocosSharp.
+title: Aparat gier 2W CocosSharp
+description: Ten dokument łącza do różnych artykułów na temat tworzenia gier z CocosSharp. Połączonej zawartości w tym artykule opisano przykładowe aplikacje, rysunku animacji i więcej.
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2018
-ms.openlocfilehash: a188863cf57706e3f9dd6c8f4d2d3e60b2591e0b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 34d22b6e9d8c671e38fbadab0edafa2f57c566e7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783249"
 ---
-# <a name="cocossharp"></a>CocosSharp
+# <a name="cocossharp-2d-game-engine"></a>Aparat gier 2W CocosSharp
 
 _CocosSharp jest biblioteki do tworzenia gier 2W przy użyciu języka C# i F #. Jest port .NET popularnych aparatu Cocos2D._
 

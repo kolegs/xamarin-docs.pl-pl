@@ -1,18 +1,20 @@
 ---
-title: Przykładowe skoroszyty
+title: Skoroszyty Xamarin — przykłady
+description: Ten dokument zawiera łącza do przykładowe skoroszyty do użycia podczas poznanie skoroszyty Xamarin. Skoroszytach pokazują OpenGL, UrhoSharp i właściwości animacji w platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: DE1609F8-0D39-4EA0-8666-0468FCF77ACC
 ms.custom: xamu-video
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 83b4f56ea64c80c5aa1f040acc26b567a9b66e70
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1ebc4d12801deea42219fad060e70b8c24ad179c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793771"
 ---
-# <a name="sample-workbooks"></a>Przykładowe skoroszyty
+# <a name="xamarin-workbooks--samples"></a>Skoroszyty Xamarin — przykłady
 
 > [!NOTE]
 > Różne próbki są dostępne pod adresem [developer.xamarin.com/workbooks](https://developer.xamarin.com/workbooks/).
@@ -37,7 +39,7 @@ Wideo obejmuje tworzenie prostego scenę 3D, pokazano sposób wizualizacji, ich 
 
 ## <a name="propertyanimationworkbookhttpsdeveloperxamarincomworkbooksandroiduser-interfacepropertyanimationworkbook"></a>[PropertyAnimation.workbook](https://developer.xamarin.com/workbooks/android/user-interface/PropertyAnimation.workbook)
 
-[![](images/android-property-view-sml.png "Poznaj podstawy animacji właściwość "Widok" platformy Xamarin.Android")](images/android-property-view.png#lightbox)
+[![](images/android-property-view-sml.png "Poznaj podstawy animacji właściwość \"Widok\" platformy Xamarin.Android")](images/android-property-view.png#lightbox)
 
 Poznaj podstawy z `View` właściwości animacji w platformy Xamarin.Android.
 

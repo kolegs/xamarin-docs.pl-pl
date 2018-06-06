@@ -1,16 +1,17 @@
 ---
 title: Przy użyciu Wpięć za pomocą platformy Xamarin
-description: W tym przewodniku przedstawiono sposób ustawiania Wpięć jako serwer ciągłej integracji i automatyzacji Kompilowanie aplikacji utworzony za pomocą platformy Xamarin dla urządzeń przenośnych. Przedstawiono sposób instalowania Wpięć na OS X, jest skonfigurowana i skonfigurować zadania do skompilowania aplikacji platformy Xamarin.iOS i Xamarin.Android podczas zmiany zostały zastosowane systemu zarządzania kodu źródłowego.
+description: Tym dokumencie opisano sposób korzystania z Wpięć do ciągłej integracji z aplikacjami platformy Xamarin. Zawarto informacje, jak instalowanie, konfigurowanie i używanie Wpięć.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793953"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Przy użyciu Wpięć za pomocą platformy Xamarin
 

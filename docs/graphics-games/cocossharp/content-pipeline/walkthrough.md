@@ -1,20 +1,21 @@
 ---
-title: Przy użyciu MonoGame PipelineTool
-description: Narzędzie potoku MonoGame jest używane do tworzenia projektów i zarządzanie nimi MonoGame zawartości. Pliki w projektach zawartości są przetworzone przez narzędzie Monogame potoku i wyjściowych jako pliki .xnb do użycia w aplikacjach CocosSharp i MonoGame.
+title: Za pomocą narzędzia MonoGame potoku
+description: Narzędzie potoku MonoGame jest używane do tworzenia projektów i zarządzanie nimi MonoGame zawartości. Pliki w projektach zawartości są przetworzone przez narzędzie MonoGame potoku i wyjściowych jako pliki .xnb do użycia w aplikacjach CocosSharp i MonoGame.
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783302"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Za pomocą narzędzia MonoGame potoku
 
-_Narzędzie potoku MonoGame jest używane do tworzenia projektów i zarządzanie nimi MonoGame zawartości. Pliki w projektach zawartości są przetworzone przez narzędzie Monogame potoku i wyjściowych jako pliki .xnb do użycia w aplikacjach CocosSharp i MonoGame._
+_Narzędzie potoku MonoGame jest używane do tworzenia projektów i zarządzanie nimi MonoGame zawartości. Pliki w projektach zawartości są przetworzone przez narzędzie MonoGame potoku i wyjściowych jako pliki .xnb do użycia w aplikacjach CocosSharp i MonoGame._
 
 Narzędzie potoku MonoGame zapewnia łatwy w użyciu środowisko Konwertowanie plików zawartości do **.xnb** plików do użycia w aplikacjach CocosSharp i MonoGame. Informacje dotyczące zawartości potoki i dlaczego jest przydatny do tworzenia gier, zobacz [to wprowadzenie na potoki zawartości](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 

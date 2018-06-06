@@ -1,21 +1,20 @@
 ---
 title: Automatycznie Rozmieść przy użyciu projektanta Xamarin dla systemu iOS
-description: W tym przewodniku przedstawiono iOS automatycznego układu i nowego przepływu pracy ograniczenia, dostępne w Projektancie Xamarin dla systemu iOS.
+description: Ten przewodnik zawiera wprowadzenie iOS automatycznego układu oraz opisano, jak tworzyć i edytować układów Używanie ograniczeń za pomocą projektanta Xamarin dla systemu iOS. Zawiera omówienie również Modyfikowanie ograniczenia w kodzie animowanie zmian ograniczenia i inne.
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790204"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatycznie Rozmieść przy użyciu projektanta Xamarin dla systemu iOS
-
-_W tym przewodniku przedstawiono iOS automatycznego układu i nowego przepływu pracy ograniczenia, dostępne w Projektancie Xamarin dla systemu iOS._
 
 Automatycznie Rozmieść (zwane również "adaptacyjną układu") jest to podejście elastyczny projekt. W przeciwieństwie do systemu układu przejściowe, gdzie każdy element lokalizacji jest ustalony na punkcie ekranu, jest automatycznie układu o *relacje* -położenia elementów do innych elementów na powierzchni projektu. Istotą układu automatycznego jest ograniczenia lub reguły określające położenie element lub zbiór elementów w kontekście innych elementów na ekranie. Ponieważ elementy nie są związane z określonej pozycji na ekranie, warunki ograniczające zmniejszają tworzenie adaptacyjnych układu, który wygląda dobrze na różnych rozmiarów ekranu i orientacji urządzenia.
 

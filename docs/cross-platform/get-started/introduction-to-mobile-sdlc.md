@@ -1,20 +1,19 @@
 ---
 title: Wprowadzenie do cyklu programistycznym oprogramowanie dla urządzeń przenośnych
-description: W tym artykule omówiono cyklu programistycznym oprogramowania w odniesieniu do aplikacji dla urządzeń przenośnych i omówiono niektóre kwestie wymagane podczas kompilowania projekty przenośnych. Deweloperzy chcący wystarczy przejść bezpośrednio w i rozpocząć tworzenie w tym przewodniku można pominięty i przeczytać później, aby uzyskać bardziej szczegółowy opis rozwoju przenośnych.
+description: W tym dokumencie opisano cyklu programistycznym oprogramowanie dla urządzeń przenośnych, biorąc przyjrzeć się UX projektu, interfejsu użytkownika projektu, projektowanie, stabilizacji, dystrybucji i inne.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782336"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Wprowadzenie do cyklu programistycznym oprogramowanie dla urządzeń przenośnych
-
-_W tym artykule omówiono cyklu programistycznym oprogramowania w odniesieniu do aplikacji dla urządzeń przenośnych i omówiono niektóre kwestie wymagane podczas kompilowania projekty przenośnych. Deweloperzy chcący wystarczy przejść bezpośrednio w i rozpocząć tworzenie w tym przewodniku można pominięty i przeczytać później, aby uzyskać bardziej szczegółowy opis rozwoju przenośnych._
 
 Tworzenie aplikacji dla urządzeń przenośnych można w prosty jako otwarcia IDE, wyrzucanie coś ze sobą, podczas szybkiego bit testowania i przesyłanie do sklepu z aplikacjami — wszystkie wykonane w popołudnie. Lub może być bardzo zaangażowany procesu, który obejmuje rygorystyczne projektowania początkowych użyteczność, testowania i testują rozwiązania na tysiące urządzeń, beta pełny cykl życia, a następnie wdrożenia na kilka różnych sposobów pytań i odpowiedzi.
 

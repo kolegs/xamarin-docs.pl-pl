@@ -1,22 +1,20 @@
 ---
-title: Praca z przycisków
-description: Ten artykuł obejmuje projektowanie i Praca z przycisków wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS przyciski w Xamarin
+description: Ten dokument zawiera opis sposobu pracy z przycisków w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin. Zawarto informacje, jak pracować z przycisków w kodzie i scenorys i sprawdza, czy jak styl przycisku.
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789388"
 ---
-# <a name="working-with-buttons"></a>Praca z przycisków
-
-_Ten artykuł obejmuje projektowanie i Praca z przycisków wewnątrz aplikacji Xamarin.tvOS._
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Praca z systemu tvOS przyciski w Xamarin
 
 Użyj wystąpienia `UIButton` klasy w celu utworzenia focusable, wybranie przycisku w oknie systemu tvOS. Gdy użytkownik wybierze przycisk, wysyła komunikat akcji do obiektu docelowego Zezwalaj wejściowych użytkownika Xamarin.tvOS aplikacji odpowiadanie na żądania użytkownika.
 
@@ -69,7 +67,7 @@ Najprostszym sposobem, aby pracować z przycisków w aplikacji Xamarin.tvOS jest
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **przycisk** z **biblioteki** i upuść go w widoku: 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![](buttons-images/storyboard01.png "Przycisk")](buttons-images/storyboard01.png#lightbox)
 1. W **Explorer właściwości**, można dostosować kilka właściwości przycisku, takie jak jego **tytuł** i **kolor tekstu**: 
 
     [![](buttons-images/storyboard02.png "Właściwości przycisku")](buttons-images/storyboard02.png#lightbox)
@@ -90,7 +88,7 @@ Najprostszym sposobem, aby pracować z przycisków w aplikacji Xamarin.tvOS jest
 1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku i otwórz go do edycji.
 1. Przeciągnij **przycisk** z **biblioteki** i upuść go w widoku: 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![](buttons-images/storyboard01vs.png "Przycisk")](buttons-images/storyboard01vs.png#lightbox)
 1. W **Explorer właściwości**, można dostosować kilka właściwości przycisku, takie jak jego **tytuł** i **kolor tekstu**: 
 
     [![](buttons-images/storyboard02vs.png "W Eksploratorze właściwości")](buttons-images/storyboard02vs.png#lightbox)

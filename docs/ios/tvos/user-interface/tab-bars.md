@@ -1,21 +1,20 @@
 ---
-title: Praca z kontrolera kart
-description: Ten artykuł obejmuje projektowanie i Praca z kontrolera pasek kartę wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS kartę pasek kontrolerów w Xamarin
+description: Ten dokument zawiera opis sposobu pracy z kontrolerami pasek kartę w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin. Zawiera ogólne za pośrednictwem widoku kartę Paski i omówiono elementy paska kartę, integracja scenorysu i elementy paska kartę.
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1536e37830f3b2a1e2a83c7bf5039909062d092b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea782fc8d6a2ccef2cdd687ec467be6d49793fc0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789323"
 ---
-# <a name="working-with-tab-bar-controller"></a>Praca z kontrolera kart
-
-_Ten artykuł obejmuje projektowanie i Praca z kontrolera pasek kartę wewnątrz aplikacji Xamarin.tvOS._
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Praca z systemu tvOS kartę pasek kontrolerów w Xamarin
 
 Dla wielu typów aplikacji systemu tvOS głównej nawigacji jest przedstawiany jako pasek karty uruchomionych w górnej części ekranu. Użytkownik swipes lewy i prawy przez listę możliwych kategorii i obszar zawartości poniżej zmiany, aby odzwierciedlić wybór użytkownika.
 

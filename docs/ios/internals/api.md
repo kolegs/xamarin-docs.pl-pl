@@ -1,17 +1,19 @@
 ---
-title: interfejs API
+title: Przegląd interfejsu API platformy Xamarin.iOS
+description: Ten dokument zawiera łącza do Xamarin dokumentacji interfejsu API, przewodnik opisujący projekt interfejsu API platformy Xamarin.iOS oraz listę zestawów, które są dostępne do użycia w rozwoju Xamarin.
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2ce97ecc75dd59c0851db22431529ef819f37ea7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81c30af4d7c95960344015ed6dcfd868deda06af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786138"
 ---
-# <a name="api"></a>interfejs API
+# <a name="xamarinios-api-overview"></a>Przegląd interfejsu API platformy Xamarin.iOS
 
 Przedstawia Xamarin.iOS C# / CIL powiązanie z interfejsu API CocoaTouch i umożliwia także dostęp do interfejsów API CIL ECMA i różnych innych interfejsów API architektury .NET.
 

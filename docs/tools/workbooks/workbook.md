@@ -1,20 +1,19 @@
 ---
 title: Skoroszyty interakcyjne
-description: Aby utworzyć dokumentów na żywo z kodu C# na eksperymentowanie, użyj skoroszyty nauczania szkolenia lub eksploracji.
+description: Ten dokument zawiera opis sposobu umożliwia utworzenie na żywo dokumenty zawierające kod C# dla eksperymentowanie nauczania, szkolenia i eksplorowanie skoroszyty Xamarin.
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: de88bbc9bc45b8a6326924d964bdd9385acb82aa
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fa79aae9af2cd90741a54a5b3abc17910fcb181d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794179"
 ---
 # <a name="interactive-workbooks"></a>Skoroszyty interakcyjne
-
-_Aby utworzyć dokumentów na żywo z kodu C# na eksperymentowanie, użyj skoroszyty nauczania szkolenia lub eksploracji._
 
 Skoroszyty służy jako aplikacja autonomiczna, niezależnie od programu IDE.
 

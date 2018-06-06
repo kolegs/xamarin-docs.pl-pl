@@ -1,21 +1,19 @@
 ---
-title: 'Wskazówki: Tworzenie aplikacji przy użyciu interfejsu API odbicia'
-description: Oprócz elementów interfejsu API, MonoTouch.Dialog (patrz hasło MT. D) także interfejsu API odbicia atrybutu. Tworzenie ekranów z patrz hasło MT. sprawia, że interfejs API odbicia D, wystarczy dekoracji klas atrybutów. Ten artykuł zawiera przechodzenia przez pokazujący sposób tworzenia aplikacji przy użyciu interfejsu API odbicia.
+title: Tworzenie aplikacji platformy Xamarin.iOS przy użyciu interfejsu API odbicia
+description: W tym dokumencie opisano MonoTouch.Dialog opartych na atrybutach odbicia interfejsu API, który tworzy oparte na atrybuty klasy interfejsu użytkownika.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790513"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Wskazówki: Tworzenie aplikacji przy użyciu interfejsu API odbicia
-
-_Oprócz elementów interfejsu API, MonoTouch.Dialog (patrz hasło MT. D) także interfejsu API odbicia atrybutu. Tworzenie ekranów z patrz hasło MT. sprawia, że interfejs API odbicia D, wystarczy dekoracji klas atrybutów. Ten artykuł zawiera przechodzenia przez pokazujący sposób tworzenia aplikacji przy użyciu interfejsu API odbicia._
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Tworzenie aplikacji platformy Xamarin.iOS przy użyciu interfejsu API odbicia
 
 Patrz hasło MT. Interfejs API odbicia D umożliwia jako ozdobione atrybutów tego patrz hasło MT. D używa automatyczne tworzenie ekranów. Odbicie interfejs API udostępnia powiązania między tymi klasami i wyświetlanych na ekranie. Mimo że ten interfejs API nie zapewnia precyzyjną kontrolę, który wykonuje elementów interfejsu API, zmniejsza złożoność automatyczne tworzenie limit hierarchia elementów oparte na decoration klasy.
 
@@ -36,7 +34,6 @@ Oto przykład ilustrujący sposób użycia interfejsu API odbicia. W tym przykł
  [![](reflection-api-walkthrough-images/01-expense-entry.png "W tym przykładzie będzie budujemy ekranu wprowadzania danych proste w sposób pokazany poniżej")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Tworzenie klasy za pomocą patrz hasło MT. Atrybuty D
 

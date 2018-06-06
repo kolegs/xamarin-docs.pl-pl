@@ -1,21 +1,20 @@
 ---
 title: Dodatkowe macOS Sierra Framework zmiany
-description: W tym artykule omówiono dodatkowych, drobne zmiany lub ulepszenia istniejących struktur dla macOS Sierra.
+description: W tym dokumencie opisano drobne zmiany i ulepszenia istniejących struktur wprowadzone w macOS Sierra. Bada zmian w ramach Accelerate, AppKit, AVFoundation, podstawowe dane, Core obrazu, Foundation i więcej.
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1bc12629a84e9a06cc80882d141bf6a0c2f0c52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cfa2e9bcb0be4d65462914215045c9c7f01da5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792596"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Dodatkowe macOS Sierra Framework zmiany
-
-_W tym artykule omówiono dodatkowych, drobne zmiany lub ulepszenia istniejących struktur dla macOS Sierra._
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -29,7 +28,7 @@ Przyspieszenie ramach macOS Sierra zostały wprowadzone następujące rozszerzen
 
 <a name="AppKit-Framework-Enhancements" />
 
-## <a name="appkit-framework-enhancements"></a>Ulepszenia Appkit Framework
+## <a name="appkit-framework-enhancements"></a>Ulepszenia AppKit Framework
 
 Ramach AppKit macOS Sierra zostały wprowadzone następujące rozszerzenie:
 

@@ -1,19 +1,20 @@
 ---
-title: Architektura systemu iOS
-description: Eksploracja Xamarin.iOS na niskim poziomie
+title: Architektura aplikacji systemu iOS
+description: W tym dokumencie opisano Xamarin.iOS na interakcję niewielkie, dyskusji kodu jak natywnego i zarządzanego, kompilacji drzewa obiektów aplikacji, selektorów rejestratorów, uruchamiania aplikacji i generatora.
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 89b4e8bde43b34c50c1cba54a4c7d8d4ff183c66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786125"
 ---
-# <a name="ios-architecture"></a>Architektura systemu iOS
+# <a name="ios-app-architecture"></a>Architektura aplikacji systemu iOS
 
 Aplikacji platformy Xamarin.iOS wykonane w środowisku wykonywania Mono i użyj pełnej kompilacji z wyprzedzeniem o czasie (drzewa obiektów aplikacji) do kompilowania kodu C# na język asemblera ARM. Ta funkcja jest uruchamiana side-by-side z [Objective-C Runtime](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Zarówno środowiska wykonawcze działają jądra podobnymi do systemu UNIX, w szczególności [XNU](https://en.wikipedia.org/wiki/XNU), uwidaczniać różnych interfejsach API do kodu użytkownika, co umożliwia deweloperom możliwość dostępu do podstawowego systemu natywnego lub zarządzanego.
 
@@ -26,7 +27,6 @@ Na poniższym diagramie przedstawiono ogólne omówienie tej architektury:
 Wdrażając aplikacje dla platformy Xamarin warunki *natywnych i zarządzanych* kodu są często używane. [Kod zarządzany](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) jest kod, który ma ona zarządzana przez [środowisko uruchomieniowe języka wspólnego .NET Framework](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), lub w przypadku jego Xamarin: Mono środowiska uruchomieniowego. Jest to określane mianem język pośredni.
 
 Kod natywny jest kod, który będzie uruchamiany natywnie na danej platformie (na przykład Objective-C lub nawet drzewa obiektów aplikacji skompilowany kod, w układzie ARM). Ten przewodnik opisuje sposób drzewa obiektów aplikacji kompiluje kodu zarządzanego do kodu natywnego i wyjaśniono sposób działania aplikacji platformy Xamarin.iOS pełnego wykorzystania firmy Apple iOS interfejsów API przy użyciu powiązań, a jednocześnie ma również dostęp do. BCL w sieci i zaawansowane języka, takich jak C#.
-
 
 ## <a name="aot"></a>DRZEWA OBIEKTÓW APLIKACJI
 
@@ -62,10 +62,10 @@ Pseudo-poniższy kod przedstawia przykład jak to zrobić:
 
 ```csharp
  class MyViewController : UIViewController{
-    [Export ("myFunc")]
-    public void MyFunc ()
-    {
-    }
+     [Export ("myFunc")]
+     public void MyFunc ()
+     {
+     }
  }
 ```
 

@@ -195,7 +195,7 @@
 ##### [Dziedziczenie stylów](user-interface/styles/xaml/inheritance.md)
 ##### [Style dynamiczne](user-interface/styles/xaml/dynamic.md)
 ##### [Style urządzenia](user-interface/styles/xaml/device.md)
-#### [Określanie stylów aplikacji Xamarin.Forms przy użyciu kaskadowych arkuszy stylów](user-interface/styles/css/index.md)
+#### [Ustawianie stylów aplikacji platformy Xamarin.Forms przy użyciu kaskadowych arkuszy stylów (CSS)](user-interface/styles/css/index.md)
 ### [TableView](user-interface/tableview.md)
 ### [Tekst](user-interface/text/index.md)
 #### [Etykieta](user-interface/text/label.md)

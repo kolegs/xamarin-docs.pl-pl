@@ -1,15 +1,17 @@
 ---
 title: Wprowadzenie do korzystania z systemu Android
+description: Ten dokument zawiera opis sposobu Rozpoczynanie pracy z systemem Android przy użyciu osadzanie .NET. Tym artykule omówiono instalowanie .NET osadzanie, tworzenie projektu biblioteki systemu Android przy użyciu wygenerowanych danych wyjściowych projektu programu Android Studio i innych kwestii.
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 57bedba786de82094ef43a6982d2df1bcab1de9c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793920"
 ---
 # <a name="getting-started-with-android"></a>Wprowadzenie do korzystania z systemu Android
 

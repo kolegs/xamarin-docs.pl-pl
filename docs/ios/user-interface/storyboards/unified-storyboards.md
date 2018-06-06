@@ -1,21 +1,20 @@
 ---
-title: Ujednolicone Scenorys
-description: Ujednolicone scenorys Zezwalaj iOS deweloperom tworzenie interfejsu użytkownika z jednego scenorysu, zamiast wielu scenorys, aby pokrywał większą liczbę rozmiaru ekranu urządzenia. W tym artykule jest przeznaczona do zapewniają bardziej omówienie działania ujednoliconego scenorysu w ramach platformy Xamarin.iOS.
+title: Ujednolicone Scenorys w Xamarin.iOS
+description: W tym dokumencie opisano ujednoliconego scenorys w Xamarin.iOS. Ujednolicone scenorys umożliwiają deweloperom obsługę wielu rozmiaru ekranu z definicją jednego interfejsu.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792024"
 ---
-# <a name="unified-storyboards"></a>Ujednolicone Scenorys
-
-_Ujednolicone scenorys Zezwalaj iOS deweloperom tworzenie interfejsu użytkownika z jednego scenorysu, zamiast wielu scenorys, aby pokrywał większą liczbę rozmiaru ekranu urządzenia. W tym artykule jest przeznaczona do zapewniają bardziej omówienie działania ujednoliconego scenorysu w ramach platformy Xamarin.iOS._
+# <a name="unified-storyboards-in-xamarinios"></a>Ujednolicone Scenorys w Xamarin.iOS
 
 System iOS 8 zawiera nowe, łatwiejsze w obsłudze mechanizm do tworzenia interfejsu użytkownika — ujednoliconą scenorysu. Pojedynczy scenorysu, obejmujące wszystkie sprzętu różnych rozmiarów ekranu, można tworzyć widoki szybkie i elastyczny w "projektu — jeden raz, użyj wielu" stylu.
 
@@ -93,7 +92,7 @@ Wszystkie powyższe Państwa są opakowywane w w kontenerze, który Apple odwoł
 Środowisk cechy są nowy interfejs w systemie iOS 8 i mogą zwracać kolekcji cechy dla następujących obiektów:
 
 -  Ekrany ( `UIScreens` ).
--  Windows ( `UIWindows` ).
+-  Systemu Windows ( `UIWindows` ).
 -  Wyświetl kontrolerów ( `UIViewController` ).
 -  Widoki ( `UIView` ).
 -  Kontroler prezentacji ( `UIPresentationController` ).
@@ -679,7 +678,7 @@ A po uruchomieniu aplikacji na telefonie iPhone symulatora brakuje elementu:
 
  [![](unified-storyboards-images/exclude05.png "Brak elementu podczas uruchomionej aplikacji w symulatorze telefonów iPhone")](unified-storyboards-images/exclude05.png#lightbox)
 
-Aby usunąć element przypadku wykluczenia, po prostu wybierz element w **powierzchni projektowej**, przewiń do dołu **Explorer właściwości** i kliknij przycisk **-**przycisk obok wielkości liter, aby usunąć.
+Aby usunąć element przypadku wykluczenia, po prostu wybierz element w **powierzchni projektowej**, przewiń do dołu **Explorer właściwości** i kliknij przycisk **-** przycisk obok wielkości liter, aby usunąć.
 
 Implementacja interfejsu Unified Scenorys obejrzeć w `UnifiedStoryboard` Przykładowa aplikacja dla systemu iOS 8 Xamarin dołączony do tego dokumentu.
 

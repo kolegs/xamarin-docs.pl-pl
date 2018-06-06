@@ -1,19 +1,20 @@
 ---
-title: Wdrażanie bezprzewodowej
-description: Ta funkcja umożliwia wdrożenia dla systemu iOS lub urządzeń Apple TV za pośrednictwem połączenia sieciowego
+title: Bezprzewodowe wdrożenia dla platformy Xamarin.iOS i systemu tvOS aplikacji
+description: Ten dokument zawiera opis sposobu bezprzewodowo wdrażania aplikacji platformy Xamarin.iOS na urządzeniu z systemem iOS z obu programu Visual Studio z Mac lub Visual Studio 2017 r.
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785521"
 ---
-# <a name="wireless-deployment"></a>Wdrażanie bezprzewodowej
+# <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Bezprzewodowe wdrożenia dla platformy Xamarin.iOS i systemu tvOS aplikacji
 
 Ważnym elementem developer przepływu pracy jest wdrażana na urządzeniu. Xcode 9 wprowadzono możliwość wdrażania na urządzeniu z systemem iOS lub Apple TV za pośrednictwem sieci, zamiast do sprzętowych urządzeń za każdym razem, gdy chcesz wdrożyć, a debugowanie aplikacji. Ta funkcja został wprowadzony w programie Visual Studio w wersji Mac 7.4 i Visual Studio 15,6.
 

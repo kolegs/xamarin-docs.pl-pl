@@ -1,15 +1,17 @@
 ---
 title: Wprowadzenie do języka Objective C
+description: W tym dokumencie opisano sposób rozpocząć korzystanie z platformy .NET osadzanie z Objective-C. Go w tym artykule omówiono wymagania instalacji osadzanie .NET z NuGet i obsługiwane platformy.
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 0c2d92f52000bbc6d9d4ea3b07112795aa98bd0a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c5db0a55cc1d2597837ae5feb2c5167a0a21b494
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792983"
 ---
 # <a name="getting-started-with-objective-c"></a>Wprowadzenie do języka Objective C
 

@@ -1,21 +1,20 @@
 ---
 title: Powiadomienia wypychane w systemie iOS
-description: W tej sekcji opisano powiadomień wypychanych w systemie iOS. Podaj Usługa bramy powiadomień wypychanych w Apple oraz roli, która jest odtwarzany w publikacji powiadomienia do aplikacji systemu iOS. Go objaśnia sposób tworzenia niezbędne do włączenia powiadomień wypychanych i omówiono w nim certyfikaty zabezpieczeń. Na koniec w tej sekcji będzie omawiać niektóre zadania celów, które serwery aplikacji należy wykonać, aby śledzić klienckie urządzenia przenośne.
+description: Ten dokument zawiera opis sposobu pracy z powiadomień wypychanych w systemie iOS 9 i wcześniejszych. Zawarto informacje certyfikatów, w zarejestrowani powiadomienia bramy Service (APNS, Apple Push) i inne.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788670"
 ---
 # <a name="push-notifications-in-ios"></a>Powiadomienia wypychane w systemie iOS
-
-_W tej sekcji opisano powiadomień wypychanych w systemie iOS. Podaj Usługa bramy powiadomień wypychanych w Apple oraz roli, która jest odtwarzany w publikacji powiadomienia do aplikacji systemu iOS. Go objaśnia sposób tworzenia niezbędne do włączenia powiadomień wypychanych i omówiono w nim certyfikaty zabezpieczeń. Na koniec w tej sekcji będzie omawiać niektóre zadania celów, które serwery aplikacji należy wykonać, aby śledzić klienckie urządzenia przenośne._
 
 > [!IMPORTANT]
 > Informacje przedstawione w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.

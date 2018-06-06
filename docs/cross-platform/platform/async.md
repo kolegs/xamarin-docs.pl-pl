@@ -1,20 +1,21 @@
 ---
-title: Async — omówienie
-description: 'Najnowsza wersja języka C# — w wersji 5 — wprowadzone dwóch nowych słów kluczowych express operacji asynchronicznych: async i await. Słowa kluczowe umożliwiają pisania prostych kodu, który korzysta z biblioteki równoległych zadań do wykonania długotrwałe operacje (np. dostępu do sieci) w innym wątku i łatwo uzyskiwać dostęp do wyników po zakończeniu. Najnowsze wersje platformy Xamarin.iOS i platformy Xamarin.Android obsługuje async i await — ten dokument zawiera wyjaśnienia dotyczące i przykład za pomocą nowej składni za pomocą platformy Xamarin.'
+title: Omówienie obsługi Async
+description: Ten dokument zawiera opis programowania za pomocą async i await założenia C# 5, aby ułatwić asynchronicznych w kodzie.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782011"
 ---
 # <a name="async-support-overview"></a>Omówienie obsługi Async
 
-_Najnowsza wersja języka C# — w wersji 5 — wprowadzone dwóch nowych słów kluczowych express operacji asynchronicznych: async i await. Słowa kluczowe umożliwiają pisania prostych kodu, który korzysta z biblioteki równoległych zadań do wykonania długotrwałe operacje (np. dostępu do sieci) w innym wątku i łatwo uzyskiwać dostęp do wyników po zakończeniu. Najnowsze wersje platformy Xamarin.iOS i platformy Xamarin.Android obsługuje async i await — ten dokument zawiera wyjaśnienia dotyczące i przykład za pomocą nowej składni za pomocą platformy Xamarin._
+_C# 5 wprowadzone dwa słowa kluczowe, aby uprościć asynchroniczne programing: async i await. Słowa kluczowe umożliwiają pisania prostych kodu, który korzysta z biblioteki równoległych zadań do wykonania długotrwałe operacje (np. dostępu do sieci) w innym wątku i łatwo uzyskiwać dostęp do wyników po zakończeniu. Najnowsze wersje platformy Xamarin.iOS i platformy Xamarin.Android obsługuje async i await — ten dokument zawiera wyjaśnienia dotyczące i przykład za pomocą nowej składni za pomocą platformy Xamarin._
 
 Obsługa asynchronicznego dla platformy Xamarin jest oparty na podstawie Mono 3.0 i uaktualnia profilu interfejsu API jest przyjazna wersji Silverlight, aby być w wersji platformy .NET 4.5 przyjaznych dla urządzeń przenośnych.
 

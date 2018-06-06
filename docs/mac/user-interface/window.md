@@ -1,5 +1,5 @@
 ---
-title: Windows
+title: Systemu Windows w Xamarin.Mac
 description: W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie.
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f45bc69b74d98c7b9130f2caeaee91b184c38d87
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794075"
 ---
-# <a name="windows"></a>Windows
+# <a name="windows-in-xamarinmac"></a>Systemu Windows w Xamarin.Mac
 
 _W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie._
 

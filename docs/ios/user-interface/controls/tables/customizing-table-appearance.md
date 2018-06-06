@@ -1,18 +1,20 @@
 ---
-title: Dostosowywanie wyglądu tabeli
+title: Dostosowywanie wyglądu tabeli w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu dostosowywania wyglądu tabeli w platformy Xamarin.iOS. Zawarto informacje style komórki, Akcesoria komórki separatorów i układy niestandardowe komórki.
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a447c59e7384ce7da168efdd018bc23c2abb25c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03383c69afb6afa9282d44751475d74fdcd92d4a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789957"
 ---
-# <a name="customizing-a-tables-appearance"></a>Dostosowywanie wyglądu tabeli
+# <a name="customizing-a-tables-appearance-in-xamarinios"></a>Dostosowywanie wyglądu tabeli w Xamarin.iOS
 
 Najprostszym sposobem, aby zmienić wygląd tabeli jest stylu inną komórkę. Można zmienić stylu komórki, który jest używany podczas tworzenia każdej komórki w `UITableViewSource`w `GetCell` metody.
 

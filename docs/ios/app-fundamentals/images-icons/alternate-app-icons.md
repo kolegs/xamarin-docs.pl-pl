@@ -1,19 +1,20 @@
 ---
-title: Ikony aplikacji alternatywnej
-description: W tym artykule omówiono w platformy Xamarin.iOS przy użyciu ikony aplikacji alternatywny.
+title: Ikony alternatywny aplikacji platformy Xamarin.iOS
+description: Ten dokument zawiera opis sposobu programu ikony alternatywny aplikacji platformy Xamarin.iOS. Zawarto informacje, jak dodać ikony do projektu platformy Xamarin.iOS sposobu modyfikowania pliku Info.plist i jak programowo zarządzać ikonę aplikacji.
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784113"
 ---
-# <a name="alternate-app-icons"></a>Ikony aplikacji alternatywnej
+# <a name="alternate-app-icons-in-xamarinios"></a>Ikony alternatywny aplikacji platformy Xamarin.iOS
 
 _W tym artykule omówiono w platformy Xamarin.iOS przy użyciu ikony aplikacji alternatywny._
 

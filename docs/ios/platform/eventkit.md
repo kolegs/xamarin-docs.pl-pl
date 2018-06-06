@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: Ten przewodnik zawiera omówienie dotyczące dostępu i współpracować z kalendarzy, CalendarEvents i przypomnienia danych przechowywanych w bazie danych kalendarza udostępniane za pośrednictwem funkcji EventKit. Obejmuje ona główne kategorie i ich role w EventKit programowania, a także szereg typowych zadań związanych z EventKit framework.
+title: EventKit w Xamarin.iOS
+description: W tym dokumencie opisano EventKit i jak z niego korzystać w platformy Xamarin.iOS. Zawarto informacje, kalendarzy, zdarzenia kalendarza i przypomnienia, wygląda na klasy powszechnie używane podczas programowania z EventKit i inne.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786717"
 ---
-# <a name="eventkit"></a>EventKit
-
-_Ten przewodnik zawiera omówienie dotyczące dostępu i współpracować z kalendarzy, CalendarEvents i przypomnienia danych przechowywanych w bazie danych kalendarza udostępniane za pośrednictwem funkcji EventKit. Obejmuje ona główne kategorie i ich role w EventKit programowania, a także szereg typowych zadań związanych z EventKit framework._
+# <a name="eventkit-in-xamarinios"></a>EventKit w Xamarin.iOS
 
 iOS ma dwie aplikacje związanych z kalendarzem wbudowanych: kalendarza aplikacji i przypomnienia aplikacji. Jest prosta zrozumieć, jak aplikacja kalendarza zarządza danych kalendarza, ale aplikacja przypomnienia jest mniej oczywista. Przypomnienia faktycznie może mieć dat skojarzonych z nimi w postaci liczby, gdy są one powodu, gdy jest ukończona, itp. W związku z systemem iOS przechowuje wszystkie dane kalendarza, czy jest ona zdarzenia kalendarza lub przypomnienia w jednej lokalizacji o nazwie *bazę danych kalendarza*.
 

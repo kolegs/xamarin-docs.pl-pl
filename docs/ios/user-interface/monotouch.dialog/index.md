@@ -1,21 +1,19 @@
 ---
-title: Wprowadzenie do MonoTouch.Dialog
-description: MonoTouch.Dialog (patrz hasło MT. D) zestaw narzędzi jest niezbędne framework dla aplikacji szybkie programowanie interfejsu użytkownika w Xamarin.iOS. PATRZ HASŁO MT. D umożliwia szybkie i łatwe do definiowania złożonych aplikacji interfejsu użytkownika przy użyciu podejścia deklaratywne zamiast konieczność powtarzania kontrolerów nawigacji, tabelach itp. Ponadto patrz hasło MT. D ma elastyczny zestaw interfejsów API, które zapewniają deweloperom pełną kontrolę lub ręce poza podejście, a także dodatkowe funkcje, takie jak obraz tła ściągnięcia do odświeżania, ładowania, wyszukiwanie pomocy technicznej i dynamiczne generowanie interfejsu użytkownika za pomocą danych JSON. Ten przewodnik przedstawia różne sposoby pracy z patrz hasło MT. D, a następnie dives dogłębną analizę zaawansowanego wykorzystania.
+title: Wprowadzenie do MonoTouch.Dialog dla platformy Xamarin.iOS
+description: W tym dokumencie opisano MonoTouch.Dialog (patrz hasło MT. D), framework szybkie, deklaratywne środowiska deweloperskiego interfejsu użytkownika przy użyciu platformy Xamarin.iOS. Zawarto informacje, jak utworzyć interfejs w kodzie lub JSON i używać takich funkcji jak pociągnij, aby odświeżyć, wyszukiwania, ładowanie obrazu tła i przy użyciu interfejsów API MonoTouch.Dialog.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790841"
 ---
-# <a name="introduction-to-monotouchdialog"></a>Wprowadzenie do MonoTouch.Dialog
-
-_MonoTouch.Dialog (patrz hasło MT. D) zestaw narzędzi jest niezbędne framework dla aplikacji szybkie programowanie interfejsu użytkownika w Xamarin.iOS. PATRZ HASŁO MT. D umożliwia szybkie i łatwe do definiowania złożonych aplikacji interfejsu użytkownika przy użyciu podejścia deklaratywne zamiast konieczność powtarzania kontrolerów nawigacji, tabelach itp. Ponadto patrz hasło MT. D ma elastyczny zestaw interfejsów API, które zapewniają deweloperom pełną kontrolę lub ręce poza podejście, a także dodatkowe funkcje, takie jak obraz tła ściągnięcia do odświeżania, ładowania, wyszukiwanie pomocy technicznej i dynamiczne generowanie interfejsu użytkownika za pomocą danych JSON. Ten przewodnik przedstawia różne sposoby pracy z patrz hasło MT. D, a następnie dives dogłębną analizę zaawansowanego wykorzystania._
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Wprowadzenie do MonoTouch.Dialog dla platformy Xamarin.iOS
 
 MonoTouch.Dialog, określany jako patrz hasło MT. D skrócie, jest szybkie toolkit programowanie interfejsu użytkownika, który umożliwia deweloperom tworzenie ekranów w aplikacji i nawigacji przy użyciu informacji zamiast konieczność powtarzania tworzenia widoku kontrolerów, tabelach itp. Tak oferuje znaczne uproszczenie redukcji programowanie i kodu interfejsu użytkownika. Rozważmy na przykład poniższy zrzut ekranu:
 

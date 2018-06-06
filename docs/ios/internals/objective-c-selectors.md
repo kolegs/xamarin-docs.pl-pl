@@ -1,17 +1,19 @@
 ---
-title: Selektory Objective-C
+title: Selektory Objective-C w Xamarin.iOS
+description: Ten dokument omówiono sposób interakcji z selektorów Objective-C w języku C#. Przedstawiono sposób wywołania i Uwagi techniczne, które należy wziąć pod uwagę, gdy taka selektorów.
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787045"
 ---
-# <a name="objective-c-selectors"></a>Selektory Objective-C
+# <a name="objective-c-selectors-in-xamarinios"></a>Selektory Objective-C w Xamarin.iOS
 
 Języka Objective C jest oparty na *selektorów*. Selektora jest komunikat, który można wysłać do obiektu lub *klasy*. [Xamarin.iOS](~/ios/internals/api-design/index.md) mapy wystąpienia selektorów, które metody wystąpienia i klasy selektorów, które metody statyczne.
 

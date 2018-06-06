@@ -1,24 +1,26 @@
 ---
-title: SceneKit
+title: SceneKit w Xamarin.iOS
+description: W tym dokumencie opisano SceneKit, wykres scenę 3D interfejsu API abstrakcyjność optymalizacji złożoności OpenGL upraszcza pracy z grafiki 3D.
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 7c00a3f6aed442eec402f34a5cea4b1895bb3685
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb72e194e14f903061e1bd2dc6d04ef88ab429d4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786788"
 ---
-# <a name="scenekit"></a>SceneKit
+# <a name="scenekit-in-xamarinios"></a>SceneKit w Xamarin.iOS
 
-Zestaw sceny jest wykres scenę 3D interfejsu API, które upraszcza pracy z grafiki 3D. Została wprowadzona w systemie OS X 10.8 i teraz nadszedł iOS 8. Z zestawem sceny tworzenie wizualizacji 3W bez ramek i zwykłych grach 3W nie wymaga doświadczenia w OpenGL. Opierając się na wspólne pojęcia wykres sceny, zestaw sceny abstracts optymalizacji złożoności OpenGL i interfejsy OpenGL ES, dzięki czemu bardzo łatwo dodać 3D zawartości do aplikacji. Jednak w przypadku eksperta OpenGL sceny zestawu ma doskonałą pomoc techniczną dla poleceń bezpośrednio z również OpenGL. Ponadto zawiera wiele funkcji, które stanowią uzupełnienie grafiki 3D, takie jak fizycznych, a bardzo dobrze integruje się z kilku innych platform firmy Apple, takich jak zestaw Sprite, obrazu Core i Core animacji.
+SceneKit jest wykres scenę 3D interfejsu API, które upraszcza pracy z grafiki 3D. Została wprowadzona w systemie OS X 10.8 i teraz nadszedł iOS 8. Z SceneKit tworzenie wizualizacji 3W bez ramek i zwykłych grach 3W nie wymaga doświadczenia w OpenGL. Opierając się na wspólne pojęcia wykres sceny, SceneKit abstracts optymalizacji złożoności OpenGL i interfejsy OpenGL ES, dzięki czemu bardzo łatwo dodać 3D zawartości do aplikacji. Jednak w przypadku eksperta OpenGL SceneKit ma doskonałą pomoc techniczną dla poleceń bezpośrednio z również OpenGL. Ponadto zawiera wiele funkcji, które stanowią uzupełnienie grafiki 3D, takie jak fizycznych, a bardzo dobrze integruje się z kilku innych platform firmy Apple, takich jak zestaw Sprite, obrazu Core i Core animacji.
 
-Zestaw sceny jest bardzo proste w użyciu. Jest deklaracyjnego interfejsu API, który zapewnia obsługę renderowania. Wystarczy skonfigurować sceny, Dodaj właściwości, a także uchwytów do sceny zestawu renderowania sceny.
+SceneKit jest bardzo proste w użyciu. Jest deklaracyjnego interfejsu API, który zapewnia obsługę renderowania. Wystarczy skonfigurować sceny, Dodaj właściwości, a także uchwytów SceneKit renderowania sceny.
 
-Aby pracować z zestawu sceny tworzenia wykresu sceny przy użyciu `SCNScene` klasy. Sceny zawiera hierarchię węzłów reprezentowany przez wystąpienie `SCNNode`, definiowanie lokalizacji w przestrzeni 3D. Każdy węzeł ma właściwości, takie jak geometria, oświetlenia i materiały, które mają wpływ na jego wyglądu, jak pokazano na poniższej ilustracji:
+Aby pracować z SceneKit tworzenia wykresu sceny przy użyciu `SCNScene` klasy. Sceny zawiera hierarchię węzłów reprezentowany przez wystąpienie `SCNNode`, definiowanie lokalizacji w przestrzeni 3D. Każdy węzeł ma właściwości, takie jak geometria, oświetlenia i materiały, które mają wpływ na jego wyglądu, jak pokazano na poniższej ilustracji:
 
 ![](scenekit-images/image7.png "Hierarchia SceneKit") 
 
@@ -43,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>Dodawanie jasny
 
-W tym momencie kuli nie będzie zawierał żadnych informacji ponieważ nie istnieje żadne światło sceny. Dołączanie `SCNLight` wystąpień do węzłów tworzy świateł w zestawie sceny. Istnieje kilka typów świateł od różne rodzaje oświetlenia kierunkową oświetlenia otoczenia. Na przykład poniższy kod tworzy wielokierunkowego jasny boku zakresie:
+W tym momencie kuli nie będzie zawierał żadnych informacji ponieważ nie istnieje żadne światło sceny. Dołączanie `SCNLight` wystąpień do węzłów tworzy świateł w SceneKit. Istnieje kilka typów świateł od różne rodzaje oświetlenia kierunkową oświetlenia otoczenia. Na przykład poniższy kod tworzy wielokierunkowego jasny boku zakresie:
 
 ```csharp
 // omnidirectional light
@@ -89,7 +91,7 @@ cameraNode = new SCNNode {
 scene.RootNode.AddChildNode (cameraNode);
 ```
 
-Jak widać z powyższego kodu obiekty mogą być tworzone za pomocą konstruktorów zestawu sceny lub metody fabryki Create. Pierwsza umożliwia przy użyciu składni inicjatora C#, ale które polega przede wszystkim na preferencji.
+Jak widać z kodu powyżej SceneKit obiekty mogą być tworzone za pomocą konstruktorów lub metody fabryki Create. Pierwsza umożliwia przy użyciu składni inicjatora C#, ale które polega przede wszystkim na preferencji.
 
 Aparatem w miejscu całego kuli jest widoczny dla użytkownika:
 
@@ -129,7 +131,7 @@ Małp pojawi się wizualnie znajdują się w zakresie, niezależnie od punktu wi
 
 ### <a name="animation"></a>Animacja
 
-Zestaw sceny jest przeznaczona do pracy z animacji. Można utworzyć jawnych ani niejawnych animacji, a nawet można renderować sceny z drzewa warstwy animacji Core. Podczas tworzenia niejawne animacji, zestaw sceny zapewnia własnej klasy przejścia `SCNTransaction`.
+SceneKit jest przeznaczona do pracy z animacji. Można utworzyć jawnych ani niejawnych animacji, a nawet można renderować sceny z drzewa warstwy animacji Core. W przypadku tworzenia niejawne animacji, SceneKit zapewnia własnej klasy przejścia `SCNTransaction`.
 
 Oto przykład, w którym obraca się w zakresie:
 
@@ -140,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-Można animować znacznie więcej niż obrotu jednak. Wiele właściwości zestawu sceny są można animować. Na przykład następujący kod animuje materiałów `Shininess` zwiększające odblasków odbicia.
+Można animować znacznie więcej niż obrotu jednak. Wiele właściwości SceneKit są można animować. Na przykład następujący kod animuje materiałów `Shininess` zwiększające odblasków odbicia.
 
 ```csharp
 SCNTransaction.Begin ();
@@ -149,4 +151,4 @@ material.Shininess = 0.1f;
 SCNTransaction.Commit ();
 ```
 
-Zestaw sceny jest bardzo prosta do użycia. Oferuje wiele dodatkowych funkcji, takich jak ograniczenia, fizycznych, deklaratywne akcje, Tekst 3W, głębokość pola pomocy technicznej, integration Sprite Kit i integracji obrazu Core nazw kilku.
+SceneKit jest bardzo prosta do użycia. Oferuje wiele dodatkowych funkcji, takich jak ograniczenia, fizycznych, deklaratywne akcje, Tekst 3W, głębokość pola pomocy technicznej, integration Sprite Kit i integracji obrazu Core nazw kilku.

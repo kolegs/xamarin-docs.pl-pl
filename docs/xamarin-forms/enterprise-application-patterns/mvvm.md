@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793960"
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -175,7 +176,7 @@ Takie podejście ma tę zaletę, że aplikacja ma jedną klasę odpowiedzialną 
 
 Wszystkie modelu widoku i modelu klasy, które są dostępne w widoku powinny implementować `INotifyPropertyChanged` interfejsu. Implementacja interfejsu w modelu widoku lub klasy modelu pozwala klasę, aby dostarczyć powiadomień o zmianach na żaden formant powiązany z danymi w widoku po zmianie wartości właściwości podstawowej.
 
-Aplikacji powinny być zaprojektowane pod kątem prawidłowe użycie powiadomienia o zmianie właściwości, spełniając następujące wymagania:
+Aplikacje powinny zaprojektowana dla prawidłowe użycie powiadomienia o zmianie właściwości, spełniając następujące wymagania:
 
 -   Wywoływanie zawsze `PropertyChanged` zdarzeń w przypadku zmiany wartości właściwości publicznej. Zakłada się, że wywoływanie `PropertyChanged` zdarzeń może być ignorowane z powodu wiedzę na temat sposobu występuje powiązanie XAML.
 -   Wywoływanie zawsze `PropertyChanged` zdarzeń dla każdego obliczone właściwości, których wartości są używane przez inne właściwości w widoku modelu lub modelu.
@@ -366,4 +367,4 @@ Przy użyciu MVVM wzorca interfejsu użytkownika aplikacji i podstawowej prezent
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

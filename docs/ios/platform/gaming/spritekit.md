@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: SpriteKit w Xamarin.iOS
+description: W tym dokumencie opisano SpriteKit, platforma grafiki 2D firmy Apple, która integruje się z SceneKit, zawiera fizycznych i animacji, obsługuje oświetlenia i cieniowania i inne. SpriteKit może służyć do tworzenia gier 2W.
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786772"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>SpriteKit w Xamarin.iOS
 
-Zestaw Sprite, gier 2W platformę od firmy Apple, posiada niektóre ciekawe nowe funkcje w systemie iOS 8 i OS X Yosemite. Obejmuje to integrację z zestawu sceny, obsługuje programów do cieniowania oświetlenia, cieni, ograniczenia, generowania mapy normalnej i ulepszenia fizycznych. W szczególności nowe funkcje fizycznych ułatwiają bardzo realistyczne efektów gier.
+SpriteKit, framework grafiki 2D od firmy Apple, ma niektóre ciekawe nowe funkcje w systemie iOS 8 i OS X Yosemite. Obejmuje to integrację z SceneKit, obsługuje programów do cieniowania oświetlenia, cieni, ograniczenia, generowania mapy normalnej i ulepszenia fizycznych. W szczególności nowe funkcje fizycznych ułatwiają bardzo realistyczne efektów gier.
 
 ## <a name="physics-bodies"></a>Jednostek fizycznych
 
-Zestaw Sprite zawiera 2W fizycznych sztywne treści interfejsu API. Każdy sprite ma treść skojarzone fizycznych (`SKPhysicsBody`) Definiuje właściwości fizycznych, takie jak masowej i tarcia, a także geometrii treści na świecie fizycznych.
+SpriteKit obejmuje 2W fizycznych sztywne treści interfejsu API. Każdy sprite ma treść skojarzone fizycznych (`SKPhysicsBody`) Definiuje właściwości fizycznych, takie jak masowej i tarcia, a także geometrii treści na świecie fizycznych.
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>Tworzenie treści fizycznych z tekstury
-Zestaw Sprite obsługuje teraz pochodny treści fizycznych sprite jego tekstury. Ułatwia to zaimplementować konflikty, które wyglądają bardziej naturalny.
+SpriteKit obsługuje teraz pochodny treści fizycznych sprite jego tekstury. Ułatwia to zaimplementować konflikty, które wyglądają bardziej naturalny.
 
 Przykładem w następujących kolizji jak bananów i małp dojść do kolizji prawie na powierzchni każdego obrazu:
  
 ![](spritekit-images/image13.png "Bananów i małp dojść do kolizji prawie na powierzchni każdego obrazu")
 
-Zestaw Sprite umożliwia tworzenie treści fizycznych z jednego wiersza kodu. Po prostu Wywołaj `SKPhysicsBody.Create` tekstury i rozmiar: sprite. PhysicsBody = SKPhysicsBody.Create (sprite. Tekstury, sprite. Rozmiar);
+SpriteKit umożliwia tworzenie treści fizycznych z jednego wiersza kodu. Po prostu Wywołaj `SKPhysicsBody.Create` tekstury i rozmiar: sprite. PhysicsBody = SKPhysicsBody.Create (sprite. Tekstury, sprite. Rozmiar);
 
 ## <a name="alpha-threshold"></a>Próg alfa
 
@@ -45,7 +47,7 @@ Efekt Dostosowywanie próg alfa takie fine-tunes poprzedniego kolizji tak, aby m
  
 ## <a name="physics-fields"></a>Pola fizycznych
 
-Inny oprócz dużą Sprite zestawu jest obsługuje nowe pole fizycznych. Można dodawać elementy, np. pola vortex grawitacji promieniowych i spring polach nazwę kilku.
+Inny oprócz dużą SpriteKit jest obsługuje nowe pole fizycznych. Można dodawać elementy, np. pola vortex grawitacji promieniowych i spring polach nazwę kilku.
 
 Pola fizycznych są tworzone za pomocą klasy SKFieldNode, która jest dodawana do sceny podobnie jak każdy inny `SKNode`. Istnieje wiele metod fabryki na `SKFieldNode` można utworzyć pola w różnych fizycznych. Pole źródła można utworzyć przez wywołanie metody `SKFieldNode.CreateSpringField()`, pola grawitacji promieniowego, wywołując `SKFieldNode.CreateRadialGravityField()`i tak dalej.
 

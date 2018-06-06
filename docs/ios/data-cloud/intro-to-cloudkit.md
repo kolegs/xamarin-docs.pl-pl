@@ -1,21 +1,20 @@
 ---
-title: CloudKit
-description: iCloud interfejsy API umożliwia aplikacji systemu iOS 8 do przechowywania danych w iCloud o obsługę automatycznego synchronizowanie przez konto użytkownika. Przy użyciu CloudKit umożliwia użytkownikom spójne i łatwego środowisko na urządzeniach z obsługą usługi iCloud. W tym artykule omówiono włączanie CloudKit w aplikacji systemu iOS 8 przy użyciu interfejsu API wygody.
+title: CloudKit w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu pracy z CloudKit w Xamarin.iOS. Zawiera omówienie CloudKit i opisano, jak włączyć ją, CloudKit API wygody, skalowalność, kont użytkowników i środowisk projektowania i produkcji.
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 941d39510d05c95ff06ffd3d55685c002bd4d4e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785060"
 ---
-# <a name="cloudkit"></a>CloudKit
-
-_iCloud interfejsy API umożliwia aplikacji systemu iOS 8 do przechowywania danych w iCloud o obsługę automatycznego synchronizowanie przez konto użytkownika. Przy użyciu CloudKit umożliwia użytkownikom spójne i łatwego środowisko na urządzeniach z obsługą usługi iCloud. W tym artykule omówiono włączanie CloudKit w aplikacji systemu iOS 8 przy użyciu interfejsu API wygody._
+# <a name="cloudkit-in-xamarinios"></a>CloudKit w Xamarin.iOS
 
 CloudKit framework upraszcza tworzenie aplikacji tego dostępu do usługi iCloud. Obejmuje to pobieranie danych aplikacji i zasobów prawa, jak również mogą bezpiecznie przechowywać informacji o aplikacji. Ten zestaw zapewnia warstwę anonimowość zezwalając na dostęp do aplikacji przy użyciu ich identyfikatorów iCloud bez udostępniania informacji osobistych.
 

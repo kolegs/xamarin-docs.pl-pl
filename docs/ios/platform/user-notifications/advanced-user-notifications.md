@@ -1,21 +1,20 @@
 ---
-title: Powiadomienia użytkowników zaawansowanych
-description: Ten artykuł przedstawia bardziej przyjrzeć nowej struktury powiadomienia użytkowników oraz sposób w pełni korzystać z nich w aplikacji platformy Xamarin.iOS.
+title: Powiadomienia użytkowników zaawansowanych w Xamarin.iOS
+description: Ten artykuł przedstawia głębiej w ramach powiadomienia użytkownika, wprowadzone w systemie iOS 10. Zawarto informacje powiadomienia użytkownika, interfejs użytkownika powiadomienie, załączniki nośnika i niestandardowych interfejsów użytkownika.
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 09a73ebc3dab90e6342a45c0f1fb5a40184d18a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788533"
 ---
-# <a name="advanced-user-notifications"></a>Powiadomienia użytkowników zaawansowanych
-
-_Ten artykuł przedstawia bardziej przyjrzeć nowej struktury powiadomienia użytkowników oraz sposób w pełni korzystać z nich w aplikacji platformy Xamarin.iOS._
+# <a name="advanced-user-notifications-in-xamarinios"></a>Powiadomienia użytkowników zaawansowanych w Xamarin.iOS
 
 Jesteś nowym użytkownikiem iOS 10, powiadomienie użytkownika pozwala dostarczania i obsługi powiadomień lokalnych i zdalnych. Przy użyciu tego framework, aplikacji lub rozszerzenia aplikacji można zaplanować dostarczania lokalnego powiadomienia, określając zestaw warunków, takich jak lokalizacji lub godzinę.
 

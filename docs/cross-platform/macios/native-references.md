@@ -1,29 +1,26 @@
 ---
-title: Natywny odwołań
-description: Natywnego odwołania daje możliwość osadzania natywnego Framework do projektu platformy Xamarin.iOS lub Xamarin.Mac lub powiązania projektu.
+title: Natywny iOS, Mac i powiązania projektów odwołań
+description: Natywny odwołania daje możliwość osadzania framework macierzystego w Xamarin.iOS, Xamarin.Mac lub powiązania projektu.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781721"
 ---
-# <a name="native-references"></a>Natywny odwołań
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>Natywny odwołań w iOS, Mac i powiązania projektów
 
-_Natywnego odwołania daje możliwość osadzania natywnego Framework do projektu platformy Xamarin.iOS lub Xamarin.Mac lub powiązania projektu._
-
+_Natywnego odwołania daje możliwość osadzania natywnego framework do projektu platformy Xamarin.iOS lub Xamarin.Mac lub powiązania projektu._
 
 Począwszy od zestawu iOS 8.0 została można utworzyć osadzony platformę, by współużytkowanie kodu rozszerzeń aplikacji i głównej aplikacji w środowisku Xcode. Za pomocą funkcji odwołanie do natywnego będzie możliwe użycie tych platform embedded (utworzone w programie Xcode) w Xamarin.iOS.
  
 > [!IMPORTANT]
 > Nie będzie można utworzyć struktury osadzone z dowolnego typu Xamarin.iOS lub Xamarin.Mac projektów, natywnego odwołania umożliwiają tylko użycia istniejącej struktury natywnego (Objective-C).
-
-
-
 
 <a name="Terminology" />
 

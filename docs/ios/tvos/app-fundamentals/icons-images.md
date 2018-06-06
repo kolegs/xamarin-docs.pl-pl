@@ -1,21 +1,20 @@
 ---
-title: Praca z obrazów i ikon
-description: Ten artykuł obejmuje projektowanie i Praca z obrazów wewnątrz aplikacji Xamarin.tvOS i ikon.
+title: Praca z systemu tvOS, ikony i obrazów w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z obrazów w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin i ikon. Omówiono jej uruchamiania obrazów, obrazy z warstwami, ikona aplikacji i.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59cbc53acf3ab7da12826b9d3cffb821631a0500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788800"
 ---
-# <a name="working-with-icons-and-images"></a>Praca z obrazów i ikon
-
-_Ten artykuł obejmuje projektowanie i Praca z obrazów wewnątrz aplikacji Xamarin.tvOS i ikon._
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Praca z systemu tvOS, ikony i obrazów w programie Xamarin
 
 Tworzenie urzekające ikon i obrazów jest krytyczną częścią zdobywania doświadczenia użytkownika bez ramek do pracy z aplikacjami firmy Apple TV. W tym przewodniku opisano kroki wymagane do tworzenia i niezbędnych zasobów graficznych dla aplikacji Xamarin.tvOS obejmują:
 

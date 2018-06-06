@@ -1,21 +1,20 @@
 ---
-title: iOS dostęp do danych
-description: Większość aplikacji ma pewne wymagania w celu zapisywania danych na urządzeniu lokalnie. Jeśli nie jest trivially małe ilości danych, zwykle wymaga bazę danych i warstwy danych w aplikacji do zarządzania dostępem do bazy danych. iOS ma aparat bazy danych SQLite "wbudowane" i dostęp do przechowywania i pobierania danych zostało uproszczone dzięki platformie Xamarin w. Ten dokument przedstawia sposób uzyskać dostępu do bazy danych SQLite.
+title: Dostęp do danych platformy Xamarin.iOS
+description: Ten dokument prowadzi do prowadnic, które opisują sposób pracy z lokalnych baz danych w aplikacji platformy Xamarin.iOS. Połączonej zawartości w tym artykule omówiono SQLite.NET, ADO.NET i inne.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a986ea9931f62497e5a6863c84bd4041983d66d9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784579"
 ---
-# <a name="ios-data-access"></a>iOS dostęp do danych
-
-_Większość aplikacji ma pewne wymagania w celu zapisywania danych na urządzeniu lokalnie. Jeśli nie jest trivially małe ilości danych, zwykle wymaga bazę danych i warstwy danych w aplikacji do zarządzania dostępem do bazy danych. iOS ma aparat bazy danych SQLite "wbudowane" i dostęp do przechowywania i pobierania danych zostało uproszczone dzięki platformie Xamarin w. Ten dokument przedstawia sposób uzyskać dostępu do bazy danych SQLite._
+# <a name="xamarinios-data-access"></a>Dostęp do danych platformy Xamarin.iOS
 
 Xamarin.iOS obsługuje dostęp do bazy danych interfejsów API, takich jak:
 
@@ -40,7 +39,6 @@ W przypadku aplikacji platformy Xamarin.Forms odczytu [pracy z bazami danych](~/
 -  [Używanie mapowania obiektowo-relacyjnego biblioteki SQLite.NET](using-sqlite-orm.md)
 -  [Używanie rozwiązania ADO.NET](using-adonet.md)
 -  [Używanie danych w aplikacji](using-data-in-an-app.md)
-
 
 ## <a name="summary"></a>Podsumowanie
 

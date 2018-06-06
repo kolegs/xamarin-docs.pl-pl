@@ -1,16 +1,17 @@
 ---
 title: Wprowadzenie do ciągłej integracji z platformą Xamarin
-description: Ciągła Integracja jest rozwiązaniem engineering oprogramowania, w którym automatycznych kompilacji kompiluje i opcjonalnie testuje aplikację, jeśli kod jest dodane lub zmienione przez deweloperów w repozytorium kontroli wersji projektu. W tym artykule przedstawimy ogólne koncepcje ciągłej integracji i niektóre z dostępnych opcji dla ciągłej integracji z projektami Xamarin.
+description: W tym dokumencie opisano ciągła Integracja z platformą Xamarin. Zawarto informacje kontroli wersji i różnych środowiskach ciągłej integracji.
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: e441e3a2f967bf7bed0a236375ce708966fdb6eb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793665"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
 

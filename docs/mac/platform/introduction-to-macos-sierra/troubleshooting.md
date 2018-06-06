@@ -1,30 +1,31 @@
 ---
-title: Rozwiązywanie problemów
-description: Ten artykuł zawiera kilka porad dotyczących rozwiązywania problemów do pracy z macOS Sierra w aplikacjach Xamarin.Mac.
+title: Xamarin.Mac - macOS Sierra Rozwiązywanie problemów
+description: Ten dokument zawiera kilka porad dotyczących rozwiązywania problemów do pracy z macOS Sierra w aplikacjach Xamarin.Mac. Wskazówki dotyczą Mac App Store, Apple Pay zgodności plików binarnych, CFNetwork, CloudKit i więcej.
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/22/2016
-ms.openlocfilehash: 7ea4ec48399b42ce69b0346b1a88a1d9fb9fbf6e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5b2571d9562fd137257e2dd0ea2ada8f071bab92
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792332"
 ---
-# <a name="troubleshooting"></a>Rozwiązywanie problemów
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - macOS Sierra Rozwiązywanie problemów
 
 _Ten artykuł zawiera kilka porad dotyczących rozwiązywania problemów do pracy z macOS Sierra w aplikacjach Xamarin.Mac._
 
-Niektóre znane problemy, które mogą wystąpić podczas korzystania z Xamarin.mac i rozwiązanie tych problemów macOS Sierra sekcje w poniższej listy:
+W poniższych sekcjach wymieniono znane problemy, które mogą wystąpić, gdy przy użyciu macOS Sierra Xamarin.mac i rozwiązanie tych problemów:
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
 - [Zgodność binarną](#Binary-Compatibility)
 - [Protokół HTTP CFNetwork](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Obraz Core](#CoreImage)
 - [Powiadomienia](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -69,7 +70,7 @@ Długotrwałe operacje zwróci _"Nie ma uprawnień do zapisania pliku."_ Wystąp
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Obraz Core
 
 `CIImageProcessor` Interfejs API obsługuje teraz liczba dowolnego obrazu wejściowego. `CIImageProcessor` Interfejs API, który został uwzględniony w macOS Sierra beta 1 zostaną usunięte.
 

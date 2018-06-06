@@ -1,15 +1,16 @@
 ---
 title: Znane problemy i rozwiązania
+description: W tym dokumencie opisano znane problemy i rozwiązania dla skoroszytów Xamarin. Zawarto informacje CultureInfo problemy, problemy JSON i inne.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: a424b37840bd944302235221f2e0c6a478d4bab3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732963"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794036"
 ---
 # <a name="known-issues--workarounds"></a>Znane problemy i rozwiązania
 

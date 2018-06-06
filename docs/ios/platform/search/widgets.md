@@ -1,22 +1,22 @@
 ---
-title: Wyszukiwanie i rozszerzenia elementu Widget ekranu głównego
-description: W tym artykule omówiono ulepszenia wprowadzone w systemie elementu Widget w systemie iOS 10 firmy Apple.
+title: Wyszukiwanie i Home ekranu Widget ulepszenia w systemie iOS 10
+description: Ten dokument zawiera ulepszenia wprowadzone do elementów widget w systemie iOS 10, w tym aktualizacje do wyszukiwania i elementy widget ekranu głównego firmy Apple.
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788114"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>Wyszukiwanie i rozszerzenia elementu Widget ekranu głównego
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Wyszukiwanie i Home ekranu Widget ulepszenia w systemie iOS 10
 
 _W tym artykule omówiono ulepszenia wprowadzone w systemie elementu Widget w systemie iOS 10 firmy Apple._
-
 
 Apple wprowadziła kilka ulepszeń systemu Widget, aby upewnić się, że elementy widget wygląda świetnie na tle, wszelkie istniejące na nowe iOS 10 ekranu blokady. Ponadto elementy widget zawierają teraz [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) właściwość, która umożliwia deweloperowi opisano, jak dużo zawartości jest dostępny i umożliwia użytkownikowi rozwijanie i zwijanie zawartości.
 

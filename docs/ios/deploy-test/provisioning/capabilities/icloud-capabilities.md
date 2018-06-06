@@ -1,5 +1,5 @@
 ---
-title: Możliwości usługi iCloud
+title: iCloud możliwości platformy Xamarin.iOS
 description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji w ramach usługi iCloud.
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: e426423854e7c569576c374ea1284c4de099a2d1
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: a1d2197a4cc7c7bf8fc9b69463a4679389e45ee8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785144"
 ---
-# <a name="icloud-capabilities"></a>Możliwości usługi iCloud
+# <a name="icloud-capabilities-in-xamarinios"></a>iCloud możliwości platformy Xamarin.iOS
 
 _Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla funkcji w ramach usługi iCloud._
 

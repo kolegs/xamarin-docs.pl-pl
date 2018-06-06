@@ -1,5 +1,5 @@
 ---
-title: Rozwiązywanie problemów z połączenia
+title: Rozwiązywanie problemów z hosta kompilacji Xamarin.iOS połączenia
 description: Ten przewodnik zawiera kroki rozwiązywania problemów, które mogą wystąpić przy użyciu nowego Menedżera połączeń, w tym łączności i problemy z protokołem SSH.
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786190"
 ---
-# <a name="connection-troubleshooting"></a>Rozwiązywanie problemów z połączenia
+# <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Rozwiązywanie problemów z hosta kompilacji Xamarin.iOS połączenia
 
 _Ten przewodnik zawiera kroki rozwiązywania problemów, które mogą wystąpić przy użyciu nowego Menedżera połączeń, w tym łączności i problemy z protokołem SSH._
 
@@ -375,5 +376,5 @@ Jeśli rozwiązać problem kompilacji i chce mieć pewność, że zachowanie nie
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Para Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Parowanie z komputerem Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 - [Xamarin Mac wykładu Lightning Xamarin University agenta - kompilacji](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

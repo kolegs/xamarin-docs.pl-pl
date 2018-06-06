@@ -1,17 +1,18 @@
 ---
 title: Aktualizacja odwołania do składników do NuGet
-description: Zamień odwołania do składnika pakietów NuGet do zabezpieczenie przyszłych potrzeb aplikacji.
+description: Ten dokument zawiera opis sposobu Zamień odwołania do składnika pakietów NuGet do zabezpieczenie przyszłych potrzeb aplikacji, ponieważ nie jest już magazynie składników Xamarin.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: e9c056d37577a280b66bb3aa7ded19e966bca43b
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 34f2f5149be63af6abe5aaab197472d067122069
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782037"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizacja odwołania do składników do NuGet
 

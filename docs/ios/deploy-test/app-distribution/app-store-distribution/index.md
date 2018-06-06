@@ -1,21 +1,20 @@
 ---
 title: Dystrybucji sklepu z aplikacjami
-description: W tym dokumencie opisano wymagania dotyczące dystrybucji do sklepu z aplikacjami firmy Apple.
+description: Ten dokument zawiera opis sposobu dystrybucji aplikacji platformy Xamarin.iOS ze sklepu App Store. Zawarto informacje, jak utworzyć certyfikat dystrybucji, jak utworzyć profil inicjowania obsługi administracyjnej dystrybucji i sposób konfigurowania programu iTunes Connect i przesyłanie aplikacji.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784819"
 ---
 # <a name="app-store-distribution"></a>Dystrybucji sklepu z aplikacjami
-
-_W tym dokumencie opisano wymagania dotyczące dystrybucji do sklepu z aplikacjami firmy Apple._
 
 Aplikacji platformy Xamarin.iOS został opracowany, następnym krokiem w cyklu tworzenia oprogramowania po dystrybucję aplikacji użytkownikom za pomocą programu iTunes App Store. Jest to najczęściej dystrybucji aplikacji. Przez publikowanie aplikacji w sklepie z aplikacjami firmy Apple, może on dostępne dla konsumentów na całym świecie.
 

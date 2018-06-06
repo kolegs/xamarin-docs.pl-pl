@@ -1,23 +1,20 @@
 ---
-title: Praca z tekstem i pola wyszukiwania
-description: Ten artykuł obejmuje projektowanie i Praca z pola wyszukiwania i tekst wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS, tekst i pola wyszukiwania w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z pola tekstowego i wyszukiwania w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin. Ogólne omówienie pola tekstowego i wyszukiwania i omówiono klawiatury i integracji scenorysu, modeli danych wyszukiwania oraz.
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 220c6e3d1c6f358c67a2f596c977f4d2132298a8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf71df62bd6ffd88f42d31809444cd7b3350b66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789725"
 ---
-# <a name="working-with-text-and-search-fields"></a>Praca z tekstem i pola wyszukiwania
-
-_Ten artykuł obejmuje projektowanie i Praca z pola wyszukiwania i tekst wewnątrz aplikacji Xamarin.tvOS._
-
-
+# <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Praca z systemu tvOS, tekst i pola wyszukiwania w programie Xamarin
 
 Gdy jest to wymagane, aplikację Xamarin.tvOS mogą żądać małych fragmentów tekstu od użytkownika (na przykład nazwy użytkownika i hasła) przy użyciu pola tekstowego i program Klawiatura ekranowa:
 

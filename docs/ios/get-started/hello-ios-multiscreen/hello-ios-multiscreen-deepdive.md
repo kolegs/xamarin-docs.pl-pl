@@ -1,6 +1,6 @@
 ---
-title: Witaj, iOS Multiscreen
-description: W tym przewodniku dwuczęściową możemy rozwiń aplikację Phoneword utworzone w Hello, iOS Podręcznik obsługi drugi ekranu. Wzdłuż sposób firma Microsoft będzie wprowadzenie wzorca projektowego Model-View-Controller, zaimplementować w naszym pierwszym nawigacji dla systemu iOS oraz opracowanie głębsze zrozumienie struktury aplikacji dla systemu iOS i funkcji.
+title: Witaj, iOS Multiscreen — nowości
+description: Ten dokument przedstawia bardziej rozwinięte aplikacji Phoneword, dalszego uwzględnieniu model-view-controller iOS nawigacji i innych koncepcji programowanie dla systemu iOS.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6f3c02bf3e5def0ad4acdb82e4c8a2606159846a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785661"
 ---
-# <a name="hello-ios-multiscreen-deep-dive"></a>Witaj, iOS Wieloekranowy nowości
+# <a name="hello-ios-multiscreen--deep-dive"></a>Witaj, iOS Multiscreen — nowości
 
 W przewodniku Szybki Start firma Microsoft wbudowany i uruchomiono naszych pierwszej aplikacji platformy Xamarin.iOS wielu ekranu. Teraz nadszedł czas na opracowanie lepiej zrozumieć architektura i nawigacji dla systemu iOS.
 

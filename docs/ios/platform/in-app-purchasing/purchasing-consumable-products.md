@@ -1,18 +1,20 @@
 ---
-title: Zakup eksploatacyjny produktów
+title: Zakup eksploatacyjny produktów platformy Xamarin.iOS
+description: W tym dokumencie opisano eksploatacyjny produktów platformy Xamarin.iOS. Produkty eksploatacyjny są jednorazowy części funkcje, takie jak waluty w grze.
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786980"
 ---
-# <a name="purchasing-consumable-products"></a>Zakup eksploatacyjny produktów
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Zakup eksploatacyjny produktów platformy Xamarin.iOS
 
 Produkty eksploatacyjny są łatwo zaimplementować, ponieważ nie jest wymagane "Przywracanie". Są one przydatne dla produktów, takich jak waluty w grze lub jednorazowy część funkcji. Użytkownicy ponownie kupić ponownie eksploatacyjny produktów over i — w tryb failover.
 
@@ -23,8 +25,6 @@ Przykładowy kod towarzyszące tym dokumencie przedstawiono wbudowane produktów
 [![Wizualizacja procesu zakupu](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Podstawowy przepływ pracy jest:   
-   
-   
    
  1. Dodaje aplikację `SKPayment` do kolejki. W razie potrzeby użytkownika zostanie wyświetlony monit o ich identyfikator Apple ID, a monit o potwierdzenie płatności.   
    

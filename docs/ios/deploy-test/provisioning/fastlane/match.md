@@ -1,16 +1,18 @@
 ---
 title: fastlane dla systemu iOS - zgodne
+description: W tym dokumencie opisano w fastlane dopasowania polecenia, które służy do tworzenia i obsługi kodu certyfikaty podpisywania i Inicjowanie obsługi profilów dla opracowywania aplikacji systemu iOS.
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 729bfb5bf19034fc5eed2350a3fe5f481224a385
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 668538d4c9048175fb95f9d010bb5e95c800fea8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785453"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane dla systemu iOS - zgodne
 

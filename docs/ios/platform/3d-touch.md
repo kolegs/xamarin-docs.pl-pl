@@ -1,19 +1,20 @@
 ---
-title: Wprowadzenie do technologii 3D Touch
-description: W tym artykule omówiono przy użyciu nowego telefonów iPhone 6s i telefonów iPhone 6s Plus 3D Touch gesty, przy użyciu Twojej aplikacji.
+title: Wprowadzenie do technologii 3D Touch w Xamarin.iOS
+description: W tym artykule opisano sposób użycia 3D gestów dotykowych wprowadzone w systemie telefonów iPhone 6s i telefonów iPhone 6s Plus. Te gestów włączyć czułość nacisku, wglądu i pop i szybkie akcje.
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786586"
 ---
-# <a name="introduction-to-3d-touch"></a>Wprowadzenie do technologii 3D Touch
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Wprowadzenie do technologii 3D Touch w Xamarin.iOS
 
 _W tym artykule omówiono przy użyciu nowego telefonów iPhone 6s i telefonów iPhone 6s Plus 3D Touch gesty, przy użyciu Twojej aplikacji._
 

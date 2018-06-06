@@ -1,18 +1,20 @@
 ---
-title: Postęp i wskaźniki działania
+title: Postęp i wskaźniki działania w Xamarin.iOS
+description: Ten dokument omówiono sposób używania wskaźniki postępu i działania w Xamarin.iOS. Przedstawiono sposób ich używać programowo i scenorysu.
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790058"
 ---
-# <a name="progress-and-activity-indicators"></a>Postęp i wskaźniki działania
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>Postęp i wskaźniki działania w Xamarin.iOS
 
 Istnieje prawdopodobieństwo, że aplikacja do przeprowadzania long uruchomionych zadań, takich jak ładowania lub przetwarzania danych i to opóźnienie może spowodować opóźnienia w Interfejsie użytkownika aktualizacji. W tym czasie zawsze należy używać wskaźnika postępu przywróceniu zaufania użytkownika, że system jest zajęty, ponieważ wykonuje pracę. Dzięki temu kontrolki użytkownika, czy aplikacja działa na ich żądanie, które nie oczekuje danych wejściowych, i może stanowić sposób określające, dokładnie tak jak długo mają oczekiwania.
 

@@ -1,6 +1,6 @@
 ---
-title: 'Witaj, iOS: nowości'
-description: W tym przewodniku dwuczęściową opisuje sposób tworzenia podstawowej aplikacji platformy Xamarin.iOS przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio i zrozumienia podstaw dotyczących tworzenia aplikacji systemu iOS za pomocą platformy Xamarin. Spowoduje to wprowadzenie narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.iOS.
+title: Witaj, iOS — nowości
+description: Ten dokument przedstawia bardziej Hello, iOS przykładowej aplikacji, biorąc pod uwagę jego architektury, interfejs użytkownika, widok zawartości hierarchii, testowania, wdrożenia i inne.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786403"
 ---
-# <a name="hello-ios-deep-dive"></a>Witaj, nowości w systemie iOS
+# <a name="hello-ios--deep-dive"></a>Witaj, iOS — nowości
 
 Przewodnik Szybki Start, wprowadzono tworzenia i uruchamiania podstawowej aplikacji platformy Xamarin.iOS. Teraz nadszedł czas na opracowanie lepiej zrozumieć, jak aplikacje systemu iOS działają, można je tworzyć bardziej złożone programy. W tym przewodniku przegląda kroki w Hello, iOS wskazówki umożliwiające opis podstawowych założeń projektowanie aplikacji systemu iOS.
 
 Następujące tematy zostały opisane w tym artykule:
-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

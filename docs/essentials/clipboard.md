@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials Schowka
-description: Klasa Schowka pozwala skopiować i wkleić tekst do schowka systemowego między aplikacjami.
+title: 'Xamarin.Essentials: Schowka'
+description: W tym dokumencie opisano klasy Schowka w Xamarin.Essentials, która pozwala skopiować i wkleić tekst do schowka systemowego między aplikacjami.
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 10100d1c65946780b77dbb022822bdd73f45a84a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 41b15b480fa23bd49667b68e904043e4f1a95732
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732700"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782362"
 ---
-# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials Schowka
+# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Schowka
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

@@ -1,18 +1,20 @@
 ---
-title: Pasek wyszukiwania
+title: Paski wyszukiwania w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu użycia paski wyszukiwania w Xamarin.iOS. Zawarto informacje, jak utworzyć paski wyszukiwania programowo i w scenorysu.
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 4ea39f6f935adba2c035884c625c57c0039b1165
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cd78c58ecb119c437296a0befe1d319d8837edae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789928"
 ---
-# <a name="search-bar"></a>Pasek wyszukiwania
+# <a name="search-bars-in-xamarinios"></a>Paski wyszukiwania w Xamarin.iOS
 
 UISearchBar służy do wyszukiwania za pomocą listy wartości. 
 

@@ -1,18 +1,20 @@
 ---
-title: Generowanie kodu .xib
+title: Generowanie kodu .xib w Xamarin.iOS
+description: W tym dokumencie opisano, jak Xamarin.iOS generuje kod do mapowania plików .xib C#, udostępnienie visual formanty w programowo.
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b887dbf09693452f62f744669ad9713927020cea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 064e17393747a36cd761cb2464e3239cfc17141c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786151"
 ---
-# <a name="xib-code-generation"></a>Generowanie kodu .xib
+# <a name="xib-code-generation-in-xamarinios"></a>Generowanie kodu .xib w Xamarin.iOS
 
 > [!IMPORTANT]
 >  W tym dokumencie opisano Visual Studio dla komputerów Mac integracji z usługą tylko w środowisku Xcode interfejsu konstruktora jako akcje i gniazda nie są używane w Projektancie Xamarin dla systemu iOS. Aby uzyskać więcej informacji w systemie iOS projektanta, zapoznaj się z tematem [iOS projektanta](~/ios/user-interface/designer/index.md) dokumentu.
@@ -31,7 +33,7 @@ Można zdefiniować klas niestandardowych w **.xib** plików za pomocą poleceni
 
 ## <a name="generating-code"></a>Generowanie kodu
 
-Dla każdego **{0} .xib** pliku z akcją kompilacji *strony*, jeśli **.xib.designer.cs {0}** plik również istnieje w projekcie, program Visual Studio for Mac wygeneruje klas częściowych w wszystkie klasy użytkownika można znaleźć w pliku projektanta **.xib** pliku, z gniazda właściwości i metod częściowych dla wszystkich działań. Generowanie kodu zostało włączone po prostu przez występowanie tego pliku.
+Dla każdego  **{0}.xib** pliku z akcją kompilacji *strony*, jeśli  **{0}. xib.designer.cs** również istnieje plik projektu programu Visual Studio dla komputerów Mac wygeneruje częściowej klasy w pliku projektanta dla wszystkich klas użytkowników można znaleźć w **.xib** pliku, z gniazda właściwości i metod częściowych dla wszystkich działań. Generowanie kodu zostało włączone po prostu przez występowanie tego pliku.
 
 Pliku projektanta zostanie automatycznie zaktualizowane **.xib** pliku zmiany i Visual Studio dla komputerów Mac odzyskał fokus. Pliku projektanta nie powinien być modyfikowany ręcznie, jak zmiany zostaną zastąpione następnym Visual Studio dla komputerów Mac aktualizacji pliku.
 
@@ -49,7 +51,7 @@ Projektant klasy częściowe nie są przeznaczone do użycia jako — jest. Gnia
 
 Przyczyną tego jest potrzebę elastyczności. Na przykład wiele klas został można wspólnego zarządzane klasa abstrakcyjna, która podklasy klasy, która ma być podklasą klasy przez IB podklasy.
 
-Jest konwencjonalnej można umieścić **{0}.xib.cs** pliku obok **{0}.xib.designer.cs** pliku projektanta.
+Jest konwencjonalnej można umieścić  **{0}. xib.cs** pliku obok  **{0}. xib.designer.cs** pliku projektanta.
 
 <a name="generated" />
 

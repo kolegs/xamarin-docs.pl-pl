@@ -1,6 +1,6 @@
 ---
-title: Wprowadzenie do korzystania z systemu iOS
-description: Z Hello World Hello aplikacji magazynu
+title: Wprowadzenie do platformy Xamarin.iOS
+description: Ten dokument prowadzi do prowadnic opisano sposób konfigurowania Xamarin.iOS i tworzenie pierwszej aplikacji, które zawiera informacje o Xamarin dla deweloperów języka Objective-C.
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785604"
 ---
-# <a name="getting-started-with-ios"></a>Wprowadzenie do korzystania z systemu iOS
+# <a name="getting-started-with-xamarinios"></a>Wprowadzenie do platformy Xamarin.iOS
 
 Xamarin.iOS umożliwia deweloperom tworzenie aplikacji natywnej systemu iOS przy użyciu tego samego formantów interfejsu użytkownika, które są dostępne w języku Objective C i Xcode, chyba że elastyczność i przejrzysty wygląd nowoczesnych języka (C#) biblioteki klasy podstawowej platformy .NET (BCL) i dwa pierwszą klasą IDEs — Visual Studio for Mac i Visual Studio. Ta seria zawiera wprowadzenie do Instalatora i zainstaluj Xamarin.iOS i adresami podstawy rozwoju platformy Xamarin.iOS.
 

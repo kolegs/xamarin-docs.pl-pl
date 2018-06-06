@@ -1,17 +1,18 @@
 ---
-title: Preferencje Xamarin.Essentials
-description: Klasa preferencje zapisuje Preferencje aplikacji w magazynie kluczy i wartości.
+title: 'Xamarin.Essentials: preferencje'
+description: W tym dokumencie opisano klasy Preferencje w Xamarin.Essentials, która zapisuje Preferencje aplikacji w magazynie kluczy i wartości. Zawarto informacje, jak używać klas i typów danych, które mogą być przechowywane.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 882ff8e0f10948f4f88303f8bcc3d45b3cecf5fd
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: e453c04a953e60be2508670723d175bde3dc7c42
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782851"
 ---
-# <a name="xamarinessentials-preferences"></a>Preferencje Xamarin.Essentials
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: preferencje
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

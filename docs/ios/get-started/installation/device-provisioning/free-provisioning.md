@@ -1,21 +1,22 @@
 ---
-title: Bezpłatne, inicjowania obsługi administracyjnej
-description: W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy — bez udostępniania.
+title: Bezpłatne, inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
+description: W tym dokumencie opisano, jak Xamarin.iOS deweloperzy mogą testować aplikacji na urządzeniu fizycznym bez konieczności Załóż płatną programie dla deweloperów firmy Apple.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786025"
 ---
-# <a name="free-provisioning"></a>Bezpłatne, inicjowania obsługi administracyjnej
+# <a name="free-provisioning-for-xamarinios-apps"></a>Bezpłatne, inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
 
-_W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy — bez udostępniania._
+_W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy: Zwolnij inicjowania obsługi administracyjnej._
 
 Bezpłatne udostępniania umożliwia deweloperom wdrażanie aplikacji platformy Xamarin.iOS na urządzeniu z systemem iOS **bez** jest częścią żadnego **programie dla deweloperów firmy Apple**. Jest to bardzo korzystne dla deweloperów, jako testowania na urządzeniu umożliwia wiele korzyści, za pośrednictwem testowania w symulatorze, w tym między innymi do pamięci, magazynu, łączności sieciowej między innymi.
 
@@ -81,7 +82,7 @@ Inicjowanie obsługi administracyjnej dla większości aplikacji usługi równie
 
 - Płatności firmy Apple
 - Centrum gier
-- iCloud
+- usługi iCloud
 - Zakup w aplikacji
 - Powiadomienia wypychane
 - Portfela (został Passbook)

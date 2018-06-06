@@ -1,21 +1,20 @@
 ---
-title: Praca z formantem strony
-description: Ten artykuł obejmuje projektowanie i Praca z formantem strony wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS formantów strony w Xamarin
+description: Ten dokument zawiera opis sposobu korzystania z systemu tvOS formantów strony w aplikacji skompilowanej za pomocą platformy Xamarin. Zawiera opis wysokiego poziomu formantów strony, opisano, jak skonfigurować je w scenorys i sprawdza odpowiadanie na zdarzenia zmiany strony.
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cb07c050aeb2ee72e34048baab991df2d5775d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789161"
 ---
-# <a name="working-with-page-control"></a>Praca z formantem strony
-
-_Ten artykuł obejmuje projektowanie i Praca z formantem strony wewnątrz aplikacji Xamarin.tvOS._
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>Praca z systemu tvOS formantów strony w Xamarin
 
 Czasami może być konieczne wyświetlane w aplikacji Xamarin.tvOS kolejne strony lub obrazów. Formant strony została zaprojektowana w celu wyraźnego wyświetlania strony, która jest użytkownik poza maksymalną liczbę stron. Formant strony wyświetla kropek na ciemnym, oval w kształcie tła. Bieżąca strona będzie wyświetlana wypełniony okrąg, pozostałych stronach wyświetlane jako pusty kropek. Formantu strony będzie Przytnij zewnętrzne większość punktów, jeśli jest zbyt duża, aby zmieścić ją w obszarze jej tła.
 
@@ -72,9 +71,6 @@ Najprostszym sposobem korzystania z formantów strony w aplikacji Xamarin.tvOS j
 
 > [!IMPORTANT]
 > Gdy jest można przypisać zdarzenia, takie jak `TouchUpInside` do elementu interfejsu użytkownika (na przykład UIButton) w systemie iOS projektanta, jego zostanie nigdy nie można wywołać, ponieważ Apple TV, nie ma dotykowego ekranu lub obsługuje zdarzenia touch. Zawsze należy używać `Primary Action` zdarzenie, gdy tworzenie obsługi zdarzeń dla systemu tvOS elementy interfejsu użytkownika.
-
-
-
 
 Edytuj kontroler widoku (przykład `ViewController.cs`) i Dodaj kod obsługi stron zmieniane. Na przykład:
 

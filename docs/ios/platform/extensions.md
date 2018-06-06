@@ -1,6 +1,6 @@
 ---
-title: Rozszerzenia systemu iOS
-description: Wprowadzone w systemie iOS 8, rozszerzenia są elementy widget, które są przedstawiane przez systemu iOS w kontekstach standardowe, takie jak w Centrum powiadomień, gdy użytkownik zażąda niestandardowych klawiatury lub są one fotografii edycji. Wszystkie rozszerzenia są instalowane w połączeniu z aplikacji kontenera i są aktywowani z określonego punktu rozszerzenia w aplikacji hosta.
+title: iOS rozszerzeń platformy Xamarin.iOS
+description: W tym dokumencie opisano rozszerzenia, które są elementy widget przedstawiony przez system iOS w kontekście standardowe, takie jak w Centrum powiadomień. Zawarto informacje, jak utworzyć rozszerzenia i komunikować się z nim z poziomu aplikacji nadrzędnej.
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: af52db5f1add040af025f2134f0e9a7b3936f4f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786733"
 ---
-# <a name="ios-extensions"></a>Rozszerzenia systemu iOS
-
-_Wprowadzone w systemie iOS 8, rozszerzenia są elementy widget, które są przedstawiane przez systemu iOS w kontekstach standardowe, takie jak w Centrum powiadomień, gdy użytkownik zażąda niestandardowych klawiatury lub są one fotografii edycji. Wszystkie rozszerzenia są instalowane w połączeniu z aplikacji kontenera i są aktywowani z określonego punktu rozszerzenia w aplikacji hosta._
+# <a name="ios-extensions-in-xamarinios"></a>iOS rozszerzeń platformy Xamarin.iOS
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 

@@ -1,18 +1,20 @@
 ---
-title: Wskazówki — za pomocą lokalizacji tła
+title: Wskazówki — lokalizacja tła w Xamarin.iOS
+description: Ten dokument zawiera wskazówki dotyczące używania informacji o lokalizacji backgrounded aplikacji platformy Xamarin.iOS. Opisuje niezbędne instalacji, interfejs użytkownika i Stany aplikacji.
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aef39ef435bbbad6f643b2376832d8f8132d6a4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784097"
 ---
-# <a name="walkthrough---using-background-location"></a>Wskazówki — za pomocą lokalizacji tła
+# <a name="walkthrough---background-location-in-xamarinios"></a>Wskazówki — lokalizacja tła w Xamarin.iOS
 
 W tym przykładzie zamierzamy utworzyć iOS aplikację lokalizacji, która wyświetla informacje o naszych bieżącej lokalizacji: szerokości, długości i inne parametry do ekranu. Ta aplikacja będzie pokazują, jak poprawnie przeprowadzania aktualizacji lokalizacji, podczas gdy aplikacja jest aktywna lub Backgrounded.
 

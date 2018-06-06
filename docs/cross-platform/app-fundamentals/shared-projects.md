@@ -1,18 +1,19 @@
 ---
-title: Udostępnionych projektów
+title: Przy użyciu udostępnionych projektów udostępnianie kodu
 description: Udostępnionych projektów umożliwiają pisanie wspólnej kodu, który odwołuje się wiele projektów różnych aplikacji. Kod jest skompilowana jako część każdego odwołaniem do projektu i może zawierać dyrektywy kompilatora, aby włączać funkcje specyficzne dla platformy do udostępnionego kodem.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2910ada16aad2d8cb19cf0ee3a059c7df22b630e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 749daac36cce26c9d24d04b89e933aab994791b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781806"
 ---
-# <a name="shared-projects"></a>Udostępnionych projektów
+# <a name="using-shared-projects-to-share-code"></a>Przy użyciu udostępnionych projektów udostępnianie kodu
 
 _Udostępnionych projektów umożliwiają pisanie wspólnej kodu, który odwołuje się wiele projektów różnych aplikacji. Kod jest skompilowana jako część każdego odwołaniem do projektu i może zawierać dyrektywy kompilatora, aby włączać funkcje specyficzne dla platformy do udostępnionego kodem._
 

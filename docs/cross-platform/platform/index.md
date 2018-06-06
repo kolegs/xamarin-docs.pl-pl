@@ -1,22 +1,22 @@
 ---
-title: Obsługa języków
-description: Pojęć i funkcji i platform aplikacji.
+title: Programowanie obsługi języków w programie Xamarin
+description: 'Ten dokument zawiera opis różnych języków programowania, obsługiwane przez program Xamarin. Zawarto informacje C#, F #, przenośne języku Visual i szablony Razor.'
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 18d7e93d686f369dec4a98b5b5f6c77679119091
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 715f63a0be54ba3342bd63c1c76d89656313359a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781679"
 ---
-# <a name="language-support"></a>Obsługa języków
-
-Ta sekcja zawiera dokumenty, które opisano niektóre pojęć i bardziej zaawansowanych funkcji i platform aplikacji.
+# <a name="programming-language-support-in-xamarin"></a>Programowanie obsługi języków w programie Xamarin
 
 ## <a name="c"></a>C# 
+
 ###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Asynchroniczna pomoc techniczna — omówienie](~/cross-platform/platform/async.md)
 
 C# w wersji 5 wprowadzone dwóch nowych słów kluczowych express operacji asynchronicznych: async i await. Słowa kluczowe umożliwiają pisania prostych kodu, który korzysta z biblioteki równoległych zadań do wykonania długotrwałe operacje (np. dostępu do sieci) w innym wątku i łatwo uzyskiwać dostęp do wyników po zakończeniu. Najnowsze wersje platformy Xamarin.iOS i platformy Xamarin.Android obsługuje async i await — ten dokument zawiera wyjaśnienia dotyczące i przykład za pomocą nowej składni za pomocą platformy Xamarin.

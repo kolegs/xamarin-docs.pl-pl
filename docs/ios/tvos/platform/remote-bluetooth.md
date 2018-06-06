@@ -1,22 +1,20 @@
 ---
-title: Używanie programu Siri zdalnego i kontrolerów Bluetooth
-description: W tym artykule omówiono pomocniczych w aplikacjach Xamarin.tvOS nowe kontrolery gier Siri Remote i Bluetooth.
+title: Używanie programu Siri zdalnego i kontrolerów Bluetooth na potrzeby systemu tvOS w Xamarin
+description: W tym artykule opisano sposób pracy z Siri Remote i kontrolery gier Bluetooth w aplikacjach systemu tvOS napisane na platformie Xamarin.
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc2abed202f8b2e6993890ca4e6b3c6875522e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789193"
 ---
-# <a name="siri-remote-and-bluetooth-controllers"></a>Używanie programu Siri zdalnego i kontrolerów Bluetooth
-
-_W tym artykule omówiono pomocniczych w aplikacjach Xamarin.tvOS nowe kontrolery gier Siri Remote i Bluetooth._
-
+# <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Używanie programu Siri zdalnego i kontrolerów Bluetooth na potrzeby systemu tvOS w Xamarin
 
 Użytkownicy aplikacji Xamarin.tvOS nie będzie interakcja jego interfejsu bezpośrednio z systemem iOS gdzie one wybierz obrazów na ekranie urządzenia, ale pośrednio z między przy użyciu miejsca [zdalnego Siri](#The-Siri-Remote).
 
@@ -42,7 +40,7 @@ Używanie programu Siri zdalnego ma następujące funkcje i oczekiwanego użycia
 |---|---|---|
 |**Dotykać powierzchni**<br />Przejdź do Przejdź, naciśnij klawisz, aby wybrać i przytrzymaj ją menu kontekstowe.|**Naciśnij/przejdź**<br />Interfejs użytkownika nawigacji między elementami focusable.<br /><br />**Kliknij przycisk**<br />Aktywuje wybranego elementu (fokusu).|**Naciśnij/przejdź**<br />Zależy od gier projektu i mogą być używane jako D-Pad, naciskając pozycję na krawędzi.<br /><br />**Kliknij przycisk**<br />Wykonanie czynności przycisk podstawowy.|
 |**Menu**<br />Naciśnij, aby powrócić do poprzedniego ekranu lub menu.|Zwraca do poprzedniego ekranu i kończy działanie do firmy Apple TV Home ekranu z ekranu głównego aplikacji.|Wstrzymywanie i wznawianie gry, zwraca do poprzedniego ekranu i wyjścia do firmy Apple TV Home ekranu z ekranu głównego aplikacji.|
-|**Siri/Search**<br />W krajach z Siri naciśnij i przytrzymaj ją głosu formantu, we wszystkich innych krajach, wyświetla ekran wyszukiwania.|n/d|n/d|
+|**Używanie programu Siri/wyszukiwania**<br />W krajach z Siri naciśnij i przytrzymaj ją głosu formantu, we wszystkich innych krajach, wyświetla ekran wyszukiwania.|n/d|n/d|
 |**Odtwórz/Wstrzymaj**<br />Odtwarzanie i wstrzymać media lub dodatkowej funkcję w aplikacjach.|Rozpoczyna odtwarzanie multimediów i wstrzymanie/wznowienie odtwarzania.|Wykonuje funkcję przycisku dodatkowej lub pomija wprowadzenie wideo (jeśli istnieje).|
 |**Strona główna**<br />Naciśnij, aby powrócić do ekranu główną, kliknij dwukrotnie, aby wyświetlić uruchomionych aplikacji, naciśnij i przytrzymaj ją w stan uśpienia urządzenia.|n/d|n/d|
 |**Wolumin**<br />Formanty dołączony woluminu urządzenia audio i wideo.|n/d|n/d|
@@ -75,9 +73,6 @@ Ponadto naciśnięcie przycisku menu mogą zostać wykryte przy użyciu aparat r
 
 > [!IMPORTANT]
 > Należy **zawsze** przydzielenie funkcji przycisk Odtwórz/Wstrzymaj na komputerze zdalnym. Posiadające przycisk współzależności funkcjonalnych można zapewnić aplikacji Szukaj przerwane dla użytkownika końcowego. Jeśli nie jest prawidłową funkcją dla tego przycisku, przypisz taką samą funkcję jak przycisk podstawowy (dotykać powierzchni kliknij).
-
-
-
 
 <a name="Gestures-and-Storyboards" />
 

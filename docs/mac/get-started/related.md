@@ -1,19 +1,20 @@
 ---
-title: Dokumentacja pokrewna
-description: Linki do dodatkowej dokumentacji dla deweloperów macOS.
+title: Xamarin.Mac — dokumentacja pokrewna
+description: 'Ten dokument zawierają łącza do odpowiednich dokumentacji dla deweloperów Xamarin.Mac: Dokumentacja Xamarin.iOS, Centrum deweloperów firmy Apple Mac i różnych prowadnice, które opisują sposób tworzenia interfejsów użytkownika za pomocą Xamarin.Mac.'
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bef756d89a92d082bd5ee29e18047bc4bed2498
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792531"
 ---
-# <a name="related-documentation"></a>Dokumentacja pokrewna
+# <a name="xamarinmac--related-documentation"></a>Xamarin.Mac — dokumentacja pokrewna
 
 Oprócz sekcji Mac [developer.xamarin.com](~/mac/get-started/index.md) istnieją trzy doskonałe źródła dokumentacji, więc można też pomocy z Xamarin.Mac pytania:
 

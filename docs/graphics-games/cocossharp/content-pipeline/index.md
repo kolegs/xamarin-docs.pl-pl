@@ -1,15 +1,16 @@
 ---
 title: Zawartość CocosSharp potoku
-description: Ten dokument prowadzi do prowadnic opisujące CocosSharp potoku zawartości.
+description: W szczególności to dokumentu łącza do przewodników ogólnie opisano potoki zawartości i CocosSharp potoku zawartości.
 ms.prod: xamarin
 ms.assetid: 2BC895E5-BDFD-443D-A96D-86BA7042CB70
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 7cf4d5cd60da1703b6047f6840222946010c9300
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 908baef3a73fe1596ec5fe809f2ce45635dd9a7b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782956"
 ---
 # <a name="cocossharp-content-pipeline"></a>Zawartość CocosSharp potoku
 

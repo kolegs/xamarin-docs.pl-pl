@@ -1,5 +1,5 @@
 ---
-title: Bazy danych
+title: Bazy danych w Xamarin.Mac
 description: W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych między bazami danych SQLite i elementy interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode. Obejmuje ona również przy użyciu SQLite.NET ORM w celu zapewnienia dostępu do danych SQLite.
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791995"
 ---
-# <a name="databases"></a>Bazy danych
+# <a name="databases-in-xamarinmac"></a>Bazy danych w Xamarin.Mac
 
 _W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych między bazami danych SQLite i elementy interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode. Obejmuje ona również przy użyciu SQLite.NET ORM w celu zapewnienia dostępu do danych SQLite._
 

@@ -1,21 +1,20 @@
 ---
-title: Wskazówki — przy użyciu Usługa transferu w tle i NSURLSession
-description: W tym przewodniku używamy Usługa transferu w tle i NSURLSession interfejsu API można rozpocząć wyłączyć pobieranie duży obraz, który można pobrać, gdy aplikacja jest w tle.
+title: Transferu w tle i NSURLSession w Xamarin.iOS
+description: Ten dokument zawiera wskazówki, który demonstruje sposób Użyj transferu w tle i NSUrlSession, aby rozpocząć wyłączyć pobieranie dużych obrazów i kontynuować tego pobierania, gdy aplikacja znajduje się w tle.
 ms.prod: xamarin
 ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 51e1ae0a4314d0b23ec9e3236656321bd3dcb4e4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 08a0ba1337c0d28d1f0d60d04394ccaf4a9ccfc7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783742"
 ---
-# <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Wskazówki — przy użyciu Usługa transferu w tle i NSURLSession
-
-_W tym przewodniku używamy Usługa transferu w tle i NSURLSession interfejsu API można rozpocząć wyłączyć pobieranie duży obraz, który można pobrać, gdy aplikacja jest w tle._
+# <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Transferu w tle i NSURLSession w Xamarin.iOS
 
 Transferu w tle jest inicjowane przez skonfigurowanie tło `NSURLSession` i enqueuing przekazywanie lub pobieranie zadań. Jeśli zadania ukończone podczas backgrounded, wstrzymane lub przerwane aplikacji, iOS powiadomi aplikacji przez wywołanie metody obsługi uzupełniania w aplikacji *AppDelegate*. Poniższy diagram ilustruje to w akcji:
 

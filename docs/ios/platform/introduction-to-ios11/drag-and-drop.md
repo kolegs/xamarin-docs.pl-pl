@@ -1,19 +1,20 @@
 ---
-title: Przeciągnij i opuść
-description: Implementowanie przeciągania i upuszczania dla systemu iOS 11
+title: Przeciągnij i upuść w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu implementacji przeciągania i upuszczania w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API, wprowadzone w systemie iOS 11. W szczególności omówiono włączanie w UITableView przeciągania i upuszczania.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/05/2016
-ms.openlocfilehash: fa6fcb2c4f5f17011307b31e4644889d066b71a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786967"
 ---
-# <a name="drag-and-drop"></a>Przeciągnij i opuść
+# <a name="drag-and-drop-in-xamarinios"></a>Przeciągnij i upuść w Xamarin.iOS
 
 _Implementowanie przeciągania i upuszczania dla systemu iOS 11_
 

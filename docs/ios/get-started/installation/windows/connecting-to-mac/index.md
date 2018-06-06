@@ -1,20 +1,20 @@
 ---
-title: Para Mac
-description: W tym przewodniku informacje dotyczące używania pary Mac nawiązywania połączenia z hostem kompilacji Mac Visual Studio 2017 r.
+title: Para Mac do tworzenia aplikacji platformy Xamarin.iOS
+description: W tym przewodniku informacje dotyczące używania pary Mac nawiązywania połączenia z hostem kompilacji Mac Visual Studio 2017 r. Opisano, jak włączyć logowania zdalnego dla komputerów Mac, Połącz do komputera Mac z programu Visual Studio 2017 r, ręcznie dodać host kompilacji Mac do komputera z systemem Windows i inne.
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/29/2018
-ms.openlocfilehash: 4be29dabfd98c84876b65cd1655dcc4a6d444eeb
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562844"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786080"
 ---
-# <a name="pair-to-mac"></a>Para Mac
+# <a name="pair-to-mac-for-xamarinios-development"></a>Para Mac do tworzenia aplikacji platformy Xamarin.iOS
 
 _W tym przewodniku informacje dotyczące używania pary Mac nawiązywania połączenia z hostem kompilacji Mac Visual Studio 2017 r._
 

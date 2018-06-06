@@ -1,21 +1,21 @@
 ---
 title: Inspektor instalacji i wymagania
-description: Jak pobrać, zainstalować i używać Inspektora Xamarin.
+description: Ten dokument zawiera opis sposobu instalowania inspektora Xamarin i omówiono obsługiwany system operacyjny, IDEs i platform aplikacji.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793811"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspektor instalacji i wymagania
 
 ## <a name="download-and-installation"></a>Pobierania i instalacji
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -55,7 +55,6 @@ Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 |iOS (Unified)|Obsługiwane w XS i Visual Studio|Procedury kontroli aplikacji systemu iOS z systemu Windows wymaga tej samej wersji Inspektora można także zainstalować na hoście kompilacji Mac.|
 |Android|Obsługiwane w XS i Visual Studio|Muszą wskazywać Android > = 4.0.3, z **fastdev** włączone.<br />Należy użyć Google, Visual Studio lub Xamarin Android emulatorów. Android emulatorów 7 kontroli w tej chwili jest niedozwolona.|
 |WPF|Obsługiwane tylko w programie Visual Studio w systemie Windows|
-
 
 <a name="reporting-bugs" />
 
@@ -147,7 +146,7 @@ Jeśli zainstalowano skoroszyty & Inspektor samodzielnie przy użyciu pobranego 
 
 > **Start > Ustawienia > System > aplikacje i funkcje**
 
-![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w temacie "Aplikacje i funkcje"")
+![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w temacie \"Aplikacje i funkcje\"")
 
 **Należy nadal wykonać procedury Instalator programu Visual Studio upewnić się, że skoroszyty & inspektora nie Pobierz ponownie zainstalowany bez wiedzy użytkownika.**
 
@@ -167,6 +166,5 @@ Dla starszych wersji należy ręcznie usunąć następujące czynności:
 
 1. Usuń aplikację skoroszytów w `"/Applications/Xamarin Workbooks.app"`
 2. Usuń aplikację inspektora w `"Applications/Xamarin Inspector.app"`
-2. Usuń dodatki: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` i `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. Usuń inspektora i tutaj plików pomocniczych: `/Library/Frameworks/Xamarin.Interactive.framework` i `/Library/Frameworks/Xamarin.Inspector.framework`
-
+3. Usuń dodatki: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` i `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. Usuń inspektora i tutaj plików pomocniczych: `/Library/Frameworks/Xamarin.Interactive.framework` i `/Library/Frameworks/Xamarin.Inspector.framework`

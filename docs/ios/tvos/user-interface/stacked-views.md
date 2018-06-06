@@ -1,22 +1,20 @@
 ---
-title: Praca z widokiem skumulowany
-description: Ten artykuł obejmuje projektowanie i Praca z widokiem skumulowany wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z widokami skumulowany systemu tvOS w Xamarin
+description: Ten dokument zawiera opis sposobu pracy z systemu tvOS skumulowany widoków w aplikacji skompilowanej za pomocą platformy Xamarin. Zawiera ogólne omówienie skumulowany widoków i omówiono automatycznego układu, pozycjonowanie i rozmiary skumulowany widoku, wspólne używa, integracja z Scenorys i inne.
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a6300e4da47022199c0503e6be63b0c90f15654d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e718e525c23e78fbf846209602a07bf0f3f386e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789375"
 ---
-# <a name="working-with-stacked-view"></a>Praca z widokiem skumulowany
-
-_Ten artykuł obejmuje projektowanie i Praca z widokiem skumulowany wewnątrz aplikacji Xamarin.tvOS._
-
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Praca z widokami skumulowany systemu tvOS w Xamarin
 
 Formant widoku stosu (`UIStackView`) wykorzystuje zasilania układu automatycznego i rozmiar klas, aby zarządzać stos widoków podrzędnych, poziomej lub pionowej, która odpowiada dynamicznie do zmiany zawartości i rozmiaru ekranu urządzenia Apple TV.
 

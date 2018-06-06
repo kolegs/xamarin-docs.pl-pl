@@ -1,24 +1,23 @@
 ---
-title: Płatności firmy Apple
+title: Apple KP platformy Xamarin.iOS
 description: Ten przewodnik opisuje Konfigurowanie środowiska platformy Xamarin.iOS do użycia z programem Apple Pay płacisz za towarów fizycznych, takich jak żywności, rozrywce i członkostwa za pośrednictwem aplikacji. Zawiera informacje dotyczące wymaganych identyfikatorów, certyfikaty i uprawnień.
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: fc7c247e5edcdc25d53c34c922801a5497b8c367
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7033373cddb2503e5912eb17b1e72ece759cc3ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786694"
 ---
-# <a name="apple-pay"></a>Płatności firmy Apple
+# <a name="apple-pay-in-xamarinios"></a>Apple KP platformy Xamarin.iOS
 
 _Ten przewodnik opisuje Konfigurowanie środowiska platformy Xamarin.iOS do użycia z programem Apple Pay płacisz za towarów fizycznych, takich jak żywności, rozrywce i członkostwa za pośrednictwem aplikacji. Zawiera informacje dotyczące wymaganych identyfikatorów, certyfikaty i uprawnień._
 
-
 Apple Pay został wprowadzony wraz z systemem iOS 8, umożliwiając użytkownikom opłacać towarów fizycznych, takich jak żywności, rozrywce i członkostwa za pomocą ich urządzeń z systemem iOS. Jest ona dostępna na telefonie iPhone 6 i iPhone 6 Plus, a także mogą łączyć się z Apple Watch dotyczące zakupów w sklepie. Gdy jest używany na telefonie iPhone, używa funkcji Touch ID jako sposób potwierdzić i autoryzować transakcji użytkownika kredytową lub debetową.
-
 
 ## <a name="requirements"></a>Wymagania
 
@@ -41,7 +40,6 @@ Struktury używane są również Najważniejsza różnica; [PassKit](https://dev
 
 Z Apple Pay Apple [stanów](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) czy go "nalicza użytkowników, sprzedawców lub deweloperów firmy Apple płatności na potrzeby płatności". Z kolei IAP ma opłat 30% dla każdej transakcji. Ponadto z Apple Pay, transakcja nie przechodzi przez firmy Apple w ogóle, natomiast przechodzi ona przez platformę płatności.
 
-
 ## <a name="using-a-payment-processor-platform"></a>Przy użyciu platformy procesora płatności
 
 Jednym z podstawowych części Apple Pay jest przetwarzanie płatności. Mimo że jest to możliwe zrobić to samodzielnie, wymaga znaczących wiedzę na temat kryptografii
@@ -53,7 +51,6 @@ Dostępne są dwie opcje:
 - **Aplikacja STRIPE** -utworzyć konto w [Stripe.com](https://stripe.com/) dostępu do ich interfejsów API.
 
 - **JudoPay** — zapoznaj się z ich [Xamarin przykładowy kod w serwisie github](https://github.com/Judopay/Xamarin-Sample-App)i zarejestruj pod adresem [JudoPay.com](https://www.judopay.com/).
-
 
 ## <a name="provisioning-for-apple-pay"></a>Inicjowanie obsługi płatności firmy Apple
 
@@ -70,13 +67,11 @@ Konfigurowanie aplikacji przy użyciu Apple Pay wymaga ustawienia w portalu dla 
 5. Dodaj Apple Pay uprawnień:
     - Wybierz uprawnienia Apple płatności zgodnie z opisem [tutaj](~/ios/deploy-test/provisioning/entitlements.md), lub ręcznie Dodaj parę klucza i wartości do pliku z [tutaj](~/ios/deploy-test/provisioning/entitlements.md)
 
-
 ## <a name="working-with-apple-pay"></a>Praca z płatności firmy Apple
 
 Apple wprowadziła kilka ulepszeń Apple Pay w systemie iOS 10, który umożliwia użytkownikowi dokonanie bezpieczne płatności z witryn sieci Web i dzięki współdziałaniu z Siri i map.
 
 Z systemem iOS 10 kilka nowych interfejsów API dodano pracy z systemem iOS i watchOS do obsługi sieci dynamiczne płatności i nowego środowiska testowego piaskownicy.
-
 
 ### <a name="apple-pay-website-integration"></a>Integracja z witryny sieci Web firmy Apple płatności
 
@@ -122,7 +117,6 @@ Aby włączyć nowego środowiska testowego, wykonaj następujące czynności:
 ## <a name="summary"></a>Podsumowanie
 
 W tym artykule firma Microsoft zbadane różne elementy wymagane do używania Apple Pay w Twojej aplikacji. Analizujemy jak utworzyć identyfikator handlowych i sposobie ich użycia w ramach **Entitlements.plist**, która ma zostać zmodyfikowana ręcznie.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

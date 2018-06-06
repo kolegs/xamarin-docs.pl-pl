@@ -1,26 +1,26 @@
 ---
-title: Subskrypcje i raportowanie
+title: Subskrypcje i raportowania w programie platformy Xamarin.iOS
+description: W tym dokumencie opisano-odnawianiu subskrypcji, subskrypcji bezpłatnych odnawialnymi automatycznie subskrypcje i za pomocą programu iTunes Connect raport ma dotyczyć tych elementów.
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787034"
 ---
-# <a name="subscriptions-and-reporting"></a>Subskrypcje i raportowanie
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Subskrypcje i raportowania w programie platformy Xamarin.iOS
 
 ## <a name="about-non-renewing-subscriptions"></a>O innych niż — odnawianiu subskrypcji
 
 Odnawianie inne niż subskrypcje są przeznaczone dla produktów, które reprezentują sprzedaży usługi z ograniczeniem czasowym, takich jak (jeden tydzień dostęp do aplikacji nawigacji) lub czas dostępu do archiwum danych.   
    
-   
-   
- Podstawowe różnice między-odnawiania subskrypcji i innych typów produktu:
+Podstawowe różnice między-odnawiania subskrypcji i innych typów produktu:
 
 -  Definicja produktu w iTunes Connect nie obejmuje określenie. Kod aplikacji musi mieć możliwość wnioskować okres ważności z identyfikatora produktu. 
 -  Można ich zakupić wielokrotnie (na przykład eksploatacyjny produktu). Aplikacje muszą zarządzać subskrypcji termin/wygaśnięcia i odnawiania i uniemożliwić użytkownikowi kupować subskrypcje nakładające się. 

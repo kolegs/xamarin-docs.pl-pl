@@ -1,5 +1,5 @@
 ---
-title: Nowe style interfejsu użytkownika
+title: systemu tvOS style interfejsu użytkownika w programie Xamarin
 description: W tym artykule omówiono jasnym i ciemnym kompozycje interfejsu użytkownika tego Apple został dodany do systemu tvOS, 10 oraz sposób ich wdrażania w aplikacji Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789174"
 ---
-# <a name="new-user-interface-styles"></a>Nowe style interfejsu użytkownika
+# <a name="tvos-user-interface-styles-in-xamarin"></a>systemu tvOS style interfejsu użytkownika w programie Xamarin
 
 _W tym artykule omówiono jasnym i ciemnym kompozycje interfejsu użytkownika tego Apple został dodany do systemu tvOS, 10 oraz sposób ich wdrażania w aplikacji Xamarin.tvOS._
 
 systemu tvOS 10 teraz obsługuje zarówno ciemny, jak i interfejs użytkownika jasny motyw że będą wszystkie UIKit kompilacji w kontroluje automatycznie dostosowania, zgodnie z preferencjami użytkownika. Ponadto dewelopera ręcznie dostosować elementy interfejsu użytkownika na podstawie motywu, który został wybrany przez użytkownika, można zmienić danego motywu.
-
 
 <a name="About-the-New-User-Interface-Styles" />
 

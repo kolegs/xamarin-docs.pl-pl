@@ -1,18 +1,19 @@
 ---
-title: Backgrounding
+title: Backgrounding w Xamarin.iOS
 description: Tło przetwarzania lub backgrounding jest proces umożliwienie aplikacji wykonać zadania w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. W tym przewodniku stanowi wprowadzenie do przetwarzania w systemie iOS w tle.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ae3e732008c6503f511dc4be9cad874ecfe1272d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b22f3ef3276129f7f46c23cc1d06666f151f5ac4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783545"
 ---
-# <a name="backgrounding"></a>Backgrounding
+# <a name="backgrounding-in-xamarinios"></a>Backgrounding w Xamarin.iOS
 
 _Tło przetwarzania lub backgrounding jest proces umożliwienie aplikacji wykonać zadania w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. W tym przewodniku stanowi wprowadzenie do przetwarzania w systemie iOS w tle._
 

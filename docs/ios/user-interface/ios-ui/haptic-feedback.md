@@ -1,21 +1,20 @@
 ---
-title: Przekazywanie opinii dotykowych
-description: W tym artykule omówiono nowe typy dotykowych opinii, dostępnych w iOS 10 oraz sposób ich wdrażania w platformy Xamarin.iOS.
+title: Przekazywanie opinii dotykowych w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu dotykowych reagowanie w aplikacji platformy Xamarin.iOS. Zawarto informacje UIImpactFeedbackGenerator, UINotificationFeedbackGenerator i UISelectionFeedbackGenerator.
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f2d1bd73ea764cd5bf56775abd7c7357b039bc79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0dae6d6f50423474fbfebad5d630000e2160f6a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790191"
 ---
-# <a name="providing-haptic-feedback"></a>Przekazywanie opinii dotykowych
-
-_W tym artykule omówiono nowe typy dotykowych opinii, dostępnych w iOS 10 oraz sposób ich wdrażania w platformy Xamarin.iOS._
+# <a name="providing-haptic-feedback-in-xamarinios"></a>Przekazywanie opinii dotykowych w Xamarin.iOS
 
 <a name="Overview" />
 

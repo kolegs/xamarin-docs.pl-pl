@@ -1,21 +1,20 @@
 ---
 title: Profilowanie aplikacji platformy Xamarin.iOS z dokumentów
-description: Jak korzystać z aplikacji platformy Xamarin.iOS na urządzeniu lub w symulatorze dokumentów.
+description: Ten dokument zawiera opis sposobu Profiluj aplikację platformy Xamarin.iOS zainstalowane na urządzenie lub symulator przy użyciu aplikacji dokumentów firmy Apple.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785615"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilowanie aplikacji platformy Xamarin.iOS z dokumentów
-
-_Jak korzystać z aplikacji platformy Xamarin.iOS na urządzeniu lub w symulatorze dokumentów._
 
 Xcode **instrumentów** to narzędzie, które może służyć do do profilu aplikacji platformy Xamarin.iOS na urządzeniu lub w symulatorze. Mono używa jej Just in Time model, aby skompilować kod i dokumentów nie interpretacji tego typu danych również, więc może być trudne do pracy z danymi wyjściowymi symulatora aplikacjach korzystających z instrumentów.
 Z powodu tego błędu w tym przewodniku będzie skoncentrować się na jak interpretować dane wyjściowe dokumentów, w tym dokumencie przy użyciu projektanta aplikacji.

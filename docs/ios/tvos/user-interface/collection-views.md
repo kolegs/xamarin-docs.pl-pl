@@ -1,21 +1,20 @@
 ---
-title: Praca z widokami Kolekcja
-description: Ten artykuł obejmuje projektowanie i Praca z widokami kolekcja wewnątrz aplikacji Xamarin.tvOS.
+title: Praca z systemu tvOS widoki kolekcji w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z widokiem kolekcji w systemu tvOS aplikacji skompilowanej za pomocą platformy Xamarin. Obejmuje ona układów widoku kolekcji, tworzenie komórek i dodatkowych widoków, w odpowiedzi na zdarzenia użytkownika i inne.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789281"
 ---
-# <a name="working-with-collection-views"></a>Praca z widokami Kolekcja
-
-_Ten artykuł obejmuje projektowanie i Praca z widokami kolekcja wewnątrz aplikacji Xamarin.tvOS._
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>Praca z systemu tvOS widoki kolekcji w programie Xamarin
 
 Kolekcja widoków umożliwiają grupą zawartości mają być wyświetlane przy użyciu dowolnego układów. Przy użyciu wbudowanych funkcji, pozwalają one na łatwe tworzenie układów siatki lub liniowy obsługuje również układy niestandardowe.
 

@@ -1,5 +1,5 @@
 ---
-title: HomeKit
+title: HomeKit w Xamarin.iOS
 description: HomeKit to platforma firmy Apple do kontrolowania urządzeń macierzystego automatyzacji. W tym artykule przedstawiono HomeKit i obejmuje Konfigurowanie Akcesoria testu w symulatorze akcesoriów HomeKit i zapisywanie prostej aplikacji platformy Xamarin.iOS wchodzić w interakcje z te urządzenia.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0dfc6e9ba5098df66a72292d6c8b89ea1bbd1f97
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787464"
 ---
-# <a name="homekit"></a>HomeKit
+# <a name="homekit-in-xamarinios"></a>HomeKit w Xamarin.iOS
 
 _HomeKit to platforma firmy Apple do kontrolowania urządzeń macierzystego automatyzacji. W tym artykule przedstawiono HomeKit i obejmuje Konfigurowanie Akcesoria testu w symulatorze akcesoriów HomeKit i zapisywanie prostej aplikacji platformy Xamarin.iOS wchodzić w interakcje z te urządzenia._
 
@@ -435,7 +436,7 @@ Każdy `HMService` obiekt może zawierać Kolekcja `HMCharacteristic` obiektów,
  - RotationDirection
  - RotationSpeed
  - Nasycenie
- - SerialNumber
+ - numer seryjny
  - SmokeDetected
  - SoftwareVersion
  - StatusActive

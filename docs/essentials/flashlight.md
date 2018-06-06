@@ -1,17 +1,18 @@
 ---
-title: Latarki Xamarin.Essentials
-description: Klasa latarki ma możliwość włączyć lub wyłączyć aparat urządzenia flash, aby przekształcić z latarki.
+title: 'Xamarin.Essentials: latarki'
+description: W tym dokumencie opisano klasy latarki w Xamarin.Essentials, który umożliwia włączanie i wyłączanie aparatu fotograficznego urządzenia flash, aby przekształcić z latarki.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0fe07f60502b27322db9486f3382b8f67d50945b
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782427"
 ---
-# <a name="xamarinessentials-flashlight"></a>Latarki Xamarin.Essentials
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: latarki
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

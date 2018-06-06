@@ -1,19 +1,20 @@
 ---
 title: Tworzenie pakietów dla komputerów Mac App Store
-description: Ten przewodnik przeprowadzi Cię przez funkcję tworzenia pakietów aplikacji Xamarin.Mac dla publikacji do sklepu Mac App Store.
+description: Ten dokument zawiera opis sposobu pakietu do sklepu Mac App Store aplikacji Xamarin.Mac dla publikacji. Go w tym artykule omówiono kod opcje podpisywania i tworzenia.
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792063"
 ---
-# <a name="bundle-for-mac-app-store"></a>Pakiet dla sklepu Mac App Store
+# <a name="bundling-for-the-mac-app-store"></a>Tworzenie pakietów dla komputerów Mac App Store
 
 W tej sekcji opisano podstawowe informacje dotyczące tworzenia aplikacji dla wersji w sklepie z aplikacjami Mac za pomocą programu Visual Studio dla komputerów Mac. W oparciu o dodatkowe funkcje (takie jak iCloud dostępu i powiadomieniami wypychanymi), dodatkowe ustawienia mogą być wymagane skojarzoną beyon zakres tego artykułu.
 

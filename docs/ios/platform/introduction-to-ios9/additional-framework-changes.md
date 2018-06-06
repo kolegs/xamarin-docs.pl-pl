@@ -1,16 +1,17 @@
 ---
 title: Zmiany struktury dodatkowe systemu iOS 9
-description: W tym artykule omówiono dodatkowych, drobne zmiany lub ulepszenia istniejących struktur dla systemu iOS 9.
+description: W tym dokumencie opisano framework dodatkowe zmiany wprowadzone w systemie iOS 9. Zawarto informacje AVFoundation, AVKit i CloudKit.
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 15c9364cf3bdcb8c797882cc9ac76219959de439
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787711"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Zmiany struktury dodatkowe systemu iOS 9
 
@@ -20,9 +21,9 @@ _W tym artykule omówiono dodatkowych, drobne zmiany lub ulepszenia istniejącyc
 
 Oprócz najważniejszych zmian w systemach iOS firmy Apple wprowadził zmiany i usprawnienia wielu istniejących struktur w systemie iOS 9.
 
-## <a name="av-foundation-framework-additions"></a>Dodatki Framework AV Foundation
+## <a name="avfoundation-framework-additions"></a>Dodatki AVFoundation Framework
 
-W ramach AV Foundation [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/) klasy można teraz określić głosu przez identyfikator, oprócz języka.
+W ramach AVFoundation [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/) klasy można teraz określić głosu przez identyfikator, oprócz języka.
 
 Na przykład następujący kod pobiera listę wszystkich dostępnych głosów:
 

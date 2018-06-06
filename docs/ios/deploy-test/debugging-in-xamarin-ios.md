@@ -1,19 +1,20 @@
 ---
-title: Debugowanie
-description: Aplikacji platformy Xamarin.iOS może być debugowany z wbudowanych debugera programu Visual Studio dla komputerów Mac lub Visual Studio.
+title: Debugowanie aplikacji platformy Xamarin.iOS
+description: Ten dokument zawiera informacje dotyczące za pomocą debugera programu Visual Studio for Mac lub Visual Studio 2017 debugowanie aplikacji platformy Xamarin.iOS, w tym ustawienia punktów przerwania, debugowania sieci bezprzewodowej i innych.
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e2e32170de258f46eb5a926db35bce33c0ca64de
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785437"
 ---
-# <a name="debugging"></a>Debugowanie
+# <a name="debugging-xamarinios-apps"></a>Debugowanie aplikacji platformy Xamarin.iOS
 
 _Aplikacji platformy Xamarin.iOS może być debugowany z wbudowanych debugera programu Visual Studio dla komputerów Mac lub Visual Studio._
 

@@ -1,18 +1,20 @@
 ---
-title: Wysokość wiersza Auto-Sizing
+title: Wysokość wiersza Auto-Sizing w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu dodawania do aplikacji platformy Xamarin.iOS wiersze tabeli widoku, którego wysokości różnią się na podstawie zawartości. Omówiono jego układ komórki w systemie iOS projektanta i włączenie automatycznej zmiany rozmiaru wysokość.
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789970"
 ---
-# <a name="auto-sizing-row-height"></a>Wysokość wiersza Auto-Sizing
+# <a name="auto-sizing-row-height-in-xamarinios"></a>Wysokość wiersza Auto-Sizing w Xamarin.iOS
 
 Począwszy od systemu iOS 8, Apple dodano możliwość utworzenia widoku tabeli (`UITableView`) który automatycznie zwiększyć lub zmniejszyć wysokość danego wiersza, zależnie od rozmiaru jego zawartości przy użyciu automatycznego układu, rozmiar klasy i ograniczenia.
 

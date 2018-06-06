@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials poczty E-mail
-description: Klasy wiadomości E-mail umożliwia aplikacji można otworzyć domyślnej aplikacji poczty e-mail przy użyciu informacji w tym tematu, treści i adresatów (do, DW, UDW).
+title: 'Xamarin.Essentials: wiadomości E-mail'
+description: Klasa poczty E-mail w Xamarin.Essentials włącza aplikację można otworzyć domyślnej aplikacji poczty e-mail przy użyciu informacji w tym tematu, treści i adresatów (do, DW, UDW).
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 4bba713fa4dbcac3c145389c4b009d6e207273b8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: aea2f429126180ae3d98bc665bed5574f416ea53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562867"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782440"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials poczty E-mail
+# <a name="xamarinessentials-email"></a>Xamarin.Essentials: wiadomości E-mail
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 

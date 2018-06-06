@@ -1,19 +1,20 @@
 ---
-title: Interfejsy API dla komputerów Mac
-description: W tym dokumencie opisano sposób odczytać selektorów Objective-C i znaleźć ich odpowiednich metod C#.
+title: System macOS interfejsów API dla deweloperów Xamarin.Mac
+description: W tym dokumencie opisano sposób odczytać selektorów Objective-C i Znajdź w aplikacji Xamarin.Mac ich odpowiednich metod C#.
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/02/2017
-ms.openlocfilehash: 0344fecb9a8d64a680bb11689f56cf074d952f4e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cceaa2f6e89b712be5929f7e978663d8c47f18c5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791553"
 ---
-# <a name="mac-apis"></a>Interfejsy API dla komputerów Mac
+# <a name="macos-apis-for-xamarinmac-developers"></a>System macOS interfejsów API dla deweloperów Xamarin.Mac
 
 ## <a name="overview"></a>Omówienie
 

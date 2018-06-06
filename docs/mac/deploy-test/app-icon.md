@@ -1,5 +1,5 @@
 ---
-title: Ikona aplikacji
+title: Ikona aplikacji dla aplikacji Xamarin.Mac
 description: W tym artykule opisano tworzenie obrazów wymaganych dla ikony aplikacji Xamarin.Mac, tworzenie pakietów obrazów do pliku .icns i, w tym ikonę w projekcie Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792039"
 ---
-# <a name="application-icon"></a>Ikona aplikacji
+# <a name="application-icon-for-xamarinmac-apps"></a>Ikona aplikacji dla aplikacji Xamarin.Mac
 
 _W tym artykule opisano tworzenie obrazów wymaganych dla ikony aplikacji Xamarin.Mac, tworzenie pakietów obrazów do pliku .icns i, w tym ikonę w projekcie Xamarin.Mac._
 

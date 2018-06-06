@@ -1,5 +1,5 @@
 ---
-title: Praca z funkcjami
+title: Praca z możliwościami w zakresie platformy Xamarin.iOS
 description: Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla wszystkich możliwości.
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785560"
 ---
-# <a name="working-with-capabilities"></a>Praca z funkcjami
+# <a name="working-with-capabilities-in-xamarinios"></a>Praca z możliwościami w zakresie platformy Xamarin.iOS
 
 _Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla wszystkich możliwości._
 
@@ -21,7 +22,7 @@ Apple oferuje deweloperom _możliwości_, często znane jako _usługi aplikacji_
 Te możliwości mogą służyć z projektami platformy Xamarin.iOS. Poniżej przedstawiono pełną listę usług:
 
 * Grupy aplikacji
-* Skojarzone domen
+* Skojarzone domeny
 * Ochrona danych
 * Centrum gier
 * HealthKit
@@ -31,7 +32,7 @@ Te możliwości mogą służyć z projektami platformy Xamarin.iOS. Poniżej prz
 * Funkcja zakupu w aplikacji
 * Dźwięk Inter-App
 * Płatności firmy Apple
-* Portfela
+* Portfel
 * Powiadomienia wypychane
 * Osobista sieć VPN
 * Używanie programu Siri

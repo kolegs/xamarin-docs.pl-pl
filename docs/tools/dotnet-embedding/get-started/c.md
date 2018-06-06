@@ -1,15 +1,17 @@
 ---
 title: Wprowadzenie do korzystania z C
+description: Ten dokument zawiera opis sposobu umożliwia osadzanie .NET osadzanie kodu platformy .NET w aplikacji C. Omówiono Użyj .NET osadzanie w Visual Studio 2017 i Visual Studio dla komputerów Mac.
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 author: topgenorth
 ms.author: toopge
 ms.date: 04/19/2018
-ms.openlocfilehash: f3c238dc9805dafa922f8e32fb4b1935a3fa152c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 248d44f23495e45d9d35b34622de0f3b85ca3e8d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794101"
 ---
 # <a name="getting-started-with-c"></a>Wprowadzenie do korzystania z C
 

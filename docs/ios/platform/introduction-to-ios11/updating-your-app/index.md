@@ -1,21 +1,20 @@
 ---
 title: Aktualizowanie aplikacji w systemach iOS 11
-description: Poznawanie nowych funkcji systemu IOS 11
+description: Ten dokument łącza do różnych prowadnic, których opisano nowe funkcje dostępne dla deweloperów platformy Xamarin.iOS wraz z wydaniem systemu IOS 11. Na przykład zmiany sklepu z aplikacjami aktualizacje wizualnego projektu, i aktualizacje ikonę aplikacji.
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea57acbd6165f7b1abd8b9bd69873670c179f411
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787575"
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualizowanie aplikacji w systemach iOS 11
-
-_Poznawanie nowych funkcji systemu IOS 11_
 
 W systemie iOS 11 Apple wprowadziła procesu Connect zaktualizowane iTunes, nowe zmiany wizualne i architektura aktualizacji. Ten przewodnik opisuje każdego z tych zmian umożliwia uzyskiwanie aktualizacji dla systemu iOS 11 dla swojej aplikacji platformy Xamarin.iOS.
 

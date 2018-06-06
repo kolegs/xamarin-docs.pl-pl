@@ -1,5 +1,5 @@
 ---
-title: Powiązanie danych i kluczy i wartości kodowania
+title: Powiązanie danych i kluczy i wartości kodowania w Xamarin.Mac
 description: W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792141"
 ---
-# <a name="data-binding-and-key-value-coding"></a>Powiązanie danych i kluczy i wartości kodowania
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Powiązanie danych i kluczy i wartości kodowania w Xamarin.Mac
 
 _W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode._
 

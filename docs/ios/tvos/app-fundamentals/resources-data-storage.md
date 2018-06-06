@@ -1,19 +1,20 @@
 ---
-title: Magazyn danych i zasoby
-description: W tym artykule omówiono pracy z zasobami i magazynu danych w aplikacji Xamarin.tvOS.
+title: systemu tvOS, zasobów i przechowywania danych w programie Xamarin
+description: W tym artykule opisano sposób pracy z zasobów i magazynu danych w aplikacji systemu tvOS, utworzony za pomocą platformy Xamarin. Zawarto informacje zasobów magazynu i na żądanie danych iCloud.
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788839"
 ---
-# <a name="resources-and-data-storage"></a>Magazyn danych i zasoby
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>systemu tvOS, zasobów i przechowywania danych w programie Xamarin
 
 _W tym artykule omówiono pracy z zasobami i magazynu danych w aplikacji Xamarin.tvOS._
 

@@ -1,20 +1,19 @@
 ---
 title: Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
-description: Rodzaj tworzenia gier może znacznie się różnić od rozwoju innych typów aplikacji. Ten artykuł zawiera wprowadzenie do tworzenia gier, oferujący funkcje technologii, których można użyć platformy Xamarin.Android i Xamarin.iOS. Platformy Xamarin.Android i Xamarin.iOS zapewnia zarówno wysokiego poziomu omówienie sposobu gry zostały wprowadzone, jak i próbkowania technologie dostępne do użycia.
+description: Ten dokument zawiera omówienie tworzenia gier za pomocą platformy Xamarin, opisujący sposób zostają gry i próbkowania technologie dostępne do użycia platformy Xamarin.Android i Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783919"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Wprowadzenie do tworzenia gier za pomocą platformy Xamarin
-
-_Rodzaj tworzenia gier może znacznie się różnić od rozwoju innych typów aplikacji. Ten artykuł zawiera wprowadzenie do tworzenia gier, oferujący funkcje technologii, których można użyć platformy Xamarin.Android i Xamarin.iOS. Platformy Xamarin.Android i Xamarin.iOS zapewnia zarówno wysokiego poziomu omówienie sposobu gry zostały wprowadzone, jak i próbkowania technologie dostępne do użycia._
 
 Projektowanie gier może być bardzo atrakcyjnych szczególnie podane, jak łatwo można ją opublikować swoją pracę na platformach mobilnych. W tym artykule omówiono pojęcia i technologii związanych z tworzenia gier, które mogą pomóc tworzyć gry, czy jest utworzyć AAA wysokiej jakości, gier lub tylko do programu do zabawy.
 

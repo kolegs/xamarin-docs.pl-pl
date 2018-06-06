@@ -1,21 +1,20 @@
 ---
-title: Tworzenie niestandardowych formantów
-description: W tym artykule opisano sposób tworzenia niestandardowych formantów i pracować z nimi w Konstruktorze interfejsu.
+title: Tworzenie niestandardowych formantów w Xamarin.Mac
+description: Ten dokument zawiera opis sposobu tworzenia niestandardowych kontrolek w Xamarin.Mac. Widoczny jest sposób tworzenia kontrolki niestandardowej, śledzić jego stan rysowania interfejsu, odpowiadanie na dane wejściowe użytkownika i użyj formantu w aplikacji.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792681"
 ---
-# <a name="creating-custom-controls"></a>Tworzenie niestandardowych formantów
-
-_W tym artykule opisano sposób tworzenia niestandardowych formantów i pracować z nimi w Konstruktorze interfejsu._
+# <a name="creating-custom-controls-in-xamarinmac"></a>Tworzenie niestandardowych formantów w Xamarin.Mac
 
 Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego użytkownika formantów, które osoba używająca *Objective-C*, *Swift* i *Xcode* jest . Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ do tworzenia i obsługi formantów użytkownika (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 

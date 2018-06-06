@@ -1,21 +1,20 @@
 ---
 title: Publikowanie do sklepu z aplikacjami firmy Apple TV
-description: W tym artykule pokazano, jak konfigurowanie, tworzenie i publikowanie aplikacji Xamarin.tvOS dla dystrybucji za pośrednictwem sklepu z aplikacjami firmy Apple TV. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, ostatecznie, jak opublikować aplikację do sklepu z aplikacjami firmy Apple TV.
+description: Ten dokument zawiera opis publikowania aplikacji do sklepu z aplikacjami firmy Apple TV. Go w tym artykule omówiono sposób konfigurowania, obsługi administracyjnej, tworzenie i przesyłanie aplikacji systemu tvOS, utworzony za pomocą platformy Xamarin.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac905caaf0bdefe7f0c5502be0bd63102ca5a813
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789307"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikowanie do sklepu z aplikacjami firmy Apple TV
-
-_W tym artykule pokazano, jak konfigurowanie, tworzenie i publikowanie aplikacji Xamarin.tvOS dla dystrybucji za pośrednictwem sklepu z aplikacjami firmy Apple TV. Zawiera przewodnik krok po kroku, który obejmuje sposobu przygotowania aplikacji do dystrybucji, jak za pomocą narzędzi firmy Apple do przesyłania aplikacji do przeglądu i, ostatecznie, jak opublikować aplikację do sklepu z aplikacjami firmy Apple TV._
 
 W kolejności dystrybuować aplikacje na wszystkich urządzeniach Apple TV, Firma Apple wymaga aplikacji, które mają być opublikowane za pośrednictwem *sklepu z aplikacjami firmy Apple TV*, co pojedynczej lokalizacji zakupów dla aplikacji systemu tvOS sklepu z aplikacjami. Deweloperzy wielu typów aplikacji można kapitalizacji na ogromną Powodzenie ten pojedynczy punkt dystrybucji. Sklep App Store firmy Apple TV to gotowe rozwiązanie, oferty deweloperzy aplikacji systemów dystrybucji i płatności.
 

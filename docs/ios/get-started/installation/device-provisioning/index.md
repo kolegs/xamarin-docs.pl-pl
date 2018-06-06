@@ -1,21 +1,20 @@
 ---
-title: Inicjowanie obsługi administracyjnej urządzeń
-description: Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu.
+title: Inicjowanie obsługi administracyjnej dla platformy Xamarin.iOS urządzenia
+description: Ten dokument zawiera opis sposobu udostępniania urządzenia, dzięki czemu może służyć do testowania aplikacji. Również zawiera omówienie sposobu konfigurowania aplikacji, dzięki czemu można użyć funkcji, takich jak powiadomienia wypychane.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785791"
 ---
-# <a name="device-provisioning"></a>Inicjowanie obsługi administracyjnej urządzeń
-
-_Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik może zapoznać żądanie certyfikatów programowanie i profilach, Praca z usługi aplikacji i wdrażania aplikacji na urządzeniu._
+# <a name="device-provisioning-for-xamarinios"></a>Inicjowanie obsługi administracyjnej dla platformy Xamarin.iOS urządzenia
 
 Podczas tworzenia aplikacji platformy Xamarin.iOS istotne jest przetestowanie przez wdrożenie aplikacji na urządzeniu fizycznym, ponadto w symulatorze. Tylko urządzenia błędy i problemy z wydajnością można orzeczona uruchomionej na urządzeniu, z powodu limitów sprzętu, takich jak łączności sieciowej lub pamięci. Aby przetestować na urządzeniu fizycznym, urządzenie musi być *elastycznie*, i firmy Apple należy mieć świadomość, że urządzenie będzie używane do testowania.
 

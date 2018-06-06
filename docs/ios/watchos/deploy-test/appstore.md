@@ -1,19 +1,20 @@
 ---
-title: Wdrażanie do sklepu z aplikacjami
-description: Wdrażanie aplikacji czujki do sklepu z aplikacjami
+title: Wdrażanie watchOS aplikacji do sklepu z aplikacjami
+description: Ten dokument zawiera opis sposobu wdrażania aplikacji watchOS skompilowanych za pomocą platformy Xamarin do sklepu z aplikacjami. Trwa przyjrzeć się dystrybucji profilów aprowizacji i iTunes Connect, a także wskazówki dotyczące rozwiązywania problemów.
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70613c79c2ec0c81f1dbdc218b747f809f859767
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790987"
 ---
-# <a name="deploying-to-the-app-store"></a>Wdrażanie do sklepu z aplikacjami
+# <a name="deploying-watchos-apps-to-the-app-store"></a>Wdrażanie watchOS aplikacji do sklepu z aplikacjami
 
 > [!IMPORTANT]
 > Należy zapoznać się z tematem [firmy Apple Watch zestawu przesyłanie przewodnik](https://developer.apple.com/app-store/watch/)i zobacz [Rozwiązywanie problemów](#Troubleshooting) sekcji może mieć problemy.

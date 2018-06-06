@@ -1,19 +1,20 @@
 ---
-title: Funkcje platformy
-description: Apple Watch specyficzne funkcje do uwzględnienia w aplikacjach watchOS.
+title: watchOS funkcji platformy
+description: Ten dokument prowadzi do różnych prowadnice, opisujących watchOS platformy funkcje, takie jak Apple Pay, powiadomienia, komplikacji, aktywne sugestii, ćwiczeń aplikacje i inne.
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9b90c799f2635221a2c19bda426c501737600f88
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ad4dc52c3bca0f54adb64bb97acaa23aeb1e590
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791296"
 ---
-# <a name="platform-features"></a>Funkcje platformy
+# <a name="watchos-platform-features"></a>watchOS funkcji platformy
 
 _Apple Watch specyficzne funkcje do uwzględnienia w aplikacjach watchOS._
 

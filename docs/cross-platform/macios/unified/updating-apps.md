@@ -1,23 +1,24 @@
 ---
 title: Aktualizowanie istniejącej aplikacji interfejsu API Unified
+description: Ten dokument łącza do różnych prowadnic, które opisują jak aktualizować aplikacje platformy Xamarin do interfejsu API Unified. Zawarto informacje aplikacji platformy Xamarin.iOS, Xamarin.Mac aplikacji. Typy natywne w wieloplatformowych aplikacji i projekty powiązanie aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781634"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualizowanie istniejącej aplikacji interfejsu API Unified
 
 > [!IMPORTANT]
-> **Amortyzacja klasycznego profilu:** miarę dodawania nowych platform w Xamarin.iOS zostanie użyty stopniowo zastąpić funkcji z klasycznym profilu (monotouch.dll). Na przykład opcja z systemem innym niż NRC (liczba nowych ref) została usunięta. NRC zawsze została włączona dla wszystkich ujednoliconego aplikacji (tj. z systemem innym niż NRC nigdy nie był opcję) i ma nie znanych problemów. Przyszłych wydaniach usunie opcję użycia Boehm jako moduł garbage collector. Było również opcję Nigdy nie są dostępne do ujednoliconego aplikacji. Dalej znajduje się w wersji Xamarin.iOS 10.0 zaplanowano całkowite usunięcie klasycznego pomocy technicznej.
-
-
-
+> Xamarin klasycznego interfejsu API, który poprzedzone interfejsu API Unified, jest przestarzała. 
+> - Ostatnia wersja platformy Xamarin.iOS do obsługi klasycznego interfejsu API (monotouch.dll) została 9.10 platformy Xamarin.iOS.
+> - Xamarin.Mac nadal obsługuje klasycznego interfejsu API, ale nie jest aktualizowane. Ponieważ jest przestarzały, deweloperzy należy przenieść ich aplikacji interfejsu API Unified.
 
 ## <a name="how-to-update-your-apps"></a>Jak aktualizować aplikacje
 
@@ -31,7 +32,7 @@ Istnieją trzy kroki, aby zaktualizować swoje aplikacje:
 
 2. Narzędzie migracji z wbudowanej w Visual Studio for Mac można zaktualizować plików projektu i przestrzenie nazw.
 
-3. Usuń pozostałe błędy kompilatora odnoszących się do nowego [typy 64](~/cross-platform/macios/nativetypes.md) i [innych interfejsów API](~/cross-platform/macios/unified/index.md#deprecated-typos) które uległy zmianie. Zapoznaj się z [te wskazówki](~/cross-platform/macios/unified/updating-tips.md) dodatkowe informacje na temat ręcznej aktualizacji, które mogą być wymagane.
+3. Usuń pozostałe błędy kompilatora odnoszących się do nowego [typy 64](~/cross-platform/macios/nativetypes.md) i [innych interfejsów API](~/cross-platform/macios/unified/overview.md#deprecated-typos) które uległy zmianie. Zapoznaj się z [te wskazówki](~/cross-platform/macios/unified/updating-tips.md) dodatkowe informacje na temat ręcznej aktualizacji, które mogą być wymagane.
 
 Przewodniki określonych są dostępne dla każdego produktu w celu aktualizacji aplikacji do ujednoliconego interfejsu API i Obsługa 64-bitowego:
 
@@ -55,9 +56,6 @@ W tym artykule omówiono korzystanie nowe typy natywnego interfejsu API Unified 
 
 Klienci, którzy utworzono powiązania do bibliotek języka Objective-C, musisz zaktualizować projektu powiązania w celu odzwierciedlenia zmian w podstawowej interfejsu API (gdzie niektórych typów można tworzyć 64-bitowe).
 Wykonaj te instrukcje, aby [zaktualizować istniejący projekt powiązanie do obsługi interfejsu API Unified](~/cross-platform/macios/unified/update-binding.md).
-
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

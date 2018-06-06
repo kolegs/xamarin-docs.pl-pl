@@ -1,22 +1,20 @@
 ---
-title: Touch
-description: Ekranów dotykowych na wielu urządzeniach współczesnych Zezwalaj użytkownikom na interakcję z urządzeniami, szybkie i skuteczne jak fizyczną i intuicyjne. Ta interakcja nie jest ograniczona tylko w celu wykrywania touch proste — można również gesty. Na przykład gestu powiększanie gestem uszczypnięcia jest bardzo typowym przykładem tego — punkty zaciskające części ekranu z dwoma palcami, które użytkownik może powiększanie lub pomniejszanie. W tym przewodniku sprawdza touch i gestów w systemie iOS.
+title: Obsługa Touch w aplikacji platformy Xamarin.iOS
+description: Ten dokument prowadzi do prowadnic, które opisują sposób pracy z touch, wielodotyku i gestów oraz technologii 3D Touch w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784165"
 ---
-# <a name="touch"></a>Touch
-
-_Ekranów dotykowych na wielu urządzeniach współczesnych Zezwalaj użytkownikom na interakcję z urządzeniami, szybkie i skuteczne jak fizyczną i intuicyjne. Ta interakcja nie jest ograniczona tylko w celu wykrywania touch proste — można również gesty. Na przykład gestu powiększanie gestem uszczypnięcia jest bardzo typowym przykładem tego — punkty zaciskające części ekranu z dwoma palcami, które użytkownik może powiększanie lub pomniejszanie. W tym przewodniku sprawdza touch i gestów w systemie iOS._
-
+# <a name="handling-touch-in-xamarinios-apps"></a>Obsługa Touch w aplikacji platformy Xamarin.iOS
 
 Podobnie jak inne platformy mobilne dla systemu iOS ma kilka różnych sposobów do obsługi dotykowej. Obsługuje on wielodotyku — wiele punktów kontaktu na ekranie — i gestów złożonych. Ten przewodnik przedstawia niektóre z pojęć, a także szczegóły dotyczące implementowania touch i gestów w systemie iOS.
 
@@ -38,8 +36,6 @@ W tym przewodniku stanowi wprowadzenie do platformy Touch w systemie iOS. Aby uz
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Przekazywanie opinii dotykowych](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

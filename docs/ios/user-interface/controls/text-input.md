@@ -1,18 +1,20 @@
 ---
-title: Wprowadzanie tekstu
+title: Wprowadzanie tekstu w Xamarin.iOS
+description: W tym dokumencie opisano wprowadzanie tekstu w aplikacji platformy Xamarin.iOS. Zawarto informacje przy użyciu UITextField i UITextVIew programowo i w systemie iOS projektanta.
 ms.prod: xamarin
 ms.assetid: 03A7F1DC-017D-4501-91FD-82C78272CDB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 43f1f0318bceb3da8a3d6216a49ec2af48ac155c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5d8648f5830a7adcd32d253b92fae45098f12a83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790217"
 ---
-# <a name="text-input"></a>Wprowadzanie tekstu
+# <a name="text-input-in-xamarinios"></a>Wprowadzanie tekstu w Xamarin.iOS
 
 Akceptowanie danych wejściowych użytkownika tekst jest realizowane za pomocą `UITextField` na jeden wiersz danych wejściowych i UITextView edycji tekstu wielowierszowego. Można przeciągnięcie dowolnej z tych kontrolek do ekranu i kliknij dwukrotnie, aby ustawić tekst początkowej.
 

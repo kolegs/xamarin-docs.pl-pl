@@ -1,19 +1,20 @@
 ---
-title: Debugowanie natywnych awarii
-description: Ten przewodnik opisuje sposób debugowania wyjątki, które pochodzą z języka Objective-C runtime.
+title: Debugowanie natywnych awarii w aplikacji Xamarin.Mac
+description: Ten dokument zawiera opis sposobu debugowania wyjątki, które pochodzą z języka Objective-C runtime. On omówiono błędy potwierdzenia, problemy związane z wywołań zwrotnych, propagacji wyjątku i więcej.
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 211f85c32fae3ed947e01890916e0a646981a51b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66ef76c4305e572d5cc45c142f38d89d6f17eeb0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792128"
 ---
-# <a name="debugging-a-native-crash"></a>Debugowanie natywnych awarii
+# <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Debugowanie natywnych awarii w aplikacji Xamarin.Mac
 
 ## <a name="overview"></a>Omówienie
 

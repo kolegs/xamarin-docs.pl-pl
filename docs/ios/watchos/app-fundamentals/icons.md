@@ -1,17 +1,19 @@
 ---
-title: Praca z ikonami
+title: Praca z watchOS ikony na platformie Xamarin
+description: W tym dokumencie opisano różne ikony niezbędne do aplikacji watchOS i sposobu konfigurowania rozwiązania, aby uwzględnić te ikony.
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a7cdecaa2ba6a8c9f28ef8598fec31506eee6852
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790669"
 ---
-# <a name="working-with-icons"></a>Praca z ikonami
+# <a name="working-with-watchos-icons-in-xamarin"></a>Praca z watchOS ikony na platformie Xamarin
 
 Apple Watch rozwiązania wymagają dwa zestawy ikon:
 

@@ -1,21 +1,20 @@
 ---
-title: Zadania w tle
-description: Nowe watchOS zadania w tle 3 umożliwia upewnij się, że aplikacji czujki ma zawsze najnowszych danych i migawek dokowania.
+title: watchOS zadania w tle w programie Xamarin
+description: Ten dokument zawiera opis sposobu zadania w tle za pomocą watchOS w Xamarin, biorąc przyjrzeć się typów zadań tła, korzystając z zasobów, wykonania zadania w tle, planowania, najlepsze rozwiązania i inne.
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 0279aed1e694e3b38dcb8189819d88740c37b6ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ab53d4aea32cf41c492e286c18cbe85a619889a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792050"
 ---
-# <a name="background-tasks"></a>Zadania w tle
-
-_Nowe watchOS zadania w tle 3 umożliwia upewnij się, że aplikacji czujki ma zawsze najnowszych danych i migawek dokowania._
+# <a name="watchos-background-tasks-in-xamarin"></a>watchOS zadania w tle w programie Xamarin
 
 WatchOS 3 istnieją trzy sposoby czy aplikacji czujki można zachować informacje aktualne: 
 

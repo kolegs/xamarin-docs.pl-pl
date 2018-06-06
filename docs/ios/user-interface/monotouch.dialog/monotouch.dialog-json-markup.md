@@ -1,17 +1,19 @@
 ---
-title: MonoTouch.Dialog Json Markup
+title: MonoTouch.Dialog Json znaczników
+description: Ten dokument zawiera opis składni JSON, który może służyć do tworzenia interfejsu użytkownika platformy Xamarin.iOS przy użyciu MonoTouch.Dialog.
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 02c95f06571a3c242481769846d7cab51450f2ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790760"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
+# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json znaczników
 
 Na tej stronie opisano znaczników Json zaakceptowane przez jego MonoTouch.Dialog [JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
 

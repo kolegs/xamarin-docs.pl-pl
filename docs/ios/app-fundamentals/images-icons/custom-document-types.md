@@ -1,5 +1,5 @@
 ---
-title: Ikony niestandardowy dokument
+title: Niestandardowy dokument ikony platformy Xamarin.iOS
 description: Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS do użycia jako ikona niestandardowy typ dokumentu.
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: b369667bd728f7c8b6e8bcfed9cf5bca2916bf69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 415500050e4e957ca635c4b18004716dd44a162d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784154"
 ---
-# <a name="custom-document-icons"></a>Ikony niestandardowy dokument
+# <a name="custom-document-icons-in-xamarinios"></a>Niestandardowy dokument ikony platformy Xamarin.iOS
 
 _Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS do użycia jako ikona niestandardowy typ dokumentu._
 
@@ -28,7 +29,7 @@ W przypadku kilku rozmiarów zoptymalizowane dla różnych rozdzielczości urzą
 
 Aby przypisać te wartości w programie Visual Studio dla komputerów Mac, należy użyć **typów dokumentów** w obszarze **zaawansowane** karcie na `Info.plist` edytora, aby dodać typ dokumentu i przypisać do obrazu ikony. Na przykład poniżej przedstawiono zrzut ekranu przedstawiający rejestracji do obsługi plików PDF:
 
- [![](custom-document-types-images/18.png "W sekcji typów dokumentów, na karcie Zaawansowane w edytorze "Info.plist"")](custom-document-types-images/18.png#lightbox)
+ [![](custom-document-types-images/18.png "W sekcji typów dokumentów, na karcie Zaawansowane w edytorze \"Info.plist\"")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

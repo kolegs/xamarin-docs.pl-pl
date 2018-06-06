@@ -1,21 +1,19 @@
 ---
-title: Zakup w aplikacji
-description: aplikacje systemu iOS sprzedać cyfrowe produktów i usług przy użyciu interfejsów API zestawu magazynu. Produkty są tworzone i zarządzane w portalu Connect iTunes. Apple zarządza przetwarzanie transakcji i zatwierdza wszystkie produkty przed ich można sprzedać, a opłaty opłaty za każdą transakcję (obecnie 30%). Firma Apple wymaga, że używasz zakupu w aplikacji dla żadnej cyfrowe sprzedaży w aplikacji, ale nie można używać go sprzedaży fizycznych towarów lub usług-cyfrowego. Aplikacje, które oferują opcje płatności alternatywny cyfrowe produkty i usługi są prawdopodobnie odrzucane. Ten dokument wyjaśniono, jak skonfigurować aplikację tak, aby użyć zestawu magazynu i zawiera przykłady najbardziej typowych scenariuszy zakupów w aplikacji platformy Xamarin.iOS.
+title: Zakup w Xamarin.iOS w aplikacji
+description: Ten dokument zawiera opis sposobu sprzedaży cyfrowe produktów i usług przy użyciu interfejsów API StoreKit. Łączy z przewodników dotyczących konfiguracji, eksploatacyjny produktów, produkty z systemem innym niż niestandardowe, transakcje, subskrypcje i inne.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a41ed44a331c91a333b95c1d62136244a6945dd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787344"
 ---
-# <a name="in-app-purchasing"></a>Zakup w aplikacji
-
-_aplikacje systemu iOS sprzedać cyfrowe produktów i usług przy użyciu interfejsów API zestawu magazynu. Produkty są tworzone i zarządzane w portalu Connect iTunes. Apple zarządza przetwarzanie transakcji i zatwierdza wszystkie produkty przed ich można sprzedać, a opłaty opłaty za każdą transakcję (obecnie 30%). Firma Apple wymaga, że używasz zakupu w aplikacji dla żadnej cyfrowe sprzedaży w aplikacji, ale nie można używać go sprzedaży fizycznych towarów lub usług-cyfrowego. Aplikacje, które oferują opcje płatności alternatywny cyfrowe produkty i usługi są prawdopodobnie odrzucane. Ten dokument wyjaśniono, jak skonfigurować aplikację tak, aby użyć zestawu magazynu i zawiera przykłady najbardziej typowych scenariuszy zakupów w aplikacji platformy Xamarin.iOS._
-
+# <a name="in-app-purchasing-in-xamarinios"></a>Zakup w Xamarin.iOS w aplikacji
 
 aplikacje systemu iOS sprzedać cyfrowe produktów lub usług przy użyciu StoreKit — zestaw interfejsów API dostarczonych przez system iOS, które komunikują się z serwerami firmy Apple do przeprowadzania transakcji finansowych z użytkownikiem za pośrednictwem ich Apple ID. Interfejsy API StoreKit dotyczy głównie podczas pobierania informacji o produkcie i przeprowadzanie transakcji — nie składnik interfejsu użytkownika. Aplikacje, które implementują zakupu w aplikacji należy Tworzenie interfejsu użytkownika i śledzić zakupione elementy kodu niestandardowego, aby zapewnić użytkownikowi wymaganych produktów lub usług.
 
@@ -27,9 +25,7 @@ Dostarczanie funkcji zakupu w aplikacji wymaga kilku kroków:
 -  **Tworzenie interfejsu użytkownika i samych produktów** — produkty muszą zostać zaimplementowane, łącznie z mechanizmów śledzenia każdego zakupu i tworzenia kopii zapasowej i przywracania ich w razie potrzeby.
 -  **Monitorowanie sprzedaży i uzyskania środków** — Użyj informacji dostarczonych przez iTunes Connect, aby monitorować trendy sprzedaży i śledzić przychodów.
 
-
 Tym dokumencie wyjaśniono, jak wykonać te kroki w ramach zapewnienia zakupy w aplikacjach za pomocą platformy Xamarin.iOS.
-
 
 ## <a name="requirements"></a>Wymagania
 
@@ -39,7 +35,7 @@ Aby obsługiwać zakupu w aplikacji należy użyć Xamarin.iOS 5.0 lub nowszej X
 
  * [Konfiguracja i podstawowe informacje dotyczące zakupów w aplikacji](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
- * [Omówienie zestawu Store Kit i pobieranie informacji o produkcie](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ * [Omówienie StoreKit i pobierania informacji o produkcie](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
  * [Zakup produktów, które można wykorzystać](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
@@ -48,7 +44,6 @@ Aby obsługiwać zakupu w aplikacji należy użyć Xamarin.iOS 5.0 lub nowszej X
  * [Transakcje i weryfikacja](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
  * [Subskrypcje i raportowanie](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
-
 
 ## <a name="summary"></a>Podsumowanie
 

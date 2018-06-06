@@ -1,18 +1,20 @@
 ---
-title: Powiadomienia
+title: watchOS powiadomień w programie Xamarin
+description: Ten dokument zawiera opis sposobu pracy z watchOS powiadomień w programie Xamarin. Go w tym artykule omówiono tworzenie kontrolerów powiadomień, generowanie powiadomień i testowanie powiadomień.
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 1a681c2bda941d8fe015a8d4da8b99f4d85e441b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42b0354f19a9e0c31b7a859d598526fddad726cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791913"
 ---
-# <a name="notifications"></a>Powiadomienia
+# <a name="watchos-notifications-in-xamarin"></a>watchOS powiadomień w programie Xamarin
 
 Obejrzyj aplikacji można otrzymywać powiadomienia, jeśli aplikacji systemu iOS zawierające je obsługuje. Brak obsługi wbudowanych powiadomień, w przeciwnym *muszą* Aby dodać obsługę powiadomień dodatkowe opisane poniżej, ale jeśli chcesz dostosować zachowanie powiadomień i wyglądu odczytać na.
 
@@ -56,7 +58,7 @@ Widok statyczny powinien być proste i szybkie do wyświetlenia.
 
 ![](notifications-images/notification-static.png "Widok statyczny")
 
-#### <a name="dynamic"></a>Dynamic
+#### <a name="dynamic"></a>dynamiczne
 
 Widok dynamiczny można wyświetlić więcej danych i udostępniać więcej interakcji.
 

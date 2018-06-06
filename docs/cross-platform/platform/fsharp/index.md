@@ -1,18 +1,19 @@
 ---
-title: F#
-description: 'F # to silnie typizowane funkcjonalny język programowania przeznaczonych do uruchamiania na platformie .NET'
+title: 'Przy użyciu języka F # za pomocą platformy Xamarin'
+description: 'F # to silnie typizowane funkcjonalny język programowania przeznaczonych do uruchamiania na platformie .NET. Ten dokument zawiera omówienie funkcji i łącza do przykładów z F #.'
 ms.prod: xamarin
 ms.assetid: 506410BD-F89C-4FEB-8915-760FE250A206
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 1679c0fa561a5b96463050d82fca3854bb819b52
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2a6c666878c16cbb4aca6fbaa3c9f8d0c656d0bc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781152"
 ---
-# <a name="f35"></a>F&#35;
+# <a name="using-f-with-xamarin"></a>Przy użyciu języka F # za pomocą platformy Xamarin
 
 F # to open source, obsługujący wiele platform, funkcjonalny język programowania dla platformy .NET.
 

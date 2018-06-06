@@ -1,5 +1,5 @@
 ---
-title: Interfejs użytkownika
+title: Tworzenie systemu tvOS interfejsów użytkownika za pomocą platformy Xamarin
 description: Środowisko użytkownika ogólne (UX) pokrycia tym formantów interfejsu użytkownika (UI), użyj Konstruktora interfejsu i zasady projektowania środowiska użytkownika w środowisku Xcode podczas pracy z Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc29510b90a3651f7547f38c234b6e2904016f83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789070"
 ---
-# <a name="user-interface"></a>Interfejs użytkownika
+# <a name="building-tvos-user-interfaces-with-xamarin"></a>Tworzenie systemu tvOS interfejsów użytkownika za pomocą platformy Xamarin
 
 _Środowisko użytkownika ogólne (UX) pokrycia tym formantów interfejsu użytkownika (UI), użyj Konstruktora interfejsu i zasady projektowania środowiska użytkownika w środowisku Xcode podczas pracy z Xamarin.tvOS._
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.tvOS, masz dostęp do tego samego formantów interfejsu użytkownika, które jest dewelopera pracy w języku Objective-C lub Swift i Xcode. Ponieważ Xamarin.tvOS integruje się bezpośrednio z Xcode, można użyć konstruktora interfejsu w środowisku Xcode do tworzenia i obsługi interfejsów użytkownika (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
+Podczas pracy z C# i .NET w systemu tvOS oparte na środowisku Xamarin, masz dostęp do tego samego formantów interfejsu użytkownika, które jest dewelopera pracy w języku Objective-C lub Swift i Xcode. W środowisku Xcode interfejsu konstruktora może służyć do tworzenia i obsługi interfejsów użytkownika (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
 Przewodniki wymienionych poniżej zapewniają szczegółowe informacje na temat pracy z systemu tvOS elementy interfejsu użytkownika w aplikacji Xamarin.tvOS. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, przewodnik Szybki Start systemu tvOS](~/ios/tvos/get-started/hello-tvos.md) pierwsze, jako jego omawia kluczowe założenia i techniki, które będziemy używać w każdym artykule.
 

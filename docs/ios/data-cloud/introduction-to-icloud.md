@@ -1,21 +1,20 @@
 ---
-title: usługi iCloud
-description: Firma Apple wprowadziła iCloud w systemie iOS 5 jako usługa, aby umożliwić aplikacjom przechowywanie danych na serwerach firmy Apple i jego synchronizację wszystkie urządzenia używane przez tę samą osobę (za pośrednictwem ich identyfikator Apple ID). Ma również składnik kopii zapasowej, której dane na urządzeniach jest kopii zapasowej do serwerów firmy Apple. Ten dokument zawiera opis sposobu korzystać z niektórych iCloud interfejsów API podany przez firmę Apple do przechowywania i pobierania danych ze swoich serwerów, z C# próbki do przechowywania par klucz wartość niewielkie zbiory danych i do przechowywania dokumentów. Omówiono również, jak iCloud kopii zapasowej może mieć wpływ projektu danej aplikacji.
+title: Z platformy Xamarin.iOS przy użyciu usługi iCloud
+description: W tym dokumencie opisano iCloud i jego użycia w aplikacji platformy Xamarin.iOS. Omówiono jej magazynu kluczy i wartości, przechowywania dokumentów i usługi iCloud kopii zapasowej.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785547"
 ---
-# <a name="icloud"></a>usługi iCloud
-
-_Firma Apple wprowadziła iCloud w systemie iOS 5 jako usługa, aby umożliwić aplikacjom przechowywanie danych na serwerach firmy Apple i jego synchronizację wszystkie urządzenia używane przez tę samą osobę (za pośrednictwem ich identyfikator Apple ID). Ma również składnik kopii zapasowej, której dane na urządzeniach jest kopii zapasowej do serwerów firmy Apple. Ten dokument zawiera opis sposobu korzystać z niektórych iCloud interfejsów API podany przez firmę Apple do przechowywania i pobierania danych ze swoich serwerów, z C# próbki do przechowywania par klucz wartość niewielkie zbiory danych i do przechowywania dokumentów. Omówiono również, jak iCloud kopii zapasowej może mieć wpływ projektu danej aplikacji._
+# <a name="using-icloud-with-xamarinios"></a>Z platformy Xamarin.iOS przy użyciu usługi iCloud
 
 Magazyn iCloud interfejsu API w systemie iOS 5 umożliwia aplikacji, aby zapisać użytkownika dokumenty i dane specyficzne dla aplikacji w lokalizacji centralnej i uzyskiwać dostęp do tych elementów z wszystkich urządzeń użytkownika.
 

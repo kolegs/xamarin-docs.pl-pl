@@ -1,19 +1,20 @@
 ---
-title: Touch ID
-description: Touch ID jest technologią uwierzytelniania biometrycznego odcisku palca firmy Apple.
+title: Touch ID w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu użycia funkcji Touch ID technologii uwierzytelniania biometrycznego odcisku palca firmy Apple, w aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788592"
 ---
-# <a name="touch-id"></a>Touch ID
+# <a name="touch-id-in-xamarinios"></a>Touch ID w Xamarin.iOS
 
 Touch ID została wprowadzona w systemie iOS 7 jako metody uwierzytelniania użytkownika — podobnie jak kod dostępu. Jednak została ograniczona do odblokowywania urządzenia, przy użyciu sklepu z aplikacjami, za pomocą programu iTunes i iCloud łańcucha kluczy tylko uwierzytelniania.
 

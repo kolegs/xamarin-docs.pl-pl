@@ -1,17 +1,19 @@
 ---
-title: Wprowadzenie
+title: Wprowadzenie do celu Sharpie
+description: Ten dokument zawiera omówienie celu Sharpie, narzędzie służące do automatyzacji tworzenia powiązań C# do kodu języka Objective-C.
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 5f61d0794e1f5a38370f0d840504720043f69590
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a0431f8952055a55be24ae5f85381a4295206a40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781819"
 ---
-# <a name="getting-started"></a>Wprowadzenie
+# <a name="getting-started-with-objective-sharpie"></a>Wprowadzenie do celu Sharpie
 
 > [!IMPORTANT]
 > Celu Sharpie to narzędzie dla deweloperów programu Xamarin doświadczenie z zaawansowanej wiedzy na temat języka Objective-C (i przez rozszerzenie, C). Przed podjęciem próby powiązania biblioteka języka Objective-C powinien mieć stałe wiedzę na temat sposobu tworzenia natywnej biblioteki w wierszu polecenia (i dobrą znajomością działania natywnej biblioteki).

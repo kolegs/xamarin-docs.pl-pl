@@ -1,30 +1,31 @@
 ---
-title: PhotoKit
-description: Zestaw fotografii umożliwia aplikacjom zapytania Biblioteka obrazów systemu i utworzyć niestandardowego interfejsu użytkownika Służącego do wyświetlania i modyfikowania jego zawartość.
+title: PhotoKit w Xamarin.iOS
+description: W tym dokumencie opisano PhotoKit dyskutować jego obiekty modelu, jak wykonać zapytania o dane modelu i zapisywanie zmian w bibliotece zdjęcie.
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: c721064f62f8e2255de2b4ea2d0438e3ed630d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787900"
 ---
-# <a name="photokit"></a>PhotoKit
+# <a name="photokit-in-xamarinios"></a>PhotoKit w Xamarin.iOS
 
-_Zestaw fotografii umożliwia aplikacjom zapytania Biblioteka obrazów systemu i utworzyć niestandardowego interfejsu użytkownika Służącego do wyświetlania i modyfikowania jego zawartość._
-
-Zdjęcie Kit to nowe struktury, która umożliwia aplikacjom zapytania Biblioteka obrazów systemu oraz tworzenie niestandardowych interfejsów użytkownika do wyświetlania i modyfikowania jego zawartość. Zawiera liczbę klas reprezentujących obrazu i zasoby wideo, a także kolekcji zasobów, takich jak albumów i folderów.
+PhotoKit jest nowe struktury, która umożliwia aplikacjom zapytania Biblioteka obrazów systemu oraz tworzenie niestandardowych interfejsów użytkownika do wyświetlania i modyfikowania jego zawartość. Zawiera liczbę klas reprezentujących obrazu i zasoby wideo, a także kolekcji zasobów, takich jak albumów i folderów.
 
 ## <a name="model-objects"></a>Model obiektów
-Zestaw fotografii reprezentuje tych zasobów co wywołuje obiekty modelu. Obiekty modelu, które reprezentują zdjęć i klipów wideo, same są typu `PHAsset`. A `PHAsset` zawiera metadane, takie jak typ nośnika elementu zawartości i jego data utworzenia.
+
+PhotoKit reprezentuje tych zasobów co wywołuje obiekty modelu. Obiekty modelu, które reprezentują zdjęć i klipów wideo, same są typu `PHAsset`. A `PHAsset` zawiera metadane, takie jak typ nośnika elementu zawartości i jego data utworzenia.
 Podobnie `PHAssetCollection` i `PHCollectionList` klasy odpowiednio zawierać metadane dotyczące kolekcji zasobów i kolekcji list. Kolekcje zasobów są grup zasobów, takich jak zdjęć i klipów wideo w danym roku. Podobnie listy kolekcji są grup kolekcji zasobów, takie jak zdjęcia i filmy pogrupowane według roku.
 
 ## <a name="querying-model-data"></a>Wykonywanie zapytania na danych modelu
-Zestaw fotografii można łatwo zapytania modelu danych przy użyciu różnych metod pobierania. Na przykład, aby pobrać wszystkie obrazy, należy wywołać `PFAsset.Fetch`, przechodzącą `PHAssetMediaType.Image` typu nośnika.
+
+PhotoKit ułatwia zapytania modelu danych przy użyciu różnych metod pobierania. Na przykład, aby pobrać wszystkie obrazy, należy wywołać `PFAsset.Fetch`, przechodzącą `PHAssetMediaType.Image` typu nośnika.
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 

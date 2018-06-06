@@ -1,18 +1,20 @@
 ---
-title: Testowanie jednostkowe
+title: Jednostka testowania aplikacji platformy Xamarin.iOS
+description: Ten dokument zawiera omówienie sposobu testu jednostkowego aplikacji platformy Xamarin.iOS. Przedstawiono sposób tworzenia projektu testu jednostkowego, c++ pozwala pisać testy i uruchamiania testów.
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3129302cbb2fbe9e2757986317da0ec30601b492
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785466"
 ---
-# <a name="unit-testing"></a>Testowanie jednostkowe
+# <a name="unit-testing-xamarinios-apps"></a>Jednostka testowania aplikacji platformy Xamarin.iOS
 
 Ten dokument zawiera opis sposobu tworzenia testów jednostkowych dla projektów platformy Xamarin.iOS.
 Testowanie jednostkowe na platformie Xamarin.iOS odbywa się przy użyciu platformy Touch.Unit, która obejmuje zarówno dla systemu iOS uruchamiający, a także zmodyfikowanej wersji NUnit o nazwie [Touch.Unit](https://github.com/xamarin/Touch.Unit) udostępniająca znanych zestaw interfejsów API do pisania testów jednostkowych.

@@ -1,21 +1,20 @@
 ---
-title: Ikona sklepu z aplikacjami
-description: Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS ma być używany jako ikonę aplikacji sklepu.
+title: Ikony sklepu z aplikacjami platformy Xamarin.iOS
+description: Ten dokument zawiera opis sposobu katalogi zasobów umożliwia zarządzanie ikona Sklepu z aplikacjami dla aplikacji platformy Xamarin.iOS. Wcześniej ikony sklepu z aplikacjami zostały zarządzanych za pomocą programu iTunes Connect.
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783613"
 ---
-# <a name="app-store-icon"></a>Ikona sklepu z aplikacjami
-
-_Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS ma być używany jako ikonę aplikacji sklepu._
+# <a name="app-store-icons-in-xamarinios"></a>Ikony sklepu z aplikacjami platformy Xamarin.iOS
 
 Przed Xcode 9 wszystkie ikony sklepu z aplikacjami zostały dodane za pomocą programu iTunes Connect. Jednak nie jest to już wielkość liter. Ikony sklepu z aplikacjami teraz musi być dołączone jako część pakietu z projektu i dodać w katalogu zasobów. Aplikacje, które nie zawierają ikona Sklepu z aplikacjami zostaną odrzucone przez firmę Apple.
 

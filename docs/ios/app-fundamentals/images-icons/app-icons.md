@@ -1,22 +1,20 @@
 ---
-title: Ikony aplikacji
-description: Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS ma być używany jako ikonę aplikacji.
+title: Ikony aplikacji platformy Xamarin.iOS
+description: 'W tym dokumencie opisano sposób pracy z różnych ikony aplikacji platformy Xamarin.iOS: się ikona aplikacji, Spotlight ikony, Ustawienia ikon i kompozycji iTunes.'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 3c07f2573aa8ac6e28b2cd6bff56a773e6206aea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562893"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784000"
 ---
-# <a name="application-icons"></a>Ikony aplikacji
-
-_Ten artykuł obejmuje tym i zarządzanie zasób obrazu w aplikacji platformy Xamarin.iOS ma być używany jako ikonę aplikacji._
+# <a name="application-icons-in-xamarinios"></a>Ikony aplikacji platformy Xamarin.iOS
 
 Poniższe tematy zostanie omówiona szczegółowo:
 

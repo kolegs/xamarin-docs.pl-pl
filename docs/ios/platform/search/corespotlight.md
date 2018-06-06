@@ -1,18 +1,20 @@
 ---
-title: Wyszukiwania z wyróżnionym Core
+title: Wyszukiwania z wyróżnionym Core w Xamarin.iOS
+description: Ten dokument zawiera opis sposobu umożliwia Core uwagi w aplikacji platformy Xamarin.iOS zawierają łącza do zawartości w aplikacji. Zawarto informacje, jak tworzenie, przywracania, aktualizowanie i usuwanie elementy możliwe do wyszukania.
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0074cfcdc4a80f66f64d12f8e5c0a5e81ab2b8a1
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: a8bc3aaa43d7830b0a3baa0768d495458b1ecfad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788042"
 ---
-# <a name="search-with-core-spotlight"></a>Wyszukiwania z wyróżnionym Core
+# <a name="search-with-core-spotlight-in-xamarinios"></a>Wyszukiwania z wyróżnionym Core w Xamarin.iOS
 
 Core Spotlight jest nowa struktura dla systemu iOS 9, która stanowi interfejs API przypominającej bazy danych, aby dodać, edytować lub usunąć łącza do zawartości w aplikacji. Elementy, które zostały dodane przy użyciu Spotlight rdzenie będą dostępne w przez wyszukiwanie Spotlight na urządzeniu z systemem iOS.
 

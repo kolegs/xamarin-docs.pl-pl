@@ -1,34 +1,32 @@
 ---
-title: Funkcje platformy
-description: Dokumenty w tej sekcji opisano funkcje właściwe dla systemu iOS.
+title: Funkcje platformy systemu iOS
+description: Ten dokument łącza do różnych prowadnic, które opisano funkcje dodane w różnych wersjach systemu IOS i innych funkcji platformy iOS.
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95053faa4bab0a65660772aeea39405e4a80a042
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787090"
 ---
-# <a name="platform-features"></a>Funkcje platformy
+# <a name="ios-platform-features"></a>Funkcje platformy systemu iOS
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[Wprowadzenie do systemu iOS 11](~/ios/platform/introduction-to-ios11/index.md)
 
 Jak zainstalować i rozpoczynanie pracy z Xcode 9 w wersji beta i obsługi 11 Xamarin dla systemu iOS w wersji zapoznawczej.
 
-
 ##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[Wprowadzenie do systemu iOS 10](~/ios/platform/introduction-to-ios10/index.md)
 
 IOS firmy Apple 10 obejmuje kilka nowych interfejsów API i usług, które umożliwiają opracowywanie aplikacji przy użyciu nowych funkcji. W przypadku systemu iOS 10 aplikacje mają nowe możliwości, takich jak rozszerzanie mapy, wiadomości, Phone i używanie programu Siri. W tej sekcji przedstawiono hows móc korzystać z tych funkcji w aplikacji platformy Xamarin.iOS.
 
-
 ##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[Wprowadzenie do systemu iOS 9](~/ios/platform/introduction-to-ios9/index.md)
 
 Ta sekcja definiuje zmiany wprowadzone w systemie iOS 9 w przypadku uaktualniania z systemem iOS 8 i sposobie używania tych funkcji w aplikacji platformy Xamarin.iOS.
-
 
 ##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[Wprowadzenie do systemu iOS 8](~/ios/platform/introduction-to-ios8.md)
 
@@ -147,8 +145,6 @@ Jesteś nowym użytkownikiem iOS 10, powiadomienie użytkownika pozwala dostarcz
 ##  <a name="wide-coloriosplatformwide-colormd"></a>[Szeroki zakres kolorów](~/ios/platform/wide-color.md)
 
 iOS 10 i macOS Sierra podnosi poziom obsługi formatów pikseli rozszerzony zakres i całej gamy przestrzenie w całym systemie, w tym platform, takich jak Core grafiki, Core obrazu systemu operacyjnego i AVFoundation. Obsługa urządzeń z przedstawia szeroką kolor dalsze jest ułatwiony dostarczając to zachowanie przez cały stos całej grafiki.
-
-
 
 ##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Tworzenie powiązań języka Objective-C](binding-objective-c/index.md)
 

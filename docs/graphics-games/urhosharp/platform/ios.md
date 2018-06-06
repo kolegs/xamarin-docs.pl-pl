@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp iOS i obsługę systemu tvOS
-description: iOS i systemu tvOS określonych ustawień i funkcji do UrhoSharp.
+description: W tym dokumencie omówiono iOS oraz systemu tvOS obsługę UrhoSharp. Przedstawiono sposób tworzenia projektu, konfigurowanie i uruchamianie Urho i wykonywanie niestandardowych osadzania z Urho.
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 322297e7782a06a2d900b12cd5afc5f469009f69
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783978"
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS i obsługę systemu tvOS
-
-_iOS i systemu tvOS określonych ustawień i funkcji_
 
 Biblioteka klas przenośnych jest Urho i zezwala na tego samego interfejsu API do użycia przez różne platformy dla logiki gier, nadal należy zainicjować Urho w sterowniku określonych platform, a w niektórych przypadkach, można wykorzystać funkcje specyficzne dla platformy .
 

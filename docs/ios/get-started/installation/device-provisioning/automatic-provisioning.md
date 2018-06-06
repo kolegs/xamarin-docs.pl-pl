@@ -1,5 +1,5 @@
 ---
-title: Automatyczne inicjowanie obsługi administracyjnej
+title: Automatyczne inicjowanie obsługi administracyjnej dla platformy Xamarin.iOS
 description: Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik opisuje za pomocą podpisywania automatycznego żądania certyfikatów programowanie i profilów.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785820"
 ---
-# <a name="automatic-provisioning"></a>Automatyczne inicjowanie obsługi administracyjnej
+# <a name="automatic-provisioning-for-xamarinios"></a>Automatyczne inicjowanie obsługi administracyjnej dla platformy Xamarin.iOS
 
 _Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju systemu iOS jest obsługi administracyjnej urządzeniu z systemem iOS. Ten przewodnik opisuje za pomocą podpisywania automatycznego żądania certyfikatów programowanie i profilów._
 

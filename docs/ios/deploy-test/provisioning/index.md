@@ -1,19 +1,20 @@
 ---
-title: Podpisywanie kodu i inicjowania obsługi
-description: Poza podstawy
+title: Podpisywanie kodu i Inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
+description: Ten dokument prowadzi do prowadnic opisujące urządzenia inicjowania obsługi administracyjnej, Praca z funkcjami, Praca z uprawnień, plik Info.plist i fastlane.
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: ff9d9e779f246c0cd2fde4332f6c80aae4b43d49
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfbb36dc7298563987bcd688927649366094ae89
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785540"
 ---
-# <a name="code-signing-and-provisioning"></a>Podpisywanie kodu i inicjowania obsługi
+# <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Podpisywanie kodu i Inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
 
 ## <a name="device-provisioning--introductioniosget-startedinstallationdevice-provisioningindexmd"></a>[Inicjowanie obsługi administracyjnej urządzeń — wprowadzenie](~/ios/get-started/installation/device-provisioning/index.md)
 
@@ -24,7 +25,6 @@ Po pomyślnym zainstalowaniu platformy Xamarin.iOS następny krok w rozwoju syst
 Aby rozszerzyć funkcjonalność aplikacji systemu iOS przy użyciu usługi aplikacji
 
 Dodawanie funkcji do aplikacji często wymaga dodatkowej konfiguracji inicjowania obsługi administracyjnej. W tym przewodniku opisano ustawienia wymagane dla wszystkich możliwości.
-
 
 ## <a name="working-with-entitlementsentitlementsmd"></a>[Praca z uprawnieniami](entitlements.md)
 
@@ -37,4 +37,3 @@ Podręcznik Info.plist kluczy.
 ## <a name="introduction-to-fastlane-for-iosiosdeploy-testprovisioningfastlaneindexmd"></a>[Wprowadzenie do Fastlane dla systemu iOS](~/ios/deploy-test/provisioning/fastlane/index.md)
 
 W tym przewodniku przedstawiono różne narzędzia fastlane, które mogą służyć do kodu logowania aplikacji systemu iOS.
-

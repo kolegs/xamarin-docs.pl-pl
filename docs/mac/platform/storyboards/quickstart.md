@@ -1,19 +1,20 @@
 ---
-title: Scenorys Szybki Start
-description: Pobieranie macOS rozpoczęto Tworzenie interfejsów użytkownika za pomocą scenorys.
+title: Scenorys w Xamarin.Mac — Szybki Start
+description: Ten dokument zawiera wprowadzenie szybki start dotyczący tworzenia macOS interfejsów użytkownika za pomocą scenorys w Xamarin.Mac. Przedstawiono sposób tworzenia segue i utworzyć okna Preferencje.
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf91a51a55583e2ba8ca1fc09eb3dcd0d9986cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792575"
 ---
-# <a name="starting-a-new-storyboard-based-project"></a>Uruchamianie nowego scenorysu na podstawie projektu
+# <a name="storyboards-in-xamarinmac--quick-start"></a>Scenorys w Xamarin.Mac — Szybki Start
 
 Jako szybkie wprowadzenie do definiowania aplikacji Xamarin.Mac interfejsu użytkownika przy użyciu Scenorys Zacznijmy nowy projekt Xamarin.Mac. Wybierz **Mac** > **aplikacji** > **aplikacji Cocoa** i kliknij przycisk **dalej** przycisk:
 

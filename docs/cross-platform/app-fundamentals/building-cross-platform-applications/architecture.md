@@ -1,15 +1,17 @@
 ---
 title: Część 2 — architektura
+description: W tym dokumencie opisano architekturę wzorce przydatne do tworzenia aplikacji dla wielu platform. Zawarto informacje Typowa aplikacja warstwy (Warstwa danych, Warstwa dostępu do danych itp.) i typowe wzorce oprogramowanie dla urządzeń przenośnych (MVVM, MVC, itp.)
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 94cd2ae09da2e36f8855d95dda883cd3b7819e5b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ebcfe8880a826c552d55e7a5567271a5a764fa1d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780878"
 ---
 # <a name="part-2---architecture"></a>Część 2 — architektura
 

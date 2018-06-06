@@ -1,18 +1,20 @@
 ---
-title: watchOS interfejsu użytkownika
+title: watchOS formantów interfejsu użytkownika w programie Xamarin
+description: W tym dokumencie opisano różne formantów, które są dostępne do użycia w watchOS interfejsów użytkownika. Zapewnia opis etykiety, przyciski przełączników, suwaki, obrazy, separatory, map i więcej.
 ms.prod: xamarin
 ms.assetid: EDFAD203-02EA-4A74-9CE2-7B8513BC90E1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 73099768d876cad08571c3d0bf8340535eb1307b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b56cfed8f045d824996a004539533b27d66c8cb1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791413"
 ---
-# <a name="watchos-user-interface"></a>watchOS interfejsu użytkownika
+# <a name="watchos-user-interface-controls-in-xamarin"></a>watchOS formantów interfejsu użytkownika w programie Xamarin
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) przykładzie pokazano różnych watchOS formantów. Scenorysu aplikacji w tym polu jest wyświetlana (kliknij, aby powiększyć):
 
@@ -29,7 +31,7 @@ Programowe nazwy wszystkich kontrolek jest prefiksem `WKInterface` (np.) `WKInte
 |Obraz|Użyj `myImage.SetImage("MyWatchImage")` do ładowania obrazów na oglądanie, lub `WKInterfaceDevice.CurrentDevice.AddCachedImage` do buforowania ich do wielokrotnego użytku w czujki.<br />[Dokumentacja formantu obrazu](~/ios/watchos/user-interface/image.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ImageDetailController.cs)|![](Images/image.png)|
 |Separator|Użyj separatorów w celu tworzenia atrakcyjne Obejrzyj UI.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SeparatorDetailController.cs)|![](Images/separator.png)| 
 |mapy|Obraz mapy statycznie jest wyświetlany na czujki można jednak sterować wiele aspektów jego wygląd, w tym dodawanie numerów PIN.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MapDetailController.cs)|![](Images/map.png)|
-|Movie & InlineMove|Filmy można albo otwórz samodzielnie lub wewnętrznej<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs)|![](Images/movie.png)|
+|Film & InlineMove|Filmy można albo otwórz samodzielnie lub wewnętrznej<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs)|![](Images/movie.png)|
 |Grupa|Użycie grupy w celu tworzenia atrakcyjne Obejrzyj UI.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GroupDetailController.cs)|![](Images/group.png)|
 |tabela|Uproszczone tabel w systemie iOS. Implementowanie `DidSelectRow` odpowiadanie na wybór użytkownika (lub użyć segue).<br />[Tabela dokumentacji Control](~/ios/watchos/user-interface/table.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/Table%20Detail%20Controller/TableDetailController.cs)|![](Images/table.png)|
 |Urządzenie|`WKInterfaceDevice.CurrentDevice` zawiera właściwości, takie jak `ScreenBounds`, `ScreenScale`, i `PreferredContentSizeCategory`.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/DeviceDetailController.cs)|![](Images/device.png)|

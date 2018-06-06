@@ -1,16 +1,17 @@
 ---
 title: Azure Active Directory
-description: Rejestrowanie aplikacji przy użyciu usługi Azure Active Directory
+description: Tym dokumencie opisano kroki, które musi występować umożliwia aplikacji mobilnej do uwierzytelniania w usłudze Azure Active Directory.
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: decc069bd2fe31d54c886793ae4c94935b23ad02
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ca33422817f19dbb0a04e8870800d3f5efa8af2a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780072"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 

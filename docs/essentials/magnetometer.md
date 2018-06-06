@@ -1,17 +1,18 @@
 ---
-title: Magnetometrów Xamarin.Essentials
-description: Klasa magnetometrów umożliwia monitorowanie czujnik magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego ziemi.
+title: 'Xamarin.Essentials: magnetometrów'
+description: Klasa magnetometrów w Xamarin.Essentials umożliwia monitorowanie czujnik magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego ziemi.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 054a3081aab3b0337336ad7f856532caa41d70fe
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 78ed943a0fa7ca0cb249a4ac030ea6b52dcfb537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782940"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Magnetometrów Xamarin.Essentials
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: magnetometrów
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
