@@ -6,18 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 05/08/2018
-ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/05/2018
+ms.openlocfilehash: 0d512342f1c978c84341d20c298a9fa750800d84
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806806"
 ---
 # <a name="firebase-job-dispatcher"></a>Dyspozytor zadania firebase
 
 _W tym przewodniku omówiono sposób tworzenia harmonogramu praca w tle przy użyciu biblioteki Firebase zadania dyspozytora z Google._
 
-![Dyspozytor zadania firebase w wersji zapoznawczej](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Omówienie
 
@@ -65,9 +65,6 @@ Dyspozytor zadania Firebase wymaga poziom interfejsu API systemu Android 9 lub n
 Aby rozpocząć pracę z Firebase dyspozytora zadań, należy najpierw dodać [pakietu Xamarin.Firebase.JobDispatcher NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) w projekcie platformy Xamarin.Android. Wyszukaj Menedżera pakietów NuGet dla **Xamarin.Firebase.JobDispatcher** pakietu (czyli w wersji wstępnej).
 
 Po dodaniu biblioteki Firebase dyspozytora zadań, należy utworzyć `JobService` klasy, a następnie zaplanować uruchomienie przy użyciu wystąpienia `FirebaseJobDispatcher`.
-
-> [!NOTE]
-> Bieżącego powiązania dla dyspozytora zadania Firebase jest przeznaczony dla starszej wersji biblioteki. Jest [znaną usterką [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] uniemożliwiający powiązania aktualizacji nowsza wersja docelowa platformy Firebase dyspozytora zadania.
 
 
 ### <a name="creating-a-jobservice"></a>Tworzenie JobService
@@ -293,7 +290,6 @@ W tym przewodniku omówiono sposób użycia dyspozytora zadania Firebase może i
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Generator powiązania kończy się niepowodzeniem z nieobsługiwany WYJĄTEK krytyczny błąd: System.ArgumentNullException: wartość nie może mieć wartości null.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
 - [Xamarin.Firebase.JobDispatcher na NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [firebase zadania dyspozytora w witrynie GitHub](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Powiązanie Xamarin.Firebase.JobDispatcher](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)

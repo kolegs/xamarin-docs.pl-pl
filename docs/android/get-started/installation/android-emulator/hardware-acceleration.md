@@ -6,13 +6,13 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: cf75d070dfff97f48bab2210f72af747bc53099c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/05/2018
+ms.openlocfilehash: 9db44d9f120f1ede5060f4680faefc49c09fffae
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732947"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806819"
 ---
 # <a name="hardware-acceleration-for-emulator-performance"></a>Przyspieszanie sprzętowe emulatora wydajności
 
@@ -79,6 +79,8 @@ Deweloperzy, którzy korzystają z systemu Windows 10 (kwiecień 2018 aktualizac
 
 
 ### <a name="known-issues"></a>Znane problemy
+
+-   Jeśli nie można zaktualizować wersji emulatora 27.2.7 lub później, po aktualizacji do wersji zapoznawczej programu Visual Studio, może być konieczne bezpośrednio zainstalować [Instalatora w wersji preview](http://aka.ms/hyperv-emulator-dl) umożliwiające nowszych wersji emulatora.
 
 -   Wydajność może się zmniejszyć, korzystając z określonych Intel i procesory AMD procesorów.
 
