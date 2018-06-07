@@ -1,17 +1,18 @@
 ---
 title: Wprowadzenie do systemu iOS 6
-description: iOS 6 zawiera szereg nowych technologii umożliwiający projektowanie aplikacji, które Xamarin.iOS 6 oferuje deweloperom C#.
+description: Ten dokument prowadzi do prowadnic, które opisano funkcje dodane w systemie iOS 6. Kolekcja widoków PassKit, Framework społecznościowych, i zmiany StoreKit wszystkie opisem.
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787618"
 ---
 # <a name="introduction-to-ios-6"></a>Wprowadzenie do systemu iOS 6
 
@@ -28,12 +29,12 @@ Ten dokument zawiera listę niektórych ciekawsze nowe funkcje, które są dost�
 Kolekcja widoków zezwala na zawartość mają być wyświetlane przy użyciu dowolnego układów. Umożliwiają one łatwe tworzenie układów siatki fabrycznej, obsługuje również układy niestandardowe. Aby uzyskać więcej informacji, zobacz, [wprowadzenie do kolekcji widoków](~/ios/user-interface/controls/uicollectionview.md) [ ](~/ios/user-interface/controls/uicollectionview.md)przewodnik.
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[Wprowadzenie do przekazania zestawu](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[Wprowadzenie do PassKit](~/ios/platform/passkit.md)
 
-Framework przekazać zestawu umożliwia aplikacjom komunikowanie się z przekazuje cyfrowe, które są zarządzane w aplikacji Passbook. Aby uzyskać więcej informacji, zobacz, [wprowadzenie do przewodnika przekazać zestawu](~/ios/platform/passkit.md).
+PassKit framework umożliwia aplikacjom komunikowanie się z przekazuje cyfrowe, które są zarządzane w aplikacji Passbook. Aby uzyskać więcej informacji, zobacz, [wprowadzenie do przewodnika przekazać zestawu](~/ios/platform/passkit.md).
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[Wprowadzenie do zestawu zdarzeń](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[Wprowadzenie do EventKit](~/ios/platform/eventkit.md)
 
 W ramach EventKit umożliwia dostęp do kalendarzy, zdarzenia kalendarza i przypomnienia dane przechowywane na bazę danych kalendarza. Dostęp do kalendarzy i kalendarza zdarzeń została dostępne począwszy od zestawu iOS 4, ale iOS 6 udostępnia teraz dostęp do danych przypomnienia. Aby uzyskać więcej informacji, zobacz [I](~/ios/platform/eventkit.md) [ntroduction do EventKit](~/ios/platform/eventkit.md) przewodnik.
 
@@ -43,7 +44,7 @@ W ramach EventKit umożliwia dostęp do kalendarzy, zdarzenia kalendarza i przyp
 Społecznościowych Framework zapewnia ujednolicony interfejs API do interakcji z sieciami społecznościowymi, łącznie z serwisem Twitter i Facebook, a także SinaWeibo dla użytkowników w Chinach. Aby uzyskać więcej informacji, zobacz, [wprowadzenie do struktury społecznościowych](~/ios/platform/social-framework.md) przewodnik.
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[Zmiany do przechowywania zestawu](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[Zmiany w zestawie StoreKit](changes-to-storekit.md)
 
 Apple wprowadziła dwóch nowych funkcji w zestawie magazynu: zakupów i pobieranie iTunes lub zawartość sklepu z aplikacjami z aplikacji i hosting pliki zawartości dla zakupy w aplikacjach!. Aby uzyskać więcej informacji, zobacz, [zmiany w magazynie zestawu](changes-to-storekit.md) przewodnik.
 
