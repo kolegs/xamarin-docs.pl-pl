@@ -6,12 +6,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848359"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Podgląd XAML dla platformy Xamarin.Forms
 
@@ -55,6 +56,17 @@ Dostępne są opcje wzdłuż górnej części okienka podglądu:
 Układy może być trudne do wizualizacji bez danych powiązanymi z formantami interfejsu użytkownika. Aby wprowadzić bardziej użyteczna w wersji zapoznawczej, przypisać niektóre dane statyczne formanty hardcoding kontekst powiązania (albo w CodeBehind lub przy użyciu kodu XAML).
 
 Dotyczą Kuba Montemagno [wpis w blogu na temat dodawania danych czasu projektowania](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) na temat sposobu powiązać statycznych ViewModel w języku XAML.
+
+## <a name="detecting-design-mode"></a>Wykrywanie trybu projektowania
+
+Statycznych [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) właściwości można zbadać w celu określenia, czy aplikacja działa w podglądzie. Dzięki temu można określić kodu, które będą wykonywane tylko wtedy, gdy aplikacja jest uruchomiona w podglądzie:
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 

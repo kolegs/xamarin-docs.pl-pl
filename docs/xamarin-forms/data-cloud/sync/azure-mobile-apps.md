@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b083bb83dbc7266f749c4adc660a8bfb431df795
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848372"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronizowanie danych w trybie Offline z usługi Azure Mobile Apps
 
@@ -179,5 +180,5 @@ W tym artykule opisano sposób dodawania funkcji synchronizacji w trybie offline
 - [TodoAzureAuthOfflineSync (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzureAuthOfflineSync/)
 - [Korzystanie z aplikacji mobilnej Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Uwierzytelniania użytkowników przy użyciu usługi Azure Mobile Apps](~/xamarin-forms/data-cloud/authentication/azure.md)
-- [Azure Mobile Client SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Klientów mobilnych Azure SDK](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [MobileServiceClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx)

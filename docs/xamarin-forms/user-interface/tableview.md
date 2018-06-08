@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: dc55f3fe70450c71b639cf33166720fc27d45a10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 312472fdfae65bc62b76f4295a13760236dededc
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847662"
 ---
 # <a name="tableview"></a>TableView
 
@@ -128,7 +129,7 @@ Należy pamiętać, że `SwitchCell` przedstawia `OnChanged` zdarzeń, umożliwi
 
 Należy pamiętać, że `EntryCell` przedstawia `Completed` zdarzenie, które jest wywoływane, gdy użytkownik naciśnie "gotowe" na klawiaturze podczas edycji tekstu.
 
-![](tableview-images/entry-cell.png "EntryCell Example")
+![](tableview-images/entry-cell.png "Przykład EntryCell")
 
 <a name="Custom_Cells" />
 

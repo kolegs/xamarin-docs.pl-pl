@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92eabbec31b654f1aefcffb99ec2ed14062e8681
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847380"
 ---
 # <a name="creating-android-services"></a>Tworzenie usług dla systemu Android
 
@@ -21,11 +22,11 @@ _W tym przewodniku omówiono Xamarin.Android usług, które są składniki syste
 
 Aplikacje mobilne nie są takie jak aplikacje komputerowe. Komputery stacjonarne ma dużą ilością zasobów, takich jak nieruchomości ekranu, pamięci, miejsca do magazynowania i połączone zasilania, urządzenia przenośne nie. Tych warunków ograniczających wymusić aplikacje mobilne można zachowywać się inaczej. Na przykład małego ekranu na urządzeniu przenośnym zazwyczaj oznacza to, że tylko jednej aplikacji (tj. działanie) jest widoczny w czasie. Innych działań są przenoszone do tła i wypychana w stanie wstrzymanym, której nie można wykonać pracę. Jednak wyłącznie z powodu aplikacji systemu Android znajduje się w tle nie oznacza jest niemożliwe dla aplikacji kontynuować pracę. 
 
-Aplikacje systemu android składają się z co najmniej jeden cztery następujące składniki podstawowe: _działania_, _emisji odbiorcy_, _dostawców zawartości_i _Usług_. Działania są podstawy wiele wspaniałych aplikacji systemu Android, ponieważ udostępniają one interfejsu użytkownika, który umożliwia użytkownikowi interakcji z aplikacją. Jednak jeśli chodzi o wykonywanie równoczesne lub Praca w tle, działania nie zawsze są najlepszym rozwiązaniem.
+Aplikacje systemu android składają się z co najmniej jeden z następujących czterech składników podstawowego: _działania_, _emisji odbiorcy_, _dostawców zawartości_i _Usług_. Działania są podstawy wiele wspaniałych aplikacji systemu Android, ponieważ udostępniają one interfejsu użytkownika, który umożliwia użytkownikowi interakcji z aplikacją. Jednak jeśli chodzi o wykonywanie równoczesne lub Praca w tle, działania nie zawsze są najlepszym rozwiązaniem.
  
 Jest podstawowy mechanizm Praca w tle w systemie Android _usługi_. Usługi dla systemu Android to składnik, który jest przeznaczony do pracy bez interfejsu użytkownika. Usługi mogą pobrać plik, odtwarzanie muzyki lub zastosować filtr do obrazu. Usługi mogą również służyć do komunikacji międzyprocesowej (_IPC_) między aplikacjami systemu Android. Na przykład użyć jednej aplikacji systemu Android usługi odtwarzacz muzyczny, która jest przez inną aplikację lub aplikację może udostępniać dane (takie jak informacje kontaktowe osoby) do innych aplikacji za pomocą usługi. 
 
-Usługi i możliwość wykonywania pracy w tle, są niezwykle istotne udostępnia interfejs użytkownika płynne i płynnych. Wszystkie aplikacje systemu Android _wątku głównego_ (znanej także jako _wątku interfejsu użytkownika_) uruchamiania działania. Aby zapewnić dynamiczne urządzenia, systemu Android musi mieć możliwość zaktualizuj interfejs użytkownika w wysokości 60 klatek na sekundę. Jeśli wydajność aplikacji systemu Android do dużo pracy w głównym wątku, a następnie Android spowoduje porzucenie ramki, który z kolei powoduje wyświetlenie jerky interfejsu użytkownika (czasami nazywane _janky_). Oznacza to, do wykonania w wątku interfejsu użytkownika powinno być wykonane w przedział czasu między dwóch ramek, około 16 MS (1 sekundę co 60 klatek). 
+Usługi i możliwość wykonywania pracy w tle, są niezwykle istotne udostępnia interfejs użytkownika płynne i płynnych. Wszystkie aplikacje systemu Android _wątku głównego_ (znanej także jako _wątku interfejsu użytkownika_) uruchamiania działania. Aby zapewnić dynamiczne urządzenia, systemu Android musi mieć możliwość zaktualizuj interfejs użytkownika w wysokości 60 klatek na sekundę. Jeśli aplikację systemu Android wykonuje za dużo pracy w głównym wątku, a następnie Android spowoduje porzucenie ramki, który z kolei powoduje wyświetlenie jerky interfejsu użytkownika (czasami nazywane _janky_). Oznacza to, do wykonania w wątku interfejsu użytkownika powinno być wykonane w przedział czasu między dwóch ramek, około 16 MS (1 sekundę co 60 klatek). 
 
 Aby rozwiązać ten problem, deweloper może użyć do wykonania dodatkowych czynności, które uniemożliwiają interfejsu użytkownika wątków w działaniu. Jednak może to powodować problemy. Jest bardzo możliwe, że Android spowoduje zniszczenie i ponowne utworzenie wielu wystąpień działania. Android nie zostaną jednak automatycznie zniszczenia wątków, które mogłyby powodować przecieki pamięci. Jest podstawowym przykład pojawia się, gdy [urządzenia jest obracana](~/android/app-fundamentals/handling-rotation.md) &ndash; Android spróbuje zniszczyć wystąpienia działania, a następnie utwórz ponownie nowy:
 

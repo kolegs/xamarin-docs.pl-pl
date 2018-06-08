@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848541"
 ---
 # <a name="listview"></a>ListView
 
@@ -41,8 +42,8 @@ Element ListView ma liczbę składników dostępnych do wykonywania funkcji maci
 
 - **[Komórki](customizing-cell-appearance.md)**  &ndash; zobaczy w komórkach danych w elemencie ListView. Każda komórka odpowiada wiersz danych. Dostępne są wbudowane komórek do wyboru, lub można definiować własne niestandardowe komórki. Komórek zarówno wbudowanych i niestandardowych można używać/zdefiniowany w języku XAML lub kodu.
   - **[Wbudowane](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; wbudowane w komórkach, szczególnie TextCell i ImageCell, może być doskonałą wydajność, ponieważ odpowiada kontrolki natywne na każdej z platform.
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; wyświetla ciąg tekstu, opcjonalnie z tekstem szczegółów. Tekst szczegółów jest renderowane jako drugi wiersz w mniejszej czcionki z kolor akcentu.
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; Wyświetla obraz z tekstem. Pojawia się jako TextCell z obrazem po lewej stronie.
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; wyświetla ciąg tekstu, opcjonalnie z tekstem szczegółów. Tekst szczegółów jest renderowane jako drugi wiersz w mniejszej czcionki z kolor akcentu.
+       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; Wyświetla obraz z tekstem. Pojawia się jako TextCell z obrazem po lewej stronie.
   - **[Niestandardowe komórek](customizing-cell-appearance.md#customcells)**  &ndash; niestandardowe komórki są doskonałe, gdy użytkownik musi przedstawiać dane złożone. Na przykład widok niestandardowy może posłużyć do przedstawienia listy utworów muzycznych, w tym wykonawcy i albumu:
 
 ![](images/image-cell-default.png "Element ListView z ImageCells")

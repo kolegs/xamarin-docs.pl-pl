@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: cc39ade2ccc1192461bcfa19c98b7f9925b667a0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2adfe70e1d37c7f6e6fc825de1d86513de4a985c
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781424"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845970"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Ręczne tworzenie pakietów NuGet dla platformy Xamarin
 
@@ -81,4 +81,4 @@ Przykłady open source, odwołujące się do:
 
 - [Nugetizer 3000 automatycznego tworzenia Nuget](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 - [Aktualizowanie NuGets dla systemu iOS 64-bitowych](http://blog.xamarin.com/how-to-update-nuget-packages-for-64-bit/)
-- [W tym NuGet w projekcie](/visualstudio/mac/nuget-walkthrough/index.md)
+- [W tym NuGet w projekcie](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

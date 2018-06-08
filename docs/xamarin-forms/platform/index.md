@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847634"
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
@@ -41,10 +42,6 @@ Platformy Xamarin.Forms ma teraz obsługę podglądu GTK # aplikacji.
 
 Platformy Xamarin.Forms ma teraz obsługę podglądu macOS aplikacji.
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Platformy Xamarin.Forms ma teraz obsługę podglądu dla aplikacji Windows Presentation Foundation (WPF).
-
 ## <a name="native-formsnative-formsmd"></a>[Formularze natywne](native-forms.md)
 
 Formularze natywnego Zezwalaj platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron, które mają być używane przez projektów natywnych Xamarin.iOS, Xamarin.Android i systemu Windows platformy Uniwersalnej.
@@ -61,6 +58,14 @@ Szczegóły platformy pozwalają na korzystanie z funkcji, które są dostępne 
 
 Są dostępne w witrynie Github, Nuget i magazynie składników Xamarin pomóc wydłużyć aplikacji platformy Xamarin.Forms szerokiej gamy dodatki typu open source.
 
+## <a name="tizentizenmd"></a>[tizen](tizen.md)
+
+Tizen .NET umożliwia tworzenie aplikacji .NET za pomocą platformy Xamarin.Forms i Tizen .NET framework.
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Platformy Xamarin.Forms obsługę dla uniwersalnych platformy systemu Windows (UWP) w systemie Windows 10. W tym artykule opisano sposób dodawania projektu platformy UWP do istniejącego rozwiązania platformy Xamarin.Forms.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Platformy Xamarin.Forms ma teraz obsługę podglądu dla aplikacji Windows Presentation Foundation (WPF).

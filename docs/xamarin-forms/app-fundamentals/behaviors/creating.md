@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Behaviors
+title: Zachowania platformy Xamarin.Forms
 description: Zachowania platformy Xamarin.Forms są tworzone przez wynikające z działania lub zachowania<T> klasy. W tym artykule przedstawiono sposób tworzenia i korzystać z platformy Xamarin.Forms zachowania.
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2848b554d2dbd6d3d69ae864846247b3612d64e6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3a86e7713620eff90db995941eb35df7bc393a76
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848294"
 ---
-# <a name="xamarinforms-behaviors"></a>Xamarin.Forms Behaviors
+# <a name="xamarinforms-behaviors"></a>Zachowania platformy Xamarin.Forms
 
 _Zachowania platformy Xamarin.Forms są tworzone przez wynikające z działania lub zachowania<T> klasy. W tym artykule przedstawiono sposób tworzenia i korzystać z platformy Xamarin.Forms zachowania._
 

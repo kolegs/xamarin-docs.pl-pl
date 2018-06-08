@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 48b81c5beb1643501c69e5de1ea4f4197d587001
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7857f3d4c76fe7d8589c25e4f7fb079f06e136e7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846622"
 ---
 # <a name="consuming-a-restful-web-service"></a>Korzystanie z usługi sieci RESTful Web
 
@@ -50,7 +51,7 @@ Usługa REST jest zapisywany przy użyciu platformy ASP.NET Core i zapewnia nast
 
 |Operacja|Metoda HTTP|Względny identyfikator URI|Parametry|
 |--- |--- |--- |--- |
-|Pobierz listę elementów do wykonania|GET|/API/todoitems /|
+|Pobierz listę elementów do wykonania|POBIERZ|/API/todoitems /|
 |Utwórz nowy element zadania do wykonania|POST|/API/todoitems /|TodoItem w formacie JSON|
 |Aktualizuj element do wykonania|UMIEŚĆ|/API/todoitems /|TodoItem w formacie JSON|
 |Usuń element do wykonania|DELETE|/API/todoitems / {id}|
@@ -149,7 +150,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully saved.");
+    Debug.WriteLine (@"                TodoItem successfully saved.");
 
   }
   ...
@@ -196,7 +197,7 @@ public async Task DeleteTodoItemAsync (string id)
   ...
   var response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully deleted.");
+    Debug.WriteLine (@"                TodoItem successfully deleted.");
   }
   ...
 }

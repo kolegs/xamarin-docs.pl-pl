@@ -6,24 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 2e40effa7bc54b7b7cf73edaa882256fed521a95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847851"
 ---
 # <a name="entry"></a>Wpis
 
 _Jednego wiersza tekstu lub hasła danych wejściowych_
 
-Platformy Xamarin.Forms `Entry` służy do wprowadzania jednego wiersza tekstu. `Entry`, takich jak widok edytora obsługuje wiele typów klawiatury. Ponadto `Entry` mogą być używane jako pole hasła.
+Platformy Xamarin.Forms `Entry` służy do wprowadzania jednego wiersza tekstu. `Entry`, Takiej jak `Editor` wyświetlić, obsługuje wiele typów klawiatury. Ponadto `Entry` mogą być używane jako pole hasła.
 
 ## <a name="display-customization"></a>Dostosowywanie ekranu
 
 ### <a name="setting-and-reading-text"></a>Ustawienie i odczytywanie tekstu
 
-Przedstawia zapis, jak inne widoki prezentacji tekstu `Text` właściwości. `Text` można ustawić i przeczytaj tekst przedstawiony przez `Entry`. W poniższym przykładzie pokazano, ustawienie tekstu w języku XAML:
+`Entry`, Jak inne widoki prezentacji tekst przedstawia `Text` właściwości. Tej właściwości można ustawić i przeczytaj tekst przedstawiony przez `Entry`. W poniższym przykładzie pokazano ustawienie `Text` właściwości w języku XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -44,6 +45,20 @@ var text = MyEntry.Text;
 > [!NOTE]
 > Szerokość `Entry` można zdefiniować ustawiając jego `WidthRequest` właściwości. Nie są zależne od szerokość `Entry` został określony na podstawie wartości z jego `Text` właściwości.
 
+### <a name="limiting-input-length"></a>Ograniczenie długości danych wejściowych
+
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Właściwości może służyć do ograniczenia długości danych wejściowych, które są dozwolone dla [ `Entry` ](xref:Xamarin.Forms.Entry). Ta właściwość powinna być równa dodatnią liczbą całkowitą:
+
+```xaml
+<Entry ... MaxLength="10" />
+```
+
+```csharp
+var entry = new Entry { ... MaxLength = 10 };
+```
+
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) właściwości wartość 0 oznacza, że może być brak danych wejściowych i wartość `int.MaxValue`, która jest wartością domyślną dla [ `Entry` ](xref:Xamarin.Forms.Entry), wskazuje, że istnieje nie skuteczne limit liczby znaków, które mogą być wprowadzane.
+
 ### <a name="keyboards"></a>Klawiatury
 
 Klawiatury, które są prezentowane, gdy użytkownicy korzystają z `Entry` można ustawić programowo przy użyciu `Keyboard` właściwości.
@@ -58,6 +73,23 @@ Dostępne są następujące opcje dla typu klawiatury:
 - **Adres URL** &ndash; używane do wprowadzania ścieżki do plików i adresy witryn sieci web
 
 Brak [przykład każdego klawiatury](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) w naszej sekcji przepisami.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Włączanie i wyłączanie sprawdzania pisowni
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Formantów właściwość określa, czy sprawdzanie pisowni jest włączone. Domyślnie ma ustawioną właściwość `true`. Wprowadzania tekstu, są oznaczone pisowni.
+
+Jednak niektóre scenariusze wprowadzania tekstu, takie jak wprowadzić nazwę użytkownika sprawdzanie pisowni zapewnia środowisko ujemna i dlatego powinny być wyłączone przez ustawienie [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) właściwości `false`:
+
+```xaml
+<Entry ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Gdy [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) właściwość jest ustawiona na `false`i niestandardowe klawiatury nie jest używana, moduł sprawdzania pisowni macierzystego zostanie wyłączone. Jednak jeśli [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) ma zostały zestawu, które wyłączają pisowni sprawdzania, takich jak [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` właściwość jest ignorowana. Właściwości nie można użyć do włączenia sprawdzania pisowni `Keyboard` który jawnie wyłącza.
 
 ### <a name="placeholders"></a>Symbole zastępcze
 
