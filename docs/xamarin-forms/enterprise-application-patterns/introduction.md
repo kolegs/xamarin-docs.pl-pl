@@ -1,18 +1,20 @@
 ---
-title: Wprowadzenie
+title: Wprowadzenie do tworzenia aplikacji przedsiębiorstwa
+description: Ten rozdział zawiera wprowadzenie do tworzenia aplikacji przedsiębiorstwa i wprowadza eShopOnContainers aplikacji mobilnej.
 ms.prod: xamarin
 ms.assetid: cbce0659-fa03-447a-86ec-140438143230
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a4f1f6ba820221be7553405f570911d3dc66a657
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242963"
 ---
-# <a name="introduction"></a>Wprowadzenie
+# <a name="introduction-to-enterprise-app-development"></a>Wprowadzenie do tworzenia aplikacji przedsiębiorstwa
 
 Niezależnie od platformy deweloperzy aplikacji w organizacji mają kilka inne:
 
@@ -100,7 +102,7 @@ Aplikacja mobilna eShopOnContainers wykonuje następujące funkcje platformy Xam
 -   Powiązania
 -   Konwertery
 -   Style
--   Animacji
+-   Animacje
 -   Polecenia
 -   Zachowania
 -   Wyzwalacze
@@ -136,7 +138,7 @@ Projekt PCL eShopOnContainers.Core zawiera następujące foldery:
 
 |Folder|Opis|
 |--- |--- |
-|Animacji|Zawiera klasy, które umożliwiają animacje do użycia w języku XAML.|
+|Animacje|Zawiera klasy, które umożliwiają animacje do użycia w języku XAML.|
 |Zachowania|Zawiera zachowania, które są dostępne, aby wyświetlić klasy.|
 |Formanty|Zawiera formanty niestandardowe używane przez aplikację.|
 |Konwertery|Zawiera konwertery wartości, które są stosowane niestandardowej logiki do powiązania.|
@@ -166,4 +168,4 @@ Deweloperzy aplikacji w przedsiębiorstwie stają przed kilka wyzwania, które m
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

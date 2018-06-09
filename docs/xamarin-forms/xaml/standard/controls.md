@@ -1,17 +1,18 @@
 ---
 title: Formanty standardowe (wersja zapoznawcza) XAML
-description: Jak rozpocząć eksplorowanie Podgląd standardowe XAML w platformy Xamarin.Forms
+description: Ten artykuł opisuje formantów standardowych XAML dostępnych w platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 2fc7fb9581f344e0d54bd9f690d334eda78cc97a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b01d0773f0c2150db575875b770957eb6452f41
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245575"
 ---
 # <a name="xaml-standard-preview-controls"></a>Formanty standardowe (wersja zapoznawcza) XAML
 

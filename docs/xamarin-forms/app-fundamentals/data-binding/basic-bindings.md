@@ -1,19 +1,20 @@
 ---
-title: Podstawowe powiązania
-description: Powiązanie danych obiektów docelowych, źródeł i kontekstu powiązania
+title: Powiązania Basic platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia platformy Xamarin.Forms powiązania danych, która łączy pary właściwości między dwoma obiektami, co najmniej z których jeden jest zwykle obiektu interfejsu użytkownika. Te dwa obiekty są nazywane źródłowe i docelowe.
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 065258acacb8469b90dd2ca04286f0686dc90063
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241692"
 ---
-# <a name="basic-bindings"></a>Podstawowe powiązania
+# <a name="xamarinforms-basic-bindings"></a>Powiązania Basic platformy Xamarin.Forms
 
 Powiązanie danych platformy Xamarin.Forms łączy pary właściwości między dwoma obiektami, zwykle jest co najmniej jeden obiekt interfejsu użytkownika. Te dwa obiekty są nazywane *docelowej* i *źródła*:
 
@@ -47,7 +48,7 @@ Chociaż zazwyczaj określono powiązania danych wyłącznie w języku XAML, jes
 
 `Slider` Ma wartość z zakresu od 0 do 360. Celem tego programu jest obracanie `Label` przez operacje `Slider`.
 
-Bez powiązania danych, należy ustawić `ValueChanged` zdarzenie `Slider` obsługi zdarzeń, który uzyskuje dostęp do `Value` właściwość `Slider` i ustawia tę wartość na `Rotation` właściwość `Label`. Powiązanie danych automatyzuje zadania; Program obsługi zdarzeń i kod w jego nie są już wymagane. 
+Bez powiązania danych, należy ustawić `ValueChanged` zdarzenie `Slider` obsługi zdarzeń, który uzyskuje dostęp do `Value` właściwość `Slider` i ustawia tę wartość na `Rotation` właściwość `Label`. Powiązanie danych automatyzuje zadania; Program obsługi zdarzeń i kod w jego nie są już wymagane.
 
 Powiązanie można ustawić na wystąpienie dowolnej klasy, która jest pochodną [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), która obejmuje `Element`, `VisualElement`, `View`, i `View` pochodnych.  Powiązanie jest zawsze ustawiony na obiekcie docelowym. Powiązanie odwołuje się do obiektu źródłowego. Aby ustawić wiązania danych, użyj następujących dwóch członków klasy docelowej:
 
@@ -73,7 +74,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 `Label` Obiekt jest cel wiązania w taki sposób, aby obiektu, na którym ta właściwość jest ustawiona i na którym ma zostać wywołana metoda. `BindingContext` Właściwość wskazuje źródło powiązania, które jest `Slider`.
 
-`SetBinding` Metoda jest wywoływana w celu powiązania, ale Określa właściwość target i właściwości source. Właściwość docelowa jest określony jako `BindableProperty` obiekt: `Label.RotationProperty`. Właściwość źródła jest określony jako ciąg i wskazuje `Value` właściwość `Slider`. 
+`SetBinding` Metoda jest wywoływana w celu powiązania, ale Określa właściwość target i właściwości source. Właściwość docelowa jest określony jako `BindableProperty` obiekt: `Label.RotationProperty`. Właściwość źródła jest określony jako ciąg i wskazuje `Value` właściwość `Slider`.
 
 `SetBinding` Metody ujawnia jedną z najważniejszych zasad powiązania danych:
 
@@ -120,7 +121,7 @@ Jak można manipulować `Slider`, `Label` obraca odpowiednio:
 Tak jak w przypadku kodu, wiązania danych jest ustawiona na obiekt docelowy, który jest `Label`. Uczestniczą dwa rozszerzenia znaczników XAML. Są to natychmiast rozpoznawanym przez ograniczniki nawias klamrowy:
 
 - `x:Reference` — Rozszerzenie znaczników jest wymagany do odwołuje się do obiektu źródłowego, który jest `Slider` o nazwie `slider`.
-- `Binding` Łącza rozszerzeń znaczników `Rotation` właściwość `Label` do `Value` właściwość `Slider`. 
+- `Binding` Łącza rozszerzeń znaczników `Rotation` właściwość `Label` do `Value` właściwość `Slider`.
 
 Zapoznaj się z artykułem [rozszerzenia znaczników XAML](~/xamarin-forms/xaml/markup-extensions/index.md) Aby uzyskać więcej informacji na temat rozszerzeń znaczników XAML. `x:Reference` — Rozszerzenie znaczników jest obsługiwana przez [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) klasy; `Binding` jest obsługiwana przez [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) klasy. Jako plik XML wskazać prefiksy przestrzeni nazw, `x:Reference` jest częścią specyfikacji języka XAML 2009, podczas gdy `Binding` wchodzi w skład platformy Xamarin.Forms. Należy zauważyć, że nie znaki cudzysłowu są wyświetlane w nawiasach klamrowych.
 
@@ -185,13 +186,13 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-`Binding` Konstruktor ma następujące parametry 6, więc `source` parametr zostanie określony z argumentem. Argument jest `slider` obiektu. 
+`Binding` Konstruktor ma następujące parametry 6, więc `source` parametr zostanie określony z argumentem. Argument jest `slider` obiektu.
 
 Uruchomiony ten program może być nieco zaskakująco:
 
 [![Powiązanie alternatywnego kodu](basic-bindings-images/alternativecodebinding-small.png "powiązania alternatywnego kodu")](basic-bindings-images/alternativecodebinding-large.png#lightbox "powiązania alternatywnego kodu")
 
-Na ekranie systemu iOS po lewej stronie zostaną wyświetlone wyglądu ekranu najpierw zostanie wyświetlona strona. Gdzie jest `Label`? 
+Na ekranie systemu iOS po lewej stronie zostaną wyświetlone wyglądu ekranu najpierw zostanie wyświetlona strona. Gdzie jest `Label`?
 
 Jest to problem, że `Slider` ma początkowej wartości 0. Powoduje to `Scale` właściwość `Label` należy również ustawić 0, zastępując wartość domyślną 1. Powoduje to `Label` są początkowo niewidoczne. Zgodnie z systemami Android i Windows platformy Uniwersalnej zrzuty ekranu pokazują, można manipulować `Slider` dokonanie `Label` pojawiają się ponownie, ale jego początkowej likwidacji jest niejasna.
 
@@ -246,7 +247,7 @@ Chociaż rozszerzenia znaczników XAML są zwykle rozdzielone nawiasy klamrowe, 
                  Path="Value" />
     </Label.Scale>
 </Label>
-``` 
+```
 
 Teraz `Source` i `Path` właściwości są prawidłowe atrybuty XAML: znaki cudzysłowu są wyświetlane wartości i atrybuty nie są oddzielone przecinkami. `x:Reference` — Rozszerzenie znaczników może stać się również element obiektu:
 
@@ -267,9 +268,9 @@ Teraz `Source` i `Path` właściwości są prawidłowe atrybuty XAML: znaki cudz
 
 Ta składnia nie jest typowe, ale czasami jest to konieczne w przypadku obiektów złożonych.
 
-W przykładach pokazano wykonanej do tej pory ustawiana `BindingContext` właściwości i `Source` właściwość `Binding` do `x:Reference` — rozszerzenie znaczników do innego widoku na stronie odwołania. Te dwie właściwości są typu `Object`, i może należeć do dowolnego obiektu, który zawiera właściwości, które są odpowiednie dla powiązania źródła. 
+W przykładach pokazano wykonanej do tej pory ustawiana `BindingContext` właściwości i `Source` właściwość `Binding` do `x:Reference` — rozszerzenie znaczników do innego widoku na stronie odwołania. Te dwie właściwości są typu `Object`, i może należeć do dowolnego obiektu, który zawiera właściwości, które są odpowiednie dla powiązania źródła.
 
-W artykułach z wyprzedzeniem, dowiesz się, że można ustawić `BindingContext` lub `Source` właściwości `x:Static` — rozszerzenie znaczników odwoływać się do wartości właściwości statycznej lub pola, lub `StaticResource` — rozszerzenie znaczników do odwołuje się do obiektu przechowywane w Słownik zasobów lub bezpośrednio do obiektu, który jest zazwyczaj (ale nie zawsze) wystąpienia ViewModel. 
+W artykułach z wyprzedzeniem, dowiesz się, że można ustawić `BindingContext` lub `Source` właściwości `x:Static` — rozszerzenie znaczników odwoływać się do wartości właściwości statycznej lub pola, lub `StaticResource` — rozszerzenie znaczników do odwołuje się do obiektu przechowywane w Słownik zasobów lub bezpośrednio do obiektu, który jest zazwyczaj (ale nie zawsze) wystąpienia ViewModel.
 
 `BindingContext` Można również ustawić właściwość `Binding` obiekt, aby `Source` i `Path` właściwości `Binding` Definiowanie kontekstu powiązania.
 
@@ -294,7 +295,7 @@ Jak można zauważyć, może to być bardzo przydatne, dla uproszczenia wyrażen
 
         <StackLayout VerticalOptions="FillAndExpand"
                      BindingContext="{x:Reference slider}">
-            
+
             <Label Text="TEXT"
                    FontSize="80"
                    HorizontalOptions="Center"
@@ -309,14 +310,14 @@ Jak można zauważyć, może to być bardzo przydatne, dla uproszczenia wyrażen
                      Rotation="{Binding Value}" />
         </StackLayout>
 
-        <Slider x:Name="slider" 
+        <Slider x:Name="slider"
                 Maximum="360" />
-        
+
     </StackLayout>
 </ContentPage>
 ```
 
-`BindingContext` Właściwość `StackLayout` ustawiono `slider` obiektu. Ten kontekst powiązania jest dziedziczona przez oba `Label` i `BoxView`, zarówno z których ich `Rotation` właściwości `Value` właściwości `Slider`: 
+`BindingContext` Właściwość `StackLayout` ustawiono `slider` obiektu. Ten kontekst powiązania jest dziedziczona przez oba `Label` i `BoxView`, zarówno z których ich `Rotation` właściwości `Value` właściwości `Slider`:
 
 [![Powiązanie dziedziczenia kontekstu](basic-bindings-images/bindingcontextinheritance-small.png "powiązanie dziedziczenia kontekstu")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "powiązanie dziedziczenia kontekstu")
 

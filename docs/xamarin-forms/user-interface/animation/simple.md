@@ -1,5 +1,5 @@
 ---
-title: Proste animacji
+title: Proste animacji platformy Xamarin.Forms
 description: Klasa ViewExtensions udostępnia metody rozszerzenia, które mogą służyć do tworzenia prostych animacji. W tym artykule przedstawiono tworzenie i anulowania za pomocą klasy ViewExtensions animacji.
 ms.prod: xamarin
 ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 0d2cc30f9bc1ae5602394b8ca2d8e75517a01b54
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0e2383d152db0b5055558a22386cafd8d27a059
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243008"
 ---
-# <a name="simple-animations"></a>Proste animacji
+# <a name="simple-animations-in-xamarinforms"></a>Proste animacji platformy Xamarin.Forms
 
 _Klasa ViewExtensions udostępnia metody rozszerzenia, które mogą służyć do tworzenia prostych animacji. W tym artykule przedstawiono tworzenie i anulowania za pomocą klasy ViewExtensions animacji._
 
@@ -114,7 +115,7 @@ Obracanie [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image
 
 ![](simple-images/rotate-anchors.png "Animacja Obrót o zakotwiczenia")
 
-### <a name="translation"></a>Translacja
+### <a name="translation"></a>{1&gt;Translacja&lt;1}
 
 Poniższy przykład kodu pokazuje, za pomocą [ `TranslateTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ViewExtensions.TranslateTo/p/Xamarin.Forms.VisualElement/System.Double/System.Double/System.UInt32/Xamarin.Forms.Easing/) metody w celu animowania [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) właściwości [ `Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/):
 

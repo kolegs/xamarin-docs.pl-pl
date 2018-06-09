@@ -1,16 +1,18 @@
 ---
 title: Zarządzanie konfiguracją
+description: W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers implementuje zarządzania konfiguracją w celu zapewnienia ustawienia aplikacji i ustawień użytkownika.
 ms.prod: xamarin
 ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9318f86077c9cdb98e073e4816dae4fdabbfe568
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d6cd9771760bc2932345fec24887842ce1c47376
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243954"
 ---
 # <a name="configuration-management"></a>Zarządzanie konfiguracją
 
@@ -187,4 +189,4 @@ Biblioteka Xam.Plugins.Settings zapewnia spójne, bezpieczne, podejście między
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

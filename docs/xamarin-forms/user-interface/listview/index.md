@@ -1,20 +1,20 @@
 ---
-title: ListView
-description: Przedstawia dane na listach doskonałych, interakcyjne.
+title: Element ListView platformy Xamarin.Forms
+description: W tym przewodniku przedstawiono ListView platformy Xamarin.Forms, która może służyć do prezentowania danych na listach doskonałych, interakcyjne.
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f73e7b70749a7a6913856d8c753db63a6d0a2bbe
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848541"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245003"
 ---
-# <a name="listview"></a>ListView
+# <a name="xamarinforms-listview"></a>Element ListView platformy Xamarin.Forms
 
 Element ListView jest w widoku listy danych, szczególnie długie list, które wymagają przewijanie prezentacji. W tym przewodniku opisano, jak używać ListView:
 

@@ -1,16 +1,18 @@
 ---
 title: Uwierzytelnianie i autoryzacja
+description: W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers przeprowadza uwierzytelnianie i autoryzacja przed konteneryzowanych mikrousług.
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9c6f3ae19b3e1b89220cbdf0985f4bdf789f2209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e6cfa566ab455841b3f11e4a857dcf678083417
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242431"
 ---
 # <a name="authentication-and-authorization"></a>Uwierzytelnianie i autoryzacja
 
@@ -234,7 +236,7 @@ EShopOnContainers aplikacji mobilnej znaki poza IdentityServer, wysyłając żą
 
 W aplikacji mobilnej eShopOnContainers komunikację z IdentityServer jest wykonywane przez `IdentityService` klasy, która implementuje `IIdentityService` interfejsu. Ten interfejs określa, że klasy implementującej musi zapewniać `CreateAuthorizationRequest`, `CreateLogoutRequest`, i `GetTokenAsync` metody.
 
-#### <a name="signing-in"></a>Signing-in
+#### <a name="signing-in"></a>Logowanie się
 
 Po naciśnięciu **logowania** znajdującego się na `LoginView`, `SignInCommand` w `LoginViewModel` klasy jest wykonywane, który z kolei wykonuje `SignInAsync` metody. Poniższy przykład kodu pokazuje tej metody:
 
@@ -478,4 +480,4 @@ Aplikacja mobilna żądanie tokeny zabezpieczające IdentityServer, do uwierzyte
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

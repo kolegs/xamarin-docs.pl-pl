@@ -1,17 +1,18 @@
 ---
 title: Korzystanie z rozszerzeń znaczników XAML
-description: Użyj rozszerzenia znaczników XAML dostępne w platformy Xamarin.Forms
+description: W tym artykule opisano, jak używać rozszerzeń znaczników XAML platformy Xamarin.Forms poprawić możliwościach i elastyczności XAML, pozwalając atrybuty elementu ustawiono z różnych źródeł.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 25eada483e8bd2ce95cb3101dfe873ea38b283ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245940"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Korzystanie z rozszerzeń znaczników XAML
 
@@ -448,7 +449,7 @@ Następnie użytkownik stwierdza, że dla jednego z `Label` elementów, ustawien
 
 Oto działająca na platformach trzy program:
 
-[![x:Null Demo](consuming-images/nulldemo-small.png "x:Null Demo")](consuming-images/nulldemo-large.png#lightbox "x:Null Demo")
+[![x: Null pokaz](consuming-images/nulldemo-small.png "pokaz x: Null")](consuming-images/nulldemo-large.png#lightbox "pokaz x: Null")
 
 O tym, że cztery `Label` elementy mają czcionki serif, ale Centrum `Label` ma sans-serif domyślnej czcionki.
 

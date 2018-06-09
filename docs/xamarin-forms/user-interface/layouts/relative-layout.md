@@ -1,20 +1,20 @@
 ---
-title: RelativeLayout
-description: RelativeLayout umożliwia utworzenie pakietu, które Skaluj do rozmiaru ekranu.
+title: RelativeLayout platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia klasy RelativeLayout platformy Xamarin.Forms można utworzyć pakietu, które Skaluj do rozmiaru ekranu.
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f23c00fb40ba661cbc1633b61a898a9437fdee98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 712092e58a7a7358ba1fa808614822c7988e6105
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847023"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245058"
 ---
-# <a name="relativelayout"></a>RelativeLayout
+# <a name="xamarinforms-relativelayout"></a>RelativeLayout platformy Xamarin.Forms
 
 `RelativeLayout` Służy do pozycji i rozmiaru widoków względem właściwości układu lub element równorzędny widoków. W odróżnieniu od `AbsoluteLayout`, `RelativeLayout` nie ma koncepcji ruchomej zakotwiczenia i nie ma urządzeń do rozmieszczania elementów do dołu lub prawej krawędzi układu. `RelativeLayout` obsługuje położenia elementów poza granice własny.
 

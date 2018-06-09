@@ -1,19 +1,20 @@
 ---
-title: Efekty
-description: Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Efekty Zezwalaj kontrolki natywne na każdej z platform do dostosowania bez potrzeby odwołać się do wdrażania niestandardowego modułu renderowania.
+title: Efekty platformy Xamarin.Forms
+description: Efekty Zezwalaj kontrolki natywne na każdej z platform do dostosowania bez potrzeby odwołać się do wdrażania niestandardowego modułu renderowania.
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc1c600aa6d5ede079fe0af83370393d4f0e298f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239699"
 ---
-# <a name="effects"></a>Efekty
+# <a name="xamarinforms-effects"></a>Efekty platformy Xamarin.Forms
 
 _Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Efekty Zezwalaj kontrolki natywne na każdej z platform do dostosowania bez potrzeby odwołać się do wdrażania niestandardowego modułu renderowania._
 

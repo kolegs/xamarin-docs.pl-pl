@@ -1,16 +1,18 @@
 ---
 title: Podsumowanie rozdziału 8. Kod i języka XAML w zgodzie
+description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdziału 8. Kod i języka XAML w zgodzie'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: ffd2d508e99508309ec07c6bc65c8d716427bdff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70c2babef55ee6cb886b0e7da26ee57b086fa558
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241022"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Podsumowanie rozdziału 8. Kod i języka XAML w zgodzie
 

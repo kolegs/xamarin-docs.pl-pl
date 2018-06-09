@@ -1,19 +1,20 @@
 ---
-title: Dodatki plug-in
-description: Łatwe dodawanie natywnej funkcji do aplikacji platformy Xamarin.Forms
+title: Wykorzystywanie i tworzenie wtyczek platformy Xamarin.Forms
+description: W tym artykule opisano sposób zużywają i utworzyć wtyczkami platformy Xamarin.Forms. Wtyczki są zwykle używane do łatwo udostępnienia funkcji natywnego platformy.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242560"
 ---
-# <a name="plugins"></a>Dodatki plug-in
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>Wykorzystywanie i tworzenie wtyczek platformy Xamarin.Forms
 
 Istnieje wiele funkcji natywnego platformy, które istnieją na wszystkich platformach, ale ma nieco inne interfejsy API. Deweloperzy zapisu wtyczek do utworzenia abstrakcyjny międzyplatformowego interfejsu dla tych funkcji, które mogą również współużytkować z innymi osobami.
 

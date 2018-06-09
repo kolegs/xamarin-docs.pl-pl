@@ -1,18 +1,18 @@
 ---
 title: Dodawanie rozpoznawania gestów przesuwanie
-description: Gest przesuwanie służy do wykrywania, przeciągając i jest realizowana za pomocą klasy PanGestureRecognizer. Typowy scenariusz dla gestu przesuwanie jest poziomie i w pionie obrazu, przeciągnij, aby całej zawartości obrazu można wyświetlać, gdy jest ona wyświetlana w mniejszych niż wymiary obrazu okienko ekranu. Odbywa się przez przeniesienie obrazu wewnątrz okienka ekranu, a przedstawionej w tym artykule.
+description: W tym artykule wyjaśniono, jak używać gestu przesuwanie na poziomie i pionie przeciągnij obraz, dzięki czemu całej zawartości obrazu można wyświetlać, gdy jest ona wyświetlana w mniejszych niż wymiary obrazu okienko ekranu.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 1f564fe14be0bcda08722bad11c9c5bd8152687a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846334"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239987"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Dodawanie rozpoznawania gestów przesuwanie
 

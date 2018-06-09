@@ -1,6 +1,6 @@
 ---
 title: Witaj, Xamarin.Forms
-description: Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio oraz podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms. Tematy obejmują narzędzia, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Forms.
+description: Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio oraz podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: af79e4ef-99c6-4a17-b5d1-95ab652ac7ab
@@ -8,11 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: a06bd03d7df45719b132f7cb1d9a46455dc75ddf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b017f282a1295dba4b2a051928b54fc16ff746b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243743"
 ---
 # <a name="hello-xamarinforms"></a>Witaj, Xamarin.Forms
 

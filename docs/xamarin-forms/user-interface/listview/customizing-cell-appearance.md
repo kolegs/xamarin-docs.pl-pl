@@ -1,20 +1,20 @@
 ---
-title: Wygląd komórek
-description: Zapoznaj się z opcjami prezentacji danych wykorzystując wygodę ListView.
+title: Dostosowywanie wyglądu komórek ListView
+description: Ten artykuł opisuje opcje prezentacji danych w aplikacji platformy Xamarin.Forms, wykorzystując wygodę formantu ListView.
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 14ef4abe773512f76d9823809270f27b1a0ad1a3
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848463"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244759"
 ---
-# <a name="cell-appearance"></a>Wygląd komórek
+# <a name="customizing-listview-cell-appearance"></a>Dostosowywanie wyglądu komórek ListView
 
 Element ListView przedstawia przewijanej listy, które można dostosować za pośrednictwem `ViewCell`s. `ViewCells` Służy do wyświetlania tekstu i obrazów, wskazujący stan PRAWDA/FAŁSZ i odbierania danych wejściowych użytkownika.
 

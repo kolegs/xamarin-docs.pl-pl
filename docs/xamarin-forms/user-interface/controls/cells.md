@@ -1,23 +1,24 @@
 ---
-title: Xamarin.Forms Cells
-description: Widokach listy i TableViews można dodać komórek platformy Xamarin.Forms.
+title: Komórki platformy Xamarin.Forms
+description: Widokach listy i TableViews można dodać komórek platformy Xamarin.Forms. W tym artykule wymieniono komórek objęte platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: dbc28f3d58b43bb53db39da2dcdf1ba722169264
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0947027b43eacd0bac269ebf7a779746e0d22866
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243359"
 ---
-# <a name="xamarinforms-cells"></a>Xamarin.Forms Cells
+# <a name="xamarinforms-cells"></a>Komórki platformy Xamarin.Forms
 
 _Widokach listy i TableViews można dodać komórek platformy Xamarin.Forms._
 
-A *komórki* jest elementem specjalne używany do elementów w tabeli i w tym artykule opisano, jak każdy element na liście powinien być renderowany. [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) Pochodną klasy [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/), z którego [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) również pochodzi. Komórki nie stanowi elementu wizualnego; Zamiast tego jest szablonem służącym do tworzenia elementu wizualnego. 
+A *komórki* jest elementem specjalne używany do elementów w tabeli i w tym artykule opisano, jak każdy element na liście powinien być renderowany. [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) Pochodną klasy [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/), z którego [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) również pochodzi. Komórki nie stanowi elementu wizualnego; Zamiast tego jest szablonem służącym do tworzenia elementu wizualnego.
 
 `Cell` jest używane wyłącznie w przypadku [ `ListView` ](views.md#listView) i [ `TableView` ](views.md#tableView) kontrolki. Aby dowiedzieć się, jak i dostosowywanie komórek, zajrzyj do [ `ListView` ](~/xamarin-forms/user-interface/listview/index.md) i [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) dokumentacji.
 
@@ -52,7 +53,7 @@ Platformy Xamarin.Forms obsługuje następujące typy komórki:
 
 |     |     |
 | --- | --- |
-| [ `EntryCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell) Definiuje [ `Label` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Label/) właściwość, która identyfikuje komórkę i edycji tekstu w jednym wierszu [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Text/) właściwości. Obsługa [ `Completed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.EntryCell.Completed/) zdarzeń, aby otrzymywać powiadomienia, gdy użytkownik zakończy wpisywanie tekstu.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell) / [przewodnik](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell Example](cells-images/EntryCell.png "EntryCell Example")](cells-images/EntryCell-Large.png#lightbox "EntryCell Example")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
+| [ `EntryCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell) Definiuje [ `Label` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Label/) właściwość, która identyfikuje komórkę i edycji tekstu w jednym wierszu [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.EntryCell.Text/) właściwości. Obsługa [ `Completed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.EntryCell.Completed/) zdarzeń, aby otrzymywać powiadomienia, gdy użytkownik zakończy wpisywanie tekstu.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell) / [przewodnik](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![Przykład EntryCell](cells-images/EntryCell.png "przykład EntryCell")](cells-images/EntryCell-Large.png#lightbox "EntryCell przykład")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
 |     |     |
 
 

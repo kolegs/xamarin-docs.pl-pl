@@ -1,20 +1,20 @@
 ---
-title: Tworzenie DataTemplateSelector
-description: DataTemplateSelector może służyć do wyboru DataTemplate w czasie wykonywania na podstawie wartości właściwości powiązanych z danymi. Dzięki temu wiele DataTemplates ma zostać zastosowany do tego samego typu obiektu, aby dostosować wygląd określonego obiektów. W tym artykule przedstawiono sposób tworzenia i zużywać DataTemplateSelector.
+title: Tworzenie DataTemplateSelector platformy Xamarin.Forms
+description: W tym artykule przedstawiono sposób tworzenia i zużywać DataTemplateSelector, która może służyć do wyboru DataTemplate w czasie wykonywania na podstawie wartości właściwości powiązanych z danymi.
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ad8cce32cb9cfe2ea5e78f11b1250440371a9851
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 5e1f9e4ef3aa7f9c415427e280d9bdd05dfbd13c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847195"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240655"
 ---
-# <a name="creating-a-datatemplateselector"></a>Tworzenie DataTemplateSelector
+# <a name="creating-a-xamarinforms-datatemplateselector"></a>Tworzenie DataTemplateSelector platformy Xamarin.Forms
 
 _DataTemplateSelector może służyć do wyboru DataTemplate w czasie wykonywania na podstawie wartości właściwości powiązanych z danymi. Dzięki temu wiele DataTemplates ma zostać zastosowany do tego samego typu obiektu, aby dostosować wygląd określonego obiektów. W tym artykule przedstawiono sposób tworzenia i zużywać DataTemplateSelector._
 

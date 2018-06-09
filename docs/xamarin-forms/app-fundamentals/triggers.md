@@ -1,20 +1,20 @@
 ---
-title: Wyzwalacze
-description: Odpowiada na żądania zmiany interfejsu użytkownika za pomocą języka XAML
+title: Wyzwalacze platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia platformy Xamarin.Forms wyzwalaczy na odpowiadanie na zmiany interfejsu użytkownika za pomocą języka XAML. Wyzwalacze umożliwiają express akcji deklaratywnie w języku XAML, które zmienić wygląd kontrolki oparte na zdarzeniach lub zmiany właściwości.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: af5912736e2a2bd7d3347d4aa199faa3fdfe41c7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846448"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241438"
 ---
-# <a name="triggers"></a>Wyzwalacze
+# <a name="xamarinforms-triggers"></a>Wyzwalacze platformy Xamarin.Forms
 
 Wyzwalacze umożliwiają express akcji deklaratywnie w języku XAML, które zmienić wygląd kontrolki oparte na zdarzeniach lub zmiany właściwości.
 

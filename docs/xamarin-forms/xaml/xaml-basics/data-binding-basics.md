@@ -1,18 +1,18 @@
 ---
 title: Część 4. Podstawowe informacje dotyczące powiązania danych
-description: Powiązania danych Zezwalaj na właściwości dwa obiekty połączone, tak aby zmiany w jednym powoduje zmianę w innym. Jest to bardzo przydatne narzędzie, a podczas wiązania danych można definiować wyłącznie w kodzie XAML zawiera skróty i wygody. W rezultacie jest jednym z najważniejszych rozszerzeń znaczników w platformy Xamarin.Forms powiązania.
+description: Powiązania danych Zezwalaj na właściwości dwa obiekty połączone, tak aby zmiany w jednym powoduje zmianę w innym.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733038"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245953"
 ---
 # <a name="part-4-data-binding-basics"></a>Część 4. Podstawowe informacje dotyczące powiązania danych
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 Właściwości mogą znajdować się na jeden wiersz lub podzielony na wiele wierszy:
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ W tym miejscu jest uruchomiony program:
 
 [![](data-binding-basics-images/sliderbinding.png "Widok na widok powiązania")](data-binding-basics-images/sliderbinding-large.png#lightbox "powiązania widoku do widoku ")
 
-## <a name="the-binding-mode"></a>Tryb wiązania 
+## <a name="the-binding-mode"></a>Tryb wiązania
 
 Jeden widok może mieć powiązania danych w przypadku kilku jego właściwości. Jednak każdy widok może mieć tylko jeden `BindingContext`, dlatego wiele powiązań danych w tym widoku musi wszystkie odwołania właściwości tego samego obiektu.
 
 Rozwiązanie to i inne problemy wymaga `Mode` właściwości, która jest ustawiona na członkiem `BindingMode` wyliczenie:
 
-- `Default` 
+- `Default`
 - `OneWay` — wartości są przekazywane ze źródła do obiektu docelowego
 - `OneWayToSource` — wartości są przekazywane z elementem docelowym ze źródłem
 - `TwoWay` — wartości zostaną przeniesione obu kierunkach między źródłem a celem
@@ -324,7 +324,7 @@ Znacznie lepiej. Teraz wszystkie potrzebne jest świerk się szablon elementu wi
 </ContentPage>
 ```
 
-Zwróć uwagę na `OnPlatform` do definiowania rozmiar `BoxView` i wysokość `ListView` wierszy. Chociaż wartości dla wszystkich platform trzy są takie same, znaczników można łatwo dostosowane do innych wartości w celu dopasowania wyświetlania. 
+Zwróć uwagę na `OnPlatform` do definiowania rozmiar `BoxView` i wysokość `ListView` wierszy. Chociaż wartości dla wszystkich platform trzy są takie same, znaczników można łatwo dostosowane do innych wartości w celu dopasowania wyświetlania.
 
 ## <a name="binding-value-converters"></a>Konwertery wartości powiązania
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack` — Metoda nie ma elementu role w tym programie ponieważ powiązania są tylko jednym ze sposobów ze źródła do docelowego. 
+`ConvertBack` — Metoda nie ma elementu role w tym programie ponieważ powiązania są tylko jednym ze sposobów ze źródła do docelowego.
 
 Konwerter powiązania z odwołuje się powiązanie `Converter` właściwości. Konwerter powiązanie również może akceptować określony za pomocą parametru `ConverterParameter` właściwości. W przypadku niektórych wszechstronność jest jak określono mnożnik. Konwerter powiązanie sprawdza parametru konwertera dla prawidłowej `double` wartość.
 

@@ -1,17 +1,18 @@
 ---
 title: Korzystanie z usługi sieci Web Windows Communication Foundation (WCF)
-description: WCF jest strukturą ujednoliconego firmy Microsoft do tworzenia aplikacji korzystających z usług. Umożliwia ona deweloperom tworzenie bezpieczne, niezawodne, transakcyjne i interoperacyjne aplikacji rozproszonej. W tym artykule pokazano, jak korzystać z usługi WCF obiektu dostępu protokołu SOAP (Simple) z aplikacji platformy Xamarin.Forms.
+description: W tym artykule pokazano, jak korzystać z usługi WCF obiektu dostępu protokołu SOAP (Simple) z aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 05092a3648ac4c37dfd8d712184176a544979ede
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241207"
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Korzystanie z usługi sieci Web Windows Communication Foundation (WCF)
 

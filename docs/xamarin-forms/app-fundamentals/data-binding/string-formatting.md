@@ -1,19 +1,20 @@
 ---
-title: Ciąg formatowania
-description: Użyj powiązania danych, aby sformatować i wyświetlić obiekty jako ciągi
+title: Formatowanie ciągów platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia platformy Xamarin.FOrms powiązania danych do formatowania i wyświetlania obiekty jako ciągi. Jest to osiągane przez ustawienie StringFormat powiązania do standardowego ciągu formatowania .NET symbol zastępczy.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4e143f650c3cde7577def1a95e53b207608a088a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240304"
 ---
-# <a name="string-formatting"></a>Ciąg formatowania
+# <a name="xamarinforms-string-formatting"></a>Formatowanie ciągów platformy Xamarin.Forms
 
 Czasami jest łatwe w użyciu powiązania danych, aby wyświetlić reprezentację ciągu obiektu lub wartości. Na przykład możesz chcieć użyć `Label` Aby wyświetlić bieżącą wartość `Slider`. W tym powiązaniu danych `Slider` jest źródłem, a element docelowy jest `Text` właściwość `Label`.
 

@@ -1,18 +1,20 @@
 ---
-title: Testowanie jednostkowe
+title: Aplikacje przedsiębiorstwa testów jednostkowych
+description: W tym rozdziale opisano sposób przeprowadzania testów jednostkowych jest wykonywane w aplikacji mobilnej eShopOnContainers.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242534"
 ---
-# <a name="unit-testing"></a>Testowanie jednostkowe
+# <a name="unit-testing-enterprise-apps"></a>Aplikacje przedsiębiorstwa testów jednostkowych
 
 Aplikacje mobilne ma unikatowy problemów, które pulpitów i aplikacji sieci web, nie trzeba martwić się. Użytkownicy mobilni zostanie różnią się od urządzenia, które używają, poprzez łączność z siecią, dostępność usług i wielu innych czynników. W związku z tym aplikacje mobilne powinny być testowane, jak będą one używane w świecie rzeczywistym zwiększające ich jakości, niezawodności i wydajności. Istnieje wiele typów testów, które powinny zostać wykonane w aplikacji, w tym testy jednostkowe, testowanie integracji i interfejs użytkownika testowanie za pomocą testowania jest najczęściej używana forma testowania jednostek.
 
@@ -227,4 +229,4 @@ Testowanie modeli i wyświetlanie modeli z modelem MVVM aplikacji są identyczne
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

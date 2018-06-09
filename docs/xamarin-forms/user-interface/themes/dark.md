@@ -1,19 +1,20 @@
 ---
-title: Ciemny motyw
+title: Motyw ciemny platformy Xamarin.Forms
+description: W tym artykule wyjaśniono, jak korzystać z platformy Xamarin.Forms ciemny motyw w aplikacji.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 676ed2d5f99c1f39904b2afe045cee21c0eab09c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847267"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245927"
 ---
-# <a name="dark-theme"></a>Ciemny motyw
+# <a name="xamarinforms-dark-theme"></a>Motyw ciemny platformy Xamarin.Forms
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
@@ -69,4 +70,3 @@ Oto przykład przycisków i etykiet w motywu ciemny, wraz z kod znaczników, kt�
 ```
 
 [Pełną listę wbudowanych klas](~/xamarin-forms/user-interface/themes/index.md) pokazuje, jakie style są dostępne dla niektórych typowych formantów.
-

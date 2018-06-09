@@ -1,20 +1,20 @@
 ---
-title: AbsoluteLayout
-description: AbsoluteLayout umożliwia utworzenie UI idealnych pikseli.
+title: AbsoluteLayout platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia klasy AbsoluteLayout platformy Xamarin.Forms utworzyć UI idealnych pikseli. Ta klasa pozycje i rozmiar proporcjonalny do rozmiaru i pozycji lub wartości bezwzględne elementy podrzędne.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 506a9a4916cf2cf9105d59f56648e339d664a3d2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848396"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244460"
 ---
-# <a name="absolutelayout"></a>AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>AbsoluteLayout platformy Xamarin.Forms
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) Określa położenie i rozmiar proporcjonalny do rozmiaru i pozycji lub wartości bezwzględne elementy podrzędne. Widoki podrzędnych może być pozycjonowane i rozmiarze przy użyciu proporcjonalnych wartości lub wartości statyczne i proporcjonalne i wartości statycznych mogą być wymieszane.
 

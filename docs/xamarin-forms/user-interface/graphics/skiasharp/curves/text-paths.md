@@ -1,25 +1,26 @@
 ---
-title: Ścieżki i tekst
-description: Eksploruj przecięcia ścieżek i tekstu
+title: Ścieżki i tekst w SkiaSharp
+description: W tym artykule Eksploruje Przecięcie ścieżki SkiaSharp i tekst i pokazano to z przykładowym kodzie.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243908"
 ---
-# <a name="paths-and-text"></a>Ścieżki i tekst
+# <a name="paths-and-text-in-skiasharp"></a>Ścieżki i tekst w SkiaSharp
 
 _Eksploruj przecięcia ścieżek i tekstu_
 
-W systemach nowoczesnych grafiki czcionki tekstu są kolekcjami elementów zawiera znak, zazwyczaj definiowane przez kwadratową krzywych Beziera. W związku z tym wiele systemów nowoczesnych grafiki obejmują możliwość konwersji znaków w ścieżce grafiki. 
+W systemach nowoczesnych grafiki czcionki tekstu są kolekcjami elementów zawiera znak, zazwyczaj definiowane przez kwadratową krzywych Beziera. W związku z tym wiele systemów nowoczesnych grafiki obejmują możliwość konwersji znaków w ścieżce grafiki.
 
-Widzisz już, że można obrysu konturów znaki tekstu oraz jak wypełnić je. Dzięki temu można wyświetlić te zawiera znak z konkretnym grubość i nawet efektu ścieżki, zgodnie z opisem w [ **efekty ścieżki** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu. Ale jest również możliwe do przekonwertowania ciągu znaków na `SKPath` obiektu. Oznacza to, że obramowanie tekstu mogą być używane dla wycinka techniki, które zostały opisane w [ **wycinka przy użyciu ścieżek i regiony** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) artykułu. 
+Widzisz już, że można obrysu konturów znaki tekstu oraz jak wypełnić je. Dzięki temu można wyświetlić te zawiera znak z konkretnym grubość i nawet efektu ścieżki, zgodnie z opisem w [ **efekty ścieżki** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu. Ale jest również możliwe do przekonwertowania ciągu znaków na `SKPath` obiektu. Oznacza to, że obramowanie tekstu mogą być używane dla wycinka techniki, które zostały opisane w [ **wycinka przy użyciu ścieżek i regiony** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) artykułu.
 
 Oprócz obrysu konspektu znak za pomocą efektu ścieżki, można również utworzyć ścieżkę, którą efekty, które są oparte na ścieżkach są uzyskiwane z ciągów znaków, i można nawet łączyć dwa efekty:
 
@@ -37,7 +38,7 @@ Ponadto w tym artykule przedstawiono innego przecięcia ścieżek i tekst: [ `Dr
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` i `y` argumenty wskazują początek linii bazowej z lewej strony tekstu. Odtwarzania tego samego elementu role w tym miejscu jako w `DrawText` metody `SKCanvas`. W ścieżce linia bazowa lewej tekst ma współrzędne (x, y). 
+`x` i `y` argumenty wskazują początek linii bazowej z lewej strony tekstu. Odtwarzania tego samego elementu role w tym miejscu jako w `DrawText` metody `SKCanvas`. W ścieżce linia bazowa lewej tekst ma współrzędne (x, y).
 
 `GetTextPath` — Metoda jest zbyt obszerne, jeśli chcesz tylko do wypełnienia lub obrysu wynikowe ścieżki. Normalnej `DrawText` metoda pozwala to zrobić. `GetTextPath` Metoda jest bardziej użyteczna w przypadku innych zadań dotyczących ścieżki.
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,7 +325,7 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekst")](text-paths-images/circulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")
 
-Tekst został wybrany do nieco cykliczne można również: wyraz "okrąg" jest zarówno podmiotu zdania i obiekt frazę przyimkowych. 
+Tekst został wybrany do nieco cykliczne można również: wyraz "okrąg" jest zarówno podmiotu zdania i obiekt frazę przyimkowych.
 
 ## <a name="related-links"></a>Linki pokrewne
 

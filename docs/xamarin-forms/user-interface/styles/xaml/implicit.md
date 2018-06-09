@@ -1,5 +1,5 @@
 ---
-title: Niejawne style
+title: Niejawne style w platformy Xamarin.Forms
 description: Niejawne styl jest taki, który jest używany przez wszystkie formanty sam element TargetType, bez konieczności styl odwołanie do każdego formantu.
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 08f1edf807e0f76b2ca1ced023e7725b24122831
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9444d6d8d743fb63496de31e23291b24d9d09993
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848235"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245399"
 ---
-# <a name="implicit-styles"></a>Niejawne style
+# <a name="implicit-styles-in-xamarinforms"></a>Niejawne style w platformy Xamarin.Forms
 
 _Niejawne styl jest taki, który jest używany przez wszystkie formanty sam element TargetType, bez konieczności styl odwołanie do każdego formantu._
 

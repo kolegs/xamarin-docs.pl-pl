@@ -1,18 +1,18 @@
 ---
 title: Hierarchiczna nawigacji
-description: Klasa NavigationPage udostępnia środowisko hierarchiczna nawigacji, gdy użytkownik jest powinni poruszać się po stronach przodu i do tyłu, zgodnie z potrzebami. Klasa implementuje nawigacji jako ostatni na, wytworzenia stosu obiektów strony. W tym artykule przedstawiono sposób użycia klasy NavigationPage w celu wykonania nawigacji w stosie stron.
+description: W tym artykule przedstawiono sposób użycia klasy NavigationPage w celu wykonania nawigacji w stosie ostatni na, wytworzenia stron.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847166"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242459"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchiczna nawigacji
 
@@ -48,7 +48,7 @@ Układ [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms
 
 - W systemach iOS, pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł i ma *ponownie* przycisku, który zwraca do poprzedniej strony.
 - W systemie Android, jest obecny w górnej części strony, która wyświetla tytuł, ikona na pasku nawigacji i *ponownie* przycisku, który zwraca do poprzedniej strony. Ikona jest zdefiniowany w `[Activity]` atrybut, który decorates `MainActivity` klasy w projekcie specyficzne dla platformy systemu Android.
-- Na platformie Windows Universal pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł. 
+- Na platformie Windows Universal pasek nawigacyjny jest obecny w górnej części strony, która wyświetla tytuł.
 
 Na platformach, wartość [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) właściwości będzie wyświetlany jako tytuł strony.
 

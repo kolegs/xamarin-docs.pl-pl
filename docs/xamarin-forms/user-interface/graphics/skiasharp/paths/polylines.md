@@ -1,17 +1,18 @@
 ---
 title: Linię i parametryczne równania
-description: SkiaSharp używany do renderowania żadnych wiersz, który można zdefiniować z parametrycznych równania
+description: W tym artykule wyjaśniono, jak do SkiaSharp używany do renderowania wiersza można zdefiniować z parametrycznych równania i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: efd2dbac0f4a1190fac646d8e9e3120ee4d245a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245312"
 ---
 # <a name="polylines-and-parametric-equations"></a>Linię i parametryczne równania
 

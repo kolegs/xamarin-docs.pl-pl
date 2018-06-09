@@ -1,20 +1,20 @@
 ---
-title: Style urządzenia
-description: Platformy Xamarin.Forms obejmuje sześć style dynamicznych, znany jako style urządzenia, w klasie Device.Styles.
+title: Style urządzenia platformy Xamarin.Forms
+description: Platformy Xamarin.Forms obejmuje sześć style dynamicznych, znany jako style urządzenia, w klasie Device.Styles. W tym artykule wyjaśniono, jak używać stylów urządzenia w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: cd2b6219a9a8e880bd48b31706a8abc8a977ca11
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6b5d4623bb331f4bf52faa096afeacb21d6d7489
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848164"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245598"
 ---
-# <a name="device-styles"></a>Style urządzenia
+# <a name="device-styles-in-xamarinforms"></a>Style urządzenia platformy Xamarin.Forms
 
 _Platformy Xamarin.Forms obejmuje sześć style dynamicznych, znany jako style urządzenia, w klasie Device.Styles._
 

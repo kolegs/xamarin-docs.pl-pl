@@ -1,19 +1,20 @@
 ---
-title: Malowania
-description: Użyj palcami do rysowania na kanwie.
+title: Malowania w SkiaSharp
+description: W tym artykule wyjaśniono, jak używać palców do rysowania na kanwie SkiaSharp w aplikacji platformy Xamarin.Forms i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f4c3d2ef2f6d1253f58b95559ef83af291f87b03
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243782"
 ---
-# <a name="finger-painting"></a>Malowania
+# <a name="finger-painting-in-skiasharp"></a>Malowania w SkiaSharp
 
 _Użyj palcami do rysowania na kanwie._
 

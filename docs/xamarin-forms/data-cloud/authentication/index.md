@@ -1,17 +1,18 @@
 ---
 title: Uwierzytelnianie dostępu do usług sieci Web
-description: W tym przewodniku objaśniono sposób integrowania usługi uwierzytelniania do aplikacji platformy Xamarin.Forms, aby użytkownicy mogli udostępniać wewnętrznej bazie danych podczas tylko mieli dostęp do swoich własnych danych. Tematy obejmują usługi REST, za pomocą składnika Xamarin.Auth do uwierzytelniania OAuth dostawców tożsamości, przy użyciu uwierzytelniania podstawowego i za pomocą wbudowanego uwierzytelniania za pomocą mechanizmów oferowanych przez różnych dostawców.
+description: W tym przewodniku objaśniono sposób integrowania usługi uwierzytelniania do aplikacji platformy Xamarin.Forms, aby użytkownicy mogli udostępniać wewnętrznej bazie danych podczas tylko mieli dostęp do swoich własnych danych.
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: d598a9b3de31ea6823530f911c3544bf3cebb37f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240690"
 ---
 # <a name="authenticating-access-to-web-services"></a>Uwierzytelnianie dostępu do usług sieci Web
 

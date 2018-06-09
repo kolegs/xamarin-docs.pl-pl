@@ -1,17 +1,18 @@
 ---
 title: Affine — przekształcenia
-description: Tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu trzeciej kolumny macierzy transformacji
+description: W tym artykule wyjaśniono, jak tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu trzeciej kolumny macierzy transformacji i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244236"
 ---
 # <a name="non-affine-transforms"></a>Affine — przekształcenia
 
@@ -77,7 +78,7 @@ Przekształcanie formuły są:
 
 x` = x / (0.01·x + 1)
 
-y' = y / (0.01·x + 1)
+y "= y / (0.01·x + 1)
 
 Teraz można używać tej transformacji renderowania 100 pikseli kwadratowego pola znajduje się w źródle. Oto, jak są przekształcane cztery rogi:
 

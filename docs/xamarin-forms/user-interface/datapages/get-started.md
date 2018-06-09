@@ -1,17 +1,18 @@
 ---
 title: Wprowadzenie do korzystania z DataPages
+description: W tym artykule wyjaśniono, jak rozpocząć tworzenie prostego strony opartych na danych przy użyciu DataPages platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846844"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243080"
 ---
 # <a name="getting-started-with-datapages"></a>Wprowadzenie do korzystania z DataPages
 
@@ -21,7 +22,7 @@ ms.locfileid: "34846844"
 > Wymaga DataPages [motyw platformy Xamarin.Forms](~/xamarin-forms/user-interface/themes/index.md) odwołania do renderowania.
 
 
-Aby rozpocząć tworzenie za pomocą podglądu DataPages strony proste dysk danych, wykonaj poniższe kroki. To użycie demonstracyjnej, kompilacje stylu zapisane na stałe ("zdarzenia") w wersji zapoznawczej, które działa tylko w określonym formacie JSON w kodzie.
+Aby rozpocząć tworzenie prostego strony opartych na danych przy użyciu podglądu DataPages, wykonaj poniższe kroki. To użycie demonstracyjnej, kompilacje stylu zapisane na stałe ("zdarzenia") w wersji zapoznawczej, które działa tylko w określonym formacie JSON w kodzie.
 
 [![](get-started-images/demo-sml.png "Aplikacja przykładowa DataPages")](get-started-images/demo.png#lightbox "DataPages przykładowej aplikacji")
 

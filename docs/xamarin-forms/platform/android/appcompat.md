@@ -1,17 +1,18 @@
 ---
 title: Dodawanie AppCompat i materiały projektu
-description: Wykonaj te kroki, aby przekonwertować istniejących aplikacji platformy Xamarin.Forms Android użycie AppCompat i materiały projektu
+description: W tym artykule opisano sposób konwertowania istniejących aplikacji platformy Xamarin.Forms Android użycie AppCompat i materiały projektu.
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 8f9820b863274453cff7e4124df683fb8518a978
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242924"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Dodawanie AppCompat i materiały projektu
 
@@ -24,7 +25,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 Te instrukcje opisano sposób aktualizowania istniejących aplikacji platformy Xamarin.Forms Android biblioteki AppCompat oraz włączyć materiałów projektowania w systemie Android w wersji aplikacji platformy Xamarin.Forms.
 
-### <a name="1-update-xamarinforms"></a>1. Update Xamarin.Forms
+### <a name="1-update-xamarinforms"></a>1. Aktualizacja platformy Xamarin.Forms
 
 Upewnij się, że dane rozwiązanie korzysta z platformy Xamarin.Forms 2.0 lub nowszej. Zaktualizuj pakiet Nuget platformy Xamarin.Forms 2.0, jeśli jest to wymagane.
 

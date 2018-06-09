@@ -1,17 +1,18 @@
 ---
 title: Część 2. Składnia podstawowych języka XAML
-description: XAML przede wszystkim jest przeznaczony do tworzenia wystąpienia i Inicjowanie obiektów. Ale często złożonych obiektów, które łatwo nie może być reprezentowany jako ciągi XML musi mieć wartość właściwości, a czasami należy ustawić właściwości zdefiniowane przez klasę jednej klasy podrzędnej. Te dwie potrzeba podstawowych języka XAML składni właściwości elementów właściwości i dołączone właściwości.
+description: W tym artykule omówiono niezbędne funkcje składni elementów właściwości XAML i dołączone właściwości.
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: d0129ec9872d8e5270ed8f0072cff0035d4f5255
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 62223a4c56198271513b0b15587bb588e71b28cc
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245849"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Część 2. Składnia podstawowych języka XAML
 

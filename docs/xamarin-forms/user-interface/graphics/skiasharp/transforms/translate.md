@@ -1,17 +1,18 @@
 ---
 title: Przekształcanie Przetłumacz
-description: Używanie transformacji Przetłumacz przesunięcie SkiaSharp grafiki
+description: Artykuł examiens sposobu korzystania z transformacji Przetłumacz przesunięcie SkiaSharp grafiki w aplikacji platformy Xamarin.Forms i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244825"
 ---
 # <a name="the-translate-transform"></a>Przekształcanie Przetłumacz
 
@@ -74,7 +75,7 @@ Jeśli czynniki skumulowany tłumaczenia `dx` i `dy`, i określić w funkcji rys
 
 x' = x + dx
 
-y' = y + dy
+y "= y + dy
 
 Są one nazywane *przekształcenie formuły* translacji. Wartości domyślne `dx` i `dy` nowej `SKCanvas` to 0.
 

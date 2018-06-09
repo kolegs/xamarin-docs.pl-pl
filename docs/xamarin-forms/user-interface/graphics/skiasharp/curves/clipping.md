@@ -1,17 +1,18 @@
 ---
 title: Wycinka przy użyciu ścieżek i regiony
-description: Używanie ścieżek do obiektów graficznych do określonych obszarów, a także tworzenie regionów
+description: W tym artykule wyjaśniono, jak użycie SkiaSharp ścieżek do obiektów graficznych do określonych obszarów, a także tworzenie regionów, a pokazano to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243892"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Wycinka przy użyciu ścieżek i regiony
 

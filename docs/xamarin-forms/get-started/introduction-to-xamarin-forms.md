@@ -1,18 +1,18 @@
 ---
 title: Wprowadzenie do platformy Xamarin.Forms
-description: Obsługujący wiele platform natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS i platformy uniwersalnej systemu Windows jest platformy Xamarin.Forms. Interfejsy użytkownika są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim.
+description: Ten artykuł zawiera wprowadzenie do platformy Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji z nim.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 43282196b1c5b6e43927554d2189e54fc532915a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15a26ce633e8321e9101289276c9da302e5bd8cc
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848528"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243697"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
 

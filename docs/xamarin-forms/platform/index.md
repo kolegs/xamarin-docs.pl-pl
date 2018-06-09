@@ -1,20 +1,20 @@
 ---
-title: Funkcje platformy
-description: Korzystać z funkcji specyficznych dla platformy z platformy Xamarin.Forms
+title: Funkcje platformy platformy Xamarin.Forms
+description: W tym przewodniku wyjaśniono, jak korzystać z funkcji specyficznych dla platformy w aplikacji platformy Xamarin.Forms przy użyciu różnych technik.
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2e8eb19411799e7723be338e9e3f6df35058eb8c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847634"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242803"
 ---
-# <a name="platform-features"></a>Funkcje platformy
+# <a name="xamarinforms-platform-features"></a>Funkcje platformy platformy Xamarin.Forms
 
 Platformy Xamarin.Forms umożliwia wprowadzają funkcje specyficzne dla platformy przy użyciu i jest rozszerzalny [efekty](~/xamarin-forms/app-fundamentals/effects/index.md), [niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)itd.
 

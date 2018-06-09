@@ -1,17 +1,18 @@
 ---
 title: Uwierzytelnianie usługi sieci RESTful Web
-description: HTTP obsługuje kilka mechanizmów uwierzytelniania w celu kontroli dostępu do zasobów. Uwierzytelnianie podstawowe zapewnia dostęp do zasobów tylko do klientów mających prawidłowe poświadczenia. W tym artykule przedstawiono sposób użycia uwierzytelniania podstawowego do ochrony dostępu do zasobów usługi sieci web RESTful.
+description: Uwierzytelnianie podstawowe zapewnia dostęp do zasobów tylko do klientów mających prawidłowe poświadczenia. W tym artykule opisano sposób korzystania z uwierzytelniania podstawowego do ochrony dostępu do zasobów usługi sieci web RESTful.
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3160fcced190f74fcfb44c6259451e00995de0fa
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42680ed8b79560f6f4f9f12892f7da5637a7af16
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240964"
 ---
 # <a name="authenticating-a-restful-web-service"></a>Uwierzytelnianie usługi sieci RESTful Web
 

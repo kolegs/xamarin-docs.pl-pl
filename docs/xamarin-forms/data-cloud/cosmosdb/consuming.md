@@ -1,6 +1,6 @@
 ---
 title: Korzystanie z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
-description: Baza danych dokumentów bazy danych Azure rozwiązania Cosmos jest bazą danych NoSQL, który zapewnia małe opóźnienia dostępu do dokumentów JSON, oferty usługi szybkie, wysokiej dostępności i skalowalności bazy danych dla aplikacji, które wymagają bezproblemowego skalowania i globalnej replikacji. W tym artykule opisano sposób korzystania z rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms.
+description: W tym artykule opisano sposób korzystania z rozwiązania Cosmos Azure DB .NET Standard biblioteki klienta do integracji z bazą danych dokumentów bazy danych Azure rozwiązania Cosmos w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a4656b5eb9a8159f1b3dc39c8cf62509101d219e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e797eaad98f6fac66876aaebecd7ae53ad9dbab
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242508"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Korzystanie z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
 

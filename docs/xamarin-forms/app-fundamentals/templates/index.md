@@ -1,19 +1,20 @@
 ---
-title: Szablony
-description: Jak używać obsługę tworzenia szablonów platformy Xamarin.Forms
+title: Szablony platformy Xamarin.Forms
+description: W tym przewodniku objaśniono sposób użycia obsługę tworzenia szablonów platformy Xamarin.Forms. W tym kontroli szablonów, które można łatwo motywu i ponowna motywu strony w czasie wykonywania, i szablonów danych, które zdefiniuj prezentację danych na obsługiwanych formantów.
 ms.prod: xamarin
 ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/05/2016
-ms.openlocfilehash: a37a82e008093d90dcf18bc46abada0d406b3815
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcc65685ecc69964f792dc699e12215015d7b840
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240421"
 ---
-# <a name="templates"></a>Szablony
+# <a name="xamarinforms-templates"></a>Szablony platformy Xamarin.Forms
 
 ## <a name="control-templatescontrol-templatesindexmd"></a>[Szablony kontrolek](control-templates/index.md)
 

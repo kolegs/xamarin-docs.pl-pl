@@ -1,22 +1,24 @@
 ---
 title: Ładowanie aplikacji zasobów wideo
+description: W tym artykule wyjaśniono, jak załadować wideo przechowywane jako zasoby aplikacji w aplikacji odtwarzacza wideo, za pomocą platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241035"
 ---
 # <a name="loading-application-resource-videos"></a>Ładowanie aplikacji zasobów wideo
 
 Niestandardowe moduły renderowania dla `VideoPlayer` widoku są w stanie odtwarzania plików wideo, które zostały osadzone w projektach poszczególnych platform jako zasoby aplikacji. Jednak w bieżącej wersji programu `VideoPlayer` nie może uzyskać dostęp do zasobów osadzonych w bibliotece .NET Standard.
 
-Aby załadować te zasoby, Utwórz wystąpienie `ResourceVideoSource` przez ustawienie `Path` właściwości do pliku (lub folderu i nazwa pliku) zasobu. Alternatywnie można wywołać statycznych `VideoSource.FromResource` metodę, aby odwoływać się do zasobu. Następnie ustaw `ResourceVideoSource` do obiektu `Source` właściwość `VideoPlayer`. 
+Aby załadować te zasoby, Utwórz wystąpienie `ResourceVideoSource` przez ustawienie `Path` właściwości do pliku (lub folderu i nazwa pliku) zasobu. Alternatywnie można wywołać statycznych `VideoSource.FromResource` metodę, aby odwoływać się do zasobu. Następnie ustaw `ResourceVideoSource` do obiektu `Source` właściwość `VideoPlayer`.
 
 ## <a name="storing-the-video-files"></a>Przechowywanie plików wideo
 
@@ -30,13 +32,13 @@ W **VideoPlayerDemos** rozwiązania, **VideoPlayerDemos.iOS** projekt zawiera po
 
 ### <a name="android-video-resources"></a>Android zasobów wideo
 
-W projekcie systemu Android wideo musi być przechowywany w podfolderze **zasobów** o nazwie **raw**. **Raw** folderu nie może zawierać podfolderów. Nadaj pliku wideo `Build Action` z `AndroidResource`. Ustaw `Path` właściwość `ResourceVideoSource` do nazwy pliku, na przykład **MyFile.mp4**. 
+W projekcie systemu Android wideo musi być przechowywany w podfolderze **zasobów** o nazwie **raw**. **Raw** folderu nie może zawierać podfolderów. Nadaj pliku wideo `Build Action` z `AndroidResource`. Ustaw `Path` właściwość `ResourceVideoSource` do nazwy pliku, na przykład **MyFile.mp4**.
 
-**VideoPlayerDemos.Android** projekt zawiera podfolder **zasobów** o nazwie **raw**, który zawiera plik o nazwie **AndroidApiVideo.mp4**. 
+**VideoPlayerDemos.Android** projekt zawiera podfolder **zasobów** o nazwie **raw**, który zawiera plik o nazwie **AndroidApiVideo.mp4**.
 
 ### <a name="uwp-video-resources"></a>Zasoby wideo platformy uniwersalnej systemu Windows
 
-W projekcie platformy uniwersalnej systemu Windows można przechowywać pliki wideo w dowolnym folderze w projekcie. Nadaj plikowi `Build Action` z `Content`. Ustaw `Path` właściwość `ResourceVideoSource` do folderu i nazwę pliku, na przykład **MyFolder/MyVideo.mp4**. 
+W projekcie platformy uniwersalnej systemu Windows można przechowywać pliki wideo w dowolnym folderze w projekcie. Nadaj plikowi `Build Action` z `Content`. Ustaw `Path` właściwość `ResourceVideoSource` do folderu i nazwę pliku, na przykład **MyFolder/MyVideo.mp4**.
 
 **VideoPlayerDemos.UWP** projekt zawiera folder o nazwie **wideo** z plikiem **UWPApiVideo.mp4**.
 
@@ -169,7 +171,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-Jeśli zasób z systemem iOS jest przechowywany w **zasobów** folderu, i jeśli zasób platformy uniwersalnej systemu Windows jest przechowywany w folderze głównym projektu, możesz użyć tej samej nazwy pliku dla trzech platform. Jeśli tak jest, a następnie można ustawić bezpośrednio do tej nazwy `Source` właściwość `VideoPlayer`. 
+Jeśli zasób z systemem iOS jest przechowywany w **zasobów** folderu, i jeśli zasób platformy uniwersalnej systemu Windows jest przechowywany w folderze głównym projektu, możesz użyć tej samej nazwy pliku dla trzech platform. Jeśli tak jest, a następnie można ustawić bezpośrednio do tej nazwy `Source` właściwość `VideoPlayer`.
 
 Oto działająca na platformach trzy strony:
 

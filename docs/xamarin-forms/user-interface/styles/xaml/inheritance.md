@@ -1,20 +1,20 @@
 ---
-title: Styl dziedziczenia
-description: Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia.
+title: Styl dziedziczenia w platformy Xamarin.Forms
+description: Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia. W tym artykule opisano sposób wykonywania styl dziedziczenia w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848424"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245097"
 ---
-# <a name="style-inheritance"></a>Styl dziedziczenia
+# <a name="style-inheritance-in-xamarinforms"></a>Styl dziedziczenia w platformy Xamarin.Forms
 
 _Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia._
 

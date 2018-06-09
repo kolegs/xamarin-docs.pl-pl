@@ -1,18 +1,18 @@
 ---
 title: Synchronizowanie danych w trybie Offline z usługi Azure Mobile Apps
-description: Synchronizacja w trybie offline umożliwia użytkownikom na interakcję z aplikacji mobilnej, przeglądanie, dodawanie lub modyfikowanie danych, nawet jeśli nie ma połączenia sieciowego. Zmiany są przechowywane w lokalnej bazie danych, a gdy urządzenie jest w trybie online, zmiany można synchronizować z wystąpieniem usługi Azure Mobile Apps. W tym artykule opisano sposób dodawania funkcji synchronizacji w trybie offline do aplikacji platformy Xamarin.Forms.
+description: W tym artykule opisano sposób dodawania funkcji synchronizacji w trybie offline do aplikacji platformy Xamarin.Forms, która korzysta z poziomu zaplecza Azure Mobile Apps.
 ms.prod: xamarin
 ms.assetid: DBB343B0-2709-4C20-A669-5522B9956D9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e8b0eeeb4f0033fccd7a61b4acb286bb8457e6c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848372"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243600"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronizowanie danych w trybie Offline z usługi Azure Mobile Apps
 

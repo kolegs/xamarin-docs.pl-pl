@@ -1,20 +1,20 @@
 ---
-title: Selektor
-description: Widok selektora jest formant wyboru z listy danych elementu tekstowego.
+title: Selektor platformy Xamarin.Forms
+description: Selektor platformy Xamarin.Forms Wyświetla krótką listę elementów, z których użytkownik może wybrać element. W tym artykule opisano sposób użycia klasy selektora można wybierać element tekstu listę danych.
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 7f0050351ca28d7f8afeb82a85e82e51d399824b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 82ae36a7be139e2a93d0e5c43c4bad355c49f217
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847501"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245042"
 ---
-# <a name="picker"></a>Selektor
+# <a name="xamarinforms-picker"></a>Selektor platformy Xamarin.Forms
 
 _Widok selektora jest formant wyboru z listy danych elementu tekstowego._
 

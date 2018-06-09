@@ -1,19 +1,20 @@
 ---
-title: Obrotów 3D
-description: Affine — przekształcenia umożliwia obracanie 2D obiektów w przestrzeni 3D.
+title: 3D obrotów w SkiaSharp
+description: W tym artykule opisano sposób korzystania z systemem innym niż affine — przekształcenia obracania 2D obiekty w przestrzeni 3D, a pokazano to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244302"
 ---
-# <a name="3d-rotations"></a>Obrotów 3D
+# <a name="3d-rotations-in-skiasharp"></a>3D obrotów w SkiaSharp
 
 _Affine — przekształcenia umożliwia obracanie 2D obiektów w przestrzeni 3D._
 
@@ -72,11 +73,11 @@ Jest oczywiste z formuły przekształcenia który komórki `M11`, `M22`, `M33` c
 
 Aby przekonwertować te współrzędne przestrzeni 3D, gdzie p jest równa 1, x ", y", i z "współrzędnych są wszystkie rozdzielonych w":
 
-x" = x' / w'
+x"= x' / w"
 
-y" = y' / w'
+y"= y" / w "
 
-z" = z' / w'
+z"= z" / w "
 
 w"= w" / w "= 1
 
@@ -166,13 +167,13 @@ y' = M12·x + M22·y + M42
 
 z' = M13·x + M23·y + M43
 
-w' = M14·x + M24·y + M44
+w "= M14·x + M24·y + M44
 
 Ponadto z "Współrzędna jest bez znaczenia tutaj również. Po wyświetleniu obiektu 3D w systemie grafiki 2D jest zwinięty obiektowi dwuwymiarowa ignorując wartości współrzędnych Z. Przekształcanie formuły są naprawdę tylko te dwa:
 
-x" = x' / w'
+x"= x' / w"
 
-y" = y' / w'
+y"= y" / w "
 
 Oznacza to, że trzeciego wiersza *i* trzeciej kolumny macierzy 4-na-4 można zignorować.
 
@@ -209,7 +210,7 @@ x' = cos(α)·x
 
 y' = y
 
-z' = (sin(α)/depth)·x + 1
+z "= (sin (α) / głębokość) ·x + 1
 
 Teraz podzielić wszystko przez z ":
 

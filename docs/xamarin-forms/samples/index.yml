@@ -2,16 +2,17 @@
 documentType: LandingData
 title: Przykłady zestawu narzędzi Xamarin.Forms
 metadata:
-  description: Przykładowe aplikacje i pokazy kodu zestawu narzędzi Xamarin.Forms dla deweloperów aplikacji mobilnych.
+  description: Przykładowe aplikacje i pokazy kodu zestawu narzędzi Xamarin.Forms ułatwiające rozpoczęcie pracy i zrozumienie pojęć związanych z zestawem narzędzi Xamarin.Forms.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: sample
-  ms.openlocfilehash: 9a30de76dcdf1fc9c286f3511695e1468d6bfe0a
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
+  ms.openlocfilehash: 8da516babffc33706b6f81e3826d9a432a72cd16
+  ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+  ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 04/04/2018
+  ms.lasthandoff: 06/08/2018
+  ms.locfileid: "35243317"
 abstract:
   description: Przykładowe aplikacje i pokazy kodu zestawu narzędzi Xamarin.Forms ułatwiające rozpoczęcie pracy i zrozumienie pojęć związanych z zestawem narzędzi Xamarin.Forms.
   menu:

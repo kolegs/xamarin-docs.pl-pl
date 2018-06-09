@@ -1,17 +1,18 @@
 ---
 title: Dodawanie analizy z usługami kognitywnych
-description: Kognitywnych usługi Microsoft są zestaw interfejsów API, zestawy SDK i usług dostępnych dla deweloperów można wprowadzić do swoich aplikacji inteligentne, dodając funkcje, takie jak rozpoznawanie twarzy, rozpoznawanie mowy i zrozumienia języka. Ten artykuł zawiera wprowadzenie do aplikacji przykładowej, który demonstruje sposób wywołania niektóre Microsoft kognitywnych interfejsów API usługi Service.
+description: Ten artykuł zawiera wprowadzenie do aplikacji przykładowej, który demonstruje sposób wywołania niektóre Microsoft kognitywnych interfejsów API usługi Service.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241526"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Dodawanie analizy z usługami kognitywnych
 

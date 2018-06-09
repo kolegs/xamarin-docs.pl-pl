@@ -1,17 +1,18 @@
 ---
 title: Część 3. Rozszerzenia znaczników XAML
-description: Rozszerzenia znaczników XAML stanowi ważną funkcją w języku XAML, który umożliwia właściwości można ustawić obiektów lub wartości, które odwołuje się pośrednio z innych źródeł. Rozszerzenia znaczników XAML są szczególnie ważne w przypadku udostępniania obiektów i odwołuje się do stałych używanych w całej aplikacji, ale ich największy narzędzie znajduje się w powiązania danych.
+description: Rozszerzenia znaczników XAML stanowi ważną funkcją w języku XAML, który umożliwia właściwości można ustawić obiektów lub wartości, które odwołuje się pośrednio z innych źródeł.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245914"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Część 3. Rozszerzenia znaczników XAML
 
@@ -321,8 +322,8 @@ Pomimo podobieństwa ich nazw `x:Static` i `StaticResource` bardzo różnią si�
 
 - statyczne pole publiczne
 - publiczna właściwość statyczna
-- publiczne pola stałej 
-- elementu członkowskiego wyliczenia. 
+- publiczne pola stałej
+- elementu członkowskiego wyliczenia.
 
 `StaticResource` — Rozszerzenie znaczników jest obsługiwany przez implementacje XAML, które definiują słownik zasobów, podczas gdy `x:Static` jest wewnętrzna część XAML, co `x` prefiksu prezentuje.
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

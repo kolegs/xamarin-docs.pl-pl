@@ -1,5 +1,5 @@
 ---
-title: Wprowadzenie
+title: Wprowadzenie do szablonów platformy Xamarin.Forms danych
 description: Szablony danych platformy Xamarin.Forms zapewniają możliwość definiowania prezentację danych na obsługiwanych formantów. Ten artykuł zawiera wprowadzenie do szablonów danych, sprawdzając, dlatego ich użycie jest konieczne.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: beb1633919a1d4d5bc2f5a8b0452b535a5cc8f3f
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e54c7d3ea01c59a20561b69c6e790747567d92f0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847120"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240180"
 ---
-# <a name="introduction"></a>Wprowadzenie
+# <a name="introduction-to-xamarinforms-data-templates"></a>Wprowadzenie do szablonów platformy Xamarin.Forms danych
 
 _Szablony danych platformy Xamarin.Forms zapewniają możliwość definiowania prezentację danych na obsługiwanych formantów. Ten artykuł zawiera wprowadzenie do szablonów danych, sprawdzając, dlatego ich użycie jest konieczne._
 

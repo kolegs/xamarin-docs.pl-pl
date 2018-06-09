@@ -1,19 +1,20 @@
 ---
-title: Niestandardowe moduły renderowania
-description: Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Niestandardowe moduły renderowania umożliwiają deweloperom zastąpienie tego procesu, aby dostosować wygląd i zachowanie platformy Xamarin.Forms kontrolek w każdej z platform.
+title: Moduły renderowania niestandardowe platformy Xamarin.Forms
+description: Niestandardowe moduły renderowania umożliwiają deweloperom zastąpienie renderowanie kontrolki natywne na każdej platformie, aby dostosować wygląd i zachowanie formantów platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239893"
 ---
-# <a name="custom-renderers"></a>Niestandardowe moduły renderowania
+# <a name="xamarinforms-custom-renderers"></a>Moduły renderowania niestandardowe platformy Xamarin.Forms
 
 _Interfejsy użytkownika platformy Xamarin.Forms są renderowane przy użyciu kontrolki natywne platformy docelowej, umożliwiając aplikacji platformy Xamarin.Forms zachować odpowiedni wyglądu i działania dotyczące każdej platformy. Niestandardowe moduły renderowania umożliwiają deweloperom zastąpienie tego procesu, aby dostosować wygląd i zachowanie platformy Xamarin.Forms kontrolek w każdej z platform._
 
@@ -55,7 +56,7 @@ W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderow
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementowanie odtwarzacza wideo](video-player/index.md)
 
-W tym artykule przedstawiono sposób zapisu renderowania do zaimplementowania niestandardowego `VideoPlayer` formant, który można odtwarzać filmy wideo z sieci web, klipów wideo osadzony jako zasoby aplikacji lub wideo przechowywanego w bibliotece wideo na urządzeniu użytkownika. Przedstawiono kilka technik, w tym implementacja metody i właściwości tylko do odczytu. 
+W tym artykule przedstawiono sposób zapisu renderowania do zaimplementowania niestandardowego `VideoPlayer` formant, który można odtwarzać filmy wideo z sieci web, klipów wideo osadzony jako zasoby aplikacji lub wideo przechowywanego w bibliotece wideo na urządzeniu użytkownika. Przedstawiono kilka technik, w tym implementacja metody i właściwości tylko do odczytu.
 
 
 ## <a name="related-links"></a>Linki pokrewne

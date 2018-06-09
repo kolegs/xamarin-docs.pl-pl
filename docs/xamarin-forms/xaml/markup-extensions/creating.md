@@ -1,22 +1,22 @@
 ---
 title: Tworzenie rozszerzeń znaczników XAML
-description: Definiowanie własnych niestandardowych rozszerzeń znaczników XAML
+description: W tym artykule opisano sposób definiowania własnych niestandardowych rozszerzeń znaczników XAML platformy Xamarin.Forms. Rozszerzenie znaczników w XAML jest klasa, która implementuje interfejs IMarkupExtension IMarkupExtension.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848255"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245706"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Tworzenie rozszerzeń znaczników XAML
 
-Na poziomie programowe rozszerzenie znaczników w XAML jest klasa implementująca [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) lub [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) interfejsu. Można eksplorować kodu źródłowego rozszerzeń znaczników standardowe opisane poniżej w [ **wyrażenia MarkupExtension** katalogu](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) repozytorium GitHub platformy Xamarin.Forms. 
+Na poziomie programowe rozszerzenie znaczników w XAML jest klasa implementująca [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) lub [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) interfejsu. Można eksplorować kodu źródłowego rozszerzeń znaczników standardowe opisane poniżej w [ **wyrażenia MarkupExtension** katalogu](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) repozytorium GitHub platformy Xamarin.Forms.
 
 Istnieje również możliwość zdefiniowania własnych niestandardowych rozszerzeń znaczników XAML przez pochodny `IMarkupExtension` lub `IMarkupExtension<T>`. Formularz ogólny rozszerzenie znaczników uzyska wartość określonego typu. Jest to w przypadku kilku platformy Xamarin.Forms rozszerzenia znaczników:
 
@@ -26,7 +26,7 @@ Istnieje również możliwość zdefiniowania własnych niestandardowych rozszer
 - `BindingExtension` pochodną `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` pochodną `IMarkupExtension<Constraint>`
 
-Dwa `IMarkupExtension` interfejsy zdefiniować tylko jedną metodę, o nazwie `ProvideValue`: 
+Dwa `IMarkupExtension` interfejsy zdefiniować tylko jedną metodę, o nazwie `ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ Ponieważ `IMarkupExtension<T>` pochodzi z `IMarkupExtension`, klasa musi zawier
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ Zwróć uwagę, że w przypadku `HslColorExtension` jest XML tag, czterech wła�
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Rozszerzenie znaczników, aby uzyskać dostęp do map bitowych
 
-Argument `ProvideValue` jest obiekt, który implementuje [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) interfejs, który jest zdefiniowany w ramach platformy .NET `System` przestrzeni nazw. Ten interfejs jest jeden element członkowski, metodę o nazwie `GetService` z `Type` argumentu. 
+Argument `ProvideValue` jest obiekt, który implementuje [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) interfejs, który jest zdefiniowany w ramach platformy .NET `System` przestrzeni nazw. Ten interfejs jest jeden element członkowski, metodę o nazwie `GetService` z `Type` argumentu.
 
 `ImageResourceExtension` Klasy pokazano poniżej przedstawia jedną wykorzystanie `IServiceProvider` i `GetService` uzyskanie `IXmlLineInfoProvider` obiekt, który może dostarczyć informacji wiersza i znaku wskazującą, w których wykryto określony błąd. W takim przypadku wyjątek zgłoszony podczas `Source` nie ustawiono właściwości:
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` jest przydatne, gdy plik XAML wymaga dostępu do pliku obrazu, przechowywane jako osadzony zasób w projekcie biblioteki .NET Standard. Używa `Source` właściwości do wywoływania statycznych `ImageSource.FromResource` metody. Ta metoda wymaga nazwy zasobu w pełni kwalifikowaną, która składa się z nazwy zestawu, nazwę folderu i nazwę pliku, oddzielone kropkami. `ImageResourceExtension` Nie muszą zestawu Nazwa części ponieważ uzyskuje nazwę zestawu przy użyciu odbicia i dołącza go do `Source` właściwości. Niezależnie od tego `ImageSource.FromResource` musi być wywoływana z zestawu, który zawiera mapa bitowa, co oznacza, że to rozszerzenie zasobu XAML nie może być częścią zewnętrznej biblioteki obrazów nie znajdują się również w tej bibliotece. (Zobacz [ **obrazów osadzonych** ](~/xamarin-forms/user-interface/images.md#embedded_images) artykułu, aby uzyskać więcej informacji na temat uzyskiwania dostępu do mapy bitowe przechowywane jako zasoby osadzone.) 
+`ImageResourceExtension` jest przydatne, gdy plik XAML wymaga dostępu do pliku obrazu, przechowywane jako osadzony zasób w projekcie biblioteki .NET Standard. Używa `Source` właściwości do wywoływania statycznych `ImageSource.FromResource` metody. Ta metoda wymaga nazwy zasobu w pełni kwalifikowaną, która składa się z nazwy zestawu, nazwę folderu i nazwę pliku, oddzielone kropkami. `ImageResourceExtension` Nie muszą zestawu Nazwa części ponieważ uzyskuje nazwę zestawu przy użyciu odbicia i dołącza go do `Source` właściwości. Niezależnie od tego `ImageSource.FromResource` musi być wywoływana z zestawu, który zawiera mapa bitowa, co oznacza, że to rozszerzenie zasobu XAML nie może być częścią zewnętrznej biblioteki obrazów nie znajdują się również w tej bibliotece. (Zobacz [ **obrazów osadzonych** ](~/xamarin-forms/user-interface/images.md#embedded_images) artykułu, aby uzyskać więcej informacji na temat uzyskiwania dostępu do mapy bitowe przechowywane jako zasoby osadzone.)
 
 Mimo że `ImageResourceExtension` wymaga `Source` można ustawić dla właściwości `Source` właściwości jako właściwość content klasy określonej w atrybucie. Oznacza to, że `Source=` można pominąć części wyrażenia w nawiasach klamrowych. W **pokaz zasobu obrazu** strony, `Image` dwa obrazy przy użyciu nazwy folderu i nazwę pliku, oddzielone kropkami pobrać elementy:
 
@@ -167,7 +167,7 @@ Mimo że `ImageResourceExtension` wymaga `Source` można ustawić dla właściwo
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ W niektórych rozszerzeń znaczników XAML tej usługi może być przydatna:
 
 ## <a name="conclusion"></a>Wniosek
 
-Rozszerzenia znaczników XAML odgrywać istotną rolę w języku XAML, rozszerzając możliwości można ustawić atrybutów z różnych źródeł. Ponadto jeśli istniejące rozszerzenia znaczników XAML nie zawiera dokładnie należy, można również napisać własny. 
+Rozszerzenia znaczników XAML odgrywać istotną rolę w języku XAML, rozszerzając możliwości można ustawić atrybutów z różnych źródeł. Ponadto jeśli istniejące rozszerzenia znaczników XAML nie zawiera dokładnie należy, można również napisać własny.
 
 
 ## <a name="related-links"></a>Linki pokrewne

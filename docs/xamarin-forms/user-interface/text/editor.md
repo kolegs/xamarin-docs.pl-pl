@@ -1,20 +1,20 @@
 ---
-title: Edytor
-description: Wprowadzanie tekstu wielowierszowego
+title: Edytor platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia formantu Edytor platformy Xamarin.Forms do akceptowania wprowadzanie tekstu wielowierszowego w aplikacji.
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 317d4f140daeccc525c4267fca43e6164a8f7827
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 7ad8c8aa77e23c5a8fb7649736ecb271f835d1a7
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848320"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245527"
 ---
-# <a name="editor"></a>Edytor
+# <a name="xamarinforms-editor"></a>Edytor platformy Xamarin.Forms
 
 _Wprowadzanie tekstu wielowierszowego_
 

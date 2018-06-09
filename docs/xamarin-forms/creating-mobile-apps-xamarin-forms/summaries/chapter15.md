@@ -1,16 +1,18 @@
 ---
 title: Podsumowanie działu 15. Interaktywnego interfejsu
+description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie działu 15. Interaktywnego interfejsu'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aac49c9e74dd22642396ea8daf5ee3abd85de7bf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241900"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Podsumowanie działu 15. Interaktywnego interfejsu
 
@@ -23,8 +25,8 @@ Platformy Xamarin.Forms zawiera 20 tworzone jako wystąpienia klasy, które poch
 - `Label`: [ **Rozdział 2. Struktura aplikacji**](chapter02.md)
 - `BoxView`: [ **Rozdział 3. Przewijanie stosu**](chapter03.md)
 - `Button`: [ **Rozdział 6. Kliknięcie przycisku**](chapter06.md)
-- `Image`: [ **Rozdziale 13. Bitmaps**](chapter13.md)
-- `ActivityIndicator`: [ **Rozdziale 13. Bitmaps**](chapter13.md)
+- `Image`: [ **Rozdziale 13. Mapy bitowe**](chapter13.md)
+- `ActivityIndicator`: [ **Rozdziale 13. Mapy bitowe**](chapter13.md)
 - `ProgressBar`: [ **Rozdział 14. AbsoluteLayout**](chapter14.md)
 
 Osiem widoków, w tym rozdziale skutecznie Zezwalaj użytkownikom na interakcję z podstawowych typów danych .NET:

@@ -1,20 +1,20 @@
 ---
-title: Style dynamiczne
-description: Style nie odpowiadają na zmiany właściwości i pozostają niezmienione na czas trwania aplikacji. Na przykład po przypisaniu stylu elementu wizualnego, jeśli jedno wystąpienie metody ustawiającej zmodyfikowanych, usuniętych lub nowe wystąpienie metody ustawiającej dodane, zmiany nie będzie stosowane do elementu wizualnego. Jednak aplikacje może odpowiadać na zmiany stylu dynamicznie w czasie wykonywania za pomocą dynamicznej zasobów.
+title: Dynamiczne style w platformy Xamarin.Forms
+description: W tym artykule opisano, jak aplikacji platformy Xamarin.Forms mogą odpowiadać na zmiany stylu dynamicznie w czasie wykonywania za pomocą dynamicznej zasobów.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: e0cfcbaef70f58622a21315637279740f568ada8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0f82e0cfde29921ea768000f17b93d04f8ad307e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848073"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245224"
 ---
-# <a name="dynamic-styles"></a>Style dynamiczne
+# <a name="dynamic-styles-in-xamarinforms"></a>Dynamiczne style w platformy Xamarin.Forms
 
 _Style nie odpowiadają na zmiany właściwości i pozostają niezmienione na czas trwania aplikacji. Na przykład po przypisaniu stylu elementu wizualnego, jeśli jedno wystąpienie metody ustawiającej zmodyfikowanych, usuniętych lub nowe wystąpienie metody ustawiającej dodane, zmiany nie będzie stosowane do elementu wizualnego. Jednak aplikacje może odpowiadać na zmiany stylu dynamicznie w czasie wykonywania za pomocą dynamicznej zasobów._
 

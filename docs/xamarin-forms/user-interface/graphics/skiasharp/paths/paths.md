@@ -1,19 +1,20 @@
 ---
-title: Podstawowe informacje o ścieżce
-description: Eksploruj obiektu SkiaSharp SKPath do łączenia połączonych linii i krzywych
+title: Podstawowe informacje dotyczące ścieżki w SkiaSharp
+description: W tym artykule Eksploruje obiektu SkiaSharp SKPath do łączenia połączonych linii i krzywych i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 2fc492f723a7a009da506d241ddf2e8459908633
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244048"
 ---
-# <a name="path-basics"></a>Podstawowe informacje o ścieżce
+# <a name="path-basics-in-skiasharp"></a>Podstawowe informacje dotyczące ścieżki w SkiaSharp
 
 _Eksploruj obiektu SkiaSharp SKPath do łączenia połączonych linii i krzywych_
 

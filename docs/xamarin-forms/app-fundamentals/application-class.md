@@ -1,20 +1,20 @@
 ---
-title: Klasa aplikacji
-description: Funkcje domyślną klasę aplikacji, które mogą być C# lub języka XAML
+title: Klasa aplikacji platformy Xamarin.Forms
+description: W tym artykule opisano funkcje domyślną klasę aplikacji zawierającego właściwości, aby ustawić stronę początkową aplikacji i trwałe słownik na potrzeby przechowywania wartości prostego zachowuje zmiany stanu cyklu życia.
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 4b502b0d6eea37e0b5b374cfd4740cf6a5ced478
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15fb866d2cde9409f401d6d021b22b8cb0468795
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846393"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240544"
 ---
-# <a name="app-class"></a>Klasa aplikacji
+# <a name="xamarinforms-app-class"></a>Klasa aplikacji platformy Xamarin.Forms
 
 `Application` Klasy podstawowej oferuje następujące funkcje, które są widoczne w domyślnej projekty `App` podklasy:
 

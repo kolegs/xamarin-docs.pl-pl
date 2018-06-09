@@ -1,19 +1,20 @@
 ---
-title: Dane ścieżki SVG
-description: Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Skalowalna grafika wektorowa
+title: Dane ścieżki SVG w SkiaSharp
+description: W tym artykule wyjaśniono, jak zdefiniować ścieżki SkiaSharp przy użyciu ciągów tekstowych w formacie skalowalne grafiki wektorowej, a pokazano to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243977"
 ---
-# <a name="svg-path-data"></a>Dane ścieżki SVG
+# <a name="svg-path-data-in-skiasharp"></a>Dane ścieżki SVG w SkiaSharp
 
 _Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Skalowalna grafika wektorowa_
 

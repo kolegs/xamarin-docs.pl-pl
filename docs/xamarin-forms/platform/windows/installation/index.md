@@ -1,17 +1,18 @@
 ---
 title: Instalator Windows projektów
-description: Dodawanie nowych projektów systemu Windows do istniejącego rozwiązania platformy Xamarin.Forms
+description: Starsze rozwiązań platformy Xamarin.Forms (lub utworzone na macOS) nie będą mieć projekty platformy uniwersalnej systemu Windows, a więc w tym artykule opisano sposób dodawania nowego projektu platformy uniwersalnej systemu Windows do istniejącego rozwiązania platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 81cad7b178948ebfcf6f424be9ab62d6b6be5b92
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242640"
 ---
 # <a name="setup-windows-projects"></a>Instalator Windows projektów
 

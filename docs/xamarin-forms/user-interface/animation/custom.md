@@ -1,20 +1,20 @@
 ---
-title: Animacji niestandardowej
-description: Klasa animacji jest blokiem konstrukcyjnym wszystkie animacje platformy Xamarin.Forms, za pomocą metod rozszerzenia klasy ViewExtensions utworzenie co najmniej jeden obiekt animacji. W tym artykule pokazano, jak klasa animacji służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez istniejące metody animacji.
+title: Niestandardowe animacji platformy Xamarin.Forms
+description: W tym artykule pokazano, jak klasa animacji platformy Xamarin.FOrms służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez istniejące metody animacji.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 238268a3ad2b82494f1d096d0cbeba97edb90366
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74430f6c158e74569f1b2cbfa0b6a85e8d40fbcf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847787"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242979"
 ---
-# <a name="custom-animations"></a>Animacji niestandardowej
+# <a name="custom-animations-in-xamarinforms"></a>Niestandardowe animacji platformy Xamarin.Forms
 
 _Klasa animacji jest blokiem konstrukcyjnym wszystkie animacje platformy Xamarin.Forms, za pomocą metod rozszerzenia klasy ViewExtensions utworzenie co najmniej jeden obiekt animacji. W tym artykule pokazano, jak klasa animacji służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez istniejące metody animacji._
 

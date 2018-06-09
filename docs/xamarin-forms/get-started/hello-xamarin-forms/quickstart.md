@@ -1,5 +1,6 @@
 ---
 title: Szybki Start platformy Xamarin.Forms
+description: W tym artykule opisano sposób tworzenia aplikacji konwertujący alfanumeryczne numer wprowadzony przez użytkownika do numeru telefonu liczbowych i wywołującym numer.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
@@ -7,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2018
-ms.openlocfilehash: 02aa7d4847f8ac601ca1311fd7fed09290e77482
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 90394195afc4257656c8d09fab348156a7f549d5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848060"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242911"
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 

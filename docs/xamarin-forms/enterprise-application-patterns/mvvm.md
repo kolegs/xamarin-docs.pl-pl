@@ -1,19 +1,20 @@
 ---
-title: MVVM
+title: Wzorca Model-View-ViewModel
+description: W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers korzysta ze wzorca MVVM prawidłowo Rozdziel logiki biznesowej i prezentacji aplikacji z jego interfejs użytkownika.
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fe2cace6a0fc3a1d901f55556eed09380f8f2006
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793960"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245435"
 ---
-# <a name="mvvm"></a>MVVM
+# <a name="the-model-view-viewmodel-pattern"></a>Wzorca Model-View-ViewModel
 
 Środowisko dewelopera platformy Xamarin.Forms zazwyczaj polega to na tworzenie interfejsu użytkownika w języku XAML, a następnie dodanie kodem, który działa w interfejsie użytkownika. Aplikacje zostaną zmodyfikowane i zwiększa się rozmiar i zakres, mogą wystąpić problemy obsługi złożonych. Te problemy obejmują ścisłej sprzężenia między kontrolek interfejsu użytkownika i logiki biznesowej, co zwiększa koszt dokonania zmiany interfejsu użytkownika oraz trudności taki kod do testowania jednostek.
 

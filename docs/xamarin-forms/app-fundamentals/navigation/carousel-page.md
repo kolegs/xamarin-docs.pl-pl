@@ -1,5 +1,5 @@
 ---
-title: Strona Karuzela
+title: Strona Karuzela platformy Xamarin.Forms
 description: CarouselPage platformy Xamarin.Forms jest strony, który użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, takich jak galerii. W tym artykule przedstawiono sposób użycia CarouselPage poruszać się po jest zestawem stron.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9259e2a85a7375106891eaae5fe22d6babfa2fcf
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: daf19dbed2e98429280758125a19efce2d7fd9a1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846461"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241754"
 ---
-# <a name="carousel-page"></a>Strona Karuzela
+# <a name="xamarinforms-carousel-page"></a>Strona Karuzela platformy Xamarin.Forms
 
 _CarouselPage platformy Xamarin.Forms jest strony, który użytkownicy mogą szybko przesuń strony do przechodzenia przez strony zawartości, takich jak galerii. W tym artykule przedstawiono sposób użycia CarouselPage poruszać się po jest zestawem stron._
 
@@ -46,7 +46,7 @@ Dwa podejścia może służyć do tworzenia [ `CarouselPage` ](https://developer
 - [Wypełnij](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` z kolekcją podrzędnego [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień.
 - [Przypisz](#Populating_a_CarouselPage_with_a_Template) kolekcji [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) właściwości i przypisać [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) do [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) właściwości do zwrócenia [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień obiektów w kolekcji.
 
-Z obu podejść `CarouselPage` zostanie następnie wyświetlania każdej strony z kolei z interakcji Przejdź, przeniesienie do następnej strony do wyświetlenia. 
+Z obu podejść `CarouselPage` zostanie następnie wyświetlania każdej strony z kolei z interakcji Przejdź, przeniesienie do następnej strony do wyświetlenia.
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) tylko można wypełniać za pomocą [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpień, lub `ContentPage` pochodnych.

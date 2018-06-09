@@ -1,33 +1,25 @@
 ---
-title: Style
-description: Styl tekstu w platformy Xamarin.Forms
+title: Style tekstu platformy Xamarin.Forms
+description: W tym artykule opisano sposób style tekstu w aplikacji platformy Xamarin.Forms. Style może być zdefiniowany tylko raz i używany przez wiele widoków, ale stylu można używać tylko z widokami jednego typu.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848450"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245325"
 ---
-# <a name="styles"></a>Style
+# <a name="xamarinforms-text-styles"></a>Style tekstu platformy Xamarin.Forms
 
-_Styl tekstu w platformy Xamarin.Forms_
-
+_Style tekstu w platformy Xamarin.Forms_
 
 Style umożliwia dostosowanie wyglądu etykiet, wpisy i edytory. Style może być zdefiniowany tylko raz i używany przez wiele widoków, ale stylu można używać tylko z widokami jednego typu.
 Style można przydzielić `Key` i stosowane selektywnie przy użyciu określonego formantu `Style` właściwości.
-
-W tym artykule omówiono następujące tematy:
-
-- **[Wbudowane style](#Built-In_Styles)**  &ndash; przy użyciu wbudowanych stylów styl tekstowy widoków w całej aplikacji.
-- **[Style niestandardowe](#Custom_Styles)**  &ndash; style niestandardowe pozwalają zdefiniować, kiedy wbudowanych opcji nie ma wystarczającej ilości.
-- **[Stosowanie stylów](#Applying_Styles)**  &ndash; stosowanie stylów wbudowanych i niestandardowych widoków.
-- **[Ułatwienia dostępu](#Accessibility)**  &ndash; upewnij się, że tekst szanuje ustawienia ułatwień dostępu.
 
 <a name="Built-In_Styles" />
 

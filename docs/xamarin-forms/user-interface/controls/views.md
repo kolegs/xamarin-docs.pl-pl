@@ -1,18 +1,18 @@
 ---
 title: Widoki platformy Xamarin.Forms
-description: Widoki platformy Xamarin.Forms są blokami konstrukcyjnymi interfejsów i platform przenośnych użytkownika.
+description: Widoki platformy Xamarin.Forms są blokami konstrukcyjnymi interfejsów i platform przenośnych użytkownika. W tym artykule wymieniono widoki, które są objęte platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 414df933716c7ce5d9422e8a2b9be89ba7eff3a9
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733090"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243521"
 ---
 # <a name="xamarinforms-views"></a>Widoki platformy Xamarin.Forms
 
@@ -80,7 +80,7 @@ Widoki są obiekty interfejsu użytkownika, takie jak etykiety, przycisków i su
 | [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Wyświetla obszar dla użytkownika do typu ciąg tekstowy, a przycisk (lub klawisz), który zasygnalizuje aplikacji, aby rozpocząć wyszukiwanie. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/) Właściwości zapewnia dostęp do tekstu, a [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/) zdarzenie wskazuje, czy przycisk jest naciśnięty.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![Przykład SearchBar](views-images/SearchBar.png "przykład SearchBar")](views-images/SearchBar-Large.png#lightbox "SearchBar przykład")<br /> [Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) z [związane z kodem](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>Widoki do ustawiania wartości 
+## <a name="views-for-setting-values"></a>Widoki do ustawiania wartości
 
 ### <a name="slider"></a>Suwak
 
@@ -96,7 +96,7 @@ Widoki są obiekty interfejsu użytkownika, takie jak etykiety, przycisków i su
 | [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Umożliwia użytkownikowi wybranie `double` wartość z zakresu wartości przyrostowe określony za pomocą [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/), [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/), i [ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) właściwości.<br /><br />[Dokumentacja interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![Przykład stepper](views-images/Stepper.png "przykład Stepper")](views-images/Stepper-Large.png#lightbox "przykład Stepper")<br />[Kod C# dla tej strony](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [strony XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>Przełącznik 
+### <a name="switch"></a>Przełącznik
 
 |     |     |
 | --- | --- |

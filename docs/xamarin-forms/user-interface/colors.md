@@ -1,20 +1,20 @@
 ---
-title: Kolory
-description: Platformy Xamarin.Forms zapewnia elastyczne klasy kolorów i platform.
+title: Kolory platformy Xamarin.Forms
+description: Platformy Xamarin.Forms zapewnia elastyczne klasy kolorów i platform. W tym artykule opisano funkcje udostępniane przez klasę kolorów i jak z niego korzystać.
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 7a304790213bcebe50a3f39295b5b1d1fb052879
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 45adcb8a0fe25e729211e8b166be51ce2c4d93bd
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848346"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243021"
 ---
-# <a name="colors"></a>Kolory
+# <a name="colors-in-xamarinforms"></a>Kolory platformy Xamarin.Forms
 
 _Platformy Xamarin.Forms zapewnia elastyczne klasy kolorów i platform._
 

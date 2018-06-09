@@ -1,19 +1,20 @@
 ---
-title: Walidacja
+title: Sprawdzanie poprawności w aplikacje przedsiębiorstwa
+description: W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers sprawdza poprawność danych wejściowych użytkownika. W tym określenie reguł sprawdzania poprawności, wyzwalania sprawdzania poprawności i wyświetlanie błędy sprawdzania poprawności.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 484f3b3d45e41d0dd0406681250ac90943a1cdde
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847592"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243180"
 ---
-# <a name="validation"></a>Walidacja
+# <a name="validation-in-enterprise-apps"></a>Sprawdzanie poprawności w aplikacje przedsiębiorstwa
 
 Dowolną aplikację, która akceptuje dane wejściowe od użytkowników powinny upewnij się, że dane wejściowe są poprawne. Aplikację można na przykład sprawdzić dla danych wejściowych zawiera tylko znaki w określonym zakresie, jest o określonej długości lub odpowiada określonym formacie. Bez sprawdzania poprawności użytkownik może podać dane, które powoduje awarię aplikacji. Sprawdzanie poprawności wymusza stosowanie reguł biznesowych i uniemożliwia osobie atakującej iniekcję szkodliwe dane.
 

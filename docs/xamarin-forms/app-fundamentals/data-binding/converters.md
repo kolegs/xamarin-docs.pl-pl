@@ -1,19 +1,20 @@
 ---
-title: Konwertery wartości powiązania
-description: Rzutowania lub konwersji wartości w ramach powiązanie danych
+title: Konwertery wartości powiązania platformy Xamarin.Forms
+description: W tym artykule opisano sposób rzutowania lub konwersji wartości w ramach platformy Xamarin.Forms powiązania danych dzięki implementacji konwertera wartości (który jest także znana jako konwertera powiązanie lub konwerter wartości powiązania).
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 260db2372977202df3d73e32645a358066146b40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241832"
 ---
-# <a name="binding-value-converters"></a>Konwertery wartości powiązania
+# <a name="xamarinforms-binding-value-converters"></a>Konwertery wartości powiązania platformy Xamarin.Forms
 
 Powiązania danych zazwyczaj przesyłanie danych z właściwości source właściwość target, a w niektórych przypadkach z właściwością target właściwości source. To przeniesienie jest proste, gdy właściwości źródłowa i docelowa są tego samego typu lub gdy jeden typ można przekonwertować na typ za pośrednictwem niejawnej konwersji. Gdy nie jest wielkość liter, musi nastąpić konwersji typu.
 

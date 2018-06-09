@@ -1,20 +1,20 @@
 ---
-title: Siatka
-description: Przedstawia widoków w siatkach.
+title: Siatka platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia klasy siatki platformy Xamarin.Forms do prezentowania widoków siatki, które posiadają wierszy i kolumn.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848112"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245156"
 ---
-# <a name="grid"></a>Siatka
+# <a name="xamarinforms-grid"></a>Siatka platformy Xamarin.Forms
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) obsługuje rozmieszczanie widoków do wierszy i kolumn. Rozmiary proporcjonalne lub bezwzględną rozmiary można ustawić wierszy i kolumn. `Grid` Układu nie należy mylić z tradycyjnego tabel i nie jest przeznaczona do prezentowania danych tabelarycznych. `Grid` nie ma pojęcie wierszy, kolumny lub komórki formatowania. W przeciwieństwie do tabel HTML `Grid` służy wyłącznie do rozmieszczania zawartości.
 

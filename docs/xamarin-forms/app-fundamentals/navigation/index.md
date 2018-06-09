@@ -1,19 +1,20 @@
 ---
-title: Nawigacji
-description: Platformy Xamarin.Forms udostępnia wiele zastosowań nawigacji innej strony, w zależności od używanego typu strony.
+title: Nawigacji platformy Xamarin.Forms
+description: W tym przewodniku opisano sposób przeprowadzenia nawigacji w aplikacji platformy Xamarin.Forms. Platformy Xamarin.Forms udostępnia wiele zastosowań nawigacji innej strony, w zależności od używanego typu strony.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241959"
 ---
-# <a name="navigation"></a>Nawigacji
+# <a name="xamarinforms-navigation"></a>Nawigacji platformy Xamarin.Forms
 
 _Platformy Xamarin.Forms udostępnia wiele zastosowań nawigacji innej strony, w zależności od używanego typu strony._
 
@@ -42,4 +43,3 @@ Platformy Xamarin.Forms także zapewnia obsługę modalne stron. Modalne strony 
 ## <a name="displaying-pop-upspop-upsmd"></a>[Wyświetlanie wyskakujących okienek](pop-ups.md)
 
 Platformy Xamarin.Forms zawiera dwa elementy interfejsu użytkownika podręcznego konta podobne: alert i arkusza akcji. Te elementy interfejsu może służyć do pytania użytkowników proste i prowadzą użytkowników przez zadania.
-

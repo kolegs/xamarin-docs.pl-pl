@@ -1,5 +1,5 @@
 ---
-title: Dostosowywanie mapy
+title: Dostosowywanie mapy platformy Xamarin.Forms
 description: Xamarin.Forms.Maps zapewnia abstrakcji między platformami, wyświetlania mapy, które używają mapy natywnych interfejsów API na każdej platformie, aby zapewnić szybkie i znanych mapy środowisko dla użytkowników.
 ms.prod: xamarin
 ms.assetid: CAF389DD-7AA8-4065-B56E-239A7E01CD1F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 7dc77b1ea886718473f8cf03440fb604a0364cd1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac1e2b3aa1a485af2c01087ae627972924d44271
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239800"
 ---
-# <a name="customizing-a-map"></a>Dostosowywanie mapy
+# <a name="customizing-a-xamarinforms-map"></a>Dostosowywanie mapy platformy Xamarin.Forms
 
 _Xamarin.Forms.Maps zapewnia abstrakcji między platformami, wyświetlania mapy, które używają mapy natywnych interfejsów API na każdej platformie, aby zapewnić szybkie i znanych mapy środowisko dla użytkowników._
 

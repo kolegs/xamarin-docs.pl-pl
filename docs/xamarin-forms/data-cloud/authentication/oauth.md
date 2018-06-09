@@ -1,17 +1,18 @@
 ---
 title: Uwierzytelnianie użytkowników przy użyciu dostawcy tożsamości
-description: Xamarin.Auth jest SDK i platform do uwierzytelniania użytkowników i przechowywania ich kont. Obejmuje on wystawców uwierzytelnienia OAuth, które zapewniają obsługę służący do konsumowania dostawców tożsamości, takich jak Google, Microsoft, Facebook i Twitter. W tym artykule opisano sposób użycia Xamarin.Auth do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms.
+description: W tym artykule opisano sposób użycia Xamarin.Auth do zarządzania procesem uwierzytelniania w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 26e85a37cfd36b5d4f045273548efafccca79e1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 361b5e5583b10b7ea07abd1460350d6445cae1c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241263"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>Uwierzytelnianie użytkowników przy użyciu dostawcy tożsamości
 
@@ -129,7 +130,7 @@ presenter.Login(authenticator);
 
 Należy pamiętać, że argument `Xamarin.Auth.Presenters.OAuthLoginPresenter.Login` jest metoda `OAuth2Authenticator` wystąpienia. Gdy `Login` wywołania metody, interfejs użytkownika logowania jest wyświetlana na karcie z przeglądarki sieci web urządzenia, które przedstawiono w następujących zrzuty ekranu:
 
-![](oauth-images/login.png "Google Sign-In")
+![](oauth-images/login.png "Zaloguj się w usłudze Google")
 
 ### <a name="processing-the-redirect-url"></a>Adres URL przekierowania przetwarzania
 

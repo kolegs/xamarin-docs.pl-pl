@@ -1,22 +1,24 @@
 ---
 title: Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
+description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240463"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
 
 Jest jednym z najbardziej nieprzyjemny zadania w programowaniu eksportowanie kod podstawowy z jedną platformę do innego, zwłaszcza w wypadku tej platformy wymaga innego języka programowania. Istnieje możliwość przesłania, gdy eksportowanie kod, aby go również Refaktoryzuj, ale jeśli obu platform muszą zostać zachowane równolegle, następnie różnice między baz kodu dwóch będzie konserwacji w przyszłości trudniejsze.
 
-## <a name="cross-platform-mobile-development"></a>Wiele platform przenośnych
+## <a name="cross-platform-mobile-development"></a>Programowanie aplikacji mobilnych dla wielu platform
 
 Ten problem jest typowe w przypadku przeznaczonych dla platformy urządzeń przenośnych. Obecnie istnieje dwóch głównych platform urządzeń przenośnych, rodzina Apple iPhone i Ipad zainstalowano system operacyjny iOS oraz Android systemu operacyjnego, który działa na różne telefony i tablety. Innej platformie istotne jest firmy Microsoft Windows platformy Uniwersalnej, dzięki czemu jeden program pod kątem zarówno systemu Windows 10 i Windows 10 Mobile.
 

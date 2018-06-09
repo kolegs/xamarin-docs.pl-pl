@@ -1,16 +1,18 @@
 ---
 title: Podsumowanie rozdziale 13. Mapy bitowe
+description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdziale 13. Mapy bitowe'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241558"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Podsumowanie rozdziale 13. Mapy bitowe
 
@@ -147,16 +149,16 @@ Dla mapy bitowej mają być renderowane w jednym cala kwadratowego różne wersj
 - obiektów drawable-mdpi/Mójobraz.jpg na 160 pikseli kwadratowych
 - obiektów drawable-hdpi/Mójobraz.jpg na 240 pikseli kwadratowych
 - obiektów drawable-xhdpi/Mójobraz.jpg na 320 pikseli kwadratowych
-- drawable-xxhdpi/MyImage.jpg at 480 pixels square
-- drawable-xxxhdpi/MyImage.jpg at 640 pixels square
+- obiektów drawable-xxhdpi/Mójobraz.jpg na 480 pikseli kwadratowych
+- obiektów drawable-xxxhdpi/Mójobraz.jpg na 640 pikseli kwadratowych
 
 Mapa bitowa zawsze będzie renderowany w 160 jednostki niezależnych od urządzenia. (Standardowy szablon rozwiązania platformy Xamarin.Forms zawiera tylko hdpi xhdpi i foldery xxhdpi.)
 
 Projekty środowiska wykonawczego systemu Windows obsługują mapy bitowej nazewnictwa schematu, która składa się z czynnik skalowania w pikselach na jednostkę niezależnych od urządzenia jako procent, na przykład:
 
-- MyImage.scale-200.jpg at 320 pixels square
+- MyImage.scale-200.jpg na 320 pikseli kwadratowych
 
-Tylko niektóre wartości procentowe są prawidłowe. Przykładowe programy książki obejmują tylko obrazy z **200 skali** sufiksy, ale bieżący szablony rozwiązań platformy Xamarin.Forms obejmują **skali 100**, **125 skali**, **skali 150**, i **skali 400**. 
+Tylko niektóre wartości procentowe są prawidłowe. Przykładowe programy książki obejmują tylko obrazy z **200 skali** sufiksy, ale bieżący szablony rozwiązań platformy Xamarin.Forms obejmują **skali 100**, **125 skali**, **skali 150**, i **skali 400**.
 
 Gdy Dodawanie bitmap do projektów platformy **Akcja kompilacji** powinna być:
 

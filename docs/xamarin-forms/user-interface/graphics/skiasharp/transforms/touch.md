@@ -1,17 +1,18 @@
 ---
 title: Manipulacje Touch
-description: Użyj macierzy przekształca do zaimplementowania przeciąganie touch, punkty zaciskające i obrotu
+description: W tym artykule wyjaśniono, jak użyć macierzy transformacji do zaimplementowania przeciąganie touch, punkty zaciskające i obrotu i pokazuje to z przykładowym kodzie.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244289"
 ---
 # <a name="touch-manipulations"></a>Manipulacje Touch
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-To `SKMatrix` obiektu jest modyfikowany przez logikę touch, pokazano poniżej. 
+To `SKMatrix` obiektu jest modyfikowany przez logikę touch, pokazano poniżej.
 
-W pozostałej części pliku CodeBehind jest `TouchEffect` obsługi zdarzeń. Rozpoczyna konwertując bieżącą lokalizację palca do `SKPoint` wartości. Aby uzyskać `Pressed` typ akcji programu obsługi sprawdza, czy nie inne palca zachodzi ekranu, oraz że palca znajduje się w granicach mapy bitowej. 
+W pozostałej części pliku CodeBehind jest `TouchEffect` obsługi zdarzeń. Rozpoczyna konwertując bieżącą lokalizację palca do `SKPoint` wartości. Aby uzyskać `Pressed` typ akcji programu obsługi sprawdza, czy nie inne palca zachodzi ekranu, oraz że palca znajduje się w granicach mapy bitowej.
 
 Jest kluczową kwestią kod `if` instrukcji obejmujące dwóch wywołań `Math.Pow` metody. Ta matematyczne umożliwia sprawdzenie, czy lokalizacja palca poza elipsę wypełnia mapy bitowej. Jeśli tak, to operacji skalowania. Zbliża się jeden z narożników mapy bitowej palca, a punktu obrotu jest ustalił, że jest przeciwny prawym górnym rogu. Jeśli w tym elipsy palca, jest regularnie przesuwania:
 

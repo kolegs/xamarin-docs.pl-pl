@@ -1,17 +1,18 @@
 ---
 title: Rozszerzenia znaczników XAML
-description: Rozszerz zakres źródła, z których XAML atrybuty są ustawiane
+description: Artykuł wyjaśniono, jak użyć rozszerzenia znaczników platformy Xamarin.Forms XAML, aby rozszerzyć możliwościach i elastyczności XAML, zezwalając atrybuty elementu ustawiono ze źródeł innych niż ciągi literału.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245888"
 ---
 # <a name="xaml-markup-extensions"></a>Rozszerzenia znaczników XAML
 
@@ -33,7 +34,7 @@ W obu przypadkach ciąg tekstowy ustawioną `Color` atrybutu jest konwertowany n
 
 Warto zamiast tego ustaw `Color` atrybutu z wartością przechowywaną w słowniku zasobów, lub wartość właściwości statycznej klasy, które zostały utworzone lub właściwość typu `Color` innego elementu na stronie lub utworzone z Oddzielanie wartości odcień, nasycenie i jasność.
 
-Wszystkie te opcje są możliwe przy użyciu rozszerzenia znaczników XAML. Ale nie pozwól frazę "rozszerzenia znaczników" przestraszyć możesz: rozszerzenia znaczników XAML są *nie* rozszerzeń XML. Nawet w przypadku rozszerzenia znaczników dla XAML XAML jest zawsze prawne XML. 
+Wszystkie te opcje są możliwe przy użyciu rozszerzenia znaczników XAML. Ale nie pozwól frazę "rozszerzenia znaczników" przestraszyć możesz: rozszerzenia znaczników XAML są *nie* rozszerzeń XML. Nawet w przypadku rozszerzenia znaczników dla XAML XAML jest zawsze prawne XML.
 
 Rozszerzenie znaczników jest naprawdę inny sposób Express atrybut elementu. Zazwyczaj do zidentyfikowania przez ustawienia atrybutów ujętych w nawiasy klamrowe są rozszerzenia znaczników XAML:
 
@@ -49,7 +50,7 @@ W tym artykule jest podzielony na dwie części:
 
 Użyj rozszerzenia znaczników XAML, które są zdefiniowane w platformy Xamarin.Forms.
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Tworzenie rozszerzeń struktury znaczników XAML](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Tworzenie rozszerzeń struktury znaczników XAML](creating.md)
 
 Pisanie własnych niestandardowych rozszerzeń znaczników XAML.
 

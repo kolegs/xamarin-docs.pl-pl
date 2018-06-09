@@ -1,28 +1,24 @@
 ---
 title: Wydajność ListView
-description: Zapewnić doskonałą wydajność z aplikacji na podstawie elementu ListView.
+description: Mimo że element ListView jest zaawansowanym widok, aby wyświetlić dane, ma pewne ograniczenia. W tym artykule wyjaśniono, jak zapewnić doskonałą wydajność z platformy Xamarin.Forms ListView w aplikacji.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244906"
 ---
 # <a name="listview-performance"></a>Wydajność ListView
 
 Podczas pisania aplikacji dla urządzeń przenośnych, ma znaczenie wydajności. Użytkownicy pochodzić oczekiwać płynnego przewijania i czasy ładowania szybkie. Nie spełniają oczekiwań użytkowników będzie koszt klasyfikacje sklepu z aplikacjami lub w przypadku aplikacji biznesowych — koszt zaoszczędzić czas i pieniądze.
 
 Mimo że [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest zaawansowanym widok do wyświetlania danych, ma pewne ograniczenia. Przewijanie wydajności mogą występować podczas korzystania z niestandardowych komórek, szczególnie w przypadku, gdy zawiera widok głęboko zagnieżdżone hierarchie lub używać niektórych układów wymagające dużej miary. Na szczęście są metod, które można użyć w celu uniknięcia pogorszenie wydajności.
-
-W tym artykule omówiono następujące tematy:
-
-- **[Caching Strategy](#cachingstrategy)**
-- **[Poprawianie wydajności ListView](#improving-performance)**
 
 <a name="cachingstrategy" />
 

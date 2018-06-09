@@ -1,17 +1,18 @@
 ---
 title: Uwierzytelnianie użytkowników z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
-description: Bazy dokumentów w usłudze Azure DB rozwiązania Cosmos obsługuje partycjonowanych kolekcje, które mogą znajdować się na różnych serwerach i partycji, podczas obsługi nieograniczony Magazyn oraz przepustowość. W tym artykule wyjaśniono, jak połączyć kontroli dostępu z kolekcji podzielone na partycje, dzięki czemu użytkownik może uzyskiwać dostęp tylko do swoich własnych dokumentów w aplikacji platformy Xamarin.Forms.
+description: W tym artykule opisano sposób łączenia kontroli dostępu z kolekcjami Azure DB rozwiązania Cosmos podzielona na partycje, dzięki czemu użytkownik może uzyskiwać dostęp tylko do swoich własnych dokumentów w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 031a48e5e10100b2c57ac067a0dda916c93d20da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241614"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Uwierzytelnianie użytkowników z bazą danych dokumentów platformy Azure rozwiązania Cosmos bazy danych
 
@@ -145,7 +146,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 Powoduje to, że przepływ uwierzytelniania OAuth inicjowanie między usługą aplikacji Azure i usługi Facebook, która zostanie wyświetlona strona logowania usługi Facebook:
 
-![](authentication-images/login.png "Facebook Login")
+![](authentication-images/login.png "Logowanie usługi Facebook")
 
 Nazwy logowania można anulować, naciskając klawisz **anulować** przycisk w systemie iOS lub naciskając klawisz **ponownie** przycisk w systemie Android, to w takim przypadku użytkownik pozostanie nieuwierzytelnione i interfejs użytkownika dostawcy tożsamości usunąć na ekranie.
 

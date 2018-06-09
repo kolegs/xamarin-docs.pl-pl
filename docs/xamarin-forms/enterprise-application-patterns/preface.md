@@ -1,18 +1,20 @@
 ---
-title: Tekst wstępny
+title: Wstępu do tworzenia aplikacji przedsiębiorstwa
+description: Ten rozdział zawiera wstęp do wzorców aplikacji przedsiębiorstwa za pomocą platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e9dd5f663fc98ac1e869721517e9a3d0fb2033bb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242371"
 ---
-# <a name="preface"></a>Tekst wstępny
+# <a name="preface-to-enterprise-app-development"></a>Wstępu do tworzenia aplikacji przedsiębiorstwa
 
 Ta książki elektronicznej znajdują się wskazówki dotyczące tworzenia organizacji i platform aplikacji przy użyciu platformy Xamarin.Forms. Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom tworzenie natywnego użytkownika układów interfejsu, które mogą być współużytkowane przez platform, w tym z systemem iOS, Android i Windows platformy Uniwersalnej. Zapewnia kompleksowe rozwiązanie dla firm, które pracownik (B2E), Business-to-Business (B2B) i biznesowych do aplikacji klient (B2C), umożliwiając udostępnianie kodu na wszystkich platformach docelowych i pomoc w celu zmniejszenia całkowitego kosztu posiadania (TCO).
 
@@ -42,4 +44,4 @@ Możesz także do przesyłania dalej w tym przewodniku, aby członkowie zespołu
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

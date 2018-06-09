@@ -1,5 +1,5 @@
 ---
-title: Przestrzeń nazw XAML
+title: Przestrzeń nazw XAML w platformy Xamarin.Forms
 description: XAML używa atrybutu XML xmlns dla deklaracji przestrzeni nazw. W tym artykule przedstawiono składnię przestrzeni nazw XAML i pokazuje, jak można zadeklarować przestrzeni nazw XAML uzyskiwać dostęp do typu.
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: ecf255d2fc6937e93258eaa021f79152cb7b1c7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245836"
 ---
-# <a name="xaml-namespaces"></a>Przestrzeń nazw XAML
+# <a name="xaml-namespaces-in-xamarinforms"></a>Przestrzeń nazw XAML w platformy Xamarin.Forms
 
 _XAML używa atrybutu XML xmlns dla deklaracji przestrzeni nazw. W tym artykule przedstawiono składnię przestrzeni nazw XAML i pokazuje, jak można zadeklarować przestrzeni nazw XAML uzyskiwać dostęp do typu._
 

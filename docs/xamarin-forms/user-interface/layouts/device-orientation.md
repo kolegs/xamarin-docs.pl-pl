@@ -1,28 +1,22 @@
 ---
 title: Orientacja urządzenia
-description: Zrozumienie sposobu określania układu aplikacji, które wygląda świetnie w orientacji pionowej i poziomej.
+description: W tym artykule opisano sposób aplikacji platformy Xamarin.Forms układu, które wygląda świetnie w orientacji pionowej i poziomej.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 95049e2d44b369bfa879226e17d2bad20b7b5408
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848138"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244354"
 ---
 # <a name="device-orientation"></a>Orientacja urządzenia
 
 Należy wziąć pod uwagę sposób używania aplikacji i jak orientacji poziomej mogą być uwzględniane w taki sposób, aby ulepszyć środowisko użytkownika. Układy poszczególnych mogą służyć do uwzględnienia wielu orientacje i najlepiej użyć dostępnego miejsca. Na poziomie aplikacji obrotu może zostać wyłączone lub włączone.
-
-Ten artykuł przeprowadzi Cię przez proces tworzenia aplikacji, które korzystają z funkcji orientacji urządzenia i zawiera następujące sekcje:
-
-- **[Kontrolowanie orientacji](#Controlling_Orientation)**  &ndash; zrozumieć sposób kontrolowania orientację na poziomie aplikacji na każdej platformie.
-- **[Reagowanie na zmiany w orientacji](#Reacting_to_Changes_in_Orientation)**  &ndash; Dowiedz się, jak otrzymywać powiadomienia o i reagowania na, zmiany w orientacji.
-- **[Elastyczny układ](#Responsive_Layout)**  &ndash; Dowiedz się, jak utworzyć układy automatycznie działały w orientacji poziomej i pionowej.
 
 <a name="Controlling_Orientation" />
 

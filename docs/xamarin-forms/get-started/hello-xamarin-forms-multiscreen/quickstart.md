@@ -1,17 +1,18 @@
 ---
 title: Szybki Start Wieloekranowy platformy Xamarin.Forms
+description: W tym artykule wyjaśniono, jak rozszerzyć Phoneword przez dodanie drugiego ekranu do śledzenia historii połączeń dla aplikacji.
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7d6c52bdee29b99b8a00de8f03d263c6fe528c5e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847618"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242394"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Szybki Start Wieloekranowy platformy Xamarin.Forms
 

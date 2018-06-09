@@ -1,20 +1,20 @@
 ---
-title: Etykieta
-description: Tekst wyświetlany w platformy Xamarin.Forms
+title: Etykieta platformy Xamarin.Forms
+description: W tym artykule opisano sposób użycia klasy platformy Xamarin.Forms etykiety do wyświetlania jednego oraz wiele wierszy tekstu w aplikacji.
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e0caa12136feb84d22ec4b90b84f3f92a601e0c0
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e9f99ace64e013dfa681e497b9d33376d79555ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847514"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245501"
 ---
-# <a name="label"></a>Etykieta
+# <a name="xamarinforms-label"></a>Etykieta platformy Xamarin.Forms
 
 _Tekst wyświetlany w platformy Xamarin.Forms_
 
