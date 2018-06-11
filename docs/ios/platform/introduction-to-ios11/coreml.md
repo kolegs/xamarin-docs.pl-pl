@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8b489fd1a1bcce474decf6881e8eb6620c2ee2e3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787499"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240739"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Wprowadzenie do CoreML w Xamarin.iOS
-
-_Machine learning dla aplikacji mobilnych w systemie iOS 11_
 
 CoreML przełącza uczenia maszynowego w systemach iOS — aplikacje można wykorzystać modele uczenia przeszkolone maszyny do szerokiej gamy zadania, od rozwiązywania problemów do rozpoznawania obrazu.
 
@@ -33,28 +31,19 @@ Te kroki opisano, jak dodać CoreML do projektu systemu iOS. Zapoznaj się [pró
 
 ![Zrzut ekranu przykładu predykcyjne cen siedliska MARS](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-model-to-the-project"></a>1. Dodaj model do projektu
+### <a name="1-add-the-coreml-model-to-the-project"></a>1. Dodaj CoreML model do projektu
 
-Dodaj model skompilowanych (katalog o **.modelc** rozszerzenia) do **zasobów** katalogu projektu. Zawartość katalogu powinny mieć akcją kompilacji **BundleResource**:
+Dodaj CoreML model (plik o **.mlmodel** rozszerzenia) do **zasobów** katalogu projektu. 
 
-![Folder zasobów powinien zawierać skompilowanego modelu](coreml-images/resources-modelc.png)
-
-[Przykłady](https://developer.xamarin.com/samples/monotouch/ios11/) korzystania z modeli utworzonych w programie Xcode 9 lub ręcznie przy użyciu następującego polecenia terminala:
-
-```csharp
-xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
-```
-
-> [!NOTE]
-> **.model —** pliki _musi_ można skompilować do **.modelc** przed udostępnieniem przez CoreML
+W oknie dialogowym właściwości pliku modelu jego **Akcja kompilacji** ustawiono **CoreMLModel**. Oznacza to, że zostanie skompilowany w **.mlmodelc** plików podczas tworzenia aplikacji.
 
 ### <a name="2-load-the-model"></a>2. Załadować modelu
 
-Przed rozpoczęciem korzystania z modelu, załadować go za pomocą `MLModel.FromUrl` metody statycznej:
+Załaduj model przy użyciu `MLModel.Create` metody statycznej:
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
-model = MLModel.FromUrl(assetPath, out NSError error1);
+model = MLModel.Create(assetPath, out NSError error1);
 ```
 
 ### <a name="3-set-the-parameters"></a>3. Ustaw parametry
@@ -113,13 +102,15 @@ CoreML model _MNISTClassifier_ jest załadowane, a następnie otoczona `VNCoreML
 
 ```csharp
 // Load the ML model
-var assetPath = NSBundle.MainBundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
-var mlModel = MLModel.FromUrl(assetPath, out NSError mlErr);
-var vModel = VNCoreMLModel.FromMLModel(mlModel, out NSError vnErr);
+var bundle = NSBundle.MainBundle;
+var assetPath = bundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
+NSError mlErr, vnErr;
+var mlModel = MLModel.Create(assetPath, out mlErr);
+var model = VNCoreMLModel.FromMLModel(mlModel, out vnErr);
 
 // Initialize Vision requests
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
-ClassificationRequest = new VNCoreMLRequest(vModel, HandleClassification);
+ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
 Klasa nadal należy zaimplementować `HandleRectangles` i `HandleClassification` metod żądań wizji, przedstawiono w kroku 3 i 4 poniżej.
@@ -153,7 +144,7 @@ void HandleRectangles(VNRequest request, NSError error) {
   // Run the Core ML MNIST classifier -- results in handleClassification method
   var handler = new VNImageRequestHandler(correctedImage, new VNImageOptions());
   DispatchQueue.DefaultGlobalQueue.DispatchAsync(() => {
-    handler.Perform(new VNRequest[] { ClassificationRequest }, out NSError err);
+    handler.Perform(new VNRequest[] {ClassificationRequest}, out NSError err);
   });
 }
 ```
@@ -167,7 +158,7 @@ void HandleRectangles(VNRequest request, NSError error) {
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
   var observations = request.GetResults<VNClassificationObservation>();
-  ... omitted error handling ...
+  // ... omitted error handling ...
   var best = observations[0]; // first/best classification result
   // render in UI
   DispatchQueue.MainQueue.DispatchAsync(()=>{
@@ -175,8 +166,6 @@ void HandleClassification(VNRequest request, NSError error){
   });
 }
 ```
-
-
 
 ## <a name="samples"></a>Przykłady
 
@@ -187,7 +176,6 @@ Istnieją trzy próbki CoreML próby:
 * [Przykład Vision & CoreML](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/) akceptuje parametr obrazu i używa framework wizji do identyfikowania kwadratowy regionów na obrazie, które są przekazywane do modelu CoreML, który rozpoznaje pojedynczego cyfr.
 
 * Na koniec [próbki rozpoznawania obrazu CoreML](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/) używa CoreML do identyfikowania funkcje zdjęcie. Domyślnie używa mniejszej **SqueezeNet** modelu (5MB), ale jest zostały zapisane, dzięki czemu można pobrać i dołączyć do nich większy **VGG16** modelu (553 MB). Aby uzyskać więcej informacji, zobacz [readme w próbce](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md).
-
 
 ## <a name="related-links"></a>Linki pokrewne
 
