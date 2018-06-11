@@ -12,7 +12,7 @@ ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35243629"
 ---
 # <a name="xamarinforms-deep-dive"></a>Informacje temat dokładnego platformy Xamarin.Forms
