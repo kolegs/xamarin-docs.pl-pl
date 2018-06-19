@@ -7,21 +7,24 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784819"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209262"
 ---
 # <a name="app-store-distribution"></a>Dystrybucji sklepu z aplikacjami
 
 Aplikacji platformy Xamarin.iOS został opracowany, następnym krokiem w cyklu tworzenia oprogramowania po dystrybucję aplikacji użytkownikom za pomocą programu iTunes App Store. Jest to najczęściej dystrybucji aplikacji. Przez publikowanie aplikacji w sklepie z aplikacjami firmy Apple, może on dostępne dla konsumentów na całym świecie.
 
 > [!IMPORTANT]
-> Jest **ważne** pamiętać, że program iTunes Connect, a w związku z tym publikowanie aplikacji do sklepu z aplikacjami, możesz **musi** być częścią albo indywidualnych lub organizacji Program deweloperów firmy Apple. Nie można wykonaj kroki opisane na tej stronie, jeśli jesteś członkiem Apple Developer **Enterprise** Program.
+> Apple [wskazuje](https://developer.apple.com/news/?id=05072018a) czy począwszy 2018 lipca, wszystkie aplikacje i aktualizacje przesłane do sklepu z aplikacjami musi mieć została utworzona za pomocą systemu iOS 11 SDK i [obsługuje wyświetlania iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Dystrybucja aplikacji — tak jak w przypadku tworzenia aplikacji, — wymaga, aby aplikacje były udostępniane za pomocą odpowiedniej *profil inicjowania obsługi administracyjnej*. Profile inicjowania obsługi administracyjnej są pliki zawierające kod podpisywania informacje, a także tożsamości aplikacji i mechanizmu dystrybucji zamierzone. Zawierają także informacje o jakie urządzenia można wdrożyć aplikację do dystrybucji - App Store.
+
+> [!IMPORTANT]
+> Jest **ważne** pamiętać, że program iTunes Connect, a w związku z tym publikowanie aplikacji do sklepu z aplikacjami, możesz **musi** być częścią albo indywidualnych lub organizacji Program deweloperów firmy Apple. Nie można wykonaj kroki opisane na tej stronie, jeśli jesteś członkiem Apple Developer **Enterprise** Program.
 
 <a name="provisioning" />
 

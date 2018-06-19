@@ -6,12 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/24/2016
-ms.openlocfilehash: bb3b4c4f80171f676e8b5f9a7464f4da890a4643
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: c040c12829708418d0a705b8e9f930989900c678
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209430"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -45,6 +46,10 @@ Używa XAML `xmlns` atrybutu XML dla deklaracji przestrzeni nazw. W tym artykule
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[Rozszerzenia struktury znaczników XAML](markup-extensions/index.md)
 
 XAML zawiera rozszerzenia znaczników do ustawiania atrybutów do wartości lub obiektów poza może zostać wyrażona z ciągami proste. Obejmują one odwołujące się do stałe, statycznej właściwości i pola słownikach zasobów i powiązania danych.
+
+## <a name="field-modifiersfield-modifiersmd"></a>[Modyfikatorów pól](field-modifiers.md)
+
+`x:FieldModifier` Atrybutu namespace określa poziom dostępu dla wygenerowanego pól nazwanych elementów XAML.
 
 ## <a name="passing-argumentspassing-argumentsmd"></a>[Przekazywanie argumentów](passing-arguments.md)
 

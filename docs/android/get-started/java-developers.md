@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209339"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin dla deweloperów języka Java
 
@@ -50,7 +51,7 @@ Istnieje jednak wiele różnic między Java i C#. Na przykład:
 
 -   Java nie obsługuje dyrektywy preprocesora, takich jak `#define`.
 
--   Java nie obsługuje typów całkowitych bez znaku, gdy C zawiera typy liczbę całkowitą bez znaku, takich jak `ulong`, `uint`, `ushort` i `byte`.
+-   Java nie obsługuje typów całkowitych bez znaku, C# zawiera liczbę całkowitą bez znaku typy takich jak `ulong`, `uint`, `ushort` i `byte`.
 
 -   Java nie obsługuje operatora przeładowanie; w języku C# można przeciążać operatory i konwersje.
 
@@ -442,7 +443,7 @@ Wiele słów kluczowych języka używany w języku Java są również używane w
 |`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|Określa, czy obiekt jest zgodny z danym typem.|
 |`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|Deklaruje metodę, która jest zaimplementowana zewnętrznie.|
 |`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|Deklaruje zakres dla zestawu powiązanych obiektów.|
-|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|Określa parametr metody, która przyjmuje zmienną liczbę argumentów.|
+|`T...`|[Parametry T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|Określa parametr metody, która przyjmuje zmienną liczbę argumentów.|
 |`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|Umożliwia dostęp do elementów członkowskich z klasy nadrzędnej, w klasie pochodnej.|
 |`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|Opakowuje krytyczne sekcji kodu z nabycia blokady i wersji.|
 
@@ -509,5 +510,5 @@ W tym artykule podać wprowadzenie do środowiska programowania Xamarin.Android 
 
 - [Omówienie integracji Java](~/android/platform/java-integration/index.md)
 - [Przewodnik programowania w języku C#](https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx)
-- [Odwołanie w C#](https://msdn.microsoft.com/en-us/library/618ayhy6.aspx)
+- [Dokumentacja języka C#](https://msdn.microsoft.com/en-us/library/618ayhy6.aspx)
 - [Przenoszenie do języka C# i .NET Framework dla deweloperów języka Java](https://www.microsoft.com/en-us/download/details.aspx?id=6073)

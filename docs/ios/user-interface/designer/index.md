@@ -7,22 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790006"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209235"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>Tworzenie interfejsów użytkownika za pomocą projektanta dla systemu iOS
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-=======
-# <a name="ios-designer"></a>iOS Designer
-
 _Projektant Xamarin dla systemu iOS jest wizualnego projektanta dla systemu iOS formaty scenorysu i kompilatora interfejsu, który jest w pełni zintegrowana z programem Visual Studio for Mac i Visual Studio. IOS projektanta przechowuje pełną zgodność z formatów scenorysu i .xib, tak, aby pliki mogą być edytowane w Visual Studio for Mac lub Visual Studio oprócz konstruktora interfejsu w środowisku Xcode. Ponadto Projektant Xamarin dla systemu iOS obsługuje zaawansowane funkcje, takie jak Kontrolki niestandardowe, które są renderowane w czasie projektowania w edytorze._
->>>>>>> główne
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: bcc265c4d8410bb1aa2305f8a137c96a63c60fae
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 37d99add473203d90cb1b420536827e34e834a2b
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847722"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209326"
 ---
 # <a name="xamarinforms-performance"></a>Wydajności platformy Xamarin.Forms
 
@@ -314,7 +314,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Nowe macierzystego formantu były tworzone tylko raz, jeśli `Control` jest właściwość `null`. Kontrolki tylko należy skonfigurować i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały subskrybuje tylko należy anulować w, gdy element renderującego jest dołączony do zmiany. Przyjmowanie takie podejście pomoże utworzyć wydajnie wykonywania niestandardowego modułu renderowania, które nie występują z przecieki pamięci.
+Nowe macierzystego formantu były tworzone tylko raz, jeśli `Control` jest właściwość `null`. Kontrolki tylko należy skonfigurować i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały subskrybuje tylko należy anulować w podczas renderowania element jest dołączony do zmiany. Przyjmowanie takie podejście pomoże utworzyć wydajnie wykonywania niestandardowego modułu renderowania, które nie występują z przecieki pamięci.
 
 Aby uzyskać więcej informacji na temat niestandardowe moduły renderowania, zobacz [Dostosowywanie formantów na każdej platformie](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 

@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 07/10/2017
-ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245836"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209300"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Przestrzeń nazw XAML w platformy Xamarin.Forms
 
@@ -43,11 +43,12 @@ W poniższej tabeli przedstawiono `x` obsługiwana przez platformy Xamarin.Forms
 |`x:Arguments`|Określa argumenty konstruktora z systemem innym niż domyślny konstruktor lub deklaracji obiektu metody fabryki.|
 |`x:Class`|Określa nazwę przestrzeni nazw i klasy dla klasy zdefiniowany w języku XAML. Nazwa klasy musi odpowiadać nazwie klasy pliku CodeBehind. Należy pamiętać, że ta konstrukcja może występować tylko w elemencie głównym pliku XAML.|
 |`x:FactoryMethod`|Określa metodę fabryka, która może służyć do zainicjowania obiektu.|
+|`x:FieldModifier`|Określa poziom dostępu dla wygenerowanego pól nazwanych elementów XAML.|
 |`x:Key`|Określa unikatowy klucz użytkownika dla każdego zasobu w `ResourceDictionary`. Wartość klucza służy do pobierania zasobu XAML i zazwyczaj jest używane jako argument dla `StaticResource` — rozszerzenie znaczników.|
 |`x:Name`|Określa nazwę obiektu środowiska wykonawczego dla elementu XAML. Ustawienie `x:Name` jest podobny do deklarowania zmiennych w kodzie.|
 |`x:TypeArguments`|Określa argumenty typu ogólnego do konstruktora typu ogólnego.|
 
-Aby uzyskać więcej informacji na temat `x:Arguments`, `x:FactoryMethod`, i `x:TypeArguments` atrybutów, zobacz [przekazywanie argumentów w języku XAML](~/xamarin-forms/xaml/passing-arguments.md).
+Aby uzyskać więcej informacji na temat `x:FieldModifier` atrybutów, zobacz [modyfikatorów pól](~/xamarin-forms/xaml/field-modifiers.md). Aby uzyskać więcej informacji na temat `x:Arguments`, `x:FactoryMethod`, i `x:TypeArguments` atrybutów, zobacz [przekazywanie argumentów w języku XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 W języku XAML deklaracje przestrzeni nazw dziedziczyć z elementu nadrzędnego do elementu podrzędnego. W związku z tym podczas definiowania przestrzeni nazw w elemencie głównym pliku XAML, wszystkie elementy w tym pliku dziedziczą deklaracji przestrzeni nazw.
 

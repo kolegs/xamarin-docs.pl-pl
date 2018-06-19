@@ -7,15 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: b54313668a2cb87a6cce0b8c519a06247524df81
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209313"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurowanie aplikacji w iTunes Connect
 
-_W tym artykule opisano kroki wymagane do instalacji i obsługa aplikacji platformy Xamarin.iOS w iTunes Connect, dzięki czemu może być zwolnione dystrybucji ze sklepu App Store._
+> [!IMPORTANT]
+> Apple [wskazuje](https://developer.apple.com/news/?id=05072018a) czy począwszy 2018 lipca, wszystkie aplikacje i aktualizacje przesłane do sklepu z aplikacjami musi mieć została utworzona za pomocą systemu iOS 11 SDK i [obsługuje wyświetlania iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 iTunes Connect to zestaw narzędzi opartych na sieci web, między innymi, zarządzanie aplikacjami systemu iOS ze sklepu App Store. Aplikacji platformy Xamarin.iOS należy prawidłowo skonfigurować i skonfigurowane w iTunes Connect przed może być przesyłany do firmy Apple w celu przeglądu i ostatecznie wydane jako bezpłatną aplikację w sklepie z aplikacjami lub sprzedaży.
 

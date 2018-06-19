@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781259"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209404"
 ---
 # <a name="advanced-manual-real-world-example"></a>Zaawansowane przykład rzeczywistych (ręczna)
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781259"
 
 W tej sekcji omówiono bardziej zaawansowanych podejście do wiązania, w której będzie korzystać firmy Apple `xcodebuild` narzędzia, aby najpierw skompilować projekt POP i ręcznie wywnioskować dane wejściowe dla Sharpie cel. Obejmuje to zasadniczo Sharpie cel czynności kulisy w poprzedniej sekcji.
 
-```csharp
+```
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 Ponieważ biblioteka POP ma projektu Xcode (`pop.xcodeproj`), możemy użyć `xcodebuild` do tworzenia protokołu POP. Ten proces z kolei może generować pliki nagłówkowe, które Sharpie celem może być konieczne analizy. Jest to, dlaczego tworzenie przed ważne jest powiązanie. Podczas kompilowania za pośrednictwem `xcodebuild` upewnij się, zostanie przekazany do tego samego identyfikatora zestawu SDK i architektury który chcesz przekazać do Sharpie cel (i należy pamiętać, że cel Sharpie 3.0 można to zrobić zwykle!):
 
-```csharp
+```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ Będzie dużo danych wyjściowych informacji o kompilacji w konsoli jako częś�
 
 Firma Microsoft są teraz gotowe do powiązania protokołu POP. Wiemy, że chęć kompilacji dla zestawu SDK `iphoneos8.1` z `arm64` architektury i pliki nagłówkowe Szanujemy znajdują się w `build/Headers` w obszarze wyewidencjonowania git POP. Jeśli szukamy `build/Headers` zajmiemy się liczba pliki nagłówkowe katalogu:
 
-```csharp
+```
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 Jeśli przyjrzymy się `POP.h`, zobaczysz jest plik głównego nagłówka najwyższego poziomu biblioteki `#import`s inne pliki. W związku z tym tylko należy przekazać `POP.h` do Sharpie cel i clang będzie wykonywać rest w tle:
 
-```csharp
+```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
