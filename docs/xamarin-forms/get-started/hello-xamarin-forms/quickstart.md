@@ -7,13 +7,13 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/03/2018
-ms.openlocfilehash: 90394195afc4257656c8d09fab348156a7f549d5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 3a1da095559b4030332f4b7cc74b4f8f94fb1c61
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242911"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268878"
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 
@@ -123,56 +123,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **MainPage.xaml.cs** naciskając **CTRL + S**i zamknij plik.
 
-9. W **Eksploratora rozwiązań**, rozwiń węzeł **App.xaml** i kliknij dwukrotnie **App.xaml.cs** go otworzyć:
-
-    ![](quickstart-images/vs/open-app-class.png "Otwórz App.xaml.cs")
-
-10. W **App.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `App` Ustawia konstruktora `MainPage` klasy jako strony, który będzie wyświetlany podczas uruchamiania aplikacji:
-
-    ```csharp
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
-
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-    namespace Phoneword
-    {
-        public partial class App : Application
-        {
-            public App()
-            {
-                InitializeComponent();
-                MainPage = new MainPage();
-            }
-
-            protected override void OnStart()
-            {
-                // Handle when your app starts
-            }
-
-            protected override void OnSleep()
-            {
-                // Handle when your app sleeps
-            }
-
-            protected override void OnResume()
-            {
-                // Handle when your app resumes
-            }
-        }
-    }
-    ```
-
-    Zapisać zmiany w **App.xaml.cs** naciskając **CTRL + S**i zamknij plik.
-
-11. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz **Dodaj > Nowy element...** :
+9. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item.png "Dodaj nowy element")
 
-12. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > klasy**, Nazwa nowego pliku **PhoneTranslator**i kliknij przycisk **Dodaj** przycisku :
+10. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > klasy**, Nazwa nowego pliku **PhoneTranslator**i kliknij przycisk **Dodaj** przycisku :
 
     ![](quickstart-images/vs/add-translator-class.w157.png "Dodaj nową klasę")
 
-13. W **PhoneTranslator.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod będzie tłumaczenie wyrazu phone na numer telefonu:
+11. W **PhoneTranslator.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod będzie tłumaczenie wyrazu phone na numer telefonu:
 
     ```csharp
     using System.Text;
@@ -230,15 +189,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneTranslator.cs** naciskając **CTRL + S**i zamknij plik.
 
-14. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz **Dodaj > Nowy element...** :
+12. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item.png "Dodaj nowy element")
 
-15. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > interfejs**, Nazwa nowego pliku **IDialer**i kliknij przycisk **Dodaj** przycisk:
+13. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > interfejs**, Nazwa nowego pliku **IDialer**i kliknij przycisk **Dodaj** przycisk:
 
     ![](quickstart-images/vs/add-idialer-interface.w157.png "Dodaj nowy interfejs")
 
-16. W **IDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje `Dial` metodę, która musi zostać wdrożone na każdej z platform wybierz numer telefonu przetłumaczonego:
+14. W **IDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje `Dial` metodę, która musi zostać wdrożone na każdej z platform wybierz numer telefonu przetłumaczonego:
 
     ```csharp
     namespace Phoneword
@@ -255,15 +214,15 @@ Utwórz aplikację Phoneword w następujący sposób:
     > [!NOTE]
     > Typowy kod aplikacji jest teraz ukończona. Specyficzne dla platformy phone telefon kod będzie teraz zaimplementowana jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-17. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.iOS** projekt i wybierz **Dodaj > Nowy element...** :
+15. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.iOS** projekt i wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item-ios.png "Dodaj nowy element")
 
-18. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
+16. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Apple > Kod > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
 
     ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Dodaj nową klasę")
 
-19. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy <code>Dial</code> metoda, która będzie używana na platformie iOS wybierania numeru telefonu przetłumaczonego:
+17. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy <code>Dial</code> metoda, która będzie używana na platformie iOS wybierania numeru telefonu przetłumaczonego:
 
     ```csharp
     using Foundation;
@@ -287,15 +246,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneDialer.cs** naciskając **CTRL + S**i zamknij plik.
 
-20. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Android** projekt i wybierz **Dodaj > Nowy element...** :
+18. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Android** projekt i wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item-android.png "Dodaj nowy element")
 
-21. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Android > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
+19. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Android > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
 
     ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Dodaj nową klasę")
 
-22. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie Android do wybierania numeru telefonu przetłumaczonego:
+20. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie Android do wybierania numeru telefonu przetłumaczonego:
 
     ```csharp
     using Android.Content;
@@ -316,7 +275,7 @@ Utwórz aplikację Phoneword w następujący sposób:
                 if (context == null)
                     return false;
 
-                var intent = new Intent (Intent.ActionCall);
+                var intent = new Intent (Intent.ActionDial);
                 intent.SetData (Uri.Parse ("tel:" + number));
 
                 if (IsIntentAvailable (context, intent)) {
@@ -346,7 +305,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneDialer.cs** naciskając **CTRL + S**i zamknij plik.
 
-23. W **Eksploratora rozwiązań**w **Phoneword.Android** projektu, kliknij dwukrotnie **MainActivity.cs** go otworzyć, usuń cały kod szablonu i zastąpić go ciągiem następujący kod:
+21. W **Eksploratora rozwiązań**w **Phoneword.Android** projektu, kliknij dwukrotnie **MainActivity.cs** go otworzyć, usuń cały kod szablonu i zastąpić go ciągiem następujący kod:
 
     ```csharp
     using Android.App;
@@ -355,7 +314,8 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     namespace Phoneword.Droid
     {
-        [Activity(Label = "Phoneword", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        [Activity(Label = "Phoneword", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+                  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
         public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
         {
             internal static MainActivity Instance { get; private set; }
@@ -366,36 +326,35 @@ Utwórz aplikację Phoneword w następujący sposób:
                 ToolbarResource = Resource.Layout.Toolbar;
 
                 base.OnCreate(bundle);
-
                 Instance = this;
                 global::Xamarin.Forms.Forms.Init(this, bundle);
                 LoadApplication(new App());
             }
         }
-    }  
+    }
     ```
 
     Zapisać zmiany w **MainActivity.cs** naciskając **CTRL + S**i zamknij plik.
 
-24. W **Eksploratora rozwiązań**w **Phoneword.Android** projektu, kliknij dwukrotnie **właściwości** i wybierz **manifestu systemu Android** karty:
+22. W **Eksploratora rozwiązań**w **Phoneword.Android** projektu, kliknij dwukrotnie **właściwości** i wybierz **manifestu systemu Android** karty:
 
     ![](quickstart-images/vs/android-manifest.png "Otwórz manifestu systemu Android")
 
-25. W **wymagane uprawnienia** Włącz opcję **CALL_PHONE** uprawnienia. Dzięki temu aplikacji uprawnienia do telefonicznie:
+23. W **wymagane uprawnienia** Włącz opcję **CALL_PHONE** uprawnienia. Dzięki temu aplikacji uprawnienia do telefonicznie:
 
     ![](quickstart-images/vs/android-manifest-changed.png "Włącz uprawnień CallPhone")
 
     Zapisz zmiany w manifeście, naciskając klawisz **CTRL + S**i zamknij plik.
 
-26. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.UWP** projekt i wybierz **Dodaj > Nowy element...** :
+24. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.UWP** projekt i wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item-uwp.png "Dodaj nowy element")
 
-27. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
+25. W **Dodaj nowy element** okno dialogowe, wybierz opcję **Visual C# > Kod > klasy**, Nazwa nowego pliku **PhoneDialer.Document**i kliknij przycisk **Dodaj** przycisk:
 
     ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Dodaj nową klasę")
 
-28. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` — metoda i metody pomocnicze, które będą używane na platformy uniwersalnej systemu Windows do wybierania numeru telefonu przetłumaczonego:
+26. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` — metoda i metody pomocnicze, które będą używane na platformy uniwersalnej systemu Windows do wybierania numeru telefonu przetłumaczonego:
 
     ```csharp
     using Phoneword.UWP;
@@ -446,42 +405,42 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneDialer.cs** naciskając **CTRL + S**i zamknij plik.
 
-29. W **Eksploratora rozwiązań**w **Phoneword.UWP** projektu, kliknij prawym przyciskiem myszy **odwołania**i wybierz **Dodawanie odwołania...** :
+27. W **Eksploratora rozwiązań**w **Phoneword.UWP** projektu, kliknij prawym przyciskiem myszy **odwołania**i wybierz **Dodawanie odwołania...** :
 
     ![](quickstart-images/vs/uwp-add-reference.png "Dodaj odwołanie")
 
-30. W **Menedżera odwołań** okno dialogowe, wybierz opcję **uniwersalnych systemu Windows > Rozszerzenia > systemu Windows Mobile rozszerzeń dla platformy uniwersalnej systemu Windows**i kliknij przycisk **OK** przycisk:
+28. W **Menedżera odwołań** okno dialogowe, wybierz opcję **uniwersalnych systemu Windows > Rozszerzenia > systemu Windows Mobile rozszerzeń dla platformy uniwersalnej systemu Windows**i kliknij przycisk **OK** przycisk:
 
     ![](quickstart-images/vs/uwp-add-reference-extensions.png "Dodawanie rozszerzeń przenośnych systemu Windows dla platformy uniwersalnej systemu Windows")
 
-31. W **Eksploratora rozwiązań**w **Phoneword.UWP** projektu, kliknij dwukrotnie **Package.appxmanifest**:
+29. W **Eksploratora rozwiązań**w **Phoneword.UWP** projektu, kliknij dwukrotnie **Package.appxmanifest**:
 
     ![](quickstart-images/vs/uwp-manifest.png "Otwórz plik manifestu platformy uniwersalnej systemu Windows")
 
-31. W **możliwości** pozycję Włącz **rozmowy telefonicznej** możliwości. Dzięki temu aplikacji uprawnienia do telefonicznie:
+30. W **możliwości** pozycję Włącz **rozmowy telefonicznej** możliwości. Dzięki temu aplikacji uprawnienia do telefonicznie:
 
     ![](quickstart-images/vs/uwp-manifest-changed.png "Włącz możliwość połączenia telefonicznego")
 
     Zapisz zmiany w manifeście, naciskając klawisz **CTRL + S**i zamknij plik.
 
-32. W programie Visual Studio, wybierz **kompilacji > Kompiluj rozwiązanie** elementu menu (lub naciśnij klawisz **CTRL + SHIFT + B**). Aplikacja zostanie utworzona i zostanie wyświetlony komunikat Powodzenie, na pasku stanu programu Visual Studio:
+31. W programie Visual Studio, wybierz **kompilacji > Kompiluj rozwiązanie** elementu menu (lub naciśnij klawisz **CTRL + SHIFT + B**). Aplikacja zostanie utworzona i zostanie wyświetlony komunikat Powodzenie, na pasku stanu programu Visual Studio:
 
     ![](quickstart-images/vs/build-successful.png "Pomyślnie kompilacji")
 
     Jeśli wystąpią błędy, powtórz poprzednie kroki i usuń ewentualne błędy, dopóki aplikacja tworzy się pomyślnie.
 
-33. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.UWP** projekt i wybierz **Ustaw jako projekt startowy**:
+32. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.UWP** projekt i wybierz **Ustaw jako projekt startowy**:
 
     ![](quickstart-images/vs/uwp-set-as-startup-project.png "Ustaw jako projekt startowy")
 
-34. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji:
+33. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji:
 
     ![](quickstart-images/vs/start.png "Pasek narzędzi Visual Studio")
     ![](quickstart-images/vs/phone-result-uwp.png "Phoneword aplikacji platformy uniwersalnej systemu Windows")
 
-35. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Android** projekt i wybierz **Ustaw jako projekt startowy**.
-36. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android.
-37. Jeśli masz urządzenie z systemem iOS i spełniać wymagania systemowe Mac do tworzenia aplikacji platformy Xamarin.Forms, użyj technika podobne do wdrożenia aplikacji na urządzeniu z systemem iOS. Można również wdrożyć aplikację, aby [zdalnego symulatora systemu iOS](~/tools/ios-simulator.md).
+34. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Android** projekt i wybierz **Ustaw jako projekt startowy**.
+35. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android.
+36. Jeśli masz urządzenie z systemem iOS i spełniać wymagania systemowe Mac do tworzenia aplikacji platformy Xamarin.Forms, użyj technika podobne do wdrożenia aplikacji na urządzeniu z systemem iOS. Można również wdrożyć aplikację, aby [zdalnego symulatora systemu iOS](~/tools/ios-simulator.md).
 
     Uwaga: połączenia telefoniczne nie są obsługiwane na wszystkich symulatorów.
 
@@ -495,7 +454,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/xs/choose-template.png "Wybieranie szablonu")
 
-3. W **skonfigurować aplikację formularzy** okna dialogowego, nazwę nowej aplikacji `Phoneword`, upewnij się, że **Użyj przenośnej biblioteki klas** przycisk radiowy zostanie wybrany, upewnij się, że **Użyj XAML dla użytkownika Interfejs pliki** pole wyboru jest zaznaczone, a następnie kliknij przycisk **dalej** przycisk:
+3. W **skonfigurować aplikację formularzy** okna dialogowego, nazwę nowej aplikacji `Phoneword`, upewnij się, że **Użyj .NET Standard** przycisk radiowy jest zaznaczony, a następnie kliknij przycisk **dalej** przycisk:
 
     ![](quickstart-images/xs/configure-app.png "Konfigurowanie aplikacji formularzy")
 
@@ -503,19 +462,11 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/xs/configure-project.png "Konfigurowanie projektu formularzy")
 
-5. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
-
-    ![](quickstart-images/xs/add-new-file.png "Dodaj nowy plik")
-
-6. W **nowy plik** okno dialogowe, wybierz **Formularze > Xaml wartość ContentPage formularze**, Nazwa nowego pliku **MainPage**i kliknij przycisk **nowy** przycisku. Spowoduje to dodanie stronę o nazwie **MainPage** do projektu:
-
-    ![](quickstart-images/xs/add-mainpage-class.png "Dodaj nowy wartość ContentPage")
-
-7. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** go otworzyć:
+5. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** go otworzyć:
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "Otwórz MainPage.xaml")
 
-8. W **MainPage.xaml**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje deklaratywnie interfejsu użytkownika dla strony:
+6. W **MainPage.xaml**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje deklaratywnie interfejsu użytkownika dla strony:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -525,7 +476,7 @@ Utwórz aplikację Phoneword w następujący sposób:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -539,11 +490,11 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-9. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
+7. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
 
     ![](quickstart-images/xs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-10. W **MainPage.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `OnTranslate` i `OnCall` metod, które będą wykonywane w odpowiedzi na **Przetłumacz** i **wywołać** przycisków w momencie kliknięcia odpowiednio w interfejsie użytkownika:
+8. W **MainPage.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `OnTranslate` i `OnCall` metod, które będą wykonywane w odpowiedzi na **Przetłumacz** i **wywołać** przycisków w momencie kliknięcia odpowiednio w interfejsie użytkownika:
 
     ```csharp
     using System;
@@ -593,56 +544,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-11. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
-
-    ![](quickstart-images/xs/open-app-class.png "Otwórz App.xaml.cs")
-
-12. W **App.xaml.cs**, usuń cały kod szablonu i zastąp go następującym kodem. `App` Ustawia konstruktora `MainPage` klasy jako strony, który będzie wyświetlany podczas uruchamiania aplikacji:
-
-    ```csharp
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
-
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-    namespace Phoneword
-    {
-        public partial class App : Application
-        {
-            public App()
-            {
-                InitializeComponent();
-                MainPage = new MainPage();
-            }
-
-            protected override void OnStart()
-            {
-                // Handle when your app starts
-            }
-
-            protected override void OnSleep()
-            {
-                // Handle when your app sleeps
-            }
-
-            protected override void OnResume()
-            {
-                // Handle when your app resumes
-            }
-        }
-    }
-    ```
-
-    Zapisać zmiany w **Phoneword.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
-
-13. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
+9. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
     ![](quickstart-images/xs/add-new-translator-file.png "Dodaj nowy plik")
 
-14. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneTranslator**i kliknij przycisk **nowy** przycisk:
+10. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneTranslator**i kliknij przycisk **nowy** przycisk:
 
     ![](quickstart-images/xs/add-translator-class.png "Dodaj nową klasę")
 
-15. W **PhoneTranslator.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod będzie tłumaczenie wyrazu phone na numer telefonu:
+11. W **PhoneTranslator.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod będzie tłumaczenie wyrazu phone na numer telefonu:
 
     ```csharp
     using System.Text;
@@ -700,15 +610,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneTranslator.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-16. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
+12. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
     ![](quickstart-images/xs/add-new-interface.png "Dodaj nowy plik")
 
-17. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustego interfejsu**, podaj nazwę nowego pliku **IDialer**i kliknij przycisk **nowy** przycisk:
+13. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustego interfejsu**, podaj nazwę nowego pliku **IDialer**i kliknij przycisk **nowy** przycisk:
 
     ![](quickstart-images/xs/add-idialer-interface.png "Dodaj nowy interfejs")
 
-18. W **IDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje `Dial` metodę, która musi zostać wdrożone na każdej z platform wybierz numer telefonu przetłumaczonego:
+14. W **IDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje `Dial` metodę, która musi zostać wdrożone na każdej z platform wybierz numer telefonu przetłumaczonego:
 
     ```csharp
     namespace Phoneword
@@ -724,15 +634,15 @@ Utwórz aplikację Phoneword w następujący sposób:
     > [!NOTE]
     > Typowy kod aplikacji jest teraz ukończona. Specyficzne dla platformy phone telefon kod będzie teraz zaimplementowana jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-19. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.iOS** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
+15. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.iOS** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
     ![](quickstart-images/xs/add-new-file-ios.png "Dodaj nowy plik")
 
-20. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneDialer.Document**i kliknij przycisk **nowy** przycisk:
+16. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneDialer.Document**i kliknij przycisk **nowy** przycisk:
 
     ![](quickstart-images/xs/new-phonedialer-ios.png "Dodaj nową klasę")
 
-21. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie iOS wybierania numeru telefonu przetłumaczonego:
+17. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie iOS wybierania numeru telefonu przetłumaczonego:
 
     ```csharp
     using Foundation;
@@ -756,15 +666,15 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-22. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
+18. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
     ![](quickstart-images/xs/add-new-file-android.png "Dodaj nowy plik")
 
-23. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneDialer.Document**i kliknij przycisk **nowy** przycisk:
+19. W **nowy plik** okno dialogowe, wybierz opcję **ogólne > pustą klasę**, podaj nazwę nowego pliku **PhoneDialer.Document**i kliknij przycisk **nowy** przycisk:
 
     ![](quickstart-images/xs/new-phonedialer-android.png "Dodaj nową klasę")
 
-24. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie Android do wybierania numeru telefonu przetłumaczonego:
+20. W **PhoneDialer.cs**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod tworzy `Dial` metoda, która będzie używana na platformie Android do wybierania numeru telefonu przetłumaczonego:
 
     ```csharp
     using Android.Content;
@@ -785,7 +695,7 @@ Utwórz aplikację Phoneword w następujący sposób:
                 if (context == null)
                     return false;
 
-                var intent = new Intent (Intent.ActionCall);
+                var intent = new Intent (Intent.ActionDial);
                 intent.SetData (Uri.Parse ("tel:" + number));
 
                 if (IsIntentAvailable (context, intent)) {
@@ -815,7 +725,7 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     Zapisać zmiany w **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-25. W **konsoli rozwiązania**w **Phoneword.Droid** projektu, kliknij dwukrotnie **MainActivity.cs** go otworzyć, Usuń wszystkie kod szablonu i zastąp go następującym kodem Kod:
+21. W **konsoli rozwiązania**w **Phoneword.Droid** projektu, kliknij dwukrotnie pozycję **MainActivity.cs** go otworzyć, usuń cały kod szablonu i zastąp go następującym kodem :
 
     ```csharp
     using Android.App;
@@ -824,7 +734,8 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     namespace Phoneword.Droid
     {
-        [Activity(Label = "Phoneword", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        [Activity(Label = "Phoneword", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+                  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
         public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
         {
             internal static MainActivity Instance { get; private set; }
@@ -835,48 +746,43 @@ Utwórz aplikację Phoneword w następujący sposób:
                 ToolbarResource = Resource.Layout.Toolbar;
 
                 base.OnCreate(bundle);
-
                 Instance = this;
                 global::Xamarin.Forms.Forms.Init(this, bundle);
                 LoadApplication(new App());
             }
         }
-    }        
+    }
     ```
 
     Zapisać zmiany w **MainActivity.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-    > [!NOTE]
-    > Przykładowy kod używa `Theme="@style/MainTheme"` ponieważ jest ona oparta na starszej szablonu. Możesz sprawdzić nazwę poprawne stylu w **Phoneword/Droid/Resources/values/styles.xml** Jeśli wystąpi błąd kompilatora możesz uzyskać nazwę motywu.
-
-26. W **konsoli rozwiązania**, rozwiń węzeł **właściwości** folder i kliknij dwukrotnie **AndroidManifest.xml** pliku:
+22. W **konsoli rozwiązania**, rozwiń węzeł **właściwości** folder i kliknij dwukrotnie **AndroidManifest.xml** pliku:
 
     ![](quickstart-images/xs/android-manifest.png "Otwórz manifestu systemu Android")
 
-27. W **wymagane uprawnienia** Włącz opcję **CallPhone** uprawnienia. Dzięki temu aplikacji uprawnienia do telefonicznie:
+23. W **wymagane uprawnienia** Włącz opcję **CallPhone** uprawnienia. Dzięki temu aplikacji uprawnienia do telefonicznie:
 
     ![](quickstart-images/xs/android-manifest-changed.png "Włącz uprawnień CallPhone")
 
     Zapisać zmiany w **AndroidManifest.xml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
 
-28. W **konsoli rozwiązania**, Usuń **PhonewordPage** klasę z **Phoneword** projektu. Ta strona została dodana automatycznie, gdy projekt został utworzony i nie jest już wymagane.
-29. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz  **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac paska narzędzi.
+24. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz  **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac paska narzędzi.
 
     ![](quickstart-images/xs/build-successful.png "Pomyślnie kompilacji")
 
-30. Jeśli wystąpią błędy, powtórz poprzednie kroki i usuń ewentualne błędy, dopóki aplikacja tworzy się pomyślnie.
-31. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji w narzędziu iOS Simulator:
+25. Jeśli wystąpią błędy, powtórz poprzednie kroki i usuń ewentualne błędy, dopóki aplikacja tworzy się pomyślnie.
+26. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji w narzędziu iOS Simulator:
 
     ![](quickstart-images/xs/start.png "Programu Visual Studio for Mac narzędzi")
     ![](quickstart-images/xs/phoneword-result-ios.png "symulatora systemu iOS")
 
     Uwaga: połączenia telefoniczne nie są obsługiwane w narzędziu iOS Simulator.
 
-32. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Ustaw jako projekt startowy**:
+27. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Ustaw jako projekt startowy**:
 
     ![](quickstart-images/xs/set-startup-project.png "Ustaw jako projekt startowy")
 
-33. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android:
+28. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android:
 
     ![](quickstart-images/xs/phoneword-result-android.png "Emulator systemu android")
 

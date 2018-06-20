@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794023"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269060"
 ---
 # <a name="debugging-integrations"></a>Debugowanie integracji
 
@@ -23,8 +23,8 @@ Na macOS, wiadomości dziennika są wyświetlane w obu menu Podgląd dziennika (
 
 Dziennik klienta jest w następujących lokalizacjach w macOS i Windows:
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- System Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- System Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 Jedyną operacją, należy pamiętać o oznacza, że podczas ładowania integracji za pośrednictwem zwykle `#r` mechanizmu podczas tworzenia zestawu integracji będą pobierane jako _zależności_ skoroszytu i spakowanych z nim, jeśli jest ścieżką bezwzględną nie jest używany. Może to spowodować zmiany prawdopodobnie nie są propagowane, jakby odbudowywania integrację nic nie zostało.
 
@@ -39,7 +39,7 @@ Oba zestawy narzędzia pozwalają na wyświetlanie źródłowy JavaScript/TypeSc
 Aby włączyć narzędzia deweloperskie dla skoroszytów Xamarin dla komputerów Mac, uruchom następujące polecenie w terminalu:
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 a następnie ponownie uruchom program Xamarin skoroszytów. Po wykonaniu powinna zostać wyświetlona **sprawdzić Element** są wyświetlane w menu kontekstowe programu kliknij prawym przyciskiem myszy, a nowy **Developer** okienko będą dostępne w preferencjach skoroszytów. Ta opcja pozwala wybrać otwarty podczas uruchamiania narzędzi deweloperskich:

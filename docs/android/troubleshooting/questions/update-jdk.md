@@ -7,12 +7,13 @@ ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: dcfc5e406e60ac72fb1ca1e9cfb0395d17074b2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 979bf4572e0e0865c2254c3e1c2f707c8eecae8d
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269663"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Jak zaktualizować wersję Java Development Kit (JDK)?
 
@@ -38,7 +39,7 @@ Xamarin.Android używa języka Java Development Kit (JDK) do integracji z zestaw
 
 4.  Otwórz program Visual Studio i aktualizacji **Java Development Kit lokalizacji** wskaż nowy zestaw JDK w obszarze **Narzędzia > Opcje > Xamarin > ustawień systemu Android > Java Development Kit lokalizacji > Zmień**:
 
-    ![Ścieżka ustawienie JDK na stronie ustawień systemu Android opcji IDE](update-jdk-images/image4.png)
+    [![Ścieżka ustawienie JDK na stronie ustawień systemu Android opcji IDE](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 Pamiętaj ponownie program Visual Studio po zaktualizowaniu lokalizacji.
 

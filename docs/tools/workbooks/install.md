@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793824"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268995"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Skoroszyty instalacji i wymagania
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793824"
 
 |Platforma aplikacji|Obsługa systemu operacyjnego|Uwagi|
 |--- |--- |--- |
-|Mac (Unified)|Obsługiwane tylko dla komputerów Mac|
-|iOS (Unified)|Obsługiwane w Mac i systemu Windows|Xamarin.iOS 11.0 i Xcode 9.0 lub nowszej musi być zainstalowany na komputerach Mac. Uruchamianie iOS skoroszytów w systemie Windows wymaga hosta kompilacji Mac z systemem wszystkie powyższe i [zdalny symulatora systemu iOS](~/tools/ios-simulator.md) zainstalowany w systemie Windows.|
+|Mac|Obsługiwane tylko dla komputerów Mac|
+|iOS|Obsługiwane w Mac i systemu Windows|Xamarin.iOS 11.0 i Xcode 9.0 lub nowszej musi być zainstalowany na komputerach Mac. Uruchamianie iOS skoroszytów w systemie Windows wymaga hosta kompilacji Mac z systemem wszystkie powyższe i [zdalny symulatora systemu iOS](~/tools/ios-simulator.md) zainstalowany w systemie Windows.|
 |Android|Obsługiwane w Mac i systemu Windows|Należy użyć emulatora programu Visual Studio lub Xamarin Android Google, z urządzenia wirtualnego > = 5.0|
 |WPF|Obsługiwane tylko w systemie Windows|
 |W konsoli (.NET Framework)|Obsługiwane w Mac i systemu Windows|
@@ -114,7 +115,7 @@ Jeśli występują problemy z połączeniem z systemem iOS lub Android skoroszyt
 
 ### <a name="windows"></a>Windows
 
-W zależności od tego, jak nabył skoroszyty & Inspektor należy wykonać dwie procedury dezinstalacji. Sprawdź, czy oba te można całkowicie odinstalować oprogramowania.
+W zależności od tego, jak nabył skoroszytów należy wykonać dwie procedury dezinstalacji. Sprawdź, czy oba te można całkowicie odinstalować oprogramowania.
 
 #### <a name="visual-studio-installer"></a>Instalator programu Visual Studio
 
@@ -122,19 +123,19 @@ Jeśli masz program Visual Studio 2017 Otwórz **Instalator programu Visual Stud
 
 #### <a name="system-uninstall"></a>System Uninstall
 
-Jeśli zainstalowano skoroszyty & Inspektor samodzielnie przy użyciu pobranego Instalatora, będzie musiała zostać usunięta przez **aplikacje i funkcje** strona Ustawienia systemu Windows 10 lub za pośrednictwem **Dodaj lub usuń programy**w Panelu sterowania w starszych wersjach systemu Windows.
+Jeśli zainstalowano skoroszyty samodzielnie przy użyciu pobranego Instalatora, będzie musiała zostać usunięta przez **aplikacje i funkcje** strona Ustawienia systemu Windows 10 lub za pośrednictwem **Dodaj lub usuń programy** w formancie Panel w starszych wersjach systemu Windows.
 
 > **Start > Ustawienia > System > aplikacje i funkcje**
 
-![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w &quot;aplikacji &amp; funkcji&quot;")
+![](install-images/windows-remove.png "Skoroszyty Xamarin wymienionych w &quot;aplikacji &amp; funkcji&quot;")
 
-**Należy nadal wykonać procedury Instalator programu Visual Studio upewnić się, że skoroszyty & inspektora nie Pobierz ponownie zainstalowany bez wiedzy użytkownika.**
+**Należy nadal wykonać procedury Instalator programu Visual Studio się upewnić, że nie Pobierz ponownie zainstalowane skoroszytów bez wiedzy użytkownika.**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-Począwszy od [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), skoroszyty Xamarin & Inspektor mogła zostać usunięta z terminalu, uruchamiając:
+Począwszy od [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), skoroszyty Xamarin mogła zostać usunięta z terminalu, uruchamiając:
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ Dla starszych wersji należy ręcznie usunąć następujące czynności:
 
 ## <a name="downgrading"></a>Zmiana wersji na starszą
 
-Identyfikator pakietu dla **Workbooks.app aplikacji/Xamarin** zmieniła się z `com.xamarin.Inspector` do `com.xamarin.Workbooks` w wersji 1.4 ułatwiające przyszłych podziału instalatorów skoroszyty Xamarin & Inspektor.
+Identyfikator pakietu dla **Workbooks.app aplikacji/Xamarin** zmieniła się z `com.xamarin.Inspector` do `com.xamarin.Workbooks` w wersji 1.4, skoroszytów i inspektora są teraz pełni podziału.
 
 Ze względu na błąd w starszych programów instalacyjnych nie jest możliwe obniżyć 1.4 lub nowszej wersji za pomocą 1.3.2 lub starsze pliki instalacyjne.
 

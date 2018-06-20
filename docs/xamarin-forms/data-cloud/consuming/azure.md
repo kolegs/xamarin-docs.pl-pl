@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241334"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269047"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Korzystanie z aplikacji mobilnej Azure
 
 _Aplikacje mobilne platformy Azure umożliwiają opracowywanie aplikacji z zapleczy skalowalne hostowanych w usłudze Azure App Service z obsługą przenośnych uwierzytelniania, synchronizacji w trybie offline i powiadomień wypychanych. W tym artykule, która ma zastosowanie wyłącznie do usługi Azure Mobile Apps, która użycia zaplecza Node.js, wyjaśniono, jak zapytania, wstawiania, aktualizowania i usuwania danych przechowywanych w tabeli w wystąpieniu usługi Azure Mobile Apps._
+
+> [!NOTE]
+> Uruchamianie 30 czerwca, wszystkie nowe usługi Azure Mobile Apps zostanie utworzony z protokołem TLS 1.2 domyślnie. Ponadto również zaleca czy istniejące usługi Azure Mobile Apps można tak skonfigurować, aby używać protokołu TLS 1.2. Aby uzyskać informacje dotyczące sposobu wymuszania protokołu TLS 1.2 w aplikacji mobilnej Azure, zobacz [Wymuszanie protokołu TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112). Aby uzyskać informacje na temat konfigurowania Xamarin projekty do użycia protokołu TLS 1.2, zobacz [zabezpieczeń TLS (Transport Layer) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
 
 Aby uzyskać informacje dotyczące sposobu tworzenia wystąpienia usługi Azure Mobile Apps, które mogą być używane przez platformy Xamarin.Forms, zobacz [tworzenie aplikacji platformy Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/). Po wykonaniu tych instrukcji, możesz pobrać przykładową aplikację można skonfigurować do korzystania z wystąpieniem usługi Azure Mobile Apps przez ustawienie `Constants.ApplicationURL` do adresu URL wystąpienia usługi Azure Mobile Apps. Następnie po uruchomieniu aplikacji przykładowej go połączą się z wystąpieniem usługi Azure Mobile Apps, jak pokazano na poniższym zrzucie ekranu:
 

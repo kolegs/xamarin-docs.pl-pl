@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245774"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268865"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Część 5. Z danych powiązania z modelem MVVM
 
@@ -290,7 +290,7 @@ Następujący plik XAML zawiera `BoxView` których `Color` właściwość jest p
 </ContentPage>
 ```
 
-Powiązanie w każdym `Label` jest ustawieniem domyślnym `OneWay`. Wymaga tylko do wyświetlania wartości. Ale powiązanie w każdym `Slider` jest `TwoWay`. Dzięki temu `Slider` zostać zainicjowany z ViewModel. Zwróć uwagę, że `Color` właściwość jest ustawiona na `Blue` po ViewModel zostanie uruchomiony. Jednak zmiana `Slider` musi również ustawić nową wartość dla właściwości w ViewModel, który następnie oblicza nowy kolor.
+Powiązanie w każdym `Label` jest ustawieniem domyślnym `OneWay`. Wymaga tylko do wyświetlania wartości. Ale powiązanie w każdym `Slider` jest `TwoWay`. Dzięki temu `Slider` zostać zainicjowany z ViewModel. Zwróć uwagę, że `Color` właściwość jest ustawiona na `Aqua` po ViewModel zostanie uruchomiony. Jednak zmiana `Slider` musi również ustawić nową wartość dla właściwości w ViewModel, który następnie oblicza nowy kolor.
 
 [![](data-bindings-to-mvvm-images/hslcolorscroll.png "Przy użyciu powiązań danych dwustronny MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "przy użyciu powiązań danych dwustronny MVVM")
 

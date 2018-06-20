@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793811"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268972"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspektor instalacji i wymagania
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793811"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Pobierz i zainstaluj [skoroszytów Xamarin & inspektora dla systemu Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
-2. [Sprawdź własną aplikację!](~/tools/inspector/inspect.md)
+1. Pobierz i zainstaluj [Visual Studio Enterprise](https://www.visualstudio.com/vs/) i wybierz **Mobile development z platformą .NET** obciążenia.
+1. [Zaloguj się](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) umożliwiające subskrypcji Enterprise.
+1. [Sprawdź](~/tools/inspector/inspect.md) własną aplikację!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. Pobierz i zainstaluj [skoroszytów Xamarin & Inspektor dla komputerów Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
-2. [Sprawdź własną aplikację!](~/tools/inspector/inspect.md)
+1. Pobierz i zainstaluj [programu Visual Studio for Mac](https://www.visualstudio.com/vs/mac/).
+1. [Zaloguj się](https://docs.microsoft.com/visualstudio/mac/activation) umożliwiające subskrypcji Enterprise.
+1. [Sprawdź](~/tools/inspector/inspect.md) własną aplikację!
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793811"
 
 ### <a name="supported-ides"></a>Obsługiwane IDEs
 
-- Program Xamarin Studio 6.2 lub większa
-- Visual Studio dla komputerów Mac Preview 4 lub nowszej
-- Visual Studio 2015 z platformą Xamarin 4.3.x lub nowszej
-- Visual Studio 2017 z obciążenia Xamarin
+- Visual Studio for Mac
+- Visual Studio 2017 z **Mobile development z platformą .NET** obciążenia
 
 Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
@@ -51,10 +51,10 @@ Kontroli aplikacji na żywo jest dostępna dla klientów korporacyjnych.
 
 |Platforma aplikacji|Obsługa środowiska IDE|Uwagi|
 |--- |--- |--- |
-|Mac (Unified)|Obsługiwane tylko dla komputerów Mac|
-|iOS (Unified)|Obsługiwane w XS i Visual Studio|Procedury kontroli aplikacji systemu iOS z systemu Windows wymaga tej samej wersji Inspektora można także zainstalować na hoście kompilacji Mac.|
-|Android|Obsługiwane w XS i Visual Studio|Muszą wskazywać Android > = 4.0.3, z **fastdev** włączone.<br />Należy użyć Google, Visual Studio lub Xamarin Android emulatorów. Android emulatorów 7 kontroli w tej chwili jest niedozwolona.|
-|WPF|Obsługiwane tylko w programie Visual Studio w systemie Windows|
+|Mac|Obsługiwane tylko w programie Visual Studio dla komputerów Mac|
+|iOS|Obsługiwane w programie Visual Studio 2017 i Visual Studio dla komputerów Mac| |
+|Android|Obsługiwane w programie Visual Studio 2017 i Visual Studio dla komputerów Mac|Muszą wskazywać Android > = 4.0.3, z **fastdev** włączone.<br />Należy użyć Google, Visual Studio lub Xamarin Android emulatorów. Android emulatorów 7 kontroli w tej chwili jest niedozwolona.|
+|WPF|Obsługiwane tylko w programie Visual Studio 2017 r.|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ Te informacje są istotne.
 Visual Studio For Mac
 
 - **Visual Studio > o Visual Studio > Pokaż szczegóły > Kopiowanie informacji**
-- Wklej do usterek — raport
-
-Xamarin Studio
-
-- **Program Xamarin Studio > o Xamarin Studio > Pokaż szczegóły > Kopiowanie informacji**
 - Wklej do usterek — raport
 
 Visual Studio
@@ -102,10 +97,6 @@ Visual Studio For Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Dla systemów Android i iOS jest istotne, że było wiadomo, jakiego urządzenia
 - Czy urządzenie ma łączność sieciową (wyboru za pomocą przeglądarki sieci web)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>Odinstaluj
-
-### <a name="windows"></a>Windows
-
-W zależności od tego, jak nabył skoroszyty & Inspektor należy wykonać dwie procedury dezinstalacji. Sprawdź, czy oba te można całkowicie odinstalować oprogramowania.
-
-#### <a name="visual-studio-installer"></a>Instalator programu Visual Studio
-
-Jeśli masz program Visual Studio 2017 Otwórz **Instalator programu Visual Studio**i Znajdź **pojedynczych składników** dla **skoroszytów Xamarin**. Jeśli jest ono zaznaczone, usuń jej zaznaczenie, a następnie kliknij przycisk "Modyfikuj", aby odinstalować.
-
-#### <a name="system-uninstall"></a>System Uninstall
-
-Jeśli zainstalowano skoroszyty & Inspektor samodzielnie przy użyciu pobranego Instalatora, będzie musiała zostać usunięta przez **aplikacje i funkcje** strona Ustawienia systemu Windows 10 lub za pośrednictwem **Dodaj lub usuń programy**w Panelu sterowania w starszych wersjach systemu Windows.
-
-> **Start > Ustawienia > System > aplikacje i funkcje**
-
-![](install-images/windows-remove.png "Skoroszyty Xamarin i Inspektora wymienionych w temacie \"Aplikacje i funkcje\"")
-
-**Należy nadal wykonać procedury Instalator programu Visual Studio upewnić się, że skoroszyty & inspektora nie Pobierz ponownie zainstalowany bez wiedzy użytkownika.**
-
-### <a name="macos"></a>macOS
-
-Począwszy od [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), skoroszyty Xamarin & Inspektor mogła zostać usunięta z terminalu, uruchamiając:
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-Dezinstalator szczegółowe pliki i katalogi spowoduje usunięcie i Pytaj o potwierdzenie przed kontynuowaniem.
-
-Przekaż `-help` argument `uninstall` skryptu dla bardziej zaawansowanych scenariuszy.
-
-Dla starszych wersji należy ręcznie usunąć następujące czynności:
-
-1. Usuń aplikację skoroszytów w `"/Applications/Xamarin Workbooks.app"`
-2. Usuń aplikację inspektora w `"Applications/Xamarin Inspector.app"`
-3. Usuń dodatki: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` i `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-4. Usuń inspektora i tutaj plików pomocniczych: `/Library/Frameworks/Xamarin.Interactive.framework` i `/Library/Frameworks/Xamarin.Inspector.framework`

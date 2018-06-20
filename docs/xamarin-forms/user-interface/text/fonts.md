@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245634"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269034"
 ---
 # <a name="fonts-in-xamarinforms"></a>Czcionki w platformy Xamarin.Forms
 
-W tym artykule opisano sposób platformy Xamarin.Forms pozwala określić atrybuty czcionki (w tym wagi i rozmiaru) w formantach, które wyświetlania tekstu. Czcionka informacje mogą być [określona w kodzie](#Setting_Font_in_Code) lub [określony w języku Xaml](#Setting_Font_in_Xaml).
+W tym artykule opisano sposób platformy Xamarin.Forms pozwala określić atrybuty czcionki (w tym wagi i rozmiaru) w formantach, które wyświetlania tekstu. Czcionka informacje mogą być [określona w kodzie](#Setting_Font_in_Code) lub [określony w języku XAML](#Setting_Font_in_Xaml).
 Istnieje również możliwość użycia [niestandardowe czcionki](#Using_a_Custom_Font).
 
 <a name="Setting_Font_in_Code" />
@@ -55,7 +55,6 @@ Można również użyć `NamedSize` wyliczenia, który ma cztery wbudowanych opc
 -  **Małe**
 -  **Średnia liczba godzin**
 -  **Duże**
-
 
 `NamedSize` Wyliczenia mogą być używane wszędzie tam, gdzie `FontSize` można określić za pomocą `Device.GetNamedSize` metody można przekonwertować wartości na `double`:
 
@@ -103,7 +102,6 @@ fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, Font
 labelFormatted.FormattedText = fs;
 ```
 
-
 ### <a name="setting-font-info-per-platform"></a>Ustawianie informacji o czcionki dla każdej platformy
 
 Alternatywnie `Device.RuntimePlatform` właściwości może służyć do Ustaw czcionkę nazwy na każdej platformie, jak pokazano w tym kodu:
@@ -119,16 +117,16 @@ Jest dobrym źródłem informacji czcionki dla systemu iOS [iosfonts.com](http:/
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>Ustawianie czcionkę w Xaml
+## <a name="setting-the-font-in-xaml"></a>Ustawianie czcionkę w XAML
 
-Platformy Xamarin.Forms steruje tym tekst wyświetlany, wszystkie mają `Font` właściwości, które można ustawić w języku Xaml. Najprostszym sposobem, aby ustawić czcionkę w języku Xaml jest użycie rozmiar nazwanych wartości wyliczenia, jak pokazano w poniższym przykładzie:
+Platformy Xamarin.Forms steruje tym tekst wyświetlany, wszystkie mają `Font` właściwości, które można ustawić w języku XAML. Najprostszym sposobem, aby ustawić czcionkę w języku XAML jest użycie rozmiar nazwanych wartości wyliczenia, jak pokazano w poniższym przykładzie:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Brak wbudowanych konwerter dla `Font` właściwość, która umożliwia wszystkie ustawienia czcionki wyrażane jako wartość ciągu w języku Xaml. W poniższych przykładach pokazano, jak można określić atrybuty czcionki oraz rozmiary w języku Xaml:
+Brak wbudowanych konwerter dla `Font` właściwość, która umożliwia wszystkie ustawienia czcionki wyrażane jako wartość ciągu w języku XAML. W poniższych przykładach pokazano, jak można określić atrybuty czcionki oraz rozmiary w języku XAML:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -136,11 +134,12 @@ Brak wbudowanych konwerter dla `Font` właściwość, która umożliwia wszystki
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia na ciąg atrybutu jednej czcionki. Ciąg atrybutu czcionek powinien być sformatowany jako `"[font-face],[attributes],[size]"`. Ważna jest kolejność parametrów, wszystkie parametry są opcjonalne, a wiele `attributes` można określić, na przykład:
+Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia w pojedynczy `Font` atrybut ciągu. Ciąg atrybutu czcionek powinien być sformatowany jako `"[font-face],[attributes],[size]"`. Ważna jest kolejność parametrów, wszystkie parametry są opcjonalne, a wiele `attributes` można określić, na przykład:
 
 ```xaml
-<Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />
-<Label Text="Really big italic text" FontAttributes="Italic" FontSize="72" />
+<Label Text="Small bold text" Font="Bold, Micro" />
+<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
+<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 `FormattedString` Klasa może być używana również w języku XAML, jak pokazano poniżej:
@@ -253,7 +252,7 @@ Można również użyć [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/de
 
 Platformy Xamarin.Forms zawiera ustawienia domyślne proste, aby umożliwić rozmiaru tekst łatwo dla wszystkich obsługiwanych platformach. Umożliwia również określić krój czcionki i rozmiar &ndash; nawet inaczej dla poszczególnych platform &ndash; gdy wymagana jest bardziej szczegółową kontrolę. `FormattedString` Klasa może być używana do konstruowania ciąg zawierający specyfikacje czcionkę przy użyciu `Span` klasy.
 
-Można również określić informacje dotyczące czcionek w języku Xaml, przy użyciu atrybutów czcionki poprawnie sformatowany lub `FormattedString` element z `Span` elementów podrzędnych.
+Można również określić informacje dotyczące czcionek w języku XAML, przy użyciu atrybutów czcionki poprawnie sformatowany lub `FormattedString` element z `Span` elementów podrzędnych.
 
 
 ## <a name="related-links"></a>Linki pokrewne
