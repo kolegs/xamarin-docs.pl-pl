@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291038"
 ---
 # <a name="resource-dictionaries"></a>Słowniki zasobów
 
@@ -251,7 +252,7 @@ W przypadku scalania [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDiction
 
 1. Zasoby lokalne do słownika zasobów.
 1. Zasoby zawartych w słowniku zasobów, który został scalony za pośrednictwem przestarzałe [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) właściwości.
-1. Zasoby zawarte w słownikach zasobów, które zostały scalone za pośrednictwem `MergedDictionaries` kolekcji w kolejności, w jakiej występują w `MergedDictionaries` właściwości.
+1. Zasoby zawarte w słownikach zasobów, które zostały scalone za pośrednictwem `MergedDictionaries` kolekcji w odwrotnej kolejności, w jakiej występują w `MergedDictionaries` właściwości.
 
 > [!NOTE]
 > Wyszukiwanie słowniki zasobów może być praktyce znacznym zadania, jeśli aplikacja zawiera wiele słowniki dużych zasobów. W związku z tym aby uniknąć niepotrzebnych wyszukiwanie, należy upewnić się czy każdej strony w aplikacji używa tylko słowniki zasobów, które są odpowiednie do strony.

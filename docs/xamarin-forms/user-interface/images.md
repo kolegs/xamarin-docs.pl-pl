@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244548"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291354"
 ---
 # <a name="images-in-xamarinforms"></a>Obrazy platformy Xamarin.Forms
 
@@ -153,8 +153,11 @@ Jeśli obrazy osadzone w folderach w ramach projektu, nazwy folderu są oddzielo
 Kod, aby załadować osadzonego obrazu po prostu przekazuje **identyfikator zasobu** do [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) — metoda, jak pokazano poniżej:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> Umożliwia wyświetlanie obrazów osadzonych w trybie wersji platformy uniwersalnej systemu Windows, należy użyć przeciążenia `ImageSource.FromResource` , który określa źródło zestawu, w których będą poszukiwane obrazu.
 
 Obecnie nie istnieje niejawna konwersja identyfikatorów zasobów. Zamiast tego należy użyć [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) lub `new ResourceImageSource()` do ładowania obrazów osadzonych.
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> Umożliwia wyświetlanie obrazów osadzonych w trybie wersji platformy uniwersalnej systemu Windows, należy użyć przeciążenia `ImageSource.FromResource` , który określa źródło zestawu, w których będą poszukiwane obrazu.
 
 Aby użyć tego rozszerzenia, Dodaj niestandardowy `xmlns` na języku XAML, za pomocą poprawnych wartości przestrzeni nazw i zestawu dla projektu. Źródło obrazu można następnie ustawić przy użyciu następującej składni: `{local:ImageResource WorkingWithImages.beach.jpg}`. Poniżej przedstawiono pełny przykład XAML:
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>Obrazy osadzone w innych projektów nie są wyświetlane.
+#### <a name="images-embedded-in-other-projects"></a>Obrazy osadzone w innych projektach
 
-`Image.FromResource` Wyszukuje tylko obrazy w tym samym zestawie co wywołanie kodu `FromResource`. Przy użyciu kodu debugowania powyżej, które można określić zestawów, które zawierają konkretnego zasobu, zmieniając `typeof()` instrukcji `Type` wiadomo w każdym zestawie.
+Domyślnie `ImageSource.FromResource` metody wyszukuje tylko obrazy w tym samym zestawie co wywołanie kodu `ImageSource.FromResource` metody. Przy użyciu kodu debugowania powyżej, które można określić zestawów, które zawierają konkretnego zasobu, zmieniając `typeof()` instrukcji `Type` wiadomo w każdym zestawie.
+
+Jednak zestaw źródłowy wyszukane osadzonego obrazu można określić jako argument `ImageSource.FromResource` metody:
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ Zapoznaj się z dokumentacją dotyczącą [iOS Praca z obrazami](~/ios/app-funda
 Platformy Xamarin.Forms oferuje kilka różnych sposobów obejmują obrazy w aplikacji i platform, umożliwiając dla tego samego obrazu do użycia na platformach lub obrazów specyficzne dla platformy, należy określić. Obrazy pobrany automatycznie są buforowane, automatyzacji typowy scenariusz kodowania.
 
 Obrazów ikony, jak i ekranu powitalnego aplikacji są konfiguracji i skonfigurowane tak jak w przypadku aplikacji z systemem innym niż platformy Xamarin.Forms — wykonaj te same wskazówki używana dla specyficznego dla platformy aplikacji.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

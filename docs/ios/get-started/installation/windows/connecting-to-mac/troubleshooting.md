@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786190"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291051"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Rozwiązywanie problemów z hosta kompilacji Xamarin.iOS połączenia
 
@@ -91,7 +91,7 @@ Hosta kompilacji Xamarin ze starszych wersji platformy Xamarin.iOS nie jest już
     ssh amyb@10.1.8.95 'ls'
     ```
     
-    Powinno to listę zawartości katalogu macierzystego na komputerach Mac. Jeśli `ls` polecenie działa poprawnie, ale nadal nie połączenia programu Visual Studio, możesz sprawdzić [znane problemy i ograniczenia](#knownissues) sekcji o komplikacji specyficzne dla platformy Xamarin. Jeśli żaden z nich są zgodne problemu, skontaktuj się z [nowy raport o usterkach](https://bugzilla.xamarin.com/newbug) i Dołącz dzienniki opisana w sekcji [Sprawdź pliki dziennika, pełne](#verboselogs).
+    Powinno to listę zawartości katalogu macierzystego na komputerach Mac. Jeśli `ls` polecenie działa poprawnie, ale nadal nie połączenia programu Visual Studio, możesz sprawdzić [znane problemy i ograniczenia](#knownissues) sekcji o komplikacji specyficzne dla platformy Xamarin. Jeśli żadna z tych problemu, przechodząc do pliku nowy raport o usterce w społeczność deweloperów **Pomoc > Prześlij opinię > Zgłoś problem** w programie Visual Studio i Dołącz dzienniki opisana w sekcji [Sprawdź pełnego dziennika Pliki](#verboselogs).
 
 10. Jeśli **krok 8 kończy się niepowodzeniem**, można uruchomić następujące polecenie w terminalu dla komputerów Mac, aby sprawdzać, czy serwer SSH akceptują _żadnych_ połączeń:
 

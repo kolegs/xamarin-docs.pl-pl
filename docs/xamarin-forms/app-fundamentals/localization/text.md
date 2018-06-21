@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 47ea437be8a1570517f37cc59aab17431c5af7f0
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848203"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291328"
 ---
 # <a name="localization"></a>Lokalizacja
 
@@ -44,6 +44,9 @@ Jedną z kluczowych części globalizowanie aplikacji tworzy interfejs użytkown
 W tym dokumencie zajmiemy się, jak używać pliki RESX do przechowywania tych parametrów i pobierania ich do wyświetlenia w zależności od preferencji użytkownika.
 
 Przykłady wybierz języki angielski, francuski, hiszpański, niemiecki, chińskim, japońskim, rosyjski i portugalski — Brazylia. Aplikacje można przekształcić w kilku lub dowolną liczbę języków zgodnie z wymaganiami.
+
+> [!NOTE]
+> Na platformy uniwersalnej systemu Windows należy używać plików RESW pliki RESX, a nie lokalizacja powiadomień wypychanych. Aby uzyskać więcej informacji, zobacz [platformy uniwersalnej systemu Windows Lokalizacja](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ### <a name="adding-resources"></a>Dodawanie zasobów
 
@@ -458,6 +461,8 @@ Po zaimplementowana usługa zależności i zaktualizować **Info.plist**, aplika
 > Z [ich docs](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _"Użyj pt jako identyfikator języka dla portugalski ponieważ jest używany w Brazylia i pt-PT jako identyfikator języka dla portugalski, ponieważ jest on używany w Portugalii"_.
 > Oznacza to, gdy język portugalski jest wybierany w niestandardowych ustawieniach regionalnych bazowy język będzie portugalski — Brazylia w systemach iOS, chyba że kod jest zapisywany zmienić to zachowanie (takie jak `ToDotnetFallbackLanguage` powyżej).
 
+Aby uzyskać więcej informacji o lokalizacji systemu iOS, zobacz [iOS lokalizacja](~/ios/app-fundamentals/localization/index.md).
+
 #### <a name="android-application-project"></a>Projekt aplikacji systemu android
 
 Android udostępnia aktualnie wybranego ustawienia regionalne za pośrednictwem `Java.Util.Locale.Default`i używa również separatora podkreślenia zamiast myślnik (który jest zastępowany przez następujący kod). Dodaj tę implementację usługi zależności projekt aplikacji systemu Android:
@@ -548,11 +553,12 @@ namespace UsingResxLocalization.Android
 >
 > Należy zmodyfikować deweloperzy `iOSToDotnetLanguage` i `ToDotnetFallbackLanguage` metod obsługi określonych przypadków wymaganych do ich obsługiwanych języków.
 
-
 Po dodaniu projekt aplikacji systemu Android ten kod będzie automatycznie wyświetlać przetłumaczone ciągi.
 
 > [!NOTE]
 >️ **Ostrzeżenie:** przetłumaczone ciągi pracy w kompilacjach wydania systemu Android, ale nie podczas debugowania, kliknij prawym przyciskiem myszy **projekt systemu Android** i wybierz **Opcje > kompilacji > dla systemu Android Tworzenie** i upewnij się, że **szybkie wdrożenie zestawu** nie zaznaczono. Ta opcja powoduje problemy podczas ładowania zasobów i nie powinna być używana, jeśli testujesz zlokalizowanych aplikacji.
+
+Aby uzyskać więcej informacji o lokalizacji systemu Android, zobacz [Android lokalizacja](~/android/app-fundamentals/localization.md).
 
 #### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
@@ -573,6 +579,8 @@ Informuje Menedżera zasobów kultury domyślnej aplikacji, dlatego zapewnienie,
 Po aktualizacji projektów specyficzne dla platformy jak pokazano powyżej i ponownego kompilowania aplikacji z przetłumaczonego pliki RESX, tłumaczenia zaktualizowane będą dostępne w każdej aplikacji. Oto przykładowy kod przetłumaczony na język chiński uproszczony zrzut ekranu:
 
 ![](text-images/simple-example-hans.png "Obsługujący wiele Platform UI translacji na chiński uproszczony")
+
+Aby uzyskać więcej informacji o lokalizacji platformy uniwersalnej systemu Windows, zobacz [platformy uniwersalnej systemu Windows Lokalizacja](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ## <a name="localizing-xaml"></a>Lokalizowanie elementów XAML
 
@@ -713,7 +721,7 @@ Wszystkich platform automatycznie rozwiąże odwołań do obrazu do zlokalizowan
 
 ### <a name="ios-application-project"></a>Projekt aplikacji systemu iOS
 
-iOS używa standard nazewnictwa o nazwie Lokalizacja projektów lub **.lproj** katalogi do zawierają zasoby obrazu i ciąg. Te katalogi mogą zawierać zlokalizowane wersje obrazy używane w aplikacji, a także **InfoPlist.strings** pliku, który może służyć do zlokalizowania nazwy aplikacji.
+iOS używa standard nazewnictwa o nazwie Lokalizacja projektów lub **.lproj** katalogi do zawierają zasoby obrazu i ciąg. Te katalogi mogą zawierać zlokalizowane wersje obrazy używane w aplikacji, a także **InfoPlist.strings** pliku, który może służyć do zlokalizowania nazwy aplikacji. Aby uzyskać więcej informacji o lokalizacji systemu iOS, zobacz [iOS lokalizacja](~/ios/app-fundamentals/localization/index.md).
 
 #### <a name="images"></a>Obrazy
 
@@ -737,7 +745,7 @@ Po uruchomieniu aplikacji, nazwy aplikacji i obrazu są oba zlokalizowane:
 
 ### <a name="android-application-project"></a>Projekt aplikacji systemu android
 
-Android następuje inny schemat do przechowywania obrazów zlokalizowanych przy użyciu różnych **obiektów drawable** i **ciągów** katalogi z sufiksem kod języka. Jeśli kod ustawień regionalnych czterech list jest wymagany (takich jak zh-TW lub pt-BR), należy pamiętać, że system Android wymaga dodatkowego **r** następujących dash/poprzednie ustawienia regionalne kodu (np.) zh-rTW lub pt rBR).
+Android następuje inny schemat do przechowywania obrazów zlokalizowanych przy użyciu różnych **obiektów drawable** i **ciągów** katalogi z sufiksem kod języka. Jeśli kod ustawień regionalnych czterech list jest wymagany (takich jak zh-TW lub pt-BR), należy pamiętać, że system Android wymaga dodatkowego **r** następujących dash/poprzednie ustawienia regionalne kodu (np.) zh-rTW lub pt rBR). Aby uzyskać więcej informacji o lokalizacji systemu Android, zobacz [Android lokalizacja](~/android/app-fundamentals/localization.md).
 
 #### <a name="images"></a>Obrazy
 
@@ -773,7 +781,7 @@ Aplikacja jest teraz lokalizuje nazwy aplikacji i obrazów. Poniżej przedstawio
 
 ### <a name="universal-windows-platform-application-projects"></a>Projekty aplikacji platformy uniwersalnej systemu Windows
 
-Platforma uniwersalna systemu Windows ma infrastrukturę zasobu, która upraszcza Lokalizacja obrazów i nazwy aplikacji.
+Platforma uniwersalna systemu Windows ma infrastrukturę zasobu, która upraszcza Lokalizacja obrazów i nazwy aplikacji. Aby uzyskać więcej informacji o lokalizacji platformy uniwersalnej systemu Windows, zobacz [platformy uniwersalnej systemu Windows Lokalizacja](/windows/uwp/design/globalizing/globalizing-portal/).
 
 #### <a name="images"></a>Obrazy
 
@@ -796,5 +804,6 @@ Ogólnie rzecz biorąc obsługi obrazów w sposób specyficzne dla platformy, ab
 - [Lokalizacja i Platform](~/cross-platform/app-fundamentals/localization.md)
 - [Lokalizacja systemu iOS](~/ios/app-fundamentals/localization/index.md)
 - [Lokalizacja systemu android](~/android/app-fundamentals/localization.md)
+- [Lokalizacja platformy uniwersalnej systemu Windows](/windows/uwp/design/globalizing/globalizing-portal/)
 - [Używanie klasy CultureInfo (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [Lokalizuje i wykorzystania zasobów dla określonej kultury (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)

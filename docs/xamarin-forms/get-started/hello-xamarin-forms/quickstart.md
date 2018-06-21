@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 3a1da095559b4030332f4b7cc74b4f8f94fb1c61
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 6cef2f5e8b92341a83f9e791f268f8ad324f1da5
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268878"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291367"
 ---
 # <a name="xamarinforms-quickstart"></a>Szybki Start platformy Xamarin.Forms
 
@@ -33,9 +33,12 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/vs/new-solution.png "Nowy projekt")
 
-3. W **nowy projekt** okna dialogowego, kliknij przycisk **wieloplatformowych**, wybierz pozycję **aplikacji mobilnej (platformy Xamarin.Forms)** szablonu, ustaw nazwę nazwy i rozwiązanie `Phoneword`, wybierz odpowiednią lokalizację projektu i kliknij przycisk **OK** przycisk:
+3. W **nowy projekt** okna dialogowego, kliknij przycisk **wieloplatformowych**, wybierz pozycję **aplikacji mobilnej (platformy Xamarin.Forms)** szablonu, ustaw nazwę **Phoneword**, wybierz odpowiednią lokalizację projektu i kliknij przycisk **OK** przycisk:
 
     ![](quickstart-images/vs/new-project.w157.png "Szablony projektów i Platform")
+
+    > [!NOTE]
+    > Nie powiodło się nazwa rozwiązania **Phoneword** spowoduje wiele błędów kompilacji.
 
 4. W **nowej aplikacji dla wielu Platform** okna dialogowego, kliknij przycisk **pusta aplikacja**, wybierz pozycję **.NET Standard** strategii udostępniania kodu, a następnie kliknij przycisk **OK** przycisk:
 
@@ -454,13 +457,16 @@ Utwórz aplikację Phoneword w następujący sposób:
 
     ![](quickstart-images/xs/choose-template.png "Wybieranie szablonu")
 
-3. W **skonfigurować aplikację formularzy** okna dialogowego, nazwę nowej aplikacji `Phoneword`, upewnij się, że **Użyj .NET Standard** przycisk radiowy jest zaznaczony, a następnie kliknij przycisk **dalej** przycisk:
+3. W **skonfigurować aplikację formularzy** okna dialogowego, nazwę nowej aplikacji **Phoneword**, upewnij się, że **Użyj .NET Standard** przycisk radiowy jest zaznaczony, a następnie kliknij przycisk **Dalej** przycisk:
 
     ![](quickstart-images/xs/configure-app.png "Konfigurowanie aplikacji formularzy")
 
-4. W **Konfigurowanie nowej aplikacji formularzy** okno dialogowe, pozostaw ustawioną nazwy rozwiązania i projektu `Phoneword`, wybierz odpowiednią lokalizację projektu i kliknij przycisk **Utwórz** przycisk, aby utworzyć Projekt:
+4. W **Konfigurowanie nowej aplikacji formularzy** okno dialogowe, pozostaw ustawioną nazwy rozwiązania i projektu **Phoneword**, wybierz odpowiednią lokalizację projektu i kliknij przycisk **Utwórz**przycisk, aby utworzyć projekt:
 
     ![](quickstart-images/xs/configure-project.png "Konfigurowanie projektu formularzy")
+
+    > [!NOTE]
+    > Nie powiodło się nazwa rozwiązania i projektu **Phoneword** spowoduje wiele błędów kompilacji.
 
 5. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** go otworzyć:
 
