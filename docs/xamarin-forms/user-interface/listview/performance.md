@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244906"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309814"
 ---
 # <a name="listview-performance"></a>Wydajność ListView
 
@@ -171,9 +171,9 @@ Istnieje wiele technik dla poprawy wydajności `ListView`:
 -  Unikaj układu głęboko zagnieżdżone hierarchie. Użyj `AbsoluteLayout` lub `Grid` umożliwiają zmniejszenie zagnieżdżenia.
 -  Unikaj określonych `LayoutOptions` innych niż `Fill` (Fill ma cheapest obliczeniowe).
 -  Unikaj umieszczania `ListView` wewnątrz `ScrollView` z następujących powodów:
-  - `ListView` Implementuje własną przewijania.
-  - `ListView` Nie będzie otrzymywać wszystkie gesty, jak jest realizowany przez element nadrzędny `ScrollView`.
-  - `ListView` Może ona powodować dostosowane nagłówku i stopce, który przewija elementy listy, funkcje potencjalnie oferty, które `ScrollView` użyto. Aby uzyskać więcej informacji, zobacz [nagłówków i stopek](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+    - `ListView` Implementuje własną przewijania.
+    - `ListView` Nie będzie otrzymywać wszystkie gesty, jak jest realizowany przez element nadrzędny `ScrollView`.
+    - `ListView` Może ona powodować dostosowane nagłówku i stopce, który przewija elementy listy, funkcje potencjalnie oferty, które `ScrollView` użyto. Aby uzyskać więcej informacji, zobacz [nagłówków i stopek](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
 -  Jeśli potrzebujesz bardzo specyficznego, złożone projektu przedstawionych w Twojej komórek, należy wziąć pod uwagę niestandardowego modułu renderowania.
 
 `AbsoluteLayout` ma możliwość wykonania układów bez wywołania jednej miary. Dzięki temu można bardzo zaawansowane wydajności. Jeśli `AbsoluteLayout` nie może być używane, należy wziąć pod uwagę [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Jeśli przy użyciu `RelativeLayout`, przekazywanie ograniczenia bezpośrednio będzie znacznie szybciej niż przy użyciu wyrażenia interfejsu API. Wynika to z interfejsu API w wyrażeniu JIT, a w systemie iOS drzewa ma być interpretowane, który jest wolniejszy. Wyrażenie interfejsu API jest odpowiedni dla układy stron, gdzie go tylko wymagane na początkowy układ i obracanie, ale w `ListView`, w którym jest uruchamiany stale podczas przewijania, powinna ona wydajności.

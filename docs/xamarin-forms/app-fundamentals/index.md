@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240249"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309778"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Podstawowe informacje na temat aplikacji platformy Xamarin.Forms
 
@@ -47,6 +47,10 @@ Powiązanie danych łączy właściwości dwa obiekty możliwości zmiany w jedn
 ## <a name="effectseffectsindexmd"></a>[Efekty](effects/index.md)
 
 Efekty Zezwalaj kontrolki natywne każdej platformy można dostosować i są zwykle używane do zmian małych style.
+
+## <a name="filesfilesmd"></a>[Pliki](files.md)
+
+Obsługa z platformy Xamarin.Forms plików można osiągnąć za pomocą kodu w bibliotece .NET Standard lub przy użyciu zasobów osadzonych.
 
 ## <a name="gesturesgesturesindexmd"></a>[Gesty](gestures/index.md)
 

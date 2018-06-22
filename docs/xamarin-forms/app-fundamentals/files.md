@@ -1,42 +1,68 @@
 ---
 title: Obsługa plików w platformy Xamarin.Forms
-description: Obsługa z platformy Xamarin.Forms plików może odbywać się przy użyciu zasobów osadzonych lub zapisywanie przed natywnych interfejsów API systemu plików.
+description: Obsługa z platformy Xamarin.Forms plików można osiągnąć za pomocą kodu w bibliotece .NET Standard lub przy użyciu zasobów osadzonych.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/22/2017
-ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/21/2018
+ms.openlocfilehash: 0be441a7be9777698212e690aca95fdd75e5050f
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241936"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36310156"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Obsługa plików w platformy Xamarin.Forms
 
-_Obsługa z platformy Xamarin.Forms plików może odbywać się przy użyciu zasobów osadzonych lub zapisywanie przed natywnych interfejsów API systemu plików._
+_Obsługa z platformy Xamarin.Forms plików można osiągnąć za pomocą kodu w bibliotece .NET Standard lub przy użyciu zasobów osadzonych._
 
 ## <a name="overview"></a>Omówienie
 
-Kod platformy Xamarin.Forms działa na wielu platformach — każdy z nich ma własny system plików. Oznacza to, że Odczyt i zapis plików większość łatwo dokonana, przy użyciu macierzystych interfejsów API plików na każdej z platform. Można również zasoby osadzone są prostsze rozwiązania do rozpowszechniania plików danych z aplikacji.
-
-W tym dokumencie opisano następujące typowych plików obsługi scenariuszy:
-
--  [ **Osadzone pliki jako zasoby** ](#Loading_Files_Embedded_as_Resources) -pliki mogą być wysyłane w ramach aplikacji i załadować przy użyciu interfejsu API odbicia.
--  [ **Zapisywanie i ładowanie plików** ](#Loading_and_Saving_Files) -użytkownika zapisywalny magazynowania może być zaimplementowany w sposób macierzysty, a następnie uzyskać dostęp przy użyciu `DependencyService` .
-
-
-Wywołania składników innych firm **PCLStorage** mogą służyć do odczytu i zapisu plików do użytkownika dostępny magazynowania z PCL kodu.
+Kod platformy Xamarin.Forms działa na wielu platformach — każdy z nich ma własny system plików. Wcześniej oznacza to, Odczyt i zapis plików został najłatwiej wykonać przy użyciu macierzystych interfejsów API plików na każdej z platform. Można również zasoby osadzone są prostsze rozwiązania do rozpowszechniania plików danych z aplikacji. Jednak .NET 2.0 standardowe jest możliwe udostępnianie kodu dostępu do plików w bibliotekach .NET Standard.
 
 Informacje dotyczące obsługi plików obrazów, można znaleźć na [Praca z obrazami](~/xamarin-forms/user-interface/images.md) strony.
+
+<a name="Loading_and_Saving_Files" />
+
+## <a name="saving-and-loading-files"></a>Zapisywanie i ładowanie plików
+
+`System.IO` Klasy mogą być używane do uzyskania dostępu do systemu plików na każdej z platform. `File` Klasa umożliwia tworzenie, usuwanie i odczytywać pliki i `Directory` klasa umożliwia tworzenie, usuwanie lub wyliczyć zawartości katalogów. Można również użyć `Stream` podklas, które zapewniają lepszej kontroli nad operacji na plikach (takie jak wyszukiwanie kompresji lub pozycji w pliku).
+
+Plik tekstowy można pisać przy użyciu `File.WriteAllText` metody:
+
+```csharp
+File.WriteAllText(fileName, text);
+```
+
+Plik tekstowy mogą być odczytywane przy użyciu `File.ReadAllText` metody:
+
+```csharp
+string text = File.ReadAllText(fileName);
+```
+
+Ponadto `File.Exists` Metoda określa, czy istnieje określony plik:
+
+```csharp
+bool doesExist = File.Exists(fileName);
+```
+
+Ścieżka pliku w każdej platformy można ustalić na podstawie biblioteki .NET Standard przy użyciu wartości [ `Environment.SpecialFolder` ](xref:System.Environment.SpecialFolder) wyliczenie jako pierwszy argument `Environment.GetFolderPath` metody. To można połączyć z nazwy pliku `Path.Combine` metody:
+
+```csharp
+string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
+```
+
+Te operacje przedstawiono w przykładowej aplikacji, która zawiera stronę, która zapisuje i ładuje tekst:
+
+[![Zapisywanie i ładowanie tekstu](files-images/saveandload-sml.png "zapisywanie i ładowanie plików w aplikacji")](files-images/saveandload.png#lightbox "zapisywanie i ładowanie plików w aplikacji")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>Ładowanie plików osadzonych jako zasoby
 
-Aby osadzić pliku do **PCL** zestawu, utworzyć lub dodać plik i upewnij się, że **Akcja kompilacji: EmbeddedResource**.
+Aby osadzić pliku do **.NET Standard** zestawu, utworzyć lub dodać plik i upewnij się, że **Akcja kompilacji: EmbeddedResource**.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -112,7 +138,7 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Organizowanie zasobów
 
-Powyższe przykłady założono, że plik jest osadzony w folderze głównym projektu PCL, w których przypadku identyfikator zasobu ma postać **Namespace.Filename.Extension**, takich jak `WorkingWithFiles.PCLTextResource.txt` i `WorkingWithFiles.iOS.SharedTextResource.txt`.
+Powyższe przykłady założono, że plik jest osadzony w folderze głównym projektu biblioteki .NET Standard, w których przypadku identyfikator zasobu ma postać **Namespace.Filename.Extension**, takich jak `WorkingWithFiles.PCLTextResource.txt` i `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
 Istnieje możliwość organizowania zasobów osadzonych w folderach. Osadzony zasób znajduje się w folderze, nazwy folderu staje się częścią Identyfikatora zasobu (oddzielone kropkami), że format Identyfikatora zasobu staje się **Namespace.Folder.Filename.Extension**. Umieszczanie plików używane w przykładowej aplikacji w folderze **MójFolder** spowodowałoby, odpowiadający jej zasób identyfikatorów `WorkingWithFiles.MyFolder.PCLTextResource.txt` i `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
 
@@ -132,119 +158,13 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-<a name="Loading_and_Saving_Files" />
-
-## <a name="saving-and-loading-files"></a>Zapisywanie i ładowanie plików
-
-Platformy Xamarin.Forms działa na wielu platformach, każde z nich własny system plików, nie istnieje żadne pojedynczego podejście do ładowania i zapisywania plików utworzonych przez użytkownika. Aby zademonstrować sposób zapisania i załadować plików tekstowych Przykładowa aplikacja zawiera ekranu, który zapisuje i ładuje niektóre dane wejściowe użytkownika — Zakończono ekranu przedstawiono poniżej:
-
- [![Zapisywanie i ładowanie tekstu](files-images/saveandload-sml.png "zapisywanie i ładowanie plików w aplikacji")](files-images/saveandload.png#lightbox "zapisywanie i ładowanie plików w aplikacji")
-
-Dotyczy wszystkich platform struktury katalogów nieco inne i możliwości innego systemu plików — na przykład Xamarin.iOS i Xamarin.Android obsługuje większość `System.IO` funkcji, ale platformy uniwersalnej systemu Windows obsługuje tylko [ `Windows.Storage` ](/uwp/api/windows.storage/) Interfejsów API.
-
-Aby ominąć ten problem, przykładowej aplikacji definiuje interfejs w PCL platformy Xamarin.Forms do ładowania i zapisać pliki. Zapewnia prosty interfejs API do ładowania i zapisać pliki tekstowe, które będą przechowywane na urządzeniu.
-
-```csharp
-public interface ISaveAndLoad {
-    void SaveText (string filename, string text);
-    string LoadText (string filename);
-}
-```
-
-PCL kod używa następnie [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) uzyskać odwołanie do natywnego implementacji interfejsu. Dzięki temu kod przenośny delegować ładowania i zapisywania plików do klasy zapisane we wszystkich projektach specyficzne dla platformy. W przykładzie **zapisać** i **obciążenia** przyciski są zapisywane, jak pokazano:
-
-```csharp
-var saveButton = new Button {Text = "Save"};
-saveButton.Clicked += (sender, e) => {
-    DependencyService.Get<ISaveAndLoad>().SaveText("temp.txt", input.Text);
-};
-var loadButton = new Button {Text = "Load"};
-loadButton.Clicked += (sender, e) => {
-    output.Text = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
-};
-```
-
-Następnie należy dodać wszystkie projekty specyficzne dla platformy przed plików faktycznie można zapisać i załadować implementację.
-
-### <a name="ios-and-android"></a>iOS i Android
-
-Implementacja interfejsu dla projektów Xamarin.iOS i Xamarin.Android mogą być identyczne. Kod poniżej pokazano, w tym `[assembly: Dependency (typeof (SaveAndLoad))]` atrybut, który jest wymagany dla `DependencyService` do pracy.
-
-```csharp
-[assembly: Dependency (typeof (SaveAndLoad))]
-namespace WorkingWithFiles {
-    public class SaveAndLoad : ISaveAndLoad {
-        public void SaveText (string filename, string text) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            System.IO.File.WriteAllText (filePath, text);
-        }
-        public string LoadText (string filename) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            return System.IO.File.ReadAllText (filePath);
-        }
-    }
-}
-```
-
-### <a name="universal-windows-platform-uwp"></a>Platforma uniwersalna systemu Windows (UWP)
-
-Platformy uniwersalnej systemu Windows ma innego systemu plików API — [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) — to znaczy umożliwia zapisywanie i ładowanie plików.
-`ISaveAndLoad` Interfejs może zostać zaimplementowany, jak pokazano poniżej:
-
-```csharp
-using System;
-using System.Threading.Tasks;
-using Windows.Storage;
-using WinApp;
-using WorkingWithFiles;
-using Xamarin.Forms;
-
-[assembly: Dependency(typeof(SaveAndLoad_WinApp))]
-
-namespace WindowsApp
-{
-    // https://msdn.microsoft.com/library/windows/apps/xaml/hh758325.aspx
-    public class SaveAndLoad_WinApp : ISaveAndLoad
-    {
-        public async Task SaveTextAsync(string filename, string text)
-        {
-            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await localFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(sampleFile, text);
-        }
-        public async Task<string> LoadTextAsync(string filename)
-        {
-            StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
-            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
-            return text;
-        }
-    }
-}
-```
-
-<a name="Saving_and_Loading_in_Shared_Projects" />
-
-### <a name="saving-and-loading-in-shared-projects"></a>Zapisywanie i ładowanie w udostępnionych projektów
-
-Ponieważ udostępnionych projektów obsługuje dyrektywy kompilatora jest może zawierać kod specyficzne dla platformy w pliku jednej klasy wewnątrz projektu udostępnionego (bez użycia `DependencyService`).
-Pojedynczy `SaveAndLoad` klasy może być zapisany zawiera zarówno implementacje powyżej selektywnie skompilowany do projektów odwołujący się przy użyciu dyrektywy kompilatora, takich jak `#if WINDOWS_PHONE`, `#if __IOS__`, i `#if __ANDROID__`.
-
-## <a name="additional-information"></a>Dodatkowe informacje
-
-Projekty platformy Xamarin.Forms PCL można również korzystać z [PCLStorage NuGet](http://www.nuget.org/packages/pclstorage) ([kod &amp; dokumentacji](https://pclstorage.codeplex.com/)) pomagających w realizacji operacji na plikach w sposób między platformami.
-
-
 ## <a name="summary"></a>Podsumowanie
 
-Ten dokument ma pokazano niektóre operacje prostego pliku do ładowania zasobów osadzonych i zapisywanie i ładowanie tekstu na urządzeniu. Deweloperzy mogą zaimplementować własnych natywny plik interfejsów API przy użyciu `DependencyService`, ułatwiając złożonego wymagane do obsługi wymagań manipulowania pliku.
-
+W tym artykule wykazało niektóre operacje prostego pliku zapisywanie i ładowanie tekstu na urządzeniu i ładowanie zasobów osadzonych. .NET 2.0 standardowe jest możliwe udostępnianie kodu dostępu do plików w bibliotekach .NET Standard.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
-- [Tworzenia, zapisywania i odczytywania plików (UWP)](/windows/uwp/files/quickstart-reading-and-writing-files/)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)
+- [Praca w systemie plików w Xamarin.iOS](~/ios/app-fundamentals/file-system.md)
 - [Pliki skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)

@@ -5,12 +5,13 @@ ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c37fce491b2e6f5e0211fcc6aa7906643a1bac2a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/20/2018
+ms.openlocfilehash: 5a162ba15bbb6d6dcdf7debe01fb12b3b08a843e
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309793"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Uzyskiwanie Google mapuje klucz interfejsu API
 
@@ -104,45 +105,41 @@ Certificate fingerprints:
 
 Użyje odcisku palca algorytmu SHA-1 (wymienionych po **SHA1**) dalszej części tego przewodnika.
 
-
 ## <a name="creating-an-api-project"></a>Tworzenie projektu interfejsu API
 
 Po pobraniu odcisku palca algorytmu SHA-1 z podpisywania magazynu kluczy jest wymagane do utworzenia nowego projektu w konsoli interfejsów API firmy Google (lub Dodaj usługę interfejsu API Google Maps systemu Android w wersji 2 do istniejącego projektu).
 
-1. W przeglądarce przejdź do [konsoli deweloperów Google](https://console.developers.google.com/): i kliknij przycisk **tworzenia projektu**:
+1. W przeglądarce przejdź do [interfejsu API Google deweloperów konsoli & pulpitu nawigacyjnego usług](https://console.developers.google.com/apis/dashboard/) i kliknij przycisk **wybierz projekt**. Kliknij nazwę projektu lub Utwórz nowy, klikając **nowy projekt**:
 
    [![Przycisk tworzenia projektu Google Developer konsoli](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. W **nowy projekt** okno dialogowe zostanie wyświetlone, wprowadź nazwę projektu.
-   Okno dialogowe będzie produkcji Identyfikatora unikatowego projektu, który jest oparta na nazwę projektu, jak pokazano w poniższym przykładzie:
+2. Jeśli utworzono nowy projekt, wprowadź nazwę projektu w **nowy projekt** okna dialogowego, który jest wyświetlany. To okno dialogowe będzie produkcji Identyfikatora unikatowego projektu, który jest oparta na nazwę projektu. Następnie kliknij przycisk **Utwórz** przycisku, jak pokazano w poniższym przykładzie:
 
    [![Nowy projekt o nazwie XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Kliknij przycisk **Utwórz** przycisku. Po minucie lub to, projekt zostanie utworzony i zostają przeniesieni do **Menedżer interfejsu API** strony. W **biblioteki** kliknij **interfejsu API systemu Android map Google**:
+3. Po minucie lub to, projekt zostanie utworzony i zostają przeniesieni do **pulpitu nawigacyjnego** strony projektu. Z tego miejsca, kliknij przycisk **Włącz interfejsy API i usługi**:
 
    [![Kliknięcie przycisku Google Maps interfejsu API systemu Android w sekcji biblioteki](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. W górnej części **interfejsu API systemu Android map Google** kliknij przycisk **włączyć** Aby włączyć usługę dla tego projektu:
+4. Z **biblioteki interfejsu API** kliknij przycisk **mapy SDK for Android**. Na następnej stronie kliknij **włączyć** Aby włączyć usługę dla tego projektu:
 
    [![Klikając przycisk Włącz w sekcji pulpitu nawigacyjnego](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-
-W tym momencie został utworzony projekt interfejsu API i v2 interfejsu API Google Maps systemu Android został dodany do niego. Jednak nie można używać tego interfejsu API w projekcie, dopóki nie zostaną utworzone dla niego poświadczeń. Następnie przedstawiono, jak utworzyć klucz interfejsu API i białe listy aplikacji platformy Xamarin.Android, dzięki czemu są autoryzowane do używania tego klucza.
-
+W tym momencie został utworzony projekt interfejsu API i interfejs API systemu Android map Google v2 został dodany do niego. Jednak nie można używać tego interfejsu API w projekcie, dopóki nie zostaną utworzone dla niego poświadczeń. W następnej sekcji objaśniono sposób tworzenia klucz interfejsu API i białe listy aplikacji platformy Xamarin.Android, dzięki czemu są autoryzowane do używania tego klucza.
 
 ## <a name="obtaining-the-api-key"></a>Uzyskiwanie klucz interfejsu API
 
 Po **konsoli dla deweloperów Google** projekt interfejsu API został utworzony, może się tworzenie klucza interfejsu API systemu Android. Aplikacji platformy Xamarin.Android musi mieć klucz interfejsu API przed udzieleniem im dostępu do interfejsu API systemu Android mapy v2.
 
-1. W **interfejsu API systemu Android map Google** wyświetlana strona (po kliknięciu przycisku **włączyć** w poprzednim kroku), kliknij przycisk **przejdź do poświadczeń** przycisk:
+1. W **mapy SDK for Android** strony, która jest wyświetlana (po kliknięciu przycisku **włączyć** w poprzednim kroku), przejdź do **poświadczenia** i kliknij polecenie **Utwórz poświadczenia** przycisk:
 
-   [![Ten interfejs API jest włączona wiadomości](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![Mapuje zestawu SDK dla systemu Android poświadczeń komunikatu](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
-2. W **poświadczenia** kliknij przycisk **poświadczeniami, które są potrzebne?** przycisk:
+2. Kliknij przycisk **klucz interfejsu API**:
 
    [![Dodawanie poświadczeń do okna dialogowego z projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
-3. Po kliknięciu tego przycisku, jest generowany klucz interfejsu API. Następnie należy ograniczyć ten klucz, tak aby tylko aplikacji mogą wywoływać interfejsy API przy użyciu tego klucza. Kliknij przycisk **klucza Ogranicz**:
+3. Po kliknięciu tego przycisku, jest generowany klucz interfejsu API. Następnie należy ograniczyć ten klucz, tak aby tylko aplikacji mogą wywoływać interfejsy API przy użyciu tego klucza. Kliknij przycisk **klucza OGRANICZ**:
 
    [![Kliknięcie przycisku ograniczenia klucza na stronie poświadczenia](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
@@ -166,7 +163,17 @@ Po **konsoli dla deweloperów Google** projekt interfejsu API został utworzony,
 
    [![XamarinMapsDemoKey jest wyświetlane na liście kluczy interfejsu API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
+## <a name="connect-the-project-to-a-billable-account"></a>Połączyć projekt z konta rozliczeniowego
 
+Począwszy od czerwca, 11 2018, klucz interfejsu API nie będzie działać, jeśli projekt nie jest połączona z kontem rozliczeniowy (nawet, jeśli usługa jest nadal wolne dla aplikacji mobilnych).
+
+1. Kliknij przycisk menu hamburger i wybierz **rozliczeń** strony:
+
+   [![Wybieranie sekcji rozliczeń hamburger menu](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+
+2. Połącz projekt konta rozliczeniowego, klikając **połączyć konto rozliczeniowe** następuje **tworzenia konta ROZLICZENIOWEGO** na wyświetlonej podręcznego (Jeśli nie masz konta, przejdziesz do utworzenia nowego):
+
+   [![Projekt łącze do konta rozliczeniowego](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Dodawanie klucza do projektu
 
@@ -177,15 +184,13 @@ Na koniec należy dodać ten klucz interfejsu API, aby **AndroidManifest.XML** p
     android:versionName="4.10" package="com.xamarin.docs.android.mapsandlocationdemo"
     android:versionCode="10">
 ...
-
   <application android:label="@string/app_name">
     <!-- Put your Google Maps V2 API Key here. -->
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 </manifest>
 ```
-
 
 ## <a name="related-links"></a>Linki pokrewne
 
