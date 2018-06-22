@@ -12,6 +12,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33920660"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Gdzie można znaleźć pliku .dSYM symbolicate dzienniki awarii systemu iOS?
 

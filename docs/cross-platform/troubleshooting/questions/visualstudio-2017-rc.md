@@ -12,6 +12,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33946723"
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Za pomocą platformy Xamarin można użyć programu Visual Studio 2017 Release Candidate?
 

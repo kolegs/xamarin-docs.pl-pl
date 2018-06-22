@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33922317"
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>Wprowadzenie do grafiki 3D z MonoGame
 

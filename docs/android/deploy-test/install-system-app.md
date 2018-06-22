@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30767209"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Instalowanie platformy Xamarin.Android jako aplikację systemu
 

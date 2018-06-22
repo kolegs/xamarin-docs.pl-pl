@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764453"
 ---
 # <a name="auto-complete"></a>Automatyczne uzupełnianie
 
@@ -192,4 +193,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 *Części tej stronie są zmiany na podstawie pracy utworzone i udostępnione przez Android Otwórz projekt źródłowy i używane zgodnie z warunki opisane w* 
  [ *Creative Commons 2.5 autorstwa licencji* ](http://creativecommons.org/licenses/by/2.5/) *. W tym samouczku jest oparta na* 
  [ *Android Autouzupełnianie samouczek*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
-*.*
+ *.*

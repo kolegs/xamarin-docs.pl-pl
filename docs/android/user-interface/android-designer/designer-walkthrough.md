@@ -12,6 +12,7 @@ ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33798635"
 ---
 # <a name="using-the-android-designer"></a>Przy użyciu narzędzia Projektant systemu Android
 

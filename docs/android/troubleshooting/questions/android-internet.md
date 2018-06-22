@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762087"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Dlaczego moja kompilacji wydania systemu Android nie może połączyć się z Internetem
 

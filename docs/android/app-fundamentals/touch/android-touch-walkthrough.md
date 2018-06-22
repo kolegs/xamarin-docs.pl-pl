@@ -11,6 +11,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34050562"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Wskazówki — przy użyciu Touch w systemie Android
 

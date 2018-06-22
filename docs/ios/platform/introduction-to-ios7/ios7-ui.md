@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30781928"
 ---
 # <a name="ios-7-user-interface-overview"></a>System iOS 7 omówienie interfejsu użytkownika
 

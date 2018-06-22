@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780726"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Praca z tabelami w Projektancie systemu iOS
 
@@ -45,7 +46,7 @@ Interfejs użytkownika zostanie skompilowany scenorysu, a oba ekrany użyje UITa
 
 ## <a name="walkthrough"></a>Wskazówki
 
-Utwórz nowe rozwiązanie Visual Studio przy użyciu **(Utwórz) o nowy projekt... > pojedynczego widoku App(C#)**i nadaj mu _StoryboardTables_.
+Utwórz nowe rozwiązanie Visual Studio przy użyciu **(Utwórz) o nowy projekt... > pojedynczego widoku App(C#)** i nadaj mu _StoryboardTables_.
 
  [![Utwórz okno dialogowe nowego projektu](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 

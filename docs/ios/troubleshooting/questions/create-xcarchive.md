@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30776810"
 ---
 # <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Czy jest możliwe utworzenie archiwum .xcarchive z programu Visual Studio
 
