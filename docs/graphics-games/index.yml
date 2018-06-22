@@ -2,7 +2,7 @@
 documentType: LandingData
 title: Grafika i gry
 metadata:
-  description: "Międzyplatformowa grafika, gry 2D i 3D dla platform mobilnych i stacjonarnych."
+  description: Międzyplatformowa grafika, gry 2D i 3D dla platform mobilnych i stacjonarnych.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
@@ -12,12 +12,13 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: pl-PL
   ms.lasthandoff: 03/09/2018
+  ms.locfileid: "29825392"
 abstract:
-  description: "Międzyplatformowa grafika, gry 2D i 3D dla platform mobilnych i stacjonarnych."
+  description: Międzyplatformowa grafika, gry 2D i 3D dla platform mobilnych i stacjonarnych.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/
-      text: "Przykłady"
+      text: Przykłady
     - href: https://developer.xamarin.com/releases/
       text: Uwagi do wersji
 sections:
@@ -32,25 +33,25 @@ sections:
         src: ~/media/index/xamarin-graphics-skia.svg
         href: ~/graphics-games/skiasharp/index.md
       title: SkiaSharp
-      html: "Międzyplatformowa grafika 2D dla komputerów i urządzeń przenośnych."
+      html: Międzyplatformowa grafika 2D dla komputerów i urządzeń przenośnych.
     - href: ~/graphics-games/urhosharp/index.md
       image:
         src: ~/media/index/xamarin-graphics-urho.svg
         href: ~/graphics-games/urhosharp/index.md
       title: UrhoSharp
-      html: "Międzyplatformowa grafika 3D i gry."
+      html: Międzyplatformowa grafika 3D i gry.
     - href: ~/graphics-games/cocossharp/index.md
       image:
         src: ~/media/index/xamarin-graphics-cocos.svg
         href: ~/graphics-games/cocossharp/index.md
       title: CocosSharp
-      html: "Twórz międzyplatformowe gry 2D dla urządzeń przenośnych."
+      html: Twórz międzyplatformowe gry 2D dla urządzeń przenośnych.
     - href: ~/graphics-games/monogame/index.md
       image:
         src: ~/media/index/xamarin-graphics-monogame.svg
         href: ~/graphics-games/monogame/index.md
       title: MonoGame
-      html: "Twórz gry na komputery, urządzenia przenośne i konsole w języku C#."
+      html: Twórz gry na komputery, urządzenia przenośne i konsole w języku C#.
 - title: Platformy
   items:
   - type: list
@@ -59,13 +60,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">Wprowadzenie</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">Podstawy aplikacji</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">Interfejs użytkownika</a><br /><a href=\"~/xamarin-forms/platform/index.md\">Funkcje platformy</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">Wdrażanie i testowanie</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">Usługi danych i usługi w chmurze</a><br /><a href=\"~/xamarin-forms/internals/index.md\">Pojęcia zaawansowane i elementy wewnętrzne</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">Wprowadzenie</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Podstawy aplikacji</a><br /><a href="~/xamarin-forms/user-interface/index.md">Interfejs użytkownika</a><br /><a href="~/xamarin-forms/platform/index.md">Funkcje platformy</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Wdrażanie i testowanie</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Usługi danych i usługi w chmurze</a><br /><a href="~/xamarin-forms/internals/index.md">Pojęcia zaawansowane i elementy wewnętrzne</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">Wprowadzenie</a><br /><a href=\"~/android/app-fundamentals/index.md\">Podstawy aplikacji</a><br /><a href=\"~/android/user-interface/index.md\">Interfejs użytkownika</a><br /><a href=\"~/android/platform/index.md\">Funkcje platformy</a><br /><a href=\"~/android/deploy-test/index.md\">Wdrażanie i testowanie</a><br /><a href=\"~/android/data-cloud/index.md\">Usługi danych i usługi w chmurze</a><br /><a href=\"~/android/internals/index.md\">Pojęcia zaawansowane i elementy wewnętrzne</a></p>"
+      html: <p><a href="~/android/get-started/index.md">Wprowadzenie</a><br /><a href="~/android/app-fundamentals/index.md">Podstawy aplikacji</a><br /><a href="~/android/user-interface/index.md">Interfejs użytkownika</a><br /><a href="~/android/platform/index.md">Funkcje platformy</a><br /><a href="~/android/deploy-test/index.md">Wdrażanie i testowanie</a><br /><a href="~/android/data-cloud/index.md">Usługi danych i usługi w chmurze</a><br /><a href="~/android/internals/index.md">Pojęcia zaawansowane i elementy wewnętrzne</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">Wprowadzenie</a><br /><a href=\"~/ios/app-fundamentals/index.md\">Podstawy aplikacji</a><br /><a href=\"~/ios/user-interface/index.md\">Interfejs użytkownika</a><br /><a href=\"~/ios/platform/index.md\">Funkcje platformy</a><br /><a href=\"~/ios/deploy-test/index.md\">Wdrażanie i testowanie</a><br /><a href=\"~/ios/data-cloud/index.md\">Usługi danych i usługi w chmurze</a><br /><a href=\"~/ios/internals/index.md\">Pojęcia zaawansowane i elementy wewnętrzne</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">Wprowadzenie</a><br /><a href="~/ios/app-fundamentals/index.md">Podstawy aplikacji</a><br /><a href="~/ios/user-interface/index.md">Interfejs użytkownika</a><br /><a href="~/ios/platform/index.md">Funkcje platformy</a><br /><a href="~/ios/deploy-test/index.md">Wdrażanie i testowanie</a><br /><a href="~/ios/data-cloud/index.md">Usługi danych i usługi w chmurze</a><br /><a href="~/ios/internals/index.md">Pojęcia zaawansowane i elementy wewnętrzne</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">Wprowadzenie</a><br /><a href=\"~/mac/app-fundamentals/index.md\">Podstawy aplikacji</a><br /><a href=\"~/mac/user-interface/index.md\">Interfejs użytkownika</a><br /><a href=\"~/mac/platform/index.md\">Funkcje platformy</a><br /><a href=\"~/mac/deploy-test/index.md\">Wdrażanie i testowanie</a><br /><a href=\"~/mac/internals/index.md\">Pojęcia zaawansowane i elementy wewnętrzne</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">Wprowadzenie</a><br /><a href="~/mac/app-fundamentals/index.md">Podstawy aplikacji</a><br /><a href="~/mac/user-interface/index.md">Interfejs użytkownika</a><br /><a href="~/mac/platform/index.md">Funkcje platformy</a><br /><a href="~/mac/deploy-test/index.md">Wdrażanie i testowanie</a><br /><a href="~/mac/internals/index.md">Pojęcia zaawansowane i elementy wewnętrzne</a></p>

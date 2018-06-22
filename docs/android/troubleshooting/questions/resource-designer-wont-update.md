@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30762623"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>Nie może zaktualizować pliku Resource.designer.cs systemu Android
 
