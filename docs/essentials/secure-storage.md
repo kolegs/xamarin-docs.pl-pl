@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783161"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321343"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Bezpiecznego magazynu
 
@@ -78,13 +78,13 @@ Gdy aplikacja zostanie odinstalowana z urządzenia zostaną usunięte wszystkie 
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Łańcucha kluczy](https://developer.xamarin.com/api/type/Android.Security.KeyChain/) jest używany do przechowywania wartości w bezpieczny sposób na urządzeniach z systemem iOS.  `SecRecord` Używany do przechowywania wartości ma `Service` wartość **.xamarinessentials [YOUR-APP-pakietu-ID]**.
+[Łańcucha kluczy](https://developer.xamarin.com/api/type/Security.SecKeyChain/) jest używany do przechowywania wartości w bezpieczny sposób na urządzeniach z systemem iOS.  `SecRecord` Używany do przechowywania wartości ma `Service` wartość **.xamarinessentials [YOUR-APP-pakietu-ID]**.
 
 W niektórych przypadkach dane łańcucha kluczy są synchronizowane z usługą iCloud i odinstalowywania aplikacji nie może zostać usunięta bezpiecznego wartości z innych urządzeń użytkownika i usługi iCloud.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do wartości encryped bezpiecznie na urządzeniach platformy uniwersalnej systemu Windows.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do wartości encryped bezpiecznie na urządzeniach platformy uniwersalnej systemu Windows.
 
 Encryped wartości są przechowywane w `ApplicationData.Current.LocalSettings`, wewnątrz kontenera o nazwie **.xamarinessentials [YOUR-APP-ID]**.
 

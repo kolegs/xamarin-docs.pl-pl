@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2cb38df4bbabc3534f5c90c7695569d68349ccc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ac24c70ed16c6439480903b807add38fb388b4dd
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786928"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321392"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Transakcje i weryfikacja w Xamarin.iOS
 
@@ -24,7 +24,6 @@ Ta funkcja umożliwia klienta, aby dodać produktu dodatkowych urządzeń, lub p
 -  Produkty jednoznacznie składnika
 -  Automatycznie odnawialnymi subskrypcji
 -  Bezpłatnej subskrypcji
-
 
 Proces przywracania należy zaktualizować rekordy przechowywane na urządzeniu, aby spełnić produktów. Klienta można przywrócić w dowolnym momencie na dowolnym urządzeniu. Proces przywracania wysyła ponownie wszystkich poprzednich transakcji dla tego użytkownika; następnie kod aplikacji musi ustalić, jakie czynności do wykonania tych informacji (na przykład sprawdzenie już istnieje rekord tego zakupu na urządzeniu, a nie tworzenia rekordu zakupu i włączenie produktu dla użytkownika).
 
@@ -42,9 +41,7 @@ public void Restore()
 
 StoreKit będzie wysyłać żądania przywracania asynchronicznie do serwerów firmy Apple.   
    
-   
-   
- Ponieważ `CustomPaymentObserver` jest zarejestrowany jako obserwatora transakcji, odbieranie wiadomości gdy odpowiada serwerów firmy Apple. Odpowiedź będzie zawierać wszystkie transakcje, ten użytkownik ma nigdy wykonywane w tej aplikacji (dla wszystkich swoich urządzeń). Kod pętlę każdą transakcję i wykrywa stan przywrócone i wywołania `UpdatedTransactions` metody go przetworzyć, jak pokazano poniżej:
+Ponieważ `CustomPaymentObserver` jest zarejestrowany jako obserwatora transakcji, odbieranie wiadomości gdy odpowiada serwerów firmy Apple. Odpowiedź będzie zawierać wszystkie transakcje, ten użytkownik ma nigdy wykonywane w tej aplikacji (dla wszystkich swoich urządzeń). Kod pętlę każdą transakcję i wykrywa stan przywrócone i wywołania `UpdatedTransactions` metody go przetworzyć, jak pokazano poniżej:
 
 ```csharp
 // called when the transaction status is updated
@@ -72,9 +69,7 @@ default:
 
 Jeśli brak dostępnych produktów dla użytkownika, `UpdatedTransactions` nie jest wywoływany.   
    
-   
-   
- Najprostsza możliwa kodu do przywrócenia danej transakcji w próbce jest samo, jak podczas zakupu ma miejsce, z wyjątkiem `OriginalTransaction` właściwość jest używana do uzyskania dostępu identyfikator produktu:
+Najprostsza możliwa kodu do przywrócenia danej transakcji w próbce jest samo, jak podczas zakupu ma miejsce, z wyjątkiem `OriginalTransaction` właściwość jest używana do uzyskania dostępu identyfikator produktu:
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -120,18 +115,13 @@ Uwaga: Rzeczywiste aplikacji powinna przyjąć mechanizm bezpiecznego przechowyw
    
  Ten mechanizm powinien również zaprojektowana tak, aby skorzystać z wbudowanych funkcji tworzenia kopii zapasowych i odzyskiwania systemu iOS, iTunes i iCloud. Daje to pewność, że po użytkownika przywracania kopii zapasowej poprzedniego zakupów będą dostępne natychmiast.   
    
-   
- Guide można znaleźć firmy Apple Secure kodowania dodatkowe wskazówki specyficzne dla systemu iOS.
+Guide można znaleźć firmy Apple Secure kodowania dodatkowe wskazówki specyficzne dla systemu iOS.
 
 ## <a name="receipt-verification-and-server-delivered-products"></a>Odbieranie weryfikacji i produktów dostarczonych przez serwer
 
 Przykłady w tym dokumencie wykonanej do tej pory ma składa się wyłącznie z aplikacji komunikują się bezpośrednio z serwerami sklepu z aplikacjami do przeprowadzania transakcji zakupu, które Odblokuj funkcje lub możliwości już zakodowanej w aplikacji.   
    
-   
-   
- Apple zapewnia dodatkowy poziom zabezpieczeń zakupu, zezwalając potwierdzenia zakupu niezależnie należy zweryfikować przez inny serwer, który może służyć do sprawdzania poprawności żądania przed dostarczeniem zawartości cyfrowej w ramach zakupu (takie jak cyfrowe książki lub Magazine).   
-   
-   
+Apple zapewnia dodatkowy poziom zabezpieczeń zakupu, zezwalając potwierdzenia zakupu niezależnie należy zweryfikować przez inny serwer, który może służyć do sprawdzania poprawności żądania przed dostarczeniem zawartości cyfrowej w ramach zakupu (takie jak cyfrowe książki lub Magazine).   
    
  **Wbudowane produktów** — podobnie jak w przykładach zawartych w tym dokumencie, produktu zostały zakupione istnieje jako funkcje, które zostały wydane z aplikacją. Funkcja zakupu w aplikacji umożliwia użytkownikowi dostęp do funkcji.
 Identyfikatory produktu są zapisane na stałe.   
@@ -147,25 +137,21 @@ Niektóre produktu elementu zawartości, takie jak książki i magazyny (lub naw
 
 Ponieważ te produkty zdalnie są dostarczane, również jest można dodać więcej produktów wraz z upływem czasu (bez aktualizowania kodu aplikacji), takie jak dodanie więcej książki lub nowe problemy magazynu. Tak, aby aplikację można wykryć tych produktów wiadomości i wyświetlić je użytkownikowi, dodatkowy serwer należy przechowywać i dostarczyć te informacje.   
    
+[![](transactions-and-verification-images/image38.png "Pobieranie ceny produktów dostarczonych przez serwer")](transactions-and-verification-images/image38.png#lightbox)   
    
+1. Informacje o produkcie muszą być przechowywane w wielu miejscach: na serwerze i w iTunes Connect. Ponadto każdy produkt ma skojarzone pliki zawartości. Te pliki będą dostarczane po pomyślnym zakupu.   
    
- [![](transactions-and-verification-images/image38.png "Pobieranie ceny produktów dostarczonych przez serwer")](transactions-and-verification-images/image38.png#lightbox)   
+2. Gdy użytkownik żąda kupić produktu, aplikacja musi ustalić, jakie produkty są dostępne. Te informacje mogą być buforowane, ale ma zostać dostarczony z serwera zdalnego przechowywania głównego wykazu produktów.   
    
+3. Serwer zwraca listę identyfikatorów produktu dla aplikacji do analizy.   
    
+4. Następnie aplikacja określa, która z tych identyfikatorów produktu do wysłania do StoreKit można pobrać cen wraz z opisami.   
    
- 1. Informacje o produkcie muszą być przechowywane w wielu miejscach: na serwerze i w iTunes Connect. Ponadto każdy produkt ma skojarzone pliki zawartości. Te pliki będą dostarczane po pomyślnym zakupu.   
+5. StoreKit wysyła listę identyfikatorów produktu do serwerów firmy Apple.   
    
- 2. Gdy użytkownik żąda kupić produktu, aplikacja musi ustalić, jakie produkty są dostępne. Te informacje mogą być buforowane, ale ma zostać dostarczony z serwera zdalnego przechowywania głównego wykazu produktów.   
+6. Serwery programu iTunes odpowiadać, podając informacje prawidłowego produktu (opis i bieżąca cena).   
    
- 3. Serwer zwraca listę identyfikatorów produktu dla aplikacji do analizy.   
-   
- 4. Następnie aplikacja określa, która z tych identyfikatorów produktu do wysłania do StoreKit można pobrać cen wraz z opisami.   
-   
- 5. StoreKit wysyła listę identyfikatorów produktu do serwerów firmy Apple.   
-   
- 6. Serwery programu iTunes odpowiadać, podając informacje prawidłowego produktu (opis i bieżąca cena).   
-   
- 7. Aplikacji `SKProductsRequestDelegate` jest przekazywany informacji o produkcie do wyświetlenia dla użytkownika.
+7. Aplikacji `SKProductsRequestDelegate` jest przekazywany informacji o produkcie do wyświetlenia dla użytkownika.
 
 #### <a name="purchasing-server-delivered-products"></a>Zakup produktów dostarczonych przez serwer
 
@@ -173,25 +159,25 @@ Ponieważ serwer zdalny wymaga sposób sprawdzania, czy żądanie zawartości je
    
  [![](transactions-and-verification-images/image39.png "Zakup produktów dostarczonych przez serwer")](transactions-and-verification-images/image39.png#lightbox)   
    
- 1. Dodaje aplikację `SKPayment` do kolejki. W razie potrzeby użytkownika zostanie wyświetlony monit o ich identyfikator Apple ID, a monit o potwierdzenie płatności.   
+1. Dodaje aplikację `SKPayment` do kolejki. W razie potrzeby użytkownika zostanie wyświetlony monit o ich identyfikator Apple ID, a monit o potwierdzenie płatności.   
    
- 2. StoreKit wysyła żądanie do serwera w celu przetworzenia.   
+2. StoreKit wysyła żądanie do serwera w celu przetworzenia.   
    
- 3. Po zakończeniu transakcji serwer odpowiada, przyjęcie transakcji.   
+3. Po zakończeniu transakcji serwer odpowiada, przyjęcie transakcji.   
    
- 4. `SKPaymentTransactionObserver` Podklasy odbieranie odbiera i przetwarza je. Ponieważ produkt, należy pobrać z serwera, aplikacja inicjuje żądanie sieciowe z serwerem zdalnym.   
+4. `SKPaymentTransactionObserver` Podklasy odbieranie odbiera i przetwarza je. Ponieważ produkt, należy pobrać z serwera, aplikacja inicjuje żądanie sieciowe z serwerem zdalnym.   
    
- 5. Żądanie pobrania towarzyszy odbieranie danych tak, aby serwer zdalny sprawdzić, czy jest autoryzowany do uzyskania dostępu do zawartości. Klient sieci aplikacji czeka na odpowiedź na to żądanie.   
+5. Żądanie pobrania towarzyszy odbieranie danych tak, aby serwer zdalny sprawdzić, czy jest autoryzowany do uzyskania dostępu do zawartości. Klient sieci aplikacji czeka na odpowiedź na to żądanie.   
    
- 6. Kiedy serwer odbiera żądania zawartości, analizuje dane przyjęcia i wysyła żądanie bezpośrednio do serwerów iTunes Sprawdź odbieranie dotyczy prawidłową transakcję. Serwer powinien używać logikę do ustalenia, czy można wysłać żądania do adresu URL środowisko produkcyjne lub piaskownicy. Apple sugeruje zawsze przy użyciu adresu URL produkcyjnych i przełączanie do piaskownicy, jeśli stan: 21007 (przyjęcie piaskownicy wysyłane do serwera produkcyjnego) — zobacz [techniczne 2259 Uwaga — często zadawane pytania nr 16](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html).   
+6. Kiedy serwer odbiera żądania zawartości, analizuje dane przyjęcia i wysyła żądanie bezpośrednio do serwerów iTunes Sprawdź odbieranie dotyczy prawidłową transakcję. Serwer powinien używać logikę do ustalenia, czy można wysłać żądania do adresu URL środowisko produkcyjne lub piaskownicy. Apple sugeruje zawsze przy użyciu adresu URL produkcyjnych i przełączanie do piaskownicy, jeśli Twoje otrzymał stanu 21007 (przyjęcie piaskownicy wysyłane do serwera produkcyjnego). Odnoszą się do firmy Apple [przewodnik programowania w języku weryfikacji otrzymania](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) więcej szczegółów.
    
- 7. iTunes będzie Sprawdź odbieranie i zwrócenia stanu o wartości zero, jeśli jest ona prawidłowa.   
+7. iTunes będzie Sprawdź odbieranie i zwrócenia stanu o wartości zero, jeśli jest ona prawidłowa.   
    
- 8. Serwer czeka na odpowiedź iTunes. Jeśli odbierze prawidłowej odpowiedzi kod powinien zlokalizuj plik zawartości skojarzone produktu do uwzględnienia w odpowiedzi do aplikacji.   
+8. Serwer czeka na odpowiedź iTunes. Jeśli odbierze prawidłowej odpowiedzi kod powinien zlokalizuj plik zawartości skojarzone produktu do uwzględnienia w odpowiedzi do aplikacji.   
+  
+9. Aplikacja odbiera i analizuje odpowiedzi, zapisywanie zawartości produktu urządzenia w systemie plików.   
    
- 9. Aplikacja odbiera i analizuje odpowiedzi, zapisywanie zawartości produktu urządzenia w systemie plików.   
-   
- 10. Aplikacja umożliwia produktu, a następnie wywołuje w StoreKit `FinishTransaction`. Następnie aplikacji może być opcjonalnie wyświetlany zakupionych zawartości (na przykład strona Pokaż pierwsze zakupionych książki lub problem magazine).
+10. Aplikacja umożliwia produktu, a następnie wywołuje w StoreKit `FinishTransaction`. Następnie aplikacji może być opcjonalnie wyświetlany zakupionych zawartości (na przykład strona Pokaż pierwsze zakupionych książki lub problem magazine).
 
 Alternatywną implementację produktu bardzo dużych plików zawartości mogą obsługiwać między innymi, po prostu przechowywania odbieranie transakcji w kroku #9, dzięki czemu można szybko ukończyć transakcji i udostępnia interfejs użytkownika umożliwiający użytkownikom na pobieranie zawartości rzeczywistego produktu w późniejszym czasie. Żądanie pobrania kolejnych ponownie wysłać przechowywanych potwierdzenia w celu dostępu do zawartości pliku wymaganego produktu.
 
@@ -199,9 +185,7 @@ Alternatywną implementację produktu bardzo dużych plików zawartości mogą o
 
 Sprawdzanie poprawności przyjęcia w kodzie po stronie serwera można zrobić za pomocą prostego POST protokołu HTTP żądania/odpowiedzi, która obejmuje kroki #5 – 8 # w diagram przepływu pracy.   
    
-   
-   
- Wyodrębnij `SKPaymentTansaction.TransactionReceipt` właściwości w aplikacji. To są dane, który musi być wysyłana do iTunes weryfikacji (krok #5).
+Wyodrębnij `SKPaymentTansaction.TransactionReceipt` właściwości w aplikacji. To są dane, który musi być wysyłana do iTunes weryfikacji (krok #5).
 
 Kodowanie Base64 dane przyjęcia transakcji (albo w kroku #5 lub #6).
 
@@ -226,29 +210,4 @@ HTTP POST ciąg JSON do [ https://buy.itunes.apple.com/verifyReceipt ](https://b
 
 Stan o wartości zero wskazuje prawidłowy przyjęcia. Serwer można przystąpić do zrealizowania zawartości zakupionych produktów. Klucz otrzymania zawiera słownik JSON z tymi samymi właściwościami co `SKPaymentTransaction` obiekt, który została odebrana w aplikacji, aby kod serwera można zbadać tego słownika można pobrać informacji o takich jak product_id i ilość zakupu.
 
-Zobacz firmy Apple [Sprawdzanie potwierdzenia magazynu](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/StoreKitGuide/VerifyingStoreReceipts/VerifyingStoreReceipts.html#//apple_ref/doc/uid/TP40008267-CH104-SW1) dokumentacji, aby uzyskać dodatkowe informacje.
-
-#### <a name="using-aspnet"></a>Użycie programu ASP.NET
-
-Dla deweloperów języka C# jest przydatne projekt open source o nazwie [APNS ostrych](https://github.com/Redth/APNS-Sharp) otrzymania kod weryfikacyjny, który działa w tym w programie ASP.NET. W szczególności `Receipt.cs` i `ReceiptVerification.cs` plików [ `Jdsoft.Apple.AppStore` ](https://github.com/Redth/APNS-Sharp/tree/master/JdSoft.Apple.AppStore) katalogu mogą być dodawane do witryny sieci Web .NET łatwe Implementowanie kroki #6 do #8 z produktów Server-Delivered diagram przepływu pracy.   
-   
-   
-   
- Komunikacja z serwerami programu iTunes używa formatu JSON, który jest łatwy do przetworzenia w języku C#.   
-   
-   
-   
- Odwoływać się do zakupu w aplikacji firmy Apple [weryfikacji otrzymania](https://developer.apple.com/library/ios/#releasenotes/StoreKit/IAP_ReceiptValidation/_index.html) dokumentacji, aby uzyskać szczegółowe informacje na temat sposobu Sprawdź poprawność potwierdzenia.
-
-### <a name="3rd-party-receipt-verification"></a>Weryfikacja firm otrzymania 3
-
-Istnieją firmy, które oferują platformy w przypadku otrzymania weryfikacji (i innymi), które można użyć zamiast tworzenia własnego serwera. Xamarin nie potwierdza autentyczności tych usług; po prostu są one wymienione w tym miejscu odwołania.
-
-#### <a name="urban-airship"></a>Zurbanizowane Airship
-
-Zurbanizowane Airship zawiera szereg różnych usług zaplecza dla aplikacji systemu iOS, w tym przyjęcia weryfikacji i powiadomieniami wypychanymi.   
-   
- [http://urbanairship.com/products/in-app-purchase/](http://urbanairship.com/products/in-app-purchase/)
-
-
-
+Zobacz firmy Apple [przewodnik programowania w języku weryfikacji otrzymania](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html) dokumentacji, aby uzyskać dodatkowe informacje.

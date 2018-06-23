@@ -1,27 +1,27 @@
 ---
 title: ProGuard
-description: Narzędzia ProGuard jest shrinker pliku Klasa Java, optymalizator, faktem i weryfikatora wstępne. Go wykrywa i usunięcie nieużywanych kodu, analizuje i optymalizuje kod bajtowy, a następnie zaciemnia klas i członków klasy. W tym przewodniku objaśniono sposób działania narzędzia ProGuard, jak włączyć go w projekcie i sposobie konfigurowania go. Umożliwia także kilka przykładów ProGuard konfiguracji.
+description: Narzędzia ProGuard Xamarin.Android jest shrinker pliku Klasa Java, optymalizator i weryfikatora wstępne. Wykrywa i usuwa nieużywane kodu, analizuje i optymalizuje kodu bajtowego. W tym przewodniku objaśniono sposób działania narzędzia ProGuard, jak włączyć go w projekcie i sposobie konfigurowania go. Umożliwia także kilka przykładów ProGuard konfiguracji.
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771447"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321379"
 ---
 # <a name="proguard"></a>ProGuard
 
-_Narzędzia ProGuard jest shrinker pliku Klasa Java, optymalizator, faktem i weryfikatora wstępne. Go wykrywa i usunięcie nieużywanych kodu, analizuje i optymalizuje kod bajtowy, a następnie zaciemnia klas i członków klasy. W tym przewodniku objaśniono sposób działania narzędzia ProGuard, jak włączyć go w projekcie i sposobie konfigurowania go. Umożliwia także kilka przykładów ProGuard konfiguracji._
+_Narzędzia ProGuard Xamarin.Android jest shrinker pliku Klasa Java, optymalizator i weryfikatora wstępne. Wykrywa i usuwa nieużywane kodu, analizuje i optymalizuje kodu bajtowego. W tym przewodniku objaśniono sposób działania narzędzia ProGuard, jak włączyć go w projekcie i sposobie konfigurowania go. Umożliwia także kilka przykładów ProGuard konfiguracji._
 
 
 ## <a name="overview"></a>Omówienie
 
-Narzędzia ProGuard wykrywa i usuwa nieużywane klas, pola, metody i atrybuty spakowanych aplikacji. Można nawet wykonaj te same przywoływanego bibliotek (to może pomóc w uniknięciu granicy odniesienia 64 k). Narzędzia ProGuard z zestawu SDK systemu Android zostanie również optymalizacji kodu bajtowego, Usuń nieużywane kodu instrukcje i zasłaniają pozostałych klas, pól i metod o krótszej nazwy. Odczyty proGuard **wejściowych słoików** , a następnie zmniejsza, optymalizuje zaciemnia i wstępnie sprawdza; zapisuje wyniki w co najmniej jeden **output słoików**. 
+Narzędzia ProGuard wykrywa i usuwa nieużywane klas, pola, metody i atrybuty spakowanych aplikacji. Można nawet wykonaj te same przywoływanego bibliotek (to może pomóc w uniknięciu granicy odniesienia 64 k). Narzędzia ProGuard z zestawu SDK systemu Android zostanie również Optymalizacja kodu bajtowego i Usuń nieużywane kodu instrukcji. Odczyty proGuard **wejściowych słoików** , a następnie zmniejsza optymalizuje i wstępnie sprawdza; zapisuje wyniki w co najmniej jeden **output słoików**. 
 
 Procesy proGuard danych wejściowych w APK, wykonując następujące czynności: 
 
@@ -30,7 +30,7 @@ Procesy proGuard danych wejściowych w APK, wykonując następujące czynności:
 2.  **Krok optymalizacji** &ndash; narzędzia ProGuard dodatkowo optymalizuje kod. 
     Wśród innych optymalizacji, klasy i metody, które nie są prywatne, statyczne lub końcowego można wprowadzić punkty wejścia można usunąć nieużywane parametry, a niektóre metody mogą być wbudowane. 
 
-3.  **Krok zaciemnienie** &ndash; narzędzia ProGuard zmienia nazwę klasy i elementów członkowskich klasy, które nie są punkty wejścia. Zachowywanie punkty wejścia gwarantuje, że nadal będą one dostępne przez ich oryginalnych nazw. 
+3.  **Krok zaciemnienie** &ndash; w natywnych Android narzędzia ProGuard zmienia nazwę klasy i elementów członkowskich klasy, które nie są punkty wejścia. Zachowywanie punkty wejścia gwarantuje, że nadal będą one dostępne przez ich oryginalnych nazw. Jednak ten krok nie jest obsługiwana przez platformy Xamarin.Android, ponieważ aplikacja jest skompilowana do języku pośrednim (IL).
 
 4.  **Krok preverification** &ndash; sprawdza bytecodes Java wcześniejsze środowisko uruchomieniowe i oznacza plików klas dla maszyny Wirtualnej Java. To jest jedynym krokiem, który nie musi wiedzieć, punkty wejścia. 
 
