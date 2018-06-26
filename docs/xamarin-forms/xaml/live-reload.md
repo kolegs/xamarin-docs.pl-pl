@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848307"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935431"
 ---
 # <a name="xamarin-live-reload"></a>Załaduj ponownie na żywo Xamarin
 
@@ -119,6 +119,7 @@ Nie. W rzeczywistości nawet uruchomić na dowolnej liczbie urządzeń lub symul
 ## <a name="known-issues"></a>Znane problemy
 
 * Obsługiwane tylko w programie Visual Studio.
+* Połączenie musi być ustawiona na **łącze nie** lub **tylko łącze Framework SDK** 
 * Ponowne ładowanie zasobów aplikacji firmy (tj. **App.xaml** lub udostępnionego słowniki zasobów), nawigacji aplikacji zostanie zresetowana. Ten problem zostanie rozwiązany w następnej wersji zapoznawczej.
 * Edytowanie języka XAML podczas debugowania platformy uniwersalnej systemu Windows może spowodować awarię środowiska wykonawczego. Obejście problemu: Użyj **uruchomić bez debugowania (Ctrl + F5)** zamiast **Rozpocznij debugowanie (F5)**.
 

@@ -6,13 +6,13 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 545636bc38240bc17837a661416702ec259caf45
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 6577b80c6ec71d7e038338d6c8a3e28dbbd75590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732609"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935184"
 ---
 # <a name="windows-installation"></a>Instalacja systemu Windows
 
@@ -68,9 +68,9 @@ Google Android SDK Manager służy do instalowania wersje pakietu narzędzi dla 
 
 Aby uzyskać więcej informacji o korzystaniu z platformy Xamarin Android SDK Manager, zobacz [Instalacja zestawu SDK systemu Android](~/android/get-started/installation/android-sdk.md).
 
-### <a name="google-android-emulator"></a>Emulator systemu Google Android
+### <a name="android-emulator"></a>Emulator systemu android
 
-[Emulator systemu Google Android](https://developer.android.com/studio/run/emulator) mogą być przydatne narzędzie do projektowania i testowania aplikacji platformy Xamarin.Android. Na przykład urządzenie fizyczne, takie jak tablet nie może być łatwo dostępne podczas tworzenia lub deweloper może być konieczne uruchomienie niektórych testów integracji na komputerach przed wykonaniem kodu.
+[Emulatora systemu Android](https://developer.android.com/studio/run/emulator) mogą być przydatne narzędzie do projektowania i testowania aplikacji platformy Xamarin.Android. Na przykład urządzenie fizyczne, takie jak tablet nie może być łatwo dostępne podczas tworzenia lub deweloper może być konieczne uruchomienie niektórych testów integracji na komputerach przed wykonaniem kodu.
 
 Emulowanie urządzenia z systemem Android na komputerze obejmuje następujące składniki:
 
@@ -83,10 +83,10 @@ Do znacznej poprawy wydajności w przypadku komputerów opartych na tworzenie na
 1. Firmy Microsoft Hyper-V &ndash; dostępne na komputerach z systemem Windows 10 kwietnia Update.
 2. Firmy Intel sprzętu przyspieszyć wykonywanie Manager (HAXM) &ndash; dostępne na x86 komputery z systemem OS X, macOS lub starszej wersji systemu Windows.
 
-Aby uzyskać więcej informacji na temat Emulator systemu Google Android funkcji Hyper-V i HAXM, zobacz [przyspieszanie sprzętowe wydajności emulatora](~/android/get-started/installation/android-emulator/hardware-acceleration.md) przewodnik.
+Aby uzyskać więcej informacji o emulatorze systemu Android, Hyper-V i HAXM, zobacz [przyspieszanie sprzętowe wydajności emulatora](~/android/get-started/installation/android-emulator/hardware-acceleration.md) przewodnik.
 
 > [!NOTE]
-> W starszych wersjach systemu Windows HAXM nie jest zgodny z funkcją Hyper-V. W tym scenariuszu należy albo [wyłączenie funkcji Hyper-V](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) lub użycie wolniejszych obrazy emulatora, które nie mają x86 optymalizacji.
+> W starszych wersjach systemu Windows HAXM nie jest zgodny z funkcją Hyper-V. W tym scenariuszu należy albo [wyłączenie funkcji Hyper-V](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) lub użycie wolniejszych obrazy emulatora, które nie mają x86 optymalizacji.
 
 
 <a name="device" />

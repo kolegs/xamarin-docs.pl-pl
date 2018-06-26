@@ -1,17 +1,18 @@
 ---
 title: Dziennik debugowania dla systemu android
+description: Jak używać dzienników debugowania do debugowania aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/22/2018
+ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30822885"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935220"
 ---
 # <a name="android-debug-log"></a>Dziennik debugowania dla systemu android
 
@@ -22,7 +23,7 @@ Jeden często deweloperzy lewy umożliwia debugowanie aplikacji jest do łączen
 **Dziennika debugowania** narzędzie zapewnia sposób wyświetlania danych wyjściowych dziennika podczas debugowania aplikacji za pomocą programu Visual Studio. Dziennik debugowania obsługuje następujące urządzenia:
 
 -   Fizyczny telefony, tablety i wearables.
--   Urządzenie Android wirtualne uruchomione na Emulator systemu Google Android. 
+-   Urządzenia z systemem Android wirtualnego uruchomiona na emulatorze systemu Android. 
 
 > [!NOTE]
 > **Dziennika debugowania** narzędzie nie obsługuje Xamarin Player na żywo.

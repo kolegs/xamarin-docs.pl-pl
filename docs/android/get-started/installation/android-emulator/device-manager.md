@@ -6,13 +6,13 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 888f126d3e58b0300ba7ce3ad1cb5a8001fc545a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a7c1aeafd94d7e2639617cda13312ee8a09e2c94
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733965"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935331"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Zarządzanie urządzeniami wirtualnego przy użyciu Menedżera urządzeń systemu Android
 
@@ -28,7 +28,7 @@ W tym artykule opisano sposób tworzenia, zduplikowany, dostosowywanie i uruchom
 
 [![Zrzut ekranu Menedżera urządzeń systemu Android w zakładce urządzenia](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
-Za pomocą Menedżera urządzeń systemu Android, aby utworzyć i skonfigurować _urządzeń wirtualnych z systemem Android_ (urządzeń Avd), które działają w [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Za pomocą Menedżera urządzeń systemu Android, aby utworzyć i skonfigurować _urządzeń wirtualnych z systemem Android_ (urządzeń Avd), które działają w [emulatora systemu Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 Każdy AVD jest konfiguracji emulatora, która symuluje fizycznego urządzenia z systemem Android. Pozwala na uruchamianie i testowanie aplikacji w różnych konfiguracji, które symulować różne fizycznego urządzenia z systemem Android.
 
 ## <a name="requirements"></a>Wymagania
@@ -48,7 +48,7 @@ Uruchamianie Menedżera urządzeń systemu Android z **narzędzia** menu, klikaj
 
 [![Uruchamianie z menu Narzędzia](device-manager-images/win/04-tools-menu-sml.png)](device-manager-images/win/04-tools-menu.png#lightbox)
 
-Jeśli po uruchomieniu następujących okna dialogowego błędu, zobacz [Rozwiązywanie problemów z emulatorem Instalator](~/android/get-started/installation/android-emulator/troubleshooting.md) instrukcje obejście problemu:
+Jeśli po uruchomieniu następujących okna dialogowego błędu, zobacz [Rozwiązywanie problemów z systemem Android Emulator](~/android/get-started/installation/android-emulator/troubleshooting.md) instrukcje obejście problemu:
 
 ![Błąd wystąpienia zestawu SDK systemu android](device-manager-images/win/32-sdk-error.png)
 
@@ -165,7 +165,7 @@ Dodatkowe opcje menu zawiera następujące elementy:
 
     [![Kliknięcie przycisku ujawniania w Eksploratorze wyników](device-manager-images/win/24-reveal-in-explorer-sml.png)](device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
--   **Resetowanie do ustawień fabrycznych** &ndash; resetuje wybranego urządzenia do domyślnych ustawień, wymazywanie użytkownika zmian stanu wewnętrznego urządzenia została uruchomiona (to również usuwa bieżące [szybkie rozruchu](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md#quick-boot) migawki Jeśli istnieją). Ta zmiana nie zmienia zmiany wprowadzone do urządzenia wirtualnego podczas tworzenia i edytowania. Pojawi się okno dialogowe z monitu, że resetowania nie można cofnąć. Kliknij przycisk **czyszczenie danych użytkownika** o potwierdzenie resetowania.
+-   **Resetowanie do ustawień fabrycznych** &ndash; resetuje wybranego urządzenia do domyślnych ustawień, wymazywanie użytkownika zmian stanu wewnętrznego urządzenia została uruchomiona (to również usuwa bieżące [szybkie rozruchu](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot) migawki Jeśli istnieją). Ta zmiana nie zmienia zmiany wprowadzone do urządzenia wirtualnego podczas tworzenia i edytowania. Pojawi się okno dialogowe z monitu, że resetowania nie można cofnąć. Kliknij przycisk **czyszczenie danych użytkownika** o potwierdzenie resetowania.
 
 -   **Usuń** &ndash; powoduje trwałe usunięcie wybranego urządzenia wirtualnego.
     Pojawi się okno dialogowe z monitu, że usunięcie urządzenia nie można cofnąć. Kliknij przycisk **usunąć** Jeśli masz pewność, że chcesz usunąć urządzenie.
@@ -181,7 +181,7 @@ W tym artykule opisano sposób tworzenia, zduplikowany, dostosowywanie i uruchom
 > Ten przewodnik dotyczy tylko programu Visual Studio dla komputerów Mac.
 Program Xamarin Studio jest niezgodny przy użyciu Menedżera urządzeń systemu Android.
 
-Za pomocą Menedżera urządzeń systemu Android, aby utworzyć i skonfigurować *urządzeń wirtualnych z systemem Android* (urządzeń Avd), które działają w [Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Za pomocą Menedżera urządzeń systemu Android, aby utworzyć i skonfigurować *urządzeń wirtualnych z systemem Android* (urządzeń Avd), które działają w [emulatora systemu Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 Każdy AVD jest konfiguracji emulatora, która symuluje fizycznego urządzenia z systemem Android. Pozwala na uruchamianie i testowanie aplikacji w różnych konfiguracji, które symulować różne fizycznego urządzenia z systemem Android.
 
 ## <a name="requirements"></a>Wymagania
@@ -320,15 +320,113 @@ Dodatkowe opcje menu zawiera następujące elementy:
 
 -----
 
+## <a name="troubleshooting"></a>Rozwiązywanie problemów
+
+W poniższych sekcjach opisano sposób zdiagnozować i rozwiązać problemy, które mogą wystąpić podczas konfigurowania urządzeń wirtualnych przy użyciu Menedżera urządzeń systemu Android.
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+### <a name="android-sdk-in-non-standard-location"></a>Zestaw SDK systemu android w lokalizacji niestandardowej
+
+Zazwyczaj zestaw SDK systemu Android jest instalowany w następującej lokalizacji:
+
+**C:\\Program Files (x86)\\Android\\zestawu sdk systemu android**
+
+Jeśli zestaw SDK nie jest zainstalowany w tej lokalizacji, błąd ten może wystąpić podczas uruchamiania Menedżera urządzeń systemu Android:
+
+![Błąd wystąpienia zestawu SDK systemu android](troubleshooting-images/win/01-sdk-error.png)
+
+Aby obejść ten problem, wykonaj następujące czynności:
+
+1. Na pulpicie systemu Windows, przejdź do **C:\\użytkowników\\*username*\\AppData\\mobilny\\XamarinDeviceManager**:
+
+    ![Lokalizacja pliku dziennika Menedżera urządzeń systemu android](troubleshooting-images/win/02-log-files.png)
+
+2. Kliknij dwukrotnie, aby otworzyć jeden z plików dziennika i Znajdź **ścieżkę pliku konfiguracyjnego**. Na przykład:
+
+    [![Ścieżka pliku konfiguracji w pliku dziennika](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
+
+3. Przejdź do tej lokalizacji i kliknij dwukrotnie **user.config** go otworzyć. 
+
+4. W **user.config**, zlokalizuj **&lt;ustawienia użytkownika&gt;** element i Dodaj **AndroidSdkPath** do niej atrybut. Ten atrybut ustawiony na ścieżkę zainstalowanym zestawu SDK systemu Android na komputerze, a następnie zapisz plik. Na przykład **&lt;ustawienia użytkownika&gt;** będzie wyglądać podobnie do następującej, jeśli zainstalowano zestaw SDK systemu Android w **C:\\programy\\Android\\zestawuSDK**:
+        
+    ```xml
+    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
+    ```
+
+Po wprowadzeniu tej zmiany do **user.config**, można uruchomić Menedżera urządzeń systemu Android.
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Migawki wyłącza sieci Wi-Fi na Oreo systemu Android
+
+Jeśli masz AVD skonfigurowano dla systemu Android Oreo symulowane dostępu do sieci Wi-Fi, ponowne uruchomienie AVD po migawki może spowodować dostępu do sieci Wi-Fi ma zostać wyłączona.
+
+Aby obejść ten problem
+
+1. Wybierz AVD w Menedżerze urządzeń systemu Android.
+
+2. W menu opcji dodatkowych kliknij **ujawnić w Eksploratorze**.
+
+3. Przejdź do **migawki > default_boot**.
+
+4. Usuń **snapshot.pb** pliku:
+
+    ![Lokalizacja pliku snapshot.pb](troubleshooting-images/win/05-delete-snapshot.png)
+
+5. Uruchom ponownie AVD. 
+
+Po wprowadzeniu tych zmian, AVD zostanie uruchomiony ponownie w stanie, który umożliwia sieci Wi-Fi do pracy ponownie.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Migawki wyłącza sieci Wi-Fi na Oreo systemu Android
+
+Jeśli masz AVD skonfigurowano dla systemu Android Oreo symulowane dostępu do sieci Wi-Fi, ponowne uruchomienie AVD po migawki może spowodować dostępu do sieci Wi-Fi ma zostać wyłączona.
+
+Aby obejść ten problem
+
+1. Wybierz AVD w Menedżerze urządzeń systemu Android.
+
+2. W menu opcji dodatkowych kliknij **ujawnić w wyszukiwarce**.
+
+3. Przejdź do **migawki > default_boot**.
+
+4. Usuń **snapshot.pb** pliku:
+
+    [![Lokalizacja pliku snapshot.pb](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
+
+5. Uruchom ponownie AVD. 
+
+Po wprowadzeniu tych zmian, AVD zostanie uruchomiony ponownie w stanie, który umożliwia sieci Wi-Fi do pracy ponownie.
+
+-----
+
+### <a name="generating-a-bug-report"></a>Generowanie raport o usterce
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Jeśli napotkasz problem przy użyciu systemu Android Menedżera urządzeń którego nie można rozwiązać przy użyciu powyższego wskazówki dotyczące rozwiązywania problemów, klikając prawym przyciskiem myszy pasek tytułu i wybierając pliku raport o usterce **wygenerować raport o usterce**:
+
+[![Lokalizacja elementu menu dla składanie raport o usterce](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Jeśli napotkasz problem przy użyciu systemu Android Menedżera urządzeń którego nie można rozwiązać przy użyciu powyższego wskazówki dotyczące rozwiązywania problemów, klikając pliku raport o usterce **Pomoc > Generowanie raportu o usterce**:
+
+[![Lokalizacja elementu menu dla składanie raport o usterce](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+
+
+-----
+
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku wprowadzono Menedżera urządzeń Android dostępne w programie Visual Studio dla systemów Mac i Visual Studio Tools dla platformy Xamarin. Go wyjaśniono zasadnicze funkcje, takie jak uruchamianie i zatrzymywanie emulatora systemu Android, wybierając wirtualnego urządzenia z systemem Android (AVD) do uruchomienia, tworzenie nowych wirtualnych urządzeń i jak edytować urządzenia wirtualnego. On również wyjaśniono sposób edycji właściwości profilu sprzętu dla dalszego dostosowania.
+W tym przewodniku wprowadzono Menedżera urządzeń Android dostępne w programie Visual Studio dla systemów Mac i Visual Studio Tools dla platformy Xamarin. Go wyjaśniono zasadnicze funkcje, takie jak uruchamianie i zatrzymywanie emulatora systemu Android, wybierając wirtualnego urządzenia z systemem Android (AVD) do uruchomienia, tworzenie nowych wirtualnych urządzeń i jak edytować urządzenia wirtualnego. Wyjaśniono jej edytowanie właściwości profilu sprzętu dla dalszego dostosowania i zapewniała wskazówki dotyczące rozwiązywania problemów dla typowych problemów.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Zmiany zestawu narzędzi Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [Debugowanie za pomocą emulatora Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Debugowanie na emulatorze systemu Android](~/android/deploy-test/debugging/debug-on-emulator.md)
 - [Informacje o wersji (Google) narzędzia zestawu SDK](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

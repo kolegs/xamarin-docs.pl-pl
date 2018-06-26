@@ -1,19 +1,20 @@
 ---
-title: Interfejsu API map
+title: Przy użyciu map Google interfejsu API w aplikacji
+description: Sposób implementowania interfejsu API map Google v2 funkcji w aplikacji platformy Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773527"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935142"
 ---
-# <a name="maps-api"></a>Interfejsu API map
+# <a name="using-the-google-maps-api-in-your-application"></a>W aplikacji przy użyciu interfejsu API map Google
 
 Przy użyciu aplikacji mapy stanowi doskonałe rozwiązanie, ale czasami chcesz dołączyć mapy bezpośrednio w aplikacji. Oprócz wbudowanej aplikacji, map Google oferuje również [natywne mapowanie interfejsu API dla systemu Android](https://developers.google.com/maps/documentation/android/).
 Interfejsu API map jest odpowiednia dla przypadków, w której chcesz zachować większą kontrolę nad środowiskiem mapowania. Obejmuje to między innymi, które można wykonać przy użyciu interfejsu API map:
@@ -315,7 +316,7 @@ Interfejs API systemu Android społeczności Maps zawiera interfejsu API, który
 
 Mapowania są sporządzony według wzoru jako płaska płaszczyzny na ekranie, oparte na merkatora. Widoku mapy, jest *aparatu* wyglądającej w dół na tym płaszczyzny. Pozycja kamery może być kontrolowane przez zmiana lokalizacji, powiększenia, pochylenie i wpływu. [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate) klasa jest używana do przenieść lokalizację aparatu. `CameraUpdate` obiekty nie są bezpośrednio wystąpienia, zamiast tego interfejsu API map oferuje [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html) klasy.
 
-Raz `CameraUpdate` obiekt został utworzony, jest przekazywany jako parametr w jednej [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate)) lub [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate)) metody. `MoveCamera` Metody aktualizacji mapy natychmiast podczas `AnimateCamera` metoda zapewnia płynne i animowany przejście.
+Raz `CameraUpdate` obiekt został utworzony, jest przekazywany jako parametr w jednej [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29) lub [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29) metody. `MoveCamera` Metody aktualizacji mapy natychmiast podczas `AnimateCamera` metoda zapewnia płynne i animowany przejście.
 
 Następujący fragment kodu jest prosty przykład sposobu użycia `CameraUpdateFactory` utworzyć `CameraUpdate` będą powodować zwiększenie poziom powiększenia mapy przez jedną:
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Interfejs API map zawiera [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) która będzie używana do agregowania wszystkie możliwe wartości pozycji kamery. Wystąpienie tej klasy może zostać dostarczona do [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition)) metodę, która zwróci `CameraUpdate` obiektu. Zawiera także interfejsu API map [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) klasy, która zapewnia interfejs fluent API do tworzenia `CameraPosition` obiektów.
+Interfejs API map zawiera [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) która będzie używana do agregowania wszystkie możliwe wartości pozycji kamery. Wystąpienie tej klasy może zostać dostarczona do [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) metodę, która zwróci `CameraUpdate` obiektu. Zawiera także interfejsu API map [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) klasy, która zapewnia interfejs fluent API do tworzenia `CameraPosition` obiektów.
 Poniższy fragment kodu przedstawia przykład tworzenia `CameraUpdate` z `CameraPosition` i używając jej do zmiany położenia kamery na `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Interfejs API map zawiera [znacznika](https://developers.google.com/maps/documen
 
 ##### <a name="adding-a-marker"></a>Dodawanie znacznika
 
-Aby dodać znacznik do mapy, konieczne jest Utwórz nową [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) obiekt, a następnie wywołać [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions)) metoda `GoogleMap` wystąpienia. Ta metoda zwróci [znacznika](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) obiektu.
+Aby dodać znacznik do mapy, konieczne jest Utwórz nową [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) obiekt, a następnie wywołać [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) metoda `GoogleMap` wystąpienia. Ta metoda zwróci [znacznika](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) obiektu.
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ Ta metoda przyjmuje [BitmapDescriptor](http://developer.android.com/reference/co
 
 -   `FromBitmap(Bitmap image)` &ndash; Ikona, należy użyć określonej mapy bitowej.
 
--   `FromFile(string fileName` &ndash; Tworzenie ikon niestandardowych z pliku w określonej ścieżce.
+-   `FromFile(string fileName)` &ndash; Tworzenie ikon niestandardowych z pliku w określonej ścieżce.
 
 -   `FromResource(int resourceId)` &ndash; Tworzenie ikon niestandardowych z określonego zasobu.
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ Poniższy fragment kodu przedstawia sposób rysowania koło:
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ Odwołaj, że okno informacje o jest statyczna `View` który jest renderowany ja
 - [Google mapy interfejsu API systemu Android w wersji 2](https://developers.google.com/maps/documentation/android/)
 - [APK usług Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Uzyskania klucza interfejsu API map Google](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Problem 57880: Nie zaktualizowano ale AVD usług Google Play](https://code.google.com/p/android/issues/detail?id=57880)

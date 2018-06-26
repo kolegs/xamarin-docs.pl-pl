@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646706"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935402"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Emisji odbiorców w platformy Xamarin.Android
 
@@ -25,7 +25,7 @@ A _emisji odbiornika_ jest składnikiem systemu Android umożliwiający aplikacj
 Android identyfikuje dwa typy programów:
 
 * **Jawne emisji** &ndash; tych typów emisji docelowych określonych aplikacji. Najczęściej używane jawne emisji jest uruchomienia działania. Przykład jawne emisji, gdy aplikacja potrzebuje do wybierania numeru telefonu; wyśle jego celem przeznaczonego dla aplikacji Phone w systemach Android i przebiegu wzdłuż numer telefonu ma być wybrany. Android skieruje następnie celem aplikacji telefonicznej.
-* **Niejawne broadcase** &ndash; emisje te są wysyłane do wszystkich aplikacji na urządzeniu. Na przykład niejawne emisji `ACTION_POWER_CONNECTED` celem. Celem tego jest publikowany w każdym razem, gdy Android wykryje, że jest ładowana baterii na urządzeniu. Android będzie przekierowywać to zamierzone do wszystkich aplikacji, które zostały zarejestrowane dla tego zdarzenia.
+* **Niejawne emisji** &ndash; emisje te są wysyłane do wszystkich aplikacji na urządzeniu. Na przykład niejawne emisji `ACTION_POWER_CONNECTED` celem. Celem tego jest publikowany w każdym razem, gdy Android wykryje, że jest ładowana baterii na urządzeniu. Android będzie przekierowywać to zamierzone do wszystkich aplikacji, które zostały zarejestrowane dla tego zdarzenia.
 
 Odbiornik emisji jest podklasą `BroadcastReceiver` przesłonięcie typu i [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metody. Android zostanie wykonany `OnReceive` w głównym wątku, więc tej metody należy tak zaprojektować wykonać szybko. Należy zwrócić uwagę, gdy dochodzi do uruchamiania wątków w `OnReceive` ponieważ Android może zakończyć proces po zakończeniu metody. Jeśli odbiornik emisji należy wykonać długotrwała pracy, zaleca się zaplanowanie _zadania_ przy użyciu `JobScheduler` lub _dyspozytora zadania Firebase_. Planowanie pracy z zadaniem zostaną dokładniej omówione w przewodniku oddzielne.
 

@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732765"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935106"
 ---
 # <a name="oreo-features"></a>Funkcje Oreo
 
@@ -191,7 +191,7 @@ Po użyciu **avdmanager** Aby utworzyć urządzenie wirtualne, mają być uwzgl�
 
 -----
 
-Aby uzyskać więcej informacji o konfigurowaniu emulatorze systemu Android do testowania i debugowania, zobacz [debugowania za pomocą Emulator systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Aby uzyskać więcej informacji o konfigurowaniu emulatorze systemu Android do testowania i debugowania, zobacz [debugowania na emulatorze systemu Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
 Jeśli używasz urządzenia fizycznego, takie jak węzła lub piksel można zaktualizować urządzenie do automatycznego za pośrednictwem aktualizacji lotniczego (Stachnio) lub pobranie obrazu systemu i flash urządzenia bezpośrednio. Aby uzyskać więcej informacji na temat ręcznie zaktualizować urządzenie do Oreo systemu Android, zobacz [obrazy fabryki dla węzła i pikseli urządzenia](https://developers.google.com/android/images).
 

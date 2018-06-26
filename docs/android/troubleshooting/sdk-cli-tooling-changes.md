@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732869"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935454"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Zmiany do narzędzi zestawu SDK systemu Android
 
@@ -56,7 +56,7 @@ Jest nowy program o nazwie **sdkmanager** w **narzędzia/bin** folderu zestawu S
 
 **Dodane w:** narzędzia zestawu SDK systemu Android 25.3.0 (marzec 2017 r) lub nowszy.
 
-Jest nowy program o nazwie **avdmanager** w **narzędzia/bin** folderu zestawu SDK systemu Android. To narzędzie jest używane do obsługi urządzeń Avd dla Emulator systemu Google Android. Aby uzyskać więcej informacji na temat stosowania tego narzędzia, zobacz [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Jest nowy program o nazwie **avdmanager** w **narzędzia/bin** folderu zestawu SDK systemu Android. To narzędzie jest używane do obsługi urządzeń Avd dla emulatora systemu Android. Aby uzyskać więcej informacji na temat stosowania tego narzędzia, zobacz [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Zmiana wersji na starszą
 

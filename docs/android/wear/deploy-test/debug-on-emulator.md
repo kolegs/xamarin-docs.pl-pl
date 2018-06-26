@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732986"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934983"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Debugowanie zużycie emulatora systemu Android
 
@@ -22,7 +22,7 @@ _Te artykuły wyjaśniono, jak debugowanie aplikacji na emulatorze platformy Xam
 
 Tworzenie aplikacji systemu Android nosić wymaga działania aplikacji, albo na sprzęcie fizycznym lub przy użyciu emulatorem ani symulatorem. Przy użyciu sprzętu jest najlepszym rozwiązaniem, ale nie zawsze najbardziej praktyczne. W wielu przypadkach może być łatwiejsze i bardziej ekonomiczne symulować/emulować sprzętu dla systemu Android nosić przy użyciu emulatora, zgodnie z poniższym opisem. Jeśli nie są jeszcze zapoznać się z procesem wdrażania i uruchamiania aplikacji systemu Android nosić, zobacz [nosić Witaj,](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-google-android-emulator"></a>Skonfiguruj Emulator systemu Google Android
+## <a name="configure-the-android-emulator"></a>Skonfiguruj emulatora systemu Android
 
 Aby uruchomić aplikację zużycia emulatora, należy zainstalować emulatora Android SDK systemu Android i jest skonfigurowana do używania systemu Android. Uzyskać ogólną emulatora Android SDK instalacji i konfiguracji, zobacz [Konfiguracja emulatora systemu Android](~/android/get-started/installation/android-emulator/index.md).
 
@@ -48,4 +48,4 @@ Emulator może pozostać uruchomiony; nie jest konieczne zamknąć ją i uruchom
  
 ## <a name="summary"></a>Podsumowanie
  
-W tym przewodniku wyjaśniono sposób konfigurowania Emulator systemu Google Android rozwoju zużycia i uruchomić urządzenie wirtualne zużycia do debugowania.
+W tym przewodniku wyjaśniono sposób konfigurowania emulatora systemu Android dla rozwoju zużycia i uruchomić urządzenie wirtualne zużycia do debugowania.

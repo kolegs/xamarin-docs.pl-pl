@@ -6,13 +6,13 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732222"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935389"
 ---
 # <a name="debugging"></a>Debugowanie
 
@@ -22,13 +22,9 @@ W tej sekcji omówiono sposób debugowania aplikacji platformy Xamarin.Android n
 
 Tworzenie aplikacji systemu Android wymaga działania aplikacji, albo na sprzęcie fizycznym lub przy użyciu emulatora. Przy użyciu sprzętu jest najlepszym rozwiązaniem, ale nie zawsze najbardziej praktyczne. W wielu przypadkach może być łatwiejsze i bardziej ekonomiczne symulować/emulować sprzętu z systemem Android przy użyciu jednej z emulatory opisane poniżej.
 
-### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Debugowanie za pomocą emulatora systemu Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Debugowanie na emulatorze systemu Android](~/android/deploy-test/debugging/debug-on-emulator.md)
 
-Artykuły te wyjaśniają zasady korzystania z emulatorem domyślnym, który został dostarczony wraz z zestawu SDK systemu Android. Emulator tego jest dostępna dla programu Visual Studio dla systemu Windows i programu Visual Studio dla komputerów Mac.
-
-### <a name="visual-studio-android-emulatorandroiddeploy-testdebuggingvisual-studio-android-emulatormd"></a>[Emulator programu Visual Studio dla systemu Android](~/android/deploy-test/debugging/visual-studio-android-emulator.md)
-
-W tym artykule opisano sposób debugowania i testowania aplikacji platformy Xamarin.Android przy użyciu emulatora systemu Android, które są wbudowane w program Visual Studio 2015. Emulator tego jest dobrym rozwiązaniem, jeśli używasz programu Visual Studio 2015 i nie ma potrzeby profilów urządzeń niestandardowych.
+W tym artykule opisano sposób uruchamiania emulatora systemu Android w programie Visual Studio i uruchom aplikację w urządzenie wirtualne.
 
 ### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[Debugowanie na urządzeniu](~/android/deploy-test/debugging/debug-on-device.md)
 
@@ -39,4 +35,4 @@ W tym artykule przedstawiono sposób konfigurowania fizycznego urządzenia z sys
 Jeden często deweloperzy lewy umożliwia debugowanie aplikacji przy użyciu `Console.WriteLine`. Jednak na platformie przenośnych, takich jak Android nie konsoli. Urządzenia z systemem android zawiera dziennik, który prawdopodobnie należy wykorzystać podczas pisania aplikacji. Jest to czasami określane jako **logcat** z powodu polecenie wpisane w celu ich pobrania. W tym artykule opisano sposób użycia **logcat**.
 
 > [!WARNING]
-> Należy pamiętać, że **Xamarin Android Player** jest przestarzała. Aby uzyskać więcej informacji, zobacz [anonsu, w tym wpisie w blogu](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/).
+> Należy pamiętać, że **Xamarin Android Player** jest przestarzała. Aby uzyskać więcej informacji, zobacz [anonsu, w tym wpisie w blogu](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/). Ponadto **Visual Studio Emulator systemu Android** jest przestarzałe począwszy od programu Visual Studio 2017 r.

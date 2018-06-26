@@ -6,13 +6,13 @@ ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2017
-ms.openlocfilehash: 16716db67067f07166fa35df7e539cdf3ed1de5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/22/2018
+ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30768285"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935363"
 ---
 # <a name="set-up-device-for-development"></a>Konfigurowanie urządzeń środowiska deweloperskiego
 
@@ -112,7 +112,7 @@ Aby zainstalować sterowniki w systemie Windows 7:
 
 6.  Wybierz **Przeglądaj komputer oprogramowanie sterownika** i kliknij przycisk **dalej** .
 
-7.  Kliknij przycisk **Przeglądaj** , aby zlokalizować folder sterownik USB (sterownik Google USB znajduje się w **\extras\google\usb_driver [ścieżka instalacji zestawu SDK systemu Android]**.
+7.  Kliknij przycisk **Przeglądaj** , aby zlokalizować folder sterownik USB (sterownik Google USB znajduje się w **\extras\google\usb_driver [ścieżka instalacji zestawu SDK systemu Android]**).
 
 8.  Kliknij przycisk **dalej** do zainstalowania sterownika.
 
