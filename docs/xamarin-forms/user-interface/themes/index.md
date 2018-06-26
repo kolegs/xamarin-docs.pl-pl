@@ -49,7 +49,7 @@ Te zrzuty ekranu pokazują tych kontrolek z:
 * Motywu jasny (tylko niewielkie różnice mającej bez motywu)
 * Ciemny motyw
 
-![](images/standard-none-sml.png "Formanty bez tworzenia motywów") ![ ] (images/standard-light-sml.png "formantów z motywu jasny") ![ ] (images/standard-dark-sml.png "formantów z ciemnego motywu")
+![](images/standard-none-sml.png "Formanty bez tworzenia motywów") ![](images/standard-light-sml.png "formantów z motywu jasny") ![](images/standard-dark-sml.png "formantów z ciemnego motywu")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Te zrzuty ekranu pokazują tych kontrolek z:
 
 To powoduje jasny i ciemny w następujący sposób:
 
-![](images/boxview-light-sml.png "BoxView z StyleClass motywu jasny") ![ ] (images/boxview-dark-sml.png "BoxView z StyleClass ciemny motyw")
+![](images/boxview-light-sml.png "BoxView z StyleClass motywu jasny") ![](images/boxview-dark-sml.png "BoxView z StyleClass ciemny motyw")
 
 <a name="builtin" />
 
