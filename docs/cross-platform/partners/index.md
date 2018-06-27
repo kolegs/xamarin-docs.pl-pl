@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291765"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935519"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Certyfikowane konsultingowe partnerom dostarczanie rozwiązań mobilnych
 
@@ -56,7 +56,6 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[Ciber stany USA](http://www.ciber.com/)|Greenwood Village, USA|Usługi w chmurze pierwszy przekształcania cyfrowego unikatowe akceleratory i ukierunkowanych talenty usług firma Microsoft umożliwiają przyszłość.|
 |[Laboratoria CIE cyfrowy](http://www.ciedigital.com/)|Gdańsku, USA; Irvine, USA|Laboratoria cyfrowe CIE jest pasjonują się tym opis się, że będzie wymagał krój naszych partnerów firmy i wprowadzają nowe rozwiązania w zakresie oprogramowania mających wartość measureable przedsiębiorstwa|
 |[Jasności przedsiębiorstwa](https://www.clarity-ventures.com)|Austin, Wysyłania|Jasności jest dobrze zaokrąglony, professional, wszystkie rozszerzenia usługi firmy. Od zespołu creative projektowania nic tożsamość swojej firmy do ekranu przez ekranu.|
-|[Technologie Mill kodu](https://codemilltech.com/)|Madison, USA|Mill kodu jest konsultacji boutique i szkolenia przedsiębiorstwa opiera się przez firmę Microsoft i Xamarin MVP Matt Soucoup. Specjalizuje się on w tworzeniu Xamarin i na platformie Azure |
 |[Rozwiązania technologii świadome](http://www.cognizant.com)|Zarejestrowanego Buenos Aires; Auckland, Nowa Zelandia; Melbourne, Australii. Sydney, Australii. Brisbane, Australii. Brussels, Belgia; Sieć SAN Paulo, Brazylia; Naszej, Kanady; Chiny Szanghaj; Heredia, Kostaryka; Miasto Jersey, NJ, USA; Sieć San Francisco, urząd certyfikacji, USA; Teaneck, NJ, USA|ŚWIADOME łączy Pomoc w zakresie zadowolenia klientów, technologii innowacji, głębokie branży i doświadczenia procesów biznesowych i globalnego, współpracy pracowników, które stanowią przyszłe pracy|
 |[Spójne rozwiązania, Inc.](http://www.coherentsolutions.com)|New York, NY; Boston, MA; Mińsk, Białoruś|Spójne rozwiązań jest rozwoju oprogramowania, konsultacji i outsourcingu firmy, która rozwiązuje problemy biznesowe klienta, łącząc globalne wiedzy, innowacji i kreatywności|
 |[Cruxlab](https://cruxlab.com/)|Gdańsku, USA|Utworzymy niestandardowych cyfrowe produkty rozruchów i przedsiębiorstwa, dla użytkowników końcowych i firmy|
@@ -65,10 +64,10 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[STOPNI](http://www.degdigital.com)|Wstrzymywanie Overland, USA|STOPNI tworzy inteligentne cyfrowe marketing, handlu i współpracy strategie, które pozwalają organizacjom rozszerzają konkurencyjnych korzyści i osiągnięcia ich celów|
 |[DevRabbit](http://www.devrabbit.com)|Sieć SAN Ramon, USA|DevRabbit jest USA, na podstawie techniczna konsultacji potwierdzone, który zapewnia stanu grafiki rozwiązań dla pakietu Enterprise Mobility, tworzenie aplikacji sieci Web i konsulting chmury.|
 |[Digineer](http://www.digineer.com)|Plymouth, MN|Digineer zapewnia zarządzanie projektu w przedsiębiorstwie, analiz biznesowych, deweloperów aplikacji i analizy biznesowej i personel usług|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Europa; Azja Pasific;  Bliski Wschód; Afryka|DigitasLBi jest ułatwiający firmom Przejdź świata cyfrowego agencji międzynarodowe komunikacji|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Europa; Azja i Pacyfik;  Bliski Wschód; Afryka|DigitasLBi jest ułatwiający firmom Przejdź świata cyfrowego agencji międzynarodowe komunikacji|
 |[DMI](https://dminc.com/)|Bethesda, MD|Pomagającym przedsiębiorstw reinvent się dla połączonych świecie, firma Microsoft oferuje unikatowy blend możliwości i świeże mindset, umożliwiającą innowacji paliwa.|
 |[DOOR3](http://door3.com/)|Nowy Jork, USA|Firma Microsoft w świecie agencji creative, dużych przedsiębiorstw konsultingowe i sklepach specjalne wdrożenia są różne. Szanujemy nasza firma, ale Dbamy o naszym klientom więcej.|
-|[DreamTeam Mobile](http://dreamteam-mobile.com)|W stanie Waszyngton D.C., USA|DreamTeam Moible utworzyć natywnej dla systemu iOS, Android, Windows i Mac aplikacji Swift za pomocą platformy Xamarin i reagowania natywnego. Możemy tworzyć natywne aplikacje dla wielu platform z udostępnionym codebases|
+|[DreamTeam Mobile](http://dreamteam-mobile.com)|W stanie Waszyngton D.C., USA|DreamTeam Mobile utworzyć natywnej dla systemu iOS, Android, Windows i Mac aplikacji Swift za pomocą platformy Xamarin i reagowania natywnego. Możemy tworzyć natywne aplikacje dla wielu platform z udostępnionym codebases|
 |[Durwella](http://www.durwella.com)|Houston, USA|Durwella jest firma rozwiązań oprogramowania, która koncentruje się na naukowych i engineering projektów|
 |[Technologie EastBanc](http://www.eastbanctech.com)|W stanie Waszyngton D.C., USA|Technologie EastBanc jest firma tworząca oprogramowanie pełnego cyklu niezależny od platformy, dostarczanie technologii elastycznych rozwiązań|
 |[Krawędź Webware, Inc.](https://edgewebware.com)|Miamisburg, OH|Krawędź Webware, Inc. udostępnia sieci web i usług projektu i/lub rozwoju aplikacji mobilnej|
@@ -79,7 +78,7 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[Wysiłki oprogramowania technologii Inc.](http://www.techendeavour.com)|Austin, Wysyłania|W wysiłki konsultantów oceny Enterprise Mobile dojrzałości i pomoc w rozwiązywaniu strategicznych mobilności potrzeb organizacji na wszystkich poziomach|
 |[Ulepszone systemy konsultacji](http://www.enhancedsystems.com)|Miasto Johnson, TN|Rozszerzony, konsultacji Systems, Inc. zapewnia ekspertów projektu, projektowanie i integracji usługi dla firm, które chcą do utworzenia nowej aplikacji biznesowych lub istniejące|
 |[Envoc](http://envoc.com/)|Baton Rouge, LA|Firma Microsoft istnieje na przecięciu kreatywność i technologię tak, aby zapewnić doskonałe funkcje i innowacji|
-|[Systemy EPAM](https://www.epam.com)|Newtown, dostawcy|EPAM Systems, Inc. jest wiodące projektowanie globalne produktu i platforma digital engineering usług firmy|
+|[Systemy EPAM](https://www.epam.com)|Newtown, PA; Nowego Jorku; Philadelphia; Chicago; Sieć San Francisco; Gdańsku; Londynie; Mińsk; St Petersburg; Budapeszt|EPAM Systems, Inc. jest wiodące projektowanie globalne produktu i platforma digital engineering usług firmy|
 |[Experis Ciber B.V.](http://www.ciber.com)|Troy, MI |Ciber jest globalne IT firm z ponad 2,900 pracownikami i oddziałów w Ameryce Północnej i Indie|
 |[LLC do przodu](http://www.fastforward.sh/)|Salem, agenta zarządzania|Szybkie przewijanie do przodu rozwija aplikacji we wszystkich najważniejszych natywnego systemach operacyjnych, wszystkich typów urządzeń i funkcjonowały Internetu rzeczy|
 |[Fincons grupy](http://www.finconsgroup.com)|Gdańsku, urząd certyfikacji; New York, NY; Londynie, UK|Grupy Fincoins usługi i rozwiązania Podaj konkretnych odpowiedzi na rzeczywiste potrzeby dużych kont i MSP, technologii i procesów, gwarantując innowacji, które są im potrzebne.|
@@ -88,7 +87,7 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[FusionComputing, Inc.](http://www.fusioncomputing.com)|Douglasville Georgia|Opracowywania międzyplatformowego natywnych aplikacji, możesz uzyskiwać dostęp klientów na dowolnym urządzeniu.|
 |[Griffin rozwiązań grupy](http://griffinsolutionsgroup.com)|Alpharetta, GA|Grupy rozwiązań Griffin został opiera się ponieważ mamy pomoc w zakresie rozwiązywania problemów biznesowych. Trwa stosowanie latach doświadczeń w wieloma branży ułatwiających klienci podczas podejmowania decyzji dotyczących odpowiedniej technologii|
 |[Harman połączone usługi, Inc.](http://www.harman.com)|Widok górski, urząd certyfikacji; Hartford, IERZ; Seattle, WA; Newark, New; Londynie, UK; Berlinie, Niemcy; Moskwa, Rosji|Projekty Harman i inżynierów połączone produktów i rozwiązań dla automakers, użytkowników i przedsiębiorstwom na całym świecie, w tym systemów połączonych samochodu, audio i visual, rozwiązania dla przedsiębiorstw automatyzacji; i połączone usługi|
-|[Technologie HCL](https://www.hcltech.com/)|Noida, Uttar Pradesh, Indie; Mississauga, ON, Kanady; Nowy Jork, NY, USA; Sieć SAN Paulo, Brazylia; Meksyk, CDMX, Meksyk; Londynie, UK; Sydney, Australia|Technologie HCL to firma generacji technologii globalnych, która ułatwia przedsiębiorstwom reimagine ich firm dla cyfrowego wieku|
+|[Technologie HCL](https://www.hcltech.com/)|Noida, Uttar Pradesh, Indie; Mississauga, ON, Kanady; Nowy Jork, NY, USA; Sieć SAN Paulo, Brazylia; Meksyk, CDMX, Meksyk; Londynie, UK; Sydney, Australia|Technologie HCL to firma generacji technologii globalnych, która ułatwia przedsiębiorstwom ponownie Wyobraź sobie ich firm dla cyfrowego wieku|
 |[Ltd technologii Hexaware](http://hexaware.com/)|Iselin, New Jersey|Hexaware jest globalnym dostawcą z IT, BPO i konsulting usług |
 |[Grupa zaawansowanych technologii, LLC](http://hightg.com)|Kansas City Kansas|Firma tworząca oprogramowanie niestandardowe|
 |[Hitcents](http://hitcents.com)|Zielony kręgle, KY; Gdańsku, urząd certyfikacji, USA; Sieć San Francisco, urząd certyfikacji, USA; Szanghaj, Chiny Szanghaj|Hitcents nie tylko tworzenie aplikacji; tworzy środowisko, które wykraczają poza tylko jedną platformę. Aplikacji 24/7 one również obsługiwać, każdy użytkownik w dowolnym miejscu, mogą uzyskiwać dostęp do aplikacji.|
@@ -239,7 +238,7 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[Przepływ wdrożeń pilotażowych CVBA](http://www.flowpilots.com)|Antwerpia, Belgia|Przepływ projekty wdrożeń pilotażowych, kompilacje, wdraża i zarządza narzędzia cyfrowe, które ułatwiają klientom zwiększyć swoje przychody, zmniejszenie kosztów lub przełącz pracownikom swobodę i elastyczność.|
 |[KENZE](http://www.kenze.be)|Mechelen, Belgia|Program Microsoft .NET projecten en gerelateerde technologieën.  Niemcy drie belangrijkste pijlers binnen de organisatie zijn mensen, kennis en mensenkennis, mają zij vormen de podstawy voor kwalitatieve succesvolle projecten en tevreden klanten. |
 |[Levelapp](http://www.levelapp.be)|Hoeilaart, Belgia|Możemy Levelapp pełnej przenośnych Agencji. Firma Microsoft, które działają jako deweloperów oprogramowania. Utworzymy aplikacji między platformami, które dopasowania i napędzania wizji strategicznych. Dostarczamy wartość do klientów, partnerzy i pracownicy. |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgia; Kontich, Belgia; Lummen, Belgia; Gandawa, Belgia; Harelbeke, Belgia; Namur, Belgia; Mons, Belgia|Mobile jest nowy standard. Prawie wszystkie firmy wymaga usług mobilnych lub chcesz zachować konkurencyjnych aplikacji. Ale przenośnych strategii samodzielnie nie wystarcza; wszystko musi być w pełni zintegrowane w infrastrukturze ogólnych zadań konfiguracji początkowej, łącznie z chmury, zabezpieczeń, ERP i tak dalej. W Realdolmen nazywamy to firma połączony. <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgia; Kontich, Belgia; Lummen, Belgia; Gandawa, Belgia; Harelbeke, Belgia; Namur, Belgia; Mons, Belgia|Mobile jest nowy standard. Prawie wszystkie firmy wymaga usług mobilnych lub chcesz zachować konkurencyjnych aplikacji. Ale przenośnych strategii samodzielnie nie wystarcza; wszystko musi być w pełni zintegrowane w infrastrukturze ogólnych zadań konfiguracji początkowej, łącznie z chmury, zabezpieczeń, ERP i tak dalej. W Realdolmen nazywamy to firma połączony.|
 
 
 ## <a name="brazil"></a>Brazylia
@@ -574,7 +573,7 @@ _Na liście według lokalizacji głównej, wielu partnerów świadczenia usług 
 |[Billennium](http://billennium.pl/)|Warszawie, Polski |Billennium ma wiele lat doświadczenie w tworzeniu innowacyjne narzędzi i rozwiązań.|
 |[O.o. z jednego dostawcę usługi. rozwiązań Edge](http://www.edge1s.com)|Warszawie, Polski |Udostępniamy umiejętności i doświadczenia kwalifikowaną konsultantów IT. W ramach poszczególnych usług w naszym portfolio gwarantujemy elastyczne podejście do potrzeb i oczekiwań klienta|
 |[O.o. z NETBULLS dostawcę usługi.](http://www.netbulls.io)|Bialystok, Polski|Pobierz pomysłów na rynek zdobyła. Bez nieużywanego £$ €, czas lub kompromisów. |
-|[SII](http://www.sii.pl/en)|Warszawie, Polski; Paryża, Francja; Madryt, Hiszpania; Berlinie, Niemcy; Amsterdam, Holandia; Brussels, Belgia; Miasto Luksemburgu, Luksemburg; Serwera Geneva, Szwajcaria; Marrakesz, Maroko; Praga, Czechia; Bukareszt, Rumunii; Naszej, ON, Kanady; Santiago, podrzędnej lokacji, Santiago Metropolitalnego regionu; Buenos Aires autonomicznego zarejestrowanego Miasto Buenos Aires; Bogot√ °, Bogota, Kolumbii; Delhi, Indie|SII jest wiodące IT usługi firmy Polski obsługi programów przekształcania cyfrowego od jego koncepcji pomyślne dostarczać i poza. Udostępniamy doświadczenia w dostarczaniu aplikacje firm i konsumentów, najpierw włączania komunikacji urządzeń, dane big data obsługi i w trybie offline.|
+|[SII](http://www.sii.pl/en)|Warszawie, Polski; Paryża, Francja; Madryt, Hiszpania; Berlinie, Niemcy; Amsterdam, Holandia; Brussels, Belgia; Miasto Luksemburgu, Luksemburg; Serwera Geneva, Szwajcaria; Marrakesz, Maroko; Praga, Czechia; Bukareszt, Rumunii; Naszej, ON, Kanady; Santiago, podrzędnej lokacji, Santiago Metropolitalnego regionu; Buenos Aires autonomicznego zarejestrowanego Miasto Buenos Aires; Bogoty, Bogota, Kolumbii; Delhi, Indie|SII jest wiodące IT usługi firmy Polski obsługi programów przekształcania cyfrowego od jego koncepcji pomyślne dostarczać i poza. Udostępniamy doświadczenia w dostarczaniu aplikacje firm i konsumentów, najpierw włączania komunikacji urządzeń, dane big data obsługi i w trybie offline.|
 
 
 ## <a name="portugal"></a>Portugalia
