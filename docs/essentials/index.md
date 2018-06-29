@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782742"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080387"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Postępuj zgodnie z przewodników zintegrować te funkcje Xamarin.Essentials apl
 * [Używanie funkcji Geolokalizacji](geolocation.md?context=xamarin/xamarin-forms) — pobrać urządzenia GPS lokalizacji.
 * [Żyroskop](gyroscope.md?context=xamarin/xamarin-forms) — śledzenie obrót wokół trzy osie głównej urządzenia.
 * [Magnetometrów](magnetometer.md?context=xamarin/xamarin-forms) — wykrywanie orientacji urządzenia względem pola magnetycznego ziemi.
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — uruchamianie kodu w wątku głównego aplikacji. 
 * [Otwórz przeglądarkę](open-browser.md?context=xamarin/xamarin-forms) — szybkie i łatwe Otwórz przeglądarkę do określonej witryny sieci Web.
+* [Czujnik orientacji](orientation-sensor.md?context=xamarin/xamarin-forms) — pobrać orientacji urządzenia w przestrzeni trójwymiarowej.
 * [Telefon](phone-dialer.md?context=xamarin/xamarin-forms) — otworzyć program Telefon.
+* [Power](power.md?context=xamarin/xamarin-forms) — Uzyskaj statusem oszczędzania energii.
 * [Preferencje](preferences.md?context=xamarin/xamarin-forms) — szybko i łatwo dodawać preferencje trwałych.
 * [Blokada ekranu](screen-lock.md?context=xamarin/xamarin-forms) — Zachowaj wznowione ekranu urządzenia.
 * [Bezpieczny magazyn](secure-storage.md?context=xamarin/xamarin-forms) — bezpiecznie przechowywać dane.
