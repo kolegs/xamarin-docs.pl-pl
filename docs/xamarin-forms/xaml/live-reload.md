@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935431"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066653"
 ---
 # <a name="xamarin-live-reload"></a>Załaduj ponownie na żywo Xamarin
 
@@ -28,7 +28,7 @@ Załaduj ponownie na żywo jest obecnie dostępna tylko w programie Visual Studi
 
 ## <a name="requirements"></a>Wymagania
 
-* [Visual Studio 2017 wersji 15.7 lub nowszej](https://www.visualstudio.com/vs/) lub nowszego z **Mobile development z platformą .NET** obciążenia.
+* [Visual Studio 2017 wersji 15.7 lub nowszej](https://visualstudio.microsoft.com/vs/) lub nowszego z **Mobile development z platformą .NET** obciążenia.
 * [Platformy Xamarin.Forms 3.0.0 lub nowszej](https://www.nuget.org/packages/Xamarin.Forms/) lub nowszej.
 
 ## <a name="getting-started"></a>Wprowadzenie

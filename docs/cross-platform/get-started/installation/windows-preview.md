@@ -6,12 +6,12 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 17deacf115042a2fcd6bad9e22a630eadb432d44
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269021"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066861"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Instalowanie wersji zapoznawczej Xamarin w systemie Windows
 
@@ -21,7 +21,7 @@ Visual Studio 2017 nie obsługuje alfa, beta i stabilna kanałów w taki sam spo
 - **Podgląd** — jest to równoważne _alfa_ i _Beta_ kanałów w programie Visual Studio dla komputerów Mac
 
 > [!TIP] 
-> Aby wypróbować funkcje wersji wstępnej, należy [Pobierz Instalator Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), oferuje możliwość zainstalowania **Podgląd** wersji programu Visual Studio side-by-Side with stabilna ( Wersja wydana). Więcej informacji na temat nowości w programie Visual Studio 2017 znajdują się w [informacje o wersji](/visualstudio/releasenotes/vs2017-preview-relnotes).
+> Aby wypróbować funkcje wersji wstępnej, należy [Pobierz Instalator Visual Studio 2017 Preview](https://visualstudio.microsoft.com/vs/preview/), oferuje możliwość zainstalowania **Podgląd** wersji programu Visual Studio side-by-Side with stabilna ( Wersja wydana). Więcej informacji na temat nowości w programie Visual Studio 2017 znajdują się w [informacje o wersji](/visualstudio/releasenotes/vs2017-preview-relnotes).
 
 Wersja programu Visual Studio może obejmować odpowiedniej wersji zapoznawczych funkcjonalności Xamarin, w tym:
 

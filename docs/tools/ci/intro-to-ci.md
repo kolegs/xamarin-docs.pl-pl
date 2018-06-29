@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793665"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066510"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
 
@@ -48,14 +48,14 @@ Brak ekosystem szeroką gamę narzędzi handlowych i open source do obsługi ele
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Team Foundation Server i Visual Studio Team Services
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) i [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) są narzędzia współpracy firmy Microsoft dla ciągłej integracji tworzenie usług, śledzenia zadań, planowania elastycznego i raportowania narzędzia i wersji formant. Z kontroli wersji programu VSTS TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w usłudze GitHub.
+[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) i [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) są narzędzia współpracy firmy Microsoft dla ciągłej integracji tworzenie usług, śledzenia zadań, planowania elastycznego i raportowania narzędzia i wersji formant. Z kontroli wersji programu VSTS TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w usłudze GitHub.
 
  - Visual Studio Team Services udostępnia usługi za pośrednictwem chmury. Jego zalet podstawowego jest nie musi podawać dedykowanego sprzętu i infrastruktury i można uzyskać z dowolnego miejsca za pośrednictwem przeglądarki sieci web oraz narzędzia do programowania popularnych takiego jak Visual Studio, dzięki czemu atrakcyjne dla zespołów, które są od siebie lokalizacjach geograficznych rozproszone. Jest bezpłatna dla zespołów deweloperów pięciu lub mniej, po których dodatkowe licencje można zakupić do uwzględnienia rosnącym zespołu.
  - TFS jest przeznaczona dla serwerów systemu Windows w lokalnych i dostępne za pośrednictwem sieci lokalnej lub połączenie sieci VPN do sieci. Jego głównej korzyści jest w pełni kontrolować konfiguracji serwerów kompilacji i można zainstalować niezależnie od dodatkowego oprogramowania lub usług są wymagane. TFS ma bezpłatna wersja Express klasy podstawowej dla małych zespołów.
 
 Zarówno TFS i programu VSTS są ściśle powiązane z programem Visual Studio i umożliwiają deweloperom wykonywać wiele kontroli wersji i zadań elementu konfiguracji z poziomu komfortu pojedynczego IDE. Dostępna jest również wtyczki programu Team Explorer Everywhere dla programu Eclipse (patrz poniżej). Visual Studio for Mac nie oferuje obsługę TFS lub VSTS.
 
-System kompilacji programu Visual Studio Team usługi ma bezpośrednią obsługę projektów Xamarin, w których tworzenie definicji kompilacji dla każdej platformy, które chcesz docelowego (Android, iOS i Windows). Odpowiednią licencję Xamarin jest wymagany dla każdej definicji kompilacji. Istnieje również możliwość nawiązania połączenia lokalnego, serwer do Visual Studio Team Services, w tym celu kompilacji TFS obsługą Xamarin. W przypadku tej konfiguracji kompilacje, które są umieszczane w kolejce programu VSTS zostanie delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zapoznaj się [Wdróż i skonfiguruj serwer kompilacji](https://msdn.microsoft.com/library/ms181712.aspx). Alternatywnie można użyć innego narzędzia kompilacji, takie jak Wpięć lub Miasto zespołu.
+System kompilacji programu Visual Studio Team usługi ma bezpośrednią obsługę projektów Xamarin, w których tworzenie definicji kompilacji dla każdej platformy, które chcesz docelowego (Android, iOS i Windows). Odpowiednią licencję Xamarin jest wymagany dla każdej definicji kompilacji. Istnieje również możliwość nawiązania połączenia lokalnego, serwer do Visual Studio Team Services, w tym celu kompilacji TFS obsługą Xamarin. W przypadku tej konfiguracji kompilacje, które są umieszczane w kolejce programu VSTS zostanie delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zapoznaj się [Wdróż i skonfiguruj serwer kompilacji](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts). Alternatywnie można użyć innego narzędzia kompilacji, takie jak Wpięć lub Miasto zespołu.
 
 Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM) programu Visual Studio, Visual Studio Team Services i Team Foundation Server, zobacz [zarządzania cyklem życia aplikacji przy użyciu aplikacji Xamarin](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) w witrynie MSDN.
 
@@ -107,7 +107,7 @@ Użytkownik może również połączyć z lokalnego serwera TFS z projektu progr
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services i Wpięć
 
-Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
+Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts).
 
 [![](intro-to-ci-images/intro04-small.png "Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji")](intro-to-ci-images/intro04.png#lightbox)
 

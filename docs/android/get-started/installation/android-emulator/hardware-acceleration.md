@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 0490a9b011d49d728dde74f4a50cb955d12cfcbe
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: c2bef2c614d4cc0655deb9732ccefec223a8318a
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935174"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066497"
 ---
 # <a name="hardware-acceleration-for-emulator-performance"></a>Przyspieszanie sprzętowe emulatora wydajności
 
@@ -61,7 +61,7 @@ Deweloperów, którzy korzystają z systemu Windows 10 (kwiecień 2018 aktualiza
 
    Włączanie **platformy funkcji Hypervisor systemu Windows** automatycznie włącza funkcji Hyper-V. Zaleca się ponowne uruchomienie systemu Windows po wprowadzeniu tej zmiany.
 
-3. **Zainstaluj [Visual Studio 15.8 Preview 1 lub nowszym](https://www.visualstudio.com/vs/preview/)**.
+3. **Zainstaluj [Visual Studio 15.8 Preview 1 lub nowszym](https://visualstudio.microsoft.com/vs/preview/)**.
    Ta wersja programu Visual Studio zapewnia obsługę IDE umożliwiające uruchamianie emulatora systemu Android przy użyciu funkcji Hyper-V.
  
 4. **Zainstaluj pakiet emulatora systemu Android 27.2.7 lub nowszym**. Aby zainstalować ten pakiet, przejdź do **Narzędzia > Android > Android SDK Manager** w programie Visual Studio. Wybierz **narzędzia** i upewnij się, że wersja emulatora systemu Android jest co najmniej 27.2.7. Upewnij się również, czy wersja narzędzia zestawu SDK systemu Android to 26.1.1 lub nowszy:

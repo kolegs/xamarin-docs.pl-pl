@@ -7,18 +7,21 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: a278a4715ffbcd4b1457f846be6bdf8394143cb4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9168b84b169d2f7919acaf88597919a48cd6710c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788985"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066848"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>Instalowanie obsługę systemu tvOS Xamarin
 
+> [!TIP]
+> Aby uruchomić eksperymentowanie z obsługą preview na platformie Xamarin iOS 12 oraz systemu tvOS 12, przeczytaj [pobierania przewodnika iOS 12](~/ios/platform/introduction-to-ios12/get-started.md).
+
 Apple wydała Apple TV 4K i systemu tvOS 11. Platforma Apple TV jest otwarty dla deweloperów, dzięki czemu mogą tworzyć aplikacje rozbudowane, bez ramek i zwolnij za pośrednictwem sklepu z aplikacjami wbudowanych telewizora firmy Apple.
 
-Xamarin.iOS 11 i nowsze obsługują systemu tvOS 11 SDK jest dostarczany z 9 Xcode firmy Apple. 
+Xamarin.iOS 11 i nowsze obsługują systemu tvOS 11 SDK jest dostarczany z 9 Xcode firmy Apple.
 
 - [Informacje o wersji dla platformy Xamarin.iOS](https://developer.xamarin.com/releases/ios/)
 - [Informacje o wersji programu Xcode](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)

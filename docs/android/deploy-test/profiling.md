@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/03/2018
-ms.openlocfilehash: e62ac290423db1c18e7e50d55b2b3550f99d1533
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549278"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066666"
 ---
 # <a name="profiling-android-apps"></a>Profilowanie aplikacji systemu Android
 
@@ -30,7 +30,7 @@ W tym przewodniku wprowadzono Profiler platformy Xamarin i zawiera szczegółowe
 Xamarin Profiler to aplikacja autonomiczna, która jest zintegrowany z programu Visual Studio i Visual Studio dla komputerów Mac do profilowania aplikacji platformy Xamarin w środowisku IDE. Aby uzyskać więcej informacji o używaniu profilera Xamarin, zobacz [profilera Xamarin](~/tools/profiler/index.md).
 
 > [!NOTE]
-> Musi być [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) subskrybenta do odblokowania funkcji Profiler platformy Xamarin w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac.
+> Musi być [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) subskrybenta do odblokowania funkcji Profiler platformy Xamarin w albo program Visual Studio Enterprise w systemie Windows lub programu Visual Studio dla komputerów Mac.
  
 ## <a name="android-studio-profiler"></a>Android Studio profilera
 

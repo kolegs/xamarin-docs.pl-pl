@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113476"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067004"
 ---
 # <a name="publishing-independently"></a>Publikowanie niezależnie
 
@@ -28,7 +28,7 @@ Tworzenie, wdrażanie i dystrybucja aplikacji platformy Xamarin.Android dostępn
 
 -   **Visual Studio Enterprise** &ndash; dla zespołów o dowolnym rozmiarze (tylko system Windows). Ta licencja zawiera funkcje, enterprise, standard lub w chmurze subskrypcji.
 
-Odwiedź stronę [visualstudio.com](https://www.visualstudio.com/xamarin/) pobierania Community Edition lub aby dowiedzieć się więcej na temat zakupu wersji Professional i Enterprise.
+Odwiedź stronę [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) pobierania Community Edition lub aby dowiedzieć się więcej na temat zakupu wersji Professional i Enterprise.
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>Zezwalaj na instalacja z nieznanych źródeł
@@ -62,7 +62,7 @@ Istnieje możliwość dystrybucji aplikacji przez serwer sieci web. Jest to osi�
 Instalacja ręczna jest trzecia opcja instalowania aplikacji. W celu ręcznej instalacji aplikacji:
 
 1.   **Dystrybucji APK użytkownikowi** &ndash; na przykład tej kopii mogą być dystrybuowane na dysku CD lub dysk flash USB.
-1.   **(Użytkownik) instaluje aplikację na urządzeniu z systemem Android** &ndash; użyć wiersza polecenia *mostka debugowania Android* (**adb**) narzędzie. **ADB** jest uniwersalny narzędzie wiersza polecenia, które umożliwia komunikację z wystąpieniem emulatora albo urządzenia z systemem Android zasilania. Zawiera zestaw SDK systemu Android **adb**; znajduje się w katalogu  **<sdk>/platform-tools /**.
+1.   **(Użytkownik) instaluje aplikację na urządzeniu z systemem Android** &ndash; użyć wiersza polecenia *mostka debugowania Android* (**adb**) narzędzie.   **ADB** jest uniwersalny narzędzie wiersza polecenia, które umożliwia komunikację z wystąpieniem emulatora albo urządzenia z systemem Android zasilania. Zawiera zestaw SDK systemu Android **adb**; znajduje się w katalogu  **<sdk>/platform-tools /**.
 
 Android urządzenie musi być połączone za pomocą kabla USB do komputera.
 Komputery z systemem Windows może być także wymagane dodatkowe sterowniki USB z dostawcą telefon, aby być rozpoznawane przez **adb**. Instrukcje dotyczące instalacji dla tych dodatkowych sterowników USB wykracza poza zakres tego dokumentu.

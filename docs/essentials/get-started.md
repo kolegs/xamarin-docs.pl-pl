@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783077"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067175"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Rozpoczynanie pracy z Xamarin.Essentials
 
@@ -63,6 +63,10 @@ Xamarin.Essentials jest dostępna jako pakietu NuGet, który można dodać do is
 5. Xamarin.Essentials wymaga ustawienia specyficzne dla platformy:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Xamarin.Essentials obsługuje minimalnej wersji systemu Android 4.4 odpowiadający poziom interfejsu API 19, ale Android wersji docelowej dla kompilacji musi być 8.1, odpowiadający poziom interfejsu API 27. (W programie Visual Studio, te dwie wersje ustawiane w oknie dialogowym właściwości projektu dla projektu systemu Android, na karcie manifestu systemu Android. W programie Visual Studio dla komputerów Mac są ustawione w oknie dialogowym Opcje projektu dla projektu systemu Android, na karcie aplikacji systemu Android.) 
+    
+    Xamarin.Essentials instaluje wersję 27.0.2 biblioteki Xamarin.Android.Support, które są wymagane. Inne biblioteki Xamarin.Android.Support, które aplikacja wymaga również powinny zostać uaktualnione do wersji 27.0.2 za pomocą Menedżera pakietów NuGet. Wszystkie biblioteki Xamarin.Android.Support używanych przez aplikację powinna być taka sama, a powinien mieć co najmniej wersji 27.0.2. Zapoznaj się [Rozwiązywanie problemów z strony](troubleshooting.md) w przypadku wystąpienia problemów Xamarin.Essentials NuGet lub zaktualizowanych NuGets w rozwiązaniu.
 
     W projekcie systemu Android `MainLauncher` lub dowolnej `Activity` czyli uruchomionego Xamarin.Essentials musi zostać zainicjowany w `OnCreate` metody:
 
