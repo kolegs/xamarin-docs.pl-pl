@@ -1,30 +1,30 @@
 ---
 title: Kwalifikatory zasobów i Opcje wizualizacji
-description: W tym temacie wyjaśniono, jak zdefiniować zasoby, które będą używane tylko wtedy, gdy są dopasowywane w niektórych wartości kwalifikatora. Prosty przykład jest zasób ciągu kwalifikowana języka. Zasób ciągu można zdefiniować jako domyślny, innymi zasobami alternatywne określone do użycia dla dodatkowych języków. Wszystkich typów zasobów mogą być kwalifikowane, w tym sam układ.
+description: W tym temacie wyjaśniono, jak zdefiniować zasoby, które będą używane tylko wtedy, gdy niektóre wartości kwalifikatora są dopasowywane. Prostym przykładem jest zasób w postaci ciągu kwalifikowana języka. Zasób w postaci ciągu można zdefiniować jako wartość domyślna z innymi zasobami alternatywnych definicja ma być używany dla dodatkowych języków. Wszystkie typy zasobów może być kwalifikowana, wraz z układem, sam.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bc8c1066e557085c1bf34f77765edbb2259ba7a
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771895"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403302"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kwalifikatory zasobów i Opcje wizualizacji
 
-_W tym temacie wyjaśniono, jak zdefiniować zasoby, które będą używane tylko wtedy, gdy są dopasowywane w niektórych wartości kwalifikatora. Prosty przykład jest zasób ciągu kwalifikowana języka. Zasób ciągu można zdefiniować jako domyślny, innymi zasobami alternatywne określone do użycia dla dodatkowych języków. Wszystkich typów zasobów mogą być kwalifikowane, w tym sam układ._
+_W tym temacie wyjaśniono, jak zdefiniować zasoby, które będą używane tylko wtedy, gdy niektóre wartości kwalifikatora są dopasowywane. Prostym przykładem jest zasób w postaci ciągu kwalifikowana języka. Zasób w postaci ciągu można zdefiniować jako wartość domyślna z innymi zasobami alternatywnych definicja ma być używany dla dodatkowych języków. Wszystkie typy zasobów może być kwalifikowana, wraz z układem, sam._
 
 
-## <a name="custom-device-configurations"></a>Konfiguracje niestandardowe urządzenie
+## <a name="custom-device-configurations"></a>Konfiguracje niestandardowe
 
-Android jest dostępna na nadmiar urządzeń i rozdzielczości ekranu.
-Aby ułatwić projektowanie interfejsów użytkownika, przeznaczonych dla wielu urządzeń, Projektant zawiera wiele wbudowanej w konfiguracji urządzenia. Obsługuje również Dodawanie konfiguracji dodatkowych urządzeń; Te konfiguracje są oparte na *kwalifikatory* opcji odróżnić jedną konfigurację urządzenia z innej. Istnieje wiele różnych typów kwalifikatorów. Aby uzyskać więcej informacji na temat tych typów zasobów, zobacz [Android zasobów](~/android/app-fundamentals/resources-in-android/index.md).
+Android jest dostępny na mnóstwo urządzenia i rozdzielczości ekranu.
+Aby ułatwić projektowanie interfejsów użytkownika, przeznaczonych dla wielu urządzeń, Projektant jest dostarczany z kilku różnych konfiguracjach urządzenia wbudowane. Obsługuje również Dodawanie konfiguracji dodatkowych urządzeń; Te konfiguracje są oparte na *kwalifikatory* umożliwia odróżnić jedną konfigurację urządzenia z innego. Istnieje wiele różnych typów kwalifikatorów. Aby uzyskać więcej informacji na temat tych typów zasobów, zobacz [zasoby systemu Android](~/android/app-fundamentals/resources-in-android/index.md).
 
-W dolnej części selektora urządzenia menu jest **Dostosuj** opcji, jak pokazano poniżej:
+U dołu selektora urządzenie znajduje się menu **Dostosuj** opcji, jak pokazano poniżej:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -38,131 +38,131 @@ W dolnej części selektora urządzenia menu jest **Dostosuj** opcji, jak pokaza
 -----
 
 
-Wybieranie **Dostosuj** Wyświetla okno dialogowe, czy można użyć do przeglądania konfiguracji dostępnego urządzenia. Po kliknięciu **definicje urządzenia** kartę, znajduje się lista wszystkich definicji znanych urządzeń:
+Wybieranie **Dostosuj** Wyświetla okno dialogowe, która umożliwia przeglądanie za pomocą konfiguracji dostępnych urządzeń. Po kliknięciu **definicji urządzenia** kartę, zobaczy listy definicji wszystkich znanych urządzeń:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Menedżer AVD](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
+[![Menedżera AVD](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Menedżer AVD](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
+[![Menedżera AVD](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
 
-Nie można zmodyfikować urządzenia wstępnie skonfigurowane w projektancie. Jednak można kliknąć **tworzenia urządzenia...**  do definiowania definicji urządzeń niestandardowych. Alternatywnie można wybrać istniejącą definicję i kliknij przycisk **klonowania...**  można używać go jako punktu wyjścia nową definicję.
-Na przykład wybranie **5 węzła** definicji i klikając **klonowania...**  następujące okno dialogowe:
+Nie można zmodyfikować urządzeń we wstępnie skonfigurowanym w projektancie. Jednakże, możesz kliknąć pozycję **tworzenie urządzenia...**  do definiowania definicji urządzeń niestandardowych. Alternatywnie można wybrać istniejącą definicję i kliknąć **klonowania...**  będzie używany jako punkt początkowy dla nowych definicji.
+Na przykład wybranie **Nexus 5** definicji i klikając **klonowania...**  wyświetla następujące okno dialogowe:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Urządzenie w klonowania](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
+[![Klonowanie urządzenia](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Urządzenie w klonowania](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
+[![Klonowanie urządzenia](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
 
-W następnym zrzut ekranu, nazwa została zmieniona na **węzła 5 niestandardowych** i parametrów urządzenia, które są modyfikowane w celu utwórz nową definicję urządzeń niestandardowych. W tym przykładzie **pionowa** jest wyłączone, tak aby definicji urządzeń jest tylko do orientacji poziomej:
+W następnym zrzucie ekranu Nazwa jest zmieniana na **Nexus 5 niestandardowe** i parametrów urządzenia, które są modyfikowane w celu utwórz nową definicję urządzeń niestandardowych. W tym przykładzie **pionowa** jest wyłączony, tak aby definicję urządzenia jest tylko do orientacji:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Urządzeń niestandardowych](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
+[![Niestandardowe](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Urządzeń niestandardowych](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
+[![Niestandardowe](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
 
-Kliknięcie przycisku **urządzenia w klonowania** tworzy nową definicję urządzenie jest teraz wyświetlany w **definicje urządzenia** listy:
+Klikając **klonowania urządzenie** tworzy nową definicję urządzenia pojawi się w **definicji urządzenia** listy:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Definicje zaktualizowanych urządzeniach](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
+[![Urządzenie zaktualizowane definicje](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Definicje zaktualizowanych urządzeniach](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
+[![Urządzenie zaktualizowane definicje](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
 
-Należy pamiętać, że każda definicja utworzonych przez użytkownika urządzenia zostanie wyświetlony z zieloną ikonę zgodnie z powyższym. Po powrocie do **urządzenia** menu selektora nową definicję urządzeń niestandardowych są prezentowane w sekcji znajdujących się na górze listy (Jeśli nie ma konfiguracji niestandardowej urządzenia w tej listy, spróbuj uruchomić ponownie IDE):
+Należy pamiętać o tym, czy każda definicja urządzeń utworzonych przez użytkownika są wyświetlane z zieloną ikonę, jak pokazano powyżej. Po powrocie do **urządzenia** menu selektora nową definicję urządzenia niestandardowe są prezentowane w sekcji najwyższego poziomu listy (Jeśli nie widzisz niestandardowej konfiguracji urządzenia sieci w tej liście, spróbuj ponownie uruchomić środowisko IDE):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Niestandardowe urządzenie pojawi się lista urządzeń](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
+[![Niestandardowe urządzenie znajduje się na liście urządzeń](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Niestandardowe urządzenie pojawi się lista urządzeń](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
+[![Niestandardowe urządzenie znajduje się na liście urządzeń](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
 
-Wybranie tej konfiguracji urządzenia modyfikuje układ odpowiada dostosowania utworzone wcześniej (w tym trybie case, tylko pozioma):
+Wybranie tej konfiguracji urządzenia modyfikuje układu do dostosowania utworzone wcześniej (w tym trybie przypadków należy korzystać tylko z pozioma):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Niestandardowe urządzenie w użyciu](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
+[![Urządzenie niestandardowe w użyciu](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Niestandardowe urządzenie w użyciu](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
+[![Urządzenie niestandardowe w użyciu](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
 
 
-## <a name="resource-qualifier-options"></a>Opcje kwalifikatora zasobów
+## <a name="resource-qualifier-options"></a>Opcje kwalifikatora zasobu
 
-**Opcje kwalifikatora zasobów** jest możliwy, klikając ikonę trójkąt dół na prawo od **konfiguracji urządzenia** opcje:
+**Opcje kwalifikatora zasobu** jest możliwy, klikając trzy kropki znajdujące się po prawej stronie **konfiguracji urządzenia** opcje:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Opcje kwalifikatora zasobów](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[![Opcje kwalifikatora zasobu](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Opcje kwalifikatora zasobów](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
+[![Opcje kwalifikatora zasobu](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
 
-To okno dialogowe wyświetla menu rozwijanego dla następujących kwalifikatory zasobów:
+To okno dialogowe wyświetla menu rozwijane dla następujących kwalifikatory zasobów:
 
--   **Język** &ndash; Wyświetla zasoby dostępne języka i oferuje możliwość dodawania nowych zasobów języka i regionu.
+-   **Język** &ndash; Wyświetla zasoby dostępny język i oferuje możliwość dodawania nowych zasobów języka i regionu.
 
--   **Tryb interfejsu użytkownika** &ndash; tryby wyświetlania list (takich jak **dokowania samochodu** i **dokowania technicznej**) oraz wskazówki układu.
+-   **Tryb interfejsu użytkownika** &ndash; tryby wyświetlania list (takich jak **stacja dokująca w samochodzie** i **stacja dokująca na biurku**) oraz wskazówki układu.
 
-Każdy z tych menu rozwijanego otwiera nowy okien dialogowych, gdzie można wybrać i skonfigurować kwalifikatory zasobów (jak wyjaśniono dalej).
+Każda z tych menu rozwijanego powoduje otwarcie nowego okna dialogowe, której można wybrać i skonfigurować kwalifikatory zasobów (jak wyjaśniono dalej).
 
 
 
 ### <a name="language"></a>Język
 
-**Języka** menu rozwijanego wyświetla tylko te języki, które mają zasoby zdefiniowane (lub **wszystkie języki**, co jest ustawieniem domyślnym). Istnieje jednak również **dodać języka i regionu...**  opcja, która pozwala dodać nowy język do listy:
+**Języka** menu rozwijanego wyświetla tylko te języki, które mają zasoby zdefiniowane (lub **wszystkie języki**, co jest ustawieniem domyślnym). Dostępna jest również **Dodaj język/region...**  opcja, która pozwala dodać nowy język do listy:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dodawanie języka i regionu](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![Dodaj język/region](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dodawanie języka i regionu](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
+[![Dodaj język/region](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
 
-Po kliknięciu **dodać języka i regionu...** , **wybierz język** zostanie otwarte okno dialogowe, aby wyświetlić listy rozwijanej dostępnych języków i regionów:
+Po kliknięciu **Dodaj język/region...** , **wybierz język** zostanie otwarte okno dialogowe, aby wyświetlić listy rozwijane w językach i regionach:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Lista języków](resource-qualifiers-images/vs/10-languages.png "listę języków")
+![Lista języków](resource-qualifiers-images/vs/10-languages.png "listy języków")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -171,47 +171,47 @@ Po kliknięciu **dodać języka i regionu...** , **wybierz język** zostanie otw
 -----
 
 
-W tym przykładzie Wybraliśmy **fr (francuski)** dla języka i **BE** (Belgia) dla regionalnych dialekt francuski. Należy pamiętać, że **Region** pole jest opcjonalne, ponieważ wiele języków można określić bez względu na określonych regionach. Gdy **języka** menu rozwijanego zostanie otwarta ponownie, wyświetlane są zasobów nowo dodanych języka i regionu:
+W tym przykładzie Wybraliśmy **fr (francuski)** dla języka i **BE** (Belgia) dla regionalnych dialekt języka francuskiego. Należy pamiętać, że **Region** pole jest opcjonalne, ponieważ wiele języków, które można określić bez względu na określonych regionów. Gdy **języka** ponownym otwarciu menu rozwijanego, wyświetla się zasobów nowo dodane język/region:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Wybrany Region i język](resource-qualifiers-images/vs/11-language-region-added.png "wybrany Region i język")
+![Wybrany Region i język](resource-qualifiers-images/vs/11-language-region-added.png "wybranego języka i regionu")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Język i wybrać Region](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
+[![Język i Region wybrany](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
 
-Należy pamiętać, że jeśli dodać nowy język, ale nie należy tworzyć nowe zasoby, aby wykazać, że dodano języka nie będzie przy następnym otwarciu projektu.
+Należy pamiętać, że jeśli dodasz nowy język, ale nie tworzyć nowe zasoby, aby wykazać, że dodano języka nie będą już przy następnym otwarciu projektu.
 
 
 
 ### <a name="ui-mode"></a>Tryb interfejsu użytkownika
 
-Po kliknięciu **tryb interfejsu użytkownika** menu rozwijanego, Lista trybów jest wyświetlana, takich jak **normalny**, **dokowania samochodu**, **dokowania technicznej**, **Telewizji**, **urządzenia**, i **czujki**:
+Po kliknięciu **tryb interfejsu użytkownika** menu rozwijanego, Lista trybów jest wyświetlana, takich jak **normalny**, **stacja dokująca w samochodzie**, **stacja dokująca na biurku**, **Telewizyjnych**, **urządzenia**, i **Obejrzyj**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [![Menu Tryb interfejsu użytkownika](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-Poniżej tej listy są tryby nocy **nie nocy** i **nocy**, a następnie z instrukcjami układu **od lewej do prawej** i **od prawej do lewej** (dla informacje o **od lewej do prawej** i **od prawej do lewej** opcji, zobacz [funkcji LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
-Ostatnich elementów w **zasobów kwalifikatora** okna dialogowego są **zaokrąglona ekrany** (do użytku z systemem Android nosić) lub **zaokrągla ekrany** (informacji o rotacji i ekrany z systemem innym niż round, zobacz [układów](https://developer.android.com/training/wearables/ui/layouts.html)).
+Poniżej tej listy są tryby nocy **nie noc** i **nocy**, a następnie kierunkach układ **od lewej do prawej** i **od prawej do lewej** (dla informacje o **od lewej do prawej** i **od prawej do lewej** opcji, zobacz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Ostatnie elementy w **Opcje kwalifikatora zasobu** to okno dialogowe **zaokrąglanie ekrany** (do użytku z systemem Android Wear) lub **zaokrąglać ekrany** (uzyskać informacji na temat działania i bez działanie ekrany, zobacz [układy](https://developer.android.com/training/wearables/ui/layouts.html)).
 Aby uzyskać więcej informacji na temat trybów interfejsu użytkownika dla systemu Android, zobacz [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 [![Menu Tryb interfejsu użytkownika](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
-Poniżej tej listy są tryby nocy **nie nocy** i **nocy**, a następnie z instrukcjami układu **od lewej do prawej** i **od prawej do lewej**. Aby uzyskać więcej informacji na temat trybów interfejsu użytkownika dla systemu Android, zobacz [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
-Aby uzyskać informacje o **od lewej do prawej** i **od prawej do lewej** opcji, zobacz [funkcji LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Poniżej tej listy są tryby nocy **nie noc** i **nocy**, a następnie kierunkach układ **od lewej do prawej** i **od prawej do lewej**. Aby uzyskać więcej informacji na temat trybów interfejsu użytkownika dla systemu Android, zobacz [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Aby uzyskać informacje o **od lewej do prawej** i **od prawej do lewej** opcji, zobacz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 
-### <a name="round-screen"></a>ROUND ekranu
+### <a name="round-screen"></a>Okrągły ekran
 
-Ostatni element **zasobów kwalifikatora** okno dialogowe jest **Round ekranu** menu. To menu służy do wybierania albo **zaokrąglona ekrany** (do użytku z systemem Android nosić) lub **prostokątne ekrany**:
+Ostatnim elementem w **Opcje kwalifikatora zasobu** okno dialogowe jest **Round ekranu** menu. To menu umożliwia wybranie jednej **zaokrąglanie ekrany** (do użytku z systemem Android Wear) lub **prostokątnymi ekranami**:
 
-[![ROUND menu ekranu](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
+[![Okrągły ekran menu](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
@@ -219,7 +219,7 @@ Ostatni element **zasobów kwalifikatora** okno dialogowe jest **Round ekranu** 
 
 ## <a name="action-bar-settings"></a>Ustawienia paska akcji
 
-**Ustawienia paska akcji** ikona jest dostępna w lewo ikonę pędzla (Edytor motywów):
+**Ustawienia paska akcji** ikona jest dostępna po lewej stronie ikonę pędzla (Edytor motywów):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -232,40 +232,40 @@ Ostatni element **zasobów kwalifikatora** okno dialogowe jest **Round ekranu** 
 -----
 
 
-Ta ikona zostanie otwarty popover okno dialogowe, które pozwala wybrać jeden z trzech trybów pasku akcji:
+Ta ikona otwiera popover okna dialogowego, która zapewnia sposób wybierz jedną z trzech trybów pasek akcji:
 
--   **Standardowe** &ndash; składa się z logo lub ikony, jak i tytuł text z pomocniczą opcjonalne.
+-   **Standardowa** &ndash; składa się z obu logo lub ikonę i tytuł tekstu za pomocą opcjonalnych podtytuł.
 
--   **Lista** &ndash; tryb nawigacji listy. Zamiast tekstu tytułu statycznych, w tym trybie przedstawia listę menu nawigacji w ramach działania (to znaczy przedstawienia użytkownikowi jako listy rozwijanej).
+-   **Lista** &ndash; tryb nawigacji listy. Zamiast tekstu statycznego tytuł w tym trybie wyświetli menu listy do nawigacji w ramach działania (czyli przedstawienia użytkownikowi jako listy rozwijanej).
 
--   **Karty** &ndash; trybie nawigacji kart. Zamiast tekstu tytułu statycznych w tym trybie przedstawia szereg kart nawigacji w ramach działania.
+-   **Karty** &ndash; tryb nawigacji kartę. Zamiast tekstu statycznego tytuł w tym trybie przedstawia szereg kart nawigacji w ramach działania.
 
 
 
 ## <a name="themes"></a>Motywy
 
-**Motyw** menu rozwijanego Wyświetla wszystkie motywów zdefiniowanych w projekcie. Wybieranie **więcej motywów** otwiera okno dialogowe z listą wszystkich motywów dostępnej w sklepie zainstalowany zestaw SDK systemu Android, jak pokazano poniżej:
+**Motyw** menu rozwijane wyświetli wszystkie motywy zdefiniowane w projekcie. Wybieranie **więcej motywów** otwiera okno dialogowe z listą dostępnych z zainstalowanego zestawu SDK systemu Android, wszystkie motywy, jak pokazano poniżej:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Więcej listy motywów](resource-qualifiers-images/vs/15-theme-menu-sml.png "listy więcej motywów")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
+[![Więcej motywów listy](resource-qualifiers-images/vs/15-theme-menu-sml.png "listy więcej motywów")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Więcej listy motywów](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
+[![Więcej motywów listy](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
 
-Po wybraniu motywu powierzchnię projektu jest aktualizowana w celu wyświetlenia efekt nowego motywu. Należy pamiętać, że ta zmiana jest trwałe tylko wtedy, gdy **OK** przycisku w **motyw** okna dialogowego. Po wybraniu motywu mają być uwzględnieni w **motyw** menu rozwijanego jak pokazano poniżej:
+Po wybraniu motyw na powierzchnię projektową jest aktualizowana w celu wyświetlenia efekt nowy motyw. Należy pamiętać, że ta zmiana jest trwałe, tylko wtedy, gdy **OK** przycisku w **motyw** okna dialogowego. Po wybraniu motyw zostaną uwzględnione w **motyw** menu rozwijanego jak pokazano poniżej:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Motywu jasny jest teraz dostępna](resource-qualifiers-images/vs/16-light-theme.png "motywu jasny jest teraz dostępna")
+![Motyw jasny jest teraz dostępna](resource-qualifiers-images/vs/16-light-theme.png "motyw jasny jest teraz dostępna")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Motywu jasny jest teraz dostępna](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
+[![Motyw jasny jest teraz dostępna](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
@@ -273,23 +273,23 @@ Po wybraniu motywu powierzchnię projektu jest aktualizowana w celu wyświetleni
 
 ## <a name="android-version"></a>Wersja systemu android
 
-Android **wersji** selektora ustawia wersji dla systemu Android, która jest używana do renderowania układu w projektancie. Selektor Wyświetla wszystkie wersje, które są zgodne z docelową wersję platformy projektu:
+Android **wersji** selektor ustawia wersja systemu Android, który jest używany do renderowania układów w projektancie. Selektor Wyświetla wszystkie wersje, które są zgodne z wersji struktury docelowej projektu:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Lista wszystkich wersji systemu Android](resource-qualifiers-images/vs/17-android-version.png "wersji listy Android")
+![Lista wszystkich wersji systemu Android](resource-qualifiers-images/vs/17-android-version.png "listy z systemem Android w wersjach")
 
-Wersja docelowego frameworka można ustawić w ustawieniach projektu w obszarze **właściwości > aplikacji > skompilować przy użyciu wersji Android**. Aby uzyskać więcej informacji na temat wersja docelowego frameworka, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).
+Można ustawić wersji platformy docelowej projektu w ustawieniach w obszarze **właściwości > aplikacji > Kompilowanie przy użyciu systemu Android w wersji**. Aby uzyskać więcej informacji o wersji platformy docelowej, zobacz [poziomy interfejsu API systemu Android w interpretacji](~/android/app-fundamentals/android-api-levels.md).
 
-Zbiór elementów widget dostępnych w przyborniku jest określana przez wersję platformy docelowej projektu. Dotyczy to również dostępne w właściwości **okna właściwości**. Listę dostępnych elementów widget jest *nie* określana przez wartość wybrana w **wersji** selektora paska narzędzi. Na przykład, jeśli wybrana wersja docelowa projektu systemu Android 4.4, nadal można wybrać system Android 6.0 w selektorze wersji narzędzi, aby zobaczyć, jak wygląda projekt Android 6.0, ale nie będzie można dodać elementy widget, które są specyficzne dla systemu Android 6.0 &ndash;  nadal będzie ograniczona do elementy widget, które są dostępne w systemie Android 4.4.
+Zestaw elementów widget, dostępne w przyborniku, zależy od wersji struktury docelowej projektu. Dotyczy to również właściwości, które są dostępne w **okno właściwości**. Jest dostępna lista elementów widget *nie* ustalany na podstawie wartości wybranej **wersji** selektor paska narzędzi. Na przykład, jeśli wersją docelową projektu jest ustawiona na Android 4.4, nadal możesz wybrać system Android 6.0 w selektorze wersja narzędzi, aby zobaczyć, jak wygląda projektu dla systemu Android 6.0, ale nie będzie można dodać elementy widget, które są specyficzne dla systemu Android 6.0 &ndash;  nadal będzie ograniczony do elementów widget, które są dostępne w systemie Android 4.4.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 [![Lista wszystkich wersji systemu Android](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
-Wersja docelowego frameworka można ustawić w ustawieniach projektu w obszarze **opcje projektu > kompilacji > Ogólne** sekcji. Aby uzyskać więcej informacji na temat wersja docelowego frameworka, zobacz [poziomy interfejsu API systemu Android opis](~/android/app-fundamentals/android-api-levels.md).
+Można ustawić wersji platformy docelowej projektu w ustawieniach w obszarze **opcje projektu > kompilacji > Ogólne** sekcji. Aby uzyskać więcej informacji o wersji platformy docelowej, zobacz [poziomy interfejsu API systemu Android w interpretacji](~/android/app-fundamentals/android-api-levels.md).
 
-Zbiór elementów widget dostępnych w przyborniku jest określana przez wersję platformy docelowej projektu. Dotyczy to również dostępne w właściwości **konsoli właściwości**. Listę dostępnych elementów widget jest *nie* określana przez wartość wybrana w **wersji** selektora paska narzędzi. Na przykład, jeśli wybrana wersja docelowa projektu systemu Android 4.4, nadal można wybrać system Android 6.0 w selektorze wersji narzędzi, aby zobaczyć, jak wygląda projekt Android 6.0, ale nie będzie można dodać elementy widget, które są specyficzne dla systemu Android 6.0 &ndash;  nadal będzie ograniczona do elementy widget, które są dostępne w systemie Android 4.4.
+Zestaw elementów widget, dostępne w przyborniku, zależy od wersji struktury docelowej projektu. Dotyczy to również właściwości, które są dostępne w **Konsola właściwość**. Jest dostępna lista elementów widget *nie* ustalany na podstawie wartości wybranej **wersji** selektor paska narzędzi. Na przykład, jeśli wersją docelową projektu jest ustawiona na Android 4.4, nadal możesz wybrać system Android 6.0 w selektorze wersja narzędzi, aby zobaczyć, jak wygląda projektu dla systemu Android 6.0, ale nie będzie można dodać elementy widget, które są specyficzne dla systemu Android 6.0 &ndash;  nadal będzie ograniczony do elementów widget, które są dostępne w systemie Android 4.4.
 
 -----

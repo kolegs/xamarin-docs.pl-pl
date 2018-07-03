@@ -1,27 +1,27 @@
 ---
-title: Część 4 - zajmujących się wielu platform
-description: Ten dokument zawiera opis sposobu obsługi aplikacji rozbieżności danych na podstawie platform lub możliwości. Zawarto informacje rozmiaru ekranu, metafory nawigacji touch i gestów, powiadomień wypychanych i wzorcami interfejsu, takie jak listy i karty.
+title: Część 4 — Praca z wieloma platformami
+description: W tym dokumencie opisano sposób obsługi rozbieżności aplikacji na podstawie platform lub funkcji. Omówiono w nim rozmiar ekranu, metafory nawigacji, Dotyk i gesty, powiadomienia wypychane i paradygmatów interfejsu, takie jak listy i karty.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c00519ecc4c8a8d85e993a6002d131f227eb9764
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4a60c99cbc9819f07b77bfe9abe046ea92a550a5
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781611"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403328"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>Część 4 - zajmujących się wielu platform
+# <a name="part-4---dealing-with-multiple-platforms"></a>Część 4 — Praca z wieloma platformami
 
 ## <a name="handling-platform-divergence-amp-features"></a>Obsługa Platform rozbieżności &amp; funkcji
 
-Rozbieżności danych nie jest po prostu problemu wielu platform. urządzenia na platformie "sam" mają różne możliwości (szczególnie szerokiej gamy urządzeń z systemem Android, które są dostępne). Najbardziej oczywistym i podstawowa jest rozmiaru ekranu, ale inne atrybuty urządzenia mogą różnić się i wymaga aplikacji sprawdzanie określonych funkcji i zachowywać się inaczej w zależności od ich obecności (lub jego braku).
+Rozbieżności nie po prostu problemu 'cross-platform'; urządzenia na platformie "w tym samym" mają różne możliwości (szczególnie szerokiej gamy urządzeń z systemem Android, które są dostępne). Oczywistym i podstawowa jest rozmiar ekranu, ale inne atrybuty urządzenia mogą się różnić w i wymagają aplikacji można sprawdzić w przypadku niektórych funkcji i zachowywać się inaczej w zależności od ich obecność (lub brak).
 
-Oznacza to, że wszystkie aplikacje muszą uwzględniać łagodne spadek funkcjonalności, w przeciwnym razie istnieje zestaw funkcji nieatrakcyjnych, najniższy denominator typowe. W programie Xamarin głęboką integrację z natywnych zestawów SDK dla każdej z platform zezwala aplikacjom korzystać z funkcji specyficznych dla platformy, dlatego warto projektowania aplikacji do używania tych funkcji.
+Oznacza to, że wszystkie aplikacje muszą dotyczyć bezpiecznie obniżenie funkcjonalności; w przeciwnym razie prezentować zestawy nieatrakcyjnych funkcja najniższy uniwersalność. Głęboka Integracja platformy Xamarin przy użyciu natywnych zestawów SDK każdej z platform Zezwalaj aplikacjom z zalet funkcji specyficznych dla platformy, dlatego warto projektowanie aplikacji do używania tych funkcji.
 
-Zobacz dokumentację możliwości platformy omówienie sposobu platformy różnią się w działaniu.
+Zobacz dokumentację możliwości platformy omówienie sposobu platformy różnią się w funkcji.
 
  <a name="Examples_of_Platform_Divergence" />
 
@@ -31,32 +31,32 @@ Zobacz dokumentację możliwości platformy omówienie sposobu platformy różni
  <a name="Fundamental_elements_that_exist_across_platforms" />
 
 
-#### <a name="fundamental-elements-that-exist-across-platforms"></a>Podstawowe elementy, które istnieją na różnych platformach
+#### <a name="fundamental-elements-that-exist-across-platforms"></a>Podstawowe elementy, które istnieją między platformami
 
-Brak niektórych właściwości aplikacji mobilnych, które są uniwersalne.
-Są to wyższego poziomu pojęcia, które są zazwyczaj true wszystkich urządzeń i w związku z tym mogą stanowić podstawę projektu aplikacji:
+Istnieją pewne cechy aplikacji mobilnych, które są uniwersalne.
+Poniżej przedstawiono wyższego poziomu pojęcia, które są zazwyczaj prawdziwe dla wszystkich urządzeń i w związku z tym może stanowić podstawę projektowania Twojej aplikacji:
 
 -  Wybór funkcji za pośrednictwem karty lub menu
 -  Wykaz danych i przewijanie
 -  Pojedynczy widoki danych
 -  Edytowanie pojedynczego widoki danych
--  Przechodzenie wstecz
+-  Przechodzenia wstecz
 
 
-Podczas projektowania sieci przepływu ekranu wysokiego poziomu dotyczących tych pojęć można oprzeć wspólne środowisko użytkownika.
+Podczas projektowania przepływu ekranu wysokiego poziomu dotyczących tych pojęć można utworzyć wspólne środowisko użytkownika.
 
  <a name="platform-specific_attributes" />
 
 
-#### <a name="platform-specific-attributes"></a>atrybuty specyficzne dla platformy
+#### <a name="platform-specific-attributes"></a>Atrybuty specyficzne dla platformy
 
-Oprócz podstawowych elementów, które istnieją na wszystkich platformach konieczne będzie adres klucza platformy różnice w projekcie. Należy wziąć pod uwagę (i pisania kodu, w szczególności do obsługi) tych różnic:
+Oprócz podstawowych elementów, które istnieją na wszystkich platformach konieczne będzie adres klucza platformy różnice w projekcie. Może być konieczne, należy wziąć pod uwagę (i pisanie kodu specjalnie w celu obsługi) te różnice:
 
--   **Rozmiary ekranu** — niektóre platformy (na przykład iOS i Windows Phone starszych) ustalić rozmiaru ekranu, które są stosunkowo prosta do docelowego. Urządzenia z systemem android ma szerokiej gamy ekranu wymiarów, które wymagają więcej działań zmierzających do obsługi aplikacji.
--   **Metafory nawigacji** — różnią się w różnych platform (np.) przycisk "Wstecz" sprzętu formantu interfejsu użytkownika Panorama) i w obrębie platform (Android 2 i 4, iPhone vs iPad).
--   **Klawiatury** — niektóre Android urządzenia mają fizycznej klawiatury, podczas gdy inne zawierają tylko klawiatura programowa. Kod, który wykrywa soft klawiatury jest przesłaniania części ekranu musi być czułe na różnice te.
--   **Touch i gestów** — system operacyjny obsługuje rozpoznawania gestów różni się zwłaszcza w starszych wersjach każdego systemu operacyjnego. Wcześniejszych wersji systemu android mają bardzo ograniczoną obsługę operacji touch, co oznacza, że obsługa starszych urządzeń mogą wymagać oddzielne kodu
--   **Powiadomienia wypychane** — Brak możliwości różnych/implementacji na każdej z platform (np.) Kafelki na żywo z systemem Windows).
+-   **Rozmiary ekranu** — niektóre platformy (np. iOS i wcześniejszych wersji Windows Phone) mają znormalizowane rozmiary ekranu, które są stosunkowo prosta do docelowych. Urządzenia z systemem android mają szerokiej gamy ekranu wymiarów, które wymagają więcej nakładu pracy do obsługi w aplikacji.
+-   **Nawigacja metafory** — różnią się między platformami (np.) przycisk "tył" sprzętu kontrolki interfejsu użytkownika Panorama) oraz w obrębie platform (Android 2 i 4 dla telefonu iPhone vs iPad).
+-   **Klawiatury** — urządzenia z systemem Android — niektóre mają klawiatury fizycznych, a inne tylko klawiatury oprogramowania. Kod, który wykrywa klawiaturę nietrwałego jest przesłaniania część ekranu musi być wrażliwa na te różnice.
+-   **Dotyk i gesty** — system operacyjny obsługuje rozpoznawania gestów zmienia się, szczególnie w starszych wersjach każdego systemu operacyjnego. Wcześniejszych wersjach systemu Android mają bardzo ograniczoną obsługę dotykową operacje, co oznacza, że obsługa starszych urządzeń mogą wymagać osobnego kodu
+-   **Powiadomienia wypychane** — istnieją różne możliwości/implementacje na każdej z platform (np.) Kafelków dynamicznych na Windows).
 
 
  <a name="Device-specific_features" />
@@ -64,24 +64,24 @@ Oprócz podstawowych elementów, które istnieją na wszystkich platformach koni
 
 #### <a name="device-specific-features"></a>Funkcje specyficzne dla urządzenia
 
-Określają, jakie musi być minimalne funkcje wymagane dla aplikacji; lub jeśli zdecyduj, jakie dodatkowe funkcje, aby móc korzystać z na każdej z platform. Kod będzie wymagane funkcje wykrywania i wyłączenie funkcji lub ofert alternatyw (np.) zamiast lokalizacja geograficzna może być użytkownikowi należy wpisać lokalizację lub wybierz ją z mapy):
+Określają, jakie musi być minimalne funkcje wymagane dla aplikacji; lub kiedy zdecyduj, jakie dodatkowe funkcje, aby móc korzystać z na każdej platformie. Kod będzie wymagane funkcje wykrywania i wyłączyć funkcje lub oferują alternatywne (np. alternatywa dla lokalizacji geograficznej może być pozostawiona użytkownikowi, wpisz lokalizację lub wybierz z mapy):
 
--   **Aparat fotograficzny** — funkcja różni się między urządzeniami: Niektóre urządzenia nie ma aparatu fotograficznego, inne osoby mają zarówno kamery przodu i skierowanym. Niektóre kamery są w stanie nagrań wideo.
--   **Lokalizacja geograficzna & mapy** — Obsługa GPS lub Wi-Fi w lokalizacji nie jest obecna na wszystkich urządzeniach. Aplikacje muszą również automatycznie dostosowują się do różnych poziomów dokładności obsługiwaną przez każdą z tych metod.
--   **Przyspieszeniomierza, Żyroskop i kompas** — te funkcje często znajdują się w tylko wybrane urządzenia na każdej platformie, więc aplikacje prawie zawsze wymaga podania rezerwowe, gdy sprzęt nie jest obsługiwany.
--   **Facebook i Twitter** — tylko "wbudowanych" iOS5 i iOS6 odpowiednio. W starszych wersjach i innych platform należy podać funkcji uwierzytelniania i interfejsu bezpośrednio z każdym usług interfejsu API.
--   **Pobliżu komunikacji Zbliżeniowej (NFC)** — tylko w przypadku (niektórych) systemu Android, telefony (w czasie zapisywania).
+-   **Aparat** — funkcje różni się między urządzeniami: Niektóre urządzenia nie mają aparatu, inne osoby mają zarówno kamery skierowaną frontonu i tyłu. Niektóre aparaty fotograficzne są w stanie nagranie wideo.
+-   **Lokalizacja geograficzna & mapy** — Obsługa lokalizacji GPS lub Wi-Fi nie jest dostępny w wszystkich urządzeń. Aplikacje muszą również obsługę dla różnych poziomów dokładności, który jest obsługiwany przez każdą z tych metod.
+-   **Przyspieszeniomierz, Żyroskop i kompas** — te funkcje często znajdują się w tylko wybrane urządzenia na każdej platformie, dzięki czemu aplikacje prawie zawsze należy podać rezerwowe, gdy sprzęt nie jest obsługiwane.
+-   **Twitter i Facebook** — tylko "wbudowane" iOS5 i iOS6 odpowiednio. Na wcześniejszych wersji i innych platform należy podać własne funkcje uwierzytelniania i współpracować bezpośrednio z każdego interfejsu API usług.
+-   **W pobliżu komunikacji Zbliżeniowej (NFC)** — tylko (niektóre) na telefonach z systemem Android (w momencie pisania tego).
 
 
  <a name="Dealing_with_Platform_Divergence" />
 
 
-### <a name="dealing-with-platform-divergence"></a>Zajmujących się rozbieżności platformy
+### <a name="dealing-with-platform-divergence"></a>Obsługa Platform rozbieżności
 
-Istnieją dwa różne podejścia do obsługi wielu platform z tego samego kodu — podstawy, każde z nich własny zestaw zalety i wady.
+Istnieją dwa różne podejścia do obsługi wielu platform z tego samego kodu — podstawy, każdy z swój własny zestaw zalety i wady.
 
--   **Platforma abstrakcji** — wzorzec fasad firm zapewnia ujednoliconą dostęp do różnych platform i abstracts implementacji danej platformy w jednej, ujednoliconej interfejs API.
--   **Implementacja rozbieżności** — wywołania określonej platformy funkcji za pomocą implementacji rozbieżności za pomocą architektury narzędzi, takich jak interfejsów i dziedziczenia lub kompilacji warunkowej.
+-   **Abstrakcja platformy** — wzorzec fasady firm zapewnia ujednolicone dostęp między platformami i streszcza implementacji danej platformy w pojedynczą, jednolitą interfejs API.
+-   **Implementacja nierównej** — wywołania określonej platformy funkcje za pośrednictwem nierównej implementacji przy użyciu architektury narzędzi, takich jak interfejsy i dziedziczenie lub kompilacji warunkowej.
 
 
  <a name="Platform_Abstraction" />
@@ -92,77 +92,77 @@ Istnieją dwa różne podejścia do obsługi wielu platform z tego samego kodu �
  <a name="Class_Abstraction" />
 
 
-### <a name="class-abstraction"></a>Abstrakcja — klasa
+### <a name="class-abstraction"></a>Klasa abstrakcji
 
-Za pomocą interfejsów lub klas podstawowych zdefiniowanych w kodzie udostępnionego i zaimplementowana lub rozszerzone w projektach specyficzne dla platformy. Zapisywanie i rozszerzanie udostępnionego kodu za pomocą obiektów klas abstrakcyjnych szczególnie jest przeznaczone do przenośnej biblioteki klas, ponieważ ma ograniczonym podzbiorem dostępnej framework i nie może zawierać dyrektywy kompilatora do obsługi gałęzie kodu specyficzne dla platformy.
+Przy użyciu interfejsów lub klas bazowych zdefiniowane w udostępnionego kodu i zaimplementować lub rozszerzone w projektach specyficzne dla platformy. Pisanie i rozszerzanie udostępnionego kodu za pomocą klasy abstrakcje szczególnie jest odpowiedni dla biblioteki klas przenośnych, ponieważ mają ograniczonym podzbiorem dostępnej framework i nie może zawierać dyrektywy kompilatora do obsługi gałęzie kodu specyficznego dla platformy.
 
  <a name="Interfaces" />
 
 
 #### <a name="interfaces"></a>Interfejsy
 
-Za pomocą interfejsów umożliwia Implementowanie klasy specyficzne dla platformy, które nadal mogą zostać przekazane do bibliotek udostępnionych przeprowadzać typowy kod.
+Przy użyciu interfejsów pozwala na Implementowanie klas specyficznych dla platformy, które nadal mogą być przekazywane do bibliotek udostępnionych z zalet wspólny kod.
 
-Interfejs jest zdefiniowana w kodzie udostępnionego i przekazać do biblioteki udostępnionej jako parametr lub właściwości.
+Interfejs jest definiowana w kodzie udostępnionych i przekazany do biblioteki udostępnionej, jako parametr lub właściwość.
 
-Specyficzne dla platformy aplikacji można następnie implementować interfejs i nadal korzystać z udostępnionego kodu ' "go przetworzyć.
+Aplikacje specyficzne dla platformy można następnie zaimplementuj interfejs i nadal korzystać z udostępnionego kodu ' "go przetworzyć.
 
  **Zalety**
 
-Implementacja może zawierać kod specyficzne dla platformy i nawet odwołuje się biblioteki zewnętrznej specyficzne dla platformy.
+Implementacja może zawierać kod specyficzny dla platformy i nawet odwołania do bibliotek zewnętrznych specyficzne dla platformy.
 
  **Wady**
 
-Konieczności tworzenia, a następnie przekaż implementacje do udostępnionego kodu. Jeśli używany jest interfejs głębokość z udostępnionym kodem następnie kończy się ono są przekazywane wiele parametrów metody lub w przeciwnym razie przesuwana łańcuchu wywołań. Jeśli udostępniony kod używa wielu różnych interfejsach następnie one musi wszystkie utworzona i ustawiona w innym kodzie udostępnionego.
+O utworzyć i przekazać implementacji do udostępnionego kodu. Jeśli ten interfejs jest używany głębokiego w ramach udostępnionego kodu następnie kończy się ono są przekazywane za pomocą wielu parametrów metody lub w przeciwnym razie przekazana z łańcuchem wywołań. Jeśli wiele różnych interfejsów korzysta z udostępnionego kodu następnie one muszą wszystkie być tworzone i ustawić w jakimś miejscu udostępnionego kodu.
 
  <a name="Inheritance" />
 
 
 #### <a name="inheritance"></a>Dziedziczenie
 
-Udostępniony kod można zaimplementować klasy abstrakcyjnej ani wirtualnej, które może zostać rozszerzony w co najmniej jeden projekt specyficzne dla platformy. Ten proces jest podobny do korzystania z interfejsów, ale niektóre zachowania już wdrożone. Istnieją różne widoki na czy lepszym rozwiązaniem projektowania interfejsów lub dziedziczenia: w szczególności ponieważ C# zezwala na tylko pojedyncze dziedziczenie go dyktowania sposób swoje interfejsy API może być zaprojektowana w przyszłości. Dziedziczenie należy używać ostrożnie.
+Udostępniony kod implementacji klasy abstrakcyjne lub wirtualne, które mogłyby zostać rozszerzone w jeden lub więcej projektów specyficznych dla platformy. Ta opcja działa podobnie do korzystania z interfejsów, ale niektóre zachowania już wdrożone. Istnieją różne punkty widzenia na to, czy interfejsy lub dziedziczenia są lepsze uzasadnienie wyboru tych elementów: w szczególności ponieważ języka C# dopuszcza tylko pojedyncze dziedziczenie go dyktowanie sposób swoje interfejsy API mogą być projektowane w przyszłości. Dziedziczenie należy używać ostrożnie.
 
-Zalety i wady interfejsów stosowane jednakowo do dziedziczenia z dodatkową korzyścią klasy podstawowej mogący zawierać implementację kodu (prawdopodobnie platformy o niesprecyzowanym implementację, która może być opcjonalnie rozszerzony).
+Zalety i wady interfejsów stosuje się jednakowo do dziedziczenia z dodatkową zaletę, że klasa bazowa może zawierać implementację kodu (być może platformy niezależny od implementacji można opcjonalnie rozszerzać).
 
 <a name="Xamarin.Forms" />
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
-Zobacz [platformy Xamarin.Forms](~/xamarin-forms/get-started/index.md) dokumentacji.
+Zobacz [Xamarin.Forms](~/xamarin-forms/get-started/index.md) dokumentacji.
 
 
-### <a name="plug-in-cross-platform-functionality"></a>Wtyczka funkcji i Platform
+### <a name="plug-in-cross-platform-functionality"></a>Wtyczka funkcji dla wielu Platform
 
-Można również rozszerzyć zasięg wieloplatformowych aplikacji w spójny sposób za pomocą wtyczki.
+Można także rozszerzyć aplikacje dla wielu platform w spójny sposób za pomocą wtyczki.
 
-Połączone z naszych [github wtyczek](https://github.com/xamarin/plugins), większość dodatków plug-in są open source projektów (zwykle dotyczy instalacji za pośrednictwem pakietu Nuget), które ułatwiają implementacji różnych funkcji specyficzne dla platformy z baterii stan ustawienia z programu wspólnego interfejsu API, który ułatwia korzystanie w aplikacji platformy Xamarin i platformy Xamarin.Forms.
+Połączone z naszych [wtyczki github](https://github.com/xamarin/plugins), większość wtyczki są typu open-source projektów (zwykle dostępne do zainstalowania za pomocą narzędzia Nuget), które ułatwiają implementacji różnych specyficznych dla platformy funkcje stav baterie ustawień z wspólny interfejs API, który można łatwo korzystać w aplikacjach platformy Xamarin i Xamarin.Forms.
 
 
 <a name="Other_Cross-Platform_Libraries" />
 
-### <a name="other-cross-platform-libraries"></a>Innych bibliotek i Platform
+### <a name="other-cross-platform-libraries"></a>Inne biblioteki dla wielu Platform
 
-Istnieje wiele 3 bibliotek strony dostępne, które zapewniają funkcje i platform:
+Istnieją różne dostępne, które zapewniają funkcjonalność międzyplatformowa 3rd bibliotek innych firm:
 
 -   **MvvmCross** -  [https://github.com/slodge/MvvmCross/](https://github.com/slodge/MvvmCross/)
--   **Vernacular** (dla lokalizacji -)  [https://github.com/rdio/vernacular/](https://github.com/rdio/vernacular/)
--   **MonoGame** (dla platformy XNA gry) -  [http://monogame.codeplex.com/](http://monogame.codeplex.com/)
--   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics) i jego macierzystych [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
+-   **Vernacular** (dla lokalizacji) —  [https://github.com/rdio/vernacular/](https://github.com/rdio/vernacular/)
+-   **MonoGame** (dla gry XNA) —  [http://www.monogame.net](http://www.monogame.net)
+-   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics) i jego prekursorów [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
 
 
  <a name="Divergent_Implementation" />
 
 
-### <a name="divergent-implementation"></a>Implementacja rozbieżności
+### <a name="divergent-implementation"></a>Implementacja nierównej
 
  <a name="Conditional_Compilation" />
 
 
 #### <a name="conditional-compilation"></a>Kompilacja warunkowa
 
-Istnieje kilka sytuacji, gdy udostępniony kod nadal będzie konieczne działają inaczej na każdej platformie, prawdopodobnie podczas uzyskiwania dostępu do klasy lub funkcje, które zachowują się inaczej. Kompilacja warunkowa działa najlepiej z udostępnionych projektów zasobów, których w wielu projektach, które mają różne symbole zdefiniowane odwołuje się tego samego pliku źródłowego.
+Istnieją sytuacje, w którym ze współużytkowanym kodem nadal obowiązują działają inaczej na każdej platformie, prawdopodobnie uzyskiwania dostępu do klasy lub funkcje, które zachowują się inaczej. Kompilacja warunkowa działa najlepiej z udostępnionych projektów zasobów, gdzie w wielu projektach, które mają różne symboli zdefiniowanych odwołuje się tym samym pliku źródłowym.
 
-Projekty Xamarin zawsze Zdefiniuj `__MOBILE__` który ma wartość true dla systemu iOS i projekty aplikacji systemu Android (należy pamiętać, podkreślenie o podwójnej precyzji, przed i po awarii w tych symboli).
+Projekty Xamarin zawsze zdefiniować `__MOBILE__` czyli wartość true dla systemów iOS, jak i projektów aplikacji dla systemu Android (Uwaga podkreślenia podwójnej precyzji, przed i po awarii na te symbole).
 
 ```csharp
 #if __MOBILE__
@@ -174,7 +174,7 @@ Projekty Xamarin zawsze Zdefiniuj `__MOBILE__` który ma wartość true dla syst
 
 ##### <a name="ios"></a>iOS
 
-Definiuje Xamarin.iOS `__IOS__` służącego do wykrywania urządzeń z systemem iOS.
+Definiuje rozszerzenia Xamarin.iOS `__IOS__` używane do wykrywania urządzeń z systemem iOS.
 
 ```csharp
 #if __IOS__
@@ -182,7 +182,7 @@ Definiuje Xamarin.iOS `__IOS__` służącego do wykrywania urządzeń z systemem
 #endif
 ```
 
-Dostępne są również specyficznych dla czujki i TV symboli:
+Dostępne są również symbole specyficznych dla wyrażenie kontrolne i TV:
 
 ```csharp
 #if __TVOS__
@@ -198,7 +198,7 @@ Dostępne są również specyficznych dla czujki i TV symboli:
 
 ##### <a name="android"></a>Android
 
-Kod, który ma być kompilowana tylko do aplikacji platformy Xamarin.Android można użyć następujących czynności
+Użyć następującego kodu, które mają być łączone tylko w aplikacji platformy Xamarin.Android
 
 ```csharp
 #if __ANDROID__
@@ -206,7 +206,7 @@ Kod, który ma być kompilowana tylko do aplikacji platformy Xamarin.Android mo�
 #endif
 ```
 
-Każda wersja interfejsu API definiuje również nowe dyrektywy kompilatora, tak umożliwi kodu w następujący sposób dodawania funkcji, jeśli są przeznaczone dla nowszej interfejsów API. Każdy poziom interfejsu API zawiera wszystkie symbole poziomu "niższe". Ta funkcja nie jest naprawdę przydatny do obsługi wielu platform; zwykle `__ANDROID__` symbol będą wystarczające.
+Każda wersja interfejsu API definiuje również nowej dyrektywy kompilatora, więc kod będzie dodawanie funkcji, jeśli są stosowane dla nowszych interfejsów API. Każdy poziom interfejsu API zawiera wszystkie symbole poziomu "niższe". Ta funkcja nie jest bardzo przydatne do obsługi wielu platform; Zazwyczaj `__ANDROID__` symbol okażą się wystarczające.
 
 ```csharp
 #if __ANDROID_11__
@@ -216,7 +216,7 @@ Każda wersja interfejsu API definiuje również nowe dyrektywy kompilatora, tak
 
 ##### <a name="mac"></a>Mac
 
-Nie ma obecnie to symbol wbudowany dla Xamarin.Mac, ale można dodać własne w Mac projekt aplikacji **Opcje > kompilacji > kompilatora** w **zdefiniować symbole** dialogowe lub edytowanie **.csproj**  i Dodaj (na przykład `__MAC__`)
+Nie ma obecnie to symbol wbudowany dla platformy Xamarin.Mac, ale można dodać własne w Mac projektu aplikacji **Opcje > kompilacji > kompilatora** w **zdefiniować symbole** pole lub edytować **csproj**  pliku i Dodaj istnieje (na przykład `__MAC__`)
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -226,21 +226,21 @@ Nie ma obecnie to symbol wbudowany dla Xamarin.Mac, ale można dodać własne w 
 
 ##### <a name="windows-phone"></a>Windows Phone
 
-Aplikacje Windows Phone definiuje dwie symbole — `WINDOWS_PHONE` i `SILVERLIGHT` — można kod, aby platforma docelowa. Nie mają one podkreślenia otaczającego je podobnie jak symbole platformy Xamarin, czy.
+Aplikacje Windows Phone definiuje dwa symbole — `WINDOWS_PHONE` i `SILVERLIGHT` — który może służyć do kodu do platformy docelowej. Te nie mają podkreślenia, w przypadku otaczających je podobnie jak symbole platformy Xamarin, aby zrobić.
 
 
 <a name="Using_Conditional_Compilation" />
 
-##### <a name="using-conditional-compilation"></a>Przy użyciu kompilacja warunkowa
+##### <a name="using-conditional-compilation"></a>Przy użyciu kompilacji warunkowej
 
-Prosty przykład analizę przypadku kompilacja warunkowa jest ustawienie Lokalizacja pliku dla pliku bazy danych SQLite. Trzy platformy są nieco inne wymagania dotyczące określający lokalizację pliku:
+Prosty przykład analiza przypadku kompilacja warunkowa jest ustawienie lokalizacji pliku dla pliku bazy danych SQLite. Trzy platformy mają nieco inne wymagania dotyczące określania lokalizacji pliku:
 
--   **iOS** — Apple preferuje danych niezwiązanych z użytkownikiem w określonej lokalizacji (katalog biblioteki), ale nie ma stałej systemu dla tego katalogu. Specyficzne dla platformy kodu jest wymagane do utworzenia poprawną ścieżkę.
--   **Android** — ścieżka systemu zwróconych przez `Environment.SpecialFolder.Personal` jest dopuszczalne lokalizację do przechowywania plików bazy danych.
--   **Windows Phone** — mechanizm izolowanych magazynów nie zezwala na pełną ścieżkę należy określić tylko względną ścieżkę i nazwę pliku.
--   **Platforma uniwersalna systemu Windows** — używa `Windows.Storage` interfejsów API.
+-   **iOS** — Apple preferuje danych niezwiązanych z użytkownikiem w określonej lokalizacji (katalog biblioteki), ale nie ma stałej systemu dla tego katalogu. Kod specyficzny dla platformy jest wymagany do kompilowania prawidłowej ścieżki.
+-   **Android** — ścieżka systemu zwróconych przez `Environment.SpecialFolder.Personal` jest dopuszczalne lokalizacja pliku bazy danych.
+-   **Windows Phone** — mechanizm wydzielonej pamięci masowej nie zezwala na pełną ścieżkę, należy określić tylko względną ścieżkę i nazwę pliku.
+-   **Platforma Universal Windows** — używa `Windows.Storage` interfejsów API.
 
-W poniższym kodzie użyto kompilacja warunkowa zapewnienie `DatabaseFilePath` jest poprawna dla każdej platformy:
+W poniższym kodzie użyto kompilacji warunkowej, aby upewnić się, `DatabaseFilePath` jest poprawna dla każdej platformy:
 
 ```csharp
 public static string DatabaseFilePath {
@@ -270,5 +270,5 @@ public static string DatabaseFilePath {
 }
 ```
 
-Wynik jest klasa, która może być utworzony i używany na wszystkich platformach umieszczenia pliku bazy danych SQLite w innej lokalizacji na każdej z platform.
+Wynik jest klasa, która może zostać utworzony i używane na wszystkich platformach, umieszczając plik bazy danych SQLite w innej lokalizacji na każdej platformie.
 

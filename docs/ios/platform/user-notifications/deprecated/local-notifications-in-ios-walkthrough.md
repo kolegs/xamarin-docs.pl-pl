@@ -1,36 +1,36 @@
 ---
-title: Wskazówki — przy użyciu lokalnego powiadomienia w Xamarin.iOS
-description: W tej sekcji zostanie omówiony sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.iOS. Będzie on pokazują podstawy tworzenia i publikowania powiadomienie, które będą wyskakujące alert, gdy odebrana w aplikacji.
+title: 'Przewodnik: Używanie powiadomień lokalnych w rozszerzeniu Xamarin.iOS'
+description: W tej sekcji omówiono sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.iOS. Go przedstawiono podstawowe informacje dotyczące tworzenia i publikowania powiadomienie, które wyświetli alert, gdy odebrana przez aplikację.
 ms.prod: xamarin
 ms.assetid: 32B9C6F0-2BB3-4295-99CB-A75418969A62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: bb133d16f12249cbd31e4fce2b227162b4b28333
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf1e44ba4176922234fc1b6b9bfe5c463611cc7b
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30776784"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403432"
 ---
-# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Wskazówki — przy użyciu lokalnego powiadomienia w Xamarin.iOS
+# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Przewodnik: Używanie powiadomień lokalnych w rozszerzeniu Xamarin.iOS
 
-_W tej sekcji zostanie omówiony sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.iOS. Będzie on pokazują podstawy tworzenia i publikowania powiadomienie, które będą wyskakujące alert, gdy odebrana w aplikacji._
+_W tej sekcji omówiono sposób użycia lokalnego powiadomienia w aplikacji platformy Xamarin.iOS. Go przedstawiono podstawowe informacje dotyczące tworzenia i publikowania powiadomienie, które wyświetli alert, gdy odebrana przez aplikację._
 
 > [!IMPORTANT]
-> Informacje przedstawione w tej sekcji dotyczą systemu iOS 9 i wcześniejszych, pozostał tutaj do obsługi starszych wersji systemu iOS. Dla systemu iOS 10 i nowsze, zobacz [Framework powiadomienia użytkownika — przewodnik](~/ios/platform/user-notifications/index.md) do obsługi w pliku lokalnym i zdalnym powiadomienia na urządzeniu z systemem iOS.
+> Informacje przedstawione w tej sekcji odnoszą się do systemu iOS 9 i wcześniejszych, pozostał w tym miejscu umożliwiają starszymi wersjami systemu iOS. Dla systemu iOS 10 i nowszych wersji, zobacz [przewodnik struktura powiadomień użytkownika](~/ios/platform/user-notifications/index.md) do obsługi zarówno lokalnych, jak i zdalne powiadomienia na urządzeniu z systemem iOS.
 
-## <a name="walkthrough"></a>Wskazówki
+## <a name="walkthrough"></a>Przewodnik
 
-Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalnego powiadomienia w akcji. Ta aplikacja będzie zawierać pojedynczy przycisk na nim. Po kliknięciu przycisku na przycisku, utworzy lokalnego powiadomienia. Po określonym przedziale czasu, zostanie wyświetlone powiadomienia są wyświetlane.
+Pozwól, Utwórz prostą aplikację, która będzie wyświetlana powiadomień lokalnych w działaniu. Ta aplikacja będzie mieć jeden przycisk. Po kliknięciu przycisku utworzy lokalnego powiadomienia. Po określonym przedziale czasu, zobaczymy powiadomienia są wyświetlane.
 
 
-1. W programie Visual Studio dla komputerów Mac, Utwórz nowe rozwiązanie iOS pojedynczego widoku i nadaj mu `Notifications`.
-1. Otwórz `Main.storyboard` pliku, a następnie przeciągnij przycisk Widok. Nazwa przycisku **przycisk**i nadaj mu tytuł **dodać powiadomienia**. Można również ustawić niektórych [ograniczenia](~/ios/user-interface/designer/designer-auto-layout.md) na przycisk w tym momencie: 
+1. W programie Visual Studio dla komputerów Mac, Utwórz nowe rozwiązanie dla systemu iOS pojedynczy widok i wywołać go `Notifications`.
+1. Otwórz `Main.storyboard` pliku, a następnie przeciągnij przycisk do widoku. Nazwij przycisk **przycisk**i nadaj jej tytuł **Dodaj powiadomienie**. Możesz również ustawić niektóre [ograniczenia](~/ios/user-interface/designer/designer-auto-layout.md) do przycisku, w tym momencie: 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "Ustawienie ograniczeń na przycisku")
-1. Edytuj `ViewController` klasy, a następnie dodaj poniższe programu obsługi zdarzeń do metody ViewDidLoad:
+    ![](local-notifications-in-ios-walkthrough-images/image3.png "Ustawienie pewne ograniczenia na przycisku")
+1. Edytuj `ViewController` klasę i dodaj następującą obsługę zdarzeń do metody ViewDidLoad:
 
     ```csharp
     button.TouchUpInside += (sender, e) =>
@@ -56,9 +56,9 @@ Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalneg
     };
     ```
 
-    Ten kod będzie utworzyć powiadomienie, które używa dźwięk, ustawia wartość wskaźnika ikona 1 i wyświetla alert dla użytkownika.
+    Ten kod utworzy powiadomienie, które używa dźwięk, ustawia wartość wskaźnika ikony na 1 i wyświetla alert dla użytkownika.
 
-1. Następnie przeprowadź edycję pliku `AppDelegate.cs`, najpierw dodaj następujący kod do `FinishedLaunching` metody. Firma Microsoft ma sprawdzenie, czy urządzenie ma zainstalowany system iOS 8, jeśli więc mamy **wymagane** poprosić o uprawnienia użytkownika do odbierania powiadomień:
+1. Następnie edytuj plik `AppDelegate.cs`, najpierw należy dodać następujący kod do `FinishedLaunching` metody. Firma Microsoft ma sprawdzenie, jeśli urządzenie ma zainstalowany system iOS 8, jeśli więc jesteśmy **wymagane** poproś o zezwolenie użytkownika otrzymywać powiadomienia:
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -70,7 +70,7 @@ Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalneg
         }
     ```
 
-1. Nadal `AppDelegate.cs`, dodaj następującą metodę, która będzie wywoływana po otrzymaniu powiadomienia:
+1. Nadal w `AppDelegate.cs`, dodaj następującą metodę, która będzie wywoływana po otrzymaniu powiadomienia:
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -79,7 +79,7 @@ Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalneg
                 UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
                 okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-                Window.RootViewController.PresentViewController(okayAlertController, true, null);
+                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
 
                 // reset our badge
                 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
@@ -87,7 +87,7 @@ Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalneg
 
     ```
 
-1. Musimy obsługę w przypadku, gdy powiadomienia została uruchomiona z powodu lokalnego powiadomienia. Edytowanie metody `FinishedLaunching` w `AppDelegate` uwzględnienie poniższy fragment kodu:
+1. Potrzebujemy obsłużyć przypadek, w którym powiadomienia została uruchomiona z powodu lokalnego powiadomienia. Edytuj metodę `FinishedLaunching` w `AppDelegate` obejmujący następujący fragment kodu:
 
 
     ```csharp
@@ -114,16 +114,16 @@ Umożliwiają tworzenie prostej aplikacji, który będzie informować o lokalneg
 
     ```
 
-1. Na koniec uruchom aplikację. W systemie iOS 8 pojawi się monit umożliwia powiadomienia. Kliknij przycisk **OK** , a następnie kliknij przycisk **dodać powiadomienia** przycisku. Po krótkiej przerwie powinna zostać wyświetlona okna dialogowego alertu, jak pokazano na poniższych zrzutach ekranu:
+1. Na koniec uruchom aplikację. W systemie iOS 8 użytkownik zostanie wyświetlony monit Zezwalaj na powiadomienia. Kliknij przycisk **OK** a następnie kliknij przycisk **Dodaj powiadomienie** przycisku. Po krótkiej przerwie powinny zostać wyświetlone okna dialogowego alertu, jak pokazano na poniższych zrzutach ekranu:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Potwierdzenie umożliwia wysyłanie powiadomień") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "przycisku Dodaj powiadomień") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "okna dialogowego alertu powiadomień")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Trwa Potwierdzanie możliwość wysyłania powiadomień") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "przycisku Dodaj powiadomienie") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "dialog powiadomień o alertach")
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku pokazano, jak za pomocą różnych interfejsu API do tworzenia i publikowania powiadomienia w systemie iOS. Konieczne jest również wykazanie aktualizacji ikona aplikacji ze wskaźnika do przekazywania opinii określonych niektórych aplikacji do użytkownika.
+W tym instruktażu pokazano, jak używać różnych interfejsu API do tworzenia i publikowania powiadomienia w systemie iOS. Program ten pokazała również sposób aktualizacji ikona aplikacji za pomocą wskaźnika opinie niektórych aplikacji określonego użytkownika.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Lokalnego powiadomienia (na przykład)](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
-- [Lokalne i przewodnik programowania w języku powiadomień wypychanych](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Powiadomienia lokalne (przykład)](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
+- [Lokalne i przewodnik programowania powiadomień wypychanych](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)

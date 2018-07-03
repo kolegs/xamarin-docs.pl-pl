@@ -1,113 +1,116 @@
 ---
-title: 'Xamarin.Essentials: Bezpiecznego magazynu'
-description: W tym dokumencie opisano klasy SecureStorage w Xamarin.Essentials, co ułatwia bezpiecznie przechowywać pary klucz wartość proste. Go w tym artykule omówiono sposób użycia klasy, szczegóły implementacji platformy i ograniczeń.
+title: 'Xamarin.Essentials: Bezpieczny magazyn'
+description: W tym dokumencie opisano klasy SecureStorage w Xamarin.Essentials, co ułatwia bezpieczne przechowywanie par klucz wartość proste. Omówiono w nim sposób użycia klasy, funkcje specyficzne dla implementacji platformy i ograniczeń.
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: df2aa1fd23976e8db34d7c466317a8630408af7a
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080355"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403445"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Bezpiecznego magazynu
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Bezpieczny magazyn
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**SecureStorage** klasy pozwala bezpiecznie przechowywać pary klucz wartość proste.
+**SecureStorage** klasy ułatwia bezpieczne przechowywanie par klucz wartość proste.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **SecureStorage** , następujące ustawienia specyficzne dla platformy jest wymagane:
+Aby uzyskać dostęp do **SecureStorage** , następujące konfiguracje specyficzne dla platformy jest wymagane:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Podczas tworzenia w symulatorze systemu iOS, Włącz **łańcucha kluczy** uprawnienia i Dodaj grupę dostępu łańcucha kluczy, identyfikator pakietu aplikacji.
+Podczas tworzenia w symulatorze systemu iOS, Włącz **pęku kluczy** uprawnienia i Dodaj grupy dostępu łańcucha kluczy, aby uzyskać identyfikator pakietu aplikacji.
 
-Otwórz **Entitlements.plist** projekt dla systemu iOS i Znajdź **łańcucha kluczy** uprawnień i włącz ją. Identyfikator aplikacji zostanie automatycznie dodany jako grupa.
+Otwórz **plik Entitlements.plist** w projekcie dla systemu iOS i Znajdź **pęku kluczy** uprawnień i włącz ją. To spowoduje automatyczne dodanie identyfikator aplikacji jako grupą.
 
-We właściwościach projektu w obszarze **iOS podpisywania pakietu** ustawić **uprawnień niestandardowych** do **Entitlements.plist**.
+We właściwościach projektu w obszarze **podpisywanie pakietu systemu iOS** ustaw **niestandardowe uprawnienia** do **plik Entitlements.plist**.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 -----
 
-## <a name="using-secure-storage"></a>Przy użyciu bezpiecznego magazynu
+## <a name="using-secure-storage"></a>Korzystanie z bezpiecznego magazynu
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Aby zapisać wartości danego _klucza_ w bezpiecznego magazynu:
+Aby zapisać wartość dla danego _klucza_ w bezpiecznym magazynie:
 
 ```csharp
 await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
 ```
 
-Aby pobrać wartości z bezpiecznego magazynu:
+Aby pobrać wartość z bezpiecznego magazynu:
 
 ```csharp
 var oauthToken = await SecureStorage.GetAsync("oauth_token");
 ```
 
-W celu usunięcia określonego klucza, należy wywołać:
+> [!NOTE]
+> Jeśli nie istnieje wartość skojarzoną z kluczem żądanego `GetAsync` zwróci `null`.
+
+Aby usunąć określony klucz, należy wywołać:
 
 ```csharp
 SecureStorage.Remove("oauth_token");
 ```
 
-Aby usunąć wszystkich kluczy, należy wywołać:
+Aby usunąć wszystkie klucze, należy wywołać:
 
 ```csharp
 SecureStorage.RemoveAll();
 ```
 
 
-## <a name="platform-implementation-specifics"></a>Szczegóły implementacji platformy
+## <a name="platform-implementation-specifics"></a>Funkcje specyficzne dla implementacji platformy
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) jest używany do przechowywania kluczy szyfrowania używany do szyfrowania wartość, dopóki zostanie zapisane w [udostępnionych preferencji](https://developer.android.com/training/data-storage/shared-preferences.html) z nazwą pliku z **.xamarinessentials [YOUR-APP-pakiet-ID]** .  Klucz w pliku udostępnionych preferencji jest _wyznaczania wartości skrótu MD5_ klucza przekazany `SecureStorage` interfejsu API.
+[Magazynu kluczy systemu Android](https://developer.android.com/training/articles/keystore.html) służy do przechowywania klucza szyfrowania używany do szyfrowania wartość, zanim zostaną zapisane w [preferencje udostępniane](https://developer.android.com/training/data-storage/shared-preferences.html) przy użyciu nazwy pliku z **.xamarinessentials [YOUR-APP-pakietu-ID]** .  Klucz używany w pliku udostępnionych preferencji jest _Skrót MD5_ klucza, który został przekazany do `SecureStorage` interfejsów API.
 
-## <a name="api-level-23-and-higher"></a>Interfejs API na poziomie 23 i nowsze
+## <a name="api-level-23-and-higher"></a>Poziom interfejsu API 23 lub nowszy
 
-Na nowsze poziomy interfejsu API **AES** klucza uzyskane z systemem Android magazynu kluczy i używać z **NoPadding-AES/GCM** szyfrowania można zaszyfrować wartości przed są przechowywane w pliku udostępnionych preferencji.
+W nowszych poziomy interfejsu API **AES** klucz jest uzyskiwany z magazynu kluczy systemu Android i używane z **AES/GCM/NoPadding** szyfrowania można zaszyfrować wartości przed są przechowywane w pliku udostępnionych preferencji.
 
-## <a name="api-level-22-and-lower"></a>Interfejs API na poziomie 22 i małe
+## <a name="api-level-22-and-lower"></a>Poziom 22 interfejsu API i niższy
 
-Na starsze poziomy interfejsu API systemu Android magazynu kluczy obsługuje tylko przechowywania **RSA** klucze, które jest używane z **RSA/ECB/PKCS1Padding** szyfrowania do szyfrowania **AES** (losowo klucza generowane w czasie wykonywania) i przechowywane w pliku udostępnionych preferencji w kluczu _SecureStorageKey_, jeśli nie zostały jeszcze wygenerowane.
+W starszych poziomy interfejsu API, magazynu kluczy systemu Android obsługuje tylko przechowywania **RSA** klucze, które jest używane z **RSA/ECB/PKCS1Padding** szyfrowania do szyfrowania **AES** klucza (losowo generowane w czasie wykonywania) i przechowywane w pliku udostępnionych preferencji w kluczu _SecureStorageKey_, jeśli nie został już wygenerowany.
 
-Gdy aplikacja zostanie odinstalowana z urządzenia zostaną usunięte wszystkie zaszyfrowane wartości.
+Gdy aplikacja zostanie odinstalowana z urządzenia, zostaną usunięte wszystkie zaszyfrowane wartości.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Łańcucha kluczy](https://developer.xamarin.com/api/type/Security.SecKeyChain/) jest używany do przechowywania wartości w bezpieczny sposób na urządzeniach z systemem iOS.  `SecRecord` Używany do przechowywania wartości ma `Service` wartość **.xamarinessentials [YOUR-APP-pakietu-ID]**.
+[Pęk kluczy](https://developer.xamarin.com/api/type/Security.SecKeyChain/) służy do przechowywania wartości w bezpieczny sposób na urządzeniach z systemem iOS.  `SecRecord` Używane do przechowywania wartości ma `Service` wartość **.xamarinessentials [YOUR-APP-pakietu-ID]**.
 
-W niektórych przypadkach dane łańcucha kluczy są synchronizowane z usługą iCloud i odinstalowywania aplikacji nie może zostać usunięta bezpiecznego wartości z innych urządzeń użytkownika i usługi iCloud.
+W niektórych przypadkach dane łańcucha kluczy są synchronizowane z usługi iCloud, a odinstalowywanie aplikacji nie może usunąć bezpiecznych wartości z usługi iCloud i innych urządzeń użytkownika.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do wartości encryped bezpiecznie na urządzeniach platformy uniwersalnej systemu Windows.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do wartości Nazwa szyfrowanego bezpiecznie na urządzeniach platformy uniwersalnej systemu Windows.
 
-Encryped wartości są przechowywane w `ApplicationData.Current.LocalSettings`, wewnątrz kontenera o nazwie **.xamarinessentials [YOUR-APP-ID]**.
+Nazwa szyfrowanego wartości są przechowywane w `ApplicationData.Current.LocalSettings`, wewnątrz kontenera o nazwie **.xamarinessentials [YOUR-APP-ID]**.
 
-Odinstalowywanie aplikacji spowoduje, że _LocalSettings_i można również usunąć wszystkie zaszyfrowane wartości.
+Odinstalowywanie aplikacji spowoduje, że _LocalSettings_i można także usunąć wszystkie zaszyfrowane wartości.
 
 -----
 
 ## <a name="limitations"></a>Ograniczenia
 
-Ten interfejs API jest przeznaczony do przechowywania niewielkich ilości tekstu.  Wydajność może być wolne, Jeśli spróbujesz używany do przechowywania dużych ilości tekstu.
+Ten interfejs API jest przeznaczone do przechowywania niewielkich ilości tekstu.  Wydajność może być powolne, jeśli zostanie podjęta próba go użyć do przechowywania dużych ilości tekstu.
 
 ## <a name="api"></a>interfejs API
 
