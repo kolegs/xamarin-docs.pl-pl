@@ -11,7 +11,7 @@
 ### [Wprowadzenie do tworzenia aplikacji dla urządzeń przenośnych](get-started/introduction-to-mobile-development.md)
 ### [Wprowadzenie do usługi SDLC dla urządzeń przenośnych](get-started/introduction-to-mobile-sdlc.md)
 
-### [Tworzenie wieloplatformowych aplikacji](app-fundamentals/building-cross-platform-applications/index.md)
+### [Tworzenie aplikacji międzyplatformowych](app-fundamentals/building-cross-platform-applications/index.md)
 #### [Omówienie](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [Część 1. Opis platformy Xamarin dla urządzeń przenośnych](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [Część 2. Architektura](app-fundamentals/building-cross-platform-applications/architecture.md)
@@ -89,5 +89,4 @@
 #### [Dlaczego program Visual Studio nie uwzględnia przywoływanego projektu biblioteki w mojej kompilacji?](troubleshooting/questions/vs-config-manager.md)
 
 ### [Aktualizowanie odwołań do składników na potrzeby narzędzia NuGet](troubleshooting/component-nuget.md)
-### [Opcje pomocy technicznej](troubleshooting/support-options.md)
 ## [Przykłady](samples/index.yml)
