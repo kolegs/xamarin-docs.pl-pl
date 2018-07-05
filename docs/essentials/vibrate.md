@@ -1,66 +1,66 @@
 ---
-title: 'Xamarin.Essentials: wibrację'
-description: W tym dokumencie opisano klasy wibrację w Xamarin.Essentials, co umożliwia uruchamianie i zatrzymywanie funkcji vibrate odpowiednią ilość czasu.
+title: 'Xamarin.Essentials: wibracje'
+description: W tym dokumencie opisano klasy wibracje w Xamarin.Essentials, która pozwala na uruchamianie i zatrzymywanie funkcji vibrate odpowiednią ilość czasu.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a2902ca4eac8b889f6875580d7cb4ea352803a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
+ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782924"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406774"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: wibrację
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: wibracje
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Wibrację** klasa umożliwia uruchamianie i zatrzymywanie funkcji vibrate odpowiednią ilość czasu.
+**Wibracje** klasa umożliwia uruchamianie i zatrzymywanie funkcji vibrate odpowiednią ilość czasu.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **wibrację** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **wibracje** następujące ustawienia określone platformy jest wymagane.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Uprawnienie Vibrate jest wymagane i muszą być skonfigurowane w projekt systemu Android. Mogą to być dodawane w następujący sposób:
+Uprawnienie Vibrate jest wymagany i musi być skonfigurowany w projekcie dla systemu Android. Mogą to być dodawane w następujący sposób:
 
-Otwórz **AssemblyInfo.cs** plików w obszarze **właściwości** folderu i dodać:
+Otwórz **AssemblyInfo.cs** plik **właściwości** folderze i Dodaj:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 ```
 
-LUB zaktualizować manifestu systemu Android:
+LUB zaktualizuj Manifest systemu Android:
 
-Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła.
+Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następujący kod wewnątrz **manifestu** węzła.
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Kliknij prawym przyciskiem myszy projekt Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **VIBRATE** uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **VIBRATE** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 -----
 
-## <a name="using-vibration"></a>Przy użyciu wibrację
+## <a name="using-vibration"></a>Za pomocą wibracje
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcje wibrację może zażądać dla zestawu ilość czasu lub wartość domyślną 500 milisekund.
+Funkcje wibracje można żądać określoną ilość czasu, lub wartość domyślna 500 milisekund.
 
 ```csharp
 try
@@ -82,7 +82,7 @@ catch (Exception ex)
 }
 ```
 
-Anulowanie wibrację urządzenia może być wysłane z `Cancel` metody:
+Można ich żądać anulowania wibracje urządzenia za pomocą `Cancel` metody:
 
 ```csharp
 try
@@ -99,14 +99,15 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-differences"></a>Różnice dotyczące platformy
+## <a name="platform-differences"></a>Różnice dotyczące platform
 
 | Platforma | Różnica |
 | --- | --- |
-| iOS | Zawsze wibruje do 500 milisekund. |
-| iOS | Nie można anulować wibrację. |
+| iOS | Wibruje tylko wtedy, gdy urządzenie jest ustawiona na "Vibrate na pierścień". |
+| iOS | Zawsze wibruje dla 500 milisekund. |
+| iOS | Nie można anulować wibracje. |
 
 ## <a name="api"></a>interfejs API
 
-- [Kod źródłowy wibrację](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
-- [Dokumentacja interfejsu API wibrację](xref:Xamarin.Essentials.Vibration)
+- [Wibracje kodu źródłowego](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
+- [Dokumentacja interfejsu API wibracje](xref:Xamarin.Essentials.Vibration)
