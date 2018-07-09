@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
-ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
+ms.openlocfilehash: ca21f43631c261cd384f9049f30f0fa29e2ca44e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406774"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855172"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: wibracje
 
@@ -101,11 +101,21 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>Różnice dotyczące platform
 
-| Platforma | Różnica |
-| --- | --- |
-| iOS | Wibruje tylko wtedy, gdy urządzenie jest ustawiona na "Vibrate na pierścień". |
-| iOS | Zawsze wibruje dla 500 milisekund. |
-| iOS | Nie można anulować wibracje. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Nie różnice dotyczące platform.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Wibruje tylko wtedy, gdy urządzenie jest ustawiona na "Vibrate na pierścień".
+* Zawsze wibruje dla 500 milisekund.
+* Nie można anulować wibracje.
+
+# <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
+
+Nie różnice dotyczące platform.
+
+-----
 
 ## <a name="api"></a>interfejs API
 

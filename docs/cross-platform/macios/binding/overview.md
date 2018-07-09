@@ -1,39 +1,39 @@
 ---
-title: Omówienie powiązań Objective-C
-description: Ten dokument zawiera omówienie sposobów tworzenia powiązań C# dla kodu języka Objective-C, łącznie z wiersza polecenia powiązań, powiązania projektów i Sharpie cel. Omówiono również, jak działa powiązania.
+title: Omówienie powiązań języka Objective-C
+description: Ten dokument zawiera omówienie różnych sposobów tworzenia powiązania C# dla kodu języka Objective-C, łącznie z wiersza polecenia powiązania, powiązanych projektów i Objective Sharpie. Omówiono również, jak działa powiązanie.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781747"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855276"
 ---
-# <a name="overview-of-objective-c-bindings"></a>Omówienie powiązań Objective-C
+# <a name="overview-of-objective-c-bindings"></a>Omówienie powiązań języka Objective-C
 
-_Szczegóły dotyczące działania proces wiązania_
+_Szczegółowe informacje, jak działa proces wiązania_
 
-Powiązanie biblioteki języka Objective-C do użycia z programem Xamarin przyjmuje trzy kroki:
+Powiązanie do biblioteki języka Objective-C do użycia z platformą Xamarin przyjmuje trzy kroki:
 
-1. Zapis C# "Definicji interfejsu API" do opisywania, jak natywnego interfejsu API jest widoczna w .NET oraz sposobu mapowania do podstawowej Objective-C. Jest to realizowane przy użyciu standardowego języka C# konstrukcje, takich jak `interface` i powiązanie różnych **atrybuty** (zobacz ten [prosty przykład](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Zapis C# "Definicja interfejsu API" opisujący, jak natywnych interfejsów API jest widoczna w .NET i jak jest on mapowany do bazowego Objective-C. Odbywa się przy użyciu standardowego języka C# konstrukcji, takich jak `interface` i powiązanie różnych **atrybuty** (zobacz ten [prosty przykład](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Raz napisano "Definicja interfejsu API" w języku C#, skompiluj go do produkcji w zestawie "powiązanie". Można to zrobić na [ **wiersza polecenia** ](#commandline) lub przy użyciu [ **powiązania projektu** ](#bindingproject) w Visual Studio for Mac lub Visual Studio.
+2. Po napisaniu "Definicja interfejsu API" w języku C#, skompilujesz go do produkcji w zestawie "powiązania". Można to zrobić na [ **wiersza polecenia** ](#commandline) lub za pomocą [ **powiązania projektu** ](#bindingproject) w programie Visual Studio for Mac lub Visual Studio.
 
-3. Tego zestawu "powiązanie" jest dodawane do projektu aplikacji platformy Xamarin, aby dostęp do funkcji natywnego przy użyciu interfejsu API zdefiniowany.
-  Projekt powiązania jest całkowicie niezależna od projektów aplikacji.
+3. Tego zestawu "powiązania" jest dodawane do projektu aplikacji platformy Xamarin, aby mogli uzyskiwać dostęp macierzystą funkcjonalność za pomocą interfejsu API zdefiniowany.
+  Projekt powiązania jest całkowicie niezależna od Twoich projektów aplikacji.
 
-**Uwaga:** krok 1 można zautomatyzować przy pomocy [ **Sharpie cel**](#objectivesharpie). Sprawdza, czy interfejs API języka Objective-C i generuje proponowanych C# "Definicji interfejsu API." Można dostosować plików utworzonych przez Sharpie cel i używać ich w projekcie powiązania (lub w wierszu polecenia) można utworzyć zestawu z powiązania. Celu Sharpie nie tworzy wiązania samodzielnie, jest zadaniem opcjonalnym składnikiem większego procesu.
+**Uwaga:** kroku 1, można zautomatyzować przy pomocy [ **Objective Sharpie**](#objectivesharpie). Sprawdza, czy interfejs API języka Objective-C i generuje proponowane C# "Definicja interfejsu API". Można dostosować plików utworzonych przez Objective Sharpie i używać ich w projekcie powiązania (lub w wierszu polecenia) do utworzenia zestawu powiązania. Narzędzie Objective Sharpie nie tworzy wiązania samodzielnie, jest zadaniem opcjonalnym składnikiem większego procesu.
 
-Można także znaleźć więcej szczegółowych informacji technicznych o [jej działania](#howitworks), które zawierają informacje pomocne podczas zapisu powiązania.
+Można również przeczytać więcej szczegółowych informacji technicznych o [jak to działa](#howitworks), które pomogą Ci do zapisania wiązania.
 
 <a name="Command_Line_Bindings" /><a name="commandline" />
 
 ## <a name="command-line-bindings"></a>Powiązania wiersza polecenia
 
-Można użyć `btouch-native` dla platformy Xamarin.iOS (lub `bmac-native` Jeśli używasz Xamarin.Mac) do tworzenia powiązań bezpośrednio. Działa on przez przekazanie definicji interfejsu API języka C#, które zostały utworzone ręcznie (lub przy użyciu Sharpie cel) do narzędzia wiersza polecenia (`btouch-native` dla systemu iOS lub `bmac-native` dla komputerów Mac).
+Możesz użyć `btouch-native` dla platformy Xamarin.iOS (lub `bmac-native` korzystania z platformy Xamarin.Mac) bezpośrednio Tworzenie powiązań. Polega ono na przekazywanie definicji interfejsu API języka C#, utworzone ręcznie (lub za pomocą Objective Sharpie) do narzędzia wiersza polecenia (`btouch-native` dla systemu iOS lub `bmac-native` dla komputerów Mac).
 
 
 Ogólna składnia wywoływania tych narzędzi jest:
@@ -48,34 +48,34 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-Powyższe polecenia spowoduje wygenerowanie pliku `cocos2d.dll` w bieżącym katalogu i będzie zawierać pełni powiązanej bibliotece, których można użyć w projekcie. Jest to narzędzie, które używa programu Visual Studio for Mac można tworzyć powiązania, jeśli projekt powiązania (opisane [poniżej](#bindingproject)).
+Powyższe polecenie spowoduje wygenerowanie pliku `cocos2d.dll` w bieżącym katalogu i będzie zawierać pełni powiązanej bibliotekę, w której można użyć w projekcie. To narzędzie, które korzysta z programu Visual Studio dla komputerów Mac w celu utworzenia wiązania, jeśli używasz projektu powiązania (opisane [poniżej](#bindingproject)).
 
 
 <a name="bindingproject" />
 
-## <a name="binding-project"></a>Powiązania projektu
+## <a name="binding-project"></a>Projekt powiązania
 
-Projekt powiązanie dla komputerów Mac lub Visual Studio (Visual Studio obsługuje tylko powiązania z systemem iOS) można utworzyć w programie Visual Studio oraz ułatwia do edycji i definicje interfejsu API dla powiązania (w przeciwieństwie przy użyciu wiersza polecenia) kompilacji.
+Projekt powiązania mogą być tworzone w programie Visual Studio dla komputerów Mac lub Visual Studio (Visual Studio obsługuje tylko powiązania z systemem iOS) i ułatwia to edytowanie i tworzenie definicji interfejsu API dla powiązania (a nie przy użyciu wiersza polecenia).
 
-Wykonaj to [Wprowadzenie — przewodnik](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) na temat sposobu tworzenia i używania powiązania projektu do tworzenia powiązania.
+Postępuj zgodnie z tym [przewodnik wprowadzenie](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) na temat sposobu tworzenia i używania projektu powiązania do tworzenia powiązania.
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>Sharpie celu
+## <a name="objective-sharpie"></a>Narzędzie Objective Sharpie
 
-Celu Sharpie to narzędzie wiersza polecenia osobnego, pomaga w początkowej etapy tworzenia powiązania. Powiązanie nie jest tworzony przez samego siebie, a nie tworzy automatycznie początkowego kroku generowania definicji interfejsu API dla docelowej natywnej biblioteki.
+Narzędzie Objective Sharpie to narzędzie wiersza polecenia inną, oddzielną, które może ułatwić realizację początkowych etapów tworzenia powiązania. Nie tworzy powiązanie samodzielnie, zamiast automatyzuje etap początkowy generowania definicji interfejsu API dla natywnej biblioteki docelowej.
 
-Odczyt [Sharpie cel docs](~/cross-platform/macios/binding/objective-sharpie/index.md) informacje na temat przeanalizować natywnych bibliotek, natywnego struktur i programu CocoaPods do definicji interfejsu API, które mogą być wbudowane w powiązania.
+Odczyt [docs Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md) dowiesz się, jak można przeanalizować natywnych bibliotek i struktur natywnych, CocoaPods do definicje interfejsu API, które mogą być wbudowane w powiązaniach.
 
 <a name="howitworks" />
 
-## <a name="how-binding-works"></a>Jak działa powiązania
+## <a name="how-binding-works"></a>Jak działa powiązanie
 
-Istnieje możliwość użycia [[zarejestrować]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) atrybutu, [[eksportowanie]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) atrybutu, i [ręcznego wywołania selektor języka Objective-C](~/ios/internals/objective-c-selectors.md) razem powiązać ręcznie nowych (wcześniej typy Objective-C niepowiązanego).
+Można użyć [[zarejestrować]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) atrybutu [[eksportu]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) atrybut, i [ręcznego wywołania selektor języka Objective-C](~/ios/internals/objective-c-selectors.md) ze sobą, aby samodzielnie ręcznie powiązali nowe (wcześniej niezwiązane) typy języka Objective-C.
 
-Po pierwsze Znajdź typ, który chcesz powiązać. Omówienie celów (i prostota), firma Microsoft będzie powiązać [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) typu (który już został powiązany w [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); poniżej implementacji jest tak na przykład celów).
+Po pierwsze Znajdź typ, który chcesz powiązać. Dla dyskusji celów i prostotę, firma Microsoft będzie powiązać [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) typu (który jest już powiązane w [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); Poniższa implementacja jest po prostu na przykład celów).
 
-Po drugie należy utworzyć typ języka C#. Firma Microsoft będzie prawdopodobnie chcesz umieścić to w przestrzeni nazw; ponieważ Objective-C nie obsługuje przestrzeni nazw, musisz użyć `[Register]` atrybutu, aby zmienić nazwę typu, która Xamarin.iOS zarejestruje się w języku Objective C runtime. Typ języka C# również musi dziedziczyć z [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+Po drugie musimy utworzyć typ C#. Firma Microsoft będzie prawdopodobnie zechcesz umieścić go w przestrzeni nazw; ponieważ języka Objective-C nie obsługuje przestrzenie nazw, należy użyć `[Register]` atrybutu, aby zmienić nazwę typu, który zarejestruje Xamarin.iOS ze środowiskiem uruchomieniowym języka Objective-C. Typ C# musi również dziedziczyć [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -87,7 +87,7 @@ namespace Example.Binding {
 }
 ```
 
-Trzecie, zapoznaj się z dokumentacją Objective-C i Utwórz [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) wystąpień dla każdego selektora chcesz użyć. Umieść je w treści klasy:
+Po trzecie, zapoznaj się z dokumentacją języka Objective-C i utworzyć [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) wystąpień dla każdego selektora chcesz użyć. Umieść je w treści klasy:
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Czwarty danego typu będzie musiał podać konstruktorów. Możesz *musi* łańcucha z wywołania konstruktora do konstruktora klasy podstawowej. `[Export]` Kod języka Objective-C, aby wywoływać konstruktorów o nazwie określonej selektora zezwolenie na atrybuty:
+Czwarty danego typu należy podać konstruktorów. Możesz *musi* połączyć w łańcuch z wywołania konstruktora do konstruktora klasy bazowej. `[Export]` Atrybuty zezwalać na kod języka Objective-C, aby wywoływać konstruktorów o nazwie określonej selektor:
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Piąte zapewniają metody selektory zadeklarowany w kroku 3. Te użyje `objc_msgSend()` do wywołania selektor na obiekt natywny. Zwróć uwagę na użycie [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) przekonwertować `IntPtr` do odpowiedniego typu `NSObject` podkategorii typu. Jeśli chcesz, aby metodę można wywołać za pomocą kodu języka Objective-C, element członkowski *musi* można **wirtualnego**.
+Piąte zapewniają metody selektory zadeklarowane w kroku 3. Będą one używane `objc_msgSend()` do wywołania selektor na obiekt natywny. Zwróć uwagę na użycie [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) przekonwertować `IntPtr` do odpowiednio wpisane `NSObject` podkategorii typu. Jeśli chcesz, aby metodę można wywołać za pomocą kodu języka Objective-C, elementu członkowskiego *musi* można **wirtualnego**.
 
 ```csharp
 [Export("nextObject")]
@@ -137,7 +137,7 @@ public virtual NSArray AllObjects {
 }
 ```
 
-Wprowadzanie wszystkich elementów:
+Łączenie wszystkiego razem:
 
 ```csharp
 using System;
@@ -186,3 +186,7 @@ namespace Example.Binding {
 }
 ```
 
+## <a name="related-links"></a>Linki pokrewne
+
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C za pomocą narzędzie Objective Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -1,23 +1,23 @@
 ---
-title: Zaawansowane przykład rzeczywistych (ręczna)
-description: Tym dokumencie opisano sposób użycia danych wyjściowych xcodebuild jako dane wejściowe Sharpie cel, który zapewnia wgląd w Sharpie celem jest kulisy.
+title: Zaawansowane (ręczne) przykład rzeczywistych
+description: W tym dokumencie opisano sposób użyć danych wyjściowych xcodebuild jako dane wejściowe Objective Sharpie, co zapewnia wgląd w jak Objective Sharpie działa pod maską.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: c4f7f1e9702fb2ee0f5525343a52e3aacd85d68c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209404"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855263"
 ---
-# <a name="advanced-manual-real-world-example"></a>Zaawansowane przykład rzeczywistych (ręczna)
+# <a name="advanced-manual-real-world-example"></a>Zaawansowane (ręczne) przykład rzeczywistych
 
-**W tym przykładzie użyto [biblioteki POP z usługi Facebook](https://github.com/facebook/pop).**
+**W tym przykładzie użyto [POP biblioteki z usługi Facebook](https://github.com/facebook/pop).**
 
-W tej sekcji omówiono bardziej zaawansowanych podejście do wiązania, w której będzie korzystać firmy Apple `xcodebuild` narzędzia, aby najpierw skompilować projekt POP i ręcznie wywnioskować dane wejściowe dla Sharpie cel. Obejmuje to zasadniczo Sharpie cel czynności kulisy w poprzedniej sekcji.
+W tej sekcji omówiono bardziej zaawansowane podejście do powiązania, których będziemy używać firmy Apple `xcodebuild` narzędzia, aby najpierw skompilować projekt POP i ręcznie wywnioskować dane wejściowe dla Objective Sharpie. Obejmuje to zasadniczo Objective Sharpie robi kulisy w poprzedniej sekcji.
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-Ponieważ biblioteka POP ma projektu Xcode (`pop.xcodeproj`), możemy użyć `xcodebuild` do tworzenia protokołu POP. Ten proces z kolei może generować pliki nagłówkowe, które Sharpie celem może być konieczne analizy. Jest to, dlaczego tworzenie przed ważne jest powiązanie. Podczas kompilowania za pośrednictwem `xcodebuild` upewnij się, zostanie przekazany do tego samego identyfikatora zestawu SDK i architektury który chcesz przekazać do Sharpie cel (i należy pamiętać, że cel Sharpie 3.0 można to zrobić zwykle!):
+Ponieważ biblioteki POP projektu Xcode (`pop.xcodeproj`), możemy użyć `xcodebuild` do tworzenia punktu obecności. Ten proces z kolei może generować pliki nagłówkowe, które Objective Sharpie może być konieczne przeanalizować. Jest to, dlaczego tworzenie przed powiązanie jest ważne. Podczas kompilowania za pomocą `xcodebuild` upewnij się, możesz przekazać ten sam identyfikator zestawu SDK i architektury, których zamierzasz przekazać do Objective Sharpie (i należy pamiętać, że Objective Sharpie 3.0 można to zrobić zwykle!):
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-Będzie dużo danych wyjściowych informacji o kompilacji w konsoli jako część `xcodebuild`. Wyświetlane powyżej, możemy stwierdzić, czy element docelowy "CpHeader" zostało uruchomione którym pliki nagłówkowe zostały skopiowane do budowy katalogu wyjściowego. Jest to często wielkość liter i ułatwia powiązania: jako część kompilacji natywnej biblioteki, pliki nagłówkowe, często są kopiowane do "publiczne" eksploatacyjny lokalizacji co może uniemożliwić analizowania łatwiej dla powiązania. W takim przypadku wiemy, że pliki nagłówkowe POP firmy znajdują się w `build/Headers` katalogu.
+Będzie istniało wiele kompilację informacji wyjściowych w konsoli jako część `xcodebuild`. Wyświetlane powyżej, możemy zobaczyć uruchomienia elementu docelowego "CpHeader" polegającego nagłówka pliki zostały skopiowane do katalogu wyjściowego kompilacji. To sytuacja często dotyczy i ułatwia powiązania: jako część kompilacji natywnej biblioteki, pliki nagłówkowe często są kopiowane do "publiczne" w użyciu lokalizacji, które ułatwia analizowanie łatwiejsze dla wiązania. W tym przypadku wiemy, że pliki nagłówkowe POP firmy znajdują się w `build/Headers` katalogu.
 
-Firma Microsoft są teraz gotowe do powiązania protokołu POP. Wiemy, że chęć kompilacji dla zestawu SDK `iphoneos8.1` z `arm64` architektury i pliki nagłówkowe Szanujemy znajdują się w `build/Headers` w obszarze wyewidencjonowania git POP. Jeśli szukamy `build/Headers` zajmiemy się liczba pliki nagłówkowe katalogu:
+Jesteśmy teraz powiązać punktu obecności. Wiemy, że chcemy kompilacji dla zestawu SDK `iphoneos8.1` z `arm64` architektury i pliki nagłówkowe Dbamy o znajdują się w `build/Headers` w obszarze wyewidencjonowania git POP. Jeśli spojrzymy `build/Headers` katalogu, zobaczymy, wiele plików nagłówkowych:
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-Jeśli przyjrzymy się `POP.h`, zobaczysz jest plik głównego nagłówka najwyższego poziomu biblioteki `#import`s inne pliki. W związku z tym tylko należy przekazać `POP.h` do Sharpie cel i clang będzie wykonywać rest w tle:
+Jeśli przyjrzymy się `POP.h`, możemy zobaczyć jest głównym nagłówek najwyższego poziomu biblioteki pliku, który `#import`s inne pliki. W związku z tym potrzebujemy tylko do przekazywania `POP.h` do Objective Sharpie, oraz clang rest w tle:
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,19 +122,23 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-Można zauważyć, możemy przekazany `-scope build/Headers` argument Sharpie cel. Ponieważ bibliotek C i Objective-C musi `#import` lub `#include` inne pliki nagłówków, które są szczegóły implementacji biblioteki i nie API chcesz powiązać, `-scope` argument nakazuje Sharpie cel, aby zignorować jakiegokolwiek interfejsu API, który nie jest zdefiniowany w Plik gdzieś w `-scope` katalogu.
+Zauważysz, firma Microsoft przekazywane `-scope build/Headers` argument Objective Sharpie. Ponieważ biblioteki C i języka Objective-C, należy `#import` lub `#include` inne pliki nagłówkowe, znajdujących się na implementacji szczegóły biblioteki i nie API chcesz powiązać, `-scope` argument nakazuje Objective Sharpie ignorowanie dowolnego interfejsu API, który nie jest zdefiniowany w Plik gdzieś w ramach `-scope` katalogu.
 
-Można znaleźć `-scope` argument jest często opcjonalne bezpośrednio zaimplementowanym bibliotek, jednak nie powoduje żadnych problemów jawnie dzięki udostępnianiu.
+Znajdziesz `-scope` argument jest często opcjonalne klarownie wdrożonych bibliotek, jednak nie przynosi żadnych szkód w sposób jawny dostarczaniu go.
 
-Ponadto firma Microsoft określony `-c -Ibuild/headers`. Po pierwsze `-c` argument nakazuje Sharpie cel, aby zatrzymać interpretowanie argumenty wiersza polecenia i Przekaż wszystkie pozostałe argumenty _bezpośrednio do kompilatora clang_. W związku z tym `-Ibuild/Headers` tym clang argument kompilatora, która sprawia, że clang do wyszukiwania w obszarze `build/Headers`, czyli miejsca zamieszkania nagłówków protokołu POP. Bez tego argumentu clang nie wiedział, gdzie umieścić pliki który `POP.h` jest `#import`lasycznego, dokującego. _Prawie wszystkie "problemów" przy użyciu Sharpie cel gotować w dół do oceniania, co należy przekazać do clang_.
+Ponadto określonej `-c -Ibuild/headers`. Po pierwsze `-c` argument nakazuje Objective Sharpie w celu zatrzymania interpretowanie argumenty wiersza polecenia, a następnie przekazuje wszystkie pozostałe argumenty _bezpośrednio do kompilatora clang_. W związku z tym `-Ibuild/Headers` jest argument kompilatora clang, który powoduje, że clang, aby wyszukać obejmuje `build/Headers`, czyli, gdzie nagłówki POP na żywo. Bez tego argumentu, clang nie wiadomo, gdzie umieścić pliki które `POP.h` jest `#import`ing. _Prawie wszystkie "problemy z" przy użyciu Objective Sharpie zagotować w dół w celu ustalenie, co do przekazania do clang_.
 
-### <a name="completing-the-binding"></a>Kończenie pracy powiązania
+### <a name="completing-the-binding"></a>Korzystanie z powiązania
 
-Teraz wygenerowała celu Sharpie `Binding/ApiDefinitions.cs` i `Binding/StructsAndEnums.cs` plików.
+Narzędzie Objective Sharpie teraz został wygenerowany `Binding/ApiDefinitions.cs` i `Binding/StructsAndEnums.cs` plików.
 
-Są to Sharpie cel podstawowe pierwszego przejścia na powiązanie, a w niektórych przypadkach może być wymagany. Jak już wspomniano jednak dewelopera zwykle należy ręcznie zmodyfikować wygenerowanego po zakończeniu Sharpie cel do [Rozwiąż wszelkie problemy](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) którego nie można automatycznie obsłużyć przez narzędzie.
+Są to podstawowe pierwszym przebiegu Objective Sharpie na powiązanie, a w niektórych przypadkach może być wszystko, czego potrzebujesz. Jak już wspomniano jednak deweloper będzie zazwyczaj muszą ręcznie zmodyfikować wygenerowanych plików po zakończeniu Objective Sharpie, aby [Rozwiąż wszelkie problemy](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) , może nie być automatycznie obsługiwane przez narzędzie.
 
-Po zakończeniu aktualizacji tych plików można teraz dodać do powiązania projektu programu Visual Studio dla komputerów Mac lub bezpośrednio do przekazania `btouch` lub `bmac` narzędzi do tworzenia końcowego powiązania.
+Po zakończeniu aktualizacji tych plików można teraz dodać do powiązania projektu w programie Visual Studio dla komputerów Mac lub być przekazywana bezpośrednio do `btouch` lub `bmac` narzędzi, aby wygenerować ostateczny powiązania.
 
-Dokładny opis proces wiązania, zobacz nasze [instrukcje pełny przewodnik](~/ios/platform/binding-objective-c/walkthrough.md).
+Dokładne opis proces wiązania, zobacz nasze [instrukcje szczegółowy przewodnik](~/ios/platform/binding-objective-c/walkthrough.md).
 
+## <a name="related-links"></a>Linki pokrewne
+
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C za pomocą narzędzie Objective Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

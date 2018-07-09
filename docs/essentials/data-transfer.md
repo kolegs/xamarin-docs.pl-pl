@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: Transfer danych'
-description: Klasa DataTransfer w Xamarin.Essentials włącza aplikację do udostępniania danych, takich jak sieci web i tekst łącza do innych aplikacji na urządzeniu.
+description: Klasa DataTransfer w Xamarin.Essentials umożliwia aplikacji udostępnianie danych, takich jak sieci web i tekst łącza do innych aplikacji na urządzeniu.
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c1ed298e1317d0a3f78f4dbd9fc89a2b01c6958c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782388"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855113"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Transfer danych
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**DataTransfer** klasa umożliwia aplikacji do udostępniania danych, takich jak sieci web i tekst łącza do innych aplikacji na urządzeniu.
+**DataTransfer** klasa umożliwia aplikacji udostępnianie danych, takich jak sieci web i tekst łącza do innych aplikacji na urządzeniu.
 
 ## <a name="using-data-transfer"></a>Przy użyciu transferu danych
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Transfer danych funkcji działa przez wywołanie metody `RequestAsync` metody z ładunku żądania danych zawierający informacje do udostępnienia do innych aplikacji. Można łączyć tekstu oraz identyfikatora Uri i każdej platformy obsługuje filtrowanie na podstawie zawartości.
+Funkcje transferu danych działa przez wywołanie metody `RequestAsync` metody za pomocą danych ładunku żądania, zawierający informacje do udostępnienia do innych aplikacji. Tekst i identyfikatora Uri mogą być mieszane i każdej z platform będzie obsługiwać filtrowanie na podstawie zawartości.
 
 ```csharp
 
@@ -52,19 +52,27 @@ public class DataTransferTest
 }
 ```
 
-Interfejs użytkownika do udostępnienia do aplikacji zewnętrznych, które pojawia się po wysłaniu żądania:
+Interfejs użytkownika do udostępnienia do aplikacji zewnętrznej, który pojawia się po wysłaniu żądania:
 
 ![Transfer danych](data-transfer-images/data-transfer.png)
 
-## <a name="platform-differences"></a>Różnice dotyczące platformy
+## <a name="platform-differences"></a>Różnice dotyczące platform
 
-| Platforma | Różnica |
-| --- | --- |
-| Android | Właściwość podmiotu jest używana dla żądanego tematu wiadomości. |
-| iOS | Temat nie jest używany. |
-| iOS | Tytuł nie jest używany. |
-| Platforma UWP | Tytuł będzie domyślna nazwa aplikacji, jeśli nie ustawiona. |
-| Platforma UWP | Temat nie jest używany. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+* `Subject` Właściwość jest używana dla żądanego tematu wiadomości.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* `Subject` nie jest używany.
+* `Title` nie jest używany. 
+
+# <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
+
+* `Title` Domyślnie nazwa aplikacji Jeśli nie będzie ustawiony.
+* `Subject` nie jest używany.
+
+-----
 
 ## <a name="api"></a>interfejs API
 

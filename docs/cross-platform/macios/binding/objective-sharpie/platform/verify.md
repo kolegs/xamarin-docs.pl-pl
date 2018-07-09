@@ -1,43 +1,47 @@
 ---
-title: Sharpie celu sprawdź atrybutów
-description: W tym dokumencie opisano atrybutu [Sprawdź] generowane przez Sharpie cel. Atrybut [Sprawdź] prezentuje dla deweloperów, gdzie one należy ręcznie zweryfikować cel Sharpie danych wyjściowych.
+title: Narzędzie Objective Sharpie weryfikowanie atrybutów
+description: W tym dokumencie opisano atrybut [Sprawdź] generowane przez Objective Sharpie. Atrybut [Sprawdź] prezentuje deweloperom, gdzie one należy ręcznie zweryfikować Objective Sharpie danych wyjściowych.
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4bca896afb4dfc96fd6c1d7cdf489feb6a879e31
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780714"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855032"
 ---
-# <a name="objective-sharpie-verify-attributes"></a>Sharpie celu sprawdź atrybutów
+# <a name="objective-sharpie-verify-attributes"></a>Narzędzie Objective Sharpie weryfikowanie atrybutów
 
-Dostępne są często, że powiązania utworzonego przez Sharpie cel adnotacją w `[Verify]` atrybutu. Te atrybuty wskazują, że należy _Sprawdź_ czy Sharpie cel została poprawny element porównując powiązania z oryginalnej deklaracji Objective-C-C (która będzie dostępna w komentarz powyżej deklaracji powiązanej).
+Często znajdziesz, że powiązania produkowane przez Objective Sharpie zostanie oznaczony za pomocą `[Verify]` atrybutu. Te atrybuty wskazują, że należy _Sprawdź_ czy Objective Sharpie czy poprawny element porównując powiązania z oryginalnej deklaracji Objective-C-C (który będzie świadczona w komentarzu powyżej deklaracji powiązanej).
 
-Weryfikacja jest zalecane w przypadku _wszystkie_ powiązany deklaracje, ale najprawdopodobniej _wymagane_ dla deklaracji opatrzoną `[Verify]` atrybutu. Jest tak, ponieważ w wielu sytuacjach, nie ma wystarczającej ilości metadanych w oryginalny kod źródłowy natywnej do wywnioskowania jak najlepiej utworzyć wiązanie. Konieczne może odwoływać się do dokumentacji lub komentarze w kodzie wewnątrz pliki nagłówkowe najlepszych decyzji powiązania.
+Weryfikacja jest zalecane w przypadku _wszystkich_ powiązany deklaracji, ale najprawdopodobniej _wymagane_ dla deklaracji oznaczony za pomocą `[Verify]` atrybutu. Jest to spowodowane w wielu sytuacjach, w nie ma wystarczającej ilości metadanych oryginalnego kodu źródłowego natywnej w celu jak najlepiej utworzyć wiązanie. Konieczne może odwoływać się do dokumentacji lub komentarzy do kodu wewnątrz pliki nagłówkowe najlepszych decyzji powiązania.
 
-Po upewnieniu się, że powiązanie jest naprawić lub został rozwiązany, aby było poprawne, _Usuń_ `[Verify]` atrybut z powiązania.
+Po upewnieniu się, że powiązanie jest Popraw lub naprawiona, aby było poprawne, _Usuń_ `[Verify]` atrybut z powiązania.
 
 > [!IMPORTANT]
-> `[Verify]` atrybuty celowo powodować błędy kompilacji C#, dzięki czemu są wymuszone, aby sprawdzić powiązania. Należy usunąć `[Verify]` atrybutu po przejrzeniu (i prawdopodobnie poprawiona) kodu.
+> `[Verify]` atrybuty celowo spowodować błędy kompilacji C#, dzięki czemu jest wymuszone, aby sprawdzić powiązania. Należy usunąć `[Verify]` atrybutu po przejrzeniu (i prawdopodobnie poprawiona) kod.
 
-## <a name="verify-hints-reference"></a>Weryfikacja odwołania do wskazówki
+## <a name="verify-hints-reference"></a>Sprawdź wskazówki odwołania
 
-Podany atrybut argument wskazówki można krzyżowego odwołuje się do dokumentacji poniżej. Dokumentacja dla każdego utworzonego `[Verify]` atrybuty będą znajdować się na konsoli, a także po zakończeniu wiązania.
+Podany atrybut argument wskazówki może być między, do którego odwołuje się poniższą dokumentacją. Dokumentację dotyczącą dowolnego produkowane `[Verify]` atrybuty będzie świadczona w konsoli, a także po zakończeniu wiązania.
 
 |`[Verify]` Wskazówka|Opis|
 |---|---|
-|InferredFromPreceedingTypedef|Nazwa tej deklaracji została wykryta przez Konwencję wspólnego z bezpośrednio poprzedzający `typedef` w oryginalny kod źródłowy macierzystego. Sprawdź poprawność tę Konwencję jest niejednoznaczna nazwa wykrywany.|
-|ConstantsInterfaceAssociation|Nie można określić, które interfejs Objective-C deklaracji zmiennych extern może być skojarzony idiotkę dowód jest. Wystąpienia te są powiązane jako `[Field]` właściwości częściowe interfejsu w pobliżu według konkretnego interfejsem do tworzenia bardziej intuicyjnego interfejsu API, prawdopodobnie wyeliminowanie "Stałe" całkowicie interfejsu.|
-|MethodToProperty|Metody języka Objective-C została powiązana jako właściwość C# z powodu Konwencji, takie jak pobieranie żadnych parametrów i zwracanie wartości (z systemem innym niż void zwrot). Często metody, takie jak te należy powiązać jako właściwości powierzchni wrażeń interfejsu API, ale może wystąpić alarmów false i powiązania faktycznie powinna być metody.|
-|StronglyTypedNSArray|Natywny `NSArray*` został powiązany jako `NSObject[]`. Może być możliwe do większego typu tablicy w powiązaniu oparte na oczekiwań ustawiana za pośrednictwem dokumentacji interfejsu API (np. komentarze w pliku nagłówka) lub przez badanie zawartości tablicy testy. Na przykład NSArray * zawierający tylko NSNumber * instancescan zostać powiązany jako `NSNumber[]` zamiast `NSObject[]`.|
+|InferredFromPreceedingTypedef|Nazwa tej deklaracji została wykryta przez Konwencję wspólne, z bezpośrednio poprzedzający `typedef` oryginalnego kodu źródłowego natywnych. Sprawdź, czy wykrywany nazwa jest poprawna, jak ta Konwencja jest niejednoznaczny.|
+|ConstantsInterfaceAssociation|Nie ma idiotkę dowód możliwości można określić za pomocą interfejsu języka Objective-C, które mogą być skojarzone deklaracji zmiennej extern. Te wystąpienia są powiązane jako `[Field]` właściwości w interfejs częściowy w pobliżu przez konkretne interfejs do tworzenia bardziej intuicyjny interfejs API, prawdopodobnie wyeliminowanie "Stałe" interfejs całkowicie.|
+|MethodToProperty|Metoda języka Objective-C był powiązany jako właściwość języka C# ze względu na Konwencję, takich jak wykonanie żadnych parametrów i zwraca wartość (inny niż void zwrot). Często metod, takich jak te powinna być powiązana jako właściwości powierzchni wrażeń interfejsu API, ale czasami może wystąpić fałszywych alarmów i powiązanie powinna być faktycznie metody.|
+|StronglyTypedNSArray|Natywny `NSArray*` był powiązany jako `NSObject[]`. Może być możliwe do mocno typu tablicy w powiązaniu oparte na oczekiwania ustawiana za pośrednictwem dokumentacji interfejsu API (np. komentarze w pliku nagłówkowym) lub, sprawdzając zawartość tablicy za pomocą testowania. Na przykład NSArray * zawierający tylko NSNumber * instancescan zostać powiązany jako `NSNumber[]` zamiast `NSObject[]`.|
 
-Możesz szybko otrzymywać dokumentacji wskazówka przy użyciu `sharpie verify-docs` narzędzia, na przykład:
+Możesz również szybko otrzymywać dokumentacji wskazówka przy użyciu `sharpie verify-docs` narzędzia, na przykład:
 
 ```csharp
 sharpie verify-docs InferredFromPreceedingTypedef
 ```
 
+## <a name="related-links"></a>Linki pokrewne
+
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C za pomocą narzędzie Objective Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -1,385 +1,358 @@
 ---
-title: Publikowanie aplikacji platformy Xamarin.iOS do sklepu z aplikacjami
-description: Ten dokument zawiera opis sposobu konfigurowania, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dystrybucji w sklepie z aplikacjami.
+title: Publikowanie aplikacji platformy Xamarin.iOS Store aplikacji
+description: W tym dokumencie opisano, jak konfigurować, tworzenie i publikowanie aplikacji platformy Xamarin.iOS dla dystrybucji w Store aplikacji.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/23/2017
-ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.date: 06/25/2018
+ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
+ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209488"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439177"
 ---
-# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikowanie aplikacji platformy Xamarin.iOS do sklepu z aplikacjami
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikowanie aplikacji platformy Xamarin.iOS Store aplikacji
+
+Aby opublikować aplikację, aby [App Store](https://www.apple.com/ios/app-store/), Deweloper aplikacji musi najpierw Prześlij — wraz z zrzuty ekranu, opis, ikony i inne informacje — do firmy Apple do przeglądu. Po zatwierdzeniu aplikacji Apple umieszcza je w Store App, gdzie użytkownicy mogą je kupić i zainstalować go bezpośrednio ze swoich urządzeń z systemem iOS.
+
+W tym przewodniku opisano kroki, które trzeba wykonać, aby przygotować aplikację do Store aplikacji i wyślij je do firmy Apple do przeglądu. W szczególności opisano:
+
+> [!div class="checklist"]
+> - Następujące wytyczne przeglądu App Store
+> - Konfigurowanie Identyfikatora aplikacji i uprawnienia
+> - Ikona App Store i ikony aplikacji
+> - Konfigurowanie App Store, profil inicjowania obsługi administracyjnej
+> - Aktualizowanie **wersji** Konfiguracja kompilacji
+> - Konfigurowanie aplikacji w usłudze iTunes Connect
+> - Kompilowanie aplikacji i przesłania go do firmy Apple
 
 > [!IMPORTANT]
-> Apple [wskazuje](https://developer.apple.com/news/?id=05072018a) czy począwszy 2018 lipca, wszystkie aplikacje i aktualizacje przesłane do sklepu z aplikacjami musi mieć została utworzona za pomocą systemu iOS 11 SDK i [obsługuje wyświetlania iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
+> Apple [wskazał](https://developer.apple.com/news/?id=05072018a) , począwszy od lipca 2018 r., wszystkie aplikacje i aktualizacje przesłane Store aplikacji musi utworzone za pomocą narzędzia iOS 11 SDK i [musi obsługiwać ekranu telefonu iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
-W kolejności dystrybuować aplikacje na wszystkich urządzeniach z systemem iOS, Firma Apple wymaga aplikacji, które mają być opublikowane za pośrednictwem *sklepu z aplikacjami*, co pojedynczej lokalizacji zakupów w aplikacjach systemu iOS ze sklepu App Store. Z ponad 500 000 aplikacji w sklepie deweloperzy wiele typów aplikacji kapitalizacji na ogromną Powodzenie ten pojedynczy punkt dystrybucji. Sklep App Store to gotowe rozwiązanie, oferty deweloperzy aplikacji systemów dystrybucji i płatności.
+## <a name="app-store-guidelines"></a>Wytyczne dotyczące App Store
 
-Proces przesyłania aplikacji do sklepu z aplikacjami obejmuje:
+Przed przesłaniem aplikacji do publikacji w Store aplikacji, upewnij się, że spełnia standardy określone przez firmy Apple [wytyczne dotyczące sklepu App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Podczas przesyłania aplikacji do aplikacji App Store firmy Apple przegląda ją, aby upewnić się, że spełnia on tych wymagań. Jeśli nie, Firma Apple odrzuci — i konieczne będzie wspominane problemami i Prześlij ponownie.
+Dlatego jest dobry pomysł, aby zapoznać się możliwie jak najszybciej w procesie tworzenia wytycznych.
 
-1. Tworzenie **identyfikator aplikacji** i wybierając **uprawnień**.
-2. Tworzenie **dystrybucji profil inicjowania obsługi administracyjnej**.
-3. Za pomocą tego profilu, aby skompilować aplikację.
-4. Przesyłanie aplikacji za pośrednictwem **iTunes Connect**.
+Kilka rzeczy, aby Zwróć uwagę na podczas przesyłania aplikacji:
 
+1. Upewnij się, że opis aplikacji odpowiada jego działanie.
+2. Test, który umożliwia aplikacji nie ulec awarii w ramach normalnego użycia. Obejmuje to obciążenie na każdym urządzeniu z systemem iOS, które obsługuje.
 
-W tym artykule opisano wszystkie kroki niezbędne do udostępnienia, tworzenie i przesyłanie aplikacji do sklepu z aplikacjami dystrybucji.
+Ponadto zapoznaj się z [zasoby związane z App Store](https://developer.apple.com/app-store/resources/) zapewniająca firmy Apple.
 
-## <a name="before-you-submit-an-application"></a>Przed wysłaniem aplikacji
+## <a name="set-up-an-app-id-and-entitlements"></a>Konfigurowanie Identyfikatora aplikacji i uprawnienia
 
-Po przesłaniu aplikacji dla publikacji do sklepu z aplikacjami przechodzi ona przez proces oceny przez firmę Apple, aby mieć pewność, że spełnia on wymagania firmy Apple wytyczne dotyczące jakości i zawartości. Jeśli aplikacja nie spełniają te wytyczne, Apple odrzuci go po tym czasie konieczne będzie adresów — niezgodność odnosiło się przez firmę Apple, a następnie prześlij ponownie.
-W związku z tym należy pozostawić najlepszy sposób sprawia, że za pośrednictwem firmy Apple, przejrzyj zapoznawanie się z tymi wytycznymi, a próby dostosowanie aplikacji do nich. Wytycznymi firmy Apple są dostępne pod adresem: [wytyczne przeglądu sklepu aplikacji](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Każda aplikacja dla systemu iOS ma unikatowy identyfikator aplikacji, który ma skojarzony zestaw usług aplikacji o nazwie *uprawnień*. Uprawnień aplikacjom wykonywanie różnych czynności takich jak otrzymać powiadomienie wypychane, dostęp do funkcji systemu iOS, takich jak zestaw HealthKit i nie tylko.
 
-Jest kilka rzeczy, które należy obserwować podczas przesyłania aplikacji:
+Aby utworzyć identyfikator aplikacji i wybierz dowolne wymagane uprawnienia, odwiedź stronę [portalu Apple Developer Portal](https://developer.apple.com/account/) i wykonaj następujące czynności:
 
-1. Upewnij się, że opis aplikacji jest zgodny funkcjonalności aplikacji.
-2. Test, który aplikacja nie awarii w obszarze normalnego użycia. W tym użycie na każdym urządzeniu z systemem iOS, która jest obsługiwana.
+1. W **certyfikaty, identyfikatory i profile** zaznacz **identyfikatory > identyfikatory aplikacji**.
+2. Kliknij przycisk **+** przycisk, a następnie podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
+3. Przewiń do dołu ekranu i wybrać dowolną **App Services** które będzie wymagane przez aplikację platformy Xamarin.iOS. App Service są opisane w [Praca z funkcjami w rozszerzeniu Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md) przewodnik.
+4. Kliknij przycisk **Kontynuuj** przycisk, a następnie postępuj zgodnie z wyświetlanymi instrukcjami, aby utworzyć nowy identyfikator aplikacji.
 
+Oprócz Wybieranie i konfigurowanie usług aplikacji, podczas definiowania Identyfikatora aplikacji, należy skonfigurować identyfikator aplikacji oraz uprawnień do projektu Xamarin.iOS, edytując **Info.plist** i  **Plik Entitlements.plist** plików. Aby uzyskać więcej informacji, zapoznaj się [Praca z uprawnieniami w rozszerzeniu Xamarin.iOS](~/ios/deploy-test/provisioning/entitlements.md) przewodnik, który opisuje sposób tworzenia **plik Entitlements.plist** plików i znaczenie różnych ustawień uprawnień zawiera on.
 
-Apple zachowuje również listę porady przesyłanie sklepu z aplikacjami. Można znaleźć w [dystrybucji ze sklepu App store](https://developer.apple.com/appstore/resources/submission/tips.html).
+## <a name="include-an-app-store-icon"></a>Obejmują ikonę App Store
 
-## <a name="configuring-your-application-in-itunes-connect"></a>Konfigurowanie aplikacji w iTunes Connect
+Podczas przesyłania aplikacji do firmy Apple, należy się upewnić, że zawiera on katalog zasobów, który zawiera ikonę App Store. Aby dowiedzieć się, jak to zrobić, Przyjrzyj się [App Store ikony w rozszerzeniu Xamarin.iOS](~/ios/app-fundamentals/images-icons/app-store-icon.md) przewodnik.
 
-[Połącz iTunes](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa) to pakiet narzędzi sieci web, między innymi, zarządzanie aplikacji systemu iOS ze sklepu App Store. Aplikacja platformy Xamarin.iOS musi być prawidłowo skonfigurowane i w iTunes Connect przed może zostać przesłane do firmy Apple do przeglądu, a ostatecznie zwalniane sprzedaży lub jako bezpłatną aplikację w sklepie z aplikacjami.
+## <a name="set-the-apps-icons-and-launch-screens"></a>Ustawienie ikon aplikacji i ekrany uruchamiania
 
-Wykonaj następujące czynności:
+Dla firmy Apple udostępnić aplikację dla systemu iOS na Store aplikacji musi mieć odpowiednie ikon i ekranów uruchamiania dla wszystkich urządzeń z systemem iOS, na którym można uruchomić. Aby uzyskać więcej informacji o konfigurowaniu ikony aplikacji i ekrany uruchamiania przeczytaj następujące przewodniki:
 
-1. Sprawdź, czy odpowiednie umowy w miejscu i aktualności w **umów podatku i bankowości** sekcji iTunes Połącz z wersji aplikacji systemu iOS bezpłatnie lub do sprzedaży.
-2. Utwórz nową **iTunes rekordu Connect** dla aplikacji i określ jej **Nazwa wyświetlana** (taki jak pokazano w sklepie App Store).
-3. Wybierz **cena sprzedaży** lub określ bezpłatnie wydane aplikacji.
-5. Podaj wyczyść zwięzły **opis** aplikacji, łącznie z jej funkcje i korzyści dla użytkownika końcowego.
-6. Podaj **kategorii**, **pod kategorii**, i **słowa kluczowe** pomóc użytkownikowi postrzegać twoją aplikację w sklepie z aplikacjami.
-7. Podaj **skontaktuj się z** i **Obsługa** adresów URL do witryny sieci Web wymagane przez firmę Apple.
-8. Ustaw aplikacji **klasyfikacji**, który jest używany przez kontroli rodzicielskiej ze sklepu App Store.
-9. Skonfigurować opcjonalne technologii sklepu z aplikacjami, takie jak **Game Center** i **zakupu w aplikacji**.
+- [Ikony aplikacji w rozszerzeniu Xamarin.iOS](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Uruchom ekrany dla aplikacji platformy Xamarin.iOS](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
-Aby uzyskać więcej informacji, zobacz nasze [Konfigurowanie aplikacji w iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) dokumentacji.
+## <a name="create-and-install-an-app-store-provisioning-profile"></a>Tworzenie i instalowanie programu App Store, profil inicjowania obsługi administracyjnej
 
-## <a name="preparing-for-app-store-distribution"></a>Przygotowywanie do dystrybucji sklepu z aplikacjami
+dla systemu iOS używa *profilów aprowizacji* do kontrolowania sposobu kompilacji aplikacji można wdrożyć. Są to pliki, które zawierają informacje o certyfikat użyty do podpisania aplikacji, identyfikator aplikacji i zainstalowaną aplikację. Do tworzenia i dystrybucji ad-hoc profilu inicjowania obsługi administracyjnej zawiera również listę dozwolonych urządzeń, na których można wdrożyć aplikację. Jednak w celu dystrybucji App Store tylko informacji o certyfikatach i identyfikator aplikacji są uwzględniane tylko przy użyciu mechanizmu dystrybucji publiczny jest Store aplikacji.
 
-Aby opublikować aplikację do sklepu z aplikacjami, należy najpierw skompiluj go do dystrybucji, który obejmuje wiele kroków. Poniższe sekcje obejmuje wszystko, co jest wymagane w celu przygotowania aplikacji platformy Xamarin.iOS dla publikacji tak, aby mogą być tworzone i przesłać je do sklepu z aplikacjami dla przeglądu i wersji.
+Aby utworzyć i zainstalować App Store, profil inicjowania obsługi administracyjnej, wykonaj następujące kroki:
 
-### <a name="provisioning-for-application-services"></a>Inicjowanie obsługi administracyjnej dla usług aplikacji
-
-Apple zawiera specjalne usług aplikacji, nazywane również uprawnienia, które można aktywować aplikacji systemu iOS, podczas tworzenia Unikatowy identyfikator dla tego zaznaczenia. Czy korzystasz z uprawnień niestandardowych lub nie, nadal musisz utworzyć unikatowy identyfikator dla aplikacji platformy Xamarin.iOS, zanim będzie można opublikować w sklepie z aplikacjami.
-
-Tworzenie Identyfikatora aplikacji i opcjonalnie wybranie uprawnień obejmuje następujące czynności przy użyciu firmy Apple iOS opartych na sieci web portalu inicjowania obsługi:
-
-1. W **certyfikaty, identyfikatory & profile** sekcji wybierz **identyfikatory** > **identyfikator aplikacji**.
-2. Kliknij przycisk **+** przycisk i podaj **nazwa** i **identyfikator pakietu** nowej aplikacji.
-3. Przewiń do dołu ekranu i wybrać dowolną **usługi aplikacji** które będzie wymagane przez aplikację platformy Xamarin.iOS.
-4. Kliknij przycisk **Kontynuuj** przycisk i następujących wyświetlanymi instrukcjami, aby utworzyć nowy identyfikator aplikacji.
-
-Oprócz wybierania i konfigurowania wymaganych usług aplikacji, podczas definiowania Identyfikatora aplikacji, również należy skonfigurować identyfikator aplikacji i uprawnień w projekcie platformy Xamarin.iOS edytując zarówno `Info.plist` i `Entitlements.plist` plików.
-
-Wykonaj następujące czynności:
-
-1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Info.plist` plik, aby otworzyć do edycji.
-2. W **iOS aplikacji docelowej** , wprowadź nazwę aplikacji i wprowadź **identyfikator pakietu** utworzony podczas definiowania identyfikator aplikacji.
-3. Zapisać zmiany w `Info.plist` pliku.
-4. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Entitlements.plist` plik, aby otworzyć do edycji.
-5. Wybierz i skonfiguruj uprawnień wymaganej aplikacji platformy Xamarin.iOS, aby odpowiadały instalacji wykonywane powyżej, gdy zdefiniowane identyfikator aplikacji.
-6. Zapisać zmiany w `Entitlements.plist` pliku.
-
-Aby uzyskać szczegółowe instrukcje, zobacz nasze [inicjowania obsługi administracyjnej dla usług aplikacji](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) dokumentacji.
-
-### <a name="setting-the-store-icons"></a>Ustawienie ikon magazynu
-
-Ikony sklepu z aplikacjami powinny teraz być dostarczona przez katalogu zasobów. Aby dodać ikony sklepu z aplikacjami, w pierwszej kolejności zlokalizować **AppIcon** obraz ustawiony **Assets.xcassets** pliku projektu.
-
-Ikona wymagany w katalogu zasobów o nazwie **sklepu z aplikacjami** i powinna być **1024 x 1024** rozmiar. Apple ma już wspomniano, czy ikona magazynu aplikacji w katalogu zasobów nie może być przezroczysty, ani zawierać kanału alfa.
-
-Aby uzyskać informacje na temat ustawiania ikony magazynu odwoływać się do [ikonę przechowywania aplikacji](~/ios/app-fundamentals/images-icons/app-store-icon.md) przewodnik.
-
-### <a name="setting-the-apps-icons-and-launch-screens"></a>Ustawienie aplikacji ikon i ekranów uruchamiania
-
-Dla aplikacji systemu iOS, aby akceptowane przez firmę Apple do włączenia w sklepie z aplikacjami wymaga prawidłowego ikon i uruchamiania ekrany dla wszystkich systemu IOS, urządzenia, które będą działały na. Ikony aplikacji są dodawane do projektów w katalogu zasobów za pomocą **AppIcon** obraz ustawiony **Assets.xcassets** pliku. Ekrany uruchamiania są dodawane do scenorysu.
-
-Aby uzyskać szczegółowe instrukcje dotyczące tworzenia aplikacji ikon i ekranów uruchamiania, zobacz [ikona aplikacji](~/ios/app-fundamentals/images-icons/app-icons.md) i [uruchamianie ekrany](~/ios/app-fundamentals/images-icons/launch-screens.md) przewodników.
-
-### <a name="creating-and-installing-a-distribution-profile"></a>Tworzenie i instalowanie profilu dystrybucji
-
-iOS używa *profile aprowizacji* do kontrolowania wdrażanie kompilacji określonej aplikacji. Są to pliki, które zawierają informacje o certyfikacie używanym do podpisania aplikacji, *identyfikator aplikacji*, i zainstalowaną aplikację. Do tworzenia i dystrybucji ad-hoc profilu inicjowania obsługi administracyjnej zawiera listę dozwolonych urządzeń, do których można wdrożyć aplikację. Jednak dystrybucji sklepu z aplikacjami, tylko informacje identyfikator certyfikatu i aplikacji są uwzględnione, ponieważ jest tylko mechanizm dystrybucji publicznych za pośrednictwem sklepu z aplikacjami.
-
-Udostępnianie obejmuje następujące czynności przy użyciu firmy Apple iOS opartego na sieci web portalu inicjowania obsługi:
-
-1.  Wybierz **inicjowania obsługi administracyjnej** > **dystrybucji**.
-2.  Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **sklepu z aplikacjami**.
-3.  Wybierz **identyfikator aplikacji** z listy rozwijanej, który chcesz utworzyć profil dystrybucji.
-4.  Wybierz prawidłowy certyfikat produkcyjny (dystrybucja) do podpisania aplikacji.
-5.  Wprowadź **nazwa** nowego **profil dystrybucji** i generować profilu.
-6.  Dla komputerów Mac, otwórz xcode i przejdź do **Preferencje > [wybierz identyfikator Apple ID] > Wyświetl szczegóły...** . Pobierz wszystkie dostępne profile w środowisku Xcode na komputerach Mac.
-7.  Zwracany do środowiska IDE, a w obszarze **iOS podpisywania pakietu** opcji wybierz profil inicjowania obsługi administracyjnej dystrybucji do prawidłowego _kompilacji konfiguracji_ (będzie **sklepu z aplikacjami**lub **wersji**).
+1. Zaloguj się do [portalu Apple Developer Portal](https://developer.apple.com/account/).
+2. W **certyfikaty, identyfikatory i profile**, wybierz opcję **profilów aprowizacji > dystrybucji**.
+3. Kliknij przycisk **+** przycisku Wybierz **App Store**i kliknij przycisk **Kontynuuj**.
+4. Wybierz swoją aplikację **Identyfikatora aplikacji** z listy i kliknij przycisk **Kontynuuj**.
+5. Wybierz certyfikat podpisywania, a następnie kliknij przycisk **Kontynuuj**.
+6. Wprowadź **nazwa profilu** i kliknij przycisk **Kontynuuj** do generowania profilu.
+7. Użyj platformy Xamarin [Zarządzanie kontem Apple](~/cross-platform/macios/apple-account-management.md) narzędzi, aby pobrać nowo utworzony inicjowania obsługi profilu na komputerze Mac. Jeśli masz na komputerze Mac, możesz również pobrać profilu inicjowania obsługi administracyjnej bezpośrednio z portalu dla deweloperów firmy Apple i dwukrotnie kliknij go, aby zainstalować.
 
 Aby uzyskać szczegółowe instrukcje, zobacz [tworzenia profilu dystrybucji](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile) i [wybór profilu dystrybucji w projekcie platformy Xamarin.iOS](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile).
 
-## <a name="setting-the-build-configuration-for-your-application"></a>Ustawienie konfiguracji kompilacji dla aplikacji
+## <a name="update-the-release-build-configuration"></a>Aktualizowanie konfiguracji kompilacji wydania
+
+Automatyczne konfigurowanie nowe projekty Xamarin.iOS **debugowania** i **wersji** _konfiguracje kompilacji_. Aby poprawnie skonfigurować **wersji** kompilacji, wykonaj następujące kroki:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Wykonaj następujące czynności:
+1. Z **konsoli rozwiązania**, otwórz **Info.plist**. Wybierz **Aprowizacja ręczna**. Zapisz i zamknij plik.
+2. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **konsoli rozwiązania**, wybierz opcję **opcje**i przejdź do **kompilacja systemu iOS** kartę.
+3. Ustaw **konfiguracji** do **wersji** i **platformy** do **iPhone**.
+4. Aby skompilować z określonym zestawem SDK systemu iOS, wybierz go z **wersja zestawu SDK** listy. W przeciwnym razie pozostaw tę wartość na **domyślne**.
+5. Łączenie zmniejsza całkowity rozmiar aplikacji przy obcięcie się nieużywany kod. W większości przypadków **zachowanie konsolidatora** należy ustawić wartość domyślną **Połącz tylko zestawy SDK struktury**. W niektórych sytuacjach takich jak podczas korzystania z niektórych bibliotek innych firm, może być konieczne Ustaw tę wartość na **nie łącz** aby upewnić się, wymagane kod nie zostanie usunięta. Aby uzyskać więcej informacji, zobacz [aplikacji Xamarin.iOS łączenie](~/ios/deploy-test/linker.md) przewodnik.
+6. Sprawdź **obrazów PNG zoptymalizować** dodatkowo zmniejszyć rozmiar aplikacji.
+7. Debugowanie powinno _nie_ można włączyć, ponieważ spowoduje to, że kompilacja niepotrzebnie.
+8. Dla systemu iOS 11, wybierz jedną z architektury urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat kompilacji dla urządzeń z systemem iOS w 64-bitowych, zobacz **Włączanie 64-bitowych kompilacji dla aplikacji platformy Xamarin.iOS** części [uwagi dotyczące platform 64-32-bitowych](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
+9. Możesz też chcieć użyć **LLVM** kompilatora do kompilowania kodu na mniejsze i szybsze. Jednak ta opcja zwiększa czasy kompilacji.
+10. Odpowiednio do potrzeb swojej aplikacji, możesz również chcieć dostosować typ **wyrzucania elementów bezużytecznych** są używane i skonfigurowane pod kątem **internacjonalizacji**.
 
-1. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **konsoli rozwiązania** i wybieranie **opcji** aby je otworzyć do edycji.
-2. Wybierz **kompilacji systemu iOS** i wybierz **wersji | iPhone** z **konfiguracji** listy rozwijanej:
+    Po ustawieniu opcji opisanych powyżej, ustawienia kompilacji powinien wyglądać mniej więcej tak:
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "Wybierz z listy rozwijanej konfiguracji sklepu z aplikacjami")
+    ![ustawienia kompilacji systemu iOS](publishing-to-the-app-store-images/build-m157.png "ustawienia kompilacji systemu iOS")
 
-3. Jeśli masz ma być przeznaczona dla wersji platformy systemów iOS, możesz wybrać je z **zestawu SDK w wersji** listy rozwijanej else Pozostaw domyślne ustawienie tej wartości.
-4. Łączenie zmniejszyć całkowity rozmiar Twojej aplikacji dystrybucyjnego przez usuwanie limit nieużywane klasy metod, właściwości, itd. i w większości przypadków należy pozostawić wartość domyślna wynosząca **tylko zestawy SDK łącze**. W niektórych sytuacjach, na przykład podczas przy użyciu określonych niektórych 3 bibliotek firm, może można wymusić ta wartość **nie zawierają łącza** aby zapobiec wymagane elementy zostaną usunięte. Aby uzyskać więcej informacji, zapoznaj się [mechanika kompilacji systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodnik.
-5. **Pliki obrazów PNG Optymalizuj dla systemu iOS** powinno być zaznaczone pole wyboru, ponieważ zapewni to dodatkowe zmniejszenie rozmiaru elementu dostarczanego aplikacji.
-6. Debugowanie powinno _nie_ być włączone, ponieważ spowoduje to, że kompilacji niepotrzebnie.
-8. Dla systemu iOS 11, musisz wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
-9. Możesz opcjonalnie użyć **LLVM** kompilatora, co powoduje szybsze i mniejsze kod, jednak będzie trwało dłużej do skompilowania.
-10. Oparte na potrzeby aplikacji, możesz również dostosować typ **wyrzucanie elementów bezużytecznych** używane i ustawienia **internacjonalizacji**.
-11. Zapisz zmiany w konfiguracji kompilacji.
+    Ponadto zapoznaj się z tego [mechanika kompilacji dla systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodniku dalej w tym artykule opisano ustawienia kompilacji.
+
+11. Przejdź do **podpisywanie pakietu systemu iOS** kartę. Jeśli opcje, w tym miejscu nie są edytowalne, upewnij się, że **ręcznego inicjowania obsługi administracyjnej** wybrano **Info.plist** pliku.
+12. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
+13. Ustaw **tożsamość do podpisywania** do **dystrybucja (automatycznie)**.
+14. Dla **profilu aprowizacji**, wybierz pozycję App Store, profil inicjowania obsługi administracyjnej [utworzonego powyżej](#create-and-install-an-app-store-provisioning-profile).
+
+    Pakiet projektu, opcje podpisywania powinna teraz wyglądać podobnie do następującej:
+
+    ![Podpisywanie pakietu systemu iOS](publishing-to-the-app-store-images/bundleSigning-m157.png "podpisywanie pakietu systemu iOS")
+
+15. Kliknij przycisk **OK** można zapisać zmian we właściwościach projektu.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Domyślnie podczas tworzenia nowej aplikacji platformy Xamarin.iOS w programie Visual Studio _konfiguracje kompilacji_ są tworzone automatycznie dla obu **Ad Hoc** i **sklepu z aplikacjami** wdrożenia. Przed wykonaniem końcowego kompilacji aplikacji, która będzie można przesyłania należy do firmy Apple, istnieje kilka zmianami, które należy wprowadzić w konfiguracji podstawowej.
+1. Z **Eksploratora rozwiązań**, otwórz **Info.plist**. Wybierz **Aprowizacja ręczna**. Zapisz i zamknij plik.
+2. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac.](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+3. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **Eksploratora rozwiązań**, wybierz opcję **właściwości**i przejdź do **kompilacja systemu iOS** kartę.
+4. Ustaw **konfiguracji** do **wersji** i **platformy** do **iPhone**.
+5. Aby skompilować z określonym zestawem SDK systemu iOS, wybierz go z **wersja zestawu SDK** listy. W przeciwnym razie pozostaw tę wartość na **domyślne**.
+6. Łączenie zmniejsza całkowity rozmiar aplikacji przy obcięcie się nieużywany kod. W większości przypadków **zachowanie konsolidatora** należy ustawić wartość domyślną **Połącz tylko zestawy SDK struktury**. W niektórych sytuacjach takich jak podczas korzystania z niektórych bibliotek innych firm, może być konieczne Ustaw tę wartość na **nie łącz** aby upewnić się, wymagane kod nie zostanie usunięta. Aby uzyskać więcej informacji, zobacz [aplikacji Xamarin.iOS łączenie](~/ios/deploy-test/linker.md) przewodnik.
+7. Sprawdź **obrazów PNG zoptymalizować** dodatkowo zmniejszyć rozmiar aplikacji.
+8. Debugowanie nie powinna być włączona, ponieważ spowoduje to, że kompilacja niepotrzebnie.
+9. Dla systemu iOS 11, wybierz jedną z architektury urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat kompilacji dla urządzeń z systemem iOS w 64-bitowych, zobacz **Włączanie 64-bitowych kompilacji dla aplikacji platformy Xamarin.iOS** części [uwagi dotyczące platform 64-32-bitowych](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
+10. Możesz też chcieć użyć **LLVM** kompilatora do kompilowania kodu na mniejsze i szybsze. Jednak ta opcja zwiększa czasy kompilacji.
+11. Odpowiednio do potrzeb swojej aplikacji, możesz również chcieć dostosować typ **wyrzucania elementów bezużytecznych** są używane i skonfigurowane pod kątem **internacjonalizacji**.
 
-Wykonaj następujące czynności:
+    Po ustawieniu opcji opisanych powyżej, ustawienia kompilacji powinien wyglądać mniej więcej tak:
 
-1. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **Eksploratora rozwiązań** i wybieranie **właściwości** aby je otworzyć do edycji.
-2. Wybierz **kompilacji systemu iOS** i **sklepu AppStore** (lub **wersji** Jeśli sklepu z aplikacjami nie jest dostępna) z **konfiguracji** listy rozwijanej:
+    ![ustawienia kompilacji systemu iOS](publishing-to-the-app-store-images/build-w157.png "ustawienia kompilacji systemu iOS")
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "Wybierz z listy rozwijanej konfiguracji sklepu z aplikacjami")
+    Ponadto zapoznaj się z tego [mechanika kompilacji dla systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodniku dalej w tym artykule opisano ustawienia kompilacji.
 
-3. Jeśli masz ma być przeznaczona dla wersji platformy systemów iOS, możesz wybrać je z **zestawu SDK w wersji** listy rozwijanej else Pozostaw domyślne ustawienie tej wartości.
-4. Łączenie zmniejszyć całkowity rozmiar Twojej aplikacji dystrybucyjnego przez usuwanie limit nieużywane klasy metod, właściwości, itd. i w większości przypadków należy pozostawić wartość domyślna wynosząca **tylko zestawy SDK łącze**. W niektórych sytuacjach, na przykład podczas przy użyciu określonych niektórych 3 bibliotek firm, może można wymusić ta wartość **nie zawierają łącza** aby zapobiec wymagane elementy zostaną usunięte. Aby uzyskać więcej informacji, zapoznaj się [mechanika kompilacji systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodnik.
-5. **Pliki obrazów PNG Optymalizuj dla systemu iOS** powinno być zaznaczone pole wyboru, ponieważ zapewni to dodatkowe zmniejszenie rozmiaru elementu dostarczanego aplikacji.
-6. Debugowanie powinno _nie_ być włączone, ponieważ spowoduje to, że kompilacji niepotrzebnie.
-7. Polecenie **zaawansowane** karty:
+12. Przejdź do **podpisywanie pakietu systemu iOS** kartę. Jeśli opcje, w tym miejscu nie są edytowalne, upewnij się, że **ręcznego inicjowania obsługi administracyjnej** wybrano **Info.plist** pliku.
+13. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
+14. Ustaw **tożsamość do podpisywania** do **dystrybucja (automatycznie)**.
+15. Dla **profilu aprowizacji**, wybierz pozycję App Store, profil inicjowania obsługi administracyjnej [utworzonego powyżej](#create-and-install-an-app-store-provisioning-profile).
 
-    ![](publishing-to-the-app-store-images/configurevs02.png "Karta Zaawansowane")
+    Pakiet projektu, opcje podpisywania powinna teraz wyglądać podobnie do następującej:
 
-8. Jeśli aplikacja platformy Xamarin.iOS jest przeznaczona dla urządzeń z systemem iOS z systemem iOS 8 i 64 bitowych, należy wybrać jedną z architektur urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat tworzenia dla urządzeń z systemem iOS 64-bitowym, zobacz **Włączanie 64 bitowej kompilacje dla aplikacji platformy Xamarin.iOS** sekcji [zagadnień dotyczących platformy 32/x 64](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
-9. Możesz opcjonalnie użyć **LLVM** kompilatora, co powoduje szybsze i mniejsze kod, jednak będzie trwało dłużej do skompilowania.
-10. Oparte na potrzeby aplikacji, możesz również dostosować typ **wyrzucanie elementów bezużytecznych** używane i ustawienia **internacjonalizacji**.
-11. Zapisz zmiany w konfiguracji kompilacji.
+    ![Ustawienia podpisywanie zbiorów systemu iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "ustawienia podpisywanie zbiorów systemu iOS")
+
+16. Przejdź do **opcje IPA systemu iOS** kartę.
+17. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
+18. Sprawdź **kompilacji iTunes pakiet archiwum (IPA)** pola wyboru. To ustawienie spowoduje, że każdy **wersji** kompilacji (ponieważ jest wybrana konfiguracja), aby wygenerować plik IPA. Ten plik można przesłać do firmy Apple do wydania w Store aplikacji.
+
+    > [!NOTE]
+    > **Metadane programu iTunes** i **iTunesArtwork** nie są niezbędne dla wersji App Store. Aby uzyskać więcej informacji, zapoznaj się [plik iTunesMetadata.plist w aplikacji platformy Xamarin.iOS](~/ios/deploy-test/app-distribution/itunesmetadata.md) i [iTunes kompozycji](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
+
+19. Aby określić, nazwa_pliku IPA, która różni się od nazwy projektu Xamarin.iOS, wprowadź go w **nazwy pakietu** pola.
+
+    ![Ustawienia podpisywanie zbiorów systemu iOS](publishing-to-the-app-store-images/ipaOptions-w157.png "ustawienia podpisywanie zbiorów systemu iOS")
+
+20. Zapisz konfigurację kompilacji i zamknij go.
 
 -----
 
-## <a name="building-and-submitting-the-distributable"></a>Tworzenie i przesyłanie dystrybucyjnego
+## <a name="configure-your-app-in-itunes-connect"></a>Konfigurowanie aplikacji w usłudze iTunes Connect
 
-Z aplikacji platformy Xamarin.iOS prawidłowo skonfigurowane można teraz przystąpić do kompilacji końcowej dystrybucji, która będzie można przesyłania należy do firmy Apple do przeglądu i wersji.
+[iTunes Connect](https://itunesconnect.apple.com) to pakiet sieci web narzędzia do zarządzania aplikacji systemu iOS na Store aplikacji. Aplikacja platformy Xamarin.iOS muszą zostać prawidłowo skonfigurowane w usłudze iTunes Connect zanim może być przesyłany do firmy Apple w celu przeglądu i wydanej w dniu Store aplikacji.
+
+Aby dowiedzieć się, jak to zrobić, przeczytaj [skonfigurowanie aplikacji w usłudze iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) przewodnik.
+
+## <a name="build-and-submit-your-app"></a>Tworzenie i przesyłanie aplikacji
+
+Prawidłowo skonfigurowane ustawienia kompilacji i iTunes Connect oczekujące na przesłanych informacji można utworzyć aplikację i go przesłać do firmy Apple.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-### <a name="build-your-archive"></a>Tworzenie archiwum
+1. W programie Visual Studio dla komputerów Mac, wybierz **wersji** konfigurację kompilacji i urządzenia (nie simulator) do których chcesz utworzyć.
 
-1. Wybierz **wersji | Urządzenie** konfiguracji w programie Visual Studio dla komputerów Mac:
+    ![Tworzenie konfiguracji i platformy](publishing-to-the-app-store-images/chooseConfig-m157.png "wybór Konfiguracja i platforma kompilacji")
 
-    ![](publishing-to-the-app-store-images/buildxs01new.png "Wybierz wersji | Konfiguracja urządzenia")
-1. Z **kompilacji** menu, wybierz opcję **archiwum publikowania**:
+2. Z **kompilacji** menu, wybierz opcję **archiwum dla publikowania**.
+3. Po utworzeniu archiwum **archiwa** zostanie wyświetlony widok:
 
-    ![](publishing-to-the-app-store-images/buildxs02new.png "Wybierz archiwum do publikowania")
+    ![Wyświetl archiwa](publishing-to-the-app-store-images/archives-m157.png "Wyświetl archiwa")
 
-1. Po utworzeniu archiwum **archiwa** zostanie wyświetlony widok:
+    > [!NOTE]
+    > Domyślnie **archiwa** widoku wyświetlane są tylko archiwa otwartego rozwiązania. Aby zobaczyć wszystkie rozwiązania, które mają archiwów, sprawdź **Pokaż wszystkie archiwa** pola wyboru. To dobry pomysł, aby zachować starych archiwów, aby informacje o debugowaniu, które są umieszczane może być używane w celu symbolizacji raporty o awariach, jeśli to konieczne.
 
-    ![](publishing-to-the-app-store-images/buildxs03new.png "Zostanie wyświetlony widok archiwa")
+4. Kliknij przycisk **podpisywanie i dystrybucja...**  aby otworzyć Kreatora publikacji.
+5. Wybierz **App Store** kanał dystrybucji. Kliknij przycisk **Dalej**.
 
+    ![Wybór kanału dystrybucji](publishing-to-the-app-store-images/distChannel-m157.png "Wybór kanału dystrybucji")
+
+6. W **profil inicjowania obsługi administracyjnej** okna, wybierz opcję tożsamości podpisywania, aplikacji i profilu inicjowania obsługi administracyjnej. Kliknij przycisk **Dalej**.
+
+    ![Wybieranie profilu aprowizacji](publishing-to-the-app-store-images/provProfileSelect-m157.png "Wybieranie profilu aprowizacji")
+
+7. Sprawdź szczegóły pakietu, a następnie kliknij przycisk **Publikuj** można zapisać pliku IPA aplikacji:
+
+    ![Weryfikacja szczegółów aplikacji](publishing-to-the-app-store-images/publish-m157.png "weryfikacji szczegółów aplikacji")
+
+8. Po zapisaniu swoje IPA aplikacja jest gotowa do przesłania do usługi iTunes Connect.
+
+    ![Gotowy do przesłania](publishing-to-the-app-store-images/readyToGo-m157.png "gotowości do przesłania")
+
+9. Kliknij przycisk **Otwórz program Application Loader** i zaloguj się (należy pamiętać, że musisz [utworzyć hasło specyficzny dla aplikacji](https://support.apple.com/ht204397) dla identyfikatora Apple ID).
+
+    > [!NOTE]
+    > Aby uzyskać więcej informacji o tym narzędziu, Przyjrzyj się [dokumentacji firmy Apple dotyczące program Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
+
+10. Wybierz **dostarczanie aplikacji** i kliknij przycisk **wybierz** przycisku:
+
+    ![Wybierz dostarczanie aplikacji](publishing-to-the-app-store-images/publishvs01.png "wybierz dostarczanie aplikacji")
+
+11. Wybierz plik IPA utworzonego powyżej, a następnie kliknij przycisk **OK** przycisku.
+12. Program Application Loader, zostanie przeprowadzona Weryfikacja pliku:
+
+    ![Na ekranie weryfikacji](publishing-to-the-app-store-images/publishvs02.png "ekranu sprawdzania poprawności")
+
+13. Kliknij przycisk **dalej** przycisk i aplikacja zostanie zweryfikowana względem Store aplikacji:
+
+    ![Trwa sprawdzanie poprawności względem Store App](publishing-to-the-app-store-images/publishvs03.png "sprawdzanie poprawności względem Store aplikacji")
+
+14. Kliknij przycisk **wysyłania** przycisk, aby przesłać aplikację do firmy Apple do przeglądu.
+15. Program Application Loader informuje, kiedy plik został pomyślnie przekazany.
+
+    > [!NOTE]
+    > Apple może odrzucić aplikacji za pomocą **iTunesMetadata.plist** zawarte w pliku IPA, zostaje wyświetlony błąd podobny do następującego:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Obejście tego problemu z tym błędem, Przyjrzyj się [ten wpis na forum Xamarin](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!NOTE]
-> Podczas stary _sklepu z aplikacjami_ i _Ad Hoc_ konfiguracje teraz zostały usunięte ze wszystkich programu Visual Studio for Mac szablonów projektów, może się okazać, że starsze projekty nadal zawierać te konfiguracje. Jeśli jest to możliwe, można nadal używać **sklepu | Urządzenie** konfiguracji w kroku 1 z listy powyżej.
+> Program Visual Studio 2017 nie obsługuje obecnie **archiwum dla publikowania** znaleziono przepływu pracy w programie Visual Studio dla komputerów Mac.
 
-### <a name="sign-and-distribute-your-app"></a>Zaloguj się i dystrybucja aplikacji
+1. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac.](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Wybierz **wersji** z programu Visual Studio 2017 **konfiguracje rozwiązania** listy rozwijanej i **iPhone** z **platformy rozwiązania** Lista rozwijana.
 
- Zawsze skompilować aplikację dla archiwum, zostanie on automatycznie otwarty **widoku archiwa**, wyświetlanie wszystkich projektów zarchiwizowane; pogrupowane według rozwiązania. Domyślnie ten widok przedstawia tylko bieżące, otwórz rozwiązanie. Aby wyświetlić wszystkie rozwiązania, których archiwów, kliknij na **Pokaż wszystkie archiwa** opcji.
+    ![Tworzenie konfiguracji i platformy](publishing-to-the-app-store-images/chooseConfig-w157.png "wybór Konfiguracja i platforma kompilacji")
 
- Zalecane jest aby archiwa wdrażanie u klientów (wdrożenia sklepu z aplikacjami lub Enterprise) były przechowywane, tak, aby informacje o debugowaniu, który jest generowany można symbolized w późniejszym terminie.
+3. Skompiluj projekt. Spowoduje to utworzenie pliku IPA.
 
- Aby zarejestrować aplikację i przygotowania go do dystrybucji:
+    > [!NOTE]
+    > [Aktualizowanie konfiguracji kompilacji wydania](#update-the-release-build-configuration) części tego dokumentu skonfigurowane ustawienia kompilacji aplikacji, aby utworzyć plik IPA dla każdego **wersji** kompilacji.
 
+4. Aby znaleźć plik IPA na komputerze Windows, kliknij prawym przyciskiem myszy nazwę projektu rozszerzenia Xamarin.iOS w programie Visual Studio 2017 **Eksploratora rozwiązań** i wybierz polecenie **Otwórz Folder w Eksploratorze plików**. Następnie w Windows po prostu otworzyć **Eksploratora plików**, przejdź do **iPhone/bin/Release** podkatalogu. Jeśli nie masz [dostosowanego lokalizacją danych wyjściowych pliku IPA](#customize-the-ipa-location), należy go w tym katalogu.
+5. Aby zamiast tego wyświetlić plik IPA na hostem kompilacji komputera Mac, kliknij prawym przyciskiem myszy nazwę projektu rozszerzenia Xamarin.iOS w Visual Studio 2017 **Eksploratora rozwiązań** (na Windows) i wybierz **Pokaż plik IPA na serwerze kompilacji**. Spowoduje to otwarcie **wyszukiwania** okno na hostem kompilacji komputera Mac przy użyciu pliku IPA wybrane.
+6. Otwórz na hostem kompilacji Mac. **uruchamiania aplikacji**. W programie Xcode, wybierz **Xcode > Otwórz narzędzie dla deweloperów > Uruchamianie aplikacji**.
 
-1. Wybierz **utworzyć i dystrybuować...** , ilustrowane poniżej:
+    > [!NOTE]
+    > Aby uzyskać więcej informacji o tym narzędziu, Przyjrzyj się [dokumentacji firmy Apple dotyczące program Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
-    ![](publishing-to-the-app-store-images/buildxs04new.png "Wybierz znak i dystrybucja...")
+7. Zaloguj się w module uruchamiania aplikacji (należy pamiętać, że musisz [utworzyć hasło specyficzny dla aplikacji](https://support.apple.com/ht204397) dla identyfikatora Apple ID).
+8. Wybierz **dostarczanie aplikacji** i kliknij przycisk **wybierz** przycisku:
 
-1. Spowoduje to otwarcie Kreatora publikacji. Wybierz **sklepu z aplikacjami** kanału dystrybucji, aby utworzyć pakiet i otwórz moduł ładujący aplikacji:
+    ![Wybierz dostarczanie aplikacji ] (publishing-to-the-app-store-images/publishvs01.png "wybierz dostarczanie aplikacji")
 
-    ![](publishing-to-the-app-store-images/distribute01.png "Moduł ładujący otwartych aplikacji")
+9. Wybierz plik IPA utworzonego powyżej, a następnie kliknij przycisk **OK**.
+10. Program Application Loader, zostanie przeprowadzona Weryfikacja pliku:
 
-1. Na ekranie profilu inicjowania obsługi administracyjnej Wybierz tożsamość podpisywania i odpowiadający profil inicjowania obsługi administracyjnej lub ponownie podpisać tożsamość:
+    ![Na ekranie weryfikacji](publishing-to-the-app-store-images/publishvs02.png "ekranu sprawdzania poprawności")
 
-    ![](publishing-to-the-app-store-images/distribute02.png "Wybierz tożsamość podpisywania i odpowiadający profil inicjowania obsługi administracyjnej")
+11. Kliknij przycisk **dalej** przycisk i aplikacja zostanie zweryfikowana względem Store aplikacji:
 
-1. Sprawdź szczegóły pakietu, a następnie kliknij przycisk **publikowania** zapisać Twoje `.ipa` pakietu:
+    ![Trwa sprawdzanie poprawności względem Store App](publishing-to-the-app-store-images/publishvs03.png "sprawdzanie poprawności względem Store aplikacji")
 
-    ![](publishing-to-the-app-store-images/distribute03.png "Sprawdź informacje szczegółowe dotyczące pakietu")
+12. Kliknij przycisk **wysyłania** przycisk, aby przesłać aplikację do firmy Apple do przeglądu.
+13. Program Application Loader informuje, kiedy plik został pomyślnie przekazany.
 
-1. Raz z `.ipa` zostało zapisane, że aplikacja jest gotowa do przekazania do programu iTunes Połącz przez moduł ładujący aplikacji:
-
-    ![](publishing-to-the-app-store-images/distribute04.png "Na ekranie publikacji zakończyło się pomyślnie.")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Dodatek plug-in Xamarin dla Visual Studio nie obsługuje obecnie Archiwizacja przepływu pracy w przypadku publikowania aplikacji systemu iOS do sklepu z aplikacjami. W związku z tym masz przekazywania IPA utworzony za pośrednictwem **kompilacji Ad hoc IPA** polecenia, które jest opisane poniżej.
-
-
-## <a name="build-an-ipa"></a>Tworzenie IPA
-
- W tej sekcji opisano tworzenie IPA podobny do przepływu pracy przy użyciu Ad Hoc lub dystrybucji przedsiębiorstwa. Jednak zostanie podpisana, przy użyciu sklepu z aplikacjami profil, który został utworzony wcześniej inicjowania obsługi administracyjnej.
-
- Wykonaj następujące czynności:
-
-1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nazwę projektu platformy Xamarin.iOS i wybierz **właściwości** aby je otworzyć do edycji:
-
-    ![](publishing-to-the-app-store-images/imagevs01.png "Wybierz polecenie Właściwości")
-1. Wybierz **iOS podpisywania pakietu** i zmień profilu inicjowania obsługi administracyjnej do sklepu z aplikacjami profil inicjowania obsługi administracyjnej:
-
-    ![](publishing-to-the-app-store-images/ipa01.png "Wybierz iOS podpisywania pakietu i zmień profilu inicjowania obsługi administracyjnej do sklepu z aplikacjami profil inicjowania obsługi administracyjnej")
-1. Wybierz **iOS opcje IPA > Konfiguracja > Ad Hoc** (Jeśli **Ad Hoc** nie jest rozwiązaniem, wybierz opcję **wersji** zamiast tego) i zaznacz pole wyboru umożliwiające tworzenie pliku IPA:
-
-    ![](publishing-to-the-app-store-images/imagevs02.png "Wybierz z listy rozwijanej konfiguracji Ad Hoc")
-
-1. Opcjonalnie można określić **nazwy pakietu** dla IPA, jeśli nie określono będzie mieć taką samą nazwę jak projektu platformy Xamarin.iOS.
-1. Zapisz zmiany we właściwościach projektu.
-1. Wybierz **Ad Hoc** z programu Visual Studio dla komputerów Mac **kompilacji konfiguracji** listy rozwijanej:
-
-    ![](publishing-to-the-app-store-images/imagevs05.png "Wybierz z listy rozwijanej konfiguracji kompilacji Ad Hoc")
-1. Skompiluj projekt, aby utworzyć pakiet IPA.
-1. Wbudowane IPA `Bin`  >  _iOS Device_  >  `Ad Hoc` folderu:
-
-    ![](publishing-to-the-app-store-images/imagevs06.png "IPA wyświetlany w Eksploratorze plików")
+    > [!NOTE]
+    > Apple może odrzucić aplikacji za pomocą **iTunesMetadata.plist** zawarte w pliku IPA, zostaje wyświetlony błąd podobny do następującego:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Obejście tego problemu z tym błędem, Przyjrzyj się [ten wpis na forum Xamarin](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
 
 -----
 
+## <a name="itunes-connect-status"></a>iTunes Connect stanu
 
-## <a name="customizing-the-ipa-location"></a>Dostosowywanie lokalizacji IPA
+Aby wyświetlić stan aplikacji przesłanych informacji, zaloguj się do usługi iTunes Connect, a następnie wybierz aplikację. Początkowy stan powinien być **oczekiwania do recenzji**, chociaż może tymczasowo odczytu **przekazywanie Odebrano** podczas, gdy jest przetwarzany.
 
-Nowy **MSBuild** właściwości `IpaPackageDir` został dodany do ułatwiają dostosowywanie `.ipa` pliku lokalizacji wyjściowej. Jeśli `IpaPackageDir` jest ustawiona w lokalizacji niestandardowej, `.ipa` pliku zostaną umieszczone w tej lokalizacji, zamiast domyślnej podkatalogu oznaczony znacznikiem czasowym. Może to być przydatne, gdy tworzenie zautomatyzowanych kompilacje, które korzystają z określonej ścieżki do katalogu działał prawidłowo, takich jak używany dla kompilacji ciągłej integracji (CI).
+![Oczekiwanie na przegląd](publishing-to-the-app-store-images/image21.png "oczekiwania do przeglądu")
 
-Istnieje kilka sposobów możliwych do użycia nowej właściwości:
+## <a name="tips-and-tricks"></a>Porady i wskazówki
 
-Na przykład, aby dane wyjściowe `.ipa` pliku starego domyślny katalog (tak jak Xamarin.iOS 9.6 i niżej), można ustawić `IpaPackageDir` właściwości `$(OutputPath)` przy użyciu jednej z poniższych metod. W obu przypadkach efekt są zgodne z wszystkich kompilacjach Xamarin.iOS interfejsu API Unified kompilacje IDE w tym również używających kompilacji wiersza polecenia `xbuild`, `msbuild`, lub `mdtool`:
+### <a name="customize-the-ipa-location"></a>Dostosowywanie lokalizacji IPA
 
-  - Pierwsza opcja jest skonfigurowanie `IpaPackageDir` właściwości w `<PropertyGroup>` element **MSBuild** pliku. Na przykład można dodać następujące `<PropertyGroup>` do dołu projekt aplikacji systemu iOS `.csproj` pliku (tylko przed tagiem zamykającym `</Project>` tagu):
+**MSBuild** właściwości `IpaPackageDir`, pozwala na dostosowywanie lokalizacji danych wyjściowych pliku IPA. Jeśli `IpaPackageDir` jest ustawiony w niestandardowej lokalizacji pliku IPA zostaną umieszczone w tej lokalizacji, zamiast domyślnego podkatalogu oznaczony sygnaturą czasową. Może to być przydatne w przypadku tworzenia automatycznych kompilacji, które korzystają z określonej ścieżki do katalogu działają poprawnie, takich jak używane dla kompilacji ciągłej integracji (CI).
 
-      ```xml
-        <PropertyGroup>
-            <IpaPackageDir>$(OutputPath)</IpaPackageDir>
-        </PropertyGroup>
-      ```
-  - Lepszym rozwiązaniem jest dodanie `<IpaPackageDir>` element w dół istniejącej `<PropertyGroup>` odpowiadający konfiguracji, używany do tworzenia `.ipa` pliku. Jest to lepszą, ponieważ przygotuje projektu dla zgodności w przyszłości planowane ustawienia na stronie właściwości projektu iOS IPA opcje. Jeśli obecnie używasz `Release|iPhone` Konfiguracja kompilacji `.ipa` pliku, grupa pełną zaktualizowane właściwości mogą wyglądać podobnie do następujących:
+Istnieje kilka możliwych sposobach korzystania z nowej właściwości. Na przykład, służący do wypełniania wyjściowego pliku IPA do starego katalog domyślny (tak jak Xamarin.iOS 9.6 i niższy), można ustawić `IpaPackageDir` właściwości `$(OutputPath)` przy użyciu jednej z poniższych metod. Oba podejścia są zgodne z wszystkie kompilacje ujednoliconego interfejsu API Xamarin.iOS, w tym kompilacje IDE, a także kompilacji z wiersza polecenia, które używają **msbuild** lub **mdtool**:
 
-      ```xml
-      <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' )
-        <Optimize>true</Optimize>
-        <OutputPath>bin\iPhone\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <CodesignKey>iPhone Developer</CodesignKey>
-        <MtouchUseSGen>true</MtouchUseSGen>
-        <MtouchUseRefCounting>true</MtouchUseRefCounting>
-        <MtouchFloat32>true</MtouchFloat32>
-        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <MtouchLink>SdkOnly</MtouchLink>
-        <MtouchArch>;ARMv7, ARM64</MtouchArch>
-        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-        <MtouchTlsProvider>Default</MtouchTlsProvider>
-        <PlatformTarget>x86&</PlatformTarget>
-        <BuildIpa>true</BuildIpa>
-        <IpaPackageDir>$(OutputPath</IpaPackageDir>
-      </PropertyGroup>
-      ```
-Alternatywne technika `msbuild` lub `xbuild` kompilacji wiersza polecenia jest dodanie `/p:` argument wiersza polecenia, aby ustawić `IpaPackageDir` właściwości. W takim przypadku należy pamiętać, że `msbuild` nie zwiększa `$()` wyrażenia przekazano w wierszu polecenia, więc nie można użyć `$(OutputPath)` składni. Zamiast tego Podaj pełną nazwę ścieżki. W mono `xbuild` polecenie Rozwiń `$()` wyrażenia, ale jest nadal lepiej używać pełnej nazwy ścieżki, ponieważ `xbuild` po pewnym czasie zostaną wycofane uzyskać [wersji i platform `msbuild` ](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x)w przyszłych wersjach. Pełny przykład, który korzysta z tej metody może wyglądać podobnie jak poniżej w systemie Windows:
+- Pierwsza opcja jest ustawiona `IpaPackageDir` właściwość w ramach `<PropertyGroup>` element **MSBuild** pliku. Na przykład można dodać następujące `<PropertyGroup>` do dolnej części pliku csproj projektu aplikacji systemu iOS (tuż przed zamykającym `</Project>` znaczników):
+
+    ```xml
+    <PropertyGroup>
+      <IpaPackageDir>$(OutputPath)</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+- Lepszym rozwiązaniem jest dodanie `<IpaPackageDir>` element w dół istniejące `<PropertyGroup>` , który odpowiada konfiguracji używane do tworzenia pliku IPA. Jest to lepsze, ponieważ przygotuje projektu dla zgodności w przyszłości planowane ustawienie na stronie właściwości projektu opcje IPA systemu iOS. Jeśli obecnie używasz `Release|iPhone` konfigurację, aby utworzyć plik IPA, grupy pełną zaktualizowana wartość właściwości może wyglądać podobnie do poniższego:
+
+    ```xml
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone'">
+       <Optimize>true</Optimize>
+       <OutputPath>bin\iPhone\Release</OutputPath>
+       <ErrorReport>prompt</ErrorReport>
+       <WarningLevel>4</WarningLevel>
+       <ConsolePause>false</ConsolePause>
+       <CodesignKey>iPhone Developer</CodesignKey>
+       <MtouchUseSGen>true</MtouchUseSGen>
+       <MtouchUseRefCounting>true</MtouchUseRefCounting>
+       <MtouchFloat32>true</MtouchFloat32>
+       <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+       <MtouchLink>SdkOnly</MtouchLink>
+       <MtouchArch>;ARMv7, ARM64</MtouchArch>
+       <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+       <MtouchTlsProvider>Default</MtouchTlsProvider>
+       <PlatformTarget>x86&</PlatformTarget>
+       <BuildIpa>true</BuildIpa>
+       <IpaPackageDir>$(OutputPath</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+Alternatywne technika **msbuild** kompilacji z wiersza polecenia jest dodanie `/p:` argument wiersza polecenia, aby ustawić `IpaPackageDir` właściwości. W takim przypadku należy pamiętać, że **msbuild** nie rozwija `$()` wyrażenia przekazanego w wierszu polecenia, więc nie jest możliwe użycie `$(OutputPath)` składni. Zamiast tego należy podać pełną ścieżkę.
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
 
-Lub następujące dla komputerów Mac:
+Lub następujące czynności na komputerze Mac:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-Z dystrybucją kompilacja utworzona i archiwizowane, możesz teraz przystąpić do przesyłania aplikacji do iTunes Connect.
-
-### <a name="automatically-copy-app-bundles-back-to-windows"></a>Automatycznie skopiować .app pakietów systemu Windows
-
-[!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
-
-## <a name="submitting-your-app-to-apple"></a>Przesyłanie aplikacji do firmy Apple
-
-> [!NOTE]
-> Ostatnio zmieniła się z jego proces weryfikacji w aplikacjach systemu iOS firmy Apple i może odrzucić aplikacji za pomocą `iTunesMetadata.plist` objęte IPA. Jeśli wystąpi błąd `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`rozwiązanie opisane [tutaj](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) powinno rozwiązać problem.
-
-Ukończono budowanie dystrybucji można przystąpić do przesyłania aplikacji systemu iOS do firmy Apple w celu przeglądu i wersję ze sklepu App Store.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
- Wykonaj następujące czynności:
-
-1. Uruchom **Xcode**.
-2. Z **okna** menu wybierz opcję **organizatora**.
-3. Polecenie **archiwa** i wybierz utworzony wcześniej archiwum:
-
-    ![](publishing-to-the-app-store-images/publishxs01.png "Wybierz archiwum do przesyłania")
-4. Polecenie **sprawdzania poprawności...**  przycisku.
-5. Wybierz konto do weryfikacji, a następnie kliknij przycisk **wybierz** przycisk:
-
-    ![](publishing-to-the-app-store-images/publishxs02.png "Wybierz konto do weryfikacji")
-6. Kliknij przycisk **weryfikacji** przycisk:
-
-    ![](publishing-to-the-app-store-images/publishxs03.png "Okno dialogowe podsumowania pliku")
-7. Jeśli wystąpiły problemy z pakietu, zostaną one wyświetlone.
-8. Rozwiąż wszelkie problemy i skompiluj ponownie archiwum w programie Visual Studio dla komputerów Mac.
-9. Polecenie **przesyłania...**  przycisku.
-10. Wybierz konto do weryfikacji, a następnie kliknij przycisk **wybierz** przycisk:
-
-    ![](publishing-to-the-app-store-images/publishxs04.png "Wybierz konto do weryfikacji")
-11. Kliknij przycisk **przesyłania** przycisk:
-
-    ![](publishing-to-the-app-store-images/publishxs05.png "Okno dialogowe podsumowania pliku")
-12. Xcode informuje, po zakończeniu przekazywania pliku do programu iTunes Connect.
-
-
-Archiwum przepływu pracy w programie Visual Studio for Mac zostanie automatycznie otwarta w moduł ładujący aplikacji, po zapisaniu _.ipa_:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Przesyłanie aplikacji do firmy Apple do przeglądu odbywa się przy użyciu aplikacji moduł ładujący aplikacji. Te kroki należy wykonać w Mac hosta kompilacji. Istnieje możliwość pobrania kopii modułu ładującego aplikacji z [tutaj](https://itunesconnect.apple.com/apploader/ApplicationLoader_3.0.dmg).
-
------
-
-1. Wybierz *dostarczania aplikacji* i kliknij przycisk *wybierz* przycisk:
-
-    [![](publishing-to-the-app-store-images/publishvs01.png "Wybierz pozycję świadczenia aplikacji")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
-
-2. Wybierz plik zip lub IPA utworzone powyżej i kliknij przycisk **OK** przycisku.
-
-3. Moduł ładujący aplikacji będzie sprawdzanie poprawności pliku:
-
-    [![](publishing-to-the-app-store-images/publishvs02.png "Na ekranie sprawdzania poprawności")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
-4. Kliknij przycisk *dalej* przycisk i aplikacja zostanie zweryfikowana względem sklepu z aplikacjami:
-
-    [![](publishing-to-the-app-store-images/publishvs03.png "Sprawdzanie poprawności względem sklepu z aplikacjami")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
-5. Kliknij przycisk **wysyłania** przycisk, aby wysłać aplikacji do firmy Apple do przeglądu.
-6. Moduł ładujący aplikacji informuje, kiedy plik został pomyślnie przekazany.
-
-## <a name="itunes-connect-status"></a>Stan połączenia iTunes
-
-Zaloguj się do programu iTunes Connect, wybierz aplikację z listy dostępnych aplikacji stanu iTunes Connect powinna zostać wyświetlona, że jest **oczekiwanie na przegląd** (tymczasowo może odczytać **przekazać Odebrano** podczas przetwarzania):
-
-[![](publishing-to-the-app-store-images/image21.png "Stan w programach iTunes Connect powinna zostać wyświetlona oczekuje do przeglądu")](publishing-to-the-app-store-images/image21.png#lightbox)
+Przy użyciu Twojej dystrybucji kompilacja utworzona i archiwizowane, teraz można przystąpić do przesłania zgłoszenia do usługi iTunes Connect.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawione przewodnik krok po kroku, konfigurowanie, tworzenie i przesyłanie aplikacji do sklepu z aplikacjami publikacji. Najpierw go opisane kroki niezbędne do tworzenia i zainstalować dystrybucji profil inicjowania obsługi administracyjnej. Następnie udał za pośrednictwem jak używać programu Visual Studio i Visual Studio for Mac do tworzenia kompilacji dystrybucji. Na koniec on wyświetlał sposobu używania programu iTunes Connect i narzędzia do przesyłania aplikacji do sklepu z aplikacjami.
-
+W tym artykule opisano sposób konfigurowania, tworzenie i przesyłanie aplikacji systemu iOS w wersji na Store aplikacji.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md)
-- [Podręcznik przepływu pracy programowania aplikacji systemu iOS: dystrybucja aplikacji](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
-- [Wskazówki dotyczące przesyłania sklepu z aplikacjami](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [Typowe odrzuceń aplikacji](https://developer.apple.com/app-store/review/rejections/)
-- [Wytyczne dotyczące sklepu App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Portal dla deweloperów firmy Apple (Apple)](https://developer.apple.com/account/)
+- [iTunes Connect (Apple)](https://itunesconnect.apple.com)
+- [Wytyczne dotyczące App Store (Apple)](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Typowe odrzuceń aplikacji (Apple)](https://developer.apple.com/app-store/review/rejections/)
+- [Praca z funkcjami w rozszerzeniu Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md)
+- [Praca z uprawnieniami w rozszerzeniu Xamarin.iOS](~/ios/deploy-test/provisioning/entitlements.md)
+- [Konfigurowanie aplikacji w usłudze iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [Ikony aplikacji w rozszerzeniu Xamarin.iOS](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Uruchom ekrany dla aplikacji platformy Xamarin.iOS](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Dokumentacja modułu ładującego aplikacji (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)

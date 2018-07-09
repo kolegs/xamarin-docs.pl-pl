@@ -1,66 +1,66 @@
 ---
 title: 'Xamarin.Essentials: baterii'
-description: W tym dokumencie opisano klasy baterii w Xamarin.Essentials, który umożliwia sprawdzenie informacji baterii urządzenia i monitorować zmiany.
+description: W tym dokumencie opisano klasy baterii w Xamarin.Essentials, który umożliwia sprawdzenie informacji baterii urządzenia i należy monitorować zmiany.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 35764b4c2270359a7c010e1186f882e236e17fd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782089"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855058"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: baterii
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Baterii** klasa umożliwia sprawdzenie, należy monitorować zmiany i informacji o baterii urządzenia.
+**Baterii** klasy umożliwia sprawdzenie, należy monitorować zmiany i informacji o baterii urządzenia.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **baterii** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **baterii** następujące ustawienia określone platformy jest wymagane.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery` Uprawnienie jest wymagane i muszą być skonfigurowane w projekt systemu Android. Mogą to być dodawane w następujący sposób:
+`Battery` Uprawnienie jest wymagane i musi być skonfigurowany w projekcie dla systemu Android. Mogą to być dodawane w następujący sposób:
 
-Otwórz **AssemblyInfo.cs** plików w obszarze **właściwości** folderu i dodać:
+Otwórz **AssemblyInfo.cs** plik **właściwości** folderze i Dodaj:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Battery)]
 ```
 
-LUB zaktualizować manifestu systemu Android:
+LUB zaktualizuj Manifest systemu Android:
 
-Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła.
+Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następujący kod wewnątrz **manifestu** węzła.
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY" />
 ```
 
-Kliknij prawym przyciskiem myszy projekt Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **baterii** uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **baterii** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 -----
 
-## <a name="using-battery"></a>Przy użyciu baterii
+## <a name="using-battery"></a>Używa baterii
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Sprawdzanie informacji o bieżącym poziomie naładowania baterii:
+Sprawdź bieżące informacje o baterii:
 
 ```csharp
 var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
@@ -108,7 +108,7 @@ switch (source)
 }
 ```
 
-Zdarzenie jest wyzwalane, właściwości baterii zmianie:
+Po każdym wprowadzeniu zmiany przez dowolne właściwości baterii jest wyzwalane zdarzenie:
 
 ```csharp
 public class BatteryTest
@@ -129,15 +129,25 @@ public class BatteryTest
 }
 ```
 
-## <a name="platform-differences"></a>Różnice dotyczące platformy
+## <a name="platform-differences"></a>Różnice dotyczące platform
 
-| Platforma | Różnica |
-| --- | --- |
-| iOS | Urządzenie musi być stosowane do testowania interfejsów API. |
-| iOS | Tylko zwróci ak lub baterii PowerSource. |
-| Platforma UWP | Tylko zwróci ak lub baterii PowerSource. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Nie różnice dotyczące platform.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Urządzenie musi służyć do testowania interfejsów API. 
+* Tylko zwróci `Ac` lub `Battery` dla `PowerSource`. 
+* Nie można anulować wibracje.
+
+# <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
+
+* Tylko zwróci `Ac` lub `Battery` dla `PowerSource`. 
+
+-----
 
 ## <a name="api"></a>interfejs API
 
-- [Kod źródłowy baterii](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
-- [Dokumentacja interfejsu API baterii](xref:Xamarin.Essentials.Battery)
+- [Kod źródłowy dla poziomu energii baterii](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Dokumentacja interfejsu API dla poziomu energii baterii](xref:Xamarin.Essentials.Battery)

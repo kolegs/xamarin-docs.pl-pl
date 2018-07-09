@@ -1,51 +1,53 @@
 ---
-title: Tworzenie powiązania z Sharpie celu
-description: Ta sekcja zawiera wprowadzenie do Sharpie cel, narzędzie wiersza polecenia platformy Xamarin w pozwala zautomatyzować proces tworzenia powiązania do biblioteki języka Objective C
+title: Tworzenie powiązań z narzędzie Objective Sharpie
+description: Ta sekcja zawiera wprowadzenie do Objective Sharpie, Xamarin narzędzie wiersza polecenia, służące do automatyzowania procesu tworzenia wiązania do biblioteki języka Objective-C
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: ae644038aa8b54f0d57b61767882dec8754040c8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 53fcbbc408ae147405a3285d9391457051d6e16e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780760"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854801"
 ---
-# <a name="creating-bindings-with-objective-sharpie"></a>Tworzenie powiązania z Sharpie celu
+# <a name="creating-bindings-with-objective-sharpie"></a>Tworzenie powiązań z narzędzie Objective Sharpie
 
-_Ta sekcja zawiera wprowadzenie do Sharpie cel, narzędzie wiersza polecenia platformy Xamarin w pozwala zautomatyzować proces tworzenia powiązania do biblioteki języka Objective C_
+_Ta sekcja zawiera wprowadzenie do Objective Sharpie, Xamarin narzędzie wiersza polecenia, służące do automatyzowania procesu tworzenia wiązania do biblioteki języka Objective-C_
 
 - [Omówienie](#overview) & [historii](#history)
 - [Wprowadzenie](get-started.md)
 - [Narzędzia i polecenia](tools.md)
 - [Funkcje](platform/index.md)
 - [Przykłady](examples/index.md)
-- [Pełny przewodnik](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Szczegółowy przewodnik](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Historia wersji](releases.md)
 
 ## <a name="overview"></a>Omówienie
 
-Celu Sharpie to narzędzie wiersza polecenia ułatwiające bootstrap przebiegu pierwszy powiązania.
-Działa on za analizowanie plików nagłówka natywnej biblioteki do mapowania publiczny interfejs API do [powiązania definicji](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (proces został ręcznie wcześniej).
+Narzędzie Objective Sharpie to narzędzie wiersza polecenia ułatwiające bootstrap w pierwszym przebiegu powiązania.
+Działa przez analizowanie plików nagłówka natywną bibliotekę do mapowania publicznego interfejsu API do [powiązanie definicji](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (proces, która wcześniej była przeprowadzana ręcznie).
 
-Sharpie celu używa Clang analizy pliki nagłówkowe, więc jest powiązanie w pełnych i dokładne. Może to znacznie skrócić czas i nakładu pracy potrzebnego do tworzenia powiązań jakości.
+Narzędzie Objective Sharpie używa Clang parsuj pliki nagłówka, powiązanie jest dokładne i możliwie dokładny. Może to znacznie skrócić czas i nakład pracy wymagany do utworzenia powiązania jakości.
 
 > [!IMPORTANT]
-> Celu Sharpie to narzędzie dla deweloperów programu Xamarin doświadczenie z zaawansowanej wiedzy na temat języka Objective-C (i przez rozszerzenie, C). Przed podjęciem próby powiązania biblioteka języka Objective-C powinien mieć stałe wiedzę na temat sposobu tworzenia natywnej biblioteki w wierszu polecenia (i dobrą znajomością działania natywnej biblioteki).
+> Narzędzie Objective Sharpie to narzędzie dla doświadczonych deweloperów platformy Xamarin przy użyciu zaawansowanej wiedzy Objective-c (a, C). Przed podjęciem próby powiązania do biblioteki języka Objective-C powinny mieć stałych wiedzę na temat sposobu tworzenia natywną bibliotekę w wierszu polecenia (i dobre zrozumienie sposobu działania bibliotekę natywną).
 
 ## <a name="history"></a>Historia
 
-Firma Microsoft rozwijającymi i za pomocą Sharpie cel wewnętrznie na platformie Xamarin dla ostatnich trzech lat. Jako dowód do potęgi Sharpie cel interfejsy API wprowadzone w Xamarin.iOS i Xamarin.Mac począwszy od zestawu iOS 8, Mac OS X 10.10, i watchOS 2.0 zostały zainicjowano z Sharpie cel. Xamarin zależy od silnie Sharpie cel wewnętrznie do tworzenia własnych produktów.
+Firma Microsoft ewoluują i przy użyciu Objective Sharpie wewnętrznie w Xamarin przez ostatnie trzy lata. Świadectwo siły spotykającej do potęgi równej Objective Sharpie interfejsów API, wprowadzona w Xamarin.iOS i Xamarin.Mac od system iOS 8, Mac OS X 10.10 firma i watchOS 2.0 zostały załadować wyłącznie przy użyciu Objective Sharpie. Xamarin rolę odgrywa Objective Sharpie wewnętrznie do tworzenia swoich własnych produktów.
 
-Jednak Sharpie celem jest bardzo zaawansowane narzędzia, która wymaga zaawansowanej wiedzy na temat języka Objective-C C, jak używać clang kompilator w wierszu polecenia i Podsumowując zazwyczaj jak natywnych bibliotek. Z powodu tego paska wysoka, możemy mieli świadomość o graficzny interfejs użytkownika kreator służy do ustawiania niewłaściwy oczekiwań i w efekcie Sharpie celem jest obecnie dostępna tylko jako narzędzie wiersza polecenia.
+Jednak Objective Sharpie jest bardzo zaawansowane narzędzie, które wymaga zaawansowanej wiedzy na temat języka Objective-C i C, jak używać kompilatora clang w wierszu polecenia i bibliotek natywnych zazwyczaj jak zostały zbudowane. Ze względu na ten pasek wysoka, firma Microsoft uznało, posiadające graficznym interfejsem użytkownika Kreator ustawia niewłaściwego oczekiwania, a w efekcie Objective Sharpie jest obecnie dostępna wyłącznie jako narzędzie wiersza polecenia.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pobieranie Sharpie celu](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
-- [Wskazówki: Powiązywanie biblioteka języka Objective C](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Objective Sharpie pobierania](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+- [Wskazówki: Powiązywanie biblioteki języka Objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Tworzenie powiązań bibliotek języka Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Szczegóły powiązania](~/cross-platform/macios/binding/overview.md)
-- [Powiązanie typy Podręcznik](~/cross-platform/macios/binding/binding-types-reference.md)
-- [Xamarin dla deweloperów języka Objective C](~/ios/get-started/objective-c-developers/index.md)
+- [Podręcznik informacyjny typów powiązań](~/cross-platform/macios/binding/binding-types-reference.md)
+- [Xamarin dla deweloperów języka Objective-C](~/ios/get-started/objective-c-developers/index.md)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C za pomocą narzędzie Objective Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

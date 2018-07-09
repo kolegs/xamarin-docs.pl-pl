@@ -1,26 +1,25 @@
 ---
-title: Przykład rzeczywistych przy użyciu projektu Xcode
-description: Tym dokumencie opisano sposób użycia projektu Xcode bezpośredni wpływ na Sharpie cel, w celu uproszczenia procesu tworzenia powiązań C#, aby kod języka Objective-C.
+title: Przykład rzeczywistych za pomocą projektu Xcode
+description: Tym dokumencie opisano sposób używania projektu Xcode jako bezpośrednie dane wejściowe do Objective Sharpie, co upraszcza proces tworzenia powiązania C# na kod języka Objective-C.
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 850c351f91c9a09a6654c876167e035f751e9504
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c55dc7cd20de2d216d1f267ea5a73631748a0a
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781120"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855250"
 ---
-# <a name="real-world-example-using-an-xcode-project"></a>Przykład rzeczywistych przy użyciu projektu Xcode
+# <a name="real-world-example-using-an-xcode-project"></a>Przykład rzeczywistych za pomocą projektu Xcode
 
+**W tym przykładzie użyto [POP biblioteki z usługi Facebook](https://github.com/facebook/pop).**
 
-**W tym przykładzie użyto [biblioteki POP z usługi Facebook](https://github.com/facebook/pop).**
+Nowość w wersji 3.0 Objective Sharpie obsługuje projekty Xcode jako dane wejściowe. Te projekty Określ pliki nagłówkowe poprawne i flagi kompilatora niezbędne do skompilowania natywną bibliotekę, a w związku z tym konieczne powiązać go za. Narzędzie Objective Sharpie wybierze pierwszy _docelowej_ i pozostawiać domyślnej konfiguracji projektu, gdy nie zalecił inaczej.
 
-Nowość w wersji 3.0 Sharpie cel obsługuje projektów Xcode jako dane wejściowe. Te projekty Określ pliki nagłówkowe poprawne i flagi kompilatora niezbędne do skompilowania natywnej biblioteki i w związku z tym konieczne powiązać zbyt. Sharpie celu wybierze pierwszy _docelowej_ i domyślnej konfiguracji projektu, gdy nie zalecił inaczej.
-
-Przed Sharpie cel próbuje analizy plików projektu i nagłówek, jego jego tworzenia. Projekty często mają fazy kompilacji, które będzie poprawnie struktury pliki nagłówkowe dla zewnętrznych konsumenckich i integracji, dlatego najlepiej zawsze skompilować projekt pełnego przed podjęciem próby powiązać go.
+Zanim Objective Sharpie próbuje przeanalizować plików projektu i nagłówek, jego jego tworzenia. Projekt ma często fazy kompilacji, które będą poprawnie struktury pliki nagłówkowe dla zewnętrznego korzystania i integracji, dlatego najlepiej zawsze Kompiluj pełny projekt przed podjęciem próby powiązać go.
 
 <pre>$ <b>git clone https://github.com/facebook/pop.git</b>
 Cloning into 'pop'...
@@ -29,3 +28,7 @@ Cloning into 'pop'...
 $ <b>cd pop</b>
 $ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
 
+## <a name="related-links"></a>Linki pokrewne
+
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Usługa Xamarin University kurs: Tworzenie biblioteki powiązań języka Objective-C za pomocą narzędzie Objective Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
