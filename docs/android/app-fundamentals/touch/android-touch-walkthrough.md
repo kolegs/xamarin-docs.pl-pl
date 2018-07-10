@@ -1,33 +1,33 @@
 ---
-title: Wskazówki — przy użyciu Touch w systemie Android
+title: 'Przewodnik: używanie dotyku w systemie Android'
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/09/2018
-ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050562"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935530"
 ---
-# <a name="walkthrough---using-touch-in-android"></a>Wskazówki — przy użyciu Touch w systemie Android
+# <a name="walkthrough---using-touch-in-android"></a>Przewodnik: używanie dotyku w systemie Android
 
-Daj nam poznać sposób użyć koncepcji z poprzedniej sekcji, w działającą aplikację. Aplikacja zostanie utworzona z czterech działań. Wykonywanie pierwszego działania będzie menu lub przełączania, która zostanie otwarta innych działań, aby zademonstrować różnych interfejsach API. Poniższy zrzut ekranu przedstawia działanie główne:
+Daj nam dowiedzieć się, jak używać pojęcia z poprzedniej sekcji, w działającej aplikacji. Aplikacja zostanie utworzona przy użyciu czterech działań. Pierwsze działanie będzie menu lub przełączania, która zostanie otwarta innych działań, aby przedstawić różne interfejsy API. Poniższy zrzut ekranu przedstawia głównego działania:
 
 [![Zrzut ekranu z Touch mnie przycisku](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-Pierwsze działanie Touch próbki wyświetli sposób użycia procedury obsługi zdarzeń dla dotknięcie widoków. Aparat rozpoznawania gestów działania zostaną przedstawione jak podklasy `Android.View.Views` i obsługi zdarzeń także przedstawiają sposób obsługi gestów uszczypnięcia. Działanie trzeci i końcowych **gestów niestandardowych**, Pokaż jak użyje gestów niestandardowych. Aby ułatwić czynności do wykonania i przyjęcia, firma Microsoft będzie podzielić tego przewodnika sekcje z każdej sekcji koncentrujących się na jednym z działania.
+Pierwsze działanie Touch próbki, pokazują, jak na potrzeby ingerowania w widokach procedury obsługi zdarzeń. Działanie aparat rozpoznawania gestów pokażemy, jak podklasy `Android.View.Views` i obsługiwać zdarzenia także przedstawiają sposób obsługi gestów uszczypnięcia. Działanie trzeciej i ostatniej **gestów niestandardowych**, Pokaż jak użyje gestów niestandardowych. Aby ułatwić czynności należy wykonać i Obsługuj, firma Microsoft będzie Podziel tego przewodnika na sekcje, z każdą sekcję, skupiając się na działalność.
 
-## <a name="touch-sample-activity"></a>Przykładowe działanie Touch
+## <a name="touch-sample-activity"></a>Przykładowe działanie w ogóle
 
--   Otwórz projekt **TouchWalkthrough\_Start**. **MainActivity** jest ustawione Przejdź &ndash; do nas do zaimplementowania zachowania touch w działaniu. Jeżeli możesz uruchomić aplikację i kliknąć pozycję **Touch próbki**, należy uruchomić następujące działania:
+-   Otwórz projekt **TouchWalkthrough\_Start**. **MainActivity** to zestaw wszystkich przejść &ndash; zależy nam Implementowanie zachowania touch w działaniu. Jeśli możesz uruchomić aplikację i kliknąć pozycję **Touch przykładowe**, należy uruchomić następujące działania:
 
-    [![Zrzut ekranu przedstawiający działania Touch rozpoczyna wyświetlane](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+    [![Zrzut ekranu przedstawiający działanie z Touch rozpoczyna się wyświetlane](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   Teraz, możemy potwierdzić, że działania uruchamiania, otwórz plik **TouchActivity.cs** i Dodaj program obsługi `Touch` zdarzenie `ImageView`:
+-   Teraz, gdy potwierdzamy, że działanie uruchamiania, otwórz plik **TouchActivity.cs** i Dodaj program obsługi `Touch` zdarzenia `ImageView`:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
@@ -59,23 +59,23 @@ Pierwsze działanie Touch próbki wyświetli sposób użycia procedury obsługi 
     }
     ```
 
-Zwróć uwagę w powyższym kodzie, że traktujemy `Move` i `Down` akcji jako takie same. Wynika to z faktu, nawet jeśli użytkownik nie może podnieść ich palca `ImageView`, może przenosić lub zmiany nacisku przez użytkownika. Tego rodzaju zmiany spowoduje wygenerowanie `Move` akcji.
+Należy zauważyć w powyższym kodzie, że traktujemy `Move` i `Down` akcja, taka sama. To dlatego, nawet jeśli użytkownik nie może przenoszenie ich finger `ImageView`, może poruszać lub nacisku przez użytkownika może ulec zmianie. Tego rodzaju zmiany spowoduje wygenerowanie `Move` akcji.
 
-Po każdej aktualizacji poprawki użytkownika `ImageView`, `Touch` zostanie wygenerowany, zdarzeń i naszych obsługi wyświetli komunikat **Touch rozpoczyna się** na ekranie, jak pokazano na poniższym zrzucie ekranu:
+Każdym ma użytkownika `ImageView`, `Touch` zdarzenia zostaną podniesione i naszej obsługi wyświetli komunikat o **Touch rozpoczyna się** na ekranie, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu przedstawiający działania Touch rozpoczyna się](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+[![Zrzut ekranu przedstawiający działanie z Touch rozpoczyna się](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-Jak długo użytkownik zachodzi `ImageView`, **Touch rozpoczyna się** będą wyświetlane w `TextView`. Gdy użytkownik jest już dotknięcie `ImageView`, wiadomość **Touch kończy się** będą wyświetlane w `TextView`, jak pokazano na poniższym zrzucie ekranu:
+Tak długo, jak użytkownik zachodzi `ImageView`, **Touch rozpoczyna się** będą wyświetlane w `TextView`. Gdy użytkownik jest już dotknięcie `ImageView`, komunikat **Touch kończy się** będą wyświetlane w `TextView`, jak pokazano na poniższym zrzucie ekranu:
 
-[![Zrzut ekranu przedstawiający działania Touch kończy się](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
+[![Zrzut ekranu przedstawiający działanie z Touch kończy się](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>Działanie aparat rozpoznawania gestów
 
-Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To działanie pokazują, jak przeciągnij widoku po ekranie i zilustrowania jeden sposób implementowania powiększanie gestem uszczypnięcia.
+Teraz umożliwia Implementowanie działania aparat rozpoznawania gestów. To działanie pokażemy, jak przeciągać wyświetlanie na ekranie i pokazują jeden ze sposobów zaimplementowania powiększanie gestem uszczypnięcia.
 
 -   Dodaj nowe działanie do aplikacji o nazwie `GestureRecognizer`.
-    Edytuj kod dla tego działania, aby podobny do następującego kodu:
+    Edytowanie kodu dla tego działania, tak aby wyglądała jak poniższy kod:
 
     ```csharp
     public class GestureRecognizerActivity : Activity
@@ -89,7 +89,7 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
     }
     ```
 
--   Dodaj nowy Android wyświetlić do projektu i nadaj mu nazwę `GestureRecognizerView`. Do tej klasy, Dodaj następujące zmienne:
+-   Dodawanie nowych Android wyświetlić do projektu i nadaj mu nazwę `GestureRecognizerView`. Dodaj następujące zmienne do klasy:
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -105,7 +105,7 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
     private float _scaleFactor = 1.0f;
     ```
 
--   Dodaj następujący Konstruktor do `GestureRecognizerView`. Ten konstruktor doda `ImageView` nasze działania. W tym momencie nadal nie kompilacji kodu &ndash; należy utworzyć klasę `MyScaleListener` ułatwiające z zmiana rozmiaru `ImageView` gdy użytkownik pinches go:
+-   Dodaj następującego konstruktora do `GestureRecognizerView`. Spowoduje to dodanie tego konstruktora `ImageView` nasze działania. W tym momencie kod nadal będzie niemożliwa &ndash; musimy utworzyć klasę `MyScaleListener` to pomoże ustalić o zmienionych rozmiarach `ImageView` po użytkownik pinches go:
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -116,7 +116,7 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
     }
     ```
 
--   Rysowanie obrazu na naszych działań, należy zastąpić `OnDraw` metody klasy widoku, jak pokazano w poniższy fragment kodu. Ten kod zostanie przesunięty `ImageView` określonej przez pozycji `_posX` i `_posY` również jako Zmień rozmiar obrazu zgodnie z czynnik skalowania:
+-   Rysowanie obrazu na nasze działania, należy zastąpić `OnDraw` metody klasy widoku, jak pokazano w poniższym fragmencie kodu. Ten kod zostanie przesunięty `ImageView` w położeniu wskazanym przez `_posX` i `_posY` również jako zmianę rozmiaru obrazu zgodnie z współczynnik skalowania:
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -130,8 +130,8 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
     }
     ```
 
--   Następnie należy zaktualizować zmienna wystąpienia `_scaleFactor` jako użytkownik pinches `ImageView`. Teraz dodamy klasy o nazwie `MyScaleListener`. Ta klasa będzie nasłuchiwać zdarzeń skalowania, które będą wywoływane przez system Android, gdy użytkownik pinches `ImageView`.
-    Dodaj następujące klasy wewnętrznej do `GestureRecognizerView`. Ta klasa jest `ScaleGesture.SimpleOnScaleGestureListener`. Ta klasa jest klasą wygody czy odbiorniki myślisz podzbiór gesty, można podklasy:
+-   Następnie należy zaktualizować zmienną instance `_scaleFactor` jako użytkownik pinches `ImageView`. Teraz dodamy klasę o nazwie `MyScaleListener`. Ta klasa będzie nasłuchiwać zdarzeń skalowania, które będą wywoływane przez system Android, gdy użytkownik pinches `ImageView`.
+    Dodaj poniższą klasę wewnętrzny, aby `GestureRecognizerView`. Ta klasa jest `ScaleGesture.SimpleOnScaleGestureListener`. Ta klasa jest klasą wygody, czy odbiorniki jesteś zainteresowany podzbiór gestów, można podklasy:
 
     ```csharp
     private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -157,19 +157,19 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
                 _view._scaleFactor = 0.1f;
             }
 
-            _iconview.Invalidate();
+            _view.Invalidate();
             return true;
         }
     }
     ```
 
--   Next — metoda, należy zastąpić w `GestureRecognizerView` jest `OnTouchEvent`. Poniższy kod wyświetla pełne implementacja tej metody. Istnieje wiele kodu, więc umożliwia zabrać kilka minut i sprawdź, co się dzieje w tym miejscu. Najpierw jest ta metoda jest skalowanie ikony, w razie potrzeby &ndash; jest to obsługiwane przez wywołanie metody `_scaleDetector.OnTouchEvent`. Następnie spróbujemy dowiedzieć się, jakie działania wywołać tej metody:
+-   Następna metoda, należy zastąpić w `GestureRecognizerView` jest `OnTouchEvent`. Poniższy kod zawiera pełną implementację tej metody. Istnieje duża ilość kodu, więc umożliwia chwilę potrwać, i sprawdź, co się dzieje w tym miejscu. Pierwszą rzeczą, ta metoda jest skalowanie ikony, jeśli to konieczne &ndash; odbywa się to przez wywołanie metody `_scaleDetector.OnTouchEvent`. Następnie podejmowane są próby zorientować się, jakie działania wywołuje tę metodę:
 
-    - Jeśli użytkownik dotknięciu ekranu, firma Microsoft rejestrowania pozycji X i Y i identyfikator pierwszego wskaźnik dotknięciu ekranu.
+    - Jeśli użytkownik korzysta z ekranu, firma Microsoft Zarejestruj pozycji X i Y oraz identyfikator pierwszego wskaźnika, który korzysta z ekranu.
 
-    - Jeśli użytkownik przenieść ich touch na ekranie, następnie możemy dowiedzieć się, jak daleko użytkownik przesunął kursor.
+    - Jeśli użytkownik przeniesione ich touch na ekranie, następnie możemy Ustal, jak daleko użytkownik przesunął kursor.
 
-    - Jeśli użytkownik ma unosiło jego palca odniosło, następnie firma Microsoft będzie Zatrzymaj śledzenie gestów.
+    - Jeśli użytkownik został podniesiony jego finger mieściły się na ekranie, następnie przestaniemy śledzenia gestów.
 
     ```csharp
     public override bool OnTouchEvent(MotionEvent ev)
@@ -231,24 +231,24 @@ Umożliwia teraz implementacji działania aparat rozpoznawania gestów. To dzia�
     }
     ```
 
--   Teraz uruchom aplikację i uruchomienia działania aparat rozpoznawania gestów.
-    Podczas uruchamiania ekranu powinien wyglądać jak na poniższym zrzucie ekranu:
+-   Teraz uruchom aplikację i uruchomić działania aparat rozpoznawania gestów.
+    Po uruchomieniu ekran powinien wyglądać podobnie jak na poniższym zrzucie ekranu:
 
-    [![Aparat rozpoznawania gestów ekranie startowym ikoną systemu Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+    [![Aparat rozpoznawania gestów ekran startowy ikoną dla systemu Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   Teraz touch ikonę, a następnie przeciągnij ją po ekranie. Spróbuj gestu powiększanie gestem uszczypnięcia. W pewnym momencie ekranu może wyglądać jak na poniższym zrzucie ekranu:
+-   Teraz touch ikony i przeciągnij go na ekranie. Spróbuj gestu powiększanie gestem uszczypnięcia. W pewnym momencie ekranu może wyglądać jak na poniższym zrzucie ekranu:
 
-    [![Ikona przenoszenia gestów wokół ekranu](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
+    [![Ikona przenoszenia gestów na ekranie](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-Na tym etapie należy nadać samodzielnie jest element pat na tylnej: powiększanie gestem uszczypnięcia właśnie zostało zaimplementowane w aplikacji systemu Android! Pobrać podział szybki i pozwala przejść do działania trzeci i końcowe w ramach tego przewodnika &ndash; za pomocą gestów niestandardowych.
+W tym momencie należy nadać kontu samodzielnie osobisty token dostępu z tyłu: powiększanie gestem uszczypnięcia właśnie zostało zaimplementowane w aplikacji systemu Android! Zrobić sobie przerwę szybki i pozwala przejść do trzeciej i ostatniej aktywności w tym przewodniku &ndash; za pomocą gestów niestandardowych.
 
 ## <a name="custom-gesture-activity"></a>Działanie gestów niestandardowych
 
-W tym przewodniku na ekranie końcowym będzie używać gestów niestandardowych.
+Ekran końcowy, w tym instruktażu będą używać gestów niestandardowych.
 
-Na potrzeby tego przewodnika biblioteki gestów został już utworzony za pomocą gestu narzędzia i dodane do projektu w pliku **zasobów/raw/gestów**. Z tego bit housekeeping przeszkadza pozwala uzyskać na z ostatnie działanie w tym przewodnikiem.
+Na potrzeby tego przewodnika, biblioteka gestów został już utworzony za pomocą narzędzia gestu i dodane do projektu w pliku **zasobów/nieprzetworzone/gestów**. Z tego bitu gospodarstw domowych przeszkadza umożliwia pracujesz na ostatnie działanie w instruktażu.
 
--   Dodaj plik układu o nazwie **niestandardowych\_gestu\_layout.axml** do projektu z następującą zawartość. Projekt posiada już wszystkie obrazy **zasobów** folderu:
+-   Dodaj plik układu o nazwie **niestandardowe\_gestu\_layout.axml** do projektu z następującą zawartością. Projekt ma już wszystkie obrazy w **zasobów** folderu:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -274,15 +274,15 @@ Na potrzeby tego przewodnika biblioteki gestów został już utworzony za pomoc�
     </LinearLayout>
     ```
 
--   Następnie dodaj nowe działanie do projektu i nadaj mu nazwę `CustomGestureRecognizerActivity.cs`. Dodaj dwie zmienne wystąpienia klasy, jako przedstawiający w następujących dwóch wierszy kodu:
+-   Następnie dodaj nowe działanie do projektu i nadaj mu nazwę `CustomGestureRecognizerActivity.cs`. Dodaj dwie zmienne wystąpienia klasy, jak pokazano w następujących dwóch wierszy kodu:
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   Edytuj `OnCreate` metoda tego działania, tak że podobny do następującego kodu. Umożliwia zająć kilka minut, aby wyjaśnić, co dzieje się w tym kodzie. Najpierw czynności jest utworzenie wystąpienia `GestureOverlayView` i ustawić go jako widok główny działania.
-    Możemy również przypisać do obsługi zdarzeń `GesturePerformed` zdarzenie `GestureOverlayView`. Następnie możemy zwiększyć pliku układu, który został utworzony wcześniej i dodać go jako widok podrzędny `GestureOverlayView`. Ostatnim krokiem jest można zainicjować zmiennej `_gestureLibrary` i załadować plik gestów z zasobów aplikacji. Jeśli z jakiegoś powodu nie można załadować pliku gesty, nie ma znacznie, które można wykonać tego działania, tak aby zawierała zamknięcia:
+-   Edytuj `OnCreate` metody tego działania, tak że przypominają poniższy kod. Umożliwia potrwać chwilę, aby wyjaśnić, co się dzieje w tym kodzie. Pierwszą rzeczą, którą robimy to tworzenia wystąpienia `GestureOverlayView` i ustaw ją jako widoku głównego działania.
+    Możemy również przypisać program obsługi zdarzeń do `GesturePerformed` zdarzenia `GestureOverlayView`. Następnie możemy rozszerzanie plik układu, który został utworzony wcześniej i dodać jako widok podrzędny `GestureOverlayView`. Ostatnim krokiem jest, aby zainicjować zmienną `_gestureLibrary` i załadować plik gestów z zasobów aplikacji. Jeśli z jakiegoś powodu nie można załadować pliku gestów, nie ma wiele, które można wykonać to działanie, dlatego zamknięcia:
 
     ```csharp
     protected override void OnCreate(Bundle bundle)
@@ -306,9 +306,9 @@ Na potrzeby tego przewodnika biblioteki gestów został już utworzony za pomoc�
     }
     ```
 
--   Końcowy element, należy zaimplementować metodę `GestureOverlayViewOnGesturePerformed` pokazane na poniższy fragment kodu. Gdy `GestureOverlayView` wykryciu gestu, wywołuje zwrotnie do tej metody. Pierwszą rzeczą, którą próbujemy pobrać `IList<Prediction>` obiekty, które odpowiadają gestu przez wywołanie metody `_gestureLibrary.Recognize()`. Korzystamy z bitowego LINQ można pobrać `Prediction` ma najwyższy wynik dla gestu.
+-   Końcowe rzeczą, musimy zaimplementować metodę `GestureOverlayViewOnGesturePerformed` jak pokazano w poniższym fragmencie kodu. Gdy `GestureOverlayView` wykryciu gestu, ponownie wywołuje się do tej metody. Pierwszą rzeczą, którą spróbujemy uzyskać `IList<Prediction>` obiekty, które odpowiadają gestu przez wywołanie metody `_gestureLibrary.Recognize()`. Możemy użyć znacznej liczby LINQ, aby uzyskać `Prediction` ma najwyższy wynik dla gestu.
 
-    Nie ma pasującego gestu z wysokim za mało wynik, a następnie program obsługi zdarzeń kończy działanie bez żadnego działania. W przeciwnym razie możemy Sprawdź nazwę Prognozowanie i zmienić obraz jest wyświetlany na podstawie nazwy gestu:
+    Jeśli nie było żadnych pasujących gestu z wysokim wystarczająco dużo wynik, a następnie program obsługi zdarzeń kończy działanie bez żadnego działania. W przeciwnym razie firma Microsoft Sprawdź nazwę przewidywania i zmienić obraz jest wyświetlany w oparciu o nazwę gestu:
 
     ```csharp
     private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -339,22 +339,22 @@ Na potrzeby tego przewodnika biblioteki gestów został już utworzony za pomoc�
     }
     ```
 
--   Uruchom aplikację i uruchomienia działania aparat rozpoznawania gestów niestandardowych. Powinien on wyglądać podobnie jak poniższy zrzut ekranu:
+-   Uruchom aplikację i uruchomić działanie aparat rozpoznawania gestów niestandardowych. Powinien on wyglądać podobnie jak na poniższym zrzucie ekranu:
 
     [![Zrzut ekranu z Sprawdź mnie obrazu](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    Teraz narysuj wyboru na ekranie i mapy bitowej będzie wyświetlany powinien wyglądać jak wyświetlanego w następnym zrzuty ekranu:
+    Teraz rysować znacznik wyboru na ekranie i mapy bitowej, są wyświetlane powinien wyglądać jak pokazano w następnym zrzuty ekranu:
 
-    [![Rozpoznano narysowanego znacznik wyboru, znacznik wyboru](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Rozpoznano rysowane znacznik wyboru znacznik wyboru](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
-    Na koniec Rysuj bazgrołów na ekranie. Pole wyboru należy zmieniać wstecz do oryginalnego obrazu, jak pokazano w tych zrzuty ekranu:
+    Na koniec można rysować bazgrołów na ekranie. Pole wyboru, należy zmienić przywracając jego oryginalny obraz, jak pokazano w tych zrzuty ekranu:
 
-    [![Zostanie wyświetlony bazgrołów na ekranie oryginalnego obrazu](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Bazgrołów na ekranie, oryginalny obraz jest wyświetlany.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
-Masz teraz zrozumienia sposobu integracji touch i gestów w aplikacji systemu Android przy użyciu platformy Xamarin.Android.
+Masz teraz zrozumienia sposobu integrowania Dotyk i gesty w aplikacji systemu Android przy użyciu platformy Xamarin.Android.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Android Touch Start (przykład)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android Touch końcowego (na przykład)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
+- [Dla systemu android w ogóle Start (przykład)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
+- [Dla systemu android w ogóle końcowe (przykład)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)

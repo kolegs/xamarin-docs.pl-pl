@@ -1,82 +1,82 @@
 ---
-title: Właściwości
-description: Ten artykuł zawiera wprowadzenie do właściwości i pokazuje, jak utworzyć i używać ich.
+title: Właściwości możliwe do wiązania
+description: Ten artykuł zawiera wprowadzenie do właściwości możliwej do wiązania i pokazuje, jak utworzyć i korzystać z nich.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 5e39e8eb3d7ffb3ed33ea2a585d8d367302e9baa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 115fff5f80eb531780aa208fde677b26b69e9294
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245979"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935631"
 ---
-# <a name="bindable-properties"></a>Właściwości
+# <a name="bindable-properties"></a>Właściwości możliwe do wiązania
 
-_W platformy Xamarin.Forms funkcji wspólnego języka środowiska uruchomieniowego (języka wspólnego CLR) właściwości zostanie przedłużony właściwości. Właściwości możliwej do wiązania jest specjalnym rodzajem właściwości, gdy wartość właściwości jest śledzony przez system właściwości platformy Xamarin.Forms. Ten artykuł zawiera wprowadzenie do właściwości i pokazuje, jak utworzyć i używać ich._
+_W interfejsie Xamarin.Forms funkcje wspólne właściwości środowiska uruchomieniowego (języka wspólnego CLR) języka jest rozszerzany, które można powiązać właściwości. Właściwości możliwej do wiązania to specjalny rodzaj właściwości, których wartość właściwości jest śledzona przez system właściwości zestawu narzędzi Xamarin.Forms. Ten artykuł zawiera wprowadzenie do właściwości możliwej do wiązania i pokazuje, jak utworzyć i korzystać z nich._
 
 ## <a name="overview"></a>Omówienie
 
-Właściwości rozszerzenia funkcji właściwość CLR przez tworzenie kopii właściwości o [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) typu zamiast kopii właściwość z polem. Właściwości ma na celu zapewnić systemu właściwości, który obsługuje powiązanie danych, style, szablony i wartościami ustawionymi przez relacji nadrzędny podrzędny. Ponadto można powiązać właściwości można podać wartości domyślne, sprawdzania poprawności wartości właściwości i wywołania zwrotne, które monitorują zmiany właściwości.
+Właściwości możliwej do wiązania rozszerzenia CLR właściwości funkcji dzięki tworzeniu kopii właściwość o [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) typu, zamiast tworzenia kopii właściwość z polem. Właściwości możliwe do wiązania ma na celu stanowią system właściwości, który obsługuje powiązanie danych, style i szablony, a wartości ustawione przy użyciu relacji nadrzędny podrzędny. Ponadto właściwości możliwej do wiązania można podać wartości domyślne, sprawdzanie poprawności wartości właściwości i wywołania zwrotne, które monitorują zmiany właściwości.
 
-Właściwości powinny być implementowane jako właściwości do obsługi co najmniej jeden z następujących funkcji:
+Właściwości powinny być zrealizowane jako możliwej do wiązania właściwości do obsługi co najmniej jeden z następujących funkcji:
 
-- Działając jako prawidłowy *docelowej* właściwości do wiązania danych.
-- Ustawienie właściwości za pośrednictwem [styl](~/xamarin-forms/user-interface/styles/index.md).
-- Udostępnia domyślną wartość właściwości, która jest inna niż domyślna dla typu właściwości.
+- Działający jako prawidłowy *docelowej* właściwość do wiązania danych.
+- Ustawienie właściwości, za pośrednictwem [styl](~/xamarin-forms/user-interface/styles/index.md).
+- Udostępnia wartość właściwości domyślnej, która jest inna niż domyślna dla typu właściwości.
 - Sprawdzanie poprawności wartości właściwości.
 - Monitorowanie zmian właściwości.
 
-Przykłady właściwości platformy Xamarin.Forms [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), i [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Każda właściwość powiązania ma odpowiadające mu `public static readonly` właściwości typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) które będzie widoczne na tej samej klasy, która jest identyfikator właściwości możliwej do wiązania. Na przykład odpowiednie właściwości możliwej do wiązania identyfikator `Label.Text` właściwość jest [ `Label.TextProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Label.TextProperty/).
+Przykłady zestawu narzędzi Xamarin.Forms właściwości możliwej do wiązania [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), i [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Każdej możliwej do wiązania właściwości ma odpowiadające mu `public static readonly` właściwości typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) które będzie widoczne na tej samej klasy, która jest identyfikator właściwości możliwej do wiązania. Na przykład, odpowiedni identyfikator właściwości możliwej do wiązania dla `Label.Text` właściwość [ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty).
 
 <a name="consuming-bindable-property" />
 
 ## <a name="creating-and-consuming-a-bindable-property"></a>Tworzenie i korzystanie z właściwości możliwej do wiązania
 
-Proces tworzenia właściwości możliwej do wiązania jest następujący:
+Proces tworzenia właściwość może być powiązana jest następująca:
 
-1. Utwórz [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia jednego z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) przeciążenia metody.
-1. Zdefiniuj metody dostępu właściwości dla [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia.
+1. Tworzenie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienie z jednym z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) przeciążenia metody.
+1. Zdefiniuj metody dostępu właściwości, dla [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia.
 
-Należy pamiętać, że wszystkie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia należy utworzyć w wątku interfejsu użytkownika. Oznacza to, że tylko kod uruchamiany w wątku interfejsu użytkownika można pobrać lub ustawić wartość właściwości możliwej do wiązania. Jednak `BindableProperty` wystąpienia można uzyskać z innych wątków kierowanie w wątku interfejsu użytkownika z [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metody.
+Należy pamiętać, że wszystkie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia muszą być utworzone w wątku interfejsu użytkownika. Oznacza to, że kod, który jest uruchamiany na wątku interfejsu użytkownika można uzyskać lub ustawić wartość właściwości możliwej do wiązania. Jednak `BindableProperty` wystąpień są dostępne z innych wątków przez kierowanie do wątku interfejsu użytkownika przy użyciu [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metody.
 
 ### <a name="creating-a-property"></a>Tworzenie właściwości
 
-Aby utworzyć `BindableProperty` wystąpienia, klasa zawierająca musi pochodzić od [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) klasy. Jednak `BindableObject` klasy jest wysoka w hierarchii klas, dlatego większość klas używane dla właściwości powiązania obsługi funkcji interfejsu użytkownika.
+Aby utworzyć `BindableProperty` wystąpienia, klasa zawierająca musi pochodzić od klasy [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) klasy. Jednak `BindableObject` klasa jest najwyższym poziomie w hierarchii klas, dzięki czemu większość klas używane dla właściwości możliwej do wiązania obsługę funkcji interfejsu użytkownika.
 
-Można powiązać właściwości mogą być tworzone przez zadeklarowanie `public static readonly` właściwości typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Właściwości możliwej do wiązania powinien mieć ustawioną wartość jednego z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) przeciążenia metody. Deklaracja powinna mieścić się w treści [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) klasy, ale poza żadnych definicji elementu członkowskiego.
+Właściwości możliwej do wiązania, mogą być tworzone przez zadeklarowanie `public static readonly` właściwości typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Właściwości możliwej do wiązania powinna być równa zwrócona wartość jednego z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) przeciążenia metody. Deklaracja powinna mieścić się w treści [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) klasy, ale poza żadnych definicji elementu członkowskiego.
 
-Co najmniej identyfikator należy określić podczas tworzenia [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), wraz z następującymi parametrami:
+Jako minimum, należy określić identyfikator, podczas tworzenia [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), wraz z następującymi parametrami:
 
 - Nazwa [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/).
 - Typ właściwości.
-- Typ będący właścicielem obiektu.
-- Wartość domyślna właściwości. Dzięki temu, że właściwość zawsze zwraca wartość określonego domyślnego, gdy jest unset i może być inna niż wartość domyślna dla typu właściwości. Wartość domyślna będzie przywrócone po [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) metoda jest wywoływana we właściwościach powiązania.
+- Typ obiekt-właściciel.
+- Wartość domyślna dla właściwości. Daje to gwarancję, że właściwość zawsze zwraca wartość określonego domyślnego, jest usunięta, gdy może on być inny niż wartość domyślna dla typu właściwości. Wartość domyślna będzie przywrócone po [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) metoda jest wywoływana w właściwości możliwej do wiązania.
 
-Poniższy kod przedstawia przykład właściwości możliwej do wiązania, identyfikatora i wartości czterech wymaganych parametrów:
+Poniższy kod przedstawia przykład właściwości możliwej do wiązania, przy użyciu identyfikatora i wartości dla czterech wymagane parametry:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Spowoduje to utworzenie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia o nazwie `EventName`, typu `string`. Właściwość jest własnością `EventToCommandBehavior` klasy, a ma wartość domyślną `null`. Konwencję nazewnictwa dla właściwości jest, że identyfikator właściwości powiązania musi odpowiadać nazwie właściwości określony w `Create` metody z dołączonym "Property". W związku z tym w powyższym przykładzie identyfikator właściwości możliwej do wiązania jest `EventNameProperty`.
+Spowoduje to utworzenie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia o nazwie `EventName`, typu `string`. Właściwość jest własnością `EventToCommandBehavior` klasy, a wartość domyślna `null`. Konwencji nazewnictwa, które można powiązać właściwości jest, że identyfikator właściwości możliwej do wiązania musi odpowiadać nazwa właściwości określone w `Create` metody, z dołączoną "Property". W związku z tym, w powyższym przykładzie identyfikator właściwości możliwej do wiązania jest `EventNameProperty`.
 
-Opcjonalnie tworząc [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienie następujące parametry można określić:
+Opcjonalnie podczas tworzenia [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia następujące parametry można określić:
 
-- Tryb powiązania. Służy do określania kierunku, w którym rozpropaguje zmiany wartości właściwości. W domyślnym trybie powiązanie, zmiany zostaną przeniesione z *źródła* do *docelowej*.
-- Delegat weryfikacji, który zostanie wywołany, gdy wartość właściwości jest ustawiona. Aby uzyskać więcej informacji, zobacz [wywołania zwrotne walidacji](#validation).
-- Delegat zmiany właściwości, które będą wywoływane, gdy zmieniono wartość właściwości. Aby uzyskać więcej informacji, zobacz [wykrywanie zmian właściwości](#propertychanges).
-- Właściwość zmiana delegata, który zostanie wywołany, gdy zmieni się wartość właściwości. Ten delegat ma takiego samego podpisu jak obiekt delegowany zmiany właściwości.
-- Delegat wartość coerce, które będą wywoływane, gdy zmieniono wartość właściwości. Aby uzyskać więcej informacji, zobacz [wymuszone wywołania zwrotne wartość](#coerce).
-- A `Func` używany do inicjowania wartości domyślnej właściwości. Aby uzyskać więcej informacji, zobacz [tworzenie wartości domyślnej z Func](#defaultfunc).
+- Tryb powiązania. Służy do określania kierunku, w którym rozpropaguje zmiany wartości właściwości. W domyślnym trybie powiązania, zmiany zostaną przeniesione z *źródła* do *docelowej*.
+- Delegat weryfikacji, który zostanie wywołany, gdy ustawiono wartość właściwości. Aby uzyskać więcej informacji, zobacz [wywołania zwrotne weryfikacji](#validation).
+- Delegat zmiany właściwości, który zostanie wywołany, gdy zmieniono wartość właściwości. Aby uzyskać więcej informacji, zobacz [wykrywanie zmian właściwości](#propertychanges).
+- Zmiana właściwości delegata, który zostanie wywołany, gdy zmieni się wartość właściwości. Ten delegat ma taki sam podpis, jak obiekt delegowany zmiany właściwości.
+- Delegat wartość coerce, który zostanie wywołany, gdy zmieniono wartość właściwości. Aby uzyskać więcej informacji, zobacz [wymuszone wywołania zwrotne wartości](#coerce).
+- Element `Func` używany do inicjowania wartości domyślnej właściwości. Aby uzyskać więcej informacji, zobacz [tworzenia wartości domyślnej z Func](#defaultfunc).
 
-### <a name="creating-accessors"></a>Tworzenie metody dostępu
+### <a name="creating-accessors"></a>Tworzenie metod dostępu
 
-Metod dostępu do właściwości są wymagane na potrzeby dostępu do właściwości powiązania składni właściwości. `Get` Akcesor powinien zwrócić wartość, która jest zawarta w odpowiedniej właściwości możliwej do wiązania. Można to osiągnąć poprzez wywołanie [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) metody, przekazując identyfikator właściwości możliwej do wiązania, na którym ma być pobrana wartość, a następnie Rzutowanie na wymagany typ wyniku. `Set` Dostępu należy ustawić wartość może być powiązana odpowiednia właściwość. Można to osiągnąć poprzez wywołanie [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody, przekazując identyfikator właściwości możliwej do wiązania, dla których należy ustawić wartość i wartość do ustawienia.
+Akcesory właściwości są wymagane na potrzeby dostępu do właściwości możliwej do wiązania składni właściwości. `Get` Akcesor powinna zwrócić wartość, która jest zawarta w odpowiedniej właściwości możliwej do wiązania. Można to osiągnąć przez wywołanie metody [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) metody, przekazując identyfikatora właściwości możliwej do wiązania, na którym ma zostać pobrana wartość, a następnie rzutowanie wynik na wymagany typ. `Set` Dostępu należy określić wartość odpowiedniej właściwości możliwej do wiązania. Można to osiągnąć przez wywołanie metody [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody, przekazując identyfikatora właściwości możliwej do wiązania, dla której chcesz ustawić wartość i wartość do ustawienia.
 
 Poniższy przykład kodu pokazuje metody dostępu dla `EventName` właściwości możliwej do wiązania:
 
@@ -89,9 +89,9 @@ public string EventName {
 
 ### <a name="consuming-a-bindable-property"></a>Korzystanie z właściwości możliwej do wiązania
 
-Po utworzeniu właściwości możliwej do wiązania, mogą być używane z XAML lub kodu. W języku XAML jest to osiągane przez deklarowanie przestrzeni nazw z prefiksem z deklaracji przestrzeni nazw wskazujący nazwę przestrzeni nazw CLR i opcjonalnie nazwy zestawu. Aby uzyskać więcej informacji, zobacz [przestrzeń nazw XAML](~/xamarin-forms/xaml/namespaces.md).
+Po utworzeniu właściwości możliwej do wiązania, mogą być używane z XAML lub kodu. W XAML jest to osiągane przez zadeklarowanie przestrzeni nazw z prefiksem, za pomocą deklaracji przestrzeni nazw, wskazującą nazwę przestrzeni nazw CLR i, opcjonalnie, nazwę zestawu. Aby uzyskać więcej informacji, zobacz [przestrzeni nazw XAML](~/xamarin-forms/xaml/namespaces.md).
 
-Poniższy przykład kodu pokazuje przestrzeni nazw XAML dla niestandardowego typu, który zawiera właściwości możliwej do wiązania, który jest zdefiniowany w tym samym zestawie co kod aplikacji, która odwołuje się do niestandardowego typu:
+Poniższy przykład kodu demonstruje typ niestandardowy, który zawiera właściwości możliwej do wiązania, która jest zdefiniowana w ramach tego samego zestawu jako kod aplikacji, który odwołuje się do niestandardowego typu przestrzeni nazw XAML:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EventToCommandBehavior" ...>
@@ -99,7 +99,7 @@ Poniższy przykład kodu pokazuje przestrzeni nazw XAML dla niestandardowego typ
 </ContentPage>
 ```
 
-Deklaracja przestrzeni nazw jest używana podczas ustawiania `EventName` właściwości możliwej do wiązania, jako wykazały w poniższym przykładzie kodu XAML:
+Deklaracja przestrzeni nazw jest używana podczas ustawiania `EventName` właściwości możliwej do wiązania, jakie wykazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ListView ...>
@@ -109,7 +109,7 @@ Deklaracja przestrzeni nazw jest używana podczas ustawiania `EventName` właśc
 </ListView>
 ```
 
-W poniższym przykładzie kodu pokazano równoważne kodu C#:
+Równoważny kod C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var listView = new ListView ();
@@ -123,15 +123,15 @@ listView.Behaviors.Add (new EventToCommandBehavior {
 
 ## <a name="advanced-scenarios"></a>Scenariusze zaawansowane
 
-Podczas tworzenia [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia, istnieje wiele parametrów opcjonalnych, które można ustawić na potrzeby scenariuszy z zaawansowanych właściwości możliwej do wiązania. Ta sekcja opisuje tych scenariuszy.
+Podczas tworzenia [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia, istnieje wiele parametrów opcjonalnych, które można ustawić właściwości możliwej do wiązania zaawansowanych scenariuszy. W tej sekcji przedstawiono tych scenariuszy.
 
 <a name="propertychanges" />
 
 ### <a name="detecting-property-changes"></a>Wykrywanie zmian właściwości
 
-A `static` zmienić właściwości wywołania zwrotnego metody mogą być rejestrowane w właściwości możliwej do wiązania, określając `propertyChanged` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Metody wywołania zwrotnego określony zostanie wywołany, gdy wartość właściwości możliwej do wiązania.
+A `static` metody wywołania zwrotnego z zmiany właściwości mogą być rejestrowane za pomocą właściwości możliwej do wiązania, określając `propertyChanged` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Po zmianie wartości właściwości możliwej do wiązania, zostanie wywołany metodą określonego wywołania zwrotnego.
 
-Poniższy kod przedstawia przykład sposobu `EventName` rejestrów właściwości możliwej do wiązania `OnEventNameChanged` metodę jako metoda wywołania zwrotnego z zmienić właściwości:
+Poniższy kod przedstawia przykładowy sposób, w jaki `EventName` rejestrów właściwości możliwej do wiązania `OnEventNameChanged` metodę jako metodę wywołania zwrotnego z zmiany właściwości:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
@@ -145,15 +145,15 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-W metodzie zmienić właściwości wywołania zwrotnego [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametr jest używany do określenia, które wystąpienie klasy będący właścicielem zgłosił zmianę i wartości dwa `object` reprezentują parametry starej i nowej wartości właściwości możliwej do wiązania.
+W przypadku zmiany właściwości Metoda wywołania zwrotnego [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametr jest używany do określenia, które wystąpienie klasy będącej właścicielem zgłosił zmianę i wartości dwóch `object` stare i nowe wartości reprezentują parametry właściwości możliwej do wiązania.
 
 <a name="validation" />
 
-### <a name="validation-callbacks"></a>Wywołania zwrotne walidacji
+### <a name="validation-callbacks"></a>Wywołania zwrotne weryfikacji
 
-A `static` weryfikacji metody wywołania zwrotnego może być zarejestrowany z właściwości możliwej do wiązania, określając `validateValue` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Metody wywołania zwrotnego określony zostanie wywołany, gdy wartość właściwości możliwej do wiązania.
+A `static` metody wywołania zwrotnego weryfikacji można zarejestrować za pomocą właściwości możliwej do wiązania, określając `validateValue` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Metodą określonego wywołania zwrotnego zostanie wywołany, gdy ustawiono wartość właściwości możliwej do wiązania.
 
-Poniższy kod przedstawia przykład sposobu `Angle` rejestrów właściwości możliwej do wiązania `IsValidValue` metodę jako metoda wywołania zwrotnego sprawdzania poprawności:
+Poniższy kod przedstawia przykładowy sposób, w jaki `Angle` rejestrów właściwości możliwej do wiązania `IsValidValue` metodę jako metodę wywołania zwrotnego weryfikacji:
 
 ```csharp
 public static readonly BindableProperty AngleProperty =
@@ -168,17 +168,17 @@ static bool IsValidValue (BindableObject view, object value)
 }
 ```
 
-Wywołania zwrotne walidacji są dostarczane z wartością i powinien zwrócić `true` czy wartość jest nieprawidłowa dla właściwości, w przeciwnym razie `false`. Wystąpił wyjątek zostanie wygenerowany, jeśli wywołanie zwrotne weryfikacji zwraca `false`, który powinien zostać obsłużony przez dewelopera. Typowy sposób użycia metody wywołania zwrotnego sprawdzania poprawności jest ograniczający wartości liczb całkowitych lub na symulacyjnych, gdy właściwość powiązania jest ustawiona. Na przykład `IsValidValue` metoda sprawdza, czy wartość właściwości jest `double` z zakresu od 0 do 360.
+Wywołania zwrotne sprawdzania poprawności są dostarczane z wartością i powinna zwrócić `true` czy wartość jest nieprawidłowa dla właściwości, w przeciwnym razie `false`. Wyjątek zostanie wygenerowany, jeśli funkcja zwraca wywołanie zwrotne weryfikacji `false`, powinno zostać obsłużone przez dewelopera. Typowym zastosowaniem metody wywołania zwrotnego weryfikacji jest ograniczając wartości liczb całkowitych lub wartości podwójnej precyzji, jeśli ustawiono właściwość może być powiązana. Na przykład `IsValidValue` metoda sprawdza, czy wartość właściwości jest `double` w zakresie od 0 do 360.
 
 <a name="coerce" />
 
-### <a name="coerce-value-callbacks"></a>Coerce — wartość wywołań zwrotnych
+### <a name="coerce-value-callbacks"></a>Wywołania zwrotne wartości wymuszonych
 
-A `static` wymuszone wartość metody wywołania zwrotnego może być zarejestrowany w usłudze właściwości możliwej do wiązania, określając `coerceValue` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Metody wywołania zwrotnego określony zostanie wywołany, gdy wartość właściwości możliwej do wiązania.
+A `static` coerce — wartość metody wywołania zwrotnego można zarejestrować za pomocą właściwości możliwej do wiązania, określając `coerceValue` parametr [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Po zmianie wartości właściwości możliwej do wiązania, zostanie wywołany metodą określonego wywołania zwrotnego.
 
-Przekształcić wartość wywołań zwrotnych są używane do wymuszenia ponownego oszacowania można powiązać właściwości po zmianie wartości właściwości. Na przykład wywołanie zwrotne wartość coerce można zapewnić wartość jedną właściwość powiązania nie jest większa niż wartość właściwości możliwej do wiązania innego.
+Coerce — wartość wywołania zwrotne służą do wymuszenia ponownej oceny, które można powiązać właściwości po zmianie wartości właściwości. Na przykład wywołanie zwrotne wartość coerce można upewnij się, że wartość jednej właściwości możliwej do wiązania nie większa niż wartość innej właściwości możliwej do wiązania.
 
-Poniższy kod przedstawia przykład sposobu `Angle` rejestrów właściwości możliwej do wiązania `CoerceAngle` metodę jako metoda wywołania zwrotnego wartość coerce:
+Poniższy kod przedstawia przykładowy sposób, w jaki `Angle` rejestrów właściwości możliwej do wiązania `CoerceAngle` metodę jako metodę wywołania zwrotnego wartość coerce:
 
 ```csharp
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
@@ -200,13 +200,13 @@ static object CoerceAngle (BindableObject bindable, object value)
 }
 ```
 
-`CoerceAngle` Metoda sprawdza wartość `MaximumAngle` właściwości oraz jeśli `Angle` jest większa niż wartość właściwości, przekształca wynik dane wartości `MaximumAngle` wartości właściwości.
+`CoerceAngle` Metoda sprawdza wartość `MaximumAngle` właściwości i, jeśli `Angle` wartość właściwości jest większa niż, przekształca wynik dane wartość `MaximumAngle` wartości właściwości.
 
 <a name="defaultfunc" />
 
 ### <a name="creating-a-default-value-with-a-func"></a>Tworzenie wartości domyślnej z Func
 
-A `Func` można zainicjować wartość domyślnej właściwości możliwej do wiązania, jak pokazano w poniższym przykładzie:
+Element `Func` może służyć do inicjacji wartości domyślnej właściwości możliwej do wiązania, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public static readonly BindableProperty SizeProperty =
@@ -214,17 +214,17 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator` Ustawiono parametr `Func` który wywołuje [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) metodę, aby zwrócić `double` reprezentujący nazwanego rozmiar czcionki, który jest używany w [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) na platformie macierzystego.
+`defaultValueCreator` Parametr ma wartość `Func` wywołującej [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) metodę, aby zwrócić `double` reprezentujący nazwane rozmiar czcionki, która jest używana na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) na platformy natywnej.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule podane wprowadzenie do właściwości, a także przedstawiono sposób tworzenia i korzystać z nich. Właściwości możliwej do wiązania jest specjalnym rodzajem właściwości, gdy wartość właściwości jest śledzony przez system właściwości platformy Xamarin.Forms.
+W tym artykule podano zapoznać się z wprowadzeniem do właściwości możliwej do wiązania i pokazano, jak utworzyć i korzystać z nich. Właściwości możliwej do wiązania to specjalny rodzaj właściwości, których wartość właściwości jest śledzona przez system właściwości zestawu narzędzi Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przestrzeń nazw XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Zdarzenia do zachowania polecenia (na przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [Zdarzenia na zachowanie polecenia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 - [Wywołanie zwrotne weryfikacji (przykład)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
 - [Coerce — wartość wywołania zwrotnego (przykład)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)

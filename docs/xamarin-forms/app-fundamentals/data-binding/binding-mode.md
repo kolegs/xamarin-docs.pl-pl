@@ -1,24 +1,24 @@
 ---
-title: Tryb wiązania platformy Xamarin.Forms
-description: W tym artykule wyjaśniono, jak przepływ informacji między źródłem a celem przy użyciu trybu powiązania, które jest określone z elementem członkowskim wyliczenia BindingMode. Dla każdej właściwości powiązania ma domyślny tryb powiązania, który wskazuje tryb obowiązywać, gdy ta właściwość jest element docelowy powiązanie danych.
+title: Tryb powiązania zestawu narzędzi Xamarin.Forms
+description: W tym artykule opisano sposób sterowania przepływem informacji w elemencie źródłowym i docelowym przy użyciu trybu powiązania, który jest określony za pomocą jest członkiem wyliczenia BindingMode. Dla każdej możliwej do wiązania właściwości ma domyślny tryb powiązania, co oznacza tryb obowiązuje w przypadku tej właściwości jest ona lokalizacją docelową powiązanie danych.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241819"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935670"
 ---
-# <a name="xamarinforms-binding-mode"></a>Tryb wiązania platformy Xamarin.Forms
+# <a name="xamarinforms-binding-mode"></a>Tryb powiązania zestawu narzędzi Xamarin.Forms
 
-W [poprzednim artykule](basic-bindings.md), **zamiast kodu — wiązanie** i **zamiast XAML — wiązanie** stron umieszczony `Label` z jego `Scale` właściwości powiązany z `Value` właściwość `Slider`. Ponieważ `Slider` wartość początkowa to 0, to spowodowane `Scale` właściwość `Label` na wartość 0, a nie na 1 i `Label` zniknęła.
+W [poprzednim artykule](basic-bindings.md), **powiązanie kodu zamiast** i **powiązanie XAML alternatywna** stron polecane `Label` z jego `Scale` właściwości powiązany z `Value` właściwość `Slider`. Ponieważ `Slider` początkowa wartość to 0, to spowodowane `Scale` właściwość `Label` należy ustawić na 0, a nie 1, a `Label` zniknął.
 
-W [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) próbki, **wstecznego powiązania** strony jest podobny do programów w poprzednim artykule, z wyjątkiem tego, że powiązanie danych został zdefiniowany w `Slider` , a nie na `Label`:
+W [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) próbki, **odwrotnego powiązania** strony jest podobny do programów w poprzednim artykule, z tą różnicą, że powiązanie danych jest zdefiniowany w `Slider` , a nie na `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -41,37 +41,37 @@ W [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/D
 </ContentPage>
 ```
 
-Na początku, to rozwiązanie może wydawać się wstecz: teraz `Label` jest źródłem powiązania danych i `Slider` jest elementem docelowym. Odwołania do powiązania `Opacity` właściwość `Label`, która ma wartość domyślną 1.
+Na początku, to może wydawać się wstecz: teraz `Label` jest źródłem powiązanie danych oraz `Slider` jest elementem docelowym. Odwołań do powiązań `Opacity` właściwość `Label`, który ma wartość domyślną 1.
 
-Zgodnie z oczekiwaniami może `Slider` jest ustawiana na wartość 1, z początkowej `Opacity` wartość `Label`. Jest to przedstawione na zrzucie ekranu z systemem iOS, po lewej stronie:
+Zgodnie z oczekiwaniami, `Slider` jest ustawiana na wartość 1, z początkowego `Opacity` wartość `Label`. Jest to przedstawione na zrzucie ekranu systemu iOS po lewej stronie:
 
-[![Wstecznego powiązania](binding-mode-images/reversebinding-small.png "wstecznego powiązania")](binding-mode-images/reversebinding-large.png#lightbox "wstecznego powiązania")
+[![Odwróć powiązania](binding-mode-images/reversebinding-small.png "odwrotnego powiązania")](binding-mode-images/reversebinding-large.png#lightbox "odwrotnego powiązania")
 
-Ale może być oczekiwano, że `Slider` nadal działa, jak pokazują zrzuty ekranu Android i platformy uniwersalnej systemu Windows. Prawdopodobnie sugeruje, że powiązanie danych działa lepiej, gdy `Slider` jest cel wiązania zamiast `Label` ponieważ inicjowanie działa tak, jak firma Microsoft może spodziewać się.
+Jednak może być oczekiwano, że `Slider` będzie nadal działać, ponieważ pokazują, zrzuty ekranu dla systemów Android i platformy uniwersalnej systemu Windows. Zajmuje to nieco sugeruje, że powiązanie danych działa lepiej, gdy `Slider` jest cel wiążący zamiast `Label` ponieważ inicjalizacja działa jak moglibyśmy oczekiwać.
 
-Różnica między **wstecznego powiązania** próbki i wcześniejszych próbek obejmuje *tryb wiązania*.
+Różnica między **odwrotnego powiązania** próbki i wcześniejszych przykładów obejmuje *tryb powiązania*.
 
 ## <a name="the-default-binding-mode"></a>Domyślny tryb powiązania
 
-Określono tryb powiązanie z elementem członkowskim o [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) wyliczenie:
+Określono tryb powiązanie z elementem członkowskim [ `BindingMode` ](xref:Xamarin.Forms.BindingMode) wyliczenia:
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
-- [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; dane są zapisywane obu kierunkach między źródłem a celem
-- [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; dane są zapisywane ze źródła do docelowego
-- [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; dane przechodzą z miejsca docelowego do źródła
-- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; dane będą wysyłane ze źródła do docelowego, ale tylko wtedy, gdy `BindingContext` zmiany (new platformy Xamarin.Forms 3.0)
+- [`Default`](xref:Xamarin.Forms.BindingMode.Default)
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; dane są umieszczane obu kierunkach między źródłem a celem
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; dane są umieszczane ze źródła do docelowego
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; dane są umieszczane w docelowym ze źródłem
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; dane będą wysyłane ze źródła do docelowego, ale tylko wtedy, gdy `BindingContext` zmiany (nowe przy użyciu zestawu narzędzi Xamarin.Forms 3.0)
 
-Dla każdej właściwości powiązania ma domyślny tryb, który jest ustawiana po utworzeniu można powiązać właściwości powiązania i która jest dostępna z [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) właściwość `BindableProperty` obiektu. To domyślny tryb powiązanie wskazuje tryb obowiązywać, gdy ta właściwość jest element docelowy powiązanie danych.
+Dla każdej możliwej do wiązania właściwości ma domyślny tryb, który jest ustawiony, po utworzeniu właściwości możliwej do wiązania powiązania i który jest dostępny z [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) właściwość `BindableProperty` obiektu. To domyślny tryb powiązania wskazuje tryb obowiązuje, gdy ta właściwość jest ona lokalizacją docelową powiązanie danych.
 
-Domyślny tryb powiązanie dla większości właściwości `Rotation`, `Scale`, i `Opacity` jest `OneWay`. Gdy te właściwości są elementy docelowe wiązania danych, ze źródła jest ustawiona właściwość target.
+Domyślny tryb powiązania większość właściwości, takie jak `Rotation`, `Scale`, i `Opacity` jest `OneWay`. Jeśli te właściwości są cele powiązanie danych, właściwość docelowego ma wartość ze źródła.
 
-Jednakże domyślny tryb powiązania `Value` właściwość `Slider` jest `TwoWay`. Oznacza to, że w przypadku `Value` właściwość jest element docelowy wiązania danych, a następnie element docelowy jest ustawiany w źródle (normalnie), ale źródła znajduje się również z elementem docelowym. Jest to, co umożliwia `Slider` ustawiono z początkowej `Opacity` wartość.
+Jednakże domyślny tryb powiązania `Value` właściwość `Slider` jest `TwoWay`. Oznacza to, że w przypadku `Value` właściwości jest celu wiązania danych, a następnie element docelowy jest ustawiony (standardowe) ze źródła, ale źródła znajduje się również z obiektu docelowego. Jest to, co umożliwia `Slider` należy ustawić z początkowego `Opacity` wartość.
 
-To powiązanie dwukierunkowe może wydawać się, aby utworzyć nieskończoną pętlę, ale który nie jest realizowane. Właściwości nie można sygnalizować zmiany właściwości chyba, że faktycznie zmiany właściwości. Zapobiega to nieskończoną pętlę.
+To powiązanie dwukierunkowe mogą wydawać się utworzyć wejścia w nieskończoną pętlę, ale nie mają miejsce. Właściwości możliwe do wiązania sygnalizuje zmianę właściwości, chyba że faktycznie zmienia właściwość. Zapobiega to nieskończoną pętlę.
 
-### <a name="two-way-bindings"></a>Dwukierunkowego powiązania
+### <a name="two-way-bindings"></a>Powiązania dwukierunkowego
 
-Najbardziej właściwości ma domyślny tryb powiązania z `OneWay` , lecz następujące właściwości mają domyślny tryb powiązania z `TwoWay`:
+Najbardziej możliwej do wiązania właściwości mają domyślny tryb powiązania z `OneWay` , ale następujące właściwości ma domyślny tryb powiązania z `TwoWay`:
 
 - `Date` Właściwość `DatePicker`
 - `Text` Właściwość `Editor`, `Entry`, `SearchBar`, i `EntryCell`
@@ -83,36 +83,36 @@ Najbardziej właściwości ma domyślny tryb powiązania z `OneWay` , lecz nast�
 - `On` Właściwość `SwitchCell`
 - `Time` Właściwość `TimePicker`
 
-Te właściwości określonym są zdefiniowane jako `TwoWay` bardzo dobre przyczyny:
+Te właściwości określonego są definiowane jako `TwoWay` bardzo dobre przyczyny:
 
-W przypadku używania powiązań danych z architekturą aplikacji Model-View-ViewModel (MVVM) Klasa ViewModel jest źródła danych powiązania i widoku, który składa się z widoków, takich jak `Slider`, elementów docelowych powiązania danych. Podobne powiązania MVVM **wstecznego powiązania** próbki więcej niż w poprzednich przykładach powiązania. Jest bardzo prawdopodobne, czy chcesz, aby każdy widok na stronie, aby można było zainicjować o wartości odpowiadających im właściwości w ViewModel, ale zmiany widoku również wpływać na właściwość ViewModel.
+Podczas używania powiązań danych przy użyciu architektury Model-View-ViewModel (MVVM) w aplikacji, klas ViewModel jest źródle powiązanie danych oraz widoku, który składa się z widoków, takich jak `Slider`, są cele powiązanie danych. Powiązania MVVM przypominają **odwrotnego powiązania** przykładowe więcej niż powiązania w poprzednich przykładach. Jest bardzo prawdopodobne, że chcesz, aby każdy widok na stronie, aby można zainicjować przy użyciu wartości odpowiednich właściwości ViewModel, ale zmiany w widoku również wpływać na właściwość ViewModel.
 
-Właściwości z trybów powiązanie domyślnej `TwoWay` są te właściwości, które są najbardziej mogą być używane w scenariuszach MVVM.
+Właściwości, za pomocą domyślnego powiązania tryby `TwoWay` tych właściwości, które są najbardziej mogą być używane w scenariuszach MVVM.
 
-### <a name="one-way-to-source-bindings"></a>Jednorazowe-Way-do-powiązania źródła
+### <a name="one-way-to-source-bindings"></a>Powiązania jeden-Way-do Source
 
-Właściwości tylko do odczytu ma domyślny tryb powiązania z `OneWayToSource`. Istnieje tylko jedna właściwość można powiązać odczytu/zapisu, która ma domyślny tryb powiązania z `OneWayToSource`:
+Tylko do odczytu, które można powiązać właściwości mają domyślny tryb powiązania z `OneWayToSource`. Istnieje tylko jeden właściwości możliwej do wiązania odczytu/zapisu, która ma domyślny tryb powiązania z `OneWayToSource`:
 
 - `SelectedItem` Właściwość `ListView`
 
-Decyzja jest powiązanie na `SelectedItem` powinno spowodować ustawienie źródle powiązania właściwości. Przykładem w dalszej części tego artykułu zastąpienia tego zachowania.
+Uzasadnienie jest powiązaniu w elemencie `SelectedItem` właściwość powinna być rozwiązywana we ustawienie źródło wiążące. Przykładem w dalszej części tego artykułu zastąpienia tego zachowania.
 
 ### <a name="one-time-bindings"></a>Jednorazowe powiązania
 
-Kilka właściwości ma domyślny tryb powiązania z `OneTime`. Są to:
+Kilka właściwości mają domyślny tryb powiązania z `OneTime`. Są to:
 
 - `IsTextPredictionEnabled` Właściwość `Entry`
 - `Text`, `BackgroundColor`, i `Style` właściwości `Span`.
 
-Docelowa właściwości z trybu wiązania `OneTime` są aktualizowane tylko wtedy, gdy zmienia kontekstu powiązania. Dla wiązania na te właściwości obiektu docelowego upraszcza to infrastruktura powiązań, ponieważ nie jest to niezbędne do monitorowania zmian źródła właściwości.
+Docelowe właściwości z trybu wiązania `OneTime` są aktualizowane tylko wtedy, gdy zmieni się kontekstu powiązania. Dla powiązania na te właściwości obiektu docelowego upraszcza to infrastruktura powiązań, ponieważ nie jest niezbędne do monitorowania zmian właściwości źródła.
 
-## <a name="viewmodels-and-property-change-notifications"></a>ViewModels i powiadomień o zmianie właściwości
+## <a name="viewmodels-and-property-change-notifications"></a>Modele widoków i powiadomień o zmianie właściwości
 
-**Prosty selektor kolorów** strony zademonstrowano użycie prostego ViewModel. Powiązania danych Zezwalaj użytkownikowi na wybranie koloru przy użyciu trzech `Slider` elementy odcień, nasycenie i jasność.
+**Prosty selektor kolorów** strony zademonstrowano użycie prostego ViewModel. Powiązania danych Zezwalaj użytkownikowi na wybranie koloru przy użyciu trzech `Slider` elementy na odcień, nasycenie i jasność.
 
-ViewModel jest źródłem powiązania danych. Jest ViewModel *nie* zdefiniować właściwości, ale implementuje mechanizm powiadomień, który umożliwia infrastruktura powiązań otrzymywać powiadomienia, gdy wartość właściwości. Jest to mechanizm powiadamiania [ `INotifyPropertyChanged` ](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) interfejs, który definiuje jedną właściwość o nazwie [ `PropertyChanged` ](https://developer.xamarin.com/api/event/System.ComponentModel.INotifyPropertyChanged.PropertyChanged/). Klasa, która implementuje ten interfejs zwykle generowane zdarzenie, gdy jeden z jego właściwości publiczne zmienia wartość. Zdarzenie nie trzeba uruchamiany, jeśli właściwość nigdy nie zmieni się. ( `INotifyPropertyChanged` Interfejs również jest implementowany przez `BindableObject` i `PropertyChanged` zdarzenie jest wywoływane zawsze, gdy zmienia się wartość właściwości możliwej do wiązania.)
+ViewModel jest źródłem powiązanie danych. Jest ViewModel *nie* zdefiniować właściwości możliwej do wiązania, ale go zaimplementować mechanizm powiadomień, który umożliwia infrastruktura powiązań otrzymywać powiadomienia po zmianie wartości właściwości. Ten mechanizm powiadomień jest [ `INotifyPropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged) interfejs, który definiuje jedną właściwość o nazwie [ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged). Klasa, która implementuje ten interfejs jest ogólnie wyzwala zdarzenie, gdy jeden z jego właściwości publiczne zmienia wartość. Zdarzenie nie trzeba być uruchomione, jeśli właściwość nigdy się nie zmienia. ( `INotifyPropertyChanged` Interfejsu jest również implementowana przez `BindableObject` i `PropertyChanged` zdarzenie jest wywoływane zawsze wtedy, gdy zmieni się wartość właściwości możliwej do wiązania.)
 
-`HslColorViewModel` Klasy definiuje właściwości pięć: `Hue`, `Saturation`, `Luminosity`, i `Color` właściwości są powiązane. Gdy jeden z trzech wartości zmian, składniki koloru `Color` ponownego obliczania właściwości i `PropertyChanged` zdarzenia są generowane dla wszystkich czterech właściwości:
+`HslColorViewModel` Klasy definiuje właściwości pięć: `Hue`, `Saturation`, `Luminosity`, i `Color` właściwości są powiązane. Gdy jeden z trzech kolorów składniki wartość zmiany `Color` ponownego obliczania właściwości i `PropertyChanged` zdarzenia są uruchamiane wszystkie cztery właściwości:
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -206,13 +206,13 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-Gdy `Color` zmiany właściwości, statycznych `GetNearestColorName` metody w `NamedColor` klasy (zawarte w **DataBindingDemos** rozwiązania) uzyskuje najbliższy kolor nazwany i ustawia `Name` właściwości. To `Name` właściwość ma prywatnej `set` dostępu, więc nie można ustawić z poza klasą.
+Podczas `Color` zmiany właściwości, statycznej `GetNearestColorName` method in Class metoda `NamedColor` klasy (dołączone do dodatków **DataBindingDemos** rozwiązania) uzyskuje najbliższego kolor nazwany i ustawia `Name` właściwości. To `Name` właściwość ma prywatnej `set` dostępu, więc nie można ustawić z poza klasy.
 
-Gdy ViewModel jest ustawiona jako źródło powiązania, infrastruktura powiązań dołącza program obsługi do `PropertyChanged` zdarzeń. W ten sposób powiązania można otrzymywać powiadomienia o zmianach właściwości, a następnie można ustawić właściwości obiektu docelowego ze zmienionymi wartościami.
+Gdy ViewModel jest ustawiona jako źródło powiązania, infrastruktura powiązań dołącza obsługę do `PropertyChanged` zdarzeń. W ten sposób powiązania może zostać poinformowany o zmiany właściwości, a następnie można ustawić właściwości obiektu docelowego ze zmienionymi wartościami.
 
-Jednak gdy właściwość target (lub `Binding` definicji na właściwość target) ma `BindingMode` z `OneTime`, nie jest niezbędna dla infrastruktury powiązanie dołączyć obsługi na `PropertyChanged` zdarzeń. Właściwość docelowa jest aktualizowany tylko wtedy, gdy `BindingContext` zmian i nie samej właściwości źródła zmiany.
+Jednak gdy właściwość target (lub `Binding` definicji na właściwość docelowa) ma `BindingMode` z `OneTime`, nie jest konieczne infrastruktura powiązań dołączyć program obsługi na `PropertyChanged` zdarzeń. Właściwość docelowa jest aktualizowany tylko wtedy, gdy `BindingContext` zmiany, a nie samej właściwości źródła zmiany.
 
-**Prosty selektor kolorów** tworzy plik XAML `HslColorViewModel` w słowniku zasobów i inicjuje strony `Color` właściwości. `BindingContext` Właściwość `Grid` ustawiono `StaticResource` powiązanie rozszerzenia, aby odwołać tego zasobu:
+**Prosty selektor kolorów** plik XAML `HslColorViewModel` w słowniku zasobów i inicjuje strony `Color` właściwości. `BindingContext` Właściwość `Grid` ustawiono `StaticResource` powiązanie rozszerzenie, aby odwoływać się do tego zasobu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -256,17 +256,17 @@ Jednak gdy właściwość target (lub `Binding` definicji na właściwość targ
 </ContentPage>
 ```
 
-`BoxView`, `Label`i trzy `Slider` widoków dziedziczy kontekstu powiązania z `Grid`. Widoki te są wszystkie elementy docelowe powiązania, które odwołują się do właściwości źródła w ViewModel. Dla `Color` właściwość `BoxView`i `Text` właściwość `Label`, powiązania danych są `OneWay`: właściwości w widoku są ustawiane przy użyciu właściwości w ViewModel.
+`BoxView`, `Label`i trzy `Slider` widoków dziedziczy kontekstu powiązania z `Grid`. Widoki te są wszystkie elementy docelowe powiązania odwołujące się do właściwości źródła w ViewModel. Dla `Color` właściwość `BoxView`i `Text` właściwość `Label`, powiązań danych są `OneWay`: właściwości w widoku są ustawiane przy użyciu właściwości w ViewModel.
 
-`Value` Właściwość `Slider`, jednak jest `TwoWay`. Dzięki temu każda `Slider` należy ustawić z ViewModel, a także do ViewModel ustawiono z każdej `Slider`.
+`Value` Właściwość `Slider`, jest jednak `TwoWay`. Dzięki temu każda `Slider` należy ustawić z ViewModel, a także do ViewModel należy ustawić każdego z nich `Slider`.
 
-Po pierwszym uruchomieniu programu `BoxView`, `Label`i trzy `Slider` elementy są wszystkie zestaw na podstawie ViewModel oparte na początkowej `Color` właściwość ViewModel zostało uruchomione. Przedstawiono to w zrzut ekranu dla systemu iOS po lewej stronie:
+Po uruchomieniu program `BoxView`, `Label`i trzy `Slider` elementy są gotowi z ViewModel, w oparciu o początkowej `Color` właściwością po utworzeniu wystąpienia ViewModel. Jest to przedstawione na zrzucie ekranu systemu iOS po lewej stronie:
 
-[![Wybór koloru proste](binding-mode-images/simplecolorselector-small.png "selektor kolorów proste")](binding-mode-images/simplecolorselector-large.png#lightbox "selektor kolorów proste")
+[![Selektor kolorów proste](binding-mode-images/simplecolorselector-small.png "selektor kolorów proste")](binding-mode-images/simplecolorselector-large.png#lightbox "selektor kolorów prosty")
 
-Jak manipulowania suwaki, `BoxView` i `Label` są aktualizowane w związku z tym, jak pokazano na zrzutach ekranu Android i platformy uniwersalnej systemu Windows.
+Ponieważ manipulowanie suwaki, `BoxView` i `Label` są aktualizowane w związku z tym, jak pokazano na zrzutach ekranu dla systemów Android i platformy uniwersalnej systemu Windows.
 
-Tworzenie wystąpień ViewModel w słowniku zasobów jest jeden typowym podejściem. Istnieje również możliwość utworzenia wystąpienia ViewModel w tagach element właściwości dla `BindingContext` właściwości. W **prosty selektor kolorów** XAML pliku, spróbuj usunąć `HslColorViewModel` ze słownika zasobów i ustaw ją na `BindingContext` właściwość `Grid` podobnie do następującej:
+Utworzenie wystąpienia ViewModel w słowniku zasobów jest jeden typowym podejściem. Istnieje również możliwość utworzenia wystąpienia ViewModel w tagach element właściwości dla `BindingContext` właściwości. W **prosty selektor kolorów** XAML pliku, spróbuj usunąć `HslColorViewModel` ze słownika zasobów i ustaw ją na `BindingContext` właściwość `Grid` następująco:
 
 ```xaml
 <Grid>
@@ -279,13 +279,13 @@ Tworzenie wystąpień ViewModel w słowniku zasobów jest jeden typowym podejśc
 </Grid>
 ```
 
-Kontekst powiązania można ustawić w różny sposób. Czasami plik CodeBehind tworzy ViewModel i ustawia ją na `BindingContext` właściwości strony. Są to wszystkie ważne metod.
+Różne sposoby, można ustawić kontekstu powiązania. Czasami pliku związanego z kodem ViewModel tworzy i ustawia ją na `BindingContext` właściwości strony. Są prawidłowymi podejścia.
 
-## <a name="overriding-the-binding-mode"></a>Zastępowanie tryb wiązania
+## <a name="overriding-the-binding-mode"></a>Zastępowanie tryb powiązania
 
-Jeśli domyślny tryb powiązania dla właściwości docelowej nie jest odpowiedni dla powiązania danych, istnieje możliwość zastąpienia go przez ustawienie [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.Mode/) właściwość `Binding` (lub [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Mode/) właściwość `Binding` — rozszerzenie znaczników) do jednego z elementów członkowskich `BindingMode` wyliczenia.
+Jeśli domyślny tryb powiązania na właściwość docelowa nie jest odpowiedni dla powiązania danych, istnieje możliwość zastąpienia go przez ustawienie [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) właściwość `Binding` (lub [ `Mode` ](xref:Xamarin.Forms.Xaml.BindingExtension.Mode) właściwość `Binding` — rozszerzenie znaczników) do jednego z elementów członkowskich `BindingMode` wyliczenia.
 
-Jednak ustawienie `Mode` właściwości `TwoWay` nie zawsze działa zgodnie z oczekiwaniami może. Na przykład, spróbuj zmodyfikować **powiązania XAML alternatywna** pliku XAML, aby uwzględnić `TwoWay` w definicji powiązania:
+Jednak ustawienie `Mode` właściwości `TwoWay` nie zawsze działa zgodnie z oczekiwaniami. Na przykład spróbuj zmodyfikować **powiązania XAML alternatywna** pliku XAML, aby uwzględnić `TwoWay` w definicji powiązania:
 
 ```xaml
 <Label Text="TEXT"
@@ -297,9 +297,9 @@ Jednak ustawienie `Mode` właściwości `TwoWay` nie zawsze działa zgodnie z oc
                        Mode=TwoWay}" />
 ```
 
-Można się spodziewać który `Slider` czy zainicjowany do wartości początkowej `Scale` właściwość, która jest 1, ale który nie jest realizowane. Gdy `TwoWay` powiązania jest zainicjowany, element docelowy jest ustawiany ze źródła, co oznacza, że `Scale` właściwość jest ustawiona na `Slider` domyślna wartość 0. Podczas `TwoWay` powiązania jest ustawiona na `Slider`, a następnie `Slider` jest ustawiany w źródle.
+Można się spodziewać, `Slider` będzie inicjowane na wartość początkową `Scale` właściwość, która jest 1, ale nie mają miejsce. Gdy `TwoWay` powiązania jest zainicjowany, element docelowy jest ustawiony ze źródła, co oznacza, że `Scale` właściwość jest ustawiona na `Slider` domyślna wartość 0. Gdy `TwoWay` powiązania jest ustawiona na `Slider`, a następnie `Slider` jest początkowo ustawiona jako ze źródła.
 
-Można ustawić trybu powiązania `OneWayToSource` w **powiązania XAML alternatywna** próbki:
+Można ustawić trybu wiązania `OneWayToSource` w **powiązania XAML alternatywna** próbki:
 
 ```xaml
 <Label Text="TEXT"
@@ -313,9 +313,9 @@ Można ustawić trybu powiązania `OneWayToSource` w **powiązania XAML alternat
 
 Teraz `Slider` jest inicjowany do 1 (domyślna wartość `Scale`) ale manipulowania `Slider` nie ma wpływu na `Scale` właściwości, więc nie jest to bardzo przydatne.
 
-Przydatne stosowania Zastępowanie domyślnego trybu powiązania z `TwoWay` obejmuje `SelectedItem` właściwość `ListView`. Jest to domyślny tryb powiązania `OneWayToSource`. Podczas wiązania z danymi jest ustawiona na `SelectedItem` właściwości, aby odwołać właściwość źródła w ViewModel tej właściwości source przybiera wartość z `ListView` zaznaczenia. Jednak w pewnych okolicznościach, można także `ListView` zostać zainicjowany z ViewModel.
+Bardzo przydatne stosowania Zastępowanie domyślnego trybu powiązania z `TwoWay` obejmuje `SelectedItem` właściwość `ListView`. Jest to domyślny tryb powiązania `OneWayToSource`. Gdy powiązanie danych jest ustawiona na `SelectedItem` właściwości w celu odwołania właściwość źródła w ViewModel tej właściwości źródła zostanie ustawiony z `ListView` zaznaczenia. Jednak w niektórych przypadkach można także `ListView` z ViewModel.
 
-**Ustawień przykładowych** strony pokazuje tej metody. Ta strona reprezentuje prostych implementacji ustawień aplikacji, które bardzo często są definiowane w ViewModel, takich jak ta `SampleSettingsViewModel` pliku:
+**Ustawień przykładowych** strony pokazano tej techniki. Ta strona przedstawia proste wdrażanie ustawienia aplikacji, które bardzo często są zdefiniowane w ViewModel, na przykład to `SampleSettingsViewModel` pliku:
 
 ```csharp
 public class SampleSettingsViewModel : INotifyPropertyChanged
@@ -409,13 +409,13 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-Każde ustawienie aplikacji jest właściwością, która jest zapisywany do słownika właściwości platformy Xamarin.Forms w metodę o nazwie `SaveState` i załadowany z tego słownika w konstruktorze. W dolnej części tej klasy są dwie metody, które pomagają usprawnić ViewModels i należy je mniej podatne na błędy. `OnPropertyChanged` Metoda u dołu ma parametr opcjonalny, który ma ustawioną właściwość wywołującego. Pozwala to uniknąć błędów pisowni, określając nazwę właściwości jako ciąg.
+Każde ustawienie aplikacji jest właściwością, który jest zapisywany do słownika właściwości zestawu narzędzi Xamarin.Forms w metodę o nazwie `SaveState` i załadowany z tego słownika w konstruktorze. W dolnej części tej klasy są dwie metody, które pomagają uprościć modele widoków były mniej podatny na błędy. `OnPropertyChanged` Metoda u dołu ma parametr opcjonalny jest ustawiony do wywoływania właściwości. Pozwala to uniknąć błędów pisowni, określając nazwę właściwości jako ciąg.
 
-`SetProperty` Metody w klasie jest nawet więcej: porównuje wartość, która jest ustawiona we właściwości z wartością przechowywane jako pole i tylko wywołuje `OnPropertyChanged` po dwóch wartości nie są takie same.
+`SetProperty` Metody w klasie ma jeszcze większe: porównuje wartość, która jest ustawiana na właściwość z wartością przechowywaną jako pole, a tylko wywołuje `OnPropertyChanged` gdy dwie wartości nie są równe.
 
-`SampleSettingsViewModel` Klasa definiuje dwie właściwości kolor tła: `BackgroundNamedColor` właściwość jest typu `NamedColor`, która klasa znajduje się również w **DataBindingDemos** rozwiązania. `BackgroundColor` Właściwość jest typu `Color`i są uzyskiwane z `Color` właściwość `NamedColor` obiektu.
+`SampleSettingsViewModel` Klasa definiuje dwie właściwości koloru tła: `BackgroundNamedColor` właściwość jest typu `NamedColor`, której klasą znajdują się również w **DataBindingDemos** rozwiązania. `BackgroundColor` Właściwość jest typu `Color`i są uzyskiwane z `Color` właściwość `NamedColor` obiektu.
 
-`NamedColor` Klasy używa odbicia .NET wyliczyć wszystkie statyczne publiczne pola platformy Xamarin.Forms `Color` struktury i przechowywać je z ich nazwy w kolekcji dostępny z statycznych `All` właściwości:
+`NamedColor` Klasa używa odbicia .NET można wyliczyć wszystkie pola publiczne statyczne w Xamarin.Forms `Color` struktury i przechowywać je przy użyciu ich nazw, w kolekcji dostępne z statycznej `All` właściwości:
 
 ```csharp
 public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
@@ -523,7 +523,7 @@ public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
 }
 ```
 
-`App` Klasy w **DataBindingDemos** projekt definiuje właściwość o nazwie `Settings` typu `SampleSettingsViewModel`. Ta właściwość jest inicjowana po `App` tworzenia wystąpienia klasy i `SaveState` metoda jest wywoływana, gdy `OnSleep` metoda jest wywoływana:
+`App` Klasy w **DataBindingDemos** projektu definiuje właściwość o nazwie `Settings` typu `SampleSettingsViewModel`. Ta właściwość jest inicjowana po `App` tworzenia wystąpienia klasy i `SaveState` metoda jest wywoływana, gdy `OnSleep` metoda jest wywoływana:
 
 ```csharp
 public partial class App : Application
@@ -557,9 +557,9 @@ public partial class App : Application
 }
 ```
 
-Aby uzyskać więcej informacji na temat metod cyklem życia aplikacji, zobacz artykuł [ **cykl życia aplikacji**](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
+Aby uzyskać więcej informacji na temat metody cyklu życia aplikacji, zobacz artykuł [ **cykl życia aplikacji**](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
 
-Niemal wszystkich innych urządzeń jest obsługiwane w **SampleSettingsPage.xaml** pliku. `BindingContext` Strony jest ustawiany za pomocą `Binding` — rozszerzenie znaczników: źródło powiązania jest statycznych `Application.Current` właściwość, która jest wystąpieniem programu `App` klasy w projekcie i `Path` ma ustawioną wartość `Settings` Właściwość, która jest `SampleSettingsViewModel` obiektu:
+Prawie wszystko, co jeszcze jest obsługiwana w **SampleSettingsPage.xaml** pliku. `BindingContext` Strony można ustawić przy użyciu `Binding` — rozszerzenie znaczników: źródło wiążące jest statyczna `Application.Current` właściwość, która jest wystąpienie elementu `App` klasy w projekcie i `Path` jest ustawiona na `Settings` Właściwość, która jest `SampleSettingsViewModel` obiektu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -640,19 +640,19 @@ Niemal wszystkich innych urządzeń jest obsługiwane w **SampleSettingsPage.xam
 </ContentPage>
 ```
 
-Wszystkie elementy podrzędne strony dziedziczy kontekstu powiązania. Większość pozostałych powiązaniach na tej stronie mają właściwości w `SampleSettingsViewModel`. `BackgroundColor` Właściwość jest używana do ustawiania `BackgroundColor` właściwość `StackLayout`i `Entry`, `DatePicker`, `Switch`, i `Stepper` właściwości są powiązane z właściwościami w ViewModel.
+Wszystkie elementy podrzędne strony dziedziczy kontekstu powiązania. Większość pozostałych powiązaniach na tej stronie są do właściwości w `SampleSettingsViewModel`. `BackgroundColor` Właściwość jest używana do ustawiania `BackgroundColor` właściwość `StackLayout`i `Entry`, `DatePicker`, `Switch`, i `Stepper` właściwości są powiązane z innymi właściwościami w ViewModel.
 
-`ItemsSource` Właściwość `ListView` ustawiono statycznych `NamedColor.All` właściwości. Wypełnia to `ListView` ze wszystkimi `NamedColor` wystąpień. Dla każdego elementu w `ListView`, kontekst powiązania dla elementu ustawiono `NamedColor` obiektu. `BoxView` i `Label` w `ViewCell` są powiązane z właściwościami w `NamedColor`.
+`ItemsSource` Właściwość `ListView` jest ustawiona na statyczną `NamedColor.All` właściwości. To wypełnia `ListView` ze wszystkimi `NamedColor` wystąpień. Dla każdego elementu w `ListView`, kontekstu powiązania dla elementu jest ustawiona na `NamedColor` obiektu. `BoxView` i `Label` w `ViewCell` są powiązane z właściwościami w `NamedColor`.
 
-`SelectedItem` Właściwość `ListView` jest typu `NamedColor`i jest powiązany z `BackgroundNamedColor` właściwości `SampleSettingsViewModel`:
+`SelectedItem` Właściwość `ListView` typu `NamedColor`i jest powiązana z `BackgroundNamedColor` właściwość `SampleSettingsViewModel`:
 
 ```xaml
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-Domyślny tryb powiązania `SelectedItem` jest `OneWayToSource`, który ustawia właściwość ViewModel z wybranego elementu. `TwoWay` Tryb umożliwia `SelectedItem` zostać zainicjowany z ViewModel.
+Domyślny tryb powiązania `SelectedItem` jest `OneWayToSource`, która ustawia właściwość ViewModel z wybranego elementu. `TwoWay` Tryb umożliwia `SelectedItem` z ViewModel.
 
-Jednakże, gdy `SelectedItem` jest ustawiony w ten sposób `ListView` nie jest przewijane automatycznie do zaznaczonego elementu. Niezbędne jest trochę kodu w pliku związanym z kodem:
+Jednak gdy `SelectedItem` jest ustawiana w ten sposób `ListView` nie automatycznie przewijać w celu wyświetlenia wybranego elementu. Niezbędne jest niewielkiej ilości kodu w pliku związanym z kodem:
 
 ```csharp
 public partial class SampleSettingsPage : ContentPage
@@ -671,13 +671,13 @@ public partial class SampleSettingsPage : ContentPage
 }
 ```
 
-Zrzut ekranu dla systemu iOS po lewej stronie zawiera program po pierwszym uruchomieniu. Konstruktor w `SampleSettingsViewModel` inicjuje kolor tła na kolor biały i jest wybranej `ListView`:
+Zrzut ekranu z systemem iOS, po lewej stronie zawiera program podczas pierwszego uruchomienia. Konstruktor w `SampleSettingsViewModel` inicjuje kolor tła na biały i to, co jest wybrane w `ListView`:
 
-[![Ustawienia przykładowe](binding-mode-images/samplesettings-small.png "ustawienia przykładowe")](binding-mode-images/samplesettings-large.png#lightbox "ustawienia przykładowe")
+[![Przykładowe ustawienia](binding-mode-images/samplesettings-small.png "przykładowe ustawienia")](binding-mode-images/samplesettings-large.png#lightbox "przykładowe ustawienia")
 
-Inne dwa zrzuty ekranu pokazują zmienionych ustawień. Eksperymentując z tej strony, pamiętaj, aby umieścić w stan uśpienia lub zakończenia działania na urządzeniu lub emulatorze, który jest uruchomiony program. Nie spowoduje zakończenie programu Visual Studio debugger `OnSleep` zastąpienia w `App` klasy do wywołania.
+Inne dwa zrzuty ekranu Pokaż ustawienia zmieniony. Eksperymentując z tą stroną, pamiętaj przełączyć w tryb uśpienia lub zakończenie go na urządzeniu lub w emulatorze, czy jest uruchomiony program. Kończenie programu, używając debugera programu Visual Studio nie będzie powodował `OnSleep` zastąpić w `App` klasy do wywołania.
 
-W kolejnym artykule zobaczysz sposobu określania [ **ciągu formatowania** ](string-formatting.md) powiązań danych, które są ustawione na `Text` właściwość `Label`.
+W następnym artykule pokazano, jak określić [ **formatowanie ciągów** ](string-formatting.md) nad wiązaniami danych, które są ustawione na `Text` właściwość `Label`.
 
 
 ## <a name="related-links"></a>Linki pokrewne

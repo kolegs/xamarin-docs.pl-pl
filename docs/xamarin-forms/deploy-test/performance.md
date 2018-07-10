@@ -1,65 +1,65 @@
 ---
-title: Wydajności platformy Xamarin.Forms
-description: Istnieje wiele technik zwiększania wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki.
+title: Wydajności zestawu narzędzi Xamarin.Forms
+description: Istnieje wiele technik na zwiększenie wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywanej przez Procesora i ilość pamięci używanej przez aplikację. W tym artykule opisano i omówiono tych metod.
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 37d99add473203d90cb1b420536827e34e834a2b
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: ae284cf90ccb2d2735b4fafa0c0e44f69533638f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209326"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935163"
 ---
-# <a name="xamarinforms-performance"></a>Wydajności platformy Xamarin.Forms
+# <a name="xamarinforms-performance"></a>Wydajności zestawu narzędzi Xamarin.Forms
 
-_Istnieje wiele technik zwiększania wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację. W tym artykule opisano i omówiono te techniki._
+_Istnieje wiele technik na zwiększenie wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywanej przez Procesora i ilość pamięci używanej przez aplikację. W tym artykule opisano i omówiono tych metod._
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-**Rozwija 2016: Optymalizacja wydajności aplikacji za pomocą platformy Xamarin.Forms**
+**Rozwój 2016: Optymalizacja wydajności aplikacji za pomocą zestawu narzędzi Xamarin.Forms**
 
 ## <a name="overview"></a>Omówienie
 
-Niską wydajnością przedstawia na wiele sposobów. Go aplikacja prawdopodobnie nie odpowiada, może spowodować wolne przewijanie i może zmniejszyć czas pracy baterii. Jednak optymalizacji wydajności wymaga więcej niż tylko wdrażania wydajność kodu. Środowisko użytkownika wydajność aplikacji, należy również rozważyć. Na przykład zapewniając wykonanie operacji bez blokowania użytkownika wykonywanie innych działań może pomóc ulepszyć środowisko użytkownika.
+Niską wydajność aplikacji przedstawia na wiele sposobów. Może sprawić, że aplikacja prawdopodobnie nie odpowiada, mogą powodować wolne przewijanie i może zmniejszyć czas pracy baterii. Jednak Optymalizacja wydajności polega na więcej niż tylko wdrażania skutecznego kodu. Należy również uwzględnić środowisko wydajność aplikacji. Na przykład zapewnienie, że operacje są wykonywane bez blokowania użytkownikowi wykonywanie innych działań może pomóc ulepszyć środowisko użytkownika.
 
-Istnieje szereg technik zwiększenie wydajności i obserwowaną wydajność aplikacji platformy Xamarin.Forms. Obejmują one:
+Istnieje kilka technik, pozwalające zwiększyć wydajność i obserwowaną wydajność aplikacji platformy Xamarin.Forms. Obejmują one:
 
-- [Włącz kompilatora XAML](#xamlc)
+- [Włącz kompilator XAML](#xamlc)
 - [Wybierz prawidłowe układu](#correctlayout)
 - [Włącz kompresję układu](#layoutcompression)
-- [Użyj szybkiego renderowania](#fastrenderers)
-- [Zmniejsz niepotrzebnych powiązania](#databinding)
-- [Optymalizacja wydajności układu](#optimizelayout)
-- [Optymalizowanie ListView](#optimizelistview)
-- [Optymalizacja zasoby obrazów](#optimizeimages)
+- [Użyj szybkie programy renderujące](#fastrenderers)
+- [Ograniczyć niepotrzebne powiązania](#databinding)
+- [Zoptymalizuj układ](#optimizelayout)
+- [Optymalizuj wydajność ListView](#optimizelistview)
+- [Optymalizuj zasoby obrazów](#optimizeimages)
 - [Zmniejsz rozmiar drzewa wizualnego](#visualtree)
 - [Zmniejsz rozmiar słownika zasobów aplikacji](#resourcedictionary)
 - [Użyj wzorca niestandardowego modułu renderowania](#rendererpattern)
 
 > [!NOTE]
->  Przed przeczytaniem tego artykułu warto najpierw przeczytać artykuł [wydajności i Platform](~/cross-platform/deploy-test/memory-perf-best-practices.md), omówiono w nim-platforma określonych technik w celu poprawy użycie pamięci i wydajność aplikacji utworzony za pomocą platformy Xamarin.
+>  Przed przeczytaniem tego artykułu warto najpierw przeczytać artykuł [wydajności dla wielu Platform](~/cross-platform/deploy-test/memory-perf-best-practices.md), który w tym artykule omówiono określonych technik-platform, aby poprawić wykorzystanie pamięci i wydajność aplikacji utworzonych za pomocą platformy Xamarin.
 
 <a name="xamlc" />
 
-## <a name="enable-the-xaml-compiler"></a>Włącz kompilatora XAML
+## <a name="enable-the-xaml-compiler"></a>Włącz kompilator XAML
 
-XAML mogą być opcjonalnie kompilowane bezpośrednio na język pośredni (IL) z kompilatora XAML (XAMLC). XAMLC oferuje wiele korzyści:
+XAML może być opcjonalnie kompilowane bezpośrednio do języka pośredniego (IL) za pomocą kompilatora XAML (XAMLC). XAMLC oferuje wiele korzyści:
 
-- Wykonuje sprawdzanie kompilacji XAML powiadomienia użytkownika o błędach.
-- Usuwa niektóre godziny obciążenia i konkretyzacji elementów XAML.
-- Pomaga zmniejszyć rozmiar pliku w zestawie końcowym poprzez nie jest już w tym pliki .xaml.
+- Wykonuje sprawdzanie kompilacji XAML, powiadamiania użytkownika o błędach.
+- Usuwa pewien czas ładowania i wystąpienia elementów XAML.
+- Pomaga zmniejszyć rozmiar pliku ostateczny zestaw przy nie jest już w tym pliki .xaml.
 
-XAMLC jest domyślnie wyłączona, aby zapewnić zgodność wstecz. Jednak można ją włączyć w zestawie i poziomie klasy. Aby uzyskać więcej informacji, zobacz [kompilacji XAML](~/xamarin-forms/xaml/xamlc.md).
+XAMLC jest domyślnie wyłączona, aby zapewnić zgodność wstecz. Jednakże można włączyć na zestawie i na poziomie klasy. Aby uzyskać więcej informacji, zobacz [kompilacji XAML](~/xamarin-forms/xaml/xamlc.md).
 
 <a name="correctlayout" />
 
 ## <a name="choose-the-correct-layout"></a>Wybierz prawidłowe układu
 
-Układ, który jest umożliwiająca wyświetlanie wiele obiektów podrzędnych, ale ma tylko pojedynczy element potomny, jest niepotrzebne. Na przykład poniższy kod przedstawia przykład [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) z pojedynczy element potomny:
+Układ jest umożliwiająca wyświetlanie wiele obiektów podrzędnych, ale ma tylko pojedynczy element podrzędny, jest niepotrzebne. Na przykład, poniższy kod przedstawia przykład [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) z pojedynczy element podrzędny:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ Układ, który jest umożliwiająca wyświetlanie wiele obiektów podrzędnych, 
 </ContentPage>
 ```
 
-To jest niepotrzebne i [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) element powinna zostać usunięta, jak pokazano w poniższym przykładzie:
+Jest to marnotrawstwa i [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) element powinny zostać usunięte, jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ To jest niepotrzebne i [ `StackLayout` ](https://developer.xamarin.com/api/type/
 </ContentPage>
 ```
 
-Ponadto nie próba odtworzenia wygląd określonego układu przy użyciu kombinacji innych układów, powoduje to niepotrzebnych układu obliczenia wykonywane. Na przykład nie próbować odtworzyć [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) układu przy użyciu kombinacji [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) wystąpień. Poniższy przykładowy kod przedstawia przykład to złe rozwiązanie:
+Ponadto nie podejmuj próby odtworzenia wygląd określonego układu przy użyciu kombinacji innych układów, co powoduje to niepotrzebne układ obliczenia wykonywane. Na przykład Nie podejmuj próby odtworzenia [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) układu przy użyciu kombinacji [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) wystąpień. Poniższy przykład kodu przedstawia przykład tego złym zwyczajem:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ Ponadto nie próba odtworzenia wygląd określonego układu przy użyciu kombina
 </ContentPage>
 ```
 
-Może to być niepotrzebne, ponieważ układ niepotrzebnych obliczenia są wykonywane. Zamiast tego żądany układ mogą być osiągnięte przy użyciu [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), jak pokazano w poniższym przykładzie:
+Może to być niepotrzebne, ponieważ układ niepotrzebne obliczenia są wykonywane. Zamiast tego żądany układ mogą być osiągnięte przy użyciu [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -151,66 +151,66 @@ Może to być niepotrzebne, ponieważ układ niepotrzebnych obliczenia są wykon
 
 ## <a name="enable-layout-compression"></a>Włącz kompresję układu
 
-Kompresja układu usuwa określony układów z drzewa wizualnego, w celu zwiększenia wydajności renderowania strony. Korzyści wydajności, który zapewnia to różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym jest uruchomiona aplikacja. Jednakże wydajność będzie widoczny na starszych urządzeń. Aby uzyskać więcej informacji, zobacz [kompresji układu](~/xamarin-forms/user-interface/layouts/layout-compression.md).
+Kompresja układu usuwa określony układy z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. Korzyści wydajności, które ten dostarcza różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym działa aplikacja. Jednakże wydajność będzie widoczna w starszych urządzeń. Aby uzyskać więcej informacji, zobacz [kompresja układu](~/xamarin-forms/user-interface/layouts/layout-compression.md).
 
 <a name="fastrenderers" />
 
-## <a name="use-fast-renderers"></a>Użyj szybkiego renderowania
+## <a name="use-fast-renderers"></a>Użyj szybkie programy renderujące
 
-Szybkie renderowania zmniejszyć inflacji i kosztów renderowanie kontrolek platformy Xamarin.Forms w systemie Android przez spłaszczanie wynikowy hierarchii macierzystego formantu. Dalsze to zwiększa wydajność tworzenia mniejszą liczbę obiektów, który włącza wyniki w drzewie wizualnym mniej złożona i mniej wykorzystania pamięci. Aby uzyskać więcej informacji, zobacz [Fast renderowania](~/xamarin-forms/internals/fast-renderers.md).
+Szybkie programy renderujące skrócić inflacji i koszty renderowanie kontrolek zestawu narzędzi Xamarin.Forms w systemie Android spłaszczając wynikowy hierarchii kontroli natywnych. To dodatkowo zwiększa wydajność, tworząc mniej obiektów, spowoduje to w wynikach w drzewie wizualnym mniej skomplikowany i mniej wykorzystania pamięci. Aby uzyskać więcej informacji, zobacz [szybkie programy renderujące](~/xamarin-forms/internals/fast-renderers.md).
 
 <a name="databinding" />
 
-## <a name="reduce-unnecessary-bindings"></a>Zmniejsz niepotrzebnych powiązania
+## <a name="reduce-unnecessary-bindings"></a>Ograniczyć niepotrzebne powiązania
 
-Nie używaj wiązania dla zawartości, którą można łatwo skonfigurować statycznie. Nie ma żadnych dodatkowych zalet w powiązania danych, które nie muszą być powiązane, ponieważ powiązania nie są wydajne kosztów. Na przykład ustawienie `Button.Text = "Accept"` mają mniejszy narzut niż powiązanie [ `Button.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) do ViewModel `string` właściwość z wartością "Akceptuj".
+Nie używaj wiązania dla zawartości, która może być łatwo ustawiony statycznie. Nie ma żadnych dodatkowych zalet w powiązaniu danych, które nie muszą być powiązane, ponieważ powiązania nie są ponoszenia wysokich kosztów. Na przykład ustawienie `Button.Text = "Accept"` ma mniejsze obciążenie niż powiązanie [ `Button.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) do ViewModel `string` właściwość z wartością "Akceptuj".
 
 <a name="optimizelayout" />
 
-## <a name="optimize-layout-performance"></a>Optymalizacja wydajności układu
+## <a name="optimize-layout-performance"></a>Zoptymalizuj układ
 
-Platformy Xamarin.Forms 2 wprowadzono aparatu układu zoptymalizowane, który ma wpływ na aktualizacje układu. Aby uzyskać najlepszą wydajność układ, postępuj zgodnie z tymi wytycznymi:
+Zestaw narzędzi Xamarin.Forms 2 wprowadzono aparat zoptymalizowany układ, który wpływa na aktualizacje układu. Aby uzyskać najlepszą wydajność układ możliwe, należy przestrzegać następujących wytycznych:
 
-- Zmniejsz głębokość hierarchii układu, określając [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) wartości właściwości, umożliwiające tworzenie układów z widokami zawijania mniej. Aby uzyskać więcej informacji, zobacz [marginesy i dopełnienia](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
-- Korzystając z [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), należy starać się ustawioną jako kilka wierszy i kolumn, jak to możliwe [ `Auto` ](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) rozmiar. Każdego wiersza o rozmiarze auto lub kolumny spowoduje, że aparat układu do obliczeń dodatkowe układu. Zamiast tego Użyj stałego rozmiaru wierszy i kolumn, jeśli to możliwe. Możesz również ustawić wierszy i kolumn zajmować proporcjonalna ilość miejsca na [ `GridUnitType.Star` ](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) wartość wyliczenia, pod warunkiem że drzewa nadrzędnego postępuje wytyczne układu.
-- Nie należy ustawiać [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) i [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości układu o ile nie jest wymagane. Wartości domyślne [ `LayoutOptions.Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) i [ `LayoutOptions.FillAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) Zezwalaj najlepsze optymalizacji układu. Zmiana tych właściwości koszt i zajmuje pamięć, nawet wtedy, gdy ich ustawienie na wartości domyślne.
-- Unikaj używania [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) zawsze, gdy jest to możliwe. Spowoduje Procesora o przeprowadzenie znacznie więcej pracy.
-- Korzystając z [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), należy unikać [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) właściwości, jeśli to możliwe.
-- Korzystając z [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), upewnij się, że tylko jeden element podrzędny ma ustawioną wartość [ `LayoutOptions.Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/). Ta właściwość zapewnia zajmie określonego elementu podrzędnego największej miejsce `StackLayout` można przekazać go i jest niepotrzebne przeprowadzenie tych obliczeń więcej niż raz.
-- Nie wywołuj dowolnej z metod [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) klasy, zgodnie z ich wynikiem obliczenia kosztowne układu wykonywana. Zamiast tego jest prawdopodobne, że zachowanie żądany układ można uzyskać przez ustawienie [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) właściwości. Alternatywnie podklasy [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) klasa umożliwia zachowanie żądany układ.
-- Nie aktualizuj żadnego [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpienia częściej niż to konieczne, ponieważ zmiana rozmiaru etykiety może spowodować w układzie cały ekran jest ponownie obliczane.
-- Nie należy ustawiać [ `Label.VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) właściwości o ile nie jest wymagane.
-- Ustaw [ `LineBreakMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) dowolnego [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień do [ `NoWrap` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.NoWrap/) zawsze, gdy jest to możliwe.
+- Zmniejsz głębokość hierarchii układu, określając [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) wartości właściwości, zezwalanie na tworzenie układy za pomocą mniejszej liczby widoków zawijania. Aby uzyskać więcej informacji, zobacz [marginesy i dopełnienie](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+- Korzystając z [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), spróbuj upewnić się, że jak najmniejszej liczby wierszy i kolumn, jak to możliwe, są ustawione na [ `Auto` ](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) rozmiar. Każdy rozmiar automatyczny wiersza lub kolumny spowoduje, że aparat układu do wykonywania obliczeń dodatkowe układu. Zamiast tego Użyj stałego rozmiaru wierszy i kolumn, jeśli jest to możliwe. Alternatywnie zestawu wierszy i kolumn zajmować proporcjonalną ilość miejsca na [ `GridUnitType.Star` ](xref:Xamarin.Forms.GridUnitType.Star) wartość wyliczenia, pod warunkiem że drzewa nadrzędnego następuje wskazówek układu.
+- Nie należy ustawiać [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) i [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości układu o ile nie jest wymagane. Z wartościami domyślnymi [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) i [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) umożliwiający najlepsze optymalizacji układu. Zmiana tych właściwości jest kosztowne i wykorzystuje pamięć, nawet wtedy, gdy ustawić dla nich wartości domyślne.
+- Unikaj używania [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) zawsze, gdy jest to możliwe. Spowoduje on CPU o do wykonywania pracy znacznie więcej.
+- Korzystając z [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), należy unikać [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) właściwość, jeśli to możliwe.
+- Korzystając z [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), upewnij się, że tylko jeden element podrzędny jest ustawiona na [ `LayoutOptions.Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/). Tej właściwości gwarantuje, że zajmie określonego elementu podrzędnego największy miejsca `StackLayout` może być i jest marnotrawstwa do wykonywania tych obliczeń w więcej niż jeden raz.
+- Nie mogą wywoływać żadnych metod [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) klasy, ponieważ powodują one układ kosztowne obliczenia wykonywane. Zamiast tego jest prawdopodobne, że zachowanie żądany układ można uzyskać przez ustawienie [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) właściwości. Alternatywnie podklasy [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) klasy, aby osiągnąć żądany układ zachowanie.
+- Nie aktualizuj dowolne [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień częściej niż jest to wymagane, ponieważ zmiana rozmiaru etykieta może spowodować w układzie cały ekran, są ponownie obliczane.
+- Nie należy ustawiać [ `Label.VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) właściwości wymagane.
+- Ustaw [ `LineBreakMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) dowolnego [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień do [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap) zawsze, gdy jest to możliwe.
 
 <a name="optimizelistview" />
 
-## <a name="optimize-listview-performance"></a>Optymalizowanie ListView
+## <a name="optimize-listview-performance"></a>Optymalizuj wydajność ListView
 
-Korzystając z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli istnieje szereg funkcji środowiska użytkownika, które powinno być zoptymalizowane:
+Korzystając z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli, istnieje kilka funkcji środowiska użytkownika, które powinno być zoptymalizowane pod:
 
-- **Inicjowanie** — przedział czasu, uruchomienie, gdy formant nie zostanie utworzony, a podczas elementy są wyświetlane na ekranie.
-- **Przewijanie** — możliwość przewiń listę i upewnij się, że interfejs użytkownika nie opóźniona touch gestów.
-- **Interakcja** Dodawanie, usuwanie i Zaznaczanie elementów.
+- **Inicjowanie** — interwał czasu, rozpoczynając od formant zostanie utworzony, a kończy, gdy elementy są wyświetlane na ekranie.
+- **Przewijanie** — możliwość przewiń listę i upewnij się, że interfejs użytkownika nie opóźnione w stosunku gesty dotykowe.
+- **Interakcja** Dodawanie, usuwanie i Wybieranie elementów.
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Formant wymaga aplikacji do dostarczania danych i komórki szablonów. Jak jest to osiągane mają duży wpływ na wydajność formantu. Aby uzyskać więcej informacji, zobacz [wydajności ListView](~/xamarin-forms/user-interface/listview/performance.md).
+[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Kontrolki wymaga od aplikacji do dostarczania danych i komórki szablonów. Jak odbywa się to będzie mieć duży wpływ na wydajność, które kontrolki. Aby uzyskać więcej informacji, zobacz [wydajności ListView](~/xamarin-forms/user-interface/listview/performance.md).
 
 <a name="optimizeimages" />
 
-## <a name="optimize-image-resources"></a>Optymalizacja zasoby obrazów
+## <a name="optimize-image-resources"></a>Optymalizuj zasoby obrazów
 
-Wyświetlanie zasobów obrazu może znacznie zwiększyć zużycie pamięci w aplikacji. W związku z tym ich powinien zostać utworzony tylko gdy jest wymagana, a powinny zostać zwolnione, jak aplikacja nie wymaga już je. Na przykład jeśli aplikacja wyświetla obraz przez odczytanie danych ze strumienia, upewnij się, że strumieniu jest tworzony tylko wtedy, gdy jest to wymagane i upewnij się, zwolnienie strumienia, gdy nie są już wymagane. Można to osiągnąć, tworząc strumień po utworzeniu strony lub gdy [ `Page.Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) generowane zdarzenie, a następnie usuwania strumienia po [ `Page.Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) generowane zdarzenie.
+Zasoby obrazów do wyświetlania może znacznie zwiększyć zużycie pamięci przez aplikację. W związku z tym ich powinien zostać utworzony tylko podczas wymagane i powinny zostać opublikowane, jak aplikacja nie wymaga już je. Na przykład jeśli aplikacja wyświetla obraz, czytając dane ze strumienia, upewnij się, że strumień jest tworzony tylko wtedy, gdy jest to wymagane i upewnij się, że strumień jest zwalniany, gdy nie jest już potrzebne. Można to osiągnąć, tworząc strumienia, gdy strona jest tworzona, lub gdy [ `Page.Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) generowane zdarzenie, a następnie usuwania strumienia podczas [ `Page.Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) generowane zdarzenie.
 
-Podczas pobierania obraz do wyświetlenia z [ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) metodę, pamięć podręczna pobrany obraz za zapewnienie, że [ `UriImageSource.CachingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) właściwość jest ustawiona na `true`. Aby uzyskać więcej informacji, zobacz [Praca z obrazami](~/xamarin-forms/user-interface/images.md).
+Podczas pobierania obrazu do wyświetlania z [ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) metody pobrany obraz poprzez zapewnienie, że pamięć podręczna [ `UriImageSource.CachingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) właściwość jest ustawiona na `true`. Aby uzyskać więcej informacji, zobacz [Praca z obrazami](~/xamarin-forms/user-interface/images.md).
 
-Aby uzyskać więcej informacji, zobacz [optymalizacji zasobów obrazu](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
+Aby uzyskać więcej informacji, zobacz [zoptymalizować zasoby obrazów](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
 
 <a name="visualtree" />
 
 ## <a name="reduce-the-visual-tree-size"></a>Zmniejsz rozmiar drzewa wizualnego
 
-Zmniejszenie liczby elementów na stronie spowoduje szybsze renderowania strony. Istnieją dwie metody głównej na osiągnięcie tego celu. Pierwsza to Ukryj elementy, które nie są widoczne. [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) Właściwości każdy element określa, czy element powinien być częścią drzewa wizualnego, czy nie. W związku z tym, jeśli element jest niewidoczny, ponieważ jest ukryta za innymi elementami, Usuń element lub ustaw jego `IsVisible` właściwości `false`.
+Zmniejszenie liczby elementów na stronie spowoduje, że strona szybciej renderować. Istnieją dwie główne techniki służące osiągnięciu tego celu. Pierwsza to ukrycie elementów, które nie są widoczne. [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) Właściwości każdego elementu Określa, czy element powinien być częścią drzewa wizualnego, czy nie. W związku z tym, jeśli element jest niewidoczny, ponieważ jest ukryta za innymi elementami, Usuń element lub ustaw jego `IsVisible` właściwość `false`.
 
-Drugi technika jest usunięcie niepotrzebnych elementów. Na przykład następujący przykładowy kod przedstawia układ strony, który prezentuje serię z [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) elementy:
+Druga metoda jest Usuń zbędne elementy. Na przykład, poniższy kod przedstawia układu strony, która przedstawia szereg [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) elementy:
 
 ```xaml
 <ContentPage.Content>
@@ -228,7 +228,7 @@ Drugi technika jest usunięcie niepotrzebnych elementów. Na przykład następuj
 </ContentPage.Content>
 ```
 
-Ten sam układ strony mogą być obsługiwane z liczbą zmniejszenie element, jak pokazano w poniższym przykładzie kodu:
+Ten sam układ można zarządzać z poziomu wraz z liczbą mniejsze elementu, jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <ContentPage.Content>
@@ -244,7 +244,7 @@ Ten sam układ strony mogą być obsługiwane z liczbą zmniejszenie element, ja
 
 ## <a name="reduce-the-application-resource-dictionary-size"></a>Zmniejsz rozmiar słownika zasobów aplikacji
 
-Wszystkie zasoby, które są używane w całej aplikacji powinny być przechowywane w słowniku zasobów aplikacji, aby uniknąć jego duplikowania. Dzięki temu można zmniejszyć liczbę XAML, który ma zostać przeanalizowany w całej aplikacji. Poniższy kod przedstawia przykład `HeadingLabelStyle` zasób, który jest używana aplikacja szerokości i dlatego jest zdefiniowany w słowniku zasobów aplikacji:
+Wszystkie zasoby, które są używane w całej aplikacji powinny być przechowywane w słowniku zasobów aplikacji, aby uniknąć jego duplikowania. Dzięki temu można zmniejszyć ilość XAML, który ma zostać przeanalizowany w całej aplikacji. Poniższy kod przedstawia przykład `HeadingLabelStyle` zasób, który jest używana aplikacja szerokie, a więc jest zdefiniowany w słowniku zasobów aplikacji:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -262,7 +262,7 @@ Wszystkie zasoby, które są używane w całej aplikacji powinny być przechowyw
 </Application>
 ```
 
-Jednak XAML, specyficzne dla strony nie powinny być uwzględniane słownik zasobów aplikacji, jak zasoby następnie będzie analizowany przy uruchamianiu aplikacji zamiast, gdy jest to wymagane przez stronę. Jeśli zasób jest używany przez strony, która nie jest strony początkowej, powinna zostać umieszczona w słowniku zasobów dla tej strony, dlatego obniżając XAML, który jest analizowana podczas uruchamiania aplikacji. Poniższy kod przedstawia przykład `HeadingLabelStyle` zasób, który jest tylko na jednej stronie, a więc jest zdefiniowany w słowniku zasobów strony:
+Jednak XAML, które są specyficzne dla strony nie powinny być uwzględniane w słowniku zasobów aplikacji, jak zasoby następnie zostanie przetworzona przy uruchamianiu aplikacji zamiast, gdy jest to wymagane przez stronę. Jeśli zasób jest używany przez strony, który nie jest stronę startową, powinny znaleźć się w słowniku zasobów dla tej strony, w związku z tym co pomogło w zmniejszeniu XAML, który jest analizowany podczas uruchamiania aplikacji. Poniższy kod przedstawia przykład `HeadingLabelStyle` zasób, który jest tylko na jednej stronie, a więc jest zdefiniowany w słowniku zasobów strony:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -291,9 +291,9 @@ Aby uzyskać więcej informacji na temat zasobów aplikacji, zobacz [ `Working w
 
 ## <a name="use-the-custom-renderer-pattern"></a>Użyj wzorca niestandardowego modułu renderowania
 
-Większość renderowania klasy Uwidacznianie `OnElementChanged` metodę, która jest wywoływana po utworzeniu platformy Xamarin.Forms formantu niestandardowego do renderowania kontrolki na odpowiednich macierzystego. Klasy niestandardowego modułu renderowania, w każdej klasie renderowania specyficzne dla platformy, następnie zastąpić tę metodę w celu utworzenia wystąpienia i dostosowanie macierzystego formantu. `SetNativeControl` Metoda jest używana do macierzystego formantu, a ta metoda będzie również przypisać odwołania formantu do `Control` właściwości.
+Moduł renderowania większości klas udostępniają `OnElementChanged` metody, która jest wywoływana, gdy tworzone jest formantu niestandardowego zestawu narzędzi Xamarin.Forms w celu renderowania odpowiedni formant natywnych. Klasy niestandardowego modułu renderowania, w każdej klasie renderowania specyficzne dla platformy następnie zastąpić tę metodę w celu utworzenia wystąpienia i dostosowywanie kontrolki natywne. `SetNativeControl` Metoda jest używana do uruchomienia natywnych formantu, a ta metoda również spowoduje przypisanie odwołania kontrolki do `Control` właściwości.
 
-Jednak w pewnych okolicznościach `OnElementChanged` metoda może być wywołana wiele razy. W związku z tym aby zapobiec przecieki pamięci, które mogą mieć negatywny wpływ na wydajność, należy uważać podczas tworzenia wystąpienia nowego macierzystego formantu. Podejście do użycia podczas tworzenia wystąpienia nowego macierzystego formantu w niestandardowego modułu renderowania pokazano w poniższym przykładzie kodu:
+Jednak w niektórych sytuacjach `OnElementChanged` metoda może być wywoływana wiele razy. W związku z tym aby zapobiec przeciekom pamięci, które mogą mieć negatywny wpływ na wydajność, należy uważać podczas tworzenia wystąpienia nowego formantu natywnych. W poniższym przykładzie kodu pokazano podejście do użycia podczas tworzenia wystąpienia nowego formantu natywne w niestandardowego modułu renderowania:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<NativeListView> e)
@@ -314,18 +314,18 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Nowe macierzystego formantu były tworzone tylko raz, jeśli `Control` jest właściwość `null`. Kontrolki tylko należy skonfigurować i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały subskrybuje tylko należy anulować w podczas renderowania element jest dołączony do zmiany. Przyjmowanie takie podejście pomoże utworzyć wydajnie wykonywania niestandardowego modułu renderowania, które nie występują z przecieki pamięci.
+Nowy formant natywnych były tworzone tylko raz, gdy `Control` właściwość `null`. Kontrolki powinny być konfigurowane tylko i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały zasubskrybowane przez powinna składać się wyłącznie usuwania subskrypcji podczas renderowania element jest dołączony do zmiany. Przyjęcie tego podejścia pomoże utworzyć wydajnego wykonywania niestandardowego modułu renderowania, nie odczuwają przecieków pamięci.
 
-Aby uzyskać więcej informacji na temat niestandardowe moduły renderowania, zobacz [Dostosowywanie formantów na każdej platformie](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+Aby uzyskać więcej informacji na temat niestandardowe programy renderujące, zobacz [Dostosowywanie formantów na każdej platformie](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule opisano i opisem techniki zwiększania wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywana przez Procesora i ilości pamięci używanej przez aplikację.
+W tym artykule opisano i omówiono techniki zwiększenie wydajności aplikacji platformy Xamarin.Forms. Zbiorczo te techniki znacznie zmniejszyć ilość pracy wykonywanej przez Procesora i ilość pamięci używanej przez aplikację.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wydajność i Platform](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Wydajności dla wielu Platform](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [Wydajność ListView](~/xamarin-forms/user-interface/listview/performance.md)
 - [Szybkie programy renderujące](~/xamarin-forms/internals/fast-renderers.md)
 - [Kompresja układu](~/xamarin-forms/user-interface/layouts/layout-compression.md)

@@ -1,175 +1,175 @@
 ---
-title: Obrazy platformy Xamarin.Forms
-description: Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, może być załadowany specjalnie dla każdej platformy, lub mogą być pobierane do wyświetlenia.
+title: Obrazy w interfejsie Xamarin.Forms
+description: Obrazy mogą być współużytkowane w różnych platformach za pomocą zestawu narzędzi Xamarin.Forms, może być załadowany specjalnie dla każdej platformy lub mogą być pobierane do wyświetlenia.
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.openlocfilehash: ea7ec0d297e144966f8ff7545e6b12160f66c9b0
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291354"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935543"
 ---
-# <a name="images-in-xamarinforms"></a>Obrazy platformy Xamarin.Forms
+# <a name="images-in-xamarinforms"></a>Obrazy w interfejsie Xamarin.Forms
 
-_Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, może być załadowany specjalnie dla każdej platformy, lub mogą być pobierane do wyświetlenia._
+_Obrazy mogą być współużytkowane w różnych platformach za pomocą zestawu narzędzi Xamarin.Forms, może być załadowany specjalnie dla każdej platformy lub mogą być pobierane do wyświetlenia._
 
-Obrazy są kluczową kwestią nawigacji aplikacji, użytecznością i znakowania. Aplikacje platformy Xamarin.Forms muszą mieć możliwość udostępniania obrazów na wszystkich platformach, ale również wyświetlanie obrazów różne na różnych platformach.
+Obrazy są kluczowym elementem nawigacji w aplikacji, użytecznością i znakowanie. Aplikacje Xamarin.Forms muszą mieć możliwość udostępniania obrazów na wszystkich platformach, ale również potencjalnie wyświetlania różnych obrazów na każdej platformie.
 
-Obrazy specyficzne dla platformy są również wymagane ikon i ekranów powitalnego; te należy skonfigurować na podstawie poszczególnych platform.
+Specyficzne dla platformy obrazy są również wymagane ikon i ekrany powitalne; te muszą być skonfigurowane na poszczególnych platform.
 
 W tym dokumencie omówiono następujące tematy:
 
-- [ **Obrazy lokalnego** ](#Local_Images) — wyświetlanie obrazów dostarczanych z aplikacji, w tym rozwiązaniu rozdzielczości, takich jak iOS siatkówki, Android lub platformy uniwersalnej systemu Windows wersji wysokiej rozdzielczości obrazu.
+- [ **Obrazów lokalnych** ](#Local_Images) — wyświetlanie obrazów są dostarczane z aplikacji, w tym rozwiązywanie rozdzielczości, takiej jak iOS (wyświetlacz retina), Android i platformy uniwersalnej systemu Windows o dużej rozdzielczości wersji obrazu.
 - [ **Obrazy osadzone** ](#Embedded_Images) — wyświetlanie obrazów osadzony jako zasób zestawu.
-- [ **Pobrane obrazy** ](#Downloading_Images) — pobieranie i wyświetlanie obrazów.
-- [ **Ikon i ekranów powitalnych** ](#Icons_and_splashscreens) -uruchamiania obrazów i ikon specyficzne dla platformy.
+- [ **Pobrano obrazów** ](#Downloading_Images) — pobieranie i wyświetlanie obrazów.
+- [ **Ikony i splashscreens** ](#Icons_and_splashscreens) -ikony specyficznej dla platformy i obrazów uruchamiania.
 
 ## <a name="displaying-images"></a>Wyświetlanie obrazów
 
-Używa platformy Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) widoku umożliwia wyświetlanie obrazów na stronie. Ma dwie ważne właściwości:
+Korzysta z zestawu narzędzi Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) widok, aby wyświetlić obrazy na stronie. Posiada dwie ważne właściwości:
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) - [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) Wystąpienia, pliku, identyfikatora Uri lub zasób, który ustawia obraz do wyświetlenia.
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -Porady rozmiaru obrazu w granicach, który jest ona wyświetlana w ramach (czy stretch, przycięcia lub letterbox).
+- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) - [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) Wystąpienia, pliku, identyfikator Uri lub zasób, który ustawia obraz do wyświetlania.
+- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -Porady rozmiar obrazu w granicach, jest wyświetlana w ramach (czy stretch, przycinanie lub letterbox).
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) wystąpienia można uzyskać za pomocą metod statycznych dla każdego typu źródło obrazu:
+[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) wystąpienia można uzyskać za pomocą metod statycznych dla każdego typu źródła obrazu:
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -Wymaga nazwy pliku lub ścieżka pliku, który można rozwiązać na każdej z platform.
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -Np wymaga obiekt Uri.  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -Wymaga identyfikatorem zasobu z plikiem obrazu osadzonego w aplikacji lub .NET Standard projektu biblioteki, z **akcji kompilacji: EmbeddedResource**.
+- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) — Wymagają nazwy pliku lub ścieżki pliku, która może zostać rozpoznana na każdej platformie.
+- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) — Na przykład wymagane w obiekcie Uri.  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) — Wymagają identyfikatora zasobu, do pliku obrazu osadzonego w aplikacji lub projekt biblioteki .NET Standard z **akcji kompilacji: EmbeddedResource**.
 - [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -Wymaga strumienia, który dostarcza dane obrazu.
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) Właściwość określa, jak obraz będą skalowane w celu dopasowania do obszaru wyświetlania:
+[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) Właściwość określa, jak obraz, który będzie odpowiednio dopasowane obszaru wyświetlania:
 
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.Fill/) -Obraz jest rozciągany tak aby całkowicie i dokładnie wypełnienia obszaru wyświetlania. Może to spowodować, że obraz jest zakłócona.
-- [`AspectFill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFill/) — Przycina obraz tak, aby wypełnił obszar wyświetlania przy zachowaniu aspektu (tzn. nie zakłócania).
-- [`AspectFit`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFit/) -Letterboxes obrazu (w razie potrzeby), aby cały obraz był mieści się w obszarze, puste miejsca dodane do górne i dolne lub stronach w zależności od tego, czy obraz jest szerokość lub wysokość.
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -Obraz jest rozciągany tak aby całkowicie i dokładnie wypełnił obszar wyświetlania. Może to spowodować, że obraz jest zniekształcony.
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) — Przycina obraz, aby wypełnił obszar wyświetlania przy jednoczesnym zachowaniu aspektu (tzn. nie zakłócania).
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -Letterboxes obrazu (w razie potrzeby), aby cały obraz dopasowuje się do obszaru wyświetlania, za pomocą pustego miejsca dodane w górę/w dół lub stronach w zależności od tego, czy obraz jest szerokość lub wysokość.
 
-Obrazy mogą być ładowane z [pliku lokalnego](#Local_Images_in_Xaml), [osadzonego zasobu](#embedded_images), lub [pobrane](#Downloading_Images).
+Obrazy mogą być ładowane z [lokalnego pliku](#Local_Images_in_Xaml), [osadzony zasób](#embedded_images), lub [pobrane](#Downloading_Images).
 
 <a name="Local_Images" />
 
-## <a name="local-images"></a>Lokalne obrazów
+## <a name="local-images"></a>Obrazów lokalnych
 
-Pliki obrazów mogą być dodawane do każdego projektu aplikacji lub odwoływane za pośrednictwem kodu platformy Xamarin.Forms udostępnionych. Aby użyć jednego obrazu we wszystkich aplikacjach, *tej samej nazwy pliku musi być używany na każdej platformie*, i powinna być prawidłową Android nazwę zasobu (ie. dozwolone są tylko małe litery, cyfry, podkreślenia i okres).
+Pliki obrazów mogą być dodawane do każdego projektu aplikacji lub odwoływać się z zestawu narzędzi Xamarin.Forms udostępnionego kodu. Używać jednego obrazu dla wszystkich aplikacji *tej samej nazwy pliku musi być używana w firmach*, i powinna być prawidłową Android nazwę zasobu (tj. dozwolone są tylko małe litery, cyfry, podkreślenia i okres).
 
-- **iOS** — preferowany sposób zarządzania i obsługi obrazów, ponieważ jest użycie systemu iOS 9 **Ustawia obraz katalogu zasobów**, który powinien zawierać wszystkie wersje obrazu, które są niezbędne do obsługi różnych urządzeń i skalować czynniki aplikacja. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
-- **Android** -umieścić obrazy w **obiektów drawable/zasoby** katalogu z **Akcja kompilacji: AndroidResource**. Wysoki i niski DPI wersji obrazu można również podać (w nazwanego **zasobów** podkatalogów, takich jak **obiektów drawable ldpi**, **obiektów drawable hdpi**i **obiektów drawable xhdpi**).
-- **Windows platformy Uniwersalnej** -umieścić obrazy w katalogu głównym aplikacji z **Akcja kompilacji: zawartości**.
+- **iOS** — preferowany sposób zarządzania i obsługi obrazów, ponieważ system iOS 9 jest użycie **zestawów obrazu wykazu zasobów**, który powinien zawierać wszystkie wersje obrazu, które są niezbędne do obsługi różnych urządzeń i skalowanie czynników aplikacja. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu zestawie](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+- **Android** — umieść obrazów w **zasobów/drawable** katalogu przy użyciu **Build Action: AndroidResource**. Wysoka i niska DPI wersji obrazu może również dostarczyć (w odpowiednio nazwanych **zasobów** podkatalogów, takie jak **drawable ldpi**, **drawable hdpi**i **drawable xhdpi**).
+- **Windows platformy Uniwersalnej** — umieść obrazy w katalogu głównym aplikacji za pomocą **Build Action: zawartości**.
 
 > [!IMPORTANT]
-> Przed iOS 9, obrazy, zwykle zostały umieszczone w **zasobów** folder o **Akcja kompilacji: BundleResource**. Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+> Przed systemem iOS 9, obrazy, zwykle zostały umieszczone w **zasobów** folder z **Build Action: BundleResource**. Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Przestrzegać tych reguł do nazywania plików i umieszczania umożliwia skonfigurowanie następujących XAML do ładowania i wyświetlić obraz na wszystkich platformach:
+Dostosowanie się do tych reguł do nazywania plików i umieszczania umożliwia następujące XAML ładowania oraz wyświetlania obrazu na wszystkich platformach:
 
 ```xaml
 <Image Source="waterfront.jpg" />
 ```
 
-Odpowiednik kodu C# jest następujący:
+Równoważny kod C# jest następująca:
 
 ```csharp
 var image = new Image { Source = "waterfront.jpg" };
 ```
 
-Poniższe zrzuty ekranu pokazują wynik wyświetlanie lokalnego obrazu na każdej platformie:
+Poniższych zrzutach ekranu przedstawiono wynik wyświetlanie lokalny obraz na każdej z platform:
 
-[![Lokalne ImageSource](images-images/local-sml.png "Przykładowa aplikacja wyświetlania obrazu lokalnego")](images-images/local.png#lightbox "Przykładowa aplikacja wyświetlania obrazu lokalnego")
+[![Lokalne ImageSource](images-images/local-sml.png "przykładowej aplikacji wyświetlanie lokalny obraz")](images-images/local.png#lightbox "przykładowej aplikacji wyświetlanie lokalny obraz")
 
-Aby uzyskać większą elastyczność `Device.RuntimePlatform` właściwości można wybrać inny plik obrazu lub ścieżka dla niektórych lub wszystkich platform, jak pokazano w tym przykładzie kodu:
+Aby uzyskać większą elastyczność `Device.RuntimePlatform` właściwości można wybrać inny plik obrazu lub ścieżkę dla niektórych lub wszystkich platform, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("waterfront.jpg") : ImageSource.FromFile("Images/waterfront.jpg");
 ```
 
 > [!IMPORTANT]
-> Aby użyć tej samej nazwy pliku obrazu na wszystkich platformach nazwa musi być prawidłową na wszystkich platformach. Android drawables ma ograniczenia nazewnictwa — są dozwolone tylko małe litery, cyfry, podkreślenia i okres — i zgodności między platformami to musi występować na innych platformach zbyt. Nazwa pliku przykład **waterfront.png** następujące reguły, ale przykłady nieprawidłowych nazw plików obejmują "wody front.png", "WaterFront.png", "wody front.png" i "wåterfront.png".
+> Aby użyć tej samej nazwy pliku obrazu na wszystkich platformach nazwa musi być prawidłową na wszystkich platformach. Android drawables ma ograniczenia nazewnictwa — dozwolone są tylko małe litery, cyfry, podkreślenia i kropki — i dla zgodności międzyplatformowej to musi występować na innych platformach zbyt. Nazwa pliku przykład **waterfront.png** kieruje się regułami, ale przykłady nieprawidłowych nazw plików obejmują "water front.png", "WaterFront.png", "water front.png" i "wåterfront.png".
 
 <a name="Native_Resolutions" />
 
-### <a name="native-resolutions-retina-and-high-dpi"></a>Rozdzielczości (siatkówki i wysokiej rozdzielczości DPI)
+### <a name="native-resolutions-retina-and-high-dpi"></a>Rozdzielczości ((wyświetlacz retina) i wysokiej rozdzielczości DPI)
 
-iOS, Android i platformy uniwersalnej systemu Windows obsługują rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiednie obrazu w czasie wykonywania w oparciu o możliwości urządzenia. Ładowanie lokalnego obrazów, aby automatycznie program obsługuje rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie platformy Xamarin.Forms używa wybranych platformach natywnych interfejsów API.
+dla systemu iOS, Android i platformy uniwersalnej systemu Windows obejmują wsparcie dla rozwiązania innego obrazu, w którym system operacyjny wybierze odpowiedni obraz w oparciu o możliwościach urządzenia w czasie wykonywania. Zestaw narzędzi Xamarin.Forms używa interfejsów API natywnych platform do ładowania obrazów lokalnych, aby automatycznie obsługuje ona rozwiązania alternatywnego, jeśli pliki są poprawnie o nazwie i znajduje się w projekcie.
 
-Preferowany sposób zarządzać obrazami, ponieważ system iOS 9 polega na przeciągnięciu obrazami dla każdego rozwiązania wymagane do odpowiednich zasobów katalogu obrazu zestawu. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu ustawić](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+Preferowanym sposobem zarządzania obrazami, ponieważ system iOS 9 jest aby przeciągnąć obrazy dla każdego rozwiązania, wymagane do zestawu obrazów katalogów odpowiednich zasobów. Aby uzyskać więcej informacji, zobacz [Dodawanie obrazów do zasobu katalogu obrazu zestawie](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Przed iOS 9, siatkówki wersje obrazu może być umieszczone w **zasobów** folderu - 2 i 3 razy rozpoznawania o **@2x** lub **@3x**sufiksy na nazwę pliku przed rozszerzeniem (np.) **myimage@2x.png**). Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+Przed systemu iOS 9 (wyświetlacz retina) wersje obrazu można można umieścić w **zasobów** folder - 2 i 3 razy rozpoznawania o **@2x** lub **@3x**sufiksy na nazwę pliku, przed rozszerzeniem pliku (np.) **myimage@2x.png**). Jednak ta metoda pracy z obrazów w aplikacji systemu iOS została zastąpiona przez firmę Apple. Aby uzyskać więcej informacji, zobacz [rozmiary obrazów i plików](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Obrazy systemu android rozwiązania alternatywne powinna zostać umieszczona w [specjalnie o nazwie katalogów](http://developer.android.com/guide/practices/screens_support.html) w projekcie systemu Android, jak pokazano na poniższym zrzucie ekranu:
+Obrazy rozwiązania alternatywne dla systemu android będzie umieszczona w [specjalnie o silnych nazwach katalogów](http://developer.android.com/guide/practices/screens_support.html) w projekcie dla systemu Android, jak pokazano na poniższym zrzucie ekranu:
 
-[![Lokalizacja systemu android wielu rozdzielczość obrazu](images-images/xs-highdpisolution-sml.png "lokalizacji systemu Android wielu rozdzielczość obrazu")](images-images/xs-highdpisolution.png#lightbox "lokalizacji systemu Android wielu rozdzielczość obrazu")
+[![Lokalizacja obrazu systemu android rozpoznawania wielu](images-images/xs-highdpisolution-sml.png "lokalizacji obrazu systemu Android rozpoznawania wielu")](images-images/xs-highdpisolution.png#lightbox "lokalizacji obrazu rozpoznawania wielu systemu Android")
 
-Nazwy plików obrazów platformy uniwersalnej systemu Windows [kończyły się słowem `.scale-xxx` przed rozszerzeniem](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), gdzie `xxx` procent skalowania zastosować do zasobu, np. **myimage.scale 200.png**. Obrazy mogą być następnie przywoływane w kodzie lub XAML bez modyfikatora skali, np. po prostu **myimage.png**. Platforma wybierze oparte na bieżącej DPI wyświetlacza najbliższej skali odpowiednich zasobów.
+Nazwy plików obrazów platformy uniwersalnej systemu Windows [kończyły się słowem `.scale-xxx` przed rozszerzeniem pliku](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), gdzie `xxx` procent skalowanie zastosowany do zasobu, np. **myimage.scale 200.png**. Obrazy następnie można się odwoływać w kodzie lub XAML bez modyfikatora skali, np. po prostu **myimage.png**. Platforma wybierze najbliższej skalowania odpowiednich zasobów, oparte na bieżącej DPI wyświetlacza.
 
-### <a name="additional-controls-that-display-images"></a>Dodatkowe funkcje kontroli, które wyświetlanie obrazów
+### <a name="additional-controls-that-display-images"></a>Dodatkowe formanty, które wyświetlanie obrazów
 
-Niektóre formanty mają właściwości, które wyświetlania obrazu, takich jak:
+Niektóre kontrolki mają właściwości, które wyświetla obraz, takich jak:
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -Wszelkie strony typu pochodzącego od `Page` ma [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) i [ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/) właściwości, które można przypisać odwołanie pliku lokalnego. W pewnych okolicznościach, takie jak kiedy [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) są wyświetlane [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), jeśli jest to obsługiwane przez platformę będzie wyświetlana ikona.
+- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -Wszelkie stronie Typ, który pochodzi od klasy `Page` ma [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) i [ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/) właściwości, które można przypisać odwołanie do pliku lokalnego. W pewnych okolicznościach, takie jak czas [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Wyświetla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), jeśli jest obsługiwany przez platformę będzie wyświetlana ikona.
 
   > [!IMPORTANT]
-  > W systemach iOS [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) właściwości nie można wypełnić z obrazu w zestawie obrazu katalogu zasobów. Zamiast tego należy załadować obrazy ikon dla `Page.Icon` właściwość z **zasobów** folderu projektu systemu iOS.
+  > W systemach iOS [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) właściwości nie można wypełnić z obrazu w zestawie zasobów katalogu obrazu. Zamiast tego należy załadować obrazy ikon dla `Page.Icon` właściwość **zasobów** folderu w projekcie dla systemu iOS.
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Ma [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) właściwość, która może być ustawiony na odwołanie do pliku lokalnego.
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -Ma [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) pobrać właściwość, która może być ustawiony na obraz z pliku lokalnego, osadzonego zasobu lub identyfikator URI.
+- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) — Ma [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) właściwość, która może być ustawiona na odwołanie do pliku lokalnego.
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) — Ma [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) właściwość, która może być ustawiona na obrazie pobierane z pliku lokalnego, zasobu osadzonego lub identyfikator URI.
 
 <a name="embedded_images" />
 
 ## <a name="embedded-images"></a>Obrazy osadzone
 
-Obrazy osadzone również są dostarczane z aplikacją (np. obrazów lokalnego), ale zamiast kopiowania obrazu w każdej aplikacji struktury plików obrazu pliku jest osadzony w zestawie jako zasób. Ta metoda dystrybucji obrazów jest szczególnie przydatna do tworzenia składników, jako obraz jest umieszczany w pakietach z kodem.
+Obrazy osadzone również są dostarczane z aplikacją (np. obrazów lokalnych), ale zamiast kopię obrazu w każdej aplikacji struktury plików obrazu pliku jest osadzony w zestawie jako zasób. Ta metoda dystrybucja obrazów jest szczególnie przydatna do tworzenia składników, jak obraz, który jest powiązany z kodem.
 
-Aby osadzić obraz w projekcie, kliknij prawym przyciskiem do dodawania nowych elementów, a następnie wybierz obraz/s, który chcesz dodać. Domyślnie obraz będzie mieć **Akcja kompilacji: Brak**; musi on być **Akcja kompilacji: EmbeddedResource**.
+Osadzanie obrazu w projekcie, kliknij prawym przyciskiem myszy w celu dodawania nowych elementów, a następnie wybierz obraz/s, który chcesz dodać. Domyślnie ma obraz **Build Action: Brak**; to musi być równa **Build Action: EmbeddedResource**.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](images-images/vs-buildaction.png "Ustawić akcji kompilacji: EmbeddedResource")
+![](images-images/vs-buildaction.png "Ustaw akcję kompilacji: EmbeddedResource")
 
-**Akcja kompilacji** można wyświetlać i zmieniać w **właściwości** okna dla pliku.
+**Build Action** można wyświetlać i zmieniać w **właściwości** okna dla pliku.
 
 W tym przykładzie jest identyfikator zasobu **WorkingWithImages.beach.jpg**.
-IDE wygenerował to ustawienie domyślne, łącząc **Namespace domyślne** dla tego projektu z pliku za pomocą kropki (.) między każdą wartość.
+IDE wygenerował to ustawienie domyślne przez złączenie **Namespace domyślne** dla tego projektu przy użyciu nazwy pliku przy użyciu kropki (.) między każdą wartość.
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](images-images/xs-buildaction.png "Ustawić akcji kompilacji: EmbeddedResource")
+![](images-images/xs-buildaction.png "Ustaw akcję kompilacji: EmbeddedResource")
 
-**Akcja kompilacji** można również wyświetlać i zmieniać w **właściwości** konsoli dla pliku.
-Ta konsola przedstawia **identyfikator zasobu** umożliwiające odwoływać się do zasobu w kodzie. Zrzut ekranu poniżej **identyfikator zasobu** jest **WorkingWithImages.beach.jpg**.
-IDE wygenerował to ustawienie domyślne, łącząc **Namespace domyślne** dla tego projektu z pliku za pomocą kropki (.) między każdą wartość.
-Ten identyfikator może być edytowany w **właściwości** konsoli, ale te przykłady wartość **WorkingWithImages.beach.jpg** będą używane.
+**Akcja kompilacji** można również wyświetlać i zmieniać w **właściwości** konsoli do pliku.
+Ten blok zawiera **identyfikator zasobu** służący do odwoływać się do zasobu w kodzie. Na poniższym zrzucie ekranu **identyfikator zasobu** jest **WorkingWithImages.beach.jpg**.
+IDE wygenerował to ustawienie domyślne przez złączenie **Namespace domyślne** dla tego projektu przy użyciu nazwy pliku przy użyciu kropki (.) między każdą wartość.
+Ten identyfikator może być edytowane w **właściwości** konsoli, ale w poniższych przykładach wartość **WorkingWithImages.beach.jpg** będą używane.
 
-![](images-images/xs-embeddedproperties.png "EmbeddedResource właściwości konsoli")
+![](images-images/xs-embeddedproperties.png "Blok właściwości EmbeddedResource")
 
 -----
 
-Jeśli obrazy osadzone w folderach w ramach projektu, nazwy folderu są oddzielone kropką (.) z identyfikatorem zasobu. Przenoszenie **beach.jpg** obraz do folderu o nazwie **MyImages** spowodowałoby identyfikator zasobu **WorkingWithImages.MyImages.beach.jpg**
+Jeśli umieścisz obrazów osadzonych w folderach w ramach projektu, nazwy folderów są oddzielone kropką (.) identyfikator zasobu. Przenoszenie **beach.jpg** obrazów w folderze o nazwie **Mojeobrazy** mogłoby spowodować identyfikator zasobu **WorkingWithImages.MyImages.beach.jpg**
 
-Kod, aby załadować osadzonego obrazu po prostu przekazuje **identyfikator zasobu** do [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) — metoda, jak pokazano poniżej:
+Kod, aby załadować osadzony obraz po prostu przekazuje **identyfikator zasobu** do [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) metody, jak pokazano poniżej:
 
 ```csharp
 var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
 
 > [!NOTE]
-> Umożliwia wyświetlanie obrazów osadzonych w trybie wersji platformy uniwersalnej systemu Windows, należy użyć przeciążenia `ImageSource.FromResource` , który określa źródło zestawu, w których będą poszukiwane obrazu.
+> Do obsługi wyświetlania obrazów osadzonych w trybie przygotowania do wydania na platformie Universal Windows, należy go Użyj przeciążenia `ImageSource.FromResource` , który określa zestaw źródłowy, w których należy szukać obrazu.
 
-Obecnie nie istnieje niejawna konwersja identyfikatorów zasobów. Zamiast tego należy użyć [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) lub `new ResourceImageSource()` do ładowania obrazów osadzonych.
+Obecnie nie istnieje niejawna konwersja identyfikatorów zasobów. Zamiast tego należy użyć [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) lub `new ResourceImageSource()` można załadować obrazów osadzonych.
 
-Poniższe zrzuty ekranu pokazują wynik wyświetlanie osadzony obraz na każdej platformie:
+Poniższych zrzutach ekranu przedstawiono wynik wyświetlanie osadzony obraz na każdej z platform:
 
-[![ResourceImageSource](images-images/resource-sml.png "przykładowej aplikacji wyświetlanie osadzony obraz")](images-images/resource.png#lightbox "przykładowej aplikacji Wyświetlanie osadzonego obrazu")
+[![ResourceImageSource](images-images/resource-sml.png "przykładowej aplikacji wyświetlanie osadzony obraz")](images-images/resource.png#lightbox "przykładowej aplikacji wyświetlanie osadzony obraz")
 
 <a name="Embedded_Images_in_Xaml" />
 
-### <a name="using-xaml"></a>Przy użyciu kodu XAML
+### <a name="using-xaml"></a>Przy użyciu XAML
 
-Ponieważ nie istnieje żaden konwerter typów wbudowanych z `string` do `ResourceImageSource`, te typy obrazów nie można załadować natywnie przez XAML. Zamiast tego prostego niestandardowego rozszerzenia znaczników XAML mogą być zapisywane do ładowania obrazów za pomocą **identyfikator zasobu** określony w języku XAML:
+Ponieważ nie istnieje konwerter nie wbudowany typ z `string` do `ResourceImageSource`, tego rodzaju obrazów nie można załadować natywnie przez XAML. Zamiast tego prostego niestandardowego rozszerzenia znaczników XAML mogą być zapisywane do ładowania obrazów przy użyciu **identyfikator zasobu** określone w XAML:
 
 ```csharp
 [ContentProperty (nameof(Source))]
@@ -193,9 +193,9 @@ public class ImageResourceExtension : IMarkupExtension
 ```
 
 > [!NOTE]
-> Umożliwia wyświetlanie obrazów osadzonych w trybie wersji platformy uniwersalnej systemu Windows, należy użyć przeciążenia `ImageSource.FromResource` , który określa źródło zestawu, w których będą poszukiwane obrazu.
+> Do obsługi wyświetlania obrazów osadzonych w trybie przygotowania do wydania na platformie Universal Windows, należy go Użyj przeciążenia `ImageSource.FromResource` , który określa zestaw źródłowy, w których należy szukać obrazu.
 
-Aby użyć tego rozszerzenia, Dodaj niestandardowy `xmlns` na języku XAML, za pomocą poprawnych wartości przestrzeni nazw i zestawu dla projektu. Źródło obrazu można następnie ustawić przy użyciu następującej składni: `{local:ImageResource WorkingWithImages.beach.jpg}`. Poniżej przedstawiono pełny przykład XAML:
+Aby użyć tego rozszerzenia Dodaj niestandardowy `xmlns` do XAML, przy użyciu poprawnych wartości przestrzeni nazw i zestawu dla projektu. Źródło obrazu można następnie ustawić przy użyciu następującej składni: `{local:ImageResource WorkingWithImages.beach.jpg}`. Poniżej przedstawiono pełny przykład dla XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -217,7 +217,7 @@ Aby użyć tego rozszerzenia, Dodaj niestandardowy `xmlns` na języku XAML, za p
 
 #### <a name="debugging-code"></a>Debugowanie kodu
 
-Ponieważ czasami trudno jest zrozumienie, dlaczego nie został załadowany zasób określonego obrazu, poniższy kod debugowania można tymczasowo dodane do aplikacji, aby potwierdzić, że zasoby są poprawnie skonfigurowane. On dane wyjściowe obejmują wszystkie znanych zasobów osadzonych w danym zestawie do <span class="UIItem">konsoli</span> do debugowania problemów ładowania zasobów.
+Ponieważ czasami trudno jest zrozumieć, dlaczego nie został załadowany zasobu określonego obrazu, poniższy kod debugowania, można tymczasowo można dodać do aplikacji, aby pomóc, upewnij się, że zasoby są prawidłowo skonfigurowane. Generuje wszystkie znane zasoby osadzone w danym zestawie, który ma <span class="UIItem">konsoli</span> debugować problemy ładowania zasobów.
 
 ```csharp
 using System.Reflection;
@@ -232,9 +232,9 @@ foreach (var res in assembly.GetManifestResourceNames())
 
 #### <a name="images-embedded-in-other-projects"></a>Obrazy osadzone w innych projektach
 
-Domyślnie `ImageSource.FromResource` metody wyszukuje tylko obrazy w tym samym zestawie co wywołanie kodu `ImageSource.FromResource` metody. Przy użyciu kodu debugowania powyżej, które można określić zestawów, które zawierają konkretnego zasobu, zmieniając `typeof()` instrukcji `Type` wiadomo w każdym zestawie.
+Domyślnie `ImageSource.FromResource` metoda wyszukuje tylko obrazy z tego samego zestawu co wywołanie metody kod `ImageSource.FromResource` metody. Przy użyciu debugowania kodu powyżej można określić zestawy, które zawierają określony zasób, zmieniając `typeof()` instrukcję, aby `Type` wiadomo, że są w każdym zestawie.
 
-Jednak zestaw źródłowy wyszukane osadzonego obrazu można określić jako argument `ImageSource.FromResource` metody:
+Jednak zestaw źródłowy wyszukane osadzonego obrazu można określić jako argument do `ImageSource.FromResource` metody:
 
 ```csharp
 var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
@@ -244,7 +244,7 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 
 ## <a name="downloading-images"></a>Pobieranie obrazów
 
-Można automatycznie pobierać obrazy do wyświetlenia, jak pokazano w poniższych XAML:
+Można automatycznie pobierać obrazy do wyświetlania, jak pokazano w poniższym XAML:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -259,34 +259,34 @@ Można automatycznie pobierać obrazy do wyświetlenia, jak pokazano w poniższy
 </ContentPage>
 ```
 
-Odpowiednik kodu C# jest następujący:
+Równoważny kod C# jest następująca:
 
 ```csharp
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) Metoda wymaga `Uri` obiektu i zwraca nowy [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) które odczytuje z `Uri`.
+[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) Metoda wymaga `Uri` obiektu i zwraca nowy [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) która odczytuje z `Uri`.
 
-Istnieje również niejawna konwersja ciągów identyfikatora URI, więc poniższy przykład również będzie działać:
+Dostępna jest również niejawna konwersja ciągi identyfikatora URI, więc również sprawdzi się następująco:
 
 ```csharp
 webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
 ```
 
-Poniższe zrzuty ekranu pokazują wynik wyświetlanie zdalnego obrazu na każdej platformie:
+Poniższych zrzutach ekranu przedstawiono wynik wyświetlanie zdalnego obrazu na każdej z platform:
 
-[![Pobrane ImageSource](images-images/download-sml.png "przykładowej aplikacji wyświetlanie pobranych obrazu")](images-images/download.png#lightbox "przykładowej aplikacji wyświetlanie pobranych obrazu")
+[![Pobrano ImageSource](images-images/download-sml.png "przykładowej aplikacji wyświetlanie pobrany obraz")](images-images/download.png#lightbox "przykładowej aplikacji wyświetlanie pobrany obraz")
 
 <a name="Image_Caching" />
 
 ### <a name="downloaded-image-caching"></a>Buforowanie pobrany obraz
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) obsługuje również buforowanie pobrany obrazów, skonfigurować za pomocą następujących właściwości:
+A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) obsługuje również buforowania pobrane zdjęcia, skonfigurować za pomocą następujących właściwości:
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) — Czy włączone jest buforowanie (`true` domyślnie).
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A `TimeSpan` określający, jak długo obrazu będzie przechowywany lokalnie.
+- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) -Czy włączone jest buforowanie (`true` domyślnie).
+- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A `TimeSpan` definiujący, jak długo obraz będą przechowywane lokalnie.
 
-Buforowanie jest włączone domyślnie i zapisze obraz lokalnie przez 24 godziny. Aby wyłączyć buforowanie dla określonego obrazu, wystąpienia źródło obrazu w następujący sposób:
+Buforowanie jest domyślnie włączona i będzie przechowywać obraz lokalnie przez 24 godziny. Aby wyłączyć buforowanie dla określonego obrazu, wystąpienia źródło obrazu w następujący sposób:
 
 ```csharp
 image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
@@ -303,35 +303,35 @@ webImage.Source = new UriImageSource
 };
 ```
 
-Wbudowanemu buforowaniu ułatwia bardzo obsługi scenariuszy, takich jak przewijanie listy obrazów, w którym można ustawić (lub powiązać) obraz w każdej komórce i pozwól wbudowanych pamięci podręcznej zajmie się ponownie podczas ładowania obrazu, gdy komórka jest przewijane powrót do widoku.
+Buforowanie wbudowanych ułatwia bardzo do obsługi scenariuszy, takich jak przewijając listę obrazów, w którym można ustawić (lub powiązać) obrazu w każdej komórce i umożliwić wbudowaną pamięć podręczną, zajmie się ponownie ładuje obraz, gdy komórka jest przewijane powrót do widoku.
 
 <a name="Icons_and_splashscreens" />
 
-## <a name="icons-and-splashscreens"></a>Ikon i ekranów powitalnych
+## <a name="icons-and-splashscreens"></a>Ikony i splashscreens
 
-Gdy nie dotyczą [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) widoku, aplikacji ikon i ekranów powitalnych są również zastosowanie obrazów w projektach platformy Xamarin.Forms.
+Gdy nie dotyczą [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) widoku, ikony aplikacji i splashscreens są również istotne użycie obrazów w projektach zestawu narzędzi Xamarin.Forms.
 
-Ustawienie ikon i ekranów powitalnych dla aplikacji platformy Xamarin.Forms odbywa się w poszczególnych projektach aplikacji. Oznacza to, że Generowanie poprawnie o rozmiarze obrazy dla systemu iOS, Android i platformy uniwersalnej systemu Windows. Tych obrazów, należy o nazwie i znajduje się zgodnie z wymaganiami każdej platformy.
+Ustawienie ikon i splashscreens dla aplikacji platformy Xamarin.Forms odbywa się we wszystkich projektach aplikacji. Oznacza to, że poprawnie generowania rozmiar obrazów dla systemów iOS, Android i platformy uniwersalnej systemu Windows. Te obrazy należy o nazwie i znajduje się zgodnie z wymaganiami dotyczącymi poszczególnych platform.
 
 ## <a name="icons"></a>Ikony
 
-Zobacz [iOS Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md), [nadruków Google](http://developer.android.com/design/style/iconography.html), i [wytyczne dotyczące zasobów kafelków i ikona](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) Aby uzyskać więcej informacji na temat tworzenia tych zasobów aplikacji.
+Zobacz [iOS Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md), [nadruków Google](http://developer.android.com/design/style/iconography.html), i [wytyczne dotyczące zasobów kafelka i ikona](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) Aby uzyskać więcej informacji dotyczących tworzenia tych zasobów aplikacji.
 
-## <a name="splashscreens"></a>Ekranów powitalnych
+## <a name="splashscreens"></a>Splashscreens
 
-Tylko aplikacje systemów iOS i platformy uniwersalnej systemu Windows wymagają ekranu powitalnego (nazywanych również obrazu ekranu lub wartość domyślną uruchamiania).
+Tylko aplikacje systemów iOS i platformy uniwersalnej systemu Windows wymagają ekranu powitalnego (nazywane również obraz ekranu lub domyślnego uruchamiania).
 
-Zapoznaj się z dokumentacją dotyczącą [iOS Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md) i [powitalny ekrany](/windows/uwp/launch-resume/splash-screens/) w Centrum deweloperów systemu Windows.
+Zapoznaj się z dokumentacją dla [iOS Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md) i [powitalny ekrany](/windows/uwp/launch-resume/splash-screens/) w Centrum deweloperów Windows.
 
 ## <a name="summary"></a>Podsumowanie
 
-Platformy Xamarin.Forms oferuje kilka różnych sposobów obejmują obrazy w aplikacji i platform, umożliwiając dla tego samego obrazu do użycia na platformach lub obrazów specyficzne dla platformy, należy określić. Obrazy pobrany automatycznie są buforowane, automatyzacji typowy scenariusz kodowania.
+Zestaw narzędzi Xamarin.Forms oferuje wiele różnych sposobów, aby uwzględnić obrazów w aplikacji dla wielu platform, dzięki czemu ten sam obraz, który ma być używany na platformach lub obrazy specyficzne dla platformy, należy określić. Pobrane zdjęcia również automatycznie są buforowane, automatyzacja typowy scenariusz kodowania.
 
-Obrazów ikony, jak i ekranu powitalnego aplikacji są konfiguracji i skonfigurowane tak jak w przypadku aplikacji z systemem innym niż platformy Xamarin.Forms — wykonaj te same wskazówki używana dla specyficznego dla platformy aplikacji.
+Obrazy ikon i ekranu powitalnego aplikacji są konfiguracji i skonfigurowane, jak w przypadku aplikacji innych niż zestawu narzędzi Xamarin.Forms — wykonaj te same wskazówki, które są używane dla określonych platform aplikacji.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [WorkingWithImages (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 - [iOS Praca z obrazami](~/ios/app-fundamentals/images-icons/index.md)
-- [Nadruków systemu android](http://developer.android.com/design/style/iconography.html)
-- [Wytyczne dotyczące zasobów kafelków i ikony](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)
+- [Nadruków dla systemu android](http://developer.android.com/design/style/iconography.html)
+- [Wytyczne dotyczące zasobów kafelka i ikony](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)
