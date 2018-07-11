@@ -1,6 +1,6 @@
 ---
-title: Motywy platformy Xamarin.Forms
-description: W tym artykule przedstawiono kompozycje platformy Xamarin.Forms zdefiniować szczególne visual wystąpień dla standardowych widoków.
+title: Motywy zestawu narzędzi Xamarin.Forms
+description: W tym artykule przedstawiono motywy Xamarin.Forms zdefiniowanie określonych wystąpień visual dla widoków standardowych.
 ms.prod: xamarin
 ms.assetid: 3DFB7C55-69F6-4980-A501-588719143482
 ms.technology: xamarin-forms
@@ -8,28 +8,28 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 0f49eeba072d6aeb7ead40d5d56d4af9e9bf5e27
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245735"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38814710"
 ---
-# <a name="xamarinforms-themes"></a>Motywy platformy Xamarin.Forms
+# <a name="xamarinforms-themes"></a>Motywy zestawu narzędzi Xamarin.Forms
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
-Kompozycje platformy Xamarin.Forms zostały ogłoszenia na Evolve 2016 i są dostępne jako podglądu dla klientów i spróbuj przekazać opinię.
+Motywy Xamarin.Forms zostały ogłoszeniem na konferencji rozwijających 2016 i są dostępne w wersji zapoznawczej dla klientów i spróbuj przekazać opinię.
 
-Motyw zostanie dodany do aplikacji platformy Xamarin.Forms przy tym **Xamarin.Forms.Theme.Base** pakietu Nuget, oraz dodatkowe pakietu, który definiuje motyw określonych (np.) Xamarin.Forms.Theme.Light) lub #else motyw lokalnego można zdefiniować dla aplikacji.
+Motyw jest dodawany do aplikacji platformy Xamarin.Forms, umieszczając **Xamarin.Forms.Theme.Base** pakietu Nuget, a także dodatkowe pakiet, który definiuje określone motyw (np. Xamarin.Forms.Theme.Light) lub inne można zdefiniować motyw lokalne dla aplikacji.
 
-Zapoznaj się [motywu jasny](light.md) i [ciemny motyw](dark.md) strony, aby uzyskać instrukcje dotyczące sposobu dodawania ich do aplikacji lub zapoznaj się z [motyw niestandardowy przykład](custom.md).
+Zapoznaj się [motyw jasny](light.md) i [motyw ciemny](dark.md) strony, aby uzyskać instrukcje dotyczące sposobu dodawania ich do aplikacji lub zapoznaj się z [przykład niestandardowy motyw](custom.md).
 
-**Ważne:** należy również wykonać kroki, aby [ładowanie zestawów motywu (poniżej)](#loadtheme) przez dodanie niektórych schematyczny kod służący do systemu iOS `AppDelegate` i Android `MainActivity`. Spowoduje to można zwiększyć w przyszłości zapoznawczą.
+**Ważne:** należy również wykonać kroki, aby [ładować zestawy motywu (poniżej)](#loadtheme) przez dodanie niektórych schematyczny kod służący do systemu iOS `AppDelegate` i Android `MainActivity`. To zostanie on ulepszony w wersji zapoznawczej w przyszłości.
 
 
 ## <a name="control-appearance"></a>Wygląd formantu
 
-[Światła](light.md) i [ciemny](dark.md) motywów zarówno zdefiniuj określonych wygląd dla standardowych formantów. Po dodaniu motyw do słownika zasobów aplikacji zmieni się wygląd standardowych kontrolek.
+[Światła](light.md) i [ciemny](dark.md) motywy zarówno zdefiniować określone wygląd dla standardowych kontrolek. Po dodaniu motyw do słownika zasobów aplikacji zmieni się wygląd formantów standardowych.
 
 Następujący kod XAML przedstawia niektóre formanty standardowe:
 
@@ -43,11 +43,11 @@ Następujący kod XAML przedstawia niektóre formanty standardowe:
 </StackLayout>
 ```
 
-Te zrzuty ekranu pokazują tych kontrolek z:
+Te zrzuty ekranu Pokaż te kontrolki:
 
 * Nie zastosowano motyw
-* Motywu jasny (tylko niewielkie różnice mającej bez motywu)
-* Ciemny motyw
+* Motyw jasny (tylko drobne różnice, by o bez motywu)
+* Motyw ciemny
 
 ![](images/standard-none-sml.png "Formanty bez tworzenia motywów") ![](images/standard-light-sml.png "formantów z motywu jasny") ![](images/standard-dark-sml.png "formantów z ciemnego motywu")
 
@@ -55,9 +55,9 @@ Te zrzuty ekranu pokazują tych kontrolek z:
 
 ## <a name="styleclass"></a>StyleClass
 
-`StyleClass` Właściwość umożliwia wygląd widoku można zmienić zgodnie z definicji podał motywu.
+`StyleClass` Właściwość umożliwia wygląd widoku, aby można zmienić zgodnie z definicją, dostarczone przez motywu.
 
-[Światła](light.md) i [ciemny](dark.md) motywów zarówno zdefiniować trzy różne typy wyglądu dla `BoxView`: `HorizontalRule`, `Circle`, i `Rounded`. Ten kod przedstawia trzy różne `BoxView`s z klasami inny styl stosowane:
+[Światła](light.md) i [ciemny](dark.md) motywy zarówno zdefiniować trzech różnych wystąpień dla `BoxView`: `HorizontalRule`, `Circle`, i `Rounded`. Ten kod przedstawia trzy różne `BoxView`s przy użyciu innego stylu klasy stosowane:
 
 ```xaml
 <StackLayout Padding="40">
@@ -67,32 +67,32 @@ Te zrzuty ekranu pokazują tych kontrolek z:
 </StackLayout>
 ```
 
-To powoduje jasny i ciemny w następujący sposób:
+Renderuje to jasny i ciemny w następujący sposób:
 
 ![](images/boxview-light-sml.png "BoxView z StyleClass motywu jasny") ![](images/boxview-dark-sml.png "BoxView z StyleClass ciemny motyw")
 
 <a name="builtin" />
 
-## <a name="built-in-classes"></a>Wbudowanych klas
+## <a name="built-in-classes"></a>Wbudowane klasy
 
-Oprócz automatycznie style typowe kontrolki jasnym i ciemny motywów obsługuje obecnie następujących klas, które mogą być stosowane przez ustawienie `StyleClass` tych kontrolek:
+Oprócz automatycznie style wspólnej kontroluje światła i motywów ciemny obecnie obsługuje następujące klasy, które mogą być stosowane przez ustawienie `StyleClass` tych kontrolek:
 
 **BoxView**
 
 * HorizontalRule
-* koło
+* Okrąg
 * Zaokrąglone
 
 **Obraz**
 
-* koło
+* Okrąg
 * Zaokrąglone
-* Miniatur
+* Miniatura
 
 **Przycisk**
 
 * Domyślny
-* podstawowy
+* Podstawowy
 * Powodzenie
 * Informacje o
 * Ostrzeżenie
@@ -105,18 +105,18 @@ Oprócz automatycznie style typowe kontrolki jasnym i ciemny motywów obsługuje
 
 * nagłówek
 * Subheader
-* Treści
+* Treść
 * Łącze
-* Odwrotność
+* Odwrotne
 
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
 <a name="loadtheme" />
 
-### <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nie można załadować pliku lub zestawu 'Xamarin.Forms.Theme.Light' lub jednej z jego zależności
+### <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nie można załadować pliku lub zestawu "Xamarin.Forms.Theme.Light" lub jednej z jego zależności
 
-W wersji zapoznawczej kompozycji nie można załadować w czasie wykonywania. Dodaj kod przedstawione poniżej do odpowiednich projektów, aby naprawić ten błąd.
+W wersji zapoznawczej motywów nie można załadować w czasie wykonywania. Dodaj kod pokazany poniżej do odpowiednie projekty, aby naprawić ten błąd.
 
 **iOS**
 

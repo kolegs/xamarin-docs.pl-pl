@@ -1,6 +1,6 @@
 ---
-title: Motyw ciemny platformy Xamarin.Forms
-description: W tym artykule wyjaśniono, jak korzystać z platformy Xamarin.Forms ciemny motyw w aplikacji.
+title: Motyw ciemny zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak używać zestawu narzędzi Xamarin.Forms ciemny motyw, który w aplikacji.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
@@ -8,18 +8,18 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245927"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38853248"
 ---
-# <a name="xamarinforms-dark-theme"></a>Motyw ciemny platformy Xamarin.Forms
+# <a name="xamarinforms-dark-theme"></a>Motyw ciemny zestawu narzędzi Xamarin.Forms
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
 > [!NOTE]
-> Motywy wymagają wersji zapoznawczej 2.3 platformy Xamarin.Forms. Sprawdź [porady dotyczące rozwiązywania problemów](~/xamarin-forms/user-interface/themes/index.md) po wystąpieniu błędów.
+> Motywy wymaga wersji zapoznawczej 2.3 zestawu narzędzi Xamarin.Forms. Sprawdź [wskazówki dotyczące rozwiązywania problemów](~/xamarin-forms/user-interface/themes/index.md) Jeśli wystąpią błędy.
 
 Aby użyć ciemnego motywu:
 
@@ -30,7 +30,7 @@ Aby użyć ciemnego motywu:
 
 ## <a name="2-add-to-the-resource-dictionary"></a>2. Dodaj do słownika zasobów
 
-W **App.xaml** pliku Dodawanie nowej niestandardowej `xmlns` motywu i upewnij się, motywu zasoby są łączone ze słownika zasobów aplikacji.
+W **App.xaml** pliku Dodaj nowe niestandardowe `xmlns` motywu i upewnij się, że zasoby motywu są scalane z słownik zasobów aplikacji.
 Poniżej przedstawiono przykładowy plik XAML:
 
 ```xaml
@@ -45,13 +45,13 @@ Poniżej przedstawiono przykładowy plik XAML:
 
 ## <a name="3-load-theme-classes"></a>3. Załaduj motyw klas
 
-Wykonaj to [Rozwiązywanie problemów z kroku](~/xamarin-forms/user-interface/themes/index.md) i Dodaj wymagane kod w projektów aplikacji systemu Android i iOS.
+Postępuj zgodnie z tym [rozwiązywania problemów krok](~/xamarin-forms/user-interface/themes/index.md) i Dodaj kod wymagany projektów aplikacji dla systemu Android i iOS.
 
 ## <a name="4-use-styleclass"></a>4. Użyj StyleClass
 
-Oto przykład przycisków i etykiet w motywu ciemny, wraz z kod znaczników, który tworzy je.
+Oto przykład przycisków i etykiet motywu ciemny, wraz z kodu znaczników, która je tworzy.
 
-[![](dark-images/dark-theme-sml.png "Przycisków i etykiet w ciemnym motywem")](dark-images/dark-theme.png#lightbox "przycisków i etykiet w ciemny motyw")
+[![](dark-images/dark-theme-sml.png "Przycisków i etykiet motywu ciemny")](dark-images/dark-theme.png#lightbox "przycisków i etykiet motywu ciemny")
 
 ```xaml
 <StackLayout Padding="20">
@@ -69,4 +69,4 @@ Oto przykład przycisków i etykiet w motywu ciemny, wraz z kod znaczników, kt�
 </StackLayout>
 ```
 
-[Pełną listę wbudowanych klas](~/xamarin-forms/user-interface/themes/index.md) pokazuje, jakie style są dostępne dla niektórych typowych formantów.
+[Pełną listę wbudowanych klas](~/xamarin-forms/user-interface/themes/index.md) pokazuje, jakie style są dostępne w przypadku niektórych typowych kontrolek.

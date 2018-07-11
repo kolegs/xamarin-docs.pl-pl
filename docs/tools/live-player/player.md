@@ -1,41 +1,41 @@
 ---
-title: Aplikacja odtwarzacza na żywo Xamarin
-description: W tym dokumencie opisano Player Live Xamarin aplikacji, która umożliwia podgląd zmian kodu na żywo na urządzeniu. Zawarto informacje Instalatora, próbek, dzienniki, ustawienia zarządzania urządzeniami i więcej.
+title: Aplikacja Xamarin Live Player
+description: W tym dokumencie opisano aplikację, która może służyć do podgląd zmian kodu na żywo na urządzeniu aplikacji Xamarin Live Player. Omówiono w nim instalacji, przykłady, dzienniki, ustawienia, zarządzanie urządzeniami i nie tylko.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
 ms.date: 05/14/2017
 ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794153"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830416"
 ---
-# <a name="xamarin-live-player-app"></a>Aplikacja odtwarzacza na żywo Xamarin
+# <a name="xamarin-live-player-app"></a>Aplikacja Xamarin Live Player
 
 ![Funkcja w wersji zapoznawczej](~/media/shared/preview.png)
 
-Po zainstalowaniu aplikacji na telefonie, wykonaj [instrukcje instalacji](~/tools/live-player/install.md) do podłączenia do komputera. Wypróbuj jedną z [przykładowe aplikacje](~/tools/live-player/samples.md) można pobrać go do pracy.
+Po zainstalowaniu aplikacji na telefonie, postępuj zgodnie z [instrukcje instalacji](~/tools/live-player/install.md) połączyć się z komputera. Wypróbuj jedną z [przykładowe aplikacje](~/tools/live-player/samples.md) Aby przygotować go do pracy.
 
-Uruchamianie aplikacji platformy Xamarin Player na żywo wygląda następująco (w systemach iOS i Android odpowiednio):
+Uruchamianie aplikacji Xamarin Live Player wygląda w następujący sposób (w systemach iOS i Android odpowiednio):
 
-![Zrzut ekranu aplikacji systemu iOS Player na żywo](player-images/app-iphone-sml.png) ![Na żywo Player Android zrzut ekranu aplikacji](player-images/app-android-sml.png)
+![Live Player zrzut ekranu z aplikacji dla systemu iOS](player-images/app-iphone-sml.png) ![Zrzut ekranu na żywo odtwarzacza systemu Android przez aplikację](player-images/app-android-sml.png)
 
-Po naciśnięciu **pary dla programu Visual Studio**, użyć aparatu do skanowania kodów kreskowych, przedstawiający na komputerze:
+Po naciśnięciu klawisza **parowania z programu Visual Studio**, używanie aparatu do skanowania kodu kreskowego przedstawiający na komputerze:
 
-![Zrzut ekranu przedstawiający skanera kodów kreskowych z systemem iOS](player-images/scan-iphone-sml.png) ![Zrzut ekranu przedstawiający skanera kodów kreskowych systemu Android](player-images/scan-android-sml.png)
+![Zrzut ekranu przedstawiający skanera kodów kreskowych z systemem iOS](player-images/scan-iphone-sml.png) ![Zrzut ekranu przedstawiający skanera kodów kreskowych dla systemu Android](player-images/scan-android-sml.png)
 
-Jeśli połączenie zostanie nawiązane, kod powinien prawie natychmiast uruchomić na urządzeniu (takich jak [próbki kalkulatora](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
+Jeśli połączenie zostanie nawiązane, powinien zostać uruchomiony kod na urządzeniu niemal natychmiast (takie jak [przykład Kalkulator](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![Przykładowa aplikacja Kalkulator działającej na urządzeniu](player-images/basic-calculator-iphone-sml.png)
+![Przykładowa aplikacja Kalkulator działające na urządzeniu](player-images/basic-calculator-iphone-sml.png)
 
 ## <a name="options"></a>Opcje
 
 Kliknij przycisk informacji **(i)** w dolnej części aplikacji, aby wyświetlić **opcje** menu:
 
-[![Zrzut ekranu przedstawiający menu opcji](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![Zrzut ekranu przedstawiający menu Opcje](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Dzienniki
 
@@ -43,15 +43,15 @@ Wyświetl dzienniki do diagnozowania problemów.
 
 ### <a name="settings"></a>Ustawienia
 
-- Przełącz wyświetlanie błędów kompilacji i środowiska wykonawczego.
+- Przełącz wyświetlanie błędów kompilacji i środowiska uruchomieniowego.
 - Informacje o wersji.
-- Wyślij opinię.
+- Wyślij informacje zwrotne.
 
-[![Zrzut ekranu, ustawienia](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![Zrzut ekranu przedstawiający ustawienia](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Zarządzanie urządzeniami
 
-Aby połączyć z urządzenia po raz pierwszy, postępuj zgodnie z instrukcjami [wymagania dotyczące instalacji](~/tools/live-player/install.md). Można skojarzyć wielu urządzeń (na przykład iOS i Android) i zarządzać nimi za pomocą środowiska IDE.
+Aby połączyć urządzenie po raz pierwszy, postępuj zgodnie z instrukcjami [wymagania dotyczące instalacji](~/tools/live-player/install.md). Można skojarzyć wiele urządzeń (na przykład iOS i Android) i zarządzać nimi za pomocą środowiska IDE.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -61,11 +61,11 @@ W programie Visual Studio, wybierz **Narzędzia > Xamarin Live Player > Zarządz
 
 To okno umożliwia wykonaj następujące czynności:
 
-- Para nowe urządzenie przez zeskanowanie kodu
-- Można również skojarzyć urządzenia, wpisując kod wyświetlany na ekranie jego
+- Para nowego urządzenia przez zeskanowanie kodu
+- Alternatywnie parowania urządzenia, wpisując kod wyświetlany na jego ekranie
 - Usuń istniejące urządzenia z listy
 
-Można również dostęp do tego okna z listy urządzeń.
+W tym oknie można również uzyskać dostęp z listy urządzeń.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -75,22 +75,22 @@ W programie Visual Studio dla komputerów Mac, wybierz **Narzędzia > Zarządzan
 
 To okno umożliwia wykonaj następujące czynności:
 
-- Para nowe urządzenie przez zeskanowanie kodu
-- Można również skojarzyć urządzenia, wpisując kod wyświetlany na ekranie jego
+- Para nowego urządzenia przez zeskanowanie kodu
+- Alternatywnie parowania urządzenia, wpisując kod wyświetlany na jego ekranie
 - Usuń istniejące urządzenia z listy
 
 ![Zarządzanie urządzeniami okna](player-images/manage.png)
 
-Można również dostęp do tego okna z listy urządzeń:
+W tym oknie można również przejść, korzystając z listy urządzeń:
 
-![Wybierz z listy urządzeń Xamarin Live Player urządzeń](player-images/manage-device-menu.png)
+![Wybierz platformy Xamarin Live Player urządzeń z listy urządzeń](player-images/manage-device-menu.png)
 
 -----
 
-Jeśli wystąpią można znaleźć żadnych problemów [ograniczenia i rozwiązywanie problemów z](~/tools/live-player/troubleshooting.md).
+Jeśli wystąpią Zobacz wszystkie problemy [ograniczenia i rozwiązywanie problemów z](~/tools/live-player/troubleshooting.md).
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Ograniczenia](~/tools/live-player/limitations.md)
 - [Rozwiązywanie problemów](~/tools/live-player/troubleshooting.md)
-- [Przykłady na żywo Player Xamarin](samples.md)
+- [Przykłady aplikacji Xamarin Live Player](samples.md)

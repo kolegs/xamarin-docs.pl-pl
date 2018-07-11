@@ -1,57 +1,57 @@
 ---
-title: Mapy platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia klasy Map platformy Xamarin.Forms na potrzeby mapy natywnych interfejsów API na każdej z platform zapewniają dobrze znany mapuje środowisko dla użytkowników.
+title: Mapa zestawu narzędzi Xamarin.Forms
+description: W tym artykule opisano sposób użycia klasy Xamarin.Forms Map użyć mapy natywnych interfejsów API na każdej platformie, aby zapewnić powszechnie znane mapy środowisko dla użytkowników.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245478"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947247"
 ---
-# <a name="xamarinforms-map"></a>Mapy platformy Xamarin.Forms
+# <a name="xamarinforms-map"></a>Mapa zestawu narzędzi Xamarin.Forms
 
-_Platformy Xamarin.Forms korzysta natywnych interfejsów API mapy na każdej z platform._
+_Zestaw narzędzi Xamarin.Forms używa mapy natywnych interfejsów API na każdej platformie._
 
-Xamarin.Forms.Maps korzysta natywnych interfejsów API mapy na każdej z platform. Zapewnia szybkie i znanych mapy dla użytkowników, ale oznacza, że niektóre kroki konfiguracji są potrzebne do przestrzegania szczególne wymagania interfejsu API każdej platformy.
-Po skonfigurowaniu `Map` kontrolować działa tak samo jak element platformy Xamarin.Forms typowy kod.
+Projekt xamarin.Forms.Maps dla używa natywnego mapy interfejsów API na każdej platformie. Zapewnia szybkie i dobrze znana mapy dla użytkowników, ale oznacza, że niektóre kroki konfiguracji są potrzebne stosować się do określonych wymagań API każdej platformy.
+Po skonfigurowaniu `Map` działania, podobnie jak inny element zestawu narzędzi Xamarin.Forms w kodzie wspólnej kontroli.
 
-* [Mapuje inicjowania](#Maps_Initialization) — przy użyciu `Map` wymaga dodatkowy kod inicjujący podczas uruchamiania.
-* [Konfiguracja platformy](#Platform_Configuration) -każdej z platform wymaga skonfigurowania map do pracy.
-* [W języku C# przy użyciu map](#Using_Maps) — wyświetlanie mapuje i PIN przy użyciu języka C#.
-* [Przy użyciu mapy w języku XAML](#Using_Xaml) — wyświetlanie mapy z XAML.
+* [Mapuje inicjowania](#Maps_Initialization) — przy użyciu `Map` wymaga dodatkowy kod inicjujący przy uruchamianiu.
+* [Konfiguracja platformy](#Platform_Configuration) — każdej z platform wymaga konfiguracji dla map do pracy.
+* [W języku C# przy użyciu map](#Using_Maps) — wyświetlanie mapy i Przypina przy użyciu języka C#.
+* [Przy użyciu map w XAML](#Using_Xaml) — wyświetlanie mapy z XAML.
 
-Użyto formantu mapy [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) próbki, które są wyświetlane poniżej.
+Formant mapy został użyty w [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) próbki, które znajdują się poniżej.
 
- [![Mapy w przykładowym MobileCRM](map-images/maps-zoom-sml.png "przykład formantu mapy")](map-images/maps-zoom.png#lightbox "przykład formantu mapy")
+ [![Mapy w przykładzie MobileCRM](map-images/maps-zoom-sml.png "przykład kontrolki mapy")](map-images/maps-zoom.png#lightbox "przykład kontrolki mapy")
 
-Funkcje mapy może zostać poprawione dalsze tworząc [mapy niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Funkcji mapy może dalszych Zwiększ swoje możliwości, tworząc [mapowanie niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 <a name="Maps_Initialization" />
 
 ## <a name="maps-initialization"></a>Inicjowanie mapy
 
-Podczas dodawania mapy do aplikacji platformy Xamarin.Forms **Xamarin.Forms.Maps** jest oddzielnego pakietu NuGet, który należy dodać do każdego projektu w rozwiązaniu.
-W systemie Android to również ma zależności na GooglePlayServices (NuGet inny) jest automatycznie pobierana podczas dodawania Xamarin.Forms.Maps.
+Podczas dodawania mapy do aplikacji platformy Xamarin.Forms **projekt xamarin.Forms.Maps dla** jest oddzielny pakiet NuGet, który należy dodać do każdego projektu w rozwiązaniu.
+W systemie Android to również zależny od GooglePlayServices (NuGet inny), który jest pobierany automatycznie, gdy dodajesz projekt xamarin.Forms.Maps dla.
 
-Po zainstalowaniu pakietu NuGet, niektóre kod inicjujący jest wymagany w każdym projekcie aplikacji *po* `Xamarin.Forms.Forms.Init` wywołania metody. Dla systemu iOS można użyć poniższego kodu:
+Po zainstalowaniu pakietu NuGet, niektóre kod inicjujący jest wymagany w każdym projekcie aplikacji *po* `Xamarin.Forms.Forms.Init` wywołania metody. Użyj poniższego kodu, dla systemu iOS:
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-W systemie Android należy przekazać takich samych parametrach co `Forms.Init`:
+W systemie Android musisz przekazać te same parametry jako `Forms.Init`:
 
 ```csharp
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Dla systemu Windows platformy Uniwersalnej użyć poniższego kodu:
+Dla uniwersalnej platformy Windows (UWP), użyj następującego kodu:
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -63,28 +63,28 @@ Dodaj to wywołanie w następujących plikach dla każdej platformy:
 -  **Android** — w pliku MainActivity.cs `OnCreate` metody.
 -  **Platformy uniwersalnej systemu Windows** — w pliku MainPage.xaml.cs `MainPage` konstruktora.
 
-Gdy został dodany pakiet NuGet i wywołać metodę inicjowania wewnątrz każdego applcation `Xamarin.Forms.Maps` interfejsy API mogą być używane w typowych .NET Standard projektu biblioteki lub kod projektu udostępnionego.
+Po został dodany pakiet NuGet i wywołana metoda inicjowania wewnątrz każdego applcation `Xamarin.Forms.Maps` interfejsy API mogą być używane w typowych projekt biblioteki .NET Standard lub kod projektu udostępnionego.
 
 <a name="Platform_Configuration" />
 
 ## <a name="platform-configuration"></a>Konfiguracja platformy
 
-Przed mapy będzie wyświetlana na niektórych platformach są wymagane dodatkowe czynności konfiguracyjne.
+Dodatkowe czynności konfiguracyjne są wymagane na niektórych platformach, zanim spowoduje wyświetlenie mapy.
 
 ### <a name="ios"></a>iOS
 
-Aby uzyskać dostęp do lokalizacji usługi w systemie iOS, należy ustawić następujące klucze **Info.plist**:
+Dostęp do lokalizacji usług w systemie iOS, należy ustawić następujące klucze w **Info.plist**:
 
-- iOS 11
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) — dla przy użyciu usługi lokalizacji, gdy aplikacja jest w użyciu
-    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) — dla przy użyciu lokalizacji usług przez cały czas
-- iOS 10 i wcześniejszych
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) — dla przy użyciu usługi lokalizacji, gdy aplikacja jest w użyciu
-    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) — dla przy użyciu lokalizacji usług przez cały czas    
+- System iOS 11
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) — dotyczące korzystania z usług lokalizacyjnych, gdy aplikacja jest w użyciu
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) — dotyczące korzystania z usług lokalizacyjnych przez cały czas
+- System iOS 10 i wcześniejszych
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) — dotyczące korzystania z usług lokalizacyjnych, gdy aplikacja jest w użyciu
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) — dotyczące korzystania z usług lokalizacyjnych przez cały czas    
 
-Aby zapewnić obsługę systemu iOS 11 i starsze wersje, mogą obejmować wszystkie trzy przyciski: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, i `NSLocationAlwaysUsageDescription`.
+Aby obsługiwać system iOS 11 lub starszej, mogą obejmować wszystkie trzy przyciski: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, i `NSLocationAlwaysUsageDescription`.
 
-Reprezentacja XML tych kluczy w **Info.plist** są wyświetlane poniżej. Należy zaktualizować `string` wartości w celu odzwierciedlenia jak aplikacja używa informacji o lokalizacji:
+Reprezentacja XML tych kluczy w **Info.plist** znajdują się poniżej. Należy zaktualizować `string` wartości, aby odzwierciedlić, jak Twoja aplikacja używa informacji o lokalizacji:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -95,29 +95,29 @@ Reprezentacja XML tych kluczy w **Info.plist** są wyświetlane poniżej. Należ
 <string>Can we use your location at all times?</string>
 ```
 
-**Info.plist** wpisy można również dodać w **źródła** widoku w czasie edycji **Info.plist** pliku:
+**Info.plist** wpisy mogą być również dodawane w **źródła** widoku podczas edytowania **Info.plist** pliku:
 
-![Info.plist dla systemu iOS 8](map-images/ios8-map-permissions.png "wpisy Info.plist wymagane iOS 8")
+![Plik info.plist dla systemu iOS 8](map-images/ios8-map-permissions.png "wpisy Info.plist wymagane systemy iOS 8")
 
 
 ### <a name="android"></a>Android
 
-Aby użyć [v2 interfejsu API map Google](https://developers.google.com/maps/documentation/android/) w systemie Android możesz wygenerować klucz interfejsu API i dodaj go do projektu systemu Android.
-Postępuj zgodnie z instrukcjami w dokumencie Xamarin [uzyskiwania klucza interfejsu API map Google v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
-Po wykonaniu tych instrukcji, Wklej klucz interfejsu API w **Properties/AndroidManifest.xml** pliku (Wyświetl źródło i Znajdź lub zaktualizowania następujący element):
+Aby użyć [v2 interfejsu API usługi mapy Google](https://developers.google.com/maps/documentation/android/) w systemie Android możesz wygenerować klucz interfejsu API i dodać go do projektu systemu Android.
+Postępuj zgodnie z instrukcjami w dokumentacji platformy Xamarin na [uzyskiwanie klucza interfejsu API usługi mapy Google v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+Po wykonaniu tych instrukcji, Wklej klucz interfejsu API w **Properties/AndroidManifest.xml** pliku (Wyświetl źródło i Znajdź/Zaktualizuj następujący element):
 
 ```xml
-<meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="YOUR_API_KEY"/>
+<application ...>
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
+</application>
 ```
 
-Bez prawidłowego klucza interfejsu API w formancie mapy zostaną wyświetlone jako szare pole w systemie Android.
+Bez prawidłowego klucza interfejsu API kontrolki mapy będą wyświetlane jako szary pole w systemie Android.
 
 > [!NOTE]
-> Pamiętaj, aby wygenerować inny klucz przy użyciu pliku magazynu kluczy, który jest używany do podpisywania wydanej wersji programu dowolnej aplikacji, która została przekazana do sklepu Google Play. Klucz Generowanie dla rozwoju i debugowanie nie będzie działać i z aplikacji pobranej ze sklepu Google Play zostaną przerwane ekran mapy. Pamiętaj także można ponownie wygenerować klucza if aplikacji **nazwy pakietu** zmiany.
+> Pamiętaj, że, aby APK usługi Google Maps dostęp do, możesz musi obejmują odcisków palców SHA-1 i pakietu nazwy dla każdego keystore (debug i release), którego używasz do logowania się użytkownika pliku APK. Na przykład jeśli jeden komputer jest używany do debugowania i inny komputer w celu generowania wersji pliku APK, możesz powinna zawierać odcisk palca certyfikatu SHA-1 z magazynu kluczy debugowania pierwszego komputera i odcisk palca certyfikatu SHA-1 z magazynu kluczy wersji programu drugi komputer. Pamiętaj również, edycji poświadczenia klucza, jeśli aplikacja **nazwy pakietu** zmiany. Zobacz [uzyskiwanie klucza interfejsu API usługi mapy Google v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-Należy również włączyć odpowiednie uprawnienia, kliknięcie prawym przyciskiem myszy projekt Android i wybierając **Opcje > kompilacji > aplikacji systemu Android** i zaznaczenie następujących czynności:
+Należy także włączyć odpowiednie uprawnienia, kliknij prawym przyciskiem myszy na projekt systemu Android i wybierając **Opcje > kompilacji > Aplikacja dla systemu Android** i jak należy następujące czynności:
 
 * `AccessCoarseLocation`
 * `AccessFineLocation`
@@ -127,23 +127,23 @@ Należy również włączyć odpowiednie uprawnienia, kliknięcie prawym przycis
 * `AccessWifiState`
 * `Internet`
 
-Niektóre z nich są przedstawione na poniższym zrzucie ekranu:
+W poniższym zrzucie ekranu przedstawiono niektóre z nich:
 
 ![Wymagane uprawnienia dla systemu Android](map-images/android-map-permissions.png "wymagane uprawnienia dla systemu Android")
 
-Ostatnie dwa są wymagane, ponieważ aplikacji wymaga połączenia sieciowego, aby pobrać dane mapy. Przeczytaj informacje o Android [uprawnienia](http://developer.android.com/reference/android/Manifest.permission.html) Aby dowiedzieć się więcej.
+Ostatnie dwa są wymagane, ponieważ aplikacji wymaga połączenia sieciowego, aby pobrać dane mapy. Przeczytaj o Android [uprawnienia](http://developer.android.com/reference/android/Manifest.permission.html) Aby dowiedzieć się więcej.
 
 ### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
-Aby użyć mapy na platformy uniwersalnej systemu Windows należy wygenerować token autoryzacji. Aby uzyskać więcej informacji, zobacz [żądania klucz uwierzytelniania mapy](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) w witrynie MSDN.
+Aby używać mapy na platformie Universal Windows należy wygenerować token autoryzacji. Aby uzyskać więcej informacji, zobacz [poprosić o klucz uwierzytelniania mapy](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) w witrynie MSDN.
 
-Następnie należy określić token uwierzytelniania w `FormsMaps.Init("AUTHORIZATION_TOKEN")` wywołania metody, aby uwierzytelnić aplikację przy użyciu map Bing.
+Następnie należy określić token uwierzytelniania w `FormsMaps.Init("AUTHORIZATION_TOKEN")` wywołania metody, do uwierzytelniania aplikacji z usługą mapy Bing.
 
 <a name="Using_Maps" />
 
 ## <a name="using-maps"></a>Przy użyciu map
 
-Zobacz [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) w przykładowym MobileCRM przykład sposobu użycia formantu mapy w kodzie. Prosty `MapPage` klasy może wyglądać informacja ta — która nowy `MapSpan` utworzeniu pozycja widoku mapy do:
+Zobacz [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) w przykładzie MobileCRM, na przykład jak używać kontrolki mapy w kodzie. Prosty `MapPage` klasy może wyglądać jak ten — powiadomienie, nowy `MapSpan` utworzeniu pozycja widoku mapy do:
 
 ```csharp
 public class MapPage : ContentPage {
@@ -165,7 +165,7 @@ public class MapPage : ContentPage {
 
 ### <a name="map-type"></a>Typ mapowania
 
-Można także zmienić zawartości mapy przez ustawienie `MapType` właściwości do wyświetlenia mapy ulicy regularne (ustawienie domyślne), obrazów satelitarnych lub obie te grupy.
+Można także zmienić zawartość mapy, ustawiając `MapType` właściwości, aby pokazać regularne mapa drogowa (ustawienie domyślne), obrazów satelitarnych lub jako kombinację obu tych.
 
 ```csharp
 map.MapType == MapType.Street;
@@ -178,15 +178,15 @@ Nieprawidłowa `MapType` wartości to:
 -  Ulica (ustawienie domyślne)
 
 
-### <a name="map-region-and-mapspan"></a>Mapa regionu i MapSpan
+### <a name="map-region-and-mapspan"></a>Mapa regionów i MapSpan
 
-Jak pokazano powyżej fragmentu kodu, podając `MapSpan` wystąpienie do konstruktora map Ustawia widok początkowy (center punktu i poziom powiększenia) mapy po załadowaniu go. `MoveToRegion` Metody w klasie mapy można zmienić poziomu pozycji lub powiększenia mapy. Istnieją dwa sposoby tworzenia nowego `MapSpan` wystąpienie:
+Jak pokazano w powyższym fragmencie kodu, podając `MapSpan` wystąpienia do konstruktora mapy Ustawia widok początkowy (Centrum punktu i poziom powiększenia) mapy podczas jego ładowania. `MoveToRegion` Metody w klasie mapy następnie można zmienić na poziomie pozycji lub powiększenia mapy. Istnieją dwa sposoby, aby utworzyć nowy `MapSpan` wystąpienie:
 
--  **MapSpan.FromCenterAndRadius()** -statycznej metody do tworzenia zakresu z `Position` i określając `Distance` .
+-  **MapSpan.FromCenterAndRadius()** — metody statycznej, aby utworzyć zakres z `Position` i określając `Distance` .
 -  **nowe MapSpan ()** — Konstruktor, który używa `Position` i st. szerokości i długości geograficznej do wyświetlenia.
 
 
-Aby zmienić poziom powiększenia mapy bez zmiany lokalizacji, Utwórz nową `MapSpan` przy użyciu bieżącej lokalizacji z `VisibleRegion.Center` właściwości formantu mapy. A `Slider` może posłużyć do kontroli powiększenia mapy następująco (jednak powiększanie bezpośrednio w formancie mapy obecnie nie można zaktualizować wartości suwaka):
+Aby zmienić poziom powiększenia mapy bez zmiany ich lokalizacji, Utwórz nowy `MapSpan` przy użyciu bieżącej lokalizacji z `VisibleRegion.Center` właściwości formantu mapy. Element `Slider` może służyć do kontrolowania powiększenia mapy następująco (jednak powiększanie bezpośrednio w formancie mapy aktualnie nie można zaktualizować wartość suwaka):
 
 ```csharp
 var slider = new Slider (1, 18, 1);
@@ -197,11 +197,11 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [![Mapy z powiększenia](map-images/maps-zoom-sml.png "powiększenie formantu mapy")](map-images/maps-zoom.png#lightbox "powiększenie formantu mapy")
+ [![Mapy z powiększeniem](map-images/maps-zoom-sml.png "Powiększ formant mapy")](map-images/maps-zoom.png#lightbox "powiększenie kontrolki mapy")
 
-### <a name="map-pins"></a>Szpilki
+### <a name="map-pins"></a>Mapy kodów PIN
 
-Lokalizacje można oznaczyć na mapie z `Pin` obiektów.
+Może być oznaczony lokalizacji na mapie za pomocą `Pin` obiektów.
 
 ```csharp
 var position = new Position(37,-122); // Latitude, Longitude
@@ -214,19 +214,19 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` mogą być ustawione na jedną z następujących wartości, co może negatywnie wpłynąć na sposób numer pin do renderowania (w zależności od platformy):
+ `PinType` można ustawić jedną z następujących wartości, które mogą mieć wpływ na sposób numer pin do renderowania (w zależności od platformy):
 
 -  Ogólny
 -  Miejsce
 -  SavedPin
--  Właściwości SearchResult
+-  SearchResult
 
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Przy użyciu kodu Xaml
+## <a name="using-xaml"></a>Przy użyciu języka Xaml
 
-Mapy również może być umieszczony w układów Xaml, jak pokazano w ta Wstawka kodu.
+Mapy również może być umieszczony w Xaml układów, jak pokazano w tym fragmencie kodu.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -244,7 +244,7 @@ Mapy również może być umieszczony w układów Xaml, jak pokazano w ta Wstawk
 </ContentPage>
 ```
 
-`MapRegion` i `Pins` można ustawić za pomocą kodu `MyMap` odwołania (lub niezależnie od mapy o nazwie). Należy pamiętać, że dodatkowe `xmlns` definicję przestrzeni nazw jest wymagany do odwołują się do formantów Xamarin.Forms.Maps.
+`MapRegion` i `Pins` można ustawić przy użyciu kodu `MyMap` odwołania (lub niezależnie od rodzaju mapy o nazwie). Należy pamiętać, że dodatkowe `xmlns` definicję przestrzeni nazw jest wymagany do odwołują się do formantów projekt xamarin.Forms.Maps dla.
 
 ```csharp
 MyMap.MoveToRegion(
@@ -256,9 +256,9 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>Podsumowanie
 
-Xamarin.Forms.Maps jest oddzielny NuGet, które muszą zostać dodane do każdego projektu w rozwiązaniu platformy Xamarin.Forms. Dodatkowy kod inicjujący jest wymagana, jak również niektóre kroki konfiguracji dla systemu iOS, Android i platformy uniwersalnej systemu Windows.
+Projekt xamarin.Forms.Maps dla jest oddzielnym NuGet, który musi zostać dodany do każdego projektu w rozwiązaniu Xamarin.Forms. Dodatkowy kod inicjujący jest wymagane, jak również niektórych czynności konfiguracyjnych dla systemów iOS, Android i platformy uniwersalnej systemu Windows.
 
-Raz skonfigurowanego interfejsu API map może zostać użyty do renderowania map ze znacznikami numeru pin w kilku wierszach kodu. Mapy mogą być dodatkowo dołączane [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Po skonfigurowanym interfejsu API map, może zostać użyty do renderowania mapy ze znacznikami numeru pin w kilku wierszach kodu. Mapy mogą być dodatkowo dołączane [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne

@@ -1,32 +1,32 @@
 ---
-title: 'Xamarin.Essentials: tekst na mowę'
-description: Klasa TextToSpeech w Xamarin.Essentials umożliwia aplikacji korzystanie z wbudowanych w tekst na mowę aparaty porozmawiać wstecz tekstu z urządzenia, a także do zapytania dostępne języki obsługiwane przez aparat.
+title: 'Xamarin.Essentials: zamiana tekstu na mowę'
+description: Klasa TextToSpeech Xamarin.Essentials umożliwia aplikacji korzystanie z wbudowanej zamiany tekstu na mowę silników mówić tekstowe zaplecze z urządzenia, a także do kwerendy językach obsługujących silnika.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782804"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815664"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: tekst na mowę
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: zamiana tekstu na mowę
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**TextToSpeech** klasa umożliwia aplikacji korzystanie z wbudowanych w tekst na mowę aparaty porozmawiać wstecz tekstu z urządzenia, a także do zapytania dostępne języki obsługiwane przez aparat.
+**TextToSpeech** klasa umożliwia aplikacji korzystanie z wbudowanej zamiany tekstu na mowę silników mówić tekstowe zaplecze z urządzenia, a także do kwerendy językach obsługujących silnika.
 
-## <a name="using-text-to-speech"></a>Przy użyciu tekst na mowę
+## <a name="using-text-to-speech"></a>Za pomocą zamiany tekstu na mowę
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcja tekst na mowę działa przez wywołanie metody `SpeakAsync` metody tekstu i opcjonalnych parametrów i zwraca po zakończeniu utterance. 
+Funkcja zamiany tekstu na mowę działa przez wywołanie metody `SpeakAsync` metoda tekstu i opcjonalnych parametrów i zwraca po zakończeniu wypowiedź. 
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +46,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Ta metoda przyjmuje opcjonalny CancellationToken przestanie utterance po jego uruchomieniu. 
+Ta metoda przyjmuje opcjonalny token anulowania można zatrzymać wypowiedź po uruchomieniu. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +66,7 @@ public void CancelSpeech()
 }
 ```
 
-Tekst na mowę zostanie automatycznie kolejka żądań mowy z tym samym wątku. 
+Automatycznie zamiany tekstu na mowę może umieścić w kolejce żądań mowy z tym samym wątku. 
 
 ```csharp
 bool isBusy = false;
@@ -92,7 +92,7 @@ public void SpeakMultiple()
 
 ### <a name="speech-settings"></a>Ustawienia rozpoznawania mowy
 
-Aby uzyskać większą kontrolę nad jak dźwięk jest używany z tyłu `SpeakSettings` umożliwiająca ustawienie woluminu, wysokości i ustawień regionalnych.
+Aby uzyskać większą kontrolę nad jak audio jest używany z tyłu `SpeakSettings` umożliwiająca ustawienie woluminu, skoku i ustawień regionalnych.
 
 ```csharp
 public async Task SpeakNow()
@@ -107,7 +107,7 @@ public async Task SpeakNow()
 }
 ```
 
-Obsługiwane wartości dla parametrów są następujące:
+Obsługiwane wartości dla tych parametrów są następujące:
 
 | Parametr | Minimalnie | Maksymalnie |
 | --- | :---: | :---: |
@@ -116,7 +116,7 @@ Obsługiwane wartości dla parametrów są następujące:
 
 ### <a name="speech-locales"></a>Ustawienia regionalne mowy
 
-Każdej z platform oferuje ustawień regionalnych porozmawiać wstecz tekstu w wielu językach i akcentów. Dotyczy wszystkich platform różne kody i sposobów określania, który jest dlaczego Essentials zapewnia i platform `Locale` klasy i sposób wyszukiwać w nich z `GetLocalesAsync`.
+Każdej z platform oferuje ustawień regionalnych mówić wstecz tekst w wielu językach i akcentów. Dotyczy wszystkich platform różne kody i sposobów określania tego, co jest dlaczego Essentials zapewnia dla wielu platform `Locale` klasy i sposób ich za pomocą zapytań `GetLocalesAsync`.
 
 ```csharp
 public async Task SpeakNow()
@@ -139,8 +139,8 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>Ograniczenia
 
-- Utterance kolejki nie jest gwarantowana w przypadku przez wiele wątków.
-- Tło odtwarzania audio nie jest oficjalnie obsługiwana.
+- Wypowiedź kolejki nie jest gwarantowana w przypadku ich wywołania przez wiele wątków.
+- Odtwarzanie dźwięku w tle nie jest oficjalnie obsługiwany.
 
 ## <a name="api"></a>interfejs API
 

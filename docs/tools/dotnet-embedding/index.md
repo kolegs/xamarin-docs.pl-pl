@@ -1,47 +1,47 @@
 ---
 title: Osadzanie kodu .NET
-description: 'Osadzanie .NET umożliwia istniejącego kodu platformy .NET (C#, F # i inne) być używane przez kod napisany w językach programowania.'
+description: 'Osadzanie kodu .NET umożliwia istniejącego kodu .NET (C#, F # i inne) do użycia przez kod napisany w innych językach programowania.'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
 ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793124"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830403"
 ---
 # <a name="net-embedding"></a>Osadzanie kodu .NET
 
 ![Wersja zapoznawcza](~/media/shared/preview.png)
 
-Osadzanie .NET umożliwia istniejącego kodu platformy .NET (C#, F # i inne) do użycia z innych języków programowania i w różnych środowiskach różnych.
+Osadzanie kodu .NET umożliwia istniejącego kodu .NET (C#, F # i inne) do użycia w innych językach programowania i w różnych środowiskach różnych.
 
-Oznacza to, że jeśli biblioteki .NET, która ma być używany z istniejącej aplikacji systemu iOS, możesz to zrobić.   Lub jeśli chcesz połączyć ją z natywnej biblioteki języka C++, możesz też to zrobić.   Zawartość lub korzystać z kodu platformy .NET w języku Java.
+Oznacza to, że jeśli masz bibliotekę .NET, którą chcesz korzystać z istniejących aplikacji systemu iOS, możesz to zrobić.   Lub jeśli chcesz połączyć je z natywną bibliotekę języka C++, również to zrobić.   Lub wykorzystali kodu platformy .NET w języku Java.
 
-Osadzanie .NET jest oparta na [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) projekt open source.
+Osadzanie kodu .NET jest oparta na [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) projekt typu open source.
 
-## <a name="environments-and-languages"></a>Środowisk i języki
+## <a name="environments-and-languages"></a>Środowisk i języków
 
-Narzędzie to jest zarówno pamiętać o środowisku, który będzie używany, a także język, w którym będą korzystać z jej.   Na przykład w przypadku platformy iOS dopuszczają just in time (JIT) kompilacji, .NET osadzanie statycznie zostanie skompilowany kod .NET kodu natywnego, które mogą być używane w systemie iOS.  Innych środowisk Zezwalaj kompilacji JIT, a w tych środowiskach możemy zdecydować się na kompilacji JIT.
+To narzędzie jest zarówno pamiętać o środowisku, który będzie używany, a także język, który zajmie on.   Na przykład platformę iOS nie zezwala na just-in-time (JIT) kompilacja, dzięki czemu osadzanie kodu .NET statycznie skompilowany kod .NET do kodu macierzystego, który może służyć w systemie iOS.  Innych środowisk zezwalają na kompilację JIT, a w tych środowiskach, możemy wybrać opcję kompilacji JIT.
 
-Obsługuje ona różnych języka konsumentów, więc go powierzchnie kodu platformy .NET idiomatyczne kodu w języku docelowym.   Listę obsługiwanych języków jest obecnie:
+Obsługuje ona różne konsumentów języka, więc go wydobywa informacje dotyczące kodu platformy .NET jako idiomatyczną kod w języku docelowym.   Listę obsługiwanych języków jest obecnie:
 
-- [**Objective-C** ](objective-c/index.md) — mapowania .NET do idiomatyczne interfejsów API języka Objective C
-- [**Java** ](android/index.md) — mapowania .NET do idiomatyczne interfejsów API języka Java
-- [**C** ](get-started/c.md) — mapowanie .NET do zorientowane obiektowo takich jak C interfejsów API
+- [**Języka Objective-C** ](objective-c/index.md) — mapowanie .NET idiomatyczną interfejsów API języka Objective-C
+- [**Java** ](android/index.md) — mapowanie .NET idiomatyczną interfejsów API języka Java
+- [**C** ](get-started/c.md) — mapowanie .NET do zorientowane obiektowo takich jak interfejsy API języka C
 
-Więcej języków zostanie nastąpić później.
+Więcej języków zostanie dodana później.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby rozpocząć, sprawdź jedną z naszych wskazówek dla każdego z aktualnie obsługiwanych języków:
+Aby rozpocząć pracę, sprawdź jedną z naszych przewodników dla każdego z aktualnie obsługiwane języki:
 
-- [**Objective-C** ](get-started/objective-c/index.md) — obejmuje system macOS i iOS
-- [**Java** ](get-started/java/index.md) — obejmuje system macOS i Android
-- [**C** ](get-started/c.md) — obejmuje języka C na platformach pulpitu
+- [**Języka Objective-C** ](get-started/objective-c/index.md) — obejmuje macOS i iOS
+- [**Java** ](get-started/java/index.md) — obejmuje macOS i Android
+- [**C** ](get-started/c.md) — obejmuje język C w klasycznej platformy
 
 ## <a name="related-links"></a>Linki pokrewne
 

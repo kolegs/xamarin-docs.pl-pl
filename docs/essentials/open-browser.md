@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 563d3899cffb80c0215d90e8e4392046c4635256
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783138"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815709"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: przeglądarki
 
@@ -18,15 +18,15 @@ ms.locfileid: "34783138"
 
 **Przeglądarki** klasa umożliwia aplikacji w celu otwarcia link sieci web w przeglądarce preferowanych zoptymalizowanego systemu lub zewnętrznej przeglądarki.
 
-## <a name="using-browser"></a>Przy użyciu przeglądarki
+## <a name="using-browser"></a>Za pomocą przeglądarki
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcja przeglądarki działa przez wywołanie metody `OpenAsync` metody z `Uri` i `BrowserLaunchType`.
+Funkcje przeglądarki działa przez wywołanie metody `OpenAsync` metody z `Uri` i `BrowserLaunchType`.
 
 ```csharp
 
@@ -39,37 +39,37 @@ public class BrowserTest
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>Szczegóły implementacji platformy
+## <a name="platform-implementation-specifics"></a>Funkcje specyficzne dla implementacji platformy
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Typ uruchamiania Określa, jak uruchomić przeglądarki:
+Typ uruchomienia Określa, jak uruchomieniu przeglądarki:
 
-## <a name="system-preferred"></a>Preferowany systemu
+## <a name="system-preferred"></a>System preferowane
 
-[Chromowana kart niestandardowych](https://developer.chrome.com/multidevice/android/customtabs) będzie próbował służyć załadować identyfikator Uri i Zachowaj świadomości nawigacji.
+[Chrome kart niestandardowych](https://developer.chrome.com/multidevice/android/customtabs) będzie próbował służyć załadować identyfikatora Uri i zachować świadomości nawigacji.
 
 ## <a name="external"></a>Zewnętrzna
 
-`Intent` Będą używane do żądania identyfikator Uri, można otworzyć za pomocą przeglądarki normalne systemów.
+`Intent` Będzie służyć do żądania, identyfikatora Uri można otworzyć za pośrednictwem przeglądarki normalne systemów.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-## <a name="system-preferred"></a>Preferowany systemu
+## <a name="system-preferred"></a>System preferowane
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) służy do załadować identyfikator Uri i Zachowaj świadomości nawigacji.
+[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) do służy do ładowania identyfikator Uri i zapewnianie świadomości nawigacji.
 
 ## <a name="external"></a>Zewnętrzna
 
-Standardowe `OpenUrl` na aplikacji głównej jest używany można uruchomić domyślnej przeglądarki lokalizację poza aplikacją.
+Standardowa `OpenUrl` w aplikacji głównej jest używany do uruchomienia domyślną przeglądarkę poza aplikacją.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Użytkownika domyślnej przeglądarki będzie zawsze uruchamiana niezależnie od tego `BrowserLaunchType`.
+Przeglądarka domyślna zawsze zostanie uruchomiony bez względu na to `BrowserLaunchType`.
 
 --------------
 
 ## <a name="api"></a>interfejs API
 
-- [Kod źródłowy przeglądarki](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [Dokumentacja interfejsu API przeglądarki](xref:Xamarin.Essentials.Browser)
+- [Kod źródłowy w przeglądarce](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Przeglądarka interfejsu API, dokumentacji](xref:Xamarin.Essentials.Browser)

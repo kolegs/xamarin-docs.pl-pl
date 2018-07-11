@@ -5,31 +5,31 @@ ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: c7bbc849e5fa0b901f5b54e77d548b28bc2a72c6
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: c01fa28e495eb3eceec62885060dce8f096c4086
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080391"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947393"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**OrientationSensor** klasa umożliwia monitorowanie orientacji urządzenia w przestrzeni trójwymiarowej.
+**OrientationSensor** klasy umożliwia monitorowanie orientacji urządzenia w przestrzeni trójwymiarowej.
 
 > [!NOTE]
-> Ta klasa służy do oznaczania orientacji urządzenia w miejscu 3D. Jeśli musisz określić, czy urządzenie użytkownika wideo wyświetlana jest w trybie pionowa lub pozioma, użyj `Orientation` właściwość `ScreenMetrics` dostępnym dla obiekt [ `DeviceDisplay` ](device-display.md) klasy.
+> Ta klasa służy do oznaczania orientacji urządzenia w przestrzeni 3D. Jeśli zachodzi potrzeba określenia, jeśli urządzenie użytkownika wideo wyświetlana jest w trybie pionowej lub poziomej, należy użyć `Orientation` właściwość `ScreenMetrics` obiektu dostępnym [ `DeviceDisplay` ](device-display.md) klasy.
 
-## <a name="using-orientationsensor"></a>Przy użyciu OrientationSensor
+## <a name="using-orientationsensor"></a>Za pomocą OrientationSensor
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-`OrientationSensor` Jest włączona, wywołując `Start` monitorować zmiany orientacji urządzenia i wyłączone przez wywołanie metody `Stop` metody. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Oto przykładowe zastosowanie:
+`OrientationSensor` Jest włączona, wywołując `Start` metodę, aby monitorować zmiany orientacji urządzenia i wyłączona przez wywołanie metody `Stop` metody. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Poniżej przedstawiono przykładowe zastosowanie:
 
 ```csharp
 
@@ -72,46 +72,39 @@ public class OrientationSensorTest
 }
 ```
 
-`OrientationSensor` Odczyty są przekazywane w postaci [ `Quaternion` ](xref:System.Numerics.Quaternion) opisujący orientacji urządzenia oparte na dwóch systemów współrzędnych 3D:
+`OrientationSensor` Odczyty są raportowane w formie [ `Quaternion` ](xref:System.Numerics.Quaternion) opisujący orientacji urządzenia, w oparciu dwoma układami współrzędnych 3D:
 
-Urządzenia (zazwyczaj telefon lub tablet) ma 3D układ współrzędnych z następujących osi:
+Urządzenia (zazwyczaj telefonie lub tablecie) ma 3D układ współrzędnych z osiami następujące:
 
-- Dodatnie X punktów osi z prawej strony ekranu w trybie portret.
-- Wskazuje dodatnią osi Y górnej części urządzenia w trybie portret.
-- Dodatnia osi Z punktów poza ekranu.
+- Dodatnie X wskazuje osi po prawej stronie ekranu w trybie pionowym.
+- Dodatnia osi Y wskazuje na początku urządzenia w trybie pionowym.
+- Dodatnia osi Z punktów z ekranu.
 
-3D współrzędnych ziemi ma następujące osie:
+3D współrzędnych ziemi ma następujące osi:
 
-- Dodatnich osi X stycznej do powierzchni ziemi i wschód punktów.
+- Pozytywny osi X stycznej na powierzchni ziemi i wskazuje Wschodnia.
 - Dodatnia osi Y jest również stycznej na powierzchni ziemi i północ punktów.
-- Prostopadłe do powierzchni ziemi i punkty górę jest dodatnią osi Z.
+- Prostopadłe do powierzchni ziemi i punkty się jest dodatnią osi Z.
 
-`Quaternion` Opisuje obrót współrzędnych urządzenia względem ziemi współrzędnych.
+`Quaternion` Opisuje obrót współrzędnych urządzenia względem współrzędnych na ziemi.
 
-A `Quaternion` wartość jest bardzo ściśle powiązana z obrót wokół osi. Jeśli oś obrotu jest znormalizowany wektor (<sub>x</sub>,<sub>y</sub>,<sub>z</sub>), a kąt obrotu jest Θ, a następnie (X, Y, Z, W) składników quaternion:
+A `Quaternion` wartość jest ściśle powiązana z rotacji wokół osi. Jeśli oś obrotu znormalizowany wektor (<sub>x</sub>,<sub>y</sub>,<sub>z</sub>), a kąt obrotu Θ, a następnie (X, Y, Z, W) składniki quaternion są:
 
 (<sub>x</sub>·sin(Θ/2),<sub>y</sub>·sin(Θ/2),<sub>z</sub>·sin(Θ/2), cos(Θ/2))
 
-System współrzędnych po prawej stronie, są tak stronie przycisku suwaka prawej wskazywana w kierunku dodatnią oś obrotu krzywej palcami wskazują kierunek dodatnią kąty obrotu.
+Są to po prawej stronie współrzędnych, więc przy użyciu przycisku po prawej stronie wskazywany w Dodatni kierunek osi obrotu, krzywej palcami wskazują kierunek dodatnią kąty obrotu.
 
 Przykłady:
 
-* Jeśli urządzenie znajduje się na tabelę z jego ekranu skierowany, do górnej krawędzi urządzenia (w trybie portret), wskazując północ, dwóch systemów współrzędnych są wyrównane. `Quaternion` Wartość reprezentuje quaternion tożsamości (0, 0, 0, 1). Wszystkie obrotów można analizować względem tej pozycji.
+* Gdy urządzenie jest na tabelę ekran skierowany, z górną częścią urządzenia (w trybie portret) wskazuje Północne, są wyrównane dwoma układami współrzędnych. `Quaternion` Wartość reprezentuje quaternion tożsamości (0, 0, 0, 1). Wszystkie rotacji mogą być analizowane względem tej pozycji.
 
-* Jeśli urządzenie znajduje się na tabelę z jego ekranu skierowany w, a górną krawędzią urządzenia (w trybie portret) Zachodnia, wskazując `Quaternion` wartość (0, 0, 0.707, 0.707). Urządzenia został obrócony 90 stopni wokół osi Z ziemi.
+* Gdy urządzenie jest na tabelę ekran skierowany w, a górną krawędzią urządzenia (w trybie portret) wskazuje Zachodnia, `Quaternion` wartość (0, 0, 0.707, 0.707). Urządzenie ma zostać obróconą o 90 stopni wokół osi Z ziemi.
 
-* Gdy urządzenie jest utrzymywana pionowo górnej (w trybie portret) wskazuje niebo, a wstecz urządzenia północ skierowany, urządzenie zostało 90 stopni obrócona wokół osi X. `Quaternion` Wartość to (0.707, 0, 0, 0.707).
+* Gdy urządzenia są przechowywane pionowo, aby górnej (w trybie portret) wskazuje na Niebie i ponownie urządzenia jest skierowana Północna, urządzeń, na których obracany o 90 stopni wokół osi X. `Quaternion` Wartość (0.707, 0, 0, 0.707).
 
-* Jeśli urządzenie znajduje się więc jego lewej krawędzi znajduje się na tabelę i górnej wskazuje północ, urządzenia został obrócony &ndash;90 stopni wokół osi Y (lub 90 stopni wokół osi Y ujemna). `Quaternion` Wartość (0,-0.707, 0, 0.707).
+* Jeśli urządzenie jest umieszczony w jego lewej krawędzi znajduje się na tabelę i u góry wskazuje Północne, urządzenia został obrócony &ndash;90 stopni wokół osi Y (czyli 90 stopni wokół ujemna osi Y). `Quaternion` Wartość (0,-0.707, 0, 0.707).
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Czujnik szybkości](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Najszybszym** — pobieranie danych czujnika tak szybko jak to możliwe (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Gry** — szybkości odpowiednie do gier (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Normalny** — szybkość domyślna odpowiedni w przypadku zmiany orientacji ekranu.
-- **Interfejs użytkownika** — szybkości nadające się do interfejsu użytkownika ogólne.
-
-Jeśli nie jest gwarantowana obsługi zdarzenia do uruchamiania w wątku interfejsu użytkownika, a jeśli program obsługi zdarzeń musi dostęp do elementów interfejsu użytkownika, użyj [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodę, aby uruchomić ten kod w wątku interfejsu użytkownika.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>interfejs API
 

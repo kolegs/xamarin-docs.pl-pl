@@ -1,6 +1,6 @@
 ---
-title: Tworzenie motywów niestandardowych platformy Xamarin.Forms
-description: W tym artykule opisano sposób tworzenia niestandardowego motywu platformy Xamarin.Forms dla przywołującego w aplikacji.
+title: Tworzenie motywu niestandardowego zestawu narzędzi Xamarin.Forms
+description: W tym artykule opisano sposób tworzenia motywu niestandardowego zestawu narzędzi Xamarin.Forms do odwoływania się do aplikacji.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245582"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838173"
 ---
-# <a name="creating-a-custom-xamarinforms-theme"></a>Tworzenie motywów niestandardowych platformy Xamarin.Forms
+# <a name="creating-a-custom-xamarinforms-theme"></a>Tworzenie motywu niestandardowego zestawu narzędzi Xamarin.Forms
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
-Oprócz dodania motyw z pakietem Nuget (takich jak [światła](~/xamarin-forms/user-interface/themes/light.md) i [ciemny](~/xamarin-forms/user-interface/themes/dark.md) motywów), można utworzyć własne zasobów słownika kompozycje, które może być przywoływany w aplikacji.
+Oprócz dodawania motyw z pakietu Nuget (takie jak [światła](~/xamarin-forms/user-interface/themes/light.md) i [ciemny](~/xamarin-forms/user-interface/themes/dark.md) motywy), można utworzyć własny zasób motywów słownika, które mogą być przywoływane w swojej aplikacji.
 
 ## <a name="example"></a>Przykład
 
-Trzy `BoxView`s wyświetlany na [strony motywy](~/xamarin-forms/user-interface/themes/index.md) są stylem zgodnie z trzech klas zdefiniowanych w dwóch do pobrania kompozycji.
+Trzy `BoxView`s wyświetlane na [strony motywy](~/xamarin-forms/user-interface/themes/index.md) mają różne zgodnie z trzech klas zdefiniowanych w dwóch dostępnych do pobrania kompozycji.
 
-Aby zrozumieć, jak te składniki współpracują, następujący kod tworzy równoważne stylu, które można dodać bezpośrednio do użytkownika **App.xaml**.
+Aby dowiedzieć się, jak te składniki współpracują, następujące znaczniki tworzy równoważne style, które można dodać bezpośrednio do swojej **App.xaml**.
 
-Uwaga `Class` atrybutu dla `Style` (w przeciwieństwie do [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) atrybutu dostępne w starszych wersjach platformy Xamarin.Forms).
+Uwaga `Class` atrybutu dla `Style` (w przeciwieństwie do [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) atrybut dostępne we wcześniejszych wersjach interfejsu Xamarin.Forms).
 
 ```xml
 <ResourceDictionary>
@@ -63,17 +63,17 @@ Uwaga `Class` atrybutu dla `Style` (w przeciwieństwie do [ `x:Key` ](~/xamarin-
 </ResourceDictionary>
 ```
 
-Można zauważyć, że `Rounded` klasy odwołuje się do niestandardowego efektu `CornerRadius`.
-Kod w tym celu poniżej podano — do utworzenia odwołania poprawnie niestandardowego `xmlns` musi zostać dodany do **App.xaml**dla elementu głównego:
+Należy zauważyć, że `Rounded` klasy odwołuje się do niestandardowego efektu `CornerRadius`.
+Kod ten efekt są podane poniżej - odwołać się do niego prawidłowo niestandardowego `xmlns` muszą zostać dodane do **App.xaml**firmy element główny:
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Kod C# .NET Standard projektu biblioteki lub projektu udostępnionego
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Kod C# w projekcie biblioteki .NET Standard lub projektu udostępnionego
 
-Kod służący do tworzenia round rogu `BoxView` używa [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
-Promień narożnika jest stosowany przy użyciu `BindableProperty` i jest implementowane przez zastosowanie [efekt](~/xamarin-forms/app-fundamentals/effects/index.md). Efekt wymaga kod specyficzne dla platformy w [iOS](#ios) i [Android](#android) projektów (pokazana poniżej).
+Kodu na potrzeby tworzenia tworzy narożnik round `BoxView` używa [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
+Promienia narożnika jest stosowany przy użyciu `BindableProperty` i jest implementowana przez zastosowanie [efekt](~/xamarin-forms/app-fundamentals/effects/index.md). Efekt wymaga kodu specyficznego dla platformy w [iOS](#ios) i [Android](#android) projektów (pokazana poniżej).
 
 ```csharp
 namespace ThemesDemo
@@ -128,7 +128,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>Kod C# w projekcie systemu iOS
+### <a name="c-code-in-the-ios-project"></a>Kod C# w projekcie dla systemu iOS
 
 ```csharp
 using System;
@@ -184,7 +184,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>Kod C# w projekcie systemu Android
+### <a name="c-code-in-the-android-project"></a>Kod C# w projekcie dla systemu Android
 
 ```csharp
 using System;
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>Podsumowanie
 
-Niestandardowy motyw mogą być tworzone przez definiowanie stylów dla każdego formantu, który wymaga niestandardowych wyglądu. Wiele stylów formantu wyróżnia się przez różne `Class` atrybuty w słowniku zasobów, a następnie stosowane przez ustawienie `StyleClass` atrybutu w formancie.
+Niestandardowy motyw mogą być tworzone przez definiowanie style dla każdego formantu, który wymaga niestandardowy wygląd. Wiele stylów dla formantu wyróżnia się przez różne `Class` atrybuty w słowniku zasobów, a następnie stosowane przez ustawienie `StyleClass` atrybutów w formancie.
 
-Styl może również korzystać z [efekty](~/xamarin-forms/app-fundamentals/effects/index.md) dostosować wygląd formantu.
+Styl może również korzystać z [efekty](~/xamarin-forms/app-fundamentals/effects/index.md) dalsze dostosowywanie wyglądu formantu.
 
-[Niejawne style](~/xamarin-forms/user-interface/styles/implicit.md) (bez `x:Key` lub `Style` atrybut) mają zastosowanie do wszystkich kontrolek, które odpowiadają `TargetType`.
+[Style niejawne](~/xamarin-forms/user-interface/styles/implicit.md) (bez `x:Key` lub `Style` atrybutu) mają zastosowanie do wszystkich formantów, które odpowiadają `TargetType`.

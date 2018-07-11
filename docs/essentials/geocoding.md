@@ -1,40 +1,40 @@
 ---
-title: 'Xamarin.Essentials: Geokodowanie'
-description: Klasa Geokodowanie w Xamarin.Essentials udostępnia interfejsy API do obu geocode placemark na współrzędne pozycyjnych i cofnąć współrzędne geocode do placemark.
+title: 'Xamarin.Essentials: Geokodowania'
+description: Klasa Geokodowania w Xamarin.Essentials udostępnia interfejsy API do obu geocode placemark pozycyjne współrzędnych i Cofnij współrzędne geocode na placemark.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080329"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831451"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geokodowanie
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geokodowania
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Geokodowanie** klasy udostępnia interfejsy API do geocode placemark na współrzędne pozycyjnych i cofnąć geocode coordincates do placemark.
+**Geokodowania** klasa udostępnia interfejsy API do geokodowania placemark pozycyjne współrzędnych i Cofnij geocode coordincates na placemark.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **Geokodowanie** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **Geokodowania** następujące ustawienia określone platformy jest wymagane.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Do korzystania z funcationality geokodowanie jest wymagany klucz interfejsu API map Bing. Załóż bezpłatne [mapy Bing](https://www.bingmapsportal.com/) konta. W obszarze **Moje konto > klawisze** Utwórz nowy klucz i podaj informacje w zależności od typu aplikacji (powinny być **publicznych aplikacji systemu Windows (platformy uniwersalnej systemu Windows, 8.x i starszych)** dla aplikacji platformy uniwersalnej systemu Windows).
+Klucz interfejsu API map Bing wymagane jest wprowadzenie funcationality geokodowania. Załóż bezpłatne [mapy Bing](https://www.bingmapsportal.com/) konta. W obszarze **Moje konto > Moje klucze** Utwórz nowy klucz i Wypełnij informacje w zależności od typu aplikacji (powinien być **publicznych aplikacji Windows (platformy uniwersalnej systemu Windows, 8.x i starszych)** dla aplikacji platformy UWP).
 
-Na wczesnym etapie w cyklu życia aplikacji przed wywołaniem dowolnej **Geokodowanie** metody Ustaw klucz interfejsu API:
+Na wczesnym etapie w życie aplikacji przed wywołaniem dowolnej **Geokodowania** metody Ustaw klucz interfejsu API:
 
 ```csharp
 Geocoding.MapKey = "YOUR-KEY-HERE";
@@ -42,15 +42,15 @@ Geocoding.MapKey = "YOUR-KEY-HERE";
 
 -----
 
-## <a name="using-geocoding"></a>Przy użyciu Geokodowanie
+## <a name="using-geocoding"></a>Za pomocą Geokodowania
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Pobieranie [lokalizacji](xref:Xamarin.Essentials.Location) współrzędne adres:
+Wprowadzenie [lokalizacji](xref:Xamarin.Essentials.Location) współrzędnych dla adresu:
 
 ```csharp
 try
@@ -74,9 +74,9 @@ catch (Exception ex)
 }
 ```
 
-Wysokość nie zawsze jest dostępny. Jeśli nie jest dostępna, `Altitude` właściwość może być `null` lub wartość może być równy zero. Jeśli wysokości jest dostępny, wartość jest metry powyżej powyżej sea poziomu. 
+Wysokość nie zawsze jest dostępny. Jeśli nie jest dostępna, `Altitude` właściwość może być `null` lub wartość może wynosić zero. Jeśli wysokości jest dostępny, wartość jest w metrach powyżej nad poziomem morza. 
 
-Pobieranie [placemarks](xref:Xamarin.Essentials.Placemark) dla istniejącego zestawu współrzędnych:
+Wprowadzenie [placemarks](xref:Xamarin.Essentials.Placemark) dla istniejącego zestawu współrzędnych:
 
 ```csharp
 try
@@ -116,9 +116,9 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Odległość między dwiema lokalizacjami
 
-[ `Location` ](xref:Xamarin.Essentials.Location) i [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) klasy definiują metody służące do obliczania odległość między dwiema lokalizacjami. Zapoznaj się z artykułem [ **Xamarin.Essentials: używanie funkcji Geolokalizacji** ](geolocation.md#calculate-distance) przykład.
+[ `Location` ](xref:Xamarin.Essentials.Location) i [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) klasy definiują metody, aby obliczyć odległość między dwiema lokalizacjami. Zapoznaj się z artykułem [ **Xamarin.Essentials: używanie funkcji Geolokalizacji** ](geolocation.md#calculate-distance) przykład.
 
 ## <a name="api"></a>interfejs API
 
-- [Geokodowanie kodu źródłowego](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
-- [Dokumentacja interfejsu API geokodowanie](xref:Xamarin.Essentials.Geocoding)
+- [Kod źródłowy geokodowania](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Dokumentacja usługi geokodowania interfejsu API](xref:Xamarin.Essentials.Geocoding)

@@ -1,66 +1,66 @@
 ---
 title: 'Xamarin.Essentials: łączność'
-description: Klasa łączność w Xamarin.Essentials umożliwia monitorowanie zmian w warunkach sieciowych urządzenia, należy sprawdzić bieżące dostępu do sieci i jak jest aktualnie połączony.
+description: Klasa łączności w Xamarin.Essentials umożliwia monitorowanie zmian w warunkach sieciowych urządzenia, należy sprawdzić bieżące dostępu do sieci i jak jest obecnie połączony.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782869"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848612"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: łączność
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Łączności** klasa umożliwia monitorowanie zmian w warunkach sieciowych urządzenia, sprawdź bieżące dostępu do sieci i jak jest aktualnie połączony.
+**Łączności** klasy umożliwia monitorowanie zmian w warunkach sieciowych urządzenia, sprawdź bieżący dostęp do sieci i jak jest obecnie połączony.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **łączności** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **łączności** następujące ustawienia określone platformy jest wymagane.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState` Uprawnienie jest wymagane i muszą być skonfigurowane w projekt systemu Android. Mogą to być dodawane w następujący sposób:
+`AccessNetworkState` Uprawnienie jest wymagane i musi być skonfigurowany w projekcie dla systemu Android. Mogą to być dodawane w następujący sposób:
 
-Otwórz **AssemblyInfo.cs** plików w obszarze **właściwości** folderu i dodać:
+Otwórz **AssemblyInfo.cs** plik **właściwości** folderze i Dodaj:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
 ```
 
-LUB zaktualizować manifestu systemu Android:
+LUB zaktualizuj Manifest systemu Android:
 
-Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła.
+Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następujący kod wewnątrz **manifestu** węzła.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Kliknij prawym przyciskiem myszy projekt Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **stan dostępu do sieci** uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **stanu sieci dostępu** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 -----
 
-## <a name="using-connectivity"></a>Przy użyciu połączenia
+## <a name="using-connectivity"></a>Przy użyciu łączności
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Sprawdź bieżący dostępu do sieci:
+Sprawdź bieżący dostęp sieciowy:
 
 ```csharp
 var current = Connectivity.NetworkAccess;
@@ -74,10 +74,10 @@ if (current == NetworkAccess.Internet)
 [Dostęp sieciowy](xref:Xamarin.Essentials.NetworkAccess) znajduje się na następujące kategorie:
 
 * **Internet** — lokalnych i dostępem do Internetu.
-* **ConstrainedInternet** — ograniczony dostęp do Internetu. Określa wewnętrzne łączności portalu, gdzie lokalnego dostępu do portalu sieci web jest dostępny, ale wymaga dostępu do Internetu, że określone poświadczenia są udostępniane za pośrednictwem portalu.
-* **Lokalne** — lokalny wyłącznie dostęp do sieci.
+* **ConstrainedInternet** — ograniczony dostęp do Internetu. Wskazuje wewnętrzne łączności portalu, gdzie znajduje się lokalny dostęp do portalu sieci web, ale wymaga dostępu do Internetu, czy określone poświadczenia są udostępniane za pośrednictwem portalu.
+* **Lokalne** — lokalne tylko dostęp do sieci.
 * **Brak** — brak łączności jest dostępna.
-* **Nieznany** — nie można ustalić łączności z Internetem.
+* **Nieznany** — nie można określić połączenie z Internetem.
 
 Można sprawdzić, jaki typ [profilu połączenia](xref:Xamarin.Essentials.ConnectionProfile) aktywnie używa urządzenia:
 
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-Jeśli profil połączenia lub sieci dostępu zmiany może odbierać zdarzenia po wyzwoleniu:
+Zawsze, gdy profil połączenia lub sieci uzyskiwać dostęp do zmiany może odbierać zdarzenia po wyzwoleniu:
 
 ```csharp
 public class ConnectivityTest
@@ -110,9 +110,9 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>Ograniczenia
 
-Należy pamiętać, że możliwe jest ważne jest, który `Internet` został zgłoszony przez `NetworkAccess` , ale nie ma pełny dostęp do sieci web. Z powodu działania łączności na każdej platformie go tylko gwarantuje, że połączenie jest dostępne. Na przykład urządzenie może być połączone z siecią Wi-Fi, ale router jest odłączony od Internetu. W takim przypadku należy podać internetowych, ale nie jest aktywne połączenie.
+Ważne jest, aby pamiętać, że jest to możliwe, `Internet` zgłoszonych przez `NetworkAccess` , ale nie jest pełny dostęp w sieci Web. Z powodu działania połączenia na poszczególnych platformach go tylko gwarantuje, że połączenie jest dostępne. Na przykład urządzenie może być połączone z siecią Wi-Fi, ale router jest odłączony od Internetu. W tym wystąpieniu internetowe mogą być zgłaszane, ale nie jest aktywne połączenie.
 
 ## <a name="api"></a>interfejs API
 
-* [Kod źródłowy łączności](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
-* [Dokumentacja interfejsu API łączności](xref:Xamarin.Essentials.Connectivity)
+* [Kod źródłowy połączenia](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Dokumentacja interfejsu API połączenia](xref:Xamarin.Essentials.Connectivity)

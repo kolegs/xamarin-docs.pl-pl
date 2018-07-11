@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: przyspieszeniomierza'
-description: Klasa przyspieszeniomierza w Xamarin.Essentials umożliwia monitorowanie czujnik przyspieszeniomierza urządzenia, co oznacza przyspieszenie urządzenia w przestrzeni trójwymiarowej.
+description: Klasy przyspieszeniomierz w Xamarin.Essentials umożliwia monitorowanie czujnika przyspieszeniomierza urządzenia, co oznacza wartość przyspieszenia urządzenia w przestrzeni trójwymiarowej.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080388"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947312"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: przyspieszeniomierza
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Przyspieszeniomierza** klasa umożliwia monitorowanie czujnik przyspieszeniomierza urządzenia, co oznacza przyspieszenie urządzenia w przestrzeni trójwymiarowej.
+**Przyspieszeniomierza** klasy umożliwia monitorowanie czujnika przyspieszeniomierza urządzenia, co oznacza wartość przyspieszenia urządzenia w przestrzeni trójwymiarowej.
 
-## <a name="using-accelerometer"></a>Przy użyciu przyspieszeniomierza
+## <a name="using-accelerometer"></a>Za pomocą przyspieszeniomierza
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcja przyspieszeniomierza działa przez wywołanie metody `Start` i `Stop` metody do nasłuchiwania zmian w celu przyspieszenia. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Oto przykładowe zastosowanie:
+Funkcja przyspieszeniomierza działa przez wywołanie metody `Start` i `Stop` metody służące do nasłuchiwania zmian w celu przyspieszenia. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Poniżej przedstawiono przykładowe zastosowanie:
 
 ```csharp
 
@@ -69,28 +69,21 @@ public class AccelerometerTest
 }
 ```
 
-Odczyty przyspieszeniomierza są raportowane w G. G jest jednostka gravitation wymusić równą wywierany przez pole grawitacyjne ziemi (9.81 m/s ^ 2).
+Odczyty przyspieszeniomierza są raportowane w G. G jest jednostką gravitation wymusić równa wywierany przez pole grawitacyjne ziemi (równa 9,81 m/s ^ 2).
 
-System współrzędnych zdefiniowano względem ekranu Telefon w orientacji domyślne. Nie są zamienione osie, gdy zmienia się orientacja urządzenia.
+System współrzędnych zdefiniowano względem ekranu telefonie w orientacji domyślne. Nie zostały zamienione osie, gdy zmienia się orientacja ekranu urządzenia.
 
-Poziomy jest na osi X i punktów z prawej strony, osi Y pionowy i punktów osi Z wskazuje na zewnątrz czoła ekranu. W tym systemie współrzędne za ekranu mieć wartości ujemnej.
+Oś X jest poziomy i punktów z prawej strony, oś Y pionowy i punktów osi Z punktów na zewnątrz czoła ekranu. W tym systemie współrzędne za ekranu mają wartości ujemnych Z.
 
 Przykłady:
 
-* Jeśli urządzenie znajduje się na tabelę i spoczywa na jego lewej do prawej, wartość przyspieszenia x jest dodatnia.
+* Gdy urządzenie znajduje się na tabelę i są wypychane na bok po lewej stronie w prawo, wartość przyspieszenia x jest dodatni.
 
-* Jeśli urządzenie znajduje się na tabelę, wartość przyspieszenia jest +1.00 G lub (+ m 9.81/s ^ 2), przyspieszenie urządzenia, które odpowiadają (0, m/s ^ 2) minus siły grawitacji (-9.81 m/s ^ 2) i znormalizowane jak G.
+* Gdy urządzenie znajduje się na tabelę, wartość przyspieszenia jest +1.00 G lub (+ równa 9,81 m/s ^ 2), wartość przyspieszenia urządzenia, które odpowiadają (0, m/s ^ 2) minus siła grawitacji (-równa 9,81 m/s ^ 2) i jest to znormalizowane jak G.
 
-* Jeśli urządzenie znajduje się na tabelę i jest przesunięte niebo z przyspieszenie m/s ^ 2, wartość przyspieszenia jest równa 9.81 +, co odpowiada przyspieszenie urządzenia (+ m/s ^ 2) minus siły grawitacji (-9.81 m/s ^ 2) i znormalizowane w G. 
+* Gdy urządzenie znajduje się na tabelę i jest przesunięte sky Dzięki przyspieszeniu m/s ^ 2, wartość przyspieszenia jest równa 9.81 +, co odpowiada wartość przyspieszenia urządzenia (+ m/s ^ 2) minus siła grawitacji (-równa 9,81 m/s ^ 2) i jest to znormalizowane w G. 
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Czujnik szybkości](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Najszybszym** — pobieranie danych czujnika tak szybko jak to możliwe (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Gry** — szybkości odpowiednie do gier (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Normalny** — szybkość domyślna odpowiedni w przypadku zmiany orientacji ekranu.
-- **Interfejs użytkownika** — szybkości nadające się do interfejsu użytkownika ogólne.
-
-Jeśli nie jest gwarantowana obsługi zdarzenia do uruchamiania w wątku interfejsu użytkownika, a jeśli program obsługi zdarzeń musi dostęp do elementów interfejsu użytkownika, użyj [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodę, aby uruchomić ten kod w wątku interfejsu użytkownika.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>interfejs API
 

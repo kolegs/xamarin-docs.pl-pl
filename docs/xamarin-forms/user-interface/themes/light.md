@@ -1,6 +1,6 @@
 ---
-title: Motywu jasny platformy Xamarin.Forms
-description: W tym artykule wyjaśniono, jak korzystać z platformy Xamarin.Forms motywu jasny w aplikacji.
+title: Motyw jasny zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak używać zestawu narzędzi Xamarin.Forms motyw jasny w aplikacji.
 ms.prod: xamarin
 ms.assetid: D5D16AE3-F51F-4359-B37A-E1087ECE512B
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 7f40e375d653acec60f8848627234ab46fcce8de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245250"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38842755"
 ---
-# <a name="xamarinforms-light-theme"></a>Motywu jasny platformy Xamarin.Forms
+# <a name="xamarinforms-light-theme"></a>Motyw jasny zestawu narzędzi Xamarin.Forms
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
 > [!NOTE]
-> Motywy wymagają wersji zapoznawczej 2.3 platformy Xamarin.Forms. Sprawdź [porady dotyczące rozwiązywania problemów](~/xamarin-forms/user-interface/themes/index.md) po wystąpieniu błędów.
+> Motywy wymaga wersji zapoznawczej 2.3 zestawu narzędzi Xamarin.Forms. Sprawdź [wskazówki dotyczące rozwiązywania problemów](~/xamarin-forms/user-interface/themes/index.md) Jeśli wystąpią błędy.
 
-Aby użyć motywu jasny:
+Aby użyć motyw jasny:
 
 ## <a name="1-add-nuget-packages"></a>1. Dodawanie pakietów Nuget
 
@@ -30,7 +30,7 @@ Aby użyć motywu jasny:
 
 ## <a name="2-add-to-the-resource-dictionary"></a>2. Dodaj do słownika zasobów
 
-W **App.xaml** pliku Dodawanie nowej niestandardowej `xmlns` motywu i upewnij się, motywu zasoby są łączone ze słownika zasobów aplikacji.
+W **App.xaml** pliku Dodaj nowe niestandardowe `xmlns` motywu i upewnij się, że zasoby motywu są scalane z słownik zasobów aplikacji.
 Poniżej przedstawiono przykładowy plik XAML:
 
 ```xaml
@@ -45,13 +45,13 @@ Poniżej przedstawiono przykładowy plik XAML:
 
 ## <a name="3-load-theme-classes"></a>3. Załaduj motyw klas
 
-Wykonaj to [Rozwiązywanie problemów z kroku](~/xamarin-forms/user-interface/themes/index.md) i Dodaj wymagane kod w projektów aplikacji systemu Android i iOS.
+Postępuj zgodnie z tym [rozwiązywania problemów krok](~/xamarin-forms/user-interface/themes/index.md) i Dodaj kod wymagany projektów aplikacji dla systemu Android i iOS.
 
 ## <a name="4-use-styleclass"></a>4. Użyj StyleClass
 
-Oto przykład przycisków i etykiet w motywu jasny, wraz z kod znaczników, który tworzy je.
+Oto przykład przycisków i etykiet w motyw jasny, wraz z kodu znaczników, która je tworzy.
 
-[![](light-images/light-theme-sml.png "Przycisków i etykiet w motywu jasny")](light-images/light-theme.png#lightbox "przycisków i etykiet w motywu jasny")
+[![](light-images/light-theme-sml.png "Przycisków i etykiet w motyw jasny")](light-images/light-theme.png#lightbox "przycisków i etykiet w motyw jasny")
 
 ```xaml
 <StackLayout Padding="20">
@@ -68,4 +68,4 @@ Oto przykład przycisków i etykiet w motywu jasny, wraz z kod znaczników, któ
 </StackLayout>
 ```
 
-[Pełną listę wbudowanych klas](~/xamarin-forms/user-interface/themes/index.md) pokazuje, jakie style są dostępne dla niektórych typowych formantów.
+[Pełną listę wbudowanych klas](~/xamarin-forms/user-interface/themes/index.md) pokazuje, jakie style są dostępne w przypadku niektórych typowych kontrolek.

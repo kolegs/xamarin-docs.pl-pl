@@ -1,50 +1,50 @@
 ---
 title: 'Xamarin.Essentials: latarki'
-description: W tym dokumencie opisano klasy latarki w Xamarin.Essentials, który umożliwia włączanie i wyłączanie aparatu fotograficznego urządzenia flash, aby przekształcić z latarki.
+description: W tym dokumencie opisano klasy latarki w Xamarin.Essentials, który umożliwia włączanie i wyłączanie aparatu urządzenia flash, aby przekształcić ją w latarki.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782427"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831414"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: latarki
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Latarki** klasa ma możliwość włączyć lub wyłączyć aparat urządzenia flash, aby przekształcić z latarki.
+**Latarki** klasa ma możliwość Włączanie lub wyłączanie aparatu urządzenia flash, aby przekształcić ją w latarki.
 
 ## <a name="getting-started"></a>Wprowadzenie
 
-Aby uzyskać dostęp do **latarki** następujące ustawienia określonych platform jest wymagane.
+Aby uzyskać dostęp do **latarki** następujące ustawienia określone platformy jest wymagane.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Latarki i aparatu uprawnienia są wymagane i muszą być skonfigurowane w projekt systemu Android. Mogą to być dodawane w następujący sposób:
+Uprawnienia latarki i aparat są wymagane i muszą być skonfigurowane w projekt systemu Android. Mogą to być dodawane w następujący sposób:
 
-Otwórz **AssemblyInfo.cs** plików w obszarze **właściwości** folderu i dodać:
+Otwórz **AssemblyInfo.cs** plik **właściwości** folderze i Dodaj:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
 ```
 
-LUB zaktualizować manifestu systemu Android:
+LUB zaktualizuj Manifest systemu Android:
 
-Otwórz **AndroidManifest.xml** plików w obszarze **właściwości** folderu i dodaj następującą wewnątrz **manifestu** węzła.
+Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następujący kod wewnątrz **manifestu** węzła.
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Kliknij prawym przyciskiem myszy projekt Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszarów i wyboru **LATARKI** i **aparatu** uprawnienia. Ta operacja spowoduje automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **LATARKI** i **aparatu** uprawnienia. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
-Przez dodanie tych uprawnień [Google Play automatycznie odfiltruje urządzeń](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) bez określonego sprzętu. Obejścia tego problemu można uzyskać przez dodanie poniższego do pliku AssemblyInfo.cs w projekcie systemu Android:
+Przez dodanie tych uprawnień [sklepu Google Play automatycznie odfiltruje urządzeń](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) bez określonego sprzętu. Obejścia tego problemu można uzyskać przez dodanie poniższego do pliku AssemblyInfo.cs w projekcie dla systemu Android:
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
@@ -53,23 +53,23 @@ Przez dodanie tych uprawnień [Google Play automatycznie odfiltruje urządzeń](
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Nie dodatkowe ustawienia wymagane.
+Żadna dodatkowa konfiguracja wymagana.
 
 -----
 
-## <a name="using-flashlight"></a>Przy użyciu latarki
+## <a name="using-flashlight"></a>Za pomocą latarki
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Latarki można włączyć lub wyłączyć za pomocą `TurnOnAsync` i `TurnOffAsync` metod:
+Latarki można włączać i wyłączać za pośrednictwem `TurnOnAsync` i `TurnOffAsync` metody:
 
 ```csharp
 try
@@ -94,27 +94,27 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>Szczegóły implementacji platformy
+## <a name="platform-implementation-specifics"></a>Funkcje specyficzne dla implementacji platformy
 
 ### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
 
-Klasa latarki została optmized opartą na systemie operacyjnym urządzenia.
+Klasa latarki została optmized oparty na systemie operacyjnym urządzenia.
 
-#### <a name="api-level-23-and-higher"></a>Interfejs API na poziomie 23 i nowsze
+#### <a name="api-level-23-and-higher"></a>Poziom interfejsu API 23 lub nowszy
 
-Na nowsze poziomy interfejsu API [tryb latarka](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) umożliwia włączanie i wyłączanie flash jednostkę urządzenie.
+W nowszych poziomy interfejsu API [tryb latarka](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) będzie służyć do włączyć lub wyłączyć jednostki flash urządzenia.
 
-#### <a name="api-level-22-and-lower"></a>Interfejs API na poziomie 22 i małe
+#### <a name="api-level-22-and-lower"></a>Poziom 22 interfejsu API i niższy
 
-Powierzchni aparatu jest tworzony, aby włączyć lub wyłączyć `FlashMode` jednostki aparatu. 
+Włączanie lub wyłączanie tekstury do powierzchni aparatu zostanie utworzona `FlashMode` jednostki aparatu. 
 
 ### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) umożliwia włączanie i wyłączanie latarka i Flash tryb urządzenia.
+[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) umożliwia włączanie i wyłączanie latarka i tryb Flash urządzenia.
 
 ### <a name="uwptabuwp-specifics"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp-specifics)
 
-[Światła](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) jest używana do wykrywania pierwszy światła tyłu urządzenie, aby włączyć lub wyłączyć.
+[Lampa](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) służy do wykrywania pierwszy lamp na odwrocie podkładki urządzenie, aby włączyć lub wyłączyć.
 
 -----
 

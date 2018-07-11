@@ -1,6 +1,6 @@
 ---
-title: Odwołanie do formantów DataPages
-description: W tym artykule przedstawiono formantów, które są dostępne w pakiecie DataPages NuGet platformy Xamarin.Forms.
+title: Dokumentacja formantów DataPages
+description: W tym artykule przedstawiono formantów, które są dostępne w pakiecie DataPages NuGet zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243132"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38866525"
 ---
-# <a name="datapages-controls-reference"></a>Odwołanie do formantów DataPages
+# <a name="datapages-controls-reference"></a>Dokumentacja formantów DataPages
 
 ![](~/media/shared/preview.png "Ten interfejs API jest obecnie w wersji zapoznawczej")
 
 > [!IMPORTANT]
-> Wymaga DataPages [motyw platformy Xamarin.Forms](~/xamarin-forms/user-interface/themes/index.md) odwołania do renderowania.
+> Wymaga DataPages [motyw Xamarin.Forms](~/xamarin-forms/user-interface/themes/index.md) odwołania do renderowania.
 
 
-DataPages Nuget platformy Xamarin.Forms zawiera wiele formantów, które można wykorzystać powiązanie źródła danych.
+Do pakietu DataPages Nuget Xamarin.Forms zawiera wiele elementów sterujących, które można wykorzystać powiązanie źródła danych.
 
-Aby użyć tych kontrolek w języku XAML, upewnij się, przestrzeń nazw została uwzględniona, na przykład zobacz `xmlns:pages` deklaracji poniżej:
+Aby użyć tych kontrolek w XAML, upewnij się, przestrzeń nazw została uwzględniona, na przykład zobacz `xmlns:pages` deklaracji poniżej:
 
 ```xaml
 <ContentPage
@@ -34,18 +34,18 @@ Aby użyć tych kontrolek w języku XAML, upewnij się, przestrzeń nazw został
     x:Class="DataPagesDemo.Detail">
 ```
 
-Poniższe przykłady obejmują `DynamicResource` odwołań, które musi istnieć w słowniku zasobów projektu do pracy. Istnieje również przykład sposobu tworzenia [formantu niestandardowego](#custom)
+Poniższe przykłady zawierają `DynamicResource` odwołania, które należałoby istnieje w słowniku zasobów projektu do pracy. Istnieje również przykład sposobu tworzenia [kontrolki niestandardowej](#custom)
 
-## <a name="built-in-controls"></a>Formanty wbudowane
+## <a name="built-in-controls"></a>Wbudowanych formantów
 
-* [HeroImage](#heroimage)
+* [Duży obraz](#heroimage)
 * [ListItem](#listitem)
 
 <a name="heroimage" />
 
-### <a name="heroimage"></a>HeroImage
+### <a name="heroimage"></a>Duży obraz
 
-`HeroImage` Formant ma cztery właściwości:
+`HeroImage` Kontrolka ma cztery właściwości:
 
 * Tekst
 * Szczegóły
@@ -62,20 +62,20 @@ Poniższe przykłady obejmują `DynamicResource` odwołań, które musi istnieć
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Formant HeroImage w systemie Android") ![ ] (controls-images/heroimage-dark-android.png "HeroImage kontroli w systemie Android")
+![](controls-images/heroimage-light-android.png "Duży obraz sterowania w systemie Android") ![ ] (controls-images/heroimage-dark-android.png "duży obraz sterowania w systemie Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Formant HeroImage w systemie iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage kontroli w systemie iOS")
+![](controls-images/heroimage-light-ios.png "Duży obraz sterowania w systemie iOS") ![ ] (controls-images/heroimage-dark-ios.png "duży obraz sterowania w systemie iOS")
 
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem` Układ formantu jest podobny do natywnej dla systemu iOS i Android listy lub tabeli wiersze, jednak ją mogą służyć jako regularne widoku. W przykładzie kodu poniżej przedstawiono hostowanej wewnątrz `StackLayout`, ale może również służyć w formantach listy scolling powiązane z danymi.
+`ListItem` Układ formantu jest podobny do natywnych dla systemów iOS i Android listy lub tabeli wiersze, jednak może również służyć jako regularne widok. W przykładzie kodu poniżej przedstawiono hostowanej wewnątrz `StackLayout`, ale także mogą być używane w kontrolkach listy scolling powiązanych z danymi.
 
-Istnieją pięciu właściwości:
+Istnieje pięć właściwości:
 
 * Tytuł
 * Szczegóły
@@ -93,28 +93,28 @@ Istnieją pięciu właściwości:
     />
 ```
 
-Te zrzuty ekranu Pokaż `ListItem` na iOS i Android przy użyciu zarówno jasny i ciemny motywów:
+Te zrzuty ekranu Pokaż `ListItem` na iOS i Android przy użyciu motywy jasny i ciemny:
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Formantu ListItem w systemie Android") ![ ] (controls-images/listitem-dark-android.png "formantu ListItem w systemie Android")
+![](controls-images/listitem-light-android.png "Kontroli wyszczególnij w systemie Android") ![ ] (controls-images/listitem-dark-android.png "kontroli wyszczególnij w systemie Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Formantu ListItem w systemie iOS") ![ ] (controls-images/listitem-dark-ios.png "formantu ListItem w systemie iOS")
+![](controls-images/listitem-light-ios.png "Kontroli wyszczególnij w systemie iOS") ![ ] (controls-images/listitem-dark-ios.png "kontroli wyszczególnij w systemie iOS")
 
 
 ## <a name="custom-control-example"></a>Przykład formantu niestandardowego
 
-Celem tego niestandardowych `CardView` formant jest, aby przypominały natywnego CardView systemu Android.
+Instrukcje opisane w tym niestandardowych `CardView` formant jest tak, aby przypominały natywnych CardView dla systemu Android.
 
-Będzie zawierać trzy właściwości:
+Będzie ona zawierać trzy właściwości:
 
 * Tekst
 * Szczegóły
 * ImageSource
 
-Celem jest kontrolki niestandardowej, która będzie wyglądać poniższy kod (należy pamiętać, że niestandardowego `xmlns:local` jest wymagana który odwołuje się do bieżącego zestawu):
+Celem jest niestandardowy formant, który będzie wyglądać jak poniższy kod (należy pamiętać, że niestandardowe `xmlns:local` jest wymagany, odwołuje się do bieżącego zestawu):
 
 ```xaml
 <local:CardView
@@ -124,23 +124,23 @@ Celem jest kontrolki niestandardowej, która będzie wyglądać poniższy kod (n
 />
 ```
 
-Go powinna wyglądać zrzuty ekranu poniżej przy użyciu kolorów odpowiadających motywów wbudowanych jasny i ciemny:
+Powinien on wyglądać podobnie zrzuty ekranu poniżej z użyciem odpowiadający wbudowanych motywy jasny i ciemny motyw kolorów:
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Formant niestandardowy CardView w systemie Android") ![ ] (controls-images/cardview-dark-android.png "formant niestandardowy CardView w systemie Android")
+![](controls-images/cardview-light-android.png "Kontrolka niestandardowa CardView w systemie Android") ![ ] (controls-images/cardview-dark-android.png "kontrolkę niestandardową CardView w systemie Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Formant niestandardowy CardView w systemie iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView formant niestandardowy w systemie iOS")
+![](controls-images/cardview-light-ios.png "Kontrolka niestandardowa CardView w systemie iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView kontrolkę niestandardową w systemie iOS")
 
 <a name="custom" />
 
 ### <a name="building-the-custom-cardview"></a>Tworzenie niestandardowych CardView
 
-1. [Podklasy widoku danych.](#1)
-2. [Zdefiniuj czcionki, układu i marginesy](#2)
-3. [Utwórz style podrzędnych formantu](#3)
+1. [Podklasy DataView](#1)
+2. [Zdefiniuj czcionki, układ i marginesów](#2)
+3. [Tworzenie stylów dla formantu elementów podrzędnych](#3)
 4. [Tworzenie szablonu układ formantu](#4)
 5. [Dodawanie zasobów specyficznych dla motywów](#5)
 6. [Ustaw ControlTemplate dla klasy CardView](#6)
@@ -148,7 +148,7 @@ Go powinna wyglądać zrzuty ekranu poniżej przy użyciu kolorów odpowiadając
 
 <a name="1" />
 
-#### <a name="1-dataview-subclass"></a>1. Podklasy widoku danych.
+#### <a name="1-dataview-subclass"></a>1. Podklasy DataView
 
 C# podklasę `DataView` definiuje właściwości możliwej do wiązania dla kontrolki.
 
@@ -190,11 +190,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2. Zdefiniuj czcionki, układu i marginesy
+#### <a name="2-define-font-layout-and-margins"></a>2. Zdefiniuj czcionki, układ i marginesów
 
-Projektanta formantów czy zorientować się te wartości jako część projektu interfejsu użytkownika dla kontrolki niestandardowej. W przypadku, gdy są wymagane, specyfikacje specyficzne dla platformy `OnPlatform` element jest używany.
+Projektanta formantów może ustalić te wartości jako część projektu interfejsu użytkownika dla formantu niestandardowego. W przypadku, gdy wymaganych specyfikacjach specyficzne dla platformy `OnPlatform` element jest używany.
 
-Należy pamiętać, że niektóre wartości odnoszą się do `StaticResource`s — te są definiowane w [krok 5](#5).
+Należy zauważyć, że niektóre wartości odnoszą się do `StaticResource`s — te są definiowane w [kroku 5](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -248,9 +248,9 @@ Należy pamiętać, że niektóre wartości odnoszą się do `StaticResource`s �
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3. Utwórz style podrzędnych formantu
+#### <a name="3-create-styles-for-the-controls-children"></a>3. Tworzenie stylów dla formantu elementów podrzędnych
 
-Odwołanie wszystkie elementy zdefiniowane utworzone elementy podrzędne, które będą używane w kontrolki niestandardowej:
+Odwołać się do wszystkich elementów, które są zdefiniowane utworzone elementy podrzędne, które będą używane w formancie niestandardowym:
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -282,7 +282,7 @@ Odwołanie wszystkie elementy zdefiniowane utworzone elementy podrzędne, które
 
 #### <a name="4-create-the-control-layout-template"></a>4. Tworzenie szablonu układ formantu
 
-Projekt visual kontrolki niestandardowej jest jawnie zadeklarowana w kontroli szablonu, za pomocą zasobów zdefiniowanych powyżej:
+Wygląd formantu niestandardowego jest jawnie zadeklarowana w szablonie kontrolki za pomocą zasobów zdefiniowanych powyżej:
 
 ```xml
 <!--- CARDVIEW -->
@@ -326,9 +326,9 @@ Projekt visual kontrolki niestandardowej jest jawnie zadeklarowana w kontroli sz
 
 #### <a name="5-add-the-theme-specific-resources"></a>5. Dodawanie zasobów specyficznych dla motywów
 
-Ponieważ jest to formant niestandardowy, należy dodać zasoby, które odpowiada motywu używasz słownika zasobów:
+Ponieważ jest to formant niestandardowy, należy dodać zasoby, które pasował do motywu używasz słownik zasobów:
 
-##### <a name="light-theme-colors"></a>Kolorów motywu jasny
+##### <a name="light-theme-colors"></a>Kolory motywu jasny
 
 ```xaml
 <Color x:Key="iOSCardViewBackgroundColor">#FFFFFF</Color>
@@ -341,7 +341,7 @@ Ponieważ jest to formant niestandardowy, należy dodać zasoby, które odpowiad
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>Ciemny motyw kolorów
+##### <a name="dark-theme-colors"></a>Kolory motywu ciemny
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -359,7 +359,7 @@ Ponieważ jest to formant niestandardowy, należy dodać zasoby, które odpowiad
 
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Ustaw ControlTemplate dla klasy CardView
 
-Ponadto upewnij się, klasa C# utworzone w [krok 1](#1) używa kontroli szablonu zdefiniowany w [krok 4](#4) przy użyciu `Style` `Setter` — element
+Na koniec upewnij się, klasa C# utworzone w [kroku 1](#1) używa zdefiniowane w szablonie kontrolki [kroku 4](#4) przy użyciu `Style` `Setter` — element
 
 ```xml
 <Style TargetType="local:CardView">
@@ -373,7 +373,7 @@ Ponadto upewnij się, klasa C# utworzone w [krok 1](#1) używa kontroli szablonu
 
 #### <a name="7-add-the-control-to-a-page"></a>7. Dodawanie formantu do strony
 
-`CardView` Formantu można teraz dodać do strony. W poniższym przykładzie pokazano ona hostowana w `StackLayout`:
+`CardView` Kontroli można teraz dodać do strony. W poniższym przykładzie pokazano jej hostowanych w `StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">

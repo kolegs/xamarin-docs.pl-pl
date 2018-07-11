@@ -1,38 +1,38 @@
 ---
 title: 'Xamarin.Essentials: MainThread'
-description: Klasa MainThread pozwala na uruchamianie kodu w wątku głównego wykonywania aplikacji.
+description: Klasa MainThread umożliwia uruchamianie kodu w wątku głównym wykonywania aplikacji.
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: charlespetzold
 ms.author: chape
 ms.date: 06/26/2018
 ms.openlocfilehash: e07d36d3e9a5492e6e170b62dbacb36be44dbfa9
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080386"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831428"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**MainThread** klasa pozwala na uruchamianie kodu w głównym wątku wykonywania aplikacji i sprawdzić, czy bloku kodu jest obecnie uruchomiony w wątku głównego.
+**MainThread** klasa umożliwia uruchamianie kodu w głównym wątku wykonywania aplikacji i do określenia, czy określonego bloku kodu jest obecnie uruchomiona w wątku głównym.
 
 ## <a name="background"></a>Tło
 
-Większość systemów operacyjnych — z systemami iOS, Android i platformy uniwersalnej systemu Windows — korzystają z modelu wątkowości pojedynczej dla kodu obejmujące interfejsu użytkownika. Ten model jest poprawnie serializować zdarzeniami interfejsu użytkownika, w tym naciśnięć klawiszy i wprowadzania dotykowego. Ten wątek jest często nazywana _wątku głównego_ lub _wątku interfejsu użytkownika_ lub _wątku interfejsu użytkownika_. Wadą tego modelu jest, że cały kod, który uzyskuje dostęp do elementów interfejsu użytkownika należy uruchomić na wątku głównego aplikacji. 
+Większość systemów operacyjnych — w tym systemów iOS, Android i platformy uniwersalnej Windows — używają modelu wątkowości pojedynczego kodu dotyczące interfejsu użytkownika. Ten model jest prawidłowo serializacji zdarzenia interfejsu użytkownika, w tym naciśnięcia klawiszy i wprowadzania dotykowego. Ten wątek jest często określany mianem _wątku głównego_ lub _wątku interfejsu użytkownika_ lub _wątku interfejsu użytkownika_. Wadą tego modelu to, że cały kod, który uzyskuje dostęp do elementów interfejsu użytkownika, należy uruchomić na wątku głównego aplikacji. 
 
-Aplikacje czasami trzeba używać zdarzenia, które wywołań obsługi zdarzeń na wykonanie wątku dodatkowej. (Klasy Xamarin.Essentials [ `Accelerometer` ](accelerometer.md), [ `Compass` ](compass.md), [ `Gyroscope` ](gyroscope.md), [ `Magnetometer` ](magnetometer.md), i [ `OrientationSensor` ](orientation-sensor.md) wszystkie może zwrócić informacji w dodatkowej wątku, gdy jest używany z prędkości szybsze.) Jeśli program obsługi zdarzeń musi dostęp do elementów interfejsu użytkownika, ten kod musi być uruchomione w głównym wątku. **MainThread** klasa umożliwia aplikacji uruchomić ten kod w głównym wątku.
+Czasami konieczne aplikacji korzystanie ze zdarzeń, które wywołują procedurę obsługi zdarzeń dla pomocniczego wątku wykonywania. (Klasy Xamarin.Essentials [ `Accelerometer` ](accelerometer.md), [ `Compass` ](compass.md), [ `Gyroscope` ](gyroscope.md), [ `Magnetometer` ](magnetometer.md), i [ `OrientationSensor` ](orientation-sensor.md) wszystkie może zwrócić informacje na wątek pomocniczy, gdy jest używane z szybkość.) Jeśli program obsługi zdarzeń musi uzyskać dostęp do elementów interfejsu użytkownika, kod musi być uruchomione w wątku głównym. **MainThread** klasa umożliwia aplikacji uruchomić ten kod w wątku głównym.
 
 ## <a name="running-code-on-the-main-thread"></a>Uruchamianie kodu w głównym wątku
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Aby uruchomić kod w głównym wątku, należy wywołać statycznych `MainThread.BeginInvokeOnMainThread` metody. Argument jest [ `Action` ](xref:System.Action) obiektu, który jest po prostu metodę z żadnych argumentów i brak wartości zwracanej:
+Aby uruchomić kod w głównym wątku, wywołaj statyczną `MainThread.BeginInvokeOnMainThread` metody. Argument jest [ `Action` ](xref:System.Action) obiektu, który jest po prostu metodę, bez argumentów i nie zwraca wartości:
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(() =>
@@ -41,7 +41,7 @@ MainThread.BeginInvokeOnMainThread(() =>
 });
 ```
 
-Istnieje również możliwość zdefiniowania oddzielnych metodach dla kodu, który musi zostać uruchomiony w wątku głównego:
+Istnieje również możliwość definiowania oddzielne metody dla kodu, który należy uruchomić na wątku głównego:
 
 ```csharp
 void MyMainThreadCode()
@@ -50,18 +50,18 @@ void MyMainThreadCode()
 }
 ```
 
-Następnie można uruchomić tej metody w głównym wątku przez odwołanie w `BeginInvokeOnMainThread` metody:
+Następnie możesz uruchomić tę metodę w wątku głównym, odwołując się do jej w `BeginInvokeOnMainThread` metody:
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Platformy Xamarin.Forms ma metodę o nazwie [ `Device.BeginInvokeOnMainThread(Action)` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) wykonuje odpowiednikiem `MainThread.BeginInvokeOnMainThread(Action)`. Za pomocą obu tych metod w aplikacji platformy Xamarin.Forms, rozważ, czy kod wywołujący ma inne potrzeby zależności na platformy Xamarin.Forms. Jeśli nie, `MainThread.BeginInvokeOnMainThread(Action)` prawdopodobnie jest lepszym rozwiązaniem.
+> Zestaw narzędzi Xamarin.Forms ma metodę o nazwie [ `Device.BeginInvokeOnMainThread(Action)` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) , działa tak samo jak `MainThread.BeginInvokeOnMainThread(Action)`. Podczas korzystania z jednej z metod, w aplikacji platformy Xamarin.Forms, należy rozważyć, czy kod wywołujący ma inne potrzeby zależność zestawu narzędzi Xamarin.Forms. W przeciwnym razie `MainThread.BeginInvokeOnMainThread(Action)` prawdopodobnie jest lepszym rozwiązaniem.
 
-## <a name="determining-if-code-is-running-on-the-main-thread"></a>Określanie, czy kod jest uruchomiony na wątku głównego
+## <a name="determining-if-code-is-running-on-the-main-thread"></a>Określanie, czy kod jest uruchomiony na główny wątek
 
-`MainThread` Klasa umożliwia również aplikacją w celu określenia, czy bloku kodu jest uruchomiony w głównym wątku. `IsMainThread` Zwraca `true` Jeśli kod wywoływanie właściwości działa w głównym wątku. Program ta właściwość służy do uruchomienia kodu innego wątku głównego lub dodatkowej wątku:
+`MainThread` Klasy umożliwia także aplikację, aby określić, czy określonego bloku kodu jest uruchomiona w wątku głównym. `IsMainThread` Właściwość zwraca `true` Jeśli kodu, wywoływanie właściwości jest uruchomiona w wątku głównym. Program można użyć tej właściwości, aby uruchomić inny kod dla głównego wątku lub wątek pomocniczy:
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -74,7 +74,7 @@ else
 }
 ```
 
-Może zastanawiasz się, jeśli należy sprawdzić, czy kod jest uruchomiony w wątku dodatkowej przed wywołaniem `BeginInvokeOnMainThread`, na przykład, podobnie do następującej:
+Być może zastanawiasz się, jeśli należy sprawdzić, czy kod jest uruchomiony na wątek pomocniczy przed wywołaniem `BeginInvokeOnMainThread`, na przykład następująco:
 
 ```csharp
 if (MainThread.IsMainThread)
@@ -87,9 +87,9 @@ else
 }
 ```
 
-Może podejrzewać, że ten test może zwiększyć wydajność, jeśli blok kodu jest już uruchomiona w wątku głównego.
+Może być podejrzewać, że ten test może zwiększyć wydajność, jeśli blok kodu jest już uruchomiona w wątku głównym.
 
-_Jednak ten test nie jest konieczne._ Implementacje platformy `BeginInvokeOnMainThread` samodzielnie sprawdzić, czy połączenie jest nawiązywane w głównym wątku. Jest bardzo mały wpływ na wydajność, jeśli wywołujesz `BeginInvokeOnMainThread` Jeżeli nie jest to naprawdę konieczne.
+_Jednak ten test nie jest konieczne._ Implementacje platformy `BeginInvokeOnMainThread` samodzielnie sprawdzić, jeśli połączenie jest nawiązywane w wątku głównym. Jest bardzo mały spadek wydajności, jeśli wywołujesz `BeginInvokeOnMainThread` gdy nie jest to naprawdę konieczne.
 
 ## <a name="api"></a>interfejs API
 

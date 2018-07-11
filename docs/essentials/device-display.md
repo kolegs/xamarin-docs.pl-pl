@@ -1,26 +1,26 @@
 ---
 title: 'Xamarin.Essentials: Wyświetl informacje o urządzeniu'
-description: W tym dokumencie opisano klasy DeviceDisplay w Xamarin.Essentials, który zawiera metryki ekranu urządzenia, na którym działa aplikacja.
+description: W tym dokumencie opisano klasy DeviceDisplay w Xamarin.Essentials, która generuje dane pomiarowe ekranu dla urządzenia, na którym działa aplikacja.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 3060d56e14fb0d3801a96ec0fe6e24c9efda4dac
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080316"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38816519"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Wyświetl informacje o urządzeniu
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**DeviceDisplay** klasy informacje na temat metryki ekranu urządzenia aplikacja jest uruchomiona.
+**DeviceDisplay** klasa udostępnia informacje o metrykach ekranu urządzenia, aplikacja jest uruchomiona.
 
-## <a name="using-devicedisplay"></a>Przy użyciu DeviceDisplay
+## <a name="using-devicedisplay"></a>Za pomocą DeviceDisplay
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
@@ -28,7 +28,7 @@ using Xamarin.Essentials;
 
 ## <a name="screen-metrics"></a>Metryki ekranu
 
-Oprócz informacji podstawowych urządzenia **DeviceDisplay** klasy zawiera informacje o ekranu i orientacji urządzenia.
+Oprócz podstawowych informacji urządzenia **DeviceDisplay** klasy zawiera informacje o orientacji i ekranu urządzenia.
 
 ```csharp
 // Get Metrics
@@ -50,7 +50,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-**DeviceDisplay** klasy udostępnia również zdarzenie, które mogą mieć subskrypcję, która jest zawsze wyzwalane, gdy dowolne ekranu metryki zmiany:
+**DeviceDisplay** klasa udostępnia także zdarzenie, które mogą być subskrybowane wyzwalającego zawsze wtedy, gdy dowolne ekranu zmiany metryki:
 
 ```csharp
 public class ScreenMetricsTest

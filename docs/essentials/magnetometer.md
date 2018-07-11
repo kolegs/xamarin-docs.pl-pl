@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: magnetometrów'
-description: Klasa magnetometrów w Xamarin.Essentials umożliwia monitorowanie czujnik magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego ziemi.
+description: Klasa magnetometrów w Xamarin.Essentials umożliwia monitorowanie czujnika magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego na ziemi.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2c02188b5282949559e0abc5fa1b61b6b451fc8e
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 52790f78c2d78347a35f111b3c4db63900c24ec7
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080389"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947364"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: magnetometrów
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**Magnetometrów** klasa umożliwia monitorowanie czujnik magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego ziemi.
+**Magnetometrów** klasy umożliwia monitorowanie czujnika magnetometrów urządzenia, co oznacza orientacji urządzenia względem pola magnetycznego na ziemi.
 
-## <a name="using-magnetometer"></a>Przy użyciu magnetometrów
+## <a name="using-magnetometer"></a>Za pomocą magnetometrów
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcja magnetometrów działa przez wywołanie metody `Start` i `Stop` metody do nasłuchiwania zmian magnetometrów. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Oto przykładowe zastosowanie:
+Funkcja magnetometrów działa przez wywołanie metody `Start` i `Stop` metody do nasłuchiwania pod kątem zmian magnetometrów. Wszelkie zmiany są wysyłane za pośrednictwem `ReadingChanged` zdarzeń. Poniżej przedstawiono przykładowe zastosowanie:
 
 ```csharp
 
@@ -71,14 +71,7 @@ public class MagnetometerTest
 
 Wszystkie dane są zwracane w microteslas.
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Czujnik szybkości](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Najszybszym** — pobieranie danych czujnika tak szybko jak to możliwe (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Gry** — szybkości odpowiednie do gier (nie ma gwarancji zwrotu z wątku interfejsu użytkownika).
-- **Normalny** — szybkość domyślna odpowiedni w przypadku zmiany orientacji ekranu.
-- **Interfejs użytkownika** — szybkości nadające się do interfejsu użytkownika ogólne.
-
-Jeśli nie jest gwarantowana obsługi zdarzenia do uruchamiania w wątku interfejsu użytkownika, a jeśli program obsługi zdarzeń musi dostęp do elementów interfejsu użytkownika, użyj [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodę, aby uruchomić ten kod w wątku interfejsu użytkownika.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>interfejs API
 

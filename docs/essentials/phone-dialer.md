@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782854"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831400"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Telefon
 
@@ -18,15 +18,15 @@ ms.locfileid: "34782854"
 
 **PhoneDialer.Document** klasa umożliwia aplikacji w celu otwarcia link sieci web w przeglądarce preferowanych zoptymalizowanego systemu lub zewnętrznej przeglądarki.
 
-## <a name="using-phone-dialer"></a>Przy użyciu telefonu
+## <a name="using-phone-dialer"></a>Za pomocą telefonu
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkcja Telefon działa przez wywołanie metody `Open` metody za pomocą numeru telefonu, aby otworzyć program Telefon z. Gdy `Open` żądania interfejsu API automatycznie podejmie próbę numer oparte na kod kraju, jeśli określony format.
+Funkcja Telefon działa przez wywołanie metody `Open` metody za pomocą numeru telefonu, aby otworzyć program Telefon, za pomocą. Gdy `Open` żądania interfejsu API będzie próbować automatycznie sformatować liczbę, w oparciu kod kraju, jeśli określony.
 
 ```csharp
 public class PhoneDialerTest

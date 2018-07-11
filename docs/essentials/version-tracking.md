@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: Śledzenie wersji'
-description: Klasa VersionTracking w Xamarin.Essentials umożliwia sprawdzanie wersji aplikacji i numery kompilacji oraz wyświetlanie dodatkowych informacji takich jak w przypadku pierwszego czasu aplikacji nigdy uruchamiana lub przez bieżącą wersję, Pobierz ostatniej kompilacji informacje i inne.
+description: Klasa VersionTracking w Xamarin.Essentials pozwala sprawdzić wersję aplikacji i numery kompilacji oraz wyświetlać dodatkowe informacje takie tak, jakby była pierwszym uruchomieniu aplikacji, nigdy nie uruchamiane lub bieżącą wersję, możesz uzyskać poprzednią kompilację informacje i więcej.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783005"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815651"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Śledzenie wersji
 
 ![NuGet w wersji wstępnej](~/media/shared/pre-release.png)
 
-**VersionTracking** klasa umożliwia sprawdzanie wersji aplikacji i numery kompilacji oraz wyświetlanie dodatkowych informacji takich jak w przypadku pierwszego czasu aplikacji nigdy uruchamiana, lub przez bieżącą wersję, Pobierz poprzedniej informacje o kompilacji i inne.
+**VersionTracking** klasy pozwala sprawdzić wersję aplikacji i numery kompilacji oraz wyświetlać dodatkowe informacje takie tak, jakby była pierwszym uruchomieniu aplikacji, nigdy nie uruchamiane lub bieżącą wersję, możesz uzyskać poprzedni informacje o kompilacji i nie tylko.
 
-## <a name="using-version-tracking"></a>Przy użyciu wersji śledzenia
+## <a name="using-version-tracking"></a>Używanie śledzenia wersji
 
-Dodaj odwołanie do Xamarin.Essentials w swojej klasy:
+Dodaj odwołanie do Xamarin.Essentials w klasie:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Po raz pierwszy używasz **VersionTracking** klasy rozpocznie śledzenia bieżącej wersji. Należy wywołać `Track` wczesne tylko w każdym załadowaniu zapewniające informacje o wersji są śledzone aplikacji:
+Po raz pierwszy używasz **VersionTracking** klasy rozpocznie się śledzenia bieżącej wersji. Należy wywołać `Track` wcześniej tylko w aplikacji zawsze jest ładowany w celu zapewnienia jest śledzona bieżące informacje o wersji:
 
 ```csharp
 VersionTracking.Track();
@@ -70,13 +70,13 @@ var versionHistory = VersionTracking.VersionHistory;
 var buildHistory = VersionTracking.BuildHistory;
 ```
 
-## <a name="platform-implementation-specifics"></a>Szczegóły implementacji platformy
+## <a name="platform-implementation-specifics"></a>Funkcje specyficzne dla implementacji platformy
 
-Wszystkie informacje o wersji jest przechowywany przy użyciu [preferencje](preferences.md) interfejsu API w Xamarin.Essentials i jest przechowywany z nazwą pliku z **.xamarinessentials [YOUR-APP-pakiet-ID]**.
+Wszystkie informacje o wersji jest przechowywany przy użyciu [preferencje](preferences.md) interfejsu API w Xamarin.Essentials i jest przechowywany przy użyciu nazwy pliku z **.xamarinessentials [YOUR-APP-pakietu-ID]**.
 
-Odinstalowywanie aplikacji spowoduje, że _LocalSettings_i wszystkich wersji śledzenie informacji do usunięcia.
+Odinstalowywanie aplikacji spowoduje, że _LocalSettings_i wszystkich wersji śledzi informacje do usunięcia.
 
 ## <a name="api"></a>interfejs API
 
 - [Kod źródłowy śledzenia wersji](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
-- [Dokumentacja interfejsu API śledzenia wersji](xref:Xamarin.Essentials.VersionTracking)
+- [Wersja śledzenia dokumentacji interfejsu API](xref:Xamarin.Essentials.VersionTracking)
