@@ -1,25 +1,25 @@
 ---
-title: Narzędzia usług
+title: Usługi pierwszego planu
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 3088fa4b5cfa21ac57533ef331ffcc15414e14b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47e1eda2f701b654f81f664050847677fba8bcc5
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763751"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986037"
 ---
-# <a name="foreground-services"></a>Narzędzia usług
+# <a name="foreground-services"></a>Usługi pierwszego planu
 
-Usługa pierwszego planu to specjalny typ powiązania usługi lub uruchomiono usługi. Od czasu do czasu usługi będzie wykonywać zadania, które użytkownicy muszą znać aktywnie, te usługi są określane jako _pierwszego planu usług_. Przykładem usługi pierwszego planu to aplikacja, która zapewnia użytkownikowi wskazówki podczas kierowania lub przejście. Nawet jeśli aplikacja jest w tle, jest nadal ważny, czy usługa ma wystarczające zasoby do poprawnego działania i czy użytkownik ma szybki i wygodny sposób dostęp do aplikacji. Dla aplikacji systemu Android, to oznacza, że usługa pierwszego planu powinien zostać wyświetlony wyższy priorytet niż "regularnej" i podaj usługi pierwszego planu `Notification` wyświetlające Android tak długo, jak usługa jest uruchomiona.
+Usługi pierwszego planu jest specjalnym typem powiązanej usługi lub uruchomiono usługę. Od czasu do czasu usługi będzie wykonywać zadania, które użytkownicy muszą znać aktywnie, te usługi są określane jako _usługi pierwszego planu_. Przykładem usługi pierwszego planu, to aplikacja, która dostarcza użytkownika z kierunkami podczas prowadzenia lub zalet. Nawet jeśli aplikacja znajduje się w tle, jest nadal ważny, że usługa ma wystarczające zasoby do prawidłowego działania i czy użytkownik ma szybki i wygodny sposób uzyskiwać dostęp do aplikacji. Dla aplikacji systemu Android, to oznacza, że usługi pierwszego planu, powinien zostać wyświetlony wyższy priorytet niż "regularne" service i usługi pierwszego planu, należy podać `Notification` systemu Android będzie wyświetlana tak długo, jak usługa jest uruchomiona.
  
-Aby uruchomić usługę pierwszego planu, aplikacja musi być wysłany celem informujący o Android, aby uruchomić usługę. Następnie usługa musi zarejestrować się jako pierwszego planu usługi za pomocą systemu Android. Aplikacje, które są uruchomione na 8.0 dla systemu Android (lub nowszej) należy użyć `Context.StartForegroundService` metodę, aby uruchomić usługę, podczas powinien używać aplikacji, które działają na urządzeniach przy użyciu starszej wersji systemu android `Context.StartService`
+Aby uruchomić usługę pierwszego planu, aplikacja musi wysyłać cel, który zawiera informacje dla systemu Android, aby uruchomić usługę. Następnie usługa musi zarejestrować się jako usługa pierwszego planu z systemem Android. Należy używać w aplikacjach z systemem Android 8.0 (lub nowszy) `Context.StartForegroundService` metodę, aby uruchomić usługę, w przypadku, gdy należy używać w aplikacjach, które działają na urządzeniach ze starszą wersją systemu android `Context.StartService`
 
-Ta metoda rozszerzenia C# jest przykładem uruchomić usługę pierwszego planu. W systemie Android 8.0 i nowsze użyje `StartForegroundService` metody, w przeciwnym razie starszej `StartService` zostanie użyta metoda.  
+Ta metoda rozszerzenia języka C# jest przykładem sposobu uruchamiania usługi pierwszego planu. W systemie Android 8.0 i nowsze użyje `StartForegroundService` metody, w przeciwnym razie starszej wersji `StartService` zostanie użyta metoda.  
 
 ```csharp
 public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
@@ -41,18 +41,18 @@ public static void StartForegroundServiceComapt<T>(this Context context, Bundle 
 }
 ```
 
-## <a name="registering-as-a-foreground-service"></a>Rejestrowanie jako usługa pierwszego planu
+## <a name="registering-as-a-foreground-service"></a>Rejestrowanie w trybie usługi pierwszego planu
 
-Po uruchomieniu usługi pierwszego planu, jego musi zarejestrować się z systemem Android za pomocą [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Jeśli usługa jest uruchomiona z `Service.StartForegroundService` metody, ale nie rejestruje, Android będą Zatrzymaj usługę i Flaga aplikacji jako przestać odpowiadać.
+Po rozpoczęciu usługi pierwszego planu, jego musi zarejestrować się z systemem Android za pomocą wywołania [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Jeśli usługa jest uruchomiona przy użyciu `Service.StartForegroundService` metody, ale nie rejestruje, systemu Android będą Zatrzymaj usługę i Flaga aplikacji jako przestanie odpowiadać.
 
 `StartForeground` przyjmuje dwa parametry, które są wymagane:
  
-* Wartość całkowitą, która jest unikatowa w aplikacji do identyfikowania usługi.
-* A `Notification` obiekt, który Android będą wyświetlane na pasku stanu dla tak długo, jak usługa jest uruchomiona.
+* Wartość całkowitą, która jest unikatowa w obrębie aplikacji do identyfikowania usługi.
+* A `Notification` obiekt, który Android będą wyświetlane na pasku stanu, tak długo, jak usługa jest uruchomiona.
 
-Android wyświetli powiadomienie na pasku stanu dla tak długo, jak usługa jest uruchomiona. Powiadomienia, co najmniej zapewni wizualnie użytkownikowi, że usługa jest uruchomiona. W idealnym przypadku powiadomienia powinien zapewnić użytkownikowi skrót do aplikacji lub prawdopodobnie niektóre przycisków akcji, aby kontrolować aplikacji. Na przykład jest odtwarzaczem muzyki &ndash; powiadomień, która jest wyświetlana, może być przycisków Wstrzymaj/Odtwarzaj muzyki, przewiń do poprzedniego lub przejdź do następnego utworu. 
+Android będą wyświetlane powiadomienia na pasku stanu, tak długo, jak usługa jest uruchomiona. Powiadomienie, co najmniej zapewni wizualna podpowiedź dla użytkownika, że usługa jest uruchomiona. W idealnym przypadku powiadomienie powinien udostępniać użytkownikom skrót do aplikacji lub prawdopodobnie niektóre przyciski akcji do sterowania aplikacji. Na przykład jest odtwarzacz muzyczny &ndash; powiadomień, która jest wyświetlana może być przyciski grać pause/muzyki, przewiń do poprzedniego lub od razu przejść do następnego utworu. 
 
-Następujący fragment kodu jest przykład rejestrowania usługi jako usługa pierwszego planu:   
+Ten fragment kodu jest przykładem rejestrowaniu usługi jako usługi pierwszego planu:   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -78,31 +78,31 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-Poprzednie powiadomień wyświetli powiadomienie paska stanu, która jest podobny do następującego:
+Poprzednie powiadomienie zostanie wyświetlone powiadomienie paska stanu, który jest podobny do następującego:
 
-![Obraz przedstawiający powiadomień na pasku stanu](foreground-services-images/foreground-services-01.png "obraz przedstawiający powiadomień na pasku stanu")
+![Obraz przedstawiający powiadomienie na pasku stanu](foreground-services-images/foreground-services-01.png "obraz przedstawiający powiadomienie na pasku stanu")
 
-Ten zrzut ekranu przedstawia rozwinięty powiadomień na pasku powiadomień o dwie akcje, które umożliwiają użytkownikowi na kontrolowanie usługi:
+Ten zrzut ekranu przedstawia rozwinięty powiadomienie na pasku powiadomień za pomocą dwie akcje, które umożliwiają użytkownikom, aby kontrolować usługę:
 
-![Obraz przedstawiający rozwinięty powiadomień](foreground-services-images/foreground-services-02.png "obraz przedstawiający rozwinięty powiadomień.")
+![Obraz przedstawiający powiadomienie rozszerzonej](foreground-services-images/foreground-services-02.png "obraz przedstawiający powiadomienie rozszerzonej.")
 
-Więcej informacji na temat powiadomień jest dostępna w [lokalnego powiadomienia](~/android/app-fundamentals/notifications/local-notifications.md) sekcji [powiadomień systemu Android](~/android/app-fundamentals/notifications/index.md) przewodnik.
+Więcej informacji na temat powiadomień jest dostępna w [powiadomień lokalnych](~/android/app-fundamentals/notifications/local-notifications.md) części [powiadomień systemu Android](~/android/app-fundamentals/notifications/index.md) przewodnik.
 
-## <a name="unregistering-as-a-foreground-service"></a>Wyrejestrowywanie jako usługa pierwszego planu
+## <a name="unregistering-as-a-foreground-service"></a>Wyrejestrowywanie jako usługi pierwszego planu
 
-Usługi można cofnąć listy się jako usługa pierwszego planu, wywołując metodę `StopForeground`. `StopForeground` Usługa nie zostanie zatrzymana, ale usunie ikony powiadomień i sygnały systemu Android, które ta usługa może zostać wyłączony, jeśli to konieczne.
+Usługi można cofnąć listy sama jako usługi pierwszego planu przez wywołanie metody `StopForeground`. `StopForeground` Usługa nie zostanie zatrzymana, ale jej spowoduje usunięcie ikony powiadomień i sygnały systemu Android, które ta usługa może zostać wyłączony, jeśli to konieczne.
 
-Wyświetlane powiadomienia paska stanu może zostać także usunięty przez przekazanie `true` do metody: 
+Powiadomienie paska stanu, które jest wyświetlana, może zostać także usunięty przez przekazanie `true` metody: 
 
 ```csharp
 StopForeground(true);
 ```
 
-Jeśli usługa jest zatrzymany w wyniku wywołania `StopSelf` lub `StopService`, powiadomień paska stanu zostaną usunięte.
+Jeśli usługa jest zatrzymywana z wywołaniem `StopSelf` lub `StopService`, powiadomień paska stanu zostaną usunięte.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.Service.StartForegrond](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
+- [Android.App.Service.StartForeground](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
 - [Powiadomienia lokalne](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (przykład)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)

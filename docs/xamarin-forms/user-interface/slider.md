@@ -1,52 +1,62 @@
 ---
-title: Suwak platformy Xamarin.Forms
-description: Suwak platformy Xamarin.Forms jest poziomy pasek, może operować przez użytkownika, aby wybrać wartość typu double z ciągły zakres. W tym artykule opisano sposób użycia klasy suwaka można wybrać wartość z zakresu wartości ciągłe.
+title: Suwak zestawu narzędzi Xamarin.Forms
+description: Suwak Xamarin.Forms jest poziomy pasek, które mogą być zmieniane przez użytkownika, które można wybierać wartość typu double ciągłego zakresu. W tym artykule opisano sposób użycia klasy suwak, aby wybrać wartość z zakresu wartości ciągłe.
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/16/2018
-ms.openlocfilehash: 33c26abe2de017b6d8070053baf917cdd7a0dfc6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 2ba4ffa1bcaee5f95fbd963cd48e694569ec7850
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245810"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986099"
 ---
-# <a name="xamarinforms-slider"></a>Suwak platformy Xamarin.Forms
+# <a name="xamarinforms-slider"></a>Suwak zestawu narzędzi Xamarin.Forms
 
-_Użyj suwaka do zaznaczania na podstawie zakresu wartości ciągłe._
+_Użyj suwaka służąca do wybierania z zakresu wartości ciągłe._
 
-Platformy Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) jest poziomy pasek, który może manipulować użytkownikowi na wybranie `double` wartość z zakresu ciągłe.
+Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) jest poziomy pasek, które mogą być zmieniane przez użytkownika, aby wybrać `double` wartość z ciągłego zakresu.
 
 `Slider` Definiuje trzy właściwości typu `double`:
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) to minimum zakresu, wartość domyślna 0.
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) jest maksymalną zakresu, wartości domyślnej 1.
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) wartość suwaka można dostosować w zakresie między `Minimum` i `Maximum` i ma wartość domyślną równą 0.
+- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) to minimum zakresu, z wartością domyślną równą 0.
+- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) to maksimum zakresu, z wartością domyślną 1.
+- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) wartość suwaka należą do zakresu od `Minimum` i `Maximum` i ma wartość domyślną równą 0.
 
-Wszystkie trzy właściwości bazują na `BindableProperty` obiektów. `Value` Właściwość ma domyślny tryb powiązania z `BindingMode.TwoWay`, która oznacza, że jest odpowiedni jako źródło powiązania w aplikacji, która używa [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektury.
-
-> [!WARNING]
-> Wewnętrznie `Slider` upewnia się, że `Minimum` jest mniejsza niż `Maximum`. Jeśli `Minimum` lub `Maximum` kiedykolwiek są ustawione, aby `Minimum` jest nie mniejszy niż `Maximum`, zgłoszony wyjątek. Zobacz [ **środki ostrożności** ](#precautions) sekcji poniżej, aby uzyskać więcej informacji o ustawieniu `Minimum` i `Maximum` właściwości.
-
-`Slider` Przekształca wynik dane `Value` właściwości, tak aby była między `Minimum` i `Maximum`włącznie. Jeśli `Minimum` właściwość jest ustawiona na wartość większa niż `Value` właściwość `Slider` ustawia `Value` właściwości `Minimum`. Podobnie jeśli `Maximum` jest ustawiona na wartość mniej niż `Value`, następnie `Slider` ustawia `Value` właściwości `Maximum`.
-
-`Slider` definiuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) zdarzenie, które jest wywoływane, gdy `Value` zmian, albo przez użytkownika manipulowanie `Slider` lub gdy program ustawia `Value` właściwości bezpośrednio. A `ValueChanged` zdarzenie jest również uruchamiane podczas `Value` właściwości jest traktowany jak opisano w poprzednim akapicie.
-
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Obiektu, który towarzyszy `ValueChanged` zdarzenie ma dwie właściwości, zarówno typu `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) i [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). W tym czasie jest generowane zdarzenie, wartość `NewValue` jest taka sama jak `Value` właściwość `Slider` obiektu.
+Wszystkie trzy właściwości są wspierane przez `BindableProperty` obiektów. `Value` Właściwość ma domyślny tryb powiązania z `BindingMode.TwoWay`, co oznacza, że nadaje się jako źródło powiązania w aplikacji, która używa [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektury.
 
 > [!WARNING]
-> Nie należy używać opcji nieograniczonego układ poziomy `Center`, `Start`, lub `End` z `Slider`. Zarówno dla systemu Android, jak i platformy uniwersalnej systemu Windows `Slider` zwija pasek o zerowej długości, a w systemie iOS, pasek jest bardzo krótki. Zachowaj ustawienie domyślne `HorizontalOptions` ustawienie `Fill`i nie używaj szerokości `Auto` podczas umieszczania `Slider` w `Grid` układu.
+> Wewnętrznie `Slider` zapewnia, że `Minimum` jest mniejsza niż `Maximum`. Jeśli `Minimum` lub `Maximum` nigdy nie są ustawione tak, aby `Minimum` jest nie mniejsza niż `Maximum`, zgłaszany jest wyjątek. Zobacz [ **środki ostrożności** ](#precautions) sekcji poniżej, aby uzyskać więcej informacji na temat ustawień dotyczących `Minimum` i `Maximum` właściwości.
+
+`Slider` Przekształca wynik dane `Value` właściwości, tak aby można ją między `Minimum` i `Maximum`włącznie. Jeśli `Minimum` właściwość jest ustawiona na wartość większą niż `Value` właściwości `Slider` ustawia `Value` właściwość `Minimum`. Podobnie jeśli `Maximum` jest ustawiona na wartość mniej niż `Value`, następnie `Slider` ustawia `Value` właściwość `Maximum`.
+
+`Slider` definiuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) zdarzenia, które jest wywoływane, gdy `Value` zmiany, za pośrednictwem manipulację użytkownika `Slider` lub gdy program ustawia `Value` właściwość bezpośrednio. A `ValueChanged` zdarzenie również jest wywoływane, gdy `Value` właściwość jest traktowany jak opisano w poprzednim akapicie.
+
+[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Obiektu, który towarzyszy `ValueChanged` zdarzenie ma dwie właściwości, oba typu `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) i [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). W tym czasie jest wyzwalane zdarzenie, wartość `NewValue` jest taka sama jak `Value` właściwość `Slider` obiektu.
+
+> [!WARNING]
+> Nie należy używać opcji nieograniczone układzie poziomym `Center`, `Start`, lub `End` z `Slider`. W systemach Android i platformy uniwersalnej systemu Windows `Slider` zwija na pasku o zerowej długości, a także w systemach iOS, pasek jest bardzo mały. Zachowaj wartość domyślną `HorizontalOptions` ustawienie `Fill`i nie używaj szerokości `Auto` podczas przełączania `Slider` w `Grid` układu.
+
+`Slider` Definiuje również kilka właściwości, które wpływają na jego wygląd:
+
+- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) znajduje się pasek koloru po lewej stronie przycisku suwaka.
+- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) znajduje się pasek koloru po prawej stronie przycisku suwaka.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) jest to kolor przycisku suwaka. Ta właściwość nie jest obsługiwana na platformie Universal Windows.
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) obraz dla przycisku suwaka typu [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Ta właściwość nie jest obsługiwana na platformie Universal Windows.
+
+> [!NOTE]
+> `ThumbColor` i `ThumbImage` właściwości wzajemnie się wykluczają. Jeśli obie te właściwości są ustawione, `ThumbImage` właściwości mają wyższy priorytet.
 
 ## <a name="basic-slider-code-and-markup"></a>Podstawowy kod suwaka i znaczników
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) próbki rozpoczyna się od trzech stron, które są identyczne funkcjonalnie, ale są wykonywane na różne sposoby. Pierwsza strona używa tylko kodu C#, drugi używa XAML z obsługi zdarzeń w kodzie, a trzeci jest w stanie uniknąć programu obsługi zdarzeń za pomocą powiązania danych w pliku XAML.
+[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) przykładowe zaczyna się od trzech stron, które są funkcjonalnie identyczny, ale są implementowane w na różne sposoby. Pierwsza strona używa tylko kod C#, drugi za program obsługi zdarzeń w kodzie XAML, a trzeci ma możliwość uniknąć programu obsługi zdarzeń za pomocą powiązania danych w pliku XAML.
 
 ### <a name="creating-a-slider-in-code"></a>Tworzenie suwaka w kodzie
 
-**Podstawowy kod suwaka** strony [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) pokazano Pokaż, aby utworzyć `Slider` i dwa `Label` obiektów w kodzie:
+**Podstawową kodu suwaka** strony w [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) przykład pokazuje pokaz, aby utworzyć `Slider` oraz dwóch `Label` obiektów w kodzie:
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -93,17 +103,17 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider` Zainicjowano mają `Maximum` właściwości 360. `ValueChanged` Obsługi `Slider` używa `Value` właściwość `slider` obiekt, aby ustawić `Rotation` właściwości pierwszego `Label` i używa `String.Format` metody z `NewValue` właściwości argumenty zdarzeń, aby ustawić `Text` właściwości drugiego `Label`. Te dwie metody, aby uzyskać bieżącą wartość `Slider` są wymienne.
+`Slider` Jest inicjowany mieć `Maximum` właściwość 360. `ValueChanged` Program obsługi `Slider` używa `Value` właściwość `slider` obiektu, aby ustawić `Rotation` właściwości pierwszego `Label` i używa `String.Format` metody z `NewValue` właściwość argumenty zdarzeń, aby ustawić `Text` właściwość drugiej `Label`. Te dwie metody, aby uzyskać bieżącą wartość `Slider` są wymienne.
 
-Oto programu uruchomionego w systemach iOS, Android i Windows platformy Uniwersalnej urządzeń:
+Poniżej przedstawiono program działających w systemach iOS, Android i Windows platformy Uniwersalnej urządzeniach:
 
-[![Suwak podstawowy kod](slider-images/BasicSliderCode.png "kod podstawowe suwaka")](slider-images/BasicSliderCode-Large.png#lightbox)
+[![Kod podstawowy suwaka](slider-images/BasicSliderCode.png "kodu podstawowego suwaka")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Drugi `Label` Wyświetla tekst "(niezainicjowane)" do `Slider` zmieniany, który przypadków pierwszy `ValueChanged` zdarzeń do uruchomienia. Zauważ, że liczba miejsc dziesiętnych, które są wyświetlane jest różne dla trzech platform. Te różnice są związane z implementacji platformy `Slider` i zostały omówione w dalszej części tego artykułu w sekcji [platformy różnice implementacji](#implementations).
+Drugi `Label` Wyświetla tekst "(niezainicjowana)" do momentu `Slider` jest przetwarzany, który przypadków pierwszy `ValueChanged` zdarzeń do uruchomienia. Zauważ, że liczba miejsc dziesiętnych, które są wyświetlane różne dla trzech platformach. Te różnice są związane z implementacji platformy `Slider` zostały one omówione w dalszej części tego artykułu, w sekcji [różnice dotyczące Platform implementacji](#implementations).
 
-### <a name="creating-a-slider-in-xaml"></a>Tworzenie suwaka w języku XAML
+### <a name="creating-a-slider-in-xaml"></a>Tworzenie suwaka w XAML
 
-**Podstawowe XAML suwaka** strony funkcjonalnie jest taka sama jak **podstawowy kod suwaka** ale zaimplementowanym głównie w języku XAML:
+**Podstawowe XAML suwaka** strony funkcjonalnie jest taka sama jak **podstawową kodu suwaka** ale zaimplementowany głównie w XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -129,7 +139,7 @@ Drugi `Label` Wyświetla tekst "(niezainicjowane)" do `Slider` zmieniany, który
 </ContentPage>
 ```
 
-Plik CodeBehind zawiera programu obsługi `ValueChanged` zdarzeń:
+Plik związany z kodem zawiera program obsługi dla `ValueChanged` zdarzeń:
 
 ```csharp
 public partial class BasicSliderXamlPage : ContentPage
@@ -148,21 +158,21 @@ public partial class BasicSliderXamlPage : ContentPage
 }
 ```
 
-Istnieje również możliwość obsługi zdarzeń w celu uzyskania `Slider` który jest wyzwoleniem zdarzenia za pośrednictwem `sender` argumentu. `Value` Właściwość zawiera bieżąca wartość:
+Istnieje również możliwość obsługi zdarzeń w celu uzyskania `Slider` , jest uruchamiana zdarzeń za pośrednictwem `sender` argumentu. `Value` Właściwość zawiera bieżącą wartość:
 
 ```csharp
 double value = ((Slider)sender).Value;
 ```
 
-Jeśli `Slider` obiektu określono nazwę w pliku XAML z `x:Name` atrybutu (na przykład "suwaka"), a następnie program obsługi zdarzeń można odwołać obiektu bezpośrednio:
+Jeśli `Slider` obiektu otrzymanych nazwy w pliku XAML z `x:Name` atrybutu (na przykład "suwaka"), a następnie program obsługi zdarzeń może odwoływać się do tego obiektu bezpośrednio:
 
 ```csharp
 double value = slider.Value;
 ```
 
-### <a name="data-binding-the-slider"></a>Suwak powiązanie danych
+### <a name="data-binding-the-slider"></a>Suwak powiązania danych
 
-**Podstawowe powiązania suwaka** strona przedstawia sposób zapisania niemal równoważne program, który eliminuje `Value` obsługi zdarzeń za pomocą [powiązania danych](~/xamarin-forms/app-fundamentals/data-binding/index.md):
+**Podstawowe powiązania suwaka** strona przedstawia sposób zapisania niemal równoważne program, który eliminuje `Value` programu obsługi zdarzeń za pomocą [powiązanie danych](~/xamarin-forms/app-fundamentals/data-binding/index.md):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -191,13 +201,13 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation` Właściwości pierwszego `Label` jest powiązany z `Value` właściwość `Slider`, ponieważ jest `Text` właściwości drugiego `Label` z `StringFormat` specyfikacji. **Podstawowe powiązania suwaka** strony funkcje nieco inaczej z dwóch poprzednich stron: po wyświetleniu strony, drugi `Label` wyświetla ciąg tekstowy o wartości. Jest to korzyść wynikająca używanie powiązania danych. Do wyświetlania tekstu bez powiązania danych, należy zainicjować specjalnie `Text` właściwość `Label` lub symulować uruchamiania programu `ValueChanged` zdarzenia przez wywołanie metody obsługi zdarzeń z konstruktora klasy.
+`Rotation` Właściwości pierwszego `Label` jest powiązany z `Value` właściwość `Slider`, ponieważ jest `Text` właściwość drugiej `Label` z `StringFormat` specyfikacji. **Podstawowe powiązania suwaka** strony funkcje nieco inaczej dwóch poprzednich stron: po raz pierwszy zostanie wyświetlona strona, drugi `Label` wyświetla ciąg tekstowy, z wartością. Jest to korzyść wynikająca z użycia powiązanie danych. Do wyświetlania tekstu bez powiązania danych, musisz zainicjować specjalnie `Text` właściwość `Label` lub symulować uruchomieniu którego z `ValueChanged` zdarzeń, wywołując program obsługi zdarzeń z konstruktora klasy.
 
 <a name="precautions" />
 
 ## <a name="precautions"></a>Środki ostrożności
 
-Wartość `Minimum` właściwość zawsze musi być mniejsza niż wartość `Maximum` właściwości. Poniższy kod przyczyny fragment `Slider` Aby zgłosić wyjątek:
+Wartość `Minimum` właściwość zawsze musi być mniejsza niż wartość `Maximum` właściwości. Poniższy kod powoduje, że fragment kodu `Slider` Aby zgłosić wyjątek:
 
 ```csharp
 // Throws an exception!
@@ -208,7 +218,7 @@ Slider slider = new Slider
 };
 ```
 
-Kompilator języka C# generuje kod, który ustawia te dwie właściwości w sekwencji, i kiedy `Minimum` właściwości jest równa 10, jest większy niż domyślne `Maximum` wartość 1. Można uniknąć wyjątek w takim przypadku przez ustawienie `Maximum` właściwości pierwszy:
+Kompilator języka C# generuje kod, który ustawia te dwie właściwości w kolejności, i kiedy `Minimum` właściwość jest ustawiona na 10, jest większa niż wartość domyślna `Maximum` wartość 1. Można uniknąć wyjątek w tym przypadku ustawiając `Maximum` właściwość pierwszy:
 
 ```csharp
 Slider slider = new Slider
@@ -218,23 +228,23 @@ Slider slider = new Slider
 };
 ```
 
-Ustawienie `Maximum` 20 nie stanowi to problemu, ponieważ jest większy niż domyślne `Minimum` ustawienie 0. Gdy `Minimum` jest ustawiona wartość jest mniejsza niż `Maximum` o wartości 20.
+Ustawienie `Maximum` 20 nie stanowi to problemu, ponieważ jest on większy niż domyślna `Minimum` ustawienie 0. Gdy `Minimum` jest ustawiona, wartość jest mniejsza niż `Maximum` o wartości 20.
 
-Ten sam problem występuje w języku XAML. Ustawianie właściwości w kolejności, która zapewnia, że `Maximum` zawsze jest większa niż `Minimum`:
+Ten sam problem występuje w XAML. Ustawianie właściwości w kolejności, który zapewnia, że `Maximum` jest zawsze większa niż `Minimum`:
 
 ```xaml
 <Slider Maximum="20"
         Minimum="10" ... />
 ```
 
-Można ustawić `Minimum` i `Maximum` wartości ujemne, ale tylko w określonym porządku gdzie `Minimum` jest zawsze mniej niż `Maximum`:
+Możesz ustawić `Minimum` i `Maximum` wartości ujemne, ale tylko w kolejności gdzie `Minimum` jest zawsze mniejsza niż `Maximum`:
 
 ```xaml
 <Slider Minimum="-20"
         Maximum="-10" ... />
 ```
 
-`Value` Właściwość zawsze jest większa niż lub równa `Minimum` wartość i mniejsza niż lub równa `Maximum`. Jeśli `Value` jest ustawiony na wartość spoza zakresu, będzie można przekształcić wartość należeć do zakresu, ale nie wystąpił wyjątek. Na przykład, ten kod będzie *nie* zgłaszał wyjątku:
+`Value` Właściwość zawsze jest większa niż lub równa `Minimum` wartości i mniejsza niż lub równa `Maximum`. Jeśli `Value` jest ustawiona na wartość spoza zakresu, wartość będzie go to tego zmusić należeć do zakresu, ale nie jest wyjątek. Na przykład, ten kod pozwoli *nie* zgłosić wyjątek:
 
 ```csharp
 Slider slider = new Slider
@@ -243,9 +253,9 @@ Slider slider = new Slider
 };
 ```
 
-Zamiast tego `Value` właściwości jest traktowany jak `Maximum` wartość 1.
+Zamiast tego `Value` właściwość jest traktowany jak `Maximum` wartość 1.
 
-Oto fragment kodu pokazano powyżej:
+Poniżej przedstawiono fragment kodu powyżej:
 
 ```csharp
 Slider slider = new Slider
@@ -255,9 +265,9 @@ Slider slider = new Slider
 };
 ```
 
-Gdy `Minimum` jest ustawiony na 10, następnie `Value` również jest ustawiony na 10.
+Gdy `Minimum` jest ustawiony na 10, następnie `Value` jest również ustawiona na 10.
 
-Jeśli `ValueChanged` dołączono program obsługi zdarzeń w czasie który `Value` właściwości jest traktowany jak coś innego niż jego wartość domyślna 0, a następnie `ValueChanged` zdarzenie jest wywoływane. Poniżej przedstawiono fragment XAML:
+Jeśli `ValueChanged` programu obsługi zdarzeń została dołączona w czasie, `Value` właściwość jest traktowany jak coś innego niż jego wartość domyślna 0, a następnie `ValueChanged` jest wyzwalane zdarzenie. Poniżej przedstawiono fragment XAML:
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -265,35 +275,37 @@ Jeśli `ValueChanged` dołączono program obsługi zdarzeń w czasie który `Val
         Minimum="10" />
 ```
 
-Gdy `Minimum` jest ustawiony na 10, `Value` również jest ustawiony na 10, a `ValueChanged` zdarzenie jest wywoływane. Taka sytuacja może wystąpić, zanim skonstruowane pozostałej części strony, a program obsługi może podejmować wielokrotne próby odwoływać się inne elementy na stronie, które nie zostały jeszcze utworzone. Możesz dodać kod do `ValueChanged` obsługi, która sprawdza, czy `null` wartości innych elementów na stronie. Lub możesz ustawić `ValueChanged` obsługi zdarzeń po `Slider` wartości zostały zainicjowane.
+Gdy `Minimum` jest ustawiony na 10, `Value` jest również ustawiona na 10, a `ValueChanged` jest wyzwalane zdarzenie. Taka sytuacja może wystąpić, zanim został skonstruowany pozostałej części strony, a program obsługi może próbować odwoływać się do innych elementów na stronie, które nie zostały jeszcze utworzone. Możesz chcieć dodać kod do `ValueChanged` program obsługi, który sprawdza, czy `null` wartości innych elementów na stronie. Lub możesz ustawić `ValueChanged` programu obsługi zdarzeń po `Slider` wartości zostały zainicjowane.
 
 <a name="implementations" />
 
-## <a name="platform-implementation-differences"></a>Różnice implementacji platformy
+## <a name="platform-implementation-differences"></a>Różnice dotyczące platform implementacji
 
-Zrzuty ekranu przedstawiona wcześniej wyświetlić wartość `Slider` z różną liczbę miejsc dziesiętnych. Dotyczy to jak `Slider` jest zaimplementowany w platformach systemów Android i platformy uniwersalnej systemu Windows.
+Zrzuty ekranu, przedstawionej wcześniej, wyświetlanie wartości `Slider` wprowadzając szereg różnych separatorów dziesiętnych. Dotyczy to jak `Slider` jest zaimplementowana na platformach Android i platformy uniwersalnej systemu Windows.
 
 ### <a name="the-android-implementation"></a>Implementacja systemu Android
 
-Implementacja systemu Android `Slider` opiera się na Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) i zawsze ustawia [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) właściwości do 1000. Oznacza to, że `Slider` w systemie Android ma tylko 1,001 wartości dyskretnych. Jeśli ustawisz `Slider` mają `Minimum` 0 i `Maximum` 5000, a następnie jako `Slider` zmieniany, `Value` właściwość ma wartości 0, 5, 10, 15 i tak dalej.
+Implementacja systemu Android `Slider` opiera się na Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) i zawsze ustawia [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) właściwości ustawiono wartość 1000. Oznacza to, że `Slider` w systemie Android zawiera tylko 1,001 wartości dyskretnych. Jeśli ustawisz `Slider` mieć `Minimum` 0 i `Maximum` 5000, a następnie jako `Slider` jest przetwarzany `Value` właściwość ma wartości 0, 5, 10, 15 i tak dalej.
 
 ### <a name="the-uwp-implementation"></a>Implementacja platformy uniwersalnej systemu Windows
 
-Implementacja platformy uniwersalnej systemu Windows `Slider` opiera się na platformy uniwersalnej systemu Windows [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) formantu. `StepFrequency` Właściwości platformy uniwersalnej systemu Windows `Slider` ma ustawioną wartość różnicy `Maximum` i `Minimum` właściwości podzielona przez 10, ale nie większą niż 1.
+Implementacja platformy uniwersalnej systemu Windows `Slider` zależy od platformy UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) kontroli. `StepFrequency` Właściwości platformy UWP `Slider` jest ustawiony na różnicę tej `Maximum` i `Minimum` właściwości podzielona przez 10, ale nie jest większa niż 1.
 
-Na przykład dla domyślnego zakresu od 0 do 1 `StepFrequency` właściwość ma wartość 0,1. Jako `Slider` zmieniany, `Value` właściwość jest ograniczona do 0, 0,1, 0,2, 0,3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 i 1.0. (Jest to widoczne na ostatniej stronie w [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) próbki.) Gdy różnica między `Maximum` i `Minimum` właściwości jest następnie 10 lub nowszy, `StepFrequency` jest ustawiona na 1 i `Value` właściwość ma wartości całkowitej.
+Na przykład domyślny zakres od 0 do 1 `StepFrequency` właściwość ma wartość 0,1. Jako `Slider` jest przetwarzany `Value` właściwość jest ograniczona do 0, 0.1, 0.2, 0,3, 0,4, 0,5, Update 0.6, 0,7, 0,8, 0,9 i 1.0. (Jest to widoczne na ostatniej stronie w [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) próbki.) Gdy różnica między `Maximum` i `Minimum` właściwości jest 10 lub nowszy, `StepFrequency` jest ustawiona na 1 i `Value` właściwość posiada wartości całkowitych.
+
+Ponadto [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty) i [ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) właściwości nie są obsługiwane na platformy uniwersalnej systemu Windows.
 
 ### <a name="the-stepslider-solution"></a>Rozwiązanie StepSlider
 
-Bardziej elastyczne `StepSlider` została szczegółowo opisana w [działu 27. Niestandardowe moduły renderowania](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) książki *tworzenia aplikacji mobilnych za pomocą platformy Xamarin.Forms*. `StepSlider` Jest podobny do `Slider` , ale dodaje `Steps` właściwości, aby określić liczbę wartości między `Minimum` i `Maximum`.
+Bardziej wszechstronna `StepSlider` została omówiona w [działu 27. Niestandardowe programy renderujące](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) książki *tworzenia aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms*. `StepSlider` Przypomina `Slider` , ale dodaje `Steps` właściwości, aby określić liczbę wartości z zakresu od `Minimum` i `Maximum`.
 
-## <a name="sliders-for-color-selection"></a>Suwaki wybór kolorów
+## <a name="sliders-for-color-selection"></a>Suwaki wybór koloru
 
-Ostatni dwie strony w [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) przykładowa jednocześnie używać trzech `Slider` wystąpień wybór kolorów. Pierwsza strona obsługuje wszystkie interakcje w pliku CodeBehind podczas drugiej stronie przedstawia sposób użycia powiązanie danych z ViewModel.
+Końcowe dwie strony w programie [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) przykładowe obaj użytkownicy za pomocą trzech `Slider` wystąpień do wyboru kolorów. Pierwsza strona obsługuje wszystkie interakcje w pliku związanym z kodem, podczas gdy druga strona przedstawia sposób użycia powiązanie danych z ViewModel.
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>Obsługa suwaki w pliku związanym z kodem
 
-**Suwaki kolorów RGB** tworzy stronę `BoxView` do wyświetlenia kolor, trzy `Slider` instancje, aby wybrać składniki czerwony, zielonemu i niebieskiemu koloru i trzech `Label` elementy do wyświetlania tych kolorów wartości:
+**Suwaki koloru RGB** tworzy stronę `BoxView` do wyświetlania kolorów, trzy `Slider` wystąpień, wybór składników czerwonego, zielonego i niebieskiego koloru i trzech `Label` elementów do wyświetlania tych kolorów wartości:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -335,7 +347,7 @@ Ostatni dwie strony w [ **SliderDemos** ](https://developer.xamarin.com/samples/
 </ContentPage>
 ```
 
-A `Style` zapewnia wszystkie trzy `Slider` elementy w zakresie od 0 do 255. `Slider` Elementy mają takie same wspólne `ValueChanged` obsługi, która jest zaimplementowana w pliku związanym z kodem:
+A `Style` oferuje wszystkie trzy `Slider` elementów w zakresie od 0 do 255. `Slider` Elementy współużytkować ten sam `ValueChanged` obsługi, który jest implementowany w pliku związanym z kodem:
 
 ```csharp
 public partial class RgbColorSlidersPage : ContentPage
@@ -367,13 +379,13 @@ public partial class RgbColorSlidersPage : ContentPage
 }
 ```
 
-Pierwszy zestawy sekcji `Text` właściwości jednego z `Label` wystąpień krótki ciąg tekstowy wartości `Slider` w formacie szesnastkowym. Następnie wszystkie trzy `Slider` wystąpienia są dostępne do utworzenia `Color` wartości RGB składników:
+Pierwszy zestawy sekcji `Text` właściwości jednego z `Label` wystąpień krótki ciąg tekstowy określająca wartość `Slider` w formacie szesnastkowym. Następnie wszystkie trzy `Slider` wystąpieniach używanych do tworzenia `Color` wartość ze składników RGB:
 
-[![Suwaki kolorów RGB](slider-images/RgbColorSliders.png "suwaki kolorów RGB")](slider-images/RgbColorSliders-Large.png#lightbox)
+[![Suwaki koloru RGB](slider-images/RgbColorSliders.png "suwaki kolorów RGB")](slider-images/RgbColorSliders-Large.png#lightbox)
 
-### <a name="binding-the-slider-to-a-viewmodel"></a>Powiązanie suwak ViewModel
+### <a name="binding-the-slider-to-a-viewmodel"></a>Powiązywanie suwak ViewModel
 
-**HSL suwaków** strona przedstawia sposób użycia ViewModel do obliczeń użyty do utworzenia `Color` wartość z wartości odcień, nasycenie i jasność. Wszystkie ViewModels, takich jak `HSLColorViewModel` klasa implementuje `INotifyPropertyChanged` interfejsu i uruchamiany `PropertyChanged` zdarzeń przy każdej zmianie jedna z właściwości:
+**HSL suwaków** strona przedstawia sposób użycia ViewModel do wykonywania obliczeń użyte do utworzenia `Color` wartości z wartości hue, nasycenia i jasności. Wszystkie modele widoków, takich jak `HSLColorViewModel` klasy implementuje `INotifyPropertyChanged` interfejsu i generowane `PropertyChanged` zdarzenie zawsze wtedy, gdy zmieni się jedna z właściwości:
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -448,9 +460,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-ViewModels i `INotifyPropertyChanged` interfejsu omówiono w artykule [powiązania danych](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+Modele widoków i `INotifyPropertyChanged` interfejsu zostały omówione w artykule [powiązanie danych](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-**HslColorSlidersPage.xaml** tworzy plik `HslColorViewModel` i ustawia ją na stronie `BindingContext` właściwości. Dzięki temu wszystkie elementy w pliku XAML w celu powiązania właściwości w ViewModel:
+**HslColorSlidersPage.xaml** plik `HslColorViewModel` i ustawia ją na stronę `BindingContext` właściwości. Dzięki temu wszystkie elementy w pliku XAML, aby powiązać z właściwościami w ViewModel:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -487,11 +499,11 @@ ViewModels i `INotifyPropertyChanged` interfejsu omówiono w artykule [powiązan
 </ContentPage>
 ```
 
-Jako `Slider` elementy są manipulacje `BoxView` i `Label` elementy są aktualizowane z ViewModel:
+Jako `Slider` elementy są zmieniane, `BoxView` i `Label` elementy zostaną zaktualizowane na podstawie ViewModel:
 
 [![HSL suwaków](slider-images/HslColorSliders.png "suwaków HSL")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat` Składnika `Binding` — rozszerzenie znaczników ustawiono dla formatu "F2" wyświetlanie dwóch miejsc po przecinku. (Ciąg formatowania powiązania danych została szczegółowo opisana w artykule [ciągu formatowania](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Jednak wersja platformy uniwersalnej systemu Windows program jest ograniczony do wartości 0, 0,1, 0,2... 0,9 i 1.0. To jest bezpośrednio w wyniku wykonania platformy uniwersalnej systemu Windows `Slider` zgodnie z powyższym opisem w sekcji [platformy różnice implementacji](#implementations).
+`StringFormat` Składnika `Binding` — rozszerzenie znaczników jest ustawiona dla formatu "F2" do wyświetlania dwóch miejsc po przecinku. (Ciąg formatowania w powiązań danych jest omówione w artykule [formatowanie ciągów](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Jednak program w wersji platformy uniwersalnej systemu Windows jest ograniczona do wartości 0, 0.1, 0.2... 0,9 i 1.0. Jest to bezpośrednio w wyniku wykonania platformy UWP `Slider` zgodnie z powyższym opisem w sekcji [różnice dotyczące Platform implementacji](#implementations).
 
 ## <a name="related-links"></a>Linki pokrewne
 

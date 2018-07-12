@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: be378a60a9d9a7b206b64f07ee70edb432cec8e3
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/11/2018
+ms.openlocfilehash: 29cb00c100918bf03efe3f078c366750080c0627
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935657"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986151"
 ---
 # <a name="ios-platform-specifics"></a>specyficznych dla platformy systemu iOS
 
@@ -31,6 +31,8 @@ W systemie iOS Xamarin.Forms zawiera następujące specyficznych dla platformy:
 - Kontrolowanie czy [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) obsługi gestów dotykowych i przekazuje je do jego zawartości. Aby uzyskać więcej informacji, zobacz [opóźniania zawartości poprawek w ScrollView](#delay_content_touches).
 - Ustawienie Styl separatora [ `ListView` ](xref:Xamarin.Forms.ListView). Aby uzyskać więcej informacji, zobacz [ustawienie Styl separatora ListView](#listview-separatorstyle).
 - Wyłączenie trybu kolorów starszej wersji w obsługiwanej [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [wyłączenie starszej wersji trybu kolorów](#legacy-color-mode).
+- Włączanie cień na [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [Włączanie cień](#drop-shadow).
+- Włączanie [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) w widoku przewijania do przechwytywania i udostępniania gestu pan przewijania widoku. Aby uzyskać więcej informacji, zobacz [Włączanie jednoczesnych rozpoznawania gestów Pan](#simultaneous-pan-gesture).
 
 <a name="blur" />
 
@@ -65,6 +67,9 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 Wynik jest fakt, że określonym [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) jest stosowany do [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) wystąpienia, które rozmywa [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) warstwie znajdujące się poniżej:
 
 ![](ios-images/blur-effect.png "Rozmycie efekt specyficzne dla platformy")
+
+> [!NOTE]
+> Podczas dodawania efektu Rozmycie [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), zdarzenia dotykowe nadal będą odbierane przez `VisualElement`.
 
 <a name="large_title" />
 
@@ -550,10 +555,98 @@ Wynik jest, można wyłączyć tryb kolorów starszej wersji, co gwarantuje kolo
 > [!NOTE]
 > Podczas ustawiania [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) w widoku, tryb starszej wersji kolor całkowicie jest ignorowany. Aby uzyskać więcej informacji na temat stanów wizualnych zobacz [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
+<a name="drop-shadow" />
+
+## <a name="enabling-a-drop-shadow"></a>Włączanie cień
+
+Określonych platform służy do włączenia cień [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Jest używany w XAML, ustawiając [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) dołączonych właściwości `true`, wraz z liczbą dodatkowych opcjonalne dołączonych właściwości, które kontrolują cienia:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <BoxView ...
+                 ios:VisualElement.IsShadowEnabled="true"
+                 ios:VisualElement.ShadowColor="Purple"
+                 ios:VisualElement.ShadowOpacity="0.7"
+                 ios:VisualElement.ShadowRadius="12">
+            <ios:VisualElement.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </ios:VisualElement.ShadowOffset>
+         </BoxView>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatywnie mogą być wykorzystywane za pomocą języka C# przy użyciu wygodnego interfejsu API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+var boxView = new BoxView { Color = Color.Aqua, WidthRequest = 100, HeightRequest = 100 };
+boxView.On<iOS>()
+       .SetIsShadowEnabled(true)
+       .SetShadowColor(Color.Purple)
+       .SetShadowOffset(new Size(10,10))
+       .SetShadowOpacity(0.7)
+       .SetShadowRadius(12);
+```
+
+`VisualElement.On<iOS>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie iOS. [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) przestrzeni nazw jest używana do kontroli, czy włączona jest funkcja Cień `VisualElement`. Ponadto następujące metody może być użyta do kontrolowania cienia:
+
+- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) — Ustawia kolor cienia. Domyślny kolor jest [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) — Ustawia przesunięcie cienia. Przesunięcie zmiany kierunku cienia jest rzutowanie i jest określony jako [ `Size` ](xref:Xamarin.Forms.Size) wartości. `Size` Struktury wartości są wyrażone w jednostkach niezależnych od urządzenia, pierwsza wartość jest odległość od lewej (wartości ujemnej) lub w prawo (dodatnia wartość), a druga wartość jest odległości powyżej (wartości ujemnej) lub poniżej (dodatnia wartość) . Wartość domyślna tej właściwości to (0.0, 0.0), co powoduje, że w polu w tle jest rzutowany na każdej stronie `VisualElement`.
+- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) — Ustawia Nieprzezroczystość cienia, o wartości znajdujące się w zakresie od 0,0 (przezroczyste) 1.0 (nieprzezroczysty). Wartość nieprzezroczystości domyślna to 0,5.
+- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) — Ustawia promień rozmycia, używany do renderowania cienia. Wartość domyślna usługi radius jest 10.0.
+
+> [!NOTE]
+> Stan cień mogą być przeszukiwane przez wywołanie metody [ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), i [ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) metody.
+
+Wynik nie będzie można włączyć na cień [ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+
+![](ios-images/drop-shadow.png "Cień włączone")
+
+<a name="simultaneous-pan-gesture" />
+
+## <a name="enabling-simultaneous-pan-gesture-recognition"></a>Włączanie rozpoznawanie gestu równoczesne Pan
+
+Gdy [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) jest dołączony do widoku w widoku przewijania, wszystkie pan gestów są przechwytywane przez `PanGestureRecognizer` i nie są przekazywane do przewijania widoku. W związku z tym nie jest już przewinie przewijania widoku.
+
+Umożliwia to specyficzne dla platformy `PanGestureRecognizer` w widoku przewijania do przechwytywania i udostępniania gestu pan przewijania widoku. Jest używany w XAML, ustawiając [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) dołączonych właściwości `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.PanGestureRecognizerShouldRecognizeSimultaneously="true">
+    ...
+</Application>
+```
+
+Alternatywnie mogą być wykorzystywane za pomocą języka C# przy użyciu wygodnego interfejsu API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
+```
+
+`Application.On<iOS>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Metody w [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) przestrzeni nazw jest używana do kontroli, czy aparat rozpoznawania gestów pan w widoku przewijania będzie przechwytywać gestu pan lub przechwytywania i udostępniania panoramowanie gest przewijania widoku. Ponadto [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) metoda może służyć do zwrócenia, czy widok przewijania, który zawiera, są udostępniane w gestu pan [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+
+W związku z tym specyficzne dla platformy włączone, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) zawiera [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), zarówno `ListView` i `PanGestureRecognizer` otrzyma gestu Kadrowanie i go przetworzyć. Jednak w przypadku tego specyficznego dla platformy wyłączone, gdy `ListView` zawiera `PanGestureRecognizer`, `PanGestureRecognizer` będzie przechwytywać gestu pan i przetworzyć te dane i `ListView` nie będziesz otrzymywać gestu przesuwanie.
+
 ## <a name="summary"></a>Podsumowanie
 
 W tym artykule przedstawiono sposób korzystania z systemem iOS specyficznych dla platformy, które są wbudowane w platformy Xamarin.Forms. Zezwalaj na specyficznych dla platformy, umożliwiają korzystanie z funkcji, które są dostępne tylko na danej platformie, bez stosowania niestandardowe programy renderujące lub efekty.
-
 
 ## <a name="related-links"></a>Linki pokrewne
 

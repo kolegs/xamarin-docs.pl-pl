@@ -7,12 +7,12 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 6de1959b57dbd1e14a1aff86dfc985e579b3da0f
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935202"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986138"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Podsumowanie rozdziałów 13. Mapy bitowe
 
@@ -105,7 +105,7 @@ Wszystkie platformy Xamarin.Forms obsługuje nieskompresowanych formatu pliku BM
 Wszystkie platformy Xamarin.Forms umożliwia przechowywanie mapy bitowe w zestawach aplikacji platformy. Po pobraniu przez aplikację platformy Xamarin.Forms, mapy bitowe tych platform są typu [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Można je wykorzystać do:
 
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) właściwość [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) właściwość [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
+- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) właściwość [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
 - [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) właściwość `Button`
 
 Zestawy platformy zawierają już map bitowych, ikon i ekrany powitalne:
@@ -180,7 +180,7 @@ Najważniejsze `ToolbarItem` właściwości są:
 
 Liczba `Primary` elementy powinny być ograniczone do trzech lub czterech. Należy uwzględnić `Text` ustawienie dla wszystkich elementów. W przypadku większości platform tylko `Primary` elementy wymagają `Icon` , ale wymaga Windows 8.1 `Icon` dla wszystkich elementów. Ikony powinny być kwadratowe 32 jednostek niezależnych od urządzenia. `FileImageSource` Typu wskazuje, że są one specyficzne dla platformy.
 
-`ToolbarItem` Generowane [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) zdarzenie, kiedy nacisnął, podobnie jak `Button`. `ToolbarItem` obsługuje również [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) i [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) właściwości często używane w połączeniu z modelem MVVM. (Zobacz [rozdział 18, MVVM](chapter18.md)).
+`ToolbarItem` Generowane [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) zdarzenie, kiedy nacisnął, podobnie jak `Button`. `ToolbarItem` obsługuje również [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Command/) i [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.CommandParameter/) właściwości często używane w połączeniu z modelem MVVM. (Zobacz [rozdział 18, MVVM](chapter18.md)).
 
 Systemów iOS i Android wymagają strona, wyświetlająca pasek narzędzi [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) lub strony przejście przez `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) program zestawy `MainPage` właściwość jego `App` klasy [ `NavigationPage` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) z `ContentPage` argument i pokazuje konstrukcja i zdarzenie obsługi paska narzędzi.
 

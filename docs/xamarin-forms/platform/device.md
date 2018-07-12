@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935374"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986073"
 ---
 # <a name="xamarinforms-device-class"></a>Klasa urządzenia zestawu narzędzi Xamarin.Forms
 
@@ -75,6 +75,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 -  **Tablet** — iPad, urządzenia Windows i urządzeń z systemem Android szerszy niż 600 spadku ^
 -  **Pulpit** — tylko zwracanych w [aplikacji platformy UWP](~/xamarin-forms/platform/windows/installation/index.md) na komputerze stacjonarnym z systemem Windows 10 (zwraca `Phone` na urządzeniach przenośnych Windows, w tym w scenariuszach firmy Continuum)
 -  **TV** — Tizen telewizyjne urządzenia
+-  **Obejrzyj** — Tizen Obejrzyj urządzeń
 -  **Nieobsługiwana** — nieużywane
 
 *^ spadku niekoniecznie jest liczba fizycznych pikseli*
@@ -193,4 +194,4 @@ Xamarin.Forms `Device` klasa umożliwia precyzyjne kontrolowanie funkcji i ukła
 
 - [Przykładowe urządzenia](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Style próbki](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Urządzenia](xref:Xamarin.Forms.Device)
+- [urządzenia](xref:Xamarin.Forms.Device)

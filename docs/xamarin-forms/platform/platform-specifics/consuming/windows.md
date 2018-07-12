@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935130"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986112"
 ---
 # <a name="windows-platform-specifics"></a>Specyficznych dla platformy Windows
 
@@ -20,17 +20,19 @@ _Zezwalaj na specyficznych dla platformy, umożliwiają korzystanie z funkcji, k
 
 Na Universal Windows Platform (platformy UWP), zestawu narzędzi Xamarin.Forms zawiera następujące specyficznych dla platformy:
 
-- Ustawianie opcji umieszczania paska narzędzi. Aby uzyskać więcej informacji, zobacz [zmiana położenia narzędzi](#toolbar_placement).
+- Ustawianie opcji umieszczania paska narzędzi. Aby uzyskać więcej informacji, zobacz [zmiana położenia narzędzi strony](#toolbar_placement).
 - Zwijanie [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) paska nawigacyjnego. Aby uzyskać więcej informacji, zobacz [zwijanie pasek nawigacyjny MasterDetailPage](#collapsable_navigation_bar).
 - Włączanie [ `WebView` ](xref:Xamarin.Forms.WebView) do wyświetlania alertów JavaScript w oknie dialogowym komunikatu platformy uniwersalnej systemu Windows. Aby uzyskać więcej informacji, zobacz [wyświetlanie alertów JavaScript](#webview-javascript-alert).
 - Włączanie [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) wchodzić w interakcje z aparatem sprawdzania pisowni. Aby uzyskać więcej informacji, zobacz [Włączanie sprawdzania pisowni SearchBar](#searchbar-spellcheck).
 - Wykrywanie, kolejność odczytu z pliku tekstowego zawartości [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), i [ `Label` ](xref:Xamarin.Forms.Label) wystąpień. Aby uzyskać więcej informacji, zobacz [wykrywanie kolejność czytania od zawartości](#inputview-readingorder).
 - Wyłączenie trybu kolorów starszej wersji w obsługiwanej [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [wyłączenie starszej wersji trybu kolorów](#legacy-color-mode).
 - Włączanie obsługi gestu wzorca tap w [ `ListView` ](xref:Xamarin.Forms.ListView). Aby uzyskać więcej informacji, zobacz [Włączanie naciśnij obsługi gestu w ListView](#listview-selectionmode).
+- Włączanie strony ikony, który będzie wyświetlany w [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) paska narzędzi. Aby uzyskać więcej informacji, zobacz [Włączanie ikony na TabbedPage](#tabbedpage-icons).
+- Ustawienie klucza dostępu dla [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [klucze dostępu VisualElement ustawienie](#visualelement-accesskeys).
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>Zmiana położenia paska narzędzi
+## <a name="changing-the-page-toolbar-placement"></a>Zmiana położenia narzędzi strony
 
 Umożliwia zmienić położenie paska narzędzi na określonych platform [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)i jest używane w XAML, ustawiając [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) dołączona właściwość na wartość [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) wyliczenia:
 
@@ -292,6 +294,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 Ponadto [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView})) metoda może służyć do zwrócenia bieżącego [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode).
 
 Wynik jest fakt, że określonym [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) jest stosowany do [ `ListView` ](xref:Xamarin.Forms.ListView), które kontrolki czy elementy w `ListView` mogą odpowiadać na gesty, naciśnij i dlatego czy natywnych `ListView` generowane `ItemClick` lub `Tapped` zdarzeń.
+
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>Włączanie ikony na TabbedPage
+
+Określonych platform umożliwia strony ikony, który będzie wyświetlany w [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) narzędzi i oferuje możliwość Opcjonalnie można określić rozmiar ikon. Jest używany w XAML, ustawiając [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) dołączonych właściwości `true`i opcjonalnie ustawiając [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) dołączonych właściwości [ `Size` ](xref:Xamarin.Forms.Size) wartość:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+Alternatywnie mogą być wykorzystywane za pomocą języka C# przy użyciu wygodnego interfejsu API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na platformie Universal Windows. [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw, umożliwia włączanie i wyłączanie nagłówka ikon. [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size)) Metoda opcjonalnie określa rozmiar ikony nagłówka z [ `Size` ](xref:Xamarin.Forms.Size) wartości.
+
+Ponadto `TabbedPage` klasy w `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` przestrzeni nazw ma również [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) metodę, która umożliwia ikony nagłówka [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) metodę, która wyłącza ikony nagłówka i [ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) metodę, która zwraca `boolean` wartość, która wskazuje, czy nagłówek ikony są włączone.
+
+Wynik jest tej strony, które mogą być wyświetlane ikony na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) paska narzędzi o rozmiarze ikonę opcjonalnie Ustaw żądany rozmiar:
+
+![TabbedPage włączone ikony specyficznej dla platformy](windows-images/tabbedpage-icons.png "TabbedPage włączone ikony specyficznej dla platformy")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>Ustawienie VisualElement klawiszy
+
+Klawisze dostępu są skróty klawiaturowe, które poprawić użyteczność i dostępność aplikacji na platformie Universal Windows, zapewniając intuicyjny sposób użytkownicy mogą szybko przejść i wchodzić w interakcje z widoczne Interfejsie użytkownika aplikacji za pomocą klawiatury zamiast za pomocą dotyku lub myszy. Są one kombinacje klawisz Alt i co najmniej alfanumeryczne klawiszy, zwykle po kolei. Skróty klawiaturowe są obsługiwane automatycznie klucze dostępu, które użyj pojedynczego znaku alfanumerycznego.
+
+Klawisze skrótu dostępu są liczb zmiennoprzecinkowych wskaźniki wyświetlane obok kontrolki, które zawierają klucze dostępu. Każda wskazówka klawiszy dostępu zawiera klawisze alfanumeryczne, które aktywują skojarzonego formantu. Gdy użytkownik naciśnie klawisz Alt, klawisze skrótu dostępu są wyświetlane.
+
+Umożliwia określenie klucza dostępu dla określonych platform [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Jest używany w XAML, ustawiając [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) dołączona właściwość na wartość alfanumeryczne i opcjonalnie ustawiając [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) dołączona właściwość na wartość [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) wyliczenia, [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) dołączonych właściwości `double`i [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) dołączona właściwość do `double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+Alternatywnie mogą być wykorzystywane za pomocą języka C# przy użyciu wygodnego interfejsu API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na platformie Universal Windows. [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String)) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw jest używana do ustawiania wartości klucza dostępu dla `VisualElement`. [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement)) Metody, opcjonalnie określa położenie na potrzeby wyświetlanie klawiszy skrótu dostępu za pomocą [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) wyliczenie, podając następujące możliwe wartości:
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) — Wskazuje, że położenie klawiszy skrótu dostępu jest zależna od systemu operacyjnego.
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) — Wskazuje, że klawiszy skrótu dostępu pojawi się powyżej górnej krawędzi `VisualElement`.
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) — Wskazuje, że klawiszy skrótu dostępu pojawi się poniżej dolnej krawędzi `VisualElement`.
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) — Wskazuje, że dostęp klawiszy skrótu pojawią się na prawo od prawej krawędzi `VisualElement`.
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) — Wskazuje, że dostęp klawiszy skrótu pojawią się na lewo od lewej krawędzi `VisualElement`.
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) — Wskazuje klawiszy skrótu dostępu, zostaną nałożone na środku `VisualElement`.
+
+> [!NOTE]
+> Zazwyczaj [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto) umieszczania klawiszy skrótu jest wystarczająca, która obejmuje obsługę interfejsów użytkownika adaptacyjne.
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) i [ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) metody może służyć do bardziej szczegółową kontrolę dostępu do lokalizacji klawiszy skrótu. Argument `SetAccessKeyHorizontalOffset` metoda wskazuje, jak daleko przenieść dostępu klawisza skrótu po lewej lub prawej, argument `SetAccessKeyVerticalOffset` metoda wskazuje sposób znacznie przenoszenia klawiszy skrótu dostępu w górę lub w dół.
+
+>[!NOTE]
+> Nie można ustawić dostęp, przesunięcia klawiszy skrótu, gdy ustawiono umieszczenia klucza dostępu `Auto`.
+
+Ponadto [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), i [ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})) można używać metod można pobrać dostępu do klucza wartość i jego lokalizacji.
+
+Wynik jest, że klawiszy skrótu dostępu mogą być wyświetlane obok któregoś [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) wystąpień, które definiują dostęp do kluczy, naciskając klawisz Alt:
+
+![Klucze dostępu VisualElement specyficzne dla platformy](windows-images/visualelement-accesskeys.png "klucze dostępu VisualElement specyficzne dla platformy")
+
+Gdy użytkownik aktywuje klucz dostępu, naciskając klawisz Alt, a następnie dostęp do klucza, domyślna akcja dla `VisualElement` zostaną wykonane. Na przykład, gdy użytkownik aktywuje klucz dostępu na [ `Switch` ](xref:Xamarin.Forms.Switch), `Switch` jest włączony. Gdy użytkownik aktywuje klucz dostępu na [ `Entry` ](xref:Xamarin.Forms.Entry), `Entry` uzyska fokus. Gdy użytkownik aktywuje klucz dostępu na [ `Button` ](xref:Xamarin.Forms.Button), program obsługi zdarzeń dla [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) zdarzenia jest wykonywany.
+
+Aby uzyskać więcej informacji na temat kluczy dostępu, zobacz [klucze dostępu](/windows/uwp/design/input/access-keys#key-tip-positioning).
 
 ## <a name="summary"></a>Podsumowanie
 
