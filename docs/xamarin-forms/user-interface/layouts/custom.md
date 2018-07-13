@@ -1,97 +1,97 @@
 ---
-title: Tworzenie układu niestandardowego
-description: W tym artykule opisano sposób tworzenia niestandardowego układu klasy i przedstawia klasę WrapLayout liter orientacji Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
+title: Tworzenie niestandardowego układu
+description: W tym artykule wyjaśniono, jak napisać klasę układu niestandardowego, a ilustruje klasę WrapLayout zależne od orientacji rozmieszcza jego elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: f225a80a1c386668b71d1cdd47409eb017f19033
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0c16fd3930926a05ed7796391962d0fc8996dc96
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244938"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995378"
 ---
-# <a name="creating-a-custom-layout"></a>Tworzenie układu niestandardowego
+# <a name="creating-a-custom-layout"></a>Tworzenie niestandardowego układu
 
-_Platformy Xamarin.Forms definiuje cztery układ klasy — StackLayout, AbsoluteLayout RelativeLayout i siatki, i każdego Rozmieszcza elementy podrzędne w inny sposób. Jednak czasami jest niezbędne do obsługi zawartości strony przy użyciu układu nie został dostarczony przez platformy Xamarin.Forms. W tym artykule opisano sposób tworzenia niestandardowego układu klasy i przedstawia klasę WrapLayout liter orientacji Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy._
+_Zestaw narzędzi Xamarin.Forms definiuje cztery układ klasy — StackLayout, AbsoluteLayout, RelativeLayout i siatki, i każdy rozmieszcza jego elementy podrzędne w inny sposób. Jednak czasami jest konieczne do organizowania zawartości strony przy użyciu układu nie został dostarczony przez zestaw narzędzi Xamarin.Forms. W tym artykule wyjaśniono, jak napisać klasę układu niestandardowego, a ilustruje klasę WrapLayout zależne od orientacji rozmieszcza jego elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy._
 
 ## <a name="overview"></a>Omówienie
 
-W przypadku platformy Xamarin.Forms, wszystkie klasy układu pochodzi od [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) klasy i ograniczenie typu ogólnego, aby [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) i jego typów pochodnych. Z kolei `Layout<T>` pochodną klasy [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) klasy, która udostępnia mechanizm dla położenia i rozmiaru podrzędnych elementów.
+W interfejsie Xamarin.Forms, dziedziczyć wszystkie klasy układ [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) klasy i ograniczenia typu ogólnego, aby [ `View` ](xref:Xamarin.Forms.View) i jego typów pochodnych. Z kolei `Layout<T>` klasa pochodzi od [ `Layout` ](xref:Xamarin.Forms.Layout) klasy, która udostępnia mechanizm dla położenia i rozmiaru podrzędnych elementów.
 
-Każdy element wizualny jest odpowiedzialny za określenie własnych preferowany rozmiar, znany jako *żądany* rozmiar. [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/), i [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) typy pochodne są zobowiązani do określenia lokalizacji i rozmiaru podrzędnych lub elementy podrzędne względem siebie. W związku z tym układu obejmuje relacji nadrzędny podrzędny, gdzie element nadrzędny Określa, co powinna być rozmiar jego elementów podrzędnych, ale będzie podejmować próby pomieścić żądany rozmiar elementu podrzędnego.
+Każdy element wizualny jest odpowiedzialny za sprawdzenie własnego preferowany rozmiar, który jest znany jako *żądane* rozmiar. [`Page`](xref:Xamarin.Forms.Page), [ `Layout` ](xref:Xamarin.Forms.Layout), i [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) typy pochodne są zobowiązani do sprawdzenia lokalizacji i rozmiaru ich podrzędne i elementy podrzędne względem siebie. W związku z tym, układ obejmuje relacji nadrzędny podrzędny, gdzie nadrzędnego okaże się, jakie powinny być rozmiar jego elementy podrzędne, ale będzie próbował dopasować żądany rozmiar elementu podrzędnego.
 
-Dokładne zrozumienie platformy Xamarin.Forms układ i unieważniania cyklu jest wymagane do utworzenia niestandardowego układu. Omówione zostaną teraz te cykle.
+Dogłębnej wiedzy w zakresie platformy Xamarin.Forms układ i unieważniania cyklu jest wymagana do utworzenia układu niestandardowego. Teraz będzie to dokładniej omówione tych cykli.
 
 ## <a name="layout"></a>Układ
 
-Układ rozpoczyna się w górnej części drzewa wizualnego ze stroną, a obejmującego wszystkie gałęzie drzewa wizualnego na każdy element wizualny na stronie. Elementy nadrzędne z innymi elementami są zobowiązani do zmiany rozmiaru i pozycjonowania ich elementy podrzędne względem siebie.
+Układ, który rozpoczyna się w górnej części drzewa wizualnego ze stroną, a następnie przechodzi przez wszystkie gałęzie drzewa wizualnego w celu objęcia każdy element wizualny na stronie. Elementy, które są elementy nadrzędne do innych elementów są odpowiedzialne za rozmiary i rozmieszczenia ich elementy podrzędne względem siebie.
 
-[ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) Klasa definiuje [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) metoda element dla operacji układu i [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metodę, która określa prostokątny obszar element zostanie umieszczony wewnątrz. Podczas uruchamiania aplikacji, a pierwsza strona jest wyświetlana, *cyklu układu* składające się pierwszego dnia `Measure` wywołań, a następnie `Layout` wywołuje, rozpoczyna na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) obiektu:
+[ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Klasa definiuje [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) metodę, która mierzy element dla operacji układu i [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) metody, która określa prostokątny obszar elementu będą renderowane w ciągu. Po uruchomieniu aplikacji, pierwsza strona jest wyświetlana, *cyklu układ* składający się pierwszego dnia `Measure` wywołań, a następnie `Layout` wywołuje, rozpoczyna się na [ `Page` ](xref:Xamarin.Forms.Page) obiektu:
 
-1. Podczas cyklu układu, co element nadrzędny jest odpowiedzialny za wywoływanie `Measure` metody dla jego elementów podrzędnych.
-1. Po mierzonych dzieci co element nadrzędny jest odpowiedzialny za wywoływanie `Layout` metody dla jego elementów podrzędnych.
+1. Podczas cyklu układ co element nadrzędny jest odpowiedzialny za wywołanie `Measure` metody na jego elementy podrzędne.
+1. Po mierzonych elementy podrzędne elementu nadrzędnego, co jest odpowiedzialny za wywołania `Layout` metody na jego elementy podrzędne.
 
-Ten cykl gwarantuje, że każdy element wizualny na stronie otrzyma wywołań `Measure` i `Layout` metody. Proces przedstawiono na poniższym diagramie:
+Ten cykl gwarantuje, że każdy element wizualny na stronie otrzyma wywołania `Measure` i `Layout` metody. Na poniższym diagramie przedstawiono proces:
 
-![](custom-images/layout-cycle.png "Cykl układ platformy Xamarin.Forms")
-
-> [!NOTE]
-> Należy pamiętać, że cykle układu również może wystąpić w podzestawie drzewa wizualnego, jeśli coś zmiany wpływają na układ. W tym elementów jest dodany lub usunięty z kolekcji takim jak [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), zmiany w [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) właściwości elementu lub zmianę w rozmiarze elementu.
-
-Każda klasa platformy Xamarin.Forms, który ma `Content` lub `Children` właściwość ma możliwym do zastąpienia [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) metody. Klasy niestandardowego układu, które pochodzą z [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) należy przesłonić tę metodę i upewnij się, że [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) i [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metody wywołana dla wszystkich elementów podrzędnych, aby zapewnić odpowiednią niestandardowego układu.
-
-Ponadto każda klasa która pochodzi z [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) lub [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) przesłonięcie [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) metodę, która jest w przypadku, gdy klasa układu Określa rozmiar, który musi on być przy wywołaniach [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) metod jego elementów podrzędnych.
+![](custom-images/layout-cycle.png "Cykl układ zestawu narzędzi Xamarin.Forms")
 
 > [!NOTE]
-> Elementy określić ich rozmiaru na podstawie *ograniczenia*, która wskazuje, ile miejsca jest dostępne dla elementu w ramach jego elementu nadrzędnego. Ograniczenia przekazany do [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) i [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) metody mogą należeć do zakresu od 0 do `Double.PositiveInfinity`. Element *ograniczone*, lub *pełni ograniczonego*, gdy odbierze wywołanie jego [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) — metoda z argumentami z systemem innym niż nieskończone — element jest ograniczony do określonego rozmiaru. Element *nieograniczonego*, lub *częściowo ograniczone*, gdy odbierze wywołanie jego `Measure` metody z co najmniej jednego argumentu równa `Double.PositiveInfinity` — mogą być nieskończone ograniczenia traktować jako wskazujący automatyczna zmiana rozmiaru.
+> Należy pamiętać, że cykle układu może również wystąpić na podzestaw drzewa wizualnego, jeśli zmieni się coś, co wpływa na układ. Obejmuje to elementy dodawany lub usuwany z kolekcji, takim jak [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), zmiana [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) właściwość elementu lub zmianę w rozmiarze elementu.
 
-## <a name="invalidation"></a>Unieważnienie
+Każda klasa zestawu narzędzi Xamarin.Forms, który ma `Content` lub `Children` właściwość ma możliwym do zastąpienia [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody. Klasy niestandardowe układy, które wynikają z [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) należy przesłonić tę metodę i upewnij się, że [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) i [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) są metody wywoływana na wszystkie elementy podrzędne, aby zapewnić żądany układ niestandardowy.
 
-Unieważnienie to proces, za pomocą której zmiana elementu na stronie wyzwala nowy cykl układu. Elementy są uznawane za nieprawidłowe, gdy mają one już prawidłowe rozmiaru lub położenia. Na przykład jeśli [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontSize/) właściwość [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) zmiany, `Button` , jest określany jest nieprawidłowy, ponieważ nie ma właściwego rozmiaru. Zmiana rozmiaru `Button` następnie może mieć wpływ zmian w układzie za pośrednictwem pozostałej części strony.
+Ponadto każdej klasy, która jest pochodną [ `Layout` ](xref:Xamarin.Forms.Layout) lub [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) przesłonięcie [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) metoda, która jest w przypadku, gdy klasa układu Określa rozmiar który musi być przez wykonywanie wywołań do [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) metody jego elementów podrzędnych.
 
-Elementy unieważnienie się za pomocą [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/) metody, zazwyczaj podczas właściwości elementu zmiany nowy rozmiar elementu, który może spowodować. Ta metoda generowane [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) zdarzenie, które obsługuje jego elementu nadrzędnego do wyzwolenia nowy cykl układu.
+> [!NOTE]
+> Elementy określić ich rozmiar na podstawie *ograniczenia*, które wskazują, ile miejsca jest dostępna dla elementu z elementu nadrzędnego. Ograniczenia są przekazywane do [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) i [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) metody mogą należeć do zakresu od 0 do `Double.PositiveInfinity`. Element jest *ograniczone*, lub *pełni ograniczone*, po odebraniu wywołanie w celu jego [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) metody z argumentami nie nieskończone — element jest ograniczony do określonego rozmiaru. Element jest *nieograniczonego*, lub *częściowo ograniczony*, po odebraniu wywołanie w celu jego `Measure` metody z co najmniej jednego argumentu równa `Double.PositiveInfinity` — mogą być nieskończone ograniczenia traktować jako wskazujący automatyczne określanie rozmiaru.
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) Klasy Ustawia program obsługi [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) zdarzenia w każdej podrzędnej dodane do jego `Content` właściwości lub `Children` kolekcji i odłącza obsługi podczas podrzędne zostaną usunięte. W związku z tym każdego elementu w drzewie wizualnym elementów podrzędnych jest alert, zawsze, gdy jeden z jego elementów podrzędnych zmienia rozmiar. Na poniższym diagramie przedstawiono, jak zmianę w rozmiarze elementu w drzewie wizualnym może spowodować zmiany, które ripple w górę drzewa:
+## <a name="invalidation"></a>Unieważnieniu
 
-![](custom-images/invalidation.png "Unieważnienie w drzewie wizualnym")
+Unieważnieniu polega na za pomocą którego zmiana elementu na stronie wyzwala nowy cykl układu. Elementy są traktowane jako nieprawidłowy, gdy nie będzie ona miała właściwego rozmiaru lub położenia. Na przykład jeśli [ `FontSize` ](xref:Xamarin.Forms.Button.FontSize) właściwość [ `Button` ](xref:Xamarin.Forms.Button) zmian `Button` jest nazywany jest nieprawidłowy, ponieważ nie będzie miało właściwy rozmiar. Zmiana rozmiaru `Button` następnie może mieć wpływ zmian w układzie przez pozostałą część strony.
 
-Jednak `Layout` klasa próbuje ograniczyć ich wpływ na zmianę w rozmiarze elementu podrzędnego na układ strony. Układ ma rozmiar ograniczone, następnie zmiany rozmiaru podrzędnych nie wpływa na niczego wyższe niż układu nadrzędnego w drzewie wizualnym. Jednak zwykle zmianę w rozmiarze układu ma wpływ na sposób układ Rozmieszcza elementy podrzędne. W związku z tym każda zmiana w rozmiarze układu i rozpocznie się cykl układu dla układu układ będzie odbierać wywołań jego [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) i [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) metody.
+Elementy unieważnienie samodzielnie za pomocą wywołania [ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) metody, zazwyczaj gdy właściwość elementu zmieni nowy rozmiar elementu, który może spowodować. Ta metoda uruchamia [ `MeasureInvalidated` ](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) zdarzenie, które obsługuje jego elementu nadrzędnego, wyzwolenie nowego cyklu układu.
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) Klasy definiuje również [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/) metody, której cel podobne do [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/) metody. `InvalidateLayout` Metoda powinna być wywoływana, gdy zostaną zmienione, który ma wpływ na sposób układ Określa położenie i rozmiar jego elementów podrzędnych. Na przykład `Layout` klasy wywołuje `InvalidateLayout` zawsze, gdy jest elementem podrzędnym jest dodane lub usunięte z układu.
+[ `Layout` ](xref:Xamarin.Forms.Layout) Klasy Ustawia program obsługi [ `MeasureInvalidated` ](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) zdarzenia dla każdego podrzędnego dodawane do jej `Content` właściwości lub `Children` kolekcji oraz odłącza obsługi podczas podrzędne zostaną usunięte. W związku z tym każdego elementu w drzewie wizualnym, który ma elementy podrzędne są alerty zawsze wtedy, gdy jeden z jego elementów podrzędnych zmienia rozmiar. Na poniższym diagramie przedstawiono, jak zmianę w rozmiarze elementu w drzewie wizualnym może spowodować zmiany, które ripple w górę drzewa:
 
-[ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/) Może zostać zastąpiona w celu wdrożenia pamięci podręcznej w celu zminimalizowania powtarzane wywołania [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) metody układ elementów podrzędnych. Zastępowanie `InvalidateLayout` metoda zapewnia powiadomienie z informacją o gdy elementy podrzędne są dodane lub usunięte z układu. Podobnie [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) metody może zostać zastąpiona w celu Podaj powiadomienie, gdy jeden z elementów podrzędnych układu zmienia rozmiar. Dla obu zamienników metod niestandardowego układu powinien odpowiadać przez wyczyszczenie pamięci podręcznej. Aby uzyskać więcej informacji, zobacz [Obliczanie i buforowanie danych](#caching).
+![](custom-images/invalidation.png "Unieważnieniu w drzewie wizualnym")
 
-## <a name="creating-a-custom-layout"></a>Tworzenie układu niestandardowego
+Jednak `Layout` klasy próbuje ograniczyć wpływ zmianę w rozmiarze elementu podrzędnego na układ strony. Układ jest ograniczony rozmiar, następnie zmiany rozmiaru podrzędnych nie wpływa na nic wyższa niż układ nadrzędnego w drzewie wizualnym. Jednak zazwyczaj zmianę w rozmiarze układu ma wpływ na sposób układ rozmieszcza jego elementów podrzędnych. W związku z tym, wszelkie zmiany rozmiaru układu i rozpocznie się układ cyklu w układzie układ będzie otrzymywać połączeń do jego [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) i [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody.
 
-Proces tworzenia niestandardowego układu wygląda następująco:
+[ `Layout` ](xref:Xamarin.Forms.Layout) Klasa definiuje również [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) metody, która ma podobny cel do [ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) metody. `InvalidateLayout` Wywołać metody, gdy wprowadzona zmiana wpływa na sposób układ umieszcza i jego elementów podrzędnych o rozmiarach. Na przykład `Layout` wywołuje klasę `InvalidateLayout` zawsze, gdy jest elementem podrzędnym jest dodane lub usunięte z układu.
 
-1. Utwórz klasę pochodną od klasy `Layout<View>`. Aby uzyskać więcej informacji, zobacz [tworzenie WrapLayout](#creating).
-1. [*opcjonalne*] Dodaj właściwości, obsługiwana przez właściwości, parametrów, które powinien być ustawiony na klasie układu. Aby uzyskać więcej informacji, zobacz [Dodawanie właściwości obsługiwana przez właściwości](#adding_properties).
-1. Zastąpienie [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) metody do wywołania [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) metody w wszystkich układ elementów podrzędnych i wróć żądany rozmiar dla układu. Aby uzyskać więcej informacji, zobacz [przesłaniania metody OnMeasure](#onmeasure).
-1. Zastąpienie [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) metody do wywołania [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metody dla wszystkich układ elementów podrzędnych. Nie można wywołać [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metody dla każdego elementu podrzędnego w układzie spowoduje podrzędnych nigdy nie odbieranie poprawne rozmiaru lub położenia i dlatego dziecko nie będzie widoczny na stronie. Aby uzyskać więcej informacji, zobacz [przesłaniania metody LayoutChildren](#layoutchildren).
+[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) Może zostać zastąpiona w celu implementowania pamięci podręcznej, aby zminimalizować powtarzających się wywołań [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) metody układu elementów podrzędnych. Zastępowanie `InvalidateLayout` metoda zapewnia powiadomienie z informacją o po elementy podrzędne są dodawane do lub usunięte z układu. Podobnie [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) metodę można przesłonić zapewnienie powiadomienie, gdy jeden z elementów podrzędnych układ zmienia rozmiar. Dla obu zastąpienia metody układu niestandardowego powinien odpowiadać przez wyczyszczenie pamięci podręcznej. Aby uzyskać więcej informacji, zobacz [Obliczanie i buforowanie danych](#caching).
+
+## <a name="creating-a-custom-layout"></a>Tworzenie niestandardowego układu
+
+Proces tworzenia układu niestandardowego, jest następująca:
+
+1. Utwórz klasę pochodną od klasy `Layout<View>`. Aby uzyskać więcej informacji, zobacz [tworzenia WrapLayout](#creating).
+1. [*opcjonalne*] Dodaj właściwości, wspierane przez właściwości możliwej do wiązania parametrów, które należy ustawić na klasie układu. Aby uzyskać więcej informacji, zobacz [dodanie właściwości kopii, które można powiązać właściwości](#adding_properties).
+1. Zastąp [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) metody do wywołania [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) metody w układzie wszystkie elementy podrzędne i wróć żądany rozmiar dla układu. Aby uzyskać więcej informacji, zobacz [zastąpienie metody OnMeasure](#onmeasure).
+1. Zastąp [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody do wywołania [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) metody w układzie wszystkie elementy podrzędne. Nie można wywołać [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) metoda dla każdego elementu podrzędnego w układzie spowoduje elementu podrzędnego, nigdy nie odbiera prawidłowy rozmiar lub położenie i dlatego podrzędne nie będą widoczne na stronie. Aby uzyskać więcej informacji, zobacz [zastąpienie metody LayoutChildren](#layoutchildren).
 
   > [!NOTE]
->  Podczas wyliczania elementów podrzędnych w [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) i [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) zastąpienia, Pomiń dziecka, którego [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) właściwość jest ustawiona na `false`. Zapewni to niestandardowego układu nie zostawić miejsce dla dzieci niewidoczne.
+>  Podczas wyliczania elementów podrzędnych w [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) i [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) zastąpień, Pomiń wszystkie podrzędne którego [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) właściwość jest ustawiona na `false`. Pozwoli to zagwarantować, układ niestandardowy nie zostawić miejsce dla dzieci niewidoczne.
 
-1. [*opcjonalne*] Zastąp [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/) metodę, aby otrzymać powiadomienie, gdy elementy podrzędne są dodane lub usunięte z układu. Aby uzyskać więcej informacji, zobacz [przesłaniania metody InvalidateLayout](#invalidatelayout).
-1. [*opcjonalne*] Zastąp [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) metodę, aby otrzymać powiadomienie, gdy jeden z elementów podrzędnych układu zmienia rozmiar. Aby uzyskać więcej informacji, zobacz [przesłaniania metody OnChildMeasureInvalidated](#onchildmeasureinvalidated).
+1. [*opcjonalne*] Zastąp [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) metodę, aby otrzymywać powiadomienia, gdy elementy podrzędne są dodawane do lub usunięte z układu. Aby uzyskać więcej informacji, zobacz [zastąpienie metody InvalidateLayout](#invalidatelayout).
+1. [*opcjonalne*] Zastąp [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) metodę, aby otrzymywać powiadomienia, gdy jeden z elementów podrzędnych układ zmienia rozmiar. Aby uzyskać więcej informacji, zobacz [zastąpienie metody OnChildMeasureInvalidated](#onchildmeasureinvalidated).
 
 > [!NOTE]
-> Należy pamiętać, że [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) zastąpienie nie można wywołać, jeśli rozmiar układ podlega jego elementu nadrzędnego, a nie jej elementy podrzędne. Jednak zostanie wywołany zastąpienie, czy co najmniej jeden z warunków ograniczających jest nieograniczony, czy klasa układu ma niedomyślny [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) lub [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) wartości właściwości. Z tego powodu [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) zastąpienie nie zależą od rozmiarów podrzędny uzyskany podczas [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) wywołania metody. Zamiast tego `LayoutChildren` należy wywołać [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) metody na układ elementów podrzędnych, zanim wywoła [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metody. Alternatywnie rozmiar elementu podrzędnego uzyskanych w `OnMeasure` zastąpienie mogą być buforowane, aby uniknąć później `Measure` wywołań w `LayoutChildren` zastąpienie, ale klasa układu muszą dowiedzieć się, gdy trzeba ponownie uzyskać rozmiary. Aby uzyskać więcej informacji, zobacz [Obliczanie i buforowanie danych układu](#caching).
+> Należy pamiętać, że [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) zastąpienie nie wywołany, jeśli rozmiar układ jest regulowane przez jego element nadrzędny, a nie jego elementów podrzędnych. Jednak zostanie wywołany przesłonięcie, czy co najmniej jeden z ograniczeniami są nieskończone, czy klasa układ ma niedomyślny [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) lub [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) wartości właściwości. Z tego powodu [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) override nie można polegać na rozmiary podrzędnych uzyskanego podczas [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) wywołania metody. Zamiast tego `LayoutChildren` musi zostać wywołany [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) układu elementów podrzędnych, przed wywołaniem metody [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) metody. Alternatywnie rozmiar elementu podrzędnego uzyskane w `OnMeasure` zastąpienie mogą być buforowane, aby uniknąć później `Measure` wywołań w `LayoutChildren` zastąpienie, ale klasa układ muszą dowiedzieć się, gdy rozmiary muszą pochodzić ponownie. Aby uzyskać więcej informacji, zobacz [Obliczanie i buforowanie danych układu](#caching).
 
-Układ klasy mogą być następnie używane przez dodanie go do [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)oraz przez dodanie elementów podrzędnych do układu. Aby uzyskać więcej informacji, zobacz [zużywa WrapLayout](#consuming).
+Klasa układ może następnie być używany przez dodanie jej do [ `Page` ](xref:Xamarin.Forms.Page)i dodając elementy podrzędne w układzie. Aby uzyskać więcej informacji, zobacz [wykorzystywanie WrapLayout](#consuming).
 
 <a name="creating" />
 
 ### <a name="creating-a-wraplayout"></a>Tworzenie WrapLayout
 
-Aplikacja przykładowa prezentuje wrażliwych orientacji `WrapLayout` klasy, która Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
+Przykładowa aplikacja demonstruje wrażliwych orientacji `WrapLayout` klasę, która organizuje jego elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
 
-`WrapLayout` Klasy przydziela samo miejsca dla każdego elementu podrzędnego, znany jako *komórki rozmiar*, na podstawie maksymalnego rozmiaru elementu podrzędnego. Mniejsze niż rozmiar komórki może być umieszczony wewnątrz komórki przy realizacji elementów podrzędnych na podstawie ich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) wartości właściwości.
+`WrapLayout` Klasy przydziela tyle samo miejsca dla każdego elementu podrzędnego, znane jako *komórka rozmiaru*, na podstawie maksymalnego rozmiaru elementy podrzędne. Mniejszy niż rozmiar komórki, które można umieścić w komórce elementy podrzędne na podstawie ich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) wartości właściwości.
 
 `WrapLayout` Definicji klasy przedstawiono w poniższym przykładzie kodu:
 
@@ -107,16 +107,16 @@ public class WrapLayout : Layout<View>
 
 #### <a name="calculating-and-caching-layout-data"></a>Obliczanie i buforowanie danych układu
 
-`LayoutData` Struktury przechowuje dane o kolekcji elementów podrzędnych na wiele właściwości:
+`LayoutData` Struktury przechowuje dane o kolekcji elementów podrzędnych w liczbę właściwości:
 
-- `VisibleChildCount` — liczbę elementów podrzędnych, które są widoczne w układzie.
-- `CellSize` — Maksymalny rozmiar wszystkich obiektów podrzędnych, dostosowane do rozmiaru układu.
+- `VisibleChildCount` — Liczba elementów podrzędnych, które są widoczne w układzie.
+- `CellSize` – Maksymalny rozmiar wszystkich obiektów podrzędnych, dostosowane do rozmiaru układu.
 - `Rows` — Liczba wierszy.
 - `Columns` — Liczba kolumn.
 
-`layoutDataCache` Pole jest używane do przechowywania wielu `LayoutData` wartości. Po uruchomieniu aplikacji dwa `LayoutData` obiekty będą buforowane na `layoutDataCache` słownik na potrzeby bieżącej orientacji — jeden dla argumenty ograniczenia `OnMeasure` zastępowania i jeden dla `width` i `height` argumentów Aby `LayoutChildren` zastąpienia. Podczas obracania urządzenia w orientacji poziomej `OnMeasure` zastąpienia i `LayoutChildren` zastąpienie zostanie ponownie wywołany, co spowoduje dwa inne `LayoutData` obiektów w pamięci podręcznej do słownika. Niemniej jednak w przypadku powrotu urządzenia do orientacji pionowej, nie dalsze obliczenia wymagane są ponieważ `layoutDataCache` ma już wymagane dane.
+`layoutDataCache` Pole jest używane do przechowywania wielu `LayoutData` wartości. Podczas uruchamiania aplikacji, dwa `LayoutData` obiekty będą buforowane do `layoutDataCache` słownik na potrzeby bieżącej orientacji — jedno dla ograniczenia argumenty `OnMeasure` przesłonięć i jeden dla `width` i `height` argumentów Aby `LayoutChildren` zastąpienia. W przypadku rotacji urządzenia w orientacji poziomej `OnMeasure` zastąpienia i `LayoutChildren` zastąpienie zostanie ponownie wywołany, co spowoduje dwa inne `LayoutData` obiektów z pamięci podręcznej do słownika. Jednak przy powrocie urządzenia do orientacji pionowej, nie dalsze obliczenia są wymagane, ponieważ `layoutDataCache` już zawierającą wymagane dane.
 
-Poniższy kod przedstawia przykład `GetLayoutData` metodę, która oblicza właściwości `LayoutData` strukturalnych na podstawie określonego rozmiaru:
+Poniższy kod przedstawia przykład `GetLayoutData` metody, która oblicza właściwości `LayoutData` ze strukturą w oparciu o określonym rozmiarze:
 
 ```csharp
 LayoutData GetLayoutData(double width, double height)
@@ -191,16 +191,16 @@ LayoutData GetLayoutData(double width, double height)
 
 `GetLayoutData` Metoda wykonuje następujące operacje:
 
-- Określa, czy obliczeniowego `LayoutData` wartość jest już w pamięci podręcznej i zwraca go, jeśli jest dostępna.
-- W przeciwnym razie wylicza przez wszystkie elementy podrzędne, wywoływania `Measure` metody dla każdego elementu podrzędnego z nieskończone szerokość i wysokość i określa rozmiar maksymalny podrzędnych.
-- Pod warunkiem, że istnieje co najmniej jeden element podrzędny widoczne, jego oblicza liczbę wierszy i kolumn wymagane, a następnie oblicza rozmiar komórki dla elementów podrzędnych na podstawie wymiarów z `WrapLayout`. Należy pamiętać, że rozmiar komórki jest zazwyczaj nieco większa niż rozmiar maksymalny podrzędnych, ale że może również być mniejsze Jeśli `WrapLayout` nie jest dostatecznie dla najszerszego podrzędnej lub wystarczająco wysoka najwyższego podrzędnych.
+- Określa, czy obliczeniowego `LayoutData` wartości jest już w pamięci podręcznej i zwraca go, jeśli jest ona dostępna.
+- W przeciwnym razie wylicza przy użyciu wszystkich elementów podrzędnych, wywołując `Measure` metoda dla każdego elementu podrzędnego z nieskończoną szerokość i wysokość i określa rozmiar maksymalny podrzędnych.
+- Pod warunkiem, że istnieje co najmniej jeden element podrzędny widoczne, ją oblicza liczbę wierszy i kolumn, wymagane, a następnie oblicza rozmiar komórki dla dzieci, w oparciu o wymiary `WrapLayout`. Uwaga rozmiar komórki jest zazwyczaj nieco większa niż rozmiar maksymalny podrzędnych, ale czy mogą być również mniejszych Jeśli `WrapLayout` nie jest dostatecznie szerokie, dla najszerszego podrzędnej lub wystarczająco wysoka najwyższego podrzędnego.
 - Przechowuje nowe `LayoutData` wartość w pamięci podręcznej.
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>Dodawanie właściwości obsługiwana przez właściwości
+#### <a name="adding-properties-backed-by-bindable-properties"></a>Dodawanie właściwości kopii, które można powiązać właściwości
 
-`WrapLayout` Klasa definiuje `ColumnSpacing` i `RowSpacing` właściwości, których wartości są używane do oddzielania wierszy i kolumn w układzie i które bazują na właściwości. Można powiązać właściwości są przedstawione w poniższym przykładzie:
+`WrapLayout` Klasa definiuje `ColumnSpacing` i `RowSpacing` właściwości, których wartości są używane do oddzielania wierszy i kolumn w układzie i które są wspierane przez właściwości możliwej do wiązania. Właściwości możliwe do wiązania przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public static readonly BindableProperty ColumnSpacingProperty = BindableProperty.Create(
@@ -224,11 +224,11 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
   });
 ```
 
-Wywołuje program obsługi zmiany właściwości każdej można powiązać właściwości `InvalidateLayout` przekazywania zastąpienie metody, aby wyzwolić nowy układ `WrapLayout`. Aby uzyskać więcej informacji, zobacz [przesłaniania metody InvalidateLayout](#invalidatelayout) i [przesłaniania metody OnChildMeasureInvalidated](#onchildmeasureinvalidated).
+Wywołuje program obsługi zmiany właściwości każdej możliwej do wiązania właściwości `InvalidateLayout` przekazać zastąpienie metody, aby wyzwolić nowego układu `WrapLayout`. Aby uzyskać więcej informacji, zobacz [zastąpienie metody InvalidateLayout](#invalidatelayout) i [zastąpienie metody OnChildMeasureInvalidated](#onchildmeasureinvalidated).
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>Zastąpienie metody OnMeasure
+#### <a name="overriding-the-onmeasure-method"></a>Zastępowanie metody OnMeasure
 
 `OnMeasure` Zastąpienie przedstawiono w poniższym przykładzie kodu:
 
@@ -247,14 +247,14 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 }
 ```
 
-Zastąpienie wywołuje `GetLayoutData` metody oraz elementów składowych `SizeRequest` obiektu na podstawie zwróconych danych podczas biorąc pod uwagę także `RowSpacing` i `ColumnSpacing` wartości właściwości. Aby uzyskać więcej informacji na temat `GetLayoutData` metody, zobacz [Obliczanie i buforowanie danych](#caching).
+Zastąpienie wywołuje `GetLayoutData` metody i konstrukcje `SizeRequest` obiektu na podstawie zwróconych danych, uwzględniając również `RowSpacing` i `ColumnSpacing` wartości właściwości. Aby uzyskać więcej informacji na temat `GetLayoutData` metody, zobacz [Obliczanie i buforowanie danych](#caching).
 
 > [!IMPORTANT]
-> [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/) i [ `OnMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/) metody nigdy nie może zażądać nieskończone wymiaru zwracając [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/) wartości z ustawioną właściwością `Double.PositiveInfinity`. Jednak co najmniej jeden z argumentów ograniczenia `OnMeasure` może być `Double.PositiveInfinity`.
+> [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) i [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) metody nigdy nie może zażądać nieskończonej wymiaru, zwracając [ `SizeRequest` ](xref:Xamarin.Forms.SizeRequest) ustawioną na wartość `Double.PositiveInfinity`. Jednak co najmniej jeden z argumentów ograniczenie `OnMeasure` może być `Double.PositiveInfinity`.
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>Zastąpienie metody LayoutChildren
+#### <a name="overriding-the-layoutchildren-method"></a>Zastępowanie metody LayoutChildren
 
 `LayoutChildren` Zastąpienie przedstawiono w poniższym przykładzie kodu:
 
@@ -296,18 +296,18 @@ protected override void LayoutChildren(double x, double y, double width, double 
 }
 ```
 
-Zastąpienie rozpoczyna się od wywołania `GetLayoutData` metody, a następnie wylicza wszystkie elementy podrzędne do określenia rozmiaru i umieść je w komórce tego elementu podrzędnego. Jest to osiągane przez wywoływanie [ `LayoutChildIntoBoundingRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/) metodę, która jest używana do pozycjonowania elementu podrzędnego w obrębie prostokąta na podstawie jego [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/)wartości właściwości. Jest to odpowiednik wywołania do tego elementu podrzędnego [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) metody.
+Zastąpienie zaczyna się od wywołania `GetLayoutData` metody, a następnie wylicza wszystkie elementy podrzędne, rozmiar i umieść je w obrębie każdego elementu podrzędnego komórki. Jest to osiągane przez wywołanie [ `LayoutChildIntoBoundingRegion` ](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle)) metody, która jest używana do pozycji elementu podrzędnego w obrębie prostokąta na podstawie jego [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)wartości właściwości. Jest to odpowiednik wywołania do elementu podrzędnego [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) metody.
 
 > [!NOTE]
-> Należy pamiętać, że prostokąt przekazany do `LayoutChildIntoBoundingRegion` metoda zawiera cały obszar, w którym mogą znajdować się obiekt podrzędny.
+> Należy zauważyć, że prostokąt przekazany do `LayoutChildIntoBoundingRegion` metoda obejmuje cały obszar, w którym mogą znajdować się elementem podrzędnym.
 
 Aby uzyskać więcej informacji na temat `GetLayoutData` metody, zobacz [Obliczanie i buforowanie danych](#caching).
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>Zastąpienie metody InvalidateLayout
+#### <a name="overriding-the-invalidatelayout-method"></a>Zastępowanie metody InvalidateLayout
 
-[ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/) Zastąpienia jest wywoływane, gdy elementy podrzędne są dodane lub usunięte z układu, lub gdy jeden z `WrapLayout` zmiany właściwości wartość, jak pokazano w poniższym przykładzie:
+[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) Zastąpienie jest wywoływane, gdy elementy podrzędne są dodawane do lub usunięte z układu lub gdy dla jednego z `WrapLayout` wartość zmiany właściwości, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 protected override void InvalidateLayout()
@@ -317,16 +317,16 @@ protected override void InvalidateLayout()
 }
 ```
 
-Zastąpienie unieważnia układ i spowoduje odrzucenie wszystkich informacji o układzie pamięci podręcznej.
+Zastąpienie unieważnia układ i odrzuca wszystkie informacje w pamięci podręcznej układu.
 
 > [!NOTE]
-> Aby zatrzymać [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) klasy wywoływania [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/) przesłonić metodę zawsze, gdy element podrzędny jest dodane lub usunięte z układu, [ `ShouldInvalidateOnChildAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.ShouldInvalidateOnChildAdded/p/Xamarin.Forms.View/) i [ `ShouldInvalidateOnChildRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.ShouldInvalidateOnChildRemoved/p/Xamarin.Forms.View/) metod i zwrócenie `false`. Klasa układu następnie można wdrożyć niestandardowy proces, gdy elementy podrzędne są dodawane lub usuwane.
+> Aby zatrzymać [ `Layout` ](xref:Xamarin.Forms.Layout) wywołanie klasy [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) przesłonić metodę zawsze wtedy, gdy element podrzędny jest dodane lub usunięte z układu [ `ShouldInvalidateOnChildAdded` ](xref:Xamarin.Forms.Layout.ShouldInvalidateOnChildAdded(Xamarin.Forms.View)) i [ `ShouldInvalidateOnChildRemoved` ](xref:Xamarin.Forms.Layout.ShouldInvalidateOnChildRemoved(Xamarin.Forms.View)) metody i zwrócenia `false`. Klasa układ następnie można zaimplementować niestandardowy proces, gdy elementy podrzędne są dodawane lub usuwane.
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>Zastąpienie metody OnChildMeasureInvalidated
+#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>Zastępowanie metody OnChildMeasureInvalidated
 
-[ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) Zastąpienia jest wywoływane, gdy jeden z elementów podrzędnych układu zmienia rozmiar i przedstawiono w poniższym przykładzie:
+[ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) Zastąpienie jest wywoływane, gdy jeden z elementów podrzędnych układ zmienia rozmiar i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnChildMeasureInvalidated()
@@ -336,13 +336,13 @@ protected override void OnChildMeasureInvalidated()
 }
 ```
 
-Zastąpienie unieważnia układu podrzędnych i odrzuca wszystkie informacje o układzie pamięci podręcznej.
+Zastąpienie unieważnia układ podrzędnych i odrzuca wszystkie informacje o układzie pamięci podręcznej.
 
 <a name="consuming" />
 
 ### <a name="consuming-the-wraplayout"></a>Korzystanie z WrapLayout
 
-`WrapLayout` Klasy może być zużyte przez umieszczenia go na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) pochodzi z typu, jak pokazano w poniższym przykładzie kodu XAML:
+`WrapLayout` Klasy mogą być używane, umieszczając je na [ `Page` ](xref:Xamarin.Forms.Page) pochodne typu, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:ImageWrapLayout">
@@ -352,7 +352,7 @@ Zastąpienie unieważnia układu podrzędnych i odrzuca wszystkie informacje o u
 </ContentPage>
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 public class ImageWrapLayoutPageCS : ContentPage
@@ -373,7 +373,7 @@ public class ImageWrapLayoutPageCS : ContentPage
 }
 ```
 
-Następnie można dodać elementów podrzędnych do `WrapLayout` zgodnie z wymaganiami. Poniższy kod przedstawia przykład [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) dodawane do elementów `WrapLayout`:
+Następnie można dodać elementów podrzędnych do `WrapLayout` stosownie do potrzeb. Poniższy kod przedstawia przykład [ `Image` ](xref:Xamarin.Forms.Image) elementy są dodane do `WrapLayout`:
 
 ```csharp
 protected override async void OnAppearing()
@@ -402,28 +402,28 @@ async Task<ImageList> GetImageListAsync()
 }
 ```
 
-Gdy strony `WrapLayout` pojawi się przykładowa aplikacja uzyskuje dostęp do zdalnego plik JSON zawierający listę zdjęć asynchronicznie, tworzy [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementu dla każdego zdjęć i dodaje go do `WrapLayout`. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
+Gdy strony `WrapLayout` jest wyświetlana Przykładowa aplikacja uzyskuje dostęp do zdalnego pliku JSON zawierającego listę zdjęcia asynchronicznie, tworzy [ `Image` ](xref:Xamarin.Forms.Image) elementu dla każdego zdjęć i dodaje go do `WrapLayout`. Skutkuje to wygląd pokazano na poniższych zrzutach ekranu:
 
-![](custom-images/portait-screenshots.png "Zrzuty ekranu pionowa aplikacji przykładowych")
+![](custom-images/portait-screenshots.png "Zrzuty ekranu pionowa aplikacji przykładowej")
 
-Pokaż poniższe zrzuty ekranu `WrapLayout` po jest zostały obrócone w orientacji poziomej:
+Poniższe zrzuty ekranu Pokaż `WrapLayout` po jest zostały obrócone w orientacji poziomej:
 
-![](custom-images/landscape-ios.png "Przykładowe zrzut ekranu pozioma aplikacji systemu iOS")
-![](custom-images/landscape-android.png "zrzut ekranu przykładu Android aplikacji pozioma") 
- ![ ] (custom-images/landscape-uwp.png " Zrzut ekranu pozioma aplikacji platformy uniwersalnej systemu Windows przykładu")
+![](custom-images/landscape-ios.png "Przykładowy zrzut ekranu pozioma aplikacji systemu iOS")
+![](custom-images/landscape-android.png "zrzut ekranu przykładu dla systemu Android aplikacji pozioma") 
+ ![ ] (custom-images/landscape-uwp.png " Przykładowy zrzut ekranu pozioma aplikacji dla platformy uniwersalnej systemu Windows")
 
-Liczba kolumn w każdym wierszu zależy od rozmiaru fotografii, szerokość ekranu i liczba pikseli na jednostkę niezależnych od urządzenia. [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Elementy asynchronicznie załadować fotografii i w związku z tym `WrapLayout` klasy otrzymają częste wywołania do jego [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) metody, ponieważ do każdego `Image` element odbiera nowy rozmiar oparte na załadować zdjęcie.
+Liczba kolumn w każdym wierszu zależy od tego, rozmiar zdjęcia, szerokość ekranu i liczbę pikseli na jednostka miary niezależna od urządzenia. [ `Image` ](xref:Xamarin.Forms.Image) Elementy asynchronicznie Załaduj zdjęcia i w związku z tym `WrapLayout` klasy będą otrzymywać częste wywołania do jego [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody, ponieważ do każdego `Image` element otrzymuje nowy rozmiar zdjęcia załadowane w oparciu.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono sposób pisania klasy niestandardowego układu i sprawdzono wrażliwych orientacji `WrapLayout` klasy, która Rozmieszcza elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
+W tym artykule wyjaśniono, jak napisać klasę układu niestandardowego i pokazano wrażliwych orientacji `WrapLayout` klasę, która organizuje jego elementy podrzędne w poziomie na stronie, a następnie opakowuje wyświetlanie kolejnych elementów podrzędnych do dodatkowych wierszy.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [WrapLayout (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CustomLayout/WrapLayout/)
 - [Układy niestandardowe](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
-- [Tworzenie niestandardowych układów w platformy Xamarin.Forms (klip wideo)](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
-- [Układ<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/)
-- [Układ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
-- [VisualElement](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/)
+- [Tworzenie niestandardowych układów w interfejsie Xamarin.Forms (wideo)](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
+- [Układ<T>](xref:Xamarin.Forms.Layout`1)
+- [Układ](xref:Xamarin.Forms.Layout)
+- [VisualElement](xref:Xamarin.Forms.VisualElement)

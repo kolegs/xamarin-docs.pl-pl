@@ -1,41 +1,41 @@
 ---
-title: AbsoluteLayout platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia klasy AbsoluteLayout platformy Xamarin.Forms utworzyć UI idealnych pikseli. Ta klasa pozycje i rozmiar proporcjonalny do rozmiaru i pozycji lub wartości bezwzględne elementy podrzędne.
+title: AbsoluteLayout zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak korzystać z zestawu narzędzi Xamarin.Forms AbsoluteLayout klasy tworzyć interfejsy doskonałe rozwiązanie pikseli. Ta klasa określa położenie i rozmiar proporcjonalny do rozmiaru i położenia lub wartości bezwzględne elementów podrzędnych.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0d49b8c50db08ad07952425492591ee246de4f8b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244460"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998351"
 ---
-# <a name="xamarinforms-absolutelayout"></a>AbsoluteLayout platformy Xamarin.Forms
+# <a name="xamarinforms-absolutelayout"></a>AbsoluteLayout zestawu narzędzi Xamarin.Forms
 
-[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) Określa położenie i rozmiar proporcjonalny do rozmiaru i pozycji lub wartości bezwzględne elementy podrzędne. Widoki podrzędnych może być pozycjonowane i rozmiarze przy użyciu proporcjonalnych wartości lub wartości statyczne i proporcjonalne i wartości statycznych mogą być wymieszane.
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) Określa położenie i rozmiar proporcjonalny do rozmiaru i położenia lub wartości bezwzględne elementów podrzędnych. Widoki podrzędnych może być osiągniesz idealną pozycję i wielkości, przy użyciu proporcjonalnych wartości lub wartości statyczne i proporcjonalna i wartości statyczne mogą być mieszane.
 
-[![](absolute-layout-images/layouts-sml.png "Układy platformy Xamarin.Forms")](absolute-layout-images/layouts.png#lightbox "układów platformy Xamarin.Forms")
+[![](absolute-layout-images/layouts-sml.png "Układy platformy Xamarin.Forms")](absolute-layout-images/layouts.png#lightbox "układy platformy Xamarin.Forms")
 
-W tym artykule opisano:
+W tym artykule omówiono:
 
 - **[Cel](#Purpose)**  &ndash; typowe zastosowania dla `AbsoluteLayout`.
-- **[Użycie](#Usage)**  &ndash; sposób użycia `AbsoluteLayout` do osiągnięcia żądanej projektu.
-  - **[Układy proporcjonalne](#Proportional_Layouts)**  &ndash; zrozumieć, jak proporcjonalnych wartości pracy w `AbsoluteLayout`.
-  - **[Określanie wartości](#Specifying_Values)**  &ndash; zrozumieć, jak określona proporcjonalne i wartości bezwzględne.
-  - **[Wartości proporcjonalne](#Proportional_Values)**  &ndash; zrozumieć, jak proporcjonalnych wartości pracy.
+- **[Użycie](#Usage)**  &ndash; sposób używania `AbsoluteLayout` do osiągnięcia żądanego projektu.
+  - **[Układy proporcjonalna](#Proportional_Layouts)**  &ndash; zrozumieć, jak proporcjonalnych wartości działają w `AbsoluteLayout`.
+  - **[Określanie wartości](#Specifying_Values)**  &ndash; zrozumieć, jak określono proporcjonalnego i wartości bezwzględne.
+  - **[Wartości proporcjonalna](#Proportional_Values)**  &ndash; zrozumieć, jak proporcjonalnych wartości pracy.
     - **[Wartości bezwzględne](#Absolute_Values)**  &ndash; zrozumieć, jak działają wartości bezwzględne.
 
 <a name="Purpose" />
 
 ## <a name="purpose"></a>Cel
 
-Z powodu pozycjonowania model `AbsoluteLayout`, układ sprawia, że stosunkowo prosta położenie elementów, dzięki czemu są one opróżniania z dowolnej strony układu i wyśrodkowany. Z proporcjonalne rozmiary i pozycje, elementy `AbsoluteLayout` może automatycznie skalować do dowolnego rozmiaru widoku. Dla elementów, w której należy skalować tylko pozycji, ale nie do rozmiaru można mieszać wartości bezwzględne i proporcjonalna.
+Ze względu na model pozycjonowania `AbsoluteLayout`, układ sprawia, że stosunkowo prosta do pozycji elementów, aby były one w dowolnej stronie układu, lub do środka. Za pomocą proporcjonalna rozmiary i położenie, elementy w `AbsoluteLayout` mogą automatycznie przeprowadzać skalowanie do dowolnej wielkości widoku. Dla elementów, w którym powinny być skalowane jedynie stanowiska, ale nie do rozmiaru mogą być mieszane wartości bezwzględne i proporcjonalne.
 
-`AbsoluteLayout` może być używane wszędzie, gdzie elementy muszą się znajdować w widoku i jest szczególnie przydatne w przypadku wyrównywanie elementów do krawędzi.
+`AbsoluteLayout` może być używane wszędzie, gdzie elementy muszą się znajdować w widoku i jest szczególnie przydatna podczas wyrównywanie elementów do krawędzi.
 
 <a name="Usage" />
 
@@ -43,50 +43,50 @@ Z powodu pozycjonowania model `AbsoluteLayout`, układ sprawia, że stosunkowo p
 
 <a name="Proportional_Layouts" />
 
-### <a name="proportional-layouts"></a>Układy proporcjonalne
+### <a name="proportional-layouts"></a>Proporcjonalna układów
 
-`AbsoluteLayout` ma zgodnie z którymi zakotwiczenia elementu znajduje się względem jego elementu, ponieważ element znajduje się względem układ podczas rozmieszczania proporcjonalne jest używany model unikatowy zakotwiczenia. W przypadku bezwzględny zakotwiczenia znajduje się w pozycji (0,0) w widoku. Ma to dwie ważne konsekwencje:
+`AbsoluteLayout` ma unikatowe kotwica (model), zgodnie z którą jest umieszczony zakotwiczenia elementu względem jego elementu zgodnie z tego element jest pozycjonowany względem układ stosowania proporcjonalna pozycjonowanie. W przypadku bezwzględny zakotwiczenie wynosi (0,0) w widoku. To ma dwie ważne konsekwencje:
 
-- Elementy nie może znajdować się poza ekranu przy użyciu wartości proporcjonalnych.
-- Elementy może być niezawodnie umieszczony dowolnej strony układu lub w Centrum, niezależnie od rozmiaru układ lub urządzenia.
+- Elementy nie może znajdować się poza ekranem przy użyciu wartości proporcjonalne.
+- Elementy może być niezawodnie umieszczony dowolnej strony układu lub w Centrum, bez względu na rozmiar układu lub urządzenia.
 
-`AbsoluteLayout`, takich jak `RelativeLayout`, jest w stanie umieść elementy tak, aby zachodziły na siebie.
+`AbsoluteLayout`, takich jak `RelativeLayout`, jest w stanie umieść elementy nakładają się.
 
-Uwaga na poniższym zrzucie ekranu zakotwiczenia pola jest białe kropki. Zwróć uwagę relacji między kotwicą a pole przesyłane za pośrednictwem układ:
+Uwaga na następującym zrzucie ekranu zakotwiczenia pole jest białe kropka. Zwróć uwagę relacji między zakotwiczenie i pola, kiedy przesuwa się on za pośrednictwem układu:
 
-![](absolute-layout-images/anchor-start.png "Zakotwiczenia na początku")
-![](absolute-layout-images/anchor-center.png "zakotwiczenia w Centrum")
-![](absolute-layout-images/anchor-end.png "zakotwiczenia na końcu")
+![](absolute-layout-images/anchor-start.png "Zakotwiczenia przy uruchamianiu")
+![](absolute-layout-images/anchor-center.png "zakotwiczenia pośrodku")
+![](absolute-layout-images/anchor-end.png "kotwicy na końcu")
 
 <a name="Specifying_Values" />
 
 ### <a name="specifying-values"></a>Określanie wartości
 
-Widoki w `AbsoluteLayout` będą umieszczane przy użyciu cztery wartości:
+Widoków w obrębie `AbsoluteLayout` są umieszczone za pomocą czterech wartości:
 
-- **X** &ndash; x (poziomy) pozycja kotwicy widoku
-- **Y** &ndash; położenie y (pionowe) zakotwiczenia widoku
+- **X** &ndash; pozycji (poziomy) x kotwicy tego widoku
+- **Y** &ndash; pozycję w osi y (w pionie) kotwicy tego widoku
 - **Szerokość** &ndash; szerokość widoku
 - **Wysokość** &ndash; wysokości widoku
 
-Każdy z tych wartości można ustawić jako [proporcjonalne](#Proportional_Values) wartość lub [bezwzględną](#Absolute_Values) wartość.
+Każda z tych wartości może być ustawiona jako [proporcjonalna](#Proportional_Values) wartość lub [bezwzględne](#Absolute_Values) wartość.
 
-Wartości są określane jako połączenie granice i flagę. `LayoutBounds` jest [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) składające się z czterech wartości: `x`, `y`, `width`, `height`.
+Wartości są określane jako połączenie granice i flagi. `LayoutBounds` jest [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) składający się z czterech wartości: `x`, `y`, `width`, `height`.
 
 ### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
 
-[`AbsoluteLayoutFlags`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/) Określa, jak będą interpretowane wartości i zawiera następujące wstępnie zdefiniowane opcje:
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) Określa, jak interpretować wartości i ma następujące wstępnie zdefiniowane opcje:
 
-- **Brak** &ndash; interpretuje wszystkie wartości jako bezwzględną. Jest to wartość domyślna, jeśli nie określono żadnych flag układu.
-- **Wszystkie** &ndash; interpretuje wszystkie wartości jako proporcjonalnych.
-- **WidthProportional** &ndash; interpretuje `Width` wartość jako proporcjonalne i wszystkie inne wartości jako bezwzględną.
-- **HeightProportional** &ndash; interpretuje tylko wartość wysokości jako proporcjonalne z wszystkich innych wartości bezwzględnej.
-- **XProportional** &ndash; interpretuje `X` wartość jako proporcjonalne, podczas traktowanie wszystkich pozostałych wartości jako bezwzględną.
-- **YProportional** &ndash; interpretuje `Y` wartość jako proporcjonalne, podczas traktowanie wszystkich pozostałych wartości jako bezwzględną.
-- **PositionProportional** &ndash; interpretuje `X` i `Y` wartości jako proporcjonalne, gdy wartości rozmiaru są interpretowane jako bezwzględną.
+- **Brak** &ndash; interpretuje wszystkie wartości jako bezwzględne. Jest wartością domyślną, jeśli nie określono żadnych flag układu.
+- **Wszystkie** &ndash; interpretuje wszystkie wartości jako proporcjonalne.
+- **WidthProportional** &ndash; interpretuje `Width` wartości jako proporcjonalne i inne wartości jako bezwzględne.
+- **HeightProportional** &ndash; interpretuje tylko wysokość wartości jako proporcjonalne ze wszystkich pozostałych wartości bezwzględnej.
+- **XProportional** &ndash; interpretuje `X` wartości jako proporcjonalne, w czasie traktowania wszystkich pozostałych wartości jako bezwzględne.
+- **YProportional** &ndash; interpretuje `Y` wartości jako proporcjonalne, w czasie traktowania wszystkich pozostałych wartości jako bezwzględne.
+- **PositionProportional** &ndash; interpretuje `X` i `Y` wartości jako proporcjonalne, podczas gdy wartości rozmiarów są interpretowane jako bezwzględne.
 - **SizeProportional** &ndash; interpretuje `Width` i `Height` wartości jako proporcjonalne wartości pozycji są bezwzględne.
 
-W języku XAML, granice i flagi są ustawiane jako część definicji widoków w układzie, przy użyciu `AbsoluteLayout.LayoutBounds` właściwości. Granice są ustawione jako listę wartości rozdzielaną przecinkami `X`, `Y`, `Width`, i `Height`, w tej kolejności. Flagi są również określony w deklaracji widoków przy użyciu układu `AbsoluteLayout.LayoutFlags` właściwości. Należy pamiętać, że flagi można łączyć w języku XAML, używając listy rozdzielanej przecinkami. Rozważmy następujący przykład:
+W XAML, granice i flagi są ustawione jako część definicji widoków w układzie, za pomocą `AbsoluteLayout.LayoutBounds` właściwości. Granice są ustawione jako listę wartości rozdzielonych przecinkami `X`, `Y`, `Width`, i `Height`, w tej kolejności. Flagi również są określone w deklaracji widoków przy użyciu układu `AbsoluteLayout.LayoutFlags` właściwości. Należy pamiętać, że można łączyć flagi w XAML przy użyciu listy rozdzielonych przecinkami. Rozważmy następujący przykład:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -116,9 +116,9 @@ Title="Absolute Layout Exploration">
 
 Należy pamiętać o następujących kwestiach:
 
-- Etykieta w Centrum znajduje się za pomocą bezwzględnej wartości rozmiaru i pozycji. Z tego powodu prawdopodobnie jest wyśrodkowane na iPhone 4S i niższe, ale nie jest wyśrodkowane na większych urządzeń.
-- Tekst u dołu układ znajduje się za pomocą proporcjonalne wartości rozmiaru i pozycji. Zawsze pojawią się na środku w dolnej układ, ale jego rozmiar będzie rosnąć o dużym rozmiarze układu.
-- Trzy kolorze `BoxView`s znajdują się w górnym, lewej i prawej krawędzi ekranu przy użyciu proporcjonalne położenie i rozmiar bezwzględny.
+- Etykieta w środku znajduje się za pomocą bezwzględnej wartości rozmiaru i położenia. Z tego powodu wygląda na to wyśrodkowane na telefonie iPhone 4S i niższy, ale nie wyśrodkowane na większych urządzeniach.
+- Tekst u dołu układ znajduje się za pomocą proporcjonalnych wartości rozmiaru i położenia. Zawsze będzie wyglądać na dole na środku układu, ale jego rozmiar będzie rosnąć o dużym rozmiarze układu.
+- Trzy kolorowe `BoxView`s są umieszczone na krawędzi górnego, lewego i prawego na ekranie za pomocą proporcjonalna położenie i rozmiar bezwzględne.
 
 Poniżej osiąga ten sam układ w języku C#:
 
@@ -165,15 +165,15 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 ```
 <a name="Proportional_Values" />
 
-### <a name="proportional-values"></a>Proporcjonalnych wartości
+### <a name="proportional-values"></a>Proporcjonalna wartości
 
-Wartości proporcjonalne zdefiniować relację między układ i widokiem. Ta relacja definiuje pozycji widok podrzędny lub wartość skali w stosunku do odpowiedniej wartości układu nadrzędnej. Te wartości są wyrażane jako `double`s o wartości od 0 do 1.
+Wartości proporcjonalna zdefiniowanie relacji między układ i widokiem. Ta relacja definiuje położenie widok podrzędny i wartość skalowania w stosunku do odpowiedniej wartości układu nadrzędnej. Te wartości są wyrażane jako `double`s przy użyciu wartości z zakresu od 0 do 1.
 
-Proporcjonalnych wartości są używane do położenie i rozmiar widokach w ramach układu. Tak, gdy szerokość widoku jest ustawiona jako część, wartość szerokości wynikowe jest udział pomnożona przez `AbsoluteLayout`jego szerokości. Na przykład z `AbsoluteLayout` szerokości `500` i widoku ustawioną proporcjonalne szerokość.5, szerokość renderowany widok będzie 250 (500 x.5).
+Proporcjonalna wartości są używane do położenie i rozmiar widoków w układzie. Dlatego po ustawieniu szerokości widoku w stosunku do wartości wynikowe szerokość to pomnożona przez `AbsoluteLayout`jego szerokość. Na przykład za pomocą `AbsoluteLayout` szerokości `500` widoku ustawić proporcjonalna szerokość.5, szerokość renderowanym widoku. zostanie ona 250 (500 x.5).
 
-Aby użyć wartości proporcjonalne, ustaw `LayoutBounds` przy użyciu (x, y) proporcje i proporcjonalne rozmiary, następnie ustaw `LayoutFlags` do `All`.
+Aby użyć wartości proporcjonalna, ustaw `LayoutBounds` przy użyciu (x, y) proporcji i rozmiarach proporcjonalna, następnie ustawić `LayoutFlags` do `All`.
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <Label Text="I'm bottom center on every device."
@@ -192,13 +192,13 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>Wartości bezwzględne
 
-Wartości bezwzględne jawnie definiować, gdzie widoków powinien być umieszczony w układzie. W odróżnieniu od wartości proporcjonalne wartości bezwzględne są w stanie pozycjonowanie i rozmiary widoku, który nie mieści się w granicach układu.
+Wartości bezwzględne jawne zdefiniowanie, gdzie widoków powinien znajdować się w układzie. W przeciwieństwie do wartości proporcjonalna wartości bezwzględne są w stanie Zmienianie położenia i rozmiaru widoku, który nie mieści się w granicach układu.
 
-Przy użyciu wartości bezwzględne dla pozycjonowanie może być niebezpieczne, gdy rozmiar układ jest nieznana. Używając położenia bezwzględne, elementu w środku ekranu w rozmiarze co można przesunąć o dowolnym rozmiarze. Należy koniecznie testowanie aplikacji w różnych rozmiarów ekranu obsługiwanych urządzeń.
+Przy użyciu wartości bezwzględne dla pozycjonowanie może być niebezpieczne, gdy rozmiar układ jest nieznany. Korzystając z położenia bezwzględne, element w środku ekranu w jedno rozwiązanie może przesunięcia o innym rozmiarze. Należy przetestować aplikację dla różnych rozmiarów ekranu obsługiwanych urządzeń.
 
-Aby użyć wartości bezwzględnej układu, należy ustawić `LayoutBounds` przy użyciu (x, y) współrzędnych i jawnych rozmiarów, następnie ustaw `LayoutFlags` do `None`.
+Aby użyć wartości bezwzględnej układu, ustaw `LayoutBounds` przy użyciu (x, y) współrzędnych i jawnych rozmiarów, następnie ustawić `LayoutFlags` do `None`.
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <Label Text="I'm centered on iPhone 4 but no other device."
@@ -212,9 +212,9 @@ var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>Poznawanie złożonego układu
+## <a name="exploring-a-complex-layout"></a>Eksplorowanie układ złożony
 
-Układy mieć najważniejsze wady i zalety tworzenia konkretnego układów. W tej serii artykułów układu Przykładowa aplikacja została utworzona z ten sam układ strony implementowane przy użyciu trzech różnych układów.
+Układy mają zalety i słabe strony dotyczące tworzenia układów określonej. W tej serii artykułów układu utworzono przykładową aplikację przy użyciu tego samego układu strony implementowane przy użyciu trzech różnych układów.
 
 Należy wziąć pod uwagę następujące XAML:
 
@@ -279,15 +279,15 @@ Title="AbsoluteLayout">
 </ContentPage>
 ```
 
-Powyższy kod wyniki w układzie następujące:
+Powyższy kod powoduje w układzie następujących:
 
-![](absolute-layout-images/abs.png "AbsoluteLayout złożonych")
+![](absolute-layout-images/abs.png "Złożone AbsoluteLayout")
 
-Zwróć uwagę, że `AbsoluteLayout`s są zagnieżdżone, ponieważ w niektórych przypadkach zagnieżdżania układów mogą być łatwiejsze niż przedstawienie wszystkich elementów w ten sam układ.
+Należy zauważyć, że `AbsoluteLayout`s są zagnieżdżone, ponieważ w niektórych przypadkach zagnieżdżania układy może być łatwiejsze niż prezentowanie wszystkich elementów w obrębie tego samego układu.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms, rozdział 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
-- [AbsoluteLayout](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)
+- [Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms rozdział 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
 - [Układ (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Przykład BusinessTumble (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

@@ -1,41 +1,41 @@
 ---
-title: Wyzwalacze platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia platformy Xamarin.Forms wyzwalaczy na odpowiadanie na zmiany interfejsu użytkownika za pomocą języka XAML. Wyzwalacze umożliwiają express akcji deklaratywnie w języku XAML, które zmienić wygląd kontrolki oparte na zdarzeniach lub zmiany właściwości.
+title: Wyzwalacze zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak reagować na zmiany w interfejsie użytkownika przy użyciu XAML przy użyciu zestawu narzędzi Xamarin.Forms wyzwalaczy. Wyzwalacze umożliwiają express akcji deklaratywnie w XAML wygląd formantów na podstawie zdarzeń lub zmiany właściwości.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241438"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995540"
 ---
-# <a name="xamarinforms-triggers"></a>Wyzwalacze platformy Xamarin.Forms
+# <a name="xamarinforms-triggers"></a>Wyzwalacze zestawu narzędzi Xamarin.Forms
 
-Wyzwalacze umożliwiają express akcji deklaratywnie w języku XAML, które zmienić wygląd kontrolki oparte na zdarzeniach lub zmiany właściwości.
+Wyzwalacze umożliwiają express akcji deklaratywnie w XAML wygląd formantów na podstawie zdarzeń lub zmiany właściwości.
 
-Można przypisać wyzwalacz bezpośrednio do formantu, lub dodaj je do słownika zasobów strony lub na poziomie aplikacji ma zostać zastosowany do wielu formantów.
+Możesz przypisać wyzwalacza bezpośrednio z kontrolką lub dodać go do słownika zasobów strony lub na poziomie aplikacji mają być stosowane do wielu kontrolek.
 
 Istnieją cztery typy wyzwalaczy:
 
-* [Wyzwalacza właściwości](#property) -występuje, gdy właściwość w formancie jest równa określonej wartości.
+* [Wyzwalacz właściwości](#property) -występuje, gdy właściwość na formancie jest równa określonej wartości.
 
-* [Wyzwalacz danych](#data) — wiązanie do wyzwalania na podstawie właściwości inny formant danych używa.
+* [Wyzwalacz danych](#data) — używa danych powiązania do wyzwalania na podstawie właściwości innej kontrolki.
 
-* [Wyzwalacz zdarzenia](#event) -występuje, gdy wystąpi zdarzenie w formancie.
+* [Wyzwalacz zdarzenia](#event) -występuje, gdy wystąpi zdarzenie na formancie.
 
-* [Wyzwalacz Multi](#multi) — umożliwia wielu warunki wyzwalania ustawić przed wywołaniem metody akcji.
+* [Wiele wyzwalaczy](#multi) — zezwala na wiele warunków wyzwalacza, należy ustawić przed akcją.
 
 <a name="property" />
 
 ## <a name="property-triggers"></a>Wyzwalacze właściwości
 
-Proste wyzwalacza, może zostać wyrażona wyłącznie w języku XAML, dodawanie `Trigger` elementu do formantu wyzwala kolekcji.
-W tym przykładzie pokazano wyzwalacz, który zmienia `Entry` kolor tła, gdy odbierze fokus:
+Proste wyzwalacza mogą być wyrażone w wyłącznie w XAML, dodając `Trigger` elementu do kontrolki wyzwala zbieranie.
+Wyzwalacz, który zmienia się w tym przykładzie `Entry` kolor tła, po odebraniu koncentracji uwagi:
 
 ```xaml
 <Entry Placeholder="enter name">
@@ -48,21 +48,21 @@ W tym przykładzie pokazano wyzwalacz, który zmienia `Entry` kolor tła, gdy od
 </Entry>
 ```
 
-Ważne części deklaracji wyzwalacza są:
+Ważne elementy tego wyzwalacza deklaracji są następujące:
 
-* **Element TargetType** — typ formantu, której wyzwalacz dotyczy.
+* **TargetType** — typ formantu dotyczy wyzwalacza.
 
-* **Właściwość** -właściwości formantu, który jest monitorowany.
+* **Właściwość** — właściwości formantu, który jest monitorowany.
 
-* **Wartość** -wartość w przypadku monitorowanych właściwości, która powoduje trigger, aby aktywować.
+* **Wartość** -wartości, jeśli występuje on dla właściwości monitorowanych, który powoduje, że wyzwalacz, aby aktywować.
 
-* **Metoda ustawiająca** — Kolekcja `Setter` elementy mogą zostać dodane, a po spełnieniu warunku wyzwalania. Należy określić `Property` i `Value` można ustawić.
+* **Metoda ustawiająca** — Kolekcja `Setter` elementów może zostać dodany, a po spełnieniu warunku wyzwalania. Należy określić `Property` i `Value` do ustawienia.
 
-* **Akcji EnterActions i ExitActions** (tego nie pokazano) — są zapisywane w kodzie i mogą być używane w uzupełnieniu do (lub zamiast) `Setter` elementów. Są one [opisanych poniżej](#enterexit).
+* **EnterActions i ExitActions** (niewyświetlany) — są zapisywane w kodzie i mogą być używane w uzupełnieniu do (lub zamiast) `Setter` elementów. Są one [opisanych poniżej](#enterexit).
 
 ### <a name="applying-a-trigger-using-a-style"></a>Stosowanie wyzwalacz za pomocą stylu
 
-Wyzwalacze można również dodać do `Style` deklaracji w formancie, na stronie lub aplikacji `ResourceDictionary`. W tym przykładzie deklaruje stylu niejawne (ie. nie `Key` ustawiono) co oznacza, że będą stosowane do wszystkich `Entry` kontrolki na stronie.
+Wyzwalacze można dodać do `Style` deklaracji w kontrolce, na stronie lub aplikacji `ResourceDictionary`. W tym przykładzie deklaruje stylu niejawnego (tj. nie `Key` ustawiono) co oznacza, że zostaną zastosowane do wszystkich `Entry` formantów na stronie.
 
 ```xaml
 <ContentPage.Resources>
@@ -83,9 +83,9 @@ Wyzwalacze można również dodać do `Style` deklaracji w formancie, na stronie
 
 ## <a name="data-triggers"></a>Wyzwalacze danych
 
-Wyzwalacze danych używać powiązania danych do monitorowania inny formant powoduje `Setter`s, aby jest wywoływana. Zamiast `Property` atrybutu w wyzwalaczu właściwość, ustaw `Binding` atrybut do monitorowania dla określonej wartości.
+Wyzwalacze danych używać powiązanie danych do monitorowania innej kontrolki, aby spowodować `Setter`s, aby zostać wywołana. Zamiast `Property` atrybutu w wyzwalaczu właściwość, ustaw `Binding` atrybutu do monitorowania dla określonej wartości.
 
-W poniższym przykładzie jest używana składnia wiązania danych `{Binding Source={x:Reference entry}, Path=Text.Length}` czyli jak możemy odwoływać się do właściwości inny formant. Gdy długość `entry` wynosi zero, wyzwalacz został aktywowany. W tym przykładzie wyzwalacza wyłącza przycisk, gdy wartość wejściowa jest pusta.
+W poniższym przykładzie użyto składnia wiązania danych `{Binding Source={x:Reference entry}, Path=Text.Length}` czyli jak nazywamy inna kontrolka właściwości. Jeśli długość `entry` wynosi zero, wyzwalacz zostanie aktywowany. W tym przykładzie wyzwalacza wyłącza przycisk, gdy wartość wejściowa jest pusta.
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -108,7 +108,7 @@ W poniższym przykładzie jest używana składnia wiązania danych `{Binding Sou
 </Button>
 ```
 
-Porada: podczas obliczania `Path=Text.Length` zawsze podawać wartości domyślnej dla docelowej właściwości (np.) `Text=""`), ponieważ w przeciwnym razie będzie `null` i wyzwalacz nie działa jak oczekujesz.
+Porada: podczas obliczania `Path=Text.Length` zawsze dostarczaj wartość domyślną dla właściwości docelowej (np.) `Text=""`), ponieważ w przeciwnym razie będzie `null` i wyzwalacz nie będzie działać, takie jak oczekujesz.
 
 Oprócz określenia `Setter`s można też podać [ `EnterActions` i `ExitActions` ](#enterexit).
 
@@ -124,7 +124,7 @@ Oprócz określenia `Setter`s można też podać [ `EnterActions` i `ExitActions
 </EventTrigger>
 ```
 
-Należy zauważyć, że istnieją nie `Setter` elementów, ale raczej odwołania do klasy zdefiniowanej przez `local:NumericValidationTriggerAction` co wymaga `xmlns:local` na stronie użytkownika XAML:
+Należy zauważyć, że istnieją nie `Setter` elementów, ale raczej odwołanie do klasy zdefiniowanej przez `local:NumericValidationTriggerAction` wymagająca `xmlns:local` deklaruje się w stronę użytkownika XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -132,15 +132,15 @@ Należy zauważyć, że istnieją nie `Setter` elementów, ale raczej odwołania
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-Ta sama klasa implementuje `TriggerAction` co oznacza, że powinien udostępniać zastąpienie `Invoke` metodę, która jest wywoływana, gdy wystąpi zdarzenie wyzwalacza.
+Ta sama klasa implementuje `TriggerAction` co oznacza, że powinno zapewniać zastąpienie `Invoke` metodę, która jest wywoływana zawsze wtedy, gdy wystąpi zdarzenie wyzwalacza.
 
-Wykonanie akcji wyzwalacza następujące czynności:
+Wykonanie akcji wyzwalacza należy:
 
-* Implementowanie ogólnego `TriggerAction<T>` klasy z parametru ogólnego o typ wyzwalacza zostaną zastosowane dla formantu. Można użyć nadklas, takich jak `VisualElement` można zapisać wyzwalacza akcje, które obsługuje wiele różnych mechanizmów, lub określ typ formantu, takich jak `Entry`.
+* Implementowanie ogólnego `TriggerAction<T>` klasy za pomocą parametru ogólnego odpowiedni dla typu wyzwalacza zostaną zastosowane do formantu. Można użyć superklas, takich jak `VisualElement` do zapisania Wyzwalaj akcje, które współpracuje z różnymi formantów lub określ typ kontrolki, takie jak `Entry`.
 
-* Zastąpienie `Invoke` metody — to jest wywoływana, gdy są spełnione kryteria wyzwalacza.
+* Zastąp `Invoke` metody — jest to zawsze wtedy, gdy są spełnione kryteria wyzwalacza.
 
-* Opcjonalnie udostępniają właściwości, które można ustawić w języku XAML, gdy jest zadeklarowany jako wyzwalacz (takich jak `Anchor`, `Scale`, i `Length` w tym przykładzie).
+* Opcjonalnie ujawnić właściwości, które można ustawiać w XAML, gdy wyzwalacz jest zadeklarowany (takie jak `Anchor`, `Scale`, i `Length` w tym przykładzie).
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -154,7 +154,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Właściwości udostępnianych przez akcję wyzwalacza można ustawić w deklaracji XAML w następujący sposób:
+Właściwości ujawnione przez akcję wyzwalacza można ustawić w deklaracji XAML w następujący sposób:
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -162,17 +162,17 @@ Właściwości udostępnianych przez akcję wyzwalacza można ustawić w deklara
 </EventTrigger>
 ```
 
-Należy zachować ostrożność podczas udostępniania Wyzwalacze w `ResourceDictionary`, jedno wystąpienie będzie współdzielona przez formanty każdy stan, który skonfigurowano na raz będzie dotyczyć wszystkich.
+Należy zachować ostrożność podczas udostępniania wyzwalaczy w `ResourceDictionary`, jedno wystąpienie będzie współdzielona przez formanty, stan, który został skonfigurowany po dotyczą ich wszystkich.
 
-Należy pamiętać, że wyzwalacze zdarzeń nie obsługują `EnterActions` i `ExitActions` [opisanych poniżej](#enterexit).    
+Należy pamiętać, że nie obsługują wyzwalacze zdarzeń `EnterActions` i `ExitActions` [opisanych poniżej](#enterexit).    
 
 <a name="multi" />
 
-## <a name="multi-triggers"></a>Obsługa wielu wyzwalaczy
+## <a name="multi-triggers"></a>Wiele wyzwalaczy
 
-A `MultiTrigger` wygląda podobnie do `Trigger` lub `DataTrigger` z wyjątkiem może istnieć więcej niż jednego warunku. Wszystkie warunki należy spełnić przed `Setter`s są wyzwalane.
+A `MultiTrigger` wygląda podobnie do `Trigger` lub `DataTrigger` z wyjątkiem może istnieć więcej niż jeden warunek. Wszystkie warunki muszą być spełnione przed `Setter`s są wyzwalane.
 
-Oto przykład wyzwalacza dla przycisku, który jest powiązany z dwóch różnych komponentów (`email` i `phone`):
+Oto przykład wyzwalacza dla przycisku, który wiąże się na dwa różne dane wejściowe (`email` i `phone`):
 
 ```xaml
 <MultiTrigger TargetType="Button">
@@ -190,17 +190,17 @@ Oto przykład wyzwalacza dla przycisku, który jest powiązany z dwóch różnyc
 </MultiTrigger>
 ```
 
-`Conditions` Kolekcji może także zawierać `PropertyCondition` elementów, takich jak to:
+`Conditions` Kolekcji mogą również zawierać `PropertyCondition` elementów, takich jak to:
 
 ```xaml
 <PropertyCondition Property="Text" Value="OK" />
 ```
 
-### <a name="building-a-require-all-multi-trigger"></a>Tworzenie wyzwalacza multi "Wymagaj wszystkie"
+### <a name="building-a-require-all-multi-trigger"></a>Tworzenie wyzwalacza multi "wymagane są wszystkie"
 
-Wyzwalacz multi tylko aktualizuje kontroli, gdy są spełnione wszystkie warunki. Testowanie "wszystkie pola długości to zero" (na przykład strony logowania, gdy wszystkie dane wejściowe muszą być zakończone) jest trudnych, ponieważ ma warunek "gdzie Text.Length > 0", ale to nie można wyrazić w języku XAML.
+Wyzwalacz multi tylko zaktualizowanie kontrolki, gdy są spełnione wszystkie warunki. Testowanie dla "wszystkich długości pola są zero" (na przykład strony logowania, gdzie wszystkie dane wejściowe muszą być kompletne) jest trudne, ponieważ mają warunek "gdzie Text.Length > 0", ale to nie może być wyrażona w XAML.
 
-Można to zrobić z `IValueConverter`. Kod konwertera poniżej transformacje `Text.Length` powiązanie do `bool` wskazująca, czy pole jest puste:
+Można to zrobić za pomocą `IValueConverter`. Kod konwerter poniżej przekształcenia `Text.Length` powiązania do `bool` oznacza to, czy pole jest puste:
 
 
 ```csharp
@@ -223,7 +223,7 @@ public class MultiTriggerConverter : IValueConverter
 }
 ```
 
-Aby użyć tego konwertera w wyzwalaczu multi, najpierw dodaj go do słownika zasobów strony (wraz z niestandardowego `xmlns:local` definicję przestrzeni nazw):
+Aby użyć tego konwertera w wyzwalaczu multi, go najpierw dodać do strony słownika zasobów (wraz z niestandardowego `xmlns:local` definicję przestrzeni nazw):
 
 ```xaml
 <ResourceDictionary>
@@ -231,11 +231,11 @@ Aby użyć tego konwertera w wyzwalaczu multi, najpierw dodaj go do słownika za
 </ResourceDictionary>
 ```
 
-Poniżej przedstawiono XAML. Należy uwzględnić następujące różnice w pierwszym przykładzie wyzwalacza multi:
+Poniżej przedstawiono XAML. Zwróć uwagę na następujące różnice w pierwszym przykładzie wyzwalacza multi:
 
-* Przycisk ma `IsEnabled="false"` ustawieniem domyślnym.
-* Warunki wyzwalania multi umożliwia włączanie konwerter `Text.Length` wartość na wartość logiczną.
-* Jeśli wszystkie warunki są `true`, metoda ustawiająca sprawia, że przycisk `IsEnabled` właściwości `true`.
+* Przycisk ma `IsEnabled="false"` domyślnie.
+* Warunki wyzwalania multi używać konwertera, aby włączyć `Text.Length` wartość na wartość logiczną.
+* Jeśli wszystkie warunki są `true`, metody ustawiającej sprawia, że przycisk `IsEnabled` właściwość `true`.
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -264,19 +264,19 @@ Poniżej przedstawiono XAML. Należy uwzględnić następujące różnice w pier
 </Button>
 ```
 
-Te zrzuty ekranu pokazują różnicę między dwa multi wyzwalacza przykładach. W górnej części ekrany tekst wejściowy tylko w jednej `Entry` jest wystarczająca, aby umożliwić **zapisać** przycisku.
-W dolnej części ekrany **logowania** przycisk pozostaje nieaktywne, dopóki oba pola zawierają dane.
+Te zrzuty ekranu pokazują różnicę między dwóch multi wyzwalacza przykładach. W górnej części ekrany wprowadzania tekstu tylko w jednej `Entry` jest wystarczający, aby umożliwić **Zapisz** przycisku.
+W dolnej części ekrany **logowania** przycisk pozostaje nieaktywna, dopóki oba pola zawierają dane.
 
 
 ![](triggers-images/multi-requireall.png "Przykłady multiTrigger")
 
 <a name="enterexit" />
 
-## <a name="enteractions-and-exitactions"></a>Akcji EnterActions i ExitActions
+## <a name="enteractions-and-exitactions"></a>EnterActions i ExitActions
 
-Innym sposobem implementacji zmian, gdy wystąpi wyzwalacza jest przez dodanie `EnterActions` i `ExitActions` kolekcje i określanie `TriggerAction<T>` implementacji.
+Innym sposobem wdrożenia zmiany w przypadku wyzwalacza jest przez dodanie `EnterActions` i `ExitActions` kolekcji i określając `TriggerAction<T>` implementacji.
 
-Możesz podać *zarówno* `EnterActions` i `ExitActions` oraz `Setter`s w wyzwalaczu, ale należy pamiętać, że `Setter`s są nazywane natychmiast (nie należy czekać do `EnterAction` lub `ExitAction` do Wykonaj). Alternatywnie można wykonywać wszystkie elementy w kodzie i nie używać `Setter`s wcale.
+Możesz podać *zarówno* `EnterActions` i `ExitActions` także `Setter`s w wyzwalaczu, ale należy pamiętać, który `Setter`s są nazywane natychmiast (nie oczekują `EnterAction` lub `ExitAction` do Zakończenie). Można również wykonywać wszystkie elementy w kodzie i nie używać `Setter`s w ogóle.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -296,7 +296,7 @@ Możesz podać *zarówno* `EnterActions` i `ExitActions` oraz `Setter`s w wyzwal
 </Entry>
 ```
 
-Jak zawsze, gdy klasa jest przywoływany w XAML przestrzeni nazw powinny deklarować takich jak `xmlns:local` w sposób pokazany poniżej:
+Jak zawsze, gdy klasa jest przywoływany w XAML należy zadeklarować przestrzeni nazw takich jak `xmlns:local` jak pokazano poniżej:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -304,7 +304,7 @@ Jak zawsze, gdy klasa jest przywoływany w XAML przestrzeni nazw powinny deklaro
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-`FadeTriggerAction` Kodu przedstawiono poniżej:
+`FadeTriggerAction` Kodu jest pokazany poniżej:
 
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
@@ -326,11 +326,11 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-Uwaga: `EnterActions` i `ExitActions` są ignorowane w **wyzwalacze zdarzeń**.
+Uwaga: `EnterActions` i `ExitActions` są ignorowane na **wyzwalaczy zdarzeń**.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykładowe wyzwalacze](https://developer.xamarin.com/samples/WorkingWithTriggers)
-- [Dokumentacja interfejsu API platformy Xamarin.Forms](https://developer.xamarin.com/api/type/Xamarin.Forms.TriggerAction%3CT%3E/)
+- [Przykładowe wyzwalaczy](https://developer.xamarin.com/samples/WorkingWithTriggers)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](xref:Xamarin.Forms.TriggerAction`1)

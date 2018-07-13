@@ -1,6 +1,6 @@
 ---
-title: Witaj, Wieloekranowy systemu Android
-description: W tym przewodniku dwuczęściową rozwiń aplikacji Phoneword, który został utworzony w Hello, Android Przewodnik obsługi drugi ekranu. Wzdłuż sposób w tym przewodniku przedstawiono podstawowe bloki konstrukcyjne aplikacji systemu Android i lepsze zapoznanie się w architekturze systemu Android podczas opracowywania lepsze poznanie struktury aplikacji dla systemu Android i funkcje.
+title: Witaj, Android (wiele ekranów)
+description: W tym przewodniku legalną dwuczęściową jest rozwiniesz Phoneword aplikacji, który został utworzony w Witaj, Android Przewodnik obsługi drugi ekran. Po drodze tego przewodnika przedstawiono podstawowe bloki konstrukcyjne w usłudze Android aplikacji i Dowiedz się więcej w architekturę systemu Android podczas opracowywania lepiej zrozumieć funkcje i struktury aplikacji dla systemu Android.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
@@ -8,28 +8,28 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: a168e285358fff51b923200e55784b566df29d9d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6979d1f221a8b06b5d04d7a7f738dee86c4392e9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763738"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998399"
 ---
-# <a name="hello-android-multiscreen"></a>Witaj, Wieloekranowy systemu Android
+# <a name="hello-android-multiscreen"></a>Witaj, Android (wiele ekranów)
 
-_W tym przewodniku dwuczęściową rozwiń aplikacji Phoneword, który został utworzony w Hello, Android Przewodnik obsługi drugi ekranu. Wzdłuż sposób w tym przewodniku przedstawiono podstawowe bloki konstrukcyjne aplikacji systemu Android i lepsze zapoznanie się w architekturze systemu Android podczas opracowywania lepsze poznanie struktury aplikacji dla systemu Android i funkcje._
+_W tym przewodniku legalną dwuczęściową jest rozwiniesz Phoneword aplikacji, który został utworzony w Witaj, Android Przewodnik obsługi drugi ekran. Po drodze tego przewodnika przedstawiono podstawowe bloki konstrukcyjne w usłudze Android aplikacji i Dowiedz się więcej w architekturę systemu Android podczas opracowywania lepiej zrozumieć funkcje i struktury aplikacji dla systemu Android._
 
 ##  <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Część 1. Szybki start](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
-W pierwszej części tego przewodnika warto drugi ekranu aplikacji Phoneword do śledzenia historii numerów wywoływana z poziomu aplikacji. Końcowe aplikacji zostaną wyświetlone drugie ekranu, który zawiera listę historii połączeń.
+W pierwszej części tego przewodnika dodasz drugi ekranu do aplikacji Phoneword, aby śledzić historię numerów wywoływane z poziomu aplikacji. Końcowa aplikacja wyświetli drugi ekran, który zawiera listę historii wywołań.
 
 ##  <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[Część 2. Szczegółowe omówienie](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
-W drugiej części tego dokumentu należy przejrzeć co został utworzony i zawiera omówienie architektury, nawigacji i innych nowych pojęć Android napotkanych wzdłuż sposób.
+W drugiej części tego dokumentu należy przejrzeć co wcześniej skompilowana i zawiera omówienie architektury, nawigacji i inne nowe pojęcia dla systemu Android, które zostaną napotkane po drodze.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wprowadzenie systemu android](http://developer.android.com/training/index.html)
-- [Debugowanie w programie Visual Studio](http://msdn.microsoft.com/en-us/library/k0k771bt%28v=vs.90%29.aspx)
-- [Visual Studio for Mac przepisami - debugowania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
+- [Wprowadzenie do systemu android](http://developer.android.com/training/index.html)
+- [Debugowanie w programie Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
+- [Program Visual Studio for Mac przepisy — debugowanie](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)

@@ -1,48 +1,48 @@
 ---
-title: Moduły renderowania Fast platformy Xamarin.Forms
-description: W tym artykule przedstawiono szybki moduły renderowania, które zmniejszają inflacji i kosztów renderowania formantu platformy Xamarin.Forms w systemie Android przez spłaszczanie wynikowy hierarchii macierzystego formantu.
+title: Xamarin.Forms szybkie programy renderujące
+description: W tym artykule przedstawiono szybkie programy renderujące, które zmniejszają inflacji i koszty renderowanie kontrolki zestawu narzędzi Xamarin.Forms w systemie Android spłaszczając wynikowy hierarchii kontroli natywnych.
 ms.prod: xamarin
 ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 40cc095da41aaae5cb474987d8b03f7cf4a17322
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243064"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997123"
 ---
-# <a name="xamarinforms-fast-renderers"></a>Moduły renderowania Fast platformy Xamarin.Forms
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms szybkie programy renderujące
 
-_W tym artykule przedstawiono szybki moduły renderowania, które zmniejszają inflacji i kosztów renderowania formantu platformy Xamarin.Forms w systemie Android przez spłaszczanie wynikowy hierarchii macierzystego formantu._
+_W tym artykule przedstawiono szybkie programy renderujące, które zmniejszają inflacji i koszty renderowanie kontrolki zestawu narzędzi Xamarin.Forms w systemie Android spłaszczając wynikowy hierarchii kontroli natywnych._
 
-Zazwyczaj większość oryginalnego renderowania formantu w systemie Android składają się z dwóch widoków:
+Tradycyjnie większość oryginalnego renderowania formantu w systemie Android składają się z dwóch widoków:
 
 - Natywny kontrolować, takich jak `Button` lub `TextView`.
-- Kontener `ViewGroup` obsługująca część pracy układu, Obsługa gestu i innych zadań.
+- Kontener `ViewGroup` obsługująca część pracy układu, obsługi gestu i innych zadań.
 
-Jednak takie podejście ma wpływ na wydajność w dwóch widoków są tworzone dla każdej kontrolki logicznego, co prowadzi do bardziej złożonych drzewa wizualnego, która wymaga więcej pamięci i inne przetwarzania do renderowania na ekranie.
+Jednak to podejście ma domniemanie wydajności, w tym dwa widoki są tworzone dla każdego formantu logicznej, co skutkuje bardziej złożone drzewa wizualnego, który wymaga więcej pamięci i więcej przetwarzania do renderowania na ekranie.
 
-Szybkie renderowania zmniejszyć inflacji i kosztów renderowania formantu platformy Xamarin.Forms w jednym widoku. Dlatego zamiast tworzenia dwóch widoków, a następnie dodanie ich do drzewa widoku, tylko jeden z nich jest tworzony. Poprawia to wydajność, tworząc mniejszą liczbę obiektów, które z kolei oznacza mniej złożona drzewa widoku, a mniej wykorzystanie pamięci, (która także powoduje mniej pamięci kolekcji pauzy).
+Szybkie programy renderujące skrócić inflacji i koszty renderowanie kontrolki zestawu narzędzi Xamarin.Forms w jednym widoku. W związku z tym zamiast tworzenia dwa widoki, a następnie dodanie ich do drzewa widoku, utworzono tylko jeden. Poprawia to wydajność, tworząc mniej obiektów, które z kolei oznacza mniej złożone drzewa widoku, a wykorzystanie pamięci, (który również powoduje mniej wstrzymuje kolekcji wyrzucania elementów).
 
-Szybkie renderowania są dostępne w następujących kontrolkach w 2.4 platformy Xamarin.Forms w systemie Android:
+Szybkie programy renderujące są dostępne w następujących kontrolkach w Xamarin.Forms 2.4 w systemie Android:
 
-- [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)
-- [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)
-- [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [`Button`](xref:Xamarin.Forms.Button)
+- [`Image`](xref:Xamarin.Forms.Image)
+- [`Label`](xref:Xamarin.Forms.Label)
 
-Funkcjonalnie te szybkiego renderowania są nie różni się od oryginalnej renderowania. Jednak są obecnie eksperymentalne i mogą służyć tylko przez dodanie poniższego kodu do Twojej `MainActivity` klasy przed wywołaniem `Forms.Init`:
+Funkcjonalnie te szybkie programy renderujące są nie różni się do oryginalnego programy renderujące. Jednak są obecnie eksperymentalne i można używać tylko, dodając następujący wiersz kodu, aby Twoje `MainActivity` klasy przed wywołaniem `Forms.Init`:
 
 ```csharp
 Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> Szybkie renderowania dotyczą tylko zaplecza z systemem Android zgodność aplikacji, to ustawienie jest ignorowana w wersji pre-app compat działań.
+> Szybkie programy renderujące dotyczą tylko aplikacji zgodności dla systemu Android wewnętrznej bazy danych, więc tego ustawienia zostaną zignorowane w przypadku działań compat pre-app.
 
-Ulepszenia wydajności będą się różnić dla poszczególnych aplikacji, w zależności od złożoności układu. Na przykład poprawy wydajności x2 to możliwe, gdy przewijanie [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) zawierające tysiące wiersze danych, gdzie komórek w każdym wierszu składają się z formantów, które używają szybkiego moduły renderowania, które powoduje widoczny płynniejszy przewijania.
+Ulepszenia wydajności będą się różnić dla poszczególnych aplikacji, w zależności od złożoności układu. Na przykład, udoskonalenia wydajności x2 są możliwe, podczas przewijania [ `ListView` ](xref:Xamarin.Forms.ListView) zawierający tysiące wierszy danych, w którym komórek w każdym wierszu składają się z formantów, które używają szybkie programy renderujące, co powoduje w sposób widoczny gładsze przewijania.
 
 
 ## <a name="related-links"></a>Linki pokrewne

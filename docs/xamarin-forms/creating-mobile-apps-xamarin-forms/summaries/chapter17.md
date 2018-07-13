@@ -7,28 +7,28 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 5f5b934b5f828bf6f5e8d4a0f0738c7db633aefb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935481"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995843"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Podsumowanie rozdziałów 17. Opanowanie siatki
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) To mechanizm zaawansowane układ, który organizuje jego elementy podrzędne w wiersze i kolumny komórek. W przeciwieństwie do podobnych HTML `table` elementu `Grid` służy wyłącznie do celów układu, a nie w prezentacji.
+[ `Grid` ](xref:Xamarin.Forms.Grid) To mechanizm zaawansowane układ, który organizuje jego elementy podrzędne w wiersze i kolumny komórek. W przeciwieństwie do podobnych HTML `table` elementu `Grid` służy wyłącznie do celów układu, a nie w prezentacji.
 
 ## <a name="the-basic-grid"></a>Siatka podstawowa
 
-`Grid` pochodzi od klasy [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/), która definiuje [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) właściwości, `Grid` dziedziczy. Należy wypełnić tej kolekcji w XAML lub kodu.
+`Grid` pochodzi od klasy [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1), która definiuje [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) właściwości, `Grid` dziedziczy. Należy wypełnić tej kolekcji w XAML lub kodu.
 
 ### <a name="the-grid-in-xaml"></a>Siatki w XAML
 
-Definicja `Grid` w XAML zwykle zaczyna się od wypełnianie [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/) i [ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/) kolekcji `Grid` z [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) i [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/) obiektów. Jest to, jak ustalenia liczby wierszy i kolumn `Grid`oraz ich właściwości.
+Definicja `Grid` w XAML zwykle zaczyna się od wypełnianie [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions) i [ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions) kolekcji `Grid` z [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) i [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition) obiektów. Jest to, jak ustalenia liczby wierszy i kolumn `Grid`oraz ich właściwości.
 
-`RowDefinition` ma [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/) właściwości i `ColumnDefinition` ma [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/) właściwość, oba typu [ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/), strukturę.
+`RowDefinition` ma [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height) właściwości i `ColumnDefinition` ma [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width) właściwość, oba typu [ `GridLength` ](xref:Xamarin.Forms.GridLength), strukturę.
 
-W XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) konwertuje ciągi zwykłego tekstu do `GridLength` wartości. Za kulisami [ `GridLength` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) tworzy `GridLength` wartości na podstawie liczby i wartości typu [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), wyliczenie z trzema elementami członkowskimi:
+W XAML [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter) konwertuje ciągi zwykłego tekstu do `GridLength` wartości. Za kulisami [ `GridLength` Konstruktor](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) tworzy `GridLength` wartości na podstawie liczby i wartości typu [ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType), wyliczenie z trzema elementami członkowskimi:
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; szerokość lub wysokość jest określona w jednostkach niezależnych od urządzenia (liczba w XAML)
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; szerokość lub wysokość jest autosized na podstawie zawartości komórki ("Auto" w XAML)
@@ -36,17 +36,17 @@ W XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xama
 
 Każdy element podrzędny `Grid` muszą być przypisane wierszy i kolumn (jawnie lub niejawnie). Obejmuje wiersza i kolumny zakresy są opcjonalne. Te są wszystkie określone za pomocą dołączonych właściwości możliwej do wiązania &mdash; właściwości, które są definiowane przez `Grid` ale ustawiony na elementy podrzędne `Grid`. `Grid` definiuje cztery statyczne dołączone właściwości możliwej do wiązania:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; wiersz zaczynający się od zera; domyślna to 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; liczony od zera kolumnach. domyślna to 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; Liczba wierszy obejmuje elementu podrzędnego; Wartość domyślna to 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; Liczba kolumn obejmuje elementu podrzędnego; Wartość domyślna to 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; wiersz zaczynający się od zera; domyślna to 0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; liczony od zera kolumnach. domyślna to 0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; Liczba wierszy obejmuje elementu podrzędnego; Wartość domyślna to 1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; Liczba kolumn obejmuje elementu podrzędnego; Wartość domyślna to 1
 
 W kodzie programu umożliwia osiem metody statyczne ustawiają i pobierają te wartości:
 
-- [`Grid.SetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRow/p/Xamarin.Forms.BindableObject/System.Int32/) i [`Grid.GetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRow/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumn/p/Xamarin.Forms.BindableObject/System.Int32/) i [`Grid.GetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumn/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRowSpan/p/Xamarin.Forms.BindableObject/System.Int32/) i [`Grid.GetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRowSpan/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumnSpan/p/Xamarin.Forms.BindableObject/System.Int32/) i [`Grid.GetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumnSpan/p/Xamarin.Forms.BindableObject/)
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) i [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) i [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) i [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) i [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 W XAML można użyć następujących atrybutów do ustawiania tych wartości:
 
@@ -57,10 +57,10 @@ W XAML można użyć następujących atrybutów do ustawiania tych wartości:
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) w przykładzie pokazano tworzenie i Inicjowanie `Grid` w XAML.
 
-`Grid` Dziedziczy [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) właściwość `Layout` i definiuje dwa dodatkowe właściwości, które zapewniają odstępy między wierszami i kolumnami:
+`Grid` Dziedziczy [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) właściwość `Layout` i definiuje dwa dodatkowe właściwości, które zapewniają odstępy między wierszami i kolumnami:
 
-- [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) ma wartość domyślną 6
-- [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) ma wartość domyślną 6
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) ma wartość domyślną 6
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) ma wartość domyślną 6
 
 `RowDefinitions` i `ColumnDefinitions` kolekcje nie są ściśle wymagane. Jeśli go nie ma, `Grid` tworzy wierszy i kolumn `Grid` elementów podrzędnych i udostępnia je wszystkie domyślne `GridLength` z "\*" (gwiazdka).
 

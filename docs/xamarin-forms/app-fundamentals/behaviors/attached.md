@@ -1,37 +1,37 @@
 ---
-title: Zachowania dołączone
-description: Klasy statyczne z co najmniej jednej właściwości dołączonych będą dołączone zachowania. W tym artykule przedstawiono sposób tworzenia i zużywać przyłączonych zachowań.
+title: Dołączone zachowania
+description: Dołączone zachowania są statyczne klasy z jedną lub więcej właściwości dołączone. W tym artykule przedstawiono sposób tworzenia i wykorzystywania dołączone zachowania.
 ms.prod: xamarin
 ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 32573ac3ed0dfecf8ddf1c731613c9a5f88fb1e7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2c9bd9ad4e7572b9eae6f0073da8a2c8f1e7c9fc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34845996"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995349"
 ---
-# <a name="attached-behaviors"></a>Zachowania dołączone
+# <a name="attached-behaviors"></a>Dołączone zachowania
 
-_Klasy statyczne z co najmniej jednej właściwości dołączonych będą dołączone zachowania. W tym artykule przedstawiono sposób tworzenia i zużywać przyłączonych zachowań._
+_Dołączone zachowania są statyczne klasy z jedną lub więcej właściwości dołączone. W tym artykule przedstawiono sposób tworzenia i wykorzystywania dołączone zachowania._
 
 ## <a name="overview"></a>Omówienie
 
-Dołączona właściwość jest specjalnym rodzajem właściwości możliwej do wiązania. Są zdefiniowane w jedną klasę, ale dołączone do innych obiektów, i są one rozpoznawalną w języku XAML jako atrybuty, które zawiera klasy i nazwę właściwości oddzielone kropką.
+Dołączona właściwość to specjalny rodzaj właściwości możliwej do wiązania. Są one zdefiniowane w jedną klasę, ale dołączone do innych obiektów i są rozpoznawalne w XAML jako atrybuty, które zawierają klasy i nazwy właściwości oddzielony kropką.
 
-Dołączona właściwość można zdefiniować `propertyChanged` delegata, która zostanie wykonana po zmianie wartości właściwości, np. gdy właściwość jest ustawiona w formancie. Gdy `propertyChanged` wykonuje delegata, został przekazany odwołanie do sterowania, na którym jest dołączany i parametrów, które zawierają starej i nowej wartości właściwości. Ten delegat może służyć do dodania nowych funkcji do kontroli, podłączonego do właściwości przez manipulowanie odwołania przekazywane w następujący sposób:
+Dołączona właściwość można zdefiniować `propertyChanged` delegata, która zostanie wykonana po zmianie wartości właściwości, np. gdy właściwość jest ustawiona na kontrolce. Gdy `propertyChanged` wykonuje delegata, został przekazany, odwołanie do kontrolki, na którym jest dołączany i parametry, które zawierają stare i nowe wartości właściwości. Ten delegat może służyć do dodawania nowych funkcji do kontroli, dołączonego do właściwości poprzez manipulowanie odwołania, który jest przekazywany, w następujący sposób:
 
-1. `propertyChanged` Delegata rzutuje odwołania formantu, który otrzymuje się [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), do typu formantu, który jest zaprojektowana, aby zwiększyć.
-1. `propertyChanged` Delegata modyfikuje właściwości formantu, metody wywołania formantu lub rejestrów obsługi zdarzeń dla zdarzenia udostępnianych przez formant do implementacji podstawowych funkcji zachowanie.
+1. `propertyChanged` Delegata rzutuje odwołania kontrolki, które są odbierane w postaci [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), typ formantu zachowanie jest przeznaczone do zwiększenia.
+1. `propertyChanged` Delegata modyfikuje właściwości formantu, metody wywołania formantu lub procedury obsługi zdarzeń rejestrów dla zdarzeń udostępnianych przez formant implementuje podstawowe funkcje zachowanie.
 
-Wystąpił problem z przyłączonych zachowań jest zostały zdefiniowane w `static` klasy, z `static` właściwości i metody. Utrudnia można utworzyć dołączonego zachowania, które mają stan. Ponadto zachowania platformy Xamarin.Forms zastąpił zachowania dołączone jako preferowane podejście do budowy zachowanie. Aby uzyskać więcej informacji na temat platformy Xamarin.Forms zachowania, zobacz [zachowania platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md) i [zachowania wielokrotnego użytku](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Wystąpił problem z dołączone zachowania to, że są one zdefiniowane w `static` klasy, za pomocą `static` właściwości i metody. Utrudnia to utworzyć dołączone zachowania, które mają stan. Ponadto zachowania zestawu narzędzi Xamarin.Forms zastąpiono dołączone zachowania jako preferowane podejście do konstruowania zachowanie. Aby uzyskać więcej informacji na temat zachowania zestawu narzędzi Xamarin.Forms, zobacz [zachowania zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md) i [zachowania wielokrotnego użytku, do](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
-## <a name="creating-an-attached-behavior"></a>Tworzenie dołączone zachowanie
+## <a name="creating-an-attached-behavior"></a>Tworzenie dołączone zachowania
 
-Aplikacja przykładowa prezentuje `NumericValidationBehavior`, który prezentuje wartości wprowadzonej przez użytkownika do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontrolować na czerwono, jeśli nie jest `double`. W poniższym przykładzie kodu pokazano zachowanie:
+Przykładowa aplikacja demonstruje `NumericValidationBehavior`, wyróżnia wartości wprowadzonej przez użytkownika do [ `Entry` ](xref:Xamarin.Forms.Entry) kontrolować na czerwono, jeśli nie jest `double`. W poniższym przykładzie kodu pokazano zachowanie:
 
 ```csharp
 public static class NumericValidationBehavior
@@ -78,11 +78,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` Klasa zawiera dołączona właściwość o nazwie `AttachBehavior` z `static` pobierającej i ustawiającej, który kontroluje, dodawanie lub usuwanie zachowania do formantu, z którą zostanie dołączony. To dołączona właściwość rejestrów `OnAttachBehaviorChanged` — metoda, która zostanie wykonana po zmianie wartości właściwości. Ta metoda rejestruje lub cofnąć rejestruje program obsługi zdarzeń dla [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) zdarzenia na podstawie wartości z `AttachBehavior` dołączona właściwość. Do podstawowych funkcji zachowanie jest zapewniana przez `OnEntryTextChanged` metodę, która analizuje wartość wprowadzona w [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) przez użytkownika i zestawy `TextColor` właściwości czerwony, jeśli wartość nie jest `double`.
+`NumericValidationBehavior` Klasa zawiera dołączoną właściwość o nazwie `AttachBehavior` z `static` metodę getter i setter, który kontroluje, dodawania lub usuwania zachowanie do kontroli, do którego zostanie dołączony. To dołączonych właściwości rejestrów `OnAttachBehaviorChanged` metody, która zostanie wykonana po zmianie wartości właściwości. Ta metoda rejestruje lub cofnąć rejestruje zdarzenia obsługi dla [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) , oparte na zdarzeniach na wartości `AttachBehavior` dołączona właściwość. Podstawowe funkcje zachowanie odbywa się przy `OnEntryTextChanged` metody, która analizuje wartość zawierana [ `Entry` ](xref:Xamarin.Forms.Entry) przez użytkownika, a następnie ustawia `TextColor` właściwości na czerwony, jeśli wartość nie jest `double`.
 
-## <a name="consuming-an-attached-behavior"></a>Wykorzystywanie dołączone zachowanie
+## <a name="consuming-an-attached-behavior"></a>Korzystanie z dołączone zachowania
 
-`NumericValidationBehavior` Klasy mogą być używane przez dodanie `AttachBehavior` dołączona właściwość do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontroli, jak pokazano w poniższym przykładzie kodu XAML:
+`NumericValidationBehavior` Klasy mogą być używane przez dodanie `AttachBehavior` dołączonych właściwości [ `Entry` ](xref:Xamarin.Forms.Entry) kontrolować, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -92,40 +92,40 @@ public static class NumericValidationBehavior
 </ContentPage>
 ```
 
-Odpowiednik [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) w języku C# przedstawiono w poniższym przykładzie:
+Odpowiednik [ `Entry` ](xref:Xamarin.Forms.Entry) w języku C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, true);
 ```
 
-W czasie wykonywania zachowanie będzie odpowiadać interakcji z formantem, zgodnie z implementacją zachowanie. Poniższe zrzuty ekranu pokazują dołączone zachowanie odpowiada na nieprawidłowe dane wejściowe:
+W czasie wykonywania zachowanie będzie odpowiadać na interakcję z kontrolki, zgodnie z implementacji zachowania. Poniższe zrzuty ekranu pokazują dołączone zachowania, które odpowiada na nieprawidłowe dane wejściowe:
 
 [![](attached-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem dołączonych")](attached-images/screenshots.png#lightbox "Przykładowa aplikacja z zachowaniem dołączone")
 
 > [!NOTE]
-> Zachowania dołączone są przeznaczone dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie spowoduje zachowanie nieznany i zależy od implementacji zachowanie.
+> Dołączone zachowania zostały napisane dla typu określonego (lub superklasą, które można zastosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia zachowania do niezgodnych kontrolki spowoduje zachowanie nieznany i jest zależna od implementacji zachowania.
 
-### <a name="removing-an-attached-behavior-from-a-control"></a>Usuwanie dołączonych zachowanie za pomocą formantu
+### <a name="removing-an-attached-behavior-from-a-control"></a>Usuwanie dołączonych zachowanie kontrolki
 
-`NumericValidationBehavior` Można usunąć klasy z formantu przez ustawienie `AttachBehavior` dołączona właściwość do `false`, jak to pokazano w poniższym przykładzie kodu XAML:
+`NumericValidationBehavior` Można usunąć klasy z formantu przez ustawienie `AttachBehavior` dołączonych właściwości `false`, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-Odpowiednik [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) w języku C# przedstawiono w poniższym przykładzie:
+Odpowiednik [ `Entry` ](xref:Xamarin.Forms.Entry) w języku C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-W czasie wykonywania `OnAttachBehaviorChanged` metoda będzie wykonywane, kiedy wartość `AttachBehavior` ustawiono dołączona właściwość `false`. `OnAttachBehaviorChanged` Metody następnie zarejestruje usuwania programu obsługi zdarzeń dla [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) zdarzeń, zapewniając, że zachowanie nie jest uruchomione jako użytkownik wchodzi w interakcję z formantem.
+W czasie wykonywania `OnAttachBehaviorChanged` metoda będzie wykonywane, kiedy wartość `AttachBehavior` dołączonej właściwości jest równa `false`. `OnAttachBehaviorChanged` Metoda zostanie następnie wyrejestrowywać program obsługi zdarzeń dla [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) zdarzeń, zapewniając, że zachowanie nie jest wykonywane jako użytkownik wchodzi w interakcję z kontrolką.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób tworzenia i zużywać przyłączonych zachowań. Zachowania dołączone są `static` klas z co najmniej jednego z dołączonych właściwości.
+W tym artykule przedstawiono sposób tworzenia i wykorzystywania dołączone zachowania. Dołączone zachowania są `static` klas z jedną lub więcej właściwości dołączone.
 
 
 ## <a name="related-links"></a>Linki pokrewne

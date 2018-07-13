@@ -1,28 +1,28 @@
 ---
-title: Ustawienie właściwości ItemsSource selektora
-description: Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi, ustawiając właściwość ItemsSource oraz sposobu reagowania na wybór elementu przez użytkownika.
+title: Ustawianie właściwości ItemsSource selektora
+description: Widok selektora jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule opisano sposób wypełnić selektora z danymi przez ustawienie właściwości ItemsSource oraz odpowiadanie na wybór elementu przez użytkownika.
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3f82e4b7d52988bfef9736ace8c476a9cd2da02b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30789042"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994747"
 ---
-# <a name="setting-a-pickers-itemssource-property"></a>Ustawienie właściwości ItemsSource selektora
+# <a name="setting-a-pickers-itemssource-property"></a>Ustawianie właściwości ItemsSource selektora
 
-_Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi, ustawiając właściwość ItemsSource oraz sposobu reagowania na wybór elementu przez użytkownika._
+_Widok selektora jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule opisano sposób wypełnić selektora z danymi przez ustawienie właściwości ItemsSource oraz odpowiadanie na wybór elementu przez użytkownika._
 
-Platformy Xamarin.Forms 2.3.4 został rozszerzony [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) widoku przez dodanie możliwość wypełnić je danymi przez ustawienie jego [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) właściwości oraz do pobierania wybranego elementu z [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) właściwości. Ponadto można zmienić kolor tekstu dla wybranego elementu, ustawiając [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.TextColor/) właściwości [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/).
+Zestaw narzędzi Xamarin.Forms 2.3.4 ma rozszerzone [ `Picker` ](xref:Xamarin.Forms.Picker) widoku przez dodanie możliwości do wypełniania danymi, ustawiając jego [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) właściwości i pobrać zaznaczony element z [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) właściwości. Ponadto można zmienić kolor tekstu zaznaczonego elementu, ustawiając [ `TextColor` ](xref:Xamarin.Forms.Picker.TextColor) właściwości [ `Color` ](xref:Xamarin.Forms.Color).
 
 ## <a name="populating-a-picker-with-data"></a>Wypełnianie selektora z danymi
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) można wypełniać za pomocą danych przez ustawienie jej [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) właściwości `IList` kolekcji. Każdego elementu w kolekcji musi być typu lub pochodną, wpisz `object`. Można dodać elementy w języku XAML, inicjowanie `ItemsSource` właściwości z tablicy elementów:
+A [ `Picker` ](xref:Xamarin.Forms.Picker) można wypełnić danymi, ustawiając jego [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) właściwość `IList` kolekcji. Każdy element w kolekcji musi być lub pochodzi od typu `object`. Można dodawać elementy w XAML przez inicjowanie `ItemsSource` właściwości z tablicy elementy:
 
 ```xaml
 <Picker x:Name="picker" Title="Select a monkey">
@@ -41,9 +41,9 @@ A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) mo�
 ```
 
 > [!NOTE]
-> Należy pamiętać, że `x:Array` wymaga elementu `Type` atrybut wskazujący typ elementów w tablicy.
+> Należy pamiętać, że `x:Array` element wymaga `Type` atrybut wskazujący typ elementów w tablicy.
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 var monkeyList = new List<string>();
@@ -59,27 +59,27 @@ var picker = new Picker { Title = "Select a monkey" };
 picker.ItemsSource = monkeyList;
 ```
 
-## <a name="responding-to-item-selection"></a>Odpowiada na zaznaczanie elementów
+## <a name="responding-to-item-selection"></a>Odpowiadanie na wybór elementu
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) obsługuje wybór jednego elementu na raz. Po wybraniu elementu [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) generowane zdarzenie [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) właściwości są aktualizowane na liczbę całkowitą reprezentującą indeks wybranego elementu z listy i [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) właściwości jest aktualizowana w celu `object` reprezentujący wybranego elementu. [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) Właściwość jest liczony od zera liczbę określającą elementu wybrany przez użytkownika. Jeśli nie wybrano elementów, co ma miejsce po [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) najpierw jest tworzony i inicjowany, `SelectedIndex` będzie mieć wartość -1.
+A [ `Picker` ](xref:Xamarin.Forms.Picker) obsługuje wybór jednego elementu w danym momencie. Gdy użytkownik wybierze element [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) generowane zdarzenie [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) właściwość zostanie zaktualizowany i będzie liczba całkowita reprezentująca indeks zaznaczonego elementu na liście i [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) właściwość zostanie zaktualizowany w celu `object` reprezentujący wybranego elementu. [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) Właściwość jest liczony od zera liczbę określającą elementu wybranego użytkownika. Jeśli żaden element nie jest zaznaczone, co ma miejsce w przypadku [ `Picker` ](xref:Xamarin.Forms.Picker) najpierw zostanie utworzony i zainicjowany, `SelectedIndex` będzie mieć wartość -1.
 
 > [!NOTE]
-> Element zachowanie dotyczące wyboru w [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) można dostosować w systemie iOS z poszczególnych platform. Aby uzyskać więcej informacji, zobacz [kontrolowanie Wybór elementu selektora](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Element zachowanie podczas zaznaczania w [ `Picker` ](xref:Xamarin.Forms.Picker) można dostosować w systemie iOS przy użyciu określonych platform. Aby uzyskać więcej informacji, zobacz [kontrolowanie zaznaczenie elementu selektora](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
 
-Poniższy przykład kodu pokazuje, jak pobrać [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) wartość właściwości z [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) w języku XAML:
+Poniższy przykład kodu pokazuje, jak pobrać [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) wartość właściwości z [ `Picker` ](xref:Xamarin.Forms.Picker) w XAML:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 var monkeyNameLabel = new Label();
 monkeyNameLabel.SetBinding(Label.TextProperty, new Binding("SelectedItem", source: picker));
 ```
 
-Ponadto program obsługi zdarzeń może być wykonana przy [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) generowane zdarzenie:
+Ponadto program obsługi zdarzeń może być wykonana przy [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) generowane zdarzenie:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -94,20 +94,20 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 }
 ```
 
-Ta metoda uzyskuje [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) wartość właściwości i korzysta z wartości można pobrać wybrany element z [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) kolekcji. To jest funkcjonalnym odpowiednikiem pobierania wybrany element z [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) właściwości. Należy pamiętać, że każdy element `ItemsSource` typ kolekcji to `object`i dlatego musi być rzutowane na `string` do wyświetlenia.
+Ta metoda uzyskuje [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) wartości właściwości i używa wartości, aby pobrać zaznaczony element w [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) kolekcji. To jest funkcjonalnym odpowiednikiem pobierania wybrany element z [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) właściwości. Należy pamiętać, że każdy element na `ItemsSource` typ kolekcji to `object`i dlatego musi być rzutowany `string` do wyświetlenia.
 
 > [!NOTE]
-> A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) mogą być inicjowane można wyświetlić określonego elementu, ustawiając [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) lub [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) właściwości. Jednak należy ustawić te właściwości po inicjowanie [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) kolekcji.
+> A [ `Picker` ](xref:Xamarin.Forms.Picker) może być inicjowany do wyświetlania określonego elementu, ustawiając [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) lub [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) właściwości. Jednak należy ustawić te właściwości po inicjowanie [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) kolekcji.
 
-## <a name="populating-a-picker-with-data-using-data-binding"></a>Wypełnianie selektora z danymi przy użyciu powiązanie danych
+## <a name="populating-a-picker-with-data-using-data-binding"></a>Wypełnianie selektora z danymi przy użyciu powiązania danych
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) można również wypełniać za pomocą danych przy użyciu wiązania danych można powiązać jej [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) właściwości `IList` kolekcji. W języku XAML jest to osiągane z [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) — rozszerzenie znaczników:
+A [ `Picker` ](xref:Xamarin.Forms.Picker) można również wypełnić przy użyciu danych za pomocą powiązania danych można powiązać jej [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) właściwość `IList` kolekcji. W XAML jest to osiągane przy użyciu [ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension) — rozszerzenie znaczników:
 
 ```xaml
 <Picker Title="Select a monkey" ItemsSource="{Binding Monkeys}" ItemDisplayBinding="{Binding Name}" />
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey" };
@@ -115,7 +115,7 @@ picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.ItemDisplayBinding = new Binding("Name");
 ```
 
-[ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) Wiąże danych właściwości `Monkeys` właściwości modelu widoku połączone, która zwraca `IList<Monkey>` kolekcji. Poniższy kod przedstawia przykład `Monkey` klasy, która zawiera cztery właściwości:
+[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) Wiąże danych właściwości `Monkeys` właściwości modelu połączone widoku, który zwraca `IList<Monkey>` kolekcji. Poniższy kod przedstawia przykład `Monkey` klasy, która zawiera cztery właściwości:
 
 ```csharp
 public class Monkey
@@ -127,11 +127,11 @@ public class Monkey
 }
 ```
 
-Podczas wiązania z listy obiektów, [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) należy dowiedzieć się, które właściwości do wyświetlenia z każdego obiektu. Jest to osiągane przez ustawienie [ `ItemDisplayBinding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemDisplayBinding/) właściwości wymaganej właściwości z każdego obiektu. W przykładach kodu `Picker` jest ustawiony na wyświetlanie każdego `Monkey.Name` wartości właściwości.
+Podczas tworzenia wiązania do listy obiektów, [ `Picker` ](xref:Xamarin.Forms.Picker) należy dowiedzieć się, których właściwość, aby wyświetlić z każdego obiektu. Jest to osiągane przez ustawienie [ `ItemDisplayBinding` ](xref:Xamarin.Forms.Picker.ItemDisplayBinding) właściwości wymaganej właściwości z każdego obiektu. W przykładach kodu `Picker` jest ustawiony na wyświetlanie każdego `Monkey.Name` wartości właściwości.
 
-### <a name="responding-to-item-selection"></a>Odpowiada na zaznaczanie elementów
+### <a name="responding-to-item-selection"></a>Odpowiadanie na wybór elementu
 
-Powiązanie danych może służyć do ustawioną obiektu [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) wartość właściwości, gdy zmienia:
+Powiązanie danych może służyć do ustaw obiekt do [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) wartości właściwości po jej zmianie:
 
 ```xaml
 <Picker Title="Select a monkey"
@@ -144,7 +144,7 @@ Powiązanie danych może służyć do ustawioną obiektu [ `SelectedItem` ](http
 <Label Text="{Binding SelectedMonkey.Details}" ... />
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey" };
@@ -165,21 +165,21 @@ var detailsLabel = new Label();
 detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 ```
 
-[ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) Wiąże danych właściwości `SelectedMonkey` właściwości modelu połączonych widoku, który jest typu `Monkey`. W związku z tym, gdy użytkownik wybierze element [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), `SelectedMonkey` właściwość zostanie ustawiona do wybranego `Monkey` obiektu. `SelectedMonkey` Dane obiektu są wyświetlane w interfejsie użytkownika przez [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) i [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) widoków:
+[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) Wiąże danych właściwości `SelectedMonkey` właściwości modelu połączone widoku, który jest typu `Monkey`. W związku z tym, gdy użytkownik wybierze element [ `Picker` ](xref:Xamarin.Forms.Picker), `SelectedMonkey` właściwość zostanie ustawiona do wybranych `Monkey` obiektu. `SelectedMonkey` Dane obiektu są wyświetlane w interfejsie użytkownika przez [ `Label` ](xref:Xamarin.Forms.Label) i [ `Image` ](xref:Xamarin.Forms.Image) widoki:
 
 ![](populating-itemssource-images/monkeys.png "Wybór elementu selektora")
 
 > [!NOTE]
-> Należy pamiętać, że [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedItem/) i [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) właściwości zarówno obsługuje powiązań dwukierunkowych domyślnie.
+> Należy pamiętać, że [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) i [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) obie właściwości domyślnie obsługują powiązania dwukierunkowego.
 
 ## <a name="summary"></a>Podsumowanie
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Widok jest formant wyboru z listy danych elementu tekstowego. W tym artykule wyjaśniono sposób wypełnienia `Picker` z danymi przez ustawienie [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) właściwości i odpowiadanie na wybór elementu przez użytkownika. Ta metoda, którą wprowadzono w platformy Xamarin.Forms 2.3.4, jest zalecane podejście do interakcji z `Picker`.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Widok jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule wyjaśniono, jak wypełnić `Picker` z danymi, ustawiając [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) właściwość i odpowiadania na wybór elementu przez użytkownika. To podejście, który został wprowadzony w interfejsie Xamarin.Forms 2.3.4, jest zalecane podejście do interakcji z `Picker`.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wersja demonstracyjna selektora (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [Próbnika demonstracyjna (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Małp aplikacji (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
-- [Selektor powiązania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [Selektor](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Selektor możliwej do wiązania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
+- [Selektor](xref:Xamarin.Forms.Picker)

@@ -1,26 +1,26 @@
 ---
-title: Dodawanie aparat rozpoznawania gestów gestu Tap
-description: W tym artykule opisano sposób użycia gestu naciśnij wykrywania naciśnij w aplikacji platformy Xamarin.Forms. Naciśnij wykrywania jest zaimplementowana w klasie TapGestureRecognizer.
+title: Dodawanie wzorca Tap aparat rozpoznawania gestów gestu
+description: W tym artykule wyjaśniono, jak używać gest wykrywania wzorca tap w aplikacji platformy Xamarin.Forms. Wykrywanie wzorca TAP jest implementowane za pomocą klasy TapGestureRecognizer.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: bbe4ca7a1080459b8aeb33640be5158b15e97715
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240668"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994857"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Dodawanie aparat rozpoznawania gestów gestu Tap
+# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Dodawanie wzorca Tap aparat rozpoznawania gestów gestu
 
-_Gest naciśnij służy do wykrywania naciśnij i jest realizowana za pomocą klasy TapGestureRecognizer._
+_Gest służy do wykrywania wzorca tap i jest implementowane za pomocą klasy TapGestureRecognizer._
 
 ## <a name="overview"></a>Omówienie
 
-Aby elementu interfejsu użytkownika aktywne z gestów tap, Utwórz [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) wystąpienia i obsługiwać [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) zdarzeń i Dodaj nowy aparat rozpoznawania gestów do [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kolekcji dla elementu interfejsu użytkownika. Poniższy kod przedstawia przykład `TapGestureRecognizer` dołączony do [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementu:
+Aby element interfejsu użytkownika możesz klikać z gest, Utwórz [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) wystąpienia i obsługiwać [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) zdarzeń i Dodaj nowy aparat rozpoznawania gestów do [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekcji na element interfejsu użytkownika. Poniższy kod przedstawia przykład `TapGestureRecognizer` dołączone do [ `Image` ](xref:Xamarin.Forms.Image) elementu:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +30,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-Domyślnie obraz będzie odpowiadać podsłuchu pojedynczego. Ustaw [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) właściwości oczekiwania dwukrotne (lub więcej podsłuchu, jeśli jest to wymagane).
+Domyślnie obraz, który będzie odpowiadać na podsłuchu jednego. Ustaw [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) właściwość czekać na dwukrotne wybranie (lub więcej podsłuchu w razie potrzeby).
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Gdy [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) ma wartość powyżej, program obsługi zdarzeń będzie można wykonywać tylko jeśli podsłuchu przeprowadzone w ciągu okres czasu (okres nie jest to konfigurowalne). Jeśli podsłuchu drugi (lub późniejszy) nie występują w tym okresie skutecznie są ignorowane i ponowne uruchomienie "naciśnij count".
+Gdy [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) ma wartość powyżej, program obsługi zdarzeń będzie można wykonać tylko jeśli podsłuchu przeprowadzone okres (okres to nie można konfigurować). Jeśli podsłuchu drugi (lub późniejszy) nie pojawiają się w tym okresie skutecznie są ignorowane i ponownym uruchomieniu "count naciśnij".
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Przy użyciu kodu Xaml
+## <a name="using-xaml"></a>Przy użyciu języka Xaml
 
-Aparat rozpoznawania gestów można dodać do formantu w języku Xaml, przy użyciu dołączone właściwości. Składni, aby dodać [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) do obrazu są wyświetlane poniżej (w tym przypadku definiowanie *naciśnij dwa razy* zdarzeń):
+Aparat rozpoznawania gestów można dodać do kontroli w języku Xaml przy użyciu dołączonych właściwości. Składnia służąca do dodawania [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) na obrazie poniżej pokazano (w tym przypadku definiowania *naciśnij dwukrotnie* zdarzeń):
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -54,7 +54,7 @@ Aparat rozpoznawania gestów można dodać do formantu w języku Xaml, przy uży
 </Image>
 ```
 
-Kod obsługi zdarzeń (w przykładowych) zwiększa licznik i zmienia się obraz z kolor czarny &amp; białym znakiem.
+Kod obsługi zdarzeń (w przykładzie) zwiększa licznik i będzie zmieniał zdjęcie od koloru do czerni &amp; białe.
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -70,9 +70,9 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 }
 ```
 
-## <a name="using-icommand"></a>Przy użyciu interfejsu ICommand
+## <a name="using-icommand"></a>Za pomocą interfejsu ICommand
 
-Użyj aplikacji korzystających ze wzorca Mvvm zwykle `ICommand` zamiast bezpośrednio okablowania się procedury obsługi zdarzeń. [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Ułatwia `ICommand` albo ustawiając powiązania w kodzie:
+Użyj aplikacji, które zazwyczaj używają wzorca Mvvm `ICommand` zamiast bezpośrednio łącząc się procedury obsługi zdarzeń. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Może łatwo obsługiwać `ICommand` albo przez ustawienie powiązania w kodzie:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -80,7 +80,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-lub przy użyciu kodu Xaml:
+lub przy użyciu języka Xaml:
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -92,7 +92,7 @@ lub przy użyciu kodu Xaml:
 </Image>
 ```
 
-Kompletny kod dla tego modelu widoku znajdują się w próbce. Odpowiednie `Command` poniżej przedstawiono szczegóły implementacji:
+Kompletny kod dla tego modelu widoku znajdują się w próbce. Odpowiedni `Command` poniżej przedstawiono szczegóły implementacji:
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -116,11 +116,11 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="summary"></a>Podsumowanie
 
-Gest naciśnij służy do wykrywania naciśnij i jest realizowana za pomocą [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) klasy. Można określić liczbę podsłuchu rozpoznawanie dwukrotnego (lub trzykrotne wybranie lub więcej naciska) zachowanie.
+Gest służy do wykrywania wzorca tap i jest implementowane za pomocą [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) klasy. Można określić liczbę podsłuchu rozpoznawanie dwukrotnego (lub naciśnij trzykrotnie lub więcej naciśnięcia) zachowanie.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [TapGesture (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [TapGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

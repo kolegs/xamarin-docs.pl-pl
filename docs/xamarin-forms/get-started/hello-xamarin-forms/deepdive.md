@@ -1,6 +1,6 @@
 ---
-title: Informacje temat dokładnego platformy Xamarin.Forms
-description: W tym artykule sprawdza, czy podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms. Tematy zawarte Anatomia aplikacji platformy Xamarin.Forms, architektura i podstawowe informacje na temat aplikacji oraz interfejsu użytkownika.
+title: Rozszerzony opis zestawu narzędzi Xamarin.Forms
+description: W tym artykule sprawdza podstawy tworzenia aplikacji przy użyciu zestawu narzędzi Xamarin.Forms. Omawiane tematy zawarte Anatomia aplikacji platformy Xamarin.Forms, architektury i podstawowe informacje dotyczące aplikacji i interfejsu użytkownika.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
@@ -8,57 +8,57 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269095"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996236"
 ---
-# <a name="xamarinforms-deep-dive"></a>Informacje temat dokładnego platformy Xamarin.Forms
+# <a name="xamarinforms-deep-dive"></a>Rozszerzony opis zestawu narzędzi Xamarin.Forms
 
-W [szybkiego startu platformy Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), Phoneword aplikacja została skompilowana. W tym artykule opisano, co został utworzony w celu uzyskania informacji na temat podstawowe informacje dotyczące sposobu działania aplikacji platformy Xamarin.Forms.
+W [szybkiego startu zestawu narzędzi Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), aplikacja Phoneword została skompilowana. W tym artykule opisano, jakie została zbudowana w celu uzyskania informacji na temat podstawowe informacje dotyczące sposobu działania aplikacji platformy Xamarin.Forms.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="introduction-to-visual-studio"></a>Wprowadzenie do programu Visual Studio
 
-Program Visual Studio jest zaawansowanym IDE firmy Microsoft. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, wraz z narzędzia do refaktoryzacji, przeglądarkę zestawu i integracji kodu źródłowego. Ten artykuł skupia się na temat używania niektórych podstawowych funkcji programu Visual Studio z platformą Xamarin wtyczki.
+Visual Studio to zaawansowane środowisko IDE firmy Microsoft. Zawiera funkcje, w pełni zintegrowane wizualnego projektanta, edytora tekstów, pełną za pomocą narzędzi refaktoryzacji, przeglądarka zestawów i integracji kodu źródłowego. Ten artykuł koncentruje się na temat korzystania z niektórych podstawowych funkcji programu Visual Studio za pomocą platformy Xamarin wtyczki.
 
-Program Visual Studio umożliwia organizowanie kodu w *rozwiązań* i *projekty*. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji, biblioteki obsługi aplikacji testu i więcej. Aplikacja Phoneword składa się z jedno rozwiązanie zawierające projekty czterech, jak pokazano na poniższym zrzucie ekranu.
+Program Visual Studio umożliwia organizowanie kodu w *rozwiązania* i *projektów*. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacja, obsługi biblioteki, aplikacja testowa i. Aplikacja Phoneword składa się z jednego rozwiązania zawierającego czterema projektami, jak pokazano na poniższym zrzucie ekranu.
 
 ![](deepdive-images/vs/solution.png "Eksplorator rozwiązań programu Visual Studio")
 
 Projekty są:
 
-- Phoneword — ten projekt jest .NET Standard projektu biblioteki, który przechowuje wszystkie udostępnione kodu i udostępnionych interfejsu użytkownika.
-- Phoneword.Android — ten projekt zawiera określonego kodu dla systemu Android i jest punkt wejścia dla aplikacji systemu Android.
-- Phoneword.iOS — ten projekt zawiera z systemem iOS kod i jest punkt wejścia dla aplikacji systemu iOS.
-- Phoneword.UWP — ten projekt zawiera kod systemu Windows platformy Uniwersalnej i jest punkt wejścia dla aplikacji platformy uniwersalnej systemu Windows.
+- Phoneword — ten projekt jest projekt biblioteki .NET Standard, który przechowuje wszystkie wspólny kod i Współdzielony interfejs użytkownika.
+- Phoneword.Android — ten projekt zawiera kodu dla systemu Android określonych i jest punktem wejścia dla aplikacji systemu Android.
+- Phoneword.iOS — ten projekt zawiera konkretnego kodu dla systemu iOS i jest punkt wejścia dla aplikacji dla systemu iOS.
+- Phoneword.UWP — ten projekt zawiera konkretny kod uniwersalnej platformy Windows (UWP) i jest punktem wejścia dla aplikacji platformy uniwersalnej systemu Windows.
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomia aplikacji platformy Xamarin.Forms
 
 Poniższy zrzut ekranu przedstawia zawartość Phoneword .NET Standard projektu biblioteki w programie Visual Studio:
 
-![](deepdive-images/vs/net-standard-project.png "Zawartość projektu standardowego .NET Phoneword")
+![](deepdive-images/vs/net-standard-project.png "Zawartość standardowy projekt .NET Phoneword")
 
-Projekt posiada **zależności** węzła, który zawiera **NuGet** i **SDK** węzłów. **NuGet** węzeł zawiera pakiet NuGet platformy Xamarin.Forms, który został dodany do projektu i **SDK** zawiera węzeł `NETStandard.Library` metapackage, który odwołuje się do pełnego zestawu pakietów NuGet definiującą .NET Standard.
+Projekt ma **zależności** węzeł, który zawiera **NuGet** i **SDK** węzłów. **NuGet** węzeł zawiera pakiet Xamarin.Forms NuGet, który został dodany do projektu, a **SDK** zawiera węzeł `NETStandard.Library` meta Microsoft.aspnetcore.all, który odwołuje się do pełnego zestawu pakietów NuGet definiują .NET Standard.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Wprowadzenie do programu Visual Studio dla komputerów Mac
 
-Visual Studio for Mac jest bezpłatne, open source IDE podobne do programu Visual Studio. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, wraz z narzędzia do refaktoryzacji, przeglądarkę zestawu i integracji kodu źródłowego. Aby uzyskać więcej informacji na temat programu Visual Studio dla komputerów Mac, zobacz [wprowadzenie do programu Visual Studio for Mac](/visualstudio/mac/).
+Program Visual Studio for Mac to bezpłatne, typu open-source środowisko IDE podobne do programu Visual Studio. Zawiera funkcje, w pełni zintegrowane wizualnego projektanta, edytora tekstów, pełną za pomocą narzędzi refaktoryzacji, przeglądarka zestawów i integracji kodu źródłowego. Aby uzyskać więcej informacji na temat programu Visual Studio for Mac zobacz [wprowadzenie do programu Visual Studio dla komputerów Mac](/visualstudio/mac/).
 
-Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowania *rozwiązań* i *projekty*. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji, biblioteki obsługi aplikacji testu i więcej. Aplikacja Phoneword składa się z jedno rozwiązanie zawierające projekty trzy, jak pokazano na poniższym zrzucie ekranu.
+Program Visual Studio for Mac następuje rozwiązanie programu Visual Studio kod do organizowania *rozwiązania* i *projektów*. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacja, obsługi biblioteki, aplikacja testowa i. Aplikacja Phoneword składa się z jednego rozwiązania, zawierający trzy projekty, jak pokazano na poniższym zrzucie ekranu.
 
-![](deepdive-images/xs/solution.png "Visual Studio for Mac okienko rozwiązania")
+![](deepdive-images/xs/solution.png "Program Visual Studio for Mac okienko rozwiązania")
 
 Projekty są:
 
-- Phoneword — ten projekt jest .NET Standard projektu biblioteki, który przechowuje wszystkie udostępnione kodu i udostępnionych interfejsu użytkownika.
-- Phoneword.Droid — ten projekt zawiera określonego kodu dla systemu Android i jest punkt wejścia dla aplikacji systemu Android.
-- Phoneword.iOS — ten projekt zawiera z systemem iOS kod i jest punkt wejścia dla aplikacji systemu iOS.
+- Phoneword — ten projekt jest projekt biblioteki .NET Standard, który przechowuje wszystkie wspólny kod i Współdzielony interfejs użytkownika.
+- Phoneword.Droid — ten projekt zawiera kodu dla systemu Android określonych i jest punktem wejścia dla aplikacji systemu Android.
+- Phoneword.iOS — ten projekt zawiera konkretnego kodu dla systemu iOS i jest punkt wejścia dla aplikacji systemu iOS.
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomia aplikacji platformy Xamarin.Forms
 
@@ -66,38 +66,38 @@ Poniższy zrzut ekranu przedstawia zawartość Phoneword .NET Standard projektu 
 
 ![](deepdive-images/xs/library-project.png "Zawartość projektu biblioteki standardowej .NET Phoneword")
 
-Projekt posiada **zależności** węzła, który zawiera **NuGet** i **SDK** węzłów. **NuGet** węzeł zawiera pakiet NuGet platformy Xamarin.Forms, który został dodany do projektu i **SDK** zawiera węzeł `NETStandard.Library` metapackage, który odwołuje się do pełnego zestawu pakietów NuGet definiującą .NET Standard.
+Projekt ma **zależności** węzeł, który zawiera **NuGet** i **SDK** węzłów. **NuGet** węzeł zawiera pakiet Xamarin.Forms NuGet, który został dodany do projektu, a **SDK** zawiera węzeł `NETStandard.Library` meta Microsoft.aspnetcore.all, który odwołuje się do pełnego zestawu pakietów NuGet definiują .NET Standard.
 
 -----
 
 Projekt zawiera również liczbę plików:
 
-- **App.XAML** — kod znaczników XAML dla `App` klasy, która definiuje słownik zasobów dla aplikacji.
-- **App.XAML.cs** — CodeBehind dla `App` klasy, która odpowiada za tworzenie wystąpień pierwszej strony, który będzie wyświetlany przez aplikację na każdej platformie oraz na potrzeby obsługi zdarzeń cyklu życia aplikacji.
-- **IDialer.cs** — `IDialer` interfejs, który określa, że `Dial` metoda musi być dostarczona przez wszystkie klasy implementującej.
-- **MainPage.xaml** — kod znaczników XAML dla `MainPage` klasy, która definiuje interfejsu użytkownika dla strony wyświetlany po uruchomieniu aplikacji.
-- **MainPage.xaml.cs** — CodeBehind dla `MainPage` klasy, która zawiera logiki biznesowej, które jest wykonywane, gdy użytkownik użyje strony.
-- **PhoneTranslator.cs** — logiki biznesowej, które jest odpowiedzialny za konwertowanie phone word na numer telefonu, który jest wywoływany z **MainPage.xaml.cs**.
+- **App.XAML** — kod znaczników dla XAML `App` klasy, która definiuje słownik zasobów dla aplikacji.
+- **App.XAML.cs** — CodeBehind dla `App` klasy, która jest odpowiedzialny za utworzenie wystąpienia pierwsza strona, która będzie wyświetlana przez aplikację na każdej platformie i obsługa zdarzeń cyklu życia aplikacji.
+- **IDialer.cs** — `IDialer` interfejs, który określa, że `Dial` musi być podana metoda przez wszystkie klasy implementującej.
+- **MainPage.xaml** — kod znaczników dla XAML `MainPage` klasy, która definiuje interfejsu użytkownika dla strony wyświetlane po uruchomieniu aplikacji.
+- **MainPage.xaml.cs** — CodeBehind dla `MainPage` klasy, która zawiera logikę biznesową, która jest wykonywany, gdy użytkownik wchodzi w interakcję ze stroną.
+- **PhoneTranslator.cs** — logikę biznesową, która jest odpowiedzialna za konwertowanie word telefonu na numer telefonu, który jest wywoływany z **MainPage.xaml.cs**.
 
-Aby uzyskać więcej informacji na temat Anatomia aplikacji platformy Xamarin.iOS, zobacz [Anatomia aplikacji platformy Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Aby uzyskać więcej informacji na temat Anatomia aplikacji platformy Xamarin.Android, zobacz [Anatomia aplikacji platformy Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.iOS, zobacz [Anatomia aplikacji platformy Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.Android, zobacz [Anatomia aplikacji platformy Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
-## <a name="architecture-and-application-fundamentals"></a>Architektura i podstawowe informacje dotyczące aplikacji
+## <a name="architecture-and-application-fundamentals"></a>Architektura i podstawy aplikacji
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Aplikacji platformy Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji i platform. Udostępniony kod jest zwykle umieszczane w bibliotece .NET Standard, a aplikacje specyficzne dla platformy zużyć udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
+Aplikacja Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji dla wielu platform. Udostępnionego kodu źródłowego zwykle jest umieszczany w biblioteki .NET Standard, a aplikacje specyficzne dla platformy zużyć udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
 
 ![](deepdive-images/vs/architecture.png "Architektura Phoneword")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aplikacji platformy Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji i platform. Udostępniony kod jest zwykle umieszczane w bibliotece .NET Standard, a aplikacje specyficzne dla platformy zużyć udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
+Aplikacja Xamarin.Forms została zaprojektowana w taki sam sposób jak tradycyjnych aplikacji dla wielu platform. Udostępnionego kodu źródłowego zwykle jest umieszczany w biblioteki .NET Standard, a aplikacje specyficzne dla platformy zużyć udostępnionego kodu. Na poniższym diagramie przedstawiono omówienie tej relacji dla aplikacji Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Architektura Phoneword")
 
 -----
 
-Aby zmaksymalizować ponowne użycie kodu uruchamiania, aplikacje platformy Xamarin.Forms mają jedną klasę o nazwie `App` jest odpowiedzialny za tworzenie wystąpień pierwszej strony, który będzie wyświetlany przez aplikację na każdej platformie, jak pokazano w poniższym przykładzie:
+Aby zmaksymalizować ponowne użycie kodu uruchamiania, aplikacje Xamarin.Forms mają jedną klasę o nazwie `App` odpowiada podczas tworzenia wystąpienia pierwsza strona, która będzie wyświetlana przez aplikację na każdej platformie, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 using Xamarin.Forms;
@@ -118,13 +118,13 @@ namespace Phoneword
 }
 ```
 
-Ten kod ustawia `MainPage` właściwość `App` klasę, aby nowe wystąpienie klasy [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) klasy. Ponadto [ `XamlCompilation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/) atrybutu włącza kompilatora XAML, dzięki czemu XAML jest kompilowany bezpośrednio do język pośredni. Aby uzyskać więcej informacji, zobacz [kompilacji XAML](~/xamarin-forms/xaml/xamlc.md).
+Ten kod ustawia `MainPage` właściwość `App` nowe wystąpienie klasy [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) klasy. Ponadto [ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) atrybut włącza kompilator XAML, dzięki czemu XAML jest skompilowany bezpośrednio w języku pośrednim. Aby uzyskać więcej informacji, zobacz [kompilacji XAML](~/xamarin-forms/xaml/xamlc.md).
 
-## <a name="launching-the-application-on-each-platform"></a>Uruchamianie aplikacji na każdej platformie
+## <a name="launching-the-application-on-each-platform"></a>Trwa uruchamianie aplikacji na każdej platformie
 
 ### <a name="ios"></a>iOS
 
-Aby uruchomić stronę początkową platformy Xamarin.Forms w systemie iOS, zawiera projekt Phoneword.iOS `AppDelegate` klasy, która dziedziczy `FormsApplicationDelegate` klasy, jak pokazano w poniższym przykładzie:
+Aby uruchomić stronę początkową Xamarin.Forms w systemie iOS, zawiera projekt Phoneword.iOS `AppDelegate` klasy dziedziczącej z klasy `FormsApplicationDelegate` klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 namespace Phoneword.iOS
@@ -142,11 +142,11 @@ namespace Phoneword.iOS
 }
 ```
 
-`FinishedLaunching` Zastąpienie inicjuje framework platformy Xamarin.Forms przez wywołanie metody `Init` metody. Powoduje to implementacja specyficzne dla systemu iOS platformy Xamarin.Forms do załadowania w aplikacji, zanim kontroler widoku głównego jest ustawiony przez wywołanie `LoadApplication` metody.
+`FinishedLaunching` Zastąpienie jest inicjowana w ramach zestawu narzędzi Xamarin.Forms, wywołując `Init` metody. Powoduje to, że implementacja specyficzne dla systemu iOS zestawu narzędzi Xamarin.Forms do załadowania w aplikacji, zanim kontroler widoku głównego jest ustawiana przez wywołanie metody `LoadApplication` metody.
 
 ### <a name="android"></a>Android
 
-Aby uruchomić stronę początkową platformy Xamarin.Forms w systemie Android, Phoneword.Droid projekt zawiera kod, który tworzy `Activity` z `MainLauncher` atrybutu z działaniem dziedziczących `FormsAppCompatActivity` klasy, jak pokazano w poniższym przykładzie kodu:
+Aby uruchomić stronę początkową Xamarin.Forms w systemie Android, projekt Phoneword.Droid zawiera kod, który tworzy `Activity` z `MainLauncher` atrybutu za pomocą działania dziedziczenie z `FormsAppCompatActivity` klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 namespace Phoneword.Droid
@@ -174,11 +174,11 @@ namespace Phoneword.Droid
 }
 ```
 
-`OnCreate` Zastąpienie inicjuje framework platformy Xamarin.Forms przez wywołanie metody `Init` metody. Powoduje to implementacja specyficzne dla systemu Android platformy Xamarin.Forms, aby można było załadować aplikacji przed załadowaniem aplikacji platformy Xamarin.Forms. Ponadto `MainActivity` klasy zawiera odwołanie do samej siebie w `Instance` właściwości. `Instance` Właściwości jest znana jako lokalny kontekst i jest wywoływany przez `PhoneDialer` klasy.
+`OnCreate` Zastąpienie jest inicjowana w ramach zestawu narzędzi Xamarin.Forms, wywołując `Init` metody. Powoduje to implementacji specyficznych dla systemu Android Xamarin.Forms, aby można było załadować aplikację przed załadowaniem aplikacji platformy Xamarin.Forms. Ponadto `MainActivity` klasa przechowuje odwołania do samego siebie w `Instance` właściwości. `Instance` Właściwość jest znany jako kontekstu lokalnego i jest wywoływany przez `PhoneDialer` klasy.
 
 ## <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
-W aplikacjach systemu Windows platformy Uniwersalnej `Init` metodę, która inicjuje framework platformy Xamarin.Forms jest wywoływany z `App` klasy:
+W aplikacjach Windows platformy Uniwersalnej `Init` z wywoływana jest metoda, która inicjuje w ramach zestawu narzędzi Xamarin.Forms `App` klasy:
 
 ```csharp
 Xamarin.Forms.Forms.Init (e);
@@ -189,7 +189,7 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 }
 ```
 
-Powoduje to implementacja specyficzne dla platformy uniwersalnej systemu Windows platformy Xamarin.Forms do załadowania w aplikacji. Strona początkowa platformy Xamarin.Forms jest uruchamiana przez `MainPage` klasy, jak pokazano w poniższym przykładzie:
+Powoduje to implementacja specyficzne dla platformy uniwersalnej systemu Windows zestawu narzędzi Xamarin.Forms do załadowania w aplikacji. Strona początkowa Xamarin.Forms jest uruchamiany przez `MainPage` klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 namespace Phoneword.UWP
@@ -205,23 +205,23 @@ namespace Phoneword.UWP
 }
 ```
 
-Ładowania aplikacji platformy Xamarin.Forms z `LoadApplication` metody.
+Jest załadowana w aplikacji platformy Xamarin.Forms `LoadApplication` metody.
 
 > [!NOTE]
-> Uniwersalnych aplikacji platformy systemu Windows (UWP) może być utworzonego za pomocą platformy Xamarin.Forms, ale tylko w systemie Windows za pomocą programu Visual Studio.
+> Uniwersalnych aplikacji dla platformy Windows (UWP) może być utworzone przy użyciu zestawu narzędzi Xamarin.Forms, ale tylko za pomocą programu Visual Studio na Windows.
 
 ## <a name="user-interface"></a>Interfejs użytkownika
 
-Istnieją cztery grupy formantu używany do tworzenia interfejsu użytkownika aplikacji platformy Xamarin.Forms.
+Istnieją cztery grupy w główną kontrolką użyty do utworzenia interfejsu użytkownika aplikacji platformy Xamarin.Forms.
 
-1. **Strony** — stron platformy Xamarin.Forms reprezentują ekranów i platform aplikacji mobilnej. Używa aplikacji Phoneword [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) klasy do wyświetlenia na jednym ekranie. Aby uzyskać więcej informacji na temat stron, zobacz [stron platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Układy** — układów platformy Xamarin.Forms są używane do tworzenia widoków w struktury logicznej kontenerów. Używa aplikacji Phoneword [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) klasy rozmieszczanie formantów w poziomie stosu. Aby uzyskać więcej informacji na temat układów, zobacz [układów platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Widoki** — widoki platformy Xamarin.Forms są formanty wyświetlane w interfejsie użytkownika, takie jak etykiety, przycisków i pola tekstowe wpis. Używa aplikacji Phoneword [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), i [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) kontrolki. Aby uzyskać więcej informacji o widokach, zobacz [widoków platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
-1. **Komórki** — platformy Xamarin.Forms komórek są specjalne elementy używany do elementów na liście i opisano, w jaki sposób ma być rysowany każdy element na liście. Phoneword, który nie powoduje aplikacji używać żadnych komórek. Aby uzyskać więcej informacji na temat komórek, zobacz [komórek platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/cells.md).
+1. **Strony** — strony zestawu narzędzi Xamarin.Forms reprezentują ekrany aplikacji mobilnych dla wielu platform. Aplikacja Phoneword używa [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) klasy do wyświetlenia na jednym ekranie. Aby uzyskać więcej informacji dotyczących stron, zobacz [strony zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
+1. **Układy** — układy platformy Xamarin.Forms to kontenery, które umożliwiają tworzenie widoków w logicznej struktury. Aplikacja Phoneword używa [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) klasy, aby rozmieścić formanty w stosie poziomej. Aby uzyskać więcej informacji na temat układów, zobacz [układy platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
+1. **Widoki** — Xamarin.Forms widoki są formanty wyświetlane w interfejsie użytkownika, takie jak etykiety, przyciski i pola wprowadzania tekstu. Aplikacja Phoneword używa [ `Label` ](xref:Xamarin.Forms.Label), [ `Entry` ](xref:Xamarin.Forms.Entry), i [ `Button` ](xref:Xamarin.Forms.Button) kontrolki. Aby uzyskać więcej informacji o widokach, zobacz [widoków Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
+1. **Komórki** — Xamarin.Forms komórek są specjalne elementy używane na potrzeby elementów na liście i opisano, jak ma być rysowany każdy element na liście. Użyj Phoneword, których aplikacja nie wprowadzać żadnych komórek. Aby uzyskać więcej informacji na temat komórek, zobacz [komórki zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/cells.md).
 
-W czasie wykonywania każdego formantu zostanie zamapowane na jej odpowiednik macierzystego, czyli, co będzie renderowany.
+W czasie wykonywania każdy formant zostanie zamapowane do równoważnik natywnych to, co będzie renderowana.
 
-Po uruchomieniu aplikacji Phoneword na dowolnej platformie Wyświetla jednym ekranie umożliwiająca [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) w platformy Xamarin.Forms. A `Page` reprezentuje *grupie widoków* w systemie Android *kontrolera widoku* w systemie iOS, czy też *strony* na platformy uniwersalnej systemu Windows. Aplikacja Phoneword również tworzy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) obiekt, który reprezentuje `MainPage` klasy, których znaczników XAML jest wyświetlana w poniższym przykładzie kodu:
+Po uruchomieniu aplikacji Phoneword na dowolnej platformie wyświetla pojedynczy ekran, który odpowiada [ `Page` ](xref:Xamarin.Forms.Page) w interfejsie Xamarin.Forms. A `Page` reprezentuje *grupie widoków* w systemie Android, *kontrolera widoku* w systemie iOS, czy też *strony* na platformie Universal Windows. Również tworzy wystąpienie aplikacji Phoneword [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) obiekt, który reprezentuje `MainPage` klasy, w których znaczników XAML jest wyświetlana w poniższym przykładzie kodu:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +238,13 @@ Po uruchomieniu aplikacji Phoneword na dowolnej platformie Wyświetla jednym ekr
 </ContentPage>
 ```
 
-`MainPage` Klasy używa [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) formantu automatyczne rozmieszczanie formantów na ekranie, niezależnie od rozmiaru ekranu. Każdy element podrzędny jest rozmieszczanych jeden po drugim pionie w kolejności, w której są dodawane. `StackLayout` Formant zawiera [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) formantu do wyświetlania tekstu na stronie [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) formantu, aby akceptować dane wejściowe użytkownika tekstową, a dwa [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) formanty używane do wykonywania kodu w odpowiedzi na zdarzenia touch.
+`MainPage` Klasy używa [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) formantu, aby automatycznie rozmieścić formanty na ekranie, niezależnie od rozmiaru ekranu. Każdy element podrzędny jest pozycjonowane jedna po drugiej w pionie w kolejności, w której są dodawane. `StackLayout` Kontrolka zawiera [ `Label` ](xref:Xamarin.Forms.Label) sterowania do wyświetlania tekstu na stronie [ `Entry` ](xref:Xamarin.Forms.Entry) formantu, aby akceptować dane wejściowe użytkownika tekstowych, a dwa [ `Button` ](xref:Xamarin.Forms.Button) formantów służących do wykonywania kodu w odpowiedzi na zdarzenia dotykowe.
 
-Aby uzyskać więcej informacji na temat XAML w platformy Xamarin.Forms, zobacz [podstawy XAML platformy Xamarin.Forms](~/xamarin-forms/xaml/xaml-basics/index.md).
+Aby uzyskać więcej informacji na temat XAML w interfejsie Xamarin.Forms, zobacz [podstawy XAML zestawu narzędzi Xamarin.Forms](~/xamarin-forms/xaml/xaml-basics/index.md).
 
-### <a name="responding-to-user-interaction"></a>Odpowiada na żądania interakcji z użytkownikiem
+### <a name="responding-to-user-interaction"></a>Reagowanie na interakcję z użytkownikiem
 
-Obiekt zdefiniowany w języku XAML mogą wyzwalać zdarzenia jest obsługiwany w pliku CodeBehind. Poniższy kod przedstawia przykład `OnTranslate` w CodeBehind dla metody `MainPage` klasy, która jest wykonywana w odpowiedzi na [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) zdarzenie wywołujące na *Przetłumacz* przycisk.
+Obiekt zdefiniowany w XAML może wywołać zdarzenie, które odbywa się w pliku związanym z kodem. Poniższy kod przedstawia przykład `OnTranslate` metody w CodeBehind dla `MainPage` klasy, która jest wykonywana w odpowiedzi na [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) zdarzenie na *Translate* przycisk.
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -260,9 +260,9 @@ void OnTranslate(object sender, EventArgs e)
 }
 ```
 
-`OnTranslate` Metoda tłumaczy phoneword do odpowiedniego numeru telefonu, a w odpowiedzi, ustawia właściwości przycisk wywołania. Plik CodeBehind dla klasy XAML można uzyskać dostępu do obiektu zdefiniowany w języku XAML, przy użyciu nazwy przypisanej do niego z `x:Name` atrybutu. Wartość przypisana do tego atrybutu ma te same zasady, jak C# zmienne, musi rozpoczynać się od litery lub podkreślenia i zawierać nie spacji osadzonych.
+`OnTranslate` Metoda tłumaczy phoneword w odpowiadającym im numerem telefonu, a w odpowiedzi, ustawia właściwości przycisku wywołania. Plik CodeBehind dla klasy XAML ma dostęp do obiektu, zdefiniowane w XAML przy użyciu nazwy, przypisane do niego za pomocą `x:Name` atrybutu. Wartość przypisana do tego atrybutu ma te same reguły jako języka C# zmienne, w tym jego musi zaczynać się literą lub znakiem podkreślenia i może zawierać spacji osadzonych.
 
-Okablowanie przycisku Przetłumacz `OnTranslate` metody występuje w kodzie XAML dla `MainPage` klasy:
+Okablowanie przycisku translate `OnTranslate` metoda występuje w znaczniku XAML dla `MainPage` klasy:
 
 ```xaml
 <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
@@ -270,15 +270,15 @@ Okablowanie przycisku Przetłumacz `OnTranslate` metody występuje w kodzie XAML
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Dodatkowe założenia Phoneword
 
-Phoneword aplikacji dla platformy Xamarin.Forms wprowadziła kilka pojęć, które nie zostały omówione w tym artykule. Pojęcia te obejmują:
+Aplikacja Phoneword dla platformy Xamarin.Forms wprowadziła kilka koncepcji, które nie zostały omówione w tym artykule. Te pojęcia obejmują:
 
-- Włączanie i wyłączanie przycisków. A [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) może być włączony lub wyłączony, zmieniając jej [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) właściwości. Na przykład poniższy kod przykładowy wyłącza `callButton`:
+- Włączanie i wyłączanie przycisków. A [ `Button` ](xref:Xamarin.Forms.Button) mogą być włączane lub wyłączane, zmieniając jego [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) właściwości. Na przykład, poniższy kod przykładowy wyłącza `callButton`:
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- Wyświetlanie okna dialogowego alertu. Gdy użytkownik naciśnie wywołanie **przycisk** pokazuje aplikacji Phoneword *okna dialogowego alertu* z opcją Umieść lub anulować wywołania. [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) Metoda służy do tworzenia okna dialogowego, jak pokazano w poniższym przykładzie:
+- Wyświetlanie okna dialogowego alertu. Gdy użytkownik naciśnie wywołanie **przycisk** pokazuje aplikacji Phoneword *okna dialogowego alertu* z możliwością umieścić lub anulować wywołanie. [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) Metoda jest używana do tworzenia okna dialogowego, jak pokazano w poniższym przykładzie kodu:
 
     ```csharp
     await this.DisplayAlert (
@@ -288,7 +288,7 @@ Phoneword aplikacji dla platformy Xamarin.Forms wprowadziła kilka pojęć, któ
             "No");
     ```
 
-- Uzyskiwanie dostępu do natywnego funkcji za pośrednictwem [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) klasy. Używa aplikacji Phoneword `DependencyService` klasę, aby rozwiązać `IDialer` interfejs do implementacji wybierania numeru telefonu specyficzne dla platformy, jak pokazano w poniższym przykładzie kodu z projektu Phoneword:
+- Dostęp do natywnych funkcji za pośrednictwem [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) klasy. Aplikacja Phoneword używa `DependencyService` klasy, aby rozwiązać `IDialer` współpracować w celu implementacji wybierania numeru telefonu specyficzne dla platformy, jak pokazano w poniższym przykładzie kodu z projektu Phoneword:
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -299,15 +299,15 @@ Phoneword aplikacji dla platformy Xamarin.Forms wprowadziła kilka pojęć, któ
     }
     ```
 
-  Aby uzyskać więcej informacji na temat [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) , zobacz [podczas uzyskiwania dostępu do funkcji natywnego za pośrednictwem DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+  Aby uzyskać więcej informacji na temat [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) klasy, zobacz [dostęp do natywnych funkcji za pośrednictwem DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-- Umieszczenie połączenie telefoniczne z adresem URL. Aplikacja Phoneword używa `OpenURL` można uruchomić aplikacji phone systemu. Adres URL składa się z `tel:` prefiks następuje numer telefonu ma być wywoływana, jak pokazano w poniższym przykładzie kodu z projektu iOS:
+- Wprowadzenie do rozmowy telefonicznej z adresem URL. Aplikacja Phoneword używa `OpenURL` można uruchomić aplikację systemu. Adres URL składa się z `tel:` prefiks następuje numer telefonu do wywołania, jak pokazano w poniższym przykładzie kodu z projektu systemu iOS:
 
     ```csharp
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- Dostosowywanie układu platformy. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Klasa umożliwia deweloperom dostosowywać układ aplikacji i funkcje na podstawie na platformie, jak pokazano w poniższym przykładzie kodu, który używa innego [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)wartości na różnych platformach, aby poprawnie wyświetlić stronę:
+- Dostosowywanie układu platformy. [ `Device` ](xref:Xamarin.Forms.Device) Klasy pozwala deweloperom na dostosowywanie układu aplikacji i funkcjonalności na poszczególnych platform, jak pokazano w poniższym przykładzie kodu, który używa innego [ `Padding` ](xref:Xamarin.Forms.Layout.Padding)wartości na różnych platformach, aby poprawnie wyświetlić każdą stronę:
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >
@@ -321,16 +321,16 @@ Phoneword aplikacji dla platformy Xamarin.Forms wprowadziła kilka pojęć, któ
     </ContentPage>
     ```
 
-  Aby uzyskać więcej informacji na temat ulepszeń platformy, zobacz [klasę urządzeń](~/xamarin-forms/platform/device.md).
+  Aby uzyskać więcej informacji na temat ulepszeń platformy, zobacz [klasę urządzeń pamięci](~/xamarin-forms/platform/device.md).
 
 ## <a name="testing-and-deployment"></a>Testowanie i wdrażanie
 
-Visual Studio for Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. Debugowanie aplikacji jest typowe część cyklu programistycznym z aplikacji i ułatwia diagnozowanie problemów z kodem. Aby uzyskać więcej informacji, zobacz [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), i [dane wyjściowe do okna dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Visual Studio dla komputerów Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. Debugowanie aplikacji jest wspólne część cyklu życia tworzenia aplikacji i ułatwia diagnozowanie problemów z kodem. Aby uzyskać więcej informacji, zobacz [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), i [informacji wyjściowych w oknie dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
 
-Symulatorów są dobrym miejscem do rozpoczęcia wdrażania i testowania aplikacji i funkcji funkcja przydatna przy testowaniu aplikacji. Jednak użytkownicy nie będą korzystać końcowego aplikacji w symulatorze, dzięki aplikacji powinny być badane na urządzeniach prawdziwe, wczesne i często. Aby uzyskać więcej informacji dotyczących obsługi urządzenia z systemem iOS, zobacz [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md). Aby uzyskać więcej informacji dotyczących obsługi urządzenia z systemem Android, zobacz [ustawić się urządzenia na potrzeby programowania](~/android/get-started/installation/set-up-device-for-development.md).
+Symulatorów są dobrym miejscem do rozpoczęcia wdrażania i testowania aplikacji, a funkcji przydatnych funkcji do testowania aplikacji. Jednak użytkownicy nie zużyje końcowy aplikacji w symulatorze, więc powinien zostać przetestowany aplikacje na prawdziwych urządzeniach, wcześnie i często. Aby uzyskać więcej informacji na temat inicjowania obsługi urządzeń z systemem iOS, zobacz [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md). Aby uzyskać więcej informacji na temat inicjowania obsługi urządzeń z systemem Android, zobacz [Ustaw się urządzenia na potrzeby programowania](~/android/get-started/installation/set-up-device-for-development.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten artykuł zawiera zbadać podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms. Tematy zawarte Anatomia aplikacji platformy Xamarin.Forms, architektura i podstawowe informacje na temat aplikacji oraz interfejsu użytkownika.
+Ten artykuł ma zbadać podstawy tworzenia aplikacji przy użyciu zestawu narzędzi Xamarin.Forms. Omawiane tematy zawarte Anatomia aplikacji platformy Xamarin.Forms, architektury i podstawowe informacje dotyczące aplikacji i interfejsu użytkownika.
 
-W następnej sekcji tego przewodnika aplikacji zostanie rozszerzony uwzględnienie wielu ekranów, aby zapoznać się z bardziej zaawansowanych architektura platformy Xamarin.Forms i pojęcia.
+W następnej części tego przewodnika, aplikacja zostanie rozszerzony obejmujący wiele ekranów, aby zapoznać się z bardziej zaawansowanego zestawu narzędzi Xamarin.Forms architektury i pojęcia.

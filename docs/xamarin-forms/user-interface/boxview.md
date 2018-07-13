@@ -1,55 +1,55 @@
 ---
-title: BoxView platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia kolorowe prostokąt dla dekoracji, grafiki i interakcji w aplikacji platformy Xamarin.Forms.
+title: BoxView zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak używać jako kolorowy prostokąt dla dekoracji, grafikę i interakcję w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 0a99845b23ee32a00a6894ef60988e61e361805e
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209248"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997055"
 ---
-# <a name="xamarinforms-boxview"></a>BoxView platformy Xamarin.Forms
+# <a name="xamarinforms-boxview"></a>BoxView zestawu narzędzi Xamarin.Forms
 
-[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) renderuje prosty prostokąt o określonej szerokości, wysokości i kolor. Można użyć `BoxView` dekoracji podstawowe grafiki i interakcji z użytkownikiem za pośrednictwem touch.
+[`BoxView`](xref:Xamarin.Forms.BoxView) renderuje prosty prostokąt określona szerokość, wysokość i kolor. Możesz użyć `BoxView` dekoracji podstawowe grafiki i interakcji z użytkownikiem za pośrednictwem touch.
 
-Ponieważ platformy Xamarin.Forms nie dysponuje systemem grafiki wbudowanych wektor `BoxView` pomaga kompensacji. Niektóre programy przykładowe opisane w tym artykule `BoxView` do renderowania grafiki. `BoxView` Można o rozmiarze, aby przypominały wiersza o określonej szerokości i grubości, a następnie obracać przy użyciu dowolnego kąta `Rotation` właściwości.
+Ponieważ Xamarin.Forms nie ma wbudowanych wektor grafiki systemu, `BoxView` pomaga w celu kompensacji. Niektóre z przykładowych programów opisane w tym artykule `BoxView` do renderowania grafiki. `BoxView` Można rozmiar tak, aby przypominały wiersza o określonej szerokości i grubości, a następnie obracać o dowolnym kąta przy użyciu `Rotation` właściwości.
 
-Mimo że `BoxView` można naśladować proste grafiki, należy zbadać [przy użyciu SkiaSharp w platformy Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) dokładniejsze wymagania grafiki.
+Mimo że `BoxView` można naśladować grafiki proste, możesz chcieć zbadać [przy użyciu SkiaSharp w interfejsie Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) dla bardziej zaawansowanych wymagań grafiki.
 
-W tym artykule omówiono następujące zagadnienia:
+W tym artykule omówiono następujące tematy:
 
-- **[Ustawianie koloru BoxView i rozmiaru](#colorandsize)**  &ndash; ustawić `BoxView` właściwości.
-- **[Renderowanie tekstu dekoracje](#textdecorations)**  &ndash; użyj `BoxView` renderowania wierszy.
-- **[Wyświetlanie kolorów mających BoxView](#listingcolors)**  &ndash; wyświetlić wszystkie kolorów systemu `ListView`.
-- **[Odtwarzanie gry życia przez podklasy BoxView](#subclassing)**  &ndash; zaimplementować Słynne automaton komórkową.
-- **[Tworzenie zegar cyfrowy](#digitalclock)**  &ndash; symulować wyświetlania Mozaika.
-- **[Tworzenie zegar analogowy](#analogclock)**  &ndash; transformacji i animować `BoxView` elementów.
+- **[Ustawienie BoxView kolor i rozmiar](#colorandsize)**  &ndash; ustaw `BoxView` właściwości.
+- **[Dekoracje tekstu renderowania](#textdecorations)**  &ndash; użyj `BoxView` linii renderowania.
+- **[Wyświetlanie kolorów BoxView](#listingcolors)**  &ndash; Wyświetl wszystko kolorów systemowych w `ListView`.
+- **[Odtwarzanie gry życia przez podklasy BoxView](#subclassing)**  &ndash; zaimplementować sławę niedeterministycznej sieci komórkowej.
+- **[Tworzenie zegar cyfrowy](#digitalclock)**  &ndash; symulować wyświetlania Mozaika —.
+- **[Tworzenie z zegara analogowy](#analogclock)**  &ndash; Przekształć go, animować i `BoxView` elementów.
 
 <a name="colorandsize" />
 
-## <a name="setting-boxview-color-and-size"></a>Ustawienie koloru BoxView i rozmiaru
+## <a name="setting-boxview-color-and-size"></a>Ustawienie BoxView kolor i rozmiar
 
-Bardzo często będzie ustawiony następujących trzech właściwości `BoxView`:
+Bardzo często będzie zestawu następujących trzech właściwości `BoxView`:
 
-- [`Color`](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) Aby ustawić kolor.
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) Aby ustawić szerokość `BoxView` w jednostkach niezależnych od urządzenia.
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) Aby ustawić wysokość `BoxView`.
+- [`Color`](xref:Xamarin.Forms.BoxView.Color) Aby ustawić jej kolor.
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Aby ustawić szerokość `BoxView` w jednostkach niezależnych od urządzenia.
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) Aby ustawić wysokość `BoxView`.
 
-`Color` Właściwość jest typu `Color`; właściwości można ustawić dla każdego `Color` wartość, tym 141 statycznego pola tylko do odczytu z o nazwie kolorów alfabetycznie od `AliceBlue` do `YellowGreen`.
+`Color` Właściwość jest typu `Color`; można ustawić właściwości do dowolnego `Color` wartość, tym 141 statycznego pola tylko do odczytu elementu o nazwie kolorów alfabetycznie od `AliceBlue` do `YellowGreen`.
 
-`WidthRequest` i `HeightRequest` właściwości tylko pełnić roli, jeśli `BoxView` jest *nieograniczonego* w układzie. Dotyczy to sytuacji, gdy kontener układu musi wiedzieć, podrzędne jego rozmiar, na przykład kiedy `BoxView` jest elementem podrzędnym o rozmiarze automatycznie komórki w `Grid` układu. A `BoxView` jest również nieograniczonego podczas jego `HorizontalOptions` i `VerticalOptions` właściwości są ustawione na wartości innych niż `LayoutOptions.Fill`. Jeśli `BoxView` jest nieograniczonego, ale `WidthRequest` i `HeightRequest` nie ustawiono właściwości, a następnie szerokości lub wysokości są ustawione na wartości domyślne 40 jednostek lub około 1/4 cala na urządzeniach przenośnych.
+`WidthRequest` i `HeightRequest` właściwości tylko pełnić roli, jeśli `BoxView` jest *nieograniczonego* w układzie. Dotyczy to sytuacji, gdy kontener układu musi wiedzieć, podrzędne jego rozmiar, na przykład, kiedy `BoxView` jest elementem podrzędnym Rozmiar automatyczny komórki w `Grid` układu. A `BoxView` jest również nieograniczonego podczas jego `HorizontalOptions` i `VerticalOptions` właściwości są ustawiane na wartości innych niż `LayoutOptions.Fill`. Jeśli `BoxView` jest nieograniczony, ale `WidthRequest` i `HeightRequest` właściwości nie są ustawione, a następnie szerokość lub wysokość, które są ustawione na wartości domyślne 40 jednostek lub około 1/4 cala na urządzeniach przenośnych.
 
-`WidthRequest` i `HeightRequest` właściwości są ignorowane, jeśli `BoxView` jest *ograniczonego* w układzie, w których przypadku kontener układu narzuca własny rozmiar `BoxView`.
+`WidthRequest` i `HeightRequest` właściwości są ignorowane w przypadku `BoxView` jest *ograniczonego* w układzie, w których przypadku kontener układu narzuca swój własny rozmiar `BoxView`.
 
-A `BoxView` może być ograniczony w jednym wymiarze i nieograniczonego w innym. Na przykład jeśli `BoxView` jest elementem podrzędnym pionowym `StackLayout`, pionowy wymiar `BoxView` jest nieograniczonego i jego poziomy wymiar jest zazwyczaj ograniczone. Ale istnieją wyjątki dla tego wymiaru poziome: Jeśli `BoxView` ma jego `HorizontalOptions` właściwość coś innego niż `LayoutOptions.Fill`, a następnie płaszczyźnie poziomej jest również nieograniczonego. Istnieje również możliwość `StackLayout` do ma nieograniczonego poziome wymiaru, w którym to przypadku `BoxView` będzie również nieograniczonego poziomo.
+Element `BoxView` może być ograniczona w jednym wymiarze i nieograniczonego w innym. Na przykład jeśli `BoxView` jest elementem podrzędnym pionowej `StackLayout`, pionowy wymiar `BoxView` jest nieograniczonego i jego płaszczyźnie poziomej ogólnie jest ograniczony. Ale istnieją wyjątki dla tego wymiaru poziomy: Jeśli `BoxView` ma jego `HorizontalOptions` ustawioną na coś innego niż `LayoutOptions.Fill`, poziomy wymiar jest również nieograniczone. Istnieje również możliwość dla `StackLayout` do masz nieograniczone płaszczyźnie poziomej, w którym to przypadku `BoxView` będzie również poziomo nieograniczone.
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) przykładzie wyświetlono co CAL kwadrat nieograniczonego `BoxView` na środku strony:
+[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) przykład przedstawia jeden calowy kwadrat nieograniczonego `BoxView` na środku strony:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -66,21 +66,21 @@ A `BoxView` może być ograniczony w jednym wymiarze i nieograniczonego w innym.
 </ContentPage>
 ```
 
-W tym miejscu jest wynikiem:
+Poniżej przedstawiono wyniki:
 
 [![Podstawowe BoxView](boxview-images/basicboxview-small.png "BoxView podstawowe")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-Jeśli `VerticalOptions` i `HorizontalOptions` właściwości są usuwane z `BoxView` tagu lub są ustawione na `Fill`, a następnie `BoxView` staje się ograniczona przez rozmiar strony, a rozwijany do wypełnienia strony.
+Jeśli `VerticalOptions` i `HorizontalOptions` właściwości są usuwane z `BoxView` tag lub jest stosowana `Fill`, a następnie `BoxView` staje się zależy od rozmiaru strony, a następnie rozwija do wypełnienia strony.
 
-A `BoxView` również może być elementem podrzędnym elementu `AbsoluteLayout`. W takim przypadku lokalizację i rozmiar `BoxView` są ustawiane przy użyciu `LayoutBounds` dołączonych właściwości możliwej do wiązania. `AbsoluteLayout` Opisanej w artykule [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+A `BoxView` również może być obiektem podrzędnym obiektu `AbsoluteLayout`. W tym przypadku, lokalizację i rozmiar `BoxView` są ustawiane przy użyciu `LayoutBounds` dołączonych właściwości możliwej do wiązania. `AbsoluteLayout` Opisanej w artykule [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
 
-Zobaczysz przykłady wszystkich tych przypadkach przykładowe programy, które należy wykonać.
+Zobaczysz przykłady wszystkich tych przypadkach przykładowych programów, które należy wykonać.
 
 <a name="textdecorations" />
 
-## <a name="rendering-text-decorations"></a>Renderowanie dekoracji tekstu
+## <a name="rendering-text-decorations"></a>Renderowanie dekoracje tekstu
 
-Można użyć `BoxView` można dodać kilka prostych dekoracje na stronach w postaci wierszy w poziomie i w pionie. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) przykładzie pokazano to. Wszystkie elementy wizualne programu są zdefiniowane w **MainPage.xaml** pliku, który zawiera kilka `Label` i `BoxView` elementów w `StackLayout` pokazano poniżej:
+Możesz użyć `BoxView` można dodać kilka prostych dekoracje na stronach w formie poziome i pionowe linie. [ **Textdecoration —** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) przykład pokazuje to. Wszystkie wizualizacje programu są zdefiniowane w **MainPage.xaml** pliku, który zawiera kilka `Label` i `BoxView` elementów w `StackLayout` pokazano poniżej:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,11 +111,11 @@ Można użyć `BoxView` można dodać kilka prostych dekoracje na stronach w pos
 </ContentPage>
 ```
 
-Wszystkich znaczników, który następuje są elementami podrzędnymi `StackLayout`. Ten kod znaczników składa się z wielu typów ozdobne `BoxView` elementów używanych z `Label` elementu:
+Wszystkie znaczniki, który następuje po są elementami podrzędnymi `StackLayout`. Ten kod znaczników składa się z kilku typów dekoracyjnych `BoxView` elementy używane z `Label` elementu:
 
-[![Dekoracji tekstu](boxview-images/textdecoration-small.png "dekoracji tekstu")](boxview-images/textdecoration-large.png#lightbox "dekoracji tekstu")
+[![Dekoracja tekstu](boxview-images/textdecoration-small.png "dekoracji tekstu")](boxview-images/textdecoration-large.png#lightbox "dekoracji tekstu")
 
-Stylowy nagłówka w górnej części strony odbywa się z `AbsoluteLayout` którego elementy podrzędne są cztery `BoxView` elementów i `Label`, wszystkie są przypisane do określonych lokalizacji i rozmiary:
+Stylowy nagłówka w górnej części strony jest osiągana za pomocą `AbsoluteLayout` którego elementy podrzędne są cztery `BoxView` elementy i `Label`, wszystkie są przypisane do określonych lokalizacji i rozmiary:
 
 ```xaml
 <AbsoluteLayout>
@@ -129,9 +129,9 @@ Stylowy nagłówka w górnej części strony odbywa się z `AbsoluteLayout` któ
 </AbsoluteLayout>
 ```
 
-W pliku XAML `AbsoluteLayout` następuje `Label` z sformatowanego tekstu, który opisuje `AbsoluteLayout`.
+W pliku XAML `AbsoluteLayout` następuje `Label` z sformatowany tekst, który opisuje `AbsoluteLayout`.
 
-Ciąg tekstowy można podkreślenia, ograniczając jednocześnie `Label` i `BoxView` w `StackLayout` mający jego `HorizontalOptions` wartość coś innego niż `Fill`. Szerokość `StackLayout` następnie podlega szerokość `Label`, który następnie narzuca szerokość ta `BoxView`. `BoxView` Jest przypisane tylko jawne wysokość:
+Ciąg tekstowy może podkreślenie, umieszczając zarówno `Label` i `BoxView` w `StackLayout` zawierający jego `HorizontalOptions` ustawioną na coś innego niż `Fill`. Szerokość `StackLayout` jest określany przez szerokość `Label`, który następnie narzuca tego szerokość `BoxView`. `BoxView` Jest przypisywana tylko jawne height:
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -141,15 +141,15 @@ Ciąg tekstowy można podkreślenia, ograniczając jednocześnie `Label` i `BoxV
 </StackLayout>
 ```
 
-Nie można użyć tej metody do underline poszczególnych wyrazów w dłużej ciągów tekstowych lub akapitu.
+Nie można Użyj tej techniki, aby podkreślić poszczególnych wyrazów w ramach dłuższego ciągów tekstowych lub akapitu.
 
-Istnieje również możliwość użycia `BoxView` tak, aby przypominały HTML `hr` elementu (poziomą). Po prostu let szerokość `BoxView` będzie określany przez jego kontenera nadrzędnego, w tym przypadku jest `StackLayout`:
+Istnieje również możliwość użycia `BoxView` przypominają HTML `hr` — element (poziomą). Po prostu umożliwiają szerokość `BoxView` określane przez jej kontenera nadrzędnego, w tym przypadku jest `StackLayout`:
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-Na koniec Rysowanie linii pionowej na jednej stronie tekstu akapitu ograniczając jednocześnie `BoxView` i `Label` w poziomym `StackLayout`. W tym przypadku wysokość `BoxView` jest taka sama jak wysokość `StackLayout`, który podlega warunkom wysokość `Label`:
+Na koniec Rysowanie linii pionowej na jednej stronie akapitu tekstu umieszczając zarówno `BoxView` i `Label` poziomej `StackLayout`. W tym przypadku wysokość `BoxView` jest taka sama jak wysokość `StackLayout`, którym podlega wysokość `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -164,13 +164,13 @@ Na koniec Rysowanie linii pionowej na jednej stronie tekstu akapitu ograniczają
 ```
 <a name="listingcolors" />
 
-## <a name="listing-colors-with-boxview"></a>Wyświetlanie i BoxView kolorów
+## <a name="listing-colors-with-boxview"></a>Wyświetlanie listy i BoxView kolorów
 
-`BoxView` Jest wygodne wyświetlanie kolorów. Ten program używa `ListView` Aby wyświetlić listę wszystkich publicznego statycznego pola tylko do odczytu z platformy Xamarin.Forms `Color` struktury:
+`BoxView` Jest wygodne w przypadku wyświetlania kolorów. Ten program używa `ListView` Aby wyświetlić wszystkie publiczne statyczne tylko do odczytu pola Xamarin.Forms `Color` strukturę:
 
 [![Kolory ListView](boxview-images/listviewcolors-small.png "kolory ListView")](boxview-images/listviewcolors-large.png#lightbox "kolory ListView")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program zawiera klasę o nazwie `NamedColor`. Konstruktor statyczny uzyskują dostęp wszystkie pola odbicia `Color` struktury i Utwórz `NamedColor` obiekt dla każdego z nich. Są one przechowywane w statycznych `All` właściwości:
+[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program obejmuje klasę o nazwie `NamedColor`. Statyczny Konstruktor używa odbicia, aby uzyskać dostęp do wszystkich pól z `Color` struktury i utworzyć `NamedColor` obiekt dla każdego z nich. Są one przechowywane w statycznej `All` właściwości:
 
 ```csharp
 public class NamedColor
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Elementy wizualne programu są opisane w pliku XAML. `ItemsSource` Właściwość `ListView` ustawiono statycznych `NamedColor.All` właściwości, co oznacza, że `ListView` Wyświetla wszystkie osoby `NamedColor` obiektów:
+Wizualizacje programu są opisane w pliku XAML. `ItemsSource` Właściwość `ListView` jest ustawiona na statyczną `NamedColor.All` właściwości, co oznacza, że `ListView` Wyświetla wszystkie osoby `NamedColor` obiektów:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,15 +293,15 @@ Elementy wizualne programu są opisane w pliku XAML. `ItemsSource` Właściwoś�
 </ContentPage>
 ```
 
-`NamedColor` Obiekty są formatowane przez `ViewCell` obiekt, który jest ustawiony jako szablon danych `ListView`. Ten szablon obejmuje `BoxView` których `Color` właściwość jest powiązana z `Color` właściwość `NamedColor` obiektu.
+`NamedColor` Obiekty są sformatowane według `ViewCell` obiekt, który jest ustawiony jako szablon danych `ListView`. Ten szablon obejmuje `BoxView` którego `Color` właściwość jest powiązana z `Color` właściwość `NamedColor` obiektu.
 
 <a name="subclassing" />
 
-## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Gry życia przez podklasy BoxView
+## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Gry życia przez BoxView podklasy
 
-Gry użytkowania jest komórkowej automaton opracowana przez mathematician Conway Jan i popularized na stronach *naukowych American* w 1970s. Dobrym wprowadzenie są dostarczane przez artykuł Wikipedia [Conway w grę życia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+Gra użytkowania jest komórkowej usługi Automation, opracowana przez mathematician Conway Jan i spopularyzowany na stronach *naukowych American* w 1970s. Wprowadzenie dobre są dostarczane przez artykułu w Wikipedii [potwierdziło gry życia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-Platformy Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) program definiuje klasę o nazwie `LifeCell` która pochodzi z `BoxView`. Ta klasa hermetyzuje logiki pojedynczych komórek w grę życia:
+Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) program definiuje klasę o nazwie `LifeCell` który pochodzi od klasy `BoxView`. Ta klasa hermetyzuje logikę pojedyncze komórki w grze życiu:
 
 ```csharp
 class LifeCell : BoxView
@@ -344,21 +344,21 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` dodaje trzy więcej właściwości do `BoxView`: `Col` i `Row` właściwości przechowywania pozycja komórki w siatce i `IsAlive` właściwość wskazuje jego stan. `IsAlive` Właściwość również określa `Color` właściwość `BoxView` na kolor czarny, jeśli komórka jest aktywne i białe, jeśli komórka nie jest aktywne.
+`LifeCell` dodaje trzy więcej właściwości do `BoxView`: `Col` i `Row` właściwości przechowywania pozycja komórkę w siatce i `IsAlive` właściwość wskazuje jej stan. `IsAlive` Ustawia również właściwość `Color` właściwość `BoxView` na czarny, jeśli komórka jest aktywny i biały, jeśli komórka nie jest aktywny.
 
-`LifeCell` instaluje również `TapGestureRecognizer` umożliwia użytkownikom przełączyć stan komórki naciskając je. Klasa tłumaczy `Tapped` zdarzenia z aparat rozpoznawania gestów w jego własnej `Tapped` zdarzeń.
+`LifeCell` można je również instalować `TapGestureRecognizer` aby umożliwić użytkownikowi do przełączenia stanu komórek, naciskając je. Klasa tłumaczy `Tapped` zdarzenie z aparat rozpoznawania gestów do jego własnej `Tapped` zdarzeń.
 
-**GameOfLife** obejmuje także program `LifeGrid` klasy, która hermetyzuje znacznie logiki gry i `MainPage` klasa, która obsługuje program elementów wizualnych. Obejmują one nakładce, która opisuje reguły gry. Oto program w akcji przedstawiający kilka kilkaset `LifeCell` obiektów na stronie:
+**GameOfLife** obejmuje również program `LifeGrid` klasę, która hermetyzuje znaczną część logiki gry i `MainPage` klasa, która obsługuje program wizualizacji. Obejmują one nakładce, która opisuje reguły gry. Poniżej przedstawiono program w działaniu przedstawiający kilka kilkaset `LifeCell` obiektów na stronie:
 
-[![Gry życia](boxview-images/gameoflife-small.png "gry życia")](boxview-images/gameoflife-large.png#lightbox "gry życia")
+[![Gra cyklu życia](boxview-images/gameoflife-small.png "gry cyklu życia")](boxview-images/gameoflife-large.png#lightbox "gry cyklu życia")
 
 <a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>Tworzenie zegar cyfrowy
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program tworzy 210 `BoxView` elementy, aby symulować punktów stosowane wyświetlania 5-za-7-Mozaika. Czas w trybie pionowa lub pozioma może odczytywać, ale ma on większy w orientacji poziomej:
+[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program tworzy 210 `BoxView` elementy do symulacji punktów stara wyświetlania Mozaika 5, 7. Może odczytywać czasu w trybie pionowej lub poziomej, ale jest większa w widoku poziomym:
 
-[![Zegar Mozaika](boxview-images/dotmatrixclock-small.png "zegara Mozaika")](boxview-images/dotmatrixclock-large.png#lightbox "-Mozaika zegara")
+[![Zegar Mozaika](boxview-images/dotmatrixclock-small.png "zegara Mozaika")](boxview-images/dotmatrixclock-large.png#lightbox "Mozaika zegara")
 
 Plik XAML nieco więcej niż wystąpienia `AbsoluteLayout` używane zegara:
 
@@ -375,7 +375,7 @@ Plik XAML nieco więcej niż wystąpienia `AbsoluteLayout` używane zegara:
 </ContentPage>
 ```
 
-Wszystkie inne odbywa się w pliku CodeBehind. Logika wyświetlania Mozaika znacznie zostało uproszczone dzięki definicji tablic kilka opisujące punktów odpowiadające każdej z 10 cyfr i dwukropka:
+Wszystkie inne odbywa się w pliku CodeBehind. Mozaika logikę wyświetlania jest znacznie uproszczone zgodnie z definicją kilka tablic, opisujących, kropki, odpowiadające każdemu z 10 cyfr, a dwukropka:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -447,9 +447,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Te pola zawierają z tablicą trójwymiarową z `BoxView` elementy do przechowywania wzorce kropka sześciu cyfr.
+Te pola zawierają z tablicą trójwymiarową `BoxView` elementy do przechowywania wzorce kropka sześć cyfr.
 
-Konstruktor tworzy wszystkie `BoxView` elementy cyfr i dwukropek, a także inicjuje `Color` właściwość `BoxView` elementy dwukropkiem:
+Konstruktor tworzy wszystkie `BoxView` elementy cyfr i dwukropek, a także inicjuje `Color` właściwość `BoxView` elementy dwukropek:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -528,9 +528,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Ten program używa względne położenie i funkcji zmiany rozmiaru `AbsoluteLayout`. Szerokość i wysokość każdego `BoxView` jest ustawiana wartość ułamkową, w szczególności 85% wynik dzielenia 1 przez liczbę punktów na poziomie i w pionie. Położenie również są ustawione na wartości ułamkowych.
+Ten program używa pozycjonowanie względne i funkcji zmiany rozmiaru `AbsoluteLayout`. Szerokość i wysokość każdego `BoxView` są ustawione na wartości ułamkowych, w szczególności 85% wynik dzielenia 1 przez liczbę punktów poziome i pionowe. Położenie również są ustawione na wartości ułamkowe.
 
-Ponieważ wszystkie pozycje i rozmiary są względem całkowity rozmiar `AbsoluteLayout`, `SizeChanged` obsługi dla strony należy ustawić tylko `HeightRequest` z `AbsoluteLayout`:
+Ponieważ wszystkie pozycje i rozmiary są względne wobec całkowity rozmiar `AbsoluteLayout`, `SizeChanged` obsługi dla strony należy ustawić tylko `HeightRequest` z `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -549,9 +549,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Szerokość `AbsoluteLayout` jest ustawiany automatycznie, ponieważ jego rozciąga się do pełnej szerokości strony.
+Szerokość `AbsoluteLayout` zostanie automatycznie ustawiony, ponieważ jej rozciąga się do pełnej szerokości strony.
 
-Kod końcowy w `MainPage` klasy przetwarza wywołanie zwrotne czasomierza i kolory punktów każdej cyfry. Definicja tablic wielowymiarowych na początku pliku CodeBehind ułatwia tę logikę najprostszym części programu:
+Końcowe kodu w `MainPage` klasy przetwarza czasomierza wywołania zwrotnego i kolory punktów każdej cyfry. Definicja tablic wielowymiarowych na początku pliku związanego z kodem ułatwia tę logikę najprostszym części programu:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -592,13 +592,13 @@ public partial class MainPage : ContentPage
 
 ## <a name="creating-an-analog-clock"></a>Tworzenie zegar analogowy
 
-Zegar Mozaika mogą wydawać się oczywiste stosowania `BoxView`, ale `BoxView` elementy są także możliwość realizacji zegar analogowy:
+Zegar Mozaika mogą wydawać się oczywiste stosowania `BoxView`, ale `BoxView` elementów również są w stanie zawierającemu zegar analogowy:
 
 [![Zegar BoxView](boxview-images/boxviewclock-small.png "zegara BoxView")](boxview-images/boxviewclock-large.png#lightbox "BoxView zegara")
 
-Wszystkie elementy wizualne na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu są elementami podrzędnymi `AbsoluteLayout`. Te elementy są skonfigurowane przy użyciu `LayoutBounds` dołączona właściwość i obracać za pomocą `Rotation` właściwości.
+Wszystkie wizualizacje w [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu są elementami podrzędnymi `AbsoluteLayout`. Te elementy są skonfigurowane przy użyciu `LayoutBounds` dołączona właściwość i obracać za pomocą `Rotation` właściwości.
 
-Trzy `BoxView` elementy ręce zegara w pliku XAML, ale nie znajduje się lub o rozmiarze:
+Trzy `BoxView` elementy ręce zegara tworzone w pliku XAML, ale nie są umieszczone lub wielkości:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -626,7 +626,7 @@ Trzy `BoxView` elementy ręce zegara w pliku XAML, ale nie znajduje się lub o r
 </ContentPage>
 ```
 
-Konstruktor obiektu pliku CodeBehind tworzy 60 `BoxView` elementów dla znaczników obwodzie zegara:
+Konstruktor obiektu pliku związanego z kodem tworzy 60 `BoxView` elementy znaczników obwodzie zegara:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Rozmiar i położenie wszystkich `BoxView` elementów odbywa się w `SizeChanged` obsługę `AbsoluteLayout`. Nieco struktury wewnętrznej do klasy o nazwie `HandParams` opisuje rozmiar każdego z trzech ręce względem całkowity rozmiar zegara:
+Zmiana rozmiaru i pozycjonowania wszystkich `BoxView` elementów odbywa się w `SizeChanged` Obsługa `AbsoluteLayout`. Nieco struktury wewnętrznej do klasy o nazwie `HandParams` opisuje rozmiar każdego z trzech ręce względem całkowity rozmiar zegara:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -684,7 +684,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged` Obsługi określa Centrum i promień `AbsoluteLayout`, a następnie rozmiary i umieszcza 60 `BoxView` elementy używane jako znaczniki. `for` Pętli stwierdza, ustawiając `Rotation` właściwości każdego z tych `BoxView` elementów. Na koniec `SizeChanged` obsługi `LayoutHand` wywoływana jest metoda rozmiaru i pozycji trzech ręce zegara:
+`SizeChanged` Obsługi określa Centrum i promień `AbsoluteLayout`, następnie rozmiarów i umieszcza 60 `BoxView` elementy służące jako znaczniki. `for` Pętli stwierdza, ustawiając `Rotation` właściwości każdego z tych `BoxView` elementów. Na koniec `SizeChanged` obsługi `LayoutHand` metoda jest wywoływana, aby rozmiar i położenie trzy ręce zegara:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -735,9 +735,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand` Metoda rozmiary i umieszcza każdego ręcznie, aby wskazywały bezpośrednio do pozycji 12:00. Na końcu metody `AnchorY` właściwość jest ustawiona na pozycji odpowiadającej Centrum zegara. To ustawienie określa środek obrotu.
+`LayoutHand` Metoda rozmiarów i umieszcza każdego ręcznie, aby wskazać bezpośrednio do pozycji 12:00. Na końcu metody `AnchorY` właściwość jest ustawiona na pozycji odpowiadającej środek zegara. Oznacza to, środek obrotu.
 
-Ręce są obracane w funkcji wywołanie zwrotne czasomierza:
+Wskazówki są obracane w funkcji wywołania zwrotnego czasomierza:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -770,11 +770,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Z drugiej strony jest traktowane nieco inaczej: zastosowania animacji wyjścia funkcji sterowania tempem aby przenoszenie prawdopodobnie mechaniczne zamiast smooth. Na każdym znaczników drugiej wskazówki pobiera nieco Wstecz i przekroczenia powierzchni miejsca docelowego. Ten niewielki kod dodaje znacznie wzrostu ruchu.
+Sekund jest traktowany jako nieco inaczej: zastosowania animacji, funkcja sterowania tempem zmian umożliwiają przenoszenie wydają się mechanicznych zamiast smooth. Na każdy takt drugiej wskazówki ściąga nieco ponownie, a następnie przekroczenia powierzchni miejsca docelowego. Ten niewielki kod dodaje wiele realizmu przepływu.
 
 ## <a name="conclusion"></a>Wniosek
 
-`BoxView` Może wydawać się proste w pierwszej, ale jako użytkownik w tym samouczku, może być bardzo elastyczne i mogą prawie odtworzenia elementy wizualne są zwykle możliwe tylko w przypadku grafika wektorowa. Aby uzyskać dokładniejsze grafiki, zapoznaj się [przy użyciu SkiaSharp w platformy Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+`BoxView` Mogą wydawać się proste w pierwszym, ale możesz w tym samouczku, może być dość wszechstronne i można niemal odtworzenia elementy wizualne, które są zwykle jest możliwe tylko w przypadku grafika wektorowa. Dla bardziej zaawansowanych grafiki, zapoznaj się z [przy użyciu SkiaSharp w interfejsie Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne
@@ -782,7 +782,7 @@ Z drugiej strony jest traktowane nieco inaczej: zastosowania animacji wyjścia f
 - [Podstawowe BoxView (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
 - [Dekoracji tekstu (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
 - [Kolor ListBox (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
-- [Gry życia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
+- [Gra cyklu życia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
 - [Zegar Mozaika (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
 - [Zegar BoxView (przykład)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
-- [BoxView](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)
+- [BoxView](xref:Xamarin.Forms.BoxView)

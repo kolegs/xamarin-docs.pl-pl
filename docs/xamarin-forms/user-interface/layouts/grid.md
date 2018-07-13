@@ -1,64 +1,64 @@
 ---
-title: Siatka platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia klasy siatki platformy Xamarin.Forms do prezentowania widoków siatki, które posiadają wierszy i kolumn.
+title: Siatka zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak korzystać z zestawu narzędzi Xamarin.Forms siatki klasy do prezentowania widoków w siatkach, które posiadają wierszy i kolumn.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245156"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994505"
 ---
-# <a name="xamarinforms-grid"></a>Siatka platformy Xamarin.Forms
+# <a name="xamarinforms-grid"></a>Siatka zestawu narzędzi Xamarin.Forms
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) obsługuje rozmieszczanie widoków do wierszy i kolumn. Rozmiary proporcjonalne lub bezwzględną rozmiary można ustawić wierszy i kolumn. `Grid` Układu nie należy mylić z tradycyjnego tabel i nie jest przeznaczona do prezentowania danych tabelarycznych. `Grid` nie ma pojęcie wierszy, kolumny lub komórki formatowania. W przeciwieństwie do tabel HTML `Grid` służy wyłącznie do rozmieszczania zawartości.
+[`Grid`](xref:Xamarin.Forms.Grid) obsługuje rozmieszczanie widoków w wiersze i kolumny. Rozmiary proporcjonalna lub bezwzględny rozmiarów można ustawić wierszy i kolumn. `Grid` Układu nie powinny być mylone z tradycyjnych tabel i nie jest przeznaczona do prezentowania danych tabelarycznych. `Grid` nie ma koncepcji wierszy, kolumny lub komórki formatowania. W przeciwieństwie do tabel HTML `Grid` czysto jest przeznaczona do układania zawartości.
 
-[![](grid-images/layouts-sml.png "Układy platformy Xamarin.Forms")](grid-images/layouts.png#lightbox "układów platformy Xamarin.Forms")
+[![](grid-images/layouts-sml.png "Układy platformy Xamarin.Forms")](grid-images/layouts.png#lightbox "układy platformy Xamarin.Forms")
 
-W tym artykule opisano:
+W tym artykule omówiono:
 
 - **[Cel](#Purpose)**  &ndash; typowe zastosowania dla `Grid`.
-- **[Użycie](#Usage)**  &ndash; sposób użycia `Grid` do osiągnięcia żądanej projektu.
+- **[Użycie](#Usage)**  &ndash; sposób używania `Grid` do osiągnięcia żądanego projektu.
   - **[Wiersze i kolumny](#Rows_and_Columns)**  &ndash; Określ wierszy i kolumn `Grid`.
   - **[Wprowadzenie do widoków](#Placing_Views)**  &ndash; dodawać widoki do siatki w określonych wierszy i kolumn.
-  - **[Odstępy](#Spacing)**  &ndash; skonfigurować odstęp między wierszy i kolumn.
-  - **[Zakresy](#Spans)**  &ndash; skonfigurować elementy zakresu wielu wierszy lub kolumn.
+  - **[Odstępy](#Spacing)**  &ndash; skonfigurować spacji między wierszami i kolumnami.
+  - **[Zakresy](#Spans)**  &ndash; skonfigurować elementy, aby rozciągać się na kilka wierszy lub kolumn.
 
 ![](grid-images/grid.png "Eksploracja siatki")
 
 ## <a name="purpose"></a>Cel
 
-`Grid` może być stosowany do tworzenia widoków w siatce. Jest to przydatne w wielu przypadkach:
+`Grid` można rozmieścić widoków w siatce. Jest to przydatne w wielu przypadkach:
 
 - Rozmieszczanie przycisków w aplikacji Kalkulator
-- Rozmieszczenie przycisków/wyborów w siatce, takich jak systemu iOS lub Android ekrany macierzystego
-- Rozmieszczanie widoków, które będą miały taki sam rozmiar w jednym wymiarze (jak w niektóre paski narzędzi)
+- Rozmieszczenie przyciski/wyborów w siatce, takich jak dla systemu iOS lub Android ekranów głównych
+- Rozmieszczanie widoków, aby były one taki sam rozmiar w jednym wymiarze (na przykład w niektóre paski narzędzi)
 
 ## <a name="usage"></a>Użycie
 
-W przeciwieństwie do tradycyjnych tabel `Grid` nie są rozpoznawane liczby i rozmiarów wierszy i kolumn z zawartości. Zamiast tego `Grid` ma `RowDefinitions` i `ColumnDefinitions` kolekcji. Definicje liczby wierszy i kolumn układane będą one przechowywania. Widoki są dodawane do `Grid` z określonych wiersza i kolumny indeksów, które zidentyfikować które wiersza i kolumny widoku powinna zostać umieszczona w.
+W przeciwieństwie do tradycyjnych tabel `Grid` nie są rozpoznawane przez liczbę i rozmiar wierszy i kolumn z zawartości. Zamiast tego `Grid` ma `RowDefinitions` i `ColumnDefinitions` kolekcji. Przytrzymaj te definicje liczby wierszy i kolumn zostanie wyświetlone. Widoki są dodawane do `Grid` przy użyciu określonych wiersza i kolumny indeksów, które wiersze i kolumny widoku powinny być umieszczone w zidentyfikować który.
 
 <a name="Rows_and_Columns" />
 
-### <a name="rows-and-columns"></a>Wierszy i kolumn
+### <a name="rows-and-columns"></a>Wiersze i kolumny
 
-Wiersz i kolumnę informacje są przechowywane w `Grid`w `RowDefinitions`  &  `ColumnDefinitions` właściwości, które są kolekcjami każdego z [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) i [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)obiekty odpowiednio. `RowDefinition` ma tylko jedną właściwość `Height`, i `ColumnDefinition` ma tylko jedną właściwość `Width`. Opcje wysokość i szerokość są następujące:
+Informacje wiersza i kolumny są przechowywane w `Grid`firmy `RowDefinitions`  &  `ColumnDefinitions` właściwości, które są każdego kolekcjami z [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) i [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)obiektów, odpowiednio. `RowDefinition` ma tylko jedną właściwość `Height`, i `ColumnDefinition` ma tylko jedną właściwość `Width`. Opcje wysokość i szerokość są następujące:
 
-- **Automatycznie** &ndash; automatycznie rozmiary w celu dopasowania do zawartości w wierszy lub kolumn. Określony jako [ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) w języku C# lub jako `Auto` w języku XAML.
-- **Proportional(*)** &ndash; rozmiarów kolumn i wierszy jako część pozostałe miejsce. Określona jako wartość i `GridUnitType.Star` w języku C# i jako `#*` w języku XAML, z `#` trwa żądaną wartość. Określenie jednego wiersza/kolumny z `*` spowoduje jego wypełnienia dostępnego miejsca.
-- **Bezwzględny** &ndash; rozmiarów kolumn i wierszy z określonych, stałej wartości szerokości i wysokości. Określona jako wartość i `GridUnitType.Absolute` w języku C# i jako `#` w języku XAML, z `#` trwa żądaną wartość.
+- **Automatyczne** &ndash; automatycznie rozmiary w celu dopasowania do zawartości w wierszu lub kolumnie. Określony jako [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) w języku C# lub jako `Auto` w XAML.
+- **Proportional(*)** &ndash; rozmiaru wierszy i kolumn w stosunku do pozostałego miejsca. Określana jako wartość i `GridUnitType.Star` w języku C# i jako `#*` w XAML, za pomocą `#` trwa odpowiednią wartość. Określenie jednego wiersza/kolumny z `*` spowoduje, że jej w celu wypełnienia dostępnego miejsca.
+- **Bezwzględny** &ndash; rozmiarów kolumnami i wierszami przy użyciu stałych, określone wartości szerokości i wysokości. Określana jako wartość i `GridUnitType.Absolute` w języku C# i jako `#` w XAML, za pomocą `#` trwa odpowiednią wartość.
 
 > [!NOTE]
-> Wartości szerokości kolumn są ustawione jako "*" Domyślnie w platformy Xamarin.Forms co zapewnia, że kolumna zostanie wypełnienia dostępnego miejsca.
+> Wartości szerokości kolumn są ustawione jako "*" Domyślnie w interfejsie Xamarin.Forms, co zapewnia, że kolumna wypełni dostępne miejsce.
 
-Należy wziąć pod uwagę aplikację, która potrzebuje trzy wiersze i dwie kolumny. Dolny wiersz musi być dokładnie 200px wysokość i górnym wierszu musi być dwa razy tak wysokie jako środkową wiersz. Kolumna po lewej stronie musi być dostatecznie szerokie, aby dopasować zawartość i prawa kolumna musi wypełnienia pozostałego miejsca.
+Należy wziąć pod uwagę aplikację, która potrzebuje trzema wierszami i kolumnami. Dolny wiersz musi być dokładnie 200px wysokości i górny wiersz musi być dwa razy większa przedtem jako środkowym rzędzie. Kolumna po lewej stronie musi być dostatecznie szerokie, aby dopasować zawartość i prawa kolumna musi wypełnić pozostałe miejsce.
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <Grid>
@@ -88,15 +88,15 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 ### <a name="placing-views-in-a-grid"></a>Wprowadzenie do widoków w siatce
 
-Aby umieścić widoków w `Grid` należy dodać je jako elementy podrzędne do siatki, a następnie określ, które wierszy i kolumn należą w.
+Aby umieścić widoków w `Grid` , musisz dodać je jako elementy podrzędne do siatki, a następnie określ, które wiersze i kolumny są członkami w.
 
-W języku XAML, użyj `Grid.Row` i `Grid.Column` o każdym poszczególnych widoku, aby określić umieszczania. Należy pamiętać, że `Grid.Row` i `Grid.Column` Określ lokalizację opartych na listach liczony od zera, wierszy i kolumn. Oznacza to, że w siatce 4 x 4 lewej górnej komórki jest (0,0) i prawej dolnej komórki jest (3,3).
+W XAML, użyj `Grid.Row` i `Grid.Column` o poszczególnych poszczególnych widokach, do określania położenia. Należy pamiętać, że `Grid.Row` i `Grid.Column` Określ lokalizację, w oparciu o listy liczony od zera, wierszy i kolumn. Oznacza to, że w siatkę 4 x 4 lewej górnej komórki jest (0,0) i prawej dolnej komórki jest (3,3).
 
-`Grid` Pokazano poniżej zawiera cztery komórek:
+`Grid` Pokazane poniżej zawiera cztery komórki:
 
-![](grid-images/label-grid.png "Siatkę z czterech widoków")
+![](grid-images/label-grid.png "Siatka z czterech widoków")
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <Grid>
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-Powyższy kod tworzy siatki z czterech etykiet, dwóch kolumn i dwa wiersze. Należy pamiętać, że każda etykieta będą miały taki sam rozmiar i że wierszy zostanie rozwinięty w celu użycia całe dostępne miejsce.
+Powyższy kod tworzy siatka z czterech etykiet, dwóch kolumn i dwa wiersze. Należy pamiętać, że każda etykieta będzie miał taki sam rozmiar i że wiersze rozwinie się używać całe dostępne miejsce.
 
-W powyższym przykładzie widoki są dodawane do [ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/) przy użyciu kolekcji [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) przeciążenia, które określa argumenty lewego i górnego. Korzystając z [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) przeciążenia, które określa po lewej, prawej górnej i dolnej argumentów, podczas po lewej stronie i argumentów top będzie zawsze odwołuje się do komórek w [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), prawo i argumenty dolnej może się odwoływać się do komórek znajdujących się poza `Grid`. To dlatego prawy argument zawsze musi być większa niż argument po lewej stronie, a argument dolnej zawsze musi być większa niż top argument. W poniższym przykładzie przedstawiono równoważne kodu za pomocą obu `Add` przeciążenia:
+W powyższym przykładzie widoki są dodawane do [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) przy użyciu kolekcji [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) przeciążenia, które określa lewym i górnym argumenty. Korzystając z [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) przeciążenia, które określa lewej, po prawej stronie, górnej i dolnej argumentów, podczas gdy po lewej stronie i górnym argumenty zawsze będzie odnosił się do komórek w [ `Grid` ](xref:Xamarin.Forms.Grid), po prawej stronie i argumenty dolnej może wydawać się odwoływać się do komórek, które wykraczają poza `Grid`. Jest to spowodowane prawy argument zawsze musi być większa niż argument po lewej stronie, a argument dolnej zawsze musi być większa niż top argument. W poniższym przykładzie pokazano równoważny kod przy użyciu zarówno `Add` przeciążenia:
 
 ```csharp
 // left, top
@@ -156,12 +156,12 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>Odstępy
 
-`Grid` ma właściwości, aby kontrolować odstępy między wierszy i kolumn.  Następujące właściwości są dostępne dla dostosowywanie `Grid`:
+`Grid` zawiera właściwości, aby kontrolować odstępy między wierszami i kolumnami.  Następujące właściwości są dostępne do dostosowywania `Grid`:
 
 - **ColumnSpacing** &ndash; ilość miejsca między kolumnami.
 - **RowSpacing** &ndash; ilość miejsca między wierszami.
 
-Określa następujące XAML `Grid` z kolumnami, jeden wiersz i 5 pikseli odstępy między kolumnami:
+Określa następujące XAML `Grid` z dwiema kolumnami, jeden wiersz i 5 pikseli odstępy między kolumnami:
 
 ```xaml
 <Grid ColumnSpacing="5">
@@ -182,11 +182,11 @@ grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, Grid
 
 ### <a name="spans"></a>Zakresy
 
-Często, podczas pracy z siatki, Brak elementu, który będzie zajmować więcej niż jeden wiersz lub kolumnę. Należy wziąć pod uwagę aplikacji prosty kalkulator:
+Często, podczas pracy z siatki, istnieje element, który powinien zajmować więcej niż jeden wiersz lub kolumnę. Należy wziąć pod uwagę aplikacji prosty kalkulator:
 
 ![](grid-images/calculator.png "Calulator aplikacji")
 
-Zwróć uwagę, przycisk 0 obejmuje dwie kolumny, podobnie jak na wbudowanych kalkulatory dla każdej platformy. Jest to realizowane przy użyciu `ColumnSpan` właściwość, która określa liczbę kolumn jako element będzie zajmować. XAML dla tego przycisku:
+Zwróć uwagę, przycisk 0 obejmuje dwie kolumny, podobnie jak na wbudowane kalkulatory dla każdej platformy. Jest to realizowane przy użyciu `ColumnSpan` właściwość, która określa liczbę kolumn na element powinien zajmować. XAML dla tego przycisku:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
@@ -200,9 +200,9 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-Należy pamiętać, ten kod w metod statycznych `Grid` klasy są używane do wykonywania pozycjonowania zmiany w tym zmiany `ColumnSpan` i `RowSpan`. Należy pamiętać, że w przeciwieństwie do innych właściwości, które można ustawić w dowolnym momencie, właściwości ustawiane przy użyciu metod statycznych musi już istnieć w siatce przed ich zmiany.
+Należy pamiętać, ten kod w metody statyczne `Grid` klasy są używane do wykonywania zmian pozycjonowania, łącznie ze zmianami `ColumnSpan` i `RowSpan`. Należy pamiętać, że w przeciwieństwie do innych właściwości, które można ustawić w dowolnym momencie, właściwości, które można ustawić przy użyciu metod statycznych musi już być również w siatce przed ich zmiany.
 
-Zakończenie XAML dla powyższych aplikacji Kalkulator wygląda następująco:
+Pełne XAML dla powyższych aplikacji Kalkulator jest następująca:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-Zwróć uwagę, czy zarówno etykiety w górnej części siatki i zero przycisk są occuping więcej niż jedną kolumnę. Mimo że podobny układ mógłby zostać osiągnięty przy użyciu siatki zagnieżdżonych `ColumnSpan`  &  `RowSpan` podejście jest prostsze.
+Zauważ, że zarówno etykiety w górnej części siatki i zero przycisk są occuping więcej niż jedną kolumnę. Mimo że podobny układ można osiągnąć przy użyciu zagnieżdżonych siatki `ColumnSpan`  &  `RowSpan` podejście jest prostsze.
 
 C# implementacji:
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms, rozdział 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [Siatka](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms 17 rozdziałów](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [Siatka](xref:Xamarin.Forms.Grid)
 - [Układ (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Przykład BusinessTumble (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

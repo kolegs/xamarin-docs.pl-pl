@@ -1,38 +1,38 @@
 ---
-title: Implementowanie tekst na mowę
-description: W tym artykule opisano sposób użycia klasy platformy Xamarin.Forms DependencyService do wywołania do natywnego API zamiany tekstu na mowę każdej platformy.
+title: Implementowanie zamiany tekstu na mowę
+description: W tym artykule wyjaśniono, jak korzystać z zestawu narzędzi Xamarin.Forms DependencyService klasy wywołania interfejsu API zamiany tekstu na mowę natywnych każdej z platform.
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 5d9e7c74878ea6a095ba28a80fe1307493acbed5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d39902f2269d3eb241b48831b8eb1b181ff11e7a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241064"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997546"
 ---
-# <a name="implementing-text-to-speech"></a>Implementowanie tekst na mowę
+# <a name="implementing-text-to-speech"></a>Implementowanie zamiany tekstu na mowę
 
-Ten artykuł zawiera informacje pomocne podczas tworzenia aplikacji i platform, która używa [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) dostępu do natywnych interfejsów API zamiany tekstu na mowę:
+Ten artykuł przeprowadzi Cię tworzenie aplikacji dla wielu platform, która używa [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) na dostęp do natywnych interfejsów API zamiany tekstu na mowę:
 
-- **[Tworzenie interfejsu](#Creating_the_Interface)**  &ndash; zrozumieć sposób tworzenia interfejsu w kodzie udostępnionego.
+- **[Tworzenie interfejsu](#Creating_the_Interface)**  &ndash; zrozumieć, jak interfejs jest tworzony w współużytkowanym kodem.
 - **[iOS implementacji](#iOS_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu iOS.
 - **[Implementacja systemu android](#Android_Implementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla systemu Android.
-- **[Implementacja platformy uniwersalnej systemu Windows](#WindowsImplementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym dla uniwersalnych platformy systemu Windows (UWP).
-- **[Wdrażanie w kodzie udostępnionego](#Implementing_in_Shared_Code)**  &ndash; Dowiedz się, jak używać `DependencyService` do wywołania do implementacji native z udostępnionego kodu.
+- **[Implementacja platformy uniwersalnej systemu Windows](#WindowsImplementation)**  &ndash; Dowiedz się, jak implementować interfejs w kodzie natywnym do uniwersalnej platformy Windows (UWP).
+- **[Implementacja w kodzie udostępnionego](#Implementing_in_Shared_Code)**  &ndash; Dowiedz się, jak używać `DependencyService` do wywołania w natywnych implementacji ze współużytkowanym kodem.
 
-Aplikacji przy użyciu `DependencyService` będzie mieć następującą strukturę:
+Aplikacji przy użyciu `DependencyService` mają następującą strukturę:
 
-![](text-to-speech-images/tts-diagram.png "Struktura aplikacji DependencyService")
+![](text-to-speech-images/tts-diagram.png "DependencyService struktury aplikacji")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Tworzenie interfejsu
 
-Najpierw Utwórz interfejs w kodzie udostępnionego, który określa funkcje, które planujesz wdrożyć. Na przykład interfejs zawiera jedną metodę `Speak`:
+Najpierw Utwórz interfejs w kodzie udostępnionego, który określa funkcje, które planujesz wdrożyć. W tym przykładzie interfejs zawiera jedną metodę `Speak`:
 
 ```csharp
 public interface ITextToSpeech
@@ -41,7 +41,7 @@ public interface ITextToSpeech
 }
 ```
 
-Kodowanie tego interfejsu w kodzie udostępnione umożliwi aplikacji platformy Xamarin.Forms na dostęp do interfejsów API rozpoznawania mowy na każdej z platform.
+Kodowania dla tego interfejsu w kod udostępniony umożliwi dostęp do interfejsów API rozpoznawania mowy na każdej platformie aplikacji platformy Xamarin.Forms.
 
 > [!NOTE]
 > Klasy implementującej interfejs musi mieć konstruktora bez parametrów, aby pracować z `DependencyService`.
@@ -50,7 +50,7 @@ Kodowanie tego interfejsu w kodzie udostępnione umożliwi aplikacji platformy X
 
 ## <a name="ios-implementation"></a>Implementacja systemu iOS
 
-Interfejs musi być implementowana w każdym projekcie specyficzne dla platformy aplikacji. Należy pamiętać, że klasa ma konstruktora bez parametrów, aby `DependencyService` można utworzyć nowego wystąpienia.
+Interfejs musi zostać wdrożona w każdego projektu specyficznego dla platformy aplikacji. Należy pamiętać, że klasa ma konstruktora bez parametrów, aby `DependencyService` można tworzyć nowych wystąpień.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -78,13 +78,13 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` można użyć w kodzie udostępniony można utworzyć wystąpienie.
+`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` może służyć w kodzie udostępnionej utworzyć jej wystąpienie.
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Implementacja systemu android
 
-Bardziej złożone niż wersja systemu iOS jest kodu dla systemu Android: wymaga klasy implementującej odziedziczone specyficzne dla systemu Android `Java.Lang.Object` i wdrożenie `IOnInitListener` również interfejs. Wymagany jest również dostęp do bieżącego kontekstu Android jest udostępniana przez `MainActivity.Instance` właściwości.
+Kodu dla systemu Android jest bardziej skomplikowane niż wersja systemu iOS: wymaga klasy implementującej odziedziczone specyficzne dla systemu Android `Java.Lang.Object` i wdrożenia `IOnInitListener` również interfejs. Wymaga to również dostępu do bieżącego kontekstu dla systemu Android, który jest uwidaczniany przez `MainActivity.Instance` właściwości.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -119,13 +119,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` można użyć w kodzie udostępniony można utworzyć wystąpienie.
+`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` może służyć w kodzie udostępnionej utworzyć jej wystąpienie.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Implementacja platformy uniwersalnej systemu Windows
+## <a name="universal-windows-platform-implementation"></a>Universal Windows Platform implementacji
 
-Platforma uniwersalna systemu Windows ma mowy interfejsu API w `Windows.Media.SpeechSynthesis` przestrzeni nazw. Pamiętaj, aby znaczników jest tylko zastrzeżenie: **mikrofon** możliwości w manifeście, w przeciwnym razie dostęp do mowy interfejsy API są zablokowane.
+Platforma uniwersalna Windows ma interfejs API rozpoznawania mowy w `Windows.Media.SpeechSynthesis` przestrzeni nazw. Pamiętaj, aby znaczników jest tylko zastrzeżenie: **mikrofon** możliwość w manifeście, w przeciwnym razie dostęp do rozpoznawania mowy, interfejsy API są zablokowane.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -143,13 +143,13 @@ public class TextToSpeechImplementation : ITextToSpeech
 }
 ```
 
-`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` można użyć w kodzie udostępniony można utworzyć wystąpienie.
+`[assembly]` Atrybut rejestruje klasę jako implementacja `ITextToSpeech` interfejsu, co oznacza, że `DependencyService.Get<ITextToSpeech>()` może służyć w kodzie udostępnionej utworzyć jej wystąpienie.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementacja w kodzie udostępnionego
+## <a name="implementing-in-shared-code"></a>Wdrażanie w udostępnionego kodu
 
-Firma Microsoft teraz zapisać i przetestować udostępnionego kodu, który uzyskuje dostęp do interfejsu tekst na mowę. To prosta strona zawiera przycisk, które wyzwala funkcji mowy. Używa `DependencyService` można pobrać wystąpienia `ITextToSpeech` interfejsu &ndash; w czasie wykonywania tego wystąpienia będzie implementację specyficzne dla platformy, która ma pełny dostęp do natywnych zestawu SDK.
+Teraz możemy zapisu i przetestować kod udostępniony, który uzyskuje dostęp do interfejsu zamiany tekstu na mowę. Ta strona prostego zawiera przycisk, który wywołuje funkcje mowy. Używa ona `DependencyService` wystąpienia `ITextToSpeech` interfejsu &ndash; w czasie wykonywania tego wystąpienia będzie to implementacja specyficzne dla platformy, które ma pełny dostęp do natywnego zestawu SDK.
 
 ```csharp
 public MainPage ()
@@ -166,13 +166,13 @@ public MainPage ()
 }
 ```
 
-W aplikacji przy użyciu natywnych mowy SDK na każdej platformie, mówiąc spowoduje uruchomienie takiej aplikacji systemu iOS, Android lub platformy uniwersalnej systemu Windows i naciskając przycisk.
+Działania tej aplikacji w systemie iOS, Android lub platformy UWP i naciśnięcie przycisku spowoduje aplikacji do użytkownika, za pomocą mowy natywnego zestawu SDK na każdej platformie.
 
- ![iOS i Android przycisk tekst na mowę](text-to-speech-images/running.png "przykładowy tekst na mowę")
+ ![iOS i Android przycisk zamiany tekstu na mowę](text-to-speech-images/running.png "przykładowe zamiany tekstu na mowę")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przy użyciu DependencyService (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [Za pomocą DependencyService (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample/)
-- [Tekst na mowę skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/text-to-speech/text-to-speech.workbook)
+- [Zamiana tekstu na mowę skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/text-to-speech/text-to-speech.workbook)

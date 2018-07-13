@@ -1,6 +1,6 @@
 ---
-title: Indeksowanie aplikacji i połączeń bezpośrednich
-description: W tym artykule przedstawiono sposób użycia aplikacji indeksowanie i bezpośrednich połączeń aby zawartość aplikacji platformy Xamarin.Forms można wyszukiwać w systemach iOS i urządzeniach z systemem Android.
+title: Indeksowanie aplikacji i tworzenie Linku
+description: W tym artykule przedstawiono sposób użycia indeksowanie aplikacji i tworzenie linku się zawartość aplikacji platformy Xamarin.Forms można wyszukiwać na urządzeniach z systemem Android i iOS.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -8,34 +8,34 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: 9cc5177a585af1569385840ab8c370993984ca2b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a102765a3633b8abaf01b3f090d8253230bc16b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242495"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996099"
 ---
-# <a name="application-indexing-and-deep-linking"></a>Indeksowanie aplikacji i połączeń bezpośrednich
+# <a name="application-indexing-and-deep-linking"></a>Indeksowanie aplikacji i tworzenie Linku
 
-_Indeksowanie aplikacji umożliwia aplikacji, które w przeciwnym razie mogłyby zapomniane, po kilku używa pozostanie odpowiednich przez znajdujących się w wynikach wyszukiwania. Bezpośrednich połączeń umożliwia aplikacjom na odpowiadanie na wynik wyszukiwania, które zwykle zawiera dane aplikacji, przechodząc na stronę odwołanie z link bezpośredni. W tym artykule przedstawiono sposób użycia aplikacji indeksowanie i bezpośrednich połączeń aby zawartość aplikacji platformy Xamarin.Forms można wyszukiwać w systemach iOS i urządzeniach z systemem Android._
+_Indeksowanie aplikacji umożliwia aplikacjom, które w przeciwnym razie mogłyby zapomniane, po kilku używa realizować przez pokazywanie w wynikach wyszukiwania. Tworzenie linku umożliwia aplikacjom na wynikach wyszukiwania, który zazwyczaj zawiera dane aplikacji, przechodząc do strony, stanowiący odwołanie z linku bezpośredniego. W tym artykule przedstawiono sposób użycia indeksowanie aplikacji i tworzenie linku się zawartość aplikacji platformy Xamarin.Forms można wyszukiwać na urządzeniach z systemem Android i iOS._
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
-**Głębokość przez łączenie z platformy Xamarin.Forms i Azure, [Xamarin University](https://university.xamarin.com/)**
+**Głębokie konsolidowanie za pomocą platformy Xamarin.Forms i platformą Azure przez [platformy Xamarin University](https://university.xamarin.com/)**
 
 
-Indeksowanie aplikacji platformy Xamarin.Forms i połączeń bezpośrednich podanie Publikowanie metadanych dla aplikacji indeksowania, jak użytkownicy nawigują między aplikacji interfejsu API. Indeksowana zawartość następnie mogą być wyszukiwane przez wyszukiwanie Spotlight, wyszukiwania Google lub wyszukiwania w sieci web. Naciskając pozycję w wynikach wyszukiwania, która zawiera link bezpośredni będą wyzwalać zdarzenia mogą być obsługiwane przez aplikację, która jest zwykle używana, można przejść do strony odwołanie z link bezpośredni.
+Indeksowanie aplikacji platformy Xamarin.Forms i tworzenie linku do zapewnienia Publikowanie metadanych dla aplikacji indeksowania, jak użytkownicy nawigują w aplikacjach interfejsu API. Indeksowanej zawartości następnie mogą być wyszukiwane przez wyszukiwanie Spotlight, wyszukiwania Google lub wyszukiwania w sieci web. Naciskając pozycję w wynikach wyszukiwania, która zawiera link bezpośredni będzie wywołać zdarzenie, może być obsługiwany przez aplikację, która jest zwykle używana do przejdź do strony, stanowiący odwołanie z linku bezpośredniego.
 
-Przykładowa aplikacja przedstawiono aplikację listy Todo, gdy dane są przechowywane w lokalnej bazie danych SQLite, jak pokazano na poniższych zrzutach ekranu:
+Przykładowa aplikacja przedstawiono aplikację listy zadań do wykonania, gdy dane są przechowywane w lokalnej bazie danych SQLite, jak pokazano na poniższych zrzutach ekranu:
 
-![](deep-linking-images/screenshots.png "Aplikacja TodoList")
+![](deep-linking-images/screenshots.png "Aplikacja listy zadań")
 
-Każdy `TodoItem` jest indeksowana wystąpienia utworzone przez użytkownika. Aby zlokalizować zindeksowanych danych z aplikacji można następnie wyszukiwania specyficznego dla platformy. Po naciśnięciu element wyników wyszukiwania dla aplikacji, aplikacja jest uruchamiana, `TodoItemPage` przejście i `TodoItem` odwołanie z dokładnego zostanie wyświetlony link.
+Każdy `TodoItem` wystąpienia utworzone przez użytkownika jest indeksowana. Wyszukiwanie specyficzne dla platformy, następnie może służyć do zlokalizowania indeksowane dane z aplikacji. Kiedy użytkownik naciska na element wyników wyszukiwania dla aplikacji, aplikacja zostanie uruchomiona, `TodoItemPage` przejście i `TodoItem` stanowiący odwołanie z dokładnego zostanie wyświetlony link.
 
 Aby uzyskać więcej informacji na temat korzystania z bazy danych SQLite, zobacz [Praca z lokalnej bazy danych](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> Indeksowanie aplikacji platformy Xamarin.Forms bezpośrednich połączeń funkcji jest dostępna w systemach iOS i Android platform tylko i odpowiednio wymaga systemu iOS 9 i 23 interfejsu API.
+> Indeksowanie aplikacji platformy Xamarin.Forms głębokiego łączenie funkcjonalność dostępną tylko w systemach iOS i Android platform i odpowiednio wymaga systemu iOS 9 i interfejsu API 23.
 
 ## <a name="setup"></a>Konfiguracja
 
@@ -43,36 +43,36 @@ Wszelkie dodatkowe instrukcje dotyczące konfiguracji dla tej funkcji w systemac
 
 ### <a name="ios"></a>iOS
 
-Na platformie iOS nie istnieje żadne dodatkowe ustawienia wymagane do używania tej funkcji.
+Na platformie systemu iOS nie istnieje żadna dodatkowa konfiguracja, musieli korzystać z tej funkcji.
 
 ### <a name="android"></a>Android
 
-Na platformie Android istnieje szereg wymagań wstępnych, które muszą zostać spełnione, aby indeksowania aplikacji i bezpośrednie łączenie funkcji:
+Na platformie systemu Android istnieje kilka wymagań wstępnych, które muszą zostać spełnione, aby indeksowanie aplikacji i głębokiego łączenie funkcji:
 
 1. Wersja aplikacji musi być na żywo w witrynie Google Play.
-1. Pomocnik witryny sieci Web musi być zarejestrowana przed aplikacji w konsoli dla deweloperów firmy Google. Gdy aplikacja jest skojarzony z witryny sieci Web, adresy URL może być indeksowane pracy dla witryny sieci Web i aplikacji, które następnie mogą być przekazywane w wynikach wyszukiwania. Aby uzyskać więcej informacji, zobacz [aplikacji indeksowanie wyszukiwania Google](https://support.google.com/googleplay/android-developer/answer/6041489) w witrynie sieci Web firmy Google.
-1. Aplikacja musi obsługiwać intencje adresu URL HTTP na `MainActivity` może odpowiadać klasy, którą ustalić aplikacji indeksowania rodzaje systemów danych adresu URL aplikacji. Aby uzyskać więcej informacji, zobacz [Konfigurowanie filtru zamiar](~/android/platform/app-linking.md#configure-intent-filter).
+1. Pomocnik witryny sieci Web musi być zarejestrowany dla aplikacji w konsoli dewelopera Google. Gdy aplikacja jest skojarzona z witryny sieci Web, adresy URL mogą mieć indeksowane pracę zarówno dla witryny sieci Web i aplikacji, które następnie mogą być przekazywane w wynikach wyszukiwania. Aby uzyskać więcej informacji, zobacz [indeksowanie aplikacji wyszukiwania Google](https://support.google.com/googleplay/android-developer/answer/6041489) w witrynie internetowej firmy Google.
+1. Aplikacja musi obsługiwać intencji adresem URL protokołu HTTP na `MainActivity` klasy, która Poinformuj aplikacji indeksowania jakiego rodzaju Schematy adresów URL danych aplikacji można odpowiedzieć. Aby uzyskać więcej informacji, zobacz [Konfigurowanie filtru intencji](~/android/platform/app-linking.md#configure-intent-filter).
 
-Po spełnieniu tych wymaganiach wstępnych następujące dodatkowe ustawienia musisz wybrać indeksowanie aplikacji platformy Xamarin.Forms i bezpośrednich połączeń na platformie Android:
+Po spełnieniu tych wymaganiach wstępnych następujące dodatkowe ustawienia wymagane jest wprowadzenie indeksowanie aplikacji platformy Xamarin.Forms i tworzenie linku do platformy Android:
 
-1. Zainstaluj [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) pakiet NuGet do projektu aplikacji systemu Android.
-1. W `MainActivity.cs` pliku, zaimportuj `Xamarin.Forms.Platform.Android.AppLinks` przestrzeni nazw.
-1. W `MainActivity.OnCreate` zastępowania, Dodaj następujący wiersz kodu poniżej `Forms.Init(this, bundle)`:
+1. Zainstaluj [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) pakiet NuGet do projektu aplikacji dla systemu Android.
+1. W `MainActivity.cs` plików, zaimportuj `Xamarin.Forms.Platform.Android.AppLinks` przestrzeni nazw.
+1. W `MainActivity.OnCreate` zastąpienia, Dodaj następujący wiersz kodu poniżej `Forms.Init(this, bundle)`:
 
 ```csharp
 AndroidAppLinks.Init (this);
 ```
 
-Aby uzyskać więcej informacji, zobacz [głębokiego łącza zawartości z platformy Xamarin.Forms adres URL nawigacji](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) na blogu Xamarin.
+Aby uzyskać więcej informacji, zobacz [głębokiego łącza zawartość Nawigacja URL przy użyciu zestawu narzędzi Xamarin.Forms](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) na blogu platformy Xamarin.
 
 ## <a name="indexing-a-page"></a>Indeksowania strony
 
-Proces indeksowania strony i ujawnienie go do wyszukiwania Google i uwagi wygląda następująco:
+Proces indeksowania strony i ujawnienie go do serwis Google czy Spotlight search jest w następujący sposób:
 
-1. Utwórz [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) zawierający metadane wymagane do indeksu strony, oraz link bezpośredni, aby powrócić do strony, gdy użytkownik wybierze indeksowana zawartość w wynikach wyszukiwania.
-1. Zarejestruj [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienie do indeksu go do wyszukiwania.
+1. Tworzenie [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) zawierająca metadane wymagane do indeksowania strony, wraz z linku bezpośredniego, aby powrócić do strony, gdy użytkownik wybierze indeksowanej zawartości w wynikach wyszukiwania.
+1. Zarejestruj [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia, aby je indeksować wyszukiwania.
 
-Poniższy przykładowy kod przedstawia sposób tworzenia [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienie:
+Poniższy przykład kodu demonstruje sposób tworzenia [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienie:
 
 ```csharp
 AppLinkEntry GetAppLink (TodoItem item)
@@ -91,49 +91,49 @@ AppLinkEntry GetAppLink (TodoItem item)
 }
 ```
 
-[ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) Wystąpienie zawiera wiele właściwości, których wartości są wymagane do strony indeksu i tworzenie głębokiego łącza. [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Title/), [ `Description` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Description/), I [ `Thumbnail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Thumbnail/) właściwości są używane do identyfikowania indeksowana zawartość, gdy jest wyświetlana w wynikach wyszukiwania. [ `IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) Właściwość jest ustawiona na `true` aby wskazać, że indeksowana zawartość jest aktualnie wyświetlany. [ `AppLinkUri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.AppLinkUri/) Właściwość jest `Uri` zawierający informacje wymagane, aby powrócić do bieżącej strony i wyświetlić bieżącą `TodoItem`. W poniższym przykładzie przedstawiono przykład `Uri` dla przykładowej aplikacji:
+[ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) Wystąpienie zawiera wiele właściwości, których wartości są wymagane do strony indeksu i tworzenie linku bezpośredniego. [ `Title` ](xref:Xamarin.Forms.IAppLinkEntry.Title), [ `Description` ](xref:Xamarin.Forms.IAppLinkEntry.Description), I [ `Thumbnail` ](xref:Xamarin.Forms.IAppLinkEntry.Thumbnail) właściwości są używane do identyfikowania indeksowanej zawartości, gdy się pojawi się w wynikach wyszukiwania. [ `IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) Właściwość jest ustawiona na `true` do wskazania, że indeksowanej zawartości jest aktualnie wyświetlany. [ `AppLinkUri` ](xref:Xamarin.Forms.IAppLinkEntry.AppLinkUri) Właściwość `Uri` zawierający informacje wymagane do wróć do bieżącej strony i wyświetlić bieżącą `TodoItem`. W poniższym przykładzie pokazano przykład `Uri` dla przykładowej aplikacji:
 
 ```csharp
 http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7819
 ```
 
-To `Uri` zawiera wszystkie informacje wymagane do uruchomienia `deeplinking` aplikacji, przejdź do `DeepLinking.TodoItemPage`i wyświetlić `TodoItem` mający `ID` z `ec38ebd1-811e-4809-8a55-0d028fce7819`.
+To `Uri` zawiera wszystkie informacje wymagane do uruchomienia `deeplinking` aplikację, przejdź do `DeepLinking.TodoItemPage`i wyświetlić `TodoItem` zawierający `ID` z `ec38ebd1-811e-4809-8a55-0d028fce7819`.
 
 ## <a name="registering-content-for-indexing"></a>Rejestrowanie zawartości na potrzeby indeksowania
 
-Raz [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienia został utworzony, musi być zarejestrowana do indeksowania pojawią się w wynikach wyszukiwania. Jest to realizowane przy użyciu [ `RegisterLink` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IAppLinks.RegisterLink/p/Xamarin.Forms.IAppLinkEntry/) metody, jak pokazano w poniższym przykładzie:
+Gdy [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) utworzono wystąpienie, musi być zarejestrowana do indeksowania pojawią się w wynikach wyszukiwania. Jest to realizowane przy [ `RegisterLink` ](xref:Xamarin.Forms.IAppLinks.RegisterLink(Xamarin.Forms.IAppLinkEntry)) metody, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 Application.Current.AppLinks.RegisterLink (appLink);
 ```
 
-Spowoduje to dodanie [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienia aplikacji [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) kolekcji.
+Spowoduje to dodanie [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia z aplikacją [ `AppLinks` ](xref:Xamarin.Forms.Application.AppLinks) kolekcji.
 
 > [!NOTE]
-> `RegisterLink` Metody mogą służyć do zaktualizowania zawartości indeksowanego ze stroną.
+> `RegisterLink` Metodę można również można zaktualizować zawartości, indeksowanego dla strony.
 
-Raz [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienia został zarejestrowany do indeksowania, może występować w wynikach wyszukiwania. Poniższy zrzut ekranu przedstawia indeksowana zawartość znajdujących się w wynikach wyszukiwania na platformie iOS:
+Gdy [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia została zarejestrowana dla indeksowania, może być wyświetlany w wynikach wyszukiwania. Poniższy zrzut ekranu przedstawia indeksowanej zawartości znajdujących się w wynikach wyszukiwania na platformie systemu iOS:
 
-![](deep-linking-images/ios-search.png "Indeksowana zawartość w wynikach wyszukiwania w systemie iOS")
+![](deep-linking-images/ios-search.png "Indeksowanej zawartości w wynikach wyszukiwania w systemie iOS")
 
-## <a name="de-registering-indexed-content"></a>Wyłączyć rejestrowanie indeksowana zawartość
+## <a name="de-registering-indexed-content"></a>Wyrejestrowywanie indeksowana zawartość
 
-[ `DeregisterLink` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IAppLinks.DeregisterLink/p/Xamarin.Forms.IAppLinkEntry/) Metoda służy do usuwania indeksowana zawartość z wyników wyszukiwania, jak pokazano w poniższym przykładzie:
+[ `DeregisterLink` ](xref:Xamarin.Forms.IAppLinks.DeregisterLink(Xamarin.Forms.IAppLinkEntry)) Metoda służy do usuwania indeksowanej zawartości z wyników wyszukiwania, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 Application.Current.AppLinks.DeregisterLink (appLink);
 ```
 
-Spowoduje to usunięcie [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienie z aplikacji [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) kolekcji.
+Spowoduje to usunięcie [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia aplikacji [ `AppLinks` ](xref:Xamarin.Forms.Application.AppLinks) kolekcji.
 
 > [!NOTE]
-> W systemie Android nie jest możliwe usuwanie indeksowana zawartość z wyników wyszukiwania.
+> W systemie Android nie jest możliwe usuwanie indeksowanej zawartości z poziomu wyników wyszukiwania.
 
 <a name="responding" />
 
-## <a name="responding-to-a-deep-link"></a>Odpowiada na Link bezpośredni
+## <a name="responding-to-a-deep-link"></a>Odpowiadanie na Link bezpośredni
 
-Gdy indeksowana zawartość jest wyświetlana w wynikach wyszukiwania i jest wybierany przez użytkownika, `App` klasy dla aplikacji będą otrzymywać żądania obsługi `Uri` zawartych w indeksowanej zawartości. To żądanie mogą być przetwarzane w [ `OnAppLinkRequestReceived` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnAppLinkRequestReceived/p/System.Uri/) zastąpić, jak pokazano w poniższym przykładzie:
+Gdy indeksowana zawartość jest wyświetlana w wynikach wyszukiwania jest wybierany przez użytkownika, `App` klasy, aby aplikacja otrzyma żądanie, aby obsłużyć `Uri` zawarte w indeksowanej zawartości. To żądanie mogą być przetwarzane w [ `OnAppLinkRequestReceived` ](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)) zastąpić, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class App : Application
@@ -165,13 +165,13 @@ public class App : Application
 }
 ```
 
-[ `OnAppLinkRequestReceived` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnAppLinkRequestReceived/p/System.Uri/) Metoda sprawdza, czy odebranej `Uri` jest przeznaczona dla aplikacji, przed analizą `Uri` do strony, aby nastąpi przejście, a parametr do przekazania do strony. Wystąpienie strony, nastąpi przejście do tworzenia i `TodoItem` reprezentowany przez strony są pobierane parametru. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Strony, nastąpi przejście, następnie ustawiono `TodoItem`. Gwarantuje to, że w przypadku `TodoItemPage` jest wyświetlany za [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushAsync/p/Xamarin.Forms.Page/) metody go będzie pokazywał `TodoItem` którego `ID` znajduje się w głębokiego łącza.
+[ `OnAppLinkRequestReceived` ](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)) Metoda sprawdza, czy odebrano `Uri` jest przeznaczony dla aplikacji, przed analizą `Uri` do strony aby nastąpi przejście, a parametr do przekazania do strony. Wystąpienie strony, nastąpi przejście, zostanie utworzony i `TodoItem` reprezentowany przez stronę parametru są pobierane. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Strony, nastąpi przejście, zostanie następnie ustawiona `TodoItem`. Daje to gwarancję, że w przypadku `TodoItemPage` jest wyświetlany [ `PushAsync` ](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page)) metody go będzie pokazywać `TodoItem` którego `ID` znajduje się w linku bezpośredniego.
 
 ## <a name="making-content-available-for-search-indexing"></a>Udostępnianie zawartości do indeksowania wyszukiwania
 
-Zawsze jest wyświetlana strona reprezentowany przez link bezpośredni, [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) ustawioną właściwość `true`. W systemach iOS i Android w ten sposób [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) dostępne dla indeksowanie wyszukiwania, a w systemie iOS tylko wystąpienia, zapewnia także `AppLinkEntry` dostępne dla przekazaniem wystąpienia. Aby uzyskać więcej informacji na temat przekazaniem zobacz [wprowadzenie do przekazaniem](~/ios/platform/handoff.md).
+Każdorazowo, zostanie wyświetlona strona, reprezentowane przez link bezpośredni, [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) właściwość może być ustawiona na `true`. W systemach iOS i Android to sprawia, że [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia jest dostępna dla indeksowania wyszukiwania i tylko w systemie iOS, zapewnia także `AppLinkEntry` wystąpienia dostępne dla przekazywanie. Aby uzyskać więcej informacji na temat przekazywanie zobacz [wprowadzenie do przekazywanie](~/ios/platform/handoff.md).
 
-Poniższy przykład kodu pokazuje ustawienie [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) właściwości `true` w [ `Page.OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) zastąpienia:
+Poniższy przykład kodu pokazuje ustawienie [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) właściwości `true` w [ `Page.OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) zastąpienia:
 
 ```csharp
 protected override void OnAppearing ()
@@ -183,7 +183,7 @@ protected override void OnAppearing ()
 }
 ```
 
-Podobnie, gdy strona reprezentowany przez link bezpośredni jest opuszczeniu, [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) ustawioną właściwość `false`. W systemach iOS i Android, powoduje to zatrzymanie [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) wystąpienia anonsowane dla indeksowanie wyszukiwania, a na it tylko systemu iOS również zatrzymuje reklamy `AppLinkEntry` wystąpienie przekazaniem. Można to zrobić w [ `Page.OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing()/) zastąpić, jak pokazano w poniższym przykładzie:
+Podobnie, gdy strona reprezentowany przez link bezpośredni jest opuszczeniu, [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) właściwość może być ustawiona na `false`. W systemach iOS i Android, spowoduje to zatrzymanie [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) wystąpienia anonsowane dla indeksowania wyszukiwania, a na it tylko dla systemu iOS również zatrzymuje reklamy `AppLinkEntry` wystąpienie przekazywanie. Można to zrobić w [ `Page.OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) zastąpić, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnDisappearing ()
@@ -194,9 +194,9 @@ protected override void OnDisappearing ()
 }
 ```
 
-## <a name="providing-data-to-handoff"></a>Dostarcza dane do przekazaniem
+## <a name="providing-data-to-handoff"></a>Dostarcza dane do przekazywanie
 
-W systemach iOS mogą być przechowywane dane specyficzne dla aplikacji, podczas indeksowania strony. Jest to osiągane przez dodanie danych do [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) kolekcji, która jest `Dictionary<string, string>` do przechowywania par klucz wartość, które są używane w przekazaniem. Przekazaniem daje użytkownikowi uruchomienia działania w jednej ze swoich urządzeń i kontynuować danego działania na innym urządzeniu (określone przez użytkownika konto iCloud). Poniższy kod przedstawia przykład przechowywania par klucz wartość specyficznych dla aplikacji:
+W systemach iOS mogą być przechowywane dane specyficzne dla aplikacji, podczas indeksowania strony. Jest to osiągane przez dodanie danych do [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) kolekcji, która jest `Dictionary<string, string>` do przechowywania par klucz wartość, które są używane w przekazywanie. Program handoff to sposób użytkownik może uruchomić działanie na jednym z ich urządzeń i kontynuować działania na innym urządzeniu, (określonych przez użytkownika konta usługi iCloud). Poniższy kod przedstawia przykład przechowywanie par klucz wartość specyficzne dla aplikacji:
 
 ```csharp
 var pageLink = new AppLinkEntry {
@@ -206,29 +206,29 @@ pageLink.KeyValues.Add("appName", App.AppName);
 pageLink.KeyValues.Add("companyName", "Xamarin");
 ```
 
-Wartości przechowywane w [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) kolekcji będą przechowywane w metadanych dla indeksowanego strony i zostanie przywrócona po naciśnięciu wyniku wyszukiwania zawiera link bezpośredni (lub gdy programowi Handoff służy do wyświetlania zawartości na inny zalogowany urządzenia).
+Wartości przechowywane w [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) kolekcji będą przechowywane w metadanych dla strony indeksowane i zostanie przywrócona po użytkownik naciska wyniku wyszukiwania, która zawiera link bezpośredni (lub gdy program Handoff służy do wyświetlania zawartości na inny zalogowanego urządzenia).
 
 Ponadto można określić wartości dla następujących kluczy:
 
-- `contentType` — `string` , który określa identyfikator typu uniform indeksowana zawartość. Zalecane Konwencji do użycia dla tej wartości jest nazwą typu strony zawierającej indeksowana zawartość.
-- `associatedWebPage` — `string` reprezentujący strony sieci web do odwiedzenia czy indeksowana zawartość można również wyświetlać w sieci web, czy aplikacja obsługuje przez przeglądarkę Safari głębokiego łącza.
-- `shouldAddToPublicIndex` — `string` albo `true` lub `false` sterującą, czy należy dodać indeksowana zawartość do indeksu chmury publicznej firmy Apple, która następnie widoczne dla użytkowników, którzy nie zainstalowano aplikacji na urządzeniu z systemem iOS. Jednak wyłącznie z powodu zawartość została ustawiona dla publicznych indeksowania, go nie oznacza, że zostanie ona automatycznie dodana do indeksu chmury publicznej firmy Apple. Aby uzyskać więcej informacji, zobacz [publicznego indeksowanie wyszukiwania](~/ios/platform/search/nsuseractivity.md). Należy pamiętać, że ten klucz powinien być ustawiony na `false` podczas dodawania danych osobowych [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) kolekcji.
+- `contentType` — `string` , który określa identyfikator typu jednolitego indeksowanej zawartości. Zalecane Konwencji do użycia dla tej wartości jest nazwa typu strony zawierającej indeksowanej zawartości.
+- `associatedWebPage` — `string` reprezentujący strony sieci web, aby odwiedzić czy indeksowanej zawartości można również wyświetlać w sieci web, czy aplikacja obsługuje linków bezpośrednich przeglądarki Safari.
+- `shouldAddToPublicIndex` — `string` albo `true` lub `false` sterującą umożliwia określenie, czy dodać indeksowanej zawartości do indeksu chmury publicznej firmy Apple, który następnie widoczne dla użytkowników, którzy nie zainstalowano aplikacji na urządzeniu z systemem iOS. Po prostu, ponieważ zawartość została ustawiona podczas indeksowania publicznych, go nie oznacza to jednak, czy zostanie on automatycznie dodany do indeksu chmury publicznej firmy Apple. Aby uzyskać więcej informacji, zobacz [publicznych indeksowanie wyszukiwania](~/ios/platform/search/nsuseractivity.md). Należy zauważyć, że ten klucz powinien być ustawiony na `false` podczas dodawania danych osobowych [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) kolekcji.
 
 > [!NOTE]
-> `KeyValues` Kolekcji nie jest używany na platformie Android.
+> `KeyValues` Kolekcji nie jest używany na platformie systemu Android.
 
-Aby uzyskać więcej informacji na temat przekazaniem zobacz [wprowadzenie do przekazaniem](~/ios/platform/handoff.md).
+Aby uzyskać więcej informacji na temat przekazywanie zobacz [wprowadzenie do przekazywanie](~/ios/platform/handoff.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób użycia aplikacji indeksowanie i bezpośrednich połączeń aby zawartość aplikacji platformy Xamarin.Forms można wyszukiwać w systemach iOS i urządzeniach z systemem Android. Indeksowanie aplikacji umożliwia aplikacjom pozostanie odpowiednich przez znajdujących się w wynikach wyszukiwania, które w przeciwnym razie czy zapomniano o, po kilku używa.
+W tym artykule pokazano, jak używać indeksowanie aplikacji i tworzenie linku się zawartość aplikacji platformy Xamarin.Forms można wyszukiwać na urządzeniach z systemem Android i iOS. Indeksowanie aplikacji umożliwia aplikacjom realizować przez pokazywanie w wynikach wyszukiwania, które w przeciwnym razie czy zapomniano o, po korzysta z kilku.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Głębokie konsolidację (przykład)](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
-- [interfejsy API wyszukiwania systemu iOS](~/ios/platform/search/index.md)
-- [Łączenie aplikacji z systemem Android 6.0](~/android/platform/app-linking.md)
-- [AppLinkEntry](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)
-- [IAppLinkEntry](https://developer.xamarin.com/api/type/Xamarin.Forms.IAppLinkEntry/)
-- [IAppLinks](https://developer.xamarin.com/api/type/Xamarin.Forms.IAppLinks/)
+- [Łączenie głębokiego (przykład)](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
+- [interfejsy API wyszukiwania w systemie iOS](~/ios/platform/search/index.md)
+- [Łączenie aplikacji dla systemu Android 6.0](~/android/platform/app-linking.md)
+- [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)
+- [IAppLinkEntry](xref:Xamarin.Forms.IAppLinkEntry)
+- [IAppLinks](xref:Xamarin.Forms.IAppLinks)

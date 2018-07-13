@@ -1,48 +1,48 @@
 ---
-title: Podsumowanie rozdziału 9. Wywołania API specyficzne dla platformy
-description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdziału 9. Wywołania API specyficzne dla platformy'
+title: Podsumowanie rozdziałów 9. Wywołania interfejsu API specyficzne dla platformy
+description: 'Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms: Podsumowanie rozdziału 9. Wywołania interfejsu API specyficzne dla platformy'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 719f075ada576f87d4533697209deedcbb7003c4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239932"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994760"
 ---
-# <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Podsumowanie rozdziału 9. Wywołania API specyficzne dla platformy
+# <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Podsumowanie rozdziałów 9. Wywołania interfejsu API specyficzne dla platformy
 
-Czasami jest niezbędne do uruchomienia niektórych kodu, który jest różny od platformy. W tym rozdziale Eksploruje technik.
+Czasami jest niezbędne do uruchomienia kodu, który jest różny od platformy. W tym rozdziale przedstawiono technik.
 
-## <a name="preprocessing-in-the-shared-asset-project"></a>Przetwarzanie wstępne projektu współużytkowanych zasobów
+## <a name="preprocessing-in-the-shared-asset-project"></a>Przetwarzanie wstępne w do projektu zasobów udostępnionych
 
-Projekt platformy Xamarin.Forms udostępnionych zasobów może zostać uruchomiony inny kod dla każdej platformy przy użyciu dyrektywy preprocesora C# `#if`, `#elif`, i `endif`. To jest przedstawiona w [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
+Xamarin.Forms projektu udostępnionego zasobu może wykonać różny kod dla każdej z platform za pomocą dyrektywy preprocesora C# `#if`, `#elif`, i `endif`. Jest to zaprezentowane w [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![Potrójna zrzut ekranu przedstawiający zmiennej sformatowany akapit](images/ch09fg01-small.png "Model urządzenia i systemu operacyjnego")](images/ch09fg01-large.png#lightbox "Model urządzenia i systemu operacyjnego")
+[![Potrójna zrzut ekranu przedstawiający zmiennej sformatowane akapitu](images/ch09fg01-small.png "Model urządzenia i systemu operacyjnego")](images/ch09fg01-large.png#lightbox "Model urządzenia i systemu operacyjnego")
 
-Jednak wynikowy kod może być ugly i trudne do odczytania.
+Jednak wynikowy kod może być nieładnego i trudne do odczytania.
 
-## <a name="parallel-classes-in-the-shared-asset-project"></a>Równoległe klas w projekcie zasobów udostępnionych
+## <a name="parallel-classes-in-the-shared-asset-project"></a>Równoległe klas do projektu zasobów udostępnionych
 
-Bardziej ustrukturyzowanymi podejście do wykonywania kodu specyficzne dla platformy w SAP jest przedstawiona w [ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2) próbki. Każdy z projektów platformy o identycznej nazwie klasy i metody, ale zaimplementowany dla tej konkretnej platformy. SAP następnie po prostu tworzy wystąpienie klasy i wywołuje metodę.
+Bardziej ustrukturyzowane podejście do wykonywania kodu specyficznego dla platformy w systemie SAP jest przedstawiona w [ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2) próbki. Każdy z projektów platformy o identycznej nazwie klasy i metody, ale zaimplementowane dla tej konkretnej platformy. SAP następnie po prostu tworzy wystąpienie klasy i wywołuje metodę.
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService i biblioteki klas przenośnych
 
-Zwykle biblioteki nie może uzyskać dostępu klas w projektach aplikacji. To ograniczenie jest prawdopodobnie zapobiec technika pokazano **PlatInfoSap2** użycia w PCL. Jednak platformy Xamarin.Forms zawiera klasę o nazwie [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) używającą odbicia .NET dostęp do publicznych klas w projekcie aplikacji z PCL.
+Biblioteki zwykle nie może uzyskać dostęp do klas w projektach aplikacji. To ograniczenie wydaje się, aby zapobiec techniki przedstawione w **PlatInfoSap2** użycia w aplikacji PCL. Jednak zestaw narzędzi Xamarin.Forms zawiera klasę o nazwie [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) używającej odbicie .NET dostęp do publicznych klas w projekcie aplikacji z PCL.
 
-Zdefiniuj PCL `interface` z elementami członkowskimi, należy go używać w każdej z platform. Następnie w każdej z platform zawiera implementację tego interfejsu. Klasa, która implementuje interfejs musi być identyfikowany z [DependencyAttribute](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyAttribute/) na poziomie zestawu.
+Należy zdefiniować PCL `interface` z elementami członkowskimi, należy go używać w każdej z platform. Następnie w każdej z platform zawiera implementację tego interfejsu. Klasa, która implementuje interfejs musi być identyfikowany za pomocą [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) na poziomie zestawu.
 
-PCL, a następnie używa ogólnego [ `Get` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DependencyService.Get{T}/p/Xamarin.Forms.DependencyFetchTarget/) metody `DependencyService` uzyskanie wystąpienia klasy platformy, która implementuje interfejs.
+PCL następnie używa ogólnego [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) metody `DependencyService` do uzyskania wystąpienie klasy platforma, która implementuje interfejs.
 
-To jest przedstawiona w [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) próbki.
+Jest to zaprezentowane w [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) próbki.
 
 ## <a name="platform-specific-sound-generation"></a>Generowanie dźwięku specyficzne dla platformy
 
-[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) próbki dodaje sygnały do **MonkeyTap** program uzyskując dostęp do urządzeń generacji dźwięk w każdej z platform.
+[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) Przykładowa aplikacja dodaje dźwięków do **MonkeyTap** program, uzyskując dostęp do urządzenia dźwiękowe generacji w każdej z platform.
 
 
 

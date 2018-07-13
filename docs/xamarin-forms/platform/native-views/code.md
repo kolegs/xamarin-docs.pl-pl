@@ -1,49 +1,49 @@
 ---
-title: Natywny widoków w języku C#
-description: Natywny widoków z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron platformy Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoków natywnego układ platformy Xamarin.Forms utworzone przy użyciu języka C# oraz do zastąpienia układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
+title: Widoki natywne w języku C#
+description: Widoki natywne z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoki natywne do układu Xamarin.Forms utworzone przy użyciu języka C# oraz jak przesłonić układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050055"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996197"
 ---
-# <a name="native-views-in-c"></a>Natywny widoków w języku C#
+# <a name="native-views-in-c"></a>Widoki natywne w języku C#
 
-_Natywny widoków z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron platformy Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoków natywnego układ platformy Xamarin.Forms utworzone przy użyciu języka C# oraz do zastąpienia układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API._
+_Widoki natywne z systemami iOS, Android i platformy uniwersalnej systemu Windows można odwoływać się bezpośrednio ze stron Xamarin.Forms utworzone przy użyciu języka C#. W tym artykule przedstawiono sposób dodawania widoki natywne do układu Xamarin.Forms utworzone przy użyciu języka C# oraz jak przesłonić układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API._
 
 ## <a name="overview"></a>Omówienie
 
-Wszystkie platformy Xamarin.Forms formant, który umożliwia `Content` ustawiania, lub `Children` kolekcji, można dodawać widoki specyficzne dla platformy. Na przykład iOS `UILabel` można bezpośrednio dodać do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) właściwości, lub do [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekcji. Jednak należy pamiętać, że ta funkcja wymaga użycia `#if` definiuje w rozwiązaniach platformy Xamarin.Forms projektu udostępnionego i nie jest dostępna z rozwiązań biblioteki platformy Xamarin.Forms .NET Standard.
+Formant dowolnego zestawu narzędzi Xamarin.Forms, który umożliwia `Content` ustawiania, lub `Children` kolekcji można dodawać widoki specyficzne dla platformy. Na przykład dla systemu iOS `UILabel` można bezpośrednio dodać do [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) właściwości lub [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) kolekcji. Należy jednak zauważyć, że ta funkcja wymaga użycia `#if` definiuje w rozwiązaniach projektu udostępnionego zestawu narzędzi Xamarin.Forms, a nie jest dostępna przy użyciu zestawu narzędzi Xamarin.Forms .NET Standard biblioteki.
 
-Poniższe zrzuty ekranu pokazują widoki specyficzne dla platformy, został on dodany do platformy Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+Poniższe zrzuty ekranu pokazują specyficzne dla platformy widoków, został on dodany do zestawu narzędzi Xamarin.Forms [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "StackLayout zawierający widoki specyficzne dla platformy")](code-images/screenshots.png#lightbox "StackLayout zawierający widoki specyficzne dla platformy")
+[![](code-images/screenshots-sml.png "StackLayout zawierają widoki specyficzne dla platformy")](code-images/screenshots.png#lightbox "StackLayout zawierają widoki specyficzne dla platformy")
 
-Możliwość dodawania widoki specyficzne dla platformy układ platformy Xamarin.Forms jest włączona za pomocą dwóch metod rozszerzenia na każdej platformie:
+Możliwość dodawania widoki specyficzne dla platformy do układu Xamarin.Forms jest włączone za pomocą dwóch metod rozszerzenia na każdej z platform:
 
-- `Add` — dodaje specyficzne dla platformy w celu [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekcji układu.
-- `ToView` — Trwa widoku specyficzne dla platformy i koduje go jako platformy Xamarin.Forms [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) mogą być ustawiani jako `Content` właściwości formantu.
+- `Add` — Dodaje widok specyficzny dla platformy, który chcesz [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) kolekcja układzie.
+- `ToView` — Trwa widoku specyficzne dla platformy i otacza go jako rozwiązanie Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) może być ustawiona jako `Content` właściwości formantu.
 
-W projekcie udostępnionym platformy Xamarin.Forms przy użyciu tych metod wymaga importowania odpowiednich przestrzeń nazw platformy Xamarin.Forms specyficzne dla platformy:
+W projekcie udostępnionym Xamarin.Forms przy użyciu tych metod wymaga importowania odpowiedniego obszaru nazw zestawu narzędzi Xamarin.Forms specyficzne dla platformy:
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Platforma uniwersalna systemu Windows (UWP)** — Xamarin.Forms.Platform.UWP
+- **Platforma Universal Windows (UWP)** — Xamarin.Forms.Platform.UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>Dodawanie widoków specyficzne dla platformy na każdej platformie
+## <a name="adding-platform-specific-views-on-each-platform"></a>Dodawanie widoków specyficzne dla platformy, na każdej platformie
 
-Poniższe sekcje przedstawiają sposób dodawania widoki specyficzne dla platformy układ platformy Xamarin.Forms na każdej z platform.
+W poniższych sekcjach przedstawiono sposób dodawania widoki specyficzne dla platformy do układu Xamarin.Forms na każdej platformie.
 
 ### <a name="ios"></a>iOS
 
-Poniższy przykładowy kod przedstawia sposób dodawania `UILabel` do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) i [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Poniższy przykład kodu demonstruje sposób dodawania `UILabel` do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) i [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -56,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-W przykładzie założono, że `stackLayout` i `contentView` wystąpień wcześniej zostały utworzone w języku XAML i C#.
+W przykładzie założono, że `stackLayout` i `contentView` wystąpienia zostały utworzone wcześniej w XAML lub C#.
 
 ### <a name="android"></a>Android
 
-Poniższy przykładowy kod przedstawia sposób dodawania `TextView` do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) i [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Poniższy przykład kodu demonstruje sposób dodawania `TextView` do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) i [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -68,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-W przykładzie założono, że `stackLayout` i `contentView` wystąpień wcześniej zostały utworzone w języku XAML i C#.
+W przykładzie założono, że `stackLayout` i `contentView` wystąpienia zostały utworzone wcześniej w XAML lub C#.
 
 ### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
-Poniższy przykładowy kod przedstawia sposób dodawania `TextBlock` do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) i [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Poniższy przykład kodu demonstruje sposób dodawania `TextBlock` do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) i [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -86,17 +86,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-W przykładzie założono, że `stackLayout` i `contentView` wystąpień wcześniej zostały utworzone w języku XAML i C#.
+W przykładzie założono, że `stackLayout` i `contentView` wystąpienia zostały utworzone wcześniej w XAML lub C#.
 
 ## <a name="overriding-platform-measurements-for-custom-views"></a>Zastępowanie pomiarów platformy dla widoków niestandardowych
 
-Niestandardowe widoki na każdej platformie często tylko prawidłowo zaimplementować miary dla scenariusza układ, dla którego zostały zaprojektowane. Na przykład widok niestandardowy może zostały zaprojektowane tylko zajmować połowy dostępnej szerokość urządzenia. Jednak po jest udostępniany innym użytkownikom, widok niestandardowy może wymagać zajmować pełne dostępne szerokość urządzenia. W związku z tym może być konieczne do przesłonięcia implementację miary niestandardowe widoki podczas ponownego użycia w układzie platformy Xamarin.Forms. Z tego powodu `Add` i `ToView` metody rozszerzenia udostępniają zastąpienia umożliwiających delegatów miary można określić, które można zastąpić widok niestandardowy układ, gdy jest ona dodawana do układu platformy Xamarin.Forms.
+Widoki niestandardowe na każdej platformie często tylko prawidłowo zaimplementować miary dla scenariusza układ, dla którego zostały zaprojektowane. Na przykład niestandardowy widok mogły być zaprojektowane tylko zajmować połowę szerokości dostępne urządzenia. Jednak po są udostępniane innym użytkownikom, widok niestandardowy może być wymagane zajmować pełne dostępne szerokość urządzenia. W związku z tym może być konieczne do przesłonięcia implementację pomiaru widoków niestandardowych podczas ponownego użycia w układzie zestawu narzędzi Xamarin.Forms. Z tego powodu `Add` i `ToView` metody rozszerzenia udostępniają zastąpienia, umożliwiające delegatów pomiaru należy określić, które można przesłonić układ widoku niestandardowego, gdy jest ona dodawana do układu zestawu narzędzi Xamarin.Forms.
 
 Poniższe sekcje pokazują, jak zastąpić układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
 
 ### <a name="ios"></a>iOS
 
-Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy `UILabel`:
+Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy po elemencie `UILabel`:
 
 ```csharp
 public class CustomControl : UILabel
@@ -113,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak pokazano w poniższym przykładzie:
+Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var customControl = new CustomControl {
@@ -125,11 +125,11 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-Jednak ponieważ `CustomControl.SizeThatFits` zastąpienie zawsze zwraca wysokość 150, zostanie wyświetlony widok z puste miejsce powyżej i poniżej, jak pokazano na poniższym zrzucie ekranu:
+Jednak ponieważ `CustomControl.SizeThatFits` zastąpienie zawsze zwraca wartość wysokości 150, zostanie wyświetlony widok przy użyciu puste miejsce powyżej i poniżej, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl ze złą implementacją SizeThatFits")
+![](code-images/ios-bad-measurement.png "Formant niestandardowy, za pomocą złą implementacją SizeThatFits systemu iOS")
 
-Rozwiązanie tego problemu jest zapewnienie `GetDesiredSizeDelegate` implementacji, jak pokazano w poniższym przykładzie:
+Rozwiązanie tego problemu jest zapewnienie `GetDesiredSizeDelegate` wdrażania, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -150,19 +150,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-Ta metoda używa szerokość podał `CustomControl.SizeThatFits` metody, ale zastępuje wysokość 150 wysokości 70. Gdy `CustomControl` wystąpienia jest dodawany do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` metoda może być określona jako `GetDesiredSizeDelegate` ustalenie zły miary udostępnione przez `CustomControl` klasy:
+Ta metoda używa szerokość związaną z `CustomControl.SizeThatFits` metody, ale zastępuje wysokości 150 wysokości 70. Gdy `CustomControl` wystąpienia jest dodawany do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` metoda może być określona jako `GetDesiredSizeDelegate` naprawić zły miary, dostarczone przez `CustomControl` klasy:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Powoduje to widok niestandardowy są wyświetlane poprawnie, bez puste miejsce powyżej i poniżej, jak pokazano na poniższym zrzucie ekranu:
+Skutkuje to widoku niestandardowego są wyświetlane poprawnie, bez puste miejsce powyżej i poniżej, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/ios-good-measurement.png "iOS CustomControl za GetDesiredSize zastąpienia")
+![](code-images/ios-good-measurement.png "Formant niestandardowy, za pomocą zastąpienia GetDesiredSize systemu iOS")
 
 ### <a name="android"></a>Android
 
-Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy `TextView`:
+Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy po elemencie `TextView`:
 
 ```csharp
 public class CustomControl : TextView
@@ -184,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak pokazano w poniższym przykładzie:
+Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -194,11 +194,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-Jednak ponieważ `CustomControl.OnMeasure` zastąpienie zawsze zwraca informacje o połowę żądanej szerokości, zostanie wyświetlony widok zajmują tylko pełnej szerokości dostępne urządzenia, jak pokazano na poniższym zrzucie ekranu:
+Jednak ponieważ `CustomControl.OnMeasure` zastąpienie zawsze zwraca informacje o połowę szerokości żądanego, zostanie wyświetlony widok zajmuje tylko połowę szerokości dostępne urządzenia, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/android-bad-measurement.png "Android CustomControl z implementacją zły OnMeasure")
+![](code-images/android-bad-measurement.png "Android formant niestandardowy z implementacją zły OnMeasure")
 
-Rozwiązanie tego problemu jest zapewnienie `GetDesiredSizeDelegate` implementacji, jak pokazano w poniższym przykładzie:
+Rozwiązanie tego problemu jest zapewnienie `GetDesiredSizeDelegate` wdrażania, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -217,19 +217,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-Ta metoda używa szerokość podał `CustomControl.OnMeasure` metody, ale mnożona przez dwa. Gdy `CustomControl` wystąpienia jest dodawany do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` metoda może być określona jako `GetDesiredSizeDelegate` ustalenie zły miary udostępnione przez `CustomControl` klasy:
+Ta metoda używa szerokość związaną z `CustomControl.OnMeasure` metody, ale mnożona przez dwa. Gdy `CustomControl` wystąpienia jest dodawany do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` metoda może być określona jako `GetDesiredSizeDelegate` naprawić zły miary, dostarczone przez `CustomControl` klasy:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Powoduje to jest widok niestandardowy wyświetlane prawidłowo, zajmujące szerokość urządzenia, jak pokazano na poniższym zrzucie ekranu:
+Skutkuje to widok niestandardowy, są wyświetlane prawidłowo, zajmuje szerokość urządzenia, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/android-good-measurement.png "Android CustomControl z obiektem delegowanym GetDesiredSize niestandardowych")
+![](code-images/android-good-measurement.png "Android formant niestandardowy z delegatem GetDesiredSize niestandardowe")
 
 ### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
 
-Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy `Panel`:
+Poniższy kod przedstawia przykład `CustomControl` klasy, która dziedziczy po elemencie `Panel`:
 
 ```csharp
 public class CustomControl : Panel
@@ -282,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak pokazano w poniższym przykładzie:
+Wystąpienie tego widoku jest dodawany do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -291,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-Jednak ponieważ `CustomControl.ArrangeOverride` zastąpienie zawsze zwraca informacje o połowę żądanej szerokości, widoku zostaną przycięte do pełnej szerokości dostępne urządzenia, jak pokazano na poniższym zrzucie ekranu:
+Jednak ponieważ `CustomControl.ArrangeOverride` zastąpienie zawsze zwraca informacje o połowę szerokości żądanego, widoku zostaną przycięte do połowę szerokości dostępne urządzenia, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/winrt-bad-measurement.png "Formant niestandardowy platformy uniwersalnej systemu Windows z implementacją zły ArrangeOverride")
+![](code-images/winrt-bad-measurement.png "Formant niestandardowy platformy uniwersalnej systemu Windows, z implementacją zły ArrangeOverride")
 
-Rozwiązanie tego problemu jest zapewnienie `ArrangeOverrideDelegate` implementacji, podczas dodawania widoku umożliwia [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak pokazano w poniższym przykładzie:
+Rozwiązanie tego problemu jest zapewnienie `ArrangeOverrideDelegate` implementacji, podczas dodawania widoku umożliwia [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -310,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-Ta metoda używa szerokość podał `CustomControl.ArrangeOverride` metody, ale mnożona przez dwa. Powoduje to jest widok niestandardowy wyświetlane prawidłowo, zajmujące szerokość urządzenia, jak pokazano na poniższym zrzucie ekranu:
+Ta metoda używa szerokość związaną z `CustomControl.ArrangeOverride` metody, ale mnożona przez dwa. Skutkuje to widok niestandardowy, są wyświetlane prawidłowo, zajmuje szerokość urządzenia, jak pokazano na poniższym zrzucie ekranu:
 
-![](code-images/winrt-good-measurement.png "Formant niestandardowy platformy uniwersalnej systemu Windows z obiektem delegowanym ArrangeOverride")
+![](code-images/winrt-good-measurement.png "Formant niestandardowy platformy uniwersalnej systemu Windows, za pomocą delegowanego ArrangeOverride")
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono, jak dodać widoków natywnego układ platformy Xamarin.Forms utworzone przy użyciu języka C# i jak układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
+W tym artykule wyjaśniono, jak dodać widoki natywne do układu Xamarin.Forms utworzone przy użyciu języka C# oraz jak przesłonić układ widoki niestandardowe, aby poprawić ich pomiaru użycia interfejsu API.
 
 
 ## <a name="related-links"></a>Linki pokrewne

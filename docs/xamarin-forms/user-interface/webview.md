@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 55267dfb1439d17f09126f65973ce9e6a0247d80
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: ed7bec4e25628d938218a40d157442debad8f835
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986060"
+ms.locfileid: "38998377"
 ---
 # <a name="xamarinforms-webview"></a>Aplikacja WebView zestawu narzędzi Xamarin.Forms
 
-[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) jest to widok do wyświetlania w aplikacji sieci web i zawartość HTML. W odróżnieniu od `OpenUri`, który powoduje otwarcie przeglądarki sieci web na urządzeniu, `WebView` Wyświetla zawartość HTML w aplikacji.
+[`WebView`](xref:Xamarin.Forms.WebView) jest to widok do wyświetlania w aplikacji sieci web i zawartość HTML. W odróżnieniu od `OpenUri`, który powoduje otwarcie przeglądarki sieci web na urządzeniu, `WebView` Wyświetla zawartość HTML w aplikacji.
 
 ![](webview-images/in-app-browser.png "W przeglądarce aplikacji")
 
@@ -34,7 +34,7 @@ ms.locfileid: "38986060"
 
 ### <a name="websites"></a>Witryny internetowe
 
-Aby wyświetlić witrynę sieci Web z Internetu, należy ustawić `WebView`firmy [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) właściwość ciągu adresu URL:
+Aby wyświetlić witrynę sieci Web z Internetu, należy ustawić `WebView`firmy [ `Source` ](xref:Xamarin.Forms.WebViewSource) właściwość ciągu adresu URL:
 
 ```csharp
 var browser = new WebView {
@@ -86,7 +86,7 @@ Zobacz [App Transport Security](~/ios/app-fundamentals/ats.md) Aby uzyskać wię
 
 ### <a name="html-strings"></a>Ciągi HTML
 
-Jeśli chcesz przedstawić ciąg HTML definiowany dynamicznie w kodzie, konieczne będzie utworzenie wystąpienia [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+Jeśli chcesz przedstawić ciąg HTML definiowany dynamicznie w kodzie, konieczne będzie utworzenie wystąpienia [ `HtmlWebViewSource` ](xref:Xamarin.Forms.HtmlWebViewSource):
 
 ```csharp
 var browser = new WebView();

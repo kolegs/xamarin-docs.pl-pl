@@ -1,95 +1,95 @@
 ---
-title: Podsumowanie rozdział 18. MVVM
-description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdział 18. MVVM'
+title: Podsumowanie rozdziałów 18. MVVM
+description: 'Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms: Podsumowanie rozdział 18. MVVM'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 4a9e8221828ddd49c10dc4f14dc996acc167ae2f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b512b15ea40d963cd35379cf3162856d132e38dc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240434"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995265"
 ---
-# <a name="summary-of-chapter-18-mvvm"></a>Podsumowanie rozdział 18. MVVM
+# <a name="summary-of-chapter-18-mvvm"></a>Podsumowanie rozdziałów 18. MVVM
 
-Jednym z najlepszych sposobów projektowania aplikacji jest oddzielając interfejsu użytkownika z odpowiedniego kodu, jest czasem nazywany *logiki biznesowej*. Istnieje kilka technik, ale ten, który został zoptymalizowany pod kątem dla środowisk opartych na języku XAML jest określane jako Model-View-ViewModel lub MVVM.
+Jest jednym z najlepszych sposobów architektury aplikacji, oddzielając interfejsu użytkownika z odpowiedniego kodu, który jest czasem nazywany *logikę biznesową*. Istnieje kilka technik, ale ten, który jest przeznaczony dla środowisk opartych na XAML jest znany jako Model-View-ViewModel lub MVVM.
 
 ## <a name="mvvm-interrelationships"></a>Wzajemne relacje MVVM
 
 Aplikacja MVVM ma trzy warstwy:
 
-- Model zawiera danych, czasami za pomocą plików lub uzyskuje dostęp do sieci web
-- Widok jest użytkownika interfejsu lub prezentacji warstwie, zwykle implementowany w języku XAML
-- ViewModel łączy modelu i widoku
+- Model zapewnia danych bazowych, czasami za pomocą plików lub uzyskuje dostęp do sieci web
+- Widok jest prezentacji lub interfejsu warstwę użytkownika, zazwyczaj implementowane w XAML
+- ViewModel łączy Model i widoku
 
-Model jest ignorujących z ViewModel i ViewModel jest ignorujących widoku. Te trzy warstwy zazwyczaj połączyć ze sobą przy użyciu następujących mechanizmów:
+Model jest zakresu elementu ViewModel i zakresu widoku jest element ViewModel. Te trzy warstwy zazwyczaj łączyć się ze sobą przy użyciu następujących mechanizmów:
 
-![Widok, ViewModel oraz widok](images/ch18fg03.png "MVVM")
+![View ViewModel i widoku](images/ch18fg03.png "MVVM")
 
-Dużo mniejsze programy (i jeszcze większym z nich), często modelu nie istnieje lub jego działanie jest zintegrowany z ViewModel.
+W wielu mniejszych programów (a nawet większymi) często Model jest nieobecny lub jego działanie jest zintegrowana z ViewModel.
 
-## <a name="viewmodels-and-data-binding"></a>ViewModels i powiązanie danych
+## <a name="viewmodels-and-data-binding"></a>Modele widoków i powiązania danych
 
-Nawiązanie powiązania danych, ViewModel musi umożliwiać powiadamiania widoku, gdy zmieniono właściwość ViewModel. ViewModel robi to zaimplementowanie [ `INotifyPropertyChanged` ](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) interfejsu w `System.ComponentModel` przestrzeni nazw. Jest to część .NET zamiast platformy Xamarin.Forms. (Zazwyczaj ViewModels próbować zachować niezależność od platformy.)
+Do powiązania danych, ViewModel musi umożliwiać powiadamiania widoku, gdy zmieniono właściwość ViewModel. Robi to poprzez implementację ViewModel [ `INotifyPropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged) interfejsu w `System.ComponentModel` przestrzeni nazw. Jest to część platformy .NET, a nie zestawu narzędzi Xamarin.Forms. (Zazwyczaj modele widoków próby utrzymania niezależności platformy.)
 
-`INotifyPropertyChanged` Interfejsu deklaruje pojedynczego zdarzenia o nazwie [ `PropertyChanged` ](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) który wskazuje właściwość, która została zmieniona.
+`INotifyPropertyChanged` Interfejsu deklaruje pojedyncze zdarzenie o nazwie [ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged) oznacza to, właściwości, które uległy zmianie.
 
 ### <a name="a-viewmodel-clock"></a>Zegar ViewModel
 
-[ `DateTimeViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) Biblioteka definiuje właściwość typu `DateTime` czy zmiany na podstawie przez czasomierz. Implementuje klasy `INotifyPropertyChanged` i jest uruchamiany `PropertyChanged` zdarzenia przy każdym `DateTime` zmiany właściwości.
+[ `DateTimeViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) Biblioteka definiuje właściwość typu `DateTime` , zmienia się na podstawie czasomierza. Klasa implementuje `INotifyPropertyChanged` i generowane `PropertyChanged` zdarzenie zawsze wtedy, gdy `DateTime` zmiany właściwości.
 
-[ **MvvmClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock) przykładowe tworzy wystąpienie tego ViewModel i używa powiązania danych do ViewModel do wyświetlania informacji zaktualizowane daty i godziny.
+[ **MvvmClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock) przykładowy tworzy wystąpienie tego ViewModel i wyświetla informacji zaktualizowane daty i godziny przy użyciu powiązania danych z ViewModel.
 
-### <a name="interactive-properties-in-a-viewmodel"></a>Interaktywne właściwości w ViewModel
+### <a name="interactive-properties-in-a-viewmodel"></a>Interaktywne właściwości ViewModel
 
-Właściwości w ViewModel może być większej liczby interaktywnych, jak pokazano w [ `SimpleMultiplierViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/SimpleMultiplier/SimpleMultiplier/SimpleMultiplier/SimpleMultiplierViewModel.cs) klasy, która jest częścią programu [ **SimpleMultiplier** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/SimpleMultiplier) próbki. Powiązania danych Podaj multiplicand i mnożnik wartości z dwóch `Slider` elementów i wyświetlić produktu z `Label`. Jednak umożliwia rozległych zmian do tego interfejsu użytkownika w języku XAML bez zmian wynikające z niego ViewModel lub pliku CodeBehind.
+Właściwości w ViewModel może być bardziej interaktywny, jak pokazano w [ `SimpleMultiplierViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/SimpleMultiplier/SimpleMultiplier/SimpleMultiplier/SimpleMultiplierViewModel.cs) klasy, która jest częścią programu [ **SimpleMultiplier** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/SimpleMultiplier) próbki. Powiązania danych zapewniają którą mnożona jest mnożna i mnożnik wartości z dwóch `Slider` elementy i wyświetlić produktu, zapewniając `Label`. Jednak ułatwia rozległych zmian tego interfejsu użytkownika w XAML bez wynikającym zmian w pliku związanym z kodem lub ViewModel.
 
 ### <a name="a-color-viewmodel"></a>ViewModel kolorów
 
-[ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) modele kolorów RGB i HSL integruje się biblioteki. Zostało to przedstawione w [ **HslSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) próbki:
+[ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) biblioteki integruje modele kolorów RGB i HSL. Wspomniane [ **HslSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) próbki:
 
-[![Potrójna zrzut ekranu przedstawiający TK](images/ch18fg08-small.png "HSL modelu")](images/ch18fg08-large.png#lightbox "modelu HSL")
+[![Potrójna zrzut ekranu przedstawiający TK](images/ch18fg08-small.png "modelu kolorów HSL")](images/ch18fg08-large.png#lightbox "modelu kolorów HSL")
 
 ### <a name="streamlining-the-viewmodel"></a>Usprawnienie ViewModel
 
-Kod w ViewModels może usprawnić, definiując `OnPropertyChanged` przy użyciu metody [ `CallerMemberName` ](https://developer.xamarin.com/api/type/System.Runtime.CompilerServices.CallerMemberNameAttribute/) atrybut, który automatycznie pobiera wywoływania nazwa właściwości. [ `ViewModelBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) Klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) biblioteki działanie i udostępnia klasę podstawową dla ViewModels.
+Kod w modele widoków, można uproszczenie, definiując `OnPropertyChanged` przy użyciu metody [ `CallerMemberName` ](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) atrybut, który automatycznie uzyskuje wywoływania nazwy właściwości. [ `ViewModelBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) Klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) biblioteki dzieje i udostępnia klasę bazową dla modele widoków.
 
 ## <a name="the-command-interface"></a>Interfejs polecenia
 
-MVVM współpracuje z powiązania danych i powiązania danych Praca z właściwościami, więc MVVM wydaje się być niewystarczające, jeśli chodzi o Obsługa `Clicked` zdarzenie `Button` lub `Tapped` zdarzenie `TapGestureRecognizer`. Aby umożliwić ViewModels do obsługi tych zdarzeń, obsługuje platformy Xamarin.Forms *interfejsu polecenia*.
+MVVM współpracuje z powiązań danych i powiązania danych Praca z właściwościami, więc MVVM wydaje się być niewystarczające, jeśli chodzi o obsługę `Clicked` zdarzenia `Button` lub `Tapped` zdarzenia `TapGestureRecognizer`. Aby umożliwić modele widoków do obsługi tych zdarzeń, obsługuje Xamarin.Forms *interfejsu polecenia*.
 
-Interfejs polecenia w sytuacji, w `Button` z dwóch właściwości publiczne:
+Interfejs polecenia w sytuacji, w `Button` za pomocą dwie właściwości publiczne:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu [ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) (zdefiniowany w `System.Windows.Input` przestrzeni nazw)
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) typu `Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) typu [ `ICommand` ](xref:System.Windows.Input.ICommand) (zdefiniowane w `System.Windows.Input` przestrzeni nazw)
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) tego typu `Object`
 
-Aby obsługiwać interfejs polecenia, ViewModel musi definiować właściwość typu `ICommand` który jest następnie danymi powiązanymi `Command` właściwość `Button`. `ICommand` Interfejsu deklaruje dwie metody i jedno zdarzenie:
+Aby zapewnić obsługę interfejsu polecenia, ViewModel należy zdefiniować właściwości typu `ICommand` oznacza to następnie dane powiązane z `Command` właściwość `Button`. `ICommand` Interfejsu deklaruje dwie metody i jedno zdarzenie:
 
-- [ `Execute` ](https://developer.xamarin.com/api/member/System.Windows.Input.ICommand.Execute/p/System.Object/) Metody z argumentem typu `object`
-- A [ `CanExecute` ](https://developer.xamarin.com/api/member/System.Windows.Input.ICommand.CanExecute/p/System.Object/) metody z argumentem typu `object` zwracającą `bool`
-- A [ `CanExecuteChanged` ](https://developer.xamarin.com/api/event/System.Windows.Input.ICommand.CanExecuteChanged/) zdarzeń
+- [ `Execute` ](xref:System.Windows.Input.ICommand.Execute(System.Object)) Metody za pomocą argumentu typu `object`
+- A [ `CanExecute` ](xref:System.Windows.Input.ICommand.CanExecute(System.Object)) metody za pomocą argumentu typu `object` zwracającego `bool`
+- A [ `CanExecuteChanged` ](xref:System.Windows.Input.ICommand.CanExecuteChanged) zdarzeń
 
-Wewnętrznie ViewModel ustawia właściwości każdego typu `ICommand` do wystąpienia klasy, która implementuje `ICommand` interfejsu. Za pomocą wiązania danych `Button` początkowo wywołuje `CanExecute` metody i wyłącza się, jeśli metoda zwraca `false`. Ustawia również funkcję obsługi `CanExecuteChanged` zdarzeń i wywołania `CanExecute` zawsze, gdy zdarzenie jest wywoływane. Jeśli `Button` jest włączona, wywołuje `Execute` metody zawsze, gdy `Button` zostanie kliknięty.
+Wewnętrznie ViewModel ustawia właściwości każdego typu `ICommand` do wystąpienia klasy, która implementuje `ICommand` interfejsu. Za pomocą powiązania danych `Button` początkowo wywołuje `CanExecute` metody i wyłączy, jeśli metoda zwraca `false`. Ustawia również funkcję obsługi `CanExecuteChanged` zdarzenia i wywołania `CanExecute` zawsze, gdy zdarzenie jest wyzwalane. Jeśli `Button` jest włączona, wywoływanych przez nią `Execute` metody przy każdym `Button` kliknięciu.
 
-Mogą być niektórych ViewModels, który przed powstaniem platformy Xamarin.Forms, a te mogą już obsługiwać interfejs polecenia. Dla nowego ViewModels, które ma być używany tylko z platformy Xamarin.Forms, dostarcza platformy Xamarin.Forms [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) klasy i [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) klasy, które implementują `ICommand` interfejsu. Typ ogólny jest typem argumentu `Execute` i `CanExecute` metody.
+Może mieć niektóre modele widoków, które powstały wcześniej niż zestawu narzędzi Xamarin.Forms, a te mogą już obsługiwać interfejs polecenia. Dla nowe modele widoków, które ma być używana tylko z zestawu narzędzi Xamarin.Forms, dostarcza Xamarin.Forms [ `Command` ](xref:Xamarin.Forms.Command) klasy i [ `Command<T>` ](xref:Xamarin.Forms.Command`1) klas które implementują `ICommand` interfejsu. Typ ogólny jest typem argumentu `Execute` i `CanExecute` metody.
 
-### <a name="simple-method-executions"></a>Prosta metoda wykonania
+### <a name="simple-method-executions"></a>Prosty sposób wykonania
 
-[ **PowersOfThree** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree) przykładowych pokazano, jak używać polecenia interfejsu w ViewModel. [ `PowersViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs) Klasa definiuje dwie właściwości typu `ICommand` , a także definiuje dwie właściwości prywatne, które przechodzą do najprostszą [ `Command` konstruktora](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/). Program zawiera powiązań danych z tej ViewModel do `Command` właściwości dwóch `Button` elementów.
+[ **PowersOfThree** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree) przykład pokazuje, jak używać interfejsu polecenia w ViewModel. [ `PowersViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs) Klasa definiuje dwie właściwości typu `ICommand` i definiuje również dwie właściwości prywatne, które przekazuje do najprostszą [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action)). Program zawiera powiązania danych z tym ViewModel do `Command` właściwości dwóch `Button` elementów.
 
-`Button` Elementy można łatwo zastąpić `TapGestureRecognizer` obiektów w języku XAML bez zmian kodu.
+`Button` Elementy, można łatwo zastąpić `TapGestureRecognizer` obiektów w XAML nie wprowadzania zmian w kodzie.
 
 ### <a name="a-calculator-almost"></a>Kalkulator, prawie
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) przykładowe sprawia, że użycie zarówno `Execute` i `CanExecute` metody `ICommand`. Używa [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) biblioteki. ViewModel zawiera sześć właściwości typu `ICommand`. Są one inicjowane z [ `Command` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/) i [ `Command` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/System.Func%7BSystem.Boolean%7D/) z `Command` i [ `Command<T>` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/) z `Command<T>`. Klawiszy numerycznych Dodawanie maszyny jest powiązana z właściwością jest inicjowany z `Command<T>`, a `string` argument `Execute` i `CanExecute` identyfikuje określonego klucza.
+[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) przykładowy sprawia, że wykorzystanie zarówno `Execute` i `CanExecute` metody `ICommand`. Używa ona [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) klasy w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) biblioteki. ViewModel zawiera sześć właściwości typu `ICommand`. Są one inicjowane z [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action)) i [ `Command` Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) z `Command` i [ `Command<T>` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/) z `Command<T>`. Liczbowe kluczy maszynę dodającą są powiązane z właściwość, która jest inicjowany za pomocą `Command<T>`, a `string` argument `Execute` i `CanExecute` identyfikuje określonego klucza.
 
-## <a name="viewmodels-and-the-application-lifecycle"></a>ViewModels i cyklem życia aplikacji
+## <a name="viewmodels-and-the-application-lifecycle"></a>Modele widoków i cyklem życia aplikacji
 
-`AdderViewModel` Używane w **AddingMachine** próbki definiuje również dwie metody o nazwie `SaveState` i `RestoreState`. Te metody są wywoływane z aplikacji podczas jej przechodzi w stan uśpienia i ponownie uruchamiania.
+`AdderViewModel` Używane w **AddingMachine** Przykładowa aplikacja definiuje również dwie metody o nazwie `SaveState` i `RestoreState`. Te metody są wywoływane z aplikacji, gdy przejdzie w tryb uśpienia i podczas jego uruchamiania ponownie.
 
 
 

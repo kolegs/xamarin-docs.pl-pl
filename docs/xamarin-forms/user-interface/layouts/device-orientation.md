@@ -1,103 +1,102 @@
 ---
 title: Orientacja urządzenia
-description: W tym artykule opisano sposób aplikacji platformy Xamarin.Forms układu, które wygląda świetnie w orientacji pionowej i poziomej.
+description: W tym artykule opisano sposób aplikacje Xamarin.Forms układu, które wygląda świetnie w orientacji pionowej i poziomej.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244354"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999035"
 ---
 # <a name="device-orientation"></a>Orientacja urządzenia
 
-Należy wziąć pod uwagę sposób używania aplikacji i jak orientacji poziomej mogą być uwzględniane w taki sposób, aby ulepszyć środowisko użytkownika. Układy poszczególnych mogą służyć do uwzględnienia wielu orientacje i najlepiej użyć dostępnego miejsca. Na poziomie aplikacji obrotu może zostać wyłączone lub włączone.
+Należy wziąć pod uwagę użycia aplikacji i jak orientacja pozioma może być zawarte w taki sposób, aby ulepszyć środowisko użytkownika. Układy indywidualne mogą służyć do uwzględnienia wielu orientacje i najlepsze wykorzystanie dostępnego miejsca. Na poziomie aplikacji obrót mogą zostać wyłączone lub włączone.
 
 <a name="Controlling_Orientation" />
 
 ## <a name="controlling-orientation"></a>Kontrolowanie orientacji
 
-Podczas korzystania z platformy Xamarin.Forms, obsługiwanej metody kontrolowania orientacji urządzenia jest użycie ustawienia dla każdego pojedynczego projektu.
+Korzystając z zestawu narzędzi Xamarin.Forms, obsługiwane metodą kontrolowanie orientacji urządzenia jest Użyj ustawień dla każdego indywidualnego projektu.
 
 ### <a name="ios"></a>iOS
 
-W systemach iOS, orientacji urządzenia jest skonfigurowany dla aplikacji za pomocą **Info.plist** pliku. Ten plik będzie zawierać ustawienia orientacji urządzenia iPhone i iPod, a także ustawienia dla urządzeń iPad, jeśli aplikacja zawiera ją jako miejsce docelowe. Poniżej przedstawiono instrukcje specyficzne dla użytkownika IDE. Użyj opcji IDE w górnej części tego dokumentu, aby wybrać instrukcje, które chcesz wyświetlić:
+W systemach iOS, orientacja urządzenia jest skonfigurowany dla aplikacji za pomocą **Info.plist** pliku. Ten plik będzie zawierać ustawienia orientacji telefonu iPhone i iPod, a także ustawienia dla tabletu iPad, jeśli aplikacja zawiera go jako obiekt docelowy. Poniżej przedstawiono instrukcje specyficzne dla używanego środowiska IDE. Użyj opcji IDE w górnej części tego dokumentu, aby wybrać instrukcje, które chcieliby zobaczyć:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-W programie Visual Studio Otwórz projekt dla systemu iOS, a następnie otwórz **Info.plist**. Plik zostanie otwarty w panelu konfiguracji w programie na karcie informacji o wdrożeniu iPhone:
+W programie Visual Studio, otwórz projekt dla systemu iOS, a następnie otwórz **Info.plist**. Plik zostanie otwarty w panelu konfiguracji, zaczynając od karty informacje o wdrożeniu dla telefonu iPhone:
 
-![iPhone informacji o wdrożeniu w programie Visual Studio](device-orientation-images/orientation-vs-iphone.png)
+![iPhone informacje o wdrożeniu w programie Visual Studio](device-orientation-images/orientation-vs-iphone.png)
 
-Aby skonfigurować orientacji urządzenia iPad, wybierz **iPad informacji o wdrożeniu** u góry po lewej panelu, następnie wybierz opcję z dostępnych kierunków:
+Aby skonfigurować orientacji urządzenia iPad, wybierz **iPad informacje o wdrożeniu** karty w lewym górnym rogu panelu, następnie wybierz z dostępne orientacje:
 
-![Orientacji urządzenia obsługiwane w programie Visual Studio](device-orientation-images/orientation-vs-ipad.png)
+![Obsługiwane orientacje urządzenia w programie Visual Studio](device-orientation-images/orientation-vs-ipad.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-W programie Visual Studio dla komputerów Mac, otwórz projekt dla systemu iOS, a następnie otwórz **Info.plist**. W obszarze **aplikacji** karcie sekcje będzie można ustawić orientację:
+W programie Visual Studio dla komputerów Mac, otwórz projekt dla systemu iOS, a następnie otwórz **Info.plist**. W obszarze **aplikacji** karcie sekcje będą dostępne dla Ustaw orientację:
 
-![iPhone informacji o wdrożeniu w programie Visual Studio dla komputerów Mac](device-orientation-images/orientation-xam-ui.png)
+![iPhone informacje o wdrożeniu w programie Visual Studio dla komputerów Mac](device-orientation-images/orientation-xam-ui.png)
 
-Jeśli wolisz edytować wartości przy użyciu interfejsu edytora klucz wartość, wybierz **źródła**> u dołu ekranu:
+Jeśli wolisz edytować wartości przy użyciu interfejsu edytora pary klucz wartość, wybierz opcję **źródła**> karta w dolnej części ekranu:
 
-![Obsługiwane urządzenia orientacji w programie Visual Studio dla komputerów Mac](device-orientation-images/orientation-xam-source.png)
+![Obsługiwane orientacje urządzenia w programie Visual Studio dla komputerów Mac](device-orientation-images/orientation-xam-source.png)
 
 -----
 
 ### <a name="android"></a>Android
 
-Aby kontrolować orientację w systemie Android, otwórz **MainActivity.cs** i ustaw orientację przy użyciu dekoracji atrybut `MainActivity` klasy:
+Aby kontrolować orientację w systemie Android, należy otworzyć **MainActivity.cs** i ustaw orientację przy użyciu urządzanie atrybut `MainActivity` klasy:
 
 ```csharp
 namespace MyRotatingApp.Droid
 {
-    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-    ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate (Bundle bundle)
 ...
 ```
 
-Określanie orientacji Xamarin.Android obsługuje kilka opcji:
+Określanie orientacji platformy Xamarin.Android obsługuje kilka opcji:
 
-- **Pozioma** &ndash; wymusza orientację aplikacji, aby być pozioma, niezależnie od danych czujnika.
-- **Portret** &ndash; wymusza orientację aplikacji jako pionowy, niezależnie od danych czujnika.
-- **Użytkownik** &ndash; powoduje, że aplikacja przedstawiane za pomocą orientacji preferowanym przez użytkownika.
-- **Za** &ndash; powoduje, że orientację aplikacji, aby być taka sama jak orientację [działania](https://developer.xamarin.com/api/type/Android.App.Activity/) za nią.
-- **Czujnik** &ndash; powoduje, że orientacja aplikacji będzie określany przez czujnika, nawet jeśli użytkownik wyłączył automatyczne obrotu.
-- **SensorLandscape** &ndash; powoduje aplikacji orientację poziomą podczas używania dane czujników w celu zmianę kierunku ekranu jest ukierunkowane (tak, aby ekranu nie jest widoczne jako odwrotnie).
-- **SensorPortrait** &ndash; powoduje, że aplikacja do użycia w orientacji pionowej podczas używania dane czujników w celu zmianę kierunku ekranu jest ukierunkowane (tak, aby ekranu nie jest widoczne jako odwrotnie).
-- **ReverseLandscape** &ndash; powoduje aplikacji orientację poziomą, skierowane w odwrotnym kierunku z zwykle były wyświetlane "odwrócony."
-- **ReversePortrait** &ndash; powoduje, że aplikacja do użycia w orientacji pionowej, skierowane w odwrotnym kierunku z zwykle były wyświetlane "odwrócony."
-- **FullSensor** &ndash; powoduje, że aplikacja polegać na dane czujników, aby wybrać poprawny orientację (poza możliwe 4).
-- **FullUser** &ndash; powoduje aplikacji przy użyciu preferencji orientację użytkownika. Jeśli włączono automatyczne obracanie, wszystkie orientacje 4 można użyć.
-- **UserLandscape** &ndash; _\[nieobsługiwane\]_ powoduje aplikacji orientację poziomą, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
-- **UserPortrait** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia w orientacji pionowej, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty Czujnik ustalenie orientacji. Ta opcja spowoduje przerwanie kompilacji.
-- **Zablokowane** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia orientacji ekranu niezależnie od jest podczas uruchamiania, nie odpowiada na zmiany w urządzeniu użytkownika fizycznych Orientacja. Ta opcja spowoduje przerwanie kompilacji.
+- **Orientacja pozioma** &ndash; wymusza orientację aplikacji, aby być pozioma, niezależnie od tego, dane czujników.
+- **Orientacja pionowa** &ndash; wymusza orientację aplikacji, aby być pionowa, niezależnie od tego, dane czujników.
+- **Użytkownik** &ndash; powoduje, że aplikacja przedstawiane za pomocą orientacji preferowany przez użytkownika.
+- **Za** &ndash; powoduje, że orientację aplikacji, aby być taka sama jak orientacja [działania](https://developer.xamarin.com/api/type/Android.App.Activity/) związanych z nim.
+- **Czujnik** &ndash; powoduje, że orientację aplikacji będzie określany przez czujnik, nawet jeśli użytkownik wyłączył automatyczne obracanie.
+- **SensorLandscape** &ndash; powoduje, że aplikacja do użycia w orientacji poziomej, podczas korzystania z danych z czujników zmienić kierunek ekranu jest skierowany w stronę (tak, aby ekran nie jest traktowany jako nogami).
+- **SensorPortrait** &ndash; powoduje, że aplikacja do użycia w orientacji pionowej podczas korzystania z danych z czujników zmienić kierunek ekranu jest skierowany w stronę (tak, aby ekran nie jest traktowany jako nogami).
+- **ReverseLandscape** &ndash; powoduje, że aplikacja do użycia w orientacji poziomej, połączonego z przeciwnych kierunkach zwykle w taki sposób, aby wyświetlane "nogami."
+- **ReversePortrait** &ndash; powoduje, że aplikacja do użycia w orientacji pionowej, połączonego z przeciwnych kierunkach zwykle w taki sposób, aby wyświetlane "nogami."
+- **FullSensor** &ndash; powoduje, że aplikacja polegać na danych z czujników do wybrania poprawnej orientacji (poza możliwe 4).
+- **FullUser** &ndash; powoduje, że aplikacji do korzystania z preferencji orientacji użytkownika. Jeśli włączono automatyczne obracanie, następnie wszystkie orientacje 4 może służyć.
+- **UserLandscape** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia w orientacji poziomej, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty czujnika do określenia orientacji. Ta opcja spowoduje przerwanie kompilacji.
+- **UserPortrait** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja do użycia w orientacji pionowej, chyba że użytkownik ma automatyczne obracanie włączone, w którym to przypadku zostanie użyty czujnika do określenia orientacji. Ta opcja spowoduje przerwanie kompilacji.
+- **Zablokowane** &ndash; _\[nieobsługiwane\]_ powoduje, że aplikacja korzysta orientacji ekranu niezależnie od rodzaju jest podczas uruchamiania, bez udzielania odpowiedzi na zmiany w urządzeniu w fizycznych Orientacja. Ta opcja spowoduje przerwanie kompilacji.
 
-Należy pamiętać, że wiele kontrolę nad jak jest zarządzany orientację Podaj macierzystych interfejsów API systemu Android, włącznie z opcjami, które jawnie są sprzeczne użytkownika wyrażone Preferencje.
+Pamiętaj, że macierzystych interfejsów API systemu Android dostarczali mnóstwa kontrolę nad jak odbywa się orientację, włącznie z opcjami, które jawnie sprzeczne użytkownika wyrażone Preferencje.
 
-### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
+### <a name="universal-windows-platform"></a>Universal Windows platform
 
-W systemie Windows platformy Uniwersalnej, orientacje obsługiwane są ustawiane w **Package.appxmanifest** pliku. Otwieranie manifest ujawni panelu konfiguracji wybraniu obsługiwanych orientacji.
+Obsługiwane orientacje na Universal Windows Platform (platformy UWP), są ustawiane w **Package.appxmanifest** pliku. Otwarcie manifestu wyświetli panel konfiguracji, gdy można wybrać obsługiwane orientacje.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
 ## <a name="reacting-to-changes-in-orientation"></a>Reagowanie na zmiany w orientacji
 
-Platformy Xamarin.Forms nie zapewnia natywnego zdarzenia powiadamiania aplikację zmiany orientacji w kodzie udostępnionego. Jednak `SizeChanged` zdarzenie `Page` generowane, gdy szerokość lub wysokość `Page` zmiany. Gdy szerokość `Page` jest większa niż wysokość urządzenie jest w trybie krajobraz. Aby uzyskać więcej informacji, zobacz [wyświetlania obrazu w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms nie oferuje żadnych macierzystych zdarzeń dotyczące powiadamiania aplikacji zmiany orientacji w udostępnionego kodu. Jednak `SizeChanged` zdarzenia `Page` generowane, gdy szerokość lub wysokość `Page` zmiany. Gdy szerokość `Page` jest większa niż wysokość, urządzenie jest w trybie poziomym. Aby uzyskać więcej informacji, zobacz [wyświetlania obrazu w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> Brak istniejących, wolne pakiet NuGet do odbierania powiadomień zmiany orientacji w kodzie udostępnionego. Zobacz [repozytorium GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Aby uzyskać więcej informacji.
+> Brak istniejących, bezpłatny pakiet NuGet do odbierania powiadomień zmiany orientacji w udostępnionego kodu. Zobacz [repozytorium GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Aby uzyskać więcej informacji.
 
-Alternatywnie można zastąpić jest [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) metoda `Page`, wstawianie dowolny układ Zmień logikę istnieje. `OnSizeAllocated` Metoda jest wywoływana przy każdym `Page` jest przydzielany nowy rozmiar, które odbywa się whenver obracania urządzenia. Należy pamiętać, że podstawowa implementacja `OnSizeAllocated` wykonuje układu ważne funkcje, dlatego ważne jest, aby wywoływać implementację podstawową w zastąpienia:
+Alternatywnie możliwe do zastąpienia jest [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) metody `Page`, wstawianie dowolny układ zmiany danych logicznych. `OnSizeAllocated` Metoda jest wywoływana zawsze wtedy, gdy `Page` jest przydzielany nowego rozmiaru, co się stanie, whenver obrócenia urządzenia. Należy pamiętać, że implementację podstawową `OnSizeAllocated` wykonuje układ ważnych funkcji, dlatego ważne jest, aby wywoływać implementację podstawową w przesłonięciu:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +105,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Nie można wykonać tego kroku spowoduje strony nie działa.
+Nie można wykonać ten krok spowoduje przerwy w działaniu strony.
 
-Należy pamiętać, że `OnSizeAllocated` metody może zostać wywołana wiele razy podczas obracania urządzenia. Zmiana układu zawsze jest niepotrzebne zasobów i może prowadzić do migotanie. Rozważ użycie zmienna wystąpienia na Twojej stronie w celu sprawdzenia, czy jest orientacja pozioma lub pionowa i odświeżyć tylko po zmianie:
+Należy pamiętać, że `OnSizeAllocated` metoda może być wywoływana wiele razy podczas obracania urządzenia. Zmienianie układu każdorazowo jest marnotrawstwa zasobów i może prowadzić do migotanie. Rozważ użycie zmienną instance w obrębie strony w celu sprawdzenia, czy jest orientacja pozioma lub pionowa, a tylko narysuj element ponownie, kiedy zmiany:
 
 ```csharp
 private double width = 0;
@@ -126,41 +125,41 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Gdy wykryto zmiany orientacji urządzenia można dodać lub usunąć dodatkowe widoki z interfejsu użytkownika do reagowania na zmiany w dostępnego miejsca. Rozważmy na przykład wbudowana Kalkulator na każdej z platform w orientacji pionowej:
+Po wykryciu zmiany orientacji urządzenia, można dodać lub usunąć dodatkowe widoki z interfejsu użytkownika, aby reagować na zmiany w dostępnego miejsca. Rozważmy na przykład wbudowane Kalkulator na każdej z platform w orientacji pionowej:
 
-![](device-orientation-images/calculator-portrait.png "Kalkulator aplikacji w orientacji pionowej")
+![](device-orientation-images/calculator-portrait.png "Aplikacja Kalkulator w orientacji pionowej")
 
-i poziomej:
+i pozioma:
 
-![](device-orientation-images/calculator-landscape.png "Kalkulator aplikacji w orientacji poziomej")
+![](device-orientation-images/calculator-landscape.png "Aplikacja Kalkulator w orientacji poziomej")
 
-Należy zauważyć, że aplikacje wykorzystać dostępne miejsce, dodając więcej funkcji w orientacji poziomej.
+Należy zauważyć, że aplikacje korzystać z dostępnego miejsca, dodając więcej funkcji w orientacji poziomej.
 
 <a name="Responsive_Layout" />
 
-## <a name="responsive-layout"></a>Elastyczny układ
+## <a name="responsive-layout"></a>Układ dynamiczny
 
-Istnieje możliwość interfejsy projektu za pomocą wbudowanych układów, dzięki czemu są bezpiecznie przejście podczas obracania urządzenia. Podczas projektowania interfejsów, które nadal będzie atrakcyjne w przypadku odpowiedzi na zmiany w orientacji należy wziąć pod uwagę następujące zasady ogólne:
+Istnieje możliwość projektowania interfejsów przy użyciu wbudowanych układów, przeniosą oni bez problemu zmieniała podczas obracania urządzenia. Podczas projektowania interfejsów, które będą w dalszym ciągu być atrakcyjne, podczas reagowania na zmiany w orientacji należy wziąć pod uwagę następujące zasady ogólne:
 
-- **Należy zwrócić uwagę na stosunek** &ndash; zmiany w orientacji może spowodować problemy w przypadku pewne założenia zostały wprowadzone w odniesieniu do wskaźników. Na przykład widok, w którym będzie mieć wystarczająco dużo miejsca w 1/3 przestrzeń w pionie ekranu w orientacji pionowej mogą nie pasować do 1/3 przestrzeń w pionie w orientacji poziomej.
-- **Należy zachować ostrożność przy wartości bezwzględne** &ndash; wartości bezwzględne (w pikselach), które warto w orientacji pionowej nie może być uzasadniona w orientacji poziomej. Jeśli konieczne są wartości bezwzględne, za pomocą układów zagnieżdżonych wykrywać ich wpływu. Na przykład, będzie można użyć wartości bezwzględnej `TableView` `ItemTemplate` Jeśli szablon elementu zawiera gwarantowane wysokość uniform.
+- **Należy zwrócić uwagę na wskaźniki** &ndash; zmiany orientacji może powodować problemy, gdy zostaną wprowadzone pewne założenia, w odniesieniu do wskaźników. Na przykład widok, w którym zostaną nadane wystarczająco dużo miejsca w pionowej przestrzeni ekranu w orientacji pionowej 1/3 mogą nie pasować do 1/3 miejsca w pionie w orientacji poziomej.
+- **Należy zachować ostrożność przy użyciu wartości bezwzględne** &ndash; wartości bezwzględne (w pikselach), które są uwzględnione w orientacji pionowej może nie mieć sensu w orientacji poziomej. Jeśli konieczne są wartości bezwzględne, za pomocą układów zagnieżdżonych wykrywać ich wpływ. Na przykład będzie można użyć wartości bezwzględnej w `TableView` `ItemTemplate` przypadku, gdy szablon elementu zawiera gwarantowane wysokość jednolite.
 
-Powyższe zasady mają zastosowanie także do zazwyczaj implementowanie interfejsów dla wielu rozmiarów ekranu i są traktowane jako najlepsze rozwiązania. Szczegółowe przykłady układów reakcji przy użyciu podstawowego układów w platformy Xamarin.Forms objaśnia dalszej części tego przewodnika.
+Powyższe zasady mają zastosowanie, gdy implementacja interfejsy dla wielu rozmiarów ekranu i są zazwyczaj najlepszym rozwiązaniem z zakresu. Dalszej części tego przewodnika wyjaśnią konkretne przykłady układów odpowiada przy użyciu podstawowego układów w interfejsie Xamarin.Forms.
 
 > [!NOTE]
-> Dla uzyskania przejrzystości, poniższe sekcje przedstawiają sposób wdrożenia układów odpowiadać za pomocą tylko jednego typu `Layout` naraz. W praktyce, często jest łatwiejsze mieszać `Layout`s, aby osiągnąć żądany układ, przy użyciu prostszych lub najbardziej intuicyjnego `Layout` dla każdego składnika.
+> W celu uściślenia poniższe sekcje pokazują, jak zaimplementować elastyczny układy za pomocą tylko jednego typu `Layout` w danym momencie. W praktyce jest często łatwiejsze mieszać `Layout`s, aby osiągnąć żądany układ, przy użyciu prostszych lub najbardziej intuicyjnej `Layout` dla każdego składnika.
 
 ### <a name="stacklayout"></a>StackLayout
 
-Należy wziąć pod uwagę następujące aplikacji, wyświetlane w orientacji pionowej:
+Należy wziąć pod uwagę następujące aplikacji, wyświetlana w orientacji pionowej:
 
-![](device-orientation-images/photo-stack-portrait.png "Zdjęcie aplikacji w orientacji pionowej")
+![](device-orientation-images/photo-stack-portrait.png "Aplikacja zdjęcia w orientacji pionowej")
 
-i poziomej:
+i pozioma:
 
-![](device-orientation-images/photo-stack-landscape.png "Zdjęcie aplikacji w orientacji poziomej")
+![](device-orientation-images/photo-stack-landscape.png "Aplikacja zdjęcia w orientacji poziomej")
 
-Które jest realizowane za pomocą następujących XAML:
+Który jest realizowane za pomocą następujących XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +202,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-Niektóre C# służy do zmiany orientacji `outerStack` oparte na orientacji urządzenia:
+Niektóre C# służy do zmiany orientacji `outerStack` oparciu o orientacji urządzenia:
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -222,20 +221,20 @@ protected override void OnSizeAllocated (double width, double height){
 
 Należy pamiętać o następujących kwestiach:
 
-- `outerStack` jest dostosowany do prezentowania obrazu i formanty jako pozioma lub pionowa stosu w zależności od orientacji, aby najlepiej wykorzystać dostępnego miejsca.
+- `outerStack` jest dostosowywany do przedstawienia obrazu i służy jako poziomy lub pionowy stos w zależności od orientacji, aby najlepiej korzystać z dostępnego miejsca.
 
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-Należy wziąć pod uwagę następujące aplikacji, wyświetlane w orientacji pionowej:
+Należy wziąć pod uwagę następujące aplikacji, wyświetlana w orientacji pionowej:
 
-![](device-orientation-images/photo-abs-portrait.png "Zdjęcie aplikacji w orientacji pionowej")
+![](device-orientation-images/photo-abs-portrait.png "Aplikacja zdjęcia w orientacji pionowej")
 
-i poziomej:
+i pozioma:
 
-![](device-orientation-images/photo-abs-landscape.png "Zdjęcie aplikacji w orientacji poziomej")
+![](device-orientation-images/photo-abs-landscape.png "Aplikacja zdjęcia w orientacji poziomej")
 
-Które jest realizowane za pomocą następujących XAML:
+Który jest realizowane za pomocą następujących XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,21 +273,21 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 
 Należy pamiętać o następujących kwestiach:
 
-- Ze względu na sposób, w jaki strony została zaprojektowana nie istnieje potrzeba procedurach kodu wprowadzenie czas odpowiedzi.
-- `ScrollView` Jest używany do Zezwalaj etykiety, które mają być wyświetlane, nawet jeśli wysokości ekranu jest mniejsza niż suma stałej wysokości przycisków i obrazu.
+- Ze względu na sposób, w jaki strony została zaprojektowana nie ma potrzeby dla kod proceduralny wprowadzenie czas odpowiedzi.
+- `ScrollView` Jest używana do etykiety, które mają być wyświetlane, nawet jeśli wysokość ekranu jest mniejsza niż suma stałej wysokości przycisków i obraz.
 
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-Należy wziąć pod uwagę następujące aplikacji, wyświetlane w orientacji pionowej:
+Należy wziąć pod uwagę następujące aplikacji, wyświetlana w orientacji pionowej:
 
-![](device-orientation-images/photo-rel-portrait.png "Zdjęcie aplikacji w orientacji pionowej")
+![](device-orientation-images/photo-rel-portrait.png "Aplikacja zdjęcia w orientacji pionowej")
 
-i poziomej:
+i pozioma:
 
-![](device-orientation-images/photo-rel-landscape.png "Zdjęcie aplikacji w orientacji poziomej")
+![](device-orientation-images/photo-rel-landscape.png "Aplikacja zdjęcia w orientacji poziomej")
 
-Które jest realizowane za pomocą następujących XAML:
+Który jest realizowane za pomocą następujących XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,20 +365,20 @@ BackgroundImage="deer.jpg">
 
 Należy pamiętać o następujących kwestiach:
 
-- Ze względu na sposób, w jaki strony została zaprojektowana nie istnieje potrzeba procedurach kodu wprowadzenie czas odpowiedzi.
-- `ScrollView` Jest używany do Zezwalaj etykiety, które mają być wyświetlane, nawet jeśli wysokości ekranu jest mniejsza niż suma stałej wysokości przycisków i obrazu.
+- Ze względu na sposób, w jaki strony została zaprojektowana nie ma potrzeby dla kod proceduralny wprowadzenie czas odpowiedzi.
+- `ScrollView` Jest używana do etykiety, które mają być wyświetlane, nawet jeśli wysokość ekranu jest mniejsza niż suma stałej wysokości przycisków i obraz.
 
 ### <a name="grid"></a>Siatka
 
-Należy wziąć pod uwagę następujące aplikacji, wyświetlane w orientacji pionowej:
+Należy wziąć pod uwagę następujące aplikacji, wyświetlana w orientacji pionowej:
 
-![](device-orientation-images/photo-grid-portrait.png "Zdjęcie aplikacji w orientacji pionowej")
+![](device-orientation-images/photo-grid-portrait.png "Aplikacja zdjęcia w orientacji pionowej")
 
-i poziomej:
+i pozioma:
 
-![](device-orientation-images/photo-grid-landscape.png "Zdjęcie aplikacji w orientacji poziomej")
+![](device-orientation-images/photo-grid-landscape.png "Aplikacja zdjęcia w orientacji poziomej")
 
-Które jest realizowane za pomocą następujących XAML:
+Który jest realizowane za pomocą następujących XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -468,12 +467,12 @@ protected override void OnSizeAllocated (double width, double height){
 
 Należy pamiętać o następujących kwestiach:
 
-- Ze względu na sposób, w jaki strony została zaprojektowana Brak metodę Zmień zasady umieszczania siatki formantów.
+- Ze względu na sposób, w jaki strony została zaprojektowana ma metodę, aby zmienić położenie kontrolki siatki.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Układ (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Przykład BusinessTumble (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
-- [Elastyczny układ (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Wyświetl obraz oparty na orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Układ dynamiczny (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+- [Wyświetlanie obrazu, w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)

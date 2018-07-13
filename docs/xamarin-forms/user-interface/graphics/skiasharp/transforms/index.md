@@ -1,90 +1,90 @@
 ---
-title: Transformacje SkiaSharp
-description: W tym artykule Eksploruje przekształceń do wyświetlania grafiki SkiaSharp w aplikacji platformy Xamarin.Forms i prezentuje to z przykładowym kodzie.
+title: Przekształcenia biblioteki SkiaSharp
+description: W tym artykule Eksploruje przekształceń do wyświetlania grafiki SkiaSharp w aplikacjach Xamarin.Forms i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d8e9c26df9286cec94562b5d3d7b7721cc3f3f3d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e2f83e3de574d11052b5301f1832988b7f4166bf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244951"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998650"
 ---
-# <a name="skiasharp-transforms"></a>Transformacje SkiaSharp
+# <a name="skiasharp-transforms"></a>Przekształcenia biblioteki SkiaSharp
 
-_Dowiedz się więcej o przekształceń do wyświetlania SkiaSharp grafiki_
+_Więcej informacji na temat przekształceń do wyświetlania grafiki SkiaSharp_
 
-SkiaSharp obsługuje transformacji tradycyjnych grafiki, które są wdrażane jako metody [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) obiektu. Matematycznie, transformacje alter współrzędnych i rozmiary, które określisz w `SKCanvas` funkcji rysowania jako obiektów graficznych są renderowane. Przekształceń są często wygodne rysowania powtarzających się grafiki lub animacji. Niektóre techniki &mdash; takich jak obracanie map bitowych lub tekst &mdash; nie jest możliwe bez korzystania z transformacji.
+Skiasharp — obsługuje przekształcenia tradycyjnych grafiki, które są implementowane jako metody [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) obiektu. Matematycznych, przekształcenia można zmieniać współrzędnych i rozmiary, które są określone w `SKCanvas` funkcji rysowania, ponieważ graficzny obiekty są renderowane. Transformacje są często wygodne rysowania grafiki powtarzające się lub podczas tworzenia animacji. Kilka technik &mdash; takich jak wymiana mapy bitowe lub tekst &mdash; nie są możliwe bez stosowania przekształceń.
 
-Transformacje SkiaSharp obsługuje następujące operacje:
+Przekształcenia biblioteki SkiaSharp obsługują następujące operacje:
 
-- *Tłumaczenie* na współrzędne shift z jednej lokalizacji do innej
+- *Tłumaczenie* na współrzędne przesunięcia z jednej lokalizacji do innej
 - *Skala* Aby zwiększyć lub zmniejszyć współrzędnych i rozmiary
-- *Obróć* współrzędne wokół punktu obrotu
-- *Pochylanie* przesunięcie koordynuje poziomo czy pionowo czego równoległobok zmieni się w prostokącie
+- *Obróć* wymienić współrzędne wokół punktu
+- *Pochylanie* przesunięcie współrzędne poziomo lub pionowo tak, że prostokąt staje się równoległobok
 
-Są one nazywane *podobne* przekształca. Affine — przekształcenia zawsze zachować równoległych i nigdy nie spowodować współrzędnych lub rozmiar stają się nieskończona. Kwadrat nigdy nie jest on przekształcany w innym niż równoległobok i koło nigdy nie jest on przekształcany w innym niż elipsy.
+Są to znane jako *przekształceniem afinicznym* przekształcenia. Affine — przekształcenia zawsze zachować równoległych i nigdy nie powodują współrzędnych lub rozmiar stają się nieskończone. Kwadrat nigdy nie jest on przekształcany w żadnych innych niż równoległobok i okrąg nigdy nie jest przekształcana na coś innego niż elipsę.
 
-SkiaSharp obsługuje również-affine — przekształcenia (nazywane również *projective* lub *perspektywy* przekształca) oparte na standardowych macierzy transformacji 3 x 3. Affine — przekształcenia umożliwia kwadrat mają zostać przetworzone na dowolnym wypukłych Czworokąt (pełnego rysunku z wszystkich kąty wewnętrzne mniej niż 180 stopni). Inne niż affine — przekształcenia może spowodować współrzędne lub rozmiary stać się nieskończona, ale są istotne dla efekty 3W.
+Skiasharp — obsługuje również przekształcenia nieafiniczne (nazywane również *projective* lub *perspektywy* przekształca) oparte na standardowych macierzy transformacji 3 x 3. Przekształcenia nieafiniczne umożliwia kwadrat zostać przekształcone do dowolnego kwadratowe wypukłe (pełnego rysunek przy użyciu wszystkich kąty wewnętrzne mniejsza niż 180 stopni). Inne niż affine — przekształcenia może spowodować współrzędne lub rozmiarów staną się nieskończoną, ale są istotne dla efekty 3W.
 
-## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>Różnice między SkiaSharp i transformacje platformy Xamarin.Forms
+## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>Różnice między SkiaSharp i przekształcenia zestawu narzędzi Xamarin.Forms
 
-Platformy Xamarin.Forms obsługuje również transformacje, które są podobne do SkiaSharp. Platformy Xamarin.Forms [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) klasa definiuje następujące właściwości transform:
+Zestaw narzędzi Xamarin.Forms obsługuje również przekształceń, które są podobne do tych w SkiaSharp. Xamarin.Forms [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) klasa definiuje następujące właściwości transformacji:
 
-- `TranslationX` I `TranslationY`
+- `TranslationX` i `TranslationY`
 - `Scale`
 - `Rotation`, `RotationX`, i `RotationY`
 
-`RotationX` i `RotationY` właściwości są przekształceniami perspektywy, tworzonych przez efekty skutkowało 3W.
+`RotationX` i `RotationY` właściwości są przekształcenia perspektywy, tworzonych efekty skutkowało 3D.
 
-Istnieje kilka ważnych różnic między transformacje SkiaSharp i transformacje platformy Xamarin.Forms:
+Istnieje kilka różnic decydujące między przekształcenia biblioteki SkiaSharp i zestawu narzędzi Xamarin.Forms przekształcenia:
 
-Pierwsza różnica polega na SkiaSharp transformacje są stosowane do całej `SKCanvas` obiektu podczas przekształcenia platformy Xamarin.Forms są stosowane do poszczególnych `VisualElement` pochodnych. (Można zastosować do przekształcenia platformy Xamarin.Forms `SKCanvasView` obiektu, ponieważ `SKCanvasView` pochodzi z `VisualElement`, ale w tym `SKCanvasView`, zastosować przekształcenia SkiaSkarp.)
+Pierwszy różnica polega na tym że przekształcenia biblioteki SkiaSharp są stosowane do całej `SKCanvas` obiektów, podczas gdy przekształcenia Xamarin.Forms są stosowane do poszczególnych `VisualElement` pochodnych. (Można zastosować przekształceń zestawu narzędzi Xamarin.Forms do `SKCanvasView` obiektu, ponieważ `SKCanvasView` pochodzi od klasy `VisualElement`, ale w obrębie którego `SKCanvasView`, zastosuj przekształcenia SkiaSkarp.)
 
-Przekształcenia SkiaSharp są względem lewego górnego rogu `SKCanvas` platformy Xamarin.Forms przekształceń są względem lewego górnego rogu `VisualElement` dla których są stosowane. Ta różnica jest ważne podczas stosowania skalowanie i obrót przekształca, ponieważ te przekształceń są zawsze względem danego punktu.
+Przekształcenia biblioteki SkiaSharp są względem lewego górnego rogu `SKCanvas` Xamarin.Forms transformacje są względem lewego górnego rogu `VisualElement` dla których są stosowane. Różnica jest ważna w przypadku stosowania skalowania i obrót przekształceń, ponieważ te przekształcenia są zawsze względem danego punktu.
 
-Naprawdę istotną różnicą jest to, że SKiaSharp przekształceń są *metody* podczas przekształcenia platformy Xamarin.Forms *właściwości*. Jest semantycznego różnica poza syntaktycznych różnica: transformacje SkiaSharp wykonać operacji, gdy transformacje platformy Xamarin.Forms ustawić stanu. Transformacje SkiaSharp mają zastosowanie do obiektów graficznych następnie narysowanego, ale nie do obiektów graficznych, które są rysowane przed stosowana jest transformacja. Z kolei transformacji platformy Xamarin.Forms dotyczy wcześniej renderowanego elementu jak właściwość jest ustawiona. Transformacje SkiaSharp kumulują się jako metody są wywoływane; Transformacje platformy Xamarin.Forms zostaną zastąpione, gdy właściwość jest ustawiona na inną wartość.
+Tak naprawdę istotną różnicą jest to, czy przekształcenia biblioteki SKiaSharp *metody* są przekształcenia Xamarin.Forms *właściwości*. Jest to różnica semantycznego poza syntaktycznych różnicy: przekształcenia biblioteki SkiaSharp przeprowadzić operacji, gdy stan został ustawiony przekształcenia zestawu narzędzi Xamarin.Forms. Przekształcenia biblioteki SkiaSharp mają zastosowanie do obiektów graficznych później rysowane, ale nie do obiektów grafiki, które są rysowane przed zastosowaniem transformacji. Z kolei przekształcania zestawu narzędzi Xamarin.Forms ma zastosowanie do wcześniej renderowanego elementu, jak właściwość została ustawiona. Przekształcenia biblioteki SkiaSharp kumulują się zgodnie z metody są wywoływane; Przekształcenia zestawu narzędzi Xamarin.Forms zostały zastąpione, gdy właściwość jest ustawiona na inną wartość.
 
-Wszystkie przykładowe programy w tej sekcji są wyświetlane pod nagłówkiem **przekształca** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu, a następnie w [ **Przekształca** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) folderu rozwiązania.
+Wszystkich przykładowych programów w tej sekcji są wyświetlane pod nagłówkiem **przekształca** na stronie głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program, a następnie w [ **Przekształca** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) folderu rozwiązania.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Przekład — przekształcenie](translate.md)
 
-Dowiedz się, jak używać przekształcania Przetłumacz przesunięcie SkiaSharp grafiki.
+Dowiedz się, jak użyć przekład — przekształcenie do przesunięcia SkiaSharp grafiki.
 
 ## <a name="the-scale-transformscalemd"></a>[Skalowanie — przekształcenie](scale.md)
 
-Wykryj przekształcenia skali SkiaSharp skalowania obiektów do różnych rozmiarów.
+Odkryj SkiaSharp skalowanie — przekształcenie skalowania obiektów do różnych rozmiarów.
 
 ## <a name="the-rotate-transformrotatemd"></a>[Obrót — przekształcenie](rotate.md)
 
-Poznaj efekty i możliwe za pomocą przekształcenie obracania SkiaSharp animacji.
+Poznaj efekty i animacji, które można zrobić za pomocą SkiaSharp obrót — przekształcenie.
 
 ## <a name="the-skew-transformskewmd"></a>[Pochylenie — przekształcenie](skew.md)
 
-Zobacz, jak utworzyć Wychylny obiektów graficznych w SkiaSharp pochylenia transformacji.
+Zobacz, jak utworzyć Wychylny obiektów graficznych w SkiaSharp pochylenie — przekształcenie.
 
 ## <a name="matrix-transformsmatrixmd"></a>[Przekształcenia macierzowe](matrix.md)
 
-Poznaj głębiej transformacje SkiaSharp z macierzy transformacji uniwersalny.
+Szczegółowe informacje przekształcenia biblioteki SkiaSharp z macierzy transformacji wszechstronna.
 
 ## <a name="touch-manipulationstouchmd"></a>[Manipulacje za pomocą dotyku](touch.md)
 
-Użyj macierzy przekształca do zaimplementowania manipulacje touch przeciąganie, skalowanie i obrót.
+Użyj macierzy przekształca do zaimplementowania manipulacje dotykowej przeciąganie, skalowanie i obrót.
 
 ## <a name="non-affine-transformsnon-affinemd"></a>[Przekształcenia nieafiniczne](non-affine.md)
 
-Wykracza poza oridinary o skutki-affine — przekształcenia.
+Wykracza poza oridinary za pomocą przekształcenia nieafiniczne efekty.
 
 ## <a name="3d-rotation3d-rotationmd"></a>[Obrót 3D](3d-rotation.md)
 
-Affine — przekształcenia umożliwia obracanie 2D obiektów w przestrzeni 3D.
+Przekształcenia nieafiniczne umożliwiają obracanie 2D obiekty w przestrzeni 3D.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

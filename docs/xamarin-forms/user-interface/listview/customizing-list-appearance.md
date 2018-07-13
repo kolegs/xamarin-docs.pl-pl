@@ -1,44 +1,44 @@
 ---
-title: Dostosowywanie wyglądu elementu ListView
-description: W tym artykule opisano sposób dostosowywania widokach listy w aplikacji platformy Xamarin.Forms przy użyciu nagłówków, stopek grup i komórek o zmiennej wysokości.
+title: Dostosowywanie wyglądu ListView
+description: W tym artykule wyjaśniono, jak dostosować ListViews w aplikacjach Xamarin.Forms przy użyciu nagłówki, stopki, grup i komórek o zmiennej wysokości.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1326a1326b4a88459e4e0a01ef590e770e3a88c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245143"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997351"
 ---
-# <a name="customizing-listview-appearance"></a>Dostosowywanie wyglądu elementu ListView
+# <a name="customizing-listview-appearance"></a>Dostosowywanie wyglądu ListView
 
-`ListView` zawiera opcje umożliwiające sterowanie prezentacji listy ogólnej, oprócz podstawowych `ViewCell`s. Dostępne są następujące opcje:
+`ListView` zawiera opcje sterujące prezentacji listy ogólnej, oprócz podstawowych `ViewCell`s. Opcje obejmują:
 
-- [**Grupowanie** ](#Grouping) &ndash; grupować elementy w elemencie ListView ułatwiające nawigację i ulepszone organizacji.
-- [**Nagłówki i stopki** ](#Headers_and_Footers) &ndash; zawierają informacje na początku i na końcu widoku, który jest przewijane wraz z innych elementów.
-- [**Wiersz separatorów** ](#Row_Separators) &ndash; wyświetlanie lub ukrywanie linii separatora między elementami.
-- [**Zmienna wysokość wierszy** ](#Row_Heights) &ndash; domyślnie wszystkie wiersze są tego samego wysokość, ale można go zmienić umożliwia wiersze z różnych wysokości mają być wyświetlane.
+- [**Grupowanie** ](#Grouping) &ndash; grupować elementy w ListView dla zapewnienia łatwiejszej nawigacji i ulepszone organizacji.
+- [**Nagłówki i stopki** ](#Headers_and_Footers) &ndash; wyświetlania informacji na początku i końcu widoku, który przewija z innymi elementami.
+- [**Wiersz separatory** ](#Row_Separators) &ndash; Pokaż lub Ukryj linie separator między elementami.
+- [**Zmienna wysokość wierszy** ](#Row_Heights) &ndash; domyślnie wszystkie wiersze są sama wysokość, ale można to zmienić umożliwia wiersze z różnymi wysokości, które mają być wyświetlane.
 
 <a name="Grouping" />
 
 ## <a name="grouping"></a>Grupowanie
-Często dużych zestawów danych może być trudno obsługiwać, gdy przedstawione w sposób ciągły przewijanej listy. Włączanie grupowania może poprawić środowisko użytkownika w tych przypadkach lepszego organizowania zawartości i aktywowanie formantów specyficzne dla platformy, które ułatwić nawigacyjnego danych.
+Często dużych zestawów danych może stać się niewydolna umieszczeniem w sposób ciągły przewijanej listy. Włączania grupowania zwiększenie komfortu użytkowników w takich przypadkach lepiej organizowania zawartości i aktywowanie formantów specyficzne dla platformy, które ułatwić po danych.
 
-Po aktywowaniu grupowania dla `ListView`, dodawany jest wiersz nagłówka dla każdej grupy.
+Po aktywowaniu grupowanie dla `ListView`, wiersz nagłówka jest dodawany dla każdej grupy.
 
-Aby włączyć grupowanie:
+Aby włączyć grupowania:
 
 - Utwórz listę list (Lista grup, każda grupa jest lista elementów).
-- Ustaw `ListView`w `ItemsSource` do tej listy.
+- Ustaw `ListView`firmy `ItemsSource` do tej listy.
 - Ustaw `IsGroupingEnabled` na wartość true.
-- Ustaw [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) można powiązać z właściwością grupy, który jest używany jako tytuł grupy.
-- [Opcjonalnie] Ustaw [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) można powiązać z właściwością grupy, który jest używany jako krótką nazwę grupy. Krótka nazwa jest używana dla listy szybkiego dostępu (kolumna po prawej stronie w systemie iOS).
+- Ustaw [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) można powiązać właściwości grupy, który jest używany jako tytuł grupy.
+- [Opcjonalnie] Ustaw [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) można powiązać właściwości grupy, który jest używany jako krótka nazwa grupy. Krótka nazwa jest używana dla listy szybkiego dostępu (po prawej stronie kolumny w systemie iOS).
 
-Rozpocznij od utworzenia klasy dla grup:
+Należy rozpocząć od tworzenia klasy dla grup:
 
 ```csharp
 public class PageTypeGroup : List<PageModel>
@@ -56,9 +56,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-W powyższym kodzie `All` jest na liście, które będzie podane do naszej ListView jako źródło powiązania. `Title` i `ShortName` właściwości, które będą używane dla nagłówków.
+W powyższym kodzie `All` listę, do której zostanie przydzielony do naszych ListView jako źródło wiążące. `Title` i `ShortName` są właściwościami, które będą używane dla nagłówków.
 
-Na tym etapie `All` jest wyświetlana pusta lista. Dodaj Konstruktor statyczny, dzięki czemu listy zostaną wypełnione na uruchamianie programu:
+Na tym etapie `All` jest pusta lista. Dodaj Konstruktor statyczny, tak aby lista zostanie wypełniona przy uruchamianiu programu:
 
 ```csharp
 static PageTypeGroup()
@@ -81,9 +81,9 @@ static PageTypeGroup()
 }
 ```
 
-W powyższym kodzie firma Microsoft może także wywołać `Add` elementów `groups`, które są wystąpienia typu `PageTypeGroup`. Jest to możliwe, ponieważ `PageTypeGroup` dziedziczy `List<PageModel>`. To jest przykład listy list wzorzec opisanymi powyżej.
+W powyższym kodzie możemy również wywołać `Add` elementów `groups`, które są wystąpieniami typu `PageTypeGroup`. Jest to możliwe, ponieważ `PageTypeGroup` dziedziczy `List<PageModel>`. Jest to przykład listę list wzorzec przedstawionych powyżej.
 
-Oto XAML, aby wyświetlić listę pogrupowanych:
+Oto XAML do wyświetlania pogrupowaną listę:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,20 +110,20 @@ Wyniki będą następujące:
 
 ![](customizing-list-appearance-images/grouping-depth.png "Przykład grupowania ListView")
 
-Należy pamiętać, że mamy:
+Pamiętaj, że mamy:
 
-- Ustaw `GroupShortNameBinding` do `ShortName` właściwość zdefiniowana w klasie naszej grupy
-- Ustaw `GroupDisplayBinding` do `Title` właściwość zdefiniowana w klasie naszej grupy
+- Ustaw `GroupShortNameBinding` do `ShortName` właściwości zdefiniowanej w klasie naszej grupy
+- Ustaw `GroupDisplayBinding` do `Title` właściwości zdefiniowanej w klasie naszej grupy
 - Ustaw `IsGroupingEnabled` na wartość true
-- Zmienione `ListView`w `ItemsSource` do listy grupowanych
+- Zmienione `ListView`firmy `ItemsSource` na pogrupowaną listę
 
 ### <a name="customizing-grouping"></a>Dostosowywanie grupowania
 
-Jeśli grupa została włączona na liście, można również dostosować nagłówka grupy.
+Jeśli grupa została włączona na liście, można także dostosowywać nagłówek grupy.
 
-Podobnie jak `ListView` ma `ItemTemplate` określających sposób wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`.
+Podobnie jak `ListView` ma `ItemTemplate` do definiowania sposobu wyświetlania wierszy `ListView` ma `GroupHeaderTemplate`.
 
-Przykład Dostosowywanie nagłówek grupy w języku XAML jest następujący:
+Przykład dostosowania nagłówek grupy w XAML jest następujący:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -161,12 +161,12 @@ x:Class="DemoListView.GroupingViewPage">
 <a name="Headers_and_Footers" />
 
 ## <a name="headers-and-footers"></a>Nagłówki i stopki
-Istnieje możliwość ListView do prezentowania nagłówku i stopce, które przewiń elementami listy. Nagłówku i stopce może być ciągi tekstu lub bardziej skomplikowane układu. Należy pamiętać, że to jest oddzielony od [sekcji grup](#Grouping).
+Istnieje możliwość ListView przedstawić w nagłówku i stopce, które można przewijać z elementami listy. Nagłówek i stopka może być ciągów tekstu lub bardziej skomplikowanych układ. Należy pamiętać, że to różni się od [sekcji grup](#Grouping).
 
-Można ustawić `Header` i/lub `Footer` prosty ciąg lub można ustawić je do bardziej złożonych układu.
-Dostępne są także `HeaderTemplate` i `FooterTemplate` właściwości, które umożliwiają tworzenie bardziej złożonych układów nagłówku i stopce tego powiązania danych pomocy technicznej.
+Możesz ustawić `Header` i/lub `Footer` prosty ciąg wartości lub można je ustawić do bardziej złożonych układu.
+Dostępne są także `HeaderTemplate` i `FooterTemplate` właściwości, które umożliwiają tworzenie bardziej złożonych układów dla nagłówku i stopce to powiązanie danych pomocy technicznej.
 
-Aby utworzyć prosty nagłówek/stopka, ustaw wartość właściwości w nagłówku lub stopce strony na tekst, który chcesz wyświetlić. W kodzie:
+Aby utworzyć proste nagłówek/stopkę, ustaw wartość właściwości nagłówka lub stopki na tekst, który chcesz wyświetlić. W kodzie:
 
 ```csharp
 ListView HeaderList = new ListView() {
@@ -175,15 +175,15 @@ ListView HeaderList = new ListView() {
     };
 ```
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <ListView  x:Name="HeaderList"  Header="Header" Footer="Footer"></ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "Element ListView o nagłówku i stopce")
+![](customizing-list-appearance-images/header-default.png "ListView przy użyciu nagłówek i stopka")
 
-Aby utworzyć dostosowany nagłówku i stopce, zdefiniuj widoków w nagłówku i stopce:
+Aby utworzyć dostosowany nagłówek i stopka, należy określić widoki nagłówku i stopce:
 
 ```xaml
 <ListView.Header>
@@ -202,17 +202,17 @@ Aby utworzyć dostosowany nagłówku i stopce, zdefiniuj widoków w nagłówku i
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "Element ListView z dostosowanych nagłówków i stopek")
+![](customizing-list-appearance-images/header-custom.png "ListView przy użyciu dostosowanych nagłówek i stopka")
 
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Separatory wierszy
-Są wyświetlane linie separatora między `ListView` elementy domyślnie w systemach iOS i Android. Jeśli chcesz ukryć separator wierszy w systemach iOS i Android, ustaw `SeparatorVisibility` właściwość z elementu ListView. Opcje `SeparatorVisibility` są:
+Separator wierszy są wyświetlane między `ListView` elementy domyślnie w systemach iOS i Android. Jeśli chcesz użyć ukryć linii separatora w systemach iOS i Android, ustaw `SeparatorVisibility` właściwość swoje ListView. Opcje `SeparatorVisibility` są:
 
-* **Domyślna** — przedstawia linii separatora w systemach iOS i Android.
-* **Brak** -ukrywa separatora na wszystkich platformach.
+* **Domyślne** — pokazuje linii separatora w systemach iOS i Android.
+* **Brak** -ukrywa separator na wszystkich platformach.
 
-Domyślną widoczność:
+Widoczność domyślne:
 
 C#:
 
@@ -226,7 +226,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "Element ListView z separatorami domyślnego wiersza")
+![](customizing-list-appearance-images/separator-default.png "ListView z separatorami domyślny wiersz")
 
 Brak:
 
@@ -242,7 +242,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "Element ListView bez separatory wierszy")
+![](customizing-list-appearance-images/separator-none.png "ListView bez separatory wierszy")
 
 Można również ustawić kolor linii separatora za pośrednictwem `SeparatorColor` właściwości:
 
@@ -258,20 +258,20 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "Element ListView z separatorami zielony wiersza")
+![](customizing-list-appearance-images/separator-custom.png "ListView przy użyciu separatory wierszy zielony")
 
 > [!NOTE]
-> Ustawienie tych właściwości w systemie Android po załadowaniu `ListView` wiąże się zmniejszenie wydajności dużych.
+> Ustawienie tych właściwości w systemie Android po załadowaniu `ListView` powoduje spadek wydajności.
 
 <a name="Row_Heights" />
 
 ## <a name="row-heights"></a>Wysokość wierszy
-Domyślnie wszystkie wiersze w elemencie ListView mają taką samą wysokość. Element ListView ma dwie właściwości, których można użyć, aby zmienić to zachowanie:
+Domyślnie wszystkie wiersze w ListView mają taką samą wysokość. ListView ma dwie właściwości, których można użyć, aby zmienić to zachowanie:
 
-- `HasUnevenRows` &ndash; `true`/`false` wartość, wiersze mają różne wysokości Jeśli ustawiono `true`. Domyślnie `false`.
+- `HasUnevenRows` &ndash; `true`/`false` wartość, wiersze mają różnej wysokości, jeśli ustawiono `true`. Wartość domyślna to `false`.
 - `RowHeight` &ndash; Ustawia wysokość każdego wiersza, kiedy `HasUnevenRows` jest `false`.
 
-Wysokość wszystkich wierszy można ustawić przez ustawienie `RowHeight` właściwość `ListView`.
+Można ustawić wysokości wszystkich wierszy, ustawiając `RowHeight` właściwość `ListView`.
 
 ### <a name="custom-fixed-row-height"></a>Niestandardowe stałą wysokość wiersza
 
@@ -287,13 +287,13 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "Element ListView o stałej wysokości wiersza")
+![](customizing-list-appearance-images/height-custom.png "ListView przy użyciu stałą wysokość wiersza")
 
 
-### <a name="uneven-rows"></a>Nierówna wierszy
+### <a name="uneven-rows"></a>Nierównomierny wierszy
 
-Jeśli chcesz poszczególnych wierszy mają różną wysokość, możesz ustawić `HasUnevenRows` właściwości `true`.
-Należy zauważyć, że wysokości wierszy nie należy ręcznie ustawić raz `HasUnevenRows` została ustawiona jako `true`, ponieważ wysokości są automatycznie obliczane platformy Xamarin.Forms.
+Jeśli chcesz poszczególne wiersze mają różnej wysokości, możesz ustawić `HasUnevenRows` właściwość `true`.
+Należy zauważyć, że wysokość wierszy nie należy ręcznie ustawić raz `HasUnevenRows` został ustawiony na `true`, ponieważ wysokości są automatycznie obliczane zestawu narzędzi Xamarin.Forms.
 
 
 C#:
@@ -308,11 +308,11 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "Element ListView z nierówna wierszy")
+![](customizing-list-appearance-images/height-uneven.png "ListView nierównomierny wierszy")
 
 ### <a name="runtime-resizing-of-rows"></a>Środowisko uruchomieniowe zmiana rozmiaru wierszy
 
-Poszczególne `ListView` wierszy można programowo zmienić rozmiar w czasie wykonywania, pod warunkiem, że `HasUnevenRows` właściwość jest ustawiona na `true`. [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) Metody aktualizacji rozmiar komórki, nawet wtedy, gdy nie jest widoczne, jak pokazano w poniższym przykładzie:
+Poszczególne `ListView` wierszy można programowo zmienić rozmiar w czasie wykonywania, pod warunkiem, że `HasUnevenRows` właściwość jest ustawiona na `true`. [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Metoda aktualizuje rozmiar komórki, nawet wtedy, gdy nie są obecnie widoczne, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -327,11 +327,11 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-`OnImageTapped` Program obsługi zdarzeń jest wykonywane w odpowiedzi na [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) w komórce trwa dotknięciu i zwiększa rozmiar `Image` wyświetlany w komórce, dzięki czemu będzie mógł wyświetlić.
+`OnImageTapped` Programu obsługi zdarzeń jest wykonywane w odpowiedzi na [ `Image` ](xref:Xamarin.Forms.Image) w komórce jest nacisnął i zwiększa rozmiar `Image` wyświetlana w komórce, dzięki czemu będzie mógł wyświetlić.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "Element ListView z zmiana rozmiaru wierszy środowiska wykonawczego")
+![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView przy użyciu rozmiaru wiersza środowiska uruchomieniowego")
 
-Należy pamiętać, że strong możliwości obniżenia wydajności w przypadku nadmiernego obciążenia jest tej funkcji.
+Należy pamiętać, że istnieje duże prawdopodobieństwo spadek wydajności, jeśli ta funkcja jest nadmiernie obciążany.
 
 
 

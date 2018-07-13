@@ -1,45 +1,45 @@
 ---
 title: Margines i wypełnienie
-description: Margines i wypełnienie właściwości kontrolowania zachowania układu, gdy element jest renderowany w interfejsie użytkownika. W tym artykule przedstawiono różnicę między dwoma właściwości i sposobu ich ustawiania.
+description: Margines i wypełnienie właściwości Sterowanie zachowaniem układ, gdy element jest wyświetlana w interfejsie użytkownika. W tym artykule przedstawiono różnią się dwie właściwości i sposobu ich ustawiania.
 ms.prod: xamarin
 ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 545468d3b02f9651c45fcaebe159351aafea6432
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 595e673c59d23a45cbaf923a0d58faff2000c296
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790603"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996619"
 ---
 # <a name="margin-and-padding"></a>Margines i wypełnienie
 
-_Margines i wypełnienie właściwości kontrolowania zachowania układu, gdy element jest renderowany w interfejsie użytkownika. W tym artykule przedstawiono różnicę między dwoma właściwości i sposobu ich ustawiania._
+_Margines i wypełnienie właściwości Sterowanie zachowaniem układ, gdy element jest wyświetlana w interfejsie użytkownika. W tym artykule przedstawiono różnią się dwie właściwości i sposobu ich ustawiania._
 
 ## <a name="overview"></a>Omówienie
 
-Margines i wypełnienie są powiązane układu pojęcia:
+Margines i wypełnienie to pojęcia pokrewne układu:
 
-- [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Właściwość reprezentuje odległość między elementu i jego elementy sąsiednie i jest używana do sterowania miejsce renderowania elementu i miejsce renderowania jej sąsiadami. `Margin` można określić wartości [układu](~/xamarin-forms/user-interface/controls/layouts.md) i [widoku](~/xamarin-forms/user-interface/controls/views.md) klasy.
-- [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) Właściwość reprezentuje odległość między elementu i jego elementów podrzędnych i jest używany do rozdzielania formantu z własną zawartość. `Padding` można określić wartości [układu](~/xamarin-forms/user-interface/controls/layouts.md) klasy.
+- [ `Margin` ](xref:Xamarin.Forms.View.Margin) Właściwość reprezentuje odległość między elementem i jego sąsiadujące elementy i jest używane do kontrolowania miejsce renderowania elementu i jego sąsiadami miejsce renderowania. `Margin` można określić wartości na [układ](~/xamarin-forms/user-interface/controls/layouts.md) i [widoku](~/xamarin-forms/user-interface/controls/views.md) klasy.
+- [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Właściwość reprezentuje odległość między elementem i jego elementy podrzędne i jest używany do oddzielania kontrolki z własnej zawartości. `Padding` można określić wartości na [układ](~/xamarin-forms/user-interface/controls/layouts.md) klasy.
 
 Na poniższym diagramie przedstawiono dwa pojęcia:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Marginesy i dopełnienia pojęcia")](margin-and-padding-images/margins-and-padding.png#lightbox "marginesy i dopełnienia pojęcia")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Marginesy i dopełnienie pojęcia")](margin-and-padding-images/margins-and-padding.png#lightbox "marginesy i dopełnienie pojęcia")
 
-Należy pamiętać, że [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) wartości są dodatku. W związku z tym jeśli dwa elementy sąsiednie określić margines 20 pikseli, odległość między elementami będzie 40 pikseli. Ponadto, czy margines i wypełnienie dodatku, gdy oba są stosowane, w tym odległość między elementem i zawartość będzie marginesu oraz dopełnienie.
+Należy pamiętać, że [ `Margin` ](xref:Xamarin.Forms.View.Margin) wartości są dodatku. W związku z tym jeśli dwa sąsiadujące elementy określić margines 20 pikseli, odległości między elementami będzie 40 pikseli. Ponadto margines i wypełnienie są addytywne, gdy jednocześnie są stosowane, w tym odległość między element zawartości będzie margines i wypełnienie.
 
 ## <a name="specifying-a-thickness"></a>Określanie grubości
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) i [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) właściwości są typu [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/). Istnieją trzy możliwości podczas tworzenia `Thickness` struktury:
+[ `Margin` ](xref:Xamarin.Forms.View.Margin) i [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) właściwości są oba typu [ `Thickness` ](xref:Xamarin.Forms.Thickness). Istnieją trzy możliwości, tworząc `Thickness` strukturę:
 
-- Utwórz [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury zdefiniowane przez pojedynczą wartość uniform. Pojedynczą wartość jest stosowany do lewej, górnej, prawej i dolnej krawędzi elementu.
-- Utwórz [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury zdefiniowane przez wartości w poziomie i w pionie. Poziomy wartość symetrycznie jest stosowany do lewej i prawej stronie elementu z wartością pionowy symetrycznie są stosowane do górnej i dolnej krawędzi elementu.
-- Utwórz [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury zdefiniowane przez cztery różne wartości, które są stosowane do lewej, górnej, prawej i dolnej krawędzi elementu.
+- Tworzenie [ `Thickness` ](xref:Xamarin.Forms.Thickness) strukturę zdefiniowaną przez pojedynczą wartość jednolite. Pojedynczą wartość jest stosowane po lewej stronie, u góry, prawej strony i dolne krawędzie elementu.
+- Tworzenie [ `Thickness` ](xref:Xamarin.Forms.Thickness) strukturę zdefiniowaną przez poziome i pionowe wartości. Poziomy wartość symetrycznie jest stosowany do lewej i prawej stronie elementu, wartością pionowy symetrycznie stosowane do górnej i dolnej krawędzi elementu.
+- Tworzenie [ `Thickness` ](xref:Xamarin.Forms.Thickness) strukturę zdefiniowaną przez cztery różne wartości, które są stosowane po lewej stronie, u góry, prawej strony i dolne krawędzie elementu.
 
-Poniższy przykładowy kod XAML zawiera wszystkie trzy możliwości:
+Poniższy kod XAML zawiera wszystkie trzy możliwości:
 
 ```xaml
 <StackLayout Padding="0,20,0,0">
@@ -49,7 +49,7 @@ Poniższy przykładowy kod XAML zawiera wszystkie trzy możliwości:
 </StackLayout>
 ```
 
-W poniższym przykładzie kodu pokazano równoważne kodu C#:
+Równoważny kod C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var stackLayout = new StackLayout {
@@ -63,15 +63,15 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness` wartości może być ujemna, które zwykle klipy lub overdraws zawartości.
+> `Thickness` wartości mogą być ujemne, które zazwyczaj Przycina lub overdraws zawartości.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono różnice między [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) i [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) właściwości i sposobu ich ustawiania. Właściwości kontrolować zachowanie układu elementu jest renderowany w interfejsie użytkownika.
+W tym artykule pokazano różnicę między [ `Margin` ](xref:Xamarin.Forms.View.Margin) i [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) właściwości i sposobu ich ustawiania. Właściwości kontrolować układ zachowanie, gdy element jest wyświetlana w interfejsie użytkownika.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Margin](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)
-- [Dopełnienie](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)
-- [Grubość](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)
+- [Margines](xref:Xamarin.Forms.View.Margin)
+- [Dopełnienie](xref:Xamarin.Forms.Layout.Padding)
+- [Grubość](xref:Xamarin.Forms.Thickness)

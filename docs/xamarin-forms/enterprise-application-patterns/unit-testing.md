@@ -1,41 +1,41 @@
 ---
-title: Aplikacje przedsiębiorstwa testów jednostkowych
-description: W tym rozdziale opisano sposób przeprowadzania testów jednostkowych jest wykonywane w aplikacji mobilnej eShopOnContainers.
+title: Aplikacje firmowe testowanie jednostkowe
+description: W tym rozdziale wyjaśniono, jak testy jednostkowe odbywa się w ramach aplikacji eShopOnContainers aplikacji mobilnej.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242534"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998686"
 ---
-# <a name="unit-testing-enterprise-apps"></a>Aplikacje przedsiębiorstwa testów jednostkowych
+# <a name="unit-testing-enterprise-apps"></a>Aplikacje firmowe testowanie jednostkowe
 
-Aplikacje mobilne ma unikatowy problemów, które pulpitów i aplikacji sieci web, nie trzeba martwić się. Użytkownicy mobilni zostanie różnią się od urządzenia, które używają, poprzez łączność z siecią, dostępność usług i wielu innych czynników. W związku z tym aplikacje mobilne powinny być testowane, jak będą one używane w świecie rzeczywistym zwiększające ich jakości, niezawodności i wydajności. Istnieje wiele typów testów, które powinny zostać wykonane w aplikacji, w tym testy jednostkowe, testowanie integracji i interfejs użytkownika testowanie za pomocą testowania jest najczęściej używana forma testowania jednostek.
+Aplikacje mobilne mają unikatowe problemy, które pulpitu i aplikacje sieci web, nie musisz martwić się o. Użytkownicy urządzeń przenośnych różnią się przez urządzenia, które używają, przez połączenie sieciowe, według dostępności usług i wielu innych czynników. W związku z tym powinien zostać przetestowany aplikacje mobilne, jak będą używane w świecie rzeczywistym, aby zwiększyć ich jakość, niezawodność i wydajność. Istnieje wiele typów testów, które powinny być wykonywane w aplikacji, w tym testy jednostkowe, testowanie integracji i testowania za pomocą testowania jest najczęściej używany typ testowania jednostkowego interfejsu użytkownika.
 
-Testu jednostkowego przyjmuje małą jednostką aplikacji, zazwyczaj metodę izoluje go od pozostałej części kodu i sprawdza się, że działa zgodnie z oczekiwaniami. Jego celem jest sprawdzenie, czy każdej jednostki funkcja zadziałała zgodnie z oczekiwaniami, tak, aby błędy nie propagację w całej aplikacji. Wykrywanie błędów, gdzie występuje jest bardziej wydajny obserwowania skutków błędu pośrednio pod adresem dodatkowej punktu awarii.
+Test jednostkowy przyjmuje małą jednostką aplikacji, zazwyczaj metodę, jednocześnie zostanie odizolowana od pozostałej części kodu i sprawdza się, że działa zgodnie z oczekiwaniami. Jej celem jest sprawdzanie, czy każda jednostka wersji funkcji działa zgodnie z oczekiwaniami, tak aby błędy nie propagowane w całej aplikacji. Wykrywanie błędów, w którym występuje jest bardziej wydajne obserwowania wpływu błędów pośrednio w dodatkowej punkt awarii.
 
-Testy jednostkowe ma największy wpływ na jakości kodu, gdy jest integralną częścią przepływu pracy rozwoju oprogramowania. Jak najszybciej po zapisaniu metody testów jednostkowych powinna być zapisana który Sprawdź zachowanie w odpowiedzi na standardowy, granic lub niepoprawne przypadków w danych wejściowych metody i sprawdzanie żadnym założeniu jawnych ani niejawnych wprowadzone przez kod. Alternatywnie z testem driven development, testy jednostkowe są zapisywane przed kodem. W tym scenariuszu testy jednostkowe działa jako dokumentacja i specyfikacje funkcjonalne.
+Testy jednostkowe ma największy wpływ na jakość kodu, gdy jest integralną częścią przepływu pracy tworzenia oprogramowania. Zaraz po zapisaniu metody testów jednostkowych zapisywane, zweryfikować zachowanie metody w odpowiedzi na standardowy, granic lub niepoprawny przypadki danych wejściowych i sprawdzanie jawnego lub niejawnego założenia przez kod. Alternatywnie za pomocą testów opartych na rozwój, testy jednostkowe są zapisywane przed kodem. W tym scenariuszu testy jednostkowe działają jako specyfikacji funkcjonalnych i dokumentacji projektu.
 
 > [!NOTE]
-> Testy jednostkowe są bardzo skuteczne przed regresji — to znaczy, funkcje, które używanej do pracy, ale został zakłóceń przez aktualizację uszkodzony.
+> Testy jednostkowe są bardzo efektywne przeciwko regresji — oznacza to, że te funkcje, które używanej do pracy, ale został zakłócony wadliwe aktualizacji.
 
-Testy jednostkowe zwykle Użyj wzorca assert act Rozmieść:
+Testy jednostkowe zwykle używać assert act Rozmieść wzorca:
 
--   *Rozmieść* sekcji metody testowej jednostki inicjuje obiekty i ustawia wartość danych, który jest przekazywany do metody w ramach testu.
--   *Działania* sekcji wywołuje metodę w ramach testu z liczbą wymaganych argumentów.
--   *Assert* sekcji sprawdza, czy akcja metody w ramach testu działa zgodnie z oczekiwaniami.
+-   *Rozmieść* sekcji metodę testu jednostkowego inicjuje obiektów i ustawia wartość danych, który jest przekazywany do metody w ramach testu.
+-   *Działają* sekcji wywołuje metodę w ramach testu z wymaganymi argumentami.
+-   *Asercja* sekcji sprawdza, czy akcja testowaną metodę zachowuje się zgodnie z oczekiwaniami.
 
-Po tym wzorcu zapewnia, że testy jednostkowe są do odczytu i spójny.
+Następujące ten wzorzec zapewnia się, że testy jednostkowe są czytelne i spójne.
 
-## <a name="dependency-injection-and-unit-testing"></a>Iniekcji zależności i testy jednostkowe
+## <a name="dependency-injection-and-unit-testing"></a>Wstrzykiwanie zależności i testy jednostkowe
 
-Jednym z motywacji przyjmowania to architektura luźno powiązane jest ułatwia ona testowania jednostek. Jeden z typów zarejestrowany Autofac jest `OrderService` klasy. Poniższy przykład kodu pokazuje konspekt tej klasy:
+Jedną z zresztą przyjmowania luźno powiązane architektury jest, że ułatwia tworzenie testów jednostkowych. Jeden z typów zarejestrowane w usłudze Autofac jest `OrderService` klasy. Poniższy przykładowy kod przedstawia zarys tej klasy:
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,34 +50,34 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-`OrderDetailViewModel` Klasa ma zależność `IOrderService` typu, który jest rozpoznawany jako kontenera, gdy tworzy `OrderDetailViewModel` obiektu. Jednak zamiast tworzyć `OrderService` obiekt do testu jednostkowego `OrderDetailViewModel` klasy, należy zastąpić `OrderService` obiektu z makiety na potrzeby testów. Rysunek 10-1 przedstawiono tę relację.
+`OrderDetailViewModel` Klasy zależny od `IOrderService` typ, który jest rozpoznawany jako kontener, gdy tworzy `OrderDetailViewModel` obiektu. Jednak zamiast tworzyć `OrderService` obiekt do testów jednostkowych `OrderDetailViewModel` klasy, należy zastąpić `OrderService` obiektu z pozorny na potrzeby testów. Rysunek 10-1 ilustruje tę relację.
 
 ![](unit-testing-images/unittesting.png "Klasy, które implementują interfejs IOrderService")
 
-**Rysunek 10-1.** klas implementujących interfejs IOrderService
+**Rysunek 10-1:** klasy, które implementują interfejs IOrderService
 
-Takie podejście umożliwia `OrderService` obiektu do przekazania do `OrderDetailViewModel` klasy w czasie wykonywania, a w celu testowania, umożliwia `OrderMockService` klasy do przekazania do `OrderDetailViewModel` klasy w czasie testu. Główną zaletą tej metody jest możliwość testów jednostkowych do wykonania bez konieczności niewygodna zasoby, takie jak usługi sieci web i baz danych.
+Takie podejście umożliwia `OrderService` obiektu do przekazania do `OrderDetailViewModel` klasy w czasie wykonywania oraz w celu testowania, umożliwia ona `OrderMockService` klasy do przekazania do `OrderDetailViewModel` klasy w czasie testu. Główną zaletą tego podejścia jest umożliwienie testów jednostkowych, aby być wykonywane bez konieczności one nieporęczne za zasoby, takie jak usługi sieci web i baz danych.
 
 ## <a name="testing-mvvm-applications"></a>Testowanie aplikacji z modelem MVVM
 
-Badania modeli i wyświetlanie modeli z modelem MVVM aplikacji są identyczne z testowaniem innych klas, a tym samym narzędzi i technik —, takich jak jednostki testowania i mocking, mogą być używane. Istnieją pewne wzorce, które są typowe dla modelu i klasy modelu widoku, które mogą korzystać z techniki testowania określonej jednostki.
+Testowanie modeli i modeli widoków z modelem MVVM aplikacji jest identyczne z testowaniem innych klas, a te same narzędzia i techniki — takich jak jednostki, testowania i pozorowanie, mogą być używane. Jednak istnieją pewne wzorców, które są typowe dla modelu i widoku klasy modeli, które mogą skorzystać z technik testowania określonej jednostki.
 
 > [!TIP]
-> Przetestuj rzecz z każdego z testów jednostkowych. Nie należy tego robić, aby jednostka test wykonywania więcej niż jednym aspekcie zachowanie jednostki. Dzięki temu prowadzi do testów, które są trudne do odczytywania i aktualizowania. On również może prowadzić do pomyłek przy interpretowaniu awarii.
+> Przetestuj jedno z każdy test jednostkowy. Nie należy tego robić, zapewnienie jednostki testowania więcej niż jeden z aspektów zachowania jednostki wykonywania. Prowadzi to do testów, które są trudne do odczytywania i aktualizowania. Może również powodować w błąd przy interpretowaniu awarii.
 
-Używa aplikacji mobilnej eShopOnContainers [xUnit](https://xunit.github.io/) przeprowadzenie testowania, jednostek, który obsługuje dwa rodzaje testów jednostkowych:
+Zastosowań aplikacji mobilnej w ramach aplikacji eShopOnContainers [xUnit](https://xunit.github.io/) przeprowadzić testy jednostkowe, która obsługuje dwa rodzaje testów jednostkowych:
 
--   Faktów są testy, które są zawsze ma wartość true, który niezmiennej warunkach testowych.
+-   Fakty są testy, które są zawsze ma wartość true, które testują niezmiennych warunków.
 -   Teorii są testy, które są tylko wartość true dla określonego zestawu danych.
 
-Testy jednostkowe dołączony do aplikacji mobilnych eShopOnContainers są testy fakt, a więc ozdobione każdej metody testowej jednostki `[Fact]` atrybutu.
+Fakt testy są dołączone do aplikacji mobilnej w ramach aplikacji eShopOnContainers testy jednostkowe, a więc każdej metody testowej jednostki zostanie nadany `[Fact]` atrybutu.
 
 > [!NOTE]
-> xUnit testy są wykonywane przez moduł uruchamiający. Aby wykonać uruchamiający, uruchom projekt eShopOnContainers.TestRunner wymagane platformy.
+> testów jednostkowych xUnit są wykonywane przez narzędzie test runner. Aby wykonać narzędzia test runner, uruchom projekt eShopOnContainers.TestRunner wymagane platformy.
 
 ### <a name="testing-asynchronous-functionality"></a>Testowanie funkcji asynchronicznych
 
-Podczas implementowania wzorzec MVVM, wyświetlanie modeli zwykle wywoływać operacje w usługach, często asynchronicznie. Testy kod, który wywołuje te operacje zwykle używane mocks jako elementy zastępcze rzeczywiste usługami. Poniższy przykład kodu pokazuje, testowanie funkcji asynchronicznych przez przekazanie zasymulować usługi do modelu widoku:
+Podczas implementowania wzorca MVVM, modeli widoków zwykle wywołuje operacje na usługi, często asynchronicznie. Testów dla kodu, który wywołuje te operacje, zwykle na użytek mocks jako części zamienne rzeczywiste usługi. Poniższy przykład kodu pokazuje, testowanie funkcji asynchronicznej, przekazując makiety usługi do modelu widoku:
 
 ```csharp
 [Fact]  
@@ -93,15 +93,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-Ten test jednostkowy sprawdza, czy `Order` właściwość `OrderDetailViewModel` wystąpienie będzie miał wartość po `InitializeAsync` została wywołana metoda. `InitializeAsync` Metoda jest wywoływana, gdy jest przejście odpowiedni widok modelu widoku. Aby uzyskać więcej informacji na temat nawigacji, zobacz [nawigacji](~/xamarin-forms/enterprise-application-patterns/navigation.md).
+Ten test jednostkowy sprawdza, czy `Order` właściwość `OrderDetailViewModel` wystąpienie będzie mieć wartość po `InitializeAsync` wywołaniu metody. `InitializeAsync` Metoda jest wywoływana, gdy jest przejście odpowiedni widok modelu widoku. Aby uzyskać więcej informacji o nawigacji, zobacz [nawigacji](~/xamarin-forms/enterprise-application-patterns/navigation.md).
 
-Gdy `OrderDetailViewModel` jest tworzone wystąpienie, oczekuje `OrderService` wystąpienia, należy określić jako argument. Jednak `OrderService` pobiera dane z usługi sieci web. W związku z tym `OrderMockService` wystąpienia, która jest wersję z `OrderService` klasa, jest określony jako argument `OrderDetailViewModel` konstruktora. Następnie, jeśli model widoku `InitializeAsync` wywoływana jest metoda, która wywołuje `IOrderService` operacji danych testowych jest pobrane zamiast komunikacji z usługą sieci web.
+Gdy `OrderDetailViewModel` tworzone jest wystąpienie, oczekuje `OrderService` wystąpienia, należy określić jako argument. Jednak `OrderService` pobiera dane z usługi sieci web. W związku z tym `OrderMockService` wystąpienia, co jest binders wersję z `OrderService` klasy, jest określony jako argument `OrderDetailViewModel` konstruktora. Następnie, gdy model widoku `InitializeAsync` wywoływana jest metoda, która wywołuje `IOrderService` operacji, danych testowych jest pobrane zamiast komunikować się z usługą sieci web.
 
-### <a name="testing-inotifypropertychanged-implementations"></a>Testowanie implementacji interfejsu INotifyPropertyChanged
+### <a name="testing-inotifypropertychanged-implementations"></a>Testowanie implementacje INotifyPropertyChanged
 
-Implementowanie `INotifyPropertyChanged` interfejs umożliwiający widoków reagowanie na zmiany, które pochodzą z widoku modeli i modeli. Te zmiany nie są ograniczone do danych wyświetlanych w formantach — są również używane do kontrolowania widoku, takie jak wyświetlanie stanów modelu, powodujących animacji można uruchomić lub formantów, które mają zostać wyłączone.
+Implementowanie `INotifyPropertyChanged` interfejs umożliwia widoków, aby reagować na zmiany, które pochodzą z widoku modeli i modeli. Te zmiany nie są ograniczone do danych wyświetlanych w kontrolkach — są one również używane do kontrolowania widoku, takie jak stanów modelu widoku, które powodują animacji do uruchomienia lub kontrolki, które mają zostać wyłączone.
 
-Właściwości, które może być aktualizowana bezpośrednio przez testu jednostkowego można przetestować przez dołączenie obsługi zdarzeń do `PropertyChanged` zdarzeń i sprawdzanie, czy zdarzenie jest wywoływane po wykonaniu ustawieniem nowej wartości właściwości. Poniższy przykład kodu pokazuje tych testów:
+Właściwości, które mogą być aktualizowane bezpośrednio przez test jednostkowy mogą być testowane przez dołączenie program obsługi zdarzeń do `PropertyChanged` zdarzeń i sprawdzanie, czy zdarzenie jest wywoływane po ustawieniu nową wartość dla właściwości. Poniższy przykład kodu pokazuje tych testów:
 
 ```csharp
 [Fact]  
@@ -123,11 +123,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-Ten test jednostkowy wywołuje `InitializeAsync` metody `OrderViewModel` klasy, co powoduje, że jego `Order` właściwości do zaktualizowania. Przekazuje testu jednostkowego, pod warunkiem, że `PropertyChanged` zdarzenie jest wywoływane dla `Order` właściwości.
+Ten test jednostkowy wywołuje `InitializeAsync` metody `OrderViewModel` klasy, co powoduje, że jego `Order` właściwości do zaktualizowania. Przejdzie test jednostkowy, pod warunkiem, że `PropertyChanged` zdarzenie jest wywoływane dla `Order` właściwości.
 
-### <a name="testing-message-based-communication"></a>Komunikacja oparta na wiadomości testowych
+### <a name="testing-message-based-communication"></a>Testowanie komunikacji oparta na komunikatach
 
-Wyświetl modele używające [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasy do komunikacji między klasami luźno połączonych można jednostki przetestować Subskrybuj komunikat jest wysyłany przez kod w ramach testu, jak pokazano w poniższym przykładzie:
+Widok modeluje używające [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasy do komunikowania się między luźno powiązanych klas mogą być jednostki testowane przez subskrybowanie wiadomości wysyłanych przez kod testu, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 [Fact]  
@@ -148,11 +148,11 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-Ten test jednostkowy sprawdza, czy `CatalogViewModel` publikuje `AddProduct` komunikat w odpowiedzi na jego `AddCatalogItemCommand` wykonywana. Ponieważ [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasa obsługuje komunikatu multiemisji subskrypcje, mogą subskrybować testu jednostkowego `AddProduct` wiadomości i wykonać delegata wywołania zwrotnego w odpowiedzi na jego otrzymania. Ten delegat wywołania zwrotnego, określone jako wyrażenia lambda, ustawia `boolean` pola używanego przez `Assert` instrukcji, aby sprawdzić działanie testu.
+Ten test jednostkowy sprawdza, czy `CatalogViewModel` publikuje `AddProduct` komunikat w odpowiedzi na jego `AddCatalogItemCommand` wykonywana. Ponieważ [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasy obsługuje subskrypcje komunikatu multiemisji, może być subskrybowana przez test jednostkowy `AddProduct` komunikatu i wykonywanie delegata wywołania zwrotnego w odpowiedzi na jego otrzymania. Ustawia ten delegat wywołania zwrotnego, określony jako wyrażenie lambda `boolean` pola, które jest używane przez `Assert` instrukcję, aby sprawdzić zachowanie testu.
 
 ### <a name="testing-exception-handling"></a>Testowanie obsługi wyjątków
 
-Testy jednostkowe można również zapisać tego Sprawdź, czy określone wyjątki zostaną zgłoszone dla nieprawidłowych akcji lub danych wejściowych, jak pokazano w poniższym przykładzie:
+Testy jednostkowe można również zapisać tego upewnij się, że określone wyjątki są zgłaszane dla nieprawidłowych akcji lub danych wejściowych, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 [Fact]  
@@ -168,15 +168,15 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-Ten test jednostkowy spowoduje zgłoszenie wyjątku, ponieważ [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) formant nie ma zdarzenia o nazwie `OnItemTapped`. `Assert.Throws<T>` Metoda to metoda rodzajowa gdzie `T` jest typ oczekiwany wyjątek. Argument przekazany do `Assert.Throws<T>` metoda jest wyrażenie lambda, które spowoduje zgłoszenie wyjątku. W związku z tym testu jednostkowego zostanie przekazany, pod warunkiem, że zgłasza wyjątek, wyrażenia lambda `ArgumentException`.
+Ten test jednostkowy spowoduje zgłoszenie wyjątku, ponieważ [ `ListView` ](xref:Xamarin.Forms.ListView) formant nie ma zdarzenia o nazwie `OnItemTapped`. `Assert.Throws<T>` Metoda jest metodą ogólnego gdzie `T` jest typ oczekiwanego wyjątku. Argumentu przekazanego do `Assert.Throws<T>` metoda to wyrażenie lambda, które spowoduje zgłoszenie wyjątku. W związku z tym, test jednostkowy zostanie przekazany, pod warunkiem, że wyrażenie lambda zgłasza `ArgumentException`.
 
->💡 **Porada**: unikać pisania testów jednostkowych, które zbadać ciągi komunikat wyjątku. Ciągi komunikat wyjątku może ulec zmianie, a więc testy jednostek, które opierają się na ich obecność są traktowane jako niestabilnego.
+>💡 **Porada**: uniknięcia, pisanie testów jednostkowych, które zbadać ciągi komunikatów wyjątku. Ciągi komunikatów wyjątek mogą ulec zmianie wraz z upływem czasu, a więc testów jednostkowych, które zależą od ich obecność są traktowane jako elastycznego.
 
 ### <a name="testing-validation"></a>Testowanie poprawności
 
-Istnieją dwa aspekty do testowania implementacji sprawdzania poprawności: testowania poprawnie wykonanie reguł sprawdzania poprawności i testowania, który `ValidatableObject<T>` klasa działa zgodnie z oczekiwaniami.
+Istnieją dwa aspekty do testowania implementacji sprawdzania poprawności: testowanie, że reguł sprawdzania poprawności są wykonywane prawidłowo, a testy, które `ValidatableObject<T>` klasy działa zgodnie z oczekiwaniami.
 
-Logikę weryfikacji jest zwykle proste do testowania, ponieważ zwykle jest procesem niezależne, których dane wyjściowe zależy od danych wejściowych. Powinna być testy z wyników wywoływania `Validate` metody dla każdej właściwości, która ma co najmniej jedną regułę walidacji skojarzony, jak pokazano w poniższym przykładzie kodu:
+Logikę weryfikacji jest zwykle prosty przetestować, ponieważ zwykle jest niezależna proces, w której dane wyjściowe jest zależny od danych wejściowych. Powinna istnieć testy z wyników wywołania `Validate` metody dla każdej właściwości, która ma co najmniej jedną regułę sprawdzania poprawności skojarzone, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 [Fact]  
@@ -192,9 +192,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-Ten test jednostkowy sprawdza, czy weryfikacja zakończy się powodzeniem po dwa `ValidatableObject<T>` właściwości w `MockViewModel` wystąpienia obu znajdują się dane.
+Ten test jednostkowy sprawdza, czy weryfikacja zakończy się powodzeniem po dwóch `ValidatableObject<T>` właściwości `MockViewModel` wystąpienia zarówno znajdują się dane.
 
-A także sprawdzania, czy weryfikacja zakończy się powodzeniem, testy jednostkowe sprawdzania poprawności należy także sprawdzić wartości `Value`, `IsValid`, i `Errors` właściwości każdego `ValidatableObject<T>` wystąpienia, aby sprawdzić, czy klasa działa zgodnie z oczekiwaniami. Poniższy przykład kodu pokazuje testu jednostkowego, w tym:
+A także sprawdzania, czy weryfikacja zakończy się powodzeniem, testy jednostkowe weryfikacji należy także sprawdzić wartości `Value`, `IsValid`, i `Errors` właściwości każdego `ValidatableObject<T>` wystąpienia, aby sprawdzić, czy klasa działa zgodnie z oczekiwaniami. Poniższy przykład kodu demonstruje test jednostkowy, który wykonuje to:
 
 ```csharp
 [Fact]  
@@ -215,18 +215,18 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-Ten test jednostkowy sprawdza, czy niepowodzenia weryfikacji, kiedy `Surname` właściwość `MockViewModel` nie ma żadnych danych i `Value`, `IsValid`, i `Errors` właściwości każdego `ValidatableObject<T>` wystąpienia są poprawnie ustawione.
+Ten test jednostkowy sprawdza, czy sprawdzanie poprawności zakończy się niepowodzeniem kiedy `Surname` właściwość `MockViewModel` nie zawiera żadnych danych i `Value`, `IsValid`, i `Errors` właściwości każdego `ValidatableObject<T>` wystąpienia są poprawnie ustawione.
 
 ## <a name="summary"></a>Podsumowanie
 
-Testu jednostkowego przyjmuje małą jednostką aplikacji, zazwyczaj metodę izoluje go od pozostałej części kodu i sprawdza się, że działa zgodnie z oczekiwaniami. Jego celem jest sprawdzenie, czy każdej jednostki funkcja zadziałała zgodnie z oczekiwaniami, tak, aby błędy nie propagację w całej aplikacji.
+Test jednostkowy przyjmuje małą jednostką aplikacji, zazwyczaj metodę, jednocześnie zostanie odizolowana od pozostałej części kodu i sprawdza się, że działa zgodnie z oczekiwaniami. Jej celem jest sprawdzanie, czy każda jednostka wersji funkcji działa zgodnie z oczekiwaniami, tak aby błędy nie propagowane w całej aplikacji.
 
-Zachowanie obiektu w ramach testu można samodzielnie przez zamianę obiekty zależne zasymulować obiektów, które symulować obiekty zależne. Dzięki temu testów jednostkowych do wykonania bez konieczności niewygodna zasoby, takie jak usługi sieci web i baz danych.
+Zachowanie obiektu w trakcie testu można samodzielnie, zastępując obiekty zależne makiety obiektów, które symulować obiekty zależne. Dzięki temu testów jednostkowych, aby być wykonywane bez konieczności one nieporęczne za zasoby, takie jak usługi sieci web i baz danych.
 
-Testowanie modeli i wyświetlanie modeli z modelem MVVM aplikacji są identyczne z testowaniem innych klas, a następnie można użyć tego samego narzędzi i technik.
+Testowanie modeli i modeli widoków z modelem MVVM aplikacji jest identyczne z testowaniem innych klas, a te same narzędzia i techniki mogą być używane.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Pobierz książkę elektroniczną (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [ramach aplikacji eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

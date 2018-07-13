@@ -1,34 +1,34 @@
 ---
-title: Szablony danych platformy Xamarin.Forms
-description: Obiekt DataTemplate służy do określania wyglądu danych na obsługiwanych formantów i zazwyczaj wiąże dane mają być wyświetlane.
+title: Szablony danych zestawu narzędzi Xamarin.Forms
+description: Obiekt DataTemplate służy do określania wyglądu danych na obsługiwanych formantów i zwykle wiąże dane mają być wyświetlane.
 ms.prod: xamarin
 ms.assetid: 838F4BDB-B719-457F-8633-27E9B267A2A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: b461cb8be9dcf618b7a497b001186fde5f2b2aa1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 771ae22c3e28a4fce758bbfd6a3bd63bafb75e53
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239859"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994974"
 ---
-# <a name="xamarinforms-data-templates"></a>Szablony danych platformy Xamarin.Forms
+# <a name="xamarinforms-data-templates"></a>Szablony danych zestawu narzędzi Xamarin.Forms
 
-_Obiekt DataTemplate służy do określania wyglądu danych na obsługiwanych formantów i zazwyczaj wiąże dane mają być wyświetlane._
+_Obiekt DataTemplate służy do określania wyglądu danych na obsługiwanych formantów i zwykle wiąże dane mają być wyświetlane._
 
 ## <a name="introductionintroductionmd"></a>[Wprowadzenie](introduction.md)
 
-Szablony danych platformy Xamarin.Forms zapewniają możliwość definiowania prezentację danych na obsługiwanych formantów. Ten artykuł zawiera wprowadzenie do szablonów danych, sprawdzając, dlatego ich użycie jest konieczne.
+Szablony danych zestawu narzędzi Xamarin.Forms zapewniają możliwość definiowania prezentacji danych na obsługiwanych formantów. Ten artykuł zawiera wprowadzenie do szablonów danych, sprawdzając, dlatego ich użycie jest konieczne.
 
 ## <a name="creating-a-datatemplatecreatingmd"></a>[Tworzenie DataTemplate](creating.md)
 
-Szablony danych można tworzyć w tekście, w [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), lub niestandardowy typ lub odpowiedniego typu komórki platformy Xamarin.Forms. Szablon wbudowanego należy używać, gdy nie istnieje potrzeba ponowne użycie szablonu danych w innym miejscu. Alternatywnie szablon danych mogą być ponownie używane, definiując go jako niestandardowy typ, lub poziom kontroli zasobów strony, lub na poziomie aplikacji.
+Szablony danych mogą być tworzone w tekście, w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), lub z typu niestandardowego lub odpowiedni typ komórki zestawu narzędzi Xamarin.Forms. Wbudowany szablon należy używać, jeśli nie ma potrzeby to ponowne użycie szablonu danych w innym miejscu. Alternatywnie szablonu danych może nastąpić, definiując je jako typ niestandardowy, lub poziom kontroli zasobu strony lub na poziomie aplikacji.
 
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[Tworzenie DataTemplateSelector](selector.md)
 
-A [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) można wybrać [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) w czasie wykonywania na podstawie wartości właściwości powiązanych z danymi. Dzięki temu wiele `DataTemplate` wystąpień, które ma zostać zastosowany do tego samego typu obiektu, aby dostosować wygląd określonego obiektów. W tym artykule przedstawiono sposób tworzenia i zużywać `DataTemplateSelector`.
+A [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) może służyć do wybierz [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) w czasie wykonywania na podstawie wartości właściwości powiązanych z danymi. Dzięki temu wiele `DataTemplate` wystąpień, które mają być stosowane do tego samego typu obiektu, aby dostosować wygląd obiektów określonego. W tym artykule przedstawiono sposób tworzenia i wykorzystywania `DataTemplateSelector`.
 
 
 ## <a name="related-links"></a>Linki pokrewne

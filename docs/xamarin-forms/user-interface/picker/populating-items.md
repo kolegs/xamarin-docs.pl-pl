@@ -1,26 +1,26 @@
 ---
 title: Dodawanie danych do kolekcji elementów selektora
-description: Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi przez dodanie go do kolekcji elementów oraz jak reagować na wybór elementu przez użytkownika.
+description: Widok selektora jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule opisano sposób wypełnić selektora z danymi, dodając ją do kolekcji elementów oraz odpowiadanie na wybór elementu przez użytkownika.
 ms.prod: xamarin
 ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 63a72861895f79d2d0154297f88610ddb8bb8beb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8d911108d7d72586a37a3281803eab9c0841f16c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30792657"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997113"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>Dodawanie danych do kolekcji elementów selektora
 
-_Widok selektora jest formant wyboru z listy danych elementu tekstowego. W tym artykule opisano sposób wypełnienia selektora z danymi przez dodanie go do kolekcji elementów oraz jak reagować na wybór elementu przez użytkownika._
+_Widok selektora jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule opisano sposób wypełnić selektora z danymi, dodając ją do kolekcji elementów oraz odpowiadanie na wybór elementu przez użytkownika._
 
 ## <a name="populating-a-picker-with-data"></a>Wypełnianie selektora z danymi
 
-Przed platformy Xamarin.Forms 2.3.4, procesu wypełniania [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) z danymi było dodać dane mają być wyświetlane tylko do odczytu [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekcji, która jest typu `IList<string>`. Każdy element w kolekcji musi być typu `string`. Można dodać elementy w języku XAML, inicjowanie `Items` właściwości z listą `x:String` elementów:
+Przed Xamarin.Forms 2.3.4, proces wypełnianie [ `Picker` ](xref:Xamarin.Forms.Picker) przy użyciu danych było dodać dane, które ma być wyświetlany tylko do odczytu [ `Items` ](xref:Xamarin.Forms.Picker.Items) kolekcji, która jest typu `IList<string>`. Każdy element w kolekcji musi być typu `string`. Można dodawać elementy w XAML przez inicjowanie `Items` właściwości z listą `x:String` elementy:
 
 ```xaml
 <Picker Title="Select a monkey">
@@ -36,7 +36,7 @@ Przed platformy Xamarin.Forms 2.3.4, procesu wypełniania [ `Picker` ](https://d
 </Picker>
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey" };
@@ -49,16 +49,16 @@ picker.Items.Add("Howler Monkey");
 picker.Items.Add("Japanese Macaque");
 ```
 
-Oprócz dodania danych przy użyciu `Items.Add` metody danych również można wstawiać do kolekcji przy użyciu `Items.Insert` metody.
+Oprócz dodawania danych przy użyciu `Items.Add` metody, również można wstawić dane do kolekcji przy użyciu `Items.Insert` metody.
 
-## <a name="responding-to-item-selection"></a>Odpowiada na zaznaczanie elementów
+## <a name="responding-to-item-selection"></a>Odpowiadanie na wybór elementu
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) obsługuje wybór jednego elementu na raz. Po wybraniu elementu [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) generowane zdarzenie i [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) właściwości są aktualizowane na liczbę całkowitą reprezentującą indeks wybranego elementu na liście. `SelectedIndex` Właściwość jest liczony od zera liczbę określającą, którą użytkownik wybrał element. Jeśli nie wybrano elementów, co ma miejsce po `Picker` najpierw jest tworzony i inicjowany, `SelectedIndex` będzie mieć wartość -1.
+A [ `Picker` ](xref:Xamarin.Forms.Picker) obsługuje wybór jednego elementu w danym momencie. Gdy użytkownik wybierze element [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) generowane zdarzenia i [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) właściwość zostanie zaktualizowany i będzie liczba całkowita reprezentująca indeks zaznaczonego elementu na liście. `SelectedIndex` Właściwość jest liczony od zera liczbę określającą element wybrany przez użytkownika. Jeśli żaden element nie jest zaznaczone, co ma miejsce w przypadku `Picker` najpierw zostanie utworzony i zainicjowany, `SelectedIndex` będzie mieć wartość -1.
 
 > [!NOTE]
-> Element zachowanie dotyczące wyboru w [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) można dostosować w systemie iOS z poszczególnych platform. Aby uzyskać więcej informacji, zobacz [kontrolowanie Wybór elementu selektora](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Element zachowanie podczas zaznaczania w [ `Picker` ](xref:Xamarin.Forms.Picker) można dostosować w systemie iOS przy użyciu określonych platform. Aby uzyskać więcej informacji, zobacz [kontrolowanie zaznaczenie elementu selektora](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
 
-Poniższy kod przedstawia przykład `OnPickerSelectedIndexChanged` metoda obsługi zdarzeń, które jest wykonywane, kiedy [ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) generowane zdarzenie:
+Poniższy kod przedstawia przykład `OnPickerSelectedIndexChanged` metody obsługi zdarzeń, który jest wykonywany, gdy [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) generowane zdarzenie:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -73,17 +73,17 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 }
 ```
 
-Ta metoda uzyskuje [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) wartość właściwości i korzysta z wartości można pobrać wybrany element z [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekcji. Ponieważ każdy element `Items` kolekcja jest `string`, może być wyświetlany przez [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) bez konieczności rzutowanie.
+Ta metoda uzyskuje [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) wartości właściwości i używa wartości, aby pobrać zaznaczony element w [ `Items` ](xref:Xamarin.Forms.Picker.Items) kolekcji. Ponieważ każdy element `Items` kolekcja jest `string`, mogą być wyświetlane przez [ `Label` ](xref:Xamarin.Forms.Label) bez rzutowania.
 
 > [!NOTE]
-> A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) mogą być inicjowane można wyświetlić określonego elementu, ustawiając [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) właściwości. Jednak `SelectedIndex` po inicjowania musi być ustawiona właściwość [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekcji.
+> A [ `Picker` ](xref:Xamarin.Forms.Picker) może być inicjowany do wyświetlania określonego elementu, ustawiając [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) właściwości. Jednak `SelectedIndex` musi być ustawiona właściwość po inicjowanie [ `Items` ](xref:Xamarin.Forms.Picker.Items) kolekcji.
 
 ## <a name="summary"></a>Podsumowanie
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Widok jest formant wyboru z listy danych elementu tekstowego. W tym artykule wyjaśniono sposób wypełnienia `Picker` z danymi, dodając ją do [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekcji i jak reagować na wybór elementu przez użytkownika. To proces użycia `Picker` przed 2.3.4 platformy Xamarin.Forms.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Widok jest kontrolka służąca do wybierania elementu tekstowego z listą danych. W tym artykule wyjaśniono, jak wypełnić `Picker` z danymi, dodając ją do [ `Items` ](xref:Xamarin.Forms.Picker.Items) zbierania i odpowiadania na wybór elementu przez użytkownika. Jest to proces przy użyciu `Picker` przed 2.3.4 platformy Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wersja demonstracyjna selektora (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
-- [Selektor](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Próbnika demonstracyjna (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [Selektor](xref:Xamarin.Forms.Picker)

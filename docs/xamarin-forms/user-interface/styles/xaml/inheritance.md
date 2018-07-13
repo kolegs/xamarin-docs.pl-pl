@@ -1,30 +1,30 @@
 ---
-title: Styl dziedziczenia w platformy Xamarin.Forms
-description: Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia. W tym artykule opisano sposób wykonywania styl dziedziczenia w aplikacji platformy Xamarin.Forms.
+title: Dziedziczenie stylów w interfejsie Xamarin.Forms
+description: Style może dziedziczyć z innymi stylami, aby zmniejszyć dublowania i umożliwiają wielokrotne użycie. W tym artykule opisano sposób przeprowadzenia dziedziczenie stylów aplikacji Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8cf3287c6d713d91a0217bd30ca2ee927534aea
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245097"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995336"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Styl dziedziczenia w platformy Xamarin.Forms
+# <a name="style-inheritance-in-xamarinforms"></a>Dziedziczenie stylów w interfejsie Xamarin.Forms
 
-_Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia._
+_Style może dziedziczyć z innymi stylami, aby zmniejszyć dublowania i umożliwiają wielokrotne użycie._
 
-## <a name="style-inheritance-in-xaml"></a>Styl dziedziczenia w języku XAML
+## <a name="style-inheritance-in-xaml"></a>Dziedziczenie stylów w XAML
 
-Styl dziedziczenia odbywa się przez ustawienie [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) właściwości do istniejącej [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/). W języku XAML, jest to osiągane przez ustawienie `BasedOn` właściwości `StaticResource` rozszerzenie znaczników, który odwołuje się do wcześniej utworzonego `Style`. W języku C#, jest to osiągane przez ustawienie `BasedOn` właściwości `Style` wystąpienia.
+Dziedziczenie stylów odbywa się przez ustawienie [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) właściwości do istniejącego [ `Style` ](xref:Xamarin.Forms.Style). W XAML, jest to osiągane przez ustawienie `BasedOn` właściwości `StaticResource` rozszerzenie znaczników, który odwołuje się do wcześniej utworzonego `Style`. W języku C# odbywa się to przez ustawienie `BasedOn` właściwość `Style` wystąpienia.
 
-Style, które dziedziczą z stylu podstawowego mogą obejmować [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) wystąpień dla nowych właściwości lub użyj ich, aby przesłonić stylów ze stylu podstawowej. Ponadto style, które dziedziczą z stylu podstawowego muszą wskazywać tego samego typu lub typu pochodzącego od typu objęci podstawowy styl. Na przykład, jeśli cele podstawowy styl [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) wystąpień, style, które są oparte na stylu podstawowym celem może być `View` wystąpień lub typy pochodzące z `View` klas, takich jak [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) i [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wystąpień.
+Style, które dziedziczą z stylu podstawowego mogą obejmować [ `Setter` ](xref:Xamarin.Forms.Setter) wystąpień dla nowych właściwości lub użyć ich do zastąpienia style z podstawowej stylu. Ponadto style, które dziedziczą z stylu podstawowego muszą wskazywać tego samego typu lub typ, który pochodzi od typu objęte stylu podstawowym. Na przykład, jeśli cele styl podstawowy [ `View` ](xref:Xamarin.Forms.View) wystąpień, style, które są oparte na podstawowej stylu można wskazać `View` wystąpień lub typy, które wynikają z `View` klasy, takie jak [ `Label` ](xref:Xamarin.Forms.Label) i [ `Button` ](xref:Xamarin.Forms.Button) wystąpień.
 
-Poniższy kod przedstawia *jawne* styl dziedziczenia w strony XAML:
+Poniższy przykład demonstruje *jawne* styl dziedziczenia w strony XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -60,22 +60,22 @@ Poniższy kod przedstawia *jawne* styl dziedziczenia w strony XAML:
 </ContentPage>
 ```
 
-`baseStyle` Celów [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) wystąpień i ustawia [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości. `baseStyle` Nie ustawiono bezpośrednio na żaden formant. Zamiast tego `labelStyle` i `buttonStyle` dziedziczyć po nim, ustawienie wartości dodatkowe właściwości możliwej do wiązania. `labelStyle` i `buttonStyle` zostaną zastosowane do [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień i [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wystąpienia, ustawiając ich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości. Powoduje to wygląd pokazano na poniższych zrzutach ekranu:
+`baseStyle` Cele [ `View` ](xref:Xamarin.Forms.View) wystąpień i ustawia [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości. `baseStyle` Nie ustawiono bezpośrednio na żadną kontrolkę. Zamiast tego `labelStyle` i `buttonStyle` dziedziczyć po nim, ustawianie wartości dodatkowe właściwości możliwej do wiązania. `labelStyle` i `buttonStyle` zostaną następnie zastosowane do [ `Label` ](xref:Xamarin.Forms.Label) wystąpień i [ `Button` ](xref:Xamarin.Forms.Button) wystąpienia, ustawiając ich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) właściwości. Skutkuje to wygląd pokazano na poniższych zrzutach ekranu:
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> Niejawne styl mogą pochodzić z jawnym styl, ale styl jawne nie może dziedziczyć po stylu niejawne.
+> Styl niejawny mogą pochodzić z style jawne, ale jawne styl nie mogą pochodzić z stylu niejawnego.
 
-### <a name="respecting-the-inheritance-chain"></a>Przestrzeganie łańcuch dziedziczenia
+### <a name="respecting-the-inheritance-chain"></a>Uwzględnienie łańcuch dziedziczenia
 
-Styl może dziedziczyć tylko z style na tym samym poziomie lub powyżej, w hierarchii widoku. Oznacza to, że:
+Styl może dziedziczyć tylko style na tym samym poziomie lub powyżej, w widoku hierarchii. Oznacza to, że:
 
-- Zasobów na poziomie aplikacji może dziedziczyć tyko z innych zasobów poziomu aplikacji.
-- Strona zasobów na poziomie może dziedziczyć z zasobów na poziomie aplikacji i innych zasobów poziomu strony.
-- Zasobów poziomu kontroli może dziedziczyć z zasobów na poziomie aplikacji, zasoby poziomu strony i innych zasobów poziom kontroli.
+- Zasobów na poziomie aplikacji może dziedziczyć tylko z innych zasobów poziomu aplikacji.
+- Zasobu z poziomu strony może dziedziczyć z zasobów na poziomie aplikacji i innych zasobów poziomu strony.
+- Zasobów z poziomu kontroli może dziedziczyć z zasobów na poziomie aplikacji, zasoby na poziomie strony i innych zasobów poziomu kontroli.
 
-Ten łańcuch dziedziczenia przedstawiono w poniższym przykładzie kodu:
+Ten łańcuch dziedziczenia jest przedstawiona w poniższym przykładzie kodu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -104,11 +104,11 @@ Ten łańcuch dziedziczenia przedstawiono w poniższym przykładzie kodu:
 </ContentPage>
 ```
 
-W tym przykładzie `labelStyle` i `buttonStyle` są kontroli poziomu zasobów, podczas gdy `baseStyle` jest zasobów na poziomie strony. Jednakże podczas `labelStyle` i `buttonStyle` dziedziczyć `baseStyle`, nie jest możliwe w dla `baseStyle` odziedziczone `labelStyle` lub `buttonStyle`, z powodu ich odpowiednich lokalizacji w hierarchii widoku.
+W tym przykładzie `labelStyle` i `buttonStyle` są kontroli poziomu zasobów, podczas gdy `baseStyle` jest zasobu z poziomu strony. Jednakże podczas `labelStyle` i `buttonStyle` dziedziczyć `baseStyle`, nie ma możliwości `baseStyle` odziedziczone `labelStyle` lub `buttonStyle`ze względu na ich odpowiedniej lokalizacji w hierarchii widoku.
 
-## <a name="style-inheritance-in-c35"></a>Styl dziedziczenia w języku C&#35;
+## <a name="style-inheritance-in-c35"></a>Dziedziczenie stylów w języku C&#35;
 
-Odpowiednik C# strony, gdzie [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) wystąpienia są przypisywane bezpośrednio do [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości wymagane formantów, przedstawiono w poniższym przykładzie kodu:
+Równoważne C# strony, gdzie [ `Style` ](xref:Xamarin.Forms.Style) wystąpienia zostaną przypisane bezpośrednio do [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) właściwości wymaganych punktów kontrolnych, przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -151,18 +151,18 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle` Celów [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) wystąpień i ustawia [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości. `baseStyle` Nie ustawiono bezpośrednio na żaden formant. Zamiast tego `labelStyle` i `buttonStyle` dziedziczyć po nim, ustawienie wartości dodatkowe właściwości możliwej do wiązania. `labelStyle` i `buttonStyle` zostaną zastosowane do [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień i [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) wystąpienia, ustawiając ich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości.
+`baseStyle` Cele [ `View` ](xref:Xamarin.Forms.View) wystąpień i ustawia [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości. `baseStyle` Nie ustawiono bezpośrednio na żadną kontrolkę. Zamiast tego `labelStyle` i `buttonStyle` dziedziczyć po nim, ustawianie wartości dodatkowe właściwości możliwej do wiązania. `labelStyle` i `buttonStyle` zostaną następnie zastosowane do [ `Label` ](xref:Xamarin.Forms.Label) wystąpień i [ `Button` ](xref:Xamarin.Forms.Button) wystąpienia, ustawiając ich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) właściwości.
 
 ## <a name="summary"></a>Podsumowanie
 
-Style może dziedziczyć z innych style, aby zmniejszyć dublowania i włączanie ponownego użycia. Styl dziedziczenia odbywa się przez ustawienie [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) właściwości do istniejącej [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/).
+Style może dziedziczyć z innymi stylami, aby zmniejszyć dublowania i umożliwiają wielokrotne użycie. Dziedziczenie stylów odbywa się przez ustawienie [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) właściwości do istniejącego [ `Style` ](xref:Xamarin.Forms.Style).
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Rozszerzenia struktury znaczników XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Style podstawowe (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Praca z style (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metody ustawiającej](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Podstawowe style (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [Praca ze stylami (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metody ustawiającej](xref:Xamarin.Forms.Setter)

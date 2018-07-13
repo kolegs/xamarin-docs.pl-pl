@@ -1,88 +1,88 @@
 ---
-title: Dostosowywanie wyglądu komórek ListView
-description: Ten artykuł opisuje opcje prezentacji danych w aplikacji platformy Xamarin.Forms, wykorzystując wygodę formantu ListView.
+title: Dostosowywanie wyglądu komórek w ListView
+description: W tym artykule przedstawiono opcje prezentacji danych w aplikacjach Xamarin.Forms przy wykorzystaniu możliwości wygody kontrolki ListView.
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244759"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996259"
 ---
-# <a name="customizing-listview-cell-appearance"></a>Dostosowywanie wyglądu komórek ListView
+# <a name="customizing-listview-cell-appearance"></a>Dostosowywanie wyglądu komórek w ListView
 
-Element ListView przedstawia przewijanej listy, które można dostosować za pośrednictwem `ViewCell`s. `ViewCells` Służy do wyświetlania tekstu i obrazów, wskazujący stan PRAWDA/FAŁSZ i odbierania danych wejściowych użytkownika.
+ListView przedstawia przewijany list, które można dostosować za pośrednictwem `ViewCell`s. `ViewCells` może służyć do wyświetlania tekstu i obrazów, wskazujący stan PRAWDA/FAŁSZ i odbierania danych wejściowych użytkownika.
 
-Istnieją dwa podejścia do uzyskiwania odpowiedni z komórek ListView wygląd:
+Istnieją dwa podejścia do uzyskiwania z komórki ListView wyglądu:
 
-- **[Dostosowywanie komórek wbudowanych](#Built_in_Cells)**  &ndash; łatwiejszą implementacją i zwiększyć wydajność kosztem dostosowywalności.
-- **[Tworzenie niestandardowych komórek](#customcells)**  &ndash; więcej kontrolę nad wynik końcowy, ale ma potencjalnych problemów z wydajnością, jeśli nie zaimplementowano poprawnie.
+- **[Dostosowywanie komórek wbudowanych](#Built_in_Cells)**  &ndash; łatwiejszą implementacją i zwiększając wydajność kosztem dostosowywalności.
+- **[Tworzenie niestandardowych komórek](#customcells)**  &ndash; bardziej kontrolę nad efekt, ale ma potencjalnych problemów z wydajnością, jeśli nie zaimplementowana poprawnie.
 
 <a name="Built_in_Cells" />
 
 ## <a name="built-in-cells"></a>Wbudowane w komórkach
-Platformy Xamarin.Forms jest dostarczany z wbudowanych komórek, które działają w wielu aplikacjach prosty:
+Zestaw narzędzi Xamarin.Forms jest dostarczany z wbudowaną komórki, które działają w przypadku wielu prostej aplikacji:
 
 - **TextCell** &ndash; do wyświetlania tekstu
-- **ImageCell** &ndash; do wyświetlania obrazu na tekst.
+- **ImageCell** &ndash; do wyświetlania obrazu z tekstem.
 
-Dwa dodatkowe komórki, [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) i [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) są dostępne, ale często nie są one używane przez `ListView`. Zobacz [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) uzyskać więcej informacji o tych komórek.
+Dwa dodatkowe komórki, [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) i [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) są dostępne, ale nie są one często stosowana w przypadku `ListView`. Zobacz [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) Aby uzyskać więcej informacji na temat tych komórek.
 
 <a name="TextCell" />
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) jest komórki do wyświetlania tekstu, opcjonalnie z drugiego wiersza jako tekst szczegółów.
+[`TextCell`](xref:Xamarin.Forms.TextCell) jest komórka do wyświetlania tekstu, opcjonalnie wraz z drugiego wiersza jako tekst szczegółów.
 
-TextCells są renderowane jako kontrolki natywne w czasie wykonywania, więc wydajność w porównaniu do niestandardowego jest bardzo dobre `ViewCell`. TextCells są można dostosowywać, co pozwala na ustawienie:
+TextCells są renderowane jako natywne kontrolki w czasie wykonywania, więc wydajność w porównaniu do niestandardowego jest bardzo dobra `ViewCell`. TextCells są dostosowywane, co pozwala ustawić:
 
-- `Text` &ndash; tekst, który jest widoczny w pierwszym wierszu w dużej czcionki.
-- `Detail` &ndash; tekst, który jest wyświetlany poniżej pierwszy wiersz w mniejszej czcionki.
+- `Text` &ndash; tekst, który jest wyświetlany w pierwszym wierszu, w dużej czcionki.
+- `Detail` &ndash; tekst, który jest wyświetlany poniżej pierwszy wiersz, w mniejszej czcionki.
 - `TextColor` &ndash; kolor tekstu.
 - `DetailColor` &ndash; kolor tekstu szczegółów
 
 ![](customizing-cell-appearance-images/text-cell-default.png "Przykład TextCell domyślne")
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Przykład TextCell dostosowane")
+![](customizing-cell-appearance-images/text-cell-custom.png "Dostosowane przykład TextCell")
 
 <a name="ImageCell" />
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), takich jak `TextCell`, można używać do wyświetlania tekstu i dodatkowej szczegółów tekstu i oferuje doskonałą wydajność przy użyciu kontrolki natywne każdej platformy. `ImageCell` różni się od `TextCell` w tym Wyświetla obraz w lewo tekstu.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), takich jak `TextCell`, może służyć do wyświetlania tekstu i dodatkowych szczegółów tekstu i oferuje doskonałą wydajność za pomocą kontrolki natywne każdej z platform. `ImageCell` różni się od `TextCell` , wyświetla obraz po lewej stronie tekstu.
 
-`ImageCell` jest przydatne, gdy konieczne jest wyświetlenie listy danych z elementem visual, takie jak listy kontaktów lub filmy. ImageCells są można dostosowywać, co pozwala na ustawienie:
+`ImageCell` jest przydatne, gdy zachodzi potrzeba wyświetlenia listy danych za pomocą zmieni się wizualny aspekt, takich jak lista kontaktów lub filmów. ImageCells są dostosowywane, co pozwala ustawić:
 
-- `Text` &ndash; tekst, który jest widoczny w pierwszym wierszu w dużej czcionki
-- `Detail` &ndash; tekst, który jest wyświetlany poniżej pierwszy wiersz w mniejszej czcionki
+- `Text` &ndash; tekst, który jest wyświetlany w pierwszym wierszu, w dużej czcionki
+- `Detail` &ndash; tekst, który jest wyświetlany poniżej pierwszy wiersz, w mniejszej czcionki
 - `TextColor` &ndash; kolor tekstu
 - `DetailColor` &ndash; kolor tekstu szczegółów
 - `ImageSource` &ndash; obraz do wyświetlenia obok tekstu
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Przykład ImageCell domyślne")
 
-![](customizing-cell-appearance-images/image-cell-custom.png "Przykład ImageCell dostosowane")
+![](customizing-cell-appearance-images/image-cell-custom.png "Dostosowane przykład ImageCell")
 
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Niestandardowe komórek
-Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek zaimplementowana wymagane układu. Na przykład można prezentować komórki dwie etykiety, które mają ta sama waga. A `TextCell` będzie za mało ponieważ `TextCell` ma jednej etykiety, która jest mniejsza. Większość dostosowania komórki dodać dodatkowych danych tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania).
+Gdy wbudowane komórki nie zawierają wymagane układu, niestandardowe komórek implementowane wymagane układu. Na przykład można przedstawić komórki za pomocą dwóch etykiet, które mają taki sam wagę. A `TextCell` okażą się niewystarczające ponieważ `TextCell` ma jedną etykietę, która jest mniejsza. Większość dostosowań komórki dodać dodatkowe dane tylko do odczytu (na przykład dodatkowe etykiety, obrazy i inne informacje wyświetlania).
 
-Wszystkie niestandardowe komórki musi pochodzić od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tej samej klasy podstawowej, że wszystkie komórki wbudowane typy użycia.
+Wszystkie komórki niestandardowe muszą pochodzić od [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), tej samej klasy bazowej, że wszystkie komórki wbudowane typy użycia.
 
-Platformy Xamarin.Forms 2 wprowadzono nowy [zachowanie buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` kontroli, którą można ustawić w celu usprawnienia przewijania w przypadku niektórych typów niestandardowych komórek.
+Zestaw narzędzi Xamarin.Forms 2 wprowadzono nowe [zachowanie buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` kontrolki, które można ustawić, aby poprawić wydajność w przypadku niektórych typów niestandardowych komórek.
 
-To jest przykład komórki niestandardowych:
+Jest to przykład niestandardowych komórki:
 
 ![](customizing-cell-appearance-images/custom-cell.png "Przykład niestandardowych komórki")
 
 ### <a name="xaml"></a>XAML
-Kod XAML, aby utworzyć układ powyżej znajduje się poniżej:
+XAML do tworzenia układu powyżej znajduje się poniżej:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,17 +113,17 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-Wiele zadań XAML powyżej. Ta funkcja pozwala podzielić go:
+Powyższe XAML znacznie robi. Możemy ją rozbić:
 
-- Niestandardowe komórki jest zagnieżdżona `DataTemplate`, który znajduje się wewnątrz `ListView.ItemTemplate`. Jest to ten sam proces jako przy użyciu innych komórki.
-- `ViewCell` jest to typ niestandardowy komórki. Podrzędne `DataTemplate` elementu musi być lub pochodzić od typu `ViewCell`.
-- Zwróć uwagę, że wewnątrz `ViewCell`, układ jest zarządzana przez `StackLayout`. Ten układ pozwala nam dostosować kolor tła. Należy pamiętać, że żadnej właściwości `StackLayout` czyli powiązania mogą być powiązane w komórce niestandardowych, mimo że nie jest wyświetlany w tym miejscu.
+- Zagnieżdżona w komórce niestandardowe `DataTemplate`, który znajduje się wewnątrz `ListView.ItemTemplate`. Jest to ten sam proces, używając innych komórek.
+- `ViewCell` to typ niestandardowy komórki. Elementem podrzędnym elementu `DataTemplate` element musi być lub pochodzić od typu `ViewCell`.
+- Należy zauważyć, że wewnątrz `ViewCell`, układ jest zarządzana przez `StackLayout`. Ten układ pozwala nam dostosować kolor tła. Należy pamiętać, że dowolnej właściwości `StackLayout` czyli możliwej do wiązania może być powiązane w komórce niestandardowe, ale który nie został tutaj pokazany.
 
 ### <a name="cnum"></a>C&num;
 
-Określenie niestandardowych komórki w języku C# jest nieco pełniejszą niż równoważne XAML. Spójrzmy:
+Określanie niestandardowego komórki w języku C# jest nieco pełniejszą niż odpowiednik XAML. Przyjrzyjmy się:
 
-Najpierw należy zdefiniować klasę niestandardowych komórki z `ViewCell` jako klasy podstawowej:
+Najpierw należy zdefiniować klasę niestandardowe komórki za pomocą `ViewCell` jako klasa bazowa:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -159,7 +159,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-W Konstruktorze użytkownika dla strony z `ListView`, Ustaw element ListView `ItemTemplate` właściwości na nowy `DataTemplate`:
+W konstruktora dla strony z `ListView`, ustaw ListView `ItemTemplate` nową właściwość `DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -172,13 +172,13 @@ public partial class ImageCellPage : ContentPage
     }
 ```
 
-Należy pamiętać, że Konstruktor `DataTemplate` przyjmuje typu. Typeof operator pobiera typ CLR dla `CustomCell`.
+Należy pamiętać, że Konstruktor `DataTemplate` przyjmuje typu. Typeof — operator pobiera typ CLR dla `CustomCell`.
 
 <a name="binding-context-changes" />
 
-### <a name="binding-context-changes"></a>Powiązanie zmiany kontekstu
+### <a name="binding-context-changes"></a>Zmiany kontekstu powiązania
 
-Gdy powiązanie z typem niestandardowych komórki [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia kontrolek interfejsu użytkownika, wyświetlanie `BindableProperty` należy użyć wartości [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) należy przesłonić, aby ustawić danych mają być wyświetlane w każdej komórki, a nie konstruktora komórki, jak pokazano w poniższym przykładzie:
+Podczas tworzenia wiązania do typu niestandardowego komórki [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) wystąpień kontrolek interfejsu użytkownika, wyświetlając `BindableProperty` należy używać wartości [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) należy przesłonić, aby ustawić danych, które mają być wyświetlane w Każda komórka, a nie konstruktora komórki, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -221,14 +221,14 @@ public class CustomCell : ViewCell
 }
 ```
 
-[ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) Zastąpienie zostanie wywołana podczas [ `BindingContextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.BindingContextChanged/) generowane zdarzenie, w odpowiedzi na wartość [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) zmiany właściwości. W związku z tym, kiedy `BindingContext` zmienia kontrolek interfejsu użytkownika, wyświetlanie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wartości należy ustawić ich danych. Należy pamiętać, że `BindingContext` powinny być sprawdzane pod kątem `null` wartość, jak można ją skonfigurować przez platformy Xamarin.Forms dla wyrzucanie elementów bezużytecznych, co z kolei spowoduje `OnBindingContextChanged` zastąpienia wywoływane.
+[ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) Zastąpienie zostanie wywołana kiedy [ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged) aktywowaniu zdarzenia w odpowiedzi na wartość [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) zmiany właściwości. W związku z tym, kiedy `BindingContext` zmienia kontrolek interfejsu użytkownika, wyświetlając [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) wartości należy ustawić ich danych. Należy pamiętać, że `BindingContext` powinny być sprawdzane pod kątem `null` wartość, jak to może być ustawiona przez zestaw narzędzi Xamarin.Forms dla wyrzucania elementów bezużytecznych, co z kolei spowoduje, że `OnBindingContextChanged` zastąpienia wywoływana.
 
-Alternatywnie można powiązać z kontrolek interfejsu użytkownika [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpienia, aby wyświetlić ich wartości, które wymaga, aby zastąpić `OnBindingContextChanged` metody.
+Alternatywnie można powiązać formanty interfejsu użytkownika [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) wystąpienia, aby wyświetlić ich wartości, które eliminuje konieczność, aby zastąpić `OnBindingContextChanged` metody.
 
 > [!NOTE]
-> W przypadku przesłaniania `OnBindingContextChanged`, upewnij się, że klasa podstawowa `OnBindingContextChanged` metoda jest wywoływana, aby odbierać zarejestrowanych delegatów `BindingContextChanged` zdarzeń.
+> Podczas zastępowania `OnBindingContextChanged`, upewnij się, że klasa bazowa `OnBindingContextChanged` metoda jest wywoływana, dlatego, że zarejestrowani delegaci otrzymają `BindingContextChanged` zdarzeń.
 
-W języku XAML typ komórki niestandardowego powiązania z danymi można osiągnąć jak pokazano w poniższym przykładzie:
+W XAML powiązanie typu niestandardowego komórki z danymi można osiągnąć jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <ListView x:Name="listView">
@@ -240,7 +240,7 @@ W języku XAML typ komórki niestandardowego powiązania z danymi można osiągn
 </ListView>
 ```
 
-Powoduje to powiązanie `Name`, `Age`, i `Location` właściwości w `CustomCell` wystąpienie do `Name`, `Age`, i `Location` właściwości każdego obiektu w kolekcji źródłowej.
+Powoduje to powiązanie `Name`, `Age`, i `Location` właściwości możliwej do wiązania w `CustomCell` wystąpienia do `Name`, `Age`, i `Location` właściwości każdego obiektu w kolekcji źródłowej.
 
 W poniższym przykładzie kodu pokazano równoważne powiązania w języku C#:
 
@@ -256,10 +256,10 @@ var listView = new ListView {
 };
 ```
 
-W systemach iOS i Android Jeśli [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest odtwarzania elementów i niestandardowych komórki używa niestandardowego modułu renderowania, niestandardowego modułu renderowania należy poprawnie zaimplementować powiadomienia o zmianie właściwości. Po komórki są ponownie ich wartości właściwości zostaną zmienione po zaktualizowaniu niż dostępna komórki, kontekst powiązania z `PropertyChanged` zdarzeń zgłaszanych. Aby uzyskać więcej informacji, zobacz [Dostosowywanie ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Aby uzyskać więcej informacji na temat odtwarzania komórki, zobacz [strategii buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+W systemach iOS i Android Jeśli [ `ListView` ](xref:Xamarin.Forms.ListView) jest odtwarzane elementy i niestandardowe komórki używa niestandardowego modułu renderowania, niestandardowego modułu renderowania poprawnie musi implementować powiadomienie o zmianie właściwości. Gdy komórek są ponownie ich wartości właściwości ulegnie zmianie podczas aktualizowania kontekstu powiązania, dostępne komórki za pomocą `PropertyChanged` zdarzeń zgłaszanych. Aby uzyskać więcej informacji, zobacz [Dostosowywanie obiektu ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Aby uzyskać więcej informacji na temat odtwarzania komórki zobacz [strategii buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wbudowane w komórkach (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
+- [Wbudowane komórek (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [Niestandardowe komórek (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [Zmienić kontekstu powiązania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)

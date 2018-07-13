@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986112"
+ms.locfileid: "38998419"
 ---
 # <a name="windows-platform-specifics"></a>Specyficznych dla platformy Windows
 
@@ -21,7 +21,7 @@ _Zezwalaj na specyficznych dla platformy, umożliwiają korzystanie z funkcji, k
 Na Universal Windows Platform (platformy UWP), zestawu narzędzi Xamarin.Forms zawiera następujące specyficznych dla platformy:
 
 - Ustawianie opcji umieszczania paska narzędzi. Aby uzyskać więcej informacji, zobacz [zmiana położenia narzędzi strony](#toolbar_placement).
-- Zwijanie [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) paska nawigacyjnego. Aby uzyskać więcej informacji, zobacz [zwijanie pasek nawigacyjny MasterDetailPage](#collapsable_navigation_bar).
+- Zwijanie [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) paska nawigacyjnego. Aby uzyskać więcej informacji, zobacz [zwijanie pasek nawigacyjny MasterDetailPage](#collapsable_navigation_bar).
 - Włączanie [ `WebView` ](xref:Xamarin.Forms.WebView) do wyświetlania alertów JavaScript w oknie dialogowym komunikatu platformy uniwersalnej systemu Windows. Aby uzyskać więcej informacji, zobacz [wyświetlanie alertów JavaScript](#webview-javascript-alert).
 - Włączanie [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) wchodzić w interakcje z aparatem sprawdzania pisowni. Aby uzyskać więcej informacji, zobacz [Włączanie sprawdzania pisowni SearchBar](#searchbar-spellcheck).
 - Wykrywanie, kolejność odczytu z pliku tekstowego zawartości [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), i [ `Label` ](xref:Xamarin.Forms.Label) wystąpień. Aby uzyskać więcej informacji, zobacz [wykrywanie kolejność czytania od zawartości](#inputview-readingorder).
@@ -34,7 +34,7 @@ Na Universal Windows Platform (platformy UWP), zestawu narzędzi Xamarin.Forms z
 
 ## <a name="changing-the-page-toolbar-placement"></a>Zmiana położenia narzędzi strony
 
-Umożliwia zmienić położenie paska narzędzi na określonych platform [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)i jest używane w XAML, ustawiając [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) dołączona właściwość na wartość [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) wyliczenia:
+Umożliwia zmienić położenie paska narzędzi na określonych platform [ `Page` ](xref:Xamarin.Forms.Page)i jest używane w XAML, ustawiając [ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) dołączona właściwość na wartość [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) wyliczenia:
 
 ```xaml
 <TabbedPage ...
@@ -54,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na Windows. [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw jest używana do ustawiania położenie paska narzędzi z [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) dostarczanie wyliczenia trzy wartości: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), i [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
+`Page.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na Windows. [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw jest używana do ustawiania położenie paska narzędzi z [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) dostarczanie wyliczenia trzy wartości: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), i [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
 
-Wynik jest zastosowana do umieszczania określonego narzędzi [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) wystąpienie:
+Wynik jest zastosowana do umieszczania określonego narzędzi [ `Page` ](xref:Xamarin.Forms.Page) wystąpienie:
 
 [![](windows-images/toolbar-placement.png "Pasek narzędzi umieszczania specyficzne dla platformy")](windows-images/toolbar-placement-large.png#lightbox "narzędzi umieszczania specyficzne dla platformy")
 
@@ -64,7 +64,7 @@ Wynik jest zastosowana do umieszczania określonego narzędzi [ `Page` ](https:/
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>Zwijanie MasterDetailPage paska nawigacyjnego
 
-Umożliwia Zwiń pasek nawigacyjny na określonych platform [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)i jest używane w XAML, ustawiając [ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/) i [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)dołączonych właściwości:
+Umożliwia Zwiń pasek nawigacyjny na określonych platform [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)i jest używane w XAML, ustawiając [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) i [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)dołączonych właściwości:
 
 ```xaml
 <MasterDetailPage ...
@@ -86,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na Windows. [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/) przestrzeni nazw, jest używany do określania stylu Zwiń z [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) wyliczenie, zapewniając dwóch wartości: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) i [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/) Metoda służy do określania szerokości częściowo zwiniętym paskiem nawigacji.
+`MasterDetailPage.On<Windows>` Metoda określa, że określonych platform będzie uruchamiane tylko na Windows. [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)) Metody w [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) przestrzeni nazw, jest używany do określania stylu Zwiń z [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) wyliczenie, zapewniając dwóch wartości: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) i [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double)) Metoda służy do określania szerokości częściowo zwiniętym paskiem nawigacji.
 
-Wynik jest fakt, że określonym [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) jest stosowany do [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) wystąpienia o szerokości także określić:
+Wynik jest fakt, że określonym [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) jest stosowany do [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) wystąpienia o szerokości także określić:
 
 [![](windows-images/collapsed-navigation-bar.png "Zwinięty pasek nawigacji specyficznymi dla platformy")](windows-images/collapsed-navigation-bar-large.png#lightbox "zwinięty pasek nawigacji specyficznymi dla platformy")
 
@@ -450,4 +450,4 @@ W tym artykule pokazano, jak używać Windows specyficznych dla platformy, któr
 
 - [Tworzenie funkcji specyficznych dla platformy](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

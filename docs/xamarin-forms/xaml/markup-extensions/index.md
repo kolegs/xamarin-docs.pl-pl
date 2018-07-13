@@ -1,65 +1,65 @@
 ---
-title: Rozszerzenia znaczników XAML
-description: Artykuł wyjaśniono, jak użyć rozszerzenia znaczników platformy Xamarin.Forms XAML, aby rozszerzyć możliwościach i elastyczności XAML, zezwalając atrybuty elementu ustawiono ze źródeł innych niż ciągi literału.
+title: Rozszerzenia znaczników w XAML
+description: Artykule wyjaśniono, jak rozszerzyć możliwości i elastyczność XAML, umożliwiając atrybutów elementów, należy ustawić ze źródeł innych niż tekst dosłowny ciągów za pomocą rozszerzeń struktury znaczników XAML zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245888"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996743"
 ---
-# <a name="xaml-markup-extensions"></a>Rozszerzenia znaczników XAML
+# <a name="xaml-markup-extensions"></a>Rozszerzenia znaczników w XAML
 
-Rozszerzenia znaczników XAML wydłużenia możliwościach i elastyczności XAML, zezwalając atrybuty elementu ustawiono ze źródeł innych niż ciągi literału.
+Rozszerzeń struktury znaczników XAML pomóc rozszerzyć możliwości i elastyczność XAML, umożliwiając atrybutów elementów, należy ustawić ze źródeł, inne niż ciągi znaków literału.
 
-Na przykład, zazwyczaj należy ustawić `Color` właściwość `BoxView` podobnie do następującej:
+Na przykład, zazwyczaj należy ustawić `Color` właściwość `BoxView` następująco:
 
 ```xaml
 <BoxView Color="Blue" />
 ```
 
-Lub może go ustawić na wartość szesnastkowa kolor RGB:
+Lub jest on ustawiany na wartość szesnastkową kolor RGB:
 
 ```xaml
 <BoxView Color="#FF0080" />
 ```
 
-W obu przypadkach ciąg tekstowy ustawioną `Color` atrybutu jest konwertowany na `Color` wartość o [ `ColorTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColorTypeConverter/) klasy.
+W obu przypadkach ciąg tekstowy jest ustawiona na `Color` atrybutu jest konwertowany na `Color` wartość przez [ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter) klasy.
 
-Warto zamiast tego ustaw `Color` atrybutu z wartością przechowywaną w słowniku zasobów, lub wartość właściwości statycznej klasy, które zostały utworzone lub właściwość typu `Color` innego elementu na stronie lub utworzone z Oddzielanie wartości odcień, nasycenie i jasność.
+Warto zamiast tego ustawić `Color` atrybutu z wartością przechowywane w słowniku zasobów, lub wartość właściwość statyczna klasy, który został utworzony lub właściwość typu `Color` innego elementu na stronie lub skonstruowany z Oddziel wartości odcień, nasycenie i jasność.
 
-Wszystkie te opcje są możliwe przy użyciu rozszerzenia znaczników XAML. Ale nie pozwól frazę "rozszerzenia znaczników" przestraszyć możesz: rozszerzenia znaczników XAML są *nie* rozszerzeń XML. Nawet w przypadku rozszerzenia znaczników dla XAML XAML jest zawsze prawne XML.
+Wszystkie te opcje są możliwe przy użyciu rozszerzeń struktury znaczników XAML. Ale nie przegap frazę "rozszerzenia znaczników" przestraszyć możesz: rozszerzeń struktury znaczników XAML są *nie* rozszerzeń XML. Nawet w przypadku rozszerzeń struktury znaczników XAML XAML jest zawsze prawne XML.
 
-Rozszerzenie znaczników jest naprawdę inny sposób Express atrybut elementu. Zazwyczaj do zidentyfikowania przez ustawienia atrybutów ujętych w nawiasy klamrowe są rozszerzenia znaczników XAML:
+Rozszerzenie znaczników jest naprawdę inny sposób określenie atrybutu elementu. XAML — rozszerzenia znaczników są zazwyczaj identyfikowane przez ustawienie atrybutu, który jest ujęty w nawiasy klamrowe:
 
 ```xaml
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-Wszystkie ustawienia atrybutów w nawiasach klamrowych jest *zawsze* rozszerzenie znaczników w XAML. Jednakże jak można zauważyć, rozszerzenia znaczników XAML mogą się też odwoływać bez użycia nawiasów klamrowych.
+Każde ustawienie atrybutów w nawiasy klamrowe są *zawsze* rozszerzenie znaczników XAML. Jednak jak zobaczysz, rozszerzeń struktury znaczników XAML można także odwoływać się bez użycia nawiasów klamrowych.
 
-W tym artykule jest podzielony na dwie części:
+W tym artykule jest podzielona na dwie części:
 
 ## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Korzystanie z rozszerzeń struktury znaczników XAML](consuming.md)  
 
-Użyj rozszerzenia znaczników XAML, które są zdefiniowane w platformy Xamarin.Forms.
+Użyj rozszerzenia znaczników XAML, które są zdefiniowane w interfejsie Xamarin.Forms.
 
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Tworzenie rozszerzeń struktury znaczników XAML](creating.md)
 
-Pisanie własnych niestandardowych rozszerzeń znaczników XAML.
+Pisz własne niestandardowe rozszerzenia znaczników XAML.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Rozszerzenia znaczników (przykład)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Rozdział rozszerzeń znaczników XAML z książki platformy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [XAML znaczników rozszerzenia rozdziału z książki zestawu narzędzi Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Słowniki zasobów](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Style dynamiczne](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Powiązanie danych](~/xamarin-forms/app-fundamentals/data-binding/index.md)

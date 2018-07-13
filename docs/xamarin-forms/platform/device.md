@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986073"
+ms.locfileid: "38998270"
 ---
 # <a name="xamarinforms-device-class"></a>Klasa urządzenia zestawu narzędzi Xamarin.Forms
 
@@ -24,11 +24,11 @@ Oprócz metod i właściwości cel wybierając kod w konkretnych typów sprzętu
 
 ## <a name="providing-platform-specific-values"></a>Podając wartości specyficzne dla platformy
 
-Przed Xamarin.Forms 2.3.4 platformy aplikacja była uruchomiona na może uzyskać, sprawdzając [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) właściwość i porównując ją do [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), i [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) wartości wyliczenia. Analogicznie, jeden z [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) przeciążenia może służyć do zapewnienia wartości specyficznych dla platformy do formantu.
+Przed Xamarin.Forms 2.3.4 platformy aplikacja była uruchomiona na może uzyskać, sprawdzając [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) właściwość i porównując ją do [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), i [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) wartości wyliczenia. Analogicznie, jeden z [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) przeciążenia może służyć do zapewnienia wartości specyficznych dla platformy do formantu.
 
-Jednak od zestawu narzędzi Xamarin.Forms 2.3.4 te interfejsy API zostały przestarzały i zastąpiony. [ `Device` ](xref:Xamarin.Forms.Device) Klasy zawiera teraz stałych ciągów publicznych, które identyfikują platform — [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() przestarzałe) `Device.WinRT` (przestarzałe) [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), i [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Podobnie [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) przeciążenia została zastąpiona [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) i [ `On` ](xref:Xamarin.Forms.On) interfejsów API.
+Jednak od zestawu narzędzi Xamarin.Forms 2.3.4 te interfejsy API zostały przestarzały i zastąpiony. [ `Device` ](xref:Xamarin.Forms.Device) Klasy zawiera teraz stałych ciągów publicznych, które identyfikują platform — [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() przestarzałe) `Device.WinRT` (przestarzałe) [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), i [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Podobnie [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) przeciążenia została zastąpiona [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) i [ `On` ](xref:Xamarin.Forms.On) interfejsów API.
 
-W języku C#, można podać wartości specyficznych dla platformy, tworząc `switch` instrukcji na [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) właściwości, a następnie podając `case` instrukcji dla platform wymagane:
+W języku C#, można podać wartości specyficznych dla platformy, tworząc `switch` instrukcji na [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) właściwości, a następnie podając `case` instrukcji dla platform wymagane:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) i [ `On` ](xref:Xamarin.Forms.On) klasy zapewniają taką samą funkcjonalność w XAML:
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) i [ `On` ](xref:Xamarin.Forms.On) klasy zapewniają taką samą funkcjonalność w XAML:
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Klasa jest klasa generyczna i dlatego musi być utworzone przy użyciu `x:TypeArguments` atrybut, który jest zgodny z typem docelowym. W [ `On` ](xref:Xamarin.Forms.On) klasy [ `Platform` ](xref:Xamarin.Forms.On.Platform) atrybut może zaakceptować pojedynczy `string` wartość lub wielu rozdzielonych przecinkami `string` wartości.
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Klasa jest klasa generyczna i dlatego musi być utworzone przy użyciu `x:TypeArguments` atrybut, który jest zgodny z typem docelowym. W [ `On` ](xref:Xamarin.Forms.On) klasy [ `Platform` ](xref:Xamarin.Forms.On.Platform) atrybut może zaakceptować pojedynczy `string` wartość lub wielu rozdzielonych przecinkami `string` wartości.
 
 > [!IMPORTANT]
 > Podając niepoprawne `Platform` wartość atrybutu `On` klasy nie powoduje wystąpienie błędu. Zamiast tego kod zostanie wykonany bez wartości specyficzne dla platformy, są stosowane.
@@ -173,7 +173,7 @@ Jeśli kod wewnątrz czasomierza wchodzi w interakcję z interfejsem użytkownik
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Elementy interfejsu użytkownika nigdy nie powinni mieć dostęp wątków w tle, takie jak kod uruchomiony w czasomierz lub procedury obsługi zakończenia dla operacji asynchronicznych, takich jak żądania sieci web. Wszelki kod w tle, który musi zaktualizować interfejs użytkownika powinna być otoczona wewnątrz [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Jest to równoważne z `InvokeOnMainThread` w systemach iOS, `RunOnUiThread` w systemie Android i `Dispatcher.RunAsync` na platformie Universal Windows.
+Elementy interfejsu użytkownika nigdy nie powinni mieć dostęp wątków w tle, takie jak kod uruchomiony w czasomierz lub procedury obsługi zakończenia dla operacji asynchronicznych, takich jak żądania sieci web. Wszelki kod w tle, który musi zaktualizować interfejs użytkownika powinna być otoczona wewnątrz [ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)). Jest to równoważne z `InvokeOnMainThread` w systemach iOS, `RunOnUiThread` w systemie Android i `Dispatcher.RunAsync` na platformie Universal Windows.
 
 Kod zestawu narzędzi Xamarin.Forms to:
 

@@ -1,33 +1,33 @@
 ---
-title: Zachowania platformy Xamarin.Forms
-description: Zachowania platformy Xamarin.Forms są tworzone przez wynikające z działania lub zachowania<T> klasy. W tym artykule przedstawiono sposób tworzenia i korzystać z platformy Xamarin.Forms zachowania.
+title: Zachowania zestawu narzędzi Xamarin.Forms
+description: Zachowania zestawu narzędzi Xamarin.Forms są tworzone przez wynikających z zachowania lub zachowanie<T> klasy. W tym artykule przedstawiono sposób tworzenia i wykorzystywania zachowania zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 3a86e7713620eff90db995941eb35df7bc393a76
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 7e057567ec0bb72e9bcc016d4a9fef3af78a3ea1
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848294"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998898"
 ---
-# <a name="xamarinforms-behaviors"></a>Zachowania platformy Xamarin.Forms
+# <a name="xamarinforms-behaviors"></a>Zachowania zestawu narzędzi Xamarin.Forms
 
-_Zachowania platformy Xamarin.Forms są tworzone przez wynikające z działania lub zachowania<T> klasy. W tym artykule przedstawiono sposób tworzenia i korzystać z platformy Xamarin.Forms zachowania._
+_Zachowania zestawu narzędzi Xamarin.Forms są tworzone przez wynikających z zachowania lub zachowanie<T> klasy. W tym artykule przedstawiono sposób tworzenia i wykorzystywania zachowania zestawu narzędzi Xamarin.Forms._
 
 ## <a name="overview"></a>Omówienie
 
-Proces tworzenia zachowanie platformy Xamarin.Forms wygląda następująco:
+Proces tworzenia zachowania zestawu narzędzi Xamarin.Forms jest następująca:
 
-1. Utwórz klasę, która dziedziczy [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) lub [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, gdzie `T` jest typ kontroli, do którego należy zastosować zachowanie.
-1. Zastąpienie [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) metodę, aby wykonać wszystkie wymagane ustawienia.
-1. Zastąpienie [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metodę, aby wykonać wszelkie wymagane czyszczenie.
-1. Implementuje podstawowych funkcji zachowania.
+1. Utwórz klasę, która dziedziczy z [ `Behavior` ](xref:Xamarin.Forms.Behavior) lub [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy, gdzie `T` jest typu formantu, którego powinien dotyczyć zachowanie.
+1. Zastąp [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) metodę w celu konieczności przeprowadzania konfiguracji.
+1. Zastąp [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) metodę w celu czyszczenia wymagane.
+1. Implementuje podstawowe funkcje zachowanie.
 
-Powoduje to struktura pokazano w poniższym przykładzie:
+Skutkuje to struktura pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class CustomBehavior : Behavior<View>
@@ -48,15 +48,15 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metody jest uruchamiany natychmiast po zachowanie jest dołączony do formantu. Ta metoda odbiera odwołanie do formantu, który jest podłączony i może służyć do zarejestrowania programów obsługi zdarzeń lub wykonywać inne ustawienia, które są wymagane do obsługi funkcji zachowanie. Na przykład można utworzyć subskrypcji na zdarzenie w formancie. Zachowanie funkcji mogą być następnie realizowane w programu obsługi zdarzeń dla zdarzenia.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Metody jest uruchamiany natychmiast po, zachowaniem jest dołączony do formantu. Ta metoda otrzymuje odwołanie do formantu, który jest dołączony i może służyć do rejestrowania procedury obsługi zdarzeń lub wykonywać inne ustawienia, które są wymagane do obsługi funkcji zachowanie. Na przykład można subskrybować zdarzenie na kontrolce. Zachowanie funkcji następnie mogą być realizowane w program obsługi zdarzeń dla zdarzenia.
 
-[ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Metody uruchamiane, gdy działanie zostanie usunięta z formantu. Ta metoda odbiera odwołanie do formantu, który jest dołączony, a służy do wykonywania wymaganych oczyszczania. Można na przykład subskrypcję zdarzenia, aby zapobiec przecieki pamięci.
+[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Metody jest wywoływane, gdy zachowanie zostanie usunięty z kontroli. Ta metoda otrzymuje odwołanie do formantu, który jest dołączony i jest używany do wykonywania oczyszczania wymagane. Na przykład można anulować subskrypcję ze zdarzenia kontroli, aby zapobiec przeciekom pamięci.
 
-Zachowanie mogą być następnie używane przez dołączenie go do [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) kolekcji właściwej opcji kontroli.
+To zachowanie może być bezpiecznie spożywane, dołączając ją do [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) zbiór właściwej opcji kontroli.
 
-## <a name="creating-a-xamarinforms-behavior"></a>Tworzenie zachowanie platformy Xamarin.Forms
+## <a name="creating-a-xamarinforms-behavior"></a>Tworzenie zachowania zestawu narzędzi Xamarin.Forms
 
-Aplikacja przykładowa prezentuje `NumericValidationBehavior`, który prezentuje wartości wprowadzonej przez użytkownika do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontrolować na czerwono, jeśli nie jest `double`. W poniższym przykładzie kodu pokazano zachowanie:
+Przykładowa aplikacja demonstruje `NumericValidationBehavior`, wyróżnia wartości wprowadzonej przez użytkownika do [ `Entry` ](xref:Xamarin.Forms.Entry) kontrolować na czerwono, jeśli nie jest `double`. W poniższym przykładzie kodu pokazano zachowanie:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -82,14 +82,14 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Pochodną [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, których `T` jest [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metoda rejestruje program obsługi zdarzeń dla [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) zdarzeń, z [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metody do rejestrowania `TextChanged`przecieków zdarzenie, aby zapobiec pamięci. Do podstawowych funkcji zachowanie jest zapewniana przez `OnEntryTextChanged` metodę, która analizuje wartości wprowadzonej przez użytkownika do `Entry`i ustawia [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) właściwości czerwony, jeśli wartość nie jest `double`.
+`NumericValidationBehavior` Pochodzi od klasy [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy, gdzie `T` jest [ `Entry` ](xref:Xamarin.Forms.Entry). [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Metoda rejestruje zdarzenia obsługi dla [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) zdarzenia z [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) metoda wyrejestrowywanie `TextChanged`przecieków zdarzenie, aby zapobiec pamięci. Podstawowe funkcje zachowanie odbywa się przy `OnEntryTextChanged` metody, która analizuje wartości wprowadzonej przez użytkownika do `Entry`i ustawia [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) właściwości na czerwony, jeśli wartość nie jest `double`.
 
 > [!NOTE]
-> Platformy Xamarin.Forms nie ustawia `BindingContext` zachowania, ponieważ zachowania może być udostępniony i stosowane do wielu formantów za pomocą stylów.
+> Zestaw narzędzi Xamarin.Forms nie ustawia `BindingContext` zachowania, ponieważ zachowania może być udostępniane i zastosować do wielu kontrolek przy użyciu stylów.
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Korzystanie z zachowaniem platformy Xamarin.Forms
+## <a name="consuming-a-xamarinforms-behavior"></a>Korzystanie z zachowania zestawu narzędzi Xamarin.Forms
 
-Każdy kontrolkę platformy Xamarin.Forms [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) kolekcji, do której można dodać jeden lub więcej zachowania, jak pokazano w poniższym przykładzie kodu XAML:
+Każdy formant Xamarin.Forms ma [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) kolekcji, do którego można dodać co najmniej jeden zachowań, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double">
@@ -99,29 +99,29 @@ Każdy kontrolkę platformy Xamarin.Forms [ `Behaviors` ](https://developer.xama
 </Entry>
 ```
 
-Odpowiednik [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) w języku C# przedstawiono w poniższym przykładzie:
+Odpowiednik [ `Entry` ](xref:Xamarin.Forms.Entry) w języku C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 entry.Behaviors.Add (new NumericValidationBehavior ());
 ```
 
-W czasie wykonywania zachowanie będzie odpowiadać interakcji z formantem, zgodnie z implementacją zachowanie. Poniższe zrzuty ekranu pokazują zachowanie odpowiada na nieprawidłowe dane wejściowe:
+W czasie wykonywania zachowanie będzie odpowiadać na interakcję z kontrolki, zgodnie z implementacji zachowania. Poniższe zrzuty ekranu pokazują to zachowanie, które odpowiada na nieprawidłowe dane wejściowe:
 
-[![](creating-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")](creating-images/screenshots.png#lightbox "Przykładowa aplikacja z zachowaniem platformy Xamarin.Forms")
+[![](creating-images/screenshots-sml.png "Przykładowa aplikacja z zachowaniem Xamarin.Forms")](creating-images/screenshots.png#lightbox "Przykładowa aplikacja z działaniem zestawu narzędzi Xamarin.Forms")
 
 > [!NOTE]
-> Zachowania są przeznaczone dla typu formantu określonego (lub superklasą, które można stosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia do formantu niezgodne zachowanie wystąpi wyjątek.
+> Zachowania są przeznaczone dla typu określonego (lub superklasą, które można zastosować do wielu formantów), a tylko powinny one być dodane do kontroli zgodne. Próby dołączenia zachowania do niezgodnych kontrolki spowoduje wyjątek.
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Korzystanie z platformy Xamarin.Forms zachowanie o stylu
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Korzystanie z zachowania zestawu narzędzi Xamarin.Forms przy użyciu stylu
 
-Zachowania również mogą być używane przez styl jawnych ani niejawnych. Jednak tworzenie styl, który ustawia [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) właściwości formantu nie jest możliwe, ponieważ ta właściwość jest tylko do odczytu. Rozwiązanie jest można dodać właściwości dołączonej do klasy zachowanie, która kontroluje, dodawanie i usuwanie zachowanie. Proces przebiega w następujący sposób:
+Zachowania mogą być również używane przez style jawne lub niejawne. Jednak tworzenie stylu, który ustawia [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) właściwości kontrolki nie jest możliwe, ponieważ właściwość jest tylko do odczytu. To rozwiązanie jest dodać dołączoną właściwość do klasy zachowanie, który kontroluje, dodając i usuwając zachowanie. Proces przebiega w następujący sposób:
 
-1. Dodaj właściwości dołączonej do klasy zachowanie, która będzie służyć do kontrolowania dodawania lub usuwania zachowania do formantu do którego zachowanie zostanie dołączony. Upewnij się, że dołączona właściwość rejestruje `propertyChanged` delegata, która zostanie wykonana po zmianie wartości właściwości.
-1. Utwórz `static` metody pobierającej i ustawiającej dołączonych właściwości.
-1. Wdrożyć logikę w `propertyChanged` delegata do dodawania i usuwania zachowanie.
+1. Dodaj dołączonej właściwości do klasy zachowanie, która będzie służyć do kontrolowania, dodawania lub usuwania zachowanie do kontroli, do którego zostanie zachowanie dołączone. Upewnij się, że dołączona właściwość rejestruje `propertyChanged` delegata, która zostanie wykonana po zmianie wartości właściwości.
+1. Utwórz `static` metodę getter i setter dla dołączonych właściwości.
+1. Implementowanie logiki `propertyChanged` delegata do dodawania i usuwania zachowanie.
 
-Poniższy przykład kodu pokazuje dołączona właściwość, która kontroluje, dodawanie i usuwanie `NumericValidationBehavior`:
+Poniższy przykład kodu pokazuje dołączona właściwość, która kontroluje, dodając i usuwając `NumericValidationBehavior`:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -160,9 +160,9 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Klasa zawiera dołączona właściwość o nazwie `AttachBehavior` z `static` pobierającej i ustawiającej, który kontroluje, dodawanie lub usuwanie zachowania do formantu, z którą zostanie dołączony. To dołączona właściwość rejestrów `OnAttachBehaviorChanged` — metoda, która zostanie wykonana po zmianie wartości właściwości. Ta metoda dodaje lub usuwa zachowania do kontrolki, na podstawie wartości z `AttachBehavior` dołączona właściwość.
+`NumericValidationBehavior` Klasa zawiera dołączoną właściwość o nazwie `AttachBehavior` z `static` metodę getter i setter, który kontroluje, dodawania lub usuwania zachowanie do kontroli, do którego zostanie dołączony. To dołączonych właściwości rejestrów `OnAttachBehaviorChanged` metody, która zostanie wykonana po zmianie wartości właściwości. Ta metoda dodaje lub usuwa zachowania kontrolki, w oparciu o wartość `AttachBehavior` dołączona właściwość.
 
-Poniższy kod przedstawia przykład *jawne* stylów dla `NumericValidationBehavior` używającą `AttachBehavior` dołączona właściwość i mogą być stosowane do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontrolki:
+Poniższy kod przedstawia przykład *jawne* stylu dla `NumericValidationBehavior` , który używa `AttachBehavior` dołączonych właściwości i mogą być stosowane do [ `Entry` ](xref:Xamarin.Forms.Entry) kontrolki:
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -172,20 +172,20 @@ Poniższy kod przedstawia przykład *jawne* stylów dla `NumericValidationBehavi
 </Style>
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Można zastosować do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kontroli przez ustawienie jej [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) właściwości `Style` wystąpienia przy użyciu `StaticResource` — rozszerzenie znaczników, jak pokazano w poniższym przykładzie:
+[ `Style` ](xref:Xamarin.Forms.Style) Mogą być stosowane do [ `Entry` ](xref:Xamarin.Forms.Entry) kontroli przez ustawienie jego [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) właściwości `Style` przy użyciu `StaticResource` — rozszerzenie znaczników, jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
 ```
 
-Aby uzyskać więcej informacji na temat stylów, zobacz [style](~/xamarin-forms/user-interface/styles/index.md).
+Aby uzyskać więcej informacji na temat style zobacz [style](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> Możliwe jest dodawanie właściwości do zachowania, ustawić lub zapytanie w języku XAML, jeśli Tworzenie zachowania mają stan ich nie mogą być udostępniane między formantami w `Style` w `ResourceDictionary`.
+> Podczas dodawania, może być powiązana właściwości w celu zachowania, które zostaje ustawiona lub zapytania w XAML, jeśli utworzysz zachowania mają stan one nie mogą być udostępniane między kontrolkami w `Style` w `ResourceDictionary`.
 
-### <a name="removing-a-behavior-from-a-control"></a>Usuwanie zachowanie za pomocą formantu
+### <a name="removing-a-behavior-from-a-control"></a>Usuwanie zachowanie kontrolki
 
-[ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Metody jest wywoływane podczas zachowanie zostanie usunięta z formantu i służy do wykonywania wymaganych oczyszczania takich jak anulowanie subskrypcji zdarzeń, aby zapobiec przeciek pamięci. Jednak zachowania nie są domyślnie usuwane z formantów chyba że formantu [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) kolekcji jest modyfikowany przez `Remove` lub `Clear` metody. Poniższy przykład kodu pokazuje, usuwając określone zachowanie z formantu `Behaviors` kolekcji:
+[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Metoda uruchamiane, gdy zachowanie zostanie usunięty z formantu i służy do przeprowadzania wymagane czyszczenia takich jak anulowanie subskrypcji zdarzeń, aby zapobiec przeciek pamięci. Jednak zachowania nie są niejawnie usuwane z formantów chyba że formantu [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) kolekcji jest modyfikowany przez `Remove` lub `Clear` metody. Poniższy przykład kodu demonstruje, usuwanie określone zachowanie kontrolki `Behaviors` kolekcji:
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -194,22 +194,22 @@ if (toRemove != null) {
 }
 ```
 
-Alternatywnie formantu [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) można wyczyścić kolekcji, jak pokazano w poniższym przykładzie:
+Alternatywnie formantu [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) można wyczyścić kolekcji, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 entry.Behaviors.Clear();
 ```
 
-Ponadto należy pamiętać, że zachowania nie są niejawnie usuwane z formantów podczas strony są zdjęte ze stosu nawigacji ze stosu. Zamiast tego one musi jawnie usunięte przed stron przechodzi poza zakresem.
+Ponadto należy pamiętać, że zachowania nie są niejawnie usuwane z formantów podczas strony są zdjęte ze stosu nawigacji ze stosu. Zamiast tego one muszą być jawnie usunięte przed stron wychodzące z zakresu.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób tworzenia i korzystać z platformy Xamarin.Forms zachowania. Zachowania platformy Xamarin.Forms są tworzone przez pochodny [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) lub [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy.
+W tym artykule przedstawiono sposób tworzenia i wykorzystywania zachowania zestawu narzędzi Xamarin.Forms. Zachowania zestawu narzędzi Xamarin.Forms są tworzone przez pochodząca od [ `Behavior` ](xref:Xamarin.Forms.Behavior) lub [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Zachowanie platformy Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [Zachowanie platformy Xamarin.Forms stosowane przy użyciu stylu (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
-- [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Zachowanie<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Zachowania zestawu narzędzi Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+- [Zachowania zestawu narzędzi Xamarin.Forms stosowane przy użyciu stylu (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Behavior](xref:Xamarin.Forms.Behavior)
+- [Zachowanie<T>](xref:Xamarin.Forms.Behavior`1)

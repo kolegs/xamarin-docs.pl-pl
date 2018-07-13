@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 814b74ce04269d18b9a280ada74204c1c86621e1
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38985981"
+ms.locfileid: "38997364"
 ---
 # <a name="xamarinforms-scrollview"></a>ScrollView zestawu narzędzi Xamarin.Forms
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zawiera układy i umożliwia przewijanie poza ekranem. `ScrollView` Umożliwia również widoki automatycznego przenoszenia do widocznej części ekranu, gdy klawiatura jest są wyświetlane.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) zawiera układy i umożliwia przewijanie poza ekranem. `ScrollView` Umożliwia również widoki automatycznego przenoszenia do widocznej części ekranu, gdy klawiatura jest są wyświetlane.
 
 [![](scroll-view-images/layouts-sml.png "Układy platformy Xamarin.Forms")](scroll-view-images/layouts.png#lightbox "układy platformy Xamarin.Forms")
 

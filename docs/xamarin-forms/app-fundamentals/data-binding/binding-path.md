@@ -1,39 +1,39 @@
 ---
-title: Ścieżka powiązania platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia powiązania danych platformy Xamarin.Forms dostępu do właściwości podrzędnych i członków kolekcji z właściwością ścieżki klasy powiązania.
+title: Ścieżka powiązania zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak uzyskać dostęp do właściwości podrzędnych i elementy członkowskie kolekcji z właściwością ścieżki klasy wiązania za pomocą powiązania danych zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 887a20f1791a190c182e6d179cfabb46c6e0eb48
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240476"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998950"
 ---
-# <a name="xamarinforms-binding-path"></a>Ścieżka powiązania platformy Xamarin.Forms
+# <a name="xamarinforms-binding-path"></a>Ścieżka powiązania zestawu narzędzi Xamarin.Forms
 
-We wszystkich poprzednich przykładach wiązania danych [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) właściwość `Binding` klasy (lub [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) właściwość `Binding` — rozszerzenie znaczników) została ustawiona do jednej właściwości. Można ustawić jest `Path` do *podrzędne właściwości* (właściwość właściwości), lub do elementu członkowskiego zbioru.
+We wszystkich poprzednich przykładach wiązania danych [ `Path` ](xref:Xamarin.Forms.Binding.Path) właściwość `Binding` klasy (lub [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) właściwość `Binding` — rozszerzenie znaczników) został ustawiony do jednej właściwości. Jest możliwe ustawienie `Path` do *właściwości podrzędnych* (właściwość właściwości), lub do elementu członkowskiego kolekcji.
 
-Na przykład, załóżmy, że strona zawiera `TimePicker`:
+Załóżmy, że strona zawiera `TimePicker`:
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-`Time` Właściwość `TimePicker` jest typu `TimeSpan`, ale być może chcesz utworzyć powiązania danych, który odwołuje się do `TotalSeconds` właściwości tego `TimeSpan` wartość. Powiązanie danych jest następujący:
+`Time` Właściwość `TimePicker` typu `TimeSpan`, ale być może chcesz utworzyć powiązania danych, który odwołuje się do `TotalSeconds` właściwość, która `TimeSpan` wartość. Oto powiązanie danych:
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-`Time` Właściwość jest typu `TimeSpan`, który ma `TotalSeconds` właściwości. `Time` i `TotalSeconds` właściwości są simply połączone kropką. Elementy w `Path` ciąg zawsze odwołuje się do właściwości, a nie do typy tych właściwości.
+`Time` Właściwość jest typu `TimeSpan`, który ma `TotalSeconds` właściwości. `Time` i `TotalSeconds` właściwości są simply połączonych kropką. Elementy w `Path` ciągu zawsze odwołuje się do właściwości, a nie typy tych właściwości.
 
-Przykład i kilka innych są wyświetlane w **zmiany ścieżki** strony:
+Przykład i kilka innych są wyświetlane w **odmiany ścieżki** strony:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,11 +89,11 @@ Przykład i kilka innych są wyświetlane w **zmiany ścieżki** strony:
 </ContentPage>
 ```
 
-W ciągu sekundy `Label`, źródło powiązania jest samej strony. `Content` Właściwość jest typu `StackLayout`, który ma `Children` właściwości typu `IList<View>`, który ma `Count` właściwości wskazującą liczbę elementów podrzędnych.
+W drugim `Label`, źródło wiążące się sama strona. `Content` Właściwość jest typu `StackLayout`, który ma `Children` właściwości typu `IList<View>`, który ma `Count` właściwości wskazującą liczbę elementów podrzędnych.
 
-## <a name="paths-with-indexers"></a>Ścieżki z indeksatorów
+## <a name="paths-with-indexers"></a>Ścieżki przy użyciu indeksatorów
 
-Powiązanie w trzecim polu `Label` w **zmiany ścieżki** odwołuje się do strony [ `CultureInfo` ](https://developer.xamarin.com/api/type/System.Globalization.CultureInfo/) klasy w `System.Globalization` przestrzeni nazw:
+Powiązanie w trzecim `Label` w **odmiany ścieżki** strony odwołania [ `CultureInfo` ](xref:System.Globalization.CultureInfo) klasy w `System.Globalization` przestrzeni nazw:
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +101,9 @@ Powiązanie w trzecim polu `Label` w **zmiany ścieżki** odwołuje się do stro
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-Źródło ustawiono statycznych `CultureInfo.CurrentCulture` właściwość, która jest obiektem typu `CultureInfo`. Czy klasa definiuje właściwość o nazwie `DateTimeFormat` typu [ `DateTimeFormatInfo` ](https://developer.xamarin.com/api/type/System.Globalization.DateTimeFormatInfo/) zawierający `DayNames` kolekcji. Indeks wybiera czwarty element.
+Źródło jest ustawiona na statyczną `CultureInfo.CurrentCulture` właściwość, która jest obiektem typu `CultureInfo`. Czy klasa definiuje właściwość o nazwie `DateTimeFormat` typu [ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo) zawierający `DayNames` kolekcji. Indeks wybiera czwarty element.
 
-Czwarta `Label` jest podobny, ale dla kultury skojarzone z Francja. `Source` Ma ustawioną właściwość powiązania `CultureInfo` obiektów z konstruktorem:
+Czwarty `Label` wykonuje coś podobnego, ale dla kultury skojarzony (Francja). `Source` Powiązania zostaje ustalona `CultureInfo` obiektu za pomocą konstruktora:
 
 ```xaml
 <Label>
@@ -122,9 +122,9 @@ Czwarta `Label` jest podobny, ale dla kultury skojarzone z Francja. `Source` Ma 
 </Label>
 ```
 
-Zobacz [przekazywanie argumentów konstruktora](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) Aby uzyskać więcej informacji na temat określania argumentów konstruktora w języku XAML.
+Zobacz [przekazywania argumentów konstruktora](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) Aby uzyskać więcej informacji na temat określania argumentów konstruktora w XAML.
 
-Na koniec ostatnim przykładzie jest podobny do drugiego, z wyjątkiem odwołuje się ona do jednego z elementów podrzędnych `StackLayout`:
+Na koniec, ostatni przykład jest podobny do drugiego, z tą różnicą, że odwołuje się do jednego z elementów podrzędnych elementu `StackLayout`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +132,22 @@ Na koniec ostatnim przykładzie jest podobny do drugiego, z wyjątkiem odwołuje
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-Ten podrzędny jest `Label`, który ma `Text` właściwości typu `String`, który ma `Length` właściwości. Pierwszy `Label` raporty `TimeSpan` w `TimePicker`, więc po zmianie tekstu ostatecznych `Label` również zmiany.
+Ten podrzędny jest `Label`, który ma `Text` właściwości typu `String`, który ma `Length` właściwości. Pierwszy `Label` raporty `TimeSpan` w `TimePicker`, więc po zmianie tekstu końcowe `Label` zmieni się także.
 
-Oto programu uruchomionego na wszystkich platformach trzy:
+W tym miejscu jest uruchomiony na wszystkich trzech platformach program:
 
-[![Zmiany ścieżki](binding-path-images/pathvariations-small.png "zmiany ścieżki")](binding-path-images/pathvariations-large.png#lightbox "zmiany ścieżki")
+[![Ścieżka odmiany](binding-path-images/pathvariations-small.png "odmiany ścieżki")](binding-path-images/pathvariations-large.png#lightbox "odmiany ścieżki")
 
-## <a name="debugging-complex-paths"></a>Debugowanie złożonego ścieżki
+## <a name="debugging-complex-paths"></a>Debugowanie złożonych ścieżek
 
-Definicje złożonych ścieżka może być trudne do skonstruowania: należy znać typ każdej właściwości podrzędne lub typ elementów w kolekcji, aby prawidłowo dodać dalej właściwości podrzędnej, ale same typy nie są wyświetlane w ścieżce. Jeden dobry technika jest do zbudowania ścieżka przyrostowo i przyjrzyj wyniki pośrednie. W tym ostatnim przypadku można uruchomić bez `Path` definicji co:
+Definicje skomplikowanej ścieżki mogą być trudne do konstruowania: musisz znać typ każdej właściwości podrzędnych lub typ elementów w kolekcji, aby poprawnie dodać następną właściwość podrzędnych, ale same typy nie są wyświetlane w ścieżce. Jedna z technik dobre jest do zbudowania ścieżkę stopniowo i spójrz na wyniki pośrednie. Ten przykład ostatniego można uruchomić bez `Path` definicji wszystkie:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-Która wyświetla typ źródła powiązanie lub `DataBindingDemos.PathVariationsPage`. Znasz `PathVariationsPage` pochodną `ContentPage`, co powoduje `Content` właściwości:
+Który jest wyświetlany typ źródło wiążące lub `DataBindingDemos.PathVariationsPage`. Znasz `PathVariationsPage` pochodzi od klasy `ContentPage`, więc posiada `Content` właściwości:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,11 +155,11 @@ Która wyświetla typ źródła powiązanie lub `DataBindingDemos.PathVariations
                       StringFormat='{0}'}" />
 ```
 
-Typ `Content` właściwości jest teraz ujawniony jako `Xamarin.Forms.StackLayout`. Dodaj `Children` właściwości `Path` a typem `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, które jest klasą wewnętrzną platformy Xamarin.Forms, ale oczywiście typem kolekcji. Dodawanie indeksu, jak i typ jest `Xamarin.Forms.Label`. Kontynuuj w ten sposób.
+Typ `Content` właściwości są teraz czytelne jako `Xamarin.Forms.StackLayout`. Dodaj `Children` właściwości `Path` a typem `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, która jest klasą wewnętrznych zestawu narzędzi Xamarin.Forms, ale oczywiście typem kolekcji. Dodawanie indeksu, a typem `Xamarin.Forms.Label`. Kontynuuj w ten sposób.
 
-Jak platformy Xamarin.Forms przetwarza ścieżkę wiązania, instaluje `PropertyChanged` obsługi dowolnego obiektu w ścieżce, która implementuje `INotifyPropertyChanged` interfejsu. Na przykład powiązanie końcowego reaguje na zmianę w pierwszym `Label` ponieważ `Text` zmiany właściwości.
+Zgodnie z zestawu narzędzi Xamarin.Forms przetwarza ścieżka powiązania, instaluje `PropertyChanged` obsługi dla dowolnego obiektu w ścieżce, która implementuje `INotifyPropertyChanged` interfejsu. Na przykład powiązanie końcowego reaguje na zmianę w pierwszym `Label` ponieważ `Text` zmiany właściwości.
 
-Jeśli właściwość w ścieżce powiązania nie implementuje `INotifyPropertyChanged`, zmiany wprowadzone w tej właściwości zostanie zignorowany. Niektóre zmiany całkowicie może unieważnić ścieżkę wiązania, należy użyć tej techniki tylko wtedy, gdy ciąg i podrzędne właściwości nigdy nie staną się nieprawidłowe.
+Jeśli właściwość w ścieżce powiązania nie implementuje `INotifyPropertyChanged`, wszelkie zmiany tej właściwości zostanie zignorowany. Niektóre zmiany całkowicie może unieważnić ścieżka powiązania, dzięki czemu tej techniki należy używać tylko wtedy, gdy parametry i właściwości podrzędnych nigdy nie stanie się nieprawidłowy.
 
 
 

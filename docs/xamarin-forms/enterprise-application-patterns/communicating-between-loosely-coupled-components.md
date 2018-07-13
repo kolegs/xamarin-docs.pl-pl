@@ -1,58 +1,58 @@
 ---
-title: Komunikacji między luźno powiązane składniki
-description: 'W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers implementuje publikowanie — wzorzec, co pozwala na podstawie komunikatu komunikacji między składnikami, które są niewygodne przez odwołania do obiektu i typu subskrypcji '
+title: Komunikacja między luźno sprzężonymi składnikami
+description: 'W tym rozdziale wyjaśniono, jak aplikacja mobilna w ramach aplikacji eShopOnContainers implementuje publikowania — wzorzec, umożliwiając oparta na komunikatach komunikacji między składnikami, które są wygodne, aby połączyć za pomocą obiektu i typu odwołania do subskrybowania '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 797032d17babe986de1357c6ac3291a4960d87ff
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245084"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998547"
 ---
-# <a name="communicating-between-loosely-coupled-components"></a>Komunikacji między luźno powiązane składniki
+# <a name="communicating-between-loosely-coupled-components"></a>Komunikacja między luźno sprzężonymi składnikami
 
-Publikuj-subskrypcji wzorzec jest wzorzec przesyłania komunikatów, w którym wydawców wysyłać bez wiedzy o dowolnym odbiornikami, znany jako subskrybentów. Podobnie subskrybentów nasłuchuje określonej wiadomości, bez konieczności znajomości wszyscy wydawcy.
+Publikuj — Subskrybuj wzorzec jest wzorzec przesyłania komunikatów dotyczących, w którym wydawcy wysyłania wiadomości bez dysponowania wiedzą na temat dowolnego odbiornikami, znane jako subskrybentów. Podobnie subskrybenci nasłuchuje określonych wiadomości, bez konieczności znajomości wszyscy wydawcy.
 
-Zdarzenia w .NET zaimplementować publikowanie-subskrybowanie wzorca i są najbardziej proste i bezpośrednie podejście do warstwy komunikacji między składnikami, jeśli luźne powiązanie nie jest wymagane, na przykład formant i strona, która go zawiera. Jednak okresy istnienia wydawcy i subskrybencie są powiązane przez obiekt odwołań do siebie, a typ subskrybenta musi mieć odwołanie do typu wydawcy. To można utworzyć pamięci problemów z zarządzaniem, szczególnie w przypadku krótkich okresów ważności obiektów subskrybowanie zdarzeń obiektu statyczny lub długotrwałe. Jeśli program obsługi zdarzeń nie są usuwane, subskrybenta będą utrzymywane przez odwołanie do niej w wydawcy i będzie to zapobiec lub opóźnić wyrzucanie elementów bezużytecznych subskrybenta.
+Zdarzenia w .NET zaimplementować publikowania-subskrypcji wzorzec i są najbardziej niezwykle proste podejście do warstwa komunikacji między składnikami, jeśli luźne powiązanie nie jest wymagane, takie jak formant i na stronie zawierającej go. Jednak wydawcą a transakcyjnym subskrybentem okresy istnienia są powiązane przez odwołania do obiektu ze sobą, a typ subskrybenta musi mieć odwołanie do typu wydawcy. To można utworzyć pamięci problemów z zarządzaniem, szczególnie w przypadku, gdy krótki czas życia obiektów, które subskrybują zdarzenia obiektu statycznego lub długotrwałe. Jeśli program obsługi zdarzeń nie są usuwane, subskrybenta pozostaną aktywne przez odwołanie do niego w wydawcy i będzie to zapobiec lub opóźnienie wyrzucanie elementów bezużytecznych subskrybenta.
 
 ## <a name="introduction-to-messagingcenter"></a>Wprowadzenie do MessagingCenter
 
-Platformy Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasa implementuje publikowanie-subskrypcji wzorzec, co pozwala na podstawie komunikatu komunikacji między składnikami, które są niewygodne przez odwołania do obiektu i typu. Mechanizm ten umożliwia wydawcy i subskrybentów, do komunikowania się bez odwołania do siebie, aby zmniejszyć zależności między składnikami, umożliwiając również składniki niezależnie opracowany i przetestowany.
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasa implementuje Publikuj — Subskrybuj wzorzec, dzięki czemu oparta na komunikatach komunikacji między składnikami, które są używane przez odwołania do obiektu i typu nie można użyć. Ten mechanizm pozwala wydawcy i subskrybenci do komunikowania się bez konieczności odwołanie do siebie, co pomogło w zmniejszeniu zależności między składnikami w zachowaniu składniki niezależne opracowany i przetestowany.
 
-[ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) Klasa udostępnia multiemisji funkcji publikowania / subskrypcji. Oznacza to, że może istnieć wiele wydawców, które publikują w pojedynczym komunikacie i może być wielu subskrybentów nasłuchiwania dla tego samego komunikatu. Rysunek 4-1 przedstawiono tę relację.
+[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) Udostępnia multiemisji publikowania/subskrybowania funkcji. Oznacza to, że może istnieć wiele wydawców, publikowanych jeden komunikat o i może być wielu subskrybentów nasłuchiwanie tego samego komunikatu. Rysunek 4-1 ilustruje tę relację:
 
-![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multiemisji funkcji publikowania / subskrypcji")
+![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multiemisji publikowania/subskrybowania funkcji")
 
-**Rysunek 4-1.** multiemisji funkcji publikowania / subskrypcji
+**Rysunek 4-1:** multiemisji publikowania/subskrybowania funkcji
 
-Wydawcy wysyłanie wiadomości przy użyciu [ `MessagingCenter.Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender%7D/p/TSender/System.String/) metody, gdy subskrybenci nasłuchiwać komunikatów za pomocą [ `MessagingCenter.Subscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Subscribe%7BTSender%7D/p/System.Object/System.String/System.Action%7BTSender%7D/TSender/) metody. Ponadto subskrybentów również anulować subskrypcję wiadomości subskrypcji, w razie potrzeby z [ `MessagingCenter.Unsubscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Unsubscribe%7BTSender%7D/p/System.Object/System.String/) metody.
+Wydawcy wysyłania komunikatów przy użyciu [ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) metody, gdy subskrybenci nasłuchiwać komunikatów za pomocą [ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*) metody. Ponadto subskrybenci również anulować subskrypcję z subskrypcji wiadomości, w razie potrzeby z [ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) metody.
 
-Wewnętrznie [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasy używa słabe odwołania. Oznacza to, że nie będzie przechowywać obiekty aktywności i pozwolą się bezużytecznych. W związku z tym należy tylko niezbędne do subskrypcję wiadomości, gdy klasa nie chce odbierać wiadomości.
+Wewnętrznie [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasa używa słabe odwołania. Oznacza to, że nie będą przechowywane obiektów aktywności i umożliwi im się bezużyteczne. W związku z tym należy tylko niezbędne zrezygnować z wiadomości, gdy klasa nie jest już chce otrzymywać wiadomości.
 
-Używa aplikacji mobilnej eShopOnContainers [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasy do komunikacji między luźno powiązane składniki. Aplikacja definiuje trzy wiadomości:
+Zastosowań aplikacji mobilnej w ramach aplikacji eShopOnContainers [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasy do komunikacji między luźno sprzężonymi składnikami. Aplikacja definiuje trzy wiadomości:
 
--   `AddProduct` Wiadomości są publikowane przez `CatalogViewModel` klasy, gdy element zostanie dodany do koszyka. W zamian `BasketViewModel` klasy subskrybuje wiadomości i zwiększa liczbę elementów w koszyku w odpowiedzi. Ponadto `BasketViewModel` klasy również cofnięć subskrypcji z tej wiadomości.
--   `Filter` Wiadomości są publikowane przez `CatalogViewModel` klasy, gdy użytkownik dotyczy filtr typu lub marki elementy wyświetlane w katalogu. W zamian `CatalogView` klasy subskrybuje wiadomości i aktualizacji interfejsu użytkownika, dzięki czemu są wyświetlane tylko te elementy, które spełniają kryteria filtru.
--   `ChangeTab` Wiadomości są publikowane przez `MainViewModel` klasę gdy `CheckoutViewModel` przechodzi do `MainViewModel` po pomyślnym utworzeniu i przesyłanie nową kolejność. W zamian `MainView` klasy subskrybuje wiadomości i aktualizacje interfejsu użytkownika tak że **Mój profil** karta jest aktywna, aby pokazać zamówień użytkownika.
+-   `AddProduct` Komunikat zostanie opublikowany przez `CatalogViewModel` klasy po dodaniu elementu do koszyka. W zamian `BasketViewModel` klasy subskrybuje wiadomości i zwiększa liczbę elementów w koszyku w odpowiedzi. Ponadto `BasketViewModel` klasy również anulowań subskrypcji z tej wiadomości.
+-   `Filter` Komunikat zostanie opublikowany przez `CatalogViewModel` klasy po użytkownik stosuje filtr typu lub marki elementy wyświetlane z katalogu. W zamian `CatalogView` klasy subskrybuje wiadomości i aktualizacje interfejsu użytkownika, aby były wyświetlane tylko te elementy, które spełniają kryteria filtru.
+-   `ChangeTab` Komunikat zostanie opublikowany przez `MainViewModel` klasę gdy `CheckoutViewModel` przechodzi do `MainViewModel` po pomyślnym utworzeniu i przesyłania nowego zamówienia. W zamian `MainView` klasy subskrybuje wiadomości i aktualizacje interfejsu użytkownika tak, **Mój profil** karta jest aktywny, aby pokazać zamówienia przez użytkownika.
 
 > [!NOTE]
-> Gdy [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasa umożliwia komunikację między klasami luźno połączonych, nie oferuje tylko architektury rozwiązania tego problemu. Na przykład komunikacji między model widoku oraz widoku robić również przez aparat wiązania i za pośrednictwem powiadomienia o zmianie właściwości. Ponadto komunikację między dwa modele widoku robić również przez przekazanie danych podczas nawigacji.
+> Gdy [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasy umożliwia komunikację między klasami luźno powiązane, nie oferuje tylko architektury rozwiązania tego problemu. Na przykład komunikacji między model widoku oraz widoku robić również przez mechanizm wiązania i za pośrednictwem powiadomienia o zmianie właściwości. Ponadto komunikację między dwoma modelami widoku robić również przez przekazanie danych podczas nawigowania.
 
-W aplikacji mobilnej eShopOnContainers[ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) służy do aktualizacji w Interfejsie użytkownika w odpowiedzi na akcję występujących w innej klasy. W związku z tym komunikaty są publikowane w wątku interfejsu użytkownika z subskrybentami odbieranie komunikatów na tym samym wątku.
+W ramach aplikacji eShopOnContainers aplikacji mobilnej[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) służy do aktualizacji w Interfejsie użytkownika w odpowiedzi na akcję, które pojawiają się w innej klasy. W związku z tym komunikaty są publikowane w wątku interfejsu użytkownika z subskrypcją odbierania komunikatów na tym samym wątku.
 
 > [!TIP]
-> Podczas wykonywania interfejsu użytkownika aktualizacji, należy kierować do wątku interfejsu użytkownika. Jeśli komunikat, który jest wysyłany z wątku w tle jest wymagany do zaktualizowania interfejsu użytkownika, przetworzyć komunikatu w wątku interfejsu użytkownika na subskrybencie, wywołując [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metody.
+> Podczas wykonywania interfejsu użytkownika aktualizacji, należy kierować do wątku interfejsu użytkownika. Jeśli komunikat, który jest wysyłany z wątku w tle jest wymagany do zaktualizowania interfejsu użytkownika, przetworzyć komunikatu w wątku interfejsu użytkownika na subskrybencie, wywołując [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) metody.
 
-Aby uzyskać więcej informacji na temat [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/), zobacz [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md).
+Aby uzyskać więcej informacji na temat [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter), zobacz [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md).
 
 ## <a name="defining-a-message"></a>Definiowanie wiadomości
 
-[`MessagingCenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) wiadomości są ciągów, które są używane do identyfikowania komunikatów. Poniższy przykład kodu pokazuje komunikatów zdefiniowanych w aplikacji mobilnej eShopOnContainers:
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) komunikaty są ciągów, które są używane do identyfikowania komunikatów. Poniższy przykład kodu pokazuje wiadomości w aplikacji mobilnej w ramach aplikacji eShopOnContainers zdefiniowane:
 
 ```csharp
 public class MessengerKeys  
@@ -68,30 +68,30 @@ public class MessengerKeys
 }
 ```
 
-W tym przykładzie wiadomości są definiowane na stałe. Zaletą tej metody jest typu kompilacji bezpieczeństwa i refaktoryzacji pomocy technicznej.
+W tym przykładzie można definiować komunikaty przy użyciu stałych. Zaletą tego podejścia jest zapewnia bezpieczeństwo typów w czasie kompilacji i refaktoryzacji pomocy technicznej.
 
-## <a name="publishing-a-message"></a>Publikowanie wiadomości
+## <a name="publishing-a-message"></a>Publikowanie komunikatu
 
-Wydawcy powiadomić subskrybentów wiadomości z jedną z [ `MessagingCenter.Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender,TArgs%7D/p/TSender/System.String/TArgs/) przeciążenia. Poniższy przykład kodu pokazuje publikowanie `AddProduct` komunikat:
+Wydawcy Powiadom subskrybentów wiadomości przy użyciu jednego z [ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) przeciążenia. Poniższy przykład kodu demonstruje publikowania `AddProduct` komunikat:
 
 ```csharp
 MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
-W tym przykładzie [ `Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender,TArgs%7D/p/TSender/System.String/TArgs/) metody określa trzech argumentów:
+W tym przykładzie [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) metody określa trzy argumenty:
 
 -   Pierwszy argument określa klasę nadawcy. Klasa nadawcy musi zostać określona przez żadnych subskrybentów, którzy chcą odbierać wiadomości.
--   Drugi argument określa wiadomości.
--   Trzeci argument określa danych ładunku do wysłania do subskrybenta. W tym przypadku jest danych ładunku `CatalogItem` wystąpienia.
+-   Drugi argument określa komunikat.
+-   Trzeci argument określa dane ładunku do wysłania do subskrybenta. W tym przypadku dane ładunku jest `CatalogItem` wystąpienia.
 
-[ `Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender,TArgs%7D/p/TSender/System.String/TArgs/) Metoda będzie publikować wiadomość i jego danych ładunku metoda fire i zapomnij. W związku z tym komunikat jest wysyłany, nawet jeśli nie ma żadnych subskrybentów zarejestrowany do odbierania wiadomości. W takiej sytuacji komunikat wysłany jest ignorowana.
+[ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) Metoda będzie publikować wiadomości i jego danych ładunku, przy użyciu podejścia pożarowego i zapominać. W związku z tym wiadomość jest wysyłana, nawet jeśli nie mają żadnych subskrybentów zarejestrowanych do odbioru komunikatu. W takiej sytuacji komunikat wysłany jest ignorowany.
 
 > [!NOTE]
-> [ `MessagingCenter.Send` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Send%7BTSender,TArgs%7D/p/TSender/System.String/TArgs/) Metody umożliwia kontrolowanie sposobu dostarczania komunikatów parametrów ogólnych. W związku z tym wielu wiadomości, które udostępniasz tożsamość wiadomości, ale wysyłania ładunku różnych typów danych może zostać odebrany przez różne subskrybentów.
+> [ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*) Metoda umożliwia kontrolowanie sposobu dostarczania komunikatów parametrów ogólnych. W związku z tym wiele wiadomości, które mają tożsamości wiadomości, ale Wyślij ładunku różnych typów danych może zostać odebrany przez subskrybentów w innej.
 
 ## <a name="subscribing-to-a-message"></a>Subskrybowanie wiadomości
 
-Subskrybenci można zarejestrować na komunikat przy użyciu jednej z [ `MessagingCenter.Subscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Subscribe%7BTSender%7D/p/System.Object/System.String/System.Action%7BTSender%7D/TSender/) przeciążenia. Poniższy przykład kodu pokazuje sposób aplikacji mobilnej eShopOnContainers subskrybuje i przetwarza, `AddProduct` komunikat:
+Subskrybenci mogą rejestrować do odbierania wiadomości przy użyciu jednej z [ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*) przeciążenia. Poniższy przykład kodu demonstruje, jak aplikacja mobilna w ramach aplikacji eShopOnContainers subskrybuje i przetwarza, `AddProduct` komunikat:
 
 ```csharp
 MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
@@ -103,29 +103,29 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 });
 ```
 
-W tym przykładzie [ `Subscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Subscribe%7BTSender%7D/p/System.Object/System.String/System.Action%7BTSender%7D/TSender/) metody subskrybuje `AddProduct` wiadomości i wykonuje delegata wywołania zwrotnego w odpowiedzi na odbieranie komunikatu. Ten delegat wywołania zwrotnego, określone jako wyrażenia lambda, wykonuje kod, który aktualizuje interfejsu użytkownika.
+W tym przykładzie [ `Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*) metoda subskrybuje `AddProduct` komunikat i wykonuje delegata wywołania zwrotnego w odpowiedzi do odbierania komunikatów. Ten delegat wywołania zwrotnego, określony jako wyrażenie lambda wykonuje kod, który aktualizuje interfejsu użytkownika.
 
 > [!TIP]
-> Rozważ użycie niezmienne ładunku danych. Nie próbuj można zmodyfikować danych ładunku z poziomu delegata wywołania zwrotnego, ponieważ kilka wątków może być jednocześnie dostęp do odebranych danych. W tym scenariuszu należy modyfikować w celu uniknięcia błędów współbieżność danych ładunku.
+> Należy rozważyć użycie danych ładunku niezmienne. Nie podejmuj próby modyfikowania danych ładunku z poziomu delegata wywołania zwrotnego, ponieważ wiele wątków może być jednocześnie dostęp do odebranych danych. W tym scenariuszu należy niezmienne, aby uniknąć błędów współbieżność danych ładunku.
 
-Subskrybent nie może być konieczne do obsługi każde wystąpienie opublikowany komunikat, a to może być kontrolowane na podstawie argumentów typu ogólnego, które są określone na [ `Subscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Subscribe%7BTSender%7D/p/System.Object/System.String/System.Action%7BTSender%7D/TSender/) metody. W tym przykładzie subskrybenta będą otrzymywać tylko `AddProduct` komunikatów wysyłanych z `CatalogViewModel` klasy, którego dane ładunku `CatalogItem` wystąpienia.
+Subskrybent nie może być konieczne do obsługi każdego wystąpienia opublikowany komunikat, a to może być kontrolowane przez argumenty typu ogólnego, które są określone na [ `Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*) metody. W tym przykładzie, subskrybent otrzyma tylko `AddProduct` komunikatów wysyłanych z `CatalogViewModel` klasy, którego dane ładunku `CatalogItem` wystąpienia.
 
-## <a name="unsubscribing-from-a-message"></a>Anulowanie subskrypcji wiadomości
+## <a name="unsubscribing-from-a-message"></a>Anulowanie subskrypcji wiadomość
 
-Subskrybenci można anulować subskrypcję wiadomości, które mają już otrzymywać. Jest to osiągane z jednym z [ `MessagingCenter.Unsubscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Unsubscribe%7BTSender,TArgs%7D/p/System.Object/System.String/) overloads, jak pokazano w poniższym przykładzie:
+Subskrybentów można anulować subskrypcję wiadomości, które ich nie chcesz już otrzymywać. Jest to osiągane przy użyciu jednego z [ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) przeciążenia, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
 ```
 
-W tym przykładzie [ `Unsubscribe` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MessagingCenter.Unsubscribe%7BTSender,TArgs%7D/p/System.Object/System.String/) składni metody odzwierciedla argumentów typu określony podczas subskrybowania odbierania `AddProduct` wiadomości.
+W tym przykładzie [ `Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) składni metody odzwierciedla argumentów typu, określony podczas subskrybowania do odbierania `AddProduct` wiadomości.
 
 ## <a name="summary"></a>Podsumowanie
 
-Platformy Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) klasa implementuje publikowanie-subskrypcji wzorzec, co pozwala na podstawie komunikatu komunikacji między składnikami, które są niewygodne przez odwołania do obiektu i typu. Mechanizm ten umożliwia wydawcy i subskrybentów, do komunikowania się bez odwołania do siebie, aby zmniejszyć zależności między składnikami, umożliwiając również składniki niezależnie opracowany i przetestowany.
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) klasa implementuje Publikuj — Subskrybuj wzorzec, dzięki czemu oparta na komunikatach komunikacji między składnikami, które są używane przez odwołania do obiektu i typu nie można użyć. Ten mechanizm pozwala wydawcy i subskrybenci do komunikowania się bez konieczności odwołanie do siebie, co pomogło w zmniejszeniu zależności między składnikami w zachowaniu składniki niezależne opracowany i przetestowany.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Pobierz książkę elektroniczną (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [ramach aplikacji eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

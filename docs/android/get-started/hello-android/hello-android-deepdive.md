@@ -1,6 +1,6 @@
 ---
-title: 'Hello, Android: Nowości'
-description: W tym przewodniku dwuczęściową możesz tworzenie pierwszej aplikacji platformy Xamarin.Android i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android.
+title: 'Witaj, Android: Szczegółowe informacje'
+description: W tym przewodniku legalną dwuczęściową możesz utworzyć swoją pierwszą aplikację platformy Xamarin.Android i poznać podstawy tworzenia aplikacji dla systemu Android za pomocą platformy Xamarin. Po drodze zostaną wprowadzone do narzędzi, koncepcje i kroki wymagane do kompilowania i wdrażania aplikacji platformy Xamarin.Android.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
@@ -8,71 +8,71 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774385"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998430"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android: Nowości
+# <a name="hello-android-deep-dive"></a>Witaj, Android: Szczegółowe informacje
 
-_W tym przewodniku dwuczęściową możesz tworzenie pierwszej aplikacji platformy Xamarin.Android i zrozumienia podstaw dotyczących tworzenia aplikacji systemu Android za pomocą platformy Xamarin. Na bieżąco należy wprowadzić narzędzi, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Android._
+_W tym przewodniku legalną dwuczęściową możesz utworzyć swoją pierwszą aplikację platformy Xamarin.Android i poznać podstawy tworzenia aplikacji dla systemu Android za pomocą platformy Xamarin. Po drodze zostaną wprowadzone do narzędzi, koncepcje i kroki wymagane do kompilowania i wdrażania aplikacji platformy Xamarin.Android._
 
-## <a name="hello-android-deep-dive"></a>Witaj, Android nowości
+## <a name="hello-android-deep-dive"></a>Witaj, szczegółowe dane dla systemu Android
 
-W [Hello, Android szybkiego startu](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), wbudowane i uruchomiono pierwszej aplikacji platformy Xamarin.Android. Teraz nadszedł czas na opracowanie lepiej zrozumieć, jak Android pracy aplikacji, dzięki czemu można tworzyć bardziej złożone programy. W tym przewodniku opisano kroki, które miały w Hello, wskazówki dla systemu Android, dzięki czemu można zrozumieć, jakie były i zacząć podstawowych zrozumienia projektowanie aplikacji systemu Android.
+W [Witaj, przewodniku Szybki Start w systemie Android](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), skompilowane i uruchomione swoją pierwszą aplikację platformy Xamarin.Android. Teraz nadszedł czas na programowanie lepiej zrozumieć, jak dla systemu Android działanie aplikacji, dzięki czemu można tworzyć bardziej zaawansowanych programów. Ten przewodnik Przegląd czynności, które miały w Witaj, przewodniku dla systemu Android, dzięki czemu można zrozumieć, co zostało zrobione i rozpocząć tworzenie powinieneś rozumieć podstawy tworzenia aplikacji dla systemu Android.
 
-W tym przewodniku będzie touch na następujące tematy:
+Ten przewodnik będzie w ogóle na następujące tematy:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
--   **Wprowadzenie do programu Visual Studio** &ndash; wprowadzenie do programu Visual Studio i tworzenie nowej aplikacji platformy Xamarin.Android.
+-   **Wprowadzenie do programu Visual Studio** &ndash; wprowadzenie do programu Visual Studio i utworzenie nowej aplikacji platformy Xamarin.Android.
 
--   **Anatomia aplikacji platformy Xamarin.Android** — samouczek podstawowych części aplikacji platformy Xamarin.Android.
+-   **Anatomia aplikacji platformy Xamarin.Android** — samouczek podstawowe części aplikacji platformy Xamarin.Android.
 
--   **Podstawowe informacje na temat aplikacji oraz podstawowe informacje o architekturze** &ndash; wprowadzenie do działań, manifestu systemu Android i ogólne wersję programowanie dla systemu Android.
+-   **Podstawy aplikacji i podstawy architektury** &ndash; wprowadzenie do działań, manifestu systemu Android i ogólne wersję opracowywania aplikacji systemu Android.
 
--   **Interfejs użytkownika (UI)** &ndash; Tworzenie interfejsów użytkownika za pomocą projektanta dla systemu Android.
+-   **Interfejs użytkownika (UI)** &ndash; Tworzenie interfejsów użytkownika za pomocą narzędzia Android Designer.
 
--   **Działania i cyklem życia działania** &ndash; wprowadzenie do działania w cyklu życia i okablowania interfejsu użytkownika w kodzie.
+-   **Działania i cyklem życia aktywności** &ndash; wprowadzenie do cyklu życia aktywności i okablowania interfejsu użytkownika w kodzie.
 
--   **Testowanie, wdrożenia i ostateczne poprawki** &ndash; zakończenie aplikacji przy użyciu wskazówki dotyczące testowania, wdrożenia generowania kompozycji i więcej.
+-   **Testowanie, wdrażanie i poprawek** &ndash; wykonania aplikacji za pomocą wskazówki dotyczące testowania, wdrażania, generowanie kompozycji i inne.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
--   **Wprowadzenie do programu Visual Studio dla komputerów Mac** &ndash; wprowadzenie do platformy Xamarin Studio i tworzenie nowej aplikacji platformy Xamarin.Android.
+-   **Wprowadzenie do programu Visual Studio dla komputerów Mac** &ndash; wprowadzenie do programu Xamarin Studio i utworzenie nowej aplikacji platformy Xamarin.Android.
 
--   **Anatomia aplikacji platformy Xamarin.Android** &ndash; samouczek podstawowych części aplikacji platformy Xamarin.Android.
+-   **Anatomia aplikacji platformy Xamarin.Android** &ndash; samouczek podstawowe części aplikacji platformy Xamarin.Android.
 
--   **Podstawowe informacje na temat aplikacji oraz podstawowe informacje o architekturze** &ndash; wprowadzenie do działań, manifestu systemu Android i ogólne wersję programowanie dla systemu Android.
+-   **Podstawy aplikacji i podstawy architektury** &ndash; wprowadzenie do działań, manifestu systemu Android i ogólne wersję opracowywania aplikacji systemu Android.
 
--   **Interfejs użytkownika (UI)** &ndash; Tworzenie interfejsów użytkownika za pomocą projektanta dla systemu Android.
+-   **Interfejs użytkownika (UI)** &ndash; Tworzenie interfejsów użytkownika za pomocą narzędzia Android Designer.
 
--   **Działania i cyklem życia działania** &ndash; wprowadzenie do działania w cyklu życia i okablowania interfejsu użytkownika w kodzie.
+-   **Działania i cyklem życia aktywności** &ndash; wprowadzenie do cyklu życia aktywności i okablowania interfejsu użytkownika w kodzie.
 
--   **Testowanie, wdrożenia i ostateczne poprawki** &ndash; zakończenie aplikacji przy użyciu wskazówki dotyczące testowania, wdrożenia generowania kompozycji i więcej.
+-   **Testowanie, wdrażanie i poprawek** &ndash; wykonania aplikacji za pomocą wskazówki dotyczące testowania, wdrażania, generowanie kompozycji i inne.
 
 -----
 
 
-Ten przewodnik ułatwia tworzenie umiejętności i wiedzy wymagane do tworzenia pojedynczej ekranu aplikacji systemu Android. Po zakończeniu pracy przy jego użyciu, należy zrozumieć różne części aplikacji platformy Xamarin.Android i sposób ich dopasowania.
+Ten przewodnik ułatwia rozwój umiejętności i wiedzę, które są wymagane do tworzenia jednoekranową aplikację dla systemu Android. Po zakończeniu pracy przez nią, musisz zrozumieć różne części aplikacji platformy Xamarin.Android i jak one współdziałają ze sobą.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="introduction-to-visual-studio"></a>Wprowadzenie do programu Visual Studio
 
-Program Visual Studio jest zaawansowanym IDE firmy Microsoft. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, zawierającą refaktoryzacji narzędzia, przeglądarkę zestawu integracji kodu źródłowego i więcej. W tym przewodniku nauczysz niektóre podstawowe funkcje programu Visual Studio za pomocą wtyczki Xamarin.
+Visual Studio to zaawansowane środowisko IDE firmy Microsoft. Zawiera funkcje w pełni zintegrowane wizualnego projektanta, edytora tekstu, który zawiera refaktoryzacji, przeglądarka zestawów, integracji kodu źródłowego i inne narzędzia. W tym przewodniku dowiesz się, niektóre z podstawowych funkcji programu Visual Studio za pomocą platformy Xamarin wtyczki.
 
-Program Visual Studio umożliwia organizowanie kodu w _rozwiązań_ i _projekty_. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. dla systemu iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W **Phoneword** aplikacji, należy dodać nowy projekt dla systemu Android przy użyciu **aplikacji systemu Android** szablon **Phoneword** rozwiązania utworzone w [Witaj, Android](~/android/get-started/hello-android/hello-android-quickstart.md) przewodnik. 
+Program Visual Studio umożliwia organizowanie kodu w _rozwiązania_ i _projektów_. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. dla systemu iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W **Phoneword** aplikacji, możesz dodać nowy projekt dla systemu Android przy użyciu **aplikacji dla systemu Android** szablon **Phoneword** rozwiązanie utworzone w [Witaj, Android](~/android/get-started/hello-android/hello-android-quickstart.md) przewodnik. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Wprowadzenie do programu Visual Studio dla komputerów Mac
 
-Visual Studio for Mac jest bezpłatne, open source IDE podobne do programu Visual Studio. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, wraz z narzędzia do refaktoryzacji, przeglądarkę zestawu i integracji kodu źródłowego. W tym przewodniku omówiono używać niektórych podstawowych programu Visual Studio dla komputerów Mac funkcji. Jeśli jesteś nowym użytkownikiem programu Visual Studio for Mac, warto zapoznaj się z bardziej szczegółowym [wprowadzenie do programu Visual Studio dla komputerów Mac](https://docs.microsoft.com/visualstudio/mac/).
+Program Visual Studio for Mac to bezpłatne, typu open-source środowisko IDE podobne do programu Visual Studio. Zawiera funkcje, w pełni zintegrowane wizualnego projektanta, edytora tekstów, pełną za pomocą narzędzi refaktoryzacji, przeglądarka zestawów i integracji kodu źródłowego. W tym przewodniku dowiesz się używać niektórych podstawowych programu Visual Studio dla komputerów Mac funkcji. Jeśli jesteś nowym użytkownikiem programu Visual Studio dla komputerów Mac, warto zapoznaj się z bardziej szczegółowym [wprowadzenie do programu Visual Studio dla komputerów Mac](https://docs.microsoft.com/visualstudio/mac/).
 
-Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowania _rozwiązań_ i _projekty_. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. dla systemu iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W **Phoneword** aplikacji, należy dodać nowy projekt dla systemu Android przy użyciu **aplikacji systemu Android** szablon **Phoneword** rozwiązania utworzone w [Witaj, Android](~/android/get-started/hello-android/hello-android-quickstart.md) przewodnik.
+Program Visual Studio for Mac następuje rozwiązanie programu Visual Studio kod do organizowania _rozwiązania_ i _projektów_. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. dla systemu iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W **Phoneword** aplikacji, możesz dodać nowy projekt dla systemu Android przy użyciu **aplikacji dla systemu Android** szablon **Phoneword** rozwiązanie utworzone w [Witaj, Android](~/android/get-started/hello-android/hello-android-quickstart.md) przewodnik.
 
 -----
 
@@ -82,84 +82,84 @@ Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowani
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Poniższy zrzut ekranu listy zawartości tego rozwiązania. Jest to Eksplorator rozwiązań zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązania:
+Poniższy zrzut ekranu przedstawiono zawartość tego rozwiązania. Jest to Eksploratorze rozwiązań, który zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązania:
 
 [![Eksplorator rozwiązań](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Poniższy zrzut ekranu listy zawartości tego rozwiązania. Jest to konsoli rozwiązanie zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązania:
+Poniższy zrzut ekranu przedstawiono zawartość tego rozwiązania. Jest to konsoli rozwiązania, który zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązaniem:
 
 [![Konsola rozwiązania](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 -----
 
-Rozwiązanie o nazwie **Phoneword** został utworzony i Projekt systemu Android **Phoneword** został umieszczony wewnątrz niej.
+To rozwiązanie o nazwie **Phoneword** został utworzony projekt dla systemu Android i **Phoneword** została umieszczona wewnątrz niej.
 
-Przyjrzyj się elementy wewnątrz każdego folderu i jego celem projektu:
+Przyjrzyj się elementy wewnątrz projektu, aby zobaczyć każdego folderu i jego przeznaczenia:
 
--   **Właściwości** &ndash; zawiera [AndroidManifest.xml](~/android/platform/android-manifest.md) pliku, który opisano wszystkie wymagania dotyczące aplikacji platformy Xamarin.Android, w tym nazwa, numer wersji i uprawnień. **Właściwości** folder zawiera również wszystkie [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx), plik metadanych zestawu .NET. Jest dobrym rozwiązaniem, aby wypełnić ten plik podstawowych informacji o aplikacji.
+-   **Właściwości** &ndash; zawiera [AndroidManifest.xml](~/android/platform/android-manifest.md) pliku, który w tym artykule opisano wszystkie wymagania dotyczące aplikacji platformy Xamarin.Android, w tym nazwa, numer wersji i uprawnienia. **Właściwości** folder zawiera także wszystkie [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo), plik metadanych zestawu .NET. Jest dobrym rozwiązaniem, aby wypełnić ten plik z podstawowych informacji o aplikacji.
 
--   **Odwołania** &ndash; zawiera zestawy wymagane, aby skompilować i uruchomić aplikację. Po rozwinięciu katalogu odwołań, zobaczysz odwołania do zestawów platformy .NET takich jak [systemu](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx), System.Core, i [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx), oraz odwołanie do zestawu Mono.Android na platformie Xamarin.
-
-
--   **Zasoby** &ndash; zawiera pliki wymagane przez aplikację do uruchamiania w tym czcionki, lokalne pliki danych i plików tekstowych. Pliki uwzględnione w tym miejscu są dostępne za pośrednictwem wygenerowany `Assets` klasy. Aby uzyskać więcej informacji na zasoby systemu Android, zobacz Xamarin [zasoby systemu Android przy użyciu](~/android/app-fundamentals/resources-in-android/android-assets.md) przewodnik.
-
--   **Zasoby** &ndash; zawiera zasoby aplikacji, takich jak ciągów, obrazy i układów. Dostęp do tych zasobów w kodzie za pomocą wygenerowany `Resource` klasy. [Android zasobów](~/android/app-fundamentals/resources-in-android/index.md) przewodnik zawiera szczegółowe informacje o **zasobów** katalogu. Szablon aplikacji zawiera również krótkie przewodnik dotyczący zasobów w **AboutResources.txt** pliku.
-
-### <a name="resources"></a>Zasoby
-
-**Zasobów** katalog zawiera cztery foldery o nazwie **obiektów drawable**, **układu**, **mipmap** i **wartości**, a także plik o nazwie **Resource.designer.cs**.
-
-W poniższej tabeli przedstawiono podsumowanie elementów:
-
--   **obiektów drawable** &ndash; DOM katalogi obiektów drawable [zasobów obiektów drawable](http://developer.android.com/guide/topics/resources/drawable-resource.html) takich jak obrazy i bitmapy.
-
--   **mipmap** &ndash; katalogu mipmap przechowywane pliki obiektów drawable dla różnych uruchamiania ikona gęstości. W szablonie domyślnego katalogu obiektów drawable przechowuje plik ikony aplikacji, **Icon.png**.
+-   **Odwołania** &ndash; zawiera zestawy wymagany do kompilowania i uruchamiania aplikacji. Po rozwinięciu pola odwołania do katalogu, zobaczysz odwołania do zestawów .NET takich jak [systemu](xref:System), System.Core, i [System.Xml](xref:System.Xml), a także odwołania do zestawu Mono.Android platformy Xamarin.
 
 
--   **Układ** &ndash; układu katalogu zawiera _Android plików projektanta_ (.axml) definiującą interfejsu użytkownika dla wszystkich ekranów i działań. Szablon tworzy domyślny układ o nazwie **Main.axml**.
+-   **Zasoby** &ndash; zawiera pliki wymagane przez aplikację do uruchamiania w tym czcionki, lokalne pliki danych i plików tekstowych. Pliki zawarte w tym miejscu są dostępne za pośrednictwem wygenerowany `Assets` klasy. Aby uzyskać więcej informacji na temat elementów zawartości systemu Android, zobacz Xamarin [elementów zawartości przy użyciu systemu Android](~/android/app-fundamentals/resources-in-android/android-assets.md) przewodnik.
 
--   **wartości** &ndash; ten katalog zawiera wszystkie pliki XML, które przechowują wartości prosty przykład ciągów, liczb całkowitych i kolory. Szablon tworzy plik do przechowywania wartości ciągu o nazwie **Strings.xml**.
+-   **Zasoby** &ndash; zawiera zasoby aplikacji, takich jak ciągi, obrazy i układów. Dostęp do tych zasobów w kodzie za pomocą wygenerowany `Resource` klasy. [Zasoby systemu Android](~/android/app-fundamentals/resources-in-android/index.md) przewodnik zawiera szczegółowe informacje o **zasobów** katalogu. Szablon aplikacji również zawiera zwięzły Przewodnik po do zasobów w **AboutResources.txt** pliku.
 
--   **Resource.Designer.cs** &ndash; znanej także jako `Resource` klasy, ten plik jest częściowej klasy, która przechowuje unikatowe identyfikatory przypisane do każdego zasobu. Automatycznie jest tworzony za pomocą narzędzi platformy Xamarin.Android, a w przypadku ponownego wygenerowania niezbędne. Ten plik nie należy ręcznie edytować, ponieważ Xamarin.Android spowoduje zastąpienie wszelkich ręcznych zmian.
+### <a name="resources"></a>Resources
+
+**Zasobów** katalog zawiera cztery foldery o nazwie **drawable**, **układ**, **mipmappingu** i **wartości**, a także plik o nazwie **Resource.designer.cs**.
+
+Elementy są podsumowane w poniższej tabeli:
+
+-   **drawable** &ndash; DOM drawable katalogi [drawable zasobów](http://developer.android.com/guide/topics/resources/drawable-resource.html) takich jak obrazy i map bitowych.
+
+-   **mipmappingu** &ndash; katalogu mipmappingu przechowywane są pliki drawable dla uruchamiania różnych gęstości ikonę. W szablonie domyślnego katalogu drawable przechowuje plik ikony aplikacji **Icon.png**.
 
 
-## <a name="app-fundamentals-and-architecture-basics"></a>Podstawowe informacje na temat aplikacji oraz podstawowe informacje dotyczące architektury
+-   **Układ** &ndash; zawiera katalogu układu _pliki projektanta systemu Android_ (axml) definiują interfejs użytkownika dla wszystkich ekranów i działań. Ten szablon tworzy układ domyślny, o nazwie **Main.axml**.
 
-Aplikacje systemu android nie mają jeden punkt wejścia; oznacza to to nie pojedynczy wiersz kodu w aplikacji, która wywołuje systemu operacyjnego można uruchomić aplikacji. Zamiast tego aplikacja jest uruchamiana po Android tworzy jednej z jej klas, w tym czasie Android ładowany do pamięci procesu całej aplikacji.
+-   **wartości** &ndash; ten katalog zawiera wszystkie pliki XML, które przechowują prostych wartości, takich jak ciągi, liczby całkowite i kolorów. Ten szablon tworzy plik do przechowywania wartości ciągu o nazwie **Strings.xml**.
 
-Ta funkcja unikatowy systemu android może być bardzo przydatne w przypadku projektowania skomplikowane aplikacji lub wchodzącymi w interakcje z systemem Android. Jednak te opcje umożliwiają Android złożonych podczas pracy nad podstawowy scenariusz, takich jak **Phoneword** aplikacji. Z tego powodu eksploracji architektury systemu Android jest podzielony na dwie. W tym przewodniku dissects aplikacji korzystającej z najbardziej typowych punkt wejścia dla aplikacji systemu Android: pierwszy ekran. W [Hello, Android Wieloekranowy](~/android/get-started/hello-android-multiscreen/index.md), złożoności pełnego architektura systemu Android są przedstawione zgodnie z opisem są różne sposoby, aby uruchomić aplikację.
+-   **Resource.Designer.cs** &ndash; znany także jako `Resource` klasy, ten plik jest częściową klasą, która zawiera unikatowe identyfikatory, które są przypisane do każdego zasobu. Ona automatycznie jest tworzony za pomocą narzędzi platformy Xamarin.Android i zostanie ponownie wygenerowany w razie. Ten plik nie należy ręcznie edytować, zgodnie z projektami interfejsu Xamarin.Android zastąpią wszelkie zmiany dokonane ręcznie do niego.
+
+
+## <a name="app-fundamentals-and-architecture-basics"></a>Podstawy aplikacji i podstawowe informacje dotyczące architektury
+
+Aplikacje systemu android bez pojedynczego punktu wejścia; oznacza to nie ma żadnych jednego wiersza kodu w aplikacji, która wywołuje systemu operacyjnego, aby uruchomić aplikację. Zamiast tego aplikacja zostaje uruchomiona, gdy Android występuje jeden z jej klas, w tym czasie system Android ładowany do pamięci procesu całej aplikacji.
+
+Ta unikatowa funkcja systemu android mogą być bardzo przydatne podczas projektowania skomplikowane aplikacje lub wchodzącymi w interakcje z systemem Android. Jednak te opcje również upewnić Android złożonych zajmujące się podstawowy scenariusz, takich jak **Phoneword** aplikacji. Z tego powodu Eksplorowanie architektury dla systemu Android zostanie podzielona na dwie. Ten przewodnik dissects aplikacji korzystającej z najbardziej typowych punkt wejścia dla aplikacji systemu Android: pierwszy ekran. W [Witaj, Android (wiele ekranów)](~/android/get-started/hello-android-multiscreen/index.md), złożoności pełnego architektury dla systemu Android zbadano zgodnie z opisem są różne sposoby, aby uruchomić aplikację.
 
 
 ### <a name="phoneword-scenario---starting-with-an-activity"></a>Scenariusz Phoneword — począwszy od działania
 
-Po otwarciu **Phoneword** aplikacji po raz pierwszy w emulatorze lub urządzeń, system operacyjny tworzy pierwszy *działania*. Działanie jest specjalnej klasy systemu Android, umożliwiająca ekranu jednej aplikacji i jest odpowiedzialny za rysowania i włączanie interfejsu użytkownika. Gdy Android tworzy pierwsze działanie aplikacji, ładuje całej aplikacji:
+Po otwarciu **Phoneword** aplikacji po raz pierwszy w emulatora lub urządzenia, system operacyjny tworzy pierwszy *działania*. Działanie to specjalne klasa systemu Android, która odnosi się do ekranu pojedynczej aplikacji i jest odpowiedzialna za rysowania i zapewniająca interfejsu użytkownika. Gdy system Android tworzy pierwsze działanie aplikacji, ładuje całej aplikacji:
 
 [![Działanie obciążenia](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
-Ponieważ nie ma żadnych liniowej postępu za pośrednictwem aplikacji systemu Android (można uruchomić aplikacji z kilku punktów), Android ma unikatowy sposób rejestrowanie informacji o klasy i pliki składa się aplikacja. W **Phoneword** przykładzie wszystkie części, które tworzą aplikacji są rejestrowane specjalny plik XML o nazwie **manifestu systemu Android**. Rola **manifestu systemu Android** do śledzenia zawartość aplikacji, właściwości i uprawnień i ujawnienia ich do systemu operacyjnego Android. Można potraktować **Phoneword** aplikacji jako pojedyncze działanie (ekran) i kolekcję plików zasobów i pomocnika powiązane ze sobą przy użyciu pliku manifestu systemu Android, jak pokazano na poniższym diagramie:
+Ponieważ nie ma żadnych progresji liniowej za pośrednictwem aplikacji systemu Android (mogą uruchamiać aplikację z kilku punktów), systemu Android ma unikatowy sposób rejestrowanie informacji o klasy i pliki składa się aplikacja. W **Phoneword** przykładzie wszystkie części, które tworzą aplikacji zostały zarejestrowane przy użyciu specjalnych pliku XML o nazwie **manifestu systemu Android**. Rola **manifestu systemu Android** do śledzenia zawartość aplikacji, właściwości oraz uprawnień i ujawnienia ich do systemu operacyjnego Android. Można potraktować **Phoneword** aplikacji jako jedno działanie (ekran) i kolekcję plików zasobów i pomocnika, które są powiązane ze sobą przy użyciu pliku manifestu systemu Android, jak pokazano na poniższym diagramie:
 
 [![Pomocnicy zasobów](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
-Następne sekcje kilka Eksploruj relacje między różne części **Phoneword** aplikacji; należy dostarczyć lepiej zrozumieć na powyższym diagramie. Zawarto informacje Android pliki projektanta i układ tego eksploracji rozpoczyna się przy użyciu interfejsu użytkownika.
+Kilka następnych sekcji zbadać relacje między różnymi składnikami **Phoneword** aplikacji; należy udostępnić lepszego zrozumienia na powyższym diagramie. Tej prezentacji rozpoczyna się od interfejsu użytkownika, jak omówiono w nim pliki projektanta i układ systemu Android.
 
 
 ## <a name="user-interface"></a>Interfejs użytkownika
 
-`Main.axml` jest to plik układu interfejsu użytkownika na pierwszym ekranie w aplikacji. .axml wskazuje, że jest to plik projektanta dla systemu Android (oznacza AXML *Android XML*). Nazwa *Main* dowolnej z punktu widzenia firmy Android &ndash; pliku układu może mieć inną nazwę. Po otwarciu **Main.axml** w środowisku IDE, wyświetlenie go Edytor wizualny dla systemu Android układu plików o nazwie *Android projektanta*:
+`Main.axml` jest to plik układu interfejsu użytkownika dla pierwszego ekranu w aplikacji. Axml wskazuje, że jest to plik projektanta systemu Android (oznacza AXML *XML dla systemu Android*). Nazwa *Main* dowolnej z punktu widzenia systemu Android &ndash; plik układu może mieć inną nazwę. Po otwarciu **Main.axml** w IDE, wyświetlenie go Edytor visual plików układ systemu Android o nazwie *narzędzia Android Designer*:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Projektant android](hello-android-deepdive-images/vs/03-android-designer-sml.png "projektanta dla systemu Android")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Narzędzia android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "narzędzia Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Projektant systemu android](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
+[![Narzędzia android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 -----
 
-W **Phoneword** aplikacji, **TranslateButton**jego identyfikator jest ustawiony na `@+id/TranslateButton`:
+W **Phoneword** aplikacji **TranslateButton**jego identyfikator jest ustawiony na `@+id/TranslateButton`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -171,16 +171,16 @@ W **Phoneword** aplikacji, **TranslateButton**jego identyfikator jest ustawiony 
 
 -----
 
-Podczas ustawiania `id` właściwość **TranslateButton**, mapy Android projektanta **TranslateButton** formant `Resource` klasy, a następnie przypisuje go *zasobów Identyfikator* z `TranslateButton`. To mapowanie visual formantu do klasy umożliwia lokalizowanie i używanie **TranslateButton** i innych kontrolek w kodzie aplikacji. Spowoduje to omówiona bardziej szczegółowo po przerwaniu od siebie kod, który obsługuje kontrolki. Wszystko co należy wiedzieć, obecnie jest kod reprezentację formant jest powiązany wizualną reprezentację formantu w Projektancie za pośrednictwem `id` właściwości.
+Po ustawieniu `id` właściwość **TranslateButton**, mapuje narzędzia Android Designer **TranslateButton** kontrolę `Resource` klasy i przypisuje mu *zasobów Identyfikator* z `TranslateButton`. To mapowanie Wizualna kontrola klasy sprawia, że możliwe do lokalizowania i korzystania **TranslateButton** i inne kontrolki w kodzie aplikacji. Zostanie to opisane bardziej szczegółowo, gdy możesz rozbić kod, który obsługuje formanty. Wszystko, czego potrzebujesz, aby dowiedzieć się teraz jest, że reprezentacja kodu kontrolki jest połączony z wizualnej reprezentacji formantu w Projektancie za pośrednictwem `id` właściwości.
 
 
-### <a name="source-view"></a>Wyświetl źródło
+### <a name="source-view"></a>Widok źródła
 
-Wszystkie elementy zdefiniowane na powierzchni projektowej przetłumaczyć XML dla platformy Xamarin.Android do użycia. Projektant Android udostępnia widoku źródła, który zawiera kod XML, który został wygenerowany na podstawie projektanta wizualnego. Możesz wyświetlić plik XML przy przełączanie do **źródła** panelu w lewym dolnym rogu Widok projektanta, jak pokazano na poniższym zrzucie ekranu:
+Wszystko, co jest zdefiniowana na powierzchni projektowej jest tłumaczony na plik XML dla platformy Xamarin.Android użyć. Narzędzia Android Designer udostępnia widok źródła, który zawiera kod XML, który został wygenerowany z projektanta wizualnego. Możesz wyświetlić plik XML, przełączając się **źródła** panelu w lewym dolnym rogu widoku projektanta, jak pokazano na poniższym zrzucie ekranu:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Widok projektanta źródła](hello-android-deepdive-images/vs/05-source-view-sml.png "widoku źródła projektanta")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
+[![Widok projektanta źródła](hello-android-deepdive-images/vs/05-source-view-sml.png "projektanta widoku źródła")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -188,23 +188,23 @@ Wszystkie elementy zdefiniowane na powierzchni projektowej przetłumaczyć XML d
 
 -----
 
-Ten kod źródłowy XML powinien zawierać **tekst (duży)**, **zwykły tekst**, a dwa **przycisk** elementów. Aby uzyskać więcej informacji na temat samouczek projektanta dla systemu Android, odwoływać się do platformy Xamarin Android [Omówienie projektanta](~/android/user-interface/android-designer/index.md) przewodnik.
+Ten kod źródłowy XML może zawierać **tekstu (duży)**, **zwykły tekst**, a dwa **przycisk** elementów. Więcej informacji na temat Przewodnik po przykładzie projektanta systemu Android, można znaleźć w Xamarin Android [Przegląd projektanta](~/android/user-interface/android-designer/index.md) przewodnik.
 
-Teraz zostać omówione narzędzia i pojęcia dotyczące visual część interfejsu użytkownika. Następnie nadszedł czas, aby przejść do kodu, które obsługuje interfejs użytkownika jako działania i cyklem życia działania są przedstawione.
-
-
-## <a name="activities-and-the-activity-lifecycle"></a>Działania i cyklem życia działania
-
-`Activity` Klasa zawiera kod, który obsługuje interfejs użytkownika.
-Działanie jest odpowiedzialny za odpowiada do interakcji z użytkownikiem i tworzenie dynamicznych użytkowników.
-W tej sekcji przedstawiono `Activity` klasy, w tym artykule omówiono cyklu życia działania i dissects kod, który obsługuje interfejs użytkownika w **Phoneword** aplikacji.
+Narzędzia i pojęcia visual część interfejsu użytkownika zostały teraz objęte. Następnie nadszedł czas, aby przejść do kodu, który obsługuje interfejs użytkownika, ponieważ zbadano działań i cyklem życia aktywności.
 
 
-### <a name="activity-class"></a>Klasa działania
+## <a name="activities-and-the-activity-lifecycle"></a>Działania i cyklem życia aktywności
 
-**Phoneword** aplikacja ma tylko jednego ekranu (działanie). Klasa, która obsługuje ekranu jest nazywany `MainActivity` i znajduje się w **MainActivity.cs** pliku. Nazwa `MainActivity` ma specjalnego znaczenia w systemie Android &ndash; Konwencji jest nazwa pierwsze działanie w aplikacji `MainActivity`, Android nie zależy, jeśli jest on inną nazwę.
+`Activity` Klasy zawiera kod, który obsługuje interfejs użytkownika.
+Działanie jest odpowiedzialny za reagowanie na interakcję z użytkownikiem i tworzenie dynamiki.
+Ta sekcja wprowadza `Activity` klasy, w tym artykule omówiono cykl życia aktywności i dissects kod, który obsługuje interfejs użytkownika w **Phoneword** aplikacji.
 
-Po otwarciu **MainActivity.cs**, można stwierdzić, że `MainActivity` jest klasa *podklasy* z `Activity` klasy i że działania jest adorned z [działania](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) atrybutu:
+
+### <a name="activity-class"></a>Klasa Activity
+
+**Phoneword** aplikacja ma tylko jednego ekranu (działanie). Klasa, która napędza ekranu nosi nazwę `MainActivity` starszy i mieszkał w **MainActivity.cs** pliku. Nazwa `MainActivity` ma specjalnego znaczenia w systemie Android &ndash; nazwę pierwszego działania w aplikacji, mimo że Konwencji `MainActivity`, systemu Android nie istotne, jeśli jest on nazwany coś innego.
+
+Po otwarciu **MainActivity.cs**, możesz zobaczyć, że `MainActivity` klasa jest *podklasy* z `Activity` klasy i że działanie jest powiązany z [działania](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) atrybutu:
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -214,35 +214,35 @@ public class MainActivity : Activity
 }
 ```
 
-`Activity` Atrybut rejestruje działanie z manifestu systemu Android; dzięki temu Android wiedzieć, że ta klasa jest częścią **Phoneword** aplikacji zarządzanych przez tego manifestu. `Label` Właściwość ustawia tekst, który będzie wyświetlany w górnej części ekranu.
+`Activity` Atrybut rejestruje działanie z manifestu systemu Android; dzięki temu wiadomo, że ta klasa jest częścią systemu Android **Phoneword** aplikacji zarządzanych przez tego manifestu. `Label` Właściwość ustawia tekst, który będzie wyświetlany w górnej części ekranu.
 
-`MainLauncher` Właściwości informuje systemu Android do wyświetlenia tego działania, po uruchomieniu aplikacji. Ta właściwość jest ważne, jak dodać więcej działaniami (ekranami) do aplikacji, zgodnie z objaśnieniem w [Hello, Android Wieloekranowy](~/android/get-started/hello-android-multiscreen/index.md) przewodnik.
+`MainLauncher` Właściwość zawiera informacje dla systemu Android, aby wyświetlić to działanie podczas uruchamiania aplikacji. Ta właściwość staje się ważne, jak dodać więcej działań (ekrany) do aplikacji, jak wyjaśniono w [Witaj, Android (wiele ekranów)](~/android/get-started/hello-android-multiscreen/index.md) przewodnik.
 
-Teraz, gdy podstawy `MainActivity` zostały objęte, nadszedł czas na lepsze zapoznanie się z kodem działania dzięki zastosowaniu _cyklu życia działania_.
+Teraz, gdy podstawy `MainActivity` zostały omówione, nadszedł czas na Dowiedz się więcej na kod działania przez wprowadzenie _cykl życia aktywności_.
 
-### <a name="activity-lifecycle"></a>Cykl życia działania
+### <a name="activity-lifecycle"></a>Cykl życia aktywności
 
-W systemie Android działania przejść przez różne etapy cyklu życia, w zależności od ich interakcji z użytkownikiem. Można tworzyć działania, wprowadzenie i wstrzymania, wznowienia i zniszczone i tak dalej. `Activity` Klasa zawiera metody, które wywołuje system w niektórych punktach w cyklu życia ekranu. Na poniższym diagramie przedstawiono typowy okres ważności działania, a także niektóre odpowiednich metod cyklu życia:
+W systemie Android działania przechodzą przez różne etapy cyklu życia, w zależności od ich interakcji z użytkownikiem. Można tworzyć działania, wprowadzenie i wstrzymania, wznowienia i niszczone i tak dalej. `Activity` Klasa zawiera metody, które system wywołuje w określonych punktach w cyklu życia ekranu. Na poniższym diagramie przedstawiono typowy okres ważności działania, a także niektóre odpowiadającej metody cyklu życia:
 
-[![Cykl życia działania](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
+[![Cykl życia aktywności](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
-Przez zastąpienie `Activity` cyklu życia metod, można kontrolować sposób działania ładowania jak reaguje na użytkownika i nawet co się stanie po znika ono z ekranu urządzenia. Na przykład można zastąpić metody cyklu życia w powyższym diagramie, aby wykonać kilka ważnych zadań:
+Przez zastąpienie `Activity` metod cyklu życia, można kontrolować sposób działania ładuje, jak zachowuje się z użytkownikiem i nawet co się dzieje po znika ono z ekranu urządzenia. Na przykład można zastąpić metody cyklu życia w diagramie powyżej, aby wykonać niektóre ważne zadania:
 
--   **OnCreate** &ndash; tworzy widoki, inicjuje zmienne i wykonuje inne zadania przygotowywania, które musi zostać wykonane zanim użytkownik będzie widział działania. Ta metoda jest wywoływana tylko raz, gdy działanie jest ładowany do pamięci. 
+-   **OnCreate** &ndash; tworzy widoków, inicjuje zmienne i wykonuje inne zadania przygotowywania, które musi zostać wykonane, zanim użytkownik będzie widział działania. Ta metoda jest wywoływana tylko raz, gdy działanie jest ładowany do pamięci. 
 
--   **OnResume** &ndash; wykonuje wszystkie zadania, które musi wystąpić za każdym razem, gdy działanie zwraca do ekranu urządzenia. 
+-   **OnResume** &ndash; wykonuje wszystkie zadania, które musi się odbyć za każdym razem, gdy działanie wraca do ekranu urządzenia. 
 
--   **OnPause** &ndash; wykonuje wszystkie zadania, które musi wystąpić za każdym razem, gdy działanie pozostawia ekranu urządzenia.
+-   **OnPause** &ndash; wykonuje wszystkie zadania, które musi się odbyć za każdym razem, gdy działanie pozostawia ekranu urządzenia.
 
 
-Po dodaniu niestandardowych kodów metody cyklu życia w `Activity`, możesz *zastąpienia* tej metody cyklu życia *Podstawowa implementacja*. Wybierz istniejące metody cyklu życia (który jest już dołączony do niej kodu), a metoda ta jest rozszerzana za pomocą własnego kodu. Możesz wywoływać implementację podstawową z wewnątrz metodę, aby upewnić się, że oryginalny kod jest uruchamiany przed nowy kod. Na przykład przedstawiono w następnej sekcji. 
+Po dodaniu niestandardowego kodu do metody cyklu życia w `Activity`, możesz *zastąpienia* tej metody cyklu życia *implementację podstawową*. Wybierz tę wartość do istniejącej metody cyklu życia, (który ma już dołączone do niego kodu) i rozszerzanie tej metody przy użyciu własnego kodu. Możesz wywołać implementację podstawową z wewnątrz swojej metody, aby upewnić się, że oryginalny kod jest uruchamiany zanim nowy kod. Na przykład przedstawiono w następnej sekcji. 
 
-Cykl życia działania jest ważne i złożone częścią systemu Android. Jeśli chcesz dowiedzieć się więcej na temat działań, po zakończeniu _wprowadzenie_ serii odczytu [cyklu życia działania](~/android/app-fundamentals/activity-lifecycle/index.md) przewodnik. W tym przewodniku dalej koncentruje się na pierwszym etapie tego cyklu działania `OnCreate`.
+Cykl życia aktywności jest ważne i złożone częścią systemu Android. Jeśli chcesz dowiedzieć się więcej na temat działania po zakończeniu _wprowadzenie_ serii, przeczytaj [cykl życia aktywności](~/android/app-fundamentals/activity-lifecycle/index.md) przewodnik. W tym przewodniku dalej koncentruje się na pierwszym etapie cyklu życia aktywności `OnCreate`.
 
 
 ### <a name="oncreate"></a>OnCreate
 
-Wywołania android `Activity`w `OnCreate` podczas tworzenia działania (przed ekranu znajduje się z użytkownikiem). Można zastąpić `OnCreate` metody cyklu życia tworzenia widoków i przygotowywania do użytkownika spełnia Twoje działania:
+Android wywołania `Activity`firmy `OnCreate` metody podczas tworzenia działania (przed ekranu są prezentowane użytkownikowi). Można zastąpić `OnCreate` cyklu życia metodę, aby tworzyć widoki i Przygotuj swoją aktywność w celu spełnienia użytkownika:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -255,16 +255,16 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-W **Phoneword** aplikacji, najpierw musisz `OnCreate` jest załadować interfejsu użytkownika utworzone w Projektancie systemu Android. Aby załadować interfejsu użytkownika, należy wywołać `SetContentView` i przekaż go *Nazwa zasobu układu* pliku układu: `Main.axml`. Układ znajduje się pod adresem `Resource.Layout.Main`:
+W **Phoneword** aplikacji, w pierwszej kolejności należy zrobić w `OnCreate` jest załadować interfejsu użytkownika tworzone za pomocą projektanta systemu Android. Aby załadować interfejsu użytkownika, wywołaj `SetContentView` i przekaż go *zasobu Nazwa układu* pliku układu: `Main.axml`. Układ znajduje się w `Resource.Layout.Main`:
 
 ```csharp
 SetContentView (Resource.Layout.Main);
 ```
 
-Gdy `MainActivity` rozpoczyna się, tworzy widok, w którym jest oparty na zawartość **Main.axml** pliku. Należy pamiętać, że nazwa pliku układu pasuje do nazwy działania &ndash; *Main*.axml jest układ *Main*działania. Nie jest to wymagane z punktu widzenia firmy Android, ale po rozpoczęciu dodać więcej ekranów do aplikacji, można znaleźć czy Konwencja nazewnictwa ułatwia pasuje do pliku kodu do pliku układu.
+Gdy `MainActivity` rozpoczyna się, tworzy widok, który jest oparty na zawartość **Main.axml** pliku. Należy pamiętać, że nazwa pliku układu pasuje do nazwy działania &ndash; *Main*axml jest układ *Main*działania. Nie jest to wymagane z punktu widzenia systemu Android, ale po rozpoczęciu dodawania większej liczby ekranów do aplikacji, znajdziesz, że Konwencja nazewnictwa ułatwia pasuje do pliku kod do pliku układu.
 
-Po przygotowaniu do pliku układu można rozpocząć wyszukiwania kontrolki.
-Aby wyszukać kontrolkę, należy wywołać `FindViewById` i podaj identyfikator zasobu formantu:
+Po plik układu jest gotowa, możesz rozpocząć wyszukiwania kontrolki.
+Aby wyszukiwać kontrolkę, należy wywołać `FindViewById` i przekaż identyfikator zasobu formantu:
 
 ```csharp
 EditText phoneNumberText = FindViewById<EditText>(Resource.Id.PhoneNumberText);
@@ -272,12 +272,12 @@ Button translateButton = FindViewById<Button>(Resource.Id.TranslateButton);
 TextView translatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhoneWord);
 ```
 
-Teraz, gdy masz odwołań do formantów w pliku układ, można uruchomić programowania im odpowiadanie na interakcji z użytkownikiem.
+Teraz, gdy odwołania do formantów w pliku układu można rozpocząć programowanie ich odpowiedzi na interakcję z użytkownikiem.
 
 
-### <a name="responding-to-user-interaction"></a>Odpowiada na żądania interakcji z użytkownikiem
+### <a name="responding-to-user-interaction"></a>Reagowanie na interakcję z użytkownikiem
 
-W systemie Android `Click` zdarzeń nasłuchuje touch użytkownika. W tej aplikacji `Click` zdarzenie jest obsługiwane z wyrażenia lambda, ale delegata lub obsługi zdarzenia o nazwie można zamiast tego użyć. Ostatni **TranslateButton** kod przypominających następujące: 
+W systemie Android `Click` zdarzeń będzie nasłuchiwać pod kątem touch użytkownika. W tej aplikacji `Click` zdarzeń odbywa się za pomocą wyrażenia lambda, ale delegata lub program obsługi zdarzeń o nazwie można także użyć. Końcowe **TranslateButton** kodu przypominających następujące czynności: 
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -295,33 +295,33 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-## <a name="testing-deployment-and-finishing-touches"></a>Testowanie wdrażania i ostateczne poprawki
+## <a name="testing-deployment-and-finishing-touches"></a>Testowanie, wdrażanie i poprawek
 
-Zarówno program Visual Studio dla komputerów Mac, jak i programu Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. W tej sekcji opisano opcje debugowania, przedstawiono testowanie aplikacji na urządzeniu i wprowadza narzędzia do tworzenia niestandardowych aplikacji ikony gęstości inny ekran.
+Visual Studio dla komputerów Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. W tej sekcji omówiono opcje debugowania, pokazuje testowania aplikacji na urządzeniu i wprowadza narzędzia służące do tworzenia aplikacji niestandardowej ikony gęstości inny ekran.
 
 
 ### <a name="debugging-tools"></a>Narzędzia debugowania
 
-Może być trudne do diagnozowania problemów w kodzie aplikacji. Aby pomóc w diagnozowaniu problemów złożonego kodu, możesz [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), lub [dane wyjściowe do okna dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Problemów w kodzie aplikacji może być trudny do zdiagnozowania. Aby ułatwić diagnozowanie problemów z złożonym kodzie, można [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), lub [informacji wyjściowych w oknie dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
 
 
-### <a name="deploy-to-a-device"></a>Wdrażanie do urządzenia
+### <a name="deploy-to-a-device"></a>Wdrażanie na urządzeniu
 
-Emulator stanowi dobry początek wdrażania i testowania aplikacji, ale użytkownicy nie będą korzystać z ostatecznej aplikacji w emulatorze. Dobrym rozwiązaniem do testowania aplikacji na urządzeniu rzeczywistych wczesne i często jest.
+Emulator jest dobry początek, wdrażania i testowania aplikacji, ale użytkownicy nie będą używać ostatecznej aplikacji w emulatorze. Jest dobrą praktyką w celu przetestowania aplikacji na rzeczywistym urządzeniu wcześnie i często.
 
-Zanim urządzenia z systemem Android można użyć do testowania aplikacji, należy skonfigurować do tworzenia aplikacji. [Ustawić się urządzenia na potrzeby programowania](~/android/get-started/installation/set-up-device-for-development.md) przewodnik zawiera szczegółowe instrukcje na przygotowanie urządzenie do programowania.
+Zanim urządzenie z systemem Android można używać do testowania aplikacji, należy skonfigurować do tworzenia aplikacji. [Ustaw się urządzenia na potrzeby programowania](~/android/get-started/installation/set-up-device-for-development.md) przewodnik zawiera szczegółowe instrukcje dotyczące przygotowywanie urządzenia do tworzenia aplikacji.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Po skonfigurowaniu urządzenia, można wdrożyć do niej przez podłączenie go, wybierając ją z **wybierz urządzenie** okno dialogowe i uruchamiania aplikacji:
+Po skonfigurowaniu urządzenia można wdrożyć do niego podłączenie go, wybierając je z **wybierz urządzenie** okien dialogowych i uruchamiania aplikacji:
 
-![Urządzenie debugowania wybierz](hello-android-deepdive-images/vs/06-select-device.png "urządzenia wybierz debugowania")
+![Urządzenia wybierz opcję debugowania](hello-android-deepdive-images/vs/06-select-device.png "urządzenia wybierz opcję debugowania")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Po skonfigurowaniu urządzenia, można wdrożyć do niej przez jego podłączone, naciskając klawisz **Start (Odtwórz)**, wybierając ją z **wybierz urządzenie** okno dialogowe i naciskając klawisz **OK**:
+Po skonfigurowaniu urządzenia można wdrożyć do niego podłączenie ją, naciskając klawisz **Start (odtwarzanie)**, wybierając je z **wybierz urządzenie** okien dialogowych i naciskając klawisz **OK**:
 
-[![Wybierz opcję debugowania urządzenia](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
+[![Urządzenia wybierz opcję debugowania](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
 -----
 
@@ -330,13 +330,13 @@ Spowoduje to uruchomienie aplikacji na urządzeniu:
 [![Wprowadź Phoneword](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
 
-### <a name="set-icons-for-different-screen-densities"></a>Ustawienie ikon dla gęstości inny ekran
+### <a name="set-icons-for-different-screen-densities"></a>Ustawienie ikon dla innego ekranu gęstości
 
-Urządzenia z systemem android są dostępne w różnych rozmiarów ekranu i rozwiązania, a nie wszystkie obrazy wyglądać na wszystkich ekranach. Na przykład poniżej przedstawiono zrzut ekranu o małej gęstości ikony o wysokiej gęstości 5 węzła. Zwróć uwagę, jak rozmyte ma być porównywane otaczającego ikony:
+Urządzenia z systemem android są dostępne w różnych rozmiarów ekranu i rozwiązania, a nie wszystkie obrazy wyglądają dobrze na wszystkich ekranach. Na przykład poniżej przedstawiono zrzut ekranu przedstawiający mała gęstość ikony o wysokiej gęstości 5 Nexus. Zwróć uwagę, jak rozmyty go jest porównywany z otaczającego ikon:
 
 [![Ikona rozmyte](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
-Aby to uwzględniać, jest dobrym rozwiązaniem, aby dodać ikony różne rozwiązania **zasobów** folderu. Android zawiera różne wersje **mipmap** folderu do obsługi ikony uruchamiania różnych gęstości *mdpi* dla nośnika, *hdpi* wysokiego, i  *xhdpi*, *xxhdpi*, *xxxhdpi* na ekranach o bardzo wysokiej gęstości. Ikony o różnych rozmiarach są przechowywane w odpowiedniej **mipmap -** folderów:
+Aby to uwzględniać, jest dobrym rozwiązaniem jest dodanie ikon różne rozwiązania **zasobów** folderu. Android zawiera różne wersje **mipmappingu** folder, aby obsłużyć ikony uruchamianie różnych gęstości *mdpi* dla nośnika, *hdpi* wysokiego, i  *xhdpi*, *xxhdpi*, *xxxhdpi* dla ekranów o dużej gęstości. Ikony o różnych rozmiarach, są przechowywane w odpowiednim **mipmappingu -** folderów:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -348,58 +348,58 @@ Aby to uwzględniać, jest dobrym rozwiązaniem, aby dodać ikony różne rozwi�
 
 -----
 
-Android zostanie wybierz ikonę z odpowiedniej gęstości:
+Android wybierze ikonę z odpowiedniej gęstości:
 
 [![Ikony w odpowiedniej gęstości](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
 
-### <a name="generate-custom-icons"></a>Generowanie ikon niestandardowych
+### <a name="generate-custom-icons"></a>Generowanie niestandardowych ikon
 
-Nie zawsze ma dostępne do tworzenia ikon niestandardowych i uruchamianie obrazów, które aplikacja powinna wyróżniające projektanta. Poniżej przedstawiono kilka innych sposobów generowania aplikacji niestandardowej kompozycji:
+Wszyscy nie ma dostępnych do tworzenia niestandardowych ikon i uruchamianie obrazów, które aplikacja potrzebuje wyróżniały się projektanta. Oto kilka innych sposobów generowania kompozycji aplikacji niestandardowej:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
--   [Android Studio zasobów](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; generator opartych na sieci web, w przeglądarce dla wszystkich typów ikon systemu Android, wraz z łączami do innych narzędzi przydatne społeczności. Działa najlepiej w przeglądarce Google Chrome.
+-   [Android Studio zasobów](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; generator opartego na sieci web, w przeglądarce dla wszystkich typów ikon dla systemu Android, wraz z łączami do innych narzędzi społeczności przydatne. Działa najlepiej w przeglądarce Google Chrome.
 
--   Visual Studio &ndash; umożliwia to tworzenie prostego ikony, ustaw dla aplikacji bezpośrednio w środowisku IDE.
+-   Program Visual Studio &ndash; służy to do tworzenia proste ikony, ustaw dla swojej aplikacji bezpośrednio w środowisku IDE.
 
--   [Glyphish](http://www.glyphish.com/) &ndash; ikona wbudowane wysokiej jakości bezpłatnie ustawia pobierania i zakupu.
+-   [Glyphish](http://www.glyphish.com/) &ndash; wbudowanych ikony o wysokiej jakości zestawy za darmo pobierania i możliwości zakupu.
 
--   [Fiverr](http://www.fiverr.com/) &ndash; możliwość wyboru z szerokiej gamy Designer, aby utworzyć ikonę ustawiane, zaczynając od wynosi 5. Może być hit lub miss, ale dobrym zasobu, jeśli potrzebujesz ikony przeznaczony na bieżąco.
+-   [Fiverr](http://www.fiverr.com/) &ndash; wybierz z wielu projektantów do tworzenia ikony ustawiane, zaczynając od 5 USD. Może być hit lub miss, ale odpowiedni zasób, jeśli potrzebujesz ikony przeznaczony na bieżąco.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
--   [Android Studio zasobów](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; generator opartych na sieci web, w przeglądarce dla wszystkich typów ikon systemu Android, wraz z łączami do innych narzędzi przydatne społeczności. Działa najlepiej w przeglądarce Google Chrome.
+-   [Android Studio zasobów](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; generator opartego na sieci web, w przeglądarce dla wszystkich typów ikon dla systemu Android, wraz z łączami do innych narzędzi społeczności przydatne. Działa najlepiej w przeglądarce Google Chrome.
 
--   [Rysunek 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; szkicu jest to aplikacja Mac za projektowanie interfejsów użytkownika, ikony i inne. To jest aplikacja, który został użyty do zaprojektowania zestaw ikony aplikacji platformy Xamarin i uruchamianie obrazów. Rysunek 3 koszty około $80 i jest dostępna w sklepie z aplikacjami. Można wypróbować wolnych [narzędzie szkicu](http://bohemiancoding.com/sketch/tool/) również.
+-   [Rysunek 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; szkicu jest aplikacja dla komputerów Mac dotyczące projektowania interfejsów użytkownika, ikon i nie tylko. To jest aplikacja, który został użyty do projektowania zestawu ikon aplikacji platformy Xamarin i uruchamianie obrazów. Rysunek 3 jest dostępna w Store aplikacji, a koszt wynosi około 80 $. Możesz wypróbować bezpłatną [narzędzie szkic](http://bohemiancoding.com/sketch/tool/) także.
 
--   [Pixelmator](http://www.pixelmator.com/) &ndash; obraz elastyczne Edytowanie aplikacji dla komputerów Mac, który koszty około 30 $.
+-   [Pixelmator](http://www.pixelmator.com/) &ndash; wszechstronny obraz, edytowanie aplikacji dla komputerów Mac, który koszt wynosi około 30 USD.
 
--   [Glyphish](http://www.glyphish.com/) &ndash; ikona wbudowane wysokiej jakości bezpłatnie ustawia pobierania i zakupu.
+-   [Glyphish](http://www.glyphish.com/) &ndash; wbudowanych ikony o wysokiej jakości zestawy za darmo pobierania i możliwości zakupu.
 
--   [Fiverr](http://www.fiverr.com/) &ndash; możliwość wyboru z szerokiej gamy Designer, aby utworzyć ikonę ustawiane, zaczynając od wynosi 5. Może być hit lub miss, ale dobrym zasobu, jeśli potrzebujesz ikony przeznaczony na bieżąco.
+-   [Fiverr](http://www.fiverr.com/) &ndash; wybierz z wielu projektantów do tworzenia ikony ustawiane, zaczynając od 5 USD. Może być hit lub miss, ale odpowiedni zasób, jeśli potrzebujesz ikony przeznaczony na bieżąco.
 
 -----
 
-Aby uzyskać więcej informacji na temat rozmiarów ikonę i wymagań dotyczą [Android zasobów](~/android/app-fundamentals/resources-in-android/index.md) przewodnik.
+Aby uzyskać więcej informacji na temat rozmiarów ikonę i wymagań dotyczą [zasoby systemu Android](~/android/app-fundamentals/resources-in-android/index.md) przewodnik.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-### <a name="adding-google-play-services-packages"></a>Dodawanie Google Play Services pakietów
+### <a name="adding-google-play-services-packages"></a>Dodawanie sklepu Google Play Services pakietów
 
-_Usług Google Play_ to zestaw bibliotek dodatek umożliwia Android deweloperom korzystać z najnowszych funkcji z Google, takich jak Google Maps, Google Cloud Messaging i rozliczeń w aplikacji.
-Wcześniej, powiązań dla wszystkich bibliotek usług Google Play dostarczonych przez platformy Xamarin w formie pojedynczy pakiet &ndash; począwszy od programu Visual Studio dla komputerów Mac, okno dialogowe nowego projektu jest dostępna do wybierania który usług Google Play pakietów do uwzględnienia w aplikacji.
+_Usługi Google Play_ to zestaw bibliotek dodatku, dzięki której deweloperzy systemu Android móc korzystać z najnowszych funkcji od firmy Google, takich jak Google Maps, Google Cloud Messaging i rozliczenia w aplikacji.
+Wcześniej powiązania z wszystkie biblioteki usług Google Play nie podał platformy Xamarin w postaci jednego pakietu &ndash; począwszy od programu Visual Studio dla komputerów Mac, okno dialogowe nowego projektu jest dostępne do wybierania, które pakiety usług Google Play, które mają zostać objęte Twoja aplikacja.
 
-Aby dodać co najmniej jedną bibliotekę usługa Google Play, kliknij prawym przyciskiem myszy **pakiety** węzeł w drzewie projektu i kliknij przycisk **dodać usługa Google Play...** :
+Aby dodać co najmniej jedną bibliotekę usługi usługi Google Play, kliknij prawym przyciskiem myszy **pakietów** węzeł w drzewie projektu i kliknij przycisk **Dodaj usługę Google Play...** :
 
-[![Dodawanie usługi Google Play](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
+[![Dodaj usługę Google Play](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
-Gdy **Dodawanie usług Google Play** jest wyświetlone okno dialogowe, wybierz pakiety, które mają zostać dodane do projektu (nugets):
+Gdy **Dodawanie usług Google Play** zobaczy okno dialogowe, wybierz pakiety (rozszerzeń nuget), które chcesz dodać do projektu:
 
 [![Wybierz pakiety](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
-Gdy wybierz usługę i kliknij przycisk **Dodaj pakiet**, Visual Studio for Mac pobiera i instaluje pakiet i wszystkie zależne pakiety usług Google Play, które są wymagane. W niektórych przypadkach może wystąpić **akceptacji licencji** okna dialogowego, które wymaga, aby **Akceptuj** przed pakiety są zainstalowane:
+Po wybierz usługę i kliknięciu **Dodaj pakiet**, Visual Studio for Mac pobiera i instaluje pakiet, możesz wybrać, a także wszelkie zależne pakiety usług Google Play, które są wymagane. W niektórych przypadkach może zostać wyświetlony **akceptacja licencji** okno dialogowe, które wymaga, aby **Akceptuj** przed zainstalowanych pakietów:
 
 [![Akceptacja licencji](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
@@ -407,6 +407,6 @@ Gdy wybierz usługę i kliknij przycisk **Dodaj pakiet**, Visual Studio for Mac 
 
 ## <a name="summary"></a>Podsumowanie
 
-Gratulacje! Teraz powinien mieć pełny opis składników aplikacji platformy Xamarin.Android, a także narzędzia niezbędne do jej utworzenia.
+Gratulacje! Teraz masz pełny opis składniki aplikacji platformy Xamarin.Android, a także narzędzia wymagane do jego utworzenia.
 
-W następnym samouczku z _wprowadzenie_ serii, rozszerzenie aplikacji do obsługi wielu ekrany Ci poznać platformę bardziej zaawansowanych architektura systemu Android i pojęcia.
+W następnym samouczku z _wprowadzenie_ serii, będzie rozszerzyć aplikację w celu obsługi wielu ekranów, gdy eksplorujesz pojęcia i bardziej zaawansowanych architektury dla systemu Android.

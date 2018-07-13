@@ -1,54 +1,54 @@
 ---
-title: Modalne platformy Xamarin.Forms stron
-description: Platformy Xamarin.Forms zapewnia obsługę modalne stron. Modalne strony zachęca użytkowników do ukończenia zadania niezależne, który nie może być opuszczeniu do czasu ukończenia zadania lub anulowane. W tym artykule pokazano, jak można przejść do strony modalne.
+title: Strony modalne zestawu narzędzi Xamarin.Forms
+description: Zestaw narzędzi Xamarin.Forms zapewnia obsługę strony modalne. Strony modalne zaleca użytkownikom ukończenie niezależna zadanie, które nie mogą być opuszczeniu aż zadanie jest ukończone lub anulowane. W tym artykule przedstawiono sposób przejścia do strony modalne.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240141"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994831"
 ---
-# <a name="xamarinforms-modal-pages"></a>Modalne platformy Xamarin.Forms stron
+# <a name="xamarinforms-modal-pages"></a>Strony modalne zestawu narzędzi Xamarin.Forms
 
-_Platformy Xamarin.Forms zapewnia obsługę modalne stron. Modalne strony zachęca użytkowników do ukończenia zadania niezależne, który nie może być opuszczeniu do czasu ukończenia zadania lub anulowane. W tym artykule pokazano, jak można przejść do strony modalne._
+_Zestaw narzędzi Xamarin.Forms zapewnia obsługę strony modalne. Strony modalne zaleca użytkownikom ukończenie niezależna zadanie, które nie mogą być opuszczeniu aż zadanie jest ukończone lub anulowane. W tym artykule przedstawiono sposób przejścia do strony modalne._
 
-W tym artykule omówiono następujące zagadnienia:
+W tym artykule omówiono następujące tematy:
 
-- [Wykonywanie nawigacji](#Performing_Navigation) — wypychania stron w stosie modalne wyświetlanie stron ze stosu modalne wyłączenie przycisku Wstecz i animacji przejścia stron.
-- [Przekazywanie danych podczas nawigowania](#Passing_Data_when_Navigating) — przekazywanie danych za pośrednictwem konstruktora strony oraz `BindingContext`.
+- [Wykonywanie nawigacji](#Performing_Navigation) — wypychanie strony modalne stosu zdejmowanie strony ze stosu modalne wyłączenie przycisku Wstecz i animowanie przejścia stron.
+- [Przekazywanie danych podczas nawigowania](#Passing_Data_when_Navigating) — przekazywanie danych za pośrednictwem konstruktora strony, a także za pośrednictwem `BindingContext`.
 
 ## <a name="overview"></a>Omówienie
 
-Modalne strony może być dowolny z [strony](~/xamarin-forms/user-interface/controls/pages.md) typy obsługiwanych przez platformy Xamarin.Forms. Należy wyświetlić stronę modalne aplikacji będzie wypchnąć go na stosie modalne, gdy stanie się aktywnej strony, jak pokazano na poniższym diagramie:
+Strony modalne może być dowolny z [strony](~/xamarin-forms/user-interface/controls/pages.md) typy obsługiwane przez zestaw narzędzi Xamarin.Forms. Można wyświetlić strony modalne aplikacji będzie umożliwiać wypychanie powiadomień go na stosie modalne, gdy stanie się stroną aktywną, jak pokazano na poniższym diagramie:
 
-![](modal-images/pushing.png "Wypychanie modalne stos strony")
+![](modal-images/pushing.png "Wypychanie strony modalne stosu")
 
-Aby powrócić do poprzedniej strony aplikacji będzie pop bieżącej strony z modalne stosu, a nowa strona najwyższego poziomu staje się aktywnej strony, jak pokazano na poniższym diagramie:
+Aby powrócić do poprzedniej strony aplikacji zostanie wyświetlona bieżącej strony z modalne stosu i Nowa strona najwyższego poziomu staje się stroną aktywną jak pokazano na poniższym diagramie:
 
-![](modal-images/popping.png "Wyświetlanie strony z modalne stosu")
+![](modal-images/popping.png "Usuwanie strony ze stosu modalne")
 
 <a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Wykonywanie nawigacji
 
-Modalne nawigacji metody są udostępniane przez [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) właściwości na dowolnym [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) typów pochodnych. Te metody umożliwiają [push modalne stron](#Pushing_Pages_to_the_Modal_Stack) na stosie modalne i [pop modalne stron](#Popping_Pages_from_the_Modal_Stack) ze stosu modalne.
+Modalne nawigacji metody są udostępniane przez [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) właściwości na dowolnym [ `Page` ](xref:Xamarin.Forms.Page) typów pochodnych. Metody te zapewniają możliwość [wypychania strony modalne](#Pushing_Pages_to_the_Modal_Stack) na stosie modalne i [pop strony modalne](#Popping_Pages_from_the_Modal_Stack) z modalne stosu.
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Udostępnia również właściwość [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/) właściwości, z którego można uzyskać modalne stron modalne stosu. Jednak nie pojęcie wykonywania modalne stosem lub wyświetlanie do strony głównej modalne nawigacji. To dlatego te operacje nie są powszechnie obsługiwane na platformach podstawowej.
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Udostępnia również właściwość [ `ModalStack` ](xref:Xamarin.Forms.INavigation.ModalStack) właściwości, z którego można uzyskać strony modalne modalne stosu. Jednakże nie obowiązuje koncepcja wykonywania stosem modalne lub usuwanie do strony głównej w modalnym nawigacji. Jest to spowodowane te operacje nie są powszechnie obsługiwane na platformach bazowego.
 
 > [!NOTE]
-> A [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) wystąpienie nie jest wymagane do wykonywania Nawigacja strony modalne.
+> A [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wystąpienia nie jest wymagane do wykonywania Nawigacja strony modalne.
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 
-### <a name="pushing-pages-to-the-modal-stack"></a>Wypychanie stron modalne stosu
+### <a name="pushing-pages-to-the-modal-stack"></a>Wypychanie strony modalne stosu
 
-Aby przejść do `ModalPage` należy wywołać [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) metoda [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) właściwości bieżącej strony jako wykazały w poniższym przykładzie kodu:
+Aby przejść do `ModalPage` należy wywołać [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) metody [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) właściwości bieżącej strony, jakie wykazano w poniższym przykładzie kodu:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -61,28 +61,28 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Powoduje to `ModalPage` wystąpienia wypychana na stosie modalne, gdzie staje się stroną aktywną, pod warunkiem wybranego elementu w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) na `MainPage` wystąpienia. `ModalPage` Wystąpienia jest wyświetlany na poniższych zrzutach ekranu:
+Powoduje to, że `ModalPage` wystąpienia, które ma zostać wypchnięty na stos modalne, gdzie staje się stroną aktywną, pod warunkiem wybranego elementu w [ `ListView` ](xref:Xamarin.Forms.ListView) na `MainPage` wystąpienia. `ModalPage` Na poniższych zrzutach ekranu przedstawiono wystąpienie:
 
-![](modal-images/modalpage.png "Modalne przykład strony")
+![](modal-images/modalpage.png "Przykładowa strona modalne")
 
-Gdy [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) zostanie wywołany, występują następujące zdarzenia:
+Gdy [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) zostanie wywołana, zachodzą następujące zdarzenia:
 
-- Wywoływanie strony `PushModalAsync` ma jego [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) zastąpienie wywołany, pod warunkiem, że platforma podstawowa nie jest Android.
-- Na stronie do jego [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) zastąpienie wywołany.
-- `PushAsync` Zakończeniu zadania.
+- Wywoływanie strony `PushModalAsync` ma jego [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) zastąpienie wywołana, pod warunkiem, że podstawowej platformy nie jest systemu Android.
+- Na stronie do jego [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) zastąpienie wywołana.
+- `PushAsync` Zadanie zostanie ukończone.
 
-Dokładne kolejność zdarzenia te występują jest jednak platformy zależnej. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Petzold Charlesa książki platformy Xamarin.Forms.
+Jednak dokładne kolejność te zdarzenia występują to platforma zależnych. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms książki.
 
 > [!NOTE]
-> Wywołuje się [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) i [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) zastąpienia nie może być traktowany jako gwarantowane oznaczenia nawigacji strony. Na przykład w systemach iOS `OnDisappearing` zastąpienia jest wywoływana na stronie aktywne po zakończeniu działania aplikacji.
+> Wywołania [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) i [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) przesłonięcia nie może być traktowany jako gwarantowane oznaczenia nawigacji strony. Na przykład w systemie iOS `OnDisappearing` zastąpienie jest wywoływana na aktywnej stronie, gdy kończy działanie aplikacji.
 
 <a name="Popping_Pages_from_the_Modal_Stack" />
 
-### <a name="popping-pages-from-the-modal-stack"></a>Wyświetlanie stron z modalne stosu
+### <a name="popping-pages-from-the-modal-stack"></a>Zdejmowanie strony ze stosu modalne
 
-Aktywna strona może zostać zdjęte ze stosu ze stosu modalne naciskając *ponownie* znajdującego się na urządzeniu, niezależnie od tego czy to fizyczne przycisk na urządzeniu lub na ekranie przycisku.
+Aktywnej strony mogą zostać zdjęte ze stosu z modalne stosu, naciskając klawisz *ponownie* znajdujący się na urządzeniu, bez względu na to czy jest to przycisku fizycznego na urządzeniu lub przycisk na ekranie.
 
-Aby programowo powrócić do oryginalnej strony `ModalPage` wystąpienia należy wywołać [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) metody, jak pokazano w poniższym przykładzie:
+Aby programowo powrócić do oryginalnej strony `ModalPage` wystąpienie musi zostać wywołany [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) metody, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 async void OnDismissButtonClicked (object sender, EventArgs args)
@@ -91,21 +91,21 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Powoduje to `ModalPage` wystąpienie ma zostać usunięty ze stosu modalne z nowej strony najwyższego poziomu staje się stroną aktywną. Gdy [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) zostanie wywołany, występują następujące zdarzenia:
+Powoduje to, że `ModalPage` wystąpienia do usunięcia ze stosu modalne przy użyciu nowej strony najwyższego poziomu, staje się stroną aktywną. Gdy [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) zostanie wywołana, zachodzą następujące zdarzenia:
 
-- Wywoływanie strony `PopModalAsync` ma jego [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) zastąpienie wywołany.
-- Na stronie są zwracane do jego [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) zastąpienie wywołany, pod warunkiem, że platforma podstawowa nie jest Android.
-- `PopModalAsync` Zwraca zadanie.
+- Wywoływanie strony `PopModalAsync` ma jego [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) zastąpienie wywołana.
+- Na stronie są zwracane do jego [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) zastąpienie wywołana, pod warunkiem, że podstawowej platformy nie jest systemu Android.
+- `PopModalAsync` Zadanie zwraca.
 
-Dokładne kolejność zdarzenia te występują jest jednak platformy zależnej. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Petzold Charlesa książki platformy Xamarin.Forms.
+Jednak dokładne kolejność te zdarzenia występują to platforma zależnych. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms książki.
 
 ### <a name="disabling-the-back-button"></a>Wyłączenie przycisku Wstecz
 
-W systemie Android, użytkownik zawsze wrócić do poprzedniej strony, naciskając klawisz standardowego *ponownie* przycisk na urządzeniu. Jeśli strona modalne wymaga od użytkownika do ukończenia zadania niezależne przed opuszczeniem strony, należy wyłączyć aplikacji *ponownie* przycisku. Można to osiągnąć przez zastąpienie [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) metody na stronie modalne. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Petzold Charlesa książki platformy Xamarin.Forms.
+W systemie Android użytkownik zawsze możesz wrócić do poprzedniej strony, naciskając klawisz standard *ponownie* przycisk na urządzeniu. Jeśli strony modalne wymaga od użytkownika do ukończenia zadania niezależna przed opuszczeniem strony, aplikacji, musisz wyłączyć *ponownie* przycisku. Można to osiągnąć przez zastąpienie [ `Page.OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed) metody na stronie modalnych. Aby uzyskać więcej informacji, zobacz [rozdziału 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms książki.
 
 ### <a name="animating-page-transitions"></a>Animowanie przejścia stron
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Właściwości każdej strony są także przesłoniętych wypychania i pop metod, które obejmują `boolean` parametru, która kontroluje, czy ma być wyświetlana Animacja strony, podczas nawigacji, jak pokazano w poniższym kodzie przykład:
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Właściwości każdej strony udostępnia również zastąpiona wypychania i pop metod, które obejmują `boolean` parametr, który kontroluje, czy ma być wyświetlana Animacja strony, podczas nawigacji, jak pokazano w poniższym kodzie przykład:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -121,17 +121,17 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Ustawienie `boolean` parametr `false` wyłącza animacji przejście do strony, podczas ustawienie dla parametru `true` umożliwia przejście do strony animacji, pod warunkiem, że jest to obsługiwane przez podstawowej platformy. Jednak metod wypychania i pop, których brakuje tego parametru animacji domyślnie włączone.
+Ustawienie `boolean` parametr `false` wyłącza animacji przejście do strony, podczas ustawienie dla parametru `true` umożliwia przejście do strony animację, pod warunkiem, że nie jest obsługiwany przez możliwości platformy. Jednak metody wypychania i pop, które nie mają tego parametru włączyć animacji domyślnie.
 
 <a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Przekazywanie danych podczas nawigowania
 
-Czasami jest niezbędne dla strony do przekazania danych do innej strony podczas nawigacji. Są dwie metody realizacji tego zadania na przekazywanie danych za pośrednictwem Konstruktor strony i ustawiając Nowa strona [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) do danych. Każda będzie teraz omówione z kolei.
+Czasami jest konieczne dla strony przekazać dane do innej strony podczas nawigowania. Dwie techniki realizacji tego zadania są przez przekazywanie danych za pośrednictwem konstruktora strony i ustawiając nową stronę [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) do danych. Każda będzie teraz omawiane kolejno.
 
 ### <a name="passing-data-through-a-page-constructor"></a>Przekazywanie danych za pośrednictwem konstruktora strony
 
-Najprostsza metoda przekazywania danych do innej strony podczas nawigacji odbywa się za pośrednictwem parametru konstruktora strony, które przedstawiono w poniższym przykładzie:
+Najprostsza metoda przekazywania danych do innej strony podczas nawigacji jest za pośrednictwem strony parametr konstruktora, który jest pokazany w poniższym przykładzie kodu:
 
 ```csharp
 public App ()
@@ -142,7 +142,7 @@ public App ()
 
 Ten kod tworzy `MainPage` wystąpienia, przekazując bieżącą datę i godzinę w formacie ISO8601.
 
-`MainPage` Wystąpienia odbiera dane za pomocą parametru konstruktora, jak pokazano w poniższym przykładzie:
+`MainPage` Wystąpienia odbiera dane za pomocą parametru konstruktora, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public MainPage (string date)
@@ -152,11 +152,11 @@ public MainPage (string date)
 }
 ```
 
-Dane są następnie wyświetlane na stronie przez ustawienie [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) właściwości.
+Dane są następnie wyświetlane na stronie przez ustawienie [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) właściwości.
 
-### <a name="passing-data-through-a-bindingcontext"></a>Przekazywanie danych za pośrednictwem BindingContext
+### <a name="passing-data-through-a-bindingcontext"></a>Przekazywanie danych za pośrednictwem elementu BindingContext
 
-Informacje o innym podejściu do przekazywania danych do innej strony podczas nawigacji jest ustawiając nowej strony [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) do danych, jak pokazano w poniższym przykładzie:
+Inną metodą przekazywania danych do innej strony podczas nawigacji jest ustawiając nową stronę [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) danych, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -170,9 +170,9 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Ten kod ustawia [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) z `DetailPage` wystąpienie do `Contact` wystąpienia, a następnie przechodzi do `DetailPage`.
+Ten kod ustawia [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) z `DetailPage` wystąpienia do `Contact` wystąpienia, a następnie przechodzi do `DetailPage`.
 
-`DetailPage` Następnie używa wiązanie danych do wyświetlenia `Contact` wystąpienie danych, jak pokazano w poniższym przykładzie kodu XAML:
+`DetailPage` Użyto powiązania danych, aby wyświetlić `Contact` wystąpienie danych, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -196,7 +196,7 @@ Ten kod ustawia [ `BindingContext` ](https://developer.xamarin.com/api/property/
 </ContentPage>
 ```
 
-Poniższy przykład kodu pokazuje, jak można wykonać wiązania danych w języku C#:
+Poniższy przykład kodu pokazuje, jak można osiągnąć powiązanie danych w języku C#:
 
 ```csharp
 public class DetailPageCS : ContentPage
@@ -248,13 +248,13 @@ public class DetailPageCS : ContentPage
 }
 ```
 
-Dane są następnie wyświetlane na stronie przez szereg [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) kontrolki.
+Dane są następnie wyświetlane na stronie przez szereg [ `Label` ](xref:Xamarin.Forms.Label) kontrolki.
 
-Aby uzyskać więcej informacji na temat wiązania danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/index.md).
+Aby uzyskać więcej informacji na temat tworzenia powiązań danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób przejścia do strony modalne. Modalne strony zachęca użytkowników do ukończenia zadania niezależne, który nie może być opuszczeniu do czasu ukończenia zadania lub anulowane.
+W tym artykule przedstawiono sposób przejścia do strony modalne. Strony modalne zaleca użytkownikom ukończenie niezależna zadanie, które nie mogą być opuszczeniu aż zadanie jest ukończone lub anulowane.
 
 
 ## <a name="related-links"></a>Linki pokrewne

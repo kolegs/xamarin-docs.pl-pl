@@ -1,41 +1,41 @@
 ---
 title: EffectBehavior wielokrotnego użytku
-description: Zachowania są przydatne podejście do dodawania efekt do formantu, usunięcie efekt płytkę kocioł obsługi kodu z plików z kodem. W tym artykule przedstawiono Dodawanie efektu do formantu przy użyciu zachowanie platformy Xamarin.Forms.
+description: Zachowania są przydatne do dodawania efektu do formantu, usuwanie efektu płytkę kocioł obsługi kodu z plików z kodem. W tym artykule przedstawiono, można dodać efekt do formantu za pomocą zachowania zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a1612d1e87f0e05c859babd93fd03ac9a5736b47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30785058"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995784"
 ---
 # <a name="reusable-effectbehavior"></a>EffectBehavior wielokrotnego użytku
 
-_Zachowania są przydatne podejście do dodawania efekt do formantu, usunięcie efekt płytkę kocioł obsługi kodu z plików z kodem. W tym artykule przedstawiono Dodawanie efektu do formantu przy użyciu zachowanie platformy Xamarin.Forms._
+_Zachowania są przydatne do dodawania efektu do formantu, usuwanie efektu płytkę kocioł obsługi kodu z plików z kodem. W tym artykule przedstawiono, można dodać efekt do formantu za pomocą zachowania zestawu narzędzi Xamarin.Forms._
 
 ## <a name="overview"></a>Omówienie
 
-`EffectBehavior` Klasy jest wielokrotnego użytku platformy Xamarin.Forms zachowanie niestandardowych, które dodaje [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) wystąpienie do kontrolowania, czy zachowanie jest dołączona do formantu i usuwa `Effect` wystąpienia, gdy jest to zachowanie odłączyć od formantu.
+`EffectBehavior` Klasa jest wielokrotnego użytku niestandardowe zachowanie zestawu narzędzi Xamarin.Forms, który dodaje [ `Effect` ](xref:Xamarin.Forms.Effect) wystąpienie kontrolki, gdy zachowanie jest dołączony do formantu i usuwa `Effect` wystąpienie, gdy zachowanie jest odłączenie od formantu.
 
-Następujące właściwości zachowanie musi mieć ustawioną zachowanie:
+Następujące właściwości zachowania musi być równa zachowanie:
 
-- **Grupa** — wartość [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) atrybutu dla klasy efekt.
-- **Nazwa** — wartość [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) atrybutu dla klasy efekt.
+- **Grupa** — wartość [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) atrybutu dla klasy efekt.
+- **Nazwa** — wartość [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) atrybutu dla klasy efekt.
 
-Aby uzyskać więcej informacji na temat efektów, zobacz [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
+Aby uzyskać więcej informacji na temat skutków, zobacz [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-## <a name="creating-the-behavior"></a>Tworzenie zachowania
+## <a name="creating-the-behavior"></a>Tworzenie zachowanie
 
-`EffectBehavior` Pochodną klasy [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, których `T` jest [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/). Oznacza to, że `EffectBehavior` klasa może zostać dołączony do sterowania wszystkie platformy Xamarin.Forms.
+`EffectBehavior` Klasa pochodzi od [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy, gdzie `T` jest [ `View` ](xref:Xamarin.Forms.View). Oznacza to, że `EffectBehavior` klasy mogą być dołączane do dowolnej kontrolki zestawu narzędzi Xamarin.Forms.
 
-### <a name="implementing-bindable-properties"></a>Implementowanie właściwości
+### <a name="implementing-bindable-properties"></a>Implementowanie właściwości możliwej do wiązania
 
-`EffectBehavior` Klasa definiuje dwie [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) wystąpień, które są używane do dodawania [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) do formantu, gdy działanie jest dołączony do formantu. Te właściwości są wyświetlane w poniższym przykładzie kodu:
+`EffectBehavior` Klasy definiuje dwa [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) wystąpień, które są używane do dodawania [ `Effect` ](xref:Xamarin.Forms.Effect) do kontroli, gdy zachowanie jest dołączony do formantu. Te właściwości są wyświetlane w następującym przykładzie kodu:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -58,11 +58,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-Gdy `EffectBehavior` jest używany, `Group` właściwości powinien mieć ustawioną wartość [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) atrybutu dla efektu. Ponadto `Name` właściwości powinien mieć ustawioną wartość [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) atrybutu dla klasy efekt.
+Gdy `EffectBehavior` zużyciu `Group` właściwość powinna być ustawiona na wartość [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) atrybutu dla efektu. Ponadto `Name` właściwość powinna być ustawiona na wartość [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) atrybutu dla klasy efekt.
 
 ### <a name="implementing-the-overrides"></a>Implementowanie zastąpienia
 
-`EffectBehavior` Klasy zastąpienia [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) i [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metody [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, jak pokazano w poniższym kodzie przykład:
+`EffectBehavior` Klasy zastąpienia [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) i [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) metody [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy, jak pokazano w poniższym kodzie przykład:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -83,11 +83,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metoda wykonuje instalację przez wywołanie metody `AddEffect` metoda w formancie dołączone jako parametr. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Metoda przeprowadza oczyszczania wywołując `RemoveEffect` jest metoda w formancie dołączone jako parametr.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Metoda wykonuje instalację, wywołując `AddEffect` jest metoda w kontrolce dołączonych jako parametr. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Metoda wykonuje oczyszczania, wywołując `RemoveEffect` jest metoda w kontrolce dołączonych jako parametr.
 
 ### <a name="implementing-the-behavior-functionality"></a>Implementowanie funkcji zachowanie
 
-Zachowanie służy do dodawania [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) zdefiniowane w `Group` i `Name` właściwości do formantu, gdy działanie jest dołączony do formantu, a następnie usuń `Effect` przypadku zachowanie odłączyć od formantu. Podstawowe funkcje zachowanie pokazano w poniższym przykładzie kodu:
+Zachowanie ma na celu Dodaj [ `Effect` ](xref:Xamarin.Forms.Effect) zdefiniowane w `Group` i `Name` właściwości do kontrolki, gdy zachowanie jest dołączony do formantu, a następnie usuń `Effect` po zachowanie odłączenie od formantu. W poniższym przykładzie kodu pokazano podstawowe funkcje zachowanie:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -119,13 +119,13 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-`AddEffect` Metoda jest wykonywana w odpowiedzi na `EffectBehavior` dołączany do formantu który odbiera formantu dołączone jako parametr. Metoda Dodaje efekt pobrane do formantu [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekcji. `RemoveEffect` Metoda jest wykonywana w odpowiedzi na `EffectBehavior` odłączany od formantu który odbiera formantu dołączone jako parametr. Metoda następnie usuwa efekt formantu [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekcji.
+`AddEffect` Metoda jest wykonywana w odpowiedzi na `EffectBehavior` dołączony do formantu, a odbiera kontrolki dołączonych jako parametr. Metoda następnie dodaje efekt pobrane z formantem [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekcji. `RemoveEffect` Metoda jest wykonywana w odpowiedzi na `EffectBehavior` odłączany od formantu który odbiera kontrolki dołączonych jako parametr. Metoda następnie usuwa efekt w formancie [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekcji.
 
-`GetEffect` Używa metody [ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/) metoda pobierania [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/). Efekt znajduje się za pośrednictwem złączeniem `Group` i `Name` wartości właściwości. Jeśli platforma nie zapewnia efekt, `Effect.Resolve` metoda zwróci niż`null` wartości.
+`GetEffect` Metoda używa [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) metodę, która pobierze [ `Effect` ](xref:Xamarin.Forms.Effect). Efekt znajduje się za pośrednictwem składa się z `Group` i `Name` wartości właściwości. Jeśli platforma nie zapewnia efekt, `Effect.Resolve` metoda zwróci innej niż`null` wartości.
 
 ## <a name="consuming-the-behavior"></a>Korzystanie z zachowaniem
 
-`EffectBehavior` Klasa może zostać dołączony do [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) kolekcji kontroli, jak pokazano w poniższym przykładzie kodu XAML:
+`EffectBehavior` Klasy mogą być dołączane do [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) kolekcji kontroli, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <Label Text="Label Shadow Effect" ...>
@@ -135,7 +135,7 @@ public class EffectBehavior : Behavior<View>
 </Label>
 ```
 
-W poniższym przykładzie kodu pokazano równoważne kodu C#:
+Równoważny kod C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var label = new Label {
@@ -148,22 +148,22 @@ label.Behaviors.Add (new EffectBehavior {
 });
 ```
 
-`Group` i `Name` właściwości zachowania są ustawione na wartości [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) i [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) atrybuty dla klasy obowiązywać w każdej specyficzne dla platformy Projekt.
+`Group` i `Name` właściwości zachowania są ustawione na wartości [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) i [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) atrybutów dla klasy efekt, w każdym specyficzne dla platformy Projekt.
 
-W czasie wykonywania, gdy działanie jest dołączony do [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) kontroli, `Xamarin.LabelShadowEffect` zostanie dodany do formantu [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekcji. Powoduje to cienia dodawany do tekstu wyświetlanego przez `Label` kontroli, jak pokazano na poniższych zrzutach ekranu:
+W czasie wykonywania, gdy zachowanie jest dołączony do [ `Label` ](xref:Xamarin.Forms.Label) kontroli `Xamarin.LabelShadowEffect` zostaną dodane do formantu [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekcji. Skutkuje to cienia do tekstu wyświetlanego przez dodawany `Label` kontrolować, jak pokazano na poniższych zrzutach ekranu:
 
-![](effect-behavior-images/screenshots.png "Przykładowa aplikacja z EffectsBehavior")
+![](effect-behavior-images/screenshots.png "Przykładową aplikację przy użyciu EffectsBehavior")
 
-Zaletą używania tego zachowania do dodawania i usuwania skutków od formantów jest, czy kod obsługi efekt kocioł tablicy można usunąć z plików z kodem.
+Zaletą tego zachowania do dodawania i usuwania skutków od formantów jest, że kod obsługi efekt kocioł tablicy mogą być usunięte z plików z kodem.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono Dodawanie efektu do formantu przy użyciu zachowanie. `EffectBehavior` Klasy jest wielokrotnego użytku platformy Xamarin.Forms zachowanie niestandardowych, które dodaje [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) wystąpienie do kontrolowania, czy zachowanie jest dołączona do formantu i usuwa `Effect` wystąpienia, gdy jest to zachowanie odłączyć od formantu.
+W tym artykule pokazano, aby dodać efekt do formantu za pomocą zachowania. `EffectBehavior` Klasa jest wielokrotnego użytku niestandardowe zachowanie zestawu narzędzi Xamarin.Forms, który dodaje [ `Effect` ](xref:Xamarin.Forms.Effect) wystąpienie kontrolki, gdy zachowanie jest dołączony do formantu i usuwa `Effect` wystąpienie, gdy zachowanie jest odłączenie od formantu.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Efekty](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Efekt zachowanie (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
-- [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Zachowanie<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Zachowanie efekt (przykład)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [Behavior](xref:Xamarin.Forms.Behavior)
+- [Zachowanie<T>](xref:Xamarin.Forms.Behavior`1)

@@ -1,32 +1,32 @@
 ---
 title: Dane ścieżki SVG w SkiaSharp
-description: W tym artykule wyjaśniono, jak zdefiniować ścieżki SkiaSharp przy użyciu ciągów tekstowych w formacie skalowalne grafiki wektorowej, a pokazano to z przykładowym kodzie.
+description: W tym artykule opisano sposób definiowania ścieżek skiasharp — korzystanie z ciągów tekstowych w formacie skalowalnej grafice wektorowej i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84b77313ec9cad4d0add3540fe4d26910e593ada
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243977"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996785"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>Dane ścieżki SVG w SkiaSharp
 
-_Zdefiniuj ścieżek przy użyciu ciągów tekstowych w formacie Skalowalna grafika wektorowa_
+_Zdefiniuj ścieżek przy użyciu ciągi tekstowe w formacie Skalowalna grafika wektorowa_
 
-`SKPath` Klasa obsługuje definicji obiektów całej ścieżki z ciągów tekstowych w formacie ustanowionych przez specyfikację skalowalne wektor grafiki SVG. W dalszej części tego artykułu zobaczysz, jak może reprezentować całej ścieżce, takie jak ta, w ciągu tekstowym:
+`SKPath` Klasa obsługuje definicji obiektów pełną ścieżkę z ciągami tekstowymi w formacie ustanowione przez specyfikację skalowalne grafiki wektorowej (SVG). W dalszej części tego artykułu zobaczysz, jak mogą reprezentować całą ścieżkę, taką jak ta w ciągu tekstowym:
 
-![](path-data-images/pathdatasample.png "Przykładowe ścieżki zdefiniowane z SVG ścieżki danych")
+![](path-data-images/pathdatasample.png "Ścieżka próbki, zdefiniowana za pomocą dane ścieżki SVG")
 
-SVG jest język dla stron sieci web do programowania grafiki opartych na języku XML. Ponieważ SVG musi zezwalać na ścieżki do zdefiniowania znaczników zamiast szereg wywołania funkcji, standardowe SVG obejmuje bardzo krótkie sposób określenia ścieżki grafiki cały ciąg tekstowy.
+SVG jest oparty na składni XML grafiki języka programowania dla stron sieci web. Ponieważ SVG muszą zezwalać na ścieżki zdefiniowanych w znaczników, a nie w serii wywołań funkcji, SVG standardowa obejmuje to bardzo zwięzły sposób określania ścieżki grafiki całego jako ciąg tekstowy.
 
-W ramach SkiaSharp ten format jest nazywany "SVG ścieżki danych." Format jest też obsługiwana na opartych na języku XAML Windows środowiska programowania, w tym Windows Presentation Foundation i platformy uniwersalnej systemu Windows, gdy jest znany jako [składnia znacznika ścieżki](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) lub [Przenieś i rysowanie składni polecenia](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Służy również jako format wymiana obrazów grafiki wektorowej, szczególnie w przypadku plików tekstowych, takich jak XML.
+W ramach SkiaSharp ten format jest określany jako "Dane ścieżki SVG —." Format jest też obsługiwana na Windows XAML środowisk opartych na programowania, w tym Windows Presentation Foundation i uniwersalnej platformy Windows, gdzie jest nazywane [składni znacznikowania ścieżki](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) lub [Przenieś i narysuj składni polecenia](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Może również służyć jako format wymiany obrazy grafiki wektorowej, szczególnie w przypadku plików tekstowych, takich jak XML.
 
-SkiaSharp definiuje dwie metody słowami `SvgPathData` w nazwach:
+Skiasharp — definiuje dwie metody słowami `SvgPathData` w nazwach:
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -34,21 +34,21 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-Statycznych [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda konwertuje ciąg na `SKPath` obiektu, gdy [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) konwertuje `SKPath` obiektu na ciąg.
+Statyczne [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda konwertuje ciąg na `SKPath` obiektu, podczas gdy [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) konwertuje `SKPath` obiekt na ciąg.
 
-Oto ciągu SVG gwiazdy odnosi się do pięciu skupia się na punkt (0, 0) z protokołem radius 100:
+W tym miejscu jest ciągiem SVG wskazywany przez pięć gwiazdki, a ich tematyka w punkcie (0, 0) z protokołem radius 100:
 
 ```csharp
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-Polecenia, które kompilacji są litery `SKPath` obiektu. `M` Wskazuje `MoveTo` wywołać, `L` jest `LineTo`, i `Z` jest `Close` zamknąć ROZKŁAD. Każda para zapewnia współrzędną X i Y punktu. Zwróć uwagę, że `L` polecenia następuje wiele punktów rozdzielonych przecinkami. W serii współrzędnych i punkty, przecinkami i odstępu są traktowane identycznie. Niektóre programistów chce umieścić przecinkami między współrzędne X i Y, a nie między punktami, ale przecinków lub spacji są tylko wymagane, aby uniknąć niejednoznaczności. Jest to idealne prawnych:
+Litery są poleceniami, które są kompilowane `SKPath` obiektu. `M` Wskazuje `MoveTo` wywołać, `L` jest `LineTo`, i `Z` jest `Close` rozkładu zamknąć. Każda para numerów zawiera współrzędne X i Y punktu. Należy zauważyć, że `L` polecenia następuje wiele punktów rozdzielonych przecinkami. W serii współrzędnych i punkty, przecinki oraz białe znaki są traktowane identycznie. Niektórych programistów chce umieścić przecinkami, między współrzędne X i Y, a nie między punktami, ale przecinków lub spacji są tylko wymagane, aby uniknąć niejednoznaczności. Jest to idealne prawne:
 
 ```csharp
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
-Składnia danych ścieżki SVG formalnie opisano w [8.3 sekcji specyfikacji SVG](http://www.w3.org/TR/SVG11/paths.html#PathData). Poniżej przedstawiono podsumowanie:
+Składnia dane ścieżki SVG jest formalnie udokumentowane w [8.3 sekcji specyfikacji SVG](http://www.w3.org/TR/SVG11/paths.html#PathData). Poniżej przedstawiono podsumowanie:
 
 ## <a name="moveto"></a>**MoveTo**
 
@@ -56,7 +56,7 @@ Składnia danych ścieżki SVG formalnie opisano w [8.3 sekcji specyfikacji SVG]
 M x y
 ```
 
-Nowy rozkład w ścieżce rozpoczyna się przez ustawienie bieżącego położenia. Ścieżka danych zawsze powinny rozpoczynać się od `M` polecenia.
+Nowe konturu w ścieżce rozpoczyna się przez ustawienie bieżącego położenia. Dane ścieżki powinna zawsze zaczynać się `M` polecenia.
 
 ## <a name="lineto"></a>**LineTo**
 
@@ -64,17 +64,17 @@ Nowy rozkład w ścieżce rozpoczyna się przez ustawienie bieżącego położen
 L x y ...
 ```
 
-To polecenie dodaje prostej (lub wierszy) do ścieżki i ustawia nowe bieżącej pozycji na końcu ostatniego wiersza. Możesz wykonać `L` z wiele par *x* i *y* współrzędnych.
+To polecenie dodaje prostej (lub wierszy) do ścieżki i ustawia nowe bieżącej pozycji na końcu ostatniego wiersza. Możesz wykonać `L` polecenia wiele pary *x* i *y* współrzędnych.
 
-## <a name="horizontal-lineto"></a>**LineTo pozioma**
+## <a name="horizontal-lineto"></a>**LineTo poziome**
 
 ```csharp
 H x ...
 ```
 
-To polecenie dodaje linii poziomej do ścieżki i ustawia nowe bieżącej pozycji do końca wiersza. Możesz wykonać `H` polecenie z wieloma *x* współrzędne, ale nie ma sensu wiele.
+To polecenie dodaje linii poziomej do ścieżki i ustawia nowe bieżącej pozycji do końca wiersza. Możesz wykonać `H` polecenia z wieloma *x* współrzędne, ale nie większego sensu.
 
-## <a name="vertical-line"></a>**Linii pionowej**
+## <a name="vertical-line"></a>**Linia pionowa**
 
 ```csharp
 V y ...
@@ -88,23 +88,23 @@ To polecenie dodaje linii pionowej do ścieżki i ustawia nowe bieżącej pozycj
 Z
 ```
 
-`C` Polecenie zamyka rozkład przez dodanie prostej od bieżącej pozycji na początku rozkładu.
+`C` Polecenia zamyka sylwetką, dodając prostej z bieżącego położenia na początku ROZKŁAD.
 
 ## <a name="arcto"></a>**ArcTo**
 
-Polecenie, aby dodać łuku do konturu jest najbardziej złożonych polecenia w specyfikacji całej ścieżki danych SVG. Jest tylko polecenie, w którym numery może reprezentować coś innego niż Współrzędna wartości:
+Polecenie, aby dodać łuk eliptyczny do rozkładu jest najbardziej złożone polecenia w całej specyfikacji dane ścieżki SVG. Jest tylko polecenie, w którym liczb może reprezentować coś innego niż wartości współrzędnych:
 
 ```csharp
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx* i *ry* parametry są poziome i pionowe promienie elipsy. *Kąt obrotu* jest prawo stopni.
+*Rx* i *ry* parametry są poziome i pionowe promienie elipsy. *Kąt obrotu* jest obrotu w prawo w stopniach.
 
-Ustaw *dużych flagi łuk* 1 w przypadku dużych łuk lub 0 dla małych łuk.
+Ustaw *dużych flagi łuk* 1 w przypadku dużych łuk lub 0 w przypadku małych łuku.
 
-Ustaw *flagi odchylenia* 1 wskazówek zegara i 0 dla zegara.
+Ustaw *czyszczenia flagi* 1 dla zgodnie ze wskazówkami zegara i na 0 w przypadku przeciwnie do ruchu wskazówek zegara.
 
-Łuku do punktu (*x*, *y*), które stają się nowych bieżącego położenia.
+Łuku w punkcie (*x*, *y*), która staje się nowe bieżącej pozycji.
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -112,17 +112,17 @@ Ustaw *flagi odchylenia* 1 wskazówek zegara i 0 dla zegara.
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-To polecenie dodaje sześcienny krzywej Beziera z bieżącej pozycji do (*x3*, *y3*), które stają się nowych bieżącego położenia. Punkty (*x1*, *y1*) i (*x2*, *y2*) są punkty kontrolne.
+To polecenie dodaje krzywą Beziera trzeciego stopnia od aktualnej pozycji, aby (*x3*, *y3*), która staje się nowe bieżącej pozycji. Punkty (*x1*, *y1*) i (*x2*, *y2*) są punkty kontrolne.
 
 Można określić wiele krzywych Beziera przez jeden `C` polecenia. Liczba punktów musi być wielokrotnością liczby 3.
 
-Istnieje również polecenie "smooth" krzywej Beziera:
+Dostępna jest również "smooth" polecenie krzywej Beziera:
 
 ```csharp
 S x2 y2 x3 y3 ...
 ```
 
-To polecenie należy wykonać regularne polecenia Beziera (chociaż ściśle nie są wymagane). Polecenie Beziera smooth oblicza pierwszy punkt kontrolny tak, aby odbicia drugiego punktu kontrolnego z poprzednich Beziera wokół ich wzajemne punktu. Te trzy punkty w związku z tym są colinear i smooth jest połączenie między dwie krzywe Beziera.
+To polecenie należy stosować regularne polecenia Beziera (mimo że nie jest właściwie ma wymagane). Polecenie Beziera smooth oblicza pierwszy punkt kontrolny, tak, aby odbicia drugi punkt kontrolny z poprzednich Beziera w całym ich wzajemne punktu. Te trzy punkty są zatem colinear i połączenia między dwie krzywe Beziera jest bezproblemowe.
 
 ## <a name="quadto"></a>**QuadTo**
 
@@ -130,25 +130,25 @@ To polecenie należy wykonać regularne polecenia Beziera (chociaż ściśle nie
 Q x1 y1 x2 y2 ...
 ```
 
-Dla krzywych Beziera kwadratową liczba punktów musi być wielokrotnością liczby 2. Punkt kontrolny jest (*x1*, *y1*) i punkt końcowy (i nowych bieżącego położenia) (*x2*, *y2*)
+Dla krzywych Beziera drugiego stopnia punktów musi być wielokrotnością liczby 2. Punkt kontrolny jest (*x1*, *y1*) i punkt końcowy (i nowego bieżącej pozycji) (*x2*, *y2*)
 
-Istnieje również polecenia smooth było dodać krzywą kwadratową:
+Dostępna jest również polecenia smooth krzywą kwadratową:
 
 ```csharp
 T x2 y2 ...
 ```
 
-Punkt kontrolny jest obliczana na podstawie punkt kontrolny od poprzedniego krzywą kwadratową.
+Punkt kontrolny jest obliczany na podstawie punkt kontrolny z poprzednim krzywą kwadratową.
 
-Tych poleceń są również dostępne w wersjach "względna" gdzie współrzędnych punktów względem bieżącego położenia. Te polecenia względną rozpoczynać się od małych liter, na przykład `c` zamiast `C` względną wersji sześcienny polecenia Beziera.
+Te polecenia są również dostępne w wersji "względna", gdzie punkty współrzędnych są względne wobec bieżącego położenia. Te polecenia względnej zaczynać się od małymi literami, na przykład `c` zamiast `C` względne wersji polecenie Beziera trzeciego stopnia.
 
-Jest to zakres definicji danych ścieżki SVG. Nie ma żadnych zakładzie powtarzalnych grupy poleceń lub do wykonania dowolnego typu obliczenia. Polecenia dla `ConicTo` lub inne typy specyfikacji łuk nie są dostępne.
+Jest to zakres definicji dane ścieżki SVG. Nie ma możliwości dla powtarzających się grup poleceń lub do wykonywania obliczeń dowolnego typu. Polecenia dla `ConicTo` lub innych rodzajów specyfikacje łuk nie są dostępne.
 
-Statycznych [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda oczekuje prawidłowy ciąg polecenia SVG. Jeśli zostanie wykryty błąd żadnych składni, metoda zwraca `null`. To wskazuje błąd tylko.
+Statyczne [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda oczekuje prawidłowy ciąg polecenia SVG. Jeśli zostanie wykryty błąd wszelkie składni, metoda zwraca `null`. To wskazanie tylko błąd.
 
-[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda jest przydatna do uzyskania SVG ścieżki danych z istniejącego `SKPath` obiektu do przenoszenia do innego programu, lub do przechowywania w formacie pliku tekstowym, takich jak XML. ( `ToSvgPathData` — Metoda nie jest prezentowana w przykładowym kodzie w tym artykule.) Czy *nie* oczekiwać `ToSvgPathData` zwraca ciąg odpowiadający dokładnie wywołania metody, które utworzone ścieżki. W szczególności dowiesz się, że Łuki są konwertowane na wielu `QuadTo` poleceń, i sposobu ich wyświetlania w ścieżce danych zwróconych z `ToSvgPathData`.
+[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda jest przydatna do uzyskania dane ścieżki SVG z istniejącego `SKPath` obiektu przenieść do innego programu lub przechowywać w formacie pliku tekstowego, takich jak XML. ( `ToSvgPathData` Metoda nie jest pokazana w przykładowym kodzie, w tym artykule.) Czy *nie* oczekiwać `ToSvgPathData` zwraca ciąg odpowiadający dokładnie wywołania metody, które tworzone ścieżki. W szczególności, dowiesz się, że Łuki są konwertowane na wielu `QuadTo` polecenia, i sposobu ich wyświetlania w ścieżce danych zwracanych przez `ToSvgPathData`.
 
-**Ścieżki danych Hello** stronę zaklęć limit słowo "HELLO" przy użyciu danych ścieżki SVG. Zarówno `SKPath` i `SKPaint` obiekty są zdefiniowane jako pola w [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) klasy:
+**Ścieżki danych Hello** strony zaklęć się słowo "Cześć" dane ścieżki SVG. Zarówno `SKPath` i `SKPaint` obiekty są zdefiniowane jako pola w [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) klasy:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -172,21 +172,21 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Ścieżka Definiowanie ciąg tekstowy rozpoczyna się w lewym górnym rogu w punkcie (0, 0). Litera każdego jest 50 jednostek szerokości i wysokości 100 jednostek i litery są rozdzielone przez inny 25 jednostek, które oznacza, że całą ścieżkę 350 jednostki szerokości.
+Ścieżka Definiowanie ciąg tekstowy rozpoczyna się od lewego górnego rogu w momencie (0, 0). Każdej litery jest maksymalnie 50 jednostek szerokości i wysokości 100 jednostek i litery są oddzielone innego 25 jednostek, który oznacza, że całą ścieżkę 350 jednostki szerokości.
 
-"H" tekst "Hello" składa się z trzech konturów jednego wiersza, gdy dwie krzywe Beziera sześcienny połączonych jest "E". Zwróć uwagę, że `C` polecenia następuje sześciu punktów i mieć dwa punkty kontrolne współrzędne Y –10 i 110 umieszczane poza zakresem współrzędną Y innego litery. "L" jest dwa połączone linie, podczas gdy "O' jest elipsy jest odwzorowywany z `A` polecenia.
+"H" "Hello" składa się z trzech konturów on-line, "E" jest na dwie krzywe Beziera trzeciego stopnia połączonych. Należy zauważyć, że `C` polecenia następuje sześć punktów i dwóch punktów kontrolnych ma współrzędne Y –10 i 110, która umieszcza je poza zakresem współrzędne Y pozostałe litery. "L" jest dwie połączone linie, podczas gdy ' O' jest elipsy, który jest renderowany przy użyciu `A` polecenia.
 
-Zwróć uwagę, że `M` polecenie rozpoczęcia ostatniego rozkład ustawia pozycję w punkcie (350, 50), czyli środka w pionie po lewej stronie z "O'. Określone przez następujące pierwszej liczby `A` polecenia elipsy ma promień w poziomie 25 i promień w pionie 50. Punkt końcowy jest określane przez ostatnich pary liczb znajdujących się w `A` polecenia, które reprezentuje punkt (300, 49.9). Celowo nieco różni się od punktu początkowego. Jeśli punkt końcowy jest równe punkt początkowy, nie można renderować łuk. Rysowanie elipsy pełnej, należy ustawić punkt końcowy Zamknij, aby (ale nie jest równa) punkt początkowy, lub użyj co najmniej dwóch `A` polecenia każdej części pełną elipsy.
+Należy zauważyć, że `M` polecenie, które zaczyna się ostatni rozkład Ustawia położenie punktu (350, 50), czyli środka w pionie po lewej stronie strony ' O'. Wskazane przez pierwszy następujące numery `A` polecenia elipsy ma promień 25 w poziomie i pionie promieniu 50. Punkt końcowy jest wskazywany przez ostatnią parę liczb znajdujących się w `A` polecenia, które reprezentuje punkt (300, 49.9). Celowo nieco różni się od punktu początkowego. Punkt końcowy jest równe punkt początkowy, łuk nie będzie renderowana. Aby narysować elipsę pełną, należy ustawić punkt końcowy Zamknij, aby (ale nie równa się) punkt początkowy, lub należy użyć co najmniej dwóch `A` polecenia każdej części pełną elipsy.
 
-Możesz chcieć Dodaj następującą instrukcję do konstruktora strony, a następnie ustaw punkt przerwania, aby zbadać wynikowy ciąg:
+Możesz chcieć dodać następującą instrukcję do konstruktora strony, a następnie ustaw punkt przerwania, aby zbadać wynikowy ciąg:
 
 ```csharp
 string str = helloPath.ToSvgPathData();
 ```
 
-Dowiesz się, że łuk zostało zastąpione długich serii `Q` polecenia fragmentaryczne zbliżenia łuk przy użyciu kwadratową krzywych Beziera.
+Dowiesz się, że została zastąpiona łuk długiego szeregu `Q` poleceń fragmentaryczne zbliżenia łuk przy użyciu drugiego stopnia krzywych Beziera.
 
-`PaintSurface` Obsługi uzyskuje ścisłej granice ścieżki, która nie zawiera punktów kontrolnych dla "E" i "O' krzywych. Trzy przekształcenia Przenieś Centrum ścieżki do punktu (0, 0), skalowanie ścieżkę do rozmiaru obszaru roboczego (ale biorąc pod uwagę także szerokość pociągnięć), a następnie przesuń Centrum ścieżki na środku kanwy:
+`PaintSurface` Obsługi uzyskuje ścisłej granice ścieżki, która nie obejmuje punkty kontrolne dla "E" i "O' krzywych. Trzy przekształcenia przenoszenie środek ścieżka do punktu (0, 0), skalowanie ścieżki do rozmiaru obszaru roboczego (ale biorąc pod uwagę także szerokość pociągnięcia) i następnie przenieść środek ścieżka na środku kanwy:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -215,11 +215,11 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Ścieżka wypełnia obszaru roboczego, który wygląda bardziej przystępne wyświetlony w trybie krajobraz:
+Ścieżka wypełnia obszar roboczy, który będzie bardziej przystępne, podczas wyświetlania w orientacji poziomej:
 
 [![](path-data-images/pathdatahello-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")](path-data-images/pathdatahello-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Hello")
 
-**Ścieżki danych Cat** przypomina strony. Obiekt ścieżki i paint zarówno zdefiniowano jako pola w [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasy:
+**Ścieżki danych Cat** strona jest podobna. Obiekty ścieżki i paint są definiowane jako pola w [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) klasy:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -253,11 +253,11 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Nagłówek cat jest koło, a tutaj jest on renderowany przy użyciu dwóch `A` poleceń, z których każdy rysuje Półkolista. Zarówno `A` polecenia dla nagłówek określają poziome i pionowe promienie 100. Pierwszy łuk zaczyna się od (240, 100) i kończy się na (240, 300), które stają się punkt początkowy dla drugiego łuku, która kończy się w (240, 100).
+Nagłówek cat jest okrąg, a w tym miejscu jest on renderowany przy użyciu dwóch `A` poleceń, z których każdy rysuje promieniu. Zarówno `A` polecenia do głowy zdefiniować poziome i pionowe promienie 100. Pierwszy łuk rozpoczyna się od (240, 100) i kończy się (240, 300), które stają się punkt początkowy dla drugi łuk, kończące w (240, 100).
 
-Dwa oczu również są renderowane przy użyciu dwóch `A` poleceń i tak jak w przypadku jego head, drugi `A` polecenie kończy się w tym samym punkcie jako pierwszego uruchomienia `A` polecenia. Jednak te pary `A` poleceń nie definiują elipsy. Z każdego łuku jest 40 jednostki oraz promień 40 jednostki, co oznacza, że te Łuki nie są pełne semicircles.
+Dwa oczy również są renderowane przy użyciu dwóch `A` polecenia i podobnie jak w przypadku jego head, drugi `A` polecenie kończy się w tym samym punkcie jako początek pierwszy `A` polecenia. Jednak te pary `A` poleceń nie definiują elipsę. Z każdego łuku jest 40 jednostek oraz promień 40 jednostek, co oznacza, że te Łuki nie są pełne semicircles.
 
-`PaintSurface` Obsługi wykonuje transformacji podobnych jako powyższego przykładu, ale ustawia jeden `Scale` współczynnik współczynnik proporcji i udostępniają małego margines, więc jego wąsów nie ruszaj krawędzi ekranu:
+`PaintSurface` Program obsługi wykonuje transformacji podobne jak w poprzednim przykładzie, ale określa pojedynczy `Scale` współczynnik, aby zachować współczynnik proporcji i udostępniają margines mały, więc wąsów cat don't touch stronach ekranu:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -286,13 +286,13 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Oto programu uruchomionego na wszystkich platformach trzy:
+W tym miejscu jest uruchomiony na wszystkich trzech platformach program:
 
 [![](path-data-images/pathdatacat-small.png "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")](path-data-images/pathdatacat-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę ścieżki danych Cat")
 
-Zwykle, gdy `SKPath` obiektu jest zdefiniowana jako pole, konturów ścieżka musi być zdefiniowana w konstruktorze lub innej metody. Podczas korzystania z danych ścieżki SVG, jednak przedstawiono można określić wyłącznie w definicji pola ścieżka.
+Zwykle, gdy `SKPath` obiekt jest zdefiniowany jako pole, konturów ścieżka musi być zdefiniowany w konstruktorze lub innej metody. Korzystając z dane ścieżki SVG, jednak wiesz że ścieżce można określić wyłącznie w definicji pola.
 
-Wcześniej **Ugly zegar analogowy** przykładowa w [ **Obróć przekształcenie** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) artykułu wyświetlany ręce zegara jako prostych linii. **Pretty analogowy zegara** poniższy program zastępuje te wiersze z `SKPath` obiektów zdefiniowanych jako pola w [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) klasy wraz z programem `SKPaint` obiektów:
+Wcześniej **Nieładnego zegara analogowy** próbki w [ **Przekształcanie Obróć** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) artykułu wyświetlane ręce zegara jako prosty wierszy. **Dość analogowy zegara** poniższy program zastępuje te wiersze z `SKPath` obiekty zdefiniowane jako pola w [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) klasy wraz z `SKPaint` obiektów:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -330,9 +330,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Teraz ręce godzinowe i minutowe ma ujęta obszary, tak aby tych ręce różne od siebie, rysowania z czarnym konspektu i za pomocą wypełnienia szarego `handStrokePaint` i `handFillPaint` obiektów.
+Godzinowe i minutowe ręce teraz mieć ujęte obszarów, tak aby te ćwiczenia różne od siebie nawzajem, rysowania za pomocą zarówno czarny konspektu i za pomocą wypełnienia szarego `handStrokePaint` i `handFillPaint` obiektów.
 
-W starszych **Ugly zegar analogowy** przykładowe, trochę okręgi, który oznaczony godziny i minuty były rysowane w pętli. W tym **Pretty analogowy zegara** przykładowa służy zupełnie innego podejścia: są znaki godzinowe i minutowe kropkowana linii z `minuteMarkPaint` i `hourMarkPaint` obiektów:
+We wcześniejszych przykładach **Nieładnego zegara analogowy** próbki, małym kół, oznaczony godziny i minuty były rysowane w pętli. W tym **dość analogowy zegara** przykładowe służy zupełnie innego podejścia: znaki godzinowe i minutowe są linii kropkowanej z `minuteMarkPaint` i `hourMarkPaint` obiektów:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -359,11 +359,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[ **Kropki i kreski** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) przewodniku opisano sposób korzystania `SKPathEffect.CreateDash` metodę, aby utworzyć linię kropkowaną. Pierwszy argument jest `float` tablica, która zazwyczaj ma dwa elementy: pierwszy element ma długość kresek, a drugi element odstęp między łączników na pauzy. Gdy `StrokeCap` właściwość jest ustawiona na `SKStrokeCap.Round`, następnie zaokrąglony końców kreska skutecznie wydłużyć długość kreski o szerokości obrysu po obu stronach kreska. W związku z tym ustawienie pierwszy element tablicy 0 tworzy linię kropkowaną.
+[ **Kropki i kreski** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) przewodniku omówiono sposób korzystania `SKPathEffect.CreateDash` metodę, aby utworzyć linię przerywaną. Pierwszy argument jest `float` tablica, która zazwyczaj ma dwa elementy: pierwszy element jest długością kresek, a drugi element stanowi lukę między kresek. Gdy `StrokeCap` właściwość jest ustawiona na `SKStrokeCap.Round`, następnie zaokrąglone zakończenia kreska skutecznie wydłużyć długość kreski przez szerokość pociągnięcia po obu stronach się kreska. W związku z tym ustawienie pierwszy element tablicy 0 tworzy linię kropkowaną.
 
-Odległość między tych punktów jest objęte drugiego elementu tablicy. Jak można zauważyć wkrótce, te dwie `SKPaint` obiekty służą do rysowania okręgi z protokołem radius 90 jednostek. Obwód tego koło w związku z tym jest 180π, co oznacza, że znaczniki 60 minut musi występować co 3π jednostki, która jest wartością drugi w `float` tablicy w `minuteMarkPaint`. Znaczniki 12 godzin musi występować co 15π jednostki, która jest wartością w ciągu sekundy `float` tablicy.
+Odległość między tych punktów jest regulowane przez drugiego elementu tablicy. Jak zobaczysz wkrótce, te dwie `SKPaint` obiekty służą do rysowania kół z protokołem radius, 90 jednostek. Obwód koła to jest zatem 180π, co oznacza, że znaczniki 60 minut musi znajdować się co 3π jednostki, która jest wartością drugiego w `float` tablicy w `minuteMarkPaint`. Znaczniki dwanaście godzin musi znajdować się co 15π jednostek, która jest wartością w drugim `float` tablicy.
 
-`PrettyAnalogClockPage` Klasy ustawia zegar unieważnienie powierzchni co 16 milisekund i `PaintSurface` obsługi jest wywoływana w tym stawki. Definicje wcześniejszych `SKPath` i `SKPaint` obiektów umożliwiają bardzo czysty kod rysowania:
+`PrettyAnalogClockPage` Klasy ustawia czasomierza do unieważnienia powierzchni co 16 milisekund i `PaintSurface` program obsługi jest wywoływany po tym kursie. Definicje wcześniejsze `SKPath` i `SKPaint` obiektów umożliwiają bardzo czystym kodu rysowania:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -423,12 +423,12 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Coś specjalne odbywa się z drugiej strony, jednak. Ponieważ zegar jest aktualizowany co 16 milisekund `Millisecond` właściwość `DateTime` wartość potencjalnie może być używana do animowania odchylenia drugi strony zamiast, który umożliwia przeniesienie w odrębny przechodzi z drugiej na sekundę. Ale ten kod nie zezwala na ruch być smooth. Zamiast tego używa platformy Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) i [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animacji łatwiejszym funkcje dla innego rodzaju ruchu. Te funkcje łatwiejszym spowodować używane do przenoszenia w sposób jerkier &mdash; ponownie ściąganie, trochę przed powoduje przeniesienie, a następnie nieco nadmiernie premia miejsca docelowego, efekt to Niestety nie można odtworzyć te statycznych zrzuty ekranu:
+Efekty specjalne odbywa się przy użyciu drugiej wskazówki, jednak. Ponieważ zegar jest aktualizowany co 16 milisekund `Millisecond` właściwość `DateTime` wartość potencjalnie można animować odchylenia drugi strony zamiast jednego, który przesuwa dyskretnych przechodzi z sekundy na sekundę. Jednak ten kod nie zezwala na przenoszenie jako bezproblemowe. Zamiast tego używa Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) i [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) animacji ułatwianie funkcje inny rodzaj przepływu. Te funkcje easingu spowodować drugiej wskazówki przenieść w sposób jerkier &mdash; ponownie ściąganie, trochę przed przemieszczał się, a następnie nieco nadmiernie rozwiązywania problemów miejsca docelowego, efekt oznacza Niestety nie można odtworzyć te statyczne zrzuty ekranu:
 
-[![](path-data-images/prettyanalogclock-small.png "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")](path-data-images/prettyanalogclock-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Pretty analogowy zegara")
+[![](path-data-images/prettyanalogclock-small.png "Potrójna zrzut ekranu przedstawiający stronę dość analogowy zegara")](path-data-images/prettyanalogclock-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę dość analogowy zegara")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

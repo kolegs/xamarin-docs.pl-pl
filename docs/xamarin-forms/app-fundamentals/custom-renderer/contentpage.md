@@ -1,42 +1,42 @@
 ---
-title: Dostosowywanie wartość ContentPage
-description: Wartość ContentPage jest element wizualny, która wyświetla pojedynczego widoku i zajmuje większość ekranu. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania strony wartość ContentPage umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy.
+title: Dostosowywanie obiektu ContentPage
+description: ContentPage jest element wizualny, który wyświetla pojedynczy widok i zajmuje większą część ekranu. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla strony ContentPage, dzięki czemu deweloperzy mogą zastąpić domyślne renderowanie natywnych, dostosowując swoje własne specyficzne dla platformy.
 ms.prod: xamarin
 ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5fe7250b5b8fcea97d4fbe6846999be60e8e8673
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848177"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995745"
 ---
-# <a name="customizing-a-contentpage"></a>Dostosowywanie wartość ContentPage
+# <a name="customizing-a-contentpage"></a>Dostosowywanie obiektu ContentPage
 
-_Wartość ContentPage jest element wizualny, która wyświetla pojedynczego widoku i zajmuje większość ekranu. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania strony wartość ContentPage umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy._
+_ContentPage jest element wizualny, który wyświetla pojedynczy widok i zajmuje większą część ekranu. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla strony ContentPage, dzięki czemu deweloperzy mogą zastąpić domyślne renderowanie natywnych, dostosowując swoje własne specyficzne dla platformy._
 
-Formant co platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `PageRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UIViewController` formantu. Na platformie Android `PageRenderer` tworzy wystąpienie klasy `ViewGroup` formantu. W systemie Windows platformy Uniwersalnej, `PageRenderer` tworzy wystąpienie klasy `FrameworkElement` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdy formant zestawu narzędzi Xamarin.Forms ma towarzyszący modułu renderowania dla każdej platformy, która tworzy wystąpienie kontrolki natywne. Gdy [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `PageRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `UIViewController` kontroli. Na platformie Android `PageRenderer` tworzy wystąpienie klasy `ViewGroup` kontroli. Na Universal Windows Platform (platformy UWP), `PageRenderer` tworzy wystąpienie klasy `FrameworkElement` kontroli. Aby uzyskać więcej informacji na temat renderowania i klasy natywnych kontrolek, mapowane kontrolek zestawu narzędzi Xamarin.Forms, zobacz [natywne kontrolki i klasy podstawowej renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Na poniższym diagramie przedstawiono związek między [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) i odpowiednie natywnego formantów, które implementuje ona:
+Na poniższym diagramie przedstawiono relację między [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) odpowiedniego natywne kontrolki, które ją implementują i:
 
-![](contentpage-images/contentpage-classes.png "Relacja między wartość ContentPage klasy i wdrażanie kontrolki natywne")
+![](contentpage-images/contentpage-classes.png "Relacja między klasą ContentPage i implementowanie natywne kontrolki")
 
-Proces renderowania można podjąć zaletą do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) na każdej z platform. Proces ten wygląda następująco:
+Proces renderowania może podjąć zalet do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) na każdej platformie. Proces ten jest w następujący sposób:
 
-1. [Utwórz](#Creating_the_Xamarin.Forms_Page) strony platformy Xamarin.Forms.
-1. [Korzystać z](#Consuming_the_Xamarin.Forms_Page) stronę z platformy Xamarin.Forms.
-1. [Utwórz](#Creating_the_Page_Renderer_on_each_Platform) niestandardowego modułu renderowania strony na każdej z platform.
+1. [Utwórz](#Creating_the_Xamarin.Forms_Page) strony zestawu narzędzi Xamarin.Forms.
+1. [Używanie](#Consuming_the_Xamarin.Forms_Page) strony z zestawu narzędzi Xamarin.Forms.
+1. [Utwórz](#Creating_the_Page_Renderer_on_each_Platform) niestandardowego modułu renderowania dla strony na każdej platformie.
 
-Każdy element teraz omówione zostaną z kolei, aby zaimplementować `CameraPage` zapewnia aparatu na żywo, źródła danych i możliwość przechwytywania zdjęcie.
+Każdy element zostaną teraz dokładniej omówione w implementacji `CameraPage` zapewnia kamery na żywo, źródła danych i możliwość przechwytywania zdjęcie.
 
 <a name="Creating_the_Xamarin.Forms_Page" />
 
-## <a name="creating-the-xamarinforms-page"></a>Tworzenie strony platformy Xamarin.Forms
+## <a name="creating-the-xamarinforms-page"></a>Tworzenie strony zestawu narzędzi Xamarin.Forms
 
-Niezmienionym [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) można dodać do projektu udostępnionego platformy Xamarin.Forms, jak pokazano w poniższym przykładzie kodu XAML:
+Niezmienione [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) można dodać do projektu udostępnionego zestawu narzędzi Xamarin.Forms, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ Niezmienionym [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.F
 </ContentPage>
 ```
 
-Podobnie, plik CodeBehind dla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) również powinny pozostać bez zmian, jak pokazano w poniższym przykładzie:
+Podobnie, plik CodeBehind dla [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) również powinna pozostać niezmieniona, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public partial class CameraPage : ContentPage
@@ -60,7 +60,7 @@ public partial class CameraPage : ContentPage
 }
 ```
 
-Poniższy przykład kodu pokazuje, jak można utworzyć strony w języku C#:
+Poniższy przykład kodu pokazuje, jak strony można tworzyć w języku C#:
 
 ```csharp
 public class CameraPageCS : ContentPage
@@ -71,13 +71,13 @@ public class CameraPageCS : ContentPage
 }
 ```
 
-Wystąpienie `CameraPage` będzie używany do wyświetlania na żywo aparatu źródła danych na każdej z platform. Dostosowywanie formantu zostanie przeprowadzone w niestandardowego modułu renderowania, więc nie dodatkowe implementacja jest wymagana w `CameraPage` klasy.
+Wystąpienie `CameraPage` będzie służyć do wyświetlania na żywo aparatu źródła danych na każdej platformie. Dostosowywanie formantu będą przeprowadzane w niestandardowego modułu renderowania, dzięki czemu nie dodatkowe implementacja jest wymagana w `CameraPage` klasy.
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
-## <a name="consuming-the-xamarinforms-page"></a>Korzystanie z platformy Xamarin.Forms strony
+## <a name="consuming-the-xamarinforms-page"></a>Wykorzystywanie strony zestawu narzędzi Xamarin.Forms
 
-Pustych `CameraPage` musi zostać wyświetlony przez aplikację platformy Xamarin.Forms. Dzieje się tak, gdy przycisk na `MainPage` dotknięciu wystąpienia, który z kolei wykonuje `OnTakePhotoButtonClicked` metody, jak pokazano w poniższym przykładzie:
+Pusty `CameraPage` musi zostać wyświetlony przez aplikację platformy Xamarin.Forms. Operacja wykonywana, gdy przycisk na `MainPage` dotknięcie wystąpienia, które z kolei wykonuje `OnTakePhotoButtonClicked` metodzie, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 async void OnTakePhotoButtonClicked (object sender, EventArgs e)
@@ -86,34 +86,34 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Ten kod po prostu przechodzi do `CameraPage`, na którym niestandardowe moduły renderowania będzie dostosować wygląd strony na każdej z platform.
+Ten kod po prostu przechodzi do `CameraPage`, na które niestandardowe programy renderujące umożliwia dostosowywanie wyglądu strony na każdej platformie.
 
 <a name="Creating_the_Page_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-page-renderer-on-each-platform"></a>Tworzenie modułu renderowania strony na każdej platformie
 
-Proces tworzenia klasy niestandardowego modułu renderowania wygląda następująco:
+Proces tworzenia klasy niestandardowego modułu renderowania jest następująca:
 
 1. Utwórz podklasę `PageRenderer` klasy.
-1. Zastąpienie `OnElementChanged` metodę, która renderuje natywnego logiki strony i zapisu do dostosowania strony. `OnElementChanged` Metoda jest wywoływana po utworzeniu odpowiedniego formantu platformy Xamarin.Forms.
-1. Dodaj `ExportRenderer` atrybutu klasy renderowania strony, aby określić, że będą używane do renderowania strony platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
+1. Zastąp `OnElementChanged` metodę, która renderuje natywnych logiki strony i zapisu do dostosowania strony. `OnElementChanged` Metoda jest wywoływana, gdy zostanie utworzony odpowiedni formant zestawu narzędzi Xamarin.Forms.
+1. Dodaj `ExportRenderer` atrybutów do klasy modułu renderowania strony, aby określić, że będą używane do renderowania strony zestawu narzędzi Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania przy użyciu zestawu narzędzi Xamarin.Forms.
 
 > [!NOTE]
-> Jest to pozycja opcjonalna zapewnienie renderowania strony, w każdym projekcie platformy. Jeśli renderowania strony nie jest zarejestrowany, domyślne renderowanie strony będzie używany.
+> Jest to opcjonalne zapewnić mechanizm renderujący stronę w każdym projekcie platformy. Jeśli renderowanie strony nie jest zarejestrowany, domyślne renderowanie strony będą używane.
 
-Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, wraz z relacji między nimi:
+Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji wraz z relacji między nimi:
 
-![](contentpage-images/solution-structure.png "Obowiązki CameraPage niestandardowe renderowania projektu:")
+![](contentpage-images/solution-structure.png "CameraPage niestandardowego modułu renderowania projektu obowiązki")
 
-`CameraPage` Wystąpienia jest renderowana przez specyficzne dla platformy `CameraPageRenderer` klasy, które wynikają z `PageRenderer` klasy dla tej platformy. Powoduje to w każdym `CameraPage` wystąpienie renderowanego źródło aparatu na żywo, jak pokazano na poniższych zrzutach ekranu:
+`CameraPage` Wystąpienia jest renderowany przy specyficzne dla platformy `CameraPageRenderer` klas, które wynikają z `PageRenderer` klasy dla danej platformy. Skutkuje to każdego `CameraPage` wystąpienia są renderowane przy użyciu kanału informacyjnego kamery na żywo, jak pokazano na poniższych zrzutach ekranu:
 
 ![](contentpage-images/screenshots.png "CameraPage na każdej platformie")
 
-`PageRenderer` Klasy ujawnia `OnElementChanged` metodę, która jest wywoływana po utworzeniu strony platformy Xamarin.Forms renderowanie odpowiednich macierzystego formantu. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentuje elementu platformy Xamarin.Forms który renderującego *został* dołączyć i elementu platformy Xamarin.Forms który renderującego *jest* dołączony do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie `null` i `NewElement` właściwości będzie zawierać odwołanie do `CameraPage` wystąpienia.
+`PageRenderer` Klasy ujawnia `OnElementChanged` metody, która jest wywoływana po utworzeniu strony zestawu narzędzi Xamarin.Forms do renderowania odpowiedniej kontrolki natywne. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentują element zestawu narzędzi Xamarin.Forms, modułu renderowania *został* dołączyć i element zestawu narzędzi Xamarin.Forms, modułu renderowania *jest* dołączone do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie miała `null` i `NewElement` właściwość będzie zawierać odwołanie do `CameraPage` wystąpienia.
 
-Zastąpiona wersja `OnElementChanged` metoda `CameraPageRenderer` klasa jest używana do wykonywania dostosowania strony natywnej. Odwołanie do wystąpienia page platformy Xamarin.Forms, który jest renderowany można uzyskać za pośrednictwem `Element` właściwości.
+Zastąpione wersję `OnElementChanged` method in Class metoda `CameraPageRenderer` klasy jest w tym miejscu Przeprowadź Dostosowywanie strony natywnej. Odwołanie do wystąpienia strony zestawu narzędzi Xamarin.Forms, który jest renderowany można uzyskać za pośrednictwem `Element` właściwości.
 
-Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje mechanizm renderujący platformy Xamarin.Forms. Atrybut przyjmuje dwa parametry — Nazwa typu renderowanej strony platformy Xamarin.Forms i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
+Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje modułu renderowania za pomocą zestawu narzędzi Xamarin.Forms. Ten atrybut przyjmuje dwa parametry — Nazwa typu renderowanej strony zestawu narzędzi Xamarin.Forms i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
 
 W poniższych sekcjach omówiono wykonania `CameraPageRenderer` niestandardowego modułu renderowania dla każdej platformy.
 
@@ -151,9 +151,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy iOS `UIViewController` formantu. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu platformy Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
+Wywołania do klasy bazowej `OnElementChanged` metoda tworzy wystąpienie systemu iOS `UIViewController` kontroli. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu zestawu narzędzi Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
 
-Strona jest następnie dostosowane przez szereg metod, które używają `AVCapture` interfejsów API w celu zapewnienia strumień na żywo z aparatu fotograficznego oraz możliwość przechwytywania zdjęcie.
+Strona jest następnie dostosowywać przez szereg metod, które używają `AVCapture` interfejsów API, aby zapewnić transmisji strumieniowej na żywo z kamery i możliwość przechwytywania zdjęcie.
 
 ### <a name="creating-the-page-renderer-on-android"></a>Tworzenie modułu renderowania strony w systemie Android
 
@@ -195,9 +195,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy Android `ViewGroup` kontroli, która to grupa widoków. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu platformy Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
+Wywołania do klasy bazowej `OnElementChanged` metoda tworzy wystąpienie aplikacji Android `ViewGroup` formant, który jest grupą widoków. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu zestawu narzędzi Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
 
-Strona jest następnie dostosowane przez wywoływanie szereg metod korzystających z `Camera` interfejsu API w celu zapewnienia strumień na żywo z aparatu fotograficznego oraz możliwość przechwytywania fotografii, przed `AddView` metoda jest wywoływana, aby dodać aparatu na żywo strumienia interfejsu użytkownika Służącego do `ViewGroup`.
+Następnie dostosowanego strony za pomocą szeregu metod, które używają `Camera` interfejsu API w celu zapewnienia transmisji strumieniowej na żywo z kamery i możliwość przechwytywania zdjęcie, przed `AddView` metoda jest wywoływana, aby dodać kamery na żywo strumienia interfejsu użytkownika w celu `ViewGroup`.
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Tworzenie modułu renderowania strony na platformy uniwersalnej systemu Windows
 
@@ -241,16 +241,16 @@ namespace CustomRenderer.UWP
 
 ```
 
-Wywołania do klasy podstawowej `OnElementChanged` metoda tworzy `FrameworkElement` kontroli realizacją strony. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu platformy Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania. Strona jest następnie dostosowane przez wywoływanie szereg metod korzystających z `MediaCapture` interfejsu API w celu zapewnienia strumień na żywo z aparatu fotograficznego oraz możliwość przechwytywania zdjęcie przed dodaniem do dostosowanej strony `Children` kolekcji do wyświetlenia.
+Wywołania do klasy bazowej `OnElementChanged` metoda tworzy wystąpienie `FrameworkElement` kontroli wyrenderowaniu strony. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu zestawu narzędzi Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania. Następnie dostosowanego strony za pomocą szeregu metod, które używają `MediaCapture` interfejsu API w celu zapewnienia transmisji strumieniowej na żywo z kamery i możliwość przechwytywania zdjęcie, przed dodaniem dostosowanej strony do `Children` kolekcji do wyświetlenia.
 
-Podczas implementowania niestandardowego modułu renderowania, która jest pochodną `PageRenderer` na platformy uniwersalnej systemu Windows, `ArrangeOverride` metody również powinny być implementowane ułożyć formantów strony, ponieważ podstawowy mechanizm renderujący nie może ustalić, co należy zrobić z nimi. W przeciwnym razie wartość pusta strona wyników. W związku z tym, w tym przykładzie `ArrangeOverride` wywołania metody `Arrange` metoda `Page` wystąpienia.
+Podczas implementowania niestandardowego modułu renderowania, która pochodzi od klasy `PageRenderer` na platformie UWP, `ArrangeOverride` metoda również powinny być zrealizowane rozmieścić formanty strony, ponieważ podstawowy mechanizm renderujący nie wie, co należy zrobić z nimi. W przeciwnym razie pusta strona wyników. W związku z tym, w tym przykładzie `ArrangeOverride` wywołania metody `Arrange` metody `Page` wystąpienia.
 
 > [!NOTE]
-> Należy zatrzymać i usuwania obiektów, które zapewniają dostęp do kamery w aplikacji platformy uniwersalnej systemu Windows. Błąd w tym celu może zakłócać inne aplikacje, które próbują uzyskać dostęp aparatu fotograficznego urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Jest ważne zatrzymać i usunąć obiekty, które zapewniają dostęp do aparatu w aplikacji platformy uniwersalnej systemu Windows. Niewykonanie tej czynności może kolidować z innymi aplikacjami, które próbują dostęp do aparatu urządzenia. Aby uzyskać więcej informacji, zobacz [wyświetlić podgląd aparatu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten artykuł ma przedstawiono sposób tworzenia niestandardowego modułu renderowania dla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) strony umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy. A `ContentPage` jest element wizualny, która wyświetla pojedynczego widoku i zajmuje większość ekranu.
+Ten artykuł ma pokazano sposób tworzenia niestandardowego modułu renderowania dla [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) strony, dzięki czemu deweloperzy mogą zastąpić domyślne renderowanie natywnych, dostosowując swoje własne specyficzne dla platformy. A `ContentPage` to element graficzny, która wyświetla pojedynczy widok i zajmuje większą część ekranu.
 
 
 ## <a name="related-links"></a>Linki pokrewne

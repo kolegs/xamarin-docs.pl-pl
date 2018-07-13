@@ -1,26 +1,26 @@
 ---
-title: Dodawanie rozpoznawania gestów Uszczypnięcia
-description: W tym artykule opisano sposób użycia gestu uszczypnięcia przeprowadzić interakcyjne powiększenia obrazu w lokalizacji uszczypnięcia.
+title: Dodawanie rozpoznawania gest Uszczypnięcia
+description: W tym artykule wyjaśniono, jak używać gest uszczypnięcia do wykonywania interaktywne powiększenie obrazu w lokalizacji uszczypnięcia.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 3600a8bf059bf29429cce35a233cc6618daa4d79
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241780"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998705"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Dodawanie rozpoznawania gestów Uszczypnięcia
+# <a name="adding-a-pinch-gesture-recognizer"></a>Dodawanie rozpoznawania gest Uszczypnięcia
 
-_Gest uszczypnięcia służy do wykonywania interakcyjne powiększenia i jest realizowana za pomocą klasy PinchGestureRecognizer. Typowy scenariusz dla gestu uszczypnięcia jest przeprowadzenie interakcyjne powiększenia obrazu w lokalizacji uszczypnięcia. Odbywa się przez skalowanie zawartość okienka ekranu, a przedstawionej w tym artykule._
+_Gest uszczypnięcia jest używany do operacji interaktywnych powiększenia i jest implementowane za pomocą klasy PinchGestureRecognizer. Jest to typowy scenariusz dla gest uszczypnięcia przeprowadzić interaktywne powiększenie obrazu w lokalizacji uszczypnięcia. Odbywa się przy użyciu skalowania zawartość okienka ekranu i została przedstawiona w tym artykule._
 
 ## <a name="overview"></a>Omówienie
 
-Aby elementu interfejsu użytkownika którą można powiększać z gestów uszczypnięcia, Utwórz [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) wystąpienia i obsługiwać [ `PinchUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PinchGestureRecognizer.PinchUpdated/) zdarzeń, i Dodaj nowy aparat rozpoznawania gestów do [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kolekcji dla elementu interfejsu użytkownika. Poniższy kod przedstawia przykład `PinchGestureRecognizer` dołączony do [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementu:
+Aby element interfejsu użytkownika którą można powiększać z gest uszczypnięcia, Utwórz [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) wystąpienia i obsługiwać [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) zdarzeń, i Dodaj nowy aparat rozpoznawania gestów do [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekcji na element interfejsu użytkownika. Poniższy kod przedstawia przykład `PinchGestureRecognizer` dołączone do [ `Image` ](xref:Xamarin.Forms.Image) elementu:
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -30,7 +30,7 @@ pinchGesture.PinchUpdated += (s, e) => {
 image.GestureRecognizers.Add(pinchGesture);
 ```
 
-Ponadto można to osiągnąć w języku XAML, jak pokazano w poniższym przykładzie:
+Ponadto można to osiągnąć w XAML, jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <Image Source="waterfront.jpg">
@@ -40,7 +40,7 @@ Ponadto można to osiągnąć w języku XAML, jak pokazano w poniższym przykła
 </Image>
 ```
 
-Kod `OnPinchUpdated` program obsługi zdarzeń jest następnie dodawana do pliku CodeBehind:
+Kod `OnPinchUpdated` program obsługi zdarzeń jest dodawane do pliku związanego z kodem:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -51,7 +51,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 
 ## <a name="creating-a-pinchtozoom-container"></a>Tworzenie kontenera PinchToZoom
 
-Obsługa gestu uszczypnięcia do wykonania operacji powiększenia wymaga niektórych matematyczne do przekształcania interfejsu użytkownika. Ta sekcja zawiera klasę pomocnika uogólniony przeprowadzić obliczenia, która może służyć do interaktywnego powiększenie dowolnego elementu interfejsu użytkownika. Poniższy kod przedstawia przykład `PinchToZoomContainer` klasy:
+Obsługa gest uszczypnięcia, aby wykonać operację powiększania wymaga talent matematyczny do przekształcania interfejsu użytkownika. Ta sekcja zawiera klasę pomocnika uogólnionego do wykonywania obliczeń, który może służyć do interaktywnego powiększenia dowolnego elementu interfejsu użytkownika. Poniższy kod przedstawia przykład `PinchToZoomContainer` klasy:
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Ta klasa może otaczający element interfejsu użytkownika tak, aby gestu uszczypnięcia zostanie powiększony elementu interfejsu użytkownika opakowana. Przedstawia poniższy przykładowy kod XAML `PinchToZoomContainer` zawijanie [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementu:
+Ta klasa może zostać zawinięty wokół elementu interfejsu użytkownika, tak, aby gest uszczypnięcia zostanie powiększony elementu interfejsu użytkownika opakowana. Ilustruje poniższy przykład kodu XAML `PinchToZoomContainer` zawijania [ `Image` ](xref:Xamarin.Forms.Image) elementu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ Ta klasa może otaczający element interfejsu użytkownika tak, aby gestu uszczy
 </ContentPage>
 ```
 
-Poniższy kod przedstawia przykład sposobu `PinchToZoomContainer` opakowuje [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) elementu na stronie C#:
+Poniższy kod przedstawia przykładowy sposób, w jaki `PinchToZoomContainer` opakowuje [ `Image` ](xref:Xamarin.Forms.Image) elementu na stronie C#:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Gdy [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element odbiera gestem uszczypnięcia, wyświetlany obraz będzie być powiększony w ani out. Wartość powiększenia jest wykonywane przez `PinchZoomContainer.OnPinchUpdated` metodę, która jest wyświetlana w poniższym przykładzie:
+Gdy [ `Image` ](xref:Xamarin.Forms.Image) element odbiera gest uszczypnięcia, wyświetlany obraz będzie mieć powiększonej lub w poziomie. Wartość powiększenia odbywa się przez `PinchZoomContainer.OnPinchUpdated` metody, która jest wyświetlana w poniższym przykładzie kodu:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,15 +160,15 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Ta metoda aktualizacji poziom powiększenia elementu interfejsu użytkownika opakowana oparte na gestu uszczypnięcia użytkownika. Jest to osiągane przy użyciu wartości [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale/), [ `ScaleOrigin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin/) i [ `Status` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Status/) właściwości [ `PinchGestureUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureUpdatedEventArgs/) wystąpienia można obliczyć współczynnik skali, które mają być zastosowane na pochodzenie gestu uszczypnięcia. Element opakowana użytkownika następnie powiększone źródłem gestu uszczypnięcia przez ustawienie jej [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/), i [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwości do obliczonych wartości.
+Ta metoda aktualizuje poziom powiększenia opakowany element interfejsu użytkownika oparte na gest uszczypnięcia użytkownika. Jest to osiągane przy użyciu wartości [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) i [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) właściwości [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) wystąpienia, aby obliczyć współczynnik skali, które mają być stosowane w źródle gest uszczypnięcia. Elementu opakowana użytkownika jest następnie powiększone w źródle gest uszczypnięcia, ustawiając jego [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), i [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) właściwości do obliczonych wartości.
 
 ## <a name="summary"></a>Podsumowanie
 
-Gest uszczypnięcia służy do wykonywania interakcyjne powiększenia i jest realizowana za pomocą [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) klasy.
+Gest uszczypnięcia służy do przeprowadzania interaktywne powiększenia i jest implementowane za pomocą [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) klasy.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [PinchGesture (przykład)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PinchGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PinchGestureRecognizer](xref:Xamarin.Forms.PinchGestureRecognizer)

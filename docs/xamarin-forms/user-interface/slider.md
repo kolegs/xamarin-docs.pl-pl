@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: 2ba4ffa1bcaee5f95fbd963cd48e694569ec7850
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986099"
+ms.locfileid: "38998246"
 ---
 # <a name="xamarinforms-slider"></a>Suwak zestawu narzędzi Xamarin.Forms
 
 _Użyj suwaka służąca do wybierania z zakresu wartości ciągłe._
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) jest poziomy pasek, które mogą być zmieniane przez użytkownika, aby wybrać `double` wartość z ciągłego zakresu.
+Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider) jest poziomy pasek, które mogą być zmieniane przez użytkownika, aby wybrać `double` wartość z ciągłego zakresu.
 
 `Slider` Definiuje trzy właściwości typu `double`:
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) to minimum zakresu, z wartością domyślną równą 0.
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) to maksimum zakresu, z wartością domyślną 1.
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) wartość suwaka należą do zakresu od `Minimum` i `Maximum` i ma wartość domyślną równą 0.
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) to minimum zakresu, z wartością domyślną równą 0.
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) to maksimum zakresu, z wartością domyślną 1.
+- [`Value`](xref:Xamarin.Forms.Slider.Value) wartość suwaka należą do zakresu od `Minimum` i `Maximum` i ma wartość domyślną równą 0.
 
 Wszystkie trzy właściwości są wspierane przez `BindableProperty` obiektów. `Value` Właściwość ma domyślny tryb powiązania z `BindingMode.TwoWay`, co oznacza, że nadaje się jako źródło powiązania w aplikacji, która używa [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektury.
 
@@ -33,9 +33,9 @@ Wszystkie trzy właściwości są wspierane przez `BindableProperty` obiektów. 
 
 `Slider` Przekształca wynik dane `Value` właściwości, tak aby można ją między `Minimum` i `Maximum`włącznie. Jeśli `Minimum` właściwość jest ustawiona na wartość większą niż `Value` właściwości `Slider` ustawia `Value` właściwość `Minimum`. Podobnie jeśli `Maximum` jest ustawiona na wartość mniej niż `Value`, następnie `Slider` ustawia `Value` właściwość `Maximum`.
 
-`Slider` definiuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) zdarzenia, które jest wywoływane, gdy `Value` zmiany, za pośrednictwem manipulację użytkownika `Slider` lub gdy program ustawia `Value` właściwość bezpośrednio. A `ValueChanged` zdarzenie również jest wywoływane, gdy `Value` właściwość jest traktowany jak opisano w poprzednim akapicie.
+`Slider` definiuje [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) zdarzenia, które jest wywoływane, gdy `Value` zmiany, za pośrednictwem manipulację użytkownika `Slider` lub gdy program ustawia `Value` właściwość bezpośrednio. A `ValueChanged` zdarzenie również jest wywoływane, gdy `Value` właściwość jest traktowany jak opisano w poprzednim akapicie.
 
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Obiektu, który towarzyszy `ValueChanged` zdarzenie ma dwie właściwości, oba typu `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) i [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). W tym czasie jest wyzwalane zdarzenie, wartość `NewValue` jest taka sama jak `Value` właściwość `Slider` obiektu.
+[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Obiektu, który towarzyszy `ValueChanged` zdarzenie ma dwie właściwości, oba typu `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) i [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). W tym czasie jest wyzwalane zdarzenie, wartość `NewValue` jest taka sama jak `Value` właściwość `Slider` obiektu.
 
 > [!WARNING]
 > Nie należy używać opcji nieograniczone układzie poziomym `Center`, `Start`, lub `End` z `Slider`. W systemach Android i platformy uniwersalnej systemu Windows `Slider` zwija na pasku o zerowej długości, a także w systemach iOS, pasek jest bardzo mały. Zachowaj wartość domyślną `HorizontalOptions` ustawienie `Fill`i nie używaj szerokości `Auto` podczas przełączania `Slider` w `Grid` układu.
@@ -508,4 +508,4 @@ Jako `Slider` elementy są zmieniane, `BoxView` i `Label` elementy zostaną zakt
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe pokazy suwaka](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
-- [Suwak interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)
+- [Suwak interfejsu API](xref:Xamarin.Forms.Slider)

@@ -1,84 +1,84 @@
 ---
-title: Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
-description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?'
+title: Podsumowanie rozdział 1. Jak zestawu narzędzi xamarin.Forms?
+description: 'Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms: Podsumowanie rozdział 1. Jak zestawu narzędzi xamarin.Forms?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240463"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995134"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Podsumowanie rozdział 1. Jak platformy Xamarin.Forms pasują do?
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Podsumowanie rozdział 1. Jak zestawu narzędzi xamarin.Forms?
 
-Jest jednym z najbardziej nieprzyjemny zadania w programowaniu eksportowanie kod podstawowy z jedną platformę do innego, zwłaszcza w wypadku tej platformy wymaga innego języka programowania. Istnieje możliwość przesłania, gdy eksportowanie kod, aby go również Refaktoryzuj, ale jeśli obu platform muszą zostać zachowane równolegle, następnie różnice między baz kodu dwóch będzie konserwacji w przyszłości trudniejsze.
+Jest jedną z najbardziej nieprzyjemnych zadania w programowaniu przenoszenie kodu bazowego z jednej platformy do innego, szczególnie w przypadku, gdy tej platformy obejmuje innym języku programowania. Istnieje możliwość przesłania portowaniu kodu, jak również będzie je refraktoryzować, ale jeśli obie platformy utrzymuje się w sposób równoległy, następnie różnice między bazami kodu dwóch będzie konserwacji w przyszłości trudniejsze.
 
 ## <a name="cross-platform-mobile-development"></a>Programowanie aplikacji mobilnych dla wielu platform
 
-Ten problem jest typowe w przypadku przeznaczonych dla platformy urządzeń przenośnych. Obecnie istnieje dwóch głównych platform urządzeń przenośnych, rodzina Apple iPhone i Ipad zainstalowano system operacyjny iOS oraz Android systemu operacyjnego, który działa na różne telefony i tablety. Innej platformie istotne jest firmy Microsoft Windows platformy Uniwersalnej, dzięki czemu jeden program pod kątem zarówno systemu Windows 10 i Windows 10 Mobile.
+Ten problem jest typowa, gdy przeznaczonych dla platform urządzeń przenośnych. Obecnie istnieją dwa główne platformy mobilne, Apple rodziny urządzeń iPhone i tabletach Ipad z systemem systemu operacyjnego iOS i Android system operacyjny, który działa na wielu różnych telefonach i tabletach. Innej platformie istotne jest firmy Microsoft Windows platformy Uniwersalnej, który umożliwia jeden program pod kątem systemu Windows 10 i Windows 10 Mobile.
 
-Dostawcy oprogramowania, która chce te trzy platform docelowych musi uwzględniać wzorcami inny interfejs użytkownika, trzy różne środowiska projektowania, trzech różnych interfejsów programowania i&mdash;prawdopodobnie najbardziej nienaturalnej&mdash; trzech różnych językach programowania: Objective-C dla urządzenia iPhone i iPad, Java dla systemu Android i C# dla systemu Windows.
+Dostawcy oprogramowania, który chce tych trzech platformach musi obsłużyć paradygmatów innego interfejsu użytkownika, trzy różne środowiska projektowania, trzy różne interfejsy programowania i&mdash;może być najbardziej nienaturalnej&mdash; trzy różne języki programowania: Objective-C, dla telefonu iPhone i iPad, Java dla systemu Android i C# dla Windows.
 
-## <a name="the-c-and-net-solution"></a>Rozwiązanie C# i .NET
+## <a name="the-c-and-net-solution"></a>Rozwiązanie języka C# i platformy .NET
 
-Mimo że Objective-C, Java i C# są uzyskiwane z język programowania C, ich usprawnionych przez bardzo różne ścieżki. C# jest najnowsza z tych języków i zostały dojrzewania bardzo użyteczne sposoby. Ponadto, C# jest ściśle powiązana z całej infrastruktury programowania o nazwie .NET, który zapewnia obsługę matematyczne, debugowanie, odbicia, kolekcje, globalizacji, we/wy pliku, sieci, zabezpieczeń, wątki, usług sieci web, obsługi danych i XML i JSON, Odczyt i zapis.
+Mimo że języka Objective-C, Java i C# są uzyskiwane z języka programowania C, ich usprawnionych przy bardzo różnych ścieżek. C# jest najnowsza z tych języków i ma zostały dojrzałych w sposób bardzo przydatne. Ponadto, C# jest ściśle powiązana z całej infrastruktury programowania, o nazwie .NET, który zapewnia obsługę matematyczne, debugowanie, odbicia, kolekcje, globalizacji, we/wy pliku, sieci, zabezpieczeń, wątki, usług sieci web, obsługi danych i XML i JSON, Odczyt i zapis.
 
-Xamarin obecnie udostępnia narzędzia pod kątem natywnej Mac, iOS i Android interfejsów API przy użyciu języka C# i .NET. Te narzędzia są nazywane Xamarin.Mac, Xamarin.iOS i Xamarin.Android, nazywanych zbiorczo platformy Xamarin. Są to bibliotek i powiązania, które express macierzystych interfejsów API tych platform z .NET idioms.
+Środowisko Xamarin zapewnia obecnie narzędzia pod kątem natywnej Mac, iOS i interfejsy API systemu Android przy użyciu języka C# i .NET. Te narzędzia są nazywane platformy Xamarin.Mac, Xamarin.iOS i Xamarin.Android, nazywane zbiorczo platformy Xamarin. Są to biblioteki i powiązań, które express natywnych interfejsów API dla tych platform przy użyciu idiomy .NET.
 
-Deweloperzy mogą używać Xamarin platform do pisania aplikacji w języku C# tego docelowego Mac, iOS lub Android. Ale jeśli systemem docelowym jest więcej niż jednej platformie, ułatwia dużo warto udostępnić części kodu między na platformach docelowych. Obejmuje to rozdzielić program kodu zależny od platformy (zazwyczaj obejmujące interfejsu użytkownika) i kod niezależny od platformy, który zwykle wymaga tylko podstawowej platformy .NET framework. Ten kod niezależny od platformy albo może znajdować się w przenośnej biblioteki klas (PCL) lub w projekcie udostępnionym, często nazywane udostępnionego projektu zasobów lub SAP.
+Deweloperzy mogą używać platformy Xamarin, do pisania aplikacji w języku C#, że docelowy Mac, iOS lub Android. Jednak gdy więcej niż jedną platformę, to sprawia, że jest bardzo rozsądne, aby udostępnić część kodu między platformami docelowego. Obejmuje to oddzielenie program zależny od platformy kod (zazwyczaj obejmujące interfejsu użytkownika) i kod niezależny od platformy, co zwykle wymaga tylko podstawowych platformy .NET framework. Ten kod niezależny od platformy albo mogą znajdować się w bibliotece klas przenośnych (PCL) lub projektu udostępnionego, często nazywane projektu udostępnionego zasobu lub SAP.
 
-## <a name="introducing-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
+## <a name="introducing-xamarinforms"></a>Wprowadzenie do zestawu narzędzi Xamarin.Forms
 
-Gdy przeznaczonych dla wielu platform urządzeń przenośnych, platformy Xamarin.Forms pozwala na udostępnianie jeszcze więcej kodu. Jeden program przeznaczony dla platformy Xamarin.Forms można kierować pięciu różnych platform:
+Przeznaczone dla wielu platform mobilnych, zestawu narzędzi Xamarin.Forms umożliwia jeszcze bardziej udostępniania kodu. Jeden program przeznaczony dla platformy Xamarin.Forms można kierować pięć różnych platform:
 
-- dla systemu iOS dla programów uruchamianych na telefonie iPhone, tabletów iPad i iPod touch
-- Dla systemu android dla programów uruchamianych na telefony i tablety
-- Platformy uniwersalnej systemu Windows do docelowego systemu Windows 10 i Windows 10 Mobile
-- środowiska uruchomieniowego systemu Windows API Windows 8.1
-- środowiska uruchomieniowego systemu Windows API Windows Phone 8.1
+- dla systemu iOS dla programów uruchamianych na urządzeniu iPhone, tabletów iPad i iPod touch
+- System android dla programów, które działają na telefonach z systemem Android i tabletach
+- Platforma uniwersalna Windows, aby obiekt docelowy systemu Windows 10 i Windows 10 Mobile
+- Windows interfejsu API środowiska wykonawczego systemu Windows 8.1
+- Windows interfejsu API środowiska wykonawczego systemu Windows Phone 8.1
 
-Bieżące szablony rozwiązań platformy Xamarin.Forms nie obejmują szablony projektów dla platform Windows 8.1 i Windows Phone 8.1.
+Bieżące szablony rozwiązania Xamarin.Forms nie obejmują szablony projektów dla platform Windows 8.1 i Windows Phone 8.1.
 
-Istnieje zbiorczego program platformy Xamarin.Forms PCL lub SAP. Każdej z platform składa się z stub małych aplikacji, który odwołuje się do PCL. Interfejsy API platformy Xamarin.Forms zamapować na kontrolki natywne na każdej platformie, jego charakterystyczny wygląd i działanie obsługuje każdej platformy:
+Duża część programu Xamarin.Forms znajduje się w aplikacji PCL lub SAP. Każdej z platform składa się z klasy zastępczej mała aplikacja, która wywołuje PCL. Mapowania interfejsów API zestawu narzędzi Xamarin.Forms natywne kontrolki na każdej platformie, aby w każdej z platform zachowuje jego charakterystyczny wygląd i działanie:
 
-[![Potrójna zrzut ekranu przedstawiający elementy wizualne platformy udostępnianie](images/ch01fg03-small.png "platformy Xamarin.Forms formantów na każdej platformie")](images/ch01fg03-large.png#lightbox "platformy Xamarin.Forms formantów na każdej platformie")
+[![Potrójna zrzut ekranu przedstawiający wizualizacje platformy udostępnianie](images/ch01fg03-small.png "kontrolek zestawu narzędzi Xamarin.Forms na każdej platformie")](images/ch01fg03-large.png#lightbox "kontrolek zestawu narzędzi Xamarin.Forms na każdej platformie.")
 
-Zrzuty ekranu od lewej do prawej Pokaż iPhone, telefonie z systemem Android i na telefon Windows 10 Mobile. Na każdym ekranie strona zawiera platformy Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) do wyświetlania tekstu, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) za inicjowanie akcje, [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) dla Włącz/Wyłącz wartości i [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) służący do określania wartości zakresu ciągłe. Elementy podrzędne są wszystkie cztery tych widoków [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) na [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
+Zrzuty ekranu, od lewej do prawej Pokaż telefonu iPhone, telefonów z systemem Android i na telefon Windows 10 Mobile. Na każdym ekranie strona zawiera rozwiązanie Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label) do wyświetlania tekstu, [ `Button` ](xref:Xamarin.Forms.Button) za zainicjowanie działań, [ `Switch` ](xref:Xamarin.Forms.Switch) dla Wybieranie wł. / wył. wartości i [ `Slider` ](xref:Xamarin.Forms.Slider) dla podanie wartości w ramach ciągłego zakresu. Wszystkie cztery te widoki są elementami podrzędnymi [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
-Także dołączyć do strony jest pasek narzędzi platformy Xamarin.Forms składające się z kilku [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) obiektów. Te są widoczne jako ikony w górnej części z systemem iOS i Android osłony, a w dolnej części ekranu systemu Windows 10 Mobile.
+Również dołączone do strony jest narzędzi Xamarin.Forms, składający się z kilku [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) obiektów. Są one widoczne jako ikony w górnej części ekranu dla systemu Android i iOS, a w dolnej części ekranu Windows 10 Mobile.
 
-Platformy Xamarin.Forms obsługuje również XAML, Extensible Application Markup Language opracowany przez firmę Microsoft dla różnych platform aplikacji. Wszystkie elementy wizualne programu pokazanym powyżej są zdefiniowane w XAML, jak pokazano w [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) próbki.
+Zestaw narzędzi Xamarin.Forms obsługuje również XAML, Extensible Application Markup Language opracowywane w dziale Microsoft dla różnych platform aplikacji. Wszystkie wizualizacje programu powyżej są zdefiniowane w XAML, jak pokazano w [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) próbki.
 
-Program platformy Xamarin.Forms można określić platformy, które jest uruchomiona na i odpowiednio wykonanie innego kodu. Wydajniejsze deweloperzy mogą pisanie kodu niestandardowego dla różnych platform i uruchomić kod z programu platformy Xamarin.Forms w sposób niezależny od platformy. Deweloperzy mogą również tworzyć dodatkowe funkcje kontroli pisząc renderowania dla każdej platformy.
+Program platformy Xamarin.Forms można określić platformy jest uruchomiona na i wykonać różny kod odpowiednio. Wydajniejsze deweloperzy mogą pisania niestandardowego kodu dla różnych platform i uruchamianie kodu z programu Xamarin.Forms w sposób niezależny od platformy. Deweloperzy, można również utworzyć dodatkowe formanty, pisząc programy renderujące dla każdej platformy.
 
-Gdy platformy Xamarin.Forms jest dobrym rozwiązaniem dla aplikacji biznesowych z lub dla prototypowania lub wprowadzeniem szybkie pokaz Weryfikacja koncepcji, jest mniej nadaje się doskonale dla aplikacji, które wymagają grafiki wektorowej lub złożonych touch interakcji.
+Zestaw narzędzi Xamarin.Forms jest doskonałym rozwiązaniem dla aplikacji line-of-business, lub do tworzenia prototypów lub dokonywania szybkiego pokaz weryfikacji koncepcji, jest mniej idealne dla aplikacji, które wymagają grafiki wektorowej lub interakcji dotykowych złożone.
 
 ## <a name="your-development-environment"></a>Środowiska deweloperskiego
 
-Zależy od platformy, z którymi ma być docelowa, a co maszyny, które ma być środowiska deweloperskiego.
+Środowiska deweloperskiego zależy od platformy, która ma pod kątem i co można maszyn ma być używany.
 
-Jeśli chcesz docelowy z systemem iOS należy Mac z Xcode i Xamarin platforma jest zainstalowana. Obsługa systemu Android oraz wymaga instalowanie Java i wymaganych zestawów SDK. Następnie można wskazać zarówno dla systemu iOS i Android przy użyciu programu Visual Studio dla komputerów Mac.
+Jeśli chcesz docelowy z systemem iOS należy Mac za pomocą środowiska Xcode i platforma Xamarin jest zainstalowana. Obsługa systemu Android oraz wymaga instalacji języka Java i wymaganych zestawów SDK. Można skierować systemów iOS i Android przy użyciu programu Visual Studio dla komputerów Mac.
 
-Instalacja programu Visual Studio umożliwia na komputer docelowy z systemem iOS, Android i wszystkich platform Windows. Jednak przeznaczonych dla systemu iOS w programie Visual Studio nadal wymaga Mac z Xcode i Xamarin platforma jest zainstalowana.
+Instalowanie programu Visual Studio pozwala na komputerze docelowym z systemem iOS, Android i wszystkich platform Windows. Przeznaczonych dla systemu iOS w programie Visual Studio nadal wymaga jednak Mac za pomocą środowiska Xcode i platforma Xamarin jest zainstalowana.
 
-Można przetestować programy albo rzeczywistego urządzenia połączone przez USB do komputera lub symulatora.
+Możesz przetestować programy albo rzeczywistego urządzenia połączone przez USB do komputera lub symulatora.
 
 ## <a name="installation"></a>Instalacja
 
-Przed utworzeniem i tworzenia aplikacji platformy Xamarin.Forms, należy utworzyć i oddzielnie tworzenie aplikacji systemu iOS, aplikację systemu Android i aplikacją platformy uniwersalnej systemu Windows, w zależności od platformy, z którymi ma być docelowy i środowisko programowania.
+Przed utworzeniem i tworzenie aplikacji platformy Xamarin.Forms, należy utworzyć i skompilować oddzielnie aplikacji systemu iOS, aplikacji systemu Android oraz aplikacji platformy uniwersalnej systemu Windows, w zależności od platformy, którą chcesz obiektu docelowego i środowiska deweloperskiego.
 
-Witryny sieci web firmy Microsoft i Xamarin zawierają informacje na temat sposobu wykonania tej czynności:
+Witryny sieci web platformy Xamarin i Microsoft zawierają informacje na temat sposobu, w tym:
 
-- [Rozpoczynanie pracy z systemem iOS](~/ios/get-started/index.md)
-- [Wprowadzenie do korzystania z systemu Android](~/android/get-started/index.md)
-- [Centrum deweloperów systemu Windows](http://dev.windows.com)
+- [Wprowadzenie do systemu iOS](~/ios/get-started/index.md)
+- [Wprowadzenie do systemu Android](~/android/get-started/index.md)
+- [Centrum deweloperów Windows](http://dev.windows.com)
 
-Po utworzeniu i uruchomić projektów dla tych poszczególnych platform, powinien mieć żadnych problemów, tworzenie i uruchamianie aplikacji platformy Xamarin.Forms.
+Po utworzeniu i uruchamiania projektów dla tych poszczególnych platform, powinien mieć żadnych problemów, tworzenie i uruchamianie aplikacji platformy Xamarin.Forms.
 
 
 

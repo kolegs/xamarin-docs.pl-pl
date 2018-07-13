@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 4a97bec37c99209fa6de26a08f8bde44753d0f2d
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986203"
+ms.locfileid: "38996389"
 ---
 # <a name="android-platform-specifics"></a>Android specyficznych dla platformy
 
@@ -21,10 +21,10 @@ _Zezwalaj na specyficznych dla platformy, umożliwiają korzystanie z funkcji, k
 W systemie Android Xamarin.Forms zawiera następujące specyficznych dla platformy:
 
 - Ustawianie trybu operacyjne klawiatura programowa. Aby uzyskać więcej informacji, zobacz [Ustawianie nietrwałego trybu wejście klawiatury](#soft_input_mode).
-- Włączenie szybkie przewijanie [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Aby uzyskać więcej informacji, zobacz [umożliwiające szybkie przewijanie w ListView](#fastscroll).
-- Włączanie, szybko przesuwając między stronami w [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Aby uzyskać więcej informacji, zobacz [Włączanie szybko przesuwając między stronami w TabbedPage](#enable_swipe_paging).
+- Włączenie szybkie przewijanie [ `ListView` ](xref:Xamarin.Forms.ListView) Aby uzyskać więcej informacji, zobacz [umożliwiające szybkie przewijanie w ListView](#fastscroll).
+- Włączanie, szybko przesuwając między stronami w [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Aby uzyskać więcej informacji, zobacz [Włączanie szybko przesuwając między stronami w TabbedPage](#enable_swipe_paging).
 - Kontrolowanie porządek elementów wizualnych, aby określić kolejność rysowania. Aby uzyskać więcej informacji, zobacz [kontrolowanie podniesienia uprawnień elementów wizualnych](#elevation).
-- Wyłączanie [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) i [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) strony zdarzenia cyklu życia na wstrzymanie i wznowienie odpowiednio dla aplikacji, które używają AppCompat. Aby uzyskać więcej informacji, zobacz [wyłączanie Disappearing i pojawiają się zdarzenia cyklu życia strony](#disable_lifecycle_events).
+- Wyłączanie [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) i [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) strony zdarzenia cyklu życia na wstrzymanie i wznowienie odpowiednio dla aplikacji, które używają AppCompat. Aby uzyskać więcej informacji, zobacz [wyłączanie Disappearing i pojawiają się zdarzenia cyklu życia strony](#disable_lifecycle_events).
 - Kontrolowanie czy [ `WebView` ](xref:Xamarin.Forms.WebView) można wyświetlić zawartości mieszanej. Aby uzyskać więcej informacji, zobacz [Włączanie mieszanej zawartości w widoku sieci Web](#webview-mixed-content).
 - Ustawianie metodę wprowadzania opcji edytora dla klawiatura programowa dla [ `Entry` ](xref:Xamarin.Forms.Entry). Aby uzyskać więcej informacji, zobacz [Opcje ustawienia wpisu Input Method Editor](#entry-imeoptions).
 - Wyłączenie trybu kolorów starszej wersji w obsługiwanej [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Aby uzyskać więcej informacji, zobacz [wyłączenie starszej wersji trybu kolorów](#legacy-color-mode).
@@ -35,7 +35,7 @@ W systemie Android Xamarin.Forms zawiera następujące specyficznych dla platfor
 
 ## <a name="setting-the-soft-keyboard-input-mode"></a>Ustawienie trybu wprowadzania klawiatura programowa
 
-Określonych platform służy do ustawiania trybu pracy dla obszaru danych wejściowych klawiatura programowa i jest używany w XAML, ustawiając [ `Application.WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/) dołączona właściwość na wartość [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Wyliczanie:
+Określonych platform służy do ustawiania trybu pracy dla obszaru danych wejściowych klawiatura programowa i jest używany w XAML, ustawiając [ `Application.WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) dołączona właściwość na wartość [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) Wyliczanie:
 
 ```xaml
 <Application ...
@@ -55,7 +55,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-`Application.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `Application.UseWindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do ustawiania trybu pracy obszar wejścia klawiatura programowa z [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) wyliczenie, zapewniając dwóch wartości: [ `Pan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan/) i [ `Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/). `Pan` Wartość używa [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) opcji dostosowania, która nie zmienia rozmiaru okna, po aktywowaniu kontrolkę wejściową. Zamiast tego są panned zawartość okna, tak, aby bieżący fokus nie zostanie przesłonięty przez klawiatura programowa. `Resize` Wartość używa [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) opcji dostosowywania, która zmienia rozmiar okna, gdy kontrolkę wejściową ma fokus, aby zwolnić miejsce dla klawiatura programowa.
+`Application.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `Application.UseWindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do ustawiania trybu pracy obszar wejścia klawiatura programowa z [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) wyliczenie, zapewniając dwóch wartości: [ `Pan` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) i [ `Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize). `Pan` Wartość używa [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) opcji dostosowania, która nie zmienia rozmiaru okna, po aktywowaniu kontrolkę wejściową. Zamiast tego są panned zawartość okna, tak, aby bieżący fokus nie zostanie przesłonięty przez klawiatura programowa. `Resize` Wartość używa [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) opcji dostosowywania, która zmienia rozmiar okna, gdy kontrolkę wejściową ma fokus, aby zwolnić miejsce dla klawiatura programowa.
 
 Wynik jest, że klawiatura programowa wprowadź obszar, w którym można ustawić trybu pracy po aktywowaniu kontrolkę wejściową:
 
@@ -65,7 +65,7 @@ Wynik jest, że klawiatura programowa wprowadź obszar, w którym można ustawi�
 
 ## <a name="enabling-fast-scrolling-in-a-listview"></a>Włączenie szybkie przewijanie w ListView
 
-Określonych platform umożliwia szybkie przewijanie za dane w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Jest używany w XAML, ustawiając `ListView.IsFastScrollEnabled` dołączonych właściwości `boolean` wartość:
+Określonych platform umożliwia szybkie przewijanie za dane w [ `ListView` ](xref:Xamarin.Forms.ListView). Jest używany w XAML, ustawiając `ListView.IsFastScrollEnabled` dołączonych właściwości `boolean` wartość:
 
 ```xaml
 <ContentPage ...
@@ -95,13 +95,13 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-`ListView.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. `ListView.SetIsFastScrollEnabled` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw, umożliwia szybkie przewijanie za dane w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Ponadto `SetIsFastScrollEnabled` metoda może służyć do przełączenia, szybkie przewijanie, wywołując `IsFastScrollEnabled` metodę, aby zwrócić na to, czy włączono szybkie przewijanie:
+`ListView.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. `ListView.SetIsFastScrollEnabled` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw, umożliwia szybkie przewijanie za dane w [ `ListView` ](xref:Xamarin.Forms.ListView). Ponadto `SetIsFastScrollEnabled` metoda może służyć do przełączenia, szybkie przewijanie, wywołując `IsFastScrollEnabled` metodę, aby zwrócić na to, czy włączono szybkie przewijanie:
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-Wynik jest, że szybkie przewijanie dane w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) można włączyć, który zmienia rozmiar przycisku przewijania suwaka:
+Wynik jest, że szybkie przewijanie dane w [ `ListView` ](xref:Xamarin.Forms.ListView) można włączyć, który zmienia rozmiar przycisku przewijania suwaka:
 
 [![](android-images/fastscroll.png "ListView FastScroll specyficzne dla platformy")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
@@ -109,7 +109,7 @@ Wynik jest, że szybkie przewijanie dane w [ `ListView` ](https://developer.xama
 
 ## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>Włączanie, szybko przesuwając między stronami w TabbedPage
 
-To specyficzne dla platformy jest używana do włączenia, szybko przesuwając za pomocą gestu poziomy finger między stronami w [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Jest używany w XAML, ustawiając [ `TabbedPage.IsSwipePagingEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/) dołączonych właściwości `boolean` wartość:
+To specyficzne dla platformy jest używana do włączenia, szybko przesuwając za pomocą gestu poziomy finger między stronami w [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Jest używany w XAML, ustawiając [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) dołączonych właściwości `boolean` wartość:
 
 ```xaml
 <TabbedPage ...
@@ -131,9 +131,9 @@ On<Android>().SetOffscreenPageLimit(2)
              .SetIsSwipePagingEnabled(true);
 ```
 
-`TabbedPage.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do włączenia, szybko przesuwając między stronami w [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Ponadto `TabbedPage` klasy w `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` przestrzeni nazw ma również [ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) metodę, która umożliwia tym specyficzne dla platformy, a [ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) metodę, która wyłącza to specyficzne dla platformy. [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/) Dołączona właściwość, a [ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/) metody są używane do ustawiania liczbę stron, które ma być przechowywana w stanie bezczynności, po obu stronach bieżącej strony.
+`TabbedPage.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetIsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled(Xamarin.Forms.BindableObject,System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do włączenia, szybko przesuwając między stronami w [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Ponadto `TabbedPage` klasy w `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` przestrzeni nazw ma również [ `EnableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) metodę, która umożliwia tym specyficzne dla platformy, a [ `DisableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) metodę, która wyłącza to specyficzne dla platformy. [ `TabbedPage.OffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty) Dołączona właściwość, a [ `SetOffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit(Xamarin.Forms.BindableObject,System.Int32)) metody są używane do ustawiania liczbę stron, które ma być przechowywana w stanie bezczynności, po obu stronach bieżącej strony.
 
-Wynik jest tego przesunięcia stronicować stron wyświetlanych przez [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) jest włączona:
+Wynik jest tego przesunięcia stronicować stron wyświetlanych przez [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) jest włączona:
 
 ![](android-images/tabbedpage-swipe.png)
 
@@ -202,9 +202,9 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. `VisualElement.SetElevation` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do ustawiania podniesienie poziomu elementu wizualnego do dopuszczający wartości null `float`. Ponadto `VisualElement.GetElevation` metoda może służyć do pobierania wartości podniesienie poziomu elementu wizualnego.
+`Button.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. `VisualElement.SetElevation` Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do ustawiania podniesienie poziomu elementu wizualnego do dopuszczający wartości null `float`. Ponadto `VisualElement.GetElevation` metoda może służyć do pobierania wartości podniesienie poziomu elementu wizualnego.
 
-Powoduje to, że podwyższenie poziomu elementy wizualne mogą być kontrolowane tak, aby elementy wizualne o wyższych wartościach Z occlude elementy wizualne o niższych wartościach Z. W związku z tym, w tym przykładzie druga [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) jest renderowany powyżej [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) ma on wyższą wartość podniesienia uprawnień:
+Powoduje to, że podwyższenie poziomu elementy wizualne mogą być kontrolowane tak, aby elementy wizualne o wyższych wartościach Z occlude elementy wizualne o niższych wartościach Z. W związku z tym, w tym przykładzie druga [ `Button` ](xref:Xamarin.Forms.Button) jest renderowany powyżej [ `BoxView` ](xref:Xamarin.Forms.BoxView) ma on wyższą wartość podniesienia uprawnień:
 
 ![](android-images/elevation.png)
 
@@ -212,12 +212,12 @@ Powoduje to, że podwyższenie poziomu elementy wizualne mogą być kontrolowane
 
 ## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Wyłączanie znikający i umieszczone zdarzenia cyklu życia strony
 
-To specyficzne dla platformy jest używana do wyłączenia [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) i [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) zdarzenia strony aplikacji wstrzymać i wznowić odpowiednio dla aplikacji, które używają AppCompat. Ponadto obejmuje możliwość kontrolowania, czy klawiatura programowa jest wyświetlany po wznowieniu, jeśli został wyświetlony na temat wstrzymywania, pod warunkiem, że ustawiono tryb eksploatacji klawiatura programowa [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+To specyficzne dla platformy jest używana do wyłączenia [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) i [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) zdarzenia strony aplikacji wstrzymać i wznowić odpowiednio dla aplikacji, które używają AppCompat. Ponadto obejmuje możliwość kontrolowania, czy klawiatura programowa jest wyświetlany po wznowieniu, jeśli został wyświetlony na temat wstrzymywania, pod warunkiem, że ustawiono tryb eksploatacji klawiatura programowa [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
 > [!NOTE]
 > Należy pamiętać, że te zdarzenia są włączone domyślnie, aby zachować istniejące zachowanie dla aplikacji, które zależą od zdarzenia. Wyłączenie tych zdarzeń sprawia, że cykl zdarzeń AppCompat dopasowania pre AppCompat cykl zdarzeń.
 
-Określonych platform mogą być używane w XAML, ustawiając [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/), [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/), i [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/) dołączonych właściwości do `boolean` wartości:
+Określonych platform mogą być używane w XAML, ustawiając [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty), [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty), i [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) dołączonych właściwości do `boolean` wartości:
 
 ```xaml
 <Application ...
@@ -245,9 +245,9 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-`Application.Current.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/) przestrzeni nazw jest używana do włączania lub wyłączania uruchomieniu którego [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) zdarzeń strony, gdy aplikacja wprowadza tła. [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metoda jest używana do włączania lub wyłączania uruchomieniu którego [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) zdarzeń strony, po wznowieniu działania aplikacji w tle. [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metoda jest używana kontrolka czy klawiatura programowa jest wyświetlany po wznowieniu, jeśli został wyświetlony na temat wstrzymywania, pod warunkiem że tryb eksploatacji klawiatura programowa jest ustawiona na [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+`Application.Current.On<Android>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie Android. [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) przestrzeni nazw jest używana do włączania lub wyłączania uruchomieniu którego [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) zdarzeń strony, gdy aplikacja wprowadza tła. [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metoda jest używana do włączania lub wyłączania uruchomieniu którego [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) zdarzeń strony, po wznowieniu działania aplikacji w tle. [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metoda jest używana kontrolka czy klawiatura programowa jest wyświetlany po wznowieniu, jeśli został wyświetlony na temat wstrzymywania, pod warunkiem że tryb eksploatacji klawiatura programowa jest ustawiona na [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
-W wyniku [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) i [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) zdarzenia strony nie będzie uruchamiany na temat wstrzymywania aplikacji i wznowić odpowiednio i że jeśli klawiatura programowa był wyświetlany, gdy aplikacja został wstrzymany, będzie również wyświetlana po wznowieniu działania aplikacji:
+W wyniku [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) i [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) zdarzenia strony nie będzie uruchamiany na temat wstrzymywania aplikacji i wznowić odpowiednio i że jeśli klawiatura programowa był wyświetlany, gdy aplikacja został wstrzymany, będzie również wyświetlana po wznowieniu działania aplikacji:
 
 [![](android-images/keyboard-on-resume.png "Cykl życia zdarzenia specyficzne dla platformy")](android-images/keyboard-on-resume-large.png#lightbox "cyklu życia zdarzenia specyficzne dla platformy")
 
@@ -435,7 +435,7 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>` Metoda określa, że te specyficznych dla platformy będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) przestrzeni nazw jest używana do ustawiania położenia paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), za pomocą [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) wyliczenie, podając następujące wartości:
+`TabbedPage.On<Android>` Metoda określa, że te specyficznych dla platformy będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do ustawiania położenia paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), za pomocą [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) wyliczenie, podając następujące wartości:
 
 - [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) — Wskazuje, że pasek narzędzi jest umieszczany w lokalizacji domyślnej na stronie. Jest to górnej części strony na telefonach i dolnej części strony na inne idiomy urządzenia.
 - [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) — Wskazuje, że pasek narzędzi znajduje się w górnej części strony.
@@ -446,7 +446,7 @@ Ponadto [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/x
 > [!NOTE]
 > [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), I [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) metody może służyć do pobierania, położenie i kolor [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) paska narzędzi.
 
-Wynik jest, że położenie paska narzędzi, kolor elementów paska narzędzi i kolor elementu wybranych narzędzi można ustawić na [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/):
+Wynik jest, że położenie paska narzędzi, kolor elementów paska narzędzi i kolor elementu wybranych narzędzi można ustawić na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 
 ![](android-images/tabbedpage-toolbar-placement.png)
 
@@ -458,5 +458,5 @@ W tym artykule pokazano, jak używać systemu Android specyficznych dla platform
 
 - [Tworzenie funkcji specyficznych dla platformy](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
-- [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)
+- [AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific.AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

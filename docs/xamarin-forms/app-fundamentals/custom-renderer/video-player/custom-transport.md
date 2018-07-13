@@ -1,28 +1,28 @@
 ---
-title: Formanty niestandardowe transportu wideo
-description: W tym artykule opisano sposób wdrożenia formantów niestandardowych transportu w aplikacji odtwarzacza wideo, za pomocą platformy Xamarin.Forms.
+title: Kontrolki niestandardowe transportu filmu wideo
+description: W tym artykule wyjaśniono, jak zaimplementować transport w niestandardowych formantów w aplikacji odtwarzacza wideo przy użyciu zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a20c68d5f86dad852a4425206846292c1c6c5838
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241663"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996441"
 ---
-# <a name="custom-video-transport-controls"></a>Formanty niestandardowe transportu wideo
+# <a name="custom-video-transport-controls"></a>Kontrolki niestandardowe transportu filmu wideo
 
-Formanty transportu odtwarzacza wideo obejmują przycisków wykonywania funkcji **odtwarzanie**, **Wstrzymaj**, i **zatrzymać**. Przyciski te zwykle są oznaczone symbolem znane ikony zamiast tekstu i **odtwarzanie** i **Wstrzymaj** funkcje zazwyczaj są połączone w jeden z przycisków.
+Kontrolki transportu odtwarzacza wideo obejmują przyciski, które wykonują funkcje **Odtwórz**, **Wstrzymaj**, i **zatrzymać**. Przyciski te zazwyczaj są identyfikowane za pomocą dobrze znanych ikony zamiast tekstu i **odtwarzania** i **Wstrzymaj** funkcje zwykle są połączone w jeden z przycisków.
 
-Domyślnie `VideoPlayer` Wyświetla transportu formanty obsługiwane przez poszczególnych platform. Podczas ustawiania `AreTransportControlsEnabled` właściwości `false`, będą pomijane tych kontrolek. Następnie można kontrolować `VideoPlayer` programowo lub podać własne kontrolki transportu.
+Domyślnie `VideoPlayer` Wyświetla transportu kontrolek obsługiwanych przez każdej z platform. Po ustawieniu `AreTransportControlsEnabled` właściwości `false`, te kontrolki są pomijane. Pozwala to sterować `VideoPlayer` programowo lub podać własne kontrolki transportu.
 
-## <a name="the-play-pause-and-stop-methods"></a>Metody Play, Wstrzymaj i Zatrzymaj
+## <a name="the-play-pause-and-stop-methods"></a>Odtwórz, Wstrzymaj i Zatrzymaj metody
 
-`VideoPlayer` Klasa definiuje trzy metody o nazwie `Play`, `Pause`, i `Stop` który są implementowane przez wyzwalania zdarzenia:
+`VideoPlayer` Klasa definiuje trzy metody o nazwie `Play`, `Pause`, i `Stop` implementowane przez wyzwalanie zdarzeń:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -56,9 +56,9 @@ namespace FormsVideoLibrary
 
 Programy obsługi zdarzeń dla zdarzenia te są ustawiane przez `VideoPlayerRenderer` klasy w każdej z platform, jak pokazano poniżej:
 
-### <a name="ios-transport-implementations"></a>implementacje transportu z systemem iOS
+### <a name="ios-transport-implementations"></a>iOS transportu implementacji
 
-Wersja systemu iOS `VideoPlayerRenderer` używa `OnElementChanged` metodę, aby ustawić programy obsługi dla tych trzech zdarzeń po `NewElement` właściwość nie jest `null` i odłącza obsługi zdarzeń podczas `OldElement` nie jest `null`:
+Wersja systemu iOS `VideoPlayerRenderer` używa `OnElementChanged` metodę, aby ustawić programy obsługi dla tych trzech zdarzeń podczas `NewElement` właściwość nie jest `null` oraz odłącza procedury obsługi zdarzeń podczas `OldElement` nie jest `null`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Programy obsługi zdarzeń są implementowane przez wywołanie metody na `AVPlayer` obiektu. Brak nie `Stop` metodę `AVPlayer`, więc jest symulowany wstrzymywania wideo i przeniesienie pozycji na początku.
+Programy obsługi zdarzeń są implementowane przez wywołanie metody w `AVPlayer` obiektu. Istnieje nie `Stop` metodę `AVPlayer`, więc jest symulowane wstrzymywanie wideo i przenosząc pozycji na początku.
 
 ### <a name="android-transport-implementations"></a>Implementacje transportu dla systemu android
 
-Implementacja systemu Android jest podobna do wykonania dla systemu iOS. Programy obsługi trzy funkcje są ustawiane podczas `NewElement` nie jest `null` i odłączyć, kiedy `OldElement` nie jest `null`:
+Implementacja systemu Android jest podobny do wykonania dla systemu iOS. Programy obsługi dla trzech funkcji są ustawiane podczas `NewElement` nie `null` i odłączyć, kiedy `OldElement` nie `null`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -162,7 +162,7 @@ Trzy funkcje wywołań metody zdefiniowane przez `VideoView`.
 
 ### <a name="uwp-transport-implementations"></a>Implementacje transportu platformy uniwersalnej systemu Windows
 
-Implementacja platformy uniwersalnej systemu Windows funkcji transportu trzy jest bardzo podobny do implementacji systemu Android i iOS:
+Implementacja platformy uniwersalnej systemu Windows funkcji transportu trzy jest bardzo podobny do systemów iOS i Android implementacji:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -210,11 +210,11 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>Stan odtwarzacza wideo
 
-Implementowanie **odtwarzanie**, **Wstrzymaj**, i **zatrzymać** funkcje nie są wystarczające do obsługi kontroli transportu. Często **odtwarzanie** i **Wstrzymaj** polecenia są implementowane przy użyciu tego samego przycisku, który zmienia jego wygląd, aby wskazać, czy plik wideo jest aktualnie wstrzymana lub odtwarzania. Ponadto przycisku nawet nie powinny być włączone, jeśli wideo nie została jeszcze załadowana.
+Implementowanie **Odtwórz**, **Wstrzymaj**, i **zatrzymać** funkcje nie są wystarczające do obsługi formantów transportu. Często **Odtwórz** i **Wstrzymaj** polecenia są implementowane za pomocą tego samego przycisku, który zmienia jego wygląd, aby wskazać, czy wideo jest obecnie wstrzymana lub odtwarzania. Ponadto z przycisku nie powinien włączone nawet wideo nie została jeszcze załadowana.
 
-Te wymagania oznaczać odtwarzacza wideo należy udostępnić wskazująca bieżący stan, jeśli jego odtwarzanie lub wstrzymana lub nie jest jeszcze gotowa do odtwarzania wideo. (Trzy platformy obsługują także właściwości, które wskazują, czy plik wideo można wstrzymywać lub mogą zostać przeniesione do nowej pozycji, ale te właściwości są stosowane do strumieniowego przesyłania wideo, a nie plików wideo, więc nie są obsługiwane w `VideoPlayer` opisanych tutaj.)
+Te wymagania oznacza, że odtwarzacza wideo musi udostępnić wskazująca bieżący stan przypadku jego odtwarzanie lub wstrzymana, lub jeśli nie jest jeszcze gotowy do odtwarzania wideo. (Trzech platformach obsługują także właściwości, które wskazują, jeśli wideo może być wstrzymana lub mogą zostać przeniesione do nowej pozycji, ale te właściwości są odpowiednie dla przesyłanie strumieniowe filmów wideo, a nie plików wideo, dzięki czemu nie są obsługiwane w `VideoPlayer` opisane w tym miejscu.)
 
-**VideoPlayerDemos** projekt zawiera `VideoStatus` wyliczenie z trzech elementów członkowskich:
+**VideoPlayerDemos** projekt zawiera `VideoStatus` wyliczenie z trzema elementami członkowskimi:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`VideoPlayer` Klasa definiuje właściwość można powiązać tylko do rzeczywistego o nazwie `Status` typu `VideoStatus`. Ta właściwość jest zdefiniowana jako tylko do odczytu, ponieważ może zostać ustawiona tylko z renderowania platformy:
+`VideoPlayer` Klasy definiuje tylko do rzeczywistego powiązać właściwości o nazwie `Status` typu `VideoStatus`. Ta właściwość jest zdefiniowana jako tylko do odczytu, ponieważ może zostać ustawiona tylko od programu renderującego platformy:
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Zwykle, które można powiązać właściwości tylko do odczytu musi prywatnej `set` akcesor na `Status` właściwości, aby zezwalała na można ustawić z należące do klasy. Aby uzyskać `View` zależnych obsługiwanych przez moduły renderowania, jednak należy ustawić właściwość z poza klasą, ale tylko przez moduł renderowania platformy.
+Zwykle, tylko do odczytu właściwości możliwej do wiązania miałby prywatnej `set` dostępu na `Status` właściwości, aby zezwalała na nelze nastavit od tej klasy. Aby uzyskać `View` utworów zależnych, obsługiwane przez programy renderujące, jednak musi być ustawiona właściwość z poza klasy, ale tylko przez moduł renderowania platformy.
 
-Z tego powodu zdefiniowano inna właściwość o nazwie `IVideoPlayerController.Status`. To jest jawnej implementacji interfejsu i jest możliwe przez `IVideoPlayerController` interfejsu `VideoPlayer` implementuje klasy:
+Z tego powodu zdefiniowano innej właściwości o nazwie `IVideoPlayerController.Status`. To jest jawną implementacją interfejsu i jest możliwe, `IVideoPlayerController` interfejs, który `VideoPlayer` klasy implementuje:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,11 +276,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Ten jest podobny do sposobu [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) kontrolować używa [ `IWebViewController` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IWebViewController/) interfejs do implementacji `CanGoBack` i `CanGoForward` właściwości. (Zobacz kod źródłowy [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) i jego moduły renderowania, aby uzyskać więcej informacji.)
+Jest to podobne jak [ `WebView` ](xref:Xamarin.Forms.WebView) kontrolować używa [ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController) interfejs do implementacji `CanGoBack` i `CanGoForward` właściwości. (Zobacz kod źródłowy [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) i jego programy renderujące, aby uzyskać szczegółowe informacje.)
 
-Dzięki temu klasy zewnętrzne `VideoPlayer` można ustawić `Status` właściwość przez odwołanie `IVideoPlayerController` interfejsu. (Zobaczysz kod wkrótce.) Można ustawić właściwości z również inne klasy, ale jest mało prawdopodobne, należy ustawić wartość przypadkowo. Przede wszystkim `Status` nie można ustawić właściwości za pośrednictwem powiązania danych.
+Dzięki temu możliwe dla klasy zewnętrzne w stosunku do `VideoPlayer` można ustawić `Status` właściwość przez odwołanie się do `IVideoPlayerController` interfejsu. (W wkrótce będzie wyświetlany jest kod.) Można ustawić właściwości, z również inne klasy, ale jest mało prawdopodobne, należy ustawić przypadkowo. Co najważniejsze `Status` właściwości nie można ustawić za pomocą powiązania danych.
 
-Ułatwienie renderowania w zapewnieniu to `Status` właściwość zaktualizowana, `VideoPlayer` klasa definiuje `UpdateStatus` zdarzenie wyzwalane co dziesiątym dniu sekundy:
+Ułatwiają renderowania w ochronie to `Status` właściwość zaktualizowana, `VideoPlayer` klasa definiuje `UpdateStatus` zdarzeń, który jest wyzwalany co dziesiątej sekundy:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -302,9 +302,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-### <a name="the-ios-status-setting"></a>Ustawienie stanu systemu iOS
+### <a name="the-ios-status-setting"></a>Ustawienia stanu dla systemu iOS
 
-IOS `VideoPlayerRenderer` Ustawia program obsługi dla `UpdateStatus` zdarzenia (i odłącza programu obsługi podczas odpowiadającego `VideoPlayer` element nie istnieje) i używa programu obsługi, aby ustawić `Status` właściwości:
+Systemu iOS `VideoPlayerRenderer` Ustawia program obsługi `UpdateStatus` zdarzeń (oraz odłącza programu obsługi podczas bazowego `VideoPlayer` element nie istnieje) i używa program obsługi, aby ustawić `Status` właściwości:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Dwie właściwości `AVPlayer` muszą być dostępne: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) właściwości typu `AVPlayerStatus` i [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) właściwości typu `AVPlayerTimeControlStatus`. Zwróć uwagę, że `Element` właściwości (czyli `VideoPlayer`) musi być rzutowane na `IVideoPlayerController` można ustawić `Status` właściwości.
+Dwie właściwości `AVPlayer` muszą być dostępne: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) właściwości typu `AVPlayerStatus` i [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) właściwości typu `AVPlayerTimeControlStatus`. Należy zauważyć, że `Element` właściwości (czyli `VideoPlayer`) musi być rzutowany `IVideoPlayerController` można ustawić `Status` właściwości.
 
-### <a name="the-android-status-setting"></a>Ustawienie stanu systemu Android
+### <a name="the-android-status-setting"></a>Ustawienia stanu dla systemu Android
 
-[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Właściwości Android `VideoView` jest wartością logiczną, wskazującą, tylko jeśli wideo jest wstrzymana lub odtwarzania. Aby ustalić, czy `VideoView` można ani play ani wstrzymać wideo jeszcze `Prepared` zdarzenie `VideoView` muszą być obsługiwane. Te dwa programy obsługi są ustawiane w `OnElementChanged` metody i odłączone podczas `Dispose` zastąpienia:
+[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Właściwość Android `VideoView` jest wartością logiczną, wskazującą, tylko jeśli wideo jest wstrzymana lub odtwarzania. Aby ustalić, czy `VideoView` można ani play ani wstrzymanie odtwarzania filmu od jeszcze `Prepared` zdarzenia `VideoView` muszą być obsługiwane. Te dwie procedury obsługi są ustawiane w `OnElementChanged` metody i odłączone podczas `Dispose` zastąpienia:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`UpdateStatus` Program obsługi używa `isPrepared` pola (w `Prepared` obsługi) i `IsPlaying` właściwości można ustawić `Status` właściwości:
+`UpdateStatus` Program obsługi używa `isPrepared` pola (w `Prepared` obsługi) oraz `IsPlaying` właściwość umożliwiająca ustawienie `Status` właściwości:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -447,9 +447,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-status-setting"></a>Ustawienie stanu platformy uniwersalnej systemu Windows
+### <a name="the-uwp-status-setting"></a>Ustawienia stanu platformy uniwersalnej systemu Windows
 
-UWP `VideoPlayerRenderer` sprawia, że użycie `UpdateStatus` zdarzeń, ale nie musi ona ustawienia `Status` właściwości. `MediaElement` Definiuje [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) zdarzenie, które umożliwia renderującego zgłaszane po [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) właściwość zostanie zmieniona. Właściwość jest odłączana w `Dispose` zastąpienia:
+Platformy UWP `VideoPlayerRenderer` sprawia, że użycie `UpdateStatus` zdarzenia, ale nie musi ona ustawienie `Status` właściwości. `MediaElement` Definiuje [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) zdarzeń, który umożliwia modułu renderowania Aby otrzymywać powiadomienia, gdy [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) właściwości została zmieniona. Właściwość jest odłączana w `Dispose` zastąpienia:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -487,7 +487,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`CurrentState` Właściwość jest typu [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)i łatwo mapuje na `VideoStatus`:
+`CurrentState` Właściwość jest typu [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)i łatwo mapuje do `VideoStatus`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -518,27 +518,27 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="play-pause-and-stop-buttons"></a>Odtwórz, Wstrzymaj i Zatrzymaj przycisków
+## <a name="play-pause-and-stop-buttons"></a>Odtwórz, Pauza i Zatrzymaj przycisków
 
-Przy użyciu znaków Unicode dla symboliczne **odtwarzanie**, **Wstrzymaj**, i **zatrzymać** obrazów jest problematyczne. [Różne techniczne](https://unicode-table.com/en/blocks/miscellaneous-technical/) sekcji standardu Unicode określa trzy znaki symboli pozornie odpowiednie do tego celu. Są to:
+Przy użyciu znaków Unicode dla symboliczne **Odtwórz**, **Wstrzymaj**, i **zatrzymać** obrazów jest problematyczne. [Różne techniczne](https://unicode-table.com/en/blocks/miscellaneous-technical/) sekcji w standardzie Unicode definiuje trzy znaki symboli pozornie odpowiednie do tego celu. Są to:
 
-- 0x23F5 (czarny średnia wskazująca w prawo trójkąt) lub &#x23F5; dla **odtwarzania**
-- 0x23F8 (dwa razy pionowy pasek) lub &#x23F8; dla **Wstrzymaj**
-- 0x23F9 (czarny kwadrat) lub &#x23F9; dla **zatrzymania**
+- 0x23F5 (czarne średnie skierowaną w prawo trójkąt) lub &#x23F5; dla **odtwarzania**
+- 0x23F8 (Podwójna kreska pionowa) lub &#x23F8; dla **wstrzymania**
+- 0x23F9 (czarne kwadrat) lub &#x23F9; dla **Stop**
 
-Niezależnie od sposobu te symbole są wyświetlane w przeglądarce (i różnych przeglądarkach obsługi je na różne sposoby), nie są wyświetlane spójnie na platformach obsługiwanych przez platformy Xamarin.Forms. W systemach iOS i urządzenia platformy uniwersalnej systemu Windows **Wstrzymaj** i **zatrzymać** znaków ma wygląd graficzny, niebieski tła 3W i białe pierwszego planu. To nie jest w systemie Android, w którym symbol jest po prostu niebieski. Jednak 0x23F5 punktów kodowych znaków dwuskładnikowych dla **odtwarzanie** nie ma czy sam wygląd na platformy uniwersalnej systemu Windows, a nawet nie jest obsługiwana w systemach iOS i Android.
+Niezależnie od tego jak te symbole są wyświetlane w przeglądarce i różnych przeglądarek obsługiwać je na różne sposoby, nie są wyświetlane spójnie na platformach obsługiwanych przez zestaw narzędzi Xamarin.Forms. Na urządzeniach platformy uniwersalnej systemu Windows i iOS **Wstrzymaj** i **zatrzymać** znaki mają wygląd graficzny, z niebieskim tłem 3D i białe pierwszego planu. Nie jest to przypadek, w systemie Android, w której symbol jest po prostu niebieski. Jednak punktu kodu 0x23F5 dla **Odtwórz** nie ma ona, że tego samego wygląd na platformy uniwersalnej systemu Windows, a nawet jest obsługiwana w systemach iOS i Android.
 
-Z tego powodu nie można używać punktów 0x23F5 **odtwarzanie**. Dobrym zastępuje jest:
+Z tego powodu nie można używać punktu kodu 0x23F5 **Odtwórz**. Jest dobrą:
 
-- 0x25B6 (czarny trójkąt wskazująca w prawo) lub &#x25B6; dla **odtwarzania**
+- 0x25B6 (czarny trójkąt skierowaną w prawo) lub &#x25B6; dla **odtwarzania**
 
-Jest to obsługiwane przez wszystkie trzy platformy, z tą różnicą, że jest zwykły trójkąt czarny, który wygląda inaczej wygląd 3D **Wstrzymaj** i **zatrzymać**. Wykonaj 0x25B6 punktów kodowych znaków dwuskładnikowych z kodem wariantu jest jedną z możliwości:
+Jest to obsługiwane przez wszystkich trzech platformach, z tą różnicą, że to zwykły czarny trójkąt, który wygląda inaczej niż wygląd 3D **Wstrzymaj** i **zatrzymać**. Jedną z możliwości jest postępuj zgodnie z punktu kodu 0x25B6 variant kodem:
 
 - 0x25B6 następuje 0xFE0F (wariant 16) lub &#x25B6; &#xFE0F; dla **odtwarzania**
 
-Jest to, co jest używany w znaczniku pokazano poniżej. W systemach iOS, daje **odtwarzanie** symbolu sam wygląd 3D jako **Wstrzymaj** i **zatrzymać** przycisków, ale wariantu nie działa w systemach Android i platformy uniwersalnej systemu Windows.
+Jest to, co jest używany w znaczniku, pokazano poniżej. W systemach iOS, zapewnia **Odtwórz** symboli tego samego wygląd 3D jako **Wstrzymaj** i **zatrzymać** przyciski, ale wariant nie działa w systemach Android i platformy uniwersalnej systemu Windows.
 
-**Transportu niestandardowe** strony zestawy **AreTransportControlsEnabled** właściwości **false** i zawiera `ActivityIndicator` wyświetlany podczas ładowania wideo i dwa przyciski. `DataTrigger` obiekty służą do włączania i wyłączania `ActivityIndicator` i przyciski i aby przełączyć przycisku pierwszej między **odtwarzanie** i **Wstrzymaj**:
+**Transport w niestandardowych** stronie zestawy **AreTransportControlsEnabled** właściwości **false** i zawiera `ActivityIndicator` wyświetlany podczas ładowania wideo i dwa przyciski. `DataTrigger` obiekty są używane do włączania i wyłączania `ActivityIndicator` i przyciski i aby przełączyć się pierwszy przycisk między **Odtwórz** i **Wstrzymaj**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ Jest to, co jest używany w znaczniku pokazano poniżej. W systemach iOS, daje *
 </ContentPage>
 ```
 
-Wyzwalacze danych opisano szczegółowo w artykule [wyzwalaczy danych](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Wyzwalacze danych są opisane szczegółowo w artykule [wyzwalaczy danych](~/xamarin-forms/app-fundamentals/triggers.md#data).
 
-Programy obsługi dla przycisku ma pliku CodeBehind `Clicked` zdarzenia:
+Plik związany z kodem ma programy obsługi dla przycisku `Clicked` zdarzenia:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,17 +645,17 @@ namespace VideoPlayerDemos
 }
 ```
 
-Ponieważ `AutoPlay` ustawiono `false` w **CustomTransport.xaml** pliku, konieczne będzie naciśnij **odtwarzania** przycisk włączenie staje się rozpocząć wideo. Przyciski są zdefiniowane tak, aby ich odpowiedniki tekstu towarzyszy znaków Unicode opisanych wyżej. Przyciski ma spójny wygląd na każdej platformie, podczas odtwarzania wideo:
+Ponieważ `AutoPlay` ustawiono `false` w **CustomTransport.xaml** pliku, należy nacisnąć klawisz **Odtwórz** przycisk włączenie staje się rozpocząć wideo. Przyciski są zdefiniowane tak, aby ich odpowiedniki tekstowe towarzyszy znaków Unicode, omówione powyżej. Przyciski mieć spójny wygląd na każdej platformie, podczas odtwarzania wideo:
 
-[![Odtwarzanie niestandardowych transportu](custom-transport-images/customtransportplaying-small.png "odtwarzanie niestandardowych transportu")](custom-transport-images/customtransportplaying-large.png#lightbox "odtwarzanie transportu niestandardowych")
+[![Odtwarzanie Transport w niestandardowych](custom-transport-images/customtransportplaying-small.png "odtwarzanie Transport w niestandardowych")](custom-transport-images/customtransportplaying-large.png#lightbox "odtwarzanie Transport w niestandardowych")
 
-Jednak w systemach Android i platformy uniwersalnej systemu Windows **odtwarzanie** przycisk wygląda bardzo różnią się, gdy wideo jest wstrzymane:
+Ale w systemach Android i platformy uniwersalnej systemu Windows **Odtwórz** przycisk wygląda bardzo różnią się, gdy wideo jest wstrzymane:
 
-[![Niestandardowe transportu wstrzymana](custom-transport-images/customtransportpaused-small.png "wstrzymana niestandardowych transportu")](custom-transport-images/customtransportpaused-large.png#lightbox "wstrzymana transportu niestandardowych")
+[![Wstrzymano Transport w niestandardowych](custom-transport-images/customtransportpaused-small.png "wstrzymana Transport w niestandardowych")](custom-transport-images/customtransportpaused-large.png#lightbox "wstrzymana Transport w niestandardowych")
 
-W aplikacji produkcyjnej prawdopodobnie należy do wykorzystania własnych obrazów mapy bitowej przycisków do osiągnięcia jednolitość visual.
+W przypadku aplikacji produkcyjnej będzie prawdopodobnie chcesz użyć własne obrazy mapy bitowej dla przycisków, aby osiągnąć zgodność visual.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pokazy odtwarzacza wideo (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Wideo demonstracyjne Player (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

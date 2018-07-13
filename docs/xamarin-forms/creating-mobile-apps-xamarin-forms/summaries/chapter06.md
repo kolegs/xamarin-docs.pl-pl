@@ -1,84 +1,84 @@
 ---
 title: Podsumowanie rozdział 6. Kliknięcie przycisku
-description: 'Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms: Podsumowanie rozdział 6. Kliknięcie przycisku'
+description: 'Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms: Podsumowanie rozdział 6. Kliknięcie przycisku'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9c8a4e6a6c4d62722e72ff3b27251987aa201284
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240752"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997175"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Podsumowanie rozdział 6. Kliknięcie przycisku
 
-[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Jest widok, który umożliwia użytkownikowi zainicjowania polecenia. A `Button` jest identyfikowany przez tekst (i opcjonalnie obrazu, jak pokazano w [13 rozdziału, mapy bitowe](chapter13.md)). W rezultacie `Button` definiuje wiele z tymi samymi właściwościami co `Label`:
+[ `Button` ](xref:Xamarin.Forms.Button) Jest widok, który umożliwia użytkownikowi zainicjowania polecenia. A `Button` jest identyfikowane za pomocą tekstu (i opcjonalnie obrazów, jak pokazano w [rozdział 13, mapy bitowe](chapter13.md)). W związku z tym `Button` definiuje wiele z tymi samymi właściwościami co `Label`:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/)
-- [`FontFamily`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontFamily/)
-- [`FontSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontSize/)
-- [`FontAttributes`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontAttributes/)
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.TextColor/)
+- [`Text`](xref:Xamarin.Forms.Button.Text)
+- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)
+- [`FontSize`](xref:Xamarin.Forms.Button.FontSize)
+- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)
+- [`TextColor`](xref:Xamarin.Forms.Button.TextColor)
 
-`Button` definiuje również trzech właściwości które będą zarządzały sposobem wygląd obramowania, ale obsługa tych właściwości, oraz ich wzajemne niezależność jest przeznaczona dla konkretnej platformy:
+`Button` definiuje również trzy właściwości regulują wygląd obramowania, ale obsługę tych właściwości i ich wzajemne niezależność jest przeznaczona dla konkretnej platformy:
 
-- [`BorderColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderColor/) typu `Color`
-- [`BorderWidth`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderWidth/) typu `Double`
-- [`BorderRadius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/) typu `Double`
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) tego typu `Color`
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) tego typu `Double`
+- [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) tego typu `Double`
 
-`Button` wszystkie właściwości dziedziczy także `VisualElement` i `View`, takie jak `BackgroundColor`, `HorizontalOptions`, i `VerticalOptions`.
+`Button` dziedziczy także wszystkie właściwości `VisualElement` i `View`, w tym `BackgroundColor`, `HorizontalOptions`, i `VerticalOptions`.
 
-## <a name="processing-the-click"></a>Następnie kliknij pozycję przetwarzania
+## <a name="processing-the-click"></a>Przetwarzanie kliknięcie
 
-`Button` Klasa definiuje [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) zdarzenie, które jest wywoływane po naciśnięciu `Button`. `Click` Program obsługi jest typu `EventHandler`. Pierwszy argument jest `Button` obiekt generowania zdarzenia; drugi argument jest `EventArgs` obiekt, który zapewnia żadnych dodatkowych informacji.
+`Button` Klasa definiuje [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) zdarzenia, które jest wywoływane, gdy użytkownik wybiera `Button`. `Click` Program obsługi jest typu `EventHandler`. Pierwszy argument jest `Button` obiektów, wygenerowanie zdarzenia; drugi argument funkcji jest `EventArgs` obiekt, który nie dostarcza żadnych dodatkowych informacji.
 
-[ **ButtonLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger) przykładzie pokazano prosty `Clicked` obsługi.
+[ **ButtonLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger) przykład pokazuje prosty `Clicked` obsługi.
 
-## <a name="sharing-button-clicks"></a>Przycisk udostępniania kliknie
+## <a name="sharing-button-clicks"></a>Udostępnianie przycisku kliknięcia
 
-Wiele `Button` widoki mogą udostępniać takie same `Clicked` obsługi, ale program obsługi zwykle musi ustalić, który `Button` jest odpowiedzialny za określonego zdarzenia. Jednym z podejść jest do zapisywania różnych `Button` obiektów, a pola wyboru, które z nich jest wyzwoleniem zdarzenia programu obsługi.
+Wiele `Button` widoki mogą współużytkować ten sam `Clicked` program obsługi, ale program obsługi ogólnie wymaga to określenie `Button` jest odpowiedzialny za określonego zdarzenia. Jednym z podejść jest do zapisywania różnych `Button` obiektów jako pola i sprawdź, co jest wyzwalanie zdarzenia w obsłudze.
 
-[ **TwoButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons) przykładzie pokazano tej metody. Program również pokazano, jak ustawić [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) właściwość `Button` do `false` po naciśnięciu klawisza `Button` nie jest już prawidłowy. A wyłączone `Button` nie generuje `Clicked` zdarzeń.
+[ **TwoButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons) w przykładzie pokazano tej techniki. Program pokazuje również, jak ustawić [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) właściwość `Button` do `false` po naciśnięciu klawisza `Button` nie jest już prawidłowy. Jest wyłączona `Button` nie generuje `Clicked` zdarzeń.
 
 ## <a name="anonymous-event-handlers"></a>Programy obsługi zdarzeń anonimowe
 
-Istnieje możliwość definiowania `Clicked` obsługi jako funkcje anonimowe lambda jako [ **ButtonLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas) przykładzie pokazano. Jednak anonimowe obsługi nie może być współużytkowana bez kodu lepiej odbicia.
+Istnieje możliwość definiowania `Clicked` obsługami jako funkcje anonimowe lambda jako [ **ButtonLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas) w przykładzie pokazano. Jednak anonimowe obsługi nie może być współużytkowana bez kodu nieuporządkowane odbicia.
 
-## <a name="distinguishing-views-with-ids"></a>Widoki odróżniający z identyfikatorami
+## <a name="distinguishing-views-with-ids"></a>Wyróżniające się widoków z identyfikatorami
 
-Wiele `Button` obiektów odróżnia przez ustawienie [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) właściwości lub [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/) właściwości `string`. Ta właściwość jest zdefiniowana przez `Element` , ale nie jest on używany w ramach platformy Xamarin.Forms. Ma ona służyć wyłącznie przez aplikacje.
+Wiele `Button` obiektów odróżnia ustawiając [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) właściwości lub [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId) właściwość `string`. Ta właściwość jest zdefiniowana przez `Element` , ale nie jest używany w ramach zestawu narzędzi Xamarin.Forms. Ma być używane wyłącznie przez aplikacje.
 
-[ **SimplestKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad) przykładowe używa tego samego obsługi zdarzeń dla wszystkich kluczy numer 10 na klawiaturze numerycznej i rozróżnia je za pomocą `StyleId` właściwości:
+[ **SimplestKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad) próbka używa tego samego programu obsługi zdarzeń dla 10 wszystkie klawisze numeryczne na klawiaturę numeryczną i rozróżnia między nimi przy użyciu `StyleId` właściwości:
 
-[![Potrójna zrzut ekranu przedstawiający najprostszym klawiatury](images/ch06fg04-small.png "Kalkulator")](images/ch06fg04-large.png#lightbox "Kalkulator")
+[![Potrójna zrzut ekranu przedstawiający najprostszym klawiaturze](images/ch06fg04-small.png "Kalkulator")](images/ch06fg04-large.png#lightbox "Kalkulator")
 
-## <a name="saving-transient-data"></a>Zapisywanie danych przejściowej
+## <a name="saving-transient-data"></a>Zapisywanie danych przejściowych
 
-Wiele aplikacji należy zapisać dane, gdy program zostanie zakończony i załaduj ponownie dane, gdy program uruchamiany ponownie. [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) Klasa definiuje kilka elementów członkowskich, które Pomoc programu zapisywania i przywracania przejściowej danych:
+Wiele aplikacji wymaga, aby zapisać dane, gdy program jest zamykany i ponownie załadować te dane, gdy program uruchamia ponownie. [ `Application` ](xref:Xamarin.Forms.Application) Klasa definiuje kilka elementów członkowskich, które pomagają program zapisywania i przywracania danych przejściowych:
 
-- [ `Properties` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Properties/) Właściwości jest słownikiem z `string` kluczy i `object` elementów. Zawartość słownika są automatycznie zapisywane w lokalnym magazynie aplikacji przed Kończenie działania programu i ponownie załadowany podczas uruchamiania programu.
-- `Application` Klasa definiuje trzy metody wirtualnej chronione czy program użytkownika standardowego `App` klasy zastąpienia: [ `OnStart` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnStart()/), [ `OnSleep` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnSleep()/), i [ `OnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnResume()/). Te dotyczą *cyklem życia aplikacji* zdarzenia.
-- [ `SavePropertiesAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.SavePropertiesAsync()/) Metody zapisuje zawartość słownika.
+- [ `Properties` ](xref:Xamarin.Forms.Application.Properties) Właściwość jest słownika przy użyciu `string` kluczy i `object` elementów. Zawartość słownika są automatycznie zapisywane w magazynie lokalnym aplikacji przed Kończenie działania programu i ponownie załadować podczas uruchamiania programu.
+- `Application` Klasa definiuje trzy chronionych metod wirtualnych, że program użytkownika standardowego `App` klasy zastąpienia: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart), [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep), i [ `OnResume` ](xref:Xamarin.Forms.Application.OnResume). Te dotyczą *zarządzania cyklem życia aplikacji* zdarzenia.
+- [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync) Metoda zapisuje zawartość słownika.
 
-Nie jest konieczne do wywołania `SavePropertiesAsync`. Zawartość słownika są automatycznie zapisywane przed Kończenie działania programu i pobrać przed uruchamianie programu. Jest przydatne podczas testowania programu w celu zapisywania danych, jeśli program ulegnie awarii.
+Nie jest konieczne do wywołania `SavePropertiesAsync`. Zawartość słownika są automatycznie zapisywane przed Kończenie działania programu i pobierane przed uruchomieniem programu. Jest to przydatne podczas testowania program w celu zapisywania danych, jeśli program ulegnie awarii.
 
 Przydatne jest również:
 
-- [`Application.Current`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Current/), statycznej właściwości, która zwraca bieżącą `Application` obiekt, który można następnie uzyskać `Properties` słownika.
+- [`Application.Current`](xref:Xamarin.Forms.Application.Current), właściwość statyczna, która zwraca bieżącą `Application` obiekt, który można następnie uzyskać `Properties` słownika.
 
-Pierwszym krokiem jest określenie wszystkich zmiennych strony, który chcesz zachować, gdy program zakończy. Jeśli znasz wszędzie tam, gdzie zmienić tych zmiennych, po prostu dodaniem ich do `Properties` w tym momencie słownika. W Konstruktorze strony można ustawić zmienne z `Properties` słownika, jeśli ten klucz istnieje.
+Pierwszym krokiem jest określenie wszystkich zmiennych na stronie, które chcą zachować używane, gdy program kończy. Jeśli znasz wszystkie miejsca, w którym zmiany tych zmiennych, możesz po prostu dodać je do `Properties` słownika, w tym momencie. W Konstruktorze strony można ustawić zmienne z `Properties` słownika, jeśli klucz istnieje.
 
-Większy program prawdopodobnie należy uwzględniać zdarzenia cyklu życia aplikacji. Najważniejsze jest `OnSleep` metody. Wywołanie tej metody oznacza, że program opuścił pierwszego planu. Prawdopodobnie użytkownik nacisnął **Home** znajdującego się na urządzeniu lub wyświetlane wszystkie aplikacje lub jest zamykany przez telefon. Wywołanie `OnSleep` jest tylko powiadomienia czy program odbiera zanim zostanie zakończony. Program należy skorzystać z okazji upewnij się, że `Properties` słownik jest aktualny.
+Większe prawdopodobnie należy do czynienia z zdarzenia cyklu życia aplikacji. Najważniejsze jest `OnSleep` metody. Wywołanie tej metody oznacza, że program opuścił pierwszego planu. Być może użytkownik nacisnął **Home** znajdujący się na urządzeniu wyświetlane wszystkie aplikacje lub jest zamykana, numer telefonu. Wywołanie `OnSleep` jest tylko powiadomienia, program odbiera zanim zostanie zakończony. Program powinien warto wykorzystać tę okazję, aby upewnić się, że `Properties` słownika jest aktualny.
 
-Wywołanie `OnResume` wskazuje, że program nie zakończył się po ostatnim wywołaniem `OnSleep` , ale jest teraz uruchomiona na pierwszym planie ponownie. Program może używać tej możliwości można odświeżyć połączenia z Internetem (na przykład).
+Wywołanie `OnResume` wskazuje, czy program kończy następującej po ostatnim wywołaniu `OnSleep` , ale jest teraz uruchomiona na pierwszym planie ponownie. Program może być skorzystanie z tej okazji, aby odświeżyć połączenia przez internet (na przykład).
 
-Wywołanie `OnStart` występuje podczas uruchamiania programu. Nie jest konieczne poczekaj na wywołanie tej metody dostępu `Properties` słownika ponieważ zawartość zostały już przywrócone po `App` Konstruktor jest wywoływany.
+Wywołanie `OnStart` występuje podczas uruchamiania programu. Nie jest konieczne poczekaj, aż wywołanie tej metody dostępu `Properties` słownika ponieważ zawartość zostały już przywrócone po `App` wywoływany jest Konstruktor.
 
-[ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) próbki jest bardzo podobny do **SimplestKeypad** z tą różnicą, że jest używana `OnSleep` należy przesłonić, aby zapisać bieżący wpis klawiatury i Konstruktor strony, aby przywrócić te dane.
+[ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) próbki jest bardzo podobny do **SimplestKeypad** z tą różnicą, że program używa `OnSleep` należy przesłonić, aby zapisać bieżący wpis klawiatury i Konstruktor strony do przywrócenia danych.
 
 
 

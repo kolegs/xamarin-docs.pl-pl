@@ -1,60 +1,60 @@
 ---
-title: Wprowadzenie do szablonów kontrolki platformy Xamarin.Forms
-description: Szablony kontroli platformy Xamarin.Forms zapewniają możliwość łatwo motywu i ponowna motywu strony aplikacji w czasie wykonywania. Ten artykuł zawiera wprowadzenie do szablonów kontrolki.
+title: Wprowadzenie do szablonów kontrolek zestawu narzędzi Xamarin.Forms
+description: Szablony kontrolek zestawu narzędzi Xamarin.Forms umożliwia łatwe motywu i ponownej kompozycji strony aplikacji w czasie wykonywania. Ten artykuł zawiera wprowadzenie do szablonów kontrolek.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a8e5c84bfa2525a28e9af5343be0ee156564bdd6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242521"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994428"
 ---
-# <a name="introduction-to-xamarinforms-control-templates"></a>Wprowadzenie do szablonów kontrolki platformy Xamarin.Forms
+# <a name="introduction-to-xamarinforms-control-templates"></a>Wprowadzenie do szablonów kontrolek zestawu narzędzi Xamarin.Forms
 
-_Szablony kontroli platformy Xamarin.Forms zapewniają możliwość łatwo motywu i ponowna motywu strony aplikacji w czasie wykonywania. Ten artykuł zawiera wprowadzenie do szablonów kontrolki._
+_Szablony kontrolek zestawu narzędzi Xamarin.Forms umożliwia łatwe motywu i ponownej kompozycji strony aplikacji w czasie wykonywania. Ten artykuł zawiera wprowadzenie do szablonów kontrolek._
 
-Formanty mają różne właściwości `BackgroundColor` i `TextColor`, który można zdefiniować aspektów wygląd formantu. Te właściwości można ustawić za pomocą [style](~/xamarin-forms/user-interface/styles/index.md), który może zostać zmieniony w czasie wykonywania do implementacji podstawowych motywów. Jednak style nie Obsługa czyste rozdzielenie wygląd strony i jego zawartości, a zmiany wprowadzone przez ustawienie tych właściwości są ograniczone.
+Formanty mają różne właściwości `BackgroundColor` i `TextColor`, który można zdefiniować aspekty wyglądu formantu. Te właściwości można ustawić za pomocą [style](~/xamarin-forms/user-interface/styles/index.md), który może zostać zmieniony w czasie wykonywania, aby zaimplementować podstawowych motywów. Jednak style nie Obsługa czystą separacji między wygląd strony i jego zawartości, a zmiany wprowadzone przez ustawienie tych właściwości są ograniczone.
 
-Formant Szablony zapewniają czyste rozdzielenie wygląd strony i jego zawartości, dlatego włączenie tworzenia stron, które można łatwo zastosować motyw. Na przykład aplikacja może zawierać szablonów kontrola na poziomie aplikacji, które zapewniają ciemny motyw i motywu jasny. Każdy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) w aplikacji można zastosować motyw przez zastosowanie jednego z szablonów kontroli bez zmiany zawartości wyświetlany przez każdej strony. Ponadto kompozycji systemu kontroli szablony nie są ograniczone możliwości zmiany właściwości formantów. Można również zmienić formanty używane do implementowania motywu.
+Szablony kontrolek zapewniają czystą separacji między wygląd strony i jego zawartości, w związku z tym umożliwieniem tworzenia stron, które można łatwo zastosować motyw. Na przykład aplikacja może zawierać szablony kontroli na poziomie aplikacji, które zapewniają motyw jasny i ciemny motyw. Każdy [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) w aplikacji można zastosować motyw przez zastosowanie jednego z szablonów kontroli bez wprowadzania zmian w zawartości będą wyświetlane przez każdą stronę. Ponadto motywy oferowanego przez szablony formantu nie są ograniczone możliwości zmiany właściwości formantów. Można również zmienić kontrolki używaną do zaimplementowania motywu.
 
 ## <a name="creating-a-controltemplate"></a>Tworzenie ControlTemplate
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) określa wygląd strony lub widoku i zawiera układzie głównego i w formantach, które implementują szablon układu. Zazwyczaj `ControlTemplate` korzystają [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) do oznaczania, gdy pojawi się zawartość do wyświetlania przez stronę lub widok. Strona lub widok, który wykorzystuje `ControlTemplate` zdefiniuje mają być wyświetlane przez `ContentPresenter`. Na poniższym diagramie przedstawiono `ControlTemplate` dla strony, która zawiera wiele formantów, w tym `ContentPresenter` oznaczony przez niebieski prostokąt:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) określa wygląd strony lub widoku i zawiera głównego układu, a w układzie kontrolki, które implementują szablonu. Zazwyczaj `ControlTemplate` będą [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) do oznaczania, gdzie pojawią się zawartości, które mają być wyświetlane przez strony lub widoku. Strona lub widok, który wykorzystuje `ControlTemplate` zdefiniuje mają być wyświetlane przez `ContentPresenter`. Na poniższym diagramie przedstawiono `ControlTemplate` dla strony, która zawiera szereg formantów, w tym `ContentPresenter` oznaczone przez niebieski prostokąt:
 
-![](introduction-images/control-template.png "Szablonu formantu strony")
+![](introduction-images/control-template.png "Szablon kontrolki strony")
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) można stosować do następujących typów, ustawienie ich `ControlTemplate` właściwości:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) mogą dotyczyć następujących typów, ustawiając ich `ControlTemplate` właściwości:
 
-- [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)
-- [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)
-- [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)
+- [`ContentPage`](xref:Xamarin.Forms.ContentPage)
+- [`ContentView`](xref:Xamarin.Forms.ContentView)
+- [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)
+- [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)
 
-Gdy [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) utworzyć i przypisać do tych typów wszelkie istniejące wygląd jest zastępowany wygląd zdefiniowane w `ControlTemplate`. Ponadto, a także ustawienie wygląd przy użyciu `ControlTemplate` właściwości formantu szablonów można również będą stosowane przy użyciu stylów, aby jeszcze bardziej rozwiń możliwości motywu.
+Gdy [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) zostanie utworzone i przypisane do tych typów, wszelkie istniejące wygląd zostanie zastąpiony wygląd zdefiniowane w `ControlTemplate`. Ponadto, a także ustawienie wygląd przy użyciu `ControlTemplate` właściwości kontrolki szablony mogą być również stosowane przy użyciu stylów, aby bardziej szczegółowo rozwinąć możliwości motywu.
 
 > [!NOTE]
->  *Co to są `TemplatedPage` i `TemplatedView` typy?* `TemplatedPage` jest klasą bazową dla `ContentPage`i jest najbardziej podstawowa podał platformy Xamarin.Forms typ strony. W odróżnieniu od `ContentPage`, `TemplatedPage` nie ma `Content` właściwości. W związku z tym zawartości nie można bezpośrednio dodać do `TemplatedPage` wystąpienia. Zamiast tego zawartość jest dodawana przez ustawienie szablonu kontrolki dla `TemplatedPage` wystąpienia. Podobnie `TemplatedView` jest klasą bazową dla `ContentView`. W odróżnieniu od `ContentView`, `TemplatedView` nie ma `Content` właściwości. W związku z tym zawartości nie można bezpośrednio dodać do `TemplatedView` wystąpienia. Zamiast tego zawartość jest dodawana przez ustawienie szablonu kontrolki dla `TemplatedView` wystąpienia.
+>  *Co to są `TemplatedPage` i `TemplatedView` typy?* `TemplatedPage` jest klasą bazową dla `ContentPage`i jest najbardziej podstawowym typem strony udostępniane przez zestaw narzędzi Xamarin.Forms. W odróżnieniu od `ContentPage`, `TemplatedPage` nie ma `Content` właściwości. W związku z tym, zawartości nie można bezpośrednio dodać do `TemplatedPage` wystąpienia. Zamiast tego należy zawartość jest dodawana przez ustawienie szablonu kontrolki dla `TemplatedPage` wystąpienia. Podobnie `TemplatedView` jest klasą bazową dla `ContentView`. W odróżnieniu od `ContentView`, `TemplatedView` nie ma `Content` właściwości. W związku z tym, zawartości nie można bezpośrednio dodać do `TemplatedView` wystąpienia. Zamiast tego należy zawartość jest dodawana przez ustawienie szablonu kontrolki dla `TemplatedView` wystąpienia.
 
-Szablony formantu można tworzyć w języku XAML, a w języku C#:
+Można utworzyć szablony kontrolek XAML i C#:
 
-- Formant szablony utworzone w języku XAML są zdefiniowane w [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) przypisany do [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekcji strony lub więcej zwykle do [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) kolekcji aplikacji.
-- Szablony formantu utworzone w języku C# są zazwyczaj definiowane w klasie strony lub w klasie mogą uzyskiwać globalnie.
+- Szablony kontroli utworzone w XAML są zdefiniowane w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) przypisany do [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekcji strony lub zazwyczaj do [ `Resources` ](xref:Xamarin.Forms.Application.Resources) kolekcji aplikacji.
+- Szablony kontrolek utworzone w języku C# są zazwyczaj definiowane w klasie strony lub w klasie, która może globalnie dostępna.
 
-Wybieranie miejsce definiowania [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) wystąpienie wpływ, których można użyć:
+Wybieranie miejsce definiowania [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) wystąpienia na środowisko, w których można użyć:
 
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) wystąpienia zdefiniowane na poziomie strony tylko może odnosić się do strony.
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) wystąpienia zdefiniowane na poziomie aplikacji może odnosić się do stron w całej aplikacji.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) wystąpienia zdefiniowane na poziomie strony będzie stosowany tylko do strony.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) wystąpienia zdefiniowane na poziomie aplikacji można zastosować do stron w całej aplikacji.
 
-Szablony formantu niżej w hierarchii widoku pierwszeństwo określone wyższy się. Na przykład [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) o nazwie `DarkTheme` zdefiniowanej na poziomie strony ma pierwszeństwo o identycznej nazwie szablonu, zdefiniowanych na poziomie aplikacji. W związku z tym szablon formantu, który definiuje motyw do zastosowania dla każdej strony w aplikacji powinien być zdefiniowany na poziomie aplikacji.
+Szablony kontrolek niżej w hierarchii widoku pierwszeństwo identyczne ze zdefiniowanymi wyższej w górę. Na przykład [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) o nazwie `DarkTheme` która jest zdefiniowana na poziomie strony mają wyższy priorytet niż o identycznej nazwie szablonu, zdefiniowanych na poziomie aplikacji. W związku z tym szablon kontrolki, który definiuje motyw do zastosowania do każdej strony w aplikacji powinna być zdefiniowana na poziomie aplikacji.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Style](~/xamarin-forms/user-interface/styles/index.md)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)

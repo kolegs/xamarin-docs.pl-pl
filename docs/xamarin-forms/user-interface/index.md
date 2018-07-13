@@ -1,105 +1,105 @@
 ---
-title: Widoki interfejsu użytkownika platformy Xamarin.Forms
-description: W tym artykule przedstawiono kontrole i założenia, które mogą być używane podczas tworzenia interfejsu użytkownika w aplikacji platformy Xamarin.Forms.
+title: Widoki interfejsu użytkownika zestawu narzędzi Xamarin.Forms
+description: W tym artykule przedstawiono, formantów i pojęcia, które mogą być używane podczas tworzenia interfejsu użytkownika w aplikacji platformy Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 55c461a7dee26462e0b9daebeb10e47afa4e5f6f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244373"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996824"
 ---
-# <a name="xamarinforms-user-interface-views"></a>Widoki interfejsu użytkownika platformy Xamarin.Forms
+# <a name="xamarinforms-user-interface-views"></a>Widoki interfejsu użytkownika zestawu narzędzi Xamarin.Forms
 
-_Jak używać dostępnych widoków platformy Xamarin.Forms_
+_Jak używać widoków, dostarczone przez zestaw narzędzi Xamarin.Forms_
 
 ## <a name="animationanimationindexmd"></a>[Animacja](animation/index.md)
 
-Platformy Xamarin.Forms zawiera własną infrastrukturę animacji, która jest prosty do tworzenia prostych animacji, będąc również elastyczne do tworzenia złożonych animacji.
+Zestaw narzędzi Xamarin.Forms zawiera własną infrastrukturę animacji, która jest prosta do tworzenia proste animacje, będąc również czytanych tworzenie złożonych animacji.
 
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
-`BoxView` Jest po prostu prosty prostokąt kolorowe, ale można użyć dla elementów ozdobne, proste graficzne oraz uzyskiwania wprowadzania dotykowego interakcyjny.
+`BoxView` Jest po prostu proste kolorowy prostokąt, ale może służyć dla elementów dekoracyjnych, podstawowe grafiki i uzyskiwania wprowadzanie dotykowe interakcyjny.
 
 ## <a name="buttonbuttonmd"></a>[Przycisk](button.md)
 
-`Button` Odpowiada naciśnij lub kliknij przycisk kierujący aplikacji do wykonania określonego zadania.
+`Button` Odpowiada naciśnij lub kliknij przycisk, który kieruje aplikację do przeprowadzenia określonego zadania.
 
 ## <a name="colorscolorsmd"></a>[Kolory](colors.md)
 
-Definiowanie i użyciu kolorów platformach można trudnych po każdej z platform własnych zasad i ustawień domyślnych.
+Definiowanie i korzystanie z kolorów na platformach może być trudne, gdy każdej z platform ma swoją własną standardów i wartości domyślne.
 
 ## <a name="controls-referencecontrolsindexmd"></a>[Dokumentacja kontrolek](controls/index.md)
 
-Ten dokument jest szybkie odwołanie do widoków interfejsu użytkownika, które tworzą framework platformy Xamarin.Forms, takich jak [stron](~/xamarin-forms/user-interface/controls/pages.md), [układów](~/xamarin-forms/user-interface/controls/layouts.md), [widoków](~/xamarin-forms/user-interface/controls/views.md) i [komórek](~/xamarin-forms/user-interface/controls/cells.md).
+Ten dokument jest szybkie odwołanie do widoków interfejsu użytkownika, które tworzą ramach zestawu narzędzi Xamarin.Forms, takich jak [stron](~/xamarin-forms/user-interface/controls/pages.md), [układy](~/xamarin-forms/user-interface/controls/layouts.md), [widoków](~/xamarin-forms/user-interface/controls/views.md) i [komórek](~/xamarin-forms/user-interface/controls/cells.md).
 
 ## <a name="datapagesdatapagesindexmd"></a>[DataPages](datapages/index.md)
 
-DataPages dostarczać interfejs API do szybkiego i łatwego powiązania źródła danych do wbudowanych widoków. Elementy listy i strony szczegółów automatycznie spowoduje, że dane, a można dostosować za pomocą motywów.
+DataPages dostarczać interfejs API, szybko i łatwo źródła danych można powiązać gotowych widoków. Elementy listy i na stronach szczegółów automatycznie spowoduje, że dane, a następnie można dostosować za pomocą motywów.
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-`DatePicker` Pozwala użytkownikowi na wybranie daty do określonego zakresu. Za pomocą selektora daty obsługiwane przez platformę konkretnego, który program jest uruchamiany na jest stosowana.
+`DatePicker` Umożliwia użytkownikowi wybranie daty w określonym zakresie. Za pomocą selektora daty, obsługiwane przez platformę konkretnego, który program jest uruchamiany na jest stosowana.
 
 ## <a name="graphicsgraphicsindexmd"></a>[Grafika](graphics/index.md)
 
-Jak włączyć grafiki i elementy wizualne gier aparatu do aplikacji platformy Xamarin.Forms.
+Jak dołączyć grafiki i wizualizacje aparatu do tworzenia gier do aplikacji platformy Xamarin.Forms.
 
 ## <a name="imagesimagesmd"></a>[Obrazy](images.md)
 
-Obrazy mogą być udostępniane między platformy z platformy Xamarin.Forms, może być załadowany specjalnie dla każdej platformy, lub mogą być pobierane do wyświetlenia.
+Obrazy mogą być współużytkowane w różnych platformach za pomocą zestawu narzędzi Xamarin.Forms, może być załadowany specjalnie dla każdej platformy lub mogą być pobierane do wyświetlenia.
 
 ## <a name="layoutslayoutsindexmd"></a>[Układy](layouts/index.md)
 
-Platformy Xamarin.Forms ma kilka układów służący do organizowania zawartości na ekranie. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, i `RelativeLayout` każdego służy do tworzenia interfejsów użytkownika doskonałych, reakcji.
+Zestaw narzędzi Xamarin.Forms ma kilka układów służący do organizowania zawartości na ekranie. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, i `RelativeLayout` każdego służy do tworzenia interfejsów użytkownika pięknych, interaktywnych.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
-Platformy Xamarin.Forms zapewnia formantu widoku listy, aby wyświetlić przewijania wiersze danych. Formant zawiera akcje kontekstowe `HasUnevenRows` automatycznej zmiany rozmiaru, dostosowywania separatora, ściągnięcia do odświeżania i nagłówki i stopki.
+Zestaw narzędzi Xamarin.Forms zapewnia kontrolka widoku listy, aby wyświetlić przewijania wiersze danych. Kontrolka zawiera akcje kontekstowe `HasUnevenRows` automatycznej zmiany rozmiaru, separator dostosowywania, ściągnięcia do odświeżenia oraz nagłówków i stopek.
 
 ## <a name="mapsmapmd"></a>[Mapy](map.md)
 
-Dodawanie mapy wymaga dodatkowych Pobieranie pakietu NuGet i konfiguracji niektóre specyficzne dla platformy. Po zakończeniu konfigurowania, mapy i znaczniki kodu pin można dodać w zaledwie kilku wierszach kodu.
+Dodawanie map wymaga dodatkowych pobierania pakietów NuGet i pewnych czynności konfiguracyjnych specyficznych dla platformy. Mapy i numer pin znaczniki można dodawać w zaledwie kilku wierszy kodu po zakończeniu konfiguracji.
 
 ## <a name="pickerpickerindexmd"></a>[Selektor](picker/index.md)
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Widok jest formant wyboru z listy danych elementu tekstowego.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Widok jest kontrolka służąca do wybierania elementu tekstowego z listą danych.
 
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 
-`Slider` Umożliwia użytkownikowi wybranie wartość liczbową z zakresu ciągłe.
+`Slider` Pozwala użytkownikowi wybrać wartość liczbową z ciągłego zakresu.
 
 ## <a name="stylesstylesindexmd"></a>[Style](styles/index.md)
 
-Czcionkę, kolor i inne atrybuty można grupować w style, które może być współużytkowana przez formanty, układów lub całej aplikacji przy użyciu elementów ResourceDictionaries.
+Czcionkę, kolor i inne atrybuty można podzielić na style, które mogą być współużytkowane przez formanty, układy lub całej aplikacji przy użyciu ResourceDictionaries.
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
-Widok tabeli jest podobny do widoku listy, ale zamiast przeznaczone do listy dużo danych jest przeznaczony dla danych wpisu stylu ekrany przewijania formantów lub prostych menu przewijania.
+Widok tabeli jest podobny do widoku listy, ale zamiast jest przeznaczony dla długich list danych jest przeznaczony dla ekrany danych wpis stylu przewijania kontrolkę lub prostego menu przewijania.
 
 ## <a name="texttextindexmd"></a>[Tekst](text/index.md)
 
-Platformy Xamarin.Forms ma kilka widoków prezentowania i odbierania tekstu. Widoki tekstowe można sformatowany i dostosowywać dla platformy. Ustawienia czcionki określonego można włączyć zgodności z funkcji ułatwień dostępu.
+Zestaw narzędzi Xamarin.Forms ma kilka widoków do prezentowania i odbierania tekstu. Widoki tekstowe można sformatowany i dostosowane do platform. Ustawienia czcionek można włączyć zgodności z funkcjami ułatwień dostępu.
 
 ## <a name="themesthemesindexmd"></a>[Motywy](themes/index.md)
 
-Motywy platformy Xamarin.Forms zdefiniuj określonych wygląd dla standardowych formantów. Po dodaniu motyw do słownika zasobów aplikacji zmieni się wygląd standardowych kontrolek.
+Motywy zestawu narzędzi Xamarin.Forms umożliwia zdefiniowanie określonych wygląd dla standardowych kontrolek. Po dodaniu motyw do słownika zasobów aplikacji zmieni się wygląd formantów standardowych.
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Menedżer stanów wizualnych](visual-state-manager.md)
 
-Visual State Manager umożliwia strukturalnych powodować zmiany w interfejsie użytkownika z kodu, w tym układzie, którego adaptacja do zmian w orientacji urządzenia lub rozmiar.
+Visual State Manager umożliwia ze strukturą powodować zmiany w interfejsie użytkownika z kodu, w tym układ, który dostosowuje się do zmiany orientacji urządzenia lub rozmiaru.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
-Platformy Xamarin.Forms używa formantu przeglądarki sieci web natywnego na każdej platformie i wyświetlić witryn sieci Web, zasobów lokalnych i ciągi wygenerowanego kodu Html.
+Zestaw narzędzi Xamarin.Forms korzysta z kontrolki przeglądarki sieci web w natywnych na każdej platformie i wyświetlić witryn sieci Web, zasoby lokalne i ciągi wygenerowanego kodu Html.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Galeria platformy Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/FormsGallery/)
+- [Wprowadzenie do zestawu narzędzi Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+- [Galeria Xamarin.Forms (przykład)](https://developer.xamarin.com/samples/FormsGallery/)

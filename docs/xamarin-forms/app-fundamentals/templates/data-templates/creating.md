@@ -1,38 +1,38 @@
 ---
-title: Tworzenie DataTemplate platformy Xamarin.Forms
-description: Szablony danych można tworzyć w tekście, ResourceDictionary, lub z typu niestandardowego lub odpowiedniego typu komórki platformy Xamarin.Forms. Ten artykuł opisuje każdego technik.
+title: Tworzenie DataTemplate zestawu narzędzi Xamarin.Forms
+description: Szablony danych można tworzyć w tekście, ResourceDictionary, lub z typu niestandardowego lub odpowiedni typ komórki zestawu narzędzi Xamarin.Forms. Ten artykuł opisuje każdą z technik.
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 8aa0ad693fd1a7f086492f93f18c1e33871dee0e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240515"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994618"
 ---
-# <a name="creating-a-xamarinforms-datatemplate"></a>Tworzenie DataTemplate platformy Xamarin.Forms
+# <a name="creating-a-xamarinforms-datatemplate"></a>Tworzenie DataTemplate zestawu narzędzi Xamarin.Forms
 
-_Szablony danych można tworzyć w tekście, ResourceDictionary, lub z typu niestandardowego lub odpowiedniego typu komórki platformy Xamarin.Forms. Ten artykuł opisuje każdego technik._
+_Szablony danych można tworzyć w tekście, ResourceDictionary, lub z typu niestandardowego lub odpowiedni typ komórki zestawu narzędzi Xamarin.Forms. Ten artykuł opisuje każdą z technik._
 
-Typowy scenariusz użycia dla [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) są wyświetlane dane z kolekcji obiektów w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Wygląd danych dla każdej komórki w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) mogą być zarządzane przez ustawienie [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) właściwości [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Istnieje wiele metod, które mogą być używane w tym celu:
+Typowy scenariusz użycia dla [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) jest wyświetlanie danych za pomocą kolekcji obiektów w [ `ListView` ](xref:Xamarin.Forms.ListView). Wygląd danych dla każdej komórki w [ `ListView` ](xref:Xamarin.Forms.ListView) mogą być zarządzane przez ustawienie [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) właściwości [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Istnieje kilka metod, których można użyć w tym celu:
 
-- [Tworzenie DataTemplate wbudowanego](#inline).
-- [Tworzenie typu obiekt DataTemplate](#type).
+- [Tworzenie DataTemplate wbudowane](#inline).
+- [Tworzenie DataTemplate z typem](#type).
 - [Tworzenie DataTemplate jako zasób](#resource).
 
-Niezależnie od tego, używane techniki, wynikiem jest to, że wygląd każdej komórki w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest definiowana za pomocą [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), jak pokazano na poniższych zrzutach ekranu:
+Bez względu na to technika używana, wynik jest to, że wygląd każdej komórki w [ `ListView` ](xref:Xamarin.Forms.ListView) jest definiowany przez [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), jak pokazano na poniższych zrzutach ekranu:
 
-![](creating-images/data-template-appearance.png "Element ListView o szablonie danych")
+![](creating-images/data-template-appearance.png "ListView przy użyciu DataTemplate")
 
 <a name="inline" />
 
-## <a name="creating-an-inline-datatemplate"></a>Tworzenie DataTemplate wbudowany
+## <a name="creating-an-inline-datatemplate"></a>Tworzenie DataTemplate wbudowane
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Właściwości można ustawić wbudowanego [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Szablon wbudowany, który jest taki, który znajduje się jako element podrzędny właściwości właściwej opcji kontroli, należy używać, gdy nie istnieje potrzeba ponowne użycie szablonu danych w innym miejscu. Elementy określone `DataTemplate` określenia jej wyglądu każdej komórki, jak pokazano w poniższym przykładzie kodu XAML:
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Właściwość można ustawić wbudował [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Szablon wbudowane, który jest umieszczony jako element podrzędny właściwości właściwej opcji kontroli, należy używać, jeśli nie ma potrzeby to ponowne użycie szablonu danych w innym miejscu. Elementy określone `DataTemplate` zdefiniować wygląd każdej komórki, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ListView Margin="0,20,0,0">
@@ -61,9 +61,9 @@ Niezależnie od tego, używane techniki, wynikiem jest to, że wygląd każdej k
 </ListView>
 ```
 
-Podrzędne wbudowanego [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) musi być typu, lub pochodzić od, wpisz [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/). Układ wewnątrz `ViewCell` zarządza tutaj [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Zawiera trzy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień tego powiązania ich [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) właściwości do odpowiedniej właściwości `Person` obiektu w kolekcji.
+Element podrzędny wbudowany [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) musi być typu, lub pochodzić od, wpisz [ `ViewCell` ](xref:Xamarin.Forms.ViewCell). Układ wewnątrz `ViewCell` zarządza tutaj [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Zawiera trzy [ `Label` ](xref:Xamarin.Forms.Label) wystąpień tego powiązania ich [ `Text` ](xref:Xamarin.Forms.Label.Text) właściwości do odpowiedniej właściwości `Person` obiektu w kolekcji.
 
-W poniższym przykładzie kodu pokazano równoważne kodu C#:
+Równoważny kod C# pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -108,13 +108,13 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-W języku C#, wbudowanej [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) jest tworzony przy użyciu przeładowania konstruktora, który określa `Func` argumentu.
+W języku C#, wbudowanej [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) jest tworzony za pomocą przeciążenia konstruktora, który określa `Func` argumentu.
 
 <a name="type" />
 
 ## <a name="creating-a-datatemplate-with-a-type"></a>Tworzenie DataTemplate z typem
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Można również ustawić właściwość [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) utworzonego z typem komórki. Zaletą tej metody jest, że wygląd zdefiniowane przez typ komórki mogą być ponownie używane przez wiele szablonów danych w całej aplikacji. Poniższy kod XAML zawiera przykład tej metody:
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Właściwość można ustawić [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) utworzonego z typu komórki. Zaletą tego podejścia jest to, że wygląd określona przez typ komórki mogą być ponownie używane przez wiele szablonów danych w całej aplikacji. Poniższy kod XAML przedstawiono przykład tej metody:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ W języku C#, wbudowanej [ `DataTemplate` ](https://developer.xamarin.com/api/ty
 </ContentPage>
 ```
 
-W tym miejscu [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) właściwość jest ustawiona na [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) utworzonego z niestandardowego typu, która definiuje wygląd komórek. Niestandardowy typ musi pochodzić od typu [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), jak pokazano w poniższym przykładzie:
+W tym miejscu [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) właściwość jest ustawiona na [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) utworzonego z typu niestandardowego, która definiuje wygląd komórki. Niestandardowy typ musi pochodzić od typu [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -159,9 +159,9 @@ W tym miejscu [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type
 </ViewCell>
 ```
 
-W ramach [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), układ zarządza tutaj [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Zawiera trzy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) wystąpień tego powiązania ich [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) właściwości do odpowiedniej właściwości `Person` obiektu w kolekcji.
+W ramach [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), układ zarządza tutaj [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Zawiera trzy [ `Label` ](xref:Xamarin.Forms.Label) wystąpień tego powiązania ich [ `Text` ](xref:Xamarin.Forms.Label.Text) właściwości do odpowiedniej właściwości `Person` obiektu w kolekcji.
 
-W poniższym przykładzie pokazano równoważne kodu C#:
+Równoważny kod C# pokazano w poniższym przykładzie:
 
 ```csharp
 public class WithDataTemplatePageFromTypeCS : ContentPage
@@ -187,7 +187,7 @@ public class WithDataTemplatePageFromTypeCS : ContentPage
 }
 ```
 
-W języku C# [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) jest tworzony przy użyciu przeładowania konstruktora, który określa typ komórki jako argument. Komórka typ musi pochodzić od typu [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), jak pokazano w poniższym przykładzie:
+W języku C# [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) jest tworzony za pomocą przeciążenia konstruktora, który określa typ komórki jako argument. Typ komórki musi pochodzić od typu [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class PersonCellCS : ViewCell
@@ -214,13 +214,13 @@ public class PersonCellCS : ViewCell
 ```
 
 > [!NOTE]
-> Należy pamiętać, że platformy Xamarin.Forms zawiera także typy komórki, których można użyć do wyświetlenia proste danych w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) komórki. Aby uzyskać więcej informacji, zobacz [wygląd komórek](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
+> Należy pamiętać, że Xamarin.Forms obejmuje również typy komórki, które może służyć do wyświetlania danych proste w [ `ListView` ](xref:Xamarin.Forms.ListView) komórek. Aby uzyskać więcej informacji, zobacz [wygląd komórki](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
 <a name="resource" />
 
 ## <a name="creating-a-datatemplate-as-a-resource"></a>Tworzenie DataTemplate jako zasób
 
-Można również tworzyć szablony danych jako obiekty do ponownego użycia w [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Jest to osiągane przez nadanie każdej deklaracji unikatowego `x:Key` atrybut, który zapewnia opisową klucza w `ResourceDictionary`, jak pokazano w poniższym przykładzie kodu XAML:
+Można również tworzyć szablony danych jako obiekty wielokrotnego użytku w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). To osiągnąć, podając unikatową każdego zgłoszenia `x:Key` atrybut, który dostarcza mu kluczem opisowe w `ResourceDictionary`, jak pokazano w poniższym przykładzie kodu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -251,9 +251,9 @@ Można również tworzyć szablony danych jako obiekty do ponownego użycia w [ 
 </ContentPage>
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Jest przypisany do [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) właściwości przy użyciu `StaticResource` — rozszerzenie znaczników. Należy pamiętać, że podczas `DataTemplate` jest zdefiniowana na stronie [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), może także być zdefiniowany na poziomie aplikacji lub poziom kontroli.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Jest przypisany do [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) właściwości przy użyciu `StaticResource` — rozszerzenie znaczników. Należy pamiętać, że podczas `DataTemplate` jest zdefiniowana na stronie [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), również może być zdefiniowana na poziomie aplikacji lub poziom kontroli.
 
-Poniższy przykład kodu pokazuje odpowiedniej strony w języku C#:
+Poniższy przykład kodu pokazuje odpowiednich stron w języku C#:
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -281,15 +281,15 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Jest dodawany do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) przy użyciu [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) metodę, która określa `Key` ciąg, który służy do Odwołanie `DataTemplate` podczas pobierania go.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Jest dodawany do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) przy użyciu [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) metody, która określa `Key` ciąg, który jest używany do Odwołanie `DataTemplate` podczas pobierania go.
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten artykuł ma wyjaśniono, jak utworzyć szablony danych, wbudowany, typu niestandardowego lub w [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Szablon wbudowanego należy używać, gdy nie istnieje potrzeba ponowne użycie szablonu danych w innym miejscu. Alternatywnie szablon danych mogą być ponownie używane, definiując go jako niestandardowy typ, lub poziom kontroli zasobów strony, lub na poziomie aplikacji.
+Tym artykule wyjaśniono, jak utworzyć szablony danych, w tekście, z typu niestandardowego lub w [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Wbudowany szablon należy używać, jeśli nie ma potrzeby to ponowne użycie szablonu danych w innym miejscu. Alternatywnie szablonu danych może nastąpić, definiując je jako typ niestandardowy, lub poziom kontroli zasobu strony lub na poziomie aplikacji.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Wygląd komórki](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Szablony danych (przykład)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
-- [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)
+- [DataTemplate](xref:Xamarin.Forms.DataTemplate)

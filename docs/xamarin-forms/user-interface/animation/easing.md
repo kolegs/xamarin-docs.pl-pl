@@ -1,45 +1,45 @@
 ---
-title: Funkcji sterowania tempem zmian w platformy Xamarin.Forms
-description: Platformy Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia czemu można kontrolować sposób przyspieszenia animacji lub spowolnić nich uruchomiony. W tym artykule przedstawiono, jak używać funkcji sterowania tempem zmian wstępnie zdefiniowane i sposób tworzenia niestandardowych funkcji sterowania tempem zmian.
+title: Funkcje easingu w interfejsie Xamarin.Forms
+description: Zestaw narzędzi Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia tej kontrolki jak przyspieszyć lub spowolnić, ponieważ są one uruchamiane w animacji. W tym artykule przedstawiono, jak używać wstępnie zdefiniowanych funkcji sterowania tempem zmian oraz sposób tworzenia niestandardowych funkcji sterowania tempem zmian.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 9398a1b9cf4e5f6fd18f2213a7cf55e9cbb93ef0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1c75771173d94a18c7c1cc5100c64d45bdc32078
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243145"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998124"
 ---
-# <a name="easing-functions-in-xamarinforms"></a>Funkcji sterowania tempem zmian w platformy Xamarin.Forms
+# <a name="easing-functions-in-xamarinforms"></a>Funkcje easingu w interfejsie Xamarin.Forms
 
-_Platformy Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia czemu można kontrolować sposób przyspieszenia animacji lub spowolnić nich uruchomiony. W tym artykule przedstawiono, jak używać funkcji sterowania tempem zmian wstępnie zdefiniowane i sposób tworzenia niestandardowych funkcji sterowania tempem zmian._
+_Zestaw narzędzi Xamarin.Forms zawiera klasę dynamiki, która pozwala na określenie funkcji przenoszenia tej kontrolki jak przyspieszyć lub spowolnić, ponieważ są one uruchamiane w animacji. W tym artykule przedstawiono, jak używać wstępnie zdefiniowanych funkcji sterowania tempem zmian oraz sposób tworzenia niestandardowych funkcji sterowania tempem zmian._
 
 
-[ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) Klasa definiuje liczbę funkcji sterowania tempem zmian, które mogą być używane przez animacje:
+[ `Easing` ](xref:Xamarin.Forms.Easing) Klasy definiuje kilka funkcji sterowania tempem zmian, które mogą być używane przez animacje:
 
-- [ `BounceIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceIn/) Wyjścia funkcji sterowania tempem odrzuceń animacji na początku.
-- [ `BounceOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceOut/) Wyjścia funkcji sterowania tempem odrzuceń animacji na końcu.
-- [ `CubicIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicIn/) Wyjścia funkcji sterowania tempem powoli przyspiesza animacji.
-- [ `CubicInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicInOut/) Wyjścia funkcji sterowania tempem przyspieszają animacji na początku i zwalnia animacji na końcu.
-- [ `CubicOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicOut/) Wyjścia funkcji sterowania tempem szybko zwalnia animacji.
-- [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) Wyjścia funkcji sterowania tempem używa stałej szybkość pracy i jest domyślnie wyjścia funkcji sterowania tempem.
-- [ `SinIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinIn/) Wyjścia funkcji sterowania tempem sprawnie przyspiesza animacji.
-- [ `SinInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinInOut/) Wyjścia funkcji sterowania tempem sprawnie przyspieszają animacji na początku i sprawnie mimo animacji na końcu.
-- [ `SinOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinOut/) Wyjścia funkcji sterowania tempem sprawnie mimo animacji.
-- [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) Wyjścia funkcji sterowania tempem powoduje, że animacja w celu przyspieszenia bardzo szybko pod koniec.
-- [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) Wyjścia funkcji sterowania tempem powoduje, że animacja się szybko zwalnia pod koniec.
+- [ `BounceIn` ](xref:Xamarin.Forms.Easing.BounceIn) Funkcja sterowania tempem zmian odbija animacji na początku.
+- [ `BounceOut` ](xref:Xamarin.Forms.Easing.BounceOut) Funkcja sterowania tempem zmian odbija animacji na końcu.
+- [ `CubicIn` ](xref:Xamarin.Forms.Easing.CubicIn) Funkcja sterowania tempem zmian powoli przyspiesza animacji.
+- [ `CubicInOut` ](xref:Xamarin.Forms.Easing.CubicInOut) Funkcja sterowania tempem zmian przyspiesza animacji na początku i zwalnia animacji na końcu.
+- [ `CubicOut` ](xref:Xamarin.Forms.Easing.CubicOut) Funkcja sterowania tempem zmian szybko zwalnia animacji.
+- [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) Funkcja sterowania tempem zmian używa stałej szybkości pracy i jest domyślna funkcja sterowania tempem zmian.
+- [ `SinIn` ](xref:Xamarin.Forms.Easing.SinIn) Funkcja sterowania tempem zmian płynnie przyspiesza animacji.
+- [ `SinInOut` ](xref:Xamarin.Forms.Easing.SinInOut) Funkcja sterowania tempem zmian płynnie przyspiesza animacji na początku i sprawnie mimo animacji na końcu.
+- [ `SinOut` ](xref:Xamarin.Forms.Easing.SinOut) Funkcja sterowania tempem zmian sprawnie mimo animacji.
+- [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Funkcja sterowania tempem zmian powoduje, że animacja się bardzo szybko przyspieszyć pod koniec.
+- [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) Funkcja sterowania tempem zmian powoduje, że animacja szybko spowalniania pod koniec.
 
-`In` i `Out` sufiksy wskazująca, czy efekt podał funkcji sterowania tempem zmian jest widoczny na początku animacji, na końcu lub oba.
+`In` i `Out` sufiksy wskazująca, czy efekt, dostarczone przez funkcję sterowania tempem zmian jest widoczne na początku animacji, na końcu lub obu.
 
-Ponadto można tworzyć niestandardowe funkcji sterowania tempem zmian. Aby uzyskać więcej informacji, zobacz [funkcje łatwiejszym niestandardowe](#customeasing).
+Ponadto można tworzyć niestandardowych funkcji sterowania tempem zmian. Aby uzyskać więcej informacji, zobacz [niestandardowe funkcje Easingu](#customeasing).
 
 ## <a name="consuming-an-easing-function"></a>Korzystanie z funkcji sterowania tempem zmian
 
-Metody rozszerzenia animacji w [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) klasy Zezwalaj funkcji sterowania tempem zmian, należy określić parametr metodę końcową, jak pokazano w poniższym przykładzie:
+Metody rozszerzające animacji w [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) klasy pozwalają funkcji sterowania tempem zmian, należy określić jako parametru metody końcowego, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, Easing.BounceIn);
@@ -49,25 +49,25 @@ await image.ScaleTo(1, 2000, Easing.CubicOut);
 await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
-Określając funkcji sterowania tempem zmian dla animacji prędkość animacji staje się z systemem innym niż liniowy i tworzy efekt podał funkcji sterowania tempem zmian. Pominięcie funkcji sterowania tempem zmian podczas tworzenia animacji powoduje animacji korzysta z domyślnego [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) łatwiejszym funkcji, która tworzy prędkość liniową.
+Określanie funkcji sterowania tempem zmian dla animacji, szybkość animacji staje się inny niż liniowy i daje efekt, dostarczone przez funkcję sterowania tempem zmian. Podczas tworzenia animacji z pominięciem funkcji sterowania tempem zmian powoduje, że animacji użyć domyślnej [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) ułatwianie funkcji, która tworzy liniowej szybkość pracy.
 
-Aby uzyskać więcej informacji o korzystaniu z metody rozszerzenia animacji w [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) , zobacz [prostych animacji](~/xamarin-forms/user-interface/animation/simple.md). Ułatwianie funkcji również może być zużyte przez [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) klasy. Aby uzyskać więcej informacji, zobacz [animacji niestandardowej](~/xamarin-forms/user-interface/animation/custom.md).
+Aby uzyskać więcej informacji o używaniu metody rozszerzenia animacji w [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) klasy, zobacz [proste animacje](~/xamarin-forms/user-interface/animation/simple.md). Funkcje easingu również mogą być używane przez [ `Animation` ](xref:Xamarin.Forms.Animation) klasy. Aby uzyskać więcej informacji, zobacz [niestandardowe animacje](~/xamarin-forms/user-interface/animation/custom.md).
 
 <a name="customeasing" />
 
-## <a name="custom-easing-functions"></a>Ułatwianie funkcje niestandardowe
+## <a name="custom-easing-functions"></a>Niestandardowe funkcje Easingu
 
-Istnieją trzy główne metody do tworzenia niestandardowych funkcji sterowania tempem zmian:
+Istnieją trzy główne podejścia do tworzenia niestandardowych funkcji sterowania tempem zmian:
 
-1. Tworzenie metody, która przyjmuje `double` argument i zwraca `double` wynik.
+1. Utwórz metodę, która przyjmuje `double` argument i zwraca `double` wynik.
 1. Utwórz `Func<double, double>`.
-1. Określ jako argument do funkcji sterowania tempem zmian [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) konstruktora.
+1. Określ funkcji sterowania tempem zmian jako argumenty [ `Easing` ](xref:Xamarin.Forms.Easing) konstruktora.
 
-We wszystkich trzech przypadkach niestandardowej funkcji sterowania tempem zmian powinna zwrócić 0 dla argumentu o wartości 0 i 1 dla argumentu 1. Jednak każda wartość może być zwracany między wartościami argumentu o wartości 0 i 1. Teraz, każde podejście będzie z kolei opisem.
+We wszystkich trzech przypadkach funkcji sterowania tempem zmian niestandardowej powinien zwrócić 0 dla argumentu 0 i 1 dla argumentu 1. Jednak każda wartość mogą być zwracane między wartości argumentu, 0 i 1. Teraz każde podejście będzie z kolei omówiono.
 
-### <a name="custom-easing-method"></a>Niestandardowe łatwiejszym — metoda
+### <a name="custom-easing-method"></a>Niestandardowe ułatwianie — metoda
 
-Niestandardowej funkcji sterowania tempem zmian można zdefiniować jako metodę, która przyjmuje `double` argument i zwraca `double` wynik, jak pokazano w poniższym przykładzie:
+Niestandardowa funkcja sterowania tempem zmian można zdefiniować jako metody, która przyjmuje `double` argument i zwraca `double` wynik, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, CustomEase);
@@ -78,38 +78,38 @@ double CustomEase (double t)
 }
 ```
 
-`CustomEase` Metody obcina przychodzące wartość do wartości 0, 0,2 0,4, 0,6, 0,8 i 1. W związku z tym [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) wystąpienia jest translacja w odrębny przechodzi zamiast sprawnie.
+`CustomEase` Metoda obcina przychodzących wartość do wartości 0, 0.2, 0,4, 0,6, 0,8 i 1. W związku z tym [ `Image` ](xref:Xamarin.Forms.Image) wystąpienia jest tłumaczony w przechodzi dyskretnych, a nie bez problemów.
 
 ### <a name="custom-easing-func"></a>Ułatwianie Func niestandardowe
 
-Niestandardowej funkcji sterowania tempem zmian może także być zdefiniowany jako `Func<double, double>`, jak pokazano w poniższym przykładzie:
+Można również określić niestandardową funkcję sterowania tempem zmian jako `Func<double, double>`, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 Func<double, double> CustomEase = t => 9 * t * t * t - 13.5 * t * t + 5.5 * t;
 await image.TranslateTo(0, 200, 2000, CustomEase));
 ```
 
-`CustomEase` `Func` Reprezentuje funkcji sterowania tempem zmian, która rozpoczyna się poza szybkie, spowalnia odwraca kursu i odwraca kursu ponownie w celu przyspieszenia szybko pod koniec. W związku z tym podczas przemieszczania ogólną [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) wystąpienie jest w dół, również tymczasowo odwraca kursu w połowie animacji.
+`CustomEase` `Func` Reprezentuje funkcję sterowania tempem zmian, który rozpoczyna się szybką, spowalnia odwraca kurs i odwraca ponownie kurs szybkie działanie w końcowej. W związku z tym, podczas gdy ogólny przepływ [ `Image` ](xref:Xamarin.Forms.Image) wystąpienie jest w dół, również tymczasowo odwraca kurs w połowie animacji.
 
-### <a name="custom-easing-constructor"></a>Niestandardowe łatwiejszym — Konstruktor
+### <a name="custom-easing-constructor"></a>Ułatwianie Konstruktor niestandardowy
 
-Niestandardowej funkcji sterowania tempem zmian może także być zdefiniowany jako argument [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) konstruktora, jak pokazano w poniższym przykładzie:
+Można również określić niestandardową funkcję sterowania tempem zmian jako argument [ `Easing` ](xref:Xamarin.Forms.Easing) konstruktora, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.PI * t) * Math.Exp (-5 * t)));
 ```
 
-Niestandardowej funkcji sterowania tempem zmian jest określony jako argument funkcji lambda [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) Konstruktor i używa `Math.Cos` metodę w celu utworzenia efekt powolne upuszczania, który jest tłumione przez `Math.Exp` metody. W związku z tym [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) wystąpienia jest translacja tak, aby wygląda na to, aby porzucić do jego nieaktywnych miejsce.
+Niestandardowych funkcji sterowania tempem zmian jest określony jako argument funkcji lambda, aby [ `Easing` ](xref:Xamarin.Forms.Easing) Konstruktor i używa `Math.Cos` metodę w celu utworzenia wpływ upuszczania powolne, jaki jest wytłumione przez `Math.Exp` metody. W związku z tym [ `Image` ](xref:Xamarin.Forms.Image) wystąpienia jest tłumaczony wygląda tak, jakby pomijać jej ostatnim miejscu nieaktywnych.
 
 ## <a name="summary"></a>Podsumowanie
 
-Tym artykule przedstawiono, jak używać funkcji sterowania tempem zmian wstępnie zdefiniowane i sposób tworzenia niestandardowych funkcji sterowania tempem zmian. Obejmuje platformy Xamarin.Forms [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) klasy, która pozwala określić funkcji przenoszenia, która kontroluje sposób przyspieszenia animacji lub spowolnić nich uruchomiony.
+W tym artykule pokazano, jak używać wstępnie zdefiniowanych funkcji sterowania tempem zmian oraz sposób tworzenia niestandardowych funkcji sterowania tempem zmian. Obejmuje zestaw narzędzi Xamarin.Forms [ `Easing` ](xref:Xamarin.Forms.Easing) klasy, która pozwala na określenie funkcji przenoszenia, który kontroluje, jak przyspieszyć animacji lub spowolnić, ponieważ są one uruchamiane.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Asynchroniczna pomoc techniczna — omówienie](~/cross-platform/platform/async.md)
-- [Funkcji sterowania tempem zmian (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
-- [Ułatwianie](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/)
-- [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)
+- [Funkcje easingu (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
+- [Ułatwianie](xref:Xamarin.Forms.Easing)
+- [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

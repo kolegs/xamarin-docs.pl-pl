@@ -1,45 +1,45 @@
 ---
-title: Korzystanie z rozszerzeń znaczników XAML
-description: W tym artykule opisano, jak używać rozszerzeń znaczników XAML platformy Xamarin.Forms poprawić możliwościach i elastyczności XAML, pozwalając atrybuty elementu ustawiono z różnych źródeł.
+title: Korzystanie z rozszerzeń struktury znaczników XAML
+description: W tym artykule wyjaśniono, jak ulepszyć możliwości i elastyczność XAML, umożliwiając atrybutów elementów, należy ustawić z różnych źródeł przy użyciu rozszerzeń struktury znaczników XAML zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245940"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995985"
 ---
-# <a name="consuming-xaml-markup-extensions"></a>Korzystanie z rozszerzeń znaczników XAML
+# <a name="consuming-xaml-markup-extensions"></a>Korzystanie z rozszerzeń struktury znaczników XAML
 
-Rozszerzenia znaczników XAML zwiększanie możliwościach i elastyczności XAML, zezwalając atrybuty elementu ustawiono z różnych źródeł. Kilka rozszerzeń znaczników XAML są częścią specyfikacji języka XAML 2009. Są one wyświetlane w plikach XAML z zwyczajowe `x` prefiks przestrzeni nazw i są powszechnie z tym prefiksem. Te ustawienia zostały opisane w poniższych sekcjach:
+Rozszerzeń struktury znaczników XAML zwiększanie możliwości i elastyczność XAML, umożliwiając atrybutów elementów, należy ustawić z różnych źródeł. Kilka rozszerzeń struktury znaczników XAML są częścią specyfikacji XAML 2009. Te pakiety są wyświetlane w plikach XAML z zwyczajowego `x` prefiks przestrzeni nazw i są czasami określane za pomocą tego prefiksu. Te ustawienia zostały opisane w poniższych sekcjach:
 
-- [`x:Static`](#static) &ndash; odwołania pola, statycznej właściwości lub elementy członkowskie wyliczenia.
+- [`x:Static`](#static) &ndash; odwoływać się do właściwości statycznych, pól ani elementów członkowskich wyliczenia.
 - [`x:Reference`](#reference) &ndash; odwołanie o nazwie elementów na stronie.
-- [`x:Type`](#type) &ndash; Ustaw dla atrybutu `System.Type` obiektu.
-- [`x:Array`](#array) &ndash; konstruować tablicę obiektów określonego typu.
-- [`x:Null`](#null) &ndash; Ustaw dla atrybutu `null` wartość.
+- [`x:Type`](#type) &ndash; Ustaw atrybut `System.Type` obiektu.
+- [`x:Array`](#array) &ndash; Skonstruuj tablicę obiektów określonego typu.
+- [`x:Null`](#null) &ndash; Ustaw atrybut `null` wartość.
 
-Trzy inne rozszerzenia znaczników XAML w przeszłości są obsługiwane przez inne implementacje XAML, a także są obsługiwane przez platformy Xamarin.Forms. Te ustawienia zostały opisane w pełnym w innych artykułach:
+Trzy inne rozszerzenia znaczników XAML w przeszłości są obsługiwane przez inne implementacje XAML i są również obsługiwane przez zestaw narzędzi Xamarin.Forms. Te ustawienia zostały opisane w pełnym w innych artykułach:
 
-- `StaticResource` &ndash; odwoływać się do obiektów ze słownika zasobów, zgodnie z opisem w artykule [ **słowniki zasobów**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource` &ndash; Odpowiadanie na zmiany w obiektach w słowniku zasobów, zgodnie z opisem w artykule [ **dynamiczne style**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding` &ndash; nawiązanie połączenia między właściwościami dwa obiekty, zgodnie z opisem w artykule [ **powiązania danych**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; wykonuje powiązanie danych z szablonu kontrolki, zgodnie z opisem w artykule [**powiązanie z szablonu kontroli**] / przewodniki/xamarin-/ aplikacji — podstawowe informacje na temat/szablonów/sterowania — szablony/szablonu — wiązanie formularzy /)
+- `StaticResource` &ndash; odwołują się do obiektów ze słownika zasobów, zgodnie z opisem w artykule [ **słowniki zasobów**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource` &ndash; Odpowiadanie na zmiany w obiektach w słowniku zasobów, zgodnie z opisem w artykule [ **style dynamiczne**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` &ndash; nawiązanie połączenia między właściwościami dwa obiekty, zgodnie z opisem w artykule [ **powiązanie danych**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `TemplateBinding` &ndash; wykonuje wiązanie danych z szablonu kontrolki, zgodnie z opisem w artykule [**powiązanie z szablonu kontrolki**] / przewodniki/xamarin — formularze/aplikacji — podstawy/szablony/kontroli — szablony /-powiązanie szablonu /)
 
-[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) Układu użyto rozszerzenia niestandardowego znacznika [ `ConstraintExpression` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/). Tego rozszerzenia znacznika jest opisana w artykule [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Układ korzysta z rozszerzeń niestandardowych znaczników [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Tego rozszerzenia znacznika jest opisany w artykule [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static — Rozszerzenie znaczników
 
-`x:Static` — Rozszerzenie znaczników jest obsługiwana przez [ `StaticExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) klasy. Klasa ma tylko jedną właściwość o nazwie [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) typu `string` ustawioną nazwę stała publicznej, statycznej właściwości, pola statycznego lub element członkowski wyliczenia.
+`x:Static` — Rozszerzenie znaczników jest obsługiwana przez [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) klasy. Klasa ma jedną właściwość o nazwie [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) typu `string` równa nazwę publicznej — stała, właściwość statyczna, pole statyczne lub element członkowski wyliczenia.
 
-Typowy sposób użycia `x:Static` jest najpierw zdefiniować klasy z niektóre stałe i zmienne statyczne, takie jak tym niewielki rozmiar `AppConstants` klasy w [ **wyrażenia MarkupExtension** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) program:
+Typowym sposobem użycia `x:Static` jest najpierw zdefiniować klasę z niektórych stałe i zmienne statyczne, takie jak tym niewielki `AppConstants` klasy w [ **wyrażeń MarkupExtension** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) program:
 
 ```csharp
 static class AppConstants
@@ -48,7 +48,7 @@ static class AppConstants
 }
 ```
 
-**X: Static pokaz** strony przedstawiono kilka sposobów użycia `x:Static` — rozszerzenie znaczników. Tworzy wystąpienie najpełniejszych podejście `StaticExtension` klas między `Label.FontSize` znaczniki elementu właściwości:
+**X: Static pokaz** strony pokazano kilka sposobów wykorzystania `x:Static` — rozszerzenie znaczników. Tworzy wystąpienie najpełniejszych podejście `StaticExtension` klasy między `Label.FontSize` tagi element właściwości:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,7 +70,7 @@ static class AppConstants
 </ContentPage>
 ```
 
-Umożliwia również analizator XAML `StaticExtension` klasę, aby stosować skrót `x:Static`:
+Umożliwia także analizator XAML `StaticExtension` klasy, aby stosować skrót `x:Static`:
 
 ```xaml
 <Label Text="Label No. 2">
@@ -80,38 +80,38 @@ Umożliwia również analizator XAML `StaticExtension` klasę, aby stosować skr
 </Label>
 ```
 
-Może to uprościć jeszcze bardziej, ale niektóre nowej składni wprowadza zmiany: składa się z umieszczanie `StaticExtension` klasy i element członkowski w nawiasy klamrowe. Wynikowe wyrażenie ustawiono bezpośrednio do `FontSize` atrybutu:
+To może być jeszcze bardziej uproszczone, ale zmiany wprowadza pewne nowej składni: składa się z umieszczenie `StaticExtension` klas i składowych w nawiasy klamrowe. Wyrażenie wynikowe ustawiono bezpośrednio do `FontSize` atrybutu:
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Należy zauważyć, że istnieją *nie* cudzysłów wewnątrz nawiasów klamrowych. `Member` Właściwość `StaticExtension` nie jest już atrybutu XML. Zamiast tego jest częścią wyrażenia rozszerzenia znaczników.
+Należy zauważyć, że istnieją *nie* cudzysłowy wewnątrz nawiasu klamrowego. `Member` Właściwość `StaticExtension` nie jest już atrybut XML. Zamiast tego jest częścią wyrażenia dla rozszerzenia znaczników.
 
-Jak można skrócić `x:StaticExtension` do `x:Static` używania go jako elementu obiektu, można również skrócić go w wyrażeniu w nawiasy klamrowe:
+Tak samo jak można skrócić `x:StaticExtension` do `x:Static` go użyć jako elementu obiektu, również można na skrócić je w wyrażeniu w nawiasy klamrowe:
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-`StaticExtension` Klasa ma `ContentProperty` atrybut odwołuje się do właściwości `Member`, która oznacza tę właściwość jako właściwość content domyślnej klasy. Rozszerzenia znaczników XAML wyrażone w nawiasach klamrowych, można wyeliminować `Member=` część wyrażenia:
+`StaticExtension` Klasa ma `ContentProperty` atrybut odwołuje się do właściwości `Member`, która oznacza tę właściwość jako właściwość zawartości domyślnej klasy. Dla rozszerzeń struktury znaczników XAML wyrażona za pomocą nawiasów klamrowych, można wyeliminować `Member=` część wyrażenia:
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-To jest najczęściej używana forma `x:Static` — rozszerzenie znaczników.
+Jest to najczęściej używany typ `x:Static` — rozszerzenie znaczników.
 
-**Statycznych pokaz** strona zawiera dwa inne przykłady. Tag główny pliku XAML zawiera deklaracji przestrzeni nazw XML dla programu .NET `System` przestrzeni nazw:
+**Statyczne pokaz** strona zawiera dwie inne przykłady. Tag główny plik XAML zawiera deklaracji przestrzeni nazw XML dla platformy .NET `System` przestrzeni nazw:
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Dzięki temu `Label` rozmiar czcionki, należy ustawić pola statycznego `Math.PI`. Która powoduje raczej małego tekstu, więc `Scale` właściwość jest ustawiona na `Math.E`:
+Dzięki temu `Label` rozmiar czcionki, należy ustawić pole statyczne `Math.PI`. Który skutkuje zamiast małego tekstu, więc `Scale` właściwość jest ustawiona na `Math.E`:
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -120,7 +120,7 @@ Dzięki temu `Label` rozmiar czcionki, należy ustawić pola statycznego `Math.P
        HorizontalOptions="Center" />
 ```
 
-Wyświetla końcowy przykład `Device.RuntimePlatform` wartość. `Environment.NewLine` Właściwość statyczna służy do wstawiania znaków nowego wiersza, między tymi dwoma `Span` obiektów:
+W ostatnim przykładzie są wyświetlane `Device.RuntimePlatform` wartość. `Environment.NewLine` Właściwość statyczna służy do wstawiania znaków nowego wiersza, między tymi dwoma `Span` obiektów:
 
 ```xaml
 <Label HorizontalTextAlignment="Center"
@@ -135,7 +135,7 @@ Wyświetla końcowy przykład `Device.RuntimePlatform` wartość. `Environment.N
 </Label>
 ```
 
-Oto przykładowe działająca na wszystkich platformach trzy:
+Poniżej przedstawiono przykładowe uruchomione na wszystkich trzech platformach:
 
 [![x: Static pokaz](consuming-images/staticdemo-small.png "pokaz x: Static")](consuming-images/staticdemo-large.png#lightbox "pokaz x: Static")
 
@@ -143,11 +143,11 @@ Oto przykładowe działająca na wszystkich platformach trzy:
 
 ## <a name="xreference-markup-extension"></a>x:Reference — Rozszerzenie znaczników
 
-`x:Reference` — Rozszerzenie znaczników jest obsługiwana przez [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) klasy. Klasa ma tylko jedną właściwość o nazwie [ `Name` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.ReferenceExtension.Name/) typu `string` ustawioną nazwę elementu na stronie została podana nazwa z `x:Name`. To `Name` właściwość jest właściwość content `ReferenceExtension`, więc `Name=` nie jest wymagana podczas `x:Reference` pojawia się w nawiasach klamrowych.
+`x:Reference` — Rozszerzenie znaczników jest obsługiwana przez [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) klasy. Klasa ma jedną właściwość o nazwie [ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) typu `string` równa nazwa elementu na stronie, któremu nadano nazwę zawierającą `x:Name`. To `Name` właściwość jest właściwość content `ReferenceExtension`, więc `Name=` nie jest wymagane podczas `x:Reference` pojawia się w nawiasach klamrowych.
 
-`x:Reference` — Rozszerzenie znaczników jest używane wyłącznie w przypadku powiązań danych, które są opisane bardziej szczegółowo w artykule [ **powiązania danych**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+`x:Reference` — Rozszerzenie znaczników jest używane wyłącznie w przypadku powiązania danych, które są opisane bardziej szczegółowo w artykule [ **powiązanie danych**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-**X: Reference pokaz** strona zawiera dwa zastosowania `x:Reference` z powiązaniami danych pierwszego, gdy służy do ustawiania `Source` właściwość `Binding` obiektu, a drugi służy do ustawienia `BindingContext` Właściwość powiązania dwóch danych:
+**X: Reference pokaz** stronie znajdują się dwa przypadki użycia `x:Reference` przy użyciu powiązania danych pierwszego, gdy jest używana do ustawiania `Source` właściwość `Binding` obiekt i drugi, gdy jest używana do ustawiania `BindingContext` Właściwość powiązań danych dwa:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,7 +179,7 @@ Oto przykładowe działająca na wszystkich platformach trzy:
 </ContentPage>
 ```
 
-Zarówno `x:Reference` wyrażenia użyj skróconej wersji `ReferenceExtension` Nazwa klasy i eliminowania `Name=` część wyrażenia. W pierwszym przykładzie `x:Reference` — rozszerzenie znaczników jest osadzony w `Binding` — rozszerzenie znaczników. Zwróć uwagę, że `Source` i `StringFormat` ustawienia są oddzielone przecinkami. Oto programu uruchomionego na wszystkich platformach trzy:
+Zarówno `x:Reference` wyrażeń użyj skróconej wersji `ReferenceExtension` Nazwa klasy obsługi i eliminowanie `Name=` część wyrażenia. W pierwszym przykładzie `x:Reference` — rozszerzenie znaczników jest osadzony w `Binding` — rozszerzenie znaczników. Należy zauważyć, że `Source` i `StringFormat` ustawienia są oddzielone przecinkami. W tym miejscu jest uruchomiony na wszystkich trzech platformach program:
 
 [![x: Reference pokaz](consuming-images/referencedemo-small.png "pokaz x: Reference")](consuming-images/referencedemo-large.png#lightbox "pokaz x: Reference")
 
@@ -187,15 +187,15 @@ Zarówno `x:Reference` wyrażenia użyj skróconej wersji `ReferenceExtension` N
 
 ## <a name="xtype-markup-extension"></a>x:Type — Rozszerzenie znaczników
 
-`x:Type` — Rozszerzenie znaczników jest odpowiednikiem XAML języka C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) — słowo kluczowe. Nie jest obsługiwany przez [ `TypeExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) klasy, która definiuje jedną właściwość o nazwie [ `TypeName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.TypeExtension.TypeName/) typu `string` która jest ustawiona na nazwę klasy lub struktury. `x:Type` Zwraca rozszerzenia znaczników [ `System.Type` ](https://developer.xamarin.com/api/type/System.Type/) obiektu tej klasy lub struktury. `TypeName` Właściwość content jest `TypeExtension`, więc `TypeName=` nie jest wymagana podczas `x:Type` pojawia się w nawiasach klamrowych.
+`x:Type` — Rozszerzenie znaczników jest odpowiednikiem XAML języka C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) — słowo kluczowe. Nie jest obsługiwany przez [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) klasy, która definiuje jedną właściwość o nazwie [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) typu `string` , jest ustawiona na nazwę klasy lub struktury. `x:Type` Zwraca rozszerzenia znaczników [ `System.Type` ](xref:System.Type) obiekt tej klasy lub struktury. `TypeName` Właściwość content jest `TypeExtension`, więc `TypeName=` nie jest wymagane podczas `x:Type` pojawia się za pomocą nawiasów klamrowych.
 
-W ramach platformy Xamarin.Forms, istnieje kilka właściwości, które mają argumentów typu `Type`. Przykłady obejmują [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) właściwość `Style`i [x: typearguments —](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) atrybut służy do określania argumentów w klasach ogólnych. Jednak wykonuje działanie analizatora składni języka XAML `typeof` operacji automatycznie oraz `x:Type` — rozszerzenie znaczników nie jest używany w tych przypadkach.
+W ramach zestawu narzędzi Xamarin.Forms, istnieje kilka właściwości, które mają argumentów typu `Type`. Przykłady obejmują [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) właściwość `Style`i [x: typearguments —](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) atrybutu można określić argumentów w klasach ogólnych. Jednak wykonuje analizatora XAML `typeof` operacji automatycznie, a `x:Type` — rozszerzenie znaczników nie jest używany w tych przypadkach.
 
-W jednym miejscu gdzie `x:Type` *jest* wymagane jest z `x:Array` — rozszerzenie znaczników, który jest opisany w [następnej sekcji](#array).
+Jedno miejsce gdzie `x:Type` *jest* wymagane jest `x:Array` — rozszerzenie znaczników, który jest opisany w [następnej sekcji](#array).
 
-`x:Type` — Rozszerzenie znaczników jest również przydatne podczas tworzenia menu, w którym każdy element menu odnosi się do obiektu określonego typu. Możesz skojarzyć `Type` obiekt z każdym elementem menu, a następnie utwórz wystąpienie obiektu, gdy element menu zostanie zaznaczony.
+`x:Type` — Rozszerzenie znaczników jest również przydatne podczas tworzenia menu, w którym każdy element menu odnosi się do obiektu określonego typu. Możesz skojarzyć `Type` obiekt z każdego elementu menu, a następnie utwórz wystąpienie obiektu, gdy zaznaczony zostanie element menu.
 
-Jest to sposób menu nawigacji w `MainPage` w **rozszerzenia znaczników** program działa. **MainPage.xaml** plik zawiera `TableView` z każdym `TextCell` odpowiadający określonej strony w programie:
+Jest to jak menu nawigacji w `MainPage` w **— rozszerzenia znaczników** program działa. **MainPage.xaml** plik zawiera `TableView` z każdym `TextCell` odpowiadający określonej strony w programie:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,11 +234,11 @@ Jest to sposób menu nawigacji w `MainPage` w **rozszerzenia znaczników** progr
 </ContentPage>
 ```
 
-Oto otwierania strony głównej **rozszerzenia znaczników**:
+Oto strona główna otwierania w **— rozszerzenia znaczników**:
 
-[![Główne strony](consuming-images/mainpage-small.png "Main strony")](consuming-images/mainpage-large.png#lightbox "Main strony")
+[![Główny strony](consuming-images/mainpage-small.png "Main strony")](consuming-images/mainpage-large.png#lightbox "Main strony")
 
-Każdy `CommandParameter` właściwość jest ustawiona na `x:Type` rozszerzenie znaczników, który odwołuje się do jednego z innych stron. `Command` Właściwość jest powiązana z właściwości o nazwie `NavigateCommand`. Ta właściwość jest zdefiniowana w `MainPage` pliku CodeBehind:
+Każdy `CommandParameter` właściwość jest ustawiona na `x:Type` rozszerzenie znaczników, który odwołuje się do jednego z innych stron. `Command` Właściwość jest powiązana z właściwością o nazwie `NavigateCommand`. Ta właściwość jest zdefiniowana w `MainPage` pliku związanego z kodem:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -260,9 +260,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand` Właściwość jest `Command` obiekt, który implementuje wykonuje polecenie z argumentem typu `Type` &mdash; wartość `CommandParameter`. W metodzie `Activator.CreateInstance` można utworzyć wystąpienia na stronie, a następnie przechodzi do niego. Konstruktor stwierdza, ustawiając `BindingContext` strony do samej siebie, co pozwala `Binding` na `Command` do pracy. Zobacz [ **powiązania danych** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) artykuł, a szczególnie [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) artykułu, aby uzyskać więcej informacji o tym typie kodu.
+`NavigateCommand` Właściwość `Command` obiekt, który implementuje wykonuje polecenie przy użyciu argumentu typu `Type` &mdash; wartość `CommandParameter`. Metoda używa `Activator.CreateInstance` do utworzenia wystąpienia strony i następnie przechodzi do niego. Konstruktor stwierdza, ustawiając `BindingContext` strony do samego siebie, co pozwala `Binding` na `Command` do pracy. Zobacz [ **powiązanie danych** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) artykułu i szczególnie [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) artykuł, aby uzyskać więcej informacji na temat tego typu kodu.
 
-**X: Type pokaz** strona używa technika podobne do utworzenia wystąpienia elementy platformy Xamarin.Forms oraz dodanie ich do `StackLayout`. Plik XAML początkowo składa się z trzech `Button` elementy z ich `Command` właściwości `Binding` i `CommandParameter` właściwości mają typy trzy widoki platformy Xamarin.Forms:
+**X: Type pokaz** strona używa podobne techniki tworzenia wystąpienia elementów zestawu narzędzi Xamarin.Forms oraz dodanie ich do `StackLayout`. Plik XAML początkowo składa się z trzech `Button` elementów przy użyciu ich `Command` właściwości ustawione na `Binding` i `CommandParameter` właściwości ustawione na typy trzy widoki Xamarin.Forms:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -294,7 +294,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-Plik CodeBehind definiuje i inicjuje `CreateCommand` właściwości:
+Plik związany z kodem definiuje i inicjuje `CreateCommand` właściwości:
 
 ```csharp
 public partial class TypeDemoPage : ContentPage
@@ -317,7 +317,7 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąpienie argumentu, ustawia jego `VerticalOptions` właściwości i dodaje go do `StackLayout`. Trzy `Button` elementy następnie udostępnić stronie utworzony dynamicznie widoków:
+Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąpienie argumentu, ustawia jego `VerticalOptions` właściwości i dodaje go do `StackLayout`. Trzy `Button` elementy następnie udostępnić stronie dynamicznie utworzoną widoki:
 
 [![x: Type pokaz](consuming-images/typedemo-small.png "pokaz x: Type")](consuming-images/typedemo-large.png#lightbox "pokaz x: Type")
 
@@ -325,14 +325,14 @@ Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąp
 
 ## <a name="xarray-markup-extension"></a>x:Array — Rozszerzenie znaczników
 
-`x:Array` — Rozszerzenie znaczników można zdefiniować tablicy w znaczniku. Nie jest obsługiwany przez [ `ArrayExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) klasy, która definiuje dwie właściwości:
+`x:Array` — Rozszerzenie znaczników pozwala zdefiniować tablicę w znacznikach. Nie jest obsługiwany przez [ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension) klasy, która definiuje dwie właściwości:
 
 - `Type` typu `Type`, która wskazuje typ elementów w tablicy.
-- `Items` typu `IList`, która jest kolekcją same elementy. Jest to właściwość content `ArrayExtension`.
+- `Items` typu `IList`, który stanowi kolekcję same elementy. Jest to właściwość content `ArrayExtension`.
 
-`x:Array` — Rozszerzenie znaczników sam nie jest wyświetlana w nawiasach klamrowych. Zamiast tego `x:Array` tagiem początkowym i końcowym ograniczyć listę elementów. Ustaw `Type` właściwości `x:Type` — rozszerzenie znaczników.
+`x:Array` — Rozszerzenie znaczników sam nie jest wyświetlana w nawiasy klamrowe. Zamiast tego `x:Array` tagiem początkowym i końcowym ograniczania listy elementów. Ustaw `Type` właściwość `x:Type` — rozszerzenie znaczników.
 
-**X: Array pokaz** strona przedstawia sposób użycia `x:Array` do dodawania elementów do `ListView` przez ustawienie `ItemsSource` właściwości do tablicy:
+**X: Array pokaz** strona przedstawia sposób użycia `x:Array` do dodawania elementów do `ListView` , ustawiając `ItemsSource` właściwości tablicy:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -374,39 +374,39 @@ Metoda, która jest wykonywane, kiedy `Button` naciśnięciu tworzy nowe wystąp
 </ContentPage>        
 ```
 
-`ViewCell` Tworzy prosty `BoxView` dla każdego wpisu kolorów:
+`ViewCell` Tworzy prostą `BoxView` dla każdego wpisu kolorów:
 
 [![x: Array pokaz](consuming-images/arraydemo-small.png "pokaz x: Array")](consuming-images/arraydemo-large.png#lightbox "pokaz x: Array")
 
-Istnieje kilka sposobów, aby określić poszczególne `Color` elementów w tej macierzy. Można użyć `x:Static` — rozszerzenie znaczników:
+Istnieje kilka sposobów, aby określić poszczególnych `Color` elementów w tej tablicy. Możesz użyć `x:Static` — rozszerzenie znaczników:
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-Możesz też użyć `StaticResource` można pobrać koloru ze słownika zasobów:
+Alternatywnie można użyć `StaticResource` można pobrać koloru ze słownika zasobów:
 
 ```xaml
 <StaticResource Key="myColor" />
 ```
 
-Na końcu tego artykułu zobaczysz niestandardowego rozszerzenia znaczników XAML tworzący nową wartość kolorów:
+Pod koniec tego artykułu zobaczysz niestandardowego rozszerzenia znaczników XAML, który również tworzy nową wartość koloru:
 
 ```xaml
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Podczas definiowania tablice popularnych typów ciągów lub numery, użyj tagów na liście [ **przekazywanie argumentów konstruktora** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) artykuł, aby ograniczyć wartości.
+Podczas definiowania tablic popularnych typów, takich jak ciągów lub liczby, za pomocą tagów na liście [ **przekazywania argumentów konstruktora** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) artykuł, aby ograniczyć wartości.
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null — Rozszerzenie znaczników
 
-`x:Null` — Rozszerzenie znaczników jest obsługiwana przez [ `NullExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) klasy. Nie ma właściwości oraz jest po prostu odpowiednikiem XAML języka C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) — słowo kluczowe.
+`x:Null` — Rozszerzenie znaczników jest obsługiwana przez [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) klasy. Nie ma właściwości i jest po prostu XAML odpowiednikiem języka C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) — słowo kluczowe.
 
-`x:Null` — Rozszerzenie znaczników jest rzadko potrzebne i rzadko używane, ale jeśli znajdziesz potrzebę będzie Cieszymy się, że czy ona istnieje.
+`x:Null` — Rozszerzenie znaczników jest rzadko potrzebne i rzadko używane, ale jeśli znajdziesz na potrzeby się dobrze, że istnieje.
 
-**X: Null pokaz** strony przedstawiono scenariusz podczas `x:Null` może być łatwo. Załóżmy, że należy zdefiniować niejawny `Style` dla `Label` zawierającą `Setter` stanowiąca `FontFamily` właściwość na nazwę rodziny zależny od platformy:
+**X: Null pokaz** strona przedstawia jeden scenariusz przypadku `x:Null` może być łatwo. Załóżmy, że należy zdefiniować ukrytego `Style` dla `Label` zawierającej `Setter` określająca `FontFamily` właściwość na nazwę rodziny zależny od platformy:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -445,23 +445,23 @@ Podczas definiowania tablice popularnych typów ciągów lub numery, użyj tagó
 </ContentPage>   
 ```
 
-Następnie użytkownik stwierdza, że dla jednego z `Label` elementów, ustawienia właściwości w niejawnych `Style` z wyjątkiem `FontFamily`, który ma być wartością domyślną. Można zdefiniować innego `Style` do tego celu, ale prostsze jest po prostu określenie `FontFamily` właściwości określonej `Label` do `x:Null`, jak to pokazano w Centrum `Label`.
+A następnie użytkownik stwierdza, że dla jednego z `Label` elementów, chcesz, aby wszystkie ustawienia właściwości w niejawny `Style` z wyjątkiem `FontFamily`, który ma być wartością domyślną. Można zdefiniować inny `Style` do tego celu, ale prostszej metody jest po prostu ustaw `FontFamily` właściwości określonych `Label` do `x:Null`, jak pokazano w Centrum `Label`.
 
-Oto działająca na platformach trzy program:
+W tym miejscu jest uruchomiony na trzech platformach program:
 
 [![x: Null pokaz](consuming-images/nulldemo-small.png "pokaz x: Null")](consuming-images/nulldemo-large.png#lightbox "pokaz x: Null")
 
-O tym, że cztery `Label` elementy mają czcionki serif, ale Centrum `Label` ma sans-serif domyślnej czcionki.
+Informacja dotycząca tego cztery `Label` elementy mają czcionki serif, ale Centrum `Label` ma domyślną czcionkę sans-serif.
 
 ## <a name="define-your-own-markup-extensions"></a>Zdefiniowanie własnego rozszerzenia znaczników
 
-Jeśli zostały napotkane potrzebę rozszerzenie znaczników XAML, który nie jest dostępna w platformy Xamarin.Forms, możesz [Utwórz swój własny](creating.md).
+Jeśli wystąpiły na potrzeby rozszerzenia znaczników XAML, który nie jest dostępny w interfejsie Xamarin.Forms, możesz to zrobić [Utwórz swoje własne](creating.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Rozszerzenia znaczników (przykład)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Rozdział rozszerzeń znaczników XAML z książki platformy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [XAML znaczników rozszerzenia rozdziału z książki zestawu narzędzi Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Słowniki zasobów](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Style dynamiczne](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Powiązanie danych](~/xamarin-forms/app-fundamentals/data-binding/index.md)

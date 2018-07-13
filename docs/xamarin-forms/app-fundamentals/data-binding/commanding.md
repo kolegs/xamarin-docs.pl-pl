@@ -1,45 +1,45 @@
 ---
-title: Interfejs polecenia platformy Xamarin.Forms
-description: W tym artykule opisano sposób implementować właściwość polecenia z powiązaniami danych platformy Xamarin.Forms. Interfejs sterująca umożliwia innym podejściu do wykonania polecenia, który znacznie lepiej nadaje się do architektury MVVM.
+title: Interfejs polecenia zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak implementować właściwość polecenia przy użyciu powiązania danych zestawu narzędzi Xamarin.Forms. Interfejs sterująca zapewnia podejście alternatywne do wykonywania poleceń, która znacznie lepiej nadaje się do architektury MVVM.
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241315"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996376"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Interfejs polecenia platformy Xamarin.Forms
+# <a name="the-xamarinforms-command-interface"></a>Interfejs polecenia zestawu narzędzi Xamarin.Forms
 
-W ramach architektury Model-View-ViewModel (MVVM) powiązania danych są definiowane pomiędzy właściwości w ViewModel, który zazwyczaj jest klasą pochodzącą z `INotifyPropertyChanged`i właściwości w widoku, który zazwyczaj jest to plik XAML. Czasami aplikacja ma już potrzeby, które wykraczają poza tych powiązań właściwości, gdyż użytkownik zainicjować poleceń, które mają wpływ na coś ViewModel. Te polecenia są zazwyczaj zgłoszony przez kliknięcia przycisków lub palcem podsłuchu i tradycyjnie są przetwarzane w pliku CodeBehind programu obsługi dla `Clicked` zdarzenie `Button` lub `Tapped` zdarzenie `TapGestureRecognizer`.
+W ramach architektury Model-View-ViewModel (MVVM) powiązania danych są zdefiniowane między właściwościami w ViewModel, który jest zazwyczaj klasa, która pochodzi od klasy `INotifyPropertyChanged`, właściwości i w widoku, który zazwyczaj jest to plik XAML. Czasami aplikacja ma wymagania, które wykraczają poza te powiązania właściwość, wymagając od użytkownika zainicjować poleceń, które wpływają na element ViewModel. Te polecenia są zazwyczaj sygnalizowane, kliknięć przycisków lub palcem podsłuchu i tradycyjnie są przetwarzane w pliku związanym z kodem w obsłudze dla `Clicked` zdarzenia `Button` lub `Tapped` zdarzenia `TapGestureRecognizer`.
 
-Interfejs sterująca umożliwia innym podejściu do wykonania polecenia, który znacznie lepiej nadaje się do architektury MVVM. ViewModel, sam może zawierać polecenia, które są metody, które są wykonywane w reakcji na określonego działania w widoku, takie jak `Button` kliknij. Powiązania danych są definiowane pomiędzy tych poleceń i `Button`.
+Interfejs sterująca zapewnia podejście alternatywne do wykonywania poleceń, która znacznie lepiej nadaje się do architektury MVVM. ViewModel, sama może zawierać polecenia, które są metodami, które są wykonywane w reakcji na określone działania w widoku, takie jak `Button` kliknij. Powiązania danych są definiowane pomiędzy tych poleceń i `Button`.
 
-Aby umożliwić powiązania danych między `Button` oraz ViewModel, `Button` definiuje dwie właściwości:
+Aby zezwolić na powiązanie danych między `Button` oraz ViewModel, `Button` definiuje dwie właściwości:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu <xref:System.Windows.Input.ICommand>
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) typu `Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) tego typu <xref:System.Windows.Input.ICommand>
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) tego typu `Object`
 
-Aby używać interfejsu polecenia, należy zdefiniować powiązania danych, którego celem jest `Command` właściwość `Button` której źródłem jest właściwość ViewModel typu `ICommand`. ViewModel zawiera kod skojarzony z tym `ICommand` właściwość, która jest wykonywana po kliknięciu przycisku. Można ustawić `CommandParameter` dowolne dane do rozróżnienia wielu przycisków, jeśli są wszystkie powiązane do tej samej `ICommand` właściwości w ViewModel.
+Aby korzystać z interfejsu polecenia, należy zdefiniować powiązanie danych, który jest przeznaczony dla `Command` właściwość `Button` której źródłem jest właściwością w ViewModel typu `ICommand`. ViewModel zawiera kod skojarzony z tym `ICommand` właściwość, która jest wykonywana po kliknięciu przycisku. Możesz ustawić `CommandParameter` do dowolnych danych rozróżnienie między wiele przycisków, jeśli są one wszystkie powiązane do tej samej `ICommand` właściwość ViewModel.
 
-`Command` i `CommandParameter` właściwości są także definiowane przez następujące klasy:
+`Command` i `CommandParameter` właściwości również są definiowane przez następujące klasy:
 
-- [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) i w związku z tym [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/), która jest pochodną `MenuItem`
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) i w związku z tym [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), która jest pochodną `TextCell`
-- [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) i w związku z tym [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem), która jest pochodną `MenuItem`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) i w związku z tym [ `ImageCell` ](xref:Xamarin.Forms.ImageCell), która jest pochodną `TextCell`
+- [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) definiuje [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) właściwości typu `ICommand` i [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) właściwości. [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Właściwość [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest również typu `ICommand`.
+[`SearchBar`](xref:Xamarin.Forms.SearchBar) definiuje [ `SearchCommand` ](xref:Xamarin.Forms.SearchBar.SearchCommand) właściwości typu `ICommand` i [ `SearchCommandParameter` ](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) właściwości. [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand) Właściwość [ `ListView` ](xref:Xamarin.Forms.ListView) jest również typu `ICommand`.
 
-Tych poleceń mogą być obsługiwane w ramach ViewModel w taki sposób, który nie jest zależny od obiektu konkretnego interfejsu użytkownika w widoku.
+Te polecenia mogą być obsługiwane w ramach ViewModel w taki sposób, który nie są zależne od obiektów interfejsu użytkownika określonego w widoku.
 
 ## <a name="the-icommand-interface"></a>Interfejs ICommand
 
-<xref:System.Windows.Input.ICommand> Interfejsu nie jest częścią platformy Xamarin.Forms. Jest on zdefiniowany zamiast tego w [System.Windows.Input](xref:System.Windows.Input) przestrzeni nazw i składa się z dwóch metod i jedno zdarzenie:
+<xref:System.Windows.Input.ICommand> Interfejs nie jest częścią zestawu narzędzi Xamarin.Forms. Jest on zdefiniowany zamiast tego w [System.Windows.Input](xref:System.Windows.Input) przestrzeni nazw i składa się z dwóch metod oraz jedno zdarzenie:
 
 ```csharp
 public interface ICommand
@@ -52,41 +52,41 @@ public interface ICommand
 }
 ```
 
-Aby używać interfejsu polecenia, Twoje ViewModel zawiera właściwości typu `ICommand`:
+Aby korzystać z interfejsu polecenia, Twoja ViewModel zawiera właściwości typu `ICommand`:
 
 ```csharp
 public ICommand MyCommand { private set; get; }
 ```
 
-Klasa, która implementuje również musi odwoływać się ViewModel `ICommand` interfejsu. Ta klasa będzie opisana wkrótce. W widoku `Command` właściwość `Button` jest powiązany z tą właściwością:
+Klasa, która implementuje również musi odwoływać się ViewModel `ICommand` interfejsu. Ta klasa opisane zostaną wkrótce. W widoku `Command` właściwość `Button` jest powiązany z tej właściwości:
 
 ```xaml
 <Button Text="Execute command"
         Command="{Binding MyCommand}" />
 ```
 
-Gdy użytkownik naciśnie `Button`, `Button` wywołania `Execute` metody w `ICommand` obiekt powiązany z jego `Command` właściwości. To najprostsza część sterująca interfejsu.
+Gdy użytkownik naciśnie `Button`, `Button` wywołania `Execute` method in Class metoda `ICommand` obiekt powiązany z jego `Command` właściwości. To najprostsza część sterująca interfejsu.
 
-`CanExecute` Metody jest bardziej złożony. Gdy powiązanie najpierw jest zdefiniowana na `Command` właściwość `Button`, i po zmianie powiązania danych w jakiś sposób `Button` wywołania `CanExecute` metody w `ICommand` obiektu. Jeśli `CanExecute` zwraca `false`, a następnie `Button` się wyłączy. Oznacza to, że konkretnego polecenia obecnie jest niedostępny lub nieprawidłowy.
+`CanExecute` Metody jest bardziej złożona. Jeśli wiązanie najpierw jest zdefiniowana na `Command` właściwość `Button`, i zmianie powiązanie danych w jakiś sposób `Button` wywołania `CanExecute` method in Class metoda `ICommand` obiektu. Jeśli `CanExecute` zwraca `false`, a następnie `Button` wyłączy. Oznacza to, że określonego polecenia jest obecnie niedostępna lub nieprawidłowa.
 
-`Button` Również dołącza obsługi na `CanExecuteChanged` zdarzenie `ICommand`. Zdarzenie jest generowane z wewnątrz ViewModel. Po uruchomieniu zdarzenia `Button` wywołania `CanExecute` ponownie. `Button` Włącza się, jeśli `CanExecute` zwraca `true` i wyłącza się, jeśli `CanExecute` zwraca `false`.
+`Button` Również dołącza obsługę na `CanExecuteChanged` zdarzenia `ICommand`. Zdarzenie jest uruchamiane z w ramach ViewModel. Po uruchomieniu zdarzenia `Button` wywołania `CanExecute` ponownie. `Button` Włącza się, jeśli `CanExecute` zwraca `true` i wyłączy, jeśli `CanExecute` zwraca `false`.
 
 > [!IMPORTANT]
 > Nie używaj `IsEnabled` właściwość `Button` Jeśli używasz interfejsu polecenia.  
 
 ## <a name="the-command-class"></a>Klasy poleceń
 
-Jeśli Twoje ViewModel definiuje okreolić, czy typ `ICommand`, ViewModel musi również zawierać lub odwołuje się do klasy, która implementuje `ICommand` interfejsu. Ta klasa musi zawierać lub odwołać `Execute` i `CanExecute` metody i fire `CanExecuteChanged` zdarzenia przy każdym `CanExecute` — metoda może zwracać różne wartości.
+Gdy Twoja ViewModel definiuje okreolić, czy typ `ICommand`, ViewModel musi również zawierać lub odwoływać się do klasy, która implementuje `ICommand` interfejsu. Ta klasa musi zawierać lub odwoływać się do `Execute` i `CanExecute` metody i fire `CanExecuteChanged` zdarzenie zawsze wtedy, gdy `CanExecute` metoda może zwrócić inną wartość.
 
-Możesz taka klasa może zapisywać, lub można użyć klasy, że ktoś inny został zapisany. Ponieważ `ICommand` jest częścią systemu Microsoft Windows został użyty do lat z aplikacjami MVVM systemu Windows. Używanie klasy systemu Windows, który implementuje `ICommand` umożliwia udostępnianie ViewModels Twojego między aplikacjami systemu Windows i aplikacji platformy Xamarin.Forms.
+Taka klasa można napisać samodzielnie, lub można użyć klasy, który ktoś został zapisany. Ponieważ `ICommand` jest częścią programu Microsoft Windows, został on użyty przez wiele lat, za pomocą aplikacji Windows MVVM. Używanie klasy Windows, który implementuje `ICommand` umożliwia udostępnianie swoje modele widoków między aplikacjami Windows i aplikacje Xamarin.Forms.
 
-Jeśli udostępnianie ViewModels między systemem Windows i platformy Xamarin.Forms nie ma znaczenia, a następnie można użyć [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) lub [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) klasy uwzględnione w platformy Xamarin.Forms do zaimplementowania `ICommand`interfejsu. Te klasy umożliwiają określenie organów `Execute` i `CanExecute` metod w konstruktorach klasy. Użyj `Command<T>` korzystając `CommandParameter` powiązane właściwości w celu rozróżnienia wielu widoków do tego samego `ICommand` właściwości i łatwiejsze `Command` klasy, po którym nie jest wymagana.
+Jeśli udostępnianie modele widoków między Windows i zestawu narzędzi Xamarin.Forms nie ma znaczenia, a następnie można użyć [ `Command` ](xref:Xamarin.Forms.Command) lub [ `Command<T>` ](xref:Xamarin.Forms.Command`1) klasy uwzględnione w interfejsie Xamarin.Forms do zaimplementowania `ICommand`interfejsu. Klasy te umożliwiają określenie organów `Execute` i `CanExecute` metod w konstruktorach klasy. Użyj `Command<T>` zastosowania `CommandParameter` właściwości w celu rozróżnienia między wieloma widokami powiązany do tej samej `ICommand` właściwość i prostszej `Command` klasy, gdy nie jest to wymagane.
 
-## <a name="basic-commanding"></a>Steruje podstawowe
+## <a name="basic-commanding"></a>Podstawowe polecenia
 
-**Wpis osoby** strony [ **pokazy powiązania danych** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) program przedstawiono kilka prostych poleceń zaimplementowana w ViewModel.
+**Wpis osoby** strony w [ **pokazy powiązania danych** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) program pokazuje kilka prostych poleceń zaimplementowane w ViewModel.
 
-`PersonViewModel` Definiuje trzy właściwości o nazwie `Name`, `Age`, i `Skills` definiującą osoby. Ta klasa jest *nie* zawierać `ICommand` właściwości:
+`PersonViewModel` Definiuje trzy właściwości o nazwie `Name`, `Age`, i `Skills` definiują osoby. Ta klasa jest *nie* zawierać `ICommand` właściwości:
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -137,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel` Pokazano poniżej tworzy nowe obiekty typu `PersonViewModel` i umożliwia użytkownikowi wypełnienie danych. W tym celu klasy definiuje właściwości `IsEditing` typu `bool` i `PersonEdit` typu `PersonViewModel`. Ponadto klasa definiuje trzy właściwości typu `ICommand` i właściwość o nazwie `Persons` typu `IList<PersonViewModel>`:
+`PersonCollectionViewModel` Pokazane poniżej tworzy nowe obiekty typu `PersonViewModel` i umożliwia użytkownikowi wypełnianie danych. W tym celu klasy definiuje właściwości `IsEditing` typu `bool` i `PersonEdit` typu `PersonViewModel`. Ponadto klasy definiuje trzy właściwości typu `ICommand` i właściwość o nazwie `Persons` typu `IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -186,9 +186,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Skrócona lista nie zawiera konstruktora klasy, czyli gdzie trzech właściwości typu `ICommand` są zdefiniowane, który pojawi się wkrótce. Należy zauważyć, że zmienia się na trzech właściwości typu `ICommand` i `Persons` właściwości nie powodują `PropertyChanged` zdarzenia są uruchomione. Te właściwości są ustawione w przypadku utworzenia klasy i nie należy zmieniać później.
+Skrócona lista nie zawiera konstruktora klasy, czyli gdzie trzy właściwości typu `ICommand` są zdefiniowane, które pojawią się wkrótce. Należy zauważyć, że zmiany do trzech właściwości typu `ICommand` i `Persons` właściwości nie powodują `PropertyChanged` zdarzenia są wywoływane. Te właściwości są gotowi, gdy tworzona jest najpierw klasy i nie należy zmieniać po tej dacie.
 
-Przed badanie konstruktora `PersonCollectionViewModel` klasy, Przyjrzyjmy się w pliku XAML **wpis osoby** programu. Zawiera `Grid` z jego `BindingContext` ustawioną właściwość `PersonCollectionViewModel`. `Grid` Zawiera `Button` tekstem **nowy** z jego `Command` właściwość powiązana z `NewCommand` właściwości w ViewModel, powiązany formularzem wprowadzania z właściwościami `IsEditing` właściwość, jako także jako właściwości `PersonViewModel`, i powiązana dwa więcej przycisków `SubmitCommand` i `CancelCommand` właściwości ViewModel. Ostatni `ListView` Wyświetla kolekcję już wprowadzone osób:
+Przed zbadaniem konstruktora `PersonCollectionViewModel` klasy, Przyjrzyjmy się plik XAML dla **wpis osoby** program. Zawiera on `Grid` z jego `BindingContext` właściwością `PersonCollectionViewModel`. `Grid` Zawiera `Button` z tekstem **nowy** z jego `Command` właściwość powiązana z `NewCommand` właściwość w ViewModel, powiązana formularza zgłoszenia z właściwościami `IsEditing` właściwości jako również jako właściwości `PersonViewModel`, a dwa przyciski więcej powiązany z `SubmitCommand` i `CancelCommand` właściwości ViewModel. Końcowe `ListView` Wyświetla zbiór osób już wprowadzone:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -275,17 +275,17 @@ Przed badanie konstruktora `PersonCollectionViewModel` klasy, Przyjrzyjmy się w
 </ContentPage>
 ```
 
-Oto jak to działa: użytkownik naciśnie pierwszy **nowy** przycisku. To umożliwia formularza, ale wyłącza **nowy** przycisku. Użytkownik wprowadza następnie nazwę, wieku i umiejętności. W czasie edycji, użytkownik może nacisnąć **anulować** przycisk, aby rozpocząć od początku. Jeśli wprowadzono nazwę i prawidłowe wieku jest tylko **przesyłania** przycisk włączone. Naciśnięcie przycisku to **przesyłania** przycisk przesyłania osoby do kolekcji, wyświetlane przez `ListView`. Po upływie **anulować** lub **przesyłania** przycisk jest naciśnięty, formularza jest wyczyszczone i **nowy** przycisk jest aktywny ponownie.
+Oto jak to działa: użytkownik naciśnie pierwszy **New** przycisku. To umożliwia formularza zgłoszenia, lecz wyłączenie **New** przycisku. Użytkownik wprowadza następnie nazwę, wiek i umiejętności. W dowolnym momencie podczas edycji, użytkownik może nacisnąć **anulować** przycisk, aby zacząć od początku. Po wprowadzeniu nazwy i prawidłowy wiek jest tylko **przesyłania** przycisk włączone. Naciśnięcie tego **przesyłania** przycisk przesyła osoby do kolekcji wyświetlanych przez `ListView`. Po wywołaniu **anulować** lub **przesyłania** przycisk jest wciśnięty, formularza zgłoszenia jest czyszczona i **nowy** przycisk jest włączony, ponownie.
 
-Po lewej stronie ekranu dla systemu iOS pokazuje układ przed wprowadzono prawidłowy wiek. Android i platformy uniwersalnej systemu Windows ekrany Pokaż **przesyłania** przycisk włączona po ustawieniu wieku:
+Po lewej stronie ekranu w systemie iOS zawiera układ, zanim wprowadzono prawidłowy wiek. Dla systemów Android i platformy uniwersalnej systemu Windows ekrany show **przesyłania** przycisk włączone po ustawieniu wiek:
 
 [![Wpis osoby](commanding-images/personentry-small.png "wpis osoby")](commanding-images/personentry-large.png#lightbox "wpis osoby")
 
-Program nie ma żadnych funkcje do edycji istniejących i nie są zapisywane wpisy po wyjściu z strony.
+Program nie ma żadnych funkcji do edycji istniejących wpisów i nie są zapisywane wpisy, gdy przejdziesz do innej strony.
 
-Wszystkie logikę **nowy**, **przesyłania**, i **anulować** obsługi przycisków w `PersonCollectionViewModel` za pośrednictwem definicji `NewCommand`, `SubmitCommand`, i `CancelCommand` właściwości. Konstruktor obiektu `PersonCollectionViewModel` ustawia właściwości te trzy obiekty typu `Command`.  
+Całą logikę dla **New**, **przesyłania**, i **anulować** przyciski odbywa się w `PersonCollectionViewModel` za pośrednictwem definicji `NewCommand`, `SubmitCommand`, i `CancelCommand` właściwości. Konstruktor obiektu `PersonCollectionViewModel` ustawia te trzy właściwości obiektów typu `Command`.  
 
-A [Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/System.Func%7BSystem.Boolean%7D/) z `Command` klasa umożliwia przekazywanie argumentów typu `Action` i `Func<bool>` odpowiadający `Execute` i `CanExecute` metody. Najłatwiej zdefiniować te akcje i funkcje jako lambda funkcji bezpośrednio w `Command` konstruktora. W tym miejscu znajduje się definicja metody `Command` obiekt do `NewCommand` właściwości:
+A [Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) z `Command` klasy umożliwia przekazywanie argumentów typu `Action` i `Func<bool>` odpowiadający `Execute` i `CanExecute` metody. Najłatwiej jest definiowana jako wyrażenie lambda funkcji bezpośrednio w te akcje i funkcje `Command` konstruktora. Poniżej przedstawiono definicję `Command` dla obiektu `NewCommand` właściwości:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -329,13 +329,13 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Po kliknięciu przez użytkownika **nowy** przycisku `execute` funkcja przekazany do `Command` Konstruktor jest wykonywana. Spowoduje to utworzenie nowego `PersonViewModel` obiektów, ustawia program obsługi dla tego obiektu `PropertyChanged` zdarzeń, ustawia `IsEditing` do `true`i wywołuje `RefreshCanExecutes` metody zdefiniowanej po konstruktora.
+Kiedy użytkownik kliknie **nowy** przycisku `execute` funkcji są przekazywane do `Command` Konstruktor jest wykonywany. Spowoduje to utworzenie nowego `PersonViewModel` obiektu, ustawia program obsługi dla tego obiektu `PropertyChanged` zdarzeń, ustawia `IsEditing` do `true`i wywołuje `RefreshCanExecutes` metody zdefiniowanej po konstruktora.
 
-Oprócz wykonania `ICommand` interfejsu `Command` klasa również definiuje metodę o nazwie `ChangeCanExecute`. Twojej ViewModel powinny wywoływać `ChangeCanExecute` dla `ICommand` właściwość zawsze, gdy nic się coś, co może zmieniać wartość zwracaną `CanExecute` metody. Wywołanie `ChangeCanExecute` powoduje, że `Command` klasy uruchomienie `CanExecuteChanged` metody. `Button` Dołączył obsługi dla tego zdarzenia i odpowiada przez wywołanie metody `CanExecute` ponownie, a następnie włączenie oparty na wartość zwracaną przez tę metodę.
+Oprócz wykonywania `ICommand` interfejsu `Command` klasa definiuje również metodę o nazwie `ChangeCanExecute`. Twoje ViewModel powinny wywoływać `ChangeCanExecute` dla `ICommand` właściwość zawsze wtedy, gdy nic się stanie, które mogą ulec zmianie wartość zwracaną przez `CanExecute` metody. Wywołanie `ChangeCanExecute` powoduje, że `Command` klasy ognia `CanExecuteChanged` metody. `Button` Dołączył obsługi dla tego zdarzenia i odpowiada przez wywołanie metody `CanExecute` ponownie, a następnie włączenie oparty na wartość zwracana przez tę metodę.
 
-Gdy `execute` metody `NewCommand` wywołania `RefreshCanExecutes`, `NewCommand` właściwości pobiera wywołanie `ChangeCanExecute`i `Button` wywołania `canExecute` metody, która zwraca teraz `false` ponieważ `IsEditing`właściwość jest teraz `true`.
+Gdy `execute` metody `NewCommand` wywołania `RefreshCanExecutes`, `NewCommand` właściwości pobiera wywołanie `ChangeCanExecute`i `Button` wywołania `canExecute` metody, która zwraca teraz `false` ponieważ `IsEditing`właściwość jest obecnie `true`.
 
-`PropertyChanged` Obsługi nowego `PersonViewModel` obiektu wywołania `ChangeCanExecute` metody `SubmitCommand`. Oto implementowania tej właściwości polecenia:
+`PropertyChanged` Obsługi nowego `PersonViewModel` obiektu wywołania `ChangeCanExecute` metody `SubmitCommand`. Poniżej przedstawiono sposób implementacji właściwości polecenia:
 
 
 ```csharp
@@ -374,11 +374,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute` Działać w ramach `SubmitCommand` jest wywoływana za każdym razem, gdy jest właściwością zmienione w `PersonViewModel` obiekt edytowany. Zwraca `true` tylko wtedy, gdy `Name` właściwość jest co najmniej jeden znak i `Age` jest większa niż 0. W tym czasie **przesyłania** przycisk staje się dostępny.
+`canExecute` Działać w ramach `SubmitCommand` jest wywoływana za każdym razem, gdy jest właściwością zmienione w `PersonViewModel` obiektu edytowany. Zwraca `true` tylko wtedy, gdy `Name` właściwość jest co najmniej jeden znak i `Age` jest większa niż 0. W tym czasie **przesyłania** przycisk staje się dostępny.
 
-`execute` Działać w ramach **przesyłania** usuwa programu obsługi zmienić właściwości `PersonViewModel`, dodaje obiekt do `Persons` kolekcji i zwraca wszystkie elementy do początkowej warunków.
+`execute` Działać w ramach **przesyłania** usuwa obsługi zmiany właściwości z `PersonViewModel`, dodaje obiekt do `Persons` kolekcji i zwraca wszystkie elementy do warunków początkowych.
 
-`execute` Działać w ramach **anulować** przycisk robi wszystko to **przesyłania** execept ma przycisk dodać obiektu do kolekcji:
+`execute` Działać w ramach **anulować** przycisk robi to wszystko, **przesyłania** execept ma przycisk Dodaj obiekt do kolekcji:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -412,19 +412,19 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 `canExecute` Metoda zwraca `true` w dowolnym momencie `PersonViewModel` jest edytowany.
 
-Te techniki mogą być dostosowywane do bardziej złożonymi scenariuszami: właściwość `PersonCollectionViewModel` może być powiązane z `SelectedItem` właściwości `ListView` do edycji istniejących elementów i **usunąć** przycisk mogą zostać dodane do usunięcia te elementy.
+Techniki te można dostosować tak, aby bardziej złożonych scenariuszy: właściwość `PersonCollectionViewModel` może być powiązane z `SelectedItem` właściwość `ListView` do edycji istniejących elementów i **Usuń** przycisk może zostać dodany do usunięcia te elementy.
 
-Nie trzeba definiować `execute` i `canExecute` metod jako funkcje lambda. Możesz zapisać je jako zwykłych prywatnych metod w ViewModel i odwoływać je w `Command` konstruktorów. Jednak takie podejście zwykle powoduje wiele metod, które odwołują się tylko raz w ViewModel.
+Nie trzeba zdefiniować `execute` i `canExecute` metod jako funkcje lambda. Możesz zapisać je jako zwykłe metody prywatne w ViewModel i odwoływać się do nich w `Command` konstruktorów. Jednak to podejście zazwyczaj powodują powstanie wielu metod, do których odwołują się tylko raz w ViewModel.
 
 ## <a name="using-command-parameters"></a>Przy użyciu parametrów polecenia
 
-Czasami jest wygodne dla jednego lub więcej przycisków (lub inne obiekty interfejsu użytkownika) identyczny `ICommand` właściwości w ViewModel. W takim przypadku należy użyć `CommandParameter` właściwości do rozróżniania między przyciskami.
+Czasami jest to wygodne dla jednego lub więcej przycisków (lub innych obiektów interfejsu użytkownika) współużytkować ten sam `ICommand` właściwość ViewModel. W tym przypadku używasz `CommandParameter` właściwości w celu rozróżnienia między przyciskami.
 
-Można nadal używać `Command` klasy tych udostępnionych `ICommand` właściwości. Definiuje klasę [konstruktora alternatywnego](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/) która akceptuje `execute` i `canExecute` metody z parametrami typu `Object`. Jest to sposób `CommandParameter` jest przekazywana do tych metod.
+Będzie można kontynuować używanie `Command` klasę tymi wspólnymi `ICommand` właściwości. Definiuje klasę [alternatywny Konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})) akceptujący `execute` i `canExecute` metody z parametrami typu `Object`. Jest to sposób, w jaki `CommandParameter` jest przekazywana do tych metod.
 
-Jednak przy użyciu `CommandParameter`, najłatwiej może używać ogólnych [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) klasę, aby określić typ obiektu ustawioną `CommandParameter`. `execute` i `canExecute` metody, które określisz ma parametry typu.
+Jednak przy użyciu `CommandParameter`, najłatwiej musieli używać ogólnych [ `Command<T>` ](xref:Xamarin.Forms.Command`1) klasy, aby określić typ obiektu, ustaw `CommandParameter`. `execute` i `canExecute` metody, należy określić, które mają parametry tego typu.
 
-**Dziesiętną klawiatury** strony przedstawiono ta technika, pokazując implementowania klawiatury do wprowadzenia liczby dziesiętne. `BindingContext` Dla `Grid` jest `DecimalKeypadViewModel`. `Entry` Właściwość ta ViewModel jest powiązana z `Text` właściwość `Label`. Wszystkie `Button` obiekty są powiązane z różnych poleceń w ViewModel: `ClearCommand`, `BackspaceCommand`, i `DigitCommand`:
+**Dziesiętna klawiatury** strony pokazano tej techniki, przedstawiając sposób implementacji klawiaturę do wprowadzania liczb dziesiętnych. `BindingContext` Dla `Grid` jest `DecimalKeypadViewModel`. `Entry` Właściwość ta ViewModel jest powiązana z `Text` właściwość `Label`. Wszystkie `Button` obiekty są powiązane z różnymi poleceniami w ViewModel: `ClearCommand`, `BackspaceCommand`, i `DigitCommand`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -527,15 +527,15 @@ Jednak przy użyciu `CommandParameter`, najłatwiej może używać ogólnych [ `
 </ContentPage>
 ```
 
-Przyciski 11 10 cyfr i dziesiętnego udziału powiązanie z `DigitCommand`. `CommandParameter` Rozróżnia tych przycisków. Wartości `CommandParameter` zazwyczaj jest taka sama jak tekst wyświetlany przez przycisk z wyjątkiem dziesiętnym, który do celów jasności jest wyświetlany znak kropki w środkowym.
+Przyciski 11 dla 10 cyfr i separator dziesiętny udostępnianie powiązanie z `DigitCommand`. `CommandParameter` Rozróżnia tych przycisków. Wartość równa `CommandParameter` jest zwykle taka sama jak tekst wyświetlany przez przycisk z wyjątkiem punktu dziesiętnego, wyświetlanych na potrzeby w celu uściślenia przy użyciu znaku kropki środkowej.
 
-Oto program w akcji:
+Poniżej przedstawiono program w akcji:
 
-[![Decimal klawiatury](commanding-images/decimalkeyboard-small.png "dziesiętną klawiatury")](commanding-images/decimalkeyboard-large.png#lightbox "dziesiętną klawiatury")
+[![Klawiatura dziesiętną](commanding-images/decimalkeyboard-small.png "dziesiętna klawiatury")](commanding-images/decimalkeyboard-large.png#lightbox "dziesiętna klawiatury")
 
-Należy zauważyć, że przycisk dziesiętnego wszystkie trzy zrzuty ekranu jest wyłączona, ponieważ podanej liczby zawiera już separatorem dziesiętnym.
+Należy zauważyć, że przycisk punktu dziesiętnego, wszystkie trzy zrzuty ekranu jest wyłączona, ponieważ podanej liczby już zawiera separator dziesiętny.
 
-`DecimalKeypadViewModel` Definiuje `Entry` właściwości typu `string` (która jest jedyną właściwością, która wyzwala `PropertyChanged` zdarzeń) oraz trzy właściwości typu `ICommand`:
+`DecimalKeypadViewModel` Definiuje `Entry` właściwości typu `string` (która jest tylko właściwość, która wyzwala `PropertyChanged` zdarzeń) i trzech właściwości typu `ICommand`:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -570,7 +570,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Przycisk odpowiadający `ClearCommand` jest zawsze włączona i ustawia wpis "0" do:
+Przycisk odpowiadający `ClearCommand` jest zawsze włączona i po prostu ustawia wpis "0" do:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -602,9 +602,9 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Ponieważ przycisku jest zawsze włączone, nie jest konieczne określanie `canExecute` argument `Command` konstruktora.
+Ponieważ ten przycisk jest zawsze włączone, nie jest konieczne określenie `canExecute` argument `Command` konstruktora.
 
-Logikę wprowadzania liczb i backspacing jest nieco trudnych, ponieważ jeśli nie wprowadzono żadnych cyfr, a następnie `Entry` właściwość jest ciągiem "0". Jeśli użytkownik wpisze więcej zera, a następnie `Entry` nadal zawiera co najmniej jeden zero. Jeśli użytkownik wpisze innych cyfrę, że cyfry zastępuje zero. Jednak jeśli użytkownik wpisze separatorem dziesiętnym przed dowolną cyfrę, następnie `Entry` to "0". ciąg.
+Logika do wprowadzania liczb i backspacing jest trudna, ponieważ jeśli zostały wprowadzone nie cyfry, a następnie `Entry` właściwość jest ciąg "0". Jeśli użytkownik wpisze więcej zer, a następnie `Entry` nadal zawiera tylko jedno zero. Jeśli użytkownik wpisze jakąkolwiek inną cyfrę, ta cyfra zamienia zero. Jednak jeśli użytkownik wpisze separator dziesiętny przed jakąkolwiek inną cyfrę, następnie `Entry` jest ciąg "0.".
 
 **Backspace** przycisk jest aktywny tylko wtedy, gdy długość wpisu jest większa niż 1 lub jeśli `Entry` nie równa się ciąg "0":
 
@@ -643,9 +643,9 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Logikę `execute` działać w ramach **Backspace** przycisk upewnia się, że `Entry` jest co najmniej jeden ciąg "0".
+Logikę `execute` działać w ramach **Backspace** przycisku masz pewność, że `Entry` jest co najmniej jeden ciąg "0".
 
-`DigitCommand` Właściwość jest powiązana z przycisków, 11, z których każdy określa się `CommandParameter` właściwości. `DigitCommand` Można ustawić na wystąpienie zwykłej `Command` klasy, ale na łatwiejsze w `Command<T>` klasy ogólnej. Korzystając z języka XAML, sterująca interfejsu `CommandParameter` właściwości są zazwyczaj ciągów, a jest to typ argument rodzajowy. `execute` i `canExecute` następnie mają argumenty typu `string`:
+`DigitCommand` Właściwość jest powiązana z przycisków, 11, z których każdy identyfikowany za pomocą `CommandParameter` właściwości. `DigitCommand` Mógł zostać ustawiony na wystąpienie normalnej `Command` klasy, ale jego łatwiejszy w obsłudze `Command<T>` klasy ogólnej. W przypadku korzystania z interfejsu sterująca z XAML, `CommandParameter` właściwości są zwykle ciągów i jest to typ argument ogólny. `execute` i `canExecute` następnie mają argumenty typu `string`:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -679,19 +679,19 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-`execute` Metody dołącza argument ciągu `Entry` właściwości. Jednak jeśli wynik rozpoczyna się od zero (ale nie zero i separatorem dziesiętnym) następnie tej początkowej zero należy usunąć przy użyciu `Substring` funkcji.
+`execute` Metoda dołącza argument typu string `Entry` właściwości. Jednakże, jeśli wynik, który rozpoczyna się od zera (ale nie zero i separator dziesiętny) następnie tej początkowej zero musi zostać usunięta za pomocą `Substring` funkcji.
 
-`canExecute` Metoda zwraca `false` tylko wtedy, gdy argument jest dziesiętnym (co oznacza, że dziesiętnego zostanie naciśnięty) i `Entry` zawiera już separatorem dziesiętnym.
+`canExecute` Metoda zwraca `false` tylko wtedy, gdy argument jest przecinka dziesiętnego (wskazuje, czy punkt dziesiętny jest naciskana) i `Entry` już zawiera punkt dziesiętny.
 
-Wszystkie `execute` wywołania metody `RefreshCanExecutes`, które następnie wywołuje `ChangeCanExecute` dla obu `DigitCommand` i `ClearCommand`. Dzięki temu, że dziesiętnego i przyciski backspace są włączone lub wyłączone na podstawie bieżącej sekwencji cyfr podana.
+Wszystkie `execute` wywołanie metody `RefreshCanExecutes`, która następnie wywołuje metodę `ChangeCanExecute` dla obu `DigitCommand` i `ClearCommand`. Daje to gwarancję, że punkt dziesiętny i backspace przyciski są włączone lub wyłączone na podstawie bieżącego sekwencji cyfr podana.
 
 ## <a name="adding-commands-to-existing-views"></a>Dodawanie poleceń do istniejących widoków
 
-Jeśli chcesz korzystać z interfejsu sterująca z widoków, które nie obsługują tego, istnieje możliwość zachowanie platformy Xamarin.Forms, który konwertuje zdarzenie na polecenie. Jest to opisane w artykule [ **EventToCommandBehavior wielokrotnego użytku**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md).
+Jeśli chcesz sterująca interfejs za pomocą widoków, które nie obsługują tego, jest możliwe użycie zachowania zestawu narzędzi Xamarin.Forms, które konwertuje zdarzenie na polecenia. Jest to opisane w artykule [ **EventToCommandBehavior wielokrotnego użytku, do**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md).
 
-## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchroniczne, wydawanie poleceń dla menu nawigacji
+## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchroniczne, polecenia menu nawigacji
 
-Steruje jest wygodną metodą wykonania menu nawigacji, takim jak w [ **pokazy powiązania danych** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) sam program. W tym miejscu jest częścią **MainPage.xaml**:
+Polecenia jest wygodne w przypadku implementowania menu nawigacji, takie jak w [ **pokazy powiązania danych** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) samego programu. Poniżej przedstawiono część **MainPage.xaml**:
 
 
 ```xaml
@@ -729,9 +729,9 @@ Steruje jest wygodną metodą wykonania menu nawigacji, takim jak w [ **pokazy p
 </ContentPage>
 ```
 
-Podczas korzystania z XAML, są droższe `CommandParameter` właściwości zwykle są ustawione na ciągi. W takim przypadku jednak używane rozszerzenie znaczników w XAML, aby `CommandParameter` jest typu `System.Type`.
+Korzystając z polecenia przy użyciu XAML, `CommandParameter` właściwości są zwykle ustawiane na ciągi. W tym przypadku, jednak rozszerzenie znaczników XAML jest używana, aby `CommandParameter` typu `System.Type`.
 
-Każdy `Command` właściwość jest powiązana z właściwości o nazwie `NavigateCommand`. Czy właściwość jest zdefiniowana w pliku CodeBehind **MainPage.xaml.cs**:
+Każdy `Command` właściwość jest powiązana z właściwością o nazwie `NavigateCommand`. Czy właściwość jest zdefiniowana w pliku związanym z kodem **MainPage.xaml.cs**:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -754,15 +754,15 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Ustawia konstruktora `NavigateCommand` właściwości `execute` metodę, która tworzy `System.Type` parametr, a następnie przechodzi do niego. Ponieważ `PushAsync` wywołanie wymaga `await` operatora, `execute` — metoda musi być oznaczone jako asynchroniczne. Jest to realizowane przy użyciu `async` — słowo kluczowe przed listy parametrów.
+Ustawia konstruktora `NavigateCommand` właściwości `execute` metody, która tworzy wystąpienie `System.Type` parametru i następnie przechodzi do niego. Ponieważ `PushAsync` wywołanie wymaga `await` operatora `execute` metoda musi mieć flagę jako asynchroniczne. Jest to realizowane przy `async` — słowo kluczowe przed listą parametrów.
 
-Ustawia również konstruktora `BindingContext` strony do samej siebie, aby odwołać powiązania `NavigateCommand` w tej klasie.
+Ustawia również konstruktora `BindingContext` strony do samego siebie, aby odwoływać się do powiązania `NavigateCommand` w tej klasie.
 
-Kolejność kodu w tym konstruktorze sprawia, że różnica: `InitializeComponent` XAML do przeanalizowania powoduje wywołanie, ale w tym czasie powiązania właściwości o nazwie `NavigateCommand` nie może zostać rozpoznane, ponieważ `BindingContext` ma ustawioną wartość `null`. Jeśli `BindingContext` jest ustawiony w Konstruktorze *przed* `NavigateCommand` jest ustawiona, a następnie powiązanie mogą zostać rozwiązane, kiedy `BindingContext` jest ustawiona, ale w tym czasie `NavigateCommand` jest nadal `null`. Ustawienie `NavigateCommand` po `BindingContext` nie odniesie żadnego skutku dla powiązania ponieważ zmiana `NavigateCommand` nie wyzwalać `PropertyChanged` zdarzeń i powiązania nie może ustalić, który `NavigateCommand` jest obecnie prawidłowe.
+Kolejność kodu w tym konstruktorze referacie: `InitializeComponent` wywołanie powoduje, że XAML, który ma być analizowany, ale w tym czasie powiązania z właściwością o nazwie `NavigateCommand` nie może zostać rozpoznane, ponieważ `BindingContext` ustawiono `null`. Jeśli `BindingContext` jest ustawiony w Konstruktorze *przed* `NavigateCommand` jest ustawiona, a następnie powiązanie może zostać rozwiązany, kiedy `BindingContext` jest ustawiona, ale w tym czasie `NavigateCommand` jest nadal `null`. Ustawienie `NavigateCommand` po `BindingContext` będzie mieć wpływu na powiązania, ponieważ zmiana `NavigateCommand` nie zostanie wyzwolony `PropertyChanged` zdarzeń i powiązania nie wie, że `NavigateCommand` jest obecnie prawidłowe.
 
-Ustawienie obu `NavigateCommand` i `BindingContext` (w dowolnej kolejności) przed wywołaniem do `InitializeComponent` będą działać, ponieważ oba składniki powiązania są ustawiane podczas definicji powiązania napotka działanie analizatora składni języka XAML.
+Ustawienie oba `NavigateCommand` i `BindingContext` (w dowolnej kolejności) przed wywołaniem do `InitializeComponent` będą działać, ponieważ oba składniki powiązania są ustawiane w chwili XAML analizator składni napotka definicji powiązania.
 
-Czasami może być kłopotliwe powiązań danych, ale jak przedstawiono w tej serii artykułów, są wydajne i elastyczne i znacznie pomoc do zorganizowania kodu oddzielając podstawowej logiki w interfejsie użytkownika.
+Powiązania danych czasami może być trudne, ale jak przedstawiono w tej serii artykułów, są zaawansowane i wszechstronne i znacznie ułatwiają organizowanie kodu, oddzielając podstawowej logiki z poziomu interfejsu użytkownika.
 
 
 

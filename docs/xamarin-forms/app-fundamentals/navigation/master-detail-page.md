@@ -1,65 +1,65 @@
 ---
-title: Strona platformy Xamarin.Forms główny szczegółowy
-description: MasterDetailPage platformy Xamarin.Forms jest strona, która zarządza dwie strony powiązane, informacji — prezentuje elementy strony głównej i strony szczegółów, który przedstawia szczegółowe informacje dotyczące elementów na stronie głównej. W tym artykule opisano sposób używania MasterDetailPage i przechodzenia między stronami jego informacji.
+title: Strona Xamarin.Forms wzorzec / szczegół
+description: Xamarin.Forms MasterDetailPage jest strona, która zarządza dwie strony powiązane, informacji — strony wzorcowej, która przedstawia elementy i stronę szczegółów, która przedstawia szczegółowe informacje na temat elementów na stronie wzorcowej. W tym artykule wyjaśniono, jak używać MasterDetailPage i przechodzenia między stronami, jego informacji.
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 46fa32fc8203b32378f4a4fbe07cb8c9f8dbb854
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: a3d0edbd933339ee8b8a0a277a4f2493cc8dc70e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209209"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997468"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Strona platformy Xamarin.Forms główny szczegółowy
+# <a name="xamarinforms-master-detail-page"></a>Strona Xamarin.Forms wzorzec / szczegół
 
-_MasterDetailPage platformy Xamarin.Forms jest strona, która zarządza dwie strony powiązane, informacji — prezentuje elementy strony głównej i strony szczegółów, który przedstawia szczegółowe informacje dotyczące elementów na stronie głównej. W tym artykule opisano sposób używania MasterDetailPage i przechodzenia między stronami jego informacji._
+_Xamarin.Forms MasterDetailPage jest strona, która zarządza dwie strony powiązane, informacji — strony wzorcowej, która przedstawia elementy i stronę szczegółów, która przedstawia szczegółowe informacje na temat elementów na stronie wzorcowej. W tym artykule wyjaśniono, jak używać MasterDetailPage i przechodzenia między stronami, jego informacji._
 
 ## <a name="overview"></a>Omówienie
 
 Strona wzorcowa zwykle wyświetla listę elementów, jak pokazano na poniższych zrzutach ekranu:
 
-[![](master-detail-page-images/masterpage-components.png "Składniki strony wzorca")](master-detail-page-images/masterpage-components-large.png#lightbox "składniki strony wzorca")
+[![](master-detail-page-images/masterpage-components.png "Składniki strony główne")](master-detail-page-images/masterpage-components-large.png#lightbox "składniki strony główne")
 
-Lokalizacja listy elementów jest identyczne w każdej z platform i wybranie jednego z elementów spowoduje przejście do odpowiedniej strony szczegółów. Ponadto strony wzorcowej również funkcje paska nawigacyjnego, który zawiera przycisk, który może służyć do przejdź do strony szczegółów active:
+Lokalizacja listy elementów jest taka sama na każdej platformie i wybierając jedną z pozycji spowoduje przejście do odpowiedniej strony szczegółów. Ponadto strona wzorcowa obejmuje także pasek nawigacyjny, który zawiera przycisk, który może służyć do przejdź do strony szczegółów active:
 
-- W systemach iOS, na pasku nawigacyjnym znajdują się w górnej części strony oraz przycisku, który przechodzi do strony szczegółów. Ponadto strona szczegółów active może zostać przesłane do przesuwając strony głównej po lewej stronie.
-- W systemie Android na pasku nawigacyjnym znajduje się u góry strony i Wyświetla tytuł, ikonę i przycisku, który przechodzi do strony szczegółów. Ikona jest zdefiniowany w `[Activity]` atrybut, który decorates `MainActivity` klasy w projekcie specyficzne dla platformy systemu Android. Ponadto strona szczegółów active może zostać przesłane do przesuwając strony wzorcowej do lewej strony, wybierając stronę szczegółów prawej strony ekranu i naciskając *ponownie* u dołu ekranu.
-- W systemie Windows platformy Uniwersalnej, na pasku nawigacyjnym znajduje się w górnej części strony i ma przycisku, który przechodzi do strony szczegółów.
+- W systemach iOS na pasku nawigacyjnym znajduje się w górnej części strony i ma przycisk, który prowadzi do strony szczegółów. Ponadto strona szczegółów active można nastąpi przejście, szybko przesuwając palcem w stronę wzorcową po lewej stronie.
+- W systemie Android na pasku nawigacyjnym znajduje się w górnej części strony i Wyświetla tytuł, ikona i przycisk, który prowadzi do strony szczegółów. Ikona jest zdefiniowany w `[Activity]` atrybut, który rozszerza `MainActivity` klasy w projekcie dla konkretnej platformy systemu Android. Ponadto strona szczegółów active można nastąpi przejście, szybko przesuwając palcem w stronę wzorcową po lewej stronie, wybierając stronę szczegółów po prawej stronie ekranu i naciskając *ponownie* znajdujący się u dołu ekranu.
+- Na Universal Windows Platform (platformy UWP), na pasku nawigacyjnym znajduje się w górnej części strony, a przycisk, który prowadzi do strony szczegółów.
 
-Szczegółowe dane Wyświetla strony odpowiada elementowi wybrane na głównym strony, a w poniższe zrzuty ekranu przedstawiono główne składniki strony szczegółów:
+Szczegóły strony wyświetla dane, które odpowiada elementowi zaznaczone na wzorcu strony, a w poniższych zrzutach ekranu przedstawiono główne składniki strony szczegółów:
 
 ![](master-detail-page-images/detailpage-components.png "Składniki strony szczegółów")
 
-Strona szczegółów zawiera paska nawigacyjnego, których zawartość jest zależny od platformy:
+Strona szczegółów zawiera paska nawigacyjnego, w których zawartość jest zależny od platformy:
 
-- W systemach iOS, na pasku nawigacyjnym znajdują się w górnej części strony i Wyświetla tytuł oraz przycisku, który zwraca strony wzorcowej, pod warunkiem, że wystąpienie strony szczegółów jest ujęte w [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) wystąpienia. Ponadto strony wzorcowej może być zwracany do przesuwając strony szczegółów z prawej strony.
-- W systemie Android pasek nawigacyjny znajduje się u góry strony i Wyświetla tytuł, ikonę i przycisku, który zwraca strony wzorcowej. Ikona jest zdefiniowany w `[Activity]` atrybut, który decorates `MainActivity` klasy w projekcie specyficzne dla platformy systemu Android.
-- Na platformy uniwersalnej systemu Windows na pasku nawigacyjnym znajduje się u góry strony i Wyświetla tytuł i ma przycisku, który zwraca strony wzorcowej.
+- W systemach iOS, na pasku nawigacyjnym znajduje się w górnej części strony Wyświetla tytuł i ma przycisk, który zwraca strony wzorcowej, pod warunkiem, że wystąpienie strony szczegółów jest opakowana w [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wystąpienia. Ponadto strona wzorcowa mogą być zwracane do, szybko przesuwając palcem strony szczegółów po prawej stronie.
+- W systemie Android pasek nawigacyjny znajduje się w górnej części strony i Wyświetla tytuł, ikona i przycisk, który zwraca strony wzorcowej. Ikona jest zdefiniowany w `[Activity]` atrybut, który rozszerza `MainActivity` klasy w projekcie dla konkretnej platformy systemu Android.
+- Na platformie UWP na pasku nawigacyjnym znajduje się w górnej części strony Wyświetla tytuł i znajduje się przycisk, która zwraca strony wzorcowej.
 
-### <a name="navigation-behavior"></a>Zachowanie nawigacji
+### <a name="navigation-behavior"></a>Zachowania nawigacji
 
-Zachowanie środowiska nawigacji między stron wzorcowych i szczegółowych to platforma zależne:
+Zachowanie środowisko nawigacji między strony wzorcowe i szczegółowe to platforma zależne:
 
-- W systemach iOS, strona szczegółów *slajdów* z prawej strony jako stronę wzorcową slajdów z lewej strony i lewej części szczegółów strona jest nadal widoczna.
-- W systemie Android, strony główne i szczegóły są *nakładany* na siebie.
-- Na platformy uniwersalnej systemu Windows, szczegóły i wzorzec strony są *miejscami*.
+- W systemach iOS, strona szczegółów *slajdy* z prawej strony jako stronę wzorcową slajdy, z lewej strony i lewej części szczegółów strony jest nadal wyświetlany.
+- W systemie Android strony szczegółów i wzorzec są *nakładany* na siebie nawzajem.
+- Na platformie UWP, strony szczegółów i wzorzec są *zamienione*.
 
-Podobnie, będzie można zauważyć w trybie krajobraz z tym, że strony wzorcowej w systemach iOS i Android ma podobne szerokość jako strony wzorcowej w trybie portret, więc więcej strony szczegółów będzie widoczna.
+Podobne zachowanie będzie można zauważyć w orientacji poziomej, z tą różnicą, że strony wzorcowej w systemach iOS i Android ma podobne szerokość jako strony wzorcowej w orientacji pionowej, dlatego więcej strony szczegółów będzie widoczna.
 
-Informacje dotyczące sterowania zachowaniem nawigacji, zobacz [kontrolowanie zachowania wyświetlania strony szczegółów](#Controlling_the_Detail_Page_Display_Behavior).
+Aby dowiedzieć się, jak kontrolowanie zachowania nawigacji, zobacz [kontrolowanie zachowania wyświetlania strony szczegółów](#Controlling_the_Detail_Page_Display_Behavior).
 
 ## <a name="creating-a-masterdetailpage"></a>Tworzenie MasterDetailPage
 
-A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) zawiera [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) i [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) właściwości, które są typu [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), które służą do pobierania i ustawiania odpowiednio stron wzorcowych i szczegółów.
+A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) zawiera [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) i [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) właściwości, które są zarówno typ [ `Page` ](xref:Xamarin.Forms.Page), które są używane do pobierania i ustawiania odpowiednio stron wzorcowych i szczegółów.
 
 > [!IMPORTANT]
-> A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) została zaprojektowana jako strony głównej i jako strony podrzędnej w innych typach strony może spowodować nieoczekiwane i niespójne zachowanie. Ponadto ma zalecane strona wzorcowa [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) powinna zawsze być [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpienie, a strona szczegółów tylko powinny zostać wypełnione z [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), i `ContentPage` wystąpień. Pomoże to w celu zapewnienia spójną obsługę użytkowników na wszystkich platformach.
+> A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) została zaprojektowana jako strony głównej i używając go, ponieważ strona podrzędna, w innych typach strony może spowodować nieoczekiwane i niespójne zachowanie. Ponadto zalecamy, aby strona wzorcowa [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) powinna zawsze być [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) wystąpienie i że strona szczegółów tylko będzie zapełniony stanem [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), i `ContentPage` wystąpień. Pomoże to zapewnić spójne środowisko użytkownika na wszystkich platformach.
 
-Przedstawia poniższy przykładowy kod XAML [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) stanowiąca [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) i [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) właściwości:
+Ilustruje poniższy przykład kodu XAML [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) określająca [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) i [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) właściwości:
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -79,7 +79,7 @@ Przedstawia poniższy przykładowy kod XAML [ `MasterDetailPage` ](https://devel
 </MasterDetailPage>
 ```
 
-Poniższy przykład kodu pokazuje odpowiednik [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) utworzony w języku C#:
+Poniższy przykład kodu pokazuje odpowiednik [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) utworzone w języku C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -97,11 +97,11 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-[ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Właściwość jest ustawiona na [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) wystąpienia. [ `MasterDetailPage.Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) Właściwość jest ustawiona na [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) zawierający `ContentPage` wystąpienia.
+[ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Właściwość jest ustawiona na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) wystąpienia. [ `MasterDetailPage.Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) Właściwość jest ustawiona na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) zawierający `ContentPage` wystąpienia.
 
 ### <a name="creating-the-master-page"></a>Tworzenie strony wzorcowej
 
-Poniższy przykładowy kod XAML zawiera deklarację `MasterPage` obiektu, który odwołuje się do [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) właściwości:
+Poniższy przykład kodu XAML przedstawiono deklarację `MasterPage` obiektu, który jest przywoływane za pośrednictwem [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) właściwości:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,16 +139,16 @@ Poniższy przykładowy kod XAML zawiera deklarację `MasterPage` obiektu, który
 </ContentPage>
 ```
 
-Strona składa się z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) który wypełnione z danymi w języku XAML, ustawiając jego [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) właściwości do tablicy `MasterPageItem` wystąpień. Każdy `MasterPageItem` definiuje `Title`, `IconSource`, i `TargetType` właściwości.
+Strona składa się z [ `ListView` ](xref:Xamarin.Forms.ListView) , jest wypełniana danymi w XAML, ustawiając jego [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) właściwości tablicy `MasterPageItem` wystąpień. Każdy `MasterPageItem` definiuje `Title`, `IconSource`, i `TargetType` właściwości.
 
-A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) jest przypisany do [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) właściwości do wyświetlenia każdego `MasterPageItem`. `DataTemplate` Zawiera [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) składający się z [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) i [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/). [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Wyświetla `IconSource` wartość właściwości oraz [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) Wyświetla `Title` wartości właściwości dla każdego `MasterPageItem`.
+A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) jest przypisany do [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) właściwość do wyświetlenia każdego `MasterPageItem`. `DataTemplate` Zawiera [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) składający się z [ `Image` ](xref:Xamarin.Forms.Image) i [ `Label` ](xref:Xamarin.Forms.Label). [ `Image` ](xref:Xamarin.Forms.Image) Wyświetla `IconSource` wartości właściwości i [ `Label` ](xref:Xamarin.Forms.Label) Wyświetla `Title` wartości właściwości dla każdego `MasterPageItem`.
 
-Na stronie jej [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) i [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) zestawu właściwości. Ikona pojawi się na stronie szczegółów, pod warunkiem, że strona szczegółów paska tytułu. To musi być włączona w systemie iOS zawijania wystąpienie strony szczegółów w [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) wystąpienia.
+Na stronie znajduje się jego [ `Title` ](xref:Xamarin.Forms.Page.Title) i [ `Icon` ](xref:Xamarin.Forms.Page.Icon) zestawu właściwości. Ikona pojawi się na stronie szczegółów, pod warunkiem, że strona szczegółów paska tytułu. To musi być włączona w systemie iOS opakowując wystąpienie strony szczegółów w [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wystąpienia.
 
 > [!NOTE]
-> [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Strona musi mieć jego [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) ustawić właściwości lub wystąpi wyjątek.
+> [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Strony musi mieć jej [ `Title` ](xref:Xamarin.Forms.Page.Title) właściwością lub wystąpi wyjątek.
 
-Poniższy przykład kodu pokazuje odpowiedniej strony utworzone w języku C#:
+Poniższy przykład kodu pokazuje odpowiednich stron, które są tworzone w języku C#:
 
 ```csharp
 public class MasterPageCS : ContentPage
@@ -206,13 +206,13 @@ public class MasterPageCS : ContentPage
 }
 ```
 
-Poniższe zrzuty ekranu Pokaż strony wzorcowej na każdej platformie:
+Poniższych zrzutach ekranu przedstawiono strony wzorcowej na każdej z platform:
 
-![](master-detail-page-images/masterpage.png "Przykład strony wzorca")
+![](master-detail-page-images/masterpage.png "Przykładowa strona wzorca")
 
 ### <a name="creating-and-displaying-the-detail-page"></a>Tworzenie i wyświetlanie strony szczegółów
 
-`MasterPage` Wystąpienie zawiera `ListView` właściwość, która przedstawia jego [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) wystąpienia, aby `MainPage` [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) można zarejestrować wystąpienia Program obsługi zdarzeń do obsługi [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) zdarzeń. Dzięki temu `MainPage` wystąpienia, aby ustawić [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) właściwości do strony, która reprezentuje wybranego `ListView` elementu. Poniższy przykład kodu pokazuje programu obsługi zdarzeń:
+`MasterPage` Wystąpienie zawiera `ListView` właściwość, która uwidacznia jego [ `ListView` ](xref:Xamarin.Forms.ListView) wystąpienia, aby `MainPage` [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) zarejestrować wystąpienie Program obsługi zdarzeń do obsługi [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) zdarzeń. Dzięki temu `MainPage` wystąpienia, aby ustawić [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) właściwości do strony, która reprezentuje wybrane `ListView` elementu. Poniższy przykład kodu pokazuje programu obsługi zdarzeń:
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -237,27 +237,27 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` Metoda wykonuje następujące czynności:
 
-- Pobiera on [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/) z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) wystąpienia oraz pod warunkiem, że nie jest on `null`, ustawia strony szczegółów do nowego wystąpienia typu strony przechowywane w `TargetType`właściwość `MasterPageItem`. Typ strony jest ujęte w [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) wystąpienia, aby upewnić się, że ikona odwołania za pośrednictwem [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) właściwość `MasterPage` jest wyświetlany na stronie szczegółów w systemie iOS.
-- Wybrany element w [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ma ustawioną wartość `null` do upewnij się, że żaden z `ListView` elementy zostaną wybrane następnym `MasterPage` jest przedstawiony.
-- Strona szczegółów jest wyświetlana przez ustawienie [ `MasterDetailPage.IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) właściwości `false`. Ta właściwość określa, czy strony głównego lub szczegółów jest przedstawiony. Należy wybrać opcję `true` do wyświetlenia strony wzorcowej i `false` do wyświetlenia strony szczegółów.
+- Pobiera [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) z [ `ListView` ](xref:Xamarin.Forms.ListView) metodą wystąpienia oraz pod warunkiem, że nie jest `null`, ustawia stronę szczegółów do nowego wystąpienia typu strony, przechowywana w `TargetType`właściwość `MasterPageItem`. Typ strony jest opakowana w [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) wystąpienia, aby upewnić się, że ikona przywoływane za pośrednictwem [ `Icon` ](xref:Xamarin.Forms.Page.Icon) właściwość `MasterPage` jest wyświetlany na stronie szczegółów w systemie iOS.
+- Wybrany element w [ `ListView` ](xref:Xamarin.Forms.ListView) jest ustawiona na `null` do upewnij się, że żaden z `ListView` elementy zostaną wybrane następnym razem `MasterPage` zostanie wyświetlony.
+- Strona szczegółów jest wyświetlone użytkownikowi, ustawiając [ `MasterDetailPage.IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) właściwość `false`. Ta właściwość określa, czy strona wzorca lub szczegółów zostanie wyświetlony. Powinien być ustawiony na `true` do wyświetlenia strony wzorcowej i `false` można wyświetlić strony szczegółów.
 
-Pokaż poniższe zrzuty ekranu `ContactPage` strony szczegółów, który jest wyświetlany po został wybrany na stronie głównej:
+Poniższe zrzuty ekranu Pokaż `ContactPage` strony szczegółów, który jest wyświetlany po został wybrany na stronie głównej:
 
-![](master-detail-page-images/detailpage.png "Przykład strony szczegółów")
+![](master-detail-page-images/detailpage.png "Przykładowa strona szczegółów")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 
-### <a name="controlling-the-detail-page-display-behavior"></a>Kontrolowanie zachowania wyświetlana strona szczegółów
+### <a name="controlling-the-detail-page-display-behavior"></a>Kontrolowanie zachowania wyświetlania strony szczegółów
 
-Jak [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) zarządza stron wzorcowych i szczegółowych zależy od tego, czy aplikacja działa na telefon lub tablet, orientacji urządzenia, a wartość [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) Właściwość. Ta właściwość określa sposób wyświetlania strony szczegółów. Jego możliwe wartości to:
+Sposób, w jaki [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) zarządza strony wzorcowe i szczegółowe zależy od tego, czy aplikacja jest uruchomiona na telefonie lub tablecie orientacji urządzenia, a wartość [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) Właściwość. Ta właściwość określa, jak zostanie wyświetlona strona szczegółów. Jego możliwe wartości to:
 
 - **Domyślne** — strony są wyświetlane przy użyciu domyślnego platformy.
 - **Popover** — strona szczegółów obejmuje lub częściowo obejmuje strony wzorcowej.
-- **Podziel** — strony wzorcowej jest wyświetlana po lewej stronie i strony szczegółów jest po prawej stronie.
-- **SplitOnLandscape** — ekranu podziału jest używany, gdy urządzenie jest w orientacji poziomej.
-- **SplitOnPortrait** — ekranu podziału jest używany, gdy urządzenie jest w orientacji pionowej.
+- **Podziel** — strona główna jest wyświetlany po lewej stronie i strony szczegółów po prawej.
+- **SplitOnLandscape** — na ekranie podzielonym jest używany, gdy urządzenie jest w orientacji poziomej.
+- **SplitOnPortrait** — na ekranie podzielonym jest używany, gdy urządzenie jest w orientacji pionowej.
 
-Poniższy przykład kodu XAML pokazano, jak ustawić [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) właściwość [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+Poniższy przykład kodu XAML pokazuje, jak ustawić [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) właściwość [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +269,7 @@ Poniższy przykład kodu XAML pokazano, jak ustawić [ `MasterBehavior` ](https:
 </MasterDetailPage>
 ```
 
-Poniższy przykład kodu pokazuje odpowiednik [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) utworzony w języku C#:
+Poniższy przykład kodu pokazuje odpowiednik [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) utworzone w języku C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -284,15 +284,15 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-Jednak wartość [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) właściwość dotyczy tylko aplikacji uruchomionych na tabletów lub pulpitu. Aplikacje uruchomione na telefonach zawsze mieć *Popover* zachowanie.
+Jednak wartość [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) właściwość ma wpływ tylko na aplikacje na tablety lub pulpitu. Aplikacje działające na telefonach zawsze mieć *Popover* zachowanie.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób użycia [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) i przechodzenia między stronami jego informacji. Platformy Xamarin.Forms `MasterDetailPage` jest strona, która zarządza dwie strony powiązane informacje — prezentuje elementy strony wzorcowej oraz strony szczegółów, który przedstawia szczegółowe informacje dotyczące elementów na stronie głównej.
+W tym artykule przedstawiono sposób użycia [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) oraz przechodzenia między stronami, jego informacji. Xamarin.Forms `MasterDetailPage` to strona, która zarządza dwie strony z powiązanymi informacjami — strony wzorcowej, która przedstawia elementy i stronę szczegółów, która przedstawia szczegółowe informacje na temat elementów na stronie wzorcowej.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Odmian strony](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [Różne typy stron](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (przykład)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
-- [MasterDetailPage](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)
+- [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

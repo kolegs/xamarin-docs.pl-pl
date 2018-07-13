@@ -1,67 +1,67 @@
 ---
-title: Opcje układu w platformy Xamarin.Forms
-description: Każdy widok platformy Xamarin.Forms ma właściwości HorizontalOptions i VerticalOptions typu LayoutOptions. W tym artykule opisano wpływ każdej wartości LayoutOptions na wyrównanie i rozszerzenia widoku.
+title: Opcje układu w interfejsie Xamarin.Forms
+description: Każdego widoku interfejsu Xamarin.Forms ma właściwości HorizontalOptions i VerticalOptions typu LayoutOptions. W tym artykule opisano wpływ każdej wartości LayoutOptions wyrównania i rozszerzanie widoku.
 ms.prod: xamarin
 ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: dc15c05bf3633ef2ae5f71754290a7bd768dc836
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1ede5f75925a3dafa93062d147fa349ff91f07d2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245693"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995313"
 ---
-# <a name="layout-options-in-xamarinforms"></a>Opcje układu w platformy Xamarin.Forms
+# <a name="layout-options-in-xamarinforms"></a>Opcje układu w interfejsie Xamarin.Forms
 
-_Każdy widok platformy Xamarin.Forms ma właściwości HorizontalOptions i VerticalOptions typu LayoutOptions. W tym artykule opisano wpływ każdej wartości LayoutOptions na wyrównanie i rozszerzenia widoku._
+_Każdego widoku interfejsu Xamarin.Forms ma właściwości HorizontalOptions i VerticalOptions typu LayoutOptions. W tym artykule opisano wpływ każdej wartości LayoutOptions wyrównania i rozszerzanie widoku._
 
 ## <a name="overview"></a>Omówienie
 
-[ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Struktury hermetyzuje dwóch preferencje układu:
+[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) Struktury hermetyzuje dwóch preferencje układu:
 
-- **Wyrównanie** — widok preferowana przez wyrównania, który określa jej położenie i rozmiar w jego układ nadrzędnej.
-- **Rozszerzenia** — używane tylko przez [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)oraz wskazuje, jeśli widok należy użyć dodatkowe miejsce, jeśli jest dostępna.
+- **Wyrównanie** — widok preferowanego wyrównanie, który określa jej położenie i rozmiar, w ramach jego układ nadrzędnej.
+- **Rozszerzenie** — używane tylko przez [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)oraz wskazuje, w przypadku widoku należy używać dodatkowe miejsce, jeśli jest ona dostępna.
 
-Te preferencje układ można zastosować do [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/), względem jego elementu nadrzędnego, ustawiając [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) lub [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości `View` do jednego pola publiczne z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) struktury. Pola publiczne są następujące:
+Te preferencje układu można zastosować do [ `View` ](xref:Xamarin.Forms.View), względem jego elementu nadrzędnego, ustawiając [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) lub [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwość `View` do jednego z pola publiczne z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) struktury. Pola publiczne są następujące:
 
-- [`Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`Start`, `Center`, `End`, I `Fill` pola są używane do definiowania widoku wyrównania w układzie nadrzędnej:
+`Start`, `Center`, `End`, I `Fill` pola są używane do definiowania wyrównania tego widoku w układzie nadrzędnego:
 
-- Wyrównania poziomego [ `Start` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/) pozycji [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) na lewą stronę układu nadrzędny i wyrównanie w pionie, umieszcza `View` u góry Układ nadrzędnej.
-- Wyrównanie w poziomie i w pionie, aby uzyskać [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/) koncentruje się poziomo czy pionowo [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/).
-- Wyrównania poziomego [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/) pozycji [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) na po prawej stronie układu nadrzędny i wyrównanie w pionie, umieszcza `View` na dole układu nadrzędnej.
-- Wyrównania poziomego [ `Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) upewnia się, że [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) wypełnia szerokość układu nadrzędny i wyrównanie w pionie, zapewnia, że `View` wypełnia Wysokość układu nadrzędnej.
+- Wyrównanie w poziomie, aby uzyskać [ `Start` ](xref:Xamarin.Forms.LayoutOptions.Start) pozycji [ `View` ](xref:Xamarin.Forms.View) po stronie lewej układu nadrzędnej oraz wyrównanie w pionie, umieszcza `View` u góry Układ nadrzędnej.
+- Wyrównanie w poziomie i pionie, aby uzyskać [ `Center` ](xref:Xamarin.Forms.LayoutOptions.Center) poziomo lub pionowo centra [ `View` ](xref:Xamarin.Forms.View).
+- Wyrównanie w poziomie, aby uzyskać [ `End` ](xref:Xamarin.Forms.LayoutOptions.End) pozycji [ `View` ](xref:Xamarin.Forms.View) na po prawej stronie układu nadrzędnej oraz wyrównanie w pionie, umieszcza `View` u dołu układu nadrzędnej.
+- Wyrównanie w poziomie, aby uzyskać [ `Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) zapewnia, że [ `View` ](xref:Xamarin.Forms.View) wypełnia szerokość układu nadrzędnego i wyrównanie w pionie, zapewnia, że `View` wypełnia Wysokość układu nadrzędnej.
 
-`StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, I `FillAndExpand` wartości są używane do definiowania preferencji wyrównanie i określa, czy widok zajmują więcej miejsca Jeśli jest dostępny w obrębie nadrzędnego [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+`StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, I `FillAndExpand` wartości są używane do definiowania preferencje wyrównania i tego, czy widok zajmują więcej miejsca Jeśli jest dostępna w ramach nadrzędnej [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
 > [!NOTE]
-> Wartość domyślna w widoku [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości [ `LayoutOptions.Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/).
+> Wartość domyślna widoku [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości jest [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill).
 
 <a name="alignment" />
 
 ## <a name="alignment"></a>Wyrównanie
 
-Określa wyrównanie jak widok przy znajduje się w jego układ nadrzędnego układ nadrzędny zawiera nieużywane miejsce (układu nadrzędny jest większy niż łączny rozmiar wszystkich jego obiektów podrzędnych).
+Wyrównanie Określa, jak widok przy znajduje się w obrębie swojego nadrzędnego układu układ nadrzędny zawiera nieużywane miejsce (układ nadrzędnego jest większy niż łącznego rozmiaru wszystkich elementów podrzędnych).
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) tylko szanuje `Start`, `Center`, `End`, i `Fill` [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pola podrzędnego widoki, które są w odwrotnym kierunku Aby `StackLayout` orientacji. W związku z tym podrzędnych widoków w orientacji pionowej `StackLayout` można ustawić ich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) właściwości do jednego z `Start`, `Center`, `End`, lub `Fill` pola. Podobnie, widoki podrzędnych w orientacji poziomej `StackLayout` można ustawić ich [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości do jednego z `Start`, `Center`, `End`, lub `Fill` pola.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) tylko szanuje `Start`, `Center`, `End`, i `Fill` [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) pól w widokach podrzędne, które znajdują się w odwrotnym kierunku Aby `StackLayout` orientacji. W związku z tym, podrzędne widoków w orientacji pionowej `StackLayout` można ustawić ich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwości do jednego z `Start`, `Center`, `End`, lub `Fill` pola. Podobnie, podrzędne widoków w orientacji poziomej `StackLayout` można ustawić ich [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości do jednego z `Start`, `Center`, `End`, lub `Fill` pola.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) nie przestrzega `Start`, `Center`, `End`, i `Fill` [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pola podrzędnego widoków, które znajdują się w tym samym kierunku co `StackLayout` orientacji. W związku z tym orientacji pionowej `StackLayout` ignoruje `Start`, `Center`, `End`, lub `Fill` pola zostaną ustawione na [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości widoków podrzędnych. Podobnie, orientacji poziomej `StackLayout` ignoruje `Start`, `Center`, `End`, lub `Fill` pola zostaną ustawione na [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) właściwości widoków podrzędnych.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) respektują `Start`, `Center`, `End`, i `Fill` [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) pól w widokach podrzędne, które znajdują się w tym samym kierunku co `StackLayout` orientacji. W związku z tym, orientacji pionowej `StackLayout` ignoruje `Start`, `Center`, `End`, lub `Fill` pola zostaną ustawione na [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości podrzędnej widoków. Podobnie, orientacji poziomej `StackLayout` ignoruje `Start`, `Center`, `End`, lub `Fill` pola zostaną ustawione na [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwości podrzędnej widoków.
 
 > [!NOTE]
-> [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) Zazwyczaj zastąpienia rozmiar określony przy użyciu żądania [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) i [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) właściwości.
+> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) ogólnie zastąpienia rozmiar określony za pomocą żądań [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) i [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) właściwości.
 
-W poniższym przykładzie kodu XAML pokazano orientacji pionowej [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) gdzie każdego elementu podrzędnego [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ustawia jego [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) właściwości jedno z pól wyrównanie cztery z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) struktury:
+Pokazano w poniższym przykładzie kodu XAML, orientacji pionowej [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) gdzie każdego elementu podrzędnego [ `Label` ](xref:Xamarin.Forms.Label) ustawia jego [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwości jedno z pól wyrównanie czterech z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) strukturę:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -73,7 +73,7 @@ W poniższym przykładzie kodu XAML pokazano orientacji pionowej [ `StackLayout`
 </StackLayout>
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 Content = new StackLayout
@@ -89,24 +89,24 @@ Content = new StackLayout
 };
 ```
 
-Kod wyniki w układzie pokazano na poniższych zrzutach ekranu:
+Ten kod powoduje w układzie pokazano na poniższych zrzutach ekranu:
 
-[![](layout-options-images/alignment.png "Opcje układu wyrównania")](layout-options-images/alignment-large.png#lightbox "opcji wyrównania układu")
+[![](layout-options-images/alignment.png "Opcje układu wyrównanie")](layout-options-images/alignment-large.png#lightbox "opcji układu wyrównania")
 
 <a name="expansion" />
 
 ## <a name="expansion"></a>Rozszerzenia
 
-Rozszerzenia kontroluje, czy widok zajmie więcej miejsca, jeśli jest dostępny w ramach [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Jeśli `StackLayout` zawiera nieużywane miejsce (to znaczy `StackLayout` jest większy niż łączny rozmiar wszystkich jego elementów podrzędnych), nieużywane miejsce jest dzielone równomiernie wszystkie widoki podrzędne, które żądania rozszerzeń przez ustawienie ich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)lub [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pola, które używa `AndExpand` sufiks. Należy pamiętać, że w przypadku wszystkich miejsca w `StackLayout` jest używana, opcje rozszerzenia nie obowiązują.
+Rozszerzenie Określa, czy widok, zajmują więcej miejsca, jeśli to możliwe, w ramach [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Jeśli `StackLayout` zawiera nieużywane miejsce (czyli `StackLayout` przekracza łączny rozmiar wszystkich jego elementów podrzędnych), nieużywane miejsce jest dzielone równomiernie wszystkich widoków podrzędne, które żądają rozszerzenia, ustawiając ich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)lub [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) pole, które używa `AndExpand` sufiks. Należy pamiętać, że w przypadku wszystkich miejsca w `StackLayout` jest używany, opcje rozszerzenia nie mają wpływu.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) można rozszerzyć tylko widoki podrzędnych w kierunku orientacji. W związku z tym orientacji pionowej `StackLayout` rozszerzyć widoki podrzędne, które ustawić ich [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości do jednego z `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, lub `FillAndExpand` pola, jeśli `StackLayout` zawiera nieużywane miejsce. Podobnie, orientacji poziomej `StackLayout` rozszerzyć widoki podrzędne, które ustawić ich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) właściwości do jednego z `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, lub `FillAndExpand` pola, jeśli `StackLayout` zawiera nieużywane miejsce.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) rozwinąć można tylko widoki podrzędnych w kierunku orientacji. W związku z tym, orientacji pionowej `StackLayout` można rozwinąć widoki podrzędne, które ustaw ich [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości do jednego z `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, lub `FillAndExpand` pola, jeśli `StackLayout` zawiera nieużywane miejsce. Podobnie, orientacji poziomej `StackLayout` można rozwinąć widoki podrzędne, które ustaw ich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwości do jednego z `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, lub `FillAndExpand` pola, jeśli `StackLayout` zawiera nieużywane miejsce.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) nie można rozwinąć widoków podrzędnych w kierunku przeciwnym orientacji. W związku z tym w orientacji pionowej `StackLayout`, ustawienie [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) właściwość widok podrzędny do [ `StartAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/) działa tak samo jak ustawienie właściwości [ `Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/).
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) nie można rozwinąć widoków podrzędnych w kierunku przeciwnym orientacji. W związku z tym, w orientacji pionowej `StackLayout`, ustawiając [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwość widok podrzędny [ `StartAndExpand` ](xref:Xamarin.Forms.LayoutOptions.StartAndExpand) ma taki sam efekt jak ustawienie właściwości [ `Start`](xref:Xamarin.Forms.LayoutOptions.Start).
 
 > [!NOTE]
-> Należy pamiętać, że włączenie rozszerzenia nie zmienia rozmiar widoku, chyba że użyto [ `LayoutOptions.FillAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/).
+> Należy pamiętać, że włączenie rozszerzenia nie zmienia rozmiar widoku, chyba że używa [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand).
 
-W poniższym przykładzie kodu XAML pokazano orientacji pionowej [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) gdzie każdego elementu podrzędnego [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ustawia jego [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości jedno z pól rozszerzenia cztery z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) struktury:
+Pokazano w poniższym przykładzie kodu XAML, orientacji pionowej [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) gdzie każdego elementu podrzędnego [ `Label` ](xref:Xamarin.Forms.Label) ustawia jego [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości jedno z pól cztery rozszerzenia z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) strukturę:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -123,7 +123,7 @@ W poniższym przykładzie kodu XAML pokazano orientacji pionowej [ `StackLayout`
 </StackLayout>
 ```
 
-Poniżej przedstawiono równoważne kodu C#:
+Równoważny kod C# jest pokazany poniżej:
 
 ```csharp
 Content = new StackLayout
@@ -144,19 +144,19 @@ Content = new StackLayout
 };
 ```
 
-Kod wyniki w układzie pokazano na poniższych zrzutach ekranu:
+Ten kod powoduje w układzie pokazano na poniższych zrzutach ekranu:
 
-[![](layout-options-images/expansion.png "Opcje układu rozszerzenia")](layout-options-images/expansion-large.png#lightbox "opcje układu rozszerzenia")
+[![](layout-options-images/expansion.png "Rozszerzenie Opcje układu")](layout-options-images/expansion-large.png#lightbox "rozszerzenie opcje układu")
 
-Każdy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) zajmuje tego samego ilość miejsca w [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Jednak tylko ostatni `Label`, który określa jego [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości [ `FillAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) ma inny rozmiar. Ponadto każdy `Label` jest oddzielona małych czerwony [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/), co pozwala miejsce `Label` zajmuje łatwo przeglądać.
+Każdy [ `Label` ](xref:Xamarin.Forms.Label) zajmuje tyle samo miejsca, w ramach [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Jednak tylko ostatni `Label`, który konfiguruje jego [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości [ `FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) ma inny rozmiar. Ponadto każdy `Label` jest oddzielona małych red [ `BoxView` ](xref:Xamarin.Forms.BoxView), umożliwiająca miejsce `Label` zajmuje się łatwo można wyświetlić.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono wpływ każdy [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) ma wartość Struktura na wyrównanie i rozszerzanie widoku względem jego elementu nadrzędnego. `Start`, `Center`, `End`, I `Fill` pola są używane do definiowania widoku wyrównania w układzie nadrzędny i `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, i `FillAndExpand` pola są używane do definiowania preferencji wyrównanie i ustalić, czy widok zajmie więcej miejsca, jeśli jest dostępny w ramach [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+W tym artykule opisano wpływ każdy [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) wartość struktura ma wyrównanie i rozszerzanie widoku, względem jego elementu nadrzędnego. `Start`, `Center`, `End`, I `Fill` pola są używane do definiowania wyrównania tego widoku w układzie nadrzędnego i `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, i `FillAndExpand` pola są używane do definiowania Preferencje wyrównanie oraz określić, czy widok, zajmują więcej miejsca, jeśli to możliwe, w ramach [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [LayoutOptions (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutoptions/)
-- [LayoutOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/)
+- [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

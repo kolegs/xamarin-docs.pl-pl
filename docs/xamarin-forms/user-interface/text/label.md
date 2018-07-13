@@ -1,58 +1,58 @@
 ---
-title: Etykieta platformy Xamarin.Forms
-description: W tym artykule opisano sposób użycia klasy platformy Xamarin.Forms etykiety do wyświetlania jednego oraz wiele wierszy tekstu w aplikacji.
+title: Etykieta zestawu narzędzi Xamarin.Forms
+description: W tym artykule wyjaśniono, jak korzystać z zestawu narzędzi Xamarin.Forms etykiety klasy do wyświetlania pojedynczych i wiele wierszy tekstu w aplikacji.
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e9f99ace64e013dfa681e497b9d33376d79555ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ce602a84ea1024dc22298a3ec1567a9a34ad4a82
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245501"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995969"
 ---
-# <a name="xamarinforms-label"></a>Etykieta platformy Xamarin.Forms
+# <a name="xamarinforms-label"></a>Etykieta zestawu narzędzi Xamarin.Forms
 
-_Tekst wyświetlany w platformy Xamarin.Forms_
+_Tekst wyświetlany w interfejsie Xamarin.Forms_
 
-`Label` Widoku jest używana do wyświetlania tekstu, pojedyncze i wiele wierszy. Etykiety mogą mieć niestandardowych czcionek (rodziny, rozmiarów i opcje) i kolorowy tekst. W tym artykule omówiono następujące tematy:
+`Label` Widok służy do wyświetlania tekstu, zarówno w przypadku pojedynczych, jak i wiele wierszy. Etykiety można mieć, niestandardowych czcionek (rodziny, rozmiary i opcje) oraz kolorowego tekstu. W tym artykule omówiono następujące tematy:
 
-- **[Obcięcie i zawijania](#Truncation_and_Wrapping)**  &ndash; obcięcie i opcje zawijania dla obsługi sytuacji, gdy tekst nie mieści się w jednym wierszu.
-- **[Czcionki](#Font)**  &ndash; opcje czcionki.
-- **[Kolor](#Color)**  &ndash; opcji Kolor tekstu etykiet.
-- **[Tekst sformatowany](#Formatted_Text)**  &ndash; opcje wyświetlania tekstu w wielu formatach/style wbudowane.
+- **[Obcięcie i zawijania](#Truncation_and_Wrapping)**  &ndash; obcięcie i opcje zawijania dla obsługi sytuacje, gdy tekst nie mieści się w jednym wierszu.
+- **[Czcionka](#Font)**  &ndash; opcje czcionki.
+- **[Kolor](#Color)**  &ndash; etykiety tekstowe opcje kolorów.
+- **[Sformatowany tekst](#Formatted_Text)**  &ndash; opcje wyświetlania tekstu z kilku wbudowanych formatów/style.
 
-## <a name="styling-label"></a>Etykieta stylów
+## <a name="styling-label"></a>Etykieta stylu
 
-W poniższych częściach omówiono ustawienie właściwości `Label` ręcznie dla poszczególnych wystąpień. Należy pamiętać, że ustawia właściwości można grupować w jednym stylu spójnie stosowany do jednego lub wielu widoków. Może to zwiększyć czytelność kodu i ułatwić wdrożenie zmiany w projekcie. Zobacz [style](~/xamarin-forms/user-interface/text/styles.md) Aby uzyskać więcej informacji.
+W poniższych częściach omówiono ustawienia właściwości `Label` ręcznie na podstawie poszczególnych wystąpień. Należy zauważyć, że zestawy właściwości, można podzielić na jeden styl, który spójnie jest stosowana do jednej lub wielu widoków. Może to zwiększyć czytelność kodu i ułatwić implementacji zmian w projekcie. Zobacz [style](~/xamarin-forms/user-interface/text/styles.md) Aby uzyskać więcej informacji.
 
 <a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>Obcięcie i pakowania
 
-Można ustawić etykiety do obsługi tekst, który nie mieści się w jednym wierszu kilka sposobów udostępnianych przez `LineBreakMode` właściwości. [`LineBreakMode`](https://developer.xamarin.com/api/type/Xamarin.Forms.LineBreakMode/) to wyliczenie z następujących opcji:
+Etykiety można ustawić, aby obsłużyć tekst, który nie mieści się w jednym wierszu w jednym z kilku sposobów, udostępnianych przez `LineBreakMode` właściwości. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) to wyliczenie z następujących opcji:
 
-- **HeadTruncation** &ndash; obcina head tekstu, przedstawiający na końcu.
-- **CharacterWrap** &ndash; zawija tekst na nowy wiersz w granicy znaków.
-- **MiddleTruncation** &ndash; Wyświetla początek i koniec tekstu, w środkowej Zamień wielokropkiem.
-- **NoWrap** &ndash; nie zawija tekst wyświetlanie tylko tyle tekstu, co może mieści się w jednym wierszu.
-- **TailTruncation** &ndash; pokazuje początek tekstu, obcinanie na końcu.
-- **WordWrap** &ndash; zawija tekst na granicy programu word.
+- **HeadTruncation** &ndash; obcina Nagłówek tekstu, przedstawiający na końcu.
+- **CharacterWrap** &ndash; zawija tekst na nowy wiersz na granicy znaków.
+- **MiddleTruncation** &ndash; Wyświetla początku i końcu środkowej Zastąp wielokropkiem tekstem.
+- **NoWrap** &ndash; nie zawija tekst, tylko wyświetlanie ilości tekstu może mieści się w jednym wierszu.
+- **TailTruncation** &ndash; zawiera początek tekstu obcinanie na końcu.
+- **WordWrap** &ndash; zawija tekst na granicy wyrazu.
 
-## <a name="font"></a>Czcionki
+## <a name="font"></a>Czcionka
 
 Zobacz [Praca z czcionkami](~/xamarin-forms/user-interface/text/fonts.md) Aby uzyskać więcej informacji.
 
 ## <a name="color"></a>Kolor
 
-`Label`Aby użyć koloru niestandardowego tekstu za pośrednictwem powiązania można ustawić s `TextColor` właściwości.
+`Label`można ustawić s Użyj koloru niestandardowego tekstu przy użyciu możliwej do wiązania `TextColor` właściwości.
 
-Szczególną jest niezbędne do zapewnienia, że kolorów będzie można używać na każdej z platform. Ponieważ różne ustawienia domyślne kolory tła i tekstu dotyczy wszystkich platform, należy należy zachować ostrożność wybrać domyślny, który działa na każdym.
+Szczególną jest niezbędne do zapewnienia, że kolory będzie można używać na każdej platformie. Ponieważ każdej z platform ma różne wartości domyślne kolory tekstu i tła, musisz Uważaj wybrać domyślny, który działa na każdym.
 
-Aby ustawić kolor tekstu etykiety, należy użyć poniższego kodu:
+Użyj poniższego kodu, aby ustawić kolor tekstu etykiety:
 
 W kodzie:
 
@@ -70,7 +70,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -92,18 +92,18 @@ Title="Label Demo">
 
 ## <a name="formatted-text"></a>Tekst sformatowany
 
-Udostępnianie etykiety `FormattedText` właściwość, której można prezentować tekstu z wielu czcionek i kolorów w jednym widoku.
+Udostępnianie etykiety `FormattedText` właściwość, której można prezentować tekstu przy użyciu wiele czcionek i kolorów w jednym widoku.
 
-`FormattedText` Właściwość jest typu [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/). Ciągi sformatowane składają się z co najmniej jeden `Span`s, każde z następującymi właściwościami:
+`FormattedText` Właściwość jest typu [ `FormattedString` ](xref:Xamarin.Forms.FormattedString). Sformatowane ciągi składają się z co najmniej jeden `Span`s, każde z następującymi właściwościami:
 
-- **BackgroundColor** &ndash; pozwala ustawić kolor tła, na przykład w celu uzyskania efektu wyróżnienia.
-- **FontAttributes** &ndash; może być ustawioną pogrubienie, kursywa lub nie.
-- **FontFamily** &ndash; ustawia czcionki do użycia.
+- **BackgroundColor** &ndash; można ustawić kolor tła, na przykład osiągnąć efekt wyróżnienia.
+- **FontAttributes** &ndash; może być równa pogrubienie, kursywa lub żadnego z tych celów.
+- **FontFamily** &ndash; Ustawia czcionkę, która ma być używany.
 - **FontSize** &ndash; ustawia rozmiar tekstu.
 - **ForegroundColor** &ndash; Ustawia kolor tekstu.
-- **Tekst** &ndash; tekst, który ma zostać wyświetlone.
+- **Tekst** &ndash; tekst, który ma być wyświetlony.
 
-Poniższy kod C# przedstawia etykietę, gdzie pierwsze słowo jest pogrubiona, a wyraz ostatniej czerwony:
+Poniższy kod C# ilustruje etykietę, gdzie pierwszy wyraz jest pogrubiony a ostatni wyraz ma kolor czerwony:
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -124,7 +124,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-W języku XAML:
+W XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -153,6 +153,6 @@ Title="Label Demo">
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Tworzenie aplikacji mobilnych za pomocą platformy Xamarin.Forms, rozdział 3](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
+- [Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms rozdział 3](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Tekst (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Etykieta interfejsu API](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [Etykieta interfejsu API](xref:Xamarin.Forms.Label)

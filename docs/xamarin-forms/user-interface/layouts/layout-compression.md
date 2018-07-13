@@ -1,39 +1,39 @@
 ---
 title: Kompresja układu
-description: Kompresja układu usuwa określony układów z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. W tym artykule wyjaśniono, jak włączyć kompresję układ i korzyści, które można przełączyć go.
+description: Kompresja układu usuwa określony układy z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. W tym artykule omówiono sposób umożliwienia kompresja układu oraz potrzebne korzyści może przynieść.
 ms.prod: xamarin
 ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 9c698d539ab671ee2a033ae5943a46e0cc870f76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30791129"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995235"
 ---
 # <a name="layout-compression"></a>Kompresja układu
 
-_Kompresja układu usuwa określony układów z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. W tym artykule wyjaśniono, jak włączyć kompresję układ i korzyści, które można przełączyć go._
+_Kompresja układu usuwa określony układy z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. W tym artykule omówiono sposób umożliwienia kompresja układu oraz potrzebne korzyści może przynieść._
 
 ## <a name="overview"></a>Omówienie
 
-Platformy Xamarin.Forms wykonuje układu za pomocą dwóch serii cykliczne wywołania metody:
+Zestaw narzędzi Xamarin.Forms wykonuje układu za pomocą dwóch serii rekursywne wywołania metody:
 
-- Układ rozpoczyna się w górnej części drzewa wizualnego ze stroną, a obejmującego wszystkie gałęzie drzewa wizualnego na każdy element wizualny na stronie. Elementy nadrzędne z innymi elementami są zobowiązani do zmiany rozmiaru i pozycjonowania ich elementy podrzędne względem siebie.
-- Unieważnienie to proces, za pomocą której zmiana elementu na stronie wyzwala nowy cykl układu. Elementy są uznawane za nieprawidłowe, gdy mają one już prawidłowe rozmiaru lub położenia. Każdego elementu w drzewie wizualnym elementów podrzędnych jest alert przy każdej zmianie jednego z jego elementów podrzędnych rozmiary. W związku z tym zmianę w rozmiarze elementu w drzewie wizualnym może spowodować zmiany, które ripple w górę drzewa.
+- Układ, który rozpoczyna się w górnej części drzewa wizualnego ze stroną, a następnie przechodzi przez wszystkie gałęzie drzewa wizualnego w celu objęcia każdy element wizualny na stronie. Elementy, które są elementy nadrzędne do innych elementów są odpowiedzialne za rozmiary i rozmieszczenia ich elementy podrzędne względem siebie.
+- Unieważnieniu polega na za pomocą którego zmiana elementu na stronie wyzwala nowy cykl układu. Elementy są traktowane jako nieprawidłowy, gdy nie będzie ona miała właściwego rozmiaru lub położenia. Każdego elementu w drzewie wizualnym, który ma elementy podrzędne są alerty zawsze wtedy, gdy jeden z jego elementów podrzędnych zmiany rozmiarów. W związku z tym Zmień rozmiar elementu w drzewie wizualnym może spowodować zmiany, które ripple w górę drzewa.
 
-Aby uzyskać więcej informacji o sposobie platformy Xamarin.Forms wykonuje układu, zobacz [tworzenie układu niestandardowego](~/xamarin-forms/user-interface/layouts/custom.md).
+Aby uzyskać więcej informacji na temat jak Xamarin.Forms wykonuje układ zobacz [tworzenie układu niestandardowego](~/xamarin-forms/user-interface/layouts/custom.md).
 
-W wyniku procesu układ jest hierarchii kontrolki natywne. Jednak tej hierarchii zawiera dodatkowe kontenera renderowania i otoki dla platformy moduły renderowania, dalsze pompowania hierarchii widoku zagnieżdżania. Lepszy poziom zagnieżdżenia, tym większa ilość pracy platformy Xamarin.Forms musi wykonać, aby wyświetlić stronę. W złożonych układów widoku hierarchii może być zarówno bezpośrednich i szeroka, zawierające wiele poziomów zagnieżdżenia.
+W wyniku procesu układ jest hierarchię natywne kontrolki. Ta hierarchia zawiera jednak programy renderujące dodatkowe kontenera i otoki dla platform programy renderujące, dodatkowo pompowania Wyświetl hierarchię zagnieżdżania. Głębiej poziom zagnieżdżenia, tym większa ilość pracy Xamarin.Forms musi wykonać, aby wyświetlić stronę. Dla złożonych układów wyświetlanie hierarchii może być zarówno głębokie i szeroka, wiele poziomów zagnieżdżenia.
 
-Rozważmy na przykład poniższy przycisk z przykładowej aplikacji do logowania do usługi Facebook:
+Na przykład rozważmy poniższy przycisk z przykładowej aplikacji do zalogowania się do usługi Facebook:
 
 ![](layout-compression-images/facebook-button.png "Facebook Button")
 
-Ten przycisk jest określony jako kontrolkę niestandardową przy użyciu następujących hierarchii widoku XAML:
+Ten przycisk jest określony jako kontrolkę niestandardową przy użyciu następującej hierarchii widok XAML:
 
 ```xaml
 <ContentView ...>
@@ -53,18 +53,18 @@ Ten przycisk jest określony jako kontrolkę niestandardową przy użyciu nastę
 </ContentView>
 ```
 
-Wynikowy hierarchia zagnieżdżonych widoku można zbadać z [inspektora Xamarin](~/tools/inspector/index.md). W systemie Android hierarchia zagnieżdżonych widok zawiera widoki 17:
+Można zbadać wynikowy hierarchii widoku zagnieżdżonego o [narzędzia Xamarin Inspector](~/tools/inspector/index.md). W systemie Android zagnieżdżone wyświetlanie hierarchii zawiera widoki 17:
 
-![](layout-compression-images/no-compression.png "Wyświetlanie hierarchii dla przycisku Facebook")
+![](layout-compression-images/no-compression.png "Wyświetl hierarchię dla przycisku usługi Facebook")
 
-Układ kompresji, która jest dostępna dla aplikacji platformy Xamarin.Forms w systemach iOS i Android platform, ma na celu spłaszczanie zagnieżdżania przez usunięcie określonego układów z drzewa wizualnego, co może poprawić wydajność renderowania stron widoku. Korzyści wydajności, która jest dostarczana różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym jest uruchomiona aplikacja. Jednakże wydajność będzie widoczny na starszych urządzeń.
+Kompresja układu, która jest dostępna dla aplikacji platformy Xamarin.Forms w systemach iOS i Android platform, ma na celu spłaszczenia widoku zagnieżdżania przez usunięcie określonego układy z drzewa wizualnego, co może poprawić wydajność renderowania strony. Korzyści wydajności, która jest dostarczana różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym działa aplikacja. Jednakże wydajność będzie widoczna w starszych urządzeń.
 
 > [!NOTE]
-> Chociaż ten artykuł dotyczy wyniki stosowania układu kompresji w systemie Android, jest równie dotyczą systemu iOS.
+> Chociaż ten artykuł koncentruje się na rezultaty zastosowania kompresja układu w systemie Android, jest równie mające zastosowanie do systemu iOS.
 
 ## <a name="layout-compression"></a>Kompresja układu
 
-W języku XAML, można włączyć kompresji układu przez ustawienie `CompressedLayout.IsHeadless` dołączona właściwość do `true` w klasie układu:
+W XAML, można włączyć kompresji układu, ustawiając `CompressedLayout.IsHeadless` dołączonych właściwości `true` w klasie układu:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -72,16 +72,16 @@ W języku XAML, można włączyć kompresji układu przez ustawienie `Compressed
 </StackLayout>   
 ```
 
-Alternatywnie, można ją włączyć w języku C#, określając wystąpienia układu jako pierwszy argument `CompressedLayout.SetIsHeadless` metody:
+Alternatywnie, można ją włączyć w języku C#, określając wystąpienie układ jako pierwszy argument `CompressedLayout.SetIsHeadless` metody:
 
 ```csharp
 CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> Ponieważ kompresja układu usuwa układ z drzewa wizualnego, nie jest odpowiedni dla układów wygląd, która ma lub który uzyskać wprowadzania dotykowego. W związku z tym układów który ustawić [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) właściwości (takie jak [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/), [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/), [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/), [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) i [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)) lub który zaakceptuje gesty, nie są kandydatami do układu kompresji. Jednak włączenie kompresji układu dla układu, który ustawia właściwości wygląd lub która akceptuje gesty, nie spowoduje to błąd kompilacji lub środowisko uruchomieniowe. Zamiast tego układu kompresji zostaną zastosowane i właściwości wygląd i rozpoznawania gestów dyskretnie nie powiedzie się.
+> Ponieważ kompresja układu usuwa układu z drzewa wizualnego, nie jest odpowiednia dla układów, które mają wygląd lub który uzyskać wprowadzanie dotykowe. W związku z tym, układy, ustaw [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) właściwości (takie jak [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible), [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation), [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale), [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) i [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) lub który zaakceptować gestów, nie są kandydatami do układu kompresja. Jednak włączenie kompresji układu dla układu, który ustawia właściwości wyglądu lub akceptujący gestów, nie spowoduje błąd kompilacji lub środowiska uruchomieniowego. Zamiast tego należy kompresja układu, zostaną zastosowane i właściwości wyglądu i rozpoznawania gestów po cichu nie będzie.
 
-Dla przycisku Facebook kompresji układu można włączyć dla układu trzech klas:
+Dla przycisku Facebook kompresja układu można włączyć dla klasy trzy układu:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -94,27 +94,27 @@ Dla przycisku Facebook kompresji układu można włączyć dla układu trzech kl
 </StackLayout>  
 ```
 
-W systemie Android powoduje to hierarchia zagnieżdżonych widoku widoków 14:
+W systemie Android powoduje to hierarchia widoku zagnieżdżonego 14 widoki:
 
-![](layout-compression-images/layout-compression.png "Wyświetlanie hierarchii dla przycisku Facebook z kompresją układu")
+![](layout-compression-images/layout-compression.png "Wyświetl hierarchię dla przycisku Facebook z kompresja układu")
 
-W porównaniu do pierwotna hierarchia zagnieżdżonych widoku 17 widoków, ta pozycja reprezentuje zmniejszenie liczby widoków 17%. Gdy to zmniejszenie może pojawić się nieważny ograniczenia widoku w całej strony może mieć bardziej znaczących.
+Zmniejszenie liczby wyświetleń 17% w porównaniu do oryginalnej hierarchii widoku zagnieżdżonego 17 widoków, reprezentuje. Gdy redukcja może pojawić się nieważny redukcji widok za pośrednictwem całej strony może być bardziej znaczące.
 
-### <a name="fast-renderers"></a>Szybkie renderowania
+### <a name="fast-renderers"></a>Szybkie programy renderujące
 
-Szybkie renderowania zmniejszyć inflacji i kosztów renderowanie kontrolek platformy Xamarin.Forms w systemie Android przez spłaszczanie wynikowy hierarchii natywnego widoku. Dalsze to zwiększa wydajność tworzenia mniejszą liczbę obiektów, co z kolei powoduje w drzewie wizualnym mniej złożona i mniej wykorzystania pamięci. Aby uzyskać więcej informacji na temat szybkiego renderowania, zobacz [renderowania szybkiego](~/xamarin-forms/internals/fast-renderers.md).
+Szybkie programy renderujące skrócić inflacji i koszty renderowanie kontrolek zestawu narzędzi Xamarin.Forms w systemie Android spłaszczając wynikowy hierarchii natywnych widoku. Dodatkowo to zwiększa wydajność, tworząc mniej obiektów, co z kolei powoduje w drzewie wizualnym mniej skomplikowany i mniej wykorzystania pamięci. Aby uzyskać więcej informacji na temat szybkie programy renderujące, zobacz [szybkie programy renderujące](~/xamarin-forms/internals/fast-renderers.md).
 
-Dla przycisku Facebook w przykładowej aplikacji połączenie układu kompresji i szybkie renderowania tworzy hierarchii zagnieżdżone wyświetlanie widoków 8:
+Dla przycisku usługi Facebook w przykładowej aplikacji łącząc kompresja układu i szybkie programy renderujące generuje hierarchii widoku zagnieżdżonego 8 widoków:
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "Wyświetlanie hierarchii dla przycisku Facebook z układu kompresji i szybkie renderowania")
+![](layout-compression-images/layout-compression-with-fast-renderers.png "Wyświetl hierarchię dla przycisku Facebook kompresja układu i szybkie programy renderujące")
 
-W porównaniu do pierwotna hierarchia zagnieżdżonych widoku 17 widoków, ta pozycja reprezentuje zmniejszenie % 52.
+W porównaniu do oryginalnej hierarchii widoku zagnieżdżonego 17 widoków, reprezentuje zmniejszenie o 52%.
 
-Przykładowa aplikacja zawiera stronę wyodrębniony z rzeczywistej aplikacji. Bez układu kompresji i szybkie renderowania strony tworzy hierarchia zagnieżdżonych widoku 130 widoków w systemie Android. Włączenie renderowania szybkiego i kompresji układu dla klasy odpowiedni układ ogranicza zagnieżdżone wyświetlanie hierarchii do 70 widoków, zmniejszenie 46%.
+Przykładowa aplikacja zawiera stronę wyodrębnione z rzeczywistych aplikacji. Bez kompresji układ i szybkie programy renderujące strony tworzy hierarchię widoku zagnieżdżonego 130 widoków w systemie Android. Włączenie szybkie programy renderujące i kompresja układu w klasach odpowiedni układ zmniejsza zagnieżdżone wyświetlanie hierarchii do 70 widoków, redukcji 46%.
 
 ## <a name="summary"></a>Podsumowanie
 
-Kompresja układu usuwa określony układów z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. Korzyści wydajności, który zapewnia to różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym jest uruchomiona aplikacja. Jednakże wydajność będzie widoczny na starszych urządzeń.
+Kompresja układu usuwa określony układy z drzewa wizualnego w celu zwiększenia wydajności renderowania strony. Korzyści wydajności, które ten dostarcza różni się w zależności od złożoności strony, wersja używanego systemu operacyjnego i urządzenia, na którym działa aplikacja. Jednakże wydajność będzie widoczna w starszych urządzeń.
 
 
 ## <a name="related-links"></a>Linki pokrewne

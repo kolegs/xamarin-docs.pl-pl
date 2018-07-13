@@ -1,45 +1,45 @@
 ---
 title: Wyróżnianie trasy na mapie
-description: W tym artykule opisano sposób dodawania nakładki linię łamaną na mapę. Nakładki łamanej jest serią połączonych segmentów, które zwykle są używane do wyświetlenia trasy na mapie lub z dowolnym kształcie, która jest wymagana.
+description: W tym artykule wyjaśniono, jak dodać nakładki linii łamanej na mapie. Nakładka linii łamanej to seria segmenty linii połączonej, które są zazwyczaj używane do wyświetlenia trasy na mapie lub z dowolnego kształtu, który jest wymagany.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 8b80f9569e9377ca76798911cda64d8c0ee28d93
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846646"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998725"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Wyróżnianie trasy na mapie
 
-_W tym artykule opisano sposób dodawania nakładki linię łamaną na mapę. Nakładki łamanej jest serią połączonych segmentów, które zwykle są używane do wyświetlenia trasy na mapie lub z dowolnym kształcie, która jest wymagana._
+_W tym artykule wyjaśniono, jak dodać nakładki linii łamanej na mapie. Nakładka linii łamanej to seria segmenty linii połączonej, które są zazwyczaj używane do wyświetlenia trasy na mapie lub z dowolnego kształtu, który jest wymagany._
 
 ## <a name="overview"></a>Omówienie
 
-Nakładki jest warstwowego grafiki na mapie. Nakładki obsługuje rysowania graficznej zawartości, która może obsłużyć z planem, ponieważ jest on powiększony. Poniższe zrzuty ekranu pokazują wynikiem dodania nakładki łamanej do mapy:
+Nakładki to warstwowej grafika na mapie. Nakładki obsługuje rysowania graficzny zawartości, która skaluje się z mapą, ponieważ jest on powiększony. Poniższych zrzutach ekranu przedstawiono wynikiem dodania nakładki linii łamanej do mapy:
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Gdy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) renderowania formantu przez aplikację platformy Xamarin.Forms w systemie iOS `MapRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `MKMapView` formantu. Na platformie Android `MapRenderer` natywny tworzy wystąpienie klasy `MapView` formantu. W systemie Windows platformy Uniwersalnej, `MapRenderer` natywny tworzy wystąpienie klasy `MapControl`. Proces renderowania można podjąć zaletą do zaimplementowania dostosowań mapy specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla `Map` na każdej z platform. Proces ten wygląda następująco:
+Gdy [ `Map` ](xref:Xamarin.Forms.Maps.Map) renderowania formantu przez aplikację platformy Xamarin.Forms w systemie iOS `MapRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `MKMapView` kontroli. Na platformie Android `MapRenderer` klasy tworzy macierzystej `MapView` kontroli. Na Universal Windows Platform (platformy UWP), `MapRenderer` klasy tworzy macierzystej `MapControl`. Proces renderowania może podjąć zalet do zaimplementowania dostosowań mapy specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla `Map` na każdej platformie. Proces ten jest w następujący sposób:
 
-1. [Utwórz](#Creating_the_Custom_Map) mapy niestandardowe platformy Xamarin.Forms.
-1. [Korzystać z](#Consuming_the_Custom_Map) niestandardowe mapowanie z platformy Xamarin.Forms.
-1. [Dostosowywanie](#Customizing_the_Map) mapy przez utworzenie niestandardowego modułu renderowania mapy na każdej z platform.
+1. [Utwórz](#Creating_the_Custom_Map) mapę niestandardowego zestawu narzędzi Xamarin.Forms.
+1. [Używanie](#Consuming_the_Custom_Map) Mapa niestandardowa z zestawu narzędzi Xamarin.Forms.
+1. [Dostosowywanie](#Customizing_the_Map) mapy przez utworzenie niestandardowego modułu renderowania dla mapy na każdej platformie.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Informacje o dostosowywaniu mapy, przy użyciu niestandardowego modułu renderowania, zobacz [Dostosowywanie mapy numer Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Aby dowiedzieć się, jak dostosowywanie mapy za pomocą niestandardowego modułu renderowania, zobacz [Dostosowywanie pinezki mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Tworzenie niestandardowych mapy
+### <a name="creating-the-custom-map"></a>Tworzenie niestandardowych Map
 
-Utwórz podklasę [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) klasy, który dodaje `RouteCoordinates` właściwości:
+Utwórz podklasę [ `Map` ](xref:Xamarin.Forms.Maps.Map) klasy, która dodaje `RouteCoordinates` właściwości:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`RouteCoordinates` Właściwości będzie przechowywać kolekcja współrzędnych definiujące trasy do wyróżnione.
+`RouteCoordinates` Właściwości będą przechowywane w kolekcji współrzędnych definiujące trasy do wyróżnione.
 
 <a name="Consuming_the_Custom_Map" />
 
-### <a name="consuming-the-custom-map"></a>Korzystanie z niestandardowych mapy
+### <a name="consuming-the-custom-map"></a>Korzystanie z niestandardowych Map
 
-Korzystać z `CustomMap` kontroli przez zadeklarowanie wystąpienia w wystąpieniu strony XAML:
+Używanie `CustomMap` kontroli deklarując jej wystąpienie w wystąpieniu strony XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Korzystać z `CustomMap` kontroli przez zadeklarowanie wystąpienia w wystąpien
 </ContentPage>
 ```
 
-Można również używać `CustomMap` kontroli przez zadeklarowanie wystąpienia w wystąpieniu strony C#:
+Alternatywnie używanie `CustomMap` kontroli deklarując jej wystąpienie w wystąpieniu strony C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Ta inicjowania określa szereg współrzędne geograficzne współrzędnych w celu definiowania trasy na mapie, aby być wyróżniony. Następnie umieszcza widoku mapy z [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) metodę, która zmienia położenie i poziom powiększenia mapy, tworząc [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) z [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) i [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Ten proces inicjowania określa szereg współrzędne geograficzne, aby zdefiniować trasy na mapie, aby być wyróżniony. Następnie umieszcza widoku mapy z [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) metody, która zmienia położenie i poziom powiększenia mapy, tworząc [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) z [ `Position` ](xref:Xamarin.Forms.Maps.Position) i [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Dostosowywanie mapy
 
-Niestandardowego modułu renderowania teraz należy dodać do każdego projektu aplikacji można dodać nakładki linię łamaną na mapie.
+Niestandardowego modułu renderowania, teraz należy dodać do każdego projektu aplikacji, można dodać nakładki linii łamanej na mapie.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie modułu renderowania niestandardowe w systemie iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie niestandardowego modułu renderowania w systemie iOS
 
-Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` metody w celu dodania nakładki łamanej:
+Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` metody w celu dodania nakładki linii łamanej:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,12 +164,12 @@ namespace MapOverlay.iOS
 
 ```
 
-Ta metoda wykonuje następującą konfigurację, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms:
+Ta metoda wykonuje następującą konfigurację, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms:
 
-- `MKMapView.OverlayRenderer` Właściwości ustawiono odpowiedniego obiektu delegowanego.
-- Kolekcja współrzędne geograficzne są pobierane z `CustomMap.RouteCoordinates` właściwości i przechowywane jako tablica `CLLocationCoordinate2D` wystąpień.
-- Linię łamaną jest tworzony przez wywołanie metody statycznych `MKPolyline.FromCoordinates` metodę, która określa współrzędne geograficzne każdego punktu.
-- Linię łamaną jest dodawany do mapy przez wywołanie `MKMapView.AddOverlay` metody.
+- `MKMapView.OverlayRenderer` Właściwość jest ustawiona na odpowiednie delegata.
+- Kolekcja współrzędne geograficzne są pobierane z `CustomMap.RouteCoordinates` właściwości i przechowywane jako tablicę `CLLocationCoordinate2D` wystąpień.
+- Linii łamanej jest tworzony przez wywołanie statycznego `MKPolyline.FromCoordinates` metody, która określa współrzędne geograficzne w każdym punkcie.
+- Linii łamanej zostanie dodany do mapy, wywołując `MKMapView.AddOverlay` metody.
 
 Następnie należy zaimplementować `GetOverlayRenderer` metodę w celu dostosowania renderowania nakładki:
 
@@ -197,7 +197,7 @@ public class CustomMapRenderer : MapRenderer
 
 #### <a name="creating-the-custom-renderer-on-android"></a>Tworzenie niestandardowego modułu renderowania w systemie Android
 
-Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` i `OnMapReady` metody dodawania nakładki łamanej:
+Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` i `OnMapReady` metod dodawania nakładki linii łamanej:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +246,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Metoda pobiera zbiór współrzędne geograficzne współrzędnych z `CustomMap.RouteCoordinates` właściwości i zapisuje je w zmiennej elementu członkowskiego. Następnie wywołuje `MapView.GetMapAsync` metodę, która pobiera odpowiadającego `GoogleMap` który jest powiązany z widoku, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Raz `GoogleMap` wystąpienie jest dostępne, `OnMapReady` można wywołać metody, gdzie linii łamanej jest tworzony przez utworzenie wystąpienia `PolylineOptions` obiekt określający współrzędne geograficzne każdego punktu. Linię łamaną następnie dodany do mapy przez wywołanie metody `NativeMap.AddPolyline` metody.
+`OnElementChanged` Metoda pobiera kolekcję współrzędne geograficzne z `CustomMap.RouteCoordinates` właściwości i zapisuje je w zmiennej składowej. Następnie wywołuje `MapView.GetMapAsync` metody, która pobiera bazowego `GoogleMap` , jest powiązany z widoku, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Raz `GoogleMap` wystąpienie jest dostępne, `OnMapReady` można wywołać metody, gdzie linii łamanej jest tworzony przez utworzenie wystąpienia `PolylineOptions` obiekt określający współrzędne geograficzne w każdym punkcie. Linii łamanej jest dodawane do mapy, wywołując `NativeMap.AddPolyline` metody.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Tworzenie niestandardowego modułu renderowania na platformę uniwersalną systemu Windows
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Tworzenie niestandardowego modułu renderowania na platformie Universal Windows
 
-Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` metody w celu dodania nakładki łamanej:
+Utwórz podklasę `MapRenderer` klasy i zastąp jego `OnElementChanged` metody w celu dodania nakładki linii łamanej:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +289,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Ta metoda wykonuje następujące operacje, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms:
+Pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms, ta metoda wykonuje następujące operacje:
 
-- Kolekcja współrzędne geograficzne są pobierane z `CustomMap.RouteCoordinates` właściwości i przekonwertowane na `List` z `BasicGeoposition` współrzędnych.
-- Przy uruchamianiu utworzono linię łamaną `MapPolyline` obiektu. `MapPolygon` Klasa jest używana do wyświetlania wiersza na mapie, ustawiając jego `Path` właściwości `Geopath` obiekt, który zawiera współrzędne wiersza.
-- Linię łamaną jest renderowany na mapie, dodając ją do `MapControl.MapElements` kolekcji.
+- Kolekcja współrzędne geograficzne są pobierane z `CustomMap.RouteCoordinates` właściwości i zostanie przekonwertowana na `List` z `BasicGeoposition` współrzędnych.
+- Linii łamanej jest tworzony przez utworzenie wystąpienia `MapPolyline` obiektu. `MapPolygon` Klasa jest używana do wyświetlania linię na mapie, ustawiając jego `Path` właściwość `Geopath` obiekt, który zawiera współrzędne wiersza.
+- Linii łamanej jest renderowany na mapie, dodając ją do `MapControl.MapElements` kolekcji.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule opisano sposób dodawania nakładki łamanej do mapy, w celu wyświetlenia trasy na mapie lub z dowolnym kształcie, która jest wymagana.
+W tym artykule wyjaśniono, jak dodać nakładki linii łamanej na mapie, aby wyświetlić trasy na mapie lub utworzenia dowolnego kształtu, który jest wymagany.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Ovlerlay mapy łamanej (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [Ovlerlay Mapa linii łamanej (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Dostosowywanie pinezki mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

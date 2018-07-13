@@ -1,38 +1,38 @@
 ---
 title: Wyświetlanie wyskakujących okienek
-description: Platformy Xamarin.Forms zawiera dwa elementy interfejsu użytkownika podręcznego konta podobne — alert i arkusza akcji. W tym artykule przedstawiono przy użyciu alertów i akcji arkusz interfejsów API pytania użytkowników proste i prowadzą użytkowników przez zadania.
+description: Zestaw narzędzi Xamarin.Forms zawiera dwa elementy interfejsu użytkownika podręcznego dokonywania podobne — alert i arkuszu akcji. W tym artykule przedstawiono korzystania z arkusza alertów i działań interfejsów API, użytkownicy sami nie aktualizowali proste pytanie i prowadzą użytkowników przez zadania.
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 97f0917e4e8670ab379aae1b2707ae08cb29bb70
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 156c2f9dca47a7755d4f810d7921a05662388ded
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32018882"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996717"
 ---
 # <a name="displaying-pop-ups"></a>Wyświetlanie wyskakujących okienek
 
-_Platformy Xamarin.Forms zawiera dwa elementy interfejsu użytkownika podręcznego konta podobne — alert i arkusza akcji. W tym artykule przedstawiono przy użyciu alertów i akcji arkusz interfejsów API pytania użytkowników proste i prowadzą użytkowników przez zadania._
+_Zestaw narzędzi Xamarin.Forms zawiera dwa elementy interfejsu użytkownika podręcznego dokonywania podobne — alert i arkuszu akcji. W tym artykule przedstawiono korzystania z arkusza alertów i działań interfejsów API, użytkownicy sami nie aktualizowali proste pytanie i prowadzą użytkowników przez zadania._
 
-Wyświetlanie alertu lub proszenia użytkownika o dokonanie wyboru jest typowych zadań interfejsu użytkownika. Platformy Xamarin.Forms ma dwie metody na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) klasy do interakcji z użytkownikiem za pośrednictwem okno podręczne: [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/) i [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/). Ich renderowaniem odpowiednie kontrolki natywne na każdej z platform.
+Wyświetlanie alertów i monitem użytkownika o dokonanie wyboru jest typowym zadaniem interfejsu użytkownika. Zestaw narzędzi Xamarin.Forms oferuje dwie metody [ `Page` ](xref:Xamarin.Forms.Page) klasy do interakcji z użytkownikiem za pośrednictwem okno podręczne: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) i [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*). Są one renderowane przy użyciu odpowiednich natywne kontrolki na każdej platformie.
 
 ## <a name="displaying-an-alert"></a>Wyświetlanie alertu
 
-Wszystkie obsługiwane platformy Xamarin.Forms platformy ma modalne okno podręczne użytkownika lub prostego pytania z nich. Aby wyświetlić te alerty platformy Xamarin.Forms, należy użyć [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/) metody na dowolnym [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Następujący wiersz kodu przedstawiono prosty komunikat dla użytkownika:
+Wszystkie platformy obsługiwane przez zestaw narzędzi Xamarin.Forms mają modalne okno podręczne ostrzegać użytkowników lub proste pytania z nich. Aby wyświetlić te alerty w interfejsie Xamarin.Forms, użyj [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) metody na dowolnym [ `Page` ](xref:Xamarin.Forms.Page). Następujący wiersz kodu przedstawia proste komunikat dla użytkownika:
 
 ```csharp
 DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Okna dialogowego alertu o jeden z przycisków")
+![](pop-ups-images/alert.png "Okna dialogowego alertu przy użyciu jednego przycisku")
 
-W tym przykładzie nie zbiera informacje od użytkownika. Alert wyświetla w trybie modalnym, a po odrzucone użytkownik będzie nadal występować, interakcji z aplikacją.
+W tym przykładzie nie zbiera informacji od użytkownika. Ten alert zawiera trybie modalnym i po użytkownik odrzucony interakcji z aplikacją.
 
-[ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/) Metody można również do przechwytywania przez użytkownika odpowiedzi przez umożliwienie korzystania z dwóch przycisków i zwracanie `boolean`. Aby uzyskać odpowiedzi od alert, należy podać tekst dla obu przycisków i `await` metody. Po wybraniu jednej z opcji odpowiedzi zostanie zwrócony do kodu. Uwaga `async` i `await` słów kluczowych w poniższym przykładowym kodzie:
+[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) Metodę można również do przechwytywania przez użytkownika odpowiedzi przez umożliwienie korzystania z dwóch przycisków i zwracanie `boolean`. Aby uzyskać odpowiedzi z poziomu alertu, podaj tekst dla obu przycisków i `await` metody. Po wybraniu jednej z opcji odpowiedzi zostanie zwrócony do kodu. Uwaga `async` i `await` słów kluczowych w poniższym przykładowym kodzie:
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -42,13 +42,13 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "alertów okno dialogowe z dwóch przycisków")](pop-ups-images/alert2.png#lightbox "alertów okno dialogowe z dwóch przycisków")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "Alert, okno dialogowe z dwóch przycisków")](pop-ups-images/alert2.png#lightbox "Alert, okno dialogowe z dwóch przycisków")
 
-## <a name="guiding-users-through-tasks"></a>Wskazówki dla użytkowników za pomocą zadania
+## <a name="guiding-users-through-tasks"></a>Wskazówki użytkowników za pomocą zadań
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) jest wspólnego elementu interfejsu użytkownika w systemie iOS. Platformy Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) metody umożliwiają uwzględnienie tego formantu w aplikacjach cross platform, renderowania natywnego alternatyw w systemach Android i platformy uniwersalnej systemu Windows.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) jest wspólne elementu interfejsu użytkownika w systemie iOS. Xamarin.Forms [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) metody umożliwiają uwzględnienie tej kontrolki w aplikacji dla wielu platform, renderowanie alternatywy natywnych w systemach Android i platformy uniwersalnej systemu Windows.
 
-Aby wyświetlić arkusz akcji `await` [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) w żadnym [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), przekazywanie wiadomości i przycisk etykiety jako ciągi. Metoda zwraca ciąg Etykieta przycisku, który został kliknięty przez użytkownika. Prosty przykład jest następujący:
+Aby wyświetlić arkusz akcji `await` [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) w dowolnym [ `Page` ](xref:Xamarin.Forms.Page), przekazywanie wiadomości i przycisk etykiety jako ciągi. Metoda zwraca ciąg znaków etykiety przycisku, który został kliknięty przez użytkownika. Prostym przykładem jest następujący:
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -60,7 +60,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 
 ![](pop-ups-images/action.png "Okno dialogowe ActionSheet")
 
-`destroy` Przycisk inaczej niż pozostałe renderowania i może pozostać `null` lub został określony jako trzeci parametr ciągu. W poniższym przykładzie użyto `destroy` przycisk:
+`destroy` Przycisk inaczej niż pozostałe renderowania i może pozostać `null` lub został określony jako trzeci parametr ciągu. W poniższym przykładzie użyto `destroy` przycisku:
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -70,11 +70,11 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "okna dialogowego arkusza działania przyciskiem Destroy")](pop-ups-images/action2.png#lightbox "okna dialogowego arkusza działania przyciskiem Destroy")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "okno dialogowe arkusza akcji za pomocą przycisku Destroy")](pop-ups-images/action2.png#lightbox "okno dialogowe arkusza akcji za pomocą przycisku Destroy")
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono przy użyciu alertów i akcji arkusz interfejsów API pytania użytkowników proste i prowadzą użytkowników przez zadania. Platformy Xamarin.Forms ma dwie metody na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) klasy do interakcji z użytkownikiem za pośrednictwem okno podręczne: [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)/) i [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/), i są one zarówno z odpowiedniej kontrolki natywne na każdej z platform.
+W tym artykule pokazano, korzystania z arkusza alertów i działań interfejsów API, użytkownicy sami nie aktualizowali proste pytanie i prowadzą użytkowników przez zadania. Zestaw narzędzi Xamarin.Forms oferuje dwie metody [ `Page` ](xref:Xamarin.Forms.Page) klasy do interakcji z użytkownikiem za pośrednictwem okno podręczne: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) i [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*), i są one zarówno renderowany przy użyciu odpowiednich natywne kontrolki na każdej platformie.
 
 
 

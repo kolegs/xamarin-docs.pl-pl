@@ -1,95 +1,95 @@
 ---
-title: Wzorca Model-View-ViewModel
-description: W tym rozdziale opisano, jak aplikacji mobilnej eShopOnContainers korzysta ze wzorca MVVM prawidłowo Rozdziel logiki biznesowej i prezentacji aplikacji z jego interfejs użytkownika.
+title: Wzorzec Model-View-ViewModel
+description: W tym rozdziale wyjaśniono, jak korzysta z aplikacji mobilnej w ramach aplikacji eShopOnContainers wzorca MVVM na prawidłowo oddzielić logiki biznesowej i prezentacji aplikacji z jego interfejs użytkownika.
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fe2cace6a0fc3a1d901f55556eed09380f8f2006
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: c947ec0c2fffbd9038ee58211c77bd947c445b6e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245435"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998445"
 ---
-# <a name="the-model-view-viewmodel-pattern"></a>Wzorca Model-View-ViewModel
+# <a name="the-model-view-viewmodel-pattern"></a>Wzorzec Model-View-ViewModel
 
-Środowisko dewelopera platformy Xamarin.Forms zazwyczaj polega to na tworzenie interfejsu użytkownika w języku XAML, a następnie dodanie kodem, który działa w interfejsie użytkownika. Aplikacje zostaną zmodyfikowane i zwiększa się rozmiar i zakres, mogą wystąpić problemy obsługi złożonych. Te problemy obejmują ścisłej sprzężenia między kontrolek interfejsu użytkownika i logiki biznesowej, co zwiększa koszt dokonania zmiany interfejsu użytkownika oraz trudności taki kod do testowania jednostek.
+Środowisko deweloperskie platformy Xamarin.Forms zwykle obejmuje tworzenie interfejsu użytkownika w XAML, a następnie dodając kodem, który działa w interfejsie użytkownika. Aplikacje są modyfikowane i zwiększanie się rozmiaru i zakresu, mogą wystąpić obsługi złożonych problemów. Te problemy obejmują ścisłego sprzężenia między kontrolkami interfejsu użytkownika i logikę biznesową, co zwiększa koszt wprowadzania modyfikacji interfejsu użytkownika oraz trudności testy jednostkowe takiego kodu.
 
-Wzorca Model-View-ViewModel (MVVM) ułatwia prawidłowo oddzielnych działalności biznesowej i prezentacji logiki aplikacji za pomocą jego interfejsu użytkownika (UI). Obsługa czyste rozdzielenie aplikacji logiki i interfejsu użytkownika pomaga rozwiązywać problemy programowanie wiele i może ułatwić testowanie aplikacji, obsługa i rozwijać. Może znacznie zwiększyć możliwości ponownego użycia kodu i umożliwia deweloperom i projektantom interfejsu użytkownika więcej łatwiej współpracować przy opracowywaniu ich odpowiednich części aplikacji.
+Wzorzec Model-View-ViewModel (MVVM) pomaga oddzielić nie pozostawia żadnych śladów logiki biznesowej i prezentacji aplikacji za pomocą jego interfejsu użytkownika (UI). Utrzymywanie czystą separacji między logiki aplikacji i interfejsu użytkownika pozwala rozwiązać wiele problemów rozwoju i może ułatwić aplikacji do testowania, obsługa i rozwijać. Może również znacznie zwiększyć możliwości ponownego użycia kodu i umożliwia deweloperom i projektanci interfejsu użytkownika, aby łatwo współpracować podczas tworzenia ich odpowiednich części aplikacji.
 
 ## <a name="the-mvvm-pattern"></a>Wzorzec MVVM
 
-Istnieją trzy podstawowe składniki we wzorcu MVVM: model, widok i model widoku. Każdy pełni różne funkcje. Rysunek 2-1 przedstawiono relacje między trzech składników.
+Istnieją trzy podstawowe składniki w wzorca MVVM: model, widok i model widoku. Każdy pełni różne funkcje. Rysunek 2-1 przedstawiono relacje między trzy składniki.
 
 ![](mvvm-images/mvvm.png "Wzorzec MVVM")
 
-**Rysunek 2-1**: wzorzec MVVM
+**Rysunek 2-1**: wzorca MVVM
 
-Oprócz ustalenia obowiązki poszczególnych składników, jest również wziąć pod uwagę, jak współdziałają ze sobą. Na wysokim poziomie widok "zna" model widoku modelu widoku "zna" model, ale modelu nie rozpoznaje modelu widoku i modelu widoku nie zna widoku. W związku z tym model widoku widoku z modelu i pozwala modelu podlegać ewolucji niezależnie od tego widoku.
+Oprócz zapoznania się z obowiązki poszczególnych składników, jest również ważne, aby zrozumieć, jak współdziałają ze sobą. Na wysokim poziomie widok "obsługującemu" model widoku modelu widoku "obsługującemu" model, ale modelu nie rozpoznaje modelu widoku i modelu widoku nie rozpoznaje tego widoku. W związku z tym model widoku widoku z modelu i pozwala modelu, który ma się rozwijać, niezależnie od tego widoku.
 
-Korzyści wynikające ze stosowania wzorca MVVM są następujące:
+Korzyści z używania wzorca MVVM są następujące:
 
--   W przypadku z istniejącej implementacji modelu, który hermetyzuje istniejących logiki biznesowej, może być trudne lub ryzykowne je zmienić. W tym scenariuszu model widoku działa jako adaptera dla klasy modeli i pozwala uniknąć wprowadzania żadnych większych zmian w kodzie modelu.
--   Deweloperzy mogą tworzyć testów jednostkowych dla widoku i modelu, bez korzystania z widoku. Testy jednostkowe dla modelu widoku może wykorzystać te same funkcje, które jest używane przez widok.
--   Aplikacji interfejsu użytkownika mogą być przeprojektowany bez modyfikowania kodu, pod warunkiem, że widok jest zaimplementowana w całości w języku XAML. W związku z tym nowej wersji widoku powinien współpracować z istniejącego modelu widoku.
--   Projektanci i deweloperzy mogą pracować niezależnie i równolegle na ich składników podczas procesu projektowania. Projektanci mogą skupić się na widoku, gdy deweloperzy mogą pracować na model widoku i składniki modelu.
+-   W przypadku istniejącej implementacji modelu, który hermetyzuje istniejącej logiki biznesowej, może być trudne lub ryzykowne, aby ją zmienić. W tym scenariuszu modelu widoku działa jako adapter dla klasy modeli i pozwala uniknąć wprowadzania żadnych większych zmian w kodzie modelu.
+-   Deweloperzy mogą tworzyć testy jednostkowe dla modelu widoku i modelu, bez korzystania z widoku. Testy jednostkowe dla modelu widoku szybko sprawdzić taką samą funkcjonalność, którą podano w widoku.
+-   Interfejsie użytkownika aplikacji mogą przeprojektowane bez zmiany kodu, pod warunkiem, że widok jest zaimplementowana w całości XAML. W związku z tym nowa wersja widoku powinny działać z istniejącego modelu widoku.
+-   Projektanci i deweloperzy mogą pracować niezależnie i równolegle na ich składników podczas procesu projektowania. Projektanci mogą skupić się na widok, deweloperzy mogą pracować w modelu widoku i składników modelu.
 
-Klawisz, aby efektywnie przy użyciu MVVM znajduje się w zrozumienie sposobu współczynnika kodu aplikacji do poprawne klas i zrozumieć sposób interakcji klasy. W poniższych sekcjach omówiono obowiązki poszczególnych klas we wzorcu MVVM.
+Kluczem do skutecznego korzystania z modelem MVVM znajdujące się w zrozumieć, jak wziąć pod uwagę kodu aplikacji na poprawne klasy oraz opis sposobu interakcji klasy. W poniższych sekcjach omówiono obowiązki poszczególnych klas w wzorca MVVM.
 
 ### <a name="view"></a>Widok
 
-Widok jest odpowiedzialny za definiowanie strukturę, układu i wyglądu użytkownik widzi na ekranie. W idealnym przypadku każdego widoku jest zdefiniowany w języku XAML, z ograniczoną CodeBehind niezawierającą logiki biznesowej. Jednak w niektórych przypadkach CodeBehind może zawierać logikę interfejsu użytkownika, która implementuje visual zachowania, które jest trudne do wyrażenia w języku XAML, takich jak animacji.
+Widok jest odpowiedzialny za zdefiniowanie struktury, układ i wygląd użytkownik zobaczy na ekranie. W idealnym przypadku każdy widok jest zdefiniowany w XAML, z ograniczoną związanym z kodem, który nie zawiera logiki biznesowej. Jednak w niektórych przypadkach związanym z kodem może zawierać logika interfejsu użytkownika, który implementuje zachowanie visual, który jest trudny do wyrażenia w XAML, takich jak animacji.
 
-W aplikacji platformy Xamarin.Forms widok jest zwykle [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-pochodnych lub [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)-klasy. Jednak widoków może być reprezentowany przez szablon danych, który określa elementy interfejsu użytkownika, który ma być używany do wizualnego reprezentowania obiektu pojawi się. Szablon danych jako widok nie ma żadnych kodem i jest przeznaczony do powiązania widoku określonego typu modelu.
+W aplikacji platformy Xamarin.Forms, widok jest zazwyczaj [ `Page` ](xref:Xamarin.Forms.Page)-pochodnych lub [ `ContentView` ](xref:Xamarin.Forms.ContentView)-klasy pochodnej. Jednak widoków może być reprezentowany przez szablon danych, który określa elementy interfejsu użytkownika, który ma być używany do reprezentowania wizualnie obiektu, gdy jest on wyświetlany. Szablon danych w widoku nie ma żadnych związanym z kodem i jest przeznaczona do powiązania w typie modelu określonego widoku.
 
 > [!TIP]
-> Unikaj włączania i wyłączania elementy interfejsu użytkownika w CodeBehind. Upewnij się, że modele widoku są odpowiedzialne za definiowanie zmiany stanu logicznego, które mają wpływ na pewne aspekty wyświetlania widoku, takie jak czy polecenie ma być możliwe lub wskazanie, że operacja oczekuje. W związku z tym Włączanie i wyłączanie elementów interfejsu użytkownika przez powiązanie, aby wyświetlić właściwości modelu, a nie Włączanie i wyłączanie je w związane z kodem.
+> Unikaj włączania i wyłączania elementów interfejsu użytkownika w związanym z kodem. Upewnij się, że modeli widoków są odpowiedzialne za definiowanie zmiany stanu logicznego, które mają wpływ na pewne aspekty wyświetlania widoku, takie jak czy polecenie jest dostępne oraz wskazanie, że operacja oczekuje. W związku z tym Włącz i wyłączający elementy interfejsu użytkownika przez powiązanie, aby wyświetlić właściwości modelu, a nie Włączanie i wyłączanie je w związanym z kodem.
 
-Istnieje kilka sposobów wykonywania kodu na model widoku w odpowiedzi na interakcje w widoku, takie jak kliknij przycisk lub wybrany element. Jeśli formant obsługuje poleceń, formantu w `Command` właściwość może być powiązany z danymi `ICommand` właściwości na model widoku. Po wywołaniu polecenia formantu kod w modelu widoku zostaną wykonane. Oprócz poleceń zachowania może zostać dołączony do obiektu w widoku i wykrywać polecenie do wywołania lub zdarzenia do wywołania. W odpowiedzi, zachowanie może następnie wywołać `ICommand` na model widoku lub metody na model widoku.
+Istnieje kilka opcji umożliwiających wykonywanie kodu na podstawie modelu widoku w odpowiedzi na interakcje w widoku, takie jak kliknięcie przycisku lub zaznaczenie elementu. Jeśli formant obsługuje poleceń, formant firmy `Command` właściwość może być powiązany z danymi `ICommand` właściwości w modelu widoku. Po wywołaniu polecenia sterowania kod w modelu widoku zostaną wykonane. Oprócz poleceń zachowań może zostać dołączony do obiektu w widoku i może nasłuchiwać w oczekiwaniu polecenie do wywołania lub zdarzenia. W odpowiedzi, następnie wywołać działanie `ICommand` na model widoku lub metody w modelu widoku.
 
 ### <a name="viewmodel"></a>ViewModel
 
-Model widoku implementuje właściwości i poleceń, których widok może tworzenia powiązań danych i powiadamia widoku wszystkie zmiany stanu za pośrednictwem zdarzenia zmiany powiadomienia. Właściwości i poleceń, które udostępnia model widoku zdefiniować funkcje, które są oferowane przez interfejs użytkownika, ale widok Określa, jak funkcja ma być wyświetlany.
+Model widoku implementuje właściwości i poleceń, do których widok może zostać powiązane dane, a następnie powiadamia widoku wszelkie zmiany stanu, za pomocą zdarzenia powiadomień zmiany. Właściwości i poleceń, które zapewnia model widoku zdefiniowane funkcje, które mają być oferowane przez interfejs użytkownika, ale widok Określa, jak te funkcje mają być wyświetlane.
 
 > [!TIP]
-> Zachowaj reakcji z operacji asynchronicznych interfejsu użytkownika. Aplikacje mobilne Zachowaj odblokowany w celu poprawy wydajności wrażenie użytkownika wątku interfejsu użytkownika. W związku z tym w modelu widoku, użyj metod asynchronicznych dla operacji We/Wy i wywoływanie zdarzeń asynchronicznie powiadomiono widoków zmiany właściwości.
+> Zachowaj interfejsu użytkownika odpowiada za pomocą operacji asynchronicznych. Aplikacje mobilne, należy zachować wątku interfejsu użytkownika zostało odblokowane, aby zwiększyć jego punktu widzenia wydajności. W związku z tym w modelu widoku używać metod asynchronicznych operacji We/Wy i wywoływanie zdarzeń do asynchronicznego powiadomienia widoków zmiany właściwości.
 
-Model widoku jest również odpowiedzialne za koordynację widoku interakcje z dowolnej klasy modeli, które są wymagane. Zazwyczaj jest relacji jeden do wielu między modelu widoku i klasy modelu. Model widoku może wybrać do udostępnienia klasy modelu bezpośrednio do widoku, dzięki czemu formantów w widoku można utworzyć powiązania danych bezpośrednio dla nich. W takim przypadku należy klasy modelu należy planować obsługuje powiązanie danych i zmieniać zdarzenia powiadomień.
+Model widoku jest również odpowiedzialny za koordynowanie widoku interakcje z dowolnej klasy modeli, które są wymagane. Zazwyczaj jest relacji jeden do wielu między klasy modelu i model widoku. Model widoku może wybrać do udostępnienia klasy modelu bezpośrednio do widoku, tak aby formantów w widoku można utworzyć powiązania danych bezpośrednio do nich. W tym przypadku klasy modelu należy uwzględniać obsługuje powiązanie danych i zmieniać zdarzenia powiadomień.
 
-Każdy model widoku zawiera dane z modelu w postaci można łatwo korzystać z widoku. W tym modelu widoku czasami przeprowadza konwersję danych. Wprowadzenie do konwersji danych w modelu widoku jest dobrym rozwiązaniem, ponieważ zapewnia właściwości, które można powiązać z widoku. Model widoku może na przykład połączyć wartości dwie właściwości w celu ułatwienia do wyświetlania przez widok.
+Każdy model widoku zawiera dane z modelu w postaci, która widoku z łatwością mogą konsumować. W tym modelu widoku wykonuje czasami Konwersja danych. Umieszczenie tej konwersji danych w modelu widoku jest dobrym pomysłem, ponieważ udostępnia właściwości, które można powiązać z widoku. Model widoku może na przykład połączyć wartości dwie właściwości, aby ułatwić do wyświetlenia w widoku.
 
 > [!TIP]
-> Scentralizowanie konwersji danych w warstwie konwersji. Istnieje również możliwość użycia konwerterów jako odrębne warstwa konwersji, która znajduje się między model widoku oraz widoku. Może to być konieczne, na przykład gdy danych wymaga specjalnego formatowania, który nie zapewnia model widoku.
+> Scentralizowanie konwersji danych w warstwie konwersji. Istnieje również możliwość użycia konwerterów jako osobne dane warstwy konwersji, która pośredniczy między modelu widoku i w widoku. Może to być konieczne, na przykład, gdy dane wymagają specjalne formatowanie, który nie zapewnia model widoku.
 
-Aby model widoku o uczestnictwie w powiązanie dwukierunkowe danych z widoku, trzeba zwiększyć jego właściwości `PropertyChanged` zdarzeń. Wyświetl modele spełnienia tego wymagania, implementując `INotifyPropertyChanged` interfejsu i wywoływanie `PropertyChanged` zdarzenie, gdy właściwość zostanie zmieniona.
+Aby model widoku do wzięcia udziału w powiązaniu danych dwukierunkowe z widokiem, trzeba zwiększyć jego właściwości `PropertyChanged` zdarzeń. Wyświetl modele spełnienia tego wymagania, implementując `INotifyPropertyChanged` interfejsu i wywoływanie `PropertyChanged` zdarzenie po zmianie właściwości.
 
-Dla kolekcji, widok przyjaznego `ObservableCollection<T>` jest dostępne. Ta kolekcja implementuje powiadomień Kolekcja została zmieniona, co uwalnia dewelopera z konieczności wdrożenia `INotifyCollectionChanged` interfejsu w kolekcji.
+Dla kolekcji, przyjazne widoku `ObservableCollection<T>` podano. Ta kolekcja implementuje powiadomienia kolekcji zmienione zwalniający dewelopera z konieczności implementowania `INotifyCollectionChanged` interfejsu w kolekcjach.
 
 ### <a name="model"></a>Model
 
-Klasy modeli są niewidoczne klas, które zapewniają danych aplikacji. W związku z tym modelu można traktować jako reprezentujący modelu domeny aplikacji, które zwykle zawiera model danych oraz logiki biznesowej i sprawdzania poprawności. Przykładami obiekty modelu obiektów transfer danych (DTOs), zwykły stare obiekty CLR (POCOs) i wygenerowanego jednostek i obiektów pośredniczących.
+Klasy modelu są klas innym niż wizualny, które zapewniają dane aplikacji. W związku z tym model można traktować jako modelu domeny aplikacji, który zwykle zawiera model danych oraz logiki biznesowej i sprawdzania poprawności. Przykładami obiekty modelu obiektów transferu danych (dto), zwykłych starych obiektów CLR (POCOs) i jednostki wygenerowany i obiekty serwerów proxy.
 
-Klasy modeli są zazwyczaj używane w połączeniu z usługami lub repozytoriów, które zapewniają dostęp do danych i buforowania.
+Klasy modelu są zwykle używane w połączeniu z usługami lub repozytoria, które hermetyzują dostęp do danych i buforowania.
 
-## <a name="connecting-view-models-to-views"></a>Wyświetl modele nawiązywania połączenia z widoków
+## <a name="connecting-view-models-to-views"></a>Łączenie z modeli widoków do widoków
 
-Wyświetlanie modeli można podłączyć do widoków przy użyciu możliwości platformy Xamarin.Forms powiązania danych. Istnieje wiele metod, które mogą służyć do tworzenia widoków i wyświetl modele i kojarzyć je w czasie wykonywania. Tych metod można podzielić na dwie kategorie, znany jako pierwszy kompozycji widoku i kompozycji pierwszy widok modelu. Wybór między kompozycji pierwszy widok oraz przeglądanie kompozycji pierwszy model jest problem preferencji i złożoności. Jednak wszystkie podejścia współużytkować ten sam cel do widoku do modelu widoku, przypisane do właściwości BindingContext.
+Wyświetl modele mogą połączone z widokami przy użyciu funkcji wiązania danych z zestawu narzędzi Xamarin.Forms. Istnieje wiele metod, które mogą służyć do tworzenia widoków i wyświetl modele i skojarzyć je w czasie wykonywania. Tych metod można podzielić na dwie kategorie, znany jako widok pierwszej kompozycji i kompozycji pierwszy model widoku. Wybieranie między kompozycji pierwszy widok i Wyświetl skład pierwszy model jest problem preferencji i złożoności. Jednak wszystkie podejścia współużytkować ten sam cel, czyli widok modelu widoku, przypisane do jego właściwość elementu BindingContext.
 
-Skład pierwszej aplikacji z widokiem koncepcyjnie składa się z widoków, które nawiązać modele widoku, które są one zależne od. Główną zaletą tej metody jest fakt, że go łatwo utworzyć luźno powiązanych jednostki testować aplikacje ponieważ modele widoku ma zależności w widokach samodzielnie. Jest również zrozumiałe struktury aplikacji po jej visual struktury, zamiast do śledzenia realizacji kodu zrozumienie sposobu tworzenia i skojarzonych klas. Ponadto konstrukcji pierwszy widok wyrównana z platformy Xamarin.Forms nawigacji system, który jest odpowiedzialny za tworzenia stron podczas nawigacji, co sprawia, że skład pierwszej modelu widoku złożone i niewyrównanych z platformą.
+Skład pierwszej aplikacji przy użyciu widoku koncepcyjnie składa się z widoków, które łączyć się z modelami widok, do których one zależą. Podstawową zaletą tego podejścia jest fakt, że ułatwiają do konstruowania luźno powiązanych aplikacji sprawdzalnego działa zgodnie z jednostki ponieważ modele widoku mają ma zależności od siebie widoki. Jest również łatwa do zrozumienia struktury aplikacji po jej struktury efektów wizualnych, zamiast konieczności śledzić wykonywanie kodu, aby zrozumieć, jak utworzono i skojarzono klasy. Ponadto konstrukcja pierwszy widok wyrównuje przy użyciu zestawu narzędzi Xamarin.Forms nawigacji system, który jest odpowiedzialny za tworzenia stron podczas nawigacji, co sprawia, że skład pierwszy model widoku złożonego i niewyrównane z platformą.
 
-Z widoku modelu skład pierwszej aplikacji koncepcyjnie składa się z modeli widoku z usługą jest odpowiedzialny za lokalizowania widoku do modelu widoku. Kompozycja pierwszy widok modelu okazać bardziej naturalne niektórych deweloperów, od momentu utworzenia widoku może być usunięte, dzięki czemu można skupić się na strukturze logicznej bez interfejsu użytkownika aplikacji. Ponadto umożliwia wyświetlanie modeli ma zostać utworzony przez inne modele widoku. Jednak ta metoda jest często złożonych i może być trudne do zrozumienia sposobu tworzenia i skojarzone różne części aplikacji.
+Przy użyciu widoku modelu skład pierwszej aplikacji pod względem koncepcyjnym składa się z modeli widoków przy użyciu usługi są odpowiedzialne za lokalizowanie widok, w którym model widoku. Kompozycja pierwszy model widoku okazać bardziej naturalne, dla niektórych programistów, ponieważ tworzenie widoku może być usunięte, pozwalając firmie skoncentrować się na strukturze logicznej bez interfejsu użytkownika aplikacji. Ponadto umożliwia wyświetlanie modeli tworzoną przez innych modeli widoków. Jednak ta metoda jest często złożone i mogą stać się trudne do zrozumienia, jak utworzono i skojarzono różne części aplikacji.
 
 > [!TIP]
-> Zachowaj niezależne wyświetlanie modeli i widoków. Powiązanie widoków do właściwości źródła danych powinny być widok główny zależność od jego odpowiedni model widoku. W szczególności nie widoku typy referencyjne, takie jak [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) i [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), z widoku modeli. Wykonując przedstawione tu zasady, wyświetlanie modeli można przetestować osobno, w związku z tym zmniejszenie prawdopodobieństwa wady oprogramowania poprzez ograniczenie zakresu.
+> Zachowaj niezależnie od modeli widoków i widoków. Powiązanie widoków z właściwością w źródle danych powinien być widok głównej zależność od jego odpowiedni model widoku. W szczególności nie odwołują się do typach widoków, takich jak [ `Button` ](xref:Xamarin.Forms.Button) i [ `ListView` ](xref:Xamarin.Forms.ListView), z modeli widoków. Postępując zgodnie z zasadami przedstawionymi w tym temacie, można przetestować modeli widoków w izolacji, w związku z tym zmniejszenie prawdopodobieństwa usterek oprogramowania, ograniczając zakres.
 
-W poniższych sekcjach omówiono głównego sposobów nawiązywania wyświetlanie modeli widoków.
+W poniższych sekcjach omówiono główne sposoby łączenia modeli widoków do widoków.
 
-### <a name="creating-a-view-model-declaratively"></a>Tworzenie modelu widoku deklaratywnie
+### <a name="creating-a-view-model-declaratively"></a>Deklaratywne Tworzenie modelu widoku
 
-Najprostsza metoda jest widoku deklaratywnie tworzenia wystąpienia jego odpowiedni model widoku w języku XAML. Widok jest tworzony, odpowiedni obiekt modelu widoku również być skonstruowany. Takie podejście jest przedstawiona w poniższym przykładzie kodu:
+Najprostszą metodą jest widoku deklaratywne utworzyć jego odpowiedni model widoku w XAML. Gdy widok jest konstruowany, również można konstruować odpowiedni obiekt modelu widoku. To podejście jest przedstawiona w poniższym przykładzie kodu:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:eShop">  
@@ -100,13 +100,13 @@ Najprostsza metoda jest widoku deklaratywnie tworzenia wystąpienia jego odpowie
 </ContentPage>
 ```
 
-Gdy [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jest tworzone wystąpienie `LoginViewModel` jest automatycznie tworzony i ustawić jako widok [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/).
+Gdy [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) jest tworzone wystąpienie `LoginViewModel` jest automatycznie tworzony i Ustaw jako widok [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext).
 
-Tej konstrukcji deklaratywne i przypisanie model widoku przez widok ma tę zaletę, że jest proste, ale ma wadą wymaga konstruktora domyślnego (bezparametrowego) w modelu widoku.
+Ta konstrukcja deklaratywne i przypisania model widoku w widoku ma tę zaletę, że jest proste, ale ma wadą wymaga domyślnego (bezparametrowego) konstruktora w modelu widoku.
 
 ### <a name="creating-a-view-model-programmatically"></a>Programowe tworzenie modelu widoku
 
-Widok może mieć kod w pliku związanym z kodem, których wynikiem jest przypisywany do modelu widoku jego [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) właściwości. Często jest to zrobić w Konstruktorze widoku, jak pokazano w poniższym przykładzie:
+Widok może mieć kod w pliku związanym z kodem, który skutkuje model widoku przypisywanych do jego [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) właściwości. Często jest to zrobić w Konstruktorze tego widoku, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public LoginView()  
@@ -116,23 +116,23 @@ public LoginView()
 }
 ```
 
-Konstrukcji programowych i przypisania model widoku w widoku kodem ma zaletą jest proste. Główną wadą tego podejścia jest jednak, czy widok powinien udostępnić model widoku wszystkie wymagane zależności. Za pomocą kontenera iniekcji zależności może pomóc Obsługa utracić sprzężenia między widoku oraz widoku modelu. Aby uzyskać więcej informacji, zobacz [iniekcji zależności](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
+Konstrukcja programowy i przypisania model widoku w ramach tego widoku związane z kodem ma tę zaletę, że jest proste. Główną wadą tego podejścia jest jednak, że widok musi zapewnić model widoku wszystkie wymagane zależności. Za pomocą kontenera iniekcji zależności może ułatwić utrzymanie luźne, sprzężenia między widokiem a model widoku. Aby uzyskać więcej informacji, zobacz [wstrzykiwanie zależności](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-### <a name="creating-a-view-defined-as-a-data-template"></a>Tworzenie widoku zdefiniowany jako szablon danych
+### <a name="creating-a-view-defined-as-a-data-template"></a>Tworzenie widoku definiowane jako szablonu danych
 
-Widok mogą być definiowane jako szablon danych i skojarzone z typem modelu widoku. Szablony danych można zdefiniować jako zasoby lub można je zdefiniowano w tekście w formancie wyświetlające model widoku. Zawartość formantu jest wystąpienie modelu widoku, a szablon danych służy do wizualnego reprezentowania go. Ta technika jest przykład sytuacji, w którym model widoku zostanie uruchomiony najpierw następuje utworzenie widoku.
+Widok można zdefiniowana jako szablon danych i skojarzony typ modelu widoku. Szablony danych mogą być definiowane jako zasoby, lub można je zdefiniowano w tekście w kontrolce, będzie wyświetlana modelu widoku. Zawartość kontrolki jest wystąpienie modelu widoku, a szablon danych służy do wizualnie przedstawić ją. Ta technika jest przykładem sytuacji, w którym model widoku konkretyzacji najpierw następuje utworzenie widoku.
 
 <a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>Automatyczne tworzenie modelu widoku z lokalizatorem modelu widoku
 
-Lokalizator modelu widoku jest niestandardowej klasy, która zarządza wystąpienia widoku modeli i ich powiązania z widokami. W aplikacji mobilnej eShopOnContainers `ViewModelLocator` klasa ma dołączona właściwość `AutoWireViewModel`, który służy do skojarzenia z widoków modeli widoku. W widoku XAML to dołączona właściwość ma wartość true, aby wskazać model widoku powinny być automatycznie podłączone do widoku, jak pokazano w poniższym przykładzie kodu:
+Lokalizator modelu widoku jest klasą niestandardowej, która zarządza wystąpienia modeli widoków i ich powiązania z widokami. W ramach aplikacji eShopOnContainers aplikacji mobilnej `ViewModelLocator` klasa ma dołączoną właściwość `AutoWireViewModel`, które jest używane do skojarzenia z widoków modeli w widoku. W widoku XAML to dołączonej właściwości jest równa true, aby wskazać, model widoku powinny być automatycznie połączone do widoku, jak pokazano w poniższym przykładzie kodu:
 
 ```xaml
 viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 ```
 
-`AutoWireViewModel` Właściwość jest właściwością powiązania, który jest ustawiana na wartość false, a gdy zmienia się jego wartość `OnAutoWireViewModelChanged` jest wywoływana procedura obsługi zdarzeń. Ta metoda usuwa model widoku dla widoku. Poniższy przykład kodu pokazuje, jak to osiągnąć:
+`AutoWireViewModel` Właściwość jest właściwością może być powiązana, który jest inicjowany na wartość false, a kiedy zmienia się jej wartość `OnAutoWireViewModelChanged` program obsługi zdarzeń jest wywoływany. Ta metoda jest rozpoznawany jako model widoku dla widoku. Poniższy przykład kodu pokazuje, jak odbywa się to:
 
 ```csharp
 private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
@@ -159,34 +159,34 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, object o
 }
 ```
 
-`OnAutoWireViewModelChanged` Metoda próbuje rozpoznać przy użyciu podejścia opartych na konwencjach model widoku. Tę Konwencję zakłada się, że:
+`OnAutoWireViewModelChanged` Metoda próbuje rozpoznać modelu widoku przy użyciu podejścia oparty na Konwencji. Ta konwencja założono, że:
 
--   Wyświetl modele są w tym samym zestawie co typów widoku.
--   Widoków. Widoki podrzędna przestrzeń nazw.
--   Wyświetl modele są w. ViewModels podrzędna przestrzeń nazw.
--   Wyświetlanie nazw modelu odpowiadają nazwy widoku i kończyć "ViewModel".
+-   Wyświetl modele są tego samego zestawu jako typy widoków.
+-   Widoki są w. Podrzędna przestrzeń nazw widoków.
+-   Wyświetl modele znajdują się w. Podrzędna przestrzeń nazw modele widoków.
+-   Wyświetlanie modelu nazwy zgodne z nazwami widoków i kończyć się znakiem "ViewModel".
 
-Na koniec `OnAutoWireViewModelChanged` Ustawia metodę [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) typu widoku do widoku rozpoznać typu modelu. Aby uzyskać więcej informacji na temat rozpoznawania typu modelu widoku, zobacz [rozpoznawania](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution).
+Na koniec `OnAutoWireViewModelChanged` metody ustawia [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) typu widoku widok rozwiązania typu modelu. Aby uzyskać więcej informacji o rozwiązywaniu problemów z typu modelu widoku, zobacz [rozpoznawania](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution).
 
-Takie podejście ma tę zaletę, że aplikacja ma jedną klasę odpowiedzialną za wystąpienia widoku modeli i ich połączenie z widokami.
+Takie podejście ma tę zaletę, że aplikacja ma jedną klasę, który jest odpowiedzialny za wystąpienia modeli widoków i ich połączenie z widokami.
 
 > [!TIP]
-> Użyj Lokalizator modelu widoku w celu ułatwienia podstawienia. Lokalizator modelu widoku mogą służyć jako punkt podstawienia alternatywnych implementacji zależności, takich jak jednostki danych czas testowania lub projekt.
+> Użyj Lokalizator modelu widoku w celu ułatwienia podstawienia. Lokalizator modelu widoku można również jako punkt podstawienia alternatywnych implementacji zależności, takie jak dla jednostki danych czasowych testowania lub projektu.
 
-## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>Trwa aktualizowanie widoków w odpowiedzi na zmiany w podstawowych wyświetlić modelu lub modelu
+## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>Aktualizowanie widoków w odpowiedzi na zmiany w źródłowym wyświetlanie modelu lub modelu
 
-Wszystkie modelu widoku i modelu klasy, które są dostępne w widoku powinny implementować `INotifyPropertyChanged` interfejsu. Implementacja interfejsu w modelu widoku lub klasy modelu pozwala klasę, aby dostarczyć powiadomień o zmianach na żaden formant powiązany z danymi w widoku po zmianie wartości właściwości podstawowej.
+Wszystkie modelu widoku i klasy modeli, które są dostępne do widoku powinny implementować `INotifyPropertyChanged` interfejsu. Implementowanie interfejsu w modelu widoku lub klasy modelu umożliwia, aby klasa zapewniała powiadomienia o zmianach na żadną kontrolkę powiązanych z danymi w widoku, po zmianie wartości właściwości podstawowej.
 
-Aplikacje powinny zaprojektowana dla prawidłowe użycie powiadomienia o zmianie właściwości, spełniając następujące wymagania:
+Aplikacje powinny być zaprojektowana z myślą o poprawnego użycia powiadomienie o zmianie właściwości, spełniając następujące wymagania:
 
--   Wywoływanie zawsze `PropertyChanged` zdarzeń w przypadku zmiany wartości właściwości publicznej. Zakłada się, że wywoływanie `PropertyChanged` zdarzeń może być ignorowane z powodu wiedzę na temat sposobu występuje powiązanie XAML.
--   Wywoływanie zawsze `PropertyChanged` zdarzeń dla każdego obliczone właściwości, których wartości są używane przez inne właściwości w widoku modelu lub modelu.
--   Wywoływanie zawsze `PropertyChanged` zdarzeń na końcu metody, która powoduje, że właściwość zmienić lub gdy obiekt jest znana znajdować się w stanie awaryjnym. Wywoływanie zdarzenia przerwania operacji przez synchronicznego wywoływania obsługi zdarzeń. Dzieje się w trakcie wykonywania operacji, może narazić obiekt do funkcji wywołania zwrotnego, gdy znajduje się w stanie niebezpieczne, częściowo zaktualizowany. Ponadto istnieje możliwość zmiany kaskadowych przez `PropertyChanged` zdarzenia. Zmiany w kaskadowego wymagają aktualizacji są kompletne, zanim będzie można bezpiecznie wykonać kaskadowych zmiany.
--   Nigdy nie wywoływanie `PropertyChanged` zdarzeń, jeśli właściwość nie ulega zmianie. Oznacza to, że możesz porównać starej i nowej wartości przed zgłoszeniem `PropertyChanged` zdarzeń.
--   Nigdy nie wywoływanie `PropertyChanged` zdarzeń podczas model widoku o konstruktora, jeśli są inicjowania właściwości. Formanty powiązane z danymi w widoku nie będzie masz subskrypcję do otrzymywania powiadomień o zmianach w tym momencie.
--   Nigdy nie więcej niż jeden wywoływanie `PropertyChanged` zdarzenie z tej samej argument nazwy właściwości w ramach pojedynczego wywołania synchronicznego publicznej metody klasy. Na przykład `NumberOfItems` właściwości, których magazynu zapasowego jest `_numberOfItems` pola, jeśli zwiększa — metoda `_numberOfItems` 50 razy podczas wykonywania pętli go powinna tylko podnieść powiadomienia o zmianie właściwości na `NumberOfItems` raz, właściwości Po zakończeniu wszystkich prac. Dla metod asynchronicznych podnieść `PropertyChanged` zdarzenia dla nazwy danej właściwości w każdym segmencie synchroniczne łańcucha kontynuację asynchroniczną.
+-   Zawsze wywoływanie `PropertyChanged` zdarzeń w przypadku zmiany wartości właściwości publicznej. Nie należy zakładać, że wywoływanie `PropertyChanged` zdarzenia można zignorować, ze względu na wiedzy na temat sposobu powiązania w XAML występuje.
+-   Zawsze wywoływanie `PropertyChanged` zdarzeń dla każdego obliczane właściwości, których wartości są używane przez inne właściwości w widoku modelu lub modelu.
+-   Zawsze wywoływanie `PropertyChanged` zdarzeń na końcu metody sprawia to, że właściwość, zmienić lub gdy obiekt jest znany będzie w stanie awaryjnym. Podnoszonego zdarzenia przerwania operacji za pomocą wywołania procedur obsługi zdarzeń synchronicznie. Jeśli występuje on w trakcie wykonywania operacji, może narazić obiektu do funkcji wywołania zwrotnego, gdy jest w stanie niebezpieczne, częściowo zaktualizowany. Ponadto, istnieje możliwość kaskadowych zmiany przez `PropertyChanged` zdarzenia. Kaskadowe zmiany zwykle wymagają aktualizacji do być ukończone, zanim zmiany kaskadowych jest bezpieczne do wykonywania.
+-   Nigdy nie wywoływanie `PropertyChanged` zdarzeń, jeśli właściwość nie zmienia się. Oznacza to, że można porównać stare i nowe wartości przed zgłoszeniem `PropertyChanged` zdarzeń.
+-   Nigdy nie wywoływanie `PropertyChanged` zdarzeń w modelu widoku konstruktora, jeśli są inicjowanie właściwości. Formanty powiązane z danymi w widoku nie będzie subskrybowany otrzymywać powiadomienia o zmianach na tym etapie.
+-   Nigdy nie więcej niż jedną wywoływanie `PropertyChanged` zdarzenie z tej samej argument nazwy właściwości w ramach pojedynczej grupy wywołanie synchronicznej metody publicznej z klasy. Na przykład, biorąc pod uwagę `NumberOfItems` właściwość jest którego zapasowy magazyn `_numberOfItems` pola, jeśli metody zwiększa `_numberOfItems` pięćdziesiąt razy w czasie wykonywania pętli go powinna tylko zgłosić powiadomienie o zmianie właściwości na `NumberOfItems` raz, właściwość Po zakończeniu całą pracę. W przypadku metod asynchronicznych podnieść `PropertyChanged` zdarzeń dla nazwy danej właściwości w każdym segmencie synchroniczne łańcucha kontynuację asynchroniczną.
 
-Używa aplikacji mobilnej eShopOnContainers `ExtendedBindableObject` klasę, aby dostarczyć powiadomień o zmianie, które przedstawiono w poniższym przykładzie kodu:
+Zastosowań aplikacji mobilnej w ramach aplikacji eShopOnContainers `ExtendedBindableObject` Aby klasa zapewniała powiadomienia o zmianie, która została przedstawiona w poniższym przykładzie kodu:
 
 ```csharp
 public abstract class ExtendedBindableObject : BindableObject  
@@ -204,9 +204,9 @@ public abstract class ExtendedBindableObject : BindableObject
 }
 ```
 
-Xamarin.Form w [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) klasa implementuje `INotifyPropertyChanged` interfejs, a także [ `OnPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.OnPropertyChanged/p/System.String/) metody. `ExtendedBindableObject` Klasa udostępnia `RaisePropertyChanged` metody do wywołania właściwości powiadomienie o zmianie i w ten sposób wykorzystuje funkcje udostępniane przez `BindableObject` klasy.
+Firmy Xamarin.Form [ `BindableObject` ](xref:Xamarin.Forms.BindableObject) klasy implementuje `INotifyPropertyChanged` interfejsu, a także [ `OnPropertyChanged` ](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String)) metody. `ExtendedBindableObject` Klasa udostępnia `RaisePropertyChanged` metody do wywołania właściwości powiadomienie o zmianie i w ten sposób wykorzystuje funkcje udostępniane przez `BindableObject` klasy.
 
-Pochodną klasy modelu każdego widoku w aplikacji mobilnej eShopOnContainers `ViewModelBase` klasy, która z kolei jest pochodną `ExtendedBindableObject` klasy. W związku z tym każda klasa modelu widoku używa `RaisePropertyChanged` metoda `ExtendedBindableObject` klasy w celu zapewnienia powiadomienia o zmianie właściwości. Poniższy przykład kodu pokazuje, jak eShopOnContainers aplikacja mobilna wywołuje powiadomienia o zmianie właściwości przy użyciu wyrażenia lambda:
+Każda klasa modelu widoku w aplikacji mobilnej w ramach aplikacji eShopOnContainers pochodzi od klasy `ViewModelBase` klasy, która z kolei pochodzi od klasy `ExtendedBindableObject` klasy. W związku z tym, korzysta z każdej klasy modelu widoku `RaisePropertyChanged` method in Class metoda `ExtendedBindableObject` Aby klasa zapewniała powiadomienie o zmianie właściwości. Poniższy przykład kodu pokazuje, jak aplikacja mobilna w ramach aplikacji eShopOnContainers wywołuje powiadomienie o zmianie właściwości przy użyciu wyrażenia lambda:
 
 ```csharp
 public bool IsLogin  
@@ -223,47 +223,47 @@ public bool IsLogin
 }
 ```
 
-Należy pamiętać, że za pomocą wyrażenia lambda w ten sposób polega na małych wydajność, ponieważ wyrażenie lambda ma zostać obliczone dla każdego wywołania. Koszt wydajności jest mała i nie będzie zwykle wpływu aplikacji, kosztów może zostać naliczona, gdy istnieje wiele powiadomień o zmianie. Zaletą tej metody jest jednak zapewnia bezpieczeństwo typów w czasie kompilacji i refaktoryzacji pomocy technicznej, gdy zmieniana jest nazwa właściwości.
+Należy pamiętać, że użycie wyrażenia lambda w ten sposób polega na małych negatywnie na wydajność, ponieważ wyrażenie lambda ma zostać obliczone dla każdego wywołania. Mimo że spadek wydajności jest mały i nie będzie zwykle wpływu na aplikację, koszty może zostać naliczona przypadku czy wiele powiadomień o zmianie. Jednak zaletą tego podejścia jest zapewnia bezpieczeństwo typów w czasie kompilacji i refaktoryzacji pomocy technicznej podczas zmieniania nazw właściwości.
 
-## <a name="ui-interaction-using-commands-and-behaviors"></a>Korzystanie z poleceń i zachowania interakcja interfejsu użytkownika
+## <a name="ui-interaction-using-commands-and-behaviors"></a>Interakcja interfejsu użytkownika przy użyciu polecenia i zachowania
 
-W aplikacjach mobilnych akcje są zwykle wywoływane w odpowiedzi na akcję użytkownika, takich jak kliknięcia przycisku, który może być zaimplementowany przez tworzenie obsługi zdarzeń w pliku CodeBehind. Jednak we wzorcu MVVM odpowiedzialność wykonywania akcji spoczywa modelu widoku i należy unikać wprowadzania do kodu w CodeBehind.
+W aplikacjach mobilnych akcje są zwykle wywoływani w odpowiedzi na akcję użytkownika, takie jak kliknięcie przycisku, który może być implementowany przez tworzenie obsługi zdarzeń w pliku związanym z kodem. Jednak w wzorca MVVM odpowiedzialność za wykonanie akcji znajduje się za pomocą modelu widoku i należy unikać wprowadzania do kodu w związanym z kodem.
 
-Polecenia zapewniają wygodną metodą reprezentują akcje, które mogą zostać powiązane do formantów w interfejsie użytkownika. Hermetyzuj kod, który implementuje akcji i pomoc, aby zachować całkowicie niezależna od jego wizualną reprezentację w widoku. Platformy Xamarin.Forms zawiera formanty, które można deklaratywnie podłączyć do polecenia, a tych kontrolek wywoła polecenie, gdy użytkownik wchodzi w interakcję z formantem.
+Polecenia zapewniają wygodny sposób do reprezentowania akcje, które może być powiązana z kontrolkami w interfejsie użytkownika. Hermetyzuj kod, który implementuje akcji i pomóc zachować odłączone od jego wizualnej reprezentacji w widoku. Xamarin.Forms zawiera formanty, które mogą być w sposób deklaratywny połączone z poleceniem, a te kontrolki wywoła polecenie, gdy użytkownik wchodzi w interakcję z kontrolką.
 
-Zachowania również umożliwić formanty deklaratywnie będą podłączone do polecenia. Jednak zachowania może służyć do wywoływania akcji skojarzoną z zakresem zdarzeń zgłaszanych przez formant. W związku z tym zachowania adresów wiele z tych samych operacji jako polecenie włączone formantów, zapewniając wysoką elastyczność i kontrolę. Ponadto zachowania można również skojarzyć polecenie obiektów lub metod z formantami, które nie są specjalnie zaprojektowane do interakcji z poleceń.
+Zachowania również umożliwiać kontrolek w sposób deklaratywny podłączenie do polecenia. Jednak zachowania może służyć do wywołania akcji, która jest skojarzona z szeroką gamę zdarzeń wywołanych przez kontrolkę. W związku z tym zachowania adresów wiele z tych samych scenariuszy co polecenie włączone formantów, przy jednoczesnym zapewnieniu większego stopnia elastyczności i kontroli. Ponadto zachowania można również skojarzyć polecenia obiektów lub metod z kontrolkami, które nie zostały specjalnie zaprojektowane do interakcji z poleceniami.
 
 ### <a name="implementing-commands"></a>Implementacja poleceń
 
-Wyświetl modele zwykle ujawnić właściwości polecenia, dla powiązania z widoku, które są wystąpienia obiektów, które implementują `ICommand` interfejsu. Podaj liczbę formantów platformy Xamarin.Forms `Command` właściwość, która może być dane powiązane z `ICommand` obiekt udostępniany przez model widoku. `ICommand` Interfejs definiuje `Execute` metodę, która hermetyzuje samą operacją `CanExecute` metodę, która wskazuje, czy polecenie może być wywoływany i `CanExecuteChanged` zdarzenie, które występuje, gdy zmian wpływających na czy polecenie powinno być wykonane. [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) i [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) implementuje klasy udostępniane przez platformy Xamarin.Forms, `ICommand` interfejsu, gdzie `T` jest typem argumenty `Execute`i `CanExecute`.
+Wyświetl zazwyczaj modelach polecenie Właściwości, do powiązania w widoku wystąpienia obiektów, które implementują `ICommand` interfejsu. Podaj liczbę kontrolek zestawu narzędzi Xamarin.Forms `Command` właściwości, które mogą zawierać dane powiązane z `ICommand` obiekt udostępniany przez model widoku. `ICommand` Interfejs definiuje `Execute` metody, która hermetyzuje samą operacją `CanExecute` metody, która wskazuje, czy polecenie może być wywołana i `CanExecuteChanged` zdarzenia, które występuje, gdy tego, czy występują zmiany wpływają na polecenie powinno być wykonane. [ `Command` ](xref:Xamarin.Forms.Command) i [ `Command<T>` ](xref:Xamarin.Forms.Command) Implementowanie klas, dostarczonych przez zestawu narzędzi Xamarin.Forms `ICommand` interfejsu, gdzie `T` jest typem argumenty `Execute`i `CanExecute`.
 
-W ramach modelu widoku, powinien być typu obiektu [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) lub [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) dla każdej publicznej właściwości w modelu widoku typu `ICommand`. `Command` Lub `Command<T>` Konstruktor wymaga `Action` obiektu wywołania zwrotnego, które jest wywoływane, gdy `ICommand.Execute` wywołania metody. `CanExecute` Metoda jest parametr opcjonalny konstruktora i jest `Func` zwracającą `bool`.
+W ramach modelu widoku powinny być obiektu typu [ `Command` ](xref:Xamarin.Forms.Command) lub [ `Command<T>` ](xref:Xamarin.Forms.Command) dla każdej publicznej właściwości w modelu widoku typu `ICommand`. `Command` Lub `Command<T>` Konstruktor wymaga `Action` obiektu wywołania zwrotnego, która jest wywoływana, gdy `ICommand.Execute` metoda jest wywoływana. `CanExecute` Metoda to parametr opcjonalny konstruktora i jest `Func` zwracającego `bool`.
 
-Poniższy kod przedstawia sposób [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) wystąpienia, która reprezentuje polecenie rejestrowania, jest tworzony za pośrednictwem pełnomocnika, aby `Register` wyświetlić metody modelu:
+Poniższy kod przedstawia sposób [ `Command` ](xref:Xamarin.Forms.Command) wystąpienia, co reprezentuje polecenie, zarejestruj się, jest tworzony przez określenie delegat `Register` przeglądać model metoda:
 
 ```csharp
 public ICommand RegisterCommand => new Command(Register);
 ```
 
-Polecenie jest uwidaczniany w widoku za pomocą właściwości, która zwraca odwołanie do `ICommand`. Gdy `Execute` wywoływana jest metoda [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) obiektu, po prostu przekazuje wywołanie do metody w modelu widoku za pośrednictwem delegata, który został określony w `Command` konstruktora.
+Polecenie jest uwidaczniany w widoku za pomocą właściwości, która zwraca odwołanie do `ICommand`. Gdy `Execute` wywoływana jest metoda [ `Command` ](xref:Xamarin.Forms.Command) obiektu, po prostu przekazuje wywołanie do metody w modelu widoku za pośrednictwem delegata, która została określona w `Command` konstruktora.
 
-Za pomocą polecenia można wywołać metody asynchronicznej przy użyciu `async` i `await` słów kluczowych podczas określania polecenia `Execute` delegowanie. Oznacza to, że wywołanie zwrotne jest `Task` i powinny być oczekiwane. Na przykład poniższy kod przedstawia sposób [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) wystąpienia, która reprezentuje polecenie logowania, jest tworzony za pośrednictwem pełnomocnika, aby `SignInAsync` wyświetlić metody modelu:
+Metoda asynchroniczna może być wywoływany za pomocą polecenia przy użyciu `async` i `await` słów kluczowych podczas określania polecenia `Execute` delegować. Oznacza to, że wywołanie zwrotne jest `Task` i powinny być oczekiwana. Na przykład, poniższy kod przedstawia sposób [ `Command` ](xref:Xamarin.Forms.Command) wystąpienia, co reprezentuje polecenie logowania, jest tworzony przez określenie delegat `SignInAsync` przeglądać model metoda:
 
 ```csharp
 public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
-Parametry mogą być przekazywane do `Execute` i `CanExecute` akcji za pomocą [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) klasy do uruchamiania polecenia. Na przykład poniższy kod przedstawia sposób `Command<T>` wystąpienia służy do wskazania, że `NavigateAsync` metoda wymaga argumentu typu `string`:
+Parametry mogą być przekazywane do `Execute` i `CanExecute` akcji za pomocą [ `Command<T>` ](xref:Xamarin.Forms.Command) klasy w celu uruchomienia polecenia. Na przykład, poniższy kod przedstawia sposób `Command<T>` wystąpienie jest używane w celu wskazania, że `NavigateAsync` wymaga argumentu typu metody `string`:
 
 ```csharp
 public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
-W obu [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) i [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) klas, delegat do `CanExecute` w każdym Konstruktor jest opcjonalne. Jeśli delegat nie jest określony, `Command` zwróci `true` dla `CanExecute`. Jednak model widoku może wskazywać na zmiany w tym poleceniu `CanExecute` stanu przez wywołanie metody `ChangeCanExecute` metoda `Command` obiektu. Powoduje to `CanExecuteChanged` się zdarzenia. Formanty w interfejsie użytkownika, które są powiązane z polecenia następnie zaktualizuje stan włączony na dostępności polecenia powiązane z danymi.
+W obu [ `Command` ](xref:Xamarin.Forms.Command) i [ `Command<T>` ](xref:Xamarin.Forms.Command) klasy delegata do `CanExecute` w każdym Konstruktor jest opcjonalne. Jeśli delegat nie jest określona, `Command` zwróci `true` dla `CanExecute`. Jednak model widoku można wskazać zmianę w poleceniu `CanExecute` stanu przez wywołanie metody `ChangeCanExecute` metody `Command` obiektu. Powoduje to, że `CanExecuteChanged` zdarzenia. Wszystkie formanty w interfejsie użytkownika, które są powiązane z poleceniem następnie zaktualizuje stan włączony na dostępności polecenia powiązanych z danymi.
 
-#### <a name="invoking-commands-from-a-view"></a>Wywoływanie polecenia z widoku
+#### <a name="invoking-commands-from-a-view"></a>Wywoływania poleceń w widoku
 
-Poniższy kod przedstawia przykład sposobu [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) w `LoginView` wiąże `RegisterCommand` w `LoginViewModel` przy użyciu [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) wystąpienie:
+Poniższy kod przedstawia przykład sposobu [ `Grid` ](xref:Xamarin.Forms.Grid) w `LoginView` wiąże `RegisterCommand` w `LoginViewModel` przy użyciu [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) wystąpienie:
 
 ```xaml
 <Grid Grid.Column="1" HorizontalOptions="Center">  
@@ -274,23 +274,23 @@ Poniższy kod przedstawia przykład sposobu [ `Grid` ](https://developer.xamarin
 </Grid>
 ```
 
-Parametr polecenia można opcjonalnie zdefiniować za pomocą [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.CommandParameter/) właściwości. Typu oczekiwanego argumentu jest określona w `Execute` i `CanExecute` docelowy metody. [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Automatycznie wywoła polecenie docelowe, gdy użytkownik użyje dołączone formantu. Parametr polecenia, jeśli zostanie podana, zostanie przekazany jako argument do polecenia `Execute` delegowanie.
+Parametr polecenia można również opcjonalnie określić przy użyciu [ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) właściwości. Typ oczekiwanego argumentu jest określona w `Execute` i `CanExecute` metody docelowej. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Automatycznie wywoła polecenie docelowe, gdy użytkownik wchodzi w interakcję z kontrolką dołączone. Parametr polecenia, jeśli podany, zostanie przekazany jako argument do polecenia `Execute` delegować.
 
 <a name="implementing_behaviors" />
 
-### <a name="implementing-behaviors"></a>Implementowanie zachowania
+### <a name="implementing-behaviors"></a>Implementowanie zachowań
 
-Zachowania Zezwalaj na funkcje, które mają zostać dodane do kontrolek interfejsu użytkownika bez konieczności podklasy je. Zamiast tego funkcji jest zaimplementowana w klasie zachowania i dołączonej do formantu, jakby było częścią samego formantu. Zachowania służą do implementowania kodu, który zwykle należy zapisać jako kodem, ponieważ bezpośrednio prowadzi interakcję z interfejsem API formantu w taki sposób, że można go zwięzłym dołączonej do formantu i pakiecie w celu ponownego wykorzystania przez więcej niż jeden widok lub aplikacji. W kontekście MVVM zachowania są przydatne podejście do połączenia formanty poleceń.
+Zachowania Zezwalaj na funkcje, które mają zostać dodane do kontrolki interfejsu użytkownika bez konieczności podklasy je. Zamiast tego funkcje jest zaimplementowana w klasie zachowanie i dołączone do formantu, tak, jakby były one częścią sama kontrolka. Zachowania umożliwiają wdrożenie kodu, który będzie zazwyczaj trzeba napisać jako związany z kodem, ponieważ współpracuje bezpośrednio z interfejsem API formantu w taki sposób, że można go zwięźle dołączonej do formantu i w pakiecie do ponownego wykorzystania w więcej niż jednego widoku lub aplikacji. W kontekście MVVM zachowania są przydatne do łączenia z formantów na polecenia.
 
-Zachowanie, które jest dołączony do formantu za pośrednictwem dołączone właściwości nosi nazwę *dołączony zachowanie*. Zachowanie można użyć interfejsu API dostępnego elementu, do której jest dołączona do dodawania funkcji do tego formantu lub inne formanty, w widoku drzewa wizualnego. Zawiera aplikacji mobilnej eShopOnContainers `LineColorBehavior` klasy, która jest dołączona zachowanie. Aby uzyskać więcej informacji dotyczących tego zachowania, zobacz [wyświetlanie błędy sprawdzania poprawności](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
+To zachowanie, który jest dołączony do formantu za pomocą właściwości dołączone jest znany jako *dołączone zachowania*. To zachowanie można następnie użyć narażonych interfejsu API elementu, do której jest dołączony, aby dodać funkcje do tej kontrolki lub inne kontrolki, w drzewie wizualnym widoku. Aplikacja mobilna w ramach aplikacji eShopOnContainers zawiera `LineColorBehavior` klasy, która jest dołączone zachowania. Aby uzyskać więcej informacji na temat tego zachowania, zobacz [wyświetlanie błędów walidacji](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
 
-Zachowanie platformy Xamarin.Forms jest klasą pochodzącą z [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) lub [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy, gdzie `T `jest typ kontroli, do którego należy zastosować zachowanie. Podaj te klasy `OnAttachedTo` i `OnDetachingFrom` metody, które powinna zostać zastąpiona w celu zapewnienia logikę, która zostanie wykonana, jeśli zachowanie jest dołączony do i odłączone od kontroli.
+Zachowania zestawu narzędzi Xamarin.Forms to klasa, która jest pochodną [ `Behavior` ](xref:Xamarin.Forms.Behavior) lub [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy, gdzie `T `jest typu formantu, którego powinien dotyczyć zachowanie. Te klasy oferują `OnAttachedTo` i `OnDetachingFrom` metody, które powinny zostać zastąpiona w celu zapewnić logikę, która zostanie wykonana, gdy zachowanie jest dołączony do odłączona od kontrolek.
 
-W aplikacji mobilnej eShopOnContainers `BindableBehavior<T>` pochodną klasy [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) klasy. Celem `BindableBehavior<T>` klasy jest zapewnienie klasę podstawową dla platformy Xamarin.Forms zachowania, które wymagają [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) zachowania, należy ustawić dołączonych kontroli.
+W ramach aplikacji eShopOnContainers aplikacji mobilnej `BindableBehavior<T>` klasa pochodzi od [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) klasy. Celem `BindableBehavior<T>` klasa ma na celu dostarczenie klasę bazową dla zachowania zestawu narzędzi Xamarin.Forms, które wymagają [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) zachowania, należy ustawić dołączonych kontroli.
 
-`BindableBehavior<T>` Klasa udostępnia możliwym do zastąpienia `OnAttachedTo` metodę, która ustawia [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) zachowania i którą można przesłonić `OnDetachingFrom` metodę, która czyści `BindingContext`. Ponadto klasa zawiera odwołanie do formantu dołączonych w `AssociatedObject` właściwości.
+`BindableBehavior<T>` Klasa udostępnia możliwym do zastąpienia `OnAttachedTo` metodę, która ustawia [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) zachowanie i którą można przesłonić `OnDetachingFrom` metodę, która czyści `BindingContext`. Ponadto klasa przechowuje odwołanie do dołączonych formantu w `AssociatedObject` właściwości.
 
-Obejmuje aplikacji mobilnej eShopOnContainers `EventToCommandBehavior` klasy, która wykonuje polecenie w odpowiedzi na zdarzenia występujące. Ta klasa pochodzi od `BindableBehavior<T>` klasy, tak aby zachowanie może powiązać i wykonywać `ICommand` określonego przez `Command` właściwości, gdy jest używane przez zachowanie. Poniższy kod przedstawia przykład `EventToCommandBehavior` klasy:
+Obejmuje aplikacji mobilnej w ramach aplikacji eShopOnContainers `EventToCommandBehavior` klasy, która wykonuje polecenie w odpowiedzi na zdarzenia występujące. Ta klasa jest pochodną `BindableBehavior<T>` klasy tak, aby zachowanie może powiązać i wykonywać `ICommand` określony przez `Command` właściwości, gdy jest używane działanie. Poniższy kod przedstawia przykład `EventToCommandBehavior` klasy:
 
 ```csharp
 public class EventToCommandBehavior : BindableBehavior<View>  
@@ -334,13 +334,13 @@ public class EventToCommandBehavior : BindableBehavior<View>
 }
 ```
 
-`OnAttachedTo` i `OnDetachingFrom` metody są używane do rejestrowania i wyrejestrowania program obsługi zdarzeń dla zdarzenia, zdefiniowany w `EventName` właściwości. Następnie, gdy zdarzenie jest generowane, `OnFired` wywoływana jest metoda, która wykonuje polecenie.
+`OnAttachedTo` i `OnDetachingFrom` metody są używane do rejestrowania i wyrejestrowania program obsługi zdarzeń dla zdarzenia, zdefiniowany w `EventName` właściwości. Następnie, gdy zdarzenie zostanie wyzwolony, `OnFired` wywoływana jest metoda, która wykonuje polecenie.
 
-Zaletą korzystania z `EventToCommandBehavior` do wykonania polecenia, gdy zdarzenie jest generowane, jest, że polecenia może być skojarzony z formantami, które nie zostały zaprojektowane do interakcji z poleceń. Ponadto zostanie przeniesiony kod obsługi zdarzeń do widoku modeli, gdzie może być testowane jednostki.
+Zaletą korzystania z `EventToCommandBehavior` do wykonania polecenia, gdy zdarzenie zostanie wyzwolony, to, że polecenia mogą być skojarzone z kontrolkami, które nie zostały przeznaczone do interakcji z poleceniami. Ponadto to przenosi kod obsługi zdarzeń do modeli widoków, gdzie mogą być testowane jednostki.
 
-#### <a name="invoking-behaviors-from-a-view"></a>Wywoływanie zachowania z widoku
+#### <a name="invoking-behaviors-from-a-view"></a>Wywoływanie zachowań z widoku
 
-`EventToCommandBehavior` Jest szczególnie przydatne podczas dołączania do formantu, który nie obsługuje polecenia polecenie. Na przykład `ProfileView` używa `EventToCommandBehavior` do wykonania `OrderDetailCommand` podczas [ `ItemTapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemTapped/) zdarzenia są generowane na [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) zamówień użytkownika, który wyświetla pokazany w poniższym kodzie:
+`EventToCommandBehavior` Jest szczególnie przydatne w przypadku dołączania polecenie do formantu, który nie obsługuje polecenia. Na przykład `ProfileView` używa `EventToCommandBehavior` do wykonania `OrderDetailCommand` podczas [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) zdarzeń jest uruchamiana na [ `ListView` ](xref:Xamarin.Forms.ListView) zamówienia przez użytkownika, który wyświetla pokazany w poniższym kodzie:
 
 ```xaml
 <ListView>  
@@ -354,18 +354,18 @@ Zaletą korzystania z `EventToCommandBehavior` do wykonania polecenia, gdy zdarz
 </ListView>
 ```
 
-W czasie wykonywania `EventToCommandBehavior` odpowie na interakcję z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Po wybraniu elementu w `ListView`, [ `ItemTapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemTapped/) uruchomią zdarzeń, które będą wykonywane `OrderDetailCommand` w `ProfileViewModel`. Domyślnie argumenty dla zdarzenia są przekazywane do polecenia. Te dane jest konwertowana zgodnie z przekazaniem między źródłem a celem przez konwerter określone w `EventArgsConverter` właściwość, która zwraca [ `Item` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemTappedEventArgs.Item/) z `ListView` z [ `ItemTappedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemTappedEventArgs/). W związku z tym, kiedy `OrderDetailCommand` jest wykonywane, wybranego `Order` jest przekazywana jako parametr do zarejestrowanych akcji.
+W czasie wykonywania `EventToCommandBehavior` odpowie na interakcję z [ `ListView` ](xref:Xamarin.Forms.ListView). Po wybraniu elementu w `ListView`, [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) nastąpi zdarzenie, które będą wykonywane `OrderDetailCommand` w `ProfileViewModel`. Domyślnie argumenty zdarzeń dla zdarzenia są przekazywane do polecenia. Tych danych jest konwertowany, ponieważ jest przekazywana przez konwerter określony w elemencie źródłowym i docelowym `EventArgsConverter` właściwość, która zwraca [ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item) z `ListView` z [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs). W związku z tym, kiedy `OrderDetailCommand` jest wykonywane, wybranych `Order` jest przekazywany jako parametr do zarejestrowanych akcji.
 
-Aby uzyskać więcej informacji dotyczących zachowania, zobacz [zachowania](~/xamarin-forms/app-fundamentals/behaviors/index.md).
+Aby uzyskać więcej informacji na temat zachowań, zobacz [zachowania](~/xamarin-forms/app-fundamentals/behaviors/index.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-Wzorca Model-View-ViewModel (MVVM) ułatwia prawidłowo oddzielnych działalności biznesowej i prezentacji logiki aplikacji za pomocą jego interfejsu użytkownika (UI). Obsługa czyste rozdzielenie aplikacji logiki i interfejsu użytkownika pomaga rozwiązywać problemy programowanie wiele i może ułatwić testowanie aplikacji, obsługa i rozwijać. Może znacznie zwiększyć możliwości ponownego użycia kodu i umożliwia deweloperom i projektantom interfejsu użytkownika więcej łatwiej współpracować przy opracowywaniu ich odpowiednich części aplikacji.
+Wzorzec Model-View-ViewModel (MVVM) pomaga oddzielić nie pozostawia żadnych śladów logiki biznesowej i prezentacji aplikacji za pomocą jego interfejsu użytkownika (UI). Utrzymywanie czystą separacji między logiki aplikacji i interfejsu użytkownika pozwala rozwiązać wiele problemów rozwoju i może ułatwić aplikacji do testowania, obsługa i rozwijać. Może również znacznie zwiększyć możliwości ponownego użycia kodu i umożliwia deweloperom i projektanci interfejsu użytkownika, aby łatwo współpracować podczas tworzenia ich odpowiednich części aplikacji.
 
-Przy użyciu MVVM wzorca interfejsu użytkownika aplikacji i podstawowej prezentacji i logiki biznesowej jest podzielone na trzy osobne klasy: widoku, który hermetyzuje interfejsu użytkownika i interfejsu użytkownika logiki; model widoku, który hermetyzuje logikę prezentacji i stan; i model, który hermetyzuje logikę biznesową i danych aplikacji.
+Przy użyciu MVVM wzorca interfejsu użytkownika aplikacji i podstawowej logiki prezentacji i business jest dzielony na trzech osobnych klas: widoku, który hermetyzuje interfejs użytkownika i interfejsu użytkownika logiki... model widoku, który hermetyzuje logikę prezentacji i stan; i model, który hermetyzuje logikę biznesową i danych aplikacji.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pobieranie książki elektronicznej (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Pobierz książkę elektroniczną (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [ramach aplikacji eShopOnContainers (GitHub) (przykład)](https://github.com/dotnet-architecture/eShopOnContainers)

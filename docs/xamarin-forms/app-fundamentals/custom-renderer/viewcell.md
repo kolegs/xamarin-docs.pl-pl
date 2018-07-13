@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935579"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999002"
 ---
 # <a name="customizing-a-viewcell"></a>Dostosowywanie obiektu ViewCell
 
 _Xamarin.Forms ViewCell jest komórki, które mogą być dodawane do ListView lub TableView, która zawiera widok zdefiniowany dla deweloperów. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla ViewCell, który znajduje się w formancie ListView zestawu narzędzi Xamarin.Forms. Spowoduje to zatrzymanie obliczeń układ Xamarin.Forms miałyby wielokrotnie wywoływane podczas przewijania ListView._
 
-Każdej komórki zestawu narzędzi Xamarin.Forms ma towarzyszący modułu renderowania dla każdej platformy, która tworzy wystąpienie kontrolki natywne. Gdy [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ViewCellRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `UITableViewCell` kontroli. Na platformie Android `ViewCellRenderer` klasy tworzy macierzystej `View` kontroli. Na Universal Windows Platform (platformy UWP), `ViewCellRenderer` klasy tworzy macierzystej `DataTemplate`. Aby uzyskać więcej informacji na temat renderowania i klasy natywnych kontrolek, mapowane kontrolek zestawu narzędzi Xamarin.Forms, zobacz [natywne kontrolki i klasy podstawowej renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdej komórki zestawu narzędzi Xamarin.Forms ma towarzyszący modułu renderowania dla każdej platformy, która tworzy wystąpienie kontrolki natywne. Gdy [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ViewCellRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `UITableViewCell` kontroli. Na platformie Android `ViewCellRenderer` klasy tworzy macierzystej `View` kontroli. Na Universal Windows Platform (platformy UWP), `ViewCellRenderer` klasy tworzy macierzystej `DataTemplate`. Aby uzyskać więcej informacji na temat renderowania i klasy natywnych kontrolek, mapowane kontrolek zestawu narzędzi Xamarin.Forms, zobacz [natywne kontrolki i klasy podstawowej renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Na poniższym diagramie przedstawiono relację między [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) odpowiedniego natywne kontrolki, które ją implementują i:
+Na poniższym diagramie przedstawiono relację między [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) odpowiedniego natywne kontrolki, które ją implementują i:
 
 ![](viewcell-images/viewcell-classes.png "Relacja między formantem ViewCell i implementowanie natywne kontrolki")
 
-Proces renderowania może podjąć zalet do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) na każdej platformie. Proces ten jest w następujący sposób:
+Proces renderowania może podjąć zalet do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) na każdej platformie. Proces ten jest w następujący sposób:
 
 1. [Utwórz](#Creating_the_Custom_Cell) komórki niestandardowego zestawu narzędzi Xamarin.Forms.
 1. [Używanie](#Consuming_the_Custom_Cell) niestandardowe komórki z zestawu narzędzi Xamarin.Forms.
 1. [Utwórz](#Creating_the_Custom_Renderer_on_each_Platform) niestandardowego modułu renderowania dla komórki na każdej platformie.
 
-Każdy element zostaną teraz dokładniej omówione w implementacji `NativeCell` modułu renderowania, wykorzystującego układ specyficzne dla platformy, dla każdej komórki hostowaną wewnątrz zestawu narzędzi Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli. Spowoduje to zatrzymanie obliczenia układ interfejsu Xamarin.Forms z wielokrotnie wywoływana podczas `ListView` przewijania.
+Każdy element zostaną teraz dokładniej omówione w implementacji `NativeCell` modułu renderowania, wykorzystującego układ specyficzne dla platformy, dla każdej komórki hostowaną wewnątrz zestawu narzędzi Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) kontroli. Spowoduje to zatrzymanie obliczenia układ interfejsu Xamarin.Forms z wielokrotnie wywoływana podczas `ListView` przewijania.
 
 <a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>Tworzenie niestandardowych komórki
 
-Kontrolkę komórki niestandardowe mogą być tworzone przez podklasy [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) klasy, jak pokazano w poniższym przykładzie kodu:
+Kontrolkę komórki niestandardowe mogą być tworzone przez podklasy [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class NativeCell : ViewCell
@@ -143,9 +143,9 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Rozwiązanie Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) formantu służy do wyświetlania listy danych, który jest wypełniana przy użyciu [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/) właściwości. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Strategii buforowania próbuje zminimalizować `ListView` zużycia pamięci i wykonania przyspieszyć przez odtwarzanie komórek listy. Aby uzyskać więcej informacji, zobacz [strategii buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Rozwiązanie Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) formantu służy do wyświetlania listy danych, który jest wypełniana przy użyciu [ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) właściwości. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Strategii buforowania próbuje zminimalizować `ListView` zużycia pamięci i wykonania przyspieszyć przez odtwarzanie komórek listy. Aby uzyskać więcej informacji, zobacz [strategii buforowania](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
-Każdy wiersz na liście zawiera trzy elementy danych — nazwy, kategorii i nazwa pliku obrazu. Układ każdy wiersz na liście jest definiowany przez `DataTemplate` które jest przywoływane za pośrednictwem [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/) właściwości możliwej do wiązania. `DataTemplate` Definiuje się, że każdy wiersz danych na liście będzie `NativeCell` wyświetlającą jego `Name`, `Category`, i `ImageFilename` właściwości za pomocą powiązania danych. Aby uzyskać więcej informacji na temat `ListView` sterowania, zobacz [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Każdy wiersz na liście zawiera trzy elementy danych — nazwy, kategorii i nazwa pliku obrazu. Układ każdy wiersz na liście jest definiowany przez `DataTemplate` które jest przywoływane za pośrednictwem [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) właściwości możliwej do wiązania. `DataTemplate` Definiuje się, że każdy wiersz danych na liście będzie `NativeCell` wyświetlającą jego `Name`, `Category`, i `ImageFilename` właściwości za pomocą powiązania danych. Aby uzyskać więcej informacji na temat `ListView` sterowania, zobacz [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 Teraz można dodać niestandardowego modułu renderowania do każdego projektu aplikacji, aby dostosować układ specyficzne dla platformy, dla każdej komórki.
 
@@ -315,9 +315,9 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-Ta klasa definiuje kontrolki, używany do renderowania zawartości komórki i ich rozmieszczenie. Klasa implementuje [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) interfejs, który jest wymagany, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategii buforowania. Ten interfejs określa, że klasa musi implementować [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) właściwość, która powinna zwrócić do niestandardowych danych dla odtwarzania komórek.
+Ta klasa definiuje kontrolki, używany do renderowania zawartości komórki i ich rozmieszczenie. Klasa implementuje [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) interfejs, który jest wymagany, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategii buforowania. Ten interfejs określa, że klasa musi implementować [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) właściwość, która powinna zwrócić do niestandardowych danych dla odtwarzania komórek.
 
-`NativeiOSCell` Konstruktor inicjuje wygląd `HeadingLabel`, `SubheadingLabel`, i `CellImageView` właściwości. Te właściwości są używane do wyświetlania danych przechowywanych w `NativeCell` wystąpienia, z `UpdateCell` wywołania metody można ustawić wartość każdej właściwości. Ponadto, jeśli [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) buforowania strategii, dane wyświetlane przez `HeadingLabel`, `SubheadingLabel`, i `CellImageView` właściwości mogą być zaktualizowane przez `OnNativeCellPropertyChanged` metody w niestandardowego modułu renderowania.
+`NativeiOSCell` Konstruktor inicjuje wygląd `HeadingLabel`, `SubheadingLabel`, i `CellImageView` właściwości. Te właściwości są używane do wyświetlania danych przechowywanych w `NativeCell` wystąpienia, z `UpdateCell` wywołania metody można ustawić wartość każdej właściwości. Ponadto, jeśli [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) buforowania strategii, dane wyświetlane przez `HeadingLabel`, `SubheadingLabel`, i `CellImageView` właściwości mogą być zaktualizowane przez `OnNativeCellPropertyChanged` metody w niestandardowego modułu renderowania.
 
 Układ komórek odbywa się przez `LayoutSubviews` zastąpić, który ustawia współrzędne `HeadingLabel`, `SubheadingLabel`, i `CellImageView` w komórce.
 
@@ -358,19 +358,19 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore` Metoda jest wywoływana w celu zbudowania każdej komórki, które mają być wyświetlane. Każda komórka jest `NativeAndroidCell` wystąpienia, która definiuje układ komórki i jego danych. Działanie `GetCellCore` metoda zależy od [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) strategii buforowania:
+`GetCellCore` Metoda jest wywoływana w celu zbudowania każdej komórki, które mają być wyświetlane. Każda komórka jest `NativeAndroidCell` wystąpienia, która definiuje układ komórki i jego danych. Działanie `GetCellCore` metoda zależy od [ `ListView` ](xref:Xamarin.Forms.ListView) strategii buforowania:
 
-- Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) buforowanie strategii jest [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` metoda będzie wywoływana dla każdej komórki. A `NativeAndroidCell` zostaną utworzone dla każdego `NativeCell` wystąpienia, które początkowo jest wyświetlany na ekranie. Jak użytkownik przewija `ListView`, `NativeAndroidCell` wystąpieniach będą używane ponownie. Aby uzyskać więcej informacji na temat Android komórki ponownego użycia, zobacz [wiersz widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md).
+- Gdy [ `ListView` ](xref:Xamarin.Forms.ListView) buforowanie strategii jest [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` metoda będzie wywoływana dla każdej komórki. A `NativeAndroidCell` zostaną utworzone dla każdego `NativeCell` wystąpienia, które początkowo jest wyświetlany na ekranie. Jak użytkownik przewija `ListView`, `NativeAndroidCell` wystąpieniach będą używane ponownie. Aby uzyskać więcej informacji na temat Android komórki ponownego użycia, zobacz [wiersz widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md).
 
   > [!NOTE]
-  > Należy pamiętać, że ten kod niestandardowego modułu renderowania będzie wykonywać niektóre komórki ponownego użycia nawet wtedy, gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) zachowuje komórek.
+  > Należy pamiętać, że ten kod niestandardowego modułu renderowania będzie wykonywać niektóre komórki ponownego użycia nawet wtedy, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) zachowuje komórek.
 
   Dane wyświetlane przez każdą `NativeAndroidCell` wystąpienia, czy nowo utworzone lub ponownego użycia, zostaną zaktualizowane przy użyciu danych z każdej `NativeCell` wystąpienia przez `UpdateCell` metody.
 
   > [!NOTE]
-  > Należy pamiętać, że podczas `OnNativeCellPropertyChanged` metoda będzie wywołana, gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest ustawiony na zachowania komórek, nie zostaną zaktualizowane `NativeAndroidCell` wartości właściwości.
+  > Należy pamiętać, że podczas `OnNativeCellPropertyChanged` metoda będzie wywołana, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) jest ustawiony na zachowania komórek, nie zostaną zaktualizowane `NativeAndroidCell` wartości właściwości.
 
-- Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) buforowanie strategii jest [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` będzie można wywołać metody dla każdej komórki, które początkowo jest wyświetlany na ekranie. A `NativeAndroidCell` zostanie utworzone wystąpienie dla każdego `NativeCell` wystąpienia, które początkowo jest wyświetlany na ekranie. Dane wyświetlane przez każdą `NativeAndroidCell` wystąpienia zostaną zaktualizowane przy użyciu danych z `NativeCell` wystąpienia przez `UpdateCell` metody. Jednak `GetCellCore` nie można wywołać metody jako użytkownik przewija `ListView`. Zamiast tego `NativeAndroidCell` wystąpieniach będą używane ponownie.  `PropertyChanged` zdarzenia zostaną podniesione o `NativeCell` wystąpienie, gdy zmienia swoje dane, a `OnNativeCellPropertyChanged` programu obsługi zdarzeń spowoduje zaktualizowanie danych w każdym ponownym użyciem `NativeAndroidCell` wystąpienia.
+- Gdy [ `ListView` ](xref:Xamarin.Forms.ListView) buforowanie strategii jest [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` będzie można wywołać metody dla każdej komórki, które początkowo jest wyświetlany na ekranie. A `NativeAndroidCell` zostanie utworzone wystąpienie dla każdego `NativeCell` wystąpienia, które początkowo jest wyświetlany na ekranie. Dane wyświetlane przez każdą `NativeAndroidCell` wystąpienia zostaną zaktualizowane przy użyciu danych z `NativeCell` wystąpienia przez `UpdateCell` metody. Jednak `GetCellCore` nie można wywołać metody jako użytkownik przewija `ListView`. Zamiast tego `NativeAndroidCell` wystąpieniach będą używane ponownie.  `PropertyChanged` zdarzenia zostaną podniesione o `NativeCell` wystąpienie, gdy zmienia swoje dane, a `OnNativeCellPropertyChanged` programu obsługi zdarzeń spowoduje zaktualizowanie danych w każdym ponownym użyciem `NativeAndroidCell` wystąpienia.
 
 Poniższy kod przedstawia przykład `OnNativeCellPropertyChanged` metodę, która zostało wywołane, gdy `PropertyChanged` zdarzenie jest zgłaszane:
 
@@ -474,7 +474,7 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-Ta klasa definiuje kontrolki, używany do renderowania zawartości komórki i ich rozmieszczenie. Klasa implementuje [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) interfejs, który jest wymagany, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategii buforowania. Ten interfejs określa, że klasa musi implementować [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) właściwość, która powinna zwrócić do niestandardowych danych dla odtwarzania komórek.
+Ta klasa definiuje kontrolki, używany do renderowania zawartości komórki i ich rozmieszczenie. Klasa implementuje [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) interfejs, który jest wymagany, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategii buforowania. Ten interfejs określa, że klasa musi implementować [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) właściwość, która powinna zwrócić do niestandardowych danych dla odtwarzania komórek.
 
 `NativeAndroidCell` Zwiększa Konstruktor `NativeAndroidCell` układ i inicjuje `HeadingTextView`, `SubheadingTextView`, i `ImageView` właściwości do kontrolki z nadmuchany układu. Te właściwości są używane do wyświetlania danych przechowywanych w `NativeCell` wystąpienia, z `UpdateCell` wywołania metody można ustawić wartość każdej właściwości. Ponadto, jeśli [ `ListView` ](xref:Xamarin.Forms.ListView) używa [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) buforowania strategii, dane wyświetlane przez `HeadingTextView`, `SubheadingTextView`, i `ImageView` właściwości mogą być zaktualizowane przez `OnNativeCellPropertyChanged` metody w niestandardowego modułu renderowania.
 
@@ -569,7 +569,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten artykuł ma pokazano sposób tworzenia niestandardowego modułu renderowania dla [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) hostowaną wewnątrz zestawu narzędzi Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli. Spowoduje to zatrzymanie obliczenia układ interfejsu Xamarin.Forms z wielokrotnie wywoływana podczas `ListView` przewijania.
+Ten artykuł ma pokazano sposób tworzenia niestandardowego modułu renderowania dla [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) hostowaną wewnątrz zestawu narzędzi Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) kontroli. Spowoduje to zatrzymanie obliczenia układ interfejsu Xamarin.Forms z wielokrotnie wywoływana podczas `ListView` przewijania.
 
 
 ## <a name="related-links"></a>Linki pokrewne

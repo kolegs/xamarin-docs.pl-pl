@@ -1,22 +1,22 @@
 ---
-title: Szybki Start Wieloekranowy platformy Xamarin.Forms
-description: W tym artykule wyjaśniono, jak rozszerzyć Phoneword przez dodanie drugiego ekranu do śledzenia historii połączeń dla aplikacji.
+title: Krótkie wprowadzenie do zestawu narzędzi Xamarin.Forms (wiele ekranów)
+description: W tym artykule wyjaśniono, jak rozszerzyć aplikację Phoneword, dodając drugi ekran, aby śledzić historię wywołań dla aplikacji.
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538ca831e51069f345a8a7a53aa844352c207faa
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268839"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996184"
 ---
-# <a name="xamarinforms-multiscreen-quickstart"></a>Szybki Start Wieloekranowy platformy Xamarin.Forms
+# <a name="xamarinforms-multiscreen-quickstart"></a>Krótkie wprowadzenie do zestawu narzędzi Xamarin.Forms (wiele ekranów)
 
-Ta opcja szybkiego startu pokazuje, jak rozszerzyć Phoneword przez dodanie drugiego ekranu do śledzenia historii połączeń dla aplikacji. Końcowe aplikacji jest pokazany poniżej:
+Ten przewodnik Szybki Start pokazano, jak rozszerzyć aplikację Phoneword, dodając drugi ekran, aby śledzić historię wywołań dla aplikacji. Poniżej przedstawiono końcowy aplikacji:
 
 [![](quickstart-images/intro-app-examples-sml.png "Aplikacja Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikacji")
 
@@ -24,19 +24,19 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Uruchom program Visual Studio. Na stronie początkowej kliknij **Otwórz projekt...** , a następnie w **Otwórz projekt** oknie dialogowym Wybierz plik rozwiązania dla projektu Phoneword:
+1. Uruchom program Visual Studio. Na stronie początkowej kliknij **Otwórz projekt...** , a następnie w **Otwórz projekt** okno dialogowe, wybierz plik rozwiązania dla projektu Phoneword:
 
     ![](quickstart-images/vs/open-solution.png "Otwórz projekt")
 
-2. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projekt i wybierz **Dodaj > Nowy element...** :
+2. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword** projektu, a następnie wybierz **Dodaj > Nowy element...** :
 
     ![](quickstart-images/vs/add-new-item.png "Dodaj nowy element")
 
-3. W **Dodaj nowy element** okno dialogowe, wybierz opcję **elementów Visual C# > platformy Xamarin.Forms > strony zawartości**, nazwę nowego elementu **CallHistoryPage**i kliknij przycisk **Dodaj**  przycisku. Spowoduje to dodanie stronę o nazwie **CallHistoryPage** do projektu:
+3. W **Dodaj nowy element** okno dialogowe, wybierz opcję **elementy Visual C# > Xamarin.Forms > strony zawartości**, nadaj nazwę nowego elementu **CallHistoryPage**i kliknij przycisk **Dodaj**  przycisku. Spowoduje to dodanie stronę o nazwie **CallHistoryPage** do projektu:
 
-    ![](quickstart-images/vs/add-callhistorypage-class.png "Szablony projektu platformy Xamarin.Forms")
+    ![](quickstart-images/vs/add-callhistorypage-class.png "Szablony projektu Xamarin.Forms")
 
-4. W **CallHistoryPage.xaml**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje deklaratywnie interfejsu użytkownika dla strony:
+4. W **CallHistoryPage.xaml**, Usuń wszystkie kod szablonu i zastąp go następującym kodem. Ten kod definiuje sposób deklaratywny interfejsu użytkownika dla strony:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -57,13 +57,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     </ContentPage>
     ```
 
-    Zapisać zmiany w **CallHistoryPage.xaml** naciskając **CTRL + S**i zamknij plik.
+    Czy zapisać zmiany **CallHistoryPage.xaml** , naciskając klawisz **CTRL + S**i zamknij plik.
 
-5. W **Eksploratora rozwiązań**, kliknij dwukrotnie **App.xaml.cs** plik w udostępnionym **Phoneword** projektu, aby otworzyć go:
+5. W **Eksploratora rozwiązań**, kliknij dwukrotnie **App.xaml.cs** pliku w udostępnionej **Phoneword** projektu, aby otworzyć go:
 
-    ![](quickstart-images/vs/open-app-class.png "Otwórz App.xaml.cs")
+    ![](quickstart-images/vs/open-app-class.png "Otwórz plik App.xaml.cs")
 
-6. W **App.xaml.cs**, zaimportować `System.Collections.Generic` przestrzeni nazw, Dodaj deklaracja `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) właściwość jako [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekcji będzie służyć do przechowywania listy każdy numer telefonu przetłumaczony przez aplikację:
+6. W **App.xaml.cs**, zaimportuj `System.Collections.Generic` przestrzeni nazw, dodawanie deklaracji `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) właściwości [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). `PhoneNumbers` Bezużytecznych zostanie użyty do przechowywania listy każdy numer telefonu przetłumaczone przez aplikację:
 
     ```csharp
     using System.Collections.Generic;
@@ -88,13 +88,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     }
     ```
 
-    Zapisać zmiany w **App.xaml.cs** naciskając **CTRL + S**i zamknij plik.
+    Czy zapisać zmiany **App.xaml.cs** , naciskając klawisz **CTRL + S**i zamknij plik.
 
-7. W **Eksploratora rozwiązań**, kliknij dwukrotnie **MainPage.xaml** plik w udostępnionym **Phoneword** projektu, aby otworzyć go:
+7. W **Eksploratora rozwiązań**, kliknij dwukrotnie **MainPage.xaml** pliku w udostępnionej **Phoneword** projektu, aby otworzyć go:
 
-    ![](quickstart-images/vs/open-mainpage-xaml.png "Otwórz MainPage.xaml")
+    ![](quickstart-images/vs/open-mainpage-xaml.png "Otwórz plik MainPage.xaml")
 
-8. W **MainPage.xaml**, Dodaj [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) sterowania na końcu [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) formantu. Przycisk będzie służyć do przejdź do strony Historia wywołań:
+8. W **MainPage.xaml**, Dodaj [ `Button` ](xref:Xamarin.Forms.Button) kontroli na końcu [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) kontroli. Przycisk będzie służyć do przejdź do strony historii wywołań:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -108,13 +108,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     </StackLayout>
     ```
 
-    Zapisać zmiany w **MainPage.xaml** naciskając **CTRL + S**i zamknij plik.
+    Czy zapisać zmiany **MainPage.xaml** , naciskając klawisz **CTRL + S**i zamknij plik.
 
-9. W **Eksploratora rozwiązań**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
+9. W **Eksploratora rozwiązań**, kliknij dwukrotnie **MainPage.xaml.cs** aby je otworzyć:
 
     ![](quickstart-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-10. W **MainPage.xaml.cs**, Dodaj `OnCallHistory` metoda obsługi zdarzeń i zmodyfikuj `OnCall` metoda obsługi zdarzeń, aby dodać numer telefonu przetłumaczonego `App.PhoneNumbers` kolekcji i Włącz `callHistoryButton`, pod warunkiem że `dialer` zmienna nie jest `null`:
+10. W **MainPage.xaml.cs**, Dodaj `OnCallHistory` metody obsługi zdarzeń i zmodyfikuj `OnCall` metody obsługi zdarzeń, aby dodać numer telefonu przetłumaczone `App.PhoneNumbers` kolekcji i włączyć `callHistoryButton`, pod warunkiem, że `dialer` zmienna nie jest `null`:
 
     ```csharp
     using System;
@@ -145,44 +145,44 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     }
     ```
 
-    Zapisać zmiany w **MainPage.xaml.cs** naciskając **CTRL + S**i zamknij plik.
+    Czy zapisać zmiany **MainPage.xaml.cs** , naciskając klawisz **CTRL + S**i zamknij plik.
 
-11. W programie Visual Studio, wybierz **kompilacji > Kompiluj rozwiązanie** elementu menu (lub naciśnij klawisz **CTRL + SHIFT + B**). Aplikacja zostanie utworzona i zostanie wyświetlony komunikat Powodzenie, na pasku stanu programu Visual Studio:
+11. W programie Visual Studio, wybierz **kompilacji > Kompiluj rozwiązanie** elementu menu (lub naciśnij **CTRL + SHIFT + B**). Aplikacja zostanie skompilowana i na pasku stanu programu Visual Studio pojawi się komunikat o powodzeniu:
 
-    ![](quickstart-images/vs/build-successful.png "Pomyślnie kompilacji")
+    ![](quickstart-images/vs/build-successful.png "Kompilacja powiodła się")
 
-    Jeśli wystąpią błędy, powtórz poprzednie kroki i usuń ewentualne błędy, dopóki aplikacja tworzy się pomyślnie.
+    Jeśli występują błędy, powtórz poprzednie kroki i Popraw wszelkie błędy, aż aplikacja zostanie pomyślnie skompilowana.
 
-12. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji:
+12. Na pasku narzędzi programu Visual Studio naciśnij klawisz **Start** (przycisk trójkątna przypominającą przycisk Odtwórz) do uruchomienia aplikacji:
 
-    ![](quickstart-images/vs/start.png "Pasek narzędzi Visual Studio")
+    ![](quickstart-images/vs/start.png "Narzędzi programu Visual Studio")
     ![](quickstart-images/vs/phone-result-uwp.png "Phoneword aplikacji platformy uniwersalnej systemu Windows")
 
-13. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Droid** projekt i wybierz **Ustaw jako projekt startowy**.
-14. Na pasku narzędzi programu Visual Studio, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android.
-15. Jeśli masz urządzenie z systemem iOS i spełniać wymagania systemowe Mac do tworzenia aplikacji platformy Xamarin.Forms, użyj technika podobne do wdrożenia aplikacji na urządzeniu z systemem iOS. Można również wdrożyć aplikację, aby [zdalnego symulatora systemu iOS](~/tools/ios-simulator.md).
+13. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Phoneword.Droid** projektu, a następnie wybierz **Ustaw jako projekt startowy**.
+14. Na pasku narzędzi programu Visual Studio naciśnij klawisz **Start** (przycisk trójkątna przypominającą przycisk Odtwórz) do uruchomienia aplikacji w emulatorze systemu Android.
+15. Jeśli masz urządzenie z systemem iOS i spełniać wymagania systemowe Mac dla programowania na platformie Xamarin.Forms, podobne techniki należy używać do wdrażania aplikacji na urządzeniu z systemem iOS. Alternatywnie: Wdrażanie aplikacji na [zdalny symulator systemu iOS](~/tools/ios-simulator.md).
 
     Uwaga: połączenia telefoniczne nie są obsługiwane na wszystkich symulatorów.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Uruchom program Visual Studio dla komputerów Mac. Na stronie początkowej kliknij **Otwórz...** , a w oknie dialogowym Wybierz plik rozwiązania dla projektu Phoneword:
+1. Uruchom program Visual Studio dla komputerów Mac. Na stronie początkowej kliknij **Otwórz...** i w oknie dialogowym Wybierz plik rozwiązania dla projektu Phoneword:
 
     ![](quickstart-images/xs/open-solution.png "Otwórz rozwiązanie")
 
-2. W **konsoli rozwiązania**, wybierz pozycję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
+2. W **konsoli rozwiązania**, wybierz opcję **Phoneword** projektu, kliknij prawym przyciskiem myszy i wybierz **Dodaj > Nowy plik...** :
 
     ![](quickstart-images/xs/add-new-file.png "Dodaj nowy plik")
 
-3. W **nowy plik** okno dialogowe, wybierz opcję **Formularze > Xaml wartość ContentPage formularze**, Nazwa nowego pliku **CallHistoryPage**i kliknij przycisk **nowy** przycisk. Spowoduje to dodanie stronę o nazwie **CallHistoryPage** do projektu:
+3. W **nowy plik** okno dialogowe, wybierz opcję **formularzy > Forms ContentPage Xaml**, nadaj nowemu plikowi **CallHistoryPage**i kliknij przycisk **New** przycisk. Spowoduje to dodanie stronę o nazwie **CallHistoryPage** do projektu:
 
-    ![](quickstart-images/xs/add-callhistorypage-class.png "Dodaj wartość ContentPage formularzy")
+    ![](quickstart-images/xs/add-callhistorypage-class.png "Dodaj Forms ContentPage")
 
-4. W **konsoli rozwiązania**, kliknij dwukrotnie **CallHistoryPage.xaml** go otworzyć:
+4. W **konsoli rozwiązania**, kliknij dwukrotnie **CallHistoryPage.xaml** aby je otworzyć:
 
     ![](quickstart-images/xs/open-callhistorypage-xaml.png "Otwórz CallHistoryPage.xaml")
 
-5. W **CallHistoryPage.xaml**, usuń cały kod szablonu i zastąp go następującym kodem. Ten kod definiuje deklaratywnie interfejsu użytkownika dla strony:
+5. W **CallHistoryPage.xaml**, Usuń wszystkie kod szablonu i zastąp go następującym kodem. Ten kod definiuje sposób deklaratywny interfejsu użytkownika dla strony:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -203,13 +203,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     </ContentPage>      
     ```
 
-    Zapisać zmiany w **CallHistoryPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
+    Czy zapisać zmiany **CallHistoryPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
 
-6. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** go otworzyć:
+6. W **konsoli rozwiązania**, kliknij dwukrotnie **App.xaml.cs** aby je otworzyć:
 
-    ![](quickstart-images/xs/open-app-class.png "Otwórz App.xaml.cs")
+    ![](quickstart-images/xs/open-app-class.png "Otwórz plik App.xaml.cs")
 
-7. W **App.xaml.cs**, zaimportować `System.Collections.Generic` przestrzeni nazw, Dodaj deklaracja `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) właściwość jako [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekcji będzie służyć do przechowywania listy każdy numer telefonu przetłumaczony przez aplikację:
+7. W **App.xaml.cs**, zaimportuj `System.Collections.Generic` przestrzeni nazw, dodawanie deklaracji `PhoneNumbers` właściwości inicjowania właściwości w `App` Konstruktor i zainicjować [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) właściwości [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). `PhoneNumbers` Bezużytecznych zostanie użyty do przechowywania listy każdy numer telefonu przetłumaczone przez aplikację:
 
     ```csharp
     using System.Collections.Generic;
@@ -234,13 +234,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     }
     ```
 
-    Zapisać zmiany w **App.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
+    Czy zapisać zmiany **App.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
 
-8. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** go otworzyć:
+8. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml** aby je otworzyć:
 
-    ![](quickstart-images/xs/open-mainpage-xaml.png "Otwórz MainPage.xaml")
+    ![](quickstart-images/xs/open-mainpage-xaml.png "Otwórz plik MainPage.xaml")
 
-9. W **MainPage.xaml**, Dodaj [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) sterowania na końcu [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) formantu. Przycisk będzie służyć do przejdź do strony Historia wywołań:
+9. W **MainPage.xaml**, Dodaj [ `Button` ](xref:Xamarin.Forms.Button) kontroli na końcu [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) kontroli. Przycisk będzie służyć do przejdź do strony historii wywołań:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -254,13 +254,13 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     </StackLayout>
     ```
 
-    Zapisać zmiany w **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
+    Czy zapisać zmiany **MainPage.xaml** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
 
-10. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** go otworzyć:
+10. W **konsoli rozwiązania**, kliknij dwukrotnie **MainPage.xaml.cs** aby je otworzyć:
 
     ![](quickstart-images/xs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-11. W **MainPage.xaml.cs**, Dodaj `OnCallHistory` metoda obsługi zdarzeń i zmodyfikuj `OnCall` metoda obsługi zdarzeń, aby dodać numer telefonu przetłumaczonego `App.PhoneNumbers` kolekcji i Włącz `callHistoryButton`, pod warunkiem że `dialer` zmienna nie jest `null`:
+11. W **MainPage.xaml.cs**, Dodaj `OnCallHistory` metody obsługi zdarzeń i zmodyfikuj `OnCall` metody obsługi zdarzeń, aby dodać numer telefonu przetłumaczone `App.PhoneNumbers` kolekcji i włączyć `callHistoryButton`, pod warunkiem, że `dialer` zmienna nie jest `null`:
 
     ```csharp
     using System;
@@ -291,34 +291,34 @@ Rozszerzanie aplikacji Phoneword w następujący sposób:
     }
     ```
 
-    Zapisać zmiany w **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając klawisz  **&#8984; + S**) i zamknij plik.
+    Czy zapisać zmiany **MainPage.xaml.cs** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
 
-12. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > kompilacji wszystkich** elementu menu (lub naciśnij klawisz  **&#8984; + B**). Aplikacja zostanie utworzona i komunikat informujący będą wyświetlane w Visual Studio for Mac narzędzi:
+12. W programie Visual Studio dla komputerów Mac, wybierz **kompilacji > Tworzenie wszystkich** elementu menu (lub naciśnij  **&#8984; + B**). Aplikacja zostanie skompilowana i w programie Visual Studio dla komputerów Mac narzędzi pojawi się komunikat o powodzeniu:
 
-    ![](quickstart-images/xs/build-successful.png "Pomyślnie kompilacji")
+    ![](quickstart-images/xs/build-successful.png "Kompilacja powiodła się")
 
-    Jeśli wystąpią błędy, powtórz poprzednie kroki i usuń ewentualne błędy, dopóki aplikacja tworzy się pomyślnie.
+    Jeśli występują błędy, powtórz poprzednie kroki i Popraw wszelkie błędy, aż aplikacja zostanie pomyślnie skompilowana.
 
-13. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Odtwórz) do uruchamiania aplikacji w narzędziu iOS Simulator:
+13. W programie Visual Studio dla komputerów Mac paska narzędzi, naciśnij klawisz **Start** (przycisk trójkątna przypominającą przycisk Odtwórz) do uruchomienia aplikacji w symulatorze systemu iOS:
 
-    ![](quickstart-images/xs/start.png "Programu Visual Studio for Mac narzędzi")
+    ![](quickstart-images/xs/start.png "Program Visual Studio for Mac narzędzi")
     ![](quickstart-images/xs/phone-result-ios.png "symulatora systemu iOS")
 
     Uwaga: połączenia telefoniczne nie są obsługiwane w narzędziu iOS Simulator.
 
-14. W **konsoli rozwiązania**, wybierz pozycję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Ustaw jako projekt startowy**:
+14. W **konsoli rozwiązania**, wybierz opcję **Phoneword.Droid** projektu, kliknij prawym przyciskiem myszy i wybierz **Ustaw jako projekt startowy**:
 
-    ![](quickstart-images/xs/set-startup-project.png "Ustaw jako uruchomienia projektu")
+    ![](quickstart-images/xs/set-startup-project.png "Projekt jako startowy")
 
-15. W programie Visual Studio dla komputerów Mac narzędzi, naciśnij klawisz **Start** (przycisk trójkątny podobny przycisk Play), aby uruchomić aplikację w emulatorze systemu Android:
+15. W programie Visual Studio dla komputerów Mac paska narzędzi, naciśnij klawisz **Start** (przycisk trójkątna przypominającą przycisk Odtwórz) do uruchomienia aplikacji w emulatorze systemu Android:
 
     ![](quickstart-images/xs/phone-result-android.png "Emulator systemu android")
 
-    Uwaga: połączenia telefoniczne nie są obsługiwane w systemie Android emulatorów.
+    Uwaga: połączenia telefoniczne nie są obsługiwane w przypadku emulatorów systemu Android.
 
 -----
 
-Gratulujemy Kończenie Wieloekranowy aplikacji platformy Xamarin.Forms. [Następnego tematu](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md) w tym przewodniku monitoruje czynności wykonane w tym przewodniku w celu opracowywania zrozumienia Nawigacja strony i powiązania danych przy użyciu platformy Xamarin.Forms.
+Gratulacje z okazji Kończenie aplikację platformy Xamarin.Forms (wiele ekranów). [Następnego tematu](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md) w tym przewodniku przeglądy czynności, które zostały wykonane w tym przewodniku do opracowywania zrozumienia nawigowania po stronach i powiązania danych za pomocą zestawu narzędzi Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Linki pokrewne

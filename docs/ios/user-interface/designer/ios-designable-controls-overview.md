@@ -1,54 +1,54 @@
 ---
-title: Niestandardowe formanty w Projektancie Xamarin dla systemu iOS
-description: Projektant Xamarin dla systemu iOS obsługuje renderowanie formantów niestandardowych utworzone w projekcie, lub odwołanie z zewnętrznych źródeł, takich jak magazyn składników Xamarin.
+title: Kontrolki niestandardowe w Projektancie platformy Xamarin dla systemu iOS
+description: Projektant platformy Xamarin dla systemu iOS obsługuje renderowanie kontrolek niestandardowych utworzone w projekcie lub odwołanie do ze źródeł zewnętrznych, takich jak Xamarin Component Store.
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 113fab2fd0d1a055d566606885cefbafe3185529
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05b190f4bfd4058e9e2f6e465e6026fa76dce6f4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30782187"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995700"
 ---
-# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Niestandardowe formanty w Projektancie Xamarin dla systemu iOS
+# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Kontrolki niestandardowe w Projektancie platformy Xamarin dla systemu iOS
 
-_Projektant Xamarin dla systemu iOS obsługuje renderowanie formantów niestandardowych utworzone w projekcie, lub odwołanie z zewnętrznych źródeł, takich jak magazyn składników Xamarin._
+_Projektant platformy Xamarin dla systemu iOS obsługuje renderowanie kontrolek niestandardowych utworzone w projekcie lub odwołanie do ze źródeł zewnętrznych, takich jak Xamarin Component Store._
 
-Projektant Xamarin dla systemu iOS jest zaawansowanym narzędziem do wizualizacji interfejsu użytkownika aplikacji i zapewnia WYSIWYG edycji obsługę większości widoków dla systemu iOS i kontrolerów widoku. Aplikacja może także zawierać niestandardowe formanty rozszerzające z nich z systemem iOS. Jeśli kontrolki niestandardowe są zapisywane z kilku zaleceń, pamiętając, mogą one również renderowane przez system iOS projektanta, zapewniając doświadczenie w edytowaniu bardziej szczegółowego. Ten dokument ma przyjrzeć się tymi wytycznymi.
+Projektant platformy Xamarin dla systemu iOS to zaawansowane narzędzie do wizualizacji w interfejsie użytkownika aplikacji i umożliwia obsługę większości iOS widoków i kontrolerów widoku do edycji w trybie WYSIWYG. Aplikacja może również zawierać niestandardowe formanty, które rozszerzają te wbudowane z systemem iOS. Jeśli kontrolki niestandardowe są zapisywane przy użyciu kilku zaleceń, pamiętając, również mogą one renderowane przez projektanta, zapewniając jeszcze większe doświadczenie w edytowaniu dla systemu iOS. W tym dokumencie przyjmuje się z tymi wytycznymi.
 
 ## <a name="requirements"></a>Wymagania
 
-Formant, który spełnia następujące wymagania będzie odtwarzany na powierzchni projektu:
+Na powierzchni projektowej będzie renderowany formant, który spełnia następujące wymagania:
 
-1.  Jest podklasą bezpośrednie lub pośrednie [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) lub [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Inne [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) podklasy pojawi się ikona na powierzchnię projektu.
+1.  Jest podklasą bezpośrednich lub pośrednich [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) lub [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Inne [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) podklasy pojawi się jako ikony na powierzchni projektowej.
 2.  Ma ona [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) je ujawnić Objective-c.
 3.  Ma ona [wymaganego konstruktora IntPtr](~/ios/internals/api-design/index.md).
-4.  Albo implementuje [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) interfejsu lub ma [DesignTimeVisibleAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DesignTimeVisibleAttribute/) ustawiona na wartość True.
+4.  Albo implementuje [IComponent](xref:System.ComponentModel.IComponent) interfejs lub ma [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) ustawiona na wartość True.
 
-Formanty zdefiniowane w kodzie, które spełniają powyższe wymagania będą wyświetlane w Projektancie podczas ich zawierający projekt jest kompilowany dla symulatorze. Domyślnie wszystkie kontrolki niestandardowe będą wyświetlane w **niestandardowych składników** sekcji **przybornika**. Jednak [CategoryAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.CategoryAttribute/) może odnosić się do klasy formantu niestandardowego do określenia innej sekcji.
+Po ich zawierającego projekt jest kompilowany dla symulatorze, formanty zdefiniowane w kodzie, które spełniają powyższe wymagania pojawi się w projektancie. Domyślnie wszystkie kontrolki niestandardowe będą wyświetlane w **składnikami niestandardowymi** części **przybornika**. Jednak [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) można zastosować do klasy formantu niestandardowego, aby określić inną sekcję.
 
 Projektant nie obsługuje ładowania bibliotek języka Objective-C innych firm.
 
 ## <a name="custom-properties"></a>Właściwości niestandardowe
 
-Właściwość deklarowana przez kontrolkę niestandardową będą wyświetlane w panelu właściwość, jeśli są spełnione następujące warunki:
+Zadeklarowana przez kontrolkę niestandardową właściwość pojawi się na panelu Właściwości, jeśli są spełnione następujące warunki:
 
 1.  Właściwość ma publicznej metody pobierającej i ustawiającej.
-1.  Właściwość ma [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) , jak również [BrowsableAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.BrowsableAttribute/) ustawiona na wartość True.
-1.  Typ właściwości jest typ liczbowy, typu wyliczeniowego, string, bool, [SizeF](https://developer.xamarin.com/api/type/System.Drawing.SizeF/), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), lub [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Ta lista obsługiwanych typów może obejmować w przyszłości.
+1.  Właściwość ma [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) , a także [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) ustawiona na wartość True.
+1.  Typ właściwości to typ liczbowy, typ wyliczeniowy, string, bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), lub [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Ta lista obsługiwanych typów można rozwinąć w przyszłości.
 
 
-Właściwość może również być dekorowane za [DisplayNameAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DisplayNameAttribute/) do określenia etykietę, którą jest dla niego wyświetlany w panelu właściwość.
+Właściwość również może być dekorowane za pomocą [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) określić etykietę, która jest dla niego wyświetlany na panelu Właściwości.
 
 ## <a name="initialization"></a>Inicjalizacja
 
-Dla `UIViewController` podklasy, należy użyć [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) metody dla kodu, który jest zależny od widoki utworzone w projektancie.
+Aby uzyskać `UIViewController` podklasy, należy użyć [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) metody dla kodu, który jest zależny od widoki utworzone w projektancie.
 
-Aby uzyskać `UIView` i innych `NSObject` podklasy, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) metoda jest zalecane miejsce do wykonania inicjowania formantu niestandardowego po załadowaniu go z pliku układu. Wynika to z faktu właściwości niestandardowe w panelu właściwość nie zostanie ustawiona, po uruchomieniu formantu konstruktora, ale zostanie ustawiona przed `AwakeFromNib` nosi nazwę:
+Aby uzyskać `UIView` i innych `NSObject` podklasy, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) metodą jest zalecane miejsce przeprowadzić inicjowanie kontrolki niestandardowej po załadowaniu danych z pliku układu. Jest to spowodowane niestandardowe właściwości na panelu Właściwości nie zostanie ustawiona, gdy Konstruktor formantu jest uruchamiany, ale zostanie ustawiona przed `AwakeFromNib` nosi nazwę:
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-Jeśli do utworzenia bezpośrednio z kodu jest również zaprojektowana tak formantu, można Tworzenie metody, która ma typowe kod inicjujący, jak to:
+Kontrolka jest też przeznaczona do utworzenia bezpośrednio z kodu, można utworzyć metodę, która ma kod inicjalizacji wspólne, takie jak to:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -91,9 +91,9 @@ public class CustomView : UIView {
 }
 ```
 
-## <a name="property-initialization-and-awakefromnib"></a>Właściwości inicjalizacji i AwakeFromNib
+## <a name="property-initialization-and-awakefromnib"></a>Inicjowanie właściwości i AwakeFromNib
 
-Należy zachować ostrożność, na kiedy i gdzie należy zainicjować designable właściwości w niestandardowych składników, aby nie zastąpienia wartości, które zostały ustawione w Projektancie z systemem iOS. Na przykład wykonaj następujący kod:
+Należy zachować ostrożność, kiedy i gdzie można zainicjować designable właściwości w niestandardowych składników, aby nie zastąpić wartości, które zostały ustawione w narzędziu iOS Designer. Na przykład wykonaj następujący kod:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -124,25 +124,25 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView` Przedstawia składnika `Counter` właściwość, którą można ustawić przez dewelopera wewnątrz iOS projektanta. Jednak niezależnie od tego, jakie ma wartość w Projektancie wartość `Counter` właściwości będzie zawsze równa zero (0). Poniżej przedstawiono przyczyny:
+`CustomView` Składnik udostępnia `Counter` właściwość, która może być ustawiona przez dewelopera w narzędziu iOS Designer. Jednakże, niezależnie od tego, jaka wartość jest ustawiona w projektancie, a wartość `Counter` właściwość zawsze będzie miała wartość zero (0). Oto Dlaczego:
 
 -  Wystąpienie `CustomControl` jest zwiększony z pliku scenorysu.
--  Wszystkie właściwości zmodyfikowany w Projektancie iOS są ustawione (np. ustawienie wartości `Counter` do dwóch (2), na przykład).
--  `AwakeFromNib` Metoda jest wykonywana i wywołanie elementu `Initialize` metody.
--  Wewnątrz `Initialize` wartość `Counter` resetowania właściwości zero (0).
+-  Ustawiono żadnych właściwości zmodyfikowane w narzędzia iOS designer (np. ustawienie wartości `Counter` do dwóch (2), na przykład).
+-  `AwakeFromNib` Metody jest wykonywane i wykonywane jest wywołanie do składnika `Initialize` metody.
+-  Wewnątrz `Initialize` wartość `Counter` resetowania właściwości na wartość zero (0).
 
 
-Ustalenie powyżej sytuacji albo zainicjować `Counter` w innym miejscu właściwości, (na przykład w Konstruktorze składnika) lub nie powoduje zmiany `AwakeFromNib` — metoda i wywołanie `Initialize` Jeśli składnik są wymagane nie dalsze inicjowania poza co obecnie jest obsługiwane przez jej konstruktorów.
+Aby rozwiązać problem powyżej sytuacji, albo zainicjować `Counter` gdzie indziej właściwości, (na przykład w Konstruktorze składnika) lub nie zastąpisz `AwakeFromNib` metody i wywołania `Initialize` Jeśli składnik są wymagane nie dalsze inicjowania poza co obecnie jest obsługiwane przez jego konstruktorów.
 
 ## <a name="design-mode"></a>Tryb projektowania
 
-Na powierzchni projektowej kontrolkę niestandardową muszą być zgodne z kilku ograniczeń:
+Na powierzchni projektowej formant niestandardowy spełnić kilka ograniczeń:
 
--  Zasoby pakietu aplikacji nie są dostępne w trybie projektowania. Obrazy są dostępne po załadowaniu przez [metody UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
--  Operacje asynchroniczne, takich jak żądania sieci web, nie należy wykonać w trybie projektowania. Powierzchnia projektu nie obsługuje animacji lub inne aktualizacje asynchroniczne do formantu interfejsu użytkownika.
+-  Zasoby pakietu aplikacji nie są dostępne w trybie projektowania. Obrazy są dostępne, gdy ładowanych za pośrednictwem [metody UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
+-  Asynchroniczne operacje, takie jak żądania sieci web, nie należy wykonać w trybie projektowania. Powierzchni projektu nie obsługuje animacji lub innych aktualizacji asynchronicznych do kontrolki interfejsu użytkownika.
 
 
-Kontrolkę niestandardową można zaimplementować [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) i użyj [tryb projektowania w systemie](https://developer.xamarin.com/api/property/System.ComponentModel.ISite.DesignMode/) właściwość, aby sprawdzić, czy jest na powierzchni projektu. W tym przykładzie etykiety wyświetli "Tryb projektowania" na powierzchni projektowej oraz "Runtime" w czasie wykonywania:
+Można zaimplementować formant niestandardowy [IComponent](xref:System.ComponentModel.IComponent) i użyj [tryb projektowania w systemie](xref:System.ComponentModel.ISite.DesignMode) właściwość, aby sprawdzić, czy jest na powierzchni projektowej. W tym przykładzie etykiety spowoduje wyświetlenie "Tryb projektowania" na powierzchni projektowej i "Środowiska uruchomieniowego" w czasie wykonywania:
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -167,26 +167,26 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Należy zawsze sprawdzić `Site` właściwość `null` przed podjęciem próby ma dostęp do wszystkich jej członków. Jeśli `Site` jest `null`, bezpiecznie przejęcie kontroli nie działa w projektancie.
-W trybie projektowania `Site` zostanie ustawiona, po uruchomieniu Konstruktora formantu i przed `AwakeFromNib` jest wywoływana.
+Należy zawsze sprawdzić `Site` właściwość `null` przed podjęciem próby dostępu do żadnego z jej członków. Jeśli `Site` jest `null`, jest bezpiecznie przyjąć założenie, formant nie jest uruchomiona w projektancie.
+W trybie projektowania `Site` zostanie ustawiona, po uruchomieniu formantu Konstruktor i przed `AwakeFromNib` jest wywoływana.
 
 ## <a name="debugging"></a>Debugowanie
 
-Formant, który spełnia wymagania są wyświetlane w przyborniku i renderowane na powierzchni.
-Formant nie są odtwarzane, wyszukaj usterki w programie formant lub jeden z jego zależności.
+Formant, który spełnia powyższe wymagania są wyświetlane w przyborniku i renderowane na powierzchni.
+Jeśli formant nie są odtwarzane, sprawdź, czy błędy w formant lub jednej z jego zależności.
 
-Powierzchnię projektu można często przechwytuje wyjątków zgłaszanych przez pojedynczych formantów, pozostawiając renderowania inne formanty. Zastępuje uszkodzony formantu z czerwonym symbolem zastępczym i śledzenie wyjątku można wyświetlić, klikając ikonę wykrzyknika:
+Powierzchni projektowej często może przechwytywać wyjątki zgłaszane przez poszczególnych formantów, przy jednoczesnym dalszym innych kontrolek Renderuj. Zastępuje uszkodzony kontrolki z czerwonym symbolem zastępczym, a śledzenia wyjątków można wyświetlić, klikając ikonę wykrzyknika:
 
- ![](ios-designable-controls-overview-images/exception-box.png "Błędny formant jako czerwony symbol zastępczy i szczegóły wyjątku")
+ ![](ios-designable-controls-overview-images/exception-box.png "Formant wadliwe czerwony symbol zastępczy oraz szczegóły wyjątku")
 
-Jeśli symboli debugowania są dostępne dla formantu, śledzenie będzie mieć nazwy pliku i numery wierszy. Dwukrotnie klikając wiersz w ślad stosu spowoduje przejście do tej linii w kodzie źródłowym.
+Jeżeli symbole debugowania są dostępne dla formantu, śledzenia mają, nazwy i numery wierszy. Dwukrotne kliknięcie wiersza w śladzie stosu spowoduje przejście do tego wiersza w kodzie źródłowym.
 
-Jeśli projektant nie Izoluj błędny formantu w górnej części powierzchni projektu zostanie wyświetlony komunikat ostrzegawczy:
+Jeśli projektant nie może wyizolować wadliwe kontrolki, w górnej części powierzchni projektowej pojawi się komunikat ostrzegawczy:
 
  ![](ios-designable-controls-overview-images/info-bar.png "Komunikat ostrzegawczy w górnej części powierzchni projektowej")
 
-Pełna renderowania zostanie wznowiona, gdy uszkodzony kontroli jest rozwiązany lub usunięty z powierzchni projektu.
+Renderowanie pełną zostanie wznowione po udostępnieniu wadliwe kontroli ma ustalony rozmiar lub usunięte z powierzchni projektowej.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wprowadzono tworzenia i stosowania niestandardowych formantów w Projektancie systemu iOS. Pierwszy opisano wymagania, które kontrolki muszą spełnić, aby być renderowana na powierzchni projektu i ujawnia właściwości niestandardowe w panelu właściwość. Przeglądał następnie kodzie - inicjowania formantu i właściwości tryb projektowania w systemie. Na koniec opisane co się stanie, gdy są zgłaszane wyjątki i jak rozwiązać ten problem.
+Ten artykuł zawiera wprowadzenie, tworzenia i stosowania niestandardowych formantów w Projektancie dla systemu iOS. Po raz pierwszy opisany wymagań, które kontrolki musi spełniać, aby być renderowana na powierzchni projektowej i udostępnianie niestandardowych właściwości na panelu Właściwości. Następnie wyglądał w kodzie — inicjowanie kontrolki i właściwości tryb projektowania w systemie. Na koniec opisane co się stanie, gdy wyjątki zostaną zgłoszone i jak rozwiązać ten problem.

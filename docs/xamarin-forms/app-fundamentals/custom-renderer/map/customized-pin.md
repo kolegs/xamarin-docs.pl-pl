@@ -1,45 +1,45 @@
 ---
-title: Dostosowywanie mapy numer Pin
-description: W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla formantu mapy, wyświetlającego natywnego mapy z dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej z platform.
+title: Dostosowywanie pinezki mapy
+description: W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla formantu mapy, zawierające mapę natywnych przy użyciu dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej platformie.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 029dbf073f61e3a07ec01da4f877bf997af57d98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848554"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998320"
 ---
-# <a name="customizing-a-map-pin"></a>Dostosowywanie mapy numer Pin
+# <a name="customizing-a-map-pin"></a>Dostosowywanie pinezki mapy
 
-_W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla formantu mapy, wyświetlającego natywnego mapy z dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej z platform._
+_W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla formantu mapy, zawierające mapę natywnych przy użyciu dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej platformie._
 
-Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `MapRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `MKMapView` formantu. Na platformie Android `MapRenderer` natywny tworzy wystąpienie klasy `MapView` formantu. W systemie Windows platformy Uniwersalnej, `MapRenderer` natywny tworzy wystąpienie klasy `MapControl`. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdego widoku interfejsu Xamarin.Forms ma towarzyszący modułu renderowania dla każdej platformy, która tworzy wystąpienie kontrolki natywne. Gdy [ `Map` ](xref:Xamarin.Forms.Maps.Map) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS, `MapRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `MKMapView` kontroli. Na platformie Android `MapRenderer` klasy tworzy macierzystej `MapView` kontroli. Na Universal Windows Platform (platformy UWP), `MapRenderer` klasy tworzy macierzystej `MapControl`. Aby uzyskać więcej informacji na temat renderowania i klasy natywnych kontrolek, mapowane kontrolek zestawu narzędzi Xamarin.Forms, zobacz [natywne kontrolki i klasy podstawowej renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Na poniższym diagramie przedstawiono związek między [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) i odpowiednie natywnego formantów, które implementuje ona:
+Na poniższym diagramie przedstawiono relację między [ `Map` ](xref:Xamarin.Forms.Maps.Map) odpowiedniego natywne kontrolki, które ją implementują i:
 
-![](customized-pin-images/map-classes.png "Relacja między formantu mapy i implementujący kontrolki natywne")
+![](customized-pin-images/map-classes.png "Relacja między kontrolki mapy i implementowanie natywne kontrolki")
 
-Proces renderowania może służyć do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) na każdej z platform. Proces ten wygląda następująco:
+Proces renderowania może służyć do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `Map` ](xref:Xamarin.Forms.Maps.Map) na każdej platformie. Proces ten jest w następujący sposób:
 
-1. [Utwórz](#Creating_the_Custom_Map) mapy niestandardowe platformy Xamarin.Forms.
-1. [Korzystać z](#Consuming_the_Custom_Map) niestandardowe mapowanie z platformy Xamarin.Forms.
-1. [Utwórz](#Creating_the_Custom_Renderer_on_each_Platform) niestandardowego modułu renderowania mapy na każdej z platform.
+1. [Utwórz](#Creating_the_Custom_Map) mapę niestandardowego zestawu narzędzi Xamarin.Forms.
+1. [Używanie](#Consuming_the_Custom_Map) Mapa niestandardowa z zestawu narzędzi Xamarin.Forms.
+1. [Utwórz](#Creating_the_Custom_Renderer_on_each_Platform) niestandardowego modułu renderowania dla mapy na każdej platformie.
 
-Każdy element teraz omówione zostaną z kolei, aby zaimplementować `CustomMap` renderowania wyświetlający natywnego mapy z dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej z platform.
+Każdy element zostaną teraz dokładniej omówione w implementacji `CustomMap` renderowania wyświetlającą mapę natywnych przy użyciu dostosowanych numeru pin i dostosowany widok danych numeru pin na każdej platformie.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) musi być zainicjowana i skonfigurowana przed użyciem. Aby uzyskać więcej informacji, zobacz [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 
-## <a name="creating-the-custom-map"></a>Tworzenie niestandardowych mapy
+## <a name="creating-the-custom-map"></a>Tworzenie niestandardowych Map
 
-Kontrolki niestandardowe mapy mogą być tworzone przez podklasy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) klasy, jak pokazano w poniższym przykładzie:
+Kontrolki niestandardowe mapy mogą być tworzone przez podklasy [ `Map` ](xref:Xamarin.Forms.Maps.Map) klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class CustomMap : Map
@@ -48,7 +48,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Kontroli jest tworzony w .NET Standard projektu biblioteki i definiuje niestandardowe mapy interfejsu API. Przedstawia niestandardowe mapy `CustomPins` właściwość, która reprezentuje kolekcję `CustomPin` obiektów, które są wyświetlane przez formant mapy natywnego na każdej z platform. `CustomPin` Klasy przedstawiono w poniższym przykładzie kodu:
+`CustomMap` Kontroli jest tworzony w projekcie biblioteki .NET Standard i definiuje interfejs API dla niestandardowych map. Mapa niestandardowa udostępnia `CustomPins` właściwość, która reprezentuje kolekcję `CustomPin` obiektów, które będzie renderowany przez formant mapy macierzysty na poszczególnych platformach. `CustomPin` Klasy przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public class CustomPin : Pin
@@ -57,13 +57,13 @@ public class CustomPin : Pin
 }
 ```
 
-Ta klasa definiuje `CustomPin` jako dziedziczenie właściwości [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) klasy i dodawanie `Url` właściwości.
+Ta klasa definiuje `CustomPin` jak dziedziczenie właściwości [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) klasy i dodanie `Url` właściwości.
 
 <a name="Consuming_the_Custom_Map" />
 
-## <a name="consuming-the-custom-map"></a>Korzystanie z niestandardowych mapy
+## <a name="consuming-the-custom-map"></a>Korzystanie z niestandardowych Map
 
-`CustomMap` Formant może być przywoływany w języku XAML w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie mapy niestandardowe. Poniższy kod przedstawia przykład sposobu `CustomMap` formant może być zużyte przez strony XAML:
+`CustomMap` Kontroli może być przywoływany w XAML w projekcie biblioteki .NET Standard deklarowanie przestrzeni nazw dla lokalizacji i używając prefiksu przestrzeni nazw kontrolki niestandardowej mapy. Poniższy kod przedstawia przykładowy sposób, w jaki `CustomMap` kontrolki mogą być wykorzystane przez strony XAML:
 
 ```xaml
 <ContentPage ...
@@ -76,9 +76,9 @@ Ta klasa definiuje `CustomPin` jako dziedziczenie właściwości [ `Pin` ](https
 </ContentPage>
 ```
 
-`local` Prefiks przestrzeni nazw może mieć nazwę żadnych czynności. Jednak `clr-namespace` i `assembly` wartości muszą być zgodne szczegóły niestandardowe mapy. Po zadeklarowaniu obszaru nazw prefiks jest używany do odwołania niestandardowe mapy.
+`local` Prefiks przestrzeni nazw może mieć nazwę niczego. Jednak `clr-namespace` i `assembly` wartości muszą być zgodne szczegóły Mapa niestandardowa. Po zadeklarowaniu przestrzeń nazw prefiks jest używany do odwołania Mapa niestandardowa.
 
-Poniższy kod przedstawia przykład sposobu `CustomMap` formant może być zużyte przez stronę C#:
+Poniższy kod przedstawia przykładowy sposób, w jaki `CustomMap` kontrolki mogą być wykorzystane przez strony C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -97,9 +97,9 @@ public class MapPageCS : ContentPage
 }
 ```
 
-`CustomMap` Wystąpienie zostanie użyte do wyświetlenia mapy natywnego na każdej z platform. Ma ona [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) właściwość ustawia styl wyświetlania [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/), wartościami możliwe jest zdefiniowany w [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/) wyliczenia. Systemy iOS i Android, szerokość i wysokość mapy ustawiana za pośrednictwem właściwości `App` klasy, które są inicjowane w projektach specyficzne dla platformy.
+`CustomMap` Wystąpienie zostanie użyte, aby wyświetlić mapę macierzysty na poszczególnych platformach. Ma ona [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) właściwość ustawia styl wyświetlania [ `Map` ](xref:Xamarin.Forms.Maps.Map), za pomocą możliwe wartości są zdefiniowane w [ `MapType` ](xref:Xamarin.Forms.Maps.MapType) wyliczenia. Dla systemów iOS i Android, szerokość i wysokość mapy jest ustawiony za pomocą właściwości `App` klasy, które są inicjowane w projektach specyficzne dla platformy.
 
-Lokalizacja mapy i numery PIN ją zawiera, są inicjowane, jak pokazano w poniższym przykładzie kodu:
+Lokalizacja, mapy i numery PIN ją zawiera, są inicjowane, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public MapPage ()
@@ -121,36 +121,36 @@ public MapPage ()
 }
 ```
 
-Ta inicjowania dodaje niestandardowy numer pin i umieszcza widoku mapy z [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) metodę, która zmienia położenie i poziom powiększenia mapy, tworząc [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) z [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) i [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Ten proces inicjowania dodaje niestandardowy numer pin i umieszcza widoku mapy z [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) metody, która zmienia położenie i poziom powiększenia mapy, tworząc [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) z [ `Position` ](xref:Xamarin.Forms.Maps.Position) i [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
-Teraz można dodać do każdego projektu aplikacji, aby dostosować natywnego mapy formantów niestandardowego modułu renderowania.
+Teraz można dodać do każdego projektu aplikacji, aby dostosować kontrolki mapy natywnych niestandardowego modułu renderowania.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Tworzenie niestandardowego modułu renderowania na każdej platformie
 
-Proces tworzenia klasy niestandardowego modułu renderowania wygląda następująco:
+Proces tworzenia klasy niestandardowego modułu renderowania jest następująca:
 
-1. Utwórz podklasę `MapRenderer` klasy, która renderuje niestandardowe mapy.
-1. Zastąpienie `OnElementChanged` metodę, która renderuje mapy niestandardowe i pisania logiki, aby dostosować go. Ta metoda jest wywoływana po utworzeniu odpowiednich mapy niestandardowe platformy Xamarin.Forms.
-1. Dodaj `ExportRenderer` atrybutu klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania mapy niestandardowe platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
+1. Utwórz podklasę `MapRenderer` klasę, która renderuje Mapa niestandardowa.
+1. Zastąp `OnElementChanged` metodę, która renderuje Mapa niestandardowa i pisania logiki zgodnie z własnymi. Ta metoda jest wywoływana, gdy zostanie utworzony odpowiedni Mapa niestandardowa zestawu narzędzi Xamarin.Forms.
+1. Dodaj `ExportRenderer` atrybutów do klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania Mapa niestandardowa zestawu narzędzi Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania przy użyciu zestawu narzędzi Xamarin.Forms.
 
 > [!NOTE]
-> Jest to pozycja opcjonalna zapewnienie niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej formantu będzie używany.
+> Jest to opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej kontrolki będą używane.
 
 Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
-![](customized-pin-images/solution-structure.png "Obowiązki CustomMap niestandardowe renderowania projektu:")
+![](customized-pin-images/solution-structure.png "CustomMap niestandardowego modułu renderowania projektu obowiązki")
 
-`CustomMap` Renderowania formantu przez klasy renderowania specyficzne dla platformy, które wynikają z `MapRenderer` klasy dla każdej platformy. Powoduje to w każdym `CustomMap` kontrolować renderowanego specyficzne dla platformy kontroli, jak pokazano na poniższych zrzutach ekranu:
+`CustomMap` Renderowania formantu przez klasy renderowania specyficzne dla platformy, które pochodzi od `MapRenderer` klasy dla każdej platformy. Skutkuje to każda `CustomMap` kontrolować renderowanego z formantami specyficzne dla platformy, jak pokazano na poniższych zrzutach ekranu:
 
 ![](customized-pin-images/screenshots.png "CustomMap na każdej platformie")
 
-`MapRenderer` Klasy ujawnia `OnElementChanged` metodę, która jest wywoływana po utworzeniu niestandardowej mapy platformy Xamarin.Forms renderowanie odpowiednich macierzystego formantu. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentuje elementu platformy Xamarin.Forms który renderującego *został* dołączyć i elementu platformy Xamarin.Forms który renderującego *jest* dołączony do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie `null` i `NewElement` właściwości będzie zawierać odwołanie do `CustomMap` wystąpienia.
+`MapRenderer` Klasy ujawnia `OnElementChanged` metody, która jest wywoływana podczas tworzenia mapy niestandardowego zestawu narzędzi Xamarin.Forms do renderowania odpowiedniej kontrolki natywne. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentują element zestawu narzędzi Xamarin.Forms, modułu renderowania *został* dołączyć i element zestawu narzędzi Xamarin.Forms, modułu renderowania *jest* dołączone do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie miała `null` i `NewElement` właściwość będzie zawierać odwołanie do `CustomMap` wystąpienia.
 
-Zastąpiona wersja `OnElementChanged` metody w każdej klasie renderowania specyficzne dla platformy jest miejscem do wykonania dostosowanie macierzystego formantu. Typu odwołanie do macierzystego formantu używanego na platformie jest możliwy za pośrednictwem `Control` właściwości. Ponadto można uzyskać odwołanie do formantu platformy Xamarin.Forms, który jest renderowany przy użyciu `Element` właściwości.
+Zastąpione wersję `OnElementChanged` metody, w każdej klasie renderowania specyficzne dla platformy jest w tym miejscu Przeprowadź Dostosowywanie kontrolki natywne. Wpisane odwołania do kontrolki natywne używane na platformie jest możliwy za pośrednictwem `Control` właściwości. Ponadto można uzyskać odwołanie do formantu Xamarin.Forms, który jest renderowany przy użyciu `Element` właściwości.
 
-Należy zachować ostrożność podczas subskrybowania obsługi zdarzeń w `OnElementChanged` metody, jak pokazano w poniższym przykładzie:
+Należy zachować ostrożność podczas subskrybowania obsługi zdarzeń w `OnElementChanged` metody, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -167,19 +167,19 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Macierzystego formantu powinna być skonfigurowana i procedury obsługi zdarzeń zasubskrybować tylko wtedy, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały subskrybuje powinien można anulować w tylko element renderującego jest dołączony do zmiany. Przyjmowanie takie podejście pomoże utworzyć niestandardowego modułu renderowania nie boryka się z przecieki pamięci.
+Natywne kontrolki powinny być skonfigurowane i procedury obsługi zdarzeń zasubskrybować tylko wtedy, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały zasubskrybowane przez powinna być usuwania subskrypcji tylko wtedy, gdy element, który modułu renderowania jest dołączony do zmieni. Przyjęcie tego podejścia pomoże utworzyć niestandardowego modułu renderowania, który nie odczuwają przecieków pamięci.
 
-Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje mechanizm renderujący platformy Xamarin.Forms. Atrybut przyjmuje dwa parametry — Nazwa typu formantu niestandardowego platformy Xamarin.Forms renderowanego i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
+Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje modułu renderowania za pomocą zestawu narzędzi Xamarin.Forms. Ten atrybut przyjmuje dwa parametry — Nazwa typu formantu niestandardowego zestawu narzędzi Xamarin.Forms renderowanego i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
 
-W poniższych sekcjach omówiono implementacji każdej klasy niestandardowego modułu renderowania specyficzne dla platformy.
+W poniższych sekcjach omówiono wykonania każdej klasy specyficzne dla platformy niestandardowego modułu renderowania.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie modułu renderowania niestandardowe w systemie iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie niestandardowego modułu renderowania w systemie iOS
 
-Poniższe zrzuty ekranu przedstawiają mapy, przed i po dostosowaniu:
+Poniższe zrzuty ekranu Pokaż mapę przed dostosowaniem i po nim:
 
-![](customized-pin-images/map-layout-ios.png "Formant mapy przed i po dostosowaniu")
+![](customized-pin-images/map-layout-ios.png "Kontrolki mapy przed dostosowaniem i po nim")
 
-W systemie iOS numer pin jest nazywany *adnotacji*, i może być niestandardowy obraz lub numeru pin zdefiniowana w systemie różnych kolorów. Opcjonalnie można pokazać adnotacje *objaśnienia*, która jest wyświetlana w odpowiedzi na użytkownika, zaznaczając adnotację. Zawiera objaśnienie `Label` i `Address` właściwości `Pin` wystąpienia opcjonalne po lewej i prawej akcesoriów widoków. Na zrzucie ekranu powyżej, po lewej stronie akcesoriów widok nie zawiera obrazu małp z jest prawo akcesoriów widoku *informacji* przycisku.
+W systemie iOS numer pin jest nazywany *adnotacji*, i może być niestandardowego obrazu lub numeru pin zdefiniowaną przez system różnych kolorów. Adnotacje też opcjonalnie wyświetlić *objaśnienia*, który jest wyświetlany w odpowiedzi na użytkownika, zaznaczając adnotację. Zawiera objaśnienie `Label` i `Address` właściwości `Pin` wystąpienia przy użyciu widoków bezpośrednio akcesoriów i opcjonalnie po lewej stronie. Na powyższym zrzucie ekranu, po lewej stronie widoku akcesoriów jest obraz małp z są bezpośrednio akcesoriów widoku *informacji* przycisku.
 
 Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy iOS:
 
@@ -223,21 +223,21 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged` Metoda wykonuje następujące konfiguracji [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) wystąpienia, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms:
+`OnElementChanged` Metoda wykonuje następujący konfiguracji [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) wystąpienia, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms:
 
-- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Właściwość jest ustawiona na `GetViewForAnnotation` metody. Ta metoda jest wywoływana, gdy [lokalizacji adnotacji, staje się widoczne na mapie](#Displaying_the_Annotation)i jest używany do dostosowania przed adnotacji do wyświetlenia.
-- Programy obsługi zdarzeń dla `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, i `DidDeselectAnnotationView` są rejestrowane zdarzenia. Wyzwalać te zdarzenia, kiedy użytkownik [naciska prawo akcesoriów w objaśnienie](#Tapping_on_the_Right_Callout_Accessory_View)i kiedy użytkownik [wybiera](#Selecting_the_Annotation) i [odznacza](#Deselecting_the_Annotation) adnotację, odpowiednio. Zdarzenia są anulować w tylko wtedy, gdy element renderującego jest dołączony do zmiany.
+- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Właściwość jest ustawiona na `GetViewForAnnotation` metody. Ta metoda jest wywoływana, gdy [adnotacji stanie się widoczne na mapie](#Displaying_the_Annotation)i jest używany do dostosowywania przed adnotacji do wyświetlenia.
+- Programy obsługi zdarzeń dla `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, i `DidDeselectAnnotationView` zdarzenia są rejestrowane. Wyzwolenie tych zdarzeń, gdy użytkownik [naciśnie odpowiednie akcesorium w objaśnieniu](#Tapping_on_the_Right_Callout_Accessory_View)i kiedy użytkownik [wybiera](#Selecting_the_Annotation) i [odznacza](#Deselecting_the_Annotation) adnotację, odpowiednio. Zdarzenia są usuwania subskrypcji tylko wtedy, gdy element renderer jest dołączony do zmiany.
 
 <a name="Displaying_the_Annotation" />
 
 #### <a name="displaying-the-annotation"></a>Wyświetlanie adnotacji
 
-`GetViewForAnnotation` Metoda jest wywoływana, gdy lokalizacji adnotacji, staje się widoczne na mapie i jest używany do dostosowania przed adnotacji, aby wyświetlić. Adnotacja ma dwie części:
+`GetViewForAnnotation` Metoda jest wywoływana, gdy lokalizacja adnotacja staje się widoczny na mapie i jest używany do dostosowywania przed adnotacji, aby wyświetlić. Adnotacja ma dwie części:
 
-- `MkAnnotation` — zawiera title, subtitle i lokalizacji adnotacji.
-- `MkAnnotationView` — zawiera obraz do reprezentowania adnotację oraz opcjonalnie objaśnienia, który jest wyświetlany, gdy użytkownik naciska adnotacji.
+- `MkAnnotation` — zawiera tytuł, podtytuł i lokalizacja adnotacji.
+- `MkAnnotationView` — zawiera obraz do reprezentowania adnotacji i, opcjonalnie, objaśnienia, który jest wyświetlany, gdy użytkownik naciśnie adnotacji.
 
-`GetViewForAnnotation` Metoda przyjmuje `IMKAnnotation` który zawiera dane adnotacji i zwraca `MKAnnotationView` do wyświetlenia na mapie i jest wyświetlany w poniższym przykładzie:
+`GetViewForAnnotation` Metoda przyjmuje `IMKAnnotation` , zawiera dane, adnotacji i zwraca `MKAnnotationView` do wyświetlenia na mapie i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
@@ -268,25 +268,25 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 }
 ```
 
-Ta metoda gwarantuje, że adnotacja będzie wyświetlany jako obraz niestandardowy, a nie jako zdefiniowana w systemie numeru pin, a adnotacja jest wybrany objaśnienia będą wyświetlane zawierającą dodatkowej zawartości po lewej i prawej adnotacji tytuł i adres . Jest to zrobić w następujący sposób:
+Ta metoda zapewnia, że adnotacji, które będą wyświetlane jako obraz niestandardowy, a nie jako zdefiniowaną przez system numeru pin, a gdy dotknięcie adnotacji objaśnienia zostanie wyświetlony zawiera dodatkową zawartość w lewo i prawo do adnotacji tytuł i adres . Jest to realizowane w następujący sposób:
 
-1. `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowe numeru pin dla adnotacji.
-1. Aby zachowywania pamięci, widok adnotacji jest puli do ponownego użycia z wywołaniem do [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
-1. `CustomMKAnnotationView` Rozszerza klasy `MKAnnotationView` klasy z `Id` i `Url` właściwości, które odpowiadają właściwościom identyczne `CustomPin` wystąpienia. Nowe wystąpienie klasy `CustomMKAnnotationView` jest tworzony, pod warunkiem, że jest adnotacja `null`:
-  - `CustomMKAnnotationView.Image` Właściwość jest ustawiona na obraz, który będzie stanowić adnotacji na mapie.
-  - `CustomMKAnnotationView.CalloutOffset` Ma ustawioną właściwość `CGPoint` Określa, że objaśnienie będzie wyśrodkowana powyżej adnotacji.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Właściwość jest ustawiona na obrazie małp, która będzie wyświetlana po lewej adnotacji tytuł i adres.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Właściwość jest ustawiona na *informacji* przycisku, która będzie wyświetlana po prawej stronie adnotacji tytuł i adres.
-  - `CustomMKAnnotationView.Id` Właściwość jest ustawiona na `CustomPin.Id` właściwości zwróconej przez `GetCustomPin` metody. Dzięki temu adnotacji identyfikację, aby [objaśnienia można dodatkowo dostosowywać](#Selecting_the_Annotation), jeśli to konieczne.
-  - `CustomMKAnnotationView.Url` Właściwość jest ustawiona na `CustomPin.Url` właściwości zwróconej przez `GetCustomPin` metody. Adres URL nastąpi przejście, kiedy użytkownik [naciska wyświetlane w widoku akcesoriów objaśnienia prawym przycisku](#Tapping_on_the_Right_Callout_Accessory_View).
-1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Właściwość jest ustawiona na `true` pojawia się objaśnienia adnotacji jest wybrany.
+1. `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowego numeru pin dla adnotacji.
+1. W celu zachowywania pamięci, wyświetlanie adnotacji jest puli do ponownego użycia z wywołaniem [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
+1. `CustomMKAnnotationView` Klasa rozszerza `MKAnnotationView` klasy `Id` i `Url` właściwościami, które odpowiadają właściwości są takie same w `CustomPin` wystąpienia. Nowe wystąpienie klasy `CustomMKAnnotationView` zostanie utworzony, pod warunkiem, że adnotacja jest `null`:
+  - `CustomMKAnnotationView.Image` Właściwość jest ustawiona na obraz, który będzie reprezentować adnotacji na mapie.
+  - `CustomMKAnnotationView.CalloutOffset` Właściwość jest ustawiona na `CGPoint` określający, że objaśnienie będzie wyśrodkowana powyżej adnotacji.
+  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Właściwość jest ustawiona na obrazie małp, która będzie wyświetlana po lewej stronie adnotacji tytuł i adres.
+  - `CustomMKAnnotationView.RightCalloutAccessoryView` Właściwość jest ustawiona na *informacji* przycisk, który będzie widoczny po prawej stronie adnotacji tytuł i adres.
+  - `CustomMKAnnotationView.Id` Właściwość jest ustawiona na `CustomPin.Id` właściwości zwróconej przez `GetCustomPin` metody. Dzięki temu adnotacji identyfikację tak, aby miało [objaśnienia można dodatkowo dostosowywać](#Selecting_the_Annotation), jeśli to konieczne.
+  - `CustomMKAnnotationView.Url` Właściwość jest ustawiona na `CustomPin.Url` właściwości zwróconej przez `GetCustomPin` metody. Adres URL nastąpi przejście, kiedy użytkownik [naciśnie przycisk wyświetlane w widoku akcesoriów prawo objaśnienia](#Tapping_on_the_Right_Callout_Accessory_View).
+1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Właściwość jest ustawiona na `true` tak, aby objaśnienie jest wyświetlane, gdy dotknięcie adnotacji.
 1. Adnotacja są zwracane do wyświetlenia na mapie.
 
 <a name="Selecting_the_Annotation" />
 
 #### <a name="selecting-the-annotation"></a>Wybieranie adnotacji
 
-Po naciśnięciu adnotację, `DidSelectAnnotationView` generowane zdarzenie, które z kolei wykonuje `OnDidSelectAnnotationView` metody:
+Kiedy użytkownik naciska adnotację, `DidSelectAnnotationView` generowane zdarzenie, które z kolei wykonuje `OnDidSelectAnnotationView` metody:
 
 ```csharp
 void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -305,13 +305,13 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Ta metoda jest rozszerzeniem istniejącej objaśnienie (która zawiera widoki po lewej i prawej akcesoriów) przez dodanie `UIView` wystąpienie do niego, które zawiera obraz Xamarin logo, pod warunkiem, że wybrana adnotacja jego `Id` właściwość `Xamarin`. Dzięki temu w scenariuszach, w którym różnych objaśnienia mogą być wyświetlane dla różnych adnotacji. `UIView` Wystąpienie będzie wyświetlana wyśrodkowane powyżej istniejących objaśnienia.
+Ta metoda jest rozszerzeniem istniejącej objaśnienia, (który zawiera widoki po lewej i prawej akcesoriów), dodając `UIView` wystąpienia do niego, które zawiera obraz logo platformy Xamarin, pod warunkiem, że została wybrana adnotacja jego `Id` właściwość ustawioną na `Xamarin`. Dzięki temu w scenariuszach, gdzie różne objaśnienia mogą być wyświetlane dla różnych adnotacji. `UIView` Wystąpienia będą wyświetlane, a ich tematyka ponad istniejących objaśnienia.
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
-#### <a name="tapping-on-the-right-callout-accessory-view"></a>Naciśnięcie przycisku w widoku prawo akcesoriów objaśnienia
+#### <a name="tapping-on-the-right-callout-accessory-view"></a>Naciskając widok prawej akcesorium objaśnienia
 
-Po naciśnięciu na *informacji* przycisku w widoku akcesoriów prawo objaśnienia `CalloutAccessoryControlTapped` generowane zdarzenie, które z kolei wykonuje `OnCalloutAccessoryControlTapped` metody:
+Po użytkownik naciska na *informacji* przycisk w widoku akcesoriów prawo objaśnienia `CalloutAccessoryControlTapped` generowane zdarzenie, które z kolei wykonuje `OnCalloutAccessoryControlTapped` metody:
 
 ```csharp
 void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -323,13 +323,13 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `CustomMKAnnotationView.Url` właściwości. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
+Ta metoda otwiera przeglądarkę sieci web i przechodzi do adresem przechowywanym w `CustomMKAnnotationView.Url` właściwości. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
 <a name="Deselecting_the_Annotation" />
 
-#### <a name="deselecting-the-annotation"></a>Usunięcie zaznaczenia adnotacji
+#### <a name="deselecting-the-annotation"></a>Usuwanie adnotacji
 
-Gdy jest wyświetlana adnotacja i naciśnięciu na mapie, `DidDeselectAnnotationView` generowane zdarzenie, które z kolei wykonuje `OnDidDeselectAnnotationView` metody:
+Gdy adnotacja jest wyświetlany, a użytkownik naciska na mapie `DidDeselectAnnotationView` generowane zdarzenie, które z kolei wykonuje `OnDidDeselectAnnotationView` metody:
 
 ```csharp
 void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -342,17 +342,17 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Ta metoda gwarantuje, że podczas istniejących objaśnienia nie jest zaznaczone, rozszerzone część objaśnienia (obraz Xamarin logo) spowoduje również przerwanie wyświetlane i jego zasoby, zostaną zwolnione.
+Ta metoda zapewnia, że objaśnienia istniejącego nie jest zaznaczone, rozszerzone część objaśnienia (obraz Xamarin logo) spowoduje również przerwanie, są wyświetlane, gdy jego zasoby zostaną zwolnione.
 
-Aby uzyskać więcej informacji dotyczących dostosowywania `MKMapView` wystąpienia, zobacz [mapy iOS](~/ios/user-interface/controls/ios-maps/index.md).
+Aby uzyskać więcej informacji o dostosowywaniu `MKMapView` wystąpienia, zobacz [mapy iOS](~/ios/user-interface/controls/ios-maps/index.md).
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Tworzenie niestandardowego modułu renderowania w systemie Android
 
-Poniższe zrzuty ekranu przedstawiają mapy, przed i po dostosowaniu:
+Poniższe zrzuty ekranu Pokaż mapę przed dostosowaniem i po nim:
 
-![](customized-pin-images/map-layout-android.png "Formant mapy przed i po dostosowaniu")
+![](customized-pin-images/map-layout-android.png "Kontrolki mapy przed dostosowaniem i po nim")
 
-W systemie Android numer pin jest nazywany *znacznika*, i może być niestandardowy obraz lub znacznik zdefiniowana w systemie różnych kolorów. Znaczników można wyświetlić *okna informacje*, która jest wyświetlana w odpowiedzi na użytkownika, naciskając znacznika. Wyświetla okno informacje `Label` i `Address` właściwości `Pin` wystąpienia oraz można dostosować, aby dołączyć do innej zawartości. Jednak tylko jedno okno informacje można wyświetlić na raz.
+W systemie Android numer pin jest nazywany *znacznika*, i może być niestandardowego obrazu lub znacznik zdefiniowaną przez system różnych kolorów. Znaczniki można wyświetlić *okno informacyjne*, który jest wyświetlany w odpowiedzi na użytkownika, dotknięcie znacznika. Wyświetla okno informacyjne `Label` i `Address` właściwości `Pin` metodą wystąpienia oraz można dostosować tak, aby uwzględnić inną zawartość. Jednak tylko jedno okno informacje mogą być wyświetlane tylko raz.
 
 Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy systemu Android:
 
@@ -397,18 +397,18 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms `OnElementChanged` wywołania metody `MapView.GetMapAsync` metodę, która pobiera odpowiadającego `GoogleMap` który jest powiązany z widoku. Raz `GoogleMap` wystąpienie jest dostępne, `OnMapReady` zastąpienie zostanie wywołany. Ta metoda rejestruje program obsługi zdarzeń dla `InfoWindowClick` zdarzenie, które są uruchamiane w przypadku [okna informacje o kliknięciu](#Clicking_on_the_Info_Window)i Anulowano subskrypcję, tylko wtedy, gdy element renderującego jest dołączony do zmiany. `OnMapReady` Również zastąpić wywołania `SetInfoWindowAdapter` metodę, aby określić, że `CustomMapRenderer` wystąpienie klasy zapewnia metody do dostosowywania okna informacje.
+Pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms `OnElementChanged` wywołania metody `MapView.GetMapAsync` metody, która pobiera bazowego `GoogleMap` , jest powiązany z widoku. Raz `GoogleMap` wystąpienie jest dostępne, `OnMapReady` zastąpienie zostanie wywołany. Ta metoda rejestruje zdarzenia obsługi dla `InfoWindowClick` zdarzenie, które są generowane, gdy [kliknięciu okno informacyjne](#Clicking_on_the_Info_Window)i jest Anulowano tylko wtedy, gdy element renderer jest dołączony do zmiany. `OnMapReady` Także Przesłoń wywołania `SetInfoWindowAdapter` metodę, aby określić, że `CustomMapRenderer` wystąpienia klasy zapewni metody służące do dostosowywania okno informacyjne.
 
-`CustomMapRenderer` Klasa implementuje `GoogleMap.IInfoWindowAdapter` interfejsu do [Dostosowywanie okna informacje](#Customizing_the_Info_Window). Ten interfejs określa musi być implementowana następujących metod:
+`CustomMapRenderer` Klasy implementuje `GoogleMap.IInfoWindowAdapter` współpracować w celu [dostosować okno informacyjne](#Customizing_the_Info_Window). Ten interfejs określa, czy należy zaimplementować następujące metody:
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` — Ta metoda jest wywoływana, aby powrócić do okna informacje o niestandardowych na potrzeby znacznika. Jeśli zmienna zwraca `null`, zostanie użyta domyślna renderowanie okien. Jeśli zmienna zwraca `View`, który następnie `View` zostaną umieszczone wewnątrz ramki okna informacje.
-- `public Android.Views.View GetInfoContents(Marker marker)` — Ta metoda jest wywoływana, aby zwrócić `View` z zawartością okna informacje i będzie można wywołać tylko, jeśli `GetInfoWindow` metoda zwraca `null`. Jeśli zmienna zwraca `null`, zostanie użyta odwzorowanie domyślne informacje o zawartości okna.
+- `public Android.Views.View GetInfoWindow(Marker marker)` — Ta metoda jest wywoływana w celu zwrócenia okna niestandardowych informacji dla znacznika. Jeśli zostanie zwrócona `null`, zostanie użyta domyślna renderowanie okien. Jeśli zostanie zwrócona `View`, który następnie `View` zostaną umieszczone wewnątrz ramki okna informacji.
+- `public Android.Views.View GetInfoContents(Marker marker)` — Ta metoda jest wywoływana w celu zwrócenia `View` z zawartością okno informacyjne i zostanie wywołana tylko jeśli `GetInfoWindow` metoda zwraca `null`. Jeśli zostanie zwrócona `null`, zostaną użyte domyślne renderowanie informacji o zawartości okna.
 
-W przykładowej aplikacji zawartości okna informacje o dostosowaniu i dlatego element `GetInfoWindow` metoda zwraca `null` aby je włączyć.
+W przykładowej aplikacji dostosowanych tylko informacje o zawartości okna, a więc `GetInfoWindow` metoda zwraca `null` umożliwiające wykonanie tej.
 
 #### <a name="customizing-the-marker"></a>Dostosowywanie znacznika
 
-Ikona używany do reprezentowania znacznik można dostosować, wywołując `MarkerOptions.SetIcon` metody. Można to osiągnąć przez zastąpienie `CreateMarker` metodę, która jest wywoływana dla każdej `Pin` który został dodany do mapy:
+Ikona używana do reprezentowania znacznik można dostosować przez wywołanie metody `MarkerOptions.SetIcon` metody. Można to osiągnąć przez zastąpienie `CreateMarker` metody, która jest wywoływana dla każdego `Pin` który został dodany do mapy:
 
 ```csharp
 protected override MarkerOptions CreateMarker(Pin pin)
@@ -422,15 +422,15 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-Ta metoda tworzy nowy `MarkerOption` wystąpienia dla każdego `Pin` wystąpienia. Po ustawieniu pozycji, etykiety i adres znacznika, jego ikonę została skonfigurowana z `SetIcon` metody. Ta metoda przyjmuje `BitmapDescriptor` obiekt zawierający dane wymagane do renderowania ikony, z `BitmapDescriptorFactory` udostępnia metody pomocnicze, aby uprościć tworzenie klasy `BitmapDescriptor`.
+Ta metoda tworzy nowy `MarkerOption` wystąpienia dla każdej `Pin` wystąpienia. Po ustawieniu pozycji, etykiety i adresu znacznika, jego ikonę została ustawiona za pomocą `SetIcon` metody. Ta metoda przyjmuje `BitmapDescriptor` obiekt zawierający dane wymagane do renderowania ikony, za pomocą `BitmapDescriptorFactory` klasy, zapewniając metody pomocnika, aby uprościć tworzenie `BitmapDescriptor`.
 
-Aby uzyskać więcej informacji o korzystaniu z `BitmapDescriptorFactory` klasę, aby dostosować informacje, zobacz [Dostosowywanie znacznik](~/android/platform/maps-and-location/maps/maps-api.md).
+Aby uzyskać więcej informacji o korzystaniu z `BitmapDescriptorFactory` klasy, aby dostosować znacznik, zobacz [Dostosowywanie znacznik](~/android/platform/maps-and-location/maps/maps-api.md).
 
 <a name="Customizing_the_Info_Window" />
 
-#### <a name="customizing-the-info-window"></a>Dostosowywanie okna informacje
+#### <a name="customizing-the-info-window"></a>Dostosowywanie okna informacji
 
-Gdy użytkownik naciska na znacznika, `GetInfoContents` metoda jest wykonywana, pod warunkiem, że `GetInfoWindow` metoda zwraca `null`. Poniższy kod przedstawia przykład `GetInfoContents` metody:
+Kiedy użytkownik naciska na znacznika, `GetInfoContents` metoda jest wykonywana, pod warunkiem, że `GetInfoWindow` metoda zwraca `null`. Poniższy kod przedstawia przykład `GetInfoContents` metody:
 
 ```csharp
 public Android.Views.View GetInfoContents (Marker marker)
@@ -466,22 +466,22 @@ public Android.Views.View GetInfoContents (Marker marker)
 }
 ```
 
-Ta metoda zwraca `View` okna informacje z zawartością. Jest to zrobić w następujący sposób:
+Ta metoda zwraca `View` z zawartością okna informacji. Jest to realizowane w następujący sposób:
 
-- A `LayoutInflater` wystąpienia są pobierane. Jest on używany do utworzenia wystąpienia pliku XML układu w odpowiednie `View`.
-- `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowe numeru pin dla okna informacji.
-- `XamarinMapInfoWindow` Układ jest zwiększony, jeśli `CustomPin.Id` właściwości jest równa `Xamarin`. W przeciwnym razie `MapInfoWindow` jest zwiększony układu. Dzięki temu w scenariuszach, w którym można wyświetlać układów okien z użyciem innych informacji dla różnych znaczników.
-- `InfoWindowTitle` i `InfoWindowSubtitle` zasoby są pobierane z nadmuchany układ i ich `Text` właściwości są ustawione na odpowiednie dane z `Marker` wystąpienia, pod warunkiem, że zasoby nie są `null`.
+- A `LayoutInflater` wystąpienia są pobierane. Służy to do utworzenia wystąpienia pliku XML układu do odpowiadającymi mu dostawcami `View`.
+- `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowego numeru pin dla okna informacji.
+- `XamarinMapInfoWindow` Układ jest zwiększony, jeśli `CustomPin.Id` właściwości jest równa `Xamarin`. W przeciwnym razie `MapInfoWindow` układ jest zwiększony. Dzięki temu w scenariuszach, gdzie mogą zostać wyświetlone informacje o różnych układów okna różnych znaczników.
+- `InfoWindowTitle` i `InfoWindowSubtitle` zasobów są pobierane z nadmuchany układ i ich `Text` właściwości są ustawione na odpowiadające im dane z `Marker` wystąpienia, pod warunkiem, że zasoby są `null`.
 - `View` Wystąpienia są zwracane do wyświetlenia na mapie.
 
 > [!NOTE]
-> Informacje o okno nie jest na żywo `View`. Zamiast tego przekonwertuje Android `View` do statycznego bitmap i który wyświetlany jako obraz. To oznacza, że podczas okna informacje mogą odpowiadać na zdarzenie click, nie może odpowiadać touch zdarzenia lub gestów i pojedynczych formantów w oknie informacji nie może odpowiadać na ich własnych zdarzenia kliknięcia.
+> Okno informacji nie jest na żywo `View`. Zamiast tego zostanie przekonwertowana Android `View` na statyczną mapy bitowej i wyświetlenie jej w formie obrazu. Oznacza to, że podczas okna informacji może odpowiadać na zdarzenie click, nie może ona odpowiedzieć na wszelkie zdarzenia dotykowe lub gestów i pojedynczych formantów w oknie informacji nie może odpowiadać na ich własnych zdarzeń kliknięcia.
 
 <a name="Clicking_on_the_Info_Window" />
 
-#### <a name="clicking-on-the-info-window"></a>Kliknięcie okno informacyjne
+#### <a name="clicking-on-the-info-window"></a>Kliknij okno informacje
 
-Gdy użytkownik kliknie okno informacje `InfoWindowClick` generowane zdarzenie, które z kolei wykonuje `OnInfoWindowClick` metody:
+Gdy użytkownik kliknie okno informacyjne `InfoWindowClick` generowane zdarzenie, które z kolei wykonuje `OnInfoWindowClick` metody:
 
 ```csharp
 void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
@@ -500,17 +500,17 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwości pobranej `CustomPin` wystąpienie `Marker`. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
+Ta metoda otwiera przeglądarkę sieci web i przechodzi do adresem przechowywanym w `Url` właściwość pobrany `CustomPin` wystąpienie `Marker`. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
-Aby uzyskać więcej informacji dotyczących dostosowywania `MapView` wystąpienia, zobacz [interfejsu API map](~/android/platform/maps-and-location/maps/maps-api.md).
+Aby uzyskać więcej informacji o dostosowywaniu `MapView` wystąpienia, zobacz [interfejsu API usługi mapy](~/android/platform/maps-and-location/maps/maps-api.md).
 
-### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Tworzenie niestandardowego modułu renderowania na platformę uniwersalną systemu Windows
+### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Tworzenie niestandardowego modułu renderowania na platformie Universal Windows
 
-Poniższe zrzuty ekranu przedstawiają mapy, przed i po dostosowaniu:
+Poniższe zrzuty ekranu Pokaż mapę przed dostosowaniem i po nim:
 
-![](customized-pin-images/map-layout-uwp.png "Formant mapy przed i po dostosowaniu")
+![](customized-pin-images/map-layout-uwp.png "Kontrolki mapy przed dostosowaniem i po nim")
 
-Na platformy uniwersalnej systemu Windows numer pin jest nazywany *ikonę mapy*, i może być niestandardowy obraz lub zdefiniowane w systemie domyślnego obrazu. Ikona mapy można wyświetlić `UserControl`, która jest wyświetlana w odpowiedzi na użytkownika, naciskając ikonę mapy. `UserControl` Można wyświetlać zawartość, łącznie z `Label` i `Address` właściwości `Pin` wystąpienia.
+Na platformy uniwersalnej systemu Windows jest nazywany numeru pin *ikona mapy*, i może być niestandardowego obrazu lub zdefiniowaną przez system domyślnego obrazu. Ikona mapy może wyświetlić `UserControl`, który jest wyświetlany w odpowiedzi na użytkownika, naciskając ikonę mapy. `UserControl` Można wyświetlić dowolną zawartość, łącznie z `Label` i `Address` właściwości `Pin` wystąpienia.
 
 Poniższy przykład kodu pokazuje niestandardowego modułu renderowania platformy uniwersalnej systemu Windows:
 
@@ -566,23 +566,23 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`OnElementChanged` Metoda wykonuje następujące operacje, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms:
+`OnElementChanged` Metoda wykonuje następujące operacje, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms:
 
-- Czyści `MapControl.Children` kolekcji, aby usunąć wszystkie istniejące elementy interfejsu użytkownika z mapy, przed zarejestrowaniem programu obsługi zdarzeń dla `MapElementClick` zdarzeń. To zdarzenie generowane, gdy użytkownik naciska lub kliknie `MapElement` na `MapControl`i Anulowano subskrypcję, tylko wtedy, gdy element renderującego jest dołączony do zmiany.
-- Każdy kod pin w `customPins` Kolekcja zostanie wyświetlona w poprawnej lokalizacji geograficznej na mapie w następujący sposób:
-  - Lokalizacja numer pin jest tworzony jako `Geopoint` wystąpienia.
-  - A `MapIcon` do reprezentowania numer pin jest tworzone wystąpienie.
-  - Obraz używany do reprezentowania `MapIcon` jest określany przez ustawienie `MapIcon.Image` właściwości. Jednak obraz ikony mapy nie zawsze gwarantuje pokazano, jak zostanie przesłonięty przez inne elementy na mapie. W związku z tym mapy ikony `CollisionBehaviorDesired` właściwość jest ustawiona na `MapElementCollisionBehavior.RemainVisible`, aby upewnić się, że pozostaje widoczna.
+- To powoduje wyczyszczenie `MapControl.Children` kolekcji, aby usunąć wszystkie istniejące elementy interfejsu użytkownika z mapy, przed zarejestrowaniem program obsługi zdarzeń dla `MapElementClick` zdarzeń. To zdarzenie jest uruchamiana, gdy użytkownik naciśnie lub kliknie `MapElement` na `MapControl`i jest Anulowano tylko wtedy, gdy element renderer jest dołączony do zmiany.
+- Każdy numer pin w `customPins` Kolekcja zostanie wyświetlona w poprawnej lokalizacji geograficznej na mapie w następujący sposób:
+  - Lokalizacja o numer pin jest tworzona jako `Geopoint` wystąpienia.
+  - A `MapIcon` wystąpienie jest tworzone do reprezentowania numeru pin.
+  - Obraz używany do reprezentowania `MapIcon` jest określany przez ustawienie `MapIcon.Image` właściwości. Jednak obraz ikony mapy nie zawsze musi pokazano, jak mogą być zasłonięte przez inne elementy na mapie. W związku z tym, mapa ikony `CollisionBehaviorDesired` właściwość jest ustawiona na `MapElementCollisionBehavior.RemainVisible`, aby upewnić się, że pozostaje widoczna.
   - Lokalizacja `MapIcon` jest określany przez ustawienie `MapIcon.Location` właściwości.
-  - `MapIcon.NormalizedAnchorPoint` Właściwość jest ustawiona na przybliżonej lokalizacji wskaźnika na obrazie. Jeśli ta właściwość przechowuje wartość domyślną (0,0), co stanowi lewym górnym rogu obrazu, zmiany w poziom powiększenia mapy może skutkować obrazu wskazanie w innej lokalizacji.
-  - `MapIcon` Wystąpienia jest dodawany do `MapControl.MapElements` kolekcji. Powoduje to ikonę mapy będzie wyświetlany na `MapControl`.
+  - `MapIcon.NormalizedAnchorPoint` Właściwość jest ustawiona na przybliżona lokalizacja wskaźnika w obrazie. Jeśli ta właściwość zachowuje wartość domyślną (0,0), który reprezentuje lewym górnym rogu obrazu, zmiany w poziom powiększenia mapy może spowodować obraz, który wskazuje do innej lokalizacji.
+  - `MapIcon` Wystąpienia jest dodawany do `MapControl.MapElements` kolekcji. Skutkuje to ikona mapy są wyświetlane na `MapControl`.
 
 > [!NOTE]
-> W przypadku używania tego samego obrazu dla wielu ikon mapy, `RandomAccessStreamReference` wystąpienia powinien być zadeklarowany jako na poziomie strony lub aplikacji Aby uzyskać najlepszą wydajność.
+> W przypadku używania tego samego obrazu dla wielu ikon mapy, `RandomAccessStreamReference` wystąpienia powinien być zadeklarowany jako na poziomie strony lub aplikacji uzyskać najlepszą wydajność.
 
 #### <a name="displaying-the-usercontrol"></a>Wyświetlanie UserControl
 
-Gdy użytkownik naciska ikonę mapy `OnMapElementClick` metoda jest wykonywana. Poniższy przykład kodu pokazuje tej metody:
+Gdy użytkownik wybiera ikonę mapy `OnMapElementClick` metoda jest wykonywana. Poniższy przykład kodu pokazuje tę metodę:
 
 ```csharp
 private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
@@ -623,21 +623,21 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 }
 ```
 
-Ta metoda tworzy `UserControl` wystąpienia, który zawiera informacje o numer pin. Jest to zrobić w następujący sposób:
+Ta metoda tworzy `UserControl` wystąpienie, które wyświetla informacje o numer pin. Jest to realizowane w następujący sposób:
 
 - `MapIcon` Wystąpienia są pobierane.
-- `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowe numeru pin, który będzie wyświetlany.
-- A `XamarinMapOverlay` do wyświetlania danych niestandardowych numer pin jest tworzone wystąpienie. Ta klasa jest kontrolki użytkownika.
-- Lokalizacji geograficznej, w którym można wyświetlić `XamarinMapOverlay` wystąpienie na `MapControl` zostanie utworzona jako `Geopoint` wystąpienia.
-- `XamarinMapOverlay` Wystąpienia jest dodawany do `MapControl.Children` kolekcji. Ta kolekcja zawiera elementy interfejsu użytkownika XAML, które zostaną wyświetlone na mapie.
+- `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowego numeru pin, który będzie wyświetlany.
+- A `XamarinMapOverlay` tworzone jest wystąpienie, aby wyświetlić dane niestandardowego numeru pin. Ta klasa jest kontrolki użytkownika.
+- Lokalizacja geograficzna, od którego należy wyświetlić `XamarinMapOverlay` wystąpienia na `MapControl` jest tworzona jako `Geopoint` wystąpienia.
+- `XamarinMapOverlay` Wystąpienia jest dodawany do `MapControl.Children` kolekcji. Ta kolekcja zawiera elementy interfejsu użytkownika XAML, które będą wyświetlane na mapie.
 - Lokalizacja geograficzna `XamarinMapOverlay` wystąpienia na mapie jest ustawiony przez wywołanie metody `SetLocation` metody.
-- Względne położenie na `XamarinMapOverlay` wystąpienia, która odpowiada podanej lokalizacji, jest ustawiony przez wywołanie metody `SetNormalizedAnchorPoint` metody. Dzięki temu, który zmienia poziom powiększenia mapy wynik w `XamarinMapOverlay` wystąpienie, zawsze wyświetlany w poprawnej lokalizacji.
+- Względna lokalizacja w `XamarinMapOverlay` wystąpienia, która odnosi się do określonej lokalizacji, jest ustawiony przez wywołanie metody `SetNormalizedAnchorPoint` metody. Daje to gwarancję, które zmieniają się poziom powiększenia mapy doprowadzić `XamarinMapOverlay` wystąpienie, zawsze wyświetlane we właściwych lokalizacjach.
 
-Alternatywnie, jeśli informacji o numer pin jest już wyświetlana na mapie, naciskając pozycję na mapie usuwa `XamarinMapOverlay` wystąpienia z `MapControl.Children` kolekcji.
+Alternatywnie, jeśli już są wyświetlane informacje o numer pin na mapie, naciskając pozycję na mapie spowoduje usunięcie `XamarinMapOverlay` wystąpienia z `MapControl.Children` kolekcji.
 
-#### <a name="tapping-on-the-information-button"></a>Naciskając przycisk informacji
+#### <a name="tapping-on-the-information-button"></a>Naciskając przycisk informacje
 
-Po naciśnięciu na *informacji* przycisk w `XamarinMapOverlay` kontrolki użytkownika `Tapped` generowane zdarzenie, które z kolei wykonuje `OnInfoButtonTapped` metody:
+Kiedy użytkownik naciska na *informacji* znajdujący się w `XamarinMapOverlay` kontrolki użytkownika `Tapped` generowane zdarzenie, które z kolei wykonuje `OnInfoButtonTapped` metody:
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
@@ -646,18 +646,18 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Ta metoda otwiera w przeglądarce sieci web i powoduje przejście do adresu przechowywane w `Url` właściwość `CustomPin` wystąpienia. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
+Ta metoda otwiera przeglądarkę sieci web i przechodzi do adresem przechowywanym w `Url` właściwość `CustomPin` wystąpienia. Należy pamiętać, że adres został zdefiniowany podczas tworzenia `CustomPin` kolekcji w projekcie biblioteki .NET Standard.
 
-Aby uzyskać więcej informacji dotyczących dostosowywania `MapControl` wystąpienia, zobacz [mapy i informacje o lokalizacji](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) w witrynie MSDN.
+Aby uzyskać więcej informacji o dostosowywaniu `MapControl` wystąpienia, zobacz [Przegląd lokalizacja i mapy](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) w witrynie MSDN.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla `Map` formantu umożliwiają deweloperom zastąpienie renderowania natywnego domyślne z własne dostosowania specyficzne dla platformy. Xamarin.Forms.Maps zapewnia abstrakcji między platformami, wyświetlania mapy używających mapy natywnych interfejsów API na każdej platformie, aby zapewnić szybkie i znanych mapy środowisko dla użytkowników.
+W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania dla `Map` kontrolki, dzięki czemu deweloperzy mogą zastąpić domyślne renderowanie natywnych, dostosowując swoje własne specyficzne dla platformy. Projekt xamarin.Forms.Maps dla zapewnia abstrakcję dla wielu platform, które wyświetlanie map, korzystających z mapy natywnych interfejsów API na każdej platformie zapewnienie mapę szybkie i dobrze znane środowisko dla użytkowników.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Formantu mapy](~/xamarin-forms/user-interface/map.md)
+- [Kontrolki mapy](~/xamarin-forms/user-interface/map.md)
 - [Mapy dla systemu iOS](~/ios/user-interface/controls/ios-maps/index.md)
 - [Interfejs API map](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Dostosowane numeru Pin (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+- [Przypnij dostosowany (przykład)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

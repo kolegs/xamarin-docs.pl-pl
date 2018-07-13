@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34fb58f44e3f341fa34eef512d61f20f5d035a9b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830483"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998207"
 ---
 # <a name="gtk-platform-setup"></a>Instalator platformy GTK #
 
@@ -211,7 +211,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>Formularze natywne
 
-Formularze natywne umożliwia Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych stron, które mają być używane przez natywne projekty, w tym projekty biblioteki GTK #. Można to zrobić przez utworzenie wystąpienia [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-pochodnych strony i konwertowania go do natywnej biblioteki GTK # typu przy użyciu `CreateContainer` — metoda rozszerzenia:
+Formularze natywne umożliwia Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-pochodnych stron, które mają być używane przez natywne projekty, w tym projekty biblioteki GTK #. Można to zrobić przez utworzenie wystąpienia [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-pochodnych strony i konwertowania go do natywnej biblioteki GTK # typu przy użyciu `CreateContainer` — metoda rozszerzenia:
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();

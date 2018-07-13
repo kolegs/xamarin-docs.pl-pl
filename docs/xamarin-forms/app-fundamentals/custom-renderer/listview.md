@@ -1,42 +1,42 @@
 ---
 title: Dostosowywanie ListView
-description: ListView platformy Xamarin.Forms jest widoku, który będzie wyświetlany jako pionowy listy zbierania danych. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnego komórki, dzięki czemu większa kontrola nad macierzysty listy kontrolowania wydajności.
+description: ListView Xamarin.Forms jest widok, który wyświetla zbiór danych jako pionowy listy. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnych komórki, dzięki czemu większa kontrola nad natywnych listy kontrolowania wydajności.
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 69640c1cdea6d7dbe3ec82dacbc77991c7b28c99
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b3b73d542faebdb8ab85c989d7812368f4f3ffac
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847403"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997494"
 ---
 # <a name="customizing-a-listview"></a>Dostosowywanie ListView
 
-_ListView platformy Xamarin.Forms jest widoku, który będzie wyświetlany jako pionowy listy zbierania danych. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnego komórki, dzięki czemu większa kontrola nad macierzysty listy kontrolowania wydajności._
+_ListView Xamarin.Forms jest widok, który wyświetla zbiór danych jako pionowy listy. W tym artykule przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnych komórki, dzięki czemu większa kontrola nad natywnych listy kontrolowania wydajności._
 
-Każdy widok platformy Xamarin.Forms ma towarzyszący renderowania dla każdej platformy, która tworzy wystąpienie macierzystego formantu. Gdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ListViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy natywny `UITableView` formantu. Na platformie Android `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. W systemie Windows platformy Uniwersalnej, `ListViewRenderer` natywny tworzy wystąpienie klasy `ListView` formantu. Aby uzyskać więcej informacji na temat klasy macierzystego formantu, mapowane na formanty platformy Xamarin.Forms i renderowania, zobacz [renderowania klasy podstawowej i kontrolki natywne](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Każdego widoku interfejsu Xamarin.Forms ma towarzyszący modułu renderowania dla każdej platformy, która tworzy wystąpienie kontrolki natywne. Gdy [ `ListView` ](xref:Xamarin.Forms.ListView) jest renderowany przez aplikację platformy Xamarin.Forms w systemie iOS `ListViewRenderer` tworzenia wystąpienia klasy, która z kolei tworzy macierzystej `UITableView` kontroli. Na platformie Android `ListViewRenderer` klasy tworzy macierzystej `ListView` kontroli. Na Universal Windows Platform (platformy UWP), `ListViewRenderer` klasy tworzy macierzystej `ListView` kontroli. Aby uzyskać więcej informacji na temat renderowania i klasy natywnych kontrolek, mapowane kontrolek zestawu narzędzi Xamarin.Forms, zobacz [natywne kontrolki i klasy podstawowej renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Na poniższym diagramie przedstawiono związek między [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kontroli i odpowiednie natywnego formantów, które implementuje ona:
+Na poniższym diagramie przedstawiono relację między [ `ListView` ](xref:Xamarin.Forms.ListView) kontroli i odpowiednie kontrolki natywne, które ją implementują:
 
-![](listview-images/listview-classes.png "Relacja między formantu ListView i implementujący kontrolki natywne")
+![](listview-images/listview-classes.png "Relacja między formantem ListView i implementowanie natywne kontrolki")
 
-Proces renderowania można podjąć zaletą do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) na każdej z platform. Proces ten wygląda następująco:
+Proces renderowania może podjąć zalet do zaimplementowania dostosowań specyficzne dla platformy przez utworzenie niestandardowego modułu renderowania dla [ `ListView` ](xref:Xamarin.Forms.ListView) na każdej platformie. Proces ten jest w następujący sposób:
 
-1. [Utwórz](#Creating_the_Custom_ListView_Control) kontrolkę niestandardową platformy Xamarin.Forms.
-1. [Korzystać z](#Consuming_the_Custom_Control) kontrolka niestandardowa z platformy Xamarin.Forms.
-1. [Utwórz](#Creating_the_Custom_Renderer_on_each_Platform) niestandardowego modułu renderowania dla formantu w każdej z platform.
+1. [Utwórz](#Creating_the_Custom_ListView_Control) formantu niestandardowego zestawu narzędzi Xamarin.Forms.
+1. [Używanie](#Consuming_the_Custom_Control) kontrolki niestandardowej z zestawu narzędzi Xamarin.Forms.
+1. [Utwórz](#Creating_the_Custom_Renderer_on_each_Platform) niestandardowego modułu renderowania kontrolki na każdej platformie.
 
-Każdy element teraz omówione zostaną z kolei, aby zaimplementować `NativeListView` renderowania wykorzystującego kontrolki listy specyficzne dla platformy i układy natywnego komórki. Ten scenariusz przydaje się podczas przenoszenia istniejących aplikacji natywnej zawierający listę i kod komórki, które mogą być ponownie używane. Ponadto umożliwia szczegółowe dostosowanie listy funkcje kontroli, które mogą wpłynąć na wydajność, takie jak wirtualizacja danych.
+Każdy element zostaną teraz dokładniej omówione w implementacji `NativeListView` modułu renderowania, wykorzystującego kontrolki listy specyficzne dla platformy i układów natywnych komórki. Ten scenariusz przydaje się podczas przenoszenia istniejących aplikacji natywnej, zawierający listę i komórki kodu, które mogą być ponownie używane. Ponadto umożliwia szczegółowe dostosowania różnych funkcji kontroli listy, które mogą wpłynąć na wydajność, takie jak wirtualizacja danych.
 
 <a name="Creating_the_Custom_ListView_Control" />
 
-## <a name="creating-the-custom-listview-control"></a>Tworzenie niestandardowych ListView — formant
+## <a name="creating-the-custom-listview-control"></a>Tworzenie formantu niestandardowego ListView
 
-Niestandardowy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) formant może zostać utworzony przez podklasy `ListView` klasy, jak pokazano w poniższym przykładzie:
+Niestandardowy [ `ListView` ](xref:Xamarin.Forms.ListView) kontrolki mogą być tworzone przez podklasy `ListView` klasy, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public class NativeListView : ListView
@@ -60,13 +60,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` Jest tworzony w .NET Standard projektu biblioteki i definiuje interfejsu API dla kontrolki niestandardowej. Ten formant przedstawia `Items` właściwość, która służy do wypełniania `ListView` przy użyciu danych i które mogą być danymi powiązanymi do wyświetlenia celów. Również przedstawia `ItemSelected` zdarzenie, które będą wywoływane zawsze, gdy element jest zaznaczony w formancie listy natywnego specyficzne dla platformy. Aby uzyskać więcej informacji na temat wiązania danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeListView` Jest tworzony w projekcie biblioteki .NET Standard i definiuje interfejs API dla formantu niestandardowego. Udostępnia tę kontrolkę `Items` właściwość, która jest używana do zapełniania `ListView` z danymi i które mogą być danymi powiązanymi dla wyświetlania celów. Ponadto udostępnia ona `ItemSelected` zdarzenia, które będzie uruchamiane zawsze, gdy element jest wybrany w kontrolce listy macierzystego specyficznego dla platformy. Aby uzyskać więcej informacji na temat tworzenia powiązań danych, zobacz [podstawy powiązania danych](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Control" />
 
-## <a name="consuming-the-custom-control"></a>Korzystanie z formantu niestandardowego
+## <a name="consuming-the-custom-control"></a>Korzystanie z kontrolki niestandardowej
 
-`NativeListView` Formant niestandardowy może być przywoływany w języku Xaml w .NET Standard projektu biblioteki deklarowanie przestrzeni nazw dla lokalizacji, a następnie użyć prefiksu przestrzeni nazw w formancie. Poniższy kod przedstawia przykład sposobu `NativeListView` kontrolki niestandardowej, może być zużyte przez strony XAML:
+`NativeListView` Formantu niestandardowego może odwoływać się w języku Xaml w projekcie biblioteki .NET Standard deklarowanie przestrzeni nazw dla lokalizacji i przy użyciu prefiksu przestrzeni nazw w formancie. Poniższy kod przedstawia przykładowy sposób, w jaki `NativeListView` kontrolki niestandardowej mogą być wykorzystane przez strony XAML:
 
 ```xaml
 <ContentPage ...
@@ -86,9 +86,9 @@ public class NativeListView : ListView
 </ContentPage>
 ```
 
-`local` Prefiks przestrzeni nazw może mieć nazwę żadnych czynności. Jednak `clr-namespace` i `assembly` wartości muszą być zgodne szczegóły kontrolki niestandardowej. Po zadeklarowaniu obszaru nazw prefiks jest używany do odwołania kontrolki niestandardowej.
+`local` Prefiks przestrzeni nazw może mieć nazwę niczego. Jednak `clr-namespace` i `assembly` wartości muszą być zgodne szczegóły kontrolki niestandardowej. Po zadeklarowaniu przestrzeń nazw prefiks jest używany do odwołania kontrolki niestandardowej.
 
-Poniższy kod przedstawia przykład sposobu `NativeListView` kontrolki niestandardowej mogą być używane przez stronę C#:
+Poniższy kod przedstawia przykładowy sposób, w jaki `NativeListView` kontrolki niestandardowej mogą być wykorzystane przez strony C#:
 
 ```csharp
 public class MainPageCS : ContentPage
@@ -131,39 +131,39 @@ public class MainPageCS : ContentPage
 }
 ```
 
-`NativeListView` Kontrolki niestandardowej używa niestandardowe moduły renderowania specyficzne dla platformy, aby wyświetlić listę danych, które są wprowadzane przy użyciu `Items` właściwości. Każdy wiersz na liście zawiera trzy elementy danych — nazwę, kategorię i nazwę pliku obrazu. Układ każdy wiersz na liście jest zdefiniowana przez niestandardowego modułu renderowania specyficzne dla platformy.
+`NativeListView` Kontrolki niestandardowej użyto niestandardowe programy renderujące specyficzne dla platformy, aby wyświetlić listę danych, które jest wypełniana przy użyciu `Items` właściwości. Każdy wiersz na liście zawiera trzy elementy danych — nazwy, kategorii i nazwa pliku obrazu. Układ każdy wiersz na liście jest definiowany przez niestandardowego modułu renderowania specyficzne dla platformy.
 
 > [!NOTE]
-> Ponieważ `NativeListView` kontrolki niestandardowej będzie renderowany przy użyciu formantów listy specyficzne dla platformy, które obejmują przewijanie możliwości, formantu niestandardowego należy nie jest hostowana w formantach przewijanego układu takich jak [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/).
+> Ponieważ `NativeListView` kontrolki niestandardowej będzie renderowany przy użyciu kontrolki listy specyficzne dla platformy, obejmujących przewijanie możliwości, formant niestandardowy powinna nie być hostowana w kontrolkach przewijany układ takich jak [ `ScrollView` ](xref:Xamarin.Forms.ScrollView).
 
-Teraz można dodać niestandardowego modułu renderowania do każdego projektu aplikacji do tworzenia kontrolki listy specyficzne dla platformy i układy natywnego komórki.
+Teraz można dodać niestandardowego modułu renderowania do każdego projektu aplikacji do tworzenia kontrolek listy specyficzne dla platformy i układy natywnych komórki.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Tworzenie niestandardowego modułu renderowania na każdej platformie
 
-Proces tworzenia klasy niestandardowego modułu renderowania wygląda następująco:
+Proces tworzenia klasy niestandardowego modułu renderowania jest następująca:
 
-1. Utwórz podklasę `ListViewRenderer` klasy, która renderuje kontrolkę niestandardową.
-1. Zastąpienie `OnElementChanged` metodę, która renderuje niestandardowej logiki kontroli i zapisu, aby dostosować go. Ta metoda jest wywoływana, gdy odpowiednie platformy Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jest tworzony.
-1. Dodaj `ExportRenderer` atrybutu klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania Kontrolki niestandardowe platformy Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania z platformy Xamarin.Forms.
+1. Utwórz podklasę `ListViewRenderer` klasę, która renderuje kontrolki niestandardowej.
+1. Zastąp `OnElementChanged` metodę, która renderuje niestandardowe logiki kontrola i zapisz go dostosować. Ta metoda jest wywoływana, gdy odpowiedni zestaw narzędzi Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) zostanie utworzony.
+1. Dodaj `ExportRenderer` atrybutów do klasy niestandardowego modułu renderowania, aby określić, że będą używane do renderowania formantu niestandardowego zestawu narzędzi Xamarin.Forms. Ten atrybut służy do rejestrowania niestandardowego modułu renderowania przy użyciu zestawu narzędzi Xamarin.Forms.
 
 > [!NOTE]
-> Jest to pozycja opcjonalna zapewnienie niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej komórki będzie używany.
+> Jest to opcjonalne zapewnić niestandardowego modułu renderowania w każdym projekcie platformy. Jeśli nie jest zarejestrowany niestandardowego modułu renderowania, domyślne renderowanie dla klasy podstawowej w komórce będą używane.
 
 Na poniższym diagramie przedstawiono obowiązki każdego projektu w przykładowej aplikacji, oraz relacje między nimi:
 
-![](listview-images/solution-structure.png "Obowiązki NativeListView niestandardowe renderowania projektu:")
+![](listview-images/solution-structure.png "NativeListView niestandardowego modułu renderowania projektu obowiązki")
 
-`NativeListView` Kontrolki niestandardowej jest renderowany przez klasy renderowania specyficzne dla platformy, które wynikają z `ListViewRenderer` klasy dla każdej platformy. Powoduje to w każdym `NativeListView` kontrolki niestandardowej renderowanego z kontrolki listy specyficzne dla platformy i układy natywnego komórki, jak pokazano na poniższych zrzutach ekranu:
+`NativeListView` Formantu niestandardowego jest renderowany przez klasy renderowania specyficzne dla platformy, które wynikają z `ListViewRenderer` klasy dla każdej platformy. Skutkuje to każda `NativeListView` kontrolek niestandardowych, które są renderowane za pomocą kontrolki listy specyficzne dla platformy i układy natywnych komórki, jak pokazano na poniższych zrzutach ekranu:
 
 ![](listview-images/screenshots.png "NativeListView na każdej platformie")
 
-`ListViewRenderer` Klasy ujawnia `OnElementChanged` metodę, która jest wywoływana po utworzeniu platformy Xamarin.Forms formantu niestandardowego do renderowania kontrolki na odpowiednich macierzystego. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentuje elementu platformy Xamarin.Forms który renderującego *został* dołączyć i elementu platformy Xamarin.Forms który renderującego *jest* dołączony do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie `null` i `NewElement` właściwości będzie zawierać odwołanie do `NativeListView` wystąpienia.
+`ListViewRenderer` Klasy ujawnia `OnElementChanged` metody, która jest wywoływana podczas tworzenia formantu niestandardowego zestawu narzędzi Xamarin.Forms do renderowania odpowiedniej kontrolki natywne. Ta metoda przyjmuje `ElementChangedEventArgs` parametr, który zawiera `OldElement` i `NewElement` właściwości. Te właściwości reprezentują element zestawu narzędzi Xamarin.Forms, modułu renderowania *został* dołączyć i element zestawu narzędzi Xamarin.Forms, modułu renderowania *jest* dołączone do, odpowiednio. W przykładowej aplikacji `OldElement` właściwość będzie miała `null` i `NewElement` właściwość będzie zawierać odwołanie do `NativeListView` wystąpienia.
 
-Zastąpiona wersja `OnElementChanged` metody w każdej klasie renderowania specyficzne dla platformy jest miejscem do wykonania dostosowanie macierzystego formantu. Typu odwołanie do macierzystego formantu używanego na platformie jest możliwy za pośrednictwem `Control` właściwości. Ponadto można uzyskać odwołanie do formantu platformy Xamarin.Forms, który jest renderowany przy użyciu `Element` właściwości.
+Zastąpione wersję `OnElementChanged` metody, w każdej klasie renderowania specyficzne dla platformy jest w tym miejscu Przeprowadź Dostosowywanie kontrolki natywne. Wpisane odwołania do kontrolki natywne używane na platformie jest możliwy za pośrednictwem `Control` właściwości. Ponadto można uzyskać odwołanie do formantu Xamarin.Forms, który jest renderowany przy użyciu `Element` właściwości.
 
-Należy zachować ostrożność podczas subskrybowania obsługi zdarzeń w `OnElementChanged` metody, jak pokazano w poniższym przykładzie:
+Należy zachować ostrożność podczas subskrybowania obsługi zdarzeń w `OnElementChanged` metody, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -180,15 +180,15 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Macierzystego formantu tylko należy skonfigurować i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały subskrybuje, należy anulować w tylko wtedy, gdy element renderującego jest dołączony do zmiany. Przyjmowanie takie podejście pomoże utworzyć niestandardowego modułu renderowania nie boryka się z przecieki pamięci.
+Natywne kontrolki tylko należy skonfigurować i subskrypcję procedury obsługi zdarzeń, gdy niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Podobnie programy obsługi zdarzeń, które zostały zasubskrybowane przez powinna być usuwania subskrypcji tylko wtedy, gdy element renderer jest dołączony do zmiany. Przyjęcie tego podejścia pomoże utworzyć niestandardowego modułu renderowania, który nie odczuwają przecieków pamięci.
 
-Zastąpiona wersja `OnElementPropertyChanged` metody w każdej klasie renderowania specyficzne dla platformy jest używana do reagowania na zmiany właściwości możliwej do wiązania na platformy Xamarin.Forms kontrolki niestandardowej. Sprawdź właściwości, które uległy zmianie zawsze należy, jak to zastąpienie może zostać wywołana wiele razy.
+Zastąpione wersję `OnElementPropertyChanged` metody, w każdej klasie renderowania specyficzne dla platformy jest miejscem, aby odpowiadanie na zmiany właściwości możliwej do wiązania kontrolki niestandardowego zestawu narzędzi Xamarin.Forms. Sprawdź właściwości, które uległy zmianie powinien zawsze się, jak to zastąpienie może być wywoływana wiele razy.
 
-Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje mechanizm renderujący platformy Xamarin.Forms. Atrybut przyjmuje dwa parametry — Nazwa typu formantu niestandardowego platformy Xamarin.Forms renderowanego i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
+Każda klasa niestandardowego modułu renderowania zostanie nadany `ExportRenderer` atrybut, który rejestruje modułu renderowania za pomocą zestawu narzędzi Xamarin.Forms. Ten atrybut przyjmuje dwa parametry — Nazwa typu formantu niestandardowego zestawu narzędzi Xamarin.Forms renderowanego i nazwę typu niestandardowego modułu renderowania. `assembly` Prefiks atrybutu określa, że ten atrybut ma zastosowanie do całego zestawu.
 
-W poniższych sekcjach omówiono implementacji każdej klasy niestandardowego modułu renderowania specyficzne dla platformy.
+W poniższych sekcjach omówiono wykonania każdej klasy specyficzne dla platformy niestandardowego modułu renderowania.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie modułu renderowania niestandardowe w systemie iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Tworzenie niestandardowego modułu renderowania w systemie iOS
 
 Poniższy przykład kodu pokazuje niestandardowego modułu renderowania dla platformy iOS:
 
@@ -214,7 +214,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`UITableView` Sterowanie jest konfigurowane przez utworzenie wystąpienia `NativeiOSListViewSource` klasy, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Ta klasa dostarcza dane do `UITableView` kontroli przez zastąpienie `RowsInSection` i `GetCell` metody `UITableViewSource` klasy, a przez udostępnianie `Items` właściwość, która zawiera listę danych do wyświetlenia. Udostępnia klasy `RowSelected` zastąpienie metody, która wywołuje `ItemSelected` zdarzenia dostarczone przez `NativeListView` kontrolki niestandardowej. Aby uzyskać więcej informacji o metodzie przesłania, zobacz [UITableViewSource podklasy](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda zwraca `UITableCellView` jest wypełniana dane dla każdego wiersza na liście i przedstawiono w poniższym przykładzie:
+`UITableView` Kontroli jest konfigurowana przez utworzenie wystąpienia `NativeiOSListViewSource` klasy, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Ta klasa dostarcza dane do `UITableView` kontroli przez zastąpienie `RowsInSection` i `GetCell` metody z `UITableViewSource` klasy, a przez udostępnianie `Items` właściwość, która zawiera lista danych, które mają być wyświetlane. Ta klasa oferuje również `RowSelected` zastąpienie metody, która wywołuje `ItemSelected` zdarzenie dostarczone przez `NativeListView` kontrolki niestandardowej. Aby uzyskać więcej informacji na temat metody zastąpienia, zobacz [UITableViewSource podklasy](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda zwraca `UITableCellView` jest wypełniana danymi dla każdego wiersza na liście i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -241,9 +241,9 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-Ta metoda tworzy `NativeiOSListViewCell` wystąpienia dla każdego wiersza danych, który będzie wyświetlany na ekranie. `NativeiOSCell` Wystąpienia definiuje układ każdej komórki, a dane w komórce. Gdy komórki zniknie z ekranu z powodu przewijania, komórki będą dostępne do ponownego użycia. Dzięki temu można uniknąć traci pamięci przez zapewnienie, że istnieją tylko `NativeiOSCell` wystąpień dla danych będzie wyświetlany na ekranie, a nie wszystkie dane na liście. Aby uzyskać więcej informacji na temat ponownemu komórki, zobacz [komórki ponowne użycie](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda odczytuje również `ImageFilename` właściwości każdego wiersza danych, pod warunkiem, że istnieje i obraz odczytuje i zapisuje go jako `UIImage` wystąpienia przed zaktualizowaniem `NativeiOSListViewCell` wystąpienie z danymi (nazwa, kategoria i obrazu) wiersz.
+Ta metoda tworzy `NativeiOSListViewCell` wystąpienia dla każdego wiersza danych, która będzie wyświetlana na ekranie. `NativeiOSCell` Wystąpienia definiuje układ każdej komórki, a dane w komórce. Gdy komórki zniknie z ekranu z powodu przewijania, komórki zostanie udostępniona do ponownego wykorzystania. Pozwala to uniknąć marnowania pamięci, zapewniając, że istnieją tylko `NativeiOSCell` wystąpień dla danych wyświetlanych na ekranie, a nie wszystkich danych znajdujących się na liście. Aby uzyskać więcej informacji na temat ponownego użycia komórki zobacz [ponownie użyć komórki](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Odczytuje również metoda `ImageFilename` właściwości każdego wiersza danych, pod warunkiem, że istnieje i obraz, który odczytuje i zapisuje go jako `UIImage` wystąpienia przed zaktualizowaniem `NativeiOSListViewCell` wystąpienie z danymi (nazwa, kategoria i obrazu) wiersz.
 
-`NativeiOSListViewCell` Klasy definiuje układu dla każdej komórki i przedstawiono w poniższym przykładzie:
+`NativeiOSListViewCell` Klasa definiuje układ każdej komórki i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public class NativeiOSListViewCell : UITableViewCell
@@ -295,11 +295,11 @@ public class NativeiOSListViewCell : UITableViewCell
 }
 ```
 
-Ta klasa definiuje formanty używany do renderowania zawartości komórki przez użytkownika i ich układ. `NativeiOSListViewCell` Konstruktora tworzy wystąpienia `UILabel` i `UIImageView` formanty oraz inicjuje ich wyglądu. Formanty te służą do wyświetlania każdego wiersza danych, z `UpdateCell` metodę ustawić te dane w `UILabel` i `UIImageView` wystąpień. Lokalizacja tych wystąpień jest ustawiana przez przesłoniętych `LayoutSubviews` metody, określając ich współrzędnych wewnątrz komórki przy realizacji.
+Ta klasa definiuje kontrolki, używany do renderowania zawartości komórki i ich rozmieszczenie. `NativeiOSListViewCell` Konstruktor tworzy wystąpienia `UILabel` i `UIImageView` kontroluje i inicjuje ich występowania. Te kontrolki są używane do wyświetlania danych każdy wiersz z `UpdateCell` metody używanej do zestawu danych na `UILabel` i `UIImageView` wystąpień. Lokalizacja tych wystąpień jest ustawiana przez zastąpione `LayoutSubviews` metoda przez podanie współrzędnych w komórce.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Odpowiada na żądania zmiany właściwości formantu niestandardowego
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reagowanie na zmiany właściwości w formancie niestandardowym
 
-Jeśli `NativeListView.Items` właściwości zmian z powodu dodawane do elementów lub usunięty z listy, niestandardowego modułu renderowania musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metodę, która jest wyświetlana w poniższym przykładzie:
+Jeśli `NativeListView.Items` właściwość zmieni się, ze względu na elementy są dodawane do lub usunięte z listy, niestandardowego modułu renderowania, które musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metody, która jest wyświetlana w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -312,7 +312,7 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-Ta metoda tworzy nowe wystąpienie klasy `NativeiOSListViewSource` klasy, która dostarcza dane do `UITableView` kontrolować, pod warunkiem, że można powiązać `NativeListView.Items` właściwość zostanie zmieniona.
+Ta metoda tworzy nowe wystąpienie klasy `NativeiOSListViewSource` klasę, która udostępnia dane z `UITableView` sterowania, pod warunkiem, że może być powiązana `NativeListView.Items` właściwości została zmieniona.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Tworzenie niestandardowego modułu renderowania w systemie Android
 
@@ -358,9 +358,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Natywnego `ListView` kontroli jest skonfigurowana pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Ta konfiguracja obejmuje utworzenie wystąpienia `NativeAndroidListViewAdapter` klasy, która dostarcza dane do natywnego `ListView` kontroli i rejestrowania programu obsługi zdarzeń do przetwarzania `ItemClick` zdarzeń. Z kolei ten program obsługi wywoła `ItemSelected` zdarzenia dostarczone przez `NativeListView` kontrolki niestandardowej. `ItemClick` Zdarzeń jest Anulowano subskrypcję, jeśli element platformy Xamarin.Forms renderującego jest dołączony do zmiany.
+Natywnych `ListView` kontroli jest skonfigurowany, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Ta konfiguracja obejmuje utworzenie wystąpienia `NativeAndroidListViewAdapter` klasy, która udostępnia dane do natywnych `ListView` kontrolowanie i rejestrowanie programu obsługi zdarzeń do przetworzenia `ItemClick` zdarzeń. Z kolei ten program obsługi będzie wywoływać `ItemSelected` zdarzenie dostarczone przez `NativeListView` kontrolki niestandardowej. `ItemClick` Zdarzeń jest subskrypcja została anulowana, jeśli element zestawu narzędzi Xamarin.Forms modułu renderowania jest dołączony do zmiany.
 
-`NativeAndroidListViewAdapter` Pochodną `BaseAdapter` klasy i ujawnia `Items` właściwość, która zawiera dane mają być wyświetlane na liście, a także zastępowanie `Count`, `GetView`, `GetItemId`, i `this[int]` metody. Aby uzyskać więcej informacji na temat te zastąpienia metody, zobacz [implementacja ListAdapter](~/android/user-interface/layouts/list-view/populating.md). `GetView` Metoda zwraca widok dla każdego wiersza, zawierają dane i przedstawiono w poniższym przykładzie:
+`NativeAndroidListViewAdapter` Pochodzi od klasy `BaseAdapter` klasy i ujawnia `Items` właściwość, która zawiera lista danych, które mają być wyświetlane, a także zastępowanie `Count`, `GetView`, `GetItemId`, i `this[int]` metody. Aby uzyskać więcej informacji na temat tych zastąpienia metody, zobacz [Implementowanie ListAdapter](~/android/user-interface/layouts/list-view/populating.md). `GetView` Metoda zwraca widok dla każdego wiersza, wypełniony danymi i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
 public override View GetView (int position, View convertView, ViewGroup parent)
@@ -405,11 +405,11 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 }
 ```
 
-`GetView` Wywoływana jest metoda zwraca komórki ma być renderowany jako `View`, dla każdego wiersza danych na liście. Tworzy `View` wystąpienia dla każdego wiersza danych, który będzie wyświetlany na ekranie z wygląd `View` wystąpienia są zdefiniowane w pliku układu. Gdy komórki zniknie z ekranu z powodu przewijania, komórki będą dostępne do ponownego użycia. Dzięki temu można uniknąć traci pamięci przez zapewnienie, że istnieją tylko `View` wystąpień dla danych będzie wyświetlany na ekranie, a nie wszystkie dane na liście. Aby uzyskać więcej informacji na temat ponownemu widoku, zobacz [wiersza widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md).
+`GetView` Metoda jest wywoływana w celu zwrócenia komórki mógł być renderowany jako `View`, dla każdego wiersza danych na liście. Tworzy `View` wystąpienia dla każdego wiersza danych, która będzie wyświetlana na ekranie za pomocą wygląd `View` wystąpienia, które są zdefiniowane w pliku układu. Gdy komórki zniknie z ekranu z powodu przewijania, komórki zostanie udostępniona do ponownego wykorzystania. Pozwala to uniknąć marnowania pamięci, zapewniając, że istnieją tylko `View` wystąpień dla danych wyświetlanych na ekranie, a nie wszystkich danych znajdujących się na liście. Aby uzyskać więcej informacji na temat ponownego użycia widoku zobacz [wiersz widoku ponownego użycia](~/android/user-interface/layouts/list-view/populating.md).
 
-`GetView` Metoda również wypełnia `View` wystąpienia o danych, w tym odczytywania danych obrazów z nazwy pliku określonej w `ImageFilename` właściwości.
+`GetView` Metoda również wypełnia `View` wystąpienie z danych, w tym odczytywanie danych obrazu z nazwy pliku określonej w `ImageFilename` właściwości.
 
-Układ dispayed każdej komórki przez natywnego `ListView` jest zdefiniowany w `NativeAndroidListViewCell.axml` pliku układu, który jest zwiększony przez `LayoutInflater.Inflate` metody. W poniższym przykładzie przedstawiono definicję układu:
+Układ każdej dispayed komórki w natywnym `ListView` jest zdefiniowany w `NativeAndroidListViewCell.axml` plik układu, który jest zwiększony przez `LayoutInflater.Inflate` metody. Poniższy przykładowy kod przedstawia definicję układu:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -449,11 +449,11 @@ Układ dispayed każdej komórki przez natywnego `ListView` jest zdefiniowany w 
 </RelativeLayout>
 ```
 
-Ten układ Określa, że dwa `TextView` formantów i `ImageView` formantu są używane do wyświetlenia zawartości komórki. Dwa `TextView` kontrolki są orientacji pionowej w `LinearLayout` sterowania wszystkie formanty, które są zawarte w `RelativeLayout`.
+Ten układ Określa, że dwa `TextView` kontrolek i `ImageView` kontrolki są używane do wyświetlenia zawartości komórki. Dwa `TextView` formanty są w orientacji pionowej w ramach `LinearLayout` kontroli przy użyciu wszystkich formantów, które są zawarte w `RelativeLayout`.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Odpowiada na żądania zmiany właściwości formantu niestandardowego
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reagowanie na zmiany właściwości w formancie niestandardowym
 
-Jeśli `NativeListView.Items` właściwości zmian z powodu dodawane do elementów lub usunięty z listy, niestandardowego modułu renderowania musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metodę, która jest wyświetlana w poniższym przykładzie:
+Jeśli `NativeListView.Items` właściwość zmieni się, ze względu na elementy są dodawane do lub usunięte z listy, niestandardowego modułu renderowania, które musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metody, która jest wyświetlana w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -466,7 +466,7 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-Ta metoda tworzy nowe wystąpienie klasy `NativeAndroidListViewAdapter` klasy, która dostarcza dane do natywnego `ListView` kontrolować, pod warunkiem, że można powiązać `NativeListView.Items` właściwość zostanie zmieniona.
+Ta metoda tworzy nowe wystąpienie klasy `NativeAndroidListViewAdapter` klasy, która udostępnia dane do natywnych `ListView` sterowania, pod warunkiem, że może być powiązana `NativeListView.Items` właściwości została zmieniona.
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>Tworzenie niestandardowego modułu renderowania na platformy uniwersalnej systemu Windows
 
@@ -511,9 +511,9 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Natywnego `ListView` kontroli jest skonfigurowana pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu platformy Xamarin.Forms. Ta konfiguracja obejmuje ustawienia jak natywnego `ListView` formant będzie odpowiadać elementów, podczas wypełniania danych wyświetlany przez formant, definiowanie wygląd i zawartość każdej komórki i rejestrowania programu obsługi zdarzeń do przetwarzania `SelectionChanged` zdarzeń. Z kolei ten program obsługi wywoła `ItemSelected` zdarzenia dostarczone przez `NativeListView` kontrolki niestandardowej. `SelectionChanged` Zdarzeń jest Anulowano subskrypcję, jeśli element platformy Xamarin.Forms renderującego jest dołączony do zmiany.
+Natywnych `ListView` kontroli jest skonfigurowany, pod warunkiem, że niestandardowego modułu renderowania jest dołączony do nowego elementu zestawu narzędzi Xamarin.Forms. Ta konfiguracja obejmuje ustawienia jak natywnych `ListView` kontrolki będą odpowiadać na elementy są zaznaczone, wypełnianie danych wyświetlany przez kontrolkę, definiując wygląd i zawartość każdej komórki i rejestrowania programu obsługi zdarzeń do przetworzenia `SelectionChanged` zdarzeń. Z kolei ten program obsługi będzie wywoływać `ItemSelected` zdarzenie dostarczone przez `NativeListView` kontrolki niestandardowej. `SelectionChanged` Zdarzeń jest subskrypcja została anulowana, jeśli element zestawu narzędzi Xamarin.Forms modułu renderowania jest dołączony do zmiany.
 
-Wygląd i zawartość poszczególnych native `ListView` komórki są definiowane przez `DataTemplate` o nazwie `ListViewItemTemplate`. To `DataTemplate` znajduje się w słowniku zasobów na poziomie aplikacji i przedstawiono w poniższym przykładzie:
+Wygląd i zawartość każdego native `ListView` komórki są definiowane przez `DataTemplate` o nazwie `ListViewItemTemplate`. To `DataTemplate` znajduje się w słowniku zasobów na poziomie aplikacji i przedstawiono w poniższym przykładzie kodu:
 
 ```xaml
 <DataTemplate x:Key="ListViewItemTemplate">
@@ -538,11 +538,11 @@ Wygląd i zawartość poszczególnych native `ListView` komórki są definiowane
 </DataTemplate>
 ```
 
-`DataTemplate` Określa formanty używane do wyświetlenia zawartości komórki, a ich układu i wyglądu. Dwa `TextBlock` formantów i `Image` formantu są używane do wyświetlenia zawartości komórki przez powiązanie danych. Ponadto wystąpienia `ConcatImageExtensionConverter` służy do łączenia `.jpg` rozszerzenie nazwy pliku każdego obrazu. Gwarantuje to, że `Image` formantu można załadować i renderować obraz, gdy jest `Source` właściwość jest ustawiona.
+`DataTemplate` Określa kontrolek używanych w celu wyświetlenia zawartości komórki, a ich układ i wygląd. Dwa `TextBlock` kontrolek i `Image` kontrolki są używane do wyświetlenia zawartości komórki za pomocą powiązania danych. Ponadto, wystąpienie `ConcatImageExtensionConverter` służy do łączenia `.jpg` rozszerzenie nazwy pliku każdego obrazu. Gwarantuje to, że `Image` kontroli można załadować i renderować obraz, gdy jest ona `Source` właściwość jest ustawiona.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Odpowiada na żądania zmiany właściwości formantu niestandardowego
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reagowanie na zmiany właściwości w formancie niestandardowym
 
-Jeśli `NativeListView.Items` właściwości zmian z powodu dodawane do elementów lub usunięty z listy, niestandardowego modułu renderowania musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metodę, która jest wyświetlana w poniższym przykładzie:
+Jeśli `NativeListView.Items` właściwość zmieni się, ze względu na elementy są dodawane do lub usunięte z listy, niestandardowego modułu renderowania, które musi odpowiedzieć, wyświetlając zmiany. Można to osiągnąć przez zastąpienie `OnElementPropertyChanged` metody, która jest wyświetlana w poniższym przykładzie kodu:
 
 ```csharp
 protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -556,11 +556,11 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 }
 ```
 
-Metoda ponownie wypełnia natywnego `ListView` formantu z danymi zmienione, pod warunkiem, że można powiązać `NativeListView.Items` właściwość zostanie zmieniona.
+Metoda wypełni ponownie natywnych `ListView` kontrolki z danymi zmienione, pod warunkiem, że może być powiązana `NativeListView.Items` właściwości została zmieniona.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule ma przedstawiono sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnego komórki, dzięki czemu większa kontrola nad macierzysty listy kontrolowania wydajności.
+W tym artykule ma pokazano sposób tworzenia niestandardowego modułu renderowania hermetyzujący kontrolki listy specyficzne dla platformy i układy natywnych komórki, dzięki czemu większa kontrola nad natywnych listy kontrolowania wydajności.
 
 
 ## <a name="related-links"></a>Linki pokrewne

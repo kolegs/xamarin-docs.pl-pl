@@ -1,66 +1,66 @@
 ---
-title: Niestandardowe animacji platformy Xamarin.Forms
-description: W tym artykule pokazano, jak klasa animacji platformy Xamarin.FOrms służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez istniejące metody animacji.
+title: Niestandardowe animacje w interfejsie Xamarin.Forms
+description: W tym artykule pokazano, jak klasa animacji Xamarin.FOrms służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacje, które animować właściwości, które nie są animowane za pomocą istniejących metod animacji.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 74430f6c158e74569f1b2cbfa0b6a85e8d40fbcf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 519368031384e72a2d2e0a7c99053be44ea4cffc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242979"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995224"
 ---
-# <a name="custom-animations-in-xamarinforms"></a>Niestandardowe animacji platformy Xamarin.Forms
+# <a name="custom-animations-in-xamarinforms"></a>Niestandardowe animacje w interfejsie Xamarin.Forms
 
-_Klasa animacji jest blokiem konstrukcyjnym wszystkie animacje platformy Xamarin.Forms, za pomocą metod rozszerzenia klasy ViewExtensions utworzenie co najmniej jeden obiekt animacji. W tym artykule pokazano, jak klasa animacji służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez istniejące metody animacji._
+_Klasa animacji jest blokiem konstrukcyjnym wszystkie animacje Xamarin.Forms, za pomocą metod rozszerzenia w klasie ViewExtensions, tworząc jeden lub więcej obiektów w animacji. W tym artykule pokazano, jak klasa animacji służy do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacje, które animować właściwości, które nie są animowane za pomocą istniejących metod animacji._
 
 
-Liczba parametrów należy określić podczas tworzenia `Animation` obiektu, w tym wartości początkowa i końcowa animowany, właściwości i wywołanie zwrotne, które zmienia się wartość właściwości. `Animation` Obiektu można również Obsługa kolekcji animacji podrzędne, które można uruchomić i zsynchronizowane. Aby uzyskać więcej informacji, zobacz [animacje podrzędnych](#child).
+Podczas tworzenia, należy określić liczbę parametrów `Animation` obiektu, z uwzględnieniem wartości początkowa i końcowa właściwości animowany i wywołanie zwrotne, które zmienia wartość właściwości. `Animation` Obiektu można również Obsługa kolekcji animacji podrzędne, które można uruchomić i zsynchronizowane. Aby uzyskać więcej informacji, zobacz [animacji podrzędnych](#child).
 
-Uruchomiona Animacja utworzone za pomocą [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) klasy, która może lub nie może zawierać podrzędnych animacji, uzyskuje się poprzez wywołanie [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) metody. Ta metoda określa czas trwania animacji i spośród innych elementów wywołanie zwrotne, które określa, czy animacji.
+Uruchamianie animacji, który został utworzony za pomocą [ `Animation` ](xref:Xamarin.Forms.Animation) klasy, która może lub nie może zawierać podrzędnych animacji, odbywa się przez wywołanie metody [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) metody. Ta metoda określa czas trwania animacji, jak i między innymi elementami, wywołanie zwrotne, które określa, czy animacji.
 
 ## <a name="creating-an-animation"></a>Tworzenie animacji
 
-Podczas tworzenia [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) obiekt zazwyczaj co najmniej trzy parametry są wymagane, jak pokazano w poniższym przykładzie:
+Podczas tworzenia [ `Animation` ](xref:Xamarin.Forms.Animation) obiektu zazwyczaj co najmniej trzy parametry są wymagane, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 var animation = new Animation (v => image.Scale = v, 1, 2);
 ```
 
-Ten kod definiuje animację [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwość [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) wystąpienie z wartością 1 wartość 2. Animowany wartość, która jest uzyskiwana w wyniku platformy Xamarin.Forms, jest przekazywany do wywołania zwrotnego określony jako pierwszy argument służy do zmiany wartości `Scale` właściwości.
+Ten kod definiuje animację [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) właściwość [ `Image` ](xref:Xamarin.Forms.Image) wystąpienie z wartością 1 wartość 2. Animowany wartość, która jest uzyskiwana w wyniku Xamarin.Forms, jest przekazywany do wywołania zwrotnego, określony jako pierwszy argument, gdzie jest używany, aby zmienić wartość `Scale` właściwości.
 
-Animacja została uruchomiona z wywołaniem do [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) metody, jak pokazano w poniższym przykładzie:
+Animacja została uruchomiona z wywołaniem [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) metody, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => image.Scale = 1, () => true);
 ```
 
-Należy pamiętać, że [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) metoda nie zwraca `Task` obiektu. Zamiast tego powiadomienia są realizowane za pośrednictwem metody wywołania zwrotnego.
+Należy pamiętać, że [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) metoda nie zwraca `Task` obiektu. Zamiast tego powiadomienia są dostarczane za pośrednictwem metod wywołania zwrotnego.
 
-Następujące argumenty zostały określone w `Commit` metody:
+Następujące argumenty są określone w `Commit` metody:
 
 - Pierwszy argument (*właściciela*) identyfikuje właściciela animacji. Może to być element wizualny zastosowania animacji lub inny element wizualny, takich jak strony.
-- Drugi argument (*nazwa*) identyfikuje animacji z nazwą. Nazwa w połączeniu z właściciela do unikatowego identyfikowania animacji. Ten unikatowy identyfikator następnie może służyć do określenia, czy animacja jest uruchomiona ([`AnimationIsRunning`](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AnimationIsRunning/p/Xamarin.Forms.IAnimatable/System.String/)), lub Anuluj ją ([`AbortAnimation`](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AbortAnimation/p/Xamarin.Forms.IAnimatable/System.String/)).
-- Trzeci argument (*szybkość*) wskazuje wyrażony w milisekundach czas między każde wywołanie metody wywołania zwrotnego zdefiniowanej w [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) — Konstruktor
+- Drugi argument (*nazwa*) identyfikuje animacji o nazwie. Nazwa w połączeniu z właścicielem aby jednoznacznie zidentyfikować animacji. Ten unikatowy identyfikator, następnie może służyć do określenia, czy animacja jest uruchomiona ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String))), lub Anuluj ją ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))).
+- Trzeci argument (*współczynnik*) wskazuje liczbę milisekund między każdym wywołaniem metody wywołania zwrotnego, zdefiniowanej w [ `Animation` ](xref:Xamarin.Forms.Animation) konstruktora
 - Czwarty argument (*długość*) wskazuje czas trwania animacji, w milisekundach.
-- Piąty argument (*napięcia*) definiuje funkcji sterowania tempem zmian do użycia w animacji. Alternatywnie można określić jako argument do funkcji sterowania tempem zmian [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) konstruktora. Aby uzyskać więcej informacji na temat łatwiejszym funkcji, zobacz [łatwiejszym funkcji](~/xamarin-forms/user-interface/animation/easing.md).
-- Argument szóstego (*Zakończono*) jest wywołaniem zwrotnym, które będą wykonywane po zakończeniu animacji. To wywołanie zwrotne przyjmuje dwa argumenty z pierwszym argumentem wskazujący końcowa wartość i drugi argument jest `bool` który ustawiono `true` Jeśli animacja została anulowana. Alternatywnie *Zakończono* wywołania zwrotnego można określić jako argument [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) konstruktora. Jednak w przypadku pojedynczego animacji Jeśli *Zakończono* wywołania zwrotne zostały określone zarówno `Animation` Konstruktor i `Commit` metody, tylko wywołania zwrotnego, określona w `Commit` będzie można wykonać metody.
-- Argument siódmego (*Powtórz*) jest wywołaniem zwrotnym, które umożliwia animacji należy powtórzyć. Jest ona wywoływana po zakończeniu animacji i zwracanie `true` wskazuje, czy powinny być powtarzane animacji.
+- Piąty argument (*ułatwianie*) definiuje funkcję sterowania tempem zmian, które ma być używany w animacji. Alternatywnie można określić jako argument do funkcji sterowania tempem zmian [ `Animation` ](xref:Xamarin.Forms.Animation) konstruktora. Aby uzyskać więcej informacji na temat funkcje easingu zobacz [funkcji Easingu](~/xamarin-forms/user-interface/animation/easing.md).
+- Szósty argument (*Zakończono*) jest wywołaniem zwrotnym, które zostaną wykonane po zakończeniu animacji. To wywołanie zwrotne przyjmuje dwa argumenty, z pierwszym argumentem wskazujący końcowa wartość, a drugi argument jest `bool` który jest skonfigurowany do `true` Jeśli animacji zostało anulowane. Alternatywnie *Zakończono* wywołanie zwrotne, które można określić jako argument do [ `Animation` ](xref:Xamarin.Forms.Animation) konstruktora. Jednak w przypadku pojedynczego animacji Jeśli *Zakończono* wywołania zwrotne są określone w obu `Animation` Konstruktor i `Commit` metody tylko wywołania zwrotnego, określone w `Commit` będzie można wykonać metody.
+- Siódmego argumentu (*Powtórz*) jest wywołaniem zwrotnym, które umożliwia animacji do powtarzania. Jest wywoływana po zakończeniu animacji i zwracanie `true` wskazuje, że należy powtórzyć animację.
 
-Ogólny efekt jest utworzenie animacji, które zwiększa [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwość [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) od 1 do 2, ponad 2 sekundy (2000 MS), za pomocą [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) wyjścia funkcji sterowania tempem. Zawsze zakończeniu animacji, jego `Scale` właściwości jest zmieniany na 1 i powtarza animacji.
+Ogólny efekt jest utworzyć animację, która zwiększa [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) właściwość [ `Image` ](xref:Xamarin.Forms.Image) z zakresu od 1 do 2, ponad 2 sekundy (2000 MS), za pomocą [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) funkcja sterowania tempem zmian. Każdym zakończeniu animacji, jego `Scale` właściwość jest resetowana do 1 i powtarza animacji.
 
 > [!NOTE]
-> Tworząc można skonstruować równoczesnych animacji, niezależnie od siebie z systemem `Animation` obiekt każdej animacji, a następnie podczas wywoływania `Commit` metody w każdej animacji.
+> Można skonstruować współbieżnych animacji, działających niezależnie od siebie nawzajem, tworząc `Animation` obiektu każdej animacji, a następnie wywołując `Commit` metody na każdą animację.
 
 <a name="child" />
 
 ### <a name="child-animations"></a>Animacje podrzędne
 
-[ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Klasy obsługuje również animacje podrzędne, które obejmuje utworzenie `Animation` obiektu, do których innych `Animation` obiekty zostaną dodane. Dzięki temu szereg animacji można uruchomić i zsynchronizowane. W poniższym przykładzie kodu pokazano tworzenie i uruchamianie animacji podrzędnych:
+[ `Animation` ](xref:Xamarin.Forms.Animation) Klasy obsługuje również animacje podrzędne, które obejmuje utworzenie `Animation` obiektu, do których innych `Animation` obiekty zostaną dodane. Dzięki temu szereg animacji musi być uruchamiany i zsynchronizowane. Poniższy przykład kodu demonstruje, tworzenie i uruchamianie animacji podrzędne:
 
 ```csharp
 var parentAnimation = new Animation ();
@@ -75,7 +75,7 @@ parentAnimation.Add (0.5, 1, scaleDownAnimation);
 parentAnimation.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-Alternatywnie przykładowy kod może być zapisany więcej zwięzłym jako wykazały w poniższym przykładzie kodu:
+Alternatywnie przykład kodu mogą być zapisywane bardziej zwięzłym jako wykazały w poniższym przykładzie kodu:
 
 ```csharp
 new Animation {
@@ -85,31 +85,31 @@ new Animation {
     }.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-W obu przykłady kodu, nadrzędny [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) utworzony obiekt, do którego dodatkowe `Animation` obiekty zostaną następnie dodane. Pierwsze dwa argumenty [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Add/p/System.Double/System.Double/Xamarin.Forms.Animation/) metody Określ, kiedy rozpoczęcia i zakończenia animacji podrzędnych. Wartości argumentu musi należeć do zakresu od 0 do 1 i stanowią względną termin animacji nadrzędnego animacji określony podrzędny będzie aktywny. W związku z tym, w tym przykładzie `scaleUpAnimation` będzie aktywny dla pierwszej połowy animacji, `scaleDownAnimation` będzie aktywny do drugiej połowie animacji i `rotateAnimation` będzie aktywny cały czas trwania.
+W obu przykładach kodu nadrzędnego [ `Animation` ](xref:Xamarin.Forms.Animation) obiekt zostanie utworzony, w którym dodatkowe `Animation` obiekty zostaną następnie dodane. Pierwsze dwa argumenty [ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) metoda Określ, kiedy rozpoczęcia i zakończenia animacji podrzędnych. Wartości argumentu musi należeć do zakresu od 0 do 1 i reprezentuje względną okres, w animacji nadrzędnego animacji określony podrzędny zostanie uaktywniona. W związku z tym, w tym przykładzie `scaleUpAnimation` zostanie uaktywniona w pierwszej połowie animacji, `scaleDownAnimation` zostanie uaktywniona w drugiej połowie animacji i `rotateAnimation` będzie aktywna przez cały czas.
 
-Ogólny efekt jest animacji ponad 4 sekundy (4000 w milisekundach). `scaleUpAnimation` Animuje [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwości z zakresu od 1 do 2, ponad 2 sekundy. `scaleDownAnimation` Następnie animuje `Scale` właściwości od 2 do 1, ponad 2 sekundy. Gdy występują zarówno animacje skali, `rotateAnimation` animuje [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/) właściwości z zakresu od 0 do 360, ponad 4 sekundy. Należy pamiętać, że skalowania animacje również używać funkcji sterowania tempem zmian. [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) Wyjścia funkcji sterowania tempem powoduje, że [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) początkowo zmniejszyć przed pobraniem większy i [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) wyjścia funkcji sterowania tempem powoduje, że `Image` być mniejszy od rozmiaru rzeczywistego pod koniec pełną animacji.
+Ogólny efekt jest animacji ponad 4 sekund (4000 w milisekundach). `scaleUpAnimation` Animuje [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) właściwości z zakresu od 1 do 2, ponad 2 sekundy. `scaleDownAnimation` Następnie `Scale` właściwości od 2 do 1, ponad 2 sekundy. Gdy występują zarówno animacjami skalowania `rotateAnimation` animuje [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) właściwości z zakresu od 0 do 360, ponad 4 sekund. Należy pamiętać, że animacjami skalowania również używają funkcji sterowania tempem zmian. [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Funkcja sterowania tempem zmian powoduje, że [ `Image` ](xref:Xamarin.Forms.Image) początkowo zmniejszyć przed pobraniem większych i [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) funkcja sterowania tempem zmian powoduje, że `Image` przestanie mniejszy niż rozmiaru rzeczywistego pod koniec pełną animacji.
 
-Istnieje wiele różnic między [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) obiekt, który używa animacji podrzędne a, który nie:
+Istnieje kilka różnic między [ `Animation` ](xref:Xamarin.Forms.Animation) obiektu, który używa animacji podrzędnego a, który nie:
 
-- Korzystając z animacji podrzędnych *Zakończono* wywołania zwrotnego dla animacji podrzędnych wskazuje po zakończeniu podrzędne i *Zakończono* wywołanie zwrotne przekazane do `Commit` metoda wskazuje, kiedy Ukończono całej animacji.
-- Korzystając z animacji podrzędnych, zwracając `true` z *Powtórz* wywołania zwrotnego na `Commit` — metoda nie powoduje powtarzanie animacji, ale animacji będzie kontynuował pracę bez nowe wartości.
-- Podczas włączania funkcji sterowania tempem zmian w `Commit` — metoda i funkcji sterowania tempem zmian zwraca wartość większą niż 1, zostanie zakończona Animacja. Jeśli funkcji sterowania tempem zmian zwróci wartość mniejszą niż 0, wartość jest zablokowane za pomocą 0. Aby używać funkcji sterowania tempem zmian, która zwraca wartość mniejsza niż 0 lub większą niż 1, musi on określony w jednej animacji podrzędnych, a nie w `Commit` metody.
+- Korzystając z animacjami podrzędnych *Zakończono* wywołania zwrotnego dla animacji podrzędnych wskazuje po zakończeniu element podrzędny i *Zakończono* wywołanie zwrotne przekazane do `Commit` metoda wskazują, kiedy Ukończono całej animacji.
+- Korzystając z podrzędnych animacji, zwracając `true` z *Powtórz* wywołanie zwrotne bezużytecznego `Commit` metoda nie powoduje powtarzanie animacji, ale animacji, będą nadal działać bez nowe wartości.
+- Podczas włączania funkcji sterowania tempem zmian w `Commit` metoda i funkcji sterowania tempem zmian zwraca wartość większą niż 1, zostanie zakończona Animacja. Jeśli funkcja sterowania tempem zmian zwróci wartość mniejszą niż 0, jest powiązany wartość 0. Do użycia funkcji sterowania tempem zmian, która zwraca wartość mniejsza od 0 lub większa niż 1 musi określony w jednej animacji podrzędnych, a nie w `Commit` metody.
 
-[ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Zawiera również klasy [ `WithConcurrent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.WithConcurrent/p/Xamarin.Forms.Animation/System.Double/System.Double/) metod, które mogą służyć do dodania animacji podrzędnych do elementu nadrzędnego `Animation` obiektu. Jednak ich *rozpocząć* i *Zakończ* wartości argumentów nie są ograniczone do 0, 1, ale tylko część animacji podrzędnych, która odnosi się do zakresu od 0 do 1 będzie aktywny. Na przykład jeśli `WithConcurrent` wywołanie metody definiuje animacji podrzędny, którego celem jest [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) właściwości z zakresu od 1 do 6, ale z *rozpocząć* i *Zakończ* wartości -2 i 3, *rozpocząć* wartość -2 odpowiada `Scale` wartość 1 i *Zakończ* odpowiada wartości 3 `Scale` wartość 6. Ponieważ wartości spoza zakresu od 0 do 1 odtwarzania bez części w animacji `Scale` właściwość zostanie tylko animowany od 3 do 6.
+[ `Animation` ](xref:Xamarin.Forms.Animation) Zawiera również klasy [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)) metod, które mogą służyć do dodawania animacji podrzędnych do elementu nadrzędnego `Animation` obiektu. Jednak ich *rozpocząć* i *Zakończ* wartości argumentu nie są ograniczone do 0, 1, ale tylko część animacji podrzędny, która odnosi się do zakresu od 0 do 1 będą aktywne. Na przykład jeśli `WithConcurrent` wywołania metody definiuje animacji podrzędnego, który jest przeznaczony dla [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) właściwości z zakresu od 1 do 6, ale z *rozpocząć* i *Zakończ* wartości -2 i 3, *rozpocząć* wartości od -2 odpowiada `Scale` wartość 1, a *Zakończ* wartość 3 odnosi się do `Scale` wartość 6. Ponieważ wartości spoza zakresu od 0 do 1 odtwarzania bez części w animacji, `Scale` właściwość będzie tylko animowana od 3 do 6.
 
-## <a name="canceling-an-animation"></a>Anulowanie animacji
+## <a name="canceling-an-animation"></a>Trwa anulowanie animacji
 
-Aplikację można anulować animacji wywołaniem [ `AbortAnimation` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AbortAnimation/p/Xamarin.Forms.IAnimatable/System.String/) — metoda rozszerzenia, jak pokazano w poniższym przykładzie:
+Aplikację można anulować animację po wywołaniu [ `AbortAnimation` ](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)) metodę rozszerzenia, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 this.AbortAnimation ("SimpleAnimation");
 ```
 
-Należy pamiętać, że animacji jest unikatowo identyfikowana przez kombinację animacji właściciela i nazwy animacji. W związku z tym właściciela i nazwy określone podczas uruchamiania animacji należy określić anulować animacji. W związku z tym przykładowy kod natychmiast anulować animacji, o nazwie `SimpleAnimation` który jest właścicielem strony.
+Należy pamiętać, że animacji unikatowo zidentyfikować za pomocą kombinacji właściciela animacji i nazwa animacji. W związku z tym właściciela i nazwa określona podczas uruchamiania animacji należy określić anulować animacji. W związku z tym, w przykładzie kodu natychmiast anulować animację o nazwie `SimpleAnimation` który jest własnością strony.
 
 ## <a name="creating-a-custom-animation"></a>Tworzenie animacji niestandardowej
 
-Przykłady podane tutaj wykonanej do tej pory wykazały animacji, które są równie może zostać osiągnięty przy metod w [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) klasy. Jednak zaletą [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) jest klasa, ma dostęp do metody wywołania zwrotnego, który zostanie wykonany po zmianie wartości animowany. Dzięki temu wywołania zwrotnego do zaimplementowania wszystkie żądane animacji. Na przykład w poniższym przykładzie kodu animuje [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) właściwości strony, ustawiając wartość [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) wartościami utworzonymi przez [ `Color.FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/)metody hue wartości od 0 do 1:
+Przykłady zamieszczone w tym miejscu do tej pory wykazały animacji, które są równie można osiągnąć za pomocą metod w [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) klasy. Jednak zaletą [ `Animation` ](xref:Xamarin.Forms.Animation) klasa jest, że ma dostęp do metody wywołania zwrotnego, która jest wykonywana po zmianie wartości animowany. Dzięki temu wywołania zwrotnego zaimplementować wszystkie żądane animacji. Na przykład, poniższy kod animuje [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) właściwości strony, ustawiając dla niej [ `Color` ](xref:Xamarin.Forms.Color) wartościami utworzonymi przez [ `Color.FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))metody, przy użyciu wartości odcień z zakresu od 0 do 1:
 
 ```csharp
 new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
@@ -117,20 +117,20 @@ new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
   end: 1).Commit (this, "Animation", 16, 4000, Easing.Linear, (v, c) => BackgroundColor = Color.Default);
 ```
 
-Wynikowa animacja zawiera wygląd przesuwania tła strony za pomocą kolorów siłowe.
+Wynikowa animacja zapewnia przesuwania tła strony za pomocą kolorów tęczowego wygląd.
 
-Więcej przykładów dotyczących tworzenia złożonych animacji, w tym animację krzywej Beziera zobacz [22 rozdział](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) z [tworzenia aplikacji mobilnych za pomocą platformy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
+Aby uzyskać więcej przykładów dotyczących tworzenia złożonych animacje, łącznie z animację krzywej Beziera zobacz [22 rozdział](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) z [tworzenia aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
 
 ## <a name="creating-a-custom-animation-extension-method"></a>Tworzenie animacji niestandardowej metody rozszerzenia
 
-Metody rozszerzenia w [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) klasy animować właściwości od bieżącej wartości do określonej wartości. Dzięki temu trudne do tworzenia, na przykład `ColorTo` animacji metodę, która służy do animowania koloru z jedną wartość na inny, ponieważ:
+Metody rozszerzające w [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) klasy animować właściwości bieżącej wartości określonej wartości. To sprawia, że trudno utworzyć, na przykład `ColorTo` metoda animacji, którego można animować kolor z jedną wartość na inny, ponieważ:
 
-- Jedynym [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) właściwości zdefiniowane przez [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) jest klasa [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/), który nie jest zawsze żądaną `Color` właściwości Aby animować.
-- Często bieżącą wartość [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) właściwość jest [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), który nie jest prawdziwe kolorów i nie można użyć w obliczeniach interpolacji.
+- Tylko [ `Color` ](xref:Xamarin.Forms.Color) zdefiniowaną przez właściwość [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) klasa jest [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), który nie jest zawsze żądaną `Color` właściwości Aby animować.
+- Często bieżącą wartość [ `Color` ](xref:Xamarin.Forms.Color) właściwość [ `Color.Default` ](xref:Xamarin.Forms.Color.Default), który nie jest prawdziwe kolorów i nie można użyć w obliczeniach interpolacji.
 
-Rozwiązaniem tego problemu jest ma `ColorTo` metoda docelowa określonego [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) właściwości. Zamiast tego mogą być zapisywane z metody wywołania zwrotnego, która przekazuje interpolowane `Color` wartość do wywołującego. Ponadto otrzymuje rozpoczęcia i zakończenia metody `Color` argumentów.
+Rozwiązanie tego problemu jest nie `ColorTo` metoda docelowy określonego [ `Color` ](xref:Xamarin.Forms.Color) właściwości. Zamiast tego mogą być zapisywane z metodą wywołania zwrotnego, która przekazuje interpolowane `Color` wartość obiektu wywołującego. Ponadto metoda będzie zająć rozpoczęcia i zakończenia `Color` argumentów.
 
-`ColorTo` Metody można zaimplementować jako metodę rozszerzenia, która używa [ `Animate` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.Animate{T}/p/Xamarin.Forms.IAnimatable/System.String/System.Func{System.Double,T}/System.Action{T}/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{T,System.Boolean}/System.Func{System.Boolean}/) metody w [ `AnimationExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AnimationExtensions/) klasę, aby zapewnić jego funkcjonalność. Jest to spowodowane `Animate` metoda może służyć do właściwości obiektu docelowego, które nie są typu `double`, jak pokazano w poniższym przykładzie:
+`ColorTo` Można zaimplementować metodę jako metodę rozszerzenia, która używa [ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) method in Class metoda [ `AnimationExtensions` ](xref:Xamarin.Forms.AnimationExtensions) klasy w celu zapewnienia jego funkcji. Jest to spowodowane `Animate` metoda może służyć do właściwości obiektu docelowego, które nie są typu `double`, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 public static class ViewExtensions
@@ -161,9 +161,9 @@ public static class ViewExtensions
 }
 ```
 
-[ `Animate` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.Animate{T}/p/Xamarin.Forms.IAnimatable/System.String/System.Func{System.Double,T}/System.Action{T}/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{T,System.Boolean}/System.Func{System.Boolean}/) Metoda wymaga *przekształcenie* argumentu, który jest metoda wywołania zwrotnego. Dane wejściowe tego wywołania zwrotnego jest zawsze `double` od 0 do 1. W związku z tym `ColorTo` metoda definiuje własną transformacji `Func` która akceptuje `double` od 0 do 1 i który zwraca [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) wartość odpowiadająca tej wartości. `Color` Wartość jest obliczana na podstawie interpolacji [ `R` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.R/), [ `G` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.G/), [ `B` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.B/), i [ `A` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.A/) wartości dwa podane `Color` argumentów. `Color` Wartości są następnie przekazywane do metody wywołania zwrotnego dla aplikacji do określonej właściwości.
+[ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) Metoda wymaga *Przekształcanie* argumentu, który jest metodą wywołania zwrotnego. Dane wejściowe to wywołanie zwrotne jest zawsze `double` od 0 do 1. W związku z tym `ColorTo` metoda definiuje swój własny przekształcenie `Func` akceptujący `double` od 0 do 1 oraz że zwraca [ `Color` ](xref:Xamarin.Forms.Color) wartość odpowiadającą tej wartości. `Color` Wartość jest obliczana na podstawie interpolacji [ `R` ](xref:Xamarin.Forms.Color.R), [ `G` ](xref:Xamarin.Forms.Color.G), [ `B` ](xref:Xamarin.Forms.Color.B), i [ `A` ](xref:Xamarin.Forms.Color.A) wartości dwóch dostarczonych `Color` argumentów. `Color` Wartość jest następnie przekazywany do metody wywołania zwrotnego dla aplikacji do określonej właściwości.
 
-Takie podejście umożliwia `ColorTo` metody do animowania żadnego [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) właściwości, jak pokazano w poniższym przykładzie:
+Takie podejście umożliwia `ColorTo` metodę, aby animować dowolne [ `Color` ](xref:Xamarin.Forms.Color) właściwości, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 await Task.WhenAll(
@@ -173,15 +173,15 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-W tym przykładzie kodu `ColorTo` animuje metody [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) i [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) właściwości [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), `BackgroundColor`właściwości strony oraz [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) właściwość [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/).
+W tym przykładzie kodu `ColorTo` animuje metoda [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) i [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) właściwości [ `Label` ](xref:Xamarin.Forms.Label), `BackgroundColor`właściwości strony, a [ `Color` ](xref:Xamarin.Forms.BoxView.Color) właściwość [ `BoxView` ](xref:Xamarin.Forms.BoxView).
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule przedstawiono sposób użycia [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) klasa do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacji, które animowania właściwości, które nie są animowane przez animację istniejących metody. `Animation` Klasa jest blokiem konstrukcyjnym wszystkie animacje platformy Xamarin.Forms.
+W tym artykule przedstawiono sposób użycia [ `Animation` ](xref:Xamarin.Forms.Animation) klasa do tworzenia i anulować animacji, synchronizowanie wielu animacji i utworzyć niestandardowe animacje, które animować właściwości, które nie są animowane przez istniejące animacji metody. `Animation` Klasa jest elementem składowym wszystkie animacje zestawu narzędzi Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Animacje niestandardowe (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
-- [Animacja](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/)
-- [AnimationExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.AnimationExtensions/)
+- [Niestandardowe animacje (przykład)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
+- [Animacja](xref:Xamarin.Forms.Animation)
+- [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)
