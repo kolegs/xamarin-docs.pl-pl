@@ -1,44 +1,45 @@
 ---
-title: Rozszerzanie przykład RecyclerView
+title: Rozszerzanie przykład obiektu RecyclerView
+description: Dodawanie obsługi zdarzeń kliknięcia elementu aplikacji przykład obiektu RecyclerView.
 ms.prod: xamarin
 ms.assetid: 707EE1CE-C164-485B-944C-82C6795E8A24
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 83147261a2d5458272f7e2bc105154da4308f4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: 73c14e76a4a65c73c5fe0cc3d43329a9f4965c74
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769266"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038524"
 ---
-# <a name="extending-the-recyclerview-example"></a>Rozszerzanie przykład RecyclerView
+# <a name="extending-the-recyclerview-example"></a>Rozszerzanie przykład obiektu RecyclerView
 
 
-Podstawowa aplikacja opisanego w [A podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) faktycznie nie znacznie &ndash; po prostu przewija i wyświetla listę stałych elementów fotografii ułatwia przeglądanie. W rzeczywistych aplikacjach użytkownicy będą mieć możliwość interakcji z aplikacją, naciskając elementów na ekranie. Ponadto źródła danych można zmienić (lub można zmienić za pomocą aplikacji), a zawartość ekranu musi być zgodna z tych zmian. W poniższych sekcjach dowiesz się, jak obsługi zdarzeń kliknięcia elementu i aktualizować `RecyclerView` po zmianie w źródle danych.
+Podstawowa aplikacja opisanego w [podstawowy przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) faktycznie nie znacznie &ndash; po prostu przewija i wyświetla listę stałych elementów fotografii, aby ułatwić przeglądanie. W rzeczywistych aplikacjach użytkownicy chcą mieć możliwość interakcji z aplikacją, naciskając elementów na ekranie. Ponadto bazowego źródła danych można zmienić (lub można zmienić za pomocą aplikacji), a zawartość ekranu musi być zgodna z tych zmian. W poniższych sekcjach dowiesz się, jak obsługiwać zdarzenia kliknięcia elementu i zaktualizować `RecyclerView` po zmianie w źródle danych bazowych.
 
 
-### <a name="handling-item-click-events"></a>Obsługa zdarzeń kliknięcia elementu
+### <a name="handling-item-click-events"></a>Obsługa zdarzeń przedmiot, kliknij
 
-Gdy użytkownik dotyka element `RecyclerView`, by powiadomić aplikację, które zostało dotknięciu elementu jest generowane zdarzenie kliknięcia elementu. To zdarzenie nie jest generowany przez `RecyclerView` &ndash; zamiast tego widoku elementu (która jest ujęte w widoku posiadacz) wykrywa poprawek i raporty te poprawki, jak zdarzenia kliknięcia.
+Gdy użytkownik dotyka element `RecyclerView`, jest generowane zdarzenie kliknięcia elementu, by powiadomić aplikację, które zostało korzysta z elementu. To zdarzenie nie jest generowany przez `RecyclerView` &ndash; zamiast tego widoku elementu, (która jest opakowana w właściciela widoku) wykrywa poprawek i raporty z tych poprawek, ponieważ zdarzenia kliknięcia.
 
-Aby zilustrować sposobu obsługi zdarzenia kliknięcia elementu, w poniższych krokach opisano, jak zmienić Podstawowa aplikacja wyświetlanie zdjęć raportu fotografii, który miał korzystały użytkownika. Gdy wystąpi zdarzenie kliknięcia elementu w przykładowej aplikacji, następująca sekwencja zdarzeń:
+Aby zilustrować procedurę obsługi zdarzeń kliknięcia elementu, poniższe kroki wyjaśniają, jak podstawowa aplikacja wyświetlania zdjęć zostanie zmodyfikowany na potrzeby raportu fotografii, które miały korzystały użytkownika. Gdy wystąpi zdarzenie kliknięcia elementu w przykładowej aplikacji, następująca sekwencja zdarzeń:
 
-1.  Zdjęcie `CardView` wykryje Zdarzenie kliknięcia elementu i powiadamia karty.
+1.  Zdjęcie `CardView` wykryje Zdarzenie kliknięcia elementu, a następnie powiadamia użytkownika karty.
 
-2.  Karta przekazuje zdarzenia (z elementu informacji o położeniu) do obsługi kliknięcia elementu działania.
+2.  Karta przekazuje zdarzenia (z informacjami położenie elementu) do obsługi kliknięcia elementu tego działania.
 
-3.  Działania obsługi kliknięcia elementu reaguje na zdarzenia kliknięcia elementu.
+3.  Procedury obsługi kliknięcia elementu działania reaguje na zdarzenie kliknięcia elementu.
 
-Najpierw należy wywołać elementu członkowskiego program obsługi zdarzeń `ItemClick` jest dodawany do `PhotoAlbumAdapter` definicji klasy:
+Po pierwsze, o nazwie elementu członkowskiego program obsługi zdarzeń `ItemClick` jest dodawany do `PhotoAlbumAdapter` definicję klasy:
 
 ```csharp
 public event EventHandler<int> ItemClick;
 ```
 
-Następnie metoda obsługi zdarzeń kliknięcia elementu zostanie dodany do `MainActivity`.
-Ten program obsługi wyświetla krótki wyskakujące, wskazujący, który element fotografii została dotknięciu:
+Następnie metoda obsługi zdarzeń kliknij element zostanie dodany do `MainActivity`.
+Ten program obsługi krótko wyświetla wyskakujące, wskazujący, który element fotografii został dotknięciu:
 
 ```csharp
 void OnItemClick (object sender, int position)
@@ -49,7 +50,7 @@ void OnItemClick (object sender, int position)
 
 ```
 
-Następnie wiersz kodu jest wymagany do zarejestrowania `OnItemClick` obsługi z `PhotoAlbumAdapter`. Dobrym miejscem, w tym celu jest natychmiast po `PhotoAlbumAdapter` utworzeniu (w działaniu głównym `OnCreate` metody):
+Następnie wiersz kodu jest wymagany do zarejestrowania `OnItemClick` procedura obsługi o `PhotoAlbumAdapter`. Dobrym miejscem, w tym celu jest natychmiast po `PhotoAlbumAdapter` zostanie utworzony: 
 
 ```csharp
 mAdapter = new PhotoAlbumAdapter (mPhotoAlbum);
@@ -57,7 +58,9 @@ mAdapter.ItemClick += OnItemClick;
 
 ```
 
-`PhotoAlbumAdapter` teraz wywoła `OnItemClick` po odebraniu zdarzenia kliknięcia elementu. Następnym krokiem jest utworzenie obsługi karty, który wywołuje to `ItemClick` zdarzeń. Następujące metody `OnClick`, natychmiast po karty `ItemCount` metody:
+W tym podstawowym przykładzie obsługi rejestracja odbywa się w głównym działaniu `OnCreate` metody, ale aplikacji produkcyjnej może zarejestrować programu obsługi w `OnResume` i wyrejestrować go w `OnPause` &ndash; zobacz [cykl życia aktywności ](~/android/app-fundamentals/activity-lifecycle/index.md) Aby uzyskać więcej informacji.
+
+`PhotoAlbumAdapter` teraz będzie wywoływać `OnItemClick` po odebraniu zdarzenia kliknięcia elementu. Następnym krokiem jest utworzenie obsługi karty, która wywołuje to `ItemClick` zdarzeń. Następującą metodę `OnClick`, dodawany jest natychmiast po karty `ItemCount` metody:
 
 ```csharp
 void OnClick (int position)
@@ -67,8 +70,8 @@ void OnClick (int position)
 }
 ```
 
-To `OnClick` metoda jest karty *odbiornika* zdarzeń kliknięcia elementu z widoków elementu. Przed tym odbiorniku mogą być rejestrowane w widoku elementu (za pośrednictwem widoku elementu posiadacz widok), `PhotoViewHolder` Konstruktor należy zmodyfikować, aby zaakceptować tej metody jako dodatkowy argument, a następnie zarejestrować `OnClick` z widokiem elementu `Click` zdarzeń.
-Oto zmodyfikowanych `PhotoViewHolder` konstruktora:
+To `OnClick` metodą jest karty *odbiornika* zdarzeń kliknięcia elementu z elementu widoków. Zanim można zarejestrować tego odbiornika z widoku elementu (za pośrednictwem widoku elementu widoku symbol zastępczy), `PhotoViewHolder` Konstruktor muszą zostać zmodyfikowane, aby zaakceptować tę metodę jako dodatkowy argument, a następnie zarejestrować `OnClick` przy użyciu widoku elementu `Click` zdarzeń.
+Oto zmodyfikowanego `PhotoViewHolder` Konstruktor:
 
 ```csharp
 public PhotoViewHolder (View itemView, Action<int> listener)
@@ -82,19 +85,19 @@ public PhotoViewHolder (View itemView, Action<int> listener)
 
 ```
 
-`itemView` Parametr zawiera odwołanie do `CardView` który został dotknięciu przez użytkownika. Należy pamiętać, że klasa podstawowa posiadacz widoku zna pozycji układu elementu (`CardView`), który reprezentuje (za pośrednictwem `LayoutPosition` właściwości), a tej pozycji jest przekazywana do karty `OnClick` metody po wystąpieniu zdarzenia kliknięcia elementu. Karta `OnCreateViewHolder` metody są modyfikowane w celu przekazania karty `OnClick` metody do konstruktora posiadacz widoku:
+`itemView` Parametr zawiera odwołanie do `CardView` , został korzystał z usług przez użytkownika. Należy pamiętać, że klasę bazową widoku posiadacza zna pozycji układu elementu (`CardView`), czyli przedstawia liczbę (za pośrednictwem `LayoutPosition` właściwości), a ta pozycja jest przekazywana do karty `OnClick` metody po wystąpieniu zdarzenia kliknięcia elementu. Karty `OnCreateViewHolder` metoda zostanie zmodyfikowany na potrzeby przekazywania karty `OnClick` metody do konstruktora właściciela widoku:
 
 ```csharp
 PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 ```
 
-Teraz podczas kompilacji i uruchamianie przykładowej aplikacji wyświetlanie zdjęć, naciskając zdjęcie wyświetlania spowoduje, że wyskakujące się pojawiać się, że aby raporty, które fotografii została dotknięciu:
+Teraz gdy kompilujesz i uruchamianie przykładowej aplikacji wyświetlanie zdjęć, naciskając zdjęć na ekranie spowoduje, że wyskakujące do pojawiają się raporty fotografii, który został dotknięciu:
 
-[![Obszar jest wyskakujące przykładzie, który jest wyświetlany, gdy zdjęcie karty](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
+[![Dotknięcie przykład wyskakujące, wyświetlanego, gdy karta zdjęcie](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
-W tym przykładzie pokazano tylko jeden ze sposobów wykonywania programów obsługi zdarzeń z `RecyclerView`. Innym rozwiązaniem, które mogą zostać użyte w tym miejscu jest umieszczenie zdarzenia właścicielowi widoku i karta subskrybowanie tych zdarzeń. W przypadku przykładowej aplikacji zdjęcie zdjęcie funkcje edycji odrębne zdarzenia jest wymagana dla `ImageView` i `TextView` w ramach każdej `CardView`: dotyczące `TextView` czy uruchomić `EditView` okna dialogowego, w którym użytkownik może edytować Podpis i poprawki na `ImageView` może uruchomić narzędzie Korygowanie fotografii, którym użytkownik może obracać zdjęcie lub Przytnij. W zależności od potrzeb aplikacji należy zaprojektować najlepszym podejściem w celu obsługi i reagowanie na zdarzenia touch.
+W tym przykładzie przedstawiono tylko jedno z podejść do implementowania procedury obsługi zdarzeń za pomocą `RecyclerView`. Innym rozwiązaniem, która mogłaby być używana w tym miejscu jest umieszczenie zdarzenia właścicielowi widoku i mieć kartę subskrybowania tych zdarzeń. Jeśli przykładowa aplikacja zdjęcia możliwości do edycji zdjęć, odrębne zdarzenia jest wymagana dla `ImageView` i `TextView` w ramach każdej `CardView`: styka się `TextView` spowoduje uruchomienie `EditView` okno dialogowe, które umożliwia użytkownikowi edytowanie Podpis i ma na `ImageView` może uruchomić narzędzie Korygowanie zdjęć, które umożliwia użytkownikowi obrócić zdjęcie lub Przytnij. W zależności od potrzeb aplikacji należy zaprojektować najlepszym rozwiązaniem w zakresie obsługi i reagowanie na zdarzenia dotykowe.
 
-Aby zademonstrować sposób `RecyclerView` mogą być aktualizowane podczas zmiany zestawu danych, przykładowej aplikacji wyświetlanie zdjęć można zmodyfikować, aby losowo Pobierz zdjęcie w źródle danych i Zamień pierwszego zdjęcia. Najpierw **pobranie losowej** zostanie dodany do przykładową aplikację fotografii **Main.axml** układu:
+Aby zademonstrować sposób `RecyclerView` mogą być aktualizowane, gdy zmiany zestawu danych, wyświetlanie zdjęć przykładowej aplikacji można modyfikować, aby losowo wybrać zdjęcie w źródle danych i jego zamianę z pierwszego zdjęcia. Po pierwsze, **wybierz losowe** zostanie dodany do Przykładowa aplikacja zdjęcia **Main.axml** układu:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -117,7 +120,7 @@ Aby zademonstrować sposób `RecyclerView` mogą być aktualizowane podczas zmia
 </LinearLayout>
 ```
 
-Następnie kod zostanie dodany na końcu działania głównego `OnCreate` metodą lokalizowania `Random Pick` znajdujący się w układzie i dołączenia do programu obsługi:
+Następnie kod zostanie dodany na końcu głównego działania `OnCreate` metodą lokalizowania `Random Pick` znajdujący się w układzie i do niej dołączyć program obsługi:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -133,9 +136,9 @@ randomPickBtn.Click += delegate
 
 ```
 
-Ten program obsługi wymaga albumy fotografii `RandomSwap` metody podczas **losowe wybieranie** dotknięciu jest przycisk. `RandomSwap` — Metoda losowo zamienia zdjęć z pierwszego zdjęcia w źródle danych, a następnie zwraca indeks fotografii losowo zamienione. Gdy kompilowanie i uruchamianie przykładowej aplikacji o tym kodzie, naciskając **pobranie losowej** przycisku nie powoduje zmiany wyświetlania, ponieważ `RecyclerView` nie został powiadomiony o zmianie w źródle danych.
+Ten program obsługi wywołania albumów zdjęć `RandomSwap` metody podczas **wybierz losowe** naciśnięcia przycisku. `RandomSwap` Metoda losowo zamienia zdjęć z pierwszego zdjęcia w źródle danych, a następnie zwraca indeks zdjęcie losowo zamienione. Gdy kompilujesz i uruchamianie przykładowej aplikacji przy użyciu tego kodu, naciskając **wybierz losowe** przycisku nie powoduje zmiany wyświetlania, ponieważ `RecyclerView` nie ma informacji o zmiany w źródle danych.
 
-Aby zachować `RecyclerView` zaktualizowane po źródła danych zmian, **losowe wybieranie** kliknij przycisk obsługi należy zmodyfikować, aby wywołać karty `NotifyItemChanged` metody dla każdego elementu w kolekcji, które uległy zmianie (w tym przypadku dwóch elementów istnieją zmienione: pierwszy zdjęć i zamieniono fotografii). Powoduje to `RecyclerView` zaktualizować wyświetlanie, aby była spójna ze stanem z nowego źródła danych:
+Zapewnienie `RecyclerView` aktualizowane po zmianie, w źródle danych **wybierz losowe** kliknij program obsługi, należy zmodyfikować w celu wywołania karty `NotifyItemChanged` metodę dla każdego elementu w kolekcji, które uległy zmianie (w tym przypadku dwa elementy mają zmienione: pierwszy zdjęć i zdjęcie wymienione). Powoduje to, że `RecyclerView` można zaktualizować jego wyświetlania, aby była spójna ze stanem z nowego źródła danych:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -156,17 +159,17 @@ randomPickBtn.Click += delegate
 
 ```
 
-Teraz, gdy **pobranie losowej** wybrany przycisk `RecyclerView` aktualizuje widok, aby pokazać, że dalsze zdjęcie w dół w kolekcji została zapisana przy pierwszym zdjęcie w kolekcji:
+Teraz, gdy **wybierz losowe** naciśnięcia przycisku `RecyclerView` aktualizuje widok, aby pokazać, że zdjęcie dalsze w dół w kolekcji została zapisana z pierwszego zdjęcia w kolekcji:
 
 [![Pierwszy zrzut ekranu przed wymiany, drugi zrzut ekranu po wymiany](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
-Oczywiście `NotifyDataSetChanged` mógł zostać wywołany zamiast dwóch wywołań do `NotifyItemChanged`, ale spowoduje to spowodowałby `RecyclerView` odświeżyć całej kolekcji mimo że tylko dwa elementy w kolekcji zostały zmienione. Wywoływanie `NotifyItemChanged` jest znacznie bardziej efektywne niż wywołania `NotifyDataSetChanged`.
+Oczywiście `NotifyDataSetChanged` mógł zostać wywołany zamiast dwóch wywołań do `NotifyItemChanged`, ale wykonanie tej tak może wymusić `RecyclerView` do odświeżenia całej kolekcji mimo że tylko dwa elementy w kolekcji zostały zmienione. Wywoływanie `NotifyItemChanged` jest znacznie bardziej efektywne niż wywoływania `NotifyDataSetChanged`.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [RecyclerViewer (przykład)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [Części RecyclerView i funkcji](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [Podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
+- [Obiektu RecyclerView elementy i funkcje](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
+- [Podstawowy przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)

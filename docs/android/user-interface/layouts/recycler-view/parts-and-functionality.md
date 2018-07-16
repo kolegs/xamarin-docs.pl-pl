@@ -1,164 +1,165 @@
 ---
-title: Części RecyclerView i funkcji
+title: Obiektu RecyclerView elementy i funkcje
+description: Omówienie Menedżera układu obiektu RecyclerView, karta i właściciela widoku.
 ms.prod: xamarin
 ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 44f042359c9363f8ec3008ee49d2f6a874983e12
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: 4d55124e9a02489d1f55e900c537939ff3450509
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771213"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038511"
 ---
-# <a name="recyclerview-parts-and-functionality"></a>Części RecyclerView i funkcji
+# <a name="recyclerview-parts-and-functionality"></a>Obiektu RecyclerView elementy i funkcje
 
 
-`RecyclerView` Niektóre zadania wewnętrznie (takie jak przewijanie i odtwarzania widoków), może dojść jest zasadniczo Menedżera koordynująca klasy pomocy, aby wyświetlić kolekcji. `RecyclerView` Obiekty delegowane na następujących klas pomocniczych zadań:
+`RecyclerView` Niektóre zadania wewnętrznie (takie jak przewijanie i odtwarzanie widoków), ale jej uchwyty to zasadniczo Menedżer koordynującego klas pomocniczych na potrzeby wyświetlania kolekcji. `RecyclerView` Deleguje zadania do następujących klas pomocniczych:
 
--   **`Adapter`** &ndash; Układy elementu nadyma (tworzy zawartość pliku układu) i powiązanie danych z widoków, które są wyświetlane w `RecyclerView`. Karta również raporty zdarzeń kliknięcia elementu.
+-   **`Adapter`** &ndash; Zwiększa układów z elementu (tworzy zawartość pliku układu) i tworzy powiązanie danych z widoków, które są wyświetlane w ramach `RecyclerView`. Karta raporty również zdarzeń kliknięcia elementu.
 
--   **`LayoutManager`** &ndash; Mierzy i umieszcza elementu widokach w ramach `RecyclerView` i zarządza zasadami recyklingu widoku.
+-   **`LayoutManager`** &ndash; Mierzy i określa położenie elementu widokach w ramach `RecyclerView` i zarządza zasadami recyklingu widoku.
 
--   **`ViewHolder`** &ndash; Wyszukuje i przechowuje odwołuje się do widoku. Symbol zastępczy widok pomaga również z wykrywania kliknięć widok elementu.
+-   **`ViewHolder`** &ndash; Wyszukuje i przechowuje odwołania do widoku. Posiadacz widok pomaga również w wykrywaniu kliknięć widoku elementu.
 
--   **`ItemDecoration`** &ndash; Umożliwia aplikacji dodać specjalne przesunięcia związane z rysowaniem i układu do konkretnych widoków rysowania separatorów między elementami, najważniejsze funkcje i granice grupowania visual.
+-   **`ItemDecoration`** &ndash; Umożliwia aplikacji można dodać specjalnego przesunięcia związane z rysowaniem i układu do określonych widoków rysowania separator między elementami, najważniejsze funkcje i granice wizualne grupowanie.
 
 -   **`ItemAnimator`** &ndash; Definiuje animacji, które mają miejsce w akcji elementu lub jako zmiany zostały wprowadzone do karty sieciowej.
 
-Relacja między `RecyclerView`, `LayoutManager`, i `Adapter` klasy został przedstawiony na poniższym diagramie:
+Relacja między `RecyclerView`, `LayoutManager`, i `Adapter` klasy jest przedstawiony na poniższym diagramie:
 
-![Diagram RecyclerView zawierający LayoutManager, otwieranie zestawu danych za pomocą karty](parts-and-functionality-images/01-recyclerview-diagram.png)
+![Diagram przedstawiający obiektu RecyclerView zawierający LayoutManager, otwieranie zestawu danych za pomocą karty](parts-and-functionality-images/01-recyclerview-diagram.png)
 
-Jak pokazano na poniższym rysunku, `LayoutManager` można traktować jako pośrednik między `Adapter` i `RecyclerView`. `LayoutManager` Wykonywania wywołań do `Adapter` metod w imieniu `RecyclerView`. Na przykład `LayoutManager` wywołania `Adapter` metody, gdy nadejdzie czas, aby utworzyć nowy widok dla danego elementu pozycji w `RecyclerView`. `Adapter` Nadyma układu dla tego elementu i tworzy `ViewHolder` wystąpienia (tego nie pokazano) do pamięci podręcznej odwołań do widoków na tej pozycji. Gdy `LayoutManager` wywołania `Adapter` powiązać danego elementu zestawu danych `Adapter` lokalizuje dane dla tego elementu, pobiera go z zestawu danych i kopiuje go do widoku skojarzonego elementu.
+Jak poniższy rysunek przedstawia `LayoutManager` można traktować jako pośrednik między `Adapter` i `RecyclerView`. `LayoutManager` Sprawia, że wywołania do `Adapter` metody w imieniu osób `RecyclerView`. Na przykład `LayoutManager` wywołania `Adapter` metody, gdy nadejdzie czas, aby utworzyć nowy widok na potrzeby w miejsce elementu `RecyclerView`. `Adapter` Zwiększa układu dla tego elementu, a następnie tworzy `ViewHolder` wystąpienia (niewyświetlany) do pamięci podręcznej odwołań do widoków w tej pozycji. Gdy `LayoutManager` wywołania `Adapter` powiązać określonego elementu z zestawu danych `Adapter` lokalizuje dane dla tego elementu, pobiera je z zestawu danych i kopiuje go do widoku skojarzonego elementu.
 
-Korzystając z `RecyclerView` w aplikacji, wymagane jest tworzenie typów pochodnych następujących klas:
+Korzystając z `RecyclerView` w swojej aplikacji, wymagana jest tworzenia typów pochodnych następujące klasy:
 
--   **`RecyclerView.Adapter`** &ndash; Udostępnia powiązania z zestawu danych aplikacji (która jest specyficzna dla aplikacji) do elementu widoków, które są wyświetlane w `RecyclerView`. Karta potrafi skojarzyć każdej pozycji widok elementu w `RecyclerView` do określonej lokalizacji w źródle danych. Ponadto adapter obsługuje układ zawartości w poszczególnych widokach pojedynczy element i tworzy posiadacz widoku dla każdego widoku. Karta również raporty zdarzeń kliknięcia elementu, które są wykrywane przez widok elementu.
+-   **`RecyclerView.Adapter`** &ndash; Zawiera powiązanie z zestawu danych aplikacji (czyli specyficzne dla aplikacji) do widoków elementów, które są wyświetlane w ramach `RecyclerView`. Karta wie, jak skojarzyć każdej pozycji elementu widoku w `RecyclerView` do określonej lokalizacji w źródle danych. Ponadto karta obsługuje układ zawartości w ramach każdego pojedynczego elementu widoku i tworzy właściciela widoku dla każdego widoku. Karta raporty również zdarzenia kliknięcia elementu, które są wykrywane przez widok elementu.
 
--   **`RecyclerView.ViewHolder`** &ndash; Buforuje odwołania do widoków w pliku układu elementu, tak aby przypadków przeszukiwania zasobów nie są powtarzane niepotrzebnie. Symbol zastępczy widoku również rozmieszcza zdarzeń kliknięcia elementu do przekazania do adaptera po naciśnięciu widok skojarzony element zastępczy widoku.
+-   **`RecyclerView.ViewHolder`** &ndash; Buforuje odwołania do widoków w pliku układu elementu, tak aby przypadków przeszukiwania zasobów nie powtarzają się niepotrzebnie. Symbol zastępczy widok również rozmieszcza zdarzeń przedmiot, kliknij były przekazywane do adaptera, kiedy użytkownik naciska właściciela widoku skojarzonego elementu widoku.
 
--   **`RecyclerView.LayoutManager`** &ndash; Określa położenie elementów w obrębie `RecyclerView`. Można użyć jednej z kilku menedżerów układu wstępnie zdefiniowanych lub można zaimplementować Menedżera niestandardowego układu.
-    `RecyclerView` Obiekty delegowane zasad układu z menedżerem układu, więc możesz podłączyć w Menedżerze inny układ bez wprowadzania istotne zmiany w aplikacji.
+-   **`RecyclerView.LayoutManager`** &ndash; Określa położenie elementów w obrębie `RecyclerView`. Można użyć jednej z kilku menedżerów wstępnie zdefiniowany układ, lub możesz zaimplementować menedżera układu niestandardowego.
+    `RecyclerView` delegaty zasad układu do menedżera układu, dzięki czemu możesz podłączyć w Menedżerze inny układ bez konieczności wprowadzania istotne zmian do aplikacji.
 
-Ponadto można opcjonalnie rozszerzono następujących klas, aby zmienić wygląd i działanie `RecyclerView` w aplikacji:
+Ponadto opcjonalnie rozszerzono następujące klasy, aby zmienić wygląd i działanie `RecyclerView` w swojej aplikacji:
 
 -   **`RecyclerView.ItemDecoration`**
 -   **`RecyclerView.ItemAnimator`**
 
-Jeśli nie zostanie rozszerzony `ItemDecoration` i `ItemAnimator`, `RecyclerView` używa domyślnej implementacji. W tym przewodniku wyjaśniono, jak utworzyć niestandardowe `ItemDecoration` i `ItemAnimator` klas, aby uzyskać więcej informacji na temat tych klas, zobacz [RecyclerView.ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html) i [RecyclerView.ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html).
+Jeśli nie zostanie rozszerzony `ItemDecoration` i `ItemAnimator`, `RecyclerView` używa domyślnej implementacji. Ten przewodnik nie wyjaśniono, jak utworzyć niestandardowe `ItemDecoration` i `ItemAnimator` klasy; Aby uzyskać więcej informacji na temat tych klas, zobacz [RecyclerView.ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html) i [RecyclerView.ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html).
 
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>Jak wyświetlić odtwarzania działania
+### <a name="how-view-recycling-works"></a>Jak wyświetlić odtwarzanie działa
 
-`RecyclerView` Widok elementu nie przydzielić dla każdego elementu w źródle danych. Zamiast tego przydzielania tylko liczbę elementu widoków, które mieszczą się na ekranie i układy tych elementów, gdy użytkownik przewija ponownie używane. Gdy widok najpierw przewinie niewidocznym, przechodzi ona przez proces odtwarzania pokazano na poniższej ilustracji:
+`RecyclerView` nie przydziela widoku elementu dla każdego elementu w źródle danych. Zamiast tego należy przydziela tylko liczbę widoków elementów, które mieszczą się na ekranie i układy tych elementów, gdy użytkownik przewija ponownie używane. Gdy widok najpierw Przewija psuje, przechodzi on przez proces odtwarzania zilustrowane na poniższym rysunku:
 
 [![Diagram pokazujący sześć kroków recyklingu widoku](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
-1.  Widok Przewija niewidocznym i nie będzie już wyświetlany, staje się *złom widoku*.
+1.  Widok Przewija psuje i nie będzie już wyświetlany, staje się *złom widoku*.
 
-2.  Widok braków znajduje się w puli i staje się *Odtwórz widoku*.
-    Ta pula jest to pamięć podręczna widoków, które zawierają ten sam typ danych.
+2.  Wyświetl braków znajduje się w puli i staje się *odtwarzanie widoku*.
+    Ta pula jest pamięć podręczna widoków, które wyświetlają ten sam typ danych.
 
-3.  Gdy nowy element ma być wyświetlany, widok jest pobierana z puli odtworzenia do ponownego użycia. Ponieważ ten widok musi zostać ponownie powiązany przez kartę przed wyświetleniem, jest nazywany *dirty widoku*.
+3.  Gdy nowy element ma być wyświetlana, widok jest pobierana z puli odtwarzanie do ponownego wykorzystania. Ponieważ ten widok musi być ponownie powiązana przez kartę przed wyświetleniem, jest nazywany *zakłóconych widoku*.
 
-4.  Widok zakłócone zostanie odtworzony: karta lokalizuje danych dla następnego elementu, który będzie wyświetlany i kopiuje dane z widokami dla tego elementu. Odwołania do tych widoków są pobierane z posiadacz widoku skojarzonego z widokiem odtwarzania.
+4.  Widok zanieczyszczone zostanie odtworzona: karta lokalizuje dane dla następnego elementu mają być wyświetlane i kopiuje dane z widokami dla tego elementu. Odwołania do tych widoków są pobierane z właściciela widoku skojarzonego z widokiem odtworzona.
 
-5.  Widok odtwarzania zostanie dodany do listy elementów w `RecyclerView` będących przeprowadzona na ekranie.
+5.  Widok odtwarzania zostanie dodany do listy elementów w `RecyclerView` który zbliża się przejść na ekranie.
 
-6.  Widok odtwarzania przechodzi na ekranie gdy użytkownik przewija `RecyclerView` do następnego elementu na liście. W tym samym czasie innego widoku Przewija niewidocznym i odtwarzania zgodnie z powyższych kroków.
+6.  Widok odtwarzania przechodzi na ekranie jako użytkownik przewija `RecyclerView` do następnego elementu na liście. W międzyczasie innego widoku Przewija psuje i odtwarzania zgodnie z powyższych kroków.
 
-Oprócz ponownemu widok elementu `RecyclerView` również używa innego optymalizacji wydajności: Wyświetl posiadaczy. A *posiadacz widoku* jest klasą prostą, że pamięci podręcznych wyświetlić odwołania. Zawsze karta nadyma pliku układu elementu tworzy również odpowiedniego właściciela widoku. Symbol zastępczy widoku używa `FindViewById` można pobrać odwołań do widoków wewnątrz pliku nadmuchany układu elementu. Te odwołania są używane do ładowanie nowych danych do widoków każdorazowego układ jest przetworzony ponownie, aby wyświetlić nowe dane.
+Oprócz ponownemu widoku elementu `RecyclerView` używa także innego Optymalizacja wydajności: Wyświetl właścicieli. A *właściciela widoku* jest klasą prostą, pamięci podręcznych wyświetlenia odwołań. Za każdym razem, karta zwiększa plik układu elementu, a także tworzy odpowiedniego właściciela widoku. Symbol zastępczy widoku używa `FindViewById` można pobrać odwołań do widoków wewnątrz pliku nadmuchany układu elementu. Te odwołania są używane do ładowania danych nowych widoków za każdym razem, gdy układ jest odtwarzania, aby wyświetlić nowe dane.
  
 
 
 ### <a name="the-layout-manager"></a>Menedżer układu
 
-Menedżer układ jest odpowiedzialny za pozycjonowanie elementów w `RecyclerView` wyświetlić; Określa typ prezentacji (listy lub Siatka), orientację (określa, czy elementy są wyświetlane w pionie lub poziomie) i kierunek elementy, które powinny być wyświetlane w normalnej kolejności lub w odwrotnej kolejności. Menedżer układu również jest odpowiedzialny za obliczenia rozmiaru i pozycji każdego elementu w **RecycleView** wyświetlania.
+Menedżer układ jest odpowiedzialny za pozycjonowanie elementów w `RecyclerView` wyświetlić; Określa typ prezentacji (lista lub Siatka), orientacja (czy elementy są wyświetlane w pionie lub w poziomie) i elementy kierunku, które powinny być wyświetlane (w normalnej kolejności lub w odwrotnej kolejności). Menedżer układ jest również odpowiedzialny za obliczenia rozmiaru i położenia każdego elementu w **RecycleView** wyświetlania.
 
-Menedżer układu ma dodatkowe cel: Określa zasady program do odtworzenia elementu widoków, które nie są już widoczne dla użytkowników.
-Ponieważ Menedżer układu korzystają z widoków, które są widoczne (i które nie są), jest w pozycji najlepszych decyzji o tym, kiedy widok może zostać odtworzona. Do odtworzenia widoku, Menedżer układu zwykle wywołań do karty zastąpić zawartość widoku odtwarzania z wykorzystaniem różnych danych, jak opisano wcześniej w [sposób działania odtwarzania widoku](#recycling).
+Menedżer układ ma dodatkowe cel: Określa zasady dotyczące Odtwórz widoki elementów, które nie są już widoczne dla użytkownika.
+Ponieważ Menedżer układ jest korzystają z widoków, które są widoczne (i nie są), to najlepsze możliwości do określania, kiedy widok może zostać odtworzona. Odtwarzanie widoku, Menedżera układu zwykle wykonywania wywołań do karty do Zastąp zawartość widoku odtwarzania z różnymi danymi, jak opisano wcześniej w [sposób działania odtwarzanie widoku](#recycling).
 
-Można rozszerzyć `RecyclerView.LayoutManager` do utworzenia własnego układu menedżera, lub można użyć Menedżera wstępnie zdefiniowany układ. `RecyclerView` udostępnia następujące menedżerów wstępnie zdefiniowany układ:
+Możesz rozszerzyć `RecyclerView.LayoutManager` tworzenie własnych układów menedżera lub użyć wstępnie zdefiniowany układ menedżera. `RecyclerView` udostępnia następujące menedżerów wstępnie zdefiniowanego układu:
 
--   **`LinearLayoutManager`** &ndash; Rozmieszcza elementy w kolumnie, która może być przewijana pionowo lub w wierszu, które mogą być przewijane w poziomie.
+-   **`LinearLayoutManager`** &ndash; Rozmieszcza elementy w kolumnie, która może być przewijane w pionie lub w wierszu, który może być przewijane w poziomie.
 
 -   **`GridLayoutManager`** &ndash; Wyświetla elementy w siatce.
 
--   **`StaggeredGridLayoutManager`** &ndash; Wyświetla elementy w siatce okres, w której niektóre elementy mają różne wysokości i szerokości.
+-   **`StaggeredGridLayoutManager`** &ndash; Wyświetla elementy w siatce samodzielnym, w której niektóre elementy mają różnej wysokości i szerokości.
 
-Aby określić menedżera układu, Utwórz wystąpienie Menedżera wybranego układu i przekaż go do `SetLayoutManager` metody. Uwaga które *musi* Określ menedżera układu &ndash; `RecyclerView` nie wybierz Menedżera wstępnie zdefiniowany układ domyślny.
+Aby określić menedżera układu, Utwórz wystąpienie Twojego Menedżera wybrany układ i przekazać ją do `SetLayoutManager` metody. Należy pamiętać, *musi* określić układ Menedżera &ndash; `RecyclerView` nie wybierze Menedżera wstępnie zdefiniowany układ domyślny.
 
-Aby uzyskać więcej informacji na temat Menedżera układu, zobacz [odwołania do klasy RecyclerView.LayoutManager](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
+Aby uzyskać więcej informacji na temat Menedżera układu, zobacz [odwołań do klas RecyclerView.LayoutManager](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
 
 ### <a name="the-view-holder"></a>Symbol zastępczy widoku
 
-Symbol zastępczy widoku jest klasą dla buforowania odwołuje się do widoku. Karta korzysta te odwołania widoku można powiązać każdy widok do jego zawartości. Każdy element w `RecyclerView` ma skojarzony widok wystąpienia posiadacz buforującego odwołania widok dla tego elementu. Aby utworzyć właściciela widoku, umożliwiają definiowanie klasy, aby pomieścić dokładnie zestaw widoków dla każdego elementu następujące czynności:
+Symbol zastępczy widok jest klasę, która jest zdefiniowana dla pamięci podręcznej odwołań do widoku. Karta używa tych odwołań widoku można powiązać każdy widok do jego zawartości. Każdy element `RecyclerView` ma skojarzony widok wystąpienia posiadacza buforującego odwołania widok dla tego elementu. Aby utworzyć właściciela widoku, umożliwia definiowanie klasy, aby pomieścić dokładny zestaw widoków na element następujące czynności:
 
 1.  Podklasy `RecyclerView.ViewHolder`.
-2.  Implementuje konstruktora, który wyszukuje i przechowuje odwołuje się do widoku.
-3.  Implementowanie właściwości, które adapter umożliwia dostęp do tych odwołań.
+2.  Należy zaimplementować konstruktora, który wyszukuje i przechowuje odwołania do widoku.
+3.  Implementuje właściwości, które karty umożliwiają dostęp do tych odwołań.
 
-Szczegółowy przykład `ViewHolder` wdrażania jest przedstawiona w [A podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
-Aby uzyskać więcej informacji na temat `RecyclerView.ViewHolder`, zobacz [odwołania do klasy RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
+Szczegółowy przykład `ViewHolder` wdrożenia są prezentowane w [podstawowy przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
+Aby uzyskać więcej informacji na temat `RecyclerView.ViewHolder`, zobacz [odwołań do klas RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
 
 ### <a name="the-adapter"></a>Karta
 
-Większość "ciężki podnoszenia" `RecyclerView` kodu integracji odbywa się na karcie. `RecyclerView` wymaga podania adapter pochodną `RecyclerView.Adapter` dostępu do źródła danych i wypełnić każdego elementu zawartości ze źródła danych.
-Ponieważ źródło danych jest specyficzny dla aplikacji, musisz zaimplementować funkcji karty rozumie, jak uzyskać dostęp do danych. Karta wyodrębnia dane ze źródła danych i ładuje go do każdego elementu w `RecyclerView` kolekcji.
+Większość "ciężkich podnoszenia" `RecyclerView` integracji kodu odbywa się na karcie. `RecyclerView` wymaga to dostarczenia adaptera pochodną `RecyclerView.Adapter` dostępu do źródła danych i wypełniania każdego elementu z zawartością ze źródła danych.
+Ponieważ źródło danych jest specyficzny dla aplikacji, należy zaimplementować funkcje karty, która rozumie sposób uzyskiwać dostęp do danych. Karta wyodrębnia informacje ze źródła danych i ładuje je do każdego elementu w `RecyclerView` kolekcji.
 
-Na poniższym rysunku przedstawiono sposób adapter mapowania zawartości ze źródła danych za pośrednictwem widoku posiadaczy poszczególnych widokach w ramach każdego wiersza elementu `RecyclerView`:
+Na poniższym rysunku przedstawiono sposób adapter mapowania zawartości w źródle danych za pośrednictwem widoku posiadaczy poszczególnych widokach w ramach każdego elementu wiersza `RecyclerView`:
 
 [![Diagram pokazujący karty nawiązywania połączenia ViewHolders źródła danych](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
-Karta ładuje każdego `RecyclerView` wiersza z danymi dla elementu określonego wiersza. Dla pozycji wiersza *P*, na przykład karta lokalizuje skojarzone dane na pozycji *P* w źródle danych i kopii tych danych do wiersza elementu na pozycji *P* w `RecyclerView` kolekcji.
-Na rysunku powyżej, na przykład karta używa posiadacz widoku do wyszukiwania odwołań dla `ImageView` i `TextView` na tej pozycji, więc nie wielokrotnie wywoływać `FindViewById` dla tych widoków jako użytkownik przewija kolekcji i Widoki są ponownie używane.
+Karta ładuje każdego `RecyclerView` wiersz z danych dla elementu określonego wiersza. Dla pozycji wiersza *P*, na przykład karta lokalizuje powiązane dane w położeniu *P* w źródle danych i kopii tych danych do wiersza elementów w położeniu *P* w `RecyclerView` kolekcji.
+Na powyższym rysunku, na przykład karta używa posiadacza widok do wyszukiwania odwołań dla `ImageView` i `TextView` na tej pozycji, dzięki czemu nie trzeba wywoływać wielokrotnie `FindViewById` tych widoków, jak użytkownik przewija kolekcji i ponownie używa widoków.
 
-Podczas implementowania karty, konieczne jest przesłonięcie następujących `RecyclerView.Adapter` metod:
+Podczas implementowania adapter, konieczne jest przesłonięcie następujących `RecyclerView.Adapter` metody:
 
 -   **`OnCreateViewHolder`** &ndash; Tworzy wystąpienie właściciela pliku i widoku układu elementu.
 
--   **`OnBindViewHolder`** &ndash; Ładuje dane w określonej pozycji do widoków, którego odwołania są przechowywane w posiadacz danego widoku.
+-   **`OnBindViewHolder`** &ndash; Ładuje dane w określonej pozycji do widoków, w których odwołania są przechowywane w właściciela danego widoku.
 
 -   **`ItemCount`** &ndash; Zwraca liczbę elementów w źródle danych.
 
-Menedżer układu wywołuje tych metod, gdy jest pozycjonowanie elementów w obrębie `RecyclerView`. 
+Menedżer układ wywołuje te metody, gdy jest on pozycjonowanie elementów w obrębie `RecyclerView`. 
 
 
 
-### <a name="notifying-recyclerview-of-data-changes"></a>Powiadamianie RecyclerView zmian danych
+### <a name="notifying-recyclerview-of-data-changes"></a>Powiadamianie recyclerview wprowadzonych zmian danych
 
-`RecyclerView` nie jest aktualizowana automatycznie ich wyświetlania po zawartości danych jego źródle zmiany. Karta musi powiadomić `RecyclerView` podczas zmiany w zestawie danych. Zestaw danych można zmienić na wiele sposobów; na przykład można zmienić zawartość elementu lub ogólną strukturę danych mogą ulec zmianie.
-`RecyclerView.Adapter` udostępnia kilka metod, które można wywołać, aby `RecyclerView` odpowiada zmiany danych w najbardziej efektywny sposób:
+`RecyclerView` nie jest aktualizowane automatycznie wyświetlana jego po zawartości jego danych źródłowych zmiany. Karta musi powiadomić `RecyclerView` po zmiany w zestawie danych. Zestaw danych można zmienić na wiele sposobów; na przykład można zmienić zawartość elementu lub ogólną strukturę danych mogą ulec zmianie.
+`RecyclerView.Adapter` udostępnia wiele metod, które można wywołać, aby `RecyclerView` reaguje na zmiany danych w sposób najbardziej efektywny sposób:
 
 -  **`NotifyItemChanged`** &ndash; Sygnalizuje, że element w określonej pozycji został zmieniony.
 
--  **`NotifyItemRangeChanged`** &ndash; Sygnalizuje, że elementy w określonym zakresie pozycji zostały zmienione.
+-  **`NotifyItemRangeChanged`** &ndash; Sygnały, które uległy zmianie elementów w określonym zakresie, stanowiska.
 
--  **`NotifyItemInserted`** &ndash; Sygnały nowo wstawić elementu w określonej pozycji.
+-  **`NotifyItemInserted`** &ndash; Sygnały nowo wstawione elementu w określonej pozycji.
 
--  **`NotifyItemRangeInserted`** &ndash; Sygnalizuje, że elementy w określonym zakresie pozycji nowo wstawiono.
+-  **`NotifyItemRangeInserted`** &ndash; Sygnały, że elementów w określonym zakresie, stanowiska nowo wstawiona.
 
 -  **`NotifyItemRemoved`** &ndash; Sygnały usunięcie elementu w określonej pozycji.
 
--  **`NotifyItemRangeRemoved`** &ndash; Sygnały usunięcie elementów w określonym zakresie pozycji.
+-  **`NotifyItemRangeRemoved`** &ndash; Sygnały usunięcie elementów w określonym zakresie, stanowiska.
 
 -  **`NotifyDataSetChanged`** &ndash; Sygnalizuje, że zestaw danych został zmieniony (wymusza pełnej aktualizacji).
 
-Jeśli znasz dokładnie, jak zestaw danych został zmieniony, należy wywołać odpowiednich metod powyżej, aby odświeżyć `RecyclerView` w najbardziej efektywny sposób. Jeśli nie znasz dokładnie, jak zestaw danych został zmieniony, należy wywołać `NotifyDataSetChanged`, czyli znacznie mniej wydajna ponieważ `RecyclerView` należy odświeżyć wszystkie widoki, które są widoczne dla użytkownika. Aby uzyskać więcej informacji na temat tych metod, zobacz [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
+Jeśli znasz się dokładnie, jak zestaw danych został zmieniony, możesz wywołać właściwe metody powyżej, aby odświeżyć `RecyclerView` w najbardziej efektywny sposób. Jeśli nie wiadomo dokładnie, jak zestaw danych został zmieniony, możesz wywołać `NotifyDataSetChanged`, co jest znacznie mniej wydajne ponieważ `RecyclerView` należy odświeżyć wszystkie widoki, które są widoczne dla użytkownika. Aby uzyskać więcej informacji o tych metodach, zobacz [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
-W następnym temacie [A podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md), zaimplementowano przykładową aplikację do zaprezentowania przykłady kodu rzeczywistych części i funkcji opisanych powyżej.
+W następnym temacie [podstawowy przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md), przykładowej aplikacji jest implementowane w celu wykazania, przykłady kodu rzeczywistych części i funkcji opisanych powyżej.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [Podstawowy przykład RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
-- [Rozszerzanie przykład RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
+- [Podstawowy przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
+- [Rozszerzanie przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)

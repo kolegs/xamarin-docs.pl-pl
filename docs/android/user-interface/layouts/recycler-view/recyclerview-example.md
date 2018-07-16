@@ -1,56 +1,56 @@
 ---
-title: Podstawowy przykład RecyclerView
+title: Podstawowy przykład obiektu RecyclerView
+description: Przykładowa aplikacja, która pokazuje, jak używać obiektu RecyclerView.
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d5be838dcb5530ece76c3701d8fce10403622e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30770615"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038394"
 ---
-# <a name="a-basic-recyclerview-example"></a>Podstawowy przykład RecyclerView
+# <a name="a-basic-recyclerview-example"></a>Podstawowy przykład obiektu RecyclerView
+
+Aby zrozumieć, jak `RecyclerView` działa w typowej aplikacji, w tym temacie przedstawiono [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) przykładowej aplikacji, na przykład prostego kodu, który używa `RecyclerView` do wyświetlenia duża kolekcja zdjęć: 
+
+[![Dwa zrzuty ekranu aplikacji recyclerview wprowadzonych, która używa CardViews do wyświetlania zdjęcia](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
+
+**RecyclerViewer** używa [CardView](~/android/user-interface/controls/card-view.md) zaimplementować każdy element fotografii `RecyclerView` układu. Z powodu `RecyclerView`firmy korzyści związanych z wydajnością, ta Przykładowa aplikacja jest w stanie szybko przewiń duży zbiór zdjęcia, sprawnie i bez zauważalnego opóźnienia.
 
 
-Aby zrozumieć, jak `RecyclerView` działa w typowej aplikacji, w tym temacie opisuje [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) przykładowej aplikacji, prosty przykład kodu, który używa `RecyclerView` do wyświetlenia duży zbiór zdjęć: 
+### <a name="an-example-data-source"></a>Przykładowe źródła danych
 
-[![Dwa zrzuty ekranu aplikacji RecyclerView, która używa CardViews do wyświetlania zdjęć](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
-
-**RecyclerViewer** używa [CardView](~/android/user-interface/controls/card-view.md) do zaimplementowania każdego elementu fotografii `RecyclerView` układu. Z powodu `RecyclerView`jego zalety wydajności, to przykładowa aplikacja jest w stanie szybko przewiń duży zbiór zdjęć sprawnie i bez zauważalnego opóźnienia.
-
-
-### <a name="an-example-data-source"></a>Przykład źródła danych
-
-W tej aplikacji przykład źródła danych "albumu" (reprezentowane przez `PhotoAlbum` klasy) dostarcza `RecyclerView` z zawartością elementu.
-`PhotoAlbum` Kolekcja zdjęć z napisami; Możesz utworzyć, otrzymasz jest gotowe kolekcja zdjęć 32:
+W tej przykładowej aplikacji, źródła danych "albumu" (reprezentowane przez `PhotoAlbum` klasy) dostarcza `RecyclerView` z zawartością elementu.
+`PhotoAlbum` jest to zbiór zdjęcia z podpisami; Podczas tworzenia jego instancji, otrzymasz gotowej do użycia kolekcji 32 zdjęć:
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
 ```
 
-Każde wystąpienie zdjęcie w `PhotoAlbum` udostępnia właściwości, które pozwalają na jej identyfikator zasobu obrazu do odczytu `PhotoID`, a jego ciąg podpisu `Caption`. Kolekcja zdjęć jest zorganizowana w taki sposób, że każdy fotografii można uzyskać, sprawdzając indeksatora. Na przykład następujące wiersze kodu dostępu, identyfikator zasobu obrazu i podpis dziesiątego zdjęcia w kolekcji:
+Każde wystąpienie zdjęcie w `PhotoAlbum` udostępnia właściwości umożliwiające odczyt jego identyfikator zasobu obrazu `PhotoID`i jego ciąg podpisu `Caption`. Kolekcja zdjęć jest zorganizowana w taki sposób, że każdego zdjęcia może zostać oceniony przez indeksator. Na przykład następujące wiersze kodu dostępu, identyfikator zasobu obrazu i transkrypcji oraz zdjęcia w kolekcji:
 
 ```csharp
 int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum` dostępne są także `RandomSwap` metodę można wywołać w celu wymiany pierwszy zdjęcie w kolekcji z losowo wybranym zdjęcie w innym miejscu w kolekcji:
+`PhotoAlbum` udostępnia również `RandomSwap` metody, które można wywołać w celu wymiany pierwszego zdjęcia w kolekcji ze zdjęciem losowo wybranych w innym miejscu w kolekcji:
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
 ```
 
-Ponieważ szczegóły implementacji `PhotoAlbum` nie są istotne dla zrozumienia `RecyclerView`, `PhotoAlbum` kodu źródłowego nie jest podana w tym miejscu. Aby kod źródłowy `PhotoAlbum` znajduje się w temacie [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) w [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) przykładowej aplikacji.
+Ponieważ szczegóły implementacji `PhotoAlbum` nie są istotne dla zrozumienia `RecyclerView`, `PhotoAlbum` kod źródłowy nie jest podana w tym miejscu. Kod źródłowy w celu `PhotoAlbum` znajduje się w temacie [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) w [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) przykładową aplikację.
 
 
 ### <a name="layout-and-initialization"></a>Układ i inicjalizacji
 
-Plik układu **Main.axml**, składa się pojedyncza `RecyclerView` w `LinearLayout`:
+Plik układu **Main.axml**, składa się z pojedynczego `RecyclerView` w ramach `LinearLayout`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@ Plik układu **Main.axml**, składa się pojedyncza `RecyclerView` w `LinearLayo
 </LinearLayout>
 ```
 
-Należy pamiętać, że muszą używać w pełni kwalifikowaną nazwę **android.support.v7.widget.RecyclerView** ponieważ `RecyclerView` jest spakowany w bibliotece pomocy technicznej. `OnCreate` Metody `MainActivity` inicjuje ten układ, karta tworzy i przygotowuje źródła danych:
+Należy pamiętać, że należy użyć w pełni kwalifikowaną nazwę **android.support.v7.widget.RecyclerView** ponieważ `RecyclerView` jest spakowany w bibliotekę techniczną. `OnCreate` Metody `MainActivity` inicjuje ten układ, tworzy kartę i przygotowuje bazowego źródła danych:
 
 ```csharp
 public class MainActivity : Activity
@@ -100,35 +100,35 @@ Ten kod wykonuje następujące czynności:
 
 1. Tworzy wystąpienie `PhotoAlbum` źródła danych.
 
-2. Przekazuje do konstruktora karty, źródła danych albumy fotografii `PhotoAlbumAdapter` (która jest zdefiniowana w dalszej części tego przewodnika). 
-   Należy pamiętać, że jest on uznawany za najlepiej przekazać źródła danych jako parametr do konstruktora karty. 
+2. Przekazuje źródła danych albumów zdjęć do konstruktora karty, `PhotoAlbumAdapter` (który jest zdefiniowany w dalszej części tego przewodnika). 
+   Należy pamiętać, że jest uważana za najlepszym rozwiązaniem, aby przekazać źródła danych jako parametr do konstruktora karty. 
 
 3. Pobiera `RecyclerView` z układu.
 
-4. Podłączyć karty do `RecyclerView` wystąpienia przez wywołanie metody `RecyclerView` `SetAdapter` — metoda, jak pokazano powyżej.
+4. Należy podłączyć karty do `RecyclerView` wystąpienia, wywołując `RecyclerView` `SetAdapter` metody, jak pokazano powyżej.
 
 ### <a name="layout-manager"></a>Menedżer układu
 
-Każdy element `RecyclerView` składa się z `CardView` zawiera obraz zdjęć i podpis fotografii (szczegółowe informacje znajdują się w [właściciela widoku](#view-holder) poniższej sekcji). Wstępnie zdefiniowane `LinearLayoutManager` służy do określania układu poszczególnych `CardView` w układzie przewijania pionowego:
+Każdy element w `RecyclerView` składa się z `CardView` zawierający obraz zdjęcia i podpis fotografii (szczegółowe informacje znajdują się w [właściciela widoku](#view-holder) poniższej sekcji). Wstępnie zdefiniowane `LinearLayoutManager` służy do określania układu każdej `CardView` w układzie pionowe przewijanie:
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
 mRecyclerView.SetLayoutManager (mLayoutManager);
 ```
 
-Ten kod znajduje się w głównym działaniu `OnCreate` metody. Konstruktor do menedżera układu wymaga *kontekstu*, więc `MainActivity` jest przekazywany za pomocą `this` jak pokazano powyżej.
+Ten kod, który znajduje się w głównym działaniu `OnCreate` metody. Konstruktor do Menedżera układ wymaga *kontekstu*, więc `MainActivity` jest przekazywany przy użyciu `this` jak pokazano powyżej.
 
-Zamiast predefind `LinearLayoutManager`, możesz podłączyć w Menedżerze niestandardowego układu, w którym są wyświetlane dwa `CardView` side-by-side, implementacja efekt animacji page-turning przechodzenia za pomocą kolekcji zdjęć elementów. W dalszej części tego przewodnika zobaczysz przykładem zmodyfikować układ przez zamianę w Menedżerze inny układ.
+Zamiast używania predefind `LinearLayoutManager`, możesz podłączyć w Menedżerze układu niestandardowego, który wyświetla dwa `CardView` elementy side-by-side, implementowanie page-turning efekt animacji, można przejść wzdłuż kolekcja zdjęć. W dalszej części tego przewodnika zobaczysz przykładowy sposób modyfikowania układu przez zamianę w Menedżerze innego układu.
 
 <a name="view-holder" />
 
 ### <a name="view-holder"></a>Symbol zastępczy widoku
 
-Klasa posiadacz widoku jest nazywana `PhotoViewHolder`. Każdy `PhotoViewHolder` wystąpienia zawiera odwołania do `ImageView` i `TextView` elementu wierszy, które jest określone w `CardView` jako diagramu tutaj:
+Widok klasy symbol zastępczy jest wywoływana `PhotoViewHolder`. Każdy `PhotoViewHolder` wystąpienie zawiera odwołania do `ImageView` i `TextView` elementu skojarzonego wiersza, który został rozmieszczony w `CardView` zgodnie z diagramu tutaj:
 
-[![Diagram CardView zawierające ImageView i TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
+[![Diagram przedstawiający CardView zawierające ImageView i TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
-`PhotoViewHolder` pochodną `RecyclerView.ViewHolder` i zawiera właściwości do przechowywania odwołań do `ImageView` i `TextView` widoczne w układzie powyżej.
+`PhotoViewHolder` pochodzi od klasy `RecyclerView.ViewHolder` i zawiera właściwości do przechowywania odwołań do `ImageView` i `TextView` pokazane w układzie powyżej.
 `PhotoViewHolder` składa się z dwóch właściwości i jeden konstruktor:
 
 ```csharp
@@ -145,16 +145,16 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
-W tym przykładzie kodu `PhotoViewHolder` Konstruktor jest przekazywany odwołanie do widoku elementu nadrzędnego ( `CardView`) który `PhotoViewHolder` zawijany. Należy pamiętać, że zawsze przesyłania dalej nadrzędnego elementu widoku do podstawowego konstruktora. `PhotoViewHolder` Wywołania konstruktora `FindViewById` w widoku elementu nadrzędnego wszystkich odwołań do widoku jego podrzędnych `ImageView` i `TextView`, zapisując wyniki w `Image` i `Caption` właściwości, odpowiednio. Karta później pobiera odwołuje się do widoku z tymi właściwościami, po to aktualizuje `CardView`przez widoki podrzędnych nowymi danymi.
+W tym przykładzie kodu `PhotoViewHolder` Konstruktor jest przekazywany odwołanie do widoku elementu nadrzędnego ( `CardView`) który `PhotoViewHolder` zawijany. Należy pamiętać, że w przypadku zawsze przekazywania nadrzędnego widoku elementu do konstruktora podstawowego. `PhotoViewHolder` Konstruktor wywołuje `FindViewById` w widoku elementu nadrzędnego wszystkich odwołań do widoku jego podrzędnych `ImageView` i `TextView`, zapisując wyniki w `Image` i `Caption` właściwości, odpowiednio. Karta później pobiera widoku odwołania z tych właściwości, po aktualizuje to `CardView`w widokach podrzędnych za pomocą nowych danych.
 
-Aby uzyskać więcej informacji na temat `RecyclerView.ViewHolder`, zobacz [odwołania do klasy RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
+Aby uzyskać więcej informacji na temat `RecyclerView.ViewHolder`, zobacz [odwołań do klas RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
 
 ### <a name="adapter"></a>Adapter
 
-Karta ładuje każdego `RecyclerView` wiersza z danymi dla konkretnego zdjęcie. Dla danego fotografii na pozycji wiersza *P*, na przykład karta lokalizuje skojarzone dane na pozycji *P* w źródle danych i kopii tych danych do wiersza elementu na pozycji *P* w `RecyclerView` kolekcji. Karta korzysta posiadacz widoku do wyszukiwania odwołań dla `ImageView` i `TextView` na tej pozycji, więc nie wielokrotnie wywoływać `FindViewById` dla tych widoków jako użytkownik przewija kolekcji fotografii i widoki są ponownie używane.
+Karta ładuje każdego `RecyclerView` wierszy danych dotyczących określonego fotografii. Dla danego fotografii w położeniu wiersz *P*, na przykład karta lokalizuje powiązane dane w położeniu *P* w źródle danych i kopii tych danych do wiersza elementów w położeniu *P* w `RecyclerView` kolekcji. Karta używa posiadacza widok do wyszukiwania odwołań dla `ImageView` i `TextView` na tej pozycji, dzięki czemu nie trzeba wywoływać wielokrotnie `FindViewById` dla tych widoków, kiedy użytkownik przewija kolekcji zdjęcie i ponownie używa widoków.
 
-W **RecyclerViewer**, karta klasa pochodzi od `RecyclerView.Adapter` utworzyć `PhotoAlbumAdapter`:
+W **RecyclerViewer**, jest pochodną klasę karty `RecyclerView.Adapter` utworzyć `PhotoAlbumAdapter`:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -169,22 +169,22 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-`mPhotoAlbum` Elementu członkowskiego zawiera źródło danych (albumu), który jest przekazywany do konstruktora; konstruktora kopiuje albumu do tej zmiennej elementu członkowskiego. Następujące wymagane `RecyclerView.Adapter` metody są implementowane:
+`mPhotoAlbum` Elementu członkowskiego zawiera źródła danych (albumu), który jest przekazywany do konstruktora; Konstruktor kopiuje albumu do tej zmiennej elementu członkowskiego. Następujące wymagane `RecyclerView.Adapter` metody są implementowane:
 
 -   **`OnCreateViewHolder`** &ndash; Tworzy wystąpienie właściciela pliku i widoku układu elementu.
 
--   **`OnBindViewHolder`** &ndash; Ładuje dane w określonej pozycji do widoków, którego odwołania są przechowywane w posiadacz danego widoku.
+-   **`OnBindViewHolder`** &ndash; Ładuje dane w określonej pozycji do widoków, w których odwołania są przechowywane w właściciela danego widoku.
 
 -   **`ItemCount`** &ndash; Zwraca liczbę elementów w źródle danych.
 
-Menedżer układu wywołuje tych metod, gdy jest pozycjonowanie elementów w obrębie `RecyclerView`. Wdrażanie tych metod jest analizowane w poniższych sekcjach.
+Menedżer układ wywołuje te metody, gdy jest on pozycjonowanie elementów w obrębie `RecyclerView`. Wykonanie tych metod jest badany w poniższych sekcjach.
 
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
-Wywołuje menedżera układu `OnCreateViewHolder` podczas `RecyclerView` wymaga nowego właściciela widoku do reprezentowania elementu. `OnCreateViewHolder` nadyma widok elementu z pliku układu dla widoku i opakowuje widoku w nowym `PhotoViewHolder` wystąpienia. `PhotoViewHolder` Konstruktor lokalizuje i przechowuje odwołania do widoków podrzędne w układzie, jak opisano wcześniej w [posiadacz widoku](#view-holder).
+Wywołuje Menedżera układ `OnCreateViewHolder` podczas `RecyclerView` wymaga nowego właściciela widoku do reprezentowania elementu. `OnCreateViewHolder` zwiększa widoku elementu z pliku układu dla widoku i otacza widoku w nowym `PhotoViewHolder` wystąpienia. `PhotoViewHolder` Konstruktor lokalizuje i przechowuje odwołania do widoków podrzędne w układzie, jak opisano wcześniej w [właściciela widoku](#view-holder).
 
-Każdy element wiersza jest reprezentowana przez `CardView` zawierający `ImageView` (dla zdjęcie) i `TextView` (dla podpisu). Ten układ znajduje się w pliku **PhotoCardView.axml**:
+Każdy element wiersza jest reprezentowany przez `CardView` zawierający `ImageView` (w przypadku zdjęcie) i `TextView` (dla podpisu). Ten układ, który znajduje się w pliku **PhotoCardView.axml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -222,8 +222,8 @@ Każdy element wiersza jest reprezentowana przez `CardView` zawierający `ImageV
 </FrameLayout>
 ```
 
-Ten układ reprezentuje element pojedynczy wiersz w `RecyclerView`. `OnBindViewHolder` — Metoda (opisanych poniżej) kopiuje dane ze źródła danych do `ImageView` i `TextView` tego układu.
-`OnCreateViewHolder` nadyma tego układu dla lokalizacji danego zdjęcie w `RecyclerView` i tworzy nowy `PhotoViewHolder` wystąpienia (który lokalizuje i buforuje odwołania do `ImageView` i `TextView` widoków podrzędnych w skojarzonym `CardView` układu):
+Ten układ reprezentuje element pojedynczego wiersza w `RecyclerView`. `OnBindViewHolder` — Metoda (opisanych poniżej) kopiuje dane ze źródła danych do `ImageView` i `TextView` tego układu.
+`OnCreateViewHolder` zwiększa ten układ dla lokalizacji zdjęć danym w `RecyclerView` i tworzy nową `PhotoViewHolder` wystąpienia (który lokalizuje i zapisuje w pamięci podręcznej odwołań do `ImageView` i `TextView` widoków podrzędnych w skojarzonej `CardView` układ):
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -240,12 +240,12 @@ public override RecyclerView.ViewHolder
 
 ```
 
-Wynikowa wystąpienia właściciela widoku `vh`, jest zwracana do wywołującego (Menedżer układ).
+Wynikowy wystąpienia właściciela widoku `vh`, jest zwracany do obiektu wywołującego (Menedżer układ).
 
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-Gdy Menedżer układu jest gotowy do wyświetlania określonego widoku w `RecyclerView`przez obszar ekranu widoczne wywołuje karty `OnBindViewHolder` metody do wypełniania elementu na pozycji określony wiersz o zawartości ze źródła danych. `OnBindViewHolder` pobiera informacje o fotografii dla pozycji określony wiersz (zdjęcia zasobu obrazu i ciągu dla podpisu zdjęcia) i kopiuje dane z widokami skojarzone. Widoki znajdują się za pomocą odwołania przechowywane w obiekcie posiadacz widoku (który jest przekazywana w `holder` parametru):
+Gdy Menedżer układ jest gotowy do wyświetlania określonego widoku w `RecyclerView`firmy obszar ekranu widoczny wywoływanych przez nią karty `OnBindViewHolder` metody do wypełniania elementów w położeniu określony wiersz z zawartością ze źródła danych. `OnBindViewHolder` pobiera informacje o zdjęcie pozycji określony wiersz (zasób obrazu zdjęcia i ciągu dla podpisu zdjęcia), a następnie kopiuje te dane do widoków skojarzonych. Widoki znajdują się za pomocą odwołania przechowywanych w obiekcie właściciela widoku (która jest przekazywana w `holder` parametr):
 
 ```csharp
 public override void
@@ -261,15 +261,15 @@ public override void
 }
 ```
 
-Najpierw należy można rzutować obiektu posiadacz przekazany w widoku do typu posiadacz pochodnych widoku (w tym przypadku `PhotoViewHolder`) przed jego użyciem.
-Karta ładuje zasób obrazu do widoku odwołuje się widok symbol zastępczy `Image` właściwości, a kopiuje tekst podpisu w widoku odwołuje się widok symbol zastępczy `Caption` właściwości. To *wiąże* ze swoimi danymi skojarzonego widoku.
+Obiekt zastępczy przekazany w widoku najpierw musi być rzutowany na typ właściciela widoku pochodnych (w tym przypadku `PhotoViewHolder`) przed jego użyciem.
+Karta ładuje zasób obrazu do widoku odwołuje się widok symbol zastępczy `Image` właściwości i kopiuje tekst podpisu do widoku odwołuje się widok symbol zastępczy `Caption` właściwości. To *wiąże* widok skojarzony ze swoimi danymi.
 
-Zwróć uwagę, że `OnBindViewHolder` jest kod, który bezpośrednio dotyczy struktury danych. W takim przypadku `OnBindViewHolder` zrozumienie sposobu mapowania `RecyclerView` elementu stanie element skojarzonych danych w źródle danych. Mapowanie jest prosta w takim przypadku ponieważ pozycja może być używany jako indeks tablicy do albumu; Jednakże bardziej złożone źródła danych mogą wymagać dodatkowego kodu do ustanawiania mapowanie programu.
+Należy zauważyć, że `OnBindViewHolder` jest kod, który bezpośrednio dotyczy strukturę danych. W tym przypadku `OnBindViewHolder` rozumie sposób mapowania `RecyclerView` elementu pozycji, aby element powiązane dane w źródle danych. Mapowanie jest prosta, w tym przypadku ponieważ pozycja może służyć jako indeks tablicy do albumów zdjęć; jednak bardziej złożone źródła danych może wymagać dodatkowego kodu, aby ustanowić takie mapowanie.
 
 
-#### <a name="itemcount"></a>Wartość elementu ItemCount
+#### <a name="itemcount"></a>: ItemCount
 
-`ItemCount` Metoda zwraca liczbę elementów w kolekcji danych. W przykładową aplikację Podgląd fotografii liczba elementów to liczba zdjęć w albumu:
+`ItemCount` Metoda zwraca liczbę elementów w kolekcji danych. W aplikacji Podgląd przykład zdjęcia liczba elementów jest liczba zdjęcia w albumu:
 
 ```csharp
 public override int ItemCount
@@ -278,12 +278,12 @@ public override int ItemCount
 }
 ```
 
-Aby uzyskać więcej informacji na temat `RecyclerView.Adapter`, zobacz [odwołania do klasy RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
+Aby uzyskać więcej informacji na temat `RecyclerView.Adapter`, zobacz [odwołań do klas RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
 
-### <a name="putting-it-all-together"></a>Zestawienie on wszystkie
+### <a name="putting-it-all-together"></a>Zestawiania je wszystkie
 
-Powstałe w ten sposób `RecyclerView` wdrożenia dla aplikacji zdjęcie przykład składa się z `MainActivity` kod, który tworzy źródła danych, Menedżera układu i karty. `MainActivity` Tworzy `mRecyclerView` wystąpienia, tworzy wystąpienie źródła danych i karty i mocowana w Menedżerze układ i karty:
+Wartość wynikowa `RecyclerView` implementację dla aplikacji photo przykład składa się z `MainActivity` kod, który tworzy źródła danych, Menedżera układu i karty. `MainActivity` Tworzy `mRecyclerView` wystąpienie, tworzy wystąpienie źródła danych i karty i mocowana w Menedżerze układ i karty:
 
 ```csharp
 public class MainActivity : Activity
@@ -312,7 +312,7 @@ public class MainActivity : Activity
 
 ```
 
-`PhotoViewHolder` Lokalizuje i buforuje odwołuje się do widoku:
+`PhotoViewHolder` Lokalizuje i zapisuje w pamięci podręcznej odwołań do widoku:
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -329,7 +329,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter` implementuje trzy zastąpienia wymaganej metody:
+`PhotoAlbumAdapter` implementuje trzy zastąpienia wymagane metody:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -364,29 +364,29 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-Gdy ten kod jest skompilować i uruchomić, tworzy podstawowe fotografii, wyświetlanie aplikacji, jak pokazano na poniższych zrzutach ekranu:
+W przypadku ten kod jest skompilowany i uruchomienia, tworzy podstawowe zdjęcia wyświetlania aplikacji, jak pokazano na poniższych zrzutach ekranu:
 
-[![Dwa zrzuty ekranu fotografii wyświetlanie aplikacji za pomocą obszaru poziomego przewijania kart zdjęcia](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
+[![Dwa zrzuty ekranu, wyświetlania aplikacji za pomocą obszaru poziomego przewijania kart zdjęcie zdjęcia](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-Podstawowa aplikacja obsługuje tylko przeglądanie albumu. Nie odpowie na element dotyku zdarzenia nie obsługuje zmian w danych źródłowych. Ta funkcja jest dodawany w [rozszerzanie przykład RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
+To podstawowa aplikacja obsługuje tylko przeglądania albumu. Nie będzie reagować na zdarzenia elementu dotyku, a nie obsługuje zmiany w danych bazowych. Ta funkcja zostanie dodany do [rozszerzanie przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
 
 ### <a name="changing-the-layoutmanager"></a>Zmiana LayoutManager
 
-Z powodu `RecyclerView`firmy elastyczności, jest łatwo zmodyfikować aplikację za pomocą Menedżera inny układ. W poniższym przykładzie jest modyfikowany do wyświetlenia albumu z układem siatki, które jest przewijane w poziomie, a nie z pionowego układu liniowej. W tym celu należy utworzyć wystąpienia menedżera układu jest modyfikacji w celu użycia `GridLayoutManager` w następujący sposób:
+Z powodu `RecyclerView`firmy elastyczności jest łatwo modyfikować aplikację do używania Menedżera inny układ. W poniższym przykładzie zostanie zmodyfikowany do wyświetlania albumu przy użyciu układu siatki, który przewija w poziomie, a nie z pionowego układu liniowego. Aby to zrobić, modyfikacji wystąpienia menedżera układu w celu użycia `GridLayoutManager` w następujący sposób:
 
 ```csharp
 mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, false);
 ```
 
-Ta zmiana kodu zastępuje pionową `LinearLayoutManager` z `GridLayoutManager` przedstawiający Siatka składa się z dwóch wierszy, które przewijać w poziomie kierunku. Podczas kompilowania i ponownie uruchom aplikację, pojawi się, czy w siatce są wyświetlane fotografie i czy przewijanie jest poziomy, a nie pionowej:
+Ta zmiana kodu zastępuje pionowe `LinearLayoutManager` z `GridLayoutManager` przedstawiające siatki składają się z dwóch wierszach, które można przewijać w poziomie kierunku. Gdy kompilujesz i ponownie uruchom aplikację zobaczysz, że fotografie są wyświetlane w siatce, i czy przewijanie jest poziomy, a nie pionowy:
 
-[![Zrzut ekranu aplikacji z przewijania w poziomie zdjęć w siatce](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
+[![Zrzut ekranu aplikacji za pomocą przewijanie w poziomie zdjęcia w siatce](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-Zmieniając tylko jeden wiersz kodu jest można modyfikować aplikacji wyświetlanie zdjęć do innego układu za pomocą inaczej.
-Zwróć uwagę, że kod karty ani układu XML muszą zostać zmodyfikowane w celu Zmień styl układu. 
+Zmieniając tylko jeden wiersz kodu, to istnieje możliwość modyfikowania aplikacji wyświetlania zdjęć na inny układ za pomocą inne zachowanie.
+Należy zauważyć, że kod karty ani układu XML nie miał modyfikacji w celu Zmień styl układu. 
 
-W następnym temacie [rozszerzanie przykład RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), tej aplikacji przykładowej podstawowa jest rozszerzony do obsługi zdarzeń kliknięcia elementu i zaktualizuj `RecyclerView` po zmianie w źródle danych.
+W następnym temacie [rozszerzanie przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), ta aplikacja podstawowy przykład jest rozszerzony do obsługi zdarzeń kliknięcia elementu i zaktualizuj `RecyclerView` po zmianie w źródle danych bazowych.
 
 
 
@@ -394,6 +394,6 @@ W następnym temacie [rozszerzanie przykład RecyclerView](~/android/user-interf
 
 - [RecyclerViewer (przykład)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [Części RecyclerView i funkcji](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [Rozszerzanie przykład RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
+- [Obiektu RecyclerView elementy i funkcje](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
+- [Rozszerzanie przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
