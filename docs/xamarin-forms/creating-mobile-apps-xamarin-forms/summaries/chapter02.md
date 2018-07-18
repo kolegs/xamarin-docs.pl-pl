@@ -7,24 +7,24 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 94c575bdfdc2325def00de58381f9bc295d953b9
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: HT
+ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935128"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995280"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Podsumowanie rozdział 2. Anatomia aplikacji
 
-W aplikacji platformy Xamarin.Forms, obiekty, które zajmują miejsce na ekranie są znane jako *elementy wizualne*, zhermetyzowany przez [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) klasy. Elementy wizualne, może zostać podzielony na trzy kategorie odpowiadający tych klas:
+W aplikacji platformy Xamarin.Forms, obiekty, które zajmują miejsce na ekranie są znane jako *elementy wizualne*, zhermetyzowany przez [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) klasy. Elementy wizualne, może zostać podzielony na trzy kategorie odpowiadający tych klas:
 
-- [Strona](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
-- [Układ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
-- [Widok](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
+- [Strona](xref:Xamarin.Forms.Page)
+- [Układ](xref:Xamarin.Forms.Layout)
+- [Widok](xref:Xamarin.Forms.View)
 
 A `Page` utworów zależnych zajmuje cały ekran lub prawie cały ekran. Często jest elementem podrzędnym strony `Layout` utworów zależnych do organizowania elementów wizualnych podrzędnych. Elementy podrzędne `Layout` mogą być inne `Layout` klasy lub `View` pochodnych (często nazywany *elementy*), które są znane obiekty, takie jak tekst, mapy bitowe, suwaki, przyciski, pola listy i tak dalej.
 
-W tym rozdziale pokazano, jak utworzyć aplikację, skupiając się na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), czyli `View` utworów zależnych, który wyświetla tekst.
+W tym rozdziale pokazano, jak utworzyć aplikację, skupiając się na [ `Label` ](xref:Xamarin.Forms.Label), czyli `View` utworów zależnych, który wyświetla tekst.
 
 ## <a name="say-hello"></a>Zacznij korzystać
 
@@ -43,7 +43,7 @@ W wielu programach Xamarin.Forms nie modyfikowanie projektów aplikacji. Pozosta
 
 ## <a name="inside-the-files"></a>Wewnątrz plików
 
-Wizualizacje wyświetlane przez **Hello** programu są zdefiniowane w Konstruktorze typu [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) klasy. `App` pochodzi od klasy zestawu narzędzi Xamarin.Forms [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/).
+Wizualizacje wyświetlane przez **Hello** programu są zdefiniowane w Konstruktorze typu [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) klasy. `App` pochodzi od klasy zestawu narzędzi Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application).
 
 **Odwołania** części **Hello** projektu PCL obejmuje następujące zestawy Xamarin.Forms:
 
@@ -111,30 +111,30 @@ W aplikacji PCL platformy korzystania w czasie wykonywania, można określić, j
 
 [ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) rozwiązanie pokazuje, jak dodać nowy plik C# do **Greetings** projektu. Ten plik definiuje klasę o nazwie `GreetingsPage` który pochodzi od klasy `ContentPage`. W tym podręczniku, większość projekty zawierają jeden `ContentPage` utworów zależnych, którego nazwa jest nazwą projektu z sufiksem `Page` dołączane.
 
-`GreetingsPage` Konstruktor tworzy [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) widoku, który jest widok zestawu narzędzi Xamarin.Forms, który służy do wyświetlania tekstu. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Właściwość jest ustawiona na tekst wyświetlany przez `Label`. Ten program ustawia `Label` do `Content` właściwość `ContentPage`. Konstruktor obiektu `App` następnie tworzy wystąpienie klasy `GreetingsPage` i ustawia ją na jego `MainPage` właściwości.
+`GreetingsPage` Konstruktor tworzy [ `Label` ](xref:Xamarin.Forms.Label) widoku, który jest widok zestawu narzędzi Xamarin.Forms, który służy do wyświetlania tekstu. [ `Text` ](xref:Xamarin.Forms.Label.Text) Właściwość jest ustawiona na tekst wyświetlany przez `Label`. Ten program ustawia `Label` do `Content` właściwość `ContentPage`. Konstruktor obiektu `App` następnie tworzy wystąpienie klasy `GreetingsPage` i ustawia ją na jego `MainPage` właściwości.
 
 Tekst jest wyświetlany w lewym górnym rogu strony. W systemach iOS oznacza to, że nakłada się pasek stanu strony. Istnieje kilka rozwiązań tego problemu:
 
 ### <a name="solution-1-include-padding-on-the-page"></a>Rozwiązanie 1. Potrójna zrzut ekranu przedstawiający greetings programpoziomo i pionowo wyśrodkowane etykietypoziomo i pionowo wyśrodkowane etykiety
 
-Rozwiązanie 5. `Padding` Wyśrodkowanie tekstu w etykiecie
+Ustaw właściwość [`Padding`](xref:Xamarin.Forms.Page.Padding) na stronie. `Padding` jest typu [`Thickness`](xref:Xamarin.Forms.Thickness), struktura o czterech właściwościach:
 
-- [`Left`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Left/)
-- [`Top`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Top/)
-- [`Right`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Right/)
-- [`Bottom`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Bottom/)
+- [`Left`](xref:Xamarin.Forms.Thickness.Left)
+- [`Top`](xref:Xamarin.Forms.Thickness.Top)
+- [`Right`](xref:Xamarin.Forms.Thickness.Right)
+- [`Bottom`](xref:Xamarin.Forms.Thickness.Bottom)
 
-`Padding` Można również Wyśrodkuj tekst (lub umieścić go w ośmiu innych lokalizacjach na stronie), ustawiając `Padding`   i    właściwości  do elementu członkowskiego    wyliczenia: , znaczenie po lewej stronie lub górnej (w zależności od orientacja)
+`Padding` Można również Wyśrodkuj tekst (lub umieścić go w ośmiu innych lokalizacjach na stronie), ustawiając `Padding`   i    właściwości  do elementu członkowskiego    wyliczenia: Pozwala to `Label` na uniknięcie nadpisania paska stanu iOS.
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>, co oznacza, po prawej stronie lub u dołu (w zależności od orientacja) Te dwie właściwości są zdefiniowane tylko przez , podczas gdy  i  właściwości są definiowane przez  i dziedziczone przez wszystkie  pochodnych.
 
-Efekty wizualne wydawałyby się podobne, ale są one bardzo różne, tak jak pokazano w następnym rozdziale. Pełny tekst rozdział 2 (PDF)
+Efekty wizualne wydawałyby się podobne, ale są one bardzo różne, tak jak pokazano w następnym rozdziale. Zostało to wykazane w rozwiązaniu [**GreetingsSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap).
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>Przykłady rozdział 2 Przykłady rozdział 2 F #
 
-Wprowadzenie do zestawu narzędzi Xamarin.Forms Te metody są one przestarzałe
+W wersji Xamarin.Forms użytej w książce właściwość `Padding` specyficzną dla iOS w PCL lub SAP można wybrać za pomocą [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) lub [`Device.OnPlatform<T>`](xref:Xamarin.Forms.Device.OnPlatform*) statycznej metody. Te metody są one przestarzałe
 
-`Device.OnPlatform` Metody są używane do uruchomienia kodu specyficznego dla platformy, lub wybierz wartości specyficzne dla platformy. Wewnętrznie, należy używać [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) statycznych właściwości tylko do odczytu, która zwraca element członkowski [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) wyliczenia:
+`Device.OnPlatform` Metody są używane do uruchomienia kodu specyficznego dla platformy, lub wybierz wartości specyficzne dla platformy. Wewnętrznie, należy używać [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) statycznych właściwości tylko do odczytu, która zwraca element członkowski [ `TargetPlatform` ](xref:Xamarin.Forms.TargetPlatform) wyliczenia:
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
@@ -142,13 +142,13 @@ Wprowadzenie do zestawu narzędzi Xamarin.Forms Te metody są one przestarzałe
 - [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), wcześniej używany do identyfikowania Windows Phone 8.0, ale jest obecnie nieużywane
 - [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) jest używana
 
-`Device.OnPlatform` Metod `Device.OS` właściwości i `TargetPlatform` wyliczenia są wszystkie obecnie przestarzałe. Zamiast tego należy użyć [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) właściwości i porównaj `string` zwracają wartość z pola statyczne:
+`Device.OnPlatform` Metod `Device.OS` właściwości i `TargetPlatform` wyliczenia są wszystkie obecnie przestarzałe. Zamiast tego należy użyć [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) właściwości i porównaj `string` zwracają wartość z pola statyczne:
 
-- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), ciąg "iOS"
-- [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), ciąg "Android"
-- [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), ciąg "UWP" odwołujące się do platformy Windows Runtime
-- [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), ciąg "Windows" dla środowiska uruchomieniowego Windows (Windows 8.1 i Windows Phone 8.1)
-- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), ciąg "WinPhone" dla systemu Windows Phone 8.0
+- [`iOS`](xref:Xamarin.Forms.Device.iOS), ciąg "iOS"
+- [`Android`](xref:Xamarin.Forms.Device.Android), ciąg "Android"
+- [`UWP`](xref:Xamarin.Forms.Device.UWP), ciąg "UWP" odwołujące się do platformy Windows Runtime
+- `Windows`, ciąg "Windows" dla środowiska uruchomieniowego Windows (Windows 8.1 i Windows Phone 8.1 przestarzałe)
+- `WinPhone`, ciąg "WinPhone" dla Windows Phone 8.0 (przestarzałe)
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Dotyczy statycznych właściwości tylko do odczytu. Spowoduje to zwrócenie członkiem [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), która zawiera te elementy członkowskie:
 
@@ -161,28 +161,28 @@ Dla systemów iOS i Android, odcięcia między `Tablet` i `Phone` szerokość pi
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>3a rozwiązania. Ustaw marginesu na etykiecie
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Właściwość wprowadzono za późno, mają zostać uwzględnione w książce, ale jest również typu `Thickness` i ustaw go na `Label` do definiowania obszar poza widoku, który znajduje się w obliczeniach Układ widoku.
+[ `Margin` ](xref:Xamarin.Forms.View.Margin) Właściwość wprowadzono za późno, mają zostać uwzględnione w książce, ale jest również typu `Thickness` i ustaw go na `Label` do definiowania obszar poza widoku, który znajduje się w obliczeniach Układ widoku.
 
-`Padding` Właściwość jest dostępna tylko na [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) i [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) pochodnych. `Margin` Właściwość jest dostępna we wszystkich [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) pochodnych.
+`Padding` Właściwość jest dostępna tylko na [ `Layout` ](xref:Xamarin.Forms.Layout) i [ `Page` ](xref:Xamarin.Forms.Page) pochodnych. `Margin` Właściwość jest dostępna we wszystkich [ `View` ](xref:Xamarin.Forms.View) pochodnych.
 
 ## <a name="solution-4-center-the-label-within-the-page"></a>Rozwiązanie 4. Wyśrodkuj etykietę na stronie
 
-Można wyśrodkować `Label` w ramach `Page` (lub umieścić go w jednym z ośmiu innych miejscach), ustawiając [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) i [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) właściwości `Label` do wartości typu [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/). `LayoutOptions` Struktury definiuje dwie właściwości:
+Można wyśrodkować `Label` w ramach `Page` (lub umieścić go w jednym z ośmiu innych miejscach), ustawiając [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) właściwości `Label` do wartości typu [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions). `LayoutOptions` Struktury definiuje dwie właściwości:
 
-- [ `Alignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Właściwości typu [ `LayoutAlignment` ](xref:Xamarin.Forms.LayoutAlignment), wyliczenie z cztery elementy członkowskie: [ `Start` ](xref:Xamarin.Forms.LayoutAlignment.Start), co oznacza, że po lewej stronie lub górnej w zależności od Orientacja [ `Center` ](xref:Xamarin.Forms.LayoutAlignment.Center), [ `End` ](xref:Xamarin.Forms.LayoutAlignment.End), oznacza to po prawej stronie lub u dołu, w zależności od orientacji, i [ `Fill` ](xref:Xamarin.Forms.LayoutAlignment.Fill).
+- [ `Alignment` ](xref:Xamarin.Forms.LayoutOptions.Alignment) Właściwości typu [ `LayoutAlignment` ](xref:Xamarin.Forms.LayoutAlignment), wyliczenie z cztery elementy członkowskie: [ `Start` ](xref:Xamarin.Forms.LayoutAlignment.Start), co oznacza, że po lewej stronie lub górnej w zależności od Orientacja [ `Center` ](xref:Xamarin.Forms.LayoutAlignment.Center), [ `End` ](xref:Xamarin.Forms.LayoutAlignment.End), oznacza to po prawej stronie lub u dołu, w zależności od orientacji, i [ `Fill` ](xref:Xamarin.Forms.LayoutAlignment.Fill).
 
-- [ `Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) Właściwości typu `bool`.
+- [ `Expands` ](xref:Xamarin.Forms.LayoutOptions.Expands) Właściwości typu `bool`.
 
 Zwykle te właściwości nie są używane bezpośrednio. Zamiast tego kombinacji te dwie właściwości są dostarczane przez osiem statycznych właściwości tylko do odczytu typu `LayoutOptions`:
 
-- [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`LayoutOptions.End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`LayoutOptions.StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`LayoutOptions.CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`LayoutOptions.Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`LayoutOptions.Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`LayoutOptions.End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`LayoutOptions.StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`LayoutOptions.CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
 `HorizontalOptions` i `VerticalOptions` są najważniejsze właściwości w układzie platformy Xamarin.Forms i zostały omówione bardziej szczegółowo w [ **rozdział 4. Przewijanie stosu**](chapter04.md).
 
@@ -192,7 +192,7 @@ Poniżej przedstawiono wynik z `HorizontalOptions` i `VerticalOptions` właściw
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Rozwiązanie 5. Wyśrodkowanie tekstu w etykiecie
 
-Można również Wyśrodkuj tekst (lub umieścić go w ośmiu innych lokalizacjach na stronie), ustawiając [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) i [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) właściwości `Label` do elementu członkowskiego [ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment) wyliczenia:
+Można również Wyśrodkuj tekst (lub umieścić go w ośmiu innych lokalizacjach na stronie), ustawiając [ `HorizontalTextAlignment` ](xref:Xamarin.Forms.Label.HorizontalTextAlignment) i [ `VerticalTextAlignment` ](xref:Xamarin.Forms.Label.VerticalTextAlignment) właściwości `Label` do elementu członkowskiego [ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment) wyliczenia:
 
 - [`Start`](xref:Xamarin.Forms.TextAlignment.Start), znaczenie po lewej stronie lub górnej (w zależności od orientacja)
 - [`Center`](xref:Xamarin.Forms.TextAlignment.Center)
