@@ -1,98 +1,145 @@
 ---
-title: Bezpłatne, inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
-description: W tym dokumencie opisano, jak Xamarin.iOS deweloperzy mogą testować aplikacji na urządzeniu fizycznym bez konieczności Załóż płatną programie dla deweloperów firmy Apple.
+title: Bezpłatna Aprowizacja dla aplikacji platformy Xamarin.iOS
+description: W tym dokumencie opisano, jak deweloperzy platformy Xamarin.iOS mogą testowania aplikacji na urządzeniu fizycznym bez konieczności logowania do płatnej Program dla deweloperów firmy Apple.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 03/19/2017
-ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/16/2018
+ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786025"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111160"
 ---
-# <a name="free-provisioning-for-xamarinios-apps"></a>Bezpłatne, inicjowanie obsługi administracyjnej dla aplikacji platformy Xamarin.iOS
+# <a name="free-provisioning-for-xamarinios-apps"></a>Bezpłatna aprowizacja dla aplikacji platformy Xamarin.iOS
 
-_W wersji Xcode 7 firmy Apple pochodzi ważne zmiany dla wszystkich systemów iOS i Mac deweloperzy: Zwolnij inicjowania obsługi administracyjnej._
+Bezpłatna aprowizacja umożliwia deweloperom platformy Xamarin.iOS wdrażania i testowania swoich aplikacji na urządzeniach z systemem iOS **bez** bycie częścią **Apple Developer Program**.
+Podczas testowania simulator są cenne i wygodne, istotne jest, aby testować aplikacje na urządzeniach fizycznych z systemem iOS, aby sprawdzić, czy one działać prawidłowo w rzeczywistych pamięci, magazynu i ograniczenia łączność w sieci.
 
-Bezpłatne udostępniania umożliwia deweloperom wdrażanie aplikacji platformy Xamarin.iOS na urządzeniu z systemem iOS **bez** jest częścią żadnego **programie dla deweloperów firmy Apple**. Jest to bardzo korzystne dla deweloperów, jako testowania na urządzeniu umożliwia wiele korzyści, za pośrednictwem testowania w symulatorze, w tym między innymi do pamięci, magazynu, łączności sieciowej między innymi.
+Aby użyć aprowizacji bezpłatnej, aby wdrożyć aplikację na urządzeniu:
 
-Inicjowanie obsługi bez konta deweloperów firmy Apple muszą być wykonywane za pomocą Xcode, co powoduje *tożsamość podpisywania* (zawierający certyfikat dewelopera i klucz prywatny), a *profilu inicjowania obsługi administracyjnej* () zawierające jawny identyfikator aplikacji i UDID urządzenia połączone z systemem iOS).
+- Użyj środowiska Xcode, aby utworzyć niezbędne *tożsamość do podpisywania* (certyfikat dewelopera i klucz prywatny) i *profil inicjowania obsługi administracyjnej* (zawierające jawny identyfikator aplikacji i identyfikator UDID urządzenia połączone z systemem iOS).
+- Użyj tożsamość do podpisywania i inicjowania obsługi profilu utworzonego przez program Xcode w programie Visual Studio for Mac lub Visual Studio 2017 do wdrażania aplikacji platformy Xamarin.iOS.
+
+> [!IMPORTANT]
+> [Automatyczna aprowizacja](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) zezwala programowi Visual Studio for Mac lub Visual Studio 2017, aby automatycznie skonfigurować urządzenie do testowania dla deweloperów. Jednak automatycznej aprowizacji nie jest zgodny z aprowizacji bezpłatnej. Aby można było korzystać z automatycznej aprowizacji, musi mieć płatne konto programu dla deweloperów firmy Apple.
 
 ## <a name="requirements"></a>Wymagania
 
-Przeprowadzać wdrażania z Xamarin.iOS aplikacji na urządzeniu z wolnego udostępniania muszą używać Xcode 7 lub nowszy.
+Wdrażanie aplikacji platformy Xamarin.iOS urządzenia przy użyciu bezpłatnego inicjowania obsługi administracyjnej:
 
-**Identyfikator Apple ID używanego nie musi być połączony do dowolnego programie dla deweloperów firmy Apple.**
+- Identyfikator Apple ID, używane nie może być podłączone do programu Apple Developer.
+- Aplikacji platformy Xamarin.iOS należy użyć jawny identyfikator aplikacji, nie uniwersalny identyfikator aplikacji.
+- Identyfikator pakietu używane w aplikacji platformy Xamarin.iOS muszą być unikatowe i nie były używane w innej aplikacji wcześniej. Identyfikator pakietu, wszystkie używane aprowizacji BEZPŁATNEJ **nie** być ponownie używane.
+- Jeśli masz już rozesłany aplikacji, nie możesz wdrożyć tę aplikację przy użyciu aprowizacji bezpłatnej.
+- Jeśli aplikacja korzysta z usługi aplikacji, musisz utworzyć profil inicjowania obsługi administracyjnej, zgodnie z opisem w [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md#appservices) przewodnik. 
 
-Identyfikator pakietu używane w aplikacji muszą być unikatowe i nie były używane w innej aplikacji wcześniej. Identyfikator pakietu, wszystkie używane z wolnego inicjowania obsługi administracyjnej może nie ponownie można użyć ponownie. Jeśli aplikacja ma już rozesłany, nie może obsłużyć tej aplikacji z inicjowaniem obsługi administracyjnej wolne. 
+Przyjrzyj się [ograniczenia](#limitations) części tego dokumentu, aby uzyskać więcej informacji na temat ograniczeń związanych z bezpłatnej, inicjowanie obsługi administracyjnej i odwoływać się do [przewodniki dystrybucji aplikacji](~/ios/deploy-test/app-distribution/index.md) Aby uzyskać więcej informacji na temat dystrybuowanie aplikacji dla systemu iOS.
 
-Zapoznaj się [prowadzi dystrybucji aplikacji](~/ios/deploy-test/app-distribution/index.md) Aby uzyskać więcej informacji.
+## <a name="testing-on-device-with-free-provisioning"></a>Testowanie na urządzeniu z usługą aprowizacji bezpłatnej
 
-Jeśli Twoja aplikacja korzysta z usługi aplikacji, a następnie musisz utworzyć profil inicjowania obsługi administracyjnej zgodnie z opisem w [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md#appservices) przewodnik. Widać więcej ograniczeń [odpowiedniej sekcji](#limitations) poniżej.
+Wykonaj następujące kroki, aby przetestować aplikację platformy Xamarin.iOS przy użyciu aprowizacji bezpłatnej.
 
+### <a name="use-xcode-to-create-a-signing-identity-and-provisioning-profile"></a>Aby utworzyć tożsamość do podpisywania i profil inicjowania obsługi administracyjnej korzystania ze środowiska Xcode
 
-## <a name="a-namelaunching--launching-your-app"></a><a name="launching" /> Uruchamianie aplikacji
+1. Jeśli nie masz identyfikatora Apple ID, [utworzyć](https://appleid.apple.com).
+2. Otwórz program Xcode i przejdź do **Xcode > Preferencje**.
+3. W obszarze **kont**, użyj **+** przycisk, aby dodać swojego istniejącego identyfikatora Apple ID. Powinny one wyglądać podobnie do następującego zrzutu:
 
-Do korzystania z bezpłatnej obsługi administracyjnej do wdrażania aplikacji na urządzeniu, będzie używać Xcode do tworzenia tożsamości podpisywania i profile inicjowania obsługi administracyjnej, a następnie użyje programu Visual Studio for Mac lub Visual Studio wybierz poprawnego profilu do podpisania aplikacji z. Wykonaj przewodnik krok po kroku poniżej, aby to zrobić:
+    ![Preferencje Xcode — konta](free-provisioning-images/launchapp1.png "preferencje Xcode — konta")
 
-1. Jeśli nie ma identyfikatora Apple ID, utworzyć w [appleid.apple.com](https://appleid.apple.com/account).
-2. Otwórz środowisko Xcode i przejdź do **Xcode > Preferencje**.
-3. W obszarze **kont**, użyj **+** przycisk, aby dodać do istniejącego identyfikatora firmy Apple. Powinien wyglądać podobnie jak na poniższym zrzucie ekranu:
+4. Zamknij program Xcode Preferencje.
+5. Podłącz urządzenie z systemem iOS, do której chcesz wdrożyć aplikację.
+6. W środowisku Xcode Utwórz nowy projekt. Wybierz **Plik > Nowy > Projekt** i wybierz **aplikacja pojedynczego widoku**.
+7. W oknie dialogowym Nowy projekt ustaw **zespołu** do identyfikatora Apple ID, który właśnie został dodany. Na liście rozwijanej powinny wyglądać podobnie do **imię i nazwisko (zespół osobistych)**:
 
-  [![](free-provisioning-images/launchapp1.png "Xcode preferencji konta")](free-provisioning-images/launchapp1.png#lightbox)
+    ![Utwórz nową aplikację](free-provisioning-images/launchapp2.png "Utwórz nową aplikację")
 
-4. Podłącz urządzenie z systemem iOS, które chcesz wdrożyć i Utwórz nowy projekt pusty widok pojedynczego systemu iOS w programie Xcode. Ustaw **zespołu** listy rozwijanej Apple ID, który został dodany. Powinna być w formacie podobnym do `your name (Personal Team - your Apple ID)`:
+8. Po utworzeniu nowego projektu, wybierz schemat kompilacji programu Xcode, który jest przeznaczony dla urządzenia z systemem iOS (zamiast symulatora).
 
-  [![](free-provisioning-images/launchapp2.png "Utwórz tożsamość podpisywania")](free-provisioning-images/launchapp2.png#lightbox)
+    ![Wybierz schemat kompilacji programu Xcode](free-provisioning-images/xcodescheme.png "wybierz schemat kompilacji programu Xcode")
 
-5. W obszarze **ogólne > tożsamości** sekcji, upewnij się, że identyfikator pakietu jest zgodny _dokładnie_ identyfikator pakietu aplikacji platformy Xamarin.iOS i upewnij się, cel wdrożenia pasuje do lub jest niższy niż urządzenia z systemem iOS połączonych. Ten krok jest niezwykle ważne, ponieważ Xcode tylko utworzy profilu inicjowania obsługi administracyjnej z jawny identyfikator aplikacji:
+9. Otwórz ustawienia projektu aplikacji, wybierając jego węzeł najwyższego poziomu w program Xcode **Nawigatora projektu**.
+10. W obszarze **ogólne > tożsamości**, upewnij się, że **identyfikatora pakietu** _dokładnie pasuje_ identyfikator pakietu aplikacji platformy Xamarin.iOS.
 
-  [![](free-provisioning-images/launchapp5.png "Tworzenie profilu inicjowania obsługi administracyjnej z jawny identyfikator aplikacji")](free-provisioning-images/launchapp5.png#lightbox)
+    ![Ustaw identyfikator pakietu](free-provisioning-images/launchapp5.png "Ustaw identyfikator pakietu")
 
-6. W sekcji podpisywanie wybierz **automatycznie zarządzać podpisywania** i wybierz z listy rozwijanej zespół:
+    > [!IMPORTANT]
+    > Środowisko Xcode tylko będzie utworzyć profilu aprowizacji dla jawny identyfikator aplikacji, a musi być taki sam jak identyfikator aplikacji w aplikacji platformy Xamarin.iOS.
+    > Jeśli będą się różnić, nie można używać wolnego inicjowania obsługi administracyjnej do wdrożenia aplikacji platformy Xamarin.iOS.
 
-  [![](free-provisioning-images/launchapp6.png "Wybierz automatycznie zarządzać podpisywania i wybierz z listy rozwijanej zespół")](free-provisioning-images/launchapp6.png#lightbox)
+11. W obszarze **informacje o wdrożeniu**, upewnij się, że cel wdrożenia jest zgodny lub jest niższa niż wersja zainstalowana na urządzeniu z systemem iOS połączone z systemem iOS.
+12. W obszarze **podpisywanie**, wybierz opcję **automatycznie zarządzała podpisywania** i wybierz zespół z listy rozwijanej:
 
-7. Poprzedni krok automatycznie wygeneruje profilu inicjowania obsługi administracyjnej i tożsamości podpisywania dla Ciebie. Można wyświetlić tego klikając ikonę informacji obok profilu inicjowania obsługi administracyjnej:
+    ![Automatycznie zarządzała podpisywania](free-provisioning-images/launchapp6.png "automatycznie zarządzała podpisywania")
 
-  [![](free-provisioning-images/launchapp7.png "Widok profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp7.png#lightbox)
+    Środowisko Xcode automatycznie wygeneruje profilu aprowizacji i tożsamości podpisywania dla Ciebie. Można to wyświetlić, klikając ikonę informacji obok profil inicjowania obsługi administracyjnej:
 
-8. Aby przetestować w środowisku Xcode, należy wdrożyć pusta aplikacja do Twojego urządzenia, klikając przycisk uruchamiania.
+    ![Wyświetlanie profilu inicjowania obsługi administracyjnej](free-provisioning-images/launchapp7.png "wyświetlić zawartość profilu inicjowania obsługi administracyjnej")
 
-9. Zwracane ze środowiskiem IDE z tym samym urządzeniu podłączony i kliknij prawym przyciskiem myszy nazwę projektu platformy Xamarin.iOS otworzyć **opcje projektu** okna dialogowego. Przejdź do sekcji podpisywania pakietu z systemem iOS i jawnie ustaw Twojej tożsamości podpisywania i profil inicjowania obsługi administracyjnej:
+    > [!TIP]
+    > Jeśli występuje błąd podczas próby wygenerowania profilu aprowizacji środowiska Xcode, upewnij się, że ten program Xcode kompilacji aktualnie wybrany schemat jest przeznaczony dla urządzeń połączonych z systemem iOS, a nie z symulatora.
 
-  [![](free-provisioning-images/launchapp8.png "Ustaw tożsamość podpisywania i profil inicjowania obsługi administracyjnej")](free-provisioning-images/launchapp8.png#lightbox)
+13. Aby przetestować w środowisku Xcode, należy wdrożyć pusta aplikacja do Twojego urządzenia, klikając przycisk uruchamiania.
 
-Jeśli nie widzisz Twojej tożsamości podpisywania lub poprawnego profilu inicjowania obsługi administracyjnej w środowiskiem IDE, może być konieczne uruchom go ponownie.
+### <a name="deploy-your-xamarinios-app"></a>Wdrażanie aplikacji platformy Xamarin.iOS
 
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="a-namelimitations-limitations"></a><a name="limitations" />Ograniczenia
+1. Połączenia urządzenia z systemem iOS z hostem kompilacji komputera Mac przy użyciu kabla USB lub [bezprzewodowo](~/ios/deploy-test/wireless-deployment.md).
+2. W programie Visual Studio dla komputerów Mac **konsoli rozwiązania**, kliknij dwukrotnie **Info.plist**.
+3. W **podpisywanie**, wybierz opcję **ręcznego inicjowania obsługi administracyjnej**.
+4. Kliknij przycisk **podpisywanie pakietu systemu iOS...** przycisk.
+5. Aby uzyskać **konfiguracji**, wybierz opcję **debugowania**.
+6. Aby uzyskać **platformy**, wybierz opcję **iPhone**.
+7. Wybierz **tożsamość podpisywania** utworzone przez program Xcode.
+8. Wybierz **profilu aprowizacji** utworzone przez program Xcode.
 
-Apple nałożył różne ograniczenia na kiedy i jak można wolnego inicjowania obsługi administracyjnej do uruchamiania aplikacji na urządzeniu z systemem iOS, zapewniając, że można wdrożyć tylko do *Twojego* urządzenia. Są one wymienione w tej sekcji.
+    ![Ustaw tożsamość do podpisywania i profil inicjowania obsługi administracyjnej](free-provisioning-images/launchapp8.png "Ustaw tożsamość do podpisywania i profil inicjowania obsługi administracyjnej")
 
-Dostęp do programu iTunes Connect również jest ograniczony i w związku z tym usługach, takich jak publikowania w sklepie App Store i TestFlight są niedostępne dla deweloperów za darmo udostępniania swoich aplikacji. Konto Apple Developer (Enterprise lub osobiste) jest wymagana do dystrybucji za pośrednictwem oznacza Ad Hoc i wewnętrznych.
+    > [!TIP]
+    > Jeśli nie widzisz swojej tożsamości podpisywania lub poprawnego profilu inicjowania obsługi administracyjnej, może być konieczne ponowne uruchomienie programu Visual Studio dla komputerów Mac.
 
-Inicjowanie obsługi administracyjnej Profile utworzone w ten sposób wygaśnie po tydzień tożsamości podpisywania po roku. Ponadto profile aprowizacji będzie można tworzyć tylko z jawnym identyfikatorów aplikacji i dlatego należy postępować zgodnie z instrukcjami [powyżej](#launching) dla każdej aplikacji, które chcesz zainstalować.
+9. Kliknij przycisk **OK** Zapisz i Zamknij **opcje projektu**.
+10. Wybierz urządzenie z systemem iOS i uruchomić aplikację.
 
-Inicjowanie obsługi administracyjnej dla większości aplikacji usługi również nie jest możliwe z inicjowaniem obsługi administracyjnej wolne. Możliwości obejmują:
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Płatności firmy Apple
-- Centrum gier
-- usługi iCloud
-- Zakup w aplikacji
-- Powiadomienia wypychane
-- Portfela (został Passbook)
+1. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Połączenia urządzenia z systemem iOS z hostem kompilacji komputera Mac przy użyciu kabla USB lub [bezprzewodowo](~/ios/deploy-test/wireless-deployment.md).
+3. W programie Visual Studio 2017 **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nad projektem platformy Xamarin.iOS i wybierz **właściwości**.
+4. Przejdź do **podpisywanie pakietu systemu iOS**.
+5. Aby uzyskać **konfiguracji**, wybierz opcję **debugowania**.
+6. Aby uzyskać **platformy**, wybierz opcję **iPhone**.
+7. Wybierz **Aprowizacja ręczna**.
+8. Wybierz **tożsamość podpisywania** utworzone przez program Xcode.
+9. Wybierz **profilu aprowizacji** utworzone przez program Xcode.
+    
+    ![Ustaw tożsamość do podpisywania i profil inicjowania obsługi administracyjnej](free-provisioning-images/setprofile-w157.png "Ustaw tożsamość do podpisywania i profil inicjowania obsługi administracyjnej")
 
-Pełna lista jest dostarczonymi przez firmę Apple w ich [obsługiwane możliwości](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SupportedCapabilities/SupportedCapabilities.html#//apple_ref/doc/uid/TP40012582-CH38-SW1) przewodnik. Aby udostępnić aplikację do użycia z usługi aplikacji, odwiedź stronę [Praca z funkcjami](~/ios/deploy-test/provisioning/capabilities/index.md) przewodników.
+    > [!TIP]
+    > Środowisko Xcode utworzona ta tożsamość do podpisywania i profil inicjowania obsługi administracyjnej i zapisał je na hoście z systemem Mac kompilacji. Są one dostępne dla programu Visual Studio 2017, ponieważ ma ono [sparowanych](~/ios/get-started/installation/windows/connecting-to-mac/index.md) z hostem kompilacji Mac. Jeśli nie są wyświetlane, może być konieczne ponowne uruchomienie programu Visual Studio 2017.
 
+10. Zapisz i zamknij właściwości projektu.
+11. Wybierz urządzenie z systemem iOS i uruchomić aplikację.
+
+-----
+
+## <a name="limitations"></a>Ograniczenia
+
+Apple nałożył kilka ograniczeń w kiedy i jak można korzystać z bezpłatnego inicjowania obsługi administracyjnej do uruchamiania aplikacji na urządzeniu z systemem iOS, zapewniając, że można wdrożyć tylko do *swoje* urządzenia:
+
+- Dostęp do usługi iTunes Connect jest ograniczona, a w związku z tym usługach, takich jak publikowanie w usłudze App Store i usługi TestFlight są niedostępne dla deweloperów, inicjowania obsługi swoich aplikacji za darmo. Konta dewelopera firmy Apple (firmowe lub osobiste) jest wymagana do dystrybucji za pośrednictwem oznacza, że Ad Hoc i wewnętrznych.
+- Profile aprowizacji utworzone za pomocą swobodnego udostępniania wygasną po upływie tygodnia i tożsamości podpisywania wygaśnie po roku. 
+- Ponieważ środowisko Xcode tylko utworzy profilów aprowizacji dla jawnego identyfikatory aplikacji, musisz wykonaj [powyższych instrukcji](#testing-on-device-with-free-provisioning) dla każdej aplikacji, którą chcesz zainstalować.
+- Inicjowanie obsługi administracyjnej dla większości usług aplikacji nie jest możliwe za pomocą swobodnego udostępniania. W tym Apple Pay, Game Center i usługi iCloud, zakupy w aplikacjach, powiadomienia wypychane oraz portfela. Apple zawiera pełną listę możliwości [obsługiwane możliwości (iOS)](https://help.apple.com/developer-account/#/dev21218dfd6) przewodnik. Aby zainicjować obsługę aplikacji do użycia przy użyciu usług aplikacji, odwiedź stronę [Praca z funkcjami](~/ios/deploy-test/provisioning/capabilities/index.md) przewodników.
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten przewodnik zawiera zbadane, korzyści i ograniczenia dotyczące korzystania z bezpłatnej inicjowania obsługi administracyjnej do zainstalowania aplikacji na urządzeniu z systemem iOS. On również nawiązaniem, krok po kroku, w celu zainstalowania aplikacji platformy Xamarin.iOS przy użyciu wolnego inicjowania obsługi administracyjnej.
+Ten przewodnik zbadano zalety i ograniczenia dotyczące korzystania z bezpłatnych inicjowania obsługi administracyjnej do zainstalowania aplikacji na urządzeniu z systemem iOS. Przewodnik krok po kroku, który pokazano, jak instalowanie aplikacji platformy Xamarin.iOS za pomocą swobodnego udostępniania go podać.
 
 ## <a name="related-links"></a>Linki pokrewne
 
