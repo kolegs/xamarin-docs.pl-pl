@@ -1,52 +1,52 @@
 ---
 title: Ścieżki i tekst w SkiaSharp
-description: W tym artykule Eksploruje Przecięcie ścieżki SkiaSharp i tekst i pokazano to z przykładowym kodzie.
+description: W tym artykule przedstawiono część wspólną SkiaSharp ścieżki i tekst i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243908"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130783"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>Ścieżki i tekst w SkiaSharp
 
-_Eksploruj przecięcia ścieżek i tekstu_
+_Zapoznaj się z przecięcia ścieżki i tekst_
 
-W systemach nowoczesnych grafiki czcionki tekstu są kolekcjami elementów zawiera znak, zazwyczaj definiowane przez kwadratową krzywych Beziera. W związku z tym wiele systemów nowoczesnych grafiki obejmują możliwość konwersji znaków w ścieżce grafiki.
+W systemach nowoczesnych grafiki czcionki tekstu są kolekcjami konturów znak, zazwyczaj zdefiniowane przez drugiego stopnia krzywych Beziera. W związku z tym wiele systemów nowoczesnych grafiki obejmują funkcji, aby skonwertować znaki tekstu do ścieżki grafiki.
 
-Widzisz już, że można obrysu konturów znaki tekstu oraz jak wypełnić je. Dzięki temu można wyświetlić te zawiera znak z konkretnym grubość i nawet efektu ścieżki, zgodnie z opisem w [ **efekty ścieżki** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu. Ale jest również możliwe do przekonwertowania ciągu znaków na `SKPath` obiektu. Oznacza to, że obramowanie tekstu mogą być używane dla wycinka techniki, które zostały opisane w [ **wycinka przy użyciu ścieżek i regiony** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) artykułu.
+Możesz już możliwość przekonania się, można obrysu konturów znaki tekstowe oraz jak je Wypełnij. Dzięki temu można wyświetlić tych opisanych znaków z określonego grubość i nawet efekt ścieżki, zgodnie z opisem w [ **efekty ścieżek** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu. Ale jest również możliwe do przekonwertowania na ciąg znaków do `SKPath` obiektu. Oznacza to, że obramowanie tekstu mogą być używane dla wycinka przy użyciu technik, które zostały opisane w [ **obcinanie przy użyciu ścieżek i regionów** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) artykułu.
 
-Oprócz obrysu konspektu znak za pomocą efektu ścieżki, można również utworzyć ścieżkę, którą efekty, które są oparte na ścieżkach są uzyskiwane z ciągów znaków, i można nawet łączyć dwa efekty:
+Oprócz obrysu konspektu znaków przy użyciu efektu ścieżki, można również utworzyć ścieżkę, którą efektów, które są oparte na ścieżkach są uzyskiwane z ciągów znaków, i można nawet łączyć dwa skutki:
 
 ![](text-paths-images/pathsandtextsample.png "Efekt ścieżki tekstu")
 
-W [poprzednim artykule](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) pokazaliśmy, jak [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metody `SKPaint` można uzyskać konspekt ścieżki wypełnionej. Ta metoda służy również ze ścieżkami pochodną zawiera znak.
+W [poprzednim artykule](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) pokazaliśmy, jak [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metody `SKPaint` można uzyskać zarys ścieżki wypełnionej. Ta metoda służy również ze ścieżkami pochodzące z opisanych znaków.
 
-Ponadto w tym artykule przedstawiono innego przecięcia ścieżek i tekst: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metody `SKCanvas` można wyświetlić ciąg tekstowy, dzięki czemu linii bazowej tekstu następuje ścieżki.
+Na koniec, w tym artykule przedstawiono część wspólną innej ścieżki i tekst: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metody `SKCanvas` umożliwia wyświetlanie ciąg tekstowy, tak aby linii bazowej tekstu następuje ścieżki.
 
 ## <a name="text-to-path-conversion"></a>Tekst do konwersji ścieżki
 
-[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Metody `SKPaint` konwertuje ciąg znaków na `SKPath` obiektu:
+[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Metody `SKPaint` konwertuje ciąg znaków `SKPath` obiektu:
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` i `y` argumenty wskazują początek linii bazowej z lewej strony tekstu. Odtwarzania tego samego elementu role w tym miejscu jako w `DrawText` metody `SKCanvas`. W ścieżce linia bazowa lewej tekst ma współrzędne (x, y).
+`x` i `y` argumenty wskazanie punktu początkowego linii bazowej po lewej stronie tekstu. Grają tę samą rolę tutaj jako w `DrawText` metody `SKCanvas`. W ścieżce linię bazową po lewej stronie tekstu będzie miał współrzędne (x, y).
 
-`GetTextPath` — Metoda jest zbyt obszerne, jeśli chcesz tylko do wypełnienia lub obrysu wynikowe ścieżki. Normalnej `DrawText` metoda pozwala to zrobić. `GetTextPath` Metoda jest bardziej użyteczna w przypadku innych zadań dotyczących ścieżki.
+`GetTextPath` Metoda jest obszerne, jeśli chcesz tylko do wypełnienia lub Ścieżka wynikowa obrysu. Normalną `DrawText` metoda umożliwia to zrobić. `GetTextPath` Metoda jest bardziej użyteczna w przypadku innych zadań z użyciem ścieżki.
 
-Jeden z tych zadań jest wycinka. **Tekst wycinka** strony tworzy ścieżkę wycinka zawiera znak Word 'CODE'. Ta ścieżka jest rozciągany tak, aby rozmiar strony do Przytnij mapę bitową, który zawiera obraz **wycinka tekst** kod źródłowy:
+Jedną z tych zadań jest przycinania. **Przycinania tekstu** strony tworzy przycinania, oparte na opisanych znak wyrazu "Kod". Ta ścieżka jest rozciągany tak, aby rozmiar strony, kiedy należy przyciąć mapy bitowej, który zawiera obraz **przycinanie tekstu** kod źródłowy:
 
-[![](text-paths-images/clippingtext-small.png "Potrójna zrzut ekranu przedstawiający stronę wycinka tekst")](text-paths-images/clippingtext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wycinka tekstu")
+[![](text-paths-images/clippingtext-small.png "Potrójna zrzut ekranu przedstawiający stronę przycinanie tekstu")](text-paths-images/clippingtext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przycinanie tekstu")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktora klasy ładuje mapę bitową, która jest przechowywana jako osadzony zasób w **nośnika** folderu rozwiązania:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktora klasy ładuje mapę bitową, która jest przechowywana jako zasób osadzony w **Media** folderu rozwiązania:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -65,18 +65,17 @@ public class ClippingTextPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-`PaintSurface` Obsługi rozpoczyna się od utworzenia `SKPaint` odpowiednie dla tekstu obiektu. `Typeface` Właściwość jest ustawiona, jak również `TextSize`, mimo że dla konkretnej aplikacji `TextSize` właściwość jest całkowicie arbirtrary. Ponadto istnieje nie `Style` ustawienie.
+`PaintSurface` Obsługi zaczyna się od utworzenia `SKPaint` obiektu odpowiedni tekst. `Typeface` Właściwość jest ustawiona, jak również `TextSize`, mimo że dla tej konkretnej aplikacji `TextSize` właściwość jest wyłącznie arbirtrary. Należy również zauważyć, jest nie `Style` ustawienie.
 
-`TextSize` i `Style` ustawienia właściwości nie są konieczne ponieważ to `SKPaint` obiekt jest używany wyłącznie do `GetTextPath` wywołanie przy użyciu ciągu tekstowego "Kod". Program obsługi następnie mierzy wynikowe `SKPath` obiektu i stosuje trzy transformacje wyśrodkuj go i skalować ją do rozmiaru strony. Następnie można ustawić ścieżkę jako ścieżka wycinka:
+`TextSize` i `Style` ustawienia właściwości nie są konieczne ponieważ to `SKPaint` obiekt jest używany wyłącznie na potrzeby `GetTextPath` wywołać za pomocą ciągu tekstowego "CODE". Program obsługi mierzy następnie wynikowe `SKPath` obiektu i stosuje przekształcenia trzy wyśrodkuj go i skalować go do rozmiaru strony. Ścieżka może być następnie ustawiona jako ścieżki przycięcia:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -121,13 +120,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Po ścieżce wycinka jest ustawiona, można wyświetlić mapę bitową i zostanie obcięta zawiera znak. Zwróć uwagę na [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) metody `SKRect` obliczającej prostokąta do wypełniania strony przy zachowaniu współczynnika proporcji.
+Po ustawieniu przycinania mapy bitowej mogą być wyświetlane, i zostanie obcięta opisanych znaków. Zwróć uwagę na [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) metody `SKRect` obliczającej prostokąta do wypełniania strony przy zachowaniu współczynnika proporcji.
 
-**Efekt ścieżki tekstu** strony konwertuje pojedynczy znak ścieżki do utworzenia efektu ścieżki 1 D. Obiekt malowania począwszy ta ścieżka jest następnie używany do obrysu konturu większej wersji tego samego znaku:
+**Efekt ścieżki tekstu** strony konwertuje znak pojedynczego handlowe "i" do ścieżki do utworzenia efektu ścieżki 1 D. Obiekt malowania z mocą ta ścieżka jest następnie używany do obrysu zarys większą wersję tego samego znaku:
 
 [![](text-paths-images/textpatheffect-small.png "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")](text-paths-images/textpatheffect-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę efekt ścieżki tekstu")
 
-Dużo pracy w [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) klasa występuje w polach i konstruktora. Dwa `SKPaint` obiektów zdefiniowana jako pola służą do dwóch różnych celów: pierwszy (o nazwie `textPathPaint`) służy do konwertowania handlowego "i" z `TextSize` 50 do ścieżki dla efektu ścieżki 1 D. Druga (`textPaint`) służy do wyświetlania większej wersji handlowego "i" począwszy tej ścieżki. Z tego powodu `Style` tego paint drugi obiekt został ustawiony na `Stroke`, ale `StrokeWidth` właściwość nie jest ustawiona, ponieważ tej właściwości nie jest konieczne, gdy za pomocą efektu ścieżki 1 D:
+Większość pracy w [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) klasy odbywa się w polach i konstruktora. Dwa `SKPaint` obiekty zdefiniowane pola są używane do dwóch różnych celów: pierwszy (o nazwie `textPathPaint`) służy do konwertowania handlowe "i" za pomocą `TextSize` 50 do ścieżki dla efektu ścieżki 1 D. Drugi (`textPaint`) służy do wyświetlania większą wersję handlowe "i" począwszy tej ścieżki. Z tego powodu `Style` ten drugi farby obiekt jest ustawiony na `Stroke`, ale `StrokeWidth` właściwość nie jest ustawiona, ponieważ ta właściwość nie jest konieczne, korzystając z mocą ścieżki 1 D:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -172,9 +171,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Konstruktor najpierw używa `textPathPaint` obiektu do mierzenia handlowego "i" z `TextSize` 50. Negatywów współrzędnych center tego prostokąta są następnie przekazywane do `GetTextPath` metodę, aby przekonwertować go do ścieżki. Ścieżka wynikowa ma (0, 0) punkt w Centrum znak, który jest idealny dla efektu ścieżki 1D.
+Konstruktor najpierw zastosowano `textPathPaint` obiektu do mierzenia handlowe "i" za pomocą `TextSize` 50. Negatywów współrzędnych Centrum tego prostokąta są następnie przekazywane do `GetTextPath` metody do skonwertowania tekstu do ścieżki. Ścieżka wynikowa ma (0, 0) do punktu w środku znaku, co jest idealnym rozwiązaniem dla efektu ścieżki 1D.
 
-Może być uważasz, że `SKPathEffect` można ustawić obiektu utworzonego na końcu konstruktora `PathEffect` właściwości `textPaint` zamiast zapisane jako pole. Ale ten nie włączenia się bardzo dobrze działa, ponieważ jego zniekształcony wyniki `MeasureText` wywołanie w `PaintSurface` obsługi:
+Może się wydawać, że `SKPathEffect` obiekt utworzony na koniec Konstruktor może być równa `PathEffect` właściwość `textPaint` zamiast zapisywane jako pole. Ale to, aby wyłączyć limit nie działa bardzo dobrze, ponieważ jego zakłócona wyniki `MeasureText` wywołania `PaintSurface` obsługi:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -206,17 +205,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Czy `MeasureText` wywołanie służy do środka znaków na tej stronie. Aby uniknąć problemów, `PathEffect` właściwość jest ustawiona na obiekt paint po tekst został zmierzony, ale przed wyświetleniem.
+Czy `MeasureText` wywołanie jest używane do Centrum znak na stronie. Aby uniknąć problemów, `PathEffect` właściwość jest ustawiona na obiekt programu paint, po tekst został zmierzony, ale przed wyświetleniem.
 
-## <a name="outlines-of-character-outlines"></a>Zawiera znak konspektów
+## <a name="outlines-of-character-outlines"></a>Wskazano konspektów znaków
 
-Zwykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metody `SKPaint` konwertuje jedną ścieżkę do innego, stosując właściwości paint głównie obrysu width i ścieżkę efekt. Użyte bez efekty ścieżki `GetFillPath` skutecznie tworzy ścieżki, który zawiera inną ścieżkę. To została przedstawiona w **naciśnij, aby konspektu, ścieżka** strony [ **efekty ścieżki** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu.
+Zwykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metody `SKPaint` konwertuje jedną ścieżkę do innego za pomocą właściwości programu paint, głównie obrysu szerokości i ścieżki efekt. Gdy jest używana bez efekty ścieżek `GetFillPath` skutecznie tworzą ścieżki, które stanowią zarys inną ścieżkę. To była przedstawiona w **naciśnij, aby konspektu, ścieżka** strony w [ **efekty ścieżek** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu.
 
-Możesz także wywołać `GetFillPath` w ścieżce zwrócony z `GetTextPath` , ale na początku może nie być całkowicie się, jakie chcesz wyglądu.
+Można również wywołać `GetFillPath` na ścieżce zwróciło `GetTextPath` , ale na początku może nie być całkowitej pewności przebieg wyglądać w następujący sposób.
 
-**Przedstawiono konspektu znak** strony pokazuje techniki. Odpowiedni kod znajduje się w `PaintSurface` obsługi [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) klasy.
+**Przedstawiono zarys znak** strony pokazano techniki. Odpowiedni kod znajduje się w `PaintSurface` program obsługi [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) klasy.
 
-Konstruktor, który rozpoczyna się od utworzenia `SKPaint` obiektu o nazwie `textPaint` z `TextSize` właściwości na podstawie rozmiaru strony. To jest konwertowana na ścieżkę przy użyciu `GetTextPath` metody. Współrzędna argumenty `GetTextPath` skutecznie Centrum ścieżki na ekranie:
+Konstruktor, który zaczyna się od utworzenia `SKPaint` obiektu o nazwie `textPaint` z `TextSize` właściwości na podstawie rozmiaru strony. To jest konwertowany na ścieżki przy użyciu `GetTextPath` metody. Współrzędna argumenty `GetTextPath` skutecznie Centrum ścieżkę na ekranie:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -268,27 +267,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`PaintSurface` Obsługi utworzy nową ścieżkę o nazwie `outlinePath`. Staje się on w ścieżce docelowej w wywołaniu `GetFillPath`. `StrokeWidth` Właściwości 25 przyczyny `outlinePath` do opisywania konturu ścieżki 25 pikseli na poziomie używana do malowania znaki tekstu. Ta ścieżka zebrane na czerwono szerokość pociągnięć 5:
+`PaintSurface` Obsługi utworzy nową ścieżkę o nazwie `outlinePath`. Staje się on ścieżkę docelową, w wywołaniu `GetFillPath`. `StrokeWidth` Właściwość 25 przyczyny `outlinePath` do opisania konspektu ścieżki 25 pikseli na poziomie stykają znaki tekstowe. Ta ścieżka jest następnie wyświetlana w kolorze czerwonym szerokość pociągnięcia, 5:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Potrójna zrzut ekranu strony zawiera konspektu znak")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Potrójna zrzut ekranu strony opisanych konspektu znaków")
+[![](text-paths-images/characteroutlineoutlines-small.png "Potrójna zrzut ekranu przedstawiający stronę przedstawiono zarys znak")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przedstawiono zarys znaków")
 
-Przeglądanie i pojawi się nakładania się gdzie konturu ścieżki sprawia, że sharp rogu. Są to pozostałości normalne tego procesu.
+Przyjrzyj się bliżej i zostanie wyświetlony nakładania się gdzie konturu ścieżki zapewniają rogu sharp. Są to normalne pozostałości tego procesu.
 
 ## <a name="text-along-a-path"></a>Tekst na ścieżce
 
-Tekst jest zwykle wyświetlany na poziomie linii bazowej. Tekst można obracać do uruchamiania w pionie lub przekątnej linii bazowej jest jednak nadal prostą.
+Tekst jest zwykle wyświetlany na poziomie linii bazowej. Tekst można obracać do uruchomienia po przekątnej czy w pionie, ale linia bazowa jest nadal prostej.
 
-Brak sytuacji, gdy ma się uruchom krzywej tekst. To jest celem [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metody `SKCanvas`:
+Brak sytuacji, kiedy chcesz tekstu do uruchomienia po łuku. To jest celem [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metody `SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-Tekst określony w pierwszym argumencie dotyczące uruchamiania na ścieżce określony jako drugi argument. Możesz rozpocząć tekstowych w miejscach występowania przesunięcia od początku ścieżki z `hOffset` argumentu. Zwykle ścieżka formularzy linii bazowej tekstu: wydłużenia górne tekst znajdują się na jednej stronie ścieżki, a tekst wydłużeń dolnych z drugiej strony. Jednak można przesunąć linii bazowej tekstu ze ścieżki z `vOffset` argumentu.
+Do uruchomienia na ścieżce określonej jako drugi argument składa się z tekstem określonym w pierwszym argumencie. Możesz rozpocząć tekstowych w miejscach występowania przesunięcie od początku ścieżki z `hOffset` argumentu. Zwykle ścieżka formularzy linii bazowej tekstu: wydłużenia tekst dolnego są na jednej stronie ścieżki i tekst wydłużeń z drugiej strony. Ale można przesunąć linii bazowej tekstu ze ścieżki z `vOffset` argumentu.
 
-Ta metoda ma możliwość wytyczne dotyczące ustawienie `TextSize` właściwość `SKPaint` aby tekst o rozmiarze doskonale do uruchomienia od początku ścieżki na końcu. Czasami może ustalić ten rozmiar tekstu samodzielnie. Innym razem, musisz być opisane w artykule przyszłych za pomocą funkcji pomiaru ścieżki.
+Ta metoda ma możliwość zawiera wskazówek na temat ustawień dotyczących `TextSize` właściwość `SKPaint` aby tekst o rozmiarach doskonale do uruchomienia od początku ścieżki na końcu. Czasami można określić ten rozmiar tekstu na własną rękę. Czasami konieczne będzie można opisać w przyszłym artykule za pomocą funkcji pomiaru ścieżki.
 
-**Cykliczne tekst** program zawijania tekstu wokół okręgu. Jest łatwy do określenia obwód koła, dzięki czemu łatwiej rozmiar tekstu, aby dokładnie dopasować. `PaintSurface` Obsługi [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) klasy oblicza Promień okrągłego, zależnie od rozmiaru strony. Staje się tym koło `circularPath`:
+**Cykliczne tekstu** program zawija tekst wokół okrąg. To proste ustalenie obwód koła, dzięki czemu można łatwo rozmiar tekstu, aby dokładnie dopasować. `PaintSurface` Program obsługi [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) klasy oblicza promień koła na podstawie rozmiaru strony. Ten okrąg staje się `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -321,13 +320,13 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-`TextSize` Właściwość `textPaint` następnie zostanie zmieniona tak, aby szerokość tekstu zgodne obwód koła:
+`TextSize` Właściwość `textPaint` jest następnie dostosować tak, aby szerokość tekstu odpowiada obwód koła:
 
-[![](text-paths-images/circulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekst")](text-paths-images/circulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")
+[![](text-paths-images/circulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")](text-paths-images/circulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę cykliczne tekstu")
 
-Tekst został wybrany do nieco cykliczne można również: wyraz "okrąg" jest zarówno podmiotu zdania i obiekt frazę przyimkowych.
+Sam tekst został wybrany do nieco cykliczne można również: słowo "koło" jest zarówno podmiotu zdania i obiekt frazy przyimkowych.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

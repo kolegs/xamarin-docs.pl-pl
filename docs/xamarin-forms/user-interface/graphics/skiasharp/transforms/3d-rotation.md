@@ -1,36 +1,36 @@
 ---
-title: 3D obrotów w SkiaSharp
-description: W tym artykule opisano sposób korzystania z systemem innym niż affine — przekształcenia obracania 2D obiekty w przestrzeni 3D, a pokazano to z przykładowym kodzie.
+title: Rotacji 3D w SkiaSharp
+description: W tym artykule wyjaśniono, jak za pomocą przekształcenia nieafiniczne obrócić 2D obiekty w przestrzeni 3D i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 53102b735b4b64bff4456e5e252f2342d0c4002f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244302"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130897"
 ---
-# <a name="3d-rotations-in-skiasharp"></a>3D obrotów w SkiaSharp
+# <a name="3d-rotations-in-skiasharp"></a>Rotacji 3D w SkiaSharp
 
-_Affine — przekształcenia umożliwia obracanie 2D obiektów w przestrzeni 3D._
+_Przekształcenia nieafiniczne umożliwiają obracanie 2D obiekty w przestrzeni 3D._
 
-Jeden typowych aplikacji z systemem innym niż affine — przekształcenia symuluje obrót obiektu 2D w przestrzeni 3D:
+Jednym z typowych zastosowań przekształcenia nieafiniczne symuluje obrót 2D obiektu w przestrzeni 3D:
 
-![](3d-rotation-images/3drotationsexample.png "Ciąg tekstowy obracać w przestrzeni 3D")
+![](3d-rotation-images/3drotationsexample.png "Ciąg tekstowy, obracać w przestrzeni 3D")
 
-To zadanie polega na współpracę z trójwymiarowy obrotów i następnie wynikających z systemem innym niż — affine — `SKMatrix` przekształcania, który wykonuje te obrotów 3D.
+To zadanie polega na pracy z rotacji trójwymiarowych i następnie wyprowadzanie nieafiniczne `SKMatrix` transformacji, który wykonuje te rotacji 3D.
 
-Trudno jest opracowanie to `SKMatrix` przekształcenia działają jedynie w ramach dwóch wymiarów. Zadanie staje się znacznie łatwiejsze, gdy ta macierz 3 x 3 pochodzi z macierzy 4-na-4 używane w grafiki 3D. Obejmuje SkiaSharp [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/) klasy dla tego celu, ale niektóre tła w grafiki 3D jest niezbędna dla opis obrotów 3D i macierzy transformacji 4-na-4.
+Trudno jest opracowanie to `SKMatrix` przekształcenie działają wyłącznie w ramach dwóch wymiarów. Zadanie staje się znacznie łatwiejsze, jeśli ta macierz 3 x 3 jest tworzony na podstawie macierzy 4, 4, używane w grafiki 3D. Skiasharp — obejmuje [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/) klasy dla tego celu, ale niektóre tło Grafika 3D jest niezbędne do zrozumienia rotacji 3D i macierzy transformacji 4 na 4.
 
-Trójwymiarowy układ współrzędnych dodaje trzecią osią o nazwie Z. koncepcyjnie, osi Z prostopadle do ekranu. Współrzędna punktów w przestrzeni 3D są oznaczone trzech cyfr: (x, y, z). W 3D współrzędnych używane w tym artykule, zwiększenie wartości X są po prawej stronie i zwiększa wartości Y przestaną działać, tak jak w przypadku dwóch wymiarów. Zwiększanie pozytywne wartości Z wyjść ze ekranu. Pochodzi lewego górnego rogu, tak jak w przypadku 2D grafiki. Ekran można traktować jako płaszczyzna XY z osi Z prostopadle do tej warstwy.
+Trójwymiarowy współrzędnych dodaje trzeci osi, o nazwie Z. pod względem koncepcyjnym, osi Z pod kątem prostym do ekranu. Współrzędna punktów w przestrzeni 3D są oznaczone za pomocą trzech liczb: (x, y, z). W 3D współrzędnych używane w tym artykule, zwiększenie wartości X są po prawej stronie i zwiększenie wartości Y są wyłączane, podobnie jak w przypadku dwóch wymiarów. Zwiększenie wartości dodatnich Z wyjść na ekranie. Pochodzi lewym górnym rogu, podobnie jak w przypadku grafika 2D. Ekran można traktować jako płaszczyzna XY z osi Z prostopadle do tej warstwy.
 
-Jest to po lewej stronie układ współrzędnych. Jeśli punkt wskazującym dla użytkownika po lewej stronie w kierunku dodatnią X współrzędne (z prawej strony), a palca środka w kierunku Y zwiększenie współrzędne (wyłączone), następnie z thumb punktów w kierunek narastania współrzędnych Z — rozszerzenie się od ekran.
+Jest to po lewej stronie współrzędnych. Jeśli wskażesz palec dla Twojego po lewej stronie ekranu, w kierunku dodatnie X współrzędne (z prawej strony) i służy do koordynowania palca środka w kierunku rosnących Y (w dół), następnie swoje thumb punktów w kierunku rosnących współrzędne Z — rozszerzanie się z ekran.
 
-W grafiki 3D przekształceń są oparte na macierz 4 przez 4. W tym miejscu jest macierzą 4-na-4:
+Grafika 3D przekształcenia zależą macierzy 4 na 4. W tym miejscu jest macierzą 4-na-4:
 
 <pre>
 |  1  0  0  0  |
@@ -39,7 +39,7 @@ W grafiki 3D przekształceń są oparte na macierz 4 przez 4. W tym miejscu jest
 |  0  0  0  1  |
 </pre>
 
-W pracy z macierzy 4-na-4, rozwiązaniem jest określenie komórki numerów wierszy i kolumn:
+W pracy z macierzy 4, 4, jest wygodne zidentyfikować komórki z ich numery wierszy i kolumn:
 
 <pre>
 |  M11  M12  M13  M14  |
@@ -48,9 +48,9 @@ W pracy z macierzy 4-na-4, rozwiązaniem jest określenie komórki numerów wier
 |  M41  M42  M43  M44  |
 </pre>
 
-Jednak SkiaSharp `Matrix44` klasy jest nieco inny. Jedynym sposobem, aby ustawić lub pobrać wartości pojedynczych komórek w `SKMatrix44` za pomocą [ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/) indeksatora. Indeksy wierszy i kolumn są liczony od zera, a nie na podstawie jednej, a wiersze i kolumny są zamienione. Komórki M14 na powyższym diagramie jest dostępny przy użyciu indeksatora `[3, 0]` w `SKMatrix44` obiektu.
+Jednak SkiaSharp `Matrix44` klasy jest nieco inny. Jedynym sposobem, aby ustawić lub pobrać wartości do pojedynczych komórek `SKMatrix44` polega na użyciu [ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/) indeksatora. Wskaźniki wierszy i kolumn jest liczony od zera, a nie na podstawie jednego, a wiersze i kolumny zostały zamienione. Komórka M14 na powyższym diagramie odbywa się za pomocą indeksatora `[3, 0]` w `SKMatrix44` obiektu.
 
-W systemie grafiki 3D 3D punkt (x, y, z) jest konwertowana na 1 na 4 macierzy pomnożenie przez macierzy transformacji 4-na-4:
+W systemie Grafika 3D punktu 3W (x, y, z) jest konwertowana na 1 na 4 macierzy mnożenia wartości przez macierzy transformacji 4-na-4:
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -59,7 +59,7 @@ W systemie grafiki 3D 3D punkt (x, y, z) jest konwertowana na 1 na 4 macierzy po
                  |  M41  M42  M43  M44  |
 </pre>
 
-Odpowiednikiem 2D przekształca tego odbywają się trzech wymiarów, transformacje 3D uznaje się, że ma miejsce w czterema wymiarami. Czwarty wymiar jest nazywany W i przestrzeni 3D założono, że istnieje w przestrzeni 4D, gdzie W współrzędne są podawane równa 1. Przekształcanie formuły są następujące:
+Odpowiednikiem 2D przekształca, jakie mają mieć miejsce w trzech wymiarach, przekształcenia 3D są uznawane za miejsce w czterech wymiarów. Czwarty wymiar jest nazywana W, a przestrzeni 3D założono, że istnieje w przestrzeni 4D, gdzie W współrzędne są podawane równa 1. Formuły przekształcenia są następujące:
 
 x' = M11·x + M21·y + M31·z + M41
 
@@ -69,11 +69,11 @@ z' = M13·x + M23·y + M33·z + M43
 
 w' = M14·x + M24·y + M34·z + M44
 
-Jest oczywiste z formuły przekształcenia który komórki `M11`, `M22`, `M33` czynnik skalowania w X, Y i Z instrukcjami, i `M41`, `M42`, i `M43` czynników tłumaczenia X, Y i Z wskazówki.
+Jest oczywiste, z poziomu formuł transformacji, komórki `M11`, `M22`, `M33` czynnik skalowania w X, Y i Z instrukcjami i `M41`, `M42`, i `M43` czynników tłumaczenia X, Y i Z wskazówki.
 
-Aby przekonwertować te współrzędne przestrzeni 3D, gdzie p jest równa 1, x ", y", i z "współrzędnych są wszystkie rozdzielonych w":
+Aby przekonwertować te współrzędne 3D miejsce, gdzie W jest równa 1, x ", y", i z "współrzędnych są wszystkie podzielone według w":
 
-x"= x' / w"
+x"= x" / w "
 
 y"= y" / w "
 
@@ -81,9 +81,9 @@ z"= z" / w "
 
 w"= w" / w "= 1
 
-Ten podział według w "zawiera perspektywę w przestrzeni 3D. Jeśli w "jest równa 1, a następnie perspektywy nie występuje.
+Tym dzielenie przez odczytu zapisu "zawiera perspektywę w przestrzeni 3D. Jeśli w "jest równa 1, a następnie perspektywy nie występuje.
 
-Obrotów w przestrzeni 3D może być bardzo skomplikowane, ale najprostszym obrotów są wokół osi X, Y i Z. Obrót o kąt α wokół osi X jest w tej macierzy:
+Możliwość wymiany w przestrzeni 3D mogą być całkiem złożone, ale najprostszy obroty są wokół osi X, Y i Z. Obrót wokół osi X, kąt α jest tej macierzy:
 
 <pre>
 |  1     0       0     0  |
@@ -92,7 +92,7 @@ Obrotów w przestrzeni 3D może być bardzo skomplikowane, ale najprostszym obro
 |  0     0       0     1  |
 </pre>
 
-Wartości X nie zmieniają się poddawane tej transformacji. Obrót wokół osi Y pozostawia wartości Y bez zmian:
+Wartości X pozostają takie same poddawane tej transformacji. Obrót wokół osi Y pozostawia wartości Y bez zmian:
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |
@@ -101,7 +101,7 @@ Wartości X nie zmieniają się poddawane tej transformacji. Obrót wokół osi 
 |    0     0     0     1  |
 </pre>
 
-Obrót wokół osi Z jest taki sam jak grafiki 2D:
+Obrót wokół osi Z, jest taka sama, jak grafika 2D:
 
 <pre>
 |  cos(α)  sin(α)  0  0  |
@@ -110,24 +110,24 @@ Obrót wokół osi Z jest taki sam jak grafiki 2D:
 |    0       0     0  1  |
 </pre>
 
-Kierunek obrotu technicznego przez skrętności dla układu współrzędnych. To system dla leworęcznych, tak więc jeśli punktu stronie przycisku suwaka użytkownika po lewej stronie kierunku zwiększenie wartości osi określonego — w prawo obrót wokół osi X, dół dla obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z — następnie krzywej yo inne palcami wskazuje kierunek dodatnią kąty obrotu.
+Kierunek obrotu jest implikowany przez skrętności dla układu współrzędnych. To leworęczni systemu, więc jeśli zmienisz ręki na zwiększenie wartości określonej osi po lewej stronie przycisku suwaka — do prawej obrót wokół osi X, dół, aby obrót wokół osi Y i kierunku możesz uzyskać obrót wokół osi Z — następnie krzywej yo inne palcami wskazuje kierunek dodatnią kąty obrotu.
 
-`SKMatrix44` został uogólniony static [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) i [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metod, które umożliwiają określenie osi, wokół którego obrót występuje:
+`SKMatrix44` został uogólniony statyczne [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) i [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metod, które pozwalają na określenie osi, wokół którego występuje obrót:
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
 ```
 
-Dla obrót wokół osi X należy ustawić pierwszych trzech argumentów do 1, 0, 0. W przypadku obrót wokół osi Y ustawienie dla nich wartości 0, 1, 0 i ustaw je dla obrót wokół osi Z, 0, 0, 1.
+W przypadku rotacji wokół osi X należy ustawić pierwszych trzech argumentów do 1, 0, 0. Obrót wokół osi Y ustaw je na 0, 1, 0 i ustawić je dla obrotu wokół osi Z, 0, 0, 1.
 
-Czwartej kolumnie 4-na-4 jest perspektywy. `SKMatrix44` Nie ma żadnych metod tworzenia transformacji perspektywy, ale można utworzyć ręcznie przy użyciu następującego kodu:
+Czwarta kolumna 4 na przez 4 to dla perspektywy. `SKMatrix44` Nie ma żadnych metod tworzenia przekształcenia perspektywy, ale możesz utworzyć je samodzielnie, używając następującego kodu:
 
 ```csharp
 SKMatrix44 perspectiveMatrix = SKMatrix44.CreateIdentity();
 perspectiveMatrix[3, 2] = -1 / depth;
 ```
 
-Przyczyna Nazwa argumentu `depth` będą widoczne wkrótce. Ten kod tworzy macierzy.
+Przyczyna nazwę argumentu `depth` będzie widoczne wkrótce. Ten kod tworzy macierzy:
 
 <pre>
 |  1  0  0      0     |
@@ -136,21 +136,21 @@ Przyczyna Nazwa argumentu `depth` będą widoczne wkrótce. Ten kod tworzy macie
 |  0  0  0      1     |
 </pre>
 
-Formuły przekształcenia spowodować następujące obliczenia w ":
+Formuły przekształcenie spowodować następujące obliczenia w ":
 
-w "— z = / głębokość + 1
+w "= — z / głębokość + 1
 
-Służy to zmniejszenie współrzędne X i Y, gdy wartości z jest mniejsza od zera (koncepcyjnie za płaszczyzna XY) i zwiększyć współrzędne X i Y dla dodatnie wartości Z. Kiedy jest równa Współrzędna `depth`, następnie w "wynosi zero, a współrzędne stają się nieskończona. Systemy trójwymiarowych obrazów są wbudowane wokół metaphor aparatu fotograficznego i `depth` wartość reprezentuje odległość aparatu ze źródła układu współrzędnych. Jeśli obiektu graficznego ma Z koordynować oznacza to `depth` jednostek ze źródła, jest koncepcyjnie dotknięcie obiektyw kamery i staje się nieskończenie wielki.
+Służy to zmniejszenie współrzędne X i Y, gdy wartości z jest mniejsza od zera (koncepcyjnie poza płaszczyzną XY) oraz zwiększenie współrzędne X i Y dla wartości dodatnich elementu Z. Kiedy jest równa Współrzędna `depth`, następnie w "wynosi zero, a współrzędne stają się nieskończone. Systemy trójwymiarowej grafiki są zbudowane wokół metaphor kamery, a `depth` wartość reprezentuje odległość aparatu ze źródła w układzie współrzędnych. Jeśli obiekt graficzny ma Z koordynować to znaczy `depth` jednostki ze źródła, koncepcyjnie zachodzi obiektywu kamery i staje się nieskończenie duży.
 
-Należy pamiętać, że prawdopodobnie należy używać to `perspectiveMatrix` wartość w połączeniu z macierzy obrotu. Jeśli obiekt graphics za ma współrzędne X i Y przekracza `depth`, następnie obrót tego obiektu w przestrzeni 3D prawdopodobnie obejmuje współrzędnych Z większą niż `depth`. Należy unikać to! Podczas tworzenia `perspectiveMatrix` chcesz ustawić `depth` wystarczająco duży dla wszystkich współrzędnych w obiekcie grafiki, niezależnie od tego, jaki jest obracany wartość. To zapewni, że nigdy nie będzie żadnych dzielenie przez zero.
+Należy pamiętać, że należy prawdopodobnie używać to `perspectiveMatrix` wartość w połączeniu z macierzy obrotu. Jeśli obiekt graficzny, za zawiera współrzędne X lub Y przekracza `depth`, może obejmować Z współrzędne większe niż jest obrót tego obiektu w przestrzeni 3D `depth`. Należy unikać to! Podczas tworzenia `perspectiveMatrix` chcesz ustawić `depth` wartość wystarczająco duży dla wszystkich współrzędnych w obiekcie grafiki, niezależnie od tego, jaki jest obracany. Zapewnia to, że nigdy nie jest żadnych dzielenie przez zero.
 
-Łączenie obrotów 3D i perspektywy wymaga mnożenie macierzy 4-na-4 ze sobą. W tym celu `SKMatrix44` definiuje metody łączenia. Jeśli `A` i `B` są `SKMatrix44` obiektów, a następnie ustawia następujący kod równości x B:
+Łączenie rotacji 3D i perspektywy wymaga mnożenie macierzy 4 na 4 ze sobą. W tym celu `SKMatrix44` definiuje metody łączenia. Jeśli `A` i `B` są `SKMatrix44` obiektów, a następnie poniższy kod ustawia równe × B:
 
 ```csharp
 A.PostConcat(B);
 ```
 
-W przypadku macierzy transformacji 4-na-4 w systemie grafiki 2D zastosowano 2D obiektów. Te obiekty są płaski i są zakłada się, że Z współrzędne zero. Mnożenia transformacji jest nieco łatwiejsze niż w przypadku transformacji przedstawiona wcześniej:
+Macierzy transformacji 4 na 4 jest używany w systemie grafika 2D, jest stosowana do obiektów 2D. Te obiekty są płaskie i są zakłada się, że masz współrzędne Z zerową. Mnożenie transformacji jest nieco prostsze niż przekształcenie przedstawionej wcześniej:
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -159,7 +159,7 @@ W przypadku macierzy transformacji 4-na-4 w systemie grafiki 2D zastosowano 2D o
                  |  M41  M42  M43  M44  |
 </pre>
 
-Tę wartość 0 z wyników w formułach przekształcania, które nie wymagają żadnych komórek w trzecim wierszu macierzy:
+Tę wartość 0 z wyników w formułach przekształcenia, które nie wymagają żadnych komórek w trzecim rzędzie macierzy:
 
 x' = M11·x + M21·y + M41
 
@@ -169,17 +169,17 @@ z' = M13·x + M23·y + M43
 
 w "= M14·x + M24·y + M44
 
-Ponadto z "Współrzędna jest bez znaczenia tutaj również. Po wyświetleniu obiektu 3D w systemie grafiki 2D jest zwinięty obiektowi dwuwymiarowa ignorując wartości współrzędnych Z. Przekształcanie formuły są naprawdę tylko te dwa:
+Ponadto z "Współrzędna jest bez znaczenia tutaj również. Po wyświetleniu w systemie grafika 2D obiektu 3D, ignorując wartości Współrzędna Z jest zwinięta jak dwuwymiarowy obiekt. Formuły przekształcenia są tylko te dwa:
 
-x"= x' / w"
+x"= x" / w "
 
 y"= y" / w "
 
-Oznacza to, że trzeciego wiersza *i* trzeciej kolumny macierzy 4-na-4 można zignorować.
+Oznacza to, że trzecim rzędzie *i* trzecia kolumna macierzy 4, 4, można je zignorować.
 
-Ale jeśli jest to, dlaczego jest nawet konieczne macierzy 4-na-4 w pierwszej kolejności?
+Ale jeśli jest to, dlaczego jest nawet konieczne macierzy 4 na 4 w pierwszej kolejności?
 
-Mimo że trzeciego wiersza i trzecia kolumna 4-na-4 nie mają znaczenia dla transformacji dwuwymiarowa, trzeci wiersz i kolumnę *czy* pełnić rolę przed że w przypadku różnych `SKMatrix44` pomnożenie wartości. Załóżmy na przykład, należy pomnożyć obrót wokół osi Y o transformacja perspektywy:
+Mimo że trzeciego wiersza i trzecia kolumna 4 na przez 4 są nieodpowiednie dla przekształceń dwuwymiarowy, trzeci wierszy i kolumn *czy* pełniące rolę przed że w przypadku różnych `SKMatrix44` pomnożenie wartości. Załóżmy na przykład, należy pomnożyć obrót wokół osi Y z zadaniami transformacji perspektywy:
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -188,7 +188,7 @@ Mimo że trzeciego wiersza i trzecia kolumna 4-na-4 nie mają znaczenia dla tran
 |    0     0     0     1  |   |  0  0  0      1     |   |    0     0     0           1        |
 </pre>
 
-W produkcie komórki `M14` zawiera teraz wartość perspektywy. Jeśli chcesz dotyczą tej macierzy obiekty 2D trzeciego wiersza i kolumny są eliminowane przekonwertować go do macierzy 3 na 3:
+W produkcie komórki `M14` zawiera teraz wartość perspektywy. Jeśli dotyczą tej macierzy obiekty 2D trzeciego wiersza i kolumny są eliminowane i przekształcać je do macierzy 3 na 3:
 
 <pre>
 |  cos(α)  0  sin(α)/depth  |
@@ -196,7 +196,7 @@ W produkcie komórki `M14` zawiera teraz wartość perspektywy. Jeśli chcesz do
 |    0     0       1        |
 </pre>
 
-Teraz może służyć do przekształcania punktu 2D:
+Teraz może służyć do przekształcania punkt 2D:
 
 <pre>
                 |  cos(α)  0  sin(α)/depth  |
@@ -204,7 +204,7 @@ Teraz może służyć do przekształcania punktu 2D:
                 |    0     0       1        |
 </pre>
 
-Przekształcanie formuły są:
+Formuły przekształcenia są:
 
 x' = cos(α)·x
 
@@ -212,17 +212,17 @@ y' = y
 
 z "= (sin (α) / głębokość) ·x + 1
 
-Teraz podzielić wszystko przez z ":
+Teraz dzielnikiem wszystkie elementy z':
 
 x"= cos ·x (α) / ((sin (α) / głębokość) ·x + 1)
 
 y"= y / ((sin (α) / głębokość) ·x + 1)
 
-Gdy 2D obiekty są obracane dodatnią kąt wokół osi Y, a następnie dodatnią wartości X recede do tła podczas ujemne wartości X pochodzą na pierwszy plan. Wartości X wydaje się, aby przenieść bliżej osi Y (która podlega wartości cosinus) jako współrzędne najbardziej od osi Y staje się mniejszy lub większy, ponieważ są one przenoszone od przeglądarki lub bliżej.
+Gdy 2D obiekty są obracane dodatnią kąt wokół osi Y, a następnie dodatnie wartości X recede tło podczas ujemnych wartości X Przyjdź na pierwszym planie. Wartości X wydawać się, aby Zbliż do osi Y (która jest regulowane przez wartość funkcji cosinus) jako najbardziej od osi Y staje się mniejszy lub większy od przeglądarki przechodzące lub bliżej.
 
-Korzystając z `SKMatrix44`, wykonywać wszystkie obrotu 3W i operacje perspektywy przez pomnożenie różnych `SKMatrix44` wartości. Następnie można wyodrębnić dwuwymiarowa macierzy 3 x 3 z 4-na-4 przy użyciu macierzy [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) właściwość `SKMatrix44` klasy. Ta właściwość zwraca znane `SKMatrix` wartość.
+Korzystając z `SKMatrix44`, wykonaj obrotu 3D i operacje perspektywy przez pomnożenie różnych `SKMatrix44` wartości. Następnie można wyodrębnić dwuwymiarowej macierzy 3 x 3 z 4-na-4 macierzy przy użyciu [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) właściwość `SKMatrix44` klasy. Ta właściwość zwraca powszechnie znane `SKMatrix` wartość.
 
-**Obrotu 3W** strony umożliwia eksperymentować obrotu 3W. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) pliku tworzy cztery suwaki, aby ustawić obrót wokół osi X, Y i Z i do ustawiania wartości głębokości:
+**Obrót 3D** stronie pozwala na eksperymentowanie z obrotu 3W. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) pliku tworzy cztery suwaki, aby ustawić obrót wokół osi X, Y i Z i do ustawiania wartości głębi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -301,9 +301,9 @@ Korzystając z `SKMatrix44`, wykonywać wszystkie obrotu 3W i operacje perspekty
 </ContentPage>
 ```
 
-Zwróć uwagę, że `depthSlider` jest inicjowany z `Minimum` wartość 250. Oznacza to, że obiekt 2D jest obracana tutaj ma współrzędne X i Y, które są ograniczone do koło zdefiniowane przez radius 250 pikseli, wokół punktu początkowego. Współrzędna wartości mniejszej niż 250 zawsze spowoduje obracania tego obiektu w przestrzeni 3D.
+Należy zauważyć, że `depthSlider` jest inicjowany za pomocą `Minimum` wartości 250. Oznacza to, że obiekt 2D jest obracana tutaj ma współrzędne X i Y, które są ograniczone do koło z definicją w promieniu 250 pikseli, wokół źródła. Wartości współrzędnych mniej niż 250 zawsze spowoduje żadnych obrotu tego obiektu w przestrzeni 3D.
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) ładuje plik CodeBehind mapy bitowej 300 pikseli kwadratowych:
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) pliku związanego z kodem ładuje mapy bitowej o rozmiarze 300 pikseli kwadrat:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -318,9 +318,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -335,9 +334,9 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-Jeśli transformacja 3D skupia się na tej mapy bitowej, następnie współrzędne X i Y zakresie –150 i 150, gdy rogi są 212 pikseli z Centrum, więc wszystko, co znajduje się w 250 pikseli.
+Jeśli przekształcenia 3D skupia się na tej mapy bitowej, następnie współrzędne X i Y zakresie –150 i 150, rogi są 212 pikseli z Centrum, więc wszystko, co znajduje się w piksel 250.
 
-`PaintSurface` Tworzy program obsługi `SKMatrix44` obiektów oparte na suwakach i mnoży je ze sobą przy użyciu `PostConcat`. `SKMatrix` Wartość wyodrębniony z końcowym `SKMatrix44` obiektu jest otoczone przez tłumaczenie przekształceń do środka obrotu w Centrum ekranu:
+`PaintSurface` Tworzy program obsługi `SKMatrix44` obiektów oparty na fragmentatorach i mnoży je ze sobą przy użyciu `PostConcat`. `SKMatrix` Wartość wyodrębniony z końcowym `SKMatrix44` obiektu jest otoczone przez tłumaczenie przekształceń do środka obrotu w środku ekranu:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -352,9 +351,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -407,11 +405,11 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-Gdy wypróbowanie czwarty suwaka można zauważyć ustawień głębokość różnych nie przenoś obiekt dalsze od przeglądarki, ale zamiast tego zmienić zakres efekt perspektywy:
+Podczas eksperymentowania za pomocą suwaka czwarty widać nie przenoś obiektu dalsze od obserwatora ustawień głębokość różnych, ale zamiast tego zmienić zakres efekt perspektywy:
 
-[![](3d-rotation-images/rotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D obrotu")](3d-rotation-images/rotation3d-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę obrotu 3W")
+[![](3d-rotation-images/rotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę obrót 3D")](3d-rotation-images/rotation3d-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę obrót 3D")
 
-**Animowany obrotu 3W** używa również `SKMatrix44` do animowania ciągu tekstowego w przestrzeni 3D. `textPaint` Obiekt ustawiony jako pole służy do określenia granicami wartości tekstowej w Konstruktorze:
+**Animowane obrót 3D** używa również `SKMatrix44` animować ciąg tekstowy w przestrzeni 3D. `textPaint` Obiektu ustawione jako pole służy do określenia granicami wartości tekstowej w Konstruktorze:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -443,7 +441,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Zastąpienie definiuje trzy platformy Xamarin.Forms `Animation` obiektów do animowania `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Zwróć uwagę, że okresy te animacje są ustawione na zapisują numery — 5 sekund, 7 sekund i 11 sekund — tak ogólna kombinacja tylko jest powtarzany co 385 sekund, czyli więcej niż 10 minut:
+`OnAppearing` Zastąpienie definiuje trzy Xamarin.Forms `Animation` obiektów, aby animować `xRotationDegrees`, `yRotationDegrees`, i `zRotationDegrees` pól w różnym tempie. Należy zauważyć, że okresy te animacji są ustawione na zainicjowanie numery — 5 sekund, 7 sekundach, a 11 sekundach — więc ogólną kombinacji tylko powtarza się co 385 sekund, czyli więcej niż 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -477,7 +475,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Jak poprzedni program `PaintCanvas` tworzy program obsługi `SKMatrix44` wartości obracanie i perspektywy i mnoży je razem:
+Jak poprzedni program `PaintCanvas` tworzy program obsługi `SKMatrix44` wartości rotacji i perspektywy i mnoży je ze sobą:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -531,12 +529,12 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Ta obrotu 3W jest ujęty w kilka przekształceń 2W Aby przenieść środek obrotu centrum ekranu i skalowania rozmiar ciągu tekstowego tak, aby szerokość ekranu:
+Ta obrotu 3W jest ujęty w kilka przekształceń 2D, aby przenieść środek obrotu na środku ekranu, a także skalowanie rozmiaru ciąg tekstowy, tak aby był szerokość ekranu:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D animowany obrotu")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Potrójna zrzut ekranu strony animowany obrotu 3W")
+[![](3d-rotation-images/animatedrotation3d-small.png "Potrójna zrzut ekranu przedstawiający stronę 3D animowane obrotu")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Potrójna zrzut ekranu strony animowane obrót 3D")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

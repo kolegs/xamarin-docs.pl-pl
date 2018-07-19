@@ -1,30 +1,30 @@
 ---
-title: Wycinka przy użyciu ścieżek i regiony
-description: W tym artykule wyjaśniono, jak użycie SkiaSharp ścieżek do obiektów graficznych do określonych obszarów, a także tworzenie regionów, a pokazano to z przykładowym kodzie.
+title: Obcinanie przy użyciu ścieżek i regionów
+description: W tym artykule wyjaśniono, jak używać SkiaSharp ścieżki do klipu grafiki do określonych obszarów, a także tworzenie regionów i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 52e426c8788ca017f36ba49b338b04a64dc0ef3d
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243892"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130820"
 ---
-# <a name="clipping-with-paths-and-regions"></a>Wycinka przy użyciu ścieżek i regiony
+# <a name="clipping-with-paths-and-regions"></a>Obcinanie przy użyciu ścieżek i regionów
 
-_Używanie ścieżek do obiektów graficznych do określonych obszarów, a także tworzenie regionów_
+_Użyj ścieżki do klipu grafiki do określonych obszarów, a także tworzenie regionów_
 
-Czasami jest konieczne ograniczanie Renderowanie grafiki do określonego obszaru. Jest to nazywane *wycinka*. Wycinka służącego do efektów specjalnych, takich jak ten obraz małp, poprzez dziurką od klucza:
+Czasami jest konieczne ograniczanie renderowania grafiki do określonego obszaru. Jest to nazywane *wycinka*. Aby uzyskać efekty specjalne, takie jak ten obraz małp widoczne w usłudze dziurką od klucza, można użyć wycinka:
 
 ![](clipping-images/clippingsample.png "Małp za pośrednictwem dziurką od klucza")
 
-*Obszar przycinania* jest obszar ekranu renderowania grafiki. Wszystko, co jest wyświetlane poza obszarem wycinka nie jest renderowany. Obszar przycinania są zazwyczaj zdefiniowane przez [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) obiekt, ale można również zdefiniować obszar przycinania za pomocą [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu. Te dwa typy obiektów w najpierw prawdopodobnie pokrewne ponieważ regionie można utworzyć na podstawie ścieżki. Jednak nie można utworzyć ścieżki z regionu i są bardzo różnych wewnętrznie: ścieżka zawiera ciąg linii i krzywych, gdy region jest definiowana za pomocą serii linii poziomych skanowania.
+*Obszaru przycinania* jest obszar ekranu renderowania grafiki. Wszystko, co jest wyświetlany spoza obszaru przycinania nie jest renderowany. Obszar przycinania zazwyczaj jest definiowany przez [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) obiekt, ale można też zdefiniować obszar przycinania za pomocą [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu. Te dwa typy obiektów w najpierw wydawać się powiązane ponieważ regionie można utworzyć na podstawie ścieżki. Jednak nie można utworzyć ścieżki z regionu i różnią się one bardzo wewnętrznie: ścieżka zawiera ciąg linii i krzywych, gdy region jest definiowany przez serię linii poziomej skanowania.
 
-Powyższy obraz został utworzony przez **małp za pośrednictwem dziurką od klucza** strony. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Klasy ścieżki przy użyciu danych pliku SVG definiuje i używa konstruktora załadować mapy bitowej z zasobów programu:
+Na powyższej ilustracji został utworzony przez **małp za pośrednictwem dziurką od klucza** strony. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Klasa definiuje ścieżki SVG danych i używa konstruktora, aby załadować mapy bitowej z zasobów programu:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -45,16 +45,15 @@ public class MonkeyThroughKeyholePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-Mimo że `keyholePath` obiektu opisuje konturu dziurką od klucza, współrzędne są całkowicie dowolnego i uwzględniać, jaka była wygodny, gdy dane ścieżki została opracowana. Z tego powodu `PaintSurface` obsługi uzyskuje granice tego ścieżką i wywołania `Translate` i `Scale` można przenieść ścieżki do Centrum ekranu, a także niemal tak wysokie jako ekran:
+Mimo że `keyholePath` obiektu opisuje zarys dziurką od klucza, współrzędne są całkowicie dowolnego i odzwierciedlają, jaki był wygodne, gdy dane ścieżki została opracowana. Z tego powodu `PaintSurface` obsługi uzyskuje granicami tej ścieżce i wywołania `Translate` i `Scale` przenieść ścieżkę na środku ekranu oraz zapewnienie niemal przedtem jako ekran:
 
 
 ```csharp
@@ -91,35 +90,35 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-Ale ścieżka nie jest renderowany. Zamiast tego następujące przekształcenia, ścieżka jest używana do ustawiania obszar przycinania z tej instrukcji:
+Ale ścieżka nie jest renderowany. Zamiast tego należy następujące przekształcenia, ścieżka jest używana do Ustaw obszar przycinania, za pomocą tej instrukcji:
 
 ```csharp
 canvas.ClipPath(keyholePath);
 ```
 
-`PaintSurface` Obsługi następnie resetuje przekształcenia wywołaniem `ResetMatrix` i rysuje mapy bitowej rozszerzenie wysokości pełnego ekranu. Ten kod zakłada, że mapy bitowej kwadratowych, czyli tej konkretnej mapy bitowej. Mapy bitowej jest renderowany tylko w obszarze zdefiniowanym przez ścieżki przycinania:
+`PaintSurface` Obsługi następnie resetuje przekształcenia przy użyciu wywołania do `ResetMatrix` i rysuje mapy bitowej rozszerzenie pełnej wysokości ekranu. Ten kod zakłada, że mapa bitowa jest kwadratowy, czyli tej określonej mapy bitowej. Mapa bitowa jest renderowany tylko w obszarze zdefiniowanym przez ścieżki przycinania:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Potrójna zrzut ekranu przedstawiający małp za pośrednictwem strony dziurką od klucza")
+[![](clipping-images/monkeythroughkeyhole-small.png "Potrójna zrzut ekranu przedstawiający małp za pomocą strony dziurką od klucza")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Potrójna zrzut ekranu przedstawiający małp za pomocą strony dziurką od klucza")
 
-Ścieżka wycinka podlega przekształcenia obowiązywać po `ClipPath` metoda jest wywoływana, a nie do przekształcenia w mocy po obiektu graficznego (na przykład mapy bitowej) są wyświetlane. Ścieżka wycinka jest częścią stanie roboczym, który zostanie zapisany z `Save` — metoda i przywrócenie historii z `Restore` metody.
+Ścieżki przycięcia podlega przekształcenia obowiązuje podczas `ClipPath` metoda jest wywoływana, a nie do przekształcenia w efekcie gdy obiekt graficzny (takie jak mapy bitowej) zostanie wyświetlona. Ścieżki przycięcia jest częścią stan obszaru roboczego, który jest zapisywany z `Save` metody i przywrócenie z `Restore` metody.
 
-## <a name="combining-clipping-paths"></a>Łączenie ścieżki przycinania
+## <a name="combining-clipping-paths"></a>Łącząc ścieżki przycinania
 
-Mówiąc ściślej, obszar przycinania nie "ustawieniem" `ClipPath` metody. Zamiast tego jest połączony z istniejącą ścieżką wycinka rozpoczyna się jako prostokąt o rozmiarze równa ekranu. Można uzyskać za pomocą obszaru przycinania prostokątne granice [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) właściwości lub [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) właściwości. `ClipBounds` Zwraca `SKRect` wartość, która odzwierciedla żadnego przekształca, które mogą obowiązywać. `ClipDeviceBounds` Zwraca `RectI` wartość. Jest to prostokąt z liczbą całkowitą wymiarów i opisano obszar przycinania w rzeczywistych wymiarów.
+Ściśle rzecz ujmując, w obszarze wycinka nie "sprawdzeniami" `ClipPath` metody. Zamiast tego jest połączona z istniejącą ścieżkę przycinania rozpoczyna się jako prostokąt równym do ekranu. Możesz uzyskać prostokątny granice przy użyciu obszaru przycinania [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) właściwości lub [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) właściwości. `ClipBounds` Właściwość zwraca `SKRect` wartość, która odzwierciedla dowolnego przekształcenia, które mogą obowiązywać. `ClipDeviceBounds` Właściwość zwraca `RectI` wartość. To jest prostokąta o wymiarach liczby całkowitej i opisuje obszaru przycinania w rzeczywistych wymiarów.
 
-Wszelkie wywołanie `ClipPath` zmniejsza obszar przycinania łącząc obszar przycinania z nowego obszaru. Pełna składnia [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) metoda jest:
+Dowolne wywołanie `ClipPath` zmniejsza obszar przycinania, łącząc obszar przycinania, za pomocą nowego obszaru. Pełna składnia [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) metodą jest:
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Istnieje również [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) metodę, która łączy obszaru przycinania z prostokąta:
+Istnieje również [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) metodę, która łączy obszar przycinania z prostokątem:
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Domyślnie obszar wynikowe wycinka jest przecięcie istniejącego obszaru przycinania i `SKPath` lub `SKRect` określonym w `ClipPath` lub `ClipRect` metody. To jest przedstawiona w **cztery okręgi Intersect klip** strony. `PaintSurface` Obsługi w [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) klasy ponownie używa takie same `SKPath` obiekt, aby utworzyć cztery nakładające się okręgi, z których każdy zmniejsza obszar przycinania za pośrednictwem kolejnych wywołań `ClipPath`:
+Domyślnie obszar przycinania wynikowe to część wspólna istniejącego obszaru przycinania i `SKPath` lub `SKRect` określonym w `ClipPath` lub `ClipRect` metody. Jest to zaprezentowane w **klipu Intersect okręgów cztery** strony. `PaintSurface` Obsługi w [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) klasy ponownie używa takie same `SKPath` obiektu do utworzenia czterech nakładających się okręgów, z których każdy zmniejsza obszar przycinania przez kolejne wywołania `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,9 +163,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Pozostała jest przecięcie te cztery koła:
+Zachowasz pozostałe jest część wspólną tych kręgów cztery:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Potrójna zrzut ekranu strony klip Intersect koło cztery")](clipping-images/fourcircleintersectclip-large.png#lightbox "Potrójna zrzut ekranu strony klip cztery Intersect koło")
+[![](clipping-images//fourcircleintersectclip-small.png "Potrójna zrzut ekranu przedstawiający stronę cztery okrąg Intersect klipu")](clipping-images/fourcircleintersectclip-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę cztery okrąg Intersect klipu")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Wyliczenie ma tylko dwa elementy członkowskie:
 
@@ -174,17 +173,17 @@ Pozostała jest przecięcie te cztery koła:
 
 - [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) przecina określonej ścieżki lub prostokąt z istniejącego obszaru przycinania
 
-Jeśli musisz zastąpić cztery `SKClipOperation.Intersect` argumentów `FourCircleIntersectClipPage` klasy z `SKClipOperation.Difference`, pojawi się następujące:
+Jeżeli wymienisz cztery `SKClipOperation.Intersect` argumentów `FourCircleIntersectClipPage` klasy `SKClipOperation.Difference`, zostaną wyświetlone następujące czynności:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę klip cztery Intersect koło z operacji różnicowej")
+[![](clipping-images//fourcircledifferenceclip-small.png "Potrójna zrzut ekranu strony klipu Intersect okrąg cztery za pomocą operacji różnicowej")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Potrójna zrzut ekranu strony klipu Intersect okrąg cztery za pomocą operacji różnicowej")
 
-Cztery nakładające się okręgi zostały usunięte z obszaru przycinania.
+Czterech nakładających się okręgów zostały usunięte z obszaru przycinania.
 
-**Operacji klip** strony pokazano różnicę między tych dwóch operacji o po prostu pary okręgi. Koło po lewej stronie zostanie dodany do obszaru przycinania z domyślnego działania klip `Intersect`, podczas gdy koła po prawej stronie dodawanej do obszaru przycinania z operacją przycinania oznaczonego etykietą:
+**Operacje klipu** strony ilustruje różnicę między te dwie operacje przy użyciu tylko pary koła. Koło po lewej stronie zostanie dodany do obszaru przycinania za pomocą domyślnego działania klipu `Intersect`, podczas gdy drugi okrąg po prawej stronie zostanie dodany do obszaru przycinania z operacją klipu wskazywanym przez tekst etykiety:
 
-[![](clipping-images//clipoperations-small.png "Potrójna zrzut ekranu strony Operacje klip")](clipping-images/clipoperations-large.png#lightbox "Potrójna zrzut ekranu strony Operacje Clip")
+[![](clipping-images//clipoperations-small.png "Potrójna zrzut ekranu przedstawiający stronę operacje klipu")](clipping-images/clipoperations-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę operacje klipu")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasa definiuje dwie `SKPaint` obiekty jako pola, a następnie dzieli ekranu na dwa obszary prostokątne. Te obszary są różne w zależności od tego, czy telefon jest w trybie pionowa lub pozioma. `DisplayClipOp` Klasy następnie wyświetla tekst i wywołania `ClipPath` ze ścieżkami dwóch koło w celu zilustrowania każdej operacji klip:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Klasy definiuje dwa `SKPaint` obiektów jako pola, a następnie dzieli ekranu na dwa obszary prostokątny. Te obszary są różne w zależności od tego, czy numer telefonu jest w trybie pionowa lub pozioma. `DisplayClipOp` Klasy następnie wyświetla tekst i wywołania `ClipPath` ze ścieżkami dwóch okrąg do zilustrowania każdej operacji klipu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -245,11 +244,11 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 }
 ```
 
-Wywoływanie `DrawPaint` zwykle powoduje, że cały obszar roboczy do wypełnienia z tym `SKPaint` obiektu, ale w takim przypadku metoda po prostu umożliwia malowanie wewnątrz obszaru przycinania.
+Wywoływanie `DrawPaint` zwykle powoduje, że cały obszar roboczy, trzeba napełniać, `SKPaint` obiektu, ale w tym przypadku metoda po prostu umożliwia malowanie wewnątrz obszaru przycinania.
 
-## <a name="exploring-regions"></a>Eksploracja regionów
+## <a name="exploring-regions"></a>Poznawanie regionów
 
-Jeśli zostały przedstawione w dokumentacji interfejsu API `SKCanvas`, można zauważyć przeciążeń `ClipPath` i `ClipRect` metod, które są podobne do metod opisanych powyżej, ale zamiast tego ma parametr o nazwie [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) zamiast `SKClipOperation`. `SKRegionOperation` ma sześć członków nieco większą elastyczność podczas łączenia ścieżek do formularza wycinka obszarów:
+Jeśli zostały przedstawione w dokumentacji interfejsu API `SKCanvas`, być może Zauważyłeś, przeciążenia `ClipPath` i `ClipRect` metod, które są podobne do metod opisanych powyżej, ale zamiast tego ma parametr o nazwie [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) zamiast `SKClipOperation`. `SKRegionOperation` ma sześć elementy członkowskie, co zapewnia nieco większą elastyczność podczas łączenia ścieżek do obszarów wycinka formularza:
 
 - [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Difference/)
 
@@ -265,29 +264,29 @@ Jeśli zostały przedstawione w dokumentacji interfejsu API `SKCanvas`, można z
 
 Jednak przeciążeń `ClipPath` i `ClipRect` z `SKRegionOperation` parametry są przestarzałe i nie można ich używać.
 
-Można nadal używać `SKRegionOperation` wyliczenia, ale wymaga zdefiniowania obszar przycinania na podstawie [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu.
+Można nadal używać `SKRegionOperation` wyliczenie, ale wymaga zdefiniowania obszar przycinania na podstawie [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) obiektu.
 
-Nowo utworzone `SKRegion` obiektu opisuje pustym obszarem. Zazwyczaj jest pierwsze wywołanie w obiekcie [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby obszar opisano prostokątny obszar. Parametr `SetRect` jest `SKRectI` wartość &mdash; wartość prostokąt z właściwościami liczby całkowitej. Następnie można wywołać [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) z `SKPath` obiektu. Spowoduje to utworzenie region, który jest taki sam jak wewnątrz ścieżki, ale przycinane do początkowej prostokątny obszar.
+Nowo utworzone `SKRegion` obiektu opisuje pusty obszar. Pierwsze wywołanie do obiektu jest zazwyczaj [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby region opisują prostokątny obszar. Parametr `SetRect` jest `SKRectI` wartość &mdash; prostokąt wartością właściwości Liczba całkowita. Następnie możesz wywołać [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) z `SKPath` obiektu. Spowoduje to utworzenie region, który jest taki sam jak wewnątrz ścieżki, ale przycinane do początkowego prostokątny obszar.
 
-`SKRegionOperation` Wyliczenie pochodzi wyłącznie do gry podczas wywoływania jednej z [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) przeciążenia metody, taką jak:
+`SKRegionOperation` Wyliczenie pochodzi wyłącznie do gry podczas wywoływania jednego z [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) przeciążenia metody, taką jak ta:
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-Obszar wprowadzasz `Op` wywołanie jest połączona z określonego jako parametru na podstawie regionu `SKRegionOperation` elementu członkowskiego. Na koniec otrzymasz region odpowiednie dla wycinka, można ustawić który jako obszar przycinania za pomocą obszaru roboczego [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) metody `SKCanvas`:
+Regionie, w którym wprowadzasz `Op` wywołanie jest połączony z regionu, określony jako parametr w oparciu o `SKRegionOperation` elementu członkowskiego. Podczas ostatecznie uzyskasz region odpowiedni dla wycinka, można ustawić, jako obszar przycinania za pomocą kanwy [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) metody `SKCanvas`:
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
 ```
 
-Poniższy zrzut ekranu przedstawia na podstawie operacji region sześć obszarów wycinka. Po lewej stronie okrąg ma wartość region który `Op` wywoływana jest metoda, a prawa okrąg region przekazany do `Op` metody:
+Poniższy zrzut ekranu przedstawia wycinka obszarów, na podstawie operacji sześciu regionów. Po lewej stronie koła to region, który `Op` metoda jest wywoływana w i odpowiednie okrąg jest to region, przekazywane do `Op` metody:
 
-[![](clipping-images//regionoperations-small.png "Potrójna zrzut ekranu strony Operacje Region")](clipping-images/regionoperations-large.png#lightbox "Potrójna zrzut ekranu strony Operacje regionu")
+[![](clipping-images//regionoperations-small.png "Potrójna zrzut ekranu przedstawiający stronę operacje Region")](clipping-images/regionoperations-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę operacje Region")
 
-Czy te wszystkie możliwości łączenia tych dwóch okręgi? Należy wziąć pod uwagę Wynikowy obraz jako kombinację trzech składników, które same są widoczne w `Difference`, `Intersect`, i `ReverseDifference` operacji. Całkowita liczba kombinacji jest trzeci zasilania, co najmniej dwóch osiem. Dwa, które nie są spełnione są regionu oryginalnego (którego wynikiem wywołania nie `Op` w ogóle) i całkowicie pusty region.
+Czy te wszystkie możliwości łączenia tych dwóch kręgów? Należy wziąć pod uwagę obraz wynikowy pod postacią połączenia trzy składniki, które same w sobie są widoczne w `Difference`, `Intersect`, i `ReverseDifference` operacji. Całkowita liczba kombinacji jest dwa do potęgi trzeciej lub 8. Dwa, na których brakuje są oryginalne region (co powoduje wywołanie nie `Op` w ogóle) i całkowicie pusty regionu.
 
-Jest trudniej regionów na potrzeby wycinka, ponieważ trzeba najpierw utworzyć ścieżkę, a następnie region z tej ścieżki, a następnie połączenie wielu regionach. Ogólna struktura **operacji Region** strony jest bardzo podobny do **operacji klip** , ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) klasy dzieli ekranu na sześć obszarów i przedstawia dodatkowej pracy wymagane do używania regiony dla tego zadania:
+Jest trudniejsze do użytku regionów przycinania, ponieważ trzeba najpierw utworzyć ścieżkę, a następnie region z tej ścieżki, a następnie łączyć wiele regionów. Ogólną strukturę **operacje Region** strony jest bardzo podobny do **operacje klipu** ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) klasy dzieli ekranu na sześć obszarów i Pokazuje dodatkowej pracy, które są wymagane do użycia regiony dla tego zadania:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -358,20 +357,20 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 }
 ```
 
-Oto istotną różnicą między `ClipPath` — metoda i `ClipRegion` metody:
+W tym miejscu jest różnica między `ClipPath` metody i `ClipRegion` metody:
 
 > [!IMPORTANT]
-> W odróżnieniu od `ClipPath` metody `ClipRegion` — metoda nie ma wpływu na transformacji.
+> W odróżnieniu od `ClipPath` metody `ClipRegion` metoda nie ma wpływu przekształcenia.
 
-Zrozumienie uzasadnienie tę różnicę, jest zrozumieć, jakie region jest. Jeśli już wiesz, jak klip operacje lub operacje regionie można zaimplementować wewnętrznie, prawdopodobnie wydaje się bardzo skomplikowane. Wiele ścieżek bardzo złożonych są łączone i konturu Ścieżka wynikowa prawdopodobnie algorytmicznego nightmare.
+Zrozumienie uzasadnienie tę różnicę, to zrozumieć, jakie regionie. Jeśli już wiesz, jak operacji klipu ani operacji regionu może być implementowane wewnętrznie, prawdopodobnie wydaje się bardzo skomplikowane. Kilka bardzo złożonych ścieżek są łączone i kontur Ścieżka wynikowa jest prawdopodobnie okropnej konsolidatorze.
 
-Jednak tego zadania jest znacznie uproszczone w przypadku poszczególnych ścieżek do serii linii poziomych skanowania, takich jak stosowane probówki próżni telewizorach. Każdy wiersz skanowania jest po prostu linii poziomej punkt początkowy i punkt końcowy. Na przykład koło z protokołem radius 10 może być rozłożone na 20 skanowania poziome linie, z których każdy rozpoczyna się w lewej części okręgu i kończy się w prawej części. Łączenie dwa okręgi z żadnej operacji region staje się bardzo proste, ponieważ jest po prostu kwestią badanie początkową i końcową współrzędne każda para odpowiednie wiersze skanowania.
+Ale to zadanie jest znacznie uproszczone w przypadku poszczególnych ścieżek na serię linii poziomej skanowania, takich jak stara rury odkurzający telewizorów. Każdy wiersz skanowania jest po prostu linii poziomej punkt początkowy i punkt końcowy. Na przykład koła o promieniu 10 może być rozłożone na 20 linii poziomej skanowania, z których każdy rozpoczyna się w lewej części koła i kończy się w prawej części. Łącząc dwa okręgi z każdej operacji region staje się bardzo prosty ponieważ jest on po prostu kwestią badanie rozpoczęcia i zakończenia współrzędne każdej pary odpowiednie wiersze skanowania.
 
-Co to jest obszarem: serii linii poziomych skanowania, która definiuje obszar.
+Co to jest region: serię linii poziomej skanowania, która definiuje obszar.
 
-Jednak gdy obszar zostanie zmniejszona do serii skanowanie linii, te skanowania wierszy na podstawie których wymiaru piksela. Mówiąc ściślej region nie jest obiektem grafiki wektorowej. Jest charakteru bliżej skompresowany monochromatyczny mapę bitową niż do ścieżki. W rezultacie regionów nie, i bez utraty wierności i z tego powodu nie są przekształcony użycie obszarów wycinka.
+Jednak gdy obszar jest ograniczona do szeregu skanowania linii, te skanowania, które wiersze są oparte na wymiarze piksela. Ściśle rzecz ujmując region nie jest obiektem grafiki wektorowej. Jest z natury skompresowany monochromatyczną mapę bitową niż do ścieżki. W związku z tym regionów nie, i bez utraty jakości i z tego powodu nie są przekształcane stosowania obszarów wycinka.
 
-Jednak można stosować przekształceń do regionów dla celów malowania. **Region Paint** program żywe ilustruje wewnętrzny rodzaj regionów. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Tworzy klasy `SKRegion` na podstawie obiektu `SKPath` koła radius 10 jednostki. Następnie transformacji rozwija tego okręgu do wypełnienia strony:
+Jednakże można zastosować przekształcenia do regionów do celów rysowania. **Region Paint** program wyraźnie pokazuje wewnętrzny charakter regionów. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Tworzy klasę `SKRegion` na podstawie obiektu `SKPath` okręgu 10 jednostek usługi radius. Przekształcenie następnie rozwija ten okrąg do wypełnienia strony:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -422,13 +421,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`DrawRegion` Wywołania wypełnia regionu w kolorze pomarańczowym, gdy `DrawPath` wywołania obrysy oryginalnej ścieżki na niebiesko do porównania:
+`DrawRegion` Wywołanie wypełnia regionu w kolorze pomarańczowym, gdy `DrawPath` wywołanie obrysy oryginalnej ścieżce w kolorze niebieskim dla porównania:
 
 [![](clipping-images//regionpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Region Paint")](clipping-images/regionpaint-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Paint regionu")
 
-Region jest wyraźnie szereg odrębny współrzędnych.
+Region jest wyraźnie szereg dyskretnych współrzędnych.
 
-Jeśli nie trzeba transformacje używane na obszary wycinka, możesz użyć regionów dla wycinka, jako **czterech — liścia koniczyna** pokazuje stronę. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Klasy tworzy złożonego region z czterech cykliczną regionami, ustawia tego regionu złożonego jako obszar przycinania i następnie rysuje szereg 360 proste pochodzących od środka strony:
+Nie ma potrzeby używanie przekształceń w połączeniu z obszary wycinka, mogą używać regionów dla wycinka, jak **czterech — liścia koniczyna** pokazuje strony. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Klasy tworzy złożonego region z czterech regionów cykliczne, ustawia ten region złożonego jako obszar przycinania i następnie rysuje szereg 360 proste linie pochodzących od środka strony:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -508,12 +507,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Naprawdę nie wygląda jak czterech — liścia koniczyny, ale jest obraz, który może być trudne do renderowania bez wycinka:
+Tak naprawdę nie wygląda koniczyna czterech — typu liść, ale jest obraz, który może być trudny do renderowania bez przycinania:
 
-[![](clipping-images//fourleafclover-small.png "Potrójna zrzut ekranu strony czterech — liścia koniczyna")](clipping-images/fourleafclover-large.png#lightbox "Potrójna zrzut ekranu strony czterech — liść koniczyny")
+[![](clipping-images//fourleafclover-small.png "Potrójna zrzut ekranu przedstawiający stronę koniczyna typu liść — czterech")](clipping-images/fourleafclover-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę koniczyna typu liść — czterech")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

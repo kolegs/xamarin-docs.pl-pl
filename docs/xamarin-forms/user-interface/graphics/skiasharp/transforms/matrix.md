@@ -1,34 +1,34 @@
 ---
-title: Przekształcenia macierzy w SkiaSharp
-description: W tym artykule dives głębiej do przekształcenia SkiaSharp z macierzy transformacji elastyczne i pokazuje to z przykładowym kodzie.
+title: Przekształcenia macierzowe w SkiaSharp
+description: W tym artykule bardziej omawia przekształcenia biblioteki SkiaSharp z macierzy transformacji wszechstronna i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: fafa883d013701b9e72e544aff03739a7ff9230c
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244880"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130871"
 ---
-# <a name="matrix-transforms-in-skiasharp"></a>Przekształcenia macierzy w SkiaSharp
+# <a name="matrix-transforms-in-skiasharp"></a>Przekształcenia macierzowe w SkiaSharp
 
-_Przejść głębiej do przekształcenia SkiaSharp z macierzy transformacji elastyczne_
+_Szczegółowe informacje przekształcenia biblioteki SkiaSharp z macierzy transformacji wszechstronna_
 
-Wszystkie transformacji zastosowanych do `SKCanvas` obiektu są konsolidowane w jednym wystąpieniu [ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/) struktury. Jest to podobne do tych we wszystkich systemach nowoczesnych grafiki 2D standardowe macierzy transformacji 3 x 3.
+Wszystkie przekształcenia, które są stosowane do `SKCanvas` obiektu i dalszych są skonsolidowane w pojedyncze wystąpienie [ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/) struktury. Jest to standardowy macierzy transformacji 3 x 3 podobne do tych we wszystkich systemach nowoczesnych grafika 2D.
 
-Jak przedstawiono, można użyć transformacji w SkiaSharp bez wiedzy przekształcenia macierzy, ale macierzy transformacji jest ważna z punktu widzenia teoretycznego i jest niezwykle istotne w przypadku używania przekształceń do modyfikowania ścieżki lub obsługi złożonych dotykowego, oba przedstawiono w którym w tym artykule i dalej.
+Jak wiesz, można użyć przekształceń w SkiaSharp bez wiedzy przekształcenia macierzy, ale macierzy transformacji jest ważne z punktu widzenia teoretycznych i jest niezwykle istotne w przypadku używania przekształceń do modyfikowania ścieżek lub do obsługi wprowadzania dotykowego złożonych, oba które zostały przedstawione w tym artykule, a następnie.
 
 ![](matrix-images/matrixtransformexample.png "Mapy bitowej poddane affine — przekształcenia")
 
-Stosowane do bieżącego macierzy transformacji `SKCanvas` jest dostępna w dowolnym momencie po zalogowaniu się tylko do odczytu do [ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/) właściwości. Można ustawić używającego macierzy transformacji [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/) metody, a można przywrócić tej macierzy transformacji do wartości domyślnych, wywołując [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/).
+Stosowane do bieżącego macierzy transformacji `SKCanvas` jest dostępna w dowolnym momencie, uzyskując dostęp do tylko do odczytu [ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/) właściwości. Możesz ustawić używającego macierzy transformacji [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/) metody, a można przywrócić tego macierzy transformacji do wartości domyślnych, wywołując [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/).
 
-Tylko innych `SKCanvas` element członkowski, który współpracuje bezpośrednio z obszaru roboczego macierzy transformacji jest [ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/) które łączy macierzy dwa mnożąc je razem.
+Tylko inne `SKCanvas` elementu członkowskiego, który bezpośrednio współpracuje z obszaru roboczego macierzy transformacji jest [ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/) który łączy dwie macierzy mnożąc je ze sobą.
 
-Domyślne macierzy transformacji macierzą i składa się z 1 w komórkach ukośnych i wszędzie else 0:
+Domyślne macierzy transformacji macierz tożsamości i składa się z 1 w ukośne komórek i inne wszędzie, gdzie 0:
 
 <pre>
 | 1  0  0 |
@@ -36,23 +36,23 @@ Domyślne macierzy transformacji macierzą i składa się z 1 w komórkach ukoś
 | 0  0  1 |
 </pre>
 
-Możesz utworzyć macierzą przy użyciu statycznych [ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/) metody:
+Możesz utworzyć macierz tożsamości przy użyciu statycznych [ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/) metody:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
 ```
 
-`SKMatrix` Domyślny konstruktor jest *nie* zwracać macierzą. Zwraca macierzy z wszystkie komórki ustawione na zero. Nie używaj `SKMatrix` Konstruktor Jeśli nie chcesz ręcznie ustawić tych komórek.
+`SKMatrix` Działa Konstruktor domyślny *nie* zwracają macierz tożsamości. Zwraca macierzy przy użyciu wszystkich komórek ustawioną wartość zero. Nie używaj `SKMatrix` konstruktora, chyba że zamierzasz ręcznie ustawić tych komórek.
 
-Gdy SkiaSharp renderuje obiektu graficznego, każdy punkt (x, y) skutecznie jest konwertowana na macierzy 1 na 3 z 1 trzeciej kolumny:
+Skiasharp — renderuje obiekt graficzny, każdy punkt (x, y) jest skutecznie konwertowany macierzy 1, 3, 1 w trzeciej kolumnie:
 
 <pre>
 | x  y  1 |
 </pre>
 
-Ta macierz 1 na 3 reprezentuje punkt trójwymiarowy z Współrzędna ustawioną wartość 1. Dlaczego dwuwymiarowa macierzy transformacji wymaga Praca w trzech wymiarach jest przyczyn matematyczne (omówione później). Można potraktować ten macierzy 1 na 3 jako reprezentujący punkt 3D układu współrzędnych, ale zawsze na płaszczyźnie 2D gdzie Z jest równa 1.
+Ta macierz 1, 3 reprezentuje punkt trójwymiarowej z Współrzędna ustawiona na 1. Dlaczego dwuwymiarowej macierzy transformacji wymaga Praca w trzech wymiarach jest przyczyn matematyczne (omówione w dalszej części). Można potraktować ten macierzy 1, 3 reprezentując punktu 3W układu współrzędnych, ale zawsze na płaszczyźnie 2D gdzie Z jest równa 1.
 
-Ta macierz 1 na 3 jest mnożony przez macierzy transformacji, a wynik jest punktem renderowane w obszarze roboczym:
+Ta macierz 1, 3 jest mnożony przez macierzy transformacji, a wynik jest punkt renderowane na kanwie:
 
 <pre>
               | 1  0  0 |
@@ -60,7 +60,7 @@ Ta macierz 1 na 3 jest mnożony przez macierzy transformacji, a wynik jest punkt
               | 0  0  1 |
 </pre>
 
-Punkty przekonwertowany przy użyciu mnożenie macierzy standardowe, są następujące:
+Przekonwertowana punkty za pomocą mnożenie macierzy standardowe, są następujące:
 
 x' = x
 
@@ -70,7 +70,7 @@ z' = 1
 
 To jest domyślną transformację.
 
-Gdy `Translate` wywoływana jest metoda `SKCanvas` obiektu, `tx` i `ty` argumenty `Translate` metody stają się dwóch pierwszych komórek w trzecim wierszu macierzy transformacji:
+Gdy `Translate` metoda jest wywoływana w `SKCanvas` obiektu, `tx` i `ty` argumenty `Translate` metoda stają się pierwsze dwie komórki w trzecim wierszu macierzy transformacji:
 
 <pre>
 |  1   0   0 |
@@ -78,7 +78,7 @@ Gdy `Translate` wywoływana jest metoda `SKCanvas` obiektu, `tx` i `ty` argument
 | tx  ty   1 |
 </pre>
 
-Iloczyn jest teraz w następujący sposób:
+Mnożenie jest teraz w następujący sposób:
 
 <pre>
               |  1   0   0 |
@@ -90,9 +90,9 @@ Poniżej przedstawiono formuły przekształcenia:
 
 x' = x + tx
 
-y "= y + ty
+y "=, y + ty
 
-Czynniki skalowania ma wartość domyślną 1. Podczas wywoływania `Scale` metody na nowym `SKCanvas` obiektu zawiera macierzy transformacji wynikowe `sx` i `sy` argumenty w komórkach ukośnych:
+Czynniki skalowania ma wartość domyślną 1. Podczas wywoływania `Scale` metody na nowym `SKCanvas` obiektu zawiera macierzy transformacji wynikowe `sx` i `sy` argumentów w komórkach ukośne:
 
 <pre>
               | sx   0   0 |
@@ -100,11 +100,11 @@ Czynniki skalowania ma wartość domyślną 1. Podczas wywoływania `Scale` meto
               |  0   0   1 |
 </pre>
 
-Przekształcanie formuły są następujące:
+Formuły przekształcenia są następujące:
 
 x' = sx · x
 
-y "= sy · y
+y "= XI sy y
 
 Po wywołaniu macierzy transformacji `Skew` zawiera dwa argumenty w komórkach macierzy sąsiadujące skalowania czynniki:
 
@@ -114,11 +114,11 @@ Po wywołaniu macierzy transformacji `Skew` zawiera dwa argumenty w komórkach m
               │   0     0     1 │
 </pre>
 
-Przekształcanie formuły są:
+Formuły przekształcenia są:
 
-x "= x + xSkew · y
+x "= x + xSkew XI y
 
-y "= ySkew · x + y
+y "= ySkew XI x + y
 
 Wywołania `RotateDegrees` lub `RotateRadians` kąta α macierzy transformacji jest następująca:
 
@@ -130,11 +130,11 @@ Wywołania `RotateDegrees` lub `RotateRadians` kąta α macierzy transformacji j
 
 Poniżej przedstawiono formuły przekształcenia:
 
-x "= cos(α) · x - sin(α) · y
+x "= cos(α) XI x - sin(α) XI y
 
-y "= sin(α) · x - cos(α) · y
+y "= sin(α) XI x - cos(α) XI y
 
-Gdy α jest równy 0 stopni, jest macierzą. Α po 180 stopni macierzy transformacji jest następujący:
+Gdy α wynosi 0 stopni, jest macierzą. Α po 180 stopni macierzy transformacji jest następująca:
 
 <pre>
 | –1   0   0 |
@@ -142,26 +142,26 @@ Gdy α jest równy 0 stopni, jest macierzą. Α po 180 stopni macierzy transform
 |  0   0   1 |
 </pre>
 
-180 stopni jest odpowiednikiem Przerzucanie obiektu w poziomie i w pionie, które również odbywa się przez ustawienie skali czynników -1.
+180 stopni jest odpowiednikiem Przerzucanie obiektu w poziomie i w pionie, które również odbywa się przez ustawienie skale-1.
 
-Tego rodzaju przekształceń są sklasyfikowane jako *podobne* przekształca. Affine — przekształcenia nigdy nie obejmują trzeciej kolumny macierzy, który pozostaje na wartości domyślne, 0, 0 lub 1. Artykuł [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md) omówiono-affine — przekształcenia.
+Tego rodzaju transformacje są klasyfikowane jako *przekształceniem afinicznym* przekształcenia. Affine — przekształcenia nigdy nie obejmują trzecia kolumna macierz, która pozostaje na wartości domyślne, 0, 0 lub 1. Artykuł [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md) w tym artykule omówiono przekształcenia nieafiniczne.
 
 ## <a name="matrix-multiplication"></a>Mnożenie macierzy
 
-Jedną z zalet big przy użyciu macierzy transformacji jest można uzyskać przez mnożenie macierzy, która jest często określany w dokumentacji SkiaSharp jako złożonych przekształceń *łączenia*. Wiele metod Przekształć powiązane `SKCanvas` odwołują się do "łączenia wstępnego" lub "concat sprzed." Odnosi się kolejnością mnożenie, co jest ważne, ponieważ nie jest przemienne mnożenie macierzy.
+Jedną z zalet big Data przy użyciu macierzy transformacji jest można uzyskać przez mnożenie macierzy, który jest często określana w dokumentacji SkiaSharp jako złożone przekształcenia *łączenia*. Wiele metod związanych z transformacji w `SKCanvas` odnoszą się do "łączenia wstępnego" lub "pre-concat." Odnosi się to polecenie mnożenie, co jest ważne, ponieważ mnożenie macierzy nie jest przemiennego.
 
-Na przykład w dokumentacji [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) metody mówi jego "Pre-concats bieżącego macierzy z określonym tłumaczenia" podczas dokumentację dla [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) Metoda mówi jego "Pre-concats bieżącego macierzy o określonej skali."
+Na przykład w dokumentacji dotyczącej [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) metody mówi jej "Pre-concats bieżącego macierzy oraz w określonym tłumaczenie" podczas dokumentacji dla [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) Metoda mówi jej "Pre-concats bieżącego macierzy przy użyciu określonej skali."
 
-Oznacza to, że przekształcenia, określonego przez wywołanie metody jest mnożnik (lewego operandu) i bieżącego macierzy transformacji jest multiplicand (prawostronny operand).
+Oznacza to, że przekształcania określonej przez wywołanie metody jest mnożnik (lewostronny operand), a bieżący macierzy transformacji jest którą mnożona jest mnożna (prawostronny operand).
 
-Załóżmy, że `Translate` jest wywoływana po nich `Scale`:
+Załóżmy, że `Translate` nosi nazwę następuje `Scale`:
 
 ```csharp
 canvas.Translate(tx, ty);
 canvas.Scale(sx, sy);
 ```
 
-`Scale` Transformacji jest mnożona przez `Translate` przekształcenie macierzy złożone przekształcenia:
+`Scale` Transformacji jest mnożony przez `Translate` przekształcenia macierzy złożone przekształcenia:
 
 <pre>
 | sx   0   0 |   |  1   0   0 |   | sx   0   0 |
@@ -169,14 +169,14 @@ canvas.Scale(sx, sy);
 |  0   0   1 |   | tx  ty   1 |   | tx  ty   1 |
 </pre>
 
-`Scale` może zostać wywołana przed `Translate` podobnie do następującej:
+`Scale` może zostać wywołana przed `Translate` następująco:
 
 ```csharp
 canvas.Scale(sx, sy);
 canvas.Translate(tx, ty);
 ```
 
-W takim przypadku kolejnością mnożenie została wycofana i skalowania czynniki efektywnie są stosowane do tłumaczenia czynniki:
+W takim przypadku kolejność mnożenia została wycofana i skalowania czynniki skutecznie są stosowane do tłumaczenia czynników:
 
 <pre>
 |  1   0   0 |   | sx   0   0 |   |  sx      0    0 |
@@ -190,7 +190,7 @@ Oto `Scale` metody za pomocą punktu obrotu:
 canvas.Scale(sx, sy, px, py);
 ```
 
-Jest to równoważne następujące wywołania Przetłumacz i skali:
+Jest to równoważne następujące wywołania translate i skalowania:
 
 ```csharp
 canvas.Translate(px, py);
@@ -208,7 +208,7 @@ Trzy macierzy transformacji są mnożone w odwrotnej kolejności z wygląd metod
 
 ### <a name="the-skmatrix-structure"></a>Struktura SKMatrix
 
-`SKMatrix` Struktury definiuje dziewięć właściwości odczytu/zapisu typu `float` odpowiadający dziewięć komórkach macierzy transformacji:
+`SKMatrix` Struktury definiuje dziewięć właściwości odczytu/zapisu o typie `float` odpowiadający dziewięć komórkach macierzy transformacji:
 
 <pre>
 │ ScaleX  SkewY   Persp0 │
@@ -216,9 +216,9 @@ Trzy macierzy transformacji są mnożone w odwrotnej kolejności z wygląd metod
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix` definiuje również właściwość o nazwie [ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/) typu `float[]`. Tej właściwości można ustawić lub uzyskać dziewięć wartości w jednej zrzut w kolejności `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, i `Persp2`.
+`SKMatrix` definiuje również właściwość o nazwie [ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/) typu `float[]`. Ta właściwość może służyć do ustawiania lub uzyskać dziewięć wartości w jednym działaniu w kolejności `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, i `Persp2`.
 
-`Persp0`, `Persp1`, I `Persp2` komórki zostały omówione w artykule [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Jeśli te komórki mają wartości domyślne, 0, 0 lub 1, transformacja jest mnożona przez współrzędnych punktu następująco:
+`Persp0`, `Persp1`, I `Persp2` komórek są omówione w artykule [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Jeśli te komórki mają wartości domyślne, 0, 0 lub 1, transformacja jest mnożony przez współrzędnych punktu następująco:
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -226,26 +226,26 @@ Trzy macierzy transformacji są mnożone w odwrotnej kolejności z wygląd metod
               │ TransX  TransY  1 │
 </pre>
 
-x "= ScaleX · x + SkewX · y + TransX
+x "= ScaleX XI x + SkewX XI y + TransX
 
-y "= SkewX · x + ScaleY · y + TransY
+y "= SkewX XI x + ScaleY XI y + TransY
 
 z' = 1
 
-Jest to pełny dwuwymiarowa affine — przekształcenia. Affine — przekształcenia zachowuje równoległych, co oznacza, że prostokąt nigdy nie jest on przekształcany w innym niż równoległobok.
+Jest to pełną dwuwymiarową affine — przekształcenia. Affine — przekształcenia zachowuje równoległych, co oznacza, że prostokąt nigdy nie jest przekształcana na coś innego niż równoległobok.
 
 `SKMatrix` Struktury definiuje kilka metod statycznych, aby utworzyć `SKMatrix` wartości. Te wszystkie zwracany `SKMatrix` wartości:
 
 - [`MakeTranslation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeTranslation/p/System.Single/System.Single/)
 - [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) z punktu przestawnego
+- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) za pomocą punktu obrotu
 - [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/) kąt w radianach
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) kąt w radianach do punktu przestawnego
+- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) kąt w radianach z punktem obrotu
 - [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/)
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) z punktu przestawnego
+- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) za pomocą punktu obrotu
 - [`MakeSkew`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeSkew/p/System.Single/System.Single/)
 
-`SKMatrix` definiuje również kilka metod statycznych, które łączenie macierzy dwa, co oznacza, że należy pomnożyć je. Te metody są nazywane `Concat`, `PostConcat`, i `PreConcat`, i istnieją dwie wersje każdego z nich. Te metody mają nie zwracanych wartości; Zamiast tego odwołujących się do istniejących `SKMatrix` wartości za pośrednictwem `ref` argumentów. W poniższym przykładzie `A`, `B`, i `R` ("wynik") są wszystkie `SKMatrix` wartości.
+`SKMatrix` definiuje również kilka metod statycznych, które złączyć dwa macierzy, co oznacza, że należy pomnożyć je. Metody te są nazywane `Concat`, `PostConcat`, i `PreConcat`, istnieją dwie wersje każdego z nich. Te metody mają bez wartości zwracanej; Zamiast tego mogą odwoływać się do istniejącego `SKMatrix` wartości za pomocą `ref` argumentów. W poniższym przykładzie `A`, `B`, i `R` ("wynik") są wszystkie `SKMatrix` wartości.
 
 Dwa `Concat` metody są wywoływane w następujący sposób:
 
@@ -259,7 +259,7 @@ Te należy wykonać następujące mnożenia:
 
 R = B × A
 
-Inne metody ma tylko dwa parametry. Pierwszy parametr jest zmodyfikowany, a na powrót z wywołania metody, zawiera produktu macierzy dwa. Dwa `PostConcat` metody są wywoływane w następujący sposób:
+Inne metody ma tylko dwa parametry. Pierwszy parametr jest zmodyfikowany, a na powrót z wywołania metody, zawiera iloczyn dwóch macierzy. Dwa `PostConcat` metody są wywoływane w następujący sposób:
 
 ```csharp
 SKMatrix.PostConcat(ref A, B);
@@ -283,7 +283,7 @@ Te wywołania wykonać następującą operację:
 
 A = B × A
 
-Wersje tych wywołań metody ze wszystkimi `ref` argumenty są nieco bardziej wydajne wywołać podstawowej implementacji, ale może być mylące dla kogoś odczytywanie kodu i przy założeniu, że wszystko przy `ref` argument jest zmodyfikowane przez metodę. Ponadto często jest wygodne do przekazania argument, który znajduje się wynik jednego z `Make` metod, na przykład:
+Wersje tych wywołań metody wywołuje z wszystkimi `ref` argumenty są nieco bardziej efektywne, wywoływanie podstawowej implementacji, ale może być mylące dla kogoś czytanie kodu i przy założeniu, że wszystko przy `ref` argument jest zmodyfikowane przez metodę. Ponadto, często jest wygodne przekazać argument, który znajduje się wynik jednego z `Make` metody, na przykład:
 
 ```csharp
 SKMatrix result;
@@ -291,7 +291,7 @@ SKMatrix.Concat(result, SKMatrix.MakeTranslation(100, 100),
                         SKMatrix.MakeScale(3, 3));
 ```
 
-Spowoduje to utworzenie poniższej tabeli:
+Spowoduje to utworzenie następujących macierzy:
 
 <pre>
 │   3    0  0 │
@@ -299,14 +299,14 @@ Spowoduje to utworzenie poniższej tabeli:
 │ 100  100  1 │
 </pre>
 
-Jest to pomnożona przez przekształcenie Przetłumacz transformacji skali. W tym przypadku `SKMatrix` struktury udostępnia metodę o nazwie skrót [ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
+To jest skalowanie — przekształcenie pomnożona przez przekład — przekształcenie. W tym konkretnym przypadku `SKMatrix` struktura zapewnia skrótu za pomocą metody o nazwie [ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
 
 ```csharp
 SKMatrix R = new SKMatrix();
 R.SetScaleTranslate(3, 3, 100, 100);
 ```
 
-Jest to jedna z kilka razy, gdy jest bezpiecznie korzystać `SKMatrix` konstruktora. `SetScaleTranslate` Metoda ustawia wszystkie komórki dziewięć macierzy. Jest również bezpiecznie korzystać `SKMatrix` konstruktora z statycznych `Rotate` i `RotateDegrees` metod:
+Jest to jedna z kilka razy, gdy jest bezpieczny w użyciu `SKMatrix` konstruktora. `SetScaleTranslate` Metoda ustawia wszystkich dziewięciu komórek macierzy. Jest również bezpiecznie korzystać `SKMatrix` konstruktora o statyczną `Rotate` i `RotateDegrees` metody:
 
 ```csharp
 SKMatrix R = new SKMatrix();
@@ -320,9 +320,9 @@ SKMatrix.RotateDegrees(ref R, degrees);
 SKMatrix.RotateDegrees(ref R, degrees, px, py);
 ```
 
-Wykonaj te metody *nie* przekształcenie obracania do przekształcania istniejącego połączenia. Metody ustawić wszystkich komórkach macierzy. Są one identyczne funkcjonalnie do `MakeRotation` i `MakeRotationDegrees` metody z tą różnicą, że nie utworzyć wystąpienia `SKMatrix` wartość.
+Wykonaj te metody *nie* łączenie obrót — przekształcenie do istniejących transformacji. Metody ustawić komórkach macierzy. Są one funkcjonalnie identyczny `MakeRotation` i `MakeRotationDegrees` metody z tą różnicą, że nie utworzenia wystąpienia `SKMatrix` wartość.
 
-Załóżmy, że masz `SKPath` obiekt, który chcesz wyświetlić, ale chcesz użyć, że ma orientację nieco inny lub innego środka. Współrzędne tę ścieżkę można zmodyfikować przez wywołanie metody [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metody `SKPath` z `SKMatrix` argumentu. **Przekształcenie ścieżki** strony pokazano, jak to zrobić. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Odwołania do klasy `HendecagramPath` obiektu w polu, ale używa jego konstruktora do stosowania przekształcenia do tej ścieżki:
+Załóżmy, że masz `SKPath` obiekt, który chcesz wyświetlić, ale wolisz ją mieć nieco innej orientacji lub punkt innego Centrum. Współrzędne tej ścieżki można zmodyfikować przez wywołanie metody [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metody `SKPath` z `SKMatrix` argumentu. **Przekształcania ścieżki** strony pokazuje, jak to zrobić. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Klasy odwołania `HendecagramPath` obiektu w polu, ale używa jej konstruktora, aby zastosować przekształcenie do tej ścieżki:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -347,9 +347,9 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath` Obiekt ma Centrum na (0, 0) i 11 punktów gwiazdy rozszerzyć na zewnątrz z tym Centrum przez 100 jednostek we wszystkich kierunkach. Oznacza to, że ścieżka ma współrzędne zarówno dodatnie i ujemne. **Przekształcenie ścieżki** strony preferuje do pracy z gwiazdką trzy razy na duży i wszystkie współrzędne dodatnią. Ponadto go nie ma jeden punkt gwiazdy do punktu w górę. Chce ona zamiast jednego z punktów gwiazdy punktu w dół. (Ponieważ gwiazdy ma 11 punktów, nie może mieć zarówno.) Wymaga to obracanie gwiazdy przez 360 stopni rozdzielonych 22.
+`HendecagramPath` Obiekt ma Centrum pod adresem (0, 0), i jedenaście punktów gwiazdy na zewnątrz rozszerza z tego Centrum 100 jednostek we wszystkich kierunkach. Oznacza to, że ścieżka ma współrzędne pozytywne i negatywne. **Przekształcania ścieżki** strony preferuje do pracy z gwiazdką trzykrotnie tak dużej i wszystkie współrzędne dodatnią. Ponadto go nie ma jeden punkt gwiazdkę, aby wskazać w górę. Chce zamiast jednego z punktów gwiazdy punktu w dół. (Ponieważ gwiazdka ma jedenaście punktów, go nie może mieć zarówno.) Ta migracja wymaga obracanie gwiazdka przez 360 stopni podzielona przez 22.
 
-Tworzy konstruktora `SKMatrix` obiektu z trzech oddzielnych transformacji przy użyciu `PostConcat` metody za pomocą następującego wzorca, w którym są wystąpieniami klasy A, B i C `SKMatrix`:
+Tworzy konstruktora `SKMatrix` obiekt z trzech oddzielnych przekształcenia przy użyciu `PostConcat` metody z następującym wzorcem, w których wystąpienia elementu A, B i C `SKMatrix`:
 
 ```csharp
 SKMatrix matrix = A;
@@ -357,13 +357,13 @@ SKMatrix.PostConcat(ref A, B);
 SKMatrix.PostConcat(ref A, C);
 ```
 
-Jest to szeregu kolejnych mnożenia, więc wynik jest następujący:
+To seria kolejnych mnożenia, więc wynik jest następujący:
 
 A × B × C
 
-Kolejne mnożenia pomocy w zrozumienie, czego każdego przekształcenia. Przekształcanie skali spowoduje zwiększenie rozmiaru współrzędne ścieżki o 3, więc współrzędne należeć do zakresu od –300 do 300. Przekształcenie obracania obraca gwiazdy wokół swoją witryną źródłową. Przekształcanie Przetłumacz przewiduje ją następnie przez 300 pikseli prawo i w dół, więc wszystkie współrzędne, stają się dodatnią.
+Kolejne mnożenia pomocy zrozumieć działanie poszczególnych transformacji. Skalowanie — przekształcenie zwiększa rozmiar współrzędne ścieżki o 3, więc współrzędne do zakresu od –300 do 300. Obrót — przekształcenie obraca star wokół pochodzenia. Przekład — przekształcenie przenosi go następnie 300 pikseli prawo i w dół, więc wszystkie współrzędne stają się dodatnią.
 
-Brak innych sekwencji, które powodują powstanie tej samej macierzy. Oto co:
+Istnieją inne sekwencje, które tworzą tej samej macierzy. Oto inny:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeRotationDegrees(360f / 22);
@@ -371,9 +371,9 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeTranslation(100, 100));
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeScale(3, 3));
 ```
 
-To najpierw obraca ścieżki wokół środka i tłumaczy go po 100 pikseli w prawo i w dół, więc wszystkie współrzędne są dodatnie. Gwiazdy następnie zwiększają rozmiar względem jego nowego lewego górnego rogu, który jest punktem (0, 0).
+To najpierw obraca ścieżce wokół środka i tłumaczy to po 100 pikseli po prawej stronie i w dół, więc wszystkie współrzędne są podawane dodatnią. Gwiazdka jest następnie zwiększyć rozmiar względem jego nowych lewego górnego rogu, który jest punktem (0, 0).
 
-`PaintSurface` Obsługi można po prostu renderować tę ścieżkę:
+`PaintSurface` Obsługi można po prostu renderować tej ścieżki:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -400,26 +400,26 @@ public class PathTransformPage : ContentPage
 
 ```
 
-Wygląda na to, w lewym górnym rogu obszaru roboczego:
+Wydaje się w lewym górnym rogu kanwy:
 
-[![](matrix-images/pathtransform-small.png "Potrójna zrzut ekranu strony Przekształcenie ścieżki")](matrix-images/pathtransform-large.png#lightbox "Potrójna zrzut ekranu strony Przekształcenie ścieżki")
+[![](matrix-images/pathtransform-small.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenia ścieżki")](matrix-images/pathtransform-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przekształcenia ścieżki")
 
-Konstruktor ten program dotyczy macierzy ścieżkę o następujące wywołanie:
+Konstruktor ten program mają zastosowanie macierzy do ścieżki przy użyciu następującego wywołania:
 
 ```csharp
 transformedPath.Transform(matrix);
 ```
 
-Ścieżka jest *nie* zachować tej macierzy jako właściwość. Zamiast tego stosuje przekształcenia do wszystkich współrzędne ścieżki. Jeśli `Transform` nazywa się ponownie, ponownie stosowana jest transformacja i jest jedynym sposobem możesz wrócić przez zastosowanie innej macierzy, która spowoduje cofnięcie transformacji. Na szczęście `SKMatrix` definiuje strukturę [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) metody uzyskujący macierzy odwraca danej macierzy:
+Ścieżka jest *nie* zachowania tej macierzy jako właściwość. Zamiast tego dotyczy ona przekształcenia wszystkie współrzędne ścieżki. Jeśli `Transform` nazywa się ponownie, transformacji jest ponownie stosowana, a jedynym sposobem, możesz przejść z powrotem, jest przez zastosowanie innej macierzy, która cofa transformacji. Na szczęście `SKMatrix` definiuje strukturę [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) metodę, która uzyskuje macierzy, który odwraca danej macierzy:
 
 ```csharp
 SKMatrix inverse;
 bool success = matrix.TryInverse(out inverse);
 ```
 
-Metoda jest wywoływana `TryInverse` , ponieważ nie wszystkie macierze się odwracalne, ale nie można odwrócić macierzy nie mogą być używane na potrzeby przekształcania grafiki.
+Metoda jest wywoływana `TryInverse` , ponieważ nie wszystkie macierzy są invertible, ale nie mogą być używane na potrzeby przekształcania grafiki — invertible macierzy.
 
-Można także zastosować dla macierzy transformacji do `SKPoint` wartość, tablica punktów, `SKRect`, lub nawet jednego numeru w programie. `SKMatrix` Struktura obsługuje te operacje z kolekcją metod, które zaczynają się od słowa `Map`, takich jak te:
+Można również zastosować przekształcenie do macierzy `SKPoint` wartość, tablica punktów `SKRect`, lub nawet tylko jeden numer Twojego programu. `SKMatrix` Struktura obsługuje te operacje z kolekcją metod, które zaczynają się od słowa `Map`, takie jak te:
 
 ```csharp
 SKPoint transformedPoint = matrix.MapPoint(point);
@@ -433,21 +433,21 @@ float transformedValue = matrix.MapRadius(floatValue);
 SKRect transformedRect = matrix.MapRect(rect);
 ```
 
-Jeśli używasz tej ostatniej metody, należy pamiętać, że `SKRect` struktury nie jest zdolny do reprezentowania prostokątne obracany. Metoda ma sens tylko `SKMatrix` wartość reprezentującą tłumaczenia i skalowania.
+Jeśli używasz tej ostatniej metody, należy pamiętać, że `SKRect` struktury nie jest zdolny do reprezentowania obrócony prostokąta. Metoda tylko ma sens dla `SKMatrix` wartość reprezentująca tłumaczenia i skalowania.
 
-### <a name="interactive-experimentation"></a>Eksperymenty interakcyjne
+### <a name="interactive-experimentation"></a>Interakcyjne eksperymentowanie
 
-Jest jednym ze sposobów uzyskać pewne pojęcie affine — przekształcenia interaktywnie przenoszenie trzy narożników mapy bitowej po ekranie i sprawdzając, jakie przekształcenia wyniki. Jest to ideą **Pokaż podobne macierzy** strony. Ta strona wymaga dwóch klas, które są również używane w innych pokazów:
+Jest jednym ze sposobów, aby można było uzyskać pewne pojęcie affine — przekształcenia interaktywnie przenoszenie trzy narożników mapy bitowej na ekranie i sprawdzając, jakie przekształcenie wyników. Jest to ideą **Pokaż przekształceniem Afinicznym macierzy** strony. Ta strona wymaga dwóch klas, które są również używane w innych pokazów:
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Klasa Wyświetla półprzezroczyste okrąg, który może być przeciągnięte po ekranie. `TouchPoint` wymaga, aby `SKCanvasView` lub element, który jest elementem nadrzędnym `SKCanvasView` ma [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) dołączony. Ustaw `Capture` właściwości `true`. W `TouchAction` program obsługi zdarzeń, należy wywołać `ProcessTouchEvent` metody w `TouchPoint` dla każdego `TouchPoint` wystąpienia. Metoda zwraca `true` Jeśli zdarzenie touch spowodowała punktu touch przenoszenia. Ponadto `PaintSurface` obsługi musi wywołać `Paint` metody w każdym `TouchPoint` wystąpienia, przekazywanie do niego `SKCanvas` obiektu.
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Klasa Wyświetla półprzezroczyste koło, które mogą być przeciągnięte na ekranie. `TouchPoint` wymaga, aby `SKCanvasView` lub element, który jest elementem nadrzędnym `SKCanvasView` mają [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) dołączone. Ustaw `Capture` właściwość `true`. W `TouchAction` program obsługi zdarzeń musi wywołać `ProcessTouchEvent` method in Class metoda `TouchPoint` dla każdego `TouchPoint` wystąpienia. Metoda ta zwraca `true` Jeśli zdarzenia dotykowe spowodowało punktu touch przenoszenia. Ponadto `PaintSurface` obsługi musi wywołać `Paint` metodę w każdym `TouchPoint` wystąpienia, przekazując do niej `SKCanvas` obiektu.
 
-`TouchPoint` przedstawia typowy sposób, że element wizualny SkiaSharp można hermetyzowany w osobnej klasy. Klasę można zdefiniować właściwości służący do określania właściwości elementu wizualnego i metody o nazwie `Paint` z `SKCanvas` argument może renderować ją.
+`TouchPoint` przedstawia typowy sposób, że wizualizację SkiaSharp można hermetyzować w osobnej klasy. Klasę można zdefiniować właściwości do określania cech częścią wizualizacji i metodę o nazwie `Paint` z `SKCanvas` argument można renderować ją.
 
-`Center` Właściwość `TouchPoint` wskazuje lokalizację, do obiektu. Tej właściwości można ustawić zainicjować lokalizacji. zmiany właściwości, gdy użytkownik przeciąga wokół obszaru roboczego.
+`Center` Właściwość `TouchPoint` wskazuje lokalizację obiektu. Tę właściwość można ustawić zainicjować lokalizacji. zmiany właściwości, gdy użytkownik przeciągnie wokół kanwy.
 
-**Pokaż stronę macierzy podobne** wymaga również [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) klasy. Ta klasa przedstawia komórki `SKMatrix` obiektu. Składa się z dwóch metod publicznych: `Measure` uzyskanie wymiary renderowanych macierzy, i `Paint` aby go wyświetlić. Zawiera klasy `MatrixPaint` właściwości typu `SKPaint` mogą być zastępowane dla inny rozmiar lub kolor.
+**Pokaż przekształceniem Afinicznym stronie macierzy** wymaga również [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) klasy. Ta klasa przedstawia komórek `SKMatrix` obiektu. Posiada dwie metody publiczne: `Measure` uzyskać wymiary renderowanej macierzy i `Paint` aby go wyświetlić. Zawiera klasy `MatrixPaint` właściwości typu `SKPaint` mogą być zastępowane dla inny rozmiar czcionki lub kolor.
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) tworzy plik `SKCanvasView` i dołącza `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) plik CodeBehind tworzy trzy `TouchPoint` obiekty i ustawia je do pozycji odpowiadający trzy narożników ładowaną z osadzonych mapy bitowej Zasób:
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) plik `SKCanvasView` i dołącza `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) pliku związanego z kodem tworzy trzy `TouchPoint` obiektów, a następnie ustawia je do pozycji odpowiadający trzy narożników mapę bitową, która ładuje z osadzonego Zasób:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -468,9 +468,8 @@ public partial class ShowAffineMatrixPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
 
         touchPoints[0] = new TouchPoint(100, 100);                  // upper-left corner
@@ -486,9 +485,9 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-Affine — macierz jest unikatowo zdefiniowane przez trzy punkty. Trzy `TouchPoint` obiektów odpowiada lewym górnym, prawym górnym i lewym dolnym rogu mapy bitowej. Ponieważ podobne macierzy służy tylko do przekształcania prostokąt w równoległobok, punkt czwarty technicznego przez inne trzech. Konstruktor stwierdza, w wyniku wywołania `ComputeMatrix`, który oblicza komórki `SKMatrix` obiektu z tych trzech punktów.
+Affine — macierz jest jednoznacznie zdefiniowany przez trzy punkty. Trzy `TouchPoint` obiektów odpowiada lewym, prawym górnym rogu i lewym dolnym rogu mapy bitowej. Ponieważ macierz przekształceniem afinicznym służy tylko do przekształcania prostokąt w równoległobok, punkt czwarty jest implikowany przez pozostałych trzech. Konstruktor stwierdza, z wywołaniem `ComputeMatrix`, — oblicza komórek `SKMatrix` obiekt z tych trzech punktów.
 
-`TouchAction` Wywołań obsługi `ProcessTouchEvent` metody każdego `TouchPoint`. `scale` Wartość konwertuje współrzędne platformy Xamarin.Forms następującą liczbę pikseli:
+`TouchAction` Obsługi zdarzeń wywołuje `ProcessTouchEvent` metoda każdego `TouchPoint`. `scale` Konwertuje wartości z zestawu narzędzi Xamarin.Forms współrzędne pikseli:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -520,7 +519,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 Jeśli istnieją `TouchPoint` została przeniesiona, a następnie wywołuje metodę `ComputeMatrix` ponownie i unieważnia powierzchni.
 
-`ComputeMatrix` Metoda określa macierzy implikowana przez te trzy punkty. Wywołuje macierzy `A` transformacje jeden piksel kwadratowe prostokąta do równoległobok oparte na trzy punkty podczas skalowania przekształcenia o nazwie `S` skaluje mapy bitowej do jeden piksel kwadratowe prostokąta. Jest złożone `S` x `A`:
+`ComputeMatrix` Metoda określa macierzy też dorozumianych przez te trzy punkty. Macierz o nazwie `A` przekształcenia prostokąt kwadratowy jeden piksel w równoległobok oparte na trzy punkty podczas przekształcania skalowania o nazwie `S` skaluje mapy bitowej do jednego piksela prostokąt kwadrat. Złożone macierz jest `S` × `A`:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -551,7 +550,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-Na koniec `PaintSurface` — metoda renderuje mapy bitowej oparte na tej macierzy, wyświetla macierzy w dolnej części ekranu i renderuje punkty dotykowe w trzech narożnikach mapy bitowej:
+Na koniec `PaintSurface` metoda powoduje wyświetlenie mapy bitowej, oparte na tej macierzy, Wyświetla macierz w dolnej części ekranu i renderuje punkty dotykowe w rogach trzy mapy bitowej:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -587,17 +586,17 @@ public partial class ShowAffineMatrixPage : ContentPage
   }
 ```
 
-Na poniższym zrzucie ekranu z systemem iOS przedstawia mapy bitowej, gdy strona jest ładowana jako pierwsza, podczas dwóch innych ekranów pokazać po niektórych manipulowania:
+Na poniższym ekranie pokazano dla systemu iOS zawiera mapę bitową po stronie najpierw jest ładowany, gdy dwa inne ekrany wyświetlane po niektórych manipulowania:
 
-[![](matrix-images/showaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę Pokaż podobne macierzy")](matrix-images/showaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Pokaż podobne macierzy")
+[![](matrix-images/showaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę pokazać przekształceniem Afinicznym macierzy")](matrix-images/showaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę pokazać affine — macierz")
 
-Chociaż wydaje się tak, jakby punktów touch przeciągnij narożników mapy bitowej, która jest tylko wrażenie. Macierz obliczana na podstawie punktów touch przekształca mapę bitową tak, aby narożnikach pokrywa się z punktami touch.
+Chociaż wydaje się tak, jakby punkty dotykowe przeciągnij narożniki mapy bitowej, który jest tylko wrażenie. Macierz obliczonym na podstawie punkty dotykowe przekształca mapę bitową tak, aby narożników pokrywają się z punktami touch.
 
-Jest więcej fizycznych, aby umożliwić użytkownikom przenoszenie, zmienianie rozmiaru i Obróć mapy bitowe nie przeciągając rogi, ale przy użyciu jednym lub dwoma palcami bezpośrednio na obiekcie, aby przeciągnąć, ściśnięcie i Obróć. Ten temat znajdują się w artykule [Touch manipulowania](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
+Jest bardziej naturalne użytkownikom przenoszenie, zmienianie rozmiaru i Obróć mapy bitowe nie, przeciągając rogi, ale przy użyciu jednej lub dwóch palców bezpośrednio w obiekcie, aby przeciągnąć, ściśnięcie i Obróć. To zagadnienie opisano w następnym artykule [Touch manipulowania](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
 
 ### <a name="the-reason-for-the-3-by-3-matrix"></a>Przyczyna macierzy 3 x 3
 
-Można się spodziewać, że system dwuwymiarowa grafiki wymaga tylko macierzy transformacji 2-za-2:
+Można się spodziewać, że system grafiki dwuwymiarowej wymaga tylko macierzy transformacji 2-przez-2:
 
 <pre>
            │ ScaleX  SkewY  │
@@ -605,11 +604,11 @@ Można się spodziewać, że system dwuwymiarowa grafiki wymaga tylko macierzy t
            │ SkewX   ScaleY │
 </pre>
 
-Działa to w przypadku skalowania, obracanie i pochylanie nawet, ale nie jest zdolny najprostsza transformacje, który jest tłumaczenie.
+Działa to w przypadku skalowania, obrotu i nawet pochylanie, ale nie jest zdolny najprostsza przekształceń, czyli tłumaczenia.
 
-Problem jest, że reprezentuje macierzy 2-za-2 *liniowej* przekształcania w dwóch wymiarów. Przekształcenie liniowej zachowuje niektóre podstawowe operacje arytmetyczne, a skutków jest czy liniowej transformacji nigdy nie zmienia punkt (0, 0). Przekształcenie liniowej uniemożliwia tłumaczenia.
+Problem polega na to, że macierz 2 na 2 reprezentuje *liniowej* przekształcania w dwóch wymiarach. Liniowy przekształcenie zachowuje niektóre podstawowe operacje arytmetyczne, ale jest jeden z skutków, że liniowej przekształcenie nigdy nie zmienia punktu (0, 0). Liniowy przekształcenie sprawia, że tłumaczenia jest niemożliwe.
 
-W trzech wymiarów macierzy transformacji liniowej wygląda następująco:
+W trzech wymiarach macierzy transformacji liniowej wygląda następująco:
 
 <pre>
               │ ScaleX  SkewYX  SkewZX │
@@ -617,9 +616,9 @@ W trzech wymiarów macierzy transformacji liniowej wygląda następująco:
               │ SkewXZ  SkewYZ  ScaleZ │
 </pre>
 
-Komórki etykietą `SkewXY` oznacza, że wartość pochyla współrzędną X na podstawie wartości Y; komórki `SkewXZ` oznacza, że wartość pochyla współrzędną X na podstawie wartości Z; wartości podobnie pochylanie dla siebie `Skew` komórek.
+Komórki oznaczone `SkewXY` oznacza, że wartość pochyla współrzędną X na podstawie wartości Y; komórki `SkewXZ` oznacza, że wartość pochyla współrzędną X na podstawie wartości Z; wartości pochylanie podobnie dla siebie `Skew` komórek.
 
-Umożliwia ograniczenie tej macierzy transformacji 3D do dwuwymiarowego rzutu przez ustawienie `SkewZX` i `SkewZY` 0 i `ScaleZ` 1:
+Umożliwia ograniczenie tej macierzy transformacji 3D na płaszczyźnie dwuwymiarowej przez ustawienie `SkewZX` i `SkewZY` 0, a `ScaleZ` 1:
 
 <pre>
               │ ScaleX  SkewYX   0 │
@@ -627,7 +626,7 @@ Umożliwia ograniczenie tej macierzy transformacji 3D do dwuwymiarowego rzutu pr
               │ SkewXZ  SkewYZ   1 │
 </pre>
 
-Jeśli dwuwymiarowa grafiki są rysowane na płaszczyźnie przestrzeni 3D, gdzie Z jest równa 1, mnożenia przekształcenia wygląda następująco:
+Gdy grafiki dwuwymiarowej są rysowane w całości na płaszczyźnie w przestrzeni 3D, gdzie Z jest równa 1, mnożenie przekształcenie wygląda następująco:
 
 <pre>
               │ ScaleX  SkewYX   0 │
@@ -635,11 +634,11 @@ Jeśli dwuwymiarowa grafiki są rysowane na płaszczyźnie przestrzeni 3D, gdzie
               │ SkewXZ  SkewYZ   1 │
 </pre>
 
-Wszystko pozostaje na płaszczyźnie dwuwymiarowa gdzie Z jest równa 1, ale `SkewXZ` i `SkewYZ` komórek skutecznie stają się dwuwymiarową translację czynników.
+Wszystko, co jest realizowany zgodnie z warstwą dwuwymiarową gdzie Z jest równa 1, ale `SkewXZ` i `SkewYZ` skutecznie powoduje utworzenie dwuwymiarową translację czynników.
 
-Jest to, jak trójwymiarową transformację liniowej służy jako dwuwymiarową transformację liniowej. (Analogicznie transformacje w grafiki 3D są oparte na macierz 4 przez 4.)
+Jest to, jak trójwymiarowej przekształcenie liniowy służy jako dwuwymiarową transformację nieliniowych. (Analogicznie przekształcenia w Grafika 3D są oparte na macierzy 4 na 4.)
 
-`SKMatrix` Struktury SkiaSharp definiuje właściwości dla tego trzeciego wiersza:
+`SKMatrix` Strukturze SkiaSharp definiuje właściwości trzeciego wiersza:
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -647,10 +646,10 @@ Jest to, jak trójwymiarową transformację liniowej służy jako dwuwymiarową 
               │ TransX  TransY  Persp2 │
 </pre>
 
-Wartości inne niż zero `Persp0` i `Persp1` spowodować przekształcenia mające przesuwanie poza dwuwymiarowego rzutu, w którym Z jest równa 1. Co się stanie, jeśli te obiekty są przeniesiony z powrotem do tej płaszczyzny zostało opisane w artykule na [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
+Niezerowa Koniunkcja wartości `Persp0` i `Persp1` spowodować przekształcenia łączące obiektów poza warstwą dwuwymiarowy, gdzie Z jest równa 1. Co się stanie, gdy te obiekty są przeniesiony z powrotem do tej płaszczyzny został omówiony w artykule na [inne niż affine — przekształcenia](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

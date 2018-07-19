@@ -1,32 +1,32 @@
 ---
-title: Affine — przekształcenia
-description: W tym artykule wyjaśniono, jak tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu trzeciej kolumny macierzy transformacji i pokazuje to z przykładowym kodzie.
+title: Przekształcenia Nieafiniczne
+description: W tym artykule opisano sposób tworzenia perspektyw i efekty stożkowy (zbieżny) przy użyciu trzecia kolumna macierzy transformacji i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f4b1926fd21f7df4ea9231887032742fdc96f465
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244236"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130884"
 ---
-# <a name="non-affine-transforms"></a>Affine — przekształcenia
+# <a name="non-affine-transforms"></a>Przekształcenia Nieafiniczne
 
-_Tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu trzeciej kolumny macierzy transformacji_
+_Tworzenie perspektyw i efekty stożkowy (zbieżny) przy użyciu trzecia kolumna macierzy transformacji_
 
-Tłumaczenie, skalowanie, obracanie i pochylanie są sklasyfikowane jako *podobne* przekształca. Affine — przekształcenia zachować równoległych. W przypadku równoległego przed transformacji dwa wiersze pozostają równoległych po przekształceniu. Prostokąty są zawsze przekształcić parallelograms.
+Przesunięcia, skalowania, obrotu i pochylanie są klasyfikowane jako *przekształceniem afinicznym* przekształcenia. Affine — przekształcenia zachować równoległych. W przypadku równoległego przed Przekształcanie dwóch wierszy pozostają równoległego po transformacji. Prostokąty zawsze są przekształcane na parallelograms.
 
-Jednak SkiaSharp również jest zdolny do innych niż podobne transformacje, które mają możliwość przekształcania prostokąt w dowolnym wypukłych Czworokąt:
+Jednak SkiaSharp również jest zdolny do przekształcenia nieafiniczne, które mają możliwość przekształcania prostokąt w dowolnym wypukłe kwadratowe:
 
-![](non-affine-images/nonaffinetransformexample.png "Przekształcone w wypukłych Czworokąt mapy bitowej")
+![](non-affine-images/nonaffinetransformexample.png "Mapy bitowej przekształcane wypukłe kwadratowe")
 
-Wypukłych Czworokąt jest pełnego rysunku z wnętrza kąty zawsze mniej niż 180 stopni i stron, które nie między sobą.
+Wypukłe kwadratowe jest rysunku pełnego z wnętrza kąty zawsze mniejsza niż 180 stopni i stron, które nie przekraczają siebie nawzajem.
 
-Affine — bez przekształca wyniku, gdy trzeciego wiersza macierzy transformacji jest ustawiona na wartość inna niż 0, 0 lub 1. Pełny `SKMatrix` mnożenia jest:
+Affine — inne niż przekształca wynik, podczas trzeciego wiersza macierzy transformacji jest ustawiona na wartość inna niż 0, 0 i 1. Pełny `SKMatrix` mnożenie jest:
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -34,7 +34,7 @@ Affine — bez przekształca wyniku, gdy trzeciego wiersza macierzy transformacj
               │ TransX  TransY  Persp2 │
 </pre>
 
-Formuły przekształcenia wynikowe są:
+Formuły przekształcenie wynikowe są:
 
 x "= ScaleX·x + SkewX·y + TransX
 
@@ -42,9 +42,9 @@ y "= SkewY·x + ScaleY·y + TransY
 
 z` = Persp0·x + Persp1·y + Persp2
 
-Podstawowe reguły za pomocą macierzy 3 x 3 dwuwymiarowa transformacji jest czy wszystko pozostaje na płaszczyźnie gdzie Z jest równa 1. O ile `Persp0` i `Persp1` 0, i `Persp2` jest równa 1, transformacja przeniósł współrzędnych Z poza tym płaszczyzny.
+Podstawowe reguły za pomocą macierzy 3 x 3 dwuwymiarową transformacji jest, że wszystko, co pozostanie na płaszczyźnie gdzie Z jest równa 1. Chyba że `Persp0` i `Persp1` to 0, a `Persp2` jest równa 1, przekształcenia przeniósł współrzędne Z poza tym płaszczyzny.
 
-Aby przywrócić to dwuwymiarową transformację, współrzędne musi zostać przeniesiona z powrotem do tej płaszczyzny. Kolejny krok jest wymagany. X ", y", i z "wartości musi być podzielona przez z":
+Aby przywrócić to dwuwymiarowa transformacja, współrzędne musi przeniesiony z powrotem do tej warstwy. Kolejny krok jest wymagany. X ", y", i z "wartości muszą zostać podzielone według z":
 
 x" = x' / z'
 
@@ -52,21 +52,21 @@ y" = y' / z'
 
 z" = z' / z' = 1
 
-Są one nazywane *jednorodnych współrzędne* i zostały zaprojektowane przez mathematician Ferdinand Möbius sierpnia, znacznie lepiej znane dla jego topologii oddity paska Möbius.
+Są to znane jako *jednorodnych współrzędne* i zostały opracowane przez mathematician Ferdinand Möbius sierpnia, znacznie lepiej znane pod nazwą dla jego topologii oddity paska Möbius.
 
-Jeśli z "ma wartość 0, wyniki dzielenia we współrzędnych nieskończoną. W rzeczywistości jedną motywacji w Möbius związane z opracowywaniem jednorodnych współrzędne była możliwość reprezentują wartości nieskończone z liczby skończone.
+Jeśli z "ma wartość 0, wyniki dzielenia we współrzędnych nieskończone. W rzeczywistości jeden z zresztą Möbius firmy do tworzenia jednorodnych współrzędne był zdolność do reprezentowania wartości nieskończonej z liczby skończone.
 
-Podczas wyświetlania grafiki, jednak chce się uniknąć renderowania za pomocą współrzędnych, które przetwarzają do wartości nieskończonej. Nie można renderować tych współrzędnych. Wszystko w pobliżu tych współrzędnych będą bardzo duże i prawdopodobnie nie będzie spójna.
+Podczas wyświetlania grafiki, jednak chcesz uniknąć renderowania za pomocą współrzędnych, które przetwarzają do wartości nieskończonej. Nie można renderować tych współrzędnych. Wszystko, czego spowodowanych antyaliasingiem w pobliżu tych współrzędnych będą bardzo duże i prawdopodobnie nie będzie spójny.
 
-W tym równości nie ma wartość z "staje się zero:
+W tym równania, nie ma wartość z "staje się zerem:
 
 z` = Persp0·x + Persp1·y + Persp2
 
-`Persp2` Komórki może być zero lub nie. Jeśli `Persp2` jest zero, a następnie z "wynosi zero (0, 0) punktu i która zazwyczaj nie jest pożądane, ponieważ ten punkt jest bardzo często dwuwymiarowa grafiki. Jeśli `Persp2` nie jest równa zero, nie są tracone z odpisy Jeśli `Persp2` ustala się na 1. Na przykład, jeśli okaże się, że `Persp2` powinien być 5, a następnie można po prostu podzielić wszystkie komórki w macierzy o 5, dzięki czemu `Persp2` równa 1, a wyniki będą takie same.
+`Persp2` Komórki może być zero lub nie. Jeśli `Persp2` jest zero, a następnie z "ma wartość zero dla punktu (0, 0) i która zazwyczaj nie jest pożądane, ponieważ ten punkt jest bardzo częsty w grafiki dwuwymiarowej. Jeśli `Persp2` nie jest równa zero, jeśli występuje bez utraty ogólności `Persp2` jest ustalony na 1. Na przykład, jeśli stwierdzisz, że `Persp2` powinien być 5, a następnie można po prostu podzielić wszystkie komórki w macierzy, 5, co sprawia, że `Persp2` wynosi 1, a wynik będzie taki sam.
 
-Z tego względu `Persp2` często jest ustalony na 1, który ma taką samą wartość w macierzy tożsamości.
+Z tego względu `Persp2` często jest ustalony na 1, która jest taka sama wartość w macierzy tożsamości.
 
-Ogólnie rzecz biorąc `Persp0` i `Persp1` małej liczby. Na przykład rozpoczniesz z macierzą, ale zestaw `Persp0` do 0,01:
+Ogólnie rzecz biorąc `Persp0` i `Persp1` są małymi liczbami. Załóżmy na przykład, rozpoczynać macierz tożsamości, ale zestaw `Persp0` do 0,01:
 
 <pre>
 | 1  0   0.01 |
@@ -74,13 +74,13 @@ Ogólnie rzecz biorąc `Persp0` i `Persp1` małej liczby. Na przykład rozpoczni
 | 0  0    1   |
 </pre>
 
-Przekształcanie formuły są:
+Formuły przekształcenia są:
 
 x` = x / (0.01·x + 1)
 
 y "= y / (0.01·x + 1)
 
-Teraz można używać tej transformacji renderowania 100 pikseli kwadratowego pola znajduje się w źródle. Oto, jak są przekształcane cztery rogi:
+Teraz za pomocą tej transformacji renderowania 100 pikseli kwadratowego pola umieszczane w źródle. Poniżej przedstawiono, jak są przekształcane dowiedzą:
 
 (0, 0) → (0, 0)
 
@@ -90,13 +90,13 @@ Teraz można używać tej transformacji renderowania 100 pikseli kwadratowego po
 
 (100, 100) → (50, 50)
 
-Jeśli x to 100, a następnie z "denominator jest 2, więc współrzędne x i y jest dwukrotnie mniejsza. Prawej stronie pola jest krótszy niż po lewej stronie:
+Jeśli x to 100, a następnie z "mianownik wynosi 2, dzięki czemu współrzędne x i y są wydajnie filtrach. Po prawej stronie pola staje się mniej niż po lewej stronie:
 
-![](non-affine-images/nonaffinetransform.png "Okno poddane-affine — przekształcenia")
+![](non-affine-images/nonaffinetransform.png "Pole poddane przekształcenia nieafiniczne")
 
-`Persp` Część nazwy tych komórek odwołuje się do "perspektywy", ponieważ foreshortening sugeruje, że pole jest teraz przechylono z prawej strony, od przeglądarki.
+`Persp` Część z tych nazw komórki odwołuje się do "w perspektywie", ponieważ foreshortening sugeruje, że pole jest teraz pochylony z po prawej stronie od przeglądarki.
 
-**Perspektywy testu** strony można wypróbować wartości `Persp0` i `Pers1` można uzyskać pewne pojęcie działania. Rozsądne wartości tych komórkach macierzy są tyle mały, który `Slider` w platformy uniwersalnej systemu Windows nie może poprawnie obsługiwać je. Aby uwzględnić problem platformy uniwersalnej systemu Windows, dwa `Slider` elementów w [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) musi zostać zainicjowany do zakresu od -1 do 1:
+**Punktu widzenia testu** strona pozwala na eksperymentowanie z wartościami `Persp0` i `Pers1` Aby uzyskać pewne pojęcie dla działania. Rozsądne wartości tych komórek macierzy są tak mały, który `Slider` platformie Universal Windows nie może poprawnie obsłużyć je. Aby uwzględnić problem platformy uniwersalnej systemu Windows, dwa `Slider` elementów w [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) musi zostać zainicjowany do zakresu od – 1 do 1:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -150,7 +150,7 @@ Jeśli x to 100, a następnie z "denominator jest 2, więc współrzędne x i y 
 </ContentPage>
 ```
 
-Programy obsługi zdarzeń dla suwaki w [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) pliku CodeBehind dzielenia wartości przez 100, tak aby ich w zakresie między –0.01 i 0,01. Ponadto konstruktora ładuje mapy bitowej:
+Programy obsługi zdarzeń dla suwaki w [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) pliku związanego z kodem dzielnikiem wartości 100 tak, aby ich w zakresie od –0.01 i 0,01. Ponadto Konstruktor ładuje mapy bitowej:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -165,9 +165,8 @@ public partial class TestPerspectivePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -188,7 +187,7 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-`PaintSurface` Oblicza obsługi `SKMatrix` wartość o nazwie `perspectiveMatrix` na podstawie wartości tych dwóch suwaki podzielona przez 100. Jest ona połączona z dwóch tłumaczenie przekształcenia mające umieścić Centrum tej transformacji w Centrum mapy bitowej:
+`PaintSurface` Oblicza obsługi `SKMatrix` wartość o nazwie `perspectiveMatrix` na podstawie wartości tych dwóch suwaki podzielona przez 100. Jest ona połączona z dwóch tłumaczenie przekształcenia mające umieścić środek przekształcenia w środku mapy bitowej:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -227,25 +226,25 @@ public partial class TestPerspectivePage : ContentPage
 
 Poniżej przedstawiono niektóre przykładowe obrazy:
 
-[![](non-affine-images/testperspective-small.png "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")](non-affine-images/testperspective-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę perspektywy testu")
+[![](non-affine-images/testperspective-small.png "Potrójna zrzut ekranu przedstawiający stronę z punktu widzenia testu")](non-affine-images/testperspective-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę z punktu widzenia testu")
 
-Eksperymentując z suwaków przekonasz się, że wartości poza 0.0066 lub poniżej –0.0066 spowodować obrazu nagle i staną się fractured niespójne. Mapa bitowa transformacji jest kwadratowy 300 pikseli. Jest przekształcana względem jego Centrum, współrzędnych mapy bitowej w zakresie od –150 do 150. Odwołaj, która wartość z "jest:
+Jak wypróbowanie suwaki przekonasz się, że wartości poza 0.0066 lub poniżej –0.0066 spowodować obrazu nagle stanie się fractured i niespójne. Mapa bitowa przekształcanego jest kwadratowy 300 pikseli. Jest przekształcana względem środka, więc współrzędne mapy bitowej do zakresu od –150 do 150. Pamiętaj, że wartość z "jest:
 
 z` = Persp0·x + Persp1·y + 1
 
-Jeśli `Persp0` lub `Persp1` jest większa niż 0.0066 lub poniżej –0.0066, oznacza to, że zawsze niektórych współrzędnych mapy bitowej, która powoduje z "wartość zero. Powodujący dzielenia przez zero, a bałagan staje się renderowanie. Korzystając z systemem innym niż affine — przekształcenia chce się uniknąć, renderowania operację na współrzędne, które powodują dzielenie przez zero.
+Jeśli `Persp0` lub `Persp1` jest większa niż 0.0066 lub poniżej –0.0066, następnie jest zawsze niektóre współrzędnych mapy bitowej, który skutkuje z "o wartości zero. Dzięki któremu dzielenie przez zero i renderowanie staje się zakorkowane. Korzystając z przekształcenia nieafiniczne, chcesz uniknąć renderowania z współrzędne, które powodują dzielenie przez zero.
 
-Ogólnie rzecz biorąc, nie na ustawienie `Persp0` i `Persp1` w izolacji. Należy również często można ustawić innych komórek w macierzy do osiągnięcia określonych typów innych niż affine — przekształcenia.
+Ogólnie rzecz biorąc, nie będzie można ustawienie `Persp0` i `Persp1` w izolacji. Należy również często można ustawić inne komórki w macierzy, aby osiągnąć niektórych rodzajów przekształcenia nieafiniczne.
 
-Jedno takie przekształcenie podobne jest *stożkowy (zbieżny) transformacji*. Ten typ innych niż affine — przekształcenia zachowuje wymiary prostokąta, ale zwężający po jednej stronie:
+Jest jeden taki przekształcenia nieafiniczne *stożkowy (zbieżny) przekształcenie*. Ten typ przekształcenia nieafiniczne zachowuje wymiary prostokąta, ale zwężający z jednej strony:
 
-![](non-affine-images/tapertransform.png "Okno poddane transformacji stożkowy (zbieżny)")
+![](non-affine-images/tapertransform.png "Pole poddane przekształcenie stożkowy (zbieżny)")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Klasa wykonuje uogólniony obliczania-affine — przekształcenia, na podstawie tych parametrów:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Klasy wykonuje obliczenie uogólnionego przekształcenia nieafiniczne na podstawie tych parametrów:
 
-- prostokątne rozmiar obrazu transformacji,
-- Wyliczenie wskazuje stronę prostokąt zwężający,
-- innego wyliczenia, która wskazuje, jak zwężający, i
+- prostokątne rozmiar obrazu, przekształcanego,
+- wskazuje stronę prostokąt, który zwężający, wyliczenie
+- inny wyliczenia, która wskazuje, jak zwężający, i
 - zakres zbieżności.
 
 Oto kod:
@@ -350,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Ta klasa jest używana w **stożkowy (zbieżny) przekształcenie** strony. Plik XAML tworzy dwa `Picker` elementy, aby wybrać wartości wyliczenia i `Slider` dotyczące wybierania ułamek stożkowy (zbieżny). [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Łączy obsługi transformacji stożkowy (zbieżny) przy użyciu dwóch tłumaczenie transformacje dokonanie przekształcenia względem lewego górnego rogu mapy bitowej:
+Ta klasa jest używana w **stożkowy (zbieżny) Przekształcanie** strony. Plik XAML są tworzone wystąpienia dwóch `Picker` elementy, aby wybrać wartości wyliczenia i `Slider` dotyczące wybierania ułamek stożkowy (zbieżny). [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Obsługi łączy stożkowy (zbieżny) przekształcenia przy użyciu dwóch tłumaczenie przekształceń, które umożliwiają przekształcanie względem lewego górnego rogu mapy bitowej:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -391,15 +390,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Oto kilka przykładów:
 
-[![](non-affine-images/tapertransform-small.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")](non-affine-images/tapertransform-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przekształcenie stożkowy (zbieżny)")
+[![](non-affine-images/tapertransform-small.png "Potrójna zrzut ekranu przedstawiający stronę przekształcenia stożkowy (zbieżny)")](non-affine-images/tapertransform-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę przekształcenia stożkowy (zbieżny)")
 
-Innym typem uogólniony-affine — przekształcenia jest obrotu 3W, które przedstawiono w kolejnym artykule [obrotów 3D](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
+Innym typem uogólnionego przekształcenia nieafiniczne jest obrotu 3W, które przedstawiono w kolejnym artykule [rotacji 3D](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
-Affine — przekształcenia można przekształcić prostokąta do dowolnego wypukłych Czworokąt. Wskazuje na **macierzy affine — nie pokazuj** strony. Jest bardzo podobny do **Pokaż podobne macierzy** strony z [macierzy transformacji](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) artykułu z tą różnicą, że ma ona czwarty `TouchPoint` obiekt do manipulowania czwarty rogu mapy bitowej:
+Przekształcenia nieafiniczne można przekształcić prostokąta do dowolnego wypukłe kwadratowe. Wskazuje na **Pokaż affine — inne niż macierzy** strony. Jest bardzo podobne do **Pokaż przekształceniem Afinicznym macierzy** strony [przekształcenia macierzy](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) artykułu z tą różnicą, że ma ona czwarty `TouchPoint` obiekt do manipulowania czwarty rogu mapy bitowej:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")](non-affine-images/shownonaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę macierzy affine — nie pokazuj")
+[![](non-affine-images/shownonaffinematrix-small.png "Potrójna zrzut ekranu przedstawiający stronę pokazać affine — inne niż macierzy")](non-affine-images/shownonaffinematrix-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę pokazać affine — inne niż macierzy")
 
-Tak długo, jak nie próbie kąta wewnątrz jednej narożników mapy bitowej większa niż 180 stopni, lub utworzyć dwa boki między sobą pomyślnie jest obliczana przy użyciu tej metody z transformacji [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) klasy:
+Tak długo, jak nie spróbujesz kąt wnętrza jednej z jej narożników mapy bitowej większa niż 180 stopni lub wprowadź dwa boki między sobą pomyślnie obliczana przekształcenia przy użyciu tej metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) klasy:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -448,26 +447,26 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 }
 ```
 
-W celu ułatwienia obliczeń ta metoda uzyskuje całkowita przekształcenia jako produkt trzech oddzielnych plików transformacji, które są w tym miejscu symbolized z strzałki wskazujące, jak te transformacje zmodyfikować cztery rogi mapy bitowej:
+W celu ułatwienia obliczeń ta metoda uzyskuje łączna liczba transformacji jest produktem w trzech oddzielnych przekształceń, które są w tym miejscu symbolized przy użyciu strzałek pokazujący, jak te przekształcenia zmodyfikować dowiedzą o mapy bitowej:
 
-(0, 0) → → (0, 0) → (0, 0) (x 0, y0) (lewego górnego)
+(0, 0) → → (0, 0) → (0, 0) (x 0, y0) (w lewym górnym)
 
 (0, H) → → (0, 1) → (0, 1) (x1 y1) (lewy dolny róg)
 
-(W, 0) → → (1, 0) → (1, 0) (x 2, y2) (w prawym górnym)
+(W, 0) → → (1, 0) → (1, 0) (x 2, y2) (prawym górnym rogu)
 
 (W, H) → → (, b) → (1, 1) (x 3, y3) (prawy dolny róg)
 
-Współrzędne końcowego po prawej są cztery punkty skojarzone z touch cztery punkty. Są to ostateczne współrzędne narożników mapy bitowej.
+Współrzędne końcowe po prawej stronie są cztery punkty skojarzone z punkty dotykowe cztery. Są to ostateczne współrzędne narożników mapy bitowej.
 
-Sz i reprezentują szerokość i wysokość mapy bitowej. Pierwszy transformacji (`S`) po prostu skaluje mapy bitowej do kwadratu 1 piksela. Drugi przekształcenie jest-affine — przekształcenia `N`, a trzeci affine — przekształcenia `A`. Dzięki ma podobnie jak wcześniej podobne tego affine — przekształcenia opiera się na trzy punkty [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metody i nie może dotyczyć czwartego wiersza z (, (b) punktu.
+Sz i reprezentują szerokość i wysokość mapy bitowej. Pierwszy transformacji (`S`) po prostu skaluje mapy bitowej do 1-pikselowe kwadrat. Drugi przekształcenie jest przekształcenia nieafiniczne `N`, a trzecia będzie affine — przekształcenia `A`. Tego affine — przekształcenia opiera się na trzy punkty, dzięki czemu ma tak jak wcześniej affine — [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metody i nie obejmują czwarty wiersz mający (, (b) punkt.
 
-`a` i `b` wartości są obliczane, aby trzeci przekształcenie jest podobne. Kod uzyskuje odwrotność affine — przekształcenia, a następnie użyty do mapowania prawym dolnym rogu. To punkt (, b).
+`a` i `b` wartości są obliczane tak, aby trzeci przekształcenie przekształceniem afinicznym. Kod uzyskuje odwrotność affine — przekształcenia, a następnie użyty do mapowania w prawym dolnym rogu. To punkt (, b).
 
-Użycie innego-affine — przekształcenia jest naśladować trójwymiarowych obrazów. W kolejnym artykule [obrotów 3D](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) poznać sposób Obróć dwuwymiarowa grafiki 3D miejsca.
+Innym zastosowaniem przekształcenia nieafiniczne jest do naśladowania trójwymiarowej grafiki. W następnym artykule [rotacji 3D](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) Zobacz jak wymienić grafiki dwuwymiarowej w przestrzeni 3D.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
