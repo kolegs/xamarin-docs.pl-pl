@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996285"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156733"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Podsumowanie rozdziałów 20. Async i plik we/wy
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
  Graficzny interfejs użytkownika musi odpowiadać na zdarzenia w danych wejściowych użytkownika po kolei. Oznacza to, że całego procesu przetwarzania zdarzeń, dane wejściowe użytkownika musi wystąpić w pojedynczych wątkach, często nazywane *wątku głównego* lub *wątku interfejsu użytkownika*.
 
 Użytkownicy oczekują graficznego interfejsu użytkownika do szybkość reakcji. Oznacza to, że program musi szybko przetwarzania zdarzeń danych wejściowych użytkownika. Jeśli nie jest to możliwe, następnie przetwarzania musi być były odpowiedzialne pomocnicze wątki wykonywania.
 
 Użyto kilka przykładowych programów w tej książce [ `WebRequest` ](xref:System.Net.WebRequest) klasy. W tej klasie [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) metoda uruchamia wątku roboczego, która wywołuje funkcję wywołania zwrotnego po jego zakończeniu. Jednak tej funkcji wywołania zwrotnego działa w wątku roboczego, dzięki czemu program musi wywoływać [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) metoda uzyskać dostępu do interfejsu użytkownika.
+
+> [!NOTE]
+> Należy użyć zestawu narzędzi Xamarin.Forms programy [ `HttpClient` ](xref:System.Net.Http.HttpClient) zamiast [ `WebRequest` ](xref:System.Net.WebRequest) do uzyskiwania dostępu do plików za pośrednictwem Internetu. `HttpClient` obsługuje operacje asynchroniczne.
 
 Bardziej nowoczesnego podejścia do przetwarzania asynchronicznego jest dostępna w .NET i języka C#. Obejmuje to [ `Task` ](xref:System.Threading.Tasks.Task) i [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) klasy i inne typy w [ `System.Threading` ](xref:System.Threading) i [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) przestrzeni nazw, a także 5.0 C# `async` i `await` słów kluczowych. To, co w tym rozdziale koncentruje się na.
 
@@ -74,13 +80,16 @@ Jednak w przypadku wyszukiwania dla tych `System.IO` klas w aplikacji PCL Xamari
 
 Oznacza to, że będziesz musiał użyć [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (najpierw omówione w [ **rozdział 9. Wywołania interfejsu API specyficzne dla platformy** ](chapter09.md) do zaimplementowania we/wy.
 
+> [!NOTE]
+> Przenośne bibliotekami klasy zostało zastąpione przy użyciu biblioteki .NET Standard 2.0 i .NET Standard 2.0 obsługuje [ `System.IO` ](xref:System.IO) typów dla wszystkich platform zestawu narzędzi Xamarin.Forms. Nie jest już używać `DependencyService` do wykonywania większości zadań we/wy pliku. Zobacz [Obsługa plików w interfejsie Xamarin.Forms](~/xamarin-forms/app-fundamentals/files.md) nowocześniejszych podejścia do We/Wy pliku.
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>Pierwszy zrzut na We/Wy plików dla wielu platform
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) Przykładowa aplikacja definiuje [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) interfejs dla We/Wy i implementacje tego interfejsu na wszystkich platformach. Jednak implementacji środowiska uruchomieniowego Windows nie działają z metod opisanych w tym interfejsie, ponieważ metody operacji We/Wy plików środowiska uruchomieniowego Windows są asynchroniczne.
 
 ### <a name="accommodating-windows-runtime-file-io"></a>Obsługa środowiska uruchomieniowego Windows we/wy
 
-Programy działających w ramach środowiska uruchomieniowego Windows użyć klas w [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) i [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) przestrzeni nazw dla pliku operacji We/Wy, łącznie z lokalnego magazynu aplikacji. Ponieważ Microsoft ustali, że wszelkie operacje, wymaga więcej niż 50 MS powinien być asynchroniczne w celu unikania blokowania wątku interfejsu użytkownika, te metody operacji We/Wy pliku przede wszystkim są asynchroniczne.
+Programy działających w ramach środowiska uruchomieniowego Windows użyć klas w [ `Windows.Storage` ](/uwp/api/Windows.Storage) i [ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams) przestrzeni nazw dla pliku operacji We/Wy, łącznie z lokalnego magazynu aplikacji. Ponieważ Microsoft ustali, że wszelkie operacje, wymaga więcej niż 50 MS powinien być asynchroniczne w celu unikania blokowania wątku interfejsu użytkownika, te metody operacji We/Wy pliku przede wszystkim są asynchroniczne.
 
 Kod, demonstrując to nowe podejście będzie w bibliotece, dzięki czemu mogą być używane przez inne aplikacje.
 
@@ -94,8 +103,6 @@ Jest korzystne do przechowywania kodu wielokrotnego użytku w bibliotekach. Jest
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), biblioteka klas systemu iOS
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), biblioteka klas systemu Android
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), biblioteki klas Windows Universal
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), PCL dla Windows 8.1.
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), PCL dla Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), Współdzielony projekt dla kodu, który jest wspólne dla wszystkich platform Windows
 
 Wszystkie projekty poszczególnych platform (z wyjątkiem produktów **Xamarin.FormsBook.Platform.WinRT**) odwołują się do **Xamarin.FormsBook.Platform**. Trzy projekty Windows odwoływałby się do **Xamarin.FormsBook.Platform.WinRT**.

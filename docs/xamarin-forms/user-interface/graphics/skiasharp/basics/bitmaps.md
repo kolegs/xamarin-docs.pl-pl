@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130962"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156967"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Mapa bitowa — podstawy w SkiaSharp
 
@@ -21,6 +21,8 @@ _Ładowanie map bitowych z różnych źródeł i ich wyświetlenie._
 Obsługa mapy bitowej w SkiaSharp jest dość rozbudowana. W tym artykule opisano tylko podstawowe informacje o &mdash; ładowanie mapy bitowe i sposób ich wyświetlania:
 
 ![](bitmaps-images/bitmapssample.png "Wyświetlanie dwóch map bitowych")
+
+Znacznie bardziej zaawansowanej eksploracji mapy bitowe znajdują się w sekcji [mapy bitowe SkiaSharp](../bitmaps/index.md).
 
 Skiasharp — mapa bitowa jest obiektem typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Istnieje wiele sposobów, aby utworzyć mapę bitową, ale w tym artykule ogranicza się do [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) metody, która ładuje mapę bitową z .NET `Stream` obiektu.
 

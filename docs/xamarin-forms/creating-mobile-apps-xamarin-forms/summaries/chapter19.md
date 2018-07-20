@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996428"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156694"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Podsumowanie rozdziałów 19. Widoki kolekcji
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
 Zestaw narzędzi Xamarin.Forms definiuje trzy widoki, które utrzymują kolekcji i wyświetlać ich elementy:
 
@@ -39,6 +42,9 @@ Można również użyć `SelectedIndex` zainicjować wybranego elementu, ale nal
 ### <a name="data-binding-the-picker"></a>Selektor powiązania danych
 
 `SelectedIndex` Właściwość jest wspierana przez właściwości możliwej do wiązania, ale `Items` nie jest dostępna, więc używanie powiązania danych z `Picker` jest trudne. Jednym rozwiązaniem jest użycie `Picker` w połączeniu z [ `ObjectToIndexConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) znajdującego się w [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) biblioteki. [ **PickerBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) pokazuje, jak to działa.
+
+> [!NOTE] 
+> Xamarin.Forms `Picker` zawiera teraz `ItemsSource` i `SelectedItem` właściwości, które obsługuje powiązanie danych. Zobacz [selektora](~/xamarin-forms/user-interface/picker/index.md).
 
 ## <a name="rendering-data-with-listview"></a>Renderowanie danych przy użyciu ListView
 
@@ -224,5 +230,6 @@ Używanie innego `TableView` jest menu. [ **MenuCommands** ](https://github.com/
 
 - [Pełny tekst rozdziale 19 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
 - [Przykłady rozdziale 19](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
+- [Selektor](~/xamarin-forms/user-interface/picker/index.md)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
 - [TableView](~/xamarin-forms/user-interface/tableview.md)

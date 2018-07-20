@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: da8ce02a0185364c2b833238ee04ebc29e8d3bb2
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998101"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156616"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Podsumowanie rozdziałów 28. Lokalizacja i mapy
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
 Obsługuje platformy Xamarin.Forms [ `Map` ](xref:Xamarin.Forms.Maps.Map) element, który pochodzi od klasy `View`. Ze względu na wymagania specjalne platformy, związane z użyciem map, są one wykonywane w osobnym zestawie **projekt xamarin.Forms.Maps dla**i może dotyczyć innej przestrzeni nazw: `Xamarin.Forms.Maps`.
 
@@ -48,6 +51,9 @@ Mapy usługi używają typu projekcji Mercator o nazwie `Web Mercator`. Mapy us�
 
 Xamarin.Forms `Map` klasy nie obejmują funkcji można uzyskać lokalizacji geograficznej użytkownika, ale często jest pożądane podczas pracy z mapy, dlatego usługa zależności należy go obsłużyć.
 
+> [!NOTE]
+> Zamiast tego użyć aplikacji platformy Xamarin.Forms [ `Geolocation` ](~/essentials/geolocation.md) klasy uwzględnione w Xamarin.Essentials.
+
 ### <a name="the-location-tracker-api"></a>Śledzący lokalizację interfejsu API
 
 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) rozwiązanie zawiera kod śledzący lokalizację interfejsu API. [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) Struktury hermetyzuje szerokości i długości geograficznej. [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) Interfejs definiuje dwie metody uruchamianie i zatrzymywanie śledzący lokalizację i zdarzenie po udostępnieniu nowej lokalizacji.
@@ -60,9 +66,9 @@ Implementacja systemu iOS `ILocationTracker` jest [ `LocationTracker` ](https://
 
 Implementacja systemu Android `ILocationTracker` jest [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) klasę, która korzysta z programu Android [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/) klasy.
 
-#### <a name="the-windows-runtime-geo-locator"></a>Lokalizator geograficznie Windows Runtime
+#### <a name="the-uwp-geo-locator"></a>Lokalizator geograficzna platformy uniwersalnej systemu Windows
 
-Implementacja Windows Runtime `ILocationTracker` jest [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) klasę, która korzysta z platformy UWP [ `Geolocator` ](https://msdn.microsoft.com/library/windows/apps/br225534).
+Implementacja Universal Windows Platform `ILocationTracker` jest [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) klasę, która korzysta z platformy UWP [ `Geolocator` ](/uwp/api/Windows.Devices.Geolocation.Geolocator).
 
 ### <a name="display-the-phones-location"></a>Wyświetlanie lokalizacji na telefonie
 
@@ -82,9 +88,9 @@ W przypadku systemu iOS **info.plist** plik musi zawierać elementy zawierające
 
 Aplikacje systemu android, które uzyskiwanie lokalizacji użytkownika musi mieć uprawnienie ACCESS_FILE_LOCATION w pliku AndroidManifest.xml.
 
-#### <a name="location-permissions-for-the-windows-runtime"></a>Uprawnienia do lokalizacji dla środowiska uruchomieniowego Windows
+#### <a name="location-permissions-for-the-uwp"></a>Uprawnienia do lokalizacji dla platformy uniwersalnej systemu Windows
 
-Aplikacja Windows lub Windows Phone, musi mieć `location` możliwość urządzenia jest oznaczona jako w plik manifestu Package.appx.
+Aplikacja platformy uniwersalnej Windows musi mieć `location` możliwość urządzenia jest oznaczona jako w plik manifestu Package.appx.
 
 ## <a name="working-with-xamarinformsmaps"></a>Praca z projekt xamarin.Forms.Maps dla
 
@@ -110,9 +116,9 @@ Aplikacja systemu iOS przy użyciu `Map` wymaga dwóch wierszy w pliku info.plis
 
 Klucz autoryzacji jest wymagane do używania usługi mapy Google. Ten klucz jest wstawiana w **AndroidManifest.xml** pliku. Ponadto **AndroidManifest.xml** plik wymaga `manifest` tagi zaangażowanych w uzyskiwaniu lokalizacji użytkownika.
 
-#### <a name="enabling-windows-runtime-maps"></a>Włączanie środowiska uruchomieniowego Windows mapy
+#### <a name="enabling-uwp-maps"></a>Włączanie platformy uniwersalnej systemu Windows mapy
 
-Aplikacja Windows Runtime wymaga klucza autoryzacji przy użyciu map Bing. Ten klucz jest przekazywany jako argument do `Xamarin.FormsMaps.Init` metody. Aplikacja musi być także włączona dla usługi lokalizacji.
+Aplikacja platformy uniwersalnej Windows wymaga klucza autoryzacji przy użyciu map Bing. Ten klucz jest przekazywany jako argument do `Xamarin.FormsMaps.Init` metody. Aplikacja musi być także włączona dla usługi lokalizacji.
 
 ### <a name="the-unadorned-map"></a>Unadorned mapy
 
@@ -233,4 +239,4 @@ Program ilustruje też sposób dynamicznie ograniczyć liczbę kodów PIN, na po
 
 - [Pełny tekst działu 28 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [Przykłady działu 28](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Kontrolki mapy](~/xamarin-forms/user-interface/map.md)
+- [Mapa zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/map.md)

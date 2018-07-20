@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995160"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156915"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Podsumowanie rozdział 7. XAML a kod
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
 Zestaw narzędzi Xamarin.Forms obsługuje język znaczników oparty na formacie XML o nazwie Extensible Application Markup Language lub XAML (wymawiane "zammel"). XAML stanowi alternatywę dla języka C# określając układ interfejsu użytkownika aplikacji platformy Xamarin.Forms i w celu zdefiniowania powiązań między elementami interfejsu użytkownika i bazowych danych.
 
@@ -35,6 +38,9 @@ Czasami właściwość musi być równa obiekt, który nie może być wyrażona 
 ## <a name="adding-a-xaml-page-to-your-project"></a>Dodawanie strony XAML do projektu
 
 Zestaw narzędzi Xamarin.Forms Portable Class Library mogą zawierać strony XAML podczas jej pierwszego tworzenia lub strony XAML można dodać do istniejącego projektu. W oknie dialogowym, aby dodać nowy element, wybierz element który odwołuje się do strony XAML lub `ContentPage` i XAML. (Nie `ContentView`.)
+
+> [!NOTE] 
+> Opcje programu Visual Studio zostały zmienione od czasu, w tym rozdziale został zapisany.
 
 Zostaną utworzone dwa pliki: plik XAML z .xaml rozszerzenie nazwy pliku, a plik języka C# z rozszerzeniem. xaml.cs. Plik języka C# jest często nazywany *związanym z kodem* pliku XAML. Plik związany z kodem jest definicji klasy częściowej, która pochodzi od klasy `ContentPage`. W czasie kompilacji XAML jest analizowany i innej definicji częściowej klasy jest generowany dla tej samej klasy. Ta klasa wygenerowanego zawiera metodę o nazwie `InitializeComponent` , jest wywoływana z konstruktora pliku CodeBehind.
 
@@ -72,10 +78,9 @@ Właściwość elementu `Label` jest `Text`.
 
  [![Potrójna zrzut ekranu przedstawiający odmiany tekstu udostępnianie](images/ch07fg03-small.png "sformatowany tekst odmiany")](images/ch07fg03-large.png#lightbox "odmiany tekst sformatowany")
 
-
-
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pełny tekst rozdział 7 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Przykłady rozdział 7](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [Przykładowe rozdział 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [XAML — podstawy](~/xamarin-forms/xaml/xaml-basics/index.md)

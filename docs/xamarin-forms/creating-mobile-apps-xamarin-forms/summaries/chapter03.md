@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3ef8f14bd60cf612408bb9e3885ef319d3efc8c5
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: eabd001587034ac0bf1b86962fe63b016fe651e9
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998338"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156577"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Podsumowanie rozdział 3. Większe zagłębienie w tekst
 
@@ -100,8 +100,6 @@ Na koniec dwie statycznych właściwości tylko do odczytu zdefiniować wartoś�
 - dla systemu iOS: ciemny tekst na tle światła
 - Android: Jasny na ciemnym tle (w książce) ani ciemny tekstu na jasnym (dla Material Design za pośrednictwem AppCompat w **wzorca** gałęzi przykładowego repozytorium kodu)
 - Platformy uniwersalnej systemu Windows: Ciemny tekstu jasnym
-- Windows 8.1: Jasny tekst na ciemnym tle
-- Windows Phone 8.1: Jasny tekst na ciemnym tle
 
 `Color.Accent` Wartość wyniki w określonych platform (i czasami wybierane przez użytkownika) kolor, który jest widoczny na tle ciemny lub światła.
 

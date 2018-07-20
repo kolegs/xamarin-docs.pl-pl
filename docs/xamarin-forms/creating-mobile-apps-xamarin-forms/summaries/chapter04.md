@@ -6,19 +6,22 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997429"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156720"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Podsumowanie rozdziałów 4. Przewijanie stosu
 
 W tym rozdziale przede wszystkim jest poświęcona wprowadzenie do koncepcji *układ*, który jest ogólny termin dla klas i technik, które korzysta z zestawu narzędzi Xamarin.Forms do organizowania wyświetlania wielu widoków na stronie.
 
 Układ obejmuje kilka klas, które wynikają z [ `Layout` ](xref:Xamarin.Forms.Layout) i [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). W tym rozdziale koncentruje się na [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
+
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md) Wprowadzona w Xamarin.Forms 3.0 mogą być używane w sposób podobny do `StackLayout` , ale z większą elastyczność.
 
 Również wprowadzone w tym rozdziale są [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), i [ `BoxView` ](xref:Xamarin.Forms.BoxView) klasy.
 
@@ -104,7 +107,7 @@ Umieszczenie `StackLayout` w `ScrollView` jest wspólnego, ale odkładanie `Scro
 
 Lewy jest zapewnienie `ScrollView` podrzędnym `StackLayout` `VerticalOptions` ustawienie `FillAndExpand`. Jest to zaprezentowane w [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) próbki.
 
-**BlackCat** przykład pokazuje również, jak zdefiniować i uzyskiwać dostęp do zasobów programu, które są osadzone w przenośnej biblioteki klas (PCL). Można to osiągnąć również przy użyciu udostępnionych zasobów (protokoły SAP), ale proces ten jest nieco trudniejszy jako [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) w przykładzie pokazano.
+**BlackCat** przykład pokazuje również, jak zdefiniować i uzyskiwać dostęp do zasobów programu, które są osadzone w bibliotece udostępnionej. Można to osiągnąć również przy użyciu udostępnionych zasobów (protokoły SAP), ale proces ten jest nieco trudniejszy jako [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) w przykładzie pokazano.
 
 
 
@@ -115,3 +118,4 @@ Lewy jest zapewnienie `ScrollView` podrzędnym `StackLayout` `VerticalOptions` u
 - [Przykłady rozdział 4 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)

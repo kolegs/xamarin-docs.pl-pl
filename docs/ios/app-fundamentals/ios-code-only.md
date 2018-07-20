@@ -1,90 +1,90 @@
 ---
-title: Tworzenie interfejsów użytkownika systemu iOS w kodzie w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu tworzenia interfejsu użytkownika dla aplikacji platformy Xamarin.iOS przy użyciu kodu. Zawarto informacje kontrolerów widoku, tworzenie hierarchii widoku, obsługę rotacji i inne.
+title: Tworzenie interfejsów użytkownika systemu iOS w kodzie w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano sposób tworzenia interfejsu użytkownika dla aplikacji platformy Xamarin.iOS przy użyciu kodu. Omówiono w nim kontrolerów widoku, tworzenie Wyświetl hierarchię obsługi rotację i nie tylko.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5e9bf9555d10c8b34ad9323529d4af5ea66110f8
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784637"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156785"
 ---
-# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie w Xamarin.iOS
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie w rozszerzeniu Xamarin.iOS
 
-Interfejs użytkownika aplikacji systemu iOS przypomina sklepu — aplikacji zwykle pobiera jedno okno, ale jego może zapełnić okna z musi wiele obiektów jego, a obiekty i ustalenia można zmieniać w zależności od tego, co aplikacja potrzebuje do wyświetlenia. W tym scenariuszu - rzeczy, które użytkownik widzi — obiekty są nazywane widoków. Tworzenie jednego ekranu w aplikacji, widoki stos na siebie w hierarchii widok zawartości i hierarchii jest zarządzany przez pojedynczy kontroler widoku. Aplikacje z ekranami wielu mają wiele zawartości widoku hierarchii, każde z nich własny kontroler widoku i aplikacji umieszcza widoków w oknie można utworzyć innej hierarchii widok zawartości oparte na ekranie, której należy użytkownik.
+Interfejs użytkownika aplikacji systemu iOS przypomina storefront — aplikacja pobiera zazwyczaj jedno okno, ale go wypełnić okno jako wiele obiektów potrzebuje, a obiekty i ich rozmieszczenia można zmienić w zależności od tego, w jaki aplikacja chce, aby wyświetlić. Obiekty w tym scenariuszu - rzeczy, które widzi użytkownik -, są nazywane widoków. Do tworzenia na jednym ekranie, w aplikacji, widoki są ułożone jeden na drugim w zawartości Wyświetl hierarchię i hierarchii jest zarządzany przez pojedynczy kontroler widoku. Aplikacje z wieloma ekranami może mieć wielu zawartości widoku hierarchii, każdy z własną kontrolera widoku, a następnie aplikacja umieszcza widoków w oknie do tworzenia różnych hierarchii widok zawartości oparty na ekranie, której należy użytkownik.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia: 
+Poniższy diagram ilustruje relacje między oknem, widoki, widoków podrzędnych i kontroler widoku, które Przesuń interfejs użytkownika na ekranie urządzenia: 
 
-[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoki, widoków podrzędnych i kontroler widoku")](ios-code-only-images/image9.png#lightbox)
 
-Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio, jednak warto podstawową wiedzę pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i działa z programowanie interfejsu użytkownika tylko do kodu.
+Te hierarchie z widoku można skonstruować przy użyciu [Projektant platformy Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio, jednak warto mieć powinieneś rozumieć podstawy pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i uruchomiona za pomocą interfejsu użytkownika tylko do kodu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia: 
+Poniższy diagram ilustruje relacje między oknem, widoki, widoków podrzędnych i kontroler widoku, które Przesuń interfejs użytkownika na ekranie urządzenia: 
 
-[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "Ten diagram przedstawia relacje między okna, widoki, widoków podrzędnych i kontroler widoku")](ios-code-only-images/image9.png#lightbox)
 
-Te hierarchie widoku można skonstruować przy użyciu [projektanta Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio dla komputerów Mac, jednak warto podstawową wiedzę pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i działa z programowanie interfejsu użytkownika tylko do kodu.
+Te hierarchie z widoku można skonstruować przy użyciu [Projektant platformy Xamarin dla systemu iOS](~/ios/user-interface/designer/index.md) w programie Visual Studio dla komputerów Mac, jednak warto mieć powinieneś rozumieć podstawy pracy całkowicie w kodzie. W tym artykule przedstawiono niektóre podstawowe punkty do uruchomienia i uruchomiona za pomocą interfejsu użytkownika tylko do kodu.
 
 -----
 
-## <a name="creating-a-code-only-project"></a>Tworzenie projektu tylko do kodu
+## <a name="creating-a-code-only-project"></a>Tworzenie tylko kod projektu
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="ios-blank-project-template"></a>Pusty szablon projektu systemu iOS
 
-Najpierw utwórz projekt dla systemu iOS w programie Visual Studio przy użyciu **Plik > Nowy Projekt > Visual C# > iPhone & iPad > iOS App (Xamarin)** projektu, pokazano poniżej:
+Najpierw utwórz projekt dla systemu iOS w programie Visual Studio przy użyciu **Plik > Nowy Projekt > Visual C# > iPhone & iPad > aplikacji (Xamarin) dla systemu iOS** projektu, pokazano poniżej:
 
 [![Okno dialogowe nowego projektu](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-Następnie wybierz **pusta aplikacja** szablonu projektu:
+Następnie wybierz pozycję **pusta aplikacja** szablonu projektu:
 
-[![Wybierz szablon okna dialogowego](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
+[![Wybierz okno dialogowe z szablonu](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
-Pusty szablon projektu dodaje 4 plików do projektu:
+Pusty szablon projektu służący do projektu o rozmiarze 4 plików:
 
 [![Pliki projektu](ios-code-only-images/empty-project.w157-sml.png "pliki projektu")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
-1. **AppDelegate.cs** — zawiera `UIApplicationDelegate` podklasy, `AppDelegate` , które jest używane do obsługi zdarzeń aplikacji z systemem iOS. W oknie aplikacji jest tworzony w `AppDelegate`w `FinishedLaunching` metody.
+1. **AppDelegate.cs** — zawiera `UIApplicationDelegate` podklasy, `AppDelegate` , który jest używany do obsługi zdarzeń aplikacji z systemem iOS. W oknie aplikacji jest tworzony w `AppDelegate`firmy `FinishedLaunching` metody.
 1. **Main.cs** — zawiera punkt wejścia dla aplikacji, która określa klasę dla `AppDelegate` .
-1. **Info.plist** -pliku listy właściwości, który zawiera informacje o konfiguracji aplikacji.
-1. **Entitlements.plist** — pliku listy właściwości, który zawiera informacje o możliwości i uprawnienia aplikacji.
+1. **Plik info.plist** -pliku listy właściwości, który zawiera informacje o konfiguracji aplikacji.
+1. **Plik Entitlements.plist** — pliku listy właściwości, który zawiera informacje o możliwościach i uprawnienia aplikacji.
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="ios-templates"></a>iOS szablonów
+## <a name="ios-templates"></a>Szablony systemu iOS
 
 
-Visual Studio for Mac nie oferuje pustego szablonu. Wszystkie szablony pochodzą z obsługą scenorysu, którym Apple zalecane jako podstawowy sposób tworzenia interfejsu użytkownika. Istnieje możliwość utworzenia Interfejsie całkowicie w kodzie. 
+Visual Studio dla komputerów Mac nie oferuje pustego szablonu. Wszystkie szablony są dostarczane z obsługą scenorysu, którym Apple zalecane jako podstawowy sposób tworzenia interfejsu użytkownika. Jednak jest możliwe utworzenie interfejs użytkownika całkowicie w kodzie. 
 
-Poniższe kroki prowadzące przez usunięcie scenorysu z aplikacji: 
+Poniższe kroki prowadzące przez usuwanie scenorysu z aplikacji: 
 
 
-1. Szablon pojedynczego widoku aplikacji do tworzenia nowego projektu systemu iOS:
+1. Szablon aplikacja pojedynczego widoku służy do tworzenia nowego projektu systemu iOS:
     
-    [![](ios-code-only-images/single-view-app.png "Użyj szablonu pojedynczego widoku aplikacji")](ios-code-only-images/single-view-app.png#lightbox)
+    [![](ios-code-only-images/single-view-app.png "Szablon aplikacja pojedynczego widoku")](ios-code-only-images/single-view-app.png#lightbox)
 
-1. Usuń `Main.Storyboard` i `ViewController.cs` plików. Czy **nie** usunąć `LaunchScreen.Storyboard`. Kontroler widoku powinny być usunąć, ponieważ jest on CodeBehind dla kontrolera widoku, która jest tworzona w scenorysu:
-1. Upewnij się wybrać **usunąć** w wyskakującym oknie dialogowym:
+1. Usuń `Main.Storyboard` i `ViewController.cs` plików. Czy **nie** Usuń `LaunchScreen.Storyboard`. Kontroler widoku należy usunąć, ponieważ CodeBehind dla kontrolera widoku, który jest tworzony w scenorysu:
+1. Upewnij się, że wybrano **Usuń** w podręcznym oknie dialogowym:
     
     [![](ios-code-only-images/delete.png "Przycisk Usuń w wyskakującym oknie dialogowym")](ios-code-only-images/delete.png#lightbox)
 
-1. W pliku Info.plist, należy usunąć informacje dotyczące wewnątrz **informacji o wdrożeniu > Main interfejsu** opcji:
+1. W pliku Info.plist, należy usunąć informacji o wewnątrz **informacje o wdrożeniu > Main interfejsu** opcji:
     
     [![](ios-code-only-images/main-interface.png "Usuń informacje wewnątrz opcja interfejsu Main")](ios-code-only-images/main-interface.png#lightbox)
 
-1. Na koniec należy dodać następujący kod, aby Twoje `FinishedLaunching` metody w klasie AppDelegate:
+1. Na koniec Dodaj następujący kod, aby Twoje `FinishedLaunching` metody w klasie w elemencie AppDelegate:
         
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -97,16 +97,16 @@ Poniższe kroki prowadzące przez usunięcie scenorysu z aplikacji:
             return true;
         }
 
-Kod, który został dodany do `FinishedLaunching` metoda w kroku 5 powyżej, jest minimalna ilość kod wymagany można utworzyć okna dla aplikacji systemu iOS.
+Kod, który został dodany do `FinishedLaunching` metoda w kroku 5 powyżej, jest minimalna ilość kodu wymaganą można utworzyć okna dla aplikacji systemu iOS.
 
 
 -----
 
 
 
-aplikacje systemu iOS są tworzone przy użyciu [wzorzec MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Pierwszy ekran, który wyświetla aplikacji jest tworzona na podstawie kontrolera widoku głównego okna. Zobacz [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) przewodnik dla więcej informacji na temat platformy MVC wzorca samej siebie.
+aplikacje dla systemu iOS są tworzone przy użyciu [wzorzec MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Pierwszy ekran, który wyświetla aplikacji jest tworzony z kontrolera widoku głównego okna. Zobacz [Witaj, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) przewodnik dla samego wzorca, szczegółowe informacje na temat platformy MVC.
 
-Implementację `AppDelegate` dodane przez szablon tworzy okna aplikacji, z którego jest tylko jeden dla każdej aplikacji systemu iOS i ułatwia widoczne z następującym kodem:
+Wykonania na `AppDelegate` dodane przez ten szablon tworzy okno aplikacji z istnieje tylko jeden dla każdej aplikacji dla systemu iOS, która sprawia, że widoczne z następującym kodem:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -130,11 +130,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Jeśli do uruchomienia tej aplikacji teraz, prawdopodobnie jak wyjątek, informujący `Application windows are expected to have a root view controller at the end of application launch`. Umożliwia dodawanie kontrolera i stał się Appcontroller widoku głównego.
+W przypadku uruchomienia tej aplikacji teraz prawdopodobnie otrzymamy wyjątek zgłoszony z informacją, że `Application windows are expected to have a root view controller at the end of application launch`. Teraz Dodaj kontroler, co kontroler widoku głównego aplikacji.
 
 ## <a name="adding-a-controller"></a>Dodawanie kontrolera
 
-Aplikacja może zawierać wiele kontrolerów widoku, ale musi mieć jeden kontroler widoku głównego do sterowania wszystkie kontrolery widoku.  Dodaj kontroler do okna, tworząc `UIViewController` wystąpienia i ustawieniem dla niego `window.RootViewController` właściwości:
+Aplikacja może zawierać wiele kontrolerów widoku, ale musi ona mieć jeden kontroler widoku głównego do kontrolowania wszystkich kontrolerów widoku.  Dodawanie kontrolera do okna, tworząc `UIViewController` wystąpienia oraz ustawienie `window.RootViewController` właściwości:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -165,11 +165,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Każdy kontroler ma skojarzone widoku, który jest dostępny z `View` właściwości. Powyższy kod zmiany widoku `BackgroundColor` właściwości `UIColor.LightGray` , dzięki czemu będzie ona widoczna, jak pokazano poniżej:
+Każdy kontroler ma skojarzony widok, który jest dostępny z `View` właściwości. Powyższy kod zmienia widok `BackgroundColor` właściwość `UIColor.LightGray` tak, że będzie ona widoczna, jak pokazano poniżej:
 
- [![](ios-code-only-images/image1.png "Tło widoku jest widoczny szary lekkich")](ios-code-only-images/image1.png#lightbox)
+ [![](ios-code-only-images/image1.png "Tło widoku jest widoczny szary światła")](ios-code-only-images/image1.png#lightbox)
 
-Firma Microsoft może ustawić dowolną `UIViewController` podklasy jako `RootViewController` w ten sposób również tym kontrolerów z UIKit, a także tych, możemy nad zapisu. Na przykład poniższy kod dodaje `UINavigationController` jako `RootViewController`:
+Firma Microsoft można ustawić dowolny `UIViewController` podklasy jako `RootViewController` w ten sposób, łącznie z kontrolerów UIKit, a także tych, napiszemy, aby określić główną przyczynę. Na przykład, poniższy kod dodaje `UINavigationController` jako `RootViewController`:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -203,15 +203,15 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Daje to kontrolera zagnieżdżone w obrębie kontrolera nawigacji, jak pokazano poniżej:
+To daje kontrolera zagnieżdżone w obrębie kontrolera nawigacji, jak pokazano poniżej:
 
  [![](ios-code-only-images/image2.png "Kontroler zagnieżdżone w obrębie kontrolera nawigacji")](ios-code-only-images/image2.png#lightbox)
 
-## <a name="creating-a-view-controller"></a>Tworzenie kontrolera widoku
+## <a name="creating-a-view-controller"></a>Tworzenia kontrolera widoku
 
-Teraz, gdy firma Microsoft przedstawiono sposób dodawania kontrolera jako `RootViewController` okna Zobaczmy, jak utworzyć kontroler niestandardowy widok w kodzie.
+Teraz, gdy zobaczyliśmy, jak dodać kontrolera jako `RootViewController` okna, zobaczmy, jak utworzyć kontroler widoku niestandardowego w kodzie.
 
-Dodaj nową klasę o nazwie `CustomViewController` w sposób przedstawiony poniżej:
+Dodaj nową klasę o nazwie `CustomViewController` jak pokazano poniżej:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -223,7 +223,7 @@ Dodaj nową klasę o nazwie `CustomViewController` w sposób przedstawiony poni�
 
 -----
 
-Klasa powinna dziedziczy `UIViewController`, która znajduje się w `UIKit` przestrzeni nazw, jak pokazano:
+Klasa powinien dziedziczy `UIViewController`, która znajduje się w `UIKit` przestrzeni nazw, jak pokazano:
 
 ```csharp
 using System;
@@ -239,11 +239,11 @@ namespace CodeOnlyDemo
 
 <a name="Initializing_the_View"/>
 
-## <a name="initializing-the-view"></a>Podczas inicjowania widoku
+## <a name="initializing-the-view"></a>Inicjowanie widoku
 
-`UIViewController` zawiera metodę o nazwie `ViewDidLoad` który wywoływaną, gdy kontroler widoku najpierw jest ładowany do pamięci. Jest to odpowiednie miejsce do inicjowania widoku, takie jak ustawienia jego właściwości.
+`UIViewController` zawiera metodę o nazwie `ViewDidLoad` który jest wywoływany, gdy kontroler widoku najpierw jest ładowany do pamięci. Jest to odpowiednie miejsce, w celu inicjowania widoku, takie jak ustawienie jego właściwości.
 
-Na przykład następujący kod dodaje przycisk i program obsługi zdarzeń, aby wypychać nowego kontrolera widoku na stosie nawigacji po naciśnięciu przycisku:
+Na przykład poniższy kod dodaje przycisk i program obsługi zdarzeń, aby wypchnąć nowy kontroler widoku na stosie nawigacji po naciśnięciu przycisku:
 
 ```csharp
 using System;
@@ -283,7 +283,7 @@ namespace CodyOnlyDemo
 }
 ```
 
-Aby załadować tego kontrolera w aplikacji i Wykaż, prosty nawigacji, Utwórz nowe wystąpienie klasy `CustomViewController`. Tworzenie nowego kontrolera nawigacji, przekaż wystąpienie kontrolera widoku i ustaw nowy kontroler nawigacji w oknie `RootViewController` w `AppDelegate` jak wcześniej:
+Aby obciążenia tego kontrolera w aplikacji i zaprezentować proste nawigacji, Utwórz nowe wystąpienie klasy `CustomViewController`. Tworzenie nowego kontrolera nawigacji, w ramach wystąpienia kontrolera widoku i ustaw nowego kontrolera nawigacji w oknie `RootViewController` w `AppDelegate` tak jak poprzednio:
 
 ```csharp
 var cvc = new CustomViewController ();
@@ -293,25 +293,25 @@ var navController = new UINavigationController (cvc);
 Window.RootViewController = navController;
 ```
 
-Teraz podczas ładowania aplikacji `CustomViewController` jest ładowany w kontrolerze nawigacji:
+Teraz podczas ładowania aplikacji `CustomViewController` jest ładowany wewnątrz kontrolera nawigacji:
 
- [![](ios-code-only-images/customvc.png "Załadowano CustomViewController wewnątrz kontrolera nawigacji")](ios-code-only-images/customvc.png#lightbox)
+ [![](ios-code-only-images/customvc.png "CustomViewController jest ładowany wewnątrz kontrolera nawigacji")](ios-code-only-images/customvc.png#lightbox)
  
-Kliknięcie przycisku, będzie _wypychania_ nowego kontrolera widoku na stosie nawigacji:
+Kliknięcie przycisku spowoduje _wypychania_ nowy kontroler widoku na stosie nawigacji:
 
-[![](ios-code-only-images/customvca.png "Nowy kontroler widok wypchnięta na stosie nawigacji")](ios-code-only-images/customvca.png#lightbox)
+[![](ios-code-only-images/customvca.png "Nowy kontroler widoku wypychane na stosie nawigacji")](ios-code-only-images/customvca.png#lightbox)
 
-## <a name="building-the-view-hierarchy"></a>Tworzenie widoku hierarchii
+## <a name="building-the-view-hierarchy"></a>Tworzenie hierarchii widoku
 
-W powyższym przykładzie mamy rozpoczął tworzenie interfejsu użytkownika w kodzie przez dodawanie przycisku do kontrolera widoku.
+W powyższym przykładzie Rozpoczęliśmy tworzymy interfejs użytkownika w kodzie, przez dodanie przycisku do kontrolera widoku.
 
-interfejsy użytkownika iOS składają się z hierarchii widoku. Dodatkowe widoki, takich jak etykiety, przyciski, suwaki, itp., są dodawane jako widoków podrzędnych niektórych widoku nadrzędnego.
+interfejsy użytkownika dla systemu iOS składają się z widoku hierarchii. Dodatkowe widoki, takie jak etykiety, przyciski, suwaki, itp., są dodawane jako widoków podrzędnych niektóre widoku nadrzędnego.
 
-Na przykład, załóżmy edytować `CustomViewController` utworzyć ekran logowania, w którym użytkownik może wprowadzić nazwę użytkownika i hasło. Ekranu będzie zawierać dwa pola tekstowe i przycisk.
+Na przykład możemy edytować `CustomViewController` Aby utworzyć ekran logowania, w którym użytkownik może wprowadzić nazwę użytkownika i hasło. Ekran będzie składać się z dwóch pól tekstowych i przycisku.
 
 ### <a name="adding-the-text-fields"></a>Dodawanie pól tekstowych
 
-Najpierw należy usunąć program obsługi przycisku i zdarzenia, który został dodany w [inicjowania widoku](#Initializing_the_View) sekcji. 
+Najpierw należy usunąć program obsługi przycisk i zdarzeń, który został dodany w [inicjowania widoku](#Initializing_the_View) sekcji. 
 
 Dodaj formant nazwy użytkownika przez tworzenie i Inicjowanie `UITextField` i dodanie go do widoku hierarchii, jak pokazano poniżej:
 
@@ -341,13 +341,13 @@ class CustomViewController : UIViewController
 }
 ```
 
-Gdy utworzymy `UITextField`, możemy ustawić `Frame` właściwości, aby zdefiniować jej lokalizacja i rozmiar. W systemie iOS 0,0 współrzędnych znajduje się w lewym górnym rogu z + x z prawej strony i + y w dół. Po ustawieniu `Frame` oraz kilka innych właściwości nazywamy `View.AddSubview` można dodać `UITextField` do hierarchii widoku. Dzięki temu `usernameField` widok podrzędny z `UIView` wystąpienie `View` odwołań do właściwości. Widok podrzędny zostanie dodany z porządek jest większa niż jego widoku nadrzędnego, aby był przed widoku nadrzędnego na ekranie.
+Kiedy tworzymy `UITextField`, ustawiliśmy `Frame` właściwości, aby zdefiniować jej lokalizacja i rozmiar. W systemie iOS 0,0 Współrzędna jest w lewym górnym rogu znakiem + x z prawej strony i + y w dół. Po ustawieniu `Frame` oraz kilka innych właściwości nazywamy `View.AddSubview` dodać `UITextField` na wyświetlanie hierarchii. To sprawia, że `usernameField` widok podrzędny z `UIView` wystąpienie, które `View` odwołania do właściwości. Widok podrzędny zostanie dodany z porządku, który jest większy niż jego widoku nadrzędnego, więc pojawia się ono przed widoku nadrzędnego na ekranie.
 
-Aplikację z `UITextField` uwzględnione są wyświetlane poniżej:
+Aplikacja o `UITextField` uwzględnione znajdują się poniżej:
 
- [![](ios-code-only-images/image4.png "Aplikację z UITextField włączone")](ios-code-only-images/image4.png#lightbox)
+ [![](ios-code-only-images/image4.png "Aplikacja o UITextField uwzględnione")](ios-code-only-images/image4.png#lightbox)
 
-Można dodać `UITextField` hasła w podobny sposób, tylko w tej chwili ustawiliśmy `SecureTextEntry` właściwości na wartość true, jak pokazano poniżej:
+Możemy dodać `UITextField` hasło w podobny sposób, tylko tym razem ustawimy `SecureTextEntry` właściwości na wartość true, jak pokazano poniżej:
 
 ```csharp
 public class CustomViewController : UIViewController
@@ -371,15 +371,15 @@ public class CustomViewController : UIViewController
 
 ```
 
-Ustawienie `SecureTextEntry = true` ukrywa tekst wprowadzony w `UITextField` przez użytkownika, jak pokazano poniżej:
+Ustawienie `SecureTextEntry = true` ukrywa tekstem wprowadzonym w `UITextField` przez użytkownika, jak pokazano poniżej:
 
- [![](ios-code-only-images/image4a.png "Ustawienie SecureTextEntry wartość true powoduje ukrycie tekst wprowadzony przez użytkownika")](ios-code-only-images/image4a.png#lightbox)
+ [![](ios-code-only-images/image4a.png "Ustawienie SecureTextEntry wartość true powoduje ukrycie tekstem wprowadzonym przez użytkownika")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Dodawanie przycisku
 
-Następnie dodamy przycisk Tak, użytkownik może przesyłania nazwy użytkownika i hasła. Zostanie dodany do hierarchii widoków innych formantu, przekazując go jako argument dla widoku nadrzędnego `AddSubview` metody ponownie.
+Następnie dodamy przycisku, dzięki czemu użytkownik może przesłać nazwę użytkownika i hasło. Ten przycisk jest dodawany do wyświetlanie hierarchii jak inne kontrolki, przez przekazanie jej jako argument dla widoku nadrzędnego `AddSubview` ponownie metodą.
 
-Poniższy kod dodaje przycisk i rejestruje program obsługi zdarzeń dla `TouchUpInside` zdarzeń:
+Poniższy kod dodaje przycisk i rejestruje zdarzenia obsługi dla `TouchUpInside` zdarzeń:
 
 ```csharp
 var submitButton = UIButton.FromType (UIButtonType.RoundedRect);
@@ -394,39 +394,39 @@ submitButton.TouchUpInside += (sender, e) => {
 View.AddSubview(submitButton);
 ```
 
-Dzięki temu w miejscu ekran logowania wygląda jak poniżej:
+Dzięki temu w miejscu ekranu logowania wygląda jak poniżej:
 
  [![](ios-code-only-images/image5.png "Ekran logowania")](ios-code-only-images/image5.png#lightbox)
 
-W przeciwieństwie do poprzednich wersji systemu IOS, domyślne tło przycisku jest niewidoczny. Zmienianie przycisku `BackgroundColor` zmiany właściwości to:
+W przeciwieństwie do poprzednich wersji systemu IOS, domyślne tło przycisku jest niewidoczny. Zmienianie przycisku `BackgroundColor` właściwość ulegnie zmianie, to:
 
 ```csharp
 submitButton.BackgroundColor = UIColor.White;
 ```
 
-To spowoduje kwadratowym przycisku zamiast typowe zaokrąglona krawędziowa przycisku. Aby uzyskać zaokrąglone krawędzi, użyj następującego fragmentu kodu:
+To spowoduje kwadratowy przycisk, a nie typowej zaokrąglone krawędziowa przycisku. Aby uzyskać jego zaokrąglenia, użyj następującego fragmentu kodu:
 
 ```csharp
 submitButton.Layer.CornerRadius = 5f;
 ```
 
-Wprowadzone zmiany widok będzie wyglądać następująco:
+Te zmiany widoku będzie wyglądać następująco:
 
 [![](ios-code-only-images/image6.png "Uruchom przykład widoku")](ios-code-only-images/image6.png#lightbox)
  
-## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Dodawanie wielu widoków do widoku hierarchii
+## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Dodawanie wielu widoków do Wyświetl hierarchię
 
-iOS oferuje możliwość dodawania wielu widoków do hierarchii widoku przy użyciu `AddSubviews`.
+systemu iOS zapewnia możliwość Dodawanie wielu widoków do wyświetlanie hierarchii za pomocą `AddSubviews`.
 
 ```csharp
 View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
 ```
 
-## <a name="adding-button-functionality"></a>Dodawanie przycisku funkcji
+## <a name="adding-button-functionality"></a>Dodawanie funkcji przycisku
 
-Po kliknięciu przycisku użytkownicy będą oczekiwać, że coś nastąpić. Na przykład wyświetlany jest alert lub nawigacji odbywa się na inny ekran. 
+Po kliknięciu przycisku, użytkownicy będą oczekiwać, że coś, co ma być wykonywana. Na przykład jest wyświetlany alert lub nawigacji odbywa się na innym ekranie. 
 
-Dodajmy trochę kodu do dystrybuowania drugiego kontrolera widoku na stosie nawigacji.
+Dodajmy trochę kodu do przekazania drugiego kontrolera widoku stos nawigacji.
 
 Najpierw utwórz drugi kontroler widoku:
 
@@ -435,7 +435,7 @@ var loginVC = new UIViewController () { Title = "Login Success!"};
 loginVC.View.BackgroundColor = UIColor.Purple;
 ```
 
-Następnie należy dodać funkcję w `TouchUpInside` zdarzeń:
+Następnie należy dodać funkcje do `TouchUpInside` zdarzeń:
 
 ```csharp
 submitButton.TouchUpInside += (sender, e) => {
@@ -445,13 +445,13 @@ submitButton.TouchUpInside += (sender, e) => {
 
 Poniżej przedstawiono nawigacji:
 
-[![](ios-code-only-images/navigation.png "Na tym wykresie przedstawiono nawigacji")](ios-code-only-images/navigation.png#lightbox)
+[![](ios-code-only-images/navigation.png "Ten wykres przedstawia nawigacji")](ios-code-only-images/navigation.png#lightbox)
 
-Należy zauważyć, że domyślnie, korzystając z kontrolera nawigacji iOS daje aplikacji paska nawigacyjnego i przycisk Wstecz, aby umożliwić powrót przez stos.
+Należy zauważyć, że domyślnie, korzystając z kontrolera nawigacji dla systemu iOS umożliwia aplikacji pasku nawigacyjnym, a przycisk Wstecz, aby możliwe było przenieść z powrotem przez stos.
 
-## <a name="iterating-through-the-view-hierarchy"></a>Iteracja przez wyświetlanie hierarchii
+## <a name="iterating-through-the-view-hierarchy"></a>Iteracja Wyświetl hierarchię
 
-Istnieje możliwość iteracji hierarchii widok podrzędny i wybrania żadnych konkretnym widoku. Na przykład, aby znaleźć każdego `UIButton` i nadaj tym przycisku innej `BackgroundColor`, może służyć następujący fragment kodu
+Istnieje możliwość do iterowania po hierarchii widok podrzędny i wybrania dowolnego określonego widoku. Na przykład, aby znaleźć każdą `UIButton` i nadać inny tego przycisku `BackgroundColor`, służy poniższy fragment kodu
 
 ```csharp
 foreach(var subview in View.Subviews)
@@ -464,33 +464,33 @@ foreach(var subview in View.Subviews)
 }
 ```
 
-Jednak nie będzie działać w przypadku widoku jest iterowane dla `UIView` jako we wszystkich widokach będą Wróć za `UIView` jako obiekty dodane do widoku nadrzędnym siebie dziedziczyć `UIView`.
+To, jednak nie będzie działać, jeśli widok jest postanowiliśmy dla `UIView` jako we wszystkich widokach przechodzi jako `UIView` jako obiekty dodawane do widoku nadrzędnym siebie dziedziczą `UIView`.
 
 ## <a name="handling-rotation"></a>Obsługa obrotu
 
-Jeśli obracania urządzenia na poziomą formantów rozmiary nie są zmieniane, jak pokazano w poniższym zrzucie ekranu:
+Jeśli obrocie urządzenia na poziomą formanty nie zmienić rozmiar, tak jak pokazano na poniższym zrzucie ekranu:
 
- [![](ios-code-only-images/image7.png "Jeśli użytkownik obraca urządzenia na poziomą, formantów nie zmieniać rozmiar odpowiednio")](ios-code-only-images/image7.png#lightbox)
+ [![](ios-code-only-images/image7.png "Jeśli obrocie urządzenia na poziomą formanty zmienia swojej wielkości odpowiednio")](ios-code-only-images/image7.png#lightbox)
 
-Jest jednym ze sposobów to naprawić przez ustawienie `AutoresizingMask` właściwości w każdym widoku. W takim przypadku chcemy formanty do rozciągania w poziomie, dlatego ustawimy usługę· każdego `AutoresizingMask`. Poniższy przykład dotyczy programu `usernameField`, ale takie same musi odnosić się do każdego gadżet w hierarchii widoku.
+Jednym ze sposobów, aby rozwiązać ten problem jest ustawienie `AutoresizingMask` właściwości każdego widoku. W tym przypadku chcemy, aby formanty do usługi stretch w poziomie, dlatego możemy ustawić każdy `AutoresizingMask`. Poniższy przykład dotyczy programu `usernameField`, ale takie same należałoby mają być stosowane do każdego gadżetu w hierarchii widoku.
 
 ```csharp
 usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 ```
 
-Teraz podczas obracania możemy urządzenie lub symulator, wszystko, co zostanie rozciągnięty w celu wypełnienia dodatkowe miejsce w sposób przedstawiony poniżej:
+Teraz gdy mamy obrócić urządzenie lub symulator, wszystko, co zostanie rozciągnięty w celu wypełnienia dodatkowe miejsce, jak pokazano poniżej:
 
- [![](ios-code-only-images/image8.png "Wszystkie kontrolki rozciągają się, aby wypełnić dodatkowa miejsce na dysku")](ios-code-only-images/image8.png#lightbox)
+ [![](ios-code-only-images/image8.png "Wszystkie formanty rozciągnąć na dodatkowy obszar")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Tworzenie niestandardowych widoków
 
-Oprócz za pomocą formantów, które są częścią UIKit, może także służyć widoków niestandardowych. Widok niestandardowy mogą być tworzone przez dziedziczenie z `UIView` i zastępowanie `Draw`. Teraz Utwórz widok niestandardowy i dodaj go do hierarchii widoku, aby zaprezentować.
+Oprócz używania kontrolek, które są częścią UIKit, widoki niestandardowe można również. Można utworzyć widok niestandardowy dziedziczący po `UIView` i zastępowanie `Draw`. Możemy utworzyć widok niestandardowy i dodaj go do hierarchii widok, aby zademonstrować.
 
 ### <a name="inheriting-from-uiview"></a>Dziedziczenie z UIView
 
-W pierwszej kolejności konieczne jest, Utwórz klasę widoku niestandardowego. Firma Microsoft będzie to zrobić przy użyciu **klasy** szablonu w programie Visual Studio, aby dodać pustą klasę o nazwie `CircleView`. Klasa podstawowa powinna być równa `UIView`, który mamy odwołania jest w `UIKit` przestrzeni nazw. Poprosimy Cię o również `System.Drawing` również przestrzeni nazw. Inne różnych `System.*` przestrzeni nazw nie będzie używana w tym przykładzie, więc możesz je usunąć.
+Pierwszą rzeczą, jaką musimy jest, Utwórz klasę dla widoku niestandardowego. Możemy to zrobić za pomocą **klasy** szablonu w programie Visual Studio, aby dodać pustą klasę o nazwie `CircleView`. Klasa podstawowa powinna być równa `UIView`, która możemy Odwołaj znajduje się w `UIKit` przestrzeni nazw. Będziemy również potrzebować `System.Drawing` także przestrzeni nazw. Inne różnych `System.*` przestrzeni nazw nie będzie używany w tym przykładzie, więc możesz je usunąć.
 
-Klasa powinna wyglądać następująco:
+Klasa powinien wyglądać następująco:
 
 ```csharp
 using System;
@@ -505,9 +505,9 @@ namespace CodeOnlyDemo
 
 ### <a name="drawing-in-a-uiview"></a>Rysowanie w UIView
 
-Każdy `UIView` ma `Draw` metodę, która jest wywoływana przez system, kiedy zachodzi potrzeba narysowania. `Draw` nigdy nie powinna być wywoływana bezpośrednio. Jest ona wywoływana przez system podczas przetwarzania wykonywania pętli. Po raz pierwszy przez wykonywania pętli po dodaniu widoku do hierarchii widoku jego `Draw` metoda jest wywoływana. Kolejne wywołania `Draw` wystąpić, gdy widok jest oznaczony jako wymagające narysowania przez wywołanie albo `SetNeedsDisplay` lub `SetNeedsDisplayInRect` w widoku.
+Każdy `UIView` ma `Draw` metodę, która jest wywoływana przez system, gdy musi zostać narysowany. `Draw` nigdy nie powinna być wywoływana bezpośrednio. Jest ona wywoływana przez system podczas przetwarzania wykonywania pętli. Po raz pierwszy przy użyciu wykonywania pętli po dodaniu do hierarchii widoków, widok jego `Draw` metoda jest wywoływana. Kolejne wywołania `Draw` występują, gdy widok jest oznaczony jako wymagające do rysowania, wywołując jedną `SetNeedsDisplay` lub `SetNeedsDisplayInRect` w widoku.
 
-Można dodać kod rysowania do naszej widoku przez dodanie takich kodu wewnątrz przesłoniętej `Draw` metody, jak pokazano poniżej:
+Możemy dodać kod rysowania naszych widoku przez dodanie takiego kodu wewnątrz zastąpione `Draw` metody, jak pokazano poniżej:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -533,7 +533,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Ponieważ `CircleView` jest `UIView`, firma Microsoft może także ustawić `UIView` również właściwości. Na przykład możemy ustawić `BackgroundColor` w Konstruktorze:
+Ponieważ `CircleView` jest `UIView`, firma Microsoft można również ustawić `UIView` również właściwości. Na przykład możemy ustawić `BackgroundColor` w Konstruktorze:
 
 ```csharp
 public CircleView()
@@ -542,15 +542,15 @@ public CircleView()
 }
 ```
 
-Aby użyć `CircleView` właśnie utworzony, możemy dodać go jako widok podrzędny hierarchii widoku w istniejącego kontrolera, jak robiliśmy z `UILabels` i `UIButton` wcześniej, lub firma Microsoft może ładować jako widok nowego kontrolera. Poznajmy drugie.
+Aby użyć `CircleView` właśnie utworzyliśmy, firma Microsoft może albo dodaj go jako widok podrzędny do Wyświetl hierarchię w istniejącego kontrolera, ile My mieliśmy z `UILabels` i `UIButton` wcześniej, albo załadować go jako widok nowy kontroler. Wykonamy teraz zadania z drugim.
 
 ### <a name="loading-a-view"></a>Trwa ładowanie widoku
 
- `UIViewController` zawiera metodę o nazwie `LoadView` który jest wywoływany przez kontrolera w celu utworzenia jego widoku. Jest to odpowiednie miejsce do utworzenia widoku i przypisz go do kontrolera `View` właściwości.
+ `UIViewController` zawiera metodę o nazwie `LoadView` który jest wywoływany przez kontroler utworzyć jej widok. Jest to odpowiednie miejsce, aby utworzyć widok i przypisać ją do kontrolera `View` właściwości.
 
-Najpierw należy kontrolera, dlatego Utwórz pusty nową klasę o nazwie `CircleController`.
+Po pierwsze potrzebujemy kontrolera, dzięki czemu można tworzyć nowe pustą klasę o nazwie `CircleController`.
 
-W `CircleController` Dodaj następujący kod, aby ustawić `View` do `CircleView` (nie należy wywołać `base` implementacja zastąpienia):
+W `CircleController` Dodaj następujący kod, aby ustawić `View` do `CircleView` (nie należy wywołać `base` implementacji przesłonięcia):
 
 ```csharp
 using UIKit;
@@ -570,7 +570,7 @@ namespace CodeOnlyDemo
 }
 ```
 
-Na koniec należy przedstawić kontrolera w czasie wykonywania. Umożliwia to zrobić przez dodawanie obsługi zdarzeń na przycisk przesyłania dodaliśmy wcześniej w następujący sposób:
+Na koniec należy przedstawić kontrolera w czasie wykonywania. Możemy to zrobić, dodając procedurę obsługi zdarzeń na przycisk przesyłania, który dodano wcześniej, wykonując następujące czynności:
 
 ```csharp
 submitButton.TouchUpInside += delegate
@@ -583,44 +583,44 @@ submitButton.TouchUpInside += delegate
 };
 ```
 
-Teraz gdy firma Microsoft może uruchomić aplikację, a następnie naciśnij przycisk Prześlij, zostanie wyświetlony nowy widok z kółkiem:
+Teraz gdy firma Microsoft może uruchomić aplikację, a następnie naciśnij przycisk Prześlij, jest wyświetlany nowy widok jest okrąg:
 
- [![](ios-code-only-images/circles.png "Zostanie wyświetlony nowy widok z okręgu")](ios-code-only-images/circles.png#lightbox)
+ [![](ios-code-only-images/circles.png "Zostanie wyświetlony nowy widok jest okrąg")](ios-code-only-images/circles.png#lightbox)
 
-## <a name="creating-a-launch-screen"></a>Tworzenie ekranu uruchamiania
+## <a name="creating-a-launch-screen"></a>Tworzenie ekranu startowego
 
-A [ekran startowy](~/ios/app-fundamentals/images-icons/launch-screens.md) jest wyświetlane, gdy aplikacja jest uruchamiany jako sposób wyświetlenia użytkownikom jest elastyczny. Ponieważ ekran startowy jest wyświetlany podczas ładowania aplikacji, nie można utworzyć w kodzie jako aplikacja jest nadal ładowany do pamięci. 
+A [ekran startowy](~/ios/app-fundamentals/images-icons/launch-screens.md) jest wyświetlany podczas uruchamiania aplikacji jako sposób mają być wyświetlane użytkownikom, że jest elastyczny. Ponieważ ekran startowy jest wyświetlany podczas ładowania aplikacji, nie można utworzyć w kodzie, ponieważ aplikacja jest nadal ładowany do pamięci. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Gdy Twoje Tworzenie projektu programu Visual Studio, uruchomić ekranu jest dostarczany w formie pliku .xib, który znajduje się w systemie iOS **zasobów** folder wewnątrz projektu. 
+Po usługi tworzenia projektu w programie Visual Studio, na ekranie uruchamiania, jest dostarczany w formie pliku .pliki, który znajduje się w systemie iOS **zasobów** folder wewnątrz projektu. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Jeśli Twoje tworzenia projektu systemu iOS w programie Visual Studio dla komputerów Mac, uruchom ekranu jest dostarczany w formie pliku scenorysu. 
+Po usługi tworzenia projektu systemu iOS w programie Visual Studio dla komputerów Mac, na ekranie uruchamiania, jest dostarczany w formie pliku scenorysu. 
 
 -----
 
-To można edytować podwójne kliknięcie jej i otwierając go w systemie iOS projektanta.
+Mogą to być edytowane przez podwójne kliknięcie jej i otworzyć go w narzędziu iOS Designer.
 
-Firma Apple zaleca czy .xib lub scenorysu, plik jest używany dla aplikacji przeznaczonych dla systemu iOS 8 lub później, podczas uruchamiania albo plikiem w systemie iOS projektanta użyjesz klasy wielkości i układu automatycznego dostosowania układu tak, aby wygląda dobrze i wyświetla prawidłowo, wszystkie urządzenia rozmiary. Obraz statyczny uruchamiania może służyć oprócz .xib lub Storyboard, umożliwia obsługę aplikacji przeznaczonych dla wcześniejszych wersji.
+Firma Apple zaleca czy .pliki lub plikiem scenorysu jest używana dla aplikacji przeznaczonych dla systemu iOS 8 lub później, po uruchomieniu dowolnego pliku w narzędziu iOS Designer, korzystając z klas rozmiaru oraz układu automatycznego dostosowania układu, tak aby wygląda dobrze, a wyświetlany poprawnie, dla wszystkich urządzeń rozmiary. Obraz statyczny uruchamiania może służyć oprócz .pliki lub Storyboard, aby umożliwić obsługę aplikacji przeznaczonych dla wcześniejszych wersji.
 
-Aby uzyskać więcej informacji na temat tworzenia ekranu uruchamiania można skorzystać z dokumentów poniżej:
+Więcej informacji na temat tworzenia ekranu uruchamiania można znaleźć w poniższych dokumentach:
 
-- [Tworzenie ekranu uruchamiania przy użyciu .xib](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
-- [Zarządzanie uruchamiania ekrany z Scenorys](~/ios/app-fundamentals/images-icons/launch-screens.md)
-
-> [!IMPORTANT]
-> Począwszy od systemu iOS 9 Apple, zaleca się, że Scenorys powinna być używana jako podstawowej metody tworzenia ekranu uruchamiania.
-
-### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Tworzenie obrazu uruchamiania dla wstępnego systemu iOS 8 aplikacji
-
-Obraz statyczny umożliwia oprócz .xib lub ekran startowy scenorysu aplikacji elementów docelowych w wersjach starszych niż system iOS 8. 
-
-Ten statyczny obraz można ustawić w pliku Info.plist lub jako katalog zasobów (dla systemu iOS 7) w aplikacji. Należy podać oddzielne obrazy dla każdego rozmiaru urządzenia (320 x 480, 640 x 960 640 x 1136), który aplikacja może być uruchamiana. Aby uzyskać więcej informacji na temat rozmiarów ekranu uruchamiania wyświetlić [uruchamianie obrazy ekranu](~/ios/app-fundamentals/images-icons/launch-screens.md) przewodnik.
+- [Tworzenie ekranu uruchamiania przy użyciu .pliki](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Zarządzanie ekrany uruchamiania, za pomocą scenorysów](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> Jeśli aplikacja nie ma żadnych ekranu uruchamiania, można zauważyć, że nie pełni dopasowania do ekranu. Jeśli jest to możliwe, należy upewnić się, że zawierają co najmniej obraz 640 x 1136 o nazwie `Default-568@2x.png` do Twojego pliku Info.plist. 
+> Począwszy od systemu iOS 9 firmy Apple, zaleca się, że scenorysów powinien być używany jako podstawowej metody tworzenia ekranu uruchamiania.
+
+### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Tworzenie obrazów uruchamiania dla wstępnego dla systemu iOS 8 aplikacji
+
+Obraz statyczny może służyć także .pliki lub ekranu startowego scenorysu, jeśli aplikacja jest przeznaczony dla wersji wcześniejszych niż system iOS 8. 
+
+Ten obraz statyczny można ustawić w pliku Info.plist lub jako katalog zasobów (dla systemu iOS 7) w aplikacji. Należy podać oddzielne obrazy dla każdego rozmiaru urządzenia (320 x 480, 640 x 960 640 x 1136), które aplikacja może być uruchamiana. Aby uzyskać więcej informacji na temat rozmiarów ekranu uruchamiania, należy wyświetlić [obrazy ekranu uruchamiania](~/ios/app-fundamentals/images-icons/launch-screens.md) przewodnik.
+
+> [!IMPORTANT]
+> Jeśli aplikacja ma ekranu nie uruchamianie, można zauważyć, że nie pełni dopasowania do ekranu. Jeśli jest to możliwe, należy pamiętać uwzględnić co najmniej obraz 640 x 1136, o nazwie `Default-568@2x.png` do pliku Info.plist. 
 
 
 
@@ -628,11 +628,11 @@ Ten statyczny obraz można ustawić w pliku Info.plist lub jako katalog zasobów
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-W tym artykule opisano sposób tworzenia aplikacji systemu iOS w programie Visual Studio. Analizujemy jak zbudować projekt z pusty szablon projektu, dyskutować sposobu tworzenia i dodać do okna kontroler widoku głównego. Firma Microsoft następnie pokazano, jak używać formantów z UIKit do tworzenia hierarchii widoku w kontrolerze umożliwiające tworzenie ekranu aplikacji. Obok możemy zbadać jak dokonanie widoki układ odpowiednio w różnych położeniach i widzieliśmy jak utworzyć widok niestandardowy przez podklasy `UIView`, a także załadować widoku w kontrolerze. Na koniec mamy przedstawione sposób dodawania ekran startowy do aplikacji.
+W tym artykule omówiono sposób tworzenia aplikacji systemu iOS w programie Visual Studio. Zobaczyliśmy, jak utworzyć projekt z szablonu pusty projekt Omawiając sposób utworzyć i dodać kontroler widoku głównego okna. Firma Microsoft następnie pokazano, jak używać kontrolki z UIKit do tworzenia Wyświetl hierarchię w ramach kontrolera do tworzenia ekranu aplikacji. Następnie zbadaliśmy, jak się widoki układ odpowiednio w różnych orientacji i widzieliśmy, jak utworzyć widok niestandardowy przez podklasy `UIView`, a także można załadować widoku w kontrolerze. Na koniec rozważyliśmy jak dodać ekran startowy aplikacji.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-W tym artykule opisano sposób tworzenia aplikacji systemu iOS w programie Visual Studio dla komputerów Mac. Analizujemy jak zbudować projekt z szablonu pojedynczego widoku dyskutować sposobu tworzenia i dodać do okna kontroler widoku głównego. Firma Microsoft następnie pokazano, jak używać formantów z UIKit do tworzenia hierarchii widoku w kontrolerze umożliwiające tworzenie ekranu aplikacji. Obok możemy zbadać jak dokonanie widoki układ odpowiednio w różnych położeniach i widzieliśmy jak utworzyć widok niestandardowy przez podklasy `UIView`, a także załadować widoku w kontrolerze. Na koniec mamy przedstawione sposób dodawania ekran startowy do aplikacji.
+W tym artykule omówiono sposób tworzenia aplikacji systemu iOS w programie Visual Studio dla komputerów Mac. Przyjrzeliśmy się sposób budowania projektu z szablonem pojedynczy widok, omawiając sposób utworzyć i dodać kontroler widoku głównego okna. Firma Microsoft następnie pokazano, jak używać kontrolki z UIKit do tworzenia Wyświetl hierarchię w ramach kontrolera do tworzenia ekranu aplikacji. Następnie zbadaliśmy, jak się widoki układ odpowiednio w różnych orientacji i widzieliśmy, jak utworzyć widok niestandardowy przez podklasy `UIView`, a także można załadować widoku w kontrolerze. Na koniec rozważyliśmy jak dodać ekran startowy aplikacji.
 
 -----
 

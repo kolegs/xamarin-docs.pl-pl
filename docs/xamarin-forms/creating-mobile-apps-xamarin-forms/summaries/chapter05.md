@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: c82e222fd47f3a3f13043c076c488b4769659352
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995456"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156499"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Podsumowanie rozdział 5. Obsługa rozmiarów
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
 Do tej pory napotkano kilku rozmiarów w interfejsie Xamarin.Forms:
 
@@ -36,7 +39,10 @@ Programiści przeznaczone dla urządzeń iPhone i iPad firmy Apple w dalszym ci�
 
 Android jest podobny. Programiści pracować w jednostkach *pikselach niezależnych od gęstości* (dps) i relacji między dps i pikseli opiera się na 160 dps na cal.
 
-Środowisko wykonawcze Windows także ustanowił skalowania czynników, które oznaczają coś blisko 160 jednostki niezależne od urządzenia w celu CAL.
+Windows Phone i urządzeń przenośnych również ustalonymi skalowania czynników, które oznaczają coś blisko 160 jednostki niezależne od urządzenia w celu CAL.
+
+> [!NOTE]
+> Zestaw narzędzi Xamarin.Forms nie obsługuje już dowolnego telefonu z systemem Windows lub urządzenia przenośnego.
 
 Podsumowując programisty Xamarin.Forms, przeznaczone dla telefonów i tabletów założyć, że wszystkie jednostki miary są oparte na następujących kryteriów:
 
