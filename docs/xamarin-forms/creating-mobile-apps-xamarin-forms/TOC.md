@@ -1,5 +1,4 @@
 # [Tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms — książka](index.md)
-## [Podsumowanie rozdziałów](summaries/index.md)
 ## [1. Jakie jest przeznaczenie zestawu narzędzi Xamarin.Forms?](summaries/chapter01.md)
 ## [2. Anatomia aplikacji](summaries/chapter02.md)
 ## [3. Większe zagłębienie w tekst](summaries/chapter03.md)
