@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995472"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156629"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Podsumowanie rozdziałów 13. Mapy bitowe
+
+> [!NOTE] 
+> Uwagi na tej stronie wskazać obszary, w którym Xamarin.Forms podzielił z materiału znajdujące się w książce.
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) element Wyświetla mapę bitową. Wszystkie platformy Xamarin.Forms obsługuje formaty plików JPEG, PNG, GIF i BMP.
 
 Mapy bitowe, w interfejsie Xamarin.Forms pochodzą z czterech miejsc:
 
 - W sieci web określony przez adres URL
-- Osadzony jako zasób w typowych Portable Class Library
+- Osadzony jako zasób w bibliotece udostępnionej
 - Osadzony jako zasób w projektach aplikacji platformy
 - Z dowolnego miejsca, które mogą być przywoływane przez .NET `Stream` obiekt, w tym `MemoryStream`
 
-Zasoby mapy bitowej w aplikacji PCL są niezależne od platformy, zasoby mapy bitowej w projektach platformy są specyficzne dla platformy.
+Zasoby mapy bitowej w bibliotece udostępnionej są niezależne od platformy, zasoby mapy bitowej w projektach platformy są specyficzne dla platformy.
+
+> [!NOTE] 
+> Tekst książki sprawia, że odwołania do biblioteki klas przenośnych, które zostały zastąpione przez biblioteki .NET Standard. Cały kod przykładowy z książki został przekonwertowany przy użyciu standardowych bibliotek platformy .NET.
 
 Mapa bitowa jest określany przez ustawienie [ `Source` ](xref:Xamarin.Forms.Image.Source) właściwość `Image` do obiektu typu [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), trzy pochodne klasy abstrakcyjnej:
 
@@ -63,7 +69,7 @@ Plik mapy bitowej można dodać do aplikacji PCL lub do folderu w aplikacji PCL.
 Ustawia program `VerticalOptions` i `HorizontalOptions` właściwości `Image` do `LayoutOptions.Center`, co sprawia, że `Image` element nieograniczone. `Image` i mapy bitowej mają taki sam rozmiar:
 
 - W systemach iOS i Android `Image` jest rozmiar mapy bitowej w pikselach. Istnieje mapowanie jeden do jednego między pikselami mapy bitowej, a w pikselach.
-- Na platformach Windows Runtime `Image` jest rozmiar w pikselach mapy bitowej w jednostkach niezależnych od urządzenia. Na większości urządzeń każdego piksela mapy bitowej zajmuje wiele w pikselach.
+- Na platformie Windows Universal `Image` jest rozmiar w pikselach mapy bitowej w jednostkach niezależnych od urządzenia. Na większości urządzeń każdego piksela mapy bitowej zajmuje wiele w pikselach.
 
 [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) przykładowy umieszcza `Image` w pionie `StackLayout` w XAML. Rozszerzenia znaczników o nazwie [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) pozwala odwoływać się do osadzonego zasobu w XAML. Ta klasa ładowane są tylko zasoby z zestawu, w którym się znajduje, więc nie można umieścić w bibliotece.
 
@@ -82,7 +88,10 @@ Najlepszym rozwiązaniem jest zaczynają się od mapę bitową większa niż sze
 
 ### <a name="browsing-and-waiting"></a>Przeglądanie i oczekiwania
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) przykładowe umożliwia użytkownikowi przeglądanie za pomocą standardowych obrazów przechowywanych w witrynie sieci web platformy Xamarin. Używa ona .NET `WebRequest` klasy, aby pobrać plik JSON z listą mapy bitowej.
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) przykładowe umożliwia użytkownikowi przeglądanie za pomocą standardowych obrazów przechowywanych w witrynie sieci web platformy Xamarin. Używa ona .NET [ `WebRequest` ](xref:System.Net.WebRequest) klasy, aby pobrać plik JSON z listą mapy bitowej.
+
+> [!NOTE]
+> Należy użyć zestawu narzędzi Xamarin.Forms programy [ `HttpClient` ](xref:System.Net.Http.HttpClient) zamiast [ `WebRequest` ](xref:System.Net.WebRequest) do uzyskiwania dostępu do plików za pośrednictwem Internetu. 
 
 Program używa [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) do wskazania, że coś, co się dzieje. Ponieważ ładowania każdą mapę bitową tylko do odczytu [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) właściwość `Image` jest `true`. `IsLoading` Właściwość jest wspierana przez właściwości możliwej do wiązania, więc `PropertyChanged` zdarzenie jest wywoływane po zmianie właściwości. Dołącza obsługę do tego zdarzenia, program używa bieżącego ustawienia `IsLoaded` można ustawić [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) właściwość `ActivityIndicator`.
 
@@ -154,7 +163,7 @@ Dla mapy bitowej ma być renderowany w jednym cala kwadratowego różne wersje m
 
 Mapa bitowa zawsze będzie renderowany w 160 jednostek niezależnych od urządzenia. (Standardowy szablon rozwiązania Xamarin.Forms zawiera tylko hdpi xhdpi i foldery xxhdpi.)
 
-Projekty Windows Runtime obsługują mapy bitowej schemat, który składa się z współczynnik skalowania w pikselach na jednostka miary niezależna od urządzenia jako procent, na przykład nazwy:
+Projekt platformy uniwersalnej systemu Windows obsługuje mapy bitowej schemat nazewnictwa, która składa się z współczynnik skalowania w pikselach na jednostka miary niezależna od urządzenia jako procent, na przykład:
 
 - MyImage.scale-200.jpg w kształcie kwadratu 320 pikseli
 
@@ -164,7 +173,7 @@ Podczas dodawania mapy bitowe w projektach platformy **Build Action** powinno by
 
 - dla systemu iOS: **BundleResource**
 - Android: **AndroidResource**
-- Środowisko wykonawcze Windows: **zawartości**
+- Platformy uniwersalnej systemu Windows: **zawartości**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) Przykładowa aplikacja tworzy dwa obiekty przycisku przypominającej składający się z `Image` elementów za pomocą `TapGestureRecognizer` zainstalowane. Jest ona przeznaczona, obiekty znajdować się jeden cala kwadrat. `Source` Właściwość `Image` można ustawić przy użyciu `OnPlatform` i `On` obiektów, aby odwoływać się do innej nazwy plików na platformach. Obrazy mapy bitowej obejmują numery wskazują ich rozmiar w pikselach, aby było widać, których rozmiar mapy bitowej są pobierane i renderowania.
 
@@ -188,10 +197,12 @@ Systemów iOS i Android wymagają strona, wyświetlająca pasek narzędzi [ `Nav
 
 Umożliwia także map bitowych określonych platform można ustawić [ `Image` ](xref:Xamarin.Forms.Button.Image) właściwość `Button` do mapy bitowej kwadratu 32 jednostek niezależnych od urządzenia, jak pokazano w [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) próbki.
 
-
+> [!NOTE]
+> Użycie obrazów na przyciskach został rozszerzony. Zobacz [przy użyciu map bitowych za pomocą przycisków](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Pełny tekst rozdziale 13 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [Przykłady rozdziale 13](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Praca z obrazami](~/xamarin-forms/user-interface/images.md)
+- [Za pomocą mapy bitowe przycisków](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)
