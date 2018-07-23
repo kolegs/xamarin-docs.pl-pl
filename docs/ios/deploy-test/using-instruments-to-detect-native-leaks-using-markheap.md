@@ -1,68 +1,68 @@
 ---
-title: Profilowanie aplikacji platformy Xamarin.iOS z dokumentów
-description: Ten dokument zawiera opis sposobu Profiluj aplikację platformy Xamarin.iOS zainstalowane na urządzenie lub symulator przy użyciu aplikacji dokumentów firmy Apple.
+title: Profilowanie aplikacji platformy Xamarin.iOS za pomocą narzędzia Instruments
+description: W tym dokumencie opisano sposób użycia aplikacji Instruments firmy Apple do profilu aplikacji platformy Xamarin.iOS zainstalowana na urządzeniu lub symulatora.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785615"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182211"
 ---
-# <a name="profiling-xamarinios-applications-with-instruments"></a>Profilowanie aplikacji platformy Xamarin.iOS z dokumentów
+# <a name="profiling-xamarinios-applications-with-instruments"></a>Profilowanie aplikacji platformy Xamarin.iOS za pomocą narzędzia Instruments
 
-Xcode **instrumentów** to narzędzie, które może służyć do do profilu aplikacji platformy Xamarin.iOS na urządzeniu lub w symulatorze. Mono używa jej Just in Time model, aby skompilować kod i dokumentów nie interpretacji tego typu danych również, więc może być trudne do pracy z danymi wyjściowymi symulatora aplikacjach korzystających z instrumentów.
-Z powodu tego błędu w tym przewodniku będzie skoncentrować się na jak interpretować dane wyjściowe dokumentów, w tym dokumencie przy użyciu projektanta aplikacji.
+Środowisko Xcode **instrumentów** to narzędzie, który może służyć do profilowanie aplikacji platformy Xamarin.iOS na urządzeniu lub w symulatorze. Narzędzie mono używa jej Just-in-Time model, aby skompilować kod i instrumenty nie interpretacji tego rodzaju danych, więc może być trudne do pracy z danymi wyjściowymi aplikacji opartych na symulatorze, korzystających z dokumentów.
+Ze względu na ten problem ten przewodnik koncentruje się na temat sposobu interpretacji danych wyjściowych dokumentów, w tym dokumencie za pomocą aplikacji dla deweloperów.
 
 ## <a name="requirements"></a>Wymagania
 
-Instrumentów środowiska Xcode działa tylko na komputerach Mac.
+Instrumentów programu Xcode jest uruchamiany tylko na komputerach Mac.
 
 ## <a name="opening-the-instruments-app"></a>Otwieranie dokumentów aplikacji
 
-Wybierz urządzenie i uruchamianie aplikacji dokumentów:
+Wybierz urządzenie, a następnie uruchom aplikację w instrumenty:
 
-1.  Otwórz projekt platformy Xamarin.iOS w programie Visual Studio dla komputerów Mac.
-2.  Wybierz **Debug | iPhone** konfiguracji.
-3.  Podłącz urządzenie z systemem iOS do komputera.
-4.  W **Uruchom** menu, wybierz opcję **przekazać do urządzenia** . Aplikacja zostanie teraz utworzony i przekazane do urządzenia.
-5.  W **narzędzia** menu, wybierz opcję **uruchamianie instrumentów**.
+1. Otwórz projekt rozszerzenia Xamarin.iOS w programie Visual Studio dla komputerów Mac.
+2. Wybierz **debugowanie | iPhone** konfiguracji.
+3. Podłącz urządzenie z systemem iOS do komputera.
+4. W **Uruchom** menu, wybierz opcję **Przekaż do urządzenia** . Aplikacja zostanie teraz utworzone i przekazane do urządzenia.
+5. W **narzędzia** menu, wybierz opcję **Uruchom instrumenty**.
 
 
 Dokumenty teraz otworzyć i wyświetlić to okno dialogowe:
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Wybieranie szablonów profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Wybieranie szablonu profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
-Kliknij, aby wybrać **alokacji** szablonu. Inne szablony są prawidłowe, jednak w tym artykule omówiono tylko **alokacji** szablonu profilu.
+Kliknij, aby wybrać **alokacje** szablonu. Inne szablony są prawidłowe, ale w tym artykule omówiono tylko **alokacje** szablon profilu.
 
-Następnie wybierz urządzenie i aplikacji przy użyciu menu w górnej części okna:
+Następnie wybierz urządzenia i aplikacji przy użyciu menu w górnej części okna:
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Wybierz urządzenia i aplikacji")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
-Urządzenia z systemem iOS powinna być wybrana w menu u góry okna i należy wybrać aplikację do profilowania obok niej (**MemoryDemo** na zrzucie ekranu powyżej).
+Urządzenia z systemem iOS powinno być zaznaczone w menu u góry okna i aplikacji, które mają być profilowane, należy wybrać obok niego (**MemoryDemo** naz zrzucie ekranu).
 
-Jeśli urządzenie nie jest wymieniony w obszarze w menu, sprawdź **konsoli** w programie Visual Studio for Mac komunikaty o błędach, które mogą być wyświetlane, gdy aplikacja jest wdrożona na urządzeniu. Upewnij się również, czy urządzenia zostały udostępnione do tworzenia aplikacji za pomocą organizatora Xcode.
+Jeśli urządzenie nie ma na liście w obszarze menu, sprawdź **konsoli** w programie Visual Studio dla komputerów Mac, komunikaty o błędach, które mogą być wyświetlane, gdy aplikacja jest wdrożona na urządzeniu. Ponadto upewnij się, że urządzenie zostało zaaprowizowane do tworzenia aplikacji za pomocą organizatora Xcode.
 
-Kliknij przycisk **wybierz** przycisk i następnym ekranie powinien zostać wyświetlony:
+Kliknij przycisk **wybierz** przycisku i następnym ekranem powinien pojawić się:
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Interfejs profilowania")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
-Kliknij przycisk rekordu (czerwone kółko w lewym górnym) do uruchomienia profilowania.
+Kliknij przycisk rekordu (czerwone kółko w lewym górnym rogu), aby rozpocząć profilowanie.
 
-Poniższy zrzut ekranu przedstawia przykład profilowanie przy użyciu **instrumentów**:
+Poniższy zrzut ekranu przedstawia przykład profilowania przy użyciu **instrumentów**:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Przykład profilowania za pomocą dokumentów")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Przykładem profilowania przy użyciu instrumenty")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku pokazano, jak uruchomić instrumentów środowiska Xcode do monitorowania aplikacji systemu iOS z poziomu programu Visual Studio dla komputerów Mac. Przejdź do [wskazówki instrumentów](~/ios/deploy-test/walkthrough-apples-instrument.md) na przykład jak zdiagnozować problem pamięci za pomocą dokumentów.
+W przewodniku pokazano, jak uruchomić instrumentów programu Xcode do monitorowania aplikacji dla systemu iOS z poziomu programu Visual Studio dla komputerów Mac. Przejdź do [wskazówki instrumentów](~/ios/deploy-test/walkthrough-apples-instrument.md) przykładowy sposób diagnozowania problemu pamięci, za pomocą dokumentów.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Wskazówki dokumentów](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Xamarin.iOS wyrzucanie elementów bezużytecznych](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Przewodnik instrumenty](~/ios/deploy-test/walkthrough-apples-instrument.md)
+- [Xamarin.iOS wyrzucania elementów bezużytecznych (wpis na blogu)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

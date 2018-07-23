@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: faec35ec9eb579327972471e7747ad8a38504850
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996389"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175180"
 ---
 # <a name="android-platform-specifics"></a>Android specyficznych dla platformy
 
@@ -411,7 +411,7 @@ Należy pamiętać, że na zrzucie ekranu powyżej każdego [ `Button` ](xref:Xa
 
 ## <a name="setting-tabbedpage-toolbar-placement-and-color"></a>Ustawianie narzędzi TabbedPage położenie i kolor
 
-Te specyficznych dla platformy są używane do ustawiania położenia i koloru paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Są one używane w XAML, ustawiając [ `TabbedPage.ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.toolbarplacementproperty?view=xamarin-forms) dołączona właściwość na wartość [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) wyliczenia, a [ `TabbedPage.BarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.baritemcolorproperty?view=xamarin-forms) i [ `TabbedPage.BarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.barselecteditemcolorproperty?view=xamarin-forms) dołączonych właściwości [ `Color` ](xref:Xamarin.Forms.Color):
+Te specyficznych dla platformy są używane do ustawiania położenia i koloru paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Są one używane w XAML, ustawiając [ `TabbedPage.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty) dołączona właściwość na wartość [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) wyliczenia, a [ `TabbedPage.BarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty) i [ `TabbedPage.BarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty) dołączonych właściwości [ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
 <TabbedPage ...
@@ -435,16 +435,16 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>` Metoda określa, że te specyficznych dla platformy będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do ustawiania położenia paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), za pomocą [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) wyliczenie, podając następujące wartości:
+`TabbedPage.On<Android>` Metoda określa, że te specyficznych dla platformy będzie uruchamiane tylko w systemie Android. [ `TabbedPage.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)) Metody w [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) przestrzeni nazw jest używana do ustawiania położenia paska narzędzi na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), za pomocą [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) wyliczenie, podając następujące wartości:
 
-- [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) — Wskazuje, że pasek narzędzi jest umieszczany w lokalizacji domyślnej na stronie. Jest to górnej części strony na telefonach i dolnej części strony na inne idiomy urządzenia.
-- [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) — Wskazuje, że pasek narzędzi znajduje się w górnej części strony.
-- [`Bottom`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Bottom) — Wskazuje, że pasek narzędzi znajduje się w dolnej części strony.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Default) — Wskazuje, że pasek narzędzi jest umieszczany w lokalizacji domyślnej na stronie. Jest to górnej części strony na telefonach i dolnej części strony na inne idiomy urządzenia.
+- [`Top`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Top) — Wskazuje, że pasek narzędzi znajduje się w górnej części strony.
+- [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom) — Wskazuje, że pasek narzędzi znajduje się w dolnej części strony.
 
-Ponadto [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) i [ `TabbedPage.SetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) metody są używane odpowiednio ustawić kolor elementów paska narzędzi i elementów wybranych narzędzi.
+Ponadto [ `TabbedPage.SetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) i [ `TabbedPage.SetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) metody są używane odpowiednio ustawić kolor elementów paska narzędzi i elementów wybranych narzędzi.
 
 > [!NOTE]
-> [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), I [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) metody może służyć do pobierania, położenie i kolor [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) paska narzędzi.
+> [ `GetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})), [ `GetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})), I [ `GetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) metody może służyć do pobierania, położenie i kolor [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) paska narzędzi.
 
 Wynik jest, że położenie paska narzędzi, kolor elementów paska narzędzi i kolor elementu wybranych narzędzi można ustawić na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 

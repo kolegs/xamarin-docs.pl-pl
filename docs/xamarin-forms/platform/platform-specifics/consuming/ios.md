@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998989"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175193"
 ---
-# <a name="ios-platform-specifics"></a>specyficznych dla platformy systemu iOS
+# <a name="ios-platform-specifics"></a>specyficznych dla platformy systemu iOS 
 
 _Zezwalaj na specyficznych dla platformy, umożliwiają korzystanie z funkcji, które są dostępne tylko na danej platformie, bez stosowania niestandardowe programy renderujące lub efekty. W tym artykule pokazano, jak korzystać z systemem iOS specyficznych dla platformy, które są wbudowane w platformy Xamarin.Forms._
 
@@ -620,7 +620,7 @@ Wynik nie będzie można włączyć na cień [ `VisualElement` ](xref:Xamarin.Fo
 
 Gdy [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) jest dołączony do widoku w widoku przewijania, wszystkie pan gestów są przechwytywane przez `PanGestureRecognizer` i nie są przekazywane do przewijania widoku. W związku z tym nie jest już przewinie przewijania widoku.
 
-Umożliwia to specyficzne dla platformy `PanGestureRecognizer` w widoku przewijania do przechwytywania i udostępniania gestu pan przewijania widoku. Jest używany w XAML, ustawiając [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) dołączonych właściwości `true`:
+Umożliwia to specyficzne dla platformy `PanGestureRecognizer` w widoku przewijania do przechwytywania i udostępniania gestu pan przewijania widoku. Jest używany w XAML, ustawiając [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) dołączonych właściwości `true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Metody w [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) przestrzeni nazw jest używana do kontroli, czy aparat rozpoznawania gestów pan w widoku przewijania będzie przechwytywać gestu pan lub przechwytywania i udostępniania panoramowanie gest przewijania widoku. Ponadto [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) metoda może służyć do zwrócenia, czy widok przewijania, który zawiera, są udostępniane w gestu pan [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+`Application.On<iOS>` Metoda określa, że określonych platform będzie uruchamiane tylko w systemie iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean)) Metody w [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) przestrzeni nazw jest używana do kontroli, czy aparat rozpoznawania gestów pan w widoku przewijania będzie przechwytywać gestu pan lub przechwytywania i udostępniania panoramowanie gest przewijania widoku. Ponadto [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application})) metoda może służyć do zwrócenia, czy widok przewijania, który zawiera, są udostępniane w gestu pan [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
 
 W związku z tym specyficzne dla platformy włączone, gdy [ `ListView` ](xref:Xamarin.Forms.ListView) zawiera [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), zarówno `ListView` i `PanGestureRecognizer` otrzyma gestu Kadrowanie i go przetworzyć. Jednak w przypadku tego specyficznego dla platformy wyłączone, gdy `ListView` zawiera `PanGestureRecognizer`, `PanGestureRecognizer` będzie przechwytywać gestu pan i przetworzyć te dane i `ListView` nie będziesz otrzymywać gestu przesuwanie.
 
