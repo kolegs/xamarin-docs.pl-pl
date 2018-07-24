@@ -310,6 +310,7 @@
 ## [Pojęcia zaawansowane i elementy wewnętrzne](internals/index.md)
 ### [Szybkie programy renderujące](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [Rozpoznawanie zależności](internals/dependency-resolution.md)
 ## [Rozwiązywanie problemów](troubleshooting/index.md)
 ### [Często zadawane pytania](troubleshooting/questions/index.md)
 #### [Czy mogę zaktualizować domyślny szablon zestawu narzędzi Xamarin.Forms do nowszego pakietu NuGet?](troubleshooting/questions/update-forms-template.md)
