@@ -6,13 +6,13 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/16/2018
+ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998249"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202997"
 ---
 # <a name="xamarinforms-entry"></a>Wpis zestawu narzędzi Xamarin.Forms
 
@@ -59,26 +59,98 @@ var entry = new Entry { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) właściwości wartość 0 oznacza, że może być brak danych wejściowych, a wartość `int.MaxValue`, co jest wartością domyślną dla [ `Entry` ](xref:Xamarin.Forms.Entry), wskazuje, że istnieje nie skuteczne limit liczby znaków, które mogą być wprowadzane.
 
-### <a name="keyboards"></a>Klawiatury
+### <a name="customizing-the-keyboard"></a>Dostosowywanie klawiatury
 
-Klawiatura, które są prezentowane podczas interakcji z `Entry` można ustawić programowo za pośrednictwem `Keyboard` właściwości.
+Klawiatura, które są prezentowane podczas interakcji z [ `Entry` ](xref:Xamarin.Forms.Entry) można ustawić programowo za pośrednictwem [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) właściwości do jednej z następujących właściwości z [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) klasy:
 
-Opcje typu klawiatury są następujące:
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) — używany do badań i miejsc, w którym emoji są przydatne.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) — Klawiatura domyślne.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) — używany podczas wprowadzania adresu e-mail.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) — używany podczas wprowadzania liczb.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) — używany podczas wprowadzania tekstu, bez jakichkolwiek [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags) określony.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) — używany podczas wprowadzania numerów telefonów.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) — używany podczas wprowadzania tekstu.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) — używany do wprowadzania ścieżki do plików i adresy witryn sieci web.
 
-- **Domyślne** &ndash; klawiatury domyślne
-- **Porozmawiaj** &ndash; używane dla badań & miejsca gdzie przydają się emoji
-- **Adres e-mail** &ndash; używane podczas wprowadzania adresu e-mail
-- **Liczbowe** &ndash; używane podczas wprowadzania liczb
-- **Telefon** &ndash; używane podczas wprowadzania numerów telefonów
-- **Adres URL** &ndash; używane do wprowadzania ścieżki do plików i adresy witryn sieci web
+Można to zrobić w XAML w następujący sposób:
 
-Brak [przykładzie każdy klawiatury](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) w naszej sekcji przepisy.
+```xaml
+<Entry Keyboard="Chat" />
+```
+
+Jest równoważny kod C#:
+
+```csharp
+var entry = new Entry { Keyboard = Keyboard.Chat };
+```
+
+Przykłady każdego klawiatury można znaleźć w naszej [przepisy](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) repozytorium.
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Ma również klasy [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) metoda fabryki, który może służyć do dostosowywania klawiatury, określając zachowanie wielkości liter, Sprawdź pisownię i sugestii. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) wartości wyliczenia podaną jako argumenty do metody, przy użyciu dostosowanych `Keyboard` zwracanego. `KeyboardFlags` Wyliczenie zawiera następujące wartości:
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) — żadne funkcje nie są dodawane do klawiatury.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) — Wskazuje, że pierwszą literę pierwszy wyraz każdego wpisanego zdania będą automatycznie wpisać wielkimi literami.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) — Wskazuje tego sprawdzania pisowni zostanie przeprowadzone wpisanego tekstu.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) — Wskazuje słowo uzupełnienia będą oferowane na wpisanego tekstu.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) — Wskazuje, że pierwszą literę każdego wyrazu będzie automatycznie wpisać wielkimi literami.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) — Wskazuje, że każdy znak zostanie automatycznie wpisać wielkimi literami.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) — Wskazuje, nastąpi nie automatyczne wielkie litery.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) — Wskazuje, czy sprawdzanie pisowni, zakończenia słowa i zdania wielkość liter wystąpią na wprowadzony tekst.
+
+Poniższy przykład kodu XAML pokazuje, jak dostosować domyślny [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) oferują uzupełnienia programu word i korzystaj każdego wprowadzonego znaku:
+
+```xaml
+<Entry Placeholder="Enter text here">
+    <Entry.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Entry.Keyboard>
+</Entry>
+```
+
+Jest równoważny kod C#:
+
+```csharp
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+#### <a name="customizing-the-return-key"></a>Dostosowywanie klawisz ENTER
+
+Wygląd klawisz ENTER na klawiaturze nietrwałego, która jest wyświetlana, gdy [ `Entry` ](xref:Xamarin.Forms.Entry) ma fokus, może zostać dostosowane przez ustawienie [ `ReturnType` ](xref:Xamarin.Forms.Entry.ReturnType) właściwość z wartością [ `ReturnType` ](xref:Xamarin.Forms.ReturnType) wyliczenia:
+
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) — Wskazuje, że nie określonego klucza zwracany jest wymagane i czy używany będzie domyślny platformy.
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) — Wskazuje "Gotowego" klawisz ENTER.
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) — Wskazuje "Idź" klawisz ENTER.
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) — Wskazuje "Dalej" klawisz ENTER.
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) — Wskazuje "Wyszukaj" klawisz ENTER.
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) — Wskazuje "Send" klawisz ENTER.
+
+W poniższym przykładzie XAML pokazuje, jak ustawić klawisz ENTER:
+
+```xaml
+<Entry ReturnType="Send" />
+```
+
+Jest równoważny kod C#:
+
+```csharp
+var entry = new Entry { ReturnType = ReturnType.Send };
+```
+
+> [!NOTE]
+> Dokładny wygląd klawisz ENTER, zależy od platformy. W systemach iOS klawisz return jest przycisk oparte na tekście. W systemach Android i Universal Windows Platform, klawisz return jest oparte na ikonę przycisku.
+
+Po naciśnięciu klawisza return [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) generowane zdarzenia i wszystkie `ICommand` określony przez [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) właściwość jest wykonywany. Ponadto wszelkie `object` określony przez [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) właściwości, które zostaną przekazane do `ICommand` jako parametr. Aby uzyskać więcej informacji na temat poleceń, zobacz [interfejs polecenia](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
 ### <a name="enabling-and-disabling-spell-checking"></a>Włączanie i wyłączanie sprawdzania pisowni
 
 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Formantów właściwości tego, czy sprawdzanie pisowni jest włączone. Domyślnie ustawiono właściwość `true`. Wprowadzania tekstu, są oznaczone błędnie napisanych wyrazów.
 
-Jednak w niektórych scenariuszach wpis tekstu, na przykład wprowadzając nazwę użytkownika, sprawdzanie pisowni zapewnia środowisko ujemne, a tym samym powinny być wyłączone przez ustawienie [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) właściwości `false`:
+Jednak w niektórych scenariuszach wpis tekstu, na przykład wprowadzając nazwę użytkownika, sprawdzanie pisowni zapewnia ujemny i powinny być wyłączone przez ustawienie [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) właściwości `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -90,6 +162,23 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 
 > [!NOTE]
 > Gdy [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) właściwość jest ustawiona na `false`, a klawiatury niestandardowej nie jest używana, moduł sprawdzania pisowni natywny zostanie wyłączona. Jednak jeśli [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) ma został zestaw, który wyłącza pisowni kontroli, takie jak [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` właściwość jest ignorowana. W związku z tym, aby włączyć sprawdzanie pisowni, w którym nie można użyć właściwości `Keyboard` wyłączają jawnie.
+
+### <a name="enabling-and-disabling-text-prediction"></a>Włączanie i wyłączanie funkcja podpowiadania tekstu
+
+[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) Formantów właściwości czy funkcja podpowiadania tekstu i automatyczna korekta tekstu jest włączona. Domyślnie ustawiono właściwość `true`. Wprowadzania tekstu, są prezentowane prognozy programu word.
+
+Jednak w niektórych scenariuszach wprowadzania tekstu, takich jak wprowadzenie nazwy użytkownika, funkcja podpowiadania tekstu i Tekst automatyczny poprawianiem zapewnia ujemny i powinny być wyłączone przez ustawienie [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) właściwości `false`:
+
+```xaml
+<Entry ... IsTextPredictionEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsTextPredictionEnabled = false };
+```
+
+> [!NOTE]
+> Gdy [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) właściwość jest ustawiona na `false`, a klawiatury niestandardowej nie jest używana funkcja podpowiadania tekstu i automatyczne korekty tekstu jest wyłączona. Jednak jeśli [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) ustawił tego funkcja podpowiadania tekstu wyłącza `IsTextPredictionEnabled` właściwość jest ignorowana. W związku z tym, aby umożliwić funkcja podpowiadania tekstu dla, w którym nie można użyć właściwości `Keyboard` wyłączają jawnie.
 
 ### <a name="placeholders"></a>Symbole zastępcze
 
@@ -141,7 +230,6 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![](entry-images/passwordplaceholder.png "Przykład symbolu zastępczego i IsPassword wpisu")
 
-
 ### <a name="colors"></a>Kolory
 
 Wpis można ustawić tło niestandardowe i kolorów tekstu za pomocą następujących właściwości możliwej do wiązania:
@@ -191,12 +279,12 @@ Uważaj upewnić się, że wybrane kolory tła i tekstu można używać na każd
 
 Wpis przedstawia dwa zdarzenia:
 
-- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; wywoływane, gdy tekst zostanie zmieniony we wpisie. Zawiera tekst, przed zmianą i po niej.
-- [Ukończono](xref:Xamarin.Forms.Entry.Completed) &ndash; wywoływane, gdy użytkownik zakończyła danych wejściowych, naciskając klawisz ENTER na klawiaturze.
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; wywoływane, gdy tekst zostanie zmieniony we wpisie. Zawiera tekst, przed zmianą i po niej.
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; wywoływane, gdy użytkownik zakończyła danych wejściowych, naciskając klawisz ENTER na klawiaturze.
 
 ### <a name="completed"></a>Zakończone
 
-`Completed` Zdarzeń służy do reagowania na ukończenie interakcji z wpisem. `Completed` jest wywoływane, gdy użytkownik zakończy dane wejściowe z polem, wprowadzając klawisz ENTER na klawiaturze. Program obsługi zdarzenia jest program obsługi zdarzeń generycznych, biorąc nadawcy i `EventArgs`:
+`Completed` Zdarzeń służy do reagowania na ukończenie interakcji z wpisem. `Completed` jest wywoływane, gdy użytkownik zakończy dane wejściowe z polem, naciskając klawisz ENTER na klawiaturze. Program obsługi zdarzenia jest program obsługi zdarzeń generycznych, biorąc nadawcy i `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -217,6 +305,8 @@ i C#:
 var entry = new Entry ();
 entry.Completed += Entry_Completed;
 ```
+
+Po [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) wszystkie zdarzenia generowane `ICommand` określony przez [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) właściwość jest wykonywane, za pomocą `object` określony przez [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) przekazywana do właściwości `ICommand`.
 
 ### <a name="textchanged"></a>Textchanged.
 

@@ -1,35 +1,35 @@
 ---
-title: Czcionki w platformy Xamarin.Forms
-description: W tym artykule wyjaśniono, jak określić informacje dotyczące czcionek w formantach, które wyświetlania tekstu w aplikacji platformy Xamarin.Forms.
+title: Czcionki w interfejsie Xamarin.Forms
+description: W tym artykule wyjaśniono, jak Podaj informacje czcionki kontrolek, które wyświetlania tekstu w aplikacjach Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: e6635bc13214a5a4e728fa3e71db86a8ea1c39d6
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269034"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202958"
 ---
-# <a name="fonts-in-xamarinforms"></a>Czcionki w platformy Xamarin.Forms
+# <a name="fonts-in-xamarinforms"></a>Czcionki w interfejsie Xamarin.Forms
 
-W tym artykule opisano sposób platformy Xamarin.Forms pozwala określić atrybuty czcionki (w tym wagi i rozmiaru) w formantach, które wyświetlania tekstu. Czcionka informacje mogą być [określona w kodzie](#Setting_Font_in_Code) lub [określony w języku XAML](#Setting_Font_in_Xaml).
-Istnieje również możliwość użycia [niestandardowe czcionki](#Using_a_Custom_Font).
+W tym artykule opisano, jak Xamarin.Forms pozwala określić atrybuty czcionki (w tym zakresie wagi i rozmiar) na kontrolki, które wyświetlania tekstu. Czcionka informacje mogą być [określić w kodzie](#Setting_Font_in_Code) lub [określone w XAML](#Setting_Font_in_Xaml).
+Istnieje również możliwość użycia [niestandardowej czcionki](#Using_a_Custom_Font).
 
 <a name="Setting_Font_in_Code" />
 
 ## <a name="setting-font-in-code"></a>Ustawienie czcionki w kodzie
 
-Użyj trzech właściwości związanych z czcionki formantów, które wyświetlania tekstu:
+Użyj trzech właściwości związane z czcionki formantów, które wyświetlania tekstu:
 
 - **FontFamily** &ndash; `string` nazwę czcionki.
 - **FontSize** &ndash; rozmiar czcionki jako `double`.
-- **FontAttributes** &ndash; ciąg określający styl informacje, takie jak *Kursywa* i **Bold** (przy użyciu `FontAttributes` wyliczenia w języku C#).
+- **FontAttributes** &ndash; ciąg określający informacje, takie jak styl *Kursywa* i **Bold** (przy użyciu `FontAttributes` wyliczenia w języku C#).
 
-Ten kod przedstawia sposób utworzyć etykietę, a następnie określ rozmiar czcionki i wagi do wyświetlenia:
+Ten kod pokazuje, jak utworzyć etykietę, a następnie określ rozmiar czcionki i wagi do wyświetlenia:
 
 ```csharp
 var about = new Label {
@@ -49,14 +49,14 @@ var about = new Label {
 label.FontSize = 24;
 ```
 
-Można również użyć `NamedSize` wyliczenia, który ma cztery wbudowanych opcji; Platformy Xamarin.Forms wybiera najlepszy rozmiar dla każdej platformy.
+Można również użyć `NamedSize` wyliczenia, która ma cztery wbudowane opcje; Zestaw narzędzi Xamarin.Forms wybiera najlepszy rozmiar dla każdej platformy.
 
 -  **Micro**
 -  **Małe**
--  **Średnia liczba godzin**
+-  **Średni**
 -  **Duże**
 
-`NamedSize` Wyliczenia mogą być używane wszędzie tam, gdzie `FontSize` można określić za pomocą `Device.GetNamedSize` metody można przekonwertować wartości na `double`:
+`NamedSize` Wyliczenia mogą być używane wszędzie tam, gdzie `FontSize` można określać z użyciem `Device.GetNamedSize` metodę, aby przekonwertować wartości na `double`:
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
@@ -66,45 +66,21 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 
 ### <a name="font-attributes"></a>Atrybuty czcionki
 
-Style są takie jak **bold** i *kursywą* można ustawić `FontAttributes` właściwości. Obecnie obsługiwane są następujące wartości:
+Style są takie jak **bold** i *italic* nelze nastavit `FontAttributes` właściwości. Obecnie obsługiwane są następujące wartości:
 
 -  **Brak**
 -  **Bold**
 -  **Kursywa**
 
-`FontAttribute` Wyliczenie może służyć następujący (można określić jeden atrybut lub `OR` je razem):
+`FontAttribute` Wyliczenie może służyć w następujący sposób (można określić jeden atrybut lub `OR` łącznie):
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="formattedstring"></a>FormattedString
+### <a name="setting-font-info-per-platform"></a>Ustawianie informacji czcionki dla danej platformy
 
-Niektóre formanty platformy Xamarin.Forms (takich jak `Label`) obsługują także atrybutów czcionkę w ciągu przy użyciu `FormattedString` klasy. A `FormattedString` składa się z jednego lub więcej `Span`s, z których każda może mieć własną formatowanie atrybutów.
-
-`Span` Klasa ma następujące atrybuty:
-
-* **Tekst** &ndash; wartości do wyświetlenia
-* **FontFamily** &ndash; na nazwę czcionki
-* **FontSize** &ndash; rozmiar czcionki
-* **FontAttributes** &ndash; informacji o stylu, takich jak *kursywą* i **bold**
-* **ForegroundColor** &ndash; kolor tekstu
-* **BackgroundColor** &ndash; kolor tła
-
-Przykład tworzenie i wyświetlanie `FormattedString` są wyświetlane poniżej &ndash; należy pamiętać, że jest przypisany do etykiet `FormattedText` właściwości i nie `Text` właściwości.
-
-```csharp
-var labelFormatted = new Label ();
-var fs = new FormattedString ();
-fs.Spans.Add (new Span { Text="Red, ", ForegroundColor = Color.Red, FontSize = 20, FontAttributes = FontAttributes.Italic });
-fs.Spans.Add (new Span { Text=" blue, ", ForegroundColor = Color.Blue, FontSize = 32 });
-fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, FontSize = 12 });
-labelFormatted.FormattedText = fs;
-```
-
-### <a name="setting-font-info-per-platform"></a>Ustawianie informacji o czcionki dla każdej platformy
-
-Alternatywnie `Device.RuntimePlatform` właściwości może służyć do Ustaw czcionkę nazwy na każdej platformie, jak pokazano w tym kodu:
+Alternatywnie `Device.RuntimePlatform` właściwość może służyć do Ustaw czcionkę nazwy na każdej platformie, jak pokazano w tym kodzie:
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "Lobster-Regular" :
@@ -119,14 +95,14 @@ Jest dobrym źródłem informacji czcionki dla systemu iOS [iosfonts.com](http:/
 
 ## <a name="setting-the-font-in-xaml"></a>Ustawianie czcionkę w XAML
 
-Platformy Xamarin.Forms steruje tym tekst wyświetlany, wszystkie mają `Font` właściwości, które można ustawić w języku XAML. Najprostszym sposobem, aby ustawić czcionkę w języku XAML jest użycie rozmiar nazwanych wartości wyliczenia, jak pokazano w poniższym przykładzie:
+Ten tekst wyświetlania wszystkich pochodzi od zestawu narzędzi Xamarin.Forms `Font` właściwości, które można ustawić w XAML. Najprostszym sposobem, aby ustawić czcionkę w XAML jest użycie rozmiaru nazwanych wartości wyliczenia, jak pokazano w poniższym przykładzie:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Brak wbudowanych konwerter dla `Font` właściwość, która umożliwia wszystkie ustawienia czcionki wyrażane jako wartość ciągu w języku XAML. W poniższych przykładach pokazano, jak można określić atrybuty czcionki oraz rozmiary w języku XAML:
+Ma wbudowanych konwerter służący do `Font` właściwość, która zezwala na wszystkie ustawienia czcionki być wyrażone jako wartość ciągu w XAML. W poniższych przykładach pokazano, jak można określić atrybuty czcionki oraz rozmiary w XAML:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -134,7 +110,7 @@ Brak wbudowanych konwerter dla `Font` właściwość, która umożliwia wszystki
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia w pojedynczy `Font` atrybut ciągu. Ciąg atrybutu czcionek powinien być sformatowany jako `"[font-face],[attributes],[size]"`. Ważna jest kolejność parametrów, wszystkie parametry są opcjonalne, a wiele `attributes` można określić, na przykład:
+Aby określić wiele `Font` ustawienia, Połącz wymagane ustawienia w jednym `Font` atrybut ciągu. Czcionka ciągu atrybutu powinny być sformatowane jako `"[font-face],[attributes],[size]"`. Ważna jest kolejność parametrów, wszystkie parametry są opcjonalne, a wiele `attributes` można określić, na przykład:
 
 ```xaml
 <Label Text="Small bold text" Font="Bold, Micro" />
@@ -142,23 +118,7 @@ Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia w pojedy
 <Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
-`FormattedString` Klasa może być używana również w języku XAML, jak pokazano poniżej:
-
-```xaml
-<Label>
-    <Label.FormattedText>
-        <FormattedString>
-            <FormattedString.Spans>
-                <Span Text="Red, " ForegroundColor="Red" FontAttributes="Italic" FontSize="20" />
-                <Span Text=" blue, " ForegroundColor="Blue" FontSize="32" />
-                <Span Text=" and green! " ForegroundColor="Green" FontSize="12"/>
-            </FormattedString.Spans>
-        </FormattedString>
-    </Label.FormattedText>
-</Label>
-```
-
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) można również w języku XAML do renderowania czcionkę na każdej z platform. W poniższym przykładzie użyto krój czcionki niestandardowych w systemie iOS (<span style="font-family:MarkerFelt-Thin">elastycznej MarkerFelt</span>) i umożliwia określenie tylko rozmiar/atrybutów na innych platformach:
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) można również w XAML do renderowania czcionkę na każdej platformie. W poniższym przykładzie użyto krój czcionki niestandardowe w systemie iOS (<span style="font-family:MarkerFelt-Thin">alokowanych MarkerFelt</span>) i określa rozmiar/atrybuty tylko na innych platformach:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -172,26 +132,26 @@ Aby określić wiele `Font` połączenie ustawień, wymagane ustawienia w pojedy
 </Label>
 ```
 
-Podczas określania krój czcionki niestandardowego, jest zawsze warto użyć `OnPlatform`, ponieważ jest trudne do znalezienia czcionki, która jest dostępna na wszystkich platformach.
+Podczas określania krój czcionki niestandardowe, zawsze jest dobry pomysł, aby użyć `OnPlatform`, ponieważ jest trudne do znalezienia czcionkę, która jest dostępna na wszystkich platformach.
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="using-a-custom-font"></a>Przy użyciu niestandardowych czcionki
+## <a name="using-a-custom-font"></a>Przy użyciu niestandardowej czcionki
 
-Przy użyciu czcionki inne niż wbudowane krojów czcionek wymaga kodowania niektóre specyficzne dla platformy. Ten zrzut ekranu przedstawia niestandardowe czcionki **homara** z [czcionki open source firmy Google](https://www.google.com/fonts) renderowany przy użyciu platformy Xamarin.Forms.
+Przy użyciu czcionki inne niż wbudowane krojów czcionek wymaga kod specyficzny dla platformy. Ten zrzut ekranu przedstawia niestandardowej czcionki **firma Lobster** z [czcionki typu open source firmy Google](https://www.google.com/fonts) renderowany przy użyciu zestawu narzędzi Xamarin.Forms.
 
- [![Niestandardowe czcionki w systemach iOS i Android](fonts-images/custom-sml.png "przykład czcionki niestandardowe")](fonts-images/custom.png#lightbox "przykład czcionki niestandardowe")
+ [![Niestandardowej czcionki w systemach iOS i Android](fonts-images/custom-sml.png "przykład czcionki niestandardowe")](fonts-images/custom.png#lightbox "przykład czcionki niestandardowe")
 
-Kroki wymagane dla poszczególnych platform są przedstawione poniżej. W przypadku dołączania plików niestandardowych czcionek z aplikacją, należy upewnić się, że licencja czcionki zezwala na dystrybucji.
+Czynności wymagane dla każdej z platform są przedstawione poniżej. Podczas dołączania plików niestandardowej czcionki z aplikacji, należy koniecznie sprawdź, czy licencja czcionki zezwala dla dystrybucji.
 
 ### <a name="ios"></a>iOS
 
-Istnieje możliwość wyświetlenia czcionki niestandardowej najpierw zapewnienie, że jest załadowany, a następnie odwołujące się do niego wg nazwy przy użyciu platformy Xamarin.Forms `Font` metody.
-Postępuj zgodnie z instrukcjami [ten wpis w blogu](http://blog.xamarin.com/custom-fonts-in-ios/):
+Istnieje możliwość wyświetlić niestandardowej czcionki po pierwsze sprawdzenia, że jest załadowany, a następnie odwołując się do niego według nazwy przy użyciu zestawu narzędzi Xamarin.Forms `Font` metody.
+Postępuj zgodnie z instrukcjami w [ten wpis w blogu](http://blog.xamarin.com/custom-fonts-in-ios/):
 
-1. Dodaj plik czcionki z **Akcja kompilacji: BundleResource**, i
-2. Aktualizacja **Info.plist** pliku (**czcionek dostarczanych przez aplikację**, lub `UIAppFonts`, klucza), następnie
-3. Odwołuje się do niego według nazwy wszędzie tam, gdzie należy zdefiniować czcionkę w platformy Xamarin.Forms!
+1. Dodaj plik czcionki z **Build Action: BundleResource**, i
+2. Aktualizacja **Info.plist** pliku (**czcionki zapewniane przez aplikację**, lub `UIAppFonts`, key), następnie
+3. Odwoływać się do niego według nazwy wszędzie tam, gdzie należy zdefiniować czcionkę w interfejsie Xamarin.Forms!
 
 ```csharp
 new Label
@@ -203,7 +163,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-Platformy Xamarin.Forms dla systemu Android można odwoływać się do niestandardowego czcionki, który został dodany do projektu, postępując określony standard nazewnictwa. Najpierw dodaj plik czcionki **zasoby** folderu projektu aplikacji oraz zestaw *Akcja kompilacji: AndroidAsset*. Następnie użyj pełnej ścieżki i *nazwę czcionki* oddzielone skrótu (#) jako nazwa czcionki w platformy Xamarin.Forms, jak pokazano poniższy fragment kodu:
+Xamarin.Forms dla systemu Android mogą odwoływać się do niestandardowej czcionki, który został dodany do projektu postępując zgodnie z określonym standard nazewnictwa. Najpierw dodaj plik czcionki do **zasoby** folderu w projekcie aplikacji i zestaw *Build Action: AndroidAsset*. Następnie użyj pełnej ścieżki i *nazwa czcionki* rozdzielone krzyżyka (#) jako nazwa czcionki w interfejsie Xamarin.Forms, tak jak pokazano w poniższym fragmencie kodu:
 
 ```csharp
 new Label
@@ -215,7 +175,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Niestandardowe czcionki, który został dodany do projektu, postępując określony standard nazewnictwa może odwoływać się platformy Xamarin.Forms dla platform Windows. Najpierw dodaj plik czcionki **/Assets/czcionki/** folderu projektu aplikacji oraz zestaw <span class="UIItem">akcji kompilacji: zawartość</span>. Następnie użyj pełnej ścieżki i czcionki nazwę pliku, następuje wyznaczania wartości skrótu (#) i <span class="UIItem">nazwę czcionki</span>, jak pokazano poniższy fragment kodu:
+Zestaw narzędzi Xamarin.Forms dla platform Windows odwoływać się do niestandardowej czcionki, który został dodany do projektu postępując zgodnie z określonym standard nazewnictwa. Najpierw dodaj plik czcionki do **/Assets/czcionki/** folderu w projekcie aplikacji i zestaw <span class="UIItem">kompilacji: zawartość akcji</span>. Następnie użyj pełnej ścieżki i czcionki nazwę pliku, następuje krzyżyka (#) i <span class="UIItem">nazwa czcionki</span>, tak jak pokazano w poniższym fragmencie kodu:
 
 ```csharp
 new Label
@@ -226,13 +186,13 @@ new Label
 ```
 
 > [!NOTE]
-> Należy pamiętać, że nazwa pliku czcionek i czcionek, mogą być różne. Aby sprawdzić nazwę czcionki w systemie Windows, kliknij prawym przyciskiem myszy plik .ttf i wybierz **Podgląd**. Następnie można określić nazwę czcionki z poziomu okna podglądu.
+> Należy pamiętać, że nazwa pliku czcionek i czcionek, mogą być różne. Aby sprawdzić nazwę czcionki na Windows, kliknij prawym przyciskiem myszy plik .ttf, a następnie wybierz **Podgląd**. Następnie można ustalić nazwę czcionki na podstawie okno podglądu.
 
-Typowy kod aplikacji jest teraz ukończona. Specyficzne dla platformy phone telefon kod będzie teraz zaimplementowana jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+Typowy kod dla aplikacji została zakończona. Kod telefon phone specyficzne dla platformy zostaną teraz zaimplementowane jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 ### <a name="xaml"></a>XAML
 
-Można również użyć [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) w języku XAML do renderowania czcionki niestandardowej:
+Można również użyć [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) w XAML do renderowania niestandardowej czcionki:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -250,10 +210,9 @@ Można również użyć [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/de
 
 ## <a name="summary"></a>Podsumowanie
 
-Platformy Xamarin.Forms zawiera ustawienia domyślne proste, aby umożliwić rozmiaru tekst łatwo dla wszystkich obsługiwanych platformach. Umożliwia również określić krój czcionki i rozmiar &ndash; nawet inaczej dla poszczególnych platform &ndash; gdy wymagana jest bardziej szczegółową kontrolę. `FormattedString` Klasa może być używana do konstruowania ciąg zawierający specyfikacje czcionkę przy użyciu `Span` klasy.
+Xamarin.Forms zawiera ustawienia domyślne proste pozwala rozmiar tekstu w prosty sposób dla wszystkich obsługiwanych platform. Pozwala też określić krój czcionki i rozmiar &ndash; nawet w różny sposób dla poszczególnych platform &ndash; gdy wymagane jest bardziej precyzyjną kontrolę.
 
-Można również określić informacje dotyczące czcionek w języku XAML, przy użyciu atrybutów czcionki poprawnie sformatowany lub `FormattedString` element z `Span` elementów podrzędnych.
-
+Informacje dotyczące czcionek można również określić w XAML przy użyciu atrybutów czcionki poprawnie sformatowany.
 
 ## <a name="related-links"></a>Linki pokrewne
 

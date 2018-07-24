@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996236"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203101"
 ---
 # <a name="xamarinforms-deep-dive"></a>Rozszerzony opis zestawu narzędzi Xamarin.Forms
 
@@ -79,7 +79,7 @@ Projekt zawiera również liczbę plików:
 - **MainPage.xaml.cs** — CodeBehind dla `MainPage` klasy, która zawiera logikę biznesową, która jest wykonywany, gdy użytkownik wchodzi w interakcję ze stroną.
 - **PhoneTranslator.cs** — logikę biznesową, która jest odpowiedzialna za konwertowanie word telefonu na numer telefonu, który jest wywoływany z **MainPage.xaml.cs**.
 
-Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.iOS, zobacz [Anatomia aplikacji platformy Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.Android, zobacz [Anatomia aplikacji platformy Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.iOS, zobacz [Anatomia aplikacji platformy Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application). Aby uzyskać więcej informacji o strukturze aplikacji platformy Xamarin.Android, zobacz [Anatomia aplikacji platformy Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
 ## <a name="architecture-and-application-fundamentals"></a>Architektura i podstawy aplikacji
 

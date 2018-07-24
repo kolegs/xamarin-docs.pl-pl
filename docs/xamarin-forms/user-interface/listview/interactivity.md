@@ -1,81 +1,88 @@
 ---
-title: Interakcyjności ListView
-description: W tym artykule opisano sposób interakcyjności w elemencie ListView platformy Xamarin.Forms zaimplementowanie zaznaczeń, przejdź do usunięcia i pociągnij, aby odświeżyć.
+title: Interakcyjność ListView
+description: W tym artykule opisano sposób interakcyjności ListView Xamarin.Forms, implementując wybory, kontekstu akcji i ściągania do odświeżania.
 ms.prod: xamarin
 ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/01/2018
-ms.openlocfilehash: 64ffda681c51c21b7485f0865af4b740316edaaa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/13/2018
+ms.openlocfilehash: 77a48e36f33fc690306f5e590f9f4f3064fe1ddf
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245110"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202945"
 ---
-# <a name="listview-interactivity"></a>Interakcyjności ListView
+# <a name="listview-interactivity"></a>Interakcyjność ListView
 
-Element ListView obsługuje interakcję z danymi, które stanowi w następujący sposób:
+ListView obsługuje interakcji z danymi, które stanowi za pomocą następujących metod:
 
-- [**Wybór & podsłuchu** ](#selectiontaps) &ndash; odpowiadanie na podsłuchu i opcje/usuwanie elementów. Włącz lub wyłącz zaznaczenie wiersza (domyślnie włączony).
-- [**Kontekst akcji** ](#Context_Actions) &ndash; Uwidacznianie funkcji dla każdego elementu, na przykład, przejdź do usunięcia.
-- [**Pociągnij, aby odświeżyć** ](#Pull_to_Refresh) &ndash; zaimplementować idiom pociągnij, aby odświeżyć, które użytkownicy mogą pochodzić oczekiwać z środowiska macierzystego.
+- [**Wybór & podsłuchu** ](#selectiontaps) &ndash; reagować na podsłuchu lub opcji/usuwanie elementów. Włącz lub wyłącz wybór wiersza (domyślnie włączone).
+- [**Kontekst akcji** ](#Context_Actions) &ndash; udostępniają funkcje każdego elementu, na przykład, przesuń palcem do usunięcia.
+- [**Ściągnięcia do odświeżania** ](#Pull_to_Refresh) &ndash; zaimplementować idiom ściągnięcia do odświeżenia, nadchodzące użytkownicy mają można oczekiwać od natywnych środowisk.
 
 <a name="selectiontaps" />
 
 ## <a name="selection--taps"></a>Wybór & podsłuchu
-`ListView` obsługuje wybór jednego elementu na raz. Wybór jest domyślnie włączone. Po naciśnięciu elementu dwa zdarzenia są uruchamiane: `ItemTapped` i `ItemSelected`. Należy pamiętać, że naciśnięcie dwa razy ten sam element nie zostanie wyzwolony wielu `ItemSelected` zdarzeń, ale będą wyzwalać wielu `ItemTapped` zdarzenia. Należy również zauważyć, że `ItemSelected` można wywołać, jeśli element nie jest zaznaczona.
 
-Należy pamiętać, że `ItemSelected` jest wywoływana zarówno podczas elementy są wyczyszczone, jak i po jej wybraniu. Oznacza to, że należy sprawdzić null `SelectedItem` w Twojej `ItemSelected` obsługi zdarzeń przed jego użyciem:
+[ `ListView` ](xref:Xamarin.Forms.ListView) Tryb wyboru zależy od ustawienia [ `ListView.SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) właściwości na wartość [ `ListViewSelectionMode` ](xref:Xamarin.Forms.ListViewSelectionMode) wyliczenia:
 
-```csharp
-void OnSelection (object sender, SelectedItemChangedEventArgs e)
-{
-  if (e.SelectedItem == null) {
-    return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
-  }
-  DisplayAlert ("Item Selected", e.SelectedItem.ToString (), "Ok");
-  //((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
-}
+- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) Wskazuje, że pojedynczy element można wybrany, za pomocą wybranego elementu, jest wyróżniona. Jest to wartość domyślna.
+- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None) Wskazuje, że nie można wybrać elementy.
+
+Gdy użytkownik wybiera element, są uruchamiane dwa zdarzenia:
+
+- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) generowane, gdy nowy element jest wybrany.
+- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) generowane, gdy element jest wybrany.
+
+> [!NOTE]
+> Dwukrotne naciśnięcie tego samego elementu nastąpi dwa [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) zdarzenia, ale będzie fire tylko jeden [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) zdarzeń.
+
+Gdy [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) właściwość jest ustawiona na [ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single), elementy w [ `ListView` ](xref:Xamarin.Forms.ListView) można wybrać, [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) i [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) zdarzenia będą uruchamiane, a [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) właściwość zostanie ustawiona na wartość wybranego elementu.
+
+Gdy [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) właściwość jest ustawiona na [ `None` ](xref:Xamarin.Forms.ListViewSelectionMode.None), elementy w [ `ListView` ](xref:Xamarin.Forms.ListView) nie można wybrać, [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) zdarzenie nie zostanie wyzwolone, a [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) pozostanie właściwość `null`. Jednak [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) zdarzenia będą nadal uruchamiane i element naciśnięty zostaną pokrótce wyróżnione podczas wzorcu tap.
+
+Jeśli został wybrany element i [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) właściwości została zmieniona z [ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single) do [ `None` ](xref:Xamarin.Forms.ListViewSelectionMode.None), [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) będzie można ustawić właściwości `null` i [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) zdarzenie zostanie wyzwolone przy użyciu `null` elementu.
+
+Poniższe zrzuty ekranu Pokaż [ `ListView` ](xref:Xamarin.Forms.ListView) przy użyciu domyślnego trybu zaznaczania:
+
+![](interactivity-images/selection-default.png "ListView z wyborem włączone")
+
+### <a name="disabling-selection"></a>Wyłączanie zaznaczenia
+
+Aby wyłączyć [ `ListView` ](xref:Xamarin.Forms.ListView) zbiór [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode) właściwości [ `None` ](xref:Xamarin.Forms.ListViewSelectionMode.None):
+
+```xaml
+<ListView ... SelectionMode="None" />
 ```
 
-### <a name="disabling-selection"></a>Wyłączenie zaznaczenia
-
-Jeśli chcesz wyłączyć wybór obsługi `ItemSelected` zdarzeń i zestaw `SelectedItem` właściwości na wartość null:
-
 ```csharp
-SelectionDemoList.ItemSelected += (sender, e) => {
-    ((ListView)sender).SelectedItem = null;
-};
+var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 ```
-
-Z włączoną opcją:
-
-![](interactivity-images/selection-default.png "Element ListView o wybór włączane")
 
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Kontekst akcji
-Często użytkownicy będą do wykonania akcji na element `ListView`. Rozważmy na przykład listę adresów e-mail w aplikacji poczty. W systemach iOS, można szybko przesuń można usunąć wiadomości::
+Często użytkownicy będą chcieli podejmowanie akcji na element `ListView`. Rozważmy na przykład lista adresów e-mail w aplikacji Mail. W systemach iOS, można szybko przesuń należy usunąć komunikat::
 
-![](interactivity-images/context-default.png "Element ListView z kontekstu akcji")
+![](interactivity-images/context-default.png "ListView przy użyciu kontekstu akcji")
 
-Kontekst akcji można zaimplementować w języku C# i języka XAML. Poniżej przedstawiono przewodniki określonych dla obu, ale najpierw umożliwia Spójrz na niektóre szczegóły implementacji klucza dla obu.
+Kontekst akcji można zaimplementować w języku C# i XAML. Poniżej przedstawiono przewodniki określonych w obu przypadkach jednak najpierw Przyjrzyjmy Przyjrzyj się kilka szczegółów implementacji klucza dla obu.
 
-Kontekst akcji są tworzone przy użyciu `MenuItem`s. Wybierz zdarzenia dla elementów MenuItems, zostaną podniesione przez element MenuItem, nie w elemencie ListView. Różni się to od obsługi zdarzeń naciśnij dla komórki, gdy element ListView zgłasza zdarzenie, a nie w komórce. Ponieważ element ListView jest wywołaniem zdarzenia, jej procedura obsługi zdarzeń otrzymuje kluczowe informacje, takie jak który zaznaczone lub dotknięciu elementu.
+Akcje kontekstowe są tworzone przy użyciu `MenuItem`s. Wybierz zdarzenia vlastnost MenuItems są inicjowane przez element MenuItem, nie ListView. To różni się od obsługi zdarzeń wzorca tap komórek, gdzie ListView zgłasza zdarzenie, a nie w komórce. Ponieważ ListView podnoszenie zdarzenia swojego programu obsługi zdarzeń otrzymuje informacje o kluczu, takich jak którego wybrano lub dotknięcie elementu.
 
-Domyślnie element MenuItem nie ma możliwości komórki, która należy do wiedzy. `CommandParameter` jest dostępna w `MenuItem` do przechowywania obiektów, takich jak obiekt za ViewCell element MenuItem. `CommandParameter` można ustawić w języku XAML i C#.
+Domyślnie element MenuItem nie ma możliwości komórki, która należy do żadnej informacji o tym. `CommandParameter` jest dostępna w `MenuItem` do przechowywania obiektów, takich jak obiekt spod ViewCell MenuItem. `CommandParameter` można ustawić w językach XAML i C#.
 
 ### <a name="c"></a>C#  
 
-Kontekst akcji można zaimplementować w żadnym `Cell` podklasy (pod warunkiem, ponieważ nie jest on używany jako nagłówek grupy) przez utworzenie `MenuItem`s i dodanie ich do `ContextActions` kolekcji dla komórki. Dostępne są następujące właściwości można skonfigurować dla kontekstu akcji:
+Kontekst akcji można zaimplementować w dowolnym `Cell` podklasy (tak długo, jak nie jest używana jako nagłówek grupy), tworząc `MenuItem`s oraz dodać je do `ContextActions` kolekcji komórki. Masz następujące właściwości, które można skonfigurować dla kontekstu akcji:
 
-* **Tekst** &ndash; ciąg, który jest wyświetlany w elemencie menu.
-* **Kliknięto** &ndash; zdarzenie, gdy element zostanie kliknięty.
-* **IsDestructive** &ndash; (opcjonalnie) w przypadku wartości true elementu jest renderowany inaczej w systemie iOS.
+* **Tekst** &ndash; ciąg, który pojawia się w elemencie menu.
+* **Kliknięto** &ndash; zdarzenie po kliknięciu elementu.
+* **IsDestructive** &ndash; (opcjonalnie) w przypadku wartości true element jest renderowany inaczej w systemie iOS.
 
-Kilka akcji w kontekście można dodać w komórce, ale powinien mieć tylko jeden `IsDestructive` ustawioną `true`. Poniższy kod przedstawia sposób działania kontekstu zostanie dodany do `ViewCell`:
+Wiele akcji w kontekście można dodać do komórki, jednak powinien mieć tylko jeden `IsDestructive` równa `true`. Poniższy kod demonstruje, jak kontekstu akcje zostaną dodane do `ViewCell`:
 
 ```csharp
 var moreAction = new MenuItem { Text = "More" };
@@ -98,7 +105,7 @@ ContextActions.Add (deleteAction);
 
 ### <a name="xaml"></a>XAML
 
-`MenuItem`s można również tworzyć w zbiorze XAML deklaratywnie. XAML poniżej przedstawia komórki niestandardowych z dwóch kontekstu działań:
+`MenuItem`s można również tworzyć w kolekcji XAML deklaratywnie. XAML poniżej pokazuje niestandardowy komórki za pomocą dwóch działania w kontekście wdrożone:
 
 ```xaml
 <ListView x:Name="ContextDemoList">
@@ -120,7 +127,7 @@ ContextActions.Add (deleteAction);
 </ListView>
 ```
 
-W pliku CodeBehind Sprawdź `Clicked` metody są implementowane:
+W pliku związanym z kodem, upewnij się, `Clicked` metody są implementowane:
 
 ```csharp
 public void OnMore (object sender, EventArgs e) {
@@ -135,35 +142,35 @@ public void OnDelete (object sender, EventArgs e) {
 ```
 
 > [!NOTE]
-> `NavigationPageRenderer` Dla systemu Android ma możliwym do zastąpienia `UpdateMenuItemIcon` metodę, która może służyć do załadowania ikon z niestandardowego `Drawable`. To zastąpienie pozwala używać obrazów SVG jako ikony na `MenuItem` wystąpienia w systemie Android.
+> `NavigationPageRenderer` Dla systemu Android zawiera możliwym do zastąpienia `UpdateMenuItemIcon` metodę, która może służyć do załadowania ikon z niestandardowego `Drawable`. To zastąpienie sprawia, że można używać obrazów SVG jako ikony na `MenuItem` wystąpień w systemie Android.
 
 <a name="Pull_to_Refresh" />
 
-## <a name="pull-to-refresh"></a>Przeciągnij odświeżania
-Użytkownicy mają pochodzić można oczekiwać, że ściąganie w dół na liście danych zostanie odświeżony tej listy. `ListView` obsługuje ten out-of--box. Aby włączyć funkcję pociągnij, aby odświeżyć, ustaw `IsPullToRefreshEnabled` true:
+## <a name="pull-to-refresh"></a>Przeciągnij, aby odświeżyć
+Użytkownicy mają pochodzić można oczekiwać, że przeciągnij w dół w wykazie danych zostaną odświeżone tej listy. `ListView` obsługuje ten out-of--box. Aby włączyć funkcję ściągnięcia do odświeżenia, należy ustawić `IsPullToRefreshEnabled` na wartość true:
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
 ```
 
-Ściąganie jest ściągnięcia, aby odświeżyć jako użytkownik:
+Ściąganie jest ściągnięcia do odświeżania jako użytkownik:
 
-![](interactivity-images/refresh-start.png "Przeciągnij element ListView, aby odświeżyć w toku")
+![](interactivity-images/refresh-start.png "Przeciągnij ListView, aby odświeżyć w toku")
 
-Ściągnięcia, aby odświeżyć jako użytkownik wydała ściągania. Jest to, co użytkownik zobaczy podczas aktualizujesz listy: ![ ] (interactivity-images/refresh-in-progress.png "przeciągnij element ListView, aby odświeżyć pełną")
+Ściągnięcia do odświeżania jako użytkownik wydała ściągnięcia. Jest to, co użytkownik widzi, gdy aktualizujesz listy: ![ ] (interactivity-images/refresh-in-progress.png "przeciągnij ListView, aby Odświeżanie ukończone")
 
-Element ListView udostępnia kilka zdarzeń, które pozwalają na odpowiadanie na zdarzenia pociągnij, aby odświeżyć.
+ListView udostępnia kilka zdarzeń, które pozwalają na odpowiadanie na zdarzenia ściągnięcia do odświeżania.
 
--  `RefreshCommand` Zostanie wywołany i `Refreshing` zdarzenia o nazwie. `IsRefreshing` zostanie ustawiona do `true`.
--  Należy wykonać, niezależnie od kodu jest wymagany do Odśwież zawartość widoku listy, w poleceniu lub zdarzeń.
--  Podczas odświeżania się ukończyć, wywołaj `EndRefresh` lub ustaw `IsRefreshing` do `false` mówić widok listy wszystko gotowe.
+-  `RefreshCommand` Zostaną wywołane i `Refreshing` zdarzeń o nazwie. `IsRefreshing` zostanie ustawiony na `true`.
+-  Należy wykonać, wymaga Odśwież zawartość widoku listy poleceń lub zdarzenia w niezależnie od kodu.
+-  Podczas odświeżania jest ukończone, wywołaj `EndRefresh` lub ustaw `IsRefreshing` do `false` mówić widok listy wszystko będzie gotowe.
 
-`CanExecute` Przestrzegane właściwości, które zapewnia możliwość sterowania czy polecenia pociągnij, aby odświeżyć powinno być włączone.
+`CanExecute` Przestrzegane właściwości, które zapewnia możliwość sterowania czy polecenie ściągnięcia do odświeżania powinno być włączone.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Element ListView interakcyjności (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [Interakcyjność ListView (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 - [informacje o wersji 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [informacje o wersji 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

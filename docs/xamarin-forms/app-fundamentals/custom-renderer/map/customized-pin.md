@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998320"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203088"
 ---
 # <a name="customizing-a-map-pin"></a>Dostosowywanie pinezki mapy
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation` Metoda przyjmuje `IMKAnnotation` , zawiera dane, adnotacji i zwraca `MKAnnotationView` do wyświetlenia na mapie i przedstawiono w poniższym przykładzie kodu:
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ Ta metoda zapewnia, że adnotacji, które będą wyświetlane jako obraz niestan
 1. `GetCustomPin` Metoda jest wywoływana, aby zwrócić dane niestandardowego numeru pin dla adnotacji.
 1. W celu zachowywania pamięci, wyświetlanie adnotacji jest puli do ponownego użycia z wywołaniem [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
 1. `CustomMKAnnotationView` Klasa rozszerza `MKAnnotationView` klasy `Id` i `Url` właściwościami, które odpowiadają właściwości są takie same w `CustomPin` wystąpienia. Nowe wystąpienie klasy `CustomMKAnnotationView` zostanie utworzony, pod warunkiem, że adnotacja jest `null`:
-  - `CustomMKAnnotationView.Image` Właściwość jest ustawiona na obraz, który będzie reprezentować adnotacji na mapie.
-  - `CustomMKAnnotationView.CalloutOffset` Właściwość jest ustawiona na `CGPoint` określający, że objaśnienie będzie wyśrodkowana powyżej adnotacji.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Właściwość jest ustawiona na obrazie małp, która będzie wyświetlana po lewej stronie adnotacji tytuł i adres.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Właściwość jest ustawiona na *informacji* przycisk, który będzie widoczny po prawej stronie adnotacji tytuł i adres.
-  - `CustomMKAnnotationView.Id` Właściwość jest ustawiona na `CustomPin.Id` właściwości zwróconej przez `GetCustomPin` metody. Dzięki temu adnotacji identyfikację tak, aby miało [objaśnienia można dodatkowo dostosowywać](#Selecting_the_Annotation), jeśli to konieczne.
-  - `CustomMKAnnotationView.Url` Właściwość jest ustawiona na `CustomPin.Url` właściwości zwróconej przez `GetCustomPin` metody. Adres URL nastąpi przejście, kiedy użytkownik [naciśnie przycisk wyświetlane w widoku akcesoriów prawo objaśnienia](#Tapping_on_the_Right_Callout_Accessory_View).
+    - `CustomMKAnnotationView.Image` Właściwość jest ustawiona na obraz, który będzie reprezentować adnotacji na mapie.
+    - `CustomMKAnnotationView.CalloutOffset` Właściwość jest ustawiona na `CGPoint` określający, że objaśnienie będzie wyśrodkowana powyżej adnotacji.
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView` Właściwość jest ustawiona na obrazie małp, która będzie wyświetlana po lewej stronie adnotacji tytuł i adres.
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` Właściwość jest ustawiona na *informacji* przycisk, który będzie widoczny po prawej stronie adnotacji tytuł i adres.
+    - `CustomMKAnnotationView.Id` Właściwość jest ustawiona na `CustomPin.Id` właściwości zwróconej przez `GetCustomPin` metody. Dzięki temu adnotacji identyfikację tak, aby miało [objaśnienia można dodatkowo dostosowywać](#Selecting_the_Annotation), jeśli to konieczne.
+    - `CustomMKAnnotationView.Url` Właściwość jest ustawiona na `CustomPin.Url` właściwości zwróconej przez `GetCustomPin` metody. Adres URL nastąpi przejście, kiedy użytkownik [naciśnie przycisk wyświetlane w widoku akcesoriów prawo objaśnienia](#Tapping_on_the_Right_Callout_Accessory_View).
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Właściwość jest ustawiona na `true` tak, aby objaśnienie jest wyświetlane, gdy dotknięcie adnotacji.
 1. Adnotacja są zwracane do wyświetlenia na mapie.
 

@@ -1,6 +1,6 @@
 ---
-title: Witaj, iOS — nowości
-description: Ten dokument przedstawia bardziej Hello, iOS przykładowej aplikacji, biorąc pod uwagę jego architektury, interfejs użytkownika, widok zawartości hierarchii, testowania, wdrożenia i inne.
+title: Witaj, iOS — szczegółowe informacje
+description: W tym dokumencie przyjmuje się bardziej Hello, z systemem iOS przykładową aplikację, biorąc pod uwagę jego architekturę, interfejs użytkownika, hierarchia widok zawartości, testowania, wdrażania i inne.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,48 +8,26 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 16920f27a1830dc6a3ab1a3cb0a267eb3b1d90ea
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786403"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203026"
 ---
-# <a name="hello-ios--deep-dive"></a>Witaj, iOS — nowości
+# <a name="hello-ios--deep-dive"></a>Witaj, iOS — szczegółowe informacje
 
-Przewodnik Szybki Start, wprowadzono tworzenia i uruchamiania podstawowej aplikacji platformy Xamarin.iOS. Teraz nadszedł czas na opracowanie lepiej zrozumieć, jak aplikacje systemu iOS działają, można je tworzyć bardziej złożone programy. W tym przewodniku przegląda kroki w Hello, iOS wskazówki umożliwiające opis podstawowych założeń projektowanie aplikacji systemu iOS.
+Przewodnik Szybki Start, wprowadzono kompilowanie i uruchamianie podstawowej aplikacji platformy Xamarin.iOS. Teraz nadszedł czas na programowanie lepiej zrozumieć, jak działają aplikacji systemu iOS, dzięki czemu można tworzyć bardziej zaawansowanych programów. Ten przewodnik sprawdza kroki w Witaj, iOS przewodnika w celu włączenia wiedzę na temat podstawowych pojęć dotyczących opracowywania aplikacji dla systemu iOS.
 
-Następujące tematy zostały opisane w tym artykule:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- **Wprowadzenie do programu Visual Studio dla komputerów Mac** — wprowadzenie do programu Visual Studio for Mac i tworzenie nowej aplikacji.
-- **Anatomia aplikacji platformy Xamarin.iOS** — samouczek podstawowych części aplikacji platformy Xamarin.iOS.
-- **Architektura i podstawowe informacje na temat aplikacji** — przegląd części aplikacji systemu iOS i relacji między nimi.
-- **Interfejs użytkownika (UI)** — Tworzenie interfejsów użytkownika z systemem iOS projektanta.
-- **Wyświetlenie kontrolerów i cyklem życia widoku** — wprowadzenie cyklu życia widoku i zarządzanie nimi zawartości widoku hierarchii z kontrolera widoku.
-- **Testowanie, wdrożenia i ostateczne poprawki** — zakończenie aplikacji przy użyciu wskazówki dotyczące testowania, wdrożenia generowania kompozycji i więcej.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- **Wprowadzenie do programu Visual Studio** — wprowadzenie do programu Visual Studio i tworzenie nowej aplikacji.
-- **Anatomia aplikacji platformy Xamarin.iOS** — samouczek podstawowych części aplikacji platformy Xamarin.iOS.
-- **Architektura i podstawowe informacje na temat aplikacji** — przegląd części aplikacji systemu iOS i relacji między nimi.
-- **Interfejs użytkownika (UI)** — Tworzenie interfejsów użytkownika z systemem iOS projektanta.
-- **Wyświetlenie kontrolerów i cyklem życia widoku** — wprowadzenie cyklu życia widoku i zarządzanie nimi zawartości widoku hierarchii z kontrolera widoku.
-- **Testowanie, wdrożenia i ostateczne poprawki** — zakończenie aplikacji przy użyciu wskazówki dotyczące testowania, wdrożenia generowania kompozycji i więcej.
-
------
-
-Ten przewodnik ułatwia tworzenie umiejętności i wiedzy wymagane do tworzenia aplikacji iOS jednego ekranu. Po zakończeniu pracy przy jego użyciu, powinien mieć wiedzę o różnych części aplikacji platformy Xamarin.iOS i sposób ich dopasowania.
+Ten przewodnik ułatwi Ci rozwijać umiejętności i wiedzy, które są wymagane do tworzenia aplikacji dla systemu iOS z jednym ekranem. Po zakończeniu pracy przez nią, należy zrozumieć różne części aplikacji platformy Xamarin.iOS i jak one współdziałają ze sobą.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Wprowadzenie do programu Visual Studio dla komputerów Mac
 
-Visual Studio for Mac jest bezpłatne, open source IDE, łączącą funkcje programu Visual Studio i XCode. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, wraz z narzędzia do refaktoryzacji, przeglądarkę zestawu i integracji kodu źródłowego. W tym przewodniku przedstawiono niektóre podstawowe programu Visual Studio dla funkcji Mac, ale jeśli jesteś nowym użytkownikiem programu Visual Studio for Mac, zapoznaj się [programu Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/) dokumentacji.
+Program Visual Studio dla komputerów Mac jest bezpłatne, typu open-source IDE, który łączy funkcje programu Visual Studio i narzędziu XCode. Zawiera funkcje, w pełni zintegrowane wizualnego projektanta, edytora tekstów, pełną za pomocą narzędzi refaktoryzacji, przeglądarka zestawów i integracji kodu źródłowego. Ten przewodnik przedstawia niektóre podstawowe programu Visual Studio dla komputerów Mac funkcji, ale jeśli jesteś nowym użytkownikiem programu Visual Studio dla komputerów Mac, zapoznaj się z [programu Visual Studio dla komputerów Mac](https://docs.microsoft.com/visualstudio/mac/) dokumentacji.
 
-Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowania *rozwiązań* i *projekty*. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (na przykład iOS lub Android), biblioteki obsługi aplikacji testu i więcej. W aplikacji Phoneword iPhone nowy projekt został dodany przy użyciu **pojedynczą aplikacją widoku** szablonu. Początkowa rozwiązanie po zapoznaniu się następująco:
+Program Visual Studio for Mac następuje rozwiązanie programu Visual Studio kod do organizowania *rozwiązania* i *projektów*. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W aplikacji Phoneword nowym telefonie iPhone projekt został dodany za pomocą **aplikacja pojedynczego widoku** szablonu. Początkowe rozwiązania zapoznaniu się następująco:
 
 ![](hello-ios-deepdive-images/image30.png "Zrzut ekranu przedstawiający początkowej rozwiązania")
 
@@ -57,58 +35,56 @@ Visual Studio for Mac następuje rozwiązanie Visual Studio kodu do organizowani
 
 ## <a name="introduction-to-visual-studio"></a>Wprowadzenie do programu Visual Studio
 
-Program Visual Studio jest zaawansowanym IDE firmy Microsoft. Zawiera funkcje pełni zintegrowane wizualnego projektanta, Edytor tekstu, wraz z narzędzia do refaktoryzacji, przeglądarkę zestawu i integracji kodu źródłowego. W tym przewodniku przedstawiono niektóre podstawowe funkcje programu Visual Studio z platformą Xamarin wtyczki.
+Visual Studio to zaawansowane środowisko IDE firmy Microsoft. Zawiera funkcje, w pełni zintegrowane wizualnego projektanta, edytora tekstów, pełną za pomocą narzędzi refaktoryzacji, przeglądarka zestawów i integracji kodu źródłowego. Ten przewodnik wprowadzenie niektórych podstawowych funkcji programu Visual Studio za pomocą platformy Xamarin wtyczki.
 
-Program Visual Studio umożliwia organizowanie kodu w _rozwiązań_ i *projekty*. Rozwiązanie to kontener, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (na przykład iOS lub Android), biblioteki obsługi aplikacji testu i więcej. W aplikacji Phoneword iPhone nowy projekt został dodany przy użyciu **pojedynczą aplikacją widoku** szablonu. Początkowa rozwiązanie po zapoznaniu się następująco:
+Program Visual Studio umożliwia organizowanie kodu w _rozwiązania_ i *projektów*. To rozwiązanie jest kontenerem, który może zawierać jeden lub więcej projektów. Projekt może być aplikacji (np. iOS lub Android), biblioteka pomocnicze, aplikacja testowa i. W aplikacji Phoneword nowym telefonie iPhone projekt został dodany za pomocą **aplikacja pojedynczego widoku** szablonu. Początkowe rozwiązania zapoznaniu się następująco:
 
 ![](hello-ios-deepdive-images/vs-image30.png "Zrzut ekranu przedstawiający początkowej rozwiązania")
 
 -----
 
-<a name="anatomy" />
-
 ## <a name="anatomy-of-a-xamarinios-application"></a>Anatomia aplikacji platformy Xamarin.iOS
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Po lewej stronie jest *konsoli rozwiązania*, który zawiera strukturę katalogów i wszystkie pliki skojarzone z rozwiązania:
+Po lewej stronie jest *konsoli rozwiązania*, która zawiera strukturę katalogów i wszystkie pliki skojarzone z rozwiązania:
 
-![](hello-ios-deepdive-images/image31.png "Konsoli rozwiązanie zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązania")
+![](hello-ios-deepdive-images/image31.png "W konsoli rozwiązania, która zawiera strukturę katalogów oraz ich wszystkie pliki, które są skojarzone z rozwiązaniem")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Po prawej stronie jest *okienko rozwiązania*, który zawiera strukturę katalogów i wszystkie pliki skojarzone z rozwiązania:
+Po prawej stronie jest *okienko rozwiązania*, która zawiera strukturę katalogów i wszystkie pliki skojarzone z rozwiązania:
 
-![](hello-ios-deepdive-images/vs-image31.png "Okienko rozwiązania, które zawiera strukturę katalogów oraz ich wszystkie pliki skojarzone z rozwiązania")
+![](hello-ios-deepdive-images/vs-image31.png "W okienku rozwiązania, która zawiera strukturę katalogów oraz ich wszystkie pliki, które są skojarzone z rozwiązaniem")
 
 -----
 
-W [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) przewodnika tworzenia rozwiązania o nazwie **Phoneword** i umieścić iOS projektu - **Phoneword_iOS** — wewnątrz niej. Elementy wewnątrz projektu obejmują:
+W [Witaj, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) przewodnika, możesz tworzyć rozwiązania o nazwie **Phoneword** i jest umieszczany systemu iOS projekt — **Phoneword_iOS** — wewnątrz niego. Elementy w projekcie obejmują:
 
--  **Odwołania** — zawiera zestawy wymagane, aby skompilować i uruchomić aplikację. Rozwiń węzeł katalogu, aby zobaczyć odwołania do zestawów platformy .NET, takie jak [systemu](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) , System.Core, i [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) , oraz odwołanie do zestawu Xamarin.iOS na platformie Xamarin.
--  **Pakiety** -katalog pakietów zawiera gotowe pakietów NuGet.
--  **Zasoby** — folder zasobów przechowuje innego nośnika.
--  **Main.cs** — zawiera główny punkt wejścia aplikacji. Aby uruchomić aplikację, nazwa klasy głównym aplikacji `AppDelegate`, jest przekazany.
--  **AppDelegate.cs** — ten plik zawiera klasy głównym aplikacji i jest odpowiedzialny za tworzenie okna, tworzeniu interfejsu użytkownika i nasłuchuje zdarzeń z systemu operacyjnego.
--  **Main.Storyboard** -scenorysu zawiera projekt visual interfejsu użytkownika aplikacji. Pliki scenorysu Otwórz za pomocą edytora graficznego o nazwie iOS projektanta.
--  **ViewController.cs** — ekranu (Widok), który użytkownik będzie widział i dotyka uprawnień kontrolera widoku. Kontroler widoku jest odpowiedzialny za obsługę interakcje między użytkownikiem i widoku.
--  **ViewController.designer.cs** — `designer.cs` jest plikiem automatycznie generowanej służy jako sklejki między formantami w widoku i ich oświadczenia kodu w kontrolerze widoku. Jest to plik wewnętrzny żmudne procesy, IDE spowoduje zastąpienie wszystkich zmian ręcznych i w większości przypadków, które można zignorować ten plik. Aby uzyskać więcej informacji na relacji między Projektant wizualny oraz kod zapasowy odwoływać się do [wprowadzenie do projektanta dla systemu iOS](~/ios/user-interface/designer/introduction.md) przewodnik.
--  **Info.plist** — `Info.plist` jest, gdzie są ustawione właściwości aplikacji, takie jak nazwa aplikacji, ikony, uruchom obrazów i. Jest to plik wydajne i dokładne wprowadzenie do niego jest dostępny w [Praca z listy właściwości](~/ios/app-fundamentals/property-lists.md) przewodnik.
--  **Entitlements.plist** — listę właściwości uprawnień pozwoli określić aplikację *możliwości* (nazywanych również technologie magazynu aplikacji), takich jak iCloud, PassKit i inne. Więcej informacji na temat `Entitlements.plist` znajdują się w [Praca z listy właściwości](~/ios/app-fundamentals/property-lists.md) przewodnik. Ogólne wprowadzenie do uprawnień, można znaleźć w temacie [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md) przewodnik.
+-  **Odwołania** — zawiera zestawy wymagany do kompilowania i uruchamiania aplikacji. Rozwiń katalog, aby zobaczyć odwołania do zestawów .NET, takich jak [systemu](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) , System.Core, i [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) , a także odwołania do zestawu platformy Xamarin.iOS platformy Xamarin.
+-  **Pakiety** — katalog pakietów zawiera gotowe pakiety NuGet.
+-  **Zasoby** -folder zasobów przechowuje innych nośników.
+-  **Main.cs** — zawiera główny punkt wejścia aplikacji. Aby uruchomić aplikację, nazwa klasy głównej aplikacji `AppDelegate`, jest przekazywany w.
+-  **AppDelegate.cs** — ten plik zawiera klasę głównego aplikacji i jest odpowiedzialny za utworzenie okna, tworzenia interfejsu użytkownika i nasłuchuje zdarzeń z systemu operacyjnego.
+-  **Main.Storyboard** -scenorysu zawiera projektowania wizualnego interfejsu użytkownika aplikacji. Scenorysu pliki otwarte w edytorze graficznym o nazwie narzędzia iOS Designer.
+-  **ViewController.cs** — widok kontroler obsługuje ekranu (Widok), który użytkownik będzie widział i dotyka. Kontroler widoku jest odpowiedzialny za obsługę interakcji między użytkownikiem i widoku.
+-  **ViewController.designer.cs** — `designer.cs` jest wygenerowany automatycznie plik służący jako pośredniczącego między kontrolkami w widoku i ich reprezentacje kod na kontrolerze widoku. Jest to plik nadmiar wewnętrznego, IDE spowoduje zastąpienie wszelkie ręczne zmiany i w większości przypadków, który można zignorować ten plik. Aby uzyskać więcej informacji na temat relacji między Projektant wizualny oraz kod zapasowy, zobacz [wprowadzenie do narzędzia iOS Designer](~/ios/user-interface/designer/introduction.md) przewodnik.
+-  **Plik info.plist** — `Info.plist` jest, gdzie są ustawione właściwości aplikacji, takie jak nazwa aplikacji, ikony, obrazy uruchamiania i. Jest to plik zaawansowane i dokładne wprowadzenie do niego jest dostępny w [Praca z listy właściwości](~/ios/app-fundamentals/property-lists.md) przewodnik.
+-  **Plik Entitlements.plist** — lista właściwości uprawnień pozwala nam określić aplikację *możliwości* (nazywane również App Store technologii) takich jak usługi iCloud, PassKit i inne. Więcej informacji na temat `Entitlements.plist` znajdują się w [Praca z listy właściwości](~/ios/app-fundamentals/property-lists.md) przewodnik. Aby uzyskać ogólne wprowadzenie do uprawnień, zobacz [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) przewodnik.
 
-## <a name="architecture-and-app-fundamentals"></a>Architektura i podstawowe informacje dotyczące aplikacji
+## <a name="architecture-and-app-fundamentals"></a>Podstawy architektury i aplikacji
 
-Przed aplikacji systemu iOS można załadować interfejsu użytkownika, dwie czynności konieczne w miejscu. Po pierwsze, aplikacja musi definiować *punktu wejścia* — pierwszy kod, który jest uruchamiany, gdy proces aplikacji jest ładowany do pamięci. Po drugie należy zdefiniować klasę do obsługi zdarzeń dla całej aplikacji i interakcji z systemem operacyjnym.
+Zanim aplikacji systemu iOS można załadować interfejsu użytkownika, dwie rzeczy muszą znajdować się w miejscu. Po pierwsze, aplikacja musi zdefiniować *punktu wejścia* — pierwszy kod, który jest uruchamiany, gdy proces aplikacji jest ładowany do pamięci. Po drugie musi definiować klasy do obsługi zdarzeń w całej aplikacji i wchodzić w interakcje z systemem operacyjnym.
 
-W tej sekcji badań relacje przedstawiony na poniższym diagramie:
+W tej sekcji badań na relacje zilustrowane na poniższym diagramie:
 
-[![](hello-ios-deepdive-images/image32.png "Przedstawiono relacje architektury i podstawowe informacje na temat aplikacji na tym diagramie")](hello-ios-deepdive-images/image32.png#lightbox)
+[![](hello-ios-deepdive-images/image32.png "Relacje architektury i podstawowe informacje dotyczące aplikacji zostały zilustrowane na poniższym diagramie")](hello-ios-deepdive-images/image32.png#lightbox)
 
-Teraz rozpocząć od początku i Dowiedz się, co się dzieje podczas uruchamiania aplikacji.
+Przejdźmy rozpoczynają się od początku i Dowiedz się, co dzieje się po uruchomieniu aplikacji.
 
 ### <a name="main"></a>Main
 
-Główny punkt wejścia aplikacji systemu iOS jest `Main.cs` pliku. `Main.cs` zawiera statyczną metodę Main, która tworzy nowe wystąpienie aplikacji platformy Xamarin.iOS i przekazuje nazwę *delegata aplikacji* klasy, która będzie obsługiwać zdarzenia systemu operacyjnego. Kod szablonu dla statycznych `Main` metody pojawia się poniżej:
+Główny punkt wejścia aplikacji dla systemu iOS jest `Main.cs` pliku. `Main.cs` zawiera statycznej metody Main, które tworzy nowe wystąpienie aplikacji platformy Xamarin.iOS i przekazuje nazwę *delegata aplikacji* klasy, która będzie obsługiwać zdarzenia systemu operacyjnego. Kod szablonu dla statycznych `Main` metoda pojawia się poniżej:
 
 ```csharp
 using System;
@@ -128,11 +104,11 @@ namespace Phoneword_iOS
 
 ### <a name="application-delegate"></a>Delegat aplikacji
 
-W systemie iOS *delegata aplikacji* klasa obsługuje zdarzenia systemowe; ta klasa znajduje się wewnątrz `AppDelegate.cs`. `AppDelegate` Klasy zarządza stosowaniem *okna*. Okno jest jedno wystąpienie `UIWindow` klasy, która służy jako kontener dla interfejsu użytkownika. Domyślnie aplikacja uzyskuje tylko jedno okno, na który ma zostać załadowana zawartość i okna jest dołączony do *ekranu* (pojedynczy `UIScreen` wystąpienia) zapewnia prostokątem dopasowania wymiary fizyczny ekranu urządzenia.
+W systemie iOS *delegata aplikacji* klasa obsługuje zdarzenia systemowe; ta klasa znajduje się wewnątrz `AppDelegate.cs`. `AppDelegate` Klasy zarządza stosowaniem *okna*. Okno jest pojedyncze wystąpienie `UIWindow` klasę, która służy jako kontener dla interfejsu użytkownika. Domyślnie aplikacja uzyskuje tylko jedno okno, do którego można załadować jej zawartość, a okno jest dołączone do *ekranu* (pojedynczy `UIScreen` wystąpienia) zapewniającej prostokąt otaczający dopasowania wymiary fizyczne ekran urządzenia.
 
-*AppDelegate* również jest odpowiedzialny za subskrybowanie aktualizacji systemu o zdarzeniach ważne aplikacji, np. po zakończeniu uruchamiania aplikacji lub gdy jest za mało pamięci.
+*Elemencie AppDelegate* jest również odpowiedzialny za subskrypcję do aktualizacji systemu o zdarzeniach ważnych aplikacji, np. po jej zakończeniu, uruchamiania lub gdy jest za mało pamięci.
 
-Kod szablonu AppDelegate znajduje się poniżej:
+Poniżej przedstawiono kod szablonu w elemencie AppDelegate:
 
 ```csharp
 using System;
@@ -155,65 +131,65 @@ namespace Phoneword_iOS
 }
 ```
 
-Gdy aplikacja ma zdefiniowane okna, można rozpocząć ładowania interfejsu użytkownika. Następna sekcja opisuje tworzenie interfejsu użytkownika.
+Po zdefiniowaniu jego okna aplikacji można rozpocząć, ładowanie interfejsu użytkownika. Następnej sekcji przedstawiono tworzenie interfejsu użytkownika.
 
 ## <a name="user-interface"></a>Interfejs użytkownika
 
-Interfejs użytkownika aplikacji systemu iOS przypomina sklepu — aplikacji zwykle pobiera jedno okno, ale jego może zapełnić okna z musi wiele obiektów jego, a obiekty i ustalenia można zmieniać w zależności od tego, co aplikacja potrzebuje do wyświetlenia. W tym scenariuszu - rzeczy, które użytkownik widzi — obiekty są nazywane widoków. Aby utworzyć jednym ekranie w aplikacji, widoki stos na siebie w *hierarchii widok zawartości*, i hierarchii jest zarządzany przez pojedynczy kontroler widoku. Aplikacje z ekranami wielu mają wiele zawartości widoku hierarchii, każde z nich własny kontroler widoku i aplikacji umieszcza widoków w oknie można utworzyć innej hierarchii widok zawartości oparte na ekranie, której należy użytkownik.
+Interfejs użytkownika aplikacji systemu iOS przypomina storefront — aplikacja pobiera zazwyczaj jedno okno, ale go wypełnić okno wiele obiektów, co wymaga, a obiekty i ich rozmieszczenia można zmienić w zależności od tego, co aplikacja chce, aby wyświetlić. Obiekty w tym scenariuszu - rzeczy, które widzi użytkownik -, są nazywane widoków. Aby skompilować na jednym ekranie, w aplikacji, widoki są ułożone jeden na drugim w *zawartości Wyświetl hierarchię*, i hierarchii jest zarządzany przez pojedynczy kontroler widoku. Aplikacje z wieloma ekranami może mieć wielu zawartości widoku hierarchii, każdy z własną kontrolera widoku, a następnie aplikacja umieszcza widoków w oknie do tworzenia różnych hierarchii widok zawartości oparty na ekranie, której należy użytkownik.
 
-W tej sekcji dives w interfejsie użytkownika przez opisujące widoków, zawartości hierarchii widok i Projektant z systemem iOS.
+W tej sekcji zagłębił się w interfejsie użytkownika poprzez opisanie widoków, zawartości hierarchie z widoku lub narzędzia iOS Designer.
 
-### <a name="ios-designer-and-storyboards"></a>iOS projektanta i planów
+### <a name="ios-designer-and-storyboards"></a>System iOS Designer i scenorysów
 
-IOS Projektant jest visual narzędzia do tworzenia interfejsów użytkownika w programie Xamarin. Projektant można uruchomić przez dwukrotne kliknięcie w dowolnym pliku scenorysu (.storyboard), który zostanie otwarty widok przypominający poniższy zrzut ekranu:
+IOS Designer jest wizualne narzędzia do tworzenia interfejsów użytkownika w środowisku Xamarin. Projektant można uruchamiać przez dwukrotne kliknięcie każdego pliku scenorysu (.storyboard), co spowoduje otwarcie widoku, który przypomina poniższy zrzut ekranu:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](hello-ios-deepdive-images/image33.png "iOS Projektant — interfejs")
+![](hello-ios-deepdive-images/image33.png "Projektant interfejsu systemu iOS")
 
-A *scenorysu* to plik zawiera projekty wizualne ekrany naszej aplikacji oraz przejścia i relacje między ekranów. Reprezentacja ekran aplikacji w scenorysu jest nazywany _sceny_. Każdy sceny reprezentuje kontroler widoku i stosu widoków zarządza (hierarchii widok zawartości). Podczas tworzenia nowego **pojedynczą aplikacją widoku** projektu jest tworzona na podstawie szablonu, Visual Studio for Mac automatycznie generuje plik scenorysu o nazwie `Main.storyboard` i wypełnia je pojedynczego sceny, jak pokazano na zrzucie ekranu poniżej:
+A *scenorysu* jest plik, który zawiera projekty visual ekranów do naszej aplikacji, a także przejścia i relacje między ekranami. Reprezentacja ekranu aplikacji w Scenorys jest nazywany _sceny_. Każdy sceny reprezentuje kontroler widoku i stos widoków zarządzania (hierarchia widok zawartości). Gdy nowy **aplikacja pojedynczego widoku** projekt jest tworzony na podstawie szablonu, Visual Studio dla komputerów Mac automatycznie generuje plik scenorysu o nazwie `Main.storyboard` i wypełnia ją za pomocą pojedynczego sceny, jak pokazano na zrzucie ekranu poniżej:
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatycznie generuje plik scenorysu o nazwie Main.storyboard i wypełnia pojedynczego sceny")
+![](hello-ios-deepdive-images/image34.png "Visual Studio dla komputerów Mac generuje plik scenorysu o nazwie Main.storyboard i automatycznie wypełnia pojedynczego sceny")
 
-Wybieranie kontrolera widoku w sceny można wybrać czarny pasku w dolnej części ekranu scenorysu. Kontroler widoku jest wystąpieniem `UIViewController` klasy, która zawiera kod zapasowy hierarchii widok zawartości. Właściwości na tym kontrolerze widoku można wyświetlać i ustawić wewnątrz **konsoli właściwości**, jak pokazano na poniższym zrzucie ekranu:
+Czarne pasku w dolnej części ekranu scenorysu można wybrać, aby wybrać kontroler widoku dla sceny. Kontroler widoku jest wystąpieniem `UIViewController` klasę, która zawiera kod zapasowego dla hierarchii widok zawartości. Właściwości na tym kontrolerze widoku można wyświetlać i ustawić wewnątrz **konsoli właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
-![](hello-ios-deepdive-images/image35.png "W okienku właściwości")
+![](hello-ios-deepdive-images/image35.png "Zawartość okienka właściwości")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS Projektant — interfejs")
+![](hello-ios-deepdive-images/vs-image33.png "Projektant interfejsu systemu iOS")
 
-A *scenorysu* to plik zawiera projekty wizualne ekrany naszej aplikacji oraz przejścia i relacje między ekranów. Reprezentacja ekran aplikacji w scenorysu jest nazywany _sceny_. Każdy sceny reprezentuje kontroler widoku i stosu widoków zarządza (hierarchii widok zawartości). Podczas tworzenia nowego **pojedynczą aplikacją widoku** projektu jest tworzona na podstawie szablonu, Visual Studio automatycznie generuje plik scenorysu o nazwie `Main.storyboard` i wypełnia je pojedynczego sceny, jak pokazano na poniższym zrzucie ekranu:
+A *scenorysu* jest plik, który zawiera projekty visual ekranów do naszej aplikacji, a także przejścia i relacje między ekranami. Reprezentacja ekranu aplikacji w Scenorys jest nazywany _sceny_. Każdy sceny reprezentuje kontroler widoku i stos widoków zarządzania (hierarchia widok zawartości). Gdy nowy **aplikacja pojedynczego widoku** projekt jest tworzony na podstawie szablonu, program Visual Studio automatycznie generuje plik scenorysu o nazwie `Main.storyboard` i wypełnia ją za pomocą pojedynczego sceny, jak pokazano na poniższym zrzucie ekranu:
 
-![](hello-ios-deepdive-images/vs-image34.png "Program Visual Studio automatycznie generuje plik scenorysu o nazwie Main.storyboard i wypełnia pojedynczego sceny")
+![](hello-ios-deepdive-images/vs-image34.png "Program Visual Studio automatycznie generuje plik scenorysu o nazwie Main.storyboard i wypełnia ją za pomocą pojedynczego sceny")
 
-Na pasku w dolnej części ekranu scenorysu, można wybrać do Wybierz kontroler widoku dla sceny. Kontroler widoku jest wystąpieniem `UIViewController` klasy, która zawiera kod zapasowy hierarchii widok zawartości. Właściwości na tym kontrolerze widoku można wyświetlać i ustawić wewnątrz **w okienku właściwości**, jak pokazano na poniższym zrzucie ekranu:
+Na pasku w dolnej części ekranu scenorysu można wybrać, aby wybrać kontroler widoku dla sceny. Kontroler widoku jest wystąpieniem `UIViewController` klasę, która zawiera kod zapasowego dla hierarchii widok zawartości. Właściwości na tym kontrolerze widoku można wyświetlać i ustawić wewnątrz **w okienku właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
-![](hello-ios-deepdive-images/vs-image35.png "W okienku właściwości")
+![](hello-ios-deepdive-images/vs-image35.png "Zawartość okienka właściwości")
 
 -----
 
-_Widoku_ można wybrać, klikając wewnątrz biała część sceny. Widok jest wystąpieniem `UIView` klasa, która definiuje obszar ekranu i udostępnia interfejsy do pracy z zawartości w tym obszarze. Domyślny widok jest jeden *widoku głównego* który wypełnia ekranu całych urządzenia.
+_Widoku_ można wybrać, klikając pozycję wewnątrz biała część sceny. Widok jest wystąpieniem `UIView` klasy, która definiuje obszar ekranu i zapewnia interfejsy do pracy z zawartością, w tym obszarze. Domyślny widok jest pojedynczym *widokiem głównym* , wypełnia ekran całym urządzeniem.
 
-Z lewej strony sceny jest Szara strzałka z ikoną flagi, jak pokazano na poniższym zrzucie ekranu:
+Po lewej stronie sceny jest Szara strzałka z ikoną flagi, jak pokazano na poniższym zrzucie ekranu:
 
  [![](hello-ios-deepdive-images/image37.png "Szara strzałka z ikoną flagi")](hello-ios-deepdive-images/image37.png#lightbox)
 
-Szara strzałka reprezentuje przejście scenorysu o nazwie *Segue* (Wymowa "seg sposób"). Ponieważ ta Segue nie ma żadnych źródła, jest nazywany *Sourceless Segue*. Sourceless Segue wskazuje pierwszy sceny, którego widoki pobiera załadowane do naszej aplikacji okna przy uruchamianiu aplikacji. Sceny i widoki w nim będą najpierw, użytkownik zobaczy załadowanie aplikacji.
+Szara strzałka reprezentuje przejście scenorysu o nazwie *Segue* (wymawiane "seg — sposób"). Ponieważ ta Segue nie źródła, jest nazywany *Sourceless Segue*. Sourceless Segue wskazuje na pierwszy sceny, w których widoki pobiera załadowane do naszej aplikacji okna przy uruchamianiu aplikacji. Sceny i widoki wewnątrz niej będą najpierw, użytkownik zobaczy podczas ładowania aplikacji.
 
-Podczas konstruowania interfejsu użytkownika, dodatkowe widoki mogą być przeciągnięte z **przybornika** na widok główny na powierzchni projektu, jak pokazano na poniższym zrzucie ekranu:
+Podczas tworzenia interfejsu użytkownika, dodatkowe widoki mogą być przeciągnięte z **przybornika** na widok główny na powierzchni projektowej, jak pokazano na poniższym zrzucie ekranu:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](hello-ios-deepdive-images/image38.png "Dodatkowe widoki mogą być przeciągnięte z przybornika do widoku głównego na powierzchni projektu")
+![](hello-ios-deepdive-images/image38.png "Dodatkowe widoki mogą być przeciągnięte z przybornika na widok główny na powierzchni projektowej")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](hello-ios-deepdive-images/vs-image38.png "Dodatkowe widoki mogą być przeciągnięte z przybornika do widoku głównego na powierzchni projektu")
+![](hello-ios-deepdive-images/vs-image38.png "Dodatkowe widoki mogą być przeciągnięte z przybornika na widok główny na powierzchni projektowej")
 
 -----
 
-Widoki te dodatkowe są nazywane *widoków podrzędnych*. Razem widoku głównego i widoków podrzędnych są częścią *hierarchii widok zawartości* zarządzanym przez `ViewController`. Konspekt wszystkie elementy w sceny można wyświetlić, sprawdzając w **konspekt dokumentu** konsoli:
+Te dodatkowe widoki są nazywane *widoków podrzędnych*. Razem widoku głównego i widoków podrzędnych są częścią *zawartości Wyświetl hierarchię* zarządzanym przez `ViewController`. Konspekt wszystkie elementy w scenie, mogą być wyświetlane, badając ją w **konspekt dokumentu** konsoli:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -225,7 +201,7 @@ Widoki te dodatkowe są nazywane *widoków podrzędnych*. Razem widoku główneg
 
 -----
 
-Widoków podrzędnych są wyróżnione na poniższym diagramie:
+Widoków podrzędnych, zostały wyróżnione na poniższym diagramie:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -237,61 +213,61 @@ Widoków podrzędnych są wyróżnione na poniższym diagramie:
 
 -----
 
-Następna sekcja zawiera podział według hierarchii widok zawartości reprezentowany przez ten sceny.
+Następna sekcja dzieli zawartość Wyświetl hierarchię, reprezentowane przez ten sceny.
 
-## <a name="content-view-hierarchy"></a>Wyświetlanie zawartości hierarchii
+## <a name="content-view-hierarchy"></a>Hierarchia widoku zawartości
 
-A _hierarchii widok zawartości_ jest stos widoki i widoków podrzędnych zarządzany przez pojedynczy kontroler widoku, jak pokazano na poniższym diagramie:
+A _zawartości Wyświetl hierarchię_ to stos widoków i zarządzane przez kontrolera pojedynczego widoku widoków podrzędnych, jak pokazano na poniższym diagramie:
 
- [![](hello-ios-deepdive-images/image41.png "Wyświetlanie zawartości hierarchii")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![](hello-ios-deepdive-images/image41.png "Hierarchia widoku zawartości")](hello-ios-deepdive-images/image41.png#lightbox)
 
-Firma Microsoft może wprowadzać hierarchii widok zawartości naszych `ViewController` widoczność tymczasowo zmiana koloru tła widoku głównego żółty w sekcji widoku z **konsoli właściwości**, jak pokazano na poniższym zrzucie ekranu:
+Ułatwiamy zawartości widoku hierarchii naszych `ViewController` łatwiej zobaczyć tymczasowo zmieniając kolor tła głównego widok na żółty w sekcji widoku z **konsoli właściwości**, jak pokazano na poniższym zrzucie ekranu:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](hello-ios-deepdive-images/image42.png "Zmiana koloru tła widoku głównego żółty w sekcji widoku konsoli do właściwości")
+![](hello-ios-deepdive-images/image42.png "Zmiana koloru tła głównego widok na żółty w sekcji widoku konsoli do właściwości")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](hello-ios-deepdive-images/vs-image42.png "Zmiana koloru tła widoku głównego żółty w sekcji widoku konsoli do właściwości")
+![](hello-ios-deepdive-images/vs-image42.png "Zmiana koloru tła głównego widok na żółty w sekcji widoku konsoli do właściwości")
 
 -----
 
-Na poniższym diagramie przedstawiono relacje między okna, widoków, widoków podrzędnych i kontrolera widoku, które Przełącz interfejs użytkownika ekranu urządzenia:
+Poniższy diagram ilustruje relacje między oknem, widoki, widoków podrzędnych i kontroler widoku, które Przesuń interfejs użytkownika na ekranie urządzenia:
 
- [![](hello-ios-deepdive-images/image43.png "Relacje między okna, widoków, widoków podrzędnych i kontrolera widoku")](hello-ios-deepdive-images/image43.png#lightbox)
+ [![](hello-ios-deepdive-images/image43.png "Relacje między okna, widoki, widoków podrzędnych i kontroler widoku")](hello-ios-deepdive-images/image43.png#lightbox)
 
-W następnej sekcji opisano sposób pracy z widoków w kodzie i Naucz się programować za pomocą kontrolerów widoku i cyklem życia widok interakcji z użytkownikiem.
+W następnej sekcji omówiono sposób pracy z widoków w kodzie i Naucz się programować przy użyciu kontrolerów widoku i cyklem życia widok interakcji z użytkownikiem.
 
-## <a name="view-controllers-and-the-view-lifecycle"></a>Widok kontrolerów i cyklem życia widoku
+## <a name="view-controllers-and-the-view-lifecycle"></a>Cykl życia widoku i kontrolerów widoku
 
-Każdej hierarchii widok zawartości ma odpowiedniego kontrolera widoku w celu interakcji z użytkownikiem zasilania. Roli kontrolera widoku jest zarządzanie widokami w hierarchii widok zawartości. Kontroler widoku nie jest częścią hierarchii widok zawartości, a nie jest elementem interfejsu. Zamiast zawiera kod, który obsługuje interakcji użytkownika z obiektami na ekranie.
+Każdy zawartości wyświetlanie hierarchii ma odpowiedni kontroler widoku na interakcję z użytkownikiem usługi power. Rola kontrolera widoku jest zarządzanie widokami w hierarchii widok zawartości. Kontroler widoku nie jest częścią hierarchii widok zawartości, a nie jest elementem w interfejsie. Przeciwnie zawiera kod, który obsługuje interakcji użytkownika z obiektów na ekranie.
 
-### <a name="view-controllers-and-storyboards"></a>Widok kontrolerów i planów
+### <a name="view-controllers-and-storyboards"></a>Scenorysy i kontrolerów widoku
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Kontroler widoku jest reprezentowana w scenorysu jako pasek u dołu sceny. Wybiera kontroler widoku powoduje wyświetlenie jej właściwości w **konsoli właściwości**:
+Kontroler widoku jest reprezentowany w scenorysu pasek u dołu sceny. Wybiera kontroler widoku wyświetlenie jego właściwości w **konsoli właściwości**:
 
-![](hello-ios-deepdive-images/image44.png "Wybiera kontroler widoku powoduje wyświetlenie jej właściwości w okienku właściwości")
+![](hello-ios-deepdive-images/image44.png "Wybiera kontroler widoku wyświetlenie jej właściwości na panelu Właściwości")
 
-Niestandardowej klasy kontrolera widoku zawartości hierarchii widoku reprezentowany przez ten sceny można ustawić, edytując **klasy** właściwości w **tożsamości** sekcji **konsoli właściwości**. Na przykład naszych **Phoneword** zestawów aplikacji `ViewController` jako kontroler widoku dla naszych pierwszy ekran, jak pokazano na poniższym zrzucie ekranu:
+Można ustawić niestandardowe klasę kontroler widoku dla hierarchii widok zawartości, reprezentowane przez ten sceny, edytując **klasy** właściwość **tożsamości** części **konsoli właściwości**. Na przykład naszym **Phoneword** aplikacja ustawi `ViewController` jako kontroler widoku dla naszych pierwszego ekranu, jak pokazano na poniższym zrzucie ekranu:
 
 ![](hello-ios-deepdive-images/image45new.png "Aplikacja Phoneword ustawia ViewController jako kontroler widoku")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Kontroler widoku jest reprezentowana w scenorysu jako pasek u dołu sceny. Wybiera kontroler widoku powoduje wyświetlenie jej właściwości w **w okienku właściwości**:
+Kontroler widoku jest reprezentowany w scenorysu pasek u dołu sceny. Wybiera kontroler widoku wyświetlenie jego właściwości w **w okienku właściwości**:
 
-![](hello-ios-deepdive-images/vs-image44.png "Wybiera kontroler widoku powoduje wyświetlenie jej właściwości w okienku właściwości")
+![](hello-ios-deepdive-images/vs-image44.png "Wybiera kontroler widoku wyświetlenie jej właściwości na panelu Właściwości")
 
-Niestandardowej klasy kontrolera widoku zawartości hierarchii widoku reprezentowany przez ten sceny można ustawić, edytując **klasy** właściwości w **tożsamości** sekcji **wokienkuwłaściwości**. Na przykład naszych **Phoneword** zestawów aplikacji `ViewController` jako kontroler widoku dla naszych pierwszy ekran, jak pokazano na poniższym zrzucie ekranu:
+Można ustawić niestandardowe klasę kontroler widoku dla hierarchii widok zawartości, reprezentowane przez ten sceny, edytując **klasy** właściwość **tożsamości** części **wokienkuwłaściwości**. Na przykład naszym **Phoneword** aplikacja ustawi `ViewController` jako kontroler widoku dla naszych pierwszego ekranu, jak pokazano na poniższym zrzucie ekranu:
 
 ![](hello-ios-deepdive-images/vs-image45.png "Aplikacja Phoneword ustawia ViewController jako kontroler widoku")
 
 -----
 
-To łączy scenorysu reprezentację kontroler widoku do `ViewController` klasy C#. Otwórz `ViewController.cs` plików i zwróć uwagę, kontroler widoku jest *podklasy* z `UIViewController`, jak pokazano w poniższym kodzie:
+W ten sposób scenorysu reprezentacja kontroler widoku do `ViewController` klasy C#. Otwórz `ViewController.cs` pliku i zwróć uwagę, jest kontroler widoku *podklasy* z `UIViewController`, co ilustruje poniższy kod:
 
 ```csharp
 public partial class ViewController : UIViewController
@@ -303,37 +279,37 @@ public partial class ViewController : UIViewController
 }
 ```
 
-`ViewController` Teraz dyski interakcji hierarchii widok zawartości skojarzone z tym kontrolerem widoku w scenorysu. Następnie dowiesz się rolę kontrolera widoku w zarządzaniu widoki dzięki zastosowaniu w procesie nazywanym cyklu życia widoku.
+`ViewController` Teraz dyski interakcje hierarchii widok zawartości skojarzone z tego kontrolera widoku w scenorysu. Następnie dowiesz się o roli kontrolera widoku w zarządzaniu widoków, wprowadzając w procesie zwanym cyklu życia widoku.
 
 > [!NOTE]
-> Dla tylko visual ekrany, które nie wymagają interakcji użytkownika **klasy** właściwość może być pusty w **konsoli właściwości**. To ustawienie jako domyślna Implementacja klasy zapasowy kontroler widoku `UIViewController`, które jest odpowiednie, jeśli nie jest planowane dodanie niestandardowego kodu.
+> Dla tylko do wizualizacji ekranów, które nie wymagają interakcji z użytkownikiem **klasy** właściwość może być puste w **konsoli właściwości**. To ustawienie jako domyślna Implementacja klasy zapasowy kontroler widoku `UIViewController`, która jest odpowiednia, jeśli użytkownik nie jest planowana na dodawanie kodu niestandardowego.
 
 ### <a name="view-lifecycle"></a>Cykl życia widoku
 
-Kontroler widoku jest odpowiedzialny za ładowanie i zwalnianie zawartości hierarchie widok z okna. Znaczenie najważniejsza do widoku w hierarchii widok zawartości, system operacyjny powiadamia kontroler widoku za pomocą zdarzeń w cyklu życia widoku. Przez zastąpienie metody w cyklu życia widoku, może współpracować z obiektów na ekranie i Tworzenie interfejsu użytkownika dynamicznych, dynamiczne.
+Kontroler widoku jest odpowiedzialne za ładowanie i zwalnianie zawartości hierarchie widok z okna. Znaczenie najważniejsza do widoku w hierarchii widok zawartości, system operacyjny powiadamia kontrolera widoku za pomocą zdarzeń w cyklu życia widoku. Poprzez zastąpienie metody w cyklu życia widok, można korzystać z obiektów na ekranie i tworzymy interfejs użytkownika dynamicznych, interaktywnych.
 
-Są to metody podstawowy cykl życia i ich funkcji:
+Poniżej przedstawiono metody podstawowy cykl życia i ich funkcji:
 
--  **ViewDidLoad** — wywołane *po* po raz pierwszy kontroler widoku ładuje hierarchii widok zawartości do pamięci. To jest dobrym miejscem do początkowej konfiguracji, ponieważ jest on widoków podrzędnych najpierw stają się dostępne w kodzie.
--  **ViewWillAppear** -wywoływana za każdym razem, gdy widok kontrolera widoku zostanie dodany do zawartości wyświetlanie hierarchii i są wyświetlane na ekranie.
+-  **ViewDidLoad** — wywoływany *po* po raz pierwszy kontroler widoku ładuje hierarchii widok zawartości do pamięci. Jest to dobre miejsce do początkowej instalacji, ponieważ jest on widoków podrzędnych najpierw stają się dostępne w kodzie.
+-  **ViewWillAppear** -wywoływana za każdym razem, gdy widok kontrolera widoku zostanie dodany do zawartości Wyświetl hierarchię i są wyświetlane na ekranie.
 -  **ViewWillDisappear** -wywoływana za każdym razem, gdy widok kontrolera widoku zostanie usunięta z hierarchii widok zawartości i są usuwane z ekranu. To zdarzenie cyklu życia służy do oczyszczania i Zapisywanie stanu.
--  **ViewDidAppear** i **ViewDidDisappear** -wywoływane, gdy widok pobiera dodane lub usunięte z hierarchią widok zawartości odpowiednio.
+-  **ViewDidAppear** i **ViewDidDisappear** -wywoływana, gdy widok pobiera dodane lub usunięte z hierarchii widok zawartości, odpowiednio.
 
 
-Po dodaniu niestandardowych kodów na dowolnym etapie cyklu życia, metoda cyklu życia w *Podstawowa implementacja* musi być *zastąpiona*. Jest to osiągane przez naciśnięcie przycisku do istniejącą metodę cyklu życia jest już dołączony do niej kodu, i rozszerzanie jej dodatkowy kod. Podstawowa implementacja jest wywoływana z wewnątrz metody, aby upewnić się, że oryginalny kod jest uruchamiany przed nowy kod. Na przykład jest przedstawiona w następnej sekcji.
+Po dodaniu niestandardowego kodu na każdym etapie cyklu życia tej metody cyklu życia firmy *implementację podstawową* musi być *przesłonięta*. Jest to osiągane przez sięgnięcie do istniejącej metody cyklu życia, która ma jakiś kod już dołączone do niego, i rozszerzania jej przy użyciu dodatkowego kodu. Podstawowa implementacja jest wywoływana z wewnątrz metody, aby upewnić się, że oryginalny kod jest uruchamiany zanim nowy kod. Na przykład jest przedstawiona w następnej sekcji.
 
-Aby uzyskać więcej informacji na temat pracy z widoku kontrolerów odwoływać się do firmy Apple [widoku kontrolera Programming Guide dla systemu iOS](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/ViewLoadingandUnloading/ViewLoadingandUnloading.html) i [odwołania UIViewController](https://developer.apple.com/library/ios/documentation/uikit/reference/UIViewController_Class/Reference/Reference.html).
+Aby uzyskać więcej informacji na temat pracy z kontrolerów widoku odnoszą się do firmy Apple [przewodnik programowania w widoku kontrolera dla systemu iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1) i [odwołania UIViewController](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc).
 
-### <a name="responding-to-user-interaction"></a>Odpowiada na żądania interakcji z użytkownikiem
+### <a name="responding-to-user-interaction"></a>Reagowanie na interakcję z użytkownikiem
 
-Najważniejsze roli kontrolera widoku odpowiada na żądania interakcji użytkownika, takich jak naciśnięcie przycisków nawigacji i inne. Najprostszym sposobem obsługi interakcji z użytkownikiem jest okablować Góra formantu słuchać użytkownika argument wejściowy i dołączyć program obsługi zdarzeń, aby odpowiedzieć na dane wejściowe. Na przykład przycisk można można przewodowej się odpowiedzieć na zdarzenie touch, jak pokazano w aplikacji Phoneword.
+Najważniejsze roli kontrolera widoku odpowiada na żądania interakcji użytkownika, takie jak naciśnięcie przycisku, nawigacji i nie tylko. Najprostszym sposobem obsługi interakcji użytkownika jest połączenie w górę kontrolki do nasłuchiwania użytkownika danych wejściowych i dołączyć program obsługi zdarzeń, aby odpowiedzieć na dane wejściowe. Na przykład przycisk może być gotowe i reagowanie na zdarzenia dotykowe, jak pokazano w aplikacji Phoneword.
 
-Teraz, aby mieć lepiej zrozumieć widokach i kontrolerach widoku, Przyjrzyjmy się, jak to działa.
-W `Phoneword_iOS` projektu, przycisk dodano o nazwie `TranslateButton` do hierarchii widok zawartości:
+Skoro już istnieje, ma lepiej zrozumieć, widoków i kontrolerów widoku, Przyjrzyjmy się, jak to działa.
+W `Phoneword_iOS` projektu, przycisk został dodany o nazwie `TranslateButton` do hierarchii widok zawartości:
 
- [![](hello-ios-deepdive-images/image1.png "Przycisk dodano wywołane TranslateButton hierarchii widoku zawartości")](hello-ios-deepdive-images/image1.png#lightbox)
+ [![](hello-ios-deepdive-images/image1.png "Przycisk został dodany o nazwie TranslateButton do hierarchii widok zawartości")](hello-ios-deepdive-images/image1.png#lightbox)
 
-Gdy **nazwa** jest przypisany do **przycisk** kontroli w **właściwości konsoli**, projektanta iOS automatycznie mapowane go do kontroli w  **ViewController.designer.cs**, wprowadzania `TranslateButton` dostępne wewnątrz `ViewController` klasy. Formanty najpierw staną się dostępne w `ViewDidLoad` etapie cyklu życia widoku, więc ta metoda cyklu życia służy odpowiedzieć touch użytkownika:
+Gdy **nazwa** jest przypisany do **przycisk** w kontrolce **konsoli właściwości**, narzędzia iOS designer automatycznie mapowane go do formantu w  **ViewController.designer.cs**, a `TranslateButton` dostępna wewnątrz `ViewController` klasy. Formanty najpierw stają się dostępne w `ViewDidLoad` etap cyklu życia widoku, więc ta metoda cyklu życia jest używana na dotyk przez użytkownika:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -344,9 +320,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-Aplikacja Phoneword używa zdarzeń touch, nazywany `TouchUpInside` słuchać touch użytkownika. `TouchUpInside` wykrywa touch się zdarzenia (palca podnoszenia odniosło) znajdujący się w granicach formantu touch w dół (palca dotknięcie ekranu). Przeciwieństwem `TouchUpInside` jest `TouchDown` zdarzenie, które są generowane, gdy użytkownik naciśnie w dół w formancie. `TouchDown` Zdarzeń przechwytuje dużo hałasu i zapewnia możliwość anulowania touch przez przesuwanie ich palca poza formantu. `TouchUpInside` jest najczęściej odpowiedzieć na **przycisk** touch i tworzy środowisko użytkownika oczekuje po naciśnięcie przycisku. Więcej informacji na ten jest dostępny w firmy Apple [iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html).
+Aplikacja Phoneword używa zdarzenia dotykowe, o nazwie `TouchUpInside` do nasłuchiwania dotykowego użytkownika. `TouchUpInside` nasłuchuje touch się zdarzenie (finger podnoszenia mieściły się na ekranie), znajdujący się w granicach formantu touch w dół (finger dotykanie ekranu). Przeciwieństwo `TouchUpInside` jest `TouchDown` zdarzenie, które są generowane, gdy użytkownik naciśnie klawisz na kontrolce. `TouchDown` Zdarzeń przechwytuje wiele szumu i daje możliwość anulowania na dotyk przez przesuwanie ich finger poza formant użytkownika. `TouchUpInside` to najbardziej popularny sposób, aby odpowiedzieć na **przycisk** touch i tworzy środowisko użytkownika oczekuje, że po naciśnięciu klawisza przycisk. Więcej informacji na ten jest dostępny w firmy Apple [iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html).
 
-Aplikacja obsługi `TouchUpInside` zdarzenie z wyrażenia lambda, ale delegata lub obsługi zdarzenia o nazwie można również zostały użyte. Końcowe kod przycisku przypominających następujące czynności:
+Aplikacja obsługiwana `TouchUpInside` zdarzeń za pomocą wyrażenia lambda, ale delegata lub program obsługi zdarzeń o nazwie można również zostały użyte. Końcowe kod przycisku przypominających następujące czynności:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -371,16 +347,16 @@ public override void ViewDidLoad ()
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Dodatkowe założenia Phoneword
 
-Aplikacja Phoneword wprowadzono kilka koncepcji, które nie są uwzględnione w tym przewodniku. Pojęcia te obejmują:
+Aplikacja Phoneword wprowadzono kilka koncepcji, które nie są uwzględnione w tym przewodniku. Te pojęcia obejmują:
 
-- **Zmień tekst przycisku** — aplikacji Phoneword wykazać, jak zmienić tekst **przycisk** przez wywołanie metody `SetTitle` na **przycisk** i przekazując nowego tekstu i  **Przycisk**w _stan kontrolki_. Na przykład poniższy kod zmienia tekst CallButton "Wywołania":
+- **Zmień tekst przycisku** — aplikacji Phoneword pokazano, jak zmienić tekst **przycisk** przez wywołanie metody `SetTitle` na **przycisk** i przekazując nowy tekst i  **Przycisk**firmy _stan formantu_. Na przykład poniższy kod zmienia CallButton tekst "Wywołania":
 
     ```csharp
     CallButton.SetTitle ("Call", UIControlState.Normal);
     ```
-- **Włączanie i wyłączanie przycisków** — **przyciski** może znajdować się w `Enabled` lub `Disabled` stanu. A wyłączone **przycisk** nie będzie uwzględniał dane wejściowe użytkownika. Na przykład poniższy kod wyłącza `CallButton`: CallButton.Enabled = false; Aby uzyskać więcej informacji na przyciskach dotyczą [przyciski](~/ios/user-interface/controls/buttons.md) przewodnik.
-- **Odrzuć klawiatury** — po podsłuchu użytkownika pola tekstowego, system iOS Wyświetla klawiatury, aby umożliwić użytkownikowi wprowadzenie danych wejściowych. Niestety nie ma żadnych wbudowanych funkcji, aby odrzucić klawiatury. Następujący kod został dodany do `TranslateButton` aby odrzucić klawiatury, gdy użytkownik naciśnie `TranslateButton`: PhoneNumberText.ResignFirstResponder (); Innym przykładem odrzuceniu klawiatury, można znaleźć w temacie [odrzucić klawiatury](https://developer.xamarin.com/recipes/ios/input/keyboards/dismiss_the_keyboard) przepisu.
-- **Miejsce połączenie telefoniczne z adresem URL** — w aplikacji Phoneword schemat adresu URL Apple jest używane do uruchomienia aplikacji phone systemu. Schemat niestandardowy adres URL składa się z "tel:" prefiks przetłumaczonego numerze telefonu i, jak pokazano w poniższym kodzie:
+- **Włączanie i wyłączanie przycisków** — **przyciski** mogą znajdować się w `Enabled` lub `Disabled` stanu. Jest wyłączona **przycisk** nie będzie odpowiadać na dane wejściowe użytkownika. Na przykład, poniższy kod wyłącza `CallButton`: CallButton.Enabled = false;. Aby uzyskać więcej informacji na temat przycisków, zobacz [przyciski](~/ios/user-interface/controls/buttons.md) przewodnik.
+- **Odrzuć klawiatury** — po użytkownik podsłuchu w polu tekstowym dla systemu iOS Wyświetla klawiatury, aby zezwolić użytkownikom na wprowadzanie danych wejściowych. Niestety nie ma żadnych funkcji wbudowanych, aby odrzucić klawiatury. Poniższy kod jest dodawany do `TranslateButton` odrzucać klawiatury, gdy użytkownik naciśnie `TranslateButton`: PhoneNumberText.ResignFirstResponder (); Inny przykład odrzucanie klawiatury, można znaleźć [odrzucić klawiatury](https://github.com/xamarin/recipes/tree/master/Recipes/ios/input/keyboards/dismiss_the_keyboard) przepisu.
+- **Połączenie telefoniczne miejscu za pomocą adresu URL** — w aplikacji Phoneword schemat adresu URL Apple służy do uruchamiania aplikacji phone systemu. Niestandardowy schemat adresu URL składa się z "tel:" prefiks przetłumaczone numerze telefonu i, co ilustruje poniższy kod:
 
     ```csharp
     var url = new NSUrl ("tel:" + translatedNumber);
@@ -389,7 +365,7 @@ Aplikacja Phoneword wprowadzono kilka koncepcji, które nie są uwzględnione w 
         // show alert Controller
     }
     ```
-- **Pokaż Alert** — gdy użytkownik próbuje umieścić połączeń telefonicznych na urządzeniu, która nie obsługuje wywołań — na przykład symulator lub iPod Touch — okna dialogowego alertu jest wyświetlany użytkownikowi należy znać rozmowy telefonicznej nie może zostać umieszczona. Poniższy kod tworzy i wypełnia kontrolera alertu:
+- **Pokaż Alert** — po użytkownik próbuje umieścić połączenie telefoniczne na urządzeniu, które nie obsługują wywołania — na przykład symulatorze lub urządzeniu iPod Touch — okna dialogowego alertu jest wyświetlany, użytkownik nie może zostać umieszczona połączeń telefonicznych. Poniższy kod tworzy i wypełnia kontrolera alertu:
 
     ```csharp
     if (!UIApplication.SharedApplication.OpenUrl (url)) {
@@ -399,70 +375,70 @@ Aplikacja Phoneword wprowadzono kilka koncepcji, które nie są uwzględnione w 
                 }
     ```
 
-Aby uzyskać więcej informacji na widoki alertów dla systemu iOS, zapoznaj się [przepisu kontrolera Alert](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/).
+Aby uzyskać więcej informacji na temat widoki alertów dla systemu iOS, zobacz [przepisu kontrolera Alert](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller).
 
-## <a name="testing-deployment-and-finishing-touches"></a>Testowanie wdrażania i ostateczne poprawki
+## <a name="testing-deployment-and-finishing-touches"></a>Testowanie, wdrażanie i poprawek
 
-Zarówno program Visual Studio dla komputerów Mac, jak i programu Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. W tej sekcji opisano opcje debugowania, przedstawiono testowanie aplikacji na urządzeniu i wprowadza narzędzia do tworzenia, uruchamiania obrazów i ikon niestandardowych aplikacji.
+Visual Studio dla komputerów Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. W tej sekcji omówiono opcje debugowania, pokazuje testowania aplikacji na urządzeniu i wprowadza narzędzia służące do tworzenia, uruchamiania obrazów i ikon aplikacji niestandardowej.
 
-### <a name="debugging-tools"></a>Narzędzia debugowania
+### <a name="debugging-tools"></a>Narzędzia do debugowania
 
-Czasami problemów w kodzie aplikacji są trudne do diagnozowania. Aby ułatwić diagnozowanie problemów złożonego kodu, można [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), lub [dane wyjściowe do okna dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Czasami problemów w kodzie aplikacji są trudne do zdiagnozowania. Aby ułatwić diagnozowanie problemów z kodem złożonych, można wykonać następujące akcje [Ustaw punkt przerwania](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [kod za pomocą kroku](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code), lub [informacji wyjściowych w oknie dziennika](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
-### <a name="deploy-to-a-device"></a>Wdrażanie do urządzenia
+### <a name="deploy-to-a-device"></a>Wdrażanie na urządzeniu
 
-Symulatora systemu iOS jest szybkim sposobem testowania aplikacji. Symulator ma liczbę optymalizacje przydatne do testowania, zasymulować lokalizacji, w tym [symulowanie przepływu](https://developer.xamarin.com/recipes/ios/multitasking/test_location_changes_in_simulator/)itd. Jednak użytkownicy nie będą korzystać z ostatecznej aplikacji w symulatorze. Wszystkie aplikacje powinny być testowane na urządzeniach prawdziwe, wczesne i często.
+W narzędziu iOS Simulator jest możliwość szybkiego testowania aplikacji. Symulator ma kilka optymalizacji przydatne w przypadku testowania makiety lokalizacji, w tym [symulowania przenoszenia](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/test_location_changes_in_simulator)i nie tylko. Jednak użytkownicy nie będą wymagały ostatecznej aplikacji w symulatorze. Powinien zostać przetestowany wszystkie aplikacje na prawdziwych urządzeniach, wcześnie i często.
 
-Urządzenie czas do udostępniania i wymaga konta dewelopera firmy Apple. [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md) przewodniku znajdują się szczegółowe instrukcje na przygotowanie urządzenie do programowania.
+Urządzenie zajmuje trochę czasu, aby aprowizować i konieczne jest posiadanie konta dewelopera firmy Apple. [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) przewodnik zawiera szczegółowe instrukcje na temat pobierania urządzenia gotowe do tworzenia aplikacji.
 
 > [!NOTE]
-> W chwili obecnej, ze względu na wymagania firmy Apple, należy mieć certyfikatu deweloperskiego lub _tożsamości podpisywania_ do kompilacji kodu dla urządzenie lub symulator. Postępuj zgodnie z instrukcjami [Inicjowanie obsługi administracyjnej urządzeń przewodnik](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) tej konfiguracji.
+> W chwili obecnej, ze względu na wymagania firmy Apple, należy mieć certyfikatu deweloperskiego lub _tożsamość do podpisywania_ do tworzenia kodu dla urządzenia lub symulatora. Postępuj zgodnie z instrukcjami w [Device Provisioning guide](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) o skonfigurowanie tego numeru.
 
-Po zainicjowaniu obsługi urządzenia, można wdrożyć do niej przez podłączenie w zmiana obiekt docelowy w pasku narzędzi kompilacji na urządzeniu z systemem iOS, a następnie naciskając klawisz **Start** ( **odtwarzanie**) jak pokazano na poniższym zrzucie ekranu:
+Po aprowizacji urządzenia można wdrożyć do niego przez podłączenie go w zmiana docelowej, na pasku narzędzi kompilacji na urządzenia z systemem iOS, a następnie naciskając klawisz **Start** ( **Odtwórz**) jak pokazano na poniższym zrzucie ekranu:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](hello-ios-deepdive-images/image46new.png "Naciskając klawisz Start/Play")
+![](hello-ios-deepdive-images/image46new.png "Naciśnięcie Start/odtwarzania")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](hello-ios-deepdive-images/vs-image46.png "Naciskając klawisz Start/Play")
+![](hello-ios-deepdive-images/vs-image46.png "Naciśnięcie Start/odtwarzania")
 
 -----
 
 Aplikacja zostanie wdrożona na urządzeniu z systemem iOS:
 
-[![](hello-ios-deepdive-images/image1.png "Wdroży na urządzeniu z systemem iOS i uruchamianie aplikacji")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "Aplikacja będzie wdrożyć na urządzeniu z systemem iOS i uruchomienie")](hello-ios-deepdive-images/image1.png#lightbox)
 
-### <a name="generate-custom-icons-and-launch-images"></a>Generowanie ikon niestandardowych i uruchamianie obrazów
+### <a name="generate-custom-icons-and-launch-images"></a>Generowanie niestandardowych ikon i obrazy uruchamiania
 
-Nie zawsze ma dostępne do tworzenia ikon niestandardowych i uruchamianie obrazów, które aplikacja powinna wyróżniające projektanta. Poniżej przedstawiono kilka innych sposobów generowania aplikacji niestandardowej kompozycji:
+Nie wszyscy ma dostępne do tworzenia niestandardowych ikon i uruchamianie obrazów, czego potrzebuje aplikacji, aby wyróżnić projektanta. Oto kilka innych sposobów generowania kompozycji aplikacji niestandardowej:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-- [**Rysunek** ](https://www.sketchapp.com") — schemat jest to aplikacja Mac za projektowanie interfejsów użytkownika, ikony i inne. To jest aplikacja, który został użyty do zaprojektowania zestaw ikony aplikacji platformy Xamarin i uruchamianie obrazów. Rysunek 3 jest dostępna w sklepie z aplikacjami. Można wypróbować wolnych [narzędzie szkicu](http://bohemiancoding.com/sketch/tool/) również.
-- [**Pixelmator** ](http://www.pixelmator.com/) — uniwersalne obrazu, edytowanie aplikacji dla komputerów Mac, który koszty około 30 $.
-- [**Glyphish** ](http://www.glyphish.com/) — ikona wbudowane wysokiej jakości bezpłatnie ustawia pobierania i zakupu.
-- [**Fiverr** ](http://www.fiverr.com/) — możliwość wyboru z szerokiej gamy Designer, aby utworzyć ikonę ustawiane, zaczynając od wynosi 5.  Może być hit lub miss, ale dobrym zasobu, jeśli potrzebujesz ikony przeznaczony na bieżąco
+- [**Szkic** ](https://www.sketchapp.com") — schemat jest aplikacja dla komputerów Mac dotyczące projektowania interfejsów użytkownika, ikon i nie tylko. To jest aplikacja, który został użyty do projektowania zestawu ikon aplikacji platformy Xamarin i uruchamianie obrazów. Rysunek 3 jest dostępna w Store aplikacji. Możesz wypróbować bezpłatną [narzędzie szkic](http://bohemiancoding.com/sketch/tool/) także.
+- [**Pixelmator** ](http://www.pixelmator.com/) — wszechstronny obraz, edytowanie aplikacji dla komputerów Mac, który koszt wynosi około 30 USD.
+- [**Glyphish** ](http://www.glyphish.com/) — ikona wbudowanych wysokiej jakości za darmo ustawia pobierania i możliwości zakupu.
+- [**Fiverr** ](http://www.fiverr.com/) — możliwość wyboru z różnych projektantów do tworzenia ikony ustawiane, zaczynając od 5 USD.  Może być hit lub miss, ale odpowiedni zasób, jeśli potrzebujesz ikony przeznaczony na bieżąco
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-* Visual Studio — można to utworzyć prosty ikonę dla aplikacji bezpośrednio w środowisku IDE.
-- [**Glyphish** ](http://www.glyphish.com/) — ikona wbudowane wysokiej jakości bezpłatnie ustawia pobierania i zakupu.
-- [**Fiverr** ](http://www.fiverr.com/) — możliwość wyboru z szerokiej gamy Designer, aby utworzyć ikonę ustawiane, zaczynając od wynosi 5.  Może być hit lub miss, ale dobrym zasobu, jeśli potrzebujesz ikony przeznaczony na bieżąco
+* Visual Studio — umożliwia to twórz proste ikony dla aplikacji bezpośrednio w środowisku IDE.
+- [**Glyphish** ](http://www.glyphish.com/) — ikona wbudowanych wysokiej jakości za darmo ustawia pobierania i możliwości zakupu.
+- [**Fiverr** ](http://www.fiverr.com/) — możliwość wyboru z różnych projektantów do tworzenia ikony ustawiane, zaczynając od 5 USD.  Może być hit lub miss, ale odpowiedni zasób, jeśli potrzebujesz ikony przeznaczony na bieżąco
 
 -----
 
-Aby uzyskać więcej informacji na temat ikonę, a następnie uruchom rozmiary obrazów i wymagania dotyczą [Praca z obrazami przewodnik](~/ios/app-fundamentals/images-icons/index.md).
+Aby uzyskać więcej informacji na temat ikonę, a następnie uruchom rozmiary obrazów i wymagań dotyczą [Praca z obrazami przewodnik](~/ios/app-fundamentals/images-icons/index.md).
 
 ## <a name="summary"></a>Podsumowanie
 
-Gratulacje! Obecnie masz pełny opis składników aplikacji platformy Xamarin.iOS, a także narzędzia służące do ich tworzenia.
-W [następny samouczek z serii wprowadzenie](~/ios/get-started/hello-ios-multiscreen/index.md), można rozszerzać naszą aplikację do obsługi wielu ekranów. Wzdłuż sposób będzie wdrożenia kontrolera nawigacji, Dowiedz się więcej o Segues scenorysu i powodować modelu widoku, kontroler (MVC) wzorca poszerzają naszą aplikację do obsługi wielu ekranów.
+Gratulacje! Masz teraz pełny opis składniki aplikacji platformy Xamarin.iOS, a także narzędzia służące do ich tworzenia.
+W [następny samouczek z serii wprowadzenie](~/ios/get-started/hello-ios-multiscreen/index.md), możesz rozszerzać naszej aplikacji do obsługi wielu ekranów. Po drodze będzie implementować kontrolera nawigacji, Dowiedz się więcej o serii ujęć przejść i wprowadzenie, widoku kontrolera MVC (Model) wzorca rozszerzaniu naszej aplikacji do obsługi wielu ekranów.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Witaj, iOS (przykład)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS Human Interface Guidelines](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [System iOS w portalu inicjowania obsługi](https://developer.apple.com/ios/manage/overview/index.action)
+- [iOS Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
+- [Portal Aprowizowania dla systemu iOS](http://developer.apple.com/account/#/overview)
