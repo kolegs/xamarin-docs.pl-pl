@@ -1,22 +1,22 @@
 ---
 title: Rozpoznawanie zależności w interfejsie Xamarin.Forms
-description: W tym artykule wyjaśniono, jak wstawić metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i implementacje DependencyService .
+description: W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203172"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242384"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Rozpoznawanie zależności w interfejsie Xamarin.Forms
 
-_W tym artykule wyjaśniono, jak wstawić metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i implementacje DependencyService . Przykłady kodu są pobierane z [rozpoznawania zależności](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) próbki._
+_W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji. Przykłady kodu są pobierane z [rozpoznawania zależności](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) próbki._
 
 W kontekście aplikacji platformy Xamarin.Forms, która używa wzorca Model-View-ViewModel (MVVM) kontenera iniekcji zależności można rejestrowania i wyświetlanie modeli rozpoznawania i rejestrowania usług i wprowadza je do modeli widoków. Podczas tworzenia modelu widoku kontenera wprowadza wszelkie zależności, które są wymagane. Jeśli te zależności nie zostały utworzone, kontener tworzy i jest rozpoznawana jako zależności. Aby uzyskać więcej informacji na temat wstrzykiwanie zależności, włącznie z przykładami wstrzykiwania zależności do modeli widoków, zobacz [wstrzykiwanie zależności](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
@@ -55,7 +55,7 @@ public partial class App : Application
 W tym przykładzie metoda rozpoznawania zależności jest równa Wyrażenie lambda, które używa kontenera iniekcji zależności Autofac, aby rozwiązać wszelkie typy, które zostały zarejestrowane w kontenerze. W przeciwnym razie `null` zostaną zwrócone, co spowoduje próba rozpoznania typu zestawu narzędzi Xamarin.Forms.
 
 > [!NOTE]
-> Interfejs API używany przez kontener iniekcji zależności jest charakterystyczne dla kontenera. Przykłady kodu, w tym artykule pełnić kontenera iniekcji zależności, co zapewnia Autofac `IContainer` i `ContainerBuilder` typów. Kontenery iniekcji zależności alternatywnych może być również stosowane, ale użyć różnych interfejsów API niż przedstawionych w tym miejscu.
+> Interfejs API używany przez kontener iniekcji zależności jest charakterystyczne dla kontenera. Przykłady kodu, w tym artykule pełnić kontenera iniekcji zależności, co zapewnia Autofac `IContainer` i `ContainerBuilder` typów. Kontenery iniekcji zależności alternatywnych może być również stosowane, ale będzie używać różnych interfejsów API, nie są prezentowane.
 
 Należy pamiętać, że nie jest wymagane do ustawiania metoda rozpoznawania zależności podczas uruchamiania aplikacji. Można ustawić w dowolnym momencie. Jedynym ograniczeniem jest, że Xamarin.Forms musi wiedzieć o metoda rozpoznawania zależności według czasu, która aplikacja próbuje używanie typów przechowywanych w kontenera iniekcji zależności. W związku z tym w przypadku usług w kontenera iniekcja zależności, w którym aplikacja będzie wymagać podczas uruchamiania, metoda rozpoznawania zależności będą muszą być ustawione na wczesnym etapie cyklu życia aplikacji. Podobnie jeśli kontenera iniekcji zależności zarządza tworzeniem i okresem istnienia określonego [ `Effect` ](xref:Xamarin.Forms.Effect), musisz wiedzieć o metoda rozpoznawania zależności, zanim spróbuje utworzyć widok zestawu narzędzi Xamarin.Forms, użyty `Effect`.
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-W tym przykładzie `App.RegisterTypeWithParameters` rejestrów metoda `VideoPlayerRenderer` z kontenera iniekcji zależności, metodą rejestracji zapewnienie, że `MainActivity` wystąpienia zostaną dodane jako `Context` argumentu, a `Logger`typu zostaną dodane jako `ILogger` argumentu.
+W tym przykładzie `App.RegisterTypeWithParameters` rejestrów metoda `VideoPlayerRenderer` z kontenera iniekcji zależności. Metoda rejestracji zapewnia, że `MainActivity` wystąpienia zostaną dodane jako `Context` argumentu, a `Logger` typu zostaną dodane jako `ILogger` argumentu.
 
 ### <a name="registering-effects"></a>Rejestrowanie efekty
 

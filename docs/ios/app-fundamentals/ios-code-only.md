@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: 5e9bf9555d10c8b34ad9323529d4af5ea66110f8
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156785"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242397"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Tworzenie interfejsów użytkownika systemu iOS w kodzie w rozszerzeniu Xamarin.iOS
 
@@ -607,7 +607,7 @@ Firma Apple zaleca czy .pliki lub plikiem scenorysu jest używana dla aplikacji 
 
 Więcej informacji na temat tworzenia ekranu uruchamiania można znaleźć w poniższych dokumentach:
 
-- [Tworzenie ekranu uruchamiania przy użyciu .pliki](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Tworzenie ekranu uruchamiania przy użyciu .pliki](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 - [Zarządzanie ekrany uruchamiania, za pomocą scenorysów](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
