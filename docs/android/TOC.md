@@ -113,6 +113,8 @@
 ## [Funkcje platformy](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Manifest systemu Android](platform/android-manifest.md)
+### [Dostęp do plików za pomocą rozszerzenia Xamarin.Android](platform/files/index.md)
+#### [Magazyn zewnętrzny](platform/files/external-storage.md)
 ### [Uwierzytelnianie odciskiem palca](platform/fingerprint-authentication/index.md)
 #### [Wprowadzenie](platform/fingerprint-authentication/get-started.md)
 #### [Skanowanie w poszukiwaniu odcisków palców](platform/fingerprint-authentication/scanning.md)
