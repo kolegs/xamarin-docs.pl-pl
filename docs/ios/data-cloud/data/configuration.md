@@ -1,26 +1,26 @@
 ---
-title: Konfigurowanie bazy danych SQLite w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu określenia lokalizację pliku bazy danych SQLite w aplikacji platformy Xamarin.iOS. Tych pojęć dotyczą niezależnie od wybranych danych mechanizmu dostępu.
+title: Konfigurowanie bazy danych SQLite w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano sposób określania lokalizacji pliku bazy danych SQLite w aplikacji platformy Xamarin.iOS. Te pojęcia mają zastosowanie bez względu na to mechanizm dostępu do wybranych danych.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 57645c0bb947a60a3d74436b752210d1bac18124
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f170aa753ff490b75ab66ac858051516935876fe
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784384"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241269"
 ---
-# <a name="configuring-sqlite-in-xamarinios"></a>Konfigurowanie bazy danych SQLite w Xamarin.iOS
+# <a name="configuring-sqlite-in-xamarinios"></a>Konfigurowanie bazy danych SQLite w rozszerzeniu Xamarin.iOS
 
-Do korzystania z bazy danych SQLite w aplikacji platformy Xamarin.iOS należy ustalić prawidłowej lokalizacji pliku dla pliku bazy danych.
+Aby użyć bazy danych SQLite w aplikacji platformy Xamarin.iOS należy ustalić prawidłowej lokalizacji pliku dla pliku bazy danych.
 
-## <a name="database-file-path"></a>Ścieżki pliku bazy danych
+## <a name="database-file-path"></a>Ścieżka pliku bazy danych
 
-Niezależnie od tego, które używanej metody dostępu do danych należy utworzyć plik bazy danych, przed mogą być przechowywane dane z bazy danych SQLite. W zależności od tego, jakie platformy docelowej lokalizacji pliku będą inne. Dla systemu iOS umożliwia klasy środowiska utworzyć prawidłową ścieżkę, jak pokazano w poniższy fragment kodu:
+Przed dane mogą być przechowywane za pomocą SQLite, niezależnie od tego, w których możesz użyć metoda dostępu do danych, należy utworzyć plik bazy danych. W zależności od platformy docelowej lokalizacji pliku może się różnić. Dla systemu iOS można użyć klasy środowiska do konstruowania prawidłową ścieżkę, jak pokazano w poniższym fragmencie kodu:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -29,9 +29,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Istnieją inne czynności, aby wziąć pod uwagę podczas podejmowania decyzji o miejsce przechowywania plików bazy danych. W systemie iOS możesz bazę danych do kopii zapasowej automatycznie (lub nie).
+Istnieją inne czynności, aby wziąć pod uwagę podczas podejmowania decyzji o miejsce przechowywania plików bazy danych. W systemie iOS, możesz chcieć bazę danych do kopii zapasowej automatycznie (lub nie).
 
-Jeśli chcesz użyć w innej lokalizacji na każdej z platform w aplikacji międzyplatformowego umożliwia dyrektywy kompilatora jak wygenerować różne ścieżki dla każdej platformy:
+Jeśli chcesz użyć innej lokalizacji na każdej z platform aplikacji dla wielu platform umożliwia dyrektywy kompilatora pokazany Generowanie inną ścieżkę dla każdej platformy:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -47,13 +47,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Zapoznaj się [Praca w systemie plików](~/ios/app-fundamentals/file-system.md) artykułu, aby uzyskać więcej informacji na ich lokalizacje plików do użycia w systemie iOS. Zobacz [tworzenie aplikacji dla wielu Platform](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu, aby uzyskać więcej informacji na temat używania dyrektywy kompilatora do pisania kodu, które są określone dla każdej platformy.
+Zapoznaj się [Praca w systemie plików](~/ios/app-fundamentals/file-system.md) artykuł, aby uzyskać więcej informacji na temat ich lokalizacje plików do użycia w systemie iOS. Zobacz [tworzenie Cross Platform aplikacji](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu, aby uzyskać więcej informacji na temat używania dyrektywy kompilatora pisanie kodu określonych dla każdej platformy.
 
 ## <a name="threading"></a>Wątkowość
 
-Nie należy używać tego samego połączenia bazy danych SQLite przez wiele wątków. Należy zachować ostrożność otworzyć, użyj i zamknij wszystkie połączenia utworzone na tym samym wątku.
+Nie należy używać tego samego połączenia bazy danych SQLite w wielu wątkach. Uważaj otworzyć, użycia, a następnie zamknij wszystkie połączenia, które utworzono na tym samym wątku.
 
-Aby upewnić się, że kod nie próbuje dostęp do bazy danych SQLite wiele wątków jednocześnie, ręcznie wykonać blokady zawsze, gdy ma dostęp do bazy danych, takich jak to:
+Aby upewnić się, że kod nie jest próba uzyskania dostępu bazy danych SQLite z wielu wątków, w tym samym czasie, ręcznie zastosować blokadę, zawsze wtedy, gdy ma dostęp do bazy danych, takich jak to:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -63,12 +63,12 @@ lock (locker){
 }
 ```
 
-Z tego samego blokady musi być ujęte wszystkie dostęp do bazy danych (operacji odczytu, zapisu, aktualizacji itp.). Należy zadbać, aby uniknąć sytuacji zakleszczenie za zapewnienie, że pracy wewnątrz klauzuli blokady jest uproszczone i nie wywołuje do innych metod, które może również podjąć blokady!
+Wszystkie dostępu do bazy danych (odczyty, zapisy, aktualizacje itp.) powinna być otoczona przy użyciu tego samego blokady. Należy uważać, aby uniknąć sytuacji zakleszczenia przez zagwarantowanie, że praca wewnątrz klauzuli blokady jest uproszczone i nie wymaga do innych metod, które również mogą zastosować blokadę!
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Basic dostęp (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Dostęp Zaawansowane (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS przepisami danych](https://developer.xamarin.com/recipes/ios/data/sqlite/)
-- [Dostęp do danych platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Dostęp Basic (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Dostęp zaawansowany (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Przepisy na danych w systemie iOS](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Dostęp do danych z zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

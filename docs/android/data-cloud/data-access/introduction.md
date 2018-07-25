@@ -1,73 +1,73 @@
 ---
-title: Wprowadzenie do przechowywania danych w systemie Android
+title: Wprowadzenie do magazynu danych w systemie Android
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/28/2017
-ms.openlocfilehash: 42af02d2ed2a679d89425257d92f03a3764675ce
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 26576fe31919822237022572a4e490cf6fc19d65
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646992"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241447"
 ---
 # <a name="introduction"></a>Wprowadzenie
 
 ## <a name="when-to-use-a-database"></a>Kiedy należy używać bazy danych
 
-Gdy coraz więcej możliwości przechowywania i przetwarzania urządzeń przenośnych, telefony i tablety nadal opóźnione w stosunku do ich odpowiedniki stacjonarnych i przenośnych. Z tego powodu warto biorąc trochę czasu na planowanie Architektura magazynu danych dla aplikacji, a nie tylko przy założeniu, że baza danych jest prawidłowa odpowiedź cały czas. Istnieje szereg różne opcje, które wskazują inne wymagania, takich jak:
+Gdy coraz więcej możliwości przechowywania i przetwarzania urządzeń przenośnych, telefony komórkowe i tablety nadal opóźnione w stosunku do ich odpowiedników stacjonarnych i przenośnych. Z tego powodu, dla których warto powoli do zaplanowania Architektura magazynu danych dla aplikacji, a nie tylko przy założeniu, że baza danych jest prawidłowej odpowiedzi przez cały czas. Istnieje szereg różnych opcji, które odpowiadają różne wymagania, takie jak:
 
--  **Preferencje** — Android zapewnia wbudowany mechanizm przechowywania proste pary klucz wartość danych. Jeśli przechowujesz ustawienia użytkownika prostego lub małych fragmentów danych (na przykład informacje o personalizacji), użyj funkcji natywnego platformy do przechowywania tego typu danych.
--  **Pliki tekstowe** — dane wejściowe użytkownika lub pamięci podręcznych obiektu pobranej zawartości (np.) HTML) mogą być przechowywane bezpośrednio w systemie plików. Użyj odpowiednie konwencji nazewnictwa plików, aby ułatwić organizowanie używanych plików i wyszukiwanie danych.
--  **Pliki danych serializacji** — obiekty mógł być trwały jako XML lub JSON w systemie plików. .NET framework obejmuje biblioteki, w których serializacji i do serializacji obiektów łatwe. Użyj odpowiedniej nazwy do organizowania danych plików.
--  **Baza danych** — aparat bazy danych SQLite jest dostępna na platformie Android i jest przydatne do przechowywania strukturalnych danych potrzebne do zapytań, sortowania lub w przeciwnym razie manipulowania. Magazyn baz danych jest dostosowane do listy danych z wielu właściwości.
--  **Pliki obrazów** — mimo że jest możliwe do przechowywania danych binarnych w bazie danych na urządzeniu przenośnym, zalecane jest zapisanie ich bezpośrednio w systemie plików. W razie potrzeby można przechowywać nazwy plików w bazie danych do skojarzenia z innymi danymi obrazu. Podczas pracy nad duże obrazy lub wiele obrazów, jest dobrym rozwiązaniem Planowanie strategii buforowania, która usuwa pliki nie są już potrzebne w celu uniknięcia zajmując miejsce przechowywania wszystkich użytkowników.
+-  **Preferencje** — system Android oferuje wbudowany mechanizm do przechowywania proste pary klucz wartość danych. Jeśli przechowujesz prostych ustawień ani małych fragmentów danych (na przykład informacje o personalizacji), użyj natywne funkcje platformy do przechowywania informacje tego typu.
+-  **Pliki tekstowe** — dane wejściowe użytkownika lub pamięci podręcznych obiektu pobierania zawartości (np.) HTML) mogą być przechowywane bezpośrednio w systemie plików. Użyj odpowiednich konwencji nazewnictwa plików, aby ułatwić organizowanie plików i wyszukiwania danych.
+-  **Pliki danych serializacji** — obiekty mogą zostać utrwalone w formacie XML lub JSON w systemie plików. .NET framework zawiera biblioteki, które serializacji i deserializacji obiektów łatwo. Użyj nazw odpowiednie do organizowania plików danych.
+-  **Baza danych** — aparat bazy danych SQLite jest dostępna na platformie systemu Android, i jest przydatne do przechowywania strukturalnych danych potrzebnych do zapytania, sortować lub inny sposób modyfikować. Magazyn bazy danych jest dostosowane do listy danych z wieloma właściwościami.
+-  **Pliki obrazów** — mimo że jest możliwość przechowywania danych binarnych w bazie danych na urządzeniu przenośnym, zaleca się przechowywać je bezpośrednio w systemie plików. W razie potrzeby nazwy plików można przechowywać w bazie danych, aby skojarzyć go z innymi danymi. Podczas pracy z dużych obrazów lub wiele obrazów, jest dobrym rozwiązaniem Planowanie strategii buforowania, który służy do usuwania plików, które nie są już potrzebne, aby zapobiec użyciu miejsca do magazynowania wszystkich użytkowników.
 
-Jeśli baza danych jest mechanizm przechowywania dla aplikacji, w pozostałej części tego dokumentu omówiono sposób korzystania z bazy danych SQLite na platformie Xamarin.
+Jeśli baza danych jest mechanizm magazynu odpowiednie dla twojej aplikacji, pozostałej części tego dokumentu w tym artykule omówiono sposób korzystania z bazy danych SQLite na platformie Xamarin.
 
 ## <a name="advantages-of-using-a-database"></a>Zalety korzystania z bazy danych
 
-Istnieje wiele zalet korzystania z bazy danych SQL w aplikacji mobilnej:
+Istnieje kilka zalet korzystania z bazy danych SQL w aplikacji mobilnej:
 
 -  Bazy danych SQL umożliwia efektywne przechowywanie danych strukturalnych.
--  Określone dane można wyodrębnić z złożonych zapytań.
+-  Można wyodrębnić szczegółowe dane przy użyciu złożonych zapytań.
 -  Można sortować wyniki zapytania.
--  Może być agregowany wyników zapytania.
--  Deweloperom posiadane umiejętności bazy danych mogą wykorzystywać wiedzę do projektowania kod dostępu i bazy danych.
--  Model danych ze składnika serwera aplikacji połączonych ponownie można (w całości lub częściowo) w aplikacji mobilnej.
+-  Wyniki zapytania można agregować.
+-  Deweloperzy dzięki posiadanym umiejętnościom bazy danych mogą wykorzystywać swojej wiedzy na temat projektowania kodu dostępu do bazy danych i danych.
+-  Modelu danych, z poziomu składnika serwera, połączonych aplikacji mogą być ponownie używane (w całości lub części) w aplikacji mobilnej.
 
 
 ## <a name="sqlite-database-engine"></a>Aparat bazy danych SQLite
 
-SQLite jest aparat bazy danych open source, która została przyjęta przez firmę Google dla ich platform przenośnych. Aparat bazy danych SQLite jest wbudowana w obu systemów operacyjnych, więc nie ma żadnych dodatkowych działań dla deweloperów móc korzystać z niego. SQLite jest dobrze nadają się do aplikacji mobilnych dla wielu platform, ponieważ:
+Bazy danych SQLite jest aparat bazy danych typu open source, która została przyjęta przez firmę Google dla ich platformy urządzeń mobilnych. Aparat bazy danych SQLite jest wbudowana w obu systemach operacyjnych, więc nie ma żadnych dodatkową pracą dla deweloperów z niej korzystać. Bazy danych SQLite jest dobrze nadaje się do opracowywania aplikacji mobilnych dla wielu platform, ponieważ:
 
--  Aparat bazy danych jest mały, szybkie i łatwe przenośnej.
--  Baza danych jest przechowywana w jednym pliku, który ułatwia zarządzanie nimi na urządzeniach przenośnych.
--  Format pliku jest łatwy w użyciu na platformach: czy 32 - lub 64-bitowych i systemy big - lub little-endian.
--  Implementuje większość standardowych SQL92.
+-  Aparat bazy danych jest małe, szybko i łatwo przenośny.
+-  Bazy danych są przechowywane w pojedynczym pliku, który jest łatwa w zarządzaniu na urządzeniach przenośnych.
+-  Format pliku jest łatwa w użyciu na wielu platformach: czy 32 - lub 64-bitowy i systemów big - lub -endian.
+-  Implementuje większość standardu SQL92 standardowych.
 
 
-Ponieważ SQLite jest bardzo mała i szybkie, istnieją pewne ostrzeżenia przy jego użyciu:
+Ponieważ bazy danych SQLite jest bardzo mały i szybkie, istnieją niektóre zastrzeżenia dotyczące jej użycie:
 
--  Niektóre składni sprzężenia zewnętrzne nie jest obsługiwane.
--  Tylko tabela zmiany nazwy i ADDCOLUMN są obsługiwane. Nie można wykonać innych modyfikacji schematu.
+-  Niektóre przypadki składni sprzężenia zewnętrzne nie jest obsługiwana.
+-  Tylko tabeli zmiany nazwy i ADDCOLUMN są obsługiwane. Nie można wykonać innych modyfikacji schematu.
 -  Widoki są tylko do odczytu.
 
 
-Użytkownik może dowiedzieć się więcej o SQLite w witrynie sieci Web - [SQLite.org](http://SQLite.org) — jednak wszystkie informacje, należy użyć SQLite za pomocą platformy Xamarin znajduje się w tym dokumencie, a skojarzone próbek. Aparat bazy danych SQLite obsługiwanego w systemie Android od 2 dla systemu Android.
-Mimo że nie omówione w tym rozdziale, SQLite jest również dostępna do użycia w Windows Phone i aplikacji systemu Windows.
+Znajdziesz więcej informacji na temat oprogramowania SQLite w witrynie sieci Web - [SQLite.org](http://SQLite.org) — jednak wszystkie informacje, należy użyć bazy danych SQLite za pomocą platformy Xamarin jest zawarty w tym dokumencie, a skojarzone przykładów. Aparat bazy danych SQLite jest obsługiwane począwszy od 2 dla systemu Android w systemie Android.
+Mimo że nieuwzględnione w tym rozdziale, bazy danych SQLite jest również dostępny do użycia w aplikacji Windows i Windows Phone.
 
-## <a name="windows-and-windows-phone"></a>System Windows i Windows Phone
+## <a name="windows-and-windows-phone"></a>Windows i Windows Phone
 
-SQLite można także na platformach systemu Windows, mimo że w tym dokumencie nie są objęte tymi platformami.
-Dowiedz się więcej w [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) i [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) przypadku badania i przejrzyj [blogu Timowi Heuer](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
+Bazy danych SQLite można także na platformach Windows, mimo że w tym dokumencie nie omówiono tych platform.
+Dowiedz się więcej w [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) i [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) zamierzone, Zapisz badania, a także Przejrzyj [blog Timem Heuerem](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Basic dostęp (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Dostęp Zaawansowane (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Przepisami danych w systemie android](https://developer.xamarin.com/recipes/android/data/)
-- [Dostęp do danych platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Dostęp Basic (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Dostęp zaawansowany (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Przepisy na danych w systemie android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Dostęp do danych z zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

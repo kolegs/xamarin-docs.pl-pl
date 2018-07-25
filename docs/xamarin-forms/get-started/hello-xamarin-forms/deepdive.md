@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203101"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242228"
 ---
 # <a name="xamarinforms-deep-dive"></a>Rozszerzony opis zestawu narzędzi Xamarin.Forms
 
@@ -325,7 +325,7 @@ Aplikacja Phoneword dla platformy Xamarin.Forms wprowadziła kilka koncepcji, kt
 
 ## <a name="testing-and-deployment"></a>Testowanie i wdrażanie
 
-Visual Studio dla komputerów Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. Debugowanie aplikacji jest wspólne część cyklu życia tworzenia aplikacji i ułatwia diagnozowanie problemów z kodem. Aby uzyskać więcej informacji, zobacz [Ustaw punkt przerwania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kod za pomocą kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), i [informacji wyjściowych w oknie dziennika](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Visual Studio dla komputerów Mac i Visual Studio oferują wiele opcji testowania i wdrażania aplikacji. Debugowanie aplikacji jest wspólne część cyklu życia tworzenia aplikacji i ułatwia diagnozowanie problemów z kodem. Aby uzyskać więcej informacji, zobacz [Ustaw punkt przerwania](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [kod za pomocą kroku](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code), i [informacji wyjściowych w oknie dziennika](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
 Symulatorów są dobrym miejscem do rozpoczęcia wdrażania i testowania aplikacji, a funkcji przydatnych funkcji do testowania aplikacji. Jednak użytkownicy nie zużyje końcowy aplikacji w symulatorze, więc powinien zostać przetestowany aplikacje na prawdziwych urządzeniach, wcześnie i często. Aby uzyskać więcej informacji na temat inicjowania obsługi urządzeń z systemem iOS, zobacz [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md). Aby uzyskać więcej informacji na temat inicjowania obsługi urządzeń z systemem Android, zobacz [Ustaw się urządzenia na potrzeby programowania](~/android/get-started/installation/set-up-device-for-development.md).
 

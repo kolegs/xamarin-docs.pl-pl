@@ -1,6 +1,6 @@
 ---
 title: Witaj, Xamarin.Forms
-description: Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio oraz podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms.
+description: Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio i podstawy tworzenia aplikacji przy użyciu zestawu narzędzi Xamarin.Forms.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: af79e4ef-99c6-4a17-b5d1-95ab652ac7ab
@@ -8,33 +8,33 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 1b017f282a1295dba4b2a051928b54fc16ff746b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4f5f3ab00b55de270c209d6fa7082c3acc40b5ef
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243743"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241308"
 ---
 # <a name="hello-xamarinforms"></a>Witaj, Xamarin.Forms
 
-_Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio oraz podstawowe informacje na temat tworzenia aplikacji za pomocą platformy Xamarin.Forms. Tematy obejmują narzędzia, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Forms._
+_Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio i podstawy tworzenia aplikacji przy użyciu zestawu narzędzi Xamarin.Forms. Omawiane tematy obejmują narzędzia, koncepcje i kroki wymagane do kompilowania i wdrażania aplikacji platformy Xamarin.Forms._
 
 Rozpocznij od przejrzenia [wymagania systemowe platformy Xamarin.Forms](~/cross-platform/get-started/installation/index.md).
 
 ## <a name="part-1-quickstartxamarin-formsget-startedhello-xamarin-formsquickstartmd"></a>[Część 1. Szybki start](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 
-Pierwsza część w tym przewodniku pokazano, jak utworzyć aplikację, który tłumaczy alfanumeryczne numer wprowadzony przez użytkownika do numeru telefonu liczbowego, a następnie wywołuje ten numer.
+Pierwsza część tego przewodnika pokazuje, jak utworzyć aplikację, która tłumaczy alfanumeryczne podany numer telefonu przez użytkownika do numeru telefonu liczbowe, a następnie wywołuje tę liczbę.
 
 ## <a name="part-2-deep-divexamarin-formsget-startedhello-xamarin-formsdeepdivemd"></a>[Część 2. Szczegółowe omówienie](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md)
 
-Drugiej części w tym przewodniku opisano, co został utworzony, aby zrozumieć podstawowe informacje dotyczące sposobu działania aplikacji platformy Xamarin.Forms.
+Druga część tego przewodnika przegląda, co został utworzony, aby poznać podstawy temat działania aplikacji platformy Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Wprowadzenie do zestawu narzędzi Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Debugowanie w programie Visual Studio](http://msdn.microsoft.com/library/k0k771bt%28v=vs.90%29.aspx)
-- [Visual Studio for Mac przepisami - debugowania](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
-- [Bezpłatne Learning Self-Guided (klip wideo)](https://university.xamarin.com/self-guided)
-- [Wprowadzenie do platformy Xamarin (klip wideo)](https://developer.xamarin.com/videos/)
-- [Witaj, iOS platformy Xamarin.Forms skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)
+- [Program Visual Studio for Mac przepisy — debugowanie](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)
+- [Bezpłatnym szkoleniom wykładów (wideo)](https://university.xamarin.com/self-guided)
+- [Wprowadzenie do środowiska Xamarin (wideo)](https://developer.xamarin.com/videos/)
+- [Witaj, Xamarin.Forms dla systemu iOS skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

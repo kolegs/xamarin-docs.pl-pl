@@ -1,41 +1,41 @@
 ---
-title: Odtwarzanie dźwięku w systemu tvOS z AVAudioPlayer w Xamarin
-description: W tym artykule pokazano, jak użyć Klasa pomocy do sterowania odtwarzanie dźwięku za pomocą AVAudioPlayer w aplikacji platformy Xamarin.iOS.
+title: Odtwarzanie dźwięku w systemu tvOS za pomocą programu AVAudioPlayer w środowisku Xamarin
+description: W tym artykule pokazano, jak używać klasy pomocnika do kontrolowania odtwarzanie dźwięku za pomocą pomocą odtwarzacza AVAudioPlayer aplikacji platformy Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7d95a8ea6c22c0d897d8ccfe0c2ca401f6523783
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2ce1d4b8564ef9599581aabd6a72ba3af12ec251
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788637"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241354"
 ---
-# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Odtwarzanie dźwięku w systemu tvOS z AVAudioPlayer w Xamarin
+# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Odtwarzanie dźwięku w systemu tvOS za pomocą programu AVAudioPlayer w środowisku Xamarin
 
-## <a name="about-the-avaudioplayer"></a>O AVAudioPlayer
+## <a name="about-the-avaudioplayer"></a>Temat pomocą programu AVAudioPlayer
 
-`AVAudioPlayer` Służy do odtwarzania audio danych z pamięci lub pliku. Firma Apple zaleca do odtwarzania dźwięku w aplikacji, chyba że robią sieci przesyłania strumieniowego lub wymagają audio krótki czas oczekiwania operacji We/Wy przy użyciu tej klasy.
+`AVAudioPlayer` Służy do odtwarzania dźwięku danych z pamięci lub pliku. Firma Apple zaleca używanie tej klasy do odtwarzania dźwięku w swojej aplikacji, chyba że robią sieci przesyłania strumieniowego lub wymagają audio małych opóźnień operacji We/Wy.
 
-Można użyć `AVAudioPlayer` wykonać następujące czynności:
+Możesz użyć `AVAudioPlayer` wykonać następujące czynności:
 
-- Odtwarzanie dźwięków z dowolnego czasu trwania z pętli opcjonalne.
-- Odtwarzanie dźwięków wielu jednocześnie z synchronizacją opcjonalne.
-- Sterowanie woluminu, szybkość odtwarzania i stereo rozmieszczania dla każdego odtwarzanie dźwięku.
+- Odtwarzanie dźwięków wszelkie czasu trwania z pętli opcjonalne.
+- Odtwarzanie dźwięków wielu, w tym samym czasie, opcjonalny w przypadku synchronizacji.
+- Sterowanie woluminu, szybkość odtwarzania i stereo pozycjonowanie dla każdego odtwarzanie dźwięku.
 - Obsługuje funkcje, takie jak szybkie przewijanie do przodu lub do tyłu.
-- Uzyskiwanie poziomu odtwarzania pomiaru danych.
+- Uzyskaj poziom odtwarzania pomiaru danych.
 
-`AVAudioPlayer` obsługuje dźwięki w dowolnym formacie audio, takie jak pochodzącymi z systemem iOS, systemu tvOS i OS X `.aif`, `.wav` lub `.mp3`.
+`AVAudioPlayer` obsługuje dźwięki w dowolnym formacie audio, dostarczone przez systemów iOS, tvOS i OS X, takich jak `.aif`, `.wav` lub `.mp3`.
 
 ## <a name="playing-sounds-in-tvos"></a>Odtwarzanie dźwięków w systemu tvOS
 
-Ponieważ systemu tvOS obsługuje tej samej klasy przybornika Audio jako dla systemu iOS, zobacz nasze iOS [odtwarzanie dźwięku z AVAudioPlayer](http://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) dokumentację, aby uzyskać szczegółowe informacje dotyczące odtwarzania audio w aplikacji Xamarin.tvOS.
+Ponieważ systemu tvOS obsługuje tej samej klasy przybornika Audio w postaci dla systemu iOS, zobacz nasz system iOS [odtwarzanie dźwięku za pomocą programu AVAudioPlayer](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer) dokumentacji pełne szczegóły odtwarzanie audio w aplikacji Xamarin.tvOS.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Odwołanie AVAudioPlayer](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/)
+- [Dokumentacja pomocą odtwarzacza AVAudioPlayer](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/)

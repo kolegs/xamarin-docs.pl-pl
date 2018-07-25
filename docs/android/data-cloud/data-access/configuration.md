@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/11/2016
-ms.openlocfilehash: cf474015b28d9708d69719b38348391091040a28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3a7858361d25f26807ea328e8bfdd30ca8d483b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762587"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241882"
 ---
 # <a name="configuration"></a>Konfiguracja
 
-Do korzystania z bazy danych SQLite w aplikacji platformy Xamarin.Android należy ustalić prawidłowej lokalizacji pliku dla pliku bazy danych.
+Aby użyć bazy danych SQLite w aplikacji platformy Xamarin.Android, musisz ustalić prawidłowej lokalizacji pliku dla pliku bazy danych.
 
-## <a name="database-file-path"></a>Ścieżki pliku bazy danych
+## <a name="database-file-path"></a>Ścieżka pliku bazy danych
 
-Niezależnie od tego, które używanej metody dostępu do danych należy utworzyć plik bazy danych, przed mogą być przechowywane dane z bazy danych SQLite. W zależności od tego, jakie platformy docelowej lokalizacji pliku będą inne. Dla systemu Android służy klasa środowiska do skonstruowania prawidłową ścieżkę, jak pokazano w poniższy fragment kodu:
+Przed dane mogą być przechowywane za pomocą SQLite, niezależnie od tego, w których możesz użyć metoda dostępu do danych, należy utworzyć plik bazy danych. W zależności od platformy docelowej lokalizacji pliku może się różnić. Dla systemu Android można użyć klasy środowiska do konstruowania prawidłową ścieżkę, jak pokazano w poniższym fragmencie kodu:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Istnieją inne czynności, aby wziąć pod uwagę podczas podejmowania decyzji o miejsce przechowywania plików bazy danych. Na przykład w systemie Android możesz czy użyć wewnętrznej lub zewnętrznej magazynu.
+Istnieją inne czynności, aby wziąć pod uwagę podczas podejmowania decyzji o miejsce przechowywania plików bazy danych. Na przykład w systemie Android możesz wybrać, czy używać magazynu wewnętrzne lub zewnętrzne.
 
-Jeśli chcesz użyć w innej lokalizacji na każdej z platform w aplikacji międzyplatformowego umożliwia dyrektywy kompilatora jak wygenerować różne ścieżki dla każdej platformy:
+Jeśli chcesz użyć innej lokalizacji na każdej z platform aplikacji dla wielu platform umożliwia dyrektywy kompilatora pokazany Generowanie inną ścieżkę dla każdej platformy:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Wskazówki dotyczące korzystania z systemu plików w systemie Android, zapoznaj się [Przeglądaj pliki](https://developer.xamarin.com/recipes/android/data/Files/Browse_Files) przepisu. Zobacz [tworzenie aplikacji dla wielu Platform](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu, aby uzyskać więcej informacji na temat używania dyrektywy kompilatora do pisania kodu, które są określone dla każdej platformy.
+Aby uzyskać wskazówki na temat korzystania z systemu plików w systemie Android, zobacz [Przeglądaj pliki](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) przepisu. Zobacz [tworzenie Cross Platform aplikacji](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu, aby uzyskać więcej informacji na temat używania dyrektywy kompilatora pisanie kodu określonych dla każdej platformy.
 
 ## <a name="threading"></a>Wątkowość
 
-Nie należy używać tego samego połączenia bazy danych SQLite przez wiele wątków. Należy zachować ostrożność otworzyć, użyj i zamknij wszystkie połączenia utworzone na tym samym wątku.
+Nie należy używać tego samego połączenia bazy danych SQLite w wielu wątkach. Uważaj otworzyć, użycia, a następnie zamknij wszystkie połączenia, które utworzono na tym samym wątku.
 
-Aby upewnić się, że kod nie próbuje dostęp do bazy danych SQLite wiele wątków jednocześnie, ręcznie wykonać blokady zawsze, gdy ma dostęp do bazy danych, takich jak to:
+Aby upewnić się, że kod nie jest próba uzyskania dostępu bazy danych SQLite z wielu wątków, w tym samym czasie, ręcznie zastosować blokadę, zawsze wtedy, gdy ma dostęp do bazy danych, takich jak to:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,12 @@ lock (locker){
 }
 ```
 
-Z tego samego blokady musi być ujęte wszystkie dostęp do bazy danych (operacji odczytu, zapisu, aktualizacji itp.). Należy zadbać, aby uniknąć sytuacji zakleszczenie za zapewnienie, że pracy wewnątrz klauzuli blokady jest uproszczone i nie wywołuje do innych metod, które może również podjąć blokady!
+Wszystkie dostępu do bazy danych (odczyty, zapisy, aktualizacje itp.) powinna być otoczona przy użyciu tego samego blokady. Należy uważać, aby uniknąć sytuacji zakleszczenia przez zagwarantowanie, że praca wewnątrz klauzuli blokady jest uproszczone i nie wymaga do innych metod, które również mogą zastosować blokadę!
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Basic dostęp (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Dostęp Zaawansowane (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Przepisami danych w systemie android](https://developer.xamarin.com/recipes/android/data/)
-- [Dostęp do danych platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Dostęp Basic (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Dostęp zaawansowany (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Przepisy na danych w systemie android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Dostęp do danych z zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

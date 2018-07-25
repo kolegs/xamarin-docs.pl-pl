@@ -1,33 +1,33 @@
 ---
-title: Przy użyciu grafiki Core i Core animacji w Xamarin.iOS
-description: W tym artykule krok po kroku przedstawiono sposób tworzenia aplikacji, która używa grafiki Core i Core animacji. Pokazuje sposób rysowania na ekranie w odpowiedzi na touch użytkownika, a także sposobu animowany obraz przesyłanie wzdłuż ścieżki.
+title: Za pomocą podstawowe funkcje grafiki i podstawowe funkcje animacji w rozszerzeniu Xamarin.iOS
+description: W tym artykule przedstawiono krok po kroku jak utworzyć aplikację, która używa podstawowe funkcje grafiki i podstawowe funkcje animacji. Przedstawia on sposób rysowania na ekranie w odpowiedzi na dotyk użytkownika, a także jak animować obraz podróży w ścieżce.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787058"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242007"
 ---
-# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Przy użyciu grafiki Core i Core animacji w Xamarin.iOS
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Za pomocą podstawowe funkcje grafiki i podstawowe funkcje animacji w rozszerzeniu Xamarin.iOS
 
-W ramach tego przewodnika zamierzamy narysować ścieżkę przy użyciu grafiki podstawowej w odpowiedzi do wprowadzania dotykowego. Następnie dodamy `CALayer` zawierającego obraz, który firma Microsoft będzie animować wzdłuż ścieżki.
+W tym przewodniku użyjemy rysowanie ścieżki wprowadzania dotykowego, za pomocą podstawowe funkcje grafiki w odpowiedzi. Następnie dodamy `CALayer` zawierającego obraz, który firma Microsoft będzie animować wzdłuż ścieżki.
 
 Poniższy zrzut ekranu przedstawia gotową aplikację:
 
 ![](graphics-animation-walkthrough-images/00-final-app.png "Ukończona aplikacja")
 
-Zanim zaczniemy pobierania *GraphicsDemo* próbki, dołączony w tym przewodniku. Można go pobrać [tutaj](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) i znajduje się wewnątrz **GraphicsWalkthrough** katalog uruchomienia projektu o nazwie **GraphicsDemo_starter** przez dwukrotne kliknięcie, i Otwórz `DemoView` klasy.
+Przed rozpoczęciem pobierania *GraphicsDemo* przykładowe znajdująca się na tym przewodniku. Można go pobrać [tutaj](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) i znajduje się wewnątrz **GraphicsWalkthrough** katalogu uruchamiania projektu o nazwie **GraphicsDemo_starter** przez dwukrotne kliknięcie, i Otwórz `DemoView` klasy.
 
 ## <a name="drawing-a-path"></a>Rysowanie ścieżki
 
 
-1. W `DemoView` dodać `CGPath` zmiennej do klasy i wystąpienia go w konstruktorze. Zadeklarować dwa `CGPoint` zmiennych, `initialPoint` i `latestPoint`, użyjemy do przechwytywania punktu touch, z którego możemy utworzyć ścieżki:
+1. W `DemoView` Dodaj `CGPath` zmiennej do klasy i tworzenia jego instancji w konstruktorze. Również zadeklarować dwa `CGPoint` zmiennych, `initialPoint` i `latestPoint`, firma Microsoft użyje do przechwytywania punktu touch, z którego możemy utworzyć ścieżki:
     
     ```csharp
     public class DemoView : UIView
@@ -45,7 +45,7 @@ Zanim zaczniemy pobierania *GraphicsDemo* próbki, dołączony w tym przewodniku
     }
     ```
 
-2. Dodaj następujące dyrektyw using:
+2. Dodaj następujące dyrektywy using:
 
     ```csharp
     using CoreGraphics;
@@ -53,7 +53,7 @@ Zanim zaczniemy pobierania *GraphicsDemo* próbki, dołączony w tym przewodniku
     using Foundation;
     ```
 
-3. Następnie zastąp `TouchesBegan` i `TouchesMoved,` i dodaj następujące implementacje przechwytywania punktu początkowego touch oraz w każdym punkcie kolejnych touch odpowiednio:
+3. Następnie zastąp `TouchesBegan` i `TouchesMoved,` i dodaj następujące implementacje do przechwytywania punktu początkowego touch i każdy punkt kolejnych touch odpowiednio:
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -80,9 +80,9 @@ Zanim zaczniemy pobierania *GraphicsDemo* próbki, dołączony w tym przewodniku
     }
     ```
 
-    `SetNeedsDisplay` zostanie wywołana zawsze poprawki Przenieś aby `Draw` ma być wywołane na następny przebieg wykonywania pętli.
+    `SetNeedsDisplay` będzie być wywoływana za każdym razem, ma przenieść aby `Draw` ma być wywołane na następny przebieg wykonywania pętli.
 
-4. Dodamy wierszy do ścieżki w `Draw` — metoda i użyj czerwona linia przerywana do rysowania z. [Implementowanie `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) kodem przedstawionym poniżej:
+4. Dodamy wierszy w ścieżce w `Draw` metody i użyj czerwona linia przerywana do rysowania za pomocą. [Implementowanie `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) przy użyciu kodu pokazany poniżej:
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -116,15 +116,15 @@ Zanim zaczniemy pobierania *GraphicsDemo* próbki, dołączony w tym przewodniku
     }
     ```
 
-Czy możemy uruchomić aplikację teraz, możemy touch do rysowania na ekranie, jak pokazano na poniższym zrzucie ekranu:
+Jeśli możemy uruchomić aplikację teraz, firma Microsoft dotyku Aby rysować na ekranie, jak pokazano na poniższym zrzucie ekranu:
 
-![](graphics-animation-walkthrough-images/01-path.png "Na ekranie")
+![](graphics-animation-walkthrough-images/01-path.png "Rysowanie na ekranie")
 
-## <a name="animating-along-a-path"></a>Animowanie wzdłuż ścieżki
+## <a name="animating-along-a-path"></a>Animowanie w ścieżce
 
-Teraz, wdrożonych kod, aby umożliwić użytkownikom narysuj ścieżkę, możemy dodać kod, aby animować warstwy ścieżce narysowanego.
+Teraz, gdy wdrożyliśmy kodu, aby umożliwić użytkownikom rysowanie ścieżki możemy dodać kod, aby animować warstwy rysowane ścieżce.
 
-1. Najpierw dodaj [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) zmiennej do klasy i utwórz go w Konstruktorze:
+1. Najpierw dodaj [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) zmiennej do klasy i utworzyć ją w Konstruktorze:
 
     ```csharp
     public class DemoView : UIView
@@ -149,9 +149,9 @@ Teraz, wdrożonych kod, aby umożliwić użytkownikom narysuj ścieżkę, możem
             }
     ```
 
-2. Następnie dodamy warstwy jako podwarstwa warstwy widoku, gdy użytkownik podnosi się ich palca z ekranu. Następnie zostanie utworzony przy użyciu ścieżki, odtwarzania klatki kluczowej animacji warstwy `Position`.
+2. Następnie dodamy warstwy jako podwarstwę warstwę widoku po użytkownik wind się ich palców od ekranu. Następnie utworzymy odtwarzania klatki kluczowej przy użyciu ścieżki, animowanie warstwy `Position`.
 
-    Należy zastąpić w tym celu `TouchesEnded` i Dodaj następujący kod:
+    W tym należy zastąpić `TouchesEnded` i Dodaj następujący kod:
 
     ```csharp
     public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -172,17 +172,17 @@ Teraz, wdrożonych kod, aby umożliwić użytkownikom narysuj ścieżkę, możem
         }
     ```
 
-3. Uruchom aplikację teraz i po rysunku, warstwy z obrazem zostanie dodany i podróżuje rysowanej ścieżce:
+3. Teraz, jak i po nim rysowania, należy uruchomić aplikację, warstwy za pomocą obrazu zostanie dodany oraz przybliżone ilości tych danych na ścieżce rysowane:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Warstwa obrazu zostanie dodany i porusza się na ścieżce narysowanego")
+![](graphics-animation-walkthrough-images/00-final-app.png "Warstwy za pomocą obrazu zostanie dodany oraz przybliżone ilości tych danych na ścieżce rysowane")
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule firma Microsoft przeprowadził przez przykładowy ze sobą powiązane grafiki i animacji pojęcia. Po pierwsze, możemy pokazano, jak na potrzeby grafiki Core rysowanie ścieżki `UIView` w odpowiedzi na touch użytkownika. Firma Microsoft pokazano, jak pomocą animacji Core obraz przesyłane w tej ścieżce.
+W tym artykule będziemy schodkowego za pośrednictwem przykładowi, który ze sobą powiązane grafiki i animacje pojęcia. Po pierwsze, firma Microsoft pokazano, jak podstawowe funkcje grafiki umożliwia rysowanie ścieżki `UIView` w odpowiedzi na dotyk użytkownika. Firma Microsoft pokazano, jak utworzyć obraz podróży w tej ścieżce za pomocą podstawowe funkcje animacji.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Podstawowe funkcje animacji](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Podstawowe funkcje grafiki](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Podstawowe przepisami animacji](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Podstawowe przepisy animacji](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

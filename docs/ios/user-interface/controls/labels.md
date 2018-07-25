@@ -1,60 +1,60 @@
 ---
-title: Etykiety w Xamarin.iOS
-description: Tym dokumencie omówiono korzystanie z etykiet platformy Xamarin.iOS. Przedstawiono sposób tworzenia etykiet programowo i z systemem iOS projektanta.
+title: Etykiety w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie omówiono sposób używania etykiet w rozszerzeniu Xamarin.iOS. Go w tym artykule opisano sposób tworzenia etykiety programowo i za pomocą narzędzia iOS Designer.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789892"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241916"
 ---
-# <a name="labels-in-xamarinios"></a>Etykiety w Xamarin.iOS
+# <a name="labels-in-xamarinios"></a>Etykiety w rozszerzeniu Xamarin.iOS
 
-`UILabel` Formant jest używany do wyświetlania jednego oraz wiele wierszy, odczytać tylko tekst. 
+`UILabel` Formant jest używany do wyświetlania pojedynczych i wielu linii, przeczytaj tylko tekst. 
 
-## <a name="implementing-a-label"></a>Implementowanie etykiety
+## <a name="implementing-a-label"></a>Implementowanie etykietę
 
-Przy uruchamianiu utworzono nową etykietę [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+Nowa etykieta jest tworzona przez utworzenie wystąpienia [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
 
 ```csharp
 UILabel label = new UILabel();
 ```
 
-### <a name="labels-and-storyboards"></a>Etykiety i planów
+### <a name="labels-and-storyboards"></a>Etykiety i scenorysów
 
-Można również dodać etykietę do interfejsu użytkownika podczas korzystania z systemem iOS projektanta. Wyszukaj **etykiety** w **przybornika** i przeciągnij go do widoku:
+Można również dodać etykietę do interfejsu użytkownika, korzystając z narzędzia iOS Designer. Wyszukaj **etykiety** w **przybornika** i przeciągnij go do widoku:
 
-![Etykiety w przyborniku](labels-images/image3.png)
+![Etykieta w przyborniku](labels-images/image3.png)
 
-W konsoli właściwości można dostosować następujące właściwości:
+W okienku właściwości można dostosować następujące właściwości:
 
 ![Panel właściwości etykiety](labels-images/image2.png)
 
-- **W kontekście tekstu** — zwykły lub oparte na atrybutach. Zwykły tekst pozwala ustawić [atrybuty formatowania](#Formatting_Text_and_Label) na cały ciąg. Oparte na atrybutach teksty umożliwia konfigurowanie formatów na różne znaki lub słowa w ciągu.
-- **Wyrównanie kolorów i czcionek,** — atrybuty formatowania, który można zastosować do etykiety.
-- **Wiersze** — Ustawia liczbę wierszy, które mogą znajdować się na etykiecie. Ustaw tę wartość na 0, aby umożliwić etykietę do używania dowolną liczbę wierszy.
-- **Zachowanie** — może mieć wartości włączone lub wyróżnione. Jest włączone domyślnie ustawiany wyłączonego tekstu będzie wyświetlany w jaśniejszego koloru szarego. Wyróżnione jest domyślnie wyłączona i umożliwia etykiety narysowania ze stanem wyróżnione po wybraniu przez użytkownika.
+- **W kontekście tekstu** — zwykły lub opartego na atrybutach. Zwykły tekst pozwala na ustawienie [formatowanie atrybutów](#Formatting_Text_and_Label) na cały ciąg. Teksty opartego na atrybutach pozwala ustawić odpowiadający ustawieniom lokalnym różne znaki lub słowa w ciągu.
+- **Kolor czcionki, wyrównania** — formatowanie atrybutów, które można stosować do etykiety.
+- **Wiersze** — Ustawia liczbę wierszy, które mogą znajdować się na etykiecie. Ustaw tę wartość na 0, aby zezwolić na etykietę do wykorzystania jako liczbę wierszy, zgodnie z potrzebami.
+- **Zachowanie** — można ustawić aktywny lub wyróżnione. Włączone jest ustawienie domyślne, wyłączonego tekstu pojawi się w jaśniejszego koloru szarego. Wyróżnione jest domyślnie wyłączona i zezwala na etykietę do narysowania wyróżniony stan, gdy zostanie wybrane przez użytkownika.
 - **Baselane i podział wiersza** — 
-    - Basline Określa, jak będzie tekst umieszczony Jeśli rozmiary czcionek jest inny niż określony.
-    - Podziały wierszy określają sposób opakowane lub obcięty, jeśli zawiera więcej niż jednym wierszu ciąg.
-- **Autoshrink** — określa sposób czcionki o rozmiarze zostanie zminimalizowane wewnątrz etykiety, jeśli to konieczne.
-- **Wyróżniony, cień, przesunięcie** — pozwala ustawić kolor siatki i w tle i przesunięcie cienia.
+    - Basline Określa, jak tekst będzie umieszczony Jeśli rozmiary czcionek jest inny niż ten, który został określony.
+    - Podziały wierszy określają, jak opakowane lub obcięty, jeśli zawiera więcej niż jeden wiersz ciąg.
+- **Pewnego** — Określa, jak czcionki o rozmiarze będzie można zminimalizować w etykiecie, jeśli to konieczne.
+- **Wyróżnione w tle, przesunięcie** — pozwala ustawić kolor siatki i w tle i przesunięcia cienia.
 
-## <a name="truncating-and-wrapping"></a>Obcinanie i zawijania
+## <a name="truncating-and-wrapping"></a>Obcinanie i opakowywanie
 
-Dla informacji o korzystaniu z wiersza dzieli w systemie iOS, zobacz [Truncate i Zawijaj tekst](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) przepisu.
+Informacje na temat korzystania z wiersza przerywa w systemie iOS, znaleźć [obciąć i zawijania tekstu](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) przepisu.
 
 <a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>Formatowanie tekstu i etykiety
 
-Formatującej ciąg, którego używasz w etykiecie można albo zestaw atrybutów na cały ciąg formatowania, lub można użyć ciągów oparte na atrybutach. Poniższe przykłady pokazują, jak wdrożyć te:
+Można sformatować ciągu, którego używasz w etykiecie możesz obu zestawów atrybutów na cały ciąg formatowania, lub możesz używać parametrów opartego na atrybutach. W poniższych przykładach pokazano, jak zaimplementować te:
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Aby uzyskać więcej informacji na style tekstu przy użyciu `NSAttributedString` dotyczą [stylu tekstu](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/style_text/) przepisu.
+Aby uzyskać więcej informacji na temat korzystania z stylu tekstu `NSAttributedString` dotyczą [stylu tekstu](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) przepisu.
 
-Domyślnie etykiety mają `Enabled` ustawioną na true, ale jest to możliwe, aby ustawić ją na wyłączone w celu przyznać użytkownikowi wskazówki, że dany formant jest wyłączone:
+Domyślnie etykiety mają `Enabled` ustawioną na wartość true, ale jest to możliwe, aby ustawić go na wyłączone, aby przyznać użytkownikowi wskazówką wyłączenia niektórych kontrolki:
 
 ```csharp
 label.Enabled = false;
 ```
 
-Etykieta to ustawienie jasny kolor szary, jak pokazano na poniższej ilustracji przykład ekranu ograniczenia w systemie iOS:
+Etykieta to ustawia jasny kolor szary, jak pokazano na poniższej przykładowej ilustracji ekranu ograniczenia w systemie iOS:
 
 ![Przycisk wyłączone w systemie iOS](labels-images/image1.png)
 
-Można również ustawić cieni i kolor tekstu etykiety dla dodatkowych efektów:
+Można również ustawić kolory tekstu cieni i tekst etykiety dla dodatkowych efektów:
 
 ```csharp
 label.Highlighted = true;
@@ -96,11 +96,11 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-Która wyświetla tekst następująco:
+Powoduje wyświetlenie tekstu następująco:
 
-![Cieni i ustaw w tekście](labels-images/image4.png)
+![Wyróżnij i Ustaw tekst w tle](labels-images/image4.png)
 
-Aby uzyskać więcej informacji na temat zmieniania czcionki UILabel dotyczą [Zmień czcionkę](https://developer.xamarin.com/recipes/ios/standard_controls/labels/change_the_font/) przepisu.
+Aby uzyskać więcej informacji na temat Zmiana czcionki UILabel, dotyczą [Zmień czcionkę](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) przepisu.
 
 
 

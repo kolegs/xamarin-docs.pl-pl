@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832387"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242436"
 ---
 # <a name="xamarinforms-quickstart"></a>Przewodnik Szybki Start platformy Xamarin.Forms
 
@@ -306,7 +306,7 @@ Utwórz aplikację Phoneword w następujący sposób:
     }
     ```
 
-    Czy zapisać zmiany **PhoneDialer.cs** , naciskając klawisz **CTRL + S**i zamknij plik.
+    Należy pamiętać, że ten kod przyjęto założenie, że używasz najnowszej interfejsu API systemu Android. Czy zapisać zmiany **PhoneDialer.cs** , naciskając klawisz **CTRL + S**i zamknij plik.
 
 21. W **Eksploratora rozwiązań**w **Phoneword.Android** projektu, kliknij dwukrotnie **MainActivity.cs** aby go otworzyć, należy usunąć wszystkie kod szablonu i zastąp go wartością Poniższy kod:
 
@@ -729,7 +729,7 @@ Utwórz aplikację Phoneword w następujący sposób:
     }
     ```
 
-    Czy zapisać zmiany **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
+    Należy pamiętać, że ten kod przyjęto założenie, że używasz najnowszej interfejsu API systemu Android. Czy zapisać zmiany **PhoneDialer.cs** , wybierając **Plik > Zapisz** (lub naciskając  **&#8984; + S**) i zamknij plik.
 
 21. W **konsoli rozwiązania**w **Phoneword.Droid** projektu, kliknij dwukrotnie **MainActivity.cs** aby go otworzyć, Usuń wszystkie kod szablonu i zastąp go następującym kodem :
 

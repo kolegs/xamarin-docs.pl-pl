@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2017
-ms.openlocfilehash: 292b0814cba446c97042ba1fe52ad9414ba74760
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: ac9a90373878035ffa8ac0be9da8993bf189b6b3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203062"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241256"
 ---
 # <a name="advanced-concepts--internals"></a>Pojęcia zaawansowane i elementy wewnętrzne
 
@@ -26,4 +26,4 @@ W tym artykule wyjaśniono, jak przekonwertować aplikację platformy Xamarin.Fo
 
 ## <a name="dependency-resolutiondependency-resolutionmd"></a>[Rozpoznawanie zależności](dependency-resolution.md)
 
-W tym artykule wyjaśniono, jak wstawić metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, efekty, i `DependencyService` implementacji.
+W tym artykule wyjaśniono, jak wstrzyknąć metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, efekty, i `DependencyService` implementacji.

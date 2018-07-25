@@ -1,33 +1,33 @@
 ---
-title: Wyświetlanie alertów w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu wyświetlania alertów w platformy Xamarin.iOS przy użyciu UIAlertController wprowadzone w systemie iOS 8 interfejsów API.
+title: Wyświetlanie alertów w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano sposób wyświetlania alertów w rozszerzeniu Xamarin.iOS przy użyciu UIAlertController interfejsów API, wprowadzona w systemie iOS 8.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789599"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241343"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Wyświetlanie alertów w Xamarin.iOS
+# <a name="displaying-alerts-in-xamarinios"></a>Wyświetlanie alertów w rozszerzeniu Xamarin.iOS
 
-Począwszy od systemu iOS 8, UIAlertController ma UIActionSheet zastąpionego ukończone i UIAlertView zarówno których obecnie są przestarzałe.
+Począwszy od systemu iOS jest 8 UIAlertController ma ukończone UIActionSheet zastąpione i UIAlertView obu z nich są one przestarzałe.
 
-W odróżnieniu od klasy zastąpione będące podklasami UIView UIAlertController jest podklasą klasy UIViewController.
+W odróżnieniu od klas zastąpione będące podklasami UIView UIAlertController jest podklasą klasą UIViewController.
 
-Użyj `UIAlertControllerStyle` wskazująca typ alertu do wyświetlenia. Te typy alertów są:
+Użyj `UIAlertControllerStyle` aby wskazać typ alertu do wyświetlenia. Te typy alertów są:
 
 - **UIAlertControllerStyleActionSheet**
-    * Wstępne iOS 8 to byłby UIActionSheet
+    * Wstępne dla systemu iOS 8 to byłby UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * Wstępne iOS 8 to byłby UIAlertView 
+    * Wstępne dla systemu iOS 8 to byłby UIAlertView 
 
-Istnieją trzy kroki niezbędne do wykonania podczas tworzenia kontrolera alertu:
+Istnieją trzy kroki niezbędne do wykonania w przypadku tworzenia alertu kontrolera:
 
 - Tworzenie i konfigurowanie alertu przez:
     * Tytuł
@@ -38,11 +38,11 @@ Istnieją trzy kroki niezbędne do wykonania podczas tworzenia kontrolera alertu
 - Dodaj wymagane akcje
 - Przedstawia kontroler widoku
 
-Najprostsza alertu zawiera jeden przycisk opisane w tym zrzut ekranu:
+Najprostsza alertu zawiera jeden przycisk pokazany na tym zrzucie ekranu:
 
- ![Alert dotyczący z jednego przycisku](alerts-images/alert1.png)
+ ![Zgłoś alert, przy użyciu jednego przycisku](alerts-images/alert1.png)
 
-Kod, aby wyświetlić alert proste wygląda następująco:
+Kod, aby wyświetlić alert proste jest następująca:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Wyświetlanie alertu wiele opcji dotyczących odbywa się w podobny sposób, ale dodaje dwie akcje. Na przykład poniższy zrzut ekranu przedstawia alertu o dwa przyciski:
+Wyświetlanie alertów z wieloma opcjami odbywa się w podobny sposób, ale Dodaj dwie akcje. Na przykład poniższy zrzut ekranu przedstawia alert w przypadku dwóch przycisków:
 
- ![ Alert dotyczący z dwóch przycisków](alerts-images/alert2.png)
+ ![ Alert o dwóch przycisków](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Alerty można także wyświetlić arkusza akcji, podobnie jak na poniższym zrzucie ekranu:
+Alerty można także wyświetlić arkusza akcji podobny do następującego zrzutu:
 
- ![Alert arkusza akcji](alerts-images/alert3.png)
+ ![Akcja arkusza alertu](alerts-images/alert3.png)
 
-Przyciski są dodawane do alertu o `AddAction` metody:
+Przyciski są dodawane do alertu z `AddAction` metody:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -114,4 +114,4 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Formanty (przykład)](https://developer.xamarin.com/samples/Controls/)
-- [Kontroler alertu](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [Kontroler alertu](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

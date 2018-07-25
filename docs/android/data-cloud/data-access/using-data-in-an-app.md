@@ -1,42 +1,42 @@
 ---
-title: Przy użyciu danych w aplikacji systemu Android
+title: Korzystanie z danych w aplikacji systemu Android
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b79b2e44e79a6ff75b096c7443f6d46c20e27144
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 563c04ef1c8eec00108844894c5f9bdc0e9950e3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31647037"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241893"
 ---
-# <a name="using-data-in-an-app"></a>Przy użyciu danych w aplikacji
+# <a name="using-data-in-an-app"></a>Korzystanie z danych w aplikacji
 
-**DataAccess_Adv** pokazano działającą aplikację, która pozwala na dane wejściowe użytkownika i funkcje bazy danych CRUD (tworzenia, odczytu, aktualizacji i usuwania). Aplikacja składa się z dwóch ekrany: Lista i formularzem wprowadzania danych. Wszystkie dane kod dostępu jest wielokrotnego użytku w systemach iOS i Android bez żadnych modyfikacji.
+**DataAccess_Adv** przykład pokazuje działającą aplikację, która pozwala na dane wejściowe użytkownika i funkcje bazy danych operacji CRUD (tworzenia, odczytu, aktualizowania lub usuwania). Aplikacja składa się z dwóch ekranach: listę i formularz wprowadzania danych. Cały kod dostępu do danych jest ponownie wykorzystać w systemach iOS i Android bez żadnych modyfikacji.
 
-Po dodaniu niektóre dane ekrany aplikacji następującą postać w systemie Android:
+Po dodaniu pewne dane na ekranach aplikację wyglądać następująco w systemie Android:
 
-![Lista przykładów android](using-data-in-an-app-images/image11.png "lista przykładów dla systemu Android")
+![Lista przykładów dla systemu android](using-data-in-an-app-images/image11.png "lista przykładów dla systemu Android")
 
-![Szczegóły próbki android](using-data-in-an-app-images/image12.png "szczegółów próbki systemu Android")
+![Szczegółowy przykład systemu android](using-data-in-an-app-images/image12.png "szczegółowy przykład systemu Android")
 
-Poniżej przedstawiono projekt systemu Android &ndash; kodem przedstawionym w tej sekcji znajduje się w **Orm** katalogu:
+Poniżej przedstawiono projekt systemu Android &ndash; kod przedstawiony w tej sekcji znajduje się w obrębie **Orm** katalogu:
 
-![Projekt systemu android drzewa](using-data-in-an-app-images/image14.png "drzewa projektu dla systemu Android")
+![Projekt dla systemu android drzewa](using-data-in-an-app-images/image14.png "drzewa projektu dla systemu Android")
 
-Kodu natywnego interfejsu użytkownika dla działań w systemie Android wykracza poza zakres tego dokumentu. Zapoznaj się [Android widokach listy i karty](~/android/user-interface/layouts/list-view/index.md) przewodnika, aby uzyskać więcej informacji na temat interfejsu użytkownika.
+Kod macierzysty interfejsu użytkownika dla działań w systemie Android jest poza zakresem dla tego dokumentu. Zapoznaj się [ListViews dla systemu Android i karty](~/android/user-interface/layouts/list-view/index.md) przewodnika, aby uzyskać więcej informacji na temat kontrolek interfejsu użytkownika.
 
 ## <a name="read"></a>Odczyt
 
 Istnieje kilka operacji odczytu w przykładzie:
 
 -  Odczytywanie listy
--  Poszczególne rekordy odczytu
+-  Odczytywanie poszczególnych rekordów
 
-Te dwie metody w `StockDatabase` są klasy:
+Te dwie metody w `StockDatabase` klasy są:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android renderuje dane jako `ListView`.
+Android renderuje je jako `ListView`.
 
 ## <a name="create-and-update"></a>Tworzenie i aktualizowanie
 
-Aby uprościć kod aplikacji, pojedynczy Zapisz — metoda jest pod warunkiem, który wykonuje Insert lub Update w zależności od tego, czy ustawiono PrimaryKey. Ponieważ `Id` właściwość jest oznaczona `[PrimaryKey]` atrybutu nie należy ustawiać go w kodzie. Ta metoda wykryje, czy wartość został poprzedniej zapisane (przez sprawdzenie właściwości klucza podstawowego) i wstawić lub zaktualizować obiekt, w związku z tym:
+Aby uprościć kod aplikacji, pojedynczy Zapisz metody jest pod warunkiem, który wykonuje wstawiania lub aktualizacji, w zależności od tego, czy ustawiono PrimaryKey. Ponieważ `Id` właściwość jest oznaczona za pomocą `[PrimaryKey]` atrybutu, nie należy ustawiać go w kodzie. Ta metoda będzie wykrywał, czy wartość została poprzedniego zapisany (na przykład, sprawdzając właściwość klucza podstawowego) i wstawić lub zaktualizować obiekt, w związku z tym:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-Rzeczywistych aplikacji zwykle wymaga niektórych weryfikacji (na przykład wymagane pola, minimalnej długości lub inne reguły biznesowe). Dobrym aplikacji dla wielu platform implementuje tyle weryfikacji logicznego, jak to możliwe w kodzie udostępnionego, przekazywanie błędów sprawdzania poprawności, tworzenie kopii zapasowych interfejsu użytkownika do wyświetlenia zgodnie z możliwości platformy.
+Rzeczywistych aplikacji zwykle wymaga niektórych sprawdzania poprawności (na przykład wymagane pola, minimalnej długości lub innych reguł biznesowych). Implementowanie dobre aplikacje dla wielu platform, jaka weryfikacji logicznego możliwie udostępnionego kodu i przekazywanie błędów sprawdzania poprawności wykonywać kopie zapasowe w Interfejsie użytkownika do wyświetlania, zgodnie z możliwości platformy.
 
 ## <a name="delete"></a>Usuwanie
 
-W odróżnieniu od `Insert` i `Update` metod, `Delete<T>` metody może akceptować tylko wartość klucza podstawowego, a nie pełnego `Stock` obiektu. W tym przykładzie `Stock` obiekt jest przekazywany do metody, ale właściwość Id jest przekazywany do `Delete<T>` metody.
+W odróżnieniu od `Insert` i `Update` metod `Delete<T>` metoda może akceptować tylko wartość klucza podstawowego, a nie pełne `Stock` obiektu. W tym przykładzie `Stock` obiekt jest przekazywany do metody, ale właściwość Id jest przekazywany do `Delete<T>` metody.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -88,17 +88,17 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>Za pomocą wstępnie wypełnionych pliku bazy danych SQLite
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Za pomocą wstępnie wypełnionych plik bazy danych SQLite
 
-Niektóre aplikacje są dostarczane z bazy danych już wypełniony danych. Można łatwo to zrobić w aplikacji mobilnej wysyłania istniejącego pliku bazy danych SQLite z aplikacją i skopiować go do katalogu zapisywalny przed uzyskaniem dostępu do jej. Ponieważ SQLite jest standardowym formatem, która jest używana na wielu platformach, istnieje szereg dostępne narzędzia do tworzenia pliku bazy danych SQLite:
+Niektóre aplikacje są dostarczane z bazy danych już wypełniony danymi. Można to łatwo zrobić w aplikacji mobilnej, wysyłki istniejącego pliku bazy danych SQLite ze swoją aplikacją i skopiować go do katalogów zapisu przed uzyskaniem dostępu do jego. Ponieważ bazy danych SQLite jest standardowym formatem, która jest używana na wielu platformach, istnieje kilka narzędzi dostępnych w celu utworzenia pliku bazy danych SQLite:
 
--   **Rozszerzenia programu Firefox Menedżera SQLite** &ndash; działa na Mac i systemu Windows i tworzy pliki, które są zgodne z systemem iOS i Android.
+-   **Rozszerzenie przeglądarki Firefox Menedżera bazy danych SQLite** &ndash; działa dla systemów Mac i Windows i tworzy pliki, które są zgodne z systemem iOS i Android.
 
 -   **Command Line** &ndash; See [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
-Podczas tworzenia pliku bazy danych dystrybucji przy użyciu aplikacji, należy zadbać o nazewnictwa tabel i kolumn do zapewnienia spełniają co oczekuje kodu, zwłaszcza, jeśli używasz SQLite.NET, który będzie oczekiwać nazwy do dopasowania właściwości i klas C# (lub skojarzonych z nimi atrybutów niestandardowych)
+Podczas tworzenia pliku bazy danych dystrybucji razem z aplikacją należy zadbać o nazewnictwa tabele i kolumny, aby upewnić się, są zgodne kodu oczekiwaniom, zwłaszcza, jeśli używasz biblioteki SQLite.NET, który będzie oczekiwać nazwy do dopasowania właściwości i klas języka C# (lub skojarzone niestandardowych atrybutów).
 
-Aby upewnić się, że kod jest uruchamiany przed niczego więcej w aplikacji systemu Android, należy je umieścić w pierwsze działanie, aby załadować lub można utworzyć `Application` podklasy, który jest ładowany przed żadnych działań. Kod poniżej przedstawia `Application` podklasy, który kopiuje istniejącego pliku bazy danych **data.sqlite** z **/Resources/Raw/** katalogu.
+Aby upewnić się, że jakiś kod jest uruchamiany przed niczego więcej w aplikacji systemu Android, można go umieścić na pierwsze działanie, aby załadować lub utworzyć `Application` podklasy, który jest ładowany przed żadnych działań. Poniższy kod przedstawia `Application` podklasy, który kopiuje istniejącego pliku bazy danych **data.sqlite** poza **/Resources/Raw/** katalogu.
 
 ```csharp
 [Application]
@@ -137,7 +137,7 @@ public class YourAndroidApp : Application {
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Basic dostęp (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Dostęp Zaawansowane (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Przepisami danych w systemie android](https://developer.xamarin.com/recipes/android/data/)
-- [Dostęp do danych platformy Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Dostęp Basic (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Dostęp zaawansowany (przykład)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Przepisy na danych w systemie android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Dostęp do danych z zestawu narzędzi Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

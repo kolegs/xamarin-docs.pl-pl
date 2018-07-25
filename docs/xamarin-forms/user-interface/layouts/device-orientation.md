@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999035"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241214"
 ---
 # <a name="device-orientation"></a>Orientacja urządzenia
 
@@ -91,7 +91,7 @@ Obsługiwane orientacje na Universal Windows Platform (platformy UWP), są ustaw
 
 ## <a name="reacting-to-changes-in-orientation"></a>Reagowanie na zmiany w orientacji
 
-Xamarin.Forms nie oferuje żadnych macierzystych zdarzeń dotyczące powiadamiania aplikacji zmiany orientacji w udostępnionego kodu. Jednak `SizeChanged` zdarzenia `Page` generowane, gdy szerokość lub wysokość `Page` zmiany. Gdy szerokość `Page` jest większa niż wysokość, urządzenie jest w trybie poziomym. Aby uzyskać więcej informacji, zobacz [wyświetlania obrazu w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms nie oferuje żadnych macierzystych zdarzeń dotyczące powiadamiania aplikacji zmiany orientacji w udostępnionego kodu. Jednak `SizeChanged` zdarzenia `Page` generowane, gdy szerokość lub wysokość `Page` zmiany. Gdy szerokość `Page` jest większa niż wysokość, urządzenie jest w trybie poziomym. Aby uzyskać więcej informacji, zobacz [wyświetlania obrazu w oparciu o orientacji ekranu](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
 
 > [!NOTE]
 > Brak istniejących, bezpłatny pakiet NuGet do odbierania powiadomień zmiany orientacji w udostępnionego kodu. Zobacz [repozytorium GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Aby uzyskać więcej informacji.
@@ -475,4 +475,4 @@ Należy pamiętać o następujących kwestiach:
 - [Układ (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Przykład BusinessTumble (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [Układ dynamiczny (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Wyświetlanie obrazu, w oparciu o orientacji ekranu](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Wyświetlanie obrazu, w oparciu o orientacji ekranu](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

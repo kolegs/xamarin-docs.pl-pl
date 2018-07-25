@@ -6,27 +6,27 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 18817063900437baa625d8572f0ae28fec77be1e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0857b70e6e1d9104f62ec2e26f8edbab385d06f3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769809"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242254"
 ---
 # <a name="working-with-the-android-manifest"></a>Praca z manifestu systemu Android
 
 
 ## <a name="overview"></a>Omówienie
 
-**AndroidManifest.xml** jest plikiem zaawansowanych w platformy systemu Android umożliwiający objaśniono funkcje i wymagania dotyczące aplikacji w systemie Android. Jednak pracy z nim nie jest łatwe. Xamarin.Android pozwala zminimalizować ten problemy, umożliwiając dodać niestandardowe atrybuty do klas, które zostanie następnie użyte do automatycznego generowania manifestu dla Ciebie. Naszym celem jest, że 99% naszych użytkowników nigdy nie powinien trzeba ręcznie zmodyfikować **AndroidManifest.xml**. 
+**AndroidManifest.xml** jest plikiem Zaawansowane na platformie systemu Android umożliwiające objaśniono funkcje i wymagania aplikacji systemu Android. Pracę z nim nie jest jednak proste. Platforma Xamarin.Android pomaga zminimalizować trudności w tym, co pozwala na dodawanie atrybutów niestandardowych do swoich klas, które będą następnie używane do automatycznego generowania manifestu dla Ciebie. Naszym celem jest, że 99% naszych użytkowników powinno nigdy nie musisz ręcznie modyfikować **AndroidManifest.xml**. 
 
-**AndroidManifest.xml** wygenerowaniu jako część procesu kompilacji, a znaleziono w pliku XML **Properties/AndroidManifest.xml** jest scalany z XML, który jest generowany na podstawie atrybutów niestandardowych. Powstałe w ten sposób scalić **AndroidManifest.xml** znajduje się w **obj** podkatalogu; na przykład znajduje się on w **obj/Debug/android/AndroidManifest.xml** w przypadku kompilacji debugowania . Proces scalania jest prosta: używa atrybutów niestandardowych z kodem, aby wygenerować elementy XML i *wstawia* tych elementów do **AndroidManifest.xml**. 
+**AndroidManifest.xml** zostanie wygenerowany jako część procesu kompilacji i XML można znaleźć w **Properties/AndroidManifest.xml** jest scalany z danymi XML, który jest generowany na podstawie atrybutów niestandardowych. Wynikowy scalony **AndroidManifest.xml** znajduje się w **obj** podkatalogu; na przykład znajduje się on w **obj/Debug/android/AndroidManifest.xml** w przypadku kompilacji debugowania . Proces scalanie jest proste: używa niestandardowych atrybutów w obrębie kodu do generowania elementów XML i *wstawia* tych elementów do **AndroidManifest.xml**. 
 
 
 
-## <a name="the-basics"></a>Podstawy
+## <a name="the-basics"></a>Podstawowe informacje
 
-W czasie kompilacji zestawy są skanowane pod kątem inną niż`abstract` klasy, które pochodzą z [działania](https://developer.xamarin.com/api/type/Android.App.Activity/) i mieć [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) atrybut zadeklarowany na nich. Te klasy i atrybuty następnie używa do kompilacji do manifestu. Rozważmy na przykład następujący kod: 
+W czasie kompilacji zestawy są skanowane pod kątem non -`abstract` klas, które wynikają z [działania](https://developer.xamarin.com/api/type/Android.App.Activity/) i [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) atrybut jest zadeklarowany na nich. Te klasy i atrybuty następnie używa do tworzenia manifestu. Na przykład rozważmy następujący kod: 
 
 ```csharp
 namespace Demo
@@ -37,7 +37,7 @@ namespace Demo
 }
 ```
 
-Powoduje to nic generowane w **AndroidManifest.xml**. Jeśli chcesz `<activity/>` element ma zostać wygenerowane, należy użyć [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) atrybutu niestandardowego: 
+Skutkuje to nic generowanych w **AndroidManifest.xml**. Jeśli chcesz `<activity/>` element zostanie wygenerowany, należy użyć [ `[Activity]` ](https://developer.xamarin.com/api/type/Android.App.Activity/Attribute) atrybutów niestandardowych: 
 
 ```csharp
 namespace Demo
@@ -61,9 +61,9 @@ W tym przykładzie powoduje, że poniższy fragment xml, który ma zostać dodan
 
 ### <a name="activity-name"></a>Nazwa działania
 
-Począwszy od platformy Xamarin.Android 5.1, nazwa typu działania jest oparty na MD5SUM nazwa kwalifikowana zestawu typu eksportowane. Dzięki tej samej nazwie pełną, należy podać z dwóch różnych zestawów i nie błąd tworzenia pakietów. (Przed Xamarin.Android 5.1 z małej przestrzeni nazw i nazwę klasy została utworzona nazwa domyślnego typu działania). 
+Począwszy od platformy Xamarin.Android 5.1, nazwa typu działania opiera się na MD5SUM kwalifikowanych dla zestawu Nazwa typu eksportowany. Dzięki temu tej samej w pełni kwalifikowaną nazwę aby musi dostarczyć dwa różne zestawy i nie otrzymać błąd tworzenia pakietów. (Przed 5.1 platformy Xamarin.Android, domyślna nazwa typu działania utworzono pisany małymi literami przestrzeni nazw i nazwę klasy.) 
 
-Jeśli chcesz zastąpić to ustawienie domyślne i jawnie określić nazwę działanie, użyj [ `Name` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Name/) właściwości: 
+Jeśli chcesz zastąpić to ustawienie domyślne i jawnie określić nazwę działania, użyj [ `Name` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Name/) właściwości: 
 
 ```csharp
 [Activity (Name="awesome.demo.activity")]
@@ -72,18 +72,18 @@ public class MyActivity : Activity
 }
 ```
 
-W tym przykładzie powoduje poniższy fragment xml:
+Ten przykład generuje poniższy fragment xml:
 
 ```xml
 <activity android:name="awesome.demo.activity" />
 ```
 
-*Uwaga*: należy używać `Name` właściwość tylko dla zgodności z poprzednimi wersjami powodów, takich jak zmiana nazwy może to spowolnić wyszukiwania typów w czasie wykonywania. Jeśli masz starszego kodu, który oczekuje, że nazwa domyślnego typu działania opartego na małej przestrzeni nazw i nazwy klasy, zobacz [Android można wywołać nazw otoki](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) porady na temat zachowania zgodności. 
+*Uwaga*: należy używać `Name` właściwości tylko dla przyczyn zgodności z poprzednimi wersjami, w związku z tym zmiana nazwy może spowolnić wyszukiwanie typu w czasie wykonywania. W przypadku starszego kodu, który oczekuje, że domyślna nazwa typu działania była oparta na pisany małymi literami przestrzeni nazw i nazwy klasy, zobacz [Android nazewnictwa wywoływalnej otoki](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) porady na temat zachowania zgodności. 
 
 
-### <a name="activity-title-bar"></a>Działania, pasek tytułu
+### <a name="activity-title-bar"></a>Pasek tytułu działania
 
-Domyślnie Android daje aplikacji paska tytułu po jego uruchomieniu. Jest to wartość [ `/manifest/application/activity/@android:label` ](http://developer.android.com/guide/topics/manifest/activity-element.html#label). W większości przypadków ta wartość będzie różnić się od na nazwę klasy. Aby określić aplikacji etykiety na pasku tytułu, użyj [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/) właściwości.
+Domyślnie system Android zapewnia aplikacji paska tytułu po jej uruchomieniu. Jest to wartość [ `/manifest/application/activity/@android:label` ](http://developer.android.com/guide/topics/manifest/activity-element.html#label). W większości przypadków ta wartość będzie różnić się od Twoja nazwa klasy. Aby określić etykiety Twojej aplikacji na pasku tytułu, użyj [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/) właściwości.
 Na przykład: 
 
 ```csharp
@@ -93,7 +93,7 @@ public class MyActivity : Activity
 }
 ```
 
-W tym przykładzie powoduje poniższy fragment xml:
+Ten przykład generuje poniższy fragment xml:
 
 ```xml
 <activity android:label="Awesome Demo App" 
@@ -103,7 +103,7 @@ W tym przykładzie powoduje poniższy fragment xml:
 
 ### <a name="launchable-from-application-chooser"></a>Uruchamiana z wybór aplikacji
 
-Domyślnie działanie nie pojawi się na ekranie uruchamiania aplikacji dla systemu Android. Jest to, ponieważ będzie prawdopodobnie wiele działań w aplikacji i nie ma ikony dla każdego z nich. Aby określić, która powinna być uruchamiana z uruchamiający aplikację, użyj [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/) właściwości. Na przykład: 
+Domyślnie Twoje działania nie pojawią się na ekranie uruchamiania aplikacji systemu Android. Jest to spowodowane będą najprawdopodobniej wiele działań w aplikacji, a nie chcesz, aby dla każdego z nich ikony. Aby określić, który z nich powinna być uruchamiana z uruchamiania aplikacji, użyj [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/) właściwości. Na przykład: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -112,7 +112,7 @@ public class MyActivity : Activity
 }
 ```
 
-W tym przykładzie powoduje poniższy fragment xml:
+Ten przykład generuje poniższy fragment xml:
 
 ```xml
 <activity android:label="Awesome Demo App" 
@@ -128,7 +128,7 @@ W tym przykładzie powoduje poniższy fragment xml:
 
 ### <a name="activity-icon"></a>Ikona działania
 
-Domyślnie działanie będzie mógł skorzystać z domyślną ikonę uruchamiania systemu. Aby korzystać z ikoną niestandardową, należy najpierw dodać Twojego **.png** do **obiektów drawable/zasoby**, jego Akcja kompilacji ustawioną **AndroidResource**, następnie użyć [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/) właściwości w celu określenia ikonę do używania. Na przykład: 
+Domyślnie działania będzie miał domyślną ikonę uruchamianie udostępnianej przez system. Aby korzystać z ikoną niestandardową, należy najpierw dodać swoje **.png** do **zasobów/drawable**, ustaw Build Action **AndroidResource**, następnie za pomocą [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/) właściwości w celu określenia ikonę do używania. Na przykład: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -137,7 +137,7 @@ public class MyActivity : Activity
 }
 ```
 
-W tym przykładzie powoduje poniższy fragment xml:
+Ten przykład generuje poniższy fragment xml:
 
 ```xml
 <activity android:icon="@drawable/myicon" android:label="Awesome Demo App" 
@@ -152,22 +152,22 @@ W tym przykładzie powoduje poniższy fragment xml:
 
 ### <a name="permissions"></a>Uprawnienia
 
-Podczas dodawania uprawnień do manifestu systemu Android (zgodnie z opisem w [Dodaj uprawnienia do manifestu systemu Android](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest/)), te uprawnienia są rejestrowane w **Properties/AndroidManifest.xml**. Na przykład jeśli ustawisz `INTERNET` uprawnień, następujący element zostanie dodany do **Properties/AndroidManifest.xml**: 
+Po dodaniu uprawnień do manifestu systemu Android (zgodnie z opisem w [Dodaj uprawnienia do manifestu systemu Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)), te uprawnienia są rejestrowane w **Properties/AndroidManifest.xml**. Na przykład jeśli ustawisz `INTERNET` uprawnienie, następujący element zostanie dodany do **Properties/AndroidManifest.xml**: 
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Kompilacje debugowania ustawiony automatycznie niektóre uprawnienia, aby łatwiej debugowania (takich jak `INTERNET` i `READ_EXTERNAL_STORAGE`) &ndash; te ustawienia tylko w wygenerowanym **obj/Debug/android/AndroidManifest.xml** i nie są pokazano, jak włączyć w **wymagane uprawnienia** ustawienia. 
+Kompilacje debugowania automatycznie ustawić niektóre uprawnienia, aby upewnić się, łatwiejsze debugowanie (takie jak `INTERNET` i `READ_EXTERNAL_STORAGE`) &ndash; te ustawienia są ustawione tylko w wygenerowanym **obj/Debug/android/AndroidManifest.xml** i nie są przedstawione jako włączony w **wymagane uprawnienia** ustawienia. 
 
-Na przykład, jeśli należy zbadać wygenerowanego pliku manifestu w **obj/Debug/android/AndroidManifest.xml**, może zostać wyświetlony dodaje elementy uprawnienia: 
+Na przykład, jeśli wygenerowane w pliku manifestu w **obj/Debug/android/AndroidManifest.xml**, może zostać wyświetlony, dodaje elementów uprawnienia: 
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-W wersji kompilacji wersji manifestu (w **obj/Debug/android/AndroidManifest.xml**), te uprawnienia są *nie* automatycznie skonfigurowana. Jeśli okaże się, że przełączanie do kompilacji wydania powoduje utratę uprawnienia, które były dostępne w kompilacji debugowania aplikacji, sprawdź jawnie ustawić te uprawnienia **wymagane uprawnienia** ustawień dla aplikacji (zobacz  **Tworzenie > aplikacji systemu Android** w programie Visual Studio dla komputerów Mac; zobacz **właściwości > manifestu systemu Android** w programie Visual Studio). 
+W wersji wersja manifestu kompilacji (w **obj/Debug/android/AndroidManifest.xml**), te uprawnienia są *nie* automatycznie skonfigurowana. Jeśli okaże się, że przełączanie do kompilacji wydania powoduje utratę uprawnienia, które były dostępne w kompilacji debugowania aplikacji, sprawdź jawnie nadajesz to uprawnienie w **wymagane uprawnienia** ustawień aplikacji (zobacz  **Tworzenie > Aplikacja dla systemu Android** w programie Visual Studio dla komputerów Mac; zobacz **właściwości > manifestu systemu Android** w programie Visual Studio). 
 
 
 
@@ -175,9 +175,9 @@ W wersji kompilacji wersji manifestu (w **obj/Debug/android/AndroidManifest.xml*
 ## <a name="advanced-features"></a>Funkcje zaawansowane
 
 
-### <a name="intent-actions-and-features"></a>Konwersji akcje i funkcje
+### <a name="intent-actions-and-features"></a>Intencji akcje i funkcje
 
-Manifestu systemu Android udostępnia sposób opisano możliwości działanie. Odbywa się za pośrednictwem [intencje](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) i [ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) atrybutu niestandardowego. Możesz określić akcje, które są odpowiednie dla Twojej aktywności za pomocą [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) Konstruktor i kategorie, które są odpowiednie z [ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) właściwości. Co najmniej jedno działanie należy podać (czyli Dlaczego działania znajdują się w konstruktorze). `[IntentFilter]` można podać kilka razy, a wyniki każdego zastosowania w oddzielnej `<intent-filter/>` w elemencie `<activity/>`. Na przykład:
+Manifest systemu Android umożliwia możesz opisać możliwości działania. Odbywa się za pośrednictwem [intencji](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) i [ `[IntentFilter]` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) atrybutu niestandardowego. Możesz określić akcje, które są odpowiednie dla Twojego działania o [ `IntentFilter` ](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) Konstruktor i kategorie, które są odpowiednie z [ `Categories` ](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) właściwości. Co najmniej jedno działanie musi być podana (jest to, dlaczego działań znajdują się w konstruktorze). `[IntentFilter]` można podać kilka razy, a każde użycie wyników w osobnym `<intent-filter/>` elemencie `<activity/>`. Na przykład:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -188,7 +188,7 @@ public class MyActivity : Activity
 }
 ```
 
-W tym przykładzie powoduje poniższy fragment xml:
+Ten przykład generuje poniższy fragment xml:
 
 ```xml
 <activity android:icon="@drawable/myicon" android:label="Awesome Demo App" 
@@ -208,9 +208,9 @@ W tym przykładzie powoduje poniższy fragment xml:
 
 ### <a name="application-element"></a>Element aplikacji
 
-Manifestu systemu Android udostępnia również sposób można zadeklarować właściwości dla całej aplikacji. Odbywa się za pośrednictwem `<application>` elementu i jego odpowiednik [aplikacji](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) atrybutu niestandardowego. Należy pamiętać, że są one ustawienia dotyczące całej aplikacji (całego zestawu), a nie ustawienia na działania. Zazwyczaj zadeklarować `<application>` właściwości dla całej aplikacji, a następnie zastąpić te ustawienia (w razie potrzeby), na podstawie na działania. 
+Manifest systemu Android także sposób deklarowania właściwości dla całej aplikacji. Odbywa się za pośrednictwem `<application>` elementu i jego odpowiednika [aplikacji](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) atrybutu niestandardowego. Należy pamiętać, że są to ustawienia (na poziomie zestawu) całej aplikacji, a nie ustawienia poszczególnych działań. Zazwyczaj zadeklarować `<application>` właściwości dla całej aplikacji, a następnie zastąpić te ustawienia (zgodnie z potrzebami), na podstawie poszczególnych działań. 
 
-Na przykład następująca `Application` jest dodawany atrybut **AssemblyInfo.cs** aby wskazać, że aplikacja może być debugowany, że jego nazwa użytkownika do odczytu jest **Moja aplikacja**, i korzysta z `Theme.Light` styl jako motyw domyślny dla wszystkich działań: 
+Na przykład następująca `Application` jest dodawany atrybut **AssemblyInfo.cs** aby wskazać, że aplikacja może być debugowany, że jego czytelny dla użytkownika nazwa jest **Moja aplikacja**, i że używa on `Theme.Light` styl jako motyw domyślny dla wszystkich działań: 
 
 ```csharp
 [assembly: Application (Debuggable=true,   
@@ -218,7 +218,7 @@ Na przykład następująca `Application` jest dodawany atrybut **AssemblyInfo.cs
                         Theme="@android:style/Theme.Light")]
 ```
 
-Ta deklaracja powoduje poniższy fragment XML, który ma być generowany w **obj/Debug/android/AndroidManifest.xml**:
+Ta deklaracja powoduje, że poniższy fragment XML do wygenerowania w **obj/Debug/android/AndroidManifest.xml**:
 
 ```xml
 <application android:label="My App" 
@@ -226,18 +226,18 @@ Ta deklaracja powoduje poniższy fragment XML, który ma być generowany w **obj
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
-W tym przykładzie wszystkie działania w aplikacji zostaną domyślnie `Theme.Light` stylu. Jeśli ustawiono motywu działania `Theme.Dialog`, tylko który będzie używany przez działanie `Theme.Dialog` stylów, gdy wszystkie działania w aplikacji zostaną domyślnie `Theme.Light` styl zgodnie z `<application>` elementu. 
+W tym przykładzie wszystkie działania w aplikacji będą domyślnie `Theme.Light` stylu. Jeśli motyw działania jest ustawiona na `Theme.Dialog`, tylko, że działanie użyje `Theme.Dialog` stylu, podczas gdy inne działania w Twojej aplikacji będą domyślnie `Theme.Light` styl zgodnie z `<application>` elementu. 
 
-`Application` Element nie jest jedynym sposobem, aby skonfigurować `<application>` atrybutów. Alternatywnie można wstawić atrybuty bezpośrednio do `<application>` elementu **Properties/AndroidManifest.xml**. Te ustawienia są scalane w końcowym `<application>` element, który znajduje się w **obj/Debug/android/AndroidManifest.xml**. Należy pamiętać, że zawartość **Properties/AndroidManifest.xml** zawsze zastępują dane dostarczone przez atrybuty niestandardowe. 
+`Application` Element nie jest jedynym sposobem, aby skonfigurować `<application>` atrybutów. Alternatywnie można wstawić atrybuty bezpośrednio do `<application>` elementu **Properties/AndroidManifest.xml**. Te ustawienia są scalane w końcowym `<application>` element, który znajduje się w **obj/Debug/android/AndroidManifest.xml**. Należy pamiętać, że zawartość **Properties/AndroidManifest.xml** zawsze zastępuje dane dostarczone przez atrybuty niestandardowe. 
 
-Istnieje wiele atrybutów całej aplikacji, które można skonfigurować w `<application>` element; Aby uzyskać więcej informacji o tych ustawieniach, zobacz [właściwości publiczne](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) sekcji [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
+Istnieje wiele atrybutów całej aplikacji, które można skonfigurować w `<application>` elementu; Aby uzyskać więcej informacji o tych ustawieniach, zobacz [właściwości publiczne](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) części [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
 
-## <a name="list-of-custom-attributes"></a>Lista atrybutów niestandardowych
+## <a name="list-of-custom-attributes"></a>Listę atrybutów niestandardowych
 
 -   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) : generuje [/manifest/application/activity](http://developer.android.com/guide/topics/manifest/activity-element.html) fragmentu XML 
--   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) : generuje [/manifest aplikacji](http://developer.android.com/guide/topics/manifest/application-element.html) fragmentu XML 
+-   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) : generuje [/manifest/aplikacji](http://developer.android.com/guide/topics/manifest/application-element.html) fragmentu XML 
 -   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) : generuje [/manifest/Instrumentacji](http://developer.android.com/guide/topics/manifest/instrumentation-element.html) fragmentu XML 
 -   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) : generuje [//intent-filter](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) fragmentu XML 
 -   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) : generuje [//meta-data](http://developer.android.com/guide/topics/manifest/meta-data-element.html) fragmentu XML 

@@ -1,37 +1,37 @@
 ---
-title: Dodawanie formatowanie specyficzne dla systemu iOS
-description: W tym artykule opisano sposób ustawiania wygląd specyficzne dla systemu iOS bez korzystania z niestandardowego modułu renderowania platformy Xamarin.Forms.
+title: Dodawanie formatowania specyficzne dla systemu iOS
+description: W tym artykule wyjaśniono, jak ustawić wygląd specyficzne dla systemu iOS bez korzystania z niestandardowego modułu renderowania zestawu narzędzi Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243535"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241380"
 ---
-# <a name="adding-ios-specific-formatting"></a>Dodawanie formatowanie specyficzne dla systemu iOS
+# <a name="adding-ios-specific-formatting"></a>Dodawanie formatowania specyficzne dla systemu iOS
 
-Aby ustawić specyficzne dla systemu iOS formatowania jest utworzenie [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) formantu i style specyficzne dla platformy zestaw kolorów dla każdej platformy.
+Jednym ze sposobów, aby ustawić specyficzne dla systemu iOS formatowania jest utworzenie [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) dla formantu i style właściwe dla platformy zestawu kolorów dla każdej platformy.
 
-Inne opcje, aby kontrolować sposób wyglądu aplikacji dla systemu iOS platformy Xamarin.Forms obejmują:
+Inne opcje, aby kontrolować sposób wygląd aplikacji dla systemu iOS Xamarin.Forms obejmują:
 
-* Konfigurowanie opcji w wyświetlania [ **Info.plist**](#info-plist)
-* Ustawianie stylów formantu za pośrednictwem [ `UIAppearance` interfejsu API](#uiappearance)
+* Konfigurowanie wyświetlić opcje w [ **Info.plist**](#info-plist)
+* Ustawianie stylów kontroli za pośrednictwem [ `UIAppearance` interfejsu API](#uiappearance)
 
-Poniżej opisano czynności następujących alternatyw.
+Te możliwości zostały podane poniżej.
 
 <a name="info-plist"/>
 
-## <a name="customizing-infoplist"></a>Dostosowywanie Info.plist
+## <a name="customizing-infoplist"></a>Dostosowywanie pliku Info.plist
 
-**Info.plist** pliku pozwala skonfigurować niektóre aspekty renderering aplikacji systemu iOS, takie jak jak (i czy) na pasku stanu jest wyświetlany.
+**Info.plist** pliku pozwala skonfigurować niektóre aspekty renderering aplikacji systemu iOS, takie jak jak (i czy) jest wyświetlana na pasku stanu.
 
-Na przykład [próbki Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/) używa następujący kod do ustawienia nawigacji pasek koloru i koloru tekstu na wszystkich platformach:
+Na przykład [przykładowe Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/) używa następujący kod w celu ustawienia nawigacji paska koloru i kolor tekstu na wszystkich platformach:
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -39,15 +39,15 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-Wynik jest wyświetlany we fragmencie ekranu poniżej. Zwróć uwagę, czy czarny elementy paska stanu (to nie można ustawić w ramach platformy Xamarin.Forms ponieważ jest funkcją specyficzne dla platformy).
+Wynik jest wyświetlany we fragmencie ekranu poniżej. Zauważ, że elementy paska stanu są czarny (nie można ustawić w ramach zestawu narzędzi Xamarin.Forms, ponieważ jest to funkcja specyficzne dla platformy).
 
-![](theme-images/status-default-sml.png "iOS motywów")
+![](theme-images/status-default-sml.png "Motyw systemu iOS")
 
-W idealnym przypadku na pasku stanu może być także białe — coś możemy wykonywać bezpośrednio w projekcie systemu iOS. Dodaj następujące wpisy do **Info.plist** Aby wymusić na pasku stanu biały:
+Najlepiej na pasku stanu jest również biały - coś, co możemy osiągnąć bezpośrednio w projekcie dla systemu iOS. Dodaj następujące wpisy na **Info.plist** wymusić pasek stanu, aby zostać umieszczone na:
 
-![](theme-images/info-plist.png "iOS Info.plist wpisów")
+![](theme-images/info-plist.png "Wpisy w pliku Info.plist w systemie iOS")
 
-lub Edytuj odpowiadający mu **Info.plist** plik bezpośrednio do obejmują:
+lub edytować odpowiednich **Info.plist** plik bezpośrednio do dołączenia:
 
 ```xml
 <key>UIStatusBarStyle</key>
@@ -56,19 +56,19 @@ lub Edytuj odpowiadający mu **Info.plist** plik bezpośrednio do obejmują:
 <false/>
 ```
 
-Teraz po uruchomieniu aplikacji na pasku nawigacji jest zielony i jego tekstu jest białe (ze względu na platformy Xamarin.Forms formatowania) *i* tekst na pasku stanu jest również białe dzięki konfiguracji specyficznych dla systemu iOS:
+Teraz po uruchomieniu aplikacji na pasku nawigacyjnym jest zielony, a jego tekstu biały (ze względu na platformie Xamarin.Forms formatowania) *i* tekst na pasku stanu jest również białe dzięki konfiguracji specyficznych dla systemu iOS:
 
-![](theme-images/status-white-sml.png "iOS motywów")
+![](theme-images/status-white-sml.png "Motyw systemu iOS")
 
 <a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>UIAppearance interfejsu API
 
-[ `UIAppearance` Interfejsu API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) może być używany do ustawiania właściwości visual na wiele formantów z systemem iOS *bez* konieczności tworzenia [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) może służyć do ustawiania właściwości visual na wielu formantów dla systemu iOS *bez* konieczności tworzenia [niestandardowego modułu renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
-Dodawanie pojedynczy wiersz kodu w celu **AppDelegate.cs** `FinishedLaunching` metody styl możesz wszystkie formanty, używając danego typu ich `Appearance` właściwości. Poniższy kod zawiera dwa przykłady — globally Ustawianie stylów na karcie pasek i kontrolowanie:
+Dodanie jednego wiersza kodu w celu **AppDelegate.cs** `FinishedLaunching` metody można zastosować styl do wszystkich kontrolek danego typu przy użyciu ich `Appearance` właściwości. Poniższy kod zawiera dwa przykłady — globalnie style na karcie paska, a następnie przełącz sterowania:
 
-**AppDelegate.cs** w projekcie systemu iOS
+**AppDelegate.cs** w projekcie dla systemu iOS
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -86,9 +86,9 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-Domyślnie wybrana karta ikony paska w [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) byłoby niebieski:
+Domyślnie kartę wybraną ikonę paska w [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) będzie niebieski:
 
-![](theme-images/tabbar-default.png "IOS domyślna ikona paska kartę w TabbedPage")
+![](theme-images/tabbar-default.png "Domyślne dla systemu iOS ikony paska kartę w TabbedPage")
 
 Aby zmienić to zachowanie, ustaw `UITabBar.Appearance` właściwości:
 
@@ -96,31 +96,31 @@ Aby zmienić to zachowanie, ustaw `UITabBar.Appearance` właściwości:
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Powoduje to, że wybrana karta jako zielony:
+Powoduje to, że wybrany kartę, aby być w kolorze zielonym:
 
-![](theme-images/tabbar-custom.png "Zielony iOS ikony paska kartę w TabbedPage")
+![](theme-images/tabbar-custom.png "Kolor zielony dla systemu iOS ikony paska kartę w TabbedPage")
 
-Przy użyciu tego interfejsu API umożliwia dostosowanie wyglądu platformy Xamarin.Forms `TabbedPage` w systemie iOS z kodem bardzo mało. Zapoznaj się [przepisu dostosować karty](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/) Aby uzyskać więcej informacji na temat używania niestandardowego modułu renderowania można ustawić określonej czcionki dla karty.
+Za pomocą tego interfejsu API umożliwia dostosowanie wyglądu Xamarin.Forms `TabbedPage` w systemie iOS za pomocą bardzo niewielkiej ilości kodu. Zapoznaj się [przepisu Dostosowywanie karty](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) Aby uzyskać więcej informacji na temat korzystania z niestandardowego modułu renderowania można ustawić określonej czcionki dla karty.
 
 ### <a name="uiswitch"></a>UISwitch
 
-`Switch` Formant jest inny przykład, który można łatwo stylem:
+`Switch` Formant jest inny przykład, w którym można łatwo różne:
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Te przechwytywania ekranu dwóch wyświetlić domyślny `UISwitch` formantu po lewej i dostosowaną wersję (ustawienie `Appearance`) po prawej stronie w [próbki Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
+Te przechwytywania ekranu dwóch wyświetlić domyślny `UISwitch` kontrolki z lewej strony oraz dostosowaną wersję (ustawienie `Appearance`) po prawej stronie w [przykładowe Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "Domyślny kolor UISwitch") ![ ] (theme-images/switch-custom.png "dostosowane UISwitch kolorów")
+![](theme-images/switch-default.png "Domyślny kolor UISwitch") ![ ] (theme-images/switch-custom.png "dostosowany kolor UISwitch")
 
-### <a name="other-controls"></a>Inne formanty
+### <a name="other-controls"></a>Inne kontrolki
 
-Wiele formantów interfejsu użytkownika dla systemu iOS mogą mieć ich domyślne kolory i inne atrybuty ustawić za pomocą [ `UIAppearance` interfejsu API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
+Wiele kontrolek interfejsu użytkownika dla systemu iOS mogą mieć ich domyślne kolory i inne atrybuty, które można ustawić przy użyciu [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [UIAppearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
-- [Dostosuj karty](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/)
+- [Dostosowywanie karty](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

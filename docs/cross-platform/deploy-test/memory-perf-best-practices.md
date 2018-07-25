@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997442"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242410"
 ---
 # <a name="cross-platform-performance"></a>Wydajności dla wielu Platform
 
@@ -340,7 +340,7 @@ Dowiedz się więcej w tym wpisie w blogu: [jak można zachować Your Android ro
 
 ## <a name="optimize-image-resources"></a>Optymalizuj zasoby obrazów
 
-Obrazy są najbardziej kosztowne zasoby, których aplikacje, i często są przechwytywane w wysokiej rozdzielczości. Spowoduje to utworzenie pełną szczegółów Wyraziste obrazy, aplikacje, które zazwyczaj wyświetlania tych obrazów wymagają więcej użycie procesora CPU do dekodowania obrazu i większej ilości pamięci do przechowywania zdekodowany obrazu. Jest marnotrawstwa można dekodować obraz o wysokiej rozdzielczości w pamięci, gdy będzie on skalowany w do mniejszego rozmiaru do wyświetlenia. Zamiast tego należy ograniczyć wpływ użycia i pamięci procesora CPU przez tworzenie wielu wersji rozwiązania przechowywane obrazy znajdujące się blisko formaty wyświetlania warunków prognozowanych. Na przykład obraz wyświetlany w widoku listy należy prawdopodobnie niższej rozdzielczości niż obraz wyświetlany na pełnym ekranie. Ponadto, skalowane w dół wersje obrazów o wysokiej rozdzielczości mogą być załadowane do wydajnego wyświetlane bez wpływu na minimalnej pamięci. Aby uzyskać więcej informacji, zobacz [obciążenia duże mapy bitowe efektywnie](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Obrazy są najbardziej kosztowne zasoby, których aplikacje, i często są przechwytywane w wysokiej rozdzielczości. Spowoduje to utworzenie pełną szczegółów Wyraziste obrazy, aplikacje, które zazwyczaj wyświetlania tych obrazów wymagają więcej użycie procesora CPU do dekodowania obrazu i większej ilości pamięci do przechowywania zdekodowany obrazu. Jest marnotrawstwa można dekodować obraz o wysokiej rozdzielczości w pamięci, gdy będzie on skalowany w do mniejszego rozmiaru do wyświetlenia. Zamiast tego należy ograniczyć wpływ użycia i pamięci procesora CPU przez tworzenie wielu wersji rozwiązania przechowywane obrazy znajdujące się blisko formaty wyświetlania warunków prognozowanych. Na przykład obraz wyświetlany w widoku listy należy prawdopodobnie niższej rozdzielczości niż obraz wyświetlany na pełnym ekranie. Ponadto, skalowane w dół wersje obrazów o wysokiej rozdzielczości mogą być załadowane do wydajnego wyświetlane bez wpływu na minimalnej pamięci. Aby uzyskać więcej informacji, zobacz [obciążenia duże mapy bitowe efektywnie](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
 
 Niezależnie od rozpoznawania obrazów wyświetlania zasobów obrazu może znacznie zwiększyć zużycie pamięci przez aplikację. W związku z tym ich powinien zostać utworzony tylko podczas wymagane i powinny zostać opublikowane, jak aplikacja nie wymaga już je.
 

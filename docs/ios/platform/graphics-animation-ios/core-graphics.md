@@ -1,50 +1,50 @@
 ---
-title: Grafika Core w Xamarin.iOS
-description: W tym artykule omówiono podstawowe grafiki struktury systemu iOS. Widoczny jest sposób umożliwia grafiki Core Rysuj geometrię, obrazów i plików PDF.
+title: Podstawowe funkcje grafiki w rozszerzeniu Xamarin.iOS
+description: W tym artykule omówiono podstawowe funkcje grafiki struktury systemu iOS. Widoczny jest sposób użycia podstawowe funkcje grafiki do rysowania geometrii, obrazów i plików PDF.
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d7124c7d09ca4e36ce22d60f578ea4a75d4a05b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82c54074db722824c56ae3ae86620c804b8d109e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786759"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241952"
 ---
-# <a name="core-graphics-in-xamarinios"></a>Grafika Core w Xamarin.iOS
+# <a name="core-graphics-in-xamarinios"></a>Podstawowe funkcje grafiki w rozszerzeniu Xamarin.iOS
 
-_W tym artykule omówiono podstawowe grafiki struktury systemu iOS. Widoczny jest sposób umożliwia grafiki Core Rysuj geometrię, obrazów i plików PDF._
+_W tym artykule omówiono podstawowe funkcje grafiki struktury systemu iOS. Widoczny jest sposób użycia podstawowe funkcje grafiki do rysowania geometrii, obrazów i plików PDF._
 
-obejmuje iOS [ *grafiki Core* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) framework, aby zapewnić obsługę rysowania niskiego poziomu. Te struktury są co Włącz bogate możliwości graficznego w UIKit. 
+dla systemu iOS zawiera [ *podstawowe funkcje grafiki* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) framework w celu zapewnienia obsługi rysowania niskiego poziomu. Te struktury są co Włączanie zaawansowanych funkcji graficznych w ramach UIKit. 
 
-Grafika Core jest struktury grafiki 2D niskiego poziomu, która umożliwia rysowania grafiki niezależnie od urządzenia. Wszystkie 2D Rysowanie w UIKit jest używana wewnętrznie grafiki Core.
+Podstawowe funkcje grafiki jest struktury grafika 2D niskiego poziomu, która umożliwia rysowanie grafiki niezależnie od urządzenia. Wszystkie 2D rysowania w strukturze UIKit jest używane wewnętrznie podstawowe funkcje grafiki.
 
-Grafika Core obsługuje Rysowanie w wielu scenariuszach, w tym:
+Podstawowe funkcje grafiki obsługuje Rysowanie w wielu scenariuszach, w tym:
 
--  [Rysowanie na ekranie za pośrednictwem `UIView` ](#Drawing_in_a_UIView_Subclass) .
+-  [Rysowanie na ekranie za pomocą `UIView` ](#Drawing_in_a_UIView_Subclass) .
 -  [Rysowanie obrazów w pamięci lub na ekranie](#Drawing_Images_and_Text).
 -  Tworzenie i rysowanie w pliku PDF.
 -  Odczytywanie i rysowanie istniejącego pliku PDF.
 
 
-## <a name="geometric-space"></a>Geometrycznych miejsca
+## <a name="geometric-space"></a>Miejsce geometryczne
 
-Niezależnie od tego, w tym scenariuszu wszystkie rysunku odbywa się za pomocą grafiki Core odbywa się przestrzeni geometryczne, co oznacza, że działa on w abstrakcyjny punktów, a nie w pikselach. Opisz, co ma narysowanego pod względem geometrii i rysowanie stanu, takich jak kolory, style linii, itp., i grafiki Core obsługuje tłumaczenia wszystko w pikselach. Taki stan jest dodawany do kontekstu grafiki, które możesz traktować jak Malarz kanwy.
+Niezależnie od tego, w tym scenariuszu wszystkie rysunku zrobić za pomocą podstawowe funkcje grafiki odbywa się w przestrzeni adresowej geometryczne, co oznacza, że działa on w abstrakcyjny punktów, a nie pikseli. Opisz, co ma rysowane pod względem geometry i rysowanie stan, takich jak kolory, style linii, itp., a podstawowe funkcje grafiki zajmuje się tłumaczenia wszystko w pikselach. Taki stan jest dodawany do kontekście grafiki można traktować jak Malarz kanwy.
 
-Istnieje kilka zalety tego podejścia:
+Istnieje kilka zalet tego podejścia:
 
--  Kod rysowania staje się dynamicznej, a następnie zmodyfikować grafiki w czasie wykonywania.
--  Zmniejsza potrzebę statycznych obrazów w pakiecie aplikacji można zmniejszyć rozmiar aplikacji.
--  Grafika staną się bardziej odporne na zmiany rozpoznawania na urządzeniach.
+-  Kodu rysowania staje się dynamiczne, a następnie zmodyfikować grafiki w czasie wykonywania.
+-  Zmniejszając konieczność stosowania obrazów statycznych do zbioru aplikacji może zmniejszyć rozmiar aplikacji.
+-  Grafiki stają się bardziej odporne na zmiany rozwiązania na urządzeniach.
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
-## <a name="drawing-in-a-uiview-subclass"></a>Rysowanie w podklasy UIView
+## <a name="drawing-in-a-uiview-subclass"></a>Rysowanie w podklasę UIView
 
-Każdy `UIView` ma `Draw` metodę, która jest wywoływana przez system, kiedy zachodzi potrzeba narysowania. Aby dodać kod rysowania widoku podklasy `UIView` i zastąpić `Draw`:
+Każdy `UIView` ma `Draw` metodę, która jest wywoływana przez system, gdy musi zostać narysowany. Aby dodać kod rysowania do widoku podklasy `UIView` i zastąpić `Draw`:
 
 ```csharp
 public class TriangleView : UIView
@@ -56,23 +56,23 @@ public class TriangleView : UIView
 }
 ```
 
-Rysuj nigdy nie powinna być wywoływana bezpośrednio. Jest ona wywoływana przez system podczas przetwarzania wykonywania pętli. Po raz pierwszy przez wykonywania pętli po dodaniu widoku do hierarchii widoku jego `Draw` metoda jest wywoływana. Kolejne wywołania `Draw` wystąpić, gdy widok jest oznaczony jako wymagające narysowania przez wywołanie albo `SetNeedsDisplay` lub `SetNeedsDisplayInRect` w widoku.
+Rysowanie nigdy nie powinna być wywoływana bezpośrednio. Jest ona wywoływana przez system podczas przetwarzania wykonywania pętli. Po raz pierwszy przy użyciu wykonywania pętli po dodaniu do hierarchii widoków, widok jego `Draw` metoda jest wywoływana. Kolejne wywołania `Draw` występują, gdy widok jest oznaczony jako wymagające do rysowania, wywołując jedną `SetNeedsDisplay` lub `SetNeedsDisplayInRect` w widoku.
 
-### <a name="pattern-for-graphics-code"></a>Wzorzec kodu grafiki
+### <a name="pattern-for-graphics-code"></a>Wzorzec dla kodu grafiki
 
-Kod w `Draw` implementacji powinien opisano, co chce narysowanego. Kod rysowania jest zgodna ze wzorcem, w którym ustawia stan niektórych i wywołuje metodę, aby zażądać go narysowania. Ten wzorzec może być uogólniony w następujący sposób:
+Kod w `Draw` implementacji powinna opisywać, co chce rysowane. Kod rysowania jest zgodna ze wzorcem, w którym ustawia niektóre stan rysowania i wywołuje metodę, aby zażądać jej rysowania. Ten wzorzec może być uogólniony w następujący sposób:
 
-1. Pobiera kontekst grafiki.
+1. Pobierz kontekst grafiki.
 
 2. Skonfiguruj atrybuty rysowania.
 
-3. Utwórz niektórych geometrii rysowanie elementów podstawowych.
+3. Tworzenie geometrii niektóre z Rysowanie w nim elementów podstawowych.
 
-4. Wywołanie metody rysunku lub Stroke.
+4. Wywołaj metodę obrysu i rysowania.
 
-### <a name="basic-drawing-example"></a>Przykład podstawowego rysowania
+### <a name="basic-drawing-example"></a>Przykład podstawowe Rysowanie
 
-Rozważmy na przykład poniższy fragment kodu:
+Na przykład rozważmy następujący fragment kodu:
 
 ```csharp
 //get graphics context
@@ -99,14 +99,14 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 }
 ```
 
-Umożliwia podział ten kod:
+Możemy podzielić ten kod:
 
 ```csharp
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
-Z tego wiersza najpierw pobiera bieżący kontekst grafiki do użycia na rysunku. Można traktować kontekstu grafiki jako obszaru roboczego czy rysowanie sytuacji, zawierający wszystkie stanu o rysunku, takich jak obrysu i wypełnienia kolorów, a także geometrii do rysowania.
+Z tego wiersza najpierw pobiera bieżący kontekst grafiki do użycia do rysowania. Można traktować kontekstu grafiki jako obszar roboczy, rysowania się dzieje w, zawierający wszystkie stany o rysunku, takich jak obrysu i koloru wypełnienia, a także typy geometryczne, aby narysować.
 
 ```csharp
 g.SetLineWidth (10);
@@ -114,9 +114,9 @@ UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
 ``` 
 
-Po pierwsze kontekstu grafiki kod konfiguruje niektóre atrybuty do użycia podczas rysowania przedstawionych powyżej. W takim przypadku kolorów linii szerokości, obrysu i wypełnienia są ustawione. Ponieważ są one obsługiwane w kontekście grafiki stan dowolnego kolejnych rysunku będzie używać tych atrybutów.
+Po otrzymaniu kontekstu grafiki kod konfiguruje niektóre atrybuty do użycia podczas rysowania, jak pokazano powyżej. W tym przypadku są ustawione kolory linii szerokości, obrysu i wypełnienia. Wszystkie kolejne rysowania będzie używać tych atrybutów, ponieważ są one obsługiwane w stanie kontekst grafiki.
 
-Aby utworzyć geometrii kod używa `CGPath`, dzięki czemu ścieżki grafiki do opisania z linii i krzywych. W takim przypadku ścieżka dodaje linie łączące tablicy punktów tworzą trójkąt. Wyświetlone poniżej używa grafiki Core współrzędnych Rysowanie w widoku, gdzie źródła znajduje się w lewym górnym rogu, dodatnią x-bezpośrednio w prawo i w kierunku y dodatnie w dół:
+Aby utworzyć geometrii kod używa `CGPath`, co pozwala ścieżki grafiki do opisania z linii i krzywych. W takim przypadku ścieżka dodaje łączącymi tablica punktów tworzą trójkąt. Wyświetlone poniżej podstawowe funkcje grafiki używa współrzędnych dla widoku rysowania, której źródłem jest w lewym górnym rogu dodatnie x-bezpośrednio po prawej stronie i kierunku y dodatnie w dół:
 
 ```csharp
 var path = new CGPath ();
@@ -129,15 +129,15 @@ new CGPoint (220, 200)});
 path.CloseSubpath ();
 ``` 
 
-Po utworzeniu ścieżki, jest ona dodawana do kontekstu grafiki, tak, aby podczas wywoływania `AddPath` i `DrawPath` odpowiednio można rysowania.
+Po utworzeniu ścieżki jest dodawany do kontekstu grafiki, aby podczas wywoływania `AddPath` i `DrawPath` odpowiednio ją rysować.
 
-Poniżej przedstawiono uzyskany widok:
+Poniżej przedstawiono wynikowym widoku:
 
- ![](core-graphics-images/00-bluetriangle.png "Trójkąt przykładowe dane wyjściowe")
+ ![](core-graphics-images/00-bluetriangle.png "Przykładowe dane wyjściowe trójkąt")
 
 ## <a name="creating-gradient-fills"></a>Tworzenie gradientu wypełnienia
 
-Dostępne są także bardziej rozbudowane formularze rysunku. Na przykład grafiki Core umożliwia tworzenie gradientem i stosowanie ścieżki przycinania. Rysowanie wypełnienia gradientowego wewnątrz ścieżki z poprzedniego przykładu, najpierw ścieżka musi być ustawiona jako ścieżka wycinka:
+Dostępne są również bardziej rozbudowane rodzaje rysowania. Podstawowe funkcje grafiki umożliwia na przykład tworząc gradientem i stosując ścieżki przycinania. Aby narysować wypełnienia gradientowego wewnątrz ścieżki z poprzedniego przykładu, najpierw ścieżka musi być ustawiona jako ścieżki przycięcia:
 
 ```csharp
 // add the path back to the graphics context so that it is the current path
@@ -146,7 +146,7 @@ g.AddPath (path);
 g.Clip ();
 ```
 
-Ustawienia bieżącej ścieżki, ponieważ ścieżka wycinka ogranicza wszystkie kolejne rysunku w obrębie geometrii ścieżki, na przykład następujący kod, który pobiera gradientu liniowego:
+Ustawienia bieżącej ścieżki, ponieważ przycinania ogranicza wszystkie kolejne rysowania w obrębie geometrii ścieżkę, taką jak poniższy kod, który rysuje gradientu liniowego:
 
 ```csharp
 // the color space determines how Core Graphics interprets color information
@@ -165,30 +165,30 @@ Ustawienia bieżącej ścieżki, ponieważ ścieżka wycinka ogranicza wszystkie
     }
 ```
 
-Te zmiany przedstawienia wypełnienia gradientowego, jak pokazano poniżej:
+Te zmiany powodują utworzenie wypełniacza gradientu, jak pokazano poniżej:
 
  ![](core-graphics-images/01-gradient-fill.png "Przykład z wypełnieniem gradientowym")
 
-## <a name="modifying-line-patterns"></a>Modyfikowanie wzorce wiersza
+## <a name="modifying-line-patterns"></a>Modyfikowanie wzorców wiersza
 
-Atrybuty rysowania linii może również zostać zmieniony z grafiką Core. Obejmuje to zmianę szerokości i obrysu kolor linii, a także wzorzec wierszy, jak pokazano w poniższym kodzie:
+Atrybuty rysowania linii można zmodyfikować w taki sposób, przy użyciu podstawowe funkcje grafiki. Obejmuje to zmianę koloru linii szerokości i obrysu, a także wzorzec wiersza, jak pokazano w poniższym kodzie:
 
 ```csharp
 //use a dashed line
 g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 ```
 
-Dodawanie ten kod przed rysowania wyników operacji w jednostkach kreskowane pociągnięć 10 długi, 4 jednostki odstępów między łączniki, jak pokazano poniżej:
+Dodawanie ten kod przed żadnych rysowania wyników operacji w jednostkach pociągnięć przerywaną, co 10 długa, za pomocą 4 jednostek odstępy między kresek, jak pokazano poniżej:
 
- ![](core-graphics-images/02-dashed-stroke.png "Dodawanie ten kod przed rysowania wyników operacji w pociągnięć kreskowanej")
+ ![](core-graphics-images/02-dashed-stroke.png "Dodawanie ten kod przed żadnych rysowania wyników operacji w pociągnięć kreskowanej")
  
-Należy pamiętać, że korzystając z interfejsu API Unified w Xamarin.iOS typu tablicy musi być `nfloat`i musi być jawnie rzutowany Math.pi —.
+Należy pamiętać, że podczas korzystania z interfejsu API Unified w rozszerzeniu Xamarin.iOS, typ tablicy musi być `nfloat`, a także musi być jawnie rzutowane na Math.PI.
 
 <a name="Drawing_Images_and_Text"/>
 
-## <a name="drawing-images-and-text"></a>Rysowanie tekstu i grafiki
+## <a name="drawing-images-and-text"></a>Rysowanie obrazów i tekstu
 
-Oprócz Rysowanie ścieżek w kontekście grafiki widoku, grafiki Core obsługuje również rysowania obrazy i tekst. Rysowanie obrazów, po prostu utworzyć `CGImage` i przekaż go do `DrawImage` wywołania:
+Oprócz rysowania ścieżek w kontekście grafiki widoku, podstawowe funkcje grafiki obsługuje również rysowanie obrazów i tekstu. Aby narysować obrazu, po prostu Utwórz `CGImage` i przekazać ją do `DrawImage` wywołania:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -201,13 +201,13 @@ public override void Draw (CGRect rect)
 }
 ```
 
-Jednak to tworzy obraz rysowane odwrócony, jak pokazano poniżej:
+Jednak to tworzy obraz rysowane nogami, jak pokazano poniżej:
 
  ![](core-graphics-images/03-upside-down-monkey.png "Obraz rysowane wokół osi poziomej")
 
-Przyczyną tego jest punkt początkowy grafiki Core do rysowania obrazu podczas znajduje się w lewym dolnym widoku ma swoją witryną źródłową w lewym górnym rogu. W związku z tym do poprawnego wyświetlania obrazu źródła ma zostać zmodyfikowana, co można wykonać przez zmodyfikowanie *bieżącego macierzy transformacji* *(CTM)*. CTM definiuje, gdzie punktów na żywo, znanej także jako *przestrzeni*. Odwracanie CTM w kierunku y i przesuwając go przez granice wysokość w kierunku y ujemna można Przerzucanie obrazu.
+Przyczyną jest podstawowe funkcje grafiki do rysowania obraz pochodzi z lewym dolnym rogu, natomiast widok pochodzenia w lewym górnym rogu. W związku z tym, aby poprawnie wyświetlać obraz, pochodzenie ma zostać zmodyfikowana, który można osiągnąć, modyfikując *bieżącego macierzy transformacji* *(CTM)*. CTM Określa, gdzie punkty na żywo, znany także jako *przestrzeni*. Odwracanie CTM w kierunku y i przesuwając go przez granice wysokość w kierunku ujemne y można przerzucić obraz.
 
-Kontekst grafiki ma metody pomocnicze do przekształcania CTM. W takim przypadku `ScaleCTM` "odwraca" Rysowanie i `TranslateCTM` przenosi do lewego górnego, jak pokazano poniżej:
+Kontekst grafiki zawiera metody pomocnicze do przekształcania CTM. W tym przypadku `ScaleCTM` "odwraca" rysunku i `TranslateCTM` przenosi do lewego górnego rogu, jak pokazano poniżej:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -223,16 +223,16 @@ public override void Draw (CGRect rect)
 }   
 ```
 
-Następnie jest wyświetlany obraz wynikowy pionowo:
+Obraz wynikowy zostanie wyświetlona pionowo:
 
- ![](core-graphics-images/04-upright-monkey.png "Obraz wyświetlany słupka próbki")
+ ![](core-graphics-images/04-upright-monkey.png "Przykładowy obraz wyświetlany słupka")
 
 > [!IMPORTANT]
-> Zmiany w kontekście grafiki zastosowane do wszystkich kolejnych operacji rysowania. W związku z tym gdy jest on przekształcany CTM, ma wpływ na wszystkie dodatkowe rysunku. Na przykład jeśli został narysowany trójkąt po przekształceniu CTM, wydaje się odwrócony.
+> Zmiany do kontekstu grafiki stosowane do wszystkich kolejnych operacji rysowania. W związku z tym gdy jest on przekształcany CTM, ma wpływ na wszelkie dodatkowe rysowania. Na przykład jeśli trójkąt narysowany po przekształceniu CTM, wydaje się odwrócona.
 
 ### <a name="adding-text-to-the-image"></a>Dodawanie tekstu do obrazu
 
-Jako przy użyciu ścieżek i obrazów, rysowanie tekstu z grafiką Core wymaga tego samego wzorca podstawowe ustawienia niektórych stanu grafiki i wywołanie metody do rysowania. W przypadku tekstu, metoda do wyświetlania tekstu jest `ShowText`. Po dodaniu do rysowania przykład obrazu, poniższy kod rysuje tekst przy użyciu grafiki rdzeni:
+Jako przy użyciu ścieżek i obrazów, rysowanie tekstu za pomocą podstawowe funkcje grafiki polega na tym samym podstawowy wzorzec pewnego stanu grafiki i wywołanie metody do rysowania. W przypadku tekstu metodą do wyświetlania tekstu jest `ShowText`. Po dodaniu do obrazów, rysowania przykład, poniższy kod rysuje tekst przy użyciu podstawowe funkcje grafiki:
 
 ```csharp
 public override void Draw (RectangleF rect)
@@ -260,31 +260,31 @@ public override void Draw (RectangleF rect)
 }
 ```
 
-Jak widać, ustawiania stanu grafiki Rysowanie tekstu jest podobny do rysowania geometrii. Tekst rysowania jednak, również są stosowane rysowania trybu i czcionkę tekstu. W takim przypadku cienia jest również zastosować, mimo że zastosowanie shadows działa tak samo dla ścieżki rysowania.
+Jak widać, ustawiania stanu graficznych do rysowania tekstu jest podobny do rysowania geometrii. Do celów rysowania jednak tekstu, również są stosowane rysowania, tryb i czcionkę tekstu. W takim przypadku w tle jest również zastosowane, mimo że zastosowanie cieni działa tak samo, dla ścieżki rysowania.
 
-Wynikowa tekst jest wyświetlany w obrazie, jak pokazano poniżej:
+Wynikowy tekst jest wyświetlany z obrazem, jak pokazano poniżej:
 
- ![](core-graphics-images/05-text-on-image.png "Tekst wynikowy jest wyświetlany w obrazie")
+ ![](core-graphics-images/05-text-on-image.png "Wynikowy tekst jest wyświetlany z obrazem")
 
 ## <a name="memory-backed-images"></a>Obrazy z kopią zapasową w pamięci
 
-Oprócz rysowania kontekst grafiki widoku, obsługuje grafiki Core rysowania pamięci kopii obrazów, nazywane również rysowania ekranem. Wymaga:
+Oprócz rysowania do kontekstu grafiki widoku, obsługuje podstawowe funkcje grafiki rysowania pamięci kopii obrazów, znany także jako rysowania ekranem. Wymaga:
 
--  Tworzenie kontekstu grafiki, który nie jest obsługiwana przez pamięci mapy bitowej
--  Ustawianie stanu rysowania i wydawania polecenia rysowania
+-  Tworzenie kontekstu grafiki, który jest zabezpieczony za pomocą w pamięci mapy bitowej
+-  Ustawianie stanu rysowania i wydawanie polecenia rysowania
 -  Pobieranie obrazu z kontekstu
 -  Usuwanie kontekstu
 
 
-W odróżnieniu od `Draw` metody, w przypadku, gdy kontekst jest dostarczana przez widok, w tym przypadku tworzenia kontekstu w jeden z dwóch sposobów:
+W odróżnieniu od `Draw` metody, jeśli kontekst jest dostarczana przez widok, w tym przypadku tworzenia kontekstu w jeden z dwóch sposobów:
 
-1. Wywołując `UIGraphics.BeginImageContext` (lub `BeginImageContextWithOptions`)
+1. Przez wywołanie metody `UIGraphics.BeginImageContext` (lub `BeginImageContextWithOptions`)
 
-2. Tworząc nowy `CGBitmapContextInstance`
+2. Tworząc nową `CGBitmapContextInstance`
 
- `CGBitmapContextInstance` jest przydatne podczas pracy bezpośrednio z bitami obrazu, takie jak w przypadku gdy używasz algorytmu manipulowania niestandardowego obrazu. We wszystkich innych przypadkach należy używać `BeginImageContext` lub `BeginImageContextWithOptions`.
+ `CGBitmapContextInstance` jest przydatne podczas pracy bezpośrednio z bitów obrazu, takie jak w przypadkach, gdy używasz algorytm manipulowania obraz niestandardowy. We wszystkich innych przypadkach należy używać `BeginImageContext` lub `BeginImageContextWithOptions`.
 
-Po utworzeniu kontekstu obrazu, dodawanie rysowania kodu jest tak jak w `UIView` podklasy. Na przykład przykładowy kod wcześniej używany do rysowania trójkąt może służyć do rysowania do obrazu w pamięci, a nie w `UIView`, jak pokazano poniżej:
+Po utworzeniu kontekst obrazu, dodawanie kodu rysowania jest tak samo, jak jest `UIView` podklasę. Na przykład, w przykładzie kodu używane wcześniej, aby narysować trójkąt może służyć do rysowania obrazu w pamięci, a nie w `UIView`, jak pokazano poniżej:
 
 ```csharp
 UIImage DrawTriangle ()
@@ -324,7 +324,7 @@ UIImage DrawTriangle ()
 }
 ```
 
-Zazwyczaj rysunku do mapy bitowej kopii pamięci jest używane do przechwycenia obrazu za pomocą dowolnego `UIView`. Na przykład następujący kod renderuje widok warstwy do kontekstu mapy bitowej i tworzy `UIImage` z niej:
+Typowym zastosowaniem rysunku do mapy bitowej opartych na pamięci jest przechwytywania obrazu za pomocą dowolnego `UIView`. Na przykład, poniższy kod renderuje widok warstwy do kontekstu mapy bitowej i tworzy `UIImage` z niej:
 
 ```csharp
 UIGraphics.BeginImageContext (cellView.Frame.Size);
@@ -339,13 +339,13 @@ UIGraphics.EndImageContext ();
 
 ## <a name="drawing-pdfs"></a>Rysowanie plików PDF
 
-Oprócz obrazów grafiki Core obsługuje rysunku PDF. Podobnie jak obrazy, można renderowanie plików PDF w pamięci oraz jak odczytu dokumentu PDF do renderowania w `UIView`.
+Oprócz obrazy podstawowe funkcje grafiki obsługuje rysowania PDF. Takich jak obrazy, można renderować PDF w pamięci oraz jak odczyt dokumentu PDF do renderowania w `UIView`.
 
 ### <a name="pdf-in-a-uiview"></a>Plik PDF w UIView
 
-Grafika Core obsługuje również odczyt dokumentu PDF z pliku i renderowaniem go w widoku przy użyciu `CGPDFDocument` klasy. `CGPDFDocument` Klasa reprezentuje PDF w kodzie i może służyć do odczytu i rysowanie stron.
+Podstawowe funkcje grafiki obsługuje również podczas odczytu pliku PDF z pliku i renderowaniem go w widoku przy użyciu `CGPDFDocument` klasy. `CGPDFDocument` Klasa reprezentuje PDF w kodzie i może służyć do odczytu, a następnie narysuj stron.
 
-Na przykład poniższy kod w `UIView` podklasy odczytuje plik PDF z pliku do `CGPDFDocument`:
+Na przykład, poniższy kod w `UIView` podklasy odczytuje plik PDF z pliku do `CGPDFDocument`:
 
 ```csharp
 public class PDFView : UIView
@@ -365,7 +365,7 @@ public class PDFView : UIView
 }
 ```
 
-`Draw` Metoda może następnie używać `CGPDFDocument` odczytać strony do `CGPDFPage` i renderować ją przez wywołanie metody `DrawPDFPage`, jak pokazano poniżej:
+`Draw` Metoda może następnie używać `CGPDFDocument` można odczytać strony do `CGPDFPage` renderowany przez wywołanie metody `DrawPDFPage`, jak pokazano poniżej:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -393,11 +393,11 @@ public override void Draw (CGRect rect)
 }
 ```
 
-### <a name="memory-backed-pdf"></a>Kopia pamięci PDF
+### <a name="memory-backed-pdf"></a>Pliki PDF z kopią zapasową w pamięci
 
-PDF w pamięci, należy utworzyć w kontekście PDF przez wywołanie metody `BeginPDFContext`. Rysunek PDF jest szczegółowego do stron. Każdej z nich jest uruchomiona przez wywołanie metody `BeginPDFPage` oraz zostać zakończona, wywołując `EndPDFContent`, z grafiki między kodem. Ponadto z rysunkiem obrazu pamięci wykonania kopii PDF rysowania używa początek w lewym dolnym można wyjaśnić, zmieniając po prostu CTM, takich jak z obrazami.
+Dla pliku PDF w pamięci, musisz utworzyć kontekst PDF, wywołując `BeginPDFContext`. Rysowanie do formatu PDF jest szczegółową do stron. Każda strona jest uruchomiona przez wywołanie metody `BeginPDFPage` oraz zostać zakończona, wywołując `EndPDFContent`, za pomocą grafiki między kodem. Ponadto za pomocą rysowania obrazu pamięci wykonania kopii PDF rysowania używa pochodzenia w lewym dolnym rogu, które mogą uwzględniać, po prostu modyfikując CTM podobnie jak przy użyciu obrazów.
 
-Poniższy kod przedstawia sposób rysowania tekstu do pliku PDF:
+Poniższy kod pokazuje, jak rysować tekst do pliku PDF:
 
 ```csharp
 //data buffer to hold the PDF
@@ -420,16 +420,16 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 UIGraphics.EndPDFContent ();
 ```
 
-Tekstu jest rysowana na PDF, które następnie są zawarte w `NSData` który może zostać zapisany, przekazanego, przesłanego itp.
+Wynikowy tekstu jest rysowana na format PDF, który następnie jest zawarty w `NSData` , mogą być zapisywane, przekazanych, pocztą e-mail, itp.
 
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule analizujemy dostępnych za pośrednictwem możliwości grafiki *grafiki Core* framework. Widzieliśmy Rysuj geometrię, obrazów i plików PDF w kontekście przy użyciu grafiki Core `UIView,` oraz jak do kontekstów kopii pamięci grafiki.
+W tym artykule przyjrzeliśmy się funkcje grafiki zapewnianą w ramach *podstawowe funkcje grafiki* framework. Widzieliśmy, jak za pomocą podstawowe funkcje grafiki Rysuj geometrię, obrazów i plików PDF w kontekście `UIView,` oraz jak do opartych na pamięci grafiki kontekstów.
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Przykład grafiki Core](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Grafika i wskazówki animacji](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [Grafika i animacje wskazówki](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Podstawowe funkcje animacji](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Podstawowe przepisami animacji](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Podstawowe przepisy animacji](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

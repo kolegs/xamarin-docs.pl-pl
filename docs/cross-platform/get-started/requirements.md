@@ -1,108 +1,96 @@
 ---
 title: Wymagania systemowe
-description: Ten dokument zawiera listę wymagań systemowych dotyczących tworzenia aplikacji za pomocą platformy Xamarin na komputerach Mac i z systemu Windows. Łączy on również instrukcje dotyczące instalacji.
+description: Ten dokument zawiera listę wymagań systemowych dotyczących tworzenia aplikacji za pomocą platformy Xamarin na komputerach Mac i Windows. Łączy on również instrukcje dotyczące instalacji.
 ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
-author: asb3993
-ms.author: amburns
-ms.date: 08/28/2017
-ms.openlocfilehash: 04db2fe4e3385c55ecf653b002b909f16e99a101
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/24/2018
+ms.openlocfilehash: 6d16f01965b6b3bcba35cf14d4000f53a4400653
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780727"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241981"
 ---
 # <a name="system-requirements"></a>Wymagania systemowe
 
-_Wymagania wstępne dotyczące korzystania z platformy Xamarin_
+Produkty platformy Xamarin korzystają z możliwości platformy, zestawy SDK firmy Apple i Google do docelowego z systemem iOS lub Android, dzięki czemu nasze wymagania dotyczące systemu dopasowania w swoim otoczeniu. Ta strona przedstawia zgodność systemu dla platformy Xamarin i Środowisko deweloperskie zalecane i wersji zestawu SDK.
 
-Produkty Xamarin opierają się na platformie zestawów SDK z firmy Apple i Google do docelowych z systemem iOS lub Android, więc nasze wymagania systemowe odpowiada szkodliwego. Ta strona przedstawia zgodność systemu dla platformy Xamarin i środowisko projektowe zalecane i wersji zestawu SDK.
+- [Środowiska deweloperskie](#devenv)
+- [wymagania dotyczące systemu macOS](#mac)
+- [Wymagania dotyczące Windows](#windows)
 
-- [Środowisk deweloperskich](#devenv)
-- [System macOS wymagania](#mac)
-- [Wymagania dotyczące systemu Windows](#windows)
-
-Odwiedź stronę [instrukcje dotyczące instalacji](#install) Aby uzyskać więcej informacji na temat uzyskiwania oprogramowania i wymaganych zestawów SDK.
+Odwiedź stronę [instrukcje dotyczące instalacji](#install) więcej informacji na temat uzyskiwania oprogramowania i wymaganych zestawów SDK.
 
 <a name="devenv" />
 
-## <a name="development-environments"></a>Środowisk deweloperskich
+## <a name="development-environments"></a>Środowiska deweloperskie
 
-Ten przedstawia tabeli platformy, których można wbudować o różnych programowanie narzędzia & systemu operacyjnego:
+Tabeli przedstawiono, które platformy mogą być wbudowane w rozwoju różnych kombinacji narzędzi & systemu operacyjnego:
 
 [!include[](~/cross-platform/includes/development-environment.md)]
 
 
 > [!NOTE]
-> Umożliwiające tworzenie dla systemu iOS na komputerach z systemem Windows musi być [dostępny w sieci komputera Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md), kompilacji zdalnej i debugowanie. Ta metoda działa również Jeśli masz program Visual Studio na komputerze Mac z systemem wewnątrz maszyny Wirtualnej systemu Windows.
+> Aby programować dla systemu iOS na komputerach Windows musi być [dostępne w sieci komputera Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)dla zdalnej kompilacji i debugowania. Ta metoda działa również w przypadku programu Visual Studio na komputerze Mac z systemem wewnątrz maszyny Wirtualnej z systemem Windows.
 
 <a name="mac" />
 
-## <a name="macos-requirements"></a>System macOS wymagania
+## <a name="macos-requirements"></a>wymagania dotyczące systemu macOS
 
-Używanie komputera Mac do tworzenia aplikacji platformy Xamarin wymaga następujących wersji oprogramowania/pakiet SDK. Sprawdź wersję systemu operacyjnego i postępuj zgodnie z instrukcjami dotyczącymi [Instalator Xamarin](#install).
+Używanie komputera Mac do tworzenia aplikacji platformy Xamarin wymaga następujących wersji oprogramowania/zestaw SDK. Sprawdź swoją wersję systemu operacyjnego i postępuj zgodnie z instrukcjami dotyczącymi [Instalatora platformy Xamarin](#install).
 
 [!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
-> Xcode można instalować (i zaktualizować) na [developer.apple.com](https://developer.apple.com/xcode/download/) lub za pośrednictwem sklepu Mac App Store.
+> Środowisko Xcode można instalować (i zaktualizować) na [developer.apple.com](https://developer.apple.com/xcode/download/) lub za pośrednictwem Mac App Store.
 
-### <a name="testing--debugging-on-macos"></a>Testowanie i debugowanie na macOS
+### <a name="testing--debugging-on-macos"></a>Testowanie i debugowanie w systemie macOS
 
-Aplikacje mobilne platformy Xamarin można wdrożyć na fizycznych urządzeniach przez połączenie USB testowanie i debugowanie (Xamarin.Mac aplikacji można przetestować bezpośrednio na komputerze dewelopera; Apple Watch aplikacje są wdrażane najpierw sparowanego iPhone).
+Aplikacje mobilne platformy Xamarin można wdrożyć na urządzeniach fizycznych przy użyciu kabla USB, testowanie i debugowanie (Xamarin.Mac mogą być testowane aplikacje bezpośrednio na komputerze deweloperskim; Apple Watch aplikacje są wdrażane najpierw sparowane iPhone).
 
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
-
 <a name="windows" />
 
-## <a name="windows-requirements"></a>Wymagania dotyczące systemu Windows
+## <a name="windows-requirements"></a>Wymagania dotyczące Windows
 
-Używanie komputerem z systemem Windows do tworzenia aplikacji platformy Xamarin wymaga następujących wersji oprogramowania/pakiet SDK.
-Sprawdź wersję systemu operacyjnego (i upewnij się, że nie używasz *Express* wersji programu Visual Studio — Jeśli tak, może być konieczna aktualizacja do *społeczności* edition).
-Visual Studio 2015 i instalatorów 2017 zawierają opcję automatycznie Zainstaluj program Xamarin.
+Do tworzenia aplikacji platformy Xamarin przy użyciu komputera Windows wymaga następujących wersji oprogramowania/zestaw SDK.
+Sprawdź swoją wersję systemu operacyjnego (i upewnij się, że nie używasz *Express* wersji programu Visual Studio — w takim przypadku należy wziąć pod uwagę aktualizacji do *społeczności* wersji).
+Instalator programu Visual Studio 2017 obejmuje opcję do automatycznej instalacji Xamarin (**opracowywania aplikacji mobilnych przy użyciu platformy .NET**).
 
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
-
 > [!NOTE]
 >
->* Xamarin dla Visual Studio obsługuje wszystkie programu Visual Studio 2015 lub 2017 (Community, Professional i Enterprise).
+>- Platforma Xamarin dla programu Visual Studio obsługuje dowolnego programu Visual Studio 2017 (Community, Professional i Enterprise).
 >
->* Utworzenie aplikacji platformy Xamarin.Forms dla uniwersalnych platformy systemu Windows (UWP) wymaga systemu Windows 10 z programu Visual Studio 2015 lub 2017 r.
+>- Do tworzenia aplikacji Xamarin.Forms dla uniwersalnej platformy Windows (UWP) wymaga systemu Windows 10 za pomocą programu Visual Studio 2017.
 
+### <a name="testing--debugging-on-windows"></a>Testowanie i debugowanie na Windows
 
-### <a name="testing--debugging-on-windows"></a>Testowanie i debugowanie w systemie Windows
-
-Aplikacje mobilne platformy Xamarin można wdrożyć na fizycznych urządzeniach przez połączenie USB testowanie i debugowanie (iOS, które urządzenia musi być podłączony do komputera Mac, nie komputera z uruchomionym Visual Studio).
+Aplikacje mobilne platformy Xamarin można wdrożyć na urządzeniach fizycznych przy użyciu kabla USB, testowanie i debugowanie (iOS, które urządzenia muszą być podłączone do komputera Mac, nie komputera z systemem Visual Studio).
 
 [!include[](~/cross-platform/includes/windows-testing.md)]
-
-
-> [!NOTE]
->
->* [Pobierz emulator Windows Phone 8.1](https://www.microsoft.com/download/details.aspx?id=43719).
->* Emulator Windows Phone 10 jest dołączony do programu Visual Studio 2015 platformy uniwersalnej systemu Windows SDK.
 
 <a name="install" />
 
 ## <a name="installation-instructions"></a>Instrukcje dotyczące instalacji
 
-Można pobrać najnowszą wersję platformy Xamarin dla macOS z [xamarin.com/download](http://xamarin.com/download). W systemie Windows, należy wykonać [programu Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) instrukcje dotyczące instalacji.
+Najnowsza wersja platformy Xamarin dla systemu macOS można pobrać z [xamarin.com/download](http://xamarin.com/download). Windows, postępuj zgodnie z [programu Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) instrukcje dotyczące instalacji.
 
-Pełna lista naszych bieżącej wersji produktu jest dostępny na [bieżącej strony wersjach](http://developer.xamarin.com/releases/current/). Ta strona omówiono również wersji określonego produktu (oraz łączy się z informacjami o wersji) dla naszych beta i kanałów alfa.
+Pełna lista naszej bieżącej wersji produktu jest dostępna na [bieżącej strony z wersjami](http://developer.xamarin.com/releases/current/). Na tej stronie przedstawiono również wersje poszczególnych produktów (i łączy się z informacjami o wersji) w wersji beta i kanałów alfa.
 
-Określone [instalacji](~/cross-platform/get-started/installation/index.md) instrukcje dotyczące każdej platformy są dostępne w tym miejscu:
+Określone [instalacji](~/cross-platform/get-started/installation/index.md) instrukcje dotyczące każdej platformy są dostępne tutaj:
 
 - [Xamarin.iOS](~/ios/get-started/installation/index.md)
 - [Xamarin.Android](~/android/get-started/installation/index.md)
 - [Xamarin.Mac](~/mac/get-started/installation.md)
 
-Istnieje również dodatkowe informacje o [platformy Xamarin.Forms wymagania dotyczące obsługiwanych platform](~/xamarin-forms/get-started/installation.md).
-
+Istnieje również dodatkowe informacje na temat [Xamarin.Forms wymagania dotyczące obsługiwanych platform](~/xamarin-forms/get-started/installation.md).
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Pobierz Xamarin](https://xamarin.com/download/)
+- [Pobierz program Xamarin](https://visualstudio.microsoft.com/xamarin/)
 - [Bieżące wersje](https://developer.xamarin.com/releases/current/)

@@ -1,56 +1,56 @@
 ---
 title: System iOS 7 omówienie interfejsu użytkownika
-description: System iOS 7 wprowadza nadmiar zmiany interfejsu użytkownika. W tym artykule omówiono niektóre zmiany większe, zarówno w wygląd formantów i interfejsów API, który obsługuje nowy projekt.
+description: System iOS 7 wprowadza mnóstwo zmiany w interfejsie użytkownika. W tym artykule opisano niektóre większe zmiany zarówno w wygląd kontrolek i interfejsów API, który obsługuje nowy projekt.
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3f5ea8abd41e718f9ac947c5acb290dffe400ddd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e7725418ed104bd9be014b80d20fd62de144ca5
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30781928"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242293"
 ---
 # <a name="ios-7-user-interface-overview"></a>System iOS 7 omówienie interfejsu użytkownika
 
-_System iOS 7 wprowadza nadmiar zmiany interfejsu użytkownika. W tym artykule omówiono niektóre zmiany większe, zarówno w wygląd formantów i interfejsów API, który obsługuje nowy projekt._
+_System iOS 7 wprowadza mnóstwo zmiany w interfejsie użytkownika. W tym artykule opisano niektóre większe zmiany zarówno w wygląd kontrolek i interfejsów API, który obsługuje nowy projekt._
 
-System iOS 7 koncentruje się na zawartości za pośrednictwem programu chrome. Elementy interfejsu użytkownika w systemie iOS 7 uwypuklające chrome przez usunięcie atrybutów, takich jak nadmiarowe obramowania, pasków stanu i pasków nawigacji, które zmniejszenie ilości miejsca na ekranie używane przez widoki zawartości. W systemie iOS 7 zawartość jest przeznaczona do użycia cały ekran.
+System iOS 7 koncentruje się na zawartości za pośrednictwem przeglądarki chrome. Elementy interfejsu użytkownika w systemie iOS 7 uwypuklające chrome, usuwając atrybutów, takich jak nadmiarowe obramowania, paski stanu i pasków nawigacji, które zmniejszają ilość miejsca na ekranie, używany przy użyciu funkcji widoków zawartości. W systemie iOS 7 zawartość jest przeznaczony do stosowania cały ekran.
 
-System iOS 7 wprowadza inne zmiany: kolor służy do odróżniania elementów interfejsu użytkownika, zamiast atrybutów, takich jak obramowania przycisku. Wiele elementów, takich jak pasków nawigacji i paski stanu są teraz rozmyte i przezroczyste lub przezroczyste z widoków zawartości biorąc obszaru poniżej. Widoki te zawartości renderowania za pośrednictwem rozmyte pasków przekazywania wrażenie hierarchii w interfejsie użytkownika.
+System iOS 7 wprowadzono kilka innych zmian: kolor jest używany do odróżniania elementów interfejsu użytkownika, audytów atrybutów, takich jak obramowania przycisku. Wiele elementów, takich jak pasków nawigacji i paski stanu są teraz rozmyte i przezroczyste lub przezroczyste z widoków zawartości, biorąc obszar poniżej. Widoki te zawartości renderowania za pośrednictwem rozmyte pasków, przekazywania czują się głębokość w interfejsie użytkownika.
 
-W tym artykule opisano kilka zmian, aby elementy interfejsu użytkownika w systemie iOS 7, jak również różnych interfejsów API powiązane z nowego projektu interfejsu użytkownika.
+W tym artykule omówiono kilka zmian do elementów interfejsu użytkownika w systemie iOS 7, jak również różne interfejsy API powiązane z nowego projektu interfejsu użytkownika.
 
 ## <a name="view-and-control-changes"></a>Wyświetlanie i kontroli zmiany
 
-Wszystkie widoki w UIKit odpowiadają nowego wyglądu i działania systemu iOS 7. W tej sekcji opisano niektóre zmiany w tych widoków, a także powiązanych interfejsów API, które zostały zmienione w celu obsługi nowego interfejsu użytkownika.
+Wszystkie widoki w strukturze UIKit zgodne z nowego wyglądu i działania systemu iOS 7. W tej sekcji opisano niektóre zmiany w tych widokach, a także powiązanych interfejsów API, które zostały zmienione w celu obsługi nowego interfejsu użytkownika.
 
-### <a name="uibutton"></a>UIButton
+### <a name="uibutton"></a>Obiektu klasy UIButton
 
-Przyciski utworzone na podstawie `UIButton` klasy są teraz bez obramowania, nie tle domyślnie, jak pokazano poniżej:
+Przyciski tworzone na podstawie `UIButton` klasy są teraz bez obramowania, nie tła, domyślnie, jak pokazano poniżej:
 
- ![](ios7-ui-images/button.png "UIButton próbki")
+ ![](ios7-ui-images/button.png "Przykład obiektu klasy UIButton")
 
-`UIButtonType.RoundedRect` Styl jest przestarzała. Jeśli używane w systemie iOS 7, `UIButtonType.RoundedRect` spowoduje `UIButtonType.System` używany, która tworzy domyślny styl przycisku bez tło lub widoczna krawędzi, zgodnie z powyższym.
+`UIButtonType.RoundedRect` Stylu jest przestarzała. Jeśli używane w systemie iOS 7, `UIButtonType.RoundedRect` spowoduje `UIButtonType.System` używany, wytwarzająca domyślny styl przycisku bez tła i krawędzie widoczne, jak pokazano powyżej.
 
 ### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
-Podobnie jak `UIButton`, pasek przyciski są również bez obramowania, domyślnie używany do nowego `UIBarButtonItemStyle.Plain` styl pokazano poniżej:
+Podobnie jak `UIButton`, pasek przyciski są również bez obramowania, ustawiając domyślnie do nowych `UIBarButtonItemStyle.Plain` styl pokazano poniżej:
 
- ![](ios7-ui-images/barbuttonplain.png "UIBarButtonItem próbki")
+ ![](ios7-ui-images/barbuttonplain.png "Przykładowe UIBarButtonItem")
 
-Ponadto `UIBarButtonItemStyle.Bordered` styl jest przestarzała. Ustawienie `UIBarButtonItemStyle.Bordered` w systemie iOS 7 spowoduje `UIBarButtonItemStyle.Plain` styl używany.
+Ponadto `UIBarButtonItemStyle.Bordered` stylu jest przestarzała. Ustawienie `UIBarButtonItemStyle.Bordered` w systemie iOS 7 będzie skutkować `UIBarButtonItemStyle.Plain` styl używany.
 
-`UIBarButtonItemStyle.Done` Stylu nie jest przestarzała. Jednak zostanie również utworzony bez obramowania przycisku tylko przy użyciu stylu pogrubioną, jak pokazano:
+`UIBarButtonItemStyle.Done` Styl nie jest przestarzała. Jednakże utworzy również bez obramowania przycisku, tylko w przypadku styl pogrubiony, jak pokazano:
 
  ![](ios7-ui-images/barbuttondone.png "Przykładowe UIBarButtonItem w stylu gotowe")
 
 ### <a name="uialertview"></a>UIAlertView
 
-Oprócz zmiany stylu dla nowych systemów iOS 7 i wygląd widoki alertów nie obsługuje dostosowywania za pomocą widok podrzędny. Mimo że `UIAlertView` dziedziczy `UIView`, wywoływania `AddSubview` na `UIAlertView` nie ma wpływu. Rozważmy na przykład następujący kod:
+Oprócz zmianę stylu dla nowego systemu iOS 7 wyglądu i działania widoki alertów nie obsługują już dostosowywania za pośrednictwem widok podrzędny. Mimo że `UIAlertView` dziedziczy `UIView`, wywoływania `AddSubview` na `UIAlertView` nie ma wpływu. Na przykład rozważmy następujący kod:
 
 ```csharp
 UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle.Plain, (s,e) =>
@@ -66,69 +66,69 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 });
 ```
 
-Daje to standardowy widok alertów z widok podrzędny, są ignorowane, jak pokazano poniżej:
+Tworzy to standardowy widok alertów z widok podrzędny, są ignorowane, jak pokazano poniżej:
 
- ![](ios7-ui-images/alert.png "UIAlertView próbki")
+ ![](ios7-ui-images/alert.png "Przykładowe UIAlertView")
  
- Uwaga: UIAlertView została uznana za przestarzałą w systemie iOS 8. Widok [alertu kontrolera](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/) przepisu przy użyciu widoku alertów w systemie iOS 8 i nowszych.
+ Uwaga: UIAlertView została zakończona w systemie iOS 8. Widok [alertu kontrolera](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) przepis na temat korzystania z widoku alertów w systemie iOS 8 lub nowszym.
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
-Formanty segmentu w systemie iOS 7 są niewidoczne i obsługuje kolor odcienia. Kolor odcienia jest używany kolor tekstu i obramowania. Po wybraniu segment kolor jest zamieniona między tła i tekstu, na kolor odcienia używany do Wyróżnij wybranego segmentu, jak pokazano poniżej:
+Kontrolki segmentowane w systemie iOS 7 są niewidoczne i obsługuje odcień koloru. Kolor odcienia jest używana do koloru tekstu i obramowanie. Po wybraniu segment kolor jest wymieniany między tła i tekstu, za pomocą kolor odcienia używany, aby wyróżnić wybranego segmentu, jak pokazano poniżej:
 
- ![](ios7-ui-images/segmentedcontrol.png "UISegmentedControl próbki")
+ ![](ios7-ui-images/segmentedcontrol.png "Przykładowe UISegmentedControl")
 
 Ponadto `UISegmentedControlStyle` jest przestarzała w systemie iOS 7.
 
 ### <a name="picker-views"></a>Selektor widoków
 
-Interfejs API dla widoków selektora jest przede wszystkim bez zmian; Jednak system iOS 7 wskazówek teraz stanu widoków selektora powinny być prezentowane wbudowany, a nie jako animowany wejściowych widoków z dołu ekranu lub za pomocą nowego kontrolera wypychana na stos kontrolera nawigacji, jak w poprzednich iOS wersji. Można to zaobserwować w aplikacji kalendarza systemu:
+Interfejs API selektor widoków jest w dużej mierze bez zmian; jednak wytyczne dotyczące projektowania 7 dla systemu iOS teraz stanu selektor widoków powinno zostać wyświetlone w tekście, a nie jako widoki wejściowe animowane od dolnej części ekranu lub za pośrednictwem nowego kontrolera wypychane na stosie kontrolera nawigacji, tak jak w poprzednim dla systemu iOS wersji. Można to zaobserwować w aplikacji systemu kalendarza:
 
  ![](ios7-ui-images/inlinepicker.png "Można to zaobserwować w aplikacji kalendarza systemu")
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
-Pasek wyszukiwania jest teraz wyświetlany w obszarze nawigacji pasek kiedy `UISearchDisplayController.DisplaysSearchBarInNavigationBar` właściwość jest ustawiona na true. Jeśli równa FAŁSZ — wartość domyślna — pasek nawigacyjny jest ukryty, gdy kontroler wyszukiwania jest wyświetlany.
+Na pasku wyszukiwania są teraz wyświetlane w obszarze nawigacji po pasku `UISearchDisplayController.DisplaysSearchBarInNavigationBar` właściwość jest ustawiona na wartość true. Po ustawieniu na wartość false — wartość domyślna — pasek nawigacyjny ukryty w przypadku kontrolera wyszukiwania jest wyświetlana.
 
-Poniższy zrzut ekranu przedstawia pasek wyszukiwania w `UISearchDisplayController`:
+Poniższy zrzut ekranu przedstawia pasek wyszukiwania w ramach `UISearchDisplayController`:
 
- ![](ios7-ui-images/searchbar.png "UISearchDisplayController próbki")
+ ![](ios7-ui-images/searchbar.png "Przykładowe UISearchDisplayController")
 
 ### <a name="uitableview"></a>UITableView
 
-Interfejsy API wokół `UITableView` są głównie bez zmian; jednak styl zmienił znacząco są zgodne z nowego projektu interfejsu użytkownika. Wyświetlanie wewnętrznej hierarchii jest również nieco inny. Ta zmiana nie wpływa na większości aplikacji, ale jest to element znać.
+Interfejsy API wokół `UITableView` to głównie bez zmian; jednak styl zmienił znacząco do nowego projektu interfejsu użytkownika. Hierarchia wewnętrzny widok również jest nieco inny. Ta zmiana nie wpłynie na większość aplikacji, ale jest to element wiedzieć.
 
-#### <a name="grouped-table-style"></a>Styl tabeli grupowanych
+#### <a name="grouped-table-style"></a>Styl pogrupowanej tabeli
 
-Styl grupowanych zmienić został zaktualizowany o zawartości teraz rozszerzenia na krawędzi ekranu, jak pokazano poniżej:
+Styl pogrupowanych zmienione został zaktualizowany o zawartości teraz rozszerzenie do krawędzi ekranu, jak pokazano poniżej:
 
- ![](ios7-ui-images/table1.png "Przykładowa tabela grupowanych stylu")
+ ![](ios7-ui-images/table1.png "Przykład pogrupowanej tabeli stylu")
 
 #### <a name="separatorinset"></a>SeparatorInset
 
-Separatory wierszy może być teraz wcięty przez ustawienie `UITableVIewCell.SeparatorInset` właściwości. Na przykład następujący kod będzie służyć do wcięcie komórek od lewej krawędzi:
+Separatory wierszy można teraz zastosowane przez ustawienie `UITableVIewCell.SeparatorInset` właściwości. Na przykład poniższy kod będzie służyć do wcięcie komórki od lewej krawędzi:
 
 ```csharp
 cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 ```
 
-Daje to w widoku tabeli, z wcięciami komórek w sposób przedstawiony poniżej:
+To daje w widoku tabeli z komórek z wcięciami, jak pokazano poniżej:
 
- ![](ios7-ui-images/separatorinset.png "Przykładowe UITableView SeparatorInset")
+ ![](ios7-ui-images/separatorinset.png "Przykładowy UITableView SeparatorInset")
 
 #### <a name="table-button-styles"></a>Style przycisku tabeli
 
-Przyciski różnych używanych w widokach tabeli wszystkie zmieniły się. Poniższy zrzut ekranu przedstawia widok tabeli w trybie edycji:
+Różne przyciski, używanych w widokach tabeli wszystkie zmieniły się. Poniższy zrzut ekranu przedstawia widok tabeli w trybie edycji:
 
  ![](ios7-ui-images/table2.png "Ten zrzut ekranu przedstawia widok tabeli w trybie edycji")
 
 ### <a name="additional-control-changes"></a>Dodatkową kontrolę zmian
 
-Inne formanty UIKit zostały zmienione także, w tym suwaki, przełączniki i steppery. Te zmiany są wyłącznie visual. Aby uzyskać więcej informacji, zapoznaj się firmy Apple [przewodnik dotyczący przejścia interfejsu użytkownika dla systemu iOS 7](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html).
+Innych kontrolek UIKit uległy zmianie, w tym suwaki, przełączniki i steppery. Te zmiany są wyłącznie visual. Aby uzyskać więcej informacji można znaleźć firmy Apple [przewodnik dotyczący przejścia interfejsu użytkownika systemu iOS 7](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html).
 
-## <a name="general-user-interface-changes"></a>Interfejs użytkownika ogólne zmiany
+## <a name="general-user-interface-changes"></a>Zmiany interfejsu użytkownika ogólne
 
-Oprócz zmian w UIKit, system iOS 7 wprowadzono szereg zmiany wizualne do interfejsu użytkownika, w tym:
+Oprócz zmian w strukturze UIKit systemu iOS 7 wprowadzono szereg zmiany wizualne w interfejsie użytkownika, w tym:
 
 -  Zawartość pełny ekran
 -  Wygląd paska
@@ -138,17 +138,17 @@ Oprócz zmian w UIKit, system iOS 7 wprowadzono szereg zmiany wizualne do interf
 
 ### <a name="full-screen-content"></a>Zawartość pełnego ekranu
 
-System iOS 7 jest przeznaczona do pozwolić wykorzystać cały ekran aplikacji. Widok kontrolery są teraz wyświetlane nachodzące pasek stanu i pasek nawigacyjny — Jeśli istnieje - znajdujące się poniżej pasków stanu i nawigacja w przeciwieństwie.
+System iOS 7 jest przeznaczona do umożliwiają aplikacji wykorzystać cały ekran. Kontrolerów widoku zostaną wyświetlone nakładające się pasek stanu i pasek nawigacyjny — Jeśli istnieje — w przeciwieństwie znajdujących się poniżej pasków stanu i nawigacji.
 
-Podczas przygotowywania aplikacji dla systemu iOS 7 można wyrównać widoków podrzędnych w sposób wizualny przy użyciu *konstruktora interfejsu* lub *Xamarin iOS projektanta*. Umożliwia także jedną z nowych interfejsów API które dodatkowo ułatwią obsługę zawartości w trybie pełnoekranowym programowo. Te interfejsy API są wprowadzane poniżej.
+Podczas przygotowywania aplikacji dla systemu iOS 7 można wyrównać wizualnie za pomocą widoków podrzędnych *programu Interface Builder* lub *platformy Xamarin iOS Designer*. Umożliwia także jedną z nowych interfejsów API ułatwią obsługę zawartości w trybie pełnoekranowym programowo. Te interfejsy API są wprowadzane poniżej.
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide i BottomLayoutGuide
 
- `TopLayoutGuide` i `BottomLayoutGuide` służyć jako odwołanie dla których widoków powinny rozpoczynać się ani kończyć, tak, aby zawartość nie nakłada się półprzezroczyste `UIKit` pasek, jak w poniższym przykładzie:
+ `TopLayoutGuide` i `BottomLayoutGuide` służyć jako odwołanie dla których widoki powinna rozpoczynać się ani kończyć, tak aby zawartość nie nakłada się przezroczyste `UIKit` paska, jak w poniższym przykładzie:
 
- [![](ios7-ui-images/clipped.png "Przykładowe zawartości nie nakłada się pasek UIKit półprzezroczyste")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "Przykłady nie nakłada się przezroczyste pasek UIKit")](ios7-ui-images/clipped.png#lightbox)
 
-Te interfejsy API mogą być używane do obliczania widoku przesunięcie od góry lub u dołu ekranu, a następnie odpowiednio umieszczania zawartości:
+Te interfejsy API mogą być używane do obliczania Przesunięcie widoku z góry lub u dołu ekranu i odpowiednio dostosować umieszczania zawartości:
 
 ```csharp
 public override void ViewDidLayoutSubviews ()
@@ -164,32 +164,32 @@ public override void ViewDidLayoutSubviews ()
 }
 ```
 
-Możemy użyć obliczonego powyżej, aby ustawić wartość naszych `ImageView`przez przesunięcie od górnej krawędzi ekranu, tak aby widoczne całego obrazu:
+Możemy użyć wartość obliczona powyżej, ustawić naszych `ImageView`przez przesunięcie od górnej krawędzi ekranu, aby cały obraz jest widoczny:
 
- [![](ios7-ui-images/good2.png "Przykład ImageViews przesunięcie z góry ekranu")](ios7-ui-images/good2.png#lightbox)
+ [![](ios7-ui-images/good2.png "Przykład ImageViews przemieszczenia w górnej części ekranu")](ios7-ui-images/good2.png#lightbox)
 
-Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) dla przykładu pracy.
+Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) przykład roboczy.
 
-Wartość przesunięcia jest generowany dynamicznie po widok został dodany do hierarchii, dlatego próby odczytu `TopLayoutGuide` i `BottomLayoutGuide` wartości w `ViewDidLoad` zwraca wartość 0. Obliczanie wartości po widok został załadowany — na przykład w `ViewDidLayoutSubviews`.
+Wartość przemieszczenia jest generowany dynamicznie po dodano Widok hierarchii, więc próby odczytania `TopLayoutGuide` i `BottomLayoutGuide` wartości w `ViewDidLoad` zwróci wartość 0. Oblicz wartość po widok został załadowany — na przykład w `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> `TopLayoutGuide` i `BottomLayoutGuide` zostały uznane za przestarzałe w systemie iOS 11 na rzecz nowy układ obszaru bezpieczne. Apple ma stwierdził, że użycie bezpiecznego miejsca jest zgodny z systemem iOS w wersji wcześniejszej niż iOS 11. Aby uzyskać więcej informacji, zobacz [aktualizowanie aplikacji dla systemu iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) przewodnik.
+> `TopLayoutGuide` i `BottomLayoutGuide` są przestarzałe w systemie iOS 11 na rzecz nowy układ obszaru bezpiecznego. Apple mają stwierdził, że za pomocą obszaru bezpiecznego jest zgodny z wersji dla systemu iOS w starszej niż iOS 11. Aby uzyskać więcej informacji, zobacz [aktualizowania aplikacji dla systemu iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) przewodnik.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
-Ten interfejs API Określa, które krawędzi widoku wydłużony do pełnego ekranu, niezależnie od tego paska przejrzystości. W systemie iOS 7 pasków nawigacji i paski narzędzi są wyświetlane warstwę ponad kontrolera widoku — w odróżnieniu od w systemie iOS poprzedniej wersji, której nie zajmują tą samą przestrzenią. Aplikacje systemu iOS 7 zdjęć przedstawiono domyślne `UIViewController.EdgesForExtendedLayout` wartość `UIRectEdge.All`. To ustawienie wypełnia wszystkich czterech krawędzi w widoku z zawartością, tworzenie efektu nakładających się i pełnego ekranu:
+Ten interfejs API Określa, które krawędzi widoku wydłużony do pełnego ekranu, niezależnie od tego paska przezroczystości. W systemie iOS 7 pasków nawigacji i paski narzędzi są wyświetlane na warstwę ponad kontrolera widoku — w przeciwieństwie do w systemie iOS w poprzednich wersjach, gdzie nie zajmowały tej samej przestrzeni. System iOS 7 aplikacji zdjęcia ilustruje domyślną `UIViewController.EdgesForExtendedLayout` wartość `UIRectEdge.All`. To ustawienie wypełnia wszystkich czterech krawędzi w widoku z zawartością, tworząc efekt nakładających się i pełnego ekranu:
 
- [![](ios7-ui-images/photos.png "EdgesForExtendedLayout próbki")](ios7-ui-images/photos.png#lightbox)
+ [![](ios7-ui-images/photos.png "Przykładowe EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
-Naciskając obrazu usuwa pasków i przedstawia pełnoekranowym obrazu:
+Naciskając obraz, który usuwa słupków i pokazuje obraz pełnoekranowy:
 
  [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout z paskami usunięte")](ios7-ui-images/photos2.png#lightbox)
 
-Ponieważ zawartość pełnego ekranu jest wartość domyślna, aplikacje skonfigurowane pod kątem iOS 6 mają część widoku przycinana, tak jak na poniższym zrzucie ekranu:
+Ponieważ pełnoekranowym zawartość jest wartość domyślna, aplikacje skonfigurowane dla systemu iOS 6, będzie miał część widoku przycinana, tak jak w poniższym zrzucie ekranu:
 
- [![](ios7-ui-images/clipped.png "Aplikacje skonfigurowane dla systemu iOS 6 będzie mieć część widoku przycinana, tak jak tego zrzutu ekranu")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "Aplikacje skonfigurowane dla systemu iOS 6, będzie miał część widoku przycinana, tak jak w tym zrzucie ekranu")](ios7-ui-images/clipped.png#lightbox)
 
-Modyfikowanie `UIViewController.EdgesForExtendedLayout` ustawia właściwości tego zachowania. Firma Microsoft można określić, czy widok nie wypełnia żadnych krawędzi, więc naszych widoku pozwoli uniknąć wyświetlania zawartości w miejsce zajmowane przez nawigacji lub paski narzędzi (w każdym orientacja):
+Modyfikowanie `UIViewController.EdgesForExtendedLayout` właściwość dostosowuje tego zachowania. Firma Microsoft można określić, czy widok nie wypełniać żadnych krawędzi, dzięki naszym widoku pozwoli uniknąć wyświetlania zawartości w miejsce zajmowane przez nawigacji lub pasków narzędzi (na każdą orientację):
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -197,25 +197,25 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 }
 ```
 
-W naszej aplikacji możemy wyświetlony zostanie ponownie zmienić ich pozycji widok, aby cały obraz jest widoczne:
+W aplikacji zobaczymy widoku zostaje przeniesiony, ponownie, aby cały obraz jest widoczny:
 
  [![](ios7-ui-images/good.png "Przykład: widoczne całego obrazu")](ios7-ui-images/good.png#lightbox)
 
-Należy pamiętać, że podczas skutków `TopLayoutGuide/BottomLayoutGuide` i `EdgesForExtendedLayout` interfejsy API są podobne, są przeznaczone do wypełniania różnych celów. Zmiana `EdgesForExtendedLayout` ustawienie domyślnego mogą ustalić przyciętą widoków w aplikacji dla systemu iOS 6, ale projektowanie dobrej systemów iOS 7 należy przestrzegać estetycznych pełnego ekranu i podaj pełnego ekranu przeglądania środowisko, zależne `TopLayoutGuide` i `BottomLayoutGuide`prawidłowo umieścić zawartość, która ma operować na wygodne miejsce dla użytkownika.
+Należy pamiętać, że podczas skutki `TopLayoutGuide/BottomLayoutGuide` i `EdgesForExtendedLayout` interfejsy API są podobne, są przeznaczone do wypełnienia inne cele. Zmiana `EdgesForExtendedLayout` ustawienia domyślnego może naprawić obciętych widoków w aplikacji przeznaczonych dla systemu iOS 6, ale projekt dobre dla systemu iOS 7 powinny przestrzegać estetycznych pełnego ekranu i podaj pełnego ekranu przeglądania środowisko, opierając się na `TopLayoutGuide` i `BottomLayoutGuide`aby prawidłowo umieść zawartość, która ma być zmieniane w wygodnym miejscu dla użytkownika.
 
-Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) dla przykładu pracy.
+Zapoznaj się [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) przykład roboczy.
 
 ### <a name="status-and-navigation-bars"></a>Stan i pasków nawigacji
 
-Pasek stanu i pasków nawigacji są renderowane z przezroczystości. Paski stanu są niewidoczne, pasków narzędzi i pasków nawigacji są przezroczyste i rozmyty w celu przedstawienia wrażenie hierarchii w interfejsie użytkownika. Poniższy zrzut ekranu przedstawia ten rozmycia i przejrzystości, w którym wyświetlana kolor tła niebieski widok kolekcji za pomocą pasków stanu i nawigacji, zapewniając im światła wygląd niebieski:
+Pasek stanu i pasków nawigacji są renderowane przy użyciu przezroczystości. Paski stanu są przezroczyste, a pasków narzędzi i pasków nawigacji półprzezroczyste i rozmyty przekazuj czują się głębokość w interfejsie użytkownika. Poniższy zrzut ekranu przedstawia ten Rozmycie i przejrzystości, gdzie kolor tła niebieski widok kolekcji pokazuje za pośrednictwem pasków stanu i nawigacji, co daje im światła wygląd niebieski:
 
- ![](ios7-ui-images/transparent-navbar.png "Przykładowe stanu i rozmycia — pasek nawigacyjny")
+ ![](ios7-ui-images/transparent-navbar.png "Stan próbki i rozmywając — pasek nawigacyjny")
 
 #### <a name="status-bar-styles"></a>Style paska stanu
 
-Wraz z rozmycia i przejrzystości na pierwszym planie pasek stanu może być jasny i ciemny (ciemny jest wartość domyślna). Style paska stanu można ustawić kontroler widoku. Kontroler widoku można również określić, czy pasek stanu jest ukryte lub wyświetlane.
+Oprócz Rozmycie i przejrzystości pierwszy plan pasek stanu może być jasny i ciemny (ciemny jest wartość domyślna). Styl paska stanu, można ustawić z kontrolera widoku. Kontroler widoku można również ustawić, czy pasek stanu jest ukrywane lub wyświetlane.
 
-Na przykład poniższy kod zastąpienia `PreferredStatusBarStyle` metody kontrolera widoku, aby wyświetlić światła pierwszego planu pasek stanu:
+Na przykład, poniższy kod zastąpienia `PreferredStatusBarStyle` metody kontrolera widoku, aby wyświetlić światła pierwszego planu pasek stanu:
 
 ```csharp
 public override UIStatusBarStyle PreferredStatusBarStyle ()
@@ -224,7 +224,7 @@ public override UIStatusBarStyle PreferredStatusBarStyle ()
 }
 ```
 
-Powoduje to, że są wyświetlane na pasku stanu jak poniżej:
+Powoduje to, że są wyświetlane na pasku stanu poniżej:
 
  ![](ios7-ui-images/light-status-bar.png "Przykładowy pasek stanu")
 
@@ -237,19 +237,19 @@ public override bool PrefersStatusBarHidden ()
 }
 ```
 
-To ukrywa pasek stanu:
+Spowoduje to ukrycie paska stanu:
 
- ![](ios7-ui-images/status-bar-hidden.png "Ukryte paska stanu")
+ ![](ios7-ui-images/status-bar-hidden.png "Pasek stanu ukryte")
 
 ### <a name="tint-color"></a>Kolor odcienia
 
-Przyciski są teraz wyświetlane jako tekst bez chrome. Kolor tekstu można sterować za pomocą nowej `TintColor` właściwość `UIView`. Ustawienie `TintColor` dotyczy kolor hierarchii widok, który ustawia ją dla całego widoku. Aby zastosować `TintColor`w całej aplikacji, ustaw go na `Window`. Można także wykryć gdy zmienia kolor odcienia za pośrednictwem `UIView.TintColorDidChange` metody.
+Przyciski są teraz wyświetlane jako tekst bez przeglądarki chrome. Kolor tekstu może być kontrolowana za pomocą nowego `TintColor` właściwość `UIView`. Ustawienie `TintColor` stosuje do hierarchii całego widoku dla widoku, który ustawia jego kolor. Aby zastosować `TintColor`w całej aplikacji, ustaw ją na `Window`. Możesz także wykryć, kiedy zmienia kolor odcienia za pośrednictwem `UIView.TintColorDidChange` metody.
 
-Na przykład poniższy zrzut ekranu przedstawia wynik zmiana koloru odcień w widoku kontrolera nawigacji na purpurowy:
+Na przykład, poniższy zrzut ekranu przedstawia efekt zmiany kolor odcienia, w widoku z kontrolera nawigacji do purpurowy:
 
- ![](ios7-ui-images/tint-color.png "Kolor odcienia purpurowy w widoku kontrolerów nawigacji")
+ ![](ios7-ui-images/tint-color.png "Kolor odcienia purpurowy w widoku kontrolery nawigacji")
 
-Kolor odcienia może odnosić się do obrazów, a także gdy `RenderingMode` ma ustawioną wartość `UIImageRenderingMode.AlwaysTemplate`.
+Kolor odcienia mogą być stosowane do obrazów, a także gdy `RenderingMode` ustawiono `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
 > Kolor odcienia, nie można ustawić za pomocą `UIAppearance`.
@@ -257,11 +257,11 @@ Kolor odcienia może odnosić się do obrazów, a także gdy `RenderingMode` ma 
 
 ### <a name="dynamic-type"></a>Typ dynamiczny
 
-W systemie iOS 7 użytkownik może określić rozmiar tekstu w ustawieniach systemu. Z typu dynamicznego czcionki jest dynamicznie dostosowywana do wyglądać niezależnie od rozmiaru. `UIFont.PreferredFontForTextStyle` należy pobrać czcionki, która jest zoptymalizowana dla rozmiaru kontrolowane przez użytkownika.
+W systemie iOS 7 użytkownik może określić rozmiar tekstu w ustawieniach systemowych. O typie dynamicznym czcionka jest dostosowywany dynamicznie do wyglądają dobrze niezależnie od rozmiaru. `UIFont.PreferredFontForTextStyle` należy używać można uzyskać czcionki, które jest zoptymalizowane pod kątem rozmiar kontrolowanej przez użytkownika.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule omówiono zmiany do elementów interfejsu użytkownika w systemie iOS 7. Go sprawdza, czy niektóre zmiany wprowadzone do widoków i formantów w UIKit wyróżnianie zmiany wizualne podobnie jak zmiany do powiązanego interfejsów API. Ponadto podaj nowe interfejsy API do pracy z zawartością pełny ekran, nowa funkcja obsługi kolor odcienia i typu dynamicznego.
+W tym artykule opisano zmiany w elementach interfejsu użytkownika w systemie iOS 7. Jego sprawdza, czy niektóre zmiany wprowadzone do widoków i kontrolek w strukturze UIKit, wyróżnianie zmiany wizualne także zmienia się na powiązanych interfejsów API. Na koniec wprowadza nowe interfejsy API do pracy z zawartością pełny ekran, nowa funkcja obsługi kolor odcienia i typu dynamicznego.
 
 ## <a name="related-links"></a>Linki pokrewne
 

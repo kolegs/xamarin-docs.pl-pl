@@ -7,32 +7,32 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: ef0aad7af3636911fba70667857ee9fbcf17853f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3a85f95deec24e1fe3403146bad57a9739313dd
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790681"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241295"
 ---
 # <a name="ios-platform-features"></a>Funkcje platformy systemu iOS
 
 ## <a name="ios-specific-formatting"></a>Formatowanie specyficzne dla systemu iOS
 
-Platformy Xamarin.Forms umożliwia style interfejsu użytkownika obsługujący wiele platform i kolorów, by ustawić —, ale istnieją inne opcje ustawiania motywu dla systemu iOS przy użyciu interfejsów API specyficzne dla platformy w projekcie systemu iOS.
+Zestaw narzędzi Xamarin.Forms umożliwia style interfejsu użytkownika dla wielu platform i kolorów, aby ustawić —, ale istnieją inne opcje ustawiania motywu systemu iOS przy użyciu interfejsów API specyficznych dla platformy w projekcie dla systemu iOS.
 
-[Dowiedz się więcej](theme.md) formatowanie interfejsu użytkownika przy użyciu interfejsów API specyficzne dla systemu iOS, takich jak informacje **Info.plist** konfiguracji i `UIAppearance` interfejsu API.
+[Dowiedz się więcej](theme.md) formatowanie interfejsu użytkownika przy użyciu interfejsów API specyficznych dla systemu iOS, takie jak informacje **Info.plist** konfiguracji i `UIAppearance` interfejsu API.
 
-![](images/status-white-sml.png "iOS motywów")
+![](images/status-white-sml.png "Motyw systemu iOS")
 
 ## <a name="ios-9-features"></a>Funkcje systemu iOS 9
 
-Przy użyciu [niestandardowe moduły renderowania](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)i [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), można dołączyć szerokiej gamy funkcji natywnych do Platformy Xamarin.Forms aplikacje dla systemu iOS.
+Za pomocą [niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)i [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), można zastosować szeroką gamę funkcji natywnej do Aplikacje Xamarin.Forms dla systemu iOS.
 
-Następujące przepisami pokazują, jak dołączyć funkcje systemu iOS 9 do części aplikacji platformy Xamarin.Forms dla systemu iOS:
+Następujące przepisy pokazują, jak włączenie funkcji systemu iOS 9 do części aplikacji platformy Xamarin.Forms dla systemu iOS:
 
-* [CoreSpotlight](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/core-spotlight-search/)
+* [CoreSpotlight](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/core-spotlight-search)
 
-* [NSUserActivity](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/nsuseractivity-search/)
+* [NSUserActivity](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/nsuseractivity-search)
 
-![](images/corespotlight.png "zwracanie przez wyszukiwanie Spotlight systemu iOS")
+![](images/corespotlight.png "dla systemu iOS przez wyszukiwanie Spotlight")
 
