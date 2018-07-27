@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242384"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270491"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Rozpoznawanie zależności w interfejsie Xamarin.Forms
 
@@ -111,7 +111,7 @@ Gdy aplikacja używa metody rozpoznawania zależności rozwiązanie typów z kon
 
 Po rejestracji typu z projektem platformy `IContainer` obiektu muszą zostać skompilowane, które odbywa się przez wywołanie metody `BuildContainer` metody. Ta metoda wywołuje firmy Autofac `Build` metody `ContainerBuilder` wystąpienia, która opiera się nowy kontener iniekcji zależności, który zawiera rejestracji, które zostały wprowadzone.
 
-W kolejnych sekcjach `Logger` klasy, która implementuje `ILogger` interfejs, są wstrzykiwane do konstruktorów klas. `Logger` Klasa implementuje prosty rejestrowania funkcji przy użyciu `Debug.WriteLine` metody i jest używana do pokazują, jak można wstrzyknięte usług do niestandardowe programy renderujące, efekty, i [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementacji.
+W kolejnych sekcjach `Logger` klasę, która implementuje `ILogger` interfejsu są wstrzykiwane do konstruktorów klas. `Logger` Klasa implementuje prosty rejestrowania funkcji przy użyciu `Debug.WriteLine` metody i jest używana do pokazują, jak można wstrzyknięte usług do niestandardowe programy renderujące, efekty, i [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementacji.
 
 ### <a name="registering-custom-renderers"></a>Rejestrowanie niestandardowe programy renderujące
 

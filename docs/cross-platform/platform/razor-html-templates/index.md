@@ -1,37 +1,37 @@
 ---
-title: Tworzenie widoków HTML za pomocą szablonów Razor
-description: " Do renderowania elementów HTML za pomocą pełnego ekranu strony sieci Web może być prosty i skuteczny sposób renderowania złożone formatowanie w sposób między platformami, zwłaszcza, jeśli masz już HTML, Javascript i CSS z projektu witryny sieci Web."
+title: Tworzenie widoki HTML przy użyciu szablonów Razor
+description: " Używanie pełnego ekranu strony sieci Web do renderowania elementów HTML może być prosty i efektywny sposób renderowania złożone formatowanie w sposób bezpieczny dla wielu platform, zwłaszcza, jeśli masz już HTML, Javascript i CSS z projektu witryny sieci Web."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
-ms.date: 05/29/2018
-ms.openlocfilehash: 15cc51ac92d8a44a2568089d0a448c6f7fdf25d5
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.date: 07/24/2018
+ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562802"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270135"
 ---
-# <a name="building-html-views-using-razor-templates"></a>Tworzenie widoków HTML za pomocą szablonów Razor
+# <a name="building-html-views-using-razor-templates"></a>Tworzenie widoki HTML przy użyciu szablonów Razor
 
-W świecie przenośnych programowanie termin "aplikacja hybrydowe" odnosi się zazwyczaj do aplikacji, która przedstawia niektóre lub wszystkie jego ekrany jako strony HTML w formant przeglądarki sieci web hostowanej.
+W świecie programowania aplikacji mobilnych na zazwyczaj termin "aplikacja hybrydowa" odwołuje się do aplikacji, która przedstawia niektóre lub wszystkie jego ekrany jako strony HTML wewnątrz formantu przeglądarki sieci web hostowanej.
 
-Brak niektórych środowiskach programistycznych, które pozwalają kompilowania aplikacji mobilnej w całości kodu HTML i Javascript, jednak te aplikacje mogą występować z problemów z wydajnością, podczas próby wykonania złożonych obliczeń lub efekty interfejsu użytkownika i są również ograniczony do platformy Funkcje, które mogą uzyskiwać dostęp do.
+Istnieją pewne środowiskach programistycznych, które pozwalają kompilowania aplikacji mobilnej całkowicie w kodzie HTML i Javascript, jednak te aplikacje mogą występować z problemów z wydajnością podczas próby wykonania złożone przetwarzanie lub efektów interfejsu użytkownika i są również są ograniczone do platformy Funkcje, których mogą uzyskiwać dostęp.
 
-Xamarin oferuje najlepsze cechy obu tych środowisk, szczególnie w przypadku, gdy przy użyciu aparatu tworzenia szablonów HTML elementu Razor. Za pomocą platformy Xamarin masz możliwość tworzenia wielu platform opartego na szablonie HTML widoki, które używać Javascript i CSS, ale również mają pełny dostęp do podstawowej platformy interfejsów API i szybkie przetwarzanie przy użyciu języka C#.
+Xamarin oferuje zalety obu rozwiązań, szczególnie w przypadku, gdy przy użyciu aparatu tworzenia szablonów Razor HTML. Za pomocą platformy Xamarin masz swobodę tworzenia dla wielu platform oparte na szablonach HTML widoki, które Wykorzystaj języki Javascript i CSS, ale także mieć pełny dostęp do podstawowej platformy interfejsów API i szybkie przetwarzanie, przy użyciu języka C#.
 
-Tym dokumencie opisano sposób użycia Razor, HTML + Javascript + CSS widoków, które mogą być używane przez platformy urządzeń przenośnych za pomocą platformy Xamarin kompilacji aparatu tworzenia szablonów.
+W tym dokumencie wyjaśniono, jak używać Razor aparatu tworzenia szablonów kompilacji widoki HTML + Javascript + CSS, które można stosować w przypadku platform urządzeń przenośnych za pomocą platformy Xamarin.
 
-## <a name="using-web-views-programmatically"></a>Programowo przy użyciu widoków sieci Web
+## <a name="using-web-views-programmatically"></a>Programowe korzystanie z widoków w sieci Web
 
-Zanim firma Microsoft Dowiedz się więcej o Razor w tej sekcji opisano sposób użycia widoki sieci web do wyświetlania zawartości HTML bezpośrednio — w szczególności zawartość HTML, który zostanie wygenerowany wewnątrz aplikacji.
+Zanim firma Dowiedz się więcej o Razor w tej sekcji omówiono sposób używania widoki sieci web do wyświetlania zawartości HTML bezpośrednio — w szczególności zawartość HTML, który jest generowany w obrębie aplikacji.
 
-Xamarin zapewnia pełny dostęp do podstawowej platformy interfejsów API zarówno dla systemu iOS i Android, dzięki czemu łatwiej można tworzyć i wyświetlać HTML przy użyciu języka C#. Poniżej przedstawiono podstawowe składni dla każdej platformy.
+Środowisko Xamarin zapewnia pełny dostęp do podstawowych interfejsów API platformy dla systemów iOS i Android, dzięki czemu można łatwo utworzyć i wyświetlić HTML przy użyciu języka C#. Poniżej przedstawiono podstawową składnię dla każdej platformy.
 
 ### <a name="ios"></a>iOS
 
-Również wyświetlanie HTML w formancie UIWebView w Xamarin.iOS zajmuje zaledwie kilku wierszach kodu:
+Wyświetlanie kodu HTML w formancie UIWebView w rozszerzeniu Xamarin.iOS pobiera również zaledwie kilku wierszy kodu:
 
 ```csharp
 var webView = new UIWebView (View.Bounds);
@@ -41,24 +41,28 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-Zobacz [iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/) przepisami, aby uzyskać więcej informacji na temat używania kontroli UIWebView.
+Zobacz [iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/) przepisy, aby uzyskać więcej informacji na temat korzystania z formantu UIWebView.
 
 ### <a name="android"></a>Android
 
-Wyświetlanie kodu HTML w kontrolce WebView przy użyciu platformy Xamarin.Android odbywa się w kilku wierszach kodu:
+Wyświetlanie kodu HTML w kontrolce WebView, korzystając z platformy Xamarin.Android odbywa się w kilku wierszach kodu:
 
 ```csharp
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
+
+// enable Javascript execution in your html view so you can provide "alerts" and other js
+webView.SetWebChromeClient(new WebChromeClient());
+
 var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-Zobacz [Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/) przepisami, aby uzyskać więcej informacji na temat używania kontrolki WebView.
+Zobacz [aplikacja WebView systemu Android](http://docs.xamarin.com/recipes/android/controls/webview/) przepisy, aby uzyskać więcej informacji na temat korzystania z kontrolki WebView.
 
 ### <a name="specifying-the-base-directory"></a>Określanie podstawowego katalogu
 
-Na obu platform istnieje parametr, który określa podstawowego katalogu dla strony HTML. Jest to lokalizacja, w systemie plików urządzenia, który jest używany do rozpoznawania względnych odwołania do zasobów, takich jak obrazy i pliki CSS. Na przykład takich jak tagi
+Na obu platformach ma parametr, który określa katalog podstawowy dla stron HTML. Jest to lokalizacja w systemie plików urządzenia, który jest używany do rozpoznawania względnych odwołania do zasobów, takich jak obrazy i pliki CSS. Na przykład takich jak tagi
 
 ```html
 <link rel="stylesheet" href="style.css" />
@@ -66,70 +70,70 @@ Na obu platform istnieje parametr, który określa podstawowego katalogu dla str
 <script type="text/javascript" src="jscript.js">
 ```
 
-odwołuje się do tych plików: **style.css**, **monkey.jpg** i **jscript.js**. Ustawienie katalogu podstawowego informuje widoku sieci web, w którym znajdują się te pliki, mogą być ładowane do strony.
+odwołują się do tych plików: **style.css**, **monkey.jpg** i **jscript.js**. Ustawienie katalog podstawowy informuje widoku sieci web, w którym znajdują się te pliki, dzięki czemu mogą być ładowane do strony.
 
 #### <a name="ios"></a>iOS
 
-Dane wyjściowe szablonu jest renderowany w systemie iOS z następującym kodem C#:
+Dane wyjściowe szablonu jest renderowany w systemie iOS przy użyciu następującego kodu C#:
 
 ```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-Katalog podstawowy jest określony jako `NSBundle.MainBundle.BundleUrl` które odwołuje się do katalogu, w którym aplikacja jest zainstalowana w. Wszystkie pliki w **zasobów** folderu są kopiowane do tej lokalizacji, takich jak **style.css** pliku pokazano poniżej:
+Katalog podstawowy jest określony jako `NSBundle.MainBundle.BundleUrl` która odnosi się do katalogu, w którym aplikacja jest zainstalowana w. Wszystkie pliki w **zasobów** folderu są kopiowane do tej lokalizacji, takich jak **style.css** pliku pokazano poniżej:
 
  ![rozwiązanie iPhoneHybrid](images/image1_240x163.png)
 
 Akcja kompilacji dla wszystkich plików zawartości statycznej powinny być **BundleResource**:
 
- ![Akcja kompilacji projektu iOS: BundleResource](images/image2_250x131.png)
+ ![Akcja kompilacji projektu dla systemu iOS: BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
-System android wymaga również katalogu podstawowego można przekazać jako parametru, gdy html ciągów są wyświetlane w widoku sieci web.
+System android wymaga również podstawowego katalogu, które zostaną przekazane jako parametr gdy ciągach html są wyświetlane w widoku sieci web.
 
 ```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-Ciąg specjalne **file:///android_asset/** odwołuje się do folderu Zasoby systemu Android w aplikacji, pokazano tutaj zawierający **style.css** pliku.
+Specjalny ciąg **file:///android_asset/** odnosi się do folderu elementów zawartości systemu Android w swojej aplikacji, pokazane tutaj zawierający **style.css** pliku.
 
  ![Rozwiązanie AndroidHybrid](images/image3_240x167.png)
 
 Akcja kompilacji dla wszystkich plików zawartości statycznej powinny być **AndroidAsset**.
 
- ![Akcja kompilacji projektu systemu android: AndroidAsset](images/image4_250x71.png)
+ ![Akcja kompilacji projektu dla systemu android: AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>Wywoływanie C# z kodu HTML i Javascript
 
-Po załadowaniu strony html w widoku sieci web traktuje łącza i formularze będzie strony został załadowany z serwera. Oznacza to, że jeśli użytkownik kliknie łącze lub przesłaniu formularza widoku sieci web będzie podejmować próby przejdź do określonego obiektu docelowego.
+Po załadowaniu strony html w widoku sieci web traktuje łącza i formularze jak w przypadku załadowania strony z serwera. Oznacza to, że jeśli użytkownik kliknie łącze lub przesyła formularz widoku sieci web będzie podejmować próby przejdź do określonego celu.
 
-Jeśli link do zewnętrznego serwera (na przykład google.com) widoku sieci web będzie podejmować próby załadowania zewnętrznej witryny sieci Web (przy założeniu, że istnieje połączenie internetowe).
+Jeśli link do zewnętrznego serwera (na przykład google.com) widoku sieci web będzie podejmować próby załadować zewnętrznej witryny sieci Web (przy założeniu, że istnieje połączenie z Internetem).
 
 ```html
 <a href="http://google.com/">Google</a>
 ```
 
-Jeśli połączenie jest względna widoku sieci web będzie podejmować próby załadowania tej zawartości z katalogu podstawowego. Oczywiście żadne sieci połączenie nie jest wymagane, aby to zrobić, ponieważ zawartość jest przechowywana w aplikacji na urządzeniu.
+Jeśli łącze jest względna widoku sieci web będzie podejmować próby załadowania tej zawartości z katalogu podstawowego. Oczywiście braku połączenia sieciowego jest wymagane, aby to zrobić, ponieważ zawartość jest przechowywana w aplikacji na urządzeniu.
 
 ```html
 <a href="somepage.html">Local content</a>
 ```
 
-Akcje formularza wykonaj tę samą zasadę.
+Akcje formularza wykonaj tę samą regułę.
 
 ```html
 <form method="get" action="http://google.com/"></form>
 <form method="get" action="somepage.html"></form>
 ```
 
-Użytkownik nie chce hosta serwera sieci web na komputerze klienckim; jednak można użyć tych samych metod komunikacji serwera stosowanych w wzorce projektowe reakcji współczesnych do wywołania usługi za pośrednictwem HTTP GET i obsługują odpowiedzi asynchronicznie przez emitowanie kodu Javascript (lub wywołania języka Javascript już umieszczony w widoku sieci web). Dzięki temu można łatwo przekazywania danych z kodu HTML do kodu C# dla przetwarzania, a następnie Wyświetl wyniki z powrotem na stronie HTML.
+Użytkownik nie chce hostować serwer sieci web na komputerze klienckim; jednak można użyć tych samych technik komunikacji serwera zatrudnionych we wzorcach elastyczne współczesnych do wywołania usługi za pośrednictwem HTTP GET i obsługują odpowiedzi asynchronicznie przez emitowanie kodu Javascript (lub wywołania języka Javascript są już hostowane w widoku sieci web). Dzięki temu można łatwo przekazywania danych z kodu HTML do kodu C# dla przetwarzania, a następnie Wyświetl wyniki z powrotem na stronie HTML.
 
-Zarówno dla systemu iOS i Android mechanizm umożliwiający kod aplikacji w celu przechwycenia te zdarzenia nawigacji, dzięki czemu kod aplikacji może odpowiadać (jeśli jest to wymagane). Ta funkcja jest niezwykle istotne tworzenie hybrydowych aplikacji, ponieważ umożliwia interakcję z widoku sieci web kodu natywnego.
+Systemów iOS i Android mechanizm umożliwiający kod aplikacji, aby przechwytywać tych zdarzeń nawigacji, aby kod aplikacji może odpowiadać (jeśli jest to wymagane). Ta funkcja jest podstawą budowania hybrydowych aplikacji, ponieważ umożliwia on kodu natywnego, wchodzić w interakcje przy użyciu widoku sieci web.
 
 #### <a name="ios"></a>iOS
 
-Zdarzenia ShouldStartLoad w widoku sieci web w systemie iOS może zostać zastąpiona w celu kodu aplikacji do obsługi żądania nawigacji (na przykład w przypadku kliknięcia łącza). Parametry metody dostarczania wszelkich informacji
+Zdarzenie ShouldStartLoad w widoku sieci web w systemie iOS może zostać zastąpiona w celu kodu aplikacji do obsługi żądania nawigacji (np. Kliknij link). Wszystkie informacje podane parametry metody
 
 ```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
@@ -138,7 +142,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 }
 ```
 
-a następnie przypisać programu obsługi zdarzeń:
+a następnie przypisać program obsługi zdarzeń:
 
 ```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
@@ -163,13 +167,13 @@ a następnie ustaw klienta w widoku sieci web:
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>Wywoływanie kodu Javascript w języku C#
+### <a name="calling-javascript-from-c"></a>Wywołania języka Javascript za pomocą języka C#
 
-Oprócz informuje widok sieci web do załadowania strony HTML, kod w języku C# można również uruchomić Javascript w aktualnie wyświetlaną stronę. Cały bloki kodu Javascript może być utworzony przy użyciu języka C# ciągów i wykonać lub można sformułować wywołań metody Javascript jest już dostępne na stronie za pośrednictwem `script` tagów.
+Oprócz informuje widok sieci web do załadowania strony HTML, kod w języku C# można również uruchomić w ramach aktualnie wyświetlaną stronę Javascript. Całe bloki kodu języka Javascript można tworzyć przy użyciu języka C# ciągów i wykonywane lub tworzyć wywołania metody w kodzie Javascript jest już dostępny na stronie za pośrednictwem `script` tagów.
 
 #### <a name="android"></a>Android
 
-Tworzenie kodu Javascript do wykonania, a następnie poprzedzić go "javascript:" oraz poinstruuj widoku sieci web, aby załadować ten ciąg:
+Utwórz kod Javascript do wykonania, a następnie poprzedzić go "javascript:" i poinformuj widok internetowy, aby załadować ten ciąg:
 
 ```csharp
 var js = "alert('test');";
@@ -178,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-Widoki sieci web dla systemu iOS umożliwiają przeznaczony do wywołania języka Javascript:
+Widoki sieci web dla systemu iOS zapewnia metody do wywołania języka Javascript:
 
 ```csharp
 var js = "alert('test');";
@@ -187,31 +191,31 @@ webView.EvaluateJavascript (js);
 
 ### <a name="summary"></a>Podsumowanie
 
-Ta sekcja została wprowadzona funkcje kontrolki widoku sieci web na Android i iOS, które umożliwiają nam tworzenie hybrydowych aplikacji za pomocą platformy Xamarin, w tym:
+W tej sekcji wprowadził funkcje kontrolki widoku sieci web w systemach Android i iOS, które umożliwiają nam tworzyć hybrydowe aplikacje za pomocą platformy Xamarin, w tym:
 
--  Możliwość ładowania z ciągów generowane w kodzie HTML
--  Możliwość odwołania lokalnych plików (CSS, Javascript, obrazy lub inne pliki HTML)
--  Zdolność do przechwycenia żądań nawigacji w kodzie języka C#
+-  Możliwość ładowania HTML z ciągów generowane w kodzie
+-  Możliwość przywołania pliki lokalne (CSS, Javascript, obrazy lub inne pliki HTML)
+-  Możliwość Przechwytywanie żądań nawigacji w kodzie języka C#
 -  Możliwość wywołania języka Javascript z kodu C#.
 
 
-Następna sekcja wprowadza Razor, co ułatwia tworzenie HTML do użycia w aplikacjach hybrydowego.
+Następna sekcja wprowadza Razor, dzięki czemu można łatwo utworzyć HTML do użycia w aplikacjach hybrydowych.
 
 ## <a name="what-is-razor"></a>Co to jest Razor?
 
-Razor to aparat tworzenia szablonów, która została wprowadzona w programie ASP.NET MVC, pierwotnie do uruchamiania na serwerze i generują kod HTML do przeglądarki użytkownika.
+Razor jest aparat tworzenia szablonów, która została wprowadzona ze wzorca ASP.NET MVC pierwotnie można uruchomić na serwerze i generują kod HTML do przeglądarki sieci web użytkownika.
 
-Aparatu Razor tworzenia szablonów rozszerza standardowej składni HTML w języku C#, dzięki czemu można express układ i łatwo zastosować arkusze stylów CSS i Javascript. Szablon można odwoływać się do klasy modelu, które mogą być dowolnego typu niestandardowego i którego właściwości są dostępne bezpośrednio z szablonu. Jednym z jej główne zalety jest możliwość łatwego mieszać składni HTML i C#.
+Aparatu tworzenia szablonów Razor rozszerza standardowe składni języka HTML w języku C#, dzięki czemu mogą express układ i łatwo zastosować arkuszy stylów CSS i Javascript. Szablonu można odwoływać się do klasy modelu, który może być dowolnego typu niestandardowego i którego właściwości są dostępne bezpośrednio z szablonu. Jednym z jego głównymi zaletami jest możliwość łatwego mieszać składni HTML i języka C#.
 
-Szablony razor nie są ograniczone do użycia po stronie serwera, również mogły one zostać uwzględnione w aplikacji platformy Xamarin. Praca z widokami web programowo przy użyciu szablony Razor wraz z możliwością umożliwia zaawansowane hybrydowych i platform aplikacji ma zostać utworzony za pomocą platformy Xamarin.
+Szablony razor nie są ograniczone do użycia po stronie serwera, również mogły one zostać uwzględnione w aplikacjach platformy Xamarin. Za pomocą szablonów Razor, wraz z możliwością pracować programowo z widoki sieci web umożliwia aplikacjom zaawansowane hybrydowe dla wielu platform można tworzyć za pomocą platformy Xamarin.
 
-### <a name="razor-template-basics"></a>Podstawy szablonu razor
+### <a name="razor-template-basics"></a>Podstawy szablon razor
 
-Pliki szablonów razor ma **.cshtml** rozszerzenia pliku. Może być dodany do projektu Xamarin z sekcji tworzenia szablonów tekstowych w **nowy plik** okna dialogowego:
+Ma pliki szablonów razor **.cshtml** rozszerzenie pliku. Mogą one dodane do projektu Xamarin z sekcji Tworzenie szablonów tekstowych w **nowy plik** okno dialogowe:
 
- ![Nowy plik — szablonu Razor](images/image5_400x201.png)
+ ![Nowy plik — szablon Razor](images/image5_400x201.png)
 
-Proste szablonu Razor ( **RazorView.cshtml**) są wyświetlane poniżej.
+Prosty szablon Razor ( **RazorView.cshtml**) znajdują się poniżej.
 
 ```html
 @model string
@@ -222,31 +226,31 @@ Proste szablonu Razor ( **RazorView.cshtml**) są wyświetlane poniżej.
 </html>
 ```
 
-Zwróć uwagę następujące różnice zwykły plik HTML:
+Zwróć uwagę, następujące różnice względem zwykły plik HTML:
 
--  `@` Symbol ma specjalne znaczenie w szablonach Razor — go wskazuje, że poniższe wyrażenie jest C# ma zostać obliczone.
+-  `@` Symbol ma specjalne znaczenie w szablony Razor — wskazuje, to następujące wyrażenie języka C# ma zostać obliczone.
 - `@model` dyrektywa jest zawsze wyświetlany jako pierwszy wiersz pliku szablonu Razor.
--  `@model` Dyrektywy powinno następować typu. W tym przykładzie prostego ciągu jest przekazywany do szablonu, ale może to być wszystkie klasy niestandardowej.
--  Gdy `@Model` jest przywoływany w szablonie zawiera odwołanie do obiektu przekazanych do szablonu po jego wygenerowaniu (w tym przykładzie będzie ciąg).
--  IDE automatycznie wygeneruje częściowej klasy szablonów (pliki z **.cshtml** rozszerzenia). Ten kod jest widoczny, ale nie powinny być zmieniane.
- ![RazorView.cshtml](images/image6_125x34.png) częściowej klasy o nazwie RazorView odpowiadające .cshtml nazwa pliku szablonu. Jest to nazwa używana do odwoływania się do szablonu w kodzie języka C#.
-- `@using` instrukcje może także stanowić w górnej części szablonu Razor, aby dołączyć dodatkowe przestrzenie nazw.
+-  `@model` Dyrektywy powinien zostać przeprowadzony według typu. W tym przykładzie prostego ciągu jest przekazywany do szablonu, ale może to być wszystkie klasy niestandardowej.
+-  Gdy `@Model` o której mowa w szablonie, zapewnia odwołanie do obiektu przekazanych do szablonu, gdy zostanie wygenerowany (w tym przykładzie będzie ciąg).
+-  IDE automatycznie wygeneruje klasy częściowej dla szablonów (pliki z **.cshtml** rozszerzenia). Ten kod jest widoczny, ale nie powinny być edytowane.
+ ![RazorView.cshtml](images/image6_125x34.png) RazorView Period z nazwą pliku szablonu .cshtml nazwie klasy częściowej. Jest to nazwę, która jest używana do odwoływania się do szablonu w kodzie języka C#.
+- `@using` instrukcji może być również uwzględniane w górnej części szablon Razor, aby uwzględnić dodatkowe przestrzenie nazw.
 
 
-Następnie można wygenerować ostateczne dane wyjściowe HTML za pomocą następującego kodu C#. Należy pamiętać, że określono modelu, który ma być ciągiem "Hello World", które zostaną uwzględnione w renderowanym danych wyjściowych.
+Następnie można wygenerować końcowych danych wyjściowych HTML przy użyciu następującego kodu C#. Należy pamiętać, że określamy modelu, który ma być ciągiem "Hello World", które zostaną uwzględnione w danych wyjściowych szablonu renderowany.
 
 ```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
 
-Poniżej przedstawiono dane wyjściowe w widoku sieci web, w systemie iOS Simulator i emulatora systemu Android:
+Oto dane wyjściowe pokazane w widoku sieci web w systemie iOS Simulator i emulatora systemu Android:
 
  ![Witaj Świecie](images/image7_523x135.png)
 
 ### <a name="more-razor-syntax"></a>Więcej składni Razor
 
-W tej sekcji, którą spróbujemy wprowadzenie niektórych podstawowa składnia Razor, aby pomóc Ci rozpocząć za pomocą go. Przykłady w tej sekcji wypełnij następujące klasy z danymi i wyświetl ją przy użyciu Razor:
+W tej sekcji, którą spróbujemy wprowadzenie niektórych podstawowych składni Razor, aby pomóc Ci rozpocząć pracę przy użyciu go. Przykłady w tej sekcji wypełnić następujące klasy z danymi i wyświetl ją przy użyciu Razor:
 
 ```csharp
 public class Monkey {
@@ -256,7 +260,7 @@ public class Monkey {
 }
 ```
 
-Wszystkie przykłady użyć poniższego kodu inicjowania danych
+Wszystkie przykłady, użyj następującego kodu inicjowania danych
 
 ```csharp
 var animal = new Monkey {
@@ -269,7 +273,7 @@ var animal = new Monkey {
 
 #### <a name="displaying-model-properties"></a>Wyświetlanie właściwości modelu
 
-Jeśli model jest klasy przy użyciu właściwości, ich łatwo odwołuje się szablonu Razor opisane w tym przykładzie szablonie:
+Jeśli model jest klasy przy użyciu właściwości, łatwo występuje do nich w szablonie Razor jak pokazano w tym przykładzie szablonie:
 
 ```html
 @model Monkey
@@ -281,20 +285,20 @@ Jeśli model jest klasy przy użyciu właściwości, ich łatwo odwołuje się s
 </html>
 ```
 
-Może to być renderowana na ciąg, używając następującego kodu:
+Może to być renderowany na ciąg przy użyciu następującego kodu:
 
 ```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
 
-Ostateczne dane wyjściowe są tutaj wyświetlane w widoku sieci web w systemie iOS Simulator i emulatora systemu Android:
+Końcowych danych wyjściowych jest tutaj wyświetlane w widoku sieci web w systemie iOS Simulator i emulatora systemu Android:
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C# — instrukcje
+#### <a name="c-statements"></a>Instrukcje języka C#
 
-Bardziej złożone C# można uwzględnić w szablonie, takie jak aktualizacje właściwości modelu i obliczeń wiek, w tym przykładzie:
+Bardziej złożone C# mogą być zawarte w szablonie, takich jak aktualizacje właściwości modelu i obliczenia wieku, w tym przykładzie:
 
 ```html
 @model Monkey
@@ -311,13 +315,13 @@ Bardziej złożone C# można uwzględnić w szablonie, takie jak aktualizacje w�
 </html>
 ```
 
-Jednowierszowe C# wyrażenia złożone (takie jak formatowanie wiek) można pisać przy otaczającego kodu przy użyciu `@()`.
+Można napisać złożonych wyrażeń języka C# jednowierszowego (np. formatowanie ery), przez umieszczenie kodu za pomocą `@()`.
 
-Wiele instrukcji "C#" mogą być zapisywane przez umieszczenie ich z `@{}`.
+Wiele instrukcji języka C# mogą być zapisywane przez otaczającego je za pomocą `@{}`.
 
-#### <a name="if-else-statements"></a>If-else-instrukcje
+#### <a name="if-else-statements"></a>If-else — instrukcje
 
-Gałęzie kodu może zostać wyrażona z `@if` opisane w tym przykładzie szablon.
+Programowanie gałęzi można wyrazić za pomocą `@if` jak pokazano w tym przykładzie szablonu.
 
 ```html
 @model Monkey
@@ -338,7 +342,7 @@ Gałęzie kodu może zostać wyrażona z `@if` opisane w tym przykładzie szablo
 
 #### <a name="loops"></a>Pętle
 
-Zapętlenie konstrukcje, takich jak `foreach` można również dodać. `@` Na zmienna pętli for można użyć prefiksu ( `@food` w takim przypadku) do renderowania jej w formacie HTML.
+Tworzenie pętli konstrukcji, takich jak `foreach` mogą być również dodawane. `@` Na zmiennej pętli można użyć prefiksu ( `@food` w tym przypadku) do jej renderowania w formacie HTML.
 
 ```html
 @model Monkey
@@ -361,71 +365,71 @@ Zapętlenie konstrukcje, takich jak `foreach` można również dodać. `@` Na zm
 </html>
 ```
 
-Dane wyjściowe szablonu powyżej przedstawiono uruchomiony w systemie iOS Simulator i emulatora systemu Android:
+Dane wyjściowe powyżej szablon jest wyświetlany, uruchomionej w systemie iOS Simulator i emulatora systemu Android:
 
- ![Rupert małp X](images/image9_520x277.png)
+ ![Małp X Rupert](images/image9_520x277.png)
 
-Ta sekcja ma omówione podstawy za pomocą szablonów Razor do renderowania proste widokach tylko do odczytu. W następnej sekcji objaśniono sposób tworzenia bardziej szczegółowy aplikacji przy użyciu Razor, które akceptuje dane wejściowe użytkownika i współdziałanie między Javascript w widoku HTML i C#.
+Ta sekcja ma omówione podstawy używania szablony Razor do renderowania proste widokach tylko do odczytu. W następnej sekcji objaśniono sposób tworzenia bardziej szczegółowy aplikacji przy użyciu Razor, które akceptują dane wejściowe użytkownika i współpraca między języka Javascript w widoku HTML i języka C#.
 
 ## <a name="using-razor-templates-with-xamarin"></a>Za pomocą szablonów Razor za pomocą platformy Xamarin
 
-W tej sekcji opisano sposób korzystania kompilacji hybrydowych aplikacji przy użyciu szablony rozwiązań w programie Visual Studio dla komputerów Mac. Dostępne są trzy szablony **Plik > Nowy > rozwiązania...**  okno:
+W tej sekcji wyjaśniono, jak za pomocą kompilacji własnych aplikacji hybrydowych przy użyciu szablonów rozwiązań w programie Visual Studio dla komputerów Mac. Dostępne są trzy szablony **Plik > Nowy > rozwiązania...**  okna:
 
-- **Android > aplikacji > aplikacji systemu Android widoku sieci Web**
-- **iOS > aplikacji > Aplikacja widoku sieci Web**
-- **Projektu programu ASP.NET MVC**
-
-
-
-**Nowe rozwiązanie** okno wygląda następująco iPhone i projektów w systemie Android — opis rozwiązania po prawej stronie wyróżnia obsługę tworzenia szablonów aparatu Razor.
-
- ![Tworzenie iPhone i rozwiązania dla systemu Android](images/image13_1139x959.png)
-
-Należy pamiętać, że możesz łatwo dodać **.cshtml** szablonu Razor do *żadnych* istniejącego projektu Xamarin, nie jest konieczne użycie tych szablonów rozwiązania. projekty dla systemu iOS nie wymagają scenorysu używać Razor; po prostu Dodaj formant UIWebView do dowolnego widoku programowo i umożliwiający renderowanie szablony Razor całego w kodzie języka C#.
-
-Poniżej przedstawiono zawartość rozwiązania szablonu domyślnego dla urządzenia iPhone i projektów w systemie Android:
-
- ![urządzenia iPhone i szablony dla systemu Android](images/image10_428x310.png)
-
-Szablony umożliwiają infrastruktury aplikacji gotowych do przejdź do ładowania szablonu Razor z obiektu modelu danych, przetwarzania danych wejściowych użytkownika i poinformować użytkowników za pośrednictwem kodu Javascript.
-
-Ważne części rozwiązania są:
-
--  Zawartość statyczna, takich jak **style.css** pliku.
--  Pliki szablonów .cshtml razor, takich jak **RazorView.cshtml** .
--  Model klasy, do których istnieją odwołania w szablony Razor, takich jak **ExampleModel.cs** .
--  Klasy specyficzne dla platformy, która tworzy widok sieci web i renderowania szablonu, takie jak `MainActivity` w systemie Android i `iPhoneHybridViewController` w systemie iOS.
+- **Android > aplikacji > Aplikacja WebView systemu Android**
+- **iOS > aplikacji > Aplikacja WebView**
+- **Projekt składnika ASP.NET MVC**
 
 
-W poniższej sekcji omówiono sposób działania projektów.
+
+**Nowe rozwiązanie** okna wygląda następująco dla telefonu iPhone i Android projektów — opis rozwiązania po prawej stronie wyróżnia Obsługa aparatu tworzenia szablonów Razor.
+
+ ![Tworzenie urządzenia iPhone i rozwiązania dla systemu Android](images/image13_1139x959.png)
+
+Należy zauważyć, że można łatwo dodawać **.cshtml** szablon Razor *wszelkie* istniejący projekt Xamarin, nie jest konieczne używanie szablonów rozwiązań. projekty systemu iOS nie wymagają scenorysu do użycia zarówno: Razor po prostu programowo dodać kontrolkę UIWebView w dowolnym widoku i można renderować szablony Razor całego kodu C#.
+
+Poniżej przedstawiono zawartość domyślnego szablonu rozwiązania dla telefonu iPhone i projekty systemu Android:
+
+ ![urządzenia iPhone i Android szablonów](images/image10_428x310.png)
+
+Szablony umożliwiają infrastruktury aplikacji gotowa do pracy, aby załadować szablon Razor za pomocą obiektu modelu danych, przetwarzać dane wejściowe użytkownika i przekazuje użytkownika przy użyciu języka Javascript.
+
+Ważne elementy rozwiązania są:
+
+-  Zawartość statyczna, takie jak **style.css** pliku.
+-  Pliki szablonów cshtml razor, takich jak **RazorView.cshtml** .
+-  Klasy, które odwołują się szablony Razor takich jak modeli **ExampleModel.cs** .
+-  Klasy specyficzne dla platformy, która tworzy widok sieci web i renderuje szablonu, takie jak `MainActivity` w systemie Android i `iPhoneHybridViewController` w systemie iOS.
+
+
+W poniższej sekcji omówiono, jak działają projekty.
 
 ### <a name="static-content"></a>Zawartość statyczna
 
-Zawartość statyczna zawiera arkusze stylów CSS, obrazów, plików Javascript lub innej zawartości, które mogą być połączone z lub odwołuje się plik HTML, będzie wyświetlany w widoku sieci web.
+Zawartość statyczna obejmuje arkuszy stylów CSS, obrazów, plików Javascript lub innej zawartości, które mogą być połączone z lub odwołuje się plik HTML, są wyświetlane w widoku sieci web.
 
-Projekty szablonu obejmują arkusz stylów minimalnego pokazujący sposób dodać zawartość statyczną w aplikacji hybrydowych. Arkusz stylów CSS odwołuje się do szablonu następująco:
+Projekty szablonu włączenia arkusza stylów minimalny do pokazują, jak dodać zawartość statyczną w swojej aplikacji hybrydowych. Arkusz stylów CSS o której mowa w szablonie następująco:
 
 ```html
 <link rel="stylesheet" href="style.css" />
 ```
 
-Możesz dodać niezależnie od arkusza stylów i pliki Javascript potrzebujesz, łącznie z platform, takich jak JQuery.
+Możesz dodać dowolną arkusza stylów i pliki Javascript, potrzebujesz, w tym struktur, takich jak JQuery.
 
 ### <a name="razor-cshtml-templates"></a>Cshtml razor szablonów
 
-Szablon zawiera Razor **.cshtml** pliku, który został wcześniej zapisany kod, aby pomóc przekazywania danych między HTML/Javascript i C#. Pozwoli to kompilacji hybrydowego zaawansowane aplikacje, które nie tylko wyświetlanie tylko do odczytu danych z modelu, ale również akceptuje dane wejściowe użytkownika w kodzie HTML i przekaż go z powrotem do kodu C# dla przetwarzania lub magazynu.
+Szablon zawiera Razor **.cshtml** pliku, który ma wstępnie napisany kod, aby pomóc przekazywania danych między HTML/Javascript i C#. Umożliwi to kompilacja, zaawansowane hybrydowe aplikacje, które nie tylko wyświetlanie tylko do odczytu danych z modelu, ale również akceptuje dane wejściowe użytkownika w kodzie HTML i przekaż go z powrotem do kodu C# w celu ich przetwarzania lub magazynowania.
 
-#### <a name="rendering-the-template"></a>Renderowania szablonu
+#### <a name="rendering-the-template"></a>Renderowanie szablonu
 
-Wywoływanie `GenerateString` w szablonie spowoduje renderowanie kodu HTML gotowy do wyświetlenia w widoku sieci web. Jeśli szablon korzysta z modelu, a następnie należy dostarczyć przed renderowaniem. Ten diagram przedstawia sposób renderowania działania — nie który zasoby statyczne są rozpoznawane przez widok sieci web w czasie wykonywania, aby znaleźć określone pliki przy użyciu dostarczonego katalogu podstawowego.
+Wywoływanie `GenerateString` na podstawie szablonu powoduje wyświetlenie kodu HTML gotowy do wyświetlenia w widoku sieci web. Jeśli szablon korzysta z modelu, a następnie powinien być dostarczony przed renderowaniem. Na tym diagramie przedstawiono sposób renderowania działania — nie rozwiązywania zasobów statycznych w widoku sieci web w czasie wykonywania, aby znaleźć określone pliki przy użyciu podanej podstawowego katalogu.
 
  ![Schemat blokowy razor](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>Wywoływanie kodu C# z szablonu
+#### <a name="calling-c-code-from-the-template"></a>Wywoływanie kodu w języku C# z szablonu
 
-Komunikacja z widoku sieci web renderowanych wywołań zwrotnych do języka C# odbywa się przez ustawienie adresu URL dla widoku sieci web, a następnie przechwytywaniu żądania w języku C# do obsługi natywnych żądania bez ponownego ładowania widoku sieci web.
+Komunikacja z widoku sieci web renderowanych wywołań zwrotnych do języka C# odbywa się przez ustawienie adresu URL dla widoku internetowego, a następnie przechwytuje żądania w języku C# do obsługi natywnych żądania bez ponownego ładowania widoku sieci web.
 
-Przykładem może być widoczny w sposób obsługi przez RazorView przycisku. Przycisk ma poniższy kod HTML:
+Przykładem są widoczne w sposób obsługi przez RazorView przycisku. Ten przycisk ma poniższy kod HTML:
 
 ```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
@@ -437,19 +441,19 @@ Przykładem może być widoczny w sposób obsługi przez RazorView przycisku. Pr
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-To próbuje przejdź do widoku sieci web do adresu URL za schematu niestandardowego (np.) `hybrid:`)
+To próbuje przejdź do widoku sieci web do adresu URL ze schematem niestandardowym (np.) `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
 ```
 
-Podczas widoku sieci web natywnego przetwarzania tego żądania nawigacji, będziemy mieć możliwość przechwycić go. W systemie iOS jest to realizowane przez obsługi zdarzeń HandleShouldStartLoad UIWebView. W systemie Android możemy po prostu podklasy WebViewClient używany w formularzu i zastąpić ShouldOverrideUrlLoading.
+Podczas widoku internetowego natywnych przetwarzania tego żądania nawigacji, mamy możliwość jego przechwycenia. W systemie iOS odbywa się dzięki obsłudze UIWebView HandleShouldStartLoad zdarzeń. W systemie Android możemy po prostu podklasy WebViewClient używanych w formularzu, a następnie zastąpić ShouldOverrideUrlLoading.
 
-Funkcje wewnętrzne tych dwóch nawigacji interceptory jest zasadniczo taki sam.
+Funkcje wewnętrzne tych dwóch interceptory nawigacji jest zasadniczo taki sam.
 
-Najpierw sprawdź adres URL, który próbuje załadować, widoku sieci web, a jeśli go nie zaczyna się od schematu niestandardowego (`hybrid:`), Zezwalaj na normalne nawigacji występują.
+Sprawdź najpierw, adres URL, do którego widoku strony sieci web próbuje załadować, a jeśli nie zaczyna się od schematem niestandardowym (`hybrid:`), Zezwalaj nawigacji występują w zwykły sposób.
 
-Dla schematu niestandardowego adresu URL, wszystkie elementy w adresie URL między systemu oraz "?" jest to nazwa metody do obsługi (w tym przypadku "UpdateLabel"). Wszystkie elementy w ciągu zapytania będą traktowane jako parametrów do wywołania metody:
+Dla schematu niestandardowego adresu URL, wszystko w adresie URL między schemat i "?" jest to nazwa metody do obsłużenia (w tym przypadku "UpdateLabel"). Wszystko, co w ciągu zapytania jest traktowany jako parametry w celu wywołania metody:
 
 ```csharp
 var resources = url.Substring(scheme.Length).Split('?');
@@ -457,68 +461,68 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel` w tym przykładzie jest skraca manipulowanie ciągami w parametrze pola tekstowego (dołączanie "C# mówi" jak ciąg), a następnie wywołuje wstecz widoku sieci web.
+`UpdateLabel` w tym przykładzie jest skraca manipulowanie ciągami w parametrze pola tekstowego (as "C# jest wyświetlany komunikat" do ciągu), a następnie wywołuje powrót do widoku sieci web.
 
-Po obsługi adres URL, metoda przerywa nawigacji, aby widoku sieci web nie jest podejmowana próba zakończenia, przechodząc do niestandardowy adres URL.
+Po obsłudze adres URL, metoda przerywa nawigacji, aby widok sieci web nie jest podejmowana próba zakończenia, przechodząc do niestandardowego adresu URL.
 
-#### <a name="manipulating-the-template-from-c"></a>Manipulowanie szablonu w języku C#
+#### <a name="manipulating-the-template-from-c"></a>Manipulowanie szablonu za pomocą języka C#
 
-Komunikacja z był renderowany widok HTML w sieci web w języku C# odbywa się za pomocą funkcji Javascript w widoku sieci web. W systemach iOS, odbywa się przez wywołanie metody `EvaluateJavascript` na UIWebView:
+Komunikacja renderowany widok sieci web HTML za pomocą języka C# odbywa się przez wywołanie metody Javascript w widoku sieci web. W systemach iOS, odbywa się przez wywołanie metody `EvaluateJavascript` na UIWebView:
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-W systemie Android, Javascript, może być wywoływany w widoku sieci web przez ładowanie Javascript jako adres URL przy użyciu `"javascript:"` schemat adresu URL:
+W systemie Android Javascript może być wywoływany w widoku sieci web przez ładowanie Javascript jako adres URL przy użyciu `"javascript:"` schemat adresu URL:
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 
-## <a name="making-an-app-truly-hybrid"></a>Tworzenie aplikacji hybrydowych naprawdę
+## <a name="making-an-app-truly-hybrid"></a>Tworzenie aplikacji prawdziwie hybrydowe
 
-Te szablony nie należy wprowadzać użyj natywnych kontrolek na każdej platformie — cały ekran jest wypełniony widoku pojedynczej sieci web.
+Te szablony nie należy używać natywnych kontrolek na każdej platformie — cały ekran jest wypełniony przy użyciu widoku jednej sieci web.
 
-HTML może być doskonałe rozwiązanie dla prototypowania i wyświetlanie rodzaje elementów sieci web najlepiej jest na przykład tekstu rich text i elastyczny układ. Na przykład, jednak nie wszystkie zadania są odpowiednie do kodu HTML i Javascript — przewijanie długich list danych, wykonuje lepiej przy użyciu natywnych kontrolek interfejsu użytkownika, takie jak (UITableView w systemie iOS) lub ListView w systemie Android.
+HTML może być bardzo przydatne na potrzeby tworzenia prototypów i wyświetlanie rodzaje elementów sieci web najlepiej jest na przykład tekstu sformatowanego i układu dynamicznego. Na przykład, jednak nie wszystkie zadania są odpowiednie do kodu HTML i Javascript — przewijanie za długo listy danych, wykonuje lepiej przy użyciu natywnych kontrolek interfejsu użytkownika, takich jak (UITableView w systemie iOS) lub ListView w systemie Android.
 
-Widoki sieci web w szablonie łatwo można rozszerzyć za pomocą formantów specyficzne dla platformy — po prostu edycji **MainStoryboard.storyboard** w Projektancie systemu iOS lub **Resources/layout/Main.axml** w systemie Android.
+Widoki sieci web w szablonie łatwo można rozszerzyć za pomocą kontrolek specyficzne dla platformy — po prostu edycji **MainStoryboard.storyboard** w narzędzia iOS designer lub **Resources/layout/Main.axml** w systemie Android.
 
 ### <a name="razortodo-sample"></a>Przykładowe RazorTodo
 
-[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo) repozytorium zawiera dwa oddzielne rozwiązania przedstawiał różnice między aplikacją całkowicie opartej na HTML i aplikacji, która łączy HTML z kontrolki natywne:
+[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo) repozytorium zawiera dwa oddzielne rozwiązania do pokazania różnic między aplikacją całkowicie oparte na HTML i aplikacji, która łączy HTML z natywne kontrolki:
 
--  **RazorTodo** -driven całkowicie HTML aplikacji za pomocą szablonów Razor.
--  **RazorNativeTodo** — używa kontrolki widok listy macierzystego dla systemów iOS i Android, ale wyświetla ekran edycji HTML i Razor.
+-  **RazorTodo** -aplikacji opartej na całkowicie HTML, przy użyciu szablonów Razor.
+-  **RazorNativeTodo** — są używane kontrolki widoku listy natywne dla systemów iOS i Android, ale wyświetla ekran edycji z językami HTML oraz Razor.
 
 
-Te aplikacje platformy Xamarin Uruchom zarówno dla systemu iOS i Android przy użyciu przenośnej biblioteki klas (PCLs), aby udostępnić typowy kod, takich jak klasy bazy danych i modelu. Razor **.cshtml** szablonów można również uwzględnić w PCL aby łatwo są one udostępniane na platformach.
+Uruchom te aplikacje platformy Xamarin dla systemów iOS i Android przy użyciu biblioteki klas przenośnych (PCLs), aby udostępnić wspólny kod, takich jak klasy bazy danych i modelu. Razor **.cshtml** szablony również mogą być zawarte w aplikacji PCL, dzięki czemu są łatwo współdzielone między platformami.
 
-Obie aplikacje przykładowe dołączyć do nich udostępniania Twitter i zamiany tekstu na mowę interfejsy API z natywnego platformy, z którego wynika, że hybrydowych aplikacji za pomocą platformy Xamarin nadal mieć dostęp do podstawowych funkcji z widoków opartych na szablonie HTML w silniku Razor.
+Obie aplikacje przykładowe dołączyć API zamiany tekstu na mowę z platformy natywnej wykazania, że aplikacje hybrydowe za pomocą platformy Xamarin nadal mieć dostęp do podstawowych funkcji z widoków opartych na szablonie HTML w silniku Razor i udostępnianie w serwisie Twitter.
 
-**RazorTodo** aplikacja korzysta z szablonów HTML w silniku Razor dla widoków listy i edycji. Oznacza to, że budujemy aplikacji prawie całkowicie w udostępnionym przenośnej biblioteki klas (łącznie z bazą danych i **.cshtml** szablony Razor). Poniższe zrzuty ekranu pokazują, iOS i aplikacje dla systemu Android.
+**RazorTodo** aplikacja używa szablony HTML Razor w widokach listy i edycji. Oznacza to, że możemy ją tworzyć aplikację prawie całkowicie w udostępnionej biblioteki klas przenośnych (łącznie z bazą danych i **.cshtml** szablony Razor). Poniższe zrzuty ekranu Pokaż aplikacje iOS i Android.
 
  ![RazorTodo](images/Both_700x290.png)
 
-**RazorNativeTodo** aplikacja używa szablonu HTML w silniku Razor dla widoku edycji, ale implementuje natywnego przewijanej listy na każdej z platform. To zapewnia szereg korzyści w tym:
+**RazorNativeTodo** aplikacja używa szablonu HTML w silniku Razor dla widoku edycji, ale implementuje natywnych przewijanej listy na każdej platformie. To zapewnia szereg korzyści, w tym:
 
--  Wydajność — kontrolki przewijania natywne używają wirtualizacji, aby zapewnić, szybkie i sprawne przewijanie nawet w przypadku list bardzo dużo danych.
--  Natywnym środowiskiem — elementy interfejsu użytkownika specyficzne dla platformy są łatwo włączone, takie jak obsługa indeksu przewijanie fast w systemach iOS i Android.
+-  Wydajność — natywne kontrolki przewijania używają wirtualizacji, aby zapewnić, szybkie i bezproblemowe przewijanie nawet w przypadku list bardzo dużo danych.
+-  Natywne środowisko — elementy interfejsu użytkownika specyficznymi dla platformy łatwo są włączone, takie jak obsługa przewijania fast indeksu, w systemach iOS i Android.
 
 
-Najważniejszą korzyścią z tworzenie hybrydowych aplikacji za pomocą platformy Xamarin jest można uruchomić z interfejsem użytkownika całkowicie opartej na HTML (np. przykład pierwszy) i następnie dodać funkcje specyficzne dla platformy na żądanie (jak przedstawiono przykładowe na drugi). Ekrany macierzysty listy i HTML w silniku Razor Edytuj ekrany na obu systemów iOS i Android są wyświetlane poniżej.
+Zaletą tworzenia aplikacji hybrydowych za pomocą platformy Xamarin jest można uruchomić interfejs użytkownika całkowicie oparte na HTML (np. pierwszy przykład) i następnie dodać funkcje specyficzne dla platformy, gdy jest to wymagane (jako drugi przedstawia przykładowy). Ekrany natywnych listy i HTML w silniku Razor edycja ekranów w obu systemach iOS i Android zostały wymienione poniżej.
 
  ![RazorNativeTodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>Podsumowanie
 
-Ten artykuł zawiera wyjaśniono funkcje dostępne kontrolki widoku sieci web w systemach iOS i Android, które ułatwiają tworzenie hybrydowych aplikacji.
+Ten artykuł ma opisano funkcje dostępne kontrolki widoku sieci web w systemach iOS i Android, które ułatwiają tworzenie aplikacji hybrydowych.
 
-Omówione następnie aparatu Razor tworzenia szablonów i składnię, która może służyć do generowania HTML łatwe w użyciu aplikacji Xamarin. **cshtml** plików szablonu Razor. Dla komputerów Mac szablony rozwiązań, które umożliwiają szybkie rozpoczęcie pracy Tworzenie hybrydowych aplikacji za pomocą platformy Xamarin są także opisane programu Visual Studio.
+Omówiono następnie aparatu tworzenia szablonów Razor i składnię, które można łatwo generują kod HTML w aplikacji platformy Xamarin przy użyciu. **cshtml** pliki szablonów Razor. Także opisane programu Visual Studio dla komputerów Mac, szablony rozwiązań, które pozwalają na szybkie wprowadzenie do tworzenia aplikacji hybrydowych za pomocą platformy Xamarin.
 
-Na koniec spowodował próbki RazorTodo, które pokazują, jak połączyć widoki sieci web z interfejsów API i interfejsów użytkownika macierzystego.
+Na koniec wprowadzono próbki RazorTodo, które pokazują, jak połączyć widoki sieci web za pomocą natywne interfejsy użytkownika i interfejsów API.
 
 ### <a name="related-links"></a>Linki pokrewne
 
 - [Przykładowe RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3 - aparatu widoku Razor (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [Wprowadzenie do programowania sieci Web ASP.NET przy użyciu składni Razor (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [MVC 3 — aparat widoku Razor (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [Wprowadzenie do programowania dla sieci Web platformy ASP.NET używająca składni Razor (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

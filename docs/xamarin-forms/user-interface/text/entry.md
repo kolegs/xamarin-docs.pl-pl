@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/16/2018
-ms.openlocfilehash: 272887f0abb0785f959c542e65789d7645a583f1
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241228"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270115"
 ---
 # <a name="xamarinforms-entry"></a>Wpis zestawu narzędzi Xamarin.Forms
 
@@ -86,7 +86,7 @@ var entry = new Entry { Keyboard = Keyboard.Chat };
 
 Przykłady każdego klawiatury można znaleźć w naszej [przepisy](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) repozytorium.
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Ma również klasy [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) metoda fabryki, który może służyć do dostosowywania klawiatury, określając zachowanie wielkości liter, Sprawdź pisownię i sugestii. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) wartości wyliczenia podaną jako argumenty do metody, przy użyciu dostosowanych `Keyboard` zwracanego. `KeyboardFlags` Wyliczenie zawiera następujące wartości:
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Ma również klasy [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) metoda fabryki, który może służyć do dostosowywania klawiatury, określając zachowanie wielkości liter, Sprawdź pisownię i sugestii. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) wartości wyliczenia są określane jako argumenty do metody, przy użyciu dostosowanych `Keyboard` zwracanego. `KeyboardFlags` Wyliczenie zawiera następujące wartości:
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) — żadne funkcje nie są dodawane do klawiatury.
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) — Wskazuje, że pierwszą literę pierwszy wyraz każdego wpisanego zdania będą automatycznie wpisać wielkimi literami.
