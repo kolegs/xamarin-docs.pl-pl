@@ -6,6 +6,7 @@
 ## [Podstawy aplikacji](app-fundamentals/index.md)
 ### [Ułatwienia dostępu](app-fundamentals/accessibility.md)
 ### [Wspólne wzorce i idiomy](app-fundamentals/patterns.md)
+### [Aplikacje konsolowe](app-fundamentals/console.md)
 ### [Interfejsy API systemu macOS](app-fundamentals/mac-apis.md)
 ### [.Pliki xib](app-fundamentals/xib.md)
 ### [Projektowanie interfejsu użytkownika bez użycia plików storyboard i xib](app-fundamentals/xibless-ui.md)
