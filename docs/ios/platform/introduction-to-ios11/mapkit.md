@@ -1,26 +1,26 @@
 ---
-title: Nowe funkcje w MapKit w systemie iOS 11
-description: 'W tym dokumencie opisano nowe funkcje MapKit w systemie iOS 11: grupowanie znaczników, przycisk wzorem widoku skali i przycisku śledzenia użytkownika.'
+title: Nowe funkcje w strukturze MapKit w systemie iOS 11
+description: 'W tym dokumencie opisano nowe funkcje systemu iOS 11 strukturze MapKit: grupowanie znaczniki, kompasu przycisku, widok skalowania i przycisk śledzenia użytkowników.'
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787409"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350589"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>Nowe funkcje w MapKit w systemie iOS 11
+# <a name="new-features-in-mapkit-on-ios-11"></a>Nowe funkcje w strukturze MapKit w systemie iOS 11
 
-iOS 11 dodaje następujące nowe funkcje do MapKit:
+System iOS 11 dodaje następujące nowe funkcje do strukturze MapKit:
 
-- [Adnotacja klastra](#clustering)
-- [Kompas przycisku](#compass)
-- [Widok skali](#scale)
+- [Adnotacja klastrowania](#clustering)
+- [Compass przycisku](#compass)
+- [Wyświetl skalowania](#scale)
 - [Przycisk śledzenia użytkownika](#user-tracking)
 
 ![Mapa przedstawiająca klastrowanych znaczniki i kompas przycisku](mapkit-images/cyclemap-heading.png)
@@ -29,13 +29,13 @@ iOS 11 dodaje następujące nowe funkcje do MapKit:
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>Automatycznie grupowania znaczników podczas powiększania
 
-Przykład [MapKit próbki "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) pokazuje, jak wdrożyć nową adnotację iOS 11 funkcji klaster.
+Przykład [przykładowe strukturze MapKit "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) przedstawia sposób implementowania Nowa adnotacja systemu iOS 11 funkcji klaster.
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. Utwórz `MKPointAnnotation` podklasy
 
-Klasa adnotacji z punktu reprezentuje każdy znacznik na mapie. Można dodać je oddzielnie, używając `MapView.AddAnnotation()` lub używana tablica `MapView.AddAnnotations()`.
+Klasa adnotacji z punktu reprezentuje każdy znacznik na mapie. Można dodać oddzielnie przy użyciu `MapView.AddAnnotation()` lub z tablicy przy użyciu `MapView.AddAnnotations()`.
 
-Punkt klas adnotacji nie ma wizualną reprezentację, są wymagane tylko do reprezentowania danych skojarzonych ze znacznikiem (przede wszystkim `Coordinate` właściwość, która jest jego współrzędne geograficzne na mapie) i wszystkie niestandardowe właściwości:
+Punkt adnotacja klasy nie posiadają wizualnej reprezentacji, są wymagane tylko do reprezentowania danych skojarzony ze znacznikiem (co najważniejsze, `Coordinate` właściwość, która jest jego długość i szerokość geograficzną na mapie) oraz wszelkie właściwości niestandardowe:
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Utwórz `MKMarkerAnnotationView` podklasy dla pojedynczego znaczników
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Utwórz `MKMarkerAnnotationView` podklasę dla pojedynczego znaczników
 
-Widok adnotacji znacznika jest wizualną reprezentację każdego adnotacji i wyglądzie przy użyciu właściwości, takich jak:
+Widok znaczników adnotacji jest wizualną reprezentacją każdej adnotacji i wyglądzie przy użyciu właściwości, takich jak:
 
 - **MarkerTintColor** — kolor znacznika.
 - **GlyphText** — tekst wyświetlany w znacznika.
 - **GlyphImage** — Ustawia obraz, który jest wyświetlany w znacznika.
-- **DisplayPriority** — określa porządek osi z (zachowanie stosu) Jeśli jest wiele znaczników mapy. Użyj jednej z `Required`, `DefaultHigh`, lub `DefaultLow`.
+- **DisplayPriority** — określa porządek osi z (zachowanie stosu) po zatłoczonym ze znacznikami mapy. Użyj jednej z `Required`, `DefaultHigh`, lub `DefaultLow`.
 
-Do obsługi, automatyczne klastra, należy także ustawić:
+Aby umożliwić obsługę automatycznych klastrowania, należy także ustawić:
 
-- **ClusteringIdentifier** — Określa, które znaczników pobrać razem w klastrze. Możesz użyć tego samego identyfikatora dla wszystkich żądanych oznaczeń, lub różne identyfikatory do kontrolowania sposobu są pogrupowane.
+- **ClusteringIdentifier** — w ten sposób kontroluje znaczniki, które Pobierz klastrowanych ze sobą. Można użyć tego samego identyfikatora dla wszystkich znaczników sieci lub użyj różne identyfikatory, aby kontrolować sposób, są one zgrupowane razem.
 
 ```csharp
 [Register("BikeView")]
@@ -106,13 +106,13 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Utwórz `MKAnnotationView` do reprezentowania klastrów znaczników
 
-Podczas gdy widok adnotacji, która reprezentuje klaster znaczników _można_ być proste obraz, użytkownicy będą aplikacji dostarczanie wizualnych, o ile znaczniki zostały zgrupowane razem.
+Podczas gdy widok adnotacji, która reprezentuje klaster znaczników _można_ być proste obraz, Użytkownicy oczekują aplikacji, aby zapewnić podpowiedzi wizualne, o ile znaczniki, zostały zgrupowane razem.
 
-[Przykładowy kod](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) używa CoreGraphics do renderowania liczbę znaczników w klastrze, a także wykres koło reprezentację część każdego typu znacznika.
+[Przykładowego kodu](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) używa CoreGraphics do renderowania liczbę znaczników w klastrze, a także reprezentację wykresu okrąg część każdego typu znacznika.
 
-Należy także ustawić:
+Należy również ustawić:
 
-- **DisplayPriority** — określa porządek osi z (zachowanie stosu) Jeśli jest wiele znaczników mapy. Użyj jednej z `Required`, `DefaultHigh`, lub `DefaultLow`.
+- **DisplayPriority** — określa porządek osi z (zachowanie stosu) po zatłoczonym ze znacznikami mapy. Użyj jednej z `Required`, `DefaultHigh`, lub `DefaultLow`.
 - **CollisionMode** — `Circle` lub `Rectangle`.
 
 ```csharp
@@ -181,7 +181,7 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4. Rejestrowanie klasy widoku
 
-Po utworzeniu formantu widoku mapy i dodanych do widoku, zarejestrować typy widoku adnotacji, aby włączyć automatyczne działanie klastra, jak i wylogowywanie powiększone mapy:
+Przy kontrolki widoku mapy jest tworzony i dodawany do widoku, zarejestrować typy widoków adnotacji w celu umożliwienia automatycznego zachowania klastrowania i pomniejszać powiększone mapy:
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
@@ -190,23 +190,23 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ### <a name="5-render-the-map"></a>5. Renderowanie mapy!
 
-Podczas renderowania mapy adnotacji znaczników w klastrze lub renderowane w zależności od poziomu powiększenia. Poziom powiększenia zmian znaczników animować i klastrów.
+Po wyrenderowaniu mapy znaczników adnotacji klastra lub renderowane w zależności od poziomu powiększenia. Ponieważ zmienia poziom powiększenia, znaczniki animować i klastrów.
 
-![Symulator przedstawiający znaczników klastrowanego na mapie](mapkit-images/cyclemap-sml.png)
+![Symulator Pokazywanie znaczników klastrowanego na mapie](mapkit-images/cyclemap-sml.png)
 
-Zapoznaj się [mapy sekcji](~/ios/user-interface/controls/ios-maps/index.md) Aby uzyskać więcej informacji na temat wyświetlania danych za pomocą MapKit.
+Zapoznaj się [mapuje sekcji](~/ios/user-interface/controls/ios-maps/index.md) Aby uzyskać więcej informacji na temat wyświetlania danych o strukturze MapKit.
 
 <a name="compass" />
 
-## <a name="compass-button"></a>Kompas przycisku
+## <a name="compass-button"></a>Compass przycisku
 
-iOS 11 dodaje możliwość pop kompas poza mapy i renderować ją w innym miejscu w widoku. Zobacz [Tandm Przykładowa aplikacja](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) przykład.
+System iOS 11 wprowadza możliwość pop compass poza mapy i renderować ją w innym miejscu w widoku. Zobacz [Tandm przykładową aplikację](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) przykład.
 
-Tworzenie przycisku, który wygląda jak kompas (łącznie animacji na żywo, gdy zostanie zmieniona orientacja mapy), i wyświetla go na inny formant.
+Utwórz przycisk, który wygląda jak kompas (w tym na żywo animacji po zmianie orientacji mapy) i renderuje je w innej kontrolce.
 
-![Przycisk wzorem na pasku nawigacyjnym](mapkit-images/compass-sml.png)
+![Kompasu przycisk na pasku nawigacyjnym](mapkit-images/compass-sml.png)
 
-Poniższy kod tworzy przycisk wzorem i renderuje go na pasku nawigacyjnym:
+Poniższy kod tworzy kompasu przycisk i renderuje je na pasku nawigacyjnym:
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` Właściwości można ustawić widoczność kompas domyślne w widoku mapy.
+`ShowsCompass` Właściwość może służyć do sterowania widocznością compass domyślne wewnątrz widoku mapy.
 
 <a name="scale" />
 
-## <a name="scale-view"></a>Widok skali
+## <a name="scale-view"></a>Wyświetl skalowania
 
-Dodaj skali w innym miejscu przy użyciu widoku `MKScaleView.FromMapView()` metodę, aby pobrać wystąpienia widoku skalowania, aby dodać w innym miejscu w hierarchii widoku.
+Dodaj skalę w którymkolwiek miejscu przy użyciu widoku `MKScaleView.FromMapView()` metodę, aby pobrać wystąpienie obiektu widoku skali, aby dodać innych miejscach, w widoku hierarchii.
 
-![Widok skali umieszczenia na mapie](mapkit-images/scale-sml.png)
+![Wyświetl skalowania nałożony na mapie](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,15 +233,15 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` Właściwości można ustawić widoczność kompas domyślne w widoku mapy.
+`ShowsScale` Właściwość może służyć do sterowania widocznością compass domyślne wewnątrz widoku mapy.
 
 <a name="user-tracking" />
 
 ## <a name="user-tracking-button"></a>Przycisk śledzenia użytkownika
 
-Przycisk śledzenia użytkownika centrach mapy na bieżącej lokalizacji użytkownika. Użyj `MKUserTrackingButton.FromMapView()` metodę, aby pobrać wystąpienia przycisku Zastosuj zmiany formatowania, a Dodaj w innym miejscu w hierarchii widoku.
+Przycisk śledzenia użytkownika centra mapy w bieżącej lokalizacji użytkownika. Użyj `MKUserTrackingButton.FromMapView()` metodę, aby pobrać wystąpienie obiektu przycisku, Zastosuj zmiany formatowania i dodać w innym miejscu w Wyświetl hierarchię.
 
-![Przycisk lokalizacji użytkownika umieszczenia na mapie](mapkit-images/user-location-sml.png)
+![Przycisk lokalizacji użytkownika nałożony na mapie](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);
@@ -256,6 +256,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykładowe MapKit "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
+- [Przykładowe strukturze MapKit "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [Nowości w MapKit (WWDC) (klip wideo)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [Nowości w strukturze MapKit (WWDC) (wideo)](https://developer.apple.com/videos/play/wwdc2017/237/)

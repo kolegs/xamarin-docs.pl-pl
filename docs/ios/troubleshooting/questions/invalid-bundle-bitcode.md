@@ -1,22 +1,23 @@
 ---
-title: 'Błąd podczas przesyłania do sklepu z aplikacjami: "Nieprawidłowy pakiet — opcje nie może być osadzony w kodu bitowego są wykrywane przy przekazywaniu"'
+title: 'Błąd podczas przesyłania do App Store: "Nieprawidłowy pakiet — opcje nie mogą być osadzone w bitcode są wykrywane w przesyłania"'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 137313FB-3D29-428B-93C1-5A05DC8F7C03
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: cacb9040ddc8582490c68bcfd24e80c4c4679eb4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 393c1ed81c68d21b610781dfe09de97969e031d1
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30777707"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350927"
 ---
-# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>Błąd podczas przesyłania do sklepu z aplikacjami: "Nieprawidłowy pakiet — opcje nie może być osadzony w kodu bitowego są wykrywane przy przekazywaniu"
+# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>Błąd podczas przesyłania do App Store: "Nieprawidłowy pakiet — opcje nie mogą być osadzone w bitcode są wykrywane w przesyłania"
 
-watchOS a aplikacjami systemu tvOS _wymagają_ kodu bitowego, gdy są one przesyłane do sklepu z aplikacjami. Podczas tworzenia i przesyłanie aplikacji watchOS i systemu tvOS, za pomocą środowiska Xcode 8.3 lub starszym, (za pośrednictwem poczty e-mail powiadomienia) może wystąpić następujący błąd podczas próby przekazania do sklepu z aplikacjami:
+systemu watchOS aplikacje i aplikacje dla systemu tvOS _wymagają_ bitcode przesyłanej do Store aplikacji. Podczas kompilowania i przesyłanie aplikacji systemu watchOS i tvOS za pomocą środowiska Xcode 8.3 lub starszym, (za pośrednictwem powiadomienia e-mail) może wystąpić następujący błąd podczas próby przekazania do Store aplikacji:
 
->Nieprawidłowy pakiet - nie można przetworzyć aplikację, ponieważ nie może być osadzony w kodu bitowego opcje są wykrywane przy przekazywaniu. Istnieje prawdopodobieństwo, że nie tworzysz aplikację z łańcuchem narzędzi dostępnych w programie Xcode.
+>Nieprawidłowy pakiet — nie można przetworzyć aplikację, ponieważ wykryto opcje, które nie mogą być osadzone w bitcode przy przekazywaniu. Prawdopodobnie są nie Kompilowanie aplikacji za pomocą łańcucha udostępniane w środowisku Xcode.
 
-Rozwiązanie tego problemu jest tworzenie aplikacji z Xcode 9 i najnowszą wersję platformy Xamarin.iOS.
+Rozwiązanie tego problemu jest tworzyć aplikacje za pomocą środowiska Xcode 9 i najnowszej wersji rozszerzenia Xamarin.iOS.

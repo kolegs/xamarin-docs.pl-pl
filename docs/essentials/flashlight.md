@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831414"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353363"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: latarki
 
@@ -42,7 +42,7 @@ Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następ
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **LATARKI** i **aparatu** uprawnienia. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy projekt Android i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **LATARKI** i **aparatu** uprawnienia. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 Przez dodanie tych uprawnień [sklepu Google Play automatycznie odfiltruje urządzeń](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) bez określonego sprzętu. Obejścia tego problemu można uzyskać przez dodanie poniższego do pliku AssemblyInfo.cs w projekcie dla systemu Android:
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Funkcje specyficzne dla implementacji platformy
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Klasa latarki została optmized oparty na systemie operacyjnym urządzenia.
+Klasa latarki została zoptymalizowana na podstawie systemu operacyjnego urządzenia.
 
 #### <a name="api-level-23-and-higher"></a>Poziom interfejsu API 23 lub nowszy
 
@@ -108,11 +108,11 @@ W nowszych poziomy interfejsu API [tryb latarka](https://developer.android.com/r
 
 Włączanie lub wyłączanie tekstury do powierzchni aparatu zostanie utworzona `FlashMode` jednostki aparatu. 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) umożliwia włączanie i wyłączanie latarka i tryb Flash urządzenia.
 
-### <a name="uwptabuwp-specifics"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
 [Lampa](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) służy do wykrywania pierwszy lamp na odwrocie podkładki urządzenie, aby włączyć lub wyłączyć.
 

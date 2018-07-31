@@ -1,99 +1,100 @@
 ---
-title: Interfejsy API wyszukiwania w Xamarin.iOS
-description: W tym artykule omówiono, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu nowych aplikacji wyszukiwania interfejsów API dostarczonych przez system iOS 9.
+title: Interfejsy API wyszukiwania w rozszerzeniu Xamarin.iOS
+description: W tym artykule opisano, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu nowych aplikacji wyszukiwania interfejsów API dostarczonych przez system iOS 9.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/20/2017
+ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788179"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351655"
 ---
-# <a name="search-apis-in-xamarinios"></a>Interfejsy API wyszukiwania w Xamarin.iOS
+# <a name="search-apis-in-xamarinios"></a>Interfejsy API wyszukiwania w rozszerzeniu Xamarin.iOS
 
-_W tym artykule omówiono, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API wyszukiwania aplikacji, które zostały udostępnione przez system iOS 9._
+_W tym artykule opisano, aby umożliwić użytkownikom wyszukiwanie informacji i funkcji w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API wyszukiwania aplikacji, które zostały dostarczone przez system iOS 9._
 
-Wyszukiwanie została rozszerzona w systemie iOS 9, aby zapewnić doskonałe nowe sposoby na dostęp do informacji i funkcji w aplikacji platformy Xamarin.iOS. Przy użyciu nowych interfejsów API aplikacji wyszukiwania, zawartość aplikacji jest nawiązywane za pośrednictwem Spotlight oraz Safari wyniki wyszukiwania, przekazaniem i używanie programu Siri przypomnienia i sugestie dotyczące wyszukiwania. Dzięki temu użytkownicy mogą szybko uzyskać dostęp do działań i informacji głęboko w aplikacji.
+Wyszukiwania została rozszerzona w systemie iOS 9, aby zapewnić doskonałe nowe sposoby dostępu do informacji i funkcji w aplikacji platformy Xamarin.iOS. Przy użyciu nowych interfejsów API wyszukiwania aplikacji, zawartość aplikacji składa się można wyszukiwać za pośrednictwem funkcji w centrum uwagi oraz Safari wyników wyszukiwania, przekazywanie i przypomnienia Siri i sugestie. Dzięki temu użytkownicy mogą szybko uzyskać dostęp do działań i informacje szczegółowe w aplikacji.
 
-Ponadto nowe interfejsy API wyszukiwania ułatwiają integrowanie wyszukiwania w aplikacji bez obsługi wdrożenia poprzedniego wyszukiwania. W związku z tym Apple oświadczeń. zazwyczaj zajmuje kilka godzin, aby aplikacja systemu iOS 9 zawartość ogólnie można wyszukiwać w wyszukiwaniu aplikacji.
+Ponadto nowe interfejsy API wyszukiwania ułatwiają integrowanie wyszukiwania w aplikacji bez wcześniejszego wykonania wyszukiwania. W związku z tym Apple oświadczeń, zazwyczaj zajmuje kilka godzin, aby zawartość aplikacji systemu iOS 9 powszechnie można wyszukiwać za pomocą wyszukiwania aplikacji.
 
-[![](images/intro01.png "Oto przykład zawartości aplikacji systemu iOS 9 powszechnie wyszukiwanie przy użyciu aplikacji wyszukiwania")](images/intro01.png#lightbox)
+[![](images/intro01.png "Przykładem powszechnie można wyszukiwać za pomocą wyszukiwania aplikacji zawartości aplikacji systemu iOS 9")](images/intro01.png#lightbox)
 
-Wyszukiwanie aplikacji składa się z trzech osobnych interfejsów API:
+Wyszukiwania aplikacji składa się z trzech oddzielnych interfejsów API:
 
-1. [**NSUserActivity** ](nsuseractivity.md) — jest to rozszerzenie interfejsu API przekazaniem Apple publikowanych w systemie iOS 8. Służy do upewnij przeszukiwanie historii interakcji aplikacji publiczne i prywatne) przez użytkownika.
+1. [**NSUserActivity** ](nsuseractivity.md) — jest to rozszerzenie przekazywanie Apple ogólnie dostępnych w systemie iOS 8 dla interfejsu API. Służy do Dodaj Historia interakcji aplikacji multimedialnej możliwość wyszukiwania publiczne i prywatne) przez użytkownika.
 
-2. [**Podstawowe Spotlight** ](corespotlight.md) -, dzięki czemu aplikacja do indeksowania zawartości będą widoczne w wynikach wyszukiwania. Działania takie jak bazy danych interfejsu API, której elementy mogą być dodawane i usuwane i jest najlepszym sposobem indeksu prywatną zawartość w aplikacji.
+2. [**Podstawowych funkcji Spotlight** ](corespotlight.md) — dzięki czemu aplikacja może indeksowania zawartości będą widoczne w wynikach wyszukiwania. To działa, takich jak bazy danych interfejsu API, gdzie elementy, które mogą być dodawane lub usuwane i jest najlepszym sposobem na indeks prywatnej zawartości w aplikacji.
 
-3. [**WebMarkup** ](web-markup.md) — dla aplikacji, które zapewniają dostęp do zawartości za pośrednictwem interfejsu sieci web (nie tylko z poziomu aplikacji). Zawartość sieci Web może być oznaczony specjalne łącza, który będzie przeszukiwana przez firmę Apple oraz podaj połączeń bezpośrednich do aplikacji na urządzeniu z systemem iOS 9 użytkownika.
+3. [**WebMarkup** ](web-markup.md) — dla aplikacji, które zapewniają dostęp do jego zawartości za pośrednictwem interfejsu sieci web (nie tylko z poziomu aplikacji). Zawartość sieci Web może być oznaczony specjalne łącza, zostaną przeszukane przez firmę Apple, która zapewnia tworzenie linku do aplikacji na urządzeniu z systemem iOS 9 użytkownika.
 
-## <a name="selecting-an-app-search-approach"></a>Wybieranie metody wyszukiwania aplikacji
+## <a name="selecting-an-app-search-approach"></a>Wybieranie podejścia wyszukiwania aplikacji
 
-Przy wyborze, które z tych metod, aby zaimplementować zależy od tego, typy współdziałania udostępnione przez aplikację i typu zawartości, który stanowi.
+Przy wyborze rozwiązania, które z tych metod w celu zaimplementowania zależy od tego, typy interakcji, dostarczone przez aplikację i typ zawartości, który stanowi.
 
 Skorzystaj z poniższych wskazówek:
 
-- [**NSUserActivity** ](nsuseractivity.md) — Użyj platforma, aby zapewnić możliwość wyszukiwania zawartości publiczne i prywatne i możliwość wyszukiwania punktów nawigacji w aplikacji.
+- [**NSUserActivity** ](nsuseractivity.md) — umożliwia ta struktura zapewnia możliwość wyszukiwania dla zawartości publicznej i prywatnej i możliwość wyszukiwania punktów nawigacji w aplikacji.
 
-- [**Podstawowe Spotlight** ](corespotlight.md) — Użyj tego framework, aby zapewnić możliwość wyszukiwania prywatnych danych przechowywanych na urządzeniu.
+- [**Podstawowych funkcji Spotlight** ](corespotlight.md) — umożliwia ta struktura zapewnia możliwość wyszukiwania dla prywatnych danych przechowywanych na urządzeniu.
 
-- [**Sieci Web znaczników** ](web-markup.md) — zapewnia możliwość wyszukiwania dla aplikacji, które stanowić jego zawartość nie tylko z poziomu aplikacji, ale także witryny sieci Web aplikacji za pomocą tej architektury.
+- [**Web Markup** ](web-markup.md) — umożliwia ta struktura zapewnia możliwość wyszukiwania dla aplikacji, są one ich zawartość nie tylko z poziomu aplikacji, ale również w witrynie aplikacji.
 
-Wyszukiwanie aplikacji podejścia są unikatowe i mogą być używane pojedynczo, jednak Apple zaprojektowane współdziałają ze sobą. Korzystając z więcej niż jednym z podejść do indeksu z określonym elementem, upewnij się, używać tego samego **identyfikator elementu** na każde podejście, więc osoba łączy pracy ze sobą.
+Wyszukiwanie aplikacji podejścia różnią się i mogą być używane pojedynczo, jednak Apple zaprojektowane do wspólnej pracy. Korzystając z więcej niż jedno z podejść do indeksowania określonego elementu, upewnij się, używać tego samego **identyfikator elementu** na każde podejście, więc tą osobą łączy pracy ze sobą.
 
-Użycie więcej niż jeden z nich nie tylko gwarantuje, że zawartość zostaną znalezione przez użytkownika końcowego, ale także pomoże nam poprawić klasyfikacji tego elementu z w ciągu wyszukiwania.
+Za pomocą więcej niż jedno z podejść nie tylko zapewnia, że zawartości zostaną znalezione przez użytkownika końcowego, ale także pomoże nam poprawić klasyfikacji Twojego elementu z w ramach wyszukiwania.
 
-Podczas procesu klasyfikacji w przezroczysty głównie do deweloperów, interakcji z użytkownikiem z danym elementem waga silnie po tym rangę (na przykład użytkownik Tynkowanie link).
-Zapewniając elementów rozbudowane, informacyjny, możesz upewnij się, że użytkownik będzie można enticed wchodzić w interakcje z zawartości, w związku z tym wywołaniem klasyfikacji.
+Podczas procesu klasyfikacji w przede wszystkim zrozumiałe dla dewelopera, interakcji z użytkownikiem z danym elementem zadowalająco uwzględni wagi intensywnie po tym rangi (na przykład użytkownik Tynkowanie link).
+Dostarczając rozbudowane, i elementy, można zagwarantować, czy użytkownik będzie można enticed do interakcji z zawartości, wywoływanie w związku z tym klasyfikacji.
 
 ## <a name="what-content-to-index"></a>Zawartość do indeksu
 
-Apple zawiera poniższe sugestie jakie zawartości i akcje zapewnienie indeksy wyszukiwania dla aplikacji:
+Apple zapewnia poniższe sugestie, jakie zawartość i akcje zapewnienie indeksy wyszukiwania dla twojej aplikacji:
 
- - Żadnej zawartości wyświetlać, tworzyć lub wyselekcjonowanych przez użytkownika, w Twojej aplikacji.
- - Nawigacji i funkcji w aplikacji.
- - Takie operacje, jak nowe wiadomości, zawartości lub innych typów elementów wyświetlanych przez aplikację, które ostatnio zostały pobrane na urządzeniu.
+ - Żadnej zawartości wyświetlać, tworzyć lub nadzorowane przez użytkownika z poziomu aplikacji.
+ - Punkty nawigacji i funkcji w aplikacji.
+ - Elementy, takie jak nowe wiadomości, zawartości lub innych rodzajów elementów wyświetlana przez aplikację, ostatnio pobrane na urządzenie.
 
 ## <a name="app-search-enhancements"></a>Ulepszenia wyszukiwania aplikacji
 
-Spotlight Core w systemie iOS 10 udostępnia kilka rozszerzeń takich jak do wyszukiwania aplikacji:
+Funkcja w centrum uwagi podstawowych w systemie iOS 10 zawiera kilka ulepszeń do wyszukiwania aplikacji, takich jak:
 
-- **Popularne z Linkiem bezpośrednim Crowdsourced (o prywatności różnicowa)** — zapewnia sposób promowania zawartość aplikacji z linkiem bezpośrednim w wynikach wyszukiwania.
-- **Wyszukiwanie w aplikacji** — Użyj nowych `CSSearchQuery` klasy, aby zapewnić możliwość wyszukiwania uwagi w aplikacji podobnie jak działają aplikacje poczty, wiadomości i notatki.
-- **Wyszukaj kontynuacji** — umożliwia użytkownikowi rozpocząć wyszukiwanie Spotlight lub Safari, a następnie otwórz aplikację i kontynuować tego wyszukiwania.
-- **Wizualizacja wyników weryfikacji** -firmy Apple [aplikacji wyszukiwania interfejsu API sprawdzania poprawności narzędzie](https://search.developer.apple.com/appsearch-validation-tool) podczas preforming testy są obecnie wyświetlane wizualną reprezentację znaczników witryny sieci Web, a następnie połączenie bezpośrednie.
-- **Komunikat aplikacji do udostępniania obrazu** — umożliwia popularnych obrazów w aplikacji dostępne w celu udostępniania w komunikatach (za pośrednictwem rozszerzenia aplikacji wiadomości) do jego wyświetlenia na wyszukiwanie Spotlight.
+- **Popularność z Linkiem bezpośrednim dodawanych (z różnicowego prywatność)** — umożliwia podwyższenie poziomu aplikacja z linkiem bezpośrednim zawartość w wynikach wyszukiwania.
+- **Wyszukiwanie w aplikacji** — Użyj nowych `CSSearchQuery` Aby klasa zapewniała podobne do działania aplikacji wiadomości E-mail, wiadomości i informacje o możliwości wyszukiwania funkcji Spotlight w aplikację.
+- **Wyszukaj kontynuacji** — umożliwia użytkownikowi rozpoczęcie wyszukiwania w centrum uwagi lub przeglądarki Safari, a następnie otwórz aplikację i kontynuować tego wyszukiwania.
+- **Wizualizacja wyników weryfikacji** -firmy Apple [narzędzia sprawdzającego poprawność interfejsu API wyszukiwania w aplikacji](https://search.developer.apple.com/appsearch-validation-tool) teraz wyświetla wizualną reprezentację witryny sieci Web markup i łączenie głębokie, gdy preforming testów.
+- **Komunikat udostępniania obrazów aplikacji** — umożliwia popularnych obrazów w aplikacji przewidziane udostępniania w wiadomościach (za pośrednictwem rozszerzenia aplikacji wiadomości) są wyświetlane w wynikach wyszukiwania funkcji Spotlight.
 
-Aby dowiedzieć się więcej, zobacz nasze [aplikacji wyszukiwania ulepszenia](~/ios/platform/search/app-search-enhancements.md) przewodnik.
+Aby dowiedzieć się więcej, odwiedź nasz [ulepszenia wyszukiwania aplikacji](~/ios/platform/search/app-search-enhancements.md) przewodnik.
 
-### <a name="proactive-suggestions"></a>Sugestie aktywne
+### <a name="proactive-suggestions"></a>Sugestie proaktywne
 
-iOS 10 przedstawia nowe sposoby pobudzenie engagement dla aplikacji dzięki systemowi aktywnego wyświetlane przydatne informacje automatycznie dla użytkownika w odpowiednim czasie. Tak jak w przypadku systemu iOS 9 podać możliwość dodawania wyszukiwania bezpośrednich do aplikacji przy użyciu Spotlight, przekazaniem i sugestie Siri z systemem iOS 10 aplikacji mogą uwidaczniać funkcje, które są widoczne dla użytkownika przez system z w następujących lokalizacjach:
+System iOS 10 przedstawia informacje o nowych sposobów opracowuje engagement do aplikacji, umożliwiając systemowi aktywnie wyświetlane przydatne informacje automatycznie dla użytkownika w odpowiednim czasie. Podobnie jak z systemem iOS 9, pod warunkiem możliwość dodawania głębokie wyszukiwanie do aplikacji przy użyciu funkcji Spotlight, przekazywanie i sugestie Siri z systemem iOS 10 aplikacji może narazić funkcje, które można przedstawić użytkownikowi przez system z w następujących lokalizacjach:
 
 - Przełącznik aplikacji
-- Ekran blokady
+- Na ekranie blokady
 - CarPlay
 - Mapy
-- Używanie programu Siri interakcji
+- Interakcje Siri
 - Sugestie QuickType 
 
-Aplikacja udostępnia tę funkcję do systemu przy użyciu kolekcji technologii, takich jak [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), znaczników sieci web, Core Spotlight, MapKit, Media Player i UIKit.
+Aplikacja ujawnia funkcjonalność systemu, przy użyciu kolekcji technologii, takich jak [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), język znacznikowy sieci web, podstawowe w centrum uwagi, strukturze MapKit, usługa Media Player i UIKit.
 
-Aby dowiedzieć się więcej, zobacz nasze [aktywnego sugestie](~/ios/platform/search/proactive-suggestions.md) przewodnik.
+Aby dowiedzieć się więcej, odwiedź nasz [sugestie proaktywne](~/ios/platform/search/proactive-suggestions.md) przewodnik.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule pokrywającego nowe funkcje interfejsu API Search tego systemu iOS 9 udostępnia dla aplikacji platformy Xamarin.iOS. Ją [NSUserActivity](nsuseractivity.md), [Core Spotlight](corespotlight.md) i [znaczników sieci Web](web-markup.md) metody indeksowania zawartości. Zakończeniu krótkie omówienie stosowania podejścia podanego i jakie typy zawartości, powinny być indeksowane.
+W tym artykule zawiera opisano nowe funkcje interfejsu API wyszukiwania w tym z systemem iOS 9 udostępnia dla aplikacji platformy Xamarin.iOS. Ją [NSUserActivity](nsuseractivity.md), [podstawowych funkcji Spotlight](corespotlight.md) i [Web Markup](web-markup.md) metody indeksowania zawartości. Zakończeniu krótkie omówienie, kiedy należy użyć metody podanym wyszukiwaniem i jakie typy zawartości, powinny być indeksowane.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przykłady z systemem iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
+- [Przykłady dla systemu iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
 - [System iOS 9 dla deweloperów](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Przewodnik programowania w języku wyszukiwania aplikacji](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [Przewodnik programowania w wyszukiwania aplikacji](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

@@ -1,27 +1,28 @@
 ---
-title: Backgrounding w Xamarin.iOS
-description: Tło przetwarzania lub backgrounding jest proces umożliwienie aplikacji wykonać zadania w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. W tym przewodniku stanowi wprowadzenie do przetwarzania w systemie iOS w tle.
+title: Uruchamianie procesów w tle w rozszerzeniu Xamarin.iOS
+description: Tło przetwarzania lub uruchamianie procesów w tle polega na umożliwieniu aplikacji wykonywania zadań w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. Ten przewodnik stanowi wprowadzenie do przetwarzania w systemie iOS w tle.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b22f3ef3276129f7f46c23cc1d06666f151f5ac4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: 73344b790bf6d4719d9a92cfa9146578dffe04e9
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783545"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350771"
 ---
-# <a name="backgrounding-in-xamarinios"></a>Backgrounding w Xamarin.iOS
+# <a name="backgrounding-in-xamarinios"></a>Uruchamianie procesów w tle w rozszerzeniu Xamarin.iOS
 
-_Tło przetwarzania lub backgrounding jest proces umożliwienie aplikacji wykonać zadania w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. W tym przewodniku stanowi wprowadzenie do przetwarzania w systemie iOS w tle._
+_Tło przetwarzania lub uruchamianie procesów w tle polega na umożliwieniu aplikacji wykonywania zadań w tle, gdy inna aplikacja jest uruchomiona na pierwszym planie. Ten przewodnik stanowi wprowadzenie do przetwarzania w systemie iOS w tle._
 
-Backgrounding w aplikacjach mobilnych zasadniczo różni się od tradycyjnych pojęcie wielozadaniowości na pulpicie. Komputerach stacjonarnych mają różne zasoby dostępne dla aplikacji, w tym nieruchomości ekranu, moc i pamięci. Aplikacje są w stanie side-by-side pozostają wydajność i można go użyć. Na urządzeniu przenośnym zasoby są bardziej ograniczone. Jest trudne wyświetlić więcej niż jedną aplikację na małej ekranu, a z kilku aplikacji pełną prędkością czy wyczerpania baterii. Backgrounding jest stałą kompromis między dając aplikacji zasobów, aby uruchomić zadania w tle, które wymagają one również przeprowadzenie i zachowanie reakcji aplikacji foregrounded i urządzenia. Zarówno dla systemu iOS i Android mają postanowienia dotyczące backgrounding, ale ich obsługi w bardzo różne sposoby.
+Uruchamianie procesów w tle w aplikacjach mobilnych różni się zasadniczo od tradycyjnych pojęcia wielowątkowości na pulpicie. Komputerach stacjonarnych mają różne zasoby dostępne dla aplikacji, w tym powierzchnię ekranu, moc i pamięci. Aplikacje to możliwość uruchamiania side-by-side i pozostają wydajne i można używać. Na urządzeniu przenośnym zasoby są bardziej ograniczone. Jest trudne wyświetlić więcej niż jedną aplikację na małym ekranie, a korzystający z kilku aplikacji działać z pełną prędkością będzie wyczerpania baterii. Uruchamianie procesów w tle jest stałe kompromis między dając aplikacji zasobów, aby uruchomić zadania w tle, których potrzebują do wykonania oraz i utrzymywanie foregrounded aplikacji i urządzenie dynamiczne. Systemów iOS i Android mają postanowienia dotyczące uruchamianie procesów w tle, ale ich obsługa na różne sposoby.
 
-W systemie iOS backgrounding jest rozpoznawana jako stan aplikacji, a aplikacje zostaną przeniesione do i stan tła w zależności od zachowania użytkownika i aplikacji. iOS oferuje również kilka opcji dołączenie aplikacji do uruchamiania w tle, w tym prosząc OS czas do ukończenia ważnym zadaniem, działających jako typ aplikacji konieczne tła, i odświeżanie aplikacji zawartości na wyznaczonych odstępach czasu.
+W systemie iOS uruchamianie procesów w tle jest rozpoznawana jako stan aplikacji, a aplikacje zostaną przeniesione i stan tła w zależności od zachowania użytkownika i aplikacji. dla systemu iOS również oferuje kilka opcji dołączenie aplikacji do uruchamiania w tle, w tym prosząc systemu operacyjnego przez czas w celu wykonania ważne zadania, działające jako typ aplikacji konieczne tła, a odświeżenie zawartości aplikacji na określone odstępach czasu.
 
-W tym przewodniku i towarzyszące wskazówki zamierzamy Dowiedz się, jak wykonać zadania aplikacji w tle. Firma Microsoft będzie obejmować podstawowych pojęć i najlepsze rozwiązania w zakresie, a następnie postępuj przez proces tworzenia aplikacji rzeczywistych, który odbiera aktualizacje lokalizacji w tle.
+W tym przewodniku i towarzyszący wskazówki dotyczące zamierzamy Dowiedz się, jak wykonywać zadania aplikacji w tle. Firma Microsoft będzie obejmować kluczowe założenia i najlepsze rozwiązania, a następnie kroku proces tworzenia aplikacji świata rzeczywistego, który odbiera aktualizacje lokalizacji w tle.
 
 ## <a name="contents"></a>Spis treści
 
@@ -33,14 +34,14 @@ W tym przewodniku i towarzyszące wskazówki zamierzamy Dowiedz się, jak wykona
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku wprowadzono różne sposoby podczas przetwarzania w tle w systemie iOS. Firma Microsoft objęte Stany aplikacji systemu iOS i zbadane roli backgrounding pełni w cyklu życia aplikacji dla systemu iOS. Ponadto dowiedzieliśmy się, jak firma Microsoft może się zarejestrować poszczególne zadania lub całej aplikacji do działania w tle w systemie iOS. Na koniec mamy wzmocnione naszych zrozumienia backgrounding w systemie iOS przez utworzenie aplikacji, które wykonują aktualizacje w tle.
+W tym przewodniku wprowadziliśmy różne sposoby wykonywania przetwarzania w tle w systemie iOS. Firma Microsoft objętych Stany aplikacji systemu iOS i zbadać rolę odgrywa w całym cyklu życia aplikacji dla systemu iOS uruchamianie procesów w tle. Ponadto dowiedzieliśmy się, jak firma Microsoft może zarejestrować poszczególne zadania i całej aplikacji do działania w tle w systemie iOS. Na koniec mamy wzmocnione zrozumienie uruchamianie procesów w tle w systemie iOS, tworząc aplikacje, które wykonują aktualizacje w tle.
 
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Backgrounding w systemie Android](~/android/app-fundamentals/services/index.md)
+- [Uruchamianie procesów w tle w systemie Android](~/android/app-fundamentals/services/index.md)
 - [LifecycleDemo (przykład)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
-- [W lokalizacji (przykład)](https://developer.xamarin.com/samples/monotouch/Location/)
+- [Lokalizacja (przykład)](https://developer.xamarin.com/samples/monotouch/Location/)
 - [Proste transferu w tle (przykład)](https://developer.xamarin.com/samples/monotouch/SimpleBackgroundTransfer/)
-- [iOS wykonywania tła](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)
+- [Wykonywanie w tle systemu iOS](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)

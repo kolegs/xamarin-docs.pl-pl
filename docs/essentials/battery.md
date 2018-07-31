@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855058"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353457"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: baterii
 
@@ -29,7 +29,7 @@ Aby uzyskać dostęp do **baterii** następujące ustawienia określone platform
 Otwórz **AssemblyInfo.cs** plik **właściwości** folderze i Dodaj:
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 LUB zaktualizuj Manifest systemu Android:
@@ -37,10 +37,10 @@ LUB zaktualizuj Manifest systemu Android:
 Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następujący kod wewnątrz **manifestu** węzła.
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **baterii** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy projekt Android i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **baterii** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ Nie różnice dotyczące platform.
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * Urządzenie musi służyć do testowania interfejsów API. 
-* Tylko zwróci `Ac` lub `Battery` dla `PowerSource`. 
+* Tylko zwróci `AC` lub `Battery` dla `PowerSource`.
 * Nie można anulować wibracje.
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-* Tylko zwróci `Ac` lub `Battery` dla `PowerSource`. 
+* Tylko zwróci `AC` lub `Battery` dla `PowerSource`.
 
 -----
 

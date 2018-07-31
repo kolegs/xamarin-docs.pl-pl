@@ -6,13 +6,13 @@ ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/23/2018
-ms.openlocfilehash: 762df7322607588344d570830dafc745a89ea165
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.date: 07/27/2018
+ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212007"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351567"
 ---
 # <a name="platform-features"></a>Funkcje platformy
 
@@ -45,6 +45,10 @@ Android 3.0 wprowadzono fragmentów, przedstawiający sposób obsługi bardziej 
 
 Ten przewodnik omówi, jak obsługuje system Android 6.0 _łączenia aplikacji_, to technika, który umożliwia aplikacji mobilnych odpowiedzieć na adresy URL w witrynach sieci Web. Przedstawimy sposób implementacji łączenia aplikacji w aplikacji systemu Android 6.0 i sposobie konfigurowania witryny sieci Web, aby udzielić uprawnień do aplikacji mobilnej do obsługi połączeń aplikacji w domenie.
 
+
+##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[P dla systemu android (wersja zapoznawcza)](~/android/platform/android-p.md)
+
+Ten artykuł zawiera omówienie nowych funkcji w systemie Android P (wersja zapoznawcza), omówiono sposoby przygotowania Xamarin.Android do tworzenia aplikacji dla systemu Android P i zawiera przykładowy kod, który ilustruje sposób użycia najważniejsze funkcje P dla systemu Android w aplikacji platformy Xamarin.Android.
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)

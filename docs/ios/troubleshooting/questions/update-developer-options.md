@@ -1,24 +1,25 @@
 ---
-title: Jak włączyć opcje dewelopera po zaktualizowaniu systemu iOS
+title: Jak włączyć opcje dewelopera po uaktualnieniu systemu iOS
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F38BD21E-0C21-43FF-80A6-BB4A88DB88A5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9eb25676cc4a3a0679d6a02fc64fef5632f76e33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 80a705f64a1079ced204b677715f5566c410fd36
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30775487"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350878"
 ---
-# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Jak włączyć opcje dewelopera po zaktualizowaniu systemu iOS
+# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Jak włączyć opcje dewelopera po uaktualnieniu systemu iOS
 
-Usterki dla systemu iOS może spowodować opcje dewelopera zniknąć po zaktualizowaniu wersje systemu iOS, to zaobserwowano podczas przełączania do iOS 8.x. Te opcje można reenabled następujące czynności:
+Usterki z systemem iOS, może spowodować, że opcje dewelopera do zniknąć po zaktualizowaniu wersji systemu iOS, dzieje się tak podczas przełączania do systemu iOS 8.x. Te opcje można reenabled następujące czynności:
 
-1. Podłącz urządzenie z systemem iOS do komputera Mac programowanie.
-2. Uruchom środowisko Xcode.
-3. Otwórz **okna > urządzenia** & Wybierz urządzenia.
-4. Poczekaj, aż Xcode zakończyć kopiowanie symboli, a następnie sprawdź Settings.app urządzenia do ustawień dewelopera.
-5. Ponownego uruchomienia urządzenia.
+1. Podłącz urządzenie z systemem iOS do komputera deweloperskiego Mac.
+2. Uruchom program Xcode.
+3. Otwórz **okna > urządzenia** & Wybierz swoje urządzenie.
+4. Poczekaj na zakończenie kopiowania symbole w środowisku Xcode, a następnie sprawdź Settings.app urządzenia dla ustawień dla deweloperów.
+5. Ponowne uruchomienie urządzenia.

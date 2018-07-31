@@ -6,13 +6,13 @@ ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/13/2018
-ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.date: 07/30/2018
+ms.openlocfilehash: d48796b3c62fc342bd86f2d58e74c5f1710174bb
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038394"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360841"
 ---
 # <a name="a-basic-recyclerview-example"></a>Podstawowy przykład obiektu RecyclerView
 
@@ -368,7 +368,15 @@ W przypadku ten kod jest skompilowany i uruchomienia, tworzy podstawowe zdjęcia
 
 [![Dwa zrzuty ekranu, wyświetlania aplikacji za pomocą obszaru poziomego przewijania kart zdjęcie zdjęcia](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
+Jeśli cieni nie są rysowania (jak pokazano na powyższym zrzucie ekranu), Edytuj **Properties/AndroidManifest.xml** i dodaj następujące ustawienie atrybutu, aby `<application>` elementu:
+
+```xml
+android:hardwareAccelerated="true"
+```
+
 To podstawowa aplikacja obsługuje tylko przeglądania albumu. Nie będzie reagować na zdarzenia elementu dotyku, a nie obsługuje zmiany w danych bazowych. Ta funkcja zostanie dodany do [rozszerzanie przykład obiektu RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
+
+
 
 
 ### <a name="changing-the-layoutmanager"></a>Zmiana LayoutManager

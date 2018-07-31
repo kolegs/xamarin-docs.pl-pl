@@ -5,12 +5,12 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ba822870edafce44140caa66b01f4da242fb7779
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815664"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353616"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: zamiana tekstu na mowę
 
@@ -38,7 +38,7 @@ public async Task SpeakNowDefaultSettings()
 
 public void SpeakNowDefaultSettings2()
 {
-    TextToSpeech.SpeakAsync("Hello World").ContinueWith((t) => 
+    TextToSpeech.SpeakAsync("Hello World").ContinueWith((t) =>
     {
         // Logic that will run after utterance finishes.
 
@@ -46,7 +46,8 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Ta metoda przyjmuje opcjonalny token anulowania można zatrzymać wypowiedź po uruchomieniu. 
+Ta metoda przyjmuje opcjonalny `CancellationToken` przestanie wypowiedź po jej uruchomieniu.
+
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +67,7 @@ public void CancelSpeech()
 }
 ```
 
-Automatycznie zamiany tekstu na mowę może umieścić w kolejce żądań mowy z tym samym wątku. 
+Automatycznie zamiany tekstu na mowę może umieścić w kolejce żądań mowy z tym samym wątku.
 
 ```csharp
 bool isBusy = false;

@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947312"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353844"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: przyspieszeniomierza
 
@@ -33,7 +33,7 @@ Funkcja przyspieszeniomierza działa przez wywołanie metody `Start` i `Stop` me
 public class AccelerometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public AccelerometerTest()
     {
@@ -41,7 +41,7 @@ public class AccelerometerTest
         Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
@@ -81,7 +81,7 @@ Przykłady:
 
 * Gdy urządzenie znajduje się na tabelę, wartość przyspieszenia jest +1.00 G lub (+ równa 9,81 m/s ^ 2), wartość przyspieszenia urządzenia, które odpowiadają (0, m/s ^ 2) minus siła grawitacji (-równa 9,81 m/s ^ 2) i jest to znormalizowane jak G.
 
-* Gdy urządzenie znajduje się na tabelę i jest przesunięte sky Dzięki przyspieszeniu m/s ^ 2, wartość przyspieszenia jest równa 9.81 +, co odpowiada wartość przyspieszenia urządzenia (+ m/s ^ 2) minus siła grawitacji (-równa 9,81 m/s ^ 2) i jest to znormalizowane w G. 
+* Gdy urządzenie znajduje się na tabelę i jest przesunięte sky Dzięki przyspieszeniu m/s ^ 2, wartość przyspieszenia jest równa 9.81 +, co odpowiada wartość przyspieszenia urządzenia (+ m/s ^ 2) minus siła grawitacji (-równa 9,81 m/s ^ 2) i jest to znormalizowane w G.
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

@@ -1,22 +1,23 @@
 ---
-title: Znane problemy i rozwiązania
-description: W tym dokumencie opisano znane problemy i rozwiązania dla skoroszytów Xamarin. Zawarto informacje CultureInfo problemy, problemy JSON i inne.
+title: Znane problemy i ich rozwiązania
+description: W tym dokumencie opisano znane problemy i rozwiązania dla środowiska Xamarin Workbooks. Omówiono w nim problemów CultureInfo, problemy z formatu JSON i nie tylko.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/30/2017
+ms.openlocfilehash: d362698d2844ae6d96bba4929d509f5373742578
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794036"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350998"
 ---
-# <a name="known-issues--workarounds"></a>Znane problemy i rozwiązania
+# <a name="known-issues--workarounds"></a>Znane problemy i ich rozwiązania
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>Trwałość CultureInfo w komórkach
+## <a name="persistence-of-cultureinfo-across-cells"></a>Stan trwały CultureInfo w komórkach
 
-Ustawienie `System.Threading.CurrentThread.CurrentCulture` lub `System.Globalization.CultureInfo.CurrentCulture` nie zachowany po komórek skoroszytu na cele skoroszyty na podstawie Mono (Mac, iOS i Android) z powodu [usterkę w jego Mono `AppContext.SetSwitch` ] [ appcontext-bug] implementacji .
+Ustawienie `System.Threading.CurrentThread.CurrentCulture` lub `System.Globalization.CultureInfo.CurrentCulture` nie ulegają zmianie komórek skoroszytu na cele platformy Mono na podstawie skoroszytów (Mac, iOS i Android) ze względu na [usterkę w rozwiązaniu w Mono `AppContext.SetSwitch` ] [ appcontext-bug] implementacji .
 
 ### <a name="workarounds"></a>Rozwiązania
 
@@ -26,44 +27,44 @@ using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* Lub aktualizacji do skoroszytów 1.2.1 lub nowszej, który będzie przepisywania przypisania do `System.Threading.CurrentThread.CurrentCulture` i `System.Globalization.CultureInfo.CurrentCulture` do zapewnienia żądanego zachowania (Praca wokół Mono usterki).
+* Lub aktualizacji do skoroszytów 1.2.1 lub nowszej, który przepisze przypisania do `System.Threading.CurrentThread.CurrentCulture` i `System.Globalization.CultureInfo.CurrentCulture` zapewnienie żądane zachowanie (obejść Mono usterki).
 
-## <a name="unable-to-use-newtonsoftjson"></a>Nie można użyć Newtonsoft.Json
+## <a name="unable-to-use-newtonsoftjson"></a>Nie można użyć pakietu Newtonsoft.Json
 
 ### <a name="workaround"></a>Obejście
 
-* Aktualizacja ze skoroszytami 1.2.1, na których zostanie zainstalowany Newtonsoft.Json 9.0.1.
-  Skoroszyty 1.3, obecnie w kanału alfa obsługuje wersje 10 i nowszych.
+* Zaktualizuj skoroszyty 1.2.1, co spowoduje zainstalowanie pakietu Newtonsoft.Json 9.0.1.
+  Skoroszyty 1.3, obecnie w kanał alfa, obsługuje wersje, 10 i nowszych.
 
 ### <a name="details"></a>Szczegóły
 
-Newtonsoft.Json 10 został zwolniony, który upadku zależność Microsoft.CSharp, który powoduje konflikt ze skoroszytami wersji jest dostarczany do obsługi `dynamic`. To jest opisany w wersji zapoznawczej 1.3 skoroszytów, ale teraz opracowaliśmy obejścia tego problemu przez przypinania Newtonsoft.Json specjalnie do wersji 9.0.1.
+Newtonsoft.Json 10 został wydany który zaktualizowany zależność Microsoft.CSharp, który powoduje konflikt ze skoroszytami wersji, który jest dostarczany do obsługi `dynamic`. Ten problem jest rozwiązany w wersji zapoznawczej 1.3 skoroszyty, ale teraz ma współpracowaliśmy obejścia tego problemu przez przypinania Newtonsoft.Json specjalnie do wersji 9.0.1.
 
-Pakiety NuGet jawnie w zależności od Newtonsoft.Json 10 lub nowszej są obsługiwane tylko w skoroszytach 1.3 obecnie w kanału alfa.
+Pakiety NuGet jawnie w zależności od Newtonsoft.Json 10 lub nowszej są obsługiwane tylko w 1.3 skoroszyty obecnie w kanału alfa.
 
-## <a name="code-tooltips-are-blank"></a>Etykietki narzędzi kodu są puste
+## <a name="code-tooltips-are-blank"></a>Kod etykietki narzędzi są puste
 
-Brak [usterkę w edytorze Monaco] [ monaco-bug] w Safari/WebKit, który jest używany w aplikacji skoroszyty Mac, który powoduje renderowanie etykietki narzędzi kodu bez tekstu.
+Brak [usterkę w edytorze Monaco] [ monaco-bug] w przeglądarce Safari/aparatu WebKit, który jest używany w aplikacji skoroszyty dla komputerów Mac, który powoduje renderowanie etykietki narzędzi kodu bez tekstu.
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>Obejście
 
-* Kliknięcie na elemencie tooltip po jego wyświetleniu wymusi tekstu do renderowania.
+* Kliknięcie etykietki narzędzia, po jego wyświetleniu wymusi tekstu do renderowania.
 
 * Lub zaktualizuj ze skoroszytami 1.2.1 lub nowszej
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Moduły renderowania SkiaSharp Brak w 1.3 skoroszytów
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Skiasharp — programy renderujące brakuje w 1.3 skoroszytów
 
-Począwszy od 1.3 skoroszyty usunęliśmy SkiaSharp moduły renderowania, które firma Microsoft dostarczone w skoroszytach 0.99.0, na rzecz SkiaSharp dostarczanie programy renderujące samego, przy użyciu naszych [SDK](~/tools/workbooks/sdk/index.md).
+Począwszy od 1.3 skoroszyty usunęliśmy SkiaSharp programy renderujące, które firma Microsoft dostarczane w skoroszytach 0.99.0, na rzecz SkiaSharp, zapewniając programy renderujące, samego, przy użyciu naszego [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Obejście
 
-* Zaktualizuj SkiaSharp do najnowszej wersji w NuGet. W czasie zapisywania to 1.57.1.
+* Zaktualizuj SkiaSharp do najnowszej wersji w programie NuGet. W czasie pisania to 1.57.1.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Raportowanie błędów](~/tools/workbooks/install.md#reporting-bugs)
+- [Raportowania błędów](~/tools/workbooks/install.md#reporting-bugs)

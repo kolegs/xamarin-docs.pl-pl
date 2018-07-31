@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 530273543c6cb71038613c22fa4a6bfbde4928d7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 622689342dd961a63318a88f098dea4d1a60e277
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947260"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353870"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: wibracje
 
@@ -40,7 +40,7 @@ Otwórz **AndroidManifest.xml** plik **właściwości** folderze i Dodaj następ
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Lub kliknij prawym przyciskiem myszy nad projektem Anroid i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **VIBRATE** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
+Lub kliknij prawym przyciskiem myszy projekt Android i otwórz właściwości projektu. W obszarze **manifestu systemu Android** znaleźć **wymagane uprawnienia:** obszaru i wyboru **VIBRATE** uprawnień. Spowoduje to automatyczne zaktualizowanie **AndroidManifest.xml** pliku.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

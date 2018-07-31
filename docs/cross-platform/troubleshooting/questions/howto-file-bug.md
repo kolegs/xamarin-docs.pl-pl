@@ -1,68 +1,67 @@
 ---
-title: Kiedy i jak należy I pliku raport o usterce?
-description: W tym dokumencie opisano, kiedy, jak i gdzie do pliku raport o usterce. Umożliwia także raport o usterce, najlepsze rozwiązania dotyczące engineers, aby jak najlepiej włączyć zdiagnozowania problemu.
+title: Kiedy i w jaki sposób mogę powinien pliku raport o usterce?
+description: W tym dokumencie opisano, kiedy, gdzie i w jaki sposób na raport o usterce. Zapewnia również raport o usterce, najlepsze rozwiązania umożliwiające engineers, aby jak najlepiej zdiagnozować problem.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 08a782e9637442a43e9c63305ddf161403519169
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: b70fe29a79e099f1141c1295d907b48afaa2c3c7
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781946"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351609"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>Kiedy i jak należy I pliku raport o usterce?
+# <a name="when-and-how-should-i-file-a-bug-report"></a>Kiedy i w jaki sposób mogę powinien pliku raport o usterce?
 
+Zgłaszanie błędów w śledzenia usterek Bugzilla Xamarin tutaj: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all ](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all).
 
-Plik usterki w śledzenia usterek Bugzilla Xamarin w tym miejscu: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all ](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all).
+## <a name="file-a-bug-if"></a>Zgłoś usterkę, jeśli...
 
-## <a name="file-a-bug-if"></a>Plik usterki, jeśli...
-
-
-Masz zestaw kroków, które uważasz, że inżynierów Xamarin będzie można użyć do odtworzenia problemu, który jest spowodowany przez Xamarin.
+Masz zestaw kroków, które Twoim zdaniem inżynierów platformy Xamarin będzie można użyć do odtworzenia problemu, który jest spowodowany przez środowisko Xamarin.
 
 LUB
 
-Widoczne objawy ten problem, można opisać dokładnie, zwłaszcza, jeśli można również opisać pewnych okolicznościach dokładne związane z problemem. <sup> [[1]](#note-1)</sup>
+Wystarczy opisać widoczne objawy problemu, należy dokładnie, zwłaszcza, jeśli może również opisywać niektórych konkretnych okoliczności związane z problemem. <sup> [[1]](#note-1)</sup>
 
 
-## <a name="best-practices-to-help-xamarin-address-bugs-quickly-and-efficiently"></a>Najważniejsze wskazówki ułatwiające Xamarin adresu usterki szybkie i skuteczne
+## <a name="best-practices-to-help-xamarin-address-bugs-quickly-and-efficiently"></a>Najważniejsze wskazówki ułatwiające Xamarin adres błędy szybciej i wydajniej
 
 
-1. <a name="ref-1" />Wyszukiwanie [Bugzilla](https://bugzilla.xamarin.com/query.cgi?format=specific&amp;bug_status=__all__) i sieci web dla istniejących usterek raportów lub sugestie dotyczące użycia, które może rozwiązać problem bezpośrednio.<sup> [[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
+1. <a name="ref-1" />Wyszukiwanie [Bugzilla](https://bugzilla.xamarin.com/query.cgi?format=specific&amp;bug_status=__all__) i sieci web dla istniejących usterek, raportów lub sugestie użycia, które mogą rozwiązać problem bezpośrednio.<sup> [[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
 
-1. <a name="ref-2" />Postępuj zgodnie z [usterki zapisywania wskazówki](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html) opisujący problem wyraźnie i zwięzłym, jak to możliwe, łącznie z opisem co się stało i został prawidłowo niepożądane.
+1. <a name="ref-2" />Postępuj zgodnie z [Błąd zapisywania wskazówki](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html) opisujący problem wyraźnie i zwięźle, jak to możliwe, łącznie z opisem co się stało i została prawidłowo do wykonania.
 
-1. <a name="ref-3" />Obejmują wszystkie dane śledzenia stosu istotne, tekst komunikatu o błędzie lub wszystkie dzienniki awarii. <sup>[[4]](#note-4)</sup>
+1. <a name="ref-3" />Obejmują wszystkie ślady stosu istotne, tekst komunikatu o błędzie lub wszystkie dzienniki awarii. <sup>[[4]](#note-4)</sup>
 
-1. <a name="ref-4" />Zanotuj wszelkie istotne komunikaty o błędach w załączników zrzut ekranu jako zwykły tekst zbyt.
+1. <a name="ref-4" />Zapisz wszystkie ważne komunikaty o błędach w zrzucie ekranu załączniki jako zwykły tekst zbyt.
 
-1. <a name="ref-5" />To mały, niezależny przypadek testowy, która powoduje wygenerowanie błędu z jako mały kod, jak to możliwe.  Jeśli nie można odtworzyć problem z całkiem nowego projektu (utworzone przy użyciu jednej z wbudowanych szablonów), proszę zip projekt, który demonstruje problemu i dołączenie go do raportu o usterce.  Przykładowy projekt upewnij się, wystarczy przed dołączeniem go. <sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
+1. <a name="ref-5" />Obejmują małe, niezależne przypadek testowy, który powoduje wygenerowanie błędu przy użyciu niewielkiej ilości kodu, jak to możliwe.  Jeśli nie można odtworzyć problem z zupełnie nowym projektem (utworzone przy użyciu jednego z wbudowanych szablonów), proszę zip projektu, który pokazuje problem i dołączyć go do raportu o usterce.  Należy przykładowy projekt tak proste, jak to możliwe, przed dołączeniem go. <sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
 
-1. <a name="ref-6" />Opisz środowisko, w którym ten błąd napotkano, łącznie z systemu operacyjnego i [wersji programu Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md) i wszelkie zależności.
+1. <a name="ref-6" />Opisz środowisko, gdzie Napotkano błąd, w tym system operacyjny i [wersji programu Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md) oraz wszystkie zależności.
 
 ---
 
 ## <a name="additional-details"></a>Dodatkowe szczegóły
 
-1. <a name="note-1" />[*^*](#ref-1) W idealnym przypadku opis "widoczne objawy" Uwzględnij za mało informacji, aby innych klientów można potwierdzić, czy występuje ten sam problem (tego samego komunikaty o błędach, tym samym degradacji wydajności, tej samej śladu stosu z awarii, _itp._ ). "Konkretnych okoliczności" dobrym przykładem będzie Jeśli można powiedzieć wyglądać mniej więcej tak: "I zwykle problem 75 procent trafień czasu, ale zmiana ta rzecz następnie można uniknąć problem całkowicie". Inny przykład podobne "dokładne okoliczności" to, czy powrót do poprzedniej wersji programu Xamarin subskrypcji zatrzymuje problem.
+1. <a name="note-1" />[*^*](#ref-1) Najlepiej opis "widoczne objawy" powinien zawierać wystarczającą ilość szczegółów, dzięki czemu pozostali klienci powinni sprawdzić, czy są one widoczne ten sam problem (tego samego komunikaty o błędach, tym samym obniżenie wydajności, tym samym ślad stosu pochodzący z awarii, _itp._ ). "Konkretnych okoliczności", dobrym przykładem będzie jeśli mogą mówić mniej więcej tak: "zwykle osiągnę problem 75% czasu, ale zmiana to jedno następnie można uniknąć tego problemu całkowicie". Inny przykład podobne "dokładne okoliczności" jest, jeśli zmiany na starszą wersję do poprzedniej wersji programu Xamarin nie będzie możliwy problem.
 
-1. <a name="note-2" />[*^*](#ref-2) Jak można oczekiwać fragmentów tekstu błędu (lub dowolny tekst opisowy jednoznacznie) są zazwyczaj najlepszym terminy wyszukiwania. Jeśli istniejący raport błędów jest niekompletna, to Zapraszamy dodawanie szczegółów lub pliku nowy, lepiej usterek — raport.
+1. <a name="note-2" />[*^*](#ref-2) Jak można oczekiwać fragmenty tekstu błędu (lub inny tekst opisowy jednoznacznie) są zazwyczaj na najlepsze terminy wyszukiwania. Jeśli istniejący raport o usterce jest ukończona, zachęcamy do Dodaj szczegóły lub pliku nową, lepiej usterek — raport.
 
-1. <a name="note-3" />[*^*](#ref-3) Następne pytanie dobrej jest, czy ten sam problem został zgłoszony dla dowolnego języka Java, Objective-C lub Swift aplikacji. Jeśli tak, problem jest najprawdopodobniej część Android lub iOS sam zamiast część Xamarin.
+1. <a name="note-3" />[*^*](#ref-3) Innym dobrym pytaniem jest, czy ten sam problem został zgłoszony dla dowolnego języka Java, Objective-C lub Swift aplikacji. Jeśli tak, problem jest najprawdopodobniej częścią systemu Android lub iOS sam, a nie częścią platformy Xamarin.
 
-1. <a name="note-4" />[*^*](#ref-4) Kilka przykładów informacje obejmują:
+1. <a name="note-4" />[*^*](#ref-4) Kilka przykładów informacje do uwzględnienia:
 
-    1. Dla błędów występujących podczas kompilowania projektu, podaj pełną [danych wyjściowych kompilacji diagnostycznych](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output) na raport o usterce.
+    1. Dla błędów występujących podczas kompilowania projektu, należy podać pełną [dane wyjściowe kompilacji diagnostycznych](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output) na raport o usterce.
     
-    1. Błędów występujących podczas kompilowania lub debugowania projektu systemu iOS w programie Visual Studio, uruchom _Pomoc > Xamarin > Zip dzienniki_ po naciśnięcie błąd i obejmują wynikowy plik zip na raport o usterce.
+    1. Błędy występujące podczas kompilowania lub debugowania projektu systemu iOS w programie Visual Studio, uruchom _Pomoc > Xamarin > Zip dzienniki_ po osiągnięcia błędu oraz zawierać wynikowy plik zip na raport o usterce.
     
-    1. Dla wyjątków lub awarie w aplikacjach systemu Android i iOS, podaj odpowiednie "[debugowania dzienniki dla aplikacji platformy Xamarin.Android i Xamarin.iOS](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)."
+    1. Wyjątki lub awarie w aplikacjach systemu Android lub iOS, podaj odpowiednią "[debugowania dzienniki dla aplikacji platformy Xamarin.Android i Xamarin.iOS](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)."
 
-1. <a name="note-5" />[*^*](#ref-5) Jeśli to możliwe dla konkretnego problemu, co doskonałą opcją jest odtworzyć problem, dodając niewielkiej liczby plików z oryginalnego rozwiązania do zupełnie nowego rozwiązania. Zespół Xamarin często będą mogli do badania problemów, nawet w przypadku większych przypadków testowych (przy założeniu, że wyraźnie opisano kroki umożliwiające odtworzenie), ale umożliwiają łatwiejsze przypadków testowych najlepiej szansy szybkie rozwiązanie usterki.
+1. <a name="note-5" />[*^*](#ref-5) Jeśli to możliwe dla konkretnego problemu, jedną z opcji doskonałą jest odtworzyć problem, dodając niewielką liczbę plików z oryginalnego rozwiązania do zupełnie nowego rozwiązania. Zespół platformy Xamarin często będzie do badania problemów, nawet w przypadku większych przypadki testowe (przy założeniu, że wyraźnie opisano kroki prowadzące do odtworzenia), ale najlepiej szansy szybko rozwiązać błąd prostsze zapewniają przypadków testowych.
 
 
-1. <a name="note-6" />[*^*](#ref-6) Jeśli jest _nie_ możliwe do odtworzenia problemu przez dodanie małą liczbę plików do zupełnie nowego rozwiązania, następnie można zip w i dołączyć folder całego rozwiązania pełnej aplikacji. Usuń `bin`, `obj`, `Components`, i `packages` folderów Aby zip plik mniejszy. (IDE i proces kompilacji będzie zazwyczaj przywrócić lub ponownie Utwórz zawartość tych folderów zgodnie z potrzebami.) Można również usunąć tyle kodu i zasobów plików z projektu jak, tak długo, jak wynikowy rozwiązanie nadal pokazuje oryginalnego problemu.
+1. <a name="note-6" />[*^*](#ref-6) Jeśli jest _nie_ można odtworzyć problem, dodając niewielką liczbę plików do zupełnie nowego rozwiązania, następnie można zip i Dołącz folder całego rozwiązania dla swojej aplikacji pełny. Usuń `bin`, `obj`, `Components`, i `packages` foldery, aby wprowadzić zip plik mniejszy. (Środowiska IDE i procesem kompilacji będzie zazwyczaj przywracania lub odtworzyć zawartość tych folderów, zgodnie z potrzebami). Można również usunąć dowolną liczbę kodu i zasobów plików z projektu, jak chcesz, tak długo, jak długo wynikowy rozwiązanie nadal pokazuje oryginalnego problemu.
 

@@ -1,25 +1,26 @@
 ---
-title: Gdzie składniki są przechowywane na komputerze?
+title: Gdzie są przechowywane składniki na moim komputerze?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5EBB49EE-39E5-428B-866F-9FC1BB215B31
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: a53045a6179a26b30d824976d11fd2769a84811e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 4152c8ef7eeba3748d9244e27e48f3f9a2c0019b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919400"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350722"
 ---
-# <a name="where-are-the-components-stored-on-my-machine"></a>Gdzie składniki są przechowywane na komputerze?
+# <a name="where-are-the-components-stored-on-my-machine"></a>Gdzie są przechowywane składniki na moim komputerze?
 
-Podczas instalowania składników Xamarin do projektu aplikacji, pobiera umieszczone w dwóch miejscach:
+W celu instalowania składników platformy Xamarin w projekcie aplikacji, pobiera on umieszczony w dwóch miejscach:
 
-1. W folderze składników na poziomie głównym folderu rozwiązania. Usunięcie składnika z wszystkich projektów w rozwiązaniu, Pobierz zostanie usunięty z tego folderu, a także.
+1. W folderze składników na poziomie głównym folderu rozwiązania. Możesz usunąć składnik ze wszystkich projektów w rozwiązaniu, będą usuwane z tego folderu, a także.
 
-2. Kopia również jest przechowywana w następujących lokalizacjach:
-    - System Windows: `%LocalAppData%\Xamarin\Cache\Components`
+2. Kopia jest również przechowywana w następujących lokalizacjach:
+    - Windows: `%LocalAppData%\Xamarin\Cache\Components`
     - Mac: `~/Library/Caches/Xamarin/Components`
 
-Tak aby całkowicie usunąć składnika z systemu, usuń go z projektów lub rozwiązania i powyżej folderu pamięci podręcznej.
+Dlatego aby całkowicie usunąć składnik w systemie, usuń go z projektów/rozwiązań i folderu pamięci podręcznej powyżej.

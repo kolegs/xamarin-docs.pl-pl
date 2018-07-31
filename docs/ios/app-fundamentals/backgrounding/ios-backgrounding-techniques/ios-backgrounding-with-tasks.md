@@ -1,36 +1,37 @@
 ---
-title: iOS Backgrounding z zadaniami
-description: Ten dokument zawiera informacje dotyczące używania zadania w tle do wykonywania długotrwałych zadań, po aplikacji znajduje się w tle.
+title: iOS uruchamianie procesów w tle za pomocą zadań
+description: W tym dokumencie opisano, jak używać zadań w tle do wykonywania długotrwałych zadań, po umieszczeniu w tle aplikacji.
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a95ca128bc6de7b2adc75511a581f5d2779d9c06
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/18/2017
+ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784358"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351541"
 ---
-# <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding z zadaniami
+# <a name="ios-backgrounding-with-tasks"></a>iOS uruchamianie procesów w tle za pomocą zadań
 
-Najprostszym sposobem wykonania backgrounding w systemie iOS jest podział wymagań backgrounding na zadania i uruchom zadania w tle. Zadania są objęte ograniczeniami limit czasu i zwykle w systemie iOS 7 + pobrać około 600 sekund (10 minut) czas przetwarzania, gdy aplikacja zostanie przeniesiona do tła w systemie iOS 6 i mniejsza niż 10 minut.
+Najprostszym sposobem wykonania uruchamianie procesów w tle w systemie iOS jest podział wymagań dotyczących backgrounding na zadania i uruchamianie zadań w tle. Zadania są objęte ograniczeniami limitu czasu i zazwyczaj pobrać około 600 sekund (10 minut) czasu przetwarzania po aplikacji została przeniesiona do tła w systemie iOS 6 i mniej niż 10 minut w systemie iOS 7 +.
 
-Zadania w tle mogą być dzielone na trzy kategorie:
+Zadania w tle mogą być podzielone na trzy kategorie:
 
-1.  **Zadania tła palety** — wywołana w dowolnym miejscu aplikacji, gdzie masz zadania nie ma przerwania aplikacji należy wprowadzić w tle.
-1.  **Zadania DidEnterBackground** — wywołane podczas `DidEnterBackground` metody cyklem życia aplikacji w oczyszczania i zapisywania stanu.
-1.  **Transfery (iOS 7 +) w tle** -specjalny typ zadania w tle używane do przeprowadzania transferów sieci w systemie iOS 7. W przeciwieństwie do regularnych zadań transfery w tle nie ma wstępnie określoną limit czasu.
+1.  **Zadania w tle Safe** — wywoływany w dowolnym miejscu aplikacji, w którym masz zadania nie chcesz przerwane należy wprowadzić ją tła.
+1.  **Zadania DidEnterBackground** — wywoływany podczas `DidEnterBackground` metoda cyklu życia aplikacji ułatwiają czyszczenia oraz zapisywanie stanu.
+1.  **Transfery (system iOS 7 +) w tle** -specjalny rodzaj zadanie w tle używany do wykonywania transfery w sieci w systemie iOS 7. W odróżnieniu od typowych zadań transferów w tle nie ma ustalonej limitu czasu.
 
 
-Bezpieczne dla tła i `DidEnterBackground` zadania są bezpiecznie korzystać na zarówno iOS 6 lub iOS 7, przy czym niektóre niewielkie różnice. Umożliwia badanie tych dwóch typów zadań bardziej szczegółowo.
+Bezpieczne tła i `DidEnterBackground` zadania są bezpiecznie korzystać zarówno z systemem iOS 6, jak i dla systemu iOS 7, przy czym pewne niewielkie różnice. Teraz zbadać te dwa rodzaje zadań, które bardziej szczegółowo.
 
 ## <a name="creating-background-safe-tasks"></a>Tworzenie zadań tła palety
 
-Niektóre aplikacje zawiera zadania, które nie powinny zostać przerwane przez iOS powinien aplikacji zmiany stanu. Jednym ze sposobów ochrony tych zadań z zostanie przerwane jest je zarejestrować iOS jako długotrwałych zadań. Można używać tego wzorca dowolne miejsce w aplikacji których nie chcesz się, że zadanie zostanie przerwane powinien put użytkownika aplikacji w tle. Doskonałym kandydatem do tego wzorca będzie zadania, takie jak wysyłanie informacji o rejestracji nowego użytkownika z serwerem lub weryfikowanie informacji o logowaniu.
+Niektóre aplikacje zawiera zadania, które nie powinny zostać przerwane przez system iOS należy ją zmienić stan. Jednym ze sposobów, aby chronić te zadania są przerwane jest zarejestrowanie iOS jako długotrwałych zadań. Użytkownik może używać tego wzorca dowolne miejsce w aplikacji gdzie nie chcesz, że zadanie jest przerwane powinien put użytkownika aplikacji w tle. Doskonałym kandydatem do ten wzorzec może być zadania, takie jak wysyłanie informacji o rejestracji nowego użytkownika do serwera lub weryfikowanie logowania.
 
-Poniższy fragment kodu przedstawia rejestrowanie wykonywanie zadania w tle:
+Poniższy fragment kodu przedstawia, rejestrowanie wykonywanie zadania w tle:
 
 ```csharp
 nint taskID = UIApplication.SharedApplication.BeginBackgroundTask( () => {});
@@ -41,17 +42,17 @@ FinishLongRunningTask(taskID);
 UIApplication.SharedApplication.EndBackgroundTask(taskID);
 ```
 
-Proces rejestracji pary zadań z unikatowym identyfikatorem `taskID`i jest zawijana w odpowiadającym `BeginBackgroundTask` i `EndBackgroundTask` wywołania. Aby wygenerować identyfikator, możemy wywoływania `BeginBackgroundTask` metoda `UIApplication` obiektu, a następnie uruchom długotrwałe zadanie, zazwyczaj w nowym wątku. Po zakończeniu zadania nazywamy `EndBackgroundTask` i przebiegu w tym samym identyfikatorze. Jest to ważne, ponieważ iOS spowoduje przerwanie aplikacji, jeśli `BeginBackgroundTask` wywołania nie ma odpowiadającego mu `EndBackgroundTask`.
+Proces rejestracji pary zadań o unikatowym identyfikatorze `taskID`i otacza go w dopasowywanie `BeginBackgroundTask` i `EndBackgroundTask` wywołania. Aby wygenerować identyfikator, firma Microsoft wywołania `BeginBackgroundTask` metody `UIApplication` obiektu, a następnie uruchom długotrwałe zadanie, zazwyczaj w nowym wątku. Po zakończeniu zadania nazywamy `EndBackgroundTask` i przekaż w ten sam identyfikator. Jest to ważne, ponieważ dla systemu iOS zostanie zakończone jej `BeginBackgroundTask` wywołania nie ma pasującego `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> Bezpieczne tła zadań można uruchamiać na wątku głównego lub wątku w tle, w zależności od potrzeb aplikacji.
+> Zadania w tle safe można uruchomić w głównym wątku lub wątku w tle, w zależności od potrzeb aplikacji.
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>Wykonywanie zadań podczas DidEnterBackground
 
-Oprócz tworzenia długotrwałe zadanie tła palety, rejestracji można rozpocząć wyłączyć zadania, ponieważ aplikacja jest jest umieszczany w tle. iOS zapewnia metoda zdarzeń w *AppDelegate* klasy o nazwie `DidEnterBackground` który może służyć do Zapisz stan aplikacji, Zapisz dane użytkownika i szyfrowania poufnej zawartości, zanim aplikacja przechodzi w tle. Aplikacja ma około pięciu sekund do zwrócenia z tej metody lub pobrać proces zakończony. W związku z tym zadania oczyszczania, które może zająć więcej niż pięciu sekund może zostać wywołana z wewnątrz `DidEnterBackground` metody. Te zadania muszą być wywoływane w oddzielnym wątku.
+Oprócz zadań długotrwałych safe tła, rejestracja może służyć do uruchamiał zadania, ponieważ aplikacja jest umieszczeniem w tle. systemu iOS zapewnia metodę zdarzeń w *elemencie AppDelegate* klasę o nazwie `DidEnterBackground` który może służyć do zapisania stanu aplikacji, zapisywanie danych użytkownika i szyfrować poufnej zawartości, zanim aplikacja wchodzi w tle. Aplikacja ma około 5 sekund do zwrócenia z tej metody lub będzie zostać zakończone. W związku z tym, zadania oczyszczania, które może zająć więcej niż 5 sekund może zostać wywołana z wewnątrz `DidEnterBackground` metody. Te zadania musi być wywoływany w oddzielnym wątku.
 
-Proces jest niemal identyczna z rejestrowania zadań długotrwałe. Poniższy fragment kodu przedstawiono to w akcji:
+Proces jest niemal identyczny jak w przypadku rejestrowania długotrwałe zadanie. Poniższy fragment kodu przedstawia to w akcji:
 
 ```csharp
 public override void DidEnterBackground (UIApplication application) {
@@ -63,19 +64,19 @@ public override void DidEnterBackground (UIApplication application) {
 }
 ```
 
-Zaczniemy przez zastąpienie `DidEnterBackground` metody w `AppDelegate`, gdzie możemy zarejestrować nasze zadania za pomocą `BeginBackgroundTask` jak robiliśmy w poprzednim przykładzie. Następnie możemy zduplikować nowego wątku i wykonać naszych długotrwałe zadanie. Należy pamiętać, że `EndBackgroundTask` teraz wywołanie z wewnątrz długotrwałe zadanie, ponieważ `DidEnterBackground` metoda ma już zwróciła.
+Zaczniemy przez zastąpienie `DidEnterBackground` method in Class metoda `AppDelegate`, gdzie zarejestrujemy nasz zadania za pomocą `BeginBackgroundTask` ile My mieliśmy w poprzednim przykładzie. Następnie możemy zduplikować nowego wątku i wykonywać naszych długotrwałe zadanie. Należy pamiętać, że `EndBackgroundTask` teraz Wykonano wywołanie z wewnątrz długotrwałe zadanie, ponieważ `DidEnterBackground` metoda ma już zwróciła.
 
 > [!IMPORTANT]
-> iOS używa [programu alarmowego mechanizm](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zapewnienie reaguje interfejsu użytkownika aplikacji. Aplikacja, która zużywa zbyt dużo czasu, w `DidEnterBackground` będzie odpowiadać w interfejsie użytkownika. Zasób wyłączyć zadania w tle umożliwia `DidEnterBackground` do zwrócenia w odpowiednim czasie, pamiętając reakcji interfejsu użytkownika i uniemożliwia programu alarmowego skasowanie aplikacji.
+> dla systemu iOS używa [programu alarmowego mechanizm](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zapewnienie reaguje interfejs użytkownika aplikacji. Aplikacja, która zużywa zbyt dużo czasu w `DidEnterBackground` przestanie odpowiadać w interfejsie użytkownika. Umożliwia uruchamianie zadań w tle określonego `DidEnterBackground` do zwrócenia w odpowiednim czasie, utrzymywanie dynamicznego interfejsu użytkownika co uniemożliwia zabijanie aplikacji przez strażnika.
 
 
-## <a name="handling-background-task-time-limits"></a>Limit czasu zadania obsługi w tle
+## <a name="handling-background-task-time-limits"></a>Limity czasu zadań obsługi w tle
 
-iOS umieszcza strict limity na jak długo zadanie w tle można uruchomić, a jeśli `EndBackgroundTask` wywołanie nie zostało utworzone w wyznaczonym czasie, aplikacja zostanie zakończona. Przez śledzenie pozostały czas backgrounding i za pomocą obsługi wygaśnięcia, gdy jest to konieczne, firma Microsoft uniknąć przerywanie aplikacji systemu iOS.
+iOS wpływają ograniczeniami na jak długo zadanie w tle można uruchomić, a jeśli `EndBackgroundTask` w wyznaczonym czasie nie zostanie nawiązane połączenie, aplikacja zostanie zakończona. Przez śledzenie pozostały czas uruchamianie procesów w tle i używanie obsługi wygaśnięcia, gdy jest to konieczne, firma Microsoft można uniknąć, zamykając aplikację dla systemu iOS.
 
-### <a name="accessing-background-time-remaining"></a>Dostęp do tła pozostały czas:
+### <a name="accessing-background-time-remaining"></a>Uzyskiwanie dostępu do pozostały czas tła
 
-Jeśli aplikacji z zadaniami w zarejestrowany pobiera przeniesiony do tła, zarejestrowane zadania zostanie wyświetlona około 600 sekund do uruchomienia. Musimy sprawdzić czas, jaki ma zadania do wykonania za pomocą statycznych `BackgroundTimeRemaining` właściwość `UIApplication` klasy. Następujący kod będzie Przekaż nam czas w sekundach, który opuścił nasze zadania w tle:
+Jeśli aplikacji przy użyciu zarejestrowanego zadania pobiera przeniesione do tła, zarejestrowanego zadania otrzyma około 600 sekund do uruchomienia. Możemy sprawdzić, jak długo zadanie będzie musiał wykonać przy użyciu statycznych `BackgroundTimeRemaining` właściwość `UIApplication` klasy. Poniższy kod umożliwi nam czasu w sekundach, który opuścił nasze zadania w tle:
 
 ```csharp
 double timeRemaining = UIApplication.SharedApplication.BackgroundTimeRemaining;
@@ -83,9 +84,9 @@ double timeRemaining = UIApplication.SharedApplication.BackgroundTimeRemaining;
 
 ### <a name="avoiding-app-termination-with-expiration-handlers"></a>Unikanie zakończenia aplikacji z obsługą wygaśnięcia
 
-Oprócz zapewnienia dostępu do `BackgroundTimeRemaining` właściwości, z systemem iOS umożliwia bezpieczne obsługi tła czas wygaśnięcia za pośrednictwem **obsługi wygaśnięcia**. Jest to opcjonalne blok kodu, która zostanie wykonana po czas przydzielony dla zadania, które niedługo wygasną. Kod w obsłudze wygaśnięcia wywołuje `EndBackgroundTask` i przebiegów w Identyfikatora zadania, która wskazuje, że aplikacja zachowuje się również i uniemożliwia iOS zakończenie aplikacji, nawet wtedy, gdy zadanie jest uruchamiane limit czasu. `EndBackgroundTask` musi zostać wywołana wewnątrz obsługi wygaśnięcia, a także w trakcie normalnego przebiegu wykonywania. 
+Oprócz dając dostęp do `BackgroundTimeRemaining` właściwości systemu iOS zapewnia łagodne sposób obsługi tła czasu wygaśnięcia za pośrednictwem **obsługi wygaśnięcia**. Jest to opcjonalne bloku kodu, które są wykonywane, gdy czas przydzielony dla zadania wkrótce wygaśnie. Wywołuje kod w obsłudze wygaśnięcia `EndBackgroundTask` i przekazuje w identyfikatorze zadania, co oznacza, że aplikacja zachowuje się prawidłowo i uniemożliwia zakończenie aplikacji nawet wtedy, gdy zadanie jest uruchamiane Przekroczono limit czasu dla systemu iOS. `EndBackgroundTask` musi być wywołana wewnątrz procedury obsługi wygaśnięcia, a także w trakcie normalnego działania. 
 
-Program obsługi wygaśnięcia jest wyrażony jako funkcji anonimowej za pomocą wyrażenia lambda, jak przedstawiono poniżej:
+Procedury obsługi wygaśnięcia jest wyrażona jako funkcja anonimowa użycie wyrażenia lambda, jak przedstawiono poniżej:
 
 ```csharp
 Task.Factory.StartNew( () => {
@@ -105,43 +106,43 @@ Task.Factory.StartNew( () => {
 });
 ```
 
-Podczas obsługi wygaśnięcia nie są wymagane dla kodu do uruchomienia, zawsze należy używać programu obsługi, który wygaśnięcia zadania w tle.
+Podczas obsługi wygaśnięcia nie są wymagane dla kodu do uruchomienia, zawsze należy używać do obsługi wygaśnięcia za pomocą zadania w tle.
 
  <a name="background_tasks_in_iOS_7" />
 
 ## <a name="background-tasks-in-ios-7"></a>Zadania w tle w systemie iOS 7 +
 
-Największych zmiany w systemie iOS 7 w odniesieniu do zadania w tle jest nie sposobu implementacji zadania, ale podczas uruchamiania.
+Największe zmiany w systemie iOS 7 w odniesieniu do zadań w tle jest nie sposobu implementacji zadania, ale podczas uruchamiania.
 
-Odwołaj wstępnego systemu iOS 7, zadania uruchomione w tle ma 600 sekund do wykonania. Jedną z przyczyn ten limit jest, że zadania uruchomione w tle zachowa urządzenia wznowione na czas trwania zadania:
+Odwołaj wstępnego dla systemu iOS 7, zadania uruchomione w tle ma 600 sekund do ukończenia. Jednym z powodów ten limit jest, że zadanie uruchomione w tle zachowa urządzenia wznowione na czas trwania zadania:
 
- [![](ios-backgrounding-with-tasks-images/ios6.png "Wykres zadań utrzymywanie aplikacji wznowione wstępnego systemu iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "Wykres zadania, utrzymywanie jej wznowione wstępnego systemu iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
-przetwarzanie w tle dla systemu iOS 7 jest zoptymalizowana pod kątem dłuższy czas pracy baterii. W systemie iOS 7, backgrounding staje się oportunistyczne: zamiast utrzymywanie urządzenia wznowione, zgodne urządzenie przejdzie do uśpienia, a zamiast tego wykonaj ich przetwarzania w fragmentów podczas działania urządzenia do obsługi połączeń telefonicznych, powiadomienia, przychodzących wiadomości e-mail i innych zadań Typowe przerw w działaniu. Na poniższym diagramie przedstawiono wgląd w sposób zadanie może być uszkodzona zapasową:
+przetwarzanie w tle systemu iOS 7 jest zoptymalizowany pod kątem dłuższy czas pracy baterii. W systemie iOS 7, uruchamianie procesów w tle staje się oportunistyczne: zamiast urządzenia wznowione, przestrzegać przejdzie do uśpienia, zamiast wykonywać ich przetwarzanie we fragmentach, gdy urządzenie wraca do stanu aktywności do obsługi połączeń telefonicznych, powiadomienia, przychodzących wiadomości e-mail i innych zadań Typowe przerw w działaniu. Na poniższym diagramie przedstawiono wgląd w sposób zadanie może nie działać się:
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Wykres zadania jest dzielony na fragmenty po systemów iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "Wykres zadania jest dzielony na fragmenty po dla systemu iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
-Czas wykonywania zadania nie jest już ciągłego, zadań, które wykonuje transferów sieci można obsłużyć inaczej w systemie iOS 7. Deweloperzy są zachęcani do użycia `NSURlSession` interfejsu API do obsługi transferów sieci. Następna sekcja zawiera omówienie transfery w tle.
+Zadania, w czasie wykonywania nie jest już ciągłe, zadań wykonujących transfery sieci muszą być obsługiwane inaczej w systemie iOS 7. Deweloperzy są zachęcani do użycia `NSURlSession` interfejsu API do obsługi transfery w sieci. Następnej sekcji przedstawiono omówienie procedury transferów w tle.
 
  <a name="background-transfers" />
 
-## <a name="background-transfers"></a>Transfery w tle
+## <a name="background-transfers"></a>Transferów w tle
 
-Szkielet transfery w tle w systemie iOS 7 jest nowy `NSURLSession` interfejsu API. `NSURLSession` Umożliwia tworzenie zadań:
+Szkielet transferów w tle w systemie iOS 7 jest nowym `NSURLSession` interfejsu API. `NSURLSession` Umożliwia nam tworzenie zadań:
 
-1.  Transfer zawartości za pośrednictwem sieci i urządzenia przerwami w działaniu.
-1.  Przekazywanie i pobieranie dużych plików ( *Usługa transferu w tle* ).
+1.  Transfer zawartości za pośrednictwem przerw w działaniu sieci i urządzeń.
+1.  Przekazywanie i pobieranie dużych plików ( *usługi transferu w tle* ).
 
 
-Spójrzmy bliższe spojrzenie na jak to działa.
+Przyjrzyjmy się bliżej jak to działa.
 
-### <a name="nsurlsession-api"></a>NSURLSession interfejsu API
+### <a name="nsurlsession-api"></a>Interfejs API sesji NSURLSession
 
- `NSURLSession` jest zaawansowanym interfejsu API transferu zawartości w sieci. Zapewnia zestaw narzędzi do obsługi transferu danych za pośrednictwem sieci przerw i zmiany stanów aplikacji.
+ `NSURLSession` jest to zaawansowany interfejs API transferu zawartości za pośrednictwem sieci. Zapewnia zestaw narzędzi do obsługi transferu danych za pośrednictwem przerwami w łączności sieciowej i zmiany stanów aplikacji.
 
-`NSURLSession` Interfejsu API tworzy co najmniej jednej sesji, które z kolei zduplikować zadania wahadłowe bloki powiązanych danych w sieci. Zadania są uruchamiane asynchronicznie do transferu danych, szybkie i niezawodne. Ponieważ `NSURLSession` jest asynchroniczne, co sesja wymaga bloku obsługi uzupełniania, aby umożliwić systemu i aplikacji wiedzieć, po zakończeniu transferu.
+`NSURLSession` Interfejsu API powoduje utworzenie jednego lub kilku sesji, które z kolei zduplikować zadania wahadłowe bloki powiązanych danych w sieci. Zadania są uruchamiane asynchronicznie do transferu danych, szybko i niezawodnie. Ponieważ `NSURLSession` jest asynchroniczna, każdej sesji wymaga zakończenia Blok obsługi, aby umożliwić systemu i aplikacji, o których wiadomo, kiedy przenoszenie zostało zakończone.
 
-Aby przeprowadzić transferu sieciowego, który jest prawidłowy na wstępne systemu iOS 7 i po systemów iOS 7, sprawdź, czy `NSURLSession` można umieścić w kolejce transferu, a następnie użyć zadania tła regularne do transferu, jeśli nie jest:
+Aby przeprowadzić transferu sieciowego, który jest prawidłowy w wstępnego dla systemu iOS 7 i po system iOS 7, sprawdź, czy `NSURLSession` można umieścić w kolejce transferu, a następnie użyć zadania w tle regularne do transferu, jeśli nie jest:
 
 ```csharp
 if ([NSURLSession class]) {
@@ -154,16 +155,16 @@ else {
 ```
 
 > [!IMPORTANT]
-> Należy unikać wykonywania wywołań do aktualizacji interfejsu użytkownika w tle w kodzie 6 zgodne z systemem iOS, iOS 6, nie obsługuje aktualizacje interfejsu użytkownika w tle, a zakończy aplikacji.
+> Należy unikać wykonywania wywołań do aktualizacji interfejsu użytkownika w tle w kodzie 6 zgodne z systemem iOS, iOS 6, nie obsługuje aktualizacje interfejsu użytkownika w tle i zakończą działanie aplikacji.
 
 
-`NSURLSession` Interfejsu API zawiera bogaty zestaw funkcji, aby obsługiwać uwierzytelnianie, zarządzania transferami nie powiodło się i raportować błędy po stronie klienta — ale nie po stronie serwera —. Pomaga mostek, który przerw w zadaniu wykonawczego wprowadzone w systemie iOS 7, a także zapewnia obsługę transferu dużych plików, szybkie i niezawodne. Następna sekcja opisuje tej drugiej funkcji.
+`NSURLSession` Interfejsu API zawiera bogaty zestaw funkcji, aby obsługiwać uwierzytelnianie, zarządzanie transfery nie powiodło się i raportowania błędów po stronie klienta — ale nie po stronie serwera —. Pomaga mostek, który przerw w działaniu w zadaniu wykonawczego wprowadzona w systemie iOS 7, a także zapewnia obsługę transferu dużych plików, szybko i niezawodnie. Następnej sekcji przedstawiono ten drugi funkcji.
 
 ### <a name="background-transfer-service"></a>Usługa transferu w tle
 
-Przed iOS 7 przekazywanie lub pobieranie plików w tle została niepewna. Zadania w tle uzyskać przez ograniczony czas do uruchomienia, ale czas potrzebny na transfer pliku zależy od sieci i rozmiaru pliku. W systemie iOS 7, możemy użyć `NSURLSession` pomyślnie przekazywania i pobierania dużych plików. Szczególne `NSURLSession` typ sesji, który obsługuje sieci transferu dużych plików w tle jest znany jako *Usługa transferu w tle*.
+Przed systemu iOS 7 zawodne był przekazywania lub pobierania plików w tle. Zadania w tle uzyskać przez ograniczony czas do uruchomienia, ale czas potrzebny na transfer pliku zależy od sieci i rozmiaru pliku. W systemie iOS 7, możemy użyć `NSURLSession` do pomyślnie przekazywania i pobierania dużych plików. Określonych `NSURLSession` typ sesji, który obsługuje transfery sieci dużych plików w tle jest znany jako *usługi transferu w tle*.
 
-Transfery inicjowane za pomocą usługi transferu w tle są zarządzane przez system operacyjny i podaj interfejsów API do obsługi uwierzytelniania i błędów. Ponieważ transferów nie są powiązane przez dowolnego limit czasu, ich umożliwia przekazywanie lub pobieranie dużych plików, automatyczne aktualizowanie zawartości w tle i inne. Zapoznaj się [wskazówki transferu w tle](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) szczegółowe informacje na temat wdrażania usługi.
+Transfery inicjowane z użyciem usługi transferu w tle są zarządzane przez system operacyjny i zapewniają interfejsy API do obsługi uwierzytelniania i błędy. Ponieważ transfer nie są powiązane przez dowolne limitu czasu, umożliwia przekazywanie lub pobieranie dużych plików, automatyczne aktualizowanie zawartości w tle i nie tylko. Zapoznaj się [wskazówki transferu w tle](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) szczegółowe informacje na temat wdrażania usługi.
 
-Usługa transferu w tle jest często łączyć się z pobieranie w tle lub zdalnego powiadomienia do aplikacji, Odśwież zawartość w tle. W dwóch następnych sekcjach wprowadzeniu koncepcji rejestrowania całej aplikacji do uruchamiania w tle na zarówno dla systemu iOS 6 lub iOS 7.
+Usługa transferu w tle często jest powiązany z pobieranie w tle lub zdalne powiadomienia aplikacji odświeżyć zawartość w tle. W dwóch następnych sekcjach wprowadzeniu koncepcji rejestrowanie całych aplikacji do uruchamiania w tle na zarówno dla systemu iOS 6 lub iOS 7.
 

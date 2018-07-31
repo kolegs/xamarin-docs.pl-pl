@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830456"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353298"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Bezpieczny magazyn
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 Aby zapisać wartość dla danego _klucza_ w bezpiecznym magazynie:
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 Aby pobrać wartość z bezpiecznego magazynu:
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -90,7 +104,7 @@ W nowszych poziomy interfejsu API **AES** klucz jest uzyskiwany z magazynu klucz
 
 W starszych poziomy interfejsu API, magazynu kluczy systemu Android obsługuje tylko przechowywania **RSA** klucze, które jest używane z **RSA/ECB/PKCS1Padding** szyfrowania do szyfrowania **AES** klucza (losowo generowane w czasie wykonywania) i przechowywane w pliku udostępnionych preferencji w kluczu _SecureStorageKey_, jeśli nie został już wygenerowany.
 
-Gdy aplikacja zostanie odinstalowana z urządzenia, zostaną usunięte wszystkie zaszyfrowane wartości.
+**SecureStorage** używa [preferencje](preferences.md) interfejsu API i jest zgodny z tej samej funkcji trwałości danych opisanych w [preferencje](preferences.md#persistence) dokumentacji. Jeśli urządzenie uaktualnienia z poziomu interfejsu API 22 lub niższy poziom interfejsu API 23 lub nowszy, ten typ szyfrowania będą w dalszym ciągu używać, chyba że aplikacja zostanie odinstalowana lub **RemoveAll** jest wywoływana.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -100,11 +114,11 @@ W niektórych przypadkach dane łańcucha kluczy są synchronizowane z usługi i
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do wartości Nazwa szyfrowanego bezpiecznie na urządzeniach platformy uniwersalnej systemu Windows.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) służy do zaszyfrowanych wartości w bezpieczny sposób na urządzeniach platformy uniwersalnej systemu Windows.
 
-Nazwa szyfrowanego wartości są przechowywane w `ApplicationData.Current.LocalSettings`, wewnątrz kontenera o nazwie **.xamarinessentials [YOUR-APP-ID]**.
+Zaszyfrowane wartości są przechowywane w `ApplicationData.Current.LocalSettings`, wewnątrz kontenera o nazwie **.xamarinessentials [YOUR-APP-ID]**.
 
-Odinstalowywanie aplikacji spowoduje, że _LocalSettings_i można także usunąć wszystkie zaszyfrowane wartości.
+**SecureStorage** używa [preferencje](preferences.md) interfejsu API i jest zgodny z tej samej funkcji trwałości danych opisanych w [preferencje](preferences.md#persistence) dokumentacji.
 
 -----
 

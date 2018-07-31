@@ -1,39 +1,39 @@
 ---
 title: Zmiany w sieci Web w systemie iOS 11
-description: W tym dokumencie omówiono zmiany WebKit i framework usług Safari w systemie iOS 11. Przedstawiono sposób pracy z style aktualizacji w SFSafariViewController i nowe funkcje w WKWebView.
+description: W tym dokumencie omówiono zmiany wprowadzone do aparatu WebKit i framework usług Safari w systemie iOS 11. Go w tym artykule opisano sposób pracy z style w SFSafariViewController aktualizacji i nowych funkcji w WKWebView.
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/12/2016
-ms.openlocfilehash: f5876a9d201950ebac45e8b1f786b0e97452a7f1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/12/2017
+ms.openlocfilehash: 00587e3b49e953b780a49623f081ae798e81fa61
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787451"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351460"
 ---
 # <a name="web-changes-in-ios-11"></a>Zmiany w sieci Web w systemie iOS 11
 
-iOS 11 wprowadziła nową wersję przeglądarki sieci web Safari — Safari 11.0 — w tym zmiany WebKit i SafariServices. Ten przewodnik opisuje te zmiany.
+System iOS 11 wprowadzono nową wersję przeglądarki sieci web Safari — Safari 11.0 — w tym zmiany aparatu WebKit i SafariServices. Ten przewodnik opisuje te zmiany.
 
 ## <a name="safariservices"></a>SafariServices
 
-`SFSafariViewController` został wprowadzony w systemie iOS 9 jako opcję wyświetlania zawartości sieci web lub uwierzytelniania użytkowników z aplikacji. Więcej informacji na temat funkcji można znaleźć w [widoki sieci Web](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) przewodnik.
+`SFSafariViewController` została wprowadzona w systemie iOS 9 jako opcję wyświetlania zawartości sieci web lub uwierzytelniania użytkowników z Twojej aplikacji. Więcej informacji na temat funkcji można znaleźć w [widoki sieci Web](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) przewodnik.
 
-iOS 11 wprowadziła styl aktualizacji do kontrolera widoku Safari, przyznawanie użytkownikom sprawniejsze między aplikacją i sieci web. Na przykład usunięcie paska zapewnia teraz kontroler widoku działania przeglądarki w aplikacji, a nie mini przeglądarki Safari adresu. Można również dostosować schemat kolorów, aby zmieścić się przy użyciu schemat kolorów aplikacji przez ustawienie `preferredBarTintColor` i `PreferredControlTintColor` właściwości:
+System iOS 11 wprowadził styl aktualizacji do kontrolera widoku przeglądarki Safari, przyznawanie użytkownikom, aby usprawnić środowisko między aplikacją i sieci web. Na przykład usunięcie zawiera teraz kontroler widoku działania przeglądarki w aplikacjach, zamiast mini przeglądarki Safari na pasku adresu. Można również dostosować schemat kolorów, aby dopasować się przy użyciu schematu kolorów aplikacji przez ustawienie `preferredBarTintColor` i `PreferredControlTintColor` właściwości:
 
 ```csharp
 sfViewController.PreferredControlTintColor = UIColor.White;
 sfViewController.PreferredBarTintColor = UIColor.Purple;
 ```
 
-Poniższy fragment kodu renderuje paski purpurowy i białe, wyświetlane na poniższej ilustracji:
+Poniższy fragment kodu powoduje wyświetlenie pasków purpurowy i białe, wyświetlane na poniższej ilustracji:
 
-![Paski SFSafariViewController renderowane w purpurowy i biały](web-images/image1.png)
+![Paski SFSafariViewController renderowane w purpurowy i kolor biały](web-images/image1.png)
 
-Przycisk Odrzuć przedstawionych w kontroler widoku Safari można także zmienić ustawienie `DismissButtonStyle` właściwości albo `Done`, `Close`, lub `Cancel`:
+Przycisk Odrzuć znajdujące się w kontroler widoku przeglądarki Safari można także zmienić przez ustawienie `DismissButtonStyle` właściwości albo `Done`, `Close`, lub `Cancel`:
 
 ```csharp
 sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.Close;
@@ -41,10 +41,10 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 ![Odrzuć zmiany tekstu przycisku](web-images/image2.png)
 
-Ta wartość może zostać zmieniona podczas `SFSafariViewController` jest przedstawiony.
+Ta wartość może zostać zmieniona podczas `SFSafariViewController` zostanie wyświetlony.
 
 
-W zależności od zawartości wyświetlanej wewnątrz kontrolera widoku Safari może być konieczne do zapewnienia, że gdy użytkownik przewija nie Zwiń paski menu. Ta opcja jest włączona, ustawiając nowe `BarCollapsedEnabled` właściwości `false`:
+W zależności od zawartości, która jest wyświetlana w kontroler widoku przeglądarki Safari może być konieczne upewnić się, że paski menu nie Zwiń, gdy użytkownik przewija. Ta opcja jest włączona, ustawiając nową `BarCollapsedEnabled` właściwości `false`:
 
 ```csharp
 var config = new SFSafariViewControllerConfiguration();
@@ -55,26 +55,26 @@ var sfViewController = new SFSafariViewController(url, config);
 
 ![Pasek zwijanie wyłączone](web-images/image3.png)
 
-Apple ma również aktualizacje na prywatność w kontroler widoku Safari w systemie iOS 11. Teraz przeglądania danych, takich jak pliki cookie i lokalny magazyn istnieć tylko na podstawie dla aplikacji, a nie we wszystkich wystąpieniach kontrolera widoku Safari. Dzięki temu działań przeglądania użytkownika prywatnych w Twojej aplikacji.
+Apple wprowadziła również aktualizacje prywatności w kontroler widoku przeglądarki Safari w systemie iOS 11. Teraz przeglądanie danych, takich jak pliki cookie i lokalny magazyn istnieją tylko na poszczególnych aplikacji, a nie we wszystkich wystąpieniach kontrolera widoku przeglądarki Safari. Dzięki temu działań przeglądania użytkownika prywatnych w aplikacji.
 
-Dodatkowe funkcje takie jak przeciągnij i upuść obsługę adresów URL i obsługę `window.open()` również zostały dodane do `SFSafariViewController` w systemie iOS 11. Można znaleźć więcej informacji na temat nowych funkcji w [dokumentacji SFSafariViewController firmy Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
+Dodatkowe funkcje takie jak przeciągnij i upuść obsługę adresów URL i obsługa `window.open()` również zostały dodane do `SFSafariViewController` w systemie iOS 11. Można znaleźć więcej informacji na temat tych nowych funkcji w [dokumentacji SFSafariViewController firmy Apple](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor).
 
 
-## <a name="webkit"></a>WebKit
+## <a name="webkit"></a>Aparatu WebKit
 
-`WKWebView` został wprowadzony w ramach usługi WebKit iOS 8 jako sposób wyświetlania zawartości sieci web do użytkownika. Jest znacznie więcej można dostosowywać niż `SFSafariViewController`, pozwala na tworzenie własnego nawigacji i interfejs użytkownika.
+`WKWebView` został wprowadzony w ramach aparatu WebKit w systemie iOS 8 jako sposób wyświetlania zawartości sieci web do użytkownika. Jest znacznie szersze niż `SFSafariViewController`, co pozwala na tworzenie własnych nawigacji i interfejsu użytkownika.
 
-Apple wprowadziła trzy główne ulepszenia `WKWebView` z systemem iOS 11: 
+Apple wprowadziła trzech głównych ulepszenia `WKWebView` z systemem iOS 11: 
 
 - Możliwość zarządzania plikami cookie
 - Filtrowanie zawartości
 - Ładowanie zasobów niestandardowych. 
 
-Plik cookie zarządzania odbywa się za pośrednictwem nowej [ `WKHttpCookieStore` ](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) klasy, która służy do dodawania i usuwania plików cookie, można pobrać wszystkich plików cookie przechowywany w WKWebView i obserwować pliku cookie, zapisać zmiany.
+Zarządzanie plików cookie odbywa się za pośrednictwem nowego [ `WKHttpCookieStore` ](https://developer.apple.com/documentation/webkit/wkhttpcookiestore) klasy, która pozwala na dodawanie i usuwanie plików cookie, aby uzyskać wszystkie pliki cookie przechowywane w WKWebView i obserwować plików cookie, zapisać zmiany.
 
-Zawartości Filtrowanie umożliwia zarządzanie typu zawartości, która będzie widoczna użytkownika, umożliwiając upewnij się, że jest bezpieczne, rodziny przyjazny, a w razie potrzeby, dostępne tylko do wybranej grupy użytkowników. To jest implementowane za pomocą nowej [ `WKContentRuleList` ](https://developer.apple.com/documentation/webkit/wkcontentrulelist) klasy, podając pary wyzwalacze i akcje w formacie JSON. Więcej informacji na temat tych wyzwalacze i akcje znajdują się w firmy Apple [zasady blokowania zawartości](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html) przewodnik.
+Zawartość, filtrowanie, umożliwia zarządzanie typu zawartości, która będzie widoczna dla użytkowników, dzięki czemu możesz się upewnić, że jest przyjaznym bezpieczne, rodziny i, jeśli to konieczne, dostępne tylko do wybranej grupy użytkowników. Ten sposób jest implementowany przy użyciu nowego [ `WKContentRuleList` ](https://developer.apple.com/documentation/webkit/wkcontentrulelist) klasy, podając pary wyzwalaczy i akcji w formacie JSON. Więcej informacji na temat tych wyzwalaczy i akcji można znaleźć w firmy Apple [zasady blokowania zawartości](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html) przewodnik.
 
-iOS 11 umożliwia teraz dostosowanie `WKWebView` z zasobów niestandardowych ładowania dla zawartości sieci web. To jest implementowane za pośrednictwem `IWKUrlSchemeHandler` interfejsu, co pozwala obsługiwać schematy adresów URL, niebędących macierzysty Kit sieci Web. Ten interfejs jest rozpoczęcie i zakończenie metody, która musi zostać wdrożona:
+System iOS 11 umożliwia teraz dostosowywanie `WKWebView` przy użyciu zasobów niestandardowych ładowania dla zawartości sieci web. Ten sposób jest implementowany za pośrednictwem `IWKUrlSchemeHandler` interfejsu, co pozwala obsługiwać schematy adresów URL, które nie są natywne zestawu sieci Web. Ten interfejs jest uruchamianie i zatrzymywanie metodę, która musi zostać wdrożone:
 
 ```csharp
 public class MyHandler : NSObject, IWKUrlSchemeHandler {
@@ -97,7 +97,7 @@ public class MyHandler : NSObject, IWKUrlSchemeHandler {
 }
 ``` 
 
-Gdy program obsługi został zaimplementowany, użyj jej do ustawienia `SetUrlSchemeHandler` właściwość `WKWebViewConfiguration`. Następnie należy załadować adres URL elementu, który używa schematu niestandardowego:
+Po zaimplementowaniu program obsługi, użyj go, aby ustawić `SetUrlSchemeHandler` właściwość `WKWebViewConfiguration`. Następnie należy załadować adres URL elementu, który używa niestandardowego schematu:
 
 ```csharp
 var config = new WKWebViewConfiguration();

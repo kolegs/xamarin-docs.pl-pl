@@ -1,56 +1,56 @@
 ---
-title: Struktura wizji w Xamarin.iOS
-description: W tym dokumencie opisano sposób korzystania z systemem iOS 11 Framework wizji w platformy Xamarin.iOS. W szczególności zawiera omówienie prostokąt wykrywania i wykrywania.
+title: Struktury Vision w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano, jak używać systemu iOS 11 struktury Vision w rozszerzeniu Xamarin.iOS. W szczególności omówiono w nim wykrywania prostokąta oraz wykrywanie twarzy.
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/31/2016
-ms.openlocfilehash: c44c4b3ab12c1ba448f1befb6f831f5ad9119f18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/31/2017
+ms.openlocfilehash: 4746de2f351e866fd72946b204f97e997c3e88c4
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787422"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350667"
 ---
-# <a name="vision-framework-in-xamarinios"></a>Struktura wizji w Xamarin.iOS
+# <a name="vision-framework-in-xamarinios"></a>Struktury Vision w rozszerzeniu Xamarin.iOS
 
-Framework wizji dodaje liczbę nowy obraz przetwarzania funkcji do systemu iOS 11, w tym:
+Struktury Vision dodaje nowy obraz przetwarzania funkcji do systemu iOS 11, w tym:
 
-- [Prostokąt wykrywania](#rectangles)
-- [Wykrywanie twarzy na obrazie](#faces)
-- Learning analizy obrazu komputera (omówiona w [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
+- [Wykrywanie prostokąt](#rectangles)
+- [Wykrywanie twarzy](#faces)
+- Usługi Machine Learning, analizy obrazów (omówionych w [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
 - Wykrywanie kodu kreskowego
 - Analiza wyrównanie obrazu
 - Wykrywanie tekstu
 - Wykrywanie typu horizon
-- Wykrywanie obiektów & śledzenia
+- Wykrywanie obiektów ś & ledzenie
 
-![Zdjęcie z trzech prostokąty wykryto](vision-images/found-rectangles-tiny.png) ![Zdjęcie z dwóch kroje wykryto](vision-images/xamarin-home-faces-tiny.png)
+![Zdjęcie z trzy prostokąty wykryto](vision-images/found-rectangles-tiny.png) ![Zdjęcie za pomocą dwóch wykryte twarze:](vision-images/xamarin-home-faces-tiny.png)
 
-Prostokąt wykrywania i wykrywania twarzy na obrazie omówiono bardziej szczegółowo poniżej.
+Wykrywanie prostokąta oraz wykrywanie twarzy zostały omówione bardziej szczegółowo poniżej.
 
 <a name="rectangles" />
 
-## <a name="rectangle-detection"></a>Prostokąt wykrywania
+## <a name="rectangle-detection"></a>Wykrywanie prostokąt
 
-[Próbki VisionRects](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) przedstawia sposób przetwarzania obrazu i rysowanie prostokątów wykryte na nim.
+[Przykładowe VisionRects](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) pokazuje, jak przetwarzanie obrazu i rysowanie prostokątów wykryte na nim.
 
-### <a name="1-initialize-the-vision-request"></a>1. Inicjowanie żądania wizji
+### <a name="1-initialize-the-vision-request"></a>1. Inicjowanie żądania przetwarzania
 
-W `ViewDidLoad`, Utwórz `VNDetectRectanglesRequest` , która odwołuje się `HandleRectangles` metodę, która będzie wywoływana na koniec każdego żądania:
+W `ViewDidLoad`, Utwórz `VNDetectRectanglesRequest` odwołujący się `HandleRectangles` metody, która będzie wywoływana na końcu każdego żądania:
 
-`MaximumObservations` Właściwość powinna być ustawiona, w przeciwnym razie domyślnie zostanie ustawiona na 1 i tylko jeden wynik zostanie zwrócony.
+`MaximumObservations` Właściwość powinna być ustawiona, w przeciwnym razie będą domyślnie do 1 i tylko jeden wynik zostanie zwrócony.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 RectangleRequest.MaximumObservations = 10;
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Rozpocznij przetwarzanie wizji
+### <a name="2-start-the-vision-processing"></a>2. Rozpocznij przetwarzanie Vision
 
-Poniższy kod rozpoczyna przetwarzanie żądania. W **VisionRects** przykładowa, ten kod jest uruchamiany po użytkownik wybrał obrazu:
+Poniższy kod uruchamia przetwarzanie żądania. W **VisionRects** próbki, ten kod jest uruchamiany po użytkownik wybrał obrazu:
 
 ```csharp
 // Run the rectangle detector
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Ten program obsługi przekazuje `ciImage` Framework wizji `VNDetectRectanglesRequest` utworzony w kroku 1.
+Ten program obsługi wyjątków przekazuje `ciImage` do struktury Vision `VNDetectRectanglesRequest` utworzony w kroku 1.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Obsługa wyników przetwarzania wizji
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Obsługa wyników przetwarzania Vision
 
-Po zakończeniu wykrywania prostokąt platformę wykonuje `HandleRectangles` metody, poniżej przedstawiono podsumowanie:
+Po zakończeniu wykrywania prostokąt wykonuje szablon `HandleRectangles` metody, poniżej przedstawiono podsumowanie:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,38 +88,38 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Wyświetl wyniki
 
-`OverlayRectangles` Metody w **VisionRectangles** próbki ma trzy funkcje:
+`OverlayRectangles` Method in Class metoda **VisionRectangles** przykład ma trzy funkcje:
 
 - Renderowanie obrazu źródłowego
-- Rysowanie prostokąta, aby wskazać, w których wykryto każdej z nich, i
-- Dodawanie tekst etykiety dla każdego prostokąt przy użyciu CoreGraphics.
+- Rysowanie prostokąta, aby wskazać, gdzie każdy z nich zostało wykryte, i
+- Dodawanie etykietę tekstową dla każdego prostokąta przy użyciu CoreGraphics.
 
-Widok [źródła w próbce](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) dla metody CoreGraphics.
+Widok [w przykładowym źródle](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) dokładnie metody CoreGraphics.
 
-![Zdjęcie z trzech prostokąty wykryto](vision-images/found-rectangles-phone-sml.png)
+![Zdjęcie z trzy prostokąty wykryto](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. Dalsze przetwarzanie
 
-Prostokąt wykrywania jest często tylko pierwszym krokiem w łańcuchu operacje, takie jak z [w tym przykładzie CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), gdzie prostokątów są przekazywane do modelu CoreML przeanalizować odręcznie cyfr.
+Wykrywanie prostokąta jest często tylko pierwszy krok w łańcuchu operacje, takie jak za pomocą [w tym przykładzie CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), gdzie prostokątów są przekazywane do modelu CoreML, można przeanalizować pisma odręcznego cyfr.
 
 
 <a name="faces" />
 
-## <a name="face-detection"></a>Wykrywanie twarzy na obrazie
+## <a name="face-detection"></a>Wykrywanie twarzy
 
-[Próbki VisionFaces](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) działa w sposób podobny do **VisionRectangles** próbki, przy użyciu innej klasy żądania wizji.
+[Przykładowe VisionFaces](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) działa w sposób podobny do **VisionRectangles** przykładowy, przy użyciu innej klasy żądania przetwarzania.
 
-### <a name="1-initialize-the-vision-request"></a>1. Inicjowanie żądania wizji
+### <a name="1-initialize-the-vision-request"></a>1. Inicjowanie żądania przetwarzania
 
-W `ViewDidLoad`, Utwórz `VNDetectFaceRectanglesRequest` , która odwołuje się `HandleRectangles` metodę, która będzie wywoływana na koniec każdego żądania.
+W `ViewDidLoad`, Utwórz `VNDetectFaceRectanglesRequest` odwołujący się `HandleRectangles` metody, która będzie wywoływana na końcu każdego żądania.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Rozpocznij przetwarzanie wizji
+### <a name="2-start-the-vision-processing"></a>2. Rozpocznij przetwarzanie Vision
 
-Poniższy kod rozpoczyna przetwarzanie żądania. W **VisionFaces** przykładowy kod uruchamiany po użytkownik wybrał obrazu:
+Poniższy kod uruchamia przetwarzanie żądania. W **VisionFaces** przykładowy kod jest uruchamiany po użytkownik wybrał obrazu:
 
 ```csharp
 // Run the face detector
@@ -129,11 +129,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Ten program obsługi przekazuje `ciImage` Framework wizji `VNDetectFaceRectanglesRequest` utworzony w kroku 1.
+Ten program obsługi wyjątków przekazuje `ciImage` do struktury Vision `VNDetectFaceRectanglesRequest` utworzony w kroku 1.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Obsługa wyników przetwarzania wizji
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Obsługa wyników przetwarzania Vision
 
-Po zakończeniu wykrywania twarzy na obrazie obsługi wykonuje `HandleRectangles` metodę, która wykonuje Obsługa błędów i wyświetla granice kroje wykryte i wywołania `OverlayRectangles` Rysowanie prostokątów ograniczający na oryginalnego obrazu:
+Po zakończeniu wykrywania twarzy, program obsługi wykonuje `HandleRectangles` metodę, która obsługuje błędy i wyświetla granice wykryte twarze i wywołania `OverlayRectangles` Rysowanie prostokąty na oryginalnego obrazu:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -162,23 +162,23 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Wyświetl wyniki
 
-`OverlayRectangles` Metody w **VisionFaces** próbki ma trzy funkcje:
+`OverlayRectangles` Method in Class metoda **VisionFaces** przykład ma trzy funkcje:
 
 - Renderowanie obrazu źródłowego
-- Rysowanie prostokąt dla każdej powierzchni wykryte, i
-- Dodawanie etykietę tekstową dla każdej powierzchni przy użyciu CoreGraphics.
+- Rysowanie prostokąta każdej twarzy wykryć, a
+- Dodawanie etykietę tekstową dla każdej twarzy przy użyciu CoreGraphics.
 
-Widok [źródła w próbce](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) dla metody CoreGraphics.
+Widok [w przykładowym źródle](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) dokładnie metody CoreGraphics.
 
-![Zdjęcie z dwóch kroje wykryto](vision-images/found-faces-phone-sml.png)
+![Zdjęcie za pomocą dwóch wykryte twarze:](vision-images/found-faces-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. Dalsze przetwarzanie
 
-Struktura wizji obejmuje dodatkowe możliwości wykrywania twarzy, takie jak oczu i ust. Użyj `VNDetectFaceLandmarksRequest` typu, który zwróci `VNFaceObservation` wyniki, co w kroku 3 powyżej, ale z dodatkowymi `VNFaceLandmark` danych.
+Struktury Vision obejmuje dodatkowe możliwości wykrywania twarzy, takich jak Ty masz dostęp i ujścia. Użyj `VNDetectFaceLandmarksRequest` typ, który zwróci `VNFaceObservation` wyniki, co w kroku 3 powyżej, ale z dodatkowymi `VNFaceLandmark` danych.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Wizja prostokąty (przykład)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
-- [Wizja kroje (przykład)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [Postępy w obrazie Core - filtry, systemu operacyjnego, wizja i bardziej (WWDC) (klip wideo)](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [Wizja twarzy (przykład)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
+- [Postęp w obrazu Core - filtry, systemu operacyjnego, przetwarzania i więcej (WWDC) (wideo)](https://developer.apple.com/videos/play/wwdc2017/510/)

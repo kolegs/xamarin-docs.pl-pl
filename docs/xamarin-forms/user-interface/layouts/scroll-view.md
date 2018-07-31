@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997364"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360815"
 ---
 # <a name="xamarinforms-scrollview"></a>ScrollView zestawu narzędzi Xamarin.Forms
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997364"
 
 W tym artykule omówiono:
 
-- **[Cel](#Purpose)**  &ndash; cel `ScrollView` i gdy jest używany.
-- **[Użycie](#Usage)**  &ndash; sposób używania `ScrollView` w praktyce.
-- **[Właściwości](#Properties)**  &ndash; właściwości publiczne, które mogą odczytywać i modyfikować.
-- **[Metody](#Methods)**  &ndash; metody publiczne, które mogą być wywoływane do przewijania widoku.
-- **[Zdarzenia](#Events)**  &ndash; zdarzenia, które mogą służyć do nasłuchiwania na zmiany stanów widoku.
+- **[Cel](#purpose)**  &ndash; cel `ScrollView` i gdy jest używany.
+- **[Użycie](#usage)**  &ndash; sposób używania `ScrollView` w praktyce.
+- **[Właściwości](#properties)**  &ndash; właściwości publiczne, które mogą odczytywać i modyfikować.
+- **[Metody](#methods)**  &ndash; metody publiczne, które mogą być wywoływane do przewijania widoku.
+- **[Zdarzenia](#events)**  &ndash; zdarzenia, które mogą służyć do nasłuchiwania na zmiany stanów widoku.
 
 ## <a name="purpose"></a>Cel
 

@@ -1,40 +1,41 @@
 ---
-title: Wątkowość w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu korzystanie z interfejsów API System.Threading w aplikacji platformy Xamarin.iOS. Biblioteka zadań równoległych, tworzenie reakcji aplikacji i wyrzucanie elementów bezużytecznych zawarto informacje.
+title: Wątki w rozszerzeniu Xamarin.iOS
+description: Ten dokument zawiera informacje dotyczące korzystania z interfejsów API System.Threading aplikacji platformy Xamarin.iOS. Omówiono w nim Biblioteka zadań równoległych, tworzenie szybko reagujących aplikacji i wyrzucania elementów bezużytecznych.
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 05d015d8d255ccc8c6230b1a89e098e187b22b37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 8e4ee10fdabdcbb4c6cefe02b15dc93459708364
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784920"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350423"
 ---
-# <a name="threading-in-xamarinios"></a>Wątkowość w Xamarin.iOS
+# <a name="threading-in-xamarinios"></a>Wątki w rozszerzeniu Xamarin.iOS
 
-Środowisko uruchomieniowe platformy Xamarin.iOS umożliwia deweloperom dostęp do programu .NET wątkowość interfejsów API, zarówno jawnie za pomocą wątków (`System.Threading.Thread, System.Threading.ThreadPool`) i niejawnie używając wzorce asynchroniczne delegata lub metody BeginXXX, jak również pełny zakres z interfejsów API, które obsługują Biblioteka zadań równoległych.
-
-
-
-Xamarin zdecydowanie zaleca użycie [Biblioteka zadań równoległych](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) do tworzenia aplikacji dla kilku powodów:
--  Domyślny harmonogram TPL będzie delegowane wykonywanie zadań w puli wątków, która z kolei dynamicznie wzrośnie liczba wątków wymagany, ponieważ proces ma miejsce, unikając scenariusz, w którym zbyt wiele wątków przechodzili rywalizują o czas procesora CPU. 
--  Łatwiej można traktować operacje w kategoriach TPL zadania. Można łatwo manipulować nimi, były zaplanowane, serializacji ich realizacji lub uruchomić wiele równolegle z bogaty zestaw interfejsów API. 
--  Jest podstawą do programowania za pomocą nowego C# async rozszerzenia językowe. 
+Środowisko uruchomieniowe platformy Xamarin.iOS zapewnia deweloperom dostęp do programu .NET wątkowości interfejsów API, zarówno jawnie przy użyciu wątków (`System.Threading.Thread, System.Threading.ThreadPool`) i niejawnie przy użyciu wzorców asynchronicznych delegata lub metody BeginXXX, a także pełnego zakresu z interfejsów API służących do obsługi Biblioteka zadań równoległych.
 
 
-Będzie powoli zwiększyć się pula wątków to liczba wątków, zgodnie z potrzebami zależności od liczby rdzeni procesorów dostępnych w systemie, obciążenia systemu i wymaga dane aplikacji. Można użyć tej puli wątków przez wywołanie metody `System.Threading.ThreadPool` lub przy użyciu domyślnej `System.Threading.Tasks.TaskScheduler` (część *równoległych struktur*).
 
-Zwykle deweloperzy za pomocą wątków podczas muszą utworzyć reakcji aplikacji i ich nie chcesz zablokować głównego interfejsu użytkownika, uruchom pętli.
+Xamarin zdecydowanie zaleca używanie [Biblioteka zadań równoległych](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) do tworzenia aplikacji z kilku powodów:
+-  Domyślnego harmonogramu TPL oddeleguje wykonywanie zadań w puli wątków, które z kolei dynamicznie rośnie liczba wątków, wymagany, ponieważ proces ma miejsce, unikając scenariusz, w której znajdą rywalizując o czas procesora CPU zbyt wiele wątków jednocześnie. 
+-  Łatwiej myśleć o operacji w kontekście zadania TPL. Można łatwo manipulować nimi, zaplanować ich, serializować ich wykonania lub uruchomienia wielu równolegle z bogaty zestaw interfejsów API. 
+-  Jest podstawą dla programowania, korzystając z nowego języka C# async rozszerzenia językowe. 
+
+
+Pula wątków powoli rośnie liczba wątków, zgodnie z potrzebami na podstawie liczby rdzeni procesora CPU jest dostępne w systemie, obciążenia systemu i wymagań aplikacji. Możesz użyć tej puli wątków przez wywołanie metody `System.Threading.ThreadPool` lub przy użyciu domyślnej `System.Threading.Tasks.TaskScheduler` (część *środowisk równoległych*).
+
+Zazwyczaj Deweloperzy używają wątków, gdy muszą utworzyć czasu reakcji aplikacji, a nie chcą zablokować głównego interfejsu użytkownika, uruchom pętli.
 
  <a name="Developing_Responsive_Applications" />
 
 
-## <a name="developing-responsive-applications"></a>Tworzenie aplikacji reakcji
+## <a name="developing-responsive-applications"></a>Tworzenie szybko reagujących aplikacji
 
-Dostęp do elementów interfejsu użytkownika powinna być ograniczona do tego samego wątku, który jest uruchomiony w pętli głównej aplikacji. Jeśli chcesz wprowadzić zmiany z wątku głównego interfejsu użytkownika, należy kolejka kodu za pomocą [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/), podobnie do następującej:
+Dostęp do elementów interfejsu użytkownika powinny być ograniczone do tego samego wątku, który jest uruchomiony w pętli głównej aplikacji. Jeśli chcesz wprowadzić zmiany z wątku głównego interfejsu użytkownika, należy kolejki kodu za pomocą [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/), podobnie do następującego:
 
 ```csharp
 MyThreadedRoutine ()  
@@ -51,16 +52,16 @@ MyThreadedRoutine ()
 }
 ```
 
-Powyższy kod wywołuje kodu wewnątrz delegata w kontekście wątku głównego bez spowodowania, że wszystkie warunki wyścigu, które potencjalnie może ulec awarii aplikacji.
+Powyższe wywołuje kod wewnątrz delegata w kontekście wątku głównego bez powodowania żadnych Sytuacje wyścigu, które potencjalnie mogło powodować awarię aplikacji.
 
  <a name="Threading_and_Garbage_Collection" />
 
 
-## <a name="threading-and-garbage-collection"></a>Wątki i wyrzucanie elementów bezużytecznych
+## <a name="threading-and-garbage-collection"></a>Wątki i wyrzucania elementów bezużytecznych
 
-W trakcie wykonywania środowiska uruchomieniowego języka Objective-C utworzy i wersji obiektów. Jeśli obiekty są oflagowywane do "auto wersja" środowiska wykonawczego języka Objective-C spowoduje zwolnienie tych obiektów do bieżącego elementu Wątek `NSAutoReleasePool`. Tworzy Xamarin.iOS `NSAutoRelease` puli dla każdego wątku z `System.Threading.ThreadPool` i wątku głównego. Obejmuje to przez rozszerzenie jakieś wątki utworzone przy użyciu domyślnego TaskScheduler w System.Threading.Tasks.
+W trakcie wykonywania środowisko uruchomieniowe języka Objective-C utworzysz i wersji obiektów. Jeśli obiekty są oflagowywane do "auto wersja" środowiska uruchomieniowego języka Objective-C spowoduje zwolnienie tych obiektów do wątku w bieżącym `NSAutoReleasePool`. Xamarin.iOS tworzony jest jeden `NSAutoRelease` puli dla każdego wątku z `System.Threading.ThreadPool` i wątku głównego. Przy użyciu rozszerzenia obejmują żadnych wątków, utworzone w System.Threading.Tasks przy użyciu domyślnego harmonogramu zadań systemu.
 
-W przypadku utworzenia własnych wątki używające `System.Threading` konieczne podanie własnej `NSAutoRelease` pulę, aby zapobiec przeciekom danych. Aby to zrobić, po prostu zawijać z wątku następujący fragment kodu:
+Jeśli tworzysz własny wątki używające `System.Threading` należy podać, jesteś właścicielem `NSAutoRelease` puli, aby zapobiec wyciekowi danych. Aby to zrobić, po prostu opakować wątek w poniższym fragmentem kodu:
 
 ```csharp
 void MyThreadStart (object arg)
@@ -71,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-Uwaga: Od Xamarin.iOS 5.2 nie trzeba podać własne `NSAutoReleasePool` już będzie należy podać jedną automatycznie dla Ciebie.
+Uwaga: Od Xamarin.iOS 5.2 nie należy podać własne `NSAutoReleasePool` już będzie należy podać jedną automatycznie dla Ciebie.
 
 
 ## <a name="related-links"></a>Linki pokrewne

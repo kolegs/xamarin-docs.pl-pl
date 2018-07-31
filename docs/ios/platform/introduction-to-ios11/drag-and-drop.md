@@ -1,67 +1,67 @@
 ---
-title: Przeciągnij i upuść w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu implementacji przeciągania i upuszczania w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API, wprowadzone w systemie iOS 11. W szczególności omówiono włączanie w UITableView przeciągania i upuszczania.
+title: Przeciągnij i upuść w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano sposób implementacji przeciągania i upuszczania w aplikacji platformy Xamarin.iOS przy użyciu interfejsów API, wprowadzona w systemie iOS 11. W szczególności omówiono Włączanie przeciągania i upuszczania w UITableView.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/05/2016
-ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/05/2017
+ms.openlocfilehash: bc58c866a4a754bccea8d851f79e73fe5a415eed
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786967"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351138"
 ---
-# <a name="drag-and-drop-in-xamarinios"></a>Przeciągnij i upuść w Xamarin.iOS
+# <a name="drag-and-drop-in-xamarinios"></a>Przeciągnij i upuść w rozszerzeniu Xamarin.iOS
 
 _Implementowanie przeciągania i upuszczania dla systemu iOS 11_
 
-iOS 11 obejmuje przeciągania i upuszczania pomocy technicznej, aby skopiować dane między aplikacjami na tabletów iPad. Użytkownicy mogą wybrać i przeciągnij wszystkie typy zawartości z aplikacji znajduje się obok siebie lub przeciągając ikonie aplikacji, które wyzwoli aplikacji, aby otworzyć i umożliwić danych można usunąć:
+System iOS 11 obejmuje przeciągania i upuszczania pomocy technicznej w celu skopiowania danych między aplikacjami na urządzeniu iPad. Użytkownicy mogą wybrać i przeciągnij wszystkich typów zawartości z aplikacji umieszczony side-by-side lub poprzez przeciąganie myszy na ikonie aplikacji, która spowoduje wyzwolenie aplikacji, aby otworzyć i umożliwić danych można usunąć:
 
-![Przeciągnij i upuść przykład z niestandardowych aplikacji na informacje o aplikacji](drag-and-drop-images/drag-drop-sml.png)
+![Przeciąganie i upuszczanie przykładu z aplikacji niestandardowej w informacje o aplikacji](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
-> Przeciąganie i upuszczanie jest dostępna tylko w tej samej aplikacji na telefonie iPhone.
+> Przeciąganie i upuszczanie jest dostępna tylko w ramach tej samej aplikacji na urządzeniu iPhone.
 
-Należy wziąć pod uwagę Obsługa przeciągania i upuszczania operacji dowolnej lokalizacji zawartości można utworzyć lub edytować:
+Należy rozważyć obsługę przeciągnij i upuść operacje dowolnym zawartości można utworzyć lub edytować:
 
-- Tekst kontrolki przeciągania i upuszczania obsługę wszystkie aplikacje dla systemu iOS 11, bez konieczności wykonywania dodatkowych działań.
-- Widoki tabel i widoków kolekcji obejmują ulepszenia w systemie iOS 11, który uprościć dodawanie przeciągania i upuszczania zachowanie.
-- Inne widoki może się do obsługi przeciągania i upuszczania z dodatkowe dostosowanie.
+- Kontrolki tekstu obsługi przeciągania i upuszczania dla wszystkich aplikacji skompilowana dla systemu iOS 11, bez konieczności wykonywania dodatkowych działań.
+- Widoki tabel i widoków kolekcji zawiera ulepszeń w systemie iOS 11, które upraszczają Dodawanie przeciągnij i upuść działanie.
+- Inne widoki, będzie możliwe do obsługi przeciągania i upuszczania za pomocą dodatkowych dostosowań.
 
-Podczas dodawania przeciąganie i upuszczanie obsługuje do aplikacji, zapewniają różne poziomy zawartości wierności; na przykład można określić zarówno tekst sformatowany i zwykły tekst wersji danych tak, aby aplikacja odbierająca można wybrać, który najlepiej jest dopasowywana do docelowy przeciągania. Istnieje również możliwość, aby dostosować wizualizacji przeciągania i Włącz przeciąganie wielu elementów naraz.
+W przypadku dodawania przeciągania i upuszczania pomocy technicznej dla aplikacji, można zapewnić różne poziomy jakości zawartości; na przykład można określić tekst sformatowany i zwykły tekst wersji danych tak, aby aplikacja odbierająca można wybrać, które najlepiej pasują do element docelowy przeciągania. Jest również możliwe do dostosowania wizualizacji przeciągania i umożliwia przeciąganie wielu elementów naraz.
 
-## <a name="drag-and-drop-with-text-controls"></a>Przeciągnij i upuść z formantami
+## <a name="drag-and-drop-with-text-controls"></a>Przeciąganie i upuszczanie za pomocą kontrolek tekstu
 
-`UITextView` i `UITextField` automatycznie obsługują przeciąganie zaznaczonego tekstu wychodzących, a zawartość tekstową.
+`UITextView` i `UITextField` automatycznie obsługują przeciąganie zaznaczonego tekstu w poziomie i zawartość tekstową.
 
 <a name="uitableview" />
 
-## <a name="drag-and-drop-with-uitableview"></a>Przeciągnij i upuść z UITableView
+## <a name="drag-and-drop-with-uitableview"></a>Przeciąganie i upuszczanie za pomocą UITableView
 
-`UITableView` zawiera wbudowane obsługę przeciągnij i upuść interakcji z wierszami tabeli, wymagających tylko kilka metod umożliwiających zachowanie domyślne.
+`UITableView` ma wbudowaną obsługę przeciąganie i upuszczanie interakcji z wiersze tabeli, wymaga tylko kilka metod, aby włączyć to zachowanie domyślne.
 
-Obejmuje dwa interfejsy:
+Istnieją dwa interfejsy, zaangażowany:
 
-- `IUITableViewDragDelegate` — Pakiety informacje po zainicjowaniu przeciągnij w widoku tabeli.
-- `IUITableViewDropDelegate` — Przetwarza informacje podczas upuszczania jest w trakcie próby oraz zostać zakończona.
+- `IUITableViewDragDelegate` — Informacje pakietów po zainicjowaniu przeciągnij w widoku tabeli.
+- `IUITableViewDropDelegate` — Przetwarza informacje gdy zrzutu jest nastąpiła i zakończony.
 
-W [próbki DragAndDropTableView](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/) te dwa interfejsy są oba zaimplementowane na `UITableViewController` klasy wraz ze źródła danych i delegata. Przydzieleni w `ViewDidLoad` metody:
+W [przykładowe DragAndDropTableView](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/) te dwa interfejsy są zarówno implementowane w `UITableViewController` klasy, wraz ze źródła danych i delegata. Są przydzielone w `ViewDidLoad` metody:
 
 ```csharp
 this.TableView.DragDelegate = this;
 this.TableView.DropDelegate = this;
 ```
 
-Minimalny wymagany kod dla tych dwóch interfejsów opisanej poniżej.
+Minimalnej ilości kodu wymagane dla tych dwóch interfejsów zostało wyjaśnione poniżej.
 
-### <a name="table-view-drag-delegate"></a>Delegat przeciągania widoku tabeli
+### <a name="table-view-drag-delegate"></a>Delegat przeciągnij widok tabeli
 
-Jedyną metodą _wymagane_ do obsługi Przeciąganie wiersza z tabeli widoku jest `GetItemsForBeginningDragSession`. Jeśli użytkownik rozpocznie przeciąganie wiersza, ta metoda zostanie wywołana.
+Jedyną metodą _wymagane_ do obsługi, przeciągając wiersz z tabeli jest `GetItemsForBeginningDragSession`. Jeśli użytkownik rozpoczyna przeciągnij wiersz, ta metoda zostanie wywołana.
 
-Poniżej przedstawiono implementację. Go pobiera dane skojarzone z przeciąganego wiersza koduje go i konfiguruje `NSItemProvider` Określa, jak aplikacje obsłuży "Usuń" część operacji (na przykład, czy można obsługują typu danych `PlainText`, w tym przykładzie):
+Poniżej przedstawiono implementację. Jej pobiera dane skojarzone z przeciągniętego wiersz koduje go jako i konfiguruje `NSItemProvider` Określa, jak aplikacje będą obsługiwać "listy" część operacji (na przykład, czy ich może obsługiwać typ danych `PlainText`, w przykładzie):
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-Istnieje wiele metod opcjonalne w delegacie przeciągania, który można zaimplementować, aby dostosować zachowanie przeciągania, takie jak dostarczanie wielu reprezentacje danych, które można podjąć zaletą w aplikacji docelowej (np. tekst sformatowany jako także jako zwykły tekst lub wektora i wersje mapy bitowej rysunku). Można też podać oświadczenia niestandardowe dane do użycia podczas przeciągania i upuszczania w ramach tej samej aplikacji.
+Istnieje wiele metod opcjonalne w delegacie przeciągania, którą można implementować, aby dostosować zachowanie przeciągnij, jak na przykład wiele reprezentacji danych, które mogą być podejmowane zalet w aplikacjach docelowych (np. tekstu sformatowanego, jak również jako zwykły tekst lub wektor i Mapa bitowa wersje rysunku). Możesz też podać reprezentacji danych niestandardowych do użycia podczas przeciągania i upuszczania w ramach tej samej aplikacji.
 
-### <a name="table-view-drop-delegate"></a>Delegat Porzuć widok tabeli
+### <a name="table-view-drop-delegate"></a>Delegat listy widok tabeli
 
-Metody obiektu delegowanego listy są wywoływane podczas operacji przeciągania odbywa się za pośrednictwem widoku tabeli lub zakończeniu powyżej. Wymaganych metod można określić tego, czy dane może zostać porzucony i jakie akcje są pobierane, jeśli zostało ukończone upuszczania:
+Metody na delegata listy są wywoływane, gdy operacja przeciągania odbywa się za pośrednictwem widoku tabeli lub zakończeniu nad nim. Wymaganych metod ustalić, czy dane można go porzucić i jakie działania są podjęte, jeśli listy zostanie zakończona:
 
-- `CanHandleDropSession` — Podczas przeciągania jest w toku, a potencjalnie usuwane w aplikacji, ta metoda określa, czy dane przeciągane może go porzucić.
-- `DropSessionDidUpdate` — Podczas przeciągania jest w toku, ta metoda jest wywoływana w celu określenia, jakie działanie ma. Informacje z widoku tabeli przeciągany nad, przeciągnij sesji i ścieżkę możliwe indeksu można używany do określenia zachowania i wizualne podane dla użytkownika.
-- `PerformDrop` — Gdy użytkownik kończy listy (podnoszenia ich palca), ta metoda wyodrębnia dane przeciągane i modyfikuje widok tabeli, aby dodać dane w nowym wierszu (lub wierszy).
+- `CanHandleDropSession` — Podczas przeciągania jest w toku i potencjalnie usuwane w aplikacji, ta metoda określa, czy dane przeciąganie może go porzucić.
+- `DropSessionDidUpdate` — Podczas przeciągania jest w toku, ta metoda jest wywoływana, aby ustalić, jakie działanie ma. Informacji z widoku tabeli, jest przeciągany nad, przeciągnij sesji i ścieżki możliwe indeks można użyć do określenia zachowania i wizualną opinię udostępniany użytkownikowi.
+- `PerformDrop` — Po użytkownik kończy listy (na przykład, przenosząc ich palca), ta metoda wyodrębnia dane przeciąganie i modyfikuje widoku tabeli, aby dodać dane w nowy wiersz (lub wierszy).
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` Wskazuje, czy widok tabeli może akceptować dane przeciągane. W poniższym przykładzie `CanLoadObjects` służy do potwierdzenia, że ten widok tabeli może akceptować dane ciągu.
+`CanHandleDropSession` Wskazuje, czy widok tabeli może akceptować danych przeciągania. W poniższym przykładzie `CanLoadObjects` służy do potwierdzenia, że ten widok tabeli może akceptować dane ciągu.
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-`DropSessionDidUpdate` Metoda jest wywoływana wielokrotnie podczas operacji przeciągania jest w toku, aby zapewnić podpowiedzi wizualne dla użytkownika.
+`DropSessionDidUpdate` Wywoływana jest metoda wielokrotnie podczas operacji przeciągania, aby zapewnić podpowiedzi wizualne dla użytkownika.
 
-W kodzie poniżej `HasActiveDrag` służy do określania, czy operacja pochodzi z aktualnego widoku tabeli. Jeśli tak, tylko jeden wiersze są dozwolone do przeniesienia.
+W poniższym kodzie `HasActiveDrag` służy do określania, czy operacja pochodzi w bieżącym widoku tabeli. Jeśli tak, tylko jednego wiersze są dozwolone do przeniesienia.
 W przypadku przeciągania z innego źródła, zostanie wskazany operacji kopiowania:
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Operacja jej porzucenia może być jednym z `Cancel`, `Move`, lub `Copy`.
+Można wykonać operacji usuwania, jeden z `Cancel`, `Move`, lub `Copy`.
 
-Próba porzucenia można wstawić nowy wiersz lub Dodaj/dołączanie danych do istniejącego wiersza.
+Celem listy można wstawić nowy wiersz lub dodać/dołączanie danych do istniejącego wiersza.
 
 #### <a name="performdrop"></a>PerformDrop
 
-`PerformDrop` Metoda jest wywoływana, gdy użytkownik wykonuje tę operację i modyfikuje źródło widoku, a dane tabeli, aby odzwierciedlić porzuconych danych.
+`PerformDrop` Metoda jest wywoływana, gdy użytkownik zakończy operację i modyfikuje źródło widoku, a dane tabeli, aby odzwierciedlić porzuconych dane.
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)
@@ -176,20 +176,20 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 }
 ```
 
-Można dodać dodatkowy kod asynchronicznie załadować danych dużych obiektów.
+Asynchroniczne ładowanie dużych obiektów danych można dodać dodatkowy kod.
 
-### <a name="testing-drag-and-drop"></a>Testowanie przeciąganie i upuszczanie
+### <a name="testing-drag-and-drop"></a>Testowanie przeciągania i upuszczania
 
-Aby przetestować, należy użyć iPad [próbki](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/).
-Otwórz przykładowe równolegle z innej aplikacji (na przykład informacje) i przeciągnij wierszy i tekst między nimi:
+IPad należy użyć, aby przetestować [przykładowe](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/).
+Otwórz przykładowy wraz z innej aplikacji (np. informacje o), a następnie przeciągnij wierszy i tekst między nimi:
 
-![Zrzut ekranu przedstawiający trwających operacji przeciągania](drag-and-drop-images/01-sml.png)
+![Zrzut ekranu przedstawiający Trwa operacja przeciągania](drag-and-drop-images/01-sml.png)
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Przeciągnij i upuść Human Interface Guidelines (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
-- [Przeciągnij i upuść przykład widoku tabeli](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
-- [Przeciągnij i upuść przykładowy widok kolekcji](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-- [Wprowadzenie do przeciągania i upuszczania (WWDC) (klip wideo)](https://developer.apple.com/videos/play/wwdc2017/203/)
-- [Przeciągnij i upuść z kolekcji i widok tabeli (WWDC) (klip wideo)](https://developer.apple.com/videos/play/wwdc2017/223/)
+- [Przeciąganie i upuszczanie ludzi Interface Guidelines (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
+- [Przeciąganie i upuszczanie przykładowy widok tabeli](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
+- [Przeciąganie i upuszczanie przykładowy widok kolekcji](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
+- [Wprowadzenie do przeciągania i upuszczania (WWDC) (wideo)](https://developer.apple.com/videos/play/wwdc2017/203/)
+- [Przeciąganie i upuszczanie za pomocą kolekcji i widok tabeli (WWDC) (wideo)](https://developer.apple.com/videos/play/wwdc2017/223/)

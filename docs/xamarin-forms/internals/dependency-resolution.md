@@ -1,33 +1,33 @@
 ---
 title: Rozpoznawanie zależności w interfejsie Xamarin.Forms
-description: W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji.
+description: W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad tworzeniem i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/23/2018
-ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270491"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351589"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Rozpoznawanie zależności w interfejsie Xamarin.Forms
 
-_W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad konstrukcji i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji. Przykłady kodu są pobierane z [rozpoznawania zależności](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) próbki._
+_W tym artykule wyjaśniono, jak iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, tak aby kontenera iniekcji zależności aplikacji ma kontrolę nad tworzeniem i okresem istnienia niestandardowe programy renderujące, rzeczy i DependencyService implementacji. Przykłady kodu, w tym artykule są pobierane z [rozpoznawania zależności za pomocą kontenerów](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/) próbki._
 
 W kontekście aplikacji platformy Xamarin.Forms, która używa wzorca Model-View-ViewModel (MVVM) kontenera iniekcji zależności można rejestrowania i wyświetlanie modeli rozpoznawania i rejestrowania usług i wprowadza je do modeli widoków. Podczas tworzenia modelu widoku kontenera wprowadza wszelkie zależności, które są wymagane. Jeśli te zależności nie zostały utworzone, kontener tworzy i jest rozpoznawana jako zależności. Aby uzyskać więcej informacji na temat wstrzykiwanie zależności, włącznie z przykładami wstrzykiwania zależności do modeli widoków, zobacz [wstrzykiwanie zależności](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-Kontrolę nad tworzenia i okresem istnienia typów w projektach platformy tradycyjnie odbywa się przez zestaw narzędzi Xamarin.Forms, która używa `Activator.CreateInstance` metodę w celu utworzenia wystąpienia elementu niestandardowe programy renderujące, efekty, i [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementacje. Niestety ogranicza to deweloperowi kontroli nad tworzeniem i okresem istnienia tych typów i możliwość iniekcji zależności do nich. Jednak to zachowanie można zmienić przez iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms kontrolować, jak tworzyć typy — kontenera iniekcji zależności aplikacji lub zestawu narzędzi Xamarin.Forms.
+Kontrolę nad tworzenia i okresem istnienia typów w projektach platformy tradycyjnie odbywa się przez zestaw narzędzi Xamarin.Forms, która używa `Activator.CreateInstance` metodę w celu utworzenia wystąpienia elementu niestandardowe programy renderujące, efekty, i [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementacje. Niestety ogranicza to deweloperowi kontroli nad tworzeniem i okresem istnienia tych typów i możliwość iniekcji zależności do nich. To zachowanie można zmienić, wstawianie metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms kontrolować, jak tworzyć typy — kontenera iniekcji zależności aplikacji lub zestawu narzędzi Xamarin.Forms. Jednak należy pamiętać, że nie jest wymagane iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms. Zestaw narzędzi Xamarin.Forms będzie tworzenie i zarządzanie okresem istnienia typów w projektach platformy, jeśli metoda rozpoznawania zależności nie są wstrzykiwane.
 
 > [!NOTE]
-> Nie istnieje wymóg iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms. Zestaw narzędzi Xamarin.Forms będzie tworzenie i zarządzanie okresem istnienia typów w projektach platformy, jeśli metoda rozpoznawania zależności nie są wstrzykiwane.
+> Chociaż ten artykuł koncentruje się na wstawianie metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms, który jest rozpoznawany jako typy zarejestrowanych za pomocą kontenera iniekcji zależności, istnieje również możliwość wstrzyknąć metody rozpoznawania zależności, która ustala przy użyciu metod fabryki zarejestrowanych typów. Aby uzyskać więcej informacji, zobacz [rozpoznawania zależności za pomocą metod fabryki](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/) próbki.
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Wprowadzanie metoda rozpoznawania zależności
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Klasy pozwala na iniekcję metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms przy użyciu jednej z [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody. Następnie podczas Xamarin.Forms wymaga wystąpienia określonego typu, metoda rozpoznawania zależności jest możliwość zapewnienie wystąpienia. Jeśli metoda rozpoznawania zależności zwraca `null` dla żądanego typu zestawu narzędzi Xamarin.Forms powróci do próby utworzenia typu wystąpienia swoim imieniu, używając `Activator.CreateInstance` metody.
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Klasa oferuje możliwość wstrzyknąć metoda rozpoznawania zależności do zestawu narzędzi Xamarin.Forms przy użyciu [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody. Następnie podczas Xamarin.Forms wymaga wystąpienia określonego typu, metoda rozpoznawania zależności jest możliwość zapewnienie wystąpienia. Jeśli metoda rozpoznawania zależności zwraca `null` dla żądanego typu zestawu narzędzi Xamarin.Forms powróci do próby utworzenia typu wystąpienia swoim imieniu, używając `Activator.CreateInstance` metody.
 
 Poniższy przykład pokazuje, jak ustawić metodę rozpoznawania zależności za pomocą [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody:
 
@@ -97,6 +97,18 @@ public partial class App : Application
                 (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
                 (pi, ctx) => ctx.Resolve(param2Type))
         });
+    }
+
+    public static void RegisterTypeWithParameters<TInterface, T>(Type param1Type, object param1Value, Type param2Type, string param2Name) where TInterface : class where T : class, TInterface
+    {
+        builder.RegisterType<T>()
+               .WithParameters(new List<Parameter>()
+        {
+            new TypedParameter(param1Type, param1Value),
+            new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
+                (pi, ctx) => ctx.Resolve(param2Type))
+        }).As<TInterface>();
     }
 
     public static void BuildContainer()
@@ -219,7 +231,7 @@ public interface IPhotoPicker
 
 W każdym projekcie platformy `PhotoPicker` klasy implementuje `IPhotoPicker` interfejs przy użyciu interfejsów API platformy. Aby uzyskać więcej informacji na temat tych usług zależności zobacz [pobrania zdjęcia z biblioteki obrazów](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-Na wszystkich trzech platformach `PhotoPicker` klasa ma następujący Konstruktor, który wymaga `ILogger` argumentu:
+W systemach iOS i platformy uniwersalnej systemu Windows `PhotoPicker` klasy mają następujący Konstruktor, który wymaga `ILogger` argumentu:
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -239,7 +251,32 @@ void RegisterTypes()
 }
 ```
 
-W tym przykładzie `Logger` konkretny typ jest zarejestrowany za pomocą mapowania względem jego typ interfejsu i `PhotoPicker` typ również został zarejestrowany za pomocą mapowania interfejsu. Gdy użytkownik przechodzi do strony pobierania zdjęć i wybierze Wybierz zdjęcie, `OnSelectPhotoButtonClicked` program obsługi jest wykonywana:
+W tym przykładzie `Logger` konkretny typ jest zarejestrowany za pomocą mapowania względem jego typ interfejsu i `PhotoPicker` typ również został zarejestrowany za pomocą mapowania interfejsu.
+
+`PhotoPicker` Konstruktora platformy systemu Android jest nieco bardziej skomplikowane, ponieważ wymaga ona `Context` argument oprócz `ILogger` argumentu:
+
+```csharp
+public PhotoPicker(Context context, ILogger logger)
+{
+    _context = context ?? throw new ArgumentNullException(nameof(context));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+```
+
+W poniższym przykładzie przedstawiono `RegisterTypes` metody platformy systemu Android:
+
+```csharp
+void RegisterTypes()
+{
+    App.RegisterType<ILogger, Logger>();
+    App.RegisterTypeWithParameters<IPhotoPicker, Services.Droid.PhotoPicker>(typeof(Android.Content.Context), this, typeof(ILogger), "logger");
+    App.BuildContainer();
+}
+```
+
+W tym przykładzie `App.RegisterTypeWithParameters` rejestrów metoda `PhotoPicker` z kontenera iniekcji zależności. Metoda rejestracji zapewnia, że `MainActivity` wystąpienia zostaną dodane jako `Context` argumentu, a `Logger` typu zostaną dodane jako `ILogger` argumentu.
+
+Gdy użytkownik przechodzi do strony pobierania zdjęć i wybierze Wybierz zdjęcie, `OnSelectPhotoButtonClicked` program obsługi jest wykonywana:
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -262,7 +299,7 @@ Gdy [ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Reso
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Rozpoznawanie zależności (przykład)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)
+- [Rozpoznawanie zależności za pomocą kontenerów (przykład)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [Wstrzykiwanie zależności](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Implementowanie odtwarzacza wideo](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Wywoływanie zdarzenia z efektów](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

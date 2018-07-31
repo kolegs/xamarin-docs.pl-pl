@@ -1,76 +1,77 @@
 ---
-title: Struktury osadzone w Xamarin.iOS
-description: Ten dokument zawiera opis sposobu udostępnianie kodu struktury osadzone w aplikacji platformy Xamarin.iOS. Można to zrobić z narzędzia mtouch lub natywnego odwołań.
+title: Struktury osadzone w rozszerzeniu Xamarin.iOS
+description: W tym dokumencie opisano sposób udostępniania kodu struktury osadzone w aplikacji platformy Xamarin.iOS. Można to zrobić przy użyciu narzędzia mtouch lub odwołania natywne.
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e42f0940fe3fc132c9d381907aad5afbe474c4ad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: cce5356fd1d3d9a5cf16370a4843c3541b00a7c0
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787295"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351437"
 ---
-# <a name="embedded-frameworks-in-xamarinios"></a>Struktury osadzone w Xamarin.iOS
+# <a name="embedded-frameworks-in-xamarinios"></a>Struktury osadzone w rozszerzeniu Xamarin.iOS
 
-_W tym dokumencie opisano, jak deweloperzy aplikacji może mieć osadzone struktury użytkownika w swoich aplikacjach._
+_W tym dokumencie opisano, jak deweloperzy aplikacji można osadzić platformy użytkownika w swoich aplikacjach._
 
-Z systemem iOS 8.0 Apple możliwe jej do utworzenia osadzonych platformę, by współużytkowanie kodu rozszerzeń aplikacji i głównej aplikacji w środowisku Xcode.
+Z systemem iOS 8.0 Apple umożliwianie Tworzenie osadzonego framework umożliwiające udostępnianie kodu między rozszerzeniami aplikacji i głównej aplikacji w środowisku Xcode.
 
-Xamarin.iOS 9.0 dodaje obsługę korzystających z tych platform embedded (utworzone w programie Xcode) w aplikacji platformy Xamarin.iOS. *Będzie on **nie** możliwe jest tworzenie struktury osadzone z dowolnego typu Xamarin.iOS projektów, tylko używać istniejących natywnych struktur (Objective-C).*
+Xamarin.iOS 9.0 dodaje obsługę używania tych struktury osadzone (utworzonych za pomocą edytora Xcode) w aplikacji platformy Xamarin.iOS. *Będzie ono **nie** istnieje możliwość tworzenia struktury osadzone z dowolnego typu projekty Xamarin.iOS, tylko używać istniejących struktur natywnych (Objective-C).*
 
-Istnieją dwa sposoby korzystania platform w Xamarin.iOS:
+Istnieją dwa sposoby korzystania z platformy w rozszerzeniu Xamarin.iOS:
 
-- Przekazania platformę do narzędzia mtouch przez dodanie poniższego do mtouch dodatkowych argumentów w projekcie **kompilacji systemu iOS** opcje:
+- Przekazać struktury do narzędzia mtouch, dodając następujące dodatkowe argumenty mtouch w projekcie **kompilacja systemu iOS** opcje:
 
   ```csharp
   --framework:/Path/To/My.Framework
   ```
 
-  Musi to być ustawiona dla każdej konfiguracji projektu.
+  Ma to zostać ustawione dla każdej konfiguracji projektu.
 
-- Dodaj odwołania do natywnej z menu kontekstowego
+- Dodawanie odwołania natywne z menu kontekstowego
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Kliknij prawym przyciskiem myszy projekt i Przeglądaj, aby dodać odwołanie do natywnego
+Kliknij prawym przyciskiem myszy na projekt i Przeglądaj, aby dodać odwołania natywne
 
-![](embedded-frameworks-images/xam-native-refs.png "Wybierz opcję Dodaj natywnego odwołań w programie Visual Studio dla komputerów Mac")
+![](embedded-frameworks-images/xam-native-refs.png "Wybierz pozycję Dodaj odwołania natywne w programie Visual Studio dla komputerów Mac")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Kliknij prawym przyciskiem myszy projekt i Przeglądaj, aby dodać odwołanie do natywnego
+Kliknij prawym przyciskiem myszy na projekt i Przeglądaj, aby dodać odwołania natywne
 
-![](embedded-frameworks-images/vs-native-refs.png "Wybierz opcję Dodaj natywnego odwołań w programie Visual Studio")
+![](embedded-frameworks-images/vs-native-refs.png "Wybierz pozycję Dodaj odwołania natywne w programie Visual Studio")
 
 -----
 
-  To będzie działać w przypadku wszystkich konfiguracji.
+  Będzie on działać w przypadku wszystkich konfiguracji.
 
-W przyszłych wersjach programu Visual Studio dla komputerów Mac i narzędzia platformy Xamarin dla Visual Studio będzie możliwe użycie platform z w środowisku IDE (bez ręcznie edytować pliki projektu).
+W przyszłych wersjach programu Visual Studio dla komputerów Mac i narzędzia środowiska Xamarin dla programu Visual Studio będzie możliwe korzystanie z platformy z poziomu środowiska IDE (bez ręcznego edytowania plików projektu).
 
-Kilka przykładowych projektach można znaleźć w [github](https://github.com/rolfbjarne/embedded-frameworks)
+Kilka przykładowych projektów można znaleźć na [github](https://github.com/rolfbjarne/embedded-frameworks)
 
 ## <a name="limitations"></a>Ograniczenia
 
-- Struktury osadzone są obsługiwane tylko w [Unified](~/cross-platform/macios/unified/index.md) projektów.
-- Struktury osadzone są obsługiwane tylko w projektach z elementem docelowym wdrożenia co najmniej system iOS 8.0.
-- Jeśli rozszerzenie wymaga osadzone struktury aplikacji kontenera musi mieć również odwołanie do struktury, w przeciwnym razie platformę nie zostaną uwzględnione w pakiecie aplikacji.
+- Struktury osadzone są obsługiwane tylko w [ujednoliconej](~/cross-platform/macios/unified/index.md) projektów.
+- Struktury osadzone są obsługiwane tylko w projektach w element docelowy wdrożenia co najmniej z systemem iOS 8.0.
+- Jeśli rozszerzenie wymaga platforma osadzonych, w aplikacji kontenera musi także posiadać odniesienia do struktury, w przeciwnym razie ramach nie zostaną uwzględnione w zbiorze aplikacji.
 
-## <a name="the-mono-runtime"></a>Mono środowiska wykonawczego
+## <a name="the-mono-runtime"></a>Środowisko uruchomieniowe Mono
 
-Wewnętrznie Xamarin.iOS korzysta z tej funkcji, aby połączyć się ze środowiskiem uruchomieniowym Mono jako platforma, zamiast łączenie Mono środowiska uruchomieniowego statycznie do każdego rozszerzenia i aplikacji kontenera.
+Wewnętrznie Xamarin.iOS korzysta z tej funkcji, aby połączyć się ze środowiskiem uruchomieniowym Mono jako struktura, zamiast łączenie środowiska uruchomieniowego Mono statycznie do każdego rozszerzenia i aplikacji kontenera.
 
-Odbywa się automatycznie, jeśli kontener jest aplikacja Unified, zawiera rozszerzenia i wdrożenie docelowym jest system iOS 8.0 lub nowszej.
+Jest to wykonywane automatycznie, jeśli aplikacja kontenera jest aplikacją Unified, zawiera rozszerzenia i wdrożenie docelowym jest system iOS 8.0 lub nowszej.
 
-Aplikacje bez rozszerzenia będą nadal łączyć się z Mono środowiska uruchomieniowego statycznie, ponieważ zwłoka rozmiar dla przy użyciu platformy, jeśli istnieje tylko jedna aplikacja odwołuje.
+Aplikacje bez rozszerzeń będą nadal łączyć się z środowiska uruchomieniowego Mono statycznie, ponieważ zwłoka rozmiar dla za pomocą platformy, jeśli istnieje tylko jedna aplikacja odwoływania się do niego.
 
-To zachowanie może być zastąpiona przez dewelopera aplikacji przez dodanie poniższego jako argumentu dodatkowe mtouch projektu iOS opcje kompilacji:
+To zachowanie może zostać przesłonięta przez dewelopera aplikacji, przez dodanie poniższego jako argumentu mtouch dodatkowe opcje kompilacji systemu iOS projektu:
 
-- `--mono:static`: Połączenie ze środowiskiem uruchomieniowym Mono statycznie.
-- `--mono:framework`: Łącza ze środowiskiem uruchomieniowym Mono jako struktury.
+- `--mono:static`: Łączy statycznie ze środowiskiem uruchomieniowym Mono.
+- `--mono:framework`: Łącza za pomocą środowiska uruchomieniowego Mono jako struktura.
 
-Jednym ze scenariuszy łączenia ze środowiskiem uruchomieniowym Mono jako platforma nawet w przypadku aplikacji bez rozszerzenia jest zmniejszenie rozmiaru pliku wykonywalnego, w celu wyeliminowania żadne ograniczenia rozmiaru, który wymusza Apple plik wykonywalny. Odwołania Mono środowiska uruchomieniowego dodaje około 1.7MB na architektura (zgodnie z Xamarin.iOS 8.12, jednak jego między wersjami, a nawet między aplikacjami). Mono framework dodaje około 2.3MB na architektura, co oznacza, że architektura pojedynczej aplikacji bez wszystkich rozszerzeń, co link do aplikacji ze środowiskiem uruchomieniowym Mono struktury zmniejszania pliku wykonywalnego przez ~1.7MB, ale Dodaj ~2.3MB framework, co w ~0.6MB większy aplikacji razem.
+Jeden scenariusz łączenia ze środowiskiem uruchomieniowym Mono jako struktura nawet w przypadku aplikacji bez rozszerzenia jest zmniejszenie rozmiaru pliku wykonywalnego, rozwiązywania ograniczenia dotyczące rozmiaru Apple wymusza plik wykonywalny. Odwołanie środowisko uruchomieniowe Mono dodaje około 1.7MB na architekturze (zgodnie z platformy Xamarin.iOS 8.12, jednak jego różni się między wersjami, a nawet między aplikacjami). Mono framework dodaje około 2.3MB na architekturę, co oznacza, że architektura pojedynczej aplikacji bez jakichkolwiek rozszerzeń, dzięki czemu link do aplikacji za pomocą środowiska uruchomieniowego Mono jako platforma zmniejszania pliku wykonywalnego przez ~1.7MB, ale Dodaj ~2.3MB framework, wynikowa w ~0.6MB większe aplikacji razem.
 

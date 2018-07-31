@@ -1,23 +1,24 @@
 ---
-title: Jak wyświetlić, jakie biblioteki są obsługiwane w PCL?
+title: Jak mogę wyświetlić biblioteki obsługiwane w aplikacji PCL?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 14FF03BD-AF41-4DB1-B307-2349C13DE7E4
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 87f65ba2cff2d5990c32aa142f97766a76d6ba05
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 07/27/2018
+ms.openlocfilehash: 7e1017baf7daed68b5e55319a9ce13a4a2df5f2e
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919543"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351473"
 ---
-# <a name="how-can-i-view-what-libraries-are-supported-in-a-pcl"></a>Jak wyświetlić, jakie biblioteki są obsługiwane w PCL?
+# <a name="how-can-i-view-what-libraries-are-supported-in-a-pcl"></a>Jak mogę wyświetlić biblioteki obsługiwane w aplikacji PCL?
 
-- Można znaleźć omówienie różne funkcje obsługiwane przez różnych platform docelowych PCL w obszarze *obsługiwane funkcje* część tej strony: [http://msdn.microsoft.com/library/gg597391.aspx](https://msdn.microsoft.com/library/gg597391.aspx)
+- Można znaleźć przegląd różnych funkcjach obsługiwanych przez różne platformy docelowe PCL w obszarze *obsługiwane funkcje* części tej strony: [https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
 
-- Inną opcją jest użycie [.NET przenośność analizator](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b) do oceny, czy profil PCL można przekonwertować istniejącej biblioteki.
+- Innym rozwiązaniem jest użycie [narzędzia .NET Portability Analyzer](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b) do oceny, czy profil PCL można przekonwertować istniejącej biblioteki.
 
-- Trzecia możliwość jest aby przeglądać zawartość rzeczywiste profil, który może używać. Na przykład przy użyciu profil 78, można przejść w tym miejscu: `C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile78\` i wyświetlić wszystkie zestawy w niej.
+- Trzecia możliwość polega na do przeglądania zawartości rzeczywiste profil, który może używać. Na przykład przy użyciu profilu 78, można przejść w tym miejscu: `C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile78\` i wyświetlać wszystkie zestawy znajdujące się w nim.
 
-Niezależnie od metody wybrano, proszę należy pamiętać, że niektóre funkcje ma zostać pobrane za pomocą NuGet i biblioteki BCL firmy Microsoft.
+Niezależnie od metody wybranej,. należy pamiętać, że niektóre funkcje mają zostać pobrane za pośrednictwem NuGet i biblioteki Microsoft BCL.

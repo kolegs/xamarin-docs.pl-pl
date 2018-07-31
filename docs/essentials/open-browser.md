@@ -5,12 +5,12 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 563d3899cffb80c0215d90e8e4392046c4635256
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7e58d439f5a6eaafe9b1b5e7ca874a986e468cb9
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815709"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353285"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: przeglądarki
 
@@ -26,7 +26,7 @@ Dodaj odwołanie do Xamarin.Essentials w klasie:
 using Xamarin.Essentials;
 ```
 
-Funkcje przeglądarki działa przez wywołanie metody `OpenAsync` metody z `Uri` i `BrowserLaunchType`.
+Funkcje przeglądarki działa przez wywołanie metody `OpenAsync` metody z `Uri` i `BrowserLaunchMode`.
 
 ```csharp
 
@@ -34,7 +34,7 @@ public class BrowserTest
 {
     public async Task OpenBrowser(Uri uri)
     {
-        await Browser.OpenAsync(uri, BrowserLaunchType.SystemPreferred);
+        await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
     }
 }
 ```
@@ -43,7 +43,7 @@ public class BrowserTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Typ uruchomienia Określa, jak uruchomieniu przeglądarki:
+Tryb uruchamiania Określa, jak uruchomieniu przeglądarki:
 
 ## <a name="system-preferred"></a>System preferowane
 
@@ -65,7 +65,7 @@ Standardowa `OpenUrl` w aplikacji głównej jest używany do uruchomienia domyś
 
 # <a name="uwptabuwp"></a>[PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS](#tab/uwp)
 
-Przeglądarka domyślna zawsze zostanie uruchomiony bez względu na to `BrowserLaunchType`.
+Przeglądarka domyślna zawsze zostanie uruchomiony bez względu na to `BrowserLaunchMode`.
 
 --------------
 

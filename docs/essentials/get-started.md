@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7e371a6125d223d354b75ce7e09dcc28efb3dffa
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c72c1c66a465075770ce739270cb4b1f2c6fba7a
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855237"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353779"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Rozpoczynanie pracy z usługą Xamarin.Essentials
 
@@ -101,6 +101,6 @@ Xamarin.Essentials jest dostępna jako pakiet NuGet, który można dodać do dow
 
 Firma Microsoft zaleca deweloperów jesteś nowym użytkownikiem platformy Xamarin, odwiedź stronę [wprowadzenie do programowania Xamarin](~/cross-platform/getting-started/index.md).
 
-Odwiedź stronę [repozytorium serwisu GitHub Xamarin.Essentials](http://github.com/xamarin/Essentials) Aby wyświetlić bieżący kod źródłowy, co będzie dalej, próbek, uruchom i zamknij repozytorium. Kod wniesiony przez społeczność są Zapraszamy!
+Odwiedź stronę [repozytorium GitHub Xamarin.Essentials](http://github.com/xamarin/Essentials) Aby wyświetlić bieżący kod źródłowy, co będzie dalej, próbek, uruchom i zamknij repozytorium. Kod wniesiony przez społeczność są Zapraszamy!
 
 Przeglądanie [dokumentacji interfejsu API](xref:Xamarin.Essentials) dla każdej funkcji Xamarin.Essentials.

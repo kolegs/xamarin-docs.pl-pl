@@ -4,13 +4,13 @@ description: Ten dokument prowadzi różne przewodniki z instrukcjami, które op
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/30/2018
+ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
+ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831556"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39361005"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -43,8 +43,10 @@ Wykonaj instrukcje zintegrować te funkcje Xamarin.Essentials ze swoimi aplikacj
 * [Geokodowanie](geocoding.md?context=xamarin/xamarin-forms) — Geocode i adresy geokodowania wstecznego i współrzędnych.
 * [Używanie funkcji Geolokalizacji](geolocation.md?context=xamarin/xamarin-forms) — Pobieranie lokalizacji GPS urządzenia.
 * [Żyroskop](gyroscope.md?context=xamarin/xamarin-forms) — śledzenie obrotu wokół urządzenia trzech osi głównej.
+* [Uruchamianie](launcher.md?context=xamarin/xamarin-forms) — dzięki temu w aplikacji można otworzyć identyfikatora URI przez system.
 * [Magnetometrów](magnetometer.md?context=xamarin/xamarin-forms) — wykrywanie orientacji urządzenia względem pola magnetycznego na ziemi.
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — uruchamianie kodu na wątku głównego aplikacji. 
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — uruchamianie kodu na wątku głównego aplikacji.
+* [Mapuje](maps.md?content=xamarin/xamarin-forms) — Otwórz aplikację mapy do określonej lokalizacji.
 * [Otwórz przeglądarkę](open-browser.md?context=xamarin/xamarin-forms) — szybko i łatwo Otwórz przeglądarkę do określonej witryny sieci Web.
 * [Czujnik orientacji](orientation-sensor.md?context=xamarin/xamarin-forms) — pobieranie orientacji urządzenia w przestrzeni trójwymiarowej.
 * [Telefon](phone-dialer.md?context=xamarin/xamarin-forms) — otworzyć program Telefon.
