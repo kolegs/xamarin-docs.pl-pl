@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995985"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393675"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Korzystanie z rozszerzeń struktury znaczników XAML
 
@@ -24,12 +24,12 @@ Rozszerzeń struktury znaczników XAML zwiększanie możliwości i elastycznoś�
 - [`x:Array`](#array) &ndash; Skonstruuj tablicę obiektów określonego typu.
 - [`x:Null`](#null) &ndash; Ustaw atrybut `null` wartość.
 
-Trzy inne rozszerzenia znaczników XAML w przeszłości są obsługiwane przez inne implementacje XAML i są również obsługiwane przez zestaw narzędzi Xamarin.Forms. Te ustawienia zostały opisane w pełnym w innych artykułach:
+Dodatkowe rozszerzenia znaczników w XAML w przeszłości są obsługiwane przez inne implementacje XAML i są również obsługiwane przez zestaw narzędzi Xamarin.Forms. Te ustawienia zostały opisane w pełnym w innych artykułach:
 
 - `StaticResource` &ndash; odwołują się do obiektów ze słownika zasobów, zgodnie z opisem w artykule [ **słowniki zasobów**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; Odpowiadanie na zmiany w obiektach w słowniku zasobów, zgodnie z opisem w artykule [ **style dynamiczne**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; nawiązanie połączenia między właściwościami dwa obiekty, zgodnie z opisem w artykule [ **powiązanie danych**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; wykonuje wiązanie danych z szablonu kontrolki, zgodnie z opisem w artykule [**powiązanie z szablonu kontrolki**] / przewodniki/xamarin — formularze/aplikacji — podstawy/szablony/kontroli — szablony /-powiązanie szablonu /)
+- `TemplateBinding` &ndash; wykonuje wiązanie danych z szablonu kontrolki, zgodnie z opisem w artykule [ **powiązanie z szablonu kontrolki**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Układ korzysta z rozszerzeń niestandardowych znaczników [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Tego rozszerzenia znacznika jest opisany w artykule [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 

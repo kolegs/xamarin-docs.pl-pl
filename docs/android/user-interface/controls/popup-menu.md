@@ -1,55 +1,53 @@
 ---
 title: Menu podręczne
+description: Jak dodać menu podręcznego, który jest zakotwiczona do określonego widoku.
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763153"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393662"
 ---
 # <a name="popup-menu"></a>Menu podręczne
 
-`PopupMenu` Klasa dodaje obsługę wyświetlanie menu podręczne, które są dołączone do określonego widoku. Na poniższej ilustracji przedstawiono zaprezentowany drugiego elementu wyróżnione tak samo, jak jest zaznaczony przy użyciu przycisku menu podręcznego:
+[Elementu PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (nazywane również _menu skrótów_) jest menu, w którym jest zakotwiczona określonego widoku. W poniższym przykładzie jedno działanie zawiera przycisk. Kiedy użytkownik naciska przycisk, jest wyświetlane menu podręczne trzech elementów:
 
- [![Przykład PopopMenu, z których trzy są trzy elementy](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 dodano kilka nowych funkcji zapewniających `PopupMenu` ułatwiające bit do pracy z, to znaczy:
-
--   **Inflate** &ndash; zwiększyć metody jest teraz dostępna bezpośrednio w klasie elementu PopupMenu.
--   **DismissEvent** &ndash; klasy elementu PopupMenu ma teraz DismissEvent.
-
-Spójrzmy na te ulepszenia. W tym przykładzie mamy pojedyncze działanie, która zawiera przycisk. Po kliknięciu przycisku menu podręczne jest wyświetlane, jak pokazano poniżej:
-
- [![Przykład aplikacji uruchomionej w emulatorze z przyciskiem oraz 3 elementu menu podręcznego](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![Przykład aplikacji za pomocą przycisku i trzech elementów menu podręcznego](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
-## <a name="creating-a-popup-menu"></a>Tworzenie Menu podręcznego
+## <a name="creating-a-popup-menu"></a>Tworzenie Menu podręczne
 
-Kiedy możemy utworzyć wystąpienia `PopupMenu`, należy przekazać odwołanie do jego konstruktora `Context`, oraz widok, do której jest dołączona menu. W takim przypadku utworzymy `PopupMenu` w kliknij program obsługi zdarzeń dla naszych przycisku, który ma nazwę `showPopupMenu`.
-Ten przycisk jest również widoku, do której firma Microsoft będzie dołączać `PopupMenu`, jak pokazano w poniższym kodzie:
+Pierwszym krokiem jest utworzenie pliku zasobu menu do menu i umieść go w **zasobów/menu**. Na przykład, następujący kod XML jest kod menu trzech elementów wyświetlanych na poprzednim zrzucie ekranu, **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-W 3 dla systemu Android, kod, aby zwiększyć menu z zasobem XML musi najpierw pobrać odwołanie do `MenuInflator`, a następnie wywołać jej `Inflate` metody o identyfikatorze zasobu kod XML, który zawiera menu i wystąpienia menu, aby zwiększyć do. Takie podejście nadal działa w systemie Android 4 i nowszym jako kod poniżej przedstawia:
+Następnie utwórz wystąpienie obiektu `PopupMenu` i zakotwiczyć go do jej widok. Po utworzeniu wystąpienia `PopupMenu`, przekazać odwołanie do jej konstruktora `Context` oraz widok, do którego zostanie dołączony menu. W związku z menu podręcznego jest zakotwiczona do tego widoku podczas jego tworzenia.
+
+W poniższym przykładzie `PopupMenu` jest tworzony w obsługi zdarzeń kliknij przycisk (który nosi nazwę `showPopupMenu`). Ten przycisk jest również w celu `PopupMenu` jest zakotwiczona, jak pokazano w poniższym przykładzie kodu:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-Począwszy od systemu Android 4, można teraz wywołać `Inflate` bezpośrednio na wystąpienie `PopupMenu`. Dzięki temu kod więcej krótkie, jak pokazano poniżej:
+Na koniec należy z menu podręcznego *nadmuchany* zasobu menu, który został utworzony wcześniej. W poniższym przykładzie, wywołanie do menu [Inflate](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/) metoda jest dodawana i jego [Pokaż](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/) metoda jest wywoływana w celu wyświetlenia go:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-W powyższym kodzie po pompowania menu po prostu nazywamy `menu.Show` do jego wyświetlenia na ekranie.
-
 
 ## <a name="handling-menu-events"></a>Obsługa zdarzeń Menu
 
-Po wybraniu elementu menu `MenuItemClick` zostanie wygenerowany, zdarzeń i menu zostanie zamknięty. Naciskając w dowolnym miejscu poza menu będzie po prostu je zamknąć. W obu przypadkach, począwszy od systemu Android 4 odrzucania menu jego `DismissEvent` zostanie wygenerowany. Poniższy kod dodaje obsługę zdarzeń dla obu `MenuItemClick` i `DismissEvent` zdarzenia:
+Gdy użytkownik wybierze element menu [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/) kliknij zdarzenie zostanie wygenerowany i menu zostanie odrzucony. Klikając w dowolnym miejscu poza menu będzie po prostu je zamknąć. W obu przypadkach, gdy menu jest odrzucane jego [DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/) zostanie wygenerowany. Poniższy kod dodaje obsługę zdarzeń dla obu `MenuItemClick` i `DismissEvent` zdarzenia:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>Linki pokrewne
 
 - [PopupMenuDemo (przykład)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [Wprowadzenie Sandwich lodów](http://www.android.com/about/ice-cream-sandwich/)
-- [Platformy systemu android 4.0](http://developer.android.com/sdk/android-4.0.html)
