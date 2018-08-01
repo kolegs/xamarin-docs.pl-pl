@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270205"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351746"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Certyfikowani partnerzy konsultacji w celu dostarczania rozwiązań mobilnych
 
@@ -112,6 +112,7 @@ _Na liście według lokalizacji podstawowej, wielu partnerów świadczenia usłu
 |[Interknowlogy](http://www.interknowlogy.com/)|San Diego, urząd certyfikacji, USA|Na całym świecie lider w zakresie tworzenia niestandardowych aplikacji, InterKnowlogy wykorzystuje technologie bieżących i pojawiających się w celu udostępnienia środowisk połączonych za pomocą dotyku, gestów i głosu|
 |[Intouch rozwiązania](http://www.intouchsol.com )|Overland Park, Znaczniki, USA; Londyn, Zjednoczone Królestwo; Chicago, IL, USA; Warszawa, Polska, USA|Jesteśmy wiodących agencji cyfrowy w ramach Pharma i miejsca opieki zdrowotnej|
 |[iTexico](http://www.itexico.com)|Austin, Teksas w USA|iTexico to firma technologii globalnego oprogramowania, która koncentruje się na pomaganiu firmach z aplikacji mobilnych w całym projekcie ' cyklu życia Äôs przez sieć nearshore.|
+|[JBS](https://www.jbssolutions.com)|Pensylwania, USA|JBS jest dostawca rozwiązań niestandardowego oprogramowania.|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto, urząd certyfikacji, USA; Chicago, IL, USA; Toledo, OH, USA; Si Seongnam, czy Gyeonggi, Korea Południowa|Kaonsoft to firma innowacyjne oprogramowanie, które zapewnia kompletne rozwiązania end-to-end, aby utworzyć enterprise mobility aplikacje dla wielu platform.|
 |[Katalyst Technologies Inc. ](http://www.katalysttech.com )|Evanston, IL, USA; Atlanta, ogólnie, Stany Zjednoczone; Mumbaj (Bombaj), Maharashtra, Indie Hyderabad, Telangana, Indie Pune, Maharashtra, Indie|W Katalyst mamy nadzieję, że technologia naprawdę może być włącznik. Które ma Dlaczego wiodące firmy ufają nam nie tylko zapewniają produkty i usługi, ale również zmienić sposób ich podstawowej działalności działa za pośrednictwem niestandardowego, atrakcyjnych rozwiązań, które rozciągają się przedsiębiorstwa.|
 |[Technologia Kleio LLC](http://kleiotechnology.com)|Królewskie Palm Beach, Floryda|Firma Microsoft tradycyjnie pracowano nad edukacji, markę i tożsamości. Firma Microsoft bada problem biznesowy klienta rozwiązać problem w projekt, UX i strategii zawartości. Możemy pomóc firm dotrzeć do potrzeb klientów i zysków|

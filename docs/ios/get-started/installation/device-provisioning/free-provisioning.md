@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111160"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353324"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Bezpłatna aprowizacja dla aplikacji platformy Xamarin.iOS
 
@@ -35,7 +35,7 @@ Wdrażanie aplikacji platformy Xamarin.iOS urządzenia przy użyciu bezpłatnego
 - Aplikacji platformy Xamarin.iOS należy użyć jawny identyfikator aplikacji, nie uniwersalny identyfikator aplikacji.
 - Identyfikator pakietu używane w aplikacji platformy Xamarin.iOS muszą być unikatowe i nie były używane w innej aplikacji wcześniej. Identyfikator pakietu, wszystkie używane aprowizacji BEZPŁATNEJ **nie** być ponownie używane.
 - Jeśli masz już rozesłany aplikacji, nie możesz wdrożyć tę aplikację przy użyciu aprowizacji bezpłatnej.
-- Jeśli aplikacja korzysta z usługi aplikacji, musisz utworzyć profil inicjowania obsługi administracyjnej, zgodnie z opisem w [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md#appservices) przewodnik. 
+- Jeśli aplikacja korzysta z usługi aplikacji, musisz utworzyć profil inicjowania obsługi administracyjnej, zgodnie z opisem w [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) przewodnik. 
 
 Przyjrzyj się [ograniczenia](#limitations) części tego dokumentu, aby uzyskać więcej informacji na temat ograniczeń związanych z bezpłatnej, inicjowanie obsługi administracyjnej i odwoływać się do [przewodniki dystrybucji aplikacji](~/ios/deploy-test/app-distribution/index.md) Aby uzyskać więcej informacji na temat dystrybuowanie aplikacji dla systemu iOS.
 
@@ -144,4 +144,4 @@ Ten przewodnik zbadano zalety i ograniczenia dotyczące korzystania z bezpłatny
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Inicjowanie obsługi administracyjnej urządzeń](~/ios/get-started/installation/device-provisioning/index.md)
-- [Inicjowanie obsługi administracyjnej dla usług aplikacji](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Inicjowanie obsługi administracyjnej dla usług aplikacji](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)
