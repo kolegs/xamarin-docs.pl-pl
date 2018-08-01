@@ -1,27 +1,27 @@
 ---
 title: Tworzenie optymalizacji
-description: W tym dokumencie opisano różne funkcje optymalizacji, które są stosowane w czasie kompilacji dla aplikacji platformy Xamarin.iOS i Xamarin.Mac.
+description: W tym dokumencie opisano różne optymalizacje, które są stosowane w czasie kompilacji dla aplikacji Xamarin.iOS i Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: bradumbaugh
 ms.author: brumbaug
-dateupdated: 04/16/2018
-ms.openlocfilehash: abdd1223c0105156580b8f23fc2c020f2f45caa6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 04/16/2018
+ms.openlocfilehash: 432511a35f9f285d2c0060b5521256f834bb35ea
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918776"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351642"
 ---
 # <a name="build-optimizations"></a>Tworzenie optymalizacji
 
-W tym dokumencie opisano różne funkcje optymalizacji, które są stosowane w czasie kompilacji dla aplikacji platformy Xamarin.iOS i Xamarin.Mac.
+W tym dokumencie opisano różne optymalizacje, które są stosowane w czasie kompilacji dla aplikacji Xamarin.iOS i Xamarin.Mac.
 
 ## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Usuń UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
 
-Usuwa wywołań [UIApplication.EnsureUIThread] [ 1] (dla platformy Xamarin.iOS) lub `NSApplication.EnsureUIThread` (dla Xamarin.Mac).
+Usuwa wywołania [UIApplication.EnsureUIThread] [ 1] (dla platformy Xamarin.iOS) lub `NSApplication.EnsureUIThread` (dla platformy Xamarin.Mac).
 
-Tego rodzaju optymalizacji zmieni typ następującego kodu:
+Tego rodzaju optymalizacji zmiany następującego typu kodu:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -40,19 +40,19 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Domyślnie jest włączona dla wersji kompilacji.
+Domyślnie jest ono włączone dla wersji kompilacji.
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]remove-uithread-checks` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]remove-uithread-checks` do mtouch/mmp.
 
 [1]: https://developer.xamarin.com/api/member/UIKit.UIApplication.EnsureUIThread/
 
-## <a name="inline-intptrsize"></a>IntPtr.Size wbudowany
+## <a name="inline-intptrsize"></a>IntPtr.Size wbudowane
 
 Inlines wartości stałej z `IntPtr.Size` zależnie od platformy docelowej.
 
-Tego rodzaju optymalizacji zmieni typ następującego kodu:
+Tego rodzaju optymalizacji zmiany następującego typu kodu:
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-do następujących (podczas kompilowania dla platformy 64-bitowe):
+do następujących (podczas kompilowania dla platformy 64-bitowej):
 
 ```csharp
 if (8 == 8) {
@@ -72,21 +72,21 @@ if (8 == 8) {
 }
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Domyślnie jest włączone, jeśli jako pojedynczy architektury docelowej lub zestawu platformy (**Xamarin.iOS.dll**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** lub  **Xamarin.Mac.dll**).
+Domyślnie jest włączone, jeśli pojedynczy architektury lub dla zestawu platform (**pliku Xamarin.iOS.dll**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** lub  **Xamarin.Mac.dll**).
 
-Jeśli przeznaczonych dla wielu architektur, tego rodzaju optymalizacji utworzy różnych zestawów dla wersji 32-bitowych i 64-bitowej wersji aplikacji i obie wersje będą musiały zostać uwzględnione w aplikacji, efektywnie zwiększenie rozmiaru ostatecznej aplikacji zamiast zmniejszać się go.
+Jeśli przeznaczony dla wielu architektur, tego rodzaju optymalizacji utworzy różne zestawy dla wersji 32-bitowych i 64-bitowej wersji aplikacji, a obie wersje będą musiały zostać uwzględnione w aplikacji, efektywnie zwiększenie rozmiaru ostatecznej aplikacji zamiast zmniejszać go.
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]inline-intptr-size` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]inline-intptr-size` do mtouch/mmp.
 
-## <a name="inline-nsobjectisdirectbinding"></a>NSObject.IsDirectBinding wbudowany
+## <a name="inline-nsobjectisdirectbinding"></a>NSObject.IsDirectBinding wbudowane
 
-`NSObject.IsDirectBinding` jest właściwością wystąpienia, który określa, czy konkretne wystąpienie jest typu otoki lub nie (typ otoki jest typ zarządzany, który jest mapowany na typ macierzysty; dla wystąpienia zarządzanej `UIKit.UIView` typu map do natywnego `UIView` typ — przeciwieństwem jest typu użytkownika w tym przypadku `class MyUIView : UIKit.UIView` byłoby typu użytkownika).
+`NSObject.IsDirectBinding` jest właściwością wystąpienia, która określa, czy jest konkretnego wystąpienia typu otoki, czy nie (typ otoki jest typ zarządzany, który mapuje do typu macierzystego; dla wystąpienia zarządzanego `UIKit.UIView` typu map do natywnych `UIView` typ - przeciwieństwo jest typu użytkownika w tym przypadku `class MyUIView : UIKit.UIView` będzie typ użytkownika).
 
-Należy znać wartość `IsDirectBinding` podczas wywoływania metody w języku Objective-C, ponieważ wartość określa, która wersja `objc_msgSend` do użycia.
+Należy znać wartość `IsDirectBinding` podczas wywoływania w języku Objective-C, ponieważ wartość określa, którą wersję `objc_msgSend` do użycia.
 
-Podane tylko dla następującego kodu:
+Biorąc pod uwagę następujący kod:
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-Można określić, że w `UIView.SomeProperty` wartość `IsDirectBinding` nie jest stała i nie można wbudować elementu:
+Można określić w `UIView.SomeProperty` wartość `IsDirectBinding` nie jest stała i nie może być śródwierszowa:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-Jednak jest możliwe przyjrzeć się wszystkie typy w aplikacji i określić, że nie ma żadnych typów, które dziedziczą z `NSUrl`, i w związku z tym jest bezpieczne w tekście `IsDirectBinding` wartość stałej `true`:
+Jednak jest możliwe, aby przyjrzeć się wszystkie typy w aplikacji i określić, że nie ma żadnych typów, które dziedziczą z `NSUrl`, i dlatego jest bezpieczne w tekście `IsDirectBinding` wartość stałej `true`:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-W szczególności, tego rodzaju optymalizacji spowoduje zmianę następującego typu kodu (to jest kod powiązania `NSUrl.AbsoluteUrl`):
+W szczególności, tego rodzaju optymalizacji spowoduje zmianę następującego typu kodu (jest to kod powiązania `NSUrl.AbsoluteUrl`):
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-do następujących (jeśli można określić, czy nie występują żadne podklasy `NSUrl` w aplikacji):
+do następujących (gdy można określić, że nie istnieją żadne podklasy `NSUrl` w aplikacji):
 
 ```csharp
 if (true) {
@@ -154,15 +154,15 @@ if (true) {
 }
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Jest zawsze włączona domyślnie dla platformy Xamarin.iOS i zawsze domyślnie wyłączona dla Xamarin.Mac (można dynamicznie załadować zestawów w Xamarin.Mac, dlatego go nie jest możliwe określenie, czy określonej klasy nigdy nie jest podklasą klasy).
+Jest zawsze domyślnie włączone dla platformy Xamarin.iOS i zawsze domyślnie wyłączona dla platformy Xamarin.Mac (ponieważ jest możliwe dynamicznie ładować zestawy platformie Xamarin.Mac, go nie jest możliwe ustalenie, czy konkretnej klasy nigdy nie jest podklasą klasy).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]inline-isdirectbinding` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]inline-isdirectbinding` do mtouch/mmp.
 
-## <a name="inline-runtimearch"></a>Runtime.Arch wbudowany
+## <a name="inline-runtimearch"></a>Runtime.Arch wbudowane
 
-Tego rodzaju optymalizacji zmieni typ następującego kodu:
+Tego rodzaju optymalizacji zmiany następującego typu kodu:
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-do następujących (podczas budowania urządzenia):
+do następujących (podczas tworzenia urządzenia):
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -182,15 +182,15 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Jest on zawsze włączone domyślnie dla platformy Xamarin.iOS (nie jest ona dostępna dla Xamarin.Mac).
+Jest ona zawsze włączone domyślnie dla platformy Xamarin.iOS (nie jest dostępna dla platformy Xamarin.Mac).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]inline-runtime-arch` do mtouch.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]inline-runtime-arch` do mtouch.
 
-## <a name="dead-code-elimination"></a>Eliminacja martwy kod
+## <a name="dead-code-elimination"></a>Eliminacja nieużywany kod
 
-Tego rodzaju optymalizacji zmieni typ następującego kodu:
+Tego rodzaju optymalizacji zmiany następującego typu kodu:
 
 ```csharp
 if (true) {
@@ -206,7 +206,7 @@ do:
 Console.WriteLine ("Doing this");
 ```
 
-Będzie on również ocenić, stałej porównań, jak to:
+Ocenia się również porównań stałych, takich jak to:
 
 ```csharp
 if (8 == 8) {
@@ -222,7 +222,7 @@ i określić, że wyrażenie `8 == 8` jest zawsze wartość PRAWDA, a jej do zmn
 Console.WriteLine ("Doing this");
 ```
 
-Jest to zaawansowane optymalizacji, gdy jest używany wraz ze śródwierszowaniem optymalizacje, ponieważ można przekształcać następujący typ kodu (to jest kod powiązania `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
+Jest to zaawansowane optymalizacji, gdy jest używana wraz z wbudowanie optymalizacje, ponieważ można przekształcać w następujący typ kodu (jest to kod powiązania `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-do tego (budowania urządzenia 64-bitowym, a także możliwość upewnij się, nie `NFCIso15693ReadMultipleBlocksConfiguration` podklasy w aplikacji):
+do tego (Tworzenie aplikacji dla urządzeń 64-bitowych, a także możliwość zapewnienia istnieją nie `NFCIso15693ReadMultipleBlocksConfiguration` podklasy w aplikacji):
 
 ```csharp
 NSRange ret;
@@ -262,25 +262,25 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-Kompilator drzewa obiektów aplikacji już jest w stanie wyeliminować martwy kod w następujący sposób, ale ten rodzaj optymalizacji jest wykonywane wewnątrz konsolidatora, co oznacza, że konsolidator można zobaczyć, że istnieje wiele metod, które nie są już używane, a w związku z tym mogą zostać usunięte (chyba że są używane w innym miejscu) :
+Kompilator AOT już jest w stanie wyeliminować nieużywany kod tak, ale tego rodzaju optymalizacji odbywa się wewnątrz konsolidatora, co oznacza, że konsolidator można zobaczyć, że istnieje wiele metod, które nie są już używane i mogą zostać usunięte, więc (chyba że są używane w innych miejscach) :
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Jest on zawsze włączone domyślnie (przy włączonej konsolidator).
+Zawsze jest włączone domyślnie (jeśli konsolidator jest włączona).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]dead-code-elimination` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]dead-code-elimination` do mtouch/mmp.
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>Optymalizacja wywołania BlockLiteral.SetupBlock
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>Optymalizowanie wywołania BlockLiteral.SetupBlock
 
-Środowisko uruchomieniowe Xamarin.iOS/Mac musi wiedzieć, podpis bloku podczas tworzenia blok języka Objective C dla zarządzanego delegowanie. Może to być dość kosztowna operacja. Tego rodzaju optymalizacji obliczyć podpis bloku w czasie kompilacji i zmodyfikować języka IL w celu wywołania `SetupBlock` metody pobierającej podpis jako argument zamiast tego. W ten sposób pozwala uniknąć konieczności obliczanie podpisu w czasie wykonywania.
+Środowisko uruchomieniowe Xamarin.iOS/Mac musi wiedzieć, podpis blok podczas tworzenia blokiem języka Objective-C dla zarządzanej delegować. Może to być to dość kosztowna operacja. Tego rodzaju optymalizacji obliczyć podpisu bloku w czasie kompilacji i zmodyfikuj IL, aby wywołać `SetupBlock` metodę, która zamiast tego przyjmuje podpis jako argument. W ten sposób pozwala uniknąć konieczności obliczanie podpisu w czasie wykonywania.
 
-Wzorce Pokaż to przyspiesza wywoływania bloku o 10 – 15.
+Testy porównawcze pokazują, że przyspiesza to wywołanie bloku współczynnik od 10 do 15.
 
-Spowoduje przekształcenie następujące [kod](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
+Spowoduje przekształcenie, następujące [kodu](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -302,51 +302,51 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Jest ona włączona domyślnie po przy użyciu statycznych rejestratora (w Xamarin.iOS statycznych rejestratora jest domyślnie włączone dla kompilacji urządzenia i w Xamarin.Mac statycznych rejestratora jest domyślnie włączona dla wersji kompilacji).
+Włączono domyślnie podczas przy użyciu rejestratora statyczne (w rozszerzeniu Xamarin.iOS statyczne rejestratora jest domyślnie włączona dla kompilacji urządzenia, a w przypadku statycznej rejestrator jest domyślnie włączone dla wersji platformy Xamarin.Mac kompilacji).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]blockliteral-setupblock` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]blockliteral-setupblock` do mtouch/mmp.
 
-## <a name="optimize-support-for-protocols"></a>Optymalizacja Obsługa protokołów
+## <a name="optimize-support-for-protocols"></a>Optymalizowanie obsługuje protokoły
 
-Środowisko uruchomieniowe Xamarin.iOS/Mac potrzebuje informacji o zarządzanych protokołów implementuje Objective-C typów. Te informacje są przechowywane w interfejsach (i atrybuty te interfejsy), który nie jest bardzo wydajny format, ani nie jest przyjaznym dla konsolidatora.
+Środowisko uruchomieniowe Xamarin.iOS/Mac potrzebuje informacji o zarządzanych protokołów implementuje języka Objective-C typów. Te informacje są przechowywane w interfejsach (i atrybuty w tych interfejsów), który nie jest bardzo wydajny format, ani nie jest przyjaznego dla konsolidatora.
 
-Przykładem jest, że te interfejsy przechowywane informacje o wszystkich członków protokołu `[ProtocolMember]` atrybut, który zawiera odwołania do typów parametrów elementu tych członków, między innymi. Oznacza to po prostu wykonania takiego interfejsu spowoduje, że konsolidator zachować wszystkie typy używane w tym interfejsie, nawet w przypadku opcjonalnych elementów członkowskich lub aplikacji w nigdy nie wywołuje implementuje.
+Przykładem jest, że te interfejsy są przechowywane informacje na temat wszystkie składowe protokołu w `[ProtocolMember]` atrybut, który zawiera odwołania do typów parametru tych członków, między innymi. Oznacza to, że wdrożenie takiego interfejsu spowoduje, że konsolidator zachować wszystkie typy używane w tym interfejsie, nawet w przypadku członków opcjonalne aplikacji nigdy nie wywołuje ani nie implementuje.
 
-Optymalizacja będzie statycznych rejestratora przechowywania wszelkich wymaganych informacji w formacie wydajne, który używa mała ilość pamięci, która jest bardzo proste i szybkie można znaleźć w czasie wykonywania.
+Tego rodzaju optymalizacji spowoduje, że statyczne Rejestrator przechowywać wszystkie informacje wymagane w formacie wydajne, który używa mała ilość pamięci, która jest łatwe i Szybkie odnajdowanie w środowisku uruchomieniowym.
 
-On również udzieli konsolidator czy nie zawsze musi zachować te interfejsy ani żaden z powiązanych atrybutów.
+On również nauczy konsolidator, nie zawsze musi zachować te interfejsy ani żaden z powiązanych atrybutów.
 
-Tego rodzaju optymalizacji wymaga zarówno konsolidator i statyczne rejestratora włączyć.
+Tego rodzaju optymalizacji wymaga zarówno konsolidator i statyczne rejestratora, do włączenia.
 
-Na Xamarin.iOS Optymalizacja jest włączona domyślnie po zarówno konsolidator i statyczne rejestratora są włączone.
+Xamarin.iOS tego rodzaju optymalizacji jest włączony domyślnie konsolidator i statyczne rejestratora są włączone.
 
-Na Xamarin.Mac Optymalizacja nigdy nie włączono domyślnie, ponieważ obsługuje Xamarin.Mac dynamicznie ładowania zestawów i te zestawy mogą nie zostały znane w czasie kompilacji (i w związku z tym nie jest zoptymalizowana).
+Na platformy Xamarin.Mac tego rodzaju optymalizacji nigdy nie włączono domyślnie, ponieważ platformy Xamarin.Mac obsługuje ładowanie zestawy dynamiczne, a te zestawy mogą nie zostały znany w czasie kompilacji (i dlatego nie jest zoptymalizowana,).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=-register-protocols` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=-register-protocols` do mtouch/mmp.
 
-## <a name="remove-the-dynamic-registrar"></a>Usuń dynamiczne rejestratora
+## <a name="remove-the-dynamic-registrar"></a>Usuwanie rejestratora dynamiczne
 
-Zarówno Xamarin.iOS, jak i środowiska uruchomieniowego Xamarin.Mac obejmują obsługę [rejestrowanie typy zarządzane](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) ze środowiskiem uruchomieniowym języka Objective-C. Mogą to robić albo, w czasie kompilacji lub w czasie wykonywania (lub częściowo w czasie kompilacji i rest w czasie wykonywania), ale jeśli odbywa się całkowicie w czasie kompilacji, oznacza to, że kod obsługi to zrobić w czasie wykonywania mogą zostać usunięte. Powoduje to znaczące zmniejszenie rozmiaru aplikacji, w szczególności dla mniejszych aplikacje, takie jak rozszerzenia lub watchOS aplikacje.
+Środowisko uruchomieniowe platformy Xamarin.Mac i Xamarin.iOS obsługują [rejestrowanie typów zarządzanych](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) ze środowiskiem uruchomieniowym języka Objective-C. Albo można to zrobić w czasie kompilacji lub w czasie wykonywania (lub częściowo znajduje się w czasie kompilacji i rest w czasie wykonywania), ale jeśli całkowicie odbywa się w czasie kompilacji, oznacza to, że pomocnicze kod działa w czasie wykonywania, można je usunąć. Powoduje to znaczny spadek rozmiar aplikacji, w szczególności dla mniejszych aplikacje, takie jak rozszerzenia lub aplikacje systemu watchOS.
 
-Tego rodzaju optymalizacji wymaga zarówno statycznych rejestratora i konsolidator włączyć.
+Tego rodzaju optymalizacji wymaga zarówno statyczne rejestratora i konsolidator włączyć.
 
-Konsolidator będzie podejmować próby określenia, czy jest bezpiecznie usunąć rejestratora dynamicznego, a jeśli tak będzie próbować usunąć go.
+Konsolidator spróbuje określić, czy jest bezpiecznie usunąć rejestratora dynamiczne i if, aby spróbować go usunąć.
 
-Ponieważ Xamarin.Mac dynamicznie obsługuje ładowanie zestawów w czasie wykonywania (które nie były znane w czasie kompilacji), istnieje możliwość określenia w czasie kompilacji, czy jest to bezpieczne optymalizacji. Oznacza to, że tego rodzaju optymalizacji nigdy nie jest włączona domyślnie w przypadku aplikacji Xamarin.Mac.
+Ponieważ platformy Xamarin.Mac obsługuje dynamicznie podczas ładowania zestawów w czasie wykonywania, (które nie były znane w czasie kompilacji), jest niemożliwe do należy określić w czasie kompilacji, czy jest to bezpieczne optymalizacji. Oznacza to, czy tego rodzaju optymalizacji nigdy nie jest włączone domyślnie dla aplikacji platformy Xamarin.Mac.
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]remove-dynamic-registrar` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]remove-dynamic-registrar` do mtouch/mmp.
 
-Jeśli wartość domyślna jest zastąpiona w celu usunięcia dynamiczne rejestratora, konsolidator będzie Emituj ostrzeżenia w przypadku wykrycia, że nie jest bezpieczne (ale dynamiczne rejestratora nadal zostaną usunięte).
+Jeśli wartość domyślna jest zastępowany można usunąć rejestratora dynamiczne, konsolidator wyemitują ostrzeżenia, jeśli wykryje, że nie jest bezpieczne (ale dynamiczne rejestratora nadal zostaną usunięte).
 
-## <a name="inline-runtimedynamicregistrationsupported"></a>Runtime.DynamicRegistrationSupported wbudowany
+## <a name="inline-runtimedynamicregistrationsupported"></a>Runtime.DynamicRegistrationSupported wbudowane
 
-Inlines wartość z `Runtime.DynamicRegistrationSupported` określone w czasie kompilacji.
+Inlines wartość z `Runtime.DynamicRegistrationSupported` ustalony w czasie kompilacji.
 
-Usunięcie dynamiczne rejestratora (zobacz [Usuń dynamiczne rejestratora](#remove-the-dynamic-registrar) optymalizacji), jest stałą `false` wartość, w przeciwnym razie jest stałą `true` wartość.
+W przypadku usunięcia dynamiczne rejestratora (zobacz [usunąć rejestratora dynamiczne](#remove-the-dynamic-registrar) optymalizacji), jest stałą `false` wartość, w przeciwnym razie stałą `true` wartość.
 
-Tego rodzaju optymalizacji zmieni typ następującego kodu:
+Tego rodzaju optymalizacji zmiany następującego typu kodu:
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -368,19 +368,19 @@ w następujących rejestratora dynamiczne nie są usuwane:
 Console.WriteLine ("do something");
 ```
 
-Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i jest stosowana tylko do metod `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
+Tego rodzaju optymalizacji wymaga konsolidator, aby włączyć i są stosowane tylko do metod z `[BindingImpl (BindingImplOptions.Optimizable)]` atrybutu.
 
-Jest on zawsze włączone domyślnie (przy włączonej konsolidator).
+Zawsze jest włączone domyślnie (jeśli konsolidator jest włączona).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]inline-dynamic-registration-supported` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]inline-dynamic-registration-supported` do mtouch/mmp.
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Precompute metody do tworzenia delegatów zarządzanych dla języka Objective-C bloków
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Precompute metody służące do tworzenia zarządzanych obiektów delegowanych bloków języka Objective-C
 
-Gdy Objective-C wywołuje selektora który przyjmuje bloku jako parametr, a następnie kod zarządzany zastąpiła tej metody, Xamarin.iOS / Xamarin.Mac runtime potrzebne do utworzenia delegata dla tego bloku.
+Kiedy języka Objective-C wywołuje selektora która przyjmuje bloku jako parametr, a następnie zarządzanego kodu został zastąpiony tej metody rozszerzenia Xamarin.iOS / środowiska uruchomieniowego platformy Xamarin.Mac potrzebne do utworzenia delegata dla tego bloku.
 
-Powiązanie kod wygenerowany przez generator powiązanie będzie zawierać `[BlockProxy]` atrybut, który określa typ do `Create` metody, które można to zrobić.
+Uwzględni kod powiązania wygenerowany przez generator powiązań `[BlockProxy]` atrybut, który określa typ z `Create` metody, które można to zrobić.
 
-Podane następujący kod języka Objective-C:
+Biorąc pod uwagę następujący kod języka Objective-C:
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-generator utworzy:
+generator dadzą:
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-Gdy wywołuje Objective-C `[ObjCBlockTester callClassCallback]`, Xamarin.iOS / Xamarin.Mac runtime weźmie pod uwagę `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` atrybutu w parametrze. Następnie zostanie wyszukiwanie `Create` metody dla tego typu i wywołanie tej metody można utworzyć obiektu delegowanego.
+Kiedy wywołuje języka Objective-C `[ObjCBlockTester callClassCallback]`, rozszerzenia Xamarin.iOS / środowiska uruchomieniowego platformy Xamarin.Mac przyjrzymy się `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` atrybutu w parametrze. Następnie zostanie wyszukać `Create` metody w ramach tego typu i wywołanie tej metody do utworzenia delegata.
 
-Tego rodzaju optymalizacji znajdzie `Create` metody w czasie kompilacji i statyczne rejestratora wygeneruje kod, który odwołuje się do metody w czasie wykonywania, zamiast niego przy użyciu atrybutu i odbicie (jest to znacznie szybsze i pozwala również konsolidator tokeny metadanych Aby usunąć odpowiedni kod środowiska uruchomieniowego, co aplikacja mniejszych).
+Tego rodzaju optymalizacji znajdzie `Create` metody w czasie kompilacji i statyczne rejestratora wygeneruje kod, który odwołuje się do metody w czasie wykonywania, zamiast tego za pomocą odbicia (jest to znacznie szybciej i umożliwia także konsolidator oraz atrybutu tokeny metadanych Aby usunąć odpowiedni kod środowiska uruchomieniowego, tworzenie mniejszych aplikacji).
 
-Jeśli nie można odnaleźć mmp/mtouch `Create` metody, następnie będzie wyświetlane ostrzeżenie MT4174/MM4174 i wyszukiwania będzie można wykonać w czasie wykonywania zamiast tego.
-Najbardziej prawdopodobną przyczyną jest zapisywany ręcznie powiązanie kodu bez wymaganych `[BlockProxy]` atrybutów.
+Jeśli nie można odnaleźć mmp/mtouch `Create` metoda, następnie będzie wyświetlane ostrzeżenie MT4174/MM4174 i wyszukiwania będą wykonywane w czasie wykonywania zamiast tego.
+Najbardziej prawdopodobna przyczyna ręcznie napisano kod powiązania bez wymaganych `[BlockProxy]` atrybutów.
 
-Tego rodzaju optymalizacji wymaga statycznego rejestratora włączenia.
+Tego rodzaju optymalizacji wymaga statycznego rejestratora do włączenia.
 
-Jest on zawsze włączona domyślnie (o ile rejestratora statycznego jest włączona).
+Zawsze jest włączone domyślnie (tak długo, jak statycznych rejestrator jest włączony).
 
-Zachowanie domyślne można przesłonić przez przekazanie `--optimize=[+|-]static-delegate-to-block-lookup` do mtouch/mmp.
+Zachowanie domyślne można przesłonić, przekazując `--optimize=[+|-]static-delegate-to-block-lookup` do mtouch/mmp.
