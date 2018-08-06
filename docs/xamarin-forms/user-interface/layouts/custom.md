@@ -409,8 +409,8 @@ Gdy strony `WrapLayout` jest wyświetlana Przykładowa aplikacja uzyskuje dostę
 Poniższe zrzuty ekranu Pokaż `WrapLayout` po jest zostały obrócone w orientacji poziomej:
 
 ![](custom-images/landscape-ios.png "Przykładowy zrzut ekranu pozioma aplikacji systemu iOS")
-![](custom-images/landscape-android.png "zrzut ekranu przykładu dla systemu Android aplikacji pozioma") 
- ![ ] (custom-images/landscape-uwp.png " Przykładowy zrzut ekranu pozioma aplikacji dla platformy uniwersalnej systemu Windows")
+![](custom-images/landscape-android.png "zrzut ekranu przykładu dla systemu Android aplikacji pozioma")
+![](custom-images/landscape-uwp.png " Przykładowy zrzut ekranu pozioma aplikacji dla platformy uniwersalnej systemu Windows")
 
 Liczba kolumn w każdym wierszu zależy od tego, rozmiar zdjęcia, szerokość ekranu i liczbę pikseli na jednostka miary niezależna od urządzenia. [ `Image` ](xref:Xamarin.Forms.Image) Elementy asynchronicznie Załaduj zdjęcia i w związku z tym `WrapLayout` klasy będą otrzymywać częste wywołania do jego [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody, ponieważ do każdego `Image` element otrzymuje nowy rozmiar zdjęcia załadowane w oparciu.
 
