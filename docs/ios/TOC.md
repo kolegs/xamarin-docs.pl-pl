@@ -329,6 +329,7 @@
 ### [Reguły analizy rozszerzenia Xamarin.iOS](troubleshooting/xamarin-ios-analysis.md)
 ### [Komunikaty o błędach (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Często zadawane pytania](troubleshooting/questions/index.md)
+#### [Debugowanie za pomocą środowiska Xcode](troubleshooting/questions/debugging-with-xcode.md)
 #### [Czy do obsługi platformy Xamarin można używać maszyny wirtualnej Mac?](troubleshooting/questions/mac-vm.md)
 #### [Pobieranie poprzedniej wersji programu Xcode](troubleshooting/questions/previous-xcode.md)
 #### [Gdzie mogę ustawić moje lokalizacje zestawu SDK systemu iOS?](troubleshooting/questions/ios-sdk.md)
