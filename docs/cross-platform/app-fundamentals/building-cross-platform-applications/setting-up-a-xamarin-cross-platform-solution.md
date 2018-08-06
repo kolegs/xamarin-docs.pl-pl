@@ -121,7 +121,7 @@ Projekty aplikacji specyficzne dla platformy odwoływać się do kodu udostępni
 
 Projekty aplikacji każdego odwołania projektu współużytkowanych i zawierać kodu interfejsu użytkownika wymagane do obecnych funkcji dla użytkownika, jak pokazano w tych zrzuty ekranu:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Każde odwołanie projektu udostępnionych projektów aplikacji") ![ ] (setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "każdego odwołania projektu udostępnionych projektów aplikacji")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Każde odwołanie projektu udostępnionych projektów aplikacji") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "każdego odwołania projektu udostępnionych projektów aplikacji")
 
 
 Przykładów struktury projekty są podane w analizy przypadków.

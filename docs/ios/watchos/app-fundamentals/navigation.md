@@ -49,7 +49,7 @@ Modalne ekrany może być jednym sceny albo użyj układ oparty na stronie.
 
 Przedstawia informacje o sceny, takich jak stosu, który można nawigować za pośrednictwem, podobnie jak `UINavigationController` działa w systemie iOS. Sceny można wypychana na stosie nawigacji i zdjęte ze stosu (programowo lub przez określonego użytkownika).
 
-![](navigation-images/hierarchy-1.png "Sceny może zostać umieszczony na stosie nawigacji") ![ ] (navigation-images/hierarchy-2.png "sceny może zostać zdjęte ze stosu wylogowuje na stosie nawigacyjnym")
+![](navigation-images/hierarchy-1.png "Sceny może zostać umieszczony na stosie nawigacji") ![](navigation-images/hierarchy-2.png "sceny może zostać zdjęte ze stosu wylogowuje na stosie nawigacyjnym")
 
 Podobnie jak w przypadku systemu iOS, po lewej edge Przejdź nawiguje wstecz do kontrolera elementu nadrzędnego w stosie nawigacji hierarchicznej.
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 Na stronie interfejsy szybko przesuń od lewej do prawej, podobnie jak `UIPageViewController` działa w systemie iOS. Wskaźnik kropki są wyświetlane u dołu ekranu, aby wyświetlić stronę, która jest aktualnie wyświetlany.
 
-![](navigation-images/paged-1.png "Przykładowe pierwszej strony") ![ ] (navigation-images/paged-2.png "drugiej stronie próbki") ![ ] (navigation-images/paged-5.png "przykładową stronę piąty")
+![](navigation-images/paged-1.png "Przykładowe pierwszej strony") ![](navigation-images/paged-2.png "drugiej stronie próbki") ![](navigation-images/paged-5.png "przykładową stronę piąty")
 
 
 Aby interfejs oparty na stronie głównej interfejsu użytkownika dla aplikacji czujki, użyj `ReloadRootControllers` z kontrolerów interfejsu i konteksty:

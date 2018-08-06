@@ -29,7 +29,7 @@ W tym artykule dowiesz się o tych tematów, umożliwiając solidną podstawę d
 
 Aby zilustrować protokołów i delegatów, firma Microsoft będzie kompilacji aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy, jak pokazano poniżej:
 
- [![](delegates-protocols-and-events-images/01-map.png "Przykładem aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "adnotacji przykład dodany do mapy")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "Przykładem aplikacji proste mapy, umożliwiający dodawanie adnotacji do mapy")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "adnotacji przykład dodany do mapy")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Przed czoła tej aplikacji, Rozpocznijmy analizując zdarzenia platformy .NET w obszarze UIKit.
 

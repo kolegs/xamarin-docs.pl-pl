@@ -21,7 +21,7 @@ PATRZ HASŁO MT. D obsługuje tworzenie interfejsów użytkownika, zadeklarowany
 
 PATRZ HASŁO MT. D obsługuje pełnego zakresu funkcji, które są dostępne w interfejsie API elementy, korzystając z formatu JSON. Na przykład aplikacji na następującym zrzucie ekranu jest całkowicie zadeklarowany, za pomocą formatu JSON:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Na przykład aplikacji, w tym zrzucie ekranu jest całkowicie zadeklarowany za pomocą formatu JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "na przykład aplikacji, w tym zrzucie ekranu jest całkowicie zadeklarowany za pomocą JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Na przykład aplikacji, w tym zrzucie ekranu jest całkowicie zadeklarowany za pomocą formatu JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "na przykład aplikacji, w tym zrzucie ekranu jest całkowicie zadeklarowany za pomocą JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Wróćmy do przykładu z [elementów interfejsu API wskazówki](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) samouczek, pokazujący sposób dodać ekran szczegółów zadania przy użyciu formatu JSON.
 

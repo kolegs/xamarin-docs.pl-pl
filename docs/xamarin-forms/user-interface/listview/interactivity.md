@@ -157,7 +157,7 @@ listView.IsPullToRefreshEnabled = true;
 
 ![](interactivity-images/refresh-start.png "Przeciągnij ListView, aby odświeżyć w toku")
 
-Ściągnięcia do odświeżania jako użytkownik wydała ściągnięcia. Jest to, co użytkownik widzi, gdy aktualizujesz listy: ![ ] (interactivity-images/refresh-in-progress.png "przeciągnij ListView, aby Odświeżanie ukończone")
+Ściągnięcia do odświeżania jako użytkownik wydała ściągnięcia. Jest to, co użytkownik widzi, gdy aktualizujesz listy: ![](interactivity-images/refresh-in-progress.png "przeciągnij ListView, aby Odświeżanie ukończone")
 
 ListView udostępnia kilka zdarzeń, które pozwalają na odpowiadanie na zdarzenia ściągnięcia do odświeżania.
 

@@ -479,7 +479,7 @@ Wynikowa aplikacji wyglądać następująco na każdej platformie:
 
 Aplikacja używa projektu interfejsu użytkownika systemu iOS — standard, takich jak przycisk "Dodaj" jest ustawiony na pasku nawigacyjnym i za pomocą wbudowanych **plus (+)** ikony. Również używa domyślnej `UINavigationController` przycisk "Wstecz", zachowania i obsługuje "Przejdź do Usuń" w tabeli.
 
- [![](case-study-tasky-images/ios-taskylist.png "Również stosowanie domyślnego zachowania przycisku Wstecz UINavigationController i obsługuje przejdź do usuwania w tabeli") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "używa również domyślny UINavigationController kopii zachowanie przycisku i obsługuje przejdź do usuwania w tabeli")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Również stosowanie domyślnego zachowania przycisku Wstecz UINavigationController i obsługuje przejdź do usuwania w tabeli")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "używa również domyślny UINavigationController kopii zachowanie przycisku i obsługuje przejdź do usuwania w tabeli")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Android aplikacja korzysta z wbudowanych formantów w tym wbudowane układu dla 
 
 Aplikacji Windows Phone używa standardowego układu wypełnianie na pasku aplikacji w dolnej części ekranu zamiast paska nawigacji, u góry.
 
- [![](case-study-tasky-images/wp-taskylist.png "Aplikacja Windows Phone używa standardowego układu wypełnianie na pasku aplikacji w dolnej części ekranu zamiast paska nawigacji, w górnej") ](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "aplikacji Windows Phone korzysta ze standardu Układ podczas wypełniania na pasku aplikacji w dolnej części ekranu zamiast paska nawigacji, u góry")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Aplikacja Windows Phone używa standardowego układu wypełnianie na pasku aplikacji w dolnej części ekranu zamiast paska nawigacji, w górnej")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "aplikacji Windows Phone korzysta ze standardu Układ podczas wypełniania na pasku aplikacji w dolnej części ekranu zamiast paska nawigacji, u góry")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 

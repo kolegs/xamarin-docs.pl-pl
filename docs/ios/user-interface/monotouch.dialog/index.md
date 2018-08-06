@@ -113,7 +113,7 @@ Co najmniej jeden obiektów RootElement jest wymagana do uruchamiania procesu el
 
 Jeśli obiektów RootElement jest inicjowany z wartością section/element ta wartość jest używana do lokalizowania elementem podrzędnym elementu, który zapewni Podsumowanie konfiguracji, który jest renderowany po prawej stronie ekranu. Na przykład poniższy zrzut ekranu przedstawia tabelę po lewej stronie z komórki zawierającej tytuł ekran szczegółów po prawej stronie, "Dessert", wraz z wartości wybranych pustynia.
 
- [![](images/image4.png "Ten zrzut ekranu przedstawia tabelę po lewej stronie z komórki zawierającej tytuł ekran szczegółów po prawej stronie, deserów, wraz z wartości wybranych pustynia") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Poniższy zrzut ekranu przedstawia tabelę po lewej stronie z komórki zawierającej tytuł ekran szczegółów po prawej stronie, deserów, wraz z wartości wybranych pustynia")](images/image5.png#lightbox)
+ [![](images/image4.png "Ten zrzut ekranu przedstawia tabelę po lewej stronie z komórki zawierającej tytuł ekran szczegółów po prawej stronie, deserów, wraz z wartości wybranych pustynia")](images/image4.png#lightbox) [![](images/image5.png "to Poniższy zrzut ekranu przedstawia tabelę po lewej stronie z komórki zawierającej tytuł ekran szczegółów po prawej stronie, deserów, wraz z wartości wybranych pustynia")](images/image5.png#lightbox)
 
 Elementy główne można również wewnątrz sekcji do wyzwolenia ładowania nowej stronie konfiguracji zagnieżdżonych, jak pokazano powyżej. Gdy jest używana w tym trybie podpis pod warunkiem jest używana podczas renderowania wewnątrz sekcji, a także jest używane jako tytuł dla podstrony. Na przykład:
 

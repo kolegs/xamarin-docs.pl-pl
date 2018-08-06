@@ -116,7 +116,7 @@ Pozwól, Utwórz prostą aplikację, która będzie wyświetlana powiadomień lo
 
 1. Na koniec uruchom aplikację. W systemie iOS 8 użytkownik zostanie wyświetlony monit Zezwalaj na powiadomienia. Kliknij przycisk **OK** a następnie kliknij przycisk **Dodaj powiadomienie** przycisku. Po krótkiej przerwie powinny zostać wyświetlone okna dialogowego alertu, jak pokazano na poniższych zrzutach ekranu:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Trwa Potwierdzanie możliwość wysyłania powiadomień") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "przycisku Dodaj powiadomienie") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "dialog powiadomień o alertach")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Trwa Potwierdzanie możliwość wysyłania powiadomień") ![](local-notifications-in-ios-walkthrough-images/image1.png "przycisku Dodaj powiadomienie") ![](local-notifications-in-ios-walkthrough-images/image2.png "dialog powiadomień o alertach")
 
 ## <a name="summary"></a>Podsumowanie
 

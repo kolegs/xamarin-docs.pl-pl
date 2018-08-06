@@ -19,7 +19,7 @@ ms.locfileid: "34787958"
 
 _System iOS 9 obsługuje dwie aplikacje działające na tym samym czasie, przy użyciu slajdów przez lub podzielony widok. Obsługuje ona również wideo odtwarzanie obraz w obrazie._
 
-![](multitasking-images/about02-sml.png "Podziel przykład ekranu") ![ ] (multitasking-images/about03-sml.png "przykład obraz w obrazie")
+![](multitasking-images/about02-sml.png "Podziel przykład ekranu") ![](multitasking-images/about03-sml.png "przykład obraz w obrazie")
 
 System iOS 9 dodaje obsługę wielozadaniowości sprzęt określonego urządzenia iPad z systemem dwie aplikacje w tym samym czasie. Wielozadaniowości dla tabletu iPad jest obsługiwany przez następujące funkcje:
 

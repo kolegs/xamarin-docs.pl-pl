@@ -109,8 +109,8 @@ Kliknij przycisk **zakupy w aplikacji** do tworzenia lub edytowania produktów d
 
 Proces dodawania nowych produktów obejmuje dwa kroki:
 
-1.   Wybierz typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "wybierz typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   Wprowadź atrybuty produktu, w tym identyfikator produktu, warstwa cenowa i opisy zlokalizowanych: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "wprowadzania atrybutów produktów")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   Wybierz typ produktu: [![](in-app-purchase-basics-and-configuration-images/image8.png "wybierz typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Wprowadź atrybuty produktu, w tym identyfikator produktu, warstwa cenowa i opisy zlokalizowanych: [![](in-app-purchase-basics-and-configuration-images/image9.png "wprowadzania atrybutów produktów")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Poniżej opisano pól wymaganych dla każdego produktu zakupu w aplikacji:
 

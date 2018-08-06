@@ -62,11 +62,11 @@ Poniższe przykłady zawierają `DynamicResource` odwołania, które należałob
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Duży obraz sterowania w systemie Android") ![ ] (controls-images/heroimage-dark-android.png "duży obraz sterowania w systemie Android")
+![](controls-images/heroimage-light-android.png "Duży obraz sterowania w systemie Android") ![](controls-images/heroimage-dark-android.png "duży obraz sterowania w systemie Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Duży obraz sterowania w systemie iOS") ![ ] (controls-images/heroimage-dark-ios.png "duży obraz sterowania w systemie iOS")
+![](controls-images/heroimage-light-ios.png "Duży obraz sterowania w systemie iOS") ![](controls-images/heroimage-dark-ios.png "duży obraz sterowania w systemie iOS")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Te zrzuty ekranu Pokaż `ListItem` na iOS i Android przy użyciu motywy jasny i 
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Kontroli wyszczególnij w systemie Android") ![ ] (controls-images/listitem-dark-android.png "kontroli wyszczególnij w systemie Android")
+![](controls-images/listitem-light-android.png "Kontroli wyszczególnij w systemie Android") ![](controls-images/listitem-dark-android.png "kontroli wyszczególnij w systemie Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Kontroli wyszczególnij w systemie iOS") ![ ] (controls-images/listitem-dark-ios.png "kontroli wyszczególnij w systemie iOS")
+![](controls-images/listitem-light-ios.png "Kontroli wyszczególnij w systemie iOS") ![](controls-images/listitem-dark-ios.png "kontroli wyszczególnij w systemie iOS")
 
 
 ## <a name="custom-control-example"></a>Przykład formantu niestandardowego
@@ -128,11 +128,11 @@ Powinien on wyglądać podobnie zrzuty ekranu poniżej z użyciem odpowiadający
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Kontrolka niestandardowa CardView w systemie Android") ![ ] (controls-images/cardview-dark-android.png "kontrolkę niestandardową CardView w systemie Android")
+![](controls-images/cardview-light-android.png "Kontrolka niestandardowa CardView w systemie Android") ![](controls-images/cardview-dark-android.png "kontrolkę niestandardową CardView w systemie Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Kontrolka niestandardowa CardView w systemie iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView kontrolkę niestandardową w systemie iOS")
+![](controls-images/cardview-light-ios.png "Kontrolka niestandardowa CardView w systemie iOS") ![](controls-images/cardview-dark-ios.png "CardView kontrolkę niestandardową w systemie iOS")
 
 <a name="custom" />
 
