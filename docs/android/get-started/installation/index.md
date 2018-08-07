@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241418"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573519"
 ---
 # <a name="setup-and-installation"></a>Konfiguracja i instalacja
 
@@ -39,6 +39,6 @@ Artykuły te wyjaśniają sposób konfiguracji emulatora systemu Android, testow
 
 W tym artykule wyjaśniono, jak skonfigurować urządzenie fizyczne systemu Android i połączyć ją na komputerze deweloperskim, tak, aby urządzenia może służyć do uruchamiania i debugowania aplikacji platformy Xamarin.Android.
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[OpenJDK firmy Microsoft (wersja zapoznawcza)](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Podgląd OpenJDK przenośnymi firmy Microsoft](~/android/get-started/installation/openjdk.md)
 
-W tym przewodniku opisano kroki do przełączania do wersji zapoznawczej dystrybucji OpenJDK firmy Microsoft.
+W tym przewodniku opisano kroki do przełączania do wersji zapoznawczej dystrybucji OpenJDK firmy Microsoft. Tej dystrybucji OpenJDK jest przeznaczony do tworzenia aplikacji mobilnych.

@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270475"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520288"
 ---
 # <a name="sharing-code-overview"></a>Udostępnianie kodu — omówienie
 
@@ -19,7 +19,7 @@ _W tym dokumencie porównuje różne metody udostępniania kodu między projekta
 
 Istnieją trzy metody udostępniania kodu między aplikacjami na wielu platformach:
 
-- [**Standardowych bibliotek .NET** ](#Net_Standard) — projektów .NET Standard można zaimplementować kod, aby być współużytkowane przez wiele platform i mogą uzyskiwać dostęp do wielu interfejsów API platformy .NET (w zależności od wersji). .NET standard 1.0 w wersji 1.6 Implementowanie stopniowo większych zestawów interfejsów API, a .NET Standard 2.0 zapewnia najlepsze pokrycia.
+- [**Standardowych bibliotek .NET** ](#Net_Standard) — projektów .NET Standard można zaimplementować kod, aby być współużytkowane przez wiele platform i mogą uzyskiwać dostęp do wielu interfejsów API platformy .NET (w zależności od wersji). .NET standard 1.0 w wersji 1.6 zaimplementować stopniowo większych zestawów interfejsów API, a .NET Standard 2.0 zapewnia najlepsze pokrycia BCL platformy .NET (w tym interfejsów API platformy .NET dostępnych w aplikacjach platformy Xamarin).
 - [**Projekty udostępnione** ](#Shared_Projects) — typ projektu zasobów udostępnionych umożliwia organizowanie kodu źródłowego i użyj `#if` dyrektywy kompilatora na potrzeby zarządzania wymaganiami specyficznymi dla platformy.
 - [**Biblioteki klas przenośnych** ](#Portable_Class_Libraries) (przestarzałe) — biblioteki klas przenośnych (PCLs) można wybierać docelowo wiele platform za pomocą wspólne środowisko interfejsów API i używać interfejsów umożliwiają korzystanie z funkcji specyficznych dla platformy. PCLs zostały zaniechane w najnowszej wersji programu Visual Studio &ndash; zamiast tego użyj .NET Standard.
 
