@@ -266,7 +266,7 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Tylko pierwszy {0} z {1} "Odwołuje się" wyświetlane ostrzeżenia. ** Tej wiadomości dotyczące 2009 **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Tylko pierwszy {0} z {1} "Odwołuje się" wyświetlane ostrzeżenia. ** Tej wiadomości dotyczące 2009 \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Ostatnie słomy rozwiązaniem byłoby użyć starszej wersji Xamarin.Mac, obsłu
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac rozszerzenia nie obsługują połączeń. Żądanie łączenia zostanie zignorowany. ** Ten komunikat jest przestarzała w XM 3,6 + **
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac rozszerzenia nie obsługują połączeń. Żądanie łączenia zostanie zignorowany. ** Ten komunikat jest przestarzała w XM 3,6 + \*\*
 
 <!-- 2015 used by mtouch -->
 

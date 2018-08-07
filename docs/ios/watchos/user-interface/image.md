@@ -18,7 +18,7 @@ ms.locfileid: "34791254"
 
 udostępnia watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) formantu do wyświetlania obrazów i prostych animacji. Niektóre formanty mogą mieć również obraz tła (takie jak przyciski, grup i kontrolery interfejsu).
 
-![](image-images/image-walkway.png "Obraz przedstawiający Apple Watch") ![ ] (image-images/image-animation.png "Apple Watch z prostej animacji")
+![](image-images/image-walkway.png "Obraz przedstawiający Apple Watch") ![](image-images/image-animation.png "Apple Watch z prostej animacji")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Obrazy katalogu zasobów umożliwia dodawanie obrazów do zestawu czujki aplikacji.
