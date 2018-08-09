@@ -3,16 +3,15 @@ title: Korzystanie z biblioteki SkiaSharp w interfejsie Xamarin.Forms
 description: Skiasharp — to system grafika 2D dla platformy .NET i języka C# obsługiwane przez aparat grafiki Skia typu open source, który jest szeroko stosowany w produktach firmy Google. Ten przewodnik wyjaśnia, jak SkiaSharp na użytek grafika 2D w aplikacjach Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
-ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: bdc0603c6ae406adac42533e251106ccccf2cb7c
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: f7d97b798bf2a5a75af0731a665fe212491a6516
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130949"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615876"
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Korzystanie z biblioteki SkiaSharp w interfejsie Xamarin.Forms
 

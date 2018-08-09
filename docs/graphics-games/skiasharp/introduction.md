@@ -1,27 +1,28 @@
 ---
 title: Wprowadzenie do SkiaSharp
-description: Ten dokument zawiera krótkie wprowadzenie do podstawowych pojęć SkiaSharp. W szczególności omówiono uzyskiwania i rysowania na SKCanvas.
+description: Ten dokument zawiera krótkie wprowadzenie do podstawowych pojęć SkiaSharp. W szczególności omówiono w nim uzyskiwanie i rysowania na SKCanvas.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783064"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615499"
 ---
 # <a name="an-introduction-to-skiasharp"></a>Wprowadzenie do SkiaSharp
 
 _Zapewnia to krótkie wprowadzenie do pojęć dotyczących SkiaSharp_
 
-SkiaSharp zapewnia bogaty i wydajne grafiki 2D interfejs API, który może zostać użyty do renderowania do buforów 2D.  Można je implementować niestandardowe elementy interfejsu użytkownika i 2D grafiki, które mogą być włączone w aplikacji.  Powiązanie .NET jest SkiaSharp [Skia](https://skia.org) biblioteki i ma dziedziczyć funkcje i możliwości tej biblioteki.
+Skiasharp — zapewnia rozbudowane i zaawansowane grafika 2D interfejsu API, który może zostać użyty do renderowania do buforów 2D.  Te umożliwia wdrożenie niestandardowe elementy interfejsu użytkownika i grafika 2D, który należy włączyć w aplikacji.  Skiasharp — jest powiązanie .NET [Skia](https://skia.org) biblioteki i dziedziczy funkcje i możliwości tej biblioteki.
 
-Biblioteka jest obecnie dostępna jako między platformami [pakietu NuGet](https://www.nuget.org/packages/SkiaSharp), można dodać do projektu przez dodanie odwołania do NuGet.
+Biblioteka jest obecnie dostępna jako dla wielu platform [pakietu NuGet](https://www.nuget.org/packages/SkiaSharp), Dodaj do projektu, dodając odwołanie NuGet.
 
-Rysowanie, utworzy kodu `SkCanvas` która opisuje powierzchni, gdzie operacje rysowania będą miały miejsce.
+Aby narysować, utworzy kod `SkCanvas` opisano powierzchni, gdzie operacji rysowania będą miały miejsce.
 
 ## <a name="obtaining-an-skcanvas"></a>Uzyskiwanie SKCanvas
 
@@ -33,15 +34,15 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 }
 ```
 
-## <a name="drawing-on-skcanvas"></a>Rysowanie w SKCanvas
+## <a name="drawing-on-skcanvas"></a>Rysowanie na SKCanvas
 
-`SKCanvas` Używa modelu rysowania podobny do innych rysunku duchu modeli należy się zapoznać się z, używa kolorów z kanałem przezroczystość opcjonalny i może wykonywać Rysowanie linii, łuki, tekst i obrazy.
+`SKCanvas` Wykorzystuje model rysowania podobne do innych rysunku duchu modeli, można zapoznać się z, używa kolorów z kanałem przezroczystości opcjonalne i można narysować linie, łuki, tekst i obrazy.
 
-Poniżej przedstawiono kilka z wielu różnych rzeczy, które można wykonać za pomocą SkiaSharp.  W przykładzie poniżej zmienna `canvas` jest typu SKCanvas.
+Poniżej przedstawiono kilka z wielu różnych rzeczy, które można wykonać za pomocą SkiaSharp.  W przykładach poniżej zmiennej `canvas` typu SKCanvas.
 
 ### <a name="drawing-xamagon"></a>Rysowanie Xamagon
 
-W tym przykładzie rysuje logo firmy Xamarin Xamagon:
+W tym przykładzie pobiera logo firmy Xamarin Xamagon:
 
 ```csharp
 // clear the canvas / fill with white
@@ -94,7 +95,7 @@ using (var paint = new SKPaint ()) {
 }
 ```
 
-### <a name="drawing-bitmaps"></a>Rysowanie mapy bitowe
+### <a name="drawing-bitmaps"></a>Rysowanie map bitowych
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png");
@@ -110,7 +111,7 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-### <a name="drawing-with-image-filters"></a>Rysowanie za pomocą filtry obrazów
+### <a name="drawing-with-image-filters"></a>Rysowanie przy użyciu filtry obrazów
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png"); // open a stream to an image file
@@ -134,9 +135,9 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>Więcej informacji
 
-Więcej informacji o używaniu SkiaSharp można znaleźć w [dokumentacji interfejsu API w trybie online](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+Więcej informacji na temat Korzystanie z biblioteki SkiaSharp znajduje się na [dokumentacji interfejsu API w trybie online](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [IOS SkiaSharp skoroszytu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [Skiasharp — iOS skoroszytu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)

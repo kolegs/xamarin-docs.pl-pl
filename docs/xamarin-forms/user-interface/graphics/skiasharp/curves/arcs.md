@@ -1,34 +1,34 @@
 ---
-title: Trzy sposoby narysować łuk
-description: W tym artykule wyjaśniono, jak użyć SkiaSharp, aby zdefiniować Łuki na trzy różne sposoby, a pokazano to z przykładowym kodzie.
+title: Trzy sposoby narysowania łuku
+description: W tym artykule wyjaśniono, jak zdefiniować Łuki na trzy różne sposoby przy użyciu SkiaSharp i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 9e0ed04543436ec7a83d13fa6a56637fc7916338
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244155"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615408"
 ---
-# <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysować łuk
+# <a name="three-ways-to-draw-an-arc"></a>Trzy sposoby narysowania łuku
 
-_Dowiedz się, jak użyć SkiaSharp, aby zdefiniować Łuki na trzy różne sposoby_
+_Dowiedz się, jak zdefiniować Łuki na trzy różne sposoby przy użyciu SkiaSharp_
 
 Łuk jest krzywej w obwodzie elipsy, takie jak zaokrąglone części znaku nieskończoności:
 
-![](arcs-images/arcsample.png "Infinity logowania")
+![](arcs-images/arcsample.png "Logowanie w nieskończoność")
 
-Pomimo uproszczenia tej definicji, nie istnieje sposób aby zdefiniować funkcję łuk rysunku, która spełnia co należy i w związku z tym nie konsensu między systemami grafiki najlepszy sposób, aby narysować łuk. Z tego powodu `SKPath` klasy nie ogranicza się do tylko jeden z nich.
+Pomimo uproszczenia tej definicji nie istnieje sposób, aby zdefiniować funkcję łuk rysunku, który spełnia wszystkie potrzeby i w związku z tym, nie zgody między systemami grafiki w najlepszym sposobem narysowania łuku. Z tego powodu `SKPath` klasy nie ogranicza się do tylko jednej metody.
 
-`SKPath` definiuje `AddArc` metoda, pięciu różnych `ArcTo` metody i względem dwóch `RArcTo` metody. Te metody dzielą się na trzy kategorie, reprezentujący trzech bardzo różne podejścia do określania łuk. Używanego jeden zależy od informacji dostępnych do definiowania łuk i sposobu ten łuk wpasowania grafiki, która rysowania.
+`SKPath` definiuje `AddArc` metody, pięć różnych `ArcTo` metody i dwiema względny `RArcTo` metody. Metody te można podzielić na trzy kategorie, reprezentujący trzech bardzo różne podejścia do określania łuku. Używane, w którym zależy od informacji dostępnych do definiowania łuk i jak ten łuk pracy i wpasowania grafiki, która rysowania.
 
-## <a name="the-angle-arc"></a>Łuk kąta
+## <a name="the-angle-arc"></a>Kąt łuk
 
-Podejście łuk kąt do rysowania Łuki wymaga określenia prostokąt zakresem elipsy. Wskazuje łuk w obwodzie tego elipsy kąty od środka elipsy co początku łuk i jej długość. Dwie różne metody Rysowanie łuków kąta. Są to [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) — metoda i [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) metody:
+Kąt łuk podejście do rysowania Łuki wymaga określenia prostokąt, który granic elipsę. Łuk na obwód to wielokropka jest wskazywany przez kąty z Centrum elipsy, dzięki czemu początku łuk i jego długość. Dwie różne metody narysuj Łuki kąta. Są to [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) metody i [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) metody:
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -36,45 +36,45 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Te metody są takie same jak Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) i [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) metody. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) jest podobny, ale jest ograniczony do Łuki w obwodzie koło zamiast uogólnione w celu elipsy.
+Te metody są takie same jak Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) i [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) metody. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metody są podobne, ale jest ograniczony do Łuki na obwód koła zamiast uogólniony, aby elipsę.
 
-Obie metody rozpoczynać się od `SKRect` wartość, która definiuje lokalizacji i rozmiaru elipsy:
+Obie metody zaczynają się od `SKRect` wartość, która definiuje lokalizacji i rozmiaru elipsy:
 
-![](arcs-images/anglearcoval.png "Oval, rozpoczynającego łuk kąta")
+![](arcs-images/anglearcoval.png "Elipsa, zaczynającą łuk kąt")
 
-Łuk jest częścią obwodu tego elipsy.
+Łuk jest częścią obwód to elipsy.
 
-`startAngle` Argument jest prawo kąta w stopniach względem linii poziomej pochodzą z Centrum wielokropka z prawej strony. `sweepAngle` Argument jest względem `startAngle`. Poniżej przedstawiono `startAngle` i `sweepAngle` wartości 60 do 100 stopni, odpowiednio:
+`startAngle` Argument jest prawo kąt w stopniach względem linii poziomej rysowany z Centrum wielokropka z prawej strony. `sweepAngle` Argument jest względem `startAngle`. Poniżej przedstawiono `startAngle` i `sweepAngle` wartości 60-100 stopni, odpowiednio:
 
-![](arcs-images/anglearcangles.png "Kąty definiujące łuk kąta")
+![](arcs-images/anglearcangles.png "Kąty, które definiują łuk kąt")
 
-Łuk rozpoczyna się od Kąt początkowy. Długość jego podlega kąta odchylenia:
+Pod kątem uruchamiania rozpocznie się łuku. Jego długość jest regulowane przez kąta odchylenia:
 
-![](arcs-images/anglearchighlight.png "Łuk wyróżnione kąta")
+![](arcs-images/anglearchighlight.png "Kąt wyróżnione łuk")
 
-Dodawany do ścieżki z krzywej `AddArc` lub `ArcTo` metoda jest po prostu część elipsy obwód, pokazane na czerwono:
+Krzywa dodawany do ścieżki z `AddArc` lub `ArcTo` metodą jest po prostu część obwód elipsy, w tym miejscu wyświetlane na czerwono:
 
 ![](arcs-images/anglearc.png "Kąt łuk samodzielnie")
 
-`startAngle` Lub `sweepAngle` argumentów może być ujemna: łuk jest prawo do wartości dodatnie `sweepAngle` i zegara dla wartości ujemnych.
+`startAngle` Lub `sweepAngle` argumentów może być ujemna: łuk jest do ruchu wskazówek zegara dla wartości dodatnich z `sweepAngle` i zegara dla wartości ujemnych.
 
-Jednak `AddArc` jest *nie* zdefiniuj rozkład zamknięte. Jeśli wywołujesz `LineTo` po `AddArc`, jest rysowana linia od końca łuk do punktu w `LineTo` — metoda i tym samym dotyczy `ArcTo`.
+Jednak `AddArc` jest *nie* definiowania zamkniętych ROZKŁAD. Jeśli wywołasz `LineTo` po `AddArc`, linia jest rysowana od końca łuk do punktu w `LineTo` metody i tym samym dotyczy `ArcTo`.
 
-`AddArc` automatycznie uruchamia nowe rozkład i jest funkcjonalnym odpowiednikiem wywołania `ArcTo` z ostatnim argumentem `true`:
+`AddArc` automatycznie uruchamia nowy rozkład i jest funkcjonalnym odpowiednikiem wywołania `ArcTo` z ostatnim argumentem `true`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
 ```
 
-Nosi ostatni argument `forceMoveTo`, i efektywnie powoduje `MoveTo` wywołać na początku łuk. Która rozpoczyna się nowych ROZKŁAD. Oznacza to inaczej z ostatnim argumentem `false`:
+Nosi ostatni argument `forceMoveTo`, i skutecznie powoduje `MoveTo` wywołania na początku łuku. Która rozpoczyna się nowej ROZKŁAD. To znaczy nie w przypadku ostatniego argumentu `false`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, false);
 ```
 
-Ta wersja `ArcTo` rysuje od bieżącej pozycji na początku łuk. Oznacza to, że łuk można gdzieś środku rozkład większy.
+Ta wersja `ArcTo` rysuje linię z bieżącego położenia na początku łuku. Oznacza to, że łuk może być gdzieś środku większych ROZKŁAD.
 
-**Łuk kąt** strona pozwala określić uruchomienia i odchylenia kąty za pomocą suwaków dwa. Plik XAML tworzy dwa `Slider` elementów i `SKCanvasView`. `PaintCanvas` Obsługi w [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) pliku rysuje zarówno oval, jak i za pomocą dwóch łuk `SKPaint` obiektów zdefiniowanych jako pola:
+**Łuk kąt** strona pozwala na początek i kąta odchylenia za pomocą dwóch suwaków. Plik XAML są tworzone wystąpienia dwóch `Slider` elementy i `SKCanvasView`. `PaintCanvas` Obsługi w [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) pliku Rysuje elipsę i łuk za pomocą dwóch `SKPaint` obiekty zdefiniowane jako pola:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -99,19 +99,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jak widać, zarówno Kąt początkowy, jak i kąta odchylenia można wykonywać na wartości ujemnych.
+Jak widać, Kąt początkowy i kąta odchylenia może potrwać od wartości ujemnych:
 
-[![](arcs-images/anglearc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuk kąt")](arcs-images/anglearc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuk kąta")
+[![](arcs-images/anglearc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuk kąt")](arcs-images/anglearc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kąt łuk")
 
-Takie podejście do generowania łuk jest algorithmically najprostszą i ułatwia pochodzi równania parametryczne, które opisują łuk. Znajomość rozmiar i położenie elipsy i kąty rozpoczęcia i odchylenia, punktu początkowego i końcowego łuku oblicza się przy użyciu prostego trygonometryczne:
+Algorithmically najprościej jest to podejście do generowania łuk, oraz łatwe do wyprowadzenia równania parametryczne, które opisują łuku. Wiedząc, rozmiar i położenie elipsy oraz kąty początkową i odchylenia, początkowy i punkt końcowy, łuku można obliczyć przy użyciu prostego trygonometryczne:
 
 x = oval. MidX + (oval. Szerokość / 2) * cos(angle)
 
 y = oval. MidY + (oval. Wysokość / 2) * sin(angle)
 
-`angle` Wartość to `startAngle` lub `startAngle + sweepAngle`.
+`angle` Wartość jest albo `startAngle` lub `startAngle + sweepAngle`.
 
-Korzystanie z dwóch kąty do definiowania łuk jest najlepsze w przypadku, gdy znasz kątowego długość przewidzianą do rysowania, na przykład, aby wykresu kołowego łuku. **Rozsunięty wykres kołowy** strony pokazano to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasa używana Wewnętrzna klasa do definiowania niektórych danych metalowych i kolory:
+Użycie dwóch kąty, aby zdefiniować łuk najlepiej stosować w przypadkach, gdy wiadomo, usługi angular długość przewidzianą do rysowania, na przykład, aby wykresu kołowego łuku. **Rozkładane wykresu kołowego** strona przedstawia to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Klasa używa Wewnętrzna klasa do definiowania niektórych danych metalowych i kolorów:
 
 ```csharp
 class ChartData
@@ -140,7 +140,7 @@ ChartData[] chartData =
 
 ```
 
-`PaintSurface` Obsługi najpierw pętli elementów do obliczenia `totalValues` numer. Od tego go określić rozmiar każdego elementu jako część całkowitej i przekonwertować który kąta:
+`PaintSurface` Obsługi najpierw przetwarza w pętli elementów do obliczania `totalValues` numer. Od tego jego rozmiar każdego elementu jest określany jako części całości i przekonwertować, kąt:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -204,19 +204,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Nowy `SKPath` obiekt jest tworzony dla każdego wycinka koła. Ścieżka zawiera wiersza z Centrum, a następnie `ArcTo` do rysowania łuk, a inny powrót do Centrum wyników z `Close` wywołania. Ten program wyświetla wycinków koła "rozsunięty", przenosząc je wszystkie wylogowanie z Centrum 50 pikseli. To zadanie wymaga wektor w kierunku punkt środkowy kąta odchylenia każdy wycinek:
+Nowy `SKPath` obiekt jest tworzony dla każdego wycinka koła. Ścieżka składa się z wiersza z Centrum, a następnie `ArcTo` do rysowania łuk, a inny powrót do wyników Centrum z `Close` wywołania. Ten program wyświetla wycinki koła "rozsunięty", przenosząc je wszystkie się z Centrum 50 pikseli. To zadanie wymaga wektora w kierunku punktu środkowego kąta odchylenia każdy wycinek:
 
-[![](arcs-images/explodedpiechart-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")](arcs-images/explodedpiechart-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy")
+[![](arcs-images/explodedpiechart-small.png "Potrójna zrzut ekranu przedstawiający stronę wykres kołowy rozsunięty")](arcs-images/explodedpiechart-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wykres kołowy rozsunięty")
 
-Aby wyświetlić jego wyglądu bez "masowego", po prostu komentarz `Translate` wywołania:
+Aby zobaczyć, jak to wygląda bez "masowego", po prostu komentarz `Translate` wywołania:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez rozłożenie")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Rozsunięty wykres kołowy bez masowego")
+[![](arcs-images/explodedpiechartunexploded-small.png "Potrójna zrzut ekranu przedstawiający stronę wykres kołowy rozsunięty bez masowego")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wykres kołowy rozsunięty bez masowego")
 
 ## <a name="the-tangent-arc"></a>Arcus tangens
 
-Drugi typ łuk obsługiwane przez `SKPath` jest *arcus tangens*, tzw. ponieważ łuk jest obwód koła stycznej na dwa połączone linie.
+Drugi typ łuk obsługiwane przez `SKPath` jest *arcus tangens*, tzw. ponieważ łuk obwód koła stycznej na dwie połączone linie.
 
-Arcus tangens zostanie dodany do ścieżki z wywołania [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metody przy użyciu dwóch `SKPoint` parametry, lub [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `Single` parametrów punkty:
+Arcus tangens zostanie dodany do ścieżki z wywołaniem [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metody przy użyciu dwóch `SKPoint` parametrów, lub [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `Single` parametrów punkty:
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,43 +224,43 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-To `ArcTo` metoda jest podobna do PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) — funkcja (strona 532 dokumentu PDF) oraz iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metody.
+To `ArcTo` metoda jest podobna do PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) funkcji (strona 532 w dokumencie PDF) i systemu iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metody.
 
 `ArcTo` Metoda obejmuje trzy punkty:
 
-- Bieżące polecenie rozkład lub punkt (0, 0), jeśli `MoveTo` nie została wywołana.
+- Bieżące polecenie sylwetką lub punkt (0, 0), jeśli `MoveTo` nie została wywołana.
 - Pierwszy argument punktu `ArcTo` wywołano metodę *rogu punktu*
-- Drugi argument punktu `ArcTo`o nazwie *docelowego punktu*:
+- Drugi argument punktu `ArcTo`, co jest nazywane *docelowy punkt*:
 
-![](arcs-images/tangentarcthreepoints.png "Trzy punkty rozpoczynające stycznej łuk")
+![](arcs-images/tangentarcthreepoints.png "Trzy punkty, które zaczynają się arcus tangens")
 
-Te trzy punkty definiują dwa połączone linie:
+Te trzy punkty zdefiniować dwa połączone linie:
 
-![](arcs-images/tangentarcconnectinglines.png "Linie łączące trzy punkty stycznej łuk")
+![](arcs-images/tangentarcconnectinglines.png "Linie łączące trzech punktów arcus tangens")
 
-Jeśli colinear trzy punkty &mdash; oznacza to, czy znajdują się one w tej samej prostej &mdash; łuk nie będą pobierane.
+W przypadku trzy punkty colinear &mdash; oznacza to, jeśli znajdują się one w tej samej prostej &mdash; łuk nie będą pobierane.
 
-`ArcTo` Zawiera również metody `radius` parametru. Określa promień okręgu:
+`ArcTo` Metoda obejmuje także `radius` parametru. Określa promień koła:
 
-![](arcs-images/tangentarccircle.png "Stycznej łuku okręgu")
+![](arcs-images/tangentarccircle.png "Koło arcus tangens")
 
-Arcus tangens to nie jest uogólniona dla elipsy.
+Arcus tangens to nie jest uogólniona dla elipsę.
 
-Jeśli dwa wiersze spełniają pod kątem żadnych, że koło można wstawiać między te wiersze tak, aby tangens do obu wierszy:
+Jeśli dwa wiersze spełniają pod kątem dowolnego, ten okrąg można wstawiać między te wiersze, tak, aby stycznej do dwóch wierszach:
 
-![](arcs-images/tangentarctangentcircle.png "Stycznej łuku okręgu między dwoma liniami")
+![](arcs-images/tangentarctangentcircle.png "Okrąg arcus tangens między dwoma wierszami")
 
-Krzywej, który jest dodawany do konturu nie touch albo punktów określonych w `ArcTo` metody. Składa się z prostej od bieżącego punktu pierwszego punktu stycznej i łuk kończy się w drugim punkcie stycznej:
+Krzywa, który jest dodawany do rozkładu nie w ogóle albo punktów określonych w `ArcTo` metody. Składa się z linię prostą rysowaną od bieżącego punktu pierwszy punkt stycznej i kończący się w momencie stycznej drugi łuk:
 
-![](arcs-images/tangentarchighlight.png "Wyróżnione łuk stycznej między dwoma liniami")
+![](arcs-images/tangentarchighlight.png "Wyróżnione arcus tangens między dwoma wierszami")
 
-Poniżej przedstawiono końcowego prostej i łuk, który jest dodawany do konturu:
+Poniżej przedstawiono końcowy prostej i arc, który jest dodawany do rozkładu:
 
-![](arcs-images/tangentarc.png "Wyróżnione łuk stycznej między dwoma liniami")
+![](arcs-images/tangentarc.png "Wyróżnione arcus tangens między dwoma wierszami")
 
 Rozkład może być kontynuowane z drugiego punktu stycznej.
 
-**Arcus tangens** strony można wypróbować arcus tangens. Jest to pierwszy kilka stron, które pochodzą z [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), który definiuje kilka przydatną `SKPaint` obiekty i wykonuje `TouchPoint` przetwarzania:
+**Arcus tangens** strona pozwala na eksperymentowanie z arcus tangens. Jest to pierwszy kilku stron, które wynikają z [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), który definiuje kilka przydatną `SKPaint` obiektów i wykonuje `TouchPoint` przetwarzania:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -310,7 +310,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` Pochodną klasy `InteractivePage`. Konstruktor w [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) plik jest odpowiedzialny za tworzenie wystąpień i Inicjowanie `touchPoints` tablicy i ustawienie `baseCanvasView` (w `InteractivePage`) do `SKCanvasView` wystąpienie obiektu w [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) pliku:
+`TangentArcPage` Klasa pochodzi od `InteractivePage`. Konstruktor w [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) plik jest odpowiedzialny za tworzenie wystąpień i Inicjowanie `touchPoints` tablicy i ustawienie `baseCanvasView` (w `InteractivePage`) do `SKCanvasView` tworzone wystąpienie obiektu w [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) pliku:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -346,7 +346,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-`PaintSurface` Program obsługi używa `ArcTo` metodę, by narysować łuk oparte na punktach touch i `Slider`, ale również algorithmically oblicza okręgu na podstawie kąt:
+`PaintSurface` Program obsługi używa `ArcTo` metodę, aby narysować łuk oparte na punkty dotykowe i `Slider`, ale również algorithmically oblicza koła na podstawie kąt:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -412,13 +412,13 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Oto **arcus tangens** strony uruchomionej na wszystkich platformach trzy:
+Oto **arcus tangens** strony uruchomionej na wszystkich trzech platformach:
 
 [![](arcs-images/tangentarc-small.png "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")](arcs-images/tangentarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę arcus tangens")
 
-Arcus tangens jest idealny dla tworzenia zaokrąglonymi narożnikami, takich jak zaokrąglony prostokąt. Ponieważ `SKPath` zawiera już `AddRoundedRect` metody **zaokrąglona Heptagon** strony przedstawiają sposób użycia `ArcTo` zaokrąglania narożników dwustronnych siedmiu wielokąta. (Kod uogólniony żadnych regularne wielokąta.)
+Arcus tangens to idealne rozwiązanie w przypadku tworzenia zaokrąglone narożniki, takich jak prostokąt zaokrąglony. Ponieważ `SKPath` zawiera już `AddRoundedRect` metody **zaokrąglone Heptagon** strony pokazuje sposób użycia `ArcTo` zaokrąglania narożników dwustronna siedmiu wielokąta. (Kod jest uogólniony dla dowolnego wielokąta regularnych).
 
-`PaintSurface` Obsługi [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) klasy zawiera jeden `for` pętli do obliczenia współrzędne siedmiu wierzchołki heptagon oraz drugiego obliczyć pośrednie siedmiu stron z nich wierzchołków. Te punkty środkowe są następnie używane do utworzenia ścieżki:
+`PaintSurface` Program obsługi [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) klasy zawiera jeden `for` pętli do obliczania współrzędne siedem wierzchołki heptagon oraz drugiego do obliczania pośrednie siedem boki z tych wierzchołki. Te punkty środkowe są następnie używane do konstruowania ścieżki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -487,13 +487,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Oto działająca na platformach trzy program:
+W tym miejscu jest uruchomiony na trzech platformach program:
 
-[![](arcs-images/roundedheptagon-small.png "Potrójna zrzut ekranu przedstawiający stronę zaokrąglona Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "Potrójna zrzut ekranu strony Heptagon zaokrąglona")
+[![](arcs-images/roundedheptagon-small.png "Potrójna zrzut ekranu przedstawiający stronę zaokrąglone Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Heptagon zaokrąglone")
 
-## <a name="the-elliptical-arc"></a>Łuku
+## <a name="the-elliptical-arc"></a>Łuk eliptyczny
 
-Łuku zostanie dodany do ścieżki z wywołania [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) metodę, która ma dwa `SKPoint` parametry, lub [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) przeciążenia z oddzielnych X i Y współrzędne:
+Łuk eliptyczny zostanie dodany do ścieżki z wywołaniem [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) metodę, która ma dwa `SKPoint` parametrów lub [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) przeciążenia z oddzielnych X i Y współrzędnych:
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -501,48 +501,48 @@ public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPath
 public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, Single x, Single y)
 ```
 
-Łuku jest zgodna z [łuku](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) objętych skalowalne wektor grafiki SVG i platformy uniwersalnej systemu Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) klasy.
+Łuk eliptyczny jest zgodna z [łuk eliptyczny](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) zawarte w skalowalnych grafiki wektorowej (SVG) i platformy uniwersalnej Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) klasy.
 
-Te `ArcTo` metody narysować łuk między dwoma punktami, co stanowi bieżącego punktu konturu, a ostatnim parametrem na `ArcTo` — metoda ( `xy` parametr lub szczegółowych `x` i `y` parametry):
+Te `ArcTo` metody narysowania łuku między dwoma punktami, co jest bieżącym punkcie sylwetką, oraz ostatni parametr do `ArcTo` — metoda ( `xy` parametr lub szczegółowych `x` i `y` parametry):
 
-![](arcs-images/ellipticalarcpoints.png "Dwa punkty, które zdefiniowano łuku")
+![](arcs-images/ellipticalarcpoints.png "Dwa punkty, które zdefiniowane łuk eliptyczny")
 
-Pierwszy parametr punktu `ArcTo` — metoda (`r`, lub `rx` i `ry`) nie jest punktem w ogóle, ale zamiast tego Określa promień poziome i pionowe elipsy;
+Pierwszy parametr punktu `ArcTo` — metoda (`r`, lub `rx` i `ry`) nie jest punktem na wszystkich, ale zamiast tego Określa promień narożników elipsę; poziome i pionowe
 
-![](arcs-images/ellipticalarcellipse.png "Elipsy zdefiniowanego łuku")
+![](arcs-images/ellipticalarcellipse.png "Elipsy, który zdefiniowany łuk eliptyczny")
 
-`xAxisRotate` Parametr to liczba stopni do ruchu wskazówek zegara Obróć tego elipsy:
+`xAxisRotate` Parametr jest liczbę stopni do ruchu wskazówek zegara, aby obrócić tego elipsy:
 
-![](arcs-images/ellipticalarctiltedellipse.png "Elipsy Wychylny zdefiniowanego łuku")
+![](arcs-images/ellipticalarctiltedellipse.png "Elipsa Wychylny, który zdefiniowany łuk eliptyczny")
 
-Jeśli ta Wychylny elipsy następnie znajduje się tak, aby go dotyka dwa punkty, punkty są połączone przez dwa różne łuki:
+Jeśli ta Wychylny elipsy następnie jest ustawione, tak, aby go dotyka dwa punkty, punkty połączone przez dwa różne łuki:
 
-![](arcs-images/ellipticalarcellipse1.png "Pierwszy zestaw wycinkami elips")
+![](arcs-images/ellipticalarcellipse1.png "Pierwszy zestaw eliptyczne Łuki")
 
-Te dwa łuki można rozróżnić na dwa sposoby: łuk top jest większy niż łuk dolnej i jako łuku od lewej do prawej, top łuku wskazówek zegara podczas dolnej łuku w ruchu wskazówek zegara.
+Te dwa łuki można odróżnić na dwa sposoby: łuk najważniejsze jest większy niż łuk dolnej i jak łuku od lewej do prawej, najważniejsze łuku zgodnie z ruchem wskazówek podczas dolnej łuku w kierunku.
 
 Istnieje również możliwość dopasowania elipsy między dwoma punktami w inny sposób:
 
-![](arcs-images/ellipticalarcellipse2.png "Drugi zestaw wycinkami elips")
+![](arcs-images/ellipticalarcellipse2.png "Drugi zestaw eliptyczne Łuki")
 
-Teraz jest mniejszy łuk w górnej części, która jest rysowane w prawo i większy łuk na dole, który ma zostać narysowana przeciwnie do ruchu wskazówek zegara.
+Teraz ma mniejszy łuk u góry, który jest wstawiany zgodnie ze wskazówkami zegara i większych łuk w dolnej części, który jest wstawiany przeciwnie do ruchu wskazówek zegara.
 
-Te dwa punkty połączonymi z tego powodu łuk definiowany przez Wychylny elipsy w całości cztery sposoby:
+Te dwa punkty połączonymi w związku z tym łuk definicją Wychylny elipsy, łącznie z czterech sposobów:
 
-![](arcs-images/ellipticalarccolors.png "Wszystkie cztery wycinkami elips")
+![](arcs-images/ellipticalarccolors.png "Wszystkie cztery eliptyczne Łuki")
 
-Te cztery Łuki można rozróżnić za cztery kombinacje [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) i [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) wyliczenie argumentów typu dla `ArcTo` metody:
+Te cztery Łuki są rozróżniane na podstawie czterech kombinacji [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) i [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) argumentów typu wyliczenia dla `ArcTo` metody:
 
 - czerwony: SKPathArcSize.Large i SKPathDirection.Clockwise
 - zielony: SKPathArcSize.Small i SKPathDirection.Clockwise
 - niebieski: SKPathArcSize.Small i SKPathDirection.CounterClockwise
 - amarantowy: SKPathArcSize.Large i SKPathDirection.CounterClockwise
 
-Jeśli Wychylny elipsy nie jest wystarczająco duży, aby zmieścić między dwoma punktami, jest on skalowany jednolicie, dopóki nie jest wystarczająco duży. Tylko dwa łuki unikatowy w takim przypadku Połącz dwa punkty. Te można rozróżnić z `SKPathDirection` parametru.
+Jeśli wielokropek Wychylny nie jest wystarczająco duży, aby dopasować między dwoma punktami jest równomiernie skalowana, dopóki nie jest wystarczająco duży. Tylko dwa łuki unikatowy połączyć dwa punkty w takiej sytuacji. Te można rozróżnić za pomocą `SKPathDirection` parametru.
 
-Mimo że takie podejście do definiowania łuk dźwięki złożonych na podczas pierwszego potyczki, jest tylko podejście, które umożliwia zdefiniowanie łuk o obrócony elipsy i jest często najłatwiejszy gdy konieczny do integracji z innymi składnikami rozkład łuków.
+Mimo że takie podejście do definiowania łuk brzmi złożonych na pierwszym encounter, jest tylko podejście, które umożliwia zdefiniowanie łuk o obrócony wielokropek, a często jest to najłatwiejsza metoda gdy konieczny do integracji łuki z innymi częściami ROZKŁAD.
 
-**Łuku** strona umożliwia interakcyjne ustawić dwa punkty i rozmiarem i rotacją elipsy. `EllipticalArcPage` Pochodną klasy `InteractivePage`i `PaintSurface` obsługi w [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) pliku CodeBehind rysuje cztery łuków:
+**Łuk eliptyczny** strona pozwala interaktywnie ustawić dwa punkty i rozmiarem i rotacją elipsy. `EllipticalArcPage` Klasa pochodzi od `InteractivePage`i `PaintSurface` obsługi w [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) pliku związanego z kodem rysuje cztery łuki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -582,37 +582,37 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-W tym miejscu jest uruchomiona na trzy platformach:
+W tym miejscu jest uruchomiona na trzech platformach:
 
-[![](arcs-images/ellipticalarc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku")](arcs-images/ellipticalarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuku")
+[![](arcs-images/ellipticalarc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuk eliptyczny")](arcs-images/ellipticalarc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuk eliptyczny")
 
-**Nieskończoności łuk** strona używa łuku do rysowania znak nieskończoności. Znak nieskończoności opiera się na dwóch koła z promień 100 jednostek oddzielone 100 jednostek:
+**Nieskończoności łuk** strona używa łuk eliptyczny do rysowania znakiem nieskończoność. Znak nieskończoności opiera się na dwa okręgi z promienie 100 jednostek rozdzielone 100 jednostek:
 
 ![](arcs-images/infinitycircles.png "Dwa okręgi")
 
-Dwa wiersze przekraczania wzajemnie są stycznej do obu okręgi:
+Dwa wiersze, które wzajemnie wykraczania poza granice są stycznej do obu okręgów:
 
-![](arcs-images/infinitycircleslines.png "Dwa okręgi liniami stycznej")
+![](arcs-images/infinitycircleslines.png "Dwa okręgi z styczne")
 
-Znak nieskończoności jest kombinacją części tych okręgi i dwa wiersze. Aby użyć łuku do rysowania znak nieskończoności, muszą być określone współrzędne, w których dwa wiersze są stycznej do kółka.
+Podpisz nieskończoności jest kombinacją części tych kręgów i dwa wiersze. Aby użyć łuk eliptyczny do rysowania logowania nieskończoność, można określić współrzędne, w których stycznej do okręgów dwa wiersze.
 
-Utworzyć prawy prostokąt w jednym z kółka:
+Należy utworzyć odpowiednie prostokąt w jeden z okręgów:
 
-![](arcs-images/infinitytriangle.png "Dwa okręgi z liniami stycznej i osadzone okręgu")
+![](arcs-images/infinitytriangle.png "Dwa okręgi styczne i osadzone okręgu")
 
-100 jednostek jest promień okręgu i przeciwprostokątnej trójkąta jest 150 jednostki, więc kąt α jest sinus (sinus) podzielony przez 150 lub 41.8 stopni 100. Długość boku trójkąta jest 150 razy cosinus 41.8 stopni lub 112, które również mogą być obliczane przez twierdzenie Pitagorasa.
+Promień koła jest 100 jednostek i przeciwprostokątnej trójkąta jest 150 jednostek, więc kąt α arcus sinus (odwrotność sinusa), 100 podzielona przez 150 lub 41.8 stopni. Długość bok trójkąta jest 150 razy cosinus 41.8 stopni lub 112, które również mogą być obliczane przez twierdzenie Pitagorasa.
 
-Współrzędne punktu stycznej można obliczyć za pomocą tych informacji:
+Współrzędne punktu stycznej można następnie obliczyć, korzystając z tych informacji:
 
 x = 112·cos(41.8) = 83
 
 y = 112·sin(41.8) = 75
 
-Cztery punkty stycznej są niezbędne do rysowania znak nieskończoności skupia się na punkt (0, 0) z Promień okrągłego 100:
+Cztery punkty stycznej są niezbędne do rysowania znakiem nieskończoności wyśrodkowany w punkcie (0, 0), za pomocą promień koła 100:
 
-![](arcs-images/infinitycoordinates.png "Dwa okręgi z liniami stycznej i współrzędnych")
+![](arcs-images/infinitycoordinates.png "Dwa okręgi z współrzędne i Styczne")
 
-`PaintSurface` Obsługi w [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) klasa pozycje znak nieskończoności, aby (0, 0) punkt znajduje się na środku strony i skaluje ścieżkę do rozmiaru ekranu:
+`PaintSurface` Obsługi w [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) klasy umieszcza znak nieskończoność, aby (0, 0) punkt jest umieszczany w środku strony i skaluje się ścieżkę do rozmiaru ekranu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -650,22 +650,22 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-W kodzie użyto `Bounds` właściwość `SKPath` do określania wymiarów sinus nieskończoności skalowania go do rozmiaru obszaru roboczego:
+Kod używa `Bounds` właściwość `SKPath` do określania wymiarów sinus nieskończoności skalowania do rozmiaru obszaru roboczego:
 
 [![](arcs-images/arcinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")](arcs-images/arcinfinity-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nieskończoności łuk")
 
-Wynik wydaje się nieco mały, które sugeruje, że `Bounds` właściwość `SKPath` raportuje o rozmiarze większym niż ścieżki.
+Wynik wydaje się nieco małe, co sugeruje, że `Bounds` właściwość `SKPath` zgłasza rozmiar większy niż ścieżki.
 
-Wewnętrznie Skia przybliża łuk przy użyciu wielu kwadratową krzywych Beziera. Krzywe te (jak zobaczysz w następnej sekcji) zawiera punkty kontrolne, regulują sposób rysowania krzywej, które nie są częścią krzywej renderowany. `Bounds` Właściwość zawiera te punkty kontrolne.
+Wewnętrznie Skia przybliża łuk przy użyciu wielu krzywych Beziera drugiego stopnia. Krzywe te (jak zobaczysz w następnej sekcji) zawierają punkty kontrolne, które określają, jak jest rysowana krzywej, ale nie są częścią renderowanych krzywej. `Bounds` Właściwość zawiera te punkty kontrolne.
 
-Aby uzyskać dopasowanie zwiększenie poziomu, użyj `TightBounds` właściwość, która nie obejmuje punktów kontrolnych. Oto program działa w trybie krajobraz i przy użyciu `TightBounds` właściwości można uzyskać ścieżki granic:
+Aby uzyskać większego rozmiaru, użyj `TightBounds` właściwość, która nie obejmuje punktów kontrolnych. Poniżej przedstawiono program uruchomiony w trybie poziomym i przy użyciu `TightBounds` właściwość, aby uzyskać ścieżką granic:
 
 [![](arcs-images/arcinfinitytightbounds-small.png "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Potrójna zrzut ekranu strony nieskończoności łuku z granicami ścisłej")
 
-Mimo że połączenia między łuki i proste są ze sobą matematycznie smooth, zmiana z łuk na prostej mogą wydawać się nieco niespodziewane. Znak nieskończoności lepiej jest podana w następnej strony.
+Mimo że połączeń między łuki i proste linie są ze sobą matematycznie smooth, zmiana łuk prostej mogą wydawać się nieco nagłego. Lepsze logowania nieskończoności jest przedstawiona w następnej strony.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

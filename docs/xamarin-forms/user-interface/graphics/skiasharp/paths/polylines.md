@@ -1,40 +1,40 @@
 ---
-title: Linię i parametryczne równania
-description: W tym artykule wyjaśniono, jak do SkiaSharp używany do renderowania wiersza można zdefiniować z parametrycznych równania i pokazuje to z przykładowym kodzie.
+title: Linie łamane i równania parametryczne
+description: W tym artykule wyjaśniono, jak do SkiaSharp użycia do renderowania wiersza można zdefiniować przy użyciu równania parametryczne i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245312"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615798"
 ---
-# <a name="polylines-and-parametric-equations"></a>Linię i parametryczne równania
+# <a name="polylines-and-parametric-equations"></a>Linie łamane i równania parametryczne
 
-_SkiaSharp używany do renderowania żadnych wiersz, który można zdefiniować z parametrycznych równania_
+_Umożliwia renderowanie każdego wiersza, które można zdefiniować przy użyciu równania parametryczne SkiaSharp_
 
-W późniejszym części tego przewodnika, zobaczysz różnych metod który `SKPath` definiuje do renderowania niektórych typów krzywych. Jednak czasami jest to niezbędne do rysowania typu krzywej, która nie jest bezpośrednio obsługiwana przez `SKPath`. W takim przypadku łamanej (kolekcja połączone linie) służy do rysowania żadnych krzywa ze sobą matematycznie można zdefiniować. Jeśli wprowadzone wiersze duże i wiele wystarczająco wynik będzie wyglądać krzywej. To spirali jest rzeczywiście 3600 małego wiersze:
+W dalszej części tego przewodnika, zobaczysz różnych metod, `SKPath` definiuje do renderowania niektórych rodzajów krzywych. Jednak czasami jest konieczne zwrócenie typu krzywej, które nie są bezpośrednio obsługiwane przez `SKPath`. W takim przypadku można użyć łamanej (zbieranie połączone linie) do rysowania wszelkie krzywa ze sobą matematycznie można zdefiniować. Jeśli wprowadzisz wiersze wystarczająco mała, i liczne wystarczająco dużo, wynik będzie wyglądał jak krzywej. Ta spirali jest faktycznie 3600 nieco wiersze:
 
 ![](polylines-images/spiralexample.png "Spirali")
 
-Zazwyczaj najlepiej zdefiniować krzywej pod względem parę równania parametrycznych. Są równania X i Y współrzędne, które są zależne od trzeciej zmiennej, nazywane również `t` raz. Na przykład zdefiniować następujące równania parametrycznych koło z protokołem radius 1 wyśrodkowany w punkcie (0, 0) dla *t* od 0 do 1:
+Zazwyczaj najlepiej jest określenie krzywej pod względem parę równania parametryczne. Oto równania X i Y współrzędne, które są zależne od trzeciego zmiennej, czasami nazywane `t` po raz. Na przykład, następujące równania parametryczne zdefiniować koła o promieniu 1, a ich tematyka w momencie (0, 0) dla *t* z zakresu od 0 do 1:
 
  x = cos(2πt) y = sin(2πt)
 
- Jeśli chcesz promień większy niż 1, możesz po prostu mnożenia wartości sinus i cosinus z tej usługi radius i jeśli musisz przenieść Centrum do innej lokalizacji, Dodaj te wartości:
+ Chcąc promień większy niż 1, możesz po prostu mnożenia wartości funkcji sinus i cosinus z tej usługi radius i jeśli musisz przenieść Centrum do innej lokalizacji, należy dodać te wartości:
 
  x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
 
-Dla elipsę z równoległe osie na poziome i pionowe obejmuje dwa promień:
+Dla elipsę z równoległych osie na poziome i pionowe obejmuje dwa promienie:
 
 x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
 
-Następnie możesz umieścić równoważny kod SkiaSharp w pętli, który oblicza różnych punktach i dodaje je na ścieżki. Poniższy kod SkiaSharp tworzy `SKPath` obiektu dla elipsę wypełnia powierzchni ekranu. Pętla cykli bezpośrednio do 360 stopni. Centrum jest połowa szerokości i wysokości wyświetlania powierzchni, a więc są dwa promień:
+Następnie można umieścić równoważny kod SkiaSharp w pętli, wykonujące różne punkty i dodaje te ścieżki. Poniższy kod SkiaSharp tworzy `SKPath` obiekt elipsy, który wypełnia wyświetlanej powierzchni. Pętla cykli bezpośrednio do 360 stopni. Centrum jest połowę szerokości i wysokości wyświetlanej powierzchni i dlatego są dwóch promienie:
 
 ```csharp
 SKPath path = new SKPath();
@@ -57,11 +57,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Powoduje to elipsy zdefiniowane przez 360 małego wierszy. Gdy jest on renderowany wyświetlany smooth.
+Skutkuje to elipsę definicją 360 nieco wierszy. Gdy jest on renderowany wygląda na to bezproblemowe.
 
-Oczywiście nie trzeba utworzyć elipsy przy użyciu łamaną, ponieważ `SKPath` obejmuje `AddOval` metodę, która jest dla Ciebie. Jednak należy narysować obiekt wizualny, który nie został dostarczony przez `SKPath`.
+Oczywiście nie trzeba tworzyć elipsę za pomocą łamaną, ponieważ `SKPath` obejmuje `AddOval` metodę, która zrobi to za Ciebie. Można jednak narysować obiekt wizualny, który nie został dostarczony przez `SKPath`.
 
-**Spirali Archimedean** strona zawiera kod, że podobne do kodu elipsy, ale z istotną różnicą. Go pętli wokół 360 stopni okręgu 10 razy, stale dostosowywania radius:
+**Spirali Archimedean** strona zawiera kod, że podobne do kodu elipsy, ale z istotną różnicą. Go w pętli wokół 360 stopni okręgu 10 razy stale Dostosowywanie promień:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -111,10 +111,10 @@ Wynik jest również nazywany *arytmetyczne spirali* ponieważ przesunięcie od 
 
 [![](polylines-images/archimedeanspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę spirali Archimedean")](polylines-images/archimedeanspiral-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę spirali Archimedean")
 
-Zwróć uwagę, że `SKPath` jest tworzony w `using` bloku. To `SKPath` wykorzystuje więcej pamięci niż `SKPath` obiektów w poprzednim programy, które sugeruje, które `using` blok jest bardziej odpowiednie do usunięcia żadnych niezarządzanych zasobów.
+Należy zauważyć, że `SKPath` jest tworzony w `using` bloku. To `SKPath` zużywa więcej pamięci niż `SKPath` obiektów w poprzednim programy, które sugeruje, które `using` blok jest bardziej odpowiednie do usuwania niezarządzanych zasobów.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

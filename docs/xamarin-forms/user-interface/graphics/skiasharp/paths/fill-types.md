@@ -1,39 +1,39 @@
 ---
-title: Typy wypełnienia ścieżki
-description: W tym artykule sprawdza, czy efekty różnych możliwe typy wypełnienia ścieżki SkiaSharp i prezentuje to z przykładowym kodzie.
+title: Typy wypełnień ścieżek
+description: W tym artykule sprawdza różne efekty możliwe przy użyciu typy wypełnień ścieżek SkiaSharp i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d54ebd157fcc76b0fcc15bf89c72edbcd88b42f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243710"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615473"
 ---
-# <a name="the-path-fill-types"></a>Typy wypełnienia ścieżki
+# <a name="the-path-fill-types"></a>Typy wypełnień ścieżek
 
-_Odnajdywanie efekty różnych możliwe typy wypełnienia ścieżki SkiaSharp_
+_Odkryj różne efekty możliwego typy wypełnień ścieżek SkiaSharp_
 
-Mogą nakładać się na dwóch konturów w ścieżce, a wiersze, które składają się na jednym rozkład mogą nakładać się na. Każdy obszar objętego potencjalnie może zostać wypełniony, ale nie należy wypełnić spójne obszary. Oto przykład:
+Dwa konturów w ścieżce może pokrywać się i wierszy, które tworzą pojedynczy rozkład może pokrywać się. Każdy obszar ujęty potencjalnie mogą zostać uzupełnione, ale może nie chcesz wypełnić spójne obszary. Oto przykład:
 
-![](fill-types-images/filltypeexample.png "Odnosi się do pięciu w formie gwiazdek częściowo filles")
+![](fill-types-images/filltypeexample.png "Wskazywany przez pięć gwiazdek częściowo filles")
 
-Masz niewielką kontrolę nad tym. Algorytm wypełnianie podlega warunkom [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) właściwość `SKPath`, która wartość jest członkiem [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) wyliczenie:
+Masz trochę kontrolę nad tym. Algorytm wypełnianie jest regulowane przez [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) właściwość `SKPath`, który ustawia do elementu członkowskiego [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) wyliczenia:
 
 - [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/), wartość domyślna
 - [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
 - [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
 - [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
 
-Algorytmy zawijania i parzyste określenia, czy wszystkie obszaru jest wypełnione i nie wypełnione na podstawie wierszu hipotetyczny pochodzą z tego obszaru do nieskończoności. Ten wiersz przecina jeden lub więcej wierszy granic, które składają się na ścieżce. Tryb zawijania Jeśli liczba granic linii w jednym kierunku saldo liczbę linii w innym kierunku, a następnie obszaru nie jest wypełnione. W przeciwnym razie wartość obszaru jest wypełnione. Algorytm parzyste wypełnia obszar, jeśli liczba granic wierszy jest nieparzysta.
+Algorytmy zawijania i parzyste ustalenia, czy dowolny obszar ujęty jest wypełniony lub nie jest wypełniony zależnie od linią hipotetyczny w obszarze poza zakresem. Ten wiersz przecina jeden lub więcej wierszy granic, które tworzą ścieżki. Tryb zawijania Jeśli liczba granic wykresów w jednym kierunku równowadze się liczba wierszy w innym kierunku, a następnie obszaru nie jest wypełnione. W przeciwnym razie obszar jest wypełniony. Algorytm parzyste wypełnia obszar, jeśli liczba granic wierszy jest nieparzysta.
 
-Z wielu ścieżek rutynowych zawijania algorytm często wypełnia objętego obszary ścieżki. Algorytm parzyste tworzy zazwyczaj bardziej interesującego wyników.
+Za pomocą wielu ścieżek rutynowych zawijania algorytm często wypełnia ujęty obszary ścieżki. Algorytm parzyste generuje zazwyczaj bardziej interesujące wyniki.
 
-Klasycznym przykładem jest wskazywana przez pięć gwiazdy, jak pokazano w **Five-Pointed gwiazdy** strony. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) pliku tworzy dwa `Picker` widoków, aby wybrać ścieżkę wypełnienia typu i czy ścieżka jest malowania wypełnione i/lub w jakiej kolejności:
+Klasycznym przykładem jest wskazywany przez pięć gwiazdkę, jak pokazano w **Five-Pointed gwiazdki** strony. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) plików są tworzone wystąpienia dwóch `Picker` widoków, aby wybrać ścieżkę wypełnienia typu i czy ścieżka jest malowania wypełnione lub w jakiej kolejności:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ Klasycznym przykładem jest wskazywana przez pięć gwiazdy, jak pokazano w **Fi
 </ContentPage>
 ```
 
-Plik CodeBehind używa zarówno `Picker` wartości do rysowania gwiazdy odnosi się do pięciu:
+Plik związany z kodem będą wykorzystywane serwery `Picker` wartości, aby narysować gwiazdkę wskazywany przez pięć:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -162,20 +162,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Zwykle typ wypełnienia ścieżki narusza tylko wypełnienia i nie pociągnięć, ale dwa `Inverse` tryby wpływają na, wypełnienia i pociągnięć. Do wypełnienia, dwa `Inverse` typy wypełnienia oppositely obszarów, dzięki czemu obszar poza gwiazdy zostanie wypełniony. Dla pociągnięć, dwa `Inverse` typy kolor wszystkim poza pociągnięć. Używanie tych typów odwrotny wypełnienia można efektów niektórych nieparzysta, jak pokazano na zrzucie ekranu z systemem iOS:
+Normalnie, typ wypełnienia ścieżki powinna mieć wpływu na wypełnienia i nie pociągnięć ale dwa `Inverse` tryby wpływają na wypełnienia i pociągnięć. Do wypełnienia, dwa `Inverse` typy wypełniać oppositely obszarów, tak aby obszar poza gwiazdka jest wypełnione. Dla pociągnięcia, dwa `Inverse` typy kolor wszystkim, z wyjątkiem stroke. Używanie tych typów odwrotność wypełnienia można efektów niektóre nieparzysta, tak jak pokazano na zrzucie ekranu systemu iOS:
 
-[![](fill-types-images/fivepointedstar-small.png "Potrójna zrzut ekranu przedstawiający stronę gwiazdkę Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Potrójna zrzut ekranu strony Five-Pointed gwiazdy")
+[![](fill-types-images/fivepointedstar-small.png "Potrójna zrzut ekranu przedstawiający stronę Five-Pointed Star")](fill-types-images/fivepointedstar-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Five-Pointed Star")
 
-Typowe skutki parzyste i zawijania Pokaż zrzuty ekranu Android i platformy uniwersalnej systemu Windows, ale kolejność obrysu i wypełnienia wpływa na wyniki.
+Dla systemów Android i platformy uniwersalnej systemu Windows zrzuty ekranu Pokaż typowe efektów parzyste i zawijania, ale kolejność obrysu i wypełnienia ma również wpływ na wyniki.
 
-Algorytm zawijania jest zależna od kierunku rysowania linii. Zwykle podczas tworzenia ścieżki, można sterować tym kierunku jak określić, że wiersze są rysowane z jednego miejsca do innego. Jednak `SKPath` klasy definiuje również metody, takie jak `AddRect` i `AddCircle` który rysowania całego konturów. Aby kontrolować, jak te obiekty są rysowane, metody to parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), która zawiera dwa elementy członkowskie:
+Algorytm zawijania zależy od kierunku rysowania linii. Zwykle podczas tworzenia ścieżki, można sterować tym kierunku podobnie jak określić, czy wiersze są pobierane z jednym punktem na inny. Jednak `SKPath` klasa definiuje również metod, takich jak `AddRect` i `AddCircle` , narysuj całego konturów. Aby kontrolować, jak te obiekty są rysowane, metody zawierają parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), która zawiera dwa elementy członkowskie:
 
 - [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
 - [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
 
-Metody w `SKPath` zawierające `SKPathDirection` parametru nadaj mu wartość domyślną równą `Clockwise`.
+Metody w `SKPath` zawierające `SKPathDirection` parametr nadaj wartość domyślną `Clockwise`.
 
-**Nakładających się okręgi** strony tworzy ścieżki z czterech okręgi nakładające się z typem wypełnienia parzyste ścieżki:
+**Nakładających się okręgów** strony tworzy ścieżkę z czterech nakładających się okręgów z typem wypełnienia parzyste ścieżki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -215,12 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jest obraz interesujące utworzony z co najmniej kodu:
+Chodzi o interesujących obraz utworzony przy minimalnej ilości kodu:
 
-[![](fill-types-images/overlappingcircles-small.png "Potrójna zrzut ekranu przedstawiający stronę nakładających się okręgi")](fill-types-images/overlappingcircles-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę okręgi nakładających się")
+[![](fill-types-images/overlappingcircles-small.png "Potrójna zrzut ekranu przedstawiający stronę nakładających się okręgów")](fill-types-images/overlappingcircles-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nakładających się okręgów")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

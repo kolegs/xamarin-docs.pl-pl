@@ -1,36 +1,36 @@
 ---
 title: Kropki i kreski SkiaSharp
-description: Ten artykuł opisuje sposób zawiłościami Rysowanie linii kropkowanej i kreskowane w SkiaSharp i prezentuje to z przykładowym kodzie.
+description: W tym artykule przedstawiono, jak skutecznie stawisz niewymagającego rysunku kropkowane i kreskowane wierszy w SkiaSharp i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7c336e6b5224f61ff84eb39652788b23f52b806e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243876"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615421"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Kropki i kreski SkiaSharp
 
-_Zawiłościami Rysowanie linii kropkowanej i kreskowane w SkiaSharp_
+_Główna niewymagającego rysunku kropkowane i kreskowane wierszy w SkiaSharp_
 
-SkiaSharp umożliwia rysowanie linii, które nie są stałe, ale zamiast tego składają się z kropki i kreski:
+Skiasharp — umożliwia narysowanie wierszy, które nie są stałe, ale zamiast tego składają się z kropki i kreski:
 
 ![](dots-images/dottedlinesample.png "Linia kropkowana")
 
-W tym z *efekt ścieżki*, który jest wystąpieniem [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) klasy, która zostanie ustawiona na [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) właściwość `SKPaint`. Można utworzyć ścieżki efekt (lub łączenie ścieżki efekty) przy użyciu statycznych `Create` metody zdefiniowane przez `SKPathEffect`.
+Tego *efekt ścieżki*, który jest wystąpieniem [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) klasę, która jest ustawiona na [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) właściwość `SKPaint`. Można utworzyć ścieżki efekt (lub łączenia efekty ścieżek) przy użyciu statycznych `Create` metody zdefiniowane przez `SKPathEffect`.
 
-Rysowanie linii kropkowanej lub przerywanej, należy użyć [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) metody statycznej. Istnieją dwa argumenty: jest to pierwszy tablicę `float` wartości, które wskazują długości kropki i kreski i długość odstępów między nimi. Ta tablica musi mieć parzysta liczba elementów, a powinien być co najmniej dwa elementy. (Może być zerowy elementów w tablicy, ale linia ciągła, którego wynikiem). Czy istnieją dwa elementy, pierwszy długość kropki i kreski, a drugą jest wartość długości odstęp przed dalej kropką ani kreską. Jeśli istnieje więcej niż dwa elementy, a następnie znajdują się w następującej kolejności: kreski-długość, długość luki, długość kreski, długość luki i tak dalej.
+Rysowanie linii kropkowanej lub przerywanej, należy użyć [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) metody statycznej. Istnieją dwa argumenty: jest to pierwsze tablicę `float` wartości, które wskazują długości kropki i kreski i długość odstępów między nimi. Ta tablica musi mieć parzysta liczba elementów, a powinien być co najmniej dwa elementy. (Może mieć zero elementów w tablicy, ale linia ciągła, którego wynikiem.) Czy istnieją dwa elementy, pierwszy długość kropka lub kreska, a drugą jest długość luki przed następnym kropka lub kreska. Jeśli istnieje więcej niż dwa elementy, a następnie znajdują się w następującej kolejności: kreski, długość, długość przerwy, długość kreski, długość przerwy i tak dalej.
 
-Ogólnie rzecz biorąc będzie ma być wielokrotnością szerokość pociągnięć kreska i przerwę długości. Jeśli szerokość pociągnięć 10 pikseli, na przykład następnie tablicy {10, 10} zostanie Rysuj linię kropkowaną skutkującej taką samą długość jak grubość pociągnięć luki i kropek.
+Ogólnie rzecz biorąc należy wprowadzić wielokrotnością szerokość pociągnięcia długości dash i przerwy. Jeśli szerokość pociągnięcia 10 pikseli, na przykład, następnie tablicy {10, 10} będzie narysuj linię kropkowaną których kropki i luki mają taką samą długość jak grubość pociągnięć.
 
-Jednak `StrokeCap` ustawienie `SKPaint` obiektu dotyczy także te kropki i łączniki. Jak można zauważyć wkrótce, który ma wpływ na elementy tej tablicy.
+Jednak `StrokeCap` ustawienie `SKPaint` obiekt ma również wpływ na te kropki i kreski. Jak można zauważyć wkrótce, który ma wpływ na elementy tej tablicy.
 
-Kropkami i linie przerywane przedstawiono na **kropki i kreski** strony. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) pliku tworzy dwa `Picker` widoków, jeden dla możliwości wybierania koniec obrysu i drugą do tablicy dash wybierz:
+Kropkowana i wiersze przerywaną, co przedstawiono na **kropki i kreski** strony. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) plików są tworzone wystąpienia dwóch `Picker` widoków, jeden dla umożliwiające wybranie pociągnięcia i drugą do tablicy dash wybierz:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,9 +91,9 @@ Kropkami i linie przerywane przedstawiono na **kropki i kreski** strony. [ **Dot
 </ContentPage>
 ```
 
-Pierwsze trzy elementy `dashArrayPicker` założono, że szerokość pociągnięć jest 10 pikseli. {10, 10} tablicy dotyczy linię kropkowaną {30, 10} jest linię kropkowaną i {10, 10, 30, 10} jest dla wiersza kropki i kreski. (Inne trzech zostanie dokładnie omówione wkrótce.)
+Pierwsze trzy elementy `dashArrayPicker` przyjęto założenie, że szerokość pociągnięcia jest 10 pikseli. {10, 10} tablica dotyczy linię kropkowaną {30, 10} dotyczy linię przerywaną, co i {10, 10, 30, 10} dotyczy wiersza kropki i kreski. (Pozostałych trzech zostanie dokładnie omówione wkrótce.)
 
-[ `DotsAndDashesPage` Pliku CodeBehind](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) zawiera `PaintSurface` obsługi zdarzeń i kilka procedury pomocnika do uzyskiwania dostępu do `Picker` widoków:
+[ `DotsAndDashesPage` Pliku związanego z kodem](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) zawiera `PaintSurface` program obsługi zdarzeń i kilku procedur pomocnika do uzyskiwania dostępu do `Picker` widoki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -153,23 +153,23 @@ float[] GetPickerArray(Picker picker)
 }
 ```
 
-Na poniższych zrzutach ekranu na ekranie z systemem iOS przy lewej zostanie wyświetlona linia kropkowana:
+W poniższych zrzutach ekranu na końcu z lewej strony ekranu w systemie iOS pokazuje linię kropkowaną:
 
-[![](dots-images/dotsanddashes-small.png "Potrójna zrzut ekranu przedstawiający stronę kropki i kreski")](dots-images/dotsanddashes-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kropki i łączniki")
+[![](dots-images/dotsanddashes-small.png "Potrójna zrzut ekranu przedstawiający stronę kropki i kreski")](dots-images/dotsanddashes-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę kropki i kreski")
 
-Jednak Android ekranu również powinien pokazać kropkowana, przy użyciu tablicy {10, 10}, ale zamiast tego wiersz jest pełny. Co się stało? Problem jest Android ekranu również ustawienie caps obrysu `Square`. Spowoduje to rozszerzenie wszystkie łączniki o połowę szerokości obrysu, powoduje zapełnić luk.
+Jednak dla systemu Android ekranu również powinien Pokaż linię kropkowaną przy użyciu tablicy {10, 10}, ale zamiast tego wiersza jest pełny. Co się stało? Problem polega na to, czy ekranu dla systemu Android ma również ustawienie caps obrysu `Square`. Spowoduje to rozszerzenie wszystkich łączników o połowę szerokości obrysu, powoduje wypełniają luki.
 
-Aby ominąć ten problem, korzystając z obrysu centralnych zasad dostępu z `Square` lub `Round`, musi zmniejszenie długości dash w tablicy długości obrysu (czasem spowodować, że długość kreski 0) i zwiększenie długości przerwy długość obrysu. Jest to, jak końcowego trzech kreska tablic w `Picker` zostały obliczone w pliku XAML:
+Aby ominąć ten problem, korzystając z pociągnięcia z `Square` lub `Round`, należy zmniejszyć długości dash w tablicy długości obrysu (czasami skutkuje dash długość 0) i zwiększenia długości przerwy przez długość pociągnięcia. Jest to, jak trzy końcowej kreski tablic w `Picker` zostały obliczone w pliku XAML:
 
 - {10, 10} staje się {0, 20} dla linia kropkowana
 - {30, 10} staje się {20, 20} dla linii kreskowanej
 - {10, 10, 30, 10} staje się {0, 20, 20, 20} dla linię kropkowaną i kreskowane
 
-Nagrania ekranu platformy uniwersalnej systemu Windows z kropkami i linii dla linii kreskowanej cap z `Round`. `Round` Koniec obrysu często sprawia, że najważniejsze kropki i kreski w wierszach grubości.
+Pokazuje ekran platformy uniwersalnej systemu Windows, kropkami, które linia przerywana linii pociągnięcia limit z `Round`. `Round` Grubości linii pociągnięcia często zapewnia najlepszy wygląd, kropki i kreski.
 
-Do tej pory wprowadzono nie wymieniono drugiego parametru `SKPathEffect.CreateDash` metody. Ten parametr ma nazwę `phase` i odnosi się do przesunięcie w wzorcu kropki i kreski do początku wiersza. Na przykład, jeśli tablica dash to {10, 10} i `phase` wynosi 10, a następnie wiersz rozpoczyna się od przerwę zamiast kropką.
+Do tej pory nie wymieniono stało się z drugim parametrem `SKPathEffect.CreateDash` metody. Ten parametr nosi nazwę `phase` i odwołuje się do przesunięcia w ramach wzorzec kropki i kreski do początku wiersza. Na przykład, jeśli tablica dash jest {10, 10} i `phase` wynosi 10, a następnie wiersz zaczyna się od przerwa, a nie pojedynczego znaku kropki.
 
-Jeden interesujące stosowania `phase` parametr jest animacji. **Animowany spirali** strona jest podobna do **spirali Archimedean** strony, z wyjątkiem [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje klasy `phase` parametru. Strona przedstawiono również innego podejścia do animacji. Przykład wcześniejszych [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) używane `Task.Delay` metody kontrolowania animacji. W tym przykładzie użyto zamiast tego platformy Xamarin.Forms `Device.Timer` metody:
+Jeden ciekawszych zastosowań `phase` parametr znajduje się w animacji. **Animowane spirali** strona jest podobna do **spirali Archimedean** strony, chyba że [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje klasy `phase` parametru. Strona przedstawia również innego podejścia do animacji. Wcześniejszy przykład z [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) używane `Task.Delay` metodę, aby kontrolować animację. W tym przykładzie zamiast użyto Xamarin.Forms `Device.Timer` metody:
 
 
 ```csharp
@@ -211,14 +211,14 @@ protected override void OnAppearing()
 }
 ```
 
-Oczywiście będzie konieczne aktualnie ma uruchomiony program, aby zobaczyć animacji:
+Oczywiście trzeba będzie uruchamiany program, aby zobaczyć animacji:
 
-[![](dots-images/animatedspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")](dots-images/animatedspiral-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę animowany spirali")
+[![](dots-images/animatedspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę animowane spirali")](dots-images/animatedspiral-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę spirali animowane")
 
-Teraz przedstawiono sposób Rysowanie linii i zdefiniuj krzywych przy użyciu parametrów równania. Sekcja do opublikowania później będzie obejmować różne rodzaje krzywych który `SKPath` obsługuje.
+Teraz przedstawiono sposób Rysowanie linii, a także zdefiniować krzywych przy użyciu równania parametryczne. Sekcja do opublikowania w dalszej części omówiono różne rodzaje krzywych, `SKPath` obsługuje.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,67 +1,67 @@
 ---
-title: Przekształcanie skali
-description: Artykuł Thhis Eksploruje przekształcenia skali SkiaSharp skalowania obiektów do różnych rozmiarów i pokazano to z przykładowym kodzie.
+title: Skalowanie — przekształcenie
+description: Artykuł Thhis Eksploruje SkiaSharp skalowanie — przekształcenie skalowania obiektów do różnych rozmiarów i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 9008e95a7cd6caf7ab2346ff4e2364a4efef0d65
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244678"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615606"
 ---
-# <a name="the-scale-transform"></a>Przekształcanie skali
+# <a name="the-scale-transform"></a>Skalowanie — przekształcenie
 
-_Odnajdywanie przekształcenia skali SkiaSharp skalowania obiektów do różnych rozmiarach_
+_Odkryj SkiaSharp skalowanie — przekształcenie skalowania obiektów do różnych rozmiarów_
 
-Jak przedstawiono w [wykonuje przekształcenie](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) artykułu, przekształcanie Przetłumacz można przenieść obiektu graficznego z jednej lokalizacji do innej. Z kolei przekształcenia skali zmienia rozmiar obiektu graficznego:
+Jak przedstawiono w [Przekształcanie tłumaczenie](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) artykule przekład — przekształcenie można przenieść obiekt graficzny z jednej lokalizacji do innej. Z kolei skalowanie — Przekształcenie zmienia rozmiar obiektu graficznego:
 
-![](scale-images/scaleexample.png "Wysokość wyraz skalowany w rozmiarze")
+![](scale-images/scaleexample.png "Wysokość programu word, skalowana w rozmiarze")
 
-Przekształcenie skali powoduje również często współrzędne grafiki można przenieść, ponieważ są one większe.
+Skalowanie — przekształcenie często powoduje, że współrzędne grafiki przenieść, ponieważ są one większe.
 
-Wcześniej był wyświetlany formuły przekształcenia opisujące skutków czynników tłumaczenia `dx` i `dy`:
+Wcześniej był wyświetlany dwie formuły przekształcenia, które opisują wpływu czynników tłumaczenia `dx` i `dy`:
 
 x' = x + dx
 
-y "= y + dy
+y "=, y + dy
 
 Skalowanie czynników `sx` i `sy` są mnożenia zamiast dodatku:
 
 x' = sx · x
 
-y "= sy · y
+y "= XI sy y
 
-Wartości domyślne czynników Przetłumacz to 0; wartości domyślne czynników skali to 1.
+Wartości domyślne czynników translate to 0. wartości domyślne współczynników skali to 1.
 
-`SKCanvas` Klasa definiuje cztery `Scale` metody. Pierwszy [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) metoda jest dla przypadków, gdy ma tego samego skalowanie w pionie i współczynnika:
+`SKCanvas` Klasa definiuje cztery `Scale` metody. Pierwszy [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) jest metoda przypadków, gdy ten sam skalowanie w pionie i wziąć pod uwagę:
 
 ```csharp
 public void Scale (Single s)
 ```
 
-Jest to nazywane *izotropowego* skalowanie &mdash; skalowanie który jest taka sama w obu kierunkach. Skalowanie izotropowego zachowuje współczynnik proporcji obiektu.
+Jest to nazywane *izotropowego* skalowanie &mdash; skalowania oznacza to taka sama w obu kierunkach. Skalowanie izotropowego zachowuje współczynnik proporcji obiektu.
 
-Drugi [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metoda pozwala określić różne wartości skalowanie w pionie i w poziomie:
+Drugi [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metody umożliwia określenie różnych wartości skalowanie w pionie i w poziomie:
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
-Powoduje to *anizotropowych* skalowania.
-Trzeci [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) metody łączy dwa czynniki skalowania w jednej `SKPoint` wartość:
+Skutkuje to *anizotropowego* skalowania.
+Trzeci [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) metoda obejmuje dwa czynniki skalowania, w ramach pojedynczej `SKPoint` wartość:
 
 ```csharp
 public void Scale (SKPoint size)
 ```
 
-Czwarta `Scale` metoda będzie opisana wkrótce.
+Czwarty `Scale` metody są opisane wkrótce.
 
-**Podstawowe skali** pokazuje stronę `Scale` metody. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) pliku XAML zawiera dwa `Slider` elementy, które pozwalają wybierz poziome i pionowe czynniki skalowania od 0 do 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) pliku CodeBehind używa tych wartości do wywołania `Scale` przed wyświetlanie zaokrąglony prostokąt malowania linia przerywana i dopasowana tekst w lewym górnym narożnik obszaru roboczego:
+**Podstawowe skalowania** pokazuje strony `Scale` metody. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) plik XAML zawiera dwa `Slider` elementy, które pozwalają wybrać poziome i pionowe czynniki skalowania od 0 do 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) pliku związanego z kodem używa tych wartości w celu wywołania `Scale` przed wyświetleniem prostokąt zaokrąglony malowania linia przerywana i dopasowana jakiś tekst w lewym górnym rogu rogu kanwy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,28 +100,28 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Być może zastanawiasz się: jak skalowania czynniki wpływają na wartość zwracana z `MeasureText` metody `SKPaint`? Odpowiedź brzmi: wcale. `Scale` jest to metoda `SKCanvas`. Nie dotyczy żadnych z `SKPaint` obiektu, dopóki nie użyjesz tego obiektu do renderowania coś na kanwie.
+Być może zastanawiasz się: jak skalowania czynniki wpływają na wartość zwracana z `MeasureText` metody `SKPaint`? Odpowiedź brzmi: wcale. `Scale` jest to metoda `SKCanvas`. Nie dotyczy ono niczego, możesz zrobić z `SKPaint` obiektu, dopóki ten obiekt jest używany do renderowania coś na kanwie.
 
-Jak widać, wszystko rysowane po `Scale` proporcjonalnie wywołać zwiększa:
+Jak widać, wszystko, co jest rysowana po `Scale` proporcjonalnie wywołać zwiększa:
 
-[![](scale-images/basicscale-small.png "Potrójna zrzut ekranu strony podstawowej skali")](scale-images/basicscale-large.png#lightbox "Potrójna zrzut ekranu strony podstawowej skali")
+[![](scale-images/basicscale-small.png "Potrójna zrzut ekranu przedstawiający stronę podstawowe Skala")](scale-images/basicscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę podstawowe Skala")
 
-Tekst, szerokość linii kreskowanej długość kreski w tym wierszu zaokrąglania narożników i marginesu 10 pikseli od lewej lub górnej krawędzi obszaru roboczego i zaokrąglony prostokąt podlegają wszystkie tego samego czynniki skalowania.
+Tekst, szerokość linii kreskowanej długość kreski, w tym wierszu Zaokrąglanie narożników i marginesu 10 pikseli między lewym i górnym krawędzi kanwy i prostokąt zaokrąglony podlegają wszystkich tych samych czynników skalowania.
 
 > [!IMPORTANT]
-> Platforma uniwersalna systemu Windows nie jest poprawnie renderowana anisotropicly skalowanego tekstu.
+> Platforma Universal Windows nie jest poprawnie renderowana anisotropicly skalowany tekst.
 
-Anizotropowych skalowanie przyczyny grubość zostać różnych wierszy wyrównane Osie poziome i pionowe. (Dotyczy również widoczna od pierwszego obrazu na tej stronie). Jeśli nie chcesz grubość dotyczyć czynniki skalowania równa 0 i będzie zawsze równa jeden piksel szeroki niezależnie od tego `Scale` ustawienie.
+Anizotropowe, skalowanie powoduje, że szerokość pociągnięcia przestanie różnych wierszy powiązana z poziome i pionowe osi. (Jest to również widoczne z pierwszą ilustracją na tej stronie.) Jeśli nie chcesz szerokość pociągnięcia dotyczyły czynniki skalowania równa 0 i będzie zawsze szerokości niezależnie od tego jednego piksela `Scale` ustawienie.
 
-Skalowanie jest określana względem lewego górnego rogu obszaru roboczego. Może to być dokładnie co ma, ale może nie być. Załóżmy, że chcesz umieścić tekst i prostokąt gdzieś w obszarze roboczym, a użytkownik chce go skalować względem jego center. W takim przypadku można użyć wersji czwarty [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) metodę, która obejmuje dwóch dodatkowych parametrów, aby określić Centrum skalowania:
+Skalowanie jest określana względem lewego górnego rogu kanwy. Może to być dokładnie co chcesz zrobić, ale może nie być. Załóżmy, że chcesz umieścić tekst i prostokąt w innym miejscu na kanwie, a użytkownik chce przeskalujesz ją względem jej środka. W takim przypadku można użyć wersji czwarty [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) metody, która zawiera dwa dodatkowe parametry do określenia środek skalowania:
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
 ```
 
-`px` i `py` parametry definiują punkt, który jest czasami nazywany *skalowanie center* , ale w SkiaSharp dokumentacji jest określana jako *punktu przestawnego*. To jest punkt względem lewego górnego rogu obszaru roboczego, który nie ma wpływu na skalowanie. Skalowanie wszystkich występuje względem tego Centrum.
+`px` i `py` parametry definiują punkt, który jest czasem nazywany *skalowanie Centrum* , ale w skiasharp — dokumentacja jest nazywany *punkt obrotu*. Jest to punkt względem lewego górnego rogu kanwy, która nie ma wpływu skalowania. Skalowanie wszystkich występuje względem tego Centrum.
 
-[ **Wyśrodkowany skali** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) strony pokazuje, jak to działa. `PaintSurface` Obsługi jest podobny do **podstawowe skali** programu z wyjątkiem `margin` wartość jest obliczana do środka tekstu w poziomie, co oznacza, że program działa najlepiej w trybie portret:
+[ **Skali, a ich tematyka** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) strona przedstawia, jak to działa. `PaintSurface` Program obsługi jest podobny do **podstawowe skalowania** programu, chyba że `margin` wartość jest obliczana na wyśrodkowanie tekstu w poziomie, co oznacza, że program działa najlepiej w orientacji pionowej:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,34 +164,34 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Znajduje się w lewym górnym rogu zaokrąglony prostokąt `margin` pikseli z lewej strony obszaru roboczego i `margin` pikseli od góry. Dwa ostatnie argumenty do `Scale` metody ustawienie tych wartości oraz szerokość i wysokość tekst, który jest także szerokość i wysokość prostokąta zaokrąglone. Oznacza to, że wszystkie skalowania ma względem Centrum tego prostokąta:
+Znajduje się w lewym górnym rogu prostokąt zaokrąglony `margin` pikseli od lewej strony kanwy i `margin` pikseli od góry. Dwa ostatnie argumenty do `Scale` metody są ustawione na te wartości oraz szerokość i wysokość tekstu, który jest również szerokość i wysokość prostokąt zaokrąglony. Oznacza, że wszystkie skalowanie względem środka tego prostokąta:
 
-[![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")](scale-images/centeredscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę wyśrodkowany skali")
+[![](scale-images/centeredscale-small.png "Potrójna zrzut ekranu przedstawiający stronę Skala wyśrodkowany")](scale-images/centeredscale-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Skala wyśrodkowana")
 
-`Slider` Elementów w tym programie ma wartości zakresu &ndash;10 do 10. Jak widać, wartości ujemnych pionowego, skalowania (na przykład w systemie Android ekranu w Centrum) powodują obiektów do przerzucenia wzdłuż osi poziomej, który przechodzi przez Centrum skalowania. Wartości ujemne poziomego skalowania (taki jak ekranu platformy uniwersalnej systemu Windows po prawej stronie) powodują obiektów do przerzucenia wokół osi pionowej, który przechodzi przez Centrum skalowania.
+`Slider` Elementy w tym programie mają zakres &ndash;10 do 10. Jak widać, ujemne wartości (na przykład w systemie Android ekranu w Centrum) skalowanie w pionie spowodować, że obiekty do przerzucenia wzdłuż osi poziomej, przechodzący przez środek skalowania. Ujemne wartości (takie jak ekran platformy uniwersalnej systemu Windows po prawej stronie) skalowanie w poziomie spowodować, że obiekty do przerzucenia wokół osi pionowej, przechodzący przez środek skalowania.
 
-Ta wersja czwarty `Scale` metoda jest rzeczywiście skrótu. Możesz zobaczyć, jak to działa przez zastąpienie `Scale` metody w tym kodzie następującym kodem:
+Ta wersja czwarty `Scale` metodą jest faktycznie skrótu. Warto zobaczyć, jak to działa, zastępując `Scale` metody, w tym kodzie następującym kodem:
 
 ```csharp
 canvas.Translate(-px, -py);
 ```
 
-Są to negatywów współrzędnych punktu przestawnego.
+Są to negatywów współrzędnych punktu obrotu.
 
-Teraz ponownie uruchomić program. Zobaczysz, że prostokąt i tekst są przesuwane tak, aby Centrum znajduje się w lewym górnym rogu obszaru roboczego. Zauważalny go. Suwaki nie działają oczywiście, ponieważ teraz program nie skalować w ogóle.
+Teraz ponownie uruchom program. Zobaczysz, że prostokąt i tekst są przesuwane w tak, aby Centrum znajduje się w lewym górnym rogu kanwy. Ledwie mogli je zobaczyć. Suwaki nie działają oczywiście, ponieważ program nie skalować w ogóle.
 
-Teraz dodać podstawowe `Scale` wywołań (bez skalowania center) *przed* który `Translate` wywołania:
+Teraz Dodaj podstawowe `Scale` wywołań (bez skalowania center) *przed* , `Translate` wywołania:
 
 ```csharp
 canvas.Scale(sx, sy);
 canvas.Translate(–px, –py);
 ```
 
-Jeśli znasz tego ćwiczenia w innych programowania systemów grafiki, może być uważasz, że jest nieprawidłowy, ale nie jest. Skia obsługuje transformacji kolejne wywołania nieco inaczej z co można zapoznać się z.
+Jeśli znasz tego ćwiczenia w innych programowania systemów grafiki, może być uważasz, że jest nieprawidłowy, ale nie jest. Skia obsługuje wywołania kolejne przekształcenie nieco inaczej od co można zapoznać się z.
 
-Z kolejnych `Scale` i `Translate` wywołań, Centrum zaokrąglony prostokąt nadal znajduje się w lewym górnym rogu, ale teraz można go skalować względem lewego górnego rogu obszaru roboczego, który jest także Centrum zaokrąglony prostokąt.
+Za pomocą następujących po sobie `Scale` i `Translate` wywołań, środek prostokąt zaokrąglony nadal znajduje się w lewym górnym rogu, ale można ją teraz skalować względem lewego górnego rogu kanwy, która jest również środek prostokąt zaokrąglony.
 
-Teraz, przed którym `Scale` wywołania dodać kolejne `Translate` wywołać wyśrodkowywania wartościami:
+Teraz, aby ten `Scale` wywołania Dodaj kolejny `Translate` wywołać wyśrodkowywania wartościami:
 
 ```csharp
 canvas.Translate(px, py);
@@ -199,25 +199,25 @@ canvas.Scale(sx, sy);
 canvas.Translate(–px, –py);
 ```
 
-Spowoduje to przeniesienie skalowana wynik wstecz do oryginalnego położenia. Te trzy wywołania są równoważne:
+To jest przenoszony skalowanych wynik do oryginalnego położenia. Te trzy wywołania są równoważne:
 
 ```csharp
 canvas.Scale(sx, sy, px, py);
 ```
 
-Poszczególne przekształceń są ich tak, aby formuła całkowita transformacji jest:
+Poszczególne transformacje są stwarzane tak, aby formuły całkowita przekształcenia:
 
- x "= sx · (x — pikseli) + pikseli
+ x "= XI sx (x-px) + piks.
 
- y "= sy · (y — py) + py
+ y "= XI sy (y — py) + py
 
-Należy pamiętać, że wartości domyślne `sx` i `sy` 1. To proste przekonać się, że punktu obrotu (pikseli, py) nie jest on przekształcany przez te formuły. Pozostaje w tej samej lokalizacji względem obszaru roboczego.
+Należy pamiętać, że z wartościami domyślnymi `sx` i `sy` to 1. To proste przekonanie sobie, że punkt obrotu (px, py) nie jest on przekształcany przez te formuły. Pozostaje w tym samym położeniu względem obszaru roboczego.
 
-Podczas łączenia `Translate` i `Scale` wywołań, kolejność ma znaczenie. Jeśli `Translate` po `Scale`, czynniki tłumaczenia skutecznie są skalowane czynniki skalowania. Jeśli `Translate` znajduje się przed `Scale`, nie mogą być skalowane czynniki tłumaczenia. Ten proces staje się nieco jaśniejszy (Chociaż więcej matematyczne) gdy wprowadzono przedmiotem macierzy transformacji.
+Łącząc `Translate` i `Scale` wywołań, kolejność ma znaczenie. Jeśli `Translate` przychodzi po `Scale`, współczynniki translacji skutecznie są skalowane przy skalowania czynników. Jeśli `Translate` poprzedzającej `Scale`, czynniki tłumaczenia nie mogą być skalowane. Proces ten staje się nieco bardziej zrozumiały (chociaż bardziej matematyczne) kiedy został wprowadzony przedmiotem macierzy transformacji.
 
-`SKPath` Klasa definiuje tylko do odczytu [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) właściwości, która zwraca `SKRect` definiujący stopień współrzędne w ścieżce. Na przykład, jeśli `Bounds` właściwości są uzyskiwane ze ścieżki hendecagram utworzony wcześniej, `Left` i `Top` właściwości prostokąta są-około 100 `Right` i `Bottom` właściwości około 100 i `Width` i `Height` właściwości są około 200. (Większość rzeczywiste wartości są mniej małego ponieważ punktów gwiazdek są definiowane przez koło z protokołem radius 100, ale górnego punktu jest równoległy osi poziomej lub pionowej).
+`SKPath` Klasy definiuje tylko do odczytu [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) właściwość, która zwraca `SKRect` definiowanie w zakresie współrzędne w ścieżce. Na przykład, gdy `Bounds` właściwości są uzyskiwane ze ścieżki hendecagram utworzony wcześniej `Left` i `Top` właściwości prostokąta są-około 100 `Right` i `Bottom` właściwości około 100, a `Width` i `Height` właściwości są około 200. (Większość rzeczywistych wartości, które są nieco mniej ponieważ punktów gwiazdek są definiowane przez koła o promieniu 100, ale górnego punktu jest równoległy osi poziomej lub pionowej).
 
-Dostępność tych informacji oznacza, że powinno być możliwe pochodzi skali i tłumaczyć czynniki odpowiedniego skalowania ścieżki do rozmiaru obszaru roboczego. [ **Anizotropowej skalowanie** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) strony pokazano to z gwiazdką odnosi się do 11. *Anizotropowej* skali oznacza, że jest nierówne w poziomie i w pionie kierunkach, co oznacza, że gwiazdy nie zachowa jego oryginalny współczynnik proporcji. W tym miejscu jest odpowiedni kod `PaintSurface` obsługi:
+Dostępność tych informacji oznacza, że powinno być możliwe pochodzić skalowania i tłumaczyć czynników umożliwiających skalowanie ścieżki do rozmiaru obszaru roboczego. [ **Anizotropowego skalowanie** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) strona przedstawia to star wskazywany przez 11. *Anizotropowego* skalowania oznacza, że jest nierówne w poziomie i pionie kierunkach, co oznacza, że gwiazdka nie zostaną zachowane jego oryginalny współczynnik proporcji. W tym miejscu jest odpowiedni kod w `PaintSurface` procedury obsługi:
 
 ```csharp
 SKPath path = HendecagramPage.HendecagramPath;
@@ -245,24 +245,24 @@ using (SKPaint strokePaint = new SKPaint
 }
 ```
 
-`pathBounds` Prostokąt uzyskane w górnej części tego kodu, a następnie używana później szerokość i wysokość obszaru roboczego w `Scale` wywołania. Czy wywołanie samodzielnie są skalowane współrzędne ścieżki, gdy jest on renderowany przy `DrawPath` wywołanie, ale gwiazdy będzie wyśrodkowany w prawym górnym rogu obszaru roboczego. Musi zostać przesunięty w dół i w lewo. To zadanie z `Translate` wywołania. Te dwie właściwości `pathBounds` są-około 100, więc czynniki tłumaczenia około 100. Ponieważ `Translate` po wywołaniu `Scale` wywołać, te wartości są skalowane skutecznie czynniki skalowania, co ich przenieść w środku kanwy środku gwiazdy:
+`pathBounds` Prostokąt uzyskane w górnej części tego kodu, a następnie używany później przy użyciu szerokości i wysokości kanwy w `Scale` wywołania. Wywołanie przez siebie skalowane współrzędne ścieżkę renderowanych przez `DrawPath` wywołań, ale gwiazdka będzie wyśrodkowana w prawym górnym rogu kanwy. Musi ona przesunięty w dół i w lewo. To zadanie z `Translate` wywołania. Te dwie właściwości `pathBounds` są-około 100, więc czynniki tłumaczenia są około 100. Ponieważ `Translate` wywołanie jest po `Scale` wywołać, te wartości są skalowane skutecznie skalowania czynniki, co ich przenieść środku gwiazdy w środku kanwy:
 
-[![](scale-images/anisotropicscaling-small.png "Potrójna zrzut ekranu strony skalowanie anizotropowych")](scale-images/anisotropicscaling-large.png#lightbox "Potrójna zrzut ekranu strony anizotropowych skalowania")
+[![](scale-images/anisotropicscaling-small.png "Potrójna zrzut ekranu przedstawiający stronę skalowanie Anizotropowego")](scale-images/anisotropicscaling-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Anizotropowego skalowania")
 
-Należy zwrócić uwagę w inny sposób `Scale` i `Translate` wywołania jest można ustalić skutek w odwrotnej kolejności: `Translate` wywołania przewiduje ścieżka staje się ona pełni widoczny, ale orientacji w lewym górnym rogu obszaru roboczego. `Scale` — Metoda następnie sprawia, że ten gwiazdkę większy względem lewego górnego rogu.
+Inny sposób należy rozważać `Scale` i `Translate` wywołania ma na celu określenie efekt w odwrotnej kolejności: `Translate` wywołanie przenosi ścieżki, staje się ona w pełni widoczny, ale zorientowana w lewym górnym rogu kanwy. `Scale` Metoda następnie sprawia, że ten star większe względem lewego górnego rogu.
 
-W rzeczywistości wygląda na to, że gwiazdy jest nieco większy niż obszar roboczy. Problem polega na szerokość pociągnięć. `Bounds` Właściwość `SKPath` wskazuje wymiary współrzędne zakodowane w ścieżce i jest program używa skalowania go. Po wyrenderowaniu ścieżki z danego grubość renderowanych ścieżki jest większa niż obszar roboczy.
+W rzeczywistości wydaje się, że rejestr star to nieco większy niż obszar roboczy. Problem polega na szerokość pociągnięcia. `Bounds` Właściwość `SKPath` wskazuje wymiary współrzędne zakodowane w ścieżce i to, co jest używana do skalowania. Po wyrenderowaniu ścieżki o szerokości określonej obrysu renderowanych ścieżki jest większa niż obszar roboczy.
 
-Aby rozwiązać ten problem należy odpowiednio do tego. Jednym z podejść łatwy w tym programie ma Dodaj następujące uprawnienia instrukcji przed `Scale` wywołania:
+Aby rozwiązać ten problem, musisz kompensuje który. Jedno z podejść łatwy w tym programie jest dodanie następujących po prawej stronie instrukcji przed `Scale` wywołania:
 
 ```csharp
 pathBounds.Inflate(strokePaint.StrokeWidth / 2,
                    strokePaint.StrokeWidth / 2);
 ```
 
-Powoduje to zwiększenie `pathBounds` prostokąt 1,5 jednostek ze wszystkich czterech stron. Jest to rozsądne rozwiązanie tylko wtedy, gdy jest zaokrąglana obrysu sprzężenia. Sprzężenie skosów, skos może może być dłuższa i jest trudne do obliczenia.
+Zwiększa to `pathBounds` prostokąt 1,5 raza więcej jednostek ze wszystkich czterech stron. Jest to rozsądne rozwiązanie tylko wtedy, gdy jest zaokrąglana sprzężenia pociągnięcia. Sprzężenia skos może być dłuższa i jest trudne do obliczenia.
 
-Podobne technika tekstem, można także używać jako **anizotropowych tekst** pokazuje strony. Oto odpowiedniej części `PaintSurface` programu obsługi [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) klasy:
+Można również użyć podobne techniki z tekstem, jako **Anizotropowego tekstu** pokazuje strony. Oto odpowiednia część `PaintSurface` programu obsługi z [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) klasy:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -288,17 +288,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Jest podobne logiki i tekst rozwijany do rozmiaru strony oparte na prostokątne granice tekst zwrócony z `MeasureText` (czyli nieco większy niż rzeczywisty tekst):
+Jest podobnej logiki, a tekst jest rozszerzany, aby rozmiar strony oparte na tekst granice prostokątowi zwróconemu z `MeasureText` (czyli nieco większy niż rzeczywisty tekst):
 
-[![](scale-images/anisotropictext-small.png "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowej")](scale-images/anisotropictext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę testową anizotropowych")
+[![](scale-images/anisotropictext-small.png "Potrójna zrzut ekranu przedstawiający stronę testową Anizotropowego")](scale-images/anisotropictext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę testową Anizotropowego")
 
-Jeśli chcesz zachować współczynnik proporcji obiektów graficznych chcesz użyć izotropowego skalowania. **Izotropowego skalowanie** strony pokazano to odnosi się do 11 gwiazdki. Koncepcyjnie kroki do wyświetlania obiektu graficznego na środku strony z izotropowego skalowanie są:
+Jeśli potrzebujesz zachować współczynnik proporcji obiektów graficznych, należy użyć izotropowego skalowania. **Izotropowego skalowanie** strona przedstawia to gwiazdki wskazywany przez 11. Koncepcyjnie kroki do wyświetlania obiekt graficzny w środku strony ze skalowaniem izotropowego są:
 
-- Tłumaczenie Centrum obiektu graficznego do lewego górnego rogu.
-- Skalowanie obiektu, w oparciu o minimalnym wymiary strony poziome i pionowe rozdzielonych wymiary obiektu graficznego.
-- Tłumaczenie Centrum skalowany obiekt do środka strony.
+- Wykonuje translację elementu roboczego obiektu graficznego do lewego górnego rogu.
+- Skalowanie obiektu, w oparciu o co najmniej wymiary strony poziome i pionowe podzielona przez wymiary obiektu graficznego.
+- Wykonuje translację elementu środek skalowanego obiektu do środkowej części strony.
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Wykonuje te czynności w kolejności odwrotnej przed wyświetleniem gwiazdy:
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Wykonuje następujące kroki w kolejności odwrotnej względem przed wyświetleniem gwiazdy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Kod wyświetla również gwiazdy dziesięć razy, zawsze zmniejszenie skalowanie dwuetapowego przy 10% i stopniowo zmiana koloru z kolor czerwony, niebieski:
+Ten kod wyświetla również gwiazdka dziesięć razy, każdym razem, zmniejszając skalowanie wziąć pod uwagę przy 10% i stopniowo zmienia kolor z kolor czerwony, niebieski:
 
 [![](scale-images/isotropicscaling-small.png "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowanie")](scale-images/isotropicscaling-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę izotropowego skalowania")
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

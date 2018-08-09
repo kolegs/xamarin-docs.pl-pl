@@ -1,44 +1,44 @@
 ---
-title: Podstawowe informacje dotyczące ścieżki w SkiaSharp
-description: W tym artykule Eksploruje obiektu SkiaSharp SKPath do łączenia połączonych linii i krzywych i pokazuje to z przykładowym kodzie.
+title: Ścieżka — podstawy w SkiaSharp
+description: W tym artykule Eksploruje obiektu SkiaSharp SKPath łączenia połączonych linii i krzywych i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 2fc492f723a7a009da506d241ddf2e8459908633
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3c07614c12fb503638d3d5e63b24eb5367ba691a
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244048"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615538"
 ---
-# <a name="path-basics-in-skiasharp"></a>Podstawowe informacje dotyczące ścieżki w SkiaSharp
+# <a name="path-basics-in-skiasharp"></a>Ścieżka — podstawy w SkiaSharp
 
-_Eksploruj obiektu SkiaSharp SKPath do łączenia połączonych linii i krzywych_
+_Zapoznaj się z obiektu SkiaSharp SKPath łączenia połączonych linii i krzywych_
 
-Jednym z najważniejszych funkcji ścieżki grafiki jest zdefiniowanie po wielu wierszy powinny być połączone, a jeśli ich nie należy łączyć. Różnica może być dość widoczne jako prezentacja wierzchołki trójkąty dwóch:
+Jednym z najważniejszych funkcji ścieżki grafiki jest możliwość definiowania, gdy wiele wierszy powinna być połączona, a jeśli one nie należy łączyć. Różnica może być dość widoczne, jak prezentacja wierzchołki trójkąty dwa:
 
-![](paths-images/connectedlinesexample.png "Dwa trójkąty przedstawiający różnica między liniami połączonych i niepołączonych")
+![](paths-images/connectedlinesexample.png "Dwa trójkąty przedstawiający różnica między wierszami połączonych i niepołączonych")
 
-Ścieżki grafiki jest hermetyzowany przez [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) obiektu. Ścieżki to kolekcja jednej lub kilku *konturów*. Każdy rozkład jest kolekcją *połączone* prostej linii i krzywych. Konturów nie są połączone ze sobą, ale może wizualnie zachodziły na siebie. Czasami pojedynczego rozkład mogą nakładać się na samej siebie.
+Ścieżki grafiki jest hermetyzowany przez [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) obiektu. Ścieżka to kolekcja jednej lub więcej *konturów*. Każdy rozkład to zbiór *połączone* prostej linii i krzywych. Konturów nie są połączone ze sobą, ale może być wizualnie nakładają się. Czasami pojedynczego rozkład mogą się nakładać.
 
-Rozkład zazwyczaj rozpoczyna się od wywołanie następującej metody `SKPath`:
+Rozkład rozpoczyna się zazwyczaj z wywołaniem do następującej metody `SKPath`:
 
-- `MoveTo` Aby rozpocząć nowy rozkład
+- `MoveTo` Aby rozpocząć nowy konturu
 
-Argument tej metody jest pojedynczy punkt, który można wyrazić jako `SKPoint` wartość lub jako osobne X i Y współrzędne. `MoveTo` Wywołania ustanawia punkt na początku rozkład i początkowego *bieżącego punktu*. Możesz wywołać następujących metod, aby kontynuować rozkład z wierszem lub krzywej od bieżącego punktu do punktu w metodzie, która staje się punktem bieżącym:
+Argument do tej metody jest pojedynczy punkt można wyrazić jako `SKPoint` wartości lub jako osobne X i Y współrzędne. `MoveTo` Wywołanie ustanawia punkt początku rozkład i po początkowym *bieżący punkt*. Można wywołać poniższych metod, aby kontynuować rozkład z linią lub krzywej w bieżącym punkcie do punktu, określone w metody, która staje się punktem bieżącym:
 
 - `LineTo` Aby dodać prostej do ścieżki
-- `ArcTo` Aby dodać łuk, znajduje się w wierszu w obwodzie elipsy lub okręgu
-- `CubicTo` Aby dodać sześcienny krzywej Beziera
-- `QuadTo` Aby dodać kwadratową krzywej Beziera
-- `ConicTo` Aby dodać ich rozsądne kwadratową Beziera krzywej składanej, która dokładnie umożliwiający renderowanie conic sekcje (elipsy, parabole i hiperbole)
+- `ArcTo` Aby dodać łuk, linia na obwód koła lub wielokropka
+- `CubicTo` Aby dodać trzeciego stopnia Krzywa Beziera
+- `QuadTo` Aby dodać drugiego stopnia Krzywa Beziera
+- `ConicTo` Aby dodać wymierne drugiego stopnia Beziera krzywej składanej, która dokładnie umożliwiający renderowanie conic sekcje (wielokropek parabole i hiperbole)
 
-Żadna z tych metod pięć zawierać wszystkie informacje niezbędne do opisywania linii lub krzywej. Każda z tych metod pięć działa w połączeniu z bieżącego punktu określonego przez wywołanie metody bezpośrednio poprzedzającym go. Na przykład `LineTo` metoda dodaje prostej do konturu na podstawie bieżącego punktu, więc parametru do `LineTo` jest tylko jeden punkt.
+Żadna z tych metod pięć zawierają wszystkie informacje niezbędne do opisania linii lub krzywej. Każda z tych metod pięć działa w połączeniu z bieżącym punkcie ustanowione przez wywołanie metody, bezpośrednio poprzedzających je. Na przykład `LineTo` metoda dodaje do rozkładu linię prostą oparty na bieżącym punkcie, więc parametr `LineTo` jest pojedynczym punktem.
 
-`SKPath` Metod, które mają takie same nazwy, jak te metody, ale definiuje także klasy `R` na początku:
+`SKPath` Klasa definiuje również metody, które mają takie same nazwy, jak te metody, ale z `R` na początku:
 
 - `RMoveTo`
 - `RLineTo`
@@ -47,11 +47,11 @@ Argument tej metody jest pojedynczy punkt, który można wyrazić jako `SKPoint`
 - `RQuadTo`
 - `RConicTo`
 
-`R` Oznacza *względną*. Mają one takiej samej składni jak odpowiednich metod bez `R` , ale są względem bieżącego punktu. Te są przydatne do rysowania podobne części ścieżki w metodzie, który można wywoływać wielokrotnie.
+`R` Oznacza *względną*. Mają one tej samej składni jako odpowiednie metody bez `R` , ale są względne wobec bieżącego punktu. Te są przydatne do rysowania podobne części ścieżki w metodzie, która wywołać wiele razy.
 
-Rozkład kończy się wraz z innym wywołaniu `MoveTo` lub `RMoveTo`, zaczynający rozkład nowych lub wywołanie `Close`, który zamyka rozkładu. `Close` — Metoda automatycznie dołącza prostej od bieżącego punktu do pierwszego punktu rozkład i oznacza ścieżkę jako zamknięte, co oznacza, że będzie renderowany bez żadnych informacji o możliwościach stroke.
+Rozkład kończy się innym wywołaniu `MoveTo` lub `RMoveTo`, zaczynający się nowych rozkład lub wywołanie `Close`, który zamyka ROZKŁAD. `Close` Metoda automatycznie dołącza linię prostą rysowaną od bieżącego punktu do pierwszego punktu rozkład i oznacza ścieżkę jako zamknięty, co oznacza, że będzie ona renderowana bez żadnych pociągnięć.
 
-Przedstawia różnice między konturów otwarte i zamknięte **dwóch konturów trójkąt** strony, który korzysta z `SKPath` obiektu z dwóch konturów do renderowania, dwie trójkąty. Rozkład pierwszy jest otwarty i drugi jest zamknięty. Oto [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) klasy:
+Przedstawia różnicę między konturów otwarte i zamknięte **dwóch konturów trójkąt** strony, który używa `SKPath` obiektu za pomocą dwóch konturów do renderowania dwa trójkąty. Pierwszy rozkład jest otwarty, i drugi jest zamknięty. Oto [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -97,33 +97,33 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Pierwszy rozkład składa się z wywołania [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) przy użyciu współrzędne X i Y zamiast `SKPoint` wartości, a następnie trzy wywołania [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) do rysowania trzy strony trójkąt. Drugi rozkład ma tylko dwie wywołań `LineTo` , ale zakończeniem rozkład wywołaniem [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), który zamyka rozkładu. Różnica polega na tym znaczące:
+Pierwszy rozkład składa się z wywołania [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) przy użyciu współrzędnych X i Y, a nie `SKPoint` wartości, następuje trzech wywołań [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) do rysowania trzech stronach trójkąt. Rozkład drugi ma tylko dwa wywołania `LineTo` , ale po zakończeniu rozkład wywołaniem [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), który zamyka ROZKŁAD. Różnica polega na tym znaczące:
 
 [![](paths-images/twotrianglecontours-small.png "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")](paths-images/twotrianglecontours-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę dwóch konturów trójkąt")
 
-Jak widać, pierwszy rozkład to oczywiście szereg trzy połączone linie, ale zakończenia nie łączyć się z początku. Dwa wiersze nakładają się na górze. Drugi rozkład oczywiście jest zamknięty, a została realizowane za pomocą jednego mniej `LineTo` wywołuje się, ponieważ `Close` metody automatycznie dodaje końcowego wiersza, aby zamknąć rozkładu.
+Jak widać, rozkład pierwszy to oczywiście szereg trzy połączone linie, ale zakończenia nie połączyć z początkiem. Dwa wiersze nakładają się na górze. Drugi rozkład oczywiście jest zamknięty, a było wykonywane przy użyciu jednego mniej `LineTo` wywołuje się, ponieważ `Close` metoda automatycznie dodaje ostatni wiersz, aby zamknąć ROZKŁAD.
 
-`SKCanvas` Definiuje tylko jeden [ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/) metodę, która w tej prezentacji jest wywoływana dwukrotnie do wypełnienia i obrysu ścieżki. Wszystkie konturów są wypełnione, nawet te, które nie zostały zamknięte. W celu wypełnienia ścieżki niezamknięty prostej jest zakłada się, że istnieje między punktu początkowego i końcowego konturów. Po usunięciu ostatniego `LineTo` z konturem pierwszy lub usuń `Close` wywołania z drugiego rozkład każdego rozkład będzie mieć tylko dwa boki ale zostanie wypełnione, tak jakby był on trójkąt.
+`SKCanvas` Definiuje tylko jeden [ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/) metody, która w tej prezentacji zostanie dwa razy wywołana do wypełnienia i obrysu ścieżki. Wszystkie konturów są wypełnione, nawet te, które nie zostały zamknięte. Na potrzeby wypełniania ścieżki niezamknięty prostej jest zakłada się, że istnieją między punkty początkowy i końcowy konturów. Jeśli usuniesz ostatni `LineTo` z konturem pierwszy lub usuń `Close` wywołanie funkcji z sylwetką drugi każdego rozkład będzie mieć tylko dwa boki mimo wypełnione, tak jakby trójkąt.
 
-`SKPath` definiuje wiele innych metod i właściwości. Następujące metody Dodaj całego konturów na ścieżkę, która może być zamknięta lub nie są zamknięte w zależności od metody:
+`SKPath` definiuje wiele innych metod i właściwości. Następujące metody całego konturów należy dodać do ścieżki, która może być zamknięte lub nie zostały zamknięte w zależności od metody:
 
 - `AddRect`
 - [`AddRoundedRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddRoundedRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPathDirection/)
 - [`AddCircle`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddCircle/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathDirection/)
 - [`AddOval`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddOval/p/SkiaSharp.SKRect/SkiaSharp.SKPathDirection/)
-- [`AddArc`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) Aby dodać krzywą w obwodzie elipsy
+- [`AddArc`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) Aby dodać krzywą na obwód elipsę
 - `AddPath` Aby dodać inną ścieżkę do bieżącej ścieżki
-- [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) Aby dodać inną ścieżkę odwrotnie
+- [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) Aby dodać inną ścieżkę w odwrotnej kolejności
 
-Należy pamiętać, że `SKPath` obiekt definiuje tylko geometrię &mdash; serii punktów i połączeń. Tylko wtedy, gdy `SKPath` jest połączona z `SKPaint` obiektu jest ścieżką z konkretnym kolor, szerokość pociągnięć i tak dalej. Ponadto należy pamiętać, że `SKPaint` obiekt przekazywany do `DrawPath` metoda definiuje właściwości pełną ścieżkę. Jeśli chcesz narysować coś wymagające kilka kolorów, należy użyć oddzielnych ścieżki dla każdego koloru.
+Należy pamiętać, że `SKPath` obiektu definiuje tylko typy geometryczne &mdash; serii punktów i połączeń. Tylko wtedy, gdy `SKPath` jest połączony z `SKPaint` obiekt jest ścieżka, renderowane przy użyciu określonego koloru, szerokość pociągnięcia i tak dalej. Ponadto należy pamiętać, że `SKPaint` obiekt przekazany do `DrawPath` metody Określa cechy pełną ścieżkę. Jeśli chcesz narysuj coś wymaga kilku kolory, należy użyć oddzielnych ścieżki dla każdego koloru.
 
-Tak jak wygląd rozpoczęcia i zakończenia wiersza jest definiowana za pomocą koniec obrysu, wygląd połączenie między dwoma liniami jest definiowana za pomocą *sprzężenia obrysu*. Określ to ustawienie [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) właściwość `SKPaint` do elementu członkowskiego [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) wyliczenie:
+Tak, jak wygląd początek i koniec wiersza jest definiowany przez pociągnięcia, wygląd połączenie między dwoma wierszami jest definiowany przez *sprzężenia obrysu*. Należy to określić, ustawiając [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) właściwość `SKPaint` do elementu członkowskiego [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) wyliczenia:
 
-- [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) do sprzężenia wklęsła
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) zaokrąglony sprzężenia
-- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) w celu utworzenia sprzężenia kostki wyłączone
+- [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) Aby uzyskać wklęsła sprzężenia
+- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) zaokrąglone sprzężenia
+- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) w celu utworzenia sprzężenia pociąć wyłączone
 
-**Sprzężenia obrysu** strony przedstawiono te trzy obrysu dołączeń kodu podobne do **Caps obrysu** strony. Jest to `PaintSurface` obsługi zdarzeń w [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) klasy:
+**Sprzężeń obrysu** stronie przedstawiono te trzy obrysu sprzężeń z kodem, podobnie jak **pociągnięć** strony. Jest to `PaintSurface` programu obsługi zdarzeń w [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -187,14 +187,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Oto działająca na platformach trzy program:
+W tym miejscu jest uruchomiony na trzech platformach program:
 
-[![](paths-images/strokejoins-small.png "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")](paths-images/strokejoins-large.png#lightbox "Potrójna zrzut ekranu strony tworzy sprzężenie obrysu")
+[![](paths-images/strokejoins-small.png "Potrójna zrzut ekranu przedstawiający stronę sprzężenia pociągnięcia")](paths-images/strokejoins-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę sprzężenia pociągnięcia")
 
-Sprzężenie skosów, skos może składa się z punktem sharp których wiersze nawiązuje połączenie. Nowi dwa wiersze pod kątem małych sprzężenie skosów, skos może może stać się bardzo długie. Aby zapobiec sprzężenia ostre zbyt długie, długość sprzężenie skosów, skos może jest ograniczone przez wartość [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) właściwość `SKPaint`. Sprzężenie skosów, skos może przekraczającą tej długości została obcięta zostać sprzężenia fazy.
+Sprzężenia ukośnych składa się z sharp punktu, w których łączenie wierszy. Nowi dwa wiersze pod kątem małych sprzężenia skos może stać się bardzo długie. Aby zapobiec sprzężeń ukośnych zbyt długie, długość złączenie ostre jest ograniczone przez wartość [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) właściwość `SKPaint`. Sprzężenia właściwości, które przekracza długość tej została obcięta przestanie ukośne.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

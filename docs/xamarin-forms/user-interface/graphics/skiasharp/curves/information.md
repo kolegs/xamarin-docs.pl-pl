@@ -1,38 +1,38 @@
 ---
 title: Informacje o ścieżce i wyliczenia
-description: W tym artykule wyjaśniono, jak uzyskać informacje na temat ścieżek SkiaSharp i analizy zawartości i pokazuje to z przykładowym kodzie.
+description: W tym artykule wyjaśniono, jak uzyskać informacje na temat ścieżek SkiaSharp i wyliczenia zawartości i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 53d1fce20a0e3bc75ba34ab84b2549211567e222
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 65c614e9a6eb26bc0d027a4a67bec19b036d0a70
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243795"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615278"
 ---
 # <a name="path-information-and-enumeration"></a>Informacje o ścieżce i wyliczenia
 
-_Uzyskaj informacje na temat ścieżek i analizy zawartości_
+_Pobieranie informacji na temat ścieżek i wyliczenia zawartości_
 
-[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) Klasa definiuje kilka właściwości i metody, które umożliwiają uzyskanie informacji o ścieżce. [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) i [ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/) właściwości (oraz odpowiednich metod) uzyskać metrical wymiary ścieżki. [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/) — Metoda pozwala określić, czy określonego punktu jest do ścieżki.
+[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) Klasa definiuje kilka właściwości i metod, które umożliwiają uzyskanie informacji o ścieżce. [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) i [ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/) właściwości (i powiązanych metod) uzyskać metrical wymiary ścieżki. [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/) Metody umożliwia określenie, czy określony punkt w ścieżce.
 
-Czasami jest przydatne do określenia całkowita długość linii i krzywych wchodzące w skład ścieżki. To nie jest algorithmically prostym zadaniem, więc całej klasy o nazwie [ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) jest przeznaczone do niego.
+Czasami jest to przydatne na potrzeby określania łączna długość wszystkich linii i krzywych, które tworzą ścieżki. To nie jest algorithmically prostym zadaniem, więc cała klasa o nazwie [ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) została poświęcona.
 
-Warto również czasami uzyskania wszystkich rysowania operacji oraz punktów, które tworzą ścieżki. Na początku tej funkcji może wydawać się niepotrzebne: Jeśli program został utworzony ścieżki, program zna już zawartość. Jednak przedstawiono ścieżki również mogą być tworzone przez [efekty ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) i konwertując [ciągi na ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Możesz również uzyskać wszystkie rysowania operacji i punkty wchodzące w skład tych ścieżek. Jedną z możliwości jest zastosowanie transformacji algorytmicznego do wszystkich punktów. Dzięki temu technik, takich jak zawijania tekstu wokół półkulę:
+Jest to również czasami przydatne uzyskać wszystkie rysowania operacji i punkty, które tworzą ścieżki. Na początku tej funkcji mogą wydawać się niepotrzebne: Jeśli program został utworzony w ścieżce, program już zna zawartość. Jednak wiesz, że ścieżki mogą być tworzone przez [efekty ścieżek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) oraz przez Przekształcanie [ciągi na ścieżki](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Możesz również uzyskać wszystkie rysowania operacji i punkty, które tworzą te ścieżki. Jedną z możliwości jest zastosowanie transformacji konsolidatorze do wszystkich punktów. Dzięki temu technik, takich jak zawijania tekstu w całym półkulę:
 
-![](information-images/pathenumerationsample.png "Tekst zawijany na półkulę")
+![](information-images/pathenumerationsample.png "Tekst zawinięty na półkuli")
 
 ## <a name="getting-the-path-length"></a>Pobieranie długości ścieżki
 
-W artykule [ **ścieżek i tekst** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) pokazano, jak używać [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metodę, by narysować ciąg tekstowy, którego linii bazowej następuje ciągu ścieżki. Ale co zrobić, jeśli chcesz rozmiaru tekst, tak aby zmieścił ścieżka dokładnie? Dla Rysowanie tekstu wokół koło, łatwo jest, ponieważ obwód koła jest prosty do obliczenia. Jednak nie jest tak proste obwód elipsy lub długość krzywej Beziera.
+W artykule [ **ścieżki i tekst** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) pokazaliśmy, jak używać [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metodę, aby narysować ciąg tekstowy, którego punkt odniesienia następuje kurs ścieżki. Ale co zrobić, jeśli chcesz rozmiar tekstu, tak aby dokładnie pasował ścieżkę? Rysowanie tekstu w całym koła, aby uzyskać to proste, ponieważ obwód koła jest łatwy do obliczenia. Ale obwód elipsę lub długość krzywej Beziera nie jest tak proste.
 
-[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Klasy może pomóc. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) akceptuje `SKPath` argument, a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) właściwości ujawnia jej długość.
+[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Klasa może pomagać. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) akceptuje `SKPath` argument, a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) właściwości, co spowoduje wyświetlenie jego długość.
 
-To jest przedstawiona w **długość ścieżki** próbki, która jest oparta na **krzywej Beziera** strony. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) plik pochodzi z `InteractivePage` i zawiera interfejs touch:
+Jest to zaprezentowane w **długość ścieżki** próbki, która jest oparta na **krzywą Beziera** strony. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) plik pochodzi z `InteractivePage` oraz interfejsem dotykowym:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,7 +53,7 @@ To jest przedstawiona w **długość ścieżki** próbki, która jest oparta na 
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) pliku CodeBehind umożliwia przeniesienie cztery punkty touch do definiowania punktów końcowych i kontrolowania punktów krzywej Beziera trzeciego stopnia. Ciąg tekstowy, zdefiniuj trzy pola `SKPaint` obiekt i obliczeniowej szerokości tekstu:
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) pliku związanego z kodem umożliwia przeniesienie cztery punkty dotykowe do definiowania punktów końcowych i kontrolowania punktów krzywej Beziera trzeciego stopnia. Trzy pola zdefiniować ciąg tekstowy, `SKPaint` obiektu, a obliczony szerokość tekstu:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -72,9 +72,9 @@ public partial class PathLengthPage : InteractivePage
 }
 ```
 
-`baseTextWidth` Pole jest szerokości tekstu, na podstawie `TextSize` ustawienie 10.
+`baseTextWidth` Pole jest szerokość tekstu, na podstawie `TextSize` ustawienie 10.
 
-`PaintSurface` Obsługi rysuje krzywej Beziera i następnie rozmiar tekst, który mieści się wraz z jego długość pełnej:
+`PaintSurface` Obsługi rysuje krzywej Beziera i następnie rozmiar tekstu, aby dopasować wzdłuż jego długość pełnej:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -108,15 +108,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`Length` Właściwość nowo utworzony `SKPathMeasure` obiektu uzyskuje długość ścieżki. To jest podzielona przez `baseTextWidth` wartość, (czyli szerokości tekstu, na podstawie rozmiaru tekstu, 10), a następnie pomnożona przez rozmiar tekst podstawowy 10. Wynik jest nowy rozmiar tekstu do wyświetlania tekstu w tej ścieżce:
+`Length` Właściwości nowo utworzonej `SKPathMeasure` obiektu uzyskuje długość ścieżki. To jest dzielona przez `baseTextWidth` wartości (czyli szerokości tekstu, w oparciu o rozmiar tekstu, 10), a następnie jest mnożony przez rozmiar tekstu podstawowego 10. W wyniku powstaje nowy rozmiar tekstu do wyświetlania tekstu w tej ścieżce:
 
 [![](information-images/pathlength-small.png "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")](information-images/pathlength-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę długość ścieżki")
 
-Zgodnie z krzywej Beziera pobiera dłuższy lub krótszy, widać Zmień rozmiar tekstu.
+Ponieważ krzywej Beziera pobiera dłuższy lub krótszy, możesz zobaczyć zmiany rozmiaru tekstu.
 
 ## <a name="traversing-the-path"></a>Przechodzenie przez ścieżkę
 
-`SKPathMeasure` należy nie tylko miary długość ścieżki. Na dowolną wartość z zakresu między zero a długość ścieżki `SKPathMeasure` obiektu w tym momencie uzyskać pozycji na ścieżkę i tangens na krzywą ścieżki. Tangens jest dostępna jako wektor w formie `SKPoint` obiektu lub jako rotacji hermetyzowane w `SKMatrix` obiektu. Poniżej przedstawiono metody `SKPathMeasure` który uzyskania tych informacji w różnych i elastyczny sposób:
+`SKPathMeasure` można zrobić więcej niż tylko miary długość ścieżki. Dla dowolnej wartości z zakresu między zero a długość ścieżki `SKPathMeasure` obiektu można uzyskać w tym momencie pozycji na ścieżkę i tangens na krzywą ścieżki. Tangens jest dostępna jako wektor w formie `SKPoint` obiektu lub jako rotację hermetyzowane w `SKMatrix` obiektu. Poniżej przedstawiono metody `SKPathMeasure` które podaje te informacje w zróżnicowane i elastyczny sposób:
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -134,11 +134,11 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 - [`GetTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 - [`GetPositionAndTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 
-**Potoku połowie motocyklem** rysunku USB na motocyklem, który wydaje się, które wywołują i z powrotem krzywej Beziera sześcienny animuje strony:
+**Monocyklem pół-potoku** strony animuje kreska na monocyklem, który wydaje się i z powrotem krzywej Beziera trzeciego stopnia:
 
-[![](information-images/unicyclehalfpipe-small.png "Potrójna zrzut ekranu strony potoku połowie motocyklem")](information-images/unicyclehalfpipe-large.png#lightbox "Potrójna zrzut ekranu strony motocyklem połowie potoku")
+[![](information-images/unicyclehalfpipe-small.png "Potrójna zrzut ekranu przedstawiający stronę monocyklem pół-potoku")](information-images/unicyclehalfpipe-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę monocyklem pół-potoku")
 
-`SKPaint` Obiekt używany do używana do malowania zarówno połowa kreski pionowej, jak i motocyklem jest zdefiniowany jako pole w [ `UnicycleHalfPipePage` ]() klasy. Jest także zdefiniowana `SKPath` obiektu dla motocyklem:
+`SKPaint` Obiekt używany do stykają połowa kreski pionowej i monocyklem jest zdefiniowana jako pole w [ `UnicycleHalfPipePage` ]() klasy. Jest również definiowany `SKPath` obiekt monocyklem:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -163,7 +163,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-Klasa zawiera standard przesłonięcia `OnAppearing` i `OnDisappearing` metody dla animacji. `PaintSurface` Obsługi tworzy ścieżki dla potoku połowie, a następnie go rysuje. `SKPathMeasure` Obiekt jest tworzony na podstawie na tej ścieżce:
+Klasa zawiera standardowe zastąpień `OnAppearing` i `OnDisappearing` metody dla animacji. `PaintSurface` Obsługi tworzy ścieżki dla potoku połowie, a następnie pobiera ona. `SKPathMeasure` Następnie obiekt zostanie utworzony w oparciu o tę ścieżkę:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -209,15 +209,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-`PaintSurface` Obsługi oblicza wartość `t` skojarzoną z zakresu od 0 do 1 co pięć sekund. Następnie używa `Math.Cos` funkcji konwersji, która wartość `t` który zakresu od 0 do 1 i z powrotem na 0, gdzie 0 odpowiada motocyklem na początku u góry po lewej, gdy 1 odpowiada motocyklem u góry po prawej. Funkcja cosinus powoduje, że szybkość najwolniejsze w górnej części potoku i najszybsze u dołu.
+`PaintSurface` Obsługi oblicza wartość `t` skojarzoną z zakresu od 0 do 1 co pięć sekund. Następnie używa `Math.Cos` funkcji konwersji, wartość `t` , zakresów adresów z zakresu od 0 do 1 i powrót do 0, gdzie 0 odpowiada monocyklem na początku po lewej stronie, gdy 1 odpowiada monocyklem w prawym górnym rogu. Funkcja cosinus powoduje, że szybkość najwolniejsze w górnej części potoku i najszybszy u dołu.
 
-Należy zauważyć, że ta wartość `t` długość ścieżki dla pierwszego argumentu musi zostać pomnożona wartość `GetMatrix`. Macierz jest następnie stosowany do `SKCanvas` obiektu dla ścieżki motocyklem rysowania.
+Należy zauważyć, że ta wartość `t` musi być pomnożona przez długość ścieżki dla pierwszego argumentu `GetMatrix`. Macierz jest następnie stosowane do `SKCanvas` obiektu ścieżki monocyklem rysowania.
 
 ## <a name="enumerating-the-path"></a>Wyliczanie ścieżki
 
-Osadzone dwa rodzaje `SKPath` umożliwiają wyliczyć zawartości ścieżki. Te klasy są [ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/) i [ `SKPath.RawIterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/). Dwie klasy są bardzo podobne, ale `SKPath.Iterator` można wyeliminować elementów w ścieżce o zerowej długości lub bliski o zerowej długości. `RawIterator` Jest używany w poniższym przykładzie.
+Osadzone dwóch klas `SKPath` umożliwiają wyliczanie zawartości ścieżki. Te klasy są [ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/) i [ `SKPath.RawIterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/). Dwie klasy są bardzo podobne, ale `SKPath.Iterator` mogą wyeliminować elementy w ścieżce o zerowej długości lub w pobliżu o zerowej długości. `RawIterator` Jest używany w poniższym przykładzie.
 
-Można uzyskać obiektu typu `SKPath.RawIterator` przez wywołanie metody [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/) metody `SKPath`. Wyliczanie za pośrednictwem ścieżki odbywa się wielokrotnie wywołując [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/) metody. Przekazywania do niej tablicę cztery `SKPoint` wartości:
+Można uzyskać obiektu typu `SKPath.RawIterator` przez wywołanie metody [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/) metody `SKPath`. Wyliczanie przez ścieżkę odbywa się przez wielokrotne wywoływanie [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/) metody. Przekaż do niego tablicę czterech `SKPoint` wartości:
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -225,25 +225,25 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-`Next` Metoda zwraca element członkowski [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/) wyliczenia. Te wartości wskazują polecenie rysowania określonego w ścieżce. Liczba prawidłowych punktów wstawione w tablicy zależy od tego zlecenia:
+`Next` Metoda zwraca element członkowski [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/) wyliczenia. Te wartości wskazują określonego polecenia rysowania w ścieżce. Nieprawidłowa punktów wstawione w tablicy zależy od tego zlecenia:
 
-- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) z jednego miejsca
-- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) z dwa punkty.
+- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) za pomocą pojedynczego punktu
+- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) dwa punkty
 - [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) cztery punkty.
 - [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) trzy punkty.
-- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) trzy punkty (a także wywołać [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/) metody wagi)
-- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) z jednego punktu
+- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) trzy punkty (a także wywołać [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/) metodę waga)
+- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) z jednym punktem
 - [`Done`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Done/)
 
-`Done` Zlecenie wskazuje, że wyliczenia jest pełny.
+`Done` Zlecenie wskazuje, że wyliczanie zostało zakończone.
 
 Należy zauważyć, że istnieją nie `Arc` zleceń. Oznacza to, że wszystkie łuki są konwertowane na krzywe Beziera w przypadku dodania do ścieżki.
 
-Niektóre informacje w `SKPoint` tablicy jest nadmiarowy. Na przykład jeśli `Move` następuje zlecenie `Line` zlecenie, a następnie pierwszy z dwóch punktów towarzyszą `Line` jest taka sama jak `Move` punktu. W praktyce dublowanie jest bardzo przydatne. Gdy `Cubic` zlecenie, towarzyszy wszystkie cztery punkty definiujące krzywą Beziera trzeciego stopnia. Nie trzeba zachować bieżące położenie ustala zlecenie poprzedniej.
+Niektóre informacje w `SKPoint` tablicy jest nadmiarowe. Na przykład jeśli `Move` następuje zlecenie `Line` zlecenie, a następnie pierwszy dwa momenty, które towarzyszyć `Line` jest taka sama jak `Move` punktu. W praktyce tę nadmiarowość jest bardzo przydatne. Gdy uzyskujesz `Cubic` zlecenie, dołączono do niego wszystkie cztery punkty, które definiują krzywą Beziera trzeciego stopnia. Nie potrzebujesz zachować bieżącą pozycję ustanowione przez poprzednie polecenie.
 
-Zlecenie problemy, jednak jest `Close`. To polecenie Rysuje prostą od bieżącego położenia na początku rozkład ustanowić wcześniej przez `Move` polecenia. W idealnym przypadku `Close` zlecenie powinno dostarczyć te dwa punkty, a nie tylko jeden punkt. Co to jest pogarsza się wraz z oznacza, że punkt towarzyszącego `Close` zlecenie jest zawsze (0, 0). Oznacza to, że podczas wyliczania za pomocą ścieżki, prawdopodobnie musisz zachować `Move` punktu i bieżącego położenia.
+Jest jednak problematyczne zlecenie `Close`. To polecenie rysuje linię prostą od bieżącej pozycji do stanu sprzed rozkład ustanowione wcześniej przez `Move` polecenia. W idealnym przypadku `Close` czasownik powinien udostępniać te dwa punkty, a nie tylko jeden punkt. Co to jest niższa jest to, że towarzyszący punktu `Close` zlecenie jest zawsze (0, 0). Oznacza to, że podczas wyliczania za pośrednictwem ścieżki, prawdopodobnie musisz zachować `Move` punkt i bieżącej pozycji.
 
-Statycznych [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) klasa zawiera kilka metod, które przekonwertować trzy typy krzywych Beziera na serię niewielki rozmiar proste, które przybliżona krzywej. (Parametrycznych formuły zostały przedstawione w artykule [ **trzy typy krzywych Beziera**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metody dzieli prostej do wielu krótkich wierszy, które są tylko jedną jednostkę długości:
+Statyczne [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) klasa zawiera kilka metod, które konwertują trzy rodzaje krzywych Beziera na serię określenie w przybliżeniu krzywej niewielki rozmiar proste linie. (Parametric formuły zostały przedstawione w artykule [ **trzech typów krzywych Beziera**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metoda dzieli prostej w liczne krótkich wierszy, które są tylko jedną jednostkę długości:
 
 ```csharp
 static class PathExtensions
@@ -328,9 +328,9 @@ static class PathExtensions
 }
 ```
 
-Wszystkie te metody są przywoływane przez metodę rozszerzenie `CloneWithTransform` pokazano poniżej. Ta metoda klonów ścieżki wyliczania polecenia ścieżki i utworzenie nowej ścieżki na podstawie danych. Jednak nowej ścieżki składa się tylko z `MoveTo` i `LineTo` wywołania. Krzywe i proste zostały zredukowane do serii niewielki rozmiar wierszy.
+Wszystkie te metody są wywoływane z metody rozszerzenia `CloneWithTransform` pokazano poniżej. Ta metoda klony ścieżkę przez wyliczanie polecenia ścieżki i skonstruowanie nową ścieżkę, w oparciu o dane. Jednak nowa ścieżka składa się tylko z `MoveTo` i `LineTo` wywołania. Krzywe i proste linie zostały zredukowane serii niewielki rozmiar wierszy.
 
-Podczas wywoływania metody `CloneWithTransform`, przekazać do metody `Func<SKPoint, SKPoint>`, która to funkcja z `SKPaint` parametr, który zwraca `SKPoint` wartość. Ta funkcja jest wywoływana dla każdego punktu zastosowanie niestandardowych transformacji algorytmicznego:
+Podczas wywoływania `CloneWithTransform`, przekazać do metody `Func<SKPoint, SKPoint>`, czyli funkcji z `SKPaint` parametr, który zwraca `SKPoint` wartość. Ta funkcja jest wywoływana dla każdego punktu zastosować niestandardowe przekształcenia konsolidatorze:
 
 ```csharp
 static class PathExtensions
@@ -419,15 +419,15 @@ static class PathExtensions
 }
 ```
 
-Ponieważ sklonowany ścieżka zostanie zmniejszona do niewielki rozmiar linii prostej, funkcji przekształcenia ma możliwości konwersji proste krzywych.
+Funkcja transformacji, ponieważ sklonowany ścieżki jest ograniczona do niewielki rozmiar linii prostych, ma możliwość konwertowania proste linie na krzywe.
 
-Powiadomienie, że metoda zachowuje pierwszy punkt każdej rozkład w zmiennej o nazwie `firstPoint` i bieżące położenie po każdym poleceniu Rysowanie polecenia w zmiennej `lastPoint`. Są one niezbędne do utworzenia końcowego zamknięcia wiersza w przypadku `Close` napotkano zlecenia.
+Zwróć uwagę, że metoda zachowuje pierwszy punkt każdej konturu w zmiennej o nazwie `firstPoint` i bieżącej pozycji po każdym poleceniu rysowania poleceń w zmiennej `lastPoint`. Są one niezbędne do utworzenia zamknięcie końcowej wiersza w przypadku `Close` zlecenie zostanie osiągnięty.
 
-**GlobularText** w przykładzie użyto tę metodę rozszerzenie pozornie tekstem półkulę efektu 3D:
+**GlobularText** próbki ta metoda rozszerzenia pozornie tekstem półkulę w efekt 3W:
 
-[![](information-images/globulartext-small.png "Potrójna zrzut ekranu strony tekstu Globular")](information-images/globulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Globular tekstu")
+[![](information-images/globulartext-small.png "Potrójna zrzut ekranu przedstawiający stronę tekstu Globular")](information-images/globulartext-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Globular tekstu")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktora klasy wykonuje tej transformacji. Tworzy `SKPaint` obiekt tekstu, a następnie uzyskuje `SKPath` obiekt z `GetTextPath` metody. Jest to ścieżka przekazany do `CloneWithTransform` — metoda rozszerzenia wraz z funkcji przekształcenia:
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktora klasy wykonuje tej transformacji. Tworzy `SKPaint` obiektu dla tekstu, a następnie uzyskuje `SKPath` obiektu z `GetTextPath` metody. Jest to ścieżka przekazany do `CloneWithTransform` — metoda rozszerzenia wraz z funkcji przekształcenia:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -474,9 +474,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Funkcja transformacji najpierw oblicza dwóch wartości o nazwie `longitude` i `latitude` zakresie od — π/2 u góry i po lewej stronie tekstu do π/2 w prawo i w dolnej części tekstu. Te wartości z zakresu nie jest wizualnie zadowalające, więc ich zostały zredukowane przez pomnożenie przez wartość 0,75. (Spróbuj kodu bez te dostosowania. Tekst staje się zbyt zasłoniętej na północ i południowo Kijki i zbyt alokowania na stronie). Trójwymiarowy współrzędnych kulistego są konwertowane na dwuwymiarowa `x` i `y` współrzędne przez standardowe formuły.
+Funkcja transformacji najpierw oblicza dwie wartości o nazwie `longitude` i `latitude` zakresu od – π/2 u góry i po lewej stronie tekstu do π/2 w prawo i w dolnej części tekstu. Zakres te wartości nie jest wizualnie zadowalające, więc one zostały zredukowane przez pomnożenie przez wartość 0,75. (Wypróbuj kod bez te dostosowania. Tekst staje się zbyt zasłoniętej północnej i południowo-biegunów i zbyt alokowania elastycznego na stronie). Te trójwymiarowej kulistego współrzędne są konwertowane do dwuwymiarową `x` i `y` współrzędne przez standardowe formuły.
 
-Nowa ścieżka jest przechowywana jako pola. `PaintSurface` Obsługi jedynie trzeba Wyśrodkowanie i skalować ścieżki do jego wyświetlenia na ekranie:
+Nowa ścieżka są przechowywane jako pole. `PaintSurface` Obsługi jedynie musi Centrum i skalować ścieżki, aby wyświetlić go na ekranie:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -506,9 +506,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Jest to metoda bardzo elastyczne. Jeśli tablica efekty ścieżki opisane w [ **efekty ścieżki** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu dość nie obejmować coś mieli świadomość, należy włączyć to sposób wypełniania luk.
+Jest to bardzo różnorodnych technika. Jeśli tablica efekty ścieżek opisanego w [ **efekty ścieżek** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) artykułu dość nie obejmują coś uznało, należy włączyć to sposób, aby uzupełnić luki.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

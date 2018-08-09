@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030707"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615151"
 ---
 # <a name="introduction-to-ios-12"></a>Wprowadzenie do systemu iOS 12
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030707"
 > [!WARNING]
 > 12 pomocy technicznej platformy Xamarin dla systemu iOS jest obecnie w wersji zapoznawczej, co oznacza, że może ona zawierać błędy, nie jest pełną funkcją, i mogą ulec zmianie. Na użytek go tylko do eksperymentowania.
 
-> [!NOTE]
-> - Przegląd [wprowadzenie](get-started.md) wskazówki, aby uzyskać instrukcje na temat zacznij tworzyć aplikacje dla systemu iOS 12 za pomocą platformy Xamarin.
-> - Aby uzyskać więcej informacji, przeczytaj platformy Xamarin w wersji zapoznawczej [wersji wpis w blogu](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Ten dokument zawiera ogólny opis niektórych interfejsów API systemu iOS 12, dla których Xamarin (wersja zapoznawcza) wersja zawiera powiązania C#.
+
+Aby rozpocząć tworzenie aplikacji dla systemu iOS 12 za pomocą platformy Xamarin, Przyjrzyj się:
+
+- [— Wprowadzenie](get-started.md)
+- Program Xamarin w wersji zapoznawczej [wersji wpis w blogu](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ wprowadzono systemu iOS 11.3 [medyczna](https://www.apple.com/healthcare/health-
 
 W systemie iOS 12 iMessage aplikacje obsługują kontekstów prezentacji, dzięki czemu aplikacje do uruchamiania jako aplikację iMessage normalnym lub w kontekście zdjęcia lub wideo efekt.
 
+## <a name="vision-framework"></a>Struktury Vision
+
+Struktury Vision obejmuje wykrywanie twarzy ulepszone, który może wykrywać twarze w różnych położeniach. Żądania zmiany można teraz również wybrać określoną poprawkę algorytm framework wizji.
+
 ## <a name="related-links"></a>Linki pokrewne
 
 - [Get Ready dla systemu iOS 12 (Apple)](https://developer.apple.com/ios/)
 - [12 systemu iOS w wersji zapoznawczej (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin (wersja zapoznawcza) [wersji wpis w blogu](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin (wersja zapoznawcza) [wersji wpis w blogu](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

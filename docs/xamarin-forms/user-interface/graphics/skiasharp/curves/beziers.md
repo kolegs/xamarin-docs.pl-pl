@@ -1,36 +1,36 @@
 ---
-title: Trzy typy krzywych Beziera
-description: W tym artykule wyjaśniono, jak używać SkiaSharp do renderowania sześcienny kwadratową i conic krzywych Beziera w aplikacji platformy Xamarin.Forms i pokazuje to z przykładowym kodzie.
+title: Trzy rodzaje krzywych Beziera
+description: W tym artykule wyjaśniono, jak używać SkiaSharp do renderowania krzywych Beziera trzeciego stopnia, kwadratową i conic w aplikacjach Xamarin.Forms i przedstawia to z przykładowym kodem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 4a1b86035f9ce31b6e9fafac06cd0090a516b542
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0ad722f22cf5ed8dc06fdf0d1e063d285e2ddb2f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244009"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615343"
 ---
-# <a name="three-types-of-bzier-curves"></a>Trzy typy krzywych Beziera
+# <a name="three-types-of-bzier-curves"></a>Trzy rodzaje krzywych Beziera
 
-_Eksploruj sposób użycia SkiaSharp do renderowania sześcienny kwadratową i conic krzywych Beziera_
+_Zbadaj, jak na potrzeby skiasharp — krzywe Beziera trzeciego stopnia kwadratową i conic renderowania_
 
-Po Pierre Beziera (1910 — 1999), francuskim inżynierem motoryzacyjnych firmy Renault, przy krzywej dotyczące projektowania przy pomocy komputera organów samochodu nosi nazwę krzywej Beziera.
+Po Pierre Beziera (1910 — 1999), francuska engineer w firmie automotive Renault, która korzystała z krzywej projektu wspomaganej komputerowo treści samochodu nosi nazwę krzywej Beziera.
 
-Krzywe Beziera wiadomo, jest odpowiednie do interaktywnego projektowania: znajdują się również behaved &mdash; innymi słowy, nie ma singularities powodujących krzywej do nieskończonej lub niewygodna &mdash; i zwykle aesthetically czytelnych . Zawiera znak czcionek oparte na komputerze są zazwyczaj definiowane przy użyciu krzywych Beziera:
+Krzywych Beziera wiadomo, że dobrze nadaje się do interaktywności: są one również behaved &mdash; innymi słowy, nie ma singularities, które powodują krzywej nieskończoną lub niewygodne &mdash; i zwykle aesthetically czytelnych . Wskazano znaków czcionek oparte na komputerze zwykle są definiowane za pomocą krzywych Beziera:
 
 ![](beziers-images/beziersample.png "Przykładowe krzywej Beziera")
 
-Artykuł Wikipedia na [krzywej Beziera](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) zawiera niektóre przydatne informacje. Termin *krzywej Beziera* faktycznie odwołuje się do rodziny krzywych podobne. SkiaSharp obsługuje trzy rodzaje krzywych Beziera, nazywanych *sześcienny*, *kwadratową*i *conic*. Conic jest także znana jako *wymierna kwadratowe*.
+Artykułu w Wikipedii na [krzywej Beziera](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) zawiera pewne przydatne informacje. Termin *krzywej Beziera* faktycznie odwołuje się do rodziny krzywych podobne. Skiasharp — obsługuje trzy typy krzywych Beziera, nazywanych *trzeciego stopnia*, *drugiego stopnia*i *conic*. Conic jest także znana jako *wymierne umożliwiającej obliczanie kwadratów*.
 
-## <a name="the-cubic-bzier-curve"></a>Trzeciego krzywej Beziera
+## <a name="the-cubic-bzier-curve"></a>Krzywą Beziera trzeciego stopnia
 
-Cubic jest typem krzywej Beziera większość deweloperów traktować gdy podmiot krzywych Beziera.
+Wartości cubic jest typem, większość programistów traktować gdy podmiot krzywych Beziera krzywej Beziera.
 
-Można dodać krzywą trzeciego stopnia Beziera do `SKPath` przy użyciu [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metody z trzema `SKPoint` parametry, lub [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` parametry:
+Możesz dodać krzywą Beziera trzeciego stopnia do `SKPath` przy użyciu [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metody z trzema `SKPoint` parametrów lub [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` parametry:
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -38,16 +38,16 @@ public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
 public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Single y3)
 ```
 
-Krzywej rozpoczyna się od bieżącego punktu rozkładu. Zakończenie sześcienny krzywą Beziera jest zdefiniowane przez cztery punkty:
+Krzywa rozpoczyna się w bieżącym punkcie ROZKŁAD. Pełne krzywą Beziera trzeciego stopnia jest definiowany przez cztery punkty:
 
-- Uruchom punkt: bieżącego punktu w rozkład, lub (0, 0), jeśli `MoveTo` nie została wywołana.
+- punkt początkowy: bieżący punkt w rozkład, lub (0, 0), jeśli `MoveTo` nie została wywołana.
 - pierwszy punkt kontrolny: `point1` w `CubicTo` wywołania
 - drugi punkt kontrolny: `point2` w `CubicTo` wywołania
 - punkt końcowy: `point3` w `CubicTo` wywołania
 
-Wynikowe krzywej zaczyna się od punktu początkowego i kończy się w punkcie końcowym. Krzywej generalnie nie przechodzi przez punkty kontrolne dwóch; Zamiast tego funkcjonują dużo pól podobnego do ściągnięcia krzywej do nich.
+Wynikowe krzywej rozpoczyna się od punktu początkowego i kończy się w punkcie końcowym. Krzywa ogólnie nie przechodzi przez punkty kontrolne dwóch; Zamiast tego działają dużo pól podobnego do ściągania krzywej do nich.
 
-Aby uzyskać pewne pojęcie sześcienny krzywej Beziera najlepiej przez eksperymenty. To jest celem **krzywej Beziera** strony, która jest pochodną `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) tworzy plik `SKCanvasView` i `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) plik CodeBehind tworzy cztery `TouchPoint` obiektów w jego konstruktora. `PaintSurface` Tworzy program obsługi zdarzeń `SKPath` do renderowania krzywej Beziera, oparte na czterech `TouchPoint` obiektów, a także pobiera kropkowanej stycznej wiersze z punktów kontrolnych do punktów końcowych:
+Najlepszym sposobem, aby można było uzyskać pewne pojęcie dla krzywej Beziera trzeciego stopnia jest eksperymentowanie w usłudze. To jest celem **krzywą Beziera** strony, która jest pochodną `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) plik `SKCanvasView` i `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) pliku związanego z kodem tworzy cztery `TouchPoint` obiektów w jego konstruktorze. `PaintSurface` Tworzy program obsługi zdarzeń `SKPath` do renderowania krzywej Beziera, oparte na cztery `TouchPoint` obiektów, a także rysuje kropkowana styczne z punktów kontrolnych do punktów końcowych:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -87,49 +87,49 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-W tym miejscu jest uruchomiona na wszystkich platformach trzy:
+W tym miejscu jest uruchomiona na wszystkich trzech platformach:
 
-[![](beziers-images/beziercurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")](beziers-images/beziercurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę krzywej Beziera")
+[![](beziers-images/beziercurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywą Beziera")](beziers-images/beziercurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę krzywą Beziera")
 
-Matematycznie krzywa jest wielomianu trzeciego stopnia. Krzywej co najwyżej przecina prostej na trzy punkty. W momencie rozpoczęcia krzywa jest zawsze stycznej, a w tym samym kierunku co prostej od początku wskaż pierwszy punkt kontrolny. W punkcie końcowym krzywa jest zawsze stycznej, a w tym samym kierunku co polecenie prostej z drugiego punktu końcowego.
+Matematycznych krzywa jest wielomianu trzeciego stopnia. Krzywa przecina prostej w trzech miejscach co najwyżej. W momencie rozpoczęcia krzywa jest zawsze stycznej, a w tym samym kierunku co linię prostą rysowaną od początku wskaż pierwszy punkt kontrolny. W punkcie końcowym krzywa jest zawsze stycznej, a w tym samym kierunku co polecenie linię prostą rysowaną od drugiego punktu końcowego.
 
-Trzeciego krzywej Beziera zawsze jest ograniczone przez jest Czworokąt wypukłych łączenie cztery punkty. Ta metoda jest wywoływana *wypukłych powłoki*. Jeśli punkty kontrolne znajduje się na prostej między początkowy i punkt końcowy, krzywej Beziera renderuje jako prostej. Ale krzywej mogą również przechodzić, jako trzeci zrzut ekranu przedstawia.
+Krzywą Beziera trzeciego stopnia zawsze jest ograniczone przez kwadratowe wypukłe, łączenie cztery punkty. Jest to nazywane *wypukłe kadłuba*. Jeśli punkty kontrolne znajduje się na prostej między początkowego i punktu końcowego, krzywej Beziera renderowany jako linia prosta. Ale krzywej mogą również przechodzić, tak jak pokazano na trzecie zrzut ekranu.
 
-Rozkład ścieżki może zawierać wiele połączonych sześcienny krzywych Beziera, ale połączenie między dwoma sześcienny krzywych Beziera będzie smooth, tylko wtedy, gdy colinear następujące trzy punkty (czyli znajduje się na prostej):
+Rozkład ścieżki może zawierać wiele połączonych krzywych Beziera trzeciego stopnia, ale połączenie między dwie krzywe Beziera trzeciego stopnia będzie smooth, tylko wtedy, gdy trzy następujące kwestie są colinear (czyli znajduje się na prostej):
 
 - drugi punkt kontrolny krzywej pierwszy
-- punkt końcowy pierwszego krzywej, która jest również punkt początkowy krzywej drugi
-- pierwszy punkt kontrolny krzywej drugi
+- punkt końcowy krzywej pierwszy, która jest również punkt początkowy, drugi krzywej
+- pierwszy punkt kontrolny krzywej drugiego
 
-W artykule na [ **danych ścieżki SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) dowiesz się możliwość jej obsługi ułatwiają definicji smooth połączonych krzywych Beziera.
+W następnym artykule na [ **dane ścieżki SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) odkryjesz funkcji do jej obsługi ułatwiają realizację definicji smooth połączonych krzywych Beziera.
 
-Czasami jest to użyteczne informacje podstawowej równania parametryczne, które renderowania sześcienny krzywej Beziera. Aby uzyskać *t* od 0 do 1, parametrycznych równania są następujące:
+Czasami jest użyteczne informacje bazowego równania parametryczne, które renderują krzywą Beziera trzeciego stopnia. Aby uzyskać *t* od 0 do 1, równania parametryczne są następujące:
 
-x(t) = (1 – t) ³x₀ + 3t (1 – t) ²x₁ + 3t² (1 – t) x₂ + t³x₃
+x(t) = (1 — t) ³x₀ + z programu 3t (1 — t) ²x₁ + 3t² (1 — t) x₂ + t³x₃
 
-y(t) = (1 – t) ³y₀ + 3t (1 – t) ²y₁ + 3t² (1 – t) y₂ + t³y₃
+y(t) = (1 — t) ³y₀ + z programu 3t (1 — t) ²y₁ + 3t² (1 — t) y₂ + t³y₃
 
-Wykładnik najwyższy 3 potwierdza, że są one polynomials trzeciego stopnia. Łatwo sprawdzić, że w przypadku `t` jest równe 0, punkt znajduje się (x₀ y₀), która jest punkt początkowy i kiedy `t` jest równa 1, punkt znajduje się (x₃ y₃), który jest punktem końcowym. Pobliżu punkt początkowy (dla wartości niski `t`), pierwszy punkt kontrolny (x₁, y₁) ma silne efektu, a punkt końcowy w pobliżu (wysokiej wartości 't') drugi punkt kontrolny (x₂, y₂) ma wpływ silne.
+Wykładnik najwyższy 3 potwierdza, że są one polynomials trzeciego stopnia. Można łatwo sprawdzić, że w przypadku `t` jest równa 0, punktem jest (x₀ y₀), który jest punkt początkowy i kiedy `t` jest równa 1, punkt jest (x₃ y₃), który jest punktem końcowym. W pobliżu punkt początkowy (niskiej wartości `t`), pierwszy punkt kontrolny (x₁, y₁) ma silne efektu i niemal punktu końcowego (wysokiej wartości t ") drugi punkt kontrolny (x₂, y₂) jest stosowany efekt silne.
 
-## <a name="bzier-curve-approximation-to-circular-arcs"></a>Zbliżenia krzywej Beziera na łuki okręgu
+## <a name="bzier-curve-approximation-to-circular-arcs"></a>Przybliżenie krzywej Beziera na łuki okręgu
 
-Czasami jest to łatwe w użyciu krzywej Beziera na łuk okręgu renderowania. Sześcienny krzywej Beziera można przybliżona łuku okręgu bardzo dobrze maksymalnie koło kwartału tak cztery połączonych krzywych Beziera można zdefiniować całego okręgu. Zbliżenia opisanej w artykułach dwóch opublikowane ponad 25 lat temu:
+Czasami wygodne jest na potrzeby renderowania łuku okręgu krzywej Beziera. Krzywą Beziera trzeciego stopnia przybliżyć łuku okręgu bardzo dobrze maksymalnie ćwierć okręgu cztery połączonych krzywych Beziera umożliwiają definiowanie całego okrąg. W dwóch artykuły opublikowane ponad 25 lat temu omówiono takich wyników:
 
-> Tor Dokken, i inni "Dobrej zbliżenia okręgi krzywych Beziera łuku ciągłego" *komputera wspomagane geometrycznych Projekt 7* (1990), 33 41.
+> Tor Dokken, et al, "Dobre zbliżenia okręgów krzywych Beziera ciągłe krzywiznę" *komputera wspomagane geometrycznych Projekt 7* (1990), 33 41.
 
-> Jan Goldapp, "Zbliżenia Łuki okręgu przez sześcienny Polynomials" *komputera wspomagane geometrycznych Projekt 8* (1991), 227 238.
+> Michael Goldapp, "Zbliżenia Łuki okręgu przez trzeciego stopnia Polynomials" *komputera wspomagane geometrycznych Projekt 8* (1991), 227 238.
 
-Na poniższym diagramie przedstawiono cztery punkty etykietą `pto`, `pt1`, `pt2`, i `pt3` Definiowanie krzywej Beziera (zaznaczone na czerwono), który jest zbliżony łuku okręgu:
+Na poniższym diagramie przedstawiono cztery punkty etykietą `pto`, `pt1`, `pt2`, i `pt3` Definiowanie krzywej Beziera (pokazane na czerwono), zbliżonym łuku okręgu:
 
-![](beziers-images/bezierarc45.png "Zbliżenia łuku okręgu z krzywej Beziera")
+![](beziers-images/bezierarc45.png "Przybliżenie łuku okręgu z krzywej Beziera")
 
-Wiersze z punktu początkowego i końcowego do punktów kontrolnych są tangens okręgu i krzywej Beziera i mają długość *L*. Pierwszego artykułu wymienionych powyżej wskazuje, że najważniejsze krzywej Beziera przybliża łuku okręgu podczas tej długości *L* jest obliczane w następujący sposób:
+Wiersze z początkowy i punkt końcowy do punkty kontrolne są tangens koła i krzywej Beziera i mają długość *L*. Pierwszego artykułu wymienionych powyżej wskazuje, że najlepsze krzywej Beziera przybliża łuku okręgu podczas tak długo *L* jest obliczana w następujący sposób:
 
-L = 4 x tan(α / 4) / 3
+G = 4 x tan(α / 4) / 3
 
-Na ilustracji przedstawiono pod kątem 45 stopni, dlatego L równa 0.265. W kodzie ta wartość będzie mnożona przez żądaną promień okręgu.
+Na ilustracji przedstawiono pod kątem 45 stopni, dlatego L równa 0.265. W kodzie ta wartość będzie mnożona przez żądaną promień koła.
 
-**Łuku okręgu krzywej Beziera** strony można wypróbować Definiowanie krzywej Beziera na łuk okręgu kątów zakresu do 180 stopni w przybliżeniu. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) tworzy plik `SKCanvasView` i `Slider` wybierania kąta. `PaintSurface` Obsługi zdarzeń w [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) plik CodeBehind używa transformacji ustawioną na środku kanwy punkt (0, 0). Rysowanie okręgu skupia się na prowadzące do porównania, a następnie oblicza punkty kontrolny krzywej Beziera:
+**Łuku okręgu krzywej Beziera** strony można eksperymentować, definiując krzywej Beziera zbliżenie łuku okręgu kątów wynik może mieć maksymalnie 180 stopni. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) plik `SKCanvasView` i `Slider` służąca do wybierania kąta. `PaintSurface` Programu obsługi zdarzeń w [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) pliku związanego z kodem używa transformacji, aby ustawić punkt (0, 0) w środku kanwy. Rysuje okrąg tematyka koncentruje się na prowadzące do porównania, a następnie oblicza punktów kontrolnych dwóch dla krzywej Beziera:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,21 +203,21 @@ float Magnitude(SKPoint v)
 
 ```
 
-Punkt początkowy i końcowy (`point0` i `point3`) są obliczane w zależności od normalnego równania parametrycznych okręgu. Ponieważ okręgu skupia się na (0, 0), punkty te mogą także traktowane jako wektory promieniowego od środka okręgu do obwodu. Punkty kontrolne są w wierszach stycznych kółko, dzięki czemu są one prostopadle do tych promieniowego wektory. Wektor pod kątem prostym jest po prostu oryginalnego wektora z współrzędne X i Y miejscami i jeden z nich wprowadzone ujemna.
+Początkowy i punkt końcowy (`point0` i `point3`) są obliczane w oparciu o normalnym równania parametryczne koła. Ponieważ koła skupia się na (0, 0), te punkty mogą również być traktowane jako promieniowego wektorów od środka okręgu do obwodu. Punkty kontrolne są w wierszach, stycznych do okrąg, dzięki czemu można je pod kątem prostym do tych wektorów promieniowego. Wektor pod kątem prostym jest po prostu oryginalnego wektora za pomocą współrzędnych X i Y zamienione i jeden z nich wprowadzone ujemna.
 
-Oto działająca na platformach trzy, z trzema różnymi kątami program:
+W tym miejscu jest uruchomiony na trzech platformach, z trzema różnymi kątami program:
 
 [![](beziers-images/beziercirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")](beziers-images/beziercirculararc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę łuku okręgu krzywej Beziera")
 
-Należy dokładnie przejrzeć trzeci zrzut ekranu i zobaczysz, że krzywej Beziera będzie szczególnie odbiega od Półkolista, gdy kąt jest 180 stopni, ale ekranu dla systemu iOS pokazuje, że prawdopodobnie dopasowania koło kwartału tylko drobne kąt wynosi 90 stopni.
+Przyjrzyj się bliżej trzeci zrzut ekranu, a zobaczysz, że krzywej Beziera będzie przede wszystkim odbiega od promieniu, kąt ma wartość 180 stopni, kiedy ekran dla systemu iOS pokazuje, że wydaje się, aby obejmował okrąg kwartału, po prostu dobrym rozwiązaniem kąta wynosi 90 stopni.
 
-Obliczanie współrzędne punktów kontrolnych dwóch jest dość łatwe, gdy kółko kwartału jest orientacji w następujący sposób:
+Obliczanie współrzędne punktów kontrolnych dwóch jest całkiem proste, gdy ćwierć okręgu jest ustawiony w następujący sposób:
 
-![](beziers-images/bezierarc90.png "Zbliżenia kwartału koło z krzywej Beziera")
+![](beziers-images/bezierarc90.png "Przybliżenie ćwierć okręgu z krzywej Beziera")
 
-Jeśli promień okręgu wynosi 100, następnie *L* jest 55 i która jest liczbą łatwe do zapamiętania.
+Jeśli promień koła wynosi 100, następnie *L* jest 55 i który jest liczbą łatwe do zapamiętania.
 
-**Squaring okręgu** cyfrę koło kwadrat animuje strony. Okręgu jest w przybliżeniu cztery krzywych Beziera których współrzędne są wyświetlane w pierwszej kolumnie tej definicji tablicy w [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) klasy:
+**Squaring koła** strony animuje rysunek między kwadratu i okrąg. Koło jest w przybliżeniu za cztery krzywych Beziera, którego współrzędne są wyświetlane w pierwszej kolumnie tę definicję tablicy w [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) klasy:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -242,9 +242,9 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-Druga kolumna zawiera współrzędne cztery krzywych Beziera definiujące kwadratowy, w których obszar około jest taka sama jak obszaru okręgu. (Rysowania kwadrat z *dokładnie* obszar jako danego koło jest klasycznego przesyłał geometrycznych problemu [squaring okręgu](https://en.wikipedia.org/wiki/Squaring_the_circle).) Do renderowania kwadrat za pomocą krzywych Beziera, punktów kontrolnych dwóch dla każdej krzywej są takie same, i są colinear z punktu początkowego i końcowego, więc krzywej Beziera jest renderowane jako prostej.
+Druga kolumna zawiera współrzędne cztery krzywych Beziera, które definiują kwadratowych, w których obszar około jest taka sama jak pole koła. (Rysunek kwadrat z *dokładnie* obszar jako okrąg danego to klasyczne przesyłał geometrycznych problem [squaring koła](https://en.wikipedia.org/wiki/Squaring_the_circle).) Renderowania kwadrat za pomocą krzywych Beziera, punktów kontrolnych dwóch dla każdego krzywej są takie same, i są colinear za pomocą początkowego i punktu końcowego, więc krzywej Beziera jest renderowany jako linię prostą.
 
-Trzecia kolumna tablicy jest interpolowane wartości dla animacji. Strona ustawia czasomierza dla 16 MS i `PaintSurface` obsługi jest wywołana w tym szybkość:
+Trzecia kolumna tablicy jest interpolowane wartości dla animacji. Strony ustawia czasomierz 16 milisekund i `PaintSurface` program obsługi jest wywoływany po tym kursie:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -287,13 +287,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Punkty są interpolowane na podstawie wartości sinusoidally OSCYLUJĄCA `t`. Interpolowane punkty są następnie używane do utworzenia serii cztery połączonych krzywych Beziera. Oto animacji działająca na platformach trzy, wskaźnik postępu z okręgu do kwadratu:
+Punkty są interpolowane na podstawie wartości sinusoidally OSCYLUJĄCA `t`. Interpolowane punkty są następnie używane do konstruowania serię czterech połączonych krzywych Beziera. Oto animacji działających na trzech platformach, pokazujący postęp okrąg kwadrat:
 
-[![](beziers-images/squaringthecircle-small.png "Potrójna zrzut ekranu przedstawiający Squaring strony koło")](beziers-images/squaringthecircle-large.png#lightbox "Potrójna zrzut ekranu przedstawiający Squaring strony okręgu")
+[![](beziers-images/squaringthecircle-small.png "Potrójna zrzut ekranu przedstawiający Squaring strony okrąg")](beziers-images/squaringthecircle-large.png#lightbox "Potrójna zrzut ekranu przedstawiający Squaring strony okręgu")
 
-Takie animacji byłoby możliwe bez krzywych algorithmically wystarczająco elastyczny, aby być renderowane jako zarówno proste, jak i łuki okręgu.
+Takie animacji byłoby możliwe bez krzywych algorithmically wystarczająco elastyczny, aby być renderowana jako Łuki okręgu i proste.
 
-**Nieskończoności Beziera** strony korzysta również możliwość przybliżona łuku okręgu krzywej Beziera. Oto `PaintSurface` programu obsługi [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) klasy:
+**Nieskończoności Beziera** strony wykorzystuje także możliwość określenie w przybliżeniu łuku okręgu krzywej Beziera. Oto `PaintSurface` programu obsługi z [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) klasy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -334,23 +334,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Może to być dobry wykonywania do wykreślenia tych współrzędnych na papier, aby zobaczyć, w jaki sposób są powiązane. Znak nieskończoności skupia się na punkt (0, 0), a dwie pętle ma środkami (–150, 0) i (150, 0) i promienie 100. W serii `CubicTo` polecenia, można zobaczyć X współrzędne punktów kontrolnych wykonywania na wartości –95 i –205 (te wartości są –150 plus lub minus 55), 205 i 95 (150 plus lub minus 55), a także 250 i –250 do prawej i lewej stronie. Jedynym wyjątkiem jest podczas logowania nieskończoności przecina w Centrum. W takim przypadku punkty kontrolne mają współrzędne z połączeniem 50 i – 50, porządkowanie krzywej w środku.
+Może być wspaniałe do wykreślenia te współrzędne na papierze, aby zobaczyć, jak są ze sobą powiązane. Znak nieskończoności skupia się wokół punktu (0, 0), a dwa pętli ma centra (–150, 0) i (150, 0) i promienie 100. W serii `CubicTo` polecenia, możesz zobaczyć X współrzędne punktów kontrolnych, tworzenia wartości –95 i –205 (te wartości są –150 plus lub minus 55), 205 i 95 (150 plus lub minus 55), a także 250 i –250 do prawej i lewej stronie. Jedynym wyjątkiem jest, gdy znak nieskończoności przecina w Centrum. W takim przypadku punkty kontrolne mają współrzędnych przy użyciu kombinacji 50 i – 50, porządkowanie krzywej w pobliżu środka.
 
-W tym miejscu jest znak nieskończoności na wszystkich platformach trzy:
+Oto logowania nieskończoność na wszystkich trzech platformach:
 
 [![](beziers-images/bezierinfinity-small.png "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")](beziers-images/bezierinfinity-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę nieskończoności Beziera")
 
-Jest nieco łatwiejsze do Centrum niż znak nieskończoności renderowana przez **nieskończoności łuk** strony z [ **trzech sposobów, aby narysować łuk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) artykułu.
+Jest nieco gładsze kierunku środka znak nieskończoności renderowany przez **nieskończoności łuk** strony [ **trzy sposoby narysowania łuku** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) artykułu.
 
-## <a name="the-quadratic-bzier-curve"></a>Kwadratową krzywej Beziera
+## <a name="the-quadratic-bzier-curve"></a>Krzywą Beziera drugiego stopnia
 
-Kwadratową krzywej Beziera ma punkt kontrolny tylko jeden i krzywej jest definiowana za pomocą trzech punktów: punkt początkowy, punkt kontrolny i punktu końcowego. Parametrycznych równania są bardzo podobne do trzeciego krzywej Beziera, z wyjątkiem tego, że najwyższy wykładnik jest 2, tak aby krzywą kwadratową wielomianu:
+Krzywą Beziera drugiego stopnia ma punkt kontrolny tylko jeden, a krzywej jest definiowany przez trzech punktów: punkt początkowy, punkt kontrolny i punktu końcowego. Równania parametryczne są bardzo podobne do krzywej Beziera trzeciego stopnia, z tą różnicą, że wykładnik najwyższy wynosi 2, dlatego krzywą kwadratową wielomianu:
 
-x(t) = (1 – t) ²x₀ + 2t (1 – t) x₁ + t²x₂
+x(t) = (1 — t) ²x₀ + 2t (1 — t) x₁ + t²x₂
 
-y(t) = (1 – t) ²y₀ + 2t (1 – t) y₁ + t²y₂
+y(t) = (1 — t) ²y₀ + 2t (1 — t) y₁ + t²y₂
 
-Aby dodać krzywą kwadratową Beziera do ścieżki, użyj [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metody lub [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` współrzędne:
+Aby dodać krzywą Beziera drugiego stopnia do ścieżki, użyj [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metody lub [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` współrzędnych:
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -358,9 +358,9 @@ public void QuadTo (SKPoint point1, SKPoint point2)
 public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 ```
 
-Metody dodać krzywą z bieżącej pozycji do `point2` z `point1` jako punkt kontrolny.
+Metody dodać krzywą od aktualnej pozycji, aby `point2` z `point1` jako punkt kontrolny.
 
-Możesz eksperymentować z kwadratową krzywych Beziera z **było dodać krzywą kwadratową** strony, która jest bardzo podobny do **krzywej Beziera** strony, lecz ma ona tylko trzy punkty touch. Oto `PaintSurface` obsługi w [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) pliku CodeBehind:
+Możesz eksperymentować z drugiego stopnia krzywych Beziera z **krzywą kwadratową** strony, która jest bardzo podobny do **krzywą Beziera** strony, ale ma ona punkty dotykowe: tylko trzy. Oto `PaintSurface` obsługi w [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) pliku związanego z kodem:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -399,35 +399,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-I w tym miejscu jest uruchomiona na wszystkich platformach trzy:
+A tutaj jest uruchomiona na wszystkich trzech platformach:
 
-[![](beziers-images/quadraticcurve-small.png "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")](beziers-images/quadraticcurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę było dodać krzywą kwadratową")
+[![](beziers-images/quadraticcurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywą kwadratową")](beziers-images/quadraticcurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę krzywą kwadratową")
 
-Wiersze przerywana tangens na krzywą na punkt początkowy i punkt końcowy oraz że spełniają na punkt kontrolny.
+Linii kropkowanej są tangens na krzywą na punkt początkowy i punkt końcowy, a końców punkt kontrolny.
 
-Kwadratową Beziera jest prawidłowa, jeśli potrzebujesz krzywą ogólny kształt, ale wolisz wygodę punkt kontrolny tylko jeden zamiast dwóch. Kwadratową Beziera renderuje wydajniej żadnych innych krzywej, dlatego ona jest używana wewnętrznie w Skia do renderowania eliptycznej łuków.
+Beziera drugiego stopnia jest dobre, jeśli potrzebujesz krzywej ogólny kształt, ale wolisz wygodę punkt kontrolny tylko jeden zamiast dwóch. Beziera drugiego stopnia renderuje efektywniej niż wszystkie inne krzywej, dlatego jest ono używane wewnętrznie w Skia do renderowania eliptyczne Łuki.
 
-Jednak kształt kwadratową krzywej Beziera nie jest eliptycznej, dlatego wiele Béziers kwadratową są wymagane do przybliżonego określenia łuku. Kwadratową Beziera zamiast tego jest segmentem parabola.
+Kształt krzywą Beziera drugiego stopnia nie jest jednak elipsy, dlatego wiele Béziers drugiego stopnia jest konieczne określenie w przybliżeniu łuk eliptyczny. Beziera drugiego stopnia zamiast tego jest segment parabola.
 
 ## <a name="the-conic-bzier-curve"></a>Conic krzywej Beziera
 
-Conic krzywej Beziera &mdash; znanej także jako wymierna kwadratową krzywej Beziera &mdash; jest stosunkowo niedawne dodanie do rodziny krzywych Beziera. Podobnie jak kwadratową krzywej Beziera wymierna kwadratową krzywej Beziera obejmuje punkt początkowy punkt końcowy i punkt kontrolny jeden. Ale wymaga wymierna kwadratową krzywej Beziera *wagi* wartość. Jest to *wymierna* kwadratową, ponieważ parametrycznych formuły wymagają wskaźników.
+Conic krzywej Beziera &mdash; znany także jako wymierne drugiego stopnia krzywej Beziera &mdash; jest stosunkowo ostatnio dodana do rodziny krzywych Beziera. Podobnie jak krzywą Beziera drugiego stopnia wymierne krzywą Beziera drugiego stopnia obejmuje punkt początkowy punkt końcowy i jeden punkt. Ale wymaga wykonania wymierne krzywą Beziera drugiego stopnia *wagi* wartość. Jest on nazywany *wymierne* drugiego stopnia, ponieważ parametrycznych formuły obejmują wskaźniki.
 
-Parametrycznych równania X i Y to współczynnik, które współużytkują tego samego denominator. Oto równanie denominator dla *t* zakresu od 0 do 1 i wartość wagi *w*:
+Równania parametryczne X i Y są wskaźniki, które współużytkują ten sam mianownik. Oto równanie mianownik dla *t* zakresu od 0 do 1 i wartość wagi *w*:
 
-d(t) = (1 – t) ² + 2wt(1 – t) + t²
+d(t) = (1 — t) ² + 2wt(1 – t) + t²
 
-Teoretycznie wymierna kwadratowe może obejmować trzech oddzielnych wag, po jednej dla każdego z trzech warunków, ale może zostać uproszczona do tylko jednej wartości wagi na bliski termin.
+Teoretycznie wymierne umożliwiającej obliczanie kwadratów może obejmować trzech oddzielnych wag, jednej dla każdego z trzech warunków, ale może być uproszczone do tylko jednej wartości wagi na bliski termin.
 
-Parametrycznych równania współrzędne X i Y są podobne do wskaźnika równania kwadratową Beziera, z tą różnicą, że określenie bliski obejmuje również wartość wagi, a wyrażenie jest podzielona przez dzielnik:
+Równania parametryczne, dla współrzędnych X i Y są podobne do równania parametryczne Beziera drugiego stopnia, z tą różnicą, że określenie bliski obejmuje również wartość wagi, a wyrażenie jest dzielona przez mianownik:
 
-x(t) = ((1 – t) ²x₀ + 2wt (1 – t) x₁ + t²x₂)) ÷ d(t)
+x(t) = ((1 – t) ²x₀ + 2wt (1 — t) x₁ + t²x₂)) ÷ d(t)
 
-y(t) = ((1 – t) ²y₀ + 2wt (1 – t) y₁ + t²y₂)) ÷ d(t)
+y(t) = ((1 – t) ²y₀ + 2wt (1 — t) y₁ + t²y₂)) ÷ d(t)
 
-Wymierna kwadratową krzywych Beziera są również nazywane *conics* ponieważ dokładnie reprezentują segmentów dowolnej sekcji conic &mdash; hiperbole, parabole elipsy i kółka.
+Wymierne krzywych Beziera drugiego stopnia są również nazywane *conics* ponieważ mogą one reprezentować dokładnie segmentów dowolną sekcję conic &mdash; hiperbole, parabole, wielokropek i koła.
 
-Aby dodać krzywą kwadratową Beziera wymierna do ścieżki, użyj [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metody lub [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` współrzędne:
+Aby dodać wymierne krzywą Beziera drugiego stopnia do ścieżki, użyj [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metody lub [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) przeciążenia z oddzielnym `x` i `y` współrzędnych:
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -435,9 +435,9 @@ public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
 public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 ```
 
-Zwróć uwagę, ostatecznych `weight` parametru.
+Zwróć uwagę, końcowe `weight` parametru.
 
-**Conic krzywej** strony można wypróbować te krzywych. `ConicCurvePage` Pochodną klasy `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) tworzy plik `Slider` wybierz wartość wagi z zakresu od -2 i 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) plik CodeBehind tworzy trzy `TouchPoint` obiekty i `PaintSurface` obsługi po prostu renderuje wynikowe krzywej liniami stycznej do formantu punkty:
+**Conic krzywej** strony można eksperymentować z tymi krzywych. `ConicCurvePage` Klasa pochodzi od `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) plik `Slider` zaznacz wartość wagi z zakresu od -2 i 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) pliku związanego z kodem tworzy trzy `TouchPoint` obiektów, a `PaintSurface` obsługi po prostu renderuje wynikowe krzywej przy użyciu funkcji tangens wierszy do kontrolki punkty:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -477,21 +477,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-W tym miejscu jest uruchomiona na wszystkich platformach trzy:
+W tym miejscu jest uruchomiona na wszystkich trzech platformach:
 
-[![](beziers-images/coniccurve-small.png "Potrójna zrzut ekranu przedstawiający stronę krzywej Conic")](beziers-images/coniccurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Conic krzywej")
+[![](beziers-images/coniccurve-small.png "Potrójna zrzut ekranu przedstawiający stronę Conic krzywej")](beziers-images/coniccurve-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Conic krzywej")
 
-Jak widać, punkt kontrolny jest prawdopodobnie ściągnięcia krzywej kierunku więcej, kiedy waga jest wyższy. Waga wynosi zero, krzywej staje się linii prostej punkt początkowy do punktu końcowego.
+Jak widać, punkt kontrolny wydaje się, aby ściągnąć krzywej kierunku więcej, kiedy waga jest wyższy. Waga wynosi zero, krzywej staje się linię prostą rysowaną od punktu początkowego do punktu końcowego.
 
-Teoretycznie są dozwolone wag ujemna i spowodować krzywej zakrzywia *optymalizacji* z punkt kontrolny. Jednak przeprowadzi -1 lub poniżej Przyczyna denominator parametrycznych dolne do ujemna dla określonej wartości *t*. Prawdopodobnie z tego powodu wagi ujemna są ignorowane w `ConicTo` metody. **Conic krzywej** program umożliwia ustawienie wagi ujemna, ale jak widać Eksperymentując masy ujemnej mają ten sam efekt co wagę zero i prostej do renderowania.
+Teoretycznie wagi ujemne są dozwolone i spowodować krzywej do zakrzywia *natychmiast* z punkt kontrolny. Jednak przeprowadzi -1 lub pod Przyczyna mianownik w równania parametryczne do ujemna określonej wartości *t*. Prawdopodobnie z tego powodu wagi ujemne są ignorowane w `ConicTo` metody. **Conic krzywej** program pozwala ustawić ujemnych wagi, ale jak widać, eksperymentując ujemna wagi mają taki sam skutek jak wagę zero i prostej do renderowania.
 
-Jest bardzo proste pochodzić punkt kontrolny i wagi do użycia `ConicTo` metodę, by narysować łuku okręgu do (z wyjątkiem) Półkolista. Na poniższym diagramie stycznej wiersze z punktu początkowego i końcowego spełnia na punkt kontrolny.
+Jest bardzo proste do wyprowadzenia punkt kontrolny i waga do użycia `ConicTo` metodę, aby narysować łuku okręgu do (z wyjątkiem) promieniu. Na poniższym diagramie styczne od początkowego i punktu końcowego spełnia na punkt kontrolny.
 
 ![](beziers-images/conicarc.png "Renderowanie conic łuk łuk okręgu")
 
-Można określić odległość punkt kontrolny od środka okręgu trygonometryczne: jest radius rozdzielonych cosinus kąta połowa α okręgu. Rysowanie łuku okręgu między początkową i punktów końcowych, należy ustawić wagę do tego samego cosinus połowa kąta. Należy zauważyć, że jeśli kąt jest 180 stopni, w następnie stycznej wierszy nigdy nie spełnia a waga wynosi zero. Jednak dla kątów mniej niż 180 stopni, obliczenia działa prawidłowo.
+Trygonometryczne można użyć, aby określić odległość punkt kontrolny z Centrum koła: to promień koła podzielona przez cosinus kąta połowa α. Aby narysować łuku okręgu między początkowego i punktu końcowego, należy ustawić wagę tego cosinus tej samej połowa kąta. Zwróć uwagę, następnie, że jeśli kąt jest 180 stopni, nigdy nie spełniają styczne i wagi wynosi zero. Jednak dla kąty mniejsza niż 180 stopni, obliczenia, działa prawidłowo.
 
-**Conic łuku okręgu** strony pokazano to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) tworzy plik `Slider` wybierania kąta. `PaintSurface` Obsługi w [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) pliku CodeBehind oblicza punkt kontrolny i wagi:
+**Conic łuku okręgu** strona przedstawia to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) plik `Slider` służąca do wybierania kąta. `PaintSurface` Obsługi w [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) oblicza pliku związanego z kodem, punkt kontrolny i wagę:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -541,16 +541,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jak widać, nie ma żadnej visual różnicy między `ConicTo` ścieżka zaznaczone na czerwono i podstawowej okręgu wyświetlane dla odwołania:
+Jak widać, nie ma visual różnic między `ConicTo` ścieżki, pokazane na czerwono i podstawowych koła wyświetlane odwołania:
 
 [![](beziers-images/coniccirculararc-small.png "Potrójna zrzut ekranu przedstawiający stronę Conic łuku okręgu")](beziers-images/coniccirculararc-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę Conic łuk okręgu")
 
-Ale kąt 180 stopni i matematyce kończyć się niepowodzeniem.
+Ale Ustaw kąt 180 stopni i matematykę kończyć się niepowodzeniem.
 
-Niefortunne jest w tym przypadku który `ConicTo` nie obsługuje ujemna wag, ponieważ teoretycznie (oparte na parametrycznych równania) można wykonać z innym wywołaniu okręgu `ConicTo` z tego samego punkty, ale wartość ujemną wagi. Dzięki temu tworzenie całych koło z tylko dwa `ConicTo` krzywych oparte na dowolny kąt między (z wyjątkiem) zero stopni do 180 stopni.
+Niefortunne jest w tym przypadku, `ConicTo` nie obsługuje ujemnych wagi, ponieważ teoretycznie (oparte na równania parametryczne) można wykonać koło z innym wywołaniu `ConicTo` przy użyciu tych samych punktów, ale wartość ujemną wagi. To umożliwia utworzenie całego okrąg tylko dwa `ConicTo` krzywych oparte na każdego kąta między (z wyjątkiem) zero stopnie oraz 180 stopni.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Interfejsy API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
