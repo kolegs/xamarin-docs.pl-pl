@@ -46,7 +46,7 @@ W tym przykładzie przyjęto założenie, że nazwa projektu Xamarin.iOS jest `i
 
 9.  Usuń pliki, które z `.ipa`. Możesz przenieść je do Kosza za pomocą wyszukiwania, lub usuń je w wiersza polecenia przy użyciu `Terminal.app`. Aby wyświetlić zawartość `Payload/iPhone` pliku w programie Finder kombinacji Control + kliknięcie pliku, a następnie wybierz pozycję **Pokaż zawartość pakietu**.
 
-10.  Przy użyciu tej samej metody ogólne, tak jak w kroku 3, Znajdź plik dziennika w ramach `~/Library/Logs/Xamarin/MonoTouchVS/` zawierający nazwę projektu i `generated session id` w nazwie: ![ ] (modify-ipa-images/build-log.png "odszukaj w dzienniku kompilacji projektu w programie Finder")
+10.  Przy użyciu tej samej metody ogólne, tak jak w kroku 3, Znajdź plik dziennika w ramach `~/Library/Logs/Xamarin/MonoTouchVS/` zawierający nazwę projektu i `generated session id` w nazwie: ![](modify-ipa-images/build-log.png "odszukaj w dzienniku kompilacji projektu w programie Finder")
 
 11.  Otwieranie na przykład w dzienniku kompilacji w kroku 10, klikając go dwukrotnie.
 
