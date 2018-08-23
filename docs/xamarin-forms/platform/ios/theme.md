@@ -112,7 +112,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 Te przechwytywania ekranu dwóch wyświetlić domyślny `UISwitch` kontrolki z lewej strony oraz dostosowaną wersję (ustawienie `Appearance`) po prawej stronie w [przykładowe Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "Domyślny kolor UISwitch") ![ ] (theme-images/switch-custom.png "dostosowany kolor UISwitch")
+![](theme-images/switch-default.png "Domyślny kolor UISwitch") ![](theme-images/switch-custom.png "dostosowany kolor UISwitch")
 
 ### <a name="other-controls"></a>Inne kontrolki
 

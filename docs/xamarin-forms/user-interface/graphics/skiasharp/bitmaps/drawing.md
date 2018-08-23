@@ -111,7 +111,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `PaintSurface` Obsługi powoduje wyświetlenie mapy bitowej wielokrotnie w wiersze i kolumny wyświetlania. Należy zauważyć, że `Clear` method in Class metoda `PaintSurface` program obsługi ma argument `SKColors.Aqua`, który kolory tła powierzchni ekranu:
 
-[![Witaj, mapy bitowej! ] (drawing-images/HelloBitmap.png "Witaj, mapy bitowej!")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Witaj, mapy bitowej! ](drawing-images/HelloBitmap.png "Witaj, mapy bitowej!")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 Wygląd Akwamaryna tła wykaże, że mapy bitowej jest przejrzysty, z wyjątkiem tekst.
 
