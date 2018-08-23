@@ -67,9 +67,9 @@ Następnej sekcji opisano sposób uzyskać certyfikat dystrybucji i profil inicj
 
 Alternatywnie jest możliwość żądania certyfikatu za pomocą okna dialogowego preferencji w środowisku Xcode. Aby to zrobić, wykonaj następujące czynności:
 
-1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Wybranie zespołu")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1.   Wybierz zespół, a następnie kliknij przycisk **zarządzanie certyfikatami...** : [![](ad-hoc-distribution-images/selectteam.png "Wybranie zespołu")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Następnie kliknij przycisk **plus (+)** i wybrać **iOS App Store**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "wybranie iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2.   Następnie kliknij przycisk **plus (+)** i wybrać **iOS App Store**: [![](ad-hoc-distribution-images/selectcert.png "wybranie iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,7 +91,7 @@ Jako wszystkie inne inicjowania obsługi profilu możesz utworzyć identyfikator
 
 Po utworzeniu wymagane składniki potrzebne do tworzenia profilu dystrybucji, wykonaj poniższe kroki, aby go utworzyć:
 
-1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej > dystrybucji**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "wybierz udostępniania > dystrybucji")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Powróć do portalu inicjowania obsługi administracyjnej firmy Apple i wybierz **inicjowania obsługi administracyjnej > dystrybucji**: [![](ad-hoc-distribution-images/distribute01.png "wybierz udostępniania > dystrybucji")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Kliknij przycisk **+** przycisk i wybierz typ profilu dystrybucji, który ma zostać utworzony jako **Ad Hoc**:
 
