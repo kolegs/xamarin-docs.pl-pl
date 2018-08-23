@@ -76,7 +76,7 @@ try {
 
 To dlatego unwinder stosu w języku Objective C nie może określić dotyczących zarządzanej `catch` klauzul i nie będzie `finally` klauzuli można wykonać.
 
-Jeśli w powyższym przykładzie kodu _jest_ skuteczne, to, że Objective-C ma metodę bycia powiadamianym o nieobsługiwanych wyjątków języka Objective-C, [ `NSSetUncaughtExceptionHandler` ] [ 2], która Xamarin.iOS i użyj Xamarin.Mac, a w tym momencie próbuje przekonwertować wszelkie wyjątki Objective-C zarządzanych wyjątków.
+Jeśli w powyższym przykładzie kodu _jest_ skuteczne, to, że Objective-C ma metodę bycia powiadamianym o nieobsługiwanych wyjątków języka Objective-C, [`NSSetUncaughtExceptionHandler`][2], która Xamarin.iOS i użyj Xamarin.Mac, a w tym momencie próbuje przekonwertować wszelkie wyjątki Objective-C zarządzanych wyjątków.
 
 ## <a name="scenarios"></a>Scenariusze
 
