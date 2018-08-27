@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/22/2017
 ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
 ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34786733"
