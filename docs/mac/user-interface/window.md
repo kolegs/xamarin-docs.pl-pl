@@ -9,7 +9,7 @@ ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
 ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34794075"
@@ -762,7 +762,7 @@ Aby dodać nowy Panel, wykonaj następujące czynności:
 5. Usuń istniejące okno i przeciągnij Panel z **inspektora biblioteki** w **Edytor interfejsu**: 
 
     [![](window-images/panels01.png "Usuwanie istniejącego okna")](window-images/panels01.png#lightbox)
-6. Utworzenie punktu zaczepienia panelu do **właścicielem pliku*-**okna*- **gniazda**: 
+6. Utworzenie punktu zaczepienia panelu do **właścicielem pliku*- **okna*- **gniazda**: 
 
     [![](window-images/panels02.png "Przeciąganie można przewodowo zapasowej panelu")](window-images/panels02.png#lightbox)
 7. Przełącz się do **inspektora tożsamości** i ustaw klasy panelu `DocumentPanel`: 
