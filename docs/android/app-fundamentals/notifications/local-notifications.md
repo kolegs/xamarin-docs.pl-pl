@@ -6,21 +6,21 @@ ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
+ms.date: 08/16/2018
 ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39514534"
 ---
+<a name="compatibility"></a>
+
 # <a name="local-notifications"></a>Powiadomienia lokalne
 
 _W tej sekcji pokazano, jak wdrożyć powiadomienia lokalne na platformie Xamarin.Android. Opisano różne elementy interfejsu użytkownika dla systemu Android powiadomienia, a w tym artykule omówiono interfejs API użytkownika związane z tworzeniem i wyświetlanie powiadomienie._
 
 ## <a name="local-notifications-overview"></a>Powiadomienia lokalne — Przegląd
-
-W tym temacie wyjaśniono, jak zaimplementować lokalnego powiadomienia w aplikacji platformy Xamarin.Android. Omówiono w nim z różnymi częściami usługi powiadomień systemu Android, wyjaśnia, style różnych powiadomień, które są dostępne dla deweloperów aplikacji i wprowadza niektóre z interfejsów API, które są używane do tworzenia i publikowania powiadomienia.
 
 Android zawiera dwa obszary kontrolowane przez system wyświetlanie ikony powiadomień i powiadomienia dotyczące użytkownika. Podczas publikowania powiadomienia wyświetlana jest ikona jego *obszaru powiadomień*, jak pokazano na poniższym zrzucie ekranu:
 
@@ -37,6 +37,9 @@ Powiadomień systemu android należy użyć dwóch typów układy:
 -   ***Układ rozwiniętej*** &ndash; format prezentacji, który będzie można rozszerzać na większy rozmiar, aby wyświetlić więcej informacji.
 
 Każdy z tych typów układu (i jak je tworzyć) zostało wyjaśnione w poniższych sekcjach.
+
+> [!NOTE]
+> Ten przewodnik koncentruje się na [interfejsów API NotificationCompat](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html) z [biblioteki obsługi systemu Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Te interfejsy API zapewni maksymalnie wstecznej zgodności dla systemu Android 4.0 (poziom interfejsu API 14).
 
 
 ### <a name="base-layout"></a>Układ podstawowy
@@ -104,17 +107,50 @@ System android obsługuje trzy style rozwiniętej układu dla pojedynczego zdarz
 
 [Poza podstawowe powiadomienie](#beyond-the-basic-notification) (w dalszej części tego artykułu) opisano sposób tworzenia *tekst Big*, *skrzynki odbiorczej*, i *obraz* powiadomienia.
 
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
+## <a name="notification-channels"></a>Kanały powiadomień
+
+Począwszy od systemu Android 8.0 (Oreo), można użyć *kanały powiadomień* funkcję, aby utworzyć użytkownika można dostosować kanał dla każdego typu powiadomienia, które mają być wyświetlane. Kanały powiadomień umożliwiać dla Ciebie powiadomień grupy tak, aby wszystkie powiadomienia opublikowane w usłudze załączniku kanału takie samo zachowanie. Na przykład Niewykluczone, że kanał powiadomień, która jest przeznaczona dla powiadomień, które wymagają natychmiastowej uwagi i oddzielny kanał "zapewniająca" używaną dla komunikatów informacyjnych.
+
+**YouTube** aplikacji, który został zainstalowany przy użyciu systemu Android Oreo zawiera dwie kategorie powiadomień: **pobieranie powiadomienia** i **ogólne powiadomienia**:
+
+[![Ekrany powiadomień usługi YouTube w systemie Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
+
+Każdy z tych kategorii odpowiada kanału powiadomień. Implementuje aplikację serwisu YouTube **pobieranie powiadomienia** kanału i **ogólne powiadomienia** kanału. Użytkownik może nacisnąć **pobieranie powiadomienia**, powoduje wyświetlenie na ekranie ustawień dla aplikacji Pobierz kanału powiadomień:
+
+[![Pobierz ekranie powiadomień dla aplikacji w usłudze YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
+
+Na tym ekranie, użytkownik może zmodyfikować zachowanie **Pobierz** powiadomień kanału, wykonując następujące czynności:
+
+-   Ustaw poziom ważności **pilne**, **wysokiej**, **średni**, lub **niski**, który konfiguruje poziom przerwania dźwięku i visual.
+
+-   Kropka powiadomień należy włączyć lub wyłączyć.
+
+-   Migające światło należy włączyć lub wyłączyć.
+
+-   Pokaż lub Ukryj powiadomienia na ekranie blokady.
+
+-   Zastąp **nie przeszkadzać** ustawienie.
+
+**Ogólne powiadomienia** kanał ma podobne ustawienia:
+
+[![Ogólne powiadomienia ekranu dla aplikacji w usłudze YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
+
+Zwróć uwagę, nie masz Pełna kontrola nad sposób kanałów powiadomień interakcji z użytkownikiem &ndash; użytkownik może modyfikować ustawienia dla dowolnego kanału powiadomień na urządzeniu, jak pokazano na zrzutach ekranu powyżej. Można jednak skonfigurować wartości domyślne, (jak zostaną opisane poniżej). Ponieważ te przykłady ilustrują, nowa funkcja kanały powiadomień umożliwia można umożliwić użytkownikom szczegółową kontrolę nad tym różnego rodzaju powiadomienia.
+
 
 ## <a name="notification-creation"></a>Tworzenie powiadomień
 
-Aby utworzyć powiadomienie w systemie Android, należy użyć [Notification.Builder](https://developer.xamarin.com/api/type/Android.App.Notification+Builder/) klasy. `Notification.Builder` wprowadzono w programie Android 3.0, aby uprościć tworzenie obiektów powiadomień. Aby utworzyć powiadomienia, które są zgodne ze starszymi wersjami systemu android, można użyć [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html) klasy zamiast `Notification.Builder` (zobacz [zgodności](#compatibility) później w tym temacie przeznaczonym dla więcej informacji o używaniu `NotificationCompat.Builder`).
-`Notification.Builder` udostępnia metody do ustawiania różne opcje w powiadomieniu, takich jak:
+Aby utworzyć powiadomienie w systemie Android, należy użyć [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder) klasy z [Xamarin.Android.Support.v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) pakietu NuGet. Ta klasa pozwala na tworzenie i publikowanie powiadomień w starszych wersjach systemu Android. Aby uzyskać więcej informacji o korzystaniu z `NotificationCompat.Builder`, zobacz [zgodności](#compatibility) w dalszej części tego tematu.
+
+`NotificationCompat.Builder` udostępnia metody do ustawiania różne opcje w powiadomieniu, takich jak:
 
 -   Zawartość, w tym tytuł, tekst komunikatu i ikonę powiadomienia.
 
 -   Styl powiadomień, takie jak *tekst Big*, *skrzynki odbiorczej*, lub *obraz* stylu.
 
--   Priorytet powiadomienia: minimum, niski, domyślnie wysoki lub maksymalną.
+-   Priorytet powiadomienia: minimum, niski, domyślnie wysoki lub maksymalną. W systemie Android 8.0 lub nowszym, priorytet jest ustawiany za pośrednictwem [ _kanału powiadomień_](#notification-channels).
 
 -   Widoczność powiadomień na ekranie blokady: public, private lub klucza tajnego.
 
@@ -122,18 +158,56 @@ Aby utworzyć powiadomienie w systemie Android, należy użyć [Notification.Bui
 
 -   Opcjonalne cel, który wskazuje działanie do uruchomienia po dotknięcie powiadomienia.
 
+-   Identyfikator kanału powiadomień, powiadomienie zostanie opublikowany na (system Android 8.0 lub nowszy).
+
 Po ustawieniu tych opcji w konstruktorze, musisz wygenerować obiekt powiadomień, który zawiera ustawienia. Publikowanie powiadomienia, polega na przekazaniu tego obiektu powiadomienia w celu *Menedżera powiadomień*. System android oferuje [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) klasy, która jest odpowiedzialna za publikowanie powiadomień i wyświetlania ich do użytkownika. Odwołanie do tej klasy można uzyskać z dowolnego kontekstu, takich jak działania lub usługi.
 
 
-### <a name="how-to-generate-a-notification"></a>Jak wygenerować powiadomienie
+### <a name="creating-a-notification-channel"></a>Tworzenie kanału powiadomień
+
+Aplikacje, które są uruchomione na system Android 8.0, należy utworzyć kanał powiadomień dla ich powiadomień. Kanału powiadomień wymaga trzy następujące informacje:
+
+* Ciąg Identyfikatora, który jest unikatowy dla pakietu, która będzie identyfikowała kanału.
+* Nazwa kanału, który będzie widoczny dla użytkownika.  Nazwa musi być od jednej do 40 znaków.
+* Ważność kanału.
+
+Aplikacje będą wymagały sprawdzić wersję systemu Android, które są uruchomione.
+Urządzenia z systemem w wersjach starszych niż system Android 8.0 nie powinien utworzyć kanał powiadomień. Poniższa metoda przedstawiono przykładowy sposób tworzenia kanału powiadomień w działaniu:
+
+```csharp
+void CreateNotificationChannel()
+{
+    if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+    {
+        // Notification channels are new in API 26 (and not a part of the
+        // support library). There is no need to create a notification
+        // channel on older versions of Android.
+        return;
+    }
+
+    var channelName = Resources.GetString(Resource.String.channel_name);
+    var channelDescription = GetString(Resource.String.channel_description);
+    var channel = new NotificationChannel(CHANNEL_ID, channelName, NotificationImportance.Default)
+                  {
+                      Description = channelDescription
+                  };
+
+    var notificationManager = (NotificationManager) GetSystemService(NotificationService);
+    notificationManager.CreateNotificationChannel(channel);
+}
+```
+
+Kanał powiadomień należy utworzyć na każdym razem, gdy działanie jest tworzony. Dla `CreateNotificationChannel` metody powinna być wywoływana `OnCreate` sposób działania.
+
+### <a name="creating-and-publishing-a-notification"></a>Tworzenie i publikowanie powiadomienie
 
 Aby wygenerować powiadomienie w systemie Android, wykonaj następujące kroki:
 
-1.  Utwórz wystąpienie `Notification.Builder` obiektu.
+1.  Utwórz wystąpienie `NotificationCompat.Builder` obiektu.
 
-2.  Wywołaj różnych metod na `Notification.Builder` obiektu, aby ustawić opcje powiadamiania.
+2.  Wywołaj różnych metod na `NotificationCompat.Builder` obiektu, aby ustawić opcje powiadamiania.
 
-3.  Wywołaj [kompilacji](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/) metody `Notification.Builder` obiektu do utworzenia wystąpienia obiektu powiadamiania.
+3.  Wywołaj [kompilacji](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/) metody `NotificationCompat.Builder` obiektu do utworzenia wystąpienia obiektu powiadamiania.
 
 4.  Wywołaj [powiadamiania](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/(System.Int32%2cAndroid.App.Notification)) metoda Menedżera powiadomień do opublikowania powiadomienia.
 
@@ -145,11 +219,11 @@ Należy podać co najmniej następujące informacje dotyczące każdego powiadom
 
 -   Tekst powiadomienia
 
-Poniższy przykład kodu ilustruje sposób użycia `Notification.Builder` do generowania podstawowe powiadomienie. Należy zauważyć, że `Notification.Builder` metody obsługują [tworzeniach łańcucha metody](http://en.wikipedia.org/wiki/Method_chaining); oznacza to, każda metoda zwraca obiekt konstruktora, aby można było używać wynik ostatniego wywołania metody do wywołania następnego wywołania metody:
+Poniższy przykład kodu ilustruje sposób użycia `NotificationCompat.Builder` do generowania podstawowe powiadomienie. Należy zauważyć, że `NotificationCompat.Builder` metody obsługują [tworzeniach łańcucha metody](http://en.wikipedia.org/wiki/Method_chaining); oznacza to, każda metoda zwraca obiekt konstruktora, aby można było używać wynik ostatniego wywołania metody do wywołania następnego wywołania metody:
 
 ```csharp
 // Instantiate the builder and set notification elements:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetSmallIcon (Resource.Drawable.ic_notification);
@@ -166,7 +240,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-W tym przykładzie nowy `Notification.Builder` obiektu o nazwie `builder` jest tworzone, tytuł i treść powiadomienia są ustawiane i ikonę powiadomienia są ładowane z **Resources/drawable/ic_notification.png**. Wywołanie konstruktora powiadomień `Build` metoda tworzy obiekt powiadomień przy użyciu tych ustawień. Następnym krokiem jest wywołanie `Notify` metoda Menedżera powiadomień. Aby zlokalizować program notification manager, należy wywołać `GetSystemService`, jak pokazano powyżej.
+W tym przykładzie nowy `NotificationCompat.Builder` obiektu o nazwie `builder` zostanie uruchomiony, oraz identyfikator kanału powiadomień ma być używany. Tytuł i treść powiadomienia są ustawiane i ikonę powiadomienia są ładowane z **Resources/drawable/ic_notification.png**. Wywołanie konstruktora powiadomień `Build` metoda tworzy obiekt powiadomień przy użyciu tych ustawień. Następnym krokiem jest wywołanie `Notify` metoda Menedżera powiadomień. Aby zlokalizować program notification manager, należy wywołać `GetSystemService`, jak pokazano powyżej.
 
 `Notify` Metoda przyjmuje dwa parametry: identyfikator powiadomień oraz obiektu powiadamiania. Identyfikator powiadomienia jest unikatowa liczba całkowita, która identyfikuje powiadomienie do aplikacji. W tym przykładzie identyfikator powiadomień jest ustawiona na wartość zero (0); Jednak w przypadku aplikacji produkcyjnej należy podać unikatowy identyfikator każdego powiadomienia. Ponowne użycie poprzednich wartość identyfikatora w wywołaniu `Notify` powoduje, że ostatniego powiadomienia zostaną zastąpione.
 
@@ -188,7 +262,7 @@ Jeśli chcesz, aby Twoje powiadomienie, aby również odtwarzać dźwięk, możn
 
 ```csharp
 // Instantiate the notification builder and enable sound:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetDefaults (NotificationDefaults.Sound)
@@ -213,7 +287,7 @@ Alternatywnie można użyć dzwonek domyślne systemu dźwiękowego powiadomieni
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Ringtone));
 ```
 
-Po utworzeniu obiektu powiadamiania, jest możliwość ustawienia właściwości powiadomień w obiekcie powiadomień (zamiast konfigurować je z wyprzedzeniem za pomocą `Notification.Builder` metody). Na przykład, zamiast wywoływać metodę `SetDefaults` metodę umożliwiającą włączenie wibracje na powiadomienie, można bezpośrednio modyfikować Flaga bitowa powiadomienia [domyślnie](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/) właściwości:
+Po utworzeniu obiektu powiadamiania, jest możliwość ustawienia właściwości powiadomień w obiekcie powiadomień (zamiast konfigurować je z wyprzedzeniem za pomocą `NotificationCompat.Builder` metody). Na przykład, zamiast wywoływać metodę `SetDefaults` metodę umożliwiającą włączenie wibracje na powiadomienie, można bezpośrednio modyfikować Flaga bitowa powiadomienia [domyślnie](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/) właściwości:
 
 ```csharp
 // Build the notification:
@@ -229,7 +303,7 @@ W tym przykładzie powoduje urządzenia wibracje po opublikowaniu powiadomienia.
 
 ### <a name="updating-a-notification"></a>Aktualizowanie powiadomienie
 
-Jeśli chcesz zaktualizować zawartość powiadomienia po jej opublikowaniu, można ponownie użyć istniejącego `Notification.Builder` obiekt, aby utworzyć nowy obiekt powiadomień i opublikuj to powiadomienie o identyfikatorze ostatniego powiadomienia. Na przykład:
+Jeśli chcesz zaktualizować zawartość powiadomienia po jej opublikowaniu, można ponownie użyć istniejącego `NotificationCompat.Builder` obiekt, aby utworzyć nowy obiekt powiadomień i opublikuj to powiadomienie o identyfikatorze ostatniego powiadomienia. Na przykład:
 
 ```csharp
 // Update the existing notification builder content:
@@ -243,7 +317,7 @@ notification = builder.Build();
 notificationManager.Notify (notificationId, notification);
 ```
 
-W tym przykładzie istniejące `Notification.Builder` obiekt jest używany do utworzenia nowego obiektu powiadomienia za pomocą różnych tytuł i komunikat.
+W tym przykładzie istniejące `NotificationCompat.Builder` obiekt jest używany do utworzenia nowego obiektu powiadomienia za pomocą różnych tytuł i komunikat.
 Nowy obiekt powiadomień jest opublikowana przy użyciu identyfikatora poprzednie powiadomienie i poprawka ta aktualizuje zawartość wcześniej publikowane powiadomień:
 
 ![Zaktualizowano powiadomienia](local-notifications-images/12-updated-notification.png)
@@ -277,7 +351,7 @@ PendingIntent pendingIntent =
     PendingIntent.GetActivity (this, pendingIntentId, intent, PendingIntentFlags.OneShot);
 
 // Instantiate the builder and set notification elements, including pending intent:
-Notification.Builder builder = new Notification.Builder(this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first action notification!")
@@ -332,7 +406,7 @@ PendingIntent pendingIntent =
 
 // Instantiate the builder and set notification elements, including
 // the pending intent:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my second action notification!")
@@ -366,113 +440,11 @@ Zostanie wyświetlony ten komunikat pobrane, "Greetings z MainActivity!," `Secon
 Aby uzyskać więcej informacji na temat tworzenia oczekujące intencje, zobacz [PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/).
 
 
-<a name="notif-chan"></a>
-<a name="notification-channels"></a>
-## <a name="notification-channels"></a>Kanały powiadomień
-
-Począwszy od systemu Android 8.0 (Oreo), można użyć *kanały powiadomień* funkcję, aby utworzyć użytkownika można dostosować kanał dla każdego typu powiadomienia, które mają być wyświetlane. Kanały powiadomień umożliwiać dla Ciebie powiadomień grupy tak, aby wszystkie powiadomienia opublikowane w usłudze załączniku kanału takie samo zachowanie. Na przykład Niewykluczone, że kanał powiadomień, która jest przeznaczona dla powiadomień, które wymagają natychmiastowej uwagi i oddzielny kanał "zapewniająca" używaną dla komunikatów informacyjnych.
-
-**YouTube** aplikacji, który został zainstalowany przy użyciu systemu Android Oreo zawiera dwie kategorie powiadomień: **pobieranie powiadomienia** i **ogólne powiadomienia**:
-
-[![Ekrany powiadomień usługi YouTube w systemie Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
-
-Każdy z tych kategorii odpowiada kanału powiadomień. Implementuje aplikację serwisu YouTube **pobieranie powiadomienia** kanału i **ogólne powiadomienia** kanału. Użytkownik może nacisnąć **pobieranie powiadomienia**, powoduje wyświetlenie na ekranie ustawień dla aplikacji Pobierz kanału powiadomień:
-
-[![Pobierz ekranie powiadomień dla aplikacji w usłudze YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
-
-Na tym ekranie, użytkownik może zmodyfikować zachowanie **Pobierz** powiadomień kanału, wykonując następujące czynności:
-
--   Ustaw poziom ważności **pilne**, **wysokiej**, **średni**, lub **niski**, który konfiguruje poziom przerwania dźwięku i visual.
-
--   Kropka powiadomień należy włączyć lub wyłączyć.
-
--   Migające światło należy włączyć lub wyłączyć.
-
--   Pokaż lub Ukryj powiadomienia na ekranie blokady.
-
--   Zastąp **nie przeszkadzać** ustawienie.
-
-**Ogólne powiadomienia** kanał ma podobne ustawienia:
-
-[![Ogólne powiadomienia ekranu dla aplikacji w usłudze YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
-
-Zwróć uwagę, nie masz Pełna kontrola nad sposób kanałów powiadomień interakcji z użytkownikiem &ndash; użytkownik może modyfikować ustawienia dla dowolnego kanału powiadomień na urządzeniu, jak pokazano na zrzutach ekranu powyżej. Można jednak skonfigurować wartości domyślne, (jak zostaną opisane poniżej). Ponieważ te przykłady ilustrują, nowa funkcja kanały powiadomień umożliwia można umożliwić użytkownikom szczegółową kontrolę nad tym różnego rodzaju powiadomienia.
-
-Należy dodać obsługę kanały powiadomień do aplikacji? Jeśli jest przeznaczony dla systemu Android 8.0, aplikacja *musi* zaimplementować kanały powiadomień.
-Aplikacji przeznaczone dla Oreo, który próbuje wysłać lokalne powiadomienie do użytkownika bez użycia kanału powiadomień zakończy się niepowodzeniem wyświetlić powiadomienie na urządzeniach Oreo. Jeśli nie docelowe system Android 8.0, aplikacji będą nadal działać na system Android 8.0, ale z zachowaniem tego samego powiadomienia jako będzie działać, podczas uruchamiania systemu Android 7.1 lub wcześniej.
-
-
-### <a name="creating-a-notification-channel"></a>Tworzenie kanału powiadomień
-
-Aby utworzyć kanał powiadomień, wykonaj następujące czynności:
-
-1. Konstruowania [NotificationChannel](https://developer.android.com/reference/android/app/NotificationChannel.html) obiektu następującym kodem:
-
-    - Ciąg Identyfikatora, który jest unikatowy w ramach pakietu. W poniższym przykładzie ciąg `com.xamarin.myapp.urgent` jest używany.
-
-    - Widoczny dla użytkownika nazwa kanału (mniej niż 40 znaków). W poniższym przykładzie nazwa **pilne** jest używany.
-
-    - Znaczenie kanału, który kontroluje sposób interruptive powiadomienia są wysyłane do `NotificationChannel`. Może mieć znaczenie `Default`, `High`, `Low`, `Max`, `Min`, `None`, lub `Unspecified`.
-
-    Przekazać te wartości do [Konstruktor](https://developer.android.com/reference/android/app/NotificationChannel.html#NotificationChannel%28java.lang.String,%20java.lang.CharSequence,%20int%29) (w tym przykładzie `Resource.String.noti_chan_urgent` ustawiono **pilne**):
-
-    ```csharp
-    public const string URGENT_CHANNEL = "com.xamarin.myapp.urgent";
-    . . .
-    string chanName = GetString (Resource.String.noti_chan_urgent);
-    var importance = NotificationImportance.High;
-    NotificationChannel chan =
-       new NotificationChannel (URGENT_CHANNEL, chanName, importance);
-    ```
-
-2.  Konfigurowanie `NotificationChannel` obiektu ustawień wstępnych.
-    Na przykład, poniższy kod służy do konfigurowania `NotificationChannel` obiektu, dzięki czemu powiadomienia opublikowane w tym kanale będzie też urządzenia i domyślnie wyświetlane na ekranie blokady:
-
-    ```csharp
-    chan.EnableVibration (true);
-    chan.LockscreenVisibility = NotificationVisibility.Public;
-    ```
-
-3.  Prześlij obiekt kanału powiadomień do Menedżera powiadomień:
-
-    ```csharp
-    NotificationManager notificationManager =
-        (NotificationManager) GetSystemService (NotificationService);
-    notificationManager.CreateNotificationChannel (chan);
-    ```
-
-
-### <a name="posting-to-a-notifications-channel"></a>Publikowanie do kanału powiadomień
-
-Aby ogłosić powiadomień kanał powiadomień, wykonaj następujące czynności:
-
-1.  Konfigurowanie przy użyciu powiadomień `Notification.Builder`, przekazując identyfikator kanału, który ma `SetChannelId` metody. Na przykład:
-
-    ```csharp
-    Notification.Builder builder = new Notification.Builder (this)
-        .SetContentTitle ("Attention!")
-        .SetContentText ("This is an urgent notification message!")
-        .SetChannelId (URGENT_CHANNEL);
-    ```
-
-2.  Tworzenia i wystawiania powiadomień przy użyciu Menedżera powiadomień [powiadamiania](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/p/System.Int32/Android.App.Notification/) metody:
-
-    ```csharp
-    const int notificationId = 0;
-    notificationManager.Notify (notificationId, builder.Build());
-    ```
-
-Możesz powtórzyć powyższe kroki, aby utworzyć inny kanał powiadomień dla komunikaty informacyjne. Ten drugi kanał można domyślnie wyłączyć wibracje, Ustaw domyślną widoczność ekranu blokady na `Private`, a znaczenie powiadomień `Default`.
-
-Aby uzyskać pełny przykład kodu kanałów powiadomień systemu Android Oreo w akcji, zobacz [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) przykładowe; Ta przykładowa aplikacja zarządza dwa kanały i ustawia opcje dodatkowe powiadomienia.
-
-
-
 <a name="beyond-the-basic-notification" />
 
 ## <a name="beyond-the-basic-notification"></a>Poza podstawowe powiadomienie
 
-Domyślnie powiadomienia no-frills układu podstawowego formatu w systemie Android, ale ten podstawowy format można zwiększyć, wprowadzając dodatkowe `Notification.Builder` wywołania metody. W tej sekcji dowiesz się, jak dodać ikonę dużych zdjęć do usługi powiadomień, a zobaczysz przykłady sposobu tworzenia układu rozwiniętej powiadomienia.
+Domyślnie powiadomienia prostego układu podstawowego formatu w systemie Android, ale ten podstawowy format można zwiększyć, wprowadzając dodatkowe `NotificationCompat.Builder` wywołania metody. W tej sekcji dowiesz się, jak dodać ikonę dużych zdjęć do usługi powiadomień, a zobaczysz przykłady sposobu tworzenia układu rozwiniętej powiadomienia.
 
 <a name="large-icon-format" />
 
@@ -496,8 +468,7 @@ Aby użyć obrazu jako duża ikona w powiadomieniu, należy wywołać konstrukto
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
 ```
 
-Ten przykładowy kod zostanie otwarty plik obrazu w **Resources/drawable/monkey_icon.png**, a następnie konwertuje ją na mapę bitową i przekazuje wynikowy mapy bitowej do `Notification.Builder`. Zazwyczaj rozdzielczość obrazu źródłowego jest większy niż mała ikona &ndash; , ale nie jest znacznie większa. Obraz, który jest zbyt duży, może spowodować niepotrzebne operacje zmiany rozmiaru, które może opóźnić ogłaszania powiadomienia.
-Aby uzyskać więcej informacji o rozmiarach ikonę powiadomienia w systemie Android, zobacz [ikony powiadomień](http://developer.android.com/design/style/iconography.html#notification).
+Ten przykładowy kod zostanie otwarty plik obrazu w **Resources/drawable/monkey_icon.png**, a następnie konwertuje ją na mapę bitową i przekazuje wynikowy mapy bitowej do `NotificationCompat.Builder`. Zazwyczaj rozdzielczość obrazu źródłowego jest większy niż mała ikona &ndash; , ale nie jest znacznie większa. Obraz, który jest zbyt duży, może spowodować niepotrzebne operacje zmiany rozmiaru, które może opóźnić ogłaszania powiadomienia.
 
 
 ### <a name="big-text-style"></a>Styl tekstu big Data
@@ -512,7 +483,7 @@ W tym formacie tylko fragment komunikat jest wyświetlany, został przerwany prz
 
 Ten format rozwiniętej układ zawiera także tekstu podsumowania w dolnej części powiadomienia. Maksymalna wysokość *tekst Big* powiadomień to 256 punktu dystrybucji.
 
-Do utworzenia *tekst Big* powiadomień, możesz utworzyć wystąpienie `Notification.Builder` obiektu, tak jak poprzednio, a następnie utwórz wystąpienie i Dodaj [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/) obiekt `Notification.Builder` obiektu. Na przykład:
+Do utworzenia *tekst Big* powiadomień, możesz utworzyć wystąpienie `NotificationCompat.Builder` obiektu, tak jak poprzednio, a następnie utwórz wystąpienie i Dodaj [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/) obiekt `NotificationCompat.Builder` obiektu. Oto przykład:
 
 ```csharp
 // Instantiate the Big Text style:
@@ -533,7 +504,7 @@ builder.SetStyle (textStyle);
 // Create the notification and publish it ...
 ```
 
-W tym przykładzie tekst komunikatu i tekst podsumowania są przechowywane w `BigTextStyle` obiektu (`textStyle`) zanim zostanie przekazany do `Notification.Builder.`
+W tym przykładzie tekst komunikatu i tekst podsumowania są przechowywane w `BigTextStyle` obiektu (`textStyle`) zanim zostanie przekazany do `NotificationCompat.Builder.`
 
 
 ### <a name="image-style"></a>Styl obrazu
@@ -550,7 +521,7 @@ Gdy użytkownik przeciągnie w dół *obraz* powiadomienia, jego rozszerzany, ab
 
 Zwróć uwagę, że powiadomienia są wyświetlane w krótkiej formie, wyświetla tekst powiadomienia (tekst, który jest przekazywany do konstruktora powiadomień `SetContentText` metody, jak pokazano wcześniej). Jednakże powiadomienie zostanie rozszerzona, aby wyświetlić obraz, wyświetla tekst podsumowania powyżej obrazu.
 
-Do utworzenia *obraz* powiadomień, możesz utworzyć wystąpienie `Notification.Builder` obiektu tak jak poprzednio, a następnie utwórz i Wstaw [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) do obiektu `Notification.Builder` obiektu. Na przykład:
+Do utworzenia *obraz* powiadomień, możesz utworzyć wystąpienie `NotificationCompat.Builder` obiektu tak jak poprzednio, a następnie utwórz i Wstaw [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) do obiektu `NotificationCompat.Builder` obiektu. Na przykład:
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -568,7 +539,7 @@ builder.SetStyle (picStyle);
 // Create the notification and publish it ...
 ```
 
-Podobnie jak `SetLargeIcon` metody `Notification.Builder`, [BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/) metody `BigPictureStyle` wymaga mapę bitową obrazu, który ma być wyświetlany w treści powiadomienia. W tym przykładzie [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32)) metody `BitmapFactory` odczytuje plik obrazu, który znajduje się w **Resources/drawable/x_bldg.png** i konwertuje je do mapy bitowej.
+Podobnie jak `SetLargeIcon` metody `NotificationCompat.Builder`, [BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/) metody `BigPictureStyle` wymaga mapę bitową obrazu, który ma być wyświetlany w treści powiadomienia. W tym przykładzie [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32)) metody `BitmapFactory` odczytuje plik obrazu, który znajduje się w **Resources/drawable/x_bldg.png** i konwertuje je do mapy bitowej.
 
 Można także wyświetlać obrazy, które nie są dostarczane jako zasób. Na przykład następujący przykładowy kod ładuje obraz z lokalnego karta SD i wyświetla go w *obraz* powiadomień:
 
@@ -610,7 +581,7 @@ Gdy użytkownik przeciągnie w dół w powiadomieniu, jego rozszerzany, aby wyś
 
 ![Przykład skrzynki odbiorczej powiadomień rozszerzone](local-notifications-images/21-inbox-expanded.png)
 
-Aby utworzyć *skrzynki odbiorczej* powiadomień, możesz utworzyć wystąpienie `Notification.Builder` obiektu, tak jak poprzednio i Dodaj [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/) do obiektu `Notification.Builder`. Na przykład:
+Aby utworzyć *skrzynki odbiorczej* powiadomień, możesz utworzyć wystąpienie `NotificationCompat.Builder` obiektu, tak jak poprzednio i Dodaj [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/) do obiektu `NotificationCompat.Builder`. Oto przykład:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -632,17 +603,17 @@ builder.SetStyle (inboxStyle);
 
 Aby dodać nowe wiersze tekstu na treść powiadomienia, należy wywołać [Addline](https://developer.xamarin.com/api/member/Android.App.Notification+InboxStyle.AddLine/p/System.String/) metody `InboxStyle` obiektu (maksymalną wysokość *skrzynki odbiorczej* powiadomień to 256 dp). Należy zauważyć, że w przeciwieństwie do *tekst Big* stylu *skrzynki odbiorczej* styl obsługuje pojedyncze wiersze tekstu w treści powiadomienia.
 
-Można również użyć *skrzynki odbiorczej* stylu na potrzeby wszystkich powiadomień, który wymaganych, aby wyświetlić pojedyncze wiersze tekstu w formacie rozwinięty. Na przykład *skrzynki odbiorczej* styl powiadomienie może służyć do łączenia wielu oczekujące powiadomienia do podsumowania powiadomień &ndash; można zaktualizować jeden *skrzynki odbiorczej* powiadomienia o nowych stylów Wiersze zawartości powiadomienia (zobacz [aktualizowanie powiadomienie](#updating-a-notification) powyżej), a nie Generuj ciągłego strumienia nowy, przede wszystkim podobny powiadomienia. Aby uzyskać więcej informacji na temat tego podejścia, zobacz [podsumowanie powiadomienia](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
+Można również użyć *skrzynki odbiorczej* stylu na potrzeby wszystkich powiadomień, który wymaganych, aby wyświetlić pojedyncze wiersze tekstu w formacie rozwinięty. Na przykład *skrzynki odbiorczej* styl powiadomienie może służyć do łączenia wielu oczekujące powiadomienia do podsumowania powiadomień &ndash; można zaktualizować jeden *skrzynki odbiorczej* powiadomienia o nowych stylów Wiersze zawartości powiadomienia (zobacz [aktualizowanie powiadomienie](#updating-a-notification) powyżej), a nie Generuj ciągłego strumienia nowy, przede wszystkim podobny powiadomienia.
 
 
 ## <a name="configuring-metadata"></a>Konfigurowanie metadanych
 
-`Notification.Builder` zawiera metody, które można wywołać, aby ustawić metadane dotyczące Twojej powiadomienia, taki jak priorytet, widoczność i kategorii. System android używa tych informacji &mdash; wraz z ustawień preferencji użytkownika &mdash; ustalenie, jak i kiedy należy wyświetlać powiadomienia.
+`NotificationCompat.Builder` zawiera metody, które można wywołać, aby ustawić metadane dotyczące Twojej powiadomienia, taki jak priorytet, widoczność i kategorii. System android używa tych informacji &mdash; wraz z ustawień preferencji użytkownika &mdash; ustalenie, jak i kiedy należy wyświetlać powiadomienia.
 
 
 ### <a name="priority-settings"></a>Ustawienia priorytetu
 
-Po opublikowaniu powiadomienia, ustawienie priorytetu powiadomienia określa dwie sytuacje:
+Aplikacje działające w systemie Android 7.1 i niższy muszą ustawić priorytet bezpośrednio w samej powiadomienia. Po opublikowaniu powiadomienia, ustawienie priorytetu powiadomienia określa dwie sytuacje:
 
 -   Gdzie powiadomienie jest wyświetlane w odniesieniu do innych powiadomień.
     Na przykład o wysokim priorytecie powiadomienia są prezentowane powyżej niższe powiadomienia o priorytecie w szufladzie powiadomienia bez względu na to w przypadku każdego powiadomienia została opublikowana.
@@ -661,7 +632,7 @@ Xamarin.Android definiuje następujące wyliczenia do ustawiania priorytetu powi
 
 -   `NotificationPriority.Min` &ndash; Aby uzyskać ogólne informacje, że użytkownik powiadomienia tylko wtedy, gdy wyświetlania powiadomień (na przykład, lokalizacji lub pogody informacji).
 
-Aby ustawić priorytet powiadomienia, należy wywołać [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) metody `Notification.Builder` obiektu, przekazując poziom priorytetu. Na przykład:
+Aby ustawić priorytet powiadomienia, należy wywołać [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) metody `NotificationCompat.Builder` obiektu, przekazując poziom priorytetu. Na przykład:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -681,6 +652,8 @@ W następnym przykładzie "Traktować w ciągu dnia" powiadomienia o niskim prio
 
 Ponieważ powiadomienie "Myślenia w ciągu dnia" powiadomienia o niskim priorytecie, systemu Android nie będą wyświetlane go w formacie Heads-up.
 
+> [!NOTE]
+> W systemie Android 8.0 lub nowszym priorytet ustawień powiadomień kanału i użytkownik określi priorytet zawiadomienia.
 
 ### <a name="visibility-settings"></a>Ustawienia widoczności
 
@@ -693,7 +666,7 @@ Xamarin.Android definiuje następujące wyliczenia do ustawiania widoczność po
 
 -   `NotificationVisibility.Secret` &ndash; Nic nie jest wyświetlane na ekranie blokady bezpieczny, nawet ikonę powiadomienia. Zawartość powiadomień jest dostępna tylko wtedy, gdy ten użytkownik odblokuje urządzenia.
 
-Aby ustawić widoczność powiadomienie wywołanie aplikacji `SetVisibility` metody `Notification.Builder` obiektu, przekazując ustawienie widoczności. Na przykład, to wywołanie `SetVisibility` sprawia, że powiadomienia `Private`:
+Aby ustawić widoczność powiadomienie wywołanie aplikacji `SetVisibility` metody `NotificationCompat.Builder` obiektu, przekazując ustawienie widoczności. Na przykład, to wywołanie `SetVisibility` sprawia, że powiadomienia `Private`:
 
 ```csharp
 builder.SetVisibility (NotificationVisibility.Private);
@@ -738,7 +711,7 @@ Począwszy od systemu Android 5.0, wstępnie zdefiniowane kategorie są dostępn
 
 -   `Notification.CategoryStatus` &ndash; Informacje o urządzeniu.
 
-Gdy powiadomienia są sortowane, powiadomienia o priorytecie mają pierwszeństwo przed jego ustawienie kategorii. Na przykład powiadomienia o wysokim priorytecie będą wyświetlane jako hud nawet wtedy, gdy należy ona do `Promo` kategorii. Aby ustawić kategorii powiadomienia, należy wywołać `SetCategory` metody `Notification.Builder` obiektu, przekazując ustawienie kategorii. Na przykład:
+Gdy powiadomienia są sortowane, powiadomienia o priorytecie mają pierwszeństwo przed jego ustawienie kategorii. Na przykład powiadomienia o wysokim priorytecie będą wyświetlane jako hud nawet wtedy, gdy należy ona do `Promo` kategorii. Aby ustawić kategorii powiadomienia, należy wywołać `SetCategory` metody `NotificationCompat.Builder` obiektu, przekazując ustawienie kategorii. Na przykład:
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -749,30 +722,6 @@ builder.SetCategory (Notification.CategoryCall);
 ![Nie przeszkadzać przełączników ekranu](local-notifications-images/26-do-not-disturb.png)
 
 Jeśli użytkownik skonfiguruje *nie przeszkadzać* Aby zablokować wszystkie przerwań, z wyjątkiem połączeń telefonicznych (jak pokazano na powyższym zrzucie ekranu), systemów Android umożliwia powiadomień za pomocą ustawienia kategorii `Notification.CategoryCall` mają zostać wyświetlone, a urządzenie Trwa *nie przeszkadzać* trybu. Należy pamiętać, że `Notification.CategoryAlarm` powiadomienia nigdy nie są blokowane w *nie przeszkadzać* trybu.
-
-
-<a name="compatibility" />
-
-## <a name="compatibility"></a>Zgodność
-
-Jeśli tworzysz aplikację, będzie również uruchomić na wcześniejszych wersjach systemu Android (możliwie jak poziom interfejsu API 4), możesz użyć [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html) klasy zamiast `Notification.Builder`. Po utworzeniu powiadomień za pomocą `NotificationCompat.Builder`, Android gwarantuje, czy zawartość powiadomień — wersja basic jest prawidłowo wyświetlany na starszych urządzeń. Jednak ponieważ niektóre funkcje zaawansowane powiadomienia nie są dostępne w starszych wersjach systemu Android, kod musi jawnie obsługiwać problemy ze zgodnością style powiadomienie rozszerzonej, kategorie i poziomy widoczność, co zostało opisane poniżej.
-
-Aby użyć `NotificationCompat.Builder` w swojej aplikacji, należy uwzględnić [biblioteki obsługi systemu Android w wersji 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet w projekcie.
-
-Poniższy przykład kodu ilustruje sposób tworzenia podstawowego powiadomień za pomocą `NotificationCompat.Builder`:
-
-```csharp
-// Instantiate the builder and set notification elements:
-NotificationCompat.Builder builder = new NotificationCompat.Builder (this)
-    .SetContentTitle ("Sample Notification")
-    .SetContentText ("Hello World! This is my first notification!")
-    .SetSmallIcon (Resource.Drawable.ic_notification);
-
-// Build the notification:
-Notification notification = builder.Build();
-```
-
-Tak jak pokazano w tym przykładzie, wywołania metody dla opcji powiadamiania niezbędne są identyczne z `Notification.Builder`. Jednak kod musi do obsługi problemów w dół w celu zachowania zgodności dla bardziej złożonych powiadomień (opisany w następnej sekcji).
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) przykład pokazuje, jak używać `NotificationCompat.Builder` można uruchomić drugiego działania dla powiadomienia. Ten przykładowy kod zostało wyjaśnione w [przy użyciu lokalnego powiadomienia w Xamarin.Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) wskazówki.
 
@@ -798,13 +747,12 @@ Podobnie, Twoja aplikacja może używać `NotificationCompat.InboxStyle` i `Noti
 Do obsługi starszych wersji systemu Android, gdzie `SetCategory` jest niedostępne, kod może sprawdzać, poziom interfejsu API w czasie wykonywania, aby warunkowo wywołać `SetCategory` , gdy poziom interfejsu API jest równa lub większa niż 5.0 dla systemu Android (poziom interfejsu API 21):
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
 
-W tym przykładzie aplikacja firmy **platformę docelową** jest ustawiona na Android 5.0 i **minimalna wersja systemu Android** ustawiono **Android 4.1 (16 poziom interfejsu API)**. Ponieważ `SetCategory` jest dostępna w poziom interfejsu API 21 i nowsze, wywoła ten przykładowy kod `SetCategory` tylko gdy jest dostępna &ndash; nie wywoła `SetCategory` gdy poziom interfejsu API jest mniejsza niż
-21.
+W tym przykładzie aplikacja firmy **platformę docelową** jest ustawiona na Android 5.0 i **minimalna wersja systemu Android** ustawiono **Android 4.1 (16 poziom interfejsu API)**. Ponieważ `SetCategory` jest dostępna w poziom interfejsu API 21 i nowsze, wywoła ten przykładowy kod `SetCategory` tylko gdy jest dostępna &ndash; nie wywoła `SetCategory` gdy poziom interfejsu API jest mniej niż 21.
 
 
 ### <a name="lockscreen-visibility"></a>Widoczność ekranu blokady
@@ -820,9 +768,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule wyjaśniono sposób tworzenia lokalnego powiadomienia w systemie Android. On opisany anatomia powiadomienia, jego wyjaśniono, jak używać `Notification.Builder` do utworzenia powiadomień, jak styl powiadomienia w duża ikona *tekst Big*, *obraz* i *skrzynki odbiorczej*  formaty, jak ustawić powiadomienie ustawienia metadane, takie jak priorytet, widoczność i kategorii i jak można uruchomić działania z powiadomienia. W tym artykule opisano, jak działają te ustawienia powiadomień o nowych hud, blokady ekranu, a *nie przeszkadzać* funkcje wprowadzone w systemie Android 5.0. Ponadto przedstawiono sposób użycia `NotificationCompat.Builder` utrzymać zgodność powiadomień z wcześniejszych wersji systemu android.
+W tym artykule wyjaśniono sposób tworzenia lokalnego powiadomienia w systemie Android. On opisany anatomia powiadomienia, jego wyjaśniono, jak używać `NotificationCompat.Builder` do utworzenia powiadomień, jak styl powiadomienia w duża ikona *tekst Big*, *obraz* i *skrzynki odbiorczej*  formaty, jak ustawić powiadomienie ustawienia metadane, takie jak priorytet, widoczność i kategorii i jak można uruchomić działania z powiadomienia. W tym artykule opisano, jak działają te ustawienia powiadomień o nowych hud, blokady ekranu, a *nie przeszkadzać* funkcje wprowadzone w systemie Android 5.0. Ponadto przedstawiono sposób użycia `NotificationCompat.Builder` utrzymać zgodność powiadomień z wcześniejszych wersji systemu android.
 
-Aby uzyskać wskazówki dotyczące projektowania powiadomienia dla systemu Android, zobacz [powiadomienia](http://developer.android.com/preview/notifications.html).
+Aby uzyskać wskazówki dotyczące projektowania powiadomienia dla systemu Android, zobacz [powiadomienia](http://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 
 ## <a name="related-links"></a>Linki pokrewne
@@ -830,7 +778,6 @@ Aby uzyskać wskazówki dotyczące projektowania powiadomienia dla systemu Andro
 - [NotificationsLab (przykład)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications (przykład)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [Powiadomienia lokalne w przewodniku dla systemu Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [Powiadomienia](http://developer.android.com/design/patterns/notifications.html)
 - [Powiadomienia użytkownika](http://developer.android.com/training/notify-user/index.html)
 - [Powiadomienia](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)

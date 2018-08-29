@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39654818"
 ---
 # <a name="push-notifications-in-ios"></a>Powiadomienia wypychane w systemie iOS
@@ -81,12 +81,10 @@ Każdego z wymienionych w poprzedniej sekcji środowisk wymaga ich własnych cer
 
 8.  Aby utworzyć rozwoju, profil inicjowania obsługi administracyjnej, przejdź do **profilów aprowizacji** sekcji, a następnie wykonaj kroki, aby utworzyć, przy użyciu identyfikatora aplikacji, które właśnie utworzyliśmy.
 
-9.  Po utworzeniu profilu inicjowania obsługi administracyjnej otwierają **organizatora Xcode** i ich odświeżanie. Jeśli utworzono profil aprowizacji nie jest widoczna, może być konieczne pobranie profilu z portalu aprowizacji systemu iOS i zaimportować go ręcznie. Poniższy zrzut ekranu przedstawia przykład organizatora przy użyciu profilu aprowizacji, dodane:
-
+9.  Po utworzeniu profilu inicjowania obsługi administracyjnej otwierają **organizatora Xcode** i ich odświeżanie. Jeśli utworzono profil aprowizacji nie jest widoczna, może być konieczne pobranie profilu z portalu aprowizacji systemu iOS i zaimportować go ręcznie. Poniższy zrzut ekranu przedstawia przykład organizatora przy użyciu profilu aprowizacji, dodane:  
     [![](remote-notifications-in-ios-images/image13new.png "Ten zrzut ekranu przedstawia przykład organizatora przy użyciu profilu aprowizacji, dodane")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  W tym momencie należy skonfigurować projekt rozszerzenia Xamarin.iOS do korzystania z nowo utworzoną profilu inicjowania obsługi administracyjnej. Można to zrobić w **opcje projektu** okna dialogowego, w obszarze **podpisywanie pakietu systemu iOS** karty, jak pokazano na poniższym zrzucie ekranu:
-
+10.  W tym momencie należy skonfigurować projekt rozszerzenia Xamarin.iOS do korzystania z nowo utworzoną profilu inicjowania obsługi administracyjnej. Można to zrobić w **opcje projektu** okna dialogowego, w obszarze **podpisywanie pakietu systemu iOS** karty, jak pokazano na poniższym zrzucie ekranu:  
     [![](remote-notifications-in-ios-images/image11.png "Konfigurowanie projektu Xamarin.iOS skorzystać z tej nowo utworzony profil inicjowania obsługi administracyjnej")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 Na tym etapie aplikacja jest skonfigurowana do pracy za pomocą powiadomień push. Istnieją jednak jeszcze kilka kroków wymaganych przy użyciu certyfikatu. Ten certyfikat jest w formacie DER, który nie jest zgodny z PushSharp, która wymaga certyfikatów wymiany informacji osobistych (PKCS12). Aby przekonwertować certyfikatu, czemu będzie ona używana przez PushSharp, wykonaj następujące kroki końcowego:
