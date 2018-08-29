@@ -1,188 +1,188 @@
 ---
-title: Systemu Windows w Xamarin.Mac
-description: W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie.
+title: Windows na platformie Xamarin.Mac
+description: Ten artykuł dotyczy pracy z systemem windows i paneli w aplikacji platformy Xamarin.Mac. Opisuje tworzenie systemu windows i paneli w środowisku Xcode i programu Interface Builder, ładowania ich ze scenorysami oraz .pliki XIb i pracy z nimi programistycznie.
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: b60b8a6a7c56347d6abf71f8c5149ddd556d3da8
+ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794075"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43116373"
 ---
-# <a name="windows-in-xamarinmac"></a>Systemu Windows w Xamarin.Mac
+# <a name="windows-in-xamarinmac"></a>Windows na platformie Xamarin.Mac
 
-_W tym artykule omówiono pracy z systemem windows i panele w aplikacji Xamarin.Mac. Opisuje tworzenia systemu windows i panele w środowisku Xcode i interfejs konstruktora, ładowaniem ich z scenorys i .xib plików i pracy z nimi programistycznie._
+_Ten artykuł dotyczy pracy z systemem windows i paneli w aplikacji platformy Xamarin.Mac. Opisuje tworzenie systemu windows i paneli w środowisku Xcode i programu Interface Builder, ładowania ich ze scenorysami oraz .pliki XIb i pracy z nimi programistycznie._
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, mają dostęp do tego samego systemu Windows i płyty, które osoba używająca *Objective-C* i *Xcode* jest. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ do tworzenia i obsługi sieci systemu Windows i panele (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, mają dostęp do tej samej Windows i panele, który deweloper pracy w *języka Objective-C* i *Xcode* jest. Ponieważ rozszerzenia Xamarin.Mac integruje się bezpośrednio za pomocą edytora Xcode, można użyć program Xcode _programu Interface Builder_ do tworzenia i obsługi Windows i panele (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-W oparciu o jego przeznaczenie, aplikacji Xamarin.Mac może stanowić co najmniej jednego systemu Windows na ekranie do zarządzania i koordynowania informacje w nim wyświetlane oraz współpracuje z. Podstawowe funkcje okna są:
+Oparte na jego przeznaczenie, aplikacji rozszerzenia Xamarin.Mac cechuje się co najmniej Windows na ekranie do zarządzania i koordynacji informacje wyświetlane, a w programach. Podstawowe funkcje okna są:
 
-1. Aby zapewnić obszar widoki i formanty może być umieszczone i zarządzane.
-2. Aby zaakceptować i reagowania na zdarzenia w odpowiedzi na interakcję użytkownika z klawiatury i myszy.
+1. Aby zapewnić obszar, w którym widoków i kontrolek mogą być wprowadzane i zarządzane.
+2. Aby zaakceptować i reagowania na zdarzenia w odpowiedzi na interakcję użytkownika z klawiaturą i myszą.
 
-Systemu Windows mogą być używane w stanie niemodalne (takich jak edytor tekstu, który może mieć wielu dokumentów otwartych jednocześnie) lub modalne (na przykład okno eksportu, który musi być ukryty, zanim będzie można kontynuować aplikacji).
+Windows może być używany w stanie niemodalne (takich jak edytor tekstu, który może mieć wiele dokumentów, Otwórz na raz) lub modalne (np. Eksport okno dialogowe, które muszą być ukryty przed kontynuowaniem aplikacji).
 
-Panele to specjalny rodzaj okna (podklasy elementu bazowego `NSWindow` klasy), zwykle obsługujących funkcję pomocnicze w aplikacji, takich jak narzędzia systemu windows, takich jak inspektorzy formatu tekstu i selektora kolorów systemu.
+Panele to specjalny rodzaj okna (podklasę elementu bazowego `NSWindow` klasy), które zwykle służą pomocnicze w ramach funkcji w aplikacji, takich jak okna narzędzia, takie jak inspektorzy format tekstu i selektora kolorów systemu.
 
-[![](window-images/intro01.png "Edytowanie okna w środowisku Xcode")](window-images/intro01.png#lightbox)
+[![](window-images/intro01.png "Okno w środowisku Xcode edycji")](window-images/intro01.png#lightbox)
 
-W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z systemem Windows i panele w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówiono podstawowe informacje dotyczące pracy z Windows i paneli w aplikacji platformy Xamarin.Mac. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` poleceń używany do przesyłania w górę klas C# do obiektów języka Objective C i elementy interfejsu użytkownika.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` poleceń Umożliwia o komunikacji sieciowej w górę klas języka C# do języka Objective-C obiektów i elementów interfejsu użytkownika.
 
 <a name="Introduction_to_Windows" />
 
-## <a name="introduction-to-windows"></a>Wprowadzenie do systemu Windows
+## <a name="introduction-to-windows"></a>Wprowadzenie do Windows
 
-Jak już wspomniano, okno obszar, w którym widoki i formanty można umieścić i zarządzane i reaguje na zdarzenia w oparciu o interakcji z użytkownikiem (za pośrednictwem klawiatury lub myszy).
+Jak wspomniano powyżej, okno to obszar, w którym widoków i kontrolek mogą być wprowadzane i zarządzane i reaguje na zdarzenia w oparciu o interakcji z użytkownikiem (za pośrednictwem klawiatury lub myszy).
 
-Zgodnie z firmy Apple istnieją pięć typów główne systemu Windows w macOS aplikacji:
+Zgodnie z firmy Apple istnieje pięć typów głównego systemu Windows w systemie macOS aplikacji:
 
-- **Okna dokumentów** — okno dokumentu zawiera dane użytkownika opartych na plikach, takie jak arkusz kalkulacyjny lub dokument tekstowy.
-- **Okno aplikacji** -okna aplikacji jest w głównym oknie aplikacji, która nie jest na podstawie dokumentu (takie jak aplikacja kalendarza na komputerze Mac).
-- **Panel** — panelu pojawia się powyżej innych oknach i oferuje narzędzia, lub Otwórz formantów, które użytkownicy mogą pracować z, gdy są dokumenty. W niektórych przypadkach może być przezroczyste panelu (np. podczas pracy z dużych obrazów).
-- **Okno dialogowe** — okno dialogowe zostanie wyświetlone w odpowiedzi na akcję użytkownika i zwykle zapewnia użytkownikom sposoby może zakończyć akcji. Okno dialogowe wymaga odpowiedzi od użytkownika może zostać zamknięty. (Zobacz [Praca z okien dialogowych](~/mac/user-interface/dialog.md))
-- **Alerty** — alert jest specjalnym rodzajem okna dialogowego, który jest wyświetlany, gdy występuje poważny problem (np. Błąd) lub jako ostrzeżenie (takich jak przygotowywanie do usunięcia pliku). Ponieważ alert jest okno dialogowe, wymagany jest również odpowiedzi użytkownika przed jego zamknięciem. (Zobacz [Praca z alertami](~/mac/user-interface/alert.md))
+- **Okno dokumentu** — okno dokumentu zawiera dane użytkownika opartych na plikach, takie jak arkusz kalkulacyjny lub dokument tekstowy.
+- **Okna aplikacji** -okna aplikacji jest głównego okna aplikacji, która nie jest na podstawie dokumentu (na przykład aplikacja kalendarza na komputerze Mac).
+- **Panel** — panel liczby zmiennoprzecinkowe powyżej innych oknach oraz udostępnia narzędzia, lub otworzyć formantów, które użytkownicy mogą pracować z, gdy są dokumenty. W niektórych przypadkach może być półprzezroczyste panelu (takie jak podczas pracy z grafikami duże).
+- **Okno dialogowe** — okno dialogowe pojawia się w odpowiedzi na akcję użytkownika i zazwyczaj zawiera sposoby użytkowników można ukończyć akcji. Okno dialogowe wymaga odpowiedź od użytkownika może zostać zamknięty. (Zobacz [Praca z okien dialogowych](~/mac/user-interface/dialog.md))
+- **Alerty** — alert jest specjalnym typem okna dialogowego wyświetlanego, gdy występuje poważny problem, (na przykład błąd) lub jako ostrzeżenie (takich jak przygotowywanie do usunięcia pliku). Ponieważ alert jest okno dialogowe, również wymaga odpowiedź użytkownika przed jego zamknięciem. (Zobacz [Praca z alertami](~/mac/user-interface/alert.md))
 
-Aby uzyskać więcej informacji, zobacz [systemu Windows o](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+Aby uzyskać więcej informacji, zobacz [o Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) części firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Main_Key_and_Inactive_Windows" />
 
-### <a name="main-key-and-inactive-windows"></a>Main, klucz i nieaktywne systemu Windows
+### <a name="main-key-and-inactive-windows"></a>Main, klucz i nieaktywne Windows
 
-System Windows w aplikacji Xamarin.Mac może wyglądać i zachowywać się inaczej w zależności od jak użytkownik jest obecnie interakcji z nimi. Przedniej dokumentu lub okna aplikacji, która jest aktualnie fokus uwagi użytkownika jest nazywany _okno główne_. W większości przypadków tego okna będzie również _okna klucza_ (okno obecnie akceptuje dane wejściowe użytkownika). Ale nie jest to zawsze wielkość liter, na przykład selektora kolorów może być otwarty i w oknie klucz, w którym użytkownik prowadzi interakcję z zmiany stanu elementu okno dokumentu (który nadal będzie okno główne).
+Windows w aplikacji platformy Xamarin.Mac można wyglądają i zachowują się inaczej w zależności od sposobu użytkownik jest aktualnie interakcji z nimi. Przedniej dokumentu lub okna aplikacji, która jest aktualnie fokus uwagi użytkownika jest nazywany _okno główne_. W większości przypadków okno to będzie również _okna klucz_ (okno, które są aktualnie akceptowane dane wejściowe użytkownika). Ale nie jest to wymagane, na przykład selektora kolorów może być otwarte i się w oknie klucz, w którym użytkownik prowadzi interakcję z, aby zmienić stan elementu w oknie dokumentu, (które nadal będzie okno główne).
 
-Główne i klucz Windows (jeśli są osobne) zawsze są aktywne, _nieaktywne Windows_ są otwarte okna, które nie są na pierwszym planie. Na przykład aplikacja edytora tekstu może mieć więcej niż jeden dokument otwarty naraz tylko okno główne będzie aktywny, inni będą nieaktywne. 
+Główne i klucz Windows (jeśli są one niezależne) zawsze są aktywne, _nieaktywne Windows_ są otwarte okna, które nie są na pierwszym planie. Na przykład aplikacja edytora tekstu może mieć więcej niż jeden dokument otwarty naraz tylko okno główne będzie aktywny, wszystkie inne będą nieaktywne. 
 
-Aby uzyskać więcej informacji, zobacz [systemu Windows o](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+Aby uzyskać więcej informacji, zobacz [o Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) części firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Naming_Windows" />
 
-### <a name="naming-windows"></a>Nazewnictwo systemu Windows
+### <a name="naming-windows"></a>Windows nazewnictwa
 
-Można wyświetlić w oknie paska tytułu i po wyświetleniu tytuł zazwyczaj jest to nazwa aplikacji, nazwy dokumentu wykorzystywanej na lub funkcja okna (np. inspektora). Niektóre aplikacje nie wyświetlaj pasek tytułu, ponieważ rozpoznawalnych przez procesów, a nie Praca z dokumentami.
+Można wyświetlić w oknie paska tytułu i tytuł jest wyświetlany, zazwyczaj jest to nazwa aplikacji, nazwy dokumentu, w której są wykonywane prace lub funkcję okna (np. inspektor). Niektóre aplikacje nie wyświetlaj pasek tytułu, ponieważ są rozpoznawalne przez kontakt, a nie Praca z dokumentami.
 
-Apple Sugeruj następujących wytycznych:
+Apple zasugerować następujące wytyczne:
 
-- Korzystać z nazwy aplikacji, tytuł okna głównego, niebędącego dokumentem. 
-- Nazwa nowe okno dokumentu `untitled`. Pierwszy nowego dokumentu nie append numer do tytułu (takie jak `untitled 1`). Jeśli użytkownik tworzy nowy dokument przed zapisaniem i tytułowych pierwszy, wywołaj okno `untitled 2`, `untitled 3`itp.
+- Użyj nazwy aplikacji tytułu okna głównego, niebędącego dokumentem. 
+- Nadaj nazwę nowe okno dokumentu `untitled`. Pierwszy nowego dokumentu nie dołączenia liczby do tytułu (takie jak `untitled 1`). Jeśli użytkownik tworzy inny nowy dokument przed zapisaniem i warianty pierwszy, wywołanie tego okna `untitled 2`, `untitled 3`itp.
 
-Aby uzyskać więcej informacji, zobacz [nazewnictwa Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+Aby uzyskać więcej informacji, zobacz [nazewnictwa Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1) części firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Full-Screen_Windows" />
 
 ### <a name="full-screen-windows"></a>Windows pełnego ekranu
 
-W macOS, okna aplikacji można przejść ukrywanie pełnoekranowy wszystko na pasku Menu aplikacji (co może być ujawniony przez Przesuń kursor w górnej części ekranu) w tym utrudnień wolnego interakcję z nią jest zawartości.
+W systemie macOS, okno aplikacji można przejść ukrywanie pełny ekran wszystko, co łącznie z paska Menu aplikacji (co może być ujawniony, przenosząc kursor do górnej części ekranu) zapewnienie naruszania zawartości jest bezpłatna interakcji z nią.
 
-Apple sugeruje następujących wytycznych:
+Apple sugeruje następujące wytyczne:
 
-- Ustal, czy warto okna przejść pełny ekran. Aplikacji, które mają krótki interakcji (na przykład Kalkulator) nie należy podać tryb pełnoekranowy.
-- Wyświetl pasek narzędzi, jeśli zadanie pełnego ekranu wymaga go. Zwykle pasek narzędzi jest ukryty w trybie pełnoekranowym.
-- Okno pełnego ekranu powinien mieć wszyscy użytkownicy funkcje wymagane do ukończenia tego zadania.
-- Jeśli to możliwe należy unikać wyszukiwania interakcji, podczas, gdy użytkownik jest w trybie pełnoekranowym.
-- Skorzystaj z miejsca na ekranie zwiększona bez przesuwania fokus poza głównym zadaniem.
+- Ustal, czy sens dla okno do pełnego ekranu. Aplikacje, które zapewniają krótki interakcji (na przykład Kalkulator) nie należy podać tryb pełnoekranowy.
+- Pokaż pasek narzędzi, jeśli zadanie pełnego ekranu go wymaga. Zazwyczaj pasek narzędzi jest ukryty w trybie pełnoekranowym.
+- Pełnoekranowe okno mają wszyscy użytkownicy funkcje potrzebne do ukończenia zadania.
+- Jeśli to możliwe należy unikać interakcji wyszukiwania, gdy użytkownik jest w trybie pełnego ekranu.
+- Z zalet zwiększonej ekranowego bez przesuwania fokus kursora głównym zadaniem.
 
-Aby uzyskać więcej informacji, zobacz [systemu Windows w trybie pełnoekranowym](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/FullScreen.html#//apple_ref/doc/uid/20000957-CH61-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+Aby uzyskać więcej informacji, zobacz [Windows pełnoekranowym](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/FullScreen.html#//apple_ref/doc/uid/20000957-CH61-SW1) części firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
 <a name="Panels" />
 
-### <a name="panels"></a>Paneli
+### <a name="panels"></a>Panele
 
-Panel jest pomocnicze okna, zawierający formanty, opcje, które mają wpływ na aktywny dokument lub (np. system próbnika kolorów):
+Panel jest okno pomocnicze, który zawiera formanty i opcje, które mają wpływ na aktywnego dokumentu lub wybór (na przykład system selektor kolorów):
 
 [![](window-images/panel01.png "Panel kolorów")](window-images/panel01.png#lightbox)
 
-Panele mogą być _specyficzny dla aplikacji_ lub _ogólnosystemowe_. Panele specyficzny dla aplikacji float w górnej części okna dokumentów aplikacji i znikają w przypadku aplikacji znajduje się w tle. Panele ogólnosystemowe (takich jak **czcionki** panelu), float na wszystkie otwarte okna, niezależnie od aplikacji. 
+Panele mogą być albo _specyficzny dla aplikacji_ lub _ogólnosystemowe_. Panele specyficzny dla aplikacji float w górnej części okna dokumentu aplikacji i zniknąć, gdy aplikacja znajduje się w tle. Panele ogólnosystemowe (takie jak **czcionki** panelu), float, na podstawie wszystkie otwarte okna, niezależnie od aplikacji. 
 
-Apple sugeruje następujących wytycznych:
+Apple sugeruje następujące wytyczne:
 
-- Ogólnie rzecz biorąc, za pomocą panelu standardowe, przezroczyste panele powinien być używany tylko oszczędnie i dla graficznie zadania.
-- Należy wziąć pod uwagę, aby umożliwić użytkownikom łatwy dostęp do formantów ważne lub informacji, które bezpośrednio wpływa na ich zadań za pomocą panelu.
+- Ogólnie rzecz biorąc, za pomocą panelu standardowe, panele przezroczyste powinien być używany tylko rzadko i zadania intensywnie korzystające z grafiki.
+- Należy rozważyć użycie panelu, aby zapewnić użytkownikom łatwy dostęp do ważnych formantów lub informacje, które bezpośrednio wpływa na ich zadań.
 - Ukryj i Pokaż panele zgodnie z potrzebami.
 - Panele zawsze powinna zawierać paska tytułu.
-- Panele nie może zawierać przycisk Minimalizuj aktywne.
+- Panele nie powinien zawierać przycisk Minimalizuj active.
 
 #### <a name="inspectors"></a>Inspektorzy
 
-Większość nowoczesnych aplikacji macOS przedstawia pomocniczego kontrolki i opcje, które mają wpływ na aktywny dokument lub zaznaczenie jako _inspektorzy_ które są częścią okno główne (takich jak **stron** aplikacji pokazano poniżej), zamiast przy użyciu panelu systemu Windows:
+Większość nowoczesnych aplikacji systemu macOS przedstawia pomocniczego kontrolki i opcje, które mają wpływ na aktywnego dokumentu lub zaznaczenia jako _inspektorzy_ będących częścią okno główne (takich jak **stron** aplikacji poniżej), Zamiast korzystać z panelu Windows:
 
-[![](window-images/panel02.png "Przykład Inspektora")](window-images/panel02.png#lightbox)
+[![](window-images/panel02.png "Inspektor przykład")](window-images/panel02.png#lightbox)
 
-Aby uzyskać więcej informacji, zobacz [panele](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) sekcji firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) i naszych [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) Przykładowa aplikacja dla pełnej implementacji **Interfejsu inspektora** w aplikacji Xamarin.Mac.
+Aby uzyskać więcej informacji, zobacz [panele](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) części firmy Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) i naszej [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) Przykładowa aplikacja dla pełnego wdrożenia **Inspektor interfejsu** w aplikacji platformy Xamarin.Mac.
 
 <a name="Creating_and_Maintaining_Windows_in_Xcode" />
 
-## <a name="creating-and-maintaining-windows-in-xcode"></a>Tworzenie i obsługę systemu Windows w środowisku Xcode
+## <a name="creating-and-maintaining-windows-in-xcode"></a>Utworzenie i utrzymywanie Windows w środowisku Xcode
 
-Podczas tworzenia nowej aplikacji Xamarin.Mac Cocoa, otrzymasz standardowe okno puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie dołączony do projektu. Aby edytować w projekcie systemu windows **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
+Kiedy tworzysz nową aplikację cocoa dla platformy Xamarin.Mac, otrzymasz standardowego okna puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie uwzględnione w projekcie. Aby edytować projektu systemu windows w **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
 
 [![](window-images/edit01.png "Wybieranie głównego storyboard")](window-images/edit01.png#lightbox)
 
-Spowoduje to otwarcie okna projektu w Konstruktorze interfejsu w środowisku Xcode:
+Spowoduje to otwarcie projektu okna w program Xcode Interface Builder:
 
 [![](window-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](window-images/edit02.png#lightbox)
 
-W **inspektora atrybutu**, istnieje kilka właściwości, które służą do definiowania i kontrolowania okna:
+W **Inspektor atrybutu**, istnieje kilka właściwości, które służą do definiowania i kontrolowania okna:
 
-- **Tytuł** -to jest tekst, który będzie wyświetlany w pasek tytułu okna.
-- **Automatyczne zapisywanie** — jest to _klucza_ który będzie używany do IDENTYFIKATORA okna po jego położenie ustawienia i są automatycznie zapisywane.
-- **Pasek tytułu** — okno Wyświetla pasek tytułu.
-- **Ujednolicone tytuł i narzędzi** — Jeśli okno zawiera narzędzi, powinny być częścią paska tytułu.
-- **Pełny widok zawartości o rozmiarze** — umożliwia obszar zawartości okna, aby być poniżej paska tytułu.
-- **Cień** — okno ma cień.
-- **Teksturę** -teksturą systemu windows można użyć efekty (na przykład popularność) i mogą być przenoszone między przez przeciąganie ich treści.
+- **Tytuł** — jest to tekst, który będzie wyświetlany w pasek tytułu okna.
+- **Automatyczne zapisywanie** — jest to _klucz_ posłuży IDENTYFIKATORA okna, gdy jego pozycji ustawienia i są automatycznie zapisywane.
+- **Pasek tytułu** — jest wyświetlane okno paska tytułu.
+- **Ujednolicone tytuł i narzędzi** — Jeśli okno zawiera pasek narzędzi, powinna być częścią paska tytułu.
+- **Pełny widok zawartości o rozmiarze** — umożliwia obszar zawartości okna poniżej paska tytułu.
+- **W tle** — okno ma cień.
+- **Tekstury** -teksturą systemu windows można użyć efekty (na przykład popularność) i można przenosić, przeciągając jego treści.
 - **Zamknij** — okno ma przycisk Zamknij.
-- **Minimalizowanie** — okno ma przycisk Minimalizuj.
-- **Zmień rozmiar** — okno ma rozmiar formantu.
-- **Przycisk paska narzędzi** — okno ma przycisk Pokaż/Ukryj.
-- **Umożliwiająca przywrócenie** — jest ustawienia automatycznie zapisywany i przywracany i pozycja okna.
+- **Minimalizuj** — okno ma przycisk minimalizacji.
+- **Zmień rozmiar** — okno ma zmieniania rozmiaru formantu.
+- **Przycisk paska narzędzi** — okno ma przycisk paska narzędzi Pokaż/Ukryj.
+- **Umożliwiająca przywrócenie** -położenie okna i ustawienia automatycznie zapisywany i przywracany.
 - **Widoczne na uruchamianie** — okno automatycznie przedstawiono kiedy `.xib` ładowania pliku.
-- **Ukryj na dezaktywować** — jest okno ukryte po przejściu tło w aplikacji.
-- **Zwolnij po zamknięciu** -okna wyczyszczone z pamięci, gdy jest ono zamknięte.
-- **Zawsze wyświetlana etykietki** -są stale wyświetlany etykietki narzędzi.
-- **Ponownie oblicza pętli widoku** -kolejności Wyświetl obliczenia przed narysowaniem okna.
-- **Spacje**, **Exposé** i **funkcja włączania i wyłączania** — wszystkie Definiowanie zachowania okna w tych środowiskach macOS. 
-- **Pełny ekran** — Określa, jeśli to okno można wprowadzić w trybie pełnoekranowym. 
+- **Ukryj na dezaktywować** — okno kryje po przejściu tło w aplikacji.
+- **Zwolnij po zamknięciu** -okna usuwane z pamięci, gdy jest ono zamknięte.
+- **Zawsze wyświetlanie etykietek narzędzi** — są stale wyświetlany etykietki narzędzi.
+- **Ponownie oblicza pętli widoku** -polega na kolejności Wyświetl ponownie obliczone przed narysowaniem okna.
+- **Miejsca do magazynowania**, **Exposé** i **funkcja włączania i wyłączania** -decydować, jak okna zachowuje się w tych środowiskach systemu macOS. 
+- **Pełny ekran** — Określa, w tym oknie można wprowadzić w trybie pełnoekranowym. 
 - **Animacja** — Określa typ animacji dostępne dla okna.
-- **Wygląd** -steruje wyglądem okna. Obecnie brak wygląd tylko jeden Akwamaryna.
+- **Wygląd** -kontrolują wygląd okna. Obecnie istnieje tylko jeden wygląd, akwamaryna.
 
-Zobacz firmy Apple [wprowadzenie do systemu Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1) i [NSWindow](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/index.html#//apple_ref/occ/cl/NSWindow) dokumentację, aby uzyskać więcej szczegółowych informacji.
+Zobacz firmy Apple [wprowadzenie do Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1) i [NSWindow](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/index.html#//apple_ref/occ/cl/NSWindow) dokumentacji, aby uzyskać więcej informacji.
 
 <a name="Setting_the_Default_Size_and_Location" />
 
-### <a name="setting-the-default-size-and-location"></a>Ustawienie domyślne rozmiar i położenie
+### <a name="setting-the-default-size-and-location"></a>Ustawienie domyślnym rozmiarem i lokalizacją
 
-Aby ustawić początkowe położenie okna, a jego rozmiar, przełącz się do **inspektora rozmiar**:
+Aby ustawić położenie początkowe elementu okna i kontrolować jego rozmiar, przełącz się do **Inspektor rozmiar**:
 
 [![](window-images/edit07.png "Domyślny rozmiar i położenie")](window-images/edit07.png#lightbox)
 
-W tym miejscu można ustawić początkową wartość rozmiaru okna, nadaj minimalnego i maksymalnego rozmiaru, Ustaw początkową lokalizację na ekranie i kontrolować obramowania okna.
+W tym miejscu można ustawić początkowy rozmiar okna, nadaj mu minimalny i maksymalny rozmiar, Ustaw początkową lokalizację na ekranie i kontrolować obramowania okna.
 
 <a name="Setting-a-Custom-Main-Window-Controller" />
 
-### <a name="setting-a-custom-main-window-controller"></a>Ustawianie kontrolera niestandardowego okna głównego
+### <a name="setting-a-custom-main-window-controller"></a>Ustawienia kontrolera niestandardowe okno główne
 
-Aby można było utworzyć gniazda i akcji, aby ujawnić elementy interfejsu użytkownika do kodu C#, aplikacji Xamarin.Mac należy być przy użyciu kontrolera niestandardowego okna.
+Aby można było utworzyć gniazd i akcje, aby uwidocznić elementy interfejsu użytkownika do kodu w języku C#, musisz używać kontroler okna niestandardowe aplikacji rozszerzenia Xamarin.Mac.
 
 Wykonaj następujące czynności:
 
-1. Otwórz scenorysu aplikacji w Konstruktorze interfejsu w środowisku Xcode.
-2. Wybierz `NSWindowController` na powierzchni projektu.
-3. Przełącz się do **inspektora tożsamości** Wyświetl i wprowadź `WindowController` jako **Nazwa klasy**: 
+1. Otwórz Scenorys aplikacji w program Xcode Interface Builder.
+2. Wybierz `NSWindowController` powierzchni projektowej.
+3. Przełącz się do **Inspektor tożsamości** wyświetlić, a następnie wprowadź `WindowController` jako **Nazwa klasy**: 
 
-    [![](window-images/windowcontroller01.png "Ustawienie nazwy klasy")](window-images/windowcontroller01.png#lightbox)
-4. Zapisz zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji.
+    [![](window-images/windowcontroller01.png "Ustawianie nazwy klasy")](window-images/windowcontroller01.png#lightbox)
+4. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji.
 5. A `WindowController.cs` plik zostanie dodany do projektu w **Eksploratora rozwiązań** w programie Visual Studio dla komputerów Mac: 
 
     [![](window-images/windowcontroller02.png "Wybiera kontroler systemu windows")](window-images/windowcontroller02.png#lightbox)
-6. Otwórz ponownie scenorysu w Konstruktorze interfejsu w środowisku Xcode.
-7. `WindowController.h` Plik będzie dostępna do użycia: 
+6. Otwórz Scenorys w program Xcode Interface Builder.
+7. `WindowController.h` Plik będzie dostępny do użytku: 
 
     [![](window-images/windowcontroller03.png "Edytowanie pliku WindowController.h")](window-images/windowcontroller03.png#lightbox)
 
@@ -190,66 +190,66 @@ Wykonaj następujące czynności:
 
 ### <a name="adding-ui-elements"></a>Dodawanie elementów interfejsu użytkownika
 
-Aby zdefiniować zawartości okna, przeciągnij formanty z **inspektora biblioteki** na **Edytor interfejsu**. Zobacz nasze [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) dokumentację, aby uzyskać więcej informacji na temat tworzenia i włączania formantów przy użyciu konstruktora interfejsu.
+Aby zdefiniować zawartości okna, przeciągnij formanty z **Inspektor biblioteki** na **Edytor interfejsu**. Zobacz nasze [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) dokumentacji, aby uzyskać więcej informacji o używaniu programu Interface Builder do tworzenia i włączania kontrolek.
 
-Na przykład załóżmy przeciągnij pasek narzędzi **inspektora biblioteki** na oknie **Edytor interfejsu**:
+Na przykład przeciągnijmy narzędzi z **Inspektor biblioteki** na oknie **Edytor interfejsu**:
 
-[![](window-images/edit03.png "Wybieranie narzędzi z biblioteki")](window-images/edit03.png#lightbox)
+[![](window-images/edit03.png "Wybieranie paska narzędzi z biblioteki")](window-images/edit03.png#lightbox)
 
-Następnie przeciągnij **widoku tekstu** i rozmiar, aby wypełnił obszar w pasku narzędzi:
+Następnie przeciągnij **widoku tekstu** i rozmiar, aby wypełnił obszar pod paskiem narzędzi:
 
 [![](window-images/edit04.png "Dodawanie widoku tekstu")](window-images/edit04.png#lightbox)
 
-Ponieważ chcemy **widoku tekstu** Aby zmniejszyć rozmiar i powiększania jako zmiany rozmiaru okna, umożliwia przełączanie do **edytora ograniczeń** i dodaj następujące ograniczenia:
+Ponieważ chcemy **widoku tekstu** zmniejszać i zwiększać zgodnie ze zmianami wielkości okna, przejdźmy do **edytora ograniczeń** i dodaj następujące ograniczenia:
 
 [![](window-images/edit05.png "Edytowanie ograniczenia")](window-images/edit05.png#lightbox)
 
-Klikając dla **czerwony I świateł** w górnej części edytora i kliknięcie przycisku **dodać ograniczenia 4**, firma Microsoft informuje widoku tekstu, aby trzymać danego X, Y współrzędne i zwiększać i zmniejszać poziomie i w pionie jako Zmieniono rozmiar okna.
+Klikając pozycję dla **czerwoną I świateł** u góry edytora i kliknięcie przycisku **Dodaj ograniczenia 4**, kolejne parametry widok tekstu, aby się działać zgodnie z danym X, Y współrzędnych i zwiększać i zmniejszać, poziomo i pionowo jako zmiany rozmiaru okna.
 
-Ponadto umożliwia udostępnianie **widoku tekstu** kodu za pomocą **gniazda** (upewnieniu się wybrać `ViewController.h` pliku):
+Na koniec możemy uwidocznić **widoku tekstu** o kodowaniu za pomocą **ujścia** (upewniając się wybrać `ViewController.h` plików):
 
-[![](window-images/edit06.png "Konfigurowanie gniazda")](window-images/edit06.png#lightbox)
+[![](window-images/edit06.png "Konfigurowanie źródła")](window-images/edit06.png#lightbox)
 
-Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Aby uzyskać więcej informacji na temat pracy z **gniazda** i **akcje**, zobacz nasze [gniazda i akcji](~/mac/get-started/hello-mac.md#Outlets_and_Actions) dokumentacji.
+Aby uzyskać więcej informacji na temat pracy z usługą **gniazd** i **akcje**, zobacz nasze [źródła i akcji](~/mac/get-started/hello-mac.md#outlets-and-actions) dokumentacji.
 
 <a name="Standard_Window_Workflow" />
 
-### <a name="standard-window-workflow"></a>Standardowe okno przepływu pracy
+### <a name="standard-window-workflow"></a>Przepływ pracy standardowego okna
 
-Oknie, Utwórz i pracować z aplikacji Xamarin.Mac proces jest zasadniczo taki sam, jak co możemy właśnie wykonano powyżej:
+W oknie, który można utworzyć i pracować w aplikacji platformy Xamarin.Mac proces jest zasadniczo taki sam jak co to po prostu wykonaliśmy powyżej:
 
-1. Dla nowego systemu windows, które nie są domyślnie automatycznie dodawane do projektu należy dodać nową definicję okna do projektu. To zostanie dokładnie omówione szczegółowo poniżej.
-2. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć projekt okna do edycji w Konstruktorze interfejsu w środowisku Xcode.
-3. Przeciągnij nowe okno do projektu interfejsu użytkownika a Podłączanie okna do głównego okna przy użyciu _Segues_ (Aby uzyskać więcej informacji, zobacz [Segues](~/mac/platform/storyboards/indepth.md#Segues) sekcji naszych [Praca z Scenorys](~/mac/platform/storyboards/indepth.md) dokumentacji).
-3. Ustaw właściwości wymagane okna **inspektora atrybutu** i **inspektora rozmiar**.
-4. Przeciągnij formanty wymagane do tworzenia interfejsu i skonfigurować je w **inspektora atrybutu**.
-5. Użyj **inspektora rozmiar** do obsługi zmiana rozmiaru dla elementów interfejsu użytkownika.
-6. Udostępnianie okna elementy interfejsu użytkownika do kodu C# za pomocą **gniazda** i **akcje**.
-7. Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
+1. Dla nowego systemu windows, które nie są domyślnie dodawane automatycznie do projektu Dodaj nową definicję okna do projektu. To zostanie dokładnie omówione poniżej.
+2. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć projekt okna do edycji w program Xcode Interface Builder.
+3. Przeciągnij nowe okno do projektowania interfejsu użytkownika i podłączyć okna w głównym oknie, używając _przejścia_ (Aby uzyskać więcej informacji, zobacz [przejścia](~/mac/platform/storyboards/indepth.md#Segues) części naszych [Praca ze Scenorysami](~/mac/platform/storyboards/indepth.md) dokumentacji).
+3. Ustaw właściwości wymagane okna **Inspektor atrybut** i **Inspektor rozmiar**.
+4. Przeciągnij w kontrolkach wymagany do kompilowania interfejsu i skonfigurować je w **Inspektor atrybutu**.
+5. Użyj **Inspektor rozmiar** do obsługi rozmiaru dla elementów interfejsu użytkownika.
+6. Udostępnianie elementów interfejsu użytkownika w oknie kodu C# za pomocą **gniazd** i **akcje**.
+7. Zapisz zmiany i przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Teraz, gdy mamy podstawowa okna utworzonego przyjrzymy typowe procesy Xamarin.Mac aplikacji jest podczas pracy z systemem windows. 
+Teraz, gdy podstawowe okna utworzonego, omówimy typowe procesy Xamarin.Mac, aplikacja wykonuje podczas pracy z systemem windows. 
 
 <a name="Displaying_the_Default_Window" />
 
 ## <a name="displaying-the-default-window"></a>Wyświetlanie okna domyślne
 
-Domyślnie nowa aplikacja Xamarin.Mac automatycznie wyświetli okno zdefiniowane w `MainWindow.xib` pliku po uruchomieniu:
+Domyślnie nowa aplikacja platformy Xamarin.Mac automatycznie wyświetli okno zdefiniowane w `MainWindow.xib` plików po uruchomieniu:
 
-[![](window-images/display01.png "Okno przykład uruchomiony")](window-images/display01.png#lightbox)
+[![](window-images/display01.png "Przykładowe okno")](window-images/display01.png#lightbox)
 
-Ponieważ firma Microsoft zmodyfikowane projektu przedział powyżej, teraz zawiera domyślne narzędzi i **widoku tekstu** formantu. Poniższa sekcja w `Info.plist` plik jest odpowiedzialny za wyświetlania tego okna:
+Ponieważ możemy zmodyfikować wygląd tego okna, powyżej, teraz obejmuje domyślne narzędzi i **widoku tekstu** kontroli. W sekcji następujące `Info.plist` plik jest odpowiedzialny za wyświetlania tego okna:
 
-[![](window-images/display00.png "Edytowanie Info.plist")](window-images/display00.png#lightbox)
+[![](window-images/display00.png "Edytowanie pliku Info.plist")](window-images/display00.png#lightbox)
 
-**Interfejsu Main** listy rozwijanej jest używany do wybierania scenorysu, który będzie używany jako głównej aplikacji interfejsu użytkownika (w tym przypadku `Main.storyboard`).
+**Interfejsu Main** listy rozwijanej jest używany do wybierania Scenorysem, która będzie służyć jako głównej aplikacji interfejsu użytkownika (w tym przypadku `Main.storyboard`).
 
-Kontroler widoku jest automatycznie dodawany do projektu, aby kontrolować tego Windows Main, która zostanie wyświetlona (wraz z jego widoku głównego). Jest on zdefiniowany w `ViewController.cs` plików i dołączane do **właścicielem pliku** w Konstruktorze interfejsu w obszarze **inspektora tożsamości**:
+Kontroler widoku jest automatycznie dodawane do projektu, aby sterować tym Windows Main, wyświetlanego (wraz z jego widoku głównego). Jest on zdefiniowany w `ViewController.cs` plików i dołączane do **właściciel pliku** w programu Interface Builder w obszarze **Inspektor tożsamości**:
 
-[![](window-images/display02.png "Ustawienie właściciela pliku")](window-images/display02.png#lightbox)
+[![](window-images/display02.png "Ustawianie właściciela pliku")](window-images/display02.png#lightbox)
 
-W naszym okna, chcielibyśmy ma tytuł `untitled` podczas jego otwierania więc warto zastąpienie `ViewWillAppear` metody w `ViewController.cs` do wyglądać następująco:
+Dla naszych okna, prosimy o poświęcenie ma tytuł `untitled` podczas jego otwierania więc zastąpienie `ViewWillAppear` method in Class metoda `ViewController.cs` do wyglądać podobnie do następującego:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -262,21 +262,21 @@ public override void ViewWillAppear ()
 ``` 
 
 > [!NOTE]
-> Konfigurujemy ustawienia wartość okna `Title` właściwości w `ViewWillAppear` zamiast metody `ViewDidLoad` metody ponieważ, podczas gdy widok może zostać załadowane do pamięci, go nie jeszcze pełni utworzono wystąpienia. Jeśli podjęto próbę uzyskania dostępu `Title` właściwości w `ViewDidLoad` — metoda może pobrać `null` wyjątek od okna nie zostało wykonane, a przewodowej w górę do właściwości jeszcze.
+> Ustawiamy wartość okna `Title` właściwość `ViewWillAppear` zamiast metody `ViewDidLoad` metody ponieważ gdy widok może zostać załadowane do pamięci, go nie jeszcze w pełni utworzono wystąpienia. Jeśli firma Microsoft próbował uzyskać dostęp do `Title` właściwości `ViewDidLoad` otrzymamy wynik metody `null` wyjątek, ponieważ okna nie zostały wykonane, a przewodowej w górę do właściwości jeszcze.
 
 <a name="Programmatically_Closing_a_Window" />
 
-## <a name="programmatically-closing-a-window"></a>Programowo zamknięcie okna
+## <a name="programmatically-closing-a-window"></a>Programowe zamknięcie okna
 
-Może to być razy, na których mają być programowane zamykanie okna aplikacji Xamarin.Mac, oprócz posiadania użytkownika kliknij przycisk okna **zamknąć** przycisku lub przy użyciu elementu menu. System macOS zawiera dwa różne sposoby, aby zamknąć `NSWindow` programowo: `PerformClose` i `Close`.
+Może to być razy, które chcesz programowe zamykanie okna aplikacji rozszerzenia Xamarin.Mac, oprócz posiadania użytkownika kliknij okno **Zamknij** przycisku lub przy użyciu elementu menu. System macOS oferuje dwa różne sposoby, aby zamknąć `NSWindow` programowo: `PerformClose` i `Close`.
 
 <a name="PerformClose" />
 
 ### <a name="performclose"></a>PerformClose
 
-Wywoływanie `PerformClose` metody `NSWindow` symuluje kliknięciu okna **Zamknij** przycisk na chwilę wyróżnianie przycisku i zamknięcie okna.
+Wywoływanie `PerformClose` metody `NSWindow` symuluje użytkownika, klikając przycisk w oknie **Zamknij** przycisk chwilowo Wyróżnienie przycisku, a następnie zamknięcie okna.
 
-Jeśli aplikacja korzysta `NSWindow`w `WillClose` zdarzeń, zostanie wygenerowany, przed zamknięciem okna. Jeśli zdarzenie zwraca `false`, a następnie okno nie zostanie zamknięte. Jeśli okno nie ma **Zamknij** przycisk lub nie można zamknąć z jakiejkolwiek przyczyny, system operacyjny będzie emitować dźwięk alertu.
+Jeśli aplikacja implementuje `NSWindow`firmy `WillClose` zdarzeń, zostanie wygenerowany, przed zamknięciem okna. Jeśli zdarzenie podaje `false`, a następnie okno nie zostanie zamknięte. Jeśli okno nie ma **Zamknij** przycisk lub nie można zamknąć z jakiejkolwiek przyczyny, system operacyjny zostanie wyemitowany dźwięk alertu.
 
 Na przykład:
 
@@ -284,20 +284,20 @@ Na przykład:
 MyWindow.PerformClose(this);
 ```
 
-Czy próbować zamknąć `MyWindow` `NSWindow` wystąpienia. Jeśli powiedzie się, okno zostanie zamknięte, przeciwnym razie dźwięk alertu zostanie wyemitowany i będzie pozostanie otwarte.
+Podejmował próbę Zamknij `MyWindow` `NSWindow` wystąpienia. Jeśli pomyślnie, okno zostanie zamknięte, a inne dźwięk alertu zostanie wyemitowany i spowoduje pozostanie otwarte.
 
 <a name="Close" />
 
 ### <a name="close"></a>Zamknięcie
 
-Wywoływanie `Close` metody `NSWindow` nie symuluje kliknięciu okna **Zamknij** przycisk przez wyróżnianie na chwilę przycisku, po prostu zamyka okna.
+Wywoływanie `Close` metody `NSWindow` nie symuluje użytkownika, klikając przycisk w oknie **Zamknij** przycisk wyróżniając chwilowo przycisku, po prostu na zamknięcie okna.
 
-Okno musi być widoczny zostanie zamknięty i `NSWindowWillCloseNotification` powiadomień zostaną opublikowane w Centrum powiadomień domyślne zamykania okna.
+Okno musi być widoczny zostanie zamknięty i `NSWindowWillCloseNotification` powiadomień zostaną opublikowane w Centrum powiadomień domyślny okna zamykane.
 
-`Close` Metoda różni się na dwa sposoby ważne z `PerformClose` metody:
+`Close` Metoda różni się na dwa istotne sposoby z `PerformClose` metody:
 
-1. Nie próbuje podnieść `WillClose` zdarzeń.
-2. Nie zasymulować, klikając użytkownika **Zamknij** przycisk przez wyróżnianie na chwilę przycisku.
+1. Nie spróbuje podnieść `WillClose` zdarzeń.
+2. Nie zasymulować, klikając użytkownika **Zamknij** przycisku przez chwilowo Wyróżnienie przycisku.
 
 Na przykład:
 
@@ -305,39 +305,39 @@ Na przykład:
 MyWindow.Close();
 ```
 
-Czy zamknąć `MyWindow` `NSWindow` wystąpienia.
+Czy aby zamknąć `MyWindow` `NSWindow` wystąpienia.
 
 <a name="Modified-Windows-Content" />
 
-## <a name="modified-windows-content"></a>Zawartości zmodyfikowane systemu Windows
+## <a name="modified-windows-content"></a>Windows zmodyfikowanej zawartości
 
-W macOS, Apple udostępnił sposób poinformowania użytkownika o który zawartość okna (`NSWindow`) został zmodyfikowany przez użytkownika i należy zapisać. Jeśli zawartość zmodyfikowanego okna małych czarna kropka będą wyświetlane w jego **Zamknij** elementu widget:
+W systemie macOS, Apple oferuje sposób poinformowania użytkownika, zawartość okna (`NSWindow`) został zmodyfikowany przez użytkownika i należy zapisać. Jeśli okno zawiera zmodyfikowanej zawartości, mały czarna kropka będą wyświetlane w jego **Zamknij** elementu widget:
 
-[![](window-images/close01.png "Okno ze znacznikiem zmodyfikowane")](window-images/close01.png#lightbox)
+[![](window-images/close01.png "Okno programu przy użyciu zmodyfikowanych znacznika")](window-images/close01.png#lightbox)
 
-Jeśli użytkownik próbuje zamknąć okna lub aplikacji Mac, gdy istnieją niezapisane zmiany w zawartości okna, powinni przedstawić [okno dialogowe](~/mac/user-interface/dialog.md) lub [modalny arkusz](~/mac/user-interface/dialog.md) i umożliwia użytkownikowi zapisać swoje zmiany pierwszy:
+Jeśli użytkownik próbuje zamknąć okna lub aplikacji Mac, gdy istnieją niezapisane zmiany w zawartości okna, powinni przedstawić [okno dialogowe](~/mac/user-interface/dialog.md) lub [modalny arkusz](~/mac/user-interface/dialog.md) i umożliwić użytkownikowi zapisać swoich zmian, pierwszy:
 
-[![](window-images/close02.png "Zapisywanie arkusza wyświetlane po zamknięciu okna")](window-images/close02.png#lightbox)
+[![](window-images/close02.png "Zapisywanie arkusza, które są wyświetlane po zamknięciu okna")](window-images/close02.png#lightbox)
 
-### <a name="marking-a-window-as-modified"></a>Okno ze zmianami oznaczanie
+### <a name="marking-a-window-as-modified"></a>Oznaczanie okna jako zmodyfikowane
 
-Aby oznaczyć jako posiadające zmodyfikował zawartość okna, należy użyć poniższego kodu:
+Aby oznaczyć jako posiadające zmodyfikował zawartość okna, użyj następującego kodu:
 
 ```csharp
 // Mark Window content as modified
 Window.DocumentEdited = true;
 ```
 
-I po zapisaniu zmian, usuń zaznaczenie przy użyciu flagi zmodyfikowane:
+I po zapisaniu zmian można wyczyścić przy użyciu flagi zmodyfikowane:
 
 ```csharp
 // Mark Window content as not modified
 Window.DocumentEdited = false;
 ```
 
-### <a name="saving-changes-before-closing-a-window"></a>Trwa zapisywanie zmian przed zamknięciem okna
+### <a name="saving-changes-before-closing-a-window"></a>Zapisywanie zmian przed zamknięciem okna
 
-Aby obejrzeć użytkownikowi zamknięcie okna, dzięki czemu ich wcześniej zapisać zmodyfikowanej zawartości, należy utworzyć podklasy `NSWindowDelegate` i zastąp jego `WindowShouldClose` metody. Na przykład:
+Aby obejrzeć dla użytkownika, zamknąć okno i umożliwia im wcześniej zapisać zmodyfikowanej zawartości, należy utworzyć podklasę klasy `NSWindowDelegate` i zastąpić jej `WindowShouldClose` metody. Na przykład:
 
 ```csharp
 using System;
@@ -423,16 +423,16 @@ namespace SourceWriter
 }
 ```
 
-Aby dołączyć wystąpienie tego obiektu delegowanego do okna, należy użyć poniższego kodu:
+Użyj poniższego kodu, aby dołączyć wystąpienie tego obiektu delegowanego do okna:
 
 ```csharp
 // Set delegate
 Window.Delegate = new EditorWidowDelegate(Window);
 ```
 
-### <a name="saving-changes-before-closing-the-app"></a>Trwa zapisywanie zmian przed zamknięciem aplikacji
+### <a name="saving-changes-before-closing-the-app"></a>Zapisywanie zmian przed zamknięciem aplikacji
 
-Na koniec Xamarin.Mac aplikacji należy sprawdzić wszelkie jej systemu Windows zawierają zmodyfikowanej zawartości i umożliwia użytkownikowi zapisać zmiany przed zamknięciem. Aby to zrobić, Edytuj Twojej `AppDelegate.cs` pliku, Zastąp `ApplicationShouldTerminate` — metoda i zapewnić ich wyglądać następująco:
+Na koniec aplikacji rozszerzenia Xamarin.Mac należy sprawdzić dowolnego z jego Windows zawierają zmodyfikowanej zawartości i umożliwia użytkownikowi zapisać zmiany przed zamknięciem. Aby to zrobić, Edytuj swoje `AppDelegate.cs` pliku, Zastąp `ApplicationShouldTerminate` metody i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplication sender)
@@ -452,19 +452,19 @@ public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplic
 
 <a name="Working_with_Multiple_Windows" />
 
-## <a name="working-with-multiple-windows"></a>Praca z wieloma systemu Windows
+## <a name="working-with-multiple-windows"></a>Praca z wieloma Windows
 
-Większość aplikacji dla komputerów Mac na podstawie dokumentu można edytować wielu dokumentów, w tym samym czasie. Na przykład edytor tekstu może mieć wiele plików Otwórz do edycji w tym samym czasie. Domyślnie ma naszej nowej aplikacji Xamarin.Mac **pliku** menu z **nowy** elementu automatycznie przewodowej zapasowych `newDocument:` **akcji**.
+Większość aplikacji dla komputerów Mac na podstawie dokumentu można edytować wiele dokumentów, w tym samym czasie. Na przykład edytor tekstu może mieć wiele plików Otwórz do edycji, w tym samym czasie. Domyślnie ma naszej nowej aplikacji platformy Xamarin.Mac **pliku** menu z **New** elementu automatycznie przewodowej w usłudze `newDocument:` **akcji**.
 
-Zamierzamy aktywować nowy element i umożliwia użytkownikowi otwieranie wielu kopii naszych okno główne, aby edytować wiele dokumentów jednocześnie.
+Zamierzamy aktywować nowy element i umożliwić użytkownikowi otwieranie wielu kopii naszych okno główne, aby edytować wiele dokumentów jednocześnie.
 
-Umożliwia edytowanie naszych `AppDelegate.cs` i dodaj następujące właściwości obliczanej:
+Umożliwia edytowanie naszych `AppDelegate.cs` pliku i dodaj następujące obliczoną właściwość:
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
 ```
 
-Użyjemy można śledzić liczbę niezapisanych plików, dlatego firma Microsoft można przesłać opinię użytkownikowi (na wytycznymi firmy Apple, zgodnie z opisem powyżej).
+Użyjemy można śledzić liczbę niezapisanych plików, więc możemy Prześlij opinię do użytkownika (na wytycznymi firmy Apple, zgodnie z powyższym omówieniem).
 
 Następnie dodaj następującą metodę:
 
@@ -483,35 +483,35 @@ void NewDocument (NSObject sender) {
 }
 ```
 
-Ten kod tworzy nową wersję kontrolera okna, ładuje nowe okno główne i okno klucza i ustawia go tytuł. Teraz możemy uruchomić aplikację i zaznaczenie **nowy** z **pliku** menu zostaną otwarte i wyświetlone nowe okno edytora:
+Ten kod tworzy nową wersję kontrolera okna, ładuje nowe okno, sprawia, że główny i oknie klucz i ustawia jego tytuł. Teraz, jeśli możemy uruchomić aplikację i wybierzesz **New** z **pliku** nowe okno edytora będą otwierane i wyświetlane menu:
 
 [![](window-images/display04.png "Dodano nowe okno bez tytułu")](window-images/display04.png#lightbox)
 
-Jeśli możemy otworzyć **Windows** menu widać automatycznie śledzenia i naszych okien obsługi aplikacji:
+Jeśli otwieramy **Windows** menu widać aplikacja jest automatycznie śledzenia i naszych otwarte okna obsługi:
 
 [![](window-images/display05.png "Widows menu")](window-images/display05.png#lightbox)
 
-Aby uzyskać więcej informacji na temat pracy z menu w aplikacji Xamarin.Mac, zobacz nasze [Praca z menu](~/mac/user-interface/menu.md) dokumentacji.
+Aby uzyskać więcej informacji na temat pracy z menu w aplikacji platformy Xamarin.Mac, zobacz nasze [Praca z menu](~/mac/user-interface/menu.md) dokumentacji.
 
 <a name="Getting_the_Currently_Active_Window" />
 
-### <a name="getting-the-currently-active-window"></a>Pobieranie aktualnie aktywne okno
+### <a name="getting-the-currently-active-window"></a>Wprowadzenie do aktualnie aktywnego okna
 
-W aplikacji Xamarin.Mac, który można otworzyć wiele okien (dokumenty) są czasami będą potrzebne można pobrać bieżącego, znajdujących się na górze okna (okno klucza). Poniższy kod zwróci okna klucza:
+W aplikacji platformy Xamarin.Mac, który można otworzyć wiele okien (dokumenty) istnieją razy, gdy konieczne będzie pobieranie aktualnych i najwyższego poziomu okna (okno klucza). Poniższy kod zwróci okna klucza:
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow;
 ```
 
-Może zostać wywołany w dowolnej klasy lub metody, która musi uzyskać dostęp do okna bieżącej, klucza. Jeśli nie jest okno aktualnie otwarte, będzie zwracać `null`.
+Może ona zostać wywołana w dowolnej klasy lub metody, która musi uzyskać dostęp do aktualnych i klucza okna. Jeśli okno nie jest obecnie otwarty, to zostanie zwrócona `null`.
 
 <a name="Accessing-All-App-Windows" />
 
-### <a name="accessing-all-app-windows"></a>Uzyskiwanie dostępu do wszystkich aplikacji systemu Windows
+### <a name="accessing-all-app-windows"></a>Uzyskiwanie dostępu do wszystkich aplikacji Windows
 
-Mogą wystąpić razy wymagających dostępu do wszystkich systemu windows, że aplikacja Xamarin.Mac ma obecnie otwarty. Na przykład aby sprawdzić, czy użytkownik chce otworzyć plik jest już otwarty w istniejącym okna.
+Możliwe czasy których trzeba uzyskiwać dostęp do wszystkich systemu windows, że Twoja aplikacja platformy Xamarin.Mac obecnie ma open. Na przykład aby sprawdzić, czy użytkownik chce, aby otworzyć plik jest już otwarty w oknie istniejącej.
 
-`NSApplication.SharedApplication` Przechowuje `Windows` właściwość, która zawiera tablicę wszystkie otwarte okna w aplikacji. Można iteracja tej tablicy, aby uzyskać dostęp do wszystkich aplikacji bieżącego systemu Windows. Na przykład:
+`NSApplication.SharedApplication` Przechowuje `Windows` właściwości, które zawiera tablicę wszystkie otwarte okna w swojej aplikacji. Można wykonać iterację za pośrednictwem tej tablicy, uzyskać dostęp do wszystkich okien bieżącej aplikacji. Na przykład:
 
 ```csharp
 // Is the file already open?
@@ -525,17 +525,17 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-W przykładowym kodzie możemy rzutowanie każdego zwróconego okna niestandardowe `ViewController` klasy w aplikacji i wartość niestandardowego testowania `Path` właściwości do ścieżki pliku użytkownik chce otworzyć. Jeśli plik jest już otwarty, możemy są dostarczają tego okna na pierwszym planie.
+W przykładowym kodzie możemy rzutowanie każdego zwróconego okna niestandardowe `ViewController` klasy w naszej aplikacji i wartość niestandardowego testowania `Path` ścieżkę do pliku, użytkownik chce, aby otworzyć właściwości. Jeśli plik jest już otwarty, możemy także tego okna do przodu.
 
 <a name="Adjusting_the_Window_Size_in_Code" />
 
 ## <a name="adjusting-the-window-size-in-code"></a>Dostosowywanie rozmiaru okna w kodzie
 
-Brak razy, gdy aplikacja potrzebuje zmiany rozmiaru okna w kodzie. Aby rozmiar i położenie okna, można dostosować w `Frame` właściwości. Zmieniając rozmiar okna, zazwyczaj należy również dostosować jego źródła, aby zachować okna w tej samej lokalizacji z powodu jego macOS współrzędnych.
+Istnieją terminy, gdy aplikacja potrzebuje rozmiar okna w kodzie. Aby rozmiar i położenie okna, możesz dostosować firmy `Frame` właściwości. Zmieniając rozmiar okna, zazwyczaj należy również dostosować jego źródła, aby zachować okna w tej samej lokalizacji, ze względu na układ współrzędnych dla systemu macOS.
 
-W przeciwieństwie do systemu iOS, której lewy górny róg reprezentuje (0,0) system macOS używa mathematic współrzędnych gdzie dolny róg po lewej stronie ekranu reprezentuje (0,0). W systemie iOS współrzędne zwiększa przesuwana do prawej. Współrzędne w macOS, zwiększyć wartość do góry po prawej. 
+Inaczej niż w przypadku której lewy górny róg reprezentuje (0,0) dla systemu iOS macOS używa matematycznych współrzędnych, gdzie reprezentuje (0,0) w dolnym lewym dolnym rogu ekranu. W systemie iOS współrzędne zwiększa przesuwana kierunku po prawej stronie. W systemie macOS współrzędne wzrost wartość do góry z prawej strony. 
 
-Poniższy przykładowy kod zmienia rozmiar okna:
+Poniższy przykład kodu zmienia rozmiar okna:
 
 ```csharp
 nfloat y = 0;
@@ -549,19 +549,19 @@ SetFrame (frame, true);
 ```
 
 > [!IMPORTANT]
-> Podczas dostosowywania systemu windows rozmiar i położenie w kodzie, musisz upewnij się, że przestrzegać minimalny i maksymalny rozmiar ustawionych w Konstruktorze interfejsu. To nie automatycznie honorowane i będzie można wyświetlić okno większy lub mniejszy od tych ograniczeń.
+> Podczas dostosowywania systemu windows, rozmiar i lokalizacja w kodzie, musisz upewnij się, że należy przestrzegać minimalny i maksymalny rozmiar, ustawione w programu Interface Builder. To nie automatycznie uznawane i będzie można wyświetlić okno większe lub mniejsze niż te limity.
 
 <a name="Monitoring-Window-Size-Changes" />
 
 ## <a name="monitoring-window-size-changes"></a>Monitorowanie zmian rozmiaru okna
 
-Mogą wystąpić razy gdzie należy monitorować zmiany w rozmiarze okna wewnątrz aplikacji Xamarin.Mac. Na przykład, aby odświeżyć zawartość do nowego rozmiaru.
+Możliwe czasy gdzie należy monitorować zmiany rozmiaru okna wewnątrz aplikacji platformy Xamarin.Mac. Na przykład, aby odświeżyć zawartość do nowego rozmiaru.
 
-Aby monitorować zmiany rozmiaru, należy najpierw upewnić się, czy użytkownik przypisał niestandardowej klasy kontrolera okna w Konstruktorze interfejsu w środowisku Xcode. Na przykład `MasterWindowController` poniżej:
+Aby monitorować zmiany rozmiaru, należy najpierw upewnić się, czy użytkownik przypisał klasę niestandardową dla kontrolera okna w program Xcode Interface Builder. Na przykład `MasterWindowController` poniżej:
 
 [![](window-images/resize01.png "Inspektor tożsamości")](window-images/resize01.png#lightbox)
 
-Następnie edytuj niestandardowe klasy okna kontrolera i monitor `DidResize` zdarzeń w oknie kontrolera, aby otrzymywać powiadomienia o zmianach bieżący rozmiar. Na przykład:
+Następnie edytuj niestandardowe klasy kontroler okna i monitor `DidResize` zdarzeń w oknie kontrolera Aby otrzymywać powiadomienia o zmianach rozmiarów na żywo. Na przykład:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -574,7 +574,7 @@ public override void WindowDidLoad ()
 }
 ```
 
-Opcjonalnie można użyć `DidEndLiveResize` zdarzeń, aby tylko otrzymywać powiadomienia, gdy użytkownik zakończy zmianę rozmiaru okna. Na przykład:
+Opcjonalnie możesz użyć `DidEndLiveResize` zdarzeń tylko zgłaszane po użytkownik zakończył, zmiana rozmiaru okna. Na przykład:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -590,11 +590,11 @@ public override void WindowDidLoad ()
 
 <a name="Setting_a_Window’s_Title_and_Represented_File" />
 
-## <a name="setting-a-windows-title-and-represented-file"></a>Ustawienie okna jego tytuł i reprezentowany pliku
+## <a name="setting-a-windows-title-and-represented-file"></a>Okno w tytule i reprezentowane pliku
 
-Podczas pracy z systemem windows, które reprezentują dokumenty, `NSWindow` ma `DocumentEdited` właściwości Jeśli ustawiono `true` Wyświetla małej kropki w przycisk Zamknij, aby przyznać użytkownikowi wskazanie, że plik został zmodyfikowany i powinien zostać zapisany przed zamknięciem.
+Podczas pracy z systemem windows, które reprezentują dokumenty, `NSWindow` ma `DocumentEdited` że jeśli właściwością `true` Wyświetla małej kropki w przycisk Zamknij, aby przyznać użytkownikowi wskazanie, że plik został zmodyfikowany i powinny zostać zapisane przed zamknięciem.
 
-Umożliwia edytowanie naszych `ViewController.cs` plik, a następnie dokonaj następujących zmian:
+Umożliwia edytowanie naszych `ViewController.cs` plik i dokonaj następujących zmian:
 
 ```csharp
 public bool DocumentEdited {
@@ -641,17 +641,17 @@ public override void AwakeFromNib ()
 }
 ```
 
-Możemy też monitorowanie `WillClose` zdarzenia w oknie i sprawdzanie stanu `DocumentEdited` właściwości. Jeśli jest `true` musimy umożliwiają użytkownikowi zapisać zmiany w pliku. Jeśli firma Microsoft uruchomienia aplikacji, wprowadź tekst, zostanie wyświetlony kropki (.):
+Możemy również monitorowanie `WillClose` zdarzeń w oknie i sprawdzając stan `DocumentEdited` właściwości. Jeśli jest `true` musimy przyznać użytkownikowi możliwości, aby zapisać zmiany w pliku. Jeśli firma Microsoft uruchomić naszą aplikację i wprowadź jakiś tekst, zostanie wyświetlony kropki (.):
 
-[![](window-images/file01.png "Zmienione okna")](window-images/file01.png#lightbox)
+[![](window-images/file01.png "Zmieniono okna")](window-images/file01.png#lightbox)
 
-Spróbujemy zamknąć okno, uzyskujemy alertu:
+Podejmowane są próby zamknij okno, uzyskujemy alertu:
 
-[![](window-images/file02.png "Zapisz wyświetlanie okna dialogowego")](window-images/file02.png#lightbox)
+[![](window-images/file02.png "Zapisz wyświetlania okna dialogowego")](window-images/file02.png#lightbox)
 
-Firma Microsoft ładowania dokumentu z pliku możemy ustawić tytuł okna w pliku nazwy przy użyciu `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` — metoda (zakładając, że `path` jest ciąg reprezentujący otwierany plik). Ponadto można ustawić adres URL pliku przy użyciu `window.RepresentedUrl = url;` metody.
+Ładujemy dokumentu z pliku możemy ustawić tytuł okna w pliku przy użyciu `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` — metoda (biorąc pod uwagę, że `path` jest ciągiem reprezentującym otwierany plik). Ponadto można ustawić adres URL pliku przy użyciu `window.RepresentedUrl = url;` metody.
 
-Jeśli adres URL wskazuje typ pliku znane przez system operacyjny, pojawi się jego ikonę na pasku tytułu. Gdy użytkownik kliknie prawym przyciskiem myszy ikonę, wyświetlany jest ścieżka do pliku.
+Jeśli adres URL wskazuje typ pliku, znane przez system operacyjny, pojawi się jego ikonę na pasku tytułu. Jeśli użytkownik kliknie prawym przyciskiem myszy na ikonie, pojawią się ścieżkę do pliku.
 
 Umożliwia edytowanie `AppDelegate.cs` pliku i dodaj następującą metodę:
 
@@ -688,39 +688,39 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-Teraz możemy uruchomienia aplikacji, wybierz **Otwórz...**  z **pliku** menu, wybierz plik tekstowy z **Otwórz** okno dialogowe i otwórz go:
+Teraz Jeśli możemy uruchomić naszą aplikację, wybierz **Otwórz...**  z **pliku** menu, wybierz plik tekstowy z **Otwórz** okna dialogowego pole, a następnie otwórz go:
 
 [![](window-images/file03.png "Otwarte okno dialogowe")](window-images/file03.png#lightbox)
 
 Plik, który będzie wyświetlany i tytuł zostanie ustawiony z ikoną pliku:
 
-[![](window-images/file04.png "Zawartość pliku załadowany")](window-images/file04.png#lightbox)
+[![](window-images/file04.png "Załadowano zawartość pliku")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
 ## <a name="adding-a-new-window-to-a-project"></a>Dodawanie nowego okna do projektu
 
-Jako uzupełnienie okna głównego dokumentu aplikacji Xamarin.Mac może być konieczne do wyświetlania innych typów systemu windows użytkownika, takie jak preferencje lub Inspektora paneli.
+Oprócz okna głównego dokumentu aplikacji rozszerzenia Xamarin.Mac może być konieczne mają być wyświetlane inne rodzaje systemu windows użytkownika, takie jak preferencje lub inspektor paneli.
 
 Aby dodać nowe okno, wykonaj następujące czynności:
 
-1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu w środowisku Xcode.
-2. Przeciągnij nowy **kontrolera okna** z **biblioteki** i upuść ją na **powierzchni projektowej**:
+1. W **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w program Xcode Interface Builder.
+2. Przeciągnij nowy **kontroler okna** z **biblioteki** i upuść je na **powierzchni projektowej**:
 
     [![](window-images/new01.png "Wybiera nowy kontroler okna w bibliotece")](window-images/new01.png#lightbox)
-3. W **inspektora tożsamości**, wprowadź `PreferencesWindow` dla **identyfikator scenorysu**: 
+3. W **Inspektor tożsamości**, wprowadź `PreferencesWindow` dla **identyfikator scenorysu**: 
 
-    [![](window-images/new02.png "Ustawienie Identyfikatora scenorysu")](window-images/new02.png#lightbox)
-5. Projekt interfejsu: 
+    [![](window-images/new02.png "Ustawianie Identyfikatora scenorysu")](window-images/new02.png#lightbox)
+5. Projektowanie interfejsu użytkownika: 
 
     [![](window-images/new03.png "Projektowanie interfejsu użytkownika")](window-images/new03.png#lightbox)
-6. Otwórz Menu aplikacji (`MacWindows`), wybierz pozycję **Preferencje...** , Przytrzymując klawisz CTRL i przeciągnij, aby nowe okno: 
+6. Otwórz Menu aplikacji (`MacWindows`), wybierz opcję **Preferencje...** , Przytrzymując klawisz CTRL i przeciągnij go do nowego okna: 
 
     [![](window-images/new05.png "Tworzenie segue")](window-images/new05.png#lightbox)
-7. Wybierz **Pokaż** w menu podręcznym.
-6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+7. Wybierz **Pokaż** z menu podręcznego.
+6. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Jeśli firma Microsoft wykonywania kodu i wybierz **Preferencje...**  z **Menu aplikacja**, wyświetli się okno:
+Jeśli możemy uruchomić kod i wybierz pozycję **Preferencje...**  z **Menu aplikacji**, zostanie wyświetlone okno:
 
 [![](window-images/new04.png "Menu Preferencje próbki")](window-images/new04.png#lightbox)
 
@@ -728,53 +728,53 @@ Jeśli firma Microsoft wykonywania kodu i wybierz **Preferencje...**  z **Menu a
 
 ## <a name="working-with-panels"></a>Praca z paneli
 
-Jak już wspomniano w chwili rozpoczęcia tego artykułu, panelu pojawia się powyżej innych oknach i udostępnia narzędzia lub kontrolki, które użytkownicy mogą pracować z, gdy są otwarte dokumenty. 
+Jak wspomniano na początku tego artykułu, panel pojawia się nad innymi oknami i zapewnia narzędzia lub kontrolki, które użytkownicy mogą pracować z, gdy są otwarte dokumenty. 
 
-Podobnie jak okna Tworzenie i pracować z aplikacji Xamarin.Mac innego typu proces jest zasadniczo taki sam:
+Podobnie jak dowolny inny typ okna, który można utworzyć i pracować w aplikacji platformy Xamarin.Mac proces jest zasadniczo taki sam:
 
 1. Dodaj nową definicję okna do projektu.
-2. Kliknij dwukrotnie `.xib` plik, aby otworzyć projekt okna do edycji w Konstruktorze interfejsu w środowisku Xcode.
-2. Ustaw właściwości wymagane okna **inspektora atrybutu** i **inspektora rozmiar**.
-4. Przeciągnij formanty wymagane do tworzenia interfejsu i skonfigurować je w **inspektora atrybutu**.
-5. Użyj **inspektora rozmiar** do obsługi zmiana rozmiaru dla elementów interfejsu użytkownika.
-6. Udostępnianie okna elementy interfejsu użytkownika do kodu C# za pomocą **gniazda** i **akcje**.
-7. Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
+2. Kliknij dwukrotnie `.xib` plik, aby otworzyć projekt okna do edycji w program Xcode Interface Builder.
+2. Ustaw właściwości wymagane okna **Inspektor atrybut** i **Inspektor rozmiar**.
+4. Przeciągnij w kontrolkach wymagany do kompilowania interfejsu i skonfigurować je w **Inspektor atrybutu**.
+5. Użyj **Inspektor rozmiar** do obsługi rozmiaru dla elementów interfejsu użytkownika.
+6. Udostępnianie elementów interfejsu użytkownika w oknie kodu C# za pomocą **gniazd** i **akcje**.
+7. Zapisz zmiany i przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-W **inspektora atrybutu**, masz następujące opcje specyficzne dla paneli:
+W **Inspektor atrybutu**, masz następujące opcje specyficzne dla panele:
 
 [![](window-images/panel03.png "Inspektor atrybutu")](window-images/panel03.png#lightbox)
 
-- **Styl** — umożliwiają dostosowanie styl panelu z: regularne panelu (prawdopodobnie standardowe okno), narzędzia panelu (ma mniejszy paska tytułu), HUD Panel (jest przezroczysta i na pasku tytułu jest częścią tła).
-- **Uaktywnianie z systemem innym niż** — Określa, w panelu staje się oknem klucza.
-- **Dokument modalne** — Jeśli dokument modalne, panelu tylko przesunie się nad aplikacji systemu windows, przeciwnym razie jest ona wyświetlana przede wszystkim.
+- **Styl** — pozwalają dostosować styl panelu z: regularne panelu (wygląda standardowego okna), narzędzia panelu (ma mniejszy paska tytułu), HUD Panel (jest przezroczysty i na pasku tytułu jest częścią tła).
+- **Uaktywnianie nie** — Określa, w panelu staje się oknem klucza.
+- **Dokumentowanie modalne** — Jeśli dokument modalne, panel tylko przesunie się nad aplikacji systemu windows, przeciwnym razie jest ona wyświetlana przede wszystkim.
 
 
 Aby dodać nowy Panel, wykonaj następujące czynności:
 
-1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik.** .
-2. W oknie dialogowym Nowy plik, wybierz **Xamarin.Mac** > **Cocoa okna z kontrolera**:
+1. W **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy nad projektem i wybierz **Dodaj** > **nowy plik...** .
+2. W oknie dialogowym Nowy plik, wybierz **Xamarin.Mac** > **okno Cocoa z kontrolerem**:
 
-    [![](window-images/panels00.png "Dodawanie nowego kontrolera okna")](window-images/panels00.png#lightbox)
-3. Wprowadź `DocumentPanel` dla **nazwa** i kliknij przycisk **nowy** przycisku.
-4. Kliknij dwukrotnie `DocumentPanel.xib` plik, aby otworzyć do edycji w Konstruktorze interfejsu: 
+    [![](window-images/panels00.png "Dodawanie nowych kontroler okna")](window-images/panels00.png#lightbox)
+3. Wprowadź `DocumentPanel` dla **nazwa** i kliknij przycisk **New** przycisku.
+4. Kliknij dwukrotnie `DocumentPanel.xib` plik, aby go otworzyć do edycji w programu Interface Builder: 
 
     [![](window-images/new02.png "Edytowanie pannel")](window-images/new02.png#lightbox)
-5. Usuń istniejące okno i przeciągnij Panel z **inspektora biblioteki** w **Edytor interfejsu**: 
+5. Usuń istniejące okno i przeciągnij panelu z poziomu **Inspektor biblioteki** w **Edytor interfejsu**: 
 
     [![](window-images/panels01.png "Usuwanie istniejącego okna")](window-images/panels01.png#lightbox)
-6. Utworzenie punktu zaczepienia panelu do **właścicielem pliku*- **okna*- **gniazda**: 
+6. Podłączać panelu **właściciel pliku** - **okna** - **ujścia**: 
 
-    [![](window-images/panels02.png "Przeciąganie można przewodowo zapasowej panelu")](window-images/panels02.png#lightbox)
-7. Przełącz się do **inspektora tożsamości** i ustaw klasy panelu `DocumentPanel`: 
+    [![](window-images/panels02.png "Przeciągając przewodowy Panel")](window-images/panels02.png#lightbox)
+7. Przełącz się do **Inspektor tożsamości** i ustaw klasy panelu `DocumentPanel`: 
 
-    [![](window-images/panels03.png "Ustawienie panelu — klasa")](window-images/panels03.png#lightbox)
-6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
-7. Edytuj `DocumentPanel.cs` plików i zmień definicję klasy do następującego: 
+    [![](window-images/panels03.png "Klasa panelu ustawień")](window-images/panels03.png#lightbox)
+6. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
+7. Edytuj `DocumentPanel.cs` pliku i zmień definicję klasy do następującego: 
 
     `public partial class DocumentPanel : NSPanel`
 8. Zapisz zmiany w pliku.
 
-Edytuj `AppDelegate.cs` plików i upewnij `DidFinishLaunching` wygląd metody podobne do poniższych:
+Edytuj `AppDelegate.cs` pliku i upewnij `DidFinishLaunching` wygląd metoda podobne do następującego:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -786,18 +786,18 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ```
 
-Czy możemy uruchomić aplikację, zostanie wyświetlony panelu:
+Jeśli możemy uruchomić aplikację, zostanie wyświetlony panel:
 
 [![](window-images/panels04.png "Panel w uruchomionej aplikacji")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
-> Panel systemu Windows została zastąpiona przez firmę Apple i powinna zostać zastąpiona **interfejsy inspektora**. Pełny przykład tworzenia **inspektora** w aplikacji Xamarin.Mac, zobacz nasze [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) przykładowej aplikacji.
+> Panel Windows została zastąpiona przez firmę Apple i powinien zostać zamieniony **inspektora interfejsów**. Aby uzyskać pełny przykład tworzenia **Inspektor** w aplikacji platformy Xamarin.Mac, zobacz nasze [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) przykładową aplikację.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowy widok w pracy z systemem Windows i panele aplikacją Xamarin.Mac. Firma Microsoft przedstawiono różne typy i korzysta z systemu Windows i panele, tworzenie i obsługa systemu Windows i panele w Konstruktorze interfejsu w środowisku Xcode i sposobu pracy z systemem Windows i panele w kodzie języka C#.
+W tym artykule jest zajęta szczegółowe omówienie pracy z Windows i paneli w aplikacji platformy Xamarin.Mac. Firma dostrzegła różnych typów i korzysta z systemu Windows i paneli, jak tworzyć i obsługiwać Windows i paneli w program Xcode Interface Builder i sposób pracy z Windows i paneli w kodzie języka C#.
 
 ## <a name="related-links"></a>Linki pokrewne
 
@@ -805,5 +805,5 @@ W tym artykule trwało szczegółowy widok w pracy z systemem Windows i panele a
 - [MacInspector (przykład)](https://developer.xamarin.com/samples/mac/MacInspector/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Praca z menu](~/mac/user-interface/menu.md)
-- [OS X człowieka Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Wprowadzenie do systemu Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
+- [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Wprowadzenie do Windows](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
