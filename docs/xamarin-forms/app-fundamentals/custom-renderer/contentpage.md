@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995745"
 ---
 # <a name="customizing-a-contentpage"></a>Dostosowywanie obiektu ContentPage
@@ -197,7 +197,7 @@ namespace CustomRenderer.Droid
 
 Wywołania do klasy bazowej `OnElementChanged` metoda tworzy wystąpienie aplikacji Android `ViewGroup` formant, który jest grupą widoków. Strumień na żywo aparatu renderowania tylko pod warunkiem że mechanizm renderujący nie jest już dołączony do istniejącego elementu zestawu narzędzi Xamarin.Forms, pod warunkiem, że istnieje wystąpienie strony który jest renderowany przez niestandardowego modułu renderowania.
 
-Następnie dostosowanego strony za pomocą szeregu metod, które używają `Camera` interfejsu API w celu zapewnienia transmisji strumieniowej na żywo z kamery i możliwość przechwytywania zdjęcie, przed `AddView` metoda jest wywoływana, aby dodać kamery na żywo strumienia interfejsu użytkownika w celu `ViewGroup`.
+Następnie dostosowanego strony za pomocą szeregu metod, które używają `Camera` interfejsu API w celu zapewnienia transmisji strumieniowej na żywo z kamery i możliwość przechwytywania zdjęcie, przed `AddView` metoda jest wywoływana, aby dodać kamery na żywo strumienia interfejsu użytkownika w celu `ViewGroup`. Należy pamiętać, że w systemie Android należy również zastąpić `OnLayout` metodę, aby wykonywać operacje miary i układu w widoku. Aby uzyskać więcej informacji, zobacz [przykładowy moduł renderowania ContentPage](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Tworzenie modułu renderowania strony na platformy uniwersalnej systemu Windows
 
