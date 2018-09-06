@@ -1,58 +1,58 @@
 ---
-title: Źródło listy w Xamarin.Mac
-description: Ten artykuł dotyczy pracy z listy źródła w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie list źródła w środowisku Xcode i konstruktora interfejsu i interakcji z nimi w kodzie języka C#.
+title: Listy źródeł na platformie Xamarin.Mac
+description: Ten artykuł dotyczy pracy z listy źródeł w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenie i utrzymywanie listy źródeł w środowisku Xcode i programu Interface Builder i interakcji z nimi w kodzie języka C#.
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de51395192ab009f5c7fa338a4414ba553610b8c
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792775"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780623"
 ---
-# <a name="source-lists-in-xamarinmac"></a>Źródło listy w Xamarin.Mac
+# <a name="source-lists-in-xamarinmac"></a>Listy źródeł na platformie Xamarin.Mac
 
-_Ten artykuł dotyczy pracy z listy źródła w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie list źródła w środowisku Xcode i konstruktora interfejsu i interakcji z nimi w kodzie języka C#._
+_Ten artykuł dotyczy pracy z listy źródeł w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenie i utrzymywanie listy źródeł w środowisku Xcode i programu Interface Builder i interakcji z nimi w kodzie języka C#._
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego źródła listy, które osoba używająca *Objective-C* i *Xcode* jest. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ Aby utworzyć i zachować swoje listy źródłowej (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, masz dostęp do tej samej źródła Wyświetla deweloperem, pracy w *języka Objective-C* i *Xcode* jest. Ponieważ rozszerzenia Xamarin.Mac integruje się bezpośrednio za pomocą edytora Xcode, można użyć program Xcode _programu Interface Builder_ Aby utworzyć i obsługiwać swoje listy źródłowej (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-Źródło listy jest specjalny typ widoku konspektu używane do wyświetlania źródła akcji, takich jak paska bocznego w iTunes lub wyszukiwania.
+Lista źródeł to specjalny rodzaj widoku konspektu, używane do wyświetlania źródła akcji, takich jak pasek boczny w programie Finder lub programu iTunes.
 
 [![](source-list-images/source05.png "Przykład listy źródłowej")](source-list-images/source05.png#lightbox)
 
-W tym artykule omówione zostaną następujące czynności podstawowe informacje o pracy z listami źródła w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówimy podstawy pracy z listami źródła w aplikacji platformy Xamarin.Mac. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` poleceń używany do przesyłania w górę klas C# do obiektów języka Objective C i elementy interfejsu użytkownika.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` poleceń Umożliwia o komunikacji sieciowej w górę klas języka C# do języka Objective-C obiektów i elementów interfejsu użytkownika.
 
 <a name="Introduction_to_Outline_Views" />
 
-## <a name="introduction-to-source-lists"></a>Wprowadzenie do listy źródłowej
+## <a name="introduction-to-source-lists"></a>Wprowadzenie do listy źródeł
 
-Jak już wspomniano, lista źródła jest specjalny typ widoku konspektu używany do wyświetlenia źródła akcji, takich jak paska bocznego w iTunes lub wyszukiwania. Lista źródeł jest typem tabeli, która pozwala użytkownikowi rozwiń lub Zwiń wiersze danych hierarchicznej. W przeciwieństwie do widoku tabeli elementów na liście źródło nie znajdują się w płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym. Jeśli element na liście źródło zawiera inne elementy, można rozwinięte lub zwinięte przez użytkownika.
+Jak wspomniano powyżej, lista źródeł jest specjalny rodzaj widoku konspektu używane do wyświetlania źródła akcji, takich jak pasek boczny w programie Finder lub programu iTunes. Lista źródeł jest typem tabeli, który umożliwia użytkownikowi rozwinąć lub zwinąć wiersze danych hierarchicznych. W przeciwieństwie do widoku tabeli elementy na liście źródłowej nie są w formie płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym. Jeśli element na liście źródło zawiera inne elementy, można można rozwijać i zwijać przez użytkownika.
 
-Lista źródła jest specjalnie styl widoku konspektu (`NSOutlineView`), które jest podklasą widoku tabeli (`NSTableView`) i w efekcie dziedziczy znacznie jego działania od swojej klasy nadrzędnej. W związku z tym wiele operacji obsługiwane przez wyświetlanie konspektu, również są obsługiwane przez listy źródłowej. Aplikacja Xamarin.Mac ma kontrolę nad tych funkcji i parametry listy źródeł, (albo w kodzie lub konstruktora interfejsu) można skonfigurować do Zezwalaj lub nie zezwalaj pewnych operacji.
+Lista źródeł jest specjalnie ze stylem widoku konspektu (`NSOutlineView`), który sam jest podklasą widok tabeli (`NSTableView`) i w efekcie dziedziczy większość swojego zachowania od swojej klasy nadrzędnej. W rezultacie wiele operacji obsługiwanych przez wyświetlanie konspektu, są również obsługiwane przez listy źródeł. Aplikacja platformy Xamarin.Mac ma kontrolę nad tych funkcji, a następnie można skonfigurować parametrów listy źródeł, (albo w kodzie albo programu Interface Builder), aby umożliwiać lub uniemożliwiać pewne operacje.
 
-Lista źródeł nie przechowuje swoich danych, zamiast tego jest zależne od źródła danych (`NSOutlineViewDataSource`) wiersze i kolumny są wymagane na zgodnie z potrzebami.
+Lista źródeł nie przechowuje swoich danych, zamiast tego opiera się na źródle danych (`NSOutlineViewDataSource`) wiersze i kolumny są wymagane na zgodnie z potrzebami.
 
-Zachowanie listę źródła można dostosować, podając podklasą delegata widoku konspektu (`NSOutlineViewDelegate`) na potrzeby obsługi typu konspektu, aby wybrać funkcje, element wybór i edytowania, niestandardowe śledzenia i widoków niestandardowych dla poszczególnych elementów.
+Zachowanie listę źródła można dostosować, podając podklasę delegata wyświetlanie konspektu (`NSOutlineViewDelegate`) na potrzeby obsługi typu konspektu, aby wybrać funkcje, element wyboru i edytowania, niestandardowe śledzenia i widoki niestandardowe dla poszczególnych elementów.
 
-Ponieważ listy źródeł udostępnia znacznie jego zachowania i funkcji z widoku tabeli i widoku konspektu, należy przejść przez naszych [widoków tabel](~/mac/user-interface/table-view.md) i [widoków konspektu](~/mac/user-interface/outline-view.md) dokumentacji, aby móc kontynuować z tego artykułu.
+Ponieważ listy źródeł udostępni wiele jej działanie oraz funkcje widok tabeli i konspektu, możesz chcieć przejść przez naszych [widoki tabel](~/mac/user-interface/table-view.md) i [widoki konspektu](~/mac/user-interface/outline-view.md) dokumentacji, przed kontynuowaniem z tego artykułu.
 
 <a name="Working_with_Source_Lists" />
 
-## <a name="working-with-source-lists"></a>Praca z listy źródłowej
+## <a name="working-with-source-lists"></a>Praca z listy źródeł
 
-Źródło listy jest specjalny typ widoku konspektu używane do wyświetlania źródła akcji, takich jak paska bocznego w iTunes lub wyszukiwania. W przeciwieństwie do widoków konspektu przed definiujemy naszej listy źródła w Konstruktorze interfejsu Utwórzmy klasy zapasowy w Xamarin.Mac.
+Lista źródeł to specjalny rodzaj widoku konspektu, używane do wyświetlania źródła akcji, takich jak pasek boczny w programie Finder lub programu iTunes. W odróżnieniu od widoki konspektu przed definiujemy naszej listy źródeł w programu Interface Builder Utwórzmy klasy zapasowy platformie Xamarin.Mac.
 
-Najpierw utwórz nową `SourceListItem` klasy do przechowywania danych dla naszej listy źródłowej. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListItem` dla **nazwa** i kliknij przycisk **nowy** przycisk:
+Po pierwsze Utwórzmy nowy `SourceListItem` klasy do przechowywania danych z naszej listy źródłowej. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListItem` dla **nazwa** i kliknij przycisk **New** przycisku:
 
-[![](source-list-images/source01.png "Dodawanie klasy pusty")](source-list-images/source01.png#lightbox)
+[![](source-list-images/source01.png "Dodawanie pustą klasę")](source-list-images/source01.png#lightbox)
 
-Wprowadź `SourceListItem.cs` wygląd pliku podobne do poniższych: 
+Wprowadź `SourceListItem.cs` wygląd pliku, jak pokazano poniżej: 
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListDataSource` dla **nazwa** i kliknij przycisk **nowy** przycisku. Wprowadź `SourceListDataSource.cs` wygląd pliku podobne do poniższych:
+W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListDataSource` dla **nazwa** i kliknij przycisk **New** przycisku. Wprowadź `SourceListDataSource.cs` wygląd pliku, jak pokazano poniżej:
 
 ```csharp
 using System;
@@ -352,9 +352,9 @@ namespace MacOutlines
 }
 ```
 
-To będzie dostarczać dane dla naszej listy źródłowej.
+Zapewni to dane w naszej listy źródłowej.
 
-W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListDelegate` dla **nazwa** i kliknij przycisk **nowy** przycisku. Wprowadź `SourceListDelegate.cs` wygląd pliku podobne do poniższych:
+W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListDelegate` dla **nazwa** i kliknij przycisk **New** przycisku. Wprowadź `SourceListDelegate.cs` wygląd pliku, jak pokazano poniżej:
 
 ```csharp
 using System;
@@ -446,7 +446,7 @@ namespace MacOutlines
 
 Zapewni to zachowanie naszej listy źródłowej.
 
-Ponadto w **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowego pliku...** Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListView` dla **nazwa** i kliknij przycisk **nowy** przycisku. Wprowadź `SourceListView.cs` wygląd pliku podobne do poniższych:
+Na koniec w **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **nowy plik...** Wybierz **ogólne** > **pustą klasę**, wprowadź `SourceListView` dla **nazwa** i kliknij przycisk **New** przycisku. Wprowadź `SourceListView.cs` wygląd pliku, jak pokazano poniżej:
 
 ```csharp
 using System;
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-Spowoduje to utworzenie niestandardowego, wielokrotnego użytku podklasą klasy `NSOutlineView` (`SourceListView`) można używana do kierowania listy źródeł w dowolnej aplikacji Xamarin.Mac, że firma Microsoft.
+Spowoduje to utworzenie niestandardowych, wielokrotnego użytku podklasa `NSOutlineView` (`SourceListView`), firma Microsoft można użyć do listy źródeł na dysku w dowolnej aplikacji platformy Xamarin.Mac, które firma Microsoft.
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
-## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Tworzenie i obsługę list źródła w środowisku Xcode
+## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Utworzenie i utrzymywanie listy źródeł w środowisku Xcode
 
-Teraz Przyjrzyjmy projektowania naszej listy źródła w Konstruktorze interfejsu. Kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu i przeciągnij podzielony widok z **inspektora biblioteki**, dodaj go do kontrolera widoku i ustaw dla niej zmiany rozmiaru w widoku w **Edytor ograniczenia** :
+Teraz możemy projektowanie listy źródłowej w programu Interface Builder. Kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder i przeciągnij widoku złożonego z **Inspektor biblioteki**, dodaj go do kontrolera widoku i ustaw dla niej zmiany rozmiaru w widoku w **ograniczenia edytora** :
 
 [![](source-list-images/source00.png "Edytowanie ograniczenia")](source-list-images/source00.png#lightbox)
 
-Następnie przeciągnij listę źródła z **inspektora biblioteki**, dodaj go do lewej strony podzielony widok oraz ustaw go zmiany rozmiaru w widoku w **Edytor ograniczenia**:
+Następnie przeciągnij listy źródeł, z **Inspektor biblioteki**, dodaj go do lewej strony widoku złożonego i ustaw dla niej zmiany rozmiaru w widoku w **Edytor ograniczenia**:
 
 [![](source-list-images/source02.png "Edytowanie ograniczenia")](source-list-images/source02.png#lightbox)
 
 Następnie przełącz się do **widoku tożsamości**, wybierz z listy źródeł i zmień ją na **klasy** do `SourceListView`:
 
-[![](source-list-images/source03.png "Ustawienie nazwy klasy")](source-list-images/source03.png#lightbox)
+[![](source-list-images/source03.png "Ustawianie nazwy klasy")](source-list-images/source03.png#lightbox)
 
-Na koniec Utwórz **gniazda** wywoływanych z naszej listy źródłowej `SourceList` w `ViewController.h` pliku:
+Na koniec Utwórz **ujścia** dla naszej listy źródła o nazwie `SourceList` w `ViewController.h` pliku:
 
-[![](source-list-images/source04.png "Konfigurowanie gniazda")](source-list-images/source04.png#lightbox)
+[![](source-list-images/source04.png "Konfigurowanie źródła")](source-list-images/source04.png#lightbox)
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
 <a name="Populating the Source List" />
 
-## <a name="populating-the-source-list"></a>Wypełnianie listy źródłowej
+## <a name="populating-the-source-list"></a>Podczas wypełniania listy źródłowej
 
-Umożliwia edytowanie `RotationWindow.cs` pliku w Visual Studio dla komputerów Mac i przekształcenie go w `AwakeFromNib` wygląd metody podobne do poniższych:
+Umożliwia edytowanie `RotationWindow.cs` pliku w programie Visual Studio dla komputerów Mac i przypisz ją firmy `AwakeFromNib` wygląd metoda podobne do następującego:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-`Initialize ()` Metoda musi być wywoływany z naszej listy źródłowej **gniazda** _przed_ wszystkie elementy są dodawane do niego. Dla każdej grupy elementów możemy utworzyć element nadrzędny, a następnie dodaj elementów podrzędnych do elementu grupy. Każda grupa jest dodawane do listy źródłowej kolekcji `SourceList.AddItem (...)`. Ostatnie dwa wiersze ładowania dla listy źródeł danych i rozwija wszystkie grupy:
+`Initialize ()` Metody muszą zostać wywołane z naszej listy źródłowej **ujścia** _przed_ wszystkie elementy są dodawane do niego. Dla każdej grupy elementów możemy utworzyć element nadrzędny, a następnie dodaj elementy podrzędne do tego elementu grupy. Każda grupa jest dodawane do listy źródeł kolekcji `SourceList.AddItem (...)`. Ostatnie dwa wiersze Załaduj dane do listy źródeł i rozwija wszystkie grupy:
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-Na koniec Edytuj `AppDelegate.cs` plików i upewnij `DidFinishLaunching` wygląd metody podobne do poniższych:
+Wreszcie edytować `AppDelegate.cs` pliku i upewnij `DidFinishLaunching` wygląd metoda podobne do następującego:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,15 +612,15 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Czy możemy uruchomić aplikację, poniżej zostanie wyświetlony:
+Jeśli możemy uruchomić aplikację, że zostanie wyświetlony:
 
-[![](source-list-images/source05.png "Uruchom przykładową aplikację")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "Uruchamianie przykładowej aplikacji")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowe przyjrzeć się praca z listami źródła w aplikacji Xamarin.Mac. Widzieliśmy, jak tworzyć i obsługiwać źródła list w programie Xcode przez interfejs konstruktora i sposobu pracy z listami źródła w kodzie języka C#.
+W tym artykule jest zajęta szczegółowe omówienie pracy z listami źródła w aplikacji platformy Xamarin.Mac. Widzieliśmy, jak tworzyć i obsługiwać, źródła list w program Xcode Interface Builder i sposób pracy z listami źródła w kodzie języka C#.
 
 ## <a name="related-links"></a>Linki pokrewne
 
@@ -628,8 +628,8 @@ W tym artykule trwało szczegółowe przyjrzeć się praca z listami źródła w
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
 - [Widoki tabel](~/mac/user-interface/table-view.md)
 - [Widoki konspektu](~/mac/user-interface/outline-view.md)
-- [OS X człowieka Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Wprowadzenie do widoków konspektu](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Wprowadzenie do konturu widoków](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

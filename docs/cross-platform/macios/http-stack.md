@@ -1,97 +1,89 @@
 ---
 title: HttpClient i selektor implementacji protokołów SSL/TLS dla systemu iOS/macOS
-description: Stos HttpClient i SSL/TLS selektora implementacji określa implementacji HttpClient i SSL/TLS, który będzie używany przez aplikację systemu iOS, systemu tvOS lub macOS Xamarin.
+description: Stos HttpClient i protokoły SSL/TLS selektor implementacji określa implementacji klasy HttpClient i protokoły SSL/TLS, który będzie używany przez aplikację na platformie Xamarin iOS, tvOS lub macOS.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782271"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780629"
 ---
-# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient i selektor implementacji protokołów SSL/TLS dla systemu iOS/macOS
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient i protokoły SSL/TLS selektor implementacji dla systemu iOS/macOS
 
-**Selektora implementacji HttpClient** dla platformy Xamarin.iOS, Xamarin.tvOS i Xamarin.Mac Określa, które `HttpClient` wdrożenia do użycia. Możesz przełączyć się do implementację, która korzysta z systemem iOS, systemu tvOS lub macOS transportów natywnego (`NSUrlSession` lub `CFNetwork`, w zależności od systemu operacyjnego). Odwróć jest protokołu TLS 1.2 obsługi, mniejszym pliki binarne i szybsze pobieranie; Wadą interfejsu jest wymaganie pętli zdarzenia należy uruchomić na można wykonać operacji asynchronicznej.
+**Selektor implementacji klasy HttpClient** dla platformy Xamarin.iOS, Xamarin.tvOS i Xamarin.Mac Określa, które `HttpClient` wdrożenia do użycia. Możesz przełączyć się do implementację, która korzysta z systemem iOS, tvOS lub macOS transportów natywnego (`NSUrlSession` lub `CFNetwork`, w zależności od systemu operacyjnego). Wzrost jest protokół TLS 1.2 — Pomoc techniczna, mniejsze pliki binarne i szybsze pobieranie; minusem jest to, że wymaga ona pętlę zdarzeń, należy uruchomić dla asynchronicznych operacji do wykonania.
 
-Projekty musi odwoływać się **System.Net.Http** zestawu.
+Projekty muszą odwoływać się do **System.Net.Http** zestawu.
 
 > [!WARNING]
-> **Kwietnia, 2018** — ze względu na wyższy poziom bezpieczeństwa wymagania, w tym zgodności PCI główne dostawców w chmurze i serwery sieci web powinny zaprzestać obsługi protokołu TLS w wersji wcześniejszej niż 1.2.  Projekty platformy Xamarin utworzone w poprzednich wersjach programu Visual Studio domyślnie używać starszych wersji protokołu TLS.
+> **Kwietnia 2018 r.** — ze względu na wyższy poziom bezpieczeństwa wymagania, w tym zgodności ze standardami PCI głównych dostawców rozwiązań w chmurze i serwery sieci web powinny polegająca na wyłączeniu obsługi protokołu TLS w wersji wcześniejszej niż 1.2.  Projekty Xamarin utworzone w poprzednich wersjach programu Visual Studio domyślnie używać starszych wersji protokołu TLS.
 >
-> W celu zapewnienia aplikacji kontynuować pracę z tych serwerów i usług, **należy zaktualizować swoje projekty Xamarin z `NSUrlSession` ustawienie pokazano poniżej, następnie ponowne utworzenie i ponownie wdróż aplikacje** dla użytkowników.
+> W celu zapewnienia aplikacji kontynuować pracę z tymi serwerami i usługami, **należy zaktualizować swoje projekty Xamarin dzięki `NSUrlSession` ustawienie pokazano poniżej, następnie ponownie utwórz i Wdróż ponownie swoje aplikacje** dla użytkowników.
 
-<a name="Selecting-a-HttpClient-Stack" />
-
-### <a name="selecting-a-httpclient-stack"></a>Wybieranie stosu HttpClient
+### <a name="selecting-an-httpclient-stack"></a>Wybieranie stos HttpClient
 
 Aby dostosować `HttpClient` używany przez aplikację:
 
 1. Kliknij dwukrotnie **Nazwa projektu** w **Eksploratora rozwiązań** aby otworzyć aplet Opcje projektu.
-2. Przełącz się do **kompilacji** ustawienia projektu (na przykład **kompilacji systemu iOS** dla aplikacji platformy Xamarin.iOS).
-3. Z **implementacji HttpClient** listy rozwijanej wybierz `HttpClient` wpisać jako jeden z następujących: **NSUrlSession** (zalecane), **CFNetwork**, lub  **Zarządzane**.
+2. Przełącz się do **kompilacji** ustawienia projektu (na przykład **kompilacja systemu iOS** dla aplikacji platformy Xamarin.iOS).
+3. Z **Implementacja klasy HttpClient** listy rozwijanej wybierz `HttpClient` wpisać jako jeden z następujących: **sesji NSUrlSession** (zalecane), **CFNetwork**, lub  **Zarządzane**.
 
-[![Wybierz implementacji HttpClient z zarządzanego, CFNetwork lub NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
+[![Implementacja klasy HttpClient wybierać zarządzane CFNetwork i sesji NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 > [!TIP]
 > Obsługa protokołu TLS 1.2 `NSUrlSession` opcja jest zalecana.
 
-<a name="NSUrlSession" />
-
 ### <a name="nsurlsession"></a>NSUrlSession
 
-`NSURLSession`— Oparte na program obsługi jest oparty na natywnego `NSURLSession` framework dostępnych w systemie iOS 7 i nowszych. 
+`NSURLSession`— Na podstawie programu obsługi opiera się na natywnym `NSURLSession` framework dostępnych w systemie iOS 7 i nowszych. 
 **To ustawienie zalecane.**
 
 #### <a name="pros"></a>Specjaliści
 
-- Lepszą wydajność i mniejsze wykonywalnego używa macierzystych interfejsów API.
-- Obsługa najnowszych standardów, takie jak protokół TLS 1.2.
+- Aby uzyskać lepszą wydajność i mniejszy rozmiar pliku wykonywalnego używa natywnych interfejsów API.
+- Wsparcie dla najnowszych standardów, takich jak protokół TLS 1.2.
 
-#### <a name="cons"></a>Cons
+#### <a name="cons"></a>Wady
 
 - Wymaga systemu iOS 7 lub nowszy.
-- Niektóre `HttpClient` opcje Funkcje nie są dostępne.
-
-<a name="CFNetwork" />
+- Niektóre `HttpClient` funkcji/opcje nie są dostępne.
 
 ### <a name="cfnetwork"></a>CFNetwork
 
-`CFNetwork`— Oparte na program obsługi jest oparty na natywnego `CFNetwork` framework dostępnych w systemie iOS 6 i nowsze.
+`CFNetwork`— Na podstawie programu obsługi opiera się na natywnym `CFNetwork` framework dostępnych w systemie iOS 6 i nowsze.
 
 #### <a name="pros"></a>Specjaliści
 
-- Lepszą wydajność i mniejsze wykonywalnego używa macierzystych interfejsów API.
-- Obsługa nowszej standardy, takie jak protokół TLS 1.2.
+- Aby uzyskać lepszą wydajność i mniejszy rozmiar pliku wykonywalnego używa natywnych interfejsów API.
+- Obsługa nowszej standardów, takich jak protokół TLS 1.2.
 
-#### <a name="cons"></a>Cons
+#### <a name="cons"></a>Wady
 
 - Wymaga systemu iOS 6 lub nowszej.
-- Nie jest dostępna na watchOS.
+- Nie jest dostępna na systemu watchOS.
 - Niektóre funkcje HttpClient/opcje nie są dostępne.
-
-<a name="Managed" />
 
 ### <a name="managed"></a>Zarządzane
 
-Obsługa zarządzanego jest pełni zarządzanego programu obsługi HttpClient, która została wysłana z poprzedniej wersji programu Xamarin.
+Obsługa zarządzanych jest w pełni zarządzanego programu obsługi HttpClient, dostarczanego z poprzedniej wersji programu Xamarin.
 
 #### <a name="pros"></a>Specjaliści
 
-- Składa się z zestawu Microsoft .NET i starsze wersje Xamarin funkcji najbardziej zgodne.
+- Ma ona najbardziej zgodne skonfigurowaną przy użyciu programu Microsoft .NET i starsze wersje platformy Xamarin.
 
-#### <a name="cons"></a>Cons
+#### <a name="cons"></a>Wady
 
-- Nie jest w pełni zintegrowana z systemów operacyjnych firmy Apple, a jest ograniczone do protokołu TLS 1.0. Nie można nawiązać połączenia do serwerów sieci web lub usługi w chmurze w przyszłości.
-- Zwykle znacznie mniejsza w takich elementów, jak szyfrowanie macierzystych interfejsów API go.
-- Wymaga to więcej zarządzanego kodu, co powoduje utworzenie dystrybucyjnego większych aplikacji.
+- Go nie jest w pełni zintegrowany z systemów operacyjnych firmy Apple i jest ograniczona do protokołu TLS 1.0. Nie można nawiązać zabezpieczyć serwery sieci web lub usług w chmurze w przyszłości.
+- On zazwyczaj znacznie wolniejsze w elementów, takich jak szyfrowanie niż natywnych interfejsów API.
+- Wymaga ona więcej kodu zarządzanego, w związku z tym utworzenie dystrybucyjny większej aplikacji.
 
-### <a name="programmatically-setting-the-httpmessagehandler"></a>Programowo ustawienie klasa HttpMessageHandler
+### <a name="programmatically-setting-the-httpmessagehandler"></a>Programowe Ustawianie klasa HttpMessageHandler
 
-Oprócz przedstawionych powyżej konfiguracji na poziomie projektu można również utworzyć wystąpienie `HttpClient` i wstrzyknąć żądaną `HttpMessageHandler` za pośrednictwem konstruktora, jak pokazano w tych fragmentów kodu:
+Oprócz skonfigurowania całego projektu pokazanych powyżej, można również utworzyć wystąpienie `HttpClient` i wstawiać żądaną `HttpMessageHandler` za pośrednictwem konstruktora, jak pokazano w tych fragmentach kodu:
 
 ```csharp
 // This will use the default message handler for the application; as
@@ -107,39 +99,37 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 
 Dzięki temu można użyć innego `HttpMessageHandler` z deklaracją w **opcje projektu** okna dialogowego.
 
-<a name="New-SSL-TLS-implementation-build-option" />
-<a name="Selecting-a-SSL-TLS-implementation" />
-<a name="Apple-TLS" />
-
 ## <a name="ssltls-implementation"></a>Implementacja protokołu SSL/TLS
 
-Protokół SSL (Secure Socket Layer) i jej następcą, TLS (Transport Layer Security), zapewniają obsługę dla protokołu HTTP i innych połączeń sieciowych za pośrednictwem `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS lub jego Xamarin.Mac `System.Net.Security.SslStream` implementacji wywoła implementacji native SSL/TLS firmy Apple zamiast zarządzaną implementację podał Mono. Firmy Apple implementacji native obsługuje protokół TLS 1.2.
+Protokół SSL (Secure Socket Layer) i jego następca TLS (Transport Layer Security) oferują obsługę protokołu HTTP i innych połączeń sieciowych za pośrednictwem `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS lub dla platformy Xamarin.Mac `System.Net.Security.SslStream` implementacji wywoła firmy Apple natywnych implementacji protokołów SSL/TLS, zamiast korzystać z zarządzaną implementację udostępniane przez narzędzie Mono. Implementacja natywnego firmy Apple obsługuje protokół TLS 1.2.
 
-<a name="App-Transport-Security" />
+> [!WARNING]
+> Nadchodząca wersja platformy Xamarin.Mac 4.8 będzie obsługiwała tylko system macOS w wersji 10.9 lub wyższej.
+> Poprzednie wersje platformy Xamarin.Mac obsługiwały system macOS w wersji 10.7 lub wyższej, ale starsze wersje systemu macOS nie posiadają odpowiedniej infrastruktury TLS do obsługi protokołu TLS 1.2. W przypadku systemu macOS 10.7 lub macOS 10.8 należy użyć platformy Xamarin.Mac w wersji 4.6 lub wcześniejszej.
 
 ## <a name="app-transport-security"></a>Zabezpieczenia transportu aplikacji
 
-Firmy Apple _zabezpieczeń transportu aplikacji_ (ATS) wymusza bezpiecznego połączenia między zasobami Internetu (na przykład serwera zaplecza aplikacji) i aplikacji. ATS zapewnia cała komunikacja z Internetem odpowiadają bezpieczne połączenie najlepszych rozwiązań, zapobiegając w ten sposób przypadkowego ujawnienia informacji poufnych bezpośrednio przy użyciu aplikacji lub biblioteki, która zajmuje go.
+Firmy Apple _App Transport Security_ (ATS) wymusza nawiązywać bezpieczne połączenia między zasobami Internetu (na przykład serwer zaplecza aplikacji) i aplikacji. ATS gwarantuje, że cała komunikacja z Internetem odpowiadają bezpieczne połączenie najlepszych rozwiązań, zapobiegając w ten sposób przypadkowego ujawnienia poufnych informacji, bezpośrednio lub za pomocą aplikacji bibliotekę, która go używa.
 
-Ponieważ ATS jest domyślnie włączone w aplikacje dla systemu iOS 9, systemu tvOS 9 i OS X 10.11 (El Capitan) i nowszych, wszystkie połączenia przy użyciu `NSUrlConnection`, `CFUrl` lub `NSUrlSession` podlegają ATS wymagania dotyczące zabezpieczeń. W przypadku połączeń nie spełniają tych wymagań, zakończy się niepowodzeniem z powodu wyjątku.
+Ponieważ ATS jest włączone domyślnie aplikacje są kompilowane dla systemu iOS 9, tvOS 9 i OS X 10.11 (El Capitan) i nowszych, wszystkie połączenia za pomocą `NSUrlConnection`, `CFUrl` lub `NSUrlSession` podlegają ATS wymogi bezpieczeństwa. Jeśli połączenia nie spełniają tych wymagań, zakończy się niepowodzeniem z powodu wyjątku.
 
-Na podstawie wybranych opcji HttpClient stosu i implementacji protokołów SSL/TLS, może być konieczne wprowadzenie modyfikacji aplikację, aby działać poprawnie przy ATS.
+Na podstawie wybranych opcji stos HttpClient i implementacji protokołów SSL/TLS, konieczne może być wprowadzać modyfikacje do aplikacji, aby działać poprawnie z ATS.
 
-Aby dowiedzieć się więcej na temat ATS, zobacz nasze [przewodnik dotyczący zabezpieczeń transportu aplikacji](~/ios/app-fundamentals/ats.md).
+Aby dowiedzieć się więcej na temat ATS, zobacz nasze [App Transport Security guide](~/ios/app-fundamentals/ats.md).
 
 ## <a name="known-issues"></a>Znane problemy
 
-W tej sekcji opisano znane problemy z obsługą protokołu TLS w platformy Xamarin.iOS.
+W tej sekcji opisano znane problemy z obsługą protokołu TLS w rozszerzeniu Xamarin.iOS.
 
-### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>Nie można załadować z powodu błędu "Żądana wartość, którego nie można znaleźć AppleTLS" projektu
+### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>Nie można załadować z powodu błędu "Żądana wartość, których nie można znaleźć AppleTLS" projektu
 
-Xamarin.iOS 9,8 wprowadzone niektóre nowe ustawienia zawarte **.csproj** pliku dla aplikacji platformy Xamarin.iOS. Te zmiany może spowodować problemy, po otwarciu projektu ze starszymi wersjami platformy Xamarin.iOS. Poniższy zrzut ekranu jest przykładem mogą być wyświetlane w tym scenariuszu komunikat o błędzie:
+Xamarin.iOS 9,8 wprowadzone pewne nowe ustawienia zawarte **.csproj** pliku dla aplikacji platformy Xamarin.iOS. Te zmiany mogą powodować problemy, podczas projektu jest otwierany przy użyciu starszych wersji rozszerzenia Xamarin.iOS. Poniższy zrzut ekranu przedstawia przykład komunikat o błędzie, który może być wyświetlany w tym scenariuszu:
 
-![Zrzut ekranu przedstawiający wystąpił błąd podczas próby załadowania projektu, żądana wartość starszych nie znaleziono](http-stack-images/tlserror-xs.png)
+![Zrzut ekranu przedstawiający wystąpił błąd podczas próby załadowania projektu, żądana wartość starszej wersji, nie można odnaleźć](http-stack-images/tlserror-xs.png)
 
 Ten błąd jest spowodowany przez wprowadzenie `MtouchTlsProvider` ustawienie do pliku projektu w 9,8 platformy Xamarin.iOS. Jeśli nie jest można zaktualizować do 9,8 Xamarin.iOS (lub nowszej), aby ręcznie edytować jest około pracy **.csproj** pliku aplikacji, Usuń `MtouchTlsprovider` elementu, a następnie zapisz plik projektu zmienione.
 
-Poniższy fragment jest przykładem co `MtouchTlsProvider` ustawienie może wyglądać jak wewnątrz **.csproj** pliku:
+Poniższy fragment kodu jest przykład tego, co `MtouchTlsProvider` ustawienie może wyglądać jak wewnątrz **.csproj** pliku:
 
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>

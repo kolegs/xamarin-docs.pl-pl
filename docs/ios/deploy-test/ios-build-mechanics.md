@@ -1,28 +1,28 @@
 ---
 title: Mechanika kompilacji systemu iOS
-description: Ten przewodnik opisuje sposób czasu aplikacji i sposób użycia metod, które można zastosować dla przyspieszają kompilacje dla wszystkich konfiguracji kompilacji.
+description: Ten przewodnik przedstawiono, jak czas aplikacji i sposób używania metody, które mogą zostać wykorzystane szybsze kompilacje w przypadku wszystkich konfiguracji kompilacji.
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: df84e78709b0ff16087c4bb9816c5d45f6ec33ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772360"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780651"
 ---
 # <a name="ios-build-mechanics"></a>Mechanika kompilacji systemu iOS
 
-_Ten przewodnik opisuje sposób czasu aplikacji i sposób użycia metod, które można zastosować dla przyspieszają kompilacje dla wszystkich konfiguracji kompilacji._
+_Ten przewodnik przedstawiono, jak czas aplikacji i sposób używania metody, które mogą zostać wykorzystane szybsze kompilacje w przypadku wszystkich konfiguracji kompilacji._
 
-Tworzenie wspaniałych aplikacji jest więcej niż tylko pisanie kodu, który działa. Dobrze napisane aplikacji powinna zawierać optymalizacji, które wykonać szybsze kompilacji dla aplikacji, które są mniejsze i działają szybciej. Te optymalizacje nie będą tylko skutkować lepsze środowisko pracy użytkownika, ale także lub używająca w projekcie. Jest to niezbędne do zapewnienia, że podczas pracy z aplikacją wszystko przypada często. 
+Tworzenie niezawodnych aplikacji to więcej niż tylko pisanie kodu, który działa. Dobrze napisane aplikacji powinna zawierać optymalizacje, które szybsze kompilacje z aplikacjami, które są mniejsze i szybsze uruchamianie wykonywania. Optymalizacje te nie tylko powoduje lepsze środowisko użytkownika, ale także do Ciebie lub każdy deweloper może pracować nad projektem. Istotne jest zapewnienie, że podczas pracy z aplikacją wszystko, co jest upłynął limit czasu często. 
 
-Należy pamiętać, że opcje domyślne są bezpieczne i szybkie, ale nie są optymalne dla każdej sytuacji. Ponadto wiele opcji może spowolnić albo przyspieszenia cykl programowania, w zależności od pojedynczego projektu. Na przykład natywnego usuwanie czas, ale jeśli zdobytych jest bardzo mały rozmiar następnie usuwanie czasu nie zostaną odzyskane przy szybsze wdrażanie. Z drugiej strony usuwanie natywnego można zmniejszyć aplikacji znacznie, w tym przypadku będzie szybsze do wdrożenia. To wygląda różnie w projektach, a jedynym sposobem, aby wiedzieć, służy do testowania.
+Należy pamiętać, że są bezpieczne i szybkie opcji domyślnych, ale nie są optymalne dla każdej sytuacji. Ponadto wiele opcji może spowolnić albo przyspieszyć cykl tworzenia oprogramowania, w zależności od pojedynczego projektu. Na przykład natywnych obcięcie zajmuje trochę czasu, ale jeśli zdobyte jest bardzo mały rozmiar następnie obcięcie czas nie zostaną odzyskane przez szybsze wdrażanie. Z drugiej strony natywne obcięcie można zmniejszyć aplikacji znacznie, w którym to przypadku będzie szybsze do wdrożenia. To różni się między projektami, a jedynym sposobem, aby wiedzieć, jest przetestowanie.
 
-Szybkość kompilacji Xamarin również mogą mieć wpływ różne możliwości i możliwości komputera niż może mieć wpływ na wydajność: możliwości procesora, szybkości magistrali, ilość fizycznej pamięci, szybkości dysku, szybkość sieci. Ograniczenia te wydajności wykraczają poza zakres tego dokumentu i są odpowiedzialne za dewelopera.
+Szybkość kompilacji Xamarin może mieć wpływ również przez różnych pojemnościach i możliwości komputera niż może mieć wpływ na wydajność: możliwości procesora, szybkość magistrali, ilość pamięci fizycznej, szybkość dysku, szybkość sieci. Te ograniczenia wydajności, które wykraczają poza zakres tego dokumentu, a, spoczywa wyłącznie dewelopera.
 
 
 ## <a name="timing-apps"></a>Czas aplikacji
@@ -31,13 +31,13 @@ Szybkość kompilacji Xamarin również mogą mieć wpływ różne możliwości 
 
 Aby włączyć dane wyjściowe diagnostyki programu MSBuild w programie Visual Studio dla komputerów Mac:
 
-1. Kliknij przycisk **programu Visual Studio for Mac > Preferencje...**
-2. W widoku drzewa po lewej stronie wybierz **projekty > kompilacji**
-3. W okienku po prawej stronie, ustawić poziom szczegółowości dziennika listy rozwijanej **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2.png "ustawienie szczegółowości dziennika")](ios-build-mechanics-images/image2.png#lightbox)
+1. Kliknij przycisk **Visual Studio for Mac > Preferencje...**
+2. W widoku drzewa po lewej stronie wybierz **projektów > Tworzenie**
+3. W okienku po prawej stronie Ustaw poziom szczegółowości dziennika menu rozwijane **diagnostycznych**: [ ![](ios-build-mechanics-images/image2.png "ustawienie poziomu szczegółowości dziennika")](ios-build-mechanics-images/image2.png#lightbox)
 4. Kliknij przycisk **OK**
-5. Uruchom ponownie program Visual Studio dla komputerów Mac
-6. Czyszczenie i skompiluj ponownie pakiet
-7. Wyświetl wyjście diagnostyczne w konsoli błędy (Widok > konsole > błędy) przez kliknięcie przycisku wyjścia kompilacji
+5. Uruchom program Visual Studio dla komputerów Mac
+6. Czyszczenie i ponownie pakiet
+7. Wyświetl diagnostyczne dane wyjściowe w konsoli błędów (Widok > okienka > błędy), klikając przycisk danych wyjściowych kompilacji
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -45,17 +45,17 @@ Aby włączyć dane wyjściowe diagnostyki programu MSBuild w programie Visual S
 Aby włączyć dane wyjściowe diagnostyki programu MSBuild w programie Visual Studio:
 
 1. Kliknij przycisk **Narzędzia > Opcje...**
-2. W widoku drzewa po lewej stronie wybierz **projekty i rozwiązania > Tworzenie i uruchamianie**
-3. W okienku po prawej stronie, ustaw *listy rozwijanej poziom szczegółowości danych wyjściowych kompilacji MSBuild* do **diagnostycznych**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "ustawienie MSBuild dane wyjściowe kompilacji poziom szczegółowości")](ios-build-mechanics-images/image2-vs.png#lightbox)
+2. W widoku drzewa po lewej stronie wybierz **projekty i rozwiązania > Kompilowanie i uruchamianie**
+3. W okienku po prawej stronie Ustaw *kompilacji MSBuild danych wyjściowych listy rozwijanej poziom szczegółowości* do **diagnostycznych**: [ ![](ios-build-mechanics-images/image2-vs.png "ustawienie MSBuild dane wyjściowe kompilacji poziom szczegółowości")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Kliknij przycisk **OK**
-5. Czyszczenie i skompiluj ponownie pakiet.
+5. Czyszczenie i ponownie pakiet.
 6. Dane wyjściowe diagnostyki jest widoczna w panelu wyjścia.
 
 -----
 
-## <a name="timing-mtouch"></a>Mtouch chronometrażu
+## <a name="timing-mtouch"></a>Chronometraż mtouch
 
-Aby wyświetlić informacje dotyczące procesu kompilacji mtouch, należy przekazać `--time --time` do argumentów mtouch Twojego **opcje projektu**. Wyniki znajdują się w wyjścia kompilacji, wyszukując `MTouch` zadań:
+Aby wyświetlić informacje dotyczące mtouch procesu kompilacji, należy przekazać `--time --time` na argumenty mtouch w swojej **opcje projektu**. Wyniki znajdują się w danych wyjściowych kompilacji, wyszukując `MTouch` zadań:
 
 ```csharp
 Setup: 36 ms
@@ -65,144 +65,144 @@ Extracted native link info: 987 ms
 Total time: 1554 ms
 ```
 
-## <a name="connecting-from-visual-studio-with-build-host"></a>Łączenie z programu Visual Studio z hostem kompilacji
+## <a name="connecting-from-visual-studio-with-build-host"></a>Nawiązywanie połączenia z programu Visual Studio z hostem kompilacji
 
-Narzędzia platformy Xamarin technicznie działa na wszelkie Mac, można uruchomić OS X 10.10 Yosemite lub nowszym. Jednak projektanta uruchomień oraz czas kompilacji mogą napotykać przez wydajności komputerów Mac.
+Narzędzia Xamarin z technicznego punktu widzenia działa na dowolnym komputerze Mac, uruchamianą OS X 10.10 Yosemite lub nowszej. Jednak środowiska deweloperskie i czasy kompilacji mogą napotykać według wydajności dla komputerów Mac.
 
-W stanie rozłączenia, Visual Studio w systemie Windows tylko wykonuje fazy kompilacji C# i nie jest podejmowana próba wykonania łączenie lub kompilacji drzewa obiektów aplikacji, pakietu dla aplikacji do _.app_ pakietu lub znak pakietu aplikacji. (Fazy kompilacji C# jest rzadko wąskie gardło). Próba określaniu, gdzie w potoku kompilacji jest spowolnieniem według budynków bezpośrednio na hoście kompilacji Mac w programie Visual Studio dla komputerów Mac.
+W stanie rozłączenia, programu Visual Studio w Windows tylko wykonuje fazy kompilacji C# i nie jest podejmowana próba wykonania łączenie lub kompilacja AOT, pakiet aplikacji do _.app_ pakietu lub znak pakietu aplikacji. (Fazy kompilacji C# jest rzadko "wąskie gardło wydajności"). Próba określenia, gdzie w potoku kompilacji spowalnia, tworząc bezpośrednio na hostem kompilacji komputera Mac w programie Visual Studio dla komputerów Mac.
 
 
-Ponadto jest jednym z miejsc częściej dla sluggishness połączenie sieciowe między komputerem z systemem Windows i Mac hosta kompilacji. Może to być spowodowane fizycznych przeszkody w sieci za pomocą połączenia bezprzewodowego lub przemieszczać się za pośrednictwem nasycenia maszyny (na przykład usługi Mac w chmurze).
+Ponadto jest jednym z bardziej powszechne miejsc dla sluggishness połączenie sieciowe między komputerem Windows i hostem kompilacji komputera Mac. Może to być spowodowane fizycznych przeszkody w sieci, za pomocą połączenia bezprzewodowego lub konieczności, przechodzić przez nasycony maszyny (np. Usługa Mac w chmurze).
 
 ## <a name="simulator-tricks"></a>Symulator wskazówki
 
  
-Podczas opracowywania aplikacji dla urządzeń przenośnych, jest niezbędne do szybkiego wdrażania kodu. Z różnych powodów takich jak szybkość i brak inicjowania obsługi wymagania dotyczące urządzeń deweloperzy często woli wdrażać wstępnie zainstalowanego symulatorze lub emulator. Dla producentów narzędzia dla deweloperów decyzji symulator lub emulator zawiera zależność między szybkości oraz zapewnia zgodność. 
+Podczas opracowywania aplikacji mobilnych, istotne jest, aby szybko wdrożyć kod. Z różnych powodów takich jak szybkość i braku wymagania dotyczące aprowizacji urządzeń deweloperzy często możliwość wdrażania na symulatorze wstępnie zainstalowanych lub w emulatorze. Dla producentów narzędzi deweloperskich decyzja zapewnienie symulator lub w emulatorze sprowadza się do kompromis między szybkością i zgodności. 
 
-Apple zapewnia symulatora dla opracowywania aplikacji systemu iOS, podwyższenie poziomu szybkość nad zgodności tworząc mniej restrykcyjnych środowiska uruchamiania kodu. To środowisko mniej restrykcyjnych umożliwia program Xamarin, aby używać tylko w czasie () przy użyciu kompilatora JIT dla symulator (w przeciwieństwie do [drzewa obiektów aplikacji](~/ios/internals/architecture.md) na urządzenie), co oznacza, że kompilacji jest skompilowanych do natywnego kodu w czasie wykonywania. Mac jest znacznie szybsze niż urządzenie, umożliwi to lepszą wydajność.
+Apple zawiera symulator do tworzenia aplikacji dla systemu iOS, podwyższanie poziomu szybkość nad zgodności, tworząc mniej restrykcyjne środowisko do uruchamiania kodu. To środowisko mniej restrykcyjne uprawnienia umożliwia platformy Xamarin na potrzeby kompilatora tylko w czas (JIT) symulator (w przeciwieństwie do [AOT](~/ios/internals/architecture.md) na urządzeniu), co oznacza, że kompilacja jest skompilowanych do natywnego kodu w czasie wykonywania. Zgodnie z komputerem Mac jest znacznie wyższa niż urządzenie, umożliwia to lepszą wydajność.
 
-Symulator używa uruchamiania aplikacji udostępnionych, umożliwiając uruchamianie zostanie ponownie przeciwieństwie konstruowany każdorazowo, zgodnie z wymaganiami na urządzeniu.
+Symulator używa uruchamiania udostępnionej aplikacji, umożliwiając uruchamianie, ponowne użycie, w przeciwieństwie kompilowana za każdym razem jest wymagane na urządzeniu.
 
-Biorąc pod uwagę powyższe informacje, na poniższej liście daje niektóre informacje o krokach do wykonania podczas tworzenia i wdrażania aplikacji w symulatorze, aby zapewnić najlepszą wydajność.
+Biorąc pod uwagę powyższe informacje, Poniższa lista zawiera pewne informacje o krokach do wykonania podczas kompilowania i wdrażania aplikacji w symulatorze, aby zapewnić najlepszą wydajność.
  
 ### <a name="tips"></a>Porady
 
 - Dla kompilacji: 
-  - Usuń zaznaczenie pola wyboru **obrazów PNG zoptymalizować** opcji w obszarze Opcje projektu. Optymalizacja nie jest niezbędna dla kompilacji w symulatorze.
-  - Ustaw konsolidator **łącze nie**. Wyłączanie konsolidator przebiega szybciej, ponieważ jej wykonanie zajmuje dużo czasu.
-  - Wyłączanie uruchamiania aplikacji udostępnionych za pomocą `--nofastsim` flaga powoduje, że symulator kompilacji jest znacznie mniejsza. Usuń tę flagę, gdy nie jest już wymagane.
-  - Przy użyciu natywnych bibliotek jest wolniejsze, ponieważ udostępnionego simlauncher głównego pliku wykonywalnego nie można użyć ponownie w takiej sytuacji i plik wykonywalny specyficzne dla aplikacji ma być tworzone dla każdej kompilacji.
+  - Usuń zaznaczenie pola wyboru **obrazów PNG zoptymalizować** opcji w opcjach projektu. Tego rodzaju optymalizacji nie jest konieczne dla kompilacji w symulatorze.
+  - Ustaw dla konsolidatora **nie łącz**. Wyłączanie konsolidator jest szybsze, ponieważ jej wykonanie zajmuje dużo czasu.
+  - Wyłączanie uruchamiania udostępnionej aplikacji przy użyciu `--nofastsim` flaga powoduje, że kompilacje symulator jest znacznie wolniejsze. Usuń tę flagę, gdy nie jest już wymagany.
+  - Używanie bibliotek natywnych jest wolniejsze, ponieważ udostępnionego simlauncher głównego pliku wykonywalnego nie można użyć ponownie w takiej sytuacji i plik wykonywalny specyficzne dla aplikacji ma być tworzone dla każdej kompilacji.
 - Do wdrożenia
-  - Zawsze Zachowuj symulatora uruchomiony, gdy jest to możliwe. Symulator może potrwać maksymalnie 12 sekund zimny start.
+  - Zawsze Zachowuj symulator uruchomiona, gdy jest to możliwe. Może potrwać do 12 sekund do zimnego symulatora.
 - Dodatkowe porady
-  - Preferuj kompilacji przed ponowną kompilację, ponieważ Rebuild czyści przed kompilacją. Czyszczenie może zająć dużo czasu, ponieważ spowoduje usunięcie odwołania, których można użyć.
-  - Skorzystaj z faktu, że symulator nie wymusza piaskownicy. O dużych zasobów, takich jak pliki wideo i innych zasobów dołączony do projektu można utworzyć pliku kosztowne operacje kopiowania za każdym razem, gdy aplikacja jest uruchamiana w symulatorze. Uniknąć tych operacji kosztowne przez umieszczenie tych plików w katalogu macierzystym i odwoływać je w aplikacji przez pełną ścieżkę pliku.  
-  - W razie wątpliwości, użyj `–time –time` flagi do mierzenia zmiany
+  - Preferuj przed ponowną kompilację, kompilacji, ponieważ Rebuild czyści przed kompilacją. Czyszczenie może zająć dużo czasu, ponieważ powoduje usunięcie odwołań, które mogłyby zostać użyte.
+  - Korzystaj z faktu, że symulator nie wymusza piaskownicy. O dużych zasobów, takich jak filmy wideo lub inne zasoby dołączone do projektu można utworzyć pliku kosztownych operacji kopiowania, za każdym razem, gdy aplikacja jest uruchamiana w symulatorze. Należy unikać tych kosztownych operacji przez umieszczenie tych plików w katalogu macierzystym i odwoływać się do nich w aplikacji przez pełną ścieżkę pliku.  
+  - W razie wątpliwości użyj `--time --time` flagę, aby zmierzyć zmiany
 
-Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcjach iOS:
+Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcji dla systemu iOS:
 
 [![](ios-build-mechanics-images/image3.png "Ustawianie opcji")](ios-build-mechanics-images/image3.png#lightbox)
 
-## <a name="device-tricks"></a>Lewy urządzenia
+## <a name="device-tricks"></a>Wskazówki urządzenia
 
-Wdrażanie na urządzeniu jest podobny do wdrażania na symulatorze, symulator jest mały podzbiór kompilacji używany dla urządzenia z systemem iOS. Budynek urządzenia wymaga dużo więcej czynności, ale ma tę zaletę, zapewniając dodatkowe możliwości w celu optymalizacji aplikacji.
+Wdrażanie na urządzeniu jest podobny do wdrażania w symulatorze, symulator jest mały podzbiór kompilacji używany dla urządzeń z systemem iOS. Tworzenie urządzenia wymaga dużo więcej kroków, ale ma tę zaletę, zapewniając dodatkowe możliwości, aby zoptymalizować aplikację.
 
 ### <a name="build-configurations"></a>Konfiguracje kompilacji
 
-Istnieje wiele konfiguracji kompilacji podana podczas wdrażania aplikacji systemu iOS. Należy dysponować dobrą znajomością każdej konfiguracji, należy wiedzieć, kiedy i dlaczego należy optymalizacji.
+Istnieje kilka konfiguracji kompilacji, które podano podczas wdrażania aplikacji dla systemu iOS. Należy dysponować dobrą znajomością każdej konfiguracji, aby dowiedzieć się, kiedy i dlaczego należy optymalizacji.
 
  - Debugowanie
-  - Jest to konfiguracja głównego, powinien być używany, gdy aplikacja jest w fazie projektowania, którą należy, w związku z tym, jak szybki, jak to możliwe.
+  - W związku z tym jest to konfiguracja głównego, powinny być używane, gdy aplikacja jest w fazie projektowania, która powinna, Działaj tak szybko, jak to możliwe.
  - Wydanie
-  - Kompilacjami wydania są tymi, które są wysyłane do użytkowników i fokus na wydajność jest podstawowym. Podczas korzystania z wersji konfiguracji, można użyć kompilatora optymalizującego LLVM i zoptymalizować pliki PNG.
+  - Kompilacje wydania to te, które są dostarczane do użytkowników i naciskiem na wydajność jest najważniejsza. Korzystając z konfiguracji wydania, możesz chcieć użyć kompilatora optymalizującego LLVM i zoptymalizować pliki PNG.
 
  
-Jest również wziąć pod uwagę relacji między tworzenie i wdrażanie. Czas wdrażania jest funkcją rozmiar aplikacji. Większej aplikacji trwa dłużej niż do wdrożenia. Minimalizując rozmiar aplikacji, można skrócić czas wdrażania.
+Jest również ważne, aby zrozumieć relację między kompilowania i wdrażania. Czas wdrożenia jest funkcją rozmiar aplikacji. Większej aplikacji zajmuje więcej czasu wdrażania. Minimalizując rozmiar aplikacji, można skrócić czas wdrażania.
 
-Minimalizowanie rozmiaru aplikacji pomaga również zmniejszyć czas kompilacji. Jest to spowodowane usunięciem kod z aplikacji trwa krócej niż natywnie kompilowanie kodu, które nie będą używane. Mniejsze pliki obiektu oznacza szybszej konsolidacji co powoduje mniejszy plik wykonywalny przy użyciu mniejszej liczby symboli do wygenerowania. Oszczędzanie miejsca, w związku z tym ma opłacalności double, który jest dlaczego **SDK łącze** jest tworzy domyślną dla wszystkich urządzeń. 
+Minimalizacja rozmiaru aplikacji również może skrócić czas kompilacji. Jest to spowodowane usuwanie kod z aplikacji zajmuje mniej czasu niż natywnie kompilowania kodu, które nie będą używane. Mniejszych plików obiektów oznacza szybszej konsolidacji, co powoduje utworzenie mniejszy plik wykonywalny z mniejszą liczbą symbole, aby wygenerować. Oszczędzanie miejsca, w związku z tym, ma opłacalności podwójne, co jest dlaczego **SDK łącze** jest tworzy domyślną dla wszystkich urządzeń. 
 
 > [!NOTE]
-> **SDK łącze** opcji mogą być widoczne tylko zestawy tylko łącze Framework zestawów SDK lub zestawu SDK łącze w zależności od używanego środowiska IDE.
+> **SDK łącze** opcja może pojawić się jako tylko zestawy tylko łącze Framework SDK lub SDK łącze w zależności od używanego środowiska IDE.
  
 
 ### <a name="tips"></a>Porady
 
 - Kompilacja: 
-  - Tworzenie jednego architektura (np. ARM64) jest szybsza niż FAT binarnym (np. ARMv7 + ARM64)
-  - Unikaj optymalizacji PNG, pliki podczas debugowania
-  - Należy rozważyć łączenie wszystkich zestawów. Każdy zestaw optymalizacji 
-  - Wyłączenie tworzenia symboli debugowania za pomocą `--dsym=false`. Należy jednak pamiętać, że wyłączenie to będzie oznaczać, że raporty awarii można tylko symbolicated na tej maszynie wbudowanej aplikacji i tylko wtedy, gdy aplikacja nie została usunięta.
+  - Tworzenie pojedynczej architektura (np. ARM64) jest szybsza niż FAT pliku binarnego (np. ARMv7 + ARM64)
+  - Należy unikać optymalizacji pliki PNG podczas debugowania
+  - Należy wziąć pod uwagę, łączenie wszystkich zestawów. Optymalizowanie każdy zestaw 
+  - Wyłączenie tworzenia symboli debugowania przy użyciu `--dsym=false`. Należy jednak pamiętać, że wyłączenie to oznacza, czy raporty o awariach można tylko symbolicated na tym komputerze, którego zbudowana aplikacja i tylko wtedy, gdy aplikacja nie została usunięta.
 
  
-Niektóre elementy, których należy unikać są:
+Niektóre działania, których należy unikać są następujące:
 
-- Pliki binarne FAT (debugowanie) 
-- Wyłącz konsolidator `–nolink` 
-- Wyłączanie usuwanie 
+- FAT pliki binarne (debugowanie) 
+- Wyłącz konsolidatora `--nolink` 
+- Wyłączanie obcięcie 
   - Symbole `--nosymbolstrip` 
   - IL (wersja) `--nostrip`.  
  
 Dodatkowe porady 
 
-- Ponieważ w symulatorze, Preferuj kompilacji przed Skompiluj ponownie 
-  - Czy drzewa obiektów aplikacji są w pamięci podręcznej zestawów (pliki obiektu) 
-- Z powodu symbole systemem dsymutil i ponieważ kończy się jest większy, dodatkowy czas przekazywania na urządzeniach ono wydajność debugowania kompilacji zajmuje więcej czasu. 
-- Domyślnie kompilacjami wydania wykona paska IL zestawów. Który przyjmuje tylko nieco czasu i jest prawdopodobnie płynących z powrotem wdrażania mniejszych .app do urządzeń.
-- Należy unikać rozmieszczania dużych plików statycznych przy każdej kompilacji (debugowanie) 
-  - Użyj UIFileSharingEnabled (info.plist) 
-    - Zasoby, które mogą być przekazywane raz 
-- W razie wątpliwości, użyj `–time –time` flagi do mierzenia zmiany
+- Jak w symulatorze Preferuj kompilacji przed ponowną kompilację 
+  - Czy AOT zestawów (pliki obiektów) są buforowane. 
+- W związku z symboli, uruchamianie dsymutil i ponieważ kończy się są większe, dodatkowy czas, do przekazania do urządzeń ono wydajność debugowania kompilacji trwa dłużej. 
+- Domyślnie kompilacji wydania wykona pasek zestawy IL. Które zajmuje trochę czasu i jest prawdopodobnie płynących z powrotem wdrażanie mniejszych .app na urządzeniu.
+- Unikaj wdrażania dużych plików statycznych przy każdej kompilacji (debugowanie) 
+  - Użyj UIFileSharingEnabled (pliku info.plist) 
+    - Zasoby można przekazać jeden raz 
+- W razie wątpliwości użyj `--time --time` flagę, aby zmierzyć zmiany
 
-Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcjach iOS:
+Poniższy zrzut ekranu przedstawia sposób ustawić te opcje symulatora w opcji dla systemu iOS:
 
 [![](ios-build-mechanics-images/image4.png "Ustawianie opcji")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Za pomocą konsolidatora
 
-Podczas tworzenia aplikacji, mtouch używa konsolidator dla zarządzanego kodu, co powoduje usunięcie kodu, który nie korzysta z aplikacji. Teoretycznie zapewnia mniejszych i w związku z tym szybciej kompilacji. Aby uzyskać więcej informacji na temat konsolidator dotyczą [konsolidacji w systemie iOS](~/ios/deploy-test/linker.md) przewodnik.
+Podczas kompilowania aplikacji, mtouch używa konsolidatora dla kodu zarządzanego, który usuwa kod, który nie korzysta z aplikacji. Teoretycznie zapewnia mniejsze i w związku z tym szybsze kompilacje. Aby uzyskać więcej informacji na temat konsolidator dotyczą [konsolidacji w systemie iOS](~/ios/deploy-test/linker.md) przewodnik.
 
 Korzystając z konsolidator, należy wziąć pod uwagę następujące opcje:
 
-- Wybieranie **łącze nie** urządzenia przyjmuje większa ilość czasu kompilacji, a także generuje większe aplikacji. 
-  - Apple spowoduje odrzucenie aplikacji, jeśli są większe niż limit rozmiaru. Zależne od `MinimumOSVersion`, może to być możliwie najmniejsze 60 MB. 
-  - Dołączanie natywnego pliku wykonywalnego. 
-  - Nie przy użyciu łącza jest szybsze symulatora kompilacji ponieważ kompilacja JIT jest używana (w przeciwieństwie do drzewa obiektów aplikacji na urządzeniu).
-- Łącze zestawu SDK jest domyślną opcją.
-- Łącze wszystkie nie może być bezpiecznie korzystać, zwłaszcza w przypadku, gdy używasz czyli kodu nie własne takie NuGets lub składników. Jeśli nie chcesz połączyć zestawy cały kod z tych usług są dołączone do aplikacji, tworzenie potencjalnie większego aplikacji. 
-  - Jednak jeśli wybierzesz **wszystkie łącza** aplikacja może awarii, zwłaszcza w przypadku, gdy są używane składników zewnętrznych. Jest to spowodowane niektórych składników za pomocą odbicia dla niektórych typów.
-  - Analizy statycznej i odbicie nie współdziałają ze sobą. 
+- Wybieranie **nie łącz** urządzenia zajmuje większą ilość czasu kompilacji i generuje również większej aplikacji. 
+  - Firma Apple odrzuci aplikacje, jeśli są większe niż limit rozmiaru. Zależne od `MinimumOSVersion`, może to być nawet sam 60 MB. 
+  - Natywny plik wykonywalny jest uwzględniane. 
+  - Przy użyciu nie łącze jest szybsza, symulator kompilacji ponieważ kompilacja JIT jest używana (w przeciwieństwie do drzewa obiektów aplikacji na urządzeniu).
+- Łącze zestawu SDK jest opcją domyślną.
+- Łączy wszystkie może nie być bezpieczne używanie, szczególnie w przypadku, gdy używasz kodu oznacza to nie własne takie rozszerzeń Nuget lub składniki. Jeśli nie chcesz połączyć zestawy cały kod z tych usług są dołączane do aplikacji, potencjalnie tworzenia aplikacji większy. 
+  - Jednak jeśli wybierzesz **wszystkie łącza** aplikacji może ulec awarii, szczególnie, jeśli składniki zewnętrzne są używane. Jest to spowodowane niektórych składników, od niektórych typów przy użyciu odbicia.
+  - Analiza statyczna i odbicie nie współpracują ze sobą. 
 
-Instrukcje narzędzi zapewnić wewnątrz aplikacji przy użyciu [ `[Preserve]` atrybutu](~/ios/deploy-test/linker.md). 
+Metoda narzędzia zachować wewnątrz aplikacji przy użyciu [ `[Preserve]` atrybutu](~/ios/deploy-test/linker.md). 
 
-Jeśli nie masz dostępu do kodu źródłowego lub jest ona generowana przez narzędzie i nie chcesz je zmienić, nadal można łączyć, tworząc plik XML, który opisano wszystkie typy i elementy członkowskie, które muszą zostać zachowane. Następnie można dodać flagę `--xml={file.name}.xml` opcje projektu, które przetwarzane kodu dokładnie tak, jakby były przy użyciu atrybutów.
+Jeśli nie masz dostępu do kodu źródłowego lub jest ona generowana przez narzędzie i nie chcesz go zmienić, mogą nadal być powiązane, tworząc plik XML, który opisuje typy i elementy członkowskie, które muszą zostać zachowane. Następnie można dodać flagę `--xml={file.name}.xml` opcje projektu, które przetwarzane kodu dokładnie tak, jakby były przy użyciu atrybutów.
 
 
-### <a name="partially-linking-applications"></a>Aplikacje częściowo połączeń 
+### <a name="partially-linking-applications"></a>Częściowo łączenie aplikacji 
 
-Istnieje również możliwość częściowo połączyć aplikacje, aby ułatwić optymalne czas kompilacji aplikacji:
+Istnieje również możliwość częściowo połączyć aplikacje, aby pomóc zoptymalizować ten czas kompilacji aplikacji:
 
-- Użyj `Link All` i pominąć niektóre z zestawów 
+- Użyj `Link All` i pominąć niektóre zestawy 
   - Niektóre z optymalizacji rozmiaru aplikacji zostaną utracone.
   - Brak dostępu do kodu źródłowego jest wymagana.
   - Na przykład `--linkall --linkskip=fieldserviceiOS` .
  
-- Użyj `Link SDK` a `[LinkerSafe]` atrybutu zestawów należy 
-  - Dostęp do kodu źródłowego wymagane.
-  - Informuje system, że zestaw jest bezpieczne połączyć, i jest przetwarzana tak, jakby był SDK platformy Xamarin.
+- Użyj `Link SDK` opcji i użyj `[LinkerSafe]` atrybutu zestawów, należy 
+  - Dostęp do kodu źródłowego jest wymagane.
+  - Informuje system, że zestaw jest bezpiecznie połączyć, i są przetwarzane tak, jakby był zestaw SDK platformy Xamarin.
  
-### <a name="objective-c-bindings"></a>Powiązania Objective-C 
+### <a name="objective-c-bindings"></a>Powiązań języka Objective-C 
 
-- Przy użyciu `[Assembly: LinkerSafe]` atrybut wiązania można oszczędzić czas i rozmiar.
+- Za pomocą `[Assembly: LinkerSafe]` atrybut wiązania pozwala zaoszczędzić czas i rozmiaru.
 
 - SmartLink 
-  - Wykonywane po stronie natywnego 
+  - Na stronie natywne 
   - Użyj `[LinkWith (SmartLink=true)]` atrybutu
-  - Dzięki temu natywnego konsolidator, aby wyeliminować kodu natywnego, z którą jest nawiązywane połączenie z biblioteki. 
-  - Uwaga tego dynamiczne wyszukiwania symboli nie będą działać z tym. 
+  - Dzięki temu natywnych konsolidator, aby wyeliminować kodu natywnego, z którą jest nawiązywane połączenie z biblioteki. 
+  - Uwaga tego wyszukiwanie dynamiczne symboli nie będą działać z tym. 
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym przewodniku przedstawione jak czas opcje wziąć pod uwagę, które są zależne od konfiguracji kompilacji i opcje projektu i aplikacji systemu iOS. 
+Ten przewodnik przedstawione instrukcje czasu aplikacji systemu iOS i opcji, aby wziąć pod uwagę, które są zależne od konfiguracji kompilacji i opcje projektu. 
 
 <!-----
 # Benchmarks

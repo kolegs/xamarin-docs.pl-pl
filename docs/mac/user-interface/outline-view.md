@@ -1,187 +1,187 @@
 ---
-title: Widoki Xamarin.Mac konspektu
-description: W tym artykule omówiono pracy z widokami konspektu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie konspektu widoków w programie Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie.
+title: Widoki konspektu dla platformy Xamarin.Mac
+description: Ten artykuł dotyczy pracy z widoki konspektu w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenia i utrzymywania widoki konspektu w środowisku Xcode i programu Interface Builder oraz pracy z nimi programistycznie.
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a12eee5f473ffdc6a235faeb55c0a3d6754f4629
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7228a22eeae3dfdb354ba3693c277251fd2cd821
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792830"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780663"
 ---
-# <a name="outline-views-in-xamarinmac"></a>Widoki Xamarin.Mac konspektu
+# <a name="outline-views-in-xamarinmac"></a>Widoki konspektu dla platformy Xamarin.Mac
 
-_W tym artykule omówiono pracy z widokami konspektu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie konspektu widoków w programie Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie._
+_Ten artykuł dotyczy pracy z widoki konspektu w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenia i utrzymywania widoki konspektu w środowisku Xcode i programu Interface Builder oraz pracy z nimi programistycznie._
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej konspektu widoków używająca *Objective-C* i *Xcode* jest. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ do tworzenia i obsługi widoków konspektu (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, masz dostęp do tej samej konspektu widoków deweloperem, pracy w *języka Objective-C* i *Xcode* jest. Ponieważ rozszerzenia Xamarin.Mac integruje się bezpośrednio za pomocą edytora Xcode, można użyć program Xcode _programu Interface Builder_ można tworzyć i obsługiwać własne widoki konspektu (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-Wyświetlanie konspektu jest typem tabeli, która pozwala użytkownikowi rozwiń lub Zwiń wierszy hierarchiczne dane. Tak jak widok tabeli widoku konspektu przedstawia dane dotyczące zbiór elementów powiązanych z wierszami reprezentujących poszczególnych elementów i kolumn reprezentujących atrybuty tych elementów. W przeciwieństwie do widoku tabeli elementów w widoku konspektu nie znajdują się w płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym.
+Wyświetlanie konspektu jest typem tabeli, który umożliwia użytkownikowi rozwinąć lub zwinąć wiersze danych hierarchicznych. Tak jak widoku tabeli widoku konspektu wyświetla dane dla zestawu powiązanych elementów z wierszami reprezentujących poszczególnych elementów i kolumn reprezentujących atrybuty te elementy. W przeciwieństwie do widoku tabeli elementy w widoku konspektu nie są w formie płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym.
 
-[![](outline-view-images/populate03.png "Uruchom przykładową aplikację")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "Uruchamianie przykładowej aplikacji")](outline-view-images/populate03.png#lightbox)
 
-W tym artykule firma Microsoft będzie kroki te obejmują podstawy Praca z widokami konspektu w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówiono podstawowe informacje dotyczące pracy z widokami konturu w aplikacji platformy Xamarin.Mac. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` poleceń używany do przesyłania w górę klas C# do obiektów języka Objective C i elementy interfejsu użytkownika.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` poleceń Umożliwia o komunikacji sieciowej w górę klas języka C# do języka Objective-C obiektów i elementów interfejsu użytkownika.
 
 <a name="Introduction_to_Outline_Views" />
 
-## <a name="introduction-to-outline-views"></a>Wprowadzenie do widoków konspektu
+## <a name="introduction-to-outline-views"></a>Wprowadzenie do konturu widoków
 
-Wyświetlanie konspektu jest typem tabeli, która pozwala użytkownikowi rozwiń lub Zwiń wierszy hierarchiczne dane. Tak jak widok tabeli widoku konspektu przedstawia dane dotyczące zbiór elementów powiązanych z wierszami reprezentujących poszczególnych elementów i kolumn reprezentujących atrybuty tych elementów. W przeciwieństwie do widoku tabeli elementów w widoku konspektu nie znajdują się w płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym.
+Wyświetlanie konspektu jest typem tabeli, który umożliwia użytkownikowi rozwinąć lub zwinąć wiersze danych hierarchicznych. Tak jak widoku tabeli widoku konspektu wyświetla dane dla zestawu powiązanych elementów z wierszami reprezentujących poszczególnych elementów i kolumn reprezentujących atrybuty te elementy. W przeciwieństwie do widoku tabeli elementy w widoku konspektu nie są w formie płaskiej listy, są zorganizowane w hierarchii, takie jak pliki i foldery na dysku twardym.
 
-Jeśli element w widoku konspektu znajdują się inne elementy, można rozwinięte lub zwinięte przez użytkownika. Element rozwijania wyświetli trójkąta, który wskazuje z prawej strony, gdy element jest zwinięty i punktów w dół po rozwinięciu elementu. Kliknięcie trójkąta powoduje, że element, aby rozwinąć lub zwinąć.
+Jeśli element w widoku konspektu zawiera inne elementy, można można rozwijać i zwijać przez użytkownika. Element można rozwijać Wyświetla trójkąta, które wskazuje po prawej stronie, gdy element jest zwinięta punktów w dół, gdy element jest rozwinięty. Kliknięcie trójkąta powoduje, że element, aby rozwinąć lub zwinąć.
 
-Wyświetlanie konspektu (`NSOutlineView`) jest podklasą widoku tabeli (`NSTableView`) i w efekcie dziedziczy znacznie jego działania od swojej klasy nadrzędnej. W związku z tym wiele operacji obsługiwane przez widoku tabeli, takich jak zaznaczania wierszy lub kolumn, zmienianie pozycji kolumn przez przeciągnięcie nagłówków kolumn itp., również są obsługiwane przez wyświetlanie konspektu. Aplikacja Xamarin.Mac ma kontrolę nad tych funkcji i parametry widoku konspektu, (albo w kodzie lub konstruktora interfejsu) można skonfigurować do Zezwalaj lub nie zezwalaj pewnych operacji.
+Wyświetlanie konspektu (`NSOutlineView`) jest podklasą widok tabeli (`NSTableView`) i w efekcie dziedziczy większość swojego zachowania od swojej klasy nadrzędnej. W rezultacie wiele operacji obsługiwanych przez widoku tabeli, takie jak Wybieranie wierszy lub kolumn, zmienianie położenia kolumn przez przeciągnięcie nagłówków kolumn itp., są również obsługiwane przez widok konspektu. Aplikacja platformy Xamarin.Mac ma kontrolę nad tych funkcji, a następnie można skonfigurować parametry widoku konspektu, (albo w kodzie albo programu Interface Builder), aby umożliwiać lub uniemożliwiać pewne operacje.
 
-Wyświetlanie konspektu nie przechowuje swoich danych, zamiast tego jest zależne od źródła danych (`NSOutlineViewDataSource`) wiersze i kolumny są wymagane na zgodnie z potrzebami.
+Wyświetlanie konspektu nie przechowuje danych własne, zamiast tego opiera się na źródle danych (`NSOutlineViewDataSource`) wiersze i kolumny są wymagane na zgodnie z potrzebami.
 
-Zachowanie widoku konspektu można dostosować, podając podklasą delegata widoku konspektu (`NSOutlineViewDelegate`) do obsługi zarządzania kolumny konspektu, wpisz, aby wybrać funkcje, zaznaczenie wiersza i edytowanie niestandardowych śledzenia i widoków niestandardowych dla poszczególnych kolumn i wierszy.
+Zachowanie widoku konspektu można dostosować, podając podklasę delegata wyświetlanie konspektu (`NSOutlineViewDelegate`) do obsługi zarządzania kolumny konspektu, wpisz wybierz funkcje, wybór wiersza i edytowania, niestandardowe śledzenia i widoki niestandardowe dla poszczególnych kolumn i wierszy.
 
-Ponieważ widoku konspektu udostępnia znacznie jego zachowania i funkcji w widoku tabeli, należy przejść przez naszych [widoków tabel](~/mac/user-interface/table-view.md) dokumentacji, przed kontynuowaniem w tym artykule.
+Ponieważ widoku konspektu udostępnia wiele jej działanie oraz funkcje widoku tabeli, możesz chcieć przejść przez naszych [widoki tabel](~/mac/user-interface/table-view.md) dokumentacji, przed kontynuowaniem w tym artykule.
 
 <a name="Creating_and_Maintaining_Outline_Views_in_Xcode" />
 
-## <a name="creating-and-maintaining-outline-views-in-xcode"></a>Tworzenie i obsługę konspektu widoków w programie Xcode
+## <a name="creating-and-maintaining-outline-views-in-xcode"></a>Utworzenie i utrzymywanie widoki konspektu w środowisku Xcode
 
-Podczas tworzenia nowej aplikacji Xamarin.Mac Cocoa, otrzymasz standardowe okno puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie dołączony do projektu. Aby edytować w projekcie systemu windows **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
+Kiedy tworzysz nową aplikację cocoa dla platformy Xamarin.Mac, otrzymasz standardowego okna puste, domyślnie. Ten system windows jest zdefiniowany w `.storyboard` pliku automatycznie uwzględnione w projekcie. Aby edytować projektu systemu windows w **Eksploratora rozwiązań**, kliknij dwukrotnie `Main.storyboard` pliku:
 
 [![](outline-view-images/edit01.png "Wybieranie głównego storyboard")](outline-view-images/edit01.png#lightbox)
 
-Spowoduje to otwarcie okna projektu w Konstruktorze interfejsu w środowisku Xcode:
+Spowoduje to otwarcie projektu okna w program Xcode Interface Builder:
 
 [![](outline-view-images/edit02.png "Edytowanie interfejsu użytkownika w środowisku Xcode")](outline-view-images/edit02.png#lightbox)
 
-Typ `outline` do **Inspector biblioteki** pole wyszukiwania, aby ułatwić znajdowanie kontrolki widoku konspektu:
+Typ `outline` do **Inspektor biblioteki** pola wyszukiwania, aby ułatwić znajdowanie kontrolki widoku konspektu:
 
-[![](outline-view-images/edit03.png "Wybranie widoku konspektu z biblioteki")](outline-view-images/edit03.png#lightbox)
+[![](outline-view-images/edit03.png "Wybieranie widoku konspektu z biblioteki")](outline-view-images/edit03.png#lightbox)
 
-Przeciągnij widoku konspektu kontrolera widoku w **Edytor interfejsu**, stał się wypełnienia obszaru zawartości kontroler widoku i ustaw ją na którym zmniejsza i płynne okna w **edytora ograniczeń**:
+Przeciągnij widoku konspektu z kontroler widoku w **Edytor interfejsu**, wypełnienia obszaru zawartości kontrolera widoku i ustaw ją na którym zmniejsza i rośnie wraz z okna **edytora ograniczeń**:
 
 [![](outline-view-images/edit04.png "Edytowanie ograniczenia")](outline-view-images/edit04.png#lightbox)
 
-Wybierz widok konspektu **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
+Wybierz widok konspektu **hierarchii interfejsów** oraz następujące właściwości są dostępne w **Inspektor atrybut**:
 
 [![](outline-view-images/edit05.png "Inspektor atrybutu")](outline-view-images/edit05.png#lightbox)
 
-- **Konspekt kolumny** -kolumnie tabeli, w którym są wyświetlane dane hierarchicznej.
-- **Kolumna konspektu AutoSave** — Jeśli `true`, kolumnie konspektu będzie można automatycznie zapisywany i przywracany między jest uruchamiana aplikacja.
-- **Wcięcie** -wielkość wcięcia kolumn w obszarze rozwinięty element.
+- **Konspekt kolumny** -kolumny tabeli, w którym wyświetlane są dane hierarchiczne.
+- **Kolumna konspektu zapisywania** — Jeśli `true`, kolumnie konspektu będzie można automatycznie zapisywany i przywracany między uruchomieniem aplikacji.
+- **Wcięcie** -wielkość wcięcia kolumny poniżej rozwinięty element.
 - **Wcięcie następuje komórek** — Jeśli `true`, znacznik wcięcia są grupowane razem z komórek.
-- **Elementy rozwinięty AutoSave** — Jeśli `true`, stanu rozwinięte zwinięte elementów będzie można automatycznie zapisywany i przywracany między jest uruchamiana aplikacja.
-- **Zawartości tryb** — umożliwia użycie albo widoków (`NSView`) lub komórki (`NSCell`) do wyświetlania danych w wiersze i kolumny. Począwszy od macOS 10,7, należy użyć widoków.
-- **Pojawia się grupy wierszy** — Jeśli `true`, widok tabeli narysuje grupowanych komórek tak, jakby ich liczby zmiennoprzecinkowe.
-- **Kolumny** — definiuje liczbę kolumn wyświetlanych.
-- **Nagłówki** — Jeśli `true`, kolumny ma nagłówki.
-- **Ponowne porządkowanie** — Jeśli `true`, użytkownik będzie mógł przeciągnij kolejności kolumn w tabeli.
-- **Zmiana rozmiaru** — Jeśli `true`, użytkownik będzie można przeciągnięcie nagłówków kolumn, aby zmienić rozmiar kolumn.
+- **Elementy rozwinięte zapisywania** — Jeśli `true`, stan rozwinięty/zwinięty elementy będzie można automatycznie zapisywany i przywracany między uruchomieniem aplikacji.
+- **Zawartości w trybie** — umożliwia korzystanie z widoków albo (`NSView`) lub komórki (`NSCell`) aby wyświetlić dane w wiersze i kolumny. Począwszy od systemu macOS 10.7, skorzystaj z widoków.
+- **Liczby zmiennoprzecinkowe grupowanie wierszy** — Jeśli `true`, widok tabeli narysuje pogrupowanych komórek tak, jakby ich liczb zmiennoprzecinkowych.
+- **Kolumny** — określa liczbę kolumn wyświetlanych.
+- **Nagłówki** — Jeśli `true`, kolumny będą mieć nagłówki.
+- **Zmiana kolejności** — Jeśli `true`, użytkownik będzie mógł przeciągnij Zmienianie kolejności kolumn w tabeli.
+- **Zmiana rozmiaru** — Jeśli `true`, użytkownik będzie mógł przeciągnij nagłówek kolumny w celu zmiany rozmiaru kolumn.
 - **Ustawianie rozmiaru kolumn** — Określa, jak automatycznie rozmiar kolumn w tabeli.
-- **Wyróżnij** -formanty typu wyróżnianie tabeli używa zaznaczenie komórki.
-- **Alternatywny wierszy** — Jeśli `true`, kiedykolwiek drugiego wiersza będzie mieć inny kolor tła.
-- **Siatki poziomej** -wybiera typ obramowania wstawiany w poziomie między komórkami.
-- **Siatka pionowa** -wybiera typ obramowania rysowany pionowo między komórkami.
+- **Wyróżnij** — formanty, które korzysta z typu wyróżniania w tabeli po wybraniu komórki.
+- **Alternatywny wierszy** — Jeśli `true`, nigdy nie innych wierszy mają inny kolor tła.
+- **Siatka pozioma** -wybiera typ obramowania wstawiany między komórkami w poziomie.
+- **Siatka pionowa** -wybiera typ obramowania nakreślić między komórkami w pionie.
 - **Kolor siatki** -Ustawia kolor obramowania komórki.
-- **Tło** -Ustawia kolor tła komórki.
-- **Wybór** — pozwala na kontrolowanie, jak użytkownik może wybrać komórek w tabeli jako:
+- **Tło** -Ustawia kolor tła komórek.
+- **Wybór** — można kontrolować, jak użytkownik może wybrać komórek w tabeli jako:
     - **Wiele** — Jeśli `true`, użytkownik może wybrać wiele wierszy i kolumn.
-    - **Kolumna** — Jeśli `true`, użytkownik może wybrać kolumn.
-    - **Wybierz typ** — Jeśli `true`, użytkownik może wpisać znaków do zaznaczenia wiersza.
-    - **Pusty** — Jeśli `true`, użytkownik nie jest wymagany do wybrania wierszy lub kolumn, tabeli zezwala na Brak zaznaczenia w ogóle.
-- **Automatyczne zapisywanie** -nazwę formatu tabel jest automatycznie zapisać pod.
-- **Informacje dotyczące kolumn** — Jeśli `true`, kolejność i szerokość kolumn zostaną automatycznie zapisane.
-- **Podziały** — wybierz, jak komórki obsługuje podziały wiersza.
-- **Obcina ostatniego wiersza widocznego** — Jeśli `true`, komórki zostanie obcięty w można danych mieści się w jej granicach.
+    - **Kolumna** — Jeśli `true`, użytkownik może wybrać kolumny.
+    - **Wybierz typ** — Jeśli `true`, którą użytkownik może wpisać znaków do zaznaczenia wiersza.
+    - **Pusty** — Jeśli `true`, użytkownik nie jest wymagany, aby zaznaczyć wiersz lub kolumnę, tabela pozwala na Brak zaznaczenia w ogóle.
+- **Automatyczne zapisywanie** — nazwę i format tabel jest automatycznie Zapisz w obszarze.
+- **Informacje o kolumnach** — Jeśli `true`, kolejność i szerokość kolumn zostaną zapisane automatycznie.
+- **Podziały** — wybierz, jak komórki obsługuje podziały wierszy.
+- **Obcina ostatniego wiersza widocznego** — Jeśli `true`, komórki zostaną obcięte w można dane nie mieści się w jego granice.
 
 > [!IMPORTANT]
-> Jeśli nie obsługujesz starszych aplikacji Xamarin.Mac `NSView` opartych na widokach konspektu powinien być używany przez `NSCell` na podstawie widoków tabel. `NSCell` uznana za przestarzałą i może nie być obsługiwana idąc dalej.
+> Jeśli nie obsługujesz starszą aplikację platformy Xamarin.Mac, `NSView` oparte na widoki konspektu powinny być używane za pośrednictwem `NSCell` na podstawie widoki tabel. `NSCell` jest uznawany za starszej wersji i może nie być obsługiwana przyszłości.
 
-Wybierz kolumnę tabeli w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
+Wybierz kolumnę tabeli w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **Inspektor atrybut**:
 
 [![](outline-view-images/edit06.png "Inspektor atrybutu")](outline-view-images/edit06.png#lightbox)
 
 - **Tytuł** -Ustawia tytuł kolumny.
-- **Wyrównanie** — Ustawianie wyrównania tekstu w komórkach.
-- **Tytuł czcionki** -wybiera czcionkę tekstu nagłówka komórki.
-- **Klucz sortowania** — jest używane do sortowania danych w kolumnie klucza. Pozostaw to pole puste, jeśli użytkownik nie może sortować tej kolumny.
-- **Selektor** — jest **akcji** używane w celu wykonania sortowania. Pozostaw to pole puste, jeśli użytkownik nie może sortować tej kolumny.
-- **Kolejność** — jest porządek sortowania dla kolumn danych.
+- **Wyrównanie** — Ustaw wyrównanie tekstu w komórkach.
+- **Czcionka tytułu** -wybiera czcionkę tekstu nagłówka komórki.
+- **Klucz sortowania** — jest używany do sortowania danych w kolumnie. Pozostaw puste, jeśli użytkownik nie można sortować w tej kolumnie.
+- **Selektor** — jest **akcji** używany do wykonania sortowania. Pozostaw puste, jeśli użytkownik nie można sortować w tej kolumnie.
+- **Kolejność** — jest kolejność sortowania dla kolumn danych.
 - **Zmiana rozmiaru** -wybiera typ zmiany rozmiaru kolumny.
-- **Można edytować** — Jeśli `true`, użytkownik może edytować komórki w tabeli na podstawie komórki.
+- **Można edytować** — Jeśli `true`, użytkownik może edytować komórek w tabeli na podstawie komórki.
 - **Ukryte** — Jeśli `true`, kolumna jest ukryta.
 
-Można również zmienić rozmiar kolumny przez przeciągnięcie jego uchwytu (wyśrodkowane w pionie w prawej kolumnie) w lewo lub w prawo.
+Można również zmienić rozmiar kolumny, przeciągając jej uchwyt (wyśrodkowane w pionie po prawej stronie kolumny) po lewej lub w prawo.
 
-Teraz wybierz każdej kolumny w widoku naszych tabeli i nadaj pierwszej kolumny **tytuł** z `Product` i drugi `Details`.
+Teraz wybierz każdej kolumny w widoku tabeli do naszych i nadaj pierwszej kolumny **tytuł** z `Product` i drugi `Details`.
 
-Wybierz widok komórki tabeli (`NSTableViewCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
+Wybierz widok komórki tabeli (`NSTableViewCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **Inspektor atrybut**:
 
 [![](outline-view-images/edit07.png "Inspektor atrybutu")](outline-view-images/edit07.png#lightbox)
 
-Są to wszystkie właściwości standardowy. Istnieje również możliwość zmiany rozmiaru wierszy dla tej kolumny w tym miejscu.
+Są to wszystkie właściwości standardowy widok. Istnieje również możliwość zmiany rozmiaru wierszy dla tej kolumny w tym miejscu.
 
-Zaznacz komórkę widoku tabeli (domyślnie jest to `NSTextField`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
+Komórka widoku tabeli (domyślnie jest to `NSTextField`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **Inspektor atrybut**:
 
 [![](outline-view-images/edit08.png "Inspektor atrybutu")](outline-view-images/edit08.png#lightbox)
 
-Będziesz mieć właściwości standardowego pola tekstowego do określonego w tym miejscu. Domyślnie standardowego pola tekstowego służy do wyświetlania danych dla komórek w kolumnie.
+Będziesz mieć właściwości ustawione w tym miejscu standardowego pola tekstowego. Domyślnie standardowego pola tekstowego służy do wyświetlania danych dla komórek w kolumnie.
 
-Wybierz widok komórki tabeli (`NSTableFieldCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **inspektora atrybutu**:
+Wybierz widok komórki tabeli (`NSTableFieldCell`) w **hierarchii interfejsów** oraz następujące właściwości są dostępne w **Inspektor atrybut**:
 
 [![](outline-view-images/edit09.png "Inspektor atrybutu")](outline-view-images/edit09.png#lightbox)
 
-Najważniejsze funkcje są:
+Najważniejsze funkcje to:
 
-- **Układ** — wybierz, w jaki sposób układ komórek w tej kolumnie.
-- **Tryb pojedynczy wiersz** — Jeśli `true`, komórka jest ograniczone do jednego wiersza.
-- **Pierwszy szerokość układu środowiska uruchomieniowego** — Jeśli `true`, preferowane szerokości ustawionej dla niego (ręcznie lub automatycznie) gdy komórka jest wyświetlany przy pierwszym uruchomieniu aplikacji.
-- **Akcja** -sterować Edycja **akcji** jest wysyłane do komórki.
-- **Zachowanie** — definiuje, jeśli komórka jest możliwy lub nie można edytować.
-- **Tekst sformatowany** — Jeśli `true`, komórki można wyświetlić tekst sformatowany i styl.
-- **Cofnij** — Jeśli `true`, komórki przyjmuje na siebie odpowiedzialność zostaje cofnąć zachowanie.
+- **Układ** — wybierz, w jaki sposób są ułożone komórek w tej kolumnie.
+- **Używa pojedynczego wiersza trybu** — Jeśli `true`, komórki jest ograniczona do jednego wiersza.
+- **Pierwszy szerokość układu środowiska uruchomieniowego** — Jeśli `true`, komórki zostanie Preferuj szerokości, ustaw dla niego (ręcznie lub automatycznie) kiedy jest wyświetlana przy pierwszym uruchomieniu aplikacji.
+- **Akcja** -Określa, kiedy edycji **akcji** są wysyłane do komórki.
+- **Zachowanie** — Określa, czy zawartość komórki jest możliwy lub nie można edytować.
+- **Tekst sformatowany** — Jeśli `true`, komórki wyświetlić tekst sformatowany i stylem.
+- **Cofnij** — Jeśli `true`, komórki przyjmuje, że jest ona Cofnij zachowanie.
 
-Wybierz widok komórki tabeli (`NSTableFieldCell`) u dołu w kolumnie tabeli **hierarchii interfejsów**:
+Wybierz widok komórki tabeli (`NSTableFieldCell`) w dolnej części kolumny tabeli w **hierarchii interfejsów**:
 
-[![](outline-view-images/edit11.png "Wybranie widoku komórki tabeli")](outline-view-images/edit10.png#lightbox)
+[![](outline-view-images/edit11.png "Wybierając widok komórki tabeli")](outline-view-images/edit10.png#lightbox)
 
-Dzięki temu można edytować komórki tabeli widoku używany jako bazowy _wzorzec_ we wszystkich komórkach utworzone dla podanej kolumny.
+Umożliwia to edytowanie widoku komórki tabeli, zostanie użyty jako podstawa _wzorzec_ dla wszystkich komórek utworzone dla danej kolumny.
 
 <a name="Adding_Actions_and_Outlets" />
 
-### <a name="adding-actions-and-outlets"></a>Dodawanie działań i gniazda
+### <a name="adding-actions-and-outlets"></a>Dodawanie akcji i gniazd
 
-Tylko innych formantu interfejsu użytkownika Cocoa, musimy udostępnić nasze widoku konspektu i kolumny, a aby C# kodu za pomocą **akcje** i **gniazda** (oparta na funkcjach wymaganych).
+Po prostu jak inne kontrolki interfejsu użytkownika Cocoa, należy udostępnić nasze widoku konspektu i jest kolumn i komórki do języka C# kodu za pomocą **akcje** i **gniazd** (oparte na funkcje wymagane).
 
-Proces jest taka sama dla każdego elementu widoku konspektu, która ma zostać udostępniona:
+Proces jest taka sama dla każdego elementu widoku konspektu, którą chcemy udostępnić:
 
-1. Przełącz się do **Edytor Asystenta** i upewnij się, że `ViewController.h` wybrany plik: 
+1. Przełącz się do **edytora Asystenta** i upewnij się, że `ViewController.h` wybrany plik: 
 
-    [![](outline-view-images/edit11.png "Wybieranie pliku prawidłowe .h")](outline-view-images/edit11.png#lightbox)
+    [![](outline-view-images/edit11.png "Wybieranie pliku poprawne .h")](outline-view-images/edit11.png#lightbox)
 2. Wybierz widok konspektu z **hierarchii interfejsów**, przytrzymując klawisz CTRL i przeciągnij, aby `ViewController.h` pliku.
-3. Utwórz **gniazda** wywoływanych widoku konspektu `ProductOutline`: 
+3. Tworzenie **ujścia** dla widoku konspektu o nazwie `ProductOutline`: 
 
-    [![](outline-view-images/edit13.png "Konfigurowanie gniazda")](outline-view-images/edit13.png#lightbox)
-4. Utwórz **gniazda** w kolumnach tabel o nazwie `ProductColumn` i `DetailsColumn`: 
+    [![](outline-view-images/edit13.png "Konfigurowanie źródła")](outline-view-images/edit13.png#lightbox)
+4. Tworzenie **gniazd** w kolumnach tabeli o nazwie `ProductColumn` i `DetailsColumn`: 
 
-    [![](outline-view-images/edit14.png "Konfigurowanie gniazda")](outline-view-images/edit14.png#lightbox)
-5. Możesz zapisać i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+    [![](outline-view-images/edit14.png "Konfigurowanie źródła")](outline-view-images/edit14.png#lightbox)
+5. Zapisać zmiany i wróć do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Następnie firma Microsoft będzie zapisywać wyświetlania kodu niektórych danych kontur po uruchomieniu aplikacji.
+Następnie będziemy pisać wyświetlania kodu danych konspektu po uruchomieniu aplikacji.
 
 <a name="Populating_the_Table_View" />
 
 ## <a name="populating-the-outline-view"></a>Wypełnianie widoku konspektu
 
-Z naszych widoku konspektu zaprojektowane w Konstruktorze interfejsu i udostępniane za pośrednictwem funkcji **gniazda**, następnie należy utworzyć kodu C#, aby wypełnić go.
+Z widoku nasze konspektu zaprojektowanych w programu Interface Builder i udostępniane za pośrednictwem **ujścia**, następnie należy utworzyć kod C#, aby je wypełnić.
 
-Najpierw utwórz nową `Product` klasy do przechowywania informacji dla poszczególnych wierszy i grupy produktów sub. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `Product` dla **nazwa** i kliknij przycisk **nowy** przycisk:
+Po pierwsze Utwórzmy nowy `Product` klasy do przechowywania informacji dla poszczególnych wierszy i grupy produktów sub. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `Product` dla **nazwa** i kliknij przycisk **New** przycisku:
 
-[![](outline-view-images/populate01.png "Tworzenie klasy pusty")](outline-view-images/populate01.png#lightbox)
+[![](outline-view-images/populate01.png "Tworzenie pustą klasę")](outline-view-images/populate01.png#lightbox)
 
-Wprowadź `Product.cs` wygląd pliku podobne do poniższych:
+Wprowadź `Product.cs` wygląd pliku, jak pokazano poniżej:
 
 ```csharp
 using System;
@@ -219,9 +219,9 @@ namespace MacOutlines
 }
 ```
 
-Następnie należy utworzyć podklasy `NSOutlineDataSource` do dostarczania danych do naszej konspektu jak żądanie. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `ProductOutlineDataSource` dla **nazwa** i kliknij przycisk **nowy** przycisku.
+Następnie należy utworzyć podklasę klasy `NSOutlineDataSource` do dostarczania danych do naszych konspektu, ponieważ żądanie. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `ProductOutlineDataSource` dla **nazwa** i kliknij przycisk **New** przycisku.
 
-Edytuj `ProductTableDataSource.cs` pliku i zapewnić ich wyglądać następująco:
+Edytuj `ProductTableDataSource.cs` plików i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -280,11 +280,11 @@ namespace MacOutlines
 }
 ```
 
-Ta klasa ma magazyn dla elementów naszych widoku konspektu i zastępuje `GetChildrenCount` do zwrócenia liczbę wierszy w tabeli. `GetChild` Zwraca z określonym elementem nadrzędnym lub podrzędnym (zgodnie z żądaniem widoku konspektu) i `ItemExpandable` definiuje określony element jako element nadrzędny lub element podrzędny.
+Ta klasa ma magazyn dla naszych wyświetlanie konspektu elementów i zastępuje `GetChildrenCount` aby zwrócić liczbę wierszy w tabeli. `GetChild` Zwraca określony element nadrzędny lub podrzędny (zgodnie z żądaniem widoku konspektu) i `ItemExpandable` definiuje określony element jako element nadrzędny lub element podrzędny.
 
-Na koniec należy utworzyć podklasy `NSOutlineDelegate` przewidzieć zachowania naszych konspektu. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `ProductOutlineDelegate` dla **nazwa** i kliknij przycisk **nowy** przycisku.
+Na koniec należy utworzyć podklasę klasy `NSOutlineDelegate` aby zapewnić zachowanie dla naszych konspektu. W **Eksploratora rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz **Dodaj** > **Nowy plik ...**  Wybierz **ogólne** > **pustą klasę**, wprowadź `ProductOutlineDelegate` dla **nazwa** i kliknij przycisk **New** przycisku.
 
-Edytuj `ProductOutlineDelegate.cs` pliku i zapewnić ich wyglądać następująco:
+Edytuj `ProductOutlineDelegate.cs` plików i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -349,9 +349,9 @@ namespace MacOutlines
 }
 ```
 
-Kiedy możemy utworzyć wystąpienia `ProductOutlineDelegate`, będziemy również przekazać wystąpienia `ProductOutlineDataSource` który dostarcza dane do konturu. `GetView` Metoda jest odpowiedzialna za zwracanie widoku (dane), aby wyświetlić komórki dla podać kolumn i wierszy. Jeśli to możliwe istniejącego widoku zostanie ono użyte ponownie, aby wyświetlić komórkę, jeśli nie należy utworzyć nowy widok.
+Kiedy tworzymy wystąpienie `ProductOutlineDelegate`, możemy również przekazać w wystąpieniu `ProductOutlineDataSource` zapewniający danych konspektu. `GetView` Metoda jest odpowiedzialna za zwrócenie widoku (dane), aby wyświetlić komórki, które zapewniają kolumn i wierszy. Jeśli to możliwe istniejącemu widokowi zostanie ono użyte ponownie, aby wyświetlić komórkę, jeśli nie należy utworzyć nowy widok.
 
-Aby wypełnić konturu, umożliwia edytowanie `MainWindow.cs` plików i upewnij `AwakeFromNib` wygląd metody podobne do poniższych:
+Aby wypełnić konspektu, możemy edytować `MainWindow.cs` pliku i upewnij `AwakeFromNib` wygląd metoda podobne do następującego:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -388,25 +388,25 @@ public override void AwakeFromNib ()
 }
 ```
 
-Czy możemy uruchomić aplikację, wyświetlane są następujące:
+Jeśli możemy uruchomić aplikację, wyświetlane są następujące:
 
 [![](outline-view-images/populate02.png "W widoku zwiniętym")](outline-view-images/populate02.png#lightbox)
 
-Jeśli firma Microsoft rozwinąć węzeł w widoku konspektu, będzie mieć następującą postać:
+Jeśli możemy rozwinąć węzeł w widoku konspektu, będzie to wyglądać następująco:
 
-[![](outline-view-images/populate03.png "Widoku rozwiniętego")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "Rozwinięty widok")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
 ## <a name="sorting-by-column"></a>Sortowanie według kolumny
 
-Załóżmy Zezwalaj użytkownikowi na posortuj dane w konspekcie przez kliknięcie nagłówka kolumny. Po pierwsze, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz `Product` kolumny, wprowadź `Title` dla **klucza sortowania**, `compare:` dla **selektora** i wybierz `Ascending` dla **kolejności**:
+Zezwolimy na użytkownika posortować dane w konspekcie, klikając nagłówek kolumny. Po pierwsze, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder. Wybierz `Product` kolumny, wprowadź `Title` dla **klucz sortowania**, `compare:` dla **selektor** i wybierz `Ascending` dla **kolejności**:
 
 [![](outline-view-images/sort01.png "Ustawienie kolejności klucza sortowania")](outline-view-images/sort01.png#lightbox)
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Teraz załóżmy Edytuj `ProductOutlineDataSource.cs` pliku i dodaj następujące metody:
+Teraz możemy edytować `ProductOutlineDataSource.cs` pliku i dodaj następujące metody:
 
 ```csharp
 public void Sort(string key, bool ascending) {
@@ -431,21 +431,21 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 }
 ```
 
-`Sort` Metody umożliwiają sortowanie danych w źródle danych, na podstawie danego `Product` pola klasy w porządku rosnącym lub malejącym. Zastąpione `SortDescriptorsChanged` metoda zostanie wywołana za każdym razem, gdy użycie kliknie nagłówek kolumny. Zostaną przekazane **klucza** wartość ustawioną w konstruktora interfejsu i kolejność sortowania dla tej kolumny.
+`Sort` Metody umożliwiają sortowanie danych w źródle danych, na podstawie danego `Product` pola klasy w porządku rosnącym lub malejącym. Zastąpione `SortDescriptorsChanged` metoda zostanie wywołana, za każdym razem, gdy użycie kliknięciu nagłówka kolumny. Zostaną przekazane **klucz** wartość, która jest ustawiany w programu Interface Builder i porządek sortowania dla tej kolumny.
 
-Jeśli firma Microsoft może uruchomić aplikację, a następnie kliknij nagłówek kolumny, wiersze zostaną posortowane według tej kolumny:
+Jeśli firma Microsoft może uruchomić aplikację, a następnie kliknij nagłówek kolumny, wiersze będą sortowane według tej kolumny:
 
-[![](outline-view-images/sort02.png "Przykład danych wyjściowych posortowana")](outline-view-images/sort02.png#lightbox)
+[![](outline-view-images/sort02.png "Przykład posortowanych danych wyjściowych")](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection" />
 
 ## <a name="row-selection"></a>Zaznaczenie wiersza
 
-Jeśli chcesz zezwolić użytkownikowi wybierz pojedynczy wiersz, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok konspektu **hierarchii interfejsów** i usuń zaznaczenie pola wyboru **wiele** checkbox w **inspektora atrybutu**:
+Jeśli chcesz umożliwić użytkownikowi wybrać pojedynczy wiersz, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder. Wybierz widok konspektu **hierarchii interfejsów** i usuń zaznaczenie pola wyboru **wielu** pola wyboru w **Inspektor atrybut**:
 
 [![](outline-view-images/select01.png "Inspektor atrybutu")](outline-view-images/select01.png#lightbox)
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
 
 Następnie Edytuj `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
@@ -458,17 +458,17 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Dzięki temu użytkownikowi na wybranie dowolnego pojedynczego wiersza w widoku konspektu. Zwraca `false` dla `ShouldSelectItem` dla żadnego elementu, który nie ma użytkownik będzie mógł wybrać lub `false` dla każdego elementu, jeśli nie chcesz, aby użytkownik będzie mógł wybrać wszystkie elementy.
+Umożliwi to użytkownikowi na wybranie dowolnego pojedynczego wiersza w widoku konspektu. Zwróć `false` dla `ShouldSelectItem` dla dowolny element, którego nie chcesz, użytkownik będzie mógł wybrać lub `false` dla każdego elementu, jeśli nie chcesz, aby użytkownik będzie mógł wybrać wszystkie elementy.
 
 <a name="Multiple_Row_Selection" />
 
-## <a name="multiple-row-selection"></a>Wybieranie wielu wierszy
+## <a name="multiple-row-selection"></a>Wybór wielokrotny wiersza
 
-Jeśli chcesz zezwolić użytkownikowi zaznaczyć wiele wierszy, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **wiele** checkbox w **inspektora atrybutu**:
+Jeśli chcesz zezwolić na użytkownika wybrać wiele wierszy, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **wielu** pola wyboru w **Inspektor atrybut**:
 
 [![](outline-view-images/select02.png "Inspektor atrybutu")](outline-view-images/select02.png#lightbox)
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
 
 Następnie Edytuj `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
@@ -481,19 +481,19 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Dzięki temu użytkownikowi na wybranie dowolnego pojedynczego wiersza w widoku konspektu. Zwraca `false` dla `ShouldSelectRow` dla żadnego elementu, który nie ma użytkownik będzie mógł wybrać lub `false` dla każdego elementu, jeśli nie chcesz, aby użytkownik będzie mógł wybrać wszystkie elementy.
+Umożliwi to użytkownikowi na wybranie dowolnego pojedynczego wiersza w widoku konspektu. Zwróć `false` dla `ShouldSelectRow` dla dowolny element, którego nie chcesz, użytkownik będzie mógł wybrać lub `false` dla każdego elementu, jeśli nie chcesz, aby użytkownik będzie mógł wybrać wszystkie elementy.
 
 <a name="Type_to_Select_Row" />
 
-## <a name="type-to-select-row"></a>Typ do zaznaczenia wiersza
+## <a name="type-to-select-row"></a>Typ, aby zaznaczyć wiersz
 
-Jeśli chcesz zezwolić użytkownikowi na wpisz znak z widokiem konspektu wybrane i wybierz pierwszy wiersz, który ma tego znaku, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **wybierz typ** checkbox w **inspektora atrybutu**:
+Jeśli chcesz umożliwić użytkownikowi wpisz znak z widokiem konspektu wybrane, a następnie wybierz pierwszy wiersz, który ma ten znak, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **wybierz typ** pola wyboru w **Inspektor atrybut**:
 
-[![](outline-view-images/type01.png "Edytowanie wiersza typu")](outline-view-images/type01.png#lightbox)
+[![](outline-view-images/type01.png "Edytowanie typu wiersza")](outline-view-images/type01.png#lightbox)
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Teraz załóżmy Edytuj `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
+Teraz możemy edytować `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
 
 ```csharp
 public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSObject startItem, NSObject endItem, string searchString)
@@ -509,21 +509,21 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 }
 ```
 
-`GetNextTypeSelectMatch` Ma metodę danego `searchString` i zwraca element pierwszy `Product` z tego ciągu w jego `Title`.
+`GetNextTypeSelectMatch` Metoda przyjmuje danego `searchString` i zwraca element pierwszy `Product` z tego ciągu w jego `Title`.
 
 <a name="Reordering_Columns" />
 
-## <a name="reordering-columns"></a>Ponowne porządkowanie kolumn
+## <a name="reordering-columns"></a>Zmienianie kolejności kolumn
 
-Jeśli chcesz zezwolić użytkownikowi na przeciąganie Zmienianie kolejności kolumn w widoku konspektu, kliknij dwukrotnie `Main.storyboard` plik, aby otworzyć do edycji w Konstruktorze interfejsu. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **Reordering** checkbox w **inspektora atrybutu**:
+Jeśli chcesz zezwolić użytkownikowi na przeciąganie kolejności kolumn w widoku konspektu, kliknij dwukrotnie `Main.storyboard` plik, aby go otworzyć do edycji w programu Interface Builder. Wybierz widok konspektu **hierarchii interfejsów** i sprawdź **Reordering** pola wyboru w **Inspektor atrybut**:
 
 [![](outline-view-images/reorder01.png "Inspektor atrybutu")](outline-view-images/reorder01.png#lightbox)
 
-Jeśli firma Microsoft daje wartość **Autosave** właściwości i wyboru **informacji o kolumnie** pola, wszystkie zmiany wykonujemy do układu tabeli zostaną automatycznie zapisane firmie Microsoft i przywrócić przy następnym aplikacji jest uruchamiane.
+Jeśli firma Microsoft daje wartość **zapisywania** właściwości i sprawdź **informacji o kolumnie** pola, wszelkie zmiany, udostępnimy do układu tabeli zostaną automatycznie zapisane dla nas i przywrócić ją przy następnym zostanie uruchomiony.
 
-Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Teraz załóżmy Edytuj `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
+Teraz możemy edytować `ProductOutlineDelegate.cs` pliku i dodaj następującą metodę:
 
 ```csharp
 public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex, nint newColumnIndex)
@@ -532,17 +532,17 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 }
 ```
 
-`ShouldReorder` Metoda powinna zwrócić `true` dla każdej kolumny interesujące zezwolenie na można zmienić kolejności przeciągania do `newColumnIndex`, przeciwnym razie zwracany `false`;
+`ShouldReorder` Metoda powinna zwrócić `true` dla każdej kolumny, które chcesz zezwolić na to przeciągania zmieniana w `newColumnIndex`, inne zwrot `false`;
 
-Jeśli możemy uruchomić aplikację, możemy przeciągnij nagłówki kolumn wokół, aby zmienić kolejność kolumn naszych:
+Jeśli możemy uruchomić aplikację, aby zmienić kolejność kolumn naszych można przeciągnąć nagłówków kolumn wokół:
 
 [![](outline-view-images/reorder02.png "Przykład opcję kolumn")](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
-## <a name="editing-cells"></a>Edytowanie komórek
+## <a name="editing-cells"></a>Edytowanie komórki
 
-Jeśli chcesz zezwolić użytkownikowi edytowanie wartości danego komórki, Edytuj `ProductOutlineDelegate.cs` plików i zmień `GetViewForItem` metody w następujący sposób:
+Jeśli chcesz umożliwić użytkownikowi edytowanie wartości dana komórka, edytowanie `ProductOutlineDelegate.cs` pliku, a następnie zmień `GetViewForItem` metody w następujący sposób:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -596,15 +596,15 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 }
 ```
 
-Teraz w możemy uruchomić aplikację, użytkownik może edytować komórki w widoku tabeli:
+Jeśli możemy uruchomić aplikację, użytkownik może edytować komórki w widoku tabeli:
 
-[![](outline-view-images/editing01.png "Przykład edycji w komórkach")](outline-view-images/editing01.png#lightbox)
+[![](outline-view-images/editing01.png "Przykład edytowanie komórki")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 
-## <a name="using-images-in-outline-views"></a>Używanie obrazów w widokach konspektu
+## <a name="using-images-in-outline-views"></a>Używanie obrazów w widoki konspektu
 
-Aby umieścić obraz jako część komórki w `NSOutlineView`, musisz zmienić, jak dane są zwracane przez wyświetlanie konspektu `NSTableViewDelegate's` `GetView` metodę `NSTableCellView` zamiast typowe `NSTextField`. Na przykład:
+Do dołączenia obrazu komórki w `NSOutlineView`, musisz zmienić, jak dane są zwracane przez widok konspektu `NSTableViewDelegate's` `GetView` metodę `NSTableCellView` zamiast typowej `NSTextField`. Na przykład:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -668,23 +668,23 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 }
 ```
 
-Aby uzyskać więcej informacji, zobacz [przy użyciu obrazów z widokami konspektu](~/mac/app-fundamentals/image.md) sekcji naszych [Praca z obrazu](~/mac/app-fundamentals/image.md) dokumentacji.
+Aby uzyskać więcej informacji, zobacz [przy użyciu obrazów za pomocą widoki konspektu](~/mac/app-fundamentals/image.md) części naszych [pracy przy użyciu obrazu](~/mac/app-fundamentals/image.md) dokumentacji.
 
 <a name="Data_Binding_Outline_Views" />
 
 ## <a name="data-binding-outline-views"></a>Widoki konspektu powiązania danych
 
-Przy użyciu techniki kluczy i wartości kodowania i powiązania danych w aplikacji Xamarin.Mac, można znacznie zmniejszyć ilość kodu, które trzeba zapisać i zachować do wypełnienia i pracować z nimi elementy interfejsu użytkownika. Masz również zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) od z przodu kończyć interfejsu użytkownika (_Model-View-Controller_), prowadzących do łatwiejsze w obsłudze, bardziej elastyczne aplikacji Projekt.
+Przy użyciu technik kodowania pary klucz-wartość i powiązania danych w aplikacji platformy Xamarin.Mac, może znacznie skrócić ilość kodu, który trzeba napisać i obsługiwać do wypełniania i pracować z elementami interfejsu użytkownika. Masz także zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) z usługi frontonu zakończenia interfejsu użytkownika (_Model-View-Controller_), prowadzącego do łatwiejsza Obsługa bardziej elastycznych aplikacji Projekt.
 
-Kodowanie klucz-wartość (KVC) to mechanizm służący do uzyskiwania dostępu do właściwości obiektu pośrednio, za pomocą kluczy (specjalnie sformatowana ciągi) do identyfikowania właściwości zamiast dostępu do nich za pośrednictwem zmienne wystąpienia lub metody dostępu (`get/set`). Implementując kluczy i wartości kodowania zgodne metod dostępu do aplikacji Xamarin.Mac, uzyskasz dostęp do innych funkcji macOS, takich jak obserwowania klucz-wartość (KVO), wiązanie danych podstawowych danych, Cocoa powiązania i scriptability.
+Kodowanie klucz-wartość (KVC) to mechanizm służący do uzyskiwania dostępu do właściwości obiektu pośrednio, za pomocą klucze (specjalnie sformatowanego ciągi), aby zidentyfikować właściwości zamiast uzyskanie do nich dostępu za pośrednictwem zmienne wystąpienia lub metody dostępu (`get/set`). Wdrażając kodowanie klucz-wartość zgodne metod dostępu do aplikacji platformy Xamarin.Mac, możesz uzyskać dostęp do innych funkcji systemu macOS, takich jak obserwowania pary klucz-wartość (KVO), powiązań danych, danych podstawowych, cocoa dla powiązania i scriptability.
 
-Aby uzyskać więcej informacji, zobacz [powiązania danych widoku konspektu](~/mac/app-fundamentals/databinding.md#Outline_View_Data_Binding) sekcji naszych [powiązania danych i kluczy i wartości kodowania](~/mac/app-fundamentals/databinding.md) dokumentacji.
+Aby uzyskać więcej informacji, zobacz [powiązanie danych widoku konspektu](~/mac/app-fundamentals/databinding.md#Outline_View_Data_Binding) części naszych [powiązanie danych i kodowanie klucz-wartość](~/mac/app-fundamentals/databinding.md) dokumentacji.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowe przyjrzeć się praca z widokami konspektu w aplikacji Xamarin.Mac. Firma Microsoft przedstawiono różne typy i używa widoków konspektu, jak tworzyć i obsługiwać konspektu widoków w Konstruktorze interfejsu w środowisku Xcode i sposobu pracy z widokami konspektu w kodzie języka C#.
+W tym artykule jest zajęta szczegółowe omówienie pracy z widoki konspektu w aplikacji platformy Xamarin.Mac. Firma dostrzegła różnych typów i używa widoki konspektu, jak tworzyć i obsługiwać widoki konspektu w program Xcode Interface Builder i sposób pracy z widoki konspektu w kodzie języka C#.
 
 ## <a name="related-links"></a>Linki pokrewne
 
@@ -694,8 +694,8 @@ W tym artykule trwało szczegółowe przyjrzeć się praca z widokami konspektu 
 - [Widoki tabel](~/mac/user-interface/table-view.md)
 - [Listy źródeł](~/mac/user-interface/source-list.md)
 - [Powiązanie danych i kodowanie klucz-wartość](~/mac/app-fundamentals/databinding.md)
-- [OS X człowieka Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Wprowadzenie do widoków konspektu](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Wprowadzenie do konturu widoków](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

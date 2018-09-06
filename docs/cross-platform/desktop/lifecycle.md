@@ -1,59 +1,59 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
-title: WPF vs. Cykl życia aplikacji platformy Xamarin.Forms
-description: Ten dokument porównuje podobieństwa i różnice między cyklem życia aplikacji dla aplikacji platformy Xamarin.Forms i WPF. Również odbywa się na drzewie wizualnym, grafiki, zasobów i style.
+title: WPF a. Cykl życia aplikacji platformy Xamarin.Forms
+description: W tym dokumencie porównuje podobieństwa i różnice między cyklem życia aplikacji dla aplikacji platformy Xamarin.Forms i WPF. Ponadto monitoruje drzewa wizualnego, grafiki, zasobów i stylów.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: abb7773873fa181085464b5985cc8233715cc4be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a59f257d1e6285fa2d899271a1aae9778b04d985
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781585"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780614"
 ---
-# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF vs. Cykl życia aplikacji platformy Xamarin.Forms
+# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF a. Cykl życia aplikacji platformy Xamarin.Forms
 
-Platformy Xamarin.Forms zajmuje dużo wskazówki dotyczące projektowania z platform opartych na języku XAML, które obowiązywały przed jej szczególnie WPF. Jednak w inny sposób odbiega znacznie co może być trwałe punktu dla osób próby migrację. Ten dokument próbuje zidentyfikować niektóre z tych problemów oraz wskazówki w miarę możliwości Mostek wiedzy WPF do platformy Xamarin.Forms.
+Zestaw narzędzi Xamarin.Forms zajmuje dużo wskazówki dotyczące projektowania z platform opartych na XAML, dołączone przed nią szczególnie WPF. Jednak w inny sposób odbiega znacznie który może być umocowany punktu dla osób próby migrację. W tym dokumencie próbuje zidentyfikować, niektóre z tych problemów i wytyczne możliwe do mostka wiedzy WPF do zestawu narzędzi Xamarin.Forms.
 
 ## <a name="app-lifecycle"></a>Cykl życia aplikacji
 
-Przypomina cyklem życia aplikacji między WPF i platformy Xamarin.Forms. Zarówno uruchomić kod zewnętrzny (platform) i uruchom interfejs użytkownika za pośrednictwem wywołania metody. Różnica polega na tym, że platformy Xamarin.Forms zawsze zaczyna się w zestawie specyficzne dla platformy, który następnie inicjuje i tworzy interfejsu użytkownika dla aplikacji.
+Cykl życia aplikacji między WPF a Xamarin.Forms jest podobny. Uruchom kod zewnętrzny (platformy) i uruchomić interfejs użytkownika za pomocą wywołania metody. Różnica polega na tym, że zestawu narzędzi Xamarin.Forms zawsze zaczyna się w zestawie specyficzne dla platformy, który następnie inicjuje i tworzy interfejsu użytkownika dla aplikacji.
 
 **WPF**
 
 - `Main method > App > MainWindow`
 
 > [!NOTE]
-> `Main` Metoda jest domyślnie automatycznie wygenerowany i nie są widoczne w kodzie.
+> `Main` Metoda jest domyślnie automatycznie generowane i nie są widoczne w kodzie.
 
 **Xamarin.Forms**
 
 - **dla systemu iOS** &ndash; `Main method > AppDelegate > App > ContentPage`
-- **Android** &ndash; `MainActivity > App > ContentPage`
+- **System android** &ndash; `MainActivity > App > ContentPage`
 - **PLATFORMY UNIWERSALNEJ SYSTEMU WINDOWS** &ndash; `Main method > App(UWP) > MainPage(UWP) > App > ContentPage`
 
 ### <a name="application-class"></a>Klasa aplikacji
 
-Zarówno WPF i platformy Xamarin.Forms `Application` klasy, który jest tworzony jako pojedynczą. W większości przypadków aplikacje będą pochodzić od tej klasy w celu zapewnienia aplikacji niestandardowych, chociaż nie jest to bezwzględnie wymagane na platformie WPF. Zarówno ujawnia `Application.Current` właściwości, aby zlokalizować utworzone pojedyncze wystąpienie.
+WPF i zestawu narzędzi Xamarin.Forms mają `Application` klasy, która jest tworzona jako pojedynczą. W większości przypadków aplikacji będzie pochodzić od tej klasy, aby zapewnić aplikacji niestandardowych, mimo że to nie jest ściśle wymagany na platformie WPF. Zarówno ujawnić `Application.Current` właściwość, aby zlokalizować utworzone pojedyncze wystąpienie.
 
 ### <a name="global-properties--persistence"></a>Właściwości globalne + trwałości
 
-Zarówno WPF i platformy Xamarin.Forms `Application.Properties` słownika dostępne przechowywania obiektów globalnych poziomie aplikacji, które są dostępne w dowolnym miejscu w aplikacji. Najważniejsza różnica polega na tym będzie platformy Xamarin.Forms _utrwalić_ wszystkie typy pierwotne, przechowywane w kolekcji, gdy aplikacja jest wstrzymana, a następnie załadować je ponownie, gdy jest on dalszymi. WPF nie obsługuje automatycznie tego zachowania — zamiast tego większość deweloperów na izolowanych magazynów lub użyte wbudowane `Settings` obsługuje.
+WPF i zestawu narzędzi Xamarin.Forms mają `Application.Properties` słownika dostępne przechowywania obiektów globalnych poziomie aplikacji, które są dostępne w dowolnym miejscu w aplikacji. Główną różnicą jest tego zestawu narzędzi Xamarin.Forms _utrwalić_ żadnych typów pierwotnych, przechowywane w kolekcji, gdy aplikacja jest wstrzymana, a ich ładować ponownie, gdy jest on dalszymi. WPF nie obsługuje automatycznie tego zachowania — zamiast tego większość programistów opiera się na wydzielonej pamięci masowej lub wykorzystywane wbudowane `Settings` pomocy technicznej.
 
-## <a name="defining-pages-and-the-visual-tree"></a>Definiowanie stron i drzewa wizualnego
+## <a name="defining-pages-and-the-visual-tree"></a>Definiowanie stron i drzewo wizualne
 
-Używa WPF `Window` jako element główny najwyższego poziomu elementów wizualnych. Definiuje HWND na świecie systemu Windows, aby wyświetlić informacje. Można tworzyć i wyświetlić tyle okien jednocześnie, jak na platformie WPF.
+Używa WPF `Window` jako element główny dla dowolnego elementu wizualnego najwyższego poziomu. Definiuje właściwości HWND na świecie Windows, aby wyświetlić informacje. Można tworzyć i wyświetlić liczbę okna równocześnie, jak na platformie WPF.
 
-W przypadku platformy Xamarin.Forms, najwyższego poziomu visual zawsze jest definiowany przez platformę — na przykład w systemie iOS, jest `UIWindow`. Renderuje platformy Xamarin.Forms jest zawartości do tych reprezentacje natywnego platformy przy użyciu `Page` klasy. Każdy `Page` w platformy Xamarin.Forms reprezentuje unikatowy "page" w aplikacji, gdzie jest tylko jeden widoczne w czasie.
+W interfejsie Xamarin.Forms, najwyższego poziomu wizualnego, zawsze jest definiowany przez platformę — na przykład w systemie iOS, jest `UIWindow`. Renderuje zestaw narzędzi Xamarin.Forms jest zawartość w te reprezentacje platformy natywnej przy użyciu `Page` klasy. Każdy `Page` w interfejsie Xamarin.Forms reprezentuje unikatowy "page" w aplikacji, gdzie jest tylko jeden widoczne w danym momencie.
 
-Zarówno WPFs `Window` i platformy Xamarin.Forms `Page` obejmują `Title` właściwość wpływ tytuł wyświetlanych, a jednocześnie ma `Icon` właściwości do wyświetlenia określonej ikony strony (**Uwaga** który Ikona i tytuł nie zawsze są widoczne w platformy Xamarin.Forms). Ponadto można zmienić wspólne właściwości visual zarówno takie jak kolor tła lub image.
+Zarówno WPFs `Window` i Xamarin.Forms `Page` obejmują `Title` właściwość wpływania na wyświetlonej tytuł i jednocześnie mieć `Icon` właściwość, aby wyświetlić określone ikony strony (**Uwaga** , Tytuł i ikona nie zawsze są widoczne w interfejsie Xamarin.Forms). Ponadto można zmienić wspólne właściwości visual zarówno takich jak kolor tła lub obrazu.
 
-Jest technicznie możliwe do renderowania dla dwóch osobnych platformy widoków (np. Zdefiniuj dwa `UIWindow` obiekty i mieć drugi jeden renderowania wyświetlanych lub funkcji AirPlay), wymaga kodu specyficzne dla platformy, aby to zrobić i nie jest bezpośrednio obsługiwana funkcja Platformy Xamarin.Forms samej siebie.
+Jest technicznie możliwa do renderowania dla dwóch widoków oddzielne platformy (np. zdefiniować dwa `UIWindow` obiektów i mają jedną sekundę renderowania do ekranu zewnętrznego lub AirPlay), wymaga kodu specyficznego dla platformy, aby to zrobić i nie jest bezpośrednio obsługiwana funkcja Zestaw narzędzi Xamarin.Forms, sam.
 
 ### <a name="views"></a>Widoki
 
-Przypomina visual hierarchia elementów dla obu struktur. WPF jest nieco bardziej z powodu obsługi WYSIWYG dokumentów.
+Przypomina visual hierarchia elementów dla obu platform. WPF jest nieco bardziej ze względu na obsługę dokumentów WYSIWYG.
 
 **WPF**
 
@@ -75,85 +75,85 @@ BindableObject - base class for all bindable things
          View - layout + gesture support
 ```
 
-### <a name="view-lifcycle"></a>Widok Lifcycle
+### <a name="view-lifecycle"></a>Cykl życia widoku
 
-Platformy Xamarin.Forms przede wszystkim jest ukierunkowane wokół scenariuszach mobilnych. Jako takie aplikacje są _aktywowany_, _zawieszone_, i _ponownie uaktywnić_ jako użytkownik wchodzi w interakcję z nimi. Jest to podobne do kliknięcie od `Window` w aplikacji WPF i zestaw metod i pokrewnych zdarzeń można zastąpić lub utworzenie punktu zaczepienia w celu monitorowania tego zachowania.
+Xamarin.Forms to przede wszystkim zorientowanej na wokół mobilnych. Jako takie aplikacje są _aktywowane_, _zawieszone_, i _ponownie uaktywnione_ jako użytkownik wchodzi w interakcję z nimi. Jest to podobne do klikając opuszczenie `Window` w aplikacji WPF wiąże się z zestawu metod i pokrewnych zdarzeń można zastąpić lub dołączyć do monitorowania tego zachowania.
 
-| Cel | WPF — metoda | Metoda platformy Xamarin.Forms |
+| Cel | Metoda WPF | Metoda zestawu narzędzi Xamarin.Forms |
 |--- |--- |--- |
 |Początkowej aktywacji|ctor + Window.OnLoaded|ctor + Page.OnStart|
-|Pokazano|Window.IsVisibleChanged|Page.Appearing|
+|Wyświetlane|Window.IsVisibleChanged|Page.Appearing|
 |Hidden|Window.IsVisibleChanged|Page.Disapearing|
-|Wstrzymaj utracone fokus|Window.OnDeactivated|Page.OnSleep|
+|Wstrzymywanie/utracone fokus|Window.OnDeactivated|Page.OnSleep|
 |Aktywowany otrzymano fokus|Window.OnActivated|Page.OnResume|
 |Zamknięte|Window.OnClosing + Window.OnClosed|n/d|
 
 
-Zarówno Obsługa ukrywanie/pokazywanie formantów podrzędnych, a także na platformie WPF jest właściwością trzy stanowy `IsVisible` (widoczny, ukryty i zwinięte). W przypadku platformy Xamarin.Forms, jest tylko widoczne czy ukryte za pośrednictwem `IsVisible` właściwości.
+Zarówno Obsługa ukrywanie/pokazywanie także formantów podrzędnych w WPF jest właściwością-stanowy `IsVisible` (widoczne, ukryte i zwinięty). W interfejsie Xamarin.Forms, jest po prostu widoczne czy ukryte za pośrednictwem `IsVisible` właściwości.
 
 ### <a name="layout"></a>Układ
 
-Układ strony odbywa się w tej samej 2-przebiegu (miar/Rozmieść) w WPF. Można przyłączanie się do strony układu przez zastąpienie poniższych metod w platformy Xamarin.Forms `Page` klasy:
+Układ strony występuje w tym samym 2-przebiegu (miara/Rozmieść) w WPF. Można dołączyć do układu strony poprzez zastąpienie następujące metody w interfejsie Xamarin.Forms `Page` klasy:
 
 | Metoda | Cel |
 |--- |--- |
-|OnChildMeasureInvalidated|Preferowany rozmiar elementu podrzędnego została zmieniona.|
-|OnSizeAllocated|Strona zostanie przypisana szerokość/wysokość.|
-|Zdarzenie LayoutChanged|Układ/rozmiar strony została zmieniona.|
+|OnChildMeasureInvalidated|Preferowany rozmiar element podrzędny został zmieniony.|
+|OnSizeAllocated|Strona przypisano szerokość/wysokość.|
+|Zdarzenie LayoutChanged|Układ/rozmiar strony został zmieniony.|
 
-Brak żadne zdarzenie globalne układu, nazywanego dzisiaj, ani nie istnieje globalnym `CompositionTarget.Rendering` zdarzenia, takiego jak znaleźć na platformie WPF.
+Istnieje żadne zdarzenie globalnego układ, który nazywa się już dziś, podobnie jak ma globalną `CompositionTarget.Rendering` zdarzenie, takie jak znaleźć się na platformie WPF.
 
 #### <a name="common-layout-properties"></a>Wspólne właściwości układu
 
-WPF i obsługuje zarówno platformy Xamarin.Forms `Margin` odstępy formantu wokół elementu i `Padding` odstępy formantu _wewnątrz_ elementu. Ponadto większość widoków układ platformy Xamarin.Forms ma właściwości, aby kontrolować odstępów (np. wiersz lub kolumnę).
+WPF a Xamarin.Forms obsługuje zarówno `Margin` do sterowania odstęp wokół elementu i `Padding` odstępy kontroli _wewnątrz_ elementu. Ponadto większość widoków układów Xamarin.Forms mają właściwości, aby kontrolować odstępy (np. wiersz lub kolumnę).
 
-Ponadto większość elementów ma właściwości, które mają wpływ na sposób znajdują się one w kontenerze nadrzędnym:
+Ponadto większość elementów ma właściwości, aby mieć wpływ na sposób znajdują się one w kontenerze nadrzędnym:
 
 | WPF | Xamarin.Forms | Cel |
 |--- |--- |--- |
-|HorizontalAlignment|HorizontalOptions|Opcje lewej/Center/prawej/Stretch|
-|HorizontalAlignment|VerticalOptions|Opcje TOP/Center/dół/Stretch|
+|HorizontalAlignment|HorizontalOptions|Opcje po lewej stronie/Center/po prawej stronie/Stretch|
+|VerticalAlignment|VerticalOptions|Opcji TOP/Center/dół/Stretch|
 
 > [!NOTE]
-> Rzeczywiste interpretacji te właściwości zależy kontenera nadrzędnego.
+> Rzeczywiste interpretacji tych właściwości jest zależna od nadrzędnego kontenera.
 
-#### <a name="layout-views"></a>Widoki układu
+#### <a name="layout-views"></a>Widoki układów
 
-WPF i platformy Xamarin.Forms formanty układu położenie elementów podrzędnych. W większości przypadków są bardzo zbliżone pod względem funkcji.
+WPF a Xamarin.Forms umożliwia układu kontrolek pozycjonować elementy podrzędne. W większości przypadków są bardzo blisko siebie pod względem funkcji.
 
 | WPF | Xamarin.Forms | Styl układu |
 |--- |--- |--- |
-|StackPanel|StackLayout|Od lewej do prawej lub góry do dołu układania nieskończone|
-|Siatka|Siatka|Tabelarycznej (wierszy i kolumn)|
-|DockPanel|n/d|Dokowanie do krawędzi okna|
-|Kanwa|AbsoluteLayout|Pozycjonowanie pikseli/współrzędnych|
+|StackPanel|StackLayout|Od lewej do prawej lub od góry do dołu układania nieskończona|
+|Siatka|Siatka|Format tabeli (wierszy i kolumn)|
+|DockPanel|n/d|Dokuj do krawędzi okna|
+|Kanwa|AbsoluteLayout|Piksel/współrzędne pozycjonowania|
 |WrapPanel|n/d|Zawijanie stosu|
-|n/d|RelativeLayout|Pozycjonowanie względne na podstawie reguł|
+|n/d|RelativeLayout|Pozycjonowanie oparty na regułach względne|
 
 > [!NOTE]
-> Nie obsługuje platformy Xamarin.Forms `GridSplitter`.
+> Nie obsługuje zestawu narzędzi Xamarin.Forms `GridSplitter`.
 
-Użyj obu platform _dołączone właściwości_ do dostosowania elementy podrzędne.
+Użyj obu platform _dołączonych właściwości_ Aby precyzyjnie dostosować elementy podrzędne.
 
 ### <a name="rendering"></a>Renderowanie
 
-Znacząco różnią się mechanika renderowania WPF i platformy Xamarin.Forms. Na platformie WPF formanty, które można tworzyć bezpośrednio renderowania zawartości do pikseli na ekranie. WPF obsługuje dwa obiekt wykresy (_drzew_) do reprezentowania to - _drzewa logicznego_ reprezentuje kontrolki, zgodnie z definicją w kodzie lub XAML i _drzewa wizualnego_ reprezentuje rzeczywiste renderowania, która występuje na ekranie, który jest wykonywane bezpośrednio przez element wizualny (za pośrednictwem metody rysowania wirtualnego), lub za pośrednictwem zdefiniowane XAML `ControlTemplate` który można zastąpić lub dostosować. Zazwyczaj drzewa wizualnego jest bardziej złożonych obejmuje to takie jak obramowania wokół formantów, etykiety niejawne zawartości itp. WPF zawiera zestaw interfejsów API (`LogicalTreeHelper` i `VisualTreeHelper`) do sprawdzenia tych dwóch obiektów wykresy.
+Mechanika renderowania dla platformy WPF i zestawu narzędzi Xamarin.Forms różnią się znacznie. W środowisku WPF formanty, które bezpośrednio tworzyć renderowania zawartości w pikselach na ekranie. WPF obsługuje obiektu dwa wykresy (_drzew_) do reprezentowania to - _drzewo logiczne_ reprezentuje kontrolki, zgodnie z definicją w kodzie lub XAML oraz _drzewa wizualnego_ reprezentuje rzeczywiste renderowania, występujący na ekranie, który jest wykonywane bezpośrednio przez elementu wizualnego (za pośrednictwem metody wirtualnej draw), lub za pośrednictwem zdefiniowane XAML `ControlTemplate` które zastąpione lub dostosować. Zazwyczaj drzewo wizualne jest bardziej złożone, ponieważ ma ona to przykład obramowania kontrolki, etykiety niejawne zawartości itp. WPF zawiera zestaw interfejsów API (`LogicalTreeHelper` i `VisualTreeHelper`) do zbadania tych dwóch obiektów wykresów.
 
-W przypadku platformy Xamarin.Forms, formanty można zdefiniować w `Page` są naprawdę zwykłych danych obiektów. One są podobne do reprezentacji drzewa logicznego, ale nigdy nie renderowania zawartości na ich własnych. Zamiast tego są one _modelu danych_ co wpływa renderowanie elementów. Rzeczywiste renderowania odbywa się [oddzielnych zbiór _wizualnego renderowania_ które są zamapowane na każdy typ formantu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md). Te moduły renderowania są rejestrowane w poszczególnych projektach specyficzne dla platformy przez zestawów platformy Xamarin.Forms specyficzne dla platformy. Zostanie wyświetlona lista [tutaj](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md). Oprócz zastępowania lub rozszerzanie renderującego, platformy Xamarin.Forms ma również obsługę [efekty](~/xamarin-forms/app-fundamentals/effects/index.md) umożliwia wpływ natywnego renderowania na podstawie ciągu z platformą.
+W interfejsie Xamarin.Forms, formanty zdefiniowane w `Page` są tylko proste dane obiektów. Oni są podobne do reprezentacji drzewo logiczne, ale nigdy nie renderowania zawartości własnych. Zamiast tego są one _modelu danych_ co wpływa renderowanie elementów. Rzeczywiste renderowania odbywa się [oddzielić zbiorem _visual programy renderujące_ są mapowane każdego typu formantu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md). Te programy renderujące są rejestrowane we wszystkich projektach specyficzne dla platformy dzięki specyficzne dla platformy Xamarin.Forms zestawów. Wyświetlana jest lista [tutaj](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md). Oprócz zastępowanie i rozszerzanie modułu renderowania, Xamarin.Forms zapewnia również obsługę [efekty](~/xamarin-forms/app-fundamentals/effects/index.md) który może służyć do wywierania wpływu na natywny renderowania na podstawie poszczególnych z platformą.
 
 #### <a name="the-logicalvisual-tree"></a>Drzewo logiczne/Visual
 
-Nie ma żadnego dostępnego interfejsu API do przeszukania drzewa logicznego w platformy Xamarin.Forms -, ale można uzyskać informacji o tym samym odbicia. Na przykład [w tym miejscu jest metoda, która może wyliczyć logiczne elementy podrzędne](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108) za pomocą odbicia.
+Nie ma żadnych narażonych interfejsów API, aby zapoznać się z drzewa logicznego w interfejsie Xamarin.Forms — ale odbicia można użyć, aby uzyskać te same informacje. Na przykład [poniżej przedstawiono metody, która może wyliczyć podrzędnych logicznego](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108) za pomocą odbicia.
 
 ## <a name="graphics"></a>Grafika
 
-Platformy Xamarin.Forms nie zawiera systemu grafiki dla elementów podstawowych poza prosty prostokąt (`BoxView`). 3 bibliotek firm mogą obejmować takie jak [SkiaSharp](~/graphics-games/skiasharp/index.md) uzyskać 2D rysowania i platform, lub [UrhoSharp](~/graphics-games/urhosharp/index.md) 3D.
+Zestaw narzędzi Xamarin.Forms nie obejmuje system graficzny dla elementów podstawowych poza prosty prostokąt (`BoxView`). Może zawierać 3 bibliotek innych firm, takich jak [SkiaSharp](~/graphics-games/skiasharp/index.md) można pobrać rysowania 2D dla wielu platform, lub [UrhoSharp](~/graphics-games/urhosharp/index.md) 3D.
 
 ## <a name="resources"></a>Resources
 
-WPF i platformy Xamarin.Forms mają koncepcji zasobów i słownikach zasobów. Możesz umieścić typ obiektu do `ResourceDictionary` za pomocą klucza, a następnie wyszukaj ją z `{StaticResource}` dla elementów, które nie spowoduje zmiany lub `{DynamicResource}` dla elementów, które można zmienić w słowniku, w czasie wykonywania. Użycie i mechanika są takie same, z jedną różnicą: platformy Xamarin.Forms wymaga zdefiniowania `ResourceDictionary` do przypisania do `Resources` właściwości WPF wstępnie tworzy i przypisuje go dla Ciebie.
+WPF a Xamarin.Forms mają koncepcji zasobów i słowniki zasobów. Możesz umieścić dowolny typ obiektu do `ResourceDictionary` za pomocą klucza i wyszukaj ją za pomocą `{StaticResource}` w przypadku elementów, które nie ulegną zmianie, lub `{DynamicResource}` w przypadku elementów, które można zmienić w słowniku, w czasie wykonywania. Użycie i mechanikę są takie same, z jedną różnicą: Xamarin.Forms wymaga zdefiniowania `ResourceDictionary` można przypisać do `Resources` właściwość WPF wstępnie tworzony jest jeden, a następnie przypisuje go dla Ciebie.
 
-Na przykład patrz definicja poniżej:
+Na przykład zobacz definicję poniżej:
 
 **WPF**
 
@@ -175,15 +175,15 @@ Na przykład patrz definicja poniżej:
 </ContentPage.Resources>
 ```
 
-Jeśli nie zostanie zdefiniowana `ResourceDictionary`, generowany jest błąd czasu wykonywania.
+Jeżeli nie zdefiniujesz `ResourceDictionary`, zostanie wygenerowany błąd środowiska uruchomieniowego.
 
 ## <a name="styles"></a>Style
 
-Style są także w pełni obsługiwane platformy Xamarin.Forms i może być używany do motywu elementy platformy Xamarin.Forms wchodzące w skład interfejsu użytkownika. Obsługuje dziedziczenia właściwości, zdarzeń i danych, za pomocą wyzwalaczy `BasedOn`i przypadków przeszukiwania zasobów dla wartości. Style są stosowane do elementów albo jawnie za pośrednictwem `Style` właściwości lub implicitely nie dostarczając klucza zasobu — podobnie jak WPF.
+Style są również w pełni obsługiwane w interfejsie Xamarin.Forms i mogą być używane do motywu elementy zestawu narzędzi Xamarin.Forms, które tworzą interfejs użytkownika. Obsługują one wyzwalacze właściwości, zdarzeń i danych, dziedziczenie za pośrednictwem `BasedOn`i wyszukiwania zasobów dla wartości. Style są stosowane do elementów albo jawnie za pomocą `Style` właściwości lub implicitely przez nie podano klucza zasobu — podobnie jak WPF.
 
 ### <a name="device-styles"></a>Style urządzenia
 
-WPF ma zestaw wstępnie zdefiniowanych właściwości (takich jak przechowywane jako wartości statyczne na zestaw klas statycznych `SystemColors`) który dyktowania systemu kolory, czcionki i metryki w formie wartości i kluczy zasobów. Platformy Xamarin.Forms jest podobny, ale definiuje zestaw [style urządzenia](~/xamarin-forms/user-interface/styles/device.md) do reprezentowania te same elementy. Te style są dostarczane przez frameowrk i wartości oparte na środowisko uruchomieniowe (np. dostępność).
+WPF zawiera zestaw wstępnie zdefiniowanych właściwości (przechowywane jako wartości statyczne na zestaw klas statycznych, takich jak `SystemColors`) który dyktowanie hostującego te role kolory, czcionki i metryki w formie wartości i kluczy zasobu. Zestaw narzędzi Xamarin.Forms jest podobny, ale definiuje zestaw [style urządzenia](~/xamarin-forms/user-interface/styles/device.md) do reprezentowania tych samych czynności. Te style są dostarczane przez frameowrk i ustaw wartości w oparciu o środowisko uruchomieniowe (np. dostępność).
 
 **WPF**
 

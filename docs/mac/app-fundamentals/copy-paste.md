@@ -1,73 +1,73 @@
 ---
-title: Skopiuj i Wklej w Xamarin.Mac
-description: Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i wklejania w aplikacji Xamarin.Mac. Widoczny jest sposób pracy z typy standardowych danych, które może być współużytkowana wielu aplikacji oraz sposobu obsługi danych niestandardowych w danej aplikacji.
+title: Skopiuj i Wklej platformy Xamarin.Mac
+description: Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i Wklej w aplikacji platformy Xamarin.Mac. Pokazuje, jak pracować z typami danych w warstwie standardowa, które mogą być współużytkowane między wiele aplikacji i sposób obsługi danych niestandardowych w ramach danej aplikacji.
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: becdec771949584919595c84b13ae9e05bfd377b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 728e0264f7da8f3adfef360dd473772dd7e28a11
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791900"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780647"
 ---
-# <a name="copy-and-paste-in-xamarinmac"></a>Skopiuj i Wklej w Xamarin.Mac
+# <a name="copy-and-paste-in-xamarinmac"></a>Skopiuj i Wklej platformy Xamarin.Mac
 
-_Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i wklejania w aplikacji Xamarin.Mac. Widoczny jest sposób pracy z typy standardowych danych, które może być współużytkowana wielu aplikacji oraz sposobu obsługi danych niestandardowych w danej aplikacji._
+_Ten artykuł dotyczy pracy z obszar roboczy, aby zapewnić kopiowania i Wklej w aplikacji platformy Xamarin.Mac. Pokazuje, jak pracować z typami danych w warstwie standardowa, które mogą być współużytkowane między wiele aplikacji i sposób obsługi danych niestandardowych w ramach danej aplikacji._
 
 ## <a name="overview"></a>Omówienie
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego stołu montażowego (kopiowanie i wklejanie) obsługują ma Deweloper pracujący w języku Objective-C.
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, masz dostęp do tego samego stołu montażowego (kopiowanie i wklejanie) wsparcia dla deweloperów pracujących w języku Objective-C ma.
 
-W tym artykule firma Microsoft będzie obejmował dwa podstawowe sposoby użycia obszar roboczy w aplikacji Xamarin.Mac:
+W tym artykule firma Microsoft będzie obejmował dwa główne sposoby używania obszar roboczy w aplikacji platformy Xamarin.Mac:
 
-1. **Standardowe typy danych** — ponieważ stołu montażowego operacje są zazwyczaj wykonywane między dwiema aplikacjami niepowiązanymi ze sobą, żadna aplikacja zna typy danych, które obsługuje innych. Aby zmaksymalizować możliwości udostępniania, obszar roboczy może zawierać wiele reprezentacje danego elementu (przy użyciu standardowego zestawu popularnych typów danych), to umożliwić odbierającą aplikację, aby wybrać wersję, która jest najbardziej odpowiednie dla swoich potrzeb.
-2. **Niestandardowe dane** — umożliwia kopiowanie i wklejanie złożonych danych w sieci Xamarin.Mac można określić typu danych niestandardowych, który będzie obsługiwany przez obszar roboczy. Na przykład aplikacji rysowania wektor który umożliwia użytkownikowi kopiowanie i wklejanie kształtów złożonych, które składają się z wielu typów danych i punkty.
+1. **Standardowe typy danych** — ponieważ stołu montażowego operacje są zazwyczaj wykonywane między dwiema aplikacjami niepowiązanych, żadna aplikacja zna typy danych obsługującą przez innych. Aby zmaksymalizować potencjał do udostępniania, obszar roboczy może zawierać wiele reprezentacji danego elementu (przy użyciu standardowego zestawu standardowe typy danych), dzięki temu aplikacja odbierająca komunikaty i wybierz wersję, która najlepiej nadaje się do swoich potrzeb.
+2. **Dane niestandardowe** — do obsługi kopiowania i wklejania danych złożonych w Twojej platformy Xamarin.Mac, można zdefiniować typ danych niestandardowych, który będzie obsługiwany przez obszar roboczy. Na przykład w aplikacji rysowania wektor umożliwiająca użytkownikowi kopiowanie i wklejanie kształtów złożonych, które składają się z wielu typów danych i punktów.
 
 [![Przykład uruchomionej aplikacji](copy-paste-images/intro01.png "przykład uruchomionej aplikacji")](copy-paste-images/intro01-large.png#lightbox)
 
-W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z obszar roboczy w Xamarin.Mac aplikacji do obsługi kopiowania i wklejania. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówimy podstawy pracy z obszaru wklejania w aplikacji platformy Xamarin.Mac obsługuje kopiowania i wklejania. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` atrybutów umożliwiają połączenie klas C# do obiektów języka Objective C i interfejsu użytkownika elementy.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` atrybutów Umożliwia podłączanie klas języka C# do języka Objective-C obiektów i interfejsu użytkownika elementów.
 
-## <a name="getting-started-with-the-pasteboard"></a>Wprowadzenie do korzystania z obszaru roboczego
+## <a name="getting-started-with-the-pasteboard"></a>Wprowadzenie do obszaru roboczego
 
-Obszar roboczy przedstawia informacje o standardowych mechanizm wymiany danych w ramach danej aplikacji lub między aplikacjami. Zwykle dla obszar roboczy w aplikacji Xamarin.Mac jest używane do obsługi kopiowania i wklejania, jednak wiele innych operacji są również obsługiwane (na przykład przeciągania i upuszczania i usługi aplikacji).
+Obszar roboczy wyświetla standardowy mechanizm wymiany danych w ramach danej aplikacji lub między aplikacjami. Zwykle dla obszaru wklejania w aplikacji platformy Xamarin.Mac jest używane do obsługi kopiowania i wklejania, jednak wiele innych operacji są również obsługiwane (na przykład przeciągania i upuszczania oraz usług w aplikacji).
 
-Aby szybko możesz wyłączyć ziemi, zamierzamy rozpoczynać się od prostego, praktyczne wprowadzenie przy użyciu większa w aplikacji Xamarin.Mac. Później firma Microsoft udostępni szczegółowe wyjaśnienie działania obszar roboczy i metod.
+Szybko można na wyższy, użyjemy można uruchomić przy użyciu prostego, praktyczne wprowadzenie do korzystania z większa w aplikacji platformy Xamarin.Mac. Później firma Microsoft udostępni szczegółowe wyjaśnienie działania obszar roboczy i metod.
 
-Na przykład firma Microsoft będzie można tworzenia prostych dokumentów na podstawie aplikacji zarządzającej okno zawierające widok obrazu. Użytkownik będzie mógł skopiować i wkleić obrazy między dokumentów w aplikacji oraz do lub z innych aplikacji lub wiele okien w tej samej aplikacji.
+W tym przykładzie utworzymy aplikację prostych dokumentów na podstawie, które zarządzają okno zawierające widok obrazu. Użytkownik będzie do kopiowania i wklejania obrazów między dokumentami w aplikacji oraz lub z innych aplikacji lub wiele okien w tej samej aplikacji.
 
-### <a name="creating-the-xamarin-project"></a>Tworzenie projektu Xamarin
+### <a name="creating-the-xamarin-project"></a>Tworzenie projektu platformy Xamarin
 
-Po pierwsze zamierzamy utworzyć nową aplikację Xamarin.Mac dokumentów na podstawie czy zostanie możemy Dodawanie Kopiuj i Wklej obsługę.
+Najpierw pobierzemy Tworzenie nowej aplikacji platformy Xamarin.Mac dokumentów na podstawie, firma Microsoft można Dodawanie kopiowania i Wklej obsługę.
 
 Wykonaj następujące czynności:
 
-1. Uruchom program Visual Studio for Mac i kliknij przycisk **nowy projekt...**  łącza.
-2. Wybierz **Mac** > **aplikacji** > **aplikacji Cocoa**, następnie kliknij przycisk **dalej** przycisk: 
+1. Uruchom program Visual Studio dla komputerów Mac i kliknij przycisk **nowy projekt...**  łącza.
+2. Wybierz **Mac** > **aplikacji** > **aplikacja cocoa dla**, następnie kliknij przycisk **dalej** przycisku: 
 
-    [![Tworzenie nowego projektu aplikacji Cocoa](copy-paste-images/sample01.png "tworzenia nowego projektu aplikacji Cocoa")](copy-paste-images/sample01-large.png#lightbox)
+    [![Tworzenie nowego projektu aplikacji Cocoa](copy-paste-images/sample01.png "tworzenia nowego projektu aplikacja Cocoa")](copy-paste-images/sample01-large.png#lightbox)
 3. Wprowadź `MacCopyPaste` dla **Nazwa projektu** i zachować wszystkie inne jako domyślny. Kliknij przycisk Dalej: 
 
-    [![Ustawienie nazwy projektu](copy-paste-images/sample01a.png "ustawienie nazwy projektu")](copy-paste-images/sample01a-large.png#lightbox)
+    [![Ustawianie nazwy projektu](copy-paste-images/sample01a.png "ustawienie nazwy projektu")](copy-paste-images/sample01a-large.png#lightbox)
 
-4. Kliknij przycisk **Utwórz** przycisk: 
+4. Kliknij przycisk **Utwórz** przycisku: 
 
-    [![Potwierdzenie nowego ustawienia projektu](copy-paste-images/sample02.png "potwierdzenie nowego ustawienia projektu")](copy-paste-images/sample02-large.png#lightbox)
+    [![Trwa Potwierdzanie ustawienia nowego projektu](copy-paste-images/sample02.png "potwierdzenie ustawienia nowego projektu")](copy-paste-images/sample02-large.png#lightbox)
 
-### <a name="add-an-nsdocument"></a>Dodaj NSDocument
+### <a name="add-an-nsdocument"></a>Dodawanie interfejsu NSDocument
 
-Następnie dodamy niestandardowe `NSDocument` klasy, który będzie pełnił rolę magazynu tła dla interfejsu użytkownika aplikacji. Go będzie zawierać pojedynczy widok obrazu i dowiedzieć się, jak kopiowanie obrazu z wgląd w obszarze roboczym domyślne i jak pobrać obrazu z obszar roboczy domyślne i wyświetl ją w widoku obrazu.
+Następnie dodamy niestandardowy `NSDocument` klasy, który będzie pełnił rolę magazynu tło dla aplikacji interfejsu użytkownika. Będzie ona zawierać pojedynczy widok obrazu i wiedzieć, jak skopiować obraz z widoku w obszarze roboczym domyślne i jak wykonać obrazu z obszaru wklejania domyślne i wyświetlania ich w widoku obrazu.
 
-Kliknij prawym przyciskiem myszy na projekt Xamarin.Mac w **konsoli rozwiązania** i wybierz **Dodaj** > **nowy plik.** :
+Kliknij prawym przyciskiem myszy nad projektem platformy Xamarin.Mac w **konsoli rozwiązania** i wybierz **Dodaj** > **nowy plik...** :
 
-![Dodawanie do projektu NSDocument](copy-paste-images/sample03.png "Dodawanie NSDocument do projektu")
+![Dodawanie interfejsu NSDocument dla projektu](copy-paste-images/sample03.png "dodanie interfejsu NSDocument do projektu")
 
-Wprowadź `ImageDocument` dla **nazwa** i kliknij przycisk **nowy** przycisku. Edytuj **ImageDocument.cs** klasy i zapewnić ich wyglądać następująco:
+Wprowadź `ImageDocument` dla **nazwa** i kliknij przycisk **New** przycisku. Edytuj **ImageDocument.cs** klasy i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -172,9 +172,9 @@ namespace MacCopyPaste
 }
 ```
 
-Spójrzmy na części kodu szczegółowo poniżej.
+Spójrzmy na kilka kodu poniżej.
 
-Poniższy kod zawiera właściwość, aby przetestować obecność dane obrazu w obszarze roboczym domyślne, jeśli obraz jest dostępny, `true` jest zwracany w przeciwnym razie `false`:
+Poniższy kod zawiera właściwości do sprawdzania istnienia danych obrazu w obszarze roboczym domyślne, jeśli obraz jest dostępny, `true` jest zwracany w przeciwnym razie `false`:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -189,7 +189,7 @@ public bool ImageAvailableOnPasteboard {
 }
 ```
 
-Poniższy kod kopiuje obraz z widoku obrazów dołączonych w obszarze roboczym domyślne:
+Poniższy kod kopiuje obraz z widoku dołączonego obrazu, w obszarze roboczym domyślne:
 
 ```csharp
 [Export("CopyImage:")]
@@ -229,7 +229,7 @@ public void CopyImage(NSObject sender) {
 }
 ```
 
-I następujący kod wkleja obrazu z obszar roboczy domyślne i wyświetla go w widoku dołączonych obrazów (Jeśli obszar roboczy zawiera nieprawidłowy obraz):
+I następujący kod wklejania obrazów z obszaru wklejania domyślne i wyświetla go w widoku dołączonego obrazu (Jeśli obszar roboczy nie zawiera prawidłowego obrazu):
 
 ```csharp
 [Export("PasteImage:")]
@@ -259,27 +259,27 @@ public void PasteImage(NSObject sender) {
 }
 ```
 
-Niniejszy dokument w miejscu utworzymy interfejsu użytkownika dla aplikacji Xamarin.Mac.
+Z tym dokumentem w miejscu utworzymy interfejsu użytkownika dla aplikacji platformy Xamarin.Mac.
 
 ### <a name="building-the-user-interface"></a>Tworzenie interfejsu użytkownika
 
-Kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć go w programie Xcode. Następnie dodaj pasek narzędzi i obraz również i skonfigurować w następujący sposób:
+Kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć go w środowisku Xcode. Następnie dodaj pasek narzędzi i obraz oraz i skonfigurować je w następujący sposób:
 
-[![Pasek narzędzi edycji](copy-paste-images/sample04.png "narzędzi edycji")](copy-paste-images/sample04-large.png#lightbox)
+[![Pasek narzędzi edycji](copy-paste-images/sample04.png "edycji na pasku narzędzi")](copy-paste-images/sample04-large.png#lightbox)
 
-Dodaj kopię i Wklej **element paska narzędzi obrazu** po lewej stronie paska narzędzi. Będziemy używać je jako skróty do kopiowania i wklejania w menu Edycja. Następnie dodaj cztery **elementów paska narzędzi obrazu** z prawej strony paska narzędzi. Te będą używane do wypełnienia obrazu z niektóre domyślne obrazy.
+Dodaj kopię i Wklej **element paska narzędzi obrazów** po lewej stronie, na pasku narzędzi. Będziemy używać je jako skróty do kopiowania i wklejania z menu Edycja. Następnie dodaj cztery **elementów paska narzędzi obrazów** prawą stronę paska narzędzi. Użyjemy tych do wypełniania obraz dobrze w przypadku niektórych domyślnych obrazów.
 
-Aby uzyskać więcej informacji na temat pracy z paski narzędzi, zobacz nasze [paski narzędzi](~/mac/user-interface/toolbar.md) dokumentacji.
+Aby uzyskać więcej informacji na temat pracy z pasków narzędzi, zobacz nasze [pasków narzędzi](~/mac/user-interface/toolbar.md) dokumentacji.
 
-Następnie umożliwia również uwidacznia następujące punkty i akcji dla naszych elementów paska narzędzi i obrazu:
+Następnie możemy również udostępnić następujące gniazd i akcje w przypadku naszych elementów paska narzędzi i obrazu:
 
-[![Tworzenie punktów i akcje](copy-paste-images/sample05.png "Tworzenie gniazda i akcji")](copy-paste-images/sample05-large.png#lightbox)
+[![Tworzenie gniazda i działań](copy-paste-images/sample05.png "Tworzenie gniazda i działań")](copy-paste-images/sample05-large.png#lightbox)
 
-Aby uzyskać więcej informacji na temat pracy z gniazda i akcji, zobacz [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcji naszych [Hello, Mac](~/mac/get-started/hello-mac.md) dokumentacji.
+Aby uzyskać więcej informacji na temat pracy z gniazda i akcji, zobacz [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) części naszych [Witaj, Mac](~/mac/get-started/hello-mac.md) dokumentacji.
 
-### <a name="enabling-the-user-interface"></a>Włączenie interfejsu użytkownika
+### <a name="enabling-the-user-interface"></a>Włączanie interfejsu użytkownika
 
-Z naszych utworzone w programie Xcode i naszych elementu interfejsu użytkownika udostępniane za pośrednictwem funkcji gniazda i akcji interfejsu użytkownika musimy Dodaj kod, aby włączyć interfejsu użytkownika. Kliknij dwukrotnie **ImageWindow.cs** w pliku **konsoli rozwiązania** i zapewnić ich wyglądać następująco:
+Za pomocą interfejsu użytkownika tworzone w Xcode i naszych elementu interfejsu użytkownika, udostępniane za pośrednictwem gniazd i akcji należy dodać kod, aby włączyć interfejs użytkownika. Kliknij dwukrotnie **ImageWindow.cs** w pliku **konsoli rozwiązania** i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -395,9 +395,9 @@ namespace MacCopyPaste
 }
 ```
 
-Spójrzmy na ten kod szczegółowo poniżej.
+Spójrzmy na ten kod poniżej.
 
-Po pierwsze, uwidaczniamy wystąpienia `ImageDocument` klasy, która utworzyliśmy powyżej:
+Po pierwsze, możemy ujawnić wystąpienie `ImageDocument` klasę, która utworzone powyżej:
 
 ```csharp
 private ImageDocument _document;
@@ -414,9 +414,9 @@ public ImageDocument Document {
 }
 ```
 
-Za pomocą `Export`, `WillChangeValue` i `DidChangeValue`, mamy Instalator `Document` właściwości, aby umożliwić kluczy i wartości kodowania i powiązania danych w środowisku Xcode.
+Za pomocą `Export`, `WillChangeValue` i `DidChangeValue`, mamy Instalatora `Document` właściwości, aby umożliwić kodowanie klucz-wartość i powiązania danych w środowisku Xcode.
 
-Możemy również ujawniać obrazu z obrazu, oraz dodaliśmy do naszego interfejsu użytkownika w środowisku Xcode z następującej właściwości:
+Możemy również ujawnić obrazu z obrazu, oraz dodaliśmy do naszego interfejsu użytkownika w środowisku Xcode z następującymi właściwościami:
 
 ```csharp
 public ViewController ImageViewController {
@@ -433,7 +433,7 @@ public NSImage Image {
 }
 ```
 
-Gdy okno główne jest załadowana i wyświetlona, możemy utworzyć wystąpienia naszych `ImageDocument` klasy i dołączyć obrazu interfejsu użytkownika oraz do niego z następującym kodem:
+Gdy okno główne jest ładowany i wyświetlane, możemy utworzyć wystąpienia naszej `ImageDocument` klasy i dołączyć obraz w Interfejsie użytkownika oraz do niego następujący kod:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -448,7 +448,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-Na koniec w odpowiedzi na kliknięcie na kopiowanie i wklejanie elementów paska narzędzi przez użytkownika, nazywamy wystąpienie `ImageDocument` klasy wykonują rzeczywistą pracę:
+Na koniec w odpowiedzi na użytkownika, klikając elementy paska narzędzi kopiowania i wklejania, nazywamy wystąpienie `ImageDocument` klasy wykonują rzeczywistą pracę:
 
 ```csharp
 partial void CopyImage (NSObject sender) {
@@ -460,11 +460,11 @@ partial void PasteImage (Foundation.NSObject sender) {
 }
 ```
 
-### <a name="enabling-the-file-and-edit-menus"></a>Włączanie menu Plik i Edycja
+### <a name="enabling-the-file-and-edit-menus"></a>Włączanie menu Plik i Edytuj
 
-Ostatnim zadaniem, które są konieczne jest, Włącz **nowy** element menu z **pliku** menu (w celu utworzenia nowego wystąpienia nasze główne okno) oraz w celu umożliwienia **Wytnij**, **kopiowania**  i **Wklej** elementów menu z **Edytuj** menu.
+Włączone jest ostatnim zadaniem, które musimy **New** element menu z **pliku** menu (w celu utworzenia nowych wystąpień nasze główne okno) oraz w celu umożliwienia **Wytnij**, **kopiowania**  i **Wklej** menu elementów z **Edytuj** menu.
 
-Aby włączyć **nowy** menu elementu, Edytuj **AppDelegate.cs** pliku i Dodaj następujący kod:
+Aby włączyć **New** menu elementów, Edytuj **AppDelegate.cs** pliku i Dodaj następujący kod:
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
@@ -484,7 +484,7 @@ void NewDocument (NSObject sender) {
 }
 ```
 
-Aby uzyskać więcej informacji, zobacz [Praca z wielu okien](~/mac/user-interface/window.md) sekcji naszych [Windows](~/mac/user-interface/window.md) dokumentacji.
+Aby uzyskać więcej informacji, zobacz [Praca z wieloma Windows](~/mac/user-interface/window.md) części naszych [Windows](~/mac/user-interface/window.md) dokumentacji.
 
 Aby włączyć **Wytnij**, **kopiowania** i **Wklej** elementów menu Edycja **AppDelegate.cs** pliku i Dodaj następujący kod:
 
@@ -535,21 +535,21 @@ void PasteImage (NSObject sender)
 }
 ```
 
-Dla każdego elementu menu możemy pobrać okna bieżącego, znajdujących się na górze, klucza i rzutować go na naszych `ImageWindow` klasy:
+Dla każdego elementu menu, możemy uzyskać okna bieżącego, najwyższego poziomu, klucza i Rzutuj ją na naszych `ImageWindow` klasy:
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-Z tego miejsca nazywamy `ImageDocument` wystąpienia klasy tego okna do obsługi kopiowania i wklejania akcje. Na przykład: 
+W tym miejscu nazywamy `ImageDocument` wystąpienie klasy tego okna do obsługi kopiowania i wklejania działań. Na przykład: 
 
 ```csharp
 window.Document.CopyImage (sender);
 ```
 
-Chcemy tylko **Wytnij**, **kopiowania** i **Wklej** elementów menu był dostępny w przypadku obrazu danych w obszarze roboczym domyślnego obrazu oraz bieżące aktywne okno.
+Ma być uruchamiany tylko **Wytnij**, **kopiowania** i **Wklej** elementów menu była dostępna, jeśli istnieje obraz danych w obszarze roboczym domyślne lub obraz oraz bieżące aktywne okno.
 
-Dodajmy **EditMenuDelegate.cs** plików do projektu Xamarin.Mac i zapewnić ich wyglądać następująco:
+Dodajmy **EditMenuDelegate.cs** plik do projektu rozszerzenia Xamarin.Mac i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -600,9 +600,9 @@ namespace MacCopyPaste
 }
 ```
 
-Ponownie, możemy uzyskać bieżące, znajdujących się na górze okna oraz jego `ImageDocument` wystąpienia klasy, czy dane wymagane obrazu istnieje. Następnie użyjemy `MenuWillHighlightItem` metody, aby włączyć lub wyłączyć każdego elementu na podstawie tego stanu.
+Ponownie, możemy uzyskać bieżące okien najwyższego poziomu oraz jego `ImageDocument` wystąpienia klasy, aby zobaczyć, czy istnieje danych wymagane obrazu. Następnie użyjemy `MenuWillHighlightItem` metodę, aby włączyć lub wyłączyć poszczególne elementy na podstawie tego stanu.
 
-Edytuj **AppDelegate.cs** plików i upewnij `DidFinishLaunching` wygląd metody podobne do poniższych:
+Edytuj **AppDelegate.cs** pliku i upewnij `DidFinishLaunching` wygląd metoda podobne do następującego:
  
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -613,95 +613,95 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Po pierwsze możemy wyłączyć automatyczne włączanie i wyłączanie elementów menu w menu Edycja. Następnie możemy Dołącz wystąpienia `EditMenuDelegate` klasy, która utworzyliśmy powyżej.
+Po pierwsze możemy wyłączyć automatyczne włączanie i wyłączanie elementów menu w menu Edycja. Następnie dołączamy wystąpienie `EditMenuDelegate` klasę, która utworzone powyżej.
 
 Aby uzyskać więcej informacji, zobacz nasze [menu](~/mac/user-interface/menu.md) dokumentacji.
 
 ### <a name="testing-the-app"></a>Testowanie aplikacji
 
-Wszystko w miejscu możemy przystąpić do testowania aplikacji. Tworzenie i uruchamianie aplikacji i wyświetlany jest interfejs głównego:
+Wszystko w miejscu możemy przystąpić do testowania aplikacji. Tworzenie i uruchomić aplikację i jest wyświetlany interfejs główne:
 
-![Uruchamianie aplikacji](copy-paste-images/run01.png "uruchamiania aplikacji")
+![Uruchomiona jest aplikacja](copy-paste-images/run01.png "uruchomiona jest aplikacja")
 
-Jeśli możesz otworzyć menu Edycja, należy pamiętać, że **Wytnij**, **kopiowania** i **Wklej** są wyłączone, ponieważ nie ma żadnego obrazu w obrazie również lub w obszarze roboczym domyślne:
+Po otwarciu menu Edycja, należy pamiętać, że **Wytnij**, **kopiowania** i **Wklej** są wyłączone, ponieważ nie ma żadnego obrazu na obrazie, dobrze lub w obszarze roboczym domyślne:
 
-![Otwieranie menu Edycja](copy-paste-images/run02.png "Otwieranie menu Edycja")
+![Otwieranie menu Edycja](copy-paste-images/run02.png "otwierając menu Edycja")
 
-Jeśli również dodać obraz do obrazu i ponownie otwórz menu Edycja, zostanie ono włączone elementy:
+Jeśli możesz również dodać obraz do obrazu i ponownie otworzyć menu Edycja, zostanie ono włączone elementy:
 
 ![Wyświetlanie elementów menu Edycja są włączone](copy-paste-images/run03.png "wyświetlanie elementów menu Edycja są włączone")
 
-Jeśli kopiowanie obrazu i wybierz **nowy** z menu Plik można wkleić tego obrazu w nowym oknie:
+Jeśli kopiowanie obrazu i wybierz pozycję **New** z menu Plik tego obrazu można wkleić w nowym oknie:
 
 ![Wklejanie obrazu w nowym oknie](copy-paste-images/run04.png "wklejania obrazu w nowym oknie")
 
-W poniższych sekcjach przeniesiemy szczegółowe przyjrzeć się praca z obszar roboczy w aplikacji Xamarin.Mac.
+W poniższych sekcjach przeniesiemy szczegółowe omówienie pracy z obszaru wklejania w aplikacji platformy Xamarin.Mac.
 
 ## <a name="about-the-pasteboard"></a>O obszarze roboczym
 
-W macOS (wcześniej znane jako OS X) obszar roboczy (`NSPasteboard`) umożliwia obsługę kilku serwer przetwarza takich jak kopiowanie i wklejanie, przeciągnij i upuść i usługi aplikacji. W poniższych sekcjach przeniesiemy bliższe spojrzenie na kilka kluczowych założeń stołu montażowego.
+W systemie macOS (wcześniej znane jako OS X) obszar roboczy (`NSPasteboard`) umożliwia obsługę kilku serwer przetwarza, takich jak kopiowanie i wklejanie, przeciąganie i upuszczanie i usługi aplikacji. W poniższych sekcjach przeniesiemy dokładniej poznać kilka podstawowych pojęć stołu montażowego.
 
 ### <a name="what-is-a-pasteboard"></a>Co to jest obszar roboczy?
 
-`NSPasteboard` Klasa udostępnia standardowy mechanizm wymiany informacji pomiędzy aplikacjami lub w ramach danej aplikacji. Główna funkcja obszar roboczy jest obsługa operacji kopiowania i wklejania:
+`NSPasteboard` Klasa udostępnia standardowy mechanizm wymiany informacji między aplikacjami lub w ramach danej aplikacji. Główna funkcja obszar roboczy jest obsługi operacji kopiowania i wklejania:
 
-1. Gdy użytkownik wybiera element w aplikacji i używa **Wytnij** lub **kopiowania** element menu reprezentacje co najmniej jednego wybranego elementu są umieszczane w obszarze roboczym.
-2. Gdy użytkownik używa **Wklej** elementu menu (w ramach tej samej aplikacji lub inny), wersja danych, który może obsługiwać jest skopiowany z obszaru roboczego i dodać do aplikacji.
+1. Gdy użytkownik zaznaczy element w aplikacji i używa **Wytnij** lub **kopiowania** element menu reprezentacje co najmniej jeden wybrany element są umieszczane w obszarze roboczym.
+2. Gdy użytkownik używa **Wklej** elementu menu (w ramach tej samej aplikacji lub inną), wersja danych, która może obsłużyć jest kopiowane z obszaru roboczego i dodana do aplikacji.
 
-Mniej oczywista zastosowania stołu montażowego obejmują Znajdź, przeciągnij, przeciągnij i upuść, a operacje usługi aplikacji:
+Mniej oczywistych zastosowania stołu montażowego obejmują Znajdź przeciągania przeciąganie i upuszczanie i operacje usługi aplikacji:
 
-- Gdy użytkownik inicjuje operacji przeciągania, dane przeciągania są kopiowane do obszaru roboczego. Jeśli operacja przeciągania kończy listy na inną aplikację, danej aplikacji kopiuje dane w obszarze roboczym.
-- Dla usługi tłumaczeniowe danych ma zostać poddany translacji jest kopiowany do obszar roboczy za pomocą żądania aplikacji. Usługa aplikacji pobiera dane z obszaru roboczego, jest translacja, a następnie past danych kopii w obszarze roboczym.
+- Gdy użytkownik zainicjuje operację przeciągania, przeciągnij danych jest kopiowany do obszarze roboczym. Jeśli operacja przeciągania kończy się listy na inną aplikację, tej aplikacji kopiuje dane z obszaru roboczego.
+- Usługi tłumaczenia dane, które ma zostać poddany translacji są kopiowane do obszar roboczy za pomocą żądania aplikacji. Usługi aplikacji, pobiera dane z obszaru roboczego, jest translacji, a następnie past danych z powrotem w obszarze roboczym.
 
-W najprostszej postaci większa są używane do przenoszenia danych wewnątrz danej aplikacji lub między aplikacjami i do nich istnieje w obszarze specjalne pamięci globalnej poza procesu aplikacji. Pojęcia związane z większa są łatwo grasps, istnieje kilka bardziej złożonych szczegółowe informacje, które należy wziąć pod uwagę. Te zostanie omówiona szczegółowo poniżej.
+W najprostszej postaci większa są używane do przenoszenia danych w danej aplikacji lub między aplikacjami i do nich istnieje w obszarze specjalnych pamięci globalnej poza procesem aplikacji. Pojęcia związane z większa są łatwo grasps, istnieje kilka bardziej złożonych szczegółowe informacje, które muszą być rozważone. Będą one opisane poniżej.
 
 ### <a name="named-pasteboards"></a>Większa o nazwie
 
-Obszar roboczy może być publicznych lub prywatnych i może służyć do różnych celów w aplikacji lub między wieloma aplikacjami. System macOS udostępnia kilka standardowych większa, każdy z użyciem określonych, dobrze zdefiniowany:
+Obszar roboczy może być publicznym lub prywatnym i może służyć do różnych celów, w ramach aplikacji lub między wieloma aplikacjami. System macOS udostępnia kilka standardowych większa, każdy z użyciem określonych, dobrze zdefiniowany:
 
 - `NSGeneralPboard` — W obszarze roboczym domyślny dla **Wytnij**, **kopiowania** i **Wklej** operacji.
 - `NSRulerPboard` — Obsługuje **Wytnij**, **kopiowania** i **Wklej** operacji na **linijki**.
 - `NSFontPboard` — Obsługuje **Wytnij**, **kopiowania** i **Wklej** operacji na `NSFont` obiektów.
-- `NSFindPboard` — Obsługuje specyficzne dla aplikacji Znajdź panele, które można udostępniać tekst do wyszukania.
-- `NSDragPboard` — Obsługuje **przeciągnij i upuść** operacji.
+- `NSFindPboard` — Obsługuje specyficzne dla aplikacji Znajdź paneli, które mogą udostępniać tekst wyszukiwania.
+- `NSDragPboard` — Obsługuje **przeciąganie i upuszczanie** operacji.
 
-W większości sytuacji będzie używany jeden większa zdefiniowane w systemie. Może to się zdarzyć, które wymagają utworzenia własnych większa. W takich przypadkach można użyć `FromName (string name)` metody `NSPasteboard` klasy w celu utworzenia niestandardowych obszar roboczy o podanej nazwie.
+W większości sytuacji użyjesz jeden większa zdefiniowane przez system. Jednak może to być sytuacje, w których konieczna utworzyć własne większa. W takich sytuacjach można używać `FromName (string name)` metody `NSPasteboard` klasy w celu utworzenia niestandardowych obszar roboczy o podanej nazwie.
 
-Opcjonalnie możesz wywołać `CreateWithUniqueName` metody `NSPasteboard` klasy w celu utworzenia unikatowej nazwie obszar roboczy.
+Ewentualnie możesz wywołać `CreateWithUniqueName` metody `NSPasteboard` klasy w celu utworzenia unikatowej nazwie obszar roboczy.
 
-### <a name="pasteboard-items"></a>Elementy stołu montażowego
+### <a name="pasteboard-items"></a>Stołu montażowego elementów
 
-Każda aplikacja zapisuje obszar roboczy danych jest uznawany za _elementu obszar roboczy_ i obszar roboczy może zawierać wielu elementów w tym samym czasie. W ten sposób aplikacji można zapisać wiele wersji danych do obszaru roboczego (na przykład zwykłego tekstu i tekst sformatowany) i pobierania aplikacji mogą odczytać tylko dane do przetwarzania (na przykład tylko zwykły tekst).
+Każda część danych, które aplikacja zapisuje obszar roboczy jest uważany za _elementu obszar roboczy_ i obszar roboczy może zawierać wiele elementów w tym samym czasie. W ten sposób aplikacja może zapisu wielu wersji danych kopiowane do obszaru roboczego, (na przykład zwykły tekst i tekstu sformatowanego) i pobieranie aplikacji mogą odczytać tylko te dane, mógł on przetwarzać (np. tylko zwykły tekst).
 
-### <a name="data-representations-and-uniform-type-identifiers"></a>Identyfikatory uniform typu i reprezentacje danych
+### <a name="data-representations-and-uniform-type-identifiers"></a>Reprezentacje danych i identyfikatory uniform typów
 
-Operacje stołu montażowego zwykle zajmują aplikacji między dwoma (lub więcej), które nie korzystają z nie siebie lub typów danych każdy może obsłużyć. Jak już wspomniano w poprzedniej sekcji, aby zmaksymalizować możliwości udostępniania tych informacji, obszar roboczy może zawierać wiele reprezentacje skopiować i wkleić danych.
+Stołu montażowego operacje trwają zwykle aplikacji między dwoma (lub więcej), które nie znają wzajemnie lub typów danych każdy może obsłużyć. Jak wspomniano w poprzedniej sekcji, aby zmaksymalizować potencjał do udostępniania informacji, obszar roboczy może zawierać wiele reprezentacji danych są skopiowane i wklejone.
 
-Każdy reprezentacja jest identyfikowany za pośrednictwem jednolitego typ identyfikator (UTI), które nic nie więcej niż prosty ciąg, który unikatowo identyfikuje typ daty zgłoszenia (Aby uzyskać więcej informacji, zobacz firmy Apple [Uniform Przegląd identyfikatorów typu ](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) dokumentacji). 
+Każdy reprezentacja jest identyfikowany za pomocą jednolitego typ identyfikator (identyfikator UTI), czyli nic więcej niż prosty ciąg, który unikatowo identyfikuje typ daty jest prezentowana (Aby uzyskać więcej informacji, zobacz firmy Apple [jednolitego Przegląd identyfikatorów typu ](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) dokumentacji). 
 
-Jeśli tworzysz niestandardowy typ danych (na przykład rysowania obiektu w wektorowej aplikacji), można tworzyć własne UTI, aby jednoznacznie zidentyfikować je w kopiowania i wklejania.
+Jeśli tworzysz niestandardowy typ danych (na przykład rysowania obiektu w wektorze aplikacji rysowania), możesz utworzyć własny identyfikator UTI, aby jednoznacznie zidentyfikować je w kopiowania i wklejania.
 
-Przygotowuje aplikacji można wkleić skopiowanych z obszar roboczy danych, musi znaleźć reprezentacja, która najlepiej odpowiada jego możliwości (jeśli istnieje dowolne). Zazwyczaj są to najszerszym typ dostępne (na przykład sformatowany tekst dla aplikacji tekstów), nastąpi powrót do najprostszym formularzy dostępne jako wymagany (zwykły tekst edytora prosty tekst).
+Gdy aplikacja przygotowuje wkleić dane skopiowane z obszaru roboczego, musi znaleźć reprezentacji, która najlepiej odpowiada jego możliwości (jeśli istnieje). Zwykle będzie najszerszym typ dostępne (na przykład sformatowany tekst aplikacji word przetwarzania), nastąpi powrót do formularzy najprostszym dostępne jako wymagany (zwykły tekst dla prostego edytora tekstów).
 
 <a name="Promised_Data" />
 
-### <a name="promised-data"></a>Uzgodnionej danych
+### <a name="promised-data"></a>Uzgodnionego danych
 
-Ogólnie rzecz biorąc należy podać tyle reprezentacje danych kopiowane, jak to możliwe, aby zmaksymalizować udostępniane między aplikacjami. Jednak ze względu na ograniczenia pamięci lub czasu, może być niemożliwe do faktycznie zapisać poszczególnych typów danych w obszarze roboczym.
+Ogólnie rzecz biorąc należy podać liczbę reprezentacje danych, kopiowane jak to możliwe, aby zmaksymalizować udostępniane między aplikacjami. Jednak ze względu na ograniczenia czasu lub pamięć, może być niepraktyczne faktycznie zapisu każdego typu danych w obszarze roboczym.
 
-W takiej sytuacji możesz umieścić pierwszy reprezentację danych w obszarze roboczym i aplikacja odbierająca może wysłać żądanie dotyczące różnych reprezentacji, które mogą być generowane na bieżąco tuż przed operacji wklejania.
+W takiej sytuacji można umieścić pierwszy reprezentacji danych w obszarze roboczym i aplikacja odbierająca może żądać różnych reprezentacji, które mogą być wygenerowany na bieżąco tuż przed operacji wklejania.
 
-Po umieszczeniu początkowego elementu w obszarze roboczym należy określić, że co najmniej jeden z dostępnych reprezentacje są dostarczane przez obiekt, który odpowiada `NSPasteboardItemDataProvider` interfejsu. Te obiekty określi dodatkowe reprezentacje na żądanie, zgodnie z żądaniem przez aplikację odbierającą.
+Podczas początkowego elementu, który możesz umieścić w obszarze roboczym, należy określić co najmniej jeden z dostępnych oświadczenia są dostarczane przez obiekt, który jest zgodny z `NSPasteboardItemDataProvider` interfejsu. Te obiekty oferują dodatkowe oświadczenia na żądanie, zgodnie z żądaniem aplikacji odbierającej.
 
-### <a name="change-count"></a>Zmień liczbę
+### <a name="change-count"></a>Liczba zmian
 
-Każdy obszar roboczy obsługuje _zmiany liczby_ zadeklarowano czasu zwiększa każdego nowego właściciela. Aplikacja może określić, czy zawartość w obszarze roboczym zostały zmienione od czasu ostatniego ją zbadać weryfikując wartość tego licznika zmiany.
+Każdy obszar roboczy przechowuje _liczba zmian_ przyrosty każdego nowego właściciela czasu jest zadeklarowana. Aplikację można określić, czy zawartość w obszarze roboczym uległy zmianie od czasu ostatniego go zbadać, sprawdzając wartość, liczba zmian.
 
-Użyj `ChangeCount` i `ClearContents` metody `NSPasteboard` klasy, aby zmodyfikować liczbę zmian dany obszar roboczy.
+Użyj `ChangeCount` i `ClearContents` metody `NSPasteboard` klasy, aby zmodyfikować dany obszar roboczy, liczba zmian.
 
 ## <a name="copying-data-to-a-pasteboard"></a>Kopiowanie danych do obszaru roboczego
 
-Wykonuje operacji kopiowania pierwszy podczas uzyskiwania dostępu do obszaru roboczego, wyczyszczenie wszelkich istniejącej zawartości i zapisywanie tyle reprezentacje danych w razie potrzeby do obszaru roboczego.
+Wykonuje operację kopiowania pierwszego uzyskiwania dostępu do obszaru roboczego, czyszczenie dowolnym istniejącą zawartość i zapisywanie tyle reprezentacje danych, ponieważ są wymagane do obszaru roboczego.
 
 Na przykład:
 
@@ -716,24 +716,24 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-Zwykle po prostu napiszesz do ogólnych obszar roboczy, jak firma Microsoft to zostało zrobione w powyższym przykładzie. Każdy obiekt, który możesz wysłać do `WriteObjects` metody *musi* odpowiadają `INSPasteboardWriting` interfejsu. Kilka wbudowanych klas (takich jak `NSString`, `NSImage`, `NSURL`, `NSColor`, `NSAttributedString`, i `NSPasteboardItem`) automatycznie są zgodne z tym interfejsie.
+Zazwyczaj po prostu napiszesz do ogólnego obszar roboczy, ponieważ wykonaliśmy w powyższym przykładzie. Każdy obiekt, który możesz wysłać do `WriteObjects` metoda *musi* są zgodne z `INSPasteboardWriting` interfejsu. Kilka wbudowanych klas (takie jak `NSString`, `NSImage`, `NSURL`, `NSColor`, `NSAttributedString`, i `NSPasteboardItem`) automatycznie dopasowują się do tego interfejsu.
 
-Jeśli piszesz klasy danych niestandardowych do obszaru roboczego musi być zgodna z `INSPasteboardWriting` interfejsu lub być ujęte w wystąpieniu `NSPasteboardItem` klasy (zobacz [niestandardowe typy danych](#Custom_Data_Types) sekcji poniżej).
+Jeśli piszesz klasy danych niestandardowych do obszaru roboczego musi być zgodna z `INSPasteboardWriting` interfejs lub być ujęte w instancji `NSPasteboardItem` klasy (zobacz [niestandardowych typów danych](#Custom_Data_Types) sekcji poniżej).
 
-## <a name="reading-data-from-a-pasteboard"></a>Odczyt danych z obszaru roboczego
+## <a name="reading-data-from-a-pasteboard"></a>Odczytywanie danych z obszaru roboczego
 
-Jak wspomniano powyżej, aby zmaksymalizować możliwości udostępniania danych między aplikacjami, wiele reprezentacje skopiowanych danych może zostać zapisany obszar roboczy. Jest odbierania aplikacji wybierz wersję najszerszym możliwe jej możliwości, (jeśli istnieje dowolne).
+Jak wspomniano powyżej, aby zmaksymalizować możliwości udostępniania danych między aplikacjami, wiele reprezentacji skopiowane dane mogą być zapisane na obszarze roboczym. Jest odbieranie aplikacji, aby wybrać wersję najszerszym możliwe jego możliwości (jeśli istnieje).
 
-### <a name="simple-paste-operation"></a>Operacja wklejania proste
+### <a name="simple-paste-operation"></a>Operacja wklejania prosty
 
-Odczytywanie danych z stołu montażowego przy użyciu `ReadObjectsForClasses` metody. Trzeba będzie dwa parametry:
+Odczytywanie danych z stołu montażowego przy użyciu `ReadObjectsForClasses` metody. Wymaga dwóch parametrów:
 
-1. Tablica `NSObject` na podstawie typu klasy, które mają być odczytywane w obszarze roboczym. Należy zamówić to z najbardziej odpowiedniego typu danych, wszelkie pozostałe typy według preferencji.
-2. Słownik zawierający dodatkowe ograniczenia (takie jak ograniczanie do określonych typów zawartości, adres URL) lub pusty słownik, jeśli są wymagane nie dodatkowe ograniczenia.
+1. Tablica `NSObject` na podstawie typu klasy, które mają być odczytywane w obszarze roboczym. Należy zamówić to z typem danych najczęściej żądanej najpierw ze wszystkich pozostałych typów malejąco preferencji.
+2. Słownik zawierający dodatkowe ograniczenia (np. ograniczenie do określonych typów zawartości na adres URL) lub pusty słownik, jeśli nie dodatkowe ograniczenia są wymagane.
 
-Metoda zwraca tablicę elementów, które spełniają kryteria, które firma Microsoft przekazano, dlatego zawiera maksymalnie taką samą liczbę typów danych, które są wymagane. Istnieje również możliwość, że żaden z żądanych typów nie jest obecny i zostanie zwrócony pustą tablicę.
+Metoda zwraca tablicę elementów, które spełniają kryteria, które firma Microsoft przekazanej, dlatego zawiera co najwyżej taką samą liczbę typów danych, które są wymagane. jest również możliwe, że żaden z żądanych typów oraz zostanie zwrócona pusta tablica.
 
-Na przykład poniższy kod sprawdza, czy `NSImage` istnieje w obszarze roboczym ogólne i wyświetla je w obrazie dobrze, jeśli tak:
+Na przykład, poniższy kod sprawdza, czy `NSImage` istnieje w ogólne obszar roboczy i wyświetla go w Studnia obrazu, jeśli istnieje:
 
 ```csharp
 [Export("PasteImage:")]
@@ -763,22 +763,22 @@ public void PasteImage(NSObject sender) {
 }
 ```
 
-### <a name="requesting-multiple-data-types"></a>Żąda wiele typów danych
+### <a name="requesting-multiple-data-types"></a>Żądanie wiele typów danych
 
-Na podstawie typu aplikacji Xamarin.Mac tworzona, może istnieć możliwość obsługi wielu reprezentacje danych wklejanych. W takim przypadku istnieją dwa scenariusze pobierania danych z obszaru roboczego:
+Na podstawie typu aplikacji rozszerzenia Xamarin.Mac tworzony, może być może obsługiwać wiele reprezentacji danych wklejanych. W takiej sytuacji istnieją dwa scenariusze podczas pobierania danych w obszarze roboczym:
 
-1. Wywoływania jednej `ReadObjectsForClasses` — metoda i zapewnianie tablicę wszystkie oświadczenia, które chcesz (w preferowanej kolejności).
-2. Wiele wywołań do `ReadObjectsForClasses` metody pytania o różnych tablicę typów zawsze.
+1. Wywołanie jednej `ReadObjectsForClasses` metody i zapewniając tablica wszystkich oświadczenia, które pragną (w kolejności preferencji).
+2. Skierowanie wielu wywołań do `ReadObjectsForClasses` metoda monitowania o różnych tablicę typów każdorazowo.
 
-Zobacz **prostych operacji wklejania** sekcji powyżej, aby uzyskać więcej informacji na temat pobierania danych z obszaru roboczego.
+Zobacz **prostych operacji wklejania** sekcji powyżej, aby uzyskać szczegółowe informacje na temat pobierania danych z obszaru roboczego.
 
-### <a name="checking-for-existing-data-types"></a>Wyszukiwanie istniejących typów danych
+### <a name="checking-for-existing-data-types"></a>Sprawdzanie dla istniejących typów danych
 
-Istnieją momenty, które możesz chcieć sprawdzanie, czy obszar roboczy zawiera reprezentację danej danych bez faktycznie odczytywania danych z obszaru roboczego (np. włączenie **Wklej** element menu tylko wtedy, gdy istnieje prawidłowe dane).
+Istnieją momenty, które możesz chcieć sprawdzanie, czy obszar roboczy zawiera reprezentację danych bez faktycznego odczytu danych w obszarze roboczym (np. włączenie **Wklej** element menu tylko wtedy, gdy istnieje prawidłowe dane).
 
-Wywołanie `CanReadObjectForClasses` metody obszar roboczy, aby zobaczyć, czy zawiera danego typu.
+Wywołaj `CanReadObjectForClasses` metoda obszar roboczy, aby zobaczyć, czy zawiera danego typu.
 
-Na przykład następujący kod określa, czy ogólne obszar roboczy zawiera `NSImage` wystąpienie:
+Na przykład, poniższy kod określa, czy ogólne obszar roboczy zawiera `NSImage` wystąpienie:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -795,23 +795,23 @@ public bool ImageAvailableOnPasteboard {
 
 ### <a name="reading-urls-from-the-pasteboard"></a>Odczytywanie adresów URL w obszarze roboczym
 
-Na podstawie funkcji danej aplikacji Xamarin.Mac, może być wymagane do odczytania adresów URL z obszaru roboczego, ale tylko wtedy, gdy spełniają danego określone kryteria (na przykład skierowana do plików lub adresy URL określonego typu danych). W takim przypadku można określić dodatkowe kryteria wyszukiwania przy użyciu drugiego parametru `CanReadObjectForClasses` lub `ReadObjectsForClasses` metody.
+Na podstawie funkcji danej aplikacji rozszerzenia Xamarin.Mac, może być wymagane do odczytywania adresy URL z obszaru roboczego, ale tylko wtedy, gdy spełniają określony zestaw kryteriów (takich jak wskazujące pliki lub adresy URL na określony typ danych). W takiej sytuacji można określić dodatkowe kryteria wyszukiwania za pomocą drugiego parametru `CanReadObjectForClasses` lub `ReadObjectsForClasses` metody.
 
 <a name="Custom_Data_Types" />
 
 ## <a name="custom-data-types"></a>Niestandardowe typy danych
 
-Brak godziny, kiedy należy zapisać własnych niestandardowych typów w obszarze roboczym z aplikacji Xamarin.Mac. Na przykład wektorowej aplikację, która umożliwia użytkownikowi kopiowanie i wklejanie rysowania obiektów.
+Istnieją terminy, gdy trzeba będzie zapisać własnych typach niestandardowych w obszarze roboczym aplikacji platformy Xamarin.Mac. Na przykład rysowanie wektora aplikację, która umożliwia użytkownikowi kopiowanie i wklejanie Rysowanie obiektów.
 
-W takiej sytuacji należy zaprojektować niestandardowe klasy danych tak, aby go dziedziczy `NSObject` i odpowiada kilka interfejsów (`INSCoding`, `INSPasteboardWriting` i `INSPasteboardReading`). Opcjonalnie można użyć `NSPasteboardItem` celu hermetyzacji dane mają zostać skopiowane lub wkleić.
+W takiej sytuacji należy projektować klasę niestandardową danych, tak aby dziedziczył z `NSObject` i zgodne kilka interfejsów (`INSCoding`, `INSPasteboardWriting` i `INSPasteboardReading`). Opcjonalnie możesz użyć `NSPasteboardItem` do hermetyzacji danych, które mają zostać skopiowane lub wklejone.
 
-Obie te opcje zostanie omówiona szczegółowo poniżej.
+Obie te opcje zostaną objęte szczegółowo poniżej.
 
 ### <a name="using-a-custom-class"></a>Za pomocą niestandardowej klasy
 
-W tej sekcji możemy zostanie rozszerzając aplikacji prosty przykład utworzony na początku tego dokumentu i Dodawanie niestandardowej klasy do śledzenia informacji na temat obrazu, który mamy są kopiowanie i wklejanie między systemem windows.
+W tej sekcji firma Microsoft zostanie rozwijanie aplikacji prosty przykład, utworzony na początku tego dokumentu i Dodawanie niestandardowej klasy do śledzenia informacji o obrazie, który firma Microsoft jest kopiowanie i wklejanie między oknami.
 
-Dodaj nową klasę w projekcie i nadaj mu **ImageInfo.cs**. Przeprowadź edycję pliku i przydzielić mu wyglądać następująco:
+Dodaj nową klasę do projektu, a następnie wywołaj ją **ImageInfo.cs**. Edytuj plik i przypisz ją wyglądać następująco:
 
 ```csharp
 using System;
@@ -925,11 +925,11 @@ namespace MacCopyPaste
     
 ```
 
-W poniższych sekcjach przeniesiemy szczegółowe przyjrzeć się tej klasy.
+W poniższych sekcjach przeniesiemy szczegółowy widok tej klasy.
 
-#### <a name="inheritance-and-interfaces"></a>Interfejsy i dziedziczenie
+#### <a name="inheritance-and-interfaces"></a>Dziedziczenie i interfejsy
 
-Przed klasy danych niestandardowych można zapisywania lub odczytywać obszar roboczy, musi być zgodna z `INSPastebaordWriting` i `INSPasteboardReading` interfejsów. Ponadto muszą dziedziczyć `NSObject` , a także są zgodne z `INSCoding` interfejsu:
+Klasy niestandardowe dane było zapisywane do lub odczytywanie obszar roboczy, musi być zgodna z `INSPastebaordWriting` i `INSPasteboardReading` interfejsów. Ponadto musi on dziedziczyć z `NSObject` i również są zgodne z `INSCoding` interfejsu:
 
 ```csharp
 [Register("ImageInfo")]
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-Klasa musi być również wystawiony Objective-C za pomocą `Register` i dyrektywa musi ujawniać wszelkie wymagane właściwości lub metody za pomocą `Export`. Na przykład:
+Klasa musi być również wystawiony języka Objective-C przy użyciu `Register` dyrektywy i musi uwidaczniać wszelkie wymagane właściwości lub metody za pomocą `Export`. Na przykład:
 
 ```csharp
 [Export("name")]
@@ -947,13 +947,13 @@ public string Name { get; set; }
 public string ImageType { get; set; }
 ```
 
-Firma Microsoft jest ujawniany przez dwa pola danych, które ta klasa będzie zawierać — nazwa obrazu i jego typ (jpg, png, itp.). 
+Firma Microsoft jest ujawniany dwa pola danych, które ta klasa będzie zawierać — nazwa obrazu i jego typ (jpg, png, itp.). 
 
-Aby uzyskać więcej informacji, zobacz [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentacji opisano `Register` i `Export` atrybutów umożliwiają połączenie klas C# do obiektów języka Objective C i interfejsu użytkownika elementy.
+Aby uzyskać więcej informacji, zobacz [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentacji opisano `Register` i `Export` atrybutów Umożliwia podłączanie klas języka C# do języka Objective-C obiektów i interfejsu użytkownika elementów.
 
 #### <a name="constructors"></a>Konstruktorów
 
-Dwa konstruktory (prawidłowo ujawniony dla języka Objective-C) jest wymagana w przypadku klasy Nasze danych niestandardowych, dzięki czemu mogą być odczytywane w obszarze roboczym:
+Dwa konstruktory (prawidłowo uwidaczniany w języku Objective-C) jest wymagana w przypadku klasy Nasze niestandardowe dane tak, aby mogły zostać odczytane z obszaru roboczego:
 
 ```csharp
 [Export ("init")]
@@ -974,17 +974,17 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-Po pierwsze, uwidaczniamy _pusty_ konstruktora w obszarze domyślną metodę Objective-C `init`.
+Po pierwsze, możemy ujawnić _pusty_ konstruktora w obszarze domyślną metodę języka Objective-C `init`.
 
-Następnie uwidaczniamy `NSCoding` zgodne Konstruktor, który będzie używany do utworzenia nowego wystąpienia obiektu w obszarze roboczym podczas wklejania pod nazwą wyeksportowanego `initWithCoder`.
+Następnie możemy ujawnić `NSCoding` zgodne Konstruktor, który będzie używany do utworzenia nowego wystąpienia obiektu w obszarze roboczym, podczas wklejania w obszarze nazwy eksportowanych `initWithCoder`.
 
-Ten konstruktor ma `NSCoder` (tworzony przez `NSKeyedArchiver` gdy zapisany w obszarze roboczym), wyodrębnia dane klucza i wartości łączyć i zapisuje je do pól właściwości klasy danych.
+Ten konstruktor przyjmuje `NSCoder` (tworzony przez `NSKeyedArchiver` podczas są zapisywane w obszarze roboczym), wyodrębnia dane sparowane klucz/wartość i zapisuje go do pola właściwości klasy danych.
 
 #### <a name="writing-to-the-pasteboard"></a>Zapisywanie w obszarze roboczym
 
-Przez odpowiadające `INSPasteboardWriting` interfejsu, musimy ujawnia dwie metody i opcjonalnie trzecią metodę, dzięki czemu klasy mogą być zapisywane na obszar roboczy.
+Przez zgodną `INSPasteboardWriting` interfejsu, należy udostępnić dwie metody i opcjonalnie Trzecia metoda tak, aby klasa można zapisać w obszarze roboczym.
 
-Najpierw należy sprawdzić obszar roboczy danych typu oświadczenia, które mogą być zapisywane niestandardowej klasy:
+Po pierwsze dlatego trzeba poinformować, obszar roboczy dane typu oświadczenia, które mogą być zapisywane niestandardowej klasy:
 
 ```csharp
 [Export ("writableTypesForPasteboard:")]
@@ -994,11 +994,11 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 }
 ```
 
-Każdy reprezentacja jest identyfikowany za pośrednictwem jednolitego typ identyfikator (UTI), które nic nie więcej niż prosty ciąg, który unikatowo identyfikuje typ danych jest prezentowana (Aby uzyskać więcej informacji, zobacz firmy Apple [Uniform Przegląd identyfikatorów typu ](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) dokumentacji).
+Każdy reprezentacja jest identyfikowany za pomocą jednolitego typ identyfikator (identyfikator UTI), czyli nic więcej niż prosty ciąg, który unikatowo identyfikuje typ danych jest prezentowana (Aby uzyskać więcej informacji, zobacz firmy Apple [jednolitego Przegląd identyfikatorów typu ](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) dokumentacji).
 
-Dla naszych formatu niestandardowego Tworzenie własnej UTI: "com.xamarin.image-info" (należy pamiętać, że znajduje się w odwrotnej notacji podobnie jak identyfikator aplikacji). Klasy Nasze również jest w stanie zapisywanie standardowego ciągu w obszarze roboczym (`public.text`). 
+Dla naszych formatu niestandardowego, jesteśmy w stanie tworzyć własną identyfikator UTI: "com.xamarin.image-info" (Pamiętaj, że znajduje się w odwrotnej notacji, podobnie jak identyfikator aplikacji). Klasy Nasze również jest w stanie zapisywanie standardowego ciągu w obszarze roboczym (`public.text`). 
 
-Następnie należy utworzyć obiekt żądany format, który faktycznie pobiera zapisywane w obszarze roboczym:
+Następnie należy utworzyć obiekt w żądany format, który faktycznie pobiera zapisywane w obszarze roboczym:
 
 ```csharp
 [Export ("pasteboardPropertyListForType:")]
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-Dla `public.text` typu, możemy zwróconego prosty, sformatowany `NSString` obiektu. Niestandardowe `com.xamarin.image-info` typu używamy `NSKeyedArchiver` i `NSCoder` interfejs do kodowania klasy danych niestandardowych do archiwum łączyć klucza i wartości. Musimy zaimplementować następującą metodę do faktycznie obsługi kodowanie:
+Dla `public.text` typu, firma Microsoft jest zwracany prosta, sformatowane `NSString` obiektu. Dla niestandardowego `com.xamarin.image-info` typu, użyto `NSKeyedArchiver` i `NSCoder` interfejsu do zakodowania klasy danych niestandardowych do archiwum sparowane klucz/wartość. Firma Microsoft będzie należy zaimplementować następującą metodę do faktycznie obsługi kodowania:
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1029,9 +1029,9 @@ public void EncodeTo (NSCoder encoder) {
 }
 ```
 
-Pary klucz/wartość poszczególnych są zapisywane do kodera i będzie można dekodować przy użyciu drugi Konstruktor, który dodaliśmy powyżej.
+Pary pojedynczych klucz/wartość są zapisywane do kodera i zostaną zdekodowane przy użyciu drugi Konstruktor, który dodaliśmy powyżej.
 
-Opcjonalnie możemy dodać następującą metodę do definiowania żadnych opcji podczas zapisywania danych w obszarze roboczym:
+Opcjonalnie możemy dodać następującą metodę, aby zdefiniować żadnych opcji, podczas zapisywania danych w obszarze roboczym:
 
 ```csharp
 [Export ("writingOptionsForType:pasteboard:"), CompilerGenerated]
@@ -1040,9 +1040,9 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-Obecnie tylko `WritingPromised` opcja jest dostępna i powinien być używany podczas danego typu jest tylko zapewnianą i faktycznie nie są zapisywane w obszarze roboczym. Aby uzyskać więcej informacji, zobacz [zapewnianą danych](#Promised_Data) powyższej sekcji.
+Obecnie tylko `WritingPromised` opcja jest dostępna i powinien być używany podczas danego typu jest tylko rzeczywiście i bez faktycznego są zapisywane w obszarze roboczym. Aby uzyskać więcej informacji, zobacz [rzeczywiście danych](#Promised_Data) powyższej sekcji.
 
-Z tych metod w miejscu można można zapisać naszej klasy niestandardowej w obszarze roboczym następujący kod:
+Za pomocą tych metod w miejscu poniższy kod może służyć do zapisywania klasy Nasze niestandardowe obszar roboczy:
 
 ```csharp
 // Get the standard pasteboard
@@ -1055,11 +1055,11 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new ImageInfo[] { Info });
 ```
 
-#### <a name="reading-from-the-pasteboard"></a>Odczytywanie z obszaru roboczego
+#### <a name="reading-from-the-pasteboard"></a>Odczyt z obszaru roboczego
 
-Przez odpowiadające `INSPasteboardReading` interfejsu, musimy ujawnia trzy metody, dzięki czemu klasy niestandardowe dane mogą być odczytywane w obszarze roboczym.
+Przez zgodną `INSPasteboardReading` interfejsu, należy udostępnić trzy metody, tak aby klasy niestandardowe dane mogą być odczytywane w obszarze roboczym.
 
-Najpierw należy sprawdzić w obszarze roboczym, jakie dane typu oświadczenia, które niestandardowej klasy mogą odczytywać ze Schowka:
+Najpierw należy sprawdzić w obszarze roboczym dane typu oświadczenia, które niestandardowej klasy mogą odczytywać ze Schowka:
 
 ```csharp
 [Export ("readableTypesForPasteboard:")]
@@ -1069,9 +1069,9 @@ public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard){
 }
 ```
 
-Ponownie te są zdefiniowane jako UTIs proste i są te same typy zdefiniowane w **zapisywanie w obszarze roboczym** powyższej sekcji.
+Ponownie te są definiowane jako identyfikatory Uti proste i są te same typy zdefiniowane w **zapisywanie w obszarze roboczym** powyższej sekcji.
 
-Następnie należy sprawdzić w obszarze roboczym _jak_ poszczególnych typów UTI będą odczytywane przy użyciu następujących metod:
+Następnie należy sprawdzić w obszarze roboczym _jak_ każdego z typami UTI będzie można odczytać przy użyciu następującej metody:
 
 ```csharp
 [Export ("readingOptionsForType:pasteboard:")]
@@ -1090,9 +1090,9 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-Dla `com.xamarin.image-info` typu, firma Microsoft informuje obszar roboczy w celu zdekodowania parę klucza i wartości, które utworzono z `NSKeyedArchiver` podczas zapisywania klasy obszar roboczy, wywołując `initWithCoder:` Konstruktor, który dodano do klasy.
+Dla `com.xamarin.image-info` typu, kolejne parametry obszar roboczy do zdekodowania pary klucz/wartość, utworzonej za pomocą `NSKeyedArchiver` podczas zapisywania klasy obszar roboczy, wywołując `initWithCoder:` Konstruktor, który dodano do klasy.
 
-Na koniec musimy Dodaj następującą metodę do odczytu innych reprezentacje UTI danych w obszarze roboczym:
+Na koniec należy dodać następującą metodę do odczytywania innych reprezentacje danych identyfikatorów UTI w obszarze roboczym:
 
 ```csharp
 [Export ("initWithPasteboardPropertyList:ofType:")]
@@ -1129,15 +1129,15 @@ if (ok) {
 }
 ```
 
-### <a name="using-a-nspasteboarditem"></a>Przy użyciu NSPasteboardItem
+### <a name="using-a-nspasteboarditem"></a>Za pomocą NSPasteboardItem
 
-Może to być razy, gdy należy napisać własne elementy do obszaru roboczego, który gwarantuje Tworzenie niestandardowej klasy lub chcesz podać dane w formacie wspólne, tylko zgodnie z potrzebami. W takich sytuacjach można użyć `NSPasteboardItem`.
+Może to być czasy, kiedy należy napisać własne elementy do obszaru roboczego, który gwarantuje tworzenia niestandardowej klasy lub chcesz udostępnić dane w formacie common, tylko zgodnie z potrzebami. W takich sytuacjach można użyć `NSPasteboardItem`.
 
-A `NSPasteboardItem` zapewnia precyzyjną kontrolę nad danymi, które są zapisywane w obszarze roboczym i jest przeznaczony do tymczasowego dostępu — go powinna zostać usunięta z po jego zostały zapisane w obszarze roboczym.
+A `NSPasteboardItem` zapewnia precyzyjną kontrolę nad danymi, które są zapisywane w obszarze roboczym i jest przeznaczony do tymczasowego dostępu — jej powinny zostać usunięte z po jego zostały zapisane w obszarze roboczym.
 
 #### <a name="writing-data"></a>Zapisywanie danych
 
-Niestandardowe dane, aby zapisać `NSPasteboardItem` musisz podać niestandardowy `NSPasteboardItemDataProvider`. Dodaj nową klasę w projekcie i nadaj mu **ImageInfoDataProvider.cs**. Przeprowadź edycję pliku i przydzielić mu wyglądać następująco:
+Niestandardowe dane, aby zapisać `NSPasteboardItem` musisz podać niestandardowy `NSPasteboardItemDataProvider`. Dodaj nową klasę do projektu, a następnie wywołaj ją **ImageInfoDataProvider.cs**. Edytuj plik i przypisz ją wyglądać następująco:
 
 ```csharp
 using System;
@@ -1200,9 +1200,9 @@ namespace MacCopyPaste
 }
 ```
 
-Jak robiliśmy przy użyciu klasy danych niestandardowych, należy użyć `Register` i `Export` dyrektywy je ujawnić Objective-c. Musi dziedziczyć po klasie `NSPasteboardItemDataProvider` , którą należy wdrożyć `FinishedWithDataProvider` i `ProvideDataForType` metody.
+Ile My mieliśmy z klasą danych niestandardowych, należy wykonać `Register` i `Export` dyrektywy w celu udostępnienia jej Objective-C. Klasa musi dziedziczyć `NSPasteboardItemDataProvider` , którą należy wdrożyć `FinishedWithDataProvider` i `ProvideDataForType` metody.
 
-Użyj `ProvideDataForType` metodę w celu zapewnienia dane, które zostaną `NSPasteboardItem` w następujący sposób:
+Użyj `ProvideDataForType` metodę dostarczania danych, które zostaną opakowane w `NSPasteboardItem` w następujący sposób:
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]
@@ -1220,9 +1220,9 @@ public override void ProvideDataForType (NSPasteboard pasteboard, NSPasteboardIt
 }
 ```
 
-W takim przypadku możemy przechowywane informacje o naszych obrazu (nazwy i ImageType) i zapisywanie tych prosty ciąg (`public.text`).
+W tym przypadku możemy przechowywania dwóch rodzajów informacji o naszych obrazów (nazwy i ImageType) i zapisywanie tych prosty ciąg (`public.text`).
 
-Typ zapisać dane obszar roboczy, użyj następującego kodu:
+Typ zapisywać dane obszar roboczy, użyj następującego kodu:
 
 ```csharp
 // Get the standard pasteboard
@@ -1244,7 +1244,7 @@ if (ok) {
 
 #### <a name="reading-data"></a>Odczyt danych
 
-Odczytywanie danych z obszaru roboczego, użyj następującego kodu:
+Do odczytywania danych z kopii obszar roboczy, użyj następującego kodu:
 
 ```csharp
 // Initialize the pasteboard
@@ -1274,7 +1274,7 @@ if (ok) {
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowe przyjrzeć się praca z obszar roboczy w Xamarin.Mac aplikacji do obsługi kopiowania i wklejania. Wprowadzona go prosty przykład, aby zapoznać się z operacjami standardowe większa. Następnie zajęło szczegółowy widok w obszarze roboczym i sposobu odczytywania i zapisywania danych z niego. Na koniec znaleziono za pomocą niestandardowego typu danych do obsługi kopiowanie i wklejanie złożone typy danych w aplikacji.
+W tym artykule jest zajęta szczegółowe omówienie pracy z obszaru wklejania w aplikacji platformy Xamarin.Mac obsługuje kopiowania i wklejania. Po pierwsze wprowadzono prosty przykład, aby zapoznać się z operacjami standardowa większa. Następnie, jaki zajęło szczegółowy widok w obszarze roboczym i jak odczytywać i zapisywać dane z niego. Na koniec go przyjrzano się za pomocą niestandardowego typu danych do obsługi kopiowania i wklejania złożone typy danych w obrębie aplikacji.
 
 
 
@@ -1282,5 +1282,5 @@ W tym artykule trwało szczegółowe przyjrzeć się praca z obszar roboczy w Xa
 
 - [MacCopyPaste (przykład)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
-- [Przewodnik programowania w języku stołu montażowego](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
+- [Przewodnik programowania w stołu montażowego](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [System macOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

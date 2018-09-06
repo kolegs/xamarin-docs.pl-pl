@@ -1,139 +1,139 @@
 ---
-title: Zezwalaj użytkownikowi na Xamarin.Mac
-description: W tym artykule omówiono Praca z menu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie menu i elementów menu w środowisku Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie.
+title: Menu platformy Xamarin.Mac
+description: W tym artykule opisano Praca z menu w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenia i utrzymywania menu i elementów menu w programie Xcode i programu Interface Builder oraz pracy z nimi programistycznie.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cb89d1df60bafe14dcc989666f0eeb5d757e4017
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d84910cd5c2bc72a563fb04457532d544aedf571
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792924"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780656"
 ---
-# <a name="menus-in-xamarinmac"></a>Zezwalaj użytkownikowi na Xamarin.Mac
+# <a name="menus-in-xamarinmac"></a>Menu platformy Xamarin.Mac
 
-_W tym artykule omówiono Praca z menu w aplikacji Xamarin.Mac. Opisuje tworzenie i utrzymywanie menu i elementów menu w środowisku Xcode i kompilatora interfejsu oraz pracy z nimi programistycznie._
+_W tym artykule opisano Praca z menu w aplikacji platformy Xamarin.Mac. Opisano w nim tworzenia i utrzymywania menu i elementów menu w programie Xcode i programu Interface Builder oraz pracy z nimi programistycznie._
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tego samego menu Cocoa, które jest dewelopera pracy w języku Objective C i Xcode. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć konstruktora interfejsu w środowisku Xcode do tworzenia i obsługi paski menu, w menu i w menu elementów (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, masz dostęp do tego samego menu Cocoa, które jest deweloperem, pracy w językach Objective-C i Xcode. Ponieważ rozszerzenia Xamarin.Mac integruje się bezpośrednio za pomocą edytora Xcode, służy program Xcode Interface Builder do tworzenia i obsługi paski menu, menu i elementy menu (lub opcjonalnie utworzyć je bezpośrednio w kodzie języka C#).
 
-Menu są integralną częścią środowisko użytkownika aplikacji Mac i często pojawiają się w różnych częściach interfejsu użytkownika:
+Menu są integralną częścią środowiska użytkownika aplikacji dla komputerów Mac i często pojawiają się w różnych częściach interfejsu użytkownika:
 
-- **Pasek menu aplikacji** -to jest wyświetlany w górnej części ekranu dla każdej aplikacji dla komputerów Mac menu głównego.
-- **Menu kontekstowe** — są one wyświetlane, gdy użytkownik kliknie prawym przyciskiem myszy lub kliknięcia formantu elementu w oknie.
-- **Pasek stanu** — jest to obszar, z prawej strony paska menu aplikacji jest wyświetlany w górnej części ekranu (do lewej strony zegara paska menu), który zwiększa się po lewej stronie w miarę elementy zostaną dodane do niego.
-- **Dokowanie menu** -menu dla każdej aplikacji w doku wyświetlony gdy użytkownik kliknie prawym przyciskiem myszy lub kliknięcia formantu ikonę aplikacji lub gdy użytkownik lewym przyciskiem myszy ikonę i przechowuje przycisku myszy w dół.
-- **Przycisk wyskakujących i listy rozwijane** — przycisk wyskakujących Wyświetla wybrany element i wyświetla listę opcji wyboru po kliknięciu przez użytkownika. Listy rozwijane to typ przycisku wyskakujących zwykle służy do wybierania polecenia specyficzne dla kontekstu bieżącego zadania. Jednocześnie może występować w dowolnym miejscu w oknie.
+- **Pasek menu aplikacji** — jest to menu głównego, który pojawia się w górnej części ekranu dla każdej aplikacji dla komputerów Mac.
+- **Menu kontekstowe** — te są wyświetlane, gdy użytkownik kliknie prawym przyciskiem myszy lub kontroli kliknięć element w oknie.
+- **Na pasku stanu** — jest to obszar, z prawej strony paska menu aplikacja, jest wyświetlana w górnej części ekranu (na lewo od zegara paska menu), która zwiększa się po lewej stronie, jak elementy są dodawane do niego.
+- **Dokowanie menu** — menu dla każdej aplikacji, w obszarze dock wyświetlany po użytkownik kliknie prawym przyciskiem myszy lub kontroli kliknięcia ikony aplikacji lub po użytkownik lewym przyciskiem myszy ikonę i przechowuje przycisku myszy w dół.
+- **Przycisk podręczne i listy rozwijane** — przycisk wyskakującego Wyświetla wybrany element i wyświetla listę opcji, które można wybierać po kliknięciu przez użytkownika. Listy rozwijane jest rodzajem przycisku wyskakujące, zwykle służy do wybierania poleceń specyficznych dla kontekstu bieżącego zadania. Jednocześnie może występować w dowolnym miejscu w oknie.
 
-[![Przykład menu](menu-images/intro01.png "przykład menu")](menu-images/intro01-large.png#lightbox)
+[![Menu przykład](menu-images/intro01.png "menu przykład")](menu-images/intro01-large.png#lightbox)
 
-W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z paski menu Cocoa, menu i elementów menu w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówimy podstawy pracy z paski menu Cocoa, menu i elementów menu w aplikacji platformy Xamarin.Mac. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` atrybutów używany do przesyłania w górę klas C# do obiektów języka Objective C i elementy interfejsu użytkownika.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` atrybutów Umożliwia o komunikacji sieciowej w górę klas języka C# do języka Objective-C obiektów i elementów interfejsu użytkownika.
 
 ## <a name="the-applications-menu-bar"></a>Pasek menu aplikacji 
 
-W przeciwieństwie do aplikacji działających na systemu operacyjnego, w którym co okno może mieć własną paska menu do niego dołączony każda aplikacja uruchomiona na macOS ma paska menu pojedynczego wzdłuż górnej części ekranu, który jest używany dla każdego okna w tej aplikacji:
+W odróżnieniu od działających w systemie operacyjnym Windows, gdzie każdego okna może mieć własną paska menu, dołączono do niego każda aplikacja uruchomiona w systemie macOS ma pasek pojedynczym menu, który uruchamia wzdłuż górnej części ekranu, który jest używany dla każdego okna w tej aplikacji:
 
 [![Pasek menu](menu-images/appmenu01.png "pasek menu")](menu-images/appmenu01-large.png#lightbox)
 
-Elementy tego paska menu są aktywowane lub dezaktywowane na podstawie bieżącego kontekstu lub stan aplikacji i interfejs użytkownika w danym momencie. Na przykład: Jeśli użytkownik wybierze pola tekstowego, elementy na **Edytuj** menu będzie pochodził włączone, takich jak **kopiowania** i **Wytnij**.
+Elementy na tym pasku menu są aktywowane lub dezaktywowane na podstawie bieżącego kontekstu lub stan aplikacji oraz interfejs użytkownika w danej chwili. Na przykład: Jeśli użytkownik wybierze pole tekstowe, elementy na **Edytuj** menu będą pochodzić włączone, takie jak **kopiowania** i **Wytnij**.
 
-Zgodnie z firmy Apple i domyślnie wszystkie aplikacje macOS mają standardowy zestaw menu i elementów menu, które są wyświetlane na pasku menu aplikacji:
+Zgodnie z firmy Apple i domyślnie wszystkie aplikacje z systemem macOS mają standardowy zestaw menu i elementów menu, które pojawiają się na pasku menu aplikacji:
 
-- **Apple menu** — w tym menu zapewnia dostęp do systemu szeroki elementów, które są dostępne dla użytkownika zawsze, niezależnie od tego, jakie aplikacja jest uruchomiona. Nie można zmodyfikować te elementy przez dewelopera.
-- **Menu aplikacji** — w tym menu wyświetla nazwę aplikacji pogrubione i pomaga użytkownikowi określenie, jakie aplikacja jest obecnie uruchomiona. Zawiera elementy, które mają zastosowanie do aplikacji jako całości, a nie danego dokumentu lub procesu, takie jak kończenie działania aplikacji.
-- **Menu Plik** — elementy umożliwiają tworzenie, otwieranie lub zapisywanie dokumentów, który aplikacja działa z. Jeśli aplikacja nie jest oparte na dokument, to menu można zmienić nazwy lub usunąć.
-- **Menu Edycja** -przechowuje poleceń, takich jak **Wytnij**, **kopiowania**, i **Wklej** używane do edycji lub modyfikowanie elementów w interfejsie użytkownika aplikacji.
-- **Format menu** — Jeśli aplikacja działa z tekstem, to menu poleceń blokad, aby dostosować formatowanie tekstu.
-- **Menu Widok** — zawiera polecenia, które mają wpływ na sposób wyświetlania zawartości (wyświetlanie) w interfejsie użytkownika aplikacji.
-- **Menu specyficzne dla aplikacji** — są to wszystkie menu, które są specyficzne dla aplikacji (np. menu zakładki w przeglądarce sieci web). Powinny one występować między **widoku** i **okna** menu na pasku.
+- **Apple menu** — w tym menu zapewnia dostęp do systemu szerokiego elementy, które są dostępne dla użytkownika przez cały czas, niezależnie od tego, w jaki aplikacja jest uruchomiona. Nie można zmodyfikować te elementy przez dewelopera.
+- **Menu aplikacji** — to menu wyświetla nazwę aplikacji wytłuszczonym drukiem i pomaga użytkownikowi określić, jakie aplikacja jest obecnie uruchomiona. Zawiera on elementy, które są stosowane do aplikacji jako całości, a nie danego dokumentu lub proces, taki jak zamykanie aplikacji.
+- **Menu Plik** — elementy używane do tworzenia, otwieranie lub zapisywanie dokumentów, które Twoja aplikacja działa przy użyciu. Jeśli aplikacja jest oparta na dokumentach, to menu można zmieniona lub usunięta.
+- **Menu Edycja** — zawiera polecenia, takie jak **Wytnij**, **kopiowania**, i **Wklej** które są używane do edycji lub modyfikować elementy w interfejsie użytkownika aplikacji.
+- **Format menu** — Jeśli aplikacja działa z tekstem, to menu blokad polecenia, aby dostosować formatowanie tekstu.
+- **Menu Widok** — zawiera polecenia, które mają wpływ na sposób wyświetlania zawartości (wyświetlane) w interfejsie użytkownika aplikacji.
+- **Menu specyficzne dla aplikacji** — są to wszystkie menu, które są specyficzne dla aplikacji (na przykład menu zakładek przeglądarki sieci web). Powinny one zostać wyświetlone między **widoku** i **okna** menu na pasku.
 - **Menu okna** — zawiera polecenia do pracy z systemem windows w aplikacji, a także listę bieżącego okna.
-- **Menu Pomoc** — Jeśli aplikacja zawiera pomoc na ekranie, w menu Pomoc powinien być na pasku menu prawej krawędzi. 
+- **Menu Pomoc** — Jeśli aplikacja udostępnia pomoc na ekranie, w menu Pomoc powinny być na pasku menu najdalej z prawej strony. 
 
-Aby uzyskać więcej informacji o aplikacji paska menu i menu standardowe i elementów menu, zobacz firmy Apple [Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/).
+Aby uzyskać więcej informacji o aplikacji pasek menu i menu standardowe oraz elementy menu, zobacz firmy Apple [Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/).
 
-### <a name="the-default-application-menu-bar"></a>Domyślny pasek menu aplikacji
+### <a name="the-default-application-menu-bar"></a>Pasek menu domyślne aplikacji
 
-Podczas tworzenia nowego projektu Xamarin.Mac automatycznie pobrać standardowe, domyślnej aplikacji paskiem menu zawierającego typowe elementy, które aplikacji macOS mają (jak opisano w powyższej sekcji). Pasek menu domyślnej aplikacji jest zdefiniowany w **Main.storyboard** pliku (wraz z resztą Interfejsie użytkownika aplikacji) w obszarze projektu w **konsoli rozwiązania**:  
+Gdy utworzysz nowy projekt platformy Xamarin.Mac, automatycznie uzyskują w warstwie standardowa domyślnej aplikacji pasek menu, który ma typowe elementy, które aplikacji z systemem macOS mają (jak opisano w powyższej sekcji). Pasek menu domyślne Twojej aplikacji jest zdefiniowany w **Main.storyboard** pliku (wraz z pozostałej części Interfejsie użytkownika aplikacji) w projekcie w **konsoli rozwiązania**:  
 
 ![Wybierz głównego storyboard](menu-images/appmenu02.png "wybierz głównego storyboard")
 
-Kliknij dwukrotnie **Main.storyboard** plik, aby go otworzyć do edycji w konstruktora interfejsu w środowisku Xcode i wyświetlony interfejs Edytora menu:
+Kliknij dwukrotnie **Main.storyboard** plik, aby go otworzyć do edycji w program Xcode Interface Builder i zostanie wyświetlony interfejs Edytora menu:
 
-[![Edytowanie interfejsu użytkownika w środowisku Xcode](menu-images/defaultbar01.png "edycji interfejsu użytkownika w środowisku Xcode")](menu-images/defaultbar01-large.png#lightbox)
+[![Edytowanie interfejsu użytkownika w środowisku Xcode](menu-images/defaultbar01.png "edytowania interfejsu użytkownika w środowisku Xcode")](menu-images/defaultbar01-large.png#lightbox)
 
-W tym miejscu możemy kliknąć elementów takich jak **Otwórz** elementu menu w **pliku** menu edytować i dostosować jego właściwości w **inspektora atrybutów**:
+W tym miejscu możemy kliknąć elementy takie jak **Otwórz** elementu menu w **pliku** menu edytować i dostosować jego właściwości w **Inspektor atrybuty**:
 
-[![Edytowanie atrybutów menu](menu-images/defaultbar02.png "edycji atrybutów menu")](menu-images/defaultbar02-large.png#lightbox)
+[![Edycja atrybutów menu](menu-images/defaultbar02.png "Edycja atrybutów menu")](menu-images/defaultbar02-large.png#lightbox)
 
-Możemy uzyskać na dodawanie, edytowanie i usuwanie menu i elementów w dalszej części tego artykułu. Dla teraz po prostu chcesz zobaczyć, jakie elementy menu i menu są domyślnie dostępne i sposób ich być automatycznie narażone kodu przez zestaw wstępnie zdefiniowanych gniazda i akcje (Aby uzyskać więcej informacji, zobacz nasze [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) dokumentacja).
+Przejdziemy do Dodawanie, edytowanie i usuwanie menu i elementy w dalszej części tego artykułu. Dla teraz po prostu chcesz zobaczyć, jakie elementy menu i menu są domyślnie dostępne i jak mogą być automatycznie narażone na kod za pomocą zestawu akcji i gniazd wstępnie zdefiniowane (Aby uzyskać więcej informacji, zobacz nasze [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) dokumentacja).
 
-Na przykład po kliknięciu pozycji na **inspektora połączenia** dla **Otwórz** możemy stwierdzić, jest automatycznie przewodowej do elementu menu `openDocument:` akcji: 
+Na przykład po kliknięciu na **Inspektor połączenia** dla **Otwórz** elementu menu, okaże się, jest automatycznie przewodowej maksymalnie `openDocument:` akcji: 
 
-[![Wyświetlanie akcji dołączonych](menu-images/defaultbar03.png "wyświetlanie dołączonych akcji")](menu-images/defaultbar03-large.png#lightbox)
+[![Wyświetlanie akcji dołączone](menu-images/defaultbar03.png "wyświetlanie akcji dołączone")](menu-images/defaultbar03-large.png#lightbox)
 
-W przypadku wybrania **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów** i przewiń w dół **inspektora połączenia**, i zobaczysz definicję `openDocument:` Akcja który **Otwórz** element menu jest dołączony do (wraz z kilka innych domyślnej akcji dla aplikacji i nie są automatycznie powiązaną klasą formantów):
+Jeśli wybierzesz **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów** i przewiń w dół **Inspektor połączenia**, i zobaczysz definicję `openDocument:` Akcja, **Otwórz** element menu jest dołączony do (oraz kilka innych domyślnej akcji dla aplikacji i nie są automatycznie powiązaną formantów):
 
-[![Wyświetlanie wszystkich dołączonych akcje](menu-images/defaultbar04.png "wyświetlanie wszystkich dołączonych akcji")](menu-images/defaultbar04-large.png#lightbox) 
+[![Wyświetlanie działań wszystkich dołączonych](menu-images/defaultbar04.png "wyświetlanie wszystkich akcji dołączone")](menu-images/defaultbar04-large.png#lightbox) 
 
-Dlaczego jest to istotne? W następnej sekcji zostanie wyświetlony, jak te akcje zdefiniowane automatycznie współpracuje z inne elementy interfejsu użytkownika Cocoa, które automatycznie Włączanie i wyłączanie elementów menu, a także, podaj wbudowanej funkcji dla elementów.
+Dlaczego jest to istotne? W następnej sekcji zostanie wyświetlony, jak działają te akcje automatycznie definiowane za pomocą innych elementach interfejsu użytkownika Cocoa, aby automatycznie Włącz i Wyłącz elementy menu, a także, zapewnia wbudowanej funkcjonalności dla elementów.
 
-Później będziemy używać tych działań wbudowanych do włączenia i wyłączenia elementów z kodu i udostępnia własnej funkcji po jej wybraniu.
+Później będziemy używać tych wbudowanych akcji. Aby włączyć i wyłączyć elementy z kodu i podać własną funkcjonalność, gdy są zaznaczone.
 
 <a name="Built-In_Menu_Functionality" />
 
 ### <a name="built-in-menu-functionality"></a>Funkcje wbudowane menu
 
-Jeśli uruchomienie nowo utworzonej aplikacji Xamarin.Mac przed dodaniem elementów interfejsu użytkownika ani kodu innych, można zauważyć, że niektóre elementy są automatycznie przewodowej w górę i włączona (z pełnej funkcjonalności automatycznie wbudowane), takich jak **Zakończ** elementu **aplikacji** menu:
+Gdyby Uruchom nowo utworzonej aplikacji rozszerzenia Xamarin.Mac przed dodaniem elementy interfejsu użytkownika lub kodu, można zauważyć, że niektóre elementy są automatycznie przewodowej w górę i włączona (z w pełni funkcje automatycznie wbudowanych), takie jak **Zakończ** pozycja **aplikacji** menu:
 
-![Element menu włączone](menu-images/appmenu03.png "element menu włączone")
+![Element menu włączone](menu-images/appmenu03.png "elementu menu włączone")
 
-Połączenie innych elementów menu, takich jak **Wytnij**, **kopiowania**, i **Wklej** nie są:
+Podczas gdy inne elementy menu, takich jak **Wytnij**, **kopiowania**, i **Wklej** nie są:
 
-![Elementy menu wyłączone](menu-images/appmenu04.png "wyłączone elementy menu")
+![Wyłączyć elementy menu](menu-images/appmenu04.png "wyłączone elementów menu")
 
-Załóżmy Zatrzymaj aplikację i kliknij dwukrotnie **Main.storyboard** w pliku **konsoli rozwiązania** go otworzyć do edycji w środowisku Xcode do konstruktora interfejsu. Następnie przeciągnij **widoku tekstu** z **biblioteki** na okna kontrolera widoku w **Edytor interfejsu**:
+Spróbujmy Zatrzymaj aplikację i kliknij dwukrotnie **Main.storyboard** w pliku **konsoli rozwiązania** aby go otworzyć do edycji w programie Xcode zachowania programu Interface Builder. Następnie przeciągnij **widoku tekstu** z **biblioteki** na kontroler widoku okna w **Edytor interfejsu**:
 
-[![Wybranie widoku tekstu z biblioteki](menu-images/appmenu05.png "wybranie widoku tekstu z biblioteki")](menu-images/appmenu05-large.png#lightbox)
+[![Wybieranie widoku tekstu z biblioteki](menu-images/appmenu05.png "wybierając Widok tekstu z biblioteki")](menu-images/appmenu05-large.png#lightbox)
 
-W **edytora ograniczeń** umożliwia przypiąć widoku tekstu do krawędzi okna i ustaw dla niej gdzie rozwoju i zmniejsza okno z klikając wszystkie cztery czerwony I świateł w górnej części edytora i klikając **dodać ograniczenia 4** przycisk:
+W **edytora ograniczeń** umożliwia przypinanie widoku tekstu do krawędzi okna i ustaw dla niej gdzie wraz ze wzrostem i zmniejsza w zależności od okna, klikając pozycję wszystkie cztery czerwoną I świateł w górnej części edytora i klikając **Dodaj ograniczenia 4** przycisku:
 
-[![Edytowanie ograniczenia](menu-images/appmenu06.png "Edytowanie ograniczenia")](menu-images/appmenu06-large.png#lightbox)
+[![Edytowanie ograniczenia](menu-images/appmenu06.png "edytowania ograniczenia")](menu-images/appmenu06-large.png#lightbox)
 
-Zapisz zmiany w projekcie interfejsu użytkownika i przełączenia programu Visual Studio for Mac zsynchronizować zmiany z projektu Xamarin.Mac. Teraz uruchom aplikację, wpisz dowolny tekst w widoku tekstu, zaznacz go i Otwórz **Edytuj** menu:
+Zapisz zmiany projektu interfejsu użytkownika, a następnie przełączenie powrotne programu Visual Studio dla komputerów Mac zsynchronizować zmiany z projektu platformy Xamarin.Mac. Teraz uruchom aplikację, wpisz dowolny tekst w widoku tekstu, zaznacz ją i Otwórz **Edytuj** menu:
 
 ![Elementy menu są automatycznie włączone/wyłączone](menu-images/appmenu07.png "elementy menu są automatycznie włączone/wyłączone")
 
-Powiadomienie jak **Wytnij**, **kopiowania**, i **Wklej** elementy są automatycznie włączone i funkcjonalnej, wszystko to bez napisania jakiegokolwiek wiersza kodu. 
+Zwróć uwagę sposób, w jaki **Wytnij**, **kopiowania**, i **Wklej** elementy są automatycznie włączone i w pełni funkcjonalne, wszystko to bez konieczności napisania choćby jednego wiersza kodu. 
 
-Co się dzieje w tym miejscu? Należy pamiętać, wbudowane wstępnie akcje, które pochodzą przewodowej elementów menu domyślne (przedstawionych powyżej), większość Cocoa elementy interfejsu użytkownika, które są częścią macOS mają wbudowane punkty zaczepienia określone działania (takie jak `copy:`). Dlatego podczas dodawania do okna, aktywna i wybrać odpowiedniego elementu menu lub elementy dołączony do tego działania są włączane automatycznie. Jeśli użytkownik wybierze tę pozycję menu, funkcji wbudowanych w elementu interfejsu użytkownika jest nazywane i wykonywane bez interwencji developer.
+Co się dzieje w tym miejscu? Należy pamiętać, wbudowane wstępnego zdefiniowania akcji, które pochodzą przewodowej maksymalnie domyślne elementy menu (przedstawionych powyżej), większość Cocoa elementy interfejsu użytkownika, które są częścią z systemem macOS mają wbudowane punkty zaczepienia z określonymi akcjami (takie jak `copy:`). Dlatego gdy są dodawane do okna, aktywne i zaznaczone, odpowiedni element menu lub elementów dołączonych do tej akcji są włączane automatycznie. Jeśli użytkownik wybierze tę pozycję menu, funkcji wbudowanych w element interfejsu użytkownika jest o nazwie i wykonywane, wszystko to bez konieczności interwencji dla deweloperów.
 
-### <a name="enabling-and-disabling-menus-and-items"></a>Włączanie i wyłączanie menu i elementy
+### <a name="enabling-and-disabling-menus-and-items"></a>Włączanie i wyłączanie menu i elementów
 
-Domyślnie za każdym razem, gdy wystąpi zdarzenie użytkownika `NSMenu` automatycznie włącza i wyłącza każdego widoczne menu i menu elementu na podstawie kontekstu aplikacji. Istnieją trzy sposoby, aby włączyć lub wyłączyć elementu:
+Domyślnie za każdym razem, gdy wystąpi zdarzenie użytkownika `NSMenu` automatycznie włącza i wyłącza każdego widoczne menu i menu elementów na podstawie kontekstu aplikacji. Istnieją trzy sposoby, aby włączyć/wyłączyć element:
 
-- **Włączanie automatycznego menu** — element menu jest włączona, jeśli `NSMenu` można znaleźć odpowiedniego obiektu, który odpowiada na akcję, która element jest przewodowej w górę do. Na przykład widoku tekstu powyżej mająca wbudowanych haku do `copy:` akcji.
-- **Akcje niestandardowe i validateMenuItem:** — dowolny element menu, który jest powiązany z [okna lub Widok akcji niestandardowej kontrolera](#Working-with-Custom-Window-Actions), można dodać `validateMenuItem:` akcji i ręcznie włączyć lub wyłączyć elementów menu.
-- **Włączanie menu ręczne** -ręcznie ustawić `Enabled` właściwości każdego `NSMenuItem` Aby włączyć lub wyłączyć każdego elementu w menu indywidualnie.
+- **Włączanie automatycznego menu** — element menu jest włączona, jeśli `NSMenu` można znaleźć odpowiedni obiekt, który odpowiada akcji, który element jest przewodowej w usłudze. Na przykład tekst powyższy widok zawierającego wbudowanych zaczepienia `copy:` akcji.
+- **Akcje niestandardowe i validateMenuItem:** — dla każdego elementu menu, który jest powiązany z [okna lub Widok akcji niestandardowej kontrolera](#Working-with-Custom-Window-Actions), możesz dodać `validateMenuItem:` akcji i ręcznie Włącz lub Wyłącz elementy menu.
+- **Włączanie menu ręczne** — ręcznie ustawić `Enabled` właściwości każdego `NSMenuItem` można włączać lub wyłączać indywidualnie każdy element w menu.
 
 Aby wybrać system, należy ustawić `AutoEnablesItems` właściwość `NSMenu`. `true` odbywa się automatycznie (domyślnie) i `false` jest ręcznie. 
 
 > [!IMPORTANT]
-> Jeśli chcesz użyć menu ręczne włączenie, żaden z menu elementów, nawet te kontrolowane przez AppKit klas takich jak `NSTextView`, są automatycznie aktualizowane. Będzie odpowiedzialny za włączanie i wyłączanie wszystkie elementy ręcznie w kodzie.
+> Jeśli chcesz użyć menu Ręczne włączanie menu pozycji typu Brak, nawet te, które w wartości clientauthtrustmode AppKit klasy, takie jak `NSTextView`, są automatycznie aktualizowane. Będzie odpowiedzialny za włączanie i wyłączanie wszystkich elementów ręcznie w kodzie.
 
-#### <a name="using-validatemenuitem"></a>Przy użyciu validateMenuItem
+#### <a name="using-validatemenuitem"></a>Za pomocą validateMenuItem
 
-Jak wspomniano powyżej, dla każdego elementu menu, który jest powiązany z [okna lub Akcja niestandardowa kontrolera widoku](#Working-with-Custom-Window-Actions), możesz dodać `validateMenuItem:` akcji i ręcznie włączyć lub wyłączyć elementów menu.
+Jak wspomniano powyżej, dla każdego elementu menu, który jest powiązany z [okna lub Akcja niestandardowa kontrolera widoku](#Working-with-Custom-Window-Actions), możesz dodać `validateMenuItem:` akcji i ręcznie Włącz lub Wyłącz elementy menu.
 
-W poniższym przykładzie `Tag` właściwości będzie służyć do określania, typ elementu menu, które będą mieć włączone/wyłączone przez `validateMenuItem:` akcji na podstawie stanu zaznaczonego tekstu w `NSTextView`. `Tag` Właściwość została ustawiona w Konstruktorze interfejs dla każdego elementu menu:
+W poniższym przykładzie `Tag` podjęcie decyzji, typ elementu menu, które będą mieć włączone/wyłączone, zostanie użyta właściwość `validateMenuItem:` akcji na podstawie stanu zaznaczonego tekstu w `NSTextView`. `Tag` Ustawiono właściwości w programu Interface Builder dla każdego elementu menu:
 
-![Ustawienie właściwości tagu](menu-images/validate01.png "ustawienie właściwości tagu")
+![Ustawianie właściwości Tag](menu-images/validate01.png "ustawienie właściwości Tag")
 
-I następujący kod, dodano do kontrolera widoku:
+I następującego kodu, które są dodawane do kontrolera widoku:
 
 ```csharp
 [Action("validateMenuItem:")]
@@ -156,23 +156,23 @@ public bool ValidateMenuItem (NSMenuItem item) {
 }
 ```
 
-Kiedy uruchamiać ten kod, a nie zaznaczono żadnych tekstu w `NSTextView`, zawijania dwa elementy menu są wyłączone (nawet jeśli są one podłączone do akcji kontrolera widoku):
+Kiedy ten kod jest uruchamiany i zaznaczono żadnego tekstu w `NSTextView`, zawijania dwa elementy menu są wyłączone (nawet jeśli są one podłączone do akcji kontrolera widoku):
 
-![Wyświetlanie wyłączone elementów](menu-images/validate02.png "przedstawiający elementy wyłączone")
+![Elementy wyłączone przedstawiający](menu-images/validate02.png "przedstawiający elementy wyłączone")
 
-Jeśli wybrano fragment tekstu, a następnie ponownie otworzyć menu, zawijania dwóch elementów menu będą dostępne:
+Jeśli wybrano fragment tekstu, a następnie ponownie otworzyć menu, elementy menu dwóch zawijania będą dostępne:
 
-![Włączono wyświetlanie elementów](menu-images/validate03.png "przedstawiający włączone elementów")
+![Elementy przedstawiający włączone](menu-images/validate03.png "przedstawiający włączone elementów")
 
-## <a name="enabling-and-responding-to-menu-items-in-code"></a>Włączanie i odpowiada na żądania elementów menu w kodzie
+## <a name="enabling-and-responding-to-menu-items-in-code"></a>Włączanie i reagowanie na elementów menu w kodzie
 
-Jak możemy jak już wspomniano powyżej, po prostu, dodając określone elementy interfejsu użytkownika Cocoa do naszej projektu interfejsu użytkownika (np. w polu tekstowym), kilka elementów menu domyślny zostanie włączona i działa automatycznie, bez konieczności pisania kodu. Następny Przyjrzyjmy się dodawanie swój własny kod C# do naszej projektu Xamarin.Mac, aby włączyć element menu i zapewniać funkcje, gdy użytkownik wybierze opcję.
+Jak skrócił się powyżej, po prostu, dodając określone elementy interfejsu użytkownika Cocoa do naszego projektu interfejsu użytkownika (na przykład pole tekstowe), kilka elementów menu domyślne zostanie włączona i działa automatycznie, bez konieczności pisania kodu. Dalej Przyjrzyjmy się dodanie swój własny kod C# do projektu naszej platformy Xamarin.Mac w taki sposób, aby włączyć element menu i udostępniają funkcje, gdy użytkownik wybierze je.
 
-Na przykład let powiedzieć chcemy użytkownik będzie mógł używać **Otwórz** elementu **pliku** menu, aby wybrać inny folder. Ponieważ chcemy, aby była funkcja całej aplikacji, a nie tylko zapewnia okna lub elementu interfejsu użytkownika, zamierzamy Dodaj kod, aby obsłużyć to delegatem naszej aplikacji.
+Na przykład, załóżmy chcemy, aby użytkownik będzie mógł używać **Otwórz** pozycja **pliku** menu, aby wybrać folder. Ponieważ chcemy, żeby było to funkcja całej aplikacji, a nie tylko zapewniają okna lub elementu interfejsu użytkownika, którą zamierzamy dodać kod do obsługi tego delegata naszej aplikacji.
 
 W **konsoli rozwiązania**, kliknij dwukrotnie `AppDelegate.CS` plik, aby otworzyć do edycji:
 
-![Wybieranie delegata aplikacji](menu-images/appmenu08.png "wybranie delegata aplikacji")
+![Wybieranie delegata aplikacji](menu-images/appmenu08.png "wybierając delegata aplikacji")
 
 Dodaj następujący kod poniżej `DidFinishLaunching` metody:
 
@@ -199,34 +199,34 @@ Teraz uruchom aplikację teraz i Otwórz **pliku** menu:
 
 ![Menu Plik](menu-images/appmenu09.png "menu Plik")
 
-Zwróć uwagę, że **Otwórz** element menu jest teraz włączony. Jeśli mamy zaznacz go, pojawi się okno dialogowe Otwórz:
+Należy zauważyć, że **Otwórz** element menu jest teraz włączony. Jeśli wybieramy ją pojawi się okno dialogowe Otwórz:
 
-![Otwórz okno dialogowe](menu-images/appmenu10.png "Otwórz okno dialogowe")
+![Otwórz okno dialogowe](menu-images/appmenu10.png "otwarte okna dialogowe")
 
-Po kliknięciu pozycji **Otwórz** przycisku, zostanie wyświetlony komunikat z naszych alertu:
+Po kliknięciu **Otwórz** przycisku, zostanie wyświetlony komunikat z naszych alertu:
 
-![Przykład komunikatu dialogu](menu-images/appmenu11.png "przykładowy komunikat okna dialogowego")
+![Przykładowy komunikat okna dialogowego](menu-images/appmenu11.png "przykładowy komunikat okna dialogowego")
 
-W tym miejscu wiersz klucza została `[Export ("openDocument:")]`, informuje o tym, `NSMenu` który naszych **AppDelegate** ma metodę `void OpenDialog (NSObject sender)` który odpowiada na `openDocument:` akcji. Jeśli zapamiętania z powyższych **Otwórz** element menu jest automatycznie przewodowej zestawienia z tej akcji domyślny konstruktor interfejsu:
+Tutaj wiersz klucza została `[Export ("openDocument:")]`, informuje `NSMenu` , nasze **elemencie AppDelegate** ma metodę `void OpenDialog (NSObject sender)` który odpowiada na `openDocument:` akcji. Jeśli zapamiętasz z powyższych **Otwórz** element menu jest automatycznie przewodowej w usłudze tej akcji w programu Interface Builder domyślnie:
 
-[![Wyświetlanie dołączonych akcje](menu-images/defaultbar03.png "wyświetlanie dołączonych akcje")](menu-images/defaultbar03-large.png#lightbox)
+[![Wyświetlanie akcji dołączone](menu-images/defaultbar03.png "wyświetlanie akcji dołączone")](menu-images/defaultbar03-large.png#lightbox)
 
-Następny Przyjrzyjmy się tworzenie własnej menu, elementy menu i akcje i odpowiada do nich w kodzie.
+Dalej Przyjrzyjmy się reagowanie i tworzenie własnych menu, elementy menu i działań do nich w kodzie.
 
-### <a name="working-with-the-open-recent-menu"></a>Praca z menu ostatnie Otwórz
+### <a name="working-with-the-open-recent-menu"></a>Praca z otwartym menu ostatnie
 
-Domyślnie **pliku** zawiera menu **Otwórz ostatni** elementu, który przechowuje informacje o ostatnich kilka pliki otwierane z aplikacją. Jeśli tworzysz `NSDocument` na podstawie Xamarin.Mac aplikacji, to menu będzie zostać obsłużone automatycznie. Dla aplikacji Xamarin.Mac innego typu będzie odpowiedzialny za zarządzanie i reagowanie na ten element menu ręcznie.
+Domyślnie **pliku** menu zawiera **Otwórz ostatni** elementu, który śledzi kilka plików, otwierane z aplikacją. Jeśli tworzysz `NSDocument` na podstawie aplikacji rozszerzenia Xamarin.Mac, to menu będzie obsługiwane dla Ciebie automatycznie. Dla aplikacji rozszerzenia Xamarin.Mac innego typu będzie odpowiedzialny za zarządzanie i reagowanie na ten element menu ręcznie.
 
-Aby ręcznie obsługi **Otwórz ostatni** menu, musisz najpierw informują o tym że nowy plik został otwarty lub zapisany przy użyciu następujących:
+Aby ręcznie śledzić **Otwórz ostatni** menu, należy najpierw go poinformować, że nowy plik został otwarty lub zapisać za pomocą następujących:
 
 ```csharp
 // Add document to the Open Recent menu
 NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 ```
 
-Mimo że aplikacja nie używa `NSDocuments`, nadal używać `NSDocumentController` do obsługi **Otwórz ostatni** menu, wysyłając `NSUrl` lokalizację pliku do `NoteNewRecentDocumentURL` metody `SharedDocumentController`.
+Mimo że aplikacja nie używa `NSDocuments`, nadal używać `NSDocumentController` do utrzymania **Otwórz ostatni** menu, wysyłając `NSUrl` lokalizację pliku do `NoteNewRecentDocumentURL` metody `SharedDocumentController`.
 
-Następnie należy zastąpić `OpenFile` metody delegata aplikacji do otwierania plików użytkownik wybiera z **Otwórz ostatnie** menu. Na przykład:
+Następnie należy zastąpić `OpenFile` metody delegata aplikacji, aby otworzyć dowolny plik, który użytkownik wybiera z **Otwórz ostatnio** menu. Na przykład:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -242,22 +242,22 @@ public override bool OpenFile (NSApplication sender, string filename)
 }
 ```
 
-Zwraca `true` przypadku plik może być otwarty, przeciwnym razie zwraca `false` i wbudowane ostrzeżenie będzie widoczny dla użytkownika, że nie można otworzyć pliku.
+Zwróć `true` Jeśli plik może być otwarty, inne zwrócić `false` wbudowanych ostrzeżenie pojawi się do użytkownika, że nie można otworzyć pliku.
 
-Ponieważ nazwa pliku i ścieżka zwrócona z **Otwórz ostatni** menu może zawierać spacji, musimy poprawnie ten znak ucieczki przed utworzeniem `NSUrl` lub firma Microsoft będzie wyświetlany komunikat o błędzie. Przejdziemy następującym kodem:
+Ponieważ nazwa pliku i ścieżka zwróciło **Otwórz ostatni** menu może zawierać spacji, musimy prawidłowo ten znak ucieczki przed utworzeniem `NSUrl` lub firma Microsoft otrzymają komunikat o błędzie. Czynność tę możemy wykonać przy użyciu następującego kodu:
 
 ```csharp
 filename = filename.Replace (" ", "%20");
 ```
 
-Na koniec Utwórz `NSUrl` wskazującego do pliku i użyj metody pomocnika w aplikacji przekazać Otwórz nowe okno i załaduj plik do niej:
+Na koniec utworzymy `NSUrl` wskazującego na plik i użyj metody pomocnika w aplikacji delegować Otwórz nowe okno i ładowania pliku:
 
 ```csharp
 var url = new NSUrl ("file://"+filename);
 return OpenFile(url);
 ```
 
-Do scalenia wszystko, Spójrzmy na przykład implementacja **AppDelegate.cs** pliku:
+Ściągać wszystko ze sobą, Spójrzmy na przykład implementacji w **AppDelegate.cs** pliku:
 
 ```csharp
 using AppKit;
@@ -374,9 +374,9 @@ namespace MacHyperlink
 }
 ```
 
-Na podstawie wymagań aplikacji, nie możesz użytkownika do otwarcia tego samego pliku w więcej niż jedno okno w tym samym czasie. W naszym przykładową aplikację, jeśli użytkownik wybierze pliku, który jest już otwarty (albo z **Otwórz ostatnie** lub **Otwórz...** elementy menu), okna zawierającego plik jest przeniesiony do przodu.
+Na podstawie wymagań aplikacji, nie można użytkownika, aby otworzyć ten sam plik w więcej niż jedno okno, w tym samym czasie. W naszym przykładową aplikację, jeśli użytkownik wybierze otwartego pliku (z **Otwórz ostatnio** lub **Otwórz...** elementy menu), okno, który zawiera plik przekazywane są do przodu.
 
-W tym celu użyliśmy następującego kodu w naszym metody pomocniczej:
+Aby to osiągnąć, użyliśmy następujący kod w naszym metody pomocniczej:
 
 ```csharp
 var path = url.Path;
@@ -392,13 +392,13 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-Firma Microsoft zaprojektowane naszych `ViewController` klasy utrzymującej ścieżkę do pliku w jego `Path` właściwości. Następnie Pętla przez wszystkie aktualnie otwarte okna w aplikacji. Jeśli plik jest już otwarty w jednym z systemu windows, zostanie przywrócony na początku wszystkich okien przy użyciu:
+Został zaprojektowany naszych `ViewController` klasy utrzymującej ścieżkę do pliku w jego `Path` właściwości. Następnie możemy w pętli poprzez wszystkie aktualnie otwarte okna w aplikacji. Jeśli plik jest otwarty w jednym z systemu windows, wprowadzeniem ich do przodu wszystkich okien przy użyciu:
 
 ```csharp
 NSApplication.SharedApplication.Windows[n].MakeKeyAndOrderFront(this);
 ```
 
-Jeśli nie znaleziono, nowe okno jest otwarty z plikiem załadowane i plik jest odnotowany w **Otwórz ostatni** menu:
+Jeśli nie zostanie znalezione dopasowanie, nowe okno jest otwierany przy użyciu pliku załadowane, a plik jest zapisany w **Otwórz ostatni** menu:
 
 ```csharp
 // Get new window
@@ -421,11 +421,11 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 <a name="Working-with-Custom-Window-Actions" />
 
-### <a name="working-with-custom-window-actions"></a>Praca z działań niestandardowych okien
+### <a name="working-with-custom-window-actions"></a>Praca z akcje niestandardowe okno
 
-Podobnie jak wbudowane **pierwszy obiekt odpowiadający w trybie** akcje, które zostały wstępnie przewodowej elementów menu standardowego, możesz utworzyć nowe, akcje niestandardowe i okablować ich do elementów menu w Konstruktorze interfejsu.
+Podobnie jak w przypadku wbudowanych **pierwszy obiekt odpowiadający w trybie** akcje, które zaczynają wstępnie przewodowej elementów menu standardowego, możesz utworzyć nowe, niestandardowe akcje i powiązać je z elementami menu w programu Interface Builder.
 
-Najpierw należy zdefiniować niestandardowej akcji na jednym z kontrolerów okna aplikacji. Na przykład:
+Najpierw zdefiniuj akcję niestandardową na jednym z kontrolerów okna aplikacji. Na przykład:
 
 ```csharp
 [Action("defineKeyword:")]
@@ -435,23 +435,23 @@ public void defineKeyword (NSObject sender) {
 }
 ```
 
-Następnie kliknij dwukrotnie plik scenorysu aplikacji w **konsoli rozwiązania** go otworzyć do edycji w środowisku Xcode do konstruktora interfejsu. Wybierz **pierwszy obiekt odpowiadający w trybie** w obszarze **sceny aplikacji**, następnie przejdź do **inspektora atrybutów**:
+Następnie kliknij dwukrotnie plik scenorysu aplikacji w **konsoli rozwiązania** aby go otworzyć do edycji w programie Xcode zachowania programu Interface Builder. Wybierz **pierwszy obiekt odpowiadający w trybie** w obszarze **sceny aplikacji**, przełącz się do **Inspektor atrybuty**:
 
-![Atrybuty inspektora](menu-images/action01.png "inspektora atrybutów")
+![Inspektor atrybuty](menu-images/action01.png "Inspektor atrybutów")
 
-Kliknij przycisk **+** przycisk w dolnej części **inspektora atrybuty** do dodania nowych akcji niestandardowej:
+Kliknij przycisk **+** znajdujący się u dołu **Inspektor atrybuty** można dodać nowej akcji niestandardowej:
 
 ![Dodawanie nowej akcji](menu-images/action02.png "Dodawanie nowej akcji")
 
-Nadaj taką samą nazwę jak utworzony na kontrolerze okna akcji niestandardowej:
+Nadaj mu taką samą nazwę jak akcja niestandardowa, który został utworzony na kontrolerze okna:
 
-![Edytowanie nazwy akcji](menu-images/action03.png "edycji nazwy akcji")
+![Edytowanie nazwy akcji](menu-images/action03.png "edytowanie nazwy akcji")
 
-Formant kliknij i przeciągnij od elementu menu **pierwszy obiekt odpowiadający w trybie** w obszarze **sceny aplikacji**. Na liście podręcznym zaznacz nową akcję właśnie utworzony (`defineKeyword:` w tym przykładzie):
+Klawisz Control, kliknij i przeciągnij od elementu menu, aby **pierwszy obiekt odpowiadający w trybie** w obszarze **sceny aplikacji**. Na liście podręcznym zaznacz nową akcję właśnie utworzony (`defineKeyword:` w tym przykładzie):
 
-![Dołączanie akcji](menu-images/action04.png "Dołączanie akcji")
+![Dołączanie akcję](menu-images/action04.png "dołączanie akcję")
 
-Zapisz zmiany do scenorysu i wróć do programu Visual Studio for Mac zsynchronizować zmiany. Po uruchomieniu aplikacji element menu, która połączona Akcja niestandardowa w celu zostanie automatycznie być włączone/wyłączone (na podstawie okna z akcją okna) i wybraniu elementu menu będzie wyzwalać poza akcji:
+Zapisz zmiany do scenorysu i wróć do programu Visual Studio dla komputerów Mac zsynchronizować zmiany. Po uruchomieniu aplikacji, element menu, która połączona Akcja niestandardowa kończy się zostanie automatycznie być włączone/wyłączone (na podstawie okna przy użyciu akcji jest otwierany) i wybierając element menu będzie wyzwolić akcję:
 
 [![Testowanie nowej akcji](menu-images/action05.png "testowanie nowej akcji")](menu-images/action05-large.png#lightbox)
 
@@ -459,87 +459,87 @@ Zapisz zmiany do scenorysu i wróć do programu Visual Studio for Mac zsynchroni
 
 ### <a name="adding-editing-and-deleting-menus"></a>Dodawanie, edytowanie i usuwanie menu
 
-Jak możemy jak już wspomniano w poprzedniej sekcji, aplikacja Xamarin.Mac zawiera wstępnie ustawiony numer domyślny menu i elementów menu, które automatycznie aktywować i odpowiadać na określonych formantów interfejsu użytkownika. Zaobserwowano również sposób dodawania kodu do naszej aplikacji, która będzie także włączyć i odpowiadać na te elementy domyślne.
+Jak zauważono w poprzednich sekcjach, aplikacja platformy Xamarin.Mac zawiera szereg wstępnie zdefiniowanych domyślnych menu i elementy menu, które określonych kontrolek interfejsu użytkownika automatycznie zostanie uaktywniony i reagowanie na. Zaobserwowaliśmy również sposób dodawania kodu do naszej aplikacji, która będzie również włączyć i odpowiadać na następujące domyślne elementy.
 
-W tej sekcji zajmiemy usuwanie elementów menu, które nie są nam potrzebne, reorganizacja menu i dodawanie nowych menu, elementy menu i akcje.
+W tej sekcji omówimy usunięcie elementów menu, które nie są nam potrzebne, reorganizowanie menu i dodając nowe menu, elementy menu i akcji.
 
-Kliknij dwukrotnie **Main.storyboard** w pliku **konsoli rozwiązania** go otworzyć do edycji:
+Kliknij dwukrotnie **Main.storyboard** w pliku **konsoli rozwiązania** aby go otworzyć do edycji:
 
-[![Edytowanie interfejsu użytkownika w środowisku Xcode](menu-images/maint01.png "edycji interfejsu użytkownika w środowisku Xcode")](menu-images/maint01-large.png#lightbox)
+[![Edytowanie interfejsu użytkownika w środowisku Xcode](menu-images/maint01.png "edytowania interfejsu użytkownika w środowisku Xcode")](menu-images/maint01-large.png#lightbox)
 
-Dla określonej aplikacji Xamarin.Mac nie zamierzamy się przy użyciu domyślnego **widoku** menu tak zamierzamy go usunąć. W **hierarchii interfejsów** wybierz **widoku** element menu, który jest częścią na pasku menu głównym:
+Dla określonych aplikacji platformy Xamarin.Mac nie zamierzamy się przy użyciu domyślnego **widoku** menu, więc użyjemy go usunąć. W **hierarchii interfejsów** wybierz **widoku** element menu, który jest częścią główny pasek menu:
 
-![Wybranie elementu menu Widok](menu-images/maint02.png "wybraniu elementu menu Widok")
+![Wybieranie elementu menu widoku](menu-images/maint02.png "wybraniu elementu menu Widok")
 
-Naciśnij klawisz delete lub backspace do usunięcia z menu. Następnie firma Microsoft nie mają być używane wszystkie elementy w **Format** menu i my chcesz przenieść elementy, firma Microsoft będzie używany limit z menu podrzędne. W **hierarchii interfejsów** wybierz następujące pozycje menu:
+Naciśnij klawisz delete lub backspace, aby usunąć menu. Następnie nie będziemy korzystać z wszystkich elementów w **Format** menu i chcesz przenieść elementy są użyjemy limit jest dostępna z podmenu. W **hierarchii interfejsów** wybierz menu z następującymi elementami:
 
 ![Wyróżnianie wielu elementów](menu-images/maint03.png "wyróżnianie wielu elementów")
 
-Przeciągnij elementy podrzędne nadrzędnego **Menu** podmenu gdy aktualnie są:
+Przeciągnij elementy podrzędne obiektu nadrzędnego **Menu** podmenu, gdy aktualnie są one:
 
 [![Przeciąganie elementów menu do menu nadrzędnego](menu-images/maint04.png "przeciąganie elementów menu do menu nadrzędnego")](menu-images/maint04-large.png#lightbox)
 
-Z menu powinna wyglądać tak jak:
+Menu powinna teraz wyglądać podobnie jak:
 
 [![Elementy w nowej lokalizacji](menu-images/maint05.png "elementów w nowej lokalizacji")](menu-images/maint05-large.png#lightbox)
 
-Dalej umożliwia przeciągnij **tekst** podmenu się zgodnie z **Format** menu i umieścić go na pasku menu głównego między **Format** i **okna** menu:
+Dalej przeciągnijmy **tekstu** podmenu się z pod **Format** menu i umieścić go na pasku menu głównego między **Format** i **okna** menu:
 
-[![Menu tekst](menu-images/maint06.png "tekst menu")](menu-images/maint06-large.png#lightbox)
+[![Z menu tekstowym](menu-images/maint06.png "tekst menu")](menu-images/maint06-large.png#lightbox)
 
-Przejdźmy pod **Format** menu i Usuń **czcionki** elementu podmenu. Następnie wybierz pozycję **Format** menu i zmień jego nazwę na "Font":
+Przejdź wstecz w obszarze **Format** menu i Usuń **czcionki** elementu podmenu. Następnie wybierz pozycję **Format** menu i zmień jego nazwę na "Czcionki":
 
 [![Menu Czcionka](menu-images/maint07.png "menu Czcionka")](menu-images/maint07-large.png#lightbox)
 
-Następnie utwórz niestandardowe menu predefine wyrażeń, które automatycznie zostanie uzyskać dołączany na tekst w widoku tekstu po jej wybraniu. W polu wyszukiwania w dół na **inspektora biblioteki** typu "menu". Ułatwi znajdowanie i pracy z wszystkich elementów menu interfejsu użytkownika:
+Następnie utwórz niestandardowe menu predefine fraz, które automatycznie będą Pobierz dołączany do tekstu w widoku tekstu po jej wybraniu. W polu wyszukiwania w dolnej części okna **Inspektor biblioteki** typu w menu typu"." Ułatwi znajdowanie i pracować z wszystkich elementów interfejsu użytkownika w menu:
 
-![Biblioteka inspektora](menu-images/maint08.png "inspektora biblioteki")
+![Inspektor biblioteki](menu-images/maint08.png "Inspektor biblioteki")
 
-Teraz załóżmy wykonaj następujące polecenie, aby utworzyć naszych menu:
+Teraz wykonajmy następujące polecenie, aby utworzyć nasze menu:
 
-1. Przeciągnij **element Menu** z **inspektora biblioteki** na pasku menu między **tekst** i **okna** menu: 
+1. Przeciągnij **element Menu** z **Inspektor biblioteki** na pasku menu między **tekstu** i **okna** menu: 
 
-    ![Wybranie nowego elementu menu w bibliotece](menu-images/maint10.png "wybranie nowego elementu menu w bibliotece")
+    ![Wybieranie nowego elementu menu w bibliotece](menu-images/maint10.png "wybierając nowy element menu w bibliotece")
 2. Zmień nazwę elementu "Frazy": 
 
-    [![Ustawienie nazwy menu](menu-images/maint09.png "ustawienie nazwy menu")](menu-images/maint09-large.png#lightbox)
-3. Następnie przeciągnij **Menu** z **inspektora biblioteki**: 
+    [![Ustawianie nazwy menu](menu-images/maint09.png "Nazwa menu Ustawienia")](menu-images/maint09-large.png#lightbox)
+3. Następnie przeciągnij **Menu** z **Inspektor biblioteki**: 
 
-    ![Wybranie menu z biblioteki](menu-images/maint11.png "wybierając menu z biblioteki")
-4. Następnie upuścić **Menu** na nowym **element Menu** możemy właśnie utworzony i zmień jego nazwę na "Frazy": 
+    ![Wybierając menu z biblioteki](menu-images/maint11.png "wybierając menu z biblioteki")
+4. Następnie upuść **Menu** na nowym **element Menu** możemy po prostu utworzyć i zmienić jego nazwę na "Frazy": 
 
-    [![Edytowanie nazwy menu](menu-images/maint12.png "zmiany jego nazwy menu")](menu-images/maint12-large.png#lightbox)
-5. Teraz możemy zmienić trzy domyślne **elementów Menu** "Address", "Date" i "Pozdrowienia": 
+    [![Edytowanie nazwy menu](menu-images/maint12.png "edytowanie nazwy menu")](menu-images/maint12-large.png#lightbox)
+5. Teraz Zmieńmy nazwy trzech domyślnych **elementów Menu** "Address", "Data" i "Pozdrowienia": 
 
-    [![Menu fraz](menu-images/maint13.png "fraz menu")](menu-images/maint13-large.png#lightbox)
-6. Dodajmy czwarty **element Menu** przeciągając **element Menu** z **inspektora biblioteki** i wywoływanie jej "Podpisu": 
+    [![Menu fraz](menu-images/maint13.png "menu fraz")](menu-images/maint13-large.png#lightbox)
+6. Dodajmy czwarty **element Menu** , przeciągając **element Menu** z **Inspektor biblioteki** i wywołując ją "Podpis": 
 
-    [![Nazwa elementu menu Edycja](menu-images/maint14.png "edycji Nazwa elementu menu")](menu-images/maint14-large.png#lightbox)
-7. Zapisać zmiany na pasku menu.
+    [![Edytowanie nazwy elementu menu](menu-images/maint14.png "edytowanie nazwy elementu menu")](menu-images/maint14-large.png#lightbox)
+7. Zapisz zmiany na pasku menu.
 
-Teraz Utwórzmy działań niestandardowych, dzięki czemu nasze nowe elementy menu są widoczne dla kodu C#. W środowisku Xcode umożliwia przełączanie do **Asystenta** widoku:
+Teraz Utwórzmy działań niestandardowych, dzięki czemu nasze nowe elementy menu są widoczne dla kodu C#. W środowisku Xcode przejdźmy do **Asystenta** widoku:
 
-[![Tworzenie wymagane akcje](menu-images/maint15.png "tworzenie wymagane akcje")](menu-images/maint15-large.png#lightbox)
+[![Tworzenie wymaganych działań](menu-images/maint15.png "tworzenia wymaganych działań")](menu-images/maint15-large.png#lightbox)
 
 Teraz należy wykonać następujące czynności:
 
-1. Przeciągnij formant z **adres** elementu menu **AppDelegate.h** pliku.
+1. Przeciągnij formant z **adres** element menu, aby **AppDelegate.h** pliku.
 2. Przełącznik **połączenia** typ **akcji**: 
 
     [![Wybranie typu akcji](menu-images/maint17.png "wybranie typu akcji")](menu-images/maint17-large.png#lightbox)
 3. Wprowadź **nazwa** "phraseAddress" i naciśnij klawisz **Connect** przycisk, aby utworzyć nową akcję: 
 
     [![Konfigurowanie akcji](menu-images/maint18.png "Konfigurowanie akcji")](menu-images/maint18-large.png#lightbox)
-4. Powtórz powyższe kroki dla **data**, **pozdrowienia**, i **podpisu** elementów menu: 
+4. Powtórz powyższe kroki dla **data**, **pozdrowienia**, i **podpisu** elementy menu: 
 
-    [![Ukończonych akcji](menu-images/maint19.png "ukończonych akcji")](menu-images/maint19-large.png#lightbox)
-5. Zapisać zmiany na pasku menu.
+    [![Ukończone akcje](menu-images/maint19.png "ukończonych akcji")](menu-images/maint19-large.png#lightbox)
+5. Zapisz zmiany na pasku menu.
 
-Następnie należy utworzyć gniazda dla naszych widoku tekstu tak, aby firma Microsoft może dostosować zawartość z kodu. Wybierz **ViewController.h** w pliku **Edytor Asystenta** i utworzenie nowego punktu sprzedaży o nazwie `documentText`:
+Dalej, musimy utworzyć gniazda dla naszych widoku tekstu, dzięki czemu będziemy mogli dostosować jego zawartość z kodu. Wybierz **ViewController.h** w pliku **edytora Asystenta** i utworzyć nowego punktu sprzedaży, o nazwie `documentText`:
 
-[![Tworzenie gniazda](menu-images/maint20.png "Tworzenie gniazda")](menu-images/maint20-large.png#lightbox)
+[![Tworzenie ujścia](menu-images/maint20.png "Tworzenie gniazda")](menu-images/maint20-large.png#lightbox)
 
-Wróć do programu Visual Studio for Mac zsynchronizować zmiany z Xcode. Następnie Edytuj **ViewController.cs** pliku i zapewnić ich wyglądać następująco:
+Wróć do programu Visual Studio dla komputerów Mac zsynchronizować zmiany z narzędzia Xcode. Następnie Edytuj **ViewController.cs** plików i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using System;
@@ -606,7 +606,7 @@ namespace MacMenus
 }
 ```
 
-Udostępnia to tekst naszych widoku tekstu poza `ViewController` klasy i informuje o delegata aplikacji, gdy okno uzyskuje lub utraci fokus. Teraz edytować **AppDelegate.cs** pliku i zapewnić ich wyglądać następująco:
+Udostępnia to tekst naszych widoku tekstu poza `ViewController` klasy i informuje delegata aplikacji, gdy okno zyskuje lub traci fokus. Teraz edytować **AppDelegate.cs** plików i przypisz ją wyglądać podobnie do następującego:
 
 ```csharp
 using AppKit;
@@ -682,7 +682,7 @@ namespace MacMenus
 }
 ```
 
-W tym miejscu wprowadziliśmy `AppDelegate` częściowym klasy, dzięki czemu możemy użyć akcji i gniazda, zdefiniowane w Konstruktorze interfejsu. Możemy również ujawniać `textEditor` do śledzenia, które okno jest aktualnie fokus.
+W tym miejscu wprowadziliśmy `AppDelegate` częściowe klasy, dzięki czemu możemy użyć akcji i gniazd, zdefiniowanych w programu Interface Builder. Możemy także ujawniać `textEditor` do śledzenia, które okno jest obecnie w trybie koncentracji uwagi.
 
 Następujące metody są używane do obsługi naszych elementy menu i menu niestandardowe:
 
@@ -712,17 +712,17 @@ partial void phrasesSignature (Foundation.NSObject sender) {
 }
 ```
 
-Teraz, jeśli możemy uruchomić aplikację, wszystkie elementy w **frazy** menu będzie aktywny i doda podać hasło do widoku tekstu, w przypadku wybrania:
+Teraz, jeśli możemy uruchomić aplikację, wszystkie elementy w **frazy** menu zostanie uaktywniona i doda frazy zapewniają do widoku tekstu w przypadku wybrania:
 
-![Przykładem aplikacji uruchomionej](menu-images/maint21.png "Przykładem aplikacji")
+![Przykładem jest uruchomiona aplikacja](menu-images/maint21.png "przykładem jest uruchomiona aplikacja")
 
-Teraz, gdy mamy podstawy pracy z paska menu aplikacji w dół, Przyjrzyjmy się tworzenie niestandardowych menu kontekstowego.
+Teraz, gdy mamy już podstawowe informacje dotyczące pracy z paska menu aplikacji w dół, Przyjrzyjmy się tworzenie niestandardowego menu kontekstowego.
 
 ### <a name="creating-menus-from-code"></a>Tworzenie menu z kodu
 
-Oprócz tworzenia menu i elementów menu z konstruktora interfejsu w programie Xcode, może być razy, gdy aplikacja Xamarin.Mac potrzebuje do tworzenia, modyfikowania lub usuwania menu, podmenu lub elementu menu z kodu.
+Oprócz tworzenia menu i elementów menu za pomocą program Xcode Interface Builder, może być czasy, kiedy aplikacji rozszerzenia Xamarin.Mac musi utworzyć, zmodyfikować lub usunąć menu, podmenu lub elementu menu z kodu.
 
-W poniższym przykładzie utworzono klasę do przechowywania informacji o elementów menu i podmenu, które będzie można dynamicznie utworzyć na bieżąco:
+W poniższym przykładzie utworzono klasę zawierającą informacje na temat elementów menu i podmenu, które zostaną dynamiczne utworzone na bieżąco:
 
 ```csharp
 using System;
@@ -771,9 +771,9 @@ namespace AppKit.TextKit.Formatter
 }
 ```
 
-#### <a name="adding-menus-and-items"></a>Dodawanie menu i elementy
+#### <a name="adding-menus-and-items"></a>Dodawanie menu i elementów
 
-Z tą klasą zdefiniowane następujące procedury będzie analizować Kolekcja `LanguageFormatCommand`obiektów i rekursywnie tworzenia nowego menu i elementów menu przez dodanie ich do dolnej części istniejącego menu (utworzone w Konstruktorze interfejsu), który został przekazany w:
+Za pomocą tej klasy jest zdefiniowany, następujące procedury będzie analizować zbiór `LanguageFormatCommand`obiektów i rekursywnie tworzyć nowe menu i menu, dodając je do dołu istniejącego menu (utworzonym w programu Interface Builder), który został przekazany w:
 
 ```csharp
 private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
@@ -805,26 +805,26 @@ private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
 }
 ``` 
 
-Dla każdego `LanguageFormatCommand` obiektu, który ma pusty `Title` właściwości, ta procedura powoduje utworzenie **element menu separatora** (cienkich szara linia) między menu sekcje:
+Dla każdego `LanguageFormatCommand` obiekt, który ma puste `Title` właściwość ta procedura tworzy **element menu Separator** (cienkich szara linia) między sekcjami menu:
 
 ```csharp
 menuItem = NSMenuItem.SeparatorItem;
 ```
 
-Jeśli podany tytuł jest tworzony nowy element menu z tym tytułem:
+Jeśli tytuł zostanie podany, zostanie utworzony nowy element menu z tego tytułu:
 
 ```csharp
 menuItem = new NSMenuItem (command.Title);
 ``` 
 
-Jeśli `LanguageFormatCommand` obiekt zawiera podrzędny `LanguageFormatCommand` obiekty podmenu jest tworzony i `AssembleMenu` metoda jest rekursywnie wywołuje budować tego menu:
+Jeśli `LanguageFormatCommand` obiekt zawiera podrzędny `LanguageFormatCommand` obiektów, w menu podrzędne jest tworzony i `AssembleMenu` metodą jest cyklicznie, wywoływana w celu skompilowania menu:
 
 ```csharp
 menuItem.Submenu = new NSMenu (command.Title);
 AssembleMenu (menuItem.Submenu, command.SubCommands);
 ```
 
-Dla dowolnego nowego elementu menu, który nie ma podmenu kod został dodany do obsługi elementu menu wybierane przez użytkownika:
+Dla każdego nowego elementu menu, niezawierający podmenu kod zostanie dodany do obsługi elementu menu, zostaną wybrane przez użytkownika:
 
 ```csharp
 menuItem.Activated += (sender, e) => {
@@ -835,7 +835,7 @@ menuItem.Activated += (sender, e) => {
 
 #### <a name="testing-the-menu-creation"></a>Testowanie tworzenie menu
 
-Biorąc pod uwagę powyżej kodu w miejscu Jeśli po pobraniu `LanguageFormatCommand` obiekty zostały utworzone:
+W przypadku wszystkich powyższych kodu w miejscu Jeśli z następującą kolekcją `LanguageFormatCommand` obiekty zostały utworzone:
 
 ```csharp
 // Define formatting commands
@@ -865,15 +865,15 @@ FormattingCommands.Add(new LanguageFormatCommand("Image","![]("-")"));
 FormattingCommands.Add(new LanguageFormatCommand("Image Link","[ ![]("-")](linkimagehere/index.md)"));
 ```
 
-I że kolekcji przekazywane do `AssembleMenu` — funkcja (z **Format** Menu ustawić jako podstawa), może zostać utworzone następujące menu dynamiczne i elementów menu:
+I że kolekcji przekazane do `AssembleMenu` — funkcja (przy użyciu **Format** Menu ustawiony jako podstawy), zostałyby utworzone elementy menu i menu dynamiczne z następujących:
 
-![Nowych elementów menu w uruchomionej aplikacji](menu-images/dynamic01.png "nowych elementów menu w uruchomionej aplikacji")
+![Nowe elementy menu w działającej aplikacji](menu-images/dynamic01.png "nowych elementów menu w działającej aplikacji")
 
-#### <a name="removing-menus-and-items"></a>Usuwanie menu i elementy
+#### <a name="removing-menus-and-items"></a>Usuwanie menu i elementów
 
-Jeśli musisz usunąć element menu lub menu z interfejsu użytkownika aplikacji, możesz użyć `RemoveItemAt` metody `NSMenu` klasy po prostu przez nadanie mu od zera na podstawie indeks elementu do usunięcia.
+Jeśli musisz usunąć element menu lub menu z interfejsu użytkownika aplikacji, możesz użyć `RemoveItemAt` metody `NSMenu` klasy po prostu polega na przekazaniu mu zero na podstawie indeks elementu do usunięcia.
 
-Na przykład aby usunąć menu i menu elementy utworzone przez powyższej procedury, można użyć poniższego kodu:
+Na przykład aby usunąć menu i menu elementy utworzone przez powyższe procedury, można użyć następującego kodu:
 
 ```csharp
 public void UnpopulateFormattingMenu(NSMenu menu) {
@@ -885,47 +885,47 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 }
 ```
 
-W przypadku kodu powyżej pierwsze cztery menu elementów są tworzone w konstruktora interfejsu i aways dostępne w aplikacji w programie Xcode, więc nie są usuwane dynamicznie.
+W przypadku powyższego kodu elementy: pierwsze cztery menu są tworzone w program Xcode Interface Builder i aways dostępnych w aplikacji, dzięki czemu nie są usuwane dynamicznie.
 
 <a name="Contextual_Menus" />
 
 ## <a name="contextual-menus"></a>Menu kontekstowe
 
-Menu kontekstowe są wyświetlane, gdy użytkownik kliknie prawym przyciskiem myszy lub kliknięcia formantu elementu w oknie. Domyślnie kilka elementów interfejsu użytkownika, wbudowane w system macOS już mieć menu kontekstowe dołączony do ich (na przykład widoku tekstu). Jednak może być razy, gdy chcemy, aby utworzyć własne niestandardowe menu kontekstowe dla elementu interfejsu użytkownika, które dodano do okna.
+Menu kontekstowe pojawiają się, gdy użytkownik kliknie prawym przyciskiem myszy lub kontroli kliknięć element w oknie. Domyślnie kilka elementów interfejsu użytkownika, wbudowane w system macOS już ma menu kontekstowych dołączonych do nich (na przykład widoku tekstu). Jednak może być czasy, kiedy chcemy utworzyć własne niestandardowe menu kontekstowe dla elementu interfejsu użytkownika, który dodano do okna.
 
-Umożliwia edytowanie naszych **Main.storyboard** w środowisku Xcode i Dodaj **okna** okno naszych projekt ustawić jej **klasy** do "NSPanel" w **tożsamości inspektora**, Dodaj nową **Asystenta** elementu do **okna** menu i dołączenie go do nowego przy użyciu okna **Pokaż Segue**:
+Umożliwia edytowanie naszych **Main.storyboard** pliku w programie Xcode i Dodaj **okna** okna, aby nasz projekt, ustaw jego **klasy** do "NSPanel" w **Inspektor tożsamości**, Dodaj nowy **Asystenta** elementu do **okna** menu i dołączyć go do nowego przy użyciu okna **Pokaż Segue**:
 
-[![Ustawienie typu segue](menu-images/context01.png "segue typ ustawienia")](menu-images/context01-large.png#lightbox)
+[![Ustawianie typu segue](menu-images/context01.png "typ segue ustawienia")](menu-images/context01-large.png#lightbox)
 
 Teraz należy wykonać następujące czynności:
 
-1. Przeciągnij **etykiety** z **inspektora biblioteki** na **panelu** okna i Ustaw tekst w nim "Właściwości": 
+1. Przeciągnij **etykiety** z **Inspektor biblioteki** na **panelu** okna i ustaw ich tekst "Property": 
 
-    [![Edytowanie etykiety wartość](menu-images/context03.png "edycji wartości etykiety")](menu-images/context03-large.png#lightbox)
-2. Następnie przeciągnij **Menu** z **inspektora biblioteki** na kontroler widoku w widoku hierarchii i elementy menu domyślne zmiany nazwy trzech **dokumentu**, **tekstu**  i **czcionki**:
+    [![Edytowanie wartości etykiety](menu-images/context03.png "edycji wartości etykiety")](menu-images/context03-large.png#lightbox)
+2. Następnie przeciągnij **Menu** z **Inspektor biblioteki** na kontroler widoku Wyświetl hierarchię i zmiany nazwy trzy domyślne menu elementy **dokumentu**, **tekstu**  i **czcionki**:
 
     [![Elementy menu wymagane](menu-images/context02.png "elementów menu wymagane")](menu-images/context02-large.png#lightbox)
-3. Teraz kontrolki przeciągania z **etykiety właściwości** na **Menu**:
+3. Teraz formant podczas przeciągania z **etykieta właściwości** na **Menu**:
 
     [![Przeciąganie, aby utworzyć segue](menu-images/context04.png "przeciąganie, aby utworzyć segue")](menu-images/context04-large.png#lightbox)
 4. W oknie podręcznym wybierz **Menu**: 
 
-    ![Ustawienie typu segue](menu-images/context05.png "segue typ ustawienia")
-5. Z **inspektora tożsamości**, ustaw kontroler widoku klasy "PanelViewController": 
+    ![Ustawianie typu segue](menu-images/context05.png "typ segue ustawienia")
+5. Z **Inspektor tożsamości**, ustaw kontroler widoku klasy "PanelViewController": 
 
-    [![Ustawienie klasy segue](menu-images/context10.png "ustawienie klasy segue")](menu-images/context10-large.png#lightbox)
-6. Wrócić do programu Visual Studio dla komputerów Mac do synchronizacji, a następnie wróć do konstruktora interfejsu.
-7. Przełącz się do **Edytor Asystenta** i wybierz **PanelViewController.h** pliku.
-8. Utwórz działanie dla **dokumentu** wywołuje element menu `propertyDocument`: 
+    [![Klasa segue ustawień](menu-images/context10.png "klasa segue ustawień")](menu-images/context10-large.png#lightbox)
+6. Przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizowania, a następnie wróć do programu Interface Builder.
+7. Przełącz się do **edytora Asystenta** i wybierz **PanelViewController.h** pliku.
+8. Utwórz akcję dla **dokumentu** element menu o nazwie `propertyDocument`: 
 
     [![Konfigurowanie akcji](menu-images/context06.png "Konfigurowanie akcji")](menu-images/context06-large.png#lightbox)
-9. Powtórz tworzenia akcji dla pozostałych elementów menu: 
+9. Powtórz czynności tworzenia dla pozostałych elementów menu: 
 
     [![Wymagane akcje](menu-images/context07.png "wymagane akcje")](menu-images/context07-large.png#lightbox)
-10. Na koniec Utwórz gniazda dla **etykiety właściwości** o nazwie `propertyLabel`: 
+10. Na koniec Utwórz sposobu wykorzystania **etykieta właściwości** o nazwie `propertyLabel`: 
 
-    [![Konfigurowanie gniazda](menu-images/context08.png "Konfigurowanie gniazda")](menu-images/context08-large.png#lightbox)
-11. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+    [![Konfigurowanie ujścia](menu-images/context08.png "Konfigurowanie ujścia")](menu-images/context08-large.png#lightbox)
+11. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
 Edytuj **PanelViewController.cs** pliku i Dodaj następujący kod:
 
@@ -943,17 +943,17 @@ partial void propertyText (Foundation.NSObject sender) {
 }
 ```
 
-Teraz możemy uruchomić aplikację, kliknij prawym przyciskiem myszy na etykiecie właściwości w panelu możemy zostanie wyświetlone menu kontekstowe naszych niestandardowe. Jeśli firma Microsoft wybierz i elementu menu zostanie zmieniona wartość etykiety:
+Teraz możemy uruchomić aplikację, kliknij prawym przyciskiem myszy na etykiecie właściwości w panelu zobaczymy naszych niestandardowego menu kontekstowego. Jeśli zaznaczysz i element menu, zostanie zmieniona wartość etykiety:
 
-![Menu kontekstowe systemem](menu-images/context09.png "menu kontekstowe uruchomiona")
+![Menu kontekstowe uruchamiania](menu-images/context09.png "menu kontekstowe uruchamiania")
 
-Następny Przyjrzyjmy się tworzenie menu paska stanu.
+Dalej Przyjrzyjmy się tworzenie menu paska stanu.
 
 ## <a name="status-bar-menus"></a>Menu paska stanu
 
-Menu paska stanu wyświetlany kolekcji elementów menu stanie, zapewniające interakcji z lub opinii użytkowników, takich jak menu lub obraz odzwierciedlające stan aplikacji. Menu na pasku stanu aplikacji jest włączone i aktywne nawet wtedy, gdy aplikacja jest uruchomiona w tle. Pasek stanu systemowe znajduje się po prawej stronie paska menu, aplikacji i jest obecnie dostępna w macOS tylko paska stanu.
+Menu paska stanu wyświetlania zbiór elementów menu stanu, które zapewniają interakcji z lub opinii do użytkownika, takich jak menu lub obraz odzwierciedlający stanu aplikacji. Menu na pasku stanu aplikacji jest włączone i aktywne, nawet wtedy, gdy aplikacja jest uruchomiona w tle. Na pasku stanu całego systemu znajduje się po prawej stronie paska menu aplikacji i jest obecnie dostępna w systemie macOS tylko pasek stanu.
 
-Umożliwia edytowanie naszych **AppDelegate.cs** plików i upewnij `DidFinishLaunching` wygląd metody podobne do poniższych:
+Umożliwia edytowanie naszych **AppDelegate.cs** pliku i upewnij `DidFinishLaunching` wygląd metoda podobne do następującego:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -992,90 +992,90 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` daje dostęp do paska stanu całego systemu. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` Tworzy nowy element paska stanu. Z tego miejsca możemy utworzyć menu i liczbę elementów menu i Dołącz menu do element paska stanu, które właśnie utworzyliśmy. 
+`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` daje nam dostęp do pasku stanu całego systemu. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` Tworzy nowy element paska stanu. W tym miejscu utworzymy menu i liczbę elementów menu i dołączanie menu na element paska stanu, który właśnie utworzyliśmy. 
 
-Jeśli możemy uruchomić aplikację, zostanie wyświetlony nowy element paska stanu. Wybranie elementu z menu zmieni się tekst w widoku tekstu: 
+Jeśli możemy uruchomić aplikację, zostanie wyświetlony nowy element paska stanu. Zaznaczenie elementu menu zmiany tekstu w widoku tekstu: 
 
-![Menu na pasku stanu systemem](menu-images/statusbar01.png "systemem menu paska stanu")
+![Menu na pasku stanu uruchamiania](menu-images/statusbar01.png "menu na pasku stanu uruchamiania")
 
-Następnie Przyjrzyjmy się tworzenie niestandardowych dokowania elementów menu.
+Następnie Przyjrzyjmy się tworzenie dock niestandardowych elementów menu.
 
-## <a name="custom-dock-menus"></a>Menu niestandardowe doku.
+## <a name="custom-dock-menus"></a>Zadokuj niestandardowego menu
 
-Menu dokowania pojawia się w aplikacji dla komputerów Mac, gdy użytkownik kliknie prawym przyciskiem myszy lub kliknięcia formantu ikonę aplikacji w doku:
+Zadokowanie menu pojawia się w aplikacji dla komputerów Mac, gdy użytkownik kliknie prawym przyciskiem myszy lub kontroli — kliknięcia ikony aplikacji w docku:
 
-![Niestandardowy dock menu](menu-images/dock01.png "niestandardowego dokowanie menu")
+![Niestandardowy zadokować menu](menu-images/dock01.png "niestandardowego zadokować menu")
 
-Umożliwia tworzenie menu dokowania niestandardowe dla aplikacji w następujący sposób:
+Utworzymy niestandardowy zadokowanie menu dla naszej aplikacji, wykonując następujące czynności:
 
-1. W programie Visual Studio for Mac, kliknij prawym przyciskiem myszy projekt i wybierz aplikacji **Dodaj** > **nowego pliku...** W oknie dialogowym Nowy plik wybierz **Xamarin.Mac** > **pusta definicja interfejsu**, użyj "DockMenu" dla **nazwa** i kliknij przycisk **nowy**  przycisk, aby utworzyć nowy **DockMenu.xib** pliku:
+1. W programie Visual Studio dla komputerów Mac, kliknij prawym przyciskiem myszy projekt aplikacji i wybierz pozycję **Dodaj** > **nowy plik...** Okno dialogowe Nowy plik, zaznacz **Xamarin.Mac** > **pustą definicję interfejsu**, na użytek "DockMenu" **nazwa** i kliknij przycisk **New**  przycisk, aby utworzyć nowy **DockMenu.xib** pliku:
 
-    ![Dodawanie pusta definicja interfejsu](menu-images/dock02.png "Dodawanie pusta definicja interfejsu")
+    ![Pusta definicja interfejsu dodanie](menu-images/dock02.png "Dodawanie pusta definicja interfejsu")
 2. W **konsoli rozwiązania**, kliknij dwukrotnie **DockMenu.xib** plik, aby otworzyć do edycji w środowisku Xcode. Utwórz nową **Menu** z następującymi elementami: **adres**, **data**, **pozdrowienia**, i **podpisu** 
 
     [![Układ interfejsu użytkownika](menu-images/dock03.png "układ interfejsu użytkownika")](menu-images/dock03-large.png#lightbox)
-3. Następnie możemy nawiązać połączenia z naszych nowych elementów menu istniejące działania utworzonymi dla naszego menu niestandardowe w [Dodawanie, edytowanie i usuwanie menu](#Adding,_Editing_and_Deleting_Menus) powyższej sekcji. Przełącz się do **inspektora połączenia** i wybierz **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów**. Przewiń w dół i Znajdź `phraseAddress:` akcji. Przeciągnij linię z okręgu tego działania **adres** element menu:
+3. Następnie połącz nasze nowe elementy menu do naszej istniejącej akcji, które utworzyliśmy dla naszych niestandardowego menu w [Dodawanie, edytowanie i usuwanie menu](#Adding,_Editing_and_Deleting_Menus) powyższej sekcji. Przełącz się do **Inspektor połączenia** i wybierz **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów**. Przewiń w dół i Znajdź `phraseAddress:` akcji. Przeciągnij linię od koła na tę akcję, aby **adres** element menu:
 
-    [![Przeciąganie można przewodowo działaniami](menu-images/dock04.png "przeciąganie można przewodowo działaniami")](menu-images/dock04-large.png#lightbox)
-4. Powtórz dla wszystkich innych elementów menu dołączać do ich odpowiednich akcji: 
+    [![Przeciągając przewodowy działania](menu-images/dock04.png "przeciągając przewodowy działania")](menu-images/dock04-large.png#lightbox)
+4. Powtórz dla wszystkich innych elementów menu dołączanie ich do ich odpowiednich akcji: 
 
     [![Wymagane akcje](menu-images/dock05.png "wymagane akcje")](menu-images/dock05-large.png#lightbox)
-5. Następnie wybierz pozycję **aplikacji** w **hierarchii interfejsów**. W **inspektora połączenia**, przeciągnij linię z okręgu `dockMenu` gniazda do menu właśnie utworzyliśmy:
+5. Następnie wybierz pozycję **aplikacji** w **hierarchii interfejsów**. W **Inspektor połączenia**, przeciągnij linię od koła `dockMenu` gniazda do menu, którą właśnie utworzyliśmy:
 
-    [![Przeciąganie zachowuje się gniazda](menu-images/dock06.png "przeciąganie zachowuje się gniazda")](menu-images/dock06-large.png#lightbox)
-6. Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
+    [![Przeciąganie przewodowy się ujścia](menu-images/dock06.png "przeciąganie przewodowy się ujścia")](menu-images/dock06-large.png#lightbox)
+6. Zapisz zmiany i przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 7. Kliknij dwukrotnie **Info.plist** plik, aby otworzyć do edycji: 
 
-    [![Edytowanie pliku Info.plist](menu-images/dock07.png "edytowania pliku Info.plist")](menu-images/dock07-large.png#lightbox)
-8. Kliknij przycisk **źródła** u dołu ekranu: 
+    [![Edytowanie pliku Info.plist](menu-images/dock07.png "edycji pliku Info.plist")](menu-images/dock07-large.png#lightbox)
+8. Kliknij przycisk **źródła** karta w dolnej części ekranu: 
 
-    [![Wybranie widoku źródła](menu-images/dock08.png "wybraniu widoku źródła")](menu-images/dock08-large.png#lightbox)
-9. Kliknij przycisk **Dodaj nowy wpis**kliknij zielony oraz przycisk, ustaw nazwę właściwości, aby "AppleDockMenu" i wartością "DockMenu" (nazwa naszego nowego pliku .xib bez rozszerzenia): 
+    [![Widok źródła z wybraniu](menu-images/dock08.png "wybraniu widoku źródła")](menu-images/dock08-large.png#lightbox)
+9. Kliknij przycisk **Dodaj nowy wpis**kliknij zielony przycisk ze znakiem plus, ustaw nazwę właściwości, aby "AppleDockMenu" i wartość "DockMenu" (nazwa nasz nowy plik .pliki bez rozszerzenia): 
 
-    [![Dodawanie elementu DockMenu](menu-images/dock09.png "Dodawanie elementu DockMenu")](menu-images/dock09-large.png#lightbox)
+    [![Dodawanie elementu DockMenu](menu-images/dock09.png "dodawania elementu DockMenu")](menu-images/dock09-large.png#lightbox)
 
-Teraz możemy uruchomić aplikację, kliknij prawym przyciskiem myszy odpowiednią ikonę w doku naszych nowych elementów menu zostanie wyświetlony:
+Teraz możemy uruchomić aplikację, kliknij prawym przyciskiem myszy jego ikonę w obszarze Dock zostanie wyświetlony nasze nowe elementy menu:
 
-![Przykład menu dokowania systemem](menu-images/dock10.png "przykładem menu dokowania uruchomiona")
+![Przykładem zadokowanie menu uruchamiania](menu-images/dock10.png "przykładem zadokowanie menu uruchamiania")
 
-Jeśli firma Microsoft wybierz jeden z niestandardowych elementów z menu tekst w naszym widoku tekstu zostaną zmodyfikowane.
+Wybranie jednego z niestandardowych elementów menu, tekst w naszym widoku tekstu zostaną zmodyfikowane.
 
 <a name="Pop-up_Menus_and_Pull-Down_Lists" />
 
-## <a name="pop-up-button-and-pull-down-lists"></a>Przycisk wyskakujących i listy rozwijane
+## <a name="pop-up-button-and-pull-down-lists"></a>Przycisk podręczne i listy rozwijane
 
-Przycisk wyskakujących Wyświetla wybrany element i wyświetla listę opcji wyboru po kliknięciu przez użytkownika. Listy rozwijane to typ przycisku wyskakujących zwykle służy do wybierania polecenia specyficzne dla kontekstu bieżącego zadania. Jednocześnie może występować w dowolnym miejscu w oknie.
+Przycisk wyskakującego Wyświetla wybrany element i wyświetla listę opcji, które można wybierać po kliknięciu przez użytkownika. Listy rozwijane jest rodzajem przycisku wyskakujące, zwykle służy do wybierania poleceń specyficznych dla kontekstu bieżącego zadania. Jednocześnie może występować w dowolnym miejscu w oknie.
 
-Utwórz niestandardowy przycisk wyskakującego dla aplikacji w następujący sposób:
+Utwórz niestandardowy przycisk podręczne dla naszej aplikacji, wykonując następujące czynności:
 
-1. Edytuj **Main.storyboard** pliku w programie Xcode i przeciągnij **przycisk menu podręczne** z **inspektora biblioteki** na **panelu** utworzyliśmy w oknie [menu kontekstowe](#Contextual_Menus) sekcji: 
+1. Edytuj **Main.storyboard** pliku w programie Xcode, a następnie przeciągnij **przycisk menu podręczne** z **Inspektor biblioteki** na **panelu** utworzonych w oknie [menu kontekstowe](#Contextual_Menus) sekcji: 
 
     [![Dodawanie przycisku menu podręczne](menu-images/popup01.png "Dodawanie przycisku menu podręczne")](menu-images/popup01-large.png#lightbox)
-2. Dodaj nowy element menu i ustaw tytuły elementy w menu podręcznym do: **adres**, **data**, **pozdrowienia**, i **podpisu** 
+2. Dodaj nowy element menu i ustaw tytułów elementów w menu podręcznym do: **adres**, **data**, **pozdrowienia**, i **podpisu** 
 
-    [![Konfigurowanie elementów menu](menu-images/popup02.png "Konfigurowanie elementy menu")](menu-images/popup02-large.png#lightbox)
-3. Następnie możemy nawiązać połączenia z naszych nowych elementów menu Akcje istniejącego utworzonymi dla naszego menu niestandardowe w [Dodawanie, edytowanie i usuwanie menu](#Adding,_Editing_and_Deleting_Menus) powyższej sekcji. Przełącz się do **inspektora połączenia** i wybierz **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów**. Przewiń w dół i Znajdź `phraseAddress:` akcji. Przeciągnij linię z okręgu tego działania **adres** element menu: 
+    [![Konfigurowanie elementów menu](menu-images/popup02.png "konfigurowania elementów menu")](menu-images/popup02-large.png#lightbox)
+3. Następnie połącz nasze nowe elementy menu do istniejącego akcji, które utworzyliśmy dla naszych niestandardowego menu w [Dodawanie, edytowanie i usuwanie menu](#Adding,_Editing_and_Deleting_Menus) powyższej sekcji. Przełącz się do **Inspektor połączenia** i wybierz **pierwszy obiekt odpowiadający w trybie** w **hierarchii interfejsów**. Przewiń w dół i Znajdź `phraseAddress:` akcji. Przeciągnij linię od koła na tę akcję, aby **adres** element menu: 
 
-    [![Przeciąganie można przewodowo działaniami](menu-images/popup03.png "przeciąganie można przewodowo działaniami")](menu-images/popup03-large.png#lightbox)
-4. Powtórz dla wszystkich innych elementów menu dołączać do ich odpowiednich akcji: 
+    [![Przeciągając przewodowy działania](menu-images/popup03.png "przeciągając przewodowy działania")](menu-images/popup03-large.png#lightbox)
+4. Powtórz dla wszystkich innych elementów menu dołączanie ich do ich odpowiednich akcji: 
 
     [![Wszystkie wymagane akcje](menu-images/popup04.png "wszystkie wymagane akcje")](menu-images/popup04-large.png#lightbox)
-5. Zapisz zmiany i wrócić do programu Visual Studio for Mac synchronizację w programie Xcode.
+5. Zapisz zmiany i przejdź z powrotem do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Teraz możemy uruchomić aplikację, wybierz element z menu podręcznego ulegnie zmianie tekstu w naszym widoku tekstu:
+Teraz możemy uruchomić aplikację, wybierz element z menu podręcznego ulegną zmianie tekstu w naszym widoku tekstu:
 
-![Przykład podręcznego systemem](menu-images/popup05.png "przykładem podręcznego uruchomiona")
+![Przykład przedstawiający wyskakujące okienko z systemem](menu-images/popup05.png "przykład przedstawiający wyskakujące okienko z systemem")
 
-Można tworzyć i pracować z listy rozwijane w dokładnie sam sposób jak przyciski podręczne. Zamiast dołączanie do istniejących działań, można utworzyć własne niestandardowe akcje tak samo, jak robiliśmy dla naszych menu kontekstowego w [menu kontekstowe](#Contextual_Menus) sekcji.
+Można tworzyć i pracować z listy rozwijane w dokładnie taki sam sposób jak przyciski wyskakujących. Zamiast dołączanie do istniejącej akcji, można utworzyć własne niestandardowe akcje, tak samo, jak robiliśmy nasze menu kontekstowe w [menu kontekstowe](#Contextual_Menus) sekcji.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowe przyjrzeć się praca z menu i elementów menu w aplikacji Xamarin.Mac. Najpierw paska menu aplikacji, możemy zbadane, a następnie analizujemy tworzenie menu kontekstowe, następnie możemy zbadać stan paska menu i niestandardowe dock menu. Ponadto firma Microsoft objęte menu podręcznego i listy rozwijane.
+W tym artykule jest zajęta szczegółowe omówienie pracy z menu i elementów menu w aplikacji platformy Xamarin.Mac. Najpierw zbadaliśmy aplikacji w pasku menu, a następnie tworzenie menu kontekstowe przyjrzeliśmy się obok zbadaliśmy menu paska stanu i niestandardowe zadokować menu. Na koniec pokrótce informacje omówione wyskakujących menu i listy rozwijane.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [MacMenus (przykład)](https://developer.xamarin.com/samples/mac/MacMenus/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
-- [Human Interface Guidelines — menu](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/)
-- [Wprowadzenie do menu aplikacji i listy wyskakujących](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MenuList/MenuList.html)
+- [Wskazówki dotyczące interfejsu — menu](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/)
+- [Wprowadzenie do menu aplikacji i wyskakujących list](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MenuList/MenuList.html)

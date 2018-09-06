@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/14/2017
-ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2017
+ms.openlocfilehash: b3166aa440cbe2981d597771b360373fadc6451b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830416"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780672"
 ---
 # <a name="xamarin-live-player-app"></a>Aplikacja Xamarin Live Player
 
@@ -19,17 +19,17 @@ ms.locfileid: "38830416"
 
 Po zainstalowaniu aplikacji na telefonie, postępuj zgodnie z [instrukcje instalacji](~/tools/live-player/install.md) połączyć się z komputera. Wypróbuj jedną z [przykładowe aplikacje](~/tools/live-player/samples.md) Aby przygotować go do pracy.
 
-Uruchamianie aplikacji Xamarin Live Player wygląda w następujący sposób (w systemach iOS i Android odpowiednio):
+Uruchamianie aplikacji Xamarin Live Player wygląda następująco:
 
-![Live Player zrzut ekranu z aplikacji dla systemu iOS](player-images/app-iphone-sml.png) ![Zrzut ekranu na żywo odtwarzacza systemu Android przez aplikację](player-images/app-android-sml.png)
+![Zrzut ekranu na żywo odtwarzacza systemu Android przez aplikację](player-images/app-android-sml.png)
 
 Po naciśnięciu klawisza **parowania z programu Visual Studio**, używanie aparatu do skanowania kodu kreskowego przedstawiający na komputerze:
 
-![Zrzut ekranu przedstawiający skanera kodów kreskowych z systemem iOS](player-images/scan-iphone-sml.png) ![Zrzut ekranu przedstawiający skanera kodów kreskowych dla systemu Android](player-images/scan-android-sml.png)
+![Zrzut ekranu przedstawiający skanera kodów kreskowych dla systemu Android](player-images/scan-android-sml.png)
 
 Jeśli połączenie zostanie nawiązane, powinien zostać uruchomiony kod na urządzeniu niemal natychmiast (takie jak [przykład Kalkulator](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![Przykładowa aplikacja Kalkulator działające na urządzeniu](player-images/basic-calculator-iphone-sml.png)
+![Przykładowa aplikacja Kalkulator działające na urządzeniu](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>Opcje
 
@@ -51,7 +51,7 @@ Wyświetl dzienniki do diagnozowania problemów.
 
 ## <a name="managing-devices"></a>Zarządzanie urządzeniami
 
-Aby połączyć urządzenie po raz pierwszy, postępuj zgodnie z instrukcjami [wymagania dotyczące instalacji](~/tools/live-player/install.md). Można skojarzyć wiele urządzeń (na przykład iOS i Android) i zarządzać nimi za pomocą środowiska IDE.
+Aby połączyć urządzenie po raz pierwszy, postępuj zgodnie z instrukcjami [wymagania dotyczące instalacji](~/tools/live-player/install.md). Można skojarzyć wiele urządzeń i zarządzanie nimi za pomocą środowiska IDE.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

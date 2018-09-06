@@ -1,54 +1,55 @@
 ---
-title: Xamarin Player na żywo dla platformy Xamarin.Forms
-description: W tym dokumencie omówiono Xamarin Live Player dla platformy Xamarin.Forms opisujące instalacji, aplikacja odtwarzacza Live Xamarin, próbek do użycia odtwarzacz Xamarin na żywo, ograniczenia i rozwiązywania problemów.
+title: Program Xamarin Live Player dla platformy Xamarin.Forms
+description: W tym dokumencie omówiono aplikacji Xamarin Live Player dla platformy Xamarin.Forms, zawierająca opis instalacji, aplikacja Xamarin Live Player, próbek do użycia przy użyciu aplikacji Xamarin Live Player, ograniczenia i rozwiązywanie problemów.
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 79cf2c790789963189d3eedd6645a6b6ae6503b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2017
+ms.openlocfilehash: c719e273d03b898984393c6be555f603a122ad4b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793141"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780567"
 ---
-# <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin Player na żywo dla platformy Xamarin.Forms
+# <a name="xamarin-live-player-for-xamarinforms"></a>Program Xamarin Live Player dla platformy Xamarin.Forms
 
-Odtwarzacz Live Xamarin ułatwia szybkie wprowadzenie do rozwoju platformy Xamarin.Forms przy uczenia aplikacji mobilnych, które można sprawdzić na urządzeniu z systemem Android lub iOS. Wykonywania kodu w aplikacji platformy Xamarin Player na żywo — nie jest konieczne konfigurowanie emulatory lub wdrażanie kodu przy użyciu kabli! Aby rozpocząć, pobrać Xamarin Live Player sparowaniu jej dla programu Visual Studio i wdrażanie kodu i testowanie aplikacji. 
+Aplikacja Xamarin Live Player ułatwia wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms dzięki informacjom o tworzenie aplikacji mobilnych, które można przetestować na urządzeniu z systemem Android. Aby rozpocząć pracę, Pobierz program Xamarin Live Player, Sparuj go do programu Visual Studio, Wdróż swój kod i przetestować aplikację.
 
-Xamarin Live Player została zaprojektowana jako wprowadzającym piaskownicy dla deweloperów można pobrać swoje pomysły szybko wizualizowane na urządzeniu. Ponieważ kod źródłowy jest interpretowany może osiągnąć [ograniczenia](limitations.md) po czasu i konieczność pełni Kompilowanie aplikacji dla urządzenia lub emulatora.
+Xamarin Live Player (wersja zapoznawcza) jest zaprojektowana jako wprowadzenie do piaskownicy dla deweloperów uzyskać swoje pomysły ułatwić szybką wizualizację na urządzeniu. Ponieważ kod źródłowy jest interpretowany może osiągnąć [ograniczenia](limitations.md) po czasu i konieczności pełni Kompilowanie aplikacji dla urządzenia lub emulatora.
 
-## <a name="get-started-with-xamarin-live-player"></a>Wprowadzenie do platformy Xamarin Player na żywo
+![Funkcja w wersji zapoznawczej](~/media/shared/preview.png)
 
-[![Xamarin Player na żywo: Kodu, skanowania testu](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+## <a name="get-started-with-xamarin-live-player"></a>Wprowadzenie do aplikacji Xamarin Live Player
 
-1. Pobierz aplikację, wykonując [Instalatora Xamarin Live Player](install.md) instrukcje.
-2. Włącz *Xamarin Live Player* w **preferencje**, następnie wybierz urządzenie z **urządzeń** listy.
-2. Zarządzanie urządzeniami Player na żywo do Zeskanuj kod QR, aby skojarzyć urządzenia do programu Visual Studio.
-3. Aplikacja jest uruchamiana w prawo na swój telefon lub tablet.
+[![Program Xamarin Live Player: Kodu, skanowanie testu](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-## <a name="xamarin-live-player-setupinstallmd"></a>[Ustawienia odtwarzacza Live Xamarin](install.md)
+1. Pobierz aplikację wykonując [instalacji Xamarin Live Player](install.md) instrukcje.
+2. Włącz *aplikacji Xamarin Live Player* w **preferencje**, następnie wybierz urządzenie z **urządzeń** listy.
+3. Zarządzanie urządzeniami Live Player do skanowania kodu QR, aby sparować urządzenie do programu Visual Studio.
+4. Aplikacja jest uruchamiana bezpośrednio na telefonie lub tablecie.
 
-Pobierz Xamarin Live Player i skonfiguruj środowiskiem IDE w celu używania go z aplikacji platformy Xamarin.Forms 2017 usługi Visual Studio lub Visual Studio dla komputerów Mac. 
+## <a name="xamarin-live-player-setupinstallmd"></a>[Instalacji Xamarin Live Player](install.md)
+
+Pobierz program Xamarin Live Player i skonfiguruj swoje środowisko IDE z niej korzystać aplikacje Xamarin.Forms z programu Visual Studio 2017 lub Visual Studio dla komputerów Mac. 
 
 ## <a name="xamarin-live-player-appplayermd"></a>[Aplikacja Xamarin Live Player](player.md)
 
 Za pomocą platformy Xamarin Live Player aplikacji.
 
-## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[Przykłady próby odtwarzacz Xamarin na żywo](samples.md)
+## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[Przykłady, aby wypróbować przy użyciu aplikacji Xamarin Live Player](samples.md)
 
-Łącza do próbek do użycia w aplikacji platformy Xamarin Player na żywo.
+Zawiera łącza do przykładów do użycia w aplikacji Xamarin Live Player.
 
 ## <a name="limitationslimitationsmd"></a>[Ograniczenia](limitations.md)
 
-Xamarin Live Player ma pewne ograniczenia na jakie funkcje może obsługiwać.
+Jakie funkcje może obsługiwać aplikacji Xamarin Live Player ma pewne ograniczenia.
 
 ## <a name="troubleshootingtroubleshootingmd"></a>[Rozwiązywanie problemów](troubleshooting.md)
 
-Znaleźć pomoc w razie wystąpienia problemów.
+Jeśli wystąpi problem, należy znaleźć Pomoc.
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [wpis w blogu](https://blog.xamarin.com/live-player/)
-- [Przykłady na żywo Player Xamarin](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Przykłady aplikacji Xamarin Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

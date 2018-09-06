@@ -1,7 +1,7 @@
 ||Zalecane|Uwagi|
 |---|---|---|
-|**System operacyjny**|macOS Sierra|Minimalna wymagana wersja to system macOS Sierra (10.12)|
-|**Xamarin.iOS**|iOS 11 SDK|IOS, który jest dostarczany z Xcode 9|
-|**Xamarin.Android**|System android 6.0 / interfejsu API na poziomie 23|Nadal można wskazać starszych wersji systemu Android przy użyciu najnowszej wersji zestawu SDK lub w razie potrzeby można utworzyć przed starsze wersje zestawu SDK.|
-|**Xamarin.Forms**||<ul><li>Aplikacje platformy Xamarin.Forms macOS mogą obejmować projektów dla systemu iOS, Android i macOS, powyżej wymaganiom zestawu SDK.</li><li>Projekty platformy Xamarin.Forms dla systemu Windows/platformy uniwersalnej systemu Windows nie może być wbudowane w system macOS.</li></ul>|
-|**Xamarin.Mac**|Zestaw SDK systemu OS X El Capitan (10.11)|Zestaw SDK El Capitan OS X jest dostarczany z Xcode 7.2; System macOS zestawów SDK są dostarczane z Xcode 8.|
+|**System operacyjny**|Wysoki z systemem MacOS Sierra|[Xcode 9](https://developer.apple.com/library/archive/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876) wymaga systemu macOS High Sierra lub nowszym.|
+|**Xamarin.iOS**|System iOS 11 SDK|System iOS 11 SDK jest dostarczany z [Xcode 9](https://developer.apple.com/library/archive/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)|
+|**Xamarin.Android**|System android 6.0 / interfejsu API na poziomie 23|Nadal można kierować starsze wersje systemu Android przy użyciu najnowszy zestaw SDK lub tworzyć względem starsze wersje zestawu SDK, jeśli jest to wymagane.|
+|**Xamarin.Forms**||<ul><li>Aplikacje Xamarin.Forms skompilowane w systemie macOS może zawierać projektów dla systemu iOS, Android i macOS, z zastrzeżeniem powyższe wymagania zestawu SDK.</li><li>Nie można utworzyć zestawu narzędzi Xamarin.Forms projektów dla Windows/platformy uniwersalnej systemu Windows w systemie macOS.</li></ul>|
+|**Xamarin.Mac**|System macOS High Sierra (10.13) zestawu SDK|System macOS High Sierra (10.13) zestawu SDK jest dostarczany z [Xcode 9](https://developer.apple.com/library/archive/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876) i jest wymagany do tworzenia aplikacji korzystających z najnowszych interfejsów API dla systemu macOS.|

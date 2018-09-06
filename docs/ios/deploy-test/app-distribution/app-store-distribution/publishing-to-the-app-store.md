@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
-ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
+ms.openlocfilehash: 7560f66acc3a3ea683e75be2ae85f908036e008c
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439177"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780668"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikowanie aplikacji platformy Xamarin.iOS Store aplikacji
 
@@ -121,17 +121,16 @@ Automatyczne konfigurowanie nowe projekty Xamarin.iOS **debugowania** i **wersji
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Z **Eksploratora rozwiązań**, otwórz **Info.plist**. Wybierz **Aprowizacja ręczna**. Zapisz i zamknij plik.
-2. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac.](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-3. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **Eksploratora rozwiązań**, wybierz opcję **właściwości**i przejdź do **kompilacja systemu iOS** kartę.
-4. Ustaw **konfiguracji** do **wersji** i **platformy** do **iPhone**.
-5. Aby skompilować z określonym zestawem SDK systemu iOS, wybierz go z **wersja zestawu SDK** listy. W przeciwnym razie pozostaw tę wartość na **domyślne**.
-6. Łączenie zmniejsza całkowity rozmiar aplikacji przy obcięcie się nieużywany kod. W większości przypadków **zachowanie konsolidatora** należy ustawić wartość domyślną **Połącz tylko zestawy SDK struktury**. W niektórych sytuacjach takich jak podczas korzystania z niektórych bibliotek innych firm, może być konieczne Ustaw tę wartość na **nie łącz** aby upewnić się, wymagane kod nie zostanie usunięta. Aby uzyskać więcej informacji, zobacz [aplikacji Xamarin.iOS łączenie](~/ios/deploy-test/linker.md) przewodnik.
-7. Sprawdź **obrazów PNG zoptymalizować** dodatkowo zmniejszyć rozmiar aplikacji.
-8. Debugowanie nie powinna być włączona, ponieważ spowoduje to, że kompilacja niepotrzebnie.
-9. Dla systemu iOS 11, wybierz jedną z architektury urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat kompilacji dla urządzeń z systemem iOS w 64-bitowych, zobacz **Włączanie 64-bitowych kompilacji dla aplikacji platformy Xamarin.iOS** części [uwagi dotyczące platform 64-32-bitowych](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
-10. Możesz też chcieć użyć **LLVM** kompilatora do kompilowania kodu na mniejsze i szybsze. Jednak ta opcja zwiększa czasy kompilacji.
-11. Odpowiednio do potrzeb swojej aplikacji, możesz również chcieć dostosować typ **wyrzucania elementów bezużytecznych** są używane i skonfigurowane pod kątem **internacjonalizacji**.
+1. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Kliknij prawym przyciskiem myszy **Nazwa projektu** w **Eksploratora rozwiązań**, wybierz opcję **właściwości**.
+3. Przejdź do **kompilacja systemu iOS** kartę i i ustaw **konfiguracji** do **wersji** i **platformy** do **iPhone**.
+4. Aby skompilować z określonym zestawem SDK systemu iOS, wybierz go z **wersja zestawu SDK** listy. W przeciwnym razie pozostaw tę wartość na **domyślne**.
+5. Łączenie zmniejsza całkowity rozmiar aplikacji przy obcięcie się nieużywany kod. W większości przypadków **zachowanie konsolidatora** należy ustawić wartość domyślną **Połącz tylko zestawy SDK struktury**. W niektórych sytuacjach takich jak podczas korzystania z niektórych bibliotek innych firm, może być konieczne Ustaw tę wartość na **nie łącz** aby upewnić się, wymagane kod nie zostanie usunięta. Aby uzyskać więcej informacji, zobacz [aplikacji Xamarin.iOS łączenie](~/ios/deploy-test/linker.md) przewodnik.
+6. Sprawdź **obrazów PNG zoptymalizować** dodatkowo zmniejszyć rozmiar aplikacji.
+7. Debugowanie nie powinna być włączona, ponieważ spowoduje to, że kompilacja niepotrzebnie.
+8. Dla systemu iOS 11, wybierz jedną z architektury urządzenia, które obsługuje **ARM64**. Aby uzyskać więcej informacji na temat kompilacji dla urządzeń z systemem iOS w 64-bitowych, zobacz **Włączanie 64-bitowych kompilacji dla aplikacji platformy Xamarin.iOS** części [uwagi dotyczące platform 64-32-bitowych](~/cross-platform/macios/32-and-64/index.md) dokumentacji.
+9. Możesz też chcieć użyć **LLVM** kompilatora do kompilowania kodu na mniejsze i szybsze. Jednak ta opcja zwiększa czasy kompilacji.
+10. Odpowiednio do potrzeb swojej aplikacji, możesz również chcieć dostosować typ **wyrzucania elementów bezużytecznych** są używane i skonfigurowane pod kątem **internacjonalizacji**.
 
     Po ustawieniu opcji opisanych powyżej, ustawienia kompilacji powinien wyglądać mniej więcej tak:
 
@@ -139,27 +138,26 @@ Automatyczne konfigurowanie nowe projekty Xamarin.iOS **debugowania** i **wersji
 
     Ponadto zapoznaj się z tego [mechanika kompilacji dla systemu iOS](~/ios/deploy-test/ios-build-mechanics.md) przewodniku dalej w tym artykule opisano ustawienia kompilacji.
 
-12. Przejdź do **podpisywanie pakietu systemu iOS** kartę. Jeśli opcje, w tym miejscu nie są edytowalne, upewnij się, że **ręcznego inicjowania obsługi administracyjnej** wybrano **Info.plist** pliku.
-13. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
-14. Ustaw **tożsamość do podpisywania** do **dystrybucja (automatycznie)**.
-15. Dla **profilu aprowizacji**, wybierz pozycję App Store, profil inicjowania obsługi administracyjnej [utworzonego powyżej](#create-and-install-an-app-store-provisioning-profile).
+11. Przejdź do **podpisywanie pakietu systemu iOS** kartę. Upewnij się, że **konfiguracji** jest ustawiona na **wersji**, **platformy** jest ustawiona na **iPhone**oraz że **ręcznego inicjowania obsługi administracyjnej.**  jest zaznaczone.
+12. Ustaw **tożsamość do podpisywania** do **dystrybucja (automatycznie)**.
+13. Dla **profilu aprowizacji**, wybierz pozycję App Store, profil inicjowania obsługi administracyjnej [utworzonego powyżej](#create-and-install-an-app-store-provisioning-profile).
 
     Pakiet projektu, opcje podpisywania powinna teraz wyglądać podobnie do następującej:
 
     ![Ustawienia podpisywanie zbiorów systemu iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "ustawienia podpisywanie zbiorów systemu iOS")
 
-16. Przejdź do **opcje IPA systemu iOS** kartę.
-17. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
-18. Sprawdź **kompilacji iTunes pakiet archiwum (IPA)** pola wyboru. To ustawienie spowoduje, że każdy **wersji** kompilacji (ponieważ jest wybrana konfiguracja), aby wygenerować plik IPA. Ten plik można przesłać do firmy Apple do wydania w Store aplikacji.
+14. Przejdź do **opcje IPA systemu iOS** kartę.
+15. Upewnij się, że **konfiguracji** jest ustawiona na **wersji** i **platformy** ustawiono **iPhone**.
+16. Sprawdź **kompilacji iTunes pakiet archiwum (IPA)** pola wyboru. To ustawienie spowoduje, że każdy **wersji** kompilacji (ponieważ jest wybrana konfiguracja), aby wygenerować plik IPA. Ten plik można przesłać do firmy Apple do wydania w Store aplikacji.
 
     > [!NOTE]
     > **Metadane programu iTunes** i **iTunesArtwork** nie są niezbędne dla wersji App Store. Aby uzyskać więcej informacji, zapoznaj się [plik iTunesMetadata.plist w aplikacji platformy Xamarin.iOS](~/ios/deploy-test/app-distribution/itunesmetadata.md) i [iTunes kompozycji](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
 
-19. Aby określić, nazwa_pliku IPA, która różni się od nazwy projektu Xamarin.iOS, wprowadź go w **nazwy pakietu** pola.
+17. Aby określić, nazwa_pliku IPA, która różni się od nazwy projektu Xamarin.iOS, wprowadź go w **nazwy pakietu** pola.
 
     ![Ustawienia podpisywanie zbiorów systemu iOS](publishing-to-the-app-store-images/ipaOptions-w157.png "ustawienia podpisywanie zbiorów systemu iOS")
 
-20. Zapisz konfigurację kompilacji i zamknij go.
+18. Zapisz konfigurację kompilacji i zamknij go.
 
 -----
 
@@ -237,7 +235,7 @@ Prawidłowo skonfigurowane ustawienia kompilacji i iTunes Connect oczekujące na
 > [!NOTE]
 > Program Visual Studio 2017 nie obsługuje obecnie **archiwum dla publikowania** znaleziono przepływu pracy w programie Visual Studio dla komputerów Mac.
 
-1. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac.](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Upewnij się, że program Visual Studio 2017 został [sparowano z hostem kompilacji Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Wybierz **wersji** z programu Visual Studio 2017 **konfiguracje rozwiązania** listy rozwijanej i **iPhone** z **platformy rozwiązania** Lista rozwijana.
 
     ![Tworzenie konfiguracji i platformy](publishing-to-the-app-store-images/chooseConfig-w157.png "wybór Konfiguracja i platforma kompilacji")
@@ -257,7 +255,7 @@ Prawidłowo skonfigurowane ustawienia kompilacji i iTunes Connect oczekujące na
 7. Zaloguj się w module uruchamiania aplikacji (należy pamiętać, że musisz [utworzyć hasło specyficzny dla aplikacji](https://support.apple.com/ht204397) dla identyfikatora Apple ID).
 8. Wybierz **dostarczanie aplikacji** i kliknij przycisk **wybierz** przycisku:
 
-    ![Wybierz dostarczanie aplikacji ] (publishing-to-the-app-store-images/publishvs01.png "wybierz dostarczanie aplikacji")
+    ![Wybierz dostarczanie aplikacji ](publishing-to-the-app-store-images/publishvs01.png "wybierz dostarczanie aplikacji")
 
 9. Wybierz plik IPA utworzonego powyżej, a następnie kliknij przycisk **OK**.
 10. Program Application Loader, zostanie przeprowadzona Weryfikacja pliku:

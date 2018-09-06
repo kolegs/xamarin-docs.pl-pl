@@ -1,44 +1,44 @@
 ---
-title: Powiązanie danych i kluczy i wartości kodowania w Xamarin.Mac
-description: W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode.
+title: Powiązanie danych i kodowanie klucz wartość platformie Xamarin.Mac
+description: W tym artykule opisano, przy użyciu kodowania i pary klucz wartość, monitorowanie, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w program Xcode Interface Builder pary klucz wartość.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792141"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780630"
 ---
-# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Powiązanie danych i kluczy i wartości kodowania w Xamarin.Mac
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Powiązanie danych i kodowanie klucz wartość platformie Xamarin.Mac
 
-_W tym artykule omówiono przy użyciu kluczy i wartości kodowania i klucz wartość obserwowania, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode._
+_W tym artykule opisano, przy użyciu kodowania i pary klucz wartość, monitorowanie, aby umożliwić wiązanie danych do elementów interfejsu użytkownika w program Xcode Interface Builder pary klucz wartość._
 
 ## <a name="overview"></a>Omówienie
 
-Podczas pracy z C# i .NET w aplikacji Xamarin.Mac, masz dostęp do tej samej wartości klucza kodowania i technik wiązania danych który deweloper pracujący *Objective-C* i *Xcode* jest. Ponieważ Xamarin.Mac integruje się bezpośrednio z Xcode, można użyć w środowisku Xcode _konstruktora interfejsu_ powiązania danych z elementów interfejsu użytkownika zamiast pisania kodu.
+Podczas pracy z C# i .NET w aplikacji platformy Xamarin.Mac, masz dostęp do tego samego kodowanie klucz wartość i technik wiązania danych, deweloper pracujący w *języka Objective-C* i *Xcode* jest. Ponieważ rozszerzenia Xamarin.Mac integruje się bezpośrednio za pomocą edytora Xcode, można użyć program Xcode _programu Interface Builder_ powiązać dane elementów interfejsu użytkownika zamiast pisania kodu.
 
-Przy użyciu kodowania i powiązanie technik w aplikacji Xamarin.Mac danych klucz wartość, można znacznie zmniejszyć ilość kodu, które trzeba zapisać i zachować do wypełnienia i pracować z nimi elementy interfejsu użytkownika. Masz również zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) od z przodu kończyć interfejsu użytkownika (_Model-View-Controller_), prowadzących do łatwiejsze w obsłudze, bardziej elastyczne aplikacji Projekt.
+Przy użyciu kodowania i powiązania danych technik w aplikacji platformy Xamarin.Mac pary klucz wartość, może znacznie skrócić ilość kodu, który trzeba napisać i obsługiwać do wypełniania i pracować z elementami interfejsu użytkownika. Masz także zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) z usługi frontonu zakończenia interfejsu użytkownika (_Model-View-Controller_), prowadzącego do łatwiejsza Obsługa bardziej elastycznych aplikacji Projekt.
 
-[![Przykład uruchomionej aplikacji](databinding-images/intro01.png "przykładem uruchomionej aplikacji")](databinding-images/intro01-large.png#lightbox)
+[![Przykładem uruchomionej aplikacji](databinding-images/intro01.png "przykładem uruchomionej aplikacji")](databinding-images/intro01-large.png#lightbox)
 
-W tym artykule omówione zostaną następujące czynności podstawowe informacje dotyczące pracy z kluczy i wartości kodowania i powiązanie danych w aplikacji Xamarin.Mac. Zdecydowanie zaleca się pracę za pośrednictwem [Hello, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programów Xcode i kompilatora interfejsu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) i [gniazda i akcje](~/mac/get-started/hello-mac.md#Outlets_and_Actions) sekcje, w jakiej omawia kluczowe założenia i techniki, które będzie używana w tym artykule.
+W tym artykule omówiono podstawowe informacje dotyczące pracy z kodowanie klucz wartość i powiązanie danych w aplikacji platformy Xamarin.Mac. Zdecydowanie zalecane jest, pracy za pośrednictwem [Witaj, Mac](~/mac/get-started/hello-mac.md) artykuł najpierw, w szczególności [wprowadzenie do programu Xcode i programu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) i [gniazd i akcje](~/mac/get-started/hello-mac.md#outlets-and-actions) sekcje w postaci, w jakiej omawia kluczowe założenia i technik, które będzie używany w tym artykule.
 
-Może zajść potrzeba Przyjrzyjmy się [udostępnianie klasy języka C# / metody Objective-C](~/mac/internals/how-it-works.md) sekcji [wewnętrzne Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentu również wyjaśniono `Register` i `Export` atrybutów umożliwiają połączenie klas C# do obiektów języka Objective C i interfejsu użytkownika elementy.
+Możesz chcieć spojrzeć na [udostępnianie klasy języka C# / metod języka Objective-C](~/mac/internals/how-it-works.md) części [elementach wewnętrznych rozszerzenia Xamarin.Mac](~/mac/internals/how-it-works.md) dokumentów, jak również wyjaśniono `Register` i `Export` atrybutów Umożliwia podłączanie klas języka C# do języka Objective-C obiektów i interfejsu użytkownika elementów.
 
 <a name="What_is_Key-Value_Coding" />
 
-## <a name="what-is-key-value-coding"></a>Co to jest klucz wartość kodowania
+## <a name="what-is-key-value-coding"></a>Co to jest kodowanie klucz wartość
 
-Klucz wartość kodowania (KVC) to mechanizm służący do uzyskiwania dostępu do właściwości obiektu pośrednio, za pomocą kluczy (specjalnie sformatowana ciągi) do identyfikowania właściwości zamiast dostępu do nich za pośrednictwem zmienne wystąpienia lub metody dostępu (`get/set`). Implementując kluczy i wartości kodowania zgodne metod dostępu do aplikacji Xamarin.Mac, uzyskasz dostęp do innych funkcji macOS (wcześniej znane jako OS X), takich jak obserwowania klucz wartość (KVO), wiązanie danych podstawowych danych, Cocoa powiązania i scriptability.
+Kodowanie klucz wartość (KVC) to mechanizm służący do uzyskiwania dostępu do właściwości obiektu pośrednio, za pomocą klucze (specjalnie sformatowanego ciągi), aby zidentyfikować właściwości zamiast uzyskanie do nich dostępu za pośrednictwem zmienne wystąpienia lub metody dostępu (`get/set`). Wdrażając pary klucz wartość kodowania zgodne metod dostępu do aplikacji platformy Xamarin.Mac, możesz uzyskać dostęp do innych funkcji z systemem macOS (wcześniej znane jako OS X), takich jak obserwowania pary klucz wartość (KVO), wiązanie danych, danych podstawowych, cocoa dla powiązania i scriptability.
 
-Przy użyciu kodowania i powiązanie technik w aplikacji Xamarin.Mac danych klucz wartość, można znacznie zmniejszyć ilość kodu, które trzeba zapisać i zachować do wypełnienia i pracować z nimi elementy interfejsu użytkownika. Masz również zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) od z przodu kończyć interfejsu użytkownika (_Model-View-Controller_), prowadzących do łatwiejsze w obsłudze, bardziej elastyczne aplikacji Projekt. 
+Przy użyciu kodowania i powiązania danych technik w aplikacji platformy Xamarin.Mac pary klucz wartość, może znacznie skrócić ilość kodu, który trzeba napisać i obsługiwać do wypełniania i pracować z elementami interfejsu użytkownika. Masz także zaletą dalsze oddzielenie danych zapasowy (_modelu danych_) z usługi frontonu zakończenia interfejsu użytkownika (_Model-View-Controller_), prowadzącego do łatwiejsza Obsługa bardziej elastycznych aplikacji Projekt. 
 
-Na przykład Przyjrzyjmy się następujące definicji klasy obiektu zgodne KVC:
+Na przykład Przyjrzyjmy się poniższą definicję klasy obiektu zgodne KVC:
 
 ```csharp
 using System;
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-Najpierw `[Register("PersonModel")]` atrybut rejestruje klasę i naraża go na Objective-C. Następnie klasy musi dziedziczyć `NSObject` (lub podklasa klasy, która dziedziczy `NSObject`), spowoduje to dodanie kilka podstawowa metoda umożliwiająca do klasy jako KVC zgodne. Następnie `[Export("Name")]` atrybutu ujawnia `Name` właściwości i definiuje wartości klucza, który później będzie używane do dostępu do właściwości, za pomocą techniki KVC i KVO. 
+Po pierwsze, `[Register("PersonModel")]` atrybut rejestruje klasę i udostępniła je systemowi Objective-C. Następnie trzeba dziedziczyć z klasy `NSObject` (lub podklasa klasy, która dziedziczy `NSObject`), spowoduje to dodanie kilku podstawowa metoda, dzięki czemu do klasy jako KVC zgodne. Następnie `[Export("Name")]` atrybutu ujawnia `Name` właściwości i wartości klucza, który później będzie służyć do dostępu do właściwości przy użyciu techniki KVC i KVO definiuje. 
 
-Finally, aby mogły być obserwowane klucz-wartość zmienia się na wartość właściwości akcesor musi zawijać zmiany jego wartości w `WillChangeValue` i `DidChangeValue` wywołania metody (Określanie tego samego klucza `Export` atrybutu).  Na przykład:
+Na koniec się być obserwowane pary klucz-wartość zmienia się na wartość właściwości metody dostępu należy opakować zmiany jego wartości w `WillChangeValue` i `DidChangeValue` wywołania metody (Określanie tego samego klucza `Export` atrybutu).  Na przykład:
 
 ```csharp
 set {
@@ -80,17 +80,17 @@ set {
 }
 ```
 
-Ten krok jest _bardzo_ ważne dla powiązania danych w środowisku Xcode do konstruktora interfejsu (jak zostanie wyświetlone w dalszej części tego artykułu).
+Ten krok jest _bardzo_ ważne dla powiązania danych w środowisku Xcode użytkownika programu Interface Builder (jak zobaczymy w dalszej części tego artykułu).
 
-Aby uzyskać więcej informacji, zobacz firmy Apple [kluczy i wartości kodowania przewodnik programowania w języku](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html).
+Aby uzyskać więcej informacji, zobacz firmy Apple [pary klucz-wartość kodowania Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html).
 
 ### <a name="keys-and-key-paths"></a>Klucze i ścieżki klucza
 
-A _klucza_ jest ciągiem, który identyfikuje określonych właściwości obiektu. Zazwyczaj klucz odpowiada nazwa metody dostępu kodowania obiektów zgodnego z wartości klucza. Klucze muszą używać kodowanie ASCII, zwykle zaczynać się małą literą i nie może zawierać spacji. Dlatego podane w przykładzie powyżej `Name` będzie wartość klucza `Name` właściwość `PersonModel` klasy. Klucz i nazwa właściwości, które udostępniają nie muszą być takie same, jednak w większości przypadków będą.
+A _klucza_ jest ciągiem, który identyfikuje określone właściwości obiektu. Zazwyczaj klucz odpowiada nazwę metody dostępu w kodowania obiektów zgodnego z pary klucz wartość. Klucze muszą używać kodowanie ASCII, zwykle zaczynać się od małej litery i nie może zawierać białych znaków. Dlatego podana w powyższym przykładzie, `Name` będzie wartość klucza `Name` właściwość `PersonModel` klasy. Klucz i nazwę właściwości, które udostępniają one nie muszą być takie same, jednak w większości przypadków.
 
-A _ścieżka klucza_ jest ciągiem kropka oddzielone kluczy używanych do określania hierarchii właściwości obiektu do przechodzenia. Właściwości pierwszego klucza w sekwencji jest określana względem odbiornika, a każdy klucz kolejnych jest obliczane względem wartości właściwości poprzedniej. W ten sam sposób umożliwia kropkowego przechodzenie przez obiekt i jego właściwości w klasie C#.
+A _ścieżka klucza_ jest ciągiem z dot rozdzielonych klucze używane do określania hierarchię właściwości obiektu, aby przejść. Właściwość pierwszy klucz w sekwencji jest określana względem odbiorcy, a każdy klucz kolejnych jest oceniane względem wartości właściwości poprzedniego. Tak samo jak umożliwia kropkowego przechodzenie przez obiekt i jego właściwości w klasie języka C#.
 
-Na przykład, jeśli zostanie rozwinięty `PersonModel` klasy i dodać `Child` właściwości:
+Na przykład, jeśli zostanie rozwinięte `PersonModel` klasy i dodać `Child` właściwości:
 
 ```csharp
 using System;
@@ -131,35 +131,35 @@ namespace MacDatabinding
 }
 ```
 
-Ścieżka klucza do tego elementu podrzędnego name `self.Child.Name` lub po prostu `Child.Name` (oparte na jak wartości klucza było ono używane).
+Ścieżka klucza do nazwy elementu podrzędnego będzie `self.Child.Name` lub po prostu `Child.Name` (oparte na jak używana była wartość klucza).
 
-### <a name="getting-values-using-key-value-coding"></a>Pobieranie wartości przy użyciu kodowania klucz wartość
+### <a name="getting-values-using-key-value-coding"></a>Pobieranie wartości przy użyciu kodowanie klucz wartość
 
-`ValueForKey` Metoda zwraca wartość dla określonego klucza (jako `NSString`), względnym w stosunku do wystąpienia klasy KVC żądania odbierania. Na przykład jeśli `Person` jest wystąpieniem `PersonModel` klasy zdefiniowanych powyżej:
+`ValueForKey` Metoda zwraca wartość dla określonego klucza (jako `NSString`), względem wystąpienia klasy KVC odbiera żądanie. Na przykład jeśli `Person` jest wystąpieniem `PersonModel` klasy zdefiniowane powyżej:
 
 ```csharp
 // Read value 
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-To spowoduje zwrócenie wartości `Name` właściwości danego wystąpienia `PersonModel`. 
+To zwróci wartość `Name` właściwości dla danego wystąpienia `PersonModel`. 
 
-### <a name="setting-values-using-key-value-coding"></a>Ustawienie wartości przy użyciu kodowania klucz wartość
+### <a name="setting-values-using-key-value-coding"></a>Ustawienie wartości za pomocą kodowanie klucz wartość
 
-Podobnie `SetValueForKey` wartości dla określonego klucza (jako `NSString`), względnym w stosunku do wystąpienia klasy KVC żądania odbierania. Aby ponownie za pomocą wystąpienia `PersonModel` klasy, jak pokazano poniżej:
+Podobnie `SetValueForKey` ustaw wartość dla określonego klucza (jako `NSString`), względem wystąpienia klasy KVC odbiera żądanie. Dlatego ponownie przy użyciu wystąpienia `PersonModel` klasy, jak pokazano poniżej:
 
 ```csharp
 // Write value
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-Czy zmienić wartość `Name` właściwości `Jane Doe`.
+Czy zmienić wartość `Name` właściwość `Jane Doe`.
 
 <a name="Observing_Value_Changes" />
 
-### <a name="observing-value-changes"></a>Obserwowania zmiany wartości
+### <a name="observing-value-changes"></a>Monitorowanie zmian wartości
 
-Przy użyciu kluczy i wartości obserwowania (KVO), można dołączyć obserwatora do określonego klucza klasy zgodne KVC i powiadomić zawsze, gdy wartość dla tego klucza jest modyfikowana (przy użyciu technik KVC lub bezpośredni dostęp do danej właściwości w kodzie języka C#). Na przykład:
+Za pomocą pary klucz wartość obserwowania (KVO), można dołączyć obserwatora do określonego klucza klasy zgodne KVC i powiadomić każdym razem, gdy wartość tego klucza jest modyfikowany (przy użyciu technik KVC lub bezpośredni dostęp do danej właściwości w kodzie języka C#). Na przykład:
 
 ```csharp
 // Watch for the name value changing
@@ -169,19 +169,19 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-Teraz, w dowolnym momencie `Name` właściwość `Person` wystąpienie `PersonModel` klasy jest modyfikowany, nowa wartość jest zapisywany do konsoli. 
+Teraz w dowolnym momencie `Name` właściwość `Person` wystąpienie `PersonModel` klasy został zmodyfikowany, nowa wartość jest zapisywany do konsoli. 
 
-Aby uzyskać więcej informacji, zobacz firmy Apple [wprowadzenie do klucz-wartość obserwowania przewodnik programowania w języku](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
+Aby uzyskać więcej informacji, zobacz firmy Apple [wprowadzenie do pary klucz-wartość obserwowania Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
 
 ## <a name="data-binding"></a>Powiązanie danych
 
-Poniższe sekcje pokazują, jak można użyć kluczy i wartości kodowania i klucz wartość obserwowania klasy zgodne wiązanie danych do elementów interfejsu użytkownika w Konstruktorze interfejsu w programie Xcode, zamiast odczytywanie i zapisywanie wartości przy użyciu kodu C#. W ten sposób można oddzielić Twojej _modelu danych_ z widoków, które są używane, aby je wyświetlić, co aplikacja Xamarin.Mac bardziej elastyczne i łatwiejsze w obsłudze. Znacznie zmniejszyć ilość kodu, który ma zostać zapisany.
+Poniższe sekcje pokaże, jak umożliwia kodowanie klucz wartość i pary klucz wartość obserwowania zgodne klasy wiązanie danych do elementów interfejsu użytkownika w program Xcode Interface Builder zamiast odczytywanie i zapisywanie wartości przy użyciu kodu C#. W ten sposób można oddzielić swoje _modelu danych_ z widoków, które są używane do ich wyświetlania, wprowadzania bardziej elastyczne i łatwiejsze w obsłudze aplikacji platformy Xamarin.Mac. Możesz również znacznie zmniejszyć ilość kodu, który ma zostać zapisany.
 
 <a name="Defining_your_Data_Model" />
 
-### <a name="defining-your-data-model"></a>Definiowanie modelu danych
+### <a name="defining-your-data-model"></a>Zdefiniowanie modelu danych
 
-Zanim będzie można powiązać danych elementu interfejsu użytkownika w Konstruktorze interfejsu, musi mieć klasę zgodne KVC/KVO zdefiniowane w aplikacji do działania jako Xamarin.Mac _modelu danych_ dla wiązania. Model danych zawiera wszystkie dane, która będzie wyświetlana w interfejsie użytkownika i odbiera wszelkie modyfikacje dane użytkownika w interfejsie użytkownika podczas uruchamiania aplikacji.
+Zanim będzie można powiązać danych elementu interfejsu użytkownika w programu Interface Builder, konieczne jest posiadanie KVC/KVO zgodne klasy zdefiniowanej w aplikacji Xamarin.Mac do działania jako _modelu danych_ dla wiązania. Model danych zawiera wszystkie dane, która będzie wyświetlana w interfejsie użytkownika i odbiera wszelkie modyfikacje danych, który użytkownik dokona w interfejsie użytkownika podczas uruchamiania aplikacji.
 
 Na przykład podczas pisania aplikacji, która zarządzane grupy pracowników, można użyć następującej klasy do definiowania modelu danych:
 
@@ -317,9 +317,9 @@ namespace MacDatabinding
 }
 ```
 
-Większość funkcji tej klasy zostały omówione w [co to jest klucz wartość kodowania](#What_is_Key-Value_Coding) powyższej sekcji. Jednak Przyjrzyjmy się kilka określonych elementów i występują pewne różnice, które zostały wprowadzone, aby zezwolić na działanie jako Model danych dla tej klasy **kontrolerów macierzy** i **kontrolerów drzewa** (która będzie używana później do danych Powiąż **widok drzewa**, **widoków konspektu** i **widoki kolekcji**).
+Większość funkcji ta klasa zostały pokryte w [co to jest kodowanie klucz wartość](#What_is_Key-Value_Coding) powyższej sekcji. Jednakże, Przyjrzyjmy się kilku określonych elementów i niektóre dodatki, które zostały wprowadzone, aby umożliwić tej klasy, aby pełnić rolę Model danych do **kontrolerów macierzy** i **kontrolerów drzewa** (który będzie używany później do danych Powiąż **widoków drzewa**, **widoki konspektu** i **widoki kolekcji**).
 
-Najpierw, ponieważ pracownik może być Menedżer, możemy używano `NSArray` (w szczególności `NSMutableArray` wartości mogą być modyfikowane) sposób umożliwić pracownikom, zarządzanych jest dołączony do nich:
+Po pierwsze, ponieważ pracownik może być menedżera, używaliśmy `NSArray` (w szczególności `NSMutableArray` , dzięki czemu można zmodyfikować wartości) sposób umożliwić pracownikom, zarządzanych do dołączenia do nich:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -331,12 +331,12 @@ public NSArray People {
 }
 ```
 
-Dwie rzeczy do uwzględnienia w tym miejscu:
+Należy pamiętać, w tym miejscu dwie rzeczy:
 
-1. Użyliśmy `NSMutableArray` zamiast standardowego tablicy C# lub kolekcji, ponieważ takie jak jest to wymagane do powiązania danych z formantami AppKit **widoków tabel**, **widoków konspektu** i **kolekcje** .
-2. Tablica pracowników możemy udostępnianych przez rzutowanie na `NSArray` dla nazwy, sformatowanych danych powiązania celów i zmienić jej C# `People`, na taki, który oczekuje wiązania z danymi, `personModelArray` w formularzu **{class_name} tablicy** (Uwaga czy pierwszy znak przeprowadzono małe litery).
+1. Użyliśmy `NSMutableArray` zamiast standardowego języka C# tablicy lub kolekcji, ponieważ jest to wymagane, aby powiązać dane do kontrolek AppKit takich jak **widoki tabel**, **widoki konspektu** i **kolekcji** .
+2. Firma Microsoft udostępnianych przez rzutowanie go do tablicy pracowników `NSArray` dla wiązaniu danych do celów i zmienić jej C# sformatowane nazwy `People`, do jednego, który oczekuje, że powiązanie danych, `personModelArray` w formularzu **{class_name} tablicy** (Uwaga czy pierwszym znakiem przeprowadzono małe litery).
 
-Następnie należy dodać niektóre specjalnie nazwy publicznej metody do obsługi **kontrolerów macierzy** i **kontrolerów drzewa**:
+Następnie należy dodać niektóre specjalnie nazwę metody publiczne do obsługi **kontrolerów macierzy** i **kontrolerów drzewa**:
 
 ```csharp
 [Export("addObject:")]
@@ -369,16 +369,16 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Umożliwiają one kontrolerów do żądania i modyfikować dane, które są one wyświetlane. Jak narażonych `NSArray` powyżej, mają one bardzo określonych konwencji nazewnictwa (który różni się od typowego C# konwencje nazewnictwa):
+Umożliwiają one kontrolery do żądania i modyfikować dane, które są wyświetlane. Jak narażonych `NSArray` powyżej, muszą one być bardzo określonych konwencji nazewnictwa (który różni się od typowego języka C# konwencji nazewnictwa):
 
 - `addObject:` -Dodaje obiekt do tablicy.
-- `insertObject:in{class_name}ArrayAtIndex:` -Gdy `{class_name}` jest nazwą klasy. Ta metoda wstawia obiektu do tablicy w danym indeksie.
-- `removeObjectFrom{class_name}ArrayAtIndex:` -Gdy `{class_name}` jest nazwą klasy. Ta metoda usuwa obiektu w tablicy w danym indeksie.
-- `set{class_name}Array:` -Gdy `{class_name}` jest nazwą klasy. Ta metoda pozwala zastąpić istniejące przenoszące nową.
+- `insertObject:in{class_name}ArrayAtIndex:` — W przypadku gdy `{class_name}` jest nazwą klasy. Ta metoda wstawia obiektu do tablicy pod danym indeksem.
+- `removeObjectFrom{class_name}ArrayAtIndex:` — W przypadku gdy `{class_name}` jest nazwą klasy. Ta metoda usuwa obiekt w tablicy pod danym indeksem.
+- `set{class_name}Array:` — W przypadku gdy `{class_name}` jest nazwą klasy. Ta metoda pozwala zastąpić istniejące przeniesienia na nową.
 
-Wewnątrz tych metod, możemy opakowana zmiany do tablicy w `WillChangeValue` i `DidChangeValue` wiadomości KVO zgodności.
+Wewnątrz tych metod, będziemy opakowane zmiany do tablicy w `WillChangeValue` i `DidChangeValue` wiadomości pod kątem zgodności KVO.
 
-Na koniec od `Icon` zależy od wartości właściwości `isManager` zmiany właściwości, aby `isManager` właściwości mogą nie zostać odzwierciedlone w `Icon` dla danych powiązane elementy interfejsu użytkownika (podczas KVO):
+Na koniec, ponieważ `Icon` właściwość opiera się na wartość `isManager` zmiany właściwości `isManager` właściwość nie może zostać uwzględniona w `Icon` dla danych powiązane elementy interfejsu użytkownika (w ramach KVO):
 
 ```csharp
 [Export("Icon")]
@@ -393,7 +393,7 @@ public NSImage Icon {
 }
 ``` 
 
-Aby poprawić, który, możemy użyć poniższego kodu:
+Aby rozwiązać problem, który, użyjemy następujący kod:
 
 ```csharp
 [Export("isManager")]
@@ -409,7 +409,7 @@ public bool isManager {
 }
 ```
 
-Należy pamiętać, że oprócz własnego klucza `isManager` również wysyła akcesor `WillChangeValue` i `DidChangeValue` komunikaty dla `Icon` klucza, zostanie wyświetlony również zmianę.
+Należy pamiętać, że oprócz własnego klucza `isManager` dostępu również wysyła `WillChangeValue` i `DidChangeValue` komunikaty dla `Icon` kluczy, więc zostanie wyświetlony, jak również zmiana.
 
 Będziemy używać `PersonModel` modelu danych w dalszej części tego artykułu.
 
@@ -417,13 +417,13 @@ Będziemy używać `PersonModel` modelu danych w dalszej części tego artykułu
 
 ### <a name="simple-data-binding"></a>Proste powiązanie danych
 
-Z naszych Model danych zdefiniowany Przyjrzyjmy się prosty przykład powiązanie danych w Konstruktorze interfejsu w środowisku Xcode. Na przykład Dodajmy formularza do naszej aplikacji Xamarin.Mac, który może służyć do edycji `PersonModel` zdefiniowanego powyżej. Dodamy kilka pól tekstowych i pola wyboru, aby wyświetlić i edytować właściwości modelu.
+Za pomocą naszych zdefiniowany Model danych Przyjrzyjmy się prosty przykład powiązanie danych w program Xcode Interface Builder. Na przykład możemy dodać formularz do naszej aplikacji rozszerzenia Xamarin.Mac, który może służyć do edycji `PersonModel` zdefiniowanego powyżej. Dodamy kilka pól tekstowych i pola wyboru, aby wyświetlić i edytować właściwości nasz model.
 
-Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `SimpleViewController`: 
+Najpierw Dodajmy nową **kontrolera widoku** do naszych **Main.storyboard** plik programu Interface Builder i nadaj jej klasa `SimpleViewController`: 
 
 [![Dodawanie nowego kontrolera widoku](databinding-images/simple01.png "dodawania nowego kontrolera widoku")](databinding-images/simple01-large.png#lightbox)
 
-Następnie wróć do programu Visual Studio dla komputerów Mac, Edytuj **SimpleViewController.cs** plików (do którego została automatycznie dodana do naszej projektu) i ujawnia wystąpienia `PersonModel` będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
+Następnie wróć do programu Visual Studio dla komputerów Mac, Edytuj **SimpleViewController.cs** zawierający (została automatycznie dodana do naszego projektu) i udostępnić wystąpienia `PersonModel` będziemy naszego formularza do wiązania danych. Dodaj następujący kod:
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -440,7 +440,7 @@ public PersonModel Person {
 }
 ```
 
-Następnie po załadowaniu widoku umożliwia utworzenie wystąpienia naszych `PersonModel` i wypełnić ją ten kod:
+Następnie po załadowaniu widoku, Utwórz wystąpienie naszych `PersonModel` i wypełnić ją przy użyciu tego kodu:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -459,55 +459,55 @@ public override void ViewDidLoad ()
 }
 ```
 
-Teraz należy utworzyć naszego formularza, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ formularza, aby wyglądać jak poniżej:
+Teraz musimy utworzyć naszego formularza, kliknij dwukrotnie **Main.storyboard** plik, aby go otworzyć do edycji w programu Interface Builder. Układ formularza, aby wyglądać mniej więcej następująco:
 
 [![Edytowanie scenorysu w środowisku Xcode](databinding-images/simple02.png "edycji scenorysu w środowisku Xcode")](databinding-images/simple02-large.png#lightbox)
 
-Dane powiązać formularza, aby `PersonModel` który mamy udostępniane za pośrednictwem funkcji `Person` klucza, wykonaj następujące czynności:
+Do danych należy powiązać formularz, aby `PersonModel` , firma Microsoft jest udostępniane za pośrednictwem `Person` klucza, wykonaj następujące czynności:
 
-1. Wybierz **nazwa pracownika** pola tekstowego i przełącznik **inspektora powiązania**.
-2. Sprawdź **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Name` dla **ścieżka klucza**: 
+1. Wybierz **nazwiska pracownika** pole tekstowe, przełącz się do **Inspektor powiązania**.
+2. Sprawdź **powiązać** pole, a następnie wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Name` dla **ścieżka klucza**: 
 
     [![Wprowadzanie ścieżki klucza](databinding-images/simple03.png "wprowadzanie ścieżki klucza")](databinding-images/simple03-large.png#lightbox)
-3. Wybierz **zawód** pola tekstowego i wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Occupation` dla **ścieżka klucza**:  
+3. Wybierz **Dziadka** pole tekstowe i sprawdź **powiązać** pole, a następnie wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.Occupation` dla **ścieżka klucza**:  
 
     [![Wprowadzanie ścieżki klucza](databinding-images/simple04.png "wprowadzanie ścieżki klucza")](databinding-images/simple04-large.png#lightbox)
-4. Wybierz **pracownik jest kierownikiem** wyboru i sprawdź **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
+4. Wybierz **pracowników to Menedżer** pole wyboru i sprawdź **powiązać** pole, a następnie wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
 
     [![Wprowadzanie ścieżki klucza](databinding-images/simple05.png "wprowadzanie ścieżki klucza")](databinding-images/simple05-large.png#lightbox)
-5. Wybierz **numer zarządzane pracowników** pola tekstowego i wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.NumberOfEmployees` dla **ścieżka klucza**:  
+5. Wybierz **liczbę zarządzanych pracowników** pole tekstowe i sprawdź **powiązać** pole, a następnie wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.NumberOfEmployees` dla **ścieżka klucza**:  
 
     [![Wprowadzanie ścieżki klucza](databinding-images/simple06.png "wprowadzanie ścieżki klucza")](databinding-images/simple06-large.png#lightbox)
-6. Jeśli pracownik nie jest Menedżer, chcemy ukryć numer z pracowników zarządzane etykiety i pola tekstowego.
-7. Wybierz **numer zarządzane pracowników** etykiety, rozwiń węzeł **Hidden** turndown i zaznacz pole wyboru **powiązać** i wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
+6. Pracownik nie jest menedżera, chcemy ukryć numer z pracownikom zarządzane etykiety i pola tekstowego.
+7. Wybierz **liczbę zarządzanych pracowników** etykiety, rozwiń węzeł **ukryty** turndown i sprawdź, czy **powiązać** pole, a następnie wybierz **proste kontrolera widoku** z listy rozwijanej. Następnie wprowadź `self.Person.isManager` dla **ścieżka klucza**:  
 
     [![Wprowadzanie ścieżki klucza](databinding-images/simple07.png "wprowadzanie ścieżki klucza")](databinding-images/simple07-large.png#lightbox)
-8. Wybierz `NSNegateBoolean` z **transformatora wartość** listy rozwijanej:  
+8. Wybierz `NSNegateBoolean` z **przekształcania wartości** listy rozwijanej:  
 
-    ![Wybieranie Przekształcenie klucza NSNegateBoolean](databinding-images/simple08.png "wybranie Przekształcenie klucza NSNegateBoolean")
-9. Informuje wiązania danych czy etykieta zostanie ukryte, jeśli wartość `isManager` jest właściwość `false`.
-10. Powtórz kroki 7 i 8 dla **numer zarządzane pracowników** pola tekstowego.
-11. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+    ![Wybieranie Przekształcenie klucza NSNegateBoolean](databinding-images/simple08.png "wybierając Przekształcenie klucza NSNegateBoolean")
+9. Oznacza to, powiązań danych czy etykieta zostaną ukryte, jeśli wartość `isManager` właściwość `false`.
+10. Powtórz kroki 7 i 8 dla **liczbę zarządzanych pracowników** pola tekstowego.
+11. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Po uruchomieniu aplikacji wartości z `Person` właściwości zostaną wypełnione automatycznie naszego formularza:
+Po uruchomieniu aplikacji, wartości z `Person` właściwości zostaną wypełnione automatycznie naszego formularza:
 
-[![Wyświetlanie formularza wypełniana automatycznie](databinding-images/simple09.png "przedstawiający formularza wypełniana automatycznie")](databinding-images/simple09-large.png#lightbox)
+[![Wyświetlanie formularza automatycznie wypełniony](databinding-images/simple09.png "przedstawiający automatycznie wypełniony formularz")](databinding-images/simple09-large.png#lightbox)
 
-Wszelkie zmiany, które użytkownicy, wysyła do formularza będą zapisywane ponownie `Person` właściwości w widoku kontrolera. Na przykład unselecting **pracownik jest kierownikiem** aktualizacje `Person` wystąpienie naszych `PersonModel` i **numer zarządzane pracowników** etykiety i pola tekstowego są ukryte automatycznie (za pośrednictwem Powiązanie danych):
+Wszelkie zmiany, które użytkownicy sprawia, że do formularza będzie można zapisać zwrotnie w `Person` właściwości w kontroler widoku. Na przykład, usunięcie zaznaczenia **pracowników to Menedżer** aktualizacje `Person` wystąpienia naszej `PersonModel` i **liczbę zarządzanych pracowników** etykiety i pole tekstowe są ukryte automatycznie (za pośrednictwem Powiązanie danych):
 
-[![Ukrywanie liczba pracowników z systemem innym niż menedżerów](databinding-images/simple10.png "ukrywanie liczba pracowników z systemem innym niż menedżerów")](databinding-images/simple10-large.png#lightbox)
+[![Ukrywanie liczba pracowników dla osoby niebędące menedżerami](databinding-images/simple10.png "ukrywanie liczba pracowników dla osoby niebędące menedżerami")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
 ### <a name="table-view-data-binding"></a>Powiązanie danych w widoku tabeli
 
-Teraz, gdy mamy podstawy sposób powiązania danych, Przyjrzyjmy się bardziej złożonych zadań powiązania danych przy użyciu _kontroler macierzy_ i powiązanie danych w tabeli. Aby uzyskać więcej informacji na temat pracy z widokami tabeli, zobacz nasze [widoków tabel](~/mac/user-interface/table-view.md) dokumentacji.
+Teraz, gdy mamy już podstawowe informacje dotyczące powiązania danych na bok, Przyjrzyjmy się bardziej złożone zadania powiązania danych przy użyciu _kontroler macierzy_ i powiązywanie danych do widoku tabeli. Aby uzyskać więcej informacji na temat pracy z widoki tabel, zobacz nasze [widoki tabel](~/mac/user-interface/table-view.md) dokumentacji.
 
-Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `TableViewController`:
+Najpierw Dodajmy nową **kontrolera widoku** do naszych **Main.storyboard** plik programu Interface Builder i nadaj jej klasa `TableViewController`:
 
 [![Dodawanie nowego kontrolera widoku](databinding-images/table01.png "dodawania nowego kontrolera widoku")](databinding-images/table01-large.png#lightbox)
 
-Następnie umożliwia edytowanie **TableViewController.cs** plik (została automatycznie dodana do naszej projektu) i Ujawnij tablicy (`NSArray`) z `PersonModel` klasy będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
+Następnie umożliwia edytowanie **TableViewController.cs** plik (została automatycznie dodana do naszego projektu) i udostępniają tablicy (`NSArray`) z `PersonModel` klas, które firma Microsoft ponosi naszego formularza do wiązania danych. Dodaj następujący kod:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,9 +548,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Tak samo, jak robiliśmy na `PersonModel` klasy powyżej w [Definiowanie modelu danych](#Defining_your_Data_Model) sekcji możemy zostały uwidocznione cztery specjalnej metody publiczne, aby kontroler macierzy i odczytu i zapisu danych z naszych kolekcji `PersonModels`.
+Tak samo, jak zrobiliśmy na `PersonModel` klasy powyżej w [zdefiniowanie modelu danych](#Defining_your_Data_Model) sekcji, możemy zostały ujawnione cztery specjalnej metody publiczne, aby kontroler macierzy i Odczyt i zapis danych z naszych kolekcji `PersonModels`.
 
-Następnie po załadowaniu widoku, musimy wypełnić naszych tablicy o tym kodzie:
+Następnie po załadowaniu widoku należy wypełnić naszych tablicy przy użyciu tego kodu:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -570,59 +570,59 @@ public override void AwakeFromNib ()
 }
 ```
 
-Teraz należy utworzyć naszych widoku tabeli, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ Tabela, która ma wyglądać jak poniżej:
+Teraz musimy utworzyć naszych widoku tabeli, kliknij dwukrotnie **Main.storyboard** plik, aby go otworzyć do edycji w programu Interface Builder. Układ tabeli, aby wyglądać mniej więcej następująco:
 
 [![Projektowanie układu nowy widok tabeli](databinding-images/table02.png "układania nowy widok tabeli")](databinding-images/table02-large.png#lightbox)
 
-Musimy dodać **kontroler macierzy** zapewnienie powiązana z danymi do naszej tabeli, wykonaj następujące czynności:
+Musimy dodać **kontroler macierzy** zapewnienie powiązane dane do tabeli, wykonaj następujące czynności:
 
-1. Przeciągnij **tablicy kontrolera** z **inspektora biblioteki** na **interfejs edytora**:  
+1. Przeciągnij **tablicy kontrolera** z **Inspektor biblioteki** na **interfejs edytora**:  
 
-    ![Wybiera kontroler macierzy z biblioteki](databinding-images/table03.png "wybiera kontroler macierzy z biblioteki")
-2. Wybierz **kontroler macierzy** w **hierarchii interfejsów** i przejdź do **inspektora atrybutu**:  
+    ![Wybiera kontroler macierzy z biblioteki](databinding-images/table03.png "wybierając kontroler macierzy z biblioteki")
+2. Wybierz **kontroler macierzy** w **hierarchii interfejsów** i przełącz się do **Inspektor atrybut**:  
 
-    [![Wybieranie inspektora atrybuty](databinding-images/table04.png "wybranie inspektora atrybutów")](databinding-images/table04-large.png#lightbox)
-3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **Plus** przycisk, a następnie dodaj trzy klucze. Nazwa je `Name`, `Occupation` i `isManager`:  
+    [![Wybieranie Inspektor atrybuty](databinding-images/table04.png "wybierając Inspektor atrybutów")](databinding-images/table04-large.png#lightbox)
+3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **oraz** przycisku i Dodaj trzy klucze. Nazwij je `Name`, `Occupation` i `isManager`:  
 
-    ![Dodawanie wymaganych ścieżki klucza](databinding-images/table05.png "Dodawanie wymagane ścieżki klucza")
-4. Informuje kontroler macierzy co zarządza tablicą, i właściwości, które go powinny ujawniać (za pośrednictwem kluczy).
-5. Przełącz się do **inspektora powiązania** i w obszarze **zawartości tablicy** wybierz **powiązać** i **kontrolera widoku tabeli**. Wprowadź **modelu ścieżki klucza** z `self.personModelArray`:  
+    ![Dodawanie wymaganych kluczy ścieżek](databinding-images/table05.png "dodanie wymaganych ścieżki klucza")
+4. Informuje kontroler macierzy co zarządza tablicę, i właściwości, które powinien ujawniać (przy użyciu kluczy).
+5. Przełącz się do **Inspektor powiązania** i w obszarze **zawartości tablicy** wybierz **powiązać** i **kontrolera widoku tabeli**. Wprowadź **modelu ścieżki klucza** z `self.personModelArray`:  
 
     ![Wprowadzanie ścieżki klucza](databinding-images/table06.png "wprowadzanie ścieżki klucza")
-6. To wiąże kontroler macierzy do tablicy z `PersonModels` który mamy narażone na kontrolera widoku.
+6. To wiąże kontroler macierzy do tablicy `PersonModels` , możemy uwidocznić na kontrolera widoku.
 
-Teraz należy powiązać naszych widoku tabeli kontroler macierzy, wykonaj następujące czynności:
+Teraz należy powiązać kontroler macierzy naszych widoku tabeli, wykonaj następujące czynności:
 
-1. Wybierz widok tabeli i **powiązanie inspektora**:  
+1. Wybierz widok tabeli i **powiązanie Inspektor**:  
 
-    [![Wybieranie inspektora powiązania](databinding-images/table07.png "wybranie inspektora powiązania")](databinding-images/table07-large.png#lightbox)
-2. W obszarze **spisu treści** turndown, wybierz opcję **powiązać** i **kontroler macierzy**. Wprowadź `arrangedObjects` dla **klucza kontrolera** pola:  
+    [![Wybieranie Inspektor powiązania](databinding-images/table07.png "wybierając Inspektor powiązania")](databinding-images/table07-large.png#lightbox)
+2. W obszarze **treści** turndown wybierz **powiązać** i **kontroler macierzy**. Wprowadź `arrangedObjects` dla **klucz kontrolera** pola:  
 
-    ![Definiowanie klucza kontrolera](databinding-images/table08.png "Definiowanie klucza kontrolera")
-3. Wybierz **komórkę widoku tabeli** w obszarze **pracownika** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
+    ![Zdefiniowanie klucza kontrolera](databinding-images/table08.png "zdefiniowanie klucza kontrolera")
+3. Wybierz **komórka widoku tabeli** w obszarze **pracowników** kolumny. W **Inspektor powiązania** w obszarze **wartość** turndown wybierz **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
 
-    [![Ustawianie ścieżki klucza modelu](databinding-images/table09.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table09-large.png#lightbox)
-4. `objectValue` jest bieżącą `PersonModel` w tablicy zarządzany przez kontroler macierzy.
-5. Wybierz **komórkę widoku tabeli** w obszarze **zawód** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
+    [![Ustawianie ścieżki klucza modelu](databinding-images/table09.png "ustawienia ścieżki klucza w modelu")](databinding-images/table09-large.png#lightbox)
+4. `objectValue` jest bieżący `PersonModel` w tablicy, zarządzane przez kontroler macierzy.
+5. Wybierz **komórka widoku tabeli** w obszarze **Dziadka** kolumny. W **Inspektor powiązania** w obszarze **wartość** turndown wybierz **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
 
-    [![Ustawianie ścieżki klucza modelu](databinding-images/table10.png "Ustawianie ścieżki klucza w modelu")](databinding-images/table10-large.png#lightbox)
-6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+    [![Ustawianie ścieżki klucza modelu](databinding-images/table10.png "ustawienia ścieżki klucza w modelu")](databinding-images/table10-large.png#lightbox)
+6. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Czy możemy uruchomić aplikację, tabeli zostaną wypełnione z naszych tablicę `PersonModels`:
+Jeśli możemy uruchomić aplikację, tabela zostanie wypełniony naszych tablicę `PersonModels`:
 
-[![Uruchamianie aplikacji](databinding-images/table11.png "uruchamiania aplikacji")](databinding-images/table11-large.png#lightbox)
+[![Uruchomiona jest aplikacja](databinding-images/table11.png "uruchomiona jest aplikacja")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
 ### <a name="outline-view-data-binding"></a>Powiązanie danych widoku konspektu
 
-Powiązanie danych z widoku konspektu jest bardzo podobny do wiązania widoku tabeli. Najważniejsza różnica polega na to, że będziemy używać **kontrolera drzewa** zamiast **kontroler macierzy** zapewnienie powiązana z danymi widoku konspektu. Aby uzyskać więcej informacji na temat pracy z widokami konspektu, zobacz nasze [widoków konspektu](~/mac/user-interface/outline-view.md) dokumentacji.
+Powiązanie danych dla widoku konspektu jest bardzo podobny do wiązania widoku tabeli. Kluczowa różnica polega na, będziemy używać **kontrolera drzewa** zamiast **kontroler macierzy** zapewnienie powiązane dane do widoku konspektu. Aby uzyskać więcej informacji na temat pracy z widoki konspektu, zobacz nasze [widoki konspektu](~/mac/user-interface/outline-view.md) dokumentacji.
 
-Najpierw możemy dodać nowy **kontrolera widoku** do naszej **Main.storyboard** pliku w Konstruktorze interfejsu i nazwę swojej klasy `OutlineViewController`: 
+Najpierw Dodajmy nową **kontrolera widoku** do naszych **Main.storyboard** plik programu Interface Builder i nadaj jej klasa `OutlineViewController`: 
 
 [![Dodawanie nowego kontrolera widoku](databinding-images/outline01.png "dodawania nowego kontrolera widoku")](databinding-images/outline01-large.png#lightbox)
 
-Następnie umożliwia edytowanie **OutlineViewController.cs** plik (została automatycznie dodana do naszej projektu) i Ujawnij tablicy (`NSArray`) z `PersonModel` klasy będziemy naszego formularza do powiązania danych. Dodaj następujący kod:
+Następnie umożliwia edytowanie **OutlineViewController.cs** plik (została automatycznie dodana do naszego projektu) i udostępniają tablicy (`NSArray`) z `PersonModel` klas, które firma Microsoft ponosi naszego formularza do wiązania danych. Dodaj następujący kod:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,9 +663,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Tak samo, jak robiliśmy na `PersonModel` klasy powyżej w [Definiowanie modelu danych](#Defining_your_Data_Model) sekcji możemy zostały uwidocznione cztery specjalnej metody publiczne, aby kontroler drzewa i odczytu i zapisu danych z naszych kolekcji `PersonModels`.
+Tak samo, jak zrobiliśmy na `PersonModel` klasy powyżej w [zdefiniowanie modelu danych](#Defining_your_Data_Model) sekcji, możemy zostały ujawnione cztery specjalnej metody publiczne, aby kontroler drzewa i Odczyt i zapis danych z naszych kolekcji `PersonModels`.
 
-Następnie po załadowaniu widoku, musimy wypełnić naszych tablicy o tym kodzie:
+Następnie po załadowaniu widoku należy wypełnić naszych tablicy przy użyciu tego kodu:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -688,58 +688,58 @@ public override void AwakeFromNib ()
 }
 ```
 
-Teraz należy utworzyć naszych widoku konspektu, kliknij dwukrotnie **Main.storyboard** plik, aby otworzyć do edycji w Konstruktorze interfejsu. Układ Tabela, która ma wyglądać jak poniżej:
+Teraz należy utworzyć widok naszej konspektu, kliknij dwukrotnie **Main.storyboard** plik, aby go otworzyć do edycji w programu Interface Builder. Układ tabeli, aby wyglądać mniej więcej następująco:
 
 [![Tworzenie widoku konspektu](databinding-images/outline02.png "tworzenia widoku konspektu")](databinding-images/outline02-large.png#lightbox)
 
-Musimy dodać **kontrolera drzewa** zapewnienie powiązana z danymi do naszej konspektu, wykonaj następujące czynności:
+Musimy dodać **kontrolera drzewa** zapewnienie powiązane dane do naszych konspektu, wykonaj następujące czynności:
 
-1. Przeciągnij **drzewa kontrolera** z **inspektora biblioteki** na **interfejs edytora**:  
+1. Przeciągnij **drzewa kontrolera** z **Inspektor biblioteki** na **interfejs edytora**:  
 
     ![Wybiera kontroler drzewa z biblioteki](databinding-images/outline03.png "wybiera kontroler drzewa z biblioteki")
-2. Wybierz **kontrolera drzewa** w **hierarchii interfejsów** i przejdź do **inspektora atrybutu**:  
+2. Wybierz **kontrolera drzewa** w **hierarchii interfejsów** i przełącz się do **Inspektor atrybut**:  
 
-    [![Wybranie atrybutu inspektora](databinding-images/outline04.png "wybranie inspektora atrybutu")](databinding-images/outline04-large.png#lightbox)
-3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **Plus** przycisk, a następnie dodaj trzy klucze. Nazwa je `Name`, `Occupation` i `isManager`:  
+    [![Wybieranie Inspektor atrybut](databinding-images/outline04.png "wybierając Inspektor atrybutu")](databinding-images/outline04-large.png#lightbox)
+3. Wprowadź `PersonModel` dla **Nazwa klasy**, kliknij przycisk **oraz** przycisku i Dodaj trzy klucze. Nazwij je `Name`, `Occupation` i `isManager`:  
 
-    ![Dodawanie wymaganych ścieżki klucza](databinding-images/outline05.png "Dodawanie wymagane ścieżki klucza")
-4. Informuje kontrolera drzewa co zarządza tablicą, i właściwości, które go powinny ujawniać (za pośrednictwem kluczy).
-5. W obszarze **kontrolera drzewa** wprowadź `personModelArray` dla **dzieci**, wprowadź `NumberOfEmployees` w obszarze **liczba** , a następnie wprowadź `isEmployee` w obszarze  **Liścia**:  
+    ![Dodawanie wymaganych kluczy ścieżek](databinding-images/outline05.png "dodanie wymaganych ścieżki klucza")
+4. Informuje kontrolera drzewa co zarządza tablicę, i właściwości, które powinien ujawniać (przy użyciu kluczy).
+5. W obszarze **kontrolera drzewa** sekcji, wprowadź `personModelArray` dla **dzieci**, wprowadź `NumberOfEmployees` w obszarze **liczba** i wprowadź `isEmployee` w obszarze  **Liścia**:  
 
-    ![Ustawianie ścieżki klucza kontrolera drzewa](databinding-images/outline05.png "Ustawianie ścieżki klucza kontrolera drzewa")
-6. Ta wartość informuje kontrolera drzewa gdzie można znaleźć wszystkich podrzędnych węzłów, ile węzły podrzędne są i jeśli bieżący węzeł ma podrzędnych węzłów.
-7. Przełącz się do **inspektora powiązania** i w obszarze **zawartości tablicy** wybierz **powiązać** i **właścicielem pliku**. Wprowadź **modelu ścieżki klucza** z `self.personModelArray`:  
+    ![Ustawianie ścieżki klucza kontrolera drzewa](databinding-images/outline05.png "ustawienia ścieżki klucza kontrolera drzewa")
+6. Kontroler drzewa informuje gdzie można znaleźć wszystkich podrzędnych węzłów, ile węzły podrzędne są i czy bieżący węzeł ma węzły podrzędne.
+7. Przełącz się do **Inspektor powiązania** i w obszarze **zawartości tablicy** wybierz **powiązać** i **właściciel pliku**. Wprowadź **modelu ścieżki klucza** z `self.personModelArray`:  
 
-    ![Edytowanie ścieżki klucza](databinding-images/outline06.png "edycji ścieżki klucza")
-8. To wiąże kontrolera drzewa do tablicy z `PersonModels` który mamy narażone na kontrolera widoku.
+    ![Edytowanie ścieżki klucza](databinding-images/outline06.png "edytowanie ścieżki klucza")
+8. To wiąże kontroler drzewa na tablicę `PersonModels` , możemy uwidocznić na kontrolera widoku.
 
-Teraz należy powiązać naszych widoku konspektu kontrolera drzewa, wykonaj następujące czynności:
+Teraz należy powiązać naszych widoku konspektu z kontroler drzewa, wykonaj następujące czynności:
 
-1. Wybierz widok konspektu i **powiązanie inspektora** wybierz:  
+1. Wybierz widok konspektu i **powiązanie Inspektor** wybierz:  
 
-    [![Wybieranie inspektora powiązania](databinding-images/outline07.png "wybranie inspektora powiązania")](databinding-images/outline07-large.png#lightbox)
-2. W obszarze **konspektu Wyświetl zawartość** turndown, wybierz opcję **powiązać** i **kontrolera drzewa**. Wprowadź `arrangedObjects` dla **klucza kontrolera** pola:  
+    [![Wybieranie Inspektor powiązania](databinding-images/outline07.png "wybierając Inspektor powiązania")](databinding-images/outline07-large.png#lightbox)
+2. W obszarze **konspektu Wyświetl zawartość** turndown wybierz **powiązać** i **kontrolera drzewa**. Wprowadź `arrangedObjects` dla **klucz kontrolera** pola:  
 
-    ![Ustawianie klawisza kontrolera](databinding-images/outline08.png "ustawiania klucza kontrolera")
-3. Wybierz **komórkę widoku tabeli** w obszarze **pracownika** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
+    ![Ustawianie klawisza kontrolera](databinding-images/outline08.png "klucza kontrolera")
+3. Wybierz **komórka widoku tabeli** w obszarze **pracowników** kolumny. W **Inspektor powiązania** w obszarze **wartość** turndown wybierz **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Name` dla **modelu ścieżki klucza**:  
 
     [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline09.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue` jest bieżącą `PersonModel` w tablicy zarządzany przez kontroler drzewa.
-5. Wybierz **komórkę widoku tabeli** w obszarze **zawód** kolumny. W **inspektora powiązania** w obszarze **wartość** turndown, wybierz opcję **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
+4. `objectValue` jest bieżący `PersonModel` w tablicy jest zarządzana przez kontroler drzewa.
+5. Wybierz **komórka widoku tabeli** w obszarze **Dziadka** kolumny. W **Inspektor powiązania** w obszarze **wartość** turndown wybierz **powiązać** i **widoku komórki tabeli**. Wprowadź `objectValue.Occupation` dla **modelu ścieżki klucza**:  
 
     [![Wprowadzanie ścieżki klucza modelu](databinding-images/outline10.png "wprowadzanie ścieżki klucza w modelu")](databinding-images/outline10-large.png#lightbox)
-6. Zapisz zmiany i wróć do programu Visual Studio for Mac synchronizację w programie Xcode.
+6. Zapisz zmiany i powrócić do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode.
 
-Czy możemy uruchomić aplikację, konturu zostaną wypełnione z naszych tablicę `PersonModels`:
+Jeśli możemy uruchomić aplikację, konspektu zostanie wypełniony naszych tablicę `PersonModels`:
 
-[![Uruchamianie aplikacji](databinding-images/outline11.png "uruchamiania aplikacji")](databinding-images/outline11-large.png#lightbox)
+[![Uruchomiona jest aplikacja](databinding-images/outline11.png "uruchomiona jest aplikacja")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Powiązanie danych widoku kolekcji
 
-Powiązanie danych z widokiem kolekcji jest bardzo podobne powiązania z widokiem tabeli jako kontroler macierzy służy do zapewnienia danych dla kolekcji. Ponieważ widok kolekcji nie ma formatu wyświetlania predefiniowanych, więcej pracy jest wymagana, aby przekazać opinię interakcji użytkownika oraz śledzenie wybór użytkownika.
+Powiązanie danych z widokiem kolekcji jest bardzo podobne powiązanie z widoku tabeli, ponieważ kontroler macierzy jest używany do dostarczania danych dla kolekcji. Ponieważ widok kolekcji nie ma format wyświetlania wstępnie zdefiniowane, więcej pracy jest wymagane, aby przekazać opinię interakcji użytkownika oraz śledzenie wybór użytkownika.
 
 > [!IMPORTANT]
-> Ze względu na problem w programie Xcode 7 i macOS 10.11 (lub nowszej) nie może być używany w plikach scenorysu (.storyboard) są widoki kolekcji. W związku z tym należy nadal używać do definiowania widoków kolekcji dla aplikacji Xamarin.Mac .xib plików. Zobacz nasze [widoki kolekcji](~/mac/user-interface/collection-view.md) dokumentacji, aby uzyskać więcej informacji.
+> Ze względu na problem w środowisku Xcode 7 i macOS 10.11 (i nowszych) nie ma być używany w plikach scenorysu (.storyboard) będą widoki kolekcji. W rezultacie należy nadal używać .pliki XIb do definiowania widoków kolekcji dla aplikacji platformy Xamarin.Mac. Zobacz nasze [widoki kolekcji](~/mac/user-interface/collection-view.md) dokumentacji, aby uzyskać więcej informacji.
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
@@ -856,52 +856,52 @@ If we run the application, the table will be populated with our array of `Person
 
 For more information on working with Collection Views, please see our [Collection Views](~/mac/user-interface/collection-view.md) documentation.-->
 
-## <a name="debugging-native-crashes"></a>Debugowanie natywnych awarii (Crash)
+## <a name="debugging-native-crashes"></a>Debugowanie natywnej awarii
 
-Popełnienia błędu w wiązania danych może spowodować _natywnego awarii_ w niezarządzanych kodu i spowodować, że aplikacja Xamarin.Mac zakończy się niepowodzeniem z `SIGABRT` błąd:
+Pomyłki w wiązania danych może spowodować _natywnej awarii_ w kod niezarządzany i spowodować, że aplikacja platformy Xamarin.Mac zakończy się niepowodzeniem z `SIGABRT` błąd:
 
-[![Przykład okno dialogowe natywnego awarii](databinding-images/debug01.png "przykład okno dialogowe natywnego awarii")](databinding-images/debug01-large.png#lightbox)
+[![Przykład okno dialogowe natywnej awarii](databinding-images/debug01.png "przykład okno dialogowe natywnej awarii")](databinding-images/debug01-large.png#lightbox)
 
-Podczas tworzenia powiązań danych zwykle są cztery główne przyczyny awarii native:
+Podczas tworzenia powiązań danych zazwyczaj są cztery główne przyczyny natywnej awarii:
 
-1. Modelu danych nie dziedziczy `NSObject` lub podklasa klasy of `NSObject`.
-2. Nie uwidacznia równą przy użyciu języka Objective-C `[Export("key-name")]` atrybutu.
-3. Nie zawinięty zmiany wartości dostępu w `WillChangeValue` i `DidChangeValue` wywołania metody (Określanie tego samego klucza `Export` atrybutu).
-4. Ma nieprawidłową lub błędnie klucz w **powiązanie inspektora** w Konstruktorze interfejsu.
+1. Model danych nie dziedziczy `NSObject` lub podklasa `NSObject`.
+2. Twoja własność za pomocą języka Objective-C nie udostępnił `[Export("key-name")]` atrybutu.
+3. Nie zawinięty zmiany wartości metody dostępu w `WillChangeValue` i `DidChangeValue` wywołania metody (Określanie tego samego klucza `Export` atrybutu).
+4. Masz problem lub błędnie wpisane klucz w **powiązanie Inspektor** w programu Interface Builder.
 
 ### <a name="decoding-a-crash"></a>Dekodowanie awarii
 
-Załóżmy powoduje natywnego awarii w naszym powiązania danych, dlatego zostanie przedstawiony sposób Znajdź i napraw. W Konstruktorze interfejsu Zmieńmy naszych powiązanie pierwsza etykieta w przykładzie widok kolekcji z `Name` do `Title`:
+Możemy spowodować natywnej awarii wiązania z danymi, dzięki czemu firma Microsoft pokazują, jak zlokalizować i rozwiązać ten problem. W programu Interface Builder Zmieńmy nasz powiązania pierwsza etykieta w przykładzie widok kolekcji z `Name` do `Title`:
 
-[![Edytowanie powiązania klucza](databinding-images/debug02.png "edycji klucza powiązania")](databinding-images/debug02-large.png#lightbox)
+[![Edytowanie klucz powiązania](databinding-images/debug02.png "edycji klucz powiązania")](databinding-images/debug02-large.png#lightbox)
 
-Teraz zapisać zmiany, przełączyć się do programu Visual Studio for Mac w celu synchronizacji z Xcode i uruchomić aplikację. Gdy zostanie wyświetlony widok kolekcji, aplikacja na chwilę ulegnie awarii z `SIGABRT` błędu (jak pokazano w **danych wyjściowych aplikacji** w programie Visual Studio dla komputerów Mac) od czasu `PersonModel` nie ujawnia właściwości z kluczem `Title`:
+Teraz zapisać zmiany, przełącz się do programu Visual Studio dla komputerów Mac do synchronizacji z narzędziem Xcode i uruchomić aplikację. Gdy zostanie wyświetlony widok kolekcji, aplikacja chwilowo ulegnie awarii z `SIGABRT` błąd (jak pokazano na **dane wyjściowe aplikacji** w programie Visual Studio dla komputerów Mac) od czasu `PersonModel` nie ujawnia właściwość przy użyciu klucza `Title`:
 
-[![Przykład błąd wiązania](databinding-images/debug03.png "przykład błąd wiązania")](databinding-images/debug03-large.png#lightbox)
+[![Błąd wiązania się z przykładem](databinding-images/debug03.png "błąd wiązania się z przykładem")](databinding-images/debug03-large.png#lightbox)
 
-Jeśli firma Microsoft przewiń do góry bardzo błędu w **danych wyjściowych aplikacji** widzimy kluczem do rozwiązywania problemu:
+Firma Microsoft przewijania na samej górze błąd w **dane wyjściowe aplikacji** widać klawisz w celu rozwiązania problemu:
 
-[![Znajdowanie problem w dzienniku błędów](databinding-images/debug04.png "znajdowanie problem w dzienniku błędów")](databinding-images/debug04-large.png#lightbox)
+[![Znajdowanie problemu w dzienniku błędów](databinding-images/debug04.png "znajdowanie problemu w dzienniku błędów programu")](databinding-images/debug04-large.png#lightbox)
 
-Ten wiersz informuje NAS, że klucz `Title` nie istnieje dla obiektu, który mamy dokonywane jest wiązanie. Jeżeli zmienimy powiązania z powrotem do `Name` interfejsu konstruktora, Zapisz, synchronizacja, ponownie skompilować i uruchomić, aplikacja będzie działać zgodnie z oczekiwaniami bez problemu.
+Ten wiersz informuje NAS, że klucz `Title` nie istnieje w obiekcie, który możemy dokonywane jest wiązanie. Jeśli zmienimy powiązanie z powrotem do `Name` w programu Interface Builder, Zapisz, synchronizacja, ponownie skompilować i uruchomić, aplikacja będzie działać zgodnie z oczekiwaniami, bez problemu.
 
 ## <a name="summary"></a>Podsumowanie
 
-W tym artykule trwało szczegółowe przyjrzeć się praca z powiązania danych i kluczy i wartości kodowania w aplikacji Xamarin.Mac. Najpierw należy go przeglądał udostępnianie klasy C# do języka Objective-C za pomocą kluczy i wartości kodowania (KVC) i klucz wartość obserwowania (KVO). Następnie go pokazano, jak użyć klasy zgodne KVO i danych powiązać go z elementów interfejsu użytkownika w Konstruktorze interfejsu w środowisku Xcode. Na koniec wykazało za pomocą powiązania danych złożonych **kontrolerów macierzy** i **kontrolerów drzewa**.
+W tym artykule jest zajęta szczegółowe omówienie pracy z powiązania danych i kodowanie klucz wartość w aplikacji platformy Xamarin.Mac. Po pierwsze znaleziono w znajdowaniu klasy C# do języka Objective-C przy użyciu kodowanie klucz wartość (KVC) i klucz wartość obserwowania (KVO). Następnie pokazano, jak używać klasy zgodne KVO i powiązanie danych go do elementów interfejsu użytkownika w program Xcode Interface Builder. Na koniec wykazało złożone powiązanie, używając **kontrolerów macierzy** i **kontrolerów drzewa**.
 
 
 ## <a name="related-links"></a>Linki pokrewne
 
 - [MacDatabinding scenorysu (przykład)](https://developer.xamarin.com/samples/mac/MacDatabinding-Storyboard/)
-- [XIBs MacDatabinding (przykład)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
+- [XIb MacDatabinding (przykład)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
 - [Witaj, Mac](~/mac/get-started/hello-mac.md)
-- [Formanty standardowe](~/mac/user-interface/standard-controls.md)
+- [Kontrolki standardowe](~/mac/user-interface/standard-controls.md)
 - [Widoki tabel](~/mac/user-interface/table-view.md)
 - [Widoki konspektu](~/mac/user-interface/outline-view.md)
-- [Kolekcja widoków](~/mac/user-interface/collection-view.md)
-- [Kodowanie przewodnik programowania w języku klucz wartość](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
-- [Wprowadzenie do przewodnik programowania w języku obserwowania klucz wartość](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
-- [Wprowadzenie do programowania tematy powiązania Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
-- [Wprowadzenie do Cocoa powiązania odwołania](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
+- [Widoki kolekcji](~/mac/user-interface/collection-view.md)
+- [Pary klucz wartość, kodowania, przewodnik programowania](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [Wprowadzenie do obserwowania pary klucz wartość przewodnik programowania](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
+- [Wprowadzenie do powiązania cocoa dla tematów związanych z programowaniem](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Wprowadzenie do odwołania powiązania Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [System macOS Human Interface Guidelines](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
