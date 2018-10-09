@@ -9,9 +9,9 @@ ms.author: dabritch
 ms.date: 06/27/2017
 ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2018
+ms.lasthandoff: 06/08/2018
 ms.locfileid: "35242924"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Dodawanie AppCompat i materiały projektu
@@ -73,7 +73,7 @@ Styl dodatkowy musi być zawarty w folderze **values-v21**, by można było zast
 ```xml
 <resources>
   <style name="MyTheme" parent="MyTheme.Base">
-    <!--Jeżeli używasz MasterDetailPage będziesz chcieć tego użyc, w innych przypadkach możesz zostawić to nieruszone-->
+    <!--If you are using MasterDetailPage you will want to set these, else you can leave them out-->
     <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>
     <item name="android:statusBarColor">@android:color/transparent</item>-->
   </style>
@@ -143,7 +143,7 @@ W istniejących aplikacjach platformy Xamarin.Forms klasa **MainActivity.cs** b�
 **MainActivity.cs**
 
 ```csharp
-public class MainActivity : FormsAppCompatActivity  // wcześniej FormsApplicationActivity
+public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
 Na sam koniec należy ustawić nowe layouty z kroku 5 w metodzie `OnCreate`, jak poniżej:
@@ -151,11 +151,11 @@ Na sam koniec należy ustawić nowe layouty z kroku 5 w metodzie `OnCreate`, jak
 ```csharp
 protected override void OnCreate(Bundle bundle)
 {
-  // Najpierw ustaw źródła layoutów
+  // set the layout resources first
   FormsAppCompatActivity.ToolbarResource = Resource.Layout.Toolbar;
   FormsAppCompatActivity.TabLayoutResource = Resource.Layout.Tabbar;
 
-  // Następnie wywołaj metodę OnCreate klasy bazowej i metody Xamarin.Forms
+  // then call base.OnCreate and the Xamarin.Forms methods
   base.OnCreate(bundle);
   Forms.Init(this, bundle);
   LoadApplication(new App());
