@@ -1,6 +1,6 @@
 ---
 title: Dodawanie AppCompat i materiały projektu
-description: W tym artykule opisano sposób konwertowania istniejących aplikacji platformy Xamarin.Forms Android użycie AppCompat i materiały projektu.
+description: W tym artykule opisano sposób konwertowania istniejących aplikacji systemu Android na platformie Xamarin.Forms w celu umożliwienia korzystania z AppCompat i Material Design.
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
@@ -16,28 +16,28 @@ ms.locfileid: "35242924"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Dodawanie AppCompat i materiały projektu
 
-_Wykonaj te kroki, aby przekonwertować istniejących aplikacji platformy Xamarin.Forms Android użycie AppCompat i materiały projektu_
+_Wykonaj te kroki, aby przygotować istniejące aplikacje platformy Xamarin.Forms Android do użycia AppCompat i Material Design_
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
 ## <a name="overview"></a>Omówienie
 
-Te instrukcje opisano sposób aktualizowania istniejących aplikacji platformy Xamarin.Forms Android biblioteki AppCompat oraz włączyć materiałów projektowania w systemie Android w wersji aplikacji platformy Xamarin.Forms.
+Te instrukcje wyjaśniają, w jaki sposób przygotować istniejące aplikacje platformy Xamarin.Forms Android do użycia biblioteki AppCompat oraz jak włączyć Material Design w Twojej aplikacji Xamarin.Forms w wersji na Androida.
 
 ### <a name="1-update-xamarinforms"></a>1. Aktualizacja platformy Xamarin.Forms
 
-Upewnij się, że dane rozwiązanie korzysta z platformy Xamarin.Forms 2.0 lub nowszej. Zaktualizuj pakiet Nuget platformy Xamarin.Forms 2.0, jeśli jest to wymagane.
+Upewnij się, że dane rozwiązanie korzysta z platformy Xamarin.Forms 2.0 lub nowszej. Zaktualizuj pakiet Nuget platformy Xamarin.Forms do wersji 2.0, jeśli jest to konieczne.
 
 ### <a name="2-check-android-version"></a>2. Sprawdź wersję systemu Android
 
-Upewnij się, że platforma docelowa projektu dla systemu Android jest system Android 6.0 (Marshmallow). Sprawdź **projekt systemu Android > Opcje > kompilacji > Ogólne** wybrano ustawienia, aby zapewnić corrent framework:
+Upewnij się, że platforma docelowa projektu dla systemu Android to Android 6.0 (Marshmallow). Sprawdź, czy w obszarze **Projekt systemu Android > Opcje > Kompilacja > Ogólne** wybrano prawidłowy framework:
 
- ![](appcompat-images/target-android-6-sml.png "Konfiguracja kompilacji dla systemu android ogólne")
+ ![](appcompat-images/target-android-6-sml.png "Konfiguracja kompilacji dla systemu Android")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3. Dodaj nowe kompozycje do obsługi materiałów projektu
+### <a name="3-add-new-themes-to-support-material-design"></a>3. Dodaj nowe kompozycje do obsługi Material Design
 
-Utwórz następujące trzy pliki w projekcie systemu Android i Wklej zawartość poniżej. Udostępnia Google [Przewodnik po stylu](http://www.google.com/design/spec/style/color.html#color-color-palette) i [kolorów palety generator](http://www.materialpalette.com/) pomaga wybrać schemat kolorów alternatywnych, z określoną.
+Utwórz następujące trzy pliki w projekcie systemu Android i wklej zawartość podaną poniżej. Google udostępnia [Przewodnik po stylu](http://www.google.com/design/spec/style/color.html#color-color-palette) i [generator palet kolorów](http://www.materialpalette.com/), które pomagają wybrać schemat kolorów alternatywny do tego określonego poniżej.
 
 **Resources/values/colors.xml**
 
@@ -66,7 +66,7 @@ Utwórz następujące trzy pliki w projekcie systemu Android i Wklej zawartość
 </resources>
 ```
 
-Styl dodatkowe muszą być zawarte w **v21 wartości** folderu do zastosowania określonych właściwości podczas uruchamiania na Android interfejs typu lizak i nowszych.
+Styl dodatkowy musi być zawarty w folderze **values-v21**, by można było zastosować określone właściwości na Androidzie w wersji Lollipop i nowszych.
 
 **Resources/values-v21/style.xml**
 
@@ -80,9 +80,9 @@ Styl dodatkowe muszą być zawarte w **v21 wartości** folderu do zastosowania o
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest.xml
+### <a name="4-update-androidmanifestxml"></a>4. Zaktualizuj plik AndroidManifest.xml
 
-Zapewnienie tę nową kompozycję informacje są używane, ustawić motyw w **AndroidManifest** przez dodanie `android:theme="@style/MyTheme"` (pozostaw reszty XML była).
+By mieć pewność, że nowy motyw będzie używany, należy ustawić motyw w pliku **AndroidManifest** poprzez dodanie `android:theme="@style/MyTheme"` (bez zmieniania reszty pliku XML).
 
 **Properties/AndroidManifest.xml**
 
@@ -93,9 +93,9 @@ Zapewnienie tę nową kompozycję informacje są używane, ustawić motyw w **An
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Podaj układy narzędzi i kartę
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Podaj układy paska narzędzi i kart
 
-Utwórz **Tabbar.axml** i **Toolbar.axml** plików **zasobów/układ** katalogu i Wklej w ich zawartość z poniżej:
+Utwórz pliki **Tabbar.axml** i **Toolbar.axml** w folderze **Resources/layout** i wklej do nich zawartość podaną poniżej:
 
 **Resources/layout/Tabbar.axml**
 
@@ -113,8 +113,8 @@ Utwórz **Tabbar.axml** i **Toolbar.axml** plików **zasobów/układ** katalogu 
     app:tabMode="fixed" />
 ```
 
-Kilka właściwości kart zostały ustawione w tym grawitacji kartę do `fill` i tryb w celu `fixed`.
-Jeśli masz wiele kart może chcesz przełączyć, to aby przewijanego — zapoznaj się z artykułem Android [dokumentacji TabLayout](http://developer.android.com/reference/android/support/design/widget/TabLayout.html) Aby dowiedzieć się więcej.
+Ustawiono tutaj niektóre właściwości kart, w tym grawitację jako `fill` i tryb jako `fixed`.
+Jeśli masz wiele kart, możesz chcieć ustawić tryb przewijany — zapoznaj się z [dokumentacją TabLayout](http://developer.android.com/reference/android/support/design/widget/TabLayout.html) dla systemu Android, aby dowiedzieć się więcej.
 
 **Resources/layout/Toolbar.axml**
 
@@ -132,21 +132,21 @@ Jeśli masz wiele kart może chcesz przełączyć, to aby przewijanego — zapoz
     app:layout_scrollFlags="scroll|enterAlways" />
 ```
 
-W tych plikach tworzymy motyw określonych dla narzędzi, które mogą się różnić dla aplikacji.
-Zapoznaj się [Hello narzędzi](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) blogu, aby dowiedzieć się więcej.
+W tych plikach określamy motyw paska narzędzi, który może się różnić w Twojej aplikacji.
+Zapoznaj się z wpisem [Witaj pasku narzędzi](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) na blogu, aby dowiedzieć się więcej.
 
 
-### <a name="6-update-the-mainactivity"></a>6. Aktualizacja `MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. Zaktualizuj `MainActivity`
 
-W istniejących aplikacji platformy Xamarin.Forms **MainActivity.cs** klasa będzie dziedziczyć `FormsApplicationActivity`. To muszą zostać zastąpione `FormsAppCompatActivity` Aby włączyć nowe funkcje.
+W istniejących aplikacjach platformy Xamarin.Forms klasa **MainActivity.cs** będzie dziedziczyć po `FormsApplicationActivity`. Ta klasa powinna zostać zastąpiona przez `FormsAppCompatActivity`, aby włączyć nowe funkcje.
 
 **MainActivity.cs**
 
 ```csharp
-public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
+public class MainActivity : FormsAppCompatActivity // was FormsApplicationActivity
 ```
 
-Na koniec "okablować się" nowe układów z kroku 5 w `OnCreate` metody, jak pokazano poniżej:
+Na koniec należy ustawić nowe układy z kroku 5 w metodzie `OnCreate`, jak poniżej:
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
