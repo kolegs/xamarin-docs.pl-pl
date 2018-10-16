@@ -31,11 +31,11 @@ Upewnij się, że dane rozwiązanie korzysta z platformy Xamarin.Forms 2.0 lub n
 
 ### <a name="2-check-android-version"></a>2. Sprawdź wersję systemu Android
 
-Upewnij się, że platforma docelowa projektu dla systemu Android jest system Android 6.0 (Marshmallow). Sprawdź **projekt systemu Android > Opcje > kompilacji > Ogólne** wybrano ustawienia, aby zapewnić corrent framework:
+Upewnij się, że platforma docelowa projektu dla systemu Android to Android 6.0 (Marshmallow). Sprawdź, czy w obszarze **Projekt systemu Android > Opcje > Kompilacja > Ogólne** wybrano prawidłowy framework:
 
  ![](appcompat-images/target-android-6-sml.png "Konfiguracja kompilacji dla systemu Android")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3. Dodaj nowe kompozycje do obsługi materiałów projektu
+### <a name="3-add-new-themes-to-support-material-design"></a>3. Dodaj nowe kompozycje do obsługi Material Design
 
 Utwórz następujące trzy pliki w projekcie systemu Android i wklej zawartość podaną poniżej. Google udostępnia [Przewodnik po stylu](http://www.google.com/design/spec/style/color.html#color-color-palette) i [generator palet kolorów](http://www.materialpalette.com/), które pomagają wybrać schemat kolorów alternatywny do tego określonego poniżej.
 
@@ -80,7 +80,7 @@ Styl dodatkowy musi być zawarty w folderze **values-v21**, by można było zast
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest.xml
+### <a name="4-update-androidmanifestxml"></a>4. Zaktualizuj plik AndroidManifest.xml
 
 By mieć pewność, że nowy motyw będzie używany, należy ustawić motyw w pliku **AndroidManifest** poprzez dodanie `android:theme="@style/MyTheme"` (bez zmieniania reszty pliku XML).
 
@@ -93,7 +93,7 @@ By mieć pewność, że nowy motyw będzie używany, należy ustawić motyw w pl
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Podaj układy narzędzi i kartę
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Podaj układy paska narzędzi i kart
 
 Utwórz pliki **Tabbar.axml** i **Toolbar.axml** w folderze **Resources/layout** i wklej do nich zawartość podaną poniżej:
 
@@ -136,7 +136,7 @@ W tych plikach określamy motyw paska narzędzi, który może się różnić w T
 Zapoznaj się z wpisem [Witaj pasku narzędzi](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) na blogu, aby dowiedzieć się więcej.
 
 
-### <a name="6-update-the-mainactivity"></a>6. Aktualizacja `MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. Zaktualizuj `MainActivity`
 
 W istniejących aplikacjach platformy Xamarin.Forms klasa **MainActivity.cs** będzie dziedziczyć po `FormsApplicationActivity`. Ta klasa powinna zostać zastąpiona przez `FormsAppCompatActivity`, aby włączyć nowe funkcje.
 
