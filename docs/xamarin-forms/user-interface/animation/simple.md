@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 124fc311d5e2c8c89353ba813df60f0bf1d0b34a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 61a7d2261ac35621482e9810a0fdb69a6061ae6a
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997074"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Proste animacje w interfejsie Xamarin.Forms
@@ -89,6 +89,9 @@ Ten kod animuje [ `Image` ](xref:Xamarin.Forms.Image) wystąpienia, skalując w 
 Poniższe zrzuty ekranu Pokaż skalowania w toku dla każdej platformy:
 
 ![](simple-images/scaleto.png "Skalowanie animacji")
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Klasa definiuje również [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) i [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) właściwości, które można skalować `VisualElement` inaczej w poziome i pionowe wskazówki. Te właściwości mogą być animowane z [ `Animation` ](xref:Xamarin.Forms.Animation) klasy. Aby uzyskać więcej informacji, zobacz [niestandardowe animacje w interfejsie Xamarin.Forms](custom.md).
 
 ### <a name="relative-scaling"></a>Względna skalowania
 

@@ -4,14 +4,14 @@ description: W tym artykule wyjaśniono, jak wdrożyć przeciągając touch, usz
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
-author: charlespetzold
-ms.author: chape
-ms.date: 04/03/2018
-ms.openlocfilehash: e2c1529980681ed1013c53343c2d077297352b95
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/14/2018
+ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615395"
 ---
 # <a name="touch-manipulations"></a>Manipulacje za pomocą dotyku
@@ -22,12 +22,385 @@ W środowiskach Wielodotyk, takich jak te na urządzeniach przenośnych użytkow
 
 ![](touch-images/touchmanipulationsexample.png "Mapy bitowej poddane translacji, skalowanie i obrót")
 
-## <a name="manipulating-one-bitmap"></a>Manipulowanie jeden mapy bitowej
+Wszystkie przykłady przedstawione w tym miejscu za pomocą zestawu narzędzi Xamarin.Forms efektu touch śledzenia znajdujące się w artykule [ **wywoływanie zdarzenia z efektów**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-**Touch manipulowania** strony pokazuje manipulacje dotykowej w postaci bitmapy.
-W tym przykładzie użyto efektu touch śledzenia znajdujące się w artykule [wywoływanie zdarzenia z efektów](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+## <a name="dragging-and-translation"></a>Przeciąganie i tłumaczenie
 
-Kilka innych plików zapewnia pomoc techniczną dla **Touch manipulowania** strony. Pierwsza to [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) wyliczenia, co oznacza różne rodzaje manipulowania touch implementowana przez kod, będą wyświetlane:
+Jedną z najważniejszych aplikacji przekształcenia macierzowe jest przetwarzanie touch. Pojedynczy [ `SKMatrix` ](xref:SkiaSharp.SKMatrix) wartości można skonsolidować serii operacji touch. 
+
+Dla pojedynczego finger przeciągania, `SKMatrix` wartość dokonuje translacji. Jest to zaprezentowane w **przeciąganie mapy bitowej** strony. Tworzy plik XAML `SKCanvasView` w interfejsie Xamarin.Forms `Grid`. A `TouchEffect` obiekt został dodany do `Effects` kolekcję, która `Grid`:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking"
+             x:Class="SkiaSharpFormsDemos.Transforms.BitmapDraggingPage"
+             Title="Bitmap Dragging">
+    
+    <Grid BackgroundColor="White">
+        <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="OnCanvasViewPaintSurface" />
+        <Grid.Effects>
+            <tt:TouchEffect Capture="True"
+                            TouchAction="OnTouchEffectAction" />
+        </Grid.Effects>
+    </Grid>
+</ContentPage>
+```
+
+Teoretycznie `TouchEffect` można dodać bezpośrednio do obiektu `Effects` zbiór `SKCanvasView`, ale nie działa na wszystkich platformach. Ponieważ `SKCanvasView` jest taki sam rozmiar jak `Grid` w tej konfiguracji podłączany do `Grid` działa równie dobrze.
+
+Plik związany z kodem ładuje w zasobie mapy bitowej w jego konstruktorze i wyświetla go w `PaintSurface` procedury obsługi:
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    // Bitmap and matrix for display
+    SKBitmap bitmap;
+    SKMatrix matrix = SKMatrix.MakeIdentity();
+    ···
+
+    public BitmapDraggingPage()
+    {
+        InitializeComponent();
+
+        string resourceID = "SkiaSharpFormsDemos.Media.SeatedMonkey.jpg";
+        Assembly assembly = GetType().GetTypeInfo().Assembly;
+
+        using (Stream stream = assembly.GetManifestResourceStream(resourceID))
+        {
+            bitmap = SKBitmap.Decode(stream);
+        }
+    }
+    ···
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+
+        // Display the bitmap
+        canvas.SetMatrix(matrix);
+        canvas.DrawBitmap(bitmap, new SKPoint());
+    }
+}
+```
+
+Bez żadnych dalszych kodu `SKMatrix` wartość jest zawsze macierzy identyfikowanie i go będzie mieć żadnego wpływu na wyświetlanie mapy bitowej. Celem `OnTouchEffectAction` obsługi ustawione w pliku XAML jest zmiana wartości macierzy, aby odzwierciedlić manipulacje dotykowej.
+
+`OnTouchEffectAction` Obsługi rozpoczyna się od konwertowanie Xamarin.Forms `Point` wartości do SkiaSharp `SKPoint` wartość. Jest to polegać na skalowanie na podstawie `Width` i `Height` właściwości `SKCanvasView` (które są jednostki miary niezależne od urządzenia) i `CanvasSize` właściwość, która znajduje się w jednostkach pikseli:
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    ···
+    // Touch information
+    long touchId = -1;
+    SKPoint previousPoint;
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point = 
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point))
+                {
+                    touchId = args.Id;
+                    previousPoint = point;
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchId == args.Id)
+                {
+                    // Adjust the matrix for the new position
+                    matrix.TransX += point.X - previousPoint.X;
+                    matrix.TransY += point.Y - previousPoint.Y;
+                    previousPoint = point;
+                    canvasView.InvalidateSurface();
+                }
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                touchId = -1;
+                break;
+        }
+    }
+    ···
+}
+```
+
+Gdy palcem najpierw dotyka ekranu zdarzenie typu `TouchActionType.Pressed` jest uruchamiany. Pierwsze zadanie ma na celu określenie, jeśli finger zachodzi mapy bitowej. Takie zadanie jest często określany mianem _testowania trafień_. W tym przypadku testowania trafień można osiągnąć, tworząc `SKRect` wartość odpowiadającą mapy bitowej zastosowaniu macierzy transformacji do niego za pomocą `MapRect`, a następnie określenie, czy punkt touch wnętrzu przekształcone.
+
+Jeśli tak jest rzeczywiście, a następnie `touchId` pole jest ustawione na użycia funkcji touch ID, a pozycja palca zostanie zapisany.
+
+Dla `TouchActionType.Moved` zdarzenie, czynników tłumaczenia `SKMatrix` wartości są dostosowywane na bieżącej pozycji palca, a nowe położenie finger. Zapisania użytku następnym razem, stanowisko i `SKCanvasView` zostaje unieważniony.
+
+Jak możesz wypróbować ten program, zwróć uwagę, można tylko przeciągnąć mapy bitowej przy palca dotyka obszar, w którym jest wyświetlana mapy bitowej. Pomimo tego ograniczenia nie jest bardzo ważne dla tego programu, staje się kluczowym podczas manipulacji wiele map bitowych.
+
+## <a name="pinching-and-scaling"></a>Uszczypnięć i skalowanie
+
+Co chcesz się zdarzyć, gdy dwóch palców touch mapę bitową? Jeśli przeniesienie dwóch palców w sposób równoległy, następnie prawdopodobnie chcesz mapy bitowej, aby przenieść wraz z palcami. Czy dwóch palców uszczypnięcia wykonać rozciąganie operacji, może być mapy bitowej do można obracać (Aby dokładniej omówione w następnej sekcji) lub skalować. Podczas skalowania mapy bitowej, dobrym pomysłem większość dwóch palców pozostać w tej samej pozycji względem mapę bitową i mapy bitowej można skalować odpowiednio.
+
+Jednocześnie obsługi dwóch palców wydaje się skomplikowane, ale należy pamiętać, że `TouchAction` obsługi tylko do odbierania informacji o jednym palcem w danym momencie. Jeśli dwóch palców są manipulowania mapy bitowej, dla każdego zdarzenia jednym palcem została zmieniona pozycja, ale innych nie zmienił się. W **skalowanie mapy bitowej** poniższy kod strony, nosi nazwę palca, które nie uległy zmianie pozycji _pivot_ punktu, ponieważ transformacji jest określana względem tego punktu.
+
+Jedną różnicą między ten program i poprzedni program jest tym wielu touch, które muszą zostać zapisane identyfikatory. Słownik jest używany w tym zakresie, gdzie użycia funkcji touch ID jest kluczem słownika, a wartość słownika jest bieżącego położenia obiektu tej linii papilarnych:
+
+```csharp
+public partial class BitmapScalingPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point) && !touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Add(args.Id, point);
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger scale and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index of non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points involved in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Scaling factors are ratios of those
+                        float scaleX = newVector.X / oldVector.X;
+                        float scaleY = newVector.Y / oldVector.Y;
+
+                        if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
+                            !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
+                        {
+                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            SKMatrix scaleMatrix = 
+                                SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
+
+                            SKMatrix.PostConcat(ref matrix, scaleMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+    ···
+}
+```
+
+Obsługa `Pressed` akcji jest prawie taki sam, jak poprzedni program, z wyjątkiem tego, identyfikator i touch punktu są dodawane do słownika. `Released` i `Cancelled` akcji Usuń wpis w słowniku.
+
+Obsługa `Moved` akcji jest jednak bardziej złożone. Jeśli zaangażowanych jest tylko jeden finger, następnie przetwarzania jest znacznie taki sam, jak poprzedni program. Dla co najmniej dwóch palców program muszą również uzyskiwać informacje ze słownika obejmujące finger, która nie jest przenoszona. Dzieje się tak, kopiując klucze słownikowe do tablicy, a następnie Porównanie pierwszego klucza z Identyfikatorem finger przenoszone. Program do uzyskania punktu obrotu odpowiadający finger, która nie jest przenoszona, która umożliwia.
+
+Następnie obliczana dwa wektory stanowisko finger względem punktu obrotu i starego pozycji finger względem punktu obrotu. Wskaźniki te wektorów są skalowanie czynników. Dzielenie przez zero jest możliwość, te muszą zostać sprawdzone nieskończonej wartości lub wartości NaN (nieliczbową). Jeśli wszystko jest poprawnie, przekształcenie skalowania jest połączona z `SKMatrix` wartości zapisane jako pole.
+
+Jak możesz poeksperymentować z tą stroną, zauważysz, przeciągnij mapę bitową z jednego lub dwóch palców, lub przeskalujesz ją za pomocą dwóch palców. Skalowanie jest _anizotropowego_, co oznacza, że skalowanie może różnić się w kierunku poziomym i pionowym. Zakłóca współczynnik proporcji, ale również pozwala na Przerzucanie mapy bitowej obraz dublowania. Mogą też odnajdywać, można zmniejszyć mapę bitową z wymiarem zero i znika. W kodzie produkcyjnym należy zabezpieczyć się przed tym.
+
+## <a name="two-finger-rotation"></a>Obrót dwóch palców
+
+**Obróć mapę bitową** strona pozwala na używanie dwóch palców dla obrotu i skalowania izotropowego. Mapa bitowa zawsze zachowuje poprawne proporcje są zachowywane. Używając dwóch palców dla obrotu i skalowania anizotropowego nie działa bardzo dobrze, ponieważ ruch palcami jest bardzo podobne zarówno do zadań.
+
+Pierwszy istotną różnicą w tym programie jest logiki testowania trafień. Poprzednie używane programy `Contains` metody `SKRect` do ustalenia, czy punkt touch jest w ramach przekształcone prostokąt, który odnosi się do mapy bitowej. Ale jak użytkownik modyfikuje mapy bitowej, może być mapy bitowej okresowych i `SKRect` poprawnie nie może reprezentować obrócony prostokąta. Może być obawy, że logiki testowania trafień należy zaimplementować dość złożone geometrii analityczne w takiej sytuacji.
+
+Jednak skrót jest dostępny: określenie, czy punkt znajduje się w granicach przekształcone prostokąta jest taka sama jak ustalania, czy punkt przekształcone odwrotność znajduje się w granicach Nieprzekształcony prostokąta. Jest znacznie łatwiejsze obliczeń i logiki można w dalszym ciągu używać wygodne `Contains` metody:
+
+```csharp
+public partial class BitmapRotationPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                if (!touchDictionary.ContainsKey(args.Id))
+                {
+                    // Invert the matrix
+                    if (matrix.TryInvert(out SKMatrix inverseMatrix))
+                    {
+                        // Transform the point using the inverted matrix
+                        SKPoint transformedPoint = inverseMatrix.MapPoint(point);
+
+                        // Check if it's in the untransformed bitmap rectangle
+                        SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+
+                        if (rect.Contains(transformedPoint))
+                        {
+                            touchDictionary.Add(args.Id, point);
+                        }
+                    }
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger rotate, scale, and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Find angles from pivot point to touch points
+                        float oldAngle = (float)Math.Atan2(oldVector.Y, oldVector.X);
+                        float newAngle = (float)Math.Atan2(newVector.Y, newVector.X);
+
+                        // Calculate rotation matrix
+                        float angle = newAngle - oldAngle;
+                        SKMatrix touchMatrix = SKMatrix.MakeRotation(angle, pivotPoint.X, pivotPoint.Y);
+
+                        // Effectively rotate the old vector
+                        float magnitudeRatio = Magnitude(oldVector) / Magnitude(newVector);
+                        oldVector.X = magnitudeRatio * newVector.X;
+                        oldVector.Y = magnitudeRatio * newVector.Y;
+
+                        // Isotropic scaling!
+                        float scale = Magnitude(newVector) / Magnitude(oldVector);
+
+                        if (!float.IsNaN(scale) && !float.IsInfinity(scale))
+                        {
+                            SKMatrix.PostConcat(ref touchMatrix,
+                                SKMatrix.MakeScale(scale, scale, pivotPoint.X, pivotPoint.Y));
+
+                            SKMatrix.PostConcat(ref matrix, touchMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+
+    float Magnitude(SKPoint point)
+    {
+        return (float)Math.Sqrt(Math.Pow(point.X, 2) + Math.Pow(point.Y, 2));
+    }
+    ···
+}
+```
+
+Logikę `Moved` zdarzenie rozpoczyna się, jak poprzedni program. Dwa wektory o nazwie `oldVector` i `newVector` są obliczane na podstawie na poprzedni i bieżący punkt przenoszenie finger i punktu obrotu nieruchomym finger. Ale ustalony kąty te kierunki, a różnica polega na kąt obrotu.
+
+Skalowanie może również być zaangażowany, więc stare wektor obrócenia oparte na kąt obrotu. Względne wielkości dwa wektory jest teraz współczynnik skalowania. Należy zauważyć, że takie same `scale` wartość jest używana w poziomie i skalowanie w pionie, tak aby skalowania jest izotropowego. `matrix` Pola jest uwzględniany przez macierzy obrotu i skalowania macierzy.
+
+Jeśli Twoja aplikacja potrzebuje do zaimplementowania touch przetwarzania w postaci bitmapy (lub innego obiektu), można przystosować kodu z próbki te trzy dla swojej aplikacji. Ale jeśli musisz wdrożyć touch przetwarzania dla wielu map bitowych, prawdopodobnie należy do hermetyzacji te operacje w innych klas w ogóle.
+
+## <a name="encapsulating-the-touch-operations"></a>Zawieranie operacje Touch
+
+**Touch manipulowania** strony pokazuje manipulowania touch w postaci bitmapy, ale przy użyciu kilka innych plików, które hermetyzują znaczną część logiki przedstawionych powyżej. Pierwsza z tych plików jest [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) wyliczenia, co oznacza różne rodzaje manipulowania touch implementowana przez kod, będą wyświetlane:
 
 ```csharp
 enum TouchManipulationMode
@@ -43,17 +416,19 @@ enum TouchManipulationMode
 
 `PanOnly` jest przeciągnij palcem jeden, który jest implementowany przy użyciu translacji. Kolejne opcje także obejmują panoramowaniem, ale obejmują dwóch palców: `IsotropicScale` jest operacją uszczypnięcia, powstałego w obiekcie równie skalowanie w poziomie i pionie kierunkach. `AnisotropicScale` Umożliwia skalowanie nierówne.
 
-`ScaleRotate` Opcja jest przeznaczona dla dwóch palców skalowanie i obrót. Skalowanie jest izotropowego. Implementowanie obrotu dwóch palców ze skalowaniem anizotropowego jest problematyczne, ponieważ przepływy finger są zasadniczo takie same.
+`ScaleRotate` Opcja jest przeznaczona dla dwóch palców skalowanie i obrót. Skalowanie jest izotropowego. Jak wspomniano wcześniej, implementowanie obrotu dwóch palców ze skalowaniem anizotropowego jest problematyczne, ponieważ przepływy finger są zasadniczo takie same.
 
 `ScaleDualRotate` Opcja dodaje obrotu co finger. Przeciągany obiekt pojedynczej linii papilarnych przeciągnie obiektu, jest najpierw obracany wokół środka tak, aby Centrum obiektu linii z przeciągania wektora.
 
 [ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) plik zawiera `Picker` z elementami członkowskimi `TouchManipulationMode` wyliczenia:
 
 ```xaml
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:tt="clr-namespace:TouchTracking"
+             xmlns:local="clr-namespace:SkiaSharpFormsDemos.Transforms"
              x:Class="SkiaSharpFormsDemos.Transforms.TouchManipulationPage"
              Title="Touch Manipulation">
     <Grid>
@@ -65,22 +440,24 @@ enum TouchManipulationMode
         <Picker Title="Touch Mode"
                 Grid.Row="0"
                 SelectedIndexChanged="OnTouchModePickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>None</x:String>
-                <x:String>PanOnly</x:String>
-                <x:String>IsotropicScale</x:String>
-                <x:String>AnisotropicScale</x:String>
-                <x:String>ScaleRotate</x:String>
-                <x:String>ScaleDualRotate</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type local:TouchManipulationMode}">
+                    <x:Static Member="local:TouchManipulationMode.None" />
+                    <x:Static Member="local:TouchManipulationMode.PanOnly" />
+                    <x:Static Member="local:TouchManipulationMode.IsotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.AnisotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleRotate" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleDualRotate" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 4
             </Picker.SelectedIndex>
         </Picker>
-
+        
         <Grid BackgroundColor="White"
               Grid.Row="1">
-
+            
             <skia:SKCanvasView x:Name="canvasView"
                                PaintSurface="OnCanvasViewPaintSurface" />
             <Grid.Effects>
@@ -133,9 +510,7 @@ public partial class TouchManipulationPage : ContentPage
         if (bitmap != null)
         {
             Picker picker = (Picker)sender;
-            TouchManipulationMode mode;
-            Enum.TryParse(picker.Items[picker.SelectedIndex], out mode);
-            bitmap.TouchManager.Mode = mode;
+            bitmap.TouchManager.Mode = (TouchManipulationMode)picker.SelectedItem;
         }
     }
     ...
@@ -244,11 +619,7 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest` Metoda zwraca `true` Jeśli użytkownik dotyka ekranu w punkcie w granicach mapy bitowej. Jako użytkownik modyfikuje mapy bitowej, mapy bitowej może obracać lub nawet (przy użyciu kombinacji anizotropowego skalowania i obracania) można w kształcie równoległobok. Może być obawy, że `HitTest` metoda musi implementować dość złożone geometrii analityczne w takiej sytuacji.
-
-Jednak skrót jest:
-
-Określenie, czy punkt znajduje się w granicach przekształcone prostokąta jest taka sama jak ustalania, czy punkt przekształcone odwrotność znajduje się w granicach Nieprzekształcony prostokąta. Jest znacznie łatwiejsze obliczeń i mogą być używane wygodnym `Contains` metody zdefiniowanej przez `SKRect`:
+`HitTest` Metoda zwraca `true` Jeśli użytkownik dotyka ekranu w punkcie w granicach mapy bitowej. Ta metoda korzysta z logiki przedstawionej wcześniej w **obrotu mapy bitowej** strony:
 
 ```csharp
 class TouchManipulationBitmap
@@ -850,7 +1221,7 @@ public partial class SingleFingerCornerScalePage : ContentPage
 
 `Moved` Typ akcji oblicza macierzy odpowiadający działania touch od momentu finger naciśnięcia ekranu do tego czasu. Tej macierzy oraz w macierzy go łączy obowiązuje w czasie finger naciskanie mapy bitowej. Operacja skalowania jest zawsze względem rogu przeciwnej ten, który korzysta z finger.
 
-Dla małych i prostokątnych map bitowych elipsę posługiwanie się nimi może zajmować większość mapę bitową i pozostaw bardzo niewielki obszarów w rogach skalowania mapy bitowej. Preferować nieco inne podejścia, w tym przypadku możesz zastąpić ten całą `if` blok, który ustawia `isScaling` do `true` przy użyciu tego kodu:
+Dla małych i prostokątnych map bitowych elipsę posługiwanie się nimi może zajmować większość mapę bitową i pozostaw niewielki obszarów w rogach skalowania mapy bitowej. Preferować nieco inne podejścia, w tym przypadku możesz zastąpić ten całą `if` blok, który ustawia `isScaling` do `true` przy użyciu tego kodu:
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -898,6 +1269,6 @@ Ten kod skutecznie dzieli obszaru mapy bitowej do wnętrza romb i cztery trójk�
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Wywoływanie zdarzenia z efektów](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
