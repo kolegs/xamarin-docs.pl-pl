@@ -4,14 +4,14 @@ description: W tym artykule przedstawiono, jak skutecznie stawisz niewymagające
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 7c336e6b5224f61ff84eb39652788b23f52b806e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: a28e4bbaae28befd91278ac5c2b9e7c9c0b522b9
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615421"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Kropki i kreski SkiaSharp
@@ -22,9 +22,9 @@ Skiasharp — umożliwia narysowanie wierszy, które nie są stałe, ale zamiast
 
 ![](dots-images/dottedlinesample.png "Linia kropkowana")
 
-Tego *efekt ścieżki*, który jest wystąpieniem [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) klasę, która jest ustawiona na [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) właściwość `SKPaint`. Można utworzyć ścieżki efekt (lub łączenia efekty ścieżek) przy użyciu statycznych `Create` metody zdefiniowane przez `SKPathEffect`.
+Tego *efekt ścieżki*, który jest wystąpieniem [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) klasę, która jest ustawiona na [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) właściwość `SKPaint`. Można utworzyć ścieżki efekt (lub łączenia efekty ścieżek) przy użyciu jednej z metod tworzenia statycznych, zdefiniowane przez `SKPathEffect`. (`SKPathEffect` jest jeden z sześciu efektów obsługiwane przez SkiaSharp; inne są opisane w sekcji [ **efekt SkiaSharp**](../effects/index.md).)
 
-Rysowanie linii kropkowanej lub przerywanej, należy użyć [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) metody statycznej. Istnieją dwa argumenty: jest to pierwsze tablicę `float` wartości, które wskazują długości kropki i kreski i długość odstępów między nimi. Ta tablica musi mieć parzysta liczba elementów, a powinien być co najmniej dwa elementy. (Może mieć zero elementów w tablicy, ale linia ciągła, którego wynikiem.) Czy istnieją dwa elementy, pierwszy długość kropka lub kreska, a drugą jest długość luki przed następnym kropka lub kreska. Jeśli istnieje więcej niż dwa elementy, a następnie znajdują się w następującej kolejności: kreski, długość, długość przerwy, długość kreski, długość przerwy i tak dalej.
+Rysowanie linii kropkowanej lub przerywanej, należy użyć [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) metody statycznej. Istnieją dwa argumenty: jest to pierwsze tablicę `float` wartości, które wskazują długości kropki i kreski i długość odstępów między nimi. Ta tablica musi mieć parzysta liczba elementów, a powinien być co najmniej dwa elementy. (Może mieć zero elementów w tablicy, ale linia ciągła, którego wynikiem.) Czy istnieją dwa elementy, pierwszy długość kropka lub kreska, a drugą jest długość luki przed następnym kropka lub kreska. Jeśli istnieje więcej niż dwa elementy, a następnie znajdują się w następującej kolejności: kreski, długość, długość przerwy, długość kreski, długość przerwy i tak dalej.
 
 Ogólnie rzecz biorąc należy wprowadzić wielokrotnością szerokość pociągnięcia długości dash i przerwy. Jeśli szerokość pociągnięcia 10 pikseli, na przykład, następnie tablicy {10, 10} będzie narysuj linię kropkowaną których kropki i luki mają taką samą długość jak grubość pociągnięć.
 
@@ -35,8 +35,9 @@ Kropkowana i wiersze przerywaną, co przedstawiono na **kropki i kreski** strony
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.DotsAndDashesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.DotsAndDashesPage"
              Title="Dots and Dashes">
     <Grid>
         <Grid.RowDefinitions>
@@ -54,11 +55,13 @@ Kropkowana i wiersze przerywaną, co przedstawiono na **kropki i kreski** strony
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -69,31 +72,33 @@ Kropkowana i wiersze przerywaną, co przedstawiono na **kropki i kreski** strony
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>10, 10</x:String>
-                <x:String>30, 10</x:String>
-                <x:String>10, 10, 30, 10</x:String>
-                <x:String>0, 20</x:String>
-                <x:String>20, 20</x:String>
-                <x:String>0, 20, 20, 20</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>10, 10</x:String>
+                    <x:String>30, 10</x:String>
+                    <x:String>10, 10, 30, 10</x:String>
+                    <x:String>0, 20</x:String>
+                    <x:String>20, 20</x:String>
+                    <x:String>0, 20, 20, 20</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-Pierwsze trzy elementy `dashArrayPicker` przyjęto założenie, że szerokość pociągnięcia jest 10 pikseli. {10, 10} tablica dotyczy linię kropkowaną {30, 10} dotyczy linię przerywaną, co i {10, 10, 30, 10} dotyczy wiersza kropki i kreski. (Pozostałych trzech zostanie dokładnie omówione wkrótce.)
+ Pierwsze trzy elementy `dashArrayPicker` przyjęto założenie, że szerokość pociągnięcia jest 10 pikseli. {10, 10} tablica dotyczy linię kropkowaną {30, 10} dotyczy linię przerywaną, co i {10, 10, 30, 10} dotyczy wiersza kropki i kreski. (Pozostałych trzech zostanie dokładnie omówione wkrótce.)
 
-[ `DotsAndDashesPage` Pliku związanego z kodem](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) zawiera `PaintSurface` program obsługi zdarzeń i kilku procedur pomocnika do uzyskiwania dostępu do `Picker` widoki:
+[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) Zawiera plik związany z kodem `PaintSurface` program obsługi zdarzeń i kilku procedur pomocnika do uzyskiwania dostępu do `Picker` widoki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,9 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Blue,
         StrokeWidth = 10,
-        StrokeCap = (SKStrokeCap)Enum.Parse(typeof(SKStrokeCap),
-                        strokeCapPicker.Items[strokeCapPicker.SelectedIndex]),
-
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem,
         PathEffect = SKPathEffect.CreateDash(GetPickerArray(dashArrayPicker), 20)
     };
 
@@ -121,17 +124,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     path.LineTo(0.2f * info.Width, 0.8f * info.Height);
     path.LineTo(0.8f * info.Width, 0.2f * info.Height);
 
-    canvas.DrawPath(path, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
+    canvas.DrawPath(path, paint); 
 }
 
 float[] GetPickerArray(Picker picker)
@@ -141,8 +134,8 @@ float[] GetPickerArray(Picker picker)
         return new float[0];
     }
 
-    string[] strs = picker.Items[picker.SelectedIndex].Split(new char[] { ' ', ',' },
-                                                             StringSplitOptions.RemoveEmptyEntries);
+    string str = (string)picker.SelectedItem;
+    string[] strs = str.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
     float[] array = new float[strs.Length];
 
     for (int i = 0; i < strs.Length; i++)
@@ -169,45 +162,49 @@ Pokazuje ekran platformy uniwersalnej systemu Windows, kropkami, które linia pr
 
 Do tej pory nie wymieniono stało się z drugim parametrem `SKPathEffect.CreateDash` metody. Ten parametr nosi nazwę `phase` i odwołuje się do przesunięcia w ramach wzorzec kropki i kreski do początku wiersza. Na przykład, jeśli tablica dash jest {10, 10} i `phase` wynosi 10, a następnie wiersz zaczyna się od przerwa, a nie pojedynczego znaku kropki.
 
-Jeden ciekawszych zastosowań `phase` parametr znajduje się w animacji. **Animowane spirali** strona jest podobna do **spirali Archimedean** strony, chyba że [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje klasy `phase` parametru. Strona przedstawia również innego podejścia do animacji. Wcześniejszy przykład z [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) używane `Task.Delay` metodę, aby kontrolować animację. W tym przykładzie zamiast użyto Xamarin.Forms `Device.Timer` metody:
+Jeden ciekawszych zastosowań `phase` parametr znajduje się w animacji. **Animowane spirali** strona jest podobna do **spirali Archimedean** strony, chyba że [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) animuje klasy `phase` przy użyciu parametru Zestaw narzędzi Xamarin.Forms `Device.Timer` metody:
 
 
 ```csharp
-const double cycleTime = 250;       // in milliseconds
-
-SKCanvasView canvasView;
-Stopwatch stopwatch = new Stopwatch();
-bool pageIsActive;
-float dashPhase;
-
-public AnimatedSpiralPage()
+public class AnimatedSpiralPage : ContentPage
 {
-    Title = "Animated Spiral";
+    const double cycleTime = 250;       // in milliseconds
 
-    canvasView = new SKCanvasView();
-    canvasView.PaintSurface += OnCanvasViewPaintSurface;
-    Content = canvasView;
-}
+    SKCanvasView canvasView;
+    Stopwatch stopwatch = new Stopwatch();
+    bool pageIsActive;
+    float dashPhase;
 
-protected override void OnAppearing()
-{
-    base.OnAppearing();
-    pageIsActive = true;
-    stopwatch.Start();
-
-    Device.StartTimer(TimeSpan.FromMilliseconds(33), () =>
+    public AnimatedSpiralPage()
     {
-        double t = stopwatch.Elapsed.TotalMilliseconds % cycleTime / cycleTime;
-        dashPhase = (float)(10 * t);
-        canvasView.InvalidateSurface();
+        Title = "Animated Spiral";
 
-        if (!pageIsActive)
+        canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        pageIsActive = true;
+        stopwatch.Start();
+
+        Device.StartTimer(TimeSpan.FromMilliseconds(33), () =>
         {
-            stopwatch.Stop();
-        }
+            double t = stopwatch.Elapsed.TotalMilliseconds % cycleTime / cycleTime;
+            dashPhase = (float)(10 * t);
+            canvasView.InvalidateSurface();
 
-        return pageIsActive;
-    });
+            if (!pageIsActive)
+            {
+                stopwatch.Stop();
+            }
+
+            return pageIsActive;
+        });
+    }
+    ···  
 }
 ```
 
@@ -215,10 +212,7 @@ Oczywiście trzeba będzie uruchamiany program, aby zobaczyć animacji:
 
 [![](dots-images/animatedspiral-small.png "Potrójna zrzut ekranu przedstawiający stronę animowane spirali")](dots-images/animatedspiral-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę spirali animowane")
 
-Teraz przedstawiono sposób Rysowanie linii, a także zdefiniować krzywych przy użyciu równania parametryczne. Sekcja do opublikowania w dalszej części omówiono różne rodzaje krzywych, `SKPath` obsługuje.
-
-
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

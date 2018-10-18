@@ -1,5 +1,5 @@
 ---
-title: Dodawanie wzorca Tap aparat rozpoznawania gestów gestu
+title: Dodawanie aparat rozpoznawania gestów wzorca tap
 description: W tym artykule wyjaśniono, jak używać gest wykrywania wzorca tap w aplikacji platformy Xamarin.Forms. Wykrywanie wzorca TAP jest implementowane za pomocą klasy TapGestureRecognizer.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994857"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Dodawanie wzorca Tap aparat rozpoznawania gestów gestu
+# <a name="adding-a-tap-gesture-recognizer"></a>Dodawanie aparat rozpoznawania gestów wzorca tap
 
 _Gest służy do wykrywania wzorca tap i jest implementowane za pomocą klasy TapGestureRecognizer._
-
-## <a name="overview"></a>Omówienie
 
 Aby element interfejsu użytkownika możesz klikać z gest, Utwórz [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) wystąpienia i obsługiwać [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) zdarzeń i Dodaj nowy aparat rozpoznawania gestów do [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekcji na element interfejsu użytkownika. Poniższy kod przedstawia przykład `TapGestureRecognizer` dołączone do [ `Image` ](xref:Xamarin.Forms.Image) elementu:
 
@@ -72,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>Za pomocą interfejsu ICommand
 
-Użyj aplikacji, które zazwyczaj używają wzorca Mvvm `ICommand` zamiast bezpośrednio łącząc się procedury obsługi zdarzeń. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Może łatwo obsługiwać `ICommand` albo przez ustawienie powiązania w kodzie:
+Użyj aplikacji, które zazwyczaj używają wzorzec Model-View-ViewModel (MVVM) `ICommand` zamiast bezpośrednio łącząc się procedury obsługi zdarzeń. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Może łatwo obsługiwać `ICommand` albo przez ustawienie powiązania w kodzie:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -113,10 +111,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
-## <a name="summary"></a>Podsumowanie
-
-Gest służy do wykrywania wzorca tap i jest implementowane za pomocą [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) klasy. Można określić liczbę podsłuchu rozpoznawanie dwukrotnego (lub naciśnij trzykrotnie lub więcej naciśnięcia) zachowanie.
 
 
 ## <a name="related-links"></a>Linki pokrewne

@@ -1,57 +1,57 @@
 ---
-title: Wprowadzenie do platformy Xamarin.Forms
-description: W tym przewodniku przedstawiono podstawowe informacje dotyczące tworzenia platformy Xamarin.Forms oraz obejmuje tworzenie wielu platform i wielu ekranu aplikacji.
+title: Wprowadzenie do zestawu narzędzi Xamarin.Forms
+description: W tym przewodniku przedstawiono podstawowe informacje dotyczące tworzenia aplikacji platformy Xamarin.Forms oraz opisano tworzenie aplikacji dla wielu platform i wieloma ekranami.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/02/2016
-ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 09/24/2018
+ms.openlocfilehash: eafdc103cfda2db94d46977df1323f88a822eb58
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "35242443"
 ---
-# <a name="getting-started-with-xamarinforms"></a>Wprowadzenie do platformy Xamarin.Forms
+# <a name="get-started-with-xamarinforms"></a>Rozpoczynanie pracy z zestawem narzędzi Xamarin.Forms
 
-_Platformy Xamarin.Forms jest zestaw narzędzi interfejsu użytkownika i platform, który umożliwia deweloperom wydajne tworzenie natywnego użytkownika układy interfejsu, które można udostępniać dla systemu iOS, Android i uniwersalnych aplikacji platformy systemu Windows. Ta seria wprowadzono podstawy rozwoju platformy Xamarin.Forms i obejmuje tworzenie wielu platform i wielu ekranu aplikacji._
+_Xamarin.Forms to zestaw narzędzi interfejsu użytkownika dla wielu platform, które umożliwia deweloperom efektywne tworzenie natywnych użytkownika układy interfejsu, które mogą być udostępniane w systemach iOS, Android i Windows Universal apps platformy. W tej serii przedstawiono podstawowe informacje dotyczące tworzenia aplikacji platformy Xamarin.Forms i opisano tworzenie aplikacji dla wielu platform i wieloma ekranami._
 
-Omówienie instalacji i konfiguracji rozwiązania, mające zastosowanie do aplikacji dla wielu platform, zobacz [wymagania dotyczące platformy Xamarin.Forms](installation.md) i [instalacji](~/cross-platform/get-started/installation/index.md).
+Aby uzyskać omówienie instalacji i rozwiązania w zakresie instalacji, które mają zastosowanie do programowania dla wielu platform, zobacz [wymagania dotyczące zestawu narzędzi Xamarin.Forms](installation.md) i [instalacji](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
-> [Szybki Start platformy Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
-
-
+> [Utwórz swoją pierwszą aplikację](~/xamarin-forms/get-started/first-app/index.md)
 
 ## <a name="requirementsinstallationmd"></a>[Wymagania](installation.md)
 
-Przegląd wymagań platformy aplikacji platformy Xamarin.Forms rozwinięte i minimalne wymagania systemowe programowania z użyciem platformy Xamarin.Forms w programie Visual Studio for Mac i Visual Studio.
+Przegląd wymagań platformy aplikacji opracowanych platformy Xamarin.Forms i minimalne wymagania systemowe dotyczące programowania z użyciem zestawu narzędzi Xamarin.Forms w programie Visual Studio dla komputerów Mac i Visual Studio.
 
-## <a name="hello-xamarinformsxamarin-formsget-startedhello-xamarin-formsindexmd"></a>[Witaj, Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/index.md)
+## <a name="build-your-first-appfirst-appindexmd"></a>[Utwórz swoją pierwszą aplikację](first-app/index.md)
 
-Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji platformy Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio. Tematy obejmują narzędzia, pojęcia i kroki wymagane do tworzenia i wdrażania aplikacji platformy Xamarin.Forms.
+Obejrzyj film wideo, a następnie wykonaj instrukcje krok po kroku, aby skompilować i przetestować swoją pierwszą aplikację Xamarin.Forms.
 
-## <a name="hello-xamarinforms-multiscreenxamarin-formsget-startedhello-xamarin-forms-multiscreenindexmd"></a>[Witaj, Xamarin.Forms (wiele ekranów)](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/index.md)
+## <a name="hello-xamarinformshello-xamarin-formsindexmd"></a>[Witaj, Xamarin.Forms](hello-xamarin-forms/index.md)
 
-W tym przewodniku rozszerza utworzonej wcześniej aplikacji, wprowadzając nawigacji do drugiej strony. Tematy zawierają dane, powiązania i wykonywania nawigacji.
+Ten przewodnik zawiera wprowadzenie do tworzenia aplikacji Xamarin.Forms przy użyciu programu Visual Studio dla komputerów Mac lub Visual Studio. Omawiane tematy obejmują narzędzia, koncepcje i kroki wymagane do kompilowania i wdrażania aplikacji platformy Xamarin.Forms.
 
-## <a name="introduction-to-xamarinformsxamarin-formsget-startedintroduction-to-xamarin-formsmd"></a>[Wprowadzenie do platformy Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+## <a name="hello-xamarinforms-multiscreenhello-xamarin-forms-multiscreenindexmd"></a>[Witaj, Xamarin.Forms (wiele ekranów)](hello-xamarin-forms-multiscreen/index.md)
 
-W tym artykule omówiono niektóre podstawowe pojęcia związane z opracowywaniem aplikacji za pomocą platformy Xamarin.Forms, łącznie z [widoki i układy](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Views_and_Layouts), [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Lists_in_Xamarin_Forms) kontroli, [powiązaniadanych](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Data_Binding)i [nawigacji](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Navigation).
+Ten przewodnik rozszerza utworzonej wcześniej aplikacji, wprowadzając nawigację do drugiej strony. Omawiane tematy obejmują wiązaniu danych i przeprowadzania nawigacji.
 
+## <a name="introduction-to-xamarinformsintroduction-to-xamarin-formsmd"></a>[Wprowadzenie do zestawu narzędzi Xamarin.Forms](introduction-to-xamarin-forms.md)
 
-## <a name="get-started-with-xamarin-university"></a>Rozpoczynanie pracy z Xamarin University
+W tym artykule omówiono niektóre kluczowe pojęcia do tworzenia aplikacji przy użyciu zestawu narzędzi Xamarin.Forms, w tym [widoki i układy](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#user-interface), [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#lists-in-xamarinforms) kontroli [Powiązaniedanych](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#data-binding)i [nawigacji](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#navigation).
+
+## <a name="get-started-with-xamarin-university"></a>Wprowadzenie do platformy Xamarin University
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Tworzenie pierwszej aplikacji platformy Xamarin.Forms za pomocą platformy Xamarin dla Visual Studio przez [Xamarin University](https://university.xamarin.com)**
-
+**Tworzenie pierwszą aplikację Xamarin.Forms za pomocą platformy Xamarin dla programu Visual Studio przez [platformy Xamarin University](https://university.xamarin.com)**
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Bezpłatne Learning Self-Guided (klip wideo)](https://university.xamarin.com/self-guided)
-- [Wprowadzenie do platformy Xamarin (klip wideo)](https://developer.xamarin.com/videos/)
-- [Witaj, iOS platformy Xamarin.Forms skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)
+- [Bezpłatnym szkoleniom wykładów (wideo)](https://university.xamarin.com/self-guided)
+- [Wprowadzenie do środowiska Xamarin (wideo)](https://developer.xamarin.com/videos/)
+

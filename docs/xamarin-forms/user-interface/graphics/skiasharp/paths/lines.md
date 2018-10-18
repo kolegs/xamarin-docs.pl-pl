@@ -4,39 +4,39 @@ description: W tym artykule wyjaśniono, jak używać SkiaSharp Rysowanie linii 
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6dc7737290bf7eacb3ba0e0bca0ddcfcd4aacba3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615265"
 ---
 # <a name="lines-and-stroke-caps"></a>Linie i zakończenia pociągnięć
 
 _Dowiedz się, jak używać SkiaSharp Rysowanie linii za pomocą różnych pociągnięć_
 
-SkiaSharp renderowanie pojedynczy wiersz jest bardzo różnią się od renderowania szereg połączone linie w proste. Nawet podczas rysowania pojedynczej linii, jednak często jest to wymagane, aby dać wiersze szerokość pociągnięcia określonego i szerszy wiersza, niezwykle ważne staje się wygląd końca linii o nazwie *pociągnięcia*:
+SkiaSharp renderowanie pojedynczy wiersz jest bardzo różnią się od renderowania szereg połączone linie w proste. Nawet w przypadku rysowania pojedynczej linii, jednak jest często wymagane, aby dać określonego grubość linii. W miarę szersze te wiersze wygląd końce wierszy również staje się ważne. Wygląd końca wiersza jest nazywany *pociągnięcia*:
 
 ![](lines-images/strokecapsexample.png "Opcje caps trzy pociągnięcia")
 
-Rysowania pojedynczej linii `SKCanvas` definiuje prosty [ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) metody, w której argumenty wskazują początkową i końcową współrzędne wiersz z `SKPaint` obiektu:
+Rysowania pojedynczej linii `SKCanvas` definiuje prosty [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) metody, w której argumenty wskazują początkową i końcową współrzędne wiersz z `SKPaint` obiektu:
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Domyślnie `StrokeWidth` nowo utworzona właściwość `SKPaint` obiektu ma wartość 0, która ma taki sam skutek jak wartość 1 w renderowania linię o jeden piksel w grubości. Ta opcja ma nazwę bardzo alokowania elastycznego na urządzeniach o wysokiej rozdzielczości, takich jak telefony, więc prawdopodobnie będziesz chciał ustaw `StrokeWidth` większej wartości. Po rozpoczęciu Rysowanie linii o sporej liczbie grubości, który wywołuje inny problem, ale: jak rozpoczyna się i kończy się tych grubości linii będą renderowane?
+Domyślnie [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) nowo utworzona właściwość `SKPaint` obiektu ma wartość 0, która ma taki sam skutek jak wartość 1 w renderowania linię o jeden piksel w grubości. Ta opcja ma nazwę bardzo alokowania elastycznego na urządzeniach o wysokiej rozdzielczości, takich jak telefony, więc prawdopodobnie będziesz chciał ustaw `StrokeWidth` większej wartości. Po rozpoczęciu Rysowanie linii o sporej liczbie grubości, który wywołuje inny problem, ale: jak rozpoczyna się i kończy się tych grubości linii będą renderowane?
 
-Wygląd rozpoczyna się i końców wierszy jest nazywany *zakończenia wiersza* lub Skia, *pociągnięcia*. Słowo "limit", w tym kontekście, który odwołuje się do typu hat &mdash; coś, co znajduje się na końcu wiersza. Możesz ustawić [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) właściwość `SKPaint` obiektu do jednej z następujących członków [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) wyliczenia:
+Wygląd rozpoczyna się i końców wierszy jest nazywany *zakończenia wiersza* lub Skia, *pociągnięcia*. Słowo "limit", w tym kontekście, który odwołuje się do typu hat &mdash; coś, co znajduje się na końcu wiersza. Możesz ustawić [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) właściwość `SKPaint` obiektu do jednej z następujących członków [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) wyliczenia:
 
-- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (ustawienie domyślne)
-- [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
+- `Butt` (ustawienie domyślne)
+- `Square`
+- `Round`
 
-Zostały one najlepiej zilustrowane konkretnymi przykładowy program. W drugiej części strony głównej [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zaczyna się od stronę zatytułowaną **pociągnięć** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza trzech członków w pętli `SKStrokeCap` wyliczenia, wyświetlając nazwę elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego pociągnięcia:
+Zostały one najlepiej zilustrowane konkretnymi przykładowy program. **Skiasharp — linie i ścieżki** części [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program zaczyna się od stronę zatytułowaną **pociągnięć** na podstawie [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) klasy. Ta strona definiuje `PaintSurface` obsługi zdarzeń, który przetwarza trzech członków w pętli `SKStrokeCap` wyliczenia, wyświetlając nazwę elementu członkowskiego wyliczenia i rysowanie linii za pomocą tego pociągnięcia:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,7 +90,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Dla każdego elementu członkowskiego `SKStrokeCap` wyliczenie, program obsługi rysuje dwa wiersze, jeden z grubość obrysu 50 pikseli i innego wiersza umieszczone na górze z grubość obrysu 2 pikseli. Ten drugi wiersz jest za zadanie zilustrowanie geometrycznych początku i końca wiersza, które są niezależne od grubości linii i pociągnięcia:
+Dla każdego elementu członkowskiego `SKStrokeCap` wyliczenie, program obsługi rysuje dwa wiersze, jeden z grubość obrysu 50 pikseli i innego wiersza umieszczone na górze z grubość obrysu dwóch pikseli. Ten drugi wiersz jest za zadanie zilustrowanie geometrycznych początku i końca wiersza, które są niezależne od grubości linii i pociągnięcia:
 
 [![](lines-images/strokecaps-small.png "Potrójna zrzut ekranu przedstawiający stronę pociągnięć")](lines-images/strokecaps-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę pociągnięć")
 
@@ -102,19 +102,20 @@ Jak widać, `Square` i `Round` pociągnięć skutecznie wydłużyć wiersza o po
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points` Parametr jest tablicą `SKPoint` wartości i `mode` jest elementem członkowskim [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/) wyliczenia, która ma trzy elementy członkowskie:
+`points` Parametr jest tablicą `SKPoint` wartości i `mode` jest elementem członkowskim [ `SKPointMode` ](xref:SkiaSharp.SKPointMode) wyliczenia, która ma trzy elementy członkowskie:
 
-- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) Aby renderować poszczególnych punktów
-- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) do łączenia z każdej pary punktów
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) Aby połączyć wszystkie kolejne punkty
+- `Points` Aby renderować poszczególnych punktów
+- `Lines` do łączenia z każdej pary punktów
+- `Polygon` Aby połączyć wszystkie kolejne punkty
 
-**Wiele wierszy** strona przedstawia tę metodę. [ `MultipleLinesPage` Pliku XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) są tworzone wystąpienia dwóch `Picker` widoków, które pozwalają wybrać członkiem `SKPointMode` wyliczenie i członkiem `SKStrokeCap` wyliczenia:
+**Wiele wierszy** strona przedstawia tę metodę. [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) plików są tworzone wystąpienia dwóch `Picker` widoków, które pozwalają wybrać członkiem `SKPointMode` wyliczenie i członkiem `SKStrokeCap` wyliczenia:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.MultipleLinesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.MultipleLinesPage"
              Title="Multiple Lines">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -132,11 +133,13 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Points</x:String>
-                <x:String>Lines</x:String>
-                <x:String>Polygon</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPointMode}">
+                    <x:Static Member="skia:SKPointMode.Points" />
+                    <x:Static Member="skia:SKPointMode.Lines" />
+                    <x:Static Member="skia:SKPointMode.Polygon" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -147,26 +150,28 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-`SelectedIndexChanged` Obsługi dla obu `Picker` widoków po prostu unieważnia `SKCanvasView` obiektu:
+Należy zauważyć, że deklaracje przestrzeni nazw SkiaSharp są nieco inny, ponieważ `SkiaSharp` przestrzeni nazw jest potrzebna do odwoływać się do elementów członkowskich `SKPointMode` i `SKStrokeCap` wyliczenia. `SelectedIndexChanged` Obsługi dla obu `Picker` widoków po prostu unieważnia `SKCanvasView` obiektu:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -180,7 +185,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 
 Ten program obsługi wymaga pod kątem istnienia `SKCanvasView` obiektu, ponieważ program obsługi zdarzeń jest pierwszy wywoływane, gdy `SelectedIndex` właściwość `Picker` jest ustawiona na 0 w pliku XAML występuje przed `SKCanvasView` został uruchomiony.
 
-`PaintSurface` Obsługi uzyskuje dostęp do metody ogólnej dla dwóch wybranych pozycji od uzyskiwania `Picker` widoków i konwertowania go na potrzeby wartości wyliczenia:
+`PaintSurface` Obsługi uzyskuje wartości wyliczenia dwa z `Picker` widoki:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -210,21 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.DarkOrchid,
         StrokeWidth = 50,
-        StrokeCap = GetPickerItem<SKStrokeCap>(strokeCapPicker)
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem
     };
 
     // Render the points by calling DrawPoints
-    SKPointMode pointMode = GetPickerItem<SKPointMode>(pointModePicker);
+    SKPointMode pointMode = (SKPointMode)pointModePicker.SelectedItem;
     canvas.DrawPoints(pointMode, points, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
 }
 ```
 
@@ -243,5 +239,5 @@ Czy wiersze są połączony lub niepołączony jest kluczowym aspektem pracy ze 
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

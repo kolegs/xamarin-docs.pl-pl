@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 4f5f3ab00b55de270c209d6fa7082c3acc40b5ef
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 0d0d6a2eddc03b5aaa2fecabc38a91e5f09b72ac
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/25/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39241308"
 ---
 # <a name="hello-xamarinforms"></a>Witaj, Xamarin.Forms
@@ -37,4 +37,3 @@ Druga część tego przewodnika przegląda, co został utworzony, aby poznać po
 - [Program Visual Studio for Mac przepisy — debugowanie](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)
 - [Bezpłatnym szkoleniom wykładów (wideo)](https://university.xamarin.com/self-guided)
 - [Wprowadzenie do środowiska Xamarin (wideo)](https://developer.xamarin.com/videos/)
-- [Witaj, Xamarin.Forms dla systemu iOS skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

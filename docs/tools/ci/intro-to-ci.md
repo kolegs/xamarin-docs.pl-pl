@@ -1,126 +1,121 @@
 ---
-title: Wprowadzenie do ciągłej integracji z platformą Xamarin
-description: W tym dokumencie opisano ciągła Integracja z platformą Xamarin. Zawarto informacje kontroli wersji i różnych środowiskach ciągłej integracji.
+title: Wprowadzenie do ciągłej integracji za pomocą platformy Xamarin
+description: W tym dokumencie opisano ciągłej integracji za pomocą platformy Xamarin. Omówiono w nim różnych środowisk ciągłej integracji i kontroli wersji.
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "37066510"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji z platformą Xamarin
+# <a name="introduction-to-continuous-integration-with-xamarin"></a>Wprowadzenie do ciągłej integracji za pomocą platformy Xamarin
 
-_Ciągła Integracja jest rozwiązaniem engineering oprogramowania, w którym automatycznych kompilacji kompiluje i opcjonalnie testuje aplikację, jeśli kod jest dodane lub zmienione przez deweloperów w repozytorium kontroli wersji projektu. W tym artykule przedstawimy ogólne koncepcje ciągłej integracji i niektóre z dostępnych opcji dla ciągłej integracji z projektami Xamarin._
+_Ciągła integracja to praktyka inżynierii oprogramowania, w którym zautomatyzowanej kompilacji kompiluje i opcjonalnie testuje aplikację, gdy kod jest dodane lub zmienione przez deweloperów w repozytorium kontroli wersji projektu. W tym artykule przedstawimy ogólnych pojęć ciągłej integracji i niektóre opcje dostępne dla ciągłej integracji z projektami Xamarin._
 
-Są często w przypadku projektów oprogramowania deweloperom działa równolegle. W pewnym momencie jest niezbędne do integracji wszystkich tych równoległych strumieni pracy do jednej ścieżki bazowej kodu, które tworzą produktu końcowego. Na początku istnienia rozwoju oprogramowania integracja została wykonana na końcu projektu, które było trudne i ryzykowne procesu.
+Są często nad projektami oprogramowania dla deweloperów na równoczesną pracę. W pewnym momencie konieczne zintegrowanie wszystkich z nich jest równoległe strumieni pracy do jednej bazy kodu, które tworzą produktu końcowego. W czasach, kiedy rozwoju oprogramowania tej integracji było wykonywane na końcu projektu, który został proces trudne i ryzykowne.
 
-Ciągłej integracji (CI) należy unikać takich skomplikowane przez scalenie zmian Każdy deweloper wspólnej ścieżki bazowej kodu w sposób ciągły, zazwyczaj, gdy wszystkie deweloperzy sprawdza się zmiany w projekcie udostępnionym repozytorium kodu. Każdy zaewidencjonowania wyzwala automatyczne kompilacji i uruchamia zautomatyzowanych testów, aby sprawdzić, czy nowo wprowadzonych kodu nie Podziel istniejący kod.  W ten sposób CI natychmiast powierzchni błędów i problemów i zapewnia, że wszyscy członkowie zespołu pozostają aktualne z nich pracy. Powoduje to codebase spójności i stabilna.
+Ciągłej integracji (CI) uniknąć takich złożoności przez scalenie zmian Każdy deweloper wspólnej bazy kodu w sposób ciągły, zwykle w przypadku, gdy ewidencjonuje wszelkie deweloperów zmiany w projekcie udostępnionego repozytorium kodu. Każdego ewidencjonowania wyzwala automatyczne kompilowanie i uruchamia automatyczne testy, aby sprawdzić, czy nowo wprowadzonego kodu nie przerwać istniejący kod.  W ten sposób CI wydobywa informacje dotyczące problemów i błędów natychmiast i gwarantuje, że wszyscy członkowie zespołu na bieżąco z nich pracy. Skutkuje to spójny i stabilnych bazy kodu.
 
 Systemy ciągłej integracji ma dwie główne części:
 
--  **Kontrola wersji** — wersji kontroli (VC), nazywany również do kontroli źródła lub zarządzania kodem źródłowym, konsoliduje cały kod projektu w jednym repozytorium udostępnionego i zawiera pełną historię każdej zmiany do każdego pliku. To repozytorium często określany jako *mainline* lub *wzorca* gałęzi, zawiera kod źródłowy, który ostatecznie będzie służyć do kompilacji produkcyjne lub wersji aplikacji. Istnieje wiele typu open source i komercyjnych produktów dla tego zadania, które zwykle pozwalają zespoły lub osób do rozwidlania kopii kodu do dodatkowej oddziałów, w którym można zmieniać szeroką gamę lub prowadzenia eksperymentów bez ryzyka do głównej gałęzi. Po zatwierdzeniu zmian w gałęzi dodatkowej można następnie je wszystkie razem scalony z powrotem do gałęzi głównej.
--  **Ciągła Integracja serwera** — serwer integracji ciągłej jest odpowiedzialny za zbieranie wszystkie artefakty projektu (kod źródłowy, obrazów, klipów wideo, baz danych, zautomatyzowanych testów itp.), Kompilowanie aplikacji i Uruchamianie testów automatycznych. Ponownie istnieje wiele typu open source i narzędzia serwera CI komercyjnego.
+- **Kontrola wersji** — wersji kontroli (VC), nazywany również do kontroli źródła lub zarządzania kodem źródłowym, konsoliduje cały kod projektu do pojedynczego repozytorium na udostępnionych i przechowuje pełną historię każdej zmiany do każdego pliku. To repozytorium często określane jako *mainline* lub *wzorca* gałęzi, zawiera kod źródłowy, który ostatecznie będzie służyć do produkcji kompilacji lub wydania wersji aplikacji. Istnieje wiele typu open source i komercyjnych produktów dla tego zadania, które zwykle pozwalają użytkownikom indywidualnym rozwidlenie kopii kodu na pomocniczy gałęzie, gdzie można wprowadzić rozległych zmian lub przeprowadzanie eksperymentów, bez ryzyka do głównej gałęzi lub zespołów. Po zatwierdzeniu zmian w gałęzi dodatkowej można następnie je razem scalana z powrotem do gałęzi głównej.
+- **Ciągła Integracja serwera** — serwer ciągłej integracji programu jest odpowiedzialny za zbieranie wszystkich artefaktów projektu (kod źródłowy, obrazów, filmów wideo, baz danych, zautomatyzowanych testów itp.), Kompilowanie aplikacji i Uruchamianie testów automatycznych. Ponownie istnieje wiele "open source", jak i komercyjnego narzędzia serwera ciągłej integracji.
 
-Zwykle programiści muszą kopia robocza jedną lub kilka gałęzi na swoich stacjach roboczych, w którym początkowo praca jest wykonywana. Po zakończeniu pracy odpowiedni zestaw zmian "wyewidencjonowany do" lub "zadeklarowane" oddziału odpowiednie propaguje je do kopie robocze z innymi deweloperami. Jest to, jak zespół upewnia się, że wszystkie działają na ten sam kod.
+Deweloperzy zazwyczaj mają funkcjonalną kopię jedną lub więcej gałęzi na swoich stacjach roboczych, w którym początkowo praca jest wykonywana. Po zakończeniu odpowiedniego zestawu roboczego zmiany "sprawdzone w" lub "przekazane" do gałęzi odpowiedniego propaguje je do kopie robocze z innymi deweloperami. Jest to, jak zespół zapewnia, że wszystko pracuje ten sam kod.
 
-Ponownie ciągłej integracji czynność zatwierdzania zmian powoduje, że serwer elementu konfiguracji skompilować projekt i uruchomić zautomatyzowanych testów, aby sprawdzić poprawność kodu źródłowego. Jeśli występują błędy kompilacji lub testu awarii, serwer CI powiadamia odpowiedzialny developer (w wiadomościach e-mail, wiadomości Błyskawicznych, Twitter, Growl, itp.), użytkownik może rozwiązać problem. (Serwerów CI może nawet odmowy zatwierdzenia Jeśli występują błędy, które jest nazywane "warunkowe zaewidencjonowanie".)
+Ponownie z ciągłą integracją czynność zatwierdzania zmian powoduje, że serwer ciągłej integracji skompilować projekt i uruchomić testy automatyczne, aby sprawdzić poprawność kodu źródłowego. Jeśli występują błędy kompilacji lub niepowodzenia testów, serwer ciągłej integracji powiadamia dewelopera odpowiada (za pośrednictwem poczty e-mail, wiadomości Błyskawicznych, Twitter, Growl, itp.), dzięki czemu użytkownik może rozwiązać ten problem. (Ciągła Integracja serwerów można nawet odmówić zatwierdzenia w przypadku awarii, co jest nazywane "gated check-in".)
 
 Na poniższym diagramie przedstawiono ten proces:
 
-[![](intro-to-ci-images/intro01-small.png "Ten diagram przedstawia proces")](intro-to-ci-images/intro01.png#lightbox)
+[![](intro-to-ci-images/intro01-small.png "Na tym diagramie przedstawiono ten proces")](intro-to-ci-images/intro01.png#lightbox)
 
-Aplikacje mobilne wprowadzenie wyjątkowe wyzwanie dla ciągłej integracji. Aplikacje mogą wymagać czujników takich jak GPS lub aparatu fotograficznego, które są dostępne tylko na fizycznych urządzeniach. Ponadto symulatorów lub emulatory są zbliżenia sprzętu i może użyć w celu zamaskowania lub przesłaniać problemów. Dzięki temu jest niezbędne do testowania aplikacji mobilnej na rzeczywiste sprzęt, aby mieć pewność, że to naprawdę klientowi.
+Aplikacje mobilne wprowadzają unikatowe wyzwania w celu zapewnienia ciągłej integracji. Aplikacje mogą wymagać czujników, takich jak GPS lub kamery, które są dostępne tylko na urządzeniach fizycznych. Ponadto symulatory lub emulatorów są tylko przybliżeniem sprzętu i mogą ukrywają lub zasłaniać problemów. Na koniec należy przetestować aplikację mobilną na sprzęt rzeczywisty, aby mieć pewność, jest naprawdę gotowości.
 
-[Test Centrum aplikacji](https://docs.microsoft.com/appcenter/test-cloud) rozwiązano ten problem określonego przez testowanie aplikacji bezpośrednio na setki urządzeń fizycznych. Deweloperzy zapisu akceptacji zautomatyzowanych testów, umożliwiających wydajne testowania interfejsu użytkownika. Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na poniższym diagramie:
+[App Center Test](https://docs.microsoft.com/appcenter/test-cloud) rozwiązuje ten problem określonego przez testowanie aplikacji bezpośrednio na setkach urządzeń fizycznych. Programiści pisać akceptacje zautomatyzowanych testów, które umożliwiają testowanie interfejsu użytkownika zaawansowane. Gdy te testy są przekazywane do usługi App Center, serwer ciągłej integracji mogły być uruchamiane automatycznie jako część procesu ciągłej integracji jak pokazano na poniższym diagramie:
 
-[![](intro-to-ci-images/intro02-small.png "Po te testy są przekazywane do Centrum aplikacji, serwer CI można uruchomić je automatycznie w ramach procesu CI jak pokazano na tym diagramie")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "Gdy te testy są przekazywane do usługi App Center, serwer ciągłej integracji mogły być uruchamiane automatycznie jako część procesu ciągłej integracji jak pokazano na poniższym diagramie")](intro-to-ci-images/intro02.png#lightbox)
 
-# <a name="components-of-continuous-integration"></a>Składniki ciągłej integracji
+# <a name="components-of-continuous-integration"></a>Składniki integracji ciągłej
 
-Brak ekosystem szeroką gamę narzędzi handlowych i open source do obsługi elementu konfiguracji. W tej sekcji opisano kilka najbardziej typowe.
+Rozbudowany ekosystem narzędzi komercyjnych i open-source przeznaczony do obsługi ciągłej integracji nie istnieje. W tej sekcji opisano niektóre z najbardziej typowymi.
 
 ## <a name="version-control"></a>Kontrola wersji
 
-### <a name="visual-studio-team-services-and-team-foundation-server"></a>Team Foundation Server i Visual Studio Team Services
+### <a name="azure-devops-and-team-foundation-server"></a>Usługa Azure DevOps i Team Foundation Server
 
-[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) i [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) są narzędzia współpracy firmy Microsoft dla ciągłej integracji tworzenie usług, śledzenia zadań, planowania elastycznego i raportowania narzędzia i wersji formant. Z kontroli wersji programu VSTS TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w usłudze GitHub.
+[Usługa Azure DevOps](https://azure.microsoft.com/services/devops/) i [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) są narzędzia współpracy firmy Microsoft w celu zapewnienia ciągłej integracji kompilacji usług, do śledzenia zadań, zwinnego planowania i raportowania, narzędzi i kontroli wersji. Z kontrolą wersji DevOps platformy Azure i TFS może pracować z własnym systemem (Team Foundation Version Control lub TFVC) lub z projektami w serwisie GitHub.
 
- - Visual Studio Team Services udostępnia usługi za pośrednictwem chmury. Jego zalet podstawowego jest nie musi podawać dedykowanego sprzętu i infrastruktury i można uzyskać z dowolnego miejsca za pośrednictwem przeglądarki sieci web oraz narzędzia do programowania popularnych takiego jak Visual Studio, dzięki czemu atrakcyjne dla zespołów, które są od siebie lokalizacjach geograficznych rozproszone. Jest bezpłatna dla zespołów deweloperów pięciu lub mniej, po których dodatkowe licencje można zakupić do uwzględnienia rosnącym zespołu.
- - TFS jest przeznaczona dla serwerów systemu Windows w lokalnych i dostępne za pośrednictwem sieci lokalnej lub połączenie sieci VPN do sieci. Jego głównej korzyści jest w pełni kontrolować konfiguracji serwerów kompilacji i można zainstalować niezależnie od dodatkowego oprogramowania lub usług są wymagane. TFS ma bezpłatna wersja Express klasy podstawowej dla małych zespołów.
+- Visual Studio Team Services udostępnia usługi za pośrednictwem chmury. Jej główna zaleta modelu jest nie wymaga dedykowanego sprzętu ani infrastruktury i są dostępne z dowolnego miejsca za pośrednictwem przeglądarki sieci web oraz popularnymi narzędziami deweloperskimi takich jak Visual Studio, dzięki czemu atrakcyjne dla zespołów, które są geograficznie rozproszone. Jest bezpłatna dla zespołów pięciu deweloperów lub mniej, po które dodatkowe licencje można nabyć w celu uwzględnienia zespół rozrasta się.
+- TFS jest przeznaczony do serwerów Windows w środowisku lokalnym i dostępne za pośrednictwem sieci lokalnej lub połączenie sieci VPN do tej sieci. Jej główna zaleta modelu jest w pełni kontrolować konfiguracji serwerów kompilacji i można zainstalować niezależnie od dodatkowego oprogramowania lub usług są wymagane. Serwer TFS ma wolne, klasy podstawowej wersji Express dla małych zespołów.
 
-Zarówno TFS i programu VSTS są ściśle powiązane z programem Visual Studio i umożliwiają deweloperom wykonywać wiele kontroli wersji i zadań elementu konfiguracji z poziomu komfortu pojedynczego IDE. Dostępna jest również wtyczki programu Team Explorer Everywhere dla programu Eclipse (patrz poniżej). Visual Studio for Mac nie oferuje obsługę TFS lub VSTS.
+TFS i DevOps platformy Azure są ściśle zintegrowane z programem Visual Studio, a deweloperzy mogą wykonywać wiele kontroli wersji i zadań ciągłej integracji przy użyciu w ramach przy użyciu jednego środowiska IDE. Dostępna jest również wtyczki Team Explorer Everywhere dla środowiska Eclipse (patrz poniżej). Program Visual Studio for Mac [Podgląd TFVC dostępne](/visualstudio/mac/tf-version-control/).
 
-System kompilacji programu Visual Studio Team usługi ma bezpośrednią obsługę projektów Xamarin, w których tworzenie definicji kompilacji dla każdej platformy, które chcesz docelowego (Android, iOS i Windows). Odpowiednią licencję Xamarin jest wymagany dla każdej definicji kompilacji. Istnieje również możliwość nawiązania połączenia lokalnego, serwer do Visual Studio Team Services, w tym celu kompilacji TFS obsługą Xamarin. W przypadku tej konfiguracji kompilacje, które są umieszczane w kolejce programu VSTS zostanie delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zapoznaj się [Wdróż i skonfiguruj serwer kompilacji](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts). Alternatywnie można użyć innego narzędzia kompilacji, takie jak Wpięć lub Miasto zespołu.
+[Usługa Azure potoków metodyki DevOps](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/) ma bezpośrednią obsługę projekty Xamarin, w których utworzyć definicję kompilacji, dla każdej platformy, które chcesz docelowy (systemy Android, iOS i Windows). Odpowiednią licencję platformy Xamarin jest wymagana dla każdej definicji kompilacji. Istnieje również możliwość nawiązywania połączeń z lokalnym, obsługą platformy Xamarin w programie TFS kompilacji serwera DevOps platformy Azure, w tym celu. Za pomocą tego Instalatora kompilacje, które są umieszczane w kolejce do metodyki DevOps platformy Azure będzie można przekazać do serwera lokalnego. Aby uzyskać szczegółowe informacje, zapoznaj się [Build and release agents i](https://docs.microsoft.com/azure/devops/pipelines/agents/agents). Alternatywnie można użyć innego narzędzia kompilacji, takich jak Jenkins lub Miasto zespołu.
 
-Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM) programu Visual Studio, Visual Studio Team Services i Team Foundation Server, zobacz [zarządzania cyklem życia aplikacji przy użyciu aplikacji Xamarin](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) w witrynie MSDN.
-
+Pełne podsumowanie wszystkich funkcji zarządzania cyklem życia aplikacji (ALM) programu Visual Studio, DevOps platformy Azure i Team Foundation Server, zobacz [DevOps przy użyciu aplikacji Xamarin](https://docs.microsoft.com/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps).
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx) oferuje zespoły rozwoju poza Visual Studio Team Foundation Server i Visual Studio Team Services. Umożliwia deweloperom łączyć się z projektami zespołowymi lokalnie lub w chmurze z Eclipse lub wiersza polecenia obsługujący wiele platform klient OS X i Linux. Programu Team Explorer Everywhere zapewnia pełny dostęp do systemu kontroli wersji (w tym Git) elementów roboczych i kompilacji możliwości dla platform z systemem innym niż Windows.
-
+[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) oferuje funkcje programu Team Foundation Server i Visual Studio Team Services zespołom tworzącym aplikacje poza programem Visual Studio. Dzięki niej deweloperzy mogą połączyć się z projektami zespołowymi lokalnie lub w chmurze z programu Eclipse lub z klienta wiersza polecenia dla wielu platform for OS X i Linux. Team Explorer Everywhere, który zapewnia pełny dostęp do elementów roboczych do kontroli wersji (w tym Git) i możliwości kompilacji na platformy inne niż Windows.
 
 ### <a name="git"></a>Git
 
-[Git](http://git-scm.com) jest rozwiązaniem kontroli wersji popularnych typu open source, które pierwotnie został opracowany, aby zarządzać kod źródłowy dla jądra systemu Linux. Jest to bardzo szybkie, elastyczne system będący popularnych z oprogramowania projektów o różnej wielkości. Jej łatwe może obsłużyć deweloperów jednego z dostępem do Internetu niską duże zespoły rozciągających się na całym świecie. Git powoduje rozgałęzianie bardzo łatwe, który z kolei może zwiększyć liczbę równoległych strumieni programowanie z minimalnym ryzyka.
+[Git](http://git-scm.com) jest rozwiązaniem kontroli wersji typu open source, która pierwotnie został opracowany, aby zarządzać kodem źródłowym jądra systemu Linux. Jest to bardzo szybki, elastyczny system, który popularnych z projektami oprogramowania wszystkich rozmiarów. Łatwo można skalować z jednego deweloperom niską dostęp do Internetu dla dużych zespołów, które rozciągają się świecie. Usługi Git sprawia, że bardzo łatwa w użyciu, rozgałęzianie, który z kolei może zachęcać strumieni równoległego programowania przy użyciu minimalnego ryzyka.
 
-Git może działać wyłącznie za pośrednictwem przeglądarki sieci web lub za pomocą [klientach graficznego interfejsu użytkownika](http://git-scm.com/downloads/guis) uruchomionymi w systemie Linux, Mac OS x i Windows. Jest bezpłatna dla repozytoriów publicznych; Wymagaj prywatne repozytoria [plan płatnej](https://github.com/pricing).
+Git może działać wyłącznie za pośrednictwem przeglądarki sieci web lub za pomocą [klientach GUI](http://git-scm.com/downloads/guis) uruchamianą w systemie Linux, Mac OSX i Windows. Bezpłatnie w przypadku publicznych repozytoriów; prywatne repozytoria wymagają [płatny plan](https://github.com/pricing).
 
-Visual Studio 2015 i Visual Studio for Mac zapewniają natywną obsługę dla Git; dla starszych wersji, firma Microsoft udostępnia [dostępne do pobrania rozszerzenie Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak wspomniano powyżej, Visual Studio Team Services i TFS można użyć narzędzia Git kontroli wersji, zamiast TFVC.
+Visual Studio 2015 i Visual Studio for Mac oferuje natywnej obsługi usługi Git; w przypadku starszych wersji, firma Microsoft udostępnia [dostępne do pobrania rozszerzenie Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak wspomniano powyżej, Visual Studio Team Services i serwera TFS można wykorzystać Git do kontroli wersji, zamiast w TFVC.
 
+### <a name="subversion"></a>Subversion
 
-### <a name="subversion"></a>Podwersją
+[Subversion](http://subversion.apache.org) (SVN) to system kontroli wersji popularny typu open source, które było używane od 2000. SVN działa we wszystkich wersjach nowoczesnego systemu OS X, Windows, FreeBSD, Linux i Unix. Program Visual Studio for Mac zapewnia natywną obsługę SVN. Brak rozszerzenia innych firm, które łączą SVN pomocy technicznej programu Visual Studio.
 
-[Podwersją](http://subversion.apache.org) (SVN) to system kontroli wersji popularnych typu open source, które było używane od 2000. SVN działa we wszystkich wersjach nowoczesnych systemu OS X, Windows FreeBSD, Linux i Unix. Visual Studio for Mac ma macierzystą obsługę SVN. Brak rozszerzenia innych firm, których obsługa SVN dla programu Visual Studio.
+## <a name="continuous-integration-environments"></a>Ciągła Integracja środowiska
 
+Konfigurowanie środowiska ciągła integracja oznacza, że łączenie system kontroli wersji przy użyciu usługi kompilacji.  W przypadku drugiego nagłówka, dwie najbardziej typowymi są:
 
-## <a name="continuous-integration-environments"></a>Środowisk ciągłej integracji
+- [Potoki usługi Azure](https://docs.microsoft.com/azure/devops/pipelines/) to system kompilacji DevOps platformy Azure i programu TFS. Jest ściśle zintegrowana z programem Visual Studio, wygodne deweloperom na wyzwalanie zbudował, co sprawia, że automatyczne testy i wyświetlić wyniki.
+- Jenkins to serwer ciągłej integracji typu open source, wraz z bogatego ekosystemu wtyczek umożliwiających wszelkiego rodzaju rozwoju oprogramowania. Działa na Windows i Mac OS X. Jenkins nie jest zintegrowany z dowolnym określonym środowisku IDE. Zamiast tego jest konfigurowane i zarządzane za pośrednictwem interfejsu sieci web. Jenkins to również łatwo zainstalować i skonfigurować, co czyni go atrakcyjne dla małych zespołów.
 
-Konfigurowanie środowiska ciągłej integracji oznacza, że połączenie z usługą kompilacji systemu kontroli wersji.  W przypadku drugiego nagłówka dwa najbardziej typowe są:
+Można użyć DevOps programu TFS/platformy Azure przez siebie lub Jenkins można używać w połączeniu z DevOps programu TFS/platformy Azure lub program Git, zgodnie z opisem w poniższych sekcjach.
 
-- [Team Foundation Build](https://msdn.microsoft.com/Library/vs/alm/Build/overview) jest system kompilacji programu Visual Studio Team Services i serwera TFS. Jest ściśle zintegrowany z programem Visual Studio, które umożliwia wygodne dla deweloperów w celu wyzwolenia tworzenia, automatycznie uruchamiać testy i wyświetlić wyniki.
-- Wpięć jest serwerem CI open source że w programie rozbudowany ekosystem wtyczek do obsługi wszystkich rodzajów rozwoju oprogramowania. Działa w systemie Windows i Mac OS X. Wpięć nie jest zintegrowany z żadnych szczególnych IDE. Zamiast tego jest on skonfigurowany i zarządzane za pośrednictwem interfejsu sieci web. CI Wpięć jest również łatwo zainstalować i skonfigurować, dzięki czemu mają niewielkich zespołów.
+### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services i serwera Team Foundation Server
 
-Można użyć programu TFS/VSTS samodzielnie lub Wpięć można używać w połączeniu z programem TFS/VSTS lub Git zgodnie z opisem w poniższych sekcjach.
+Zgodnie z opisem, Visual Studio Team Services i serwera Team Foundation Server zawiera zarówno wersji kontroli i usługi kompilacji. Usługi kompilacji zawsze wymagają licencji Xamarin Business lub Enterprise dla każdej platformy docelowej.
 
-### <a name="visual-studio-team-services-and-team-foundation-server"></a>Team Foundation Server i Visual Studio Team Services
+Za pomocą programu Visual Studio Team Services utwórz definicję kompilacji osobne dla każdej platformy docelowej i wprowadź ma odpowiednią licencję. Gdy zostanie skonfigurowany, usługa Azure DevOps run kompiluje i testuje w chmurze. Zobacz [potoki Azure](https://docs.microsoft.com/azure/devops/pipelines/) Aby uzyskać więcej informacji.
 
-Zgodnie z opisem, Team Foundation Server i Visual Studio Team Services zapewnia zarówno wersji kontroli oraz tworzenie usług. Usługi kompilacji zawsze wymagają licencji firmowej Xamarin dla każdej platformy docelowej.
+Za pomocą Team Foundation Server należy skonfigurować maszynę kompilacji w następujący sposób dla określonych platform:
 
-Z programu Visual Studio Team Services utwórz definicję kompilacji osobne dla każdej platformy docelowej i wprowadź odpowiednią licencję istnieje. Po skonfigurowaniu programu VSTS uruchomi kompilacji i testy w chmurze. Zobacz [Team Foundation Build](https://msdn.microsoft.com/Library/vs/alm/Build/overview) więcej szczegółów.
-
-Z Team Foundation Server w przypadku skonfigurowania maszyny kompilacji w następujący sposób dla określonych platform:
-
-- **Android i Windows:** zainstalować program Visual Studio i Xamarin narzędzia (dla systemów Android i Windows zarówno) i skonfigurować z licencjami Xamarin. Jest także niezbędne do przeniesienia zestawu SDK systemu Android w udostępnionej lokalizacji na serwerze, gdzie agenta kompilacji TFS można go znaleźć. Aby uzyskać więcej informacji, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/vsts/tfvc/overview).
-- **iOS i Xamarin:** program Visual Studio i Xamarin narzędzi w systemie Windows server z odpowiednią licencją. Następnie zainstalować program Visual Studio dla komputerów Mac na komputerze Mac OS X dostępne w sieci, która będzie służyć jako host kompilacji i tworzenia pakietu ostatecznej aplikacji (IPA dla systemu iOS, aplikacji dla systemu OS X).
+- **Dla systemu android i Windows:** Zainstaluj program Visual Studio i Xamarin narzędzi (dla systemów Android i Windows zarówno) i skonfigurować swoje licencje środowiska Xamarin. Należy również przeniesienia zestawu SDK systemu Android w udostępnionej lokalizacji na serwerze, gdzie agenta kompilacji programu TFS, mogą ją odnaleźć. Aby uzyskać więcej informacji, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview).
+- **iOS i platformy Xamarin:** Zainstaluj program Visual Studio i narzędzia środowiska Xamarin na serwerze Windows z odpowiednią licencją. Następnie należy zainstalować program Visual Studio dla komputerów Mac, na komputerze Mac OS X dostępne w sieci, który będzie pełnić rolę hosta kompilacji i tworzenie pakietu ostatecznej aplikacji (IPA dla systemów iOS, aplikacji dla systemu OS X).
 
 Na poniższym diagramie przedstawiono ten topografii:
 
-[![](intro-to-ci-images/intro03-small.png "Ten diagram przedstawia tego topografii")](intro-to-ci-images/intro03.png#lightbox)
+[![](intro-to-ci-images/intro03-small.png "Na tym diagramie przedstawiono ten topografii")](intro-to-ci-images/intro03.png#lightbox)
 
-Użytkownik może również połączyć z lokalnego serwera TFS z projektu programu Visual Studio Team Services, tak aby kompilacji programu VSTS mają delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zobacz [Wdróż i skonfiguruj serwer kompilacji](http://msdn.microsoft.com/library/ms181712.aspx) w witrynie MSDN.
+Istnieje również możliwość łączenie lokalnego serwera TFS do programu Visual Studio Team Services projektu tak, aby kompilacje DevOps platformy Azure są delegowane do serwera lokalnego. Aby uzyskać więcej informacji, zobacz [Build and release agents i](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/).
 
-### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services i Wpięć
+### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services i Jenkins
 
-Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji. Można wyzwolić kompilację Wpięć, gdy wypchnąć kod do repozytorium Git lub po zaewidencjonowaniu kodu do TFVC Twój projekt zespołowy. Aby uzyskać więcej informacji, zobacz [Wpięć z Visual Studio Team Services](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts).
+Jeśli używasz narzędzia Jenkins do tworzenia aplikacji, można zapisać kod w Visual Studio Team Services lub serwera Team Foundation Server i kontynuować używanie narzędzia Jenkins dla usługi kompilacji ciągłej integracji. Podczas wypychania kodu do repozytorium Git projektu zespołowego lub gdy zaewidencjonujesz kod w celu TFVC, możesz wyzwolić kompilację narzędzia Jenkins. Aby uzyskać więcej informacji, zobacz [Jenkins przy użyciu usługi Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Jeśli używasz Wpięć do tworzenia aplikacji, można przechowywać swój kod w Visual Studio Team Services lub program Team Foundation Server i nadal używać Wpięć kompilacji elementu konfiguracji")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "Jeśli używasz narzędzia Jenkins do tworzenia aplikacji, można zapisać kod w Visual Studio Team Services lub serwera Team Foundation Server i kontynuować używanie narzędzia Jenkins dla usługi kompilacji ciągłej integracji")](intro-to-ci-images/intro04.png#lightbox)
 
-### <a name="git-and-jenkins"></a>Usługi Git i Wpięć
+### <a name="git-and-jenkins"></a>Git i Jenkins
 
-Inne typowe środowisko CI może być całkowicie OS X na podstawie. Ten scenariusz polega na użyciu narzędzia Git dla kontroli kodu źródłowego i Wpięć dla serwera kompilacji. Oba te działają na pojedynczym komputerze Mac OS X przy użyciu programu Visual Studio dla komputerów Mac zainstalowane. To jest bardzo podobny do programu Visual Studio Team Services + środowiska Wpięć opisanych w poprzedniej sekcji:
+Inne typowe środowisko ciągłej integracji może być całkowicie OS X na podstawie. Ten scenariusz obejmuje przy użyciu narzędzia Git do kontroli kodu źródłowego i serwera Jenkins na serwerze kompilacji. Oba te są uruchomione na jednym komputerze Mac OS X z programem Visual Studio dla komputerów Mac jest zainstalowany. Jest to bardzo podobne do Visual Studio Team Services i środowiska narzędzia Jenkins, opisanych w poprzedniej sekcji:
 
-[![](intro-to-ci-images/intro05-small.png "To jest bardzo podobny do programu Visual Studio Team Services + środowiska Wpięć opisanych w poprzedniej sekcji")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "Jest to bardzo podobne do Visual Studio Team Services i środowiska narzędzia Jenkins, opisanych w poprzedniej sekcji")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
-> **Uwaga: Jest Wpięć [nie są obsługiwane przez program Xamarin](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**
-
+> **Jenkins to [nie są obsługiwane przez firmę Microsoft](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**
 
 # <a name="summary"></a>Podsumowanie
 
-Ten dokument wprowadzono pojęcie ciągłej integracji i korzyści, które oferuje zespoły rozwoju oprogramowania. Znaczenie kontroli wersji został omówiony oraz role i obowiązki serwera kompilacji. Omówimy niektóre narzędzia, które można użyć do kontroli kodu źródłowego i serwery kompilacji dokumentu wystąpił. Wprowadzono też Test Centrum aplikacji, który ułatwia deweloperom publikowanie atrakcyjnych aplikacji przez uruchomienie zautomatyzowanych testów, które będzie potwierdzenia jakości i możliwości ich aplikacji. Bardziej szczegółowe dokumentacji na przesyłanie aplikacji i testy do Centrum aplikacji można znaleźć [tutaj](https://docs.microsoft.com/appcenter/test-cloud). Na koniec aby lepiej poznać sposób tych narzędzi i wszystkie składniki dopasowania, możemy opisane kilka różnych środowiskach elementu konfiguracji, których organizacje mogą ustalić dla ciągłej integracji. Aby uzyskać więcej informacji, za pomocą Team Foundation Server i Visual Studio Team Services z projektami Xamarin, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/vsts/tfvc/overview) i to [wprowadzenie ciągłej integracji](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1). Podobnie w przypadku korzystania z Wpięć zobacz [przy użyciu Wpięć za pomocą platformy Xamarin](~/tools/ci/jenkins-walkthrough.md) Aby uzyskać szczegółowe informacje na temat konfigurowania ciągłej integracji.
+Ten dokument wprowadza pojęcia ciągłej integracji i korzyści, jakie oferuje zespołom programistycznym. Znaczenie kontroli wersji został omówiony oraz role i obowiązki serwera kompilacji. W celu omówienia ich niektóre z narzędzi, które można używać w kontroli kodu źródłowego i serwery kompilacji dokumentu wystąpił. Wprowadzono też App Center Test, który pomaga deweloperom Opublikuj wspaniałych aplikacji, uruchamiania testów automatycznych, które dowiedzie jakości i możliwości swoich aplikacji. Więcej szczegółowa dokumentacja dotycząca przesyłania aplikacji i testów do Centrum aplikacji można znaleźć [tutaj](https://docs.microsoft.com/appcenter/test-cloud). Na koniec aby lepiej zrozumieć, jak te narzędzia i składniki współdziałają ze sobą, firma Microsoft opisano kilka różnych środowiskach ciągłej integracji, które organizacje mogą nawiązują do ciągłej integracji. Aby uzyskać więcej informacji przy użyciu programu Visual Studio Team Services i serwera Team Foundation Server z projekty Xamarin, zobacz [Konfigurowanie TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) to [wprowadzenie ciągłej integracji](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/). Podobnie, jeśli używasz narzędzia Jenkins, zobacz [przy użyciu narzędzia Jenkins z platformą Xamarin](~/tools/ci/jenkins-walkthrough.md) Aby uzyskać szczegółowe informacje na temat konfigurowania ciągłej integracji.

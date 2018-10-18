@@ -6,77 +6,67 @@ ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/02/2016
-ms.openlocfilehash: 95b0744cdd52ac1c3f5d7c62c18139a30400ab04
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/25/2018
+ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38999034"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Wprowadzenie do zestawu narzędzi Xamarin.Forms
 
-_Xamarin.Forms to międzyplatformowa natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom łatwe tworzenie interfejsów użytkownika, które mogą być współużytkowane przez systemów Android, iOS, Windows i platformy uniwersalnej Windows. Interfejsy użytkownika są renderowane przy użyciu natywnych kontrolek platformę docelową, umożliwiając aplikacjach Xamarin.Forms zachować odpowiedni wygląd i działanie dla każdej platformy. Ten artykuł zawiera wprowadzenie do zestawu narzędzi Xamarin.Forms i jak rozpocząć pisanie aplikacji z nim._
+_Xamarin.Forms to struktura, która umożliwia deweloperom tworzenie aplikacji międzyplatformowych dla systemów Android, iOS i Windows. Definicje interfejsu użytkownika oraz kodu są udostępniane między platformami, ale renderowany przy użyciu kontrolki natywne. Ten artykuł zawiera wprowadzenie do zestawu narzędzi Xamarin.Forms oraz sposób rozpocząć pisanie aplikacji w języku C# i XAML w programie Visual Studio._
 
-<a name="Overview" />
+Aplikacje Xamarin.Forms [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) projekty zawierają udostępnionego kodu i projektów oddzielną aplikację, aby korzystać z udostępnionego kodu i dane wyjściowe wymagane dla każdej platformy kompilacji. Podczas tworzenia nowej aplikacji platformy Xamarin.Forms, rozwiązanie będzie zawierać projekt współużytkowanego kodu (zawierający pliki C# i XAML) oraz projektów specyficznych dla platformy, jak pokazano w tym zrzucie ekranu:
 
-## <a name="overview"></a>Omówienie
+![Rozwiązanie szablonu Xamarin.Forms w programie Visual Studio](introduction-to-xamarin-forms-images/solution-both.png)
 
-Xamarin.Forms to struktura, która umożliwia deweloperom szybkie tworzenie interfejsów użytkownika dla wielu platform. Udostępnia abstrakcję własnego interfejsu użytkownika, który będzie renderowany przy użyciu kontrolki natywne w systemie iOS, Android lub Windows platformy Uniwersalnej. Oznacza to, że aplikacje mogą udostępniać dużą część ich kod interfejsu użytkownika i nadal zachować natywnego wyglądu i działania platformy docelowej.
+Podczas pisania aplikacji platformy Xamarin.Forms, Twój kod i interfejs użytkownika zostanie dodany do góra, projektu .NET Standard, który odwołuje się do projektów systemów Android, iOS i platformy uniwersalnej systemu Windows. Utworzysz i uruchamiania systemów Android, iOS i projektach platformy uniwersalnej systemu Windows, do testowania i wdrażania aplikacji.
 
-Zestaw narzędzi Xamarin.Forms umożliwia do szybkiego prototypowania aplikacji, które można rozwijać wraz z upływem czasu złożonych aplikacji. Ponieważ aplikacje Xamarin.Forms natywnych aplikacji, nie muszą oni ograniczenia innych narzędziach programistycznych, takich jak przeglądarki piaskownicy, ograniczone interfejsów API lub niską wydajnością. Aplikacje napisane przy użyciu zestawu narzędzi Xamarin.Forms będą mogli korzystać z żadnego z interfejsów API lub funkcje podstawowej platformy, takich jak (ale nie tylko) CoreMotion PassKit i StoreKit w systemie iOS; NFC i usług Google Play w systemie Android; i kafelków na Windows. Ponadto istnieje możliwość tworzenia aplikacji, które będą mieć części interfejsu użytkownika utworzone za pomocą zestawu narzędzi Xamarin.Forms, podczas gdy inne części są tworzone przy użyciu natywnego zestawu narzędzi interfejsu użytkownika.
+## <a name="examining-a-xamarinforms-application"></a>Badanie aplikacji platformy Xamarin.Forms
 
-Aplikacje Xamarin.Forms jest zaprojektowana w taki sam sposób jak tradycyjne aplikacje dla wielu platform. Najbardziej typowym podejściem jest użycie [bibliotek przenośnych](~/cross-platform/app-fundamentals/pcl.md) lub [projekty udostępnione](~/cross-platform/app-fundamentals/shared-projects.md) house udostępnionego kodu w celu tworzenia aplikacji określonych platform, które będą korzystać z udostępnionego kodu.
+Domyślnego szablonu aplikacji platformy Xamarin.Forms w programie Visual Studio Wyświetla etykietę tekstową jednego. Uruchomienia aplikacji powinny wyglądać podobnie do poniższych zrzutach ekranu:
 
-Istnieją dwie metody do tworzenia interfejsów użytkownika w interfejsie Xamarin.Forms. Pierwszą techniką jest tworzenie interfejsów użytkownika wyłącznie przy użyciu kodu źródłowego języka C#. Drugi techniką jest użycie *Extensible Application Markup Language* interfejsy deklaratywnym językiem znaczników używany do opisania użytkownika (XAML). Aby uzyskać więcej informacji na temat XAML, zobacz [podstawy XAML](~/xamarin-forms/xaml/xaml-basics/index.md).
-
-W tym artykule omówiono podstawowe informacje dotyczące Framework platformy Xamarin.Forms i obejmuje następujące tematy:
-
--  [Badanie aplikacji platformy Xamarin.Forms](#Examining_A_Xamarin.Forms_Application).
--  [Jak używać zestawu narzędzi Xamarin.Forms stron i kontrolek](#Views_and_Layouts).
--  [Jak używać wyświetlana lista danych,](#Lists_in_Xamarin.Forms).
--  [Jak skonfigurować powiązania danych](#Data_Binding).
--  [Jak nawigować między stronami](#Navigation).
--  [Następne kroki](#Next_Steps).
-
-<a name="Examining_A_Xamarin_Forms_Application" />
-
-### <a name="examining-a-xamarinforms-application"></a>Badanie aplikacji platformy Xamarin.Forms
-
-W programie Visual Studio dla komputerów Mac i Visual Studio domyślnego szablonu aplikacji platformy Xamarin.Forms, tworzy to najprostsza rozwiązanie Xamarin.Forms jest to możliwe, którego tekst jest wyświetlany użytkownikowi. Uruchomienia aplikacji powinny wyglądać podobnie do poniższych zrzutach ekranu:
-
-[![](introduction-to-xamarin-forms-images/image05-sml.png "Domyślna aplikacja Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png#lightbox "domyślnej aplikacji platformy Xamarin.Forms")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "Domyślną aplikację platformy Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png#lightbox)
 
 Odnosi się do każdego ekranu na zrzutach ekranu *strony* w interfejsie Xamarin.Forms. A [ `Page` ](xref:Xamarin.Forms.Page) reprezentuje *działania* w systemie Android, *kontrolera widoku* w systemie iOS, czy też *strony* w Windows Universal Platforma (systemu Windows UWP). Tworzy przykładowe zrzuty ekranu powyżej [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) obiektu i użyty do wyświetlenia [ `Label` ](xref:Xamarin.Forms.Label).
 
-Aby zmaksymalizować ponowne użycie kodu startowego, aplikacje Xamarin.Forms mają jedną klasę o nazwie `App` odpowiada podczas tworzenia wystąpienia pierwszy [ `Page` ](xref:Xamarin.Forms.Page) , zostanie wyświetlony. Przykładem `App` klasy są widoczne w poniższym kodzie:
+Aby zmaksymalizować ponowne użycie kodu startowego, aplikacje Xamarin.Forms mają jedną klasę o nazwie `App` odpowiada podczas tworzenia wystąpienia pierwszy [ `Page` ](xref:Xamarin.Forms.Page) , zostanie wyświetlony. Przykładem `App` klasy są widoczne w poniższym kodzie (w **App.xaml.cs**):
 
 ```csharp
-public class App : Application
+public partial class App : Application
 {
   public App ()
   {
-    MainPage = new ContentPage {
-      Content =  new Label
-      {
-          Text = "Hello, Forms !",
-          VerticalOptions = LayoutOptions.CenterAndExpand,
-          HorizontalOptions = LayoutOptions.CenterAndExpand,
-      }
-      };
+    InitializeComponent();
+    MainPage = new MainPage(); // sets the App.MainPage property to an instance of the MainPage class
   }
 }
 ```
 
-Ten kod tworzy nową [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) obiekt, który będzie wyświetlany pojedynczy [ `Label` ](xref:Xamarin.Forms.Label) wyśrodkowany zarówno w pionie i poziomie na stronie.
+Ten kod tworzy nową [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) obiektu o nazwie `MainPage` , spowoduje wyświetlenie pojedynczego [ `Label` ](xref:Xamarin.Forms.Label) wyśrodkowany zarówno w pionie i poziomie na stronie. XAML w **MainPage.xaml** pliku wygląda następująco:
 
-<a name="Launching_the_Initial_Xamarin_Forms_Page_on_Each_Platform" />
+```xaml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AwesomeApp" x:Class="AwesomeApp.MainPage">
+    <StackLayout>
+        <Label Text="Hello Xamarin.Forms"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
+```
 
 ### <a name="launching-the-initial-xamarinforms-page-on-each-platform"></a>Uruchamianie strona początkowa Xamarin.Forms na każdej platformie
 
-Aby użyć tej funkcji [ `Page` ](xref:Xamarin.Forms.Page) wewnątrz aplikacji, każda aplikacja platformy zainicjować w ramach zestawu narzędzi Xamarin.Forms i zapewnić wystąpienie [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) jako uruchamiania. W tym kroku inicjowania różni się w zależności od platformy i został omówiony w poniższych sekcjach.
+> [!TIP]
+> Specyficzne dla platformy w tej sekcji informacje pomagające zrozumieć, jak działa zestaw narzędzi Xamarin.Forms.
+> Szablony projektu zawierają już w ramach tych zajęć; nie należy kodu samodzielnie.
+>
+> Możesz przejść do [interfejsu użytkownika](#user-interface) sekcji i przeczytać tę część później.
 
-<a name="Launching_in_iOS" />
+Aby użyć strony (takie jak **MainPage** w powyższym przykładzie) wewnątrz aplikacji, każda aplikacja platformy zainicjować w ramach zestawu narzędzi Xamarin.Forms i podaj wystąpienie strony uruchamiania. W tym kroku inicjowania różni się w zależności od platformy i został omówiony w poniższych sekcjach.
 
 #### <a name="ios"></a>iOS
 
@@ -95,9 +85,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-`FinishedLoading` Zastąpienie jest inicjowana w ramach zestawu narzędzi Xamarin.Forms, wywołując `Init` metody. Powoduje to, że implementacja specyficzne dla systemu iOS zestawu narzędzi Xamarin.Forms do załadowania w aplikacji, zanim kontroler widoku głównego jest ustawiana przez wywołanie metody `LoadApplication` metody.
-
-<a name="Launching_in_Android" />
+`FinishedLaunching` Zastąpienie jest inicjowana w ramach zestawu narzędzi Xamarin.Forms, wywołując `Init` metody. Powoduje to, że implementacja specyficzne dla systemu iOS zestawu narzędzi Xamarin.Forms do załadowania w aplikacji, zanim kontroler widoku głównego jest ustawiana przez wywołanie metody `LoadApplication` metody.
 
 #### <a name="android"></a>Android
 
@@ -122,7 +110,7 @@ namespace HelloXamarinFormsWorld.Android
 
 `OnCreate` Zastąpienie jest inicjowana w ramach zestawu narzędzi Xamarin.Forms, wywołując `Init` metody. Powoduje to implementacji specyficznych dla systemu Android Xamarin.Forms, aby można było załadować aplikację przed załadowaniem aplikacji platformy Xamarin.Forms.
 
-#### <a name="universal-windows-platform"></a>Platforma uniwersalna systemu Windows
+#### <a name="universal-windows-platform-uwp"></a>Platforma uniwersalna systemu Windows (UWP)
 
 W aplikacjach Windows platformy Uniwersalnej `Init` z wywoływana jest metoda, która inicjuje w ramach zestawu narzędzi Xamarin.Forms `App` klasy:
 
@@ -148,26 +136,31 @@ public partial class MainPage
 }
 ```
 
-Jest załadowana w aplikacji platformy Xamarin.Forms `LoadApplication` metody.
+Jest załadowana w aplikacji platformy Xamarin.Forms `LoadApplication` metody. Visual Studio dodaje powyższego kodu podczas tworzenia nowego projektu platformy Xamarin.Forms.
 
-<a name="Views_and_Layouts" />
+## <a name="user-interface"></a>Interfejs użytkownika
+
+Istnieją dwie techniki, aby tworzyć interfejsy użytkownika w interfejsie Xamarin.Forms:
+
+- Tworzenie interfejsu użytkownika, z kodu źródłowego języka C#.
+- *Extensible Application Markup Language* interfejsy deklaratywnym językiem znaczników używany do opisania użytkownika (XAML).
+
+Te same wyniki można osiągnąć, niezależnie od tego, w jakiej metody użyć (i obie są wyjaśnione poniżej). Aby uzyskać więcej informacji na temat XAML zestawu narzędzi Xamarin.Forms, zobacz [podstawy XAML](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="views-and-layouts"></a>Widoki i układy
 
 Istnieją cztery grupy w główną kontrolką użyty do utworzenia interfejsu użytkownika aplikacji platformy Xamarin.Forms.
 
-1. **Strony** — strony zestawu narzędzi Xamarin.Forms reprezentują ekrany aplikacji mobilnych dla wielu platform. Aby uzyskać więcej informacji dotyczących stron, zobacz [strony zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Układy** — układy platformy Xamarin.Forms to kontenery, które umożliwiają tworzenie widoków w logicznej struktury. Aby uzyskać więcej informacji na temat układów, zobacz [układy platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Widoki** — Xamarin.Forms widoki są formanty wyświetlane w interfejsie użytkownika, takie jak etykiety, przyciski i pola wprowadzania tekstu. Aby uzyskać więcej informacji o widokach, zobacz [widoków Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
-1. **Komórki** — Xamarin.Forms komórek są specjalne elementy używane na potrzeby elementów na liście i opisano, jak ma być rysowany każdy element na liście. Aby uzyskać więcej informacji na temat komórek, zobacz [komórki zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/cells.md).
+- **Strony** — strony zestawu narzędzi Xamarin.Forms reprezentują ekrany aplikacji mobilnych dla wielu platform. Aby uzyskać więcej informacji dotyczących stron, zobacz [strony zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
+- **Układy** — układy platformy Xamarin.Forms to kontenery, które umożliwiają tworzenie widoków w logicznej struktury. Aby uzyskać więcej informacji na temat układów, zobacz [układy platformy Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
+- **Widoki** — Xamarin.Forms widoki są formanty wyświetlane w interfejsie użytkownika, takie jak etykiety, przyciski i pola wprowadzania tekstu. Aby uzyskać więcej informacji o widokach, zobacz [widoków Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
+- **Komórki** — Xamarin.Forms komórek są specjalne elementy używane na potrzeby elementów na liście i opisano, jak ma być rysowany każdy element na liście. Aby uzyskać więcej informacji na temat komórek, zobacz [komórki zestawu narzędzi Xamarin.Forms](~/xamarin-forms/user-interface/controls/cells.md).
 
-W czasie wykonywania każdy formant zostanie zamapowane do równoważnik natywnych to, co będzie renderowana.
+W czasie wykonywania każdy formant zostanie zamapowane na odpowiadającą jej macierzystego, który jest renderowany na ekranie.
 
-Formanty są hostowane wewnątrz układu. [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Klasy, która implementuje najczęściej używanym układem, będą teraz analizowane.
+Formanty są hostowane wewnątrz układu. [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Klasy &ndash; najczęściej używanym układem &ndash; omówiono poniżej.
 
-<a name="StackLayout" />
-
-#### <a name="stacklayout"></a>StackLayout
+### <a name="stacklayout"></a>StackLayout
 
 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Upraszcza opracowywanie aplikacji dla wielu platform, automatyczne rozmieszczanie kontrolek na ekranie, niezależnie od rozmiaru ekranu. Każdego elementu podrzędnego jest określonym położeniem jeden po drugim, albo poziomo lub pionowo w kolejności ich dodania. Ile miejsca `StackLayout` spowoduje użycie zależy [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) i [ `VerticalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) właściwości są ustawione, ale domyślnie `StackLayout` podejmie próbę użycia cały ekran.
 
@@ -238,7 +231,7 @@ public class StackLayoutExample: ContentPage
 {
     public StackLayoutExample()
     {
-        // Code that creates labels removed for clarity
+        // Code that creates red, yellow, green labels removed for clarity (see above)
         Content = new StackLayout
         {
             Spacing = 10,
@@ -296,11 +289,9 @@ Content = new StackLayout
 
 Poniższych zrzutach ekranu przedstawiono wynikowe układu:
 
-[![](introduction-to-xamarin-forms-images/image11-sml.png "Poziomy StackLayout z LayoutOptions")](introduction-to-xamarin-forms-images/image11.png#lightbox "poziomy StackLayout z LayoutOptions")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "Poziomy StackLayout z LayoutOptions")](introduction-to-xamarin-forms-images/image11.png#lightbox)
 
 Aby uzyskać więcej informacji na temat [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) klasy, zobacz [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
-
-<a name="Lists_in_Xamarin_Forms" />
 
 ## <a name="lists-in-xamarinforms"></a>Listy w interfejsie Xamarin.Forms
 
@@ -329,8 +320,6 @@ Poniższy zrzut ekranu przedstawia, wynikowy [ `ListView` ](xref:Xamarin.Forms.L
  ![](introduction-to-xamarin-forms-images/image13.png "ListView")
 
 Aby uzyskać więcej informacji na temat [ `ListView` ](xref:Xamarin.Forms.ListView) sterowania, zobacz [ListView](~/xamarin-forms/user-interface/listview/index.md).
-
-<a name="Binding_to_a_Custom_Class" />
 
 ### <a name="binding-to-a-custom-class"></a>Powiązanie z niestandardowej klasy
 
@@ -369,8 +358,6 @@ Spowoduje to utworzenie powiązania, który określa ścieżkę do `TodoItem.Nam
 
 Aby uzyskać więcej informacji na temat powiązania niestandardowej klasy, zobacz [źródeł danych ListView](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
-<a name="Selecting_an_Item_in_a_ListView" />
-
 ### <a name="selecting-an-item-in-a-listview"></a>Zaznaczenie elementu w ListView
 
 Aby odpowiedzieć na użytkownika, dotknięcie komórkę w [ `ListView` ](xref:Xamarin.Forms.ListView), [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) zdarzenia powinien zostać obsłużony, jak pokazano w poniższym przykładzie kodu:
@@ -394,8 +381,6 @@ listView.ItemSelected += async (sender, e) => {
 Każdej z platform implementuje wbudowanych nawigacji Wstecz w inny sposób. Aby uzyskać więcej informacji, zobacz [nawigacji](#Navigation).
 
 Aby uzyskać więcej informacji na temat [ `ListView` ](xref:Xamarin.Forms.ListView) wyboru, zobacz [interakcyjność ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
-
-<a name="Customizing_the_appearance_of_a_cell" />
 
 ### <a name="customizing-the-appearance-of-a-cell"></a>Dostosowywanie wyglądu komórek
 
@@ -476,8 +461,6 @@ Ten kod zapewni `List` z `Employee` do [ `ListView` ](xref:Xamarin.Forms.ListVie
 
 Aby uzyskać więcej informacji na temat Dostosowywanie wyglądu komórek, zobacz [wygląd komórki](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
-<a name="Using_XAML_to_Create_and_Customize_A_List" />
-
 ### <a name="using-xaml-to-create-and-customize-a-list"></a>Tworzenie i dostosowywanie listy przy użyciu XAML
 
 Odpowiednik XAML [ `ListView` ](xref:Xamarin.Forms.ListView) w poprzedniej sekcji pokazano w poniższym przykładzie kodu:
@@ -512,8 +495,6 @@ Odpowiednik XAML [ `ListView` ](xref:Xamarin.Forms.ListView) w poprzedniej sekcj
 
 Definiuje to XAML [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) zawierający [ `ListView` ](xref:Xamarin.Forms.ListView). Źródło danych `ListView` jest ustawiony za pomocą [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) atrybutu. Układ każdego wiersza w `ItemsSource` jest zdefiniowana w [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) elementu.
 
-<a name="Data_Binding" />
-
 ## <a name="data-binding"></a>Powiązanie danych
 
 Powiązanie danych łączy dwa obiekty, o nazwie *źródła* i *docelowej*. *Źródła* obiekt zawiera dane. *Docelowej* obiektu spowoduje wykorzystanie (i często wyświetlany) danych z obiektu źródłowego. Na przykład [ `Label` ](xref:Xamarin.Forms.Label) (*docelowej* obiektu) będzie najczęściej powiązać jej [ `Text` ](xref:Xamarin.Forms.Label.Text) właściwość publiczną `string` właściwość *źródła* obiektu. Na poniższym diagramie przedstawiono relację powiązania:
@@ -537,7 +518,7 @@ Poniższy kod przedstawia przykład wykonywania danych powiązania w XAML:
 <Entry Text="{Binding FirstName}" ... />
 ```
 
-Powiązanie między [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) właściwości i `FirstName` właściwość *źródła* obiektu zostanie nawiązane. Zmiany wprowadzone w `Entry` formant będzie automatycznie propagowane do `employeeToDisplay` obiektu. Podobnie jeśli zmiany zostały wprowadzone do `employeeToDisplay.FirstName` właściwości aparatu powiązania zestawu narzędzi Xamarin.Forms spowoduje to również zaktualizowanie zawartość `Entry` kontroli. Jest to nazywane *określają powiązanie dwukierunkowe*. Aby powiązanie dwukierunkowe do pracy, musi implementować klasy modelu `INotifyPropertyChanged` interfejsu.
+Powiązanie między [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) właściwości i `FirstName` właściwość *źródła* obiektu zostanie nawiązane. Zmiany wprowadzone w `Entry` formant będzie automatycznie propagowane do `employeeToDisplay` obiektu. Podobnie jeśli zmiany zostały wprowadzone `employeeToDisplay.FirstName` właściwości aparatu powiązania zestawu narzędzi Xamarin.Forms spowoduje to również zaktualizowanie zawartość `Entry` kontroli. Jest to nazywane *określają powiązanie dwukierunkowe*. Aby powiązanie dwukierunkowe do pracy, musi implementować klasy modelu `INotifyPropertyChanged` interfejsu.
 
 Mimo że [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) właściwość `EmployeeDetailPage` klasy można ustawić w XAML, w tym miejscu jest ustawiona w pliku związanym z kodem do wystąpienia `Employee` obiektu:
 
@@ -568,7 +549,7 @@ public EmployeeDetailPage(Employee employeeToDisplay)
 }
 ```
 
-[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Konstruktor jest przekazywany wystąpienie `Employee` obiektu i zestawy [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) do obiektu, aby powiązać. [ `Entry` ](xref:Xamarin.Forms.Entry) Sterowania zostanie uruchomiony i powiązanie między [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) właściwości i `FirstName` właściwość *źródła* obiektu jest ustawiony. Zmiany wprowadzone w `Entry` formant będzie automatycznie propagowane do `employeeToDisplay` obiektu. Podobnie jeśli zmiany zostały wprowadzone do `employeeToDisplay.FirstName` właściwości aparatu powiązania zestawu narzędzi Xamarin.Forms spowoduje to również zaktualizowanie zawartość `Entry` kontroli. Jest to nazywane *określają powiązanie dwukierunkowe*. Aby powiązanie dwukierunkowe do pracy, musi implementować klasy modelu `INotifyPropertyChanged` interfejsu.
+[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Konstruktor jest przekazywany wystąpienie `Employee` obiektu i zestawy [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) do obiektu, aby powiązać. [ `Entry` ](xref:Xamarin.Forms.Entry) Sterowania zostanie uruchomiony i powiązanie między [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) właściwości i `FirstName` właściwość *źródła* obiektu jest ustawiony. Zmiany wprowadzone w `Entry` formant będzie automatycznie propagowane do `employeeToDisplay` obiektu. Podobnie jeśli zmiany zostały wprowadzone `employeeToDisplay.FirstName` właściwości aparatu powiązania zestawu narzędzi Xamarin.Forms spowoduje to również zaktualizowanie zawartość `Entry` kontroli. Jest to nazywane *określają powiązanie dwukierunkowe*. Aby powiązanie dwukierunkowe do pracy, musi implementować klasy modelu `INotifyPropertyChanged` interfejsu.
 
 `SetBinding` Metoda przyjmuje dwa parametry. Pierwszy parametr określa informacje o typie powiązania. Drugi parametr jest używany w celu dostarczenia informacji o czym można powiązać lub jak powiązać. W większości przypadków, drugi parametr jest po prostu ciąg przechowujący nazwę właściwości [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Poniższa składnia jest używana do powiązania do `BindingContext` bezpośrednio:
 
@@ -577,8 +558,6 @@ someLabel.SetBinding(Label.TextProperty, new Binding("."));
 ```
 
 Składni z kropkami informuje zestawu narzędzi Xamarin.Forms do użycia [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) jako źródło danych, a nie właściwością `BindingContext`. To jest przydatne, gdy `BindingContext` jest typem prostym, takich jak `string` lub `int`.
-
-<a name="INotifyPropertyChanged" />
 
 ### <a name="property-change-notification"></a>Powiadomienie o zmianie właściwości
 
@@ -623,8 +602,6 @@ Gdy `MyObject.FirstName` zmiany właściwości `OnPropertyChanged` wywoływana j
 
 Należy pamiętać, że w `OnPropertyChanged` metoda `propertyName` parametr jest powiązany z `CallerMemberName` atrybutu. Daje to gwarancję, że jeśli `OnPropertyChanged` metoda jest wywoływana z `null` wartość `CallerMemberName` atrybut zapewni nazwę metody, która wywołała `OnPropertyChanged`.
 
-<a name="Navigation" />
-
 ## <a name="navigation"></a>Nawigacja
 
 Zestaw narzędzi Xamarin.Forms oferuje pewną liczbę innej strony nawigacji środowisk, w zależności od [ `Page` ](xref:Xamarin.Forms.Page) wpisz używane. Aby uzyskać [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) wystąpienia dostępne są dwa środowiska nawigacji:
@@ -633,8 +610,6 @@ Zestaw narzędzi Xamarin.Forms oferuje pewną liczbę innej strony nawigacji śr
 - [Modalne nawigacji](#Modal_Navigation)
 
 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) i [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) klasy zapewniają środowiska alternatywnych nawigacji. Aby uzyskać więcej informacji, zobacz [nawigacji](~/xamarin-forms/app-fundamentals/navigation/index.md).
-
-<a name="Hierarchical_Navigation" />
 
 ### <a name="hierarchical-navigation"></a>Nawigacja hierarchiczna
 
@@ -667,8 +642,6 @@ await Navigation.PopAsync();
 
 Aby uzyskać więcej informacji na temat Nawigacja hierarchiczna zobacz [Nawigacja hierarchiczna](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
-<a name="Modal_Navigation" />
-
 ### <a name="modal-navigation"></a>Modalne nawigacji
 
 Zestaw narzędzi Xamarin.Forms zapewnia obsługę strony modalne. Strony modalne zaleca użytkownikom ukończenie niezależna zadanie, które nie mogą być opuszczeniu aż zadanie jest ukończone lub anulowane.
@@ -698,8 +671,6 @@ Powoduje to, że `LoginPage` wystąpienia, aby były usuwane z stos nawigacji pr
 
 Aby uzyskać więcej informacji na temat modalne nawigacji zobacz [strony modalne](~/xamarin-forms/app-fundamentals/navigation/modal.md).
 
-<a name="Next_Steps" />
-
 ## <a name="next-steps"></a>Następne kroki
 
 Ten artykuł wprowadzający powinny umożliwiać do rozpoczęcia pisania aplikacji platformy Xamarin.Forms. Proponowane następne kroki zawierają informacje o następujące funkcje:
@@ -711,12 +682,7 @@ Ten artykuł wprowadzający powinny umożliwiać do rozpoczęcia pisania aplikac
 - Każdej strony układu i kontroli jest inaczej renderowane na każdej platformie za pomocą `Renderer` klasę, która z kolei tworzy formant natywnych rozmieszcza go na ekranie i dodaje zachowanie, które określono w udostępnionego kodu. Deweloperzy mogą implementować własne niestandardowe `Renderer` klasy, aby dostosować wygląd lub zachowanie kontrolki. Aby uzyskać więcej informacji, zobacz [niestandardowe programy renderujące](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 - Efekty również umożliwiać natywne kontrolki na każdej z platform można dostosować. Efekty są tworzone w projektach specyficzne dla platformy przez podklasy [ `PlatformEffect` ](xref:Xamarin.Forms.PlatformEffect`2) kontrolować i są używane przez dołączenie do odpowiedniej kontrolki zestawu narzędzi Xamarin.Forms. Aby uzyskać więcej informacji, zobacz [efekty](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-Alternatywnie tworzenie aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms, książki, Charles Petzold jest dobrym miejscem, aby dowiedzieć się więcej na temat zestawu narzędzi Xamarin.Forms. Aby uzyskać więcej informacji, zobacz [tworzenia aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
-
-## <a name="summary"></a>Podsumowanie
-
-W tym artykule podano wprowadzenie do zestawu narzędzi Xamarin.Forms i jak rozpocząć pisanie aplikacji z nim. Xamarin.Forms to międzyplatformowa natywnie kopii abstrakcji zestawu narzędzi interfejsu użytkownika, który umożliwia deweloperom łatwe tworzenie interfejsów użytkownika, które mogą być współużytkowane przez system Android, iOS i platformy uniwersalnej Windows. Interfejsy użytkownika są renderowane przy użyciu natywnych kontrolek platformę docelową, umożliwiając aplikacjach Xamarin.Forms zachować odpowiedni wygląd i działanie dla każdej platformy.
-
+Alternatywnie [ _tworzenia aplikacji mobilnych za pomocą zestawu narzędzi Xamarin.Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md), książki, Charles Petzold jest dobrym miejscem, aby dowiedzieć się więcej na temat zestawu narzędzi Xamarin.Forms. Książki jest dostępna w formacie PDF lub w różnych formatach książki elektronicznej.
 
 ## <a name="related-links"></a>Linki pokrewne
 
@@ -725,6 +691,5 @@ W tym artykule podano wprowadzenie do zestawu narzędzi Xamarin.Forms i jak rozp
 - [Interfejs użytkownika](~/xamarin-forms/user-interface/index.md)
 - [Przykłady zestawu narzędzi Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Przykłady umożliwiające rozpoczęcie pracy](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
-- [Xamarin.Forms](xref:Xamarin.Forms)
+- [Dokumentacja interfejsu API platformy Xamarin.Forms](xref:Xamarin.Forms)
 - [Bezpłatnym szkoleniom wykładów (wideo)](https://university.xamarin.com/self-guided)
-- [Witaj, Xamarin.Forms dla systemu iOS skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

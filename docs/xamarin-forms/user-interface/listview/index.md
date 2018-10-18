@@ -1,65 +1,65 @@
 ---
-title: Element ListView platformy Xamarin.Forms
-description: W tym przewodniku przedstawiono ListView platformy Xamarin.Forms, która może służyć do prezentowania danych na listach doskonałych, interakcyjne.
+title: ListView zestawu narzędzi Xamarin.Forms
+description: Ten przewodnik stanowi wprowadzenie ListView Xamarin.Forms, która może służyć do prezentowania danych na listach pięknych, interaktywnych.
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: f73e7b70749a7a6913856d8c753db63a6d0a2bbe
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: dc039a7a984fae9bd856a9e7147ad899f86f0592
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "35245003"
 ---
-# <a name="xamarinforms-listview"></a>Element ListView platformy Xamarin.Forms
+# <a name="xamarinforms-listview"></a>ListView zestawu narzędzi Xamarin.Forms
 
-Element ListView jest w widoku listy danych, szczególnie długie list, które wymagają przewijanie prezentacji. W tym przewodniku opisano, jak używać ListView:
+ListView jest prezentowanie listy danych, szczególnie długie list, które wymagają przewijania widoku. W przewodniku opisano, jak używać ListView:
 
-1. **[Źródła danych](data-and-databinding.md)**  &ndash; wypełnienia ListView z danymi, z lub bez powiązania danych.
-2. **[Wygląd komórek](customizing-cell-appearance.md)**  &ndash; dostosować wygląd komórek wbudowanych lub utworzyć własne niestandardowe komórki.
-3. **[Lista wygląd](customizing-list-appearance.md)**  &ndash; Dostosowywanie wyglądu elementu ListView. Ustaw nagłówki i stopki, Włącz grup i zmienić wysokość wierszy.
-4. **[Interakcyjności](interactivity.md)**  &ndash; podsłuchu i opcji, wdrożenia pociągnij, aby odświeżyć i Dodaj akcje kontekstowe.
+1. **[Źródła danych](data-and-databinding.md)**  &ndash; wypełnić ListView przy użyciu danych z lub bez powiązania danych.
+2. **[Wygląd komórki](customizing-cell-appearance.md)**  &ndash; Dostosowywanie wyglądu komórek wbudowanych lub utworzyć własne niestandardowe komórki.
+3. **[Wygląd listy](customizing-list-appearance.md)**  &ndash; dostosować wygląd ListView. Ustaw nagłówki i stopki, Włącz grupy i zmienić wysokość wierszy.
+4. **[Interakcyjność](interactivity.md)**  &ndash; obsługi podsłuchu i opcji, wdrożenia ściągnięcia do odświeżania i dodać kontekstowego akcji.
 5. **[Wydajność](performance.md)**  &ndash; uniknąć problemów z wydajnością.
 
 ## <a name="use-cases"></a>Przypadki użycia
-Upewnij się, że element ListView jest urządzenie odpowiednie do potrzeb. Element ListView można w każdej sytuacji, w którym są wyświetlane przewijanej listy danych. Widokach listy obsługuje kontekstu akcji i powiązania danych.
+Upewnij się, że ListView jest formantem odpowiednie do potrzeb. ListView może służyć w każdej sytuacji, w którym są wyświetlane przewijaną listę danych. ListViews obsługuje kontekstu akcji i powiązanie danych.
 
-ListView — nie należy mylić z [TableView](~/xamarin-forms/user-interface/tableview.md). Formant TableView jest lepszym rozwiązaniem, zawsze, gdy masz listę z systemem innym niż granica opcje lub danych. Na przykład ustawienia aplikacji dla systemu iOS, mającą przeważnie wstępnie zdefiniowane opcje lepiej jest odpowiednie do użycia TableView niż ListView.
+Nie należy mylić ListView przy użyciu [TableView](~/xamarin-forms/user-interface/tableview.md). Formant TableView jest lepszym rozwiązaniem, zawsze wtedy, gdy masz inne niż powiązane z listy opcji lub danych. Na przykład aplikacji ustawienia systemu iOS, która ma przede wszystkim wstępnie zdefiniowany zestaw opcji, lepiej jest nadaje się do korzystania z TableView niż ListView.
 
-Również Pamiętaj, że element ListView jest najlepiej nadaje się do danych jednorodnych &ndash; oznacza to, że wszystkie dane powinny być tego samego typu. Jest to spowodowane użyciem tylko jeden typ komórki dla każdego wiersza w liście. TableViews może obsługiwać wiele typów komórki, dzięki czemu są one lepszym rozwiązaniem, gdy trzeba mieszać widoków.
+Również Zwróć uwagę, że ListView najlepiej nadaje się do homogenicznych danych &ndash; oznacza to, że wszystkie dane powinny być tego samego typu. Jest to spowodowane tylko jeden typ komórki może służyć do każdy wiersz na liście. TableViews może obsługiwać wiele typów komórki, dzięki czemu są one lepszym rozwiązaniem, jeśli musisz używać różnych miar widoków.
 
 
 ## <a name="components"></a>Składniki
-Element ListView ma liczbę składników dostępnych do wykonywania funkcji macierzystego dla każdej z platform. Poniżej opisano każdy z tych składników:
+ListView ma liczby składników dostępnych do wykonywania macierzystą funkcjonalność każdej z platform. Poniżej opisano każdy z tych składników:
 
-- **[Nagłówki i stopki](customizing-list-appearance.md#Headers_and_Footers)**  &ndash; tekstu lub widok, aby wyświetlić na początku i na końcu listy oddzielić od danych listy. Nagłówki i stopki może być powiązana ze źródłem danych niezależnie od źródła danych elementu ListView.
-- **[Grupy](customizing-list-appearance.md#Grouping)**  &ndash; ułatwiające nawigację można grupować dane w elemencie ListView. Grupy są zwykle powiązane z danymi:
+- **[Nagłówki i stopki](customizing-list-appearance.md#Headers_and_Footers)**  &ndash; tekstu lub widok, aby wyświetlić na początku i na końcu listy, należy oddzielić od danych listy. Nagłówki i stopki może być powiązana ze źródłem danych niezależnie od źródła danych ListView.
+- **[Grupy](customizing-list-appearance.md#Grouping)**  &ndash; dane w ListView mogą być grupowane w celu zapewnienia łatwiejszej nawigacji. Grupy są zazwyczaj powiązane z danymi:
 
-![](images/grouping-depth.png "Element ListView z zgrupowanych danych")
+![](images/grouping-depth.png "ListView przy użyciu zgrupowanych danych")
 
-- **[Komórki](customizing-cell-appearance.md)**  &ndash; zobaczy w komórkach danych w elemencie ListView. Każda komórka odpowiada wiersz danych. Dostępne są wbudowane komórek do wyboru, lub można definiować własne niestandardowe komórki. Komórek zarówno wbudowanych i niestandardowych można używać/zdefiniowany w języku XAML lub kodu.
-  - **[Wbudowane](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; wbudowane w komórkach, szczególnie TextCell i ImageCell, może być doskonałą wydajność, ponieważ odpowiada kontrolki natywne na każdej z platform.
-       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; wyświetla ciąg tekstu, opcjonalnie z tekstem szczegółów. Tekst szczegółów jest renderowane jako drugi wiersz w mniejszej czcionki z kolor akcentu.
-       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; Wyświetla obraz z tekstem. Pojawia się jako TextCell z obrazem po lewej stronie.
-  - **[Niestandardowe komórek](customizing-cell-appearance.md#customcells)**  &ndash; niestandardowe komórki są doskonałe, gdy użytkownik musi przedstawiać dane złożone. Na przykład widok niestandardowy może posłużyć do przedstawienia listy utworów muzycznych, w tym wykonawcy i albumu:
+- **[Komórki](customizing-cell-appearance.md)**  &ndash; dane w ListView są prezentowane w komórkach. Każda komórka odnosi się do wiersza danych. Istnieją wbudowane komórki do wyboru, lub można zdefiniować własne niestandardowe komórki. Niestandardowe i wbudowane komórek mogą być używane/zdefiniowany w XAML lub kodu.
+  - **[Wbudowane](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; wbudowane komórek, szczególnie TextCell i ImageCell, może być doskonałą wydajność, ponieważ odnoszą się do natywnych kontrolek na każdej platformie.
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; wyświetla ciąg tekstowy, opcjonalnie z tekstem szczegółów. Szczegóły tekstu jest renderowane jako drugi wiersz w mniejszej czcionki przy użyciu koloru akcentu.
+       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; Wyświetla obraz z tekstem. Pojawia się jako TextCell za pomocą obrazu po lewej stronie.
+  - **[Niestandardowe komórek](customizing-cell-appearance.md#customcells)**  &ndash; komórek niestandardowe sprawdzają się kiedy trzeba przedstawienie złożonych danych. Na przykład widok niestandardowy może służyć do przedstawienia listy utwory muzyczne, wykonawcy i albumów w tym:
 
-![](images/image-cell-default.png "Element ListView z ImageCells")
+![](images/image-cell-default.png "ListView przy użyciu ImageCells")
 
-Aby dowiedzieć się więcej na temat dostosowywania komórek w elemencie ListView, zobacz [Dostosowywanie wyglądu komórek ListView](customizing-cell-appearance.md).
+Aby dowiedzieć się więcej o dostosowywaniu komórek w ListView, zobacz [Dostosowywanie wygląd komórki ListView](customizing-cell-appearance.md).
 
 ## <a name="functionality"></a>Funkcja
-Element ListView jest obsługiwanych kilka stylów interakcji, w tym:
+ListView obsługuje szereg style interakcji, w tym:
 
-- **[Pociągnij, aby odświeżyć](interactivity.md#Pull_to_Refresh)**  &ndash; ListView obsługuje pociągnij, aby odświeżyć na każdej z platform.
-- **[Kontekst akcji](interactivity.md#Context_Actions)**  &ndash; ListView obsługuje podjęcie działań na poszczególne elementy na liście. Na przykład możesz można zaimplementować przejdź do działania w systemie iOS, lub wybierz long akcji w systemie Android.
-- **[Wybór](interactivity.md#selectiontaps)**  &ndash; nasłuchiwania wybrane opcje i usuwanie podjęcie działań jest wybrany wiersz.
+- **[Ściągnięcia do odświeżania](interactivity.md#Pull_to_Refresh)**  &ndash; ListView obsługuje ściągania do odświeżania na każdej platformie.
+- **[Kontekst akcji](interactivity.md#Context_Actions)**  &ndash; ListView obsługuje wykonywanie działań na poszczególne elementy na liście. Na przykład możesz można zaimplementować przesunięcia do działania w systemie iOS, lub naciśnij długo akcji w systemie Android.
+- **[Wybór](interactivity.md#selectiontaps)**  &ndash; nasłuchiwanie wybrane opcje i usuwanie podjęcie działań jest wybrany wiersz.
 
-![](images/context-default.png "Element ListView z kontekstu akcji")
+![](images/context-default.png "ListView przy użyciu kontekstu akcji")
 
-Aby dowiedzieć się więcej o funkcjach interakcyjności ListView, zobacz [akcje & interakcję z ListView](interactivity.md).
+Aby dowiedzieć się więcej o funkcjach interakcyjność w ListView, zobacz [akcje i interakcję z ListView](interactivity.md).
 
 
 ## <a name="related-links"></a>Linki pokrewne
@@ -70,6 +70,4 @@ Aby dowiedzieć się więcej o funkcjach interakcyjności ListView, zobacz [akcj
 - [Niestandardowe komórek (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [Grupowanie (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 - [Widok niestandardowy moduł renderowania (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
-- [Element ListView interakcyjności (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
-- [iOS skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-ios.workbook)
-- [Android skoroszytu](https://developer.xamarin.com/workbooks/xamarin-forms/user-interface/listview/ListView1-android.workbook)
+- [Interakcyjność ListView (przykład)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)

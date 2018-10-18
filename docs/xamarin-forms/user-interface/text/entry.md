@@ -6,25 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/16/2018
-ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39270115"
 ---
 # <a name="xamarinforms-entry"></a>Wpis zestawu narzędzi Xamarin.Forms
 
 _Jednego wiersza tekstu lub hasła, dane wejściowe_
 
-Xamarin.Forms `Entry` służy do wprowadzania tekstu jednowierszowego. `Entry`, Takiej jak `Editor` wyświetlanie, obsługuje wiele typów klawiatury. Ponadto `Entry` mogą być używane jako pole hasła.
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) służy do wprowadzania tekstu jednowierszowego. `Entry`, Takiej jak [ `Editor` ](xref:Xamarin.Forms.Editor) wyświetlanie, obsługuje wiele typów klawiatury. Ponadto `Entry` mogą być używane jako pole hasła.
 
 ## <a name="display-customization"></a>Dostosowywanie ekranu
 
 ### <a name="setting-and-reading-text"></a>Ustawianie i odczytywanie tekstu
 
-`Entry`, Podobnie jak inne widoki przedstawiania tekstu, udostępnia `Text` właściwości. Ta właściwość umożliwia ustawianie i odczytywanie tekstu przedstawiony przez `Entry`. W poniższym przykładzie pokazano ustawienie `Text` właściwości w XAML:
+`Entry`, Podobnie jak inne widoki przedstawiania tekstu, udostępnia [ `Text` ](xref:Xamarin.Forms.Entry.Text) właściwości. Ta właściwość umożliwia ustawianie i odczytywanie tekstu przedstawiony przez `Entry`. W poniższym przykładzie pokazano ustawienie `Text` właściwości w XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -58,6 +58,32 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) właściwości wartość 0 oznacza, że może być brak danych wejściowych, a wartość `int.MaxValue`, co jest wartością domyślną dla [ `Entry` ](xref:Xamarin.Forms.Entry), wskazuje, że istnieje nie skuteczne limit liczby znaków, które mogą być wprowadzane.
+
+### <a name="setting-the-cursor-position-and-text-selection-length"></a>Ustawianie położenia kursora i długość zaznaczenia tekstu
+
+[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) Właściwość może służyć do zwrotu lub ustawić położenie, jaką następny znak zostanie wstawiony do ciągu przechowywane w [ `Text` ](xref:Xamarin.Forms.Entry.Text) właściwości:
+
+```xaml
+<Entry Text="Cursor position set" CursorPosition="5" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
+```
+
+Wartość domyślna [ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) właściwość ma wartość 0, co oznacza, że tekst zostanie wstawiony na początku `Entry`.
+
+Ponadto [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) właściwość może służyć do zwrotu lub Ustaw długość Zaznaczanie tekstu w obrębie `Entry`:
+
+```xaml
+<Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
+```
+
+Wartość domyślna [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) właściwość ma wartość 0, co oznacza, że zaznaczono żadnego tekstu.
 
 ### <a name="customizing-the-keyboard"></a>Dostosowywanie klawiatury
 
@@ -180,21 +206,17 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > Gdy [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) właściwość jest ustawiona na `false`, a klawiatury niestandardowej nie jest używana funkcja podpowiadania tekstu i automatyczne korekty tekstu jest wyłączona. Jednak jeśli [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) ustawił tego funkcja podpowiadania tekstu wyłącza `IsTextPredictionEnabled` właściwość jest ignorowana. W związku z tym, aby umożliwić funkcja podpowiadania tekstu dla, w którym nie można użyć właściwości `Keyboard` wyłączają jawnie.
 
-### <a name="placeholders"></a>Symbole zastępcze
+### <a name="setting-placeholder-text"></a>Ustawienie tekst symbolu zastępczego
 
-`Entry` można ustawić tak, aby pokazywać tekst symbolu zastępczego, gdy nie przechowuje dane wejściowe użytkownika. W praktyce jest to często postrzegane w formularzach wyjaśnienie zawartość, która jest odpowiednia dla danego pola. Kolor tekstu symbolu zastępczego nie można dostosować i będą takie same, niezależnie od wartości `TextColor` ustawienie. Jeśli projekt odwołuje się do koloru niestandardowego symbolu zastępczego, musisz przełączyć się na [niestandardowego modułu renderowania](). Spowoduje to utworzenie następujących `Entry` "USERNAME" jako symbol zastępczy w XAML:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Można ustawić, aby pokazywać tekst symbolu zastępczego, gdy nie przechowuje dane wejściowe użytkownika. Jest to realizowane przez ustawienie [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) właściwości `string`i jest często używany do wskazania typu zawartości, która jest odpowiednia dla `Entry`. Ponadto kolor tekstu symbolu zastępczego mogą być kontrolowane przez ustawienie [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) właściwości [ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
-<Entry Placeholder="Username" />
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
 ```
-
-W języku C#:
 
 ```csharp
-var MyEntry = new Entry { Placeholder = "Username" };
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
 ```
-
-![](entry-images/placeholder.png "Przykład symbolu zastępczego wpisu")
 
 ### <a name="password-fields"></a>Pola hasła
 

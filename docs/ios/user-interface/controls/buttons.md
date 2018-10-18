@@ -4,14 +4,14 @@ description: Klasa obiektu klasy UIButton jest używana do reprezentowania róż
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38986007"
 ---
 # <a name="buttons-in-xamarinios"></a>Przyciski w rozszerzeniu Xamarin.iOS
@@ -90,7 +90,8 @@ Odpowiedniego zdarzenia wpisz nazwę nowego programu obsługi zdarzeń lub wybie
 `UIButton` Formanty może istnieć wiele różnych stanów, każdego określonego przez `UIControlState` wartość — `Normal`, `Disabled`, `Focused`, `Highlighted`itp. Każdy stan można podać unikatowe stylu określone programowo lub za pomocą narzędzia iOS Designer.
 
 > [!NOTE]
-> Aby uzyskać pełną listę wszystkich `UIControlState` wartości, Przyjrzyj się [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/) dokumentacji.
+> Aby uzyskać pełną listę wszystkich `UIControlState` wartości, zapoznaj się z [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> Dokumentacja.
 
 Na przykład, aby ustawić kolor tytułu i kolor cienia `UIControlState.Normal`:
 
@@ -127,6 +128,3 @@ W zależności od tego, czy użytkownik jest dotknięcie przycisku, czy nie, bę
 
 Aby uzyskać więcej informacji na temat pracy z przyciski niestandardowe dotyczą [użyć obrazu dla przycisku](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button) przepisu.
 
-## <a name="related-links"></a>Linki pokrewne
-
-- [Obiektu klasy UIButton skoroszytu](https://developer.xamarin.com/workbooks/ios/user-interface/UIbutton/uibutton.workbook)

@@ -4,14 +4,14 @@ description: W tym artykule wyjaśniono, jak używać palcami do rysowania na ka
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: b0f28cd3e8a928a6da3169dee96ec089178a64e2
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 03a6de3b6297e57620655e3697fe729e6fb06501
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615824"
 ---
 # <a name="finger-painting-in-skiasharp"></a>Malowanie palcami w SkiaSharp
@@ -24,7 +24,7 @@ _Użyj palców do rysowania na kanwie._
 
 Obsługi wprowadzania dotykowego, w interfejsie Xamarin.Forms nie pozwala na śledzenie poszczególnych palców na ekranie, więc efekt śledzenia touch Xamarin.Forms został opracowany do obsługi dodatkowych touch. Ten efekt jest opisany w artykule [ **wywoływanie zdarzenia z efektów**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Przykładowy program [ **Touch śledzenia wpływu pokazy** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) zawiera dwie strony, które używają SkiaSharp, w tym kolorowa program.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) rozwiązanie obejmuje to zdarzenie śledzenia touch. Projekt biblioteki .NET Standard obejmuje `TouchEffect` klasy `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmują `TouchEffect` klasy dla danej platformy; zawiera także projekt dla systemu iOS `TouchRecognizer` klasy.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) rozwiązanie obejmuje to zdarzenie śledzenia touch. Projekt biblioteki .NET Standard obejmuje `TouchEffect` klasy `TouchActionType` wyliczenia, `TouchActionEventHandler` delegować i `TouchActionEventArgs` klasy. Każdy z projektów platformy obejmuje `TouchEffect` klasy dla danej platformy; zawiera także projekt dla systemu iOS `TouchRecognizer` klasy.
 
 **Finger Paint** strony w **SkiaSharpFormsDemos** to uproszczony implementacja malowanie palcami. Nie zezwalaj na wybieranie koloru lub obrysu szerokości, go nie ma możliwości Usuń obszar roboczy i oczywiście nie można zapisać kompozycji.
 
@@ -76,7 +76,7 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-Jako sugerowanej nazwy `inProgressPaths` słownika przechowuje ścieżek, które obecnie są wprowadzane przez co najmniej jeden palców. Klucz ze słownika jest identyfikator touch, który towarzyszy zdarzenia dotykowe. `completedPaths` Pole jest kolekcją ścieżek, które zostały zakończone podczas obliczania palcem rysowanie ścieżki podniesiony z poziomu ekranu.
+Jak sugeruje nazwa, `inProgressPaths` słownika przechowuje ścieżek, które obecnie są wprowadzane przez co najmniej jeden palców. Klucz ze słownika jest identyfikator touch, który towarzyszy zdarzenia dotykowe. `completedPaths` Pole jest kolekcją ścieżek, które zostały ukończona finger, który został rysowanie ścieżki unosiło się na ekranie.
 
 `TouchAction` Obsługi zarządza te dwie kolekcje. Gdy palcem najpierw dotyka ekranu nowy `SKPath` jest dodawany do `inProgressPaths`. Przemieszcza się w tej linii papilarnych, dodatkowe punkty zostaną dodane do ścieżki. Po zwolnieniu finger ścieżka jest przekazywana do `completedPaths` kolekcji. Można malować jednocześnie z wielu palców. Po każdej zmianie na ścieżki lub kolekcji `SKCanvasView` zostaje unieważniony:
 
@@ -141,7 +141,7 @@ Punkty, towarzyszący zdarzeń śledzenia touch są współrzędne Xamarin.Forms
 ```csharp
 public partial class FingerPaintPage : ContentPage
 {
-    ,,,
+    ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         SKCanvas canvas = args.Surface.Canvas;
@@ -165,10 +165,11 @@ Twoje obrazy finger ograniczona tylko Twojej talent:
 
 [![](finger-paint-images/fingerpaint-small.png "Potrójna zrzut ekranu przedstawiający stronę Finger Paint")](finger-paint-images/fingerpaint-large.png#lightbox "Potrójna zrzut ekranu przedstawiający stronę malowanie linii papilarnych")
 
+Teraz przedstawiono sposób Rysowanie linii, a także zdefiniować krzywych przy użyciu równania parametryczne. W dalszej części artykułu [ **skiasharp — krzywe i ścieżki** ](../curves/index.md) obejmuje różne rodzaje krzywych, `SKPath` obsługuje. Ale przydatne wymagań wstępnych jest Eksplorowanie [ **przekształca SkiaSharp**](../transforms/index.md).
 
 ## <a name="related-links"></a>Linki pokrewne
 
-- [Skiasharp — interfejsy API](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Skiasharp — interfejsy API](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (przykład)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Pokazy efekt Touch śledzenia (przykład)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [Wywoływanie zdarzenia z efektów](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

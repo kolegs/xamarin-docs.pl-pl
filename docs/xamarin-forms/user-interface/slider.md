@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998246"
 ---
 # <a name="xamarinforms-slider"></a>Suwak zestawu narzędzi Xamarin.Forms
@@ -44,8 +44,8 @@ Wszystkie trzy właściwości są wspierane przez `BindableProperty` obiektów. 
 
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) znajduje się pasek koloru po lewej stronie przycisku suwaka.
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) znajduje się pasek koloru po prawej stronie przycisku suwaka.
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) jest to kolor przycisku suwaka. Ta właściwość nie jest obsługiwana na platformie Universal Windows.
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) obraz dla przycisku suwaka typu [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Ta właściwość nie jest obsługiwana na platformie Universal Windows.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) jest to kolor przycisku suwaka.
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) obraz dla przycisku suwaka typu [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource).
 
 > [!NOTE]
 > `ThumbColor` i `ThumbImage` właściwości wzajemnie się wykluczają. Jeśli obie te właściwości są ustawione, `ThumbImage` właściwości mają wyższy priorytet.
@@ -109,7 +109,7 @@ Poniżej przedstawiono program działających w systemach iOS, Android i Windows
 
 [![Kod podstawowy suwaka](slider-images/BasicSliderCode.png "kodu podstawowego suwaka")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Drugi `Label` Wyświetla tekst "(niezainicjowana)" do momentu `Slider` jest przetwarzany, który przypadków pierwszy `ValueChanged` zdarzeń do uruchomienia. Zauważ, że liczba miejsc dziesiętnych, które są wyświetlane różne dla trzech platformach. Te różnice są związane z implementacji platformy `Slider` zostały one omówione w dalszej części tego artykułu, w sekcji [różnice dotyczące Platform implementacji](#implementations).
+Drugi `Label` Wyświetla tekst "(niezainicjowana)" do momentu `Slider` jest przetwarzany, co powoduje, że pierwszy `ValueChanged` zdarzeń do uruchomienia. Zauważ, że liczba miejsc dziesiętnych, które są wyświetlane różne dla trzech platformach. Te różnice są związane z implementacji platformy `Slider` zostały one omówione w dalszej części tego artykułu, w sekcji [różnice dotyczące Platform implementacji](#implementations).
 
 ### <a name="creating-a-slider-in-xaml"></a>Tworzenie suwaka w XAML
 
@@ -228,7 +228,7 @@ Slider slider = new Slider
 };
 ```
 
-Ustawienie `Maximum` 20 nie stanowi to problemu, ponieważ jest on większy niż domyślna `Minimum` ustawienie 0. Gdy `Minimum` jest ustawiona, wartość jest mniejsza niż `Maximum` o wartości 20.
+Ustawienie `Maximum` 20 nie stanowi to problemu, ponieważ jest on większy niż domyślna `Minimum` wartość 0. Gdy `Minimum` jest ustawiona, wartość jest mniejsza niż `Maximum` o wartości 20.
 
 Ten sam problem występuje w XAML. Ustawianie właściwości w kolejności, który zapewnia, że `Maximum` jest zawsze większa niż `Minimum`:
 
@@ -292,8 +292,6 @@ Implementacja systemu Android `Slider` opiera się na Android [ `SeekBar` ](http
 Implementacja platformy uniwersalnej systemu Windows `Slider` zależy od platformy UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) kontroli. `StepFrequency` Właściwości platformy UWP `Slider` jest ustawiony na różnicę tej `Maximum` i `Minimum` właściwości podzielona przez 10, ale nie jest większa niż 1.
 
 Na przykład domyślny zakres od 0 do 1 `StepFrequency` właściwość ma wartość 0,1. Jako `Slider` jest przetwarzany `Value` właściwość jest ograniczona do 0, 0.1, 0.2, 0,3, 0,4, 0,5, Update 0.6, 0,7, 0,8, 0,9 i 1.0. (Jest to widoczne na ostatniej stronie w [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) próbki.) Gdy różnica między `Maximum` i `Minimum` właściwości jest 10 lub nowszy, `StepFrequency` jest ustawiona na 1 i `Value` właściwość posiada wartości całkowitych.
-
-Ponadto [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty) i [ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) właściwości nie są obsługiwane na platformy uniwersalnej systemu Windows.
 
 ### <a name="the-stepslider-solution"></a>Rozwiązanie StepSlider
 

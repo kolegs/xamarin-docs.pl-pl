@@ -1,24 +1,24 @@
 ---
-title: Wprowadzenie do SkiaSharp
+title: Przykłady niezależne od platformy SkiaSharp
 description: Ten dokument zawiera krótkie wprowadzenie do podstawowych pojęć SkiaSharp. W szczególności omówiono w nim uzyskiwanie i rysowania na SKCanvas.
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
-author: charlespetzold
-ms.author: chape
-ms.date: 09/14/2017
-ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2018
+ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615499"
 ---
-# <a name="an-introduction-to-skiasharp"></a>Wprowadzenie do SkiaSharp
+# <a name="skiasharp-platform-independent-examples"></a>Przykłady niezależne od platformy SkiaSharp
 
-_Zapewnia to krótkie wprowadzenie do pojęć dotyczących SkiaSharp_
+_Zapewnia to krótkie wprowadzenie niezależne od platformy do pojęć dotyczących SkiaSharp_
 
-Skiasharp — zapewnia rozbudowane i zaawansowane grafika 2D interfejsu API, który może zostać użyty do renderowania do buforów 2D.  Te umożliwia wdrożenie niestandardowe elementy interfejsu użytkownika i grafika 2D, który należy włączyć w aplikacji.  Skiasharp — jest powiązanie .NET [Skia](https://skia.org) biblioteki i dziedziczy funkcje i możliwości tej biblioteki.
+Skiasharp — zapewnia rozbudowane i zaawansowane grafika 2D interfejsu API, który może zostać użyty do renderowania do buforów 2D.  Te umożliwia wdrożenie niestandardowe elementy interfejsu użytkownika i grafika 2D, który należy włączyć w aplikacji. Skiasharp — jest powiązanie .NET [Skia](https://skia.org) biblioteki i dziedziczy funkcje i możliwości tej biblioteki.
 
 Biblioteka jest obecnie dostępna jako dla wielu platform [pakietu NuGet](https://www.nuget.org/packages/SkiaSharp), Dodaj do projektu, dodając odwołanie NuGet.
 
@@ -135,9 +135,4 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>Więcej informacji
 
-Więcej informacji na temat Korzystanie z biblioteki SkiaSharp znajduje się na [dokumentacji interfejsu API w trybie online](https://developer.xamarin.com/api/namespace/SkiaSharp/)
-
-
-## <a name="related-links"></a>Linki pokrewne
-
-- [Skiasharp — iOS skoroszytu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+Więcej informacji na temat Korzystanie z biblioteki SkiaSharp znajdują się w [dokumentacji interfejsu API](https://docs.microsoft.com/dotnet/api/skiasharp)
