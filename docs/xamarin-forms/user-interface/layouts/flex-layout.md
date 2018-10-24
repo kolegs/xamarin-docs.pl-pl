@@ -515,13 +515,13 @@ Dla wszystkich poszczególnych podrzędnych z `FlexLayout`, ta właściwość us
 Dla `Label` elementu o nazwie `label` (lub przykład), możesz ustawić `AlignSelf` właściwości w kodzie w następujący sposób:
 
 ```csharp
-FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
+FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
 Należy zauważyć, że nie ma żadnego odwołania do `FlexLayout` nadrzędnym `Label`. W XAML można ustawić właściwości następująco:
 
 ```xaml
-<Label ... FlexAlign.AlignSelf="Center" ... />
+<Label ... FlexLayout.AlignSelf="Center" ... />
 ```
 
 ### <a name="the-order-property"></a>Właściwości Order
